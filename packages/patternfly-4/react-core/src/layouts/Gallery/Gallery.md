@@ -1,7 +1,11 @@
 ---
-title: "Gallery"
-cssPrefix: "pf-l-gallery"
+title: 'Gallery'
+cssPrefix: 'pf-l-gallery'
+section: 'layouts'
 ---
+
+import { Gallery, GalleryItem } from '@patternfly/react-core';
+
 ## Simple Gallery Layout
 ```js
 import React from 'react';

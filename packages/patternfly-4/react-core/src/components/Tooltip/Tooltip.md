@@ -1,18 +1,19 @@
 ---
-title: "Tooltip"
-cssPrefix: "pf-c-tooltip"
+title: 'Tooltip'
+cssPrefix: 'pf-c-tooltip'
 ---
+
+import { Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
+
 ## Simple Tooltip
 ```js
 import React from 'react';
-import { Tooltip } from '@patternfly/react-core';
+import { Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
 
 <Tooltip
   position="right"
   content={
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
-    </div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
   }
 >
   <span>I have a tooltip!</span>

@@ -5,6 +5,7 @@ import resolveFrom from 'resolve-from';
 import {
   cssToJS,
   getCSS,
+  getFullCSS,
   styleSheetToken,
   packageName,
   writeCSSJSFile,
@@ -88,6 +89,7 @@ export default declare(({ types: t }) => {
           const scriptDirectory = dirname(resolve(file.opts.filename));
           const cssfilePath = resolveFrom(scriptDirectory, value);
           const cssString = getCSS(cssfilePath);
+          const fullCssString = getFullCSS(cssfilePath);
           const varName = getVariableName(path);
           const { bindings } = path.scope;
           const styleObject = StyleSheet.parse(cssString);
@@ -134,7 +136,7 @@ export default declare(({ types: t }) => {
             const scriptOutputPath = resolve(file.opts.filename).replace(resolve(srcDir), outDir);
 
             if (!outputFiles.has(cssOutputPath)) {
-              writeCSSFile(cssOutputPath, cssString);
+              writeCSSFile(cssOutputPath, fullCssString);
               writeCSSJSFile(
                 rootPath,
                 cssfilePath,

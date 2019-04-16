@@ -3,8 +3,9 @@ title: 'Card'
 cssPrefix: 'pf-c-card'
 ---
 
-## Simple Card
+import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
+## Simple Card
 ```js
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
@@ -19,7 +20,6 @@ SimpleCard = () => (
 ```
 
 ## Card with no Footer
-
 ```js
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
@@ -33,7 +33,6 @@ NoFooterCard = () => (
 ```
 
 ## Card with no Header
-
 ```js
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
@@ -47,10 +46,9 @@ NoHeaderCard = () => (
 ```
 
 ## Card with only a Content Section
-
 ```js
 import React from 'react';
-import { Card, CardBody } from '@patternfly/react-core';
+import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
 ContentOnlyCard = () => (
   <Card>
@@ -60,7 +58,6 @@ ContentOnlyCard = () => (
 ```
 
 ## Card with multiple body sections
-
 ```js
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
@@ -77,7 +74,6 @@ MultipleBodyCard = () => (
 ```
 
 ## Card with only one body that fills
-
 ```js
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';

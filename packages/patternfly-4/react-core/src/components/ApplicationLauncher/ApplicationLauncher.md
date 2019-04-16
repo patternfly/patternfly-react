@@ -1,11 +1,13 @@
 ---
-title: "Application Launcher"
-cssPrefix: "pf-c-app-launcher"
+title: 'Application Launcher'
+cssPrefix: 'pf-c-app-launcher'
 ---
+import { ApplicationLauncher, DropdownItem, Tooltip } from '@patternfly/react-core';
+
 ## Simple Application Launcher
 ```js
 import React from 'react';
-import { ApplicationLauncher, DropdownItem } from '@patternfly/react-core';
+import { ApplicationLauncher, DropdownItem, Tooltip } from '@patternfly/react-core';
 
 class SimpleApplicationLauncher extends React.Component {
   constructor(props) {

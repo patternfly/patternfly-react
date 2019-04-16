@@ -2,7 +2,6 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
-import { Dropdown, DropdownPosition, KebabToggle } from '../Dropdown';
 
 class DataListAction extends React.Component {
   constructor(props) {
@@ -25,7 +24,6 @@ class DataListAction extends React.Component {
   render() {
     const {
       children,
-      actions,
       className,
       id,
       'aria-label': ariaLabel,
@@ -33,42 +31,32 @@ class DataListAction extends React.Component {
       ...props
     } = this.props;
 
-    return children ? (
-      children
-    ) : (
-      <div className={css(styles.dataListAction, className)} {...props}>
-        <Dropdown
-          isPlain
-          position={DropdownPosition.right}
-          isOpen={this.state.isOpen}
-          onSelect={this.onSelect}
-          toggle={<KebabToggle onToggle={this.onToggle} />}
-          dropdownItems={actions}
-        />
+    return (
+      <div className={css(styles.dataListItemAction, className)}>
+        <div className={css(styles.dataListAction, className)} {...props}>
+          {children}
+        </div>
       </div>
     );
   }
 }
 
 DataListAction.propTypes = {
-  /** Content rendered inside the DataList list */
-  children: PropTypes.node,
-  /** Additional classes added to the DataList list */
+  /** Content rendered as DataList Action  (e.g <Button> or <Dropdown>) */
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+  /** Additional classes added to the DataList Action */
   className: PropTypes.string,
-  /** DataList actions to show in the dropdown */
-  actions: PropTypes.arrayOf(PropTypes.node).isRequired,
   /** Identify the DataList toggle number */
   id: PropTypes.string.isRequired,
-  /** Adds accessible text to the DataList item */
+  /** Adds accessible text to the DataList Action */
   'aria-labelledby': PropTypes.string.isRequired,
-  /** Adds accessible text to the DataList item */
+  /** Adds accessible text to the DataList Action */
   'aria-label': PropTypes.string.isRequired,
   /** Additional props are spread to the container <div> */
   '': PropTypes.any
 };
 
 DataListAction.defaultProps = {
-  children: null,
   className: ''
 };
 

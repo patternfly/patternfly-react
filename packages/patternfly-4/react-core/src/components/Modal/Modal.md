@@ -1,7 +1,10 @@
 ---
-title: "Modal"
-cssPrefix: "pf-c-modal-box"
+title: 'Modal'
+cssPrefix: 'pf-c-modal-box'
 ---
+
+import { Modal, Button } from '@patternfly/react-core';
+
 ## Simple Modal
 ```js
 import React from 'react';
@@ -248,11 +251,13 @@ class NoHeader extends React.Component {
             </Button>
           ]}
         >
-          <span id="no-header-example">When static text describing the modal is available, it can be wrapped with
-          an ID referring to the modal's aria-describedby value.</span> Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <span id="no-header-example">
+            When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
+            aria-describedby value.
+          </span>{' '}
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </Modal>
       </React.Fragment>
     );

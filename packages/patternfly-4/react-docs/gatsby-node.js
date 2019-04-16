@@ -1,5 +1,4 @@
 const navHelpers = require("./src/helpers/navHelpers");
-const astHelpers = require("./src/helpers/astHelpers");
 const path = require("path");
 
 // Add map PR-related environment variables to gatsby nodes
@@ -21,59 +20,81 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   });
 };
 
-const templatePath = path.resolve('./src/templates/markdownTemplate.js');
-
 // Create pages for markdown files
-exports.onCreateNode = ({ node, actions }) => {
-  if (node.internal.type !== 'MarkdownRemark')
-    return;
-
-  const componentName = navHelpers.getFileName(node.fileAbsolutePath);
-  const folderName = navHelpers.getParentFolder(node.fileAbsolutePath);
-
-  let link = '/bad-page/';
-  let context = {};
-  // Create fullscreen example component pages for any links in the *.md
-  if (node.frontmatter.seperatePages) {
-    // Create the templated page to link to them differently
-    link = `/${node.frontmatter.section}/${componentName}/`;
-    context = {
-      title: node.frontmatter.title,
-      fileAbsolutePath: node.fileAbsolutePath,
-      pathRegex: '', // No props
-      examplesRegex: '', // No examples to inject (they're on separate pages)
-    };
-
-    // Create the separate pages
-    astHelpers.getLinks(node.htmlAst).forEach(mdLink => {
-      const split = mdLink
-        .replace('.', '')
-        .split('/')
-        .filter(s => s);
-      const demoComponent = split[split.length - 1];
-      const basePath = path.dirname(node.fileAbsolutePath);
-
-      actions.createPage({
-        path: `${link}${split.join('/')}/`,
-        // Assume [Link](/PageLayoutSimpleNav/) in *.md means there is a ./examples/PageLayoutSimpleNav.js
-        component: path.resolve(`${basePath}/examples/${demoComponent}.js`),
-      });
-    });
-  } else {
-    // Normal templated component pages
-    let section = node.frontmatter.section ? node.frontmatter.section : 'components';
-    link = `/${section}/${componentName}/`;
-    context = {
-      title: node.frontmatter.title,
-      fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
-      pathRegex: `/${folderName}\/.*/`, // Helps us get the docgenned props
-      examplesRegex: `/${folderName}\/examples\/.*/`, // Helps us inject the example files
+exports.createPages = ({ graphql, actions }) => {
+  const mdx = graphql(`
+  {
+    allMdx {
+      nodes {
+        fileAbsolutePath
+        frontmatter {
+          title
+          section
+          fullscreen
+        }
+      }
     }
   }
-  // console.log('adding page', link);
-  actions.createPage({
-    path: link,
-    component: templatePath,
-    context: context
+  `);
+
+  return mdx.then(({ data }) => {
+    data.allMdx.nodes.forEach(node => {
+      const componentName = navHelpers.getFileName(node.fileAbsolutePath);
+      const parentFolderName = navHelpers.getParentFolder(node.fileAbsolutePath, 3);
+      const folderName = navHelpers.getParentFolder(node.fileAbsolutePath);
+
+      let link = '/bad-page/';
+      // Create fullscreen example component pages
+      if (node.frontmatter.fullscreen) {
+        link = `/${node.frontmatter.section}/${parentFolderName}/${componentName}/`.toLowerCase();
+        // console.log('adding fullscreen page', link);
+        actions.createPage({
+          path: link,
+          component: path.resolve('./src/templates/mdxFullscreenTemplate.js'),
+          context: {
+            title: node.frontmatter.title,
+            fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
+          }
+        });
+      } else {
+        // Normal templated component pages
+        let section = node.frontmatter.section ? node.frontmatter.section : 'components';
+        link = `/${section}/${componentName}/`.toLowerCase();
+        // console.log('adding page', link);
+        actions.createPage({
+          path: link,
+          component: path.resolve('./src/templates/mdxTemplate.js'),
+          context: {
+            title: node.frontmatter.title,
+            fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
+            pathRegex: `/${folderName}\/.*/` // Helps us get the docgenned props
+          }
+        });
+      }
+    });
   });
+};
+
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        // Resolve imports in our app to node_modules so they don't break
+        '@patternfly-safe/patternfly': '@patternfly/patternfly',
+        '@patternfly-safe/react-core': '@patternfly/react-core',
+        '@patternfly-safe/react-icons': '@patternfly/react-icons',
+        '@patternfly-safe/react-tokens': '@patternfly/react-tokens',
+        // Resolve imports in .mdx files to local files
+        '@patternfly/react-charts': path.resolve(__dirname, '../react-charts'),
+        '@patternfly/react-core': path.resolve(__dirname, '../react-core'),
+        '@patternfly/react-icons': path.resolve(__dirname, '../../react-icons'),
+        '@patternfly/react-inline-edit-extension': path.resolve(__dirname, '../react-inline-edit-extension'),
+        '@patternfly/react-styled-system': path.resolve(__dirname, '../react-styled-system'),
+        '@patternfly/react-styles': path.resolve(__dirname, '../react-styles'),
+        '@patternfly/react-table': path.resolve(__dirname, '../react-table'),
+        '@patternfly/react-tokens': path.resolve(__dirname, '../react-tokens'),
+      }
+    },
+  })
 };

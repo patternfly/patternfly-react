@@ -1,11 +1,14 @@
 ---
-title: "Chip Group"
-cssPrefix: "pf-c-chip"
+title: 'Chip Group'
+cssPrefix: 'pf-c-chip'
 ---
+
+import { Badge, Chip, ChipGroup, ChipGroupItem, ChipGroupToolbarItem } from '@patternfly/react-core';
+
 ## Chip Group Toolbar
 ```js
 import React from 'react';
-import { Chip, ChipGroup, ChipGroupToolbarItem } from '@patternfly/react-core';
+import { Badge, Chip, ChipGroup, ChipGroupItem, ChipGroupToolbarItem } from '@patternfly/react-core';
 
 class ToolbarChipGroup extends React.Component {
   constructor(props) {
@@ -67,7 +70,7 @@ class ToolbarChipGroup extends React.Component {
 ## Chip Group Multi-Select
 ```js
 import React from 'react';
-import { Chip, ChipGroup, ChipGroupItem } from '@patternfly/react-core';
+import { Badge, Chip, ChipGroup, ChipGroupItem, ChipGroupToolbarItem } from '@patternfly/react-core';
 
 class MultiSelectChipGroup extends React.Component {
   constructor(props) {
@@ -103,7 +106,7 @@ class MultiSelectChipGroup extends React.Component {
 ## Badge Chip Group
 ```js
 import React from 'react';
-import { Badge, ChipGroup, Chip } from '@patternfly/react-core';
+import { Badge, Chip, ChipGroup, ChipGroupItem, ChipGroupToolbarItem } from '@patternfly/react-core';
 
 class BadgeChip extends React.Component {
   constructor(props) {

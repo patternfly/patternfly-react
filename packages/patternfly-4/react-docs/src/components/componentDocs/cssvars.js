@@ -1,5 +1,5 @@
 import React from 'react';
-import { getTokens } from '../../helpers/dynamicImports';
+import * as reactTokens from "../../../../react-tokens/dist/esm";
 
 class CSSVars extends React.Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class CSSVars extends React.Component {
       return;
     }
 
-    this.cssTokens = Object.entries(getTokens())
+    this.cssTokens = Object.entries(reactTokens)
       .filter(([key, val]) => (val.name.indexOf(props.cssPrefix) !== -1))
       .map(([key, val]) => ({
         token: key,

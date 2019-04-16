@@ -1,11 +1,25 @@
 ---
-title: "Login Page"
-cssPrefix: "pf-c-login"
+title: 'Login Page'
+cssPrefix: 'pf-c-login'
 ---
+
 ## Simple Login Page
+
+import brandImgColor from './examples/brandImgColor.svg';
+import {
+  LoginFooterItem,
+  LoginForm,
+  LoginMainFooterBandItem,
+  LoginMainFooterLinksItem,
+  LoginPage,
+  BackgroundImageSrc,
+  ListItem
+} from '@patternfly/react-core';
+import { ExclamationCircleIcon } from '@patternfly/react-icons';
+
 ```js
 import React from 'react';
-import brandImgColor from './brandImgColor.svg';
+import brandImgColor from './examples/brandImgColor.svg';
 import {
   LoginFooterItem,
   LoginForm,
@@ -139,6 +153,9 @@ class SimpleLoginPage extends React.Component {
       />
     );
 
+    const textContent = "This is placeholder text only. Use this area to place any information" + 
+      " or introductory message about your application that may be relevant to users.";
+
     return (
       <LoginPage
         footerListVariants="inline"
@@ -147,8 +164,7 @@ class SimpleLoginPage extends React.Component {
         backgroundImgSrc={this.images}
         backgroundImgAlt="Images"
         footerListItems={listItem}
-        textContent="This is placeholder text only. Use this area to place any information or introductory message about your
-        application that may be relevant to users."
+        textContent={textContent}
         loginTitle="Log in to your account"
         socialMediaLoginContent={socialMediaLoginContent}
         signUpForAccountMessage={signUpForAccountMessage}

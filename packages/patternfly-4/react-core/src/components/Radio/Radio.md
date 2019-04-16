@@ -1,7 +1,10 @@
 ---
-title: "Radio"
-cssPrefix: "pf-c-radio"
+title: 'Radio'
+cssPrefix: 'pf-c-radio'
 ---
+
+import { Radio } from '@patternfly/react-core';
+
 ## Controlled Radio
 ```js
 import React from 'react';

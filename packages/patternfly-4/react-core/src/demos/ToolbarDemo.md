@@ -1,8 +1,24 @@
 ---
-title: "Toolbar"
-section: "demos"
+title: 'Toolbar'
+section: 'demos'
 ---
 ## Toolbar Demo
+
+import {
+  Button,
+  Dropdown,
+  DropdownPosition,
+  DropdownToggle,
+  DropdownItem,
+  KebabToggle,
+  TextInput,
+  Toolbar,
+  ToolbarGroup,
+  ToolbarItem,
+  ToolbarSection
+} from '@patternfly/react-core';
+import { ListUlIcon, SortAlphaDownIcon, TableIcon } from '@patternfly/react-icons';
+
 ```js
 import React from 'react';
 import {

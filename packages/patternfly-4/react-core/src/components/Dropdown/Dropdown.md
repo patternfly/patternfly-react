@@ -1,11 +1,17 @@
 ---
-title: "Dropdown"
-cssPrefix: "pf-c-dropdown"
+title: 'Dropdown'
+cssPrefix: 'pf-c-dropdown'
 ---
+
 ## Simple Dropdown
+
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
+import { ThIcon } from '@patternfly/react-icons';
+
 ```js
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
+import { ThIcon } from '@patternfly/react-icons';
 
 class SimpleDropdown extends React.Component {
   constructor(props) {
@@ -59,7 +65,8 @@ class SimpleDropdown extends React.Component {
 ## Dropdown (disabled)
 ```js
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
+import { ThIcon } from '@patternfly/react-icons';
 
 class DisabledDropdown extends React.Component {
   constructor(props) {
@@ -101,7 +108,11 @@ class DisabledDropdown extends React.Component {
     return (
       <Dropdown
         onSelect={this.onSelect}
-        toggle={<DropdownToggle isDisabled onToggle={this.onToggle}>Dropdown</DropdownToggle>}
+        toggle={
+          <DropdownToggle isDisabled onToggle={this.onToggle}>
+            Dropdown
+          </DropdownToggle>
+        }
         isOpen={isOpen}
         dropdownItems={dropdownItems}
       />
@@ -113,7 +124,8 @@ class DisabledDropdown extends React.Component {
 ## Dropdown (position right)
 ```js
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition } from '@patternfly/react-core';
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
+import { ThIcon } from '@patternfly/react-icons';
 
 class PositionRightDropdown extends React.Component {
   constructor(props) {
@@ -168,7 +180,8 @@ class PositionRightDropdown extends React.Component {
 ## Dropdown (direction up)
 ```js
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownDirection } from '@patternfly/react-core';
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
+import { ThIcon } from '@patternfly/react-icons';
 
 class DirectionUpDropdown extends React.Component {
   constructor(props) {
@@ -223,7 +236,8 @@ class DirectionUpDropdown extends React.Component {
 ## Dropdown with Kebab
 ```js
 import React from 'react';
-import { Dropdown, KebabToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
+import { ThIcon } from '@patternfly/react-icons';
 
 class KebabDropdown extends React.Component {
   constructor(props) {
@@ -278,7 +292,7 @@ class KebabDropdown extends React.Component {
 ## Dropdown (icon only)
 ```js
 import React from 'react';
-import { Dropdown, DropdownItem, DropdownToggle, DropdownSeparator } from '@patternfly/react-core';
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
 
 class IconDropdown extends React.Component {
@@ -336,10 +350,13 @@ class IconDropdown extends React.Component {
 ```
 
 ## Dropdown Panel
+
 The Basic Dropdown is provided for flexibility in allowing various content within a dropdown.
+
 ```js
 import React from 'react';
-import { Dropdown, DropdownToggle } from '@patternfly/react-core';
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
+import { ThIcon } from '@patternfly/react-icons';
 
 class DropdownPanel extends React.Component {
   constructor(props) {
@@ -375,7 +392,9 @@ class DropdownPanel extends React.Component {
 ```
 
 ## React Router Link usage
+
 A react-router Link may be wrapped by DropdownItem or used directly within Dropdown. Here's some example HTML:
+
 ```nolive
 /** Wrapped Link for DropdownItem list **/
 <DropdownItem key="link">

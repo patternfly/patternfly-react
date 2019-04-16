@@ -1,7 +1,10 @@
 ---
-title: "Switch"
-cssPrefix: "pf-c-switch"
+title: 'Switch'
+cssPrefix: 'pf-c-switch'
 ---
+
+import { Switch } from '@patternfly/react-core';
+
 ## Simple Switch
 ```js
 import React from 'react';
@@ -52,12 +55,7 @@ class NoLabelSwitch extends React.Component {
   render() {
     const { isChecked } = this.state;
     return (
-      <Switch
-        id="no-label-switch-on"
-        aria-label="Message when on"
-        isChecked={isChecked}
-        onChange={this.handleChange}
-      />
+      <Switch id="no-label-switch-on" aria-label="Message when on" isChecked={isChecked} onChange={this.handleChange} />
     );
   }
 }
@@ -80,19 +78,9 @@ DisabledSwitch = () => (
       isDisabled
     />
     <br />
-    <Switch
-      id="disabled-no-label-switch-on"
-      aria-label="Message when on"
-      isChecked
-      isDisabled
-    />
+    <Switch id="disabled-no-label-switch-on" aria-label="Message when on" isChecked isDisabled />
     <br />
-    <Switch
-      id="disabled-no-label-switch-off"
-      aria-label="Message when on"
-      isChecked={false}
-      isDisabled
-    />
+    <Switch id="disabled-no-label-switch-off" aria-label="Message when on" isChecked={false} isDisabled />
   </React.Fragment>
 );
 ```
@@ -108,17 +96,9 @@ UncontrolledSwitch = () => (
     <br />
     <Switch id="uncontrolled-switch-off" aria-label="Message when on" label="Message when off" isChecked={false} />
     <br />
-    <Switch
-      id="uncontrolled-no-label-switch-on"
-      aria-label="Message when on"
-      isChecked
-    />
+    <Switch id="uncontrolled-no-label-switch-on" aria-label="Message when on" isChecked />
     <br />
-    <Switch
-      id="uncontrolled-no-label-switch-off"
-      aria-label="Message when on"
-      isChecked={false}
-    />
+    <Switch id="uncontrolled-no-label-switch-off" aria-label="Message when on" isChecked={false} />
   </React.Fragment>
 );
 ```

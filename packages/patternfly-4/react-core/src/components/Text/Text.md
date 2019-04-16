@@ -1,11 +1,30 @@
 ---
-title: "Text"
-cssPrefix: "pf-c-content"
+title: 'Text'
+cssPrefix: 'pf-c-content'
 ---
+
+import {
+  TextContent,
+  Text,
+  TextVariants,
+  TextList,
+  TextListVariants,
+  TextListItem,
+  TextListItemVariants
+} from '@patternfly/react-core';
+
 ## Headings
 ```js
 import React from 'react';
-import { TextContent, Text, TextVariants } from '@patternfly/react-core';
+import {
+  TextContent,
+  Text,
+  TextVariants,
+  TextList,
+  TextListVariants,
+  TextListItem,
+  TextListItemVariants
+} from '@patternfly/react-core';
 
 <TextContent>
   <Text component={TextVariants.h1}>Hello World</Text>
@@ -20,13 +39,21 @@ import { TextContent, Text, TextVariants } from '@patternfly/react-core';
 ## Body Text
 ```js
 import React from 'react';
-import { TextContent, Text, TextVariants } from '@patternfly/react-core';
+import {
+  TextContent,
+  Text,
+  TextVariants,
+  TextList,
+  TextListVariants,
+  TextListItem,
+  TextListItemVariants
+} from '@patternfly/react-core';
 
 <TextContent>
   <Text component={TextVariants.p}>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida,
-    nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio,
-    sollicitudin vel erat vel, interdum mattis neque. Sub works as well!
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc
+    varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel,
+    interdum mattis neque. Sub works as well!
   </Text>
   <Text component={TextVariants.p}>
     Quisque ante lacus, malesuada ac auctor vitae, congue{' '}
@@ -36,18 +63,28 @@ import { TextContent, Text, TextVariants } from '@patternfly/react-core';
     . Phasellus lacus ex, semper ac tortor nec, fringilla condimentum orci. Fusce eu rutrum tellus.
   </Text>
   <Text component={TextVariants.blockquote}>
-    Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit est tellus sit
-    amet turpis.
+    Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit est tellus sit amet
+    turpis.
   </Text>
   <Text component={TextVariants.small}>Sometimes you need small text to display things like date created</Text>
 </TextContent>
 ```
 
 ## Unordered List
+
 Text components such as Text, TextList, TextListItem need to be placed within a TextContent
+
 ```js
 import React from 'react';
-import { TextContent, TextList, TextListItem } from '@patternfly/react-core';
+import {
+  TextContent,
+  Text,
+  TextVariants,
+  TextList,
+  TextListVariants,
+  TextListItem,
+  TextListItemVariants
+} from '@patternfly/react-core';
 
 <TextContent>
   <TextList>
@@ -68,7 +105,15 @@ import { TextContent, TextList, TextListItem } from '@patternfly/react-core';
 ## Ordered List
 ```js
 import React from 'react';
-import { TextContent, TextList, TextListVariants, TextListItem } from '@patternfly/react-core';
+import {
+  TextContent,
+  Text,
+  TextVariants,
+  TextList,
+  TextListVariants,
+  TextListItem,
+  TextListItemVariants
+} from '@patternfly/react-core';
 
 <TextContent>
   <TextList component={TextListVariants.ol}>
@@ -86,7 +131,15 @@ import { TextContent, TextList, TextListVariants, TextListItem } from '@patternf
 ## Data List
 ```js
 import React from 'react';
-import { TextContent, TextList, TextListVariants, TextListItem, TextListItemVariants } from '@patternfly/react-core';
+import {
+  TextContent,
+  Text,
+  TextVariants,
+  TextList,
+  TextListVariants,
+  TextListItem,
+  TextListItemVariants
+} from '@patternfly/react-core';
 
 <TextContent>
   <TextList component={TextListVariants.dl}>

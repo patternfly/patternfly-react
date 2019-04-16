@@ -9,10 +9,13 @@ const DataListItem = ({ children, className, isExpanded, 'aria-labelledby': aria
     aria-labelledby={ariaLabelledBy}
     {...props}
   >
-    {React.Children.map(children, child =>
-      React.isValidElement(child) && React.cloneElement(child, {
-        rowid: ariaLabelledBy
-      })
+    {React.Children.map(
+      children,
+      child =>
+        React.isValidElement(child) &&
+        React.cloneElement(child, {
+          rowid: ariaLabelledBy
+        })
     )}
   </li>
 );
@@ -21,8 +24,8 @@ DataListItem.propTypes = {
   /** Flag to show if the expanded content of the DataList item is visible */
   isExpanded: PropTypes.bool,
   /** Content rendered inside the DataList item */
-  children: PropTypes.node,
-  /** Additional classes added to the DataList item */
+  children: PropTypes.node.isRequired,
+  /** Additional classes added to the DataList item should be either <DataListItemRow> or <DataListContent> */
   className: PropTypes.string,
   /** Adds accessible text to the DataList item */
   'aria-labelledby': PropTypes.string.isRequired,
@@ -32,7 +35,6 @@ DataListItem.propTypes = {
 
 DataListItem.defaultProps = {
   isExpanded: false,
-  children: null,
   className: ''
 };
 

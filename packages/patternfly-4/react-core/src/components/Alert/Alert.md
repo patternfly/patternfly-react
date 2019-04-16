@@ -1,7 +1,9 @@
 ---
-title: "Alert"
-cssPrefix: "pf-c-alert"
+title: 'Alert'
+cssPrefix: 'pf-c-alert'
 ---
+import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
+
 ## Info Alert
 ```js
 import React from 'react';

@@ -1,7 +1,10 @@
 ---
-title: "List"
-cssPrefix: "pf-c-list"
+title: 'List'
+cssPrefix: 'pf-c-list'
 ---
+
+import { List, ListItem } from '@patternfly/react-core';
+
 ## Simple List
 ```js
 import React from 'react';
