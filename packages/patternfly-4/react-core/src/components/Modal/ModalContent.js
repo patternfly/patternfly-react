@@ -7,7 +7,6 @@ import ModalBoxHCloseButton from './ModalBoxCloseButton';
 import ModalBox from './ModalBox';
 import ModalBoxFooter from './ModalBoxFooter';
 import Backdrop from '../Backdrop/Backdrop';
-import Bullseye from '../../layouts/Bullseye/Bullseye';
 import bullseyeStyle from '@patternfly/patternfly/layouts/Bullseye/bullseye.css';
 import { css } from '@patternfly/react-styles';
 
@@ -74,18 +73,23 @@ const ModalContent = ({
   }
   return (
     <Backdrop>
-      <Bullseye>
-        <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(bullseyeStyle.bullseye)}>
-          <ModalBox style={{ width }} className={className} isLarge={isLarge} isSmall={isSmall} title={title} id={ariaDescribedById || id}>
-            <ModalBoxHCloseButton onClose={onClose} />
-            {modalBoxHeader}
-            <ModalBoxBody {...props} id={id}>
-              {children}
-            </ModalBoxBody>
-            {modalBoxFooter}
-          </ModalBox>
-        </FocusTrap>
-      </Bullseye>
+      <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(bullseyeStyle.bullseye)}>
+        <ModalBox
+          style={{ width }}
+          className={className}
+          isLarge={isLarge}
+          isSmall={isSmall}
+          title={title}
+          id={ariaDescribedById || id}
+        >
+          <ModalBoxHCloseButton onClose={onClose} />
+          {modalBoxHeader}
+          <ModalBoxBody {...props} id={id}>
+            {children}
+          </ModalBoxBody>
+          {modalBoxFooter}
+        </ModalBox>
+      </FocusTrap>
     </Backdrop>
   );
 };
