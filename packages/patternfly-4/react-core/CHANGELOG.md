@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.2.3...@patternfly/react-core@3.2.4) (2019-04-17)
+
+
+### Bug Fixes
+
+* **react-core:** Fixes console error with perPageSuffix (Issue [#1784](https://github.com/patternfly/patternfly-react/issues/1784)) ([#1793](https://github.com/patternfly/patternfly-react/issues/1793)) ([bd67b22](https://github.com/patternfly/patternfly-react/commit/bd67b22))
+
+
+
+
+
 ## [3.2.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.2.2...@patternfly/react-core@3.2.3) (2019-04-17)
 
 
