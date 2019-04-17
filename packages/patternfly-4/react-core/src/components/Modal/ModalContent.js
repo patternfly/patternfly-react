@@ -74,18 +74,23 @@ const ModalContent = ({
   }
   return (
     <Backdrop>
-      <Bullseye>
-        <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(bullseyeStyle.bullseye)}>
-          <ModalBox style={{ width }} className={className} isLarge={isLarge} isSmall={isSmall} title={title} id={ariaDescribedById || id}>
-            <ModalBoxHCloseButton onClose={onClose} />
-            {modalBoxHeader}
-            <ModalBoxBody {...props} id={id}>
-              {children}
-            </ModalBoxBody>
-            {modalBoxFooter}
-          </ModalBox>
-        </FocusTrap>
-      </Bullseye>
+      <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(bullseyeStyle.bullseye)}>
+        <ModalBox
+          style={{ width }}
+          className={className}
+          isLarge={isLarge}
+          isSmall={isSmall}
+          title={title}
+          id={ariaDescribedById || id}
+        >
+          <ModalBoxHCloseButton onClose={onClose} />
+          {modalBoxHeader}
+          <ModalBoxBody {...props} id={id}>
+            {children}
+          </ModalBoxBody>
+          {modalBoxFooter}
+        </ModalBox>
+      </FocusTrap>
     </Backdrop>
   );
 };
