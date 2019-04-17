@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.2.2...@patternfly/react-core@3.2.3) (2019-04-17)
+
+
+### Bug Fixes
+
+* **Card:** change Header to be a div and not h1 ([#1789](https://github.com/patternfly/patternfly-react/issues/1789)) ([d69a34e](https://github.com/patternfly/patternfly-react/commit/d69a34e)), closes [#1783](https://github.com/patternfly/patternfly-react/issues/1783)
+* **Tabs:** Move TabContent outside of Tabs div ([#1788](https://github.com/patternfly/patternfly-react/issues/1788)) ([15d948c](https://github.com/patternfly/patternfly-react/commit/15d948c)), closes [#1775](https://github.com/patternfly/patternfly-react/issues/1775) [#1779](https://github.com/patternfly/patternfly-react/issues/1779)
+
+
+
+
+
 ## [3.2.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.2.1...@patternfly/react-core@3.2.2) (2019-04-16)
 
 **Note:** Version bump only for package @patternfly/react-core
