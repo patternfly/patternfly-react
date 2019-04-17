@@ -17,7 +17,7 @@ const propTypes = {
   /** A callback for when the close button is clicked */
   onClose: PropTypes.func,
   /** Product Name */
-  productName: PropTypes.string.isRequired,
+  productName: PropTypes.string,
   /** Trademark information */
   trademark: PropTypes.string,
   /** the URL of the image for the Brand. */
@@ -41,6 +41,7 @@ const defaultProps = {
   className: '',
   isOpen: false,
   onClose: () => undefined,
+  productName: '',
   trademark: '',
   logoImageSrc: '',
   logoImageAlt: ''
