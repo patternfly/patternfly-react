@@ -90,6 +90,7 @@ class OptionsMenu extends Component {
       firstIndex,
       lastIndex,
       perPage,
+      perPageSuffix,
       onPerPageSelect,
       toggleTemplate,
       ...props
