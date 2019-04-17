@@ -52,45 +52,95 @@ const defaultProps = {
 };
 
 const Tabs = ({ 'aria-label': ariaLabel, id, variant, ...props }) => {
-  const unique_id = id ? id : getUniqueId();
-  return variant === TabsVariant.nav
-    ? <TabsWithNav ariaLabel={ariaLabel} id={unique_id} {...props} />
-    : <TabsWithDiv id={unique_id} {...props} />;
-}
+  const unique_id = id || getUniqueId();
+  return variant === TabsVariant.nav ? (
+    <TabsWithNav ariaLabel={ariaLabel} id={unique_id} {...props} />
+  ) : (
+    <TabsWithDiv id={unique_id} {...props} />
+  );
+};
 
-const TabsWithNav = ({ activeKey, ariaLabel, className, id, isFilled, isSecondary, leftScrollAriaLabel, rightScrollAriaLabel, showLeftScrollButton, showRightScrollButton, highlightLeftScrollButton, highlightRightScrollButton, ...props }) => (
-  <nav {...props}
-    aria-label={ariaLabel}
-    className={css(
-      styles.tabs,
-      isFilled && styles.modifiers.fill,
-      isSecondary && styles.modifiers.tabsSecondary,
-      showLeftScrollButton && styles.modifiers.start,
-      showRightScrollButton && styles.modifiers.end,
-      highlightLeftScrollButton && styles.modifiers.startCurrent,
-      highlightRightScrollButton && styles.modifiers.endCurrent,
-      className)}
-  >
-    <InternalTabs id={id} activeKey={activeKey} leftScrollAriaLabel={leftScrollAriaLabel} rightScrollAriaLabel={rightScrollAriaLabel} {...props} />
+const TabsWithNav = ({
+  activeKey,
+  ariaLabel,
+  className,
+  id,
+  isFilled,
+  isSecondary,
+  leftScrollAriaLabel,
+  rightScrollAriaLabel,
+  showLeftScrollButton,
+  showRightScrollButton,
+  highlightLeftScrollButton,
+  highlightRightScrollButton,
+  ...props
+}) => (
+  <React.Fragment>
+    <nav
+      {...props}
+      aria-label={ariaLabel}
+      className={css(
+        styles.tabs,
+        isFilled && styles.modifiers.fill,
+        isSecondary && styles.modifiers.tabsSecondary,
+        showLeftScrollButton && styles.modifiers.start,
+        showRightScrollButton && styles.modifiers.end,
+        highlightLeftScrollButton && styles.modifiers.startCurrent,
+        highlightRightScrollButton && styles.modifiers.endCurrent,
+        className
+      )}
+    >
+      <InternalTabs
+        id={id}
+        activeKey={activeKey}
+        leftScrollAriaLabel={leftScrollAriaLabel}
+        rightScrollAriaLabel={rightScrollAriaLabel}
+        {...props}
+      />
+    </nav>
+
     <InternalTabContainer id={id} activeKey={activeKey} {...props} />
-  </nav>
+  </React.Fragment>
 );
 
-const TabsWithDiv = ({ activeKey, className, id, isFilled, isSecondary, leftScrollAriaLabel, rightScrollAriaLabel, showLeftScrollButton, showRightScrollButton, highlightLeftScrollButton, highlightRightScrollButton, ...props }) => (
-  <div {...props}
-    className={css(
-      styles.tabs,
-      isFilled && styles.modifiers.fill,
-      isSecondary && styles.modifiers.tabsSecondary,
-      showLeftScrollButton && styles.modifiers.start,
-      showRightScrollButton && styles.modifiers.end,
-      highlightLeftScrollButton && styles.modifiers.startCurrent,
-      highlightRightScrollButton && styles.modifiers.endCurrent,
-      className)}
-  >
-    <InternalTabs id={id} activeKey={activeKey} leftScrollAriaLabel={leftScrollAriaLabel} rightScrollAriaLabel={rightScrollAriaLabel} {...props} />
+const TabsWithDiv = ({
+  activeKey,
+  className,
+  id,
+  isFilled,
+  isSecondary,
+  leftScrollAriaLabel,
+  rightScrollAriaLabel,
+  showLeftScrollButton,
+  showRightScrollButton,
+  highlightLeftScrollButton,
+  highlightRightScrollButton,
+  ...props
+}) => (
+  <React.Fragment>
+    <div
+      {...props}
+      className={css(
+        styles.tabs,
+        isFilled && styles.modifiers.fill,
+        isSecondary && styles.modifiers.tabsSecondary,
+        showLeftScrollButton && styles.modifiers.start,
+        showRightScrollButton && styles.modifiers.end,
+        highlightLeftScrollButton && styles.modifiers.startCurrent,
+        highlightRightScrollButton && styles.modifiers.endCurrent,
+        className
+      )}
+    >
+      <InternalTabs
+        id={id}
+        activeKey={activeKey}
+        leftScrollAriaLabel={leftScrollAriaLabel}
+        rightScrollAriaLabel={rightScrollAriaLabel}
+        {...props}
+      />
+    </div>
     <InternalTabContainer id={id} activeKey={activeKey} {...props} />
-  </div>
+  </React.Fragment>
 );
 
 class InternalTabs extends React.Component {
@@ -214,57 +264,69 @@ class InternalTabs extends React.Component {
       highlightRightScrollButton
     } = this.state;
 
-    return <React.Fragment>
-      {!isSecondary && (
-        <button
-          className={css(styles.tabsScrollButton)}
-          variant="plain"
-          aria-label={leftScrollAriaLabel}
-          onClick={this.scrollLeft}
-        >
-          <AngleLeftIcon />
-        </button>
-      )}
-      <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
-        {children.map((child, index) => (
-          <li
-            key={index}
-            className={css(
-              styles.tabsItem,
-              child.props.eventKey === activeKey && styles.modifiers.current,
-              className
-            )}
+    return (
+      <React.Fragment>
+        {!isSecondary && (
+          <button
+            className={css(styles.tabsScrollButton)}
+            variant="plain"
+            aria-label={leftScrollAriaLabel}
+            onClick={this.scrollLeft}
           >
-            <Tab {...child.props}
-              ref={(node) => { this.child = node; }}
-              className={css(styles.tabsButton)}
-              onClick={event => this.handleTabClick(event, child.props.eventKey, child.props.tabContentRef)}
-              id={`pf-tab-${child.props.eventKey}-${child.props.id || id}`}
-              aria-controls={child.props.tabContentId ? child.props.tabContentId : `pf-tab-section-${child.props.eventKey}-${child.props.id || id}`}>
+            <AngleLeftIcon />
+          </button>
+        )}
+        <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
+          {children.map((child, index) => (
+            <li
+              key={index}
+              className={css(
+                styles.tabsItem,
+                child.props.eventKey === activeKey && styles.modifiers.current,
+                className
+              )}
+            >
+              <Tab
+                {...child.props}
+                ref={node => {
+                  this.child = node;
+                }}
+                className={css(styles.tabsButton)}
+                onClick={event => this.handleTabClick(event, child.props.eventKey, child.props.tabContentRef)}
+                id={`pf-tab-${child.props.eventKey}-${child.props.id || id}`}
+                aria-controls={
+                  child.props.tabContentId
+                    ? child.props.tabContentId
+                    : `pf-tab-section-${child.props.eventKey}-${child.props.id || id}`
+                }
+              >
                 {child.props.title}
-            </Tab>
-          </li>
-        ))}
-      </ul>
-      {!isSecondary && (
-        <button
-          className={css(styles.tabsScrollButton)}
-          variant="plain"
-          aria-label={rightScrollAriaLabel}
-          onClick={this.scrollRight}
-        >
-          <AngleRightIcon />
-        </button>
-      )}
-    </React.Fragment>;
+              </Tab>
+            </li>
+          ))}
+        </ul>
+        {!isSecondary && (
+          <button
+            className={css(styles.tabsScrollButton)}
+            variant="plain"
+            aria-label={rightScrollAriaLabel}
+            onClick={this.scrollRight}
+          >
+            <AngleRightIcon />
+          </button>
+        )}
+      </React.Fragment>
+    );
   }
 }
 
-const InternalTabContainer = ({activeKey, children, id, ...props}) => (
+const InternalTabContainer = ({ activeKey, children, id, ...props }) => (
   <React.Fragment>
-    {children.map((child, index) => (
-      !child.props.children ? null : <TabContent key={index} activeKey={activeKey} child={child} id={child.props.id || id} />
-    ))}
+    {children.map((child, index) =>
+      !child.props.children ? null : (
+        <TabContent key={index} activeKey={activeKey} child={child} id={child.props.id || id} />
+      )
+    )}
   </React.Fragment>
 );
 
