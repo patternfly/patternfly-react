@@ -16,7 +16,7 @@ const propTypes = {
     PropTypes.number
   ]),
   /** child reference for case in which a TabContent section is defined outside of a Tabs component */
-  tabContentRef: PropTypes.elementType,
+  tabContentRef: PropTypes.node,
 };
 
 const defaultProps = {
