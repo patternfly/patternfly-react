@@ -178,3 +178,57 @@ class ValidationWizard extends React.Component {
   }
 }
 ```
+
+### Full height and width wizard
+
+```js
+import React from 'react';
+import { Button, Wizard } from '@patternfly/react-core';
+import SampleFormOne from './examples/SampleFormOne';
+import SampleFormTwo from './examples/SampleFormTwo';
+
+class SimpleWizard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.toggleOpen = () => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+
+    const steps = [
+      { name: 'Step 1', component: <p>Step 1</p> },
+      { name: 'Step 2', component: <p>Step 2</p> },
+      { name: 'Step 3', component: <p>Step 3</p> },
+      { name: 'Step 4', component: <p>Step 4</p> },
+      { name: 'Final Step', component: <p>Final Step</p>, hideCancelButton: true, nextButtonText: 'Close' }
+    ];
+
+    return (
+      <React.Fragment>
+        <Button variant="primary" onClick={this.toggleOpen}>
+          Show Wizard
+        </Button>
+        {isOpen && (
+          <Wizard
+            isOpen={isOpen}
+            isFullHeight
+            isFullWidth
+            onClose={this.toggleOpen}
+            title="Simple Wizard"
+            description="Simple Wizard Description"
+            steps={steps}
+          />
+        )}
+      </React.Fragment>
+    );
+  }
+}
+```

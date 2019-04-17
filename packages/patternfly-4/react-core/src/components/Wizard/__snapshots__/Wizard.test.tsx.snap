@@ -28,6 +28,12 @@ exports[`Wizard should match snapshot 1`] = `
             aria-modal="true"
             className="pf-c-wizard"
             role="dialog"
+            style={
+              Object {
+                "height": null,
+                "width": null,
+              }
+            }
           >
             <WizardHeader
               ariaLabel="Close"
