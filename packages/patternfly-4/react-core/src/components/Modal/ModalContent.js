@@ -7,7 +7,6 @@ import ModalBoxHCloseButton from './ModalBoxCloseButton';
 import ModalBox from './ModalBox';
 import ModalBoxFooter from './ModalBoxFooter';
 import Backdrop from '../Backdrop/Backdrop';
-import Bullseye from '../../layouts/Bullseye/Bullseye';
 import bullseyeStyle from '@patternfly/patternfly/layouts/Bullseye/bullseye.css';
 import { css } from '@patternfly/react-styles';
 
