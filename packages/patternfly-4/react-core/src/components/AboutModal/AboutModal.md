@@ -1,7 +1,8 @@
 ---
-title: "About Modal"
-cssPrefix: "pf-c-about-modal-box"
+title: 'About Modal'
+cssPrefix: 'pf-c-about-modal-box'
 ---
+
 ## Simple About Modal
 
 ```js
@@ -34,7 +35,6 @@ class SimpleAboutModal extends React.Component {
         <AboutModal
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
-          productName="Product Name"
           trademark="Trademark and copyright information here"
           brandImageSrc={brandImg}
           brandImageAlt="Patternfly Logo"
