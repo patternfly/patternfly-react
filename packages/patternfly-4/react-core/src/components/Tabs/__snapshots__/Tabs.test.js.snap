@@ -241,13 +241,29 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
           </AngleRightIcon>
         </button>
       </InternalTabs>
-      <InternalTabContainer
+    </div>
+    <InternalTabContainer
+      activeKey={0}
+      id="handleScrollButtons"
+      onSelect={[Function]}
+    >
+      <ForwardRef
         activeKey={0}
-        id="handleScrollButtons"
-        onSelect={[Function]}
+        child={
+          <ForwardRef
+            eventKey={0}
+            id="tab1"
+            title="Tab item 1"
+          >
+            Tab 1 section
+          </ForwardRef>
+        }
+        id="tab1"
+        key="0"
       >
-        <ForwardRef
+        <TabContent
           activeKey={0}
+          aria-label={null}
           child={
             <ForwardRef
               eventKey={0}
@@ -257,40 +273,40 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
               Tab 1 section
             </ForwardRef>
           }
+          className={null}
           id="tab1"
-          key="0"
+          innerRef={null}
         >
-          <TabContent
-            activeKey={0}
+          <section
             aria-label={null}
-            child={
-              <ForwardRef
-                eventKey={0}
-                id="tab1"
-                title="Tab item 1"
-              >
-                Tab 1 section
-              </ForwardRef>
-            }
-            className={null}
-            id="tab1"
-            innerRef={null}
+            aria-labelledby="pf-tab-0-tab1"
+            className="pf-c-tab-content"
+            hidden={false}
+            id="pf-tab-section-0-tab1"
+            role="tabpanel"
+            tabIndex="0"
           >
-            <section
-              aria-label={null}
-              aria-labelledby="pf-tab-0-tab1"
-              className="pf-c-tab-content"
-              hidden={false}
-              id="pf-tab-section-0-tab1"
-              role="tabpanel"
-              tabIndex="0"
-            >
-              Tab 1 section
-            </section>
-          </TabContent>
-        </ForwardRef>
-        <ForwardRef
+            Tab 1 section
+          </section>
+        </TabContent>
+      </ForwardRef>
+      <ForwardRef
+        activeKey={0}
+        child={
+          <ForwardRef
+            eventKey={1}
+            id="tab2"
+            title="Tab item 2"
+          >
+            Tab 2 section
+          </ForwardRef>
+        }
+        id="tab2"
+        key="1"
+      >
+        <TabContent
           activeKey={0}
+          aria-label={null}
           child={
             <ForwardRef
               eventKey={1}
@@ -300,40 +316,40 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
               Tab 2 section
             </ForwardRef>
           }
+          className={null}
           id="tab2"
-          key="1"
+          innerRef={null}
         >
-          <TabContent
-            activeKey={0}
+          <section
             aria-label={null}
-            child={
-              <ForwardRef
-                eventKey={1}
-                id="tab2"
-                title="Tab item 2"
-              >
-                Tab 2 section
-              </ForwardRef>
-            }
-            className={null}
-            id="tab2"
-            innerRef={null}
+            aria-labelledby="pf-tab-1-tab2"
+            className="pf-c-tab-content"
+            hidden={true}
+            id="pf-tab-section-1-tab2"
+            role="tabpanel"
+            tabIndex="0"
           >
-            <section
-              aria-label={null}
-              aria-labelledby="pf-tab-1-tab2"
-              className="pf-c-tab-content"
-              hidden={true}
-              id="pf-tab-section-1-tab2"
-              role="tabpanel"
-              tabIndex="0"
-            >
-              Tab 2 section
-            </section>
-          </TabContent>
-        </ForwardRef>
-        <ForwardRef
+            Tab 2 section
+          </section>
+        </TabContent>
+      </ForwardRef>
+      <ForwardRef
+        activeKey={0}
+        child={
+          <ForwardRef
+            eventKey={2}
+            id="tab3"
+            title="Tab item 3"
+          >
+            Tab 3 section
+          </ForwardRef>
+        }
+        id="tab3"
+        key="2"
+      >
+        <TabContent
           activeKey={0}
+          aria-label={null}
           child={
             <ForwardRef
               eventKey={2}
@@ -343,40 +359,24 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
               Tab 3 section
             </ForwardRef>
           }
+          className={null}
           id="tab3"
-          key="2"
+          innerRef={null}
         >
-          <TabContent
-            activeKey={0}
+          <section
             aria-label={null}
-            child={
-              <ForwardRef
-                eventKey={2}
-                id="tab3"
-                title="Tab item 3"
-              >
-                Tab 3 section
-              </ForwardRef>
-            }
-            className={null}
-            id="tab3"
-            innerRef={null}
+            aria-labelledby="pf-tab-2-tab3"
+            className="pf-c-tab-content"
+            hidden={true}
+            id="pf-tab-section-2-tab3"
+            role="tabpanel"
+            tabIndex="0"
           >
-            <section
-              aria-label={null}
-              aria-labelledby="pf-tab-2-tab3"
-              className="pf-c-tab-content"
-              hidden={true}
-              id="pf-tab-section-2-tab3"
-              role="tabpanel"
-              tabIndex="0"
-            >
-              Tab 3 section
-            </section>
-          </TabContent>
-        </ForwardRef>
-      </InternalTabContainer>
-    </div>
+            Tab 3 section
+          </section>
+        </TabContent>
+      </ForwardRef>
+    </InternalTabContainer>
   </TabsWithDiv>
 </Tabs>
 `;
@@ -622,13 +622,29 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
           </AngleRightIcon>
         </button>
       </InternalTabs>
-      <InternalTabContainer
+    </div>
+    <InternalTabContainer
+      activeKey={0}
+      id="scrollLeft"
+      onSelect={[Function]}
+    >
+      <ForwardRef
         activeKey={0}
-        id="scrollLeft"
-        onSelect={[Function]}
+        child={
+          <ForwardRef
+            eventKey={0}
+            id="tab1"
+            title="Tab item 1"
+          >
+            Tab 1 section
+          </ForwardRef>
+        }
+        id="tab1"
+        key="0"
       >
-        <ForwardRef
+        <TabContent
           activeKey={0}
+          aria-label={null}
           child={
             <ForwardRef
               eventKey={0}
@@ -638,40 +654,40 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
               Tab 1 section
             </ForwardRef>
           }
+          className={null}
           id="tab1"
-          key="0"
+          innerRef={null}
         >
-          <TabContent
-            activeKey={0}
+          <section
             aria-label={null}
-            child={
-              <ForwardRef
-                eventKey={0}
-                id="tab1"
-                title="Tab item 1"
-              >
-                Tab 1 section
-              </ForwardRef>
-            }
-            className={null}
-            id="tab1"
-            innerRef={null}
+            aria-labelledby="pf-tab-0-tab1"
+            className="pf-c-tab-content"
+            hidden={false}
+            id="pf-tab-section-0-tab1"
+            role="tabpanel"
+            tabIndex="0"
           >
-            <section
-              aria-label={null}
-              aria-labelledby="pf-tab-0-tab1"
-              className="pf-c-tab-content"
-              hidden={false}
-              id="pf-tab-section-0-tab1"
-              role="tabpanel"
-              tabIndex="0"
-            >
-              Tab 1 section
-            </section>
-          </TabContent>
-        </ForwardRef>
-        <ForwardRef
+            Tab 1 section
+          </section>
+        </TabContent>
+      </ForwardRef>
+      <ForwardRef
+        activeKey={0}
+        child={
+          <ForwardRef
+            eventKey={1}
+            id="tab2"
+            title="Tab item 2"
+          >
+            Tab 2 section
+          </ForwardRef>
+        }
+        id="tab2"
+        key="1"
+      >
+        <TabContent
           activeKey={0}
+          aria-label={null}
           child={
             <ForwardRef
               eventKey={1}
@@ -681,40 +697,40 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
               Tab 2 section
             </ForwardRef>
           }
+          className={null}
           id="tab2"
-          key="1"
+          innerRef={null}
         >
-          <TabContent
-            activeKey={0}
+          <section
             aria-label={null}
-            child={
-              <ForwardRef
-                eventKey={1}
-                id="tab2"
-                title="Tab item 2"
-              >
-                Tab 2 section
-              </ForwardRef>
-            }
-            className={null}
-            id="tab2"
-            innerRef={null}
+            aria-labelledby="pf-tab-1-tab2"
+            className="pf-c-tab-content"
+            hidden={true}
+            id="pf-tab-section-1-tab2"
+            role="tabpanel"
+            tabIndex="0"
           >
-            <section
-              aria-label={null}
-              aria-labelledby="pf-tab-1-tab2"
-              className="pf-c-tab-content"
-              hidden={true}
-              id="pf-tab-section-1-tab2"
-              role="tabpanel"
-              tabIndex="0"
-            >
-              Tab 2 section
-            </section>
-          </TabContent>
-        </ForwardRef>
-        <ForwardRef
+            Tab 2 section
+          </section>
+        </TabContent>
+      </ForwardRef>
+      <ForwardRef
+        activeKey={0}
+        child={
+          <ForwardRef
+            eventKey={2}
+            id="tab3"
+            title="Tab item 3"
+          >
+            Tab 3 section
+          </ForwardRef>
+        }
+        id="tab3"
+        key="2"
+      >
+        <TabContent
           activeKey={0}
+          aria-label={null}
           child={
             <ForwardRef
               eventKey={2}
@@ -724,40 +740,24 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
               Tab 3 section
             </ForwardRef>
           }
+          className={null}
           id="tab3"
-          key="2"
+          innerRef={null}
         >
-          <TabContent
-            activeKey={0}
+          <section
             aria-label={null}
-            child={
-              <ForwardRef
-                eventKey={2}
-                id="tab3"
-                title="Tab item 3"
-              >
-                Tab 3 section
-              </ForwardRef>
-            }
-            className={null}
-            id="tab3"
-            innerRef={null}
+            aria-labelledby="pf-tab-2-tab3"
+            className="pf-c-tab-content"
+            hidden={true}
+            id="pf-tab-section-2-tab3"
+            role="tabpanel"
+            tabIndex="0"
           >
-            <section
-              aria-label={null}
-              aria-labelledby="pf-tab-2-tab3"
-              className="pf-c-tab-content"
-              hidden={true}
-              id="pf-tab-section-2-tab3"
-              role="tabpanel"
-              tabIndex="0"
-            >
-              Tab 3 section
-            </section>
-          </TabContent>
-        </ForwardRef>
-      </InternalTabContainer>
-    </div>
+            Tab 3 section
+          </section>
+        </TabContent>
+      </ForwardRef>
+    </InternalTabContainer>
   </TabsWithDiv>
 </Tabs>
 `;
@@ -1003,13 +1003,29 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
           </AngleRightIcon>
         </button>
       </InternalTabs>
-      <InternalTabContainer
+    </div>
+    <InternalTabContainer
+      activeKey={0}
+      id="scrollRight"
+      onSelect={[Function]}
+    >
+      <ForwardRef
         activeKey={0}
-        id="scrollRight"
-        onSelect={[Function]}
+        child={
+          <ForwardRef
+            eventKey={0}
+            id="tab1"
+            title="Tab item 1"
+          >
+            Tab 1 section
+          </ForwardRef>
+        }
+        id="tab1"
+        key="0"
       >
-        <ForwardRef
+        <TabContent
           activeKey={0}
+          aria-label={null}
           child={
             <ForwardRef
               eventKey={0}
@@ -1019,40 +1035,40 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
               Tab 1 section
             </ForwardRef>
           }
+          className={null}
           id="tab1"
-          key="0"
+          innerRef={null}
         >
-          <TabContent
-            activeKey={0}
+          <section
             aria-label={null}
-            child={
-              <ForwardRef
-                eventKey={0}
-                id="tab1"
-                title="Tab item 1"
-              >
-                Tab 1 section
-              </ForwardRef>
-            }
-            className={null}
-            id="tab1"
-            innerRef={null}
+            aria-labelledby="pf-tab-0-tab1"
+            className="pf-c-tab-content"
+            hidden={false}
+            id="pf-tab-section-0-tab1"
+            role="tabpanel"
+            tabIndex="0"
           >
-            <section
-              aria-label={null}
-              aria-labelledby="pf-tab-0-tab1"
-              className="pf-c-tab-content"
-              hidden={false}
-              id="pf-tab-section-0-tab1"
-              role="tabpanel"
-              tabIndex="0"
-            >
-              Tab 1 section
-            </section>
-          </TabContent>
-        </ForwardRef>
-        <ForwardRef
+            Tab 1 section
+          </section>
+        </TabContent>
+      </ForwardRef>
+      <ForwardRef
+        activeKey={0}
+        child={
+          <ForwardRef
+            eventKey={1}
+            id="tab2"
+            title="Tab item 2"
+          >
+            Tab 2 section
+          </ForwardRef>
+        }
+        id="tab2"
+        key="1"
+      >
+        <TabContent
           activeKey={0}
+          aria-label={null}
           child={
             <ForwardRef
               eventKey={1}
@@ -1062,40 +1078,40 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
               Tab 2 section
             </ForwardRef>
           }
+          className={null}
           id="tab2"
-          key="1"
+          innerRef={null}
         >
-          <TabContent
-            activeKey={0}
+          <section
             aria-label={null}
-            child={
-              <ForwardRef
-                eventKey={1}
-                id="tab2"
-                title="Tab item 2"
-              >
-                Tab 2 section
-              </ForwardRef>
-            }
-            className={null}
-            id="tab2"
-            innerRef={null}
+            aria-labelledby="pf-tab-1-tab2"
+            className="pf-c-tab-content"
+            hidden={true}
+            id="pf-tab-section-1-tab2"
+            role="tabpanel"
+            tabIndex="0"
           >
-            <section
-              aria-label={null}
-              aria-labelledby="pf-tab-1-tab2"
-              className="pf-c-tab-content"
-              hidden={true}
-              id="pf-tab-section-1-tab2"
-              role="tabpanel"
-              tabIndex="0"
-            >
-              Tab 2 section
-            </section>
-          </TabContent>
-        </ForwardRef>
-        <ForwardRef
+            Tab 2 section
+          </section>
+        </TabContent>
+      </ForwardRef>
+      <ForwardRef
+        activeKey={0}
+        child={
+          <ForwardRef
+            eventKey={2}
+            id="tab3"
+            title="Tab item 3"
+          >
+            Tab 3 section
+          </ForwardRef>
+        }
+        id="tab3"
+        key="2"
+      >
+        <TabContent
           activeKey={0}
+          aria-label={null}
           child={
             <ForwardRef
               eventKey={2}
@@ -1105,40 +1121,24 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
               Tab 3 section
             </ForwardRef>
           }
+          className={null}
           id="tab3"
-          key="2"
+          innerRef={null}
         >
-          <TabContent
-            activeKey={0}
+          <section
             aria-label={null}
-            child={
-              <ForwardRef
-                eventKey={2}
-                id="tab3"
-                title="Tab item 3"
-              >
-                Tab 3 section
-              </ForwardRef>
-            }
-            className={null}
-            id="tab3"
-            innerRef={null}
+            aria-labelledby="pf-tab-2-tab3"
+            className="pf-c-tab-content"
+            hidden={true}
+            id="pf-tab-section-2-tab3"
+            role="tabpanel"
+            tabIndex="0"
           >
-            <section
-              aria-label={null}
-              aria-labelledby="pf-tab-2-tab3"
-              className="pf-c-tab-content"
-              hidden={true}
-              id="pf-tab-section-2-tab3"
-              role="tabpanel"
-              tabIndex="0"
-            >
-              Tab 3 section
-            </section>
-          </TabContent>
-        </ForwardRef>
-      </InternalTabContainer>
-    </div>
+            Tab 3 section
+          </section>
+        </TabContent>
+      </ForwardRef>
+    </InternalTabContainer>
   </TabsWithDiv>
 </Tabs>
 `;
