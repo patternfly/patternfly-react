@@ -24,20 +24,24 @@ const defaultProps = {
 class TabContent extends React.Component {
   render() {
     const { id, activeKey, 'aria-label': ariaLabel, child, children, className, eventKey, innerRef, ...props } = this.props;
-    return <section
-      ref={innerRef}
-      index={eventKey}
-      hidden={children ? null : child.props.eventKey !== activeKey}
-      className={children ? css('pf-c-tab-content', className) : css('pf-c-tab-content', child.props.className)}
-      id={children ? id : `pf-tab-section-${child.props.eventKey}-${id}`}
-      aria-label={ariaLabel}
-      aria-labelledby={ariaLabel ? null : children ? `pf-tab-${eventKey}-${id}` : `pf-tab-${child.props.eventKey}-${id}`}
-      role="tabpanel"
-      tabIndex="0"
-      {...props}
-    >
-      {children ? children : child.props.children}
-    </section>;
+    if (children || child) {
+      return <section
+        ref={ innerRef }
+        index={ eventKey }
+        hidden={ children ? null : child.props.eventKey !== activeKey }
+        className={ children ? css('pf-c-tab-content', className) : css('pf-c-tab-content', child.props.className) }
+        id={ children ? id : `pf-tab-section-${child.props.eventKey}-${id}` }
+        aria-label={ ariaLabel }
+        aria-labelledby={ ariaLabel ? null : children ? `pf-tab-${eventKey}-${id}` : `pf-tab-${child.props.eventKey}-${id}` }
+        role="tabpanel"
+        tabIndex="0"
+        {...props}
+       >
+         {children ? children : child.props.children}
+       </section>;
+    } else {
+      return null;
+    }
   }
 }
 
