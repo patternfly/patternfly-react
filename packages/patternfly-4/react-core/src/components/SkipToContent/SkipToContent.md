@@ -1,5 +1,6 @@
 ---
-title: 'SkipToContent'
+title: 'Skip To Content'
+section: 'components'
 cssPrefix: 'pf-c-skip-to-content'
 ---
 
