@@ -1,19 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Expandable 1`] = `
-.pf-c-expandable__toggle-icon {
-  display: block;
-}
-.pf-c-expandable__toggle {
-  display: block;
-}
-.pf-c-expandable__content {
-  display: block;
-}
-.pf-c-expandable {
-  display: block;
-}
-
 <div
   className="pf-c-expandable"
 >
@@ -41,19 +28,6 @@ exports[`Expandable 1`] = `
 `;
 
 exports[`Renders Expandable expanded 1`] = `
-.pf-c-expandable__toggle-icon {
-  display: block;
-}
-.pf-c-expandable__toggle {
-  display: block;
-}
-.pf-c-expandable__content {
-  display: block;
-}
-.pf-c-expandable.pf-m-expanded {
-  display: block;
-}
-
 <div
   className="pf-c-expandable pf-m-expanded"
 >
