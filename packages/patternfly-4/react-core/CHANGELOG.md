@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.4.0...@patternfly/react-core@3.4.1) (2019-04-18)
+
+
+### Bug Fixes
+
+* **login:** added login subtitle ([#1696](https://github.com/patternfly/patternfly-react/issues/1696)) ([4864eb6](https://github.com/patternfly/patternfly-react/commit/4864eb6))
+
+
+
+
+
 # [3.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.3.0...@patternfly/react-core@3.4.0) (2019-04-18)
 
 
