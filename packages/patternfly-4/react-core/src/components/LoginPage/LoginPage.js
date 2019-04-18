@@ -50,6 +50,8 @@ const propTypes = {
   footerListVariants: PropTypes.oneOf(Object.values(LoginListVariant)),
   /** Title for the Login Main Body Header of the LoginPage */
   loginTitle: PropTypes.string.isRequired,
+  /** Subtitle for the Login Main Body Header of the LoginPage */
+  loginSubtitle: PropTypes.string,
   /** Content rendered inside of Login Main Footer Band to display a sign up for account message */
   signUpForAccountMessage: PropTypes.node,
   /** Content rendered inside of Login Main Footer Band do display a forgot credentials link* */
@@ -86,6 +88,7 @@ const LoginPage = ({
   footerListItems,
   footerListVariants,
   loginTitle,
+  loginSubtitle,
   signUpForAccountMessage,
   forgotCredentials,
   socialMediaLoginContent,
@@ -108,7 +111,7 @@ const LoginPage = ({
     <React.Fragment>
       {backgroundImgSrc && <BackgroundImage src={backgroundImgSrc} alt={backgroundImgAlt} />}
       <Login header={Header} footer={Footer} {...props} className={css(className)}>
-        <LoginMainHeader title={loginTitle} />
+        <LoginMainHeader title={loginTitle} subtitle={loginSubtitle}/>
         <LoginMainBody>{children}</LoginMainBody>
         {(socialMediaLoginContent || forgotCredentials || signUpForAccountMessage) && (
           <LoginMainFooter
