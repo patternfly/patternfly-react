@@ -127,5 +127,8 @@
     "packages": [
       "packages/**"
     ]
+  },
+  "dependencies": {
+    "folder-hash": "^3.0.0"
   }
 }
