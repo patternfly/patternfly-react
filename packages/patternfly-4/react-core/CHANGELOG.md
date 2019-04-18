@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.2.8...@patternfly/react-core@3.3.0) (2019-04-18)
+
+
+### Features
+
+* **Expandable:** Add PF4 Expandable Component ([#1685](https://github.com/patternfly/patternfly-react/issues/1685)) ([26aad7e](https://github.com/patternfly/patternfly-react/commit/26aad7e)), closes [#1403](https://github.com/patternfly/patternfly-react/issues/1403)
+
+
+
+
+
 ## [3.2.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.2.7...@patternfly/react-core@3.2.8) (2019-04-18)
 
 **Note:** Version bump only for package @patternfly/react-core
