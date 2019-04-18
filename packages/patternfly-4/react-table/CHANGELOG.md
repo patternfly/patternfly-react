@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.1.10...@patternfly/react-table@2.1.11) (2019-04-18)
+
+
+### Bug Fixes
+
+* **Table:** Add ability to center-align header and cell text ([#1700](https://github.com/patternfly/patternfly-react/issues/1700)) ([8a34ef2](https://github.com/patternfly/patternfly-react/commit/8a34ef2)), closes [#1482](https://github.com/patternfly/patternfly-react/issues/1482)
+
+
+
+
+
 ## [2.1.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.1.9...@patternfly/react-table@2.1.10) (2019-04-18)
 
 **Note:** Version bump only for package @patternfly/react-table
