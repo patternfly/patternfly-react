@@ -4,9 +4,10 @@ const Project = require('@lerna/project');
 const RunCommand = require('@lerna/run')
 const filterPackages = require('@lerna/filter-packages');
 
+const cacheFile = '.cache/incrementalCache'
 let cache = {}
-if (fs.existsSync('.incrementalCache')) {
-  cache = require('.incrementalCache')
+if (fs.existsSync(cacheFile)) {
+  cache = JSON.parse(fs.readFileSync(cacheFile, 'utf8'));
 }
 
 const lernaRoot = new Project(__dirname);
@@ -19,7 +20,7 @@ const whitelist = [
   '@patternfly/react-styles',
   '@patternfly/react-table',
   '@patternfly/react-tokens',
-  '@patternfly/react-icons'
+  '@patternfly/react-icons',
 ]
 
 // These are packages we need to rebuild
@@ -28,18 +29,30 @@ async function getInvalidPackages() {
 
   for (let p of packages) {
     // Assume src directory gets made into dist
-    const hash = (await hashElement(`${p.location}/src`)).hash
-    p.valid = cache && cache[p] === hash
+    const watchDir = p.name === '@patternfly/react-icons' ? 'build' : 'src'
+    p.hash = (await hashElement(`${p.location}/${watchDir}`)).hash
+    p.valid = cache && cache[p.name] === p.hash
   }
 
-  return packages.filter(package => !package.valid)
+  return packages.filter(p => !p.valid)
 }
 
 async function incrementalBuild() {
-  // const toBuild = await getInvalidPackages()
+  const packages = await getInvalidPackages()
 
-  // console.log('toBuild', toBuild)
-  await RunCommand({cwd: '.', script: 'build', npmClient: 'yarn'})
+  if (packages.length > 0) {
+    // Run for all invalid packages
+    // console.log(packages.map(p => p.name))
+    await RunCommand({
+      cwd: '.',
+      script: 'build',
+      npmClient: 'yarn',
+      scope: packages.map(p => p.name)})
+    // Mark as valid
+    packages.forEach(p => cache[p.name] = p.hash)
+    fs.mkdirSync('.cache')
+    fs.writeFileSync(cacheFile, JSON.stringify(cache, null, 4))
+  }
 }
 
 incrementalBuild().then()

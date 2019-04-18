@@ -47,6 +47,7 @@
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
     "build:ts": "node ./scripts/copyTS.js",
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose",
     "postbuild": "node ./build/copyStyles.js"
   },
   "optionalDependencies": {
