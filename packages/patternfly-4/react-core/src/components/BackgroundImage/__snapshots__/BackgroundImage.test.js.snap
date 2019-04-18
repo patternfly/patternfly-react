@@ -7,7 +7,11 @@ exports[`BackgroundImage 1`] = `
 
 <div
   className="pf-c-background-image css-8uc5im"
-/>
+>
+  <img
+    src="/assets/images/background-filter.svg"
+  />
+</div>
 `;
 
 exports[`BackgroundImage 2`] = `
@@ -17,7 +21,11 @@ exports[`BackgroundImage 2`] = `
 
 <div
   className="pf-c-background-image css-8uc5im"
-/>
+>
+  <img
+    src="/assets/images/background-filter.svg"
+  />
+</div>
 `;
 
 exports[`allows passing in a single string as the image src 1`] = `
@@ -27,5 +35,7 @@ exports[`allows passing in a single string as the image src 1`] = `
 
 <div
   className="pf-c-background-image css-87fi6b"
-/>
+>
+  <img />
+</div>
 `;

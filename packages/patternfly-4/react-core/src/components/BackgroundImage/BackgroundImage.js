@@ -75,7 +75,7 @@ const BackgroundImage = ({ className, src, ...props }) => {
     }`
     });
 
-  const svgPath = src[BackgroundImageSrc.filter].replace(/#.*/, '')
+  const svgPath = src[BackgroundImageSrc.filter]
 
   return (
     <div className={css(styles.backgroundImage, bgStyles.bgOverrides, className)}>
