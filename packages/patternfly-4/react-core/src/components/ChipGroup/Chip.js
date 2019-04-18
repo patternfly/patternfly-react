@@ -6,6 +6,7 @@ import { Tooltip, TooltipPosition } from '../Tooltip';
 import { TimesCircleIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/patternfly/components/Chip/chip.css';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
+import { componentShape } from '../../helpers/componentShape';
 
 class Chip extends React.Component {
   span = React.createRef();
@@ -18,51 +19,63 @@ class Chip extends React.Component {
   }
 
   renderOverflowChip = () => {
-    const { children, className, onClick } = this.props;
+    const { children, className, onClick, component: Component } = this.props;
     return (
-      <div className={css(styles.chip, styles.modifiers.overflow, className)}>
+      <Component className={css(styles.chip, styles.modifiers.overflow, className)}>
         <ChipButton onClick={onClick}>
           <span className={css(styles.chipText)}>{children}</span>
         </ChipButton>
-      </div>
+      </Component>
     );
   };
 
   renderChip = randomId => {
-    const { children, closeBtnAriaLabel, tooltipPosition, className, onClick } = this.props;
+    const {
+      children,
+      closeBtnAriaLabel,
+      tooltipPosition,
+      className,
+      component: Component,
+      onClick,
+      isReadOnly
+    } = this.props;
     if (this.state.isTooltipVisible) {
       return (
         <Tooltip position={tooltipPosition} content={children}>
-          <li className={css(styles.chip, className)}>
+          <Component className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}>
             <span ref={this.span} className={css(styles.chipText)} id={randomId}>
               {children}
             </span>
-            <ChipButton
-              onClick={onClick}
-              ariaLabel={closeBtnAriaLabel}
-              id={`remove_${randomId}`}
-              aria-labelledby={`remove_${randomId} ${randomId}`}
-            >
-              <TimesCircleIcon aria-hidden="true" />
-            </ChipButton>
-          </li>
+            {!isReadOnly && (
+              <ChipButton
+                onClick={onClick}
+                ariaLabel={closeBtnAriaLabel}
+                id={`remove_${randomId}`}
+                aria-labelledby={`remove_${randomId} ${randomId}`}
+              >
+                <TimesCircleIcon aria-hidden="true" />
+              </ChipButton>
+            )}
+          </Component>
         </Tooltip>
       );
     }
     return (
-      <li className={css(styles.chip, className)}>
+      <Component className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}>
         <span ref={this.span} className={css(styles.chipText)} id={randomId}>
           {children}
         </span>
-        <ChipButton
-          onClick={onClick}
-          ariaLabel={closeBtnAriaLabel}
-          id={`remove_${randomId}`}
-          aria-labelledby={`remove_${randomId} ${randomId}`}
-        >
-          <TimesCircleIcon aria-hidden="true" />
-        </ChipButton>
-      </li>
+        {!isReadOnly && (
+          <ChipButton
+            onClick={onClick}
+            ariaLabel={closeBtnAriaLabel}
+            id={`remove_${randomId}`}
+            aria-labelledby={`remove_${randomId} ${randomId}`}
+          >
+            <TimesCircleIcon aria-hidden="true" />
+          </ChipButton>
+        )}
+      </Component>
     );
   };
 
@@ -82,8 +95,12 @@ Chip.propTypes = {
   className: PropTypes.string,
   /** Flag indicating if the chip has overflow */
   isOverflowChip: PropTypes.bool,
+  /** Flag if chip is read only */
+  isReadOnly: PropTypes.bool,
   /** Function that is called when clicking on the chip button */
   onClick: PropTypes.func,
+  /** Interal flag for which component will be used for chip */
+  component: componentShape,
   /** Position of the tooltip which is displayed if text is longer */
   tooltipPosition: PropTypes.oneOf(Object.values(TooltipPosition))
 };
@@ -93,8 +110,10 @@ Chip.defaultProps = {
   closeBtnAriaLabel: 'close',
   className: '',
   isOverflowChip: false,
+  isReadOnly: false,
   tooltipPosition: 'top',
-  onClick: () => {}
+  onClick: () => {},
+  component: 'div'
 };
 
 export default Chip;

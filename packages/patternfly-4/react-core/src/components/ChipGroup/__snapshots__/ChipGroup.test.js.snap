@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChipGroup chip group default 1`] = `
-<div
+<ul
   className="pf-c-chip-group"
 >
   <InnerChipGroup
@@ -15,14 +15,16 @@ exports[`ChipGroup chip group default 1`] = `
     <Chip
       className=""
       closeBtnAriaLabel="close"
+      component="div"
       isOverflowChip={false}
+      isReadOnly={false}
       onClick={[Function]}
       tooltipPosition="top"
     >
       1.1
     </Chip>
   </InnerChipGroup>
-</div>
+</ul>
 `;
 
 exports[`ChipGroup chip group with toolbar 1`] = `
@@ -41,7 +43,9 @@ exports[`ChipGroup chip group with toolbar 1`] = `
     <Chip
       className=""
       closeBtnAriaLabel="close"
+      component="div"
       isOverflowChip={false}
+      isReadOnly={false}
       onClick={[Function]}
       tooltipPosition="top"
     >
