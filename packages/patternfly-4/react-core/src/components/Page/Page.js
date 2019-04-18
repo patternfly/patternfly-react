@@ -19,7 +19,7 @@ const propTypes = {
   header: PropTypes.node,
   /** Sidebar component for a side nav (e.g. <PageSidebar />) */
   sidebar: PropTypes.node,
-  /** Skip to content componet for the page */
+  /** Skip to content component for the page */
   skipToContent: PropTypes.node,
   /** If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
    * the sidebar component or add a callback onNavToggle function into the PageHeader component */

@@ -5,6 +5,7 @@ export interface PageProps extends HTMLProps<HTMLDivElement> {
   className?: string;
   header?: ReactNode;
   sidebar?: ReactNode;
+  skipToContent?: ReactNode,
   isManagedSidebar?: boolean;
   onPageResize?: Function;
 }
