@@ -37,9 +37,9 @@ const generateHeader = ({ transforms: origTransforms, formatters: origFormatters
 const generateCell = ({ cellFormatters, cellTransforms, cell }) => ({
   ...cell,
   transforms: [
-    mapProps,
     ...(cellTransforms || []),
-    ...(cell && cell.hasOwnProperty('transforms') ? cell.transforms : [])
+    ...(cell && cell.hasOwnProperty('transforms') ? cell.transforms : []),
+    mapProps // This transform should be applied last so that props that are manually defined at the cell level will override all other transforms.
   ],
   formatters: [
     defaultTitle,

@@ -14,7 +14,8 @@ import {
   headerCol,
   TableVariant,
   expandable,
-  cellWidth
+  cellWidth,
+  textCenter,
 } from '@patternfly/react-table';
 
 ## Simple Table
@@ -30,14 +31,25 @@ import {
   headerCol,
   TableVariant,
   expandable,
-  cellWidth
+  cellWidth,
+  textCenter,
 } from '@patternfly/react-table';
 
 class SimpleTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
+      columns: [
+        { title: 'Repositories' },
+        'Branches',
+        { title: 'Pull requests' },
+        'Workspaces',
+        {
+          title: 'Last Commit',
+          transforms: [textCenter],
+          cellTransforms: [textCenter]
+        }
+      ],
       rows: [
         ['one', 'two', 'three', 'four', 'five'],
         [
@@ -47,6 +59,16 @@ class SimpleTable extends React.Component {
           },
           'four - 2',
           'five - 2'
+        ],
+        [
+          'one - 3',
+          'two - 3',
+          'three - 3',
+          'four - 3',
+          {
+            title: 'five - 3 (not centered)',
+            props: { textCenter: false }
+          }
         ]
       ]
     };
