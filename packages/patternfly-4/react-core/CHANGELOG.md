@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.2.6...@patternfly/react-core@3.2.7) (2019-04-17)
+
+
+### Bug Fixes
+
+* **Modal:** Remove extra Bullseye from Modal ([#1799](https://github.com/patternfly/patternfly-react/issues/1799)) ([00bda05](https://github.com/patternfly/patternfly-react/commit/00bda05)), closes [#1722](https://github.com/patternfly/patternfly-react/issues/1722)
+
+
+
+
+
 ## [3.2.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.2.5...@patternfly/react-core@3.2.6) (2019-04-17)
 
 
