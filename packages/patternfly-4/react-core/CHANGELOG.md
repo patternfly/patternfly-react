@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.3.0...@patternfly/react-core@3.4.0) (2019-04-18)
+
+
+### Features
+
+* **Chip:** add read-only chip, add single chip examples ([#1639](https://github.com/patternfly/patternfly-react/issues/1639)) ([a127563](https://github.com/patternfly/patternfly-react/commit/a127563))
+
+
+
+
+
 # [3.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.2.8...@patternfly/react-core@3.3.0) (2019-04-18)
 
 
