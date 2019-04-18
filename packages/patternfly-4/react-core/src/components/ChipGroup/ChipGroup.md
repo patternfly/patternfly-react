@@ -3,6 +3,8 @@ title: 'Chip Group'
 cssPrefix: 'pf-c-chip'
 ---
 
+import { Badge, Chip, ChipGroup, ChipGroupItem, ChipGroupToolbarItem } from '@patternfly/react-core';
+
 ## Chip
 
 ```js
