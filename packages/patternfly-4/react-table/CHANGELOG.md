@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.1.8...@patternfly/react-table@2.1.9) (2019-04-18)
+
+
+### Bug Fixes
+
+* **Table:** Fix Table component accessibility issues ([#1659](https://github.com/patternfly/patternfly-react/issues/1659)) ([dc24dbe](https://github.com/patternfly/patternfly-react/commit/dc24dbe)), closes [#1460](https://github.com/patternfly/patternfly-react/issues/1460)
+
+
+
+
+
 ## [2.1.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.1.7...@patternfly/react-table@2.1.8) (2019-04-18)
 
 **Note:** Version bump only for package @patternfly/react-table
