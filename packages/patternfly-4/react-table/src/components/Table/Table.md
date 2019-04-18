@@ -2,6 +2,7 @@
 title: 'Table'
 cssPrefix: 'pf-c-table'
 ---
+
 Note: Table lives in its own package at [`@patternfly/react-table`](https://www.npmjs.com/package/@patternfly/react-table)!
 
 import {
@@ -17,6 +18,7 @@ import {
 } from '@patternfly/react-table';
 
 ## Simple Table
+
 ```js
 import React from 'react';
 import {
@@ -64,6 +66,7 @@ class SimpleTable extends React.Component {
 ```
 
 ## Sortable Table
+
 ```js
 import React from 'react';
 import {
@@ -120,6 +123,7 @@ class SortableTable extends React.Component {
 ```
 
 ## Selectable Table
+
 ```js
 import React from 'react';
 import {
@@ -138,7 +142,13 @@ class SelectableTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
+      columns: [
+        { title: 'Repositories', cellTransforms: [headerCol()] },
+        'Branches',
+        { title: 'Pull requests' },
+        'Workspaces',
+        'Last Commit'
+      ],
       rows: [
         {
           cells: ['one', 'two', 'a', 'four', 'five']
@@ -184,6 +194,7 @@ class SelectableTable extends React.Component {
 ```
 
 ## Simple Actions Table
+
 ```js
 import React from 'react';
 import {
@@ -202,7 +213,13 @@ class SimpleActionsTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
+      columns: [
+        { title: 'Repositories', cellTransforms: [headerCol()] },
+        'Branches',
+        { title: 'Pull requests' },
+        'Workspaces',
+        'Last Commit'
+      ],
       rows: [
         {
           cells: ['one', 'two', 'a', 'four', 'five']
@@ -248,6 +265,7 @@ class SimpleActionsTable extends React.Component {
 ```
 
 ## Actions Table
+
 ```js
 import React from 'react';
 import {
@@ -266,7 +284,13 @@ class ActionsTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
+      columns: [
+        { title: 'Repositories', cellTransforms: [headerCol()] },
+        'Branches',
+        { title: 'Pull requests' },
+        'Workspaces',
+        'Last Commit'
+      ],
       rows: [
         {
           cells: ['one', 'two', 'a', 'four', 'five'],
@@ -318,11 +342,11 @@ class ActionsTable extends React.Component {
       },
       ...thirdAction
     ];
-  };
+  }
 
   areActionsDisabled(rowData, { rowIndex }) {
-    return rowIndex === 3
-  };
+    return rowIndex === 3;
+  }
 
   render() {
     const { columns, rows } = this.state;
@@ -343,6 +367,7 @@ class ActionsTable extends React.Component {
 ```
 
 ## First cell as Header Table
+
 ```js
 import React from 'react';
 import {
@@ -386,6 +411,7 @@ class CellHeader extends React.Component {
 ```
 
 ## Compact Table
+
 ```js
 import React from 'react';
 import {
@@ -427,8 +453,8 @@ class CompactTable extends React.Component {
 }
 ```
 
-
 ## Compact Table Borderless Rows
+
 ```js
 import React from 'react';
 import {
@@ -461,7 +487,13 @@ class CompactTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Compact Table with border" variant={TableVariant.compact} borders={false} cells={columns} rows={rows}>
+      <Table
+        caption="Compact Table with border"
+        variant={TableVariant.compact}
+        borders={false}
+        cells={columns}
+        rows={rows}
+      >
         <TableHeader />
         <TableBody />
       </Table>
@@ -471,6 +503,7 @@ class CompactTable extends React.Component {
 ```
 
 ## Compact Expandable Table
+
 ```js
 import React from 'react';
 import {
@@ -550,17 +583,23 @@ class ContactExpandableTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Compact expandable table" variant={TableVariant.compact} onCollapse={this.onCollapse} rows={rows} cells={columns}>
+      <Table
+        caption="Compact expandable table"
+        variant={TableVariant.compact}
+        onCollapse={this.onCollapse}
+        rows={rows}
+        cells={columns}
+      >
         <TableHeader />
         <TableBody />
       </Table>
     );
   }
 }
-
 ```
 
 ## Table with Width Modifiers
+
 ```js
 import React from 'react';
 import {
@@ -607,6 +646,7 @@ class WidthTable extends React.Component {
 ```
 
 ## Collapsible table
+
 ```js
 import React from 'react';
 import {
@@ -628,7 +668,8 @@ class CollapsibleTable extends React.Component {
       columns: [
         {
           title: 'Header cell',
-          cellFormatters: [expandable]
+          cellFormatters: [expandable],
+          cellTransforms: [headerCol()]
         },
         'Branches',
         { title: 'Pull requests' },
@@ -696,5 +737,4 @@ class CollapsibleTable extends React.Component {
     );
   }
 }
-
 ```
