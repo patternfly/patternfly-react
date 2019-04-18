@@ -17,9 +17,8 @@ import {
   TabContent,
   TextInput,
   Title,
-  Tooltip
-  Title,
-  TextInput,
+  TitleLevel,
+  Tooltip,
   CheckboxSelectOption,
   CheckboxSelectGroup,
   Badge
@@ -29,11 +28,6 @@ import logo from './logo.svg';
 import './App.css';
 import NavTest from './Nav';
 import WizardTest from './Wizard';
-
-
-class myProps implements AvatarProps {
-  alt: string = 'avatar';
-}
 
 interface AppState {
   isExpanded?: boolean;
@@ -85,13 +79,10 @@ class App extends Component<AppState> {
 
   render() {
     const { isExpanded, selected, checkboxIsExpanded, checked } = this.state;
-    const checkboxCustomTitle = (
-      <React.Fragment>Filter by status {checked.length > 0 && <Badge isRead>{checked.length}</Badge>}</React.Fragment>
-    );
     return (
       <div className="App">
         <header className="App-header">
-          <Title style={{ color: '#fff', padding: '12px 0' }} headingLevel="h1" size="4xl">
+          <Title style={{ color: '#fff', padding: '12px 0' }} headingLevel={TitleLevel.h1} size="4xl">
             PF4 Integration Sandbox
           </Title>
           <Avatar src={logo} alt={'avatar'} />
@@ -184,7 +175,7 @@ class App extends Component<AppState> {
           onSelect={this.checkboxOnSelect}
           selections={checked}
           isExpanded={checkboxIsExpanded}
-          title={checkboxCustomTitle}
+          placeholderText="Filter by status"
           isGrouped
         >
           <CheckboxSelectGroup label="Group 1" key={0}>
