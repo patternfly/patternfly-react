@@ -19,13 +19,13 @@ class Chip extends React.Component {
   }
 
   renderOverflowChip = () => {
-    const { children, className, onClick } = this.props;
+    const { children, className, onClick, component: Component } = this.props;
     return (
-      <div className={css(styles.chip, styles.modifiers.overflow, className)}>
+      <Component className={css(styles.chip, styles.modifiers.overflow, className)}>
         <ChipButton onClick={onClick}>
           <span className={css(styles.chipText)}>{children}</span>
         </ChipButton>
-      </div>
+      </Component>
     );
   };
 
