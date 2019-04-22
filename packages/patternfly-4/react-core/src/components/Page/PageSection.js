@@ -17,6 +17,10 @@ const propTypes = {
   className: PropTypes.string,
   /** Section background color variant */
   variant: PropTypes.oneOf(Object.values(PageSectionVariants)),
+  /** Modifies a main page section to have no padding */
+  noPadding: PropTypes.bool,
+  /** Modifies a main page section to have no padding on mobile */
+  noPaddingMobile: PropTypes.bool,
   /** Additional props are spread to the container <section> */
   '': PropTypes.any
 };
@@ -24,10 +28,12 @@ const propTypes = {
 const defaultProps = {
   children: null,
   className: '',
-  variant: 'default'
+  variant: 'default',
+  noPadding: false,
+  noPaddingMobile: false
 };
 
-const PageSection = ({ className, children, variant, ...props }) => {
+const PageSection = ({ className, children, variant, noPadding, noPaddingMobile, ...props }) => {
   const variantStyle = {
     [PageSectionVariants.default]: '',
     [PageSectionVariants.light]: styles.modifiers.light,
@@ -36,7 +42,7 @@ const PageSection = ({ className, children, variant, ...props }) => {
   };
 
   return (
-    <section {...props} className={css(styles.pageMainSection, variantStyle[variant], className)}>
+    <section {...props} className={css(styles.pageMainSection, noPadding && styles.modifiers.noPadding, noPaddingMobile && styles.modifiers.noPaddingMobile, variantStyle[variant], className)}>
       {children}
     </section>
   );
