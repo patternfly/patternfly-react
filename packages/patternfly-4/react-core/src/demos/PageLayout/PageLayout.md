@@ -1,5 +1,5 @@
 ---
-title: 'Page Layout'
+title: 'Page layout'
 section: 'demos'
 ---
 ## Using simple navigation

@@ -1,5 +1,5 @@
 ---
-title: 'Empty State'
+title: 'Empty state'
 cssPrefix: 'pf-c-empty-state'
 ---
 

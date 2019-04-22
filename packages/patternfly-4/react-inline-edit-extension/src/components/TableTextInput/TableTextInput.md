@@ -1,5 +1,5 @@
 ---
-title: 'Table Text Input'
+title: 'Table text input'
 section: 'inline-table'
 ---
 

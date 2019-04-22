@@ -1,5 +1,5 @@
 ---
-title: 'Background Image'
+title: 'Background image'
 cssPrefix: 'pf-c-background-image'
 ---
 import { BackgroundImage, BackgroundImageSrc } from '@patternfly/react-core';

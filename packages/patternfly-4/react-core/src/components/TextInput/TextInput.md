@@ -1,5 +1,5 @@
 ---
-title: 'Text Input'
+title: 'Text input'
 cssPrefix: 'pf-c-form-control'
 ---
 

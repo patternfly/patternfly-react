@@ -1,5 +1,5 @@
 ---
-title: 'Donut Chart'
+title: 'Donut chart'
 section: 'charts'
 ---
 

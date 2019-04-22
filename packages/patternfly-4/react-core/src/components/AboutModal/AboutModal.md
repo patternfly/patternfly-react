@@ -1,5 +1,5 @@
 ---
-title: 'About Modal'
+title: 'About modal'
 cssPrefix: 'pf-c-about-modal-box'
 ---
 ## Simple about modal

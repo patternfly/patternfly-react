@@ -1,5 +1,5 @@
 ---
-title: 'Context Selector'
+title: 'Context selector'
 ---
 
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';

@@ -1,5 +1,5 @@
 ---
-title: 'Input Group'
+title: 'Input group'
 cssPrefix: null
 ---
 

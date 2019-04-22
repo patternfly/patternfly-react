@@ -1,5 +1,5 @@
 ---
-title: 'Inline Edit'
+title: 'Inline edit'
 section: 'inline-table'
 ---
 

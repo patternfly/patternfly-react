@@ -1,5 +1,5 @@
 ---
-title: 'Area Chart'
+title: 'Area chart'
 section: 'charts'
 ---
 

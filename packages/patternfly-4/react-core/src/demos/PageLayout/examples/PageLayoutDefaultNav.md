@@ -1,5 +1,5 @@
 ---
-title: 'Page Layout Default Nav'
+title: 'Page layout default nav'
 section: 'demos'
 fullscreen: true
 ---

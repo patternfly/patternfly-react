@@ -1,5 +1,5 @@
 ---
-title: 'Styled System'
+title: 'Styled system'
 section: 'styled-system'
 ---
 ## **Warning, the StyledSystem components are experimental and in their own package _@patternfly/react-styled-system_. Use at your own risk!**

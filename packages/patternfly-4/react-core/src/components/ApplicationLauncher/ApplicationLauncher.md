@@ -1,5 +1,5 @@
 ---
-title: 'Application Launcher'
+title: 'Application launcher'
 cssPrefix: 'pf-c-app-launcher'
 ---
 import { ApplicationLauncher, DropdownItem, Tooltip } from '@patternfly/react-core';

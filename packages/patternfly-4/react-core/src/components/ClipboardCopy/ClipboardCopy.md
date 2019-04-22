@@ -1,8 +1,6 @@
 ---
-
-title: 'ClipboardCopy'
+title: 'Clipboard copy'
 cssPrefix: 'pf-c-copyclipboard'
-
 ---
 
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';

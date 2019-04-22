@@ -1,5 +1,5 @@
 ---
-title: 'Chip Group'
+title: 'Chip group'
 cssPrefix: 'pf-c-chip'
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 'Simple Login Page'
+title: 'Simple login page'
 section: 'components'
 fullscreen: true
 ---

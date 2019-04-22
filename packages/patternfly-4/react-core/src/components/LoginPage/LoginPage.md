@@ -1,5 +1,5 @@
 ---
-title: 'Login Page'
+title: 'Login page'
 cssPrefix: 'pf-c-login'
 section: 'components'
 ---

@@ -1,5 +1,5 @@
 ---
-title: 'Text Area'
+title: 'Text area'
 cssPrefix: 'pf-c-form-control'
 ---
 
