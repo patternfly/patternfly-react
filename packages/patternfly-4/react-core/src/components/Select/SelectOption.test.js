@@ -21,4 +21,11 @@ describe('select options', () => {
       expect(view).toMatchSnapshot();
     });
   });
+
+  describe('is selected', () => {
+    test('renders selected successfully', () => {
+      const view = shallow(<SelectOption isSelected value="test" sendRef={jest.fn()} />);
+      expect(view).toMatchSnapshot();
+    });
+  });
 });
