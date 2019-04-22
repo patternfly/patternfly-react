@@ -191,11 +191,13 @@ class PageLayoutExpandableNav extends React.Component {
       />
     );
     const Sidebar = <PageSidebar nav={PageNav} />;
-    const PageSkipToContent = <SkipToContent href="#main-content">Skip to Content</SkipToContent>;
+    const PageSkipToContent = (
+      <SkipToContent href="#main-content-page-layout-default-nav">Skip to Content</SkipToContent>
+    );
 
     return (
       <React.Fragment>
-        <Page header={Header} sidebar={Sidebar} isManagedSidebar>
+        <Page header={Header} sidebar={Sidebar} isManagedSidebar skipToContent={PageSkipToContent}>
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>
@@ -205,6 +207,7 @@ class PageLayoutExpandableNav extends React.Component {
               </Text>
             </TextContent>
           </PageSection>
+          <a id="#main-content-page-layout-default-nav" />
           <PageSection>
             <Gallery gutter="md">
               {Array.apply(0, Array(10)).map((x, i) => (

@@ -177,11 +177,13 @@ class PageLayoutGroupsNav extends React.Component {
       />
     );
     const Sidebar = <PageSidebar nav={PageNav} />;
-    const PageSkipToContent = <SkipToContent href="#main-content">Skip to Content</SkipToContent>;
+    const PageSkipToContent = (
+      <SkipToContent href="#main-content-page-layout-default-nav">Skip to Content</SkipToContent>
+    );
 
     return (
       <React.Fragment>
-        <Page header={Header} sidebar={Sidebar} isManagedSidebar>
+        <Page header={Header} sidebar={Sidebar} isManagedSidebar skipToContent={PageSkipToContent}>
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>
@@ -191,6 +193,7 @@ class PageLayoutGroupsNav extends React.Component {
               </Text>
             </TextContent>
           </PageSection>
+          <a id="#main-content-page-layout-default-nav" />
           <PageSection variant={PageSectionVariants.light}>Light</PageSection>
           <PageSection variant={PageSectionVariants.dark}>Dark</PageSection>
           <PageSection variant={PageSectionVariants.darker}>Darker</PageSection>
