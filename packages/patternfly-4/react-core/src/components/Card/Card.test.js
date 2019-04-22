@@ -29,3 +29,8 @@ test('allows passing in a React Component as the component', () => {
   const view = shallow(<Card component={Component} />);
   expect(view.type()).toBe(Component);
 });
+
+test('card with isHoverable applied ', () => {
+  const view = shallow(<Card isHoverable={true} />);
+  expect(view).toMatchSnapshot();
+});

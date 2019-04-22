@@ -11,6 +11,8 @@ const propTypes = {
   className: PropTypes.string,
   /** Sets the base component to render. defaults to article */
   component: componentShape,
+  /** Modifies the card to include hover styles on :hover */
+  isHoverable: PropTypes.bool,
   /** Additional props are spread to the container component */
   '': PropTypes.any
 };
@@ -18,11 +20,12 @@ const propTypes = {
 const defaultProps = {
   children: null,
   className: '',
-  component: 'article'
+  component: 'article',
+  isHoverable: false
 };
 
-const Card = ({ children, className, component: Component, ...props }) => (
-  <Component className={css(styles.card, className)} {...props}>
+const Card = ({ children, className, component: Component, isHoverable, ...props }) => (
+  <Component className={css(styles.card, isHoverable && styles.modifiers.hoverable, className)} {...props}>
     {children}
   </Component>
 );
