@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.6.0...@patternfly/react-core@3.7.0) (2019-04-22)
+
+
+### Features
+
+* **padding:** add pagesection no padding props ([#1818](https://github.com/patternfly/patternfly-react/issues/1818)) ([a472953](https://github.com/patternfly/patternfly-react/commit/a472953))
+
+
+
+
+
 # [3.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.5.0...@patternfly/react-core@3.6.0) (2019-04-22)
 
 
