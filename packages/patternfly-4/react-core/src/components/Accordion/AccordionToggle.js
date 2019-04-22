@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import { AngleRightIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/patternfly/components/Accordion/accordion.css';
-import { Button } from 'patternfly-react';
+import { Button } from '@patternfly/react-core';
 
 const AccordionToggle = ({
   className,
