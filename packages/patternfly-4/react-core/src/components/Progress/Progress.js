@@ -73,6 +73,18 @@ class Progress extends Component {
       ...props,
       ...(valueText ? { 'aria-valuetext': valueText } : { 'aria-describedby': `${this.id}-description` })
     };
+
+    const ariaProps = {
+      'aria-describedby': `${this.id}-description`,
+      'aria-valuemin': min,
+      'aria-valuenow': value,
+      'aria-valuemax': max
+    };
+
+    if (valueText) {
+      ariaProps['aria-valuetext'] = valueText;
+    }
+
     const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100)));
     return (
       <div
@@ -87,9 +99,6 @@ class Progress extends Component {
         )}
         id={this.id}
         role="progressbar"
-        aria-valuemin={min}
-        aria-valuenow={scaledValue}
-        aria-valuemax={max}
       >
         <ProgressContainer
           parentId={this.id}
@@ -98,6 +107,7 @@ class Progress extends Component {
           label={label}
           variant={variant}
           measureLocation={measureLocation}
+          ariaProps={ariaProps}
         />
       </div>
     );
