@@ -193,7 +193,6 @@ class PageLayoutGroupsNav extends React.Component {
               </Text>
             </TextContent>
           </PageSection>
-          <a id="#main-content-page-layout-default-nav" />
           <PageSection variant={PageSectionVariants.light}>Light</PageSection>
           <PageSection variant={PageSectionVariants.dark}>Dark</PageSection>
           <PageSection variant={PageSectionVariants.darker}>Darker</PageSection>

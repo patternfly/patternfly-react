@@ -102,6 +102,7 @@ class Page extends React.Component {
             })
           : sidebar}
         <main role="main" className={css(styles.pageMain)}>
+          {skipToContent && skipToContent.replace(/#*/, '')}
           {children}
         </main>
       </div>

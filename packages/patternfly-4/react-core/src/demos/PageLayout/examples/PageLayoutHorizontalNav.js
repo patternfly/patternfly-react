@@ -183,7 +183,6 @@ class PageLayoutHorizontalNav extends React.Component {
               </Text>
             </TextContent>
           </PageSection>
-          <a id="#main-content-page-layout-default-nav" />
           <PageSection>
             <Gallery gutter="md">
               {Array.apply(0, Array(10)).map((x, i) => (
