@@ -79,6 +79,19 @@ exports[`isHover 1`] = `
 </button>
 `;
 
+exports[`isInline 1`] = `
+<button
+  aria-disabled={null}
+  aria-label={null}
+  className="pf-c-button pf-m-link pf-m-inline"
+  disabled={false}
+  tabIndex={null}
+  type="button"
+>
+  Hovered Button
+</button>
+`;
+
 exports[`link button 1`] = `
 <button
   aria-disabled={null}

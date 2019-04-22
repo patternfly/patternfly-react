@@ -85,6 +85,7 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
       isDisabled={false}
       isFocus={false}
       isHover={false}
+      isInline={false}
       onClick={[Function]}
       type="submit"
       variant="primary"
@@ -180,6 +181,7 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
       isDisabled={false}
       isFocus={false}
       isHover={false}
+      isInline={false}
       onClick={[Function]}
       type="submit"
       variant="primary"
@@ -256,6 +258,7 @@ exports[`should render Login form 1`] = `
       isDisabled={false}
       isFocus={false}
       isHover={false}
+      isInline={false}
       onClick={[Function]}
       type="submit"
       variant="primary"

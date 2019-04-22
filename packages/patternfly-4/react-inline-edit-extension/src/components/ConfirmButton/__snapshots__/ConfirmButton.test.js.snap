@@ -10,6 +10,7 @@ exports[`it renders properly 1`] = `
   isDisabled={false}
   isFocus={false}
   isHover={false}
+  isInline={false}
   type="button"
   variant="primary"
 >

@@ -23,6 +23,7 @@ export interface ButtonProps extends HTMLProps<HTMLButtonElement> {
   isDisabled?: boolean;
   isFocus?: boolean;
   isHover?: boolean;
+  isInline?: boolean;
   variant?: OneOf<typeof ButtonVariant, keyof typeof ButtonVariant>;
   type?: OneOf<typeof ButtonType, keyof typeof ButtonType>;
 }
