@@ -51,8 +51,8 @@ export const defaultProps = {
 };
 
 const BackgroundImage = ({ className, src, ...props }) => {
-    // Default string value to handle all sizes
-    const variableOverrides =
+  // Default string value to handle all sizes
+  const variableOverrides =
     typeof src === 'string'
       ? Object.keys(BackgroundImageSrc).reduce(
           (prev, size) => ({
@@ -63,7 +63,7 @@ const BackgroundImage = ({ className, src, ...props }) => {
         )
       : src;
 
-    const bgStyles = StyleSheet.create({
+  const bgStyles = StyleSheet.create({
     bgOverrides: `&.pf-c-background-image {
       ${Object.keys(variableOverrides).reduce(
         (prev, size) => `${prev.length ? prev : ''}${variableMap[size]}: url('${variableOverrides[size]}');`,
