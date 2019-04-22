@@ -7,7 +7,7 @@ cssPrefix: 'pf-c-tabs'
 
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
 
-Use Primary Sections
+Use primary sections
 
 ```js
 import React from 'react';
@@ -268,7 +268,7 @@ class AccessibleSecondaryTabs extends React.Component {
 }
 ```
 
-## Accessibletabs
+## Accessible tabs
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
@@ -311,7 +311,7 @@ class AccessibleTabs extends React.Component {
 }
 ```
 
-## Separatetabcontent
+## Separate tab content
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';

@@ -25,7 +25,7 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 </div>
 ```
 
-## Multi-color theme bar char
+## Multi-color theme bar chart
 ```js
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartTheme } from '@patternfly/react-charts';
