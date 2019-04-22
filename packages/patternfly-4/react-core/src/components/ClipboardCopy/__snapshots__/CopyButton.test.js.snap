@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`copy button render 1`] = `
+<Tooltip
+  appendTo={[Function]}
+  className={null}
+  content={
+    <div>
+      Copy Me
+    </div>
+  }
+  enableFlip={true}
+  entryDelay={2000}
+  exitDelay={1000}
+  maxWidth="500px"
+  position="right"
+  trigger="mouseenter focus click"
+  zIndex={9999}
+>
+  <button
+    aria-label="click this button to copy text"
+    aria-labelledby="my-id my-text-id"
+    className="pf-c-clipboard-copy__group-copy fancy-copy-button"
+    id="my-id"
+    onClick={[MockFunction]}
+  >
+    <CopyIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </button>
+</Tooltip>
+`;
