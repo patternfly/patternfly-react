@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Accordion from './Accordion';
 import AccordionToggle from './AccordionToggle';
-import { Button } from 'patternfly-react';
+import { Button } from '@patternfly/react-core';
 
 describe('Accordion', () => {
   test('Accordion default', () => {
