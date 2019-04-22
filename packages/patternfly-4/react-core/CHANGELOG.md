@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.4.1...@patternfly/react-core@3.5.0) (2019-04-22)
+
+
+### Bug Fixes
+
+* **clipboardcopy:** fix docs ([#1821](https://github.com/patternfly/patternfly-react/issues/1821)) ([2caf8a5](https://github.com/patternfly/patternfly-react/commit/2caf8a5))
+
+
+### Features
+
+* **card:** adds card is-hoverable modifier prop ([#1812](https://github.com/patternfly/patternfly-react/issues/1812)) ([a398042](https://github.com/patternfly/patternfly-react/commit/a398042))
+* **clipboardcopy:** add clipboardcopy to PF4 ([#1538](https://github.com/patternfly/patternfly-react/issues/1538)) ([6a5305e](https://github.com/patternfly/patternfly-react/commit/6a5305e))
+
+
+
+
+
 ## [3.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.4.0...@patternfly/react-core@3.4.1) (2019-04-18)
 
 
