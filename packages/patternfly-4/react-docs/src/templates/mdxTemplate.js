@@ -32,7 +32,7 @@ const MdxTemplate = ({ data }) => {
   return (
     <SidebarLayout>
       <PageSection>
-        <Title size="4xl" style={{ textTransform: 'capitalize' }}>
+        <Title size="4xl">
           {data.mdx.frontmatter.title} {section.indexOf('-') === -1 ? section : ''}
         </Title>
         <MDXProvider components={components}>
@@ -45,7 +45,7 @@ const MdxTemplate = ({ data }) => {
       {props.length > 0 && props.map(component =>
         <PageSection key={component.name}>
           {props.description}
-          <Props caption={`${component.name} Properties`} propList={component.props} />
+          <Props caption={`${component.name} properties`} propList={component.props} />
         </PageSection>
       )}
 
