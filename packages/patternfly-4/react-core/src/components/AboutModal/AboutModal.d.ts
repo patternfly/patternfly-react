@@ -4,7 +4,7 @@ export interface AboutModalProps extends HTMLProps<HTMLDivElement> {
   children: ReactNode;
   isOpen?: boolean;
   onClose?: Function;
-  productName: string;
+  productName?: string;
   trademark?: string;
   brandImageSrc: string;
   brandImageAlt: string;
