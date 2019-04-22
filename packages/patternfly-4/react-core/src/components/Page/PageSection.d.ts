@@ -12,6 +12,8 @@ export interface PageSectionProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
   className?: string;
   variant?: OneOf<typeof PageSectionVariants, keyof typeof PageSectionVariants>;
+  noPadding?: boolean;
+  noPaddingMobile?: boolean;
 }
 
 declare const PageSection: FunctionComponent<PageSectionProps>;

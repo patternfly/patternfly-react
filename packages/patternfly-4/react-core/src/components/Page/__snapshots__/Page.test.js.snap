@@ -92,6 +92,8 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     >
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="default"
       >
         <section
@@ -102,6 +104,8 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       </PageSection>
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="light"
       >
         <section
@@ -112,6 +116,8 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       </PageSection>
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="dark"
       >
         <section
@@ -122,6 +128,8 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       </PageSection>
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="darker"
       >
         <section
@@ -224,6 +232,8 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     >
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="default"
       >
         <section
@@ -234,6 +244,8 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       </PageSection>
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="light"
       >
         <section
@@ -244,6 +256,8 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       </PageSection>
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="dark"
       >
         <section
@@ -254,6 +268,8 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       </PageSection>
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="darker"
       >
         <section
