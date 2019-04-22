@@ -17,7 +17,7 @@ export const ButtonType: {
 
 export interface ButtonProps extends HTMLProps<HTMLButtonElement> {
   children?: ReactNode;
-  component?: ReactType<ButtonProps>;
+  component?: ReactType;
   isActive?: boolean;
   isBlock?: boolean;
   isDisabled?: boolean;
