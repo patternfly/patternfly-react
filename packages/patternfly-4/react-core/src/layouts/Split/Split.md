@@ -6,7 +6,7 @@ section: 'layouts'
 
 import { Split, SplitItem } from '@patternfly/react-core';
 
-## Simple Split
+## Simple split
 ```js
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
@@ -18,7 +18,7 @@ import { Split, SplitItem } from '@patternfly/react-core';
 </Split>
 ```
 
-## Split Layout with Gutter
+## Split layout with gutter
 ```js
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';

@@ -36,7 +36,7 @@ import {
 </TextContent>
 ```
 
-## Body Text
+## Body text
 ```js
 import React from 'react';
 import {
@@ -70,7 +70,7 @@ import {
 </TextContent>
 ```
 
-## Unordered List
+## Unordered list
 
 Text components such as Text, TextList, TextListItem need to be placed within a TextContent
 
@@ -102,7 +102,7 @@ import {
 </TextContent>
 ```
 
-## Ordered List
+## Ordered list
 ```js
 import React from 'react';
 import {
@@ -128,7 +128,7 @@ import {
 </TextContent>
 ```
 
-## Data List
+## Data list
 ```js
 import React from 'react';
 import {

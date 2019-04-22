@@ -5,7 +5,7 @@ cssPrefix: 'pf-c-title'
 
 import { Title } from '@patternfly/react-core';
 
-## Title Sizes
+## Title sizes
 ```js
 import React from 'react';
 import { Title } from '@patternfly/react-core';

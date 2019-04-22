@@ -2,7 +2,7 @@
 title: 'Toolbar'
 section: 'demos'
 ---
-## Toolbar Demo
+## Toolbar demo
 
 import {
   Button,

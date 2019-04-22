@@ -5,7 +5,7 @@ section: 'inline-table'
 
 import { TableTextInput } from '@patternfly/react-inline-edit-extension';
 
-## Simple TableTextInput
+## Simple tabletextinput
 ```js
 import React from 'react';
 import { TableTextInput } from '@patternfly/react-inline-edit-extension';

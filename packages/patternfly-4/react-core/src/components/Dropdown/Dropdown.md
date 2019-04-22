@@ -3,7 +3,7 @@ title: 'Dropdown'
 cssPrefix: 'pf-c-dropdown'
 ---
 
-## Simple Dropdown
+## Simple dropdown
 
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -233,7 +233,7 @@ class DirectionUpDropdown extends React.Component {
 }
 ```
 
-## Dropdown with Kebab
+## Dropdown with kebab
 ```js
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
@@ -349,7 +349,7 @@ class IconDropdown extends React.Component {
 }
 ```
 
-## Dropdown Panel
+## Dropdown panel
 
 The Basic Dropdown is provided for flexibility in allowing various content within a dropdown.
 
@@ -391,7 +391,7 @@ class DropdownPanel extends React.Component {
 }
 ```
 
-## React Router Link usage
+## React router link usage
 
 A react-router Link may be wrapped by DropdownItem or used directly within Dropdown. Here's some example HTML:
 

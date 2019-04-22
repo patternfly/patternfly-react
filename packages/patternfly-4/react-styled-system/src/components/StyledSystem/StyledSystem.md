@@ -216,7 +216,7 @@ BorderStyles = () => {
 }
 ```
 
-## Box Shadow
+## Box shadow
 ```js
 import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
@@ -293,7 +293,7 @@ PositionStyles = () => {
 }
 ```
 
-## Override Theme
+## Override theme
 You can override the theme by supplying a theme object.
 
 If multiple PatternFlyThemeProviders are nested, the theme object of the lower provider will be merged into the ancestor theme.

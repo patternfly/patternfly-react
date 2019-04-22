@@ -3,7 +3,7 @@ title: 'Pie Chart'
 section: 'charts'
 ---
 
-## Blue-Themed Pie Chart
+## Blue-themed pie chart
 
 import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
@@ -30,7 +30,7 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 </div>
 ```
 
-## Multi-Color Themed Pie Chart
+## Multi-color themed pie chart
 ```js
 import React from 'react';
 import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';

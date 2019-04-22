@@ -6,7 +6,7 @@ section: 'layouts'
 
 import { Stack, StackItem } from '@patternfly/react-core';
 
-## Simple Stack Layout
+## Simple stack layout
 ```js
 import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
@@ -18,7 +18,7 @@ import { Stack, StackItem } from '@patternfly/react-core';
 </Stack>
 ```
 
-## Simple Stack Layout with Gutter
+## Simple stack layout with gutter
 ```js
 import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';

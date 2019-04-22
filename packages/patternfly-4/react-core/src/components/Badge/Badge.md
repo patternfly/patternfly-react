@@ -4,7 +4,7 @@ cssPrefix: 'pf-c-badge'
 ---
 import { Badge } from '@patternfly/react-core';
 
-## Badge (Read)
+## Badge (read)
 ```js
 import React from 'react';
 import { Badge } from '@patternfly/react-core';
@@ -19,7 +19,7 @@ ReadBadge = () => (
 );
 ```
 
-## Badge (Unread)
+## Badge (unread)
 ```js
 import React from 'react';
 import { Badge } from '@patternfly/react-core';

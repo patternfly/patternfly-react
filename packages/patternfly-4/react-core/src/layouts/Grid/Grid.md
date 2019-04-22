@@ -4,7 +4,7 @@ cssPrefix: 'pf-l-grid'
 section: 'layouts'
 ---
 
-## Simple Grid
+## Simple grid
 
 import { Grid, GridItem, Button } from '@patternfly/react-core';
 import ItemControl from './examples/ItemControl';
@@ -60,7 +60,7 @@ import ItemControl from './examples/ItemControl';
 </Grid>
 ```
 
-## Grid With Overrides
+## Grid with overrides
 ```js
 import React from 'react';
 import { Grid, GridItem, Button } from '@patternfly/react-core';
@@ -84,7 +84,7 @@ import ItemControl from './examples/ItemControl';
 </Grid>
 ```
 
-## Grid Playground
+## Grid playground
 
 import GridPlayground from './examples/GridPlayground';
 

@@ -24,7 +24,7 @@ section: patternfly-4
 
 
 
-## Code Contribution Guidelines
+## Code contribution guidelines
 
 Adhering to the following process is the best way to get your work included in the project:
 
@@ -103,6 +103,6 @@ $ git push origin my-branch
 
     - A link to the PatternFly 4 demo documentation will be automatically generated and posted as a comment after the pull request build is complete.
 
-## Additional Information
+## Additional information
 
 See the PatternFly React Guide for full details on [Code Contribution Guidelines](https://github.com/patternfly/patternfly-react/blob/master/CONTRIBUTING.md#code-contribution-guidelines)

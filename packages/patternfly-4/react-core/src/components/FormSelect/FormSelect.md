@@ -5,7 +5,7 @@ cssPrefix: 'pf-c-form-control'
 
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
-## Simple FormSelect
+## Simple formselect
 ```js
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
@@ -42,7 +42,7 @@ class FormSelectInput extends React.Component {
 }
 ```
 
-## FormSelect (Invalid)
+## Formselect (invalid)
 ```js
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
@@ -82,7 +82,7 @@ class FormSelectInputInvalid extends React.Component {
 }
 ```
 
-## FormSelect (Disabled)
+## Formselect (disabled)
 ```js
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
@@ -119,7 +119,7 @@ class FormSelectInputDisabled extends React.Component {
 }
 ```
 
-## FormSelect (Grouped)
+## Formselect (grouped)
 ```js
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';

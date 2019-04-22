@@ -3,7 +3,7 @@ title: 'Donut Chart'
 section: 'charts'
 ---
 
-## Blue Theme Donut Chart
+## Blue theme donut chart
 
 import { ChartDonut, ChartLabel, ChartLegend, ChartTheme } from '@patternfly/react-charts';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
@@ -32,7 +32,7 @@ import React from 'react';
 </div>
 ```
 
-## Multi-color Theme Donut Chart
+## Multi-color theme donut chart
 ```js
 import React from 'react';
 

@@ -5,7 +5,7 @@ cssPrefix: 'pf-c-expandable'
 
 import { Expandable } from '@patternfly/react-core';
 
-## Simple Expandable
+## Simple expandable
 ```js
 import React from 'react';
 import { Expandable } from '@patternfly/react-core';

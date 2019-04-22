@@ -1,6 +1,6 @@
 # React-docs
 
-## Writing Your Docs
+## Writing your docs
 
 Gatsby recursively scans all `../../patternfly-4` directories for *.md files. Your Markdown file can have the following frontmatter:
 ```
@@ -26,7 +26,7 @@ import localDep from './examples/exampleDep.js'
 
 Remember that you are unable to use experimental language features like [class properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) as [Buble](https://github.com/bublejs/buble) does not support them.
 
-## About Gatsby
+## About gatsby
 
 Gatsby is a static site generator that doubles as a hot-module reloader for building our docs. This is an grandious way to use our own components in our docs.
 
