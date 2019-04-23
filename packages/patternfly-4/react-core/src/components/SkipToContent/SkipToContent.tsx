@@ -5,7 +5,9 @@ import { css, getModifier } from '@patternfly/react-styles';
 
 export interface SkipToContentProps
   extends React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
-  /** The skip to content link. */
+  /** Sets the base component to render. Defaults to an anchor */
+  component: any,
+    /** The skip to content link. */
   href: string;
   /** Content to display within the skip to content component, typically a string. */
   children?: any;
@@ -17,15 +19,17 @@ export interface SkipToContentProps
 
 export class SkipToContent extends React.Component<SkipToContentProps> {
   public static defaultProps = {
+    component: 'a',
     children: null,
     className: '',
     show: false
   };
 
   public render() {
-    const { children, className, href, show, ...rest } = this.props;
+    const { component, children, className, href, show, ...rest } = this.props;
+    const Component = component;
     return (
-        <a
+        <Component
           {...rest}
           className={css(
             buttonStyles.button,
@@ -37,7 +41,7 @@ export class SkipToContent extends React.Component<SkipToContentProps> {
           href={href}
         >
           {children}
-        </a>
+        </Component>
       );
     }
 };

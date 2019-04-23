@@ -204,7 +204,7 @@ class PageLayoutExpandableNav extends React.Component {
       </Breadcrumb>
     );
     const PageSkipToContent = (
-      <SkipToContent href="#main-content-page-layout-default-nav">Skip to Content</SkipToContent>
+      <SkipToContent href="#main-content-page-layout-expandable-nav">Skip to Content</SkipToContent>
     );
 
     return (
@@ -216,7 +216,6 @@ class PageLayoutExpandableNav extends React.Component {
           skipToContent={PageSkipToContent}
           breadcrumb={PageBreadcrumb}
         >
-          <a id="main-content-page-layout-default-nav" />
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>

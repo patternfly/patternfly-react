@@ -177,9 +177,7 @@ class PageLayoutGroupsNav extends React.Component {
       />
     );
     const Sidebar = <PageSidebar nav={PageNav} />;
-    const PageSkipToContent = (
-      <SkipToContent href="#main-content-page-layout-default-nav">Skip to Content</SkipToContent>
-    );
+    const PageSkipToContent = <SkipToContent href="#main-content-page-layout-group-nav">Skip to Content</SkipToContent>;
 
     return (
       <React.Fragment>

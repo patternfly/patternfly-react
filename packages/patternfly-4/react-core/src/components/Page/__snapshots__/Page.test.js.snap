@@ -576,6 +576,7 @@ exports[`Check page to verify skip to content is created 1`] = `
   skipToContent={
     <SkipToContent
       className=""
+      component="a"
       href="#main-content-page-layout-default-nav"
       show={false}
     >
@@ -591,6 +592,7 @@ exports[`Check page to verify skip to content is created 1`] = `
   >
     <SkipToContent
       className=""
+      component="a"
       href="#main-content-page-layout-default-nav"
       show={false}
     >

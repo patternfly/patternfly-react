@@ -100,7 +100,7 @@ class Page extends React.Component {
       ...rest
     } = this.props;
     const { mobileView, mobileIsNavOpen, desktopIsNavOpen } = this.state;
-    console.log(`breadcrumb = ${breadcrumb}`);
+
     return (
       <div {...rest} className={css(styles.page, className)}>
         {skipToContent}
