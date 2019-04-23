@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import EllipsisWithTooltip from 'react-ellipsis-with-tooltip';
-import { Spinner, Button, ListGroup, ListGroupItem, TypeAheadSelect } from '../../../../patternfly-react/src/index';
+import { Spinner, Button, ListGroup, ListGroupItem, TypeAheadSelect } from 'patternfly-react';
 import { noop } from '../../common/helpers';
 import { createItemProps } from './SelectHelper';
 import SelectInput from './SelectInput';

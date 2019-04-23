@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Icon } from '../../../../patternfly-react/src/index';
+import { Icon } from 'patternfly-react';
 import { noop } from '../../common/helpers';
 
 class SelectInput extends React.Component {
