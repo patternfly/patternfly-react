@@ -45,7 +45,7 @@ git remote add upstream https://github.com/patternfly/patternfly-react.git
 $ git checkout -b my-branch -t upstream/master
 ```
 
-3. Generate your Component
+3. Generate your component
 
 ```bash
 # Run the tool to Generate the component scaffolding
@@ -99,7 +99,7 @@ $ git rebase upstream/master
 $ git push origin my-branch
 ```
 
-8.  Create a Pull Request
+8.  Create a pull request
 
     - A link to the PatternFly 4 demo documentation will be automatically generated and posted as a comment after the pull request build is complete.
 
