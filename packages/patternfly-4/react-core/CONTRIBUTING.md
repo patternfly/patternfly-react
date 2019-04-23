@@ -24,7 +24,7 @@ section: patternfly-4
 
 
 
-## Code Contribution Guidelines
+## Code contribution guidelines
 
 Adhering to the following process is the best way to get your work included in the project:
 
@@ -45,7 +45,7 @@ git remote add upstream https://github.com/patternfly/patternfly-react.git
 $ git checkout -b my-branch -t upstream/master
 ```
 
-3. Generate your Component
+3. Generate your component
 
 ```bash
 # Run the tool to Generate the component scaffolding
@@ -99,10 +99,10 @@ $ git rebase upstream/master
 $ git push origin my-branch
 ```
 
-8.  Create a Pull Request
+8.  Create a pull request
 
     - A link to the PatternFly 4 demo documentation will be automatically generated and posted as a comment after the pull request build is complete.
 
-## Additional Information
+## Additional information
 
 See the PatternFly React Guide for full details on [Code Contribution Guidelines](https://github.com/patternfly/patternfly-react/blob/master/CONTRIBUTING.md#code-contribution-guidelines)

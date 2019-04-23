@@ -1,9 +1,9 @@
 ---
-title: 'Data List'
+title: 'Data list'
 cssPrefix: 'pf-c-data-list'
 ---
 
-## Simple Data List
+## Simple data list
 
 import {
   Button,
@@ -72,7 +72,7 @@ SimpleDataList = () => (
 );
 ```
 
-## Data List Checkboxes, Actions and Additional Cells
+## Data list checkboxes, actions and additional cells
 
 ```js
 import React from 'react';
@@ -187,7 +187,7 @@ class CheckboxActionDataList extends React.Component {
 }
 ```
 
-## Data List Actions: single and multiple
+## Data list actions: single and multiple
 
 ```js
 import React from 'react';
@@ -298,7 +298,7 @@ class ActionsDataList extends React.Component {
 }
 ```
 
-## Data List Expandable
+## Data list expandable
 
 ```js
 import React from 'react';
@@ -542,7 +542,7 @@ class ExpandableDataList extends React.Component {
 }
 ```
 
-## Data List Width Modifiers
+## Data list width modifiers
 
 ```js
 import React from 'react';

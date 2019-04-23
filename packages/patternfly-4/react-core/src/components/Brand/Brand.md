@@ -2,7 +2,7 @@
 title: 'Brand'
 cssPrefix: null
 ---
-## Simple Brand
+## Simple brand
 
 import { Brand } from '@patternfly/react-core';
 import pfLogo from './examples/pfLogo.svg';

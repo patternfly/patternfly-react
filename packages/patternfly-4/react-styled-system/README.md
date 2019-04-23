@@ -1,6 +1,6 @@
 # @patternfly/react-styled-system
 
-## Warning: The StyledSystem components are experimental. Use at your own risk!
+## Warning: the styled system components are experimental. Use at your own risk!
 
 This package provides styled-system components using the [PatternFly 4][patternfly-4] theme.
 

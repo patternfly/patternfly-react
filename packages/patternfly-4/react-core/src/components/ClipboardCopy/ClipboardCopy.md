@@ -1,13 +1,11 @@
 ---
-
-title: 'ClipboardCopy'
+title: 'Clipboard copy'
 cssPrefix: 'pf-c-copyclipboard'
-
 ---
 
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
-## Clipboard Copy
+## Clipboard copy
 ```js
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
@@ -15,7 +13,7 @@ import { ClipboardCopy } from '@patternfly/react-core';
 <ClipboardCopy>This is editable</ClipboardCopy>;
 ```
 
-## Read Only Clipboard Copy
+## Read only clipboard copy
 ```js
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
@@ -23,7 +21,7 @@ import { ClipboardCopy } from '@patternfly/react-core';
 <ClipboardCopy isReadOnly>This is editable</ClipboardCopy>;
 ```
 
-## Expanded Clipboard Copy
+## Expanded clipboard copy
 ```js
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';

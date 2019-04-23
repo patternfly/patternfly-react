@@ -1,9 +1,9 @@
 ---
-title: 'Login Page'
+title: 'Login page'
 cssPrefix: 'pf-c-login'
 section: 'components'
 ---
-## Simple Login Page
+## Simple login page
 <a href="simpleloginpage" target="_blank">Popout example</a>
 ```nolive
 import React from 'react';

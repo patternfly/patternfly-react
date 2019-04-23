@@ -6,7 +6,7 @@ section: 'layouts'
 
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
-## Simple Gallery Layout
+## Simple gallery layout
 ```js
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
@@ -23,7 +23,7 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
 </Gallery>
 ```
 
-## Gallery With Gutters
+## Gallery with gutters
 ```js
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';

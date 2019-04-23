@@ -3,7 +3,7 @@ title: 'Wizard'
 cssPrefix: 'pf-c-wizard'
 ---
 
-### Simple Wizard
+### Simple wizard
 
 import { Button, Wizard, Form, FormGroup, TextInput } from '@patternfly/react-core';
 import SampleFormOne from './examples/SampleFormOne';
@@ -59,7 +59,7 @@ class SimpleWizard extends React.Component {
 }
 ```
 
-### Validation Wizard
+### Validation wizard
 ```js
 import React from 'react';
 import { Button, Wizard, Form, FormGroup, TextInput } from '@patternfly/react-core';

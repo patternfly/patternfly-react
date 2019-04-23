@@ -1,9 +1,9 @@
 ---
-title: 'Inline Edit'
-section: 'inline-table'
+title: 'Inline edit'
+section: 'inline table'
 ---
 
-## Editable table With Inline Edit Row
+## Editable table with inline edit row
 
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
@@ -329,7 +329,7 @@ class EditableTable extends React.Component {
 }
 ```
 
-## Editable Table With Inline Edit Columns
+## Editable table with inline edit columns
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
@@ -489,7 +489,7 @@ class EditableTableColumn extends React.Component {
 }
 ```
 
-## Editable Table With Collapsible Rows
+## Editable table with collapsible rows
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';

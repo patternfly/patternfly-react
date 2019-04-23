@@ -3,7 +3,7 @@ title: 'Nav'
 cssPrefix: 'pf-c-nav'
 ---
 
-## Simple Nav
+## Simple nav
 
 import {
   Nav,
@@ -65,7 +65,7 @@ class NavSimpleList extends React.Component {
 }
 ```
 
-## Nav (Grouped)
+## Nav (grouped)
 ```js
 import React from 'react';
 import {
@@ -123,7 +123,7 @@ class NavGroupedList extends React.Component {
 }
 ```
 
-## Nav (Default)
+## Nav (default)
 ```js
 import React from 'react';
 import {
@@ -173,7 +173,7 @@ class NavDefaultList extends React.Component {
 }
 ```
 
-## Nav (Expandable)
+## Nav (expandable)
 ```js
 import React from 'react';
 import {
@@ -277,7 +277,7 @@ class NavExpandableList extends React.Component {
 }
 ```
 
-## Nav (Expandable+Titles)
+## Nav (expandable+titles)
 ```js
 import React from 'react';
 import {
@@ -375,7 +375,7 @@ class NavExpandableTitlesList extends React.Component {
 }
 ```
 
-## Nav (Mixed)
+## Nav (mixed)
 ```js
 import React from 'react';
 import {
@@ -476,7 +476,7 @@ class NavMixedList extends React.Component {
 }
 ```
 
-## Nav (Horizontal)
+## Nav (horizontal)
 ```js
 import React from 'react';
 import {
@@ -525,7 +525,7 @@ class NavHorizontalList extends React.Component {
 }
 ```
 
-## Nav (Tertiary)
+## Nav (tertiary)
 ```js
 import React from 'react';
 import {

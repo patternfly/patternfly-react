@@ -1,10 +1,10 @@
 ---
-title: 'Application Launcher'
+title: 'Application launcher'
 cssPrefix: 'pf-c-app-launcher'
 ---
 import { ApplicationLauncher, DropdownItem, Tooltip } from '@patternfly/react-core';
 
-## Simple Application Launcher
+## Simple application launcher
 ```js
 import React from 'react';
 import { ApplicationLauncher, DropdownItem, Tooltip } from '@patternfly/react-core';
@@ -55,7 +55,7 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-## Application Launcher with Tooltip
+## Application launcher with tooltip
 ```js
 import React from 'react';
 import { ApplicationLauncher, DropdownItem, Tooltip } from '@patternfly/react-core';

@@ -3,7 +3,7 @@ title: 'Button'
 cssPrefix: 'pf-c-button'
 ---
 
-## Block Button
+## Block button
 
 import { Button } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
@@ -16,7 +16,7 @@ import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
 BlockButton = () => <Button isBlock>Block level button</Button>;
 ```
 
-## Button Variants
+## Button variants
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
@@ -36,7 +36,7 @@ ButtonVariants = () => (
 );
 ```
 
-## Link Button
+## Link button
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';

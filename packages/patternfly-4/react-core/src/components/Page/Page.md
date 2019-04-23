@@ -5,7 +5,7 @@ cssPrefix: 'pf-c-page'
 
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 
-## Vertical Page Layout
+## Vertical page layout
 ```js
 import React from 'react';
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
@@ -55,7 +55,7 @@ class VerticalPage extends React.Component {
 }
 ```
 
-## Horizontal Page Layout
+## Horizontal page layout
 ```js
 import React from 'react';
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';

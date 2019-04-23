@@ -4,7 +4,7 @@ cssPrefix: 'pf-c-alert'
 ---
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 
-## Info Alert
+## Info alert
 ```js
 import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
@@ -46,7 +46,7 @@ class InfoAlert extends React.Component {
 }
 ```
 
-## Success Alert
+## Success alert
 ```js
 import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
@@ -91,7 +91,7 @@ class SuccessAlert extends React.Component {
 }
 ```
 
-## Warning Alert
+## Warning alert
 ```js
 import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
@@ -136,7 +136,7 @@ class WarningAlert extends React.Component {
 }
 ```
 
-## Danger Alert
+## Danger alert
 ```js
 import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';

@@ -6,7 +6,7 @@ section: 'layouts'
 
 import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/react-core';
 
-## Simple Toolbar Layout
+## Simple toolbar layout
 ```js
 import React from 'react';
 import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/react-core';

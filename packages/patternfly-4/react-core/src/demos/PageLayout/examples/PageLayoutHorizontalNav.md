@@ -1,5 +1,5 @@
 ---
-title: 'Page Layout Horizontal Nav'
+title: 'Page layout horizontal nav'
 section: 'demos'
 fullscreen: true
 ---

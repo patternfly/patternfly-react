@@ -2,7 +2,7 @@
 title: 'Avatar'
 cssPrefix: 'pf-c-avatar'
 ---
-## Simple Avatar
+## Simple avatar
 
 import { Avatar } from '@patternfly/react-core';
 import avatarImg from './examples/avatarImg.svg';
