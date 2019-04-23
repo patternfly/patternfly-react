@@ -3,12 +3,6 @@ import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 
 export const TextVariants = {
-  h1: 'h1',
-  h2: 'h2',
-  h3: 'h3',
-  h4: 'h4',
-  h5: 'h5',
-  h6: 'h6',
   p: 'p',
   a: 'a',
   small: 'small',

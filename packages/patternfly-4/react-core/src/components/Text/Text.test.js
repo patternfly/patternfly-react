@@ -8,13 +8,11 @@ import TextListItem, { TextListItemVariants } from './TextListItem';
 test('Text example should match snapshot', () => {
   const view = mount(
     <TextContent>
-      <Text component={TextVariants.h1}>Hello World</Text>
       <Text component={TextVariants.p}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla
         nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel
         erat vel, interdum mattis neque. Sub works as well!
       </Text>
-      <Text component={TextVariants.h2}>Second level</Text>
       <Text component={TextVariants.p}>
         Curabitur accumsan turpis pharetra <strong>augue tincidunt</strong> blandit. Quisque condimentum maximus mi, sit
         amet commodo arcu rutrum id. Proin pretium urna vel cursus venenatis. Suspendisse potenti. Etiam mattis sem
@@ -32,7 +30,6 @@ test('Text example should match snapshot', () => {
         </TextListItem>
         <TextListItem>Ut non enim metus.</TextListItem>
       </TextList>
-      <Text component={TextVariants.h3}>Third level</Text>
       <Text component={TextVariants.p}>
         Quisque ante lacus, malesuada ac auctor vitae, congue{' '}
         <Text component={TextVariants.a} href="#">
@@ -75,7 +72,6 @@ test('Text example should match snapshot', () => {
         Suspendisse egestas sapien non felis placerat elementum. Morbi tortor nisl, suscipit sed mi sit amet, mollis
         malesuada nulla. Nulla facilisi. Nullam ac erat ante.
       </Text>
-      <Text component={TextVariants.h4}>Fourth level</Text>
       <Text component={TextVariants.p}>
         Nulla efficitur eleifend nisi, sit amet bibendum sapien fringilla ac. Mauris euismod metus a tellus laoreet, at
         elementum ex efficitur.
@@ -93,13 +89,11 @@ test('Text example should match snapshot', () => {
         nec nisl placerat, pretium metus vel, euismod ipsum. Proin tempor cursus nisl vel condimentum. Nam pharetra
         varius metus non pellentesque.
       </Text>
-      <Text component={TextVariants.h5}>Fifth level</Text>
       <Text component={TextVariants.p}>
         Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit. Praesent
         aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a eleifend augue
         laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.
       </Text>
-      <Text component={TextVariants.h6}>Sixth level</Text>
       <Text component={TextVariants.p}>
         Cras in nibh lacinia, venenatis nisi et, auctor urna. Donec pulvinar lacus sed diam dignissim, ut eleifend eros
         accumsan. Phasellus non tortor eros. Ut sed rutrum lacus. Etiam purus nunc, scelerisque quis enim vitae,

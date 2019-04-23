@@ -9,17 +9,6 @@ exports[`Text example should match snapshot 1`] = `
   >
     <Text
       className=""
-      component="h1"
-    >
-      <h1
-        className=""
-        data-pf-content={true}
-      >
-        Hello World
-      </h1>
-    </Text>
-    <Text
-      className=""
       component="p"
     >
       <p
@@ -28,17 +17,6 @@ exports[`Text example should match snapshot 1`] = `
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque. Sub works as well!
       </p>
-    </Text>
-    <Text
-      className=""
-      component="h2"
-    >
-      <h2
-        className=""
-        data-pf-content={true}
-      >
-        Second level
-      </h2>
     </Text>
     <Text
       className=""
@@ -141,17 +119,6 @@ exports[`Text example should match snapshot 1`] = `
         </TextListItem>
       </ul>
     </TextList>
-    <Text
-      className=""
-      component="h3"
-    >
-      <h3
-        className=""
-        data-pf-content={true}
-      >
-        Third level
-      </h3>
-    </Text>
     <Text
       className=""
       component="p"
@@ -391,17 +358,6 @@ exports[`Text example should match snapshot 1`] = `
     </Text>
     <Text
       className=""
-      component="h4"
-    >
-      <h4
-        className=""
-        data-pf-content={true}
-      >
-        Fourth level
-      </h4>
-    </Text>
-    <Text
-      className=""
       component="p"
     >
       <p
@@ -446,17 +402,6 @@ exports[`Text example should match snapshot 1`] = `
     </Text>
     <Text
       className=""
-      component="h5"
-    >
-      <h5
-        className=""
-        data-pf-content={true}
-      >
-        Fifth level
-      </h5>
-    </Text>
-    <Text
-      className=""
       component="p"
     >
       <p
@@ -465,17 +410,6 @@ exports[`Text example should match snapshot 1`] = `
       >
         Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit. Praesent aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a eleifend augue laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.
       </p>
-    </Text>
-    <Text
-      className=""
-      component="h6"
-    >
-      <h6
-        className=""
-        data-pf-content={true}
-      >
-        Sixth level
-      </h6>
     </Text>
     <Text
       className=""
