@@ -1,5 +1,6 @@
 /** Keep alphabetically sorted */
 export * from './AboutModal';
+// export * from './Accordion'; Don't release this yet
 export * from './Alert';
 export * from './ApplicationLauncher';
 export * from './Avatar';
