@@ -8,7 +8,7 @@ const propTypes = {
   /** additional classes added to the button */
   className: PropTypes.string,
   /** Name of the Product */
-  productName: PropTypes.string.isRequired,
+  productName: PropTypes.string,
   /** id to used for Modal Box header */
   id: PropTypes.string.isRequired,
   /** Additional props are spread to the container <div> */
@@ -16,7 +16,8 @@ const propTypes = {
 };
 
 const defaultProps = {
-  className: ''
+  className: '',
+  productName: ''
 };
 
 const AboutModalBoxHeader = ({ className, productName, id, ...props }) => (

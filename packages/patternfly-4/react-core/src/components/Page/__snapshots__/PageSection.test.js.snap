@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check page section with no padding example against snapshot 1`] = `
+<PageSection
+  className=""
+  noPadding={true}
+  noPaddingMobile={false}
+  variant="default"
+>
+  <section
+    className="pf-c-page__main-section pf-m-no-padding"
+  />
+</PageSection>
+`;
+
+exports[`Check page section with no padding on mobile example against snapshot 1`] = `
+<PageSection
+  className=""
+  noPadding={false}
+  noPaddingMobile={true}
+  variant="default"
+>
+  <section
+    className="pf-c-page__main-section pf-m-no-padding-mobile"
+  />
+</PageSection>
+`;

@@ -19,7 +19,7 @@ const propTypes = {
   /** A callback for when the close button is clicked */
   onClose: PropTypes.func,
   /** Product Name */
-  productName: PropTypes.string.isRequired,
+  productName: PropTypes.string,
   /** Trademark information */
   trademark: PropTypes.string.isRequired,
   /** the URL of the image for the Brand. */
@@ -41,7 +41,8 @@ const propTypes = {
 const defaultProps = {
   className: '',
   isOpen: false,
-  onClose: () => undefined
+  onClose: () => undefined,
+  productName: ''
 };
 
 const ModalContent = ({
@@ -68,7 +69,7 @@ const ModalContent = ({
         <AboutModalBox className={className} aria-labelledby={ariaLabelledbyId} aria-describedby={ariaDescribedById}>
           <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
           <AboutModalBoxCloseButton onClose={onClose} />
-          <AboutModalBoxHeader id={ariaLabelledbyId} productName={productName} />
+          {productName && <AboutModalBoxHeader id={ariaLabelledbyId} productName={productName} />}
           <AboutModalBoxContent {...props} trademark={trademark} id={ariaDescribedById}>
             {children}
           </AboutModalBoxContent>
