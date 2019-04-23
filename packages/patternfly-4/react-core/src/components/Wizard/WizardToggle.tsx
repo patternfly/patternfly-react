@@ -5,7 +5,7 @@ import { AngleRightIcon, CaretDownIcon } from '@patternfly/react-icons';
 import { WizardStep } from './Wizard';
 import WizardBody from './WizardBody';
 
-interface WizardToggleProps {
+export interface WizardToggleProps {
   nav: any;
   steps: WizardStep[];
   activeStep: WizardStep;

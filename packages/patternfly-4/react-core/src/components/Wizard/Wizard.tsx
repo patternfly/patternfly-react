@@ -7,7 +7,7 @@ import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
 import { Backdrop } from '../Backdrop';
 import { Bullseye } from '../../layouts/Bullseye';
 import WizardHeader from './WizardHeader';
-import { WizardFooterInternal } from './WizardFooter';
+import WizardFooterInternal from './WizardFooter';
 import WizardToggle from './WizardToggle';
 import WizardNav from './WizardNav';
 import WizardNavItem from './WizardNavItem';
@@ -16,6 +16,7 @@ import WizardNavItem from './WizardNavItem';
 const FocusTrap: any = require('focus-trap-react');
 
 const WizardContext = React.createContext({});
+// export const WizardContextConsumer = WizardContext.Consumer;
 
 export interface WizardStep {
   /** Optional identifier */
@@ -336,10 +337,10 @@ class Wizard extends React.Component<WizardProps> {
             navItemStep = this.getFlattenedStepsIndex(flattenedSteps, step.steps[0].name);
             return (
               <WizardNavItem
-                hasChildren key={index}
-                label={step.name}
-                current={hasActiveChild}
-                disabled={!canJumpToParent}
+                key={index}
+                text={step.name}
+                isCurrent={hasActiveChild}
+                isDisabled={!canJumpToParent}
                 step={navItemStep}
                 onNavItemClick={this.goToStep}
               >
@@ -354,9 +355,9 @@ class Wizard extends React.Component<WizardProps> {
                     return (
                       <WizardNavItem
                         key={`child_${indexChild}`}
-                        label={childStep.name}
-                        current={activeStep.name === childStep.name}
-                        disabled={!enabled}
+                        text={childStep.name}
+                        isCurrent={activeStep.name === childStep.name}
+                        isDisabled={!enabled}
                         step={navItemStep}
                         onNavItemClick={this.goToStep} />
                     );
@@ -370,9 +371,9 @@ class Wizard extends React.Component<WizardProps> {
           return (
             <WizardNavItem
               key={index}
-              label={step.name}
-              current={activeStep.name === step.name}
-              disabled={!enabled}
+              text={step.name}
+              isCurrent={activeStep.name === step.name}
+              isDisabled={!enabled}
               step={navItemStep}
               onNavItemClick={this.goToStep} />
           );
@@ -396,7 +397,7 @@ class Wizard extends React.Component<WizardProps> {
             <Bullseye>
               <WizardContext.Provider value={context}>
                 <div {...rest} className={css(styles.wizard, isCompact && 'pf-m-compact-nav', activeStep.isFinishedStep && 'pf-m-finished', className)} role="dialog" aria-modal="true" aria-labelledby={this.titleId} aria-describedby={description ? this.descriptionId : undefined}>
-                  <WizardHeader titleId={this.titleId} descriptionId={this.descriptionId} onClose={onClose} title={title} description={description as string} ariaLabel={ariaLabelCloseButton as string} />
+                  <WizardHeader titleId={this.titleId} descriptionId={this.descriptionId} onClose={onClose} title={title} description={description as string} ariaLabelCloseButton={ariaLabelCloseButton as string} />
                   <WizardToggle isNavOpen={isNavOpen} onNavToggle={(isNavOpen) => this.setState({ isNavOpen })} nav={nav} steps={steps} activeStep={activeStep} hasBodyPadding={hasBodyPadding as boolean}>
                     {footer || (
                       <WizardFooterInternal
@@ -423,4 +424,6 @@ class Wizard extends React.Component<WizardProps> {
   }
 }
 
-export { Wizard, WizardContext };
+// export { Wizard };
+
+export default Wizard;

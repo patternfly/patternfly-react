@@ -4,12 +4,12 @@ import { css } from '@patternfly/react-styles';
 import { Button } from '../Button';
 import { WizardStep } from './Wizard';
 
-interface WizardFooterProps {
+export interface WizardFooterProps {
   /** Buttons in the footer */
   children: any;
 }
 
-const WizardFooter: React.SFC<WizardFooterProps> = ({
+export const WizardFooter: React.SFC<WizardFooterProps> = ({
   children
 }) => {
   return (
@@ -55,4 +55,4 @@ const WizardFooterInternal: React.SFC<WizardFooterInternalProps> = ({
     </footer>
   );
 
-export { WizardFooter, WizardFooterInternal };
+export default WizardFooterInternal;
