@@ -1,6 +1,6 @@
 ---
 title: 'Accordion'
-cssPrefix: 'pf-c-{IAN_FILL_IN_THE_BLANK}'
+cssPrefix: 'pf-c-accordion'
 ---
 
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';
