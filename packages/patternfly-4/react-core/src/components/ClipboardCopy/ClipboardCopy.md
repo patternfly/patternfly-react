@@ -18,7 +18,7 @@ import { ClipboardCopy } from '@patternfly/react-core';
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
 
-<ClipboardCopy isReadOnly>This is editable</ClipboardCopy>;
+<ClipboardCopy isReadOnly>This is read-only</ClipboardCopy>;
 ```
 
 ## Expanded clipboard copy

@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from '@patternfly/patternfly/components/ClipboardCopy/clipboard-copy.css';
 import { css } from '@patternfly/react-styles';
-import { CopyIcon } from '@patternfly/react-icons';
 import PropTypes from 'prop-types';
 import { TextInput } from '../TextInput';
-import { Tooltip, TooltipPosition } from '../Tooltip';
+import { TooltipPosition } from '../Tooltip';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
 import CopyButton from './CopyButton';
 import ToggleButton from './ToggleButton';
