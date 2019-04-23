@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.7.3...@patternfly/react-core@3.8.0) (2019-04-23)
+
+
+### Features
+
+* **accordion:** Add accordion to pf ([#1511](https://github.com/patternfly/patternfly-react/issues/1511)) ([c02e683](https://github.com/patternfly/patternfly-react/commit/c02e683))
+
+
+
+
+
 ## [3.7.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.7.2...@patternfly/react-core@3.7.3) (2019-04-23)
 
 
