@@ -1,6 +1,6 @@
 ---
 title: 'Table text input'
-section: 'inline-table'
+section: 'inline table'
 ---
 
 import { TableTextInput } from '@patternfly/react-inline-edit-extension';

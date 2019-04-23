@@ -2,8 +2,21 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
 import { Location } from '@reach/router';
-
 import { Nav, NavList, NavExpandable, NavItem } from '@patternfly-safe/react-core';
+
+const getSlashCount = str => {
+  let count = 0;
+  str.split('/').forEach(s => {
+    if (s.length > 0)
+      count++;
+  });
+
+  return count;
+}
+
+const capitalizeFirst = str => {
+  return str.substr(0, 1).toUpperCase() + str.substr(1, str.length - 1);
+}
 
 const SiteNav = () => {
   const data = useStaticQuery(graphql`
@@ -22,16 +35,6 @@ const SiteNav = () => {
         }
       }
     }`);
-
-  const getSlashCount = str => {
-    let count = 0;
-    str.split('/').forEach(s => {
-      if (s.length > 0)
-        count++;
-    });
-
-    return count;
-  }
 
   const grouped = data.allSitePage.edges
     .map(edge => edge.node)
@@ -52,14 +55,15 @@ const SiteNav = () => {
     }, {});
 
   const isActive = (path, curPath) => {
-    return curPath === path || curPath === data.site.pathPrefix + path;
+    const encodedPath = path.replace(/ /g, '%20');
+    return curPath === encodedPath || curPath === data.site.pathPrefix + encodedPath;
   };
 
   const getNavItem = (value) => (
     <Location key={value.path}>
       {({ location }) => (
         <NavItem isActive={isActive(value.path, location.pathname)} >
-          <Link to={value.path} style={{ textTransform: 'capitalize' }}>{value.context.title}</Link>
+          <Link to={value.path}>{value.context.title}</Link>
         </NavItem>
       )}
     </Location>
@@ -82,7 +86,10 @@ const SiteNav = () => {
       return (
         <Location key={navGroupName}>
           {({ location }) => (
-            <NavExpandable title={navGroupName} isActive={hasActiveLink(navGroup, location)} isExpanded={hasActiveLink(navGroup, location)}>
+            <NavExpandable
+              title={capitalizeFirst(navGroupName)}
+              isActive={hasActiveLink(navGroup, location)}
+              isExpanded={hasActiveLink(navGroup, location)}>
               {navGroup
                 .sort((v1, v2) => v1.context.title.localeCompare(v2.context.title))
                 .map(getNavItem)}

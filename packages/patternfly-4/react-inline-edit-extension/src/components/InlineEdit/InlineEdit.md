@@ -1,6 +1,6 @@
 ---
 title: 'Inline edit'
-section: 'inline-table'
+section: 'inline table'
 ---
 
 ## Editable table with inline edit row
