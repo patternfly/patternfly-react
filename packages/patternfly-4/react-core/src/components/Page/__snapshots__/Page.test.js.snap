@@ -457,6 +457,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
       </section>
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="default"
       >
         <section
@@ -467,6 +469,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
       </PageSection>
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="light"
       >
         <section
@@ -477,6 +481,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
       </PageSection>
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="dark"
       >
         <section
@@ -487,6 +493,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
       </PageSection>
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="darker"
       >
         <section
@@ -837,6 +845,8 @@ exports[`Check page to verify skip to content is created 1`] = `
       />
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="default"
       >
         <section
@@ -847,6 +857,8 @@ exports[`Check page to verify skip to content is created 1`] = `
       </PageSection>
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="light"
       >
         <section
@@ -857,6 +869,8 @@ exports[`Check page to verify skip to content is created 1`] = `
       </PageSection>
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="dark"
       >
         <section
@@ -867,6 +881,8 @@ exports[`Check page to verify skip to content is created 1`] = `
       </PageSection>
       <PageSection
         className=""
+        noPadding={false}
+        noPaddingMobile={false}
         variant="darker"
       >
         <section
