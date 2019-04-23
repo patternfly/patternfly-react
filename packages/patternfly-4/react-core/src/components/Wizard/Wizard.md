@@ -3,7 +3,7 @@ title: 'Wizard'
 cssPrefix: 'pf-c-wizard'
 ---
 
-import { Button, Wizard, WizardFooter, WizardContext, Alert } from '@patternfly/react-core';
+import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
 import FinishedStep from './examples/FinishedStep';
 import SampleForm from './examples/SampleForm';
 
@@ -323,7 +323,7 @@ class ValidationWizard extends React.Component {
 ### Wizard - validate on button press
 ```js
 import React from 'react';
-import { Button, Wizard, WizardFooter, WizardContext, Alert } from '@patternfly/react-core';
+import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
 import SampleForm from './examples/SampleForm';
 import FinishedStep from './examples/FinishedStep';
 
@@ -371,7 +371,7 @@ class ValidateButtonPressWizard extends React.Component {
 
     const CustomFooter = (
       <WizardFooter>
-        <WizardContext.Consumer>
+        <WizardContextConsumer>
           {({ activeStep, goToStepByName, goToStepById, onNext, onBack, onClose }) => {
             if (activeStep.name !== 'Final Step') {
               return (
@@ -395,7 +395,7 @@ class ValidateButtonPressWizard extends React.Component {
                 <Button onClick={() => goToStepByName('Step 1')}>Go to Beginning</Button>
               </>
             )}}
-        </WizardContext.Consumer>
+        </WizardContextConsumer>
       </WizardFooter>
     );
 
@@ -422,7 +422,7 @@ class ValidateButtonPressWizard extends React.Component {
 ### Wizard - progressive steps
 ```js
 import React from 'react';
-import { Button, Wizard, WizardFooter, WizardContext, Alert } from '@patternfly/react-core';
+import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
 import SampleForm from './examples/SampleForm';
 import FinishedStep from './examples/FinishedStep';
 
@@ -656,7 +656,7 @@ class ProgressiveWizard extends React.Component {
 
     const CustomFooter = (
       <WizardFooter>
-        <WizardContext.Consumer>
+        <WizardContextConsumer>
           {({ activeStep, goToStepByName, goToStepById, onNext, onBack, onClose }) => {
             return (
               <>
@@ -671,7 +671,7 @@ class ProgressiveWizard extends React.Component {
                 </Button>
               </>
             )}}
-        </WizardContext.Consumer>
+        </WizardContextConsumer>
       </WizardFooter>
     );
 

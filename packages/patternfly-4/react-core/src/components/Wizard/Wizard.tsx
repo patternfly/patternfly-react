@@ -16,6 +16,8 @@ import WizardNavItem from './WizardNavItem';
 const FocusTrap: any = require('focus-trap-react');
 
 const WizardContext = React.createContext({});
+export const WizardContextProvider = WizardContext.Provider;
+export const WizardContextConsumer = WizardContext.Consumer; 
 
 export interface WizardStep {
   /** Optional identifier */
@@ -394,7 +396,7 @@ class Wizard extends React.Component<WizardProps> {
         <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
           <Backdrop>
             <Bullseye>
-              <WizardContext.Provider value={context}>
+              <WizardContextProvider value={context}>
                 <div {...rest} className={css(styles.wizard, isCompact && 'pf-m-compact-nav', activeStep.isFinishedStep && 'pf-m-finished', className)} role="dialog" aria-modal="true" aria-labelledby={this.titleId} aria-describedby={description ? this.descriptionId : undefined}>
                   <WizardHeader titleId={this.titleId} descriptionId={this.descriptionId} onClose={onClose} title={title} description={description as string} ariaLabel={ariaLabelCloseButton as string} />
                   <WizardToggle isNavOpen={isNavOpen} onNavToggle={(isNavOpen) => this.setState({ isNavOpen })} nav={nav} steps={steps} activeStep={activeStep} hasBodyPadding={hasBodyPadding as boolean}>
@@ -413,7 +415,7 @@ class Wizard extends React.Component<WizardProps> {
                     )}
                   </WizardToggle>
                 </div>
-              </WizardContext.Provider>
+              </WizardContextProvider>
             </Bullseye>
           </Backdrop>
         </FocusTrap>,
@@ -423,4 +425,4 @@ class Wizard extends React.Component<WizardProps> {
   }
 }
 
-export { Wizard, WizardContext };
+export { Wizard };
