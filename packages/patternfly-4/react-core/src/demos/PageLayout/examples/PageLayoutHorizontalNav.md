@@ -4,6 +4,6 @@ section: 'demos'
 fullscreen: true
 ---
 
-import ExamplePage from './PageLayoutHorizontalNav';
+import PageLayoutHorizontalNav from './PageLayoutHorizontalNav';
 
-<ExamplePage />
+<PageLayoutHorizontalNav />

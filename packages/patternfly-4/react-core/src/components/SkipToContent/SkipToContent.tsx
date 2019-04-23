@@ -3,12 +3,6 @@ import styles from '@patternfly/patternfly/components/SkipToContent/skip-to-cont
 import buttonStyles from '@patternfly/patternfly/components/Button/button.css';
 import { css, getModifier } from '@patternfly/react-styles';
 
-const defaultProps = {
-  children: null,
-  className: '',
-  show: false
-};
-
 export interface SkipToContentProps
   extends React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
   /** The skip to content link. */
@@ -21,22 +15,31 @@ export interface SkipToContentProps
   show?: boolean;
 }
 
-export const SkipToContent: React.SFC<SkipToContentProps> = ({ children, className, href, show, ...props }) => (
-  <a
-    {...props}
-    className={css(
-      buttonStyles.button,
-      getModifier(buttonStyles.modifiers, 'primary'),
-      styles.skipToContent,
-      show && getModifier(styles, 'focus'),
-      className
-    )}
-    href={href}
-  >
-    {children}
-  </a>
-);
+export class SkipToContent extends React.Component<SkipToContentProps> {
+  public static defaultProps = {
+    children: null,
+    className: '',
+    show: false
+  };
 
-SkipToContent.defaultProps = defaultProps;
+  public render() {
+    const { children, className, href, show, ...rest } = this.props;
+    return (
+        <a
+          {...rest}
+          className={css(
+            buttonStyles.button,
+            getModifier(buttonStyles.modifiers, 'primary'),
+            styles.skipToContent,
+            show && getModifier(styles, 'focus'),
+            className
+          )}
+          href={href}
+        >
+          {children}
+        </a>
+      );
+    }
+};
 
 export default SkipToContent;

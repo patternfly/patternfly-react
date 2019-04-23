@@ -2,6 +2,8 @@ import React from 'react';
 import {
   Avatar,
   Brand,
+  Breadcrumb,
+  BreadcrumbItem,
   Button,
   ButtonVariant,
   Card,
@@ -167,13 +169,24 @@ class PageLayoutHorizontalNav extends React.Component {
       />
     );
 
+    const PageBreadcrumb = (
+      <Breadcrumb>
+        <BreadcrumbItem>Section Home</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+        <BreadcrumbItem to="#" isActive>
+          Section Landing
+        </BreadcrumbItem>
+      </Breadcrumb>
+    );
+
     const PageSkipToContent = (
       <SkipToContent href="#main-content-page-layout-default-nav">Skip to Content</SkipToContent>
     );
 
     return (
       <React.Fragment>
-        <Page header={Header} skipToContent={PageSkipToContent}>
+        <Page header={Header} skipToContent={PageSkipToContent} breadcrumb={PageBreadcrumb}>
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>
