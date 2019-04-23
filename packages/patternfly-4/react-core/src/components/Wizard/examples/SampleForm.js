@@ -1,7 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Form, FormGroup, TextInput } from '@patternfly/react-core';
 
-class SampleFormOne extends React.Component {
+const propTypes = {
+  formValue: PropTypes.string,
+  isFormValid: PropTypes.bool,
+  goToStep: PropTypes.func,
+  currentStep: PropTypes.number
+};
+
+const defaultProps = {
+  formValue: '',
+  isFormValid: false,
+  goToStep: null,
+  currentStep: null
+};
+
+class SampleForm extends React.Component {
+  static propTypes = propTypes;
+  static defaultProps = defaultProps;
+
   state = {
     value: this.props.formValue,
     isValid: this.props.isFormValid
@@ -10,11 +28,12 @@ class SampleFormOne extends React.Component {
   handleTextInputChange = value => {
     const isValid = /^\d+$/.test(value);
     this.setState({ value, isValid });
-    this.props.onChange(isValid, value);
+    this.props.onChange && this.props.onChange(isValid, value);
   };
 
   render() {
     const { value, isValid } = this.state;
+    const { formValue, isFormValid, goToStep, currentStep } = this.props;
 
     return (
       <Form>
@@ -39,4 +58,4 @@ class SampleFormOne extends React.Component {
   }
 }
 
-export default SampleFormOne;
+export default SampleForm;
