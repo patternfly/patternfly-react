@@ -97,7 +97,7 @@ class SelectOption extends React.Component {
               onKeyDown={this.onKeyDown}
             >
               {value}
-              {isSelected && <CheckIcon className={css(styles.selectMenuItemIcon)} aria-hidden />}
+              {isSelected && <CheckIcon noVerticalAlign className={css(styles.selectMenuItemIcon)} aria-hidden />}
             </button>
           </li>
         )}
