@@ -105,6 +105,7 @@ exports[`Wizard should match snapshot 1`] = `
                   isDisabled={false}
                   isFocus={false}
                   isHover={false}
+                  isInline={false}
                   onClick={[Function]}
                   type="submit"
                   variant="primary"
@@ -120,6 +121,7 @@ exports[`Wizard should match snapshot 1`] = `
                   isDisabled={false}
                   isFocus={false}
                   isHover={false}
+                  isInline={false}
                   type="button"
                   variant="link"
                 >

@@ -32,6 +32,9 @@ ButtonVariants = () => (
     <Button variant="plain" aria-label="Action">
       <TimesIcon />
     </Button>
+    <Button variant="link" isInline>
+      Inline Link Button
+    </Button>
   </React.Fragment>
 );
 ```
