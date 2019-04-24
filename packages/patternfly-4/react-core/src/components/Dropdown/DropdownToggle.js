@@ -5,28 +5,31 @@ import Toggle from './Toggle';
 import styles from '@patternfly/patternfly/components/Dropdown/dropdown.css';
 import { css } from '@patternfly/react-styles';
 
-const InnerToggle = ({ children, iconComponent: IconComponent, ...props }) => (
-  <Toggle {...props}>
-    {children && <span className={IconComponent && css(styles.dropdownToggleText)}>{children}</span>}
-    {IconComponent && <IconComponent className={css(children && styles.dropdownToggleIcon)} />}
-  </Toggle>
-);
-
-const DropdownToggle = ({ splitButtonItems, ...props }) =>
-  splitButtonItems ? (
-    <div
-      className={css(
-        styles.dropdownToggle,
-        styles.modifiers.splitButton,
-        props.isDisabled && styles.modifiers.disabled
-      )}
-    >
-      {splitButtonItems}
-      <InnerToggle {...props} isSplitButton aria-label={props['aria-label'] || 'Select'} />
-    </div>
-  ) : (
-    <InnerToggle {...props} />
+const DropdownToggle = ({ children, iconComponent: IconComponent, splitButtonItems, ...props }) => {
+  const toggle = (
+    <Toggle {...props} {...splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' }}>
+      {children && <span className={IconComponent && css(styles.dropdownToggleText)}>{children}</span>}
+      {IconComponent && <IconComponent className={css(children && styles.dropdownToggleIcon)} />}
+    </Toggle>
   );
+
+  if (splitButtonItems) {
+    return (
+      <div
+        className={css(
+          styles.dropdownToggle,
+          styles.modifiers.splitButton,
+          props.isDisabled && styles.modifiers.disabled
+        )}
+      >
+        {splitButtonItems}
+        {toggle}
+      </div>
+    );
+  }
+
+  return toggle;
+};
 
 DropdownToggle.propTypes = {
   /** HTML ID of dropdown toggle */
