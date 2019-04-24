@@ -361,8 +361,8 @@ class ValidateButtonPressWizard extends React.Component {
         name: 'Final Step', 
         component: (
           <>
-            <SampleForm formValue="Validating on button press" isFormValid={stepsValid !== 1} />
             {stepsValid === 1 && <div style={{padding: '15px 0'}}><Alert variant="warning" title="Validation failed, please try again" /></div>}
+            <SampleForm formValue="Validating on button press" isFormValid={stepsValid !== 1} />
           </>
         )
       },
@@ -701,8 +701,7 @@ class ProgressiveWizard extends React.Component {
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
-import SampleFormOne from './examples/SampleFormOne';
-import SampleFormTwo from './examples/SampleFormTwo';
+import SampleForm from './examples/SampleForm';
 
 class SimpleWizard extends React.Component {
   constructor(props) {
