@@ -19,3 +19,4 @@ section: 'demos'
 
 ## Programmatically toggle the sidebar
 <a href="pagelayoutmanualnav" target="_blank">Popout example</a>
+

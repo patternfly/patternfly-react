@@ -4,6 +4,6 @@ section: 'demos'
 fullscreen: true
 ---
 
-import ExamplePage from './PageLayoutDefaultNav';
+import PageLayoutDefaultNav from './PageLayoutDefaultNav';
 
-<ExamplePage />
+<PageLayoutDefaultNav />

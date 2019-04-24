@@ -3,6 +3,7 @@
 exports[`Check page horizontal layout example against snapshot 1`] = `
 <Page
   aria-label="Page layout"
+  breadcrumb={null}
   className="my-page-class"
   header={
     <PageHeader
@@ -30,6 +31,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       nav={null}
     />
   }
+  skipToContent={null}
 >
   <div
     aria-label="Page layout"
@@ -143,9 +145,761 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 </Page>
 `;
 
+exports[`Check page to verify breadcrumb is created 1`] = `
+<Page
+  aria-label="Page layout"
+  breadcrumb={
+    <Breadcrumb
+      aria-label="Breadcrumb"
+      className=""
+    >
+      <BreadcrumbItem
+        className=""
+        component="a"
+        isActive={false}
+        target={null}
+        to={null}
+      >
+        Section Home
+      </BreadcrumbItem>
+      <BreadcrumbItem
+        className=""
+        component="a"
+        isActive={false}
+        target={null}
+        to="#"
+      >
+        Section Title
+      </BreadcrumbItem>
+      <BreadcrumbItem
+        className=""
+        component="a"
+        isActive={false}
+        target={null}
+        to="#"
+      >
+        Section Title
+      </BreadcrumbItem>
+      <BreadcrumbItem
+        className=""
+        component="a"
+        isActive={true}
+        target={null}
+        to="#"
+      >
+        Section Landing
+      </BreadcrumbItem>
+    </Breadcrumb>
+  }
+  className="my-page-class"
+  header={
+    <PageHeader
+      aria-label="Global navigation"
+      avatar=" | Avatar"
+      className=""
+      isNavOpen={true}
+      logo="Logo"
+      logoProps={null}
+      nav="Navigation"
+      onNavToggle={[Function]}
+      showNavToggle={false}
+      toolbar="Toolbar"
+      topNav={null}
+    />
+  }
+  id="PageId"
+  isManagedSidebar={false}
+  layout="horizontal"
+  onPageResize={null}
+  sidebar={
+    <PageSidebar
+      className=""
+      isNavOpen={true}
+      nav={null}
+    />
+  }
+  skipToContent={null}
+>
+  <div
+    aria-label="Page layout"
+    className="pf-c-page my-page-class"
+    id="PageId"
+    layout="horizontal"
+  >
+    <PageHeader
+      aria-label="Global navigation"
+      avatar=" | Avatar"
+      className=""
+      isNavOpen={true}
+      logo="Logo"
+      logoProps={null}
+      nav="Navigation"
+      onNavToggle={[Function]}
+      showNavToggle={false}
+      toolbar="Toolbar"
+      topNav={null}
+    >
+      <header
+        className="pf-c-page__header"
+        nav="Navigation"
+        role="banner"
+      >
+        <div
+          className="pf-c-page__header-brand"
+        >
+          <a
+            className="pf-c-page__header-brand-link"
+          >
+            Logo
+          </a>
+        </div>
+        <div
+          className="pf-c-page__header-tools"
+        >
+          Toolbar
+           | Avatar
+        </div>
+      </header>
+    </PageHeader>
+    <PageSidebar
+      className=""
+      isNavOpen={true}
+      nav={null}
+    >
+      <div
+        className="pf-c-page__sidebar pf-m-expanded"
+        id="page-sidebar"
+      >
+        <div
+          className="pf-c-page__sidebar-body"
+        />
+      </div>
+    </PageSidebar>
+    <main
+      className="pf-c-page__main"
+      role="main"
+    >
+      <section
+        className="pf-c-page__main-breadcrumb"
+      >
+        <Breadcrumb
+          aria-label="Breadcrumb"
+          className=""
+        >
+          <nav
+            aria-label="Breadcrumb"
+            className="pf-c-breadcrumb"
+          >
+            <ol
+              className="pf-c-breadcrumb__list"
+            >
+              <BreadcrumbItem
+                className=""
+                component="a"
+                isActive={false}
+                target={null}
+                to={null}
+              >
+                <li
+                  className="pf-c-breadcrumb__item"
+                >
+                  Section Home
+                  <span
+                    className="pf-c-breadcrumb__item-divider"
+                  >
+                    <AngleRightIcon
+                      color="currentColor"
+                      size="sm"
+                      title={null}
+                    >
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          transform=""
+                        />
+                      </svg>
+                    </AngleRightIcon>
+                  </span>
+                </li>
+              </BreadcrumbItem>
+              <BreadcrumbItem
+                className=""
+                component="a"
+                isActive={false}
+                target={null}
+                to="#"
+              >
+                <li
+                  className="pf-c-breadcrumb__item"
+                >
+                  <a
+                    className="pf-c-breadcrumb__link"
+                    href="#"
+                    target={null}
+                  >
+                    Section Title
+                  </a>
+                  <span
+                    className="pf-c-breadcrumb__item-divider"
+                  >
+                    <AngleRightIcon
+                      color="currentColor"
+                      size="sm"
+                      title={null}
+                    >
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          transform=""
+                        />
+                      </svg>
+                    </AngleRightIcon>
+                  </span>
+                </li>
+              </BreadcrumbItem>
+              <BreadcrumbItem
+                className=""
+                component="a"
+                isActive={false}
+                target={null}
+                to="#"
+              >
+                <li
+                  className="pf-c-breadcrumb__item"
+                >
+                  <a
+                    className="pf-c-breadcrumb__link"
+                    href="#"
+                    target={null}
+                  >
+                    Section Title
+                  </a>
+                  <span
+                    className="pf-c-breadcrumb__item-divider"
+                  >
+                    <AngleRightIcon
+                      color="currentColor"
+                      size="sm"
+                      title={null}
+                    >
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          transform=""
+                        />
+                      </svg>
+                    </AngleRightIcon>
+                  </span>
+                </li>
+              </BreadcrumbItem>
+              <BreadcrumbItem
+                className=""
+                component="a"
+                isActive={true}
+                target={null}
+                to="#"
+              >
+                <li
+                  className="pf-c-breadcrumb__item"
+                >
+                  <a
+                    aria-current="page"
+                    className="pf-c-breadcrumb__link pf-m-current"
+                    href="#"
+                    target={null}
+                  >
+                    Section Landing
+                  </a>
+                </li>
+              </BreadcrumbItem>
+            </ol>
+          </nav>
+        </Breadcrumb>
+      </section>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        variant="default"
+      >
+        <section
+          className="pf-c-page__main-section"
+        >
+          Section with default background
+        </section>
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        variant="light"
+      >
+        <section
+          className="pf-c-page__main-section pf-m-light"
+        >
+          Section with light background
+        </section>
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        variant="dark"
+      >
+        <section
+          className="pf-c-page__main-section pf-m-dark-200"
+        >
+          Section with dark background
+        </section>
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        variant="darker"
+      >
+        <section
+          className="pf-c-page__main-section pf-m-dark-100"
+        >
+          Section with darker background
+        </section>
+      </PageSection>
+    </main>
+  </div>
+</Page>
+`;
+
+exports[`Check page to verify skip to content is created 1`] = `
+<Page
+  aria-label="Page layout"
+  breadcrumb={
+    <Breadcrumb
+      aria-label="Breadcrumb"
+      className=""
+    >
+      <BreadcrumbItem
+        className=""
+        component="a"
+        isActive={false}
+        target={null}
+        to={null}
+      >
+        Section Home
+      </BreadcrumbItem>
+      <BreadcrumbItem
+        className=""
+        component="a"
+        isActive={false}
+        target={null}
+        to="#"
+      >
+        Section Title
+      </BreadcrumbItem>
+      <BreadcrumbItem
+        className=""
+        component="a"
+        isActive={false}
+        target={null}
+        to="#"
+      >
+        Section Title
+      </BreadcrumbItem>
+      <BreadcrumbItem
+        className=""
+        component="a"
+        isActive={true}
+        target={null}
+        to="#"
+      >
+        Section Landing
+      </BreadcrumbItem>
+    </Breadcrumb>
+  }
+  className="my-page-class"
+  header={
+    <PageHeader
+      aria-label="Global navigation"
+      avatar=" | Avatar"
+      className=""
+      isNavOpen={true}
+      logo="Logo"
+      logoProps={null}
+      nav="Navigation"
+      onNavToggle={[Function]}
+      showNavToggle={false}
+      toolbar="Toolbar"
+      topNav={null}
+    />
+  }
+  id="PageId"
+  isManagedSidebar={false}
+  layout="horizontal"
+  onPageResize={null}
+  sidebar={
+    <PageSidebar
+      className=""
+      isNavOpen={true}
+      nav={null}
+    />
+  }
+  skipToContent={
+    <SkipToContent
+      className=""
+      component="a"
+      href="#main-content-page-layout-default-nav"
+      show={false}
+    >
+      Skip to Content
+    </SkipToContent>
+  }
+>
+  <div
+    aria-label="Page layout"
+    className="pf-c-page my-page-class"
+    id="PageId"
+    layout="horizontal"
+  >
+    <SkipToContent
+      className=""
+      component="a"
+      href="#main-content-page-layout-default-nav"
+      show={false}
+    >
+      <a
+        className="pf-c-button pf-m-primary pf-c-skip-to-content"
+        href="#main-content-page-layout-default-nav"
+      >
+        Skip to Content
+      </a>
+    </SkipToContent>
+    <PageHeader
+      aria-label="Global navigation"
+      avatar=" | Avatar"
+      className=""
+      isNavOpen={true}
+      logo="Logo"
+      logoProps={null}
+      nav="Navigation"
+      onNavToggle={[Function]}
+      showNavToggle={false}
+      toolbar="Toolbar"
+      topNav={null}
+    >
+      <header
+        className="pf-c-page__header"
+        nav="Navigation"
+        role="banner"
+      >
+        <div
+          className="pf-c-page__header-brand"
+        >
+          <a
+            className="pf-c-page__header-brand-link"
+          >
+            Logo
+          </a>
+        </div>
+        <div
+          className="pf-c-page__header-tools"
+        >
+          Toolbar
+           | Avatar
+        </div>
+      </header>
+    </PageHeader>
+    <PageSidebar
+      className=""
+      isNavOpen={true}
+      nav={null}
+    >
+      <div
+        className="pf-c-page__sidebar pf-m-expanded"
+        id="page-sidebar"
+      >
+        <div
+          className="pf-c-page__sidebar-body"
+        />
+      </div>
+    </PageSidebar>
+    <main
+      className="pf-c-page__main"
+      role="main"
+    >
+      <section
+        className="pf-c-page__main-breadcrumb"
+      >
+        <Breadcrumb
+          aria-label="Breadcrumb"
+          className=""
+        >
+          <nav
+            aria-label="Breadcrumb"
+            className="pf-c-breadcrumb"
+          >
+            <ol
+              className="pf-c-breadcrumb__list"
+            >
+              <BreadcrumbItem
+                className=""
+                component="a"
+                isActive={false}
+                target={null}
+                to={null}
+              >
+                <li
+                  className="pf-c-breadcrumb__item"
+                >
+                  Section Home
+                  <span
+                    className="pf-c-breadcrumb__item-divider"
+                  >
+                    <AngleRightIcon
+                      color="currentColor"
+                      size="sm"
+                      title={null}
+                    >
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          transform=""
+                        />
+                      </svg>
+                    </AngleRightIcon>
+                  </span>
+                </li>
+              </BreadcrumbItem>
+              <BreadcrumbItem
+                className=""
+                component="a"
+                isActive={false}
+                target={null}
+                to="#"
+              >
+                <li
+                  className="pf-c-breadcrumb__item"
+                >
+                  <a
+                    className="pf-c-breadcrumb__link"
+                    href="#"
+                    target={null}
+                  >
+                    Section Title
+                  </a>
+                  <span
+                    className="pf-c-breadcrumb__item-divider"
+                  >
+                    <AngleRightIcon
+                      color="currentColor"
+                      size="sm"
+                      title={null}
+                    >
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          transform=""
+                        />
+                      </svg>
+                    </AngleRightIcon>
+                  </span>
+                </li>
+              </BreadcrumbItem>
+              <BreadcrumbItem
+                className=""
+                component="a"
+                isActive={false}
+                target={null}
+                to="#"
+              >
+                <li
+                  className="pf-c-breadcrumb__item"
+                >
+                  <a
+                    className="pf-c-breadcrumb__link"
+                    href="#"
+                    target={null}
+                  >
+                    Section Title
+                  </a>
+                  <span
+                    className="pf-c-breadcrumb__item-divider"
+                  >
+                    <AngleRightIcon
+                      color="currentColor"
+                      size="sm"
+                      title={null}
+                    >
+                      <svg
+                        aria-hidden={true}
+                        aria-labelledby={null}
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style={
+                          Object {
+                            "verticalAlign": "-0.125em",
+                          }
+                        }
+                        viewBox="0 0 256 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                          transform=""
+                        />
+                      </svg>
+                    </AngleRightIcon>
+                  </span>
+                </li>
+              </BreadcrumbItem>
+              <BreadcrumbItem
+                className=""
+                component="a"
+                isActive={true}
+                target={null}
+                to="#"
+              >
+                <li
+                  className="pf-c-breadcrumb__item"
+                >
+                  <a
+                    aria-current="page"
+                    className="pf-c-breadcrumb__link pf-m-current"
+                    href="#"
+                    target={null}
+                  >
+                    Section Landing
+                  </a>
+                </li>
+              </BreadcrumbItem>
+            </ol>
+          </nav>
+        </Breadcrumb>
+      </section>
+      <a
+        id="main-content-page-layout-default-nav"
+      />
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        variant="default"
+      >
+        <section
+          className="pf-c-page__main-section"
+        >
+          Section with default background
+        </section>
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        variant="light"
+      >
+        <section
+          className="pf-c-page__main-section pf-m-light"
+        >
+          Section with light background
+        </section>
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        variant="dark"
+      >
+        <section
+          className="pf-c-page__main-section pf-m-dark-200"
+        >
+          Section with dark background
+        </section>
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        variant="darker"
+      >
+        <section
+          className="pf-c-page__main-section pf-m-dark-100"
+        >
+          Section with darker background
+        </section>
+      </PageSection>
+    </main>
+  </div>
+</Page>
+`;
+
 exports[`Check page vertical layout example against snapshot 1`] = `
 <Page
   aria-label="Page layout"
+  breadcrumb={null}
   className="my-page-class"
   header={
     <PageHeader
@@ -171,6 +925,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       nav="Navigation"
     />
   }
+  skipToContent={null}
 >
   <div
     aria-label="Page layout"
