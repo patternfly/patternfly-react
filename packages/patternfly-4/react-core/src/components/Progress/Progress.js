@@ -22,7 +22,8 @@ const propTypes = {
   variant: PropTypes.oneOf(Object.values(ProgressVariant)),
   /** Title above progress. */
   title: PropTypes.string,
-  /** Label to indicate what progress is showing. */
+  /** Text description of current progress value to display instead of
+   * percentage. */
   label: PropTypes.node,
   /** Actual value of progress. */
   value: PropTypes.number,
@@ -32,7 +33,8 @@ const propTypes = {
   min: PropTypes.number,
   /** Maximum value of progress. */
   max: PropTypes.number,
-  /** Dynamic description of progress. */
+  /** Accessible text description of current progress value, for when value is
+   * not a percentage. Use with label. */
   valueText: PropTypes.string,
   /** Additional props are spread to the container <div> */
   '': PropTypes.any
