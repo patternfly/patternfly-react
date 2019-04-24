@@ -7,7 +7,7 @@ export interface SkipToContentProps
   extends React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
   /** Sets the base component to render. Defaults to an anchor */
   component: any,
-    /** The skip to content link. */
+  /** The skip to content link. */
   href: string;
   /** Content to display within the skip to content component, typically a string. */
   children?: any;

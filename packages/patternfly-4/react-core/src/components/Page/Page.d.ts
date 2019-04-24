@@ -8,6 +8,7 @@ export interface PageProps extends HTMLProps<HTMLDivElement> {
   skipToContent?: ReactNode,
   isManagedSidebar?: boolean;
   onPageResize?: Function;
+  breadcrumb: ReactNode;
 }
 
 declare const Page: FunctionComponent<PageProps>;
