@@ -11,13 +11,10 @@ import { WizardFooterInternal } from './WizardFooter';
 import { WizardToggle } from './WizardToggle';
 import { WizardNav } from './WizardNav';
 import { WizardNavItem } from './WizardNavItem';
-// because of the way this module is exported, cannot use regular import syntax
-// tslint:disable-next-line
-const FocusTrap: any = require('focus-trap-react');
+import { WizardContextProvider } from './WizardContext';
+import * as FocusTrap from 'focus-trap-react';
 
-const WizardContext = React.createContext({});
-export const WizardContextProvider = WizardContext.Provider;
-export const WizardContextConsumer = WizardContext.Consumer; 
+
 
 export interface WizardStep {
   /** Optional identifier */
@@ -424,3 +421,5 @@ export class Wizard extends React.Component<WizardProps> {
     );
   }
 }
+
+export default Wizard;

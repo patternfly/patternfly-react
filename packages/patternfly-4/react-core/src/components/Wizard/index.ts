@@ -1,7 +1,8 @@
-export { Wizard, WizardProps, WizardStep, WizardStepFunctionType, WizardContextConsumer } from './Wizard';
-export { WizardNav, WizardNavProps } from './WizardNav';
-export { WizardNavItem, WizardNavItemProps } from './WizardNavItem';
-export { WizardHeader, WizardHeaderProps } from './WizardHeader';
-export { WizardBody, WizardBodyProps } from './WizardBody';
-export { WizardFooter, WizardFooterProps } from './WizardFooter';
-export { WizardToggle, WizardToggleProps } from './WizardToggle';
+export { Wizard } from './Wizard';
+export { WizardContextConsumer } from './WizardContext';
+export { WizardNav } from './WizardNav';
+export { WizardNavItem } from './WizardNavItem';
+export { WizardHeader } from './WizardHeader';
+export { WizardBody } from './WizardBody';
+export { WizardFooter } from './WizardFooter';
+export { WizardToggle } from './WizardToggle';
