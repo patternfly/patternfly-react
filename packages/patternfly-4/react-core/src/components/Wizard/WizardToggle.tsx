@@ -36,13 +36,13 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   let activeStepName;
   let activeStepSubName;
   for (let i = 0; i < steps.length; i++) {
-    if (steps[i] === activeStep) {
+    if ((activeStep.id && steps[i].id === activeStep.id) || steps[i].name === activeStep.name) {
       activeStepIndex = i + 1;
       activeStepName = steps[i].name;
       break;
     } else if (steps[i].steps) {
       for (let j = 0; j < steps[i].steps!.length; j++) {
-        if (steps[i].steps![j] === activeStep) {
+        if ((activeStep.id && steps[i].steps![j].id === activeStep.id) || steps[i].steps![j].name === activeStep.name) {
           activeStepIndex = i + 1;
           activeStepName = steps[i].name;
           activeStepSubName = steps[i].steps![j].name;
