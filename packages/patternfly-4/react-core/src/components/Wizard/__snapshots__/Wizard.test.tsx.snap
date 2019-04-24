@@ -47,14 +47,14 @@ exports[`Wizard should match snapshot 1`] = `
               className="pf-c-wizard"
               role="dialog"
             >
-              <WizardHeader
-                ariaLabel="Close"
+              <Unknown
+                ariaLabelCloseButton="Close"
                 description="Description here"
                 descriptionId="pf-wizard-description-0"
                 title="Wizard title"
                 titleId="pf-wizard-title-0"
               />
-              <WizardToggle
+              <Unknown
                 activeStep={
                   Object {
                     "canJumpTo": true,
@@ -116,7 +116,7 @@ exports[`Wizard should match snapshot 1`] = `
                   ]
                 }
               >
-                <WizardFooterInternal
+                <Unknown
                   activeStep={
                     Object {
                       "canJumpTo": true,
@@ -134,7 +134,7 @@ exports[`Wizard should match snapshot 1`] = `
                   onBack={[Function]}
                   onNext={[Function]}
                 />
-              </WizardToggle>
+              </Unknown>
             </div>
           </Context.Provider>
         </Bullseye>
@@ -204,8 +204,11 @@ exports[`Wizard should match snapshot 1`] = `
                   >
                     <span
                       class="pf-c-wizard__toggle-num"
-                    />
+                    >
+                      1
+                    </span>
                      
+                    A
                   </li>
                 </ol>
                 <svg
@@ -411,8 +414,11 @@ exports[`Wizard should match snapshot 1`] = `
                   >
                     <span
                       class="pf-c-wizard__toggle-num"
-                    />
+                    >
+                      1
+                    </span>
                      
+                    A
                   </li>
                 </ol>
                 <svg
