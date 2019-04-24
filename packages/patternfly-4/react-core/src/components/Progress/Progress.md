@@ -118,7 +118,7 @@ import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from
 ```
 
 
-## Progress (Finite Step)
+## Progress (finite step)
 ```js
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
@@ -126,7 +126,7 @@ import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from
 <Progress value={2} min={0} max={5} title="Title" measureLocation={ProgressMeasureLocation.top} label="2 of 5" valueText="2 of 5"/>
 ```
 
-## Progress (Step Instruction)
+## Progress (step instruction)
 ```js
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
