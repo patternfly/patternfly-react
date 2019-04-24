@@ -297,11 +297,11 @@ class TypeaheadSelectInput extends React.Component {
     return (
       <div>
         <span id={titleId} hidden>
-          Title
+          Select a state
         </span>
         <Select
           variant={SelectVariant.typeahead}
-          aria-label="Select Input"
+          aria-label="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
@@ -382,11 +382,11 @@ class MultiTypeaheadSelectInput extends React.Component {
     return (
       <div>
         <span id={titleId} hidden>
-          Title
+          Select a state
         </span>
         <Select
           variant={SelectVariant.typeaheadMulti}
-          aria-label="Select Input"
+          aria-label="Select a state"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}

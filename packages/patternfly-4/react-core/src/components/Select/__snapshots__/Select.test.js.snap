@@ -3,6 +3,7 @@
 exports[`checkbox select renders checkbox select groups successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
   isExpanded={true}
@@ -414,6 +415,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
 exports[`checkbox select renders closed successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
   isExpanded={false}
@@ -503,6 +505,7 @@ exports[`checkbox select renders closed successfully 1`] = `
 exports[`checkbox select renders expanded successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
   isExpanded={true}
@@ -754,6 +757,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
 exports[`select single select renders closed successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
   isExpanded={false}
@@ -845,6 +849,7 @@ exports[`select single select renders closed successfully 1`] = `
 exports[`select single select renders expanded successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
   isExpanded={true}
@@ -1056,6 +1061,7 @@ exports[`select single select renders expanded successfully 1`] = `
 exports[`typeahead multi select renders closed successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
   isExpanded={false}
@@ -1106,9 +1112,9 @@ exports[`typeahead multi select renders closed successfully 1`] = `
           className="pf-c-select__toggle-wrapper"
         >
           <input
-            aria-label="Type to filter"
+            aria-label={null}
             className="pf-c-form-control pf-c-select__toggle-typeahead"
-            id="select-single-typeahead-typeahead"
+            id="select-multi-typeahead-typeahead"
             onChange={[Function]}
             placeholder={null}
             type="text"
@@ -1155,6 +1161,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
 exports[`typeahead multi select renders expanded successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
   isExpanded={true}
@@ -1205,9 +1212,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           className="pf-c-select__toggle-wrapper"
         >
           <input
-            aria-label="Type to filter"
+            aria-label={null}
             className="pf-c-form-control pf-c-select__toggle-typeahead"
-            id="select-single-typeahead-typeahead"
+            id="select-multi-typeahead-typeahead"
             onChange={[Function]}
             placeholder={null}
             type="text"
@@ -1374,6 +1381,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
 exports[`typeahead multi select renders selected successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
   isExpanded={true}
@@ -1591,9 +1599,9 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             </ul>
           </ChipGroup>
           <input
-            aria-label="Type to filter"
+            aria-label={null}
             className="pf-c-form-control pf-c-select__toggle-typeahead"
-            id="select-single-typeahead-typeahead"
+            id="select-multi-typeahead-typeahead"
             onChange={[Function]}
             placeholder={null}
             type="text"
@@ -1847,6 +1855,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
 exports[`typeahead multi select test onChange 1`] = `
 <Select
   aria-label={null}
+  ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
   isExpanded={true}
@@ -1894,7 +1903,6 @@ exports[`typeahead multi select test onChange 1`] = `
               class="pf-c-select__toggle-wrapper"
             >
               <input
-                aria-label="Type to filter"
                 class="pf-c-form-control pf-c-select__toggle-typeahead"
                 id="select-single-typeahead-typeahead"
                 type="text"
@@ -1944,7 +1952,7 @@ exports[`typeahead multi select test onChange 1`] = `
           className="pf-c-select__toggle-wrapper"
         >
           <input
-            aria-label="Type to filter"
+            aria-label={null}
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             id="select-single-typeahead-typeahead"
             onChange={[Function]}
@@ -2008,6 +2016,7 @@ exports[`typeahead multi select test onChange 1`] = `
 exports[`typeahead select renders closed successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
   isExpanded={false}
@@ -2058,7 +2067,7 @@ exports[`typeahead select renders closed successfully 1`] = `
           className="pf-c-select__toggle-wrapper"
         >
           <input
-            aria-label="Type to filter"
+            aria-label={null}
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             id="select-single-typeahead-typeahead"
             onChange={[Function]}
@@ -2107,6 +2116,7 @@ exports[`typeahead select renders closed successfully 1`] = `
 exports[`typeahead select renders expanded successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
   isExpanded={true}
@@ -2157,7 +2167,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
           className="pf-c-select__toggle-wrapper"
         >
           <input
-            aria-label="Type to filter"
+            aria-label={null}
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             id="select-single-typeahead-typeahead"
             onChange={[Function]}
@@ -2326,6 +2336,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
 exports[`typeahead select renders selected successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
   isExpanded={true}
@@ -2376,7 +2387,7 @@ exports[`typeahead select renders selected successfully 1`] = `
           className="pf-c-select__toggle-wrapper"
         >
           <input
-            aria-label="Type to filter"
+            aria-label={null}
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             id="select-single-typeahead-typeahead"
             onChange={[Function]}
@@ -2602,6 +2613,7 @@ exports[`typeahead select renders selected successfully 1`] = `
 exports[`typeahead select test onChange 1`] = `
 <Select
   aria-label={null}
+  ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
   isExpanded={true}
@@ -2649,7 +2661,6 @@ exports[`typeahead select test onChange 1`] = `
               class="pf-c-select__toggle-wrapper"
             >
               <input
-                aria-label="Type to filter"
                 class="pf-c-form-control pf-c-select__toggle-typeahead"
                 id="select-single-typeahead-typeahead"
                 type="text"
@@ -2699,7 +2710,7 @@ exports[`typeahead select test onChange 1`] = `
           className="pf-c-select__toggle-wrapper"
         >
           <input
-            aria-label="Type to filter"
+            aria-label={null}
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             id="select-single-typeahead-typeahead"
             onChange={[Function]}

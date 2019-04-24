@@ -32,6 +32,8 @@ const propTypes = {
   'aria-label': PropTypes.string,
   /** Id of label for the Select aria-labelledby */
   ariaLabelledBy: PropTypes.string,
+  /** Label for input field of type ahead select variants */
+  ariaLabelTypeAhead: PropTypes.string,
   /** Callback for selection behavior */
   onSelect: PropTypes.func.isRequired,
   /** Callback for toggle button behavior */
@@ -53,6 +55,7 @@ const defaultProps = {
   isGrouped: false,
   'aria-label': null,
   ariaLabelledBy: null,
+  ariaLabelTypeAhead: null,
   selections: null,
   placeholderText: null,
   variant: SelectVariant.single,
@@ -120,6 +123,7 @@ class Select extends React.Component {
       isGrouped,
       selections,
       ariaLabelledBy,
+      ariaLabelTypeAhead,
       'aria-label': ariaLabel,
       placeholderText,
       width,
@@ -189,7 +193,7 @@ class Select extends React.Component {
                   <input
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                     id="select-single-typeahead-typeahead"
-                    aria-label="Type to filter"
+                    aria-label={ariaLabelTypeAhead}
                     placeholder={placeholderText}
                     value={typeaheadValue !== null ? typeaheadValue : selections || ''}
                     type="text"
@@ -216,8 +220,8 @@ class Select extends React.Component {
                   {selections && selections.length > 0 && selectedChips}
                   <input
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
-                    id="select-single-typeahead-typeahead"
-                    aria-label="Type to filter"
+                    id="select-multi-typeahead-typeahead"
+                    aria-label={ariaLabelTypeAhead}
                     placeholder={placeholderText}
                     value={typeaheadValue !== null ? typeaheadValue : ''}
                     type="text"
