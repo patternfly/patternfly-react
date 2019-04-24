@@ -3,26 +3,33 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
 import { AngleRightIcon, CaretDownIcon } from '@patternfly/react-icons';
 import { WizardStep } from './Wizard';
-import WizardBody from './WizardBody';
+import { WizardBody } from './WizardBody';
 
-interface WizardToggleProps {
+export interface WizardToggleProps {
+  /** Function that returns the WizardNav component */
   nav: any;
+  /** The wizard steps */
   steps: WizardStep[];
+  /** The currently active WizardStep */
   activeStep: WizardStep;
+  /** The WizardFooter */
   children: React.ReactNode;
+  /** Set to false to remove body padding */
   hasBodyPadding: boolean;
+  /** If the nav is open */
   isNavOpen: boolean;
+  /** Callback function for when the nav is toggled */
   onNavToggle: (isOpen: boolean) => void;
 }
 
-const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
+export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   isNavOpen,
   onNavToggle,
   nav,
   steps,
   activeStep,
   children,
-  hasBodyPadding,
+  hasBodyPadding = true,
   ...props
 }: WizardToggleProps) => {
   let activeStepIndex;
@@ -70,5 +77,3 @@ const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
     </>
   );
 };
-
-export default WizardToggle;
