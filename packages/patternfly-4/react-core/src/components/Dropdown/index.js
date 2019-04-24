@@ -4,3 +4,4 @@ export { default as DropdownItem } from './Item';
 export { default as DropdownSeparator } from './Separator';
 export { default as KebabToggle } from './KebabToggle';
 export { default as DropdownToggle } from './DropdownToggle';
+export { default as DropdownToggleCheckbox } from './DropdownToggleCheckbox';

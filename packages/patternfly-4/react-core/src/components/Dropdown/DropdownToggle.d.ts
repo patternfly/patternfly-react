@@ -2,6 +2,7 @@ import { FunctionComponent, HTMLProps, ReactNode, ReactType } from 'react';
 
 export interface DropdownToggleProps extends HTMLProps<HTMLButtonElement> {
   id?: string;
+  ariaLabel?: string;
   children?: ReactNode;
   isOpen?: boolean;
   onToggle?: Function;
@@ -12,6 +13,7 @@ export interface DropdownToggleProps extends HTMLProps<HTMLButtonElement> {
   isPlain?: boolean;
   isDisabled?: boolean;
   iconComponent?: ReactType | null;
+  splitButtonItems?: ReactNode[];
 }
 
 declare const DropdownToggle: FunctionComponent<DropdownToggleProps>;
