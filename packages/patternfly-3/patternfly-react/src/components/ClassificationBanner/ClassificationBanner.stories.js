@@ -12,7 +12,7 @@ import { ClassificationBanner } from './index';
 import { name } from '../../../package.json';
 
 const stories = storiesOf(
-  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.SOME_CATEGORY}/ClassificationBanner`,
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.COMMUNICATION}/ClassificationBanner`,
   module
 );
 stories.addDecorator(withKnobs);
@@ -26,15 +26,10 @@ stories.addDecorator(
 );
 
 stories.add(
-  'ClassificationBanner story',
+  'ClassificationBanner',
   withInfo(`This is the ClassificationBanner component.`)(() => (
     <ClassificationBanner>
-      <span>
-        {text(
-          'Label',
-          'Well done! You generated a PatternFly React component.'
-        )}
-      </span>
+      
     </ClassificationBanner>
   ))
 );
