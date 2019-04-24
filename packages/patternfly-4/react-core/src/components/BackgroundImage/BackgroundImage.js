@@ -18,7 +18,8 @@ export const BackgroundImageSrc = {
   xs2x: 'xs2x',
   sm: 'sm',
   sm2x: 'sm2x',
-  lg: 'lg'
+  lg: 'lg',
+  filter: 'filter'
 };
 
 const variableMap = {
