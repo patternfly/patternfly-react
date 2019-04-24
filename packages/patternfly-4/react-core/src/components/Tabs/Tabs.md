@@ -201,12 +201,12 @@ class FilledTabs extends React.Component {
 }
 ```
 
-## Accessible secondary tabs
+## Secondary tabs using the nav element
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
 
-class AccessibleSecondaryTabs extends React.Component {
+class SecondaryTabsNavVariant extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -237,7 +237,7 @@ class AccessibleSecondaryTabs extends React.Component {
         aria-label="Local"
         variant={TabsVariant.nav}
       >
-        <Tab eventKey={0} title="Tab item 1">
+        <Tab eventKey={0} title="Tab item 1" href="#">
           <Tabs
             activeKey={this.state.activeTabKey2}
             isSecondary
@@ -245,21 +245,21 @@ class AccessibleSecondaryTabs extends React.Component {
             aria-label="Local secondary"
             variant={TabsVariant.nav}
           >
-            <Tab eventKey={10} title="Secondary tab item 1">
+            <Tab eventKey={10} title="Secondary tab item 1" href="#">
               Secondary tab item 1 item section
             </Tab>
-            <Tab eventKey={11} title="Secondary tab item 2">
+            <Tab eventKey={11} title="Secondary tab item 2" href="#">
               Secondary tab item 2 section
             </Tab>
-            <Tab eventKey={12} title="Secondary tab item 3">
+            <Tab eventKey={12} title="Secondary tab item 3" href="#">
               Secondary tab item 3 section
             </Tab>
           </Tabs>
         </Tab>
-        <Tab eventKey={1} title="Tab item 2">
+        <Tab eventKey={1} title="Tab item 2" href="#">
           Tab 2 section
         </Tab>
-        <Tab eventKey={2} title="Tab item 3">
+        <Tab eventKey={2} title="Tab item 3" href="#">
           Tab 3 section
         </Tab>
       </Tabs>
@@ -268,12 +268,12 @@ class AccessibleSecondaryTabs extends React.Component {
 }
 ```
 
-## Accessible tabs
+## Tabs using the nav element
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
 
-class AccessibleTabs extends React.Component {
+class TabsNavVariant extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -296,13 +296,13 @@ class AccessibleTabs extends React.Component {
         aria-label="Local"
         variant={TabsVariant.nav}
       >
-        <Tab eventKey={0} title="Tab item 1">
+        <Tab eventKey={0} title="Tab item 1" href="#">
           Tab 1 section
         </Tab>
-        <Tab eventKey={1} title="Tab item 2">
+        <Tab eventKey={1} title="Tab item 2" href="#">
           Tab 2 section
         </Tab>
-        <Tab eventKey={2} title="Tab item 3">
+        <Tab eventKey={2} title="Tab item 3" href="#">
           Tab 3 section
         </Tab>
       </Tabs>

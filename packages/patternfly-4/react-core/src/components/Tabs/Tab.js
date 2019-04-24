@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 const propTypes = {
   /** content rendered inside the Tab content area. */
   children: PropTypes.node,
-  /** additional classes added to the Modal */
+  /** additional classes added to the Tab */
   className: PropTypes.string,
+  /** URL associated with the Tab. A Tab with an href will render as an <a> instead of a <button>. A Tab inside a <Tabs variant="nav"> should have an href. */
+  href: PropTypes.string,
   /** Tab title */
   title: PropTypes.string.isRequired,
   /** uniquely identifies the tab */
@@ -22,6 +24,7 @@ const propTypes = {
 const defaultProps = {
   children: null,
   className: '',
+  href: null,
   tabContentId: null,
   tabContentRef: null,
 };
@@ -42,7 +45,8 @@ class Tab extends React.Component {
   render() {
     // destructuring to prevent console warnings for applying eventKey, forwardRef, and tabContentId to a DOM element and remove title from the DOM element
     const { children, eventKey, tabContentId, tabContentRef, forwardRef, title, ...props } = this.props;
-    return <button {...props} ref={tabContentRef}>{children}</button>;
+    const Component = props.href ? 'a' : 'button';
+    return <Component {...props} ref={tabContentRef}>{children}</Component>;
   }
 }
 

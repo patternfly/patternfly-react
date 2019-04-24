@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.10.0...@patternfly/react-core@3.11.0) (2019-04-24)
+
+
+### Features
+
+* **BackgroundImage:** update background image component ([#1811](https://github.com/patternfly/patternfly-react/issues/1811)) ([baab0cf](https://github.com/patternfly/patternfly-react/commit/baab0cf))
+
+
+
+
+
+# [3.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.9.0...@patternfly/react-core@3.10.0) (2019-04-24)
+
+
+### Features
+
+* **Tab:** Render Tab as <a> instead of <button> if it contains an href prop ([#1828](https://github.com/patternfly/patternfly-react/issues/1828)) ([716bf41](https://github.com/patternfly/patternfly-react/commit/716bf41)), closes [#1805](https://github.com/patternfly/patternfly-react/issues/1805)
+
+
+
+
+
 # [3.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.8.1...@patternfly/react-core@3.9.0) (2019-04-24)
 
 
