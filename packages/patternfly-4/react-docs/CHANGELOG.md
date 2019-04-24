@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.1.21...@patternfly/react-docs@4.2.0) (2019-04-24)
+
+
+### Features
+
+* **BackgroundImage:** update background image component ([#1811](https://github.com/patternfly/patternfly-react/issues/1811)) ([baab0cf](https://github.com/patternfly/patternfly-react/commit/baab0cf))
+
+
+
+
+
 ## [4.1.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.1.20...@patternfly/react-docs@4.1.21) (2019-04-24)
 
 **Note:** Version bump only for package @patternfly/react-docs
