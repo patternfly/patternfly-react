@@ -7,10 +7,10 @@ import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
 import { Backdrop } from '../Backdrop';
 import { Bullseye } from '../../layouts/Bullseye';
 import { Button } from '../Button';
-import WizardHeader from './WizardHeader';
-import WizardToggle from './WizardToggle';
-import WizardNav from './WizardNav';
-import WizardNavItem from './WizardNavItem';
+import { WizardHeader } from './WizardHeader';
+import { WizardToggle } from './WizardToggle';
+import { WizardNav } from './WizardNav';
+import { WizardNavItem } from './WizardNavItem';
 // because of the way this module is exported, cannot use regular import syntax
 // tslint:disable-next-line
 const FocusTrap: any = require('focus-trap-react');
@@ -44,6 +44,14 @@ export type WizardStepFunctionType = (newStep: { id?: string | number; name: str
 export interface WizardProps {
   /** True to show the wizard */
   isOpen?: boolean;
+  /** True to set full height wizard */
+  isFullHeight?: boolean;
+  /** True to set full width wizard */
+  isFullWidth?: boolean;
+  /** Custom width of the wizard */
+  width?: number | string;
+  /** Custom height of the wizard */
+  height?: number | string;
   /** The wizard title */
   title: string;
   /** The wizard description */
@@ -78,10 +86,14 @@ export interface WizardProps {
   ariaLabelCloseButton?: string;
 }
 
-class Wizard extends React.Component<WizardProps> {
+export class Wizard extends React.Component<WizardProps> {
   static currentId = 0;
   static defaultProps = {
     isOpen: false,
+    isFullHeight: false,
+    isFullWidth: false,
+    width: null,
+    height: null,
     description: '',
     onBack: null,
     onNext: null,
@@ -263,6 +275,10 @@ class Wizard extends React.Component<WizardProps> {
     }
     const {
       isOpen,
+      isFullHeight,
+      isFullWidth,
+      width,
+      height,
       title,
       description,
       onClose,
@@ -287,6 +303,8 @@ class Wizard extends React.Component<WizardProps> {
     const computedSteps: ComputedStep[] = this.initSteps(steps, activeStep);
     const firstStep = activeStep === flattenedSteps[0];
     const isValid = activeStep.enableNext !== undefined ? activeStep.enableNext : true;
+    const setFullWidth = isFullWidth || width
+    const setFullHeight = isFullHeight || height
 
     const nav = (isWizardNavOpen: boolean) => (
       <WizardNav isOpen={isWizardNavOpen} ariaLabel={ariaLabelNav}>
@@ -330,7 +348,7 @@ class Wizard extends React.Component<WizardProps> {
         <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
           <Backdrop>
             <Bullseye>
-              <div {...rest} className={css(styles.wizard, className)} role="dialog" aria-modal="true" aria-labelledby={this.titleId} aria-describedby={description ? this.descriptionId : undefined}>
+              <div {...rest} style={{ width, height }} className={css(styles.wizard, setFullWidth && styles.modifiers.fullWidth, setFullHeight && styles.modifiers.fullHeight,className)} role="dialog" aria-modal="true" aria-labelledby={this.titleId} aria-describedby={description ? this.descriptionId : undefined}>
                 <WizardHeader titleId={this.titleId} descriptionId={this.descriptionId} onClose={onClose} title={title} description={description as string} ariaLabel={ariaLabelCloseButton as string} />
                 <WizardToggle isNavOpen={isNavOpen} onNavToggle={(isNavOpen) => this.setState({ isNavOpen })} nav={nav} steps={steps} activeStep={activeStep} hasBodyPadding={hasBodyPadding as boolean}>
                   <footer className={css(styles.wizardFooter)}>
@@ -354,5 +372,3 @@ class Wizard extends React.Component<WizardProps> {
     );
   }
 }
-
-export { Wizard };
