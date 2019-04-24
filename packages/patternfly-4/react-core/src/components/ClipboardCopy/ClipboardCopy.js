@@ -60,7 +60,7 @@ class ClipboardCopy extends React.Component {
       'toggle-aria-label': toggleAriaLabel,
       variant,
       position,
-      classname,
+      className,
       onChange,
       ...props
     } = this.props;
@@ -70,7 +70,7 @@ class ClipboardCopy extends React.Component {
     const copyButtonIdPrefix = 'copy-button-';
     return (
       <div
-        className={css(styles.clipboardCopy, this.state.expanded && styles.modifiers.expanded, classname)}
+        className={css(styles.clipboardCopy, this.state.expanded && styles.modifiers.expanded, className)}
         {...props}
       >
         <GenerateId prefix="">
@@ -134,7 +134,7 @@ class ClipboardCopy extends React.Component {
 
 ClipboardCopy.propTypes = {
   /** Additional classes added to the clipboard copy container. */
-  classname: PropTypes.string,
+  className: PropTypes.string,
   /** Tooltip message to display when hover the copy button */
   hoverTip: PropTypes.string,
   /** Tooltip message to display when clicking the copy button */
