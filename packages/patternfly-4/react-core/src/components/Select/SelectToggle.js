@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from '@patternfly/patternfly/components/Select/select.css';
+import buttonStyles from '@patternfly/patternfly/components/Button/button.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { CaretDownIcon } from '@patternfly/react-icons';
@@ -157,7 +158,12 @@ class SelectToggle extends Component {
         onKeyDown={this.onKeyDown}
       >
         {children}
-        <CaretDownIcon className={css(styles.selectToggleArrow)} />
+        {isTypeahead && (
+          <button className={css(buttonStyles.button, styles.selectToggleButton)}>
+            <CaretDownIcon className={css(styles.selectToggleArrow)} />
+          </button>
+        )}
+        {!isTypeahead && <CaretDownIcon className={css(styles.selectToggleArrow)} />}
       </ToggleComponent>
     );
   }
