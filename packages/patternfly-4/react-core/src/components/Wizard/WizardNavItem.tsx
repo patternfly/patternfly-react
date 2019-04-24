@@ -27,10 +27,10 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
 }: WizardNavItemProps) => (
     <li className={css(styles.wizardNavItem)}>
       <a
-        aria-current={isCurrent && !children ? 'page' : 'false'}
+        aria-current={isCurrent && !children ? 'page' : false}
         onClick={() => (onNavItemClick && onNavItemClick(step))}
         className={css(styles.wizardNavLink, isCurrent && 'pf-m-current', isDisabled && 'pf-m-disabled')}
-        aria-disabled={isDisabled ? 'true' : 'false'}
+        aria-disabled={isDisabled ? true : false}
         tabIndex={isDisabled ? -1 : undefined}>
         {text}
       </a>
