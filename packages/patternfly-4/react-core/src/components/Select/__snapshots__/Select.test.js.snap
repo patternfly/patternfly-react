@@ -1077,9 +1077,9 @@ exports[`typeahead multi select renders closed successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-8"
+      aria-labelledby="null pf-toggle-id-10"
       className=""
-      id="pf-toggle-id-8"
+      id="pf-toggle-id-10"
       isActive={false}
       isExpanded={false}
       isFocused={false}
@@ -1095,9 +1095,9 @@ exports[`typeahead multi select renders closed successfully 1`] = `
       <div
         aria-expanded={false}
         aria-haspopup="listbox"
-        aria-labelledby="null pf-toggle-id-8"
+        aria-labelledby="null pf-toggle-id-10"
         className="pf-c-select__toggle pf-m-typeahead"
-        id="pf-toggle-id-8"
+        id="pf-toggle-id-10"
         onClick={[Function]}
         onKeyDown={[Function]}
         type={null}
@@ -1176,9 +1176,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-9"
+      aria-labelledby="null pf-toggle-id-11"
       className=""
-      id="pf-toggle-id-9"
+      id="pf-toggle-id-11"
       isActive={false}
       isExpanded={true}
       isFocused={false}
@@ -1194,9 +1194,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       <div
         aria-expanded={true}
         aria-haspopup="listbox"
-        aria-labelledby="null pf-toggle-id-9"
+        aria-labelledby="null pf-toggle-id-11"
         className="pf-c-select__toggle pf-m-typeahead"
-        id="pf-toggle-id-9"
+        id="pf-toggle-id-11"
         onClick={[Function]}
         onKeyDown={[Function]}
         type={null}
@@ -1400,9 +1400,9 @@ exports[`typeahead multi select renders selected successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-10"
+      aria-labelledby="null pf-toggle-id-12"
       className=""
-      id="pf-toggle-id-10"
+      id="pf-toggle-id-12"
       isActive={false}
       isExpanded={true}
       isFocused={false}
@@ -1418,9 +1418,9 @@ exports[`typeahead multi select renders selected successfully 1`] = `
       <div
         aria-expanded={true}
         aria-haspopup="listbox"
-        aria-labelledby="null pf-toggle-id-10"
+        aria-labelledby="null pf-toggle-id-12"
         className="pf-c-select__toggle pf-m-typeahead"
-        id="pf-toggle-id-10"
+        id="pf-toggle-id-12"
         onClick={[Function]}
         onKeyDown={[Function]}
         type={null}
@@ -1839,6 +1839,167 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           </li>
         </SelectOption>
       </ul>
+    </SingleSelect>
+  </div>
+</Select>
+`;
+
+exports[`typeahead multi select test onChange 1`] = `
+<Select
+  aria-label={null}
+  ariaLabelledBy={null}
+  className=""
+  isExpanded={true}
+  isGrouped={false}
+  onClear={[MockFunction]}
+  onSelect={[MockFunction]}
+  onToggle={[MockFunction]}
+  placeholderText={null}
+  selections={null}
+  variant="typeahead"
+  width={null}
+>
+  <div
+    className="pf-c-select pf-m-expanded"
+    style={
+      Object {
+        "width": null,
+      }
+    }
+  >
+    <SelectToggle
+      aria-labelledby="null pf-toggle-id-14"
+      className=""
+      id="pf-toggle-id-14"
+      isActive={false}
+      isExpanded={true}
+      isFocused={false}
+      isHovered={false}
+      isPlain={false}
+      onClose={[Function]}
+      onEnter={[Function]}
+      onToggle={[MockFunction]}
+      parentRef={
+        <div
+          class="pf-c-select pf-m-expanded"
+        >
+          <div
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-labelledby="null pf-toggle-id-14"
+            class="pf-c-select__toggle pf-m-typeahead"
+            id="pf-toggle-id-14"
+          >
+            <div
+              class="pf-c-select__toggle-wrapper"
+            >
+              <input
+                aria-label="Type to filter"
+                class="pf-c-form-control pf-c-select__toggle-typeahead"
+                id="select-single-typeahead-typeahead"
+                type="text"
+                value="test"
+              />
+            </div>
+            <button
+              class="pf-c-button pf-c-select__toggle-button"
+            >
+              <svg
+                aria-hidden="true"
+                class="pf-c-select__toggle-arrow"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 320 512"
+                width="1em"
+              >
+                <path
+                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  transform=""
+                />
+              </svg>
+            </button>
+          </div>
+          <ul
+            class="pf-c-select__menu"
+            role="listbox"
+          />
+        </div>
+      }
+      type="button"
+      variant="typeahead"
+    >
+      <div
+        aria-expanded={true}
+        aria-haspopup="listbox"
+        aria-labelledby="null pf-toggle-id-14"
+        className="pf-c-select__toggle pf-m-typeahead"
+        id="pf-toggle-id-14"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        type={null}
+      >
+        <div
+          className="pf-c-select__toggle-wrapper"
+        >
+          <input
+            aria-label="Type to filter"
+            className="pf-c-form-control pf-c-select__toggle-typeahead"
+            id="select-single-typeahead-typeahead"
+            onChange={[Function]}
+            placeholder={null}
+            type="text"
+            value="test"
+          />
+        </div>
+        <button
+          className="pf-c-button pf-c-select__toggle-button"
+        >
+          <CaretDownIcon
+            className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            size="sm"
+            title={null}
+          >
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
+              className="pf-c-select__toggle-arrow"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
+                Object {
+                  "verticalAlign": "-0.125em",
+                }
+              }
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
+          </CaretDownIcon>
+        </button>
+      </div>
+    </SelectToggle>
+    <SingleSelect
+      aria-label={null}
+      aria-labelledby={null}
+      className=""
+      isExpanded={false}
+      openedOnEnter={false}
+      selected={null}
+    >
+      <ul
+        aria-label={null}
+        aria-labelledby={null}
+        className="pf-c-select__menu"
+        role="listbox"
+      />
     </SingleSelect>
   </div>
 </Select>
@@ -2433,6 +2594,167 @@ exports[`typeahead select renders selected successfully 1`] = `
           </li>
         </SelectOption>
       </ul>
+    </SingleSelect>
+  </div>
+</Select>
+`;
+
+exports[`typeahead select test onChange 1`] = `
+<Select
+  aria-label={null}
+  ariaLabelledBy={null}
+  className=""
+  isExpanded={true}
+  isGrouped={false}
+  onClear={[MockFunction]}
+  onSelect={[MockFunction]}
+  onToggle={[MockFunction]}
+  placeholderText={null}
+  selections={null}
+  variant="typeahead"
+  width={null}
+>
+  <div
+    className="pf-c-select pf-m-expanded"
+    style={
+      Object {
+        "width": null,
+      }
+    }
+  >
+    <SelectToggle
+      aria-labelledby="null pf-toggle-id-9"
+      className=""
+      id="pf-toggle-id-9"
+      isActive={false}
+      isExpanded={true}
+      isFocused={false}
+      isHovered={false}
+      isPlain={false}
+      onClose={[Function]}
+      onEnter={[Function]}
+      onToggle={[MockFunction]}
+      parentRef={
+        <div
+          class="pf-c-select pf-m-expanded"
+        >
+          <div
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-labelledby="null pf-toggle-id-9"
+            class="pf-c-select__toggle pf-m-typeahead"
+            id="pf-toggle-id-9"
+          >
+            <div
+              class="pf-c-select__toggle-wrapper"
+            >
+              <input
+                aria-label="Type to filter"
+                class="pf-c-form-control pf-c-select__toggle-typeahead"
+                id="select-single-typeahead-typeahead"
+                type="text"
+                value="test"
+              />
+            </div>
+            <button
+              class="pf-c-button pf-c-select__toggle-button"
+            >
+              <svg
+                aria-hidden="true"
+                class="pf-c-select__toggle-arrow"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 320 512"
+                width="1em"
+              >
+                <path
+                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  transform=""
+                />
+              </svg>
+            </button>
+          </div>
+          <ul
+            class="pf-c-select__menu"
+            role="listbox"
+          />
+        </div>
+      }
+      type="button"
+      variant="typeahead"
+    >
+      <div
+        aria-expanded={true}
+        aria-haspopup="listbox"
+        aria-labelledby="null pf-toggle-id-9"
+        className="pf-c-select__toggle pf-m-typeahead"
+        id="pf-toggle-id-9"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        type={null}
+      >
+        <div
+          className="pf-c-select__toggle-wrapper"
+        >
+          <input
+            aria-label="Type to filter"
+            className="pf-c-form-control pf-c-select__toggle-typeahead"
+            id="select-single-typeahead-typeahead"
+            onChange={[Function]}
+            placeholder={null}
+            type="text"
+            value="test"
+          />
+        </div>
+        <button
+          className="pf-c-button pf-c-select__toggle-button"
+        >
+          <CaretDownIcon
+            className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            size="sm"
+            title={null}
+          >
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
+              className="pf-c-select__toggle-arrow"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
+                Object {
+                  "verticalAlign": "-0.125em",
+                }
+              }
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
+          </CaretDownIcon>
+        </button>
+      </div>
+    </SelectToggle>
+    <SingleSelect
+      aria-label={null}
+      aria-labelledby={null}
+      className=""
+      isExpanded={false}
+      openedOnEnter={false}
+      selected={null}
+    >
+      <ul
+        aria-label={null}
+        aria-labelledby={null}
+        className="pf-c-select__menu"
+        role="listbox"
+      />
     </SingleSelect>
   </div>
 </Select>

@@ -9,7 +9,7 @@ export const SelectVariant = {
   single: 'single',
   checkbox: 'checkbox',
   typeahead: 'typeahead',
-  typeahead_multi: 'typeaheadmulti'
+  typeaheadMulti: 'typeaheadmulti'
 };
 
 export const KeyTypes = {

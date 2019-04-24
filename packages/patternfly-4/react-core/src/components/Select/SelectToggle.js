@@ -98,7 +98,8 @@ class SelectToggle extends Component {
       (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) ||
       (event.key === KeyTypes.Tab && !isExpanded) ||
       (event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space) ||
-      (event.key === KeyTypes.Space && variant === SelectVariant.typeahead)
+      (event.key === KeyTypes.Space &&
+        (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti))
     )
       return;
     event.preventDefault();
@@ -130,7 +131,7 @@ class SelectToggle extends Component {
       type,
       ...props
     } = this.props;
-    const isTypeahead = variant === SelectVariant.typeahead || variant === SelectVariant.typeahead_multi;
+    const isTypeahead = variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti;
     const ToggleComponent = isTypeahead ? 'div' : 'button';
     return (
       <ToggleComponent
@@ -150,8 +151,11 @@ class SelectToggle extends Component {
         )}
         type={!isTypeahead ? type : null}
         onClick={_event => {
-          onToggle && onToggle(!isExpanded);
-          if (isExpanded) onClose && onClose();
+          if (isTypeahead) onToggle && onToggle(true);
+          else {
+            onToggle && onToggle(!isExpanded);
+            if (isExpanded) onClose && onClose();
+          }
         }}
         aria-expanded={isExpanded}
         aria-haspopup={(variant !== SelectVariant.checkbox && 'listbox') || null}

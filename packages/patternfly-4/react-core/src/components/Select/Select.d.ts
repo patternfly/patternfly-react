@@ -4,14 +4,14 @@ export const SelectVariant: {
   single: 'single';
   checkbox: 'checkbox';
   typeahead: 'typeahead';
-  typeahead_multi: 'typeaheadmulti';
+  typeaheadMulti: 'typeaheadmulti';
 };
 
 export interface SelectProps extends HTMLProps<HTMLOptionElement> {
   isExpanded?: boolean;
   isGrouped?: boolean;
   onToggle(value: boolean): void;
-  onClear() : void;
+  onClear?() : void;
   placeholderText?: string | ReactNode;
   selections?: string | Array<string>;
   variant?: string;

@@ -99,12 +99,31 @@ describe('typeahead select', () => {
     );
     expect(view).toMatchSnapshot();
   });
+
+  test('test onChange', () => {
+    const mockEvent = { target: { value: 'test' } };
+    const view = mount(
+      <Select
+        variant={SelectVariant.typeahead}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+        onClear={jest.fn()}
+        isExpanded
+      >
+        {selectOptions}
+      </Select>
+    );
+    const inst = view.instance();
+    inst.onChange(mockEvent);
+    view.update();
+    expect(view).toMatchSnapshot();
+  });
 });
 
 describe('typeahead multi select', () => {
   test('renders closed successfully', () => {
     const view = mount(
-      <Select variant={SelectVariant.typeahead_multi} onSelect={jest.fn()} onToggle={jest.fn()}>
+      <Select variant={SelectVariant.typeaheadMulti} onSelect={jest.fn()} onToggle={jest.fn()}>
         {selectOptions}
       </Select>
     );
@@ -113,7 +132,7 @@ describe('typeahead multi select', () => {
 
   test('renders expanded successfully', () => {
     const view = mount(
-      <Select variant={SelectVariant.typeahead_multi} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+      <Select variant={SelectVariant.typeaheadMulti} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
         {selectOptions}
       </Select>
     );
@@ -123,7 +142,7 @@ describe('typeahead multi select', () => {
   test('renders selected successfully', () => {
     const view = mount(
       <Select
-        variant={SelectVariant.typeahead_multi}
+        variant={SelectVariant.typeaheadMulti}
         selections={['Mr', 'Mrs']}
         onSelect={jest.fn()}
         onToggle={jest.fn()}
@@ -132,6 +151,25 @@ describe('typeahead multi select', () => {
         {selectOptions}
       </Select>
     );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('test onChange', () => {
+    const mockEvent = { target: { value: 'test' } };
+    const view = mount(
+      <Select
+        variant={SelectVariant.typeahead}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+        onClear={jest.fn()}
+        isExpanded
+      >
+        {selectOptions}
+      </Select>
+    );
+    const inst = view.instance();
+    inst.onChange(mockEvent);
+    view.update();
     expect(view).toMatchSnapshot();
   });
 });

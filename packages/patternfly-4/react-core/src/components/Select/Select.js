@@ -73,17 +73,11 @@ class Select extends React.Component {
   };
 
   onClose = () => {
-    if (this.props.variant === SelectVariant.typeahead_multi) {
-      this.setState({
-        openedOnEnter: false
-      });
-    } else {
-      this.setState({
-        openedOnEnter: false,
-        typeaheadValue: null,
-        filteredChildren: this.props.children
-      });
-    }
+    this.setState({
+      openedOnEnter: false,
+      typeaheadValue: null,
+      filteredChildren: this.props.children
+    });
   };
 
   onChange = e => {
@@ -140,7 +134,7 @@ class Select extends React.Component {
         (childPlaceholder[0] && childPlaceholder[0].props.value) || (children[0] && children[0].props.value);
     }
     let selectedChips = null;
-    if (variant === SelectVariant.typeahead_multi) {
+    if (variant === SelectVariant.typeaheadMulti) {
       selectedChips = (
         <ChipGroup>
           {selections &&
@@ -216,7 +210,7 @@ class Select extends React.Component {
                 )}
               </React.Fragment>
             )}
-            {variant === SelectVariant.typeahead_multi && (
+            {variant === SelectVariant.typeaheadMulti && (
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
                   {selections && selections.length > 0 && selectedChips}
@@ -267,7 +261,7 @@ class Select extends React.Component {
               {children}
             </CheckboxSelect>
           )}
-          {(variant === SelectVariant.typeahead || variant === SelectVariant.typeahead_multi) && isExpanded && (
+          {(variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti) && isExpanded && (
             <SingleSelect
               {...props}
               selected={selections}

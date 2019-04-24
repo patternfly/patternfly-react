@@ -385,7 +385,7 @@ class MultiTypeaheadSelectInput extends React.Component {
           Title
         </span>
         <Select
-          variant={SelectVariant.typeahead_multi}
+          variant={SelectVariant.typeaheadMulti}
           aria-label="Select Input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
