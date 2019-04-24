@@ -33,7 +33,7 @@ const propTypes = {
   /** Type of the toggle button, defaults to 'button' */
   type: PropTypes.string,
   /** Flag for variant, determines toggle rules and interaction */
-  variant: PropTypes.oneOf(['single', 'checkbox', 'typeahead']),
+  variant: PropTypes.oneOf(['single', 'checkbox', 'typeahead', 'typeaheadmulti']),
   /** Additional props are spread to the container <button> */
   '': PropTypes.any
 };
@@ -129,7 +129,7 @@ class SelectToggle extends Component {
       type,
       ...props
     } = this.props;
-    const isTypeahead = variant === SelectVariant.typeahead;
+    const isTypeahead = variant === SelectVariant.typeahead || variant === SelectVariant.typeahead_multi;
     const ToggleComponent = isTypeahead ? 'div' : 'button';
     return (
       <ToggleComponent

@@ -76,7 +76,7 @@ describe('typeahead select', () => {
   test('renders closed successfully', () => {
     const view = mount(
       <Select variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()}>
-        {checkboxSelectOptions}
+        {selectOptions}
       </Select>
     );
     expect(view).toMatchSnapshot();
@@ -85,7 +85,51 @@ describe('typeahead select', () => {
   test('renders expanded successfully', () => {
     const view = mount(
       <Select variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
-        {checkboxSelectOptions}
+        {selectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders selected successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.typeahead} selections="Mr" onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+        {selectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+});
+
+describe('typeahead multi select', () => {
+  test('renders closed successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.typeahead_multi} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {selectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders expanded successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.typeahead_multi} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+        {selectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders selected successfully', () => {
+    const view = mount(
+      <Select
+        variant={SelectVariant.typeahead_multi}
+        selections={['Mr', 'Mrs']}
+        onSelect={jest.fn()}
+        onToggle={jest.fn()}
+        isExpanded
+      >
+        {selectOptions}
       </Select>
     );
     expect(view).toMatchSnapshot();

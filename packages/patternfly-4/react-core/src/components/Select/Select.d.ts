@@ -4,6 +4,7 @@ export const SelectVariant: {
   single: 'single';
   checkbox: 'checkbox';
   typeahead: 'typeahead';
+  typeahead_multi: 'typeaheadmulti';
 };
 
 export interface SelectProps extends HTMLProps<HTMLOptionElement> {

@@ -8,7 +8,8 @@ export const SelectContext = React.createContext({
 export const SelectVariant = {
   single: 'single',
   checkbox: 'checkbox',
-  typeahead: 'typeahead'
+  typeahead: 'typeahead',
+  typeahead_multi: 'typeaheadmulti'
 };
 
 export const KeyTypes = {

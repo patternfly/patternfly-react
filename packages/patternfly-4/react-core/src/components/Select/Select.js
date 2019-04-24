@@ -10,6 +10,7 @@ import SingleSelect from './SingleSelect';
 import CheckboxSelect from './CheckboxSelect';
 import SelectToggle from './SelectToggle';
 import { SelectContext, SelectVariant } from './selectConstants';
+import { Chip, ChipGroup } from '../ChipGroup';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -38,7 +39,7 @@ const propTypes = {
   /** Callback for typeahead clear button */
   onClear: PropTypes.func,
   /** Variant of rendered Select */
-  variant: PropTypes.oneOf(['single', 'checkbox', 'typeahead']),
+  variant: PropTypes.oneOf(['single', 'checkbox', 'typeahead', 'typeaheadmulti']),
   /** Width of the select container as a number of px or string percentage */
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Additional props are spread to the container <ul> */
@@ -72,15 +73,26 @@ class Select extends React.Component {
   };
 
   onClose = () => {
-    this.setState({
-      openedOnEnter: false,
-      typeaheadValue: null,
-      filteredChildren: this.props.children
-    });
+    if (this.props.variant === SelectVariant.typeahead_multi) {
+      this.setState({
+        openedOnEnter: false
+      });
+    } else {
+      this.setState({
+        openedOnEnter: false,
+        typeaheadValue: null,
+        filteredChildren: this.props.children
+      });
+    }
   };
 
   onChange = e => {
-    const input = new RegExp(e.target.value, 'i');
+    let input;
+    try {
+      input = new RegExp(e.target.value, 'i');
+    } catch (err) {
+      input = new RegExp(e.target.value.replace(/[^a-z0-9áéíóúñü \.,_-]/gim, ''), 'i');
+    }
     this.setState({
       typeaheadValue: e.target.value,
       filteredChildren:
@@ -126,6 +138,19 @@ class Select extends React.Component {
       const childPlaceholder = children.filter(child => child.props.isPlaceholder === true);
       childPlaceholderText =
         (childPlaceholder[0] && childPlaceholder[0].props.value) || (children[0] && children[0].props.value);
+    }
+    let selectedChips = null;
+    if (variant === SelectVariant.typeahead_multi) {
+      selectedChips = (
+        <ChipGroup>
+          {selections &&
+            selections.map(item => (
+              <Chip key={item} onClick={e => onSelect(e, item)}>
+                {item}
+              </Chip>
+            ))}
+        </ChipGroup>
+      );
     }
 
     return (
@@ -191,6 +216,34 @@ class Select extends React.Component {
                 )}
               </React.Fragment>
             )}
+            {variant === SelectVariant.typeahead_multi && (
+              <React.Fragment>
+                <div className={css(styles.selectToggleWrapper)}>
+                  {selections && selections.length > 0 && selectedChips}
+                  <input
+                    className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                    id="select-single-typeahead-typeahead"
+                    aria-label="Type to filter"
+                    placeholder={placeholderText}
+                    value={typeaheadValue !== null ? typeaheadValue : ''}
+                    type="text"
+                    onChange={this.onChange}
+                  />
+                </div>
+                {selections && selections.length > 0 && (
+                  <button
+                    className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
+                    onClick={e => {
+                      this.clearSelection(e);
+                      onClear && onClear(e);
+                    }}
+                    aria-label="Clear all"
+                  >
+                    <TimesCircleIcon aria-hidden />
+                  </button>
+                )}
+              </React.Fragment>
+            )}
           </SelectToggle>
           {variant === SelectVariant.single && isExpanded && (
             <SingleSelect
@@ -214,7 +267,7 @@ class Select extends React.Component {
               {children}
             </CheckboxSelect>
           )}
-          {variant === SelectVariant.typeahead && isExpanded && (
+          {(variant === SelectVariant.typeahead || variant === SelectVariant.typeahead_multi) && isExpanded && (
             <SingleSelect
               {...props}
               selected={selections}
