@@ -98,7 +98,7 @@ class SelectToggle extends Component {
       (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) ||
       (event.key === KeyTypes.Tab && !isExpanded) ||
       (event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space) ||
-      (event.key === KeyTypes.Space &&
+      ((event.key === KeyTypes.Space || event.key === KeyTypes.Enter) &&
         (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti))
     )
       return;
