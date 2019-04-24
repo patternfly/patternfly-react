@@ -91,7 +91,7 @@ class Select extends React.Component {
     try {
       input = new RegExp(e.target.value, 'i');
     } catch (err) {
-      input = new RegExp(e.target.value.replace(/[^a-z0-9áéíóúñü \.,_-]/gim, ''), 'i');
+      input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
     }
     this.setState({
       typeaheadValue: e.target.value,
