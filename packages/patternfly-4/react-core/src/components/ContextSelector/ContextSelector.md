@@ -1,10 +1,10 @@
 ---
-title: 'Context Selector'
+title: 'Context selector'
 ---
 
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
 
-## Simple Context Selector
+## Simple context selector
 ```js
 import React from 'react';
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';

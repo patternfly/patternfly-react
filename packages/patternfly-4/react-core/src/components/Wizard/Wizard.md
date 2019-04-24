@@ -7,7 +7,7 @@ import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@pat
 import FinishedStep from './examples/FinishedStep';
 import SampleForm from './examples/SampleForm';
 
-### Simple Wizard
+### Simple wizard
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
@@ -56,7 +56,7 @@ class SimpleWizard extends React.Component {
 }
 ```
 
-### Wizard - compact navigation (Wizard isCompact prop)
+### Wizard - compact navigation (Wizard `isCompact` prop)
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
@@ -106,7 +106,7 @@ class CompactWizard extends React.Component {
 }
 ```
 
-### Wizard - steps not clickable in side nav until step is reached (step canJumpTo prop)
+### Wizard - steps not clickable in side nav until step is reached (step `canJumpTo` prop)
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
@@ -162,7 +162,7 @@ class DisabledStepsWizard extends React.Component {
 }
 ```
 
-### Wizard - finished step
+### Wizard - finished step (step `isFinished` prop)
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';

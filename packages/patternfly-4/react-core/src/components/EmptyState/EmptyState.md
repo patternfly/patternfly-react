@@ -1,9 +1,9 @@
 ---
-title: 'Empty State'
+title: 'Empty state'
 cssPrefix: 'pf-c-empty-state'
 ---
 
-## Empty State
+## Empty state
 
 import {
   Title,
@@ -52,7 +52,7 @@ SimpleEmptyState = () => (
 );
 ```
 
-## Empty State Small
+## Empty state small
 ```js
 import React from 'react';
 import {
@@ -89,7 +89,7 @@ SimpleEmptyState = () => (
 );
 ```
 
-## Empty State Large
+## Empty state large
 ```js
 import React from 'react';
 import {

@@ -1,9 +1,9 @@
 ---
-title: 'Input Group'
+title: 'Input group'
 cssPrefix: null
 ---
 
-## Simple Input Group
+## Simple input group
 
 import { DollarSignIcon, AtIcon, CalendarAltIcon, SearchIcon, QuestionCircleIcon } from '@patternfly/react-icons';
 import {

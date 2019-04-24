@@ -39,6 +39,15 @@ test('isHover', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('isInline', () => {
+  const view = shallow(
+    <Button variant={ButtonVariant.link} isInline>
+      Hovered Button
+    </Button>
+  );
+  expect(view).toMatchSnapshot();
+});
+
 test('allows passing in a string as the component', () => {
   const component = 'a';
   const view = shallow(<Button component={component} />);

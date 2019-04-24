@@ -5,7 +5,7 @@ cssPrefix: 'pf-c-select'
 
 import { Select, SelectOption, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption } from '@patternfly/react-core';
 
-## Single Select Input
+## Single select input
 ```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption } from '@patternfly/react-core';
@@ -85,7 +85,7 @@ class SingleSelectInput extends React.Component {
 }
 ```
 
-## Checkbox Select Input
+## Checkbox select input
 ```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption } from '@patternfly/react-core';
@@ -161,7 +161,7 @@ class CheckboxSelectInput extends React.Component {
 }
 ```
 
-## Grouped Checkbox Select Input
+## Grouped checkbox select input
 ```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption } from '@patternfly/react-core';

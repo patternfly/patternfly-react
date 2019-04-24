@@ -1,5 +1,5 @@
 ---
-title: 'Chip Group'
+title: 'Chip group'
 cssPrefix: 'pf-c-chip'
 ---
 
@@ -73,7 +73,7 @@ class SingleChip extends React.Component {
 }
 ```
 
-## Chip Group Toolbar
+## Chip group toolbar
 
 ```js
 import React from 'react';
@@ -136,7 +136,7 @@ class ToolbarChipGroup extends React.Component {
 }
 ```
 
-## Chip Group Multi-Select
+## Chip group multi-select
 
 ```js
 import React from 'react';
@@ -173,7 +173,7 @@ class MultiSelectChipGroup extends React.Component {
 }
 ```
 
-## Badge Chip Group
+## Badge chip group
 
 ```js
 import React from 'react';

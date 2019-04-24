@@ -1,5 +1,5 @@
 ---
-title: 'Page Layout Groups Nav'
+title: 'Page layout groups nav'
 section: 'demos'
 fullscreen: true
 ---

@@ -1,11 +1,11 @@
 ---
-title: 'Table Text Input'
-section: 'inline-table'
+title: 'Table text input'
+section: 'inline table'
 ---
 
 import { TableTextInput } from '@patternfly/react-inline-edit-extension';
 
-## Simple TableTextInput
+## Simple table text input
 ```js
 import React from 'react';
 import { TableTextInput } from '@patternfly/react-inline-edit-extension';

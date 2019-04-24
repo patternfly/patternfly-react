@@ -3,11 +3,11 @@ title: 'Tabs'
 cssPrefix: 'pf-c-tabs'
 ---
 
-## Simple Tabs
+## Simple tabs
 
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
 
-Use Primary Sections
+Use primary sections
 
 ```js
 import React from 'react';
@@ -45,7 +45,7 @@ class SimpleTabs extends React.Component {
 }
 ```
 
-## Scroll Buttons Tabs
+## Scroll buttons tabs
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
@@ -110,7 +110,7 @@ class ScrollButtonsTabs extends React.Component {
 }
 ```
 
-## Secondary Buttons Tabs
+## Secondary buttons tabs
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
@@ -164,7 +164,7 @@ class SecondaryTabs extends React.Component {
 }
 ```
 
-## Filled Buttons Tabs
+## Filled buttons tabs
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
@@ -201,7 +201,7 @@ class FilledTabs extends React.Component {
 }
 ```
 
-## Accessible Secondary Tabs
+## Accessible secondary tabs
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
@@ -268,7 +268,7 @@ class AccessibleSecondaryTabs extends React.Component {
 }
 ```
 
-## AccessibleTabs
+## Accessible tabs
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
@@ -311,7 +311,7 @@ class AccessibleTabs extends React.Component {
 }
 ```
 
-## SeparateTabContent
+## Separate tab content
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';

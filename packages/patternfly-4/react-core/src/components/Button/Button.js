@@ -35,6 +35,8 @@ const propTypes = {
   isFocus: PropTypes.bool,
   /** Adds hover styling to the button */
   isHover: PropTypes.bool,
+   /** Adds inline styling to a link button */
+   isInline: PropTypes.bool,
   /** Sets button type */
   type: PropTypes.oneOf(Object.values(ButtonType)),
   /** Adds button variant styles */
@@ -54,6 +56,7 @@ const defaultProps = {
   isDisabled: false,
   isFocus: false,
   isHover: false,
+  isInline: false,
   type: ButtonType.button,
   variant: ButtonVariant.primary,
   'aria-label': null
@@ -68,6 +71,7 @@ const Button = ({
   isDisabled,
   isFocus,
   isHover,
+  isInline,
   variant,
   type,
   ...props
@@ -86,6 +90,7 @@ const Button = ({
         isActive && styles.modifiers.active,
         isFocus && styles.modifiers.focus,
         isHover && styles.modifiers.hover,
+        isInline && variant === ButtonVariant.link && styles.modifiers.inline,
         className
       )}
       disabled={isButtonElement ? isDisabled : null}

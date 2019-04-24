@@ -104,6 +104,8 @@ export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSe
   dropdownDirection?: OneOf<typeof DropdownDirection, keyof typeof DropdownDirection>;
   rows: Array<IRow | Array<String>>;
   cells: Array<ICell | String>;
+  bodyWrapper?: Function;
+  rowWrapper?: Function;
 }
 
 declare const Table: FunctionComponent<TableProps>;

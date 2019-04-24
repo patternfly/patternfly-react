@@ -1,10 +1,10 @@
 ---
-title: 'Background Image'
+title: 'Background image'
 cssPrefix: 'pf-c-background-image'
 ---
 import { BackgroundImage, BackgroundImageSrc } from '@patternfly/react-core';
 
-## Simple Background Image
+## Simple background image
 ```js
 import React from 'react';
 import { BackgroundImage, BackgroundImageSrc } from '@patternfly/react-core';

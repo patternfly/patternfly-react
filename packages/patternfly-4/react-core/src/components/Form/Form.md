@@ -3,7 +3,7 @@ title: 'Form'
 cssPrefix: 'pf-c-form'
 ---
 
-## Simple Form
+## Simple form
 
 import {
   Form,
@@ -120,7 +120,7 @@ class SimpleForm extends React.Component {
 }
 ```
 
-## Form (Horizontal)
+## Form (horizontal)
 ```js
 import React from 'react';
 import {
@@ -235,7 +235,7 @@ class HorizontalForm extends React.Component {
 }
 ```
 
-## Form (Invalid)
+## Form (invalid)
 ```js
 import React from 'react';
 import {

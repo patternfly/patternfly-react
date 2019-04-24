@@ -1,5 +1,5 @@
 ---
-title: 'Stack Chart'
+title: 'Stack chart'
 section: 'charts'
 ---
 
@@ -7,7 +7,7 @@ section: 'charts'
 
 All of the `<svg>` elements on this page need to have `overflow: 'visible'` set on them to display axes.
 
-## Vertical Blue Themed Stack Chart
+## Vertical blue themed stack chart
 
 import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
@@ -29,7 +29,7 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 </div>
 ```
 
-## Vertical Multi-Color Themed Stack Chart
+## Vertical multi-color themed stack chart
 ```js
 import React from 'react';
 import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';
@@ -47,7 +47,7 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 </div>
 ```
 
-## Horizontal Blue Themed Stack Chart
+## Horizontal blue themed stack chart
 ```js
 import React from 'react';
 import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';
@@ -65,7 +65,7 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 </div>
 ```
 
-## Horizontal Multi-Color Stack Chart
+## Horizontal multi-color stack chart
 ```js
 import React from 'react';
 import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';

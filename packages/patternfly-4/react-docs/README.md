@@ -1,6 +1,6 @@
 # React-docs
 
-## Writing Your Docs
+## Writing your docs
 
 Gatsby recursively scans all `../../patternfly-4` directories for *.md files. Your Markdown file can have the following frontmatter:
 ```

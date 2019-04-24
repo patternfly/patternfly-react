@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.1.0 (2019-04-23)
+
+
+### Features
+
+* **card:** adds card is-hoverable modifier prop ([#1812](https://github.com/patternfly/patternfly-react/issues/1812)) ([a398042](https://github.com/patternfly/patternfly-react/commit/a398042))
+
+
+
+
+
 ## [3.0.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.0.1...@patternfly/react-styles@3.0.2) (2019-04-15)
 
 

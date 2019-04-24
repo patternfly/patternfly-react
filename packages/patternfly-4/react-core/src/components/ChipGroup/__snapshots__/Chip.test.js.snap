@@ -43,6 +43,7 @@ exports[`ChipButton 1`] = `
   isDisabled={false}
   isFocus={false}
   isHover={false}
+  isInline={false}
   onClick={[Function]}
   type="button"
   variant="plain"

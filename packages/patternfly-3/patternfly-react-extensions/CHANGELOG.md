@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.18.0 (2019-04-23)
+
+
+### Bug Fixes
+
+* **Select:** PF3 - fix Select imports ([#1830](https://github.com/patternfly/patternfly-react/issues/1830)) ([cae0154](https://github.com/patternfly/patternfly-react/commit/cae0154))
+
+
+### Features
+
+* **card:** adds card is-hoverable modifier prop ([#1812](https://github.com/patternfly/patternfly-react/issues/1812)) ([a398042](https://github.com/patternfly/patternfly-react/commit/a398042))
+
+
+
+
+
 ## 2.17.2 (2019-04-15)
 
 

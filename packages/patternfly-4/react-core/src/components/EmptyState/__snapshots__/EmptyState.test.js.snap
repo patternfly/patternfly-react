@@ -24,6 +24,7 @@ exports[`EmptyState Main 1`] = `
     isDisabled={false}
     isFocus={false}
     isHover={false}
+    isInline={false}
     type="button"
     variant="primary"
   >
@@ -41,6 +42,7 @@ exports[`EmptyState Main 1`] = `
       isDisabled={false}
       isFocus={false}
       isHover={false}
+      isInline={false}
       type="button"
       variant="link"
     >

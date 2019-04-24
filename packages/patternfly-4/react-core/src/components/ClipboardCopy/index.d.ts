@@ -1,1 +1,1 @@
-export { default as ClipboardCopy, ClipboardCopyVariant } from './ClipboardCopy';
+export { default as ClipboardCopy, ClipboardCopyVariant, ClipboardCopyProps } from './ClipboardCopy';

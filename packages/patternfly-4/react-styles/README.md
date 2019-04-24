@@ -2,7 +2,7 @@
 
 Library that provides CSS-in-JS capabilities along with build plugins to convert raw css imports to a consumable form for JS. This approach is very similar to how [css-modules][css-modules] works.
 
-## Getting Started
+## Getting started
 
 This library has 3 main parts.
 

@@ -1,9 +1,8 @@
 ---
-title: 'About Modal'
+title: 'About modal'
 cssPrefix: 'pf-c-about-modal-box'
 ---
-
-## Simple About Modal
+## Simple about modal
 
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';
@@ -71,7 +70,7 @@ class SimpleAboutModal extends React.Component {
 }
 ```
 
-## About Modal without productName
+## About modal without product name
 
 ```js
 import React from 'react';

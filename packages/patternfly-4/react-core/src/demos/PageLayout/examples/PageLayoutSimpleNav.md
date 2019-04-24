@@ -1,5 +1,5 @@
 ---
-title: 'Page Layout Simple Nav'
+title: 'Page layout simple nav'
 section: 'demos'
 fullscreen: true
 ---

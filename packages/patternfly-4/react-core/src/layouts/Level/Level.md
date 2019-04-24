@@ -6,7 +6,7 @@ section: 'layouts'
 
 import { Level, LevelItem } from '@patternfly/react-core';
 
-## Simple Level Layout
+## Simple level layout
 ```js
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
@@ -18,7 +18,7 @@ import { Level, LevelItem } from '@patternfly/react-core';
 </Level>
 ```
 
-## Level With Gutters
+## Level with gutters
 ```js
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';

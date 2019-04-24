@@ -18,7 +18,7 @@ import {
   textCenter,
 } from '@patternfly/react-table';
 
-## Simple Table
+## Simple table
 
 ```js
 import React from 'react';
@@ -87,7 +87,7 @@ class SimpleTable extends React.Component {
 }
 ```
 
-## Sortable Table
+## Sortable table
 
 ```js
 import React from 'react';
@@ -144,7 +144,7 @@ class SortableTable extends React.Component {
 }
 ```
 
-## Selectable Table
+## Selectable table
 
 ```js
 import React from 'react';
@@ -215,7 +215,7 @@ class SelectableTable extends React.Component {
 }
 ```
 
-## Simple Actions Table
+## Simple actions table
 
 ```js
 import React from 'react';
@@ -286,7 +286,7 @@ class SimpleActionsTable extends React.Component {
 }
 ```
 
-## Actions Table
+## Actions table
 
 ```js
 import React from 'react';
@@ -388,7 +388,7 @@ class ActionsTable extends React.Component {
 }
 ```
 
-## First cell as Header Table
+## First cell as header table
 
 ```js
 import React from 'react';
@@ -432,7 +432,7 @@ class CellHeader extends React.Component {
 }
 ```
 
-## Compact Table
+## Compact table
 
 ```js
 import React from 'react';
@@ -475,7 +475,7 @@ class CompactTable extends React.Component {
 }
 ```
 
-## Compact Table Borderless Rows
+## Compact table borderless rows
 
 ```js
 import React from 'react';
@@ -524,7 +524,7 @@ class CompactTable extends React.Component {
 }
 ```
 
-## Compact Expandable Table
+## Compact expandable table
 
 ```js
 import React from 'react';
@@ -620,7 +620,7 @@ class ContactExpandableTable extends React.Component {
 }
 ```
 
-## Table with Width Modifiers
+## Table with width modifiers
 
 ```js
 import React from 'react';
