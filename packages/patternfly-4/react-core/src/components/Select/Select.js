@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from '@patternfly/patternfly/components/Select/select.css';
 import badgeStyles from '@patternfly/patternfly/components/Badge/badge.css';
+import formStyles from '@patternfly/patternfly/components/FormControl/form-control.css';
+import buttonStyles from '@patternfly/patternfly/components/Button/button.css';
 import { css } from '@patternfly/react-styles';
+import { TimesCircleIcon } from '@patternfly/react-icons';
 import PropTypes from 'prop-types';
 import SingleSelect from './SingleSelect';
 import CheckboxSelect from './CheckboxSelect';
@@ -32,8 +35,10 @@ const propTypes = {
   onSelect: PropTypes.func.isRequired,
   /** Callback for toggle button behavior */
   onToggle: PropTypes.func.isRequired,
+  /** Callback for typeahead clear button */
+  onClear: PropTypes.func,
   /** Variant of rendered Select */
-  variant: PropTypes.oneOf(['single', 'checkbox']),
+  variant: PropTypes.oneOf(['single', 'checkbox', 'typeahead']),
   /** Width of the select container as a number of px or string percentage */
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Additional props are spread to the container <ul> */
@@ -51,18 +56,50 @@ const defaultProps = {
   placeholderText: null,
   variant: SelectVariant.single,
   width: null,
+  onClear: Function.prototype
 };
 
 class Select extends React.Component {
   parentRef = React.createRef();
-  state = { openedOnEnter: false };
+  state = {
+    openedOnEnter: false,
+    typeaheadValue: null,
+    filteredChildren: this.props.children
+  };
 
   onEnter = () => {
     this.setState({ openedOnEnter: true });
   };
 
   onClose = () => {
-    this.setState({ openedOnEnter: false });
+    this.setState({
+      openedOnEnter: false,
+      typeaheadValue: null,
+      filteredChildren: this.props.children
+    });
+  };
+
+  onChange = e => {
+    const input = new RegExp(e.target.value, 'i');
+    this.setState({
+      typeaheadValue: e.target.value,
+      filteredChildren:
+        e.target.value !== ''
+          ? this.props.children.filter(child => child.props.value.search(input) === 0)
+          : this.props.children
+    });
+  };
+
+  onClick = e => {
+    e.stopPropagation();
+  };
+
+  clearSelection = e => {
+    e.stopPropagation();
+    this.setState({
+      typeaheadValue: '',
+      filteredChildren: this.props.children
+    });
   };
 
   render() {
@@ -72,6 +109,7 @@ class Select extends React.Component {
       variant,
       onToggle,
       onSelect,
+      onClear,
       isExpanded,
       isGrouped,
       selections,
@@ -81,7 +119,7 @@ class Select extends React.Component {
       width,
       ...props
     } = this.props;
-    const { openedOnEnter } = this.state;
+    const { openedOnEnter, typeaheadValue, filteredChildren } = this.state;
     const selectToggleId = `pf-toggle-id-${currentId++}`;
     let childPlaceholderText = null;
     if (!selections && !placeholderText) {
@@ -105,7 +143,7 @@ class Select extends React.Component {
             onEnter={this.onEnter}
             onClose={this.onClose}
             aria-labelledby={`${ariaLabelledBy} ${selectToggleId}`}
-            isCheckbox={variant === SelectVariant.checkbox}
+            variant={variant}
           >
             {variant === SelectVariant.single && (
               <div className={css(styles.selectToggleWrapper)}>
@@ -124,6 +162,33 @@ class Select extends React.Component {
                     </div>
                   )}
                 </div>
+              </React.Fragment>
+            )}
+            {variant === SelectVariant.typeahead && (
+              <React.Fragment>
+                <div className={css(styles.selectToggleWrapper)}>
+                  <input
+                    className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                    id="select-single-typeahead-typeahead"
+                    aria-label="Type to filter"
+                    placeholder={placeholderText}
+                    value={typeaheadValue !== null ? typeaheadValue : selections || ''}
+                    type="text"
+                    onChange={this.onChange}
+                  />
+                </div>
+                {selections && (
+                  <button
+                    className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
+                    onClick={e => {
+                      this.clearSelection(e);
+                      onClear && onClear(e);
+                    }}
+                    aria-label="Clear all"
+                  >
+                    <TimesCircleIcon aria-hidden />
+                  </button>
+                )}
               </React.Fragment>
             )}
           </SelectToggle>
@@ -148,6 +213,17 @@ class Select extends React.Component {
             >
               {children}
             </CheckboxSelect>
+          )}
+          {variant === SelectVariant.typeahead && isExpanded && (
+            <SingleSelect
+              {...props}
+              selected={selections}
+              openedOnEnter={openedOnEnter}
+              aria-label={ariaLabel}
+              aria-labelledby={ariaLabelledBy}
+            >
+              {filteredChildren}
+            </SingleSelect>
           )}
         </SelectContext.Provider>
       </div>

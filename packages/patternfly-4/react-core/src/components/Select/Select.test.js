@@ -72,6 +72,26 @@ describe('checkbox select', () => {
   });
 });
 
+describe('typeahead select', () => {
+  test('renders closed successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {checkboxSelectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders expanded successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+        {checkboxSelectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+});
+
 describe('API', () => {
   test('click on item', () => {
     const mockToggle = jest.fn();
