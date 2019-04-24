@@ -22,18 +22,15 @@ const DropdownToggle = ({ splitButtonItems, ...props }) =>
       )}
     >
       {splitButtonItems}
-      <InnerToggle {...props} isSplitButton ariaLabel={props.ariaLabel || 'Select'} />
+      <InnerToggle {...props} isSplitButton aria-label={props['aria-label'] || 'Select'} />
     </div>
   ) : (
     <InnerToggle {...props} />
   );
 
-// TODO add splitButtonItems prop
 DropdownToggle.propTypes = {
   /** HTML ID of dropdown toggle */
   id: PropTypes.string,
-  /** Accessible label for the dropdown toggle button */
-  ariaLabel: PropTypes.string,
   /** Anything which can be rendered as dropdown toggle button */
   children: PropTypes.node,
   /** Classes applied to root element of dropdown toggle button */
@@ -56,13 +53,14 @@ DropdownToggle.propTypes = {
   iconComponent: PropTypes.func,
   /** Elements to display before the toggle button. When included, renders the toggle as a split button. */
   splitButtonItems: PropTypes.arrayOf(PropTypes.node),
+  /** Accessible label for the dropdown toggle button */
+  'aria-label': PropTypes.any,
   /** Additional props are spread to the container component */
   '': PropTypes.any
 };
 
 DropdownToggle.defaultProps = {
   id: '',
-  ariaLabel: null,
   children: null,
   className: '',
   isOpen: false,

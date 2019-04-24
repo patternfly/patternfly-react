@@ -103,7 +103,6 @@ class DropdownToggle extends Component {
       isPlain,
       isSplitButton,
       ariaHasPopup,
-      ariaLabel,
       onToggle,
       onEnter,
       parentRef,
@@ -131,7 +130,6 @@ class DropdownToggle extends Component {
         onClick={_event => onToggle && onToggle(!isOpen)}
         aria-expanded={isOpen}
         aria-haspopup={ariaHasPopup}
-        aria-label={ariaLabel}
         onKeyDown={this.onKeyDown}
         disabled={isDisabled}
       >
