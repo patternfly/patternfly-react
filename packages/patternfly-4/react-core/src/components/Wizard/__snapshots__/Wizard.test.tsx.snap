@@ -35,14 +35,14 @@ exports[`Wizard should match snapshot 1`] = `
               }
             }
           >
-            <WizardHeader
+            <Unknown
               ariaLabel="Close"
               description="Description here"
               descriptionId="pf-wizard-description-0"
               title="Wizard title"
               titleId="pf-wizard-title-0"
             />
-            <WizardToggle
+            <Unknown
               activeStep={
                 Object {
                   "canJumpTo": true,
@@ -132,7 +132,7 @@ exports[`Wizard should match snapshot 1`] = `
                   Cancel
                 </Button>
               </footer>
-            </WizardToggle>
+            </Unknown>
           </div>
         </Bullseye>
       </Backdrop>

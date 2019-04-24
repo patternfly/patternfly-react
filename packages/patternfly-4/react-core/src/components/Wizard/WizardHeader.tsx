@@ -14,7 +14,7 @@ interface WizardHeaderProps {
   descriptionId: string;
 }
 
-const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
+export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
   onClose = () => undefined,
   title,
   description,
@@ -32,5 +32,3 @@ const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
       </p>}
     </div>
   );
-
-export default WizardHeader;

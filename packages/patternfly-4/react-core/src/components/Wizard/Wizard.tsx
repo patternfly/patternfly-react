@@ -7,10 +7,10 @@ import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
 import { Backdrop } from '../Backdrop';
 import { Bullseye } from '../../layouts/Bullseye';
 import { Button } from '../Button';
-import WizardHeader from './WizardHeader';
-import WizardToggle from './WizardToggle';
-import WizardNav from './WizardNav';
-import WizardNavItem from './WizardNavItem';
+import { WizardHeader } from './WizardHeader';
+import { WizardToggle } from './WizardToggle';
+import { WizardNav } from './WizardNav';
+import { WizardNavItem } from './WizardNavItem';
 // because of the way this module is exported, cannot use regular import syntax
 // tslint:disable-next-line
 const FocusTrap: any = require('focus-trap-react');
@@ -86,7 +86,7 @@ export interface WizardProps {
   ariaLabelCloseButton?: string;
 }
 
-class Wizard extends React.Component<WizardProps> {
+export class Wizard extends React.Component<WizardProps> {
   static currentId = 0;
   static defaultProps = {
     isOpen: false,
@@ -372,5 +372,3 @@ class Wizard extends React.Component<WizardProps> {
     );
   }
 }
-
-export { Wizard };
