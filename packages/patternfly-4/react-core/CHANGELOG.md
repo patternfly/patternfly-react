@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.11.0...@patternfly/react-core@3.12.0) (2019-04-24)
+
+
+### Features
+
+* **clipboard:** remove textarea from clipboard copy ([#1840](https://github.com/patternfly/patternfly-react/issues/1840)) ([8bb26a2](https://github.com/patternfly/patternfly-react/commit/8bb26a2))
+* **Skip To Content:** Added Skip To Content Component and Page breadcrumb styling ([#1686](https://github.com/patternfly/patternfly-react/issues/1686)) ([f6db50d](https://github.com/patternfly/patternfly-react/commit/f6db50d)), closes [#1733](https://github.com/patternfly/patternfly-react/issues/1733)
+
+
+
+
+
 # [3.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.10.0...@patternfly/react-core@3.11.0) (2019-04-24)
 
 

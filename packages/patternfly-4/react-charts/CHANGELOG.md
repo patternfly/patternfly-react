@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.3.0 (2019-04-24)
+
+
+### Features
+
+* **clipboard:** remove textarea from clipboard copy ([#1840](https://github.com/patternfly/patternfly-react/issues/1840)) ([8bb26a2](https://github.com/patternfly/patternfly-react/commit/8bb26a2))
+
+
+
+
+
 # 3.2.0 (2019-04-23)
 
 

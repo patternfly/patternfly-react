@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.2.0...@patternfly/react-docs@4.3.0) (2019-04-24)
+
+
+### Features
+
+* **clipboard:** remove textarea from clipboard copy ([#1840](https://github.com/patternfly/patternfly-react/issues/1840)) ([8bb26a2](https://github.com/patternfly/patternfly-react/commit/8bb26a2))
+
+
+
+
+
 # [4.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.1.21...@patternfly/react-docs@4.2.0) (2019-04-24)
 
 

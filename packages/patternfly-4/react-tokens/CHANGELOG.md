@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.4.0 (2019-04-24)
+
+
+### Features
+
+* **clipboard:** remove textarea from clipboard copy ([#1840](https://github.com/patternfly/patternfly-react/issues/1840)) ([8bb26a2](https://github.com/patternfly/patternfly-react/commit/8bb26a2))
+
+
+
+
+
 ## 2.3.4 (2019-04-18)
 
 **Note:** Version bump only for package @patternfly/react-tokens
