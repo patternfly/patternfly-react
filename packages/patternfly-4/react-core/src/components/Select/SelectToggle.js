@@ -145,8 +145,7 @@ class SelectToggle extends Component {
       id,
       'aria-labelledby': ariaLabelledBy,
       'aria-expanded': isExpanded,
-      'aria-haspopup': (variant !== SelectVariant.checkbox && 'listbox') || null,
-      'aria-label': ariaLabelToggle
+      'aria-haspopup': (variant !== SelectVariant.checkbox && 'listbox') || null
     };
     return (
       <ToggleComponent
@@ -179,6 +178,7 @@ class SelectToggle extends Component {
           <button
             className={css(buttonStyles.button, styles.selectToggleButton)}
             {...isTypeahead && toggleProps}
+            aria-label={ariaLabelToggle}
             onClick={_event => {
               _event.stopPropagation();
               onToggle && onToggle(!isExpanded);

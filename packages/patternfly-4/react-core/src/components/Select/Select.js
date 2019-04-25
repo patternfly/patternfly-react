@@ -36,7 +36,7 @@ const propTypes = {
   ariaLabelTypeAhead: PropTypes.string,
   /** Label for clear selection button of type ahead select variants */
   ariaLabelClear: PropTypes.string,
-  /** Label for toggle of select variants */
+  /** Label for toggle of type ahead select variants */
   ariaLabelToggle: PropTypes.string,
   /** Label for remove chip button of multiple type ahead select variant */
   ariaLabelRemove: PropTypes.string,
@@ -62,9 +62,9 @@ const defaultProps = {
   'aria-label': null,
   ariaLabelledBy: null,
   ariaLabelTypeAhead: null,
-  ariaLabelClear: null,
-  ariaLabelToggle: null,
-  ariaLabelRemove: null,
+  ariaLabelClear: 'Clear all selections',
+  ariaLabelToggle: 'Options menu',
+  ariaLabelRemove: 'Remove selection',
   selections: null,
   placeholderText: null,
   variant: SelectVariant.single,
@@ -181,7 +181,7 @@ class Select extends React.Component {
             onToggle={onToggle}
             onEnter={this.onEnter}
             onClose={this.onClose}
-            ariaLabelledBy={`${ariaLabelledBy} ${selectToggleId}`}
+            ariaLabelledBy={`${ariaLabelledBy || ''} ${selectToggleId}`}
             variant={variant}
             ariaLabelToggle={ariaLabelToggle}
           >
@@ -252,7 +252,7 @@ class Select extends React.Component {
                       this.clearSelection(e);
                       onClear && onClear(e);
                     }}
-                    aria-label="Clear all"
+                    aria-label={ariaLabelClear}
                   >
                     <TimesCircleIcon aria-hidden />
                   </button>
