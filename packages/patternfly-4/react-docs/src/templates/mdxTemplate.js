@@ -37,6 +37,10 @@ const MdxTemplate = ({ data }) => {
           {data.mdx.frontmatter.title} {section.indexOf('-') === -1 ? section : ''}
         </Title>
         <MDXProvider components={components}>
+          {data.usageSnippet &&
+            <MDXRenderer>
+              {data.usageSnippet.code.body}
+            </MDXRenderer>}
           <MDXRenderer>
             {data.mdx.code.body}
           </MDXRenderer>
@@ -70,7 +74,7 @@ const MdxTemplate = ({ data }) => {
 // We want component metadata from gatsby-transformer-react-docgen-typescript
 // for ALL components in that folder
 export const pageQuery = graphql`
-query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
+query GetComponent($fileAbsolutePath: String!, $metadataRegex: String!, $snippetRegex: String!) {
   mdx(fileAbsolutePath: { eq: $fileAbsolutePath }) {
     code {
       body
@@ -81,7 +85,7 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
       cssPrefix
     }
   }
-  metadata: allComponentMetadata(filter: {path: {regex: $pathRegex}}) {
+  metadata: allComponentMetadata(filter: {path: {regex: $metadataRegex}}) {
     edges {
       node {
         path
@@ -99,6 +103,11 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
           }
         }
       }
+    }
+  }
+  usageSnippet: mdx(fileAbsolutePath: { regex: $snippetRegex }) {
+    code {
+      body
     }
   }
 }

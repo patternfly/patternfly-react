@@ -24,7 +24,7 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 exports.createPages = ({ graphql, actions }) => {
   const mdx = graphql(`
   {
-    allMdx {
+    allMdx(filter: {fileAbsolutePath: {regex: "/.*react-core/.*/"}}) {
       nodes {
         fileAbsolutePath
         frontmatter {
@@ -66,8 +66,9 @@ exports.createPages = ({ graphql, actions }) => {
           component: path.resolve('./src/templates/mdxTemplate.js'),
           context: {
             title: node.frontmatter.title,
-            fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
-            pathRegex: `/${folderName}\/.*/` // Helps us get the docgenned props
+            fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown page
+            metadataRegex: `/${folderName}\/.*/`, // Helps us get the docgenned props
+            snippetRegex: `/.*patternfly-common\/.*${componentName}.mdx?/i`, // Snippet from patternfly-common
           }
         });
       }
