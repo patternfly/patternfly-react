@@ -5,13 +5,20 @@ import { AngleRightIcon, CaretDownIcon } from '@patternfly/react-icons';
 import { WizardStep } from './Wizard';
 import { WizardBody } from './WizardBody';
 
-interface WizardToggleProps {
+export interface WizardToggleProps {
+  /** Function that returns the WizardNav component */
   nav: any;
+  /** The wizard steps */
   steps: WizardStep[];
+  /** The currently active WizardStep */
   activeStep: WizardStep;
+  /** The WizardFooter */
   children: React.ReactNode;
+  /** Set to false to remove body padding */
   hasBodyPadding: boolean;
+  /** If the nav is open */
   isNavOpen: boolean;
+  /** Callback function for when the nav is toggled */
   onNavToggle: (isOpen: boolean) => void;
 }
 
@@ -22,20 +29,20 @@ export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   steps,
   activeStep,
   children,
-  hasBodyPadding,
+  hasBodyPadding = true,
   ...props
 }: WizardToggleProps) => {
   let activeStepIndex;
   let activeStepName;
   let activeStepSubName;
   for (let i = 0; i < steps.length; i++) {
-    if (steps[i] === activeStep) {
+    if ((activeStep.id && steps[i].id === activeStep.id) || steps[i].name === activeStep.name) {
       activeStepIndex = i + 1;
       activeStepName = steps[i].name;
       break;
     } else if (steps[i].steps) {
       for (let j = 0; j < steps[i].steps!.length; j++) {
-        if (steps[i].steps![j] === activeStep) {
+        if ((activeStep.id && steps[i].steps![j].id === activeStep.id) || steps[i].steps![j].name === activeStep.name) {
           activeStepIndex = i + 1;
           activeStepName = steps[i].name;
           activeStepSubName = steps[i].steps![j].name;
