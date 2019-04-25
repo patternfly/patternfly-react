@@ -94,10 +94,13 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "lerna run build --stream",
+    "build": "node scripts/incrementalBuild.js",
+    "build:pf3": "yarn build pf3",
+    "build:pf4": "yarn build pf4",
     "build:docs": "lerna run build:docs --stream",
     "build:storybook": "build-storybook -c storybook -o .out",
-    "clean": "lerna run clean --parallel",
+    "clean": "yarn clean:build && lerna run clean --parallel",
+    "clean:build": "shx rm -rf .cache",
     "commit": "git-cz",
     "generate": "yarn plop",
     "lint": "lerna run lint --parallel",
@@ -106,7 +109,7 @@
     "prettier": "prettier --write 'storybook/**/*.js' 'packages/**/*.js' 'scripts/**/*.js'",
     "start": "yarn start:pf3",
     "start:pf3": "concurrently 'yarn storybook' 'yarn storybook:openurl'",
-    "start:pf4": "lerna run develop --scope='@patternfly/react-docs' --scope='@patternfly/react-core' --parallel --stream",
+    "start:pf4": "yarn build:pf4 && lerna run develop --parallel --stream",
     "storybook:openurl": "node ./storybook/openBrowser.js",
     "storybook": "start-storybook -c storybook -p 6006",
     "test": "jest packages",
@@ -127,5 +130,8 @@
     "packages": [
       "packages/**"
     ]
+  },
+  "dependencies": {
+    "folder-hash": "^3.0.0"
   }
 }

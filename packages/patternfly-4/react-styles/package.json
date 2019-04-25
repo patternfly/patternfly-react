@@ -17,7 +17,8 @@
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
     "build:babel:umd": "cross-env BABEL_ENV=production:umd babel dist/esm --out-dir dist/umd --plugins transform-es2015-modules-umd",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
   },
   "dependencies": {
     "@babel/helper-plugin-utils": "^7.0.0-beta.48",

@@ -30,7 +30,8 @@
     "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm'",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
   },
   "dependencies": {
     "@patternfly/react-styles": "^3.1.0",

@@ -25,6 +25,7 @@ jobs:
             - packages/patternfly-4/react-charts/node_modules
             - packages/patternfly-4/react-styles/node_modules
             - packages/patternfly-3/patternfly-react/node_modules
+            - .cache # Incremental builds
           key: v{{ .Environment.CACHE_VERSION }}-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
       - run:
           name: Build Dist
