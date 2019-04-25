@@ -110,6 +110,7 @@
     "start": "yarn start:pf3",
     "start:pf3": "concurrently 'yarn storybook' 'yarn storybook:openurl'",
     "start:pf4": "yarn build:pf4 && lerna run develop --parallel --stream",
+    "start:demo-app": "lerna run integration:setup && lerna run start:demo",
     "storybook:openurl": "node ./storybook/openBrowser.js",
     "storybook": "start-storybook -c storybook -p 6006",
     "test": "jest packages",

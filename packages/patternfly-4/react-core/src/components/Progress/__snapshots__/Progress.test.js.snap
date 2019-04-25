@@ -15,14 +15,19 @@ exports[`Progress measure location inside 1`] = `
 >
   <div
     aria-describedby="inside-progress-description"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={33}
     className="pf-c-progress pf-m-inside pf-m-lg pf-m-singleline"
     id="inside-progress"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "inside-progress-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 33,
+        }
+      }
       measureLocation="inside"
       parentId="inside-progress"
       title=""
@@ -37,10 +42,22 @@ exports[`Progress measure location inside 1`] = `
         className="pf-c-progress__status"
       />
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "inside-progress-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 33,
+          }
+        }
         className=""
         value={33}
       >
         <div
+          aria-describedby="inside-progress-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={33}
           className="pf-c-progress__bar"
         >
           <div
@@ -79,14 +96,19 @@ exports[`Progress measure location inside and small should render large 1`] = `
 >
   <div
     aria-describedby="large-progress-description"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={33}
     className="pf-c-progress pf-m-inside pf-m-lg pf-m-singleline"
     id="large-progress"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "large-progress-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 33,
+        }
+      }
       measureLocation="inside"
       parentId="large-progress"
       title=""
@@ -101,10 +123,22 @@ exports[`Progress measure location inside and small should render large 1`] = `
         className="pf-c-progress__status"
       />
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "large-progress-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 33,
+          }
+        }
         className=""
         value={33}
       >
         <div
+          aria-describedby="large-progress-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={33}
           className="pf-c-progress__bar"
         >
           <div
@@ -143,14 +177,19 @@ exports[`Progress measure location none 1`] = `
 >
   <div
     aria-describedby="none-progress-description"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={33}
     className="pf-c-progress pf-m-singleline"
     id="none-progress"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "none-progress-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 33,
+        }
+      }
       measureLocation="none"
       parentId="none-progress"
       title=""
@@ -165,10 +204,22 @@ exports[`Progress measure location none 1`] = `
         className="pf-c-progress__status"
       />
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "none-progress-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 33,
+          }
+        }
         className=""
         value={33}
       >
         <div
+          aria-describedby="none-progress-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={33}
           className="pf-c-progress__bar"
         >
           <div
@@ -205,14 +256,19 @@ exports[`Progress measure location outside 1`] = `
 >
   <div
     aria-describedby="outside-progress-description"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={33}
     className="pf-c-progress pf-m-outside pf-m-singleline"
     id="outside-progress"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "outside-progress-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 33,
+        }
+      }
       measureLocation="outside"
       parentId="outside-progress"
       title=""
@@ -233,10 +289,22 @@ exports[`Progress measure location outside 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "outside-progress-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 33,
+          }
+        }
         className=""
         value={33}
       >
         <div
+          aria-describedby="outside-progress-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={33}
           className="pf-c-progress__bar"
         >
           <div
@@ -273,14 +341,19 @@ exports[`Progress measure location top 1`] = `
 >
   <div
     aria-describedby="top-progress-description"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={33}
     className="pf-c-progress pf-m-singleline"
     id="top-progress"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "top-progress-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 33,
+        }
+      }
       measureLocation="top"
       parentId="top-progress"
       title=""
@@ -301,10 +374,22 @@ exports[`Progress measure location top 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "top-progress-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 33,
+          }
+        }
         className=""
         value={33}
       >
         <div
+          aria-describedby="top-progress-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={33}
           className="pf-c-progress__bar"
         >
           <div
@@ -341,14 +426,19 @@ exports[`Progress size lg 1`] = `
 >
   <div
     aria-describedby="lg-progress-description"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={33}
     className="pf-c-progress pf-m-lg pf-m-singleline"
     id="lg-progress"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "lg-progress-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 33,
+        }
+      }
       measureLocation="top"
       parentId="lg-progress"
       title=""
@@ -369,10 +459,22 @@ exports[`Progress size lg 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "lg-progress-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 33,
+          }
+        }
         className=""
         value={33}
       >
         <div
+          aria-describedby="lg-progress-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={33}
           className="pf-c-progress__bar"
         >
           <div
@@ -409,14 +511,19 @@ exports[`Progress size md 1`] = `
 >
   <div
     aria-describedby="md-progress-description"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={33}
     className="pf-c-progress pf-m-singleline"
     id="md-progress"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "md-progress-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 33,
+        }
+      }
       measureLocation="top"
       parentId="md-progress"
       title=""
@@ -437,10 +544,22 @@ exports[`Progress size md 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "md-progress-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 33,
+          }
+        }
         className=""
         value={33}
       >
         <div
+          aria-describedby="md-progress-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={33}
           className="pf-c-progress__bar"
         >
           <div
@@ -477,14 +596,19 @@ exports[`Progress size sm 1`] = `
 >
   <div
     aria-describedby="sm-progress-description"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={33}
     className="pf-c-progress pf-m-sm pf-m-singleline"
     id="sm-progress"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "sm-progress-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 33,
+        }
+      }
       measureLocation="top"
       parentId="sm-progress"
       title=""
@@ -505,10 +629,22 @@ exports[`Progress size sm 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "sm-progress-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 33,
+          }
+        }
         className=""
         value={33}
       >
         <div
+          aria-describedby="sm-progress-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={33}
           className="pf-c-progress__bar"
         >
           <div
@@ -545,14 +681,19 @@ exports[`Progress variant danger 1`] = `
 >
   <div
     aria-describedby="danger-progress-description"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={33}
     className="pf-c-progress pf-m-danger pf-m-singleline"
     id="danger-progress"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "danger-progress-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 33,
+        }
+      }
       measureLocation="top"
       parentId="danger-progress"
       title=""
@@ -602,10 +743,22 @@ exports[`Progress variant danger 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "danger-progress-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 33,
+          }
+        }
         className=""
         value={33}
       >
         <div
+          aria-describedby="danger-progress-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={33}
           className="pf-c-progress__bar"
         >
           <div
@@ -642,14 +795,19 @@ exports[`Progress variant info 1`] = `
 >
   <div
     aria-describedby="info-progress-description"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={33}
     className="pf-c-progress pf-m-singleline"
     id="info-progress"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "info-progress-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 33,
+        }
+      }
       measureLocation="top"
       parentId="info-progress"
       title=""
@@ -670,10 +828,22 @@ exports[`Progress variant info 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "info-progress-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 33,
+          }
+        }
         className=""
         value={33}
       >
         <div
+          aria-describedby="info-progress-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={33}
           className="pf-c-progress__bar"
         >
           <div
@@ -710,14 +880,19 @@ exports[`Progress variant success 1`] = `
 >
   <div
     aria-describedby="success-progress-description"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={33}
     className="pf-c-progress pf-m-success pf-m-singleline"
     id="success-progress"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "success-progress-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 33,
+        }
+      }
       measureLocation="top"
       parentId="success-progress"
       title=""
@@ -767,10 +942,22 @@ exports[`Progress variant success 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "success-progress-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 33,
+          }
+        }
         className=""
         value={33}
       >
         <div
+          aria-describedby="success-progress-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={33}
           className="pf-c-progress__bar"
         >
           <div
@@ -806,15 +993,21 @@ exports[`Progress with aria-valuetext 1`] = `
   variant="info"
 >
   <div
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={33}
     aria-valuetext="Descriptive text here"
     className="pf-c-progress pf-m-singleline"
     id="progress-aria-valuetext"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "progress-aria-valuetext-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 33,
+          "aria-valuetext": "Descriptive text here",
+        }
+      }
       measureLocation="top"
       parentId="progress-aria-valuetext"
       title=""
@@ -835,10 +1028,24 @@ exports[`Progress with aria-valuetext 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "progress-aria-valuetext-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 33,
+            "aria-valuetext": "Descriptive text here",
+          }
+        }
         className=""
         value={33}
       >
         <div
+          aria-describedby="progress-aria-valuetext-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={33}
+          aria-valuetext="Descriptive text here"
           className="pf-c-progress__bar"
         >
           <div
@@ -875,14 +1082,19 @@ exports[`Simple progress 1`] = `
 >
   <div
     aria-describedby="progress-simple-example-description"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={33}
     className="pf-c-progress pf-m-singleline"
     id="progress-simple-example"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "progress-simple-example-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 33,
+        }
+      }
       measureLocation="top"
       parentId="progress-simple-example"
       title=""
@@ -903,10 +1115,22 @@ exports[`Simple progress 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "progress-simple-example-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 33,
+          }
+        }
         className=""
         value={33}
       >
         <div
+          aria-describedby="progress-simple-example-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={33}
           className="pf-c-progress__bar"
         >
           <div
@@ -944,14 +1168,19 @@ exports[`additional label 1`] = `
 >
   <div
     aria-describedby="additional-label-description"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={33}
     className="pf-c-progress pf-m-singleline"
     id="additional-label"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "additional-label-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 33,
+        }
+      }
       label="Additional label"
       measureLocation="top"
       parentId="additional-label"
@@ -973,10 +1202,22 @@ exports[`additional label 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "additional-label-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 33,
+          }
+        }
         className=""
         value={33}
       >
         <div
+          aria-describedby="additional-label-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={33}
           className="pf-c-progress__bar"
         >
           <div
@@ -1013,14 +1254,19 @@ exports[`no value specified 1`] = `
 >
   <div
     aria-describedby="no-value-description"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={0}
     className="pf-c-progress pf-m-singleline"
     id="no-value"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "no-value-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 0,
+          "aria-valuenow": 0,
+        }
+      }
       measureLocation="top"
       parentId="no-value"
       title=""
@@ -1041,10 +1287,22 @@ exports[`no value specified 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "no-value-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 0,
+            "aria-valuenow": 0,
+          }
+        }
         className=""
         value={0}
       >
         <div
+          aria-describedby="no-value-description"
+          aria-valuemax={100}
+          aria-valuemin={0}
+          aria-valuenow={0}
           className="pf-c-progress__bar"
         >
           <div
@@ -1081,14 +1339,19 @@ exports[`value higher than maxValue 1`] = `
 >
   <div
     aria-describedby="higher-max-value-description"
-    aria-valuemax={60}
-    aria-valuemin={0}
-    aria-valuenow={100}
     className="pf-c-progress pf-m-singleline"
     id="higher-max-value"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "higher-max-value-description",
+          "aria-valuemax": 60,
+          "aria-valuemin": 0,
+          "aria-valuenow": 77,
+        }
+      }
       measureLocation="top"
       parentId="higher-max-value"
       title=""
@@ -1109,10 +1372,22 @@ exports[`value higher than maxValue 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "higher-max-value-description",
+            "aria-valuemax": 60,
+            "aria-valuemin": 0,
+            "aria-valuenow": 77,
+          }
+        }
         className=""
         value={100}
       >
         <div
+          aria-describedby="higher-max-value-description"
+          aria-valuemax={60}
+          aria-valuemin={0}
+          aria-valuenow={77}
           className="pf-c-progress__bar"
         >
           <div
@@ -1149,14 +1424,19 @@ exports[`value lower than minValue 1`] = `
 >
   <div
     aria-describedby="lower-min-value-description"
-    aria-valuemax={100}
-    aria-valuemin={40}
-    aria-valuenow={0}
     className="pf-c-progress pf-m-singleline"
     id="lower-min-value"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "lower-min-value-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 40,
+          "aria-valuenow": 33,
+        }
+      }
       measureLocation="top"
       parentId="lower-min-value"
       title=""
@@ -1177,10 +1457,22 @@ exports[`value lower than minValue 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "lower-min-value-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 40,
+            "aria-valuenow": 33,
+          }
+        }
         className=""
         value={0}
       >
         <div
+          aria-describedby="lower-min-value-description"
+          aria-valuemax={100}
+          aria-valuemin={40}
+          aria-valuenow={33}
           className="pf-c-progress__bar"
         >
           <div
@@ -1217,14 +1509,19 @@ exports[`value scaled between minValue and maxValue 1`] = `
 >
   <div
     aria-describedby="scaled-range-value-description"
-    aria-valuemax={80}
-    aria-valuemin={10}
-    aria-valuenow={57}
     className="pf-c-progress pf-m-singleline"
     id="scaled-range-value"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "scaled-range-value-description",
+          "aria-valuemax": 80,
+          "aria-valuemin": 10,
+          "aria-valuenow": 50,
+        }
+      }
       measureLocation="top"
       parentId="scaled-range-value"
       title=""
@@ -1245,10 +1542,22 @@ exports[`value scaled between minValue and maxValue 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "scaled-range-value-description",
+            "aria-valuemax": 80,
+            "aria-valuemin": 10,
+            "aria-valuenow": 50,
+          }
+        }
         className=""
         value={57}
       >
         <div
+          aria-describedby="scaled-range-value-description"
+          aria-valuemax={80}
+          aria-valuemin={10}
+          aria-valuenow={50}
           className="pf-c-progress__bar"
         >
           <div
@@ -1285,14 +1594,19 @@ exports[`value scaled with maxValue 1`] = `
 >
   <div
     aria-describedby="scaled-max-value-description"
-    aria-valuemax={80}
-    aria-valuemin={0}
-    aria-valuenow={62}
     className="pf-c-progress pf-m-singleline"
     id="scaled-max-value"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "scaled-max-value-description",
+          "aria-valuemax": 80,
+          "aria-valuemin": 0,
+          "aria-valuenow": 50,
+        }
+      }
       measureLocation="top"
       parentId="scaled-max-value"
       title=""
@@ -1313,10 +1627,22 @@ exports[`value scaled with maxValue 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "scaled-max-value-description",
+            "aria-valuemax": 80,
+            "aria-valuemin": 0,
+            "aria-valuenow": 50,
+          }
+        }
         className=""
         value={62}
       >
         <div
+          aria-describedby="scaled-max-value-description"
+          aria-valuemax={80}
+          aria-valuemin={0}
+          aria-valuenow={50}
           className="pf-c-progress__bar"
         >
           <div
@@ -1353,14 +1679,19 @@ exports[`value scaled with minValue 1`] = `
 >
   <div
     aria-describedby="scaled-min-value-description"
-    aria-valuemax={100}
-    aria-valuemin={10}
-    aria-valuenow={44}
     className="pf-c-progress pf-m-singleline"
     id="scaled-min-value"
     role="progressbar"
   >
     <ProgressContainer
+      ariaProps={
+        Object {
+          "aria-describedby": "scaled-min-value-description",
+          "aria-valuemax": 100,
+          "aria-valuemin": 10,
+          "aria-valuenow": 50,
+        }
+      }
       measureLocation="top"
       parentId="scaled-min-value"
       title=""
@@ -1381,10 +1712,22 @@ exports[`value scaled with minValue 1`] = `
         </span>
       </div>
       <ProgressBar
+        ariaProps={
+          Object {
+            "aria-describedby": "scaled-min-value-description",
+            "aria-valuemax": 100,
+            "aria-valuemin": 10,
+            "aria-valuenow": 50,
+          }
+        }
         className=""
         value={44}
       >
         <div
+          aria-describedby="scaled-min-value-description"
+          aria-valuemax={100}
+          aria-valuemin={10}
+          aria-valuenow={50}
           className="pf-c-progress__bar"
         >
           <div
