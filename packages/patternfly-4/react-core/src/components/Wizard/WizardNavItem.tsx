@@ -12,7 +12,7 @@ interface WizardNavItemProps {
   hasChildren?: boolean;
 }
 
-const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
+export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
   children = null,
   label = '',
   current = false,
@@ -33,5 +33,3 @@ const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
       {children}
     </li>
   );
-
-export default WizardNavItem;

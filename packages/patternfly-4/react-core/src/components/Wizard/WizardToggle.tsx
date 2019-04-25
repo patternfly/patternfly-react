@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
 import { AngleRightIcon, CaretDownIcon } from '@patternfly/react-icons';
 import { WizardStep } from './Wizard';
-import WizardBody from './WizardBody';
+import { WizardBody } from './WizardBody';
 
 interface WizardToggleProps {
   nav: any;
@@ -15,7 +15,7 @@ interface WizardToggleProps {
   onNavToggle: (isOpen: boolean) => void;
 }
 
-const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
+export const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
   isNavOpen,
   onNavToggle,
   nav,
@@ -70,5 +70,3 @@ const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
     </>
   );
 };
-
-export default WizardToggle;

@@ -9,7 +9,7 @@ interface WizardNavProps {
   returnList?: boolean;
 }
 
-const WizardNav: React.FunctionComponent<WizardNavProps> = ({
+export const WizardNav: React.FunctionComponent<WizardNavProps> = ({
   children,
   ariaLabel,
   isOpen = false,
@@ -33,5 +33,3 @@ const WizardNav: React.FunctionComponent<WizardNavProps> = ({
     </nav>
   );
 };
-
-export default WizardNav;

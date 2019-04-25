@@ -7,12 +7,10 @@ interface WizardBodyProps {
   hasBodyPadding: boolean;
 }
 
-const WizardBody: React.SFC<WizardBodyProps> = ({ children, hasBodyPadding }) => (
+export const WizardBody: React.SFC<WizardBodyProps> = ({ children, hasBodyPadding }) => (
   <main className={css(styles.wizardMain, !hasBodyPadding && 'pf-m-no-padding')}>
     <div className={css(styles.wizardMainBody)}>
       {children}
     </div>
   </main>
 );
-
-export default WizardBody;
