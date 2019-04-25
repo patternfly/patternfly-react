@@ -25,7 +25,7 @@ import {
   CubeIcon
 } from '@patternfly/react-icons';
 
-import DemoSortableTable from '@patternfly/react-table/components/Table/demo/DemoSortableTable.js';
+import DemoSortableTable from './demo/DemoSortableTable';
 
 ## Simple table
 
