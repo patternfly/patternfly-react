@@ -101,6 +101,7 @@
     "build:storybook": "build-storybook -c storybook -o .out",
     "clean": "yarn clean:build && lerna run clean --parallel",
     "clean:build": "shx rm -rf .cache",
+    "clean:docs": "lerna run clean --scope=@patternfly/react-docs",
     "commit": "git-cz",
     "generate": "yarn plop",
     "lint": "lerna run lint --parallel",
