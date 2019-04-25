@@ -753,3 +753,68 @@ class SimpleWizard extends React.Component {
   }
 }
 ```
+
+### Wizard - remember last step
+```js
+import React from 'react';
+import { Button, Wizard } from '@patternfly/react-core';
+
+class SimpleWizard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      step: 1,
+      isOpen: false
+    };
+    this.toggleOpen = () => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
+    this.onMove = (curr, prev) => {
+      this.setState({
+        step: curr.id
+      });
+    }
+    this.onSave = () => {
+      this.setState({
+        step: 1,
+        isOpen: false,
+      })
+    }
+  }
+
+  render() {
+    const { isOpen, step } = this.state;
+
+    const steps = [
+      { id: 1, name: 'Step 1', component: <p>Step 1</p> },
+      { id: 2, name: 'Step 2', component: <p>Step 2</p> },
+      { id: 3, name: 'Step 3', component: <p>Step 3</p> },
+      { id: 4, name: 'Step 4', component: <p>Step 4</p> },
+      { id: 5, name: 'Review', component: <p>Review Step</p>, nextButtonText: 'Finish' }
+    ];
+
+    return (
+      <React.Fragment>
+        <Button variant="primary" onClick={this.toggleOpen}>
+          Show Wizard
+        </Button>
+        {isOpen && (
+          <Wizard
+            startAtStep={step}
+            onNext={this.onMove}
+            onBack={this.onMove}
+            onSave={this.onSave}
+            isOpen={isOpen}
+            onClose={this.toggleOpen}
+            title="Simple Wizard"
+            description="Simple Wizard Description"
+            steps={steps}
+          />
+        )}
+      </React.Fragment>
+    );
+  }
+}
+```
