@@ -17,7 +17,7 @@ const propTypes = {
   /** Adds Alert variant styles */
   variant: PropTypes.oneOf(Object.values(AlertVariant)).isRequired,
   /** Title of the Alert */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.node.isRequired,
   /** Action button to put in the Alert.  Should be <AlertActionLink> or <AlertActionCloseButton> */
   action: PropTypes.node,
   /** content rendered inside the Alert */
