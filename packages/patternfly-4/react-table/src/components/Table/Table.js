@@ -102,8 +102,9 @@ const propTypes = {
       PropTypes.node,
       PropTypes.shape({
         title: PropTypes.node,
-        transforms: PropTypes.arrayOf(PropTypes.func),
-        cellTransforms: PropTypes.arrayOf(PropTypes.func),
+        transforms: PropTypes.arrayOf(PropTypes.func), // Applies only to header cell
+        cellTransforms: PropTypes.arrayOf(PropTypes.func), // Applies only to body cells
+        columnTransforms: PropTypes.arrayOf(PropTypes.func), // Applies to both header and body cells
         formatters: PropTypes.arrayOf(PropTypes.func),
         cellFormatters: PropTypes.arrayOf(PropTypes.func)
       })
