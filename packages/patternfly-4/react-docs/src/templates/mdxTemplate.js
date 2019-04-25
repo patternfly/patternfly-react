@@ -37,10 +37,12 @@ const MdxTemplate = ({ data }) => {
           {data.mdx.frontmatter.title} {section.indexOf('-') === -1 ? section : ''}
         </Title>
         <MDXProvider components={components}>
+          <div className="component-snippet">
           {data.usageSnippet &&
             <MDXRenderer>
               {data.usageSnippet.code.body}
             </MDXRenderer>}
+          </div>
           <MDXRenderer>
             {data.mdx.code.body}
           </MDXRenderer>
