@@ -13,7 +13,6 @@ import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from
 <Progress value={33} title="Title" />
 ```
 
-```
 ## Progress (Small)
 ```js
 import React from 'react';
@@ -51,7 +50,7 @@ import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
-<Progress value={33} title="Title" variant={ProgressVariant.success} />
+<Progress value={100} title="Title" variant={ProgressVariant.success} />
 ```
 
 ## Progress (failure)
@@ -68,7 +67,7 @@ import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
 <Progress
-  value={33}
+  value={100}
   title="Title"
   measureLocation={ProgressMeasureLocation.inside}
   variant={ProgressVariant.success}
