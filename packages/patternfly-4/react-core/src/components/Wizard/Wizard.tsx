@@ -194,7 +194,7 @@ export class Wizard extends React.Component<WizardProps> {
   };
 
   goToStep = (step: number): void => {
-    const { onGoToStep, isCompactNav } = this.props;
+    const { onGoToStep } = this.props;
     const { currentStep } = this.state;
     const flattenedSteps = this.getFlattenedSteps();
     const maxSteps = flattenedSteps.length;
@@ -203,10 +203,7 @@ export class Wizard extends React.Component<WizardProps> {
     } else if (step > maxSteps) {
       step = maxSteps;
     }
-    if (isCompactNav) {
-      this.setState({ isNavOpen: false });
-    }
-    this.setState({ currentStep: step });
+    this.setState({ currentStep: step, isNavOpen: false });
     const { id: prevId, name: prevName } = flattenedSteps[currentStep - 1];
     const { id, name } = flattenedSteps[step - 1];
     return onGoToStep && onGoToStep({ id, name }, { prevId, prevName });
