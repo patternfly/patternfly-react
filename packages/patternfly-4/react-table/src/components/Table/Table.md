@@ -25,6 +25,8 @@ import {
   CubeIcon
 } from '@patternfly/react-icons';
 
+import DemoSortableTable from '@patternfly/react-table/components/Table/demo/DemoSortableTable.js';
+
 ## Simple table
 
 ```js
@@ -768,7 +770,6 @@ class CollapsibleTable extends React.Component {
 }
 ```
 
-
 ## Compound Expandable table
 
 ```js
@@ -777,12 +778,7 @@ import {
   Table,
   TableHeader,
   TableBody,
-  sortable,
-  SortByDirection,
-  TableVariant,
-  expandable,
-  compoundExpand,
-  cellWidth
+  compoundExpand
 } from '@patternfly/react-table';
 
 import {
@@ -790,6 +786,8 @@ import {
   CodeIcon,
   CubeIcon
 } from '@patternfly/react-icons';
+
+import DemoSortableTable from '@patternfly/react-table/components/Table/demo/DemoSortableTable.js';
 
 class CompoundExpandableTable extends React.Component {
   constructor(props) {
@@ -848,7 +846,7 @@ class CompoundExpandableTable extends React.Component {
         {
           parent: 0,
           compoundParent: 1,
-          cells: [{ title: 'parent 0 compound child - 1', props: { colSpan: 6 } }]
+          cells: [{ title: <DemoSortableTable />, props: { colSpan: 6, className: 'pf-m-no-padding' } }]
         },
         {
           parent: 0,

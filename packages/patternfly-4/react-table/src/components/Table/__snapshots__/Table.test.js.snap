@@ -29110,6 +29110,1914 @@ exports[`Collapsible table 1`] = `
 </Table>
 `;
 
+exports[`Compound Expandable table 1`] = `
+<Table
+  aria-label="Aria labeled"
+  borders={true}
+  cells={
+    Array [
+      Object {
+        "cell": Object {
+          "transforms": Array [
+            [Function],
+          ],
+        },
+        "title": "col1",
+      },
+      Object {
+        "cell": Object {
+          "transforms": Array [
+            [Function],
+          ],
+        },
+        "title": "col2",
+      },
+    ]
+  }
+  className=""
+  contentId="expanded-content"
+  dropdownDirection="down"
+  dropdownPosition="right"
+  expandId="expandable-toggle"
+  gridBreakPoint="grid-md"
+  onCollapse={null}
+  onExpand={[Function]}
+  rowLabeledBy="simple-node"
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          Object {
+            "props": Object {
+              "isOpen": true,
+            },
+            "title": "1",
+          },
+          Object {
+            "props": Object {
+              "isOpen": false,
+            },
+            "title": "2",
+          },
+        ],
+        "isOpen": true,
+      },
+      Object {
+        "cells": Array [
+          Object {
+            "props": Object {
+              "colSpan": 2,
+            },
+            "title": "expanded",
+          },
+        ],
+        "compoundParent": 0,
+        "parent": 0,
+      },
+      Object {
+        "cells": Array [
+          Object {
+            "props": Object {
+              "isOpen": false,
+            },
+            "title": "3",
+          },
+          Object {
+            "props": Object {
+              "isOpen": false,
+            },
+            "title": "4",
+          },
+        ],
+        "isOpen": false,
+      },
+      Object {
+        "cells": Array [
+          Object {
+            "props": Object {
+              "colSpan": 2,
+            },
+            "title": "expanded",
+          },
+        ],
+        "compoundParent": 0,
+        "parent": 2,
+      },
+    ]
+  }
+  variant={null}
+>
+  <Provider
+    aria-label="Aria labeled"
+    className="pf-c-table pf-m-grid-md pf-m-expandable"
+    columns={
+      Array [
+        Object {
+          "cell": Object {
+            "formatters": Array [
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+              [Function],
+            ],
+          },
+          "data": undefined,
+          "extraParams": Object {
+            "actionResolver": undefined,
+            "actions": undefined,
+            "allRowsSelected": false,
+            "areActionsDisabled": undefined,
+            "contentId": "expanded-content",
+            "dropdownDirection": "down",
+            "dropdownPosition": "right",
+            "expandId": "expandable-toggle",
+            "firstUserColumnIndex": 0,
+            "onCollapse": null,
+            "onExpand": [Function],
+            "onSelect": undefined,
+            "onSort": undefined,
+            "rowLabeledBy": "simple-node",
+            "sortBy": undefined,
+          },
+          "header": Object {
+            "formatters": Array [],
+            "label": "col1",
+            "transforms": Array [
+              [Function],
+              [Function],
+            ],
+          },
+          "property": "col1",
+          "props": Object {
+            "data-key": 0,
+            "data-label": "col1",
+          },
+        },
+        Object {
+          "cell": Object {
+            "formatters": Array [
+              [Function],
+            ],
+            "transforms": Array [
+              [Function],
+              [Function],
+            ],
+          },
+          "data": undefined,
+          "extraParams": Object {
+            "actionResolver": undefined,
+            "actions": undefined,
+            "allRowsSelected": false,
+            "areActionsDisabled": undefined,
+            "contentId": "expanded-content",
+            "dropdownDirection": "down",
+            "dropdownPosition": "right",
+            "expandId": "expandable-toggle",
+            "firstUserColumnIndex": 0,
+            "onCollapse": null,
+            "onExpand": [Function],
+            "onSelect": undefined,
+            "onSort": undefined,
+            "rowLabeledBy": "simple-node",
+            "sortBy": undefined,
+          },
+          "header": Object {
+            "formatters": Array [],
+            "label": "col2",
+            "transforms": Array [
+              [Function],
+              [Function],
+            ],
+          },
+          "property": "col2",
+          "props": Object {
+            "data-key": 1,
+            "data-label": "col2",
+          },
+        },
+      ]
+    }
+    renderers={
+      Object {
+        "body": Object {
+          "cell": [Function],
+          "row": [Function],
+          "wrapper": [Function],
+        },
+        "header": Object {
+          "cell": [Function],
+        },
+      }
+    }
+    role="grid"
+  >
+    <table
+      aria-label="Aria labeled"
+      className="pf-c-table pf-m-grid-md pf-m-expandable"
+      role="grid"
+    >
+      <TableHeader
+        className=""
+      >
+        <ContextHeader
+          className=""
+        >
+          <Header
+            className=""
+          >
+            <thead
+              className=""
+            >
+              <HeaderRow
+                key="0-header-row"
+                onRow={[Function]}
+                renderers={
+                  Object {
+                    "cell": [Function],
+                    "row": "tr",
+                    "wrapper": "thead",
+                  }
+                }
+                rowData={
+                  Array [
+                    Object {
+                      "cell": Object {
+                        "formatters": Array [
+                          [Function],
+                        ],
+                        "transforms": Array [
+                          [Function],
+                          [Function],
+                        ],
+                      },
+                      "data": undefined,
+                      "extraParams": Object {
+                        "actionResolver": undefined,
+                        "actions": undefined,
+                        "allRowsSelected": false,
+                        "areActionsDisabled": undefined,
+                        "contentId": "expanded-content",
+                        "dropdownDirection": "down",
+                        "dropdownPosition": "right",
+                        "expandId": "expandable-toggle",
+                        "firstUserColumnIndex": 0,
+                        "onCollapse": null,
+                        "onExpand": [Function],
+                        "onSelect": undefined,
+                        "onSort": undefined,
+                        "rowLabeledBy": "simple-node",
+                        "sortBy": undefined,
+                      },
+                      "header": Object {
+                        "formatters": Array [],
+                        "label": "col1",
+                        "transforms": Array [
+                          [Function],
+                          [Function],
+                        ],
+                      },
+                      "property": "col1",
+                      "props": Object {
+                        "data-key": 0,
+                        "data-label": "col1",
+                      },
+                    },
+                    Object {
+                      "cell": Object {
+                        "formatters": Array [
+                          [Function],
+                        ],
+                        "transforms": Array [
+                          [Function],
+                          [Function],
+                        ],
+                      },
+                      "data": undefined,
+                      "extraParams": Object {
+                        "actionResolver": undefined,
+                        "actions": undefined,
+                        "allRowsSelected": false,
+                        "areActionsDisabled": undefined,
+                        "contentId": "expanded-content",
+                        "dropdownDirection": "down",
+                        "dropdownPosition": "right",
+                        "expandId": "expandable-toggle",
+                        "firstUserColumnIndex": 0,
+                        "onCollapse": null,
+                        "onExpand": [Function],
+                        "onSelect": undefined,
+                        "onSort": undefined,
+                        "rowLabeledBy": "simple-node",
+                        "sortBy": undefined,
+                      },
+                      "header": Object {
+                        "formatters": Array [],
+                        "label": "col2",
+                        "transforms": Array [
+                          [Function],
+                          [Function],
+                        ],
+                      },
+                      "property": "col2",
+                      "props": Object {
+                        "data-key": 1,
+                        "data-label": "col2",
+                      },
+                    },
+                  ]
+                }
+                rowIndex={0}
+              >
+                <tr>
+                  <HeaderCell
+                    component="th"
+                    data-key={0}
+                    data-label="col1"
+                    key="0-header"
+                    scope="col"
+                    textCenter={false}
+                  >
+                    <th
+                      className=""
+                      data-key={0}
+                      scope="col"
+                    >
+                      col1
+                    </th>
+                  </HeaderCell>
+                  <HeaderCell
+                    component="th"
+                    data-key={1}
+                    data-label="col2"
+                    key="1-header"
+                    scope="col"
+                    textCenter={false}
+                  >
+                    <th
+                      className=""
+                      data-key={1}
+                      scope="col"
+                    >
+                      col2
+                    </th>
+                  </HeaderCell>
+                </tr>
+              </HeaderRow>
+            </thead>
+          </Header>
+        </ContextHeader>
+      </TableHeader>
+      <TableBody
+        className=""
+        onRowClick={[Function]}
+        rowKey="id"
+      >
+        <ContextBody
+          className=""
+          headerData={
+            Array [
+              Object {
+                "cell": Object {
+                  "formatters": Array [
+                    [Function],
+                  ],
+                  "transforms": Array [
+                    [Function],
+                    [Function],
+                  ],
+                },
+                "data": undefined,
+                "extraParams": Object {
+                  "actionResolver": undefined,
+                  "actions": undefined,
+                  "allRowsSelected": false,
+                  "areActionsDisabled": undefined,
+                  "contentId": "expanded-content",
+                  "dropdownDirection": "down",
+                  "dropdownPosition": "right",
+                  "expandId": "expandable-toggle",
+                  "firstUserColumnIndex": 0,
+                  "onCollapse": null,
+                  "onExpand": [Function],
+                  "onSelect": undefined,
+                  "onSort": undefined,
+                  "rowLabeledBy": "simple-node",
+                  "sortBy": undefined,
+                },
+                "header": Object {
+                  "formatters": Array [],
+                  "label": "col1",
+                  "transforms": Array [
+                    [Function],
+                    [Function],
+                  ],
+                },
+                "property": "col1",
+                "props": Object {
+                  "data-key": 0,
+                  "data-label": "col1",
+                },
+              },
+              Object {
+                "cell": Object {
+                  "formatters": Array [
+                    [Function],
+                  ],
+                  "transforms": Array [
+                    [Function],
+                    [Function],
+                  ],
+                },
+                "data": undefined,
+                "extraParams": Object {
+                  "actionResolver": undefined,
+                  "actions": undefined,
+                  "allRowsSelected": false,
+                  "areActionsDisabled": undefined,
+                  "contentId": "expanded-content",
+                  "dropdownDirection": "down",
+                  "dropdownPosition": "right",
+                  "expandId": "expandable-toggle",
+                  "firstUserColumnIndex": 0,
+                  "onCollapse": null,
+                  "onExpand": [Function],
+                  "onSelect": undefined,
+                  "onSort": undefined,
+                  "rowLabeledBy": "simple-node",
+                  "sortBy": undefined,
+                },
+                "header": Object {
+                  "formatters": Array [],
+                  "label": "col2",
+                  "transforms": Array [
+                    [Function],
+                    [Function],
+                  ],
+                },
+                "property": "col2",
+                "props": Object {
+                  "data-key": 1,
+                  "data-label": "col2",
+                },
+              },
+            ]
+          }
+          onRowClick={[Function]}
+          rowKey="id"
+          rows={
+            Array [
+              Object {
+                "cells": Array [
+                  Object {
+                    "props": Object {
+                      "isOpen": true,
+                    },
+                    "title": "1",
+                  },
+                  Object {
+                    "props": Object {
+                      "isOpen": false,
+                    },
+                    "title": "2",
+                  },
+                ],
+                "isOpen": true,
+              },
+              Object {
+                "cells": Array [
+                  Object {
+                    "props": Object {
+                      "colSpan": 2,
+                    },
+                    "title": "expanded",
+                  },
+                ],
+                "compoundParent": 0,
+                "parent": 0,
+              },
+              Object {
+                "cells": Array [
+                  Object {
+                    "props": Object {
+                      "isOpen": false,
+                    },
+                    "title": "3",
+                  },
+                  Object {
+                    "props": Object {
+                      "isOpen": false,
+                    },
+                    "title": "4",
+                  },
+                ],
+                "isOpen": false,
+              },
+              Object {
+                "cells": Array [
+                  Object {
+                    "props": Object {
+                      "colSpan": 2,
+                    },
+                    "title": "expanded",
+                  },
+                ],
+                "compoundParent": 0,
+                "parent": 2,
+              },
+            ]
+          }
+        >
+          <Body
+            className=""
+            mappedRows={
+              Array [
+                Object {
+                  "cells": Array [
+                    Object {
+                      "props": Object {
+                        "isOpen": true,
+                      },
+                      "title": "1",
+                    },
+                    Object {
+                      "props": Object {
+                        "isOpen": false,
+                      },
+                      "title": "2",
+                    },
+                  ],
+                  "col1": Object {
+                    "props": Object {
+                      "isOpen": true,
+                      "isVisible": true,
+                    },
+                    "title": "1",
+                  },
+                  "col2": Object {
+                    "props": Object {
+                      "isOpen": false,
+                      "isVisible": true,
+                    },
+                    "title": "2",
+                  },
+                  "id": 0,
+                  "isExpanded": undefined,
+                  "isFirst": true,
+                  "isFirstVisible": true,
+                  "isLast": false,
+                  "isLastVisible": false,
+                  "isOpen": true,
+                },
+                Object {
+                  "cells": Array [
+                    Object {
+                      "props": Object {
+                        "colSpan": 2,
+                      },
+                      "title": "expanded",
+                    },
+                  ],
+                  "col1": Object {
+                    "props": Object {
+                      "colSpan": 2,
+                      "isVisible": true,
+                    },
+                    "title": "expanded",
+                  },
+                  "compoundParent": 0,
+                  "id": 1,
+                  "isExpanded": true,
+                  "isFirst": false,
+                  "isFirstVisible": false,
+                  "isLast": false,
+                  "isLastVisible": false,
+                  "parent": 0,
+                },
+                Object {
+                  "cells": Array [
+                    Object {
+                      "props": Object {
+                        "isOpen": false,
+                      },
+                      "title": "3",
+                    },
+                    Object {
+                      "props": Object {
+                        "isOpen": false,
+                      },
+                      "title": "4",
+                    },
+                  ],
+                  "col1": Object {
+                    "props": Object {
+                      "isOpen": false,
+                      "isVisible": true,
+                    },
+                    "title": "3",
+                  },
+                  "col2": Object {
+                    "props": Object {
+                      "isOpen": false,
+                      "isVisible": true,
+                    },
+                    "title": "4",
+                  },
+                  "id": 2,
+                  "isExpanded": undefined,
+                  "isFirst": false,
+                  "isFirstVisible": false,
+                  "isLast": false,
+                  "isLastVisible": true,
+                  "isOpen": false,
+                },
+                Object {
+                  "cells": Array [
+                    Object {
+                      "props": Object {
+                        "colSpan": 2,
+                      },
+                      "title": "expanded",
+                    },
+                  ],
+                  "col1": Object {
+                    "props": Object {
+                      "colSpan": 2,
+                      "isVisible": true,
+                    },
+                    "title": "expanded",
+                  },
+                  "compoundParent": 0,
+                  "id": 3,
+                  "isExpanded": false,
+                  "isFirst": false,
+                  "isFirstVisible": false,
+                  "isLast": true,
+                  "isLastVisible": false,
+                  "parent": 2,
+                },
+              ]
+            }
+            onRow={[Function]}
+            rowKey="id"
+            rows={
+              Array [
+                Object {
+                  "cells": Array [
+                    Object {
+                      "props": Object {
+                        "isOpen": true,
+                      },
+                      "title": "1",
+                    },
+                    Object {
+                      "props": Object {
+                        "isOpen": false,
+                      },
+                      "title": "2",
+                    },
+                  ],
+                  "col1": Object {
+                    "props": Object {
+                      "isOpen": true,
+                      "isVisible": true,
+                    },
+                    "title": "1",
+                  },
+                  "col2": Object {
+                    "props": Object {
+                      "isOpen": false,
+                      "isVisible": true,
+                    },
+                    "title": "2",
+                  },
+                  "id": 0,
+                  "isExpanded": undefined,
+                  "isFirst": true,
+                  "isFirstVisible": true,
+                  "isLast": false,
+                  "isLastVisible": false,
+                  "isOpen": true,
+                },
+                Object {
+                  "cells": Array [
+                    Object {
+                      "props": Object {
+                        "colSpan": 2,
+                      },
+                      "title": "expanded",
+                    },
+                  ],
+                  "col1": Object {
+                    "props": Object {
+                      "colSpan": 2,
+                      "isVisible": true,
+                    },
+                    "title": "expanded",
+                  },
+                  "compoundParent": 0,
+                  "id": 1,
+                  "isExpanded": true,
+                  "isFirst": false,
+                  "isFirstVisible": false,
+                  "isLast": false,
+                  "isLastVisible": false,
+                  "parent": 0,
+                },
+                Object {
+                  "cells": Array [
+                    Object {
+                      "props": Object {
+                        "isOpen": false,
+                      },
+                      "title": "3",
+                    },
+                    Object {
+                      "props": Object {
+                        "isOpen": false,
+                      },
+                      "title": "4",
+                    },
+                  ],
+                  "col1": Object {
+                    "props": Object {
+                      "isOpen": false,
+                      "isVisible": true,
+                    },
+                    "title": "3",
+                  },
+                  "col2": Object {
+                    "props": Object {
+                      "isOpen": false,
+                      "isVisible": true,
+                    },
+                    "title": "4",
+                  },
+                  "id": 2,
+                  "isExpanded": undefined,
+                  "isFirst": false,
+                  "isFirstVisible": false,
+                  "isLast": false,
+                  "isLastVisible": true,
+                  "isOpen": false,
+                },
+                Object {
+                  "cells": Array [
+                    Object {
+                      "props": Object {
+                        "colSpan": 2,
+                      },
+                      "title": "expanded",
+                    },
+                  ],
+                  "col1": Object {
+                    "props": Object {
+                      "colSpan": 2,
+                      "isVisible": true,
+                    },
+                    "title": "expanded",
+                  },
+                  "compoundParent": 0,
+                  "id": 3,
+                  "isExpanded": false,
+                  "isFirst": false,
+                  "isFirstVisible": false,
+                  "isLast": true,
+                  "isLastVisible": false,
+                  "parent": 2,
+                },
+              ]
+            }
+          >
+            <BodyWrapper
+              className=""
+              mappedRows={
+                Array [
+                  Object {
+                    "cells": Array [
+                      Object {
+                        "props": Object {
+                          "isOpen": true,
+                        },
+                        "title": "1",
+                      },
+                      Object {
+                        "props": Object {
+                          "isOpen": false,
+                        },
+                        "title": "2",
+                      },
+                    ],
+                    "col1": Object {
+                      "props": Object {
+                        "isOpen": true,
+                        "isVisible": true,
+                      },
+                      "title": "1",
+                    },
+                    "col2": Object {
+                      "props": Object {
+                        "isOpen": false,
+                        "isVisible": true,
+                      },
+                      "title": "2",
+                    },
+                    "id": 0,
+                    "isExpanded": undefined,
+                    "isFirst": true,
+                    "isFirstVisible": true,
+                    "isLast": false,
+                    "isLastVisible": false,
+                    "isOpen": true,
+                  },
+                  Object {
+                    "cells": Array [
+                      Object {
+                        "props": Object {
+                          "colSpan": 2,
+                        },
+                        "title": "expanded",
+                      },
+                    ],
+                    "col1": Object {
+                      "props": Object {
+                        "colSpan": 2,
+                        "isVisible": true,
+                      },
+                      "title": "expanded",
+                    },
+                    "compoundParent": 0,
+                    "id": 1,
+                    "isExpanded": true,
+                    "isFirst": false,
+                    "isFirstVisible": false,
+                    "isLast": false,
+                    "isLastVisible": false,
+                    "parent": 0,
+                  },
+                  Object {
+                    "cells": Array [
+                      Object {
+                        "props": Object {
+                          "isOpen": false,
+                        },
+                        "title": "3",
+                      },
+                      Object {
+                        "props": Object {
+                          "isOpen": false,
+                        },
+                        "title": "4",
+                      },
+                    ],
+                    "col1": Object {
+                      "props": Object {
+                        "isOpen": false,
+                        "isVisible": true,
+                      },
+                      "title": "3",
+                    },
+                    "col2": Object {
+                      "props": Object {
+                        "isOpen": false,
+                        "isVisible": true,
+                      },
+                      "title": "4",
+                    },
+                    "id": 2,
+                    "isExpanded": undefined,
+                    "isFirst": false,
+                    "isFirstVisible": false,
+                    "isLast": false,
+                    "isLastVisible": true,
+                    "isOpen": false,
+                  },
+                  Object {
+                    "cells": Array [
+                      Object {
+                        "props": Object {
+                          "colSpan": 2,
+                        },
+                        "title": "expanded",
+                      },
+                    ],
+                    "col1": Object {
+                      "props": Object {
+                        "colSpan": 2,
+                        "isVisible": true,
+                      },
+                      "title": "expanded",
+                    },
+                    "compoundParent": 0,
+                    "id": 3,
+                    "isExpanded": false,
+                    "isFirst": false,
+                    "isFirstVisible": false,
+                    "isLast": true,
+                    "isLastVisible": false,
+                    "parent": 2,
+                  },
+                ]
+              }
+              rows={Array []}
+            >
+              <tbody
+                className="pf-m-expanded"
+                key="tbody-0"
+                rows={Array []}
+              >
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "data": undefined,
+                        "extraParams": Object {
+                          "actionResolver": undefined,
+                          "actions": undefined,
+                          "allRowsSelected": false,
+                          "areActionsDisabled": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "firstUserColumnIndex": 0,
+                          "onCollapse": null,
+                          "onExpand": [Function],
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "col1",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "col1",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "col1",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "data": undefined,
+                        "extraParams": Object {
+                          "actionResolver": undefined,
+                          "actions": undefined,
+                          "allRowsSelected": false,
+                          "areActionsDisabled": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "firstUserColumnIndex": 0,
+                          "onCollapse": null,
+                          "onExpand": [Function],
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "col2",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "col2",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "col2",
+                        },
+                      },
+                    ]
+                  }
+                  key="0-row"
+                  onRow={[Function]}
+                  renderers={
+                    Object {
+                      "cell": [Function],
+                      "row": [Function],
+                      "wrapper": [Function],
+                    }
+                  }
+                  rowData={
+                    Object {
+                      "cells": Array [
+                        Object {
+                          "props": Object {
+                            "isOpen": true,
+                          },
+                          "title": "1",
+                        },
+                        Object {
+                          "props": Object {
+                            "isOpen": false,
+                          },
+                          "title": "2",
+                        },
+                      ],
+                      "col1": Object {
+                        "props": Object {
+                          "isOpen": true,
+                          "isVisible": true,
+                        },
+                        "title": "1",
+                      },
+                      "col2": Object {
+                        "props": Object {
+                          "isOpen": false,
+                          "isVisible": true,
+                        },
+                        "title": "2",
+                      },
+                      "id": 0,
+                      "isExpanded": undefined,
+                      "isFirst": true,
+                      "isFirstVisible": true,
+                      "isLast": false,
+                      "isLastVisible": false,
+                      "isOpen": true,
+                    }
+                  }
+                  rowIndex={0}
+                  rowKey="0-row"
+                >
+                  <RowWrapper
+                    className=""
+                    onMouseDown={[Function]}
+                    row={
+                      Object {
+                        "cells": Array [
+                          Object {
+                            "props": Object {
+                              "isOpen": true,
+                            },
+                            "title": "1",
+                          },
+                          Object {
+                            "props": Object {
+                              "isOpen": false,
+                            },
+                            "title": "2",
+                          },
+                        ],
+                        "col1": Object {
+                          "props": Object {
+                            "isOpen": true,
+                            "isVisible": true,
+                          },
+                          "title": "1",
+                        },
+                        "col2": Object {
+                          "props": Object {
+                            "isOpen": false,
+                            "isVisible": true,
+                          },
+                          "title": "2",
+                        },
+                        "id": 0,
+                        "isExpanded": undefined,
+                        "isFirst": true,
+                        "isFirstVisible": true,
+                        "isLast": false,
+                        "isLastVisible": false,
+                        "isOpen": true,
+                      }
+                    }
+                    rowProps={
+                      Object {
+                        "rowIndex": 0,
+                        "rowKey": "0-row",
+                      }
+                    }
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onMouseDown={[Function]}
+                    >
+                      <BodyCell
+                        className="pf-c-table__compound-expansion-toggle pf-m-expanded"
+                        component="td"
+                        data-key={0}
+                        data-label="col1"
+                        isOpen={true}
+                        isVisible={true}
+                        key="0-cell"
+                        textCenter={false}
+                      >
+                        <td
+                          className="pf-c-table__compound-expansion-toggle pf-m-expanded"
+                          data-key={0}
+                          data-label="col1"
+                          isOpen={true}
+                        >
+                          <Button
+                            aria-expanded={true}
+                            aria-label={null}
+                            className=""
+                            component="button"
+                            isActive={false}
+                            isBlock={false}
+                            isDisabled={false}
+                            isFocus={false}
+                            isHover={false}
+                            isInline={false}
+                            onClick={[Function]}
+                            type="button"
+                            variant="link"
+                          >
+                            <button
+                              aria-disabled={null}
+                              aria-expanded={true}
+                              aria-label={null}
+                              className="pf-c-button pf-m-link"
+                              disabled={false}
+                              onClick={[Function]}
+                              tabIndex={null}
+                              type="button"
+                            >
+                              1
+                            </button>
+                          </Button>
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        className="pf-c-table__compound-expansion-toggle"
+                        component="td"
+                        data-key={1}
+                        data-label="col2"
+                        isOpen={false}
+                        isVisible={true}
+                        key="1-cell"
+                        textCenter={false}
+                      >
+                        <td
+                          className="pf-c-table__compound-expansion-toggle"
+                          data-key={1}
+                          data-label="col2"
+                          isOpen={false}
+                        >
+                          <Button
+                            aria-expanded={false}
+                            aria-label={null}
+                            className=""
+                            component="button"
+                            isActive={false}
+                            isBlock={false}
+                            isDisabled={false}
+                            isFocus={false}
+                            isHover={false}
+                            isInline={false}
+                            onClick={[Function]}
+                            type="button"
+                            variant="link"
+                          >
+                            <button
+                              aria-disabled={null}
+                              aria-expanded={false}
+                              aria-label={null}
+                              className="pf-c-button pf-m-link"
+                              disabled={false}
+                              onClick={[Function]}
+                              tabIndex={null}
+                              type="button"
+                            >
+                              2
+                            </button>
+                          </Button>
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "data": undefined,
+                        "extraParams": Object {
+                          "actionResolver": undefined,
+                          "actions": undefined,
+                          "allRowsSelected": false,
+                          "areActionsDisabled": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "firstUserColumnIndex": 0,
+                          "onCollapse": null,
+                          "onExpand": [Function],
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "col1",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "col1",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "col1",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "data": undefined,
+                        "extraParams": Object {
+                          "actionResolver": undefined,
+                          "actions": undefined,
+                          "allRowsSelected": false,
+                          "areActionsDisabled": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "firstUserColumnIndex": 0,
+                          "onCollapse": null,
+                          "onExpand": [Function],
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "col2",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "col2",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "col2",
+                        },
+                      },
+                    ]
+                  }
+                  key="1-row"
+                  onRow={[Function]}
+                  renderers={
+                    Object {
+                      "cell": [Function],
+                      "row": [Function],
+                      "wrapper": [Function],
+                    }
+                  }
+                  rowData={
+                    Object {
+                      "cells": Array [
+                        Object {
+                          "props": Object {
+                            "colSpan": 2,
+                          },
+                          "title": "expanded",
+                        },
+                      ],
+                      "col1": Object {
+                        "props": Object {
+                          "colSpan": 2,
+                          "isVisible": true,
+                        },
+                        "title": "expanded",
+                      },
+                      "compoundParent": 0,
+                      "id": 1,
+                      "isExpanded": true,
+                      "isFirst": false,
+                      "isFirstVisible": false,
+                      "isLast": false,
+                      "isLastVisible": false,
+                      "parent": 0,
+                    }
+                  }
+                  rowIndex={1}
+                  rowKey="1-row"
+                >
+                  <RowWrapper
+                    className=""
+                    onMouseDown={[Function]}
+                    row={
+                      Object {
+                        "cells": Array [
+                          Object {
+                            "props": Object {
+                              "colSpan": 2,
+                            },
+                            "title": "expanded",
+                          },
+                        ],
+                        "col1": Object {
+                          "props": Object {
+                            "colSpan": 2,
+                            "isVisible": true,
+                          },
+                          "title": "expanded",
+                        },
+                        "compoundParent": 0,
+                        "id": 1,
+                        "isExpanded": true,
+                        "isFirst": false,
+                        "isFirstVisible": false,
+                        "isLast": false,
+                        "isLastVisible": false,
+                        "parent": 0,
+                      }
+                    }
+                    rowProps={
+                      Object {
+                        "rowIndex": 1,
+                        "rowKey": "1-row",
+                      }
+                    }
+                  >
+                    <tr
+                      className="pf-c-table__expandable-row pf-m-expanded"
+                      hidden={false}
+                      onMouseDown={[Function]}
+                    >
+                      <BodyCell
+                        className="pf-c-table__compound-expansion-toggle"
+                        colSpan={2}
+                        component="td"
+                        data-key={0}
+                        data-label="col1"
+                        isVisible={true}
+                        key="0-cell"
+                        textCenter={false}
+                      >
+                        <td
+                          className="pf-c-table__compound-expansion-toggle"
+                          colSpan={2}
+                          data-key={0}
+                          data-label="col1"
+                        >
+                          expanded
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="col2"
+                        key="1-cell"
+                        textCenter={false}
+                      />
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+              </tbody>
+              <tbody
+                className=""
+                key="tbody-1"
+                rows={Array []}
+              >
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "data": undefined,
+                        "extraParams": Object {
+                          "actionResolver": undefined,
+                          "actions": undefined,
+                          "allRowsSelected": false,
+                          "areActionsDisabled": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "firstUserColumnIndex": 0,
+                          "onCollapse": null,
+                          "onExpand": [Function],
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "col1",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "col1",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "col1",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "data": undefined,
+                        "extraParams": Object {
+                          "actionResolver": undefined,
+                          "actions": undefined,
+                          "allRowsSelected": false,
+                          "areActionsDisabled": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "firstUserColumnIndex": 0,
+                          "onCollapse": null,
+                          "onExpand": [Function],
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "col2",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "col2",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "col2",
+                        },
+                      },
+                    ]
+                  }
+                  key="2-row"
+                  onRow={[Function]}
+                  renderers={
+                    Object {
+                      "cell": [Function],
+                      "row": [Function],
+                      "wrapper": [Function],
+                    }
+                  }
+                  rowData={
+                    Object {
+                      "cells": Array [
+                        Object {
+                          "props": Object {
+                            "isOpen": false,
+                          },
+                          "title": "3",
+                        },
+                        Object {
+                          "props": Object {
+                            "isOpen": false,
+                          },
+                          "title": "4",
+                        },
+                      ],
+                      "col1": Object {
+                        "props": Object {
+                          "isOpen": false,
+                          "isVisible": true,
+                        },
+                        "title": "3",
+                      },
+                      "col2": Object {
+                        "props": Object {
+                          "isOpen": false,
+                          "isVisible": true,
+                        },
+                        "title": "4",
+                      },
+                      "id": 2,
+                      "isExpanded": undefined,
+                      "isFirst": false,
+                      "isFirstVisible": false,
+                      "isLast": false,
+                      "isLastVisible": true,
+                      "isOpen": false,
+                    }
+                  }
+                  rowIndex={2}
+                  rowKey="2-row"
+                >
+                  <RowWrapper
+                    className=""
+                    onMouseDown={[Function]}
+                    row={
+                      Object {
+                        "cells": Array [
+                          Object {
+                            "props": Object {
+                              "isOpen": false,
+                            },
+                            "title": "3",
+                          },
+                          Object {
+                            "props": Object {
+                              "isOpen": false,
+                            },
+                            "title": "4",
+                          },
+                        ],
+                        "col1": Object {
+                          "props": Object {
+                            "isOpen": false,
+                            "isVisible": true,
+                          },
+                          "title": "3",
+                        },
+                        "col2": Object {
+                          "props": Object {
+                            "isOpen": false,
+                            "isVisible": true,
+                          },
+                          "title": "4",
+                        },
+                        "id": 2,
+                        "isExpanded": undefined,
+                        "isFirst": false,
+                        "isFirstVisible": false,
+                        "isLast": false,
+                        "isLastVisible": true,
+                        "isOpen": false,
+                      }
+                    }
+                    rowProps={
+                      Object {
+                        "rowIndex": 2,
+                        "rowKey": "2-row",
+                      }
+                    }
+                  >
+                    <tr
+                      className=""
+                      hidden={false}
+                      onMouseDown={[Function]}
+                    >
+                      <BodyCell
+                        className="pf-c-table__compound-expansion-toggle"
+                        component="td"
+                        data-key={0}
+                        data-label="col1"
+                        isOpen={false}
+                        isVisible={true}
+                        key="0-cell"
+                        textCenter={false}
+                      >
+                        <td
+                          className="pf-c-table__compound-expansion-toggle"
+                          data-key={0}
+                          data-label="col1"
+                          isOpen={false}
+                        >
+                          <Button
+                            aria-expanded={false}
+                            aria-label={null}
+                            className=""
+                            component="button"
+                            isActive={false}
+                            isBlock={false}
+                            isDisabled={false}
+                            isFocus={false}
+                            isHover={false}
+                            isInline={false}
+                            onClick={[Function]}
+                            type="button"
+                            variant="link"
+                          >
+                            <button
+                              aria-disabled={null}
+                              aria-expanded={false}
+                              aria-label={null}
+                              className="pf-c-button pf-m-link"
+                              disabled={false}
+                              onClick={[Function]}
+                              tabIndex={null}
+                              type="button"
+                            >
+                              3
+                            </button>
+                          </Button>
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        className="pf-c-table__compound-expansion-toggle"
+                        component="td"
+                        data-key={1}
+                        data-label="col2"
+                        isOpen={false}
+                        isVisible={true}
+                        key="1-cell"
+                        textCenter={false}
+                      >
+                        <td
+                          className="pf-c-table__compound-expansion-toggle"
+                          data-key={1}
+                          data-label="col2"
+                          isOpen={false}
+                        >
+                          <Button
+                            aria-expanded={false}
+                            aria-label={null}
+                            className=""
+                            component="button"
+                            isActive={false}
+                            isBlock={false}
+                            isDisabled={false}
+                            isFocus={false}
+                            isHover={false}
+                            isInline={false}
+                            onClick={[Function]}
+                            type="button"
+                            variant="link"
+                          >
+                            <button
+                              aria-disabled={null}
+                              aria-expanded={false}
+                              aria-label={null}
+                              className="pf-c-button pf-m-link"
+                              disabled={false}
+                              onClick={[Function]}
+                              tabIndex={null}
+                              type="button"
+                            >
+                              4
+                            </button>
+                          </Button>
+                        </td>
+                      </BodyCell>
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+                <BodyRow
+                  columns={
+                    Array [
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "data": undefined,
+                        "extraParams": Object {
+                          "actionResolver": undefined,
+                          "actions": undefined,
+                          "allRowsSelected": false,
+                          "areActionsDisabled": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "firstUserColumnIndex": 0,
+                          "onCollapse": null,
+                          "onExpand": [Function],
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "col1",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "col1",
+                        "props": Object {
+                          "data-key": 0,
+                          "data-label": "col1",
+                        },
+                      },
+                      Object {
+                        "cell": Object {
+                          "formatters": Array [
+                            [Function],
+                          ],
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "data": undefined,
+                        "extraParams": Object {
+                          "actionResolver": undefined,
+                          "actions": undefined,
+                          "allRowsSelected": false,
+                          "areActionsDisabled": undefined,
+                          "contentId": "expanded-content",
+                          "dropdownDirection": "down",
+                          "dropdownPosition": "right",
+                          "expandId": "expandable-toggle",
+                          "firstUserColumnIndex": 0,
+                          "onCollapse": null,
+                          "onExpand": [Function],
+                          "onSelect": undefined,
+                          "onSort": undefined,
+                          "rowLabeledBy": "simple-node",
+                          "sortBy": undefined,
+                        },
+                        "header": Object {
+                          "formatters": Array [],
+                          "label": "col2",
+                          "transforms": Array [
+                            [Function],
+                            [Function],
+                          ],
+                        },
+                        "property": "col2",
+                        "props": Object {
+                          "data-key": 1,
+                          "data-label": "col2",
+                        },
+                      },
+                    ]
+                  }
+                  key="3-row"
+                  onRow={[Function]}
+                  renderers={
+                    Object {
+                      "cell": [Function],
+                      "row": [Function],
+                      "wrapper": [Function],
+                    }
+                  }
+                  rowData={
+                    Object {
+                      "cells": Array [
+                        Object {
+                          "props": Object {
+                            "colSpan": 2,
+                          },
+                          "title": "expanded",
+                        },
+                      ],
+                      "col1": Object {
+                        "props": Object {
+                          "colSpan": 2,
+                          "isVisible": true,
+                        },
+                        "title": "expanded",
+                      },
+                      "compoundParent": 0,
+                      "id": 3,
+                      "isExpanded": false,
+                      "isFirst": false,
+                      "isFirstVisible": false,
+                      "isLast": true,
+                      "isLastVisible": false,
+                      "parent": 2,
+                    }
+                  }
+                  rowIndex={3}
+                  rowKey="3-row"
+                >
+                  <RowWrapper
+                    className=""
+                    onMouseDown={[Function]}
+                    row={
+                      Object {
+                        "cells": Array [
+                          Object {
+                            "props": Object {
+                              "colSpan": 2,
+                            },
+                            "title": "expanded",
+                          },
+                        ],
+                        "col1": Object {
+                          "props": Object {
+                            "colSpan": 2,
+                            "isVisible": true,
+                          },
+                          "title": "expanded",
+                        },
+                        "compoundParent": 0,
+                        "id": 3,
+                        "isExpanded": false,
+                        "isFirst": false,
+                        "isFirstVisible": false,
+                        "isLast": true,
+                        "isLastVisible": false,
+                        "parent": 2,
+                      }
+                    }
+                    rowProps={
+                      Object {
+                        "rowIndex": 3,
+                        "rowKey": "3-row",
+                      }
+                    }
+                  >
+                    <tr
+                      className="pf-c-table__expandable-row"
+                      hidden={true}
+                      onMouseDown={[Function]}
+                    >
+                      <BodyCell
+                        className="pf-c-table__compound-expansion-toggle"
+                        colSpan={2}
+                        component="td"
+                        data-key={0}
+                        data-label="col1"
+                        isVisible={true}
+                        key="0-cell"
+                        textCenter={false}
+                      >
+                        <td
+                          className="pf-c-table__compound-expansion-toggle"
+                          colSpan={2}
+                          data-key={0}
+                          data-label="col1"
+                        >
+                          expanded
+                        </td>
+                      </BodyCell>
+                      <BodyCell
+                        component="td"
+                        data-key={1}
+                        data-label="col2"
+                        key="1-cell"
+                        textCenter={false}
+                      />
+                    </tr>
+                  </RowWrapper>
+                </BodyRow>
+              </tbody>
+            </BodyWrapper>
+          </Body>
+        </ContextBody>
+      </TableBody>
+    </table>
+  </Provider>
+</Table>
+`;
+
 exports[`Header width table 1`] = `
 <Table
   aria-label="Aria labeled"
