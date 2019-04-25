@@ -14,9 +14,16 @@ import {
   headerCol,
   TableVariant,
   expandable,
+  compoundExpand,
   cellWidth,
   textCenter,
 } from '@patternfly/react-table';
+
+import {
+  CodeBranchIcon,
+  CodeIcon,
+  CubeIcon
+} from '@patternfly/react-icons';
 
 ## Simple table
 
@@ -540,7 +547,7 @@ import {
   cellWidth
 } from '@patternfly/react-table';
 
-class ContactExpandableTable extends React.Component {
+class CompactExpandableTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -753,6 +760,181 @@ class CollapsibleTable extends React.Component {
 
     return (
       <Table caption="Collapsible table" onCollapse={this.onCollapse} rows={rows} cells={columns}>
+        <TableHeader />
+        <TableBody />
+      </Table>
+    );
+  }
+}
+```
+
+
+## Compound Expandable table
+
+```js
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  sortable,
+  SortByDirection,
+  TableVariant,
+  expandable,
+  compoundExpand,
+  cellWidth
+} from '@patternfly/react-table';
+
+import {
+  CodeBranchIcon,
+  CodeIcon,
+  CubeIcon
+} from '@patternfly/react-icons';
+
+class CompoundExpandableTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        'Repositories',
+        {
+          title: 'Branches',
+          cell: { transforms: [compoundExpand]}
+        },
+        {
+          title: 'Pull requests',
+          cell: { transforms: [compoundExpand]}
+        },
+        {
+          title: 'Workspaces',
+          cell: { transforms: [compoundExpand]}
+        },
+        'Last Commit',
+        ''
+      ],
+      rows: [
+        {
+          isOpen: true,
+          cells: [
+            { title: <a href="#">siemur/test-space</a> },
+            {
+              title: (
+                <React.Fragment>
+                  <CodeBranchIcon key="icon" /> 10
+                </React.Fragment>
+              ),
+              props: { isOpen: true }
+            },
+            {
+              title: (
+                <React.Fragment>
+                  <CodeIcon key="icon" /> 4
+                </React.Fragment>
+              ),
+              props: { isOpen: false }
+            },
+            {
+              title: (
+                <React.Fragment>
+                  <CubeIcon key="icon" /> 4
+                </React.Fragment>
+              ),
+              props: { isOpen: false }
+            },
+            '20 minutes',
+            { title: <a href="#">Open in Github</a> }
+          ]
+        },
+        {
+          parent: 0,
+          compoundParent: 1,
+          cells: [{ title: 'parent 0 compound child - 1', props: { colSpan: 6 } }]
+        },
+        {
+          parent: 0,
+          compoundParent: 2,
+          cells: [{ title: 'parent 0 compound child - 2', props: { colSpan: 6 } }]
+        },
+        {
+          parent: 0,
+          compoundParent: 3,
+          cells: [{ title: 'parent 0 compound child - 3', props: { colSpan: 6 } }]
+        },
+        {
+          isOpen: false,
+          cells: [
+            { title: <a href="#">siemur/test-space</a> },
+            {
+              title: (
+                <React.Fragment>
+                  <CodeBranchIcon key="icon" /> 3
+                </React.Fragment>
+              ),
+              props: { isOpen: false }
+            },
+            {
+              title: (
+                <React.Fragment>
+                  <CodeIcon key="icon" /> 4
+                </React.Fragment>
+              ),
+              props: { isOpen: false }
+            },
+            {
+              title: (
+                <React.Fragment>
+                  <CubeIcon key="icon" /> 2
+                </React.Fragment>
+              ),
+              props: { isOpen: false }
+            },
+            '20 minutes',
+            { title: <a href="#">Open in Github</a> }
+          ]
+        },
+        {
+          parent: 4,
+          compoundParent: 1,
+          cells: [{ title: 'parent 4 compound child - 1', props: { colSpan: 6 } }]
+        },
+        {
+          parent: 4,
+          compoundParent: 2,
+          cells: [{ title: 'parent 4 compound child - 2', props: { colSpan: 6 } }]
+        },
+        {
+          parent: 4,
+          compoundParent: 3,
+          cells: [{ title: 'parent 4 compound child - 3', props: { colSpan: 6 } }]
+        }
+      ]
+    };
+    this.onExpand = this.onExpand.bind(this);
+  }
+
+  onExpand(event, rowIndex, colIndex, isOpen, rowData, extraData) {
+    const { rows } = this.state;
+    if (!isOpen) {
+      //set all other expanded cells false in this row if we are expanding
+      rows[rowIndex].cells.forEach(cell => {
+        if (cell.props) cell.props.isOpen = false;
+      });
+      rows[rowIndex].cells[colIndex].props.isOpen = true;
+      rows[rowIndex].isOpen = true;
+    } else {
+      rows[rowIndex].cells[colIndex].props.isOpen = false;
+      rows[rowIndex].isOpen = rows[rowIndex].cells.some(cell => cell.props && cell.props.isOpen);
+    }
+    this.setState({
+      rows
+    });
+  }
+
+  render() {
+    const { columns, rows } = this.state;
+
+    return (
+      <Table caption="Compound expandable table" onExpand={this.onExpand} rows={rows} cells={columns}>
         <TableHeader />
         <TableBody />
       </Table>
