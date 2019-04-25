@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.4.0...@patternfly/react-tokens@2.5.0) (2019-04-25)
+
+
+### Features
+
+* **build:** incremental build ([#1817](https://github.com/patternfly/patternfly-react/issues/1817)) ([6bd3d7e](https://github.com/patternfly/patternfly-react/commit/6bd3d7e))
+
+
+
+
+
 # 2.4.0 (2019-04-24)
 
 
