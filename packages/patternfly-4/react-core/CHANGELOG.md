@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.13.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.13.3...@patternfly/react-core@3.13.4) (2019-04-25)
+
+
+### Bug Fixes
+
+* **Alert:** Change title type from string to node ([#1856](https://github.com/patternfly/patternfly-react/issues/1856)) ([12c7a55](https://github.com/patternfly/patternfly-react/commit/12c7a55)), closes [#1854](https://github.com/patternfly/patternfly-react/issues/1854)
+
+
+
+
+
 ## [3.13.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.13.2...@patternfly/react-core@3.13.3) (2019-04-25)
 
 **Note:** Version bump only for package @patternfly/react-core
