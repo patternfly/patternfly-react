@@ -1,0 +1,3 @@
+[submodule "packages/patternfly-4/react-docs/static/patternfly-common"]
+	path = packages/patternfly-4/react-docs/static/patternfly-common
+	url = git@github.com:patternfly/patternfly-common.git
