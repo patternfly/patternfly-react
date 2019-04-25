@@ -7,7 +7,5 @@ exports[`expanded content render 1`] = `
   id="id-1"
   onInput={[Function]}
   suppressContentEditableWarning="true"
->
-  This is my text
-</div>
+/>
 `;

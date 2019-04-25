@@ -88,7 +88,7 @@ class ClipboardCopy extends React.Component {
                   />
                 )}
                 <TextInput
-                  isReadOnly={isReadOnly}
+                  isReadOnly={isReadOnly || this.state.expanded}
                   onChange={this.updateText}
                   value={this.state.text}
                   id={`text-input-${id}`}

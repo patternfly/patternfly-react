@@ -6,6 +6,13 @@ import PropTypes from 'prop-types';
 class ExpandedContent extends React.Component {
   constructor(props) {
     super(props);
+    this.contentRef = React.createRef();
+  }
+
+  componentDidMount() {
+    if (this.contentRef.current) {
+      this.contentRef.current.innerText = this.props.children;
+    }
   }
 
   render() {
@@ -13,13 +20,12 @@ class ExpandedContent extends React.Component {
     return (
       <div
         suppressContentEditableWarning="true"
+        ref={this.contentRef}
         className={css(styles.clipboardCopyExpandableContent, className)}
         onInput={e => onChange(e.target.innerText, e)}
         contentEditable="true"
         {...props}
-      >
-        {children}
-      </div>
+      />
     );
   }
 }
