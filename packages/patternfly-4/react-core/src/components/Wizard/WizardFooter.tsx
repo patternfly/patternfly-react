@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
 import { css } from '@patternfly/react-styles';
-import { Button } from '../Button';
+import { Button, ButtonVariant } from '../Button';
 import { WizardStep } from './Wizard';
 
 export interface WizardFooterProps {
@@ -43,13 +43,13 @@ export const WizardFooterInternal: React.SFC<WizardFooterInternalProps> = ({
   cancelButtonText
 }) => (
     <footer className={css(styles.wizardFooter)}>
-      <Button variant="primary" type="submit" onClick={onNext} isDisabled={!isValid}>
+      <Button variant={ButtonVariant.primary} type="submit" onClick={onNext} isDisabled={!isValid}>
         {nextButtonText}
       </Button>
-      {!activeStep.hideBackButton && <Button variant="secondary" onClick={onBack} className={css(firstStep && 'pf-m-disabled')}>
+      {!activeStep.hideBackButton && <Button variant={ButtonVariant.secondary} onClick={onBack} className={css(firstStep && 'pf-m-disabled')}>
         {backButtonText}
       </Button>}
-      {!activeStep.hideCancelButton && <Button variant="link" onClick={onClose}>
+      {!activeStep.hideCancelButton && <Button variant={ButtonVariant.link} onClick={onClose}>
         {cancelButtonText}
       </Button>}
     </footer>
