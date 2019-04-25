@@ -17,6 +17,10 @@ export interface SelectProps extends HTMLProps<HTMLOptionElement> {
   variant?: string;
   width?: string | number;
   ariaLabelledBy?: string;
+  ariaLabelTypeAhead?: string;
+  ariaLabelClear?: string;
+  ariaLabelToggle?: string;
+  ariaLabelRemove?: string;
 }
 
 declare const Select: React.FunctionComponent<SelectProps>;

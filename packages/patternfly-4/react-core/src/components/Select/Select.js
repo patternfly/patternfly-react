@@ -34,6 +34,12 @@ const propTypes = {
   ariaLabelledBy: PropTypes.string,
   /** Label for input field of type ahead select variants */
   ariaLabelTypeAhead: PropTypes.string,
+  /** Label for clear selection button of type ahead select variants */
+  ariaLabelClear: PropTypes.string,
+  /** Label for toggle of select variants */
+  ariaLabelToggle: PropTypes.string,
+  /** Label for remove chip button of multiple type ahead select variant */
+  ariaLabelRemove: PropTypes.string,
   /** Callback for selection behavior */
   onSelect: PropTypes.func.isRequired,
   /** Callback for toggle button behavior */
@@ -56,6 +62,9 @@ const defaultProps = {
   'aria-label': null,
   ariaLabelledBy: null,
   ariaLabelTypeAhead: null,
+  ariaLabelClear: null,
+  ariaLabelToggle: null,
+  ariaLabelRemove: null,
   selections: null,
   placeholderText: null,
   variant: SelectVariant.single,
@@ -90,12 +99,16 @@ class Select extends React.Component {
     } catch (err) {
       input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
     }
+    const filteredChildren =
+      e.target.value !== ''
+        ? this.props.children.filter(child => child.props.value.search(input) === 0)
+        : this.props.children;
+    if (filteredChildren.length === 0) {
+      filteredChildren.push(<div className={css(styles.selectMenuItem)}>No results found</div>);
+    }
     this.setState({
       typeaheadValue: e.target.value,
-      filteredChildren:
-        e.target.value !== ''
-          ? this.props.children.filter(child => child.props.value.search(input) === 0)
-          : this.props.children
+      filteredChildren
     });
   };
 
@@ -124,6 +137,9 @@ class Select extends React.Component {
       selections,
       ariaLabelledBy,
       ariaLabelTypeAhead,
+      ariaLabelClear,
+      ariaLabelToggle,
+      ariaLabelRemove,
       'aria-label': ariaLabel,
       placeholderText,
       width,
@@ -143,7 +159,7 @@ class Select extends React.Component {
         <ChipGroup>
           {selections &&
             selections.map(item => (
-              <Chip key={item} onClick={e => onSelect(e, item)}>
+              <Chip key={item} onClick={e => onSelect(e, item)} closeBtnAriaLabel={ariaLabelRemove}>
                 {item}
               </Chip>
             ))}
@@ -165,8 +181,9 @@ class Select extends React.Component {
             onToggle={onToggle}
             onEnter={this.onEnter}
             onClose={this.onClose}
-            aria-labelledby={`${ariaLabelledBy} ${selectToggleId}`}
+            ariaLabelledBy={`${ariaLabelledBy} ${selectToggleId}`}
             variant={variant}
+            ariaLabelToggle={ariaLabelToggle}
           >
             {variant === SelectVariant.single && (
               <div className={css(styles.selectToggleWrapper)}>
@@ -207,7 +224,7 @@ class Select extends React.Component {
                       this.clearSelection(e);
                       onClear && onClear(e);
                     }}
-                    aria-label="Clear all"
+                    aria-label={ariaLabelClear}
                   >
                     <TimesCircleIcon aria-hidden />
                   </button>

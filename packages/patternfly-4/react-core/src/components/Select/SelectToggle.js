@@ -33,6 +33,10 @@ const propTypes = {
   isPlain: PropTypes.bool,
   /** Type of the toggle button, defaults to 'button' */
   type: PropTypes.string,
+  /** Id of label for the Select aria-labelledby */
+  ariaLabelledBy: PropTypes.string,
+  /** Label for toggle of select variants */
+  ariaLabelToggle: PropTypes.string,
   /** Flag for variant, determines toggle rules and interaction */
   variant: PropTypes.oneOf(['single', 'checkbox', 'typeahead', 'typeaheadmulti']),
   /** Additional props are spread to the container <button> */
@@ -49,6 +53,8 @@ const defaultProps = {
   isActive: false,
   isPlain: false,
   variant: false,
+  ariaLabelledBy: null,
+  ariaLabelToggle: null,
   type: 'button',
   onToggle: Function.prototype,
   onEnter: Function.prototype,
@@ -129,14 +135,22 @@ class SelectToggle extends Component {
       parentRef,
       id,
       type,
+      ariaLabelledBy,
+      ariaLabelToggle,
       ...props
     } = this.props;
     const isTypeahead = variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti;
     const ToggleComponent = isTypeahead ? 'div' : 'button';
+    const toggleProps = {
+      id,
+      'aria-labelledby': ariaLabelledBy,
+      'aria-expanded': isExpanded,
+      'aria-haspopup': (variant !== SelectVariant.checkbox && 'listbox') || null,
+      'aria-label': ariaLabelToggle
+    };
     return (
       <ToggleComponent
         {...props}
-        id={id}
         ref={toggle => {
           this.toggle = toggle;
         }}
@@ -157,13 +171,20 @@ class SelectToggle extends Component {
             if (isExpanded) onClose && onClose();
           }
         }}
-        aria-expanded={isExpanded}
-        aria-haspopup={(variant !== SelectVariant.checkbox && 'listbox') || null}
         onKeyDown={this.onKeyDown}
+        {...!isTypeahead && toggleProps}
       >
         {children}
         {isTypeahead && (
-          <button className={css(buttonStyles.button, styles.selectToggleButton)}>
+          <button
+            className={css(buttonStyles.button, styles.selectToggleButton)}
+            {...isTypeahead && toggleProps}
+            onClick={_event => {
+              _event.stopPropagation();
+              onToggle && onToggle(!isExpanded);
+              if (isExpanded) onClose && onClose();
+            }}
+          >
             <CaretDownIcon className={css(styles.selectToggleArrow)} />
           </button>
         )}

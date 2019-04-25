@@ -3,6 +3,9 @@
 exports[`checkbox select renders checkbox select groups successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelClear={null}
+  ariaLabelRemove={null}
+  ariaLabelToggle={null}
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
@@ -25,7 +28,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-4"
+      ariaLabelToggle={null}
+      ariaLabelledBy="null pf-toggle-id-4"
       className=""
       id="pf-toggle-id-4"
       isActive={false}
@@ -43,6 +47,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       <button
         aria-expanded={true}
         aria-haspopup={null}
+        aria-label={null}
         aria-labelledby="null pf-toggle-id-4"
         className="pf-c-select__toggle"
         id="pf-toggle-id-4"
@@ -415,6 +420,9 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
 exports[`checkbox select renders closed successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelClear={null}
+  ariaLabelRemove={null}
+  ariaLabelToggle={null}
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
@@ -437,7 +445,8 @@ exports[`checkbox select renders closed successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-2"
+      ariaLabelToggle={null}
+      ariaLabelledBy="null pf-toggle-id-2"
       className=""
       id="pf-toggle-id-2"
       isActive={false}
@@ -455,6 +464,7 @@ exports[`checkbox select renders closed successfully 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup={null}
+        aria-label={null}
         aria-labelledby="null pf-toggle-id-2"
         className="pf-c-select__toggle"
         id="pf-toggle-id-2"
@@ -505,6 +515,9 @@ exports[`checkbox select renders closed successfully 1`] = `
 exports[`checkbox select renders expanded successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelClear={null}
+  ariaLabelRemove={null}
+  ariaLabelToggle={null}
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
@@ -527,7 +540,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-3"
+      ariaLabelToggle={null}
+      ariaLabelledBy="null pf-toggle-id-3"
       className=""
       id="pf-toggle-id-3"
       isActive={false}
@@ -545,6 +559,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
       <button
         aria-expanded={true}
         aria-haspopup={null}
+        aria-label={null}
         aria-labelledby="null pf-toggle-id-3"
         className="pf-c-select__toggle"
         id="pf-toggle-id-3"
@@ -757,6 +772,9 @@ exports[`checkbox select renders expanded successfully 1`] = `
 exports[`select single select renders closed successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelClear={null}
+  ariaLabelRemove={null}
+  ariaLabelToggle={null}
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
@@ -779,7 +797,8 @@ exports[`select single select renders closed successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-0"
+      ariaLabelToggle={null}
+      ariaLabelledBy="null pf-toggle-id-0"
       className=""
       id="pf-toggle-id-0"
       isActive={false}
@@ -797,6 +816,7 @@ exports[`select single select renders closed successfully 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-label={null}
         aria-labelledby="null pf-toggle-id-0"
         className="pf-c-select__toggle"
         id="pf-toggle-id-0"
@@ -849,6 +869,9 @@ exports[`select single select renders closed successfully 1`] = `
 exports[`select single select renders expanded successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelClear={null}
+  ariaLabelRemove={null}
+  ariaLabelToggle={null}
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
@@ -871,7 +894,8 @@ exports[`select single select renders expanded successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-1"
+      ariaLabelToggle={null}
+      ariaLabelledBy="null pf-toggle-id-1"
       className=""
       id="pf-toggle-id-1"
       isActive={false}
@@ -889,6 +913,7 @@ exports[`select single select renders expanded successfully 1`] = `
       <button
         aria-expanded={true}
         aria-haspopup="listbox"
+        aria-label={null}
         aria-labelledby="null pf-toggle-id-1"
         className="pf-c-select__toggle"
         id="pf-toggle-id-1"
@@ -1061,6 +1086,9 @@ exports[`select single select renders expanded successfully 1`] = `
 exports[`typeahead multi select renders closed successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelClear={null}
+  ariaLabelRemove={null}
+  ariaLabelToggle={null}
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
@@ -1083,7 +1111,8 @@ exports[`typeahead multi select renders closed successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-10"
+      ariaLabelToggle={null}
+      ariaLabelledBy="null pf-toggle-id-10"
       className=""
       id="pf-toggle-id-10"
       isActive={false}
@@ -1099,11 +1128,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
       variant="typeaheadmulti"
     >
       <div
-        aria-expanded={false}
-        aria-haspopup="listbox"
-        aria-labelledby="null pf-toggle-id-10"
         className="pf-c-select__toggle pf-m-typeahead"
-        id="pf-toggle-id-10"
         onClick={[Function]}
         onKeyDown={[Function]}
         type={null}
@@ -1122,7 +1147,13 @@ exports[`typeahead multi select renders closed successfully 1`] = `
           />
         </div>
         <button
+          aria-expanded={false}
+          aria-haspopup="listbox"
+          aria-label={null}
+          aria-labelledby="null pf-toggle-id-10"
           className="pf-c-button pf-c-select__toggle-button"
+          id="pf-toggle-id-10"
+          onClick={[Function]}
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
@@ -1161,6 +1192,9 @@ exports[`typeahead multi select renders closed successfully 1`] = `
 exports[`typeahead multi select renders expanded successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelClear={null}
+  ariaLabelRemove={null}
+  ariaLabelToggle={null}
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
@@ -1183,7 +1217,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-11"
+      ariaLabelToggle={null}
+      ariaLabelledBy="null pf-toggle-id-11"
       className=""
       id="pf-toggle-id-11"
       isActive={false}
@@ -1199,11 +1234,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       variant="typeaheadmulti"
     >
       <div
-        aria-expanded={true}
-        aria-haspopup="listbox"
-        aria-labelledby="null pf-toggle-id-11"
         className="pf-c-select__toggle pf-m-typeahead"
-        id="pf-toggle-id-11"
         onClick={[Function]}
         onKeyDown={[Function]}
         type={null}
@@ -1222,7 +1253,13 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           />
         </div>
         <button
+          aria-expanded={true}
+          aria-haspopup="listbox"
+          aria-label={null}
+          aria-labelledby="null pf-toggle-id-11"
           className="pf-c-button pf-c-select__toggle-button"
+          id="pf-toggle-id-11"
+          onClick={[Function]}
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
@@ -1381,6 +1418,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
 exports[`typeahead multi select renders selected successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelClear={null}
+  ariaLabelRemove={null}
+  ariaLabelToggle={null}
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
@@ -1408,7 +1448,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-12"
+      ariaLabelToggle={null}
+      ariaLabelledBy="null pf-toggle-id-12"
       className=""
       id="pf-toggle-id-12"
       isActive={false}
@@ -1424,11 +1465,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
       variant="typeaheadmulti"
     >
       <div
-        aria-expanded={true}
-        aria-haspopup="listbox"
-        aria-labelledby="null pf-toggle-id-12"
         className="pf-c-select__toggle pf-m-typeahead"
-        id="pf-toggle-id-12"
         onClick={[Function]}
         onKeyDown={[Function]}
         type={null}
@@ -1455,7 +1492,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               >
                 <Chip
                   className=""
-                  closeBtnAriaLabel="close"
+                  closeBtnAriaLabel={null}
                   component="li"
                   isOverflowChip={false}
                   isReadOnly={false}
@@ -1477,13 +1514,13 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       </span>
                       <ChipButton
                         aria-labelledby="remove_pf-random-id-0 pf-random-id-0"
-                        ariaLabel="close"
+                        ariaLabel={null}
                         className=""
                         id="remove_pf-random-id-0"
                         onClick={[Function]}
                       >
                         <Button
-                          aria-label="close"
+                          aria-label={null}
                           aria-labelledby="remove_pf-random-id-0 pf-random-id-0"
                           className=""
                           component="button"
@@ -1500,7 +1537,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                         >
                           <button
                             aria-disabled={null}
-                            aria-label="close"
+                            aria-label={null}
                             aria-labelledby="remove_pf-random-id-0 pf-random-id-0"
                             className="pf-c-button pf-m-plain"
                             disabled={false}
@@ -1641,7 +1678,13 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           </TimesCircleIcon>
         </button>
         <button
+          aria-expanded={true}
+          aria-haspopup="listbox"
+          aria-label={null}
+          aria-labelledby="null pf-toggle-id-12"
           className="pf-c-button pf-c-select__toggle-button"
+          id="pf-toggle-id-12"
+          onClick={[Function]}
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
@@ -1855,6 +1898,9 @@ exports[`typeahead multi select renders selected successfully 1`] = `
 exports[`typeahead multi select test onChange 1`] = `
 <Select
   aria-label={null}
+  ariaLabelClear={null}
+  ariaLabelRemove={null}
+  ariaLabelToggle={null}
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
@@ -1877,7 +1923,8 @@ exports[`typeahead multi select test onChange 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-14"
+      ariaLabelToggle={null}
+      ariaLabelledBy="null pf-toggle-id-14"
       className=""
       id="pf-toggle-id-14"
       isActive={false}
@@ -1893,11 +1940,7 @@ exports[`typeahead multi select test onChange 1`] = `
           class="pf-c-select pf-m-expanded"
         >
           <div
-            aria-expanded="true"
-            aria-haspopup="listbox"
-            aria-labelledby="null pf-toggle-id-14"
             class="pf-c-select__toggle pf-m-typeahead"
-            id="pf-toggle-id-14"
           >
             <div
               class="pf-c-select__toggle-wrapper"
@@ -1910,7 +1953,11 @@ exports[`typeahead multi select test onChange 1`] = `
               />
             </div>
             <button
+              aria-expanded="true"
+              aria-haspopup="listbox"
+              aria-labelledby="null pf-toggle-id-14"
               class="pf-c-button pf-c-select__toggle-button"
+              id="pf-toggle-id-14"
             >
               <svg
                 aria-hidden="true"
@@ -1932,18 +1979,21 @@ exports[`typeahead multi select test onChange 1`] = `
           <ul
             class="pf-c-select__menu"
             role="listbox"
-          />
+          >
+            <div
+              class="pf-c-select__menu-item"
+              index="0"
+            >
+              No results found
+            </div>
+          </ul>
         </div>
       }
       type="button"
       variant="typeahead"
     >
       <div
-        aria-expanded={true}
-        aria-haspopup="listbox"
-        aria-labelledby="null pf-toggle-id-14"
         className="pf-c-select__toggle pf-m-typeahead"
-        id="pf-toggle-id-14"
         onClick={[Function]}
         onKeyDown={[Function]}
         type={null}
@@ -1962,7 +2012,13 @@ exports[`typeahead multi select test onChange 1`] = `
           />
         </div>
         <button
+          aria-expanded={true}
+          aria-haspopup="listbox"
+          aria-label={null}
+          aria-labelledby="null pf-toggle-id-14"
           className="pf-c-button pf-c-select__toggle-button"
+          id="pf-toggle-id-14"
+          onClick={[Function]}
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
@@ -2007,7 +2063,18 @@ exports[`typeahead multi select test onChange 1`] = `
         aria-labelledby={null}
         className="pf-c-select__menu"
         role="listbox"
-      />
+      >
+        <div
+          className="pf-c-select__menu-item"
+          index={0}
+          isSelected={false}
+          key=".0"
+          keyHandler={[Function]}
+          sendRef={[Function]}
+        >
+          No results found
+        </div>
+      </ul>
     </SingleSelect>
   </div>
 </Select>
@@ -2016,6 +2083,9 @@ exports[`typeahead multi select test onChange 1`] = `
 exports[`typeahead select renders closed successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelClear={null}
+  ariaLabelRemove={null}
+  ariaLabelToggle={null}
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
@@ -2038,7 +2108,8 @@ exports[`typeahead select renders closed successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-5"
+      ariaLabelToggle={null}
+      ariaLabelledBy="null pf-toggle-id-5"
       className=""
       id="pf-toggle-id-5"
       isActive={false}
@@ -2054,11 +2125,7 @@ exports[`typeahead select renders closed successfully 1`] = `
       variant="typeahead"
     >
       <div
-        aria-expanded={false}
-        aria-haspopup="listbox"
-        aria-labelledby="null pf-toggle-id-5"
         className="pf-c-select__toggle pf-m-typeahead"
-        id="pf-toggle-id-5"
         onClick={[Function]}
         onKeyDown={[Function]}
         type={null}
@@ -2077,7 +2144,13 @@ exports[`typeahead select renders closed successfully 1`] = `
           />
         </div>
         <button
+          aria-expanded={false}
+          aria-haspopup="listbox"
+          aria-label={null}
+          aria-labelledby="null pf-toggle-id-5"
           className="pf-c-button pf-c-select__toggle-button"
+          id="pf-toggle-id-5"
+          onClick={[Function]}
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
@@ -2116,6 +2189,9 @@ exports[`typeahead select renders closed successfully 1`] = `
 exports[`typeahead select renders expanded successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelClear={null}
+  ariaLabelRemove={null}
+  ariaLabelToggle={null}
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
@@ -2138,7 +2214,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-6"
+      ariaLabelToggle={null}
+      ariaLabelledBy="null pf-toggle-id-6"
       className=""
       id="pf-toggle-id-6"
       isActive={false}
@@ -2154,11 +2231,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
       variant="typeahead"
     >
       <div
-        aria-expanded={true}
-        aria-haspopup="listbox"
-        aria-labelledby="null pf-toggle-id-6"
         className="pf-c-select__toggle pf-m-typeahead"
-        id="pf-toggle-id-6"
         onClick={[Function]}
         onKeyDown={[Function]}
         type={null}
@@ -2177,7 +2250,13 @@ exports[`typeahead select renders expanded successfully 1`] = `
           />
         </div>
         <button
+          aria-expanded={true}
+          aria-haspopup="listbox"
+          aria-label={null}
+          aria-labelledby="null pf-toggle-id-6"
           className="pf-c-button pf-c-select__toggle-button"
+          id="pf-toggle-id-6"
+          onClick={[Function]}
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
@@ -2336,6 +2415,9 @@ exports[`typeahead select renders expanded successfully 1`] = `
 exports[`typeahead select renders selected successfully 1`] = `
 <Select
   aria-label={null}
+  ariaLabelClear={null}
+  ariaLabelRemove={null}
+  ariaLabelToggle={null}
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
@@ -2358,7 +2440,8 @@ exports[`typeahead select renders selected successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-7"
+      ariaLabelToggle={null}
+      ariaLabelledBy="null pf-toggle-id-7"
       className=""
       id="pf-toggle-id-7"
       isActive={false}
@@ -2374,11 +2457,7 @@ exports[`typeahead select renders selected successfully 1`] = `
       variant="typeahead"
     >
       <div
-        aria-expanded={true}
-        aria-haspopup="listbox"
-        aria-labelledby="null pf-toggle-id-7"
         className="pf-c-select__toggle pf-m-typeahead"
-        id="pf-toggle-id-7"
         onClick={[Function]}
         onKeyDown={[Function]}
         type={null}
@@ -2397,7 +2476,7 @@ exports[`typeahead select renders selected successfully 1`] = `
           />
         </div>
         <button
-          aria-label="Clear all"
+          aria-label={null}
           className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
           onClick={[Function]}
         >
@@ -2429,7 +2508,13 @@ exports[`typeahead select renders selected successfully 1`] = `
           </TimesCircleIcon>
         </button>
         <button
+          aria-expanded={true}
+          aria-haspopup="listbox"
+          aria-label={null}
+          aria-labelledby="null pf-toggle-id-7"
           className="pf-c-button pf-c-select__toggle-button"
+          id="pf-toggle-id-7"
+          onClick={[Function]}
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
@@ -2613,6 +2698,9 @@ exports[`typeahead select renders selected successfully 1`] = `
 exports[`typeahead select test onChange 1`] = `
 <Select
   aria-label={null}
+  ariaLabelClear={null}
+  ariaLabelRemove={null}
+  ariaLabelToggle={null}
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
   className=""
@@ -2635,7 +2723,8 @@ exports[`typeahead select test onChange 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby="null pf-toggle-id-9"
+      ariaLabelToggle={null}
+      ariaLabelledBy="null pf-toggle-id-9"
       className=""
       id="pf-toggle-id-9"
       isActive={false}
@@ -2651,11 +2740,7 @@ exports[`typeahead select test onChange 1`] = `
           class="pf-c-select pf-m-expanded"
         >
           <div
-            aria-expanded="true"
-            aria-haspopup="listbox"
-            aria-labelledby="null pf-toggle-id-9"
             class="pf-c-select__toggle pf-m-typeahead"
-            id="pf-toggle-id-9"
           >
             <div
               class="pf-c-select__toggle-wrapper"
@@ -2668,7 +2753,11 @@ exports[`typeahead select test onChange 1`] = `
               />
             </div>
             <button
+              aria-expanded="true"
+              aria-haspopup="listbox"
+              aria-labelledby="null pf-toggle-id-9"
               class="pf-c-button pf-c-select__toggle-button"
+              id="pf-toggle-id-9"
             >
               <svg
                 aria-hidden="true"
@@ -2690,18 +2779,21 @@ exports[`typeahead select test onChange 1`] = `
           <ul
             class="pf-c-select__menu"
             role="listbox"
-          />
+          >
+            <div
+              class="pf-c-select__menu-item"
+              index="0"
+            >
+              No results found
+            </div>
+          </ul>
         </div>
       }
       type="button"
       variant="typeahead"
     >
       <div
-        aria-expanded={true}
-        aria-haspopup="listbox"
-        aria-labelledby="null pf-toggle-id-9"
         className="pf-c-select__toggle pf-m-typeahead"
-        id="pf-toggle-id-9"
         onClick={[Function]}
         onKeyDown={[Function]}
         type={null}
@@ -2720,7 +2812,13 @@ exports[`typeahead select test onChange 1`] = `
           />
         </div>
         <button
+          aria-expanded={true}
+          aria-haspopup="listbox"
+          aria-label={null}
+          aria-labelledby="null pf-toggle-id-9"
           className="pf-c-button pf-c-select__toggle-button"
+          id="pf-toggle-id-9"
+          onClick={[Function]}
         >
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
@@ -2765,7 +2863,18 @@ exports[`typeahead select test onChange 1`] = `
         aria-labelledby={null}
         className="pf-c-select__menu"
         role="listbox"
-      />
+      >
+        <div
+          className="pf-c-select__menu-item"
+          index={0}
+          isSelected={false}
+          key=".0"
+          keyHandler={[Function]}
+          sendRef={[Function]}
+        >
+          No results found
+        </div>
+      </ul>
     </SingleSelect>
   </div>
 </Select>

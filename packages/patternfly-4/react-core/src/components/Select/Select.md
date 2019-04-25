@@ -293,7 +293,7 @@ class TypeaheadSelectInput extends React.Component {
 
   render() {
     const { isExpanded, selected } = this.state;
-    const titleId = 'title-id';
+    const titleId = 'typeahead-select-id';
     return (
       <div>
         <span id={titleId} hidden>
@@ -308,6 +308,7 @@ class TypeaheadSelectInput extends React.Component {
           selections={selected}
           isExpanded={isExpanded}
           ariaLabelledBy={titleId}
+          ariaLabelClear="Clear all"
           placeholderText="Select a state"
         >
           {this.options.map((option, index) => (
@@ -377,7 +378,7 @@ class MultiTypeaheadSelectInput extends React.Component {
 
   render() {
     const { isExpanded, selected } = this.state;
-    const titleId = 'title-id';
+    const titleId = 'multi-typeahead-select-id';
 
     return (
       <div>
@@ -393,6 +394,7 @@ class MultiTypeaheadSelectInput extends React.Component {
           selections={selected}
           isExpanded={isExpanded}
           ariaLabelledBy={titleId}
+          ariaLabelClear="Clear all"
           placeholderText="Select a state"
         >
           {this.options.map((option, index) => (
