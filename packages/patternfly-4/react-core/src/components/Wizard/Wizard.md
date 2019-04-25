@@ -56,7 +56,7 @@ class SimpleWizard extends React.Component {
 }
 ```
 
-### Wizard - compact navigation (Wizard `isCompact` prop)
+### Wizard - compact navigation (Wizard `isCompactNav` prop)
 ```js
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
@@ -93,7 +93,7 @@ class CompactWizard extends React.Component {
         {isOpen && (
           <Wizard
             isOpen={isOpen}
-            isCompact
+            isCompactNav
             onClose={this.toggleOpen}
             title="Simple Wizard"
             description="Simple Wizard Description"
@@ -226,7 +226,8 @@ class ValidationWizard extends React.Component {
       isOpen: false,
       isFormValid: false,
       formValue: 'Thirty',
-      allStepsValid: false
+      allStepsValid: false,
+      stepIdReached: 1
     };
 
     this.toggleOpen = () => {
@@ -253,6 +254,9 @@ class ValidationWizard extends React.Component {
 
     this.onNext = ({ id, name }, { prevId, prevName }) => {
       console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
+      this.setState({
+        stepIdReached: this.state.stepIdReached < id ? id : this.state.stepIdReached
+      });
       this.areAllStepsValid();
     };
 
@@ -274,7 +278,7 @@ class ValidationWizard extends React.Component {
   }
 
   render() {
-    const { isOpen, isFormValid, formValue, allStepsValid } = this.state;
+    const { isOpen, isFormValid, formValue, allStepsValid, stepIdReached } = this.state;
 
     const steps = [
       { id: 1, name: 'Information', component: <p>Step 1</p> },
@@ -287,13 +291,14 @@ class ValidationWizard extends React.Component {
             component: (
               <SampleForm formValue={formValue} isFormValid={isFormValid} onChange={this.onFormChange} />
             ),
-            enableNext: isFormValid
+            enableNext: isFormValid,
+            canJumpTo: stepIdReached >= 2
           },
-          { id: 4, name: 'Substep B', component: <p>Substep B</p> }
+          { id: 3, name: 'Substep B', component: <p>Substep B</p>, canJumpTo: stepIdReached >= 3 }
         ]
       },
-      { id: 5, name: 'Additional', component: <p>Step 3</p>, enableNext: allStepsValid },
-      { id: 6, name: 'Review', component: <p>Step 4</p>, nextButtonText: 'Close' }
+      { id: 4, name: 'Additional', component: <p>Step 3</p>, enableNext: allStepsValid, canJumpTo: stepIdReached >= 4 },
+      { id: 5, name: 'Review', component: <p>Step 4</p>, nextButtonText: 'Close', canJumpTo: stepIdReached >= 5 }
     ];
 
     return (
