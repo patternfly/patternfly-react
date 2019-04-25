@@ -22,9 +22,9 @@ const defaultProps = {
   className: ''
 };
 
-const AboutModalBoxContent = ({ children, className, trademark, id, ...props }) => (
+const AboutModalBoxContent = ({ children, className, trademark, id, noAboutModalBoxContentContainer, ...props }) => (
   <div {...props} className={css(styles.aboutModalBoxContent, className)} id={id}>
-    <div className={css(contentStyles.content)}>{children}</div>
+    {noAboutModalBoxContentContainer ? children : <div className={css(contentStyles.content)}>{children}</div>}
     <div className={css(styles.aboutModalBoxStrapline)}>
       <p className={css(titleStyles.title)}>{trademark}</p>
     </div>

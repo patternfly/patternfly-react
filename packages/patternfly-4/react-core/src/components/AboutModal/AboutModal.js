@@ -33,6 +33,8 @@ const propTypes = {
     }
     return null;
   },
+  /** prevents AboutModal from rendering content inside AboutModalContentBox; allows for more flexible layouts */
+  noAboutModalBoxContentContainer: PropTypes.bool,
   /** Additional props are passed and spread to Modal content container <div> */
   '': PropTypes.any
 };
@@ -44,7 +46,8 @@ const defaultProps = {
   productName: '',
   trademark: '',
   logoImageSrc: '',
-  logoImageAlt: ''
+  logoImageAlt: '',
+  noAboutModalBoxContentContainer: false
 };
 
 let currentId = 0;
