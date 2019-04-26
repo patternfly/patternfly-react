@@ -5,7 +5,8 @@ import {
   global_active_color_300,
   global_Color_dark_100,
   global_Color_dark_200,
-  global_Color_light_100
+  global_Color_light_100,
+  global_FontFamily_sans_serif
 } from '@patternfly/react-tokens';
 import Theme from './theme-common';
 
@@ -27,9 +28,9 @@ const COLOR_TOOLTIP_FLYOUT_FILL = global_Color_light_100.value;
 const COLOR_TOOLTIP_FLYOUT_STROKE = global_Color_dark_100.value;
 
 // Typography
-const TOPOGRAPHY_FONT_FAMILY = "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif";
-const TOPOGRAPHY_LETTER_SPACING = 'normal';
-const TOPOGRAPHY_FONT_SIZE = 14; // Value must be in pixles
+const TYPOGRAPHY_FONT_FAMILY = global_FontFamily_sans_serif.value;
+const TYPOGRAPHY_LETTER_SPACING = 'normal';
+const TYPOGRAPHY_FONT_SIZE = 14; // Value must be in pixles
 
 // Layout
 const LAYOUT_PROPS = {
@@ -41,9 +42,9 @@ const LAYOUT_PROPS = {
 
 // Labels
 const LABEL_PROPS = {
-  fontFamily: TOPOGRAPHY_FONT_FAMILY,
-  fontSize: TOPOGRAPHY_FONT_SIZE,
-  letterSpacing: TOPOGRAPHY_LETTER_SPACING,
+  fontFamily: TYPOGRAPHY_FONT_FAMILY,
+  fontSize: TYPOGRAPHY_FONT_SIZE,
+  letterSpacing: TYPOGRAPHY_LETTER_SPACING,
   padding: 10,
   fill: global_Color_dark_100.value,
   stroke: 'transparent'
@@ -70,7 +71,7 @@ export default Theme({
   LABEL_CENTERED_PROPS,
   STROKE_LINE_CAP,
   STROKE_LINE_JOIN,
-  TOPOGRAPHY_FONT_FAMILY,
-  TOPOGRAPHY_LETTER_SPACING,
-  TOPOGRAPHY_FONT_SIZE
+  TYPOGRAPHY_FONT_FAMILY,
+  TYPOGRAPHY_LETTER_SPACING,
+  TYPOGRAPHY_FONT_SIZE
 });

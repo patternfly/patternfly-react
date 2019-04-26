@@ -16,9 +16,7 @@ export default props => {
     LABEL_CENTERED_PROPS,
     STROKE_LINE_CAP,
     STROKE_LINE_JOIN,
-    // TOPOGRAPHY_FONT_FAMILY,
-    // TOPOGRAPHY_LETTER_SPACING,
-    TOPOGRAPHY_FONT_SIZE
+    TYPOGRAPHY_FONT_SIZE
   } = props;
 
   return {
@@ -151,7 +149,7 @@ export default props => {
           type: 'square'
         },
         labels: LABEL_PROPS,
-        title: Object.assign({}, LABEL_PROPS, { fontSize: TOPOGRAPHY_FONT_SIZE, padding: 2 })
+        title: Object.assign({}, LABEL_PROPS, { fontSize: TYPOGRAPHY_FONT_SIZE, padding: 2 })
       }
     },
     line: Object.assign(
