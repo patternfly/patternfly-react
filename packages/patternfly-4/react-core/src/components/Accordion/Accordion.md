@@ -27,13 +27,12 @@ class SimpleAccordion extends React.Component {
       }
     };
     return (
-      <Accordion aria-label="Accordion example">
-        <AccordionItem aria-labelledby="ex-item1">
+      <Accordion>
+        <AccordionItem>
           <AccordionToggle
             onClick={() => {onToggle('ex-toggle1')}}
             isExpanded={this.state.expanded==='ex-toggle1'}
             id="ex-toggle1"
-            aria-controls="ex-expand1"
           >
             Item One
           </AccordionToggle>
