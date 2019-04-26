@@ -787,7 +787,7 @@ import {
   CubeIcon
 } from '@patternfly/react-icons';
 
-import DemoSortableTable from '@patternfly/react-table/components/Table/demo/DemoSortableTable.js';
+import DemoSortableTable from './demo/DemoSortableTable';
 
 class CompoundExpandableTable extends React.Component {
   constructor(props) {
@@ -797,15 +797,15 @@ class CompoundExpandableTable extends React.Component {
         'Repositories',
         {
           title: 'Branches',
-          cell: { transforms: [compoundExpand]}
+          cellTransforms: [compoundExpand]
         },
         {
           title: 'Pull requests',
-          cell: { transforms: [compoundExpand]}
+          cellTransforms: [compoundExpand]
         },
         {
           title: 'Workspaces',
-          cell: { transforms: [compoundExpand]}
+          cellTransforms: [compoundExpand]
         },
         'Last Commit',
         ''

@@ -5,7 +5,6 @@ import {
   emptyCol,
   mapProps,
   collapsible,
-  compoundExpand,
   emptyTD,
   expandedRow,
   parentId
