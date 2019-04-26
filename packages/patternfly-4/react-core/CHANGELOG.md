@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.13.5...@patternfly/react-core@3.14.0) (2019-04-26)
+
+
+### Features
+
+* **Select:** add typeahead variants (single and multi) ([#1839](https://github.com/patternfly/patternfly-react/issues/1839)) ([8da35a9](https://github.com/patternfly/patternfly-react/commit/8da35a9))
+
+
+
+
+
 ## [3.13.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.13.4...@patternfly/react-core@3.13.5) (2019-04-26)
 
 **Note:** Version bump only for package @patternfly/react-core
