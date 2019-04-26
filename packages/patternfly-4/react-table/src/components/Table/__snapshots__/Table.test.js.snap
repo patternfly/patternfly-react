@@ -3060,7 +3060,7 @@ exports[`Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -3112,7 +3112,7 @@ exports[`Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -3797,7 +3797,7 @@ exports[`Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -3849,7 +3849,7 @@ exports[`Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -4534,7 +4534,7 @@ exports[`Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -4586,7 +4586,7 @@ exports[`Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -5271,7 +5271,7 @@ exports[`Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -5323,7 +5323,7 @@ exports[`Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -6008,7 +6008,7 @@ exports[`Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -6060,7 +6060,7 @@ exports[`Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -6745,7 +6745,7 @@ exports[`Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -6797,7 +6797,7 @@ exports[`Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -7482,7 +7482,7 @@ exports[`Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -7534,7 +7534,7 @@ exports[`Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -8219,7 +8219,7 @@ exports[`Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -8271,7 +8271,7 @@ exports[`Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -8956,7 +8956,7 @@ exports[`Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -9008,7 +9008,7 @@ exports[`Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -45400,7 +45400,7 @@ exports[`Simple Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -45452,7 +45452,7 @@ exports[`Simple Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -46263,7 +46263,7 @@ exports[`Simple Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -46315,7 +46315,7 @@ exports[`Simple Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -47126,7 +47126,7 @@ exports[`Simple Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -47178,7 +47178,7 @@ exports[`Simple Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -47989,7 +47989,7 @@ exports[`Simple Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -48041,7 +48041,7 @@ exports[`Simple Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -48852,7 +48852,7 @@ exports[`Simple Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -48904,7 +48904,7 @@ exports[`Simple Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -49715,7 +49715,7 @@ exports[`Simple Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -49767,7 +49767,7 @@ exports[`Simple Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -50578,7 +50578,7 @@ exports[`Simple Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -50630,7 +50630,7 @@ exports[`Simple Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -51441,7 +51441,7 @@ exports[`Simple Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -51493,7 +51493,7 @@ exports[`Simple Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -52304,7 +52304,7 @@ exports[`Simple Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -52356,7 +52356,7 @@ exports[`Simple Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
@@ -53170,7 +53170,7 @@ exports[`Simple Actions table 1`] = `
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
-                                  <DropdownToggle
+                                  <Toggle
                                     aria-label="Actions"
                                     ariaHasPopup={true}
                                     className=""
@@ -53222,7 +53222,7 @@ exports[`Simple Actions table 1`] = `
                                         </svg>
                                       </EllipsisVIcon>
                                     </button>
-                                  </DropdownToggle>
+                                  </Toggle>
                                 </Kebab>
                               </div>
                             </Dropdown>
