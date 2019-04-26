@@ -6,7 +6,7 @@ import styles from '@patternfly/patternfly/components/Accordion/accordion.css';
 const AccordionContent = ({ className, children, id, isHidden, isFixed, 'aria-label': ariaLabel, ...props }) => (
   <dd
     id={id}
-    className={css(className, styles.accordionExpandedContent, isFixed && styles.modifiers.fixed, !isHidden && styles.modifiers.expanded)} 
+    className={css(styles.accordionExpandedContent, isFixed && styles.modifiers.fixed, !isHidden && styles.modifiers.expanded, className)} 
     hidden={isHidden}
     aria-label={ariaLabel}
     {...props}
