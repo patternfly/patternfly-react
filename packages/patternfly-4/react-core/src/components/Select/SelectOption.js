@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from '@patternfly/patternfly/components/Select/select.css';
 import { css } from '@patternfly/react-styles';
+import { CheckIcon } from '@patternfly/react-icons';
 import PropTypes from 'prop-types';
 import { SelectContext, KeyTypes } from './selectConstants';
-import { CheckIcon } from '@patternfly/react-icons';
 
 const propTypes = {
   /** additional classes added to the Select Option */
