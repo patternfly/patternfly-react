@@ -27,7 +27,7 @@ class SimpleAccordion extends React.Component {
     };
 
     return (
-      <Accordion aria-label="Accordion example">
+      <Accordion>
         <AccordionItem>
           <AccordionToggle
             onClick={() => toggle('ex-toggle1')}
@@ -37,7 +37,6 @@ class SimpleAccordion extends React.Component {
             Item One
           </AccordionToggle>
           <AccordionContent
-            aria-label="Primary Content Details"
             id="ex-expand1"
             isHidden={!this.state.expanded.includes('ex-toggle1')}
           >
@@ -56,7 +55,6 @@ class SimpleAccordion extends React.Component {
             Item Two
           </AccordionToggle>
           <AccordionContent
-            aria-label="Primary Content Details"
             id="ex-expand2"
             isHidden={!this.state.expanded.includes('ex-toggle2')}
           >
@@ -75,7 +73,6 @@ class SimpleAccordion extends React.Component {
             Item Three
           </AccordionToggle>
           <AccordionContent
-            aria-label="Primary Content Details"
             id="ex-expand3"
             isHidden={!this.state.expanded.includes('ex-toggle3')}
           >
@@ -91,7 +88,6 @@ class SimpleAccordion extends React.Component {
             Item Four
           </AccordionToggle>
           <AccordionContent
-            aria-label="Primary Content Details"
             id="ex-expand4"
             isHidden={!this.state.expanded.includes('ex-toggle4')}
           >
@@ -115,7 +111,6 @@ class SimpleAccordion extends React.Component {
             Item Five
           </AccordionToggle>
           <AccordionContent
-            aria-label="Primary Content Details"
             id="ex-expand5"
             isHidden={!this.state.expanded.includes('ex-toggle5')}
           >
@@ -151,7 +146,7 @@ class FixedAccordion extends React.Component {
     };
 
     return (
-      <Accordion aria-label="Accordion example">
+      <Accordion>
         <AccordionItem>
           <AccordionToggle
             onClick={() => toggle('ex-toggle1')}
