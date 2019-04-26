@@ -31,6 +31,7 @@ export default class DemoSortableTable extends React.Component {
   }
 
   render() {
+    const { id } = this.props;
     const { columns, rows, sortBy } = this.state;
 
     return (
@@ -42,6 +43,7 @@ export default class DemoSortableTable extends React.Component {
         cells={columns}
         rows={rows}
         className="pf-m-no-border-rows"
+        id={id}
       >
         <TableHeader />
         <TableBody />
@@ -51,5 +53,6 @@ export default class DemoSortableTable extends React.Component {
 }
 
 DemoSortableTable.propTypes = {
-  firstColumnRows: PropTypes.array.isRequired
+  firstColumnRows: PropTypes.array.isRequired,
+  id: PropTypes.string.isRequired
 };

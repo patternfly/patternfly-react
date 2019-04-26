@@ -24,7 +24,7 @@ export const compoundExpand = (value, { rowIndex, columnIndex, rowData, column, 
   return {
     className: css(styles.tableCompoundExpansionToggle, props.isOpen && styles.modifiers.expanded),
     children: props.isOpen !== undefined && (
-      <Button variant="link" onClick={onToggle} aria-expanded={props.isOpen}>
+      <Button variant="link" onClick={onToggle} aria-expanded={props.isOpen} aria-controls={props.ariaControls}>
         {title}
       </Button>
     )

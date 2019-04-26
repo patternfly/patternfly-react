@@ -821,7 +821,7 @@ class CompoundExpandableTable extends React.Component {
                   <CodeBranchIcon key="icon" /> 10
                 </React.Fragment>
               ),
-              props: { isOpen: true }
+              props: { isOpen: true, ariaControls : 'compoound-expansion-table-1' }
             },
             {
               title: (
@@ -829,7 +829,7 @@ class CompoundExpandableTable extends React.Component {
                   <CodeIcon key="icon" /> 4
                 </React.Fragment>
               ),
-              props: { isOpen: false }
+              props: { isOpen: false, ariaControls : 'compoound-expansion-table-2' }
             },
             {
               title: (
@@ -837,7 +837,7 @@ class CompoundExpandableTable extends React.Component {
                   <CubeIcon key="icon" /> 4
                 </React.Fragment>
               ),
-              props: { isOpen: false }
+              props: { isOpen: false, ariaControls : 'compoound-expansion-table-3' }
             },
             '20 minutes',
             { title: <a href="#">Open in Github</a> }
@@ -848,7 +848,7 @@ class CompoundExpandableTable extends React.Component {
           compoundParent: 1,
           cells: [
             { 
-              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-1', 'three', 'four','five']} />, 
+              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-1', 'three', 'four','five']} id="compoound-expansion-table-1" />,
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -858,7 +858,7 @@ class CompoundExpandableTable extends React.Component {
           compoundParent: 2,
           cells: [
             { 
-              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-2', 'three', 'four','five']} />, 
+              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-2', 'three', 'four','five']} id="compoound-expansion-table-2" />, 
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -868,7 +868,7 @@ class CompoundExpandableTable extends React.Component {
           compoundParent: 3,
           cells: [
             { 
-              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-3', 'three', 'four','five']} />, 
+              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-3', 'three', 'four','five']} id="compoound-expansion-table-3" />, 
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -883,7 +883,7 @@ class CompoundExpandableTable extends React.Component {
                   <CodeBranchIcon key="icon" /> 3
                 </React.Fragment>
               ),
-              props: { isOpen: false }
+              props: { isOpen: false, ariaControls : 'compoound-expansion-table-4' }
             },
             {
               title: (
@@ -891,7 +891,7 @@ class CompoundExpandableTable extends React.Component {
                   <CodeIcon key="icon" /> 4
                 </React.Fragment>
               ),
-              props: { isOpen: false }
+              props: { isOpen: false, ariaControls : 'compoound-expansion-table-5' }
             },
             {
               title: (
@@ -899,7 +899,7 @@ class CompoundExpandableTable extends React.Component {
                   <CubeIcon key="icon" /> 2
                 </React.Fragment>
               ),
-              props: { isOpen: false }
+              props: { isOpen: false, ariaControls : 'compoound-expansion-table-6' }
             },
             '20 minutes',
             { title: <a href="#">Open in Github</a> }
@@ -910,7 +910,7 @@ class CompoundExpandableTable extends React.Component {
           compoundParent: 1,
           cells: [
             { 
-              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-1', 'three', 'four','five']} />, 
+              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-1', 'three', 'four','five']} id="compoound-expansion-table-4" />, 
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -920,7 +920,7 @@ class CompoundExpandableTable extends React.Component {
           compoundParent: 2,
           cells: [
             { 
-              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-2', 'three', 'four','five']} />, 
+              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-2', 'three', 'four','five']} id="compoound-expansion-table-5"/>, 
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -930,7 +930,7 @@ class CompoundExpandableTable extends React.Component {
           compoundParent: 3,
           cells: [
             { 
-              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-3', 'three', 'four','five']} />, 
+              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-3', 'three', 'four','five']} id="compoound-expansion-table-6"/>, 
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
