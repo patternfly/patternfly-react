@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Pagination/pagination.css';
 import { css } from '@patternfly/react-styles';
 import { DropdownDirection } from '../Dropdown';
-import ToggleTamplate from './ToggleTemplate';
+import ToggleTemplate from './ToggleTemplate';
 import Navigation from './Navigation';
-import OptionsMenu from './OptionsMenu';
+import PaginationOptionsMenu from './PaginationOptionsMenu';
 
 const perPageOptions = [
   {
@@ -107,7 +107,7 @@ const defaultProps = {
   perPageOptions,
   dropDirection: DropdownDirection.down,
   widgetId: 'pagination-options-menu',
-  toggleTemplate: ToggleTamplate,
+  toggleTemplate: ToggleTemplate,
   onSetPage: () => undefined,
   onPerPageSelect: () => undefined,
   onFirstClick: () => undefined,
@@ -155,7 +155,7 @@ const Pagination = ({
           {`${itemCount} ${titles.items}`}
         </div>
       }
-      <OptionsMenu
+      <PaginationOptionsMenu
         itemsPerPageTitle={titles.itemsPerPage}
         perPageSuffix={titles.perPageSuffix}
         itemsTitle={titles.items}

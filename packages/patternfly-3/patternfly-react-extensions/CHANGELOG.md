@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.18.1 (2019-04-24)
+
+
+### Bug Fixes
+
+* **build:** bump patternfly-react-extensions ([#1838](https://github.com/patternfly/patternfly-react/issues/1838)) ([c33fd99](https://github.com/patternfly/patternfly-react/commit/c33fd99))
+
+
+
+
+
 # 2.18.0 (2019-04-23)
 
 

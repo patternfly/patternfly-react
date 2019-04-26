@@ -12,18 +12,22 @@ import {
 import { defaultTitle } from './formatters';
 
 /**
- * Generate header with transofmrs and formatters from custom header object.
- * @param {*} header with transforms formatters and rest of header object.
+ * Generate header with transforms and formatters from custom header object.
+ * @param {*} header with transforms, formatters, columnTransforms, and rest of header object.
  * @param {*} title to be used as label in header config.
  * @return {*} header, label, transforms: Array, formatters: Array.
  */
-const generateHeader = ({ transforms: origTransforms, formatters: origFormatters, header }, title) => ({
+const generateHeader = (
+  { transforms: origTransforms, formatters: origFormatters, columnTransforms, header },
+  title
+) => ({
   ...header,
   label: title,
   transforms: [
     scopeColTransformer,
     emptyCol,
     ...(origTransforms || []),
+    ...(columnTransforms || []),
     ...(header && header.hasOwnProperty('transforms') ? header.transforms : [])
   ],
   formatters: [...(origFormatters || []), ...(header && header.hasOwnProperty('formatters') ? header.formatters : [])]
@@ -31,13 +35,14 @@ const generateHeader = ({ transforms: origTransforms, formatters: origFormatters
 
 /**
  * Function to generate cell for header config to change look of each cell.
- * @param {*} customCell config with cellFormatters, cellTransforms and rest of cell config.
+ * @param {*} customCell config with cellFormatters, cellTransforms, columnTransforms and rest of cell config.
  * @returns {*} cell, transforms: Array, formatters: Array.
  */
-const generateCell = ({ cellFormatters, cellTransforms, cell }) => ({
+const generateCell = ({ cellFormatters, cellTransforms, columnTransforms, cell }) => ({
   ...cell,
   transforms: [
     ...(cellTransforms || []),
+    ...(columnTransforms || []),
     ...(cell && cell.hasOwnProperty('transforms') ? cell.transforms : []),
     mapProps // This transform should be applied last so that props that are manually defined at the cell level will override all other transforms.
   ],

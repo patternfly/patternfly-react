@@ -4,6 +4,7 @@ import { Omit } from '../../helpers/typeUtils';
 export interface TabProps extends Omit<HTMLProps<HTMLDivElement>, 'id'> {
   children?: ReactNode;
   className?: string;
+  href?: string;
   eventKey: number;
   id?: string;
   tabContentId?: string | number;

@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.3.0...@patternfly/react-styled-system@3.4.0) (2019-04-25)
+
+
+### Features
+
+* **build:** incremental build ([#1817](https://github.com/patternfly/patternfly-react/issues/1817)) ([6bd3d7e](https://github.com/patternfly/patternfly-react/commit/6bd3d7e))
+
+
+
+
+
+# 3.3.0 (2019-04-24)
+
+
+### Features
+
+* **clipboard:** remove textarea from clipboard copy ([#1840](https://github.com/patternfly/patternfly-react/issues/1840)) ([8bb26a2](https://github.com/patternfly/patternfly-react/commit/8bb26a2))
+
+
+
+
+
 # 3.2.0 (2019-04-23)
 
 

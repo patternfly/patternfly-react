@@ -6,6 +6,7 @@ export { default as textCenter } from './decorators/textCenter';
 export { collapsible, expandedRow, expandable } from './decorators/collapsible';
 export { compoundExpand } from './decorators/compoundExpand';
 export { default as headerCol } from './decorators/headerCol';
+export { default as classNames, Visibility } from './decorators/classNames';
 
 export const emptyTD = () => ({
   scope: '',

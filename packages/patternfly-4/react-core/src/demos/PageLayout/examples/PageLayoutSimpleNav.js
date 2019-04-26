@@ -22,6 +22,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  SkipToContent,
   TextContent,
   Text,
   Toolbar,
@@ -166,10 +167,13 @@ class PageLayoutSimpleNav extends React.Component {
       />
     );
     const Sidebar = <PageSidebar nav={PageNav} />;
+    const PageSkipToContent = (
+      <SkipToContent href="#main-content-page-layout-default-nav">Skip to Content</SkipToContent>
+    );
 
     return (
       <React.Fragment>
-        <Page header={Header} sidebar={Sidebar} isManagedSidebar>
+        <Page header={Header} sidebar={Sidebar} isManagedSidebar skipToContent={PageSkipToContent}>
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>

@@ -26,7 +26,7 @@ const propTypes = {
   isOpen: PropTypes.bool,
   /** Display the toggle with no border or background */
   isPlain: PropTypes.bool,
-  /** Indicates where menu will be alligned horizontally */
+  /** Indicates where menu will be aligned horizontally */
   position: PropTypes.oneOf(Object.values(DropdownPosition)),
   /** Display menu above or below dropdown toggle */
   direction: PropTypes.oneOf(Object.values(DropdownDirection)),
