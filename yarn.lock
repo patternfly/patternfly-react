@@ -8778,7 +8778,6 @@ focus-trap@^3.0.0:
 folder-hash@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/folder-hash/-/folder-hash-3.0.0.tgz#ba9489e74044f63a943d74a3be5e10eb0d03b0ab"
-  integrity sha512-wyAJJO+h09XC7ZUM47RZIefAZlpTmdxidp98aoSd/BapfjFIx3Z7bJOO3cPy/WNep5WtX7vjBJhdTPKhFfRKMQ==
   dependencies:
     debug "^4.1.1"
     graceful-fs "~4.1.11"
@@ -16072,10 +16071,6 @@ react-diff-view@^1.8.1:
     lodash.findlastindex "^4.6.0"
     lodash.mapvalues "^4.6.0"
     warning "^4.0.1"
-
-react-docgen-typescript@^1.12.3:
-  version "1.12.3"
-  resolved "https://registry.yarnpkg.com/react-docgen-typescript/-/react-docgen-typescript-1.12.3.tgz#fe62a5ce82e93573e316366e53adfe8273121c70"
 
 react-docgen@^3.0.0-beta11:
   version "3.0.0"

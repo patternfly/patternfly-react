@@ -1,4 +1,4 @@
-const docgenTypescript = require('react-docgen-typescript').withDefaultConfig()
+const fs = require('fs')
 const docgenJavascript = require('react-docgen')
 
 function isSource(node) {
@@ -53,14 +53,18 @@ async function onCreateNode({
   let parsed = null;
   try {
     if (isTSX(node)) {
-      // console.log('parsing', node.absolutePath)
-      parsed = docgenTypescript.parse(node.absolutePath)[0];
+      // Load up the already transpiled file
+      const transpiledPath = node.absolutePath
+        .replace(/react-(.*)\/src/, 'react-$1/dist/esm')
+        .replace(/\.tsx?$/, '.js');
+      const jsText = fs.readFileSync(transpiledPath, 'utf8');
+      parsed = docgenJavascript.parse(jsText);
     }
     else if (isJSX(node)) {
       parsed = docgenJavascript.parse(sourceText);
     }
   } catch (err) {
-    console.warn("No component found in", node.absolutePath);
+    console.warn('No component found in', node.absolutePath);
   }
 
   if (parsed) {
