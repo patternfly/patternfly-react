@@ -3,8 +3,8 @@
 exports[`checkbox select renders checkbox select groups successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelClear="Clear all selections"
-  ariaLabelRemove="Remove selection"
+  ariaLabelClear="Clear all"
+  ariaLabelRemove="Remove"
   ariaLabelToggle="Options menu"
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
@@ -419,8 +419,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
 exports[`checkbox select renders closed successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelClear="Clear all selections"
-  ariaLabelRemove="Remove selection"
+  ariaLabelClear="Clear all"
+  ariaLabelRemove="Remove"
   ariaLabelToggle="Options menu"
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
@@ -513,8 +513,8 @@ exports[`checkbox select renders closed successfully 1`] = `
 exports[`checkbox select renders expanded successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelClear="Clear all selections"
-  ariaLabelRemove="Remove selection"
+  ariaLabelClear="Clear all"
+  ariaLabelRemove="Remove"
   ariaLabelToggle="Options menu"
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
@@ -769,8 +769,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
 exports[`select single select renders closed successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelClear="Clear all selections"
-  ariaLabelRemove="Remove selection"
+  ariaLabelClear="Clear all"
+  ariaLabelRemove="Remove"
   ariaLabelToggle="Options menu"
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
@@ -865,8 +865,8 @@ exports[`select single select renders closed successfully 1`] = `
 exports[`select single select renders expanded successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelClear="Clear all selections"
-  ariaLabelRemove="Remove selection"
+  ariaLabelClear="Clear all"
+  ariaLabelRemove="Remove"
   ariaLabelToggle="Options menu"
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
@@ -1081,8 +1081,8 @@ exports[`select single select renders expanded successfully 1`] = `
 exports[`typeahead multi select renders closed successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelClear="Clear all selections"
-  ariaLabelRemove="Remove selection"
+  ariaLabelClear="Clear all"
+  ariaLabelRemove="Remove"
   ariaLabelToggle="Options menu"
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
@@ -1187,8 +1187,8 @@ exports[`typeahead multi select renders closed successfully 1`] = `
 exports[`typeahead multi select renders expanded successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelClear="Clear all selections"
-  ariaLabelRemove="Remove selection"
+  ariaLabelClear="Clear all"
+  ariaLabelRemove="Remove"
   ariaLabelToggle="Options menu"
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
@@ -1413,8 +1413,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
 exports[`typeahead multi select renders selected successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelClear="Clear all selections"
-  ariaLabelRemove="Remove selection"
+  ariaLabelClear="Clear all"
+  ariaLabelRemove="Remove"
   ariaLabelToggle="Options menu"
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
@@ -1487,7 +1487,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               >
                 <Chip
                   className=""
-                  closeBtnAriaLabel="Remove selection"
+                  closeBtnAriaLabel="Remove"
                   component="li"
                   isOverflowChip={false}
                   isReadOnly={false}
@@ -1509,13 +1509,13 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       </span>
                       <ChipButton
                         aria-labelledby="remove_pf-random-id-0 pf-random-id-0"
-                        ariaLabel="Remove selection"
+                        ariaLabel="Remove"
                         className=""
                         id="remove_pf-random-id-0"
                         onClick={[Function]}
                       >
                         <Button
-                          aria-label="Remove selection"
+                          aria-label="Remove"
                           aria-labelledby="remove_pf-random-id-0 pf-random-id-0"
                           className=""
                           component="button"
@@ -1532,7 +1532,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                         >
                           <button
                             aria-disabled={null}
-                            aria-label="Remove selection"
+                            aria-label="Remove"
                             aria-labelledby="remove_pf-random-id-0 pf-random-id-0"
                             className="pf-c-button pf-m-plain"
                             disabled={false}
@@ -1641,7 +1641,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           />
         </div>
         <button
-          aria-label="Clear all selections"
+          aria-label="Clear all"
           className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
           onClick={[Function]}
         >
@@ -1893,8 +1893,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
 exports[`typeahead multi select test onChange 1`] = `
 <Select
   aria-label={null}
-  ariaLabelClear="Clear all selections"
-  ariaLabelRemove="Remove selection"
+  ariaLabelClear="Clear all"
+  ariaLabelRemove="Remove"
   ariaLabelToggle="Options menu"
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
@@ -2079,8 +2079,8 @@ exports[`typeahead multi select test onChange 1`] = `
 exports[`typeahead select renders closed successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelClear="Clear all selections"
-  ariaLabelRemove="Remove selection"
+  ariaLabelClear="Clear all"
+  ariaLabelRemove="Remove"
   ariaLabelToggle="Options menu"
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
@@ -2185,8 +2185,8 @@ exports[`typeahead select renders closed successfully 1`] = `
 exports[`typeahead select renders expanded successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelClear="Clear all selections"
-  ariaLabelRemove="Remove selection"
+  ariaLabelClear="Clear all"
+  ariaLabelRemove="Remove"
   ariaLabelToggle="Options menu"
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
@@ -2411,8 +2411,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
 exports[`typeahead select renders selected successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelClear="Clear all selections"
-  ariaLabelRemove="Remove selection"
+  ariaLabelClear="Clear all"
+  ariaLabelRemove="Remove"
   ariaLabelToggle="Options menu"
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}
@@ -2472,7 +2472,7 @@ exports[`typeahead select renders selected successfully 1`] = `
           />
         </div>
         <button
-          aria-label="Clear all selections"
+          aria-label="Clear all"
           className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
           onClick={[Function]}
         >
@@ -2694,8 +2694,8 @@ exports[`typeahead select renders selected successfully 1`] = `
 exports[`typeahead select test onChange 1`] = `
 <Select
   aria-label={null}
-  ariaLabelClear="Clear all selections"
-  ariaLabelRemove="Remove selection"
+  ariaLabelClear="Clear all"
+  ariaLabelRemove="Remove"
   ariaLabelToggle="Options menu"
   ariaLabelTypeAhead={null}
   ariaLabelledBy={null}

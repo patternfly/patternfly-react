@@ -308,7 +308,6 @@ class TypeaheadSelectInput extends React.Component {
           selections={selected}
           isExpanded={isExpanded}
           ariaLabelledBy={titleId}
-          ariaLabelClear="Clear all"
           placeholderText="Select a state"
         >
           {this.options.map((option, index) => (
@@ -394,7 +393,6 @@ class MultiTypeaheadSelectInput extends React.Component {
           selections={selected}
           isExpanded={isExpanded}
           ariaLabelledBy={titleId}
-          ariaLabelClear="Clear all"
           placeholderText="Select a state"
         >
           {this.options.map((option, index) => (
