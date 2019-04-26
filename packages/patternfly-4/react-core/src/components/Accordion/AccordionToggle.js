@@ -6,7 +6,6 @@ import styles from '@patternfly/patternfly/components/Accordion/accordion.css';
 
 const AccordionToggle = ({
   className,
-  'aria-label': ariaLabel,
   id,
   isExpanded,
   children,
@@ -19,7 +18,6 @@ const AccordionToggle = ({
         className={css(styles.accordionToggle, isExpanded && styles.modifiers.expanded, className)}
         {...props}
         variant="plain"
-        aria-label={ariaLabel}
         aria-expanded={isExpanded}
       >
         <span className={css(styles.accordionToggleText)}>{children}</span>
@@ -38,14 +36,11 @@ AccordionToggle.propTypes = {
   isExpanded: PropTypes.bool,
   /** Identify the Accordion toggle number */
   id: PropTypes.string.isRequired,
-  /** Adds accessible text to the Accordion toggle */
-  'aria-label': PropTypes.string,
   /** Additional props are spread to the container <dt> */
   '': PropTypes.any
 };
 
 AccordionToggle.defaultProps = {
-  'aria-label': 'Details',
   className: '',
   isExpanded: false
 };
