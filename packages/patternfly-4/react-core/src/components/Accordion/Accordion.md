@@ -16,18 +16,21 @@ class SimpleAccordion extends React.Component {
     this.state = {
       expanded: 'ex-toggle2'
     };
-
-    this.onToggle = id => {
-      this.setState({expanded: id })
-    };
   }
 
   render() {
+     const onToggle = id => {
+      if (id === this.state.expanded) {
+        this.setState({expanded: ''});
+      } else {
+        this.setState({expanded: id })
+      }
+    };
     return (
       <Accordion aria-label="Accordion example">
         <AccordionItem aria-labelledby="ex-item1">
           <AccordionToggle
-            onClick={() => {this.onToggle('ex-toggle1')}}
+            onClick={() => {onToggle('ex-toggle1')}}
             isExpanded={this.state.expanded==='ex-toggle1'}
             id="ex-toggle1"
             aria-controls="ex-expand1"
@@ -47,7 +50,7 @@ class SimpleAccordion extends React.Component {
         </AccordionItem>
         <AccordionItem aria-labelledby="ex-item2">
           <AccordionToggle
-            onClick={() => {this.onToggle('ex-toggle2')}}
+            onClick={() => {onToggle('ex-toggle2')}}
             isExpanded={this.state.expanded === 'ex-toggle2'}
             id="ex-toggle2"
             aria-controls="ex-expand2"
@@ -67,7 +70,7 @@ class SimpleAccordion extends React.Component {
         </AccordionItem>
         <AccordionItem aria-labelledby="ex-item3">
           <AccordionToggle
-            onClick={() => {this.onToggle('ex-toggle3')}}
+            onClick={() => {onToggle('ex-toggle3')}}
             isExpanded={this.state.expanded === 'ex-toggle3'}
             id="ex-toggle3"
             aria-controls="ex-expand3"
@@ -84,7 +87,7 @@ class SimpleAccordion extends React.Component {
         </AccordionItem>
         <AccordionItem aria-labelledby="ex-item4">
           <AccordionToggle
-            onClick={() => {this.onToggle('ex-toggle4')}}
+            onClick={() => {onToggle('ex-toggle4')}}
             isExpanded={this.state.expanded === 'ex-toggle4'}
             id="ex-toggle4"
             aria-controls="ex-expand4"
@@ -109,7 +112,7 @@ class SimpleAccordion extends React.Component {
         </AccordionItem>
         <AccordionItem aria-labelledby="ex-item5">
           <AccordionToggle
-            onClick={() => {this.onToggle('ex-toggle5')}}
+            onClick={() => {onToggle('ex-toggle5')}}
             isExpanded={this.state.expanded === 'ex-toggle5'}
             id="ex-toggle5"
             aria-controls="ex-expand5"
@@ -144,7 +147,7 @@ class FixedAccordion extends React.Component {
   }
   
   render() {
-    const toggle = id => {
+    const onToggle = id => {
       const expanded = this.state.expanded;
       const index = expanded.indexOf(id);
       const newExpanded =
@@ -156,7 +159,7 @@ class FixedAccordion extends React.Component {
       <Accordion aria-label="Accordion example">
         <AccordionItem aria-labelledby="ex-item1">
           <AccordionToggle
-            onClick={() => toggle('ex-toggle1')}
+            onClick={() => onToggle('ex-toggle1')}
             isExpanded={this.state.expanded.includes('ex-toggle1')}
             id="ex-toggle1"
             aria-controls="ex-expand1"
@@ -177,7 +180,7 @@ class FixedAccordion extends React.Component {
         </AccordionItem>
         <AccordionItem aria-labelledby="ex-item2">
           <AccordionToggle
-            onClick={() => toggle('ex-toggle2')}
+            onClick={() => onToggle('ex-toggle2')}
             isExpanded={this.state.expanded.includes('ex-toggle2')}
             id="ex-toggle2"
             aria-controls="ex-expand2"
@@ -198,7 +201,7 @@ class FixedAccordion extends React.Component {
         </AccordionItem>
         <AccordionItem aria-labelledby="ex-item3">
           <AccordionToggle
-            onClick={() => toggle('ex-toggle3')}
+            onClick={() => onToggle('ex-toggle3')}
             isExpanded={this.state.expanded.includes('ex-toggle3')}
             id="ex-toggle3"
             aria-controls="ex-expand3"
@@ -216,7 +219,7 @@ class FixedAccordion extends React.Component {
         </AccordionItem>
         <AccordionItem aria-labelledby="ex-item4">
           <AccordionToggle
-            onClick={() => toggle('ex-toggle4')}
+            onClick={() => onToggle('ex-toggle4')}
             isExpanded={this.state.expanded.includes('ex-toggle4')}
             id="ex-toggle4"
             aria-controls="ex-expand4"
@@ -242,7 +245,7 @@ class FixedAccordion extends React.Component {
         </AccordionItem>
         <AccordionItem aria-labelledby="ex-item5">
           <AccordionToggle
-            onClick={() => toggle('ex-toggle5')}
+            onClick={() => onToggle('ex-toggle5')}
             isExpanded={this.state.expanded.includes('ex-toggle5')}
             id="ex-toggle5"
             aria-controls="ex-expand5"
