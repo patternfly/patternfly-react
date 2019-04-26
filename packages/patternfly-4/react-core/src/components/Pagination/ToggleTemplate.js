@@ -14,13 +14,13 @@ const defaultProps = {
   itemsTitle: 'items'
 };
 
-const ToggleTamplate = ({ firstIndex, lastIndex, itemCount, itemsTitle }) => (
+const ToggleTemplate = ({ firstIndex, lastIndex, itemCount, itemsTitle }) => (
   <Fragment>
     <strong>{firstIndex} - {lastIndex}</strong> of <strong>{itemCount}</strong> {itemsTitle}
   </Fragment>
 );
 
-ToggleTamplate.propTypes = propTypes;
-ToggleTamplate.defaultProps = defaultProps;
+ToggleTemplate.propTypes = propTypes;
+ToggleTemplate.defaultProps = defaultProps;
 
-export default ToggleTamplate;
+export default ToggleTemplate;

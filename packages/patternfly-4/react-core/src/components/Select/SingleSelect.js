@@ -14,7 +14,7 @@ const propTypes = {
   /** Internal flag indicating whether select was opened via keyboard */
   openedOnEnter: PropTypes.bool,
   /** Currently selected option */
-  selected: PropTypes.string,
+  selected: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   /** Additional props are spread to the container <select> */
   '': PropTypes.any
 };
@@ -37,9 +37,13 @@ class SingleSelect extends React.Component {
   }
 
   extendChildren() {
+    const { selected } = this.props;
     return React.Children.map(this.props.children, (child, index) =>
       React.cloneElement(child, {
-        isSelected: this.props.selected === child.props.value,
+        isSelected:
+          selected && selected.constructor === Array
+            ? selected && selected.includes(child.props.value)
+            : selected === child.props.value,
         sendRef: this.sendRef,
         keyHandler: this.childKeyHandler,
         index
