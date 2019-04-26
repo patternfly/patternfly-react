@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Table, TableHeader, TableBody, TableVariant, sortable, SortByDirection } from '@patternfly/react-table';
 
 export default class DemoSortableTable extends React.Component {
@@ -12,7 +13,7 @@ export default class DemoSortableTable extends React.Component {
         'Workspaces',
         'Last Commit'
       ],
-      rows: [['one', 'two', 'a', 'four', 'five'], ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
+      rows: [props.firstColumnRows, ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
       sortBy: {}
     };
     this.onSort = this.onSort.bind(this);
@@ -48,3 +49,7 @@ export default class DemoSortableTable extends React.Component {
     );
   }
 }
+
+DemoSortableTable.propTypes = {
+  firstColumnRows: PropTypes.array.isRequired
+};

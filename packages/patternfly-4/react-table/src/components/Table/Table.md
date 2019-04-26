@@ -846,17 +846,32 @@ class CompoundExpandableTable extends React.Component {
         {
           parent: 0,
           compoundParent: 1,
-          cells: [{ title: <DemoSortableTable />, props: { colSpan: 6, className: 'pf-m-no-padding' } }]
+          cells: [
+            { 
+              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-1', 'three', 'four','five']} />, 
+              props: { colSpan: 6, className: 'pf-m-no-padding' }
+            }
+          ]
         },
         {
           parent: 0,
           compoundParent: 2,
-          cells: [{ title: 'parent 0 compound child - 2', props: { colSpan: 6 } }]
+          cells: [
+            { 
+              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-2', 'three', 'four','five']} />, 
+              props: { colSpan: 6, className: 'pf-m-no-padding' }
+            }
+          ]
         },
         {
           parent: 0,
           compoundParent: 3,
-          cells: [{ title: 'parent 0 compound child - 3', props: { colSpan: 6 } }]
+          cells: [
+            { 
+              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-3', 'three', 'four','five']} />, 
+              props: { colSpan: 6, className: 'pf-m-no-padding' }
+            }
+          ]
         },
         {
           isOpen: false,
@@ -893,17 +908,32 @@ class CompoundExpandableTable extends React.Component {
         {
           parent: 4,
           compoundParent: 1,
-          cells: [{ title: 'parent 4 compound child - 1', props: { colSpan: 6 } }]
+          cells: [
+            { 
+              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-1', 'three', 'four','five']} />, 
+              props: { colSpan: 6, className: 'pf-m-no-padding' }
+            }
+          ]
         },
         {
           parent: 4,
           compoundParent: 2,
-          cells: [{ title: 'parent 4 compound child - 2', props: { colSpan: 6 } }]
+          cells: [
+            { 
+              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-2', 'three', 'four','five']} />, 
+              props: { colSpan: 6, className: 'pf-m-no-padding' }
+            }
+          ]
         },
         {
           parent: 4,
           compoundParent: 3,
-          cells: [{ title: 'parent 4 compound child - 3', props: { colSpan: 6 } }]
+          cells: [
+            { 
+              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-3', 'three', 'four','five']} />, 
+              props: { colSpan: 6, className: 'pf-m-no-padding' }
+            }
+          ]
         }
       ]
     };
