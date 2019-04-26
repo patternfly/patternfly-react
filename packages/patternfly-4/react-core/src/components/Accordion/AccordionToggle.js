@@ -4,13 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { AngleRightIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/patternfly/components/Accordion/accordion.css';
 
-const AccordionToggle = ({
-  className,
-  id,
-  isExpanded,
-  children,
-  ...props
-}) => (
+const AccordionToggle = ({ className, id, isExpanded, children, ...props }) => (
   <dt>
     <h3>
       <button
@@ -21,9 +15,7 @@ const AccordionToggle = ({
         aria-expanded={isExpanded}
       >
         <span className={css(styles.accordionToggleText)}>{children}</span>
-        <span className={css(styles.accordionToggleIcon)}>
-          <AngleRightIcon />
-        </span>
+        <AngleRightIcon className={css(styles.accordionToggleIcon)} />
       </button>
     </h3>
   </dt>
