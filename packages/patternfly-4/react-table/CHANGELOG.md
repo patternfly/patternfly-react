@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.4.1...@patternfly/react-table@2.5.0) (2019-04-26)
+
+
+### Features
+
+* **table:** compound expansion ([#1851](https://github.com/patternfly/patternfly-react/issues/1851)) ([769a04d](https://github.com/patternfly/patternfly-react/commit/769a04d))
+
+
+
+
+
 ## [2.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.4.0...@patternfly/react-table@2.4.1) (2019-04-26)
 
 **Note:** Version bump only for package @patternfly/react-table

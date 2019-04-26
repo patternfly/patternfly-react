@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.16.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.15.2...@patternfly/react-core@3.16.0) (2019-04-26)
+
+
+### Features
+
+* **About modal:** Added support for more user control over content ([#1859](https://github.com/patternfly/patternfly-react/issues/1859)) ([fb2adcd](https://github.com/patternfly/patternfly-react/commit/fb2adcd)), closes [#1853](https://github.com/patternfly/patternfly-react/issues/1853)
+
+
+
+
+
 ## [3.15.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.15.1...@patternfly/react-core@3.15.2) (2019-04-26)
 
 **Note:** Version bump only for package @patternfly/react-core
