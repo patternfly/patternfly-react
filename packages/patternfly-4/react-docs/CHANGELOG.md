@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.3.9...@patternfly/react-docs@4.3.10) (2019-04-26)
+
+
+### Bug Fixes
+
+* **docs:** don't show inherited typescript props ([#1866](https://github.com/patternfly/patternfly-react/issues/1866)) ([a51e731](https://github.com/patternfly/patternfly-react/commit/a51e731))
+
+
+
+
+
 ## [4.3.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.3.8...@patternfly/react-docs@4.3.9) (2019-04-26)
 
 **Note:** Version bump only for package @patternfly/react-docs

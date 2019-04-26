@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.15.0...@patternfly/react-core@3.15.1) (2019-04-26)
+
+
+### Bug Fixes
+
+* **dropdown:** rename toggle export ([#1861](https://github.com/patternfly/patternfly-react/issues/1861)) ([e7088ce](https://github.com/patternfly/patternfly-react/commit/e7088ce))
+
+
+
+
+
 # [3.15.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.14.0...@patternfly/react-core@3.15.0) (2019-04-26)
 
 
