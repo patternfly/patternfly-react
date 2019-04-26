@@ -15,14 +15,15 @@ Accordion.propTypes = {
   /** Additional classes added to the Accordion */
   className: PropTypes.string,
   /** Adds accessible text to the Accordion */
-  'aria-label': PropTypes.string.isRequired,
+  'aria-label': PropTypes.string,
   /** Additional props are spread to the container <dl> */
   '': PropTypes.any
 };
 
 Accordion.defaultProps = {
   children: null,
-  className: ''
+  className: '',
+  'aria-label': ''
 };
 
 export default Accordion;

@@ -6,7 +6,7 @@ import styles from '@patternfly/patternfly/components/Accordion/accordion.css';
 const AccordionContent = ({ className, children, id, isHidden, isFixed, 'aria-label': ariaLabel, ...props }) => (
   <dd
     id={id}
-    className={css(styles.accordionExpandedContent, isFixed && styles.modifiers.fixed, className)}
+    className={css(styles.accordionExpandedContent, isFixed && styles.modifiers.fixed, !isHidden && styles.modifiers.expanded, className)} 
     hidden={isHidden}
     aria-label={ariaLabel}
     {...props}
@@ -29,7 +29,7 @@ AccordionContent.propTypes = {
   /** Flag to indicate Accordion content is fixed */
   isFixed: PropTypes.bool,
   /** Adds accessible text to the Accordion content */
-  'aria-label': PropTypes.string.isRequired,
+  'aria-label': PropTypes.string,
   /** Additional props are spread to the container <dd> */
   '': PropTypes.any
 };
@@ -38,7 +38,8 @@ AccordionContent.defaultProps = {
   className: '',
   id: '',
   isHidden: false,
-  isFixed: false
+  isFixed: false,
+  'aria-label': ''
 };
 
 export default AccordionContent;
