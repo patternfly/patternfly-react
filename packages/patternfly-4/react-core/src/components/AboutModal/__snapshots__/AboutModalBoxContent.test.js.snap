@@ -6,15 +6,19 @@ exports[`AboutModalBoxContent Test 1`] = `
   id="id"
 >
   <div
-    className="pf-c-content"
+    className="pf-c-about-modal-box__body"
   >
-    This is a AboutModalBoxContent
+    <div
+      className="pf-c-content"
+    >
+      This is a AboutModalBoxContent
+    </div>
   </div>
   <div
     className="pf-c-about-modal-box__strapline"
   >
     <p
-      className="pf-c-title"
+      className="pf-c-title pf-m-md"
     >
       trademark
     </p>
