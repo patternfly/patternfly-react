@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Accordion/accordion.css';
 
-const AccordionContent = ({ className, children, id, isHidden, isFixed, isExpanded, 'aria-label': ariaLabel, ...props }) => (
+const AccordionContent = ({ className, children, id, isHidden, isFixed, 'aria-label': ariaLabel, ...props }) => (
   <dd
     id={id}
-    className={css(styles.accordionExpandedContent, isFixed && styles.modifiers.fixed, className, isExpanded && styles.modifiers.expanded)} 
+    className={css(className, styles.accordionExpandedContent, isFixed && styles.modifiers.fixed, !isHidden && styles.modifiers.expanded)} 
     hidden={isHidden}
     aria-label={ariaLabel}
     {...props}
@@ -28,8 +28,6 @@ AccordionContent.propTypes = {
   isHidden: PropTypes.bool,
   /** Flag to indicate Accordion content is fixed */
   isFixed: PropTypes.bool,
-  /** Flag to show if the expanded content of the Accordion item is visible */
-  isExpanded: PropTypes.bool,
   /** Adds accessible text to the Accordion content */
   'aria-label': PropTypes.string,
   /** Additional props are spread to the container <dd> */
@@ -41,7 +39,6 @@ AccordionContent.defaultProps = {
   id: '',
   isHidden: false,
   isFixed: false,
-  isExpanded: false,
   'aria-label': ''
 };
 
