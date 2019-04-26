@@ -15,9 +15,7 @@ const AccordionToggle = ({ className, id, isExpanded, children, ...props }) => (
         aria-expanded={isExpanded}
       >
         <span className={css(styles.accordionToggleText)}>{children}</span>
-        <span>
-          <AngleRightIcon className={css(styles.accordionToggleIcon)} />
-        </span>
+        <AngleRightIcon className={css(styles.accordionToggleIcon)} />
       </button>
     </h3>
   </dt>
