@@ -814,7 +814,7 @@ class CompoundExpandableTable extends React.Component {
         {
           isOpen: true,
           cells: [
-            { title: <a href="#">siemur/test-space</a> },
+            { title: <a href="#">siemur/test-space</a>, props: { component: 'th'} },
             {
               title: (
                 <React.Fragment>
@@ -876,7 +876,7 @@ class CompoundExpandableTable extends React.Component {
         {
           isOpen: false,
           cells: [
-            { title: <a href="#">siemur/test-space</a> },
+            { title: <a href="#">siemur/test-space</a>, props: { component: 'th'} },
             {
               title: (
                 <React.Fragment>
