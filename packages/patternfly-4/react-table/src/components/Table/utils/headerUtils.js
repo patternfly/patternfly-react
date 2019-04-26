@@ -174,6 +174,12 @@ export const mapOpenedRows = (rows, children) =>
       const parent = acc.length > 0 && acc[acc.length - 1];
       if (parent) {
         acc[acc.length - 1].rows = [...acc[acc.length - 1].rows, children[key]];
+        if (curr.hasOwnProperty('compoundParent')) {
+          // if this is compound expand, check for any open child cell
+          acc[acc.length - 1].isOpen = acc[acc.length - 1].rows.some(oneRow =>
+            oneRow.props.rowData.cells.some(oneCell => oneCell.props && oneCell.props.isOpen)
+          );
+        }
       }
     } else {
       acc = [...acc, { ...curr, rows: [children[key]] }];
