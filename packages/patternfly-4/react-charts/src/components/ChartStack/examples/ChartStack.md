@@ -3,10 +3,6 @@ title: 'Stack chart'
 section: 'charts'
 ---
 
-### Known Problem
-
-All of the `<svg>` elements on this page need to have `overflow: 'visible'` set on them to display axes.
-
 ## Vertical blue themed stack chart
 
 import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';

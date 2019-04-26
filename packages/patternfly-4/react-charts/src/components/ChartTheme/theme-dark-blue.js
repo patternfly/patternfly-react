@@ -12,7 +12,7 @@ import Theme from './theme-common';
 
 // Colors
 const COLOR_AXIS_FILL = 'transparent';
-const COLOR_AXIS_STROKE = global_Color_dark_200.value;
+const COLOR_AXIS_STROKE = '#D1D1D1'; // TODO Replace with PF css variable when available
 const COLOR_FILL = global_active_color_200.value;
 const COLOR_SCALE = [
   global_active_color_100.value,
@@ -36,7 +36,6 @@ const TYPOGRAPHY_FONT_SIZE = 14; // Value must be in pixles
 const LAYOUT_PROPS = {
   width: 451, // Todo: want to ensure the value is coming from theme
   height: 301,
-  padding: 8,
   colorScale: COLOR_SCALE
 };
 

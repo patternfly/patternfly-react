@@ -44,7 +44,7 @@ class SimpleChart extends React.Component {
     return (
       <div ref={this.containerRef}>
         <div className="chart-overflow">
-          <ChartGroup containerComponent={container} height={100} width={width}>
+          <ChartGroup containerComponent={container} height={200} width={width}>
             <ChartArea
               data={[
                 { name: 'Cats', x: 1, y: 1 },
@@ -127,7 +127,7 @@ class CustomColorsChart extends React.Component {
     return (
       <div ref={this.containerRef}>
         <div className="chart-overflow">
-          <ChartGroup containerComponent={container} height={100} width={width}>
+          <ChartGroup containerComponent={container} height={200} width={width}>
             <ChartArea
               data={[
                 { name: 'Cats', x: 1, y: 1 },
@@ -200,7 +200,7 @@ class DarkGreenThemeChart extends React.Component {
     return (
       <div ref={this.containerRef}>
         <div className="chart-overflow">
-          <ChartGroup containerComponent={container} theme={ChartTheme.dark.green} height={100} width={width}>
+          <ChartGroup containerComponent={container} theme={ChartTheme.dark.green} height={200} width={width}>
             <ChartArea
               data={[
                 { name: 'Cats', x: 1, y: 1 },

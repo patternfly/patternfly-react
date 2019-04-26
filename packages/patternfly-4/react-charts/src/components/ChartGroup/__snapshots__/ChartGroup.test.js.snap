@@ -24,7 +24,6 @@ exports[`ChartGroup 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
@@ -52,11 +51,10 @@ exports[`ChartGroup 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#72767b",
+            "stroke": "#D1D1D1",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -100,7 +98,6 @@ exports[`ChartGroup 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "stroke": "none",
@@ -125,7 +122,6 @@ exports[`ChartGroup 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "max": Object {
             "padding": 8,
@@ -205,7 +201,6 @@ exports[`ChartGroup 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "stroke": "#73bcf7",
@@ -231,7 +226,6 @@ exports[`ChartGroup 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "parent": Object {
             "border": "1px solid #bee1f4",
@@ -248,7 +242,6 @@ exports[`ChartGroup 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -275,7 +268,6 @@ exports[`ChartGroup 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "width": 451,
       },
       "legend": Object {
@@ -318,7 +310,6 @@ exports[`ChartGroup 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -369,7 +360,6 @@ exports[`ChartGroup 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
@@ -396,7 +386,6 @@ exports[`ChartGroup 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "stroke": "#fff",
@@ -434,7 +423,6 @@ exports[`ChartGroup 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -488,7 +476,6 @@ exports[`ChartGroup 2`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
@@ -516,11 +503,10 @@ exports[`ChartGroup 2`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#72767b",
+            "stroke": "#D1D1D1",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -564,7 +550,6 @@ exports[`ChartGroup 2`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "stroke": "none",
@@ -589,7 +574,6 @@ exports[`ChartGroup 2`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "max": Object {
             "padding": 8,
@@ -669,7 +653,6 @@ exports[`ChartGroup 2`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "stroke": "#73bcf7",
@@ -695,7 +678,6 @@ exports[`ChartGroup 2`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "parent": Object {
             "border": "1px solid #bee1f4",
@@ -712,7 +694,6 @@ exports[`ChartGroup 2`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -739,7 +720,6 @@ exports[`ChartGroup 2`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "width": 451,
       },
       "legend": Object {
@@ -782,7 +762,6 @@ exports[`ChartGroup 2`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -833,7 +812,6 @@ exports[`ChartGroup 2`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
@@ -860,7 +838,6 @@ exports[`ChartGroup 2`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "stroke": "#fff",
@@ -898,7 +875,6 @@ exports[`ChartGroup 2`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -953,7 +929,6 @@ exports[`renders container children 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
@@ -981,11 +956,10 @@ exports[`renders container children 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#72767b",
+            "stroke": "#D1D1D1",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -1029,7 +1003,6 @@ exports[`renders container children 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "stroke": "none",
@@ -1054,7 +1027,6 @@ exports[`renders container children 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "max": Object {
             "padding": 8,
@@ -1134,7 +1106,6 @@ exports[`renders container children 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "stroke": "#73bcf7",
@@ -1160,7 +1131,6 @@ exports[`renders container children 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "parent": Object {
             "border": "1px solid #bee1f4",
@@ -1177,7 +1147,6 @@ exports[`renders container children 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -1204,7 +1173,6 @@ exports[`renders container children 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "width": 451,
       },
       "legend": Object {
@@ -1247,7 +1215,6 @@ exports[`renders container children 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -1298,7 +1265,6 @@ exports[`renders container children 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
@@ -1325,7 +1291,6 @@ exports[`renders container children 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "stroke": "#fff",
@@ -1363,7 +1328,6 @@ exports[`renders container children 1`] = `
           "#0066ff",
         ],
         "height": 301,
-        "padding": 8,
         "style": Object {
           "data": Object {
             "fill": "transparent",
