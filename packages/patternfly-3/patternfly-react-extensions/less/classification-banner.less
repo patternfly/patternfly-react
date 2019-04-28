@@ -1,14 +1,78 @@
+@classification-banner-height: 25px;
+
 .classification-banner-pf-banner{
+    background: $color-pf-black;
     color: white;
+    height: @classification-banner-height;
+    line-height: @classification-banner-height;
+    font-size: 14px;
+    position: relative;
 }
 
 .classification-banner-pf-banner-top{
-
+    width: 100%;
 }
 
 .classification-banner-pf-banner-bottom{
-    
+    width: 100%;
 }
+
 .classification-banner-pf-banner-hide{
-    visibility: hidden;
+    display: none;
+}
+
+.classification-banner-pf-banner-classified{
+    background: @color-pf-green;
+}
+
+.classification-banner-pf-banner-unclassified{
+    background: @color-pf-red;
+}
+
+.classification-banner-pf-banner-proprietary-level{
+    background: @color-pf-blue;
+}
+
+.classification-banner-pf-banner-left{
+    position: absolute;
+    left: 42px;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+.classification-banner-pf-banner-right{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+.classification-banner-pf-close{
+    display: inline-block;
+    margin: 0 0 0 20px;
+}
+.classification-banner-pf-close:before{
+    color: white;
+}
+
+.classification-banner-pf-classification-level{
+    text-transform: uppercase;
+    position: absolute;
+    font-weight: bolder;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.classification-banner-pf-children{
+    height: calc(100vh - 50px);
+}
+
+@media only screen and (max-width: 400px){
+    .classification-banner-pf-banner-left{
+        visibility: hidden;
+    }
+    .classification-banner-pf-banner-right{
+        visibility: hidden;
+    }
+
 }
