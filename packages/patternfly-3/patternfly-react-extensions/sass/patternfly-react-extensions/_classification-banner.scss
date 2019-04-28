@@ -18,7 +18,7 @@ $classification-banner-height: 25px;
 }
 
 .classification-banner-pf-banner-hide{
-    visibility: hidden;
+    display: none;
 }
 
 .classification-banner-pf-banner-classified{
@@ -65,5 +65,14 @@ $classification-banner-height: 25px;
 
 .classification-banner-pf-children{
     height: calc(100vh - 50px);
-    // transform: translateY($classification-banner-height)
+}
+
+@media only screen and (max-width: 400px){
+    .classification-banner-pf-banner-left{
+        visibility: hidden;
+    }
+    .classification-banner-pf-banner-right{
+        visibility: hidden;
+    }
+
 }
