@@ -8,3 +8,4 @@ export * from './components/TableGrid';
 export * from './components/VerticalTabs';
 export * from './components/DiffView';
 export * from './components/Select';
+export * from './components/ClassificationBanner';
