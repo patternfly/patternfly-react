@@ -50,7 +50,7 @@ class ClassificationBanner extends React.Component {
       'classification-banner-pf-banner'+levelNameAppendix),
       bottom: classNames(
       'classification-banner-pf-banner',
-      'classification-banner-pf-banner'+levelNameAppendix+'-bottom',
+      'classification-banner-pf-banner'+levelNameAppendix,
       {
       'classification-banner-pf-hide':(!bottomBanner)||this.state.closed
       },
