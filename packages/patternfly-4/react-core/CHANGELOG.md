@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.16.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.2...@patternfly/react-core@3.16.3) (2019-04-29)
+
+
+### Bug Fixes
+
+* **Accordion:** Wrong import in definition file ([#1870](https://github.com/patternfly/patternfly-react/issues/1870)) ([780d7c7](https://github.com/patternfly/patternfly-react/commit/780d7c7)), closes [#1869](https://github.com/patternfly/patternfly-react/issues/1869)
+
+
+
+
+
 ## [3.16.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.1...@patternfly/react-core@3.16.2) (2019-04-29)
 
 
