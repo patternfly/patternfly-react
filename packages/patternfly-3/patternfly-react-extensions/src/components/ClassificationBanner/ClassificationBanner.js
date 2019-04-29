@@ -77,9 +77,10 @@ class ClassificationBanner extends React.Component {
         </div>
         <div className={"classification-banner-pf-classification-level"}>{levelName}</div>
         <div className={"classification-banner-pf-banner-right"}>
+        <i className={classificationBannerClasses.closeButton} onClick={this.onClose}></i>
           {rightLabels[0]}
           {rightLabels[1]}
-        <i className={classificationBannerClasses.closeButton} onClick={this.onClose}></i></div>
+        </div>
 
       </nav>
       <div className={classificationBannerClasses.children}>
