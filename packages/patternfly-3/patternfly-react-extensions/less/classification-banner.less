@@ -1,51 +1,101 @@
-@classification-banner-height: 25px;
+@classification-banner-height: 28px;
+@classification-banner-height-top: 3px;
+@classification-banner-padding-large: 42px;
+@classification-banner-padding-sml: 20px;
 
 .classification-banner-pf-banner{
-    background: $color-pf-black;
+    background: @color-pf-black;
+    background-clip: padding-box;
     color: white;
     height: @classification-banner-height;
     line-height: @classification-banner-height;
-    font-size: 14px;
+    font-size: 10px;
     position: relative;
 }
 
 .classification-banner-pf-banner-top{
     width: 100%;
+    border-top: 3px solid rgba(@color-pf-black, 0.5);
 }
 
 .classification-banner-pf-banner-bottom{
     width: 100%;
 }
 
-.classification-banner-pf-banner-hide{
+.classification-banner-pf-hide{
     display: none;
 }
 
 .classification-banner-pf-banner-classified{
     background: @color-pf-green;
+    border-top: 3px solid rgba(@color-pf-green, 0.5);
+    background-clip: padding-box;
 }
 
 .classification-banner-pf-banner-unclassified{
     background: @color-pf-red;
+    border-top: 3px solid rgba(@color-pf-red, 0.5);
+    background-clip: padding-box;
 }
 
 .classification-banner-pf-banner-proprietary-level{
+    background: @color-pf-blue;
+    border-top: 3px solid rgba(@color-pf-blue, 0.5);
+    background-clip: padding-box;
+}
+
+.classification-banner-pf-banner-classified-bottom{
+    background: @color-pf-green;
+}
+
+.classification-banner-pf-banner-unclassified-bottom{
+    background: @color-pf-red;
+}
+
+.classification-banner-pf-banner-proprietary-level-bottom{
     background: @color-pf-blue;
 }
 
 .classification-banner-pf-banner-left{
     position: absolute;
-    left: 42px;
+    left: @classification-banner-padding-large;
     top: 50%;
     transform: translate(0,-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.classification-banner-pf-banner-left > span:nth-of-type(2){
+    border-left: 1px solid rgba(white, 0.5);
+    border-right: 1px solid rgba(white, 0.5);
+    padding: 0 @classification-banner-padding-sml;
+}
+
+.classification-banner-pf-banner-left > span:nth-of-type(1){
+    padding-right: @classification-banner-padding-sml;
 }
 
 .classification-banner-pf-banner-right{
     position: absolute;
-    right: 20px;
+    right: @classification-banner-padding-sml;
     top: 50%;
     transform: translate(0,-50%);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
 }
+
+.classification-banner-pf-banner-right > span:nth-of-type(2){
+    border-left: 1px solid rgba(white, 0.5);
+    border-right: 1px solid rgba(white, 0.5);
+    padding: 0 @classification-banner-padding-sml;
+}
+
+.classification-banner-pf-banner-right > span:nth-of-type(1){
+    padding-left: @classification-banner-padding-sml;
+}
+
 .classification-banner-pf-close{
     display: inline-block;
     margin: 0 0 0 20px;
@@ -56,6 +106,7 @@
 
 .classification-banner-pf-classification-level{
     text-transform: uppercase;
+    letter-spacing: 2px;
     position: absolute;
     font-weight: bolder;
     left: 50%;
@@ -64,10 +115,14 @@
 }
 
 .classification-banner-pf-children{
-    height: calc(100vh - 50px);
+    height: calc(100vh - 56px);
 }
 
-@media only screen and (max-width: 400px){
+.classification-banner-pf-children-no-bottom{
+    height: calc(100vh - 28px);
+}
+
+@media only screen and (max-width: 415px){
     .classification-banner-pf-banner-left{
         visibility: hidden;
     }

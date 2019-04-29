@@ -53,11 +53,19 @@ class ClassificationBannerStoryWrapper extends React.Component{
     const closeButton= boolean('Show Close Button',false);
     const classificationLevel = select('Classification Level', { '0': 'Unclassified', '1': 'Classified', '2': 'Proprietary Level 1', '3':'Proprietary Level 2' , '999':'None'}, '1');
     const hostName = text('Host Name','localhost');
+    const hostNamePosition = select('Host Name Position',{'left':'Left','right':'Right'},'left');
     const userName = text('User Name','John Smith');
+    const userNamePosition = select('User Name Position',{'left':'Left','right':'Right'},'right');
 
     return(
-      <ClassificationBanner bottomBanner={bottomBanner} classificationLevel={classificationLevel} closeButton={closeButton} hostName={hostName} userName={userName}
-      closed={this.state.closed}>
+      <ClassificationBanner 
+      bottomBanner={bottomBanner} 
+      classificationLevel={classificationLevel} 
+      closeButton={closeButton} 
+      hostName={hostName} userName={userName}
+      closed={this.state.closed} 
+      userNamePosition={userNamePosition} hostNamePosition={hostNamePosition}
+      >
       <br/>
         <p>
         This is the main body of a web page.</p>

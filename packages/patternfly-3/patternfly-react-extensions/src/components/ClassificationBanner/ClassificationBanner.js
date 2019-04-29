@@ -35,6 +35,8 @@ class ClassificationBanner extends React.Component {
       classificationLevel,
       backgroundColor,
       closeButton,
+      userNamePosition,
+      hostNamePosition,
       ...props } = this.props;
     
     const levelNameAppendix = classificationLevel==='999'?'':(classificationLevel==='0'?'-unclassified':(classificationLevel==='1'?'-classified':'-proprietary-level'));
@@ -43,29 +45,41 @@ class ClassificationBanner extends React.Component {
       top: classNames('classification-banner-pf-banner',
       'classification-banner-pf-banner-top',
       {
-        'classification-banner-pf-banner-hide': this.state.closed,
+        'classification-banner-pf-hide': this.state.closed,
       },
       'classification-banner-pf-banner'+levelNameAppendix),
       bottom: classNames(
       'classification-banner-pf-banner',
-      'classification-banner-pf-banner-bottom',
+      'classification-banner-pf-banner'+levelNameAppendix+'-bottom',
       {
-      'classification-banner-pf-banner-hide':(!bottomBanner)||this.state.closed
+      'classification-banner-pf-hide':(!bottomBanner)||this.state.closed
       },
-      'classification-banner-pf-banner'+levelNameAppendix),
+      'classification-banner-pf-banner-bottom'),
       closeButton: classNames({
         'classification-banner-pf-close pficon-error-circle-o': closeButton
       }),
       children: classNames({
-        'classification-banner-pf-children':!this.state.closed})
+        'classification-banner-pf-children-no-bottom':(!this.state.closed && !bottomBanner),
+        'classification-banner-pf-children':(!this.state.closed && bottomBanner)})
     }
     const levelName = classificationLevel==='999'?'':(classificationLevel==='0'?'Unclassified':(classificationLevel==='1'?'Classified':(classificationLevel==='2'?'Proprietary Level 1':'Proprietary Level 2')));
+
+    var leftLabels=[hostNamePosition==='left'?(<span>{hostName}</span>):null,
+    userNamePosition==='left'?(<span>{userName}</span>):null],
+    rightLabels=[hostNamePosition==='right'?(<span>{hostName}</span>):null,
+    userNamePosition==='right'?(<span>{userName}</span>):null];
     
     return(<div>
       <nav className={classificationBannerClasses.top} >
-        <div className={"classification-banner-pf-banner-left"}>{hostName}</div>
+        <div className={"classification-banner-pf-banner-left"}>
+          {leftLabels[0]}
+          {leftLabels[1]}
+        </div>
         <div className={"classification-banner-pf-classification-level"}>{levelName}</div>
-        <div className={"classification-banner-pf-banner-right"}>{userName}<i className={classificationBannerClasses.closeButton} onClick={this.onClose}></i></div>
+        <div className={"classification-banner-pf-banner-right"}>
+          {rightLabels[0]}
+          {rightLabels[1]}
+        <i className={classificationBannerClasses.closeButton} onClick={this.onClose}></i></div>
 
       </nav>
       <div className={classificationBannerClasses.children}>
@@ -88,7 +102,9 @@ ClassificationBanner.propTypes = {
   backgroundColor: PropTypes.string,
   closeButton: PropTypes.bool,
   bottomBanner: PropTypes.bool,
-  closed: PropTypes.bool
+  closed: PropTypes.bool,
+  userNamePosition: PropTypes.string,
+  hostNamePosition: PropTypes.string
 
 };
 
@@ -100,7 +116,10 @@ ClassificationBanner.defaultProps = {
   backgroundColor: '',
   closeButton: false,
   bottomBanner: true,
-  closed: false
+  closed: false,
+  userNamePosition: 'right',
+  hostNamePosition: 'left'
+  
 };
 
 export default ClassificationBanner;
