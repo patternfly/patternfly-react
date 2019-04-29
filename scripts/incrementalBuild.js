@@ -59,7 +59,9 @@ async function incrementalBuild() {
       cwd: '.',
       script: 'build',
       npmClient: 'yarn',
-      scope: packages.map(p => p.name)});
+      scope: packages.map(p => p.name),
+      stream: true
+    });
     // Mark as valid
     packages.forEach(p => cache[p.name] = p.hash);
     if (!fs.existsSync('.cache')) {

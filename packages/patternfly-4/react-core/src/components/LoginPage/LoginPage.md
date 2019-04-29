@@ -3,11 +3,15 @@ title: 'Login page'
 cssPrefix: 'pf-c-login'
 section: 'components'
 ---
+
+import LinkPreview from '@content/../LinkPreview';
+
 ## Simple login page
-<a href="simpleloginpage" target="_blank">Popout example</a>
+<LinkPreview name="Popout Example" path="simpleloginpage" />
+
 ```nolive
 import React from 'react';
-import brandImgColor from './examples/brandImgColor.svg';
+import brandImg from './brandImgColor.svg';
 import {
   LoginFooterItem,
   LoginForm,
@@ -18,6 +22,19 @@ import {
   ListItem
 } from '@patternfly/react-core';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
+
+/**
+ * Note: When using background-filter.svg, you must also include #image_overlay as the fragment identifier
+ */
+
+const images = {
+  [BackgroundImageSrc.lg]: '/assets/images/pfbg_1200.jpg',
+  [BackgroundImageSrc.sm]: '/assets/images/pfbg_768.jpg',
+  [BackgroundImageSrc.sm2x]: '/assets/images/pfbg_768@2x.jpg',
+  [BackgroundImageSrc.xs]: '/assets/images/pfbg_576.jpg',
+  [BackgroundImageSrc.xs2x]: '/assets/images/pfbg_576@2x.jpg',
+  [BackgroundImageSrc.filter]: '/assets/images/background-filter.svg#image_overlay'
+};
 
 class SimpleLoginPage extends React.Component {
   constructor(props) {
@@ -30,33 +47,26 @@ class SimpleLoginPage extends React.Component {
       isValidPassword: true,
       isRememberMeChecked: false
     };
-    this.handleUsernameChange = value => {
-      this.setState({ usernameValue: value });
-    };
-    this.handlePasswordChange = passwordValue => {
-      this.setState({ passwordValue });
-    };
-    this.onRememberMeClick = () => {
-      this.setState({ isRememberMeChecked: !this.state.isRememberMeChecked });
-    };
-    this.onLoginButtonClick = event => {
-      event.preventDefault();
-      this.setState({ isValidUsername: !!this.state.usernameValue });
-      this.setState({ isValidPassword: !!this.state.passwordValue });
-      this.setState({ showHelperText: !this.state.usernameValue || !this.state.passwordValue });
-    };
-    /**
-     * Note: When using background-filter.svg, you must also include #image_overlay as the fragment identifier
-     */
-    this.images = {
-      [BackgroundImageSrc.lg]: '/assets/images/pfbg_1200.jpg',
-      [BackgroundImageSrc.sm]: '/assets/images/pfbg_768.jpg',
-      [BackgroundImageSrc.sm2x]: '/assets/images/pfbg_768@2x.jpg',
-      [BackgroundImageSrc.xs]: '/assets/images/pfbg_576.jpg',
-      [BackgroundImageSrc.xs2x]: '/assets/images/pfbg_576@2x.jpg',
-      [BackgroundImageSrc.filter]: '/assets/images/background-filter.svg#image_overlay'
-    };
   }
+
+  handleUsernameChange = value => {
+    this.setState({ usernameValue: value });
+  };
+
+  handlePasswordChange = passwordValue => {
+    this.setState({ passwordValue });
+  };
+
+  onRememberMeClick = () => {
+    this.setState({ isRememberMeChecked: !this.state.isRememberMeChecked });
+  };
+
+  onLoginButtonClick = event => {
+    event.preventDefault();
+    this.setState({ isValidUsername: !!this.state.usernameValue });
+    this.setState({ isValidPassword: !!this.state.passwordValue });
+    this.setState({ showHelperText: !this.state.usernameValue || !this.state.passwordValue });
+  };
 
   render() {
     const helperText = (
@@ -141,18 +151,16 @@ class SimpleLoginPage extends React.Component {
       />
     );
 
-    const textContent = "This is placeholder text only. Use this area to place any information" + 
-      " or introductory message about your application that may be relevant to users.";
-
     return (
       <LoginPage
         footerListVariants="inline"
-        brandImgSrc={brandImgColor}
+        brandImgSrc={brandImg}
         brandImgAlt="PatternFly logo"
-        backgroundImgSrc={this.images}
+        backgroundImgSrc={images}
         backgroundImgAlt="Images"
         footerListItems={listItem}
-        textContent={textContent}
+        textContent="This is placeholder text only. Use this area to place any information or introductory message about your
+        application that may be relevant to users."
         loginTitle="Log in to your account"
         loginSubtitle="Please use your single sign-on LDAP credentials"
         socialMediaLoginContent={socialMediaLoginContent}
