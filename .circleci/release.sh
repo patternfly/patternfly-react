@@ -27,7 +27,7 @@ git commit --amend --no-edit --no-verify
 # any versions not present in the registry will be published
 if npx lerna publish from-package --no-git-tag-version --no-push --yes ; then
     # Undo that last amended commit locally, because we don't actually want to push it
-    git reset --hard origin/$TRAVIS_BRANCH
+    git reset --hard $TRAVIS_COMMIT
     # Now only if it publishes should we also push this commit to Github and do a Github release
     if ! npx lerna version --conventional-commits --github-release --no-commit-hooks --yes ; then
         echo "Something went wrong committing or making a Github release."
