@@ -111,7 +111,8 @@ class LiveEdit extends React.Component {
     else if (this.props.className === 'language-nolive') {
       return (
         <LiveProvider code={this.code} disabled>
-          <LiveEditor style={liveEditorStyle} contentEditable={false} />
+          {Toolbar}
+          {this.state.codeOpen && <LiveEditor style={liveEditorStyle} contentEditable={false} />}
         </LiveProvider>
       );
     }
