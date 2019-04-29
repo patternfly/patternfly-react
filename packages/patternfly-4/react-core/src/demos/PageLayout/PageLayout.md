@@ -16,7 +16,7 @@ The last example demonstrates this.
 
 <LinkPreview name="Simple Nav" path="/documentation/react/demos/pagelayout/pagelayoutsimplenav" />
 
-```js
+```nolive
 import React from 'react';
 import {
   Avatar,
