@@ -23,13 +23,13 @@ test('should render simple tabs', () => {
 test('should render accessible tabs', () => {
   const view = shallow(
     <Tabs id="accessibleTabs" aria-label="accessible Tabs example" variant="nav">
-      <Tab id="tab1" eventKey={0} title="Tab item 1">
+      <Tab id="tab1" eventKey={0} title="Tab item 1" href="#/items/1">
         Tab 1 section
       </Tab>
-      <Tab id="tab2" eventKey={1} title="Tab item 2">
+      <Tab id="tab2" eventKey={1} title="Tab item 2" href="#/items/2">
         Tab 2 section
       </Tab>
-      <Tab id="tab3" eventKey={2} title="Tab item 3">
+      <Tab id="tab3" eventKey={2} title="Tab item 3" href="#/items/3">
         Tab 3 section
       </Tab>
     </Tabs>

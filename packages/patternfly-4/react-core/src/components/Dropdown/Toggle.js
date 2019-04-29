@@ -27,6 +27,8 @@ const propTypes = {
   isDisabled: PropTypes.bool,
   /** Display the toggle with no border or background */
   isPlain: PropTypes.bool,
+  /** Style the toggle as a child of a split button */
+  isSplitButton: PropTypes.bool,
   /** Additional props are spread to the container <button> */
   '': PropTypes.any
 };
@@ -99,6 +101,7 @@ class DropdownToggle extends Component {
       isHovered,
       isDisabled,
       isPlain,
+      isSplitButton,
       ariaHasPopup,
       onToggle,
       onEnter,
@@ -115,7 +118,7 @@ class DropdownToggle extends Component {
           this.toggle = toggle;
         }}
         className={css(
-          styles.dropdownToggle,
+          isSplitButton ? styles.dropdownToggleButton : styles.dropdownToggle,
           isFocused && styles.modifiers.focus,
           isHovered && styles.modifiers.hover,
           isActive && styles.modifiers.active,

@@ -42,11 +42,12 @@ exports.createPages = ({ graphql, actions }) => {
       const componentName = navHelpers.getFileName(node.fileAbsolutePath);
       const parentFolderName = navHelpers.getParentFolder(node.fileAbsolutePath, 3);
       const folderName = navHelpers.getParentFolder(node.fileAbsolutePath);
+      const section = node.frontmatter.section ? node.frontmatter.section : 'components';
 
       let link = '/bad-page/';
       // Create fullscreen example component pages
       if (node.frontmatter.fullscreen) {
-        link = `/${node.frontmatter.section}/${parentFolderName}/${componentName}/`.toLowerCase();
+        link = `/${section}/${parentFolderName}/${componentName}/`.toLowerCase();
         // console.log('adding fullscreen page', link);
         actions.createPage({
           path: link,
@@ -58,7 +59,6 @@ exports.createPages = ({ graphql, actions }) => {
         });
       } else {
         // Normal templated component pages
-        let section = node.frontmatter.section ? node.frontmatter.section : 'components';
         link = `/${section}/${componentName}/`.toLowerCase();
         // console.log('adding page', link);
         actions.createPage({

@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import { BackgroundImage, BackgroundImageSrc } from '@patternfly/react-core';
 
-class SimpleBackgroundImage extends React.Component {
+export default class SimpleBackgroundImage extends React.Component {
   constructor(props) {
     super(props);
     /**
@@ -12,8 +12,7 @@ class SimpleBackgroundImage extends React.Component {
       [BackgroundImageSrc.xs2x]: '/assets/images/pfbg_576@2x.jpg',
       [BackgroundImageSrc.sm]: '/assets/images/pfbg_768.jpg',
       [BackgroundImageSrc.sm2x]: '/assets/images/pfbg_768@2x.jpg',
-      [BackgroundImageSrc.lg]: '/assets/images/pfbg_1200.jpg',
-      [BackgroundImageSrc.filter]: '/assets/images/background-filter.svg#image_overlay'
+      [BackgroundImageSrc.lg]: '/assets/images/pfbg_1200.jpg'
     };
   }
   render() {

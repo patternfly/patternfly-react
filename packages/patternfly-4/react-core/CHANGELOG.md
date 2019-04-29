@@ -3,6 +3,146 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.13.5...@patternfly/react-core@3.14.0) (2019-04-26)
+
+
+### Features
+
+* **Select:** add typeahead variants (single and multi) ([#1839](https://github.com/patternfly/patternfly-react/issues/1839)) ([8da35a9](https://github.com/patternfly/patternfly-react/commit/8da35a9))
+
+
+
+
+
+## [3.13.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.13.4...@patternfly/react-core@3.13.5) (2019-04-26)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.13.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.13.3...@patternfly/react-core@3.13.4) (2019-04-25)
+
+
+### Bug Fixes
+
+* **Alert:** Change title type from string to node ([#1856](https://github.com/patternfly/patternfly-react/issues/1856)) ([12c7a55](https://github.com/patternfly/patternfly-react/commit/12c7a55)), closes [#1854](https://github.com/patternfly/patternfly-react/issues/1854)
+
+
+
+
+
+## [3.13.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.13.2...@patternfly/react-core@3.13.3) (2019-04-25)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.13.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.13.1...@patternfly/react-core@3.13.2) (2019-04-25)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.13.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.13.0...@patternfly/react-core@3.13.1) (2019-04-25)
+
+
+### Bug Fixes
+
+* **clipboard:** change expanded content in clipboard copy to ref ([#1848](https://github.com/patternfly/patternfly-react/issues/1848)) ([a613bf4](https://github.com/patternfly/patternfly-react/commit/a613bf4))
+
+
+
+
+
+# [3.13.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.12.1...@patternfly/react-core@3.13.0) (2019-04-25)
+
+
+### Features
+
+* **DropdownToggle:** Add splitButtonItems prop, DropdownToggleCheckbox and split-button dropdown examples ([#1843](https://github.com/patternfly/patternfly-react/issues/1843)) ([86b3087](https://github.com/patternfly/patternfly-react/commit/86b3087)), closes [#1287](https://github.com/patternfly/patternfly-react/issues/1287)
+
+
+
+
+
+## [3.12.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.12.0...@patternfly/react-core@3.12.1) (2019-04-25)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.11.0...@patternfly/react-core@3.12.0) (2019-04-24)
+
+
+### Features
+
+* **clipboard:** remove textarea from clipboard copy ([#1840](https://github.com/patternfly/patternfly-react/issues/1840)) ([8bb26a2](https://github.com/patternfly/patternfly-react/commit/8bb26a2))
+* **Skip To Content:** Added Skip To Content Component and Page breadcrumb styling ([#1686](https://github.com/patternfly/patternfly-react/issues/1686)) ([f6db50d](https://github.com/patternfly/patternfly-react/commit/f6db50d)), closes [#1733](https://github.com/patternfly/patternfly-react/issues/1733)
+
+
+
+
+
+# [3.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.10.0...@patternfly/react-core@3.11.0) (2019-04-24)
+
+
+### Features
+
+* **BackgroundImage:** update background image component ([#1811](https://github.com/patternfly/patternfly-react/issues/1811)) ([baab0cf](https://github.com/patternfly/patternfly-react/commit/baab0cf))
+
+
+
+
+
+# [3.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.9.0...@patternfly/react-core@3.10.0) (2019-04-24)
+
+
+### Features
+
+* **Tab:** Render Tab as <a> instead of <button> if it contains an href prop ([#1828](https://github.com/patternfly/patternfly-react/issues/1828)) ([716bf41](https://github.com/patternfly/patternfly-react/commit/716bf41)), closes [#1805](https://github.com/patternfly/patternfly-react/issues/1805)
+
+
+
+
+
+# [3.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.8.1...@patternfly/react-core@3.9.0) (2019-04-24)
+
+
+### Features
+
+* **Wizard:** support for full width and full height ([#1786](https://github.com/patternfly/patternfly-react/issues/1786)) ([2ad0f55](https://github.com/patternfly/patternfly-react/commit/2ad0f55))
+
+
+
+
+
+## [3.8.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.8.0...@patternfly/react-core@3.8.1) (2019-04-23)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.7.3...@patternfly/react-core@3.8.0) (2019-04-23)
+
+
+### Features
+
+* **accordion:** Add accordion to pf ([#1511](https://github.com/patternfly/patternfly-react/issues/1511)) ([c02e683](https://github.com/patternfly/patternfly-react/commit/c02e683))
+
+
+
+
+
 ## [3.7.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.7.2...@patternfly/react-core@3.7.3) (2019-04-23)
 
 

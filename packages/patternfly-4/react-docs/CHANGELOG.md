@@ -3,6 +3,124 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.3.7...@patternfly/react-docs@4.3.8) (2019-04-26)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.3.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.3.6...@patternfly/react-docs@4.3.7) (2019-04-26)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.3.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.3.5...@patternfly/react-docs@4.3.6) (2019-04-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.3.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.3.4...@patternfly/react-docs@4.3.5) (2019-04-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.3.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.3.3...@patternfly/react-docs@4.3.4) (2019-04-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.3.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.3.2...@patternfly/react-docs@4.3.3) (2019-04-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.3.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.3.1...@patternfly/react-docs@4.3.2) (2019-04-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.3.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.3.0...@patternfly/react-docs@4.3.1) (2019-04-25)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+# [4.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.2.0...@patternfly/react-docs@4.3.0) (2019-04-24)
+
+
+### Features
+
+* **clipboard:** remove textarea from clipboard copy ([#1840](https://github.com/patternfly/patternfly-react/issues/1840)) ([8bb26a2](https://github.com/patternfly/patternfly-react/commit/8bb26a2))
+
+
+
+
+
+# [4.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.1.21...@patternfly/react-docs@4.2.0) (2019-04-24)
+
+
+### Features
+
+* **BackgroundImage:** update background image component ([#1811](https://github.com/patternfly/patternfly-react/issues/1811)) ([baab0cf](https://github.com/patternfly/patternfly-react/commit/baab0cf))
+
+
+
+
+
+## [4.1.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.1.20...@patternfly/react-docs@4.1.21) (2019-04-24)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.1.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.1.19...@patternfly/react-docs@4.1.20) (2019-04-24)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.1.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.1.18...@patternfly/react-docs@4.1.19) (2019-04-23)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.1.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.1.17...@patternfly/react-docs@4.1.18) (2019-04-23)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
 ## [4.1.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.1.16...@patternfly/react-docs@4.1.17) (2019-04-23)
 
 **Note:** Version bump only for package @patternfly/react-docs

@@ -12,6 +12,12 @@ exports[`select options hover renders with hover successfully 1`] = `
 </ContextConsumer>
 `;
 
+exports[`select options is selected renders selected successfully 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
 exports[`select options renders with value parameter successfully 1`] = `
 <ContextConsumer>
   <Component />

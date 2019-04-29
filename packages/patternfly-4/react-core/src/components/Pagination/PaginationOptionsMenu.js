@@ -41,7 +41,7 @@ const defaultProps = {
   )
 };
 
-class OptionsMenu extends Component {
+class PaginationOptionsMenu extends Component {
   state = {
     isOpen: false
   }
@@ -122,7 +122,7 @@ class OptionsMenu extends Component {
   }
 }
 
-OptionsMenu.propTypes = propTypes;
-OptionsMenu.defaultProps = defaultProps;
+PaginationOptionsMenu.propTypes = propTypes;
+PaginationOptionsMenu.defaultProps = defaultProps;
 
-export default OptionsMenu;
+export default PaginationOptionsMenu;

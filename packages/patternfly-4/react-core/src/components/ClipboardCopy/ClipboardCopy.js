@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from '@patternfly/patternfly/components/ClipboardCopy/clipboard-copy.css';
 import { css } from '@patternfly/react-styles';
-import { CopyIcon } from '@patternfly/react-icons';
 import PropTypes from 'prop-types';
 import { TextInput } from '../TextInput';
-import { Tooltip, TooltipPosition } from '../Tooltip';
+import { TooltipPosition } from '../Tooltip';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
 import CopyButton from './CopyButton';
 import ToggleButton from './ToggleButton';
@@ -61,7 +60,7 @@ class ClipboardCopy extends React.Component {
       'toggle-aria-label': toggleAriaLabel,
       variant,
       position,
-      classname,
+      className,
       onChange,
       ...props
     } = this.props;
@@ -71,7 +70,7 @@ class ClipboardCopy extends React.Component {
     const copyButtonIdPrefix = 'copy-button-';
     return (
       <div
-        className={css(styles.clipboardCopy, this.state.expanded && styles.modifiers.expanded, classname)}
+        className={css(styles.clipboardCopy, this.state.expanded && styles.modifiers.expanded, className)}
         {...props}
       >
         <GenerateId prefix="">
@@ -89,7 +88,7 @@ class ClipboardCopy extends React.Component {
                   />
                 )}
                 <TextInput
-                  isReadOnly={isReadOnly}
+                  isReadOnly={isReadOnly || this.state.expanded}
                   onChange={this.updateText}
                   value={this.state.text}
                   id={`text-input-${id}`}
@@ -135,7 +134,7 @@ class ClipboardCopy extends React.Component {
 
 ClipboardCopy.propTypes = {
   /** Additional classes added to the clipboard copy container. */
-  classname: PropTypes.string,
+  className: PropTypes.string,
   /** Tooltip message to display when hover the copy button */
   hoverTip: PropTypes.string,
   /** Tooltip message to display when clicking the copy button */

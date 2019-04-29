@@ -10,8 +10,7 @@ import {
   c_background_image_BackgroundImage_2x,
   c_background_image_BackgroundImage_sm,
   c_background_image_BackgroundImage_sm_2x,
-  c_background_image_BackgroundImage_lg,
-  c_background_image_Filter
+  c_background_image_BackgroundImage_lg
 } from '@patternfly/react-tokens';
 
 export const BackgroundImageSrc = {
@@ -28,8 +27,7 @@ const variableMap = {
   [BackgroundImageSrc.xs2x]: c_background_image_BackgroundImage_2x && c_background_image_BackgroundImage_2x.name,
   [BackgroundImageSrc.sm]: c_background_image_BackgroundImage_sm && c_background_image_BackgroundImage_sm.name,
   [BackgroundImageSrc.sm2x]: c_background_image_BackgroundImage_sm_2x && c_background_image_BackgroundImage_sm_2x.name,
-  [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg && c_background_image_BackgroundImage_lg.name,
-  [BackgroundImageSrc.filter]: c_background_image_Filter && c_background_image_Filter.name
+  [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg && c_background_image_BackgroundImage_lg.name
 };
 
 export const propTypes = {
@@ -73,9 +71,28 @@ const BackgroundImage = ({ className, src, ...props }) => {
         {}
       )}
     }`
-  });
+    });
 
-  return <div className={css(styles.backgroundImage, bgStyles.bgOverrides, className)} />;
+  return (
+    <div className={css(styles.backgroundImage, bgStyles.bgOverrides, className)}>
+      <svg xmlns="http://www.w3.org/2000/svg" className="svg-filter">
+        <filter id="image_overlay" width="100%">
+          <feColorMatrix type="matrix"
+            values="1 0 0 0 0
+                  1 0 0 0 0
+                  1 0 0 0 0
+                  0 0 0 1 0" />
+    
+        <feComponentTransfer colorInterpolationFilters="sRGB" result="duotone">
+          <feFuncR type="table" tableValues="0.086274509803922 0.43921568627451"></feFuncR>
+          <feFuncG type="table" tableValues="0.086274509803922 0.43921568627451"></feFuncG>
+          <feFuncB type="table" tableValues="0.086274509803922 0.43921568627451"></feFuncB>
+          <feFuncA type="table" tableValues="0 1"></feFuncA>
+        </feComponentTransfer> 
+      </filter>
+    </svg>
+    </div>
+  );
 };
 
 BackgroundImage.propTypes = propTypes;
