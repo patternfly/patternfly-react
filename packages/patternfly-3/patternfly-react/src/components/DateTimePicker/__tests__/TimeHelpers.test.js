@@ -1,4 +1,4 @@
-import { getDateFromTime, formatTime } from './TimeHelpers';
+import { getDateFromTime, formatTime } from '../TimeHelpers';
 
 describe('getDateFromTime', () => {
   test('creates a date object with time only', () => {
