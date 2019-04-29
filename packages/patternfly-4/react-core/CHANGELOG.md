@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.16.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.1...@patternfly/react-core@3.16.2) (2019-04-29)
+
+
+### Bug Fixes
+
+* **build:** make downstream patternfly-org work upstream ([#1835](https://github.com/patternfly/patternfly-react/issues/1835)) ([bccbebd](https://github.com/patternfly/patternfly-react/commit/bccbebd))
+* **version:** bump patternfly version to 2.6.5 ([#1874](https://github.com/patternfly/patternfly-react/issues/1874)) ([e3c8d7c](https://github.com/patternfly/patternfly-react/commit/e3c8d7c))
+
+
+
+
+
 ## [3.16.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.0...@patternfly/react-core@3.16.1) (2019-04-29)
 
 **Note:** Version bump only for package @patternfly/react-core
