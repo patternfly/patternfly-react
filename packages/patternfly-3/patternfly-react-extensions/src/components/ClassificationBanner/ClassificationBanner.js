@@ -37,6 +37,7 @@ class ClassificationBanner extends React.Component {
       closeButton,
       userNamePosition,
       hostNamePosition,
+      bannerColor,
       ...props } = this.props;
     
     const levelNameAppendix = classificationLevel==='999'?'':(classificationLevel==='0'?'-unclassified':(classificationLevel==='1'?'-classified':'-proprietary-level'));
@@ -68,9 +69,11 @@ class ClassificationBanner extends React.Component {
     userNamePosition==='left'?(<span>{userName}</span>):null],
     rightLabels=[hostNamePosition==='right'?(<span>{hostName}</span>):null,
     userNamePosition==='right'?(<span>{userName}</span>):null];
+
+    var bannerBackgroundStyle = bannerColor===''?{}:{'background':bannerColor};
     
     return(<div>
-      <nav className={classificationBannerClasses.top} >
+      <nav style={bannerBackgroundStyle} className={classificationBannerClasses.top} >
         <div className={"classification-banner-pf-banner-left"}>
           {leftLabels[0]}
           {leftLabels[1]}
@@ -86,7 +89,7 @@ class ClassificationBanner extends React.Component {
       <div className={classificationBannerClasses.children}>
       {children}
       </div>
-      <footer className={classificationBannerClasses.bottom}>
+      <footer style={bannerBackgroundStyle} className={classificationBannerClasses.bottom}>
         <div className={"classification-banner-pf-classification-level"}>{levelName}</div>
       </footer>
     </div>)
@@ -105,7 +108,8 @@ ClassificationBanner.propTypes = {
   bottomBanner: PropTypes.bool,
   closed: PropTypes.bool,
   userNamePosition: PropTypes.string,
-  hostNamePosition: PropTypes.string
+  hostNamePosition: PropTypes.string,
+  bannerColor: PropTypes.string
 
 };
 
@@ -119,7 +123,8 @@ ClassificationBanner.defaultProps = {
   bottomBanner: true,
   closed: false,
   userNamePosition: 'right',
-  hostNamePosition: 'left'
+  hostNamePosition: 'left',
+  bannerColor: ''
   
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, select, color } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import {
@@ -39,7 +39,8 @@ class ClassificationBannerStoryWrapper extends React.Component{
   constructor(props){
     super(props)
     this.state={
-      closed: false
+      closed: false,
+      bannerColor: ''
     }
   }
 
@@ -48,6 +49,13 @@ class ClassificationBannerStoryWrapper extends React.Component{
       closed: false
     })
   }
+
+  onResetBannerColor=()=>{
+    this.setState({
+      bannerColor: ''
+    })
+  }
+
   render(){
     const bottomBanner= boolean('Show Bottom Banner',true);
     const closeButton= boolean('Show Close Button',false);
@@ -56,6 +64,7 @@ class ClassificationBannerStoryWrapper extends React.Component{
     const hostNamePosition = select('Host Name Position',{'left':'Left','right':'Right'},'left');
     const userName = text('User Name','John Smith');
     const userNamePosition = select('User Name Position',{'left':'Left','right':'Right'},'right');
+    const bannerColor = color('Banner Color','');
 
     return(
       <ClassificationBanner 
@@ -65,15 +74,13 @@ class ClassificationBannerStoryWrapper extends React.Component{
       hostName={hostName} userName={userName}
       closed={this.state.closed} 
       userNamePosition={userNamePosition} hostNamePosition={hostNamePosition}
+      bannerColor={bannerColor}
       >
       <br/>
         <p>
         This is the main body of a web page.</p>
         <p>
         Scroll down to see the bottom banner.</p>
-        <a onClick={this.onResetVisibility}>
-          Reset Banner Visibility
-        </a>
       </ClassificationBanner>
     )
 
