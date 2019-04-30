@@ -13,6 +13,7 @@ import BodyWrapper from './BodyWrapper';
 import { calculateColumns } from './utils/headerUtils';
 
 export const TableGridBreakpoint = {
+  none: null,
   grid: 'grid',
   gridMd: 'grid-md',
   gridLg: 'grid-lg',
@@ -251,7 +252,7 @@ class Table extends React.Component {
           role="grid"
           className={css(
             styles.table,
-            getModifier(stylesGrid, gridBreakPoint),
+            gridBreakPoint && getModifier(stylesGrid, gridBreakPoint),
             getModifier(styles, variant),
             ((onCollapse && variant === TableVariant.compact) || onExpand) && styles.modifiers.expandable,
             variant === TableVariant.compact && borders === false ? styles.modifiers.noBorderRows : null,

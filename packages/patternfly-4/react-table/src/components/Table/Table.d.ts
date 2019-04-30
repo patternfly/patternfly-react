@@ -7,6 +7,7 @@ interface OnSort {
 }
 
 export const TableGridBreakpoint: {
+  none: null,
   grid: 'grid',
   gridMd: 'grid-md',
   gridLg: 'grid-lg',
