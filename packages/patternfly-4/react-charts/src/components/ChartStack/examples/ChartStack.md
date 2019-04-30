@@ -11,6 +11,7 @@ All of the `<svg>` elements on this page need to have `overflow: 'visible'` set 
 
 import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+import './chart-stack.scss';
 
 ```js
 import React from 'react';

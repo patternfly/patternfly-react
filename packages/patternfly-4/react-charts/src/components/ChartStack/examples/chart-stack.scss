@@ -1,0 +1,24 @@
+.ws-preview {
+  & > * {
+    .chart-container {
+      height: 200px;
+      width: 300px;
+    }
+
+    .chart-margin {
+      margin-bottom: 30px;
+      margin-left: 40px;
+    }
+
+    .chart-overflow {
+      & svg {
+        overflow: visible;
+      }
+    }
+
+    .chart-title {
+      margin-bottom: 25px;
+      margin-left: 10px;
+    }
+  }
+}

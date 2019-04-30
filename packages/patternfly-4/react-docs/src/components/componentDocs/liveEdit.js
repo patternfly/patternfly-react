@@ -14,7 +14,6 @@ import * as ReactTable from '@patternfly/react-table';
 import * as ReactTokens from '@patternfly/react-tokens';
 
 
-const liveEditorStyle = { code: { 'max-height': '37.5rem', overflow: 'auto' } };
 class LiveEdit extends React.Component {
   constructor(props) {
     super(props);
@@ -103,7 +102,7 @@ class LiveEdit extends React.Component {
           <LiveProvider code={this.code} scope={this.scope} transformCode={this.transformCode}>
             <LivePreview className="ws-preview"/>
             {Toolbar}
-            {this.state.codeOpen && <LiveEditor style={liveEditorStyle} />}
+            {this.state.codeOpen && <LiveEditor className="code"/>}
             <LiveError />
           </LiveProvider>
         </div>
@@ -113,7 +112,7 @@ class LiveEdit extends React.Component {
       return (
         <LiveProvider code={this.code} disabled>
           {Toolbar}
-          {this.state.codeOpen && <LiveEditor style={liveEditorStyle} contentEditable={false} />}
+          {this.state.codeOpen && <LiveEditor contentEditable={false} />}
         </LiveProvider>
       );
     }

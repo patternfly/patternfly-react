@@ -5,6 +5,7 @@ section: 'charts'
 
 import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme, ChartAxis } from '@patternfly/react-charts';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+import './chart-line.scss';
 
 ## Green themed line chart
 ```js
