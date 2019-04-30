@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.16.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.5...@patternfly/react-core@3.16.6) (2019-04-30)
+
+
+### Bug Fixes
+
+* **ApplicationLauncher:** fix rename ariaHasPopup attribute to aria-haspopup ([#1880](https://github.com/patternfly/patternfly-react/issues/1880)) ([444b024](https://github.com/patternfly/patternfly-react/commit/444b024)), closes [#1846](https://github.com/patternfly/patternfly-react/issues/1846)
+
+
+
+
+
 ## [3.16.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.4...@patternfly/react-core@3.16.5) (2019-04-30)
 
 **Note:** Version bump only for package @patternfly/react-core
