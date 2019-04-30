@@ -37,7 +37,6 @@ exports[`ChartAxis 1`] = `
       role="presentation"
     />
   }
-  scale="linear"
   standalone={true}
   theme={
     Object {
@@ -541,7 +540,6 @@ exports[`ChartAxis 2`] = `
       role="presentation"
     />
   }
-  scale="linear"
   standalone={true}
   theme={
     Object {
@@ -1057,7 +1055,6 @@ exports[`renders component data 1`] = `
             role="presentation"
           />
         }
-        scale="linear"
         standalone={true}
         theme={
           Object {
@@ -1084,7 +1081,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -1276,7 +1272,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -1321,7 +1316,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -1400,7 +1394,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -1459,7 +1452,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -1495,7 +1487,6 @@ exports[`renders component data 1`] = `
                 "padding": 5,
                 "pointerEvents": "none",
                 "stroke": "transparent",
-                "textAnchor": "middle",
               },
             },
             "voronoi": Object {
@@ -1530,7 +1521,6 @@ exports[`renders component data 1`] = `
                   "padding": 5,
                   "pointerEvents": "none",
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -1589,7 +1579,6 @@ exports[`renders component data 1`] = `
             role="presentation"
           />
         }
-        scale="linear"
         standalone={true}
         theme={
           Object {
@@ -1616,7 +1605,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -1808,7 +1796,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -1853,7 +1840,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -1932,7 +1918,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -1991,7 +1976,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -2027,7 +2011,6 @@ exports[`renders component data 1`] = `
                 "padding": 5,
                 "pointerEvents": "none",
                 "stroke": "transparent",
-                "textAnchor": "middle",
               },
             },
             "voronoi": Object {
@@ -2062,7 +2045,6 @@ exports[`renders component data 1`] = `
                   "padding": 5,
                   "pointerEvents": "none",
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -2139,7 +2121,6 @@ exports[`renders component data 1`] = `
           />
         }
         labelPlacement="parallel"
-        scale="linear"
         standalone={true}
         startAngle={0}
         theme={
@@ -2167,7 +2148,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -2359,7 +2339,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -2404,7 +2383,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -2483,7 +2461,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -2542,7 +2519,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -2578,7 +2554,6 @@ exports[`renders component data 1`] = `
                 "padding": 5,
                 "pointerEvents": "none",
                 "stroke": "transparent",
-                "textAnchor": "middle",
               },
             },
             "voronoi": Object {
@@ -2613,7 +2588,6 @@ exports[`renders component data 1`] = `
                   "padding": 5,
                   "pointerEvents": "none",
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -2685,7 +2659,6 @@ exports[`renders component data 1`] = `
           />
         }
         labelPlacement="parallel"
-        scale="linear"
         standalone={true}
         startAngle={0}
         theme={
@@ -2713,7 +2686,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -2905,7 +2877,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -2950,7 +2921,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -3029,7 +2999,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -3088,7 +3057,6 @@ exports[`renders component data 1`] = `
                   "letterSpacing": "normal",
                   "padding": 10,
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,
@@ -3124,7 +3092,6 @@ exports[`renders component data 1`] = `
                 "padding": 5,
                 "pointerEvents": "none",
                 "stroke": "transparent",
-                "textAnchor": "middle",
               },
             },
             "voronoi": Object {
@@ -3159,7 +3126,6 @@ exports[`renders component data 1`] = `
                   "padding": 5,
                   "pointerEvents": "none",
                   "stroke": "transparent",
-                  "textAnchor": "middle",
                 },
               },
               "width": 450,

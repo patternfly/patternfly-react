@@ -35,7 +35,6 @@ exports[`Chart 1`] = `
     />
   }
   samples={50}
-  scale="linear"
   sortKey="x"
   sortOrder="ascending"
   standalone={true}
@@ -524,7 +523,6 @@ exports[`Chart 2`] = `
     />
   }
   samples={50}
-  scale="linear"
   sortKey="x"
   sortOrder="ascending"
   standalone={true}
@@ -1037,7 +1035,6 @@ exports[`renders component data 1`] = `
     />
   }
   samples={50}
-  scale="linear"
   sortKey="x"
   sortOrder="ascending"
   standalone={true}
