@@ -2,6 +2,7 @@ import React from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { Button } from '@patternfly-safe/react-core';
 import { CodeIcon, CopyIcon } from '@patternfly-safe/react-icons';
+import './live-edit.scss';
 
 import * as ReactCharts from '@patternfly/react-charts';
 import * as ReactCore from '@patternfly/react-core';
@@ -13,7 +14,6 @@ import * as ReactTable from '@patternfly/react-table';
 import * as ReactTokens from '@patternfly/react-tokens';
 
 
-const liveEditorStyle = { code: { 'max-height': '37.5rem', overflow: 'auto' } };
 class LiveEdit extends React.Component {
   constructor(props) {
     super(props);
@@ -98,11 +98,11 @@ class LiveEdit extends React.Component {
 
     if (this.props.className === 'language-js') {
       return (
-        <div style={{ border: `1px solid #72767b` }}>
+        <div style={{ border: `1px solid #72767b` }} className="example">
           <LiveProvider code={this.code} scope={this.scope} transformCode={this.transformCode}>
-            <LivePreview />
+            <LivePreview className="ws-preview"/>
             {Toolbar}
-            {this.state.codeOpen && <LiveEditor style={liveEditorStyle} />}
+            {this.state.codeOpen && <LiveEditor className="code"/>}
             <LiveError />
           </LiveProvider>
         </div>
@@ -112,7 +112,7 @@ class LiveEdit extends React.Component {
       return (
         <LiveProvider code={this.code} disabled>
           {Toolbar}
-          {this.state.codeOpen && <LiveEditor style={liveEditorStyle} contentEditable={false} />}
+          {this.state.codeOpen && <LiveEditor contentEditable={false} />}
         </LiveProvider>
       );
     }

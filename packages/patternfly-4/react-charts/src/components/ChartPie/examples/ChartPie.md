@@ -7,6 +7,7 @@ section: 'charts'
 
 import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+import './chart-pie.scss';
 
 ```js
 import React from 'react';

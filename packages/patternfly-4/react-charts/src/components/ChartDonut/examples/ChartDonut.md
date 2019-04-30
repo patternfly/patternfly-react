@@ -7,6 +7,7 @@ section: 'charts'
 
 import { ChartDonut, ChartLabel, ChartLegend, ChartTheme } from '@patternfly/react-charts';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+import './chart-donut.scss';
 
 ```js
 import React from 'react';

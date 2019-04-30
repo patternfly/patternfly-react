@@ -54,6 +54,13 @@ module.exports = {
         extensions: [`.mdx`, `.md`]
       }
     },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        postCssPlugins: [],
+        precision: 5
+      }
+    },
     // The plugin for package.json files (to get version numbers)
     `gatsby-transformer-json`,
   ],
