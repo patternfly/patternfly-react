@@ -4,6 +4,10 @@ section: 'components'
 cssPrefix: 'pf-c-skip-to-content'
 ---
 
-## Simple skip to content
-This Preview can only be accessed in <a href="simpleskiptocontent" target="_blank">full page mode</a>
+import LinkPreview from '@content/../LinkPreview';
+import RawSimpleSkipToContent from '!!raw-loader!./examples/SimpleSkipToContent';
 
+## Simple skip to content
+<LinkPreview name="Popout Example" path="simpleskiptocontent" />
+
+<code className="language-nolive">{RawSimpleSkipToContent}</code>

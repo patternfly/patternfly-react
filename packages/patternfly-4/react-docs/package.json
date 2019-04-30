@@ -19,7 +19,7 @@
     "@patternfly/react-core": "^3.16.3",
     "@patternfly/react-icons": "^3.8.1",
     "gatsby": "2.3.14",
-    "gatsby-mdx": "0.6.1",
+    "gatsby-mdx": "0.6.3",
     "gatsby-plugin-react-helmet": "^3.0.11",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-json": "^2.1.11",

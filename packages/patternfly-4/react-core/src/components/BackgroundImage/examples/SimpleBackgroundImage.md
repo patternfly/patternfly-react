@@ -1,5 +1,5 @@
 ---
-title: 'Background Image'
+title: 'Simple background image'
 fullscreen: true
 ---
 
