@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { noop } from '../../../common/helpers';
 
 const DualListHiddenSelect = ({ items, ...props }) => {
   const selectedValues = [];
@@ -30,7 +31,8 @@ const DualListHiddenSelect = ({ items, ...props }) => {
     </React.Fragment>
   );
   return (
-    <select {...props} multiple hidden defaultValue={selectedValues}>
+    // Added 'onChange' after the browser threw a warning of using the value attribute without it.
+    <select {...props} multiple hidden value={selectedValues} onChange={noop}>
       {options}
     </select>
   );
