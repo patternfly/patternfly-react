@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.16.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.6...@patternfly/react-core@3.16.7) (2019-05-01)
+
+
+### Bug Fixes
+
+* **ClickboardCopy:** update imports and clean up ([#1876](https://github.com/patternfly/patternfly-react/issues/1876)) ([7a85bfb](https://github.com/patternfly/patternfly-react/commit/7a85bfb))
+
+
+
+
+
 ## [3.16.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.5...@patternfly/react-core@3.16.6) (2019-04-30)
 
 
