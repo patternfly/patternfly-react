@@ -16,3 +16,5 @@ export const WizardBody: React.SFC<WizardBodyProps> = ({ children, hasBodyPaddin
     </div>
   </main>
 );
+
+export default WizardBody;
