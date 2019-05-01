@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.16.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.9...@patternfly/react-core@3.16.10) (2019-05-01)
+
+
+### Bug Fixes
+
+* **styles:** update layout styles for layouts ([#1906](https://github.com/patternfly/patternfly-react/issues/1906)) ([22e74ac](https://github.com/patternfly/patternfly-react/commit/22e74ac))
+
+
+
+
+
 ## [3.16.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.8...@patternfly/react-core@3.16.9) (2019-05-01)
 
 **Note:** Version bump only for package @patternfly/react-core
