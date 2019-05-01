@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Page, Nav, NavList, NavItem, NavVariants, PageSection } from '@patternfly/react-core';
 import { AppHeader, AppSidebar } from './components';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Demos from './Demos';
 
 class App extends React.Component {
@@ -40,13 +40,12 @@ class App extends React.Component {
   };
 
   render() {
-    //const { isExpanded, selected, checkboxIsExpanded, checked } = this.state;
     return (
-      <React.Fragment>
+      <Router>
         <Page header={<AppHeader />} sidebar={<AppSidebar nav={this.getNav()} />} isManagedSidebar>
           {this.getPages()}
         </Page>
-      </React.Fragment>
+      </Router>
     );
   }
 }
