@@ -56,18 +56,16 @@ class ClipboardCopy extends React.Component {
       onCopy,
       hoverTip,
       clickTip,
-      'aria-label': ariaLabel,
-      'toggle-aria-label': toggleAriaLabel,
+      textAriaLabel,
+      toggleAriaLabel,
       variant,
       position,
       className,
-      onChange,
       ...props
     } = this.props;
     const textIdPrefix = 'text-input-';
     const toggleIdPrefix = 'toggle-';
     const contentIdPrefix = 'content-';
-    const copyButtonIdPrefix = 'copy-button-';
     return (
       <div
         className={css(styles.clipboardCopy, this.state.expanded && styles.modifiers.expanded, className)}
@@ -92,7 +90,7 @@ class ClipboardCopy extends React.Component {
                   onChange={this.updateText}
                   value={this.state.text}
                   id={`text-input-${id}`}
-                  aria-label={ariaLabel}
+                  aria-label={textAriaLabel}
                 />
                 <CopyButton
                   exitDelay={exitDelay}
@@ -140,9 +138,9 @@ ClipboardCopy.propTypes = {
   /** Tooltip message to display when clicking the copy button */
   clickTip: PropTypes.string,
   /** Custom flag to show that the input requires an associated id or aria-label. */
-  'aria-label': PropTypes.string,
+  textAriaLabel: PropTypes.string,
   /** Custom flag to show that the toggle button requires an associated id or aria-label. */
-  'toggle-aria-label': PropTypes.string,
+  toggleAriaLabel: PropTypes.string,
   /** Flag to show if the input is read only. */
   isReadOnly: PropTypes.bool,
   /** Adds Clipboard Copy variant styles. */
@@ -179,8 +177,8 @@ ClipboardCopy.defaultProps = {
   switchDelay: 2000,
   onCopy: clipboardCopyFunc,
   onChange: () => {},
-  'aria-label': 'Copyable input',
-  'toggle-aria-label': 'Show content'
+  textAriaLabel: 'Copyable input',
+  toggleAriaLabel: 'Show content'
 };
 
 export default ClipboardCopy;

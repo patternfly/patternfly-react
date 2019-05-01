@@ -3,6 +3,75 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.16.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.7...@patternfly/react-core@3.16.8) (2019-05-01)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.16.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.6...@patternfly/react-core@3.16.7) (2019-05-01)
+
+
+### Bug Fixes
+
+* **ClickboardCopy:** update imports and clean up ([#1876](https://github.com/patternfly/patternfly-react/issues/1876)) ([7a85bfb](https://github.com/patternfly/patternfly-react/commit/7a85bfb))
+
+
+
+
+
+## [3.16.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.5...@patternfly/react-core@3.16.6) (2019-04-30)
+
+
+### Bug Fixes
+
+* **ApplicationLauncher:** fix rename ariaHasPopup attribute to aria-haspopup ([#1880](https://github.com/patternfly/patternfly-react/issues/1880)) ([444b024](https://github.com/patternfly/patternfly-react/commit/444b024)), closes [#1846](https://github.com/patternfly/patternfly-react/issues/1846)
+
+
+
+
+
+## [3.16.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.4...@patternfly/react-core@3.16.5) (2019-04-30)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.16.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.3...@patternfly/react-core@3.16.4) (2019-04-30)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.16.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.2...@patternfly/react-core@3.16.3) (2019-04-29)
+
+
+### Bug Fixes
+
+* **Accordion:** Wrong import in definition file ([#1870](https://github.com/patternfly/patternfly-react/issues/1870)) ([780d7c7](https://github.com/patternfly/patternfly-react/commit/780d7c7)), closes [#1869](https://github.com/patternfly/patternfly-react/issues/1869)
+
+
+
+
+
+## [3.16.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.1...@patternfly/react-core@3.16.2) (2019-04-29)
+
+
+### Bug Fixes
+
+* **build:** make downstream patternfly-org work upstream ([#1835](https://github.com/patternfly/patternfly-react/issues/1835)) ([bccbebd](https://github.com/patternfly/patternfly-react/commit/bccbebd))
+* **version:** bump patternfly version to 2.6.5 ([#1874](https://github.com/patternfly/patternfly-react/issues/1874)) ([e3c8d7c](https://github.com/patternfly/patternfly-react/commit/e3c8d7c))
+
+
+
+
+
 ## [3.16.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.0...@patternfly/react-core@3.16.1) (2019-04-29)
 
 **Note:** Version bump only for package @patternfly/react-core

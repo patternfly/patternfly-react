@@ -94,6 +94,8 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         '@patternfly/react-styles': path.resolve(__dirname, '../react-styles'),
         '@patternfly/react-table': path.resolve(__dirname, '../react-table'),
         '@patternfly/react-tokens': path.resolve(__dirname, '../react-tokens'),
+        // Hack to work downstream in https://github.com/patternfly/patternfly-org
+        '@content': path.resolve(__dirname, 'src/components/componentDocs'),
       }
     },
   })

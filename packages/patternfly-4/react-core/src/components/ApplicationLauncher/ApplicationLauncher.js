@@ -78,7 +78,7 @@ class ApplicationLauncher extends React.Component {
                   id: randomId,
                   isOpen,
                   isPlain: true,
-                  ariaHasPopup: true,
+                  'aria-haspopup': true,
                   onEnter: this.onEnter
                 })
             )}

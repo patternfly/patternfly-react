@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.18.2 (2019-04-29)
+
+
+### Bug Fixes
+
+* **Select:** fix ListGroupItem import ([#1867](https://github.com/patternfly/patternfly-react/issues/1867)) ([f531e6b](https://github.com/patternfly/patternfly-react/commit/f531e6b))
+
+
+
+
+
 ## 2.18.1 (2019-04-24)
 
 

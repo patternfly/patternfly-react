@@ -1,9 +1,8 @@
 ---
-title: 'Background Image'
+title: 'Simple background image'
 fullscreen: true
-section: components
 ---
 
-import SimpleBackgroundImage from "./SimpleBackgroundImage.js";
+import SimpleBackgroundImage from './SimpleBackgroundImage';
 
 <SimpleBackgroundImage />

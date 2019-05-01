@@ -1,0 +1,14 @@
+.ws-preview {
+  & > * {
+    .chart-overflow {
+      & svg {
+        overflow: visible;
+      }
+    }
+
+    .chart-title {
+      margin-bottom: 25px;
+      margin-left: 10px;
+    }
+  }
+}
