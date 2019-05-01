@@ -5,6 +5,7 @@ section: 'layouts'
 ---
 
 import { Gallery, GalleryItem } from '@patternfly/react-core';
+import './gallery.scss';
 
 ## Simple gallery layout
 ```js

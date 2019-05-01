@@ -5,6 +5,7 @@ section: 'layouts'
 ---
 
 import { Split, SplitItem } from '@patternfly/react-core';
+import './split.scss';
 
 ## Simple split
 ```js
