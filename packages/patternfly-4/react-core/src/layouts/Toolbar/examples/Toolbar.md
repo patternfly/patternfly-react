@@ -5,6 +5,7 @@ section: 'layouts'
 ---
 
 import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/react-core';
+import './toolbar.scss';
 
 ## Simple toolbar layout
 ```js
