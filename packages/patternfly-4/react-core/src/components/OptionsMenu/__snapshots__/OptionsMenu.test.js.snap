@@ -10,16 +10,12 @@ exports[`optionsMenu expanded 1`] = `
   isPlain={false}
   menuItems={
     Array [
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
-      >
+      <Unknown>
         <OptionsMenuItem
           className=""
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Name
         </OptionsMenuItem>
@@ -28,7 +24,6 @@ exports[`optionsMenu expanded 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Date
         </OptionsMenuItem>
@@ -37,7 +32,6 @@ exports[`optionsMenu expanded 1`] = `
           id=""
           isDisabled={true}
           isSelected={false}
-          onSelect={[Function]}
         >
           Disabled
         </OptionsMenuItem>
@@ -46,24 +40,17 @@ exports[`optionsMenu expanded 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Size
         </OptionsMenuItem>
-      </OptionsMenuItemsGroup>,
-      <OptionsMenuSeparator
-        className=""
-      />,
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
-      >
+      </Unknown>,
+      <Unknown />,
+      <Unknown>
         <OptionsMenuItem
           className=""
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Ascending
         </OptionsMenuItem>
@@ -72,47 +59,28 @@ exports[`optionsMenu expanded 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Descending
         </OptionsMenuItem>
-      </OptionsMenuItemsGroup>,
+      </Unknown>,
     ]
   }
   position="left"
   toggle={
-    <OptionsMenuToggle
-      aria-label="Options menu"
-      hideCaret={false}
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentId=""
-      toggleTemplate=""
-    >
+    <Unknown>
       Options Menu
-    </OptionsMenuToggle>
+    </Unknown>
   }
 >
   <div
     className="pf-c-options-menu pf-m-expanded"
     id="expanded"
   >
-    <OptionsMenuToggle
-      aria-label="Options menu"
-      hideCaret={false}
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
+    <Component
       isOpen={true}
       isPlain={false}
       key=".0"
-      onToggle={[Function]}
       parentId="expanded"
-      toggleTemplate=""
     >
       <button
         aria-expanded={true}
@@ -122,6 +90,9 @@ exports[`optionsMenu expanded 1`] = `
         id="expanded-toggle"
         onClick={[Function]}
       >
+        <span
+          className="pf-c-options-menu__toggle-text"
+        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
@@ -151,14 +122,12 @@ exports[`optionsMenu expanded 1`] = `
           </svg>
         </CaretDownIcon>
       </button>
-    </OptionsMenuToggle>
+    </Component>
     <ul
       aria-labelledby="expanded-toggle"
       className="pf-c-options-menu__menu"
     >
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
+      <Component
         key="first group"
       >
         <li>
@@ -172,14 +141,13 @@ exports[`optionsMenu expanded 1`] = `
               isDisabled={false}
               isSelected={false}
               key="name"
-              onSelect={[Function]}
             >
               <li>
                 <button
                   aria-disabled={false}
+                  aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
-                  onClick={[Function]}
                   onKeyDown={[Function]}
                 >
                   Name
@@ -223,14 +191,13 @@ exports[`optionsMenu expanded 1`] = `
               isDisabled={false}
               isSelected={false}
               key="date"
-              onSelect={[Function]}
             >
               <li>
                 <button
                   aria-disabled={false}
+                  aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
-                  onClick={[Function]}
                   onKeyDown={[Function]}
                 >
                   Date
@@ -274,14 +241,13 @@ exports[`optionsMenu expanded 1`] = `
               isDisabled={true}
               isSelected={false}
               key="disabled"
-              onSelect={[Function]}
             >
               <li>
                 <button
                   aria-disabled={true}
+                  aria-selected={false}
                   className="pf-c-options-menu__menu-item pf-m-disabled"
                   id=""
-                  onClick={[Function]}
                   onKeyDown={[Function]}
                 >
                   Disabled
@@ -325,14 +291,13 @@ exports[`optionsMenu expanded 1`] = `
               isDisabled={false}
               isSelected={false}
               key="size"
-              onSelect={[Function]}
             >
               <li>
                 <button
                   aria-disabled={false}
+                  aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
-                  onClick={[Function]}
                   onKeyDown={[Function]}
                 >
                   Size
@@ -372,19 +337,16 @@ exports[`optionsMenu expanded 1`] = `
             </OptionsMenuItem>
           </ul>
         </li>
-      </OptionsMenuItemsGroup>
-      <OptionsMenuSeparator
-        className=""
+      </Component>
+      <Component
         key="separator"
       >
         <li
           className="pf-c-options-menu__separator"
           role="separator"
         />
-      </OptionsMenuSeparator>
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
+      </Component>
+      <Component
         key="second group"
       >
         <li>
@@ -398,14 +360,13 @@ exports[`optionsMenu expanded 1`] = `
               isDisabled={false}
               isSelected={false}
               key="ascending"
-              onSelect={[Function]}
             >
               <li>
                 <button
                   aria-disabled={false}
+                  aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
-                  onClick={[Function]}
                   onKeyDown={[Function]}
                 >
                   Ascending
@@ -449,14 +410,13 @@ exports[`optionsMenu expanded 1`] = `
               isDisabled={false}
               isSelected={false}
               key="descending"
-              onSelect={[Function]}
             >
               <li>
                 <button
                   aria-disabled={false}
+                  aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
-                  onClick={[Function]}
                   onKeyDown={[Function]}
                 >
                   Descending
@@ -496,7 +456,7 @@ exports[`optionsMenu expanded 1`] = `
             </OptionsMenuItem>
           </ul>
         </li>
-      </OptionsMenuItemsGroup>
+      </Component>
     </ul>
   </div>
 </OptionsMenu>
@@ -512,16 +472,12 @@ exports[`optionsMenu open up 1`] = `
   isPlain={false}
   menuItems={
     Array [
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
-      >
+      <Unknown>
         <OptionsMenuItem
           className=""
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Name
         </OptionsMenuItem>
@@ -530,7 +486,6 @@ exports[`optionsMenu open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Date
         </OptionsMenuItem>
@@ -539,7 +494,6 @@ exports[`optionsMenu open up 1`] = `
           id=""
           isDisabled={true}
           isSelected={false}
-          onSelect={[Function]}
         >
           Disabled
         </OptionsMenuItem>
@@ -548,24 +502,17 @@ exports[`optionsMenu open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Size
         </OptionsMenuItem>
-      </OptionsMenuItemsGroup>,
-      <OptionsMenuSeparator
-        className=""
-      />,
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
-      >
+      </Unknown>,
+      <Unknown />,
+      <Unknown>
         <OptionsMenuItem
           className=""
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Ascending
         </OptionsMenuItem>
@@ -574,47 +521,28 @@ exports[`optionsMenu open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Descending
         </OptionsMenuItem>
-      </OptionsMenuItemsGroup>,
+      </Unknown>,
     ]
   }
   position="left"
   toggle={
-    <OptionsMenuToggle
-      aria-label="Options menu"
-      hideCaret={false}
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentId=""
-      toggleTemplate=""
-    >
+    <Unknown>
       Options Menu
-    </OptionsMenuToggle>
+    </Unknown>
   }
 >
   <div
     className="pf-c-options-menu pf-m-top"
     id="openUp"
   >
-    <OptionsMenuToggle
-      aria-label="Options menu"
-      hideCaret={false}
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
+    <Component
       isOpen={false}
       isPlain={false}
       key=".0"
-      onToggle={[Function]}
       parentId="openUp"
-      toggleTemplate=""
     >
       <button
         aria-expanded={false}
@@ -624,6 +552,9 @@ exports[`optionsMenu open up 1`] = `
         id="openUp-toggle"
         onClick={[Function]}
       >
+        <span
+          className="pf-c-options-menu__toggle-text"
+        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
@@ -653,7 +584,7 @@ exports[`optionsMenu open up 1`] = `
           </svg>
         </CaretDownIcon>
       </button>
-    </OptionsMenuToggle>
+    </Component>
   </div>
 </OptionsMenu>
 `;
@@ -668,16 +599,12 @@ exports[`optionsMenu plain 1`] = `
   isPlain={true}
   menuItems={
     Array [
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
-      >
+      <Unknown>
         <OptionsMenuItem
           className=""
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Name
         </OptionsMenuItem>
@@ -686,7 +613,6 @@ exports[`optionsMenu plain 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Date
         </OptionsMenuItem>
@@ -695,7 +621,6 @@ exports[`optionsMenu plain 1`] = `
           id=""
           isDisabled={true}
           isSelected={false}
-          onSelect={[Function]}
         >
           Disabled
         </OptionsMenuItem>
@@ -704,24 +629,17 @@ exports[`optionsMenu plain 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Size
         </OptionsMenuItem>
-      </OptionsMenuItemsGroup>,
-      <OptionsMenuSeparator
-        className=""
-      />,
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
-      >
+      </Unknown>,
+      <Unknown />,
+      <Unknown>
         <OptionsMenuItem
           className=""
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Ascending
         </OptionsMenuItem>
@@ -730,47 +648,28 @@ exports[`optionsMenu plain 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Descending
         </OptionsMenuItem>
-      </OptionsMenuItemsGroup>,
+      </Unknown>,
     ]
   }
   position="left"
   toggle={
-    <OptionsMenuToggle
-      aria-label="Options menu"
-      hideCaret={false}
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentId=""
-      toggleTemplate=""
-    >
+    <Unknown>
       Options Menu
-    </OptionsMenuToggle>
+    </Unknown>
   }
 >
   <div
     className="pf-c-options-menu"
     id="plain"
   >
-    <OptionsMenuToggle
-      aria-label="Options menu"
-      hideCaret={false}
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
+    <Component
       isOpen={false}
       isPlain={true}
       key=".0"
-      onToggle={[Function]}
       parentId="plain"
-      toggleTemplate=""
     >
       <button
         aria-expanded={false}
@@ -809,7 +708,7 @@ exports[`optionsMenu plain 1`] = `
           </svg>
         </CaretDownIcon>
       </button>
-    </OptionsMenuToggle>
+    </Component>
   </div>
 </OptionsMenu>
 `;
@@ -824,16 +723,12 @@ exports[`optionsMenu regular 1`] = `
   isPlain={false}
   menuItems={
     Array [
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
-      >
+      <Unknown>
         <OptionsMenuItem
           className=""
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Name
         </OptionsMenuItem>
@@ -842,7 +737,6 @@ exports[`optionsMenu regular 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Date
         </OptionsMenuItem>
@@ -851,7 +745,6 @@ exports[`optionsMenu regular 1`] = `
           id=""
           isDisabled={true}
           isSelected={false}
-          onSelect={[Function]}
         >
           Disabled
         </OptionsMenuItem>
@@ -860,24 +753,17 @@ exports[`optionsMenu regular 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Size
         </OptionsMenuItem>
-      </OptionsMenuItemsGroup>,
-      <OptionsMenuSeparator
-        className=""
-      />,
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
-      >
+      </Unknown>,
+      <Unknown />,
+      <Unknown>
         <OptionsMenuItem
           className=""
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Ascending
         </OptionsMenuItem>
@@ -886,47 +772,28 @@ exports[`optionsMenu regular 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Descending
         </OptionsMenuItem>
-      </OptionsMenuItemsGroup>,
+      </Unknown>,
     ]
   }
   position="left"
   toggle={
-    <OptionsMenuToggle
-      aria-label="Options menu"
-      hideCaret={false}
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentId=""
-      toggleTemplate=""
-    >
+    <Unknown>
       Options Menu
-    </OptionsMenuToggle>
+    </Unknown>
   }
 >
   <div
     className="pf-c-options-menu"
     id="regular"
   >
-    <OptionsMenuToggle
-      aria-label="Options menu"
-      hideCaret={false}
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
+    <Component
       isOpen={false}
       isPlain={false}
       key=".0"
-      onToggle={[Function]}
       parentId="regular"
-      toggleTemplate=""
     >
       <button
         aria-expanded={false}
@@ -936,6 +803,9 @@ exports[`optionsMenu regular 1`] = `
         id="regular-toggle"
         onClick={[Function]}
       >
+        <span
+          className="pf-c-options-menu__toggle-text"
+        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
@@ -965,7 +835,7 @@ exports[`optionsMenu regular 1`] = `
           </svg>
         </CaretDownIcon>
       </button>
-    </OptionsMenuToggle>
+    </Component>
   </div>
 </OptionsMenu>
 `;
@@ -980,16 +850,12 @@ exports[`optionsMenu right aligned + open up 1`] = `
   isPlain={false}
   menuItems={
     Array [
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
-      >
+      <Unknown>
         <OptionsMenuItem
           className=""
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Name
         </OptionsMenuItem>
@@ -998,7 +864,6 @@ exports[`optionsMenu right aligned + open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Date
         </OptionsMenuItem>
@@ -1007,7 +872,6 @@ exports[`optionsMenu right aligned + open up 1`] = `
           id=""
           isDisabled={true}
           isSelected={false}
-          onSelect={[Function]}
         >
           Disabled
         </OptionsMenuItem>
@@ -1016,24 +880,17 @@ exports[`optionsMenu right aligned + open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Size
         </OptionsMenuItem>
-      </OptionsMenuItemsGroup>,
-      <OptionsMenuSeparator
-        className=""
-      />,
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
-      >
+      </Unknown>,
+      <Unknown />,
+      <Unknown>
         <OptionsMenuItem
           className=""
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Ascending
         </OptionsMenuItem>
@@ -1042,47 +899,28 @@ exports[`optionsMenu right aligned + open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Descending
         </OptionsMenuItem>
-      </OptionsMenuItemsGroup>,
+      </Unknown>,
     ]
   }
   position="right"
   toggle={
-    <OptionsMenuToggle
-      aria-label="Options menu"
-      hideCaret={false}
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentId=""
-      toggleTemplate=""
-    >
+    <Unknown>
       Options Menu
-    </OptionsMenuToggle>
+    </Unknown>
   }
 >
   <div
     className="pf-c-options-menu pf-m-top pf-m-align-right"
     id="rightAlignedOpenUp"
   >
-    <OptionsMenuToggle
-      aria-label="Options menu"
-      hideCaret={false}
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
+    <Component
       isOpen={false}
       isPlain={false}
       key=".0"
-      onToggle={[Function]}
       parentId="rightAlignedOpenUp"
-      toggleTemplate=""
     >
       <button
         aria-expanded={false}
@@ -1092,6 +930,9 @@ exports[`optionsMenu right aligned + open up 1`] = `
         id="rightAlignedOpenUp-toggle"
         onClick={[Function]}
       >
+        <span
+          className="pf-c-options-menu__toggle-text"
+        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
@@ -1121,7 +962,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
           </svg>
         </CaretDownIcon>
       </button>
-    </OptionsMenuToggle>
+    </Component>
   </div>
 </OptionsMenu>
 `;
@@ -1136,16 +977,12 @@ exports[`optionsMenu right aligned 1`] = `
   isPlain={false}
   menuItems={
     Array [
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
-      >
+      <Unknown>
         <OptionsMenuItem
           className=""
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Name
         </OptionsMenuItem>
@@ -1154,7 +991,6 @@ exports[`optionsMenu right aligned 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Date
         </OptionsMenuItem>
@@ -1163,7 +999,6 @@ exports[`optionsMenu right aligned 1`] = `
           id=""
           isDisabled={true}
           isSelected={false}
-          onSelect={[Function]}
         >
           Disabled
         </OptionsMenuItem>
@@ -1172,24 +1007,17 @@ exports[`optionsMenu right aligned 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Size
         </OptionsMenuItem>
-      </OptionsMenuItemsGroup>,
-      <OptionsMenuSeparator
-        className=""
-      />,
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
-      >
+      </Unknown>,
+      <Unknown />,
+      <Unknown>
         <OptionsMenuItem
           className=""
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Ascending
         </OptionsMenuItem>
@@ -1198,47 +1026,28 @@ exports[`optionsMenu right aligned 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Descending
         </OptionsMenuItem>
-      </OptionsMenuItemsGroup>,
+      </Unknown>,
     ]
   }
   position="right"
   toggle={
-    <OptionsMenuToggle
-      aria-label="Options menu"
-      hideCaret={false}
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentId=""
-      toggleTemplate=""
-    >
+    <Unknown>
       Options Menu
-    </OptionsMenuToggle>
+    </Unknown>
   }
 >
   <div
     className="pf-c-options-menu pf-m-align-right"
     id="rightAligned"
   >
-    <OptionsMenuToggle
-      aria-label="Options menu"
-      hideCaret={false}
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
+    <Component
       isOpen={false}
       isPlain={false}
       key=".0"
-      onToggle={[Function]}
       parentId="rightAligned"
-      toggleTemplate=""
     >
       <button
         aria-expanded={false}
@@ -1248,6 +1057,9 @@ exports[`optionsMenu right aligned 1`] = `
         id="rightAligned-toggle"
         onClick={[Function]}
       >
+        <span
+          className="pf-c-options-menu__toggle-text"
+        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
@@ -1277,7 +1089,7 @@ exports[`optionsMenu right aligned 1`] = `
           </svg>
         </CaretDownIcon>
       </button>
-    </OptionsMenuToggle>
+    </Component>
   </div>
 </OptionsMenu>
 `;
@@ -1292,16 +1104,12 @@ exports[`optionsMenu text 1`] = `
   isPlain={false}
   menuItems={
     Array [
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
-      >
+      <Unknown>
         <OptionsMenuItem
           className=""
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Name
         </OptionsMenuItem>
@@ -1310,7 +1118,6 @@ exports[`optionsMenu text 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Date
         </OptionsMenuItem>
@@ -1319,7 +1126,6 @@ exports[`optionsMenu text 1`] = `
           id=""
           isDisabled={true}
           isSelected={false}
-          onSelect={[Function]}
         >
           Disabled
         </OptionsMenuItem>
@@ -1328,24 +1134,17 @@ exports[`optionsMenu text 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Size
         </OptionsMenuItem>
-      </OptionsMenuItemsGroup>,
-      <OptionsMenuSeparator
-        className=""
-      />,
-      <OptionsMenuItemsGroup
-        ariaLabel=""
-        className=""
-      >
+      </Unknown>,
+      <Unknown />,
+      <Unknown>
         <OptionsMenuItem
           className=""
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Ascending
         </OptionsMenuItem>
@@ -1354,32 +1153,21 @@ exports[`optionsMenu text 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
-          onSelect={[Function]}
         >
           Descending
         </OptionsMenuItem>
-      </OptionsMenuItemsGroup>,
+      </Unknown>,
     ]
   }
   position="left"
   toggle={
-    <OptionsMenuToggleWithText
-      aria-label="Options menu"
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentId=""
+    <Unknown
       toggleButtonContents={
         <React.Fragment>
           Test
         </React.Fragment>
       }
-      toggleButtonContentsClassName=""
       toggleText="Test"
-      toggleTextClassName=""
     />
   }
 >
@@ -1387,24 +1175,17 @@ exports[`optionsMenu text 1`] = `
     className="pf-c-options-menu"
     id="text"
   >
-    <OptionsMenuToggleWithText
-      aria-label="Options menu"
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
+    <Component
       isOpen={false}
       isPlain={false}
       key=".0"
-      onToggle={[Function]}
       parentId="text"
       toggleButtonContents={
         <React.Fragment>
           Test
         </React.Fragment>
       }
-      toggleButtonContentsClassName=""
       toggleText="Test"
-      toggleTextClassName=""
     >
       <div
         className="pf-c-options-menu__toggle pf-m-text"
@@ -1420,12 +1201,11 @@ exports[`optionsMenu text 1`] = `
           aria-label="Options menu"
           className="pf-c-options-menu__toggle-button"
           id="text-toggle"
-          onClick={[Function]}
         >
           Test
         </button>
       </div>
-    </OptionsMenuToggleWithText>
+    </Component>
   </div>
 </OptionsMenu>
 `;

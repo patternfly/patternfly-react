@@ -1,12 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import OptionsMenu from './OptionsMenu';
-import OptionsMenuToggle from './OptionsMenuToggle';
-import OptionsMenuItemGroup from './OptionsMenuItemGroup';
-import OptionsMenuItem from './OptionsMenuItem';
-import OptionsMenuSeparator from './OptionsMenuSeparator';
+import { OptionsMenu } from './OptionsMenu';
+import { OptionsMenuToggle } from './OptionsMenuToggle';
+import { OptionsMenuItemGroup } from './OptionsMenuItemGroup';
+import { OptionsMenuItem } from './OptionsMenuItem';
+import { OptionsMenuSeparator } from './OptionsMenuSeparator';
 import { OptionsMenuDirection, OptionsMenuPosition } from './optionsMenuConstants';
-import OptionsMenuToggleWithText from './OptionsMenuToggleWithText';
+import { OptionsMenuToggleWithText } from './OptionsMenuToggleWithText';
 
 const menuItems = [
   <OptionsMenuItemGroup key="first group">
