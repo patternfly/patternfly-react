@@ -15,8 +15,8 @@
   },
   "devDependencies": {
     "@types/node": "10.12.18",
-    "@types/react": "^16.8.4",
-    "@types/react-dom": "^16.8.4",
+    "@types/react": "~16.8.4",
+    "@types/react-dom": "~16.8.4",
     "@types/react-router-dom": "^4.3.2",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^23.6.0",

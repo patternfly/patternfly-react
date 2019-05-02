@@ -18,25 +18,31 @@ class App extends React.Component {
     return (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList variant={NavVariants.simple}>
-        { Demos.map((demo, index) => {
-           return (<NavItem to="#nav-link1" itemId={index} isActive={activeItem === index}>
-            {demo.name}
-          </NavItem>)
-          })
-        }
+          {Demos.map((demo, index) => {
+            return (
+              <NavItem itemId={index} isActive={activeItem === index}>
+                <Link to={`/nav-link${index}`}>{demo.name}</Link>
+              </NavItem>
+            );
+          })}
         </NavList>
       </Nav>
     );
   };
 
   private getPages = () => {
-    return (<React.Fragment>
-      { Demos.map(demo => {
-         return (<PageSection>
-          {React.createElement(demo.componentType)}
-         </PageSection>)
-      }) }
-    </React.Fragment>)
+    return (
+      <React.Fragment>
+        {Demos.map((demo, index) => {
+          return (
+            <Route
+              path={`/nav-link${index}`}
+              render={({ match }) => <PageSection>{React.createElement(demo.componentType)}</PageSection>}
+            />
+          );
+        })}
+      </React.Fragment>
+    );
   };
 
   render() {
