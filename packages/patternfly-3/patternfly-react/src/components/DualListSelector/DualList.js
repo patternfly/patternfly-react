@@ -18,7 +18,7 @@ import {
   isItemExistOnList,
   filterByHiding,
   getFilterredItemsLength,
-  makeAllItemsVisible,
+  makeAllHiddenFilteredItemsVisible,
   getSelectedFilterredItemsLength,
   isItemSelected,
   getFilterredItems
@@ -129,7 +129,7 @@ class DualList extends React.Component {
     } = this.props;
     const filterTerm = value.trim();
     if (!value) {
-      const items = makeAllItemsVisible(originalItems);
+      const items = makeAllHiddenFilteredItemsVisible(originalItems);
       const isMainChecked = isAllItemsChecked(items, selectCount);
       this.props.onFilterChange({ side, filterTerm, items, isMainChecked });
       return;
