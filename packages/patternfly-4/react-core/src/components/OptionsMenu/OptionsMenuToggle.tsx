@@ -2,6 +2,7 @@ import * as React from 'react';
 import { CaretDownIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/patternfly/components/OptionsMenu/options-menu.css';
 import { css, getModifier } from '@patternfly/react-styles';
+import { fillTemplate } from '../../helpers/util';
 
 export interface OptionsMenuToggleProps  extends React.HTMLProps<HTMLButtonElement>{
   /** Id of the parent Options menu component */
@@ -23,7 +24,9 @@ export interface OptionsMenuToggleProps  extends React.HTMLProps<HTMLButtonEleme
   /** Provides an accessible name for the button when an icon is used instead of text*/
   "aria-label"?: string;
   /** Content to be rendered in the Options menu toggle button */
-  toggleTemplate?: React.ReactElement | string;
+  toggleTemplate?: React.ReactElement;
+  /** Props to be passed to the Options menu toggle button template */
+  toggleTemplateProps?: object;
 }
 
 export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> = ({
@@ -34,10 +37,18 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
     isHovered = false,
     isActive = false,
     isFocused = false,
-    toggleTemplate = '',
+    toggleTemplate: ToggleTemplate = <React.Fragment/>,
+    toggleTemplateProps = undefined,
     hideCaret = false,
     'aria-label': ariaLabel = 'Options menu',
 }: OptionsMenuToggleProps) => {
+
+  const template = ToggleTemplate && typeof ToggleTemplate === 'string'
+    ? (fillTemplate(ToggleTemplate, toggleTemplateProps))
+    : (React.Children.map(ToggleTemplate, toggle =>
+      React.cloneElement(toggle, {
+          toggleTemplateProps: toggleTemplateProps
+        })));
 
   return <button
     className={css(styles.optionsMenuToggle,
@@ -52,9 +63,9 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
     aria-expanded={isOpen}
     onClick={onToggle}
   >
-    {toggleTemplate && (!isPlain
-      ? <span className={css(styles.optionsMenuToggleText)}>{toggleTemplate}</span>
-      : <React.Fragment>{toggleTemplate}</React.Fragment>)}
+    {ToggleTemplate && (!isPlain
+      ? <span className={css(styles.optionsMenuToggleText)}>{template}</span>
+      : <React.Fragment>{template}</React.Fragment>)}
     {!hideCaret && <CaretDownIcon aria-hidden className={css(styles.optionsMenuToggleIcon)}/>}
   </button>
 };
