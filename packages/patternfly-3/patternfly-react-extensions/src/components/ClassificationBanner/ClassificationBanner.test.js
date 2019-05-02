@@ -20,17 +20,17 @@ const testClassificationBannerSnapshot = () => (
   </ClassificationBanner>
 );
 
-test('ClassificationBanner with renders properly', () => {
-  const component = mount(testClassificationBannerSnapshot());
+test('ClassificationBanner renders properly', () => {
+  const component = mount(testClassificationBannerSnapshot()).getElement();
 
-  expect(component.render()).toMatchSnapshot();
+  expect(component).toMatchSnapshot();
 });
 
 test('ClassificationBanner expectedly executes mouse click and is dismissed', () => {
   const component = mount(testClassificationBannerSnapshot({
     closed: false
   }));
-  const closeButton = component.find('.classification-banner-pf-close');
+  const closeButton = component.find('#classification-banner-close-btn');
   closeButton.simulate('click');
   expect(component.props().closed).toBe(true);
 });
