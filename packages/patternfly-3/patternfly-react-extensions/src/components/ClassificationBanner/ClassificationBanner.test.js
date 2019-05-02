@@ -25,5 +25,5 @@ test('ClassificationBanner expectedly executes mouse click and is dismissed', ()
   }));
   const closeButton = component.find('#classification-banner-close-btn');
   closeButton.simulate('click');
-  expect(component.props().closed).toBe(true);
+  expect(component.state('closed')).toBe(true);
 });
