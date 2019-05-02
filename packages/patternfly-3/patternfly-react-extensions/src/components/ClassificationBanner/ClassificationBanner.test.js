@@ -2,17 +2,10 @@ import React from 'react';
 import { mount } from 'enzyme';
 import ClassificationBanner from './ClassificationBanner';
 
-const testClassificationBannerSnapshot = () => (
+const testClassificationBannerSnapshot = (props) => (
   <ClassificationBanner
-    // bottomBanner={true}
-    classificationLevel="1"
-    closeButton={false}
-    hostName="Host Name"
-    userName="User Name"
-    closed={false}
-    userNamePosition="left"
-    hostNamePosition="right"
-    bannerColor=""
+    closed
+    {...props}
   >
     <br />
     <p>This is the main body of a web page.</p>

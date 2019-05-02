@@ -119,7 +119,7 @@
     "test:current": "jest --watch",
     "test:integration": "lerna run test:integration",
     "test:misc": "jest packages/react-*",
-    "test:pf3": "jest packages/patternfly-3",
+    "test:pf3": "jest packages/patternfly-3 --updateSnapshot",
     "test:pf4": "jest packages/patternfly-4",
     "test:watch": "jest --watchAll",
     "uninstall": "find . -name node_modules -type d | xargs rm -rf"
