@@ -20,7 +20,7 @@ class App extends React.Component {
         <NavList variant={NavVariants.simple}>
           {Demos.map((demo, index) => {
             return (
-              <NavItem itemId={index} isActive={activeItem === index}>
+              <NavItem id={`nav-item${index}`} itemId={index} isActive={activeItem === index}>
                 <Link to={`/nav-link${index}`}>{demo.name}</Link>
               </NavItem>
             );
