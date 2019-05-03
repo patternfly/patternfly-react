@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.32.2 (2019-05-03)
+
+
+### Bug Fixes
+
+* **ClickboardCopy:** update imports and clean up ([#1876](https://github.com/patternfly/patternfly-react/issues/1876)) ([7a85bfb](https://github.com/patternfly/patternfly-react/commit/7a85bfb))
+* **DualList:** fix hidden selects input values to update properly ([#1900](https://github.com/patternfly/patternfly-react/issues/1900)) ([e9c0928](https://github.com/patternfly/patternfly-react/commit/e9c0928))
+* **DualList:** Hide dropdown when no menu items are provided ([#1909](https://github.com/patternfly/patternfly-react/issues/1909)) ([8ed397e](https://github.com/patternfly/patternfly-react/commit/8ed397e))
+
+
+
+
+
 ## 2.32.1 (2019-04-15)
 
 
