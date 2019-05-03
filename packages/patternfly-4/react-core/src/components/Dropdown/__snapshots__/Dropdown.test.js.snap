@@ -44,7 +44,7 @@ exports[`KebabToggle basic 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <DropdownToggle
+      <Toggle
         aria-label="Actions"
         ariaHasPopup={null}
         className=""
@@ -96,7 +96,7 @@ exports[`KebabToggle basic 1`] = `
             </svg>
           </EllipsisVIcon>
         </button>
-      </DropdownToggle>
+      </Toggle>
     </Kebab>
     <DropdownMenu
       aria-labelledby="Dropdown Toggle"
@@ -284,7 +284,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <DropdownToggle
+      <Toggle
         aria-label="Actions"
         ariaHasPopup={true}
         className=""
@@ -336,7 +336,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             </svg>
           </EllipsisVIcon>
         </button>
-      </DropdownToggle>
+      </Toggle>
     </Kebab>
   </div>
 </Dropdown>
@@ -498,7 +498,7 @@ exports[`KebabToggle dropup 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <DropdownToggle
+      <Toggle
         aria-label="Actions"
         ariaHasPopup={true}
         className=""
@@ -550,7 +550,7 @@ exports[`KebabToggle dropup 1`] = `
             </svg>
           </EllipsisVIcon>
         </button>
-      </DropdownToggle>
+      </Toggle>
     </Kebab>
   </div>
 </Dropdown>
@@ -712,7 +712,7 @@ exports[`KebabToggle expanded 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <DropdownToggle
+      <Toggle
         aria-label="Actions"
         ariaHasPopup={true}
         className=""
@@ -764,7 +764,7 @@ exports[`KebabToggle expanded 1`] = `
             </svg>
           </EllipsisVIcon>
         </button>
-      </DropdownToggle>
+      </Toggle>
     </Kebab>
     <DropdownMenu
       aria-labelledby="Dropdown Toggle"
@@ -1163,7 +1163,7 @@ exports[`KebabToggle plain 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <DropdownToggle
+      <Toggle
         aria-label="Actions"
         ariaHasPopup={true}
         className=""
@@ -1215,7 +1215,7 @@ exports[`KebabToggle plain 1`] = `
             </svg>
           </EllipsisVIcon>
         </button>
-      </DropdownToggle>
+      </Toggle>
     </Kebab>
   </div>
 </Dropdown>
@@ -1377,7 +1377,7 @@ exports[`KebabToggle regular 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <DropdownToggle
+      <Toggle
         aria-label="Actions"
         ariaHasPopup={true}
         className=""
@@ -1429,7 +1429,7 @@ exports[`KebabToggle regular 1`] = `
             </svg>
           </EllipsisVIcon>
         </button>
-      </DropdownToggle>
+      </Toggle>
     </Kebab>
   </div>
 </Dropdown>
@@ -1591,7 +1591,7 @@ exports[`KebabToggle right aligned 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <DropdownToggle
+      <Toggle
         aria-label="Actions"
         ariaHasPopup={true}
         className=""
@@ -1643,7 +1643,7 @@ exports[`KebabToggle right aligned 1`] = `
             </svg>
           </EllipsisVIcon>
         </button>
-      </DropdownToggle>
+      </Toggle>
     </Kebab>
   </div>
 </Dropdown>
@@ -1693,7 +1693,7 @@ exports[`dropdown basic 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <DropdownToggle
+      <Toggle
         ariaHasPopup={null}
         className=""
         id="Dropdown Toggle"
@@ -1750,7 +1750,7 @@ exports[`dropdown basic 1`] = `
             </svg>
           </CaretDownIcon>
         </button>
-      </DropdownToggle>
+      </Toggle>
     </DropdownToggle>
     <DropdownMenu
       aria-labelledby="Dropdown Toggle"
@@ -1938,7 +1938,7 @@ exports[`dropdown dropup + right aligned 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <DropdownToggle
+      <Toggle
         ariaHasPopup={true}
         className=""
         id="Dropdown Toggle"
@@ -1995,7 +1995,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             </svg>
           </CaretDownIcon>
         </button>
-      </DropdownToggle>
+      </Toggle>
     </DropdownToggle>
   </div>
 </Dropdown>
@@ -2157,7 +2157,7 @@ exports[`dropdown dropup 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <DropdownToggle
+      <Toggle
         ariaHasPopup={true}
         className=""
         id="Dropdown Toggle"
@@ -2214,7 +2214,7 @@ exports[`dropdown dropup 1`] = `
             </svg>
           </CaretDownIcon>
         </button>
-      </DropdownToggle>
+      </Toggle>
     </DropdownToggle>
   </div>
 </Dropdown>
@@ -2376,7 +2376,7 @@ exports[`dropdown expanded 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <DropdownToggle
+      <Toggle
         ariaHasPopup={true}
         className=""
         id="Dropdown Toggle"
@@ -2433,7 +2433,7 @@ exports[`dropdown expanded 1`] = `
             </svg>
           </CaretDownIcon>
         </button>
-      </DropdownToggle>
+      </Toggle>
     </DropdownToggle>
     <DropdownMenu
       aria-labelledby="Dropdown Toggle"
@@ -2832,7 +2832,7 @@ exports[`dropdown regular 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <DropdownToggle
+      <Toggle
         ariaHasPopup={true}
         className=""
         id="Dropdown Toggle"
@@ -2889,7 +2889,7 @@ exports[`dropdown regular 1`] = `
             </svg>
           </CaretDownIcon>
         </button>
-      </DropdownToggle>
+      </Toggle>
     </DropdownToggle>
   </div>
 </Dropdown>
@@ -3051,7 +3051,7 @@ exports[`dropdown right aligned 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <DropdownToggle
+      <Toggle
         ariaHasPopup={true}
         className=""
         id="Dropdown Toggle"
@@ -3108,7 +3108,7 @@ exports[`dropdown right aligned 1`] = `
             </svg>
           </CaretDownIcon>
         </button>
-      </DropdownToggle>
+      </Toggle>
     </DropdownToggle>
   </div>
 </Dropdown>

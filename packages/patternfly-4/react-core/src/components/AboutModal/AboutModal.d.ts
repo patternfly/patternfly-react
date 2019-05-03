@@ -10,6 +10,7 @@ export interface AboutModalProps extends HTMLProps<HTMLDivElement> {
   brandImageAlt: string;
   logoImageSrc?: string;
   logoImageAlt?: string;
+  noAboutModalBoxContentContainer?: boolean;
 }
 
 declare const AboutModal: FunctionComponent<AboutModalProps>;

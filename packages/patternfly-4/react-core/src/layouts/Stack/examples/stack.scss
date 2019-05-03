@@ -1,0 +1,13 @@
+.ws-preview {
+  & .pf-l-stack {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+  }
+
+  & .pf-l-stack > .pf-l-stack__item {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+  }
+}

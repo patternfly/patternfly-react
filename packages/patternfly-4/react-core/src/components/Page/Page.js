@@ -19,6 +19,10 @@ const propTypes = {
   header: PropTypes.node,
   /** Sidebar component for a side nav (e.g. <PageSidebar />) */
   sidebar: PropTypes.node,
+  /** Skip to content component for the page */
+  skipToContent: PropTypes.node,
+  /** Breadcrumb component for the page */
+  breadcrumb: PropTypes.node,
   /** If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
    * the sidebar component or add a callback onNavToggle function into the PageHeader component */
   isManagedSidebar: PropTypes.bool,
@@ -30,10 +34,12 @@ const propTypes = {
 };
 
 const defaultProps = {
+  breadcrumb: null,
   children: null,
   className: '',
   header: null,
   sidebar: null,
+  skipToContent: null,
   isManagedSidebar: false,
   onPageResize: null
 };
@@ -82,10 +88,22 @@ class Page extends React.Component {
   };
 
   render() {
-    const { className, children, header, sidebar, isManagedSidebar, onPageResize, ...rest } = this.props;
+    const {
+      breadcrumb,
+      className,
+      children,
+      header,
+      sidebar,
+      skipToContent,
+      isManagedSidebar,
+      onPageResize,
+      ...rest
+    } = this.props;
     const { mobileView, mobileIsNavOpen, desktopIsNavOpen } = this.state;
+
     return (
       <div {...rest} className={css(styles.page, className)}>
+        {skipToContent}
         {isManagedSidebar
           ? cloneElement(header, {
               onNavToggle: mobileView ? this.onNavToggleMobile : this.onNavToggleDesktop,
@@ -98,6 +116,8 @@ class Page extends React.Component {
             })
           : sidebar}
         <main role="main" className={css(styles.pageMain)}>
+          {breadcrumb && <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>}
+          {skipToContent && <a id={skipToContent.props.href.replace(/#*/, '')} />}
           {children}
         </main>
       </div>

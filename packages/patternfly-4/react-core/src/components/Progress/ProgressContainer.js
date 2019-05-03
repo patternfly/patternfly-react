@@ -19,6 +19,8 @@ export const ProgressVariant = {
 };
 
 const propTypes = {
+  /** Properties needed for aria support */
+  ariaProps: PropTypes.object.isRequired,
   /** Progress component DOM ID. */
   parentId: PropTypes.string.isRequired,
   /** Progress title. */
@@ -44,7 +46,7 @@ const variantToIcon = {
   [ProgressVariant.success]: CheckCircleIcon
 };
 
-const ProgressContainer = ({ value, title, parentId, label, variant, measureLocation }) => {
+const ProgressContainer = ({ ariaProps, value, title, parentId, label, variant, measureLocation }) => {
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
   return (
     <Fragment>
@@ -61,7 +63,9 @@ const ProgressContainer = ({ value, title, parentId, label, variant, measureLoca
           </span>
         )}
       </div>
-      <ProgressBar value={value}>{measureLocation === ProgressMeasureLocation.inside && `${value}%`}</ProgressBar>
+      <ProgressBar ariaProps={ariaProps} value={value}>
+        {measureLocation === ProgressMeasureLocation.inside && `${value}%`}
+      </ProgressBar>
     </Fragment>
   );
 };

@@ -13,7 +13,7 @@ exports[`Dropdown toggle 1`] = `
   onToggle={[Function]}
   parentRef={null}
 >
-  <DropdownToggle
+  <Toggle
     className=""
     id="Dropdown Toggle"
     isActive={false}
@@ -67,7 +67,7 @@ exports[`Dropdown toggle 1`] = `
         </svg>
       </CaretDownIcon>
     </button>
-  </DropdownToggle>
+  </Toggle>
 </DropdownToggle>
 `;
 
@@ -85,7 +85,7 @@ exports[`Kebab toggle 1`] = `
   onToggle={[Function]}
   parentRef={null}
 >
-  <DropdownToggle
+  <Toggle
     aria-label="Actions"
     className=""
     id="Dropdown Toggle"
@@ -134,6 +134,6 @@ exports[`Kebab toggle 1`] = `
         </svg>
       </EllipsisVIcon>
     </button>
-  </DropdownToggle>
+  </Toggle>
 </Kebab>
 `;

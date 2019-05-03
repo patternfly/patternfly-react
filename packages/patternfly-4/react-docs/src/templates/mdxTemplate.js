@@ -22,7 +22,8 @@ const MdxTemplate = ({ data }) => {
   // Finally, the props for each relevant component!
   const props = data.metadata.edges
     .filter(edge => propComponents.indexOf(edge.node.name) !== -1)
-    .map(edge => { return { name: edge.node.name, props: edge.node.props } });
+    .map(edge => { return { name: edge.node.name, props: edge.node.props } })
+    .sort((e1, e2) => e1.name.localeCompare(e2.name));
 
   const cssPrefix = data.mdx.frontmatter.cssPrefix;
   let section = data.mdx.frontmatter.section;

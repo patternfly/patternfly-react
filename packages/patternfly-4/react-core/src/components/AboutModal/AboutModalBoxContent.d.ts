@@ -1,11 +1,11 @@
 import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
-export interface ModalBoxBodyProps extends HTMLProps<HTMLDivElement> {
+export interface AboutModalBoxContentProps extends HTMLProps<HTMLDivElement> {
   children: ReactNode;
-  tradeMark: string;
+  trademark: string;
   id: string;
 }
 
-declare const ModalBoxBody: FunctionComponent<ModalBoxBodyProps>;
+declare const AboutModalBoxContent: FunctionComponent<AboutModalBoxContentProps>;
 
-export default ModalBoxBody;
+export default AboutModalBoxContent;

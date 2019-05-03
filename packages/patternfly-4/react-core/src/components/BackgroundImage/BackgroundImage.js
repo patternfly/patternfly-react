@@ -71,7 +71,7 @@ const BackgroundImage = ({ className, src, ...props }) => {
         {}
       )}
     }`
-  });
+    });
 
   return (
     <div className={css(styles.backgroundImage, bgStyles.bgOverrides, className)}>

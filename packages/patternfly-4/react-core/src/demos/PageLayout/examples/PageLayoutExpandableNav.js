@@ -2,6 +2,8 @@ import React from 'react';
 import {
   Avatar,
   Brand,
+  Breadcrumb,
+  BreadcrumbItem,
   Button,
   ButtonVariant,
   Card,
@@ -22,6 +24,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  SkipToContent,
   TextContent,
   Text,
   Toolbar,
@@ -190,10 +193,29 @@ class PageLayoutExpandableNav extends React.Component {
       />
     );
     const Sidebar = <PageSidebar nav={PageNav} />;
+    const PageBreadcrumb = (
+      <Breadcrumb>
+        <BreadcrumbItem>Section Home</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+        <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
+        <BreadcrumbItem to="#" isActive>
+          Section Landing
+        </BreadcrumbItem>
+      </Breadcrumb>
+    );
+    const PageSkipToContent = (
+      <SkipToContent href="#main-content-page-layout-expandable-nav">Skip to Content</SkipToContent>
+    );
 
     return (
       <React.Fragment>
-        <Page header={Header} sidebar={Sidebar} isManagedSidebar>
+        <Page
+          header={Header}
+          sidebar={Sidebar}
+          isManagedSidebar
+          skipToContent={PageSkipToContent}
+          breadcrumb={PageBreadcrumb}
+        >
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>

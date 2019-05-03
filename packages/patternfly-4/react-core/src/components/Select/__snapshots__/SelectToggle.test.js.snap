@@ -2,10 +2,11 @@
 
 exports[`state active 1`] = `
 <SelectToggle
+  ariaLabelToggle={null}
+  ariaLabelledBy={null}
   className=""
   id="Select Toggle"
   isActive={true}
-  isCheckbox={false}
   isExpanded={false}
   isFocused={false}
   isHovered={false}
@@ -15,10 +16,12 @@ exports[`state active 1`] = `
   onToggle={[Function]}
   parentRef={<div />}
   type="button"
+  variant={false}
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
+    aria-labelledby={null}
     className="pf-c-select__toggle pf-m-active"
     id="Select Toggle"
     onClick={[Function]}
@@ -59,10 +62,11 @@ exports[`state active 1`] = `
 
 exports[`state focus 1`] = `
 <SelectToggle
+  ariaLabelToggle={null}
+  ariaLabelledBy={null}
   className=""
   id="Select Toggle"
   isActive={false}
-  isCheckbox={false}
   isExpanded={false}
   isFocused={true}
   isHovered={false}
@@ -72,10 +76,12 @@ exports[`state focus 1`] = `
   onToggle={[Function]}
   parentRef={<div />}
   type="button"
+  variant={false}
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
+    aria-labelledby={null}
     className="pf-c-select__toggle pf-m-focus"
     id="Select Toggle"
     onClick={[Function]}
@@ -116,10 +122,11 @@ exports[`state focus 1`] = `
 
 exports[`state hover 1`] = `
 <SelectToggle
+  ariaLabelToggle={null}
+  ariaLabelledBy={null}
   className=""
   id="Select Toggle"
   isActive={false}
-  isCheckbox={false}
   isExpanded={false}
   isFocused={false}
   isHovered={true}
@@ -129,10 +136,12 @@ exports[`state hover 1`] = `
   onToggle={[Function]}
   parentRef={<div />}
   type="button"
+  variant={false}
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
+    aria-labelledby={null}
     className="pf-c-select__toggle pf-m-hover"
     id="Select Toggle"
     onClick={[Function]}

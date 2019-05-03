@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-styled-system",
-  "version": "3.2.0",
+  "version": "3.4.1",
   "description": "Experimental: Styled System package with PatternFly 4 theming",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -30,11 +30,12 @@
     "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm'",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
   },
   "dependencies": {
-    "@patternfly/react-styles": "^3.1.0",
-    "@patternfly/react-tokens": "^2.3.4",
+    "@patternfly/react-styles": "^3.2.0",
+    "@patternfly/react-tokens": "^2.5.1",
     "emotion-theming": "^9.2.9",
     "react-emotion": "^9.2.9",
     "styled-system": "^3.1.11"
@@ -44,7 +45,7 @@
     "react": "^16.4.0"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "2.5.0",
+    "@patternfly/patternfly": "2.6.5",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",

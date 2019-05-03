@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.5.1 (2019-04-29)
+
+
+### Bug Fixes
+
+* **version:** bump patternfly version to 2.6.5 ([#1874](https://github.com/patternfly/patternfly-react/issues/1874)) ([e3c8d7c](https://github.com/patternfly/patternfly-react/commit/e3c8d7c))
+
+
+
+
+
+# [2.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.4.0...@patternfly/react-tokens@2.5.0) (2019-04-25)
+
+
+### Features
+
+* **build:** incremental build ([#1817](https://github.com/patternfly/patternfly-react/issues/1817)) ([6bd3d7e](https://github.com/patternfly/patternfly-react/commit/6bd3d7e))
+
+
+
+
+
+# 2.4.0 (2019-04-24)
+
+
+### Features
+
+* **clipboard:** remove textarea from clipboard copy ([#1840](https://github.com/patternfly/patternfly-react/issues/1840)) ([8bb26a2](https://github.com/patternfly/patternfly-react/commit/8bb26a2))
+
+
+
+
+
 ## 2.3.4 (2019-04-18)
 
 **Note:** Version bump only for package @patternfly/react-tokens

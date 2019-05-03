@@ -4,6 +4,6 @@ section: 'demos'
 fullscreen: true
 ---
 
-import ExamplePage from './PageLayoutExpandableNav';
+import PageLayoutExpandableNav from './PageLayoutExpandableNav';
 
-<ExamplePage />
+<PageLayoutExpandableNav />

@@ -8,32 +8,34 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
 
 const propTypes = {
-  /** content rendered inside the About Modal. */
+  /** Content rendered inside the about modal */
   children: PropTypes.node.isRequired,
-  /** additional classes added to the About Modal */
+  /** Additional classes added to the about modal */
   className: PropTypes.string,
-  /** Flag to show the  About modal */
+  /** Flag to show the about modal */
   isOpen: PropTypes.bool,
   /** A callback for when the close button is clicked */
   onClose: PropTypes.func,
-  /** Product Name */
+  /** Product name */
   productName: PropTypes.string,
   /** Trademark information */
   trademark: PropTypes.string,
-  /** the URL of the image for the Brand. */
+  /** The URL of the image for the brand */
   brandImageSrc: PropTypes.string.isRequired,
-  /** the alternate text of the Brand image. */
+  /** The alternate text of the brand image */
   brandImageAlt: PropTypes.string.isRequired,
-  /** the URL of the image for the Logo. */
+  /** The URL of the image for the logo */
   logoImageSrc: PropTypes.string,
-  /** the alternate text of the Logo image. */
+  /** The alternate text of the logo image */
   logoImageAlt: props => {
     if (props.logoImageSrc && !props.logoImageAlt) {
       return new Error('logoImageAlt is required when a logoImageSrc is specified');
     }
     return null;
   },
-  /** Additional props are passed and spread to Modal content container <div> */
+  /** Prevents the about modal from rendering content inside a container; allows for more flexible layouts */
+  noAboutModalBoxContentContainer: PropTypes.bool,
+  /** Additional props are passed and spread to the modal content container <div> */
   '': PropTypes.any
 };
 
@@ -44,7 +46,8 @@ const defaultProps = {
   productName: '',
   trademark: '',
   logoImageSrc: '',
-  logoImageAlt: ''
+  logoImageAlt: '',
+  noAboutModalBoxContentContainer: false
 };
 
 let currentId = 0;
