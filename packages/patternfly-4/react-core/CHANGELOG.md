@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.16.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.10...@patternfly/react-core@3.16.11) (2019-05-03)
+
+
+### Bug Fixes
+
+* **dropitems:** updates to drop down item and skip to content api ([#1924](https://github.com/patternfly/patternfly-react/issues/1924)) ([a21f5fb](https://github.com/patternfly/patternfly-react/commit/a21f5fb))
+
+
+
+
+
 ## [3.16.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.9...@patternfly/react-core@3.16.10) (2019-05-01)
 
 
