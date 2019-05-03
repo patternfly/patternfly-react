@@ -17,7 +17,7 @@ export const ButtonType: {
 
 export interface ButtonProps extends HTMLProps<HTMLButtonElement> {
   children?: ReactNode;
-  component?: ReactType<ButtonProps>;
+  component?: ReactType | string;
   isActive?: boolean;
   isBlock?: boolean;
   isDisabled?: boolean;
@@ -26,6 +26,7 @@ export interface ButtonProps extends HTMLProps<HTMLButtonElement> {
   isInline?: boolean;
   variant?: OneOf<typeof ButtonVariant, keyof typeof ButtonVariant>;
   type?: OneOf<typeof ButtonType, keyof typeof ButtonType>;
+  to?: string
 }
 
 declare const Button: FunctionComponent<ButtonProps>;
