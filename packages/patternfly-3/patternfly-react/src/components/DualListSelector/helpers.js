@@ -10,6 +10,9 @@ export const filterByHiding = (list, value) => {
       if (isItemHiddenByFilter(item)) {
         let childrenIncludedAmount = 0;
         item.children.forEach(childItem => {
+          if(childItem.hidden){
+            return;
+          }
           const childLabel = childItem.label.toLowerCase();
           const childIncluded = childLabel.includes(filterValue);
           childItem.hiddenByFilter = !childIncluded;
@@ -134,16 +137,24 @@ export const isAllChildrenChecked = ({ children }) =>
 
 export const getItemsLength = items => {
   let { length } = items;
+  let hiddenItemsAmount = 0;
   if (length === 0) {
     return 0;
   }
-  items.forEach(({ children }) => {
+  items.forEach(({ hidden , children }) => {
+    if(hidden){
+      hiddenItemsAmount += 1;
+    }
     if (children) {
-      // add the children amount and reduce the parent.
-      length += children.length - 1;
+      length -= 1;
+      children.forEach(child => {
+        if(!child.hidden){
+          length += 1;
+        }
+      })
     }
   });
-  return length;
+  return length - hiddenItemsAmount;
 };
 
 export const reverseAllItemsOrder = items => {
@@ -172,7 +183,7 @@ export const getItemPosition = (array, position, isSortAsc) => (isSortAsc ? posi
 export const toggleAllItems = (list, checked) => {
   let toggleCount = 0;
   list.forEach(item => {
-    if (item.disabled) {
+    if (item.disabled || item.hidden) {
       return;
     }
     if (item.checked !== checked) {
@@ -182,6 +193,9 @@ export const toggleAllItems = (list, checked) => {
     if (itemHasChildren(item)) {
       let childrenToggleCount = 0;
       item.children.forEach(childItem => {
+        if (childItem.disabled || childItem.hidden) {
+          return;
+        }
         if (childItem.checked !== checked) {
           childItem.checked = checked;
           childrenToggleCount += 1;
