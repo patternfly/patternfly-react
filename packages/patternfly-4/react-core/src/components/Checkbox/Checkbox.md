@@ -17,7 +17,7 @@ class ControlledCheckbox extends React.Component {
       check1: false,
       check2: false
     };
-    this.handleChange = checked => {
+    this.handleChange = (checked, event) => {
       const target = event.target;
       const value = target.type === 'checkbox' ? target.checked : target.value;
       const name = target.name;
@@ -34,6 +34,7 @@ class ControlledCheckbox extends React.Component {
           onChange={this.handleChange}
           aria-label="controlled checkbox example"
           id="check-1"
+          name="check1"
         />
         <Checkbox
           label="Controlled CheckBox"
@@ -41,6 +42,7 @@ class ControlledCheckbox extends React.Component {
           onChange={this.handleChange}
           aria-label="controlled checkbox example"
           id="check-2"
+          name="check2"
         />
       </React.Fragment>
     );
