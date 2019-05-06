@@ -1,5 +1,7 @@
-const fs = require('fs')
-const docgenJavascript = require('react-docgen')
+const fs = require('fs');
+const path = require('path');
+const docgenJavascript = require('react-docgen');
+const typedoc = require('typedoc');
 
 function isSource(node) {
   if (!node ||
@@ -52,15 +54,7 @@ async function onCreateNode({
   const sourceText = await loadNodeContent(node);
   let parsed = null;
   try {
-    if (isTSX(node)) {
-      // Load up the already transpiled file
-      const transpiledPath = node.absolutePath
-        .replace(/react-(.*)\/src/, 'react-$1/dist/esm')
-        .replace(/\.tsx?$/, '.js');
-      const jsText = fs.readFileSync(transpiledPath, 'utf8');
-      parsed = docgenJavascript.parse(jsText);
-    }
-    else if (isJSX(node)) {
+    if (isJSX(node)) {
       parsed = docgenJavascript.parse(sourceText);
     }
   } catch (err) {
@@ -87,4 +81,48 @@ async function onCreateNode({
   }
 }
 
-exports.onCreateNode = onCreateNode
+async function sourceNodes (
+  { actions, createNodeId, createContentDigest },
+  configOptions
+) {
+  const processTypeDoc = generated => {
+    const nodeId = createNodeId(`typedoc-default`);
+    return {
+      modules: generated.children,
+      id: nodeId,
+      internal: {
+        type: 'Typedoc',
+        contentDigest: createContentDigest(generated)
+      }
+    };
+  }
+
+  const { typedoc: typedocOptions } = configOptions;
+  const app = new typedoc.Application({
+    tsconfig: typedocOptions.tsconfig,
+    ignoreCompilerErrors: true,
+  });
+  const expanded = app.expandInputFiles(typedocOptions.src)
+    .filter(fname =>
+      !fname.match(/.d.ts$/) &&
+      !fname.match(/index.tsx?$/) &&
+      !fname.match(/.*helpers.*/) &&
+      !fname.match(/.test.tsx?$/));
+  console.log('expanded', expanded);
+  const project = app.convert(expanded);
+
+  let generated = false;
+  if (project) {
+    const generatedFile = path.join(__dirname, '.cache', 'typedoc.json');
+    generated = app.generateJson(project, generatedFile);
+    const nodeData = processTypeDoc(JSON.parse(fs.readFileSync(generatedFile, 'utf-8')));
+    actions.createNode(nodeData);
+  } else {
+    console.error('Failed to generate TS proptypes');
+  }
+
+  return Promise.resolve(generated);
+};
+
+exports.onCreateNode = onCreateNode;
+exports.sourceNodes = sourceNodes;
