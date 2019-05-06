@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.16.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.13...@patternfly/react-core@3.16.14) (2019-05-06)
+
+
+### Bug Fixes
+
+* **BackgroundImage:** fixed background image spacing issue  ([#1923](https://github.com/patternfly/patternfly-react/issues/1923)) ([ce38bae](https://github.com/patternfly/patternfly-react/commit/ce38bae))
+
+
+
+
+
 ## [3.16.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.12...@patternfly/react-core@3.16.13) (2019-05-06)
 
 
