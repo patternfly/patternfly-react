@@ -1,19 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates console error 1`] = `
-<Form
+<Component
   className=""
-  isHorizontal={false}
 >
-  <FormHelperText
-    className=""
+  <Component
     isError={false}
     isHidden={true}
   />
-  <FormGroup
-    className=""
+  <Component
     fieldId="pf-login-username-id"
-    isInline={false}
     isRequired={true}
     isValid={true}
     label="Username"
@@ -31,11 +27,9 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
       type="text"
       value=""
     />
-  </FormGroup>
-  <FormGroup
-    className=""
+  </Component>
+  <Component
     fieldId="pf-login-password-id"
-    isInline={false}
     isRequired={true}
     isValid={true}
     label="Password"
@@ -53,13 +47,9 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
       type="password"
       value=""
     />
-  </FormGroup>
-  <FormGroup
-    className=""
+  </Component>
+  <Component
     fieldId="pf-login-remember-me-id"
-    isInline={false}
-    isRequired={false}
-    isValid={true}
   >
     <Checkbox
       aria-label=""
@@ -72,10 +62,8 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
       label="remember me"
       onChange={[MockFunction]}
     />
-  </FormGroup>
-  <ActionGroup
-    className=""
-  >
+  </Component>
+  <Component>
     <Button
       aria-label={null}
       className=""
@@ -92,24 +80,20 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
     >
       Log In
     </Button>
-  </ActionGroup>
-</Form>
+  </Component>
+</Component>
 `;
 
 exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generates console error 1`] = `
-<Form
+<Component
   className=""
-  isHorizontal={false}
 >
-  <FormHelperText
-    className=""
+  <Component
     isError={false}
     isHidden={true}
   />
-  <FormGroup
-    className=""
+  <Component
     fieldId="pf-login-username-id"
-    isInline={false}
     isRequired={true}
     isValid={true}
     label="Username"
@@ -127,11 +111,9 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
       type="text"
       value=""
     />
-  </FormGroup>
-  <FormGroup
-    className=""
+  </Component>
+  <Component
     fieldId="pf-login-password-id"
-    isInline={false}
     isRequired={true}
     isValid={true}
     label="Password"
@@ -149,13 +131,9 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
       type="password"
       value=""
     />
-  </FormGroup>
-  <FormGroup
-    className=""
+  </Component>
+  <Component
     fieldId="pf-login-remember-me-id"
-    isInline={false}
-    isRequired={false}
-    isValid={true}
   >
     <Checkbox
       aria-label="remember me"
@@ -168,10 +146,8 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
       label="remember me"
       onChange={[MockFunction]}
     />
-  </FormGroup>
-  <ActionGroup
-    className=""
-  >
+  </Component>
+  <Component>
     <Button
       aria-label={null}
       className=""
@@ -188,24 +164,20 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
     >
       Log In
     </Button>
-  </ActionGroup>
-</Form>
+  </Component>
+</Component>
 `;
 
 exports[`should render Login form 1`] = `
-<Form
+<Component
   className=""
-  isHorizontal={false}
 >
-  <FormHelperText
-    className=""
+  <Component
     isError={false}
     isHidden={true}
   />
-  <FormGroup
-    className=""
+  <Component
     fieldId="pf-login-username-id"
-    isInline={false}
     isRequired={true}
     isValid={true}
     label="Username"
@@ -223,11 +195,9 @@ exports[`should render Login form 1`] = `
       type="text"
       value=""
     />
-  </FormGroup>
-  <FormGroup
-    className=""
+  </Component>
+  <Component
     fieldId="pf-login-password-id"
-    isInline={false}
     isRequired={true}
     isValid={true}
     label="Password"
@@ -245,10 +215,8 @@ exports[`should render Login form 1`] = `
       type="password"
       value=""
     />
-  </FormGroup>
-  <ActionGroup
-    className=""
-  >
+  </Component>
+  <Component>
     <Button
       aria-label={null}
       className=""
@@ -265,6 +233,6 @@ exports[`should render Login form 1`] = `
     >
       Log In
     </Button>
-  </ActionGroup>
-</Form>
+  </Component>
+</Component>
 `;
