@@ -26,16 +26,6 @@ class VirtualizedRowWrapper extends React.Component {
     return Math.ceil(el.offsetHeight + margin);
   };
 
-  static shouldComponentUpdate(nextProps) {
-    const { columns, rowData } = this.props;
-    // Update only if a row has not been measured and either
-    // columns or rowData hasn't changed
-    if (nextProps.rowData._measured) {
-      return !(columnsAreEqual(columns, nextProps.columns) && isEqual(rowData, nextProps.rowData));
-    }
-    return true;
-  }
-
   componentDidMount() {
     this.updateRowHeight();
   }
