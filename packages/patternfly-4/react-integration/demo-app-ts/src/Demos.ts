@@ -15,12 +15,20 @@ export const Demos = [
     componentType: Examples.NavDemo
   },
   {
+    name: 'Popover Demo',
+    componentType: Examples.PopoverDemo
+  },
+  {
     name: 'Tab Demo',
     componentType: Examples.TabDemo
   },
   {
     name: 'Title Demo',
     componentType: Examples.TitleDemo
+  },
+  {
+    name: 'Tooltip Demo',
+    componentType: Examples.TooltipDemo
   },
   {
     name: 'Wizard Demo',

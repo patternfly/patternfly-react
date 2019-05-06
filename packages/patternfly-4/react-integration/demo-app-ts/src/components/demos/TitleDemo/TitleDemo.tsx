@@ -9,7 +9,7 @@ export class TitleDemo extends Component {
   render() {
     return (
     <React.Fragment>
-      <Title style={{ color: '#fff', padding: '12px 0' }} size={this.myTitleProps.size} headingLevel={this.myTitleProps.headingLevel}>
+      <Title size={this.myTitleProps.size} headingLevel={this.myTitleProps.headingLevel}>
         Integration Demo App
       </Title>
     </React.Fragment>
