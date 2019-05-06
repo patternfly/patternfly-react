@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.9.0 (2019-05-06)
+
+
+### Features
+
+* **Icons:** Add font awesome brands icons ([#1669](https://github.com/patternfly/patternfly-react/issues/1669)) ([1c58036](https://github.com/patternfly/patternfly-react/commit/1c58036))
+
+
+
+
+
 ## 3.8.1 (2019-04-29)
 
 
