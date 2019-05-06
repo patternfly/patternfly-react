@@ -9,12 +9,14 @@ exports[`BackgroundImage 1`] = `
   className="pf-c-background-image css-va8362"
 >
   <svg
-    className="svg-filter"
+    className="pf-c-background-image__filter"
+    height="0"
+    width="0"
     xmlns="http://www.w3.org/2000/svg"
   >
     <filter
       id="image_overlay"
-      width="100%"
+      width=""
     >
       <feColorMatrix
         type="matrix"
@@ -55,12 +57,14 @@ exports[`BackgroundImage 2`] = `
   className="pf-c-background-image css-va8362"
 >
   <svg
-    className="svg-filter"
+    className="pf-c-background-image__filter"
+    height="0"
+    width="0"
     xmlns="http://www.w3.org/2000/svg"
   >
     <filter
       id="image_overlay"
-      width="100%"
+      width=""
     >
       <feColorMatrix
         type="matrix"
@@ -101,12 +105,14 @@ exports[`allows passing in a single string as the image src 1`] = `
   className="pf-c-background-image css-15v5rkq"
 >
   <svg
-    className="svg-filter"
+    className="pf-c-background-image__filter"
+    height="0"
+    width="0"
     xmlns="http://www.w3.org/2000/svg"
   >
     <filter
       id="image_overlay"
-      width="100%"
+      width=""
     >
       <feColorMatrix
         type="matrix"
