@@ -35,7 +35,7 @@ module.exports = {
     '<rootDir>/packages/patternfly-4/react-integration/',
     '<rootDir>/node_modules/(?!lodash-es/.*)'
   ],
-  transformIgnorePatterns: ['node_modules/(?!@patternfly|@novnc|tippy.js)'],
+  transformIgnorePatterns: ['node_modules/(?!@patternfly|@novnc|tippy.js|lodash-es)'],
   // https://github.com/kulshekhar/ts-jest/blob/master/docs/user/config/index.md
   preset: 'ts-jest/presets/js-with-babel',
   globals: {

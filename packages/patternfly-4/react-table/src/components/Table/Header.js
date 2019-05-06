@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from 'reactabular-table';
+import { Header } from './base';
 import PropTypes from 'prop-types';
 import { TableContext } from './Table';
 

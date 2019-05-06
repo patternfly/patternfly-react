@@ -1,5 +1,5 @@
 import React from 'react';
-import { Body } from 'reactabular-table';
+import { Body } from './base';
 import PropTypes from 'prop-types';
 import { TableContext } from './Table';
 import { isRowExpanded } from './utils';

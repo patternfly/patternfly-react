@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '@patternfly/patternfly/components/Table/table.css';
 import stylesGrid from '@patternfly/patternfly/components/Table/table-grid.css';
-import { Provider } from 'reactabular-table';
+import { Provider } from './base';
 import { DropdownPosition, DropdownDirection } from '@patternfly/react-core';
 import { css, getModifier } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';

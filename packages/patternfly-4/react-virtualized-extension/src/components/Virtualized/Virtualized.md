@@ -141,7 +141,7 @@ class SortableExample extends React.Component {
         aria-rowcount={rows.length}
       >
         <TableHeader />
-        <VirtualizedBody height={400} rowKey="id" tableBody={this.tableBody} />
+        <VirtualizedBody height={400} rowKey="id" ref={this.tableBody} />
       </Table>
     );
   }

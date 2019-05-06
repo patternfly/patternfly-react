@@ -6,7 +6,7 @@ import calculateRows from './utils/calculateRows';
 import createDetectElementResize from './utils/detectElementResize';
 
 const initialContext = {
-  amountOfRowsToRender: 3, // First few rows for initial measurement
+  amountOfRowsToRender: 0,
   startIndex: 0, // Index where to start rendering
   startHeight: 0, // Heights for extra rows to mimic scrolling
   endHeight: 0,
@@ -201,11 +201,7 @@ class Body extends React.Component {
     }
 
     const style = { height };
-    if (!container) {
-      // if we do not have a parent container to scroll, set the body to scroll
-      style.display = 'block';
-      style.overflow = 'auto';
-    }
+
     const tableBodyProps = {
       ...props,
       height,
@@ -219,9 +215,12 @@ class Body extends React.Component {
       rowsToRender
     };
 
-    // do not listen to tbody onScroll if we are using window scroller
     if (!container) {
+      // do not listen to tbody onScroll if we are using window scroller
       tableBodyProps.onScroll = this.onScroll;
+      // if we do not have a parent container to scroll, set the body to scroll
+      tableBodyProps.style.display = 'block';
+      tableBodyProps.style.overflow = 'auto';
     }
 
     return (
@@ -253,11 +252,12 @@ Body.defaultProps = {
   container: undefined
 };
 
-const VirtualizedBody = ({ tableBody, ...props }) => (
+// eslint-disable-next-line react/no-multi-comp
+const VirtualizedBody = React.forwardRef((props, ref) => (
   <TableContext.Consumer>
-    {({ headerData, rows }) => <Body {...props} ref={tableBody} headerData={headerData} rows={rows} />}
+    {({ headerData, rows }) => <Body {...props} ref={ref} headerData={headerData} rows={rows} />}
   </TableContext.Consumer>
-);
+));
 
 VirtualizedBody.defaultProps = TableBody.defaultProps;
 VirtualizedBody.propTypes = {
