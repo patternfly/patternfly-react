@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.9.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.9.0...@patternfly/react-icons@3.9.1) (2019-05-06)
+
+
+### Bug Fixes
+
+* **React Icons documentation:** fix React Icons documentation link to all Patternfly React Icons. ([#1868](https://github.com/patternfly/patternfly-react/issues/1868)) ([54d5404](https://github.com/patternfly/patternfly-react/commit/54d5404)), closes [#1841](https://github.com/patternfly/patternfly-react/issues/1841)
+
+
+
+
+
 # 3.9.0 (2019-05-06)
 
 

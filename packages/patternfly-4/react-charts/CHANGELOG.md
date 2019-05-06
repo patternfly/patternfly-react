@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.4.3 (2019-05-06)
+
+
+### Bug Fixes
+
+* **charts:** Fix chart font stack to use PatternFly core sans-serif font stack ([#1865](https://github.com/patternfly/patternfly-react/issues/1865)) ([f2b4cc7](https://github.com/patternfly/patternfly-react/commit/f2b4cc7)), closes [#1864](https://github.com/patternfly/patternfly-react/issues/1864)
+* **DualList:** Hide dropdown when no menu items are provided ([#1909](https://github.com/patternfly/patternfly-react/issues/1909)) ([8ed397e](https://github.com/patternfly/patternfly-react/commit/8ed397e))
+
+
+
+
+
 ## [3.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.4.1...@patternfly/react-charts@3.4.2) (2019-04-30)
 
 **Note:** Version bump only for package @patternfly/react-charts
