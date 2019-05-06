@@ -8,8 +8,7 @@ export interface AboutModalProps extends HTMLProps<HTMLDivElement> {
   trademark?: string;
   brandImageSrc: string;
   brandImageAlt: string;
-  logoImageSrc?: string;
-  logoImageAlt?: string;
+  backgroundImageSrc?: string;
   noAboutModalBoxContentContainer?: boolean;
 }
 
