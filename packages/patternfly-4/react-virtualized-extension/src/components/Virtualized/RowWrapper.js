@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isEqual } from 'lodash-es';
-import { columnsAreEqual } from 'reactabular-table';
 import { RowWrapper } from '@patternfly/react-table';
 import { VirtualizedBodyContext } from './Body';
 

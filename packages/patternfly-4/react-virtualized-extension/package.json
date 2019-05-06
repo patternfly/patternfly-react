@@ -31,8 +31,7 @@
     "@patternfly/react-core": "^3.16.10",
     "@patternfly/react-icons": "^3.8.1",
     "@patternfly/react-styles": "^3.2.0",
-    "exenv": "^1.2.2",
-    "reactabular-table": "^8.14.0"
+    "exenv": "^1.2.2"
   },
   "peerDependencies": {
     "@patternfly/react-table": "^2.5.11",
