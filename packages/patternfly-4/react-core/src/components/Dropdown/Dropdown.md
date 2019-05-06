@@ -3,8 +3,9 @@ title: 'Dropdown'
 cssPrefix: 'pf-c-dropdown'
 ---
 
-import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
+import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, DropdownGroup } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
+
 ## Simple dropdown
 
 ```js
@@ -61,7 +62,7 @@ class SimpleDropdown extends React.Component {
 }
 ```
 
-## Dropdown with Groups
+## Dropdown with groups
 
 ```js
 import React from 'react';
