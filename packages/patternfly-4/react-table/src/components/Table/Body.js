@@ -10,16 +10,13 @@ const propTypes = {
   /** Specify key which should be used for labeling each row. */
   rowKey: PropTypes.string,
   /** Function that is fired when user clicks on row.  */
-  onRowClick: PropTypes.func,
-  /** Virtualized rows (optional provided in place of rows) */
-  rowsToRender: PropTypes.array
+  onRowClick: PropTypes.func
 };
 
 const defaultProps = {
   rowKey: 'id',
   className: '',
-  onRowClick: () => undefined,
-  rowsToRender: undefined
+  onRowClick: () => undefined
 };
 
 const flagVisibility = rows => {
@@ -85,7 +82,7 @@ class ContextBody extends React.Component {
   };
 
   render() {
-    const { className, headerData, rows, rowKey, rowsToRender, children, onRowClick, ...props } = this.props;
+    const { className, headerData, rows, rowKey, children, onRowClick, ...props } = this.props;
 
     let mappedRows;
     if (headerData.length > 0) {
@@ -120,7 +117,7 @@ class ContextBody extends React.Component {
 
 const TableBody = props => (
   <TableContext.Consumer>
-    {({ headerData, rows }) => <ContextBody headerData={headerData} rows={props.rowsToRender || rows} {...props} />}
+    {({ headerData, rows }) => <ContextBody headerData={headerData} rows={rows} {...props} />}
   </TableContext.Consumer>
 );
 

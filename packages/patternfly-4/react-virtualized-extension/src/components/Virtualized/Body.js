@@ -212,7 +212,7 @@ class Body extends React.Component {
         'aria-rowindex': row['aria-rowindex'],
         ...(onRow ? onRow(row, extra) : {})
       }),
-      rowsToRender
+      rows: rowsToRender
     };
 
     if (!container) {
@@ -252,12 +252,11 @@ Body.defaultProps = {
   container: undefined
 };
 
-// eslint-disable-next-line react/no-multi-comp
-const VirtualizedBody = React.forwardRef((props, ref) => (
+const VirtualizedBody = ({ tableBody, ...props }) => (
   <TableContext.Consumer>
-    {({ headerData, rows }) => <Body {...props} ref={ref} headerData={headerData} rows={rows} />}
+    {({ headerData, rows }) => <Body {...props} ref={tableBody} headerData={headerData} rows={rows} />}
   </TableContext.Consumer>
-));
+);
 
 VirtualizedBody.defaultProps = TableBody.defaultProps;
 VirtualizedBody.propTypes = {
@@ -267,8 +266,6 @@ VirtualizedBody.propTypes = {
   rowKey: PropTypes.string,
   /** Function that is fired when user clicks on row.  */
   onRowClick: PropTypes.func,
-  /** Virtualized rows (optional provided in place of rows) */
-  rowsToRender: PropTypes.array,
   /** the height of the body or window container */
   height: heightPropCheck,
   /** a callback return the container ref */
