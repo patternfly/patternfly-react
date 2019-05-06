@@ -44,8 +44,8 @@
   "scripts": {
     "build": "yarn build:babel && yarn build:ts",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
-    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
-    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
+    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js -q",
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm -q",
     "build:ts": "node ./scripts/copyTS.js",
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose",
     "postbuild": "node ./build/copyStyles.js"
