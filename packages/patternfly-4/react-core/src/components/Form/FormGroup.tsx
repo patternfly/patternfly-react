@@ -39,7 +39,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   ...props
 }) => (
   <FormContext.Consumer>
-    {({ isHorizontal }) => (
+    {({ isHorizontal }: { isHorizontal: boolean }) => (
       <div {...props} className={css(styles.formGroup, !isInline ? getModifier(styles, 'inline', className) : '')}>
         {label && (
           <label className={css(styles.formLabel)} htmlFor={fieldId}>

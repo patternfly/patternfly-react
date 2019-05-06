@@ -19,7 +19,7 @@ export const ActionGroup: React.FunctionComponent<ActionGroupProps> = ({
   const formActionsComponent = <div className={css(styles.formActions)}>{children}</div>;
   return (
     <FormContext.Consumer>
-      {({ isHorizontal }) => (
+      {({ isHorizontal }: { isHorizontal: boolean }) => (
         <div {...props} className={customClassName}>
           {isHorizontal ? <div className={classesHorizontal}>{formActionsComponent}</div> : formActionsComponent}
         </div>
