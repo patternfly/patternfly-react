@@ -1578,14 +1578,13 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   closeBtnAriaLabel="close"
                   component="li"
                   isOverflowChip={true}
-                  isReadOnly={false}
                   onClick={[Function]}
                   tooltipPosition="top"
                 >
                   <GenerateId
                     prefix="pf-random-id-"
                   >
-                    <li
+                    <div
                       className="pf-c-chip pf-m-overflow"
                     >
                       <ChipButton
@@ -1602,7 +1601,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                           isDisabled={false}
                           isFocus={false}
                           isHover={false}
-                          isInline={false}
                           onClick={[Function]}
                           type="button"
                           variant="plain"
@@ -1624,7 +1622,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                           </button>
                         </Button>
                       </ChipButton>
-                    </li>
+                    </div>
                   </GenerateId>
                 </Chip>
               </InnerChipGroup>
