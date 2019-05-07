@@ -2,7 +2,7 @@
 
 exports[`ClassificationBanner renders properly 1`] = `
 <ClassificationBanner
-  bannerColor="pf-green"
+  bannerColor=""
   bottomBanner={true}
   closeButton={false}
   closed={true}
