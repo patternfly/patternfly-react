@@ -1,10 +1,10 @@
 {
-  "name": "demo-app-ts",
+  "name": "@patternfly/demo-app-ts",
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build:demo": "react-scripts build",
-    "start:demo": "react-scripts start"
+    "build": "react-scripts build",
+    "start:demo-app": "react-scripts start"
   },
   "dependencies": {
     "@patternfly/react-core": "file:../../react-core",

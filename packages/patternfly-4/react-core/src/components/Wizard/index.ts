@@ -1,8 +1,8 @@
 export * from './Wizard';
-export { WizardContextConsumer } from './WizardContext';
-export { WizardNav } from './WizardNav';
-export { WizardNavItem } from './WizardNavItem';
-export { WizardHeader } from './WizardHeader';
+export * from './WizardContext';
+export * from './WizardNav';
+export * from './WizardNavItem';
+export * from './WizardHeader';
 export * from './WizardBody';
-export { WizardFooter } from './WizardFooter';
-export { WizardToggle } from './WizardToggle';
+export * from './WizardFooter';
+export * from './WizardToggle';
