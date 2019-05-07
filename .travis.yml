@@ -80,11 +80,12 @@ jobs:
       install: skip
       script:
         - yarn build:docs
-    - name: Lint and Stylelint
+    - name: Lint, Stylelint, and TSLint
       install: skip
       script:
         - yarn lint || true # Disable linting failing build (for now)
         - yarn lint:style
+        - yarn tslint
     
     - stage: Deploy
       name: NPM and Github Release

@@ -26,6 +26,7 @@
     "clean": "rimraf cypress/videos cypress/screenshots",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
+    "lint:ts": "tslint -p tsconfig.json",
     "test:integration": "node ./scripts/server.js"
   },
   "dependencies": {
