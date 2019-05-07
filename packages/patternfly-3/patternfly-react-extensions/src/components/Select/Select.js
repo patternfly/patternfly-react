@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import EllipsisWithTooltip from 'react-ellipsis-with-tooltip';
-import { Spinner, Button, ListGroup, ListGroupItem, TypeAheadSelect } from 'patternfly-react';
+import { Spinner, Button, ListGroup, TypeAheadSelect } from 'patternfly-react';
 import { noop } from '../../common/helpers';
 import { createItemProps } from './SelectHelper';
 import SelectInput from './SelectInput';
@@ -29,12 +29,12 @@ const Select = ({
 
   const renderResults = results =>
     results.length === 0 ? (
-      <ListGroupItem id="select-empty" key="empty" className="select-empty-list">
+      <ListGroup.ListGroupItem id="select-empty" key="empty" className="select-empty-list">
         <span id="empty-text">{emptyText}</span>
-      </ListGroupItem>
+      </ListGroup.ListGroupItem>
     ) : (
       results.map((opt, i) => (
-        <ListGroupItem {...createItemProps(opt, selectedItem, opt.className || 'no-border', onItemClick)}>
+        <ListGroup.ListGroupItem {...createItemProps(opt, selectedItem, opt.className || 'no-border', onItemClick)}>
           <EllipsisWithTooltip>
             {searchValue && searchValue.length ? (
               <TypeAheadSelect.Highlighter search={searchValue}>{opt.name}</TypeAheadSelect.Highlighter>
@@ -42,7 +42,7 @@ const Select = ({
               opt.name
             )}
           </EllipsisWithTooltip>
-        </ListGroupItem>
+        </ListGroup.ListGroupItem>
       ))
     );
 
@@ -72,11 +72,11 @@ const Select = ({
           )}
           <ListGroup className="select-scrollable-list">
             {isLoading ? (
-              <ListGroupItem id="select-loading" key="loading" className="select-loading-list">
+              <ListGroup.ListGroupItem id="select-loading" key="loading" className="select-loading-list">
                 <div id="select-loading-container">
                   <Spinner id="select-spinner" loading size="sm" /> <span>{loadingText}</span>
                 </div>
-              </ListGroupItem>
+              </ListGroup.ListGroupItem>
             ) : (
               renderResults(options)
             )}

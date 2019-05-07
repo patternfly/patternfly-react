@@ -4,6 +4,7 @@ section: 'charts'
 ---
 
 import { ChartArea, ChartGroup, ChartLegend, ChartTheme, ChartVoronoiContainer } from '@patternfly/react-charts';
+import './chart-area.scss';
 
 ## Simple chart
 ```js

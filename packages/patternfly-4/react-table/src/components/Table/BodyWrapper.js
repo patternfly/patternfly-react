@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 class BodyWrapper extends Component {
   render() {
     const { mappedRows, ...props } = this.props;
-    if (mappedRows.some(row => row.hasOwnProperty('isOpen'))) {
+    if (mappedRows.some(row => row.hasOwnProperty('parent'))) {
       return (
         <Fragment>
           {mapOpenedRows(mappedRows, this.props.children).map((oneRow, key) => (

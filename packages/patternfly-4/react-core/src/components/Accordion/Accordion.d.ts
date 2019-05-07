@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps } from 'react';
-import { Omit } from '../../typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 
 export interface AccordionProps extends Omit<HTMLProps<HTMLUListElement>, 'aria-label'> {
   'aria-label': string;

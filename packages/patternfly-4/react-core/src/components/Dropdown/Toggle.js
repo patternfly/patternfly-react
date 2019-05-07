@@ -46,7 +46,7 @@ const defaultProps = {
   onToggle: Function.prototype
 };
 
-class DropdownToggle extends Component {
+class Toggle extends Component {
   componentDidMount = () => {
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
@@ -139,7 +139,7 @@ class DropdownToggle extends Component {
   }
 }
 
-DropdownToggle.propTypes = propTypes;
-DropdownToggle.defaultProps = defaultProps;
+Toggle.propTypes = propTypes;
+Toggle.defaultProps = defaultProps;
 
-export default DropdownToggle;
+export default Toggle;

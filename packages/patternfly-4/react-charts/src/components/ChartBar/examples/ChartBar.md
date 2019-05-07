@@ -7,6 +7,7 @@ section: 'charts'
 
 import { Chart, ChartBar, ChartGroup, ChartTheme } from '@patternfly/react-charts';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+import './chart-bar.scss';
 
 ```js
 import React from 'react';

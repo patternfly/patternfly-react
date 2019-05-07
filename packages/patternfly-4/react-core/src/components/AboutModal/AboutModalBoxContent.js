@@ -22,11 +22,16 @@ const defaultProps = {
   className: ''
 };
 
-const AboutModalBoxContent = ({ children, className, trademark, id, ...props }) => (
+const AboutModalBoxContent = ({ children, className, trademark, id, noAboutModalBoxContentContainer, ...props }) => (
   <div {...props} className={css(styles.aboutModalBoxContent, className)} id={id}>
-    <div className={css(contentStyles.content)}>{children}</div>
+    <div className={css('pf-c-about-modal-box__body')}>
+      {noAboutModalBoxContentContainer
+        ? children
+        : <div className={css(contentStyles.content)}>{children}</div>
+      }
+    </div>
     <div className={css(styles.aboutModalBoxStrapline)}>
-      <p className={css(titleStyles.title)}>{trademark}</p>
+      <p className={css(titleStyles.title, titleStyles.modifiers.md)}>{trademark}</p>
     </div>
   </div>
 );

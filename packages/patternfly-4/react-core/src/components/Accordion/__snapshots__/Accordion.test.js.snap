@@ -3,6 +3,6 @@
 exports[`Accordion Accordion default 1`] = `
 <dl
   aria-label="this is a simple accordion"
-  className="pf-c-accordion"
+  class="pf-c-accordion"
 />
 `;

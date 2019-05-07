@@ -9,7 +9,8 @@ import {
   cellWidth,
   headerCol,
   sortable,
-  expandable
+  expandable,
+  compoundExpand
 } from './index';
 import { rows, columns, actions } from '../../test-helpers/data-sets';
 
@@ -135,6 +136,27 @@ test('Collapsible table', () => {
   const onCollapse = () => undefined;
   const view = mount(
     <Table aria-label="Aria labeled" onCollapse={onCollapse} cells={columns} rows={rows}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
+  expect(view).toMatchSnapshot();
+});
+
+test('Compound Expandable table', () => {
+  const compoundColumns = [
+    { title: 'col1', cell: { transforms: [compoundExpand] } },
+    { title: 'col2', cell: { transforms: [compoundExpand] } }
+  ];
+  const compoundRows = [
+    { isOpen: true, cells: [{ title: '1', props: { isOpen: true } }, { title: '2', props: { isOpen: false } }] },
+    { parent: 0, compoundParent: 0, cells: [{ title: 'expanded', props: { colSpan: 2 } }] },
+    { isOpen: false, cells: [{ title: '3', props: { isOpen: false } }, { title: '4', props: { isOpen: false } }] },
+    { parent: 2, compoundParent: 0, cells: [{ title: 'expanded', props: { colSpan: 2 } }] }
+  ];
+  const onExpand = () => undefined;
+  const view = mount(
+    <Table aria-label="Aria labeled" onExpand={onExpand} cells={compoundColumns} rows={compoundRows}>
       <TableHeader />
       <TableBody />
     </Table>

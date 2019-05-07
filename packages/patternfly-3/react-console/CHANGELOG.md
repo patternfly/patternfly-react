@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.10.38 (2019-05-03)
+
+
+### Bug Fixes
+
+* **ClickboardCopy:** update imports and clean up ([#1876](https://github.com/patternfly/patternfly-react/issues/1876)) ([7a85bfb](https://github.com/patternfly/patternfly-react/commit/7a85bfb))
+
+
+
+
+
 ## 1.10.37 (2019-04-15)
 
 

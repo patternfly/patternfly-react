@@ -2,28 +2,27 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Accordion from './Accordion';
 import AccordionToggle from './AccordionToggle';
-import { Button } from '@patternfly/react-core';
 
 describe('Accordion', () => {
   test('Accordion default', () => {
     const view = shallow(<Accordion aria-label="this is a simple accordion" />);
-    expect(view).toMatchSnapshot();
+    expect(view.render()).toMatchSnapshot();
   });
 
-  test('Toggle default with aria label', () => {
+  test('It should pass optional aria props', () => {
     const view = mount(
       <AccordionToggle aria-label="Toggle details for" aria-labelledby="ex-toggle2 ex-item2" id="ex-toggle2" />
     );
-
-    expect(view.find(Button).props()['aria-label']).toBe('Toggle details for');
-    expect(view.find(Button).props()['aria-labelledby']).toBe(null);
-    expect(view.find(Button).props()['aria-expanded']).toBe(false);
-    expect(view.find(Button).props().id).toBe('ex-toggle2');
-    expect(view.find(Button).props().id).toBe('ex-toggle2');
+    const button = view.find('button[id="ex-toggle2"]').getElement();
+    expect(button.props['aria-label']).toBe('Toggle details for');
+    expect(button.props['aria-labelledby']).toBe('ex-toggle2 ex-item2');
+    expect(button.props['aria-expanded']).toBe(false);
   });
 
   test('Toggle expanded', () => {
     const view = mount(<AccordionToggle aria-label="Toggle details for" id="ex-toggle2" isExpanded />);
-    expect(view.find(Button).props()['aria-expanded']).toBe(true);
+    const button = view.find('button[id="ex-toggle2"]').getElement();
+    expect(button.props['aria-expanded']).toBe(true);
+    expect(button.props.className).toContain('pf-m-expanded');
   });
 });

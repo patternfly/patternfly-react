@@ -81,5 +81,151 @@ describe('Util functions', () => {
       const rows = buildExpandableRows();
       expect(isRowExpanded(rows[1], rows)).toBeUndefined();
     });
+    test('compound parent', () => {
+      const rows = [
+        {
+          isOpen: true,
+          cells: [
+            '1',
+            {
+              title: '2',
+              props: {
+                isOpen: true
+              }
+            },
+            {
+              title: '3',
+              props: {
+                isOpen: false
+              }
+            },
+            {
+              title: '4',
+              props: {
+                isOpen: false
+              }
+            },
+            '5',
+            '6'
+          ]
+        },
+        {
+          parent: 0,
+          compoundParent: 1,
+          cells: [
+            {
+              title: 'parent 0 compound child - 1'
+            }
+          ]
+        },
+        {
+          parent: 0,
+          compoundParent: 2,
+          cells: [
+            {
+              title: 'parent 0 compound child - 2'
+            }
+          ]
+        },
+        {
+          parent: 0,
+          compoundParent: 3,
+          cells: [
+            {
+              title: 'parent 0 compound child - 3'
+            }
+          ]
+        },
+        {
+          isOpen: false,
+          cells: [
+            '1',
+            {
+              title: '2',
+              props: {
+                isOpen: false
+              }
+            },
+            {
+              title: '3',
+              props: {
+                isOpen: false
+              }
+            },
+            {
+              title: '4',
+              props: {
+                isOpen: false
+              }
+            },
+            '5',
+            '6'
+          ]
+        },
+        {
+          parent: 4,
+          compoundParent: 1,
+          cells: [
+            {
+              title: 'parent 4 compound child - 1'
+            }
+          ]
+        },
+        {
+          parent: 4,
+          compoundParent: 2,
+          cells: [
+            {
+              title: 'parent 4 compound child - 2'
+            }
+          ]
+        },
+        {
+          parent: 4,
+          compoundParent: 3,
+          cells: [
+            {
+              title: 'parent 4 compound child - 3'
+            }
+          ]
+        }
+      ];
+
+      // test an expanded compound child to be expanded
+      const expandedRow = {
+        parent: 0,
+        compoundParent: 1,
+        cells: [
+          {
+            title: 'parent 0 compound child - 1'
+          }
+        ]
+      };
+      expect(isRowExpanded(expandedRow, rows)).toEqual(true);
+
+      // test a collapsed compound child to be false
+      const collapsedRow = {
+        parent: 0,
+        compoundParent: 2,
+        cells: [
+          {
+            title: 'parent 0 compound child - 2'
+          }
+        ]
+      };
+      expect(isRowExpanded(collapsedRow, rows)).toEqual(false);
+
+      // test a row with different parent that is collapsed
+      const collapsedRowParent4 = {
+        parent: 4,
+        compoundParent: 1,
+        cells: [
+          {
+            title: 'parent 4 compound child - 1'
+          }
+        ]
+      };
+      expect(isRowExpanded(collapsedRowParent4, rows)).toEqual(false);
+    });
   });
 });

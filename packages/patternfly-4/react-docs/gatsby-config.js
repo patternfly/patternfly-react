@@ -43,7 +43,7 @@ module.exports = {
         ignore: ignore
       },
     },
-    // Our custom plugin to run react-docgen for JS/TS prop types
+    // Our custom plugin for *.js?x *.ts?x files to get prop types
     {
       resolve: path.resolve(`${__dirname}/plugins/gatsby-transformer-react-docgen-typescript`),
     },
@@ -52,6 +52,13 @@ module.exports = {
       resolve: `gatsby-mdx`,
       options: {
         extensions: [`.mdx`, `.md`]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        postCssPlugins: [],
+        precision: 5
       }
     },
     // The plugin for package.json files (to get version numbers)
