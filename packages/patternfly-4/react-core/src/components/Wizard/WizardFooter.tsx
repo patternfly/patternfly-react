@@ -6,12 +6,12 @@ import { WizardStep } from './Wizard';
 
 export interface WizardFooterProps {
   /** Buttons in the footer */
-  children: any;
+  children: React.ReactNode;
 }
 
 export const WizardFooter: React.SFC<WizardFooterProps> = ({
   children
-}) => {
+}: WizardFooterProps) => {
   return (
     <footer className={css(styles.wizardFooter)}>
       {children}

@@ -5,34 +5,51 @@ import { CSSVars, PropsTable, LiveEdit } from '../components/componentDocs';
 import { Title, PageSection } from '@patternfly-safe/react-core';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from '../components/mdx-renderer';
+import { IntersectionTypeSerializer } from 'typedoc/dist/lib/serialization';
+
 
 const components = {
   code: LiveEdit,
   pre: React.Fragment
 };
 
+const getTSProps = (exportz, name) => {
+  const prop = exportz.find(ex => ex.name === name + 'Props');
+  if (!prop) {
+    return;
+  }
+
+  console.log('serialize this', prop.type, IntersectionTypeSerializer.toObject(prop.type));
+
+
+  return {
+    name: prop.name,
+    type: {
+      name: '',
+    },
+    required: !props.flags.isOptional,
+    // defaultValue: {
+    //   value: 
+    // },
+    description: prop.comment.shortText
+  };
+}
+
 const getPropList = (jsProps, tsProps, rawMDX) => {
-  console.log('tsProps', tsProps);
   if (jsProps.length > 0) {
-    // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
-    // We *should* use the MDXRenderer scope to get the names of these, but that's pretty difficult
-    const propComponents = jsProps
-      .map(node => node.name)
-      .filter(name => name) // Some HOCs don't get docgenned properly (like TabContent)
-      .filter(name => rawMDX.indexOf(name) !== -1);
-    
-    // Finally, the props for each relevant component!
     return jsProps
-      .filter(node => propComponents.indexOf(node.name) !== -1)
-      .map(node => { return { name: node.name, props: node.props } })
+      // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
+      // We *should* use the MDXRenderer scope to get the names of these, but that's pretty difficult
+      .filter(node => rawMDX.indexOf(node.name) !== -1)
+      .map(node => ({ name: node.name, props: node.props }))
       .sort((e1, e2) => e1.name.localeCompare(e2.name));
   }
   else if (tsProps.length > 0) {
-    const propComponents = tsProps[0].exports
-      .map(ex => ex.name)
-      .filter(name => rawMDX.indexOf(name) !== -1);
-    
-    console.log('ts propComponents', propComponents);
+    return tsProps
+      .filter(ex => rawMDX.indexOf(ex.name) !== -1)
+      .map(node => getTSProps(tsProps, node.name))
+      .filter(prop => prop)
+      .sort((e1, e2) => e1.name.localeCompare(e2.name));
   }
 
   return [];
@@ -41,7 +58,10 @@ const getPropList = (jsProps, tsProps, rawMDX) => {
 const MdxTemplate = ({ data }) => {
   const cssPrefix = data.mdx.frontmatter.cssPrefix;
   let section = data.mdx.frontmatter.section || 'component';
-  const props = getPropList(data.jsProps.nodes, data.tsProps.nodes, data.mdx.code.body);
+  const props = getPropList(
+    data.jsProps.nodes,
+    data.tsProps.nodes && data.tsProps.nodes.flatMap(node => node.exports),
+    data.mdx.code.body);
 
   return (
     <SidebarLayout>
@@ -114,18 +134,33 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
   }
   tsProps: allTypedoc(filter: {name: {regex: $pathRegex}}) {
     nodes {
+      name
       exports {
         id
         name
         children {
           name
-          kindString
           comment {
             shortText
           }
-          defaultValue
           flags {
             isOptional
+          }
+          signatures {
+            kindString
+            parameters {
+              name
+              type {
+                id
+              }
+            }
+          }
+          type {
+            type
+            types {
+              type
+              name
+            }
           }
         }
         signatures {
