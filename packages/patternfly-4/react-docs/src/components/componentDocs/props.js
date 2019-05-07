@@ -29,4 +29,4 @@ const Props = ({ propList, caption }) => {
   );
 }
 
-export default Props
+export default Props;

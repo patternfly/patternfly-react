@@ -14,15 +14,15 @@ const components = {
 const MdxTemplate = ({ data }) => {
   // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
   // We *should* use the MDXRenderer scope to get the names of these, but that's pretty difficult
-  const propComponents = data.metadata.edges
-    .map(edge => edge.node.name)
+  const propComponents = data.jsProps.nodes
+    .map(node => node.name)
     .filter(name => name) // Some HOCs don't get docgenned properly (like TabContent)
     .filter(name => data.mdx.code.body.indexOf(name) !== -1);
 
   // Finally, the props for each relevant component!
-  const props = data.metadata.edges
-    .filter(edge => propComponents.indexOf(edge.node.name) !== -1)
-    .map(edge => { return { name: edge.node.name, props: edge.node.props } })
+  const props = data.jsProps.nodes
+    .filter(node => propComponents.indexOf(node.name) !== -1)
+    .map(node => { return { name: node.name, props: node.props } })
     .sort((e1, e2) => e1.name.localeCompare(e2.name));
 
   const cssPrefix = data.mdx.frontmatter.cssPrefix;
@@ -81,21 +81,37 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
       cssPrefix
     }
   }
-  metadata: allComponentMetadata(filter: {path: {regex: $pathRegex}}) {
-    edges {
-      node {
-        path
+  jsProps: allComponentMetadata(filter: {path: {regex: $pathRegex}}) {
+    nodes {
+      path
+      name
+      description
+      props {
         name
         description
-        props {
+        required
+        type {
           name
-          description
-          required
-          type {
-            name
+        }
+        defaultValue {
+          value
+        }
+      }
+    }
+  }
+  tsProps: allTypedoc(filter: {name: {regex: $pathRegex}}) {
+    nodes {
+      exports {
+        name
+        children {
+          name
+          kindString
+          comment {
+            text
           }
-          defaultValue {
-            value
+          defaultValue
+          flags {
+            isOptional
           }
         }
       }
