@@ -15,7 +15,7 @@ export interface CheckboxProps
   isChecked?: boolean;
   checked?: boolean;
   /** A callback for when the Checkbox selection changes. */
-  onChange?(checked: boolean, event: React.FormEvent<HTMLInputElement>): void;
+  onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
   /** Label text of the checkbox. */
   label?: React.ReactNode;
   /** Id of the checkbox. */

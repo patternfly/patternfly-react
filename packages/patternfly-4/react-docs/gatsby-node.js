@@ -61,7 +61,7 @@ exports.createPages = ({ graphql, actions }) => {
       } else {
         // Normal templated component pages
         link = `/${section}/${componentName}/`.toLowerCase();
-        console.log('adding page', link, node.frontmatter.typescript);
+        // console.log('adding page', link, node.frontmatter.typescript);
         actions.createPage({
           path: link,
           component: path.resolve('./src/templates/mdxTemplate.js'),

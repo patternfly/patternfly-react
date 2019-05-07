@@ -1,7 +1,4 @@
-const fs = require('fs');
-const path = require('path');
-const docgenJavascript = require('react-docgen');
-const typedoc = require('typedoc');
+const reactDocgen = require('react-docgen');
 
 function isSource(node) {
   if (!node ||
@@ -54,9 +51,7 @@ async function onCreateNode({
   const sourceText = await loadNodeContent(node);
   let parsed = null;
   try {
-    if (isJSX(node)) {
-      parsed = docgenJavascript.parse(sourceText);
-    }
+    parsed = reactDocgen.parse(sourceText);
   } catch (err) {
     console.warn('No component found in', node.absolutePath);
   }
@@ -81,54 +76,4 @@ async function onCreateNode({
   }
 }
 
-async function sourceNodes (
-  { actions, createNodeId, createContentDigest },
-  configOptions
-) {
-  const processTypeDoc = generated => {
-    for (let i = 0; i < generated.children.length; i++) {
-      const tsModule = generated.children[i];
-      // Rename children -> exports since that's a reserved Gatsby field
-      tsModule.exports = tsModule.children;
-      delete tsModule.children;
-      if (tsModule.exports) {
-        const nodeId = createNodeId(`typedoc-default-${i}`);
-        actions.createNode({
-          ...tsModule,
-          id: nodeId,
-          internal: {
-            type: 'Typedoc',
-            contentDigest: createContentDigest(tsModule)
-          }
-        });
-      }
-    }
-  }
-
-  const { typedoc: typedocOptions } = configOptions;
-  const app = new typedoc.Application({
-    tsconfig: typedocOptions.tsconfig,
-    ignoreCompilerErrors: true,
-  });
-  const expanded = app.expandInputFiles(typedocOptions.src)
-    .filter(fname =>
-      !fname.match(/.d.ts$/) &&
-      !fname.match(/index.tsx?$/) &&
-      !fname.match(/.*helpers.*/) &&
-      !fname.match(/.test.tsx?$/));
-  const project = app.convert(expanded);
-
-  let generated = false;
-  if (project) {
-    const generatedFile = path.join(__dirname, '../../.cache', 'typedoc.json');
-    generated = app.generateJson(project, generatedFile);
-    processTypeDoc(JSON.parse(fs.readFileSync(generatedFile, 'utf-8')));
-  } else {
-    console.error('Failed to generate TS proptypes');
-  }
-
-  return Promise.resolve(generated);
-};
-
 exports.onCreateNode = onCreateNode;
-exports.sourceNodes = sourceNodes;

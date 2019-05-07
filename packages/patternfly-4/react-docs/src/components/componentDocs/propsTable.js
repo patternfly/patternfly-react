@@ -17,7 +17,7 @@ export const PropsTable = ({ caption, propList }) => (
       {propList && propList.map(prop =>
         <tr key={prop.name}>
           <td>{prop.name}</td>
-          <td>{prop.type.name}</td>
+          <td>{prop.type ? prop.type.name : prop.flowType.raw}</td>
           <td className="pf-c-table__icon">{prop.required && <ExclamationCircleIcon />}</td>
           <td>{prop.defaultValue && prop.defaultValue.value}</td>
           <td>{'' + prop.description}</td>

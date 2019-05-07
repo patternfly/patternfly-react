@@ -60,7 +60,7 @@ export interface WizardProps {
   /** The wizard description */
   description?: string;
   /** Callback function to close the wizard */
-  onClose?(): void;
+  onClose?: () => void;
   /** Callback function when a step in the nav is clicked */
   onGoToStep?: WizardStepFunctionType;
   /** Additional classes spread to the Wizard */
@@ -76,7 +76,7 @@ export interface WizardProps {
   /** (Use to control the footer) Passing in a footer component lets you control the buttons yourself */
   footer?: React.ReactNode;
   /** (Unused if footer is controlled) Callback function to save at the end of the wizard, if not specified uses onClose */
-  onSave?(): void;
+  onSave?: () => void;
   /** (Unused if footer is controlled) Callback function after Next button is clicked */
   onNext?: WizardStepFunctionType;
   /** (Unused if footer is controlled) Callback function after Back button is clicked */
@@ -115,15 +115,14 @@ export class Wizard extends React.Component<WizardProps> {
     footer: null
   };
 
-  public container?: HTMLDivElement = undefined;
-  public titleId = `pf-wizard-title-0`;
-  public descriptionId = `pf-wizard-description-0`;
-
   constructor(props: WizardProps) {
     super(props);
     const newId = Wizard.currentId++;
     this.titleId = `pf-wizard-title-${newId}`;
     this.descriptionId = `pf-wizard-description-${newId}`;
+    this.container: HTMLDivElement = undefined;
+    this.titleId = `pf-wizard-title-0`;
+    this.descriptionId = `pf-wizard-description-0`;
   }
 
   public state = {

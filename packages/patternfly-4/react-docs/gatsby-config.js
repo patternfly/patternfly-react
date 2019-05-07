@@ -22,7 +22,6 @@ const ignore = [
   `**/tslint.*`,
   `**/README.*`,
   `**/CHANGELOG.*`,
-  /\.tsx?$/ // Typescript files get sourced for docgen differently
 ];
 
 module.exports = {
@@ -44,15 +43,9 @@ module.exports = {
         ignore: ignore
       },
     },
-    // Our custom plugin to run react-docgen or typedoc for JS/TS prop types
+    // Our custom plugin to run react-docgen for JS/TS prop types
     {
       resolve: path.resolve(`${__dirname}/plugins/gatsby-transformer-react-docgen-typescript`),
-      options: {
-        typedoc: {
-          src: [path.resolve(`${__dirname}/../react-core/src`)],
-          tsconfig: path.resolve(`${__dirname}/../react-core/tsconfig.base.json`),
-        }
-      }
     },
     // The markdown plugin for *.md files
     {

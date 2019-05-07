@@ -5,7 +5,6 @@ import { CSSVars, PropsTable, LiveEdit } from '../components/componentDocs';
 import { Title, PageSection } from '@patternfly-safe/react-core';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from '../components/mdx-renderer';
-import { IntersectionTypeSerializer } from 'typedoc/dist/lib/serialization';
 
 
 const components = {
@@ -13,55 +12,15 @@ const components = {
   pre: React.Fragment
 };
 
-const getTSProps = (exportz, name) => {
-  const prop = exportz.find(ex => ex.name === name + 'Props');
-  if (!prop) {
-    return;
-  }
-
-  console.log('serialize this', prop.type, IntersectionTypeSerializer.toObject(prop.type));
-
-
-  return {
-    name: prop.name,
-    type: {
-      name: '',
-    },
-    required: !props.flags.isOptional,
-    // defaultValue: {
-    //   value: 
-    // },
-    description: prop.comment.shortText
-  };
-}
-
-const getPropList = (jsProps, tsProps, rawMDX) => {
-  if (jsProps.length > 0) {
-    return jsProps
-      // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
-      // We *should* use the MDXRenderer scope to get the names of these, but that's pretty difficult
-      .filter(node => rawMDX.indexOf(node.name) !== -1)
-      .map(node => ({ name: node.name, props: node.props }))
-      .sort((e1, e2) => e1.name.localeCompare(e2.name));
-  }
-  else if (tsProps.length > 0) {
-    return tsProps
-      .filter(ex => rawMDX.indexOf(ex.name) !== -1)
-      .map(node => getTSProps(tsProps, node.name))
-      .filter(prop => prop)
-      .sort((e1, e2) => e1.name.localeCompare(e2.name));
-  }
-
-  return [];
-}
-
 const MdxTemplate = ({ data }) => {
   const cssPrefix = data.mdx.frontmatter.cssPrefix;
   let section = data.mdx.frontmatter.section || 'component';
-  const props = getPropList(
-    data.jsProps.nodes,
-    data.tsProps.nodes && data.tsProps.nodes.flatMap(node => node.exports),
-    data.mdx.code.body);
+  const props = data.jsProps.nodes
+    // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
+    // We *should* use the MDXRenderer scope to get the names of these, but that's pretty difficult
+    .filter(node => data.mdx.code.body.indexOf(node.name) !== -1)
+    .map(node => ({ name: node.name, props: node.props }))
+    .sort((e1, e2) => e1.name.localeCompare(e2.name));
 
   return (
     <SidebarLayout>
@@ -116,9 +75,7 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
   }
   jsProps: allComponentMetadata(filter: {path: {regex: $pathRegex}}) {
     nodes {
-      path
       name
-      description
       props {
         name
         description
@@ -126,58 +83,11 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
         type {
           name
         }
+        flowType {
+          raw
+        }
         defaultValue {
           value
-        }
-      }
-    }
-  }
-  tsProps: allTypedoc(filter: {name: {regex: $pathRegex}}) {
-    nodes {
-      name
-      exports {
-        id
-        name
-        children {
-          name
-          comment {
-            shortText
-          }
-          flags {
-            isOptional
-          }
-          signatures {
-            kindString
-            parameters {
-              name
-              type {
-                id
-              }
-            }
-          }
-          type {
-            type
-            types {
-              type
-              name
-            }
-          }
-        }
-        signatures {
-          parameters {
-            type {
-              declaration {
-                children {
-                  name
-                  type {
-                    id
-                    name
-                  }
-                  defaultValue
-                }
-              }
-            }
-          }
         }
       }
     }
