@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.4.3...@patternfly/react-charts@3.4.4) (2019-05-07)
+
+
+### Bug Fixes
+
+* **types:** Update @types/victory package to latest ([#1899](https://github.com/patternfly/patternfly-react/issues/1899)) ([d3e2ec7](https://github.com/patternfly/patternfly-react/commit/d3e2ec7)), closes [#1898](https://github.com/patternfly/patternfly-react/issues/1898)
+
+
+
+
+
 ## 3.4.3 (2019-05-06)
 
 
