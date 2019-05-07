@@ -5,6 +5,7 @@ section: 'layouts'
 ---
 
 import { Bullseye } from '@patternfly/react-core';
+import './bullseye.scss';
 
 ## Simple bullseye layout
 ```js

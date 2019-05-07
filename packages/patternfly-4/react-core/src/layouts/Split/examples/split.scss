@@ -1,0 +1,13 @@
+.ws-preview {
+  & .pf-l-split {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+  }
+
+  & .pf-l-split > .pf-l-split__item {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+  }
+}

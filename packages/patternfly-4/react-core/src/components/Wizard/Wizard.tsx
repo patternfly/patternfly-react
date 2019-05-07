@@ -67,7 +67,7 @@ export interface WizardProps {
   className?: string;
   /** The wizard steps configuration object */
   steps: WizardStep[];
-  /** The current step the wizard at (1 or higher) */
+  /** The current step the wizard is on (1 or higher)*/
   startAtStep?: number;
   /** aria-label for the Nav */
   ariaLabelNav?: string;

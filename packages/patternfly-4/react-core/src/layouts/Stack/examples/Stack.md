@@ -5,6 +5,7 @@ section: 'layouts'
 ---
 
 import { Stack, StackItem } from '@patternfly/react-core';
+import './stack.scss';
 
 ## Simple stack layout
 ```js
