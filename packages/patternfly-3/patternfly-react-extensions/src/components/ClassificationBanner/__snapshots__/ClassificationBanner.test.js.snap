@@ -2,14 +2,13 @@
 
 exports[`ClassificationBanner renders properly 1`] = `
 <ClassificationBanner
-  backgroundColor=""
-  bannerColor=""
+  bannerColor="pf-green"
   bottomBanner={true}
-  classificationLevel="999"
   closeButton={false}
   closed={true}
   hostName=""
   hostNamePosition="left"
+  title=""
   userName=""
   userNamePosition="right"
 >

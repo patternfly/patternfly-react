@@ -32,15 +32,18 @@ class ClassificationBanner extends React.Component {
       bottomBanner,
       hostName,
       userName,
-      classificationLevel,
-      backgroundColor,
       closeButton,
       userNamePosition,
       hostNamePosition,
       bannerColor,
+      title,
       ...props } = this.props;
-    
-    const levelNameAppendix = classificationLevel==='999'?'':(classificationLevel==='0'?'-unclassified':(classificationLevel==='1'?'-classified':'-proprietary-level'));
+
+      const defaultColors = {
+        "pf-red": 1,
+        "pf-blue": 1,
+        "pf-green": 1
+      }
 
     const classificationBannerClasses = {
       top: classNames('classification-banner-pf-banner',
@@ -48,10 +51,10 @@ class ClassificationBanner extends React.Component {
       {
         'classification-banner-pf-hide': this.state.closed,
       },
-      'classification-banner-pf-banner'+levelNameAppendix),
+      defaultColors[bannerColor]?('classification-banner-'+bannerColor):''),
       bottom: classNames(
       'classification-banner-pf-banner',
-      'classification-banner-pf-banner'+levelNameAppendix,
+      defaultColors[bannerColor]?('classification-banner-'+bannerColor):'',
       {
       'classification-banner-pf-hide':(!bottomBanner)||this.state.closed
       },
@@ -63,14 +66,13 @@ class ClassificationBanner extends React.Component {
         'classification-banner-pf-children-no-bottom':(!this.state.closed && !bottomBanner),
         'classification-banner-pf-children':(!this.state.closed && bottomBanner)})
     }
-    const levelName = classificationLevel==='999'?'':(classificationLevel==='0'?'Unclassified':(classificationLevel==='1'?'Classified':(classificationLevel==='2'?'Proprietary Level 1':'Proprietary Level 2')));
 
     var leftLabels=[hostNamePosition==='left'?(<span>{hostName}</span>):null,
     userNamePosition==='left'?(<span>{userName}</span>):null],
     rightLabels=[hostNamePosition==='right'?(<span>{hostName}</span>):null,
     userNamePosition==='right'?(<span>{userName}</span>):null];
 
-    var bannerBackgroundStyle = bannerColor===''?{}:{'background':bannerColor};
+    var bannerBackgroundStyle = defaultColors[bannerColor]?{}:{'background':bannerColor};
     
     return(<div>
       <nav style={bannerBackgroundStyle} className={classificationBannerClasses.top} >
@@ -78,7 +80,7 @@ class ClassificationBanner extends React.Component {
           {leftLabels[0]}
           {leftLabels[1]}
         </div>
-        <div className={"classification-banner-pf-classification-level"}>{levelName}</div>
+        <div className={"classification-banner-pf-classification-level"}>{title}</div>
         <div className={"classification-banner-pf-banner-right"}>
         <i id="classification-banner-close-btn" className={classificationBannerClasses.closeButton} onClick={this.onClose}></i>
           {rightLabels[0]}
@@ -90,7 +92,7 @@ class ClassificationBanner extends React.Component {
       {children}
       </div>
       <footer style={bannerBackgroundStyle} className={classificationBannerClasses.bottom}>
-        <div className={"classification-banner-pf-classification-level"}>{levelName}</div>
+        <div className={"classification-banner-pf-classification-level"}>{title}</div>
       </footer>
     </div>)
 
@@ -102,14 +104,13 @@ ClassificationBanner.propTypes = {
   children: PropTypes.node,
   hostName: PropTypes.string,
   userName: PropTypes.string,
-  classificationLevel: PropTypes.string,
-  backgroundColor: PropTypes.string,
   closeButton: PropTypes.bool,
   bottomBanner: PropTypes.bool,
   closed: PropTypes.bool,
   userNamePosition: PropTypes.string,
   hostNamePosition: PropTypes.string,
-  bannerColor: PropTypes.string
+  bannerColor: PropTypes.string,
+  title: PropTypes.string
 
 };
 
@@ -117,14 +118,13 @@ ClassificationBanner.defaultProps = {
   children: null,
   hostName: '',
   userName: '',
-  classificationLevel: '999',//proprietary level
-  backgroundColor: '',
   closeButton: false,
   bottomBanner: true,
   closed: false,
   userNamePosition: 'right',
   hostNamePosition: 'left',
-  bannerColor: ''
+  bannerColor: '',
+  title: ''
   
 };
 
