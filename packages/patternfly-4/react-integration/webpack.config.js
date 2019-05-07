@@ -5,17 +5,17 @@ module.exports = {
   module: {
     rules: [
       {
+        exclude: /node_modules|demo-app-ts/,
         test: /\.ts?$/,
-        use: 'ts-loader',
-        exclude: /node_modules|demo-app-ts/
+        use: 'ts-loader'
       }
     ]
-  },
-  resolve: {
-    extensions: ['.ts', '.js']
   },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
+  },
+  resolve: {
+    extensions: ['.ts', '.js']
   }
 };
