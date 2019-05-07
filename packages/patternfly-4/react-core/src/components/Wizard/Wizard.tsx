@@ -440,5 +440,3 @@ export class Wizard extends React.Component<WizardProps> {
     );
   }
 }
-
-export default Wizard;
