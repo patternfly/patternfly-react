@@ -7,7 +7,7 @@ const defaultProps = {
   className: '',
   isExpanded: false,
   toggleText: '',
-  onToggle: () => {},
+  onToggle: () => undefined,
   isFocused: false,
   isHovered: false,
   isActive: false
