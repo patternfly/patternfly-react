@@ -37,7 +37,6 @@ git:
   depth: 10
 branches:
   except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/" # Avoid tags
     - "/^chore/bump-.*$/" # Avoid hookbot double-builds
 notifications:
   email: false
