@@ -20,8 +20,8 @@ class App extends React.Component {
         <NavList variant={NavVariants.simple}>
           {Demos.map((demo, index) => {
             return (
-              <NavItem id={`nav-item${index}`} itemId={index} isActive={activeItem === index}>
-                <Link to={`/nav-link${index}`}>{demo.name}</Link>
+              <NavItem itemId={index} isActive={activeItem === index}>
+                <Link id={`${demo.id}-nav-item-link`} to={`/${demo.id}-nav-link`}>{demo.name}</Link>
               </NavItem>
             );
           })}
@@ -33,11 +33,11 @@ class App extends React.Component {
   private getPages = () => {
     return (
       <React.Fragment>
-        {Demos.map((demo, index) => {
+        {Demos.map((demo) => {
           return (
             <Route
-              path={`/nav-link${index}`}
-              render={({ match }) => <PageSection>{React.createElement(demo.componentType)}</PageSection>}
+              path={`/${demo.id}-nav-link`}
+              render={({ match }) => <PageSection id={`/${demo.id}-page-section`}>{React.createElement(demo.componentType)}</PageSection>}
             />
           );
         })}

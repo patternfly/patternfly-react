@@ -30,18 +30,18 @@ export class TabDemo extends Component {
     return (
       <React.Fragment>
         <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
-          <Tab eventKey={0} title="Tab item 1" tabContentId="refTab1Section" tabContentRef={this.contentRef1} />
-          <Tab eventKey={1} title="Tab item 2" tabContentId="refTab2Section" tabContentRef={this.contentRef2} />
-          <Tab eventKey={2} title="Tab item 3" tabContentId="refTab3Section" tabContentRef={this.contentRef3} />
+          <Tab id="demoTab1" eventKey={0} title="Tab item 1" tabContentId="demoTab1Section" tabContentRef={this.contentRef1} />
+          <Tab id="demoTab2" eventKey={1} title="Tab item 2" tabContentId="demoTab2Section" tabContentRef={this.contentRef2} />
+          <Tab id="demoTab3" eventKey={2} title="Tab item 3" tabContentId="demoTab3Section" tabContentRef={this.contentRef3} />
         </Tabs>
         <div>
-          <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1} aria-label="Tab item 1">
+          <TabContent eventKey={0} id="demoTab1Section" ref={this.contentRef1} aria-label="Tab item 1">
             Tab 1 section
           </TabContent>
-          <TabContent eventKey={1} id="refTab2Section" ref={this.contentRef2} aria-label="Tab item 2" hidden>
+          <TabContent eventKey={1} id="demoTab2Section" ref={this.contentRef2} aria-label="Tab item 2" hidden>
             Tab 2 section
           </TabContent>
-          <TabContent eventKey={2} id="refTab3Section" ref={this.contentRef3} aria-label="Tab item 3" hidden>
+          <TabContent eventKey={2} id="demoTab3Section" ref={this.contentRef3} aria-label="Tab item 3" hidden>
             Tab 3 section
           </TabContent>
         </div>
