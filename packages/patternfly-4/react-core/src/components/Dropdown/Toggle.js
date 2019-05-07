@@ -61,7 +61,7 @@ class Toggle extends Component {
 
   onDocClick = event => {
     if (this.props.isOpen && this.props.parentRef && !this.props.parentRef.contains(event.target)) {
-      this.props.onToggle && this.props.onToggle(false);
+      this.props.onToggle && this.props.onToggle(false, event);
       this.toggle.focus();
     }
   };
@@ -75,7 +75,7 @@ class Toggle extends Component {
       parentRef &&
       parentRef.contains(event.target)
     ) {
-      this.props.onToggle && this.props.onToggle(false);
+      this.props.onToggle && this.props.onToggle(false, event);
       this.toggle.focus();
     }
   };
@@ -84,9 +84,9 @@ class Toggle extends Component {
     if (event.key === 'Tab' && !this.props.isOpen) return;
     event.preventDefault();
     if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && this.props.isOpen) {
-      this.props.onToggle(!this.props.isOpen);
+      this.props.onToggle(!this.props.isOpen, event);
     } else if ((event.key === 'Enter' || event.key === ' ') && !this.props.isOpen) {
-      this.props.onToggle(!this.props.isOpen);
+      this.props.onToggle(!this.props.isOpen, event);
       this.props.onEnter();
     }
   };
@@ -127,7 +127,7 @@ class Toggle extends Component {
           className
         )}
         type={type || 'button'}
-        onClick={_event => onToggle && onToggle(!isOpen)}
+        onClick={event => onToggle && onToggle(!isOpen, event)}
         aria-expanded={isOpen}
         aria-haspopup={ariaHasPopup}
         onKeyDown={this.onKeyDown}
