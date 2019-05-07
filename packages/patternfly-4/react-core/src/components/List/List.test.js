@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import List from './List';
-import ListItem from './ListItem';
+import { List } from './List';
+import { ListItem } from './ListItem';
 
 const ListItems = () => (
   <React.Fragment>
