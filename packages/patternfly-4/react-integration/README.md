@@ -24,10 +24,10 @@ In order for your demo to show up in the demo app you should add it to the [Demo
 For integration testing we use [Cypress](https://www.cypress.io/).  If you are new to Cypress and would like to learn more on how to the use the product a good starting point is their documentation.  Our cypress tests can be found [here](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration/cypress/integration).  Contributors should add their new tests for their new components there.
 
 To launch cypress so you can run your tests against the demo application you should do the following:
-1. Make sure if your demo app is not running you launch it by running `yarn start:demo-app`
+1. Make sure your demo app is running. You launch it by running `yarn start:demo-app`
 2. Launch cypress so you can run your tests by running `yarn start:cypress`
 
 You can leave both applications running while developing your tests.  Cypress will update with changes you make to your test.  Once in a while Cypress may inform you it needs to be refresh when you are making changes to your tests.  If this happens you will be provide a try again button to refresh Cypress with your updated tests.
 
 ## Running all the tests.
-Once you have completed writing your integration test you should run all the tests to verify the previously written tests still are working prior to doing a pull request.  This can be done by running the command `yarn run test:integration`.
+Once you have completed writing your integration test you should run all the tests.  The reason for this is to verify that previously written tests still work.  This can be done by running the command `yarn run test:integration`.
