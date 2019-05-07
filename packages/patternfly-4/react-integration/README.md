@@ -41,8 +41,6 @@ Before you can start writing a Cypress test, you need to build a demo page to te
 2. To see your demo in app navigation, add your demo to the [Demo.ts](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration/emo-app-ts/src/Demos.ts) file.
 
 
-
-## Building and running your integration test
 ## Building Cypress tests
 We use [Cypress](https://www.cypress.io/) for integration testing. View all of our existing Cypress tests [here](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration/cypress/integration).
 
