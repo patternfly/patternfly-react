@@ -71,10 +71,6 @@ jobs:
         - rm -rf coverage
         - yarn test:misc
         - npx codecov -F patternflymisc
-    - name: (PF4) Integration Tests
-      install: skip
-      script:
-        - yarn test:integration
     - name: (PF4) Build Docs
       if: branch = master && type != pull_request && fork = false
       install: skip
@@ -83,9 +79,9 @@ jobs:
     - name: Lint, Stylelint, and TSLint
       install: skip
       script:
-        - yarn lint || true # Disable linting failing build (for now)
+        - yarn lint:ts
         - yarn lint:style
-        - yarn tslint
+        - yarn lint || true # Disable linting failing build (for now)
     
     - stage: Deploy
       name: NPM and Github Release
