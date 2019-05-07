@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.16.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.14...@patternfly/react-core@3.16.15) (2019-05-07)
+
+
+### Bug Fixes
+
+* **Dropdown:** Send event when clicking on dropdown toggle ([#1667](https://github.com/patternfly/patternfly-react/issues/1667)) ([fec1d41](https://github.com/patternfly/patternfly-react/commit/fec1d41))
+
+
+
+
+
 ## [3.16.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.13...@patternfly/react-core@3.16.14) (2019-05-06)
 
 
