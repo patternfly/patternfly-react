@@ -1,33 +1,67 @@
-# Patternfly 4 React Integration Testing
+# Integration testing for PatternFly 4 React
 
 ## Overview
-Here you will find a demo application written in typescript, along with cypress integration testing.  This is used to allow developers to verify their code against a working react app that is running their latest PF4 react changes.
+PatternFly 4 React provides an integration testing demo app as an environment to verify and test PatternFly 4 code changes and contributions.
 
-New componets should be written in typescript and added to the demo app.  Contributors should write cypress tests to test the functionality of their components.  Contributors should also test all of the user facing interfaces and components that they are creating.
+The demo app is written in TypeScript and includes Cypress. We use Cypress for integration testing. If you’re new to Cypress and want to learn more, you can start with their documentation. 
+
+* [Cypress Documentation](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell)
+* [Cypress API](https://docs.cypress.io/api/api/table-of-contents.html)
+* [Cypresss Examples](https://docs.cypress.io/examples/examples/recipes.html#Node-Modules)
+
+All new components need to be written in TypeScript and then added to the demo application.
+
+When making a new PatternFly 4 contribution, you’ll need to write a Cypress test to verify and test functionality. You will also need to test all user facing interfaces and components.
+
+This README will show you how to launch the demo app and use Cypress to run your tests against it.
 
 ## Building your react component
-After completing the development of their component a contributor should perform a build so they can start writing integration tests.
+Building your React component
+Once you’ve completed development of a new component, you need to perform a build before you can start writing integration tests.
 
 1. Make your changes in packages/patternfly-4/react-core
-2. Type `yarn build` to build your component.
+2. Run the following command to build your component:
+
+    `yarn build`
 
 ## Running the demo app
-To launch the demo app a contributor can run the following command:
-1. `yarn start demo:app` this will launch the demo app and watch for changes in it.
+
+Running the demo app
+Run the following command to launch the demo app:
+
+`yarn start demo:app`
+
+Once the demo app is launched, all saved changes you make to the code should be applied automatically.
 
 ## Building a typescript demo
-Prior to writing a cypress test you will need to build a demo page to test aginst.  Demos can be found in the [components demos section](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration/demo-app-ts/src/components/demos).  You can create a new folder to add your demo.
 
-In order for your demo to show up in the demo app you should add it to the [Demo.ts](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration/emo-app-ts/src/Demos.ts) file. Once you add it to the ts file you should see your demo show up in the navigation on the right hand side of the app.
+Before you can start writing a Cypress test, you need to build a demo page to test against.
+
+1. Go to the [component demo section](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration/demo-app-ts/src/components/demos) and create a new folder to add your demo page.
+2. To see your demo in app navigation, add your demo to the [Demo.ts](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration/emo-app-ts/src/Demos.ts) file.
+
+
 
 ## Building and running your integration test
-For integration testing we use [Cypress](https://www.cypress.io/).  If you are new to Cypress and would like to learn more on how to the use the product a good starting point is their documentation.  Our cypress tests can be found [here](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration/cypress/integration).  Contributors should add their new tests for their new components there.
+## Building Cypress tests
+We use [Cypress](https://www.cypress.io/) for integration testing. View all of our existing Cypress tests [here](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration/cypress/integration).
 
-To launch cypress so you can run your tests against the demo application you should do the following:
-1. Make sure your demo app is running. You launch it by running `yarn start:demo-app`
-2. Launch cypress so you can run your tests by running `yarn start:cypress`
+Make sure your demo app is running. If you need to launch the demo application, run the following command:
 
-You can leave both applications running while developing your tests.  Cypress will update with changes you make to your test.  Once in a while Cypress may inform you it needs to be refresh when you are making changes to your tests.  If this happens you will be provide a try again button to refresh Cypress with your updated tests.
+`yarn start:demo-app`
 
-## Running all the tests.
-Once you have completed writing your integration test you should run all the tests.  The reason for this is to verify that previously written tests still work.  This can be done by running the command `yarn run test:integration`.
+Run the following command to launch Cypress:
+
+`yarn start:cypress`
+
+You can leave both the demo app and Cypress running while you develop your tests. You may receive notifications from Cypress that ask you to refresh as you make changes. Use the “Try again” button to refresh Cypress with your updated tests.
+
+Add any new integration tests you write to the [integration folder here](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration/cypress/integration).
+
+
+## Running integration tests
+Once you’ve completed writing your integration tests, run all tests to verify that both new tests and previously written tests are all working.
+
+Run the following command to run all tests:
+
+`yarn run test:integration`
