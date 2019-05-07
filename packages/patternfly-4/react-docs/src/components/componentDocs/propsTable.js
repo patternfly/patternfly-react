@@ -1,7 +1,9 @@
 import React from 'react';
 import { ExclamationCircleIcon } from '@patternfly-safe/react-icons';
 
-const Props = ({ propList, caption }) => {
+export const PropsTable = ({ caption, propList, propExports }) => {
+  
+
   return (
     <table className="pf-c-table pf-m-compact pf-m-grid-md" role="grid" aria-label="Properties for a component">
       <caption>{caption}</caption>
@@ -15,7 +17,7 @@ const Props = ({ propList, caption }) => {
         </tr>
       </thead>
       <tbody>
-        {propList.map(prop =>
+        {propList && propList.map(prop =>
           <tr key={prop.name}>
             <td>{prop.name}</td>
             <td>{prop.type.name}</td>
@@ -28,5 +30,3 @@ const Props = ({ propList, caption }) => {
     </table>
   );
 }
-
-export default Props;

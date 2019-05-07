@@ -31,6 +31,7 @@ exports.createPages = ({ graphql, actions }) => {
           title
           section
           fullscreen
+          typescript
         }
       }
     }
@@ -60,12 +61,13 @@ exports.createPages = ({ graphql, actions }) => {
       } else {
         // Normal templated component pages
         link = `/${section}/${componentName}/`.toLowerCase();
-        // console.log('adding page', link);
+        console.log('adding page', link, node.frontmatter.typescript);
         actions.createPage({
           path: link,
           component: path.resolve('./src/templates/mdxTemplate.js'),
           context: {
             title: node.frontmatter.title,
+            typescript: node.frontmatter.typescript, // For a badge
             fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
             pathRegex: `/${folderName}\/.*/` // Helps us get the docgenned props
           }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import SidebarLayout from './sidebarLayout';
-import { CSSVars, Props, LiveEdit } from '../components/componentDocs';
+import { CSSVars, PropsTable, LiveEdit } from '../components/componentDocs';
 import { Title, PageSection } from '@patternfly-safe/react-core';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from '../components/mdx-renderer';
@@ -11,24 +11,37 @@ const components = {
   pre: React.Fragment
 };
 
+const getPropList = (jsProps, tsProps, rawMDX) => {
+  console.log('tsProps', tsProps);
+  if (jsProps.length > 0) {
+    // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
+    // We *should* use the MDXRenderer scope to get the names of these, but that's pretty difficult
+    const propComponents = jsProps
+      .map(node => node.name)
+      .filter(name => name) // Some HOCs don't get docgenned properly (like TabContent)
+      .filter(name => rawMDX.indexOf(name) !== -1);
+    
+    // Finally, the props for each relevant component!
+    return jsProps
+      .filter(node => propComponents.indexOf(node.name) !== -1)
+      .map(node => { return { name: node.name, props: node.props } })
+      .sort((e1, e2) => e1.name.localeCompare(e2.name));
+  }
+  else if (tsProps.length > 0) {
+    const propComponents = tsProps[0].exports
+      .map(ex => ex.name)
+      .filter(name => rawMDX.indexOf(name) !== -1);
+    
+    console.log('ts propComponents', propComponents);
+  }
+
+  return [];
+}
+
 const MdxTemplate = ({ data }) => {
-  // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
-  // We *should* use the MDXRenderer scope to get the names of these, but that's pretty difficult
-  const propComponents = data.jsProps.nodes
-    .map(node => node.name)
-    .filter(name => name) // Some HOCs don't get docgenned properly (like TabContent)
-    .filter(name => data.mdx.code.body.indexOf(name) !== -1);
-
-  // Finally, the props for each relevant component!
-  const props = data.jsProps.nodes
-    .filter(node => propComponents.indexOf(node.name) !== -1)
-    .map(node => { return { name: node.name, props: node.props } })
-    .sort((e1, e2) => e1.name.localeCompare(e2.name));
-
   const cssPrefix = data.mdx.frontmatter.cssPrefix;
-  let section = data.mdx.frontmatter.section;
-  if (!section)
-    section = 'component';
+  let section = data.mdx.frontmatter.section || 'component';
+  const props = getPropList(data.jsProps.nodes, data.tsProps.nodes, data.mdx.code.body);
 
   return (
     <SidebarLayout>
@@ -46,7 +59,7 @@ const MdxTemplate = ({ data }) => {
       {props.length > 0 && props.map(component =>
         <PageSection key={component.name}>
           {props.description}
-          <Props caption={`${component.name} properties`} propList={component.props} />
+          <PropsTable caption={`${component.name} properties`} propList={component.props} />
         </PageSection>
       )}
 
@@ -102,16 +115,33 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
   tsProps: allTypedoc(filter: {name: {regex: $pathRegex}}) {
     nodes {
       exports {
+        id
         name
         children {
           name
           kindString
           comment {
-            text
+            shortText
           }
           defaultValue
           flags {
             isOptional
+          }
+        }
+        signatures {
+          parameters {
+            type {
+              declaration {
+                children {
+                  name
+                  type {
+                    id
+                    name
+                  }
+                  defaultValue
+                }
+              }
+            }
           }
         }
       }

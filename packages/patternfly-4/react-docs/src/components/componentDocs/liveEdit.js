@@ -4,7 +4,7 @@ import { Button } from '@patternfly-safe/react-core';
 import { CodeIcon, CopyIcon } from '@patternfly-safe/react-icons';
 
 const liveEditorStyle = { code: { 'max-height': '37.5rem', overflow: 'auto' } };
-class LiveEdit extends React.Component {
+export class LiveEdit extends React.Component {
   constructor(props) {
     super(props);
     // Our children are elements inside a <code> tag created from rendered markdown
@@ -94,5 +94,3 @@ class LiveEdit extends React.Component {
     }
   }
 }
-
-export default LiveEdit;

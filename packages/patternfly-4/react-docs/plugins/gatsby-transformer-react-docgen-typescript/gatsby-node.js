@@ -91,15 +91,17 @@ async function sourceNodes (
       // Rename children -> exports since that's a reserved Gatsby field
       tsModule.exports = tsModule.children;
       delete tsModule.children;
-      const nodeId = createNodeId(`typedoc-default-${i}`);
-      actions.createNode({
-        ...tsModule,
-        id: nodeId,
-        internal: {
-          type: 'Typedoc',
-          contentDigest: createContentDigest(tsModule)
-        }
-      });
+      if (tsModule.exports) {
+        const nodeId = createNodeId(`typedoc-default-${i}`);
+        actions.createNode({
+          ...tsModule,
+          id: nodeId,
+          internal: {
+            type: 'Typedoc',
+            contentDigest: createContentDigest(tsModule)
+          }
+        });
+      }
     }
   }
 
@@ -118,11 +120,11 @@ async function sourceNodes (
 
   let generated = false;
   if (project) {
-    const generatedFile = path.join(__dirname, '.cache', 'typedoc.json');
+    const generatedFile = path.join(__dirname, '../../.cache', 'typedoc.json');
     generated = app.generateJson(project, generatedFile);
     processTypeDoc(JSON.parse(fs.readFileSync(generatedFile, 'utf-8')));
   } else {
-    // console.error('Failed to generate TS proptypes');
+    console.error('Failed to generate TS proptypes');
   }
 
   return Promise.resolve(generated);

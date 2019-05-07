@@ -1,6 +1,7 @@
 ---
 title: 'Checkbox'
 cssPrefix: 'pf-c-check'
+typescript: true
 ---
 
 import { Checkbox } from '@patternfly/react-core';
