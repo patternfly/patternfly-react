@@ -5,7 +5,7 @@ class myProps implements NavProps {
   'aria-label': string = 'Test Nav Props';
 }
 
-class NavTest extends Component {
+export class NavDemo extends Component {
   render() {
     // Nav onToggle and onSelect should be optional
     // https://github.com/patternfly/patternfly-react/issues/1234
@@ -20,4 +20,4 @@ class NavTest extends Component {
   }
 }
 
-export default NavTest;
+export default NavDemo;

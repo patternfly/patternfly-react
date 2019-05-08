@@ -1,0 +1,16 @@
+.ws-preview {
+  padding: 9px;
+
+  .pf-l-level {
+    min-height: 160px;
+    padding: 9px;
+    border-width: 2px;
+    border-style: dashed;
+  }
+
+  & .pf-l-level > div {
+    padding: 9px;
+    border-width: 2px;
+    border-style: dashed;
+  }
+}

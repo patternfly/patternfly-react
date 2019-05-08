@@ -18,6 +18,10 @@ export const tippyStyles = () => {
       -webkit-font-smoothing: unset;
       text-align: unset;
       padding: unset;
+      cursor: text;
+      .tippy-content {
+        pointer-events: none;
+      }
     }
     .pf-c-tooltip, .pf-c-popover {
       max-width: unset;

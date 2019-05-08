@@ -5,6 +5,7 @@ section: 'layouts'
 ---
 
 import { Level, LevelItem } from '@patternfly/react-core';
+import './level.scss';
 
 ## Simple level layout
 ```js

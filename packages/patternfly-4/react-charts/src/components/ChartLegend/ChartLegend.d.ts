@@ -1,9 +1,6 @@
 import * as victory from 'victory';
-import { OneOf } from '../../typeUtils';
 
-export interface ChartLegendProps extends victory.VictoryLegendProps {
-  title?: OneOf<string, []>;
-}
+export interface ChartLegendProps extends victory.VictoryLegendProps {}
 
 declare const ChartLegend: React.ComponentClass<ChartLegendProps>;
 

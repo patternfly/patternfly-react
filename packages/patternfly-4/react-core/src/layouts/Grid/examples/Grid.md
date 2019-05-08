@@ -7,12 +7,13 @@ section: 'layouts'
 ## Simple grid
 
 import { Grid, GridItem, Button } from '@patternfly/react-core';
-import ItemControl from './examples/ItemControl';
+import ItemControl from './ItemControl';
+import './grid.scss';
 
 ```js
 import React from 'react';
 import { Grid, GridItem, Button } from '@patternfly/react-core';
-import ItemControl from './examples/ItemControl';
+import ItemControl from './ItemControl';
 
 <Grid>
   <GridItem span={8}>span = 8</GridItem>
@@ -38,7 +39,7 @@ import ItemControl from './examples/ItemControl';
 ```js
 import React from 'react';
 import { Grid, GridItem, Button } from '@patternfly/react-core';
-import ItemControl from './examples/ItemControl';
+import ItemControl from './ItemControl';
 
 <Grid gutter="md">
   <GridItem span={8}>span = 8</GridItem>
@@ -64,7 +65,7 @@ import ItemControl from './examples/ItemControl';
 ```js
 import React from 'react';
 import { Grid, GridItem, Button } from '@patternfly/react-core';
-import ItemControl from './examples/ItemControl';
+import ItemControl from './ItemControl';
 
 <Grid sm={6} md={4} lg={3}>
   <GridItem pan={3} rowSpan={2}>
@@ -86,6 +87,6 @@ import ItemControl from './examples/ItemControl';
 
 ## Grid playground
 
-import GridPlayground from './examples/GridPlayground';
+import GridPlayground from './GridPlayground';
 
 <GridPlayground />

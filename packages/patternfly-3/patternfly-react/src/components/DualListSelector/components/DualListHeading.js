@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import UUID from 'uuid/v1';
-import { DropdownKebab } from '../../../index';
 import DualListFilter from './DualListFilter';
 import DualListSort from './DualListSort';
 import DualListMainCheckbox from './DualListMainCheckbox';
+import DualListDropDown from './DualListDropDown';
 import { noop } from '../../../common/helpers';
 import { SORT_ARIA_LABEL } from '../constants';
 
@@ -23,9 +22,7 @@ const DualListHeading = ({
     <DualListMainCheckbox side={side} onChange={onMainCheckboxChange} isChecked={isMainChecked} />
     <DualListFilter side={side} onChange={onFilterChange} />
     <DualListSort side={side} onClick={onSortClick} isSortAsc={isSortAsc} ariaLabel={sortAriaLabel} />
-    <DropdownKebab id={kebabID} pullRight>
-      {kebabMenu}
-    </DropdownKebab>
+    <DualListDropDown id={kebabID}>{kebabMenu}</DualListDropDown>
   </div>
 );
 
@@ -59,7 +56,7 @@ DualListHeading.defaultProps = {
   side: null,
   sortAriaLabel: SORT_ARIA_LABEL,
   isMainChecked: false,
-  kebabID: `dual-list-pf-kebab-${UUID()}`
+  kebabID: null
 };
 
 export default DualListHeading;
