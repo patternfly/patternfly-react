@@ -17,8 +17,7 @@ const props = {
   trademark: 'Trademark and copyright information here',
   brandImageSrc: 'brandImg...',
   brandImageAlt: 'Brand Image',
-  logoImageSrc: 'logoImg...',
-  logoImageAlt: 'AboutModal Logo'
+  backgroundImageSrc: 'background-image-src'
 };
 
 test('AboutModal creates a container element once for div', () => {
@@ -55,15 +54,13 @@ test('Each modal is given new ariaDescribedById and ariaLablledbyId', () => {
   expect(first.props().ariaDescribedById).not.toBe(second.props().ariaDescribedById);
 });
 
-test('Console error is generated when the logoImageSrc is provided without logoImageAlt', () => {
+test('Console error is generated when the brandImageSrc is provided without brandImageAlt', () => {
   const noImgAltrops = {
     onClose: jest.fn(),
     children: 'modal content',
     productName: 'Product Name',
     trademark: 'Trademark and copyright information here',
-    brandImageSrc: 'brandImg...',
-    brandImageAlt: 'Brand Image',
-    logoImageSrc: 'logoImg...'
+    brandImageSrc: 'brandImg...'
   };
   const myMock = jest.fn();
   global.console = { error: myMock };

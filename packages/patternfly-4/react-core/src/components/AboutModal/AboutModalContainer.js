@@ -26,10 +26,8 @@ const propTypes = {
   brandImageSrc: PropTypes.string.isRequired,
   /** the alternate text of the Brand image. */
   brandImageAlt: PropTypes.string.isRequired,
-  /** the URL of the image for the Logo. */
-  logoImageSrc: PropTypes.string.isRequired,
-  /** the alternate text of the Logo image. */
-  logoImageAlt: PropTypes.string.isRequired,
+  /** the URL of the image for the background. */
+  backgroundImageSrc: PropTypes.string,
   /** id to use for About Modal Box aria labeled by */
   ariaLabelledbyId: PropTypes.string.isRequired,
   /** id to use for About Modal Box aria described by */
@@ -54,8 +52,7 @@ const ModalContent = ({
   trademark,
   brandImageSrc,
   brandImageAlt,
-  logoImageSrc,
-  logoImageAlt,
+  backgroundImageSrc,
   ariaLabelledbyId,
   ariaDescribedById,
   ...props
@@ -73,7 +70,7 @@ const ModalContent = ({
           <AboutModalBoxContent {...props} trademark={trademark} id={ariaDescribedById}>
             {children}
           </AboutModalBoxContent>
-          <AboutModalBoxHero />
+          <AboutModalBoxHero backgroundImageSrc={backgroundImageSrc} />
         </AboutModalBox>
       </Bullseye>
     </Backdrop>

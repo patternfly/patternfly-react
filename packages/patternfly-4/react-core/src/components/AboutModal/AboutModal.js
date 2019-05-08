@@ -24,20 +24,14 @@ const propTypes = {
   brandImageSrc: PropTypes.string.isRequired,
   /** The alternate text of the brand image */
   brandImageAlt: PropTypes.string.isRequired,
-  /** The URL of the image for the logo */
-  logoImageSrc: PropTypes.string,
-  /** The alternate text of the logo image */
-  logoImageAlt: props => {
-    if (props.logoImageSrc && !props.logoImageAlt) {
-      return new Error('logoImageAlt is required when a logoImageSrc is specified');
-    }
-    return null;
-  },
+  /** The URL of the image for the background */
+  backgroundImageSrc: PropTypes.string,
   /** Prevents the about modal from rendering content inside a container; allows for more flexible layouts */
   noAboutModalBoxContentContainer: PropTypes.bool,
   /** Additional props are passed and spread to the modal content container <div> */
   '': PropTypes.any
 };
+
 
 const defaultProps = {
   className: '',
@@ -45,8 +39,7 @@ const defaultProps = {
   onClose: () => undefined,
   productName: '',
   trademark: '',
-  logoImageSrc: '',
-  logoImageAlt: '',
+  backgroundImageSrc: '',
   noAboutModalBoxContentContainer: false
 };
 
