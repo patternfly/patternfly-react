@@ -3,11 +3,19 @@ import { css, getModifier } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
 import styles from '@patternfly/patternfly/components/Title/title.css';
 import { BaseSizes } from '../../styles/sizes';
-import { TitleLevel } from './index';
+
+export enum TitleLevel {
+  h1 = 'h1',
+  h2 = 'h2',
+  h3 = 'h3',
+  h4 = 'h4',
+  h5 = 'h5',
+  h6 = 'h6'
+}
 
 export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 'size' | 'className'> {
   /** the size of the Title  */
-  size: BaseSizes;
+  size: keyof typeof BaseSizes;
   /** content rendered inside the Title */
   children?: React.ReactNode;
   /** Additional classes added to the Title */

@@ -1,5 +1,6 @@
-import { Button, Title, TitleSize, TitleProps, TitleLevel } from '@patternfly/react-core';
+import { Title, TitleSize, TitleProps, TitleLevel } from '@patternfly/react-core';
 import React, { Component } from 'react';
+
 export class TitleDemo extends Component {
   myTitleProps: TitleProps = {
     size: TitleSize.md,
@@ -16,5 +17,3 @@ export class TitleDemo extends Component {
     );
   }
 }
-
-export default TitleDemo;

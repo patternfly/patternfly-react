@@ -1,5 +1,6 @@
 import { Alert, AlertProps, AlertActionCloseButton, AlertActionLink, AlertVariant } from '@patternfly/react-core';
 import React, { Component } from 'react';
+
 export class AlertDemo extends Component {
   myAlertProps: AlertProps = {
     action: <AlertActionCloseButton />,
@@ -26,5 +27,3 @@ export class AlertDemo extends Component {
     );
   }
 }
-
-export default AlertDemo;

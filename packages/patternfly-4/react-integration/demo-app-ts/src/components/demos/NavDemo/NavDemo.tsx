@@ -19,5 +19,3 @@ export class NavDemo extends Component {
     );
   }
 }
-
-export default NavDemo;

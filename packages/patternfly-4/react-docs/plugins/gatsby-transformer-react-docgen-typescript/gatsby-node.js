@@ -51,7 +51,9 @@ async function onCreateNode({
   const sourceText = await loadNodeContent(node);
   let parsed = null;
   try {
-    parsed = reactDocgen.parse(sourceText);
+    parsed = reactDocgen.parse(sourceText, null, null, {
+      filename: node.absolutePath
+    });
   } catch (err) {
     console.warn('No component found in', node.absolutePath);
   }
