@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/demo-app-ts",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "build": "react-scripts build",
     "start:demo-app": "react-scripts start"
