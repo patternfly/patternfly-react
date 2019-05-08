@@ -38,15 +38,15 @@ export class Checkbox extends React.Component<CheckboxProps> {
     super(props);
   }
 
-  static defaultProps = defaultProps;
+  private static defaultProps = defaultProps;
 
-  handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
+  private handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
     if (this.props.onChange) {
       this.props.onChange(event.currentTarget.checked, event);
     }
   };
 
-  render() {
+  public render() {
     const {
       'aria-label': ariaLabel,
       className,

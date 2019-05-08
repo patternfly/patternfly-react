@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-console",
-  "version": "1.10.38",
+  "version": "1.10.39",
   "private": false,
   "description": "This library provides a set of Console React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
@@ -31,8 +31,8 @@
   "scripts": {
     "build": "yarn build:sass && yarn build:less && yarn build:babel",
     "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm'",
-    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
-    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
+    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js -q",
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm -q",
     "build:less": "shx mkdir -p dist/less && shx cp -r less/* dist/less",
     "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/* dist/sass && cross-env node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/console.scss",
     "clean": "rimraf dist"
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "patternfly": "^3.58.0",
-    "patternfly-react": "^2.32.2",
+    "patternfly-react": "^2.32.3",
     "rimraf": "^2.6.2",
     "shx": "^0.3.2"
   },

@@ -58,6 +58,7 @@
     "eslint": "^5.13.0",
     "eslint-import-resolver-webpack": "^0.9.0",
     "eslint-plugin-patternfly-react": "file:packages/eslint-plugin-patternfly-react",
+    "folder-hash": "^3.0.0",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
     "istanbul-api": "1.3.1",
@@ -106,16 +107,18 @@
     "lint": "lerna run lint --parallel",
     "lint:fix": "lerna run lint:fix --parallel",
     "lint:style": "lerna run stylelint",
+    "lint:ts": "lerna run lint:ts --parallel",
     "prettier": "prettier --write 'storybook/**/*.js' 'packages/**/*.js' 'scripts/**/*.js'",
     "start": "yarn start:pf3",
+    "start:cypress": "lerna run cypress:open",
+    "start:demo-app": "lerna run start:demo-app",
     "start:pf3": "concurrently 'yarn storybook' 'yarn storybook:openurl'",
     "start:pf4": "yarn build:pf4 && lerna run develop --parallel --stream",
-    "start:demo-app": "lerna run integration:setup && lerna run start:demo",
     "storybook:openurl": "node ./storybook/openBrowser.js",
     "storybook": "start-storybook -c storybook -p 6006",
     "test": "jest packages",
     "test:current": "jest --watch",
-    "test:integration": "lerna run integration:setup && lerna run build:demo && lerna run integration:test",
+    "test:integration": "lerna run test:integration",
     "test:misc": "jest packages/react-*",
     "test:pf3": "jest packages/patternfly-3",
     "test:pf4": "jest packages/patternfly-4",
@@ -131,8 +134,5 @@
     "packages": [
       "packages/**"
     ]
-  },
-  "dependencies": {
-    "folder-hash": "^3.0.0"
   }
 }
