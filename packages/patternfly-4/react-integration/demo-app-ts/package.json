@@ -1,5 +1,5 @@
 {
-  "name": "@patternfly/demo-app-ts",
+  "name": "demo-app-ts",
   "private": true,
   "version": "1.0.1",
   "scripts": {

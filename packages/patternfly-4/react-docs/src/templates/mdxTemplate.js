@@ -73,7 +73,7 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
       cssPrefix
     }
   }
-  jsProps: allComponentMetadata(filter: {path: {regex: $pathRegex}}) {
+  jsProps: allComponentMetadata(filter: {path: {regex: $pathRegex}, name: {ne: null}}) {
     nodes {
       name
       props {
