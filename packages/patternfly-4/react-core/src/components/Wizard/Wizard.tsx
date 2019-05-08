@@ -60,7 +60,7 @@ export interface WizardProps {
   /** The wizard description */
   description?: string;
   /** Callback function to close the wizard */
-  onClose: () => void;
+  onClose?: () => void;
   /** Callback function when a step in the nav is clicked */
   onGoToStep?: WizardStepFunctionType;
   /** Additional classes spread to the Wizard */

@@ -4,12 +4,12 @@ exports[`EmptyState Main 1`] = `
 <div
   className="pf-c-empty-state pf-m-lg"
 >
-  <Title
+  <Component
     headingLevel="h5"
     size="lg"
   >
     HTTP Proxies
-  </Title>
+  </Component>
   <EmptyStateBody
     className=""
   >
@@ -56,9 +56,9 @@ exports[`EmptyState Main variant regular 1`] = `
 <div
   className="pf-c-empty-state"
 >
-  <Title>
+  <Component>
     EmptyState full
-  </Title>
+  </Component>
 </div>
 `;
 
@@ -66,8 +66,8 @@ exports[`EmptyState Main variant small 1`] = `
 <div
   className="pf-c-empty-state pf-m-sm"
 >
-  <Title>
+  <Component>
     EmptyState small
-  </Title>
+  </Component>
 </div>
 `;

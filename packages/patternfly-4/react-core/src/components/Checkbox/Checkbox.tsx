@@ -34,7 +34,8 @@ export class Checkbox extends React.Component<CheckboxProps> {
     isValid: true,
     isDisabled: false,
     isChecked: false,
-    onChange: (_checked: boolean, _event: React.FormEvent<HTMLInputElement>) => {}
+    // tslint:disable-next-line:no-empty
+    onChange: () => {}
   };
 
   handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
