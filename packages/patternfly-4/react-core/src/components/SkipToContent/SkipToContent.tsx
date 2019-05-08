@@ -10,7 +10,7 @@ export interface SkipToContentProps
   /** The skip to content link. */
   href: string;
   /** Content to display within the skip to content component, typically a string. */
-  children?: any;
+  children?: React.ReactNode;
   /** Additional styles to apply to the skip to content component. */
   className?: string;
   /** Forces the skip to component to display. This is primarily for demonstration purposes and would not normally be used. */
@@ -18,32 +18,29 @@ export interface SkipToContentProps
 }
 
 export class SkipToContent extends React.Component<SkipToContentProps> {
-  public static defaultProps = {
+  static defaultProps = {
     component: 'a',
-    children: null,
     className: '',
     show: false
   };
 
-  public render() {
+  render() {
     const { component, children, className, href, show, ...rest } = this.props;
     const Component = component;
     return (
-        <Component
-          {...rest}
-          className={css(
-            buttonStyles.button,
-            getModifier(buttonStyles.modifiers, 'primary'),
-            styles.skipToContent,
-            show && getModifier(styles, 'focus'),
-            className
-          )}
-          href={href}
-        >
-          {children}
-        </Component>
-      );
-    }
+      <Component
+        {...rest}
+        className={css(
+          buttonStyles.button,
+          getModifier(buttonStyles.modifiers, 'primary'),
+          styles.skipToContent,
+          show && getModifier(styles, 'focus'),
+          className
+        )}
+        href={href}
+      >
+        {children}
+      </Component>
+    );
+  }
 };
-
-export default SkipToContent;

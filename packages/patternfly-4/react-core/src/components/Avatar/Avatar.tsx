@@ -12,7 +12,7 @@ export interface AvatarProps
   alt: string;
 }
 
-export const Avatar: React.FunctionComponent<AvatarProps> = ({
+export const Avatar: React.SFC<AvatarProps> = ({
   className = '',
   src = '',
   alt,

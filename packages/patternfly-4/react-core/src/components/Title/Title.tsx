@@ -3,6 +3,7 @@ import { css, getModifier } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
 import styles from '@patternfly/patternfly/components/Title/title.css';
 import { BaseSizes } from '../../styles/sizes';
+import { TitleLevel } from './index';
 
 export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 'size' | 'className'> {
   /** the size of the Title  */
@@ -12,10 +13,10 @@ export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 's
   /** Additional classes added to the Title */
   className?: string;
   /** the heading level to use */
-  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  headingLevel?: TitleLevel | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-const Title: React.FunctionComponent<TitleProps> = ({
+export const Title: React.FunctionComponent<TitleProps> = ({
   size,
   className = '',
   children = '',
@@ -26,5 +27,3 @@ const Title: React.FunctionComponent<TitleProps> = ({
     {children}
   </HeadingLevel>
 );
-
-export { Title };

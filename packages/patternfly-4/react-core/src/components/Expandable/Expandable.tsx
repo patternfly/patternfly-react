@@ -3,16 +3,6 @@ import styles from '@patternfly/patternfly/components/Expandable/expandable.css'
 import { css } from '@patternfly/react-styles';
 import { AngleRightIcon } from '@patternfly/react-icons';
 
-const defaultProps = {
-  className: '',
-  isExpanded: false,
-  toggleText: '',
-  onToggle: () => undefined,
-  isFocused: false,
-  isHovered: false,
-  isActive: false
-};
-
 export interface ExpandableProps {
   /** Content rendered inside the Expandable Component */
   children: any;
@@ -33,14 +23,14 @@ export interface ExpandableProps {
 }
 
 export const Expandable: React.SFC<ExpandableProps> = ({
-  className,
+  className = '',
   children,
-  isExpanded,
-  toggleText,
-  onToggle,
-  isFocused,
-  isActive,
-  isHovered,
+  isExpanded = false,
+  toggleText = '',
+  onToggle = () => {},
+  isFocused = false,
+  isActive = false,
+  isHovered = false,
   ...props
 }) => (
   <div {...props} className={css(styles.expandable, isExpanded && styles.modifiers.expanded, className)}>
@@ -62,7 +52,5 @@ export const Expandable: React.SFC<ExpandableProps> = ({
     </div>
   </div>
 );
-
-Expandable.defaultProps = defaultProps;
 
 export default Expandable;
