@@ -1879,9 +1879,9 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@patternfly/patternfly@2.6.5":
-  version "2.6.5"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.6.5.tgz#6e4f22f0e7ac6d06bd42473b8282ce92a1cab8e1"
+"@patternfly/patternfly@2.6.8":
+  version "2.6.8"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.6.8.tgz#6ffd4a5b27e2e7b2076b22d7466012ee30421e6a"
   integrity sha512-L0k+ea2N679ytQwTqYJ7RewVDx6FDpm9burtHgD8fhcIN0UJJo7v2IkhLya2WzH2/O7L7TiF45lb/ZVoFVckDA==
 
 "@patternfly/react-core@file:packages/patternfly-4/react-core":
