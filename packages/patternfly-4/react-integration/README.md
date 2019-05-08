@@ -20,14 +20,14 @@ Building your React component
 Once you’ve completed development of a new component, you need to perform a build before you can start writing integration tests.
 
 1. Make your changes in packages/patternfly-4/react-core
-2. Run the following command to build your component:
+2. Run the following command from the root directory to build your component:
 
     `yarn build`
 
 ## Running the demo app
 
 Running the demo app
-Run the following command to launch the demo app:
+Run the following command from the root directory to launch the demo app:
 
 `yarn start demo:app`
 
@@ -44,11 +44,11 @@ Before you can start writing a Cypress test, you need to build a demo page to te
 ## Building Cypress tests
 We use [Cypress](https://www.cypress.io/) for integration testing. View all of our existing Cypress tests [here](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration/cypress/integration).
 
-Make sure your demo app is running. If you need to launch the demo application, run the following command:
+Make sure your demo app is running. If you need to launch the demo application, run the following command from the root directory:
 
 `yarn start:demo-app`
 
-Run the following command to launch Cypress:
+Run the following command from the root directory to launch Cypress:
 
 `yarn start:cypress`
 
@@ -60,6 +60,6 @@ Add any new integration tests you write to the [integration folder here](https:/
 ## Running integration tests
 Once you’ve completed writing your integration tests, run all tests to verify that both new tests and previously written tests are all working.
 
-Run the following command to run all tests:
+Run the following command from the root directory to run all tests:
 
 `yarn run test:integration`
