@@ -1,6 +1,7 @@
 ---
 title: 'Expandable'
 cssPrefix: 'pf-c-expandable'
+typescript: true
 ---
 
 import { Expandable } from '@patternfly/react-core';

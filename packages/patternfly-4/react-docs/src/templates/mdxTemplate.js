@@ -83,8 +83,8 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
         type {
           name
         }
-        flowType {
-          raw
+        tsType {
+          name
         }
         defaultValue {
           value
