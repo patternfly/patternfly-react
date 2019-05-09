@@ -2,12 +2,12 @@
 
 exports[`ModalBoxHeader Test 1`] = `
 <Fragment>
-  <Title
+  <Component
     className=""
     headingLevel="h3"
     size="2xl"
   >
     This is a ModalBox header
-  </Title>
+  </Component>
 </Fragment>
 `;

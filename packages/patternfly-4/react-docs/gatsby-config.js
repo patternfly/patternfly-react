@@ -43,15 +43,22 @@ module.exports = {
         ignore: ignore
       },
     },
+    // Our custom plugin for *.js?x *.ts?x files to get prop types
     {
-      // Our custom plugin for *.js?x *.ts?x files to get prop types
-      resolve: require.resolve(`${__dirname}/plugins/gatsby-transformer-react-docgen-typescript`),
+      resolve: path.resolve(`${__dirname}/plugins/gatsby-transformer-react-docgen-typescript`),
     },
     // The markdown plugin for *.md files
     {
       resolve: `gatsby-mdx`,
       options: {
         extensions: [`.mdx`, `.md`]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        postCssPlugins: [],
+        precision: 5
       }
     },
     // The plugin for package.json files (to get version numbers)

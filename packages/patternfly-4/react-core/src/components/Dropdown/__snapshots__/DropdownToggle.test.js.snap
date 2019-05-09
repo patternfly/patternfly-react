@@ -13,7 +13,7 @@ exports[`state active 1`] = `
   onToggle={[Function]}
   parentRef={<div />}
 >
-  <DropdownToggle
+  <Toggle
     className=""
     id="Dropdown Toggle"
     isActive={true}
@@ -67,7 +67,7 @@ exports[`state active 1`] = `
         </svg>
       </CaretDownIcon>
     </button>
-  </DropdownToggle>
+  </Toggle>
 </DropdownToggle>
 `;
 
@@ -84,7 +84,7 @@ exports[`state focus 1`] = `
   onToggle={[Function]}
   parentRef={<div />}
 >
-  <DropdownToggle
+  <Toggle
     className=""
     id="Dropdown Toggle"
     isActive={false}
@@ -138,7 +138,7 @@ exports[`state focus 1`] = `
         </svg>
       </CaretDownIcon>
     </button>
-  </DropdownToggle>
+  </Toggle>
 </DropdownToggle>
 `;
 
@@ -155,7 +155,7 @@ exports[`state hover 1`] = `
   onToggle={[Function]}
   parentRef={<div />}
 >
-  <DropdownToggle
+  <Toggle
     className=""
     id="Dropdown Toggle"
     isActive={false}
@@ -209,6 +209,6 @@ exports[`state hover 1`] = `
         </svg>
       </CaretDownIcon>
     </button>
-  </DropdownToggle>
+  </Toggle>
 </DropdownToggle>
 `;

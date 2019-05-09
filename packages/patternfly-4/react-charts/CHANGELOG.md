@@ -3,6 +3,64 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.4.5...@patternfly/react-charts@3.4.6) (2019-05-09)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [3.4.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.4.4...@patternfly/react-charts@3.4.5) (2019-05-07)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [3.4.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.4.3...@patternfly/react-charts@3.4.4) (2019-05-07)
+
+
+### Bug Fixes
+
+* **types:** Update @types/victory package to latest ([#1899](https://github.com/patternfly/patternfly-react/issues/1899)) ([d3e2ec7](https://github.com/patternfly/patternfly-react/commit/d3e2ec7)), closes [#1898](https://github.com/patternfly/patternfly-react/issues/1898)
+
+
+
+
+
+## 3.4.3 (2019-05-06)
+
+
+### Bug Fixes
+
+* **charts:** Fix chart font stack to use PatternFly core sans-serif font stack ([#1865](https://github.com/patternfly/patternfly-react/issues/1865)) ([f2b4cc7](https://github.com/patternfly/patternfly-react/commit/f2b4cc7)), closes [#1864](https://github.com/patternfly/patternfly-react/issues/1864)
+* **DualList:** Hide dropdown when no menu items are provided ([#1909](https://github.com/patternfly/patternfly-react/issues/1909)) ([8ed397e](https://github.com/patternfly/patternfly-react/commit/8ed397e))
+
+
+
+
+
+## [3.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.4.1...@patternfly/react-charts@3.4.2) (2019-04-30)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## 3.4.1 (2019-04-29)
+
+
+### Bug Fixes
+
+* **version:** bump patternfly version to 2.6.5 ([#1874](https://github.com/patternfly/patternfly-react/issues/1874)) ([e3c8d7c](https://github.com/patternfly/patternfly-react/commit/e3c8d7c))
+
+
+
+
+
 # [3.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.3.0...@patternfly/react-charts@3.4.0) (2019-04-25)
 
 

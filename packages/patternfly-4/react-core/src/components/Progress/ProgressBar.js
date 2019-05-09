@@ -10,6 +10,8 @@ const propTypes = {
   className: PropTypes.string,
   /** Actual progress value. */
   value: PropTypes.number.isRequired,
+  /** Minimal value of progress. */
+  ariaProps: PropTypes.object.isRequired,
   /** Additional props are spread to the container <div> */
   '': PropTypes.any
 };
@@ -19,8 +21,8 @@ const defaultProps = {
   className: ''
 };
 
-const ProgressBar = ({ className, children, value, ...props }) => (
-  <div {...props} className={css(styles.progressBar, className)}>
+const ProgressBar = ({ ariaProps, className, children, value, ...props }) => (
+  <div {...props} className={css(styles.progressBar, className)} {...ariaProps}>
     <div className={css(styles.progressIndicator)} style={{ width: `${value}%` }}>
       <span className={css(styles.progressMeasure)}>{children}</span>
     </div>

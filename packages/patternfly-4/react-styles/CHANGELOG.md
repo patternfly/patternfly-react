@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.2.1...@patternfly/react-styles@3.2.2) (2019-05-09)
+
+
+### Bug Fixes
+
+* **docs:** fix ts docgen ([#1944](https://github.com/patternfly/patternfly-react/issues/1944)) ([f68bbc5](https://github.com/patternfly/patternfly-react/commit/f68bbc5))
+
+
+
+
+
+## 3.2.1 (2019-05-07)
+
+
+### Bug Fixes
+
+* **React Icons documentation:** fix React Icons documentation link to all Patternfly React Icons. ([#1868](https://github.com/patternfly/patternfly-react/issues/1868)) ([54d5404](https://github.com/patternfly/patternfly-react/commit/54d5404)), closes [#1841](https://github.com/patternfly/patternfly-react/issues/1841)
+
+
+
+
+
 # 3.2.0 (2019-04-25)
 
 

@@ -1,6 +1,7 @@
 ---
 title: 'Title'
 cssPrefix: 'pf-c-title'
+typescript: true
 ---
 
 import { Title } from '@patternfly/react-core';

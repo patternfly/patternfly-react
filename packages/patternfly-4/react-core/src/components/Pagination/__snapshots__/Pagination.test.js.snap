@@ -60,7 +60,7 @@ exports[`component render custom pagination toggle 1`] = `
     >
       40 items
     </div>
-    <OptionsMenu
+    <PaginationOptionsMenu
       dropDirection="down"
       firstIndex={1}
       itemCount={40}
@@ -184,6 +184,7 @@ exports[`component render custom pagination toggle 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -270,7 +271,7 @@ exports[`component render custom pagination toggle 1`] = `
           </div>
         </Dropdown>
       </div>
-    </OptionsMenu>
+    </PaginationOptionsMenu>
     <Navigation
       currPage="Current page"
       lastPage={4}
@@ -575,7 +576,7 @@ exports[`component render custom perPageOptions 1`] = `
     >
       40 items
     </div>
-    <OptionsMenu
+    <PaginationOptionsMenu
       dropDirection="down"
       firstIndex={1}
       itemCount={40}
@@ -630,6 +631,7 @@ exports[`component render custom perPageOptions 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -673,7 +675,7 @@ exports[`component render custom perPageOptions 1`] = `
                 <span
                   className="pf-c-options-menu__toggle-text"
                 >
-                  <ToggleTamplate
+                  <ToggleTemplate
                     firstIndex={1}
                     itemCount={40}
                     itemsTitle="items"
@@ -690,7 +692,7 @@ exports[`component render custom perPageOptions 1`] = `
                     </strong>
                      
                     items
-                  </ToggleTamplate>
+                  </ToggleTemplate>
                 </span>
                 <button
                   aria-expanded={false}
@@ -733,7 +735,7 @@ exports[`component render custom perPageOptions 1`] = `
           </div>
         </Dropdown>
       </div>
-    </OptionsMenu>
+    </PaginationOptionsMenu>
     <Navigation
       currPage="Current page"
       lastPage={4}
@@ -1052,7 +1054,7 @@ exports[`component render custom start end 1`] = `
     >
       40 items
     </div>
-    <OptionsMenu
+    <PaginationOptionsMenu
       dropDirection="down"
       firstIndex={5}
       itemCount={40}
@@ -1176,6 +1178,7 @@ exports[`component render custom start end 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -1219,7 +1222,7 @@ exports[`component render custom start end 1`] = `
                 <span
                   className="pf-c-options-menu__toggle-text"
                 >
-                  <ToggleTamplate
+                  <ToggleTemplate
                     firstIndex={5}
                     itemCount={40}
                     itemsTitle="items"
@@ -1236,7 +1239,7 @@ exports[`component render custom start end 1`] = `
                     </strong>
                      
                     items
-                  </ToggleTamplate>
+                  </ToggleTemplate>
                 </span>
                 <button
                   aria-expanded={false}
@@ -1279,7 +1282,7 @@ exports[`component render custom start end 1`] = `
           </div>
         </Dropdown>
       </div>
-    </OptionsMenu>
+    </PaginationOptionsMenu>
     <Navigation
       currPage="Current page"
       lastPage={4}
@@ -1596,7 +1599,7 @@ exports[`component render last page 1`] = `
     >
       20 items
     </div>
-    <OptionsMenu
+    <PaginationOptionsMenu
       dropDirection="down"
       firstIndex={11}
       itemCount={20}
@@ -1720,6 +1723,7 @@ exports[`component render last page 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -1763,7 +1767,7 @@ exports[`component render last page 1`] = `
                 <span
                   className="pf-c-options-menu__toggle-text"
                 >
-                  <ToggleTamplate
+                  <ToggleTemplate
                     firstIndex={11}
                     itemCount={20}
                     itemsTitle="items"
@@ -1780,7 +1784,7 @@ exports[`component render last page 1`] = `
                     </strong>
                      
                     items
-                  </ToggleTamplate>
+                  </ToggleTemplate>
                 </span>
                 <button
                   aria-expanded={false}
@@ -1823,7 +1827,7 @@ exports[`component render last page 1`] = `
           </div>
         </Dropdown>
       </div>
-    </OptionsMenu>
+    </PaginationOptionsMenu>
     <Navigation
       currPage="Current page"
       lastPage={2}
@@ -2140,7 +2144,7 @@ exports[`component render limited number of pages 1`] = `
     >
       20 items
     </div>
-    <OptionsMenu
+    <PaginationOptionsMenu
       dropDirection="down"
       firstIndex={1}
       itemCount={20}
@@ -2264,6 +2268,7 @@ exports[`component render limited number of pages 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -2307,7 +2312,7 @@ exports[`component render limited number of pages 1`] = `
                 <span
                   className="pf-c-options-menu__toggle-text"
                 >
-                  <ToggleTamplate
+                  <ToggleTemplate
                     firstIndex={1}
                     itemCount={20}
                     itemsTitle="items"
@@ -2324,7 +2329,7 @@ exports[`component render limited number of pages 1`] = `
                     </strong>
                      
                     items
-                  </ToggleTamplate>
+                  </ToggleTemplate>
                 </span>
                 <button
                   aria-expanded={false}
@@ -2367,7 +2372,7 @@ exports[`component render limited number of pages 1`] = `
           </div>
         </Dropdown>
       </div>
-    </OptionsMenu>
+    </PaginationOptionsMenu>
     <Navigation
       currPage="Current page"
       lastPage={1}
@@ -2684,7 +2689,7 @@ exports[`component render no items 1`] = `
     >
       0 items
     </div>
-    <OptionsMenu
+    <PaginationOptionsMenu
       dropDirection="down"
       firstIndex={0}
       itemCount={0}
@@ -2808,6 +2813,7 @@ exports[`component render no items 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -2851,7 +2857,7 @@ exports[`component render no items 1`] = `
                 <span
                   className="pf-c-options-menu__toggle-text"
                 >
-                  <ToggleTamplate
+                  <ToggleTemplate
                     firstIndex={0}
                     itemCount={0}
                     itemsTitle="items"
@@ -2868,7 +2874,7 @@ exports[`component render no items 1`] = `
                     </strong>
                      
                     items
-                  </ToggleTamplate>
+                  </ToggleTemplate>
                 </span>
                 <button
                   aria-expanded={false}
@@ -2911,7 +2917,7 @@ exports[`component render no items 1`] = `
           </div>
         </Dropdown>
       </div>
-    </OptionsMenu>
+    </PaginationOptionsMenu>
     <Navigation
       currPage="Current page"
       lastPage={0}
@@ -3223,7 +3229,7 @@ exports[`component render should render correctly bottom 1`] = `
   <div
     className="pf-c-pagination pf-m-footer"
   >
-    <OptionsMenu
+    <PaginationOptionsMenu
       dropDirection="down"
       firstIndex={1}
       itemCount={20}
@@ -3347,6 +3353,7 @@ exports[`component render should render correctly bottom 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -3390,7 +3397,7 @@ exports[`component render should render correctly bottom 1`] = `
                 <span
                   className="pf-c-options-menu__toggle-text"
                 >
-                  <ToggleTamplate
+                  <ToggleTemplate
                     firstIndex={1}
                     itemCount={20}
                     itemsTitle="items"
@@ -3407,7 +3414,7 @@ exports[`component render should render correctly bottom 1`] = `
                     </strong>
                      
                     items
-                  </ToggleTamplate>
+                  </ToggleTemplate>
                 </span>
                 <button
                   aria-expanded={false}
@@ -3450,7 +3457,7 @@ exports[`component render should render correctly bottom 1`] = `
           </div>
         </Dropdown>
       </div>
-    </OptionsMenu>
+    </PaginationOptionsMenu>
     <Navigation
       currPage="Current page"
       lastPage={2}
@@ -3767,7 +3774,7 @@ exports[`component render should render correctly top 1`] = `
     >
       20 items
     </div>
-    <OptionsMenu
+    <PaginationOptionsMenu
       dropDirection="down"
       firstIndex={1}
       itemCount={20}
@@ -3891,6 +3898,7 @@ exports[`component render should render correctly top 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -3934,7 +3942,7 @@ exports[`component render should render correctly top 1`] = `
                 <span
                   className="pf-c-options-menu__toggle-text"
                 >
-                  <ToggleTamplate
+                  <ToggleTemplate
                     firstIndex={1}
                     itemCount={20}
                     itemsTitle="items"
@@ -3951,7 +3959,7 @@ exports[`component render should render correctly top 1`] = `
                     </strong>
                      
                     items
-                  </ToggleTamplate>
+                  </ToggleTemplate>
                 </span>
                 <button
                   aria-expanded={false}
@@ -3994,7 +4002,7 @@ exports[`component render should render correctly top 1`] = `
           </div>
         </Dropdown>
       </div>
-    </OptionsMenu>
+    </PaginationOptionsMenu>
     <Navigation
       currPage="Current page"
       lastPage={2}
@@ -4302,7 +4310,7 @@ exports[`component render titles 1`] = `
     >
       40 values
     </div>
-    <OptionsMenu
+    <PaginationOptionsMenu
       dropDirection="down"
       firstIndex={1}
       itemCount={40}
@@ -4426,6 +4434,7 @@ exports[`component render titles 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -4469,7 +4478,7 @@ exports[`component render titles 1`] = `
                 <span
                   className="pf-c-options-menu__toggle-text"
                 >
-                  <ToggleTamplate
+                  <ToggleTemplate
                     firstIndex={1}
                     itemCount={40}
                     itemsTitle="values"
@@ -4486,7 +4495,7 @@ exports[`component render titles 1`] = `
                     </strong>
                      
                     values
-                  </ToggleTamplate>
+                  </ToggleTemplate>
                 </span>
                 <button
                   aria-expanded={false}
@@ -4529,7 +4538,7 @@ exports[`component render titles 1`] = `
           </div>
         </Dropdown>
       </div>
-    </OptionsMenu>
+    </PaginationOptionsMenu>
     <Navigation
       currPage="Current page"
       lastPage={4}
@@ -4846,7 +4855,7 @@ exports[`component render up drop direction 1`] = `
     >
       40 items
     </div>
-    <OptionsMenu
+    <PaginationOptionsMenu
       dropDirection="up"
       firstIndex={1}
       itemCount={40}
@@ -4970,6 +4979,7 @@ exports[`component render up drop direction 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -5013,7 +5023,7 @@ exports[`component render up drop direction 1`] = `
                 <span
                   className="pf-c-options-menu__toggle-text"
                 >
-                  <ToggleTamplate
+                  <ToggleTemplate
                     firstIndex={1}
                     itemCount={40}
                     itemsTitle="items"
@@ -5030,7 +5040,7 @@ exports[`component render up drop direction 1`] = `
                     </strong>
                      
                     items
-                  </ToggleTamplate>
+                  </ToggleTemplate>
                 </span>
                 <button
                   aria-expanded={false}
@@ -5073,7 +5083,7 @@ exports[`component render up drop direction 1`] = `
           </div>
         </Dropdown>
       </div>
-    </OptionsMenu>
+    </PaginationOptionsMenu>
     <Navigation
       currPage="Current page"
       lastPage={4}

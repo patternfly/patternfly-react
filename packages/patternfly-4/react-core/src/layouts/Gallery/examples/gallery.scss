@@ -1,0 +1,11 @@
+.ws-preview {
+  & .pf-l-gallery {
+    padding: 1rem;
+  }
+
+  & .pf-l-gallery > div {
+    padding: 1rem;
+    border-width: 2px;
+    border-style: dashed;
+  }
+}

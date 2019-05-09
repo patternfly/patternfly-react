@@ -2,10 +2,14 @@ import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
 import { css } from '@patternfly/react-styles';
 
-interface WizardNavProps {
+export interface WizardNavProps {
+  /** children should be WizardNavItem components */
   children?: any;
+  /** aria-label applied to the nav element */
   ariaLabel?: string;
+  /** Whether the nav is expanded */
   isOpen?: boolean;
+  /** True to return the inner list without the wrapping nav element */
   returnList?: boolean;
 }
 

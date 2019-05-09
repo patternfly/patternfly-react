@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-core",
-  "version": "3.13.1",
+  "version": "3.17.0",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -30,19 +30,19 @@
   "scripts": {
     "build": "yarn typecheck && yarn build:babel && yarn build:types && node ./scripts/copyTS.js && node ./build/copyStyles.js",
     "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm' && yarn build:babel:umd",
-    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js --extensions '.js,jsx,.ts,.tsx'",
-    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm --extensions '.js,jsx,.ts,.tsx'",
-    "build:babel:umd": "cross-env BABEL_ENV=production:umd babel dist/esm --out-dir dist/umd --plugins transform-es2015-modules-umd  --extensions '.js,jsx,.ts,.tsx'",
+    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js --extensions '.js,jsx,.ts,.tsx' -q",
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm --extensions '.js,jsx,.ts,.tsx' -q",
+    "build:babel:umd": "cross-env BABEL_ENV=production:umd babel dist/esm --out-dir dist/umd --plugins transform-es2015-modules-umd  --extensions '.js,jsx,.ts,.tsx' -q",
     "build:types": "tsc -p tsconfig.gen-dts.json",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose",
-    "typecheck": "tsc -p tsconfig.typecheck.json",
     "clean": "rimraf dist",
-    "lint": "tslint -p tsconfig.typecheck.json"
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose",
+    "lint:ts": "tslint -p tsconfig.typecheck.json",
+    "typecheck": "tsc -p tsconfig.typecheck.json"
   },
   "dependencies": {
-    "@patternfly/react-icons": "^3.8.0",
-    "@patternfly/react-styles": "^3.2.0",
-    "@patternfly/react-tokens": "^2.5.0",
+    "@patternfly/react-icons": "^3.9.2",
+    "@patternfly/react-styles": "^3.2.2",
+    "@patternfly/react-tokens": "^2.5.2",
     "@tippy.js/react": "^1.1.1",
     "emotion": "^9.2.9",
     "exenv": "^1.2.2",
@@ -59,7 +59,7 @@
     "@babel/plugin-transform-typescript": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@patternfly/patternfly": "2.6.1",
+    "@patternfly/patternfly": "2.6.5",
     "@types/enzyme": "3.9.0",
     "@types/exenv": "^1.2.0",
     "@types/jest": "^24.0.11",
@@ -77,7 +77,7 @@
     "tslint": "^5.12.0",
     "tslint-config-prettier": "^1.17.0",
     "tslint-react": "^3.6.0",
-    "typescript": "3.2.2"
+    "typescript": "3.4.5"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",

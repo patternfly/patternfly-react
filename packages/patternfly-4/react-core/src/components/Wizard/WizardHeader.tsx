@@ -5,25 +5,31 @@ import { Button } from '../Button';
 import { Title } from '../Title';
 import { TimesIcon } from '@patternfly/react-icons';
 
-interface WizardHeaderProps {
+export interface WizardHeaderProps {
+  /** Callback function called when the X (Close) button is clicked */
   onClose?: () => void;
+  /** Title of the wizard */
   title: string;
-  description: string;
-  ariaLabel: string;
-  titleId: string;
-  descriptionId: string;
+  /** Description of the wizard */
+  description?: string;
+  /** aria-label applied to the X (Close) button */
+  ariaLabelCloseButton?: string;
+  /** id for the title */
+  titleId?: string;
+  /** id for the description */
+  descriptionId?: string;
 }
 
 export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
   onClose = () => undefined,
   title,
   description,
-  ariaLabel,
+  ariaLabelCloseButton,
   titleId,
   descriptionId
 }: WizardHeaderProps) => (
     <div className={css(styles.wizardHeader)}>
-      <Button variant="plain" className={css(styles.wizardClose)} aria-label={ariaLabel} onClick={onClose}>
+      <Button variant="plain" className={css(styles.wizardClose)} aria-label={ariaLabelCloseButton} onClick={onClose}>
         <TimesIcon aria-hidden="true" />
       </Button>
       <Title size="3xl" className={css(styles.wizardTitle)} aria-label={title} id={titleId}>{title}</Title>

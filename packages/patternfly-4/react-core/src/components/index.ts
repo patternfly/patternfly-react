@@ -1,6 +1,6 @@
 /** Keep alphabetically sorted */
 export * from './AboutModal';
-// export * from './Accordion'; Don't release this yet
+export * from './Accordion';
 export * from './Alert';
 export * from './ApplicationLauncher';
 export * from './Avatar';
@@ -27,6 +27,7 @@ export * from './List';
 export * from './LoginPage';
 export * from './Modal';
 export * from './Nav';
+export * from './OptionsMenu';
 export * from './Page';
 export * from './Pagination';
 export * from './Popover';

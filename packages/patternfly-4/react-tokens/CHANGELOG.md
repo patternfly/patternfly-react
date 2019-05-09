@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.5.2 (2019-05-07)
+
+
+### Bug Fixes
+
+* **React Icons documentation:** fix React Icons documentation link to all Patternfly React Icons. ([#1868](https://github.com/patternfly/patternfly-react/issues/1868)) ([54d5404](https://github.com/patternfly/patternfly-react/commit/54d5404)), closes [#1841](https://github.com/patternfly/patternfly-react/issues/1841)
+
+
+
+
+
+## 2.5.1 (2019-04-29)
+
+
+### Bug Fixes
+
+* **version:** bump patternfly version to 2.6.5 ([#1874](https://github.com/patternfly/patternfly-react/issues/1874)) ([e3c8d7c](https://github.com/patternfly/patternfly-react/commit/e3c8d7c))
+
+
+
+
+
 # [2.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.4.0...@patternfly/react-tokens@2.5.0) (2019-04-25)
 
 

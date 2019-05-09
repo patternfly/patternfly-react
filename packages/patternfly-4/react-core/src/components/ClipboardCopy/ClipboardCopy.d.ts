@@ -1,16 +1,18 @@
-import { FunctionComponent, HTMLProps, MouseEvent, ReactNode, HTMLDivElement } from 'react';
-import { OneOf } from '../../typeUtils';
+import { ClipboardEvent, FunctionComponent, HTMLProps, ReactNode } from 'react';
+import { OneOf, Omit } from '../../helpers/typeUtils';
 import { PopoverPosition } from '../Popover';
 
-export const ClipboardCopyVariant = {
-  inline: 'inline',
-  expansion: 'expansion'
-};
+export enum ClipboardCopyVariant {
+  inline = 'inline',
+  expansion = 'expansion'
+}
 
-export interface ClipboardCopyProps extends HTMLProps<HTMLDivElement> {
+export interface ClipboardCopyProps extends Omit<HTMLProps<HTMLDivElement>, 'onChange'> {
   className?: string;
   hoverTip?: string;
   clickTip?: string;
+  textAriaLabel?: string;
+  toggleAriaLabel?: string;
   isReadOnly?: boolean;
   variant?: OneOf<typeof ClipboardCopyVariant, keyof typeof ClipboardCopyVariant>;
   position?: OneOf<typeof PopoverPosition, keyof typeof PopoverPosition>;
@@ -18,8 +20,8 @@ export interface ClipboardCopyProps extends HTMLProps<HTMLDivElement> {
   exitDelay?: number;
   entryDelay?: number;
   switchDelay?: number;
-  onCopy?: (event: MouseEvent, text?: string) => void;
-  onChange?: (text: string) => void;
+  onCopy?: (event: ClipboardEvent<HTMLDivElement>, text?: string) => void;
+  onChange?: (text?: string) => void;
   children?: ReactNode;
 }
 

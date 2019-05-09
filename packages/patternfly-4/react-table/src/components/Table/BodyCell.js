@@ -11,6 +11,8 @@ const BodyCell = ({
   isVisible,
   parentId,
   textCenter,
+  isOpen,
+  ariaControls,
   ...props
 }) => {
   const mappedProps = {
@@ -29,7 +31,9 @@ BodyCell.propTypes = {
   component: PropTypes.node,
   isVisible: PropTypes.bool,
   parentId: PropTypes.number,
-  textCenter: PropTypes.bool
+  textCenter: PropTypes.bool,
+  isOpen: PropTypes.bool,
+  ariaControls: PropTypes.string
 };
 
 BodyCell.defaultProps = {
@@ -39,7 +43,9 @@ BodyCell.defaultProps = {
   component: 'td',
   isVisible: undefined,
   parentId: undefined,
-  textCenter: false
+  textCenter: false,
+  isOpen: undefined,
+  ariaControls: ''
 };
 
 export default BodyCell;

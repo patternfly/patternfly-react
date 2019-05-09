@@ -63,7 +63,7 @@ exports[`Chart 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -92,7 +92,7 @@ exports[`Chart 1`] = `
           },
           "axisLabel": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 100,
@@ -106,7 +106,7 @@ exports[`Chart 1`] = `
           },
           "tickLabels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -136,7 +136,7 @@ exports[`Chart 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -163,7 +163,7 @@ exports[`Chart 1`] = `
           },
           "maxLabels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -176,7 +176,7 @@ exports[`Chart 1`] = `
           },
           "medianLabels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -189,7 +189,7 @@ exports[`Chart 1`] = `
           },
           "minLabels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -201,7 +201,7 @@ exports[`Chart 1`] = `
           },
           "q1Labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -213,7 +213,7 @@ exports[`Chart 1`] = `
           },
           "q3Labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -242,7 +242,7 @@ exports[`Chart 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -286,7 +286,7 @@ exports[`Chart 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -322,7 +322,7 @@ exports[`Chart 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -330,7 +330,7 @@ exports[`Chart 1`] = `
           },
           "title": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 2,
@@ -356,7 +356,7 @@ exports[`Chart 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -382,7 +382,7 @@ exports[`Chart 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,
@@ -407,7 +407,7 @@ exports[`Chart 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -446,7 +446,7 @@ exports[`Chart 1`] = `
         "pointerLength": 10,
         "style": Object {
           "fill": "#fff",
-          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
           "fontSize": 14,
           "letterSpacing": "normal",
           "padding": 8,
@@ -477,7 +477,7 @@ exports[`Chart 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,
@@ -556,7 +556,7 @@ exports[`Chart 2`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -585,7 +585,7 @@ exports[`Chart 2`] = `
           },
           "axisLabel": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 100,
@@ -599,7 +599,7 @@ exports[`Chart 2`] = `
           },
           "tickLabels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -629,7 +629,7 @@ exports[`Chart 2`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -656,7 +656,7 @@ exports[`Chart 2`] = `
           },
           "maxLabels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -669,7 +669,7 @@ exports[`Chart 2`] = `
           },
           "medianLabels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -682,7 +682,7 @@ exports[`Chart 2`] = `
           },
           "minLabels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -694,7 +694,7 @@ exports[`Chart 2`] = `
           },
           "q1Labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -706,7 +706,7 @@ exports[`Chart 2`] = `
           },
           "q3Labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -735,7 +735,7 @@ exports[`Chart 2`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -779,7 +779,7 @@ exports[`Chart 2`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -815,7 +815,7 @@ exports[`Chart 2`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -823,7 +823,7 @@ exports[`Chart 2`] = `
           },
           "title": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 2,
@@ -849,7 +849,7 @@ exports[`Chart 2`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -875,7 +875,7 @@ exports[`Chart 2`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,
@@ -900,7 +900,7 @@ exports[`Chart 2`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -939,7 +939,7 @@ exports[`Chart 2`] = `
         "pointerLength": 10,
         "style": Object {
           "fill": "#fff",
-          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
           "fontSize": 14,
           "letterSpacing": "normal",
           "padding": 8,
@@ -970,7 +970,7 @@ exports[`Chart 2`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,
@@ -1042,7 +1042,7 @@ exports[`renders component data 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1071,7 +1071,7 @@ exports[`renders component data 1`] = `
           },
           "axisLabel": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 100,
@@ -1085,7 +1085,7 @@ exports[`renders component data 1`] = `
           },
           "tickLabels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1115,7 +1115,7 @@ exports[`renders component data 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1142,7 +1142,7 @@ exports[`renders component data 1`] = `
           },
           "maxLabels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1155,7 +1155,7 @@ exports[`renders component data 1`] = `
           },
           "medianLabels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1168,7 +1168,7 @@ exports[`renders component data 1`] = `
           },
           "minLabels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1180,7 +1180,7 @@ exports[`renders component data 1`] = `
           },
           "q1Labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1192,7 +1192,7 @@ exports[`renders component data 1`] = `
           },
           "q3Labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1221,7 +1221,7 @@ exports[`renders component data 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1265,7 +1265,7 @@ exports[`renders component data 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1301,7 +1301,7 @@ exports[`renders component data 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1309,7 +1309,7 @@ exports[`renders component data 1`] = `
           },
           "title": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 2,
@@ -1335,7 +1335,7 @@ exports[`renders component data 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1361,7 +1361,7 @@ exports[`renders component data 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,
@@ -1386,7 +1386,7 @@ exports[`renders component data 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1425,7 +1425,7 @@ exports[`renders component data 1`] = `
         "pointerLength": 10,
         "style": Object {
           "fill": "#fff",
-          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
           "fontSize": 14,
           "letterSpacing": "normal",
           "padding": 8,
@@ -1456,7 +1456,7 @@ exports[`renders component data 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,

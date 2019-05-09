@@ -8,8 +8,7 @@ const props = {
   trademark: 'Trademark and copyright information here',
   brandImageSrc: 'brandImg...',
   brandImageAlt: 'Brand Image',
-  logoImageSrc: 'logoImg...',
-  logoImageAlt: 'AboutModal Logo',
+  backgroundImageSrc: 'backgroundImageSrc...',
   ariaLabelledbyId: 'ariaLablledbyId',
   ariaDescribedById: 'ariaDescribedById'
 };

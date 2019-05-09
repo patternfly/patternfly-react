@@ -1,7 +1,7 @@
 import React from "react";
 import { BackgroundImage, BackgroundImageSrc } from '@patternfly/react-core';
 
-export default class SimpleBackgroundImage extends React.Component {
+class SimpleBackgroundImage extends React.Component {
   constructor(props) {
     super(props);
     /**
@@ -19,3 +19,5 @@ export default class SimpleBackgroundImage extends React.Component {
     return <BackgroundImage src={this.images} />;
   }
 }
+
+export default SimpleBackgroundImage;

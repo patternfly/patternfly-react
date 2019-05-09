@@ -36,6 +36,7 @@ exports[`About Modal Container Test isOpen 1`] = `
         This is ModalBox content
       </AboutModalBoxContent>
       <AboutModalBoxHero
+        backgroundImageSrc="backgroundImageSrc..."
         className=""
       />
     </AboutModalBox>

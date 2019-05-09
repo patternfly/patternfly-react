@@ -1,4 +1,4 @@
-import { FunctionComponent, HTMLProps, ReactElement } from 'react';
+import { FunctionComponent, HTMLProps, ReactElement, ReactNode } from 'react';
 import { Omit } from '../../helpers/typeUtils';
 import { BasicPlacement, Props } from 'tippy.js';
 

@@ -15,7 +15,7 @@ export interface CheckboxProps
   isChecked?: boolean;
   checked?: boolean;
   /** A callback for when the Checkbox selection changes. */
-  onChange?(checked: boolean, event: React.FormEvent<HTMLInputElement>): void;
+  onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
   /** Label text of the checkbox. */
   label?: React.ReactNode;
   /** Id of the checkbox. */
@@ -24,21 +24,19 @@ export interface CheckboxProps
   'aria-label': string;
 }
 
-const defaultProps = {
-  className: '',
-  isValid: true,
-  isDisabled: false,
-  isChecked: null,
-  onChange: () => undefined,
-  label: undefined
-};
-
 export class Checkbox extends React.Component<CheckboxProps> {
   constructor(props: any) {
     super(props);
   }
 
-  static defaultProps = defaultProps;
+  static defaultProps = {
+    className: '',
+    isValid: true,
+    isDisabled: false,
+    isChecked: false,
+    // tslint:disable-next-line:no-empty
+    onChange: () => {}
+  };
 
   handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
     if (this.props.onChange) {

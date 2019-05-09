@@ -4,32 +4,33 @@ export const filterByHiding = (list, value) => {
     const itemLabel = item.label.toLowerCase();
     const included = itemLabel.includes(filterValue);
     // if the item label matches the filter value.
-    item.hidden = !included;
+    item.hiddenByFilter = !included;
     // if it is a parent and its label doesn't match the filter value.
     if (itemHasChildren(item)) {
-      if (isItemHidden(item)) {
+      if (isItemHiddenByFilter(item)) {
         let childrenIncludedAmount = 0;
         item.children.forEach(childItem => {
           const childLabel = childItem.label.toLowerCase();
           const childIncluded = childLabel.includes(filterValue);
-          childItem.hidden = !childIncluded;
+          childItem.hiddenByFilter = !childIncluded;
           childrenIncludedAmount += childIncluded ? 1 : 0;
         });
-        item.hidden = childrenIncludedAmount === 0;
+        item.hiddenByFilter = childrenIncludedAmount === 0;
       } else {
-        item.children = makeAllItemsVisible(item.children);
+        item.children = makeAllHiddenFilteredItemsVisible(item.children);
       }
     }
     return item;
   });
 };
 
-export const makeAllItemsVisible = list =>
+// We don't want to touch default hidden items that the consumer set to hidden.
+export const makeAllHiddenFilteredItemsVisible = list =>
   list.map(item => {
-    item.hidden = false;
+    item.hiddenByFilter = false;
     if (itemHasChildren(item)) {
       item.children.forEach(childItem => {
-        childItem.hidden = false;
+        childItem.hiddenByFilter = false;
       });
     }
     return item;
@@ -40,7 +41,7 @@ export const sortItems = (items, sortFactor = 'label') =>
 
 export const shouldItemBeChecked = (item, isMainChecked, resetAllSelected) => {
   let checked = item.checked || false;
-  const isItemEditable = !item.disabled || !item.hidden;
+  const isItemEditable = !item.disabled || !item.hidden || !item.isItemHiddenByFilter;
   if (!isItemEditable) {
     return checked;
   }
@@ -210,12 +211,12 @@ export const isItemExistOnList = (list, itemLabel) => {
 export const getFilterredItems = list => {
   const filteredItems = [];
   list.forEach(item => {
-    if (!isItemHidden(item)) {
+    if (!isItemHiddenByFilter(item)) {
       filteredItems.push(item);
     } else if (itemHasChildren(item)) {
       const filteredChildren = [];
       item.children.forEach(childItem => {
-        if (!isItemHidden(childItem)) {
+        if (!isItemHiddenByFilter(childItem)) {
           filteredChildren.push(childItem);
         }
       });
@@ -254,6 +255,6 @@ export const getSelectedFilterredItemsLength = list => {
 
 export const isItemSelected = item => item.checked;
 
-export const isItemHidden = item => item.hidden;
+export const isItemHiddenByFilter = item => item.hiddenByFilter;
 
 export const isItemDisabled = item => item.disabled;

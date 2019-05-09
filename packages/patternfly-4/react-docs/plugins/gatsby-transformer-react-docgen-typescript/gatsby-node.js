@@ -1,5 +1,4 @@
-const docgenTypescript = require('react-docgen-typescript').withDefaultConfig()
-const docgenJavascript = require('react-docgen')
+const reactDocgen = require('react-docgen');
 
 function isSource(node) {
   if (!node ||
@@ -52,15 +51,11 @@ async function onCreateNode({
   const sourceText = await loadNodeContent(node);
   let parsed = null;
   try {
-    if (isTSX(node)) {
-      // console.log('parsing', node.absolutePath)
-      parsed = docgenTypescript.parse(node.absolutePath)[0];
-    }
-    else if (isJSX(node)) {
-      parsed = docgenJavascript.parse(sourceText);
-    }
+    parsed = reactDocgen.parse(sourceText, null, null, {
+      filename: node.absolutePath
+    });
   } catch (err) {
-    console.warn("No component found in", node.absolutePath);
+    console.warn('No component found in', node.absolutePath);
   }
 
   if (parsed) {
@@ -83,4 +78,4 @@ async function onCreateNode({
   }
 }
 
-exports.onCreateNode = onCreateNode
+exports.onCreateNode = onCreateNode;
