@@ -1,5 +1,5 @@
 {
-  "name": "@patternfly/demo-app-ts",
+  "name": "demo-app-ts",
   "private": true,
   "version": "1.0.2",
   "scripts": {
@@ -22,7 +22,7 @@
     "babel-jest": "^23.6.0",
     "react-scripts": "2.1.3",
     "tslint": "^5.16.0",
-    "typescript": "3.2.2"
+    "typescript": "3.4.5"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,10 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import SidebarLayout from './sidebarLayout';
-import { CSSVars, Props, LiveEdit } from '../components/componentDocs';
+import { CSSVars, PropsTable, LiveEdit } from '../components/componentDocs';
 import { Title, PageSection } from '@patternfly-safe/react-core';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from '../components/mdx-renderer';
+
 
 const components = {
   code: LiveEdit,
@@ -12,23 +13,14 @@ const components = {
 };
 
 const MdxTemplate = ({ data }) => {
-  // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
-  // We *should* use the MDXRenderer scope to get the names of these, but that's pretty difficult
-  const propComponents = data.metadata.edges
-    .map(edge => edge.node.name)
-    .filter(name => name) // Some HOCs don't get docgenned properly (like TabContent)
-    .filter(name => data.mdx.code.body.indexOf(name) !== -1);
-
-  // Finally, the props for each relevant component!
-  const props = data.metadata.edges
-    .filter(edge => propComponents.indexOf(edge.node.name) !== -1)
-    .map(edge => { return { name: edge.node.name, props: edge.node.props } })
-    .sort((e1, e2) => e1.name.localeCompare(e2.name));
-
   const cssPrefix = data.mdx.frontmatter.cssPrefix;
-  let section = data.mdx.frontmatter.section;
-  if (!section)
-    section = 'component';
+  let section = data.mdx.frontmatter.section || 'component';
+  const props = data.jsProps.nodes
+    // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
+    // We *should* use the MDXRenderer scope to get the names of these, but that's pretty difficult
+    .filter(node => data.mdx.code.body.indexOf(node.name) !== -1)
+    .map(node => ({ name: node.name, props: node.props }))
+    .sort((e1, e2) => e1.name.localeCompare(e2.name));
 
   return (
     <SidebarLayout>
@@ -46,7 +38,7 @@ const MdxTemplate = ({ data }) => {
       {props.length > 0 && props.map(component =>
         <PageSection key={component.name}>
           {props.description}
-          <Props caption={`${component.name} properties`} propList={component.props} />
+          <PropsTable caption={`${component.name} properties`} propList={component.props} />
         </PageSection>
       )}
 
@@ -81,22 +73,21 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
       cssPrefix
     }
   }
-  metadata: allComponentMetadata(filter: {path: {regex: $pathRegex}}) {
-    edges {
-      node {
-        path
+  jsProps: allComponentMetadata(filter: {path: {regex: $pathRegex}, name: {ne: null}}) {
+    nodes {
+      name
+      props {
         name
         description
-        props {
+        required
+        type {
           name
-          description
-          required
-          type {
-            name
-          }
-          defaultValue {
-            value
-          }
+        }
+        tsType {
+          name
+        }
+        defaultValue {
+          value
         }
       }
     }

@@ -2,7 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
 import { Location } from '@reach/router';
-import { Nav, NavList, NavExpandable, NavItem } from '@patternfly-safe/react-core';
+import { Nav, NavList, NavExpandable, NavItem, Badge, Tooltip } from '@patternfly-safe/react-core';
 
 const getSlashCount = str => {
   let count = 0;
@@ -25,19 +25,17 @@ const SiteNav = () => {
         pathPrefix
       }
       allSitePage {
-        edges {
-          node {
-            path
-            context {
-              title
-            }
+        nodes {
+          path
+          context {
+            title
+            typescript
           }
         }
       }
     }`);
 
-  const grouped = data.allSitePage.edges
-    .map(edge => edge.node)
+  const grouped = data.allSitePage.nodes
     .filter(node => node.context)
     .map(node => { // Add a title for pages under src/pages/*/*.js
       if (!node.context.title) {
@@ -59,11 +57,17 @@ const SiteNav = () => {
     return curPath === encodedPath || curPath === data.site.pathPrefix + encodedPath;
   };
 
-  const getNavItem = (value) => (
+  const getNavItem = value => (
     <Location key={value.path}>
       {({ location }) => (
         <NavItem isActive={isActive(value.path, location.pathname)} >
-          <Link to={value.path}>{value.context.title}</Link>
+          <Link to={value.path}>{value.context.title + ' '}
+            {value.context.typescript &&
+              <Tooltip content={`${value.context.title} is written in Typescript!`}>
+                <Badge>TS</Badge>
+              </Tooltip>
+            }
+          </Link>
         </NavItem>
       )}
     </Location>

@@ -1,5 +1,6 @@
 import { Popover, PopoverProps} from '@patternfly/react-core';
 import React, { Component } from 'react';
+
 export class PopoverDemo extends Component {
   myPopoverProps: PopoverProps = {
     bodyContent: <div>World</div>,

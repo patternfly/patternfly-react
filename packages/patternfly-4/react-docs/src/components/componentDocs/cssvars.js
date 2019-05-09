@@ -1,7 +1,7 @@
 import React from 'react';
 import * as reactTokens from "../../../../react-tokens/dist/esm";
 
-class CSSVars extends React.Component {
+export class CSSVars extends React.Component {
   constructor(props) {
     super(props);
     if (!props.cssPrefix) {
@@ -61,5 +61,3 @@ class CSSVars extends React.Component {
 CSSVars.defaultProps = {
   cssPrefix: null
 };
-
-export default CSSVars;

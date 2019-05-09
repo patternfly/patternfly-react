@@ -42,5 +42,3 @@ export class WizardDemo extends Component {
     );
   }
 }
-
-export default WizardDemo;

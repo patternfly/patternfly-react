@@ -37,7 +37,7 @@
     "cypress": "^3.2.0",
     "rimraf": "^2.6.2",
     "ts-loader": "^5.3.3",
-    "typescript": "3.2.2",
+    "typescript": "3.4.5",
     "webpack": "^4.25.1"
   }
 }

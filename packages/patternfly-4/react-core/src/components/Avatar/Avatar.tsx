@@ -8,10 +8,15 @@ export interface AvatarProps
   className?: string;
   /** Attribute that specifies the URL of the image for the Avatar. */
   src?: string;
-  /** Attribute that specifies the alt text of the image for the Avatar. */
+  /** Attribute that specifies the alternate text of the image for the Avatar. */
   alt: string;
 }
 
-export const Avatar: React.FunctionComponent<AvatarProps> = ({ className = '', src = '', alt, ...props }) => (
+export const Avatar: React.SFC<AvatarProps> = ({
+  className = '',
+  src = '',
+  alt,
+  ...props
+}: AvatarProps) => (
   <img {...props} src={src} alt={alt} className={css(styles.avatar, className)} />
 );

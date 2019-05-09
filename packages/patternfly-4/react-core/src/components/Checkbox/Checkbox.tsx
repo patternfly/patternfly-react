@@ -24,29 +24,27 @@ export interface CheckboxProps
   'aria-label': string;
 }
 
-const defaultProps = {
-  className: '',
-  isValid: true,
-  isDisabled: false,
-  isChecked: null,
-  onChange: () => undefined,
-  label: undefined
-};
-
 export class Checkbox extends React.Component<CheckboxProps> {
   constructor(props: any) {
     super(props);
   }
 
-  private static defaultProps = defaultProps;
+  static defaultProps = {
+    className: '',
+    isValid: true,
+    isDisabled: false,
+    isChecked: false,
+    // tslint:disable-next-line:no-empty
+    onChange: () => {}
+  };
 
-  private handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
+  handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
     if (this.props.onChange) {
       this.props.onChange(event.currentTarget.checked, event);
     }
   };
 
-  public render() {
+  render() {
     const {
       'aria-label': ariaLabel,
       className,
