@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.1.0 (2019-05-09)
+
+
+### Bug Fixes
+
+* **docs:** fix ts docgen ([#1944](https://github.com/patternfly/patternfly-react/issues/1944)) ([f68bbc5](https://github.com/patternfly/patternfly-react/commit/f68bbc5))
+
+
+### Features
+
+* **Label:** Convert Label to TypeScript ([#1896](https://github.com/patternfly/patternfly-react/issues/1896)) ([a950fd5](https://github.com/patternfly/patternfly-react/commit/a950fd5)), closes [#1893](https://github.com/patternfly/patternfly-react/issues/1893)
+
+
+
+
+
 ## 1.0.2 (2019-05-09)
 
 

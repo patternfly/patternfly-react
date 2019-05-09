@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.17.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.19...@patternfly/react-core@3.17.0) (2019-05-09)
+
+
+### Features
+
+* **Label:** Convert Label to TypeScript ([#1896](https://github.com/patternfly/patternfly-react/issues/1896)) ([a950fd5](https://github.com/patternfly/patternfly-react/commit/a950fd5)), closes [#1893](https://github.com/patternfly/patternfly-react/issues/1893)
+
+
+
+
+
 ## [3.16.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.18...@patternfly/react-core@3.16.19) (2019-05-09)
 
 
