@@ -97,7 +97,7 @@ interface WizardState {
 }
 
 export class Wizard extends React.Component<WizardProps, WizardState> {
-  static currentId = 0;
+  private static currentId = 0;
   static defaultProps = {
     isOpen: false,
     isCompactNav: false,
@@ -111,11 +111,17 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     cancelButtonText: 'Cancel',
     ariaLabelCloseButton: 'Close',
     ariaLabelNav: 'Steps',
-    hasBodyPadding: true
+    hasBodyPadding: true,
+    onBack: null as WizardStepFunctionType,
+    onNext: null as WizardStepFunctionType,
+    onGoToStep: null as WizardStepFunctionType,
+    width: null as string,
+    height: null as string,
+    footer: null as React.ReactNode
   };
-  container: HTMLDivElement = undefined;
-  titleId: string;
-  descriptionId: string;
+  private container: HTMLDivElement;
+  private titleId: string;
+  private descriptionId: string;
 
   constructor(props: WizardProps) {
     super(props);
@@ -128,7 +134,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     };
   }
 
-  handleKeyClicks = (event: KeyboardEvent): void => {
+  private handleKeyClicks = (event: KeyboardEvent): void => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY) {
       if (this.state.isNavOpen) {
         this.setState({ isNavOpen: !this.state.isNavOpen })
@@ -138,7 +144,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     }
   };
 
-  toggleSiblingsFromScreenReaders = (hide: boolean): void => {
+  private toggleSiblingsFromScreenReaders = (hide: boolean): void => {
     const bodyChildren = document.body.children;
     for (const child of Array.from(bodyChildren)) {
       if (child !== this.container) {
@@ -147,7 +153,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     }
   };
 
-  onNext = (): void => {
+  private onNext = (): void => {
     const { onNext, onClose, onSave } = this.props;
     const { currentStep } = this.state;
     const flattenedSteps = this.getFlattenedSteps();
@@ -169,7 +175,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     }
   };
 
-  onBack = (): void => {
+  private onBack = (): void => {
     const { onBack } = this.props;
     const { currentStep } = this.state;
     const flattenedSteps = this.getFlattenedSteps();
@@ -190,7 +196,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     }
   };
 
-  goToStep = (step: number): void => {
+  private goToStep = (step: number): void => {
     const { onGoToStep } = this.props;
     const { currentStep } = this.state;
     const flattenedSteps = this.getFlattenedSteps();
@@ -206,7 +212,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     return onGoToStep && onGoToStep({ id, name }, { prevId, prevName });
   };
 
-  goToStepById = (stepId: number | string): void => {
+  private goToStepById = (stepId: number | string): void => {
     const flattenedSteps = this.getFlattenedSteps();
     let step;
     for (let i = 0; i < flattenedSteps.length; i++) {
@@ -220,7 +226,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     }
   };
 
-  goToStepByName = (stepName: string): void => {
+  private goToStepByName = (stepName: string): void => {
     const flattenedSteps = this.getFlattenedSteps();
     let step;
     for (let i = 0; i < flattenedSteps.length; i++) {
@@ -234,7 +240,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     }
   };
 
-  getFlattenedSteps = (): WizardStep[] => {
+  private getFlattenedSteps = (): WizardStep[] => {
     const { steps } = this.props;
     const flattenedSteps: WizardStep[] = [];
     for (const step of steps) {
@@ -249,7 +255,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     return flattenedSteps;
   };
 
-  getFlattenedStepsIndex = (flattenedSteps: WizardStep[], stepName: string): number => {
+  private getFlattenedStepsIndex = (flattenedSteps: WizardStep[], stepName: string): number => {
     for (let i = 0; i < flattenedSteps.length; i++) {
       if (flattenedSteps[i].name === stepName) {
         return i + 1;
@@ -259,7 +265,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     return 0;
   }
 
-  initSteps = (steps: WizardStep[]): WizardStep[] => {
+  private initSteps = (steps: WizardStep[]): WizardStep[] => {
     // Set default Step values
     for (let i = 0; i < steps.length; i++) {
       if (steps[i].steps) {

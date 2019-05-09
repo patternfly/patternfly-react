@@ -25,10 +25,6 @@ export interface CheckboxProps
 }
 
 export class Checkbox extends React.Component<CheckboxProps> {
-  constructor(props: any) {
-    super(props);
-  }
-
   static defaultProps = {
     className: '',
     isValid: true,
@@ -38,7 +34,11 @@ export class Checkbox extends React.Component<CheckboxProps> {
     onChange: () => {}
   };
 
-  handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
+  constructor(props: any) {
+    super(props);
+  }
+
+  private handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
     if (this.props.onChange) {
       this.props.onChange(event.currentTarget.checked, event);
     }

@@ -4,7 +4,7 @@ import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
 
 export interface WizardFooterProps {
   /** Buttons in the footer */
-  children: React.ReactNode;
+  children: any;
 }
 
 export const WizardFooter: React.SFC<WizardFooterProps> = ({
