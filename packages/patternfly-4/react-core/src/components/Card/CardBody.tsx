@@ -3,9 +3,13 @@ import styles from '@patternfly/patternfly/components/Card/card.css';
 import { css } from '@patternfly/react-styles';
 
 export interface CardBodyProps extends React.HTMLProps<HTMLDivElement> {
+  /** content rendered inside the Card Body */
   children?: React.ReactNode; 
+  /** additional classes added to the Card Body */
   className?: string; 
+  /** Sets the base component to render. defaults to div */
   component?: React.ReactType<CardBodyProps>;
+  /** Enables the body Content to fill the height of the card */
   isFilled?: boolean;
 }
 
