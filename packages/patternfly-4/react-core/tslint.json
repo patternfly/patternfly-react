@@ -6,7 +6,6 @@
     "tslint-config-prettier"
   ],
   "rules": {
-    "member-access": false,
     "member-ordering": false,
     "array-type": [
       true,

@@ -98,7 +98,7 @@ interface WizardState {
 
 export class Wizard extends React.Component<WizardProps, WizardState> {
   private static currentId = 0;
-  public static defaultProps = {
+  static defaultProps = {
     isOpen: false,
     isCompactNav: false,
     isFullHeight: false,
@@ -278,7 +278,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     return steps;
   }
 
-  public componentDidMount() {
+  componentDidMount() {
     if (this.container) {
       document.body.appendChild(this.container);
     }
@@ -286,7 +286,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     document.addEventListener('keydown', this.handleKeyClicks, false);
   }
 
-  public componentWillUnmount() {
+  componentWillUnmount() {
     if (this.container) {
       document.body.removeChild(this.container);
     }
@@ -294,7 +294,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     document.removeEventListener('keydown', this.handleKeyClicks, false);
   }
 
-  public render() {
+  render() {
     if (!canUseDOM) {
       return null;
     }

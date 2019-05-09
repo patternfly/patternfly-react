@@ -25,7 +25,7 @@ export interface CheckboxProps
 }
 
 export class Checkbox extends React.Component<CheckboxProps> {
-  public static defaultProps = {
+  static defaultProps = {
     className: '',
     isValid: true,
     isDisabled: false,
@@ -44,7 +44,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
     }
   };
 
-  public render() {
+  render() {
     const {
       'aria-label': ariaLabel,
       className,
