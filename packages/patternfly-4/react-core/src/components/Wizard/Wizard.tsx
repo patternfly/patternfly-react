@@ -112,12 +112,12 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     ariaLabelCloseButton: 'Close',
     ariaLabelNav: 'Steps',
     hasBodyPadding: true,
-    onBack: null,
-    onNext: null,
-    onGoToStep: null,
-    width: null,
-    height: null,
-    footer: null,
+    onBack: null as WizardStepFunctionType,
+    onNext: null as WizardStepFunctionType,
+    onGoToStep: null as WizardStepFunctionType,
+    width: null as string,
+    height: null as string,
+    footer: null as React.ReactNode
   };
   private container: HTMLDivElement;
   private titleId: string;
