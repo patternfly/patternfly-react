@@ -30,6 +30,8 @@ const propTypes = {
   position: PropTypes.oneOf(Object.values(DropdownPosition)),
   /** Display menu above or below dropdown toggle */
   direction: PropTypes.oneOf(Object.values(DropdownDirection)),
+  /** Flag to indicate if dropdown has groups */
+  isGrouped: PropTypes.bool,
   /** Placeholder to use custom toggle elements */
   toggle: PropTypes.node.isRequired,
   /** Function callback called when user selects item */
@@ -44,6 +46,7 @@ const defaultProps = {
   dropdownItems: [],
   isOpen: false,
   isPlain: false,
+  isGrouped: false,
   position: DropdownPosition.left,
   direction: DropdownDirection.down,
   onSelect: Function.prototype
@@ -66,6 +69,7 @@ class Dropdown extends React.Component {
       dropdownItems,
       isOpen,
       isPlain,
+      isGrouped,
       onSelect,
       position,
       toggle,
@@ -114,6 +118,7 @@ class Dropdown extends React.Component {
               position={position}
               aria-labelledby={id}
               openedOnEnter={this.openedOnEnter}
+              isGrouped={isGrouped}
             >
               {renderedContent}
             </DropdownMenu>

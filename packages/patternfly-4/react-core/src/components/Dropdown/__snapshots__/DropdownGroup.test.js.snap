@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dropdown groups basic render 1`] = `
+<Fragment>
+  <section
+    className="pf-c-dropdown__group"
+    lavel="Group 1"
+  >
+    <ul>
+      Something
+    </ul>
+  </section>
+</Fragment>
+`;

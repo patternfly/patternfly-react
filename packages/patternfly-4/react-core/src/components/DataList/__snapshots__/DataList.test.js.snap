@@ -98,6 +98,7 @@ exports[`DataList DataListAction dropdown 1`] = `
           </Item>,
         ]
       }
+      isGrouped={false}
       isOpen={false}
       isPlain={true}
       onSelect={[Function]}
