@@ -18,13 +18,13 @@ export interface SkipToContentProps
 }
 
 export class SkipToContent extends React.Component<SkipToContentProps> {
-  static defaultProps = {
+  public static defaultProps = {
     component: 'a',
     className: '',
     show: false
   };
 
-  render() {
+  public render() {
     const { component, children, className, href, show, ...rest } = this.props;
     const Component = component;
     return (

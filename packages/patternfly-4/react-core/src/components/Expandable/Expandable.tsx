@@ -5,7 +5,7 @@ import { AngleRightIcon } from '@patternfly/react-icons';
 
 export interface ExpandableProps {
   /** Content rendered inside the Expandable Component */
-  children: React.ReactNode;
+  children: any;
   /** Additional classes added to the Expandable Component */
   className?: string;
   /** Flag to indicate if the content is expanded */
