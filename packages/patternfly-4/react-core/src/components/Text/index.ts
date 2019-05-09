@@ -1,4 +1,4 @@
-export { TextContent } from './TextContent';
-export { Text, TextVariants } from './Text';
-export { TextList, TextListVariants } from './TextList';
-export { TextListItem, TextListItemVariants } from './TextListItem';
+export * from './TextContent';
+export * from './Text';
+export * from './TextList';
+export * from './TextListItem';

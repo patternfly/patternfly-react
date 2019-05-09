@@ -41,6 +41,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabDemo
   },
   {
+    id: 'text-demo',
+    name: 'Text Demo',
+    componentType: Examples.TextDemo
+  },
+  {
     id: 'title-demo',
     name: 'Title Demo',
     componentType: Examples.TitleDemo

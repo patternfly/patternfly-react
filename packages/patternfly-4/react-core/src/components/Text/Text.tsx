@@ -17,7 +17,7 @@ export enum TextVariants {
 
 export interface TextProps extends React.HTMLProps<HTMLElement> {
   /** The text component */
-  component?: keyof TextVariants;
+  component?: TextVariants;
   /** Content rendered within the Text */
   children?: React.ReactNode;
   /** Additional classes added to the Text */
