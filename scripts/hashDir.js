@@ -2,6 +2,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const crypto = require('crypto');
 
+// http://stackoverflow.com/a/5827895/4241030
 function filewalker(dir, done) {
   let results = [];
 
@@ -31,23 +32,6 @@ function filewalker(dir, done) {
   });
 };
 
-function hashDir0(dirPath, hash) {
-  console.log('hashing', dirPath);
-  return new Promise((resolve, reject) => {
-    klaw(dirPath)
-      .on('data', item => {
-        if (!item.stats.isDirectory()) {
-          const fileContents = fs.readFileSync(item.path);
-          hash.update(fileContents);
-        } else {
-          hashDir0(item.path, hash);
-        }
-      })
-      .on('error', err => reject(err))
-      .on('end', () => resolve(hash));
-  });
-}
-
 function hashDir(dirPath) {
   const md5 = crypto.createHash('md5');
 
@@ -55,7 +39,7 @@ function hashDir(dirPath) {
     filewalker(dirPath, (err, files) => {
       if (err) reject(err);
 
-      files.forEach(file => {
+      files.sort().forEach(file => {
         const fileContents = fs.readFileSync(file);
         md5.update(fileContents);
       });
