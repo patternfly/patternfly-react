@@ -29,12 +29,10 @@
     "lint:ts": "tslint -p tsconfig.json",
     "test:integration": "node ./scripts/server.js"
   },
-  "dependencies": {
-    "local-web-server": "^2.6.1"
-  },
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^4.0.3",
     "cypress": "^3.2.0",
+    "local-web-server": "^2.6.1",
     "rimraf": "^2.6.2",
     "ts-loader": "^5.3.3",
     "typescript": "3.4.5",

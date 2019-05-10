@@ -3,11 +3,11 @@
   "private": true,
   "version": "1.1.2",
   "scripts": {
-    "build": "react-scripts build",
+    "build:demo-app": "react-scripts build",
     "start:demo-app": "react-scripts start"
   },
   "dependencies": {
-    "@patternfly/react-core": "file:../../react-core",
+    "@patternfly/react-core": "^3.18.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-router": "^4.3.1",
