@@ -1,8 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { css } from '@patternfly/react-styles';
-import { KEY_CODES } from '../../helpers/constants';
 import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
+import { canUseDOM } from 'exenv';
+import { KEY_CODES } from '../../helpers/constants';
 import { AboutModalContainer } from './helpers/AboutModalContainer';
 
 export interface AboutModalProps {
@@ -28,8 +29,14 @@ export interface AboutModalProps {
   noAboutModalBoxContentContainer?: boolean;
 };
 
-export class AboutModal extends React.Component<AboutModalProps> {
-  static currentId = 0;
+interface AboutModalState {
+  ariaLabelledBy: string;
+  ariaDescribedBy: string;
+  container: HTMLElement;
+}
+
+export class AboutModal extends React.Component<AboutModalProps, AboutModalState> {
+  private static currentId = 0;
   static defaultProps = {
     className: '',
     isOpen: false,
@@ -40,9 +47,17 @@ export class AboutModal extends React.Component<AboutModalProps> {
     noAboutModalBoxContentContainer: false
   };
 
-  private ariaLabelledbyId = `pf-about-modal-title-${AboutModal.currentId++}`;
-  private ariaDescribedById = `pf-about-modal-content-${AboutModal.currentId++}`;
-  private container: HTMLElement;
+  constructor(props: AboutModalProps) {
+    super(props);
+    this.state = {
+      container: undefined,
+      ariaLabelledBy: `pf-about-modal-title-${AboutModal.currentId++}`,
+      ariaDescribedBy: `pf-about-modal-content-${AboutModal.currentId++}`
+    };
+    if (props.brandImageSrc && !props.brandImageAlt) {
+      console.error('AboutModal:', 'brandImageAlt is required when a brandImageSrc is specified');
+    }
+  }
 
   private handleEscKeyClick = (event: KeyboardEvent) => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
@@ -51,9 +66,11 @@ export class AboutModal extends React.Component<AboutModalProps> {
   };
 
   componentDidMount() {
-    if (!this.container) {
-      this.container = document.createElement('div');
-      document.body.appendChild(this.container);
+    if (!this.state.container) {
+      this.setState({
+        container: document.createElement('div')
+      });
+      document.body.appendChild(this.state.container);
       document.addEventListener('keydown', this.handleEscKeyClick, false);
     }
     if (this.props.isOpen) {
@@ -72,20 +89,23 @@ export class AboutModal extends React.Component<AboutModalProps> {
   }
 
   componentWillUnmount() {
-    if (this.container) {
-      document.body.removeChild(this.container);
+    if (this.state.container) {
+      document.body.removeChild(this.state.container);
     }
     document.removeEventListener('keydown', this.handleEscKeyClick, false);
   }
 
   render() {
+    if (!canUseDOM || !this.state.container)
+      return null;
+
     return ReactDOM.createPortal(
       <AboutModalContainer
         {...this.props}
-        ariaLabelledbyId={this.ariaLabelledbyId}
-        ariaDescribedById={this.ariaDescribedById}
+        ariaLabelledbyId={this.state.ariaLabelledBy}
+        ariaDescribedById={this.state.ariaDescribedBy}
       />,
-      this.container
+      this.state.container
     );
   }
 }

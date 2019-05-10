@@ -8,38 +8,34 @@ exports[`About Modal Container Test isOpen 1`] = `
     className=""
     component="div"
   >
-    <AboutModalBox
+    <Component
       aria-describedby="ariaDescribedById"
       aria-labelledby="ariaLablledbyId"
       className=""
     >
-      <AboutModalBoxBrand
+      <Component
         alt="Brand Image"
-        className=""
         src="brandImg..."
       />
-      <AboutModalBoxCloseButton
-        className=""
+      <Component
         onClose={[Function]}
       />
-      <AboutModalBoxHeader
-        className=""
+      <Component
         id="ariaLablledbyId"
         productName="Product Name"
       />
-      <AboutModalBoxContent
-        className=""
+      <Component
         id="ariaDescribedById"
+        noAboutModalBoxContentContainer={false}
         title="Test Modal Container title"
         trademark="Trademark and copyright information here"
       >
         This is ModalBox content
-      </AboutModalBoxContent>
-      <AboutModalBoxHero
+      </Component>
+      <Component
         backgroundImageSrc="backgroundImageSrc..."
-        className=""
       />
-    </AboutModalBox>
+    </Component>
   </Bullseye>
 </Backdrop>
 `;
