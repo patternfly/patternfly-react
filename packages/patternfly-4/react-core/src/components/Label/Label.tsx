@@ -19,4 +19,5 @@ export const Label: React.FunctionComponent<LabelProps> = ({
 }) => (
   <span {...props} className={css(styles.label, className, isCompact && styles.modifiers.compact)}>
     {children}
-  </span>);
+  </span>
+);

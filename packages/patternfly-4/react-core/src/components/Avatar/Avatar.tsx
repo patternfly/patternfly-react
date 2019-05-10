@@ -13,8 +13,8 @@ export interface AvatarProps
 }
 
 export const Avatar: React.SFC<AvatarProps> = ({
-  className,
-  src,
+  className = '',
+  src = '',
   alt,
   ...props
 }: AvatarProps) => (
