@@ -33,7 +33,7 @@ class WindowScrollerExample extends React.Component {
       this.container = element;
     };
     const rows = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 100000; i++) {
       rows.push({
         id: UUID(),
         cells: [`one-${i}`, `two-${i}`, `three-${i}`, `four-${i}`, `five-${i}`]

@@ -106,11 +106,20 @@ class Body extends React.Component {
   registerContainer = () => {
     setTimeout(() => {
       const element = this.props.container();
-      element && element.addEventListener('scroll', this.onScroll);
-      this._detectElementResize = createDetectElementResize();
-      this._detectElementResize.addResizeListener(element, this.onResize);
-      this.setContainerOffset();
+      if (element) {
+        element && element.addEventListener('scroll', this.onScroll);
+        this._detectElementResize = createDetectElementResize();
+        this._detectElementResize.addResizeListener(element, this.onResize);
+        this.setContainerOffset();
+      }
     }, 0);
+  };
+
+  unregisterContainer = () => {
+    const element = this.props.container();
+    if (element && element.__resizeListeners__) {
+      element.removeEventListener('scroll', this.onScroll);
+    }
   };
 
   setContainerOffset = () => {
@@ -147,7 +156,10 @@ class Body extends React.Component {
 
   componentWillUnmount() {
     if (this.tbodyRef && this.tbodyRef.__resizeListeners__) {
-      this.tbodyRef && this._detectElementResize.removeResizeListener(this.tbodyRef, this.onResize);
+      this._detectElementResize.removeResizeListener(this.tbodyRef, this.onResize);
+    }
+    if (this.props.container) {
+      this.unregisterContainer();
     }
     clearTimeout(this.timeoutId);
   }

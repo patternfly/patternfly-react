@@ -5,44 +5,47 @@
  * Forked from version 8.17.0; includes the following modifications:
  * 1) Calculate actual row heights in determining startIndex. This allows dynamic row heights.
  * */
-import calculateAverageHeight from './calculateAverageHeight';
+// import calculateAverageHeight from './calculateAverageHeight';
 
 const calculateRows = ({ measuredRows, height, rowKey, rows, scrollTop = 0 }) => {
-  // used exact measured row heights for determining `startIndex` for smooth scroll
-  // average heights are not accurate when there is lots of variation in row heights
+  // default overscan to 10 for now, could be accepted as a prop in the future
+  const overscan = 20;
+
+  // averageHeight of measuredRows can still be used to closely approximate amount of rows to render
+  const measuredAmounts = Object.keys(measuredRows).map(key => measuredRows[key]);
+  const amountOfMeasuredRows = measuredAmounts.length;
+  const totalMeasuredHeight = measuredAmounts.reduce((a, b) => a + b, 0);
+
+  // if we have no rows, use a small row height so we get a good sample in future loops
+  const averageHeight = amountOfMeasuredRows > 0 ? totalMeasuredHeight / amountOfMeasuredRows : 50;
+
   let startIndex = 0;
   let startHeight = 0;
   let accruedHeight = 0;
+  let i = 0;
 
-  //default overscan to 10 for now, could be accepted as a prop in the future
-  const overscan = 10;
-
-  for (let i = 0; i < Object.keys(measuredRows).length; i++) {
+  while (accruedHeight < scrollTop) {
     // measuredRows use aria-rowindex as identifiers which is 1 based
-    accruedHeight += measuredRows[i + 1];
-
-    if (scrollTop < accruedHeight) {
+    if (measuredRows.hasOwnProperty(i + 1)) {
+      accruedHeight += measuredRows[i + 1];
+    } else {
+      accruedHeight += averageHeight;
+    }
+    if (scrollTop <= accruedHeight) {
       startIndex = i;
       break;
-    } 
-    else if(i + overscan > Object.keys(measuredRows).length){
-      // stop accruing after we reach i + overscan
+    } else if (i + overscan > rows.length) {
+      // stop accruing after we reach i + overscan  (the end)
       startHeight = accruedHeight;
       startIndex = i;
       break;
     }
-    else {
-      // accrue and continue
-      startHeight = accruedHeight;
-    }
+    // accrue and continue
+    startHeight = accruedHeight;
+    i += 1;
   }
 
-  // averageHeight of measuredRows can still be used to closely approximate amount of rows to render
-  // if this causes issues w/ row visibility, exact heights can still be used
-  const averageHeight = calculateAverageHeight(measuredRows);
   const amountOfRowsToRender = Math.ceil(height / averageHeight) + overscan;
-
-  // const zeroedIndex = startIndex;
   const rowsToRender = rows.slice(startIndex, Math.max(startIndex + amountOfRowsToRender, 0));
 
   if (process.env.NODE_ENV !== 'production' && typeof window !== 'undefined' && window.LOG_VIRTUALIZED) {
@@ -90,7 +93,7 @@ const calculateRows = ({ measuredRows, height, rowKey, rows, scrollTop = 0 }) =>
 
   return {
     amountOfRowsToRender,
-    startIndex: startIndex,
+    startIndex,
     showExtraRow: !(startIndex % 2),
     startHeight,
     endHeight

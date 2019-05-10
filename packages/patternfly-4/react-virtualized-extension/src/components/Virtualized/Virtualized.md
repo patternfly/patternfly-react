@@ -244,7 +244,7 @@ class DynamicHeightExample extends React.Component {
   constructor(props) {
     super(props);
     const rows = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 100000; i++) {
       const cells = [];
       const num = Math.floor(Math.random() * Math.floor(9)) + 1;
       for (let j = 0; j < 5; j++) {

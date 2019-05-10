@@ -8,11 +8,11 @@
  * - Use arrow-rowindex based measured amounts for simplicity
  * - prevent divide by zero exception
  * */
-const calculateAverageHeight = (measuredRows) => {
+const calculateAverageHeight = measuredRows => {
   const measuredAmounts = Object.keys(measuredRows).map(key => measuredRows[key]);
   const amountOfMeasuredRows = measuredAmounts.length;
   // prevent divide by zero exception
-  return Math.max(measuredAmounts.reduce((a, b) => a + b / amountOfMeasuredRows, 0), 1);
+  return Math.max(measuredAmounts.reduce((a, b) => a + b, 0) / amountOfMeasuredRows, 1);
 };
 
 export default calculateAverageHeight;

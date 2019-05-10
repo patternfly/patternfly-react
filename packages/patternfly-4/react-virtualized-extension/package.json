@@ -28,13 +28,13 @@
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/",
   "dependencies": {
     "@patternfly/patternfly": "2.6.5",
-    "@patternfly/react-core": "^3.16.10",
-    "@patternfly/react-icons": "^3.8.1",
-    "@patternfly/react-styles": "^3.2.0",
+    "@patternfly/react-core": "^3.18.1",
+    "@patternfly/react-icons": "^3.9.2",
+    "@patternfly/react-styles": "^3.2.2",
     "exenv": "^1.2.2"
   },
   "peerDependencies": {
-    "@patternfly/react-table": "^2.5.11",
+    "@patternfly/react-table": "^2.6.1",
     "lodash-es": "4.x",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
