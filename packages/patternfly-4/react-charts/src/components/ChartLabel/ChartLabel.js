@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryLabel } from 'victory';
+import { default as ChartTheme } from '../ChartTheme/ChartTheme';
 
 export const propTypes = {
   /**
@@ -11,7 +12,7 @@ export const propTypes = {
 };
 
 // Note: VictoryLabel.role must be hoisted
-const ChartLabel = props => <VictoryLabel {...props} />;
+const ChartLabel = props => <VictoryLabel theme={ChartTheme.default} {...props} />;
 hoistNonReactStatics(ChartLabel, VictoryLabel);
 ChartLabel.propTypes = propTypes;
 

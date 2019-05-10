@@ -1,4 +1,4 @@
-// Theme
+// Victory theme properties only
 export default props => {
   const {
     COLOR_AXIS_FILL,
@@ -20,125 +20,110 @@ export default props => {
   } = props;
 
   return {
-    area: Object.assign(
-      {
-        style: {
-          data: {
-            fill: COLOR_FILL,
-            fillOpacity: 0.4,
-            stroke: COLOR_STROKE,
-            strokeWidth: 2
-          },
-          labels: LABEL_CENTERED_PROPS
-        }
-      },
-      LAYOUT_PROPS
-    ),
-    axis: Object.assign(
-      {
-        style: {
-          axis: {
-            // fill: 'transparent',
-            fill: COLOR_AXIS_FILL,
-            stroke: COLOR_AXIS_STROKE,
-            strokeWidth: 1,
-            strokeLinecap: STROKE_LINE_CAP,
-            strokeLinejoin: STROKE_LINE_JOIN
-          },
-          axisLabel: Object.assign({}, LABEL_CENTERED_PROPS, {
-            padding: 100
-          }),
-          grid: {
-            fill: 'none',
-            stroke: 'none',
-            pointerEvents: 'painted'
-          },
-          ticks: {
-            fill: 'transparent',
-            size: 1,
-            stroke: 'transparent'
-          },
-          tickLabels: LABEL_PROPS
-        }
-      },
-      LAYOUT_PROPS
-    ),
-    bar: Object.assign(
-      {
-        barWidth: 10,
-        style: {
-          data: {
-            stroke: 'none'
-          },
-          labels: LABEL_PROPS
-        }
-      },
-      LAYOUT_PROPS
-    ),
-    boxplot: Object.assign(
-      {
-        style: {
-          max: { padding: 8, stroke: COLOR_STROKE, strokeWidth: 1 },
-          maxLabels: LABEL_PROPS,
-          median: { padding: 8, stroke: COLOR_STROKE, strokeWidth: 1 },
-          medianLabels: LABEL_PROPS,
-          min: { padding: 8, stroke: COLOR_STROKE, strokeWidth: 1 },
-          minLabels: LABEL_PROPS,
-          q1: { padding: 8, fill: COLOR_FILL },
-          q1Labels: LABEL_PROPS,
-          q3: { padding: 8, fill: COLOR_FILL },
-          q3Labels: LABEL_PROPS
+    area: {
+      ...LAYOUT_PROPS,
+      style: {
+        data: {
+          fill: COLOR_FILL,
+          fillOpacity: 0.4,
+          stroke: COLOR_STROKE,
+          strokeWidth: 2
         },
-        boxWidth: 20
-      },
-      LAYOUT_PROPS
-    ),
-    candlestick: Object.assign(
-      {
-        style: {
-          data: {
-            stroke: COLOR_STROKE,
-            strokeWidth: 1
-          },
-          labels: LABEL_CENTERED_PROPS
+        labels: LABEL_CENTERED_PROPS
+      }
+    },
+    axis: {
+      ...LAYOUT_PROPS,
+      style: {
+        axis: {
+          // fill: 'transparent',
+          fill: COLOR_AXIS_FILL,
+          stroke: COLOR_AXIS_STROKE,
+          strokeWidth: 1,
+          strokeLinecap: STROKE_LINE_CAP,
+          strokeLinejoin: STROKE_LINE_JOIN
         },
-        candleColors: {
-          positive: COLOR_FILL,
-          negative: COLOR_STROKE
+        axisLabel: {
+          ...LABEL_CENTERED_PROPS,
+          padding: 100
+        },
+        grid: {
+          fill: 'none',
+          stroke: 'none', // Todo: Need to show for one axis only
+          pointerEvents: 'painted'
+        },
+        ticks: {
+          fill: 'transparent',
+          size: 1,
+          stroke: 'transparent'
+        },
+        tickLabels: LABEL_PROPS
+      }
+    },
+    bar: {
+      ...LAYOUT_PROPS,
+      barWidth: 10,
+      style: {
+        data: {
+          stroke: 'none'
+        },
+        labels: LABEL_PROPS
+      }
+    },
+    boxplot: {
+      ...LAYOUT_PROPS,
+      style: {
+        max: { padding: 8, stroke: COLOR_STROKE, strokeWidth: 1 },
+        maxLabels: LABEL_PROPS,
+        median: { padding: 8, stroke: COLOR_STROKE, strokeWidth: 1 },
+        medianLabels: LABEL_PROPS,
+        min: { padding: 8, stroke: COLOR_STROKE, strokeWidth: 1 },
+        minLabels: LABEL_PROPS,
+        q1: { padding: 8, fill: COLOR_FILL },
+        q1Labels: LABEL_PROPS,
+        q3: { padding: 8, fill: COLOR_FILL },
+        q3Labels: LABEL_PROPS
+      },
+      boxWidth: 20
+    },
+    candlestick: {
+      ...LAYOUT_PROPS,
+      style: {
+        data: {
+          stroke: COLOR_STROKE,
+          strokeWidth: 1
+        },
+        labels: LABEL_CENTERED_PROPS
+      },
+      candleColors: {
+        positive: COLOR_FILL,
+        negative: COLOR_STROKE
+      }
+    },
+    chart: {
+      ...LAYOUT_PROPS,
+      style: {
+        parent: {
+          border: `1px solid ${COLOR_FILL}`
         }
-      },
-      LAYOUT_PROPS
-    ),
-    chart: Object.assign(
-      {
-        style: {
-          parent: {
-            border: `1px solid ${COLOR_FILL}`
-          }
-        }
-      },
-      LAYOUT_PROPS
-    ),
-    errorbar: Object.assign(
-      {
-        borderWidth: 8,
-        style: {
-          data: {
-            fill: 'transparent',
-            stroke: COLOR_STROKE,
-            strokeWidth: 2
-          },
-          labels: LABEL_CENTERED_PROPS
-        }
-      },
-      LAYOUT_PROPS
-    ),
-    group: Object.assign(
-      {
-        colorScale: COLOR_SCALE
-      },
-      LAYOUT_PROPS
-    ),
+      }
+    },
+    errorbar: {
+      ...LAYOUT_PROPS,
+      borderWidth: 8,
+      style: {
+        data: {
+          fill: 'transparent',
+          stroke: COLOR_STROKE,
+          strokeWidth: 2
+        },
+        labels: LABEL_CENTERED_PROPS
+      }
+    },
+    group: {
+      ...LAYOUT_PROPS,
+      colorScale: COLOR_SCALE
+    },
     legend: {
       colorScale: COLOR_SCALE,
       gutter: 20,
@@ -149,22 +134,24 @@ export default props => {
           type: 'square'
         },
         labels: LABEL_PROPS,
-        title: Object.assign({}, LABEL_PROPS, { fontSize: TYPOGRAPHY_FONT_SIZE, padding: 2 })
+        title: {
+          ...LABEL_PROPS,
+          fontSize: TYPOGRAPHY_FONT_SIZE,
+          padding: 2
+        }
       }
     },
-    line: Object.assign(
-      {
-        style: {
-          data: {
-            fill: 'transparent',
-            stroke: COLOR_STROKE,
-            strokeWidth: 2
-          },
-          labels: LABEL_CENTERED_PROPS
-        }
-      },
-      LAYOUT_PROPS
-    ),
+    line: {
+      ...LAYOUT_PROPS,
+      style: {
+        data: {
+          fill: 'transparent',
+          stroke: COLOR_STROKE,
+          strokeWidth: 2
+        },
+        labels: LABEL_CENTERED_PROPS
+      }
+    },
     pie: {
       colorScale: COLOR_SCALE,
       padding: 20,
@@ -174,69 +161,73 @@ export default props => {
           stroke: 'transparent',
           strokeWidth: 1
         },
-        labels: Object.assign({}, LABEL_PROPS, { padding: 8 })
+        labels: {
+          ...LABEL_PROPS,
+          padding: 8,
+          stroke: COLOR_TOOLTIP_STROKE
+        }
       }
     },
-    scatter: Object.assign(
-      {
-        style: {
-          data: {
-            fill: COLOR_FILL,
-            stroke: 'transparent',
-            strokeWidth: 0
-          },
-          labels: LABEL_CENTERED_PROPS
+    scatter: {
+      ...LAYOUT_PROPS,
+      style: {
+        data: {
+          fill: COLOR_FILL,
+          stroke: 'transparent',
+          strokeWidth: 0
+        },
+        labels: LABEL_CENTERED_PROPS
+      }
+    },
+    stack: {
+      colorScale: COLOR_SCALE,
+      style: {
+        data: {
+          stroke: COLOR_STACK_STROKE,
+          strokeWidth: 1
         }
-      },
-      LAYOUT_PROPS
-    ),
-    stack: Object.assign(
-      {
-        colorScale: COLOR_SCALE,
-        style: {
-          data: {
-            stroke: COLOR_STACK_STROKE,
-            strokeWidth: 1
-          }
-        }
-      },
-      LAYOUT_PROPS
-    ),
+      }
+    },
     tooltip: {
       cornerRadius: 0,
       flyoutStyle: {
         cornerRadius: 0,
         fill: COLOR_TOOLTIP_FLYOUT_FILL,
         stroke: COLOR_TOOLTIP_FLYOUT_STROKE,
-        strokeWidth: 1,
+        strokeWidth: 0,
         pointerEvents: 'none'
       },
       pointerLength: 10,
-      style: Object.assign({}, LABEL_CENTERED_PROPS, {
+      pointerWidth: 20,
+      style: {
+        ...LABEL_CENTERED_PROPS,
         fill: COLOR_TOOLTIP_FILL,
         stroke: COLOR_TOOLTIP_STROKE,
-        padding: 8,
+        padding: 16,
         pointerEvents: 'none'
-      })
+      }
     },
-    voronoi: Object.assign(
-      // Note: This overrides tooltip
-      {
-        style: {
-          data: {
-            fill: 'transparent',
-            stroke: 'transparent',
-            strokeWidth: 0
-          },
-          labels: Object.assign({}, LABEL_CENTERED_PROPS, { padding: 8, pointerEvents: 'none' }),
-          flyout: {
-            fill: COLOR_TOOLTIP_FLYOUT_FILL,
-            strokeWidth: 1,
-            pointerEvents: 'none'
-          }
+    voronoi: {
+      ...LAYOUT_PROPS,
+      style: {
+        data: {
+          fill: 'transparent',
+          stroke: 'transparent',
+          strokeWidth: 0
+        },
+        labels: {
+          ...LABEL_CENTERED_PROPS,
+          padding: 8,
+          pointerEvents: 'none',
+          stroke: COLOR_TOOLTIP_STROKE
+        },
+        // Note: These styles overrides tooltip
+        flyout: {
+          fill: COLOR_TOOLTIP_FLYOUT_FILL,
+          strokeWidth: 1,
+          pointerEvents: 'none'
         }
-      },
-      LAYOUT_PROPS
-    )
+      }
+    }
   };
 };

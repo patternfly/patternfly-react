@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryTooltip } from 'victory';
+import { default as ChartTheme } from '../ChartTheme/ChartTheme';
 
 export const propTypes = {
   /**
@@ -11,7 +12,7 @@ export const propTypes = {
 };
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
-const ChartTooltip = props => <VictoryTooltip cornerRadius={0} {...props} />;
+const ChartTooltip = props => <VictoryTooltip theme={ChartTheme.default} {...props} />;
 hoistNonReactStatics(ChartTooltip, VictoryTooltip);
 ChartTooltip.propTypes = propTypes;
 

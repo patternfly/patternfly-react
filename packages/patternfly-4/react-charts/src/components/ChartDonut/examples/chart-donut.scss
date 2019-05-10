@@ -1,21 +1,18 @@
 .ws-preview {
   & > * {
-    .chart-container {
-      height: 200px;
+    .donut-chart-container {
+      height: 300px;
       width: 300px;
     }
 
-    .chart-inline {
+    .donut-chart-inline {
       display: inline-flex;
     }
 
-    .chart-label {
+    .donut-chart-label {
       position: absolute;
-    }
-
-    .chart-title {
-      margin-bottom: 25px;
-      margin-left: 10px;
+      height: 100%;
+      width: 100%;
     }
   }
 }

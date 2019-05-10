@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryVoronoiContainer } from 'victory';
+import { default as ChartTheme } from '../ChartTheme/ChartTheme';
 import ChartTooltip from '../ChartTooltip/ChartTooltip';
 
 export const propTypes = {
@@ -12,7 +13,9 @@ export const propTypes = {
 };
 
 // Note: VictoryVoronoiContainer.defaultEvents & VictoryContainer.role must be hoisted
-const ChartVoronoiContainer = props => <VictoryVoronoiContainer labelComponent={<ChartTooltip />} {...props} />;
+const ChartVoronoiContainer = props => (
+  <VictoryVoronoiContainer labelComponent={<ChartTooltip />} theme={ChartTheme.default} {...props} />
+);
 hoistNonReactStatics(ChartVoronoiContainer, VictoryVoronoiContainer);
 ChartVoronoiContainer.propTypes = propTypes;
 

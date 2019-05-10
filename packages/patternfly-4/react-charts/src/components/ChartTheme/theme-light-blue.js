@@ -36,7 +36,6 @@ const TYPOGRAPHY_FONT_SIZE = 14; // Value must be in pixles
 const LAYOUT_PROPS = {
   width: 451, // Todo: want to ensure the value is coming from theme
   height: 301,
-  padding: 8,
   colorScale: COLOR_SCALE
 };
 

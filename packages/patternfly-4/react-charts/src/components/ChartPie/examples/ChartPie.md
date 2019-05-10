@@ -6,28 +6,26 @@ section: 'charts'
 ## Blue-themed pie chart
 
 import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';
-import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 import './chart-pie.scss';
 
 ```js
 import React from 'react';
-import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';
-import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+import { ChartLegend, ChartPie } from '@patternfly/react-charts';
 
 <div>
-  <div style={{ height: 450, width: 450 }}>
-    <ChartPie
-      data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-      labels={datum => `${datum.x}: ${datum.y}`}
-      theme={ChartTheme.light.blue}
+  <div className="donut-chart-inline">
+    <div className="donut-chart-container">
+      <ChartPie
+        data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+        labels={datum => `${datum.x}: ${datum.y}`}
+      />
+    </div>
+    <ChartLegend
+      data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
+      orientation={'vertical'}
+      y={105}
     />
   </div>
-  <ChartLegend
-    data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
-    orientation={'vertical'}
-    theme={ChartTheme.light.blue}
-    y={150}
-  />
 </div>
 ```
 
@@ -35,10 +33,9 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 ```js
 import React from 'react';
 import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';
-import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 
 <div>
-  <div style={{ height: 450, width: 450 }}>
+  <div className="donut-chart-container">
     <ChartPie
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       labels={datum => `${datum.x}: ${datum.y}`}
@@ -47,10 +44,10 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
   </div>
   <ChartLegend
     data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
+    height={35}
     orientation={'horizontal'}
     theme={ChartTheme.light.multi}
-    height={100}
-    x={150}
+    x={45}
   />
 </div>
 ```
