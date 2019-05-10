@@ -16,10 +16,7 @@ export const Label: React.FunctionComponent<LabelProps> = ({
   className = '',
   isCompact = false,
   ...props
-}) => {
-  console.log(`isCompact = ${isCompact}`)
-  return (
+}) => (
   <span {...props} className={css(styles.label, className, isCompact && styles.modifiers.compact)}>
     {children}
   </span>);
-  };
