@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { css } from '@patternfly/react-styles';
 import { KEY_CODES } from '../../helpers/constants';
 import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
-import { AboutModalContainer } from './AboutModalContainer';
+import { AboutModalContainer } from './helpers/AboutModalContainer';
 
 export interface AboutModalProps {
   /** Content rendered inside the about modal  */
@@ -33,7 +33,7 @@ export class AboutModal extends React.Component<AboutModalProps> {
   static defaultProps = {
     className: '',
     isOpen: false,
-    onClose: () => undefined,
+    onClose: (): any => undefined,
     productName: '',
     trademark: '',
     backgroundImageSrc: '',
@@ -44,7 +44,7 @@ export class AboutModal extends React.Component<AboutModalProps> {
   private ariaDescribedById = `pf-about-modal-content-${AboutModal.currentId++}`;
   private container: HTMLElement;
 
-  private handleEscKeyClick = event => {
+  private handleEscKeyClick = (event: KeyboardEvent) => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
       this.props.onClose();
     }

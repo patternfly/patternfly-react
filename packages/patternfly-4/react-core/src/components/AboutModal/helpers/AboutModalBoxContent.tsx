@@ -14,7 +14,7 @@ export interface AboutModalBoxContentProps extends React.HTMLProps<HTMLDivElemen
   /** The Trademark info for the product  */
   trademark: string;
   /** Prevents the about modal from rendering content inside a container; allows for more flexible layouts */
-  noAboutModalBoxContentContainer: boolean;
+  noAboutModalBoxContentContainer?: boolean;
 };
 
 export const AboutModalBoxContent: React.SFC<AboutModalBoxContentProps> = ({
@@ -22,7 +22,7 @@ export const AboutModalBoxContent: React.SFC<AboutModalBoxContentProps> = ({
   className = '',
   trademark,
   id,
-  noAboutModalBoxContentContainer,
+  noAboutModalBoxContentContainer = false,
   ...props
 }: AboutModalBoxContentProps) => (
   <div {...props} className={css(styles.aboutModalBoxContent, className)} id={id}>
