@@ -1,5 +1,6 @@
 export * from './AlertDemo/AlertDemo';
 export * from './AvatarDemo/AvatarDemo';
+export * from './FormDemo/FormDemo'; 
 export * from './LabelDemo/LabelDemo';
 export * from './NavDemo/NavDemo';
 export * from './PopoverDemo/PopoverDemo'
