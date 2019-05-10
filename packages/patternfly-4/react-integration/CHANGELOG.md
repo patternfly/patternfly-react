@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.1.0...@patternfly/react-integration@1.1.1) (2019-05-10)
+
+
+### Bug Fixes
+
+* **demo-app:** remove demo-app from build ([#1971](https://github.com/patternfly/patternfly-react/issues/1971)) ([32dfa3d](https://github.com/patternfly/patternfly-react/commit/32dfa3d))
+
+
+
+
+
 # 1.1.0 (2019-05-09)
 
 
