@@ -29,15 +29,15 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
 export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   children = null,
   className = '',
-  label = undefined,
+  label,
   isRequired = false,
   isValid = true,
   isInline = false,
-  helperText = undefined,
-  helperTextInvalid = undefined,
+  helperText,
+  helperTextInvalid,
   fieldId,
   ...props
-}) => (
+}: FormGroupProps) => (
   <FormContext.Consumer>
     {({ isHorizontal }: { isHorizontal: boolean }) => (
       <div {...props} className={css(styles.formGroup, !isInline ? getModifier(styles, 'inline', className) : '')}>
