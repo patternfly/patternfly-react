@@ -7,7 +7,7 @@
     "start:demo-app": "react-scripts start"
   },
   "dependencies": {
-    "@patternfly/react-core": "file:../../react-core",
+    "@patternfly/react-core": "^3.18.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-router": "^4.3.1",

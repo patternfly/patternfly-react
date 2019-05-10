@@ -12,11 +12,19 @@ export interface AvatarProps
   alt: string;
 }
 
+const defaultProps = {
+  className: '',
+  src: ''
+};
+
+
 export const Avatar: React.SFC<AvatarProps> = ({
-  className = '',
-  src = '',
+  className,
+  src,
   alt,
   ...props
 }: AvatarProps) => (
   <img {...props} src={src} alt={alt} className={css(styles.avatar, className)} />
 );
+
+Avatar.defaultProps = defaultProps;

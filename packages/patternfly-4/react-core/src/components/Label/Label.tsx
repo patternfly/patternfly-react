@@ -11,13 +11,22 @@ export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {
   isCompact?: boolean;
 }
 
+const defaultProps = {
+  className: '',
+  isCompact: false
+}
+
 export const Label: React.FunctionComponent<LabelProps> = ({
   children,
-  className = '',
-  isCompact = false,
+  className,
+  isCompact,
   ...props
-}) => (
+}) => {
+  console.log(`isCompact = ${isCompact}`)
+  return (
   <span {...props} className={css(styles.label, className, isCompact && styles.modifiers.compact)}>
     {children}
-  </span>
-);
+  </span>);
+  };
+
+Label.defaultProps = defaultProps;
