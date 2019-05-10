@@ -19,6 +19,8 @@ const propTypes = {
   component: componentShape,
   /** Indicates where menu will be alligned horizontally */
   position: PropTypes.oneOf(Object.values(DropdownPosition)),
+  /** Flag to indicate if menu is grouped */
+  isGrouped: PropTypes.bool,
   /** Additional props are spread to the container component */
   '': PropTypes.any
 };
@@ -28,7 +30,8 @@ const defaultProps = {
   className: '',
   isOpen: true,
   position: DropdownPosition.left,
-  component: 'ul'
+  component: 'ul',
+  isGrouped: false
 };
 
 class DropdownMenu extends React.Component {
@@ -45,7 +48,13 @@ class DropdownMenu extends React.Component {
   }
 
   childKeyHandler = (index, position, custom = false) => {
-    keyHandler(index, position, this.refsCollection, this.props.children, custom);
+    keyHandler(
+      index,
+      position,
+      this.refsCollection,
+      this.props.isGrouped ? this.refsCollection : this.props.children,
+      custom
+    );
   };
 
   sendRef = (index, node, isDisabled) => {
@@ -59,7 +68,25 @@ class DropdownMenu extends React.Component {
   };
 
   extendChildren() {
-    return React.Children.map(this.props.children, (child, index) =>
+    const { children, isGrouped } = this.props;
+    if (isGrouped) {
+      let index = 0;
+      return React.Children.map(children, group =>
+        React.cloneElement(group, {
+          children:
+            (group.props.children.constructor === Array &&
+              group.props.children.map(option =>
+                React.cloneElement(option, {
+                  index: index++
+                })
+              )) ||
+            React.cloneElement(group.props.children, {
+              index: index++
+            })
+        })
+      );
+    }
+    return React.Children.map(children, (child, index) =>
       React.cloneElement(child, {
         index
       })
@@ -95,8 +122,16 @@ class DropdownMenu extends React.Component {
   }
 
   render() {
-    const { className, isOpen, position, children, component: Component, openedOnEnter, ...props } = this.props;
-
+    const {
+      className,
+      isOpen,
+      position,
+      children,
+      component: Component,
+      isGrouped,
+      openedOnEnter,
+      ...props
+    } = this.props;
     return (
       <DropdownArrowContext.Provider
         value={{
@@ -121,18 +156,33 @@ class DropdownMenu extends React.Component {
             )}
           </DropdownContext.Consumer>
         ) : (
-          <Component
-            {...props}
-            className={css(
-              styles.dropdownMenu,
-              position === DropdownPosition.right && styles.modifiers.alignRight,
-              className
-            )}
-            hidden={!isOpen}
-            role="menu"
-          >
-            {this.extendChildren()}
-          </Component>
+          (isGrouped && (
+            <div
+              {...props}
+              className={css(
+                styles.dropdownMenu,
+                position === DropdownPosition.right && styles.modifiers.alignRight,
+                className
+              )}
+              hidden={!isOpen}
+              role="menu"
+            >
+              {this.extendChildren()}
+            </div>
+          )) || (
+            <Component
+              {...props}
+              className={css(
+                styles.dropdownMenu,
+                position === DropdownPosition.right && styles.modifiers.alignRight,
+                className
+              )}
+              hidden={!isOpen}
+              role="menu"
+            >
+              {this.extendChildren()}
+            </Component>
+          )
         )}
       </DropdownArrowContext.Provider>
     );

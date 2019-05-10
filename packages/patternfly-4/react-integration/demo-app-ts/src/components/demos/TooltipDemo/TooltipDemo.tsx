@@ -1,5 +1,6 @@
 import { Tooltip, TooltipProps } from '@patternfly/react-core';
 import React, { Component } from 'react';
+
 export class TooltipDemo extends Component {
   myTooltipProps: TooltipProps = {
     content: <div>World</div>,

@@ -2,6 +2,7 @@
 title: 'Skip to content'
 section: 'components'
 cssPrefix: 'pf-c-skip-to-content'
+typescript: true
 ---
 
 import LinkPreview from '@content/../LinkPreview';

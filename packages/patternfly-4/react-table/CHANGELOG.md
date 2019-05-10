@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.6.0...@patternfly/react-table@2.6.1) (2019-05-09)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+# [2.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.5.21...@patternfly/react-table@2.6.0) (2019-05-09)
+
+
+### Features
+
+* **Dropdown:** add dropdown groups option ([#1725](https://github.com/patternfly/patternfly-react/issues/1725)) ([488f198](https://github.com/patternfly/patternfly-react/commit/488f198))
+
+
+
+
+
+## [2.5.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.5.20...@patternfly/react-table@2.5.21) (2019-05-09)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.5.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.5.19...@patternfly/react-table@2.5.20) (2019-05-09)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.5.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.5.18...@patternfly/react-table@2.5.19) (2019-05-08)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
 ## [2.5.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.5.17...@patternfly/react-table@2.5.18) (2019-05-08)
 
 **Note:** Version bump only for package @patternfly/react-table

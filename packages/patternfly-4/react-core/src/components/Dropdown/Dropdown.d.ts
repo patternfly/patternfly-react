@@ -8,6 +8,7 @@ export interface DropdownProps extends HTMLProps<HTMLDivElement> {
   isPlain?: boolean;
   isOpen?: boolean;
   isAction?: boolean;
+  isGrouped?: boolean;
   onSelect?(event: React.SyntheticEvent<HTMLDivElement>): void;
   position?: OneOf<typeof DropdownPosition, keyof typeof DropdownPosition>;
   direction?: OneOf<typeof DropdownDirection, keyof typeof DropdownDirection>;

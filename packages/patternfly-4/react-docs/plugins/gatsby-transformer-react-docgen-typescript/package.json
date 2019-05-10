@@ -1,12 +1,12 @@
 {
   "name": "gatsby-transformer-react-docgen-typescript",
   "description": "Transforms JSX/TSX source files into JSON metadata",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Red Hat",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "react-docgen": "^4.1.0"
+    "react-docgen": "5.0.0-beta.1"
   },
   "peerDependencies": {
     "gatsby": ">=2"

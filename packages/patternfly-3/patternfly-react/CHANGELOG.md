@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.32.4](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.32.3...patternfly-react@2.32.4) (2019-05-08)
+
+
+### Bug Fixes
+
+* **DualList:** Distinguish between default hidden item to hidden by filterItems that were defaultly set to hidden, shouldn't be modified by the components filter. ([#1911](https://github.com/patternfly/patternfly-react/issues/1911)) ([4d2c0ac](https://github.com/patternfly/patternfly-react/commit/4d2c0ac))
+
+
+
+
+
 ## 2.32.3 (2019-05-07)
 
 

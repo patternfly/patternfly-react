@@ -2,11 +2,9 @@ import { Tabs, Tab, TabContent } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 export class TabDemo extends Component {
-
   state = {
-      activeTabKey: 0
+    activeTabKey: 0
   }
-
   private contentRef1: any;
   private contentRef2: any;
   private contentRef3: any;
@@ -49,5 +47,3 @@ export class TabDemo extends Component {
     );
   }
 }
-
-export default TabDemo;

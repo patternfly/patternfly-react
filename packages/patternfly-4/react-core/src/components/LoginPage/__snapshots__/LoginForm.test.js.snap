@@ -66,7 +66,7 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
       checked={false}
       className=""
       id="pf-login-remember-me-id"
-      isChecked={null}
+      isChecked={false}
       isDisabled={false}
       isValid={true}
       label="remember me"
@@ -162,7 +162,7 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
       checked={false}
       className=""
       id="pf-login-remember-me-id"
-      isChecked={null}
+      isChecked={false}
       isDisabled={false}
       isValid={true}
       label="remember me"

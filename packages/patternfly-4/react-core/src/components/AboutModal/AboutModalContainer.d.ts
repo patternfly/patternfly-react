@@ -10,8 +10,7 @@ export interface AboutModalContainerProps extends HTMLProps<HTMLDivElement> {
   trademark: string;
   brandImageSrc: string;
   brandImageAlt: string;
-  logoImageSrc: string;
-  logoImageAlt: string;
+  backgroundImageSrc?: string;
 }
 
 declare const AboutModalContainer: FunctionComponent<AboutModalContainerProps>;

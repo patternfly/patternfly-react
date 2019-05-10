@@ -18,6 +18,7 @@ const DualListItem = ({
   onChange,
   side,
   hidden,
+  hiddenByFilter,
   disabled,
   tooltipID,
   tooltipText
@@ -29,7 +30,7 @@ const DualListItem = ({
     </span>
   );
   const item = (
-    <label className={cx} hidden={hidden}>
+    <label className={cx} hidden={hiddenByFilter || hidden}>
       <input
         type="checkbox"
         data-position={position}
@@ -80,6 +81,8 @@ DualListItem.propTypes = {
   /** The side of the selector. */
   side: PropTypes.string,
   /** Sets the item visibillity when filtering. */
+  hiddenByFilter: PropTypes.bool,
+  /** Sets the item default visibillity, can't be reverted. */
   hidden: PropTypes.bool,
   /** Disable the item to move between lists */
   disabled: PropTypes.bool,
@@ -99,6 +102,7 @@ DualListItem.defaultProps = {
   filterTerm: null,
   onChange: noop,
   side: null,
+  hiddenByFilter: false,
   hidden: false,
   disabled: false,
   tooltipID: null,

@@ -14,7 +14,8 @@ import * as ReactTable from '@patternfly/react-table';
 import * as ReactTokens from '@patternfly/react-tokens';
 
 
-class LiveEdit extends React.Component {
+const liveEditorStyle = { code: { 'max-height': '37.5rem', overflow: 'auto' } };
+export class LiveEdit extends React.Component {
   constructor(props) {
     super(props);
     // Our children are elements inside a <code> tag created from rendered markdown
@@ -121,5 +122,3 @@ class LiveEdit extends React.Component {
     }
   }
 }
-
-export default LiveEdit;
