@@ -34,7 +34,7 @@ The last example demonstrates this.
 
 <LinkPreview name="Expandable Nav" path="pagelayoutexpandablenav" />
 
-<code className="language-nolive">{RawSimpleSkipToContent}</code>
+<code className="language-nolive">{RawPageLayoutExpandableNav}</code>
 
 ## Using grouped navigation
 
