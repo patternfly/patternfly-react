@@ -55,6 +55,7 @@ export class AboutModal extends React.Component<AboutModalProps, AboutModalState
       ariaDescribedBy: `pf-about-modal-content-${AboutModal.currentId++}`
     };
     if (props.brandImageSrc && !props.brandImageAlt) {
+      // tslint:disable-next-line:no-console
       console.error('AboutModal:', 'brandImageAlt is required when a brandImageSrc is specified');
     }
   }
@@ -96,8 +97,9 @@ export class AboutModal extends React.Component<AboutModalProps, AboutModalState
   }
 
   render() {
-    if (!canUseDOM || !this.state.container)
+    if (!canUseDOM || !this.state.container) {
       return null;
+    }
 
     return ReactDOM.createPortal(
       <AboutModalContainer
