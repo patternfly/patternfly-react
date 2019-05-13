@@ -69,9 +69,7 @@ export class AboutModal extends React.Component<AboutModalProps, AboutModalState
   componentDidMount() {
     if (!this.state.container) {
       const container = document.createElement('div');
-      this.setState({
-        container: container
-      });
+      this.setState({ container });
       document.body.appendChild(container);
       document.addEventListener('keydown', this.handleEscKeyClick, false);
     }
