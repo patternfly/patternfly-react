@@ -14,12 +14,13 @@ const PaginationRowBack = ({
   messagesPreviousPage,
   onFirstPage,
   onPreviousPage,
+  disable,
   ...props
 }) => {
   const classes = classNames('pagination', 'pagination-pf-back', className);
   return (
     <ul className={classes} {...props}>
-      <li className={page === 1 ? 'disabled' : ''}>
+      <li className={page === 1 || disable ? 'disabled' : ''}>
         <a
           href="#"
           title={messagesFirstPage}
@@ -33,7 +34,7 @@ const PaginationRowBack = ({
           <PaginationRowArrowIcon name="double-left" />
         </a>
       </li>
-      <li className={page === 1 ? 'disabled' : ''}>
+      <li className={page === 1 || disable ? 'disabled' : ''}>
         <a
           href="#"
           title={messagesPreviousPage}
@@ -62,11 +63,14 @@ PaginationRowBack.propTypes = {
   /** first page callback */
   onFirstPage: PropTypes.func,
   /** previous page selection callback */
-  onPreviousPage: PropTypes.func
+  onPreviousPage: PropTypes.func,
+  /** disable back button */
+  disable: PropTypes.bool
 };
 PaginationRowBack.defaultProps = {
   className: '',
   onFirstPage: noop,
-  onPreviousPage: noop
+  onPreviousPage: noop,
+  disable: false
 };
 export default PaginationRowBack;
