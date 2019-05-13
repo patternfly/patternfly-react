@@ -19,10 +19,10 @@ export interface TextListItemProps extends React.HTMLProps<HTMLElement> {
 export const TextListItem: React.FunctionComponent<TextListItemProps> = ({
   children = null,
   className = '',
-  component = 'li',
+  component = TextListItemVariants.li,
   ...props
 }) => {
-  const Component = TextListItemVariants[component as keyof typeof TextListItemVariants] as any || 'li';
+  const Component: any = component;
 
   return (
     <Component {...props} data-pf-content className={css(className)}>

@@ -27,10 +27,10 @@ export interface TextProps extends React.HTMLProps<HTMLElement> {
 export const Text: React.FunctionComponent<TextProps> = ({
   children = null,
   className = '',
-  component = 'p',
+  component = TextVariants.p,
   ...props
 }) => {
-  const Component = TextVariants[component as keyof typeof TextVariants] as any || 'p';
+  const Component: any = component;
 
   return (
     <Component {...props} data-pf-content className={css(className)}>
