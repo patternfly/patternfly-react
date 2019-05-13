@@ -15,12 +15,13 @@ const PaginationRowForward = ({
   messagesLastPage,
   onNextPage,
   onLastPage,
+  disable,
   ...props
 }) => {
   const classes = classNames('pagination', 'pagination-pf-forward', className);
   return (
     <ul className={classes}>
-      <li className={page === amountOfPages ? 'disabled' : ''}>
+      <li className={page === amountOfPages || disable ? 'disabled' : ''}>
         <a
           href="#"
           title={messagesNextPage}
@@ -34,7 +35,7 @@ const PaginationRowForward = ({
           <PaginationRowArrowIcon name="right" />
         </a>
       </li>
-      <li className={page === amountOfPages ? 'disabled' : ''}>
+      <li className={page === amountOfPages || disable ? 'disabled' : ''}>
         <a
           href="#"
           title={messagesLastPage}
@@ -65,11 +66,14 @@ PaginationRowForward.propTypes = {
   /** next page callback */
   onNextPage: PropTypes.func,
   /** last page callback */
-  onLastPage: PropTypes.func
+  onLastPage: PropTypes.func,
+  /** disable next button  */
+  disable: PropTypes.bool
 };
 PaginationRowForward.defaultProps = {
   className: '',
   onNextPage: noop,
-  onLastPage: noop
+  onLastPage: noop,
+  disable: false
 };
 export default PaginationRowForward;

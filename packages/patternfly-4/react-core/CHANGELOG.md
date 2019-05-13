@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.18.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.18.1...@patternfly/react-core@3.18.2) (2019-05-13)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.18.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.18.0...@patternfly/react-core@3.18.1) (2019-05-09)
+
+
+### Bug Fixes
+
+* **ts-doc:** fix regressions ([#1960](https://github.com/patternfly/patternfly-react/issues/1960)) ([227091b](https://github.com/patternfly/patternfly-react/commit/227091b))
+
+
+
+
+
+# [3.18.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.17.0...@patternfly/react-core@3.18.0) (2019-05-09)
+
+
+### Features
+
+* **Dropdown:** add dropdown groups option ([#1725](https://github.com/patternfly/patternfly-react/issues/1725)) ([488f198](https://github.com/patternfly/patternfly-react/commit/488f198))
+
+
+
+
+
 # [3.17.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.16.19...@patternfly/react-core@3.17.0) (2019-05-09)
 
 

@@ -35,7 +35,9 @@ const PaginationRow = ({
   onPreviousPage,
   onPageInput,
   onNextPage,
-  onLastPage
+  onLastPage,
+  disableNext,
+  disablePrev
 }) => {
   const { page, perPage, perPageOptions = [] } = pagination;
   const classes = classNames(baseClassName, className, {
@@ -83,6 +85,7 @@ const PaginationRow = ({
           messagesPreviousPage={messages.previousPage}
           onFirstPage={onFirstPage}
           onPreviousPage={onPreviousPage}
+          disable={disablePrev}
         />
 
         <ControlLabel className="sr-only">{messages.currentPage}</ControlLabel>
@@ -97,6 +100,7 @@ const PaginationRow = ({
           messagesLastPage={messages.lastPage}
           onNextPage={onNextPage}
           onLastPage={onLastPage}
+          disable={disableNext}
         />
       </FormGroup>
     </Form>
@@ -154,7 +158,11 @@ PaginationRow.propTypes = {
   /** next page callback */
   onNextPage: PropTypes.func,
   /** last page callback */
-  onLastPage: PropTypes.func
+  onLastPage: PropTypes.func,
+  /** disable next page */
+  disableNext: PropTypes.bool,
+  /** disable previous page */
+  disablePrev: PropTypes.bool
 };
 PaginationRow.defaultProps = {
   baseClassName: 'content-view-pf-pagination',
@@ -177,7 +185,9 @@ PaginationRow.defaultProps = {
   onPageInput: noop,
   onNextPage: noop,
   onLastPage: noop,
-  dropdownButtonId: 'pagination-row-dropdown'
+  dropdownButtonId: 'pagination-row-dropdown',
+  disableNext: false,
+  disablePrev: false
 };
 
 PaginationRow.AmountOfPages = PaginationRowAmountOfPages;
