@@ -66,7 +66,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@>=7.1.0", "@babel/core@^7.0.0", "@babel/core@^7.0.1", "@babel/core@^7.2.2", "@babel/core@^7.4.3":
+"@babel/core@>=7.1.0", "@babel/core@^7.0.0", "@babel/core@^7.0.1", "@babel/core@^7.2.2", "@babel/core@^7.4.3", "@babel/core@^7.4.4":
   version "7.4.4"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.4.4.tgz#84055750b05fcd50f9915a826b44fa347a825250"
   integrity sha512-lQgGX3FPRgbz2SKmhMtYgJvVzGZrmjaF4apZ2bLwofAKiSjxU0drPh4S/VasyYXwaTs+A1gvQ45BN8SQJzHsQQ==
@@ -1883,17 +1883,6 @@
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.6.5.tgz#6e4f22f0e7ac6d06bd42473b8282ce92a1cab8e1"
   integrity sha512-L0k+ea2N679ytQwTqYJ7RewVDx6FDpm9burtHgD8fhcIN0UJJo7v2IkhLya2WzH2/O7L7TiF45lb/ZVoFVckDA==
-
-"@patternfly/react-core@file:packages/patternfly-4/react-core":
-  version "3.16.18"
-  dependencies:
-    "@patternfly/react-icons" "^3.9.2"
-    "@patternfly/react-styles" "^3.2.1"
-    "@patternfly/react-tokens" "^2.5.2"
-    "@tippy.js/react" "^1.1.1"
-    emotion "^9.2.9"
-    exenv "^1.2.2"
-    focus-trap-react "^4.0.1"
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
@@ -3872,15 +3861,15 @@ ast-types@0.11.7:
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.11.7.tgz#f318bf44e339db6a320be0009ded64ec1471f46c"
   integrity sha512-2mP3TwtkY/aTv5X3ZsMpNAbOnyoC/aMJwJSoaELPkHId0nSQgFcnU4dRW3isxiz7+zBexk0ym3WNVjMiQBnJSw==
 
-ast-types@0.12.4:
-  version "0.12.4"
-  resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.12.4.tgz#71ce6383800f24efc9a1a3308f3a6e420a0974d1"
-  integrity sha512-ky/YVYCbtVAS8TdMIaTiPFHwEpRB5z1hctepJplTr3UW5q8TDrpIMCILyk8pmLxGtn2KCtC/lSn7zOsaI7nzDw==
-
 ast-types@0.9.6:
   version "0.9.6"
   resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.9.6.tgz#102c9e9e9005d3e7e3829bf0c4fa24ee862ee9b9"
   integrity sha1-ECyenpAF0+fjgpvwxPok7oYu6bk=
+
+ast-types@^0.12.4:
+  version "0.12.4"
+  resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.12.4.tgz#71ce6383800f24efc9a1a3308f3a6e420a0974d1"
+  integrity sha512-ky/YVYCbtVAS8TdMIaTiPFHwEpRB5z1hctepJplTr3UW5q8TDrpIMCILyk8pmLxGtn2KCtC/lSn7zOsaI7nzDw==
 
 astral-regex@^1.0.0:
   version "1.0.0"
@@ -7808,7 +7797,7 @@ cyclist@~0.2.2:
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
   integrity sha1-GzN5LhHpFKL9bW7WRHRkRE5fpkA=
 
-cypress@^3.1.4, cypress@^3.2.0:
+cypress@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/cypress/-/cypress-3.2.0.tgz#c2d5befd5077dab6fb52ad70721e0868ac057001"
   integrity sha512-PN0wz6x634QyNL56/voTzJoeScDfwtecvSfFTHfv5MkHuECVSR4VQcEZTvYtKWln3CMBMUkWbBKPIwwu2+a/kw==
@@ -11317,7 +11306,7 @@ got@^8.3.2:
     url-parse-lax "^3.0.0"
     url-to-options "^1.0.1"
 
-graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.4, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
+graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.4, graceful-fs@^4.1.6:
   version "4.1.15"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
   integrity sha512-6uHUhOPEBgQ24HM+r6b/QwWfZq+yiFcipKFrOFiBEnWdy5sdzYoi+pJeQaPI5qOLRFqWmAXUPQNsielzdLoecA==
@@ -13875,13 +13864,6 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
   integrity sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
-
-klaw@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/klaw/-/klaw-3.0.0.tgz#b11bec9cf2492f06756d6e809ab73a2910259146"
-  integrity sha512-0Fo5oir+O9jnXu5EefYbVK+mHMBeEVEy2cmctR1O1NECcCkPRreJKrS6Qt/j3KC2C148Dfo9i3pCmCMsdqGr0g==
-  dependencies:
-    graceful-fs "^4.1.9"
 
 kleur@^2.0.1:
   version "2.0.2"
@@ -18801,6 +18783,20 @@ react-diff-view@^1.8.1:
     lodash.mapvalues "^4.6.0"
     warning "^4.0.1"
 
+react-docgen@5.0.0-beta.1:
+  version "5.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-5.0.0-beta.1.tgz#3654ab8f5cb7abacbfc122c1950c45d8e77048da"
+  integrity sha512-CbbHF5jXrgyXuP3gQcN1zG4YpNj5QQuxTsEhKH3UXQN01V4cho/eL926ya6ecCWryUtlK97QGRxtK48KbCtXEQ==
+  dependencies:
+    "@babel/core" "^7.4.4"
+    "@babel/runtime" "^7.0.0"
+    ast-types "^0.12.4"
+    async "^2.1.4"
+    commander "^2.19.0"
+    doctrine "^3.0.0"
+    node-dir "^0.1.10"
+    strip-indent "^2.0.0"
+
 react-docgen@^3.0.0-beta11:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-3.0.0.tgz#79c6e1b1870480c3c2bc1a65bede0577a11c38cd"
@@ -18813,19 +18809,6 @@ react-docgen@^3.0.0-beta11:
     doctrine "^2.0.0"
     node-dir "^0.1.10"
     recast "^0.16.0"
-
-react-docgen@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-4.1.0.tgz#218887feba5b2c36af337879a27e74bda90ed7cb"
-  integrity sha512-yoGY45tD4yPGmnOlJr4mjU6LTYRO1OEny9ZtK8LjnFMqr2M/uRuH88vPba7743oVDFuVNH5bnN2bh6eQX3qXjA==
-  dependencies:
-    "@babel/core" "^7.0.0"
-    "@babel/runtime" "^7.0.0"
-    async "^2.1.4"
-    commander "^2.19.0"
-    doctrine "^3.0.0"
-    node-dir "^0.1.10"
-    recast "^0.17.3"
 
 react-dom@^16.2.0, react-dom@^16.8.4, react-dom@~16.8.4:
   version "16.8.6"
@@ -19403,16 +19386,6 @@ recast@^0.16.0:
     ast-types "0.11.7"
     esprima "~4.0.0"
     private "~0.1.5"
-    source-map "~0.6.1"
-
-recast@^0.17.3:
-  version "0.17.6"
-  resolved "https://registry.yarnpkg.com/recast/-/recast-0.17.6.tgz#64ae98d0d2dfb10ff92ff5fb9ffb7371823b69fa"
-  integrity sha512-yoQRMRrK1lszNtbkGyM4kN45AwylV5hMiuEveUBlxytUViWevjvX6w+tzJt1LH4cfUhWt4NZvy3ThIhu6+m5wQ==
-  dependencies:
-    ast-types "0.12.4"
-    esprima "~4.0.0"
-    private "^0.1.8"
     source-map "~0.6.1"
 
 recast@~0.11.12:
@@ -22243,10 +22216,10 @@ typescript-eslint-parser@^16.0.0:
     lodash.unescape "4.0.1"
     semver "5.5.0"
 
-typescript@3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.2.2.tgz#fe8101c46aa123f8353523ebdcf5730c2ae493e5"
-  integrity sha512-VCj5UiSyHBjwfYacmDuc/NOk4QQixbE+Wn7MFJuS0nRuPQbof132Pw4u53dm264O8LPc2MVsc7RJNml5szurkg==
+typescript@3.4.5:
+  version "3.4.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.4.5.tgz#2d2618d10bb566572b8d7aad5180d84257d70a99"
+  integrity sha512-YycBxUb49UUhdNMU5aJ7z5Ej2XGmaIBL0x34vZ82fn3hGvD+bgrMrVDpatgz2f7YxUMJxMkbWxJZeAvDxVe7Vw==
 
 typescript@^2.5.1:
   version "2.9.2"

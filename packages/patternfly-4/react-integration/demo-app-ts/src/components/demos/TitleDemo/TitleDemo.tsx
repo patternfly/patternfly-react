@@ -1,20 +1,19 @@
-import { Button, Title, TitleSize, TitleProps, TitleLevel } from '@patternfly/react-core';
+import { Title,  TitleLevel, TitleProps } from '@patternfly/react-core';
 import React, { Component } from 'react';
-export class TitleDemo extends Component {
-  myTitleProps: TitleProps = {
-    size: TitleSize.md,
-    headingLevel: TitleLevel.h1
-  };
 
+const myProps: TitleProps = {
+  size: 'md',
+  headingLevel: TitleLevel.h1
+};
+
+export class TitleDemo extends Component {
   render() {
     return (
     <React.Fragment>
-      <Title size={this.myTitleProps.size} headingLevel={this.myTitleProps.headingLevel}>
+      <Title size={myProps.size} headingLevel={myProps.headingLevel}>
         Integration Demo App
       </Title>
     </React.Fragment>
     );
   }
 }
-
-export default TitleDemo;

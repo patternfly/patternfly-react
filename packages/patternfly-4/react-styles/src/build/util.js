@@ -57,7 +57,6 @@ export function writeCSSJSFile(rootPath, originalPath, destinationPath, contents
   const removeRE = new RegExp(`${rootPath}/?`);
   const inFormatted = originalPath.replace(removeRE, '');
   const outFormatted = destinationPath.replace(removeRE, '');
-  console.log(`${inFormatted} -> ${outFormatted}`); // eslint-disable-line
 }
 
 export function getRelativeImportPath(from, to) {

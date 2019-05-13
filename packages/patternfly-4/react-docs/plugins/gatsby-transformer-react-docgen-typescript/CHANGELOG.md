@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.3 (2019-05-09)
+
+
+### Bug Fixes
+
+* **docs:** fix ts docgen ([#1944](https://github.com/patternfly/patternfly-react/issues/1944)) ([f68bbc5](https://github.com/patternfly/patternfly-react/commit/f68bbc5))
+
+
+
+
+
 ## 0.1.2 (2019-04-26)
 
 

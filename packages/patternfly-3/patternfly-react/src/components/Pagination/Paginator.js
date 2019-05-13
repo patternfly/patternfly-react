@@ -61,7 +61,17 @@ class Paginator extends React.Component {
   render() {
     const { pageChangeValue } = this.state;
 
-    const { className, viewType, itemCount, messages, dropdownButtonId, onPerPageSelect, pagination } = this.props;
+    const {
+      className,
+      viewType,
+      itemCount,
+      messages,
+      dropdownButtonId,
+      onPerPageSelect,
+      pagination,
+      disableNext,
+      disablePrev
+    } = this.props;
 
     const itemsStart = (this.currentPage - 1) * this.perPage + 1;
     const itemsEnd = Math.min(itemsStart + this.perPage - 1, this.itemCount);
@@ -86,6 +96,8 @@ class Paginator extends React.Component {
         onPageInput={e => this.handlePageChange(e)}
         onNextPage={() => this.setPageRelative(1)}
         onLastPage={() => this.setPage(totalPages)}
+        disableNext={disableNext}
+        disablePrev={disablePrev}
       />
     );
   }
@@ -121,7 +133,11 @@ Paginator.propTypes = {
   /** A callback triggered when a page is switched */
   onPageSet: PropTypes.func,
   /** per page selection callback */
-  onPerPageSelect: PropTypes.func
+  onPerPageSelect: PropTypes.func,
+  /** disable next page */
+  disableNext: PropTypes.bool,
+  /** disable previous page */
+  disablePrev: PropTypes.bool
 };
 Paginator.defaultProps = {
   className: '',
@@ -136,7 +152,9 @@ Paginator.defaultProps = {
   },
   dropdownButtonId: 'pagination-row-dropdown',
   onPerPageSelect: noop,
-  onPageSet: noop
+  onPageSet: noop,
+  disableNext: false,
+  disablePrev: false
 };
 
 export default Paginator;

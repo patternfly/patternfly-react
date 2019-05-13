@@ -1,3 +1,3 @@
-export { default as Props } from './props';
-export { default as CSSVars } from './cssvars';
-export { default as LiveEdit } from './liveEdit';
+export * from './propsTable';
+export * from './cssvars';
+export * from './liveEdit';

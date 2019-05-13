@@ -1,7 +1,9 @@
 ---
 title: 'Avatar'
 cssPrefix: 'pf-c-avatar'
+typescript: true
 ---
+
 ## Simple avatar
 
 import { Avatar } from '@patternfly/react-core';

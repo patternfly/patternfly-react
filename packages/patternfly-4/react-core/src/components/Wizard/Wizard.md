@@ -1,6 +1,7 @@
 ---
 title: 'Wizard'
 cssPrefix: 'pf-c-wizard'
+typescript: true
 ---
 
 import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';

@@ -13,7 +13,7 @@ export function getModifier(
   styleObject: any,
   modifier: string,
   defaultModifer?: StyleDeclarationStatic | string
-): StyleDeclarationStatic | string;
+): string;
 
 export function formatClassName(className: string): string;
 

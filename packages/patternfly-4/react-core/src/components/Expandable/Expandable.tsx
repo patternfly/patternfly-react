@@ -3,19 +3,9 @@ import styles from '@patternfly/patternfly/components/Expandable/expandable.css'
 import { css } from '@patternfly/react-styles';
 import { AngleRightIcon } from '@patternfly/react-icons';
 
-const defaultProps = {
-  className: '',
-  isExpanded: false,
-  toggleText: '',
-  onToggle: () => undefined,
-  isFocused: false,
-  isHovered: false,
-  isActive: false
-};
-
 export interface ExpandableProps {
   /** Content rendered inside the Expandable Component */
-  children: any;
+  children: React.ReactNode;
   /** Additional classes added to the Expandable Component */
   className?: string;
   /** Flag to indicate if the content is expanded */
@@ -23,7 +13,7 @@ export interface ExpandableProps {
   /** Text that appears in the  toggle */
   toggleText?: string;
   /** Callback function to toggle the expandable content */
-  onToggle?(): void;
+  onToggle?: () => void;
   /** Forces focus state */
   isFocused?: boolean;
   /** Forces hover state */
@@ -33,16 +23,16 @@ export interface ExpandableProps {
 }
 
 export const Expandable: React.SFC<ExpandableProps> = ({
-  className,
+  className = '',
   children,
-  isExpanded,
-  toggleText,
-  onToggle,
-  isFocused,
-  isActive,
-  isHovered,
+  isExpanded = false,
+  toggleText = '',
+  onToggle = () => undefined,
+  isFocused = false,
+  isActive = false,
+  isHovered = false,
   ...props
-}) => (
+}: ExpandableProps) => (
   <div {...props} className={css(styles.expandable, isExpanded && styles.modifiers.expanded, className)}>
     <button
       className={css(
@@ -62,7 +52,3 @@ export const Expandable: React.SFC<ExpandableProps> = ({
     </div>
   </div>
 );
-
-Expandable.defaultProps = defaultProps;
-
-export default Expandable;
