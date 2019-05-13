@@ -7,7 +7,7 @@ import { FormEvent } from 'react';
 export enum inputTypes {
   text = 'text',
   date = 'date',
-  'datetime-local' = 'datetime-local',
+  datetimeLocal = 'datetime-local',
   email = 'email',
   month = 'month',
   number = 'number',
@@ -20,23 +20,23 @@ export enum inputTypes {
 
 export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange'> {
   /** Additional classes added to the TextInput. */
-  className: string;
-  /** Flag to show if the input is required. */
-  isRequired: boolean;
-  /** Type that the input accepts. */
-  type: inputTypes;
-  /** Value of the input. */
-  value: string | number;
-  /** Flag to show if the input is valid or invalid. */
-  isValid: boolean;
+  className?: string;
   /** Flag to show if the input is disabled. */
-  isDisabled: boolean;
-  /** A callback for when the input value changes. */
-  onChange: (value: string, event: FormEvent<HTMLInputElement>) => void;
+  isDisabled?: boolean;
   /** Flag to show if the input is read only. */
-  isReadOnly: boolean;
+  isReadOnly?: boolean;
+  /** Flag to show if the input is required. */
+  isRequired?: boolean;
+  /** Flag to show if the input is valid or invalid. */
+  isValid?: boolean;
+  /** A callback for when the input value changes. */
+  onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
+  /** Type that the input accepts. */
+  type?: inputTypes;
+  /** Value of the input. */
+  value?: string | number;
   /** Aria-label. The input requires an associated id or aria-label. */
-  'aria-label': string;
+  'aria-label'?: string;
 }
 
 export class TextInput extends React.Component<TextInputProps> {
@@ -46,10 +46,7 @@ export class TextInput extends React.Component<TextInputProps> {
     isValid: true,
     isDisabled: false,
     isReadOnly: false,
-    type: 'text',
-    value: undefined,
-    onChange: () => undefined,
-    'aria-label': null
+    type: 'text'
   }
 
   constructor(props: TextInputProps) {
@@ -59,7 +56,7 @@ export class TextInput extends React.Component<TextInputProps> {
     }
   }
 
-  handleChange = (event: FormEvent<HTMLInputElement>) => {
+  handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     this.props.onChange(event.currentTarget.value, event);
   }
 
