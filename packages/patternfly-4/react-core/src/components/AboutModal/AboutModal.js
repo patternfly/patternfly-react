@@ -32,7 +32,6 @@ const propTypes = {
   '': PropTypes.any
 };
 
-
 const defaultProps = {
   className: '',
   isOpen: false,

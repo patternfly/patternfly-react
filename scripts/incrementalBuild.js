@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { hashElement } = require("folder-hash");
+const { hashDir } = require("./hashDir");
 const Project = require('@lerna/project');
 const RunCommand = require('@lerna/run')
 
@@ -32,15 +32,15 @@ async function getInvalidPackages() {
   const packages = (await new Project(__dirname).getPackages())
     .filter(p => p.scripts.build) // Only packages that have a build target
     .filter(p => isPf3
-      ? p.location.indexOf('patternfly-3') !== -1 || commonPackages.indexOf(p.name) !== -1
+      ? p.location.indexOf('patternfly-3') > 0 || commonPackages.indexOf(p.name) > 0
       : true) // Based off argv
     .filter(p => isPf4
-      ? p.location.indexOf('patternfly-4') !== -1 || commonPackages.indexOf(p.name) !== -1
+      ? p.location.indexOf('patternfly-4') > 0 || commonPackages.indexOf(p.name) > 0
       : true) // Based off argv
 
   for (let p of packages) {
     const watchDir = getDir(p.name);
-    p.hash = (await hashElement(`${p.location}/${watchDir}`)).hash;
+    p.hash = await hashDir(`${p.location}/${watchDir}`);
     p.valid = cache && cache[p.name] === p.hash;
     if (p.valid) {
       console.info('Skipping', p.name, '(already built).');
@@ -67,7 +67,7 @@ async function incrementalBuild() {
     if (!fs.existsSync('.cache')) {
       fs.mkdirSync('.cache');
     }
-    fs.writeFileSync(cacheFile, JSON.stringify(cache, null, 4));
+    fs.writeFileSync(cacheFile, JSON.stringify(cache, null, 2));
   }
 }
 
