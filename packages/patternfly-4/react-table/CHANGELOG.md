@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.6.2...@patternfly/react-table@2.7.0) (2019-05-13)
+
+
+### Features
+
+* **table:** add umd to react-table ([#1966](https://github.com/patternfly/patternfly-react/issues/1966)) ([a48836b](https://github.com/patternfly/patternfly-react/commit/a48836b))
+
+
+
+
+
 ## [2.6.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.6.1...@patternfly/react-table@2.6.2) (2019-05-13)
 
 **Note:** Version bump only for package @patternfly/react-table

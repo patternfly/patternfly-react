@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.19.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.18.2...@patternfly/react-core@3.19.0) (2019-05-13)
+
+
+### Bug Fixes
+
+* **build:** use native fs-extra commands instead of folderHash ([#1957](https://github.com/patternfly/patternfly-react/issues/1957)) ([b074b8e](https://github.com/patternfly/patternfly-react/commit/b074b8e))
+
+
+### Features
+
+* **table:** add umd to react-table ([#1966](https://github.com/patternfly/patternfly-react/issues/1966)) ([a48836b](https://github.com/patternfly/patternfly-react/commit/a48836b))
+
+
+
+
+
 ## [3.18.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.18.1...@patternfly/react-core@3.18.2) (2019-05-13)
 
 **Note:** Version bump only for package @patternfly/react-core
