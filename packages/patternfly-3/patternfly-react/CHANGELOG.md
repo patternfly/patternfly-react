@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.33.0 (2019-05-13)
+
+
+### Features
+
+* **Paginator:** Add disableNext,disablePrev Props ([#1928](https://github.com/patternfly/patternfly-react/issues/1928)) ([b0fb965](https://github.com/patternfly/patternfly-react/commit/b0fb965))
+
+
+
+
+
 ## [2.32.4](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.32.3...patternfly-react@2.32.4) (2019-05-08)
 
 
