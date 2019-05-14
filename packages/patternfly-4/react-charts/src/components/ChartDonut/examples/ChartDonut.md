@@ -3,9 +3,9 @@ title: 'Donut chart'
 section: 'charts'
 ---
 
-## Blue theme donut chart
+## Blue donut chart
 
-import { ChartDonut, ChartLabel, ChartLegend, ChartTheme } from '@patternfly/react-charts';
+import { ChartDonut, ChartLabel, ChartLegend, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-donut.scss';
 
 ```js
@@ -31,10 +31,10 @@ import { ChartDonut, ChartLegend } from '@patternfly/react-charts';
 </div>
 ```
 
-## Multi-color theme donut chart
+## Multi-color donut chart
 ```js
 import React from 'react';
-import { ChartDonut, ChartLabel, ChartLegend, ChartTheme } from '@patternfly/react-charts';
+import { ChartDonut, ChartLabel, ChartLegend, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
 <div>
   <div className="donut-chart-container">
@@ -45,14 +45,16 @@ import { ChartDonut, ChartLabel, ChartLegend, ChartTheme } from '@patternfly/rea
     <ChartDonut
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       labels={datum => `${datum.x}: ${datum.y}`}
-      theme={ChartTheme.light.multi}
+      themeColor={ChartThemeColor.multi}
+      themeVariant={ChartThemeVariant.light}
     />
   </div>
   <ChartLegend
     data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
     height={35}
     orientation={'horizontal'}
-    theme={ChartTheme.light.multi}
+    themeColor={ChartThemeColor.multi}
+    themeVariant={ChartThemeVariant.light}
     x={45}
   />
 </div>

@@ -3,9 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryLegend } from 'victory';
-import { default as ChartTheme } from '../ChartTheme/ChartTheme';
 import ChartContainer from '../ChartContainer/ChartContainer';
 import ChartPoint from '../ChartPoint/ChartPoint';
+import { getTheme } from '../ChartTheme/themes/theme-utils';
 
 export const propTypes = {
   /**
@@ -28,6 +28,14 @@ export const propTypes = {
    * Useful when legend is located inside a chart -- default is false.
    */
   responsive: PropTypes.boolean,
+  /*
+   * Specifies the theme color; blue (default), green, or multi-color. Overridden by the theme property.
+   */
+  themeColor: PropTypes.string,
+  /*
+   * Specifies the theme variant; 'dark' or 'light' (default). Overridden by the theme property.
+   */
+  themeVariant: PropTypes.string,
   /**
    * The width props specifies the width of the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
@@ -44,11 +52,11 @@ export const defaultProps = {
 };
 
 // Note: VictoryLegend.role must be hoisted
-const ChartLegend = ({responsive, ...rest}) => (
+const ChartLegend = ({responsive, theme, themeColor, themeVariant, ...rest}) => (
   <VictoryLegend
     containerComponent={<ChartContainer responsive={responsive} />}
     dataComponent={<ChartPoint />}
-    theme={ChartTheme.default}
+    theme={theme || getTheme(themeColor, themeVariant)}
     {...rest}
   />
 );

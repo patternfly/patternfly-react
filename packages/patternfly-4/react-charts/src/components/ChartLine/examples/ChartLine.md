@@ -3,18 +3,18 @@ title: 'Line chart'
 section: 'charts'
 ---
 
-import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme, ChartAxis } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-line.scss';
 
-## Green themed line chart
+## Green line chart
 ```js
 import React from 'react';
-import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme, ChartAxis } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
 
 <div>
   <div className="line-chart-inline">
     <div className="line-chart-container">
-      <Chart theme={ChartTheme.light.green}>
+      <Chart themeColor={ChartThemeColor.green}>
         <ChartGroup>
           <ChartLine
             data={[
@@ -62,21 +62,24 @@ import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme, ChartAxis } from
       data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
       orientation="vertical"
       title="Average number of pets"
-      theme={ChartTheme.light.green}
+      themeColor={ChartThemeColor.green}
       y={80}
     />
   </div>
 </div>
 ```
 
-## Multi-color themed line chart
+## Multi-color line chart
 ```js
 import React from 'react';
-import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme, ChartAxis } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
 <div>
   <div className="line-chart-container">
-    <Chart theme={ChartTheme.light.multi}>
+    <Chart
+      themeColor={ChartThemeColor.multi}
+      themeVariant={ChartThemeVariant.light}
+    >
       <ChartGroup>
         <ChartLine
           data={[
@@ -123,7 +126,8 @@ import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme, ChartAxis } from
   <ChartLegend
     data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
     height={50}
-    theme={ChartTheme.light.multi}
+    themeColor={ChartThemeColor.multi}
+    themeVariant={ChartThemeVariant.light}
     title="Average number of pets"
   />
 </div>

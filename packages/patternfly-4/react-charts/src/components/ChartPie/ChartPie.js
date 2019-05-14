@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryPie } from 'victory';
-import { default as ChartTheme } from '../ChartTheme/ChartTheme';
 import ChartTooltip from '../ChartTooltip/ChartTooltip';
+import { getTheme } from '../ChartTheme/themes/theme-utils';
 
 export const propTypes = {
   /**
@@ -22,6 +22,14 @@ export const propTypes = {
    * Note: innerRadius may need to be set when using this property.
    */
   height: PropTypes.number,
+  /*
+   * Specifies the theme color; blue (default), green, or multi-color. Overridden by the theme property.
+   */
+  themeColor: PropTypes.string,
+  /*
+   * Specifies the theme variant; 'dark' or 'light' (default). Overridden by the theme property.
+   */
+  themeVariant: PropTypes.string,
   /**
    * The width props specifies the width of the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
@@ -36,7 +44,10 @@ export const propTypes = {
 };
 
 // Note: VictoryPie.role must be hoisted
-const ChartPie = props => <VictoryPie labelComponent={<ChartTooltip />} theme={ChartTheme.default} {...props} />;
+const ChartPie = ({ theme, themeColor, themeVariant, ...rest }) => {
+  const chartTheme = theme || getTheme(themeColor, themeVariant);
+  return <VictoryPie labelComponent={<ChartTooltip theme={chartTheme} />} theme={chartTheme} {...rest} />;
+};
 hoistNonReactStatics(ChartPie, VictoryPie);
 ChartPie.propTypes = propTypes;
 

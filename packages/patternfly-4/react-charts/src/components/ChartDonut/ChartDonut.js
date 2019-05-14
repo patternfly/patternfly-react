@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryPie } from 'victory';
 import ChartLabel from '../ChartLabel/ChartLabel';
+import { styles } from '../ChartTheme/themes/theme-donut';
+import { getDonutTheme } from '../ChartTheme/themes/theme-utils';
 import ChartTooltip from '../ChartTooltip/ChartTooltip';
 
 export const propTypes = {
@@ -26,6 +28,14 @@ export const propTypes = {
    * The subtitle for the donut chart
    */
   subTitle: PropTypes.string,
+  /*
+   * Specifies the theme color; blue (default), green, or multi-color. Overridden by the theme property.
+   */
+  themeColor: PropTypes.string,
+  /*
+   * Specifies the theme variant; 'dark' or 'light' (default). Overridden by the theme property.
+   */
+  themeVariant: PropTypes.string,
   /**
    * The title for the donut chart
    */
@@ -74,11 +84,12 @@ class ChartDonut extends React.Component {
     const { height, width } = this.state;
 
     if (subTitle && height && width) {
-      const xVal = (width / 2) - (subTitle.length / 2);
-      const yVal = (height / 2) + 10;
+      const xVal = width / 2 - subTitle.length / 2;
+      const yVal = height / 2 + 10;
 
       return (
         <ChartLabel
+          style={styles.label.subTitle}
           text={subTitle}
           textAnchor="middle"
           verticalAnchor="middle"
@@ -95,11 +106,12 @@ class ChartDonut extends React.Component {
     const { height, width } = this.state;
 
     if (title && height && width) {
-      const xVal = (width / 2) - (title.length / 2);
-      const yVal = (height / 2) - 10;
+      const xVal = width / 2 - title.length / 2;
+      const yVal = height / 2 - 10;
 
       return (
         <ChartLabel
+          style={styles.label.title}
           text={title}
           textAnchor="middle"
           verticalAnchor="middle"
@@ -121,17 +133,26 @@ class ChartDonut extends React.Component {
   };
 
   render() {
-    const { subTitle, title, ...rest } = this.props;
+    const { subTitle, theme, themeColor, themeVariant, title, ...rest } = this.props;
+
+    // TODO Replace with PF css variable when available
+    const titleStyles = {
+      height: styles.label.height,
+      position: styles.label.position,
+      width: styles.label.width
+    };
+
+    const chartTheme = theme || getDonutTheme(themeColor, themeVariant);
 
     return (
       <React.Fragment>
         {Boolean(title || subTitle) && (
-          <svg ref={this.titleRef} >
+          <svg ref={this.titleRef} style={titleStyles}>
             {this.getTitle()}
             {this.getSubTitle()}
           </svg>
         )}
-        <VictoryPie labelComponent={<ChartTooltip />} {...rest} />
+        <VictoryPie labelComponent={<ChartTooltip theme={chartTheme} />} theme={chartTheme} {...rest} />
       </React.Fragment>
     );
   }

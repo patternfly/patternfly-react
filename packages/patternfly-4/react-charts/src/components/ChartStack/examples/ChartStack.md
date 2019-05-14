@@ -3,14 +3,14 @@ title: 'Stack chart'
 section: 'charts'
 ---
 
-## Vertical blue themed stack chart
+## Vertical blue stack chart
 
-import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-stack.scss';
 
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartStack } from '@patternfly/react-charts';
 
 <div>
   <div className="stack-chart-container">
@@ -26,14 +26,17 @@ import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-chart
 </div>
 ```
 
-## Vertical multi-color themed stack chart
+## Vertical multi-color stack chart
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
 <div>
   <div className="stack-chart-container">
-    <Chart theme={ChartTheme.light.multi}>
+    <Chart
+      themeColor={ChartThemeColor.multi}
+      themeVariant={ChartThemeVariant.light}
+    >
       <ChartStack domainPadding={{x: [10, 2]}}>
         <ChartBar data={[{ x: 'Cats', y: 1 }, { x: 'Dogs', y: 2 }, { x: 'Birds', y: 5 }, { x: 'Mice', y: 3 }]} />
         <ChartBar data={[{ x: 'Cats', y: 2 }, { x: 'Dogs', y: 1 }, { x: 'Birds', y: 7 }, { x: 'Mice', y: 4 }]} />
@@ -45,10 +48,10 @@ import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-chart
 </div>
 ```
 
-## Horizontal blue themed stack chart
+## Horizontal blue (default) stack chart
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartStack } from '@patternfly/react-charts';
 
 <div>
   <div className="stack-chart-container">
@@ -67,11 +70,14 @@ import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-chart
 ## Horizontal multi-color stack chart
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
 <div>
   <div className="stack-chart-container">
-    <Chart theme={ChartTheme.light.multi}>
+    <Chart
+      themeColor={ChartThemeColor.multi}
+      themeVariant={ChartThemeVariant.light}
+    >
       <ChartStack domainPadding={{x: [10, 2]}} horizontal>
         <ChartBar data={[{ x: 'Cats', y: 1 }, { x: 'Dogs', y: 2 }, { x: 'Birds', y: 5 }, { x: 'Mice', y: 3 }]} />
         <ChartBar data={[{ x: 'Cats', y: 2 }, { x: 'Dogs', y: 1 }, { x: 'Birds', y: 7 }, { x: 'Mice', y: 4 }]} />

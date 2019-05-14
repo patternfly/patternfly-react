@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryChart } from 'victory';
-import { default as ChartTheme } from '../ChartTheme/ChartTheme';
+import { getTheme } from '../ChartTheme/themes/theme-utils';
 
 export const propTypes = {
   /**
@@ -19,6 +19,14 @@ export const propTypes = {
    * pixels will depend on the size of the container the chart is rendered into.
    */
   height: PropTypes.number,
+  /*
+   * Specifies the theme color; blue (default), green, or multi-color. Overridden by the theme property.
+   */
+  themeColor: PropTypes.string,
+  /*
+   * Specifies the theme variant; 'dark' or 'light' (default). Overridden by the theme property.
+   */
+  themeVariant: PropTypes.string,
   /**
    * The width props specifies the width of the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
@@ -30,8 +38,8 @@ export const propTypes = {
   width: PropTypes.number
 };
 
-const Chart = ({ children, ...rest }) => (
-  <VictoryChart theme={ChartTheme.default} {...rest}>
+const Chart = ({ children, theme, themeColor, themeVariant, ...rest }) => (
+  <VictoryChart theme={theme || getTheme(themeColor, themeVariant)} {...rest}>
     {children}
   </VictoryChart>
 );

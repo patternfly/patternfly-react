@@ -3,9 +3,9 @@ title: 'Pie chart'
 section: 'charts'
 ---
 
-## Blue-themed pie chart
+## Blue pie chart
 
-import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';
+import { ChartLegend, ChartPie, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-pie.scss';
 
 ```js
@@ -29,24 +29,26 @@ import { ChartLegend, ChartPie } from '@patternfly/react-charts';
 </div>
 ```
 
-## Multi-color themed pie chart
+## Multi-color pie chart
 ```js
 import React from 'react';
-import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';
+import { ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 <div>
   <div className="donut-chart-container">
     <ChartPie
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       labels={datum => `${datum.x}: ${datum.y}`}
-      theme={ChartTheme.light.multi}
+      themeColor={ChartThemeColor.multi}
+      themeVariant={ChartThemeVariant.light}
     />
   </div>
   <ChartLegend
     data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
     height={35}
     orientation={'horizontal'}
-    theme={ChartTheme.light.multi}
+    themeColor={ChartThemeColor.multi}
+    themeVariant={ChartThemeVariant.light}
     x={45}
   />
 </div>
