@@ -6,7 +6,10 @@
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",
   "patternfly:src": "src/",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ],
   "publishConfig": {
     "access": "public",
     "tag": "prerelease"
@@ -38,7 +41,7 @@
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js -q",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm -q",
     "clean": "rimraf dist",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps"
   },
   "optionalDependencies": {
     "@types/victory": "^31.0.15",

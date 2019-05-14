@@ -1,5 +1,5 @@
 ---
-title: 'Bar chart'
+title: 'Bar'
 section: 'charts'
 ---
 

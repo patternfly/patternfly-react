@@ -23,10 +23,10 @@ const COLOR_SCALE = [
 ];
 const COLOR_STACK_STROKE = global_Color_light_100.value;
 const COLOR_STROKE = global_active_color_300.value;
-const COLOR_TOOLTIP_FILL = 'ededed';
-const COLOR_TOOLTIP_STROKE = 'ededed';
-const COLOR_TOOLTIP_FLYOUT_FILL = '151515';
-const COLOR_TOOLTIP_FLYOUT_STROKE = '151515';
+const COLOR_TOOLTIP_FILL = '#EDEDED';
+const COLOR_TOOLTIP_STROKE = '#EDEDED';
+const COLOR_TOOLTIP_FLYOUT_FILL = '#151515';
+const COLOR_TOOLTIP_FLYOUT_STROKE = '#151515';
 
 export default ColorTheme({
   COLOR_AXIS_FILL,

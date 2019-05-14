@@ -1,4 +1,4 @@
-/* eslint-disable react/require-default-props */
+/* eslint-disable react/require-default-props,react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
@@ -20,10 +20,16 @@ export const propTypes = {
   themeVariant: PropTypes.string
 };
 
-// Note: VictoryLine.role must be hoisted
-const ChartLine = ({ theme, themeColor, themeVariant, ...rest }) => (
-  <VictoryLine theme={theme || getTheme(themeColor, themeVariant)} {...rest} />
+const ChartLine = ({
+  themeColor,
+  themeVariant,
+  theme = getTheme(themeColor, themeVariant), // destructure last
+  ...rest
+}) => (
+  <VictoryLine theme={theme} {...rest} />
 );
+
+// Note: VictoryLine.role must be hoisted
 hoistNonReactStatics(ChartLine, VictoryLine);
 ChartLine.propTypes = propTypes;
 

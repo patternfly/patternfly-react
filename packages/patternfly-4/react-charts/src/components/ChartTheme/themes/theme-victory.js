@@ -23,8 +23,9 @@ const LABEL_CENTERED_PROPS = {
 
 // Layout
 const LAYOUT_PROPS = {
-  // width: 450,
-  // height: 300
+  padding: 50,
+  height: 300,
+  width: 450
 };
 
 // Strokes
@@ -165,8 +166,7 @@ export default {
     }
   },
   pie: {
-    ...LAYOUT_PROPS,
-    padding: 20,
+    padding: 8,
     style: {
       data: {
         padding: 8,
@@ -177,7 +177,9 @@ export default {
         ...LABEL_PROPS,
         padding: 8
       }
-    }
+    },
+    height: 230,
+    width: 230
   },
   scatter: {
     ...LAYOUT_PROPS,

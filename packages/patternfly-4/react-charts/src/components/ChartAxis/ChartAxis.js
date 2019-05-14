@@ -1,4 +1,4 @@
-/* eslint-disable react/require-default-props */
+/* eslint-disable react/require-default-props,react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
@@ -20,9 +20,15 @@ export const propTypes = {
   themeVariant: PropTypes.string
 };
 
-const ChartAxis = ({ theme, themeColor, themeVariant, ...rest }) => (
-  <VictoryAxis theme={theme || getTheme(themeColor, themeVariant)} {...rest}/>
+const ChartAxis = ({
+  themeColor,
+  themeVariant,
+  theme = getTheme(themeColor, themeVariant), // destructure last
+  ...rest
+}) => (
+  <VictoryAxis theme={theme} {...rest}/>
 );
+
 hoistNonReactStatics(ChartAxis, VictoryAxis);
 ChartAxis.propTypes = propTypes;
 

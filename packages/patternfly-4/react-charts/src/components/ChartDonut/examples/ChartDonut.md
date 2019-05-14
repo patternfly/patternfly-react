@@ -1,12 +1,12 @@
 ---
-title: 'Donut chart'
+title: 'Donut'
 section: 'charts'
 ---
 
-## Blue donut chart
-
 import { ChartDonut, ChartLabel, ChartLegend, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-donut.scss';
+
+## Blue donut chart
 
 ```js
 import React from 'react';
@@ -24,8 +24,9 @@ import { ChartDonut, ChartLegend } from '@patternfly/react-charts';
     </div>
     <ChartLegend
       data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
+      height={230}
       orientation="vertical"
-      y={105}
+      y={70}
     />
   </div>
 </div>
@@ -34,19 +35,17 @@ import { ChartDonut, ChartLegend } from '@patternfly/react-charts';
 ## Multi-color donut chart
 ```js
 import React from 'react';
-import { ChartDonut, ChartLabel, ChartLegend, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { ChartDonut, ChartLegend, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
 <div>
   <div className="donut-chart-container">
-    <svg className="donut-chart-label">
-      <ChartLabel style={{ fontSize: 20 }} text="100" textAnchor="middle" verticalAnchor="middle" x={150} y={140} />
-      <ChartLabel style={{ fill: '#bbb' }} text="Pets" textAnchor="middle" verticalAnchor="middle" x={150} y={160} />
-    </svg>
     <ChartDonut
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       labels={datum => `${datum.x}: ${datum.y}`}
+      subTitle="Pets"
       themeColor={ChartThemeColor.multi}
       themeVariant={ChartThemeVariant.light}
+      title="100"
     />
   </div>
   <ChartLegend
@@ -55,7 +54,7 @@ import { ChartDonut, ChartLabel, ChartLegend, ChartThemeColor, ChartThemeVariant
     orientation={'horizontal'}
     themeColor={ChartThemeColor.multi}
     themeVariant={ChartThemeVariant.light}
-    x={45}
+    x={8}
   />
 </div>
 ```

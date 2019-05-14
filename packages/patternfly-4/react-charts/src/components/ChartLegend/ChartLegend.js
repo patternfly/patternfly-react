@@ -1,4 +1,4 @@
-/* eslint-disable react/require-default-props */
+/* eslint-disable react/require-default-props,react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
@@ -47,21 +47,23 @@ export const propTypes = {
   width: PropTypes.number
 };
 
-export const defaultProps = {
-  responsive: false
-};
-
-// Note: VictoryLegend.role must be hoisted
-const ChartLegend = ({responsive, theme, themeColor, themeVariant, ...rest}) => (
+const ChartLegend = ({
+  responsive = false,
+  themeColor,
+  themeVariant,
+  theme = getTheme(themeColor, themeVariant), // destructure last
+  ...rest
+}) => (
   <VictoryLegend
     containerComponent={<ChartContainer responsive={responsive} />}
     dataComponent={<ChartPoint />}
-    theme={theme || getTheme(themeColor, themeVariant)}
+    theme={theme}
     {...rest}
   />
 );
+
+// Note: VictoryLegend.role must be hoisted
 hoistNonReactStatics(ChartLegend, VictoryLegend);
 ChartLegend.propTypes = propTypes;
-ChartLegend.defaultProps = defaultProps;
 
 export default ChartLegend;

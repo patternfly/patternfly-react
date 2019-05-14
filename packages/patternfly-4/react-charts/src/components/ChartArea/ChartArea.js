@@ -1,4 +1,4 @@
-/* eslint-disable react/require-default-props */
+/* eslint-disable react/require-default-props,react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
@@ -20,10 +20,14 @@ export const propTypes = {
   themeVariant: PropTypes.string
 };
 
+const ChartArea = ({
+  themeColor,
+  themeVariant,
+  theme = getTheme(themeColor, themeVariant), // destructure last
+  ...rest
+}) => <VictoryArea theme={theme} {...rest} />;
+
 // Note: VictoryArea.role must be hoisted
-const ChartArea = ({ theme, themeColor, themeVariant, ...rest }) => (
-  <VictoryArea theme={theme || getTheme(themeColor, themeVariant)} {...rest} />
-);
 hoistNonReactStatics(ChartArea, VictoryArea);
 ChartArea.propTypes = propTypes;
 

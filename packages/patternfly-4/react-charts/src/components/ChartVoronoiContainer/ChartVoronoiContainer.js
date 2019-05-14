@@ -1,4 +1,4 @@
-/* eslint-disable react/require-default-props */
+/* eslint-disable react/require-default-props,react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
@@ -21,11 +21,14 @@ export const propTypes = {
   themeVariant: PropTypes.string
 };
 
+const ChartVoronoiContainer = ({
+  themeColor,
+  themeVariant,
+  theme = getTheme(themeColor, themeVariant), // destructure last
+  ...rest
+}) => <VictoryVoronoiContainer labelComponent={<ChartTooltip theme={theme} />} theme={theme} {...rest} />;
+
 // Note: VictoryVoronoiContainer.defaultEvents & VictoryContainer.role must be hoisted
-const ChartVoronoiContainer = ({ theme, themeColor, themeVariant, ...rest }) => {
-  const chartTheme = theme || getTheme(themeColor, themeVariant);
-  return <VictoryVoronoiContainer labelComponent={<ChartTooltip theme={chartTheme} />} theme={chartTheme} {...rest} />;
-};
 hoistNonReactStatics(ChartVoronoiContainer, VictoryVoronoiContainer);
 ChartVoronoiContainer.propTypes = propTypes;
 

@@ -1,11 +1,12 @@
-/* eslint-disable react/require-default-props */
+/* eslint-disable react/require-default-props,react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryPie } from 'victory';
-import ChartLabel from '../ChartLabel/ChartLabel';
-import { styles } from '../ChartTheme/themes/theme-donut';
 import { getDonutTheme } from '../ChartTheme/themes/theme-utils';
+import ChartContainer from '../ChartContainer/ChartContainer';
+import ChartLabel from '../ChartLabel/ChartLabel';
+import { default as ChartDonutTheme, styles } from '../ChartTheme/themes/theme-donut';
 import ChartTooltip from '../ChartTooltip/ChartTooltip';
 
 export const propTypes = {
@@ -25,9 +26,22 @@ export const propTypes = {
    */
   height: PropTypes.number,
   /**
+   * When creating a donut chart, this prop determines the number of pixels between
+   * the center of the chart and the inner edge of a donut. When this prop is set to zero
+   * a regular pie chart is rendered.
+   */
+  innerRadius: PropTypes.number,
+  /**
    * The subtitle for the donut chart
    */
   subTitle: PropTypes.string,
+  /**
+   * The standalone prop determines whether the component will render a standalone svg
+   * or a <g> tag that will be included in an external svg. Set standalone to false to
+   * compose VictoryAxis with other components within an enclosing <svg> tag.
+   * @default true
+   */
+  standalone: PropTypes.boolean,
   /*
    * Specifies the theme color; blue (default), green, or multi-color. Overridden by the theme property.
    */
@@ -53,110 +67,47 @@ export const propTypes = {
   width: PropTypes.number
 };
 
-class ChartDonut extends React.Component {
-  titleRef = React.createRef();
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      height: this.props.height || 0,
-      width: this.props.width || 0
-    };
-  }
-
-  componentDidMount() {
-    // Skip resize handler if height and width were provided
-    if (!(this.state.height || this.state.width)) {
-      setTimeout(() => {
-        window.addEventListener('resize', this.handleResize);
-      });
-      this.handleResize();
-    }
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-  }
-
-  getSubTitle = () => {
-    const { subTitle } = this.props;
-    const { height, width } = this.state;
-
-    if (subTitle && height && width) {
-      const xVal = width / 2 - subTitle.length / 2;
-      const yVal = height / 2 + 10;
-
-      return (
-        <ChartLabel
-          style={styles.label.subTitle}
-          text={subTitle}
-          textAnchor="middle"
-          verticalAnchor="middle"
-          x={xVal}
-          y={yVal}
-        />
-      );
-    }
-    return null;
-  };
-
-  getTitle = () => {
-    const { title } = this.props;
-    const { height, width } = this.state;
-
-    if (title && height && width) {
-      const xVal = width / 2 - title.length / 2;
-      const yVal = height / 2 - 10;
-
-      return (
-        <ChartLabel
-          style={styles.label.title}
-          text={title}
-          textAnchor="middle"
-          verticalAnchor="middle"
-          x={xVal}
-          y={yVal}
-        />
-      );
-    }
-    return null;
-  };
-
-  handleResize = () => {
-    if (this.titleRef.current && this.titleRef.current.parentNode) {
-      this.setState({
-        height: this.titleRef.current.parentNode.clientHeight,
-        width: this.titleRef.current.parentNode.clientWidth
-      });
-    }
-  };
-
-  render() {
-    const { subTitle, theme, themeColor, themeVariant, title, ...rest } = this.props;
-
-    // TODO Replace with PF css variable when available
-    const titleStyles = {
-      height: styles.label.height,
-      position: styles.label.position,
-      width: styles.label.width
-    };
-
-    const chartTheme = theme || getDonutTheme(themeColor, themeVariant);
-
-    return (
-      <React.Fragment>
-        {Boolean(title || subTitle) && (
-          <svg ref={this.titleRef} style={titleStyles}>
-            {this.getTitle()}
-            {this.getSubTitle()}
-          </svg>
-        )}
-        <VictoryPie labelComponent={<ChartTooltip theme={chartTheme} />} theme={chartTheme} {...rest} />
-      </React.Fragment>
-    );
-  }
-}
+const ChartDonut = ({
+  height = ChartDonutTheme.pie.height,
+  standalone = true,
+  subTitle,
+  themeColor,
+  themeVariant,
+  title,
+  width = ChartDonutTheme.pie.width,
+  innerRadius = ((height || width) - 34) / 2, // destructure last
+  theme = getDonutTheme(themeColor, themeVariant), // destructure last
+  ...rest
+}) => {
+  const chart = (
+    <React.Fragment>
+      <ChartLabel
+        style={[styles.label.title, styles.label.subTitle]}
+        text={title && subTitle ? [title, subTitle] : title}
+        textAnchor="middle"
+        verticalAnchor="middle"
+        x={width / 2}
+        y={height / 2}
+      />
+      <VictoryPie
+        height={height}
+        innerRadius={innerRadius > 0 ? innerRadius : 0}
+        labelComponent={<ChartTooltip theme={theme} />}
+        standalone={false}
+        theme={theme}
+        width={width}
+        {...rest}
+      />
+    </React.Fragment>
+  );
+  return standalone ? (
+    <ChartContainer width={width} height={height}>
+      {chart}
+    </ChartContainer>
+  ) : (
+    chart
+  );
+};
 
 // Note: VictoryPie.role must be hoisted
 hoistNonReactStatics(ChartDonut, VictoryPie);

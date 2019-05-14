@@ -1,4 +1,4 @@
-/* eslint-disable react/require-default-props */
+/* eslint-disable react/require-default-props,react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
@@ -20,12 +20,19 @@ export const propTypes = {
   themeVariant: PropTypes.string
 };
 
-// Note: VictoryStack.getChildren & VictoryStack.role must be hoisted
-const ChartStack = ({ children, theme, themeColor, themeVariant, ...props }) => (
-  <VictoryStack theme={theme || getTheme(themeColor, themeVariant)} {...props}>
+const ChartStack = ({
+  children,
+  themeColor,
+  themeVariant,
+  theme = getTheme(themeColor, themeVariant), // destructure last
+  ...rest
+}) => (
+  <VictoryStack theme={theme} {...rest}>
     {children}
   </VictoryStack>
 );
+
+// Note: VictoryStack.getChildren & VictoryStack.role must be hoisted
 hoistNonReactStatics(ChartStack, VictoryStack);
 ChartStack.propTypes = propTypes;
 

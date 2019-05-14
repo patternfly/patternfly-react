@@ -1,4 +1,4 @@
-/* eslint-disable react/require-default-props */
+/* eslint-disable react/require-default-props,react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
@@ -42,12 +42,19 @@ export const propTypes = {
   width: PropTypes.number
 };
 
-// Note: VictoryGroup.role must be hoisted
-const ChartGroup = ({ children, theme, themeColor, themeVariant, ...rest }) => (
-  <VictoryGroup theme={theme || getTheme(themeColor, themeVariant)} {...rest}>
+const ChartGroup = ({
+  children,
+  themeColor,
+  themeVariant,
+  theme = getTheme(themeColor, themeVariant), // destructure last
+  ...rest
+}) => (
+  <VictoryGroup theme={theme} {...rest}>
     {children}
   </VictoryGroup>
 );
+
+// Note: VictoryGroup.role must be hoisted
 hoistNonReactStatics(ChartGroup, VictoryGroup);
 ChartGroup.propTypes = propTypes;
 

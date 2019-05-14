@@ -1,5 +1,5 @@
 ---
-title: 'Pie chart'
+title: 'Pie'
 section: 'charts'
 ---
 
@@ -13,8 +13,8 @@ import React from 'react';
 import { ChartLegend, ChartPie } from '@patternfly/react-charts';
 
 <div>
-  <div className="donut-chart-inline">
-    <div className="donut-chart-container">
+  <div className="pie-chart-inline">
+    <div className="pie-chart-container">
       <ChartPie
         data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
         labels={datum => `${datum.x}: ${datum.y}`}
@@ -22,8 +22,9 @@ import { ChartLegend, ChartPie } from '@patternfly/react-charts';
     </div>
     <ChartLegend
       data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
+      height={230}
       orientation={'vertical'}
-      y={105}
+      y={70}
     />
   </div>
 </div>
@@ -35,7 +36,7 @@ import React from 'react';
 import { ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 <div>
-  <div className="donut-chart-container">
+  <div className="pie-chart-container">
     <ChartPie
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       labels={datum => `${datum.x}: ${datum.y}`}
@@ -49,7 +50,7 @@ import { ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts
     orientation={'horizontal'}
     themeColor={ChartThemeColor.multi}
     themeVariant={ChartThemeVariant.light}
-    x={45}
+    x={8}
   />
 </div>
 ```

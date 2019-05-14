@@ -1,5 +1,5 @@
 ---
-title: 'Stack chart'
+title: 'Stack'
 section: 'charts'
 ---
 

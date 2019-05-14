@@ -1,4 +1,4 @@
-/* eslint-disable react/require-default-props */
+/* eslint-disable react/require-default-props,react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
@@ -20,10 +20,16 @@ export const propTypes = {
   themeVariant: PropTypes.string
 };
 
-// Note: VictoryTooltip.defaultEvents must be hoisted
-const ChartTooltip = ({ theme, themeColor, themeVariant, ...rest }) => (
-  <VictoryTooltip theme={theme || getTheme(themeColor, themeVariant)} {...rest} />
+const ChartTooltip = ({
+  themeColor,
+  themeVariant,
+  theme = getTheme(themeColor, themeVariant), // destructure last
+  ...rest
+}) => (
+  <VictoryTooltip theme={theme} {...rest} />
 );
+
+// Note: VictoryTooltip.defaultEvents must be hoisted
 hoistNonReactStatics(ChartTooltip, VictoryTooltip);
 ChartTooltip.propTypes = propTypes;
 
