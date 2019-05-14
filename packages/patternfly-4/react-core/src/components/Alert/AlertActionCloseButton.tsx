@@ -4,7 +4,7 @@ import { Button, ButtonVariant } from '../Button';
 import { TimesIcon } from '@patternfly/react-icons';
 
 const propTypes = {
-  /** additional classes added to the AlertActionCloseButton */
+  /** Additional classes added to the AlertActionCloseButton */
   className: PropTypes.string,
   /** A callback for when the close button is clicked */
   onClose: PropTypes.func,

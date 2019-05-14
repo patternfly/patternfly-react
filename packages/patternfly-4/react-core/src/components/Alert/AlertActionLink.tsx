@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 
 export interface AlertActionLinkProps extends ButtonProps {
-  /** content rendered inside the AlertLinkAction  */
+  /** Content rendered inside the AlertLinkAction  */
   children?: string;
-  /** additional classes added to the AlertActionLink  */
+  /** Additional classes added to the AlertActionLink  */
   className?: string;
 };
 

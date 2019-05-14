@@ -21,9 +21,9 @@ export interface AlertProps
   title: React.ReactNode;
   /** Action button to put in the Alert.  Should be <AlertActionLink> or <AlertActionCloseButton>  */
   action?: React.ReactNode;
-  /** content rendered inside the Alert  */
+  /** Content rendered inside the Alert  */
   children?: React.ReactNode;
-  /** additional classes added to the Alert  */
+  /** Additional classes added to the Alert  */
   className?: string;
   /** Adds accessible text to the Alert */
   'aria-label'?: string,
@@ -31,7 +31,7 @@ export interface AlertProps
   variantLabel?: string;
 };
 
-export const Alert = ({
+export const Alert: React.FunctionComponent<AlertProps> = ({
   variant,
   variantLabel = null,
   'aria-label': ariaLabel = `${capitalize(variant)} Alert`,
