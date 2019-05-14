@@ -1,26 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Button, ButtonVariant } from '../Button';
+import { Button, ButtonVariant, ButtonProps } from '../Button';
 import { TimesIcon } from '@patternfly/react-icons';
 
-const propTypes = {
+interface AlertActionCloseButtonProps extends ButtonProps {
   /** Additional classes added to the AlertActionCloseButton */
-  className: PropTypes.string,
+  className?: string;
   /** A callback for when the close button is clicked */
-  onClose: PropTypes.func,
+  onClose?: () => void;
   /** Aria Label for the Close button */
-  'aria-label': PropTypes.string,
-  /** Additional props are spread to the container <Button>  */
-  '': PropTypes.any
+  'aria-label': string;
+  /** Variant Label for the Close button */
+  variantLabel?: string;
 };
 
-const defaultProps = {
-  'aria-label': '',
-  className: '',
-  onClose: () => undefined
-};
-
-const AlertActionCloseButton = ({ className, onClose, 'aria-label': ariaLabel, title, variantLabel, ...props }) => (
+export const AlertActionCloseButton = ({
+  className = '',
+  onClose = () => undefined as any,
+  'aria-label': ariaLabel = '',
+  title,
+  variantLabel,
+  ...props
+}: AlertActionCloseButtonProps) => (
   <Button
     variant={ButtonVariant.plain}
     onClick={onClose}
@@ -30,8 +30,3 @@ const AlertActionCloseButton = ({ className, onClose, 'aria-label': ariaLabel, t
     <TimesIcon />
   </Button>
 );
-
-AlertActionCloseButton.propTypes = propTypes;
-AlertActionCloseButton.defaultProps = defaultProps;
-
-export default AlertActionCloseButton;

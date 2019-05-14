@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css, getModifier } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Alert/alert.css';
 import accessibleStyles from '@patternfly/patternfly/utilities/Accessibility/accessibility.css';
-import { AlertIcon } from './helpers/AlertIcon';
+import { AlertIcon } from './AlertIcon';
 import { capitalize } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
 
