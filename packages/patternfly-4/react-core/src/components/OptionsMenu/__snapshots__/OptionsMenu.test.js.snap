@@ -90,9 +90,6 @@ exports[`optionsMenu expanded 1`] = `
         id="expanded-toggle"
         onClick={[Function]}
       >
-        <span
-          className="pf-c-options-menu__toggle-text"
-        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
@@ -552,9 +549,6 @@ exports[`optionsMenu open up 1`] = `
         id="openUp-toggle"
         onClick={[Function]}
       >
-        <span
-          className="pf-c-options-menu__toggle-text"
-        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
@@ -803,9 +797,6 @@ exports[`optionsMenu regular 1`] = `
         id="regular-toggle"
         onClick={[Function]}
       >
-        <span
-          className="pf-c-options-menu__toggle-text"
-        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
@@ -930,9 +921,6 @@ exports[`optionsMenu right aligned + open up 1`] = `
         id="rightAlignedOpenUp-toggle"
         onClick={[Function]}
       >
-        <span
-          className="pf-c-options-menu__toggle-text"
-        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
@@ -1057,9 +1045,6 @@ exports[`optionsMenu right aligned 1`] = `
         id="rightAligned-toggle"
         onClick={[Function]}
       >
-        <span
-          className="pf-c-options-menu__toggle-text"
-        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"

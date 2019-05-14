@@ -1,7 +1,7 @@
 ---
 title: "Options menu"
 cssPrefix: "pf-c-options-menu"
-propComponents: ['OptionsMenu', 'OptionsMenuItem', 'OptionsMenuSeparator', 'OptionsMenuToggle', 'OptionsMenuToggleWithText']
+typescript: true
 ---
 import React from 'react';
 import {
@@ -26,9 +26,7 @@ class SingleOption extends React.Component {
       super(props);
       this.state = {
         isOpen: false,
-        toggleTemplateProps: {
-          text: "Options menu"
-        },
+        toggleTemplateText: "Options menu",
         selectedOption: "singleOption1"
       };
 
@@ -45,26 +43,22 @@ class SingleOption extends React.Component {
         });
       };
 
-      this.toggleTemplate = ({toggleTemplateProps}) => {
-        const { text } = toggleTemplateProps;
-        return <React.Fragment>{text}</React.Fragment>
-      };
+      this.toggleTemplate = <React.Fragment>{this.state.toggleTemplateText}</React.Fragment>;
     }
 
   render() {
-    const { isOpen, toggleTemplateProps } = this.state;
     const menuItems = [
       <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.selectedOption === "singleOption1"} id="singleOption1" key="option 1">Option 1</OptionsMenuItem>,
       <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.selectedOption === "singleOption2"} id="singleOption2" key="option 2">Option 2</OptionsMenuItem>,
       <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.selectedOption === "singleOption3"} id="singleOption3" key="option 3">Option 3</OptionsMenuItem>
     ];
-    const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={this.toggleTemplate} toggleTemplateProps={toggleTemplateProps}/>
+    const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={this.toggleTemplate} />
 
     return (
       <OptionsMenu 
         id="options-menu-single-option-example" 
         menuItems={menuItems} 
-        isOpen={isOpen} 
+        isOpen={this.state.isOpen} 
         toggle={toggle}/>
     );
   }
@@ -81,9 +75,7 @@ class MultipleOptions extends React.Component {
       super(props);
       this.state = {
         isOpen: false,
-        toggleTemplateProps: {
-          text: "Sort by"
-        },
+        toggleTemplateText: "Sort by",
         sortColumn: "date",
         sortDirection: "ascending"
       };
@@ -108,14 +100,10 @@ class MultipleOptions extends React.Component {
         });
       };
 
-      this.toggleTemplate = ({toggleTemplateProps}) => {
-        const { text } = toggleTemplateProps;
-        return <React.Fragment>{text}</React.Fragment>
-      };
+      this.toggleTemplate = <React.Fragment>{this.state.toggleTemplateText}</React.Fragment>;
     }
 
   render() {
-    const { isOpen, toggleTemplateProps } = this.state;
     const menuItems = [
         <OptionsMenuItemGroup key="first group" aria-label="Sort Column">
           <OptionsMenuItem onSelect={this.onSelectColumn} isSelected={this.state.sortColumn === "name"} id="name" key="name">Name</OptionsMenuItem>
@@ -129,13 +117,13 @@ class MultipleOptions extends React.Component {
           <OptionsMenuItem onSelect={this.onSelectDirection} isSelected={this.state.sortDirection === "descending"} id="descending" key="descending">Descending</OptionsMenuItem>
         </OptionsMenuItemGroup>
       ];
-    const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={this.toggleTemplate} toggleTemplateProps={toggleTemplateProps}/>
+    const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={this.toggleTemplate} />
 
     return (
       <OptionsMenu 
         id="options-menu-multiple-options-example" 
         menuItems={menuItems} 
-        isOpen={isOpen}
+        isOpen={this.state.isOpen}
         toggle={toggle} />
     );
   }
@@ -171,15 +159,13 @@ class Plain extends React.Component {
         });
       };
 
-      this.toggleTemplate = () => {
-        return <React.Fragment>
-          <SortAmountDownIcon aria-hidden="true"/>
-        </React.Fragment>;
-      }
+      this.toggleTemplate = 
+      <React.Fragment>
+        <SortAmountDownIcon aria-hidden="true"/>
+      </React.Fragment>;
     }
 
   render() {
-    const { isOpen } = this.state;
     const menuItems = [
       <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.plainOption1} id="plainOption1" key="option 1">Option 1</OptionsMenuItem>,
       <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.plainOption2} id="plainOption2" key="option 2">Option 2</OptionsMenuItem>,
@@ -191,7 +177,7 @@ class Plain extends React.Component {
       <OptionsMenu id="options-menu-plain-example" 
         isPlain
         menuItems={menuItems}  
-        isOpen={isOpen}
+        isOpen={this.state.isOpen}
         toggle={toggle}/>
     );
   }
@@ -208,9 +194,7 @@ class Top extends React.Component {
     super(props);
     this.state = {
       isOpen: false,
-      toggleTemplateProps: {
-        text: "Options menu"
-      },
+      toggleTemplateText: "Options menu",
       topOption1: false,
       topOption2: false,
       topOption3: false
@@ -229,20 +213,16 @@ class Top extends React.Component {
       });
     };
 
-    this.toggleTemplate = ({toggleTemplateProps}) => {
-      const { text } = toggleTemplateProps;
-      return <React.Fragment>{text}</React.Fragment>
-    };
+    this.toggleTemplate = <React.Fragment>{this.state.toggleTemplateText}</React.Fragment>;
   }
 
   render() {
-    const { toggleTemplateProps, isOpen } = this.state;
     const menuItems = [
       <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.topOption1} id="topOption1" key="option 1">Option 1</OptionsMenuItem>,
       <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.topOption2} id="topOption2" key="option 2">Option 2</OptionsMenuItem>,
       <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.topOption3} id="topOption3" key="option 3">Option 3</OptionsMenuItem>
     ];
-    const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={this.toggleTemplate} toggleTemplateProps={toggleTemplateProps}/>
+    const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={this.toggleTemplate} />
 
     return (
       <OptionsMenu 
@@ -250,7 +230,7 @@ class Top extends React.Component {
         direction={OptionsMenuDirection.up} 
         menuItems={menuItems} 
         toggle={toggle} 
-        isOpen={isOpen} />
+        isOpen={this.state.isOpen} />
     );
   }
 }
@@ -266,9 +246,7 @@ class AlignRight extends React.Component {
     super(props);
     this.state = {
       isOpen: false,
-      toggleTemplateProps: {
-        text: "Align right"
-      },
+      toggleTemplateText: "Align right",
       rightOption1: true,
       rightOption2: false,
       rightOption3: false
@@ -287,20 +265,16 @@ class AlignRight extends React.Component {
       });
     };
 
-    this.toggleTemplate = ({toggleTemplateProps}) => {
-      const { text } = toggleTemplateProps;
-      return <React.Fragment>{text}</React.Fragment>
-    };
+    this.toggleTemplate = <React.Fragment>{this.state.toggleTemplateText}</React.Fragment>;
   }
 
   render() {
-    const { toggleTemplateProps, isOpen } = this.state;
     const menuItems = [
       <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.rightOption1} id="rightOption1" key="option 1">Right option 1</OptionsMenuItem>,
       <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.rightOption2} id="rightOption2" key="option 2">Right option 2</OptionsMenuItem>,
       <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.rightOption3} id="rightOption3" key="option 3">Right option 3</OptionsMenuItem>
     ];
-    const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={this.toggleTemplate} toggleTemplateProps={toggleTemplateProps}/>
+    const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={this.toggleTemplate} />
 
     return (
       <OptionsMenu 
@@ -308,7 +282,7 @@ class AlignRight extends React.Component {
         position={OptionsMenuPosition.right} 
         menuItems={menuItems} 
         toggle={toggle} 
-        isOpen={isOpen} />
+        isOpen={this.state.isOpen} />
     );
   }
 }
