@@ -1,25 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Alert - danger Action Close Button 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionCloseButton
+    <Unknown
       aria-label="Close"
-      className=""
       onClose={[MockFunction]}
     />
   }
-  className=""
   title=""
   variant="danger"
-  variantLabel={null}
 >
   <div
     aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="danger"
     >
       <div
@@ -51,7 +47,7 @@ exports[`Alert - danger Action Close Button 1`] = `
           </svg>
         </ExclamationCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -71,9 +67,8 @@ exports[`Alert - danger Action Close Button 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionCloseButton
+      <Component
         aria-label="Close"
-        className=""
         onClose={[MockFunction]}
         title=""
         variantLabel="Danger"
@@ -128,32 +123,27 @@ exports[`Alert - danger Action Close Button 1`] = `
             </TimesIcon>
           </button>
         </Button>
-      </AlertActionCloseButton>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - danger Action Link 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionLink
-      className=""
-    >
+    <Unknown>
       test
-    </AlertActionLink>
+    </Unknown>
   }
-  className=""
   title=""
   variant="danger"
-  variantLabel={null}
 >
   <div
     aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="danger"
     >
       <div
@@ -185,7 +175,7 @@ exports[`Alert - danger Action Link 1`] = `
           </svg>
         </ExclamationCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -205,8 +195,7 @@ exports[`Alert - danger Action Link 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        className=""
+      <Component
         title=""
         variantLabel="Danger"
       >
@@ -238,32 +227,27 @@ exports[`Alert - danger Action Link 1`] = `
             test
           </button>
         </Button>
-      </AlertActionLink>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - danger Action and Title 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionLink
-      className=""
-    >
+    <Unknown>
       test
-    </AlertActionLink>
+    </Unknown>
   }
-  className=""
   title="Some title"
   variant="danger"
-  variantLabel={null}
 >
   <div
     aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="danger"
     >
       <div
@@ -295,7 +279,7 @@ exports[`Alert - danger Action and Title 1`] = `
           </svg>
         </ExclamationCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -316,8 +300,7 @@ exports[`Alert - danger Action and Title 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        className=""
+      <Component
         title="Some title"
         variantLabel="Danger"
       >
@@ -349,33 +332,28 @@ exports[`Alert - danger Action and Title 1`] = `
             test
           </button>
         </Button>
-      </AlertActionLink>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - danger Custom aria label 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionLink
-      className=""
-    >
+    <Unknown>
       test
-    </AlertActionLink>
+    </Unknown>
   }
   aria-label="Custom aria label for danger"
-  className=""
   title="Some title"
   variant="danger"
-  variantLabel={null}
 >
   <div
     aria-label="Custom aria label for danger"
     className="pf-c-alert pf-m-danger"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="danger"
     >
       <div
@@ -407,7 +385,7 @@ exports[`Alert - danger Custom aria label 1`] = `
           </svg>
         </ExclamationCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -428,8 +406,7 @@ exports[`Alert - danger Custom aria label 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        className=""
+      <Component
         title="Some title"
         variantLabel="Danger"
       >
@@ -461,26 +438,22 @@ exports[`Alert - danger Custom aria label 1`] = `
             test
           </button>
         </Button>
-      </AlertActionLink>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - danger Description 1`] = `
-<Alert
-  action={null}
-  className=""
+<Component
   title=""
   variant="danger"
-  variantLabel={null}
 >
   <div
     aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="danger"
     >
       <div
@@ -512,7 +485,7 @@ exports[`Alert - danger Description 1`] = `
           </svg>
         </ExclamationCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -530,23 +503,19 @@ exports[`Alert - danger Description 1`] = `
       </p>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - danger Title 1`] = `
-<Alert
-  action={null}
-  className=""
+<Component
   title="Some title"
   variant="danger"
-  variantLabel={null}
 >
   <div
     aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="danger"
     >
       <div
@@ -578,7 +547,7 @@ exports[`Alert - danger Title 1`] = `
           </svg>
         </ExclamationCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -597,29 +566,25 @@ exports[`Alert - danger Title 1`] = `
       </p>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - info Action Close Button 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionCloseButton
+    <Unknown
       aria-label="Close"
-      className=""
       onClose={[MockFunction]}
     />
   }
-  className=""
   title=""
   variant="info"
-  variantLabel={null}
 >
   <div
     aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="info"
     >
       <div
@@ -651,7 +616,7 @@ exports[`Alert - info Action Close Button 1`] = `
           </svg>
         </InfoCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -671,9 +636,8 @@ exports[`Alert - info Action Close Button 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionCloseButton
+      <Component
         aria-label="Close"
-        className=""
         onClose={[MockFunction]}
         title=""
         variantLabel="Info"
@@ -728,32 +692,27 @@ exports[`Alert - info Action Close Button 1`] = `
             </TimesIcon>
           </button>
         </Button>
-      </AlertActionCloseButton>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - info Action Link 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionLink
-      className=""
-    >
+    <Unknown>
       test
-    </AlertActionLink>
+    </Unknown>
   }
-  className=""
   title=""
   variant="info"
-  variantLabel={null}
 >
   <div
     aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="info"
     >
       <div
@@ -785,7 +744,7 @@ exports[`Alert - info Action Link 1`] = `
           </svg>
         </InfoCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -805,8 +764,7 @@ exports[`Alert - info Action Link 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        className=""
+      <Component
         title=""
         variantLabel="Info"
       >
@@ -838,32 +796,27 @@ exports[`Alert - info Action Link 1`] = `
             test
           </button>
         </Button>
-      </AlertActionLink>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - info Action and Title 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionLink
-      className=""
-    >
+    <Unknown>
       test
-    </AlertActionLink>
+    </Unknown>
   }
-  className=""
   title="Some title"
   variant="info"
-  variantLabel={null}
 >
   <div
     aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="info"
     >
       <div
@@ -895,7 +848,7 @@ exports[`Alert - info Action and Title 1`] = `
           </svg>
         </InfoCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -916,8 +869,7 @@ exports[`Alert - info Action and Title 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        className=""
+      <Component
         title="Some title"
         variantLabel="Info"
       >
@@ -949,33 +901,28 @@ exports[`Alert - info Action and Title 1`] = `
             test
           </button>
         </Button>
-      </AlertActionLink>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - info Custom aria label 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionLink
-      className=""
-    >
+    <Unknown>
       test
-    </AlertActionLink>
+    </Unknown>
   }
   aria-label="Custom aria label for info"
-  className=""
   title="Some title"
   variant="info"
-  variantLabel={null}
 >
   <div
     aria-label="Custom aria label for info"
     className="pf-c-alert pf-m-info"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="info"
     >
       <div
@@ -1007,7 +954,7 @@ exports[`Alert - info Custom aria label 1`] = `
           </svg>
         </InfoCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -1028,8 +975,7 @@ exports[`Alert - info Custom aria label 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        className=""
+      <Component
         title="Some title"
         variantLabel="Info"
       >
@@ -1061,26 +1007,22 @@ exports[`Alert - info Custom aria label 1`] = `
             test
           </button>
         </Button>
-      </AlertActionLink>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - info Description 1`] = `
-<Alert
-  action={null}
-  className=""
+<Component
   title=""
   variant="info"
-  variantLabel={null}
 >
   <div
     aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="info"
     >
       <div
@@ -1112,7 +1054,7 @@ exports[`Alert - info Description 1`] = `
           </svg>
         </InfoCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -1130,23 +1072,19 @@ exports[`Alert - info Description 1`] = `
       </p>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - info Title 1`] = `
-<Alert
-  action={null}
-  className=""
+<Component
   title="Some title"
   variant="info"
-  variantLabel={null}
 >
   <div
     aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="info"
     >
       <div
@@ -1178,7 +1116,7 @@ exports[`Alert - info Title 1`] = `
           </svg>
         </InfoCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -1197,29 +1135,25 @@ exports[`Alert - info Title 1`] = `
       </p>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - success Action Close Button 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionCloseButton
+    <Unknown
       aria-label="Close"
-      className=""
       onClose={[MockFunction]}
     />
   }
-  className=""
   title=""
   variant="success"
-  variantLabel={null}
 >
   <div
     aria-label="Success Alert"
     className="pf-c-alert pf-m-success"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="success"
     >
       <div
@@ -1251,7 +1185,7 @@ exports[`Alert - success Action Close Button 1`] = `
           </svg>
         </CheckCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -1271,9 +1205,8 @@ exports[`Alert - success Action Close Button 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionCloseButton
+      <Component
         aria-label="Close"
-        className=""
         onClose={[MockFunction]}
         title=""
         variantLabel="Success"
@@ -1328,32 +1261,27 @@ exports[`Alert - success Action Close Button 1`] = `
             </TimesIcon>
           </button>
         </Button>
-      </AlertActionCloseButton>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - success Action Link 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionLink
-      className=""
-    >
+    <Unknown>
       test
-    </AlertActionLink>
+    </Unknown>
   }
-  className=""
   title=""
   variant="success"
-  variantLabel={null}
 >
   <div
     aria-label="Success Alert"
     className="pf-c-alert pf-m-success"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="success"
     >
       <div
@@ -1385,7 +1313,7 @@ exports[`Alert - success Action Link 1`] = `
           </svg>
         </CheckCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -1405,8 +1333,7 @@ exports[`Alert - success Action Link 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        className=""
+      <Component
         title=""
         variantLabel="Success"
       >
@@ -1438,32 +1365,27 @@ exports[`Alert - success Action Link 1`] = `
             test
           </button>
         </Button>
-      </AlertActionLink>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - success Action and Title 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionLink
-      className=""
-    >
+    <Unknown>
       test
-    </AlertActionLink>
+    </Unknown>
   }
-  className=""
   title="Some title"
   variant="success"
-  variantLabel={null}
 >
   <div
     aria-label="Success Alert"
     className="pf-c-alert pf-m-success"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="success"
     >
       <div
@@ -1495,7 +1417,7 @@ exports[`Alert - success Action and Title 1`] = `
           </svg>
         </CheckCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -1516,8 +1438,7 @@ exports[`Alert - success Action and Title 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        className=""
+      <Component
         title="Some title"
         variantLabel="Success"
       >
@@ -1549,33 +1470,28 @@ exports[`Alert - success Action and Title 1`] = `
             test
           </button>
         </Button>
-      </AlertActionLink>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - success Custom aria label 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionLink
-      className=""
-    >
+    <Unknown>
       test
-    </AlertActionLink>
+    </Unknown>
   }
   aria-label="Custom aria label for success"
-  className=""
   title="Some title"
   variant="success"
-  variantLabel={null}
 >
   <div
     aria-label="Custom aria label for success"
     className="pf-c-alert pf-m-success"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="success"
     >
       <div
@@ -1607,7 +1523,7 @@ exports[`Alert - success Custom aria label 1`] = `
           </svg>
         </CheckCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -1628,8 +1544,7 @@ exports[`Alert - success Custom aria label 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        className=""
+      <Component
         title="Some title"
         variantLabel="Success"
       >
@@ -1661,26 +1576,22 @@ exports[`Alert - success Custom aria label 1`] = `
             test
           </button>
         </Button>
-      </AlertActionLink>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - success Description 1`] = `
-<Alert
-  action={null}
-  className=""
+<Component
   title=""
   variant="success"
-  variantLabel={null}
 >
   <div
     aria-label="Success Alert"
     className="pf-c-alert pf-m-success"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="success"
     >
       <div
@@ -1712,7 +1623,7 @@ exports[`Alert - success Description 1`] = `
           </svg>
         </CheckCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -1730,23 +1641,19 @@ exports[`Alert - success Description 1`] = `
       </p>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - success Title 1`] = `
-<Alert
-  action={null}
-  className=""
+<Component
   title="Some title"
   variant="success"
-  variantLabel={null}
 >
   <div
     aria-label="Success Alert"
     className="pf-c-alert pf-m-success"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="success"
     >
       <div
@@ -1778,7 +1685,7 @@ exports[`Alert - success Title 1`] = `
           </svg>
         </CheckCircleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -1797,29 +1704,25 @@ exports[`Alert - success Title 1`] = `
       </p>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - warning Action Close Button 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionCloseButton
+    <Unknown
       aria-label="Close"
-      className=""
       onClose={[MockFunction]}
     />
   }
-  className=""
   title=""
   variant="warning"
-  variantLabel={null}
 >
   <div
     aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="warning"
     >
       <div
@@ -1851,7 +1754,7 @@ exports[`Alert - warning Action Close Button 1`] = `
           </svg>
         </ExclamationTriangleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -1871,9 +1774,8 @@ exports[`Alert - warning Action Close Button 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionCloseButton
+      <Component
         aria-label="Close"
-        className=""
         onClose={[MockFunction]}
         title=""
         variantLabel="Warning"
@@ -1928,32 +1830,27 @@ exports[`Alert - warning Action Close Button 1`] = `
             </TimesIcon>
           </button>
         </Button>
-      </AlertActionCloseButton>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - warning Action Link 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionLink
-      className=""
-    >
+    <Unknown>
       test
-    </AlertActionLink>
+    </Unknown>
   }
-  className=""
   title=""
   variant="warning"
-  variantLabel={null}
 >
   <div
     aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="warning"
     >
       <div
@@ -1985,7 +1882,7 @@ exports[`Alert - warning Action Link 1`] = `
           </svg>
         </ExclamationTriangleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -2005,8 +1902,7 @@ exports[`Alert - warning Action Link 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        className=""
+      <Component
         title=""
         variantLabel="Warning"
       >
@@ -2038,32 +1934,27 @@ exports[`Alert - warning Action Link 1`] = `
             test
           </button>
         </Button>
-      </AlertActionLink>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - warning Action and Title 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionLink
-      className=""
-    >
+    <Unknown>
       test
-    </AlertActionLink>
+    </Unknown>
   }
-  className=""
   title="Some title"
   variant="warning"
-  variantLabel={null}
 >
   <div
     aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="warning"
     >
       <div
@@ -2095,7 +1986,7 @@ exports[`Alert - warning Action and Title 1`] = `
           </svg>
         </ExclamationTriangleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -2116,8 +2007,7 @@ exports[`Alert - warning Action and Title 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        className=""
+      <Component
         title="Some title"
         variantLabel="Warning"
       >
@@ -2149,33 +2039,28 @@ exports[`Alert - warning Action and Title 1`] = `
             test
           </button>
         </Button>
-      </AlertActionLink>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - warning Custom aria label 1`] = `
-<Alert
+<Component
   action={
-    <AlertActionLink
-      className=""
-    >
+    <Unknown>
       test
-    </AlertActionLink>
+    </Unknown>
   }
   aria-label="Custom aria label for warning"
-  className=""
   title="Some title"
   variant="warning"
-  variantLabel={null}
 >
   <div
     aria-label="Custom aria label for warning"
     className="pf-c-alert pf-m-warning"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="warning"
     >
       <div
@@ -2207,7 +2092,7 @@ exports[`Alert - warning Custom aria label 1`] = `
           </svg>
         </ExclamationTriangleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -2228,8 +2113,7 @@ exports[`Alert - warning Custom aria label 1`] = `
     <div
       className="pf-c-alert__action"
     >
-      <AlertActionLink
-        className=""
+      <Component
         title="Some title"
         variantLabel="Warning"
       >
@@ -2261,26 +2145,22 @@ exports[`Alert - warning Custom aria label 1`] = `
             test
           </button>
         </Button>
-      </AlertActionLink>
+      </Component>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - warning Description 1`] = `
-<Alert
-  action={null}
-  className=""
+<Component
   title=""
   variant="warning"
-  variantLabel={null}
 >
   <div
     aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="warning"
     >
       <div
@@ -2312,7 +2192,7 @@ exports[`Alert - warning Description 1`] = `
           </svg>
         </ExclamationTriangleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -2330,23 +2210,19 @@ exports[`Alert - warning Description 1`] = `
       </p>
     </div>
   </div>
-</Alert>
+</Component>
 `;
 
 exports[`Alert - warning Title 1`] = `
-<Alert
-  action={null}
-  className=""
+<Component
   title="Some title"
   variant="warning"
-  variantLabel={null}
 >
   <div
     aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
   >
-    <AlertIcon
-      className=""
+    <Component
       variant="warning"
     >
       <div
@@ -2378,7 +2254,7 @@ exports[`Alert - warning Title 1`] = `
           </svg>
         </ExclamationTriangleIcon>
       </div>
-    </AlertIcon>
+    </Component>
     <h4
       className="pf-c-alert__title"
     >
@@ -2397,5 +2273,5 @@ exports[`Alert - warning Title 1`] = `
       </p>
     </div>
   </div>
-</Alert>
+</Component>
 `;

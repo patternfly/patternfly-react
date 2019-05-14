@@ -1,28 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Button, ButtonVariant } from '../Button';
+import * as React from 'react';
+import { Button, ButtonVariant, ButtonProps } from '../Button';
 
-const propTypes = {
-  /** content rendered inside the AlertLinkAction */
-  children: PropTypes.string,
-  /** additional classes added to the AlertActionLink */
-  className: PropTypes.string,
-  /** Additional props are spread to the container <Button>  */
-  '': PropTypes.any
+export interface AlertActionLinkProps extends ButtonProps {
+  /** content rendered inside the AlertLinkAction  */
+  children?: string;
+  /** additional classes added to the AlertActionLink  */
+  className?: string;
 };
 
-const defaultProps = {
-  children: '',
-  className: ''
-};
-
-const AlertActionLink = ({ className, children, ...props }) => (
+export const AlertActionLink: React.FunctionComponent<AlertActionLinkProps> = ({
+  className = '',
+  children = '',
+  ...props
+}: AlertActionLinkProps) => (
   <Button variant={ButtonVariant.link} {...props}>
     {children}
   </Button>
 );
-
-AlertActionLink.propTypes = propTypes;
-AlertActionLink.defaultProps = defaultProps;
-
-export default AlertActionLink;

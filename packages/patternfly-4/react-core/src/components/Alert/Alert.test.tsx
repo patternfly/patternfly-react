@@ -1,11 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import { mount } from 'enzyme';
 
-import Alert, { AlertVariant } from './Alert';
-import AlertActionLink from './AlertActionLink';
-import AlertActionCLoseButton from './AlertActionCloseButton';
+import { Alert, AlertVariant } from './Alert';
+import { AlertActionLink }  from './AlertActionLink';
+import { AlertActionCloseButton } from './AlertActionCloseButton';
 
-Object.keys(AlertVariant).forEach(variant => {
+Object.values(AlertVariant).forEach(variant => {
   describe(`Alert - ${variant}`, () => {
     test('Description', () => {
       const view = mount(
@@ -37,7 +37,7 @@ Object.keys(AlertVariant).forEach(variant => {
     test('Action Close Button', () => {
       const onClose = jest.fn();
       const view = mount(
-        <Alert variant={variant} action={<AlertActionCLoseButton aria-label="Close" onClose={onClose} />} title="">
+        <Alert variant={variant} action={<AlertActionCloseButton aria-label="Close" onClose={onClose} />} title="">
           Some alert
         </Alert>
       );
