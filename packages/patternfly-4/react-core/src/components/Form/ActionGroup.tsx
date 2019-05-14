@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Form/form.css';
 import { css } from '@patternfly/react-styles';
 import { FormContext } from './FormContext';
+import { Action } from 'history';
 
 export interface ActionGroupProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
@@ -12,7 +13,7 @@ export const ActionGroup: React.FunctionComponent<ActionGroupProps> = ({
   children = null,
   className = '',
   ...props
-}) => {
+}: ActionGroupProps) => {
   const customClassName = css(styles.formGroup, styles.modifiers.action, className);
   const classesHorizontal = css(styles.formHorizontalGroup);
 
