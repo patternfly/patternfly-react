@@ -8,7 +8,7 @@ interface AlertActionCloseButtonProps extends ButtonProps {
   /** A callback for when the close button is clicked */
   onClose?: () => void;
   /** Aria Label for the Close button */
-  'aria-label': string;
+  'aria-label'?: string;
   /** Variant Label for the Close button */
   variantLabel?: string;
 };
