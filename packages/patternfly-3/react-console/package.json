@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@novnc/novnc": "^1.0.0",
+    "@spice-project/spice-html5": "^0.2.1",
     "blob-polyfill": "^3.0.20180112",
     "classnames": "^2.2.5",
     "file-saver": "^1.3.8",
