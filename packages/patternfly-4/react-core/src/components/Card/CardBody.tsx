@@ -19,7 +19,7 @@ export const CardBody: React.FunctionComponent<CardBodyProps> = ({
   component: Component = 'div', 
   isFilled = true, 
   ...props
-}) => (
+}: CardBodyProps) => (
   <Component className={css(styles.cardBody, !isFilled && styles.modifiers.noFill, className)} {...props}>
     {children}
   </Component>

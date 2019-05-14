@@ -16,7 +16,7 @@ export const CardFooter: React.FunctionComponent<CardFooterProps> = ({
   className = '', 
   component: Component = 'div', 
   ...props 
-}) => (
+}: CardFooterProps) => (
   <Component className={css(styles.cardFooter, className)} {...props}>
     {children}
   </Component>

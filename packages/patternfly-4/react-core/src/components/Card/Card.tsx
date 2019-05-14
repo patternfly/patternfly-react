@@ -19,7 +19,7 @@ export const Card: React.FunctionComponent<CardProps> = ({
   component: Component = 'article',
   isHoverable = false, 
   ...props
-}) => (
+}: CardProps) => (
   <Component className={css(styles.card, isHoverable && styles.modifiers.hoverable, className)} {...props}>
     {children}
   </Component>
