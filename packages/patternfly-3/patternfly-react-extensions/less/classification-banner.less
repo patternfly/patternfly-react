@@ -1,10 +1,10 @@
 @classification-banner-height: 28px;
 @classification-banner-height-top: 3px;
-@classification-banner-padding-large: 42px;
-@classification-banner-padding-sml: 20px;
+@classification-banner-padding-lg: 42px;
+@classification-banner-padding-sm: 20px;
 
 .classification-banner-pf-banner{
-    background: @color-pf-black;
+    background: @color-pf-white;
     background-clip: padding-box;
     color: white;
     height: @classification-banner-height;
@@ -47,7 +47,7 @@
 
 .classification-banner-pf-banner-left{
     position: absolute;
-    left: @classification-banner-padding-large;
+    left: @classification-banner-padding-lg;
     top: 50%;
     transform: translate(0,-50%);
     display: flex;
@@ -58,16 +58,16 @@
 .classification-banner-pf-banner-left > span:nth-of-type(2){
     border-left: 1px solid rgba(white, 0.5);
     border-right: 1px solid rgba(white, 0.5);
-    padding: 0 @classification-banner-padding-sml;
+    padding: 0 @classification-banner-padding-sm;
 }
 
 .classification-banner-pf-banner-left > span:nth-of-type(1){
-    padding-right: @classification-banner-padding-sml;
+    padding-right: @classification-banner-padding-sm;
 }
 
 .classification-banner-pf-banner-right{
     position: absolute;
-    right: @classification-banner-padding-sml;
+    right: @classification-banner-padding-sm;
     top: 50%;
     transform: translate(0,-50%);
     display: flex;
@@ -78,11 +78,11 @@
 .classification-banner-pf-banner-right > span:nth-of-type(2){
     border-left: 1px solid rgba(white, 0.5);
     border-right: 1px solid rgba(white, 0.5);
-    padding: 0 @classification-banner-padding-sml;
+    padding: 0 @classification-banner-padding-sm;
 }
 
 .classification-banner-pf-banner-right > span:nth-of-type(1){
-    padding-left: @classification-banner-padding-sml;
+    padding-left: @classification-banner-padding-sm;
 }
 
 .classification-banner-pf-close{
