@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Button, ButtonVariant, ButtonProps } from '../Button';
 import { TimesIcon } from '@patternfly/react-icons';
 
