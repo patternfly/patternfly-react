@@ -11,13 +11,13 @@ export enum TextVariants {
   p = 'p',
   a = 'a',
   small = 'small',
-  blockquote ='blockquote',
-  pre ='pre'
+  blockquote = 'blockquote',
+  pre = 'pre'
 }
 
 export interface TextProps extends React.HTMLProps<HTMLElement> {
   /** The text component */
-  component?: TextVariants;
+  component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'a' | 'small' | 'blockquote' | 'pre';
   /** Content rendered within the Text */
   children?: React.ReactNode;
   /** Additional classes added to the Text */
@@ -29,7 +29,7 @@ export const Text: React.FunctionComponent<TextProps> = ({
   className = '',
   component = TextVariants.p,
   ...props
-}) => {
+}: TextProps) => {
   const Component: any = component;
 
   return (

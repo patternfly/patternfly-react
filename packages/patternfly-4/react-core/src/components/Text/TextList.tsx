@@ -13,7 +13,7 @@ export interface TextListProps extends React.HTMLProps<HTMLElement> {
   /** Additional classes added to the TextList */
   className?: string;
   /** The text list component */
-  component?: TextListVariants;
+  component?: 'ul' | 'ol' | 'dl';
 }
 
 export const TextList: React.FunctionComponent<TextListProps> = ({
@@ -21,7 +21,7 @@ export const TextList: React.FunctionComponent<TextListProps> = ({
   className = '',
   component = TextListVariants.ul,
   ...props
-}) => {
+}: TextListProps) => {
   const Component: any = component;
 
   return (

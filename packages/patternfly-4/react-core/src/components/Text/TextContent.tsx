@@ -18,7 +18,7 @@ export const TextContent: React.FunctionComponent<TextContentProps> = ({
   children = null,
   className = '',
   ...props
-}) => (
+}: TextContentProps) => (
   <div {...props} className={css(updatedStyles.content, className)}>
     {children}
   </div>

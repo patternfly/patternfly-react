@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
+import { OneOf } from '../../helpers/typeUtils';
 
 export enum TextListItemVariants {
   li = 'li',
@@ -13,7 +14,7 @@ export interface TextListItemProps extends React.HTMLProps<HTMLElement> {
   /** Additional classes added to the TextListItem */
   className?: string;
   /** The text list item component */
-  component?: TextListItemVariants;
+  component?: 'li' | 'dt' | 'dd';
 }
 
 export const TextListItem: React.FunctionComponent<TextListItemProps> = ({
@@ -21,7 +22,7 @@ export const TextListItem: React.FunctionComponent<TextListItemProps> = ({
   className = '',
   component = TextListItemVariants.li,
   ...props
-}) => {
+}: TextListItemProps) => {
   const Component: any = component;
 
   return (
