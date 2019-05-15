@@ -5,8 +5,8 @@ import { Alert, AlertVariant } from './Alert';
 import { AlertActionLink }  from './AlertActionLink';
 import { AlertActionCloseButton } from './AlertActionCloseButton';
 
-Object.values(AlertVariant).forEach(variantt => {
-  const variant = variantt as keyof typeof AlertVariant;
+Object.values(AlertVariant).forEach(v => {
+  const variant = v as keyof typeof AlertVariant;
   describe(`Alert - ${variant}`, () => {
     test('Description', () => {
       const view = mount(
