@@ -6,19 +6,17 @@ export interface ModalBoxCloseButtonProps {
   /** additional classes added to the close button */
   className?: string;
   /** A callback for when the close button is clicked */
-  onClose?(): void;
+  onClose?: () => void;
 }
 
 export const ModalBoxCloseButton: React.FunctionComponent<ModalBoxCloseButtonProps> = ({
   className = '',
-  onClose = () => undefined,
+  onClose = () => undefined as any,
   ...props
-}) => (
+}: ModalBoxCloseButtonProps) => (
   <React.Fragment>
     <Button className={className} variant="plain" onClick={onClose} aria-label="Close" {...props}>
       <TimesIcon />
     </Button>
   </React.Fragment>
 );
-
-export default ModalBoxCloseButton;

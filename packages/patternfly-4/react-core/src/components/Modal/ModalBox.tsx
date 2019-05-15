@@ -25,7 +25,7 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
   title,
   id,
   ...props
-}) => (
+}: ModalBoxProps) => (
   <div
     {...props}
     role="dialog"
@@ -37,5 +37,3 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
     {children}
   </div>
 );
-
-export default ModalBox;

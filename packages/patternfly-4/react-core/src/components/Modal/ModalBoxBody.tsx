@@ -13,10 +13,8 @@ export const ModalBoxBody: React.FunctionComponent<ModalBoxBodyProps> = ({
   children = null,
   className = '',
   ...props
-}) => (
+}: ModalBoxBodyProps) => (
   <div {...props} className={css(styles.modalBoxBody, className)}>
     {children}
   </div>
 );
-
-export default ModalBoxBody;

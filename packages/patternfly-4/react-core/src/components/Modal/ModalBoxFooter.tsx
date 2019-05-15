@@ -13,10 +13,8 @@ export const ModalBoxFooter: React.FunctionComponent<ModalBoxFooterProps> = ({
   children = null,
   className = '',
   ...props
-}) => (
+}: ModalBoxFooterProps) => (
   <div {...props} className={css(styles.modalBoxFooter, className)}>
     {children}
   </div>
 );
-
-export default ModalBoxFooter;

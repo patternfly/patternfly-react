@@ -9,11 +9,11 @@ import styles from '@patternfly/patternfly/layouts/Bullseye/bullseye.css';
 import { css } from '@patternfly/react-styles';
 
 import Backdrop from '../Backdrop/Backdrop';
-import ModalBoxBody from './ModalBoxBody';
-import ModalBoxHeader from './ModalBoxHeader';
-import ModalBoxHCloseButton from './ModalBoxCloseButton';
-import ModalBox from './ModalBox';
-import ModalBoxFooter from './ModalBoxFooter';
+import { ModalBoxBody } from './ModalBoxBody';
+import { ModalBoxHeader } from './ModalBoxHeader';
+import { ModalBoxCloseButton } from './ModalBoxCloseButton';
+import { ModalBox } from './ModalBox';
+import { ModalBoxFooter } from './ModalBoxFooter';
 
 export interface ModalContentProps {
   /** content rendered inside the Modal. */
@@ -35,7 +35,7 @@ export interface ModalContentProps {
   /** Content of the Modal Footer */
   actions?: any,
   /** A callback for when the close button is clicked */
-  onClose?(): void;
+  onClose?: () => void;
   /** id to use for Modal Box description */
   ariaDescribedById?: string;
   /** id of the ModalBoxBody */
@@ -49,7 +49,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   title,
   hideTitle = false,
   actions = [],
-  onClose = () => undefined,
+  onClose = () => undefined as any,
   isLarge = false,
   isSmall = false,
   width = -1,
@@ -76,7 +76,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
           title={title}
           id={ariaDescribedById || id}
         >
-          <ModalBoxHCloseButton onClose={onClose} />
+          <ModalBoxCloseButton onClose={onClose} />
           {modalBoxHeader}
           <ModalBoxBody {...props} id={id}>
             {children}
@@ -87,5 +87,3 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     </Backdrop>
   );
 };
-
-export default ModalContent;

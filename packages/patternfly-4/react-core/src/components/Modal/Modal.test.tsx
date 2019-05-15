@@ -1,9 +1,10 @@
-import Modal from './Modal';
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { KEY_CODES } from '../../helpers/constants';
 import { css } from '../../../../react-styles/dist/js';
 import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
+
+import { Modal } from './Modal';
 
 jest.spyOn(document, 'createElement');
 jest.spyOn(document, 'addEventListener');
