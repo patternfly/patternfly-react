@@ -14,7 +14,7 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   /** Classes to be added to the Options menu toggle button */
   toggleButtonContentsClassName?: string;
   /** Callback for when this Options menu is toggled */
-  onToggle(event: React.MouseEvent<HTMLButtonElement>): void;
+  onToggle?(event: React.MouseEvent<HTMLButtonElement>): void;
   /** Flag to indicate if menu is open */
   isOpen?: boolean;
   /** Flag to indicate if the button is plain */
@@ -35,7 +35,7 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   toggleTextClassName = '',
   toggleButtonContents,
   toggleButtonContentsClassName = '',
-  onToggle,
+  onToggle = () => {},
   isOpen = false,
   isPlain = false,
   isHovered = false,
@@ -43,6 +43,7 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   isFocused = false,
   "aria-label": ariaLabel = 'Options menu'
 }: OptionsMenuToggleWithTextProps) => (
+
   <div className={css(styles.optionsMenuToggle,
     getModifier(styles, 'text'),
     isPlain && getModifier(styles, 'plain'),

@@ -16,6 +16,7 @@ exports[`optionsMenu expanded 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Name
         </OptionsMenuItem>
@@ -24,6 +25,7 @@ exports[`optionsMenu expanded 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Date
         </OptionsMenuItem>
@@ -32,6 +34,7 @@ exports[`optionsMenu expanded 1`] = `
           id=""
           isDisabled={true}
           isSelected={false}
+          onSelect={[Function]}
         >
           Disabled
         </OptionsMenuItem>
@@ -40,6 +43,7 @@ exports[`optionsMenu expanded 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Size
         </OptionsMenuItem>
@@ -51,6 +55,7 @@ exports[`optionsMenu expanded 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Ascending
         </OptionsMenuItem>
@@ -59,6 +64,7 @@ exports[`optionsMenu expanded 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Descending
         </OptionsMenuItem>
@@ -90,6 +96,9 @@ exports[`optionsMenu expanded 1`] = `
         id="expanded-toggle"
         onClick={[Function]}
       >
+        <span
+          className="pf-c-options-menu__toggle-text"
+        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
@@ -138,6 +147,7 @@ exports[`optionsMenu expanded 1`] = `
               isDisabled={false}
               isSelected={false}
               key="name"
+              onSelect={[Function]}
             >
               <li>
                 <button
@@ -145,6 +155,7 @@ exports[`optionsMenu expanded 1`] = `
                   aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
+                  onClick={[Function]}
                   onKeyDown={[Function]}
                 >
                   Name
@@ -188,6 +199,7 @@ exports[`optionsMenu expanded 1`] = `
               isDisabled={false}
               isSelected={false}
               key="date"
+              onSelect={[Function]}
             >
               <li>
                 <button
@@ -195,6 +207,7 @@ exports[`optionsMenu expanded 1`] = `
                   aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
+                  onClick={[Function]}
                   onKeyDown={[Function]}
                 >
                   Date
@@ -238,6 +251,7 @@ exports[`optionsMenu expanded 1`] = `
               isDisabled={true}
               isSelected={false}
               key="disabled"
+              onSelect={[Function]}
             >
               <li>
                 <button
@@ -245,6 +259,7 @@ exports[`optionsMenu expanded 1`] = `
                   aria-selected={false}
                   className="pf-c-options-menu__menu-item pf-m-disabled"
                   id=""
+                  onClick={[Function]}
                   onKeyDown={[Function]}
                 >
                   Disabled
@@ -288,6 +303,7 @@ exports[`optionsMenu expanded 1`] = `
               isDisabled={false}
               isSelected={false}
               key="size"
+              onSelect={[Function]}
             >
               <li>
                 <button
@@ -295,6 +311,7 @@ exports[`optionsMenu expanded 1`] = `
                   aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
+                  onClick={[Function]}
                   onKeyDown={[Function]}
                 >
                   Size
@@ -357,6 +374,7 @@ exports[`optionsMenu expanded 1`] = `
               isDisabled={false}
               isSelected={false}
               key="ascending"
+              onSelect={[Function]}
             >
               <li>
                 <button
@@ -364,6 +382,7 @@ exports[`optionsMenu expanded 1`] = `
                   aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
+                  onClick={[Function]}
                   onKeyDown={[Function]}
                 >
                   Ascending
@@ -407,6 +426,7 @@ exports[`optionsMenu expanded 1`] = `
               isDisabled={false}
               isSelected={false}
               key="descending"
+              onSelect={[Function]}
             >
               <li>
                 <button
@@ -414,6 +434,7 @@ exports[`optionsMenu expanded 1`] = `
                   aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
+                  onClick={[Function]}
                   onKeyDown={[Function]}
                 >
                   Descending
@@ -475,6 +496,7 @@ exports[`optionsMenu open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Name
         </OptionsMenuItem>
@@ -483,6 +505,7 @@ exports[`optionsMenu open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Date
         </OptionsMenuItem>
@@ -491,6 +514,7 @@ exports[`optionsMenu open up 1`] = `
           id=""
           isDisabled={true}
           isSelected={false}
+          onSelect={[Function]}
         >
           Disabled
         </OptionsMenuItem>
@@ -499,6 +523,7 @@ exports[`optionsMenu open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Size
         </OptionsMenuItem>
@@ -510,6 +535,7 @@ exports[`optionsMenu open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Ascending
         </OptionsMenuItem>
@@ -518,6 +544,7 @@ exports[`optionsMenu open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Descending
         </OptionsMenuItem>
@@ -549,6 +576,9 @@ exports[`optionsMenu open up 1`] = `
         id="openUp-toggle"
         onClick={[Function]}
       >
+        <span
+          className="pf-c-options-menu__toggle-text"
+        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
@@ -599,6 +629,7 @@ exports[`optionsMenu plain 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Name
         </OptionsMenuItem>
@@ -607,6 +638,7 @@ exports[`optionsMenu plain 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Date
         </OptionsMenuItem>
@@ -615,6 +647,7 @@ exports[`optionsMenu plain 1`] = `
           id=""
           isDisabled={true}
           isSelected={false}
+          onSelect={[Function]}
         >
           Disabled
         </OptionsMenuItem>
@@ -623,6 +656,7 @@ exports[`optionsMenu plain 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Size
         </OptionsMenuItem>
@@ -634,6 +668,7 @@ exports[`optionsMenu plain 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Ascending
         </OptionsMenuItem>
@@ -642,6 +677,7 @@ exports[`optionsMenu plain 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Descending
         </OptionsMenuItem>
@@ -723,6 +759,7 @@ exports[`optionsMenu regular 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Name
         </OptionsMenuItem>
@@ -731,6 +768,7 @@ exports[`optionsMenu regular 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Date
         </OptionsMenuItem>
@@ -739,6 +777,7 @@ exports[`optionsMenu regular 1`] = `
           id=""
           isDisabled={true}
           isSelected={false}
+          onSelect={[Function]}
         >
           Disabled
         </OptionsMenuItem>
@@ -747,6 +786,7 @@ exports[`optionsMenu regular 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Size
         </OptionsMenuItem>
@@ -758,6 +798,7 @@ exports[`optionsMenu regular 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Ascending
         </OptionsMenuItem>
@@ -766,6 +807,7 @@ exports[`optionsMenu regular 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Descending
         </OptionsMenuItem>
@@ -797,6 +839,9 @@ exports[`optionsMenu regular 1`] = `
         id="regular-toggle"
         onClick={[Function]}
       >
+        <span
+          className="pf-c-options-menu__toggle-text"
+        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
@@ -847,6 +892,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Name
         </OptionsMenuItem>
@@ -855,6 +901,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Date
         </OptionsMenuItem>
@@ -863,6 +910,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
           id=""
           isDisabled={true}
           isSelected={false}
+          onSelect={[Function]}
         >
           Disabled
         </OptionsMenuItem>
@@ -871,6 +919,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Size
         </OptionsMenuItem>
@@ -882,6 +931,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Ascending
         </OptionsMenuItem>
@@ -890,6 +940,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Descending
         </OptionsMenuItem>
@@ -921,6 +972,9 @@ exports[`optionsMenu right aligned + open up 1`] = `
         id="rightAlignedOpenUp-toggle"
         onClick={[Function]}
       >
+        <span
+          className="pf-c-options-menu__toggle-text"
+        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
@@ -971,6 +1025,7 @@ exports[`optionsMenu right aligned 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Name
         </OptionsMenuItem>
@@ -979,6 +1034,7 @@ exports[`optionsMenu right aligned 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Date
         </OptionsMenuItem>
@@ -987,6 +1043,7 @@ exports[`optionsMenu right aligned 1`] = `
           id=""
           isDisabled={true}
           isSelected={false}
+          onSelect={[Function]}
         >
           Disabled
         </OptionsMenuItem>
@@ -995,6 +1052,7 @@ exports[`optionsMenu right aligned 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Size
         </OptionsMenuItem>
@@ -1006,6 +1064,7 @@ exports[`optionsMenu right aligned 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Ascending
         </OptionsMenuItem>
@@ -1014,6 +1073,7 @@ exports[`optionsMenu right aligned 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Descending
         </OptionsMenuItem>
@@ -1045,6 +1105,9 @@ exports[`optionsMenu right aligned 1`] = `
         id="rightAligned-toggle"
         onClick={[Function]}
       >
+        <span
+          className="pf-c-options-menu__toggle-text"
+        />
         <CaretDownIcon
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
@@ -1095,6 +1158,7 @@ exports[`optionsMenu text 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Name
         </OptionsMenuItem>
@@ -1103,6 +1167,7 @@ exports[`optionsMenu text 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Date
         </OptionsMenuItem>
@@ -1111,6 +1176,7 @@ exports[`optionsMenu text 1`] = `
           id=""
           isDisabled={true}
           isSelected={false}
+          onSelect={[Function]}
         >
           Disabled
         </OptionsMenuItem>
@@ -1119,6 +1185,7 @@ exports[`optionsMenu text 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Size
         </OptionsMenuItem>
@@ -1130,6 +1197,7 @@ exports[`optionsMenu text 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Ascending
         </OptionsMenuItem>
@@ -1138,6 +1206,7 @@ exports[`optionsMenu text 1`] = `
           id=""
           isDisabled={false}
           isSelected={false}
+          onSelect={[Function]}
         >
           Descending
         </OptionsMenuItem>
@@ -1186,6 +1255,7 @@ exports[`optionsMenu text 1`] = `
           aria-label="Options menu"
           className="pf-c-options-menu__toggle-button"
           id="text-toggle"
+          onClick={[Function]}
         >
           Test
         </button>

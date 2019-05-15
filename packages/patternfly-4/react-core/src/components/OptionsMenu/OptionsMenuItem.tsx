@@ -15,7 +15,7 @@ export interface OptionsMenuItemProps extends Omit<React.HTMLProps<HTMLButtonEle
   /** Render Options menu item as disabled option */
   isDisabled?: boolean;
   /** Callback for when this Options menu item is selected */
-  onSelect(event: React.MouseEvent<HTMLButtonElement>|React.KeyboardEvent): void;
+  onSelect?(event: React.MouseEvent<HTMLButtonElement>|React.KeyboardEvent): void;
   /** Unique id of this Options menu item */
   id?: string;
 }
@@ -27,6 +27,7 @@ export class OptionsMenuItem extends React.Component<OptionsMenuItemProps> {
     className: '',
     isSelected: false,
     isDisabled: false,
+    onSelect: () => {},
     id: '',
   };
 
