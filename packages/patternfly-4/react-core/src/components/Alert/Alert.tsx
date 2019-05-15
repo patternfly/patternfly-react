@@ -16,7 +16,7 @@ export enum AlertVariant {
 export interface AlertProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'action' | 'title'> {
   /** Adds Alert variant styles  */
-  variant: keyof typeof AlertVariant;
+  variant: AlertVariant | keyof typeof AlertVariant;
   /** Title of the Alert  */
   title: React.ReactNode;
   /** Action button to put in the Alert.  Should be <AlertActionLink> or <AlertActionCloseButton>  */
@@ -33,7 +33,7 @@ export interface AlertProps
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
   variant,
-  variantLabel = null,
+  variantLabel = capitalize(variant),
   'aria-label': ariaLabel = `${capitalize(variant)} Alert`,
   action = null,
   title,
@@ -41,7 +41,6 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
   className = '',
   ...props
 }: AlertProps) => {
-  variantLabel = variantLabel || capitalize(variant);
   const readerTitle = (
     <React.Fragment>
       <span className={css(accessibleStyles.screenReader)}>{`${variantLabel} alert:`}</span>

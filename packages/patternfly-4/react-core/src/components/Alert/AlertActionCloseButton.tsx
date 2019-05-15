@@ -18,7 +18,7 @@ export const AlertActionCloseButton = ({
   onClose = () => undefined as any,
   'aria-label': ariaLabel = '',
   title,
-  variantLabel,
+  variantLabel = '',
   ...props
 }: AlertActionCloseButtonProps) => (
   <Button
