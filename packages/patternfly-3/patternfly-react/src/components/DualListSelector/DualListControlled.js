@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { isEqual } from 'lodash';
 import { DualList } from './index';
 import { adjustProps } from './helpers';
+import { noop } from '../../common/helpers';
 
 class DualListControlled extends React.Component {
   constructor(props) {
@@ -10,6 +12,11 @@ class DualListControlled extends React.Component {
       prevProps: props,
       ...adjustProps(props)
     };
+  }
+
+  componentDidMount() {
+    const { onComponentInit } = this.props;
+    onComponentInit(this.state);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -22,6 +29,7 @@ class DualListControlled extends React.Component {
   }
 
   onItemChange = ({ side, items, selectCount, isMainChecked }) => {
+    const { onItemChange } = this.props;
     this.setState({
       [side]: {
         ...this.state[side],
@@ -29,10 +37,11 @@ class DualListControlled extends React.Component {
         selectCount,
         isMainChecked
       }
-    });
+    }, () => onItemChange(this.state));
   };
 
   onMainCheckboxChange = ({ side, checked, items, selectCount }) => {
+    const { onMainCheckboxChange } = this.props;
     this.setState({
       [side]: {
         ...this.state[side],
@@ -40,20 +49,22 @@ class DualListControlled extends React.Component {
         selectCount,
         isMainChecked: checked
       }
-    });
+    }, () => onMainCheckboxChange(this.state));
   };
 
   onSortClick = ({ side, items, isSortAsc }) => {
+    const { onSortClick } = this.props;
     this.setState({
       [side]: {
         ...this.state[side],
         items,
         isSortAsc
       }
-    });
+    }, () => onSortClick(this.state));
   };
 
   onFilterChange = ({ side, filterTerm, items, isMainChecked }) => {
+    const { onFilterChange } = this.props;
     this.setState({
       [side]: {
         ...this.state[side],
@@ -61,11 +72,12 @@ class DualListControlled extends React.Component {
         items,
         isMainChecked
       }
-    });
+    }, () => onFilterChange(this.state));
   };
 
   onChange = ({ left, right }) => {
-    this.setState({ left, right });
+    const { onChange } = this.props;
+    this.setState({ left, right }, () => onChange(this.state));
   };
 
   render() {
@@ -84,5 +96,47 @@ class DualListControlled extends React.Component {
     );
   }
 }
+
+DualListControlled.propTypes = {
+  /**
+   * Function that runs after items have been moved between the lists.
+   * Receives the updated state as a callback.
+  */
+  onChange: PropTypes.func,
+  /**
+   * Function that runs after an item was clicked.
+   * Receives the updated state as a callback.
+  */
+  onItemChange: PropTypes.func,
+  /**
+   * Function that runs after the main checkbox was clicked.
+   * Receives the updated state as a callback.
+  */
+  onMainCheckboxChange: PropTypes.func,
+  /**
+   * Function that runs after the sort icon was clicked.
+   * Receives the updated state as a callback.
+  */
+  onSortClick: PropTypes.func,
+  /**
+   * Function that runs after the filter input has changed.
+   * Receives the updated state as a callback.
+  */
+  onFilterChange: PropTypes.func,
+  /**
+   * Function that runs after the component had mounted.
+   * Receives the updated state as a callback.
+  */
+  onComponentInit: PropTypes.func,
+};
+
+DualListControlled.defaultProps = {
+  onChange: noop,
+  onItemChange: noop,
+  onMainCheckboxChange: noop,
+  onSortClick: noop,
+  onFilterChange: noop,
+  onComponentInit: noop
+};
 
 export default DualListControlled;
