@@ -6,17 +6,17 @@ import { AlertIcon } from './AlertIcon';
 import { capitalize } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
 
-export enum AlertVariant {
-  success = 'success',
-  danger = 'danger',
-  warning = 'warning',
-  info = 'info'
+export const AlertVariant = {
+  success: 'success',
+  danger: 'danger',
+  warning: 'warning',
+  info: 'info'
 }
 
 export interface AlertProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'action' | 'title'> {
   /** Adds Alert variant styles  */
-  variant: AlertVariant | keyof typeof AlertVariant;
+  variant: 'success' | 'danger' | 'warning' | 'info';
   /** Title of the Alert  */
   title: React.ReactNode;
   /** Action button to put in the Alert.  Should be <AlertActionLink> or <AlertActionCloseButton>  */

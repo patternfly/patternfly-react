@@ -17,7 +17,7 @@ export const variantIcons = {
 
 export interface AlertIconProps extends React.HTMLProps<HTMLDivElement> {
   /** variant */
-  variant?: keyof typeof variantIcons;
+  variant?: 'success' | 'danger' | 'warning' | 'info';
   /** className */
   className?: string;
 };
