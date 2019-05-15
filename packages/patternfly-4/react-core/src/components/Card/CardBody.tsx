@@ -8,7 +8,7 @@ export interface CardBodyProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the Card Body */
   className?: string; 
   /** Sets the base component to render. defaults to div */
-  component?: React.ReactType<CardBodyProps>;
+  component?: React.ReactType;
   /** Enables the body Content to fill the height of the card */
   isFilled?: boolean;
 }

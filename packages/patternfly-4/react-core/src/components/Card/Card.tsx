@@ -8,7 +8,7 @@ export interface CardProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the Card */
   className?: string; 
   /** Sets the base component to render. defaults to article */
-  component?: React.ReactType<CardProps>;
+  component?: React.ReactType;
   /** Modifies the card to include hover styles on :hover */
   isHoverable?: boolean;
 }

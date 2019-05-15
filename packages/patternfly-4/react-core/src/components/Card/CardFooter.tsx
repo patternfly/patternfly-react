@@ -8,7 +8,7 @@ export interface CardFooterProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the Footer */
   className?: string; 
   /** Sets the base component to render. defaults to div */
-  component?: React.ReactType<CardFooterProps>;
+  component?: React.ReactType;
 }
 
 export const CardFooter: React.FunctionComponent<CardFooterProps> = ({
