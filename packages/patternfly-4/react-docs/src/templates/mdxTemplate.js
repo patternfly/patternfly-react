@@ -84,6 +84,7 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
         }
         tsType {
           name
+          raw
         }
         defaultValue {
           value
