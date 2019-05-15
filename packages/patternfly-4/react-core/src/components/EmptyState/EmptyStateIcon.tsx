@@ -6,13 +6,13 @@ import { Omit } from '../../helpers/typeUtils';
 export enum IconSize {
   sm = 'sm',
   md = 'md',
-  lg ='lg',
-  xl ='xl'
+  lg = 'lg',
+  xl = 'xl'
 }
 
 export interface IconProps extends Omit<React.HTMLProps<SVGElement>, 'size'> {
   color?: string;
-  size?: IconSize;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   title?: string;
 }
 
@@ -27,6 +27,6 @@ export const EmptyStateIcon: React.FunctionComponent<EmptyStateIconProps> = ({
   className = '',
   icon: IconComponent,
   ...props
-}) => (
+}: EmptyStateIconProps) => (
   <IconComponent className={css(styles.emptyStateIcon, className)} {...props} aria-hidden="true" />
 );

@@ -1,4 +1,4 @@
-export { EmptyState, EmptyStateVariant } from './EmptyState';
-export { EmptyStateBody } from './EmptyStateBody';
-export { EmptyStateIcon } from './EmptyStateIcon';
-export { EmptyStateSecondaryActions } from './EmptyStateSecondaryActions';
+export * from './EmptyState';
+export * from './EmptyStateBody';
+export * from './EmptyStateIcon';
+export * from './EmptyStateSecondaryActions';

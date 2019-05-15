@@ -12,7 +12,7 @@ export const EmptyStateSecondaryActions: React.FunctionComponent<EmptyStateSecon
   children = null,
   className = '',
   ...props
-}) => (
+}: EmptyStateSecondaryActionsProps) => (
   <div className={css(styles.emptyStateSecondary, className)} {...props}>
     {children}
   </div>

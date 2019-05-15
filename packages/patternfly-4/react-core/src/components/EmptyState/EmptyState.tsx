@@ -5,7 +5,12 @@ import styles from '@patternfly/patternfly/components/EmptyState/empty-state.css
 export enum EmptyStateVariant {
   large = 'large',
   small = 'small',
-  full = 'full'
+  full = 'full',
+};
+
+export enum maxWidthModifiers {
+  large = 'styles.modifiers.lg',
+  small = 'styles.modifiers.sm'
 }
 
 export interface EmptyStateProps extends React.HTMLProps<HTMLDivElement> {
@@ -14,13 +19,7 @@ export interface EmptyStateProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the EmptyState */
   children: React.ReactNode;
   /** Modifies EmptyState max-width */
-  variant?: EmptyStateVariant;
-}
-
-const maxWidthModifiers = {
-  large: styles.modifiers.lg,
-  small: styles.modifiers.sm,
-  full: null
+  variant?: 'small' | 'large' | 'full';
 }
 
 export const EmptyState: React.FunctionComponent<EmptyStateProps> = ({
@@ -28,10 +27,10 @@ export const EmptyState: React.FunctionComponent<EmptyStateProps> = ({
   className = '',
   variant = EmptyStateVariant.large,
   ...props
-}) => {
-  const maxWidthModifier = variant && maxWidthModifiers[variant];
+}: EmptyStateProps) => {
+  const maxWidthModifier = variant && maxWidthModifiers[variant as keyof typeof maxWidthModifiers];
   return (
-    <div className={css(styles.emptyState, maxWidthModifier && maxWidthModifier, className)} {...props}>
+    <div className={css(styles.emptyState, maxWidthModifier, className)} {...props}>
       {children}
     </div>
   );

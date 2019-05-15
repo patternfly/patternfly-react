@@ -10,10 +10,10 @@ export interface EmptyStateBodyProps extends React.HTMLProps<HTMLParagraphElemen
 }
 
 export const EmptyStateBody: React.FunctionComponent<EmptyStateBodyProps> = ({
-  children = null,
+  children,
   className = '',
   ...props
-}) => (
+}: EmptyStateBodyProps) => (
   <p className={css(styles.emptyStateBody, className)} {...props}>
     {children}
   </p>
