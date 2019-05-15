@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.34.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.34.0...patternfly-react@2.34.1) (2019-05-15)
+
+
+### Bug Fixes
+
+* **DualList:** add callbacks to Controlled Dual List methods ([#1901](https://github.com/patternfly/patternfly-react/issues/1901)) ([16ac9c2](https://github.com/patternfly/patternfly-react/commit/16ac9c2))
+
+
+
+
+
 # [2.34.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.33.0...patternfly-react@2.34.0) (2019-05-15)
 
 
