@@ -31,6 +31,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       ariaLabelToggle="Options menu"
       ariaLabelledBy=" pf-toggle-id-4"
       className=""
+      handleTypeaheadKeys={[Function]}
       id="pf-toggle-id-4"
       isActive={false}
       isExpanded={true}
@@ -447,6 +448,7 @@ exports[`checkbox select renders closed successfully 1`] = `
       ariaLabelToggle="Options menu"
       ariaLabelledBy=" pf-toggle-id-2"
       className=""
+      handleTypeaheadKeys={[Function]}
       id="pf-toggle-id-2"
       isActive={false}
       isExpanded={false}
@@ -541,6 +543,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
       ariaLabelToggle="Options menu"
       ariaLabelledBy=" pf-toggle-id-3"
       className=""
+      handleTypeaheadKeys={[Function]}
       id="pf-toggle-id-3"
       isActive={false}
       isExpanded={true}
@@ -797,6 +800,7 @@ exports[`select single select renders closed successfully 1`] = `
       ariaLabelToggle="Options menu"
       ariaLabelledBy=" pf-toggle-id-0"
       className=""
+      handleTypeaheadKeys={[Function]}
       id="pf-toggle-id-0"
       isActive={false}
       isExpanded={false}
@@ -893,6 +897,7 @@ exports[`select single select renders expanded successfully 1`] = `
       ariaLabelToggle="Options menu"
       ariaLabelledBy=" pf-toggle-id-1"
       className=""
+      handleTypeaheadKeys={[Function]}
       id="pf-toggle-id-1"
       isActive={false}
       isExpanded={true}
@@ -970,13 +975,16 @@ exports[`select single select renders expanded successfully 1`] = `
       >
         <SelectOption
           className=""
+          id="Mr-0"
           index={0}
           isDisabled={false}
+          isFocused={false}
           isPlaceholder={false}
           isSelected={false}
           key=".$0"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Mr"
         >
@@ -986,6 +994,7 @@ exports[`select single select renders expanded successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Mr-0"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -996,13 +1005,16 @@ exports[`select single select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Mrs-1"
           index={1}
           isDisabled={false}
+          isFocused={false}
           isPlaceholder={false}
           isSelected={false}
           key=".$1"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Mrs"
         >
@@ -1012,6 +1024,7 @@ exports[`select single select renders expanded successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Mrs-1"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -1022,13 +1035,16 @@ exports[`select single select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Ms-2"
           index={2}
           isDisabled={false}
+          isFocused={false}
           isPlaceholder={false}
           isSelected={false}
           key=".$2"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Ms"
         >
@@ -1038,6 +1054,7 @@ exports[`select single select renders expanded successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Ms-2"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -1048,13 +1065,16 @@ exports[`select single select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Other-3"
           index={3}
           isDisabled={false}
+          isFocused={false}
           isPlaceholder={false}
           isSelected={false}
           key=".$3"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Other"
         >
@@ -1064,6 +1084,7 @@ exports[`select single select renders expanded successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Other-3"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -1109,6 +1130,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
       ariaLabelToggle="Options menu"
       ariaLabelledBy=" pf-toggle-id-10"
       className=""
+      handleTypeaheadKeys={[Function]}
       id="pf-toggle-id-10"
       isActive={false}
       isExpanded={false}
@@ -1132,7 +1154,9 @@ exports[`typeahead multi select renders closed successfully 1`] = `
           className="pf-c-select__toggle-wrapper"
         >
           <input
+            aria-activedescendant={null}
             aria-label={null}
+            autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             id="select-multi-typeahead-typeahead"
             onChange={[Function]}
@@ -1215,6 +1239,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       ariaLabelToggle="Options menu"
       ariaLabelledBy=" pf-toggle-id-11"
       className=""
+      handleTypeaheadKeys={[Function]}
       id="pf-toggle-id-11"
       isActive={false}
       isExpanded={true}
@@ -1238,7 +1263,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           className="pf-c-select__toggle-wrapper"
         >
           <input
+            aria-activedescendant={null}
             aria-label={null}
+            autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             id="select-multi-typeahead-typeahead"
             onChange={[Function]}
@@ -1293,6 +1320,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       isExpanded={false}
       openedOnEnter={false}
       selected={null}
+      sendRef={[Function]}
     >
       <ul
         aria-label={null}
@@ -1302,13 +1330,16 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       >
         <SelectOption
           className=""
+          id="Mr-0"
           index={0}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$0"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Mr"
         >
@@ -1318,6 +1349,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Mr-0"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -1328,13 +1360,16 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Mrs-1"
           index={1}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$1"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Mrs"
         >
@@ -1344,6 +1379,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Mrs-1"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -1354,13 +1390,16 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Ms-2"
           index={2}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$2"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Ms"
         >
@@ -1370,6 +1409,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Ms-2"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -1380,13 +1420,16 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Other-3"
           index={3}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$3"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Other"
         >
@@ -1396,6 +1439,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Other-3"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -1446,6 +1490,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
       ariaLabelToggle="Options menu"
       ariaLabelledBy=" pf-toggle-id-12"
       className=""
+      handleTypeaheadKeys={[Function]}
       id="pf-toggle-id-12"
       isActive={false}
       isExpanded={true}
@@ -1612,7 +1657,9 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             </ul>
           </ChipGroup>
           <input
+            aria-activedescendant={null}
             aria-label={null}
+            autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             id="select-multi-typeahead-typeahead"
             onChange={[Function]}
@@ -1704,6 +1751,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           "Mrs",
         ]
       }
+      sendRef={[Function]}
     >
       <ul
         aria-label={null}
@@ -1713,13 +1761,16 @@ exports[`typeahead multi select renders selected successfully 1`] = `
       >
         <SelectOption
           className=""
+          id="Mr-0"
           index={0}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={true}
           key=".$0"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Mr"
         >
@@ -1729,6 +1780,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             <button
               aria-selected={true}
               className="pf-c-select__menu-item pf-m-selected"
+              id="Mr-0"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -1764,13 +1816,16 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Mrs-1"
           index={1}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={true}
           key=".$1"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Mrs"
         >
@@ -1780,6 +1835,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             <button
               aria-selected={true}
               className="pf-c-select__menu-item pf-m-selected"
+              id="Mrs-1"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -1815,13 +1871,16 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Ms-2"
           index={2}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$2"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Ms"
         >
@@ -1831,6 +1890,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Ms-2"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -1841,13 +1901,16 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Other-3"
           index={3}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$3"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Other"
         >
@@ -1857,6 +1920,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Other-3"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -1902,6 +1966,7 @@ exports[`typeahead multi select test onChange 1`] = `
       ariaLabelToggle="Options menu"
       ariaLabelledBy=" pf-toggle-id-14"
       className=""
+      handleTypeaheadKeys={[Function]}
       id="pf-toggle-id-14"
       isActive={false}
       isExpanded={true}
@@ -1922,6 +1987,7 @@ exports[`typeahead multi select test onChange 1`] = `
               class="pf-c-select__toggle-wrapper"
             >
               <input
+                autocomplete="off"
                 class="pf-c-form-control pf-c-select__toggle-typeahead"
                 id="select-single-typeahead-typeahead"
                 type="text"
@@ -1983,7 +2049,9 @@ exports[`typeahead multi select test onChange 1`] = `
           className="pf-c-select__toggle-wrapper"
         >
           <input
+            aria-activedescendant={null}
             aria-label={null}
+            autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             id="select-single-typeahead-typeahead"
             onChange={[Function]}
@@ -2038,6 +2106,7 @@ exports[`typeahead multi select test onChange 1`] = `
       isExpanded={false}
       openedOnEnter={false}
       selected={null}
+      sendRef={[Function]}
     >
       <ul
         aria-label={null}
@@ -2108,6 +2177,7 @@ exports[`typeahead select renders closed successfully 1`] = `
       ariaLabelToggle="Options menu"
       ariaLabelledBy=" pf-toggle-id-5"
       className=""
+      handleTypeaheadKeys={[Function]}
       id="pf-toggle-id-5"
       isActive={false}
       isExpanded={false}
@@ -2131,7 +2201,9 @@ exports[`typeahead select renders closed successfully 1`] = `
           className="pf-c-select__toggle-wrapper"
         >
           <input
+            aria-activedescendant={null}
             aria-label={null}
+            autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             id="select-single-typeahead-typeahead"
             onChange={[Function]}
@@ -2214,6 +2286,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
       ariaLabelToggle="Options menu"
       ariaLabelledBy=" pf-toggle-id-6"
       className=""
+      handleTypeaheadKeys={[Function]}
       id="pf-toggle-id-6"
       isActive={false}
       isExpanded={true}
@@ -2237,7 +2310,9 @@ exports[`typeahead select renders expanded successfully 1`] = `
           className="pf-c-select__toggle-wrapper"
         >
           <input
+            aria-activedescendant={null}
             aria-label={null}
+            autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             id="select-single-typeahead-typeahead"
             onChange={[Function]}
@@ -2292,6 +2367,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
       isExpanded={false}
       openedOnEnter={false}
       selected={null}
+      sendRef={[Function]}
     >
       <ul
         aria-label={null}
@@ -2301,13 +2377,16 @@ exports[`typeahead select renders expanded successfully 1`] = `
       >
         <SelectOption
           className=""
+          id="Mr-0"
           index={0}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$0"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Mr"
         >
@@ -2317,6 +2396,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Mr-0"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -2327,13 +2407,16 @@ exports[`typeahead select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Mrs-1"
           index={1}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$1"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Mrs"
         >
@@ -2343,6 +2426,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Mrs-1"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -2353,13 +2437,16 @@ exports[`typeahead select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Ms-2"
           index={2}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$2"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Ms"
         >
@@ -2369,6 +2456,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Ms-2"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -2379,13 +2467,16 @@ exports[`typeahead select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Other-3"
           index={3}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$3"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Other"
         >
@@ -2395,6 +2486,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Other-3"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -2440,6 +2532,7 @@ exports[`typeahead select renders selected successfully 1`] = `
       ariaLabelToggle="Options menu"
       ariaLabelledBy=" pf-toggle-id-7"
       className=""
+      handleTypeaheadKeys={[Function]}
       id="pf-toggle-id-7"
       isActive={false}
       isExpanded={true}
@@ -2463,7 +2556,9 @@ exports[`typeahead select renders selected successfully 1`] = `
           className="pf-c-select__toggle-wrapper"
         >
           <input
+            aria-activedescendant={null}
             aria-label={null}
+            autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             id="select-single-typeahead-typeahead"
             onChange={[Function]}
@@ -2550,6 +2645,7 @@ exports[`typeahead select renders selected successfully 1`] = `
       isExpanded={false}
       openedOnEnter={false}
       selected="Mr"
+      sendRef={[Function]}
     >
       <ul
         aria-label={null}
@@ -2559,13 +2655,16 @@ exports[`typeahead select renders selected successfully 1`] = `
       >
         <SelectOption
           className=""
+          id="Mr-0"
           index={0}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={true}
           key=".$0"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Mr"
         >
@@ -2575,6 +2674,7 @@ exports[`typeahead select renders selected successfully 1`] = `
             <button
               aria-selected={true}
               className="pf-c-select__menu-item pf-m-selected"
+              id="Mr-0"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -2610,13 +2710,16 @@ exports[`typeahead select renders selected successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Mrs-1"
           index={1}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$1"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Mrs"
         >
@@ -2626,6 +2729,7 @@ exports[`typeahead select renders selected successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Mrs-1"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -2636,13 +2740,16 @@ exports[`typeahead select renders selected successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Ms-2"
           index={2}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$2"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Ms"
         >
@@ -2652,6 +2759,7 @@ exports[`typeahead select renders selected successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Ms-2"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -2662,13 +2770,16 @@ exports[`typeahead select renders selected successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          id="Other-3"
           index={3}
           isDisabled={false}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$3"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="Other"
         >
@@ -2678,6 +2789,7 @@ exports[`typeahead select renders selected successfully 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
+              id="Other-3"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -2723,6 +2835,7 @@ exports[`typeahead select test onChange 1`] = `
       ariaLabelToggle="Options menu"
       ariaLabelledBy=" pf-toggle-id-9"
       className=""
+      handleTypeaheadKeys={[Function]}
       id="pf-toggle-id-9"
       isActive={false}
       isExpanded={true}
@@ -2743,6 +2856,7 @@ exports[`typeahead select test onChange 1`] = `
               class="pf-c-select__toggle-wrapper"
             >
               <input
+                autocomplete="off"
                 class="pf-c-form-control pf-c-select__toggle-typeahead"
                 id="select-single-typeahead-typeahead"
                 type="text"
@@ -2804,7 +2918,9 @@ exports[`typeahead select test onChange 1`] = `
           className="pf-c-select__toggle-wrapper"
         >
           <input
+            aria-activedescendant={null}
             aria-label={null}
+            autoComplete="off"
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             id="select-single-typeahead-typeahead"
             onChange={[Function]}
@@ -2859,6 +2975,7 @@ exports[`typeahead select test onChange 1`] = `
       isExpanded={false}
       openedOnEnter={false}
       selected={null}
+      sendRef={[Function]}
     >
       <ul
         aria-label={null}

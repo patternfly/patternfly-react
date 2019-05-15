@@ -40,7 +40,10 @@ export function isElementInView(container: HTMLElement, element: HTMLElement, pa
 
   // Check if in view
   const isTotallyInView = elementBoundsLeft >= containerBoundsLeft && elementBoundsRight <= containerBoundsRight;
-  const isPartiallyInView = partial && ((elementBoundsLeft < containerBoundsLeft && elementBoundsRight > containerBoundsLeft) || (elementBoundsRight > containerBoundsRight && elementBoundsLeft < containerBoundsRight));
+  const isPartiallyInView =
+    partial &&
+    ((elementBoundsLeft < containerBoundsLeft && elementBoundsRight > containerBoundsLeft) ||
+      (elementBoundsRight > containerBoundsRight && elementBoundsLeft < containerBoundsRight));
 
   // Return outcome
   return isTotallyInView || isPartiallyInView;
@@ -126,12 +129,38 @@ export function keyHandler(index: number, position: string, refsCollection: any[
     keyHandler(nextIndex, position, refsCollection, kids, custom);
   } else if (custom) {
     if (refsCollection[nextIndex].focus) {
-      refsCollection[nextIndex].focus()
+      refsCollection[nextIndex].focus();
     }
     const element = ReactDOM.findDOMNode(refsCollection[nextIndex]) as HTMLElement;
-    element.focus()
-  }
-  else {
+    element.focus();
+  } else {
     refsCollection[nextIndex].focus();
+  }
+}
+
+/** This function is a helper for keyboard navigation through dropdowns.
+ * @param {number} index The index of the element you're on
+ * @param {string} position The orientation of the dropdown
+ * @param {string[]} collection Array of refs to the items in the dropdown
+ */
+export function getNextIndex(index: number, position: string, collection: any[]) {
+  let nextIndex;
+  if (position === 'up') {
+    if (index === 0) {
+      // loop back to end
+      nextIndex = collection.length - 1;
+    } else {
+      nextIndex = index - 1;
+    }
+  } else if (index === collection.length - 1) {
+    // loop back to beginning
+    nextIndex = 0;
+  } else {
+    nextIndex = index + 1;
+  }
+  if (collection[nextIndex] === null) {
+    getNextIndex(nextIndex, position, collection);
+  } else {
+    return nextIndex;
   }
 }

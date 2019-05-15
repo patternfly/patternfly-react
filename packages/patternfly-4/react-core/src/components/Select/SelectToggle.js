@@ -99,7 +99,20 @@ class SelectToggle extends Component {
   };
 
   onKeyDown = event => {
-    const { isExpanded, onToggle, variant, onClose, onEnter } = this.props;
+    const { isExpanded, onToggle, variant, onClose, onEnter, handleTypeaheadKeys } = this.props;
+    if (
+      (event.key === KeyTypes.ArrowDown || event.key === KeyTypes.ArrowUp) &&
+      (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti)
+    )
+      handleTypeaheadKeys((event.key === KeyTypes.ArrowDown && 'down') || (event.key === KeyTypes.ArrowUp && 'up'));
+    if (
+      event.key === KeyTypes.Enter &&
+      (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti)
+    ) {
+      if (isExpanded) handleTypeaheadKeys('enter');
+      else onToggle && onToggle(!isExpanded);
+    }
+
     if (
       (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) ||
       (event.key === KeyTypes.Tab && !isExpanded) ||
@@ -132,6 +145,7 @@ class SelectToggle extends Component {
       onToggle,
       onEnter,
       onClose,
+      handleTypeaheadKeys,
       parentRef,
       id,
       type,
