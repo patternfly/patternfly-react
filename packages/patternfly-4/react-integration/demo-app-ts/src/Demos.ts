@@ -21,6 +21,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AvatarDemo
   },
   {
+    id: 'breadcrumb-demo',
+    name: 'Breadcrumb Demo', 
+    componentType: Examples.BreadcrumbDemo
+  },
+  {
     id: 'label-demo',
     name: 'Label Demo',
     componentType: Examples.LabelDemo

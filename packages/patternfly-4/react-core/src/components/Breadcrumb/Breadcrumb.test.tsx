@@ -1,6 +1,6 @@
-import React from 'react';
-import Breadcrumb from './Breadcrumb';
-import BreadcrumbItem from './BreadcrumbItem';
+import * as React from 'react';
+import { Breadcrumb } from './Breadcrumb';
+import { BreadcrumbItem } from './BreadcrumbItem';
 import { shallow } from 'enzyme';
 
 describe('Breadcrumb component', () => {

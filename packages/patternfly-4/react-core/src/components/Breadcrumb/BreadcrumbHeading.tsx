@@ -1,33 +1,28 @@
-import React from 'react';
+import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Breadcrumb/breadcrumb.css';
-import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
-import { componentShape } from '../../helpers/componentShape';
 
-const propTypes = {
+export interface BreadcrumbHeadingProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside the breadcrumb title. */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the breadcrumb item. */
-  className: PropTypes.string,
+  className?: string;
   /** HREF for breadcrumb link. */
-  to: PropTypes.string,
+  to?: string;
   /** Target for breadcrumb link. */
-  target: PropTypes.string,
+  target?: string;
   /** Sets the base component to render. Defaults to <a> */
-  component: componentShape,
-  /** Additional props are spread to the container <li> */
-  '': PropTypes.any
-};
+  component?: React.ReactType;
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  to: null,
-  target: null,
-  component: 'a'
-};
-
-const BreadcrumbHeading = ({ className, children, to, target, component: Component, ...props }) => (
+export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> = ({
+  children = null,
+  className = '',
+  to = null,
+  target = null,
+  component: Component = 'a' as any,
+  ...props
+}: BreadcrumbHeadingProps) => (
   <li {...props} className={css(styles.breadcrumbItem, className)}>
     <h1 className={css(styles.breadcrumbHeading)}>
       {to && (
@@ -44,8 +39,3 @@ const BreadcrumbHeading = ({ className, children, to, target, component: Compone
     </h1>
   </li>
 );
-
-BreadcrumbHeading.propTypes = propTypes;
-BreadcrumbHeading.defaultProps = defaultProps;
-
-export default BreadcrumbHeading;

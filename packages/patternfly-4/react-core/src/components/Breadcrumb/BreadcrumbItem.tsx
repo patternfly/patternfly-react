@@ -1,43 +1,38 @@
-import React from 'react';
-import styles from '@patternfly/patternfly/components/Breadcrumb/breadcrumb.css';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import { AngleRightIcon } from '@patternfly/react-icons';
+import styles from '@patternfly/patternfly/components/Breadcrumb/breadcrumb.css';
 import { css, getModifier } from '@patternfly/react-styles';
-import { componentShape } from '../../helpers/componentShape';
 
-const propTypes = {
+export interface BreadcrumbItemProps extends React.HTMLProps<HTMLLIElement> {
   /** Content rendered inside the breadcrumb item. */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the breadcrumb item. */
-  className: PropTypes.string,
+  className?: string;
   /** HREF for breadcrumb link. */
-  to: PropTypes.string,
+  to?: string;
   /** Flag indicating whether the item is active. */
-  isActive: PropTypes.bool,
+  isActive?: boolean;
   /** Target for breadcrumb link. */
-  target: PropTypes.string,
+  target?: string;
   /** Sets the base component to render. Defaults to <a> */
-  component: componentShape,
-  /** Additional props are spread to the container <li> */
-  '': PropTypes.any
-};
+  component?: React.ReactType;
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  to: null,
-  isActive: false,
-  target: null,
-  component: 'a'
-};
-
-const BreadcrumbItem = ({ className, children, to, isActive, target, component: Component, ...props }) => (
+export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
+  children = null,
+  className = '',
+  to = null,
+  isActive = false,
+  target = null,
+  component: Component = 'a' as any,
+  ...props
+}) => (
   <li {...props} className={css(styles.breadcrumbItem, className)}>
     {to && (
       <Component
         href={to}
         target={target}
-        className={css(styles.breadcrumbLink, getModifier(styles, isActive && 'current'))}
+        className={css(styles.breadcrumbLink, isActive ? getModifier(styles, 'current') : '')}
         aria-current={isActive ? 'page' : undefined}
       >
         {children}
@@ -51,8 +46,3 @@ const BreadcrumbItem = ({ className, children, to, isActive, target, component: 
     )}
   </li>
 );
-
-BreadcrumbItem.propTypes = propTypes;
-BreadcrumbItem.defaultProps = defaultProps;
-
-export default BreadcrumbItem;
