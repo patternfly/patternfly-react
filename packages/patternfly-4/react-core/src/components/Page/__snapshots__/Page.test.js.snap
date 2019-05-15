@@ -149,47 +149,27 @@ exports[`Check page to verify breadcrumb is created 1`] = `
 <Page
   aria-label="Page layout"
   breadcrumb={
-    <Breadcrumb
-      aria-label="Breadcrumb"
-      className=""
-    >
-      <BreadcrumbItem
-        className=""
-        component="a"
-        isActive={false}
-        target={null}
-        to={null}
-      >
+    <Unknown>
+      <Unknown>
         Section Home
-      </BreadcrumbItem>
-      <BreadcrumbItem
-        className=""
-        component="a"
-        isActive={false}
-        target={null}
+      </Unknown>
+      <Unknown
         to="#"
       >
         Section Title
-      </BreadcrumbItem>
-      <BreadcrumbItem
-        className=""
-        component="a"
-        isActive={false}
-        target={null}
+      </Unknown>
+      <Unknown
         to="#"
       >
         Section Title
-      </BreadcrumbItem>
-      <BreadcrumbItem
-        className=""
-        component="a"
+      </Unknown>
+      <Unknown
         isActive={true}
-        target={null}
         to="#"
       >
         Section Landing
-      </BreadcrumbItem>
-    </Breadcrumb>
+      </Unknown>
+    </Unknown>
   }
   className="my-page-class"
   header={
@@ -282,24 +262,15 @@ exports[`Check page to verify breadcrumb is created 1`] = `
       <section
         className="pf-c-page__main-breadcrumb"
       >
-        <Breadcrumb
-          aria-label="Breadcrumb"
-          className=""
-        >
+        <Component>
           <nav
-            aria-label="Breadcrumb"
+            aria-label=""
             className="pf-c-breadcrumb"
           >
             <ol
               className="pf-c-breadcrumb__list"
             >
-              <BreadcrumbItem
-                className=""
-                component="a"
-                isActive={false}
-                target={null}
-                to={null}
-              >
+              <Component>
                 <li
                   className="pf-c-breadcrumb__item"
                 >
@@ -334,12 +305,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                     </AngleRightIcon>
                   </span>
                 </li>
-              </BreadcrumbItem>
-              <BreadcrumbItem
-                className=""
-                component="a"
-                isActive={false}
-                target={null}
+              </Component>
+              <Component
                 to="#"
               >
                 <li
@@ -382,12 +349,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                     </AngleRightIcon>
                   </span>
                 </li>
-              </BreadcrumbItem>
-              <BreadcrumbItem
-                className=""
-                component="a"
-                isActive={false}
-                target={null}
+              </Component>
+              <Component
                 to="#"
               >
                 <li
@@ -430,12 +393,9 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                     </AngleRightIcon>
                   </span>
                 </li>
-              </BreadcrumbItem>
-              <BreadcrumbItem
-                className=""
-                component="a"
+              </Component>
+              <Component
                 isActive={true}
-                target={null}
                 to="#"
               >
                 <li
@@ -450,10 +410,10 @@ exports[`Check page to verify breadcrumb is created 1`] = `
                     Section Landing
                   </a>
                 </li>
-              </BreadcrumbItem>
+              </Component>
             </ol>
           </nav>
-        </Breadcrumb>
+        </Component>
       </section>
       <PageSection
         className=""
@@ -512,47 +472,27 @@ exports[`Check page to verify skip to content is created 1`] = `
 <Page
   aria-label="Page layout"
   breadcrumb={
-    <Breadcrumb
-      aria-label="Breadcrumb"
-      className=""
-    >
-      <BreadcrumbItem
-        className=""
-        component="a"
-        isActive={false}
-        target={null}
-        to={null}
-      >
+    <Unknown>
+      <Unknown>
         Section Home
-      </BreadcrumbItem>
-      <BreadcrumbItem
-        className=""
-        component="a"
-        isActive={false}
-        target={null}
+      </Unknown>
+      <Unknown
         to="#"
       >
         Section Title
-      </BreadcrumbItem>
-      <BreadcrumbItem
-        className=""
-        component="a"
-        isActive={false}
-        target={null}
+      </Unknown>
+      <Unknown
         to="#"
       >
         Section Title
-      </BreadcrumbItem>
-      <BreadcrumbItem
-        className=""
-        component="a"
+      </Unknown>
+      <Unknown
         isActive={true}
-        target={null}
         to="#"
       >
         Section Landing
-      </BreadcrumbItem>
-    </Breadcrumb>
+      </Unknown>
+    </Unknown>
   }
   className="my-page-class"
   header={
@@ -667,24 +607,15 @@ exports[`Check page to verify skip to content is created 1`] = `
       <section
         className="pf-c-page__main-breadcrumb"
       >
-        <Breadcrumb
-          aria-label="Breadcrumb"
-          className=""
-        >
+        <Component>
           <nav
-            aria-label="Breadcrumb"
+            aria-label=""
             className="pf-c-breadcrumb"
           >
             <ol
               className="pf-c-breadcrumb__list"
             >
-              <BreadcrumbItem
-                className=""
-                component="a"
-                isActive={false}
-                target={null}
-                to={null}
-              >
+              <Component>
                 <li
                   className="pf-c-breadcrumb__item"
                 >
@@ -719,12 +650,8 @@ exports[`Check page to verify skip to content is created 1`] = `
                     </AngleRightIcon>
                   </span>
                 </li>
-              </BreadcrumbItem>
-              <BreadcrumbItem
-                className=""
-                component="a"
-                isActive={false}
-                target={null}
+              </Component>
+              <Component
                 to="#"
               >
                 <li
@@ -767,12 +694,8 @@ exports[`Check page to verify skip to content is created 1`] = `
                     </AngleRightIcon>
                   </span>
                 </li>
-              </BreadcrumbItem>
-              <BreadcrumbItem
-                className=""
-                component="a"
-                isActive={false}
-                target={null}
+              </Component>
+              <Component
                 to="#"
               >
                 <li
@@ -815,12 +738,9 @@ exports[`Check page to verify skip to content is created 1`] = `
                     </AngleRightIcon>
                   </span>
                 </li>
-              </BreadcrumbItem>
-              <BreadcrumbItem
-                className=""
-                component="a"
+              </Component>
+              <Component
                 isActive={true}
-                target={null}
                 to="#"
               >
                 <li
@@ -835,10 +755,10 @@ exports[`Check page to verify skip to content is created 1`] = `
                     Section Landing
                   </a>
                 </li>
-              </BreadcrumbItem>
+              </Component>
             </ol>
           </nav>
-        </Breadcrumb>
+        </Component>
       </section>
       <a
         id="main-content-page-layout-default-nav"
