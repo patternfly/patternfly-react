@@ -6,20 +6,20 @@ cssPrefix: 'pf-c-data-list'
 ## Simple data list
 
 import {
-  Button,
-  DataList,
-  DataListItem,
-  DataListItemCells,
-  DataListItemRow,
-  DataListCell,
-  DataListCheck,
-  DataListAction,
-  DataListToggle,
-  DataListContent,
-  Dropdown,
-  DropdownPosition,
-  KebabToggle,
-  DropdownItem
+Button,
+DataList,
+DataListItem,
+DataListItemCells,
+DataListItemRow,
+DataListCell,
+DataListCheck,
+DataListAction,
+DataListToggle,
+DataListContent,
+Dropdown,
+DropdownPosition,
+KebabToggle,
+DropdownItem
 } from '@patternfly/react-core';
 import { CodeBranchIcon } from '@patternfly/react-icons';
 
@@ -40,36 +40,40 @@ import {
   DropdownItem
 } from '@patternfly/react-core';
 
-SimpleDataList = () => (
-  <DataList aria-label="Simple data list example">
-    <DataListItem aria-labelledby="simple-item1">
-      <DataListItemRow>
-        <DataListItemCells
-          dataListCells={[
-            <DataListCell key="primary content">
-              <span id="simple-item1">Primary content</span>
-            </DataListCell>,
-            <DataListCell key="secondary content">Secondary content</DataListCell>
-          ]}
-        />
-      </DataListItemRow>
-    </DataListItem>
-    <DataListItem aria-labelledby="simple-item2">
-      <DataListItemRow>
-        <DataListItemCells
-          dataListCells={[
-            <DataListCell isFilled={false} key="secondary content fill">
-              <span id="simple-item2">Secondary content (pf-m-no-fill)</span>
-            </DataListCell>,
-            <DataListCell isFilled={false} alignRight key="secondary content align">
-              Secondary content (pf-m-align-right pf-m-no-fill)
-            </DataListCell>
-          ]}
-        />
-      </DataListItemRow>
-    </DataListItem>
-  </DataList>
-);
+class SimpleDataList extends React.Component {
+  render() {
+    return (
+      <DataList aria-label="Simple data list example">
+        <DataListItem aria-labelledby="simple-item1">
+          <DataListItemRow>
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell key="primary content">
+                  <span id="simple-item1">Primary content</span>
+                </DataListCell>,
+                <DataListCell key="secondary content">Secondary content</DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+        <DataListItem aria-labelledby="simple-item2">
+          <DataListItemRow>
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell isFilled={false} key="secondary content fill">
+                  <span id="simple-item2">Secondary content (pf-m-no-fill)</span>
+                </DataListCell>,
+                <DataListCell isFilled={false} alignRight key="secondary content align">
+                  Secondary content (pf-m-align-right pf-m-no-fill)
+                </DataListCell>
+              ]}
+            />
+          </DataListItemRow>
+        </DataListItem>
+      </DataList>
+    );
+  }
+}
 ```
 
 ## Data list checkboxes, actions and additional cells

@@ -6,25 +6,33 @@ cssPrefix: 'pf-c-popover'
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
 
 ## Simple popover
+
 ```js
 import React from 'react';
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
 
-SimplePopover = () => (
-  <Popover
-    position="right"
-    headerContent={<div>Popover Header</div>}
-    bodyContent={
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-    }
-    footerContent="Popover Footer"
-  >
-    <Button>Toggle Popover</Button>
-  </Popover>
-);
+class SimplePopover extends React.Component {
+  render() {
+    return (
+      <Popover
+        position="right"
+        headerContent={<div>Popover Header</div>}
+        bodyContent={
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+          </div>
+        }
+        footerContent="Popover Footer"
+      >
+        <Button>Toggle Popover</Button>
+      </Popover>
+    );
+  }
+}
 ```
 
 ## Advanced popover
+
 ```js
 import React from 'react';
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
@@ -112,20 +120,27 @@ class AdvancedPopover extends React.Component {
 ```
 
 ## Popover (headless)
+
 ```js
 import React from 'react';
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
 
-HeadlessPopover = () => (
-  <Popover
-    position="right"
-    bodyContent={
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
-    }
-    aria-label="Headless Popover"
-    footerContent="Popover Footer"
-  >
-    <Button>Toggle Popover</Button>
-  </Popover>
-);
+class HeadlessPopover extends React.Component {
+  render() {
+    return (
+      <Popover
+        position="right"
+        bodyContent={
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+          </div>
+        }
+        aria-label="Headless Popover"
+        footerContent="Popover Footer"
+      >
+        <Button>Toggle Popover</Button>
+      </Popover>
+    );
+  }
+}
 ```

@@ -6,21 +6,31 @@ cssPrefix: 'pf-c-tooltip'
 import { Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
 
 ## Simple tooltip
+
 ```js
 import React from 'react';
 import { Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
 
-<Tooltip
-  position="right"
-  content={
-    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+class SimpleTooltip extends React.Component {
+  render() {
+    return (
+      <Tooltip
+        position="right"
+        content={
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+          </div>
+        }
+      >
+        <span>I have a tooltip!</span>
+      </Tooltip>
+    );
   }
->
-  <span>I have a tooltip!</span>
-</Tooltip>
+}
 ```
 
 ## Tooltip positions
+
 ```js
 import React from 'react';
 import { Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';

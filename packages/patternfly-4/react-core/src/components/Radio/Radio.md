@@ -6,6 +6,7 @@ cssPrefix: 'pf-c-radio'
 import { Radio } from '@patternfly/react-core';
 
 ## Controlled radio
+
 ```js
 import React from 'react';
 import { Radio } from '@patternfly/react-core';
@@ -49,27 +50,37 @@ class ControlledRadio extends React.Component {
 ```
 
 ## Uncontrolled radio
+
 ```js
 import React from 'react';
 import { Radio } from '@patternfly/react-core';
 
-UncontrolledRadio = () => (
-  <React.Fragment>
-    <Radio label="Uncontrolled radio example" id="radio-4" name="radio-4" />
-    <Radio label="Uncontrolled radio example" id="radio-5" name="radio-4" />
-  </React.Fragment>
-);
+class UncontrolledRadio extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Radio label="Uncontrolled radio example" id="radio-4" name="radio-4" />
+        <Radio label="Uncontrolled radio example" id="radio-5" name="radio-4" />
+      </React.Fragment>
+    );
+  }
+}
 ```
 
 ## Disabled radio
+
 ```js
 import React from 'react';
 import { Radio } from '@patternfly/react-core';
 
-DisabledRadio = () => (
-  <React.Fragment>
-    <Radio label="Disabled checked radio example" defaultChecked isDisabled name="group-1" id="radio-disabled" />{' '}
-    <Radio id="radio-disabled-2" label="Disabled radio example" isDisabled name="group-2" />
-  </React.Fragment>
-);
+class DisabledRadio extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Radio label="Disabled checked radio example" defaultChecked isDisabled name="group-1" id="radio-disabled" />{' '}
+        <Radio id="radio-disabled-2" label="Disabled radio example" isDisabled name="group-2" />
+      </React.Fragment>
+    );
+  }
+}
 ```

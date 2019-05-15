@@ -6,6 +6,7 @@ cssPrefix: 'pf-c-switch'
 import { Switch } from '@patternfly/react-core';
 
 ## Simple switch
+
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
@@ -37,6 +38,7 @@ class SimpleSwitch extends React.Component {
 ```
 
 ## Switch (no labels)
+
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
@@ -62,43 +64,53 @@ class NoLabelSwitch extends React.Component {
 ```
 
 ## Switch (disabled)
+
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
-DisabledSwitch = () => (
-  <React.Fragment>
-    <Switch id="disabled-switch-on" aria-label="Message when on" label="Message when on" isChecked isDisabled />
-    <br />
-    <Switch
-      id="disabled-switch-off"
-      aria-label="Message when on"
-      label="Message when off"
-      isChecked={false}
-      isDisabled
-    />
-    <br />
-    <Switch id="disabled-no-label-switch-on" aria-label="Message when on" isChecked isDisabled />
-    <br />
-    <Switch id="disabled-no-label-switch-off" aria-label="Message when on" isChecked={false} isDisabled />
-  </React.Fragment>
-);
+class DisabledSwitch extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Switch id="disabled-switch-on" aria-label="Message when on" label="Message when on" isChecked isDisabled />
+        <br />
+        <Switch
+          id="disabled-switch-off"
+          aria-label="Message when on"
+          label="Message when off"
+          isChecked={false}
+          isDisabled
+        />
+        <br />
+        <Switch id="disabled-no-label-switch-on" aria-label="Message when on" isChecked isDisabled />
+        <br />
+        <Switch id="disabled-no-label-switch-off" aria-label="Message when on" isChecked={false} isDisabled />
+      </React.Fragment>
+    );
+  }
+}
 ```
 
 ## Switch (uncontrolled)
+
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
-UncontrolledSwitch = () => (
-  <React.Fragment>
-    <Switch id="uncontrolled-switch-on" aria-label="Message when on" label="Message when on" isChecked />
-    <br />
-    <Switch id="uncontrolled-switch-off" aria-label="Message when on" label="Message when off" isChecked={false} />
-    <br />
-    <Switch id="uncontrolled-no-label-switch-on" aria-label="Message when on" isChecked />
-    <br />
-    <Switch id="uncontrolled-no-label-switch-off" aria-label="Message when on" isChecked={false} />
-  </React.Fragment>
-);
+class UncontrolledSwitch extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Switch id="uncontrolled-switch-on" aria-label="Message when on" label="Message when on" isChecked />
+        <br />
+        <Switch id="uncontrolled-switch-off" aria-label="Message when on" label="Message when off" isChecked={false} />
+        <br />
+        <Switch id="uncontrolled-no-label-switch-on" aria-label="Message when on" isChecked />
+        <br />
+        <Switch id="uncontrolled-no-label-switch-off" aria-label="Message when on" isChecked={false} />
+      </React.Fragment>
+    );
+  }
+}
 ```

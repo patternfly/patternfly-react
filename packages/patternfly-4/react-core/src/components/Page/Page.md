@@ -6,6 +6,7 @@ cssPrefix: 'pf-c-page'
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 
 ## Vertical page layout
+
 ```js
 import React from 'react';
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
@@ -56,31 +57,35 @@ class VerticalPage extends React.Component {
 ```
 
 ## Horizontal page layout
+
 ```js
 import React from 'react';
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 
-HorizontalPage = () => {
-  const logoProps = {
-    href: 'https://patternfly.org',
-    onClick: () => console.log('clicked logo'),
-    target: '_blank'
-  };
-  const Header = (
-    <PageHeader logo="Logo" logoProps={logoProps} toolbar="Toolbar" avatar=" | Avatar" topNav="Navigation" />
-  );
+class HorizontalPage extends React.Component {
+  render() {
+    const logoProps = {
+      href: 'https://patternfly.org',
+      onClick: () => console.log('clicked logo'),
+      target: '_blank'
+    };
+    const Header = (
+      <PageHeader logo="Logo" logoProps={logoProps} toolbar="Toolbar" avatar=" | Avatar" topNav="Navigation" />
+    );
 
-  return (
-    <Page header={Header}>
-      <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
-      <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
-      <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
-    </Page>
-  );
-};
+    return (
+      <Page header={Header}>
+        <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
+        <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
+        <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
+      </Page>
+    );
+  }
+}
 ```
 
 ## Main Section Padding Modifiers
+
 ```js
 import React from 'react';
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
@@ -122,7 +127,9 @@ class VerticalPage extends React.Component {
     return (
       <Page header={Header} sidebar={Sidebar}>
         <PageSection>Section with default padding</PageSection>
-        <PageSection variant={PageSectionVariants.light} noPadding={true}>Section with no padding</PageSection>
+        <PageSection variant={PageSectionVariants.light} noPadding={true}>
+          Section with no padding
+        </PageSection>
         <PageSection noPaddingMobile={true}>Section with no padding on mobile only</PageSection>
       </Page>
     );
