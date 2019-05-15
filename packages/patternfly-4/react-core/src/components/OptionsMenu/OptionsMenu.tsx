@@ -1,9 +1,16 @@
 import * as React from 'react';
 import styles from '@patternfly/patternfly/components/OptionsMenu/options-menu.css';
 import { css, getModifier } from '@patternfly/react-styles';
-import { OptionsMenuDirection, OptionsMenuPosition } from './optionsMenuConstants';
-import { OneOf } from '../../helpers';
-import { DropdownDirection, DropdownPosition } from '../Dropdown';
+
+export const OptionsMenuPosition = {
+  right: 'right',
+  left: 'left'
+};
+
+export const OptionsMenuDirection = {
+  up: 'up',
+  down: 'down'
+};
 
 export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement>{
   /** Classes applied to root element of the Options menu */
@@ -21,9 +28,9 @@ export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement>{
   /** Provides an accessible name for the Options menu */
   ariaLabelMenu?: string;
   /** Indicates where menu will be aligned horizontally */
-  position?: OneOf<typeof DropdownPosition, keyof typeof DropdownPosition>;
-  /** Display menu above or below Options menu toggle */
-  direction?: OneOf<typeof DropdownDirection, keyof typeof DropdownDirection>;
+  position?: 'right' | 'left';
+  /** Menu will open up or open down from the Options menu toggle */
+  direction?: 'up' | 'down';
 }
 
 export class OptionsMenu extends React.Component<OptionsMenuProps> {

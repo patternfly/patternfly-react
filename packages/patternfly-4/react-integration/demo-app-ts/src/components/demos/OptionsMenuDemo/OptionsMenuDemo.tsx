@@ -60,9 +60,6 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
         onToggle={this.singleOptionOnToggle}
         toggleTemplate={<React.Fragment>{this.state.toggleTemplateText}</React.Fragment>} />,
       isOpen: this.state.singleOptionIsOpen,
-      isPlain: true,
-      direction: OptionsMenuDirection.up,
-      position: OptionsMenuPosition.right,
     };
 
     const myModifiedMenuProps: OptionsMenuProps = {
@@ -82,8 +79,8 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
         onToggle={this.modifiedOnToggle} />,
       isOpen: this.state.modifiedIsOpen,
       isPlain: true,
-      direction: OptionsMenuDirection.up,
-      position: OptionsMenuPosition.right,
+      direction: "up",
+      position: "right",
     };
 
     return (

@@ -5,9 +5,9 @@ import styles from '@patternfly/patternfly/components/OptionsMenu/options-menu.c
 export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivElement> {
   /** Id of the parent Options menu component */
   parentId?: string;
-  /** Content to be rendered inside the Options menu toggle as text or another non-interactive element*/
+  /** Content to be rendered inside the Options menu toggle as text or another non-interactive element */
   toggleText: React.ReactNode;
-  /** classes to be added to the Options menu toggle text*/
+  /** classes to be added to the Options menu toggle text */
   toggleTextClassName?: string;
   /** Content to be rendered inside the Options menu toggle button */
   toggleButtonContents: React.ReactNode;
@@ -26,7 +26,7 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   /** Forces display of the active state of the Options menu button */
   isActive?: boolean;
   /** Provides an accessible name for the button when an icon is used instead of text */
-  "aria-label"?: string;
+  'aria-label'?: string;
 }
 
 export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggleWithTextProps> = ({
@@ -35,13 +35,13 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   toggleTextClassName = '',
   toggleButtonContents,
   toggleButtonContentsClassName = '',
-  onToggle = () => {},
+  onToggle = () => null as any,
   isOpen = false,
   isPlain = false,
   isHovered = false,
   isActive = false,
   isFocused = false,
-  "aria-label": ariaLabel = 'Options menu'
+  'aria-label': ariaLabel = 'Options menu'
 }: OptionsMenuToggleWithTextProps) => (
 
   <div className={css(styles.optionsMenuToggle,

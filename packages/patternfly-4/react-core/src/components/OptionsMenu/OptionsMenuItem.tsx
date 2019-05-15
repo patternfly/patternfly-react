@@ -27,7 +27,7 @@ export class OptionsMenuItem extends React.Component<OptionsMenuItemProps> {
     className: '',
     isSelected: false,
     isDisabled: false,
-    onSelect: () => {},
+    onSelect: () => null as any,
     id: '',
   };
 
@@ -38,7 +38,9 @@ export class OptionsMenuItem extends React.Component<OptionsMenuItemProps> {
   onKeyDown = (event:React.KeyboardEvent) => {
     // Detected key press on this item, notify the menu parent so that the appropriate
     // item can be focused
-    if (event.keyCode === KEY_CODES.TAB) return;
+    if (event.keyCode === KEY_CODES.TAB) {
+      return;
+    }
     event.preventDefault();
     if (event.keyCode === KEY_CODES.ENTER) {
       this.props.onSelect(event);
@@ -47,18 +49,20 @@ export class OptionsMenuItem extends React.Component<OptionsMenuItemProps> {
 
   render() {
     const { onSelect, isDisabled, isSelected, className, children, id, ...props } = this.props;
-    return <li>
-      <button
-        className={css(styles.optionsMenuMenuItem, isDisabled && getModifier(styles, 'disabled'), className)}
-        aria-disabled={isDisabled}
-        onClick={onSelect}
-        onKeyDown={this.onKeyDown}
-        aria-selected={isSelected}
-        id={id}
-        {...props}>
-        {children}
-        <i className={css(styles.optionsMenuMenuItemIcon)} aria-hidden={true} hidden={!isSelected}><CheckIcon/></i>
-      </button>
-    </li>
+    return (
+      <li>
+        <button
+          className={css(styles.optionsMenuMenuItem, isDisabled && getModifier(styles, 'disabled'), className)}
+          aria-disabled={isDisabled}
+          onClick={onSelect}
+          onKeyDown={this.onKeyDown}
+          aria-selected={isSelected}
+          id={id}
+          {...props}>
+          {children}
+          <i className={css(styles.optionsMenuMenuItemIcon)} aria-hidden hidden={!isSelected}><CheckIcon/></i>
+        </button>
+      </li>
+    );
   }
 }
