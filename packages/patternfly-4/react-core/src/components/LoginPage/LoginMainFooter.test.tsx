@@ -1,6 +1,7 @@
 import * as React from 'react';
-import LoginMainFooter from './LoginMainFooter';
 import { shallow } from 'enzyme';
+
+import { LoginMainFooter } from './LoginMainFooter';
 
 test('renders with PatternFly Core styles', () => {
   const view = shallow(<LoginMainFooter />);

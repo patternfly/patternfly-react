@@ -13,8 +13,7 @@ import {
   LoginMainFooterLinksItem,
   LoginPage,
   BackgroundImageSrc,
-  ListItem,
-  LoginListVariant
+  ListItem
 } from '@patternfly/react-core';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
@@ -154,7 +153,7 @@ export class LoginPageDemo extends React.Component<React.HTMLProps<HTMLDivElemen
 
     return (
       <LoginPage
-        footerListVariants={LoginListVariant.inline}
+        footerListVariants='inline'
         brandImgSrc={brandImg}
         brandImgAlt="PatternFly logo"
         backgroundImgSrc={images}

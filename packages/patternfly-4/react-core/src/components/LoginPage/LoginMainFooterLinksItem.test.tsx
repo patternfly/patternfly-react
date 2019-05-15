@@ -1,6 +1,7 @@
 import * as React from 'react';
-import LoginMainFooterLinksItem from './LoginMainFooterLinksItem';
 import { shallow } from 'enzyme';
+
+import { LoginMainFooterLinksItem } from './LoginMainFooterLinksItem';
 
 test('renders with PatternFly Core styles', () => {
   const view = shallow(<LoginMainFooterLinksItem href="#" target="" />);

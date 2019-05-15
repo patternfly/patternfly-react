@@ -22,7 +22,7 @@ export const LoginMainFooter: React.FunctionComponent<LoginMainFooterProps> = ({
   forgotCredentials = null,
   className = '',
   ...props
-}) => (
+}: LoginMainFooterProps) => (
   <div className={css(styles.loginMainFooter, className)} {...props}>
     {children}
     {socialMediaLoginContent && <ul className={css(styles.loginMainFooterLinks)}>{socialMediaLoginContent}</ul>}
@@ -34,5 +34,3 @@ export const LoginMainFooter: React.FunctionComponent<LoginMainFooterProps> = ({
     )}
   </div>
 );
-
-export default LoginMainFooter;

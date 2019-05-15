@@ -1,6 +1,7 @@
 ---
 title: 'Login page'
 cssPrefix: 'pf-c-login'
+typescript: true
 ---
 
 import LinkPreview from '@content/../LinkPreview';

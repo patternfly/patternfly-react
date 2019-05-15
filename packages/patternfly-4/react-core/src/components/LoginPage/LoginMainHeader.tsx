@@ -20,12 +20,10 @@ export const LoginMainHeader: React.FunctionComponent<LoginMainHeaderProps> = ({
   title = '',
   subtitle = '',
   ...props
-}) => (
+}: LoginMainHeaderProps) => (
   <header className={css(styles.loginMainHeader, className)} {...props}>
     {title && <Title headingLevel={TitleLevel.h2} size="3xl">{title}</Title>}
     {subtitle && <p className={css(styles.loginMainHeaderDesc)}>{subtitle}</p>}
     {children}
   </header>
 );
-
-export default LoginMainHeader;

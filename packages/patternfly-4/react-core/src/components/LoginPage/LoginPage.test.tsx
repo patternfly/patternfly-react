@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import LoginPage, {LoginListVariant} from './LoginPage';
+
+import { LoginPage } from './LoginPage';
 
 const needAccountMesseage = (
   <React.Fragment>
@@ -11,7 +12,7 @@ const needAccountMesseage = (
 test('check loginpage example against snapshot', () => {
   const view = shallow(
     <LoginPage
-    footerListVariants={LoginListVariant.inline}
+    footerListVariants='inline'
     brandImgSrc="Brand src"
     brandImgAlt="Pf-logo"
     backgroundImgSrc="Background src"

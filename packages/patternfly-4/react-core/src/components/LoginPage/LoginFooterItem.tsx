@@ -17,7 +17,7 @@ export const LoginFooterItem: React.FunctionComponent<LoginFooterItemProps> = ({
   href = '#',
   target = '_blank',
   ...props
-}) => {
+}: LoginFooterItemProps) => {
   const reactElement: boolean = React.isValidElement(children);
   return reactElement ? (
     React.cloneElement(children as React.ReactElement<any>)
@@ -27,5 +27,3 @@ export const LoginFooterItem: React.FunctionComponent<LoginFooterItemProps> = ({
     </a>
   );
 };
-
-export default LoginFooterItem;

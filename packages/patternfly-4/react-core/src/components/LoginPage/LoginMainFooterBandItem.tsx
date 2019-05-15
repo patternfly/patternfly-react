@@ -13,10 +13,8 @@ export const LoginMainFooterBandItem: React.FunctionComponent<LoginMainFooterBan
   children = null,
   className = '',
   ...props
-}) => (
+}: LoginMainFooterBandItemProps) => (
   <p className={css(`${styles.loginMainFooterBand}-item`, className)} {...props}>
     {children}
   </p>
 );
-
-export default LoginMainFooterBandItem;

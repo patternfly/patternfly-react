@@ -19,7 +19,7 @@ export const Login: React.FunctionComponent<LoginProps> = ({
   footer = null,
   header = null,
   ...props
-}) => (
+}: LoginProps) => (
   <div {...props} className={css(styles.login, className)}>
     <div className={css(styles.loginContainer)}>
       {header}
@@ -28,5 +28,3 @@ export const Login: React.FunctionComponent<LoginProps> = ({
     </div>
   </div>
 );
-
-export default Login;

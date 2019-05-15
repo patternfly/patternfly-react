@@ -1,22 +1,16 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 
-import Login from './Login';
-import LoginHeader from './LoginHeader';
-import LoginFooter from './LoginFooter';
-
-import LoginMainHeader from './LoginMainHeader';
-import LoginMainBody from './LoginMainBody';
-import LoginMainFooter from './LoginMainFooter';
-
-import {BackgroundImage, BackgroundImageSrcMap} from '../BackgroundImage';
+import { BackgroundImage, BackgroundImageSrcMap } from '../BackgroundImage';
 import { Brand } from '../Brand';
 import { List } from '../List';
 
-export enum LoginListVariant {
-  grid = 'grid',
-  inline = 'inline'
-}
+import { Login } from './Login';
+import { LoginHeader } from './LoginHeader';
+import { LoginFooter } from './LoginFooter';
+import { LoginMainHeader } from './LoginMainHeader';
+import { LoginMainBody } from './LoginMainBody';
+import { LoginMainFooter } from './LoginMainFooter';
 
 export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   /** Anything that can be rendered inside of the LoginPage (e.g. <LoginPageForm>) */
@@ -36,7 +30,7 @@ export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   /** Items rendered inside of the Footer List Component of the LoginPage */
   footerListItems?: React.ReactNode;
   /** Adds list variant styles for the Footer List component of the LoginPage.  Values are 'grid' or 'inline' */
-  footerListVariants?: LoginListVariant;
+  footerListVariants?: 'grid' | 'inline';
   /** Title for the Login Main Body Header of the LoginPage */
   loginTitle: string;
   /** Subtitle for the Login Main Body Header of the LoginPage */
@@ -65,7 +59,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
   forgotCredentials = null,
   socialMediaLoginContent = null,
   ...props
-}) => {
+}: LoginPageProps) => {
   const HeaderBrand = (
     <React.Fragment>
       <Brand src={brandImgSrc} alt={brandImgAlt} />
@@ -96,5 +90,3 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
     </React.Fragment>
   );
 };
-
-export default LoginPage;

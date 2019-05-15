@@ -16,7 +16,7 @@ export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   /** Value for the Username */
   usernameValue?: string;
   /** Function that handles the onChange event for the Username */
-  onChangeUsername?(value: string, event: React.FormEvent<HTMLInputElement>): void;
+  onChangeUsername?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** Flag indicating if the Username is valid */
   isValidUsername?: boolean;
   /** Label for the Password Input Field */
@@ -24,7 +24,7 @@ export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   /** Value for the Password */
   passwordValue?: string;
   /** Function that handles the onChange event for the Password */
-  onChangePassword?(value: string, event: React.FormEvent<HTMLInputElement>): void;
+  onChangePassword?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** Flag indicating if the Password is valid */
   isValidPassword?: boolean;
   /** Label for the Log in Button Input */
@@ -49,66 +49,62 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   helperText = null,
   usernameLabel = 'Username',
   usernameValue = '',
-  onChangeUsername =  () => undefined,
+  onChangeUsername =  () => undefined as any,
   isValidUsername = true,
   passwordLabel = 'Password',
   passwordValue = '',
-  onChangePassword =  () => undefined,
+  onChangePassword =  () => undefined as any,
   isValidPassword = true,
   loginButtonLabel = 'Log In',
   isLoginButtonDisabled = false,
-  onLoginButtonClick =  () => undefined,
+  onLoginButtonClick =  () => undefined as any,
   rememberMeLabel = '',
   isRememberMeChecked = false,
-  onChangeRememberMe =  () => undefined,
+  onChangeRememberMe =  () => undefined as any,
   rememberMeAriaLabel = '',
   ...props
-}) => {
-  return (
-    <Form className={className} {...props}>
-      <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText}>
-        {helperText}
-      </FormHelperText>
-      <FormGroup label={usernameLabel} isRequired isValid={isValidUsername} fieldId="pf-login-username-id">
-        <TextInput
-          id="pf-login-username-id"
-          isRequired
-          isValid={isValidUsername}
-          type="text"
-          name="pf-login-username-id"
-          value={usernameValue}
-          onChange={onChangeUsername}
+}: LoginFormProps) => (
+  <Form className={className} {...props}>
+    <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText}>
+      {helperText}
+    </FormHelperText>
+    <FormGroup label={usernameLabel} isRequired isValid={isValidUsername} fieldId="pf-login-username-id">
+      <TextInput
+        id="pf-login-username-id"
+        isRequired
+        isValid={isValidUsername}
+        type="text"
+        name="pf-login-username-id"
+        value={usernameValue}
+        onChange={onChangeUsername}
+      />
+    </FormGroup>
+    <FormGroup label={passwordLabel} isRequired isValid={isValidPassword} fieldId="pf-login-password-id">
+      <TextInput
+        isRequired
+        type="password"
+        id="pf-login-password-id"
+        name="pf-login-password-id"
+        isValid={isValidPassword}
+        value={passwordValue}
+        onChange={onChangePassword}
+      />
+    </FormGroup>
+    {rememberMeLabel.length > 0 && (
+      <FormGroup fieldId="pf-login-remember-me-id">
+        <Checkbox
+          id="pf-login-remember-me-id"
+          label={rememberMeLabel}
+          checked={isRememberMeChecked}
+          onChange={onChangeRememberMe}
+          aria-label={rememberMeAriaLabel || rememberMeLabel}
         />
       </FormGroup>
-      <FormGroup label={passwordLabel} isRequired isValid={isValidPassword} fieldId="pf-login-password-id">
-        <TextInput
-          isRequired
-          type="password"
-          id="pf-login-password-id"
-          name="pf-login-password-id"
-          isValid={isValidPassword}
-          value={passwordValue}
-          onChange={onChangePassword}
-        />
-      </FormGroup>
-      {rememberMeLabel.length > 0 && (
-        <FormGroup fieldId="pf-login-remember-me-id">
-          <Checkbox
-            id="pf-login-remember-me-id"
-            label={rememberMeLabel}
-            checked={isRememberMeChecked}
-            onChange={onChangeRememberMe}
-            aria-label={rememberMeAriaLabel || rememberMeLabel}
-          />
-        </FormGroup>
-      )}
-      <ActionGroup>
-        <Button variant="primary" type="submit" onClick={onLoginButtonClick} isBlock isDisabled={isLoginButtonDisabled}>
-          {loginButtonLabel}
-        </Button>
-      </ActionGroup>
-    </Form>
-  );
-};
-
-export default LoginForm;
+    )}
+    <ActionGroup>
+      <Button variant="primary" type="submit" onClick={onLoginButtonClick} isBlock isDisabled={isLoginButtonDisabled}>
+        {loginButtonLabel}
+      </Button>
+    </ActionGroup>
+  </Form>
+);

@@ -16,11 +16,9 @@ export const LoginHeader: React.FunctionComponent<LoginHeaderProps> = ({
   children = null,
   headerBrand = null,
   ...props
-}) => (
+}: LoginHeaderProps) => (
   <header className={css(styles.loginHeader, className)} {...props}>
     {headerBrand}
     {children}
   </header>
 );
-
-export default LoginHeader;

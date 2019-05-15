@@ -13,10 +13,8 @@ export const LoginMainBody: React.FunctionComponent<LoginMainBodyProps> = ({
   children = null,
   className = '',
   ...props
-}) => (
+}: LoginMainBodyProps) => (
   <div className={css(styles.loginMainBody, className)} {...props}>
     {children}
   </div>
 );
-
-export default LoginMainBody;
