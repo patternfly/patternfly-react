@@ -20,8 +20,8 @@ beforeEach(() => {
 });
 
 const context = {
-  onSelect: () => undefined,
-  onToggle: () => undefined
+  onSelect: ():void => undefined,
+  onToggle: ():void => undefined
 };
 
 test('Default Nav List', () => {

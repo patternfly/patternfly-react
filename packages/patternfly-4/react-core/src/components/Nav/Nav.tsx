@@ -1,73 +1,85 @@
-import React from 'react';
+import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Nav/nav.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 
-const propTypes = {
+import { Omit } from '../../helpers/typeUtils';
+
+export interface NavProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'onSelect'> {
   /** Anything that can be rendered inside of the nav */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the container */
-  className: PropTypes.string,
+  className?: string;
   /** Callback for updating when item selection changes */
-  onSelect: PropTypes.func,
+  onSelect?(selectedItem: {groupId: number | string; itemId: number | string; to:string, event: React.FormEvent<HTMLInputElement>}): void;
   /** Callback for when a list is expanded or collapsed */
-  onToggle: PropTypes.func,
+  onToggle?(toggledItem: {groupId: number | string ; isExpanded: boolean; event: React.FormEvent<HTMLInputElement>}): void;
   /** Accessibility label */
-  'aria-label': PropTypes.string,
-  /** Additional props are spread to the container <nav> */
-  '': PropTypes.any
-};
+  'aria-label'?: string;
+}
 
-const defaultProps = {
-  'aria-label': '',
-  children: null,
-  className: '',
-  onSelect: () => undefined,
-  onToggle: () => undefined
-};
+export const NavContext = React.createContext({});
 
-export const NavContext = React.createContext();
+export class Nav extends React.Component<NavProps> {
+  static defaultProps:NavProps = {
+    'aria-label': '',
+    children: null,
+    className: '',
+    onSelect: () => undefined,
+    onToggle: () => undefined
+  };
 
-class Nav extends React.Component {
   // Callback from NavItem
-  onSelect(event, groupId, itemId, to, preventDefault, onClick) {
-    preventDefault && event.preventDefault();
-    this.props.onSelect({
-      event,
-      itemId,
-      groupId,
-      to
-    });
-    onClick && onClick(event, itemId, groupId, to);
+  onSelect(
+    event: React.FormEvent<HTMLInputElement>,
+    groupId: number | string,
+    itemId: number | string,
+    to: string,
+    preventDefault: boolean,
+    onClick: (e: React.FormEvent<HTMLInputElement>, itemId: number | string, groupId: number | string, to: string) => void
+  ) {
+    if (preventDefault) {
+      event.preventDefault();
+    }
+
+    this.props.onSelect({ groupId, itemId, event, to });
+
+    if (onClick) {
+      onClick(event, itemId, groupId, to);
+    }
   }
 
   // Callback from NavExpandable
-  onToggle(event, groupId, toggleValue) {
+  onToggle(event: React.MouseEvent<HTMLInputElement>, groupId: number | string, toggleValue: boolean) {
     this.props.onToggle({
       event,
       groupId,
-      toggleValue
+      isExpanded: toggleValue
     });
   }
 
   render() {
-    const { 'aria-label': ariaLabel, children, className, ...props } = this.props;
+    const { 'aria-label': ariaLabel, children, className, onSelect, ...props } = this.props;
+    const childrenProps:any = (children as any).props;
 
     return (
       <NavContext.Provider
         value={{
-          onSelect: (event, groupId, itemId, to, preventDefault, onClick) =>
-            this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
-          onToggle: (event, groupId, expanded) => this.onToggle(event, groupId, expanded)
+          onSelect: (
+            event: React.FormEvent<HTMLInputElement>,
+            groupId: number | string,
+            itemId: number | string,
+            to: string,
+            preventDefault: boolean,
+            onClick: (e: React.FormEvent<HTMLInputElement>, itemId: number | string, groupId: number | string, to: string) => void
+          ) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
+          onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) => this.onToggle(event, groupId, expanded)
         }}
       >
         <nav
           className={css(styles.nav, className)}
           aria-label={
             ariaLabel === ''
-              ? typeof this.props.children.props !== 'undefined' && this.props.children.props.variant === 'tertiary'
-                ? 'Local'
-                : 'Global'
+              ? typeof childrenProps !== 'undefined' && childrenProps.variant === 'tertiary' ? 'Local' : 'Global'
               : ariaLabel
           }
           {...props}
@@ -78,8 +90,5 @@ class Nav extends React.Component {
     );
   }
 }
-
-Nav.propTypes = propTypes;
-Nav.defaultProps = defaultProps;
 
 export default Nav;

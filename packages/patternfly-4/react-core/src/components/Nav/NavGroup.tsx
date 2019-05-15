@@ -1,29 +1,27 @@
-import React from 'react';
+import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Nav/nav.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import { getUniqueId } from '../../helpers/util';
 
-const propTypes = {
+
+export interface NavGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Title shown for the group */
-  title: PropTypes.string.isRequired,
+  title: string;
   /** Anything that can be rendered inside of the group */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the container */
-  className: PropTypes.string,
+  className?: string;
   /** Identifier to use for the section aria label */
-  id: PropTypes.string,
-  /** Additional props are spread to the container <section> */
-  '': PropTypes.any
-};
+  id?: string;
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  id: ''
-};
+export class NavGroup extends React.Component<NavGroupProps> {
+  static defaultProps = {
+    className: '',
+    id: ''
+  };
 
-class NavGroup extends React.Component {
+  static componentType = 'NavGroup';
   id = this.props.id || getUniqueId();
 
   render() {
@@ -39,9 +37,5 @@ class NavGroup extends React.Component {
     );
   }
 }
-
-NavGroup.propTypes = propTypes;
-NavGroup.defaultProps = defaultProps;
-NavGroup.componentType = 'NavGroup';
 
 export default NavGroup;

@@ -9,7 +9,7 @@ class App extends React.Component {
     activeItem: null
   };
 
-  private onNavSelect = (selectedItem: { itemId: number }) => {
+  private onNavSelect = (selectedItem: { itemId: number | string }) => {
     this.setState({ activeItem: selectedItem.itemId });
   };
 

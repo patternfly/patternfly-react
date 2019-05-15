@@ -1,49 +1,52 @@
-import React from 'react';
+import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Nav/nav.css';
 import a11yStyles from '@patternfly/patternfly/utilities/Accessibility/accessibility.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
-import NavToggle from './NavToggle';
 import { AngleRightIcon } from '@patternfly/react-icons';
-import { NavContext } from './Nav';
+
 import { getUniqueId } from '../../helpers/util';
+import { NavContext } from './Nav';
 
-const propTypes = {
+export interface NavExpandableProps extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
   /** Title shown for the expandable list */
-  title: PropTypes.string.isRequired,
+  title: string;
   /** If defined, screen readers will read this text instead of the list title */
-  srText: PropTypes.string,
+  srText?: string;
   /** Boolean to programatically expand or collapse section */
-  isExpanded: PropTypes.bool,
+  isExpanded?: boolean;
   /** Anything that can be rendered inside of the expandable list */
-  children: PropTypes.node,
+  children?: React.ReactNode | string;
   /** Additional classes added to the container */
-  className: PropTypes.string,
+  className?: string;
   /** Group identifier, will be returned with the onToggle and onSelect callback passed to the Nav component */
-  groupId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  groupId?: string | number;
   /** If true makes the expandable list title active */
-  isActive: PropTypes.bool,
+  isActive?: boolean;
   /** Identifier to use for the section aria label */
-  id: PropTypes.string,
-  /** Additional props are spread to the container <li> */
-  '': PropTypes.any,
+  id?: string;
   /** allow consumer to optionally override this callback and manage expand state externally */
-  onExpand: PropTypes.func
-};
+  onExpand?(e: React.MouseEvent<HTMLLIElement, MouseEvent>, val: boolean): void;
+}
 
-const defaultProps = {
-  srText: '',
-  isExpanded: false,
-  children: null,
-  className: '',
-  groupId: null,
-  isActive: false,
-  id: '',
-  onExpand: undefined
-};
+interface NavExpandableState {
+  expandedState:boolean
+}
 
-class NavExpandable extends React.Component {
+export class NavExpandable extends React.Component<NavExpandableProps, NavExpandableState> {
+  static componentType:string = 'NavExpandable';
+
+  static defaultProps = {
+    srText: '',
+    isExpanded: false,
+    children: '',
+    className: '',
+    groupId: null as string,
+    isActive: false,
+    id: ''
+  };
+
   id = this.props.id || getUniqueId();
+
   state = {
     expandedState: false
   };
@@ -52,13 +55,13 @@ class NavExpandable extends React.Component {
     this.setState({ expandedState: this.props.isExpanded });
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: NavExpandableProps) {
     if (this.props.isExpanded !== prevProps.isExpanded) {
       this.setState({ expandedState: this.props.isExpanded });
     }
   }
 
-  onExpand = (e, val) => {
+  onExpand = (e: React.MouseEvent<HTMLLIElement, MouseEvent>, val: boolean) => {
     if (this.props.onExpand) {
       this.props.onExpand(e, val);
     } else {
@@ -66,58 +69,65 @@ class NavExpandable extends React.Component {
     }
   };
 
+  handleToggle = (
+    e: React.MouseEvent<HTMLLIElement, MouseEvent>,
+    onToggle: (event: React.MouseEvent<HTMLLIElement, MouseEvent>, groupId: string | number, expandedState: boolean) => void
+  ) => {
+    // Item events can bubble up, ignore those
+    if ((e.target as any).getAttribute('data-component') !== 'pf-nav-expandable') {
+      return;
+    }
+
+    const { groupId } = this.props;
+    const { expandedState } = this.state;
+    onToggle(e, groupId, !expandedState);
+    this.onExpand(e, !expandedState);
+  };
+
   render() {
-    const { id, title, srText, isExpanded, children, className, groupId, isActive, onExpand, ...props } = this.props;
+    const { id, title, srText, children, className, isActive, groupId, isExpanded, onExpand, ...props } = this.props;
     const { expandedState } = this.state;
 
     return (
       <NavContext.Consumer>
-        {context => (
-          <NavToggle groupId={groupId} onToggle={context.onToggle} onExpand={this.onExpand} isExpanded={expandedState}>
-            {({ toggleValue, toggle }) => (
-              <li
-                className={css(
-                  styles.navItem,
-                  toggleValue && styles.modifiers.expanded,
-                  isActive && styles.modifiers.current,
-                  className
-                )}
-                onClick={toggle}
-                {...props}
-              >
-                <a
-                  data-component="pf-nav-expandable"
-                  className={css(styles.navLink)}
-                  id={srText ? null : this.id}
-                  href="#"
-                  onClick={e => e.preventDefault()}
-                  onMouseDown={e => e.preventDefault()}
-                  aria-expanded={toggleValue}
-                >
-                  {title}
-                  <span className={css(styles.navToggle)}>
-                    <AngleRightIcon aria-hidden="true" />
-                  </span>
-                </a>
-                <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={toggleValue ? null : true}>
-                  {srText && (
-                    <h2 className={css(a11yStyles.screenReader)} id={this.id}>
-                      {srText}
-                    </h2>
-                  )}
-                  <ul className={css(styles.navSimpleList)}>{children}</ul>
-                </section>
-              </li>
+        {(context: any) => (
+          <li
+            className={css(
+              styles.navItem,
+              expandedState && styles.modifiers.expanded,
+              isActive && styles.modifiers.current,
+              className
             )}
-          </NavToggle>
+            onClick={(e: React.MouseEvent<HTMLLIElement, MouseEvent>) => this.handleToggle(e, context.onToggle)}
+            {...props}
+          >
+            <a
+              data-component="pf-nav-expandable"
+              className={css(styles.navLink)}
+              id={srText ? null : this.id}
+              href="#"
+              onClick={e => e.preventDefault()}
+              onMouseDown={e => e.preventDefault()}
+              aria-expanded={expandedState}
+            >
+              {title}
+              <span className={css(styles.navToggle)}>
+                <AngleRightIcon aria-hidden="true" />
+              </span>
+            </a>
+            <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={expandedState ? null : true}>
+              {srText && (
+                <h2 className={css(a11yStyles.screenReader)} id={this.id}>
+                  {srText}
+                </h2>
+              )}
+              <ul className={css(styles.navSimpleList)}>{children}</ul>
+            </section>
+          </li>
         )}
       </NavContext.Consumer>
     );
   }
 }
-
-NavExpandable.propTypes = propTypes;
-NavExpandable.defaultProps = defaultProps;
-NavExpandable.componentType = 'NavExpandable';
 
 export default NavExpandable;

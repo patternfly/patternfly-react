@@ -1,43 +1,46 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import { NavVariants } from './NavVariants';
 import styles from '@patternfly/patternfly/components/Nav/nav.css';
 import { css } from '@patternfly/react-styles';
 
-const propTypes = {
-  /** Indicates the list type. */
-  variant: PropTypes.oneOf(Object.values(NavVariants)),
+import {OneOf} from '../../helpers/typeUtils';
+
+export interface NavListProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement> {
   /** Children nodes */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the list */
-  className: PropTypes.string,
-  /** Additional props are spread to the container <ul> */
-  '': PropTypes.any
-};
+  className?: string;
+  /** Indicates the list type. */
+  variant?: OneOf<typeof NavVariants, keyof typeof NavVariants>;
+}
 
-const defaultProps = {
-  variant: 'default',
-  children: null,
-  className: ''
-};
 
-const NavList = ({ variant, children, className, ...props }) => {
-  const variantStyle = {
-    [NavVariants.default]: styles.navList,
-    [NavVariants.simple]: styles.navSimpleList,
-    [NavVariants.horizontal]: styles.navHorizontalList,
-    [NavVariants.tertiary]: styles.navTertiaryList
+export class NavList extends React.Component<NavListProps> {
+
+  static defaultProps = {
+    variant: 'default',
+    children: null as React.ReactNode,
+    className: ''
   };
 
-  return (
-    <ul className={css(variantStyle[variant], className)} {...props}>
-      {children}
-    </ul>
-  );
-};
+  static componentType = 'NavList';
 
-NavList.propTypes = propTypes;
-NavList.defaultProps = defaultProps;
-NavList.componentType = 'NavList';
+  render() {
+    const {variant, children, className, ...props} = this.props;
+
+    const variantStyle = {
+      [NavVariants.default]: styles.navList,
+      [NavVariants.simple]: styles.navSimpleList,
+      [NavVariants.horizontal]: styles.navHorizontalList,
+      [NavVariants.tertiary]: styles.navTertiaryList
+    };
+
+    return (
+      <ul className={css(variantStyle[variant], className)} {...props}>
+        {children}
+      </ul>
+    );
+  }
+}
 
 export default NavList;

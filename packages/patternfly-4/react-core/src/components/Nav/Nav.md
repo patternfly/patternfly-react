@@ -1,6 +1,7 @@
 ---
 title: 'Nav'
 cssPrefix: 'pf-c-nav'
+typescript: true
 ---
 
 ## Simple nav
