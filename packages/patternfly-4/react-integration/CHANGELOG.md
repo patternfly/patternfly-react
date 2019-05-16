@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.2.0 (2019-05-16)
+
+
+### Features
+
+* **table:** add umd to react-table ([#1966](https://github.com/patternfly/patternfly-react/issues/1966)) ([a48836b](https://github.com/patternfly/patternfly-react/commit/a48836b))
+* **Text:** Convert Text to TypeScript ([#1907](https://github.com/patternfly/patternfly-react/issues/1907)) ([ad8e1f5](https://github.com/patternfly/patternfly-react/commit/ad8e1f5)), closes [#1897](https://github.com/patternfly/patternfly-react/issues/1897)
+
+
+
+
+
 ## [1.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.1.0...@patternfly/react-integration@1.1.1) (2019-05-10)
 
 

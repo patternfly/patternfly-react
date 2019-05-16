@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.20.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.19.0...@patternfly/react-core@3.20.0) (2019-05-16)
+
+
+### Features
+
+* **Text:** Convert Text to TypeScript ([#1907](https://github.com/patternfly/patternfly-react/issues/1907)) ([ad8e1f5](https://github.com/patternfly/patternfly-react/commit/ad8e1f5)), closes [#1897](https://github.com/patternfly/patternfly-react/issues/1897)
+
+
+
+
+
 # [3.19.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.18.2...@patternfly/react-core@3.19.0) (2019-05-13)
 
 
