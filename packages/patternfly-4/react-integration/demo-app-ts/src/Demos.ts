@@ -41,6 +41,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.PopoverDemo
   },
   {
+    id: 'radio-demo',
+    name: 'Radio Demo',
+    componentType: Examples.RadioDemo
+  },
+  {
     id: 'tab-demo',
     name: 'Tab Demo',
     componentType: Examples.TabDemo
