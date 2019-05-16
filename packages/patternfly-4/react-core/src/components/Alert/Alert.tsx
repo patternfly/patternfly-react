@@ -6,11 +6,11 @@ import { AlertIcon } from './AlertIcon';
 import { capitalize } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
 
-export const AlertVariant = {
-  success: 'success',
-  danger: 'danger',
-  warning: 'warning',
-  info: 'info'
+export enum AlertVariant {
+  success = 'success',
+  danger = 'danger',
+  warning = 'warning',
+  info = 'info'
 }
 
 export interface AlertProps

@@ -2,7 +2,6 @@ import React from 'react';
 import { ExclamationCircleIcon } from '@patternfly-safe/react-icons';
 
 const renderType = prop => {
-  console.log('render', prop);
   if (prop.type) {
     // JS prop
     return prop.type.name;  
