@@ -19,21 +19,21 @@ export interface AlertProps
   variant: 'success' | 'danger' | 'warning' | 'info';
   /** Title of the Alert  */
   title: React.ReactNode;
-  /** Action button to put in the Alert.  Should be <AlertActionLink> or <AlertActionCloseButton>  */
+  /** Action button to put in the Alert. Should be <AlertActionLink> or <AlertActionCloseButton> */
   action?: React.ReactNode;
-  /** Content rendered inside the Alert  */
+  /** Content rendered inside the Alert */
   children?: React.ReactNode;
   /** Additional classes added to the Alert  */
   className?: string;
   /** Adds accessible text to the Alert */
   'aria-label'?: string,
-  /** Variant label text for screen readers  */
+  /** Variant label text for screen readers */
   variantLabel?: string;
 };
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
   variant,
-  variantLabel = capitalize(variant),
+  variantLabel,
   'aria-label': ariaLabel = `${capitalize(variant)} Alert`,
   action = null,
   title,
@@ -43,7 +43,9 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
 }: AlertProps) => {
   const readerTitle = (
     <React.Fragment>
-      <span className={css(accessibleStyles.screenReader)}>{`${variantLabel} alert:`}</span>
+      <span className={css(accessibleStyles.screenReader)}>
+        {variantLabel || `${capitalize(variant)} alert:`}
+      </span>
       {title}
     </React.Fragment>
   );
