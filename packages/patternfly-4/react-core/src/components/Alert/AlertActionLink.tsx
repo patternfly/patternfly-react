@@ -13,7 +13,7 @@ export const AlertActionLink: React.FunctionComponent<AlertActionLinkProps> = ({
   children = '',
   ...props
 }: AlertActionLinkProps) => (
-  <Button variant={ButtonVariant.link} {...props}>
+  <Button variant={ButtonVariant.link} className={className} {...props}>
     {children}
   </Button>
 );
