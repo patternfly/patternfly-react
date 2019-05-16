@@ -13,7 +13,6 @@ import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/reac
 class InfoAlert extends React.Component {
   constructor(props) {
     super(props);
-    super(props)
     this.state = { alertOneVisible: true, alertTwoVisible: true };
     this.hideAlertOne = () => this.setState({ alertOneVisible: false });
     this.hideAlertTwo = () => this.setState({ alertTwoVisible: false });
@@ -55,7 +54,6 @@ import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/reac
 class SuccessAlert extends React.Component {
   constructor(props) {
     super(props);
-    super(props)
     this.state = { alertOneVisible: true, alertTwoVisible: true };
     this.hideAlertOne = () => this.setState({ alertOneVisible: false });
     this.hideAlertTwo = () => this.setState({ alertTwoVisible: false });
@@ -100,7 +98,6 @@ import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/reac
 class WarningAlert extends React.Component {
   constructor(props) {
     super(props);
-    super(props)
     this.state = { alertOneVisible: true, alertTwoVisible: true };
     this.hideAlertOne = () => this.setState({ alertOneVisible: false });
     this.hideAlertTwo = () => this.setState({ alertTwoVisible: false });
@@ -145,7 +142,6 @@ import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/reac
 class DangerAlert extends React.Component {
   constructor(props) {
     super(props);
-    super(props)
     this.state = { alertOneVisible: true, alertTwoVisible: true };
     this.hideAlertOne = () => this.setState({ alertOneVisible: false });
     this.hideAlertTwo = () => this.setState({ alertTwoVisible: false });
