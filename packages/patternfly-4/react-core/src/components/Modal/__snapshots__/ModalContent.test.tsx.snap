@@ -16,37 +16,30 @@ exports[`Modal Content Test isOpen 1`] = `
     paused={false}
     tag="div"
   >
-    <ModalBox
+    <Component
       className=""
       id="id"
       isLarge={false}
       isSmall={false}
-      style={
-        Object {
-          "width": null,
-        }
-      }
+      style={Object {}}
       title="Test Modal Content title"
     >
-      <ModalBoxCloseButton
-        className=""
+      <Component
         onClose={[Function]}
       />
-      <ModalBoxHeader
-        className=""
+      <Component
         hideTitle={false}
       >
          
         Test Modal Content title
          
-      </ModalBoxHeader>
-      <ModalBoxBody
-        className=""
+      </Component>
+      <Component
         id="id"
       >
         This is a ModalBox header
-      </ModalBoxBody>
-    </ModalBox>
+      </Component>
+    </Component>
   </FocusTrap>
 </Backdrop>
 `;
@@ -67,37 +60,30 @@ exports[`Modal Content Test only body 1`] = `
     paused={false}
     tag="div"
   >
-    <ModalBox
+    <Component
       className=""
       id="id"
       isLarge={false}
       isSmall={false}
-      style={
-        Object {
-          "width": null,
-        }
-      }
+      style={Object {}}
       title="Test Modal Content title"
     >
-      <ModalBoxCloseButton
-        className=""
+      <Component
         onClose={[Function]}
       />
-      <ModalBoxHeader
-        className=""
+      <Component
         hideTitle={false}
       >
          
         Test Modal Content title
          
-      </ModalBoxHeader>
-      <ModalBoxBody
-        className=""
+      </Component>
+      <Component
         id="id"
       >
         This is a ModalBox header
-      </ModalBoxBody>
-    </ModalBox>
+      </Component>
+    </Component>
   </FocusTrap>
 </Backdrop>
 `;
@@ -118,155 +104,35 @@ exports[`Modal Content Test with footer 1`] = `
     paused={false}
     tag="div"
   >
-    <ModalBox
+    <Component
       className=""
       id="id"
       isLarge={false}
       isSmall={false}
-      style={
-        Object {
-          "width": null,
-        }
-      }
+      style={Object {}}
       title="Test Modal Content title"
     >
-      <ModalBoxCloseButton
-        className=""
+      <Component
         onClose={[Function]}
       />
-      <ModalBoxHeader
-        className=""
+      <Component
         hideTitle={false}
       >
          
         Test Modal Content title
          
-      </ModalBoxHeader>
-      <ModalBoxBody
-        className=""
+      </Component>
+      <Component
         id="id"
       >
         This is a ModalBox header
-      </ModalBoxBody>
-      <ModalBoxFooter
-        className=""
-      >
+      </Component>
+      <Component>
          
         Testing
          
-      </ModalBoxFooter>
-    </ModalBox>
-  </FocusTrap>
-</Backdrop>
-`;
-
-exports[`Modal Content Test with header 1`] = `
-<Backdrop
-  className=""
->
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    className="pf-l-bullseye"
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": true,
-      }
-    }
-    paused={false}
-    tag="div"
-  >
-    <ModalBox
-      className=""
-      id="id"
-      isLarge={false}
-      isSmall={false}
-      style={
-        Object {
-          "width": null,
-        }
-      }
-      title="Test Modal Content title"
-    >
-      <ModalBoxCloseButton
-        className=""
-        onClose={[Function]}
-      />
-      <ModalBoxHeader
-        className=""
-        hideTitle={false}
-      >
-         
-        Test Modal Content title
-         
-      </ModalBoxHeader>
-      <ModalBoxBody
-        className=""
-        header="Testing"
-        id="id"
-      >
-        This is a ModalBox header
-      </ModalBoxBody>
-    </ModalBox>
-  </FocusTrap>
-</Backdrop>
-`;
-
-exports[`Modal Content Test with header and footer 1`] = `
-<Backdrop
-  className=""
->
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    className="pf-l-bullseye"
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": true,
-      }
-    }
-    paused={false}
-    tag="div"
-  >
-    <ModalBox
-      className=""
-      id="id"
-      isLarge={false}
-      isSmall={false}
-      style={
-        Object {
-          "width": null,
-        }
-      }
-      title="Test Modal Content title"
-    >
-      <ModalBoxCloseButton
-        className=""
-        onClose={[Function]}
-      />
-      <ModalBoxHeader
-        className=""
-        hideTitle={false}
-      >
-         
-        Test Modal Content title
-         
-      </ModalBoxHeader>
-      <ModalBoxBody
-        className=""
-        header="Testing header"
-        id="id"
-      >
-        This is a ModalBox header
-      </ModalBoxBody>
-      <ModalBoxFooter
-        className=""
-      >
-         
-        Testing footer
-         
-      </ModalBoxFooter>
-    </ModalBox>
+      </Component>
+    </Component>
   </FocusTrap>
 </Backdrop>
 `;
@@ -287,46 +153,35 @@ exports[`Modal Content Test with onclose 1`] = `
     paused={false}
     tag="div"
   >
-    <ModalBox
+    <Component
       className=""
       id="id"
       isLarge={true}
       isSmall={false}
-      style={
-        Object {
-          "width": null,
-        }
-      }
+      style={Object {}}
       title="Test Modal Content title"
     >
-      <ModalBoxCloseButton
-        className=""
+      <Component
         onClose={[Function]}
       />
-      <ModalBoxHeader
-        className=""
+      <Component
         hideTitle={false}
       >
          
         Test Modal Content title
          
-      </ModalBoxHeader>
-      <ModalBoxBody
-        className=""
-        header="Testing header"
+      </Component>
+      <Component
         id="id"
-        onclose={[Function]}
       >
         This is a ModalBox header
-      </ModalBoxBody>
-      <ModalBoxFooter
-        className=""
-      >
+      </Component>
+      <Component>
          
         Testing footer
          
-      </ModalBoxFooter>
-    </ModalBox>
+      </Component>
+    </Component>
   </FocusTrap>
 </Backdrop>
 `;
@@ -347,37 +202,30 @@ exports[`Modal Content test without footer 1`] = `
     paused={false}
     tag="div"
   >
-    <ModalBox
+    <Component
       className=""
       id="id"
       isLarge={false}
       isSmall={false}
-      style={
-        Object {
-          "width": null,
-        }
-      }
+      style={Object {}}
       title="Test Modal Content title"
     >
-      <ModalBoxCloseButton
-        className=""
+      <Component
         onClose={[Function]}
       />
-      <ModalBoxHeader
-        className=""
+      <Component
         hideTitle={false}
       >
          
         Test Modal Content title
          
-      </ModalBoxHeader>
-      <ModalBoxBody
-        className=""
+      </Component>
+      <Component
         id="id"
       >
         This is a ModalBox header
-      </ModalBoxBody>
-    </ModalBox>
+      </Component>
+    </Component>
   </FocusTrap>
 </Backdrop>
 `;

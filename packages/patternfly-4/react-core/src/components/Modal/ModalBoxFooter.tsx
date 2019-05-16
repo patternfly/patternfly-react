@@ -1,29 +1,22 @@
-import React from 'react';
+import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/ModalBox/modal-box.css';
-// const styles = {};
-const propTypes = {
+
+export interface ModalBoxFooterProps {
   /** content rendered inside the Footer */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** additional classes added to the Footer */
-  className: PropTypes.string,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any
-};
+  className?: string;
+}
 
-const defaultProps = {
-  children: null,
-  className: ''
-};
-
-const ModalBoxFooter = ({ children, className, ...props }) => (
+export const ModalBoxFooter: React.FunctionComponent<ModalBoxFooterProps> = ({
+  children = null,
+  className = '',
+  ...props
+}) => (
   <div {...props} className={css(styles.modalBoxFooter, className)}>
     {children}
   </div>
 );
-
-ModalBoxFooter.propTypes = propTypes;
-ModalBoxFooter.defaultProps = defaultProps;
 
 export default ModalBoxFooter;

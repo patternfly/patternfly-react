@@ -21,19 +21,24 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AvatarDemo
   },
   {
-    id: 'brand-demo', 
-    name: 'Brand Demo', 
+    id: 'brand-demo',
+    name: 'Brand Demo',
     componentType: Examples.BrandDemo
   },
   {
-    id: 'label-demo', 
-    name: 'Label Demo', 
+    id: 'label-demo',
+    name: 'Label Demo',
     componentType: Examples.LabelDemo
   },
   {
     id: 'login-page-demo',
     name: 'Login Page Demo',
     componentType: Examples.LoginPageDemo
+  },
+  {
+    id: 'modal-demo',
+    name: 'Modal Demo',
+    componentType: Examples.ModalDemo
   },
   {
     id: 'nav-demo',

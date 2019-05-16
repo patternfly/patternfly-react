@@ -1,32 +1,31 @@
-import React from 'react';
+import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/ModalBox/modal-box.css';
 
-const propTypes = {
+export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the ModalBox. */
-  children: PropTypes.node.isRequired,
+  children: React.ReactNode;
   /** additional classes added to the ModalBox */
-  className: PropTypes.string,
+  className?: string;
   /** Creates a large version of the ModalBox */
-  isLarge: PropTypes.bool,
+  isLarge?: boolean;
   /** Creates a small version of the ModalBox. */
-  isSmall: PropTypes.bool,
-  /** string to use for Modal Box label */
-  title: PropTypes.string.isRequired,
+  isSmall?: boolean;
+  /** string to use for Modal Box aria-label */
+  title: string;
   /** id to use for Modal Box description */
-  id: PropTypes.string.isRequired,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any
-};
+  id: string;
+}
 
-const defaultProps = {
-  className: '',
-  isLarge: false,
-  isSmall: false
-};
-
-const ModalBox = ({ children, className, isLarge, isSmall, title, id, ...props }) => (
+export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
+  children,
+  className = '',
+  isLarge = false,
+  isSmall = false,
+  title,
+  id,
+  ...props
+}) => (
   <div
     {...props}
     role="dialog"
@@ -38,7 +37,5 @@ const ModalBox = ({ children, className, isLarge, isSmall, title, id, ...props }
     {children}
   </div>
 );
-ModalBox.propTypes = propTypes;
-ModalBox.defaultProps = defaultProps;
 
 export default ModalBox;

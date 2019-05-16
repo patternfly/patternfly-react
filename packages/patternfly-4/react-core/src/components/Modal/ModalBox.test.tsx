@@ -1,10 +1,10 @@
 import ModalBox from './ModalBox';
-import React from 'react';
+import * as React from 'react';
 import { shallow } from 'enzyme';
 
 test('ModalBox Test', () => {
   const view = shallow(
-    <ModalBox titleId="titleId" ariaDescribedById="bodyId">
+    <ModalBox title="Test Modal Box" id="boxId">
       This is a ModalBox
     </ModalBox>
   );
@@ -13,16 +13,16 @@ test('ModalBox Test', () => {
 
 test('ModalBox Test isLarge', () => {
   const view = shallow(
-    <ModalBox titleId="titleId" ariaDescribedById="bodyId" isLarge>
+    <ModalBox title="Test Modal Box"  id="boxId" isLarge>
       This is a ModalBox
     </ModalBox>
   );
   expect(view).toMatchSnapshot();
 });
 
-test('ModalBox Test isOpen', () => {
+test('ModalBox Test isSmall', () => {
   const view = shallow(
-    <ModalBox titleId="titleId" ariaDescribedById="bodyId" isLarge isOpen>
+    <ModalBox title="Test Modal Box"  id="boxId" isSmall>
       This is a ModalBox
     </ModalBox>
   );

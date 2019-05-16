@@ -1,76 +1,80 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import ModalContent from './ModalContent';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import { canUseDOM } from 'exenv';
-import { KEY_CODES } from '../../helpers/constants';
+
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
 
-const propTypes = {
+import { KEY_CODES } from '../../helpers/constants';
+import ModalContent from './ModalContent';
+
+export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the Modal. */
-  children: PropTypes.node.isRequired,
+  children: React.ReactNode;
   /** additional classes added to the Modal */
-  className: PropTypes.string,
+  className?: string;
   /** Flag to show the modal */
-  isOpen: PropTypes.bool,
+  isOpen?: boolean;
   /** Content of the Modal Header */
-  title: PropTypes.string.isRequired,
-  /** Flag to show the title */
-  hideTitle: PropTypes.bool,
+  title: string;
+  /** Flag to hide the title */
+  hideTitle?: boolean;
   /** id to use for Modal Box description */
-  ariaDescribedById: PropTypes.string,
+  ariaDescribedById?: string;
   /** Action buttons to put in the Modal Footer */
-  actions: PropTypes.any,
+  actions?: any,
   /** A callback for when the close button is clicked */
-  onClose: PropTypes.func,
+  onClose?: () => void;
   /** Default width of the Modal. */
-  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  width?: number | string;
   /** Creates a large version of the Modal */
-  isLarge: PropTypes.bool,
+  isLarge?: boolean;
   /** Creates a small version of the Modal */
-  isSmall: PropTypes.bool,
-  /** Additional props are passed and spread in the Modal body container <div> */
-  '': PropTypes.any
-};
+  isSmall?: boolean;
+}
 
-const defaultProps = {
-  width: null,
-  className: '',
-  isOpen: false,
-  hideTitle: false,
-  ariaDescribedById: '',
-  actions: [],
-  onClose: () => undefined,
-  isLarge: false,
-  isSmall: false
-};
+export class Modal extends React.Component<ModalProps> {
+  static currentId = 0;
+  id = '';
+  container?: HTMLDivElement = undefined;
 
-let currentId = 0;
+  static defaultProps = {
+    width: undefined as any,
+    className: '',
+    isOpen: false,
+    hideTitle: false,
+    ariaDescribedById: '',
+    actions: [] as any[],
+    isLarge: false,
+    isSmall: false
+  };
 
-class Modal extends React.Component {
-  static propTypes = propTypes;
-  static defaultProps = defaultProps;
+  constructor(props: ModalProps) {
+    super(props);
+    const newId = Modal.currentId++;
+    this.id = `pf-modal-${newId}`;
+  }
 
-  id = `pf-modal-${currentId++}`;
 
-  handleEscKeyClick = event => {
+  handleEscKeyClick = (event: KeyboardEvent): void => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
-      this.props.onClose();
+      this.props.onClose!();
     }
   };
 
-  toggleSiblingsFromScreenReaders = hide => {
+  toggleSiblingsFromScreenReaders = (hide: boolean) => {
     const bodyChildren = document.body.children;
-    for (const child of bodyChildren) {
+    for (const child of Array.from(bodyChildren)) {
       if (child !== this.container) {
-        hide ? child.setAttribute('aria-hidden', hide) : child.removeAttribute('aria-hidden');
+        hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
       }
     }
   };
 
   componentDidMount() {
-    document.body.appendChild(this.container);
+    if (this.container) {
+      document.body.appendChild(this.container);
+    }
     document.addEventListener('keydown', this.handleEscKeyClick, false);
     if (this.props.isOpen) {
       document.body.classList.add(css(styles.backdropOpen));
@@ -90,7 +94,9 @@ class Modal extends React.Component {
   }
 
   componentWillUnmount() {
-    document.body.removeChild(this.container);
+    if (this.container) {
+      document.body.removeChild(this.container);
+    }
     document.removeEventListener('keydown', this.handleEscKeyClick, false);
     document.body.classList.remove(css(styles.backdropOpen));
   }

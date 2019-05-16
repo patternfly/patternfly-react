@@ -1,36 +1,36 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Title } from '../Title';
+import * as React from 'react';
 import accessibleStyles from '@patternfly/patternfly/utilities/Accessibility/accessibility.css';
 import { css } from '@patternfly/react-styles';
 
-const propTypes = {
+import { Title, TitleLevel } from '../Title';
+
+export interface ModalBoxHeaderProps {
   /** content rendered inside the Header */
-  children: PropTypes.node,
+  children?:React.ReactNode;
   /** additional classes added to the button */
-  className: PropTypes.string,
-  /** Flag to show the title */
-  hideTitle: PropTypes.bool.isRequired,
-  /** Additional props are spread to the container <header> */
-  '': PropTypes.any
-};
+  className?: string;
+  /** Flag to hide the title */
+  hideTitle?: boolean;
+  /** the heading level to use */
+  headingLevel?: TitleLevel;
+}
 
-const defaultProps = {
-  children: null,
-  className: ''
-};
-
-const ModalBoxHeader = ({ hideTitle, children, className, ...props }) => {
+export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
+  children = null,
+  className = '',
+  hideTitle = false,
+  headingLevel = TitleLevel.h1,
+  ...props
+}) => {
   const hidden = hideTitle ? css(accessibleStyles.screenReader) : '';
 
-  return <React.Fragment>
-    <Title size="2xl" headingLevel="h3" className={className + hidden} {...props}>
-      {children}
-    </Title>
-  </React.Fragment>;
+  return (
+    <React.Fragment>
+      <Title size="2xl" headingLevel={headingLevel} className={className + hidden} {...props}>
+        {children}
+      </Title>
+    </React.Fragment>
+  );
 };
-
-ModalBoxHeader.propTypes = propTypes;
-ModalBoxHeader.defaultProps = defaultProps;
 
 export default ModalBoxHeader;
