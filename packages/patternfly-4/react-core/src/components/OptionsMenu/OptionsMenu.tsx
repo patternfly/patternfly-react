@@ -2,15 +2,15 @@ import * as React from 'react';
 import styles from '@patternfly/patternfly/components/OptionsMenu/options-menu.css';
 import { css, getModifier } from '@patternfly/react-styles';
 
-export const OptionsMenuPosition = {
-  right: 'right',
-  left: 'left'
-};
+export enum OptionsMenuPosition {
+  right = 'right',
+  left = 'left'
+}
 
-export const OptionsMenuDirection = {
-  up: 'up',
-  down: 'down'
-};
+export enum OptionsMenuDirection {
+  up = 'up',
+  down = 'down'
+}
 
 export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement>{
   /** Classes applied to root element of the Options menu */
@@ -28,9 +28,9 @@ export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement>{
   /** Provides an accessible name for the Options menu */
   ariaLabelMenu?: string;
   /** Indicates where menu will be aligned horizontally */
-  position?: 'right' | 'left';
+  position?:  'right' | 'left';
   /** Menu will open up or open down from the Options menu toggle */
-  direction?: 'up' | 'down';
+  direction?:  'up' | 'down';
 }
 
 export class OptionsMenu extends React.Component<OptionsMenuProps> {

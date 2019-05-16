@@ -79,8 +79,8 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
         onToggle={this.modifiedOnToggle} />,
       isOpen: this.state.modifiedIsOpen,
       isPlain: true,
-      direction: "up",
-      position: "right",
+      direction: OptionsMenuDirection.up,
+      position: OptionsMenuPosition.right,
     };
 
     return (
