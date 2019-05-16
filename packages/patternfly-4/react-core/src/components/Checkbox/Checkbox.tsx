@@ -56,6 +56,13 @@ export class Checkbox extends React.Component<CheckboxProps> {
       checked,
       ...props
     } = this.props;
+    let value = undefined
+    if (isChecked === false || checked === false) {
+      value = false
+    }
+    if (isChecked === true || checked === true) {
+      value = true
+    }
     return (
       <div className={css(styles.check, className)}>
         <input
@@ -66,7 +73,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
           aria-invalid={!isValid}
           aria-label={ariaLabel}
           disabled={isDisabled}
-          checked={isChecked || checked}
+          checked={value}
         />
         {label && (
           <label
