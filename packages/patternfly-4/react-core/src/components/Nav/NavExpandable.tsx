@@ -25,7 +25,7 @@ export interface NavExpandableProps extends React.DetailedHTMLProps<React.LiHTML
   /** Identifier to use for the section aria label */
   id?: string;
   /** allow consumer to optionally override this callback and manage expand state externally */
-  onExpand?(e: React.MouseEvent<HTMLLIElement, MouseEvent>, val: boolean): void;
+  onExpand?: (e: React.MouseEvent<HTMLLIElement, MouseEvent>, val: boolean) => void;
 }
 
 interface NavExpandableState {
@@ -33,8 +33,6 @@ interface NavExpandableState {
 }
 
 export class NavExpandable extends React.Component<NavExpandableProps, NavExpandableState> {
-  static componentType:string = 'NavExpandable';
-
   static defaultProps = {
     srText: '',
     isExpanded: false,
@@ -129,5 +127,3 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
     );
   }
 }
-
-export default NavExpandable;

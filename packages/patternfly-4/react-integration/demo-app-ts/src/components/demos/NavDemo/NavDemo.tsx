@@ -1,5 +1,16 @@
-import { Nav, NavExpandable, NavList, NavItem, NavVariants, NavItemSeparator, Stack, StackItem, Title } from '@patternfly/react-core';
 import React, { Component } from 'react';
+
+import {
+  Nav,
+  NavExpandable,
+  NavList,
+  NavItem,
+  NavVariants,
+  NavItemSeparator,
+  Stack,
+  StackItem,
+  Title
+} from '@patternfly/react-core';
 
 export class NavDemo extends Component {
   state = {
@@ -48,7 +59,12 @@ export class NavDemo extends Component {
     this.setState({defaultActiveItem: result.itemId});
   };
 
-  handleNoNavigateLink = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, itemId: number | string, groupId: number | string):void => {
+  handleNoNavigateLink = (
+    e: React.FormEvent<HTMLInputElement>,
+    itemId: number | string,
+    groupId: number | string,
+    to: string
+  ):void =>  {
     console.log(`No Navigate Link clicked: ${itemId}`);
   };
 
@@ -79,7 +95,12 @@ export class NavDemo extends Component {
                 to="#default-no-navigate-link"
                 itemId={4}
                 isActive={defaultActiveItem === 4}
-                onClick={this.handleNoNavigateLink as (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>)=> void}
+                onClick={this.handleNoNavigateLink as (
+                  e: React.FormEvent<HTMLInputElement>,
+                  itemId: number | string,
+                  groupId: number | string,
+                  to: string
+                ) => void}
               >
                 No Navigate Link
               </NavItem>
@@ -97,7 +118,11 @@ export class NavDemo extends Component {
     });
   };
 
-  handleItemOnclick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, itemId: number | string, groupId: number | string):void => {
+  handleItemOnclick = (
+    e: React.FormEvent<HTMLInputElement>,
+    itemId: number | string,
+    groupId: number | string
+  ):void => {
     this.setState({
       expandableClickedGroup: groupId,
       expandableClickedItem: itemId,

@@ -1,6 +1,6 @@
-export const NavVariants = {
-  default: 'default',
-  simple: 'simple',
-  horizontal: 'horizontal',
-  tertiary: 'tertiary'
-};
+export enum NavVariants {
+  default = 'default',
+  simple = 'simple',
+  horizontal = 'horizontal',
+  tertiary = 'tertiary'
+}

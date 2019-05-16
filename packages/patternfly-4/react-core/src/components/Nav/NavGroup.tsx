@@ -15,27 +15,17 @@ export interface NavGroupProps extends React.HTMLProps<HTMLDivElement> {
   id?: string;
 }
 
-export class NavGroup extends React.Component<NavGroupProps> {
-  static defaultProps = {
-    className: '',
-    id: ''
-  };
-
-  static componentType = 'NavGroup';
-  id = this.props.id || getUniqueId();
-
-  render() {
-    const { id, title, children, className, ...props } = this.props;
-
-    return (
-      <section className={css(styles.navSection, className)} aria-labelledby={this.id} {...props}>
-        <h2 className={css(styles.navSectionTitle)} id={this.id}>
-          {title}
-        </h2>
-        <ul className={css(styles.navSimpleList)}>{children}</ul>
-      </section>
-    );
-  }
-}
-
-export default NavGroup;
+export const NavGroup: React.FunctionComponent<NavGroupProps> = ({
+  title,
+  children = null,
+  className = '',
+  id = getUniqueId(),
+  ...props
+}: NavGroupProps) => (
+  <section className={css(styles.navSection, className)} aria-labelledby={id} {...props}>
+    <h2 className={css(styles.navSectionTitle)} id={id}>
+      {title}
+    </h2>
+    <ul className={css(styles.navSimpleList)}>{children}</ul>
+  </section>
+);

@@ -12,21 +12,12 @@ exports[`Default Nav List - Trigger item active update 1`] = `
     className="pf-c-nav"
     onToggle={[Function]}
   >
-    <NavList
-      className=""
-      variant="default"
-    >
+    <Component>
       <ul
         className="pf-c-nav__list"
       >
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        <Component
           key="#link1"
-          onClick={null}
-          preventDefault={false}
           to="#link1"
         >
           <li
@@ -41,15 +32,9 @@ exports[`Default Nav List - Trigger item active update 1`] = `
               Link 1
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link2"
-          onClick={null}
-          preventDefault={false}
           to="#link2"
         >
           <li
@@ -64,15 +49,9 @@ exports[`Default Nav List - Trigger item active update 1`] = `
               Link 2
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link3"
-          onClick={null}
-          preventDefault={false}
           to="#link3"
         >
           <li
@@ -87,15 +66,9 @@ exports[`Default Nav List - Trigger item active update 1`] = `
               Link 3
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link4"
-          onClick={null}
-          preventDefault={false}
           to="#link4"
         >
           <li
@@ -110,9 +83,9 @@ exports[`Default Nav List - Trigger item active update 1`] = `
               Link 4
             </a>
           </li>
-        </NavItem>
+        </Component>
       </ul>
-    </NavList>
+    </Component>
   </nav>
 </Nav>
 `;
@@ -129,21 +102,12 @@ exports[`Default Nav List 1`] = `
     className="pf-c-nav"
     onToggle={[Function]}
   >
-    <NavList
-      className=""
-      variant="default"
-    >
+    <Component>
       <ul
         className="pf-c-nav__list"
       >
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        <Component
           key="#link1"
-          onClick={null}
-          preventDefault={false}
           to="#link1"
         >
           <li
@@ -158,15 +122,9 @@ exports[`Default Nav List 1`] = `
               Link 1
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link2"
-          onClick={null}
-          preventDefault={false}
           to="#link2"
         >
           <li
@@ -181,15 +139,9 @@ exports[`Default Nav List 1`] = `
               Link 2
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link3"
-          onClick={null}
-          preventDefault={false}
           to="#link3"
         >
           <li
@@ -204,15 +156,9 @@ exports[`Default Nav List 1`] = `
               Link 3
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link4"
-          onClick={null}
-          preventDefault={false}
           to="#link4"
         >
           <li
@@ -227,9 +173,9 @@ exports[`Default Nav List 1`] = `
               Link 4
             </a>
           </li>
-        </NavItem>
+        </Component>
       </ul>
-    </NavList>
+    </Component>
   </nav>
 </Nav>
 `;
@@ -246,10 +192,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
     className="pf-c-nav"
     onToggle={[Function]}
   >
-    <NavList
-      className=""
-      variant="default"
-    >
+    <Component>
       <ul
         className="pf-c-nav__list"
       >
@@ -315,14 +258,8 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
               <ul
                 className="pf-c-nav__simple-list"
               >
-                <NavItem
-                  className=""
-                  groupId={null}
-                  isActive={false}
-                  itemId={null}
+                <Component
                   key="#link1"
-                  onClick={null}
-                  preventDefault={false}
                   to="#link1"
                 >
                   <li
@@ -337,15 +274,9 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                       Link 1
                     </a>
                   </li>
-                </NavItem>
-                <NavItem
-                  className=""
-                  groupId={null}
-                  isActive={false}
-                  itemId={null}
+                </Component>
+                <Component
                   key="#link2"
-                  onClick={null}
-                  preventDefault={false}
                   to="#link2"
                 >
                   <li
@@ -360,15 +291,9 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                       Link 2
                     </a>
                   </li>
-                </NavItem>
-                <NavItem
-                  className=""
-                  groupId={null}
-                  isActive={false}
-                  itemId={null}
+                </Component>
+                <Component
                   key="#link3"
-                  onClick={null}
-                  preventDefault={false}
                   to="#link3"
                 >
                   <li
@@ -383,15 +308,9 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                       Link 3
                     </a>
                   </li>
-                </NavItem>
-                <NavItem
-                  className=""
-                  groupId={null}
-                  isActive={false}
-                  itemId={null}
+                </Component>
+                <Component
                   key="#link4"
-                  onClick={null}
-                  preventDefault={false}
                   to="#link4"
                 >
                   <li
@@ -406,13 +325,13 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                       Link 4
                     </a>
                   </li>
-                </NavItem>
+                </Component>
               </ul>
             </section>
           </li>
         </NavExpandable>
       </ul>
-    </NavList>
+    </Component>
   </nav>
 </Nav>
 `;
@@ -429,10 +348,7 @@ exports[`Expandable Nav List 1`] = `
     className="pf-c-nav"
     onToggle={[Function]}
   >
-    <NavList
-      className=""
-      variant="default"
-    >
+    <Component>
       <ul
         className="pf-c-nav__list"
       >
@@ -498,14 +414,8 @@ exports[`Expandable Nav List 1`] = `
               <ul
                 className="pf-c-nav__simple-list"
               >
-                <NavItem
-                  className=""
-                  groupId={null}
-                  isActive={false}
-                  itemId={null}
+                <Component
                   key="#link1"
-                  onClick={null}
-                  preventDefault={false}
                   to="#link1"
                 >
                   <li
@@ -520,15 +430,9 @@ exports[`Expandable Nav List 1`] = `
                       Link 1
                     </a>
                   </li>
-                </NavItem>
-                <NavItem
-                  className=""
-                  groupId={null}
-                  isActive={false}
-                  itemId={null}
+                </Component>
+                <Component
                   key="#link2"
-                  onClick={null}
-                  preventDefault={false}
                   to="#link2"
                 >
                   <li
@@ -543,15 +447,9 @@ exports[`Expandable Nav List 1`] = `
                       Link 2
                     </a>
                   </li>
-                </NavItem>
-                <NavItem
-                  className=""
-                  groupId={null}
-                  isActive={false}
-                  itemId={null}
+                </Component>
+                <Component
                   key="#link3"
-                  onClick={null}
-                  preventDefault={false}
                   to="#link3"
                 >
                   <li
@@ -566,15 +464,9 @@ exports[`Expandable Nav List 1`] = `
                       Link 3
                     </a>
                   </li>
-                </NavItem>
-                <NavItem
-                  className=""
-                  groupId={null}
-                  isActive={false}
-                  itemId={null}
+                </Component>
+                <Component
                   key="#link4"
-                  onClick={null}
-                  preventDefault={false}
                   to="#link4"
                 >
                   <li
@@ -589,13 +481,13 @@ exports[`Expandable Nav List 1`] = `
                       Link 4
                     </a>
                   </li>
-                </NavItem>
+                </Component>
               </ul>
             </section>
           </li>
         </NavExpandable>
       </ul>
-    </NavList>
+    </Component>
   </nav>
 </Nav>
 `;
@@ -612,10 +504,7 @@ exports[`Expandable Nav List with aria label 1`] = `
     className="pf-c-nav"
     onToggle={[Function]}
   >
-    <NavList
-      className=""
-      variant="default"
-    >
+    <Component>
       <ul
         className="pf-c-nav__list"
       >
@@ -687,14 +576,8 @@ exports[`Expandable Nav List with aria label 1`] = `
               <ul
                 className="pf-c-nav__simple-list"
               >
-                <NavItem
-                  className=""
-                  groupId={null}
-                  isActive={false}
-                  itemId={null}
+                <Component
                   key="#link1"
-                  onClick={null}
-                  preventDefault={false}
                   to="#link1"
                 >
                   <li
@@ -709,15 +592,9 @@ exports[`Expandable Nav List with aria label 1`] = `
                       Link 1
                     </a>
                   </li>
-                </NavItem>
-                <NavItem
-                  className=""
-                  groupId={null}
-                  isActive={false}
-                  itemId={null}
+                </Component>
+                <Component
                   key="#link2"
-                  onClick={null}
-                  preventDefault={false}
                   to="#link2"
                 >
                   <li
@@ -732,15 +609,9 @@ exports[`Expandable Nav List with aria label 1`] = `
                       Link 2
                     </a>
                   </li>
-                </NavItem>
-                <NavItem
-                  className=""
-                  groupId={null}
-                  isActive={false}
-                  itemId={null}
+                </Component>
+                <Component
                   key="#link3"
-                  onClick={null}
-                  preventDefault={false}
                   to="#link3"
                 >
                   <li
@@ -755,15 +626,9 @@ exports[`Expandable Nav List with aria label 1`] = `
                       Link 3
                     </a>
                   </li>
-                </NavItem>
-                <NavItem
-                  className=""
-                  groupId={null}
-                  isActive={false}
-                  itemId={null}
+                </Component>
+                <Component
                   key="#link4"
-                  onClick={null}
-                  preventDefault={false}
                   to="#link4"
                 >
                   <li
@@ -778,13 +643,13 @@ exports[`Expandable Nav List with aria label 1`] = `
                       Link 4
                     </a>
                   </li>
-                </NavItem>
+                </Component>
               </ul>
             </section>
           </li>
         </NavExpandable>
       </ul>
-    </NavList>
+    </Component>
   </nav>
 </Nav>
 `;
@@ -801,21 +666,14 @@ exports[`Horizontal Nav List 1`] = `
     className="pf-c-nav"
     onToggle={[Function]}
   >
-    <NavList
-      className=""
+    <Component
       variant="horizontal"
     >
       <ul
         className="pf-c-nav__horizontal-list"
       >
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        <Component
           key="#link1"
-          onClick={null}
-          preventDefault={false}
           to="#link1"
         >
           <li
@@ -830,15 +688,9 @@ exports[`Horizontal Nav List 1`] = `
               Link 1
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link2"
-          onClick={null}
-          preventDefault={false}
           to="#link2"
         >
           <li
@@ -853,15 +705,9 @@ exports[`Horizontal Nav List 1`] = `
               Link 2
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link3"
-          onClick={null}
-          preventDefault={false}
           to="#link3"
         >
           <li
@@ -876,15 +722,9 @@ exports[`Horizontal Nav List 1`] = `
               Link 3
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link4"
-          onClick={null}
-          preventDefault={false}
           to="#link4"
         >
           <li
@@ -899,9 +739,9 @@ exports[`Horizontal Nav List 1`] = `
               Link 4
             </a>
           </li>
-        </NavItem>
+        </Component>
       </ul>
-    </NavList>
+    </Component>
   </nav>
 </Nav>
 `;
@@ -918,8 +758,7 @@ exports[`Nav Grouped List 1`] = `
     className="pf-c-nav"
     onToggle={[Function]}
   >
-    <NavGroup
-      className=""
+    <Component
       id="grp-1"
       title="Section 1"
     >
@@ -936,21 +775,12 @@ exports[`Nav Grouped List 1`] = `
         <ul
           className="pf-c-nav__simple-list"
         >
-          <NavList
-            className=""
-            variant="default"
-          >
+          <Component>
             <ul
               className="pf-c-nav__list"
             >
-              <NavItem
-                className=""
-                groupId={null}
-                isActive={false}
-                itemId={null}
+              <Component
                 key="section1_#link1"
-                onClick={null}
-                preventDefault={false}
                 to="#link1"
               >
                 <li
@@ -965,15 +795,9 @@ exports[`Nav Grouped List 1`] = `
                     Link 1
                   </a>
                 </li>
-              </NavItem>
-              <NavItem
-                className=""
-                groupId={null}
-                isActive={false}
-                itemId={null}
+              </Component>
+              <Component
                 key="section1_#link2"
-                onClick={null}
-                preventDefault={false}
                 to="#link2"
               >
                 <li
@@ -988,15 +812,9 @@ exports[`Nav Grouped List 1`] = `
                     Link 2
                   </a>
                 </li>
-              </NavItem>
-              <NavItem
-                className=""
-                groupId={null}
-                isActive={false}
-                itemId={null}
+              </Component>
+              <Component
                 key="section1_#link3"
-                onClick={null}
-                preventDefault={false}
                 to="#link3"
               >
                 <li
@@ -1011,15 +829,9 @@ exports[`Nav Grouped List 1`] = `
                     Link 3
                   </a>
                 </li>
-              </NavItem>
-              <NavItem
-                className=""
-                groupId={null}
-                isActive={false}
-                itemId={null}
+              </Component>
+              <Component
                 key="section1_#link4"
-                onClick={null}
-                preventDefault={false}
                 to="#link4"
               >
                 <li
@@ -1034,14 +846,13 @@ exports[`Nav Grouped List 1`] = `
                     Link 4
                   </a>
                 </li>
-              </NavItem>
+              </Component>
             </ul>
-          </NavList>
+          </Component>
         </ul>
       </section>
-    </NavGroup>
-    <NavGroup
-      className=""
+    </Component>
+    <Component
       id="grp-2"
       title="Section 2"
     >
@@ -1058,21 +869,12 @@ exports[`Nav Grouped List 1`] = `
         <ul
           className="pf-c-nav__simple-list"
         >
-          <NavList
-            className=""
-            variant="default"
-          >
+          <Component>
             <ul
               className="pf-c-nav__list"
             >
-              <NavItem
-                className=""
-                groupId={null}
-                isActive={false}
-                itemId={null}
+              <Component
                 key="section2_#link1"
-                onClick={null}
-                preventDefault={false}
                 to="#link1"
               >
                 <li
@@ -1087,15 +889,9 @@ exports[`Nav Grouped List 1`] = `
                     Link 1
                   </a>
                 </li>
-              </NavItem>
-              <NavItem
-                className=""
-                groupId={null}
-                isActive={false}
-                itemId={null}
+              </Component>
+              <Component
                 key="section2_#link2"
-                onClick={null}
-                preventDefault={false}
                 to="#link2"
               >
                 <li
@@ -1110,15 +906,9 @@ exports[`Nav Grouped List 1`] = `
                     Link 2
                   </a>
                 </li>
-              </NavItem>
-              <NavItem
-                className=""
-                groupId={null}
-                isActive={false}
-                itemId={null}
+              </Component>
+              <Component
                 key="section2_#link3"
-                onClick={null}
-                preventDefault={false}
                 to="#link3"
               >
                 <li
@@ -1133,15 +923,9 @@ exports[`Nav Grouped List 1`] = `
                     Link 3
                   </a>
                 </li>
-              </NavItem>
-              <NavItem
-                className=""
-                groupId={null}
-                isActive={false}
-                itemId={null}
+              </Component>
+              <Component
                 key="section2_#link4"
-                onClick={null}
-                preventDefault={false}
                 to="#link4"
               >
                 <li
@@ -1156,12 +940,12 @@ exports[`Nav Grouped List 1`] = `
                     Link 4
                   </a>
                 </li>
-              </NavItem>
+              </Component>
             </ul>
-          </NavList>
+          </Component>
         </ul>
       </section>
-    </NavGroup>
+    </Component>
   </nav>
 </Nav>
 `;
@@ -1178,20 +962,13 @@ exports[`Nav List with custom item nodes 1`] = `
     className="pf-c-nav"
     onToggle={[Function]}
   >
-    <NavList
-      className=""
+    <Component
       variant="tertiary"
     >
       <ul
         className="pf-c-nav__tertiary-list"
       >
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
-          onClick={null}
-          preventDefault={false}
+        <Component
           to="/components/nav#link1"
         >
           <li
@@ -1207,9 +984,9 @@ exports[`Nav List with custom item nodes 1`] = `
               </div>
             </CustomNode>
           </li>
-        </NavItem>
+        </Component>
       </ul>
-    </NavList>
+    </Component>
   </nav>
 </Nav>
 `;
@@ -1226,21 +1003,14 @@ exports[`Simple Nav List 1`] = `
     className="pf-c-nav"
     onToggle={[Function]}
   >
-    <NavList
-      className=""
+    <Component
       variant="simple"
     >
       <ul
         className="pf-c-nav__simple-list"
       >
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        <Component
           key="#link1"
-          onClick={null}
-          preventDefault={false}
           to="#link1"
         >
           <li
@@ -1255,15 +1025,9 @@ exports[`Simple Nav List 1`] = `
               Link 1
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link2"
-          onClick={null}
-          preventDefault={false}
           to="#link2"
         >
           <li
@@ -1278,15 +1042,9 @@ exports[`Simple Nav List 1`] = `
               Link 2
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link3"
-          onClick={null}
-          preventDefault={false}
           to="#link3"
         >
           <li
@@ -1301,15 +1059,9 @@ exports[`Simple Nav List 1`] = `
               Link 3
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link4"
-          onClick={null}
-          preventDefault={false}
           to="#link4"
         >
           <li
@@ -1324,9 +1076,9 @@ exports[`Simple Nav List 1`] = `
               Link 4
             </a>
           </li>
-        </NavItem>
+        </Component>
       </ul>
-    </NavList>
+    </Component>
   </nav>
 </Nav>
 `;
@@ -1343,21 +1095,14 @@ exports[`Tertiary Nav List 1`] = `
     className="pf-c-nav"
     onToggle={[Function]}
   >
-    <NavList
-      className=""
+    <Component
       variant="tertiary"
     >
       <ul
         className="pf-c-nav__tertiary-list"
       >
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        <Component
           key="#link1"
-          onClick={null}
-          preventDefault={false}
           to="#link1"
         >
           <li
@@ -1372,15 +1117,9 @@ exports[`Tertiary Nav List 1`] = `
               Link 1
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link2"
-          onClick={null}
-          preventDefault={false}
           to="#link2"
         >
           <li
@@ -1395,15 +1134,9 @@ exports[`Tertiary Nav List 1`] = `
               Link 2
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link3"
-          onClick={null}
-          preventDefault={false}
           to="#link3"
         >
           <li
@@ -1418,15 +1151,9 @@ exports[`Tertiary Nav List 1`] = `
               Link 3
             </a>
           </li>
-        </NavItem>
-        <NavItem
-          className=""
-          groupId={null}
-          isActive={false}
-          itemId={null}
+        </Component>
+        <Component
           key="#link4"
-          onClick={null}
-          preventDefault={false}
           to="#link4"
         >
           <li
@@ -1441,9 +1168,9 @@ exports[`Tertiary Nav List 1`] = `
               Link 4
             </a>
           </li>
-        </NavItem>
+        </Component>
       </ul>
-    </NavList>
+    </Component>
   </nav>
 </Nav>
 `;
