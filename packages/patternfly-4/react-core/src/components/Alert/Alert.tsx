@@ -62,7 +62,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
         </div>
       )}
       {action && (
-        <div className={css(styles.alertAction, className)}>{React.cloneElement(action as any, { title, variantLabel })}</div>
+        <div className={css(styles.alertAction)}>{React.cloneElement(action as any, { title, variantLabel })}</div>
       )}
     </div>
   );
