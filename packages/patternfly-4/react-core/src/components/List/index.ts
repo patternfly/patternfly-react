@@ -1,2 +1,2 @@
-export { List } from './List';
-export { ListItem } from './ListItem';
+export * from './List';
+export * from './ListItem';

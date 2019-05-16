@@ -2,6 +2,7 @@ export * from './AlertDemo/AlertDemo';
 export * from './AvatarDemo/AvatarDemo';
 export * from './BrandDemo/BrandDemo';
 export * from './LabelDemo/LabelDemo';
+export * from './ListDemo/ListDemo';
 export * from './LoginPageDemo/LoginPageDemo';
 export * from './ModalDemo/ModalDemo';
 export * from './NavDemo/NavDemo';
