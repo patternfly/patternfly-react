@@ -69,6 +69,7 @@ class SimpleChart extends React.Component {
         <ChartLegend
           data={[{ name: 'Cats' }, { name: 'Dogs' }]}
           height={50}
+          responsive={false}
           title="Average number of pets"
           width={width}
         />
@@ -156,6 +157,7 @@ class CustomColorsChart extends React.Component {
           colorScale={[cats.data.fill, dogs.data.fill]}
           data={[{ name: 'Cats' }, { name: 'Dogs' }]}
           height={50}
+          responsive={false}
           title="Average number of pets"
           width={width}
         />
