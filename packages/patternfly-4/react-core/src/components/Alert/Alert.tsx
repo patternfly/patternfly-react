@@ -33,7 +33,7 @@ export interface AlertProps
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
   variant,
-  variantLabel,
+  variantLabel = `${capitalize(variant)} alert:`,
   'aria-label': ariaLabel = `${capitalize(variant)} Alert`,
   action = null,
   title,
@@ -43,9 +43,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
 }: AlertProps) => {
   const readerTitle = (
     <React.Fragment>
-      <span className={css(accessibleStyles.screenReader)}>
-        {variantLabel || `${capitalize(variant)} alert:`}
-      </span>
+      <span className={css(accessibleStyles.screenReader)}>{variantLabel}</span>
       {title}
     </React.Fragment>
   );
