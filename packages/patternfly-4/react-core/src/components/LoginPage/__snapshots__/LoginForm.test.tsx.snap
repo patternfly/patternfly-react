@@ -15,6 +15,7 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel uses the reme
     label="Username"
   >
     <TextInput
+      aria-label={null}
       className=""
       id="pf-login-username-id"
       isDisabled={false}
@@ -34,6 +35,7 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel uses the reme
     label="Password"
   >
     <TextInput
+      aria-label={null}
       className=""
       id="pf-login-password-id"
       isDisabled={false}
@@ -90,6 +92,7 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
     label="Username"
   >
     <TextInput
+      aria-label={null}
       className=""
       id="pf-login-username-id"
       isDisabled={false}
@@ -109,6 +112,7 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
     label="Password"
   >
     <TextInput
+      aria-label={null}
       className=""
       id="pf-login-password-id"
       isDisabled={false}
@@ -165,6 +169,7 @@ exports[`should render Login form 1`] = `
     label="Username"
   >
     <TextInput
+      aria-label={null}
       className=""
       id="pf-login-username-id"
       isDisabled={false}
@@ -184,6 +189,7 @@ exports[`should render Login form 1`] = `
     label="Password"
   >
     <TextInput
+      aria-label={null}
       className=""
       id="pf-login-password-id"
       isDisabled={false}

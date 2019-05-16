@@ -7,6 +7,7 @@ describe('Text Input Demo Test', () => {
 
   it('Verify text input', () => {
     cy.get('#text').type('Hello world');
+    cy.get('#text').should('have.value', 'Hello world');
   });
 
   it('Verify disabled text input', () => {

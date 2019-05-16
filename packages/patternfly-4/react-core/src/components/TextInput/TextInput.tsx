@@ -18,7 +18,7 @@ export enum inputTypes {
   url = 'url'
 }
 
-export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange'> {
+export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'disabled'> {
   /** Additional classes added to the TextInput. */
   className?: string;
   /** Flag to show if the input is disabled. */
@@ -41,6 +41,7 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
 
 export class TextInput extends React.Component<TextInputProps> {
   static defaultProps = {
+    'aria-label': null as string,
     className: '',
     isRequired: false,
     isValid: true,
@@ -52,7 +53,7 @@ export class TextInput extends React.Component<TextInputProps> {
   constructor(props: TextInputProps) {
     super(props);
     if (!props.id && !props['aria-label'] && !props['aria-labelledby']) {
-      // eslint-disable-next-line no-console
+      // tslint:disable-next-line:no-console
       console.error('Text input:', 'Text input requires either an id or aria-label to be specified');
     }
   }
