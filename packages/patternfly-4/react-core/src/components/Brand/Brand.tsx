@@ -16,7 +16,6 @@ export const Brand: React.FunctionComponent<BrandProps> = ({
   alt,
   ...props
 }) => (
-  /** the brand component currently contains no styling
-   the 'pf-c-brand' string will be used for the className */
+  /** the brand component currently contains no styling the 'pf-c-brand' string will be used for the className */
   <img {...props} className={css('pf-c-brand', className)} src={src} alt={alt} />
 );
