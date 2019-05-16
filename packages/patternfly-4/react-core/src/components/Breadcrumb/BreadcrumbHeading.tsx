@@ -12,7 +12,7 @@ export interface BreadcrumbHeadingProps extends React.HTMLProps<HTMLLIElement> {
   /** Target for breadcrumb link. */
   target?: string;
   /** Sets the base component to render. Defaults to <a> */
-  component?: React.ReactType;
+  component?: React.ReactNode;
 }
 
 export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> = ({
@@ -20,22 +20,25 @@ export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> 
   className = '',
   to = null,
   target = null,
-  component: Component = 'a' as any,
+  component = 'a',
   ...props
-}: BreadcrumbHeadingProps) => (
-  <li {...props} className={css(styles.breadcrumbItem, className)}>
-    <h1 className={css(styles.breadcrumbHeading)}>
-      {to && (
-        <Component
-          href={to}
-          target={target}
-          className={css(styles.breadcrumbLink, styles.modifiers.current)}
-          aria-current="page"
-        >
-          {children}
-        </Component>
-      )}
-      {!to && <React.Fragment>{children}</React.Fragment>}
-    </h1>
-  </li>
-);
+}: BreadcrumbHeadingProps) => {
+  const Component = component as any;
+  return (
+    <li {...props} className={css(styles.breadcrumbItem, className)}>
+      <h1 className={css(styles.breadcrumbHeading)}>
+        {to && (
+          <Component
+            href={to}
+            target={target}
+            className={css(styles.breadcrumbLink, styles.modifiers.current)}
+            aria-current="page"
+          >
+            {children}
+          </Component>
+        )}
+        {!to && <React.Fragment>{children}</React.Fragment>}
+      </h1>
+    </li>
+  );
+}

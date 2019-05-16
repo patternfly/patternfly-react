@@ -14,7 +14,7 @@ export interface BreadcrumbProps extends React.HTMLProps<HTMLElement> {
 export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   children = null,
   className = '',
-  'aria-label': ariaLabel = '',
+  'aria-label': ariaLabel = 'Breadcrumb',
   ...props
 }: BreadcrumbProps) => (
   <nav {...props} aria-label={ariaLabel} className={css(styles.breadcrumb, className)}>
