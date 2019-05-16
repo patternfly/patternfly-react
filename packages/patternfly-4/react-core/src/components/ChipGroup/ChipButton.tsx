@@ -1,31 +1,27 @@
-import React from 'react';
-import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/components/Chip/chip.css';
-import { Button } from '../Button';
+import * as React from 'react';
+import  { Button, ButtonProps }  from '../Button';
 
-const ChipButton = ({ ariaLabel, children, className, onClick, ...props }) => (
-  <Button variant="plain" aria-label={ariaLabel} onClick={onClick} className={className} {...props}>
-    {children}
-  </Button>
-);
-
-ChipButton.propTypes = {
+export interface ChipButtonProps extends ButtonProps {
   /** Aria label for chip button */
-  ariaLabel: PropTypes.string,
+  ariaLabel?: string; 
   /** Content rendered inside the chip item */
-  children: PropTypes.node,
+  children?: React.ReactNode; 
   /** Additional classes added to the chip item */
-  className: PropTypes.string,
+  className?: string; 
   /** Function that is called when clicking on the chip button */
-  onClick: PropTypes.func
-};
+  onClick?: (event: React.MouseEvent) => void
+}
 
-ChipButton.defaultProps = {
-  ariaLabel: 'close',
-  children: null,
-  className: '',
-  onClick: () => {}
-};
+export const ChipButton: React.FunctionComponent<ChipButtonProps> = ({
+    ariaLabel = 'close', 
+    children = null, 
+    className = '', 
+    onClick = () => undefined, 
+    ...props
+}: ChipButtonProps) => {
+    return (
+    <Button variant="plain" aria-label={ariaLabel} onClick={onClick} className={className} {...props}>
+      {children}
+    </Button>);
+  };
 
-export default ChipButton;

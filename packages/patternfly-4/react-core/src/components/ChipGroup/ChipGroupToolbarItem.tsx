@@ -1,35 +1,31 @@
-import React from 'react';
+import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/ChipGroup/chip-group.css';
 
-const ChipGroupToolbarItem = ({ children, className, categoryName, ...props }) => {
-  if (React.Children.count(children)) {
-    return (
-      <ul className={css(styles.chipGroup, styles.modifiers.toolbar)} {...props}>
-        <li>
-          <h4 className={css(styles.chipGroupLabel)}>{categoryName}</h4>
-          <ul className={css(styles.chipGroup)}>{children}</ul>
-        </li>
-      </ul>
-    );
-  }
-  return null;
-};
-
-ChipGroupToolbarItem.propTypes = {
-  /**  Category name text */
-  categoryName: PropTypes.string,
+export interface ChipGroupToolbarItemProps extends React.HTMLProps<HTMLUListElement> {
+  /**  Category name text */  
+  categoryName?: string;
   /** Content rendered inside the chip text */
-  children: PropTypes.node.isRequired,
+  children: React.ReactNode; 
   /** Additional classes added to the chip item */
-  className: PropTypes.string
-};
+  className?: string;   
+}
 
-ChipGroupToolbarItem.defaultProps = {
-  categoryName: '',
-  children: null,
-  className: ''
-};
-
-export default ChipGroupToolbarItem;
+export const ChipGroupToolbarItem: React.FunctionComponent<ChipGroupToolbarItemProps> = ({
+  categoryName = '', 
+  children = null, 
+  className = '', 
+  ...props
+}: ChipGroupToolbarItemProps) => {
+    if (React.Children.count(children)) {
+      return(
+        <ul className={css(styles.chipGroup, styles.modifiers.toolbar)} {...props}>
+          <li>
+            <h4 className={css(styles.chipGroupLabel)}>{categoryName}</h4>
+            <ul className={css(styles.chipGroup)}>{children}</ul>
+          </li>
+        </ul>
+      );
+    }
+    return null;
+  }; 
