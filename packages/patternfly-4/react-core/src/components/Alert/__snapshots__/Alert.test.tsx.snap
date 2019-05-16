@@ -71,6 +71,7 @@ exports[`Alert - danger Action Close Button 1`] = `
         aria-label="Close"
         onClose={[MockFunction]}
         title=""
+        variantLabel="Danger alert:"
       >
         <Button
           aria-label="Close"
@@ -196,6 +197,7 @@ exports[`Alert - danger Action Link 1`] = `
     >
       <Component
         title=""
+        variantLabel="Danger alert:"
       >
         <Button
           aria-label={null}
@@ -210,6 +212,7 @@ exports[`Alert - danger Action Link 1`] = `
           title=""
           type="button"
           variant="link"
+          variantLabel="Danger alert:"
         >
           <button
             aria-disabled={null}
@@ -219,6 +222,7 @@ exports[`Alert - danger Action Link 1`] = `
             tabIndex={null}
             title=""
             type="button"
+            variantLabel="Danger alert:"
           >
             test
           </button>
@@ -298,6 +302,7 @@ exports[`Alert - danger Action and Title 1`] = `
     >
       <Component
         title="Some title"
+        variantLabel="Danger alert:"
       >
         <Button
           aria-label={null}
@@ -312,6 +317,7 @@ exports[`Alert - danger Action and Title 1`] = `
           title="Some title"
           type="button"
           variant="link"
+          variantLabel="Danger alert:"
         >
           <button
             aria-disabled={null}
@@ -321,6 +327,7 @@ exports[`Alert - danger Action and Title 1`] = `
             tabIndex={null}
             title="Some title"
             type="button"
+            variantLabel="Danger alert:"
           >
             test
           </button>
@@ -401,6 +408,7 @@ exports[`Alert - danger Custom aria label 1`] = `
     >
       <Component
         title="Some title"
+        variantLabel="Danger alert:"
       >
         <Button
           aria-label={null}
@@ -415,6 +423,7 @@ exports[`Alert - danger Custom aria label 1`] = `
           title="Some title"
           type="button"
           variant="link"
+          variantLabel="Danger alert:"
         >
           <button
             aria-disabled={null}
@@ -424,6 +433,7 @@ exports[`Alert - danger Custom aria label 1`] = `
             tabIndex={null}
             title="Some title"
             type="button"
+            variantLabel="Danger alert:"
           >
             test
           </button>
@@ -630,6 +640,7 @@ exports[`Alert - info Action Close Button 1`] = `
         aria-label="Close"
         onClose={[MockFunction]}
         title=""
+        variantLabel="Info alert:"
       >
         <Button
           aria-label="Close"
@@ -755,6 +766,7 @@ exports[`Alert - info Action Link 1`] = `
     >
       <Component
         title=""
+        variantLabel="Info alert:"
       >
         <Button
           aria-label={null}
@@ -769,6 +781,7 @@ exports[`Alert - info Action Link 1`] = `
           title=""
           type="button"
           variant="link"
+          variantLabel="Info alert:"
         >
           <button
             aria-disabled={null}
@@ -778,6 +791,7 @@ exports[`Alert - info Action Link 1`] = `
             tabIndex={null}
             title=""
             type="button"
+            variantLabel="Info alert:"
           >
             test
           </button>
@@ -857,6 +871,7 @@ exports[`Alert - info Action and Title 1`] = `
     >
       <Component
         title="Some title"
+        variantLabel="Info alert:"
       >
         <Button
           aria-label={null}
@@ -871,6 +886,7 @@ exports[`Alert - info Action and Title 1`] = `
           title="Some title"
           type="button"
           variant="link"
+          variantLabel="Info alert:"
         >
           <button
             aria-disabled={null}
@@ -880,6 +896,7 @@ exports[`Alert - info Action and Title 1`] = `
             tabIndex={null}
             title="Some title"
             type="button"
+            variantLabel="Info alert:"
           >
             test
           </button>
@@ -960,6 +977,7 @@ exports[`Alert - info Custom aria label 1`] = `
     >
       <Component
         title="Some title"
+        variantLabel="Info alert:"
       >
         <Button
           aria-label={null}
@@ -974,6 +992,7 @@ exports[`Alert - info Custom aria label 1`] = `
           title="Some title"
           type="button"
           variant="link"
+          variantLabel="Info alert:"
         >
           <button
             aria-disabled={null}
@@ -983,6 +1002,7 @@ exports[`Alert - info Custom aria label 1`] = `
             tabIndex={null}
             title="Some title"
             type="button"
+            variantLabel="Info alert:"
           >
             test
           </button>
@@ -1189,6 +1209,7 @@ exports[`Alert - success Action Close Button 1`] = `
         aria-label="Close"
         onClose={[MockFunction]}
         title=""
+        variantLabel="Success alert:"
       >
         <Button
           aria-label="Close"
@@ -1314,6 +1335,7 @@ exports[`Alert - success Action Link 1`] = `
     >
       <Component
         title=""
+        variantLabel="Success alert:"
       >
         <Button
           aria-label={null}
@@ -1328,6 +1350,7 @@ exports[`Alert - success Action Link 1`] = `
           title=""
           type="button"
           variant="link"
+          variantLabel="Success alert:"
         >
           <button
             aria-disabled={null}
@@ -1337,6 +1360,7 @@ exports[`Alert - success Action Link 1`] = `
             tabIndex={null}
             title=""
             type="button"
+            variantLabel="Success alert:"
           >
             test
           </button>
@@ -1416,6 +1440,7 @@ exports[`Alert - success Action and Title 1`] = `
     >
       <Component
         title="Some title"
+        variantLabel="Success alert:"
       >
         <Button
           aria-label={null}
@@ -1430,6 +1455,7 @@ exports[`Alert - success Action and Title 1`] = `
           title="Some title"
           type="button"
           variant="link"
+          variantLabel="Success alert:"
         >
           <button
             aria-disabled={null}
@@ -1439,6 +1465,7 @@ exports[`Alert - success Action and Title 1`] = `
             tabIndex={null}
             title="Some title"
             type="button"
+            variantLabel="Success alert:"
           >
             test
           </button>
@@ -1519,6 +1546,7 @@ exports[`Alert - success Custom aria label 1`] = `
     >
       <Component
         title="Some title"
+        variantLabel="Success alert:"
       >
         <Button
           aria-label={null}
@@ -1533,6 +1561,7 @@ exports[`Alert - success Custom aria label 1`] = `
           title="Some title"
           type="button"
           variant="link"
+          variantLabel="Success alert:"
         >
           <button
             aria-disabled={null}
@@ -1542,6 +1571,7 @@ exports[`Alert - success Custom aria label 1`] = `
             tabIndex={null}
             title="Some title"
             type="button"
+            variantLabel="Success alert:"
           >
             test
           </button>
@@ -1748,6 +1778,7 @@ exports[`Alert - warning Action Close Button 1`] = `
         aria-label="Close"
         onClose={[MockFunction]}
         title=""
+        variantLabel="Warning alert:"
       >
         <Button
           aria-label="Close"
@@ -1873,6 +1904,7 @@ exports[`Alert - warning Action Link 1`] = `
     >
       <Component
         title=""
+        variantLabel="Warning alert:"
       >
         <Button
           aria-label={null}
@@ -1887,6 +1919,7 @@ exports[`Alert - warning Action Link 1`] = `
           title=""
           type="button"
           variant="link"
+          variantLabel="Warning alert:"
         >
           <button
             aria-disabled={null}
@@ -1896,6 +1929,7 @@ exports[`Alert - warning Action Link 1`] = `
             tabIndex={null}
             title=""
             type="button"
+            variantLabel="Warning alert:"
           >
             test
           </button>
@@ -1975,6 +2009,7 @@ exports[`Alert - warning Action and Title 1`] = `
     >
       <Component
         title="Some title"
+        variantLabel="Warning alert:"
       >
         <Button
           aria-label={null}
@@ -1989,6 +2024,7 @@ exports[`Alert - warning Action and Title 1`] = `
           title="Some title"
           type="button"
           variant="link"
+          variantLabel="Warning alert:"
         >
           <button
             aria-disabled={null}
@@ -1998,6 +2034,7 @@ exports[`Alert - warning Action and Title 1`] = `
             tabIndex={null}
             title="Some title"
             type="button"
+            variantLabel="Warning alert:"
           >
             test
           </button>
@@ -2078,6 +2115,7 @@ exports[`Alert - warning Custom aria label 1`] = `
     >
       <Component
         title="Some title"
+        variantLabel="Warning alert:"
       >
         <Button
           aria-label={null}
@@ -2092,6 +2130,7 @@ exports[`Alert - warning Custom aria label 1`] = `
           title="Some title"
           type="button"
           variant="link"
+          variantLabel="Warning alert:"
         >
           <button
             aria-disabled={null}
@@ -2101,6 +2140,7 @@ exports[`Alert - warning Custom aria label 1`] = `
             tabIndex={null}
             title="Some title"
             type="button"
+            variantLabel="Warning alert:"
           >
             test
           </button>
