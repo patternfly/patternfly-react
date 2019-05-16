@@ -36,10 +36,7 @@ exports[`ChipGroup chip group with toolbar 1`] = `
   onToggleCollapse={[Function]}
   withToolbar={true}
 >
-  <ChipGroupToolbarItem
-    categoryName=""
-    className=""
-  >
+  <Component>
     <Chip
       className=""
       closeBtnAriaLabel="close"
@@ -51,6 +48,6 @@ exports[`ChipGroup chip group with toolbar 1`] = `
     >
       1.1
     </Chip>
-  </ChipGroupToolbarItem>
+  </Component>
 </InnerChipGroup>
 `;

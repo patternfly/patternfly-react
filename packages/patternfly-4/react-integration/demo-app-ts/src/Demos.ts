@@ -26,6 +26,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.LabelDemo
   },
   {
+    id: 'chipgroup-demo', 
+    name: 'ChipGroup Demo',
+    componentType: Examples.BadgeChip 
+  },
+  {
     id: 'nav-demo',
     name: 'Nav Demo',
     componentType: Examples.NavDemo
