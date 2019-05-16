@@ -1,38 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Title } from '../Title';
-import { css } from '@patternfly/react-styles';
+import * as React from 'react';
+import {Title, TitleLevel} from '../Title';
+import {css} from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Login/login.css';
 
-const propTypes = {
+export interface LoginMainHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Login Main Header */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the Login Main Header */
-  className: PropTypes.string,
+  className?: string;
   /** Title for the Login Main Header */
-  title: PropTypes.string,
+  title?: string;
   /** Subtitle that contains the Text, URL, and URL Text for the Login Main Header */
-  subtitle: PropTypes.node,
-  /** Additional props are spread to the container <header> */
-  '': PropTypes.any
-};
+  subtitle?: string;
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  title: '',
-  subtitle: ''
-};
-
-const LoginMainHeader = ({ children, className, title, subtitle, ...props }) => (
+export const LoginMainHeader: React.FunctionComponent<LoginMainHeaderProps> = ({
+  children = null,
+  className = '',
+  title = '',
+  subtitle = '',
+  ...props
+}) => (
   <header className={css(styles.loginMainHeader, className)} {...props}>
-    {title && <Title headingLevel="h2" size="3xl">{title}</Title>}
+    {title && <Title headingLevel={TitleLevel.h2} size="3xl">{title}</Title>}
     {subtitle && <p className={css(styles.loginMainHeaderDesc)}>{subtitle}</p>}
     {children}
   </header>
 );
-
-LoginMainHeader.propTypes = propTypes;
-LoginMainHeader.defaultProps = defaultProps;
 
 export default LoginMainHeader;

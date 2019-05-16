@@ -1,38 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 
-const propTypes = {
+export interface LoginFooterItemProps extends React.HTMLProps<HTMLAnchorElement> {
   /** Content rendered inside the footer Link Item */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the Footer Link Item  */
-  className: PropTypes.string,
+  className?: string;
   /** The URL of the Footer Link Item */
-  href: PropTypes.string,
+  href?: string;
   /** Specifies where to open the linked document */
-  target: PropTypes.string,
-  /** Additional props are spread to the container <a> */
-  '': PropTypes.any
-};
+  target?: string;
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  href: '#',
-  target: '_blank'
-};
-
-const LoginFooterItem = ({ className, children, href, target, ...props }) => {
-  const reactElement = React.isValidElement(children);
+export const LoginFooterItem: React.FunctionComponent<LoginFooterItemProps> = ({
+  className = '',
+  children = null,
+  href = '#',
+  target = '_blank',
+  ...props
+}) => {
+  const reactElement: boolean = React.isValidElement(children);
   return reactElement ? (
-    React.cloneElement(children)
+    React.cloneElement(children as React.ReactElement<any>)
   ) : (
     <a target={target} href={href} {...props}>
       {children}
     </a>
   );
 };
-
-LoginFooterItem.propTypes = propTypes;
-LoginFooterItem.defaultProps = defaultProps;
 
 export default LoginFooterItem;

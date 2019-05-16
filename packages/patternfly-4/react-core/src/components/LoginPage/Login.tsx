@@ -1,29 +1,25 @@
-import React from 'react';
+import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Login/login.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 
-const propTypes = {
+export interface LoginProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the main section of the login layout */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the login layout */
-  className: PropTypes.string,
+  className?: string;
   /** Footer component (e.g. <LoginFooter />) */
-  footer: PropTypes.node,
+  footer?: React.ReactNode;
   /** Header component (e.g. <LoginHeader />) */
-  header: PropTypes.node,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any
-};
+  header?: React.ReactNode;
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  footer: null,
-  header: null
-};
-
-const Login = ({ className, children, footer, header, ...props }) => (
+export const Login: React.FunctionComponent<LoginProps> = ({
+  className = '',
+  children = null,
+  footer = null,
+  header = null,
+  ...props
+}) => (
   <div {...props} className={css(styles.login, className)}>
     <div className={css(styles.loginContainer)}>
       {header}
@@ -32,8 +28,5 @@ const Login = ({ className, children, footer, header, ...props }) => (
     </div>
   </div>
 );
-
-Login.propTypes = propTypes;
-Login.defaultProps = defaultProps;
 
 export default Login;

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import LoginMainHeader from './LoginMainHeader';
 import { shallow } from 'enzyme';
 

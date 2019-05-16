@@ -1,29 +1,22 @@
-import React from 'react';
+import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Login/login.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 
-const propTypes = {
+export interface LoginMainFooterBandItemProps extends React.HTMLProps<HTMLParagraphElement> {
   /** Content rendered inside the footer Link Item */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the Footer Link Item  */
-  className: PropTypes.string,
-  /** Additional props are spread to the container <a> */
-  '': PropTypes.any
-};
+  className?: string;
+}
 
-const defaultProps = {
-  children: null,
-  className: ''
-};
-
-const LoginMainFooterBandItem = ({ className, children, ...props }) => (
+export const LoginMainFooterBandItem: React.FunctionComponent<LoginMainFooterBandItemProps> = ({
+  children = null,
+  className = '',
+  ...props
+}) => (
   <p className={css(`${styles.loginMainFooterBand}-item`, className)} {...props}>
     {children}
   </p>
 );
-
-LoginMainFooterBandItem.propTypes = propTypes;
-LoginMainFooterBandItem.defaultProps = defaultProps;
 
 export default LoginMainFooterBandItem;

@@ -7,6 +7,6 @@ import LinkPreview from '@content/../LinkPreview';
 import RawSimpleLoginPage from '!!raw-loader!./examples/SimpleLoginPage';
 
 ## Simple login page
-<LinkPreview name="Popout Example" path="simpleloginpage" />
+<LinkPreview name="Login Page Example" path="simpleloginpage" />
 
 <code className="language-nolive">{RawSimpleLoginPage}</code>

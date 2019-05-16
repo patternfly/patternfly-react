@@ -1,33 +1,26 @@
-import React from 'react';
+import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Login/login.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 
-const propTypes = {
+export interface LoginHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the header of the login layout */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the login header */
-  className: PropTypes.string,
+  className?: string;
   /** Header Brand component (e.g. <LoginHeader />) */
-  headerBrand: PropTypes.node,
-  /** Additional props are spread to the container <header> */
-  '': PropTypes.any
-};
+  headerBrand?: React.ReactNode;
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  headerBrand: null
-};
-
-const LoginHeader = ({ className, children, headerBrand, ...props }) => (
+export const LoginHeader: React.FunctionComponent<LoginHeaderProps> = ({
+  className = '',
+  children = null,
+  headerBrand = null,
+  ...props
+}) => (
   <header className={css(styles.loginHeader, className)} {...props}>
     {headerBrand}
     {children}
   </header>
 );
-
-LoginHeader.propTypes = propTypes;
-LoginHeader.defaultProps = defaultProps;
 
 export default LoginHeader;

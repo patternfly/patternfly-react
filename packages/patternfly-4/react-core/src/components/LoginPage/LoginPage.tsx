@@ -1,6 +1,5 @@
-import React from 'react';
+import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 
 import Login from './Login';
 import LoginHeader from './LoginHeader';
@@ -10,88 +9,61 @@ import LoginMainHeader from './LoginMainHeader';
 import LoginMainBody from './LoginMainBody';
 import LoginMainFooter from './LoginMainFooter';
 
-import { BackgroundImage } from '../BackgroundImage';
+import {BackgroundImage, BackgroundImageSrcMap} from '../BackgroundImage';
 import { Brand } from '../Brand';
 import { List } from '../List';
 
-const LoginListVariant = {
-  grid: 'grid',
-  inline: 'inline'
-};
+export enum LoginListVariant {
+  grid = 'grid',
+  inline = 'inline'
+}
 
-const propTypes = {
+export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   /** Anything that can be rendered inside of the LoginPage (e.g. <LoginPageForm>) */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the LoginPage. */
-  className: PropTypes.string,
+  className?: string;
   /** Attribute that specifies the URL of the brand image for the LoginPage */
-  brandImgSrc: PropTypes.string,
+  brandImgSrc?: string;
   /** Attribute that specifies the alt text of the brand image for the LoginPage. */
-  brandImgAlt: PropTypes.string,
+  brandImgAlt?: string;
   /** Attribute that specifies the URL of the background image for the LoginPage */
-  backgroundImgSrc: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      xs: PropTypes.string,
-      xs2x: PropTypes.string,
-      sm: PropTypes.string,
-      sm2x: PropTypes.string,
-      lg: PropTypes.string,
-      filter: PropTypes.string
-    })
-  ]),
+  backgroundImgSrc?: string | BackgroundImageSrcMap;
   /** Attribute that specifies the alt text of the background image for the LoginPage. */
-  backgroundImgAlt: PropTypes.string,
+  backgroundImgAlt?: string;
   /** Content rendered inside of the Text Component of the LoginPage */
-  textContent: PropTypes.string,
+  textContent?: string;
   /** Items rendered inside of the Footer List Component of the LoginPage */
-  footerListItems: PropTypes.node,
+  footerListItems?: React.ReactNode;
   /** Adds list variant styles for the Footer List component of the LoginPage.  Values are 'grid' or 'inline' */
-  footerListVariants: PropTypes.oneOf(Object.values(LoginListVariant)),
+  footerListVariants?: LoginListVariant;
   /** Title for the Login Main Body Header of the LoginPage */
-  loginTitle: PropTypes.string.isRequired,
+  loginTitle: string;
   /** Subtitle for the Login Main Body Header of the LoginPage */
-  loginSubtitle: PropTypes.string,
+  loginSubtitle?: string;
   /** Content rendered inside of Login Main Footer Band to display a sign up for account message */
-  signUpForAccountMessage: PropTypes.node,
-  /** Content rendered inside of Login Main Footer Band do display a forgot credentials link* */
-  forgotCredentials: PropTypes.node,
+  signUpForAccountMessage?: React.ReactNode;
+  /** Content rendered inside of Login Main Footer Band to display a forgot credentials link* */
+  forgotCredentials?: React.ReactNode;
   /** Content rendered inside of Social Media Login footer section . */
-  socialMediaLoginContent: PropTypes.node,
-  /** Additional props are spread to the Login component */
-  '': PropTypes.any
-};
+  socialMediaLoginContent?: React.ReactNode;
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  brandImgSrc: '',
-  brandImgAlt: '',
-  backgroundImgSrc: '',
-  backgroundImgAlt: '',
-  footerListItems: null,
-  textContent: '',
-  footerListVariants: null,
-  signUpForAccountMessage: null,
-  forgotCredentials: null,
-  socialMediaLoginContent: null
-};
-
-const LoginPage = ({
-  className,
-  children,
-  brandImgSrc,
-  brandImgAlt,
-  backgroundImgSrc,
-  backgroundImgAlt,
-  textContent,
-  footerListItems,
+export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
+  children = null,
+  className = '',
+  brandImgSrc = '',
+  brandImgAlt = '',
+  backgroundImgSrc = '',
+  backgroundImgAlt = '',
+  footerListItems = null,
+  textContent = '',
   footerListVariants,
   loginTitle,
   loginSubtitle,
-  signUpForAccountMessage,
-  forgotCredentials,
-  socialMediaLoginContent,
+  signUpForAccountMessage = null,
+  forgotCredentials = null,
+  socialMediaLoginContent = null,
   ...props
 }) => {
   const HeaderBrand = (
@@ -110,7 +82,7 @@ const LoginPage = ({
   return (
     <React.Fragment>
       {backgroundImgSrc && <BackgroundImage src={backgroundImgSrc} alt={backgroundImgAlt} />}
-      <Login header={Header} footer={Footer} {...props} className={css(className)}>
+      <Login header={Header} footer={Footer} className={css(className)} {...props}>
         <LoginMainHeader title={loginTitle} subtitle={loginSubtitle}/>
         <LoginMainBody>{children}</LoginMainBody>
         {(socialMediaLoginContent || forgotCredentials || signUpForAccountMessage) && (
@@ -124,8 +96,5 @@ const LoginPage = ({
     </React.Fragment>
   );
 };
-
-LoginPage.propTypes = propTypes;
-LoginPage.defaultProps = defaultProps;
 
 export default LoginPage;

@@ -7,12 +7,10 @@ exports[`check loginpage example against snapshot 1`] = `
     className=""
     src="Background src"
   />
-  <Login
+  <Component
     className=""
     footer={
-      <LoginFooter
-        className=""
-      >
+      <Unknown>
         <p>
           This is placeholder text only.
         </p>
@@ -22,11 +20,10 @@ exports[`check loginpage example against snapshot 1`] = `
         >
           English
         </List>
-      </LoginFooter>
+      </Unknown>
     }
     header={
-      <LoginHeader
-        className=""
+      <Unknown
         headerBrand={
           <React.Fragment>
             <Unknown
@@ -38,16 +35,11 @@ exports[`check loginpage example against snapshot 1`] = `
       />
     }
   >
-    <LoginMainHeader
-      className=""
-      subtitle=""
+    <Component
       title="Log into your account"
     />
-    <LoginMainBody
-      className=""
-    />
-    <LoginMainFooter
-      className=""
+    <Component />
+    <Component
       forgotCredentials={null}
       signUpForAccountMessage={
         <React.Fragment>
@@ -61,6 +53,6 @@ exports[`check loginpage example against snapshot 1`] = `
       }
       socialMediaLoginContent="Footer"
     />
-  </Login>
+  </Component>
 </Fragment>
 `;

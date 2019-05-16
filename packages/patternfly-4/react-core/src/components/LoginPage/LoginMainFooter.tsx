@@ -1,37 +1,26 @@
-import React, { ReactNode } from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Login/login.css';
 
-const propTypes = {
-  /** Content rendered inside the Login Main Footer */
-  children: PropTypes.node,
-  /** Content rendered inside the Login Main Footer as Social Media Links* */
-  socialMediaLoginContent: PropTypes.node,
-  /** Content rendered inside of Login Main Footer Band to display a sign up for account message */
-  signUpForAccountMessage: PropTypes.node,
-  /** Content rendered inside of Login Main Footer Band do display a forgot credentials link* */
-  forgotCredentials: PropTypes.node,
+export interface LoginMainFooterProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Login Main Footer */
-  className: PropTypes.string,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any
-};
+  className?: string;
+  /** Content rendered inside the Login Main Footer */
+  children?: React.ReactNode;
+  /** Content rendered inside the Login Main Footer as Social Media Links* */
+  socialMediaLoginContent?: React.ReactNode;
+  /** Content rendered inside of Login Main Footer Band to display a sign up for account message */
+  signUpForAccountMessage?: React.ReactNode;
+  /** Content rendered inside of Login Main Footer Band do display a forgot credentials link* */
+  forgotCredentials?: React.ReactNode;
+}
 
-const defaultProps = {
-  children: null,
-  socialMediaLoginContent: null,
-  signUpForAccountMessage: null,
-  forgotCredentials: null,
-  className: ''
-};
-
-const LoginMainFooter = ({
-  children,
-  socialMediaLoginContent,
-  signUpForAccountMessage,
-  forgotCredentials,
-  className,
+export const LoginMainFooter: React.FunctionComponent<LoginMainFooterProps> = ({
+  children = null,
+  socialMediaLoginContent = null,
+  signUpForAccountMessage = null,
+  forgotCredentials = null,
+  className = '',
   ...props
 }) => (
   <div className={css(styles.loginMainFooter, className)} {...props}>
@@ -45,8 +34,5 @@ const LoginMainFooter = ({
     )}
   </div>
 );
-
-LoginMainFooter.propTypes = propTypes;
-LoginMainFooter.defaultProps = defaultProps;
 
 export default LoginMainFooter;

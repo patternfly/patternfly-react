@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import LoginMainFooterLinksItem from './LoginMainFooterLinksItem';
 import { shallow } from 'enzyme';
 

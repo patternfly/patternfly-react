@@ -1,5 +1,11 @@
-export { default as LoginForm } from './LoginForm';
-export { default as LoginPage } from './LoginPage';
-export { default as LoginFooterItem } from './LoginFooterItem';
-export { default as LoginMainFooterBandItem } from './LoginMainFooterBandItem';
-export { default as LoginMainFooterLinksItem } from './LoginMainFooterLinksItem';
+export * from './LoginPage';
+export * from './Login';
+export * from './LoginForm';
+export * from './LoginMainBody';
+export * from './LoginMainHeader';
+export * from './LoginHeader';
+export * from './LoginFooter';
+export * from './LoginMainFooter';
+export * from './LoginFooterItem';
+export * from './LoginMainFooterBandItem';
+export * from './LoginMainFooterLinksItem';
