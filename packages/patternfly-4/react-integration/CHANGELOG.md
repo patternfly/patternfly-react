@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.5.0...@patternfly/react-integration@1.6.0) (2019-05-17)
+
+
+### Features
+
+* **EmptyState:** Convert empty state to TypeScript ([#1917](https://github.com/patternfly/patternfly-react/issues/1917)) ([1fb9934](https://github.com/patternfly/patternfly-react/commit/1fb9934))
+
+
+
+
+
 # [1.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.4.1...@patternfly/react-integration@1.5.0) (2019-05-17)
 
 
