@@ -23,8 +23,8 @@ export const FormHelperText: React.FunctionComponent<FormHelperTextProps> = ({
   <p
     className={css(
       styles.formHelperText,
-      !isError ? getModifier(styles, 'error') : '',
-      !isHidden ? getModifier(styles, 'hidden') : '',
+      isError ? getModifier(styles, 'error') : '',
+      isHidden ? getModifier(styles, 'hidden') : '',
       className
     )}
     {...props}
