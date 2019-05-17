@@ -113,11 +113,7 @@ exports[`Alert - danger Action Close Button 1`] = `
               </svg>
             </TimesIcon>
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -212,11 +208,7 @@ exports[`Alert - danger Action Link 1`] = `
           >
             test
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -312,11 +304,7 @@ exports[`Alert - danger Action and Title 1`] = `
           >
             test
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -413,11 +401,7 @@ exports[`Alert - danger Custom aria label 1`] = `
           >
             test
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -662,11 +646,7 @@ exports[`Alert - info Action Close Button 1`] = `
               </svg>
             </TimesIcon>
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -761,11 +741,7 @@ exports[`Alert - info Action Link 1`] = `
           >
             test
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -861,11 +837,7 @@ exports[`Alert - info Action and Title 1`] = `
           >
             test
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -962,11 +934,7 @@ exports[`Alert - info Custom aria label 1`] = `
           >
             test
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -1211,11 +1179,7 @@ exports[`Alert - success Action Close Button 1`] = `
               </svg>
             </TimesIcon>
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -1310,11 +1274,7 @@ exports[`Alert - success Action Link 1`] = `
           >
             test
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -1410,11 +1370,7 @@ exports[`Alert - success Action and Title 1`] = `
           >
             test
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -1511,11 +1467,7 @@ exports[`Alert - success Custom aria label 1`] = `
           >
             test
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -1760,11 +1712,7 @@ exports[`Alert - warning Action Close Button 1`] = `
               </svg>
             </TimesIcon>
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -1859,11 +1807,7 @@ exports[`Alert - warning Action Link 1`] = `
           >
             test
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -1959,11 +1903,7 @@ exports[`Alert - warning Action and Title 1`] = `
           >
             test
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
@@ -2060,11 +2000,7 @@ exports[`Alert - warning Custom aria label 1`] = `
           >
             test
           </button>
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
         </Component>
-=======
-        </Button>
->>>>>>> upstream/master:packages/patternfly-4/react-core/src/components/Alert/__snapshots__/Alert.test.tsx.snap
       </Component>
     </div>
   </div>
