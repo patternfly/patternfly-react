@@ -84,7 +84,6 @@ jobs:
       script:
         - yarn lint:ts
         - yarn lint:style
-        - yarn lint || true # Disable linting failing build (for now)
 
     - stage: Deploy
       name: NPM and Github Release
