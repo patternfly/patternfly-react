@@ -25,7 +25,7 @@ export class AboutModalDemo extends React.Component<null, AboutModalState> {
 
     return (
       <React.Fragment>
-        <Button variant="primary" onClick={this.handleModalToggle}>
+        <Button id="modal-button" variant="primary" onClick={this.handleModalToggle}>
           Show About Modal
         </Button>
         <AboutModal
