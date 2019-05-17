@@ -3,7 +3,6 @@ import styles from '@patternfly/patternfly/components/List/list.css';
 import { css, getModifier } from '@patternfly/react-styles';
 
 export enum ListVariant {
-  grid = 'grid',
   inline = 'inline'
 }
 
@@ -13,7 +12,7 @@ export interface ListProps extends React.HTMLProps<HTMLUListElement> {
   /** Additional classes added to the list. */
   className?: string;
   /** Adds list variant styles */
-  variant?: ListVariant;
+  variant?: 'inline';
 }
 
 export const List: React.FunctionComponent<ListProps> = ({

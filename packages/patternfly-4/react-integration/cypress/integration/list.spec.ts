@@ -9,10 +9,6 @@ describe('List Demo Test', () => {
     cy.get('.pf-c-list li').contains('I am a plain list item');
   });
 
-  it('Verify grid list', () => {
-    cy.get('.pf-c-list li').contains('I am a grid list item');
-  });
-
   it('Verify inline list', () => {
     cy.get('.pf-m-inline li').contains('I am an inline list item');
   });

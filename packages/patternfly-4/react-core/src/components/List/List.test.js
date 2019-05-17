@@ -31,13 +31,4 @@ describe('list', () => {
     );
     expect(view).toMatchSnapshot();
   });
-
-  test('grid list', () => {
-    const view = mount(
-      <List variant="grid">
-        <ListItems />
-      </List>
-    );
-    expect(view).toMatchSnapshot();
-  });
 });

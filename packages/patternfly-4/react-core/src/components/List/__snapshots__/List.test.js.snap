@@ -1,39 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`list grid list 1`] = `
-<Component
-  variant="grid"
->
-  <ul
-    className="pf-c-list"
-  >
-    <ListItems>
-      <Component>
-        <ul
-          className="pf-c-list"
-        >
-          <Component>
-            <li>
-              First
-            </li>
-          </Component>
-          <Component>
-            <li>
-              Second
-            </li>
-          </Component>
-          <Component>
-            <li>
-              Third
-            </li>
-          </Component>
-        </ul>
-      </Component>
-    </ListItems>
-  </ul>
-</Component>
-`;
-
 exports[`list inline list 1`] = `
 <Component
   variant="inline"
