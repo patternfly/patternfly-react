@@ -1,6 +1,7 @@
 ---
 title: 'Brand'
 cssPrefix: null
+typescript: true
 ---
 ## Simple brand
 

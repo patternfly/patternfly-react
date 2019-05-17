@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.34.2](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.34.1...patternfly-react@2.34.2) (2019-05-17)
+
+**Note:** Version bump only for package patternfly-react
+
+
+
+
+
+## [2.34.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.34.0...patternfly-react@2.34.1) (2019-05-15)
+
+
+### Bug Fixes
+
+* **DualList:** add callbacks to Controlled Dual List methods ([#1901](https://github.com/patternfly/patternfly-react/issues/1901)) ([16ac9c2](https://github.com/patternfly/patternfly-react/commit/16ac9c2))
+
+
+
+
+
+# [2.34.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.33.0...patternfly-react@2.34.0) (2019-05-15)
+
+
+### Bug Fixes
+
+* **DualList:** The component shouldn't count, toggle or filter hidden items. ([#1930](https://github.com/patternfly/patternfly-react/issues/1930)) ([85ab2c9](https://github.com/patternfly/patternfly-react/commit/85ab2c9))
+
+
+### Features
+
+* **LoginPage:** support array of alerts ([#1974](https://github.com/patternfly/patternfly-react/issues/1974)) ([a149e52](https://github.com/patternfly/patternfly-react/commit/a149e52))
+
+
+
+
+
 # 2.33.0 (2019-05-13)
 
 

@@ -1,11 +1,11 @@
-import { Alert, AlertProps, AlertActionCloseButton, AlertActionLink, AlertVariant } from '@patternfly/react-core';
+import { Alert, AlertProps, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 export class AlertDemo extends Component {
   myAlertProps: AlertProps = {
     action: <AlertActionCloseButton />,
     title: 'Success notification title',
-    variant: AlertVariant.success
+    variant: 'success'
   };
 
   render() {
