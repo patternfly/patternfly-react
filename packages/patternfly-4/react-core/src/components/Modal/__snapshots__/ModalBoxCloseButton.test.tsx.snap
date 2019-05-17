@@ -4,7 +4,8 @@ exports[`ModalBoxCloseButton Test 1`] = `
 <Fragment>
   <Component
     aria-label="Close"
-    onClick={[Function]}
+    className="test-box-close-button-class"
+    onClick={[MockFunction]}
     variant="plain"
   >
     <TimesIcon
