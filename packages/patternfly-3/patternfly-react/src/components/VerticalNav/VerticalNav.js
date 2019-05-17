@@ -452,7 +452,7 @@ BaseVerticalNav.propTypes = {
   /** Optional callback for updating hovered prop on items */
   onItemHover: PropTypes.func,
   /** Optional callback for updating hovered prop on items */
-  onItemBlur: PropTypes.func,
+  onItemBlur: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
   /** Optional callback for updating pinned props on items or pinnedPath prop. */
   onItemPin: PropTypes.func,
   /** Optional callback for updating mobilePath prop */

@@ -3,7 +3,7 @@ import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 export interface FormHelperTextProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
   isError?: boolean;
-  isActive?: boolean;
+  isHidden?: boolean;
   className?: string;
 }
 
