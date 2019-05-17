@@ -26,6 +26,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BrandDemo
   },
   {
+    id: 'empty-state-demo',
+    name: 'Empty State Demo',
+    componentType: Examples.EmptyStateDemo
+  },
+  {
     id: 'label-demo',
     name: 'Label Demo',
     componentType: Examples.LabelDemo
