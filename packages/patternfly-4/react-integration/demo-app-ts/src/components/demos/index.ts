@@ -4,6 +4,7 @@ export * from './BrandDemo/BrandDemo';
 export * from './CardDemo/CardDemo'; 
 export * from './LabelDemo/LabelDemo';
 export * from './LoginPageDemo/LoginPageDemo';
+export * from './ModalDemo/ModalDemo';
 export * from './NavDemo/NavDemo';
 export * from './PopoverDemo/PopoverDemo'
 export * from './TabsDemo/TabsDemo';

@@ -1,6 +1,7 @@
 ---
 title: 'Modal'
 cssPrefix: 'pf-c-modal-box'
+typescript: true
 ---
 
 import { Modal, Button } from '@patternfly/react-core';
