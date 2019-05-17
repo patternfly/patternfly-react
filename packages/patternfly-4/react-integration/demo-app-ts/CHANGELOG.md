@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.4.1...demo-app-ts@1.5.0) (2019-05-17)
+
+
+### Features
+
+* **Radio:** Convert radio to TypeScript ([#1945](https://github.com/patternfly/patternfly-react/issues/1945)) ([11a77d4](https://github.com/patternfly/patternfly-react/commit/11a77d4))
+
+
+
+
+
 ## [1.4.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.4.0...demo-app-ts@1.4.1) (2019-05-17)
 
 **Note:** Version bump only for package demo-app-ts
