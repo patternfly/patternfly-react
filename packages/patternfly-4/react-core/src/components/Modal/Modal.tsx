@@ -9,9 +9,9 @@ import { KEY_CODES } from '../../helpers/constants';
 import { ModalContent } from './ModalContent';
 
 export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
-  /** content rendered inside the Modal. */
+  /** Content rendered inside the Modal. */
   children: React.ReactNode;
-  /** additional classes added to the Modal */
+  /** Additional classes added to the Modal */
   className?: string;
   /** Flag to show the modal */
   isOpen?: boolean;
@@ -19,7 +19,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   title: string;
   /** Flag to hide the title */
   hideTitle?: boolean;
-  /** id to use for Modal Box description */
+  /** Id to use for Modal Box description */
   ariaDescribedById?: string;
   /** Action buttons to put in the Modal Footer */
   actions?: any,

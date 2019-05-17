@@ -5,14 +5,14 @@ import { css } from '@patternfly/react-styles';
 import { Title, TitleLevel } from '../Title';
 
 export interface ModalBoxHeaderProps {
-  /** content rendered inside the Header */
+  /** Content rendered inside the Header */
   children?:React.ReactNode;
-  /** additional classes added to the button */
+  /** Additional classes added to the button */
   className?: string;
   /** Flag to hide the title */
   hideTitle?: boolean;
-  /** the heading level to use */
-  headingLevel?: TitleLevel;
+  /** The heading level to use */
+  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({

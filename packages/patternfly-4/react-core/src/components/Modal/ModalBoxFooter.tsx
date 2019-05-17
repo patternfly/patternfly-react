@@ -3,9 +3,9 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/ModalBox/modal-box.css';
 
 export interface ModalBoxFooterProps {
-  /** content rendered inside the Footer */
+  /** Content rendered inside the Footer */
   children?: React.ReactNode;
-  /** additional classes added to the Footer */
+  /** Additional classes added to the Footer */
   className?: string;
 }
 

@@ -3,17 +3,17 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/ModalBox/modal-box.css';
 
 export interface ModalBoxProps extends React.HTMLProps<HTMLDivElement> {
-  /** content rendered inside the ModalBox. */
+  /** Content rendered inside the ModalBox. */
   children: React.ReactNode;
-  /** additional classes added to the ModalBox */
+  /** Additional classes added to the ModalBox */
   className?: string;
   /** Creates a large version of the ModalBox */
   isLarge?: boolean;
   /** Creates a small version of the ModalBox. */
   isSmall?: boolean;
-  /** string to use for Modal Box aria-label */
+  /** String to use for Modal Box aria-label */
   title: string;
-  /** id to use for Modal Box description */
+  /** Id to use for Modal Box description */
   id: string;
 }
 

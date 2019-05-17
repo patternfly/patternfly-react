@@ -3,9 +3,9 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/ModalBox/modal-box.css';
 
 export interface ModalBoxBodyProps extends React.HTMLProps<HTMLDivElement> {
-  /** content rendered inside the ModalBoxBody */
+  /** Content rendered inside the ModalBoxBody */
   children?: React.ReactNode;
-  /** additional classes added to the ModalBoxBody */
+  /** Additional classes added to the ModalBoxBody */
   className?: string;
 }
 

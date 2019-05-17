@@ -16,9 +16,9 @@ import { ModalBox } from './ModalBox';
 import { ModalBoxFooter } from './ModalBoxFooter';
 
 export interface ModalContentProps {
-  /** content rendered inside the Modal. */
+  /** Content rendered inside the Modal. */
   children: React.ReactNode;
-  /** additional classes added to the button */
+  /** Additional classes added to the button */
   className?: string;
   /** Creates a large version of the Modal */
   isLarge?: boolean;
@@ -36,9 +36,9 @@ export interface ModalContentProps {
   actions?: any,
   /** A callback for when the close button is clicked */
   onClose?: () => void;
-  /** id to use for Modal Box description */
+  /** Id to use for Modal Box description */
   ariaDescribedById?: string;
-  /** id of the ModalBoxBody */
+  /** Id of the ModalBoxBody */
   id: string;
 }
 

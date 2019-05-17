@@ -3,7 +3,7 @@ import { Button } from '../Button';
 import { TimesIcon } from '@patternfly/react-icons';
 
 export interface ModalBoxCloseButtonProps {
-  /** additional classes added to the close button */
+  /** Additional classes added to the close button */
   className?: string;
   /** A callback for when the close button is clicked */
   onClose?: () => void;
