@@ -1514,20 +1514,12 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                         id="remove_pf-random-id-0"
                         onClick={[Function]}
                       >
-                        <Button
+                        <Component
                           aria-label="Remove"
                           aria-labelledby="remove_pf-random-id-0 pf-random-id-0"
                           className=""
-                          component="button"
                           id="remove_pf-random-id-0"
-                          isActive={false}
-                          isBlock={false}
-                          isDisabled={false}
-                          isFocus={false}
-                          isHover={false}
-                          isInline={false}
                           onClick={[Function]}
-                          type="button"
                           variant="plain"
                         >
                           <button
@@ -1568,7 +1560,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                               </svg>
                             </TimesCircleIcon>
                           </button>
-                        </Button>
+                        </Component>
                       </ChipButton>
                     </li>
                   </GenerateId>
@@ -1596,15 +1588,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                         <Button
                           aria-label="close"
                           className=""
-                          component="button"
-                          isActive={false}
-                          isBlock={false}
-                          isDisabled={false}
-                          isFocus={false}
-                          isHover={false}
-                          isInline={false}
                           onClick={[Function]}
-                          type="button"
                           variant="plain"
                         >
                           <button

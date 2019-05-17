@@ -21,7 +21,7 @@ export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 's
   /** Additional classes added to the Title */
   className?: string;
   /** the heading level to use */
-  headingLevel?: TitleLevel | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 export const Title: React.FunctionComponent<TitleProps> = ({

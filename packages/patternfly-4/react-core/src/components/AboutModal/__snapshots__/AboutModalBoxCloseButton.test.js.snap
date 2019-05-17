@@ -4,18 +4,9 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
 <div
   className="pf-c-about-modal-box__close"
 >
-  <Button
+  <Component
     aria-label="Close Dialog"
-    className=""
-    component="button"
-    isActive={false}
-    isBlock={false}
-    isDisabled={false}
-    isFocus={false}
-    isHover={false}
-    isInline={false}
     onClick={[Function]}
-    type="button"
     variant="plain"
   >
     <TimesIcon
@@ -23,7 +14,7 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
       size="sm"
       title={null}
     />
-  </Button>
+  </Component>
 </div>
 `;
 
@@ -32,18 +23,9 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
   className="pf-c-about-modal-box__close"
   onclose={[MockFunction]}
 >
-  <Button
+  <Component
     aria-label="Close Dialog"
-    className=""
-    component="button"
-    isActive={false}
-    isBlock={false}
-    isDisabled={false}
-    isFocus={false}
-    isHover={false}
-    isInline={false}
     onClick={[Function]}
-    type="button"
     variant="plain"
   >
     <TimesIcon
@@ -51,6 +33,6 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
       size="sm"
       title={null}
     />
-  </Button>
+  </Component>
 </div>
 `;

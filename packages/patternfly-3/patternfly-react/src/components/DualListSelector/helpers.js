@@ -10,7 +10,7 @@ export const filterByHiding = (list, value) => {
       if (isItemHiddenByFilter(item)) {
         let childrenIncludedAmount = 0;
         item.children.forEach(childItem => {
-          if(childItem.hidden){
+          if (childItem.hidden) {
             return;
           }
           const childLabel = childItem.label.toLowerCase();
@@ -141,17 +141,17 @@ export const getItemsLength = items => {
   if (length === 0) {
     return 0;
   }
-  items.forEach(({ hidden , children }) => {
-    if(hidden){
+  items.forEach(({ hidden, children }) => {
+    if (hidden) {
       hiddenItemsAmount += 1;
     }
     if (children) {
       length -= 1;
       children.forEach(child => {
-        if(!child.hidden){
+        if (!child.hidden) {
           length += 1;
         }
-      })
+      });
     }
   });
   return length - hiddenItemsAmount;

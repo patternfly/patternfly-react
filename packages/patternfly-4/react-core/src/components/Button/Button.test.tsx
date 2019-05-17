@@ -1,4 +1,4 @@
-import Button, { ButtonVariant } from './Button';
+import { Button, ButtonVariant } from './Button';
 import React from 'react';
 import { shallow } from 'enzyme';
 
@@ -15,7 +15,7 @@ Object.values(ButtonVariant).forEach(variant => {
 
 test('it adds an aria-label to plain buttons', () => {
   const label = 'aria-label test';
-  const view = shallow(<Button variant={ButtonVariant.action} aria-label={label} />);
+  const view = shallow(<Button aria-label={label} />);
   expect(view.find('button').props()['aria-label']).toBe(label);
 });
 
@@ -55,7 +55,7 @@ test('allows passing in a string as the component', () => {
 });
 
 test('allows passing in a React Component as the component', () => {
-  const Component = () => null;
+  const Component = () => <div>im a div</div>;
   const view = shallow(<Button component={Component} />);
   expect(view.type()).toBe(Component);
 });

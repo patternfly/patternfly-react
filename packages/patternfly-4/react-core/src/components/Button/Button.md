@@ -1,6 +1,7 @@
 ---
 title: 'Button'
 cssPrefix: 'pf-c-button'
+typescript: true
 ---
 
 ## Block button

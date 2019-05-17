@@ -1,8 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Alert/alert.css';
-
 import {
   CheckCircleIcon,
   ExclamationCircleIcon,
@@ -17,16 +15,18 @@ export const variantIcons = {
   info: InfoCircleIcon
 };
 
-const propTypes = {
-  variant: PropTypes.oneOf(Object.keys(variantIcons)).isRequired,
-  className: PropTypes.string
+export interface AlertIconProps extends React.HTMLProps<HTMLDivElement> {
+  /** variant */
+  variant: 'success' | 'danger' | 'warning' | 'info';
+  /** className */
+  className?: string;
 };
 
-const defaultProps = {
-  className: ''
-};
-
-const AlertIcon = ({ variant, className, ...props }) => {
+export const AlertIcon = ({
+  variant,
+  className = '',
+  ...props
+}: AlertIconProps) => {
   const Icon = variantIcons[variant];
   return (
     <div {...props} className={css(styles.alertIcon, className)}>
@@ -34,8 +34,3 @@ const AlertIcon = ({ variant, className, ...props }) => {
     </div>
   );
 };
-
-AlertIcon.propTypes = propTypes;
-AlertIcon.defaultProps = defaultProps;
-
-export default AlertIcon;

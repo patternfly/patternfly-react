@@ -21,6 +21,16 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AvatarDemo
   },
   {
+    id: 'brand-demo', 
+    name: 'Brand Demo', 
+    componentType: Examples.BrandDemo
+  },
+  {
+    id: 'button-demo', 
+    name: 'Button Demo', 
+    componentType: Examples.ButtonDemo
+  },
+  {
     id: 'label-demo',
     name: 'Label Demo',
     componentType: Examples.LabelDemo
@@ -39,6 +49,11 @@ export const Demos: DemoInterface[] = [
     id: 'tab-demo',
     name: 'Tab Demo',
     componentType: Examples.TabDemo
+  },
+  {
+    id: 'text-demo',
+    name: 'Text Demo',
+    componentType: Examples.TextDemo
   },
   {
     id: 'title-demo',

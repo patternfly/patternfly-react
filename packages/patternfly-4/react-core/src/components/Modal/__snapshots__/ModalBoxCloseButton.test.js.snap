@@ -2,18 +2,9 @@
 
 exports[`ModalBoxCloseButton Test 1`] = `
 <Fragment>
-  <Button
+  <Component
     aria-label="Close"
-    className=""
-    component="button"
-    isActive={false}
-    isBlock={false}
-    isDisabled={false}
-    isFocus={false}
-    isHover={false}
-    isInline={false}
     onClick={[Function]}
-    type="button"
     variant="plain"
   >
     <TimesIcon
@@ -21,6 +12,6 @@ exports[`ModalBoxCloseButton Test 1`] = `
       size="sm"
       title={null}
     />
-  </Button>
+  </Component>
 </Fragment>
 `;
