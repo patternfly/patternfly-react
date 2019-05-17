@@ -1596,7 +1596,15 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                         <Button
                           aria-label="close"
                           className=""
+                          component="button"
+                          isActive={false}
+                          isBlock={false}
+                          isDisabled={false}
+                          isFocus={false}
+                          isHover={false}
+                          isInline={false}
                           onClick={[Function]}
+                          type="button"
                           variant="plain"
                         >
                           <button
