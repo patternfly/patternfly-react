@@ -1,6 +1,7 @@
 ---
 title: 'Radio'
 cssPrefix: 'pf-c-radio'
+typescript: true
 ---
 
 import { Radio } from '@patternfly/react-core';
