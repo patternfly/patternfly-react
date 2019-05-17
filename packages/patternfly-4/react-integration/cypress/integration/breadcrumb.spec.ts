@@ -16,4 +16,9 @@ describe('Breadcrumb Demo Test', () => {
   it('Verify default section label defaults', () => {
     cy.get('.pf-c-breadcrumb__link').contains('Section Title'); 
   }); 
+
+  it('Verify Section Home takes user to home page', () => {
+    cy.get('.pf-c-breadcrumb__link').first().contains('Section Home').click(); 
+    cy.url().should('eq', 'http://localhost:3000/');
+  });
 });
