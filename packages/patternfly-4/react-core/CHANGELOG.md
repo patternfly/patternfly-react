@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.22.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.21.0...@patternfly/react-core@3.22.0) (2019-05-17)
+
+
+### Features
+
+* **LoginPage:** Convert LoginPage to typescript, add integration tests, and demo ([#1967](https://github.com/patternfly/patternfly-react/issues/1967)) ([4657da1](https://github.com/patternfly/patternfly-react/commit/4657da1))
+
+
+
+
+
 # [3.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.20.0...@patternfly/react-core@3.21.0) (2019-05-17)
 
 

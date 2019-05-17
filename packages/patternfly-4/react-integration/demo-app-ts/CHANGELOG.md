@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.3.0...demo-app-ts@1.4.0) (2019-05-17)
+
+
+### Features
+
+* **LoginPage:** Convert LoginPage to typescript, add integration tests, and demo ([#1967](https://github.com/patternfly/patternfly-react/issues/1967)) ([4657da1](https://github.com/patternfly/patternfly-react/commit/4657da1))
+
+
+
+
+
 # [1.3.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.2.0...demo-app-ts@1.3.0) (2019-05-17)
 
 
