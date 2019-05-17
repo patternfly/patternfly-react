@@ -1,9 +1,10 @@
 ---
 title: 'Alert'
 cssPrefix: 'pf-c-alert'
+typescript: true
 ---
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
-import './alert.scss';
+import './examples/alert.scss';
 
 ## Info alert
 ```js

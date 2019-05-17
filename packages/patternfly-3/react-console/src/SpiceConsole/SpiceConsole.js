@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Toolbar, helpers } from 'patternfly-react';
-import { SpiceMainConn, sendCtrlAltDel } from '@spice-project/spice-html5';
+import { SpiceMainConn, sendCtrlAltDel } from '@spice-project/spice-html5'; // eslint-disable-line import/no-unresolved
 
 import constants from '../common/constants';
 import SpiceActions from './SpiceActions';
