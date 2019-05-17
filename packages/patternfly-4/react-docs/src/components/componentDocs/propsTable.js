@@ -1,6 +1,23 @@
 import React from 'react';
 import { ExclamationCircleIcon } from '@patternfly-safe/react-icons';
 
+const renderType = prop => {
+  if (prop.type) {
+    // JS prop
+    return prop.type.name;  
+  } else if (prop.tsType) {
+    // TS Prop
+    if (prop.tsType.raw) {
+      // Raw is like 'h1' | 'h2' | 'h3'
+      return prop.tsType.raw;
+    } else {
+      return prop.tsType.name;
+    }
+  }
+
+  return '';
+}
+
 export const PropsTable = ({ caption, propList }) => (
   <table className="pf-c-table pf-m-compact pf-m-grid-md" role="grid" aria-label="Properties for a component">
     <caption>{caption}</caption>
@@ -17,9 +34,7 @@ export const PropsTable = ({ caption, propList }) => (
       {propList && propList.map(prop =>
         <tr key={prop.name}>
           <td>{prop.name}</td>
-          <td>{prop.type
-            ? prop.type.name
-            : prop.tsType ? prop.tsType.name : ''}</td>
+          <td>{renderType(prop)}</td>
           <td className="pf-c-table__icon">{prop.required && <ExclamationCircleIcon />}</td>
           <td>{prop.defaultValue && prop.defaultValue.value}</td>
           <td>{'' + prop.description}</td>
