@@ -29,9 +29,8 @@ exports[`check loginpage example against snapshot 1`] = `
         className=""
         headerBrand={
           <React.Fragment>
-            <Brand
+            <Unknown
               alt="Pf-logo"
-              className=""
               src="Brand src"
             />
           </React.Fragment>

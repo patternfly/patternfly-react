@@ -8,7 +8,7 @@ export interface CardProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the Card */
   className?: string; 
   /** Sets the base component to render. defaults to article */
-  component?: React.ReactType;
+  component?: React.ReactNode;
   /** Modifies the card to include hover styles on :hover */
   isHoverable?: boolean;
 }
@@ -16,11 +16,13 @@ export interface CardProps extends React.HTMLProps<HTMLDivElement> {
 export const Card: React.FunctionComponent<CardProps> = ({
   children = null,
   className = '',
-  component: Component = 'article',
+  component = 'article',
   isHoverable = false, 
   ...props
-}: CardProps) => (
+}: CardProps) => {
+  const Component = component as any;
+  return (
   <Component className={css(styles.card, isHoverable && styles.modifiers.hoverable, className)} {...props}>
     {children}
   </Component>
-);
+)};

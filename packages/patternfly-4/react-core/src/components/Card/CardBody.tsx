@@ -8,7 +8,7 @@ export interface CardBodyProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the Card Body */
   className?: string; 
   /** Sets the base component to render. defaults to div */
-  component?: React.ReactType;
+  component?: React.ReactNode;
   /** Enables the body Content to fill the height of the card */
   isFilled?: boolean;
 }
@@ -16,11 +16,13 @@ export interface CardBodyProps extends React.HTMLProps<HTMLDivElement> {
 export const CardBody: React.FunctionComponent<CardBodyProps> = ({
   children = null, 
   className = '', 
-  component: Component = 'div', 
+  component ='div', 
   isFilled = true, 
   ...props
-}: CardBodyProps) => (
+}: CardBodyProps) => {
+  const Component = component as any;
+  return (
   <Component className={css(styles.cardBody, !isFilled && styles.modifiers.noFill, className)} {...props}>
     {children}
   </Component>
-);
+)};

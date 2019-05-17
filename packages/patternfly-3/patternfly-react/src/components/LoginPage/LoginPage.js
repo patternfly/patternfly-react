@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LoginPageAlert from './components/LoginPageComponents/LoginPageAlert';
+import LoginPageAlerts from './components/LoginPageComponents/LoginPageAlerts';
 import Container from './components/LoginPageComponents/LoginPageContainer';
 import Header from './components/LoginPageComponents/LoginPageHeader';
 import Footer from './components/LoginPageComponents/LoginPageFooter';
@@ -30,7 +31,7 @@ import BasicLoginCardLayout from './components/LoginCardComponents/BasicLoginCar
 
 const LoginPagePattern = ({ container, header, footerLinks, card }) => (
   <LoginPage.Container {...container}>
-    <LoginPage.Alert {...container.alert} />
+    <LoginPage.Alerts alert={container.alert} />
     <LoginPage.BasicLayout>
       <LoginPage.Header {...header} />
       <LoginCard.BasicLayout {...card.layout}>
@@ -66,6 +67,7 @@ LoginPage.Footer = Footer;
 LoginPage.Card = LoginCard;
 LoginPage.FooterLinks = FooterLinks;
 LoginPage.WithTranslation = WithTranslation;
+LoginPage.Alerts = LoginPageAlerts;
 LoginPage.Alert = LoginPageAlert;
 LoginPage.Pattern = LoginPagePattern;
 LoginPage.Social = SocialLoginPage;

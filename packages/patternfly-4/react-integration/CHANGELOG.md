@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.2.0...@patternfly/react-integration@1.3.0) (2019-05-17)
+
+
+### Features
+
+* **alert:** convert alert to TS ([#1978](https://github.com/patternfly/patternfly-react/issues/1978)) ([72a86f3](https://github.com/patternfly/patternfly-react/commit/72a86f3)), closes [#2023](https://github.com/patternfly/patternfly-react/issues/2023)
+* **brand:** Converted brand component to typescript ([#1918](https://github.com/patternfly/patternfly-react/issues/1918)) ([2c52451](https://github.com/patternfly/patternfly-react/commit/2c52451))
+
+
+
+
+
+# 1.2.0 (2019-05-16)
+
+
+### Features
+
+* **table:** add umd to react-table ([#1966](https://github.com/patternfly/patternfly-react/issues/1966)) ([a48836b](https://github.com/patternfly/patternfly-react/commit/a48836b))
+* **Text:** Convert Text to TypeScript ([#1907](https://github.com/patternfly/patternfly-react/issues/1907)) ([ad8e1f5](https://github.com/patternfly/patternfly-react/commit/ad8e1f5)), closes [#1897](https://github.com/patternfly/patternfly-react/issues/1897)
+
+
+
+
+
 ## [1.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.1.0...@patternfly/react-integration@1.1.1) (2019-05-10)
 
 
