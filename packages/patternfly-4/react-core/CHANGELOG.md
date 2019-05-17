@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.23.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.23.0...@patternfly/react-core@3.23.1) (2019-05-17)
+
+
+### Bug Fixes
+
+* **Dropdown:** handle on enter focusing when options are disabled ([#2025](https://github.com/patternfly/patternfly-react/issues/2025)) ([8903702](https://github.com/patternfly/patternfly-react/commit/8903702))
+
+
+
+
+
 # [3.23.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.22.1...@patternfly/react-core@3.23.0) (2019-05-17)
 
 
