@@ -78,7 +78,12 @@ class TreeViewExample extends React.Component {
   render() {
     return (
       <div className="App">
-        <WoodenTreeView nodeIcon="fa fa-file-o" data={this.state.tree} onDataChange={this.onDataChange} {...this.props} />
+        <WoodenTreeView
+          nodeIcon="fa fa-file-o"
+          data={this.state.tree}
+          onDataChange={this.onDataChange}
+          {...this.props}
+        />
       </div>
     );
   }

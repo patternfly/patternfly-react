@@ -1,6 +1,6 @@
 {
   "name": "patternfly-react-wooden-tree",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Reexport react-wooden-tree with Patternfly design.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -32,5 +32,10 @@
   },
   "dependencies": {
     "react-wooden-tree": "^1.1.2"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   }
 }

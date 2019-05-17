@@ -251,23 +251,22 @@ class LoginCardWithValidation extends React.Component {
         errors: { short: error }
       }
     } = this.props;
-    this.setState(
-      ({ form, passwordField }) =>
-        form.topErrorOnly
-          ? {
-              form: {
-                ...form,
-                errors: [...form.errors, error],
-                showError: true
-              }
+    this.setState(({ form, passwordField }) =>
+      form.topErrorOnly
+        ? {
+            form: {
+              ...form,
+              errors: [...form.errors, error],
+              showError: true
             }
-          : {
-              passwordField: {
-                ...passwordField,
-                error,
-                showError: true
-              }
+          }
+        : {
+            passwordField: {
+              ...passwordField,
+              error,
+              showError: true
             }
+          }
     );
   };
 
@@ -277,23 +276,22 @@ class LoginCardWithValidation extends React.Component {
         errors: { invalid: error }
       }
     } = this.props;
-    this.setState(
-      ({ form, usernameField }) =>
-        form.topErrorOnly
-          ? {
-              form: {
-                ...form,
-                errors: [...form.errors, error],
-                showError: true
-              }
+    this.setState(({ form, usernameField }) =>
+      form.topErrorOnly
+        ? {
+            form: {
+              ...form,
+              errors: [...form.errors, error],
+              showError: true
             }
-          : {
-              usernameField: {
-                ...usernameField,
-                error,
-                showError: true
-              }
+          }
+        : {
+            usernameField: {
+              ...usernameField,
+              error,
+              showError: true
             }
+          }
     );
   };
 
@@ -303,23 +301,22 @@ class LoginCardWithValidation extends React.Component {
         errors: { empty: error }
       }
     } = this.props;
-    this.setState(
-      ({ form }) =>
-        form.topErrorOnly
-          ? {
-              form: {
-                ...form,
-                errors: [...form.errors, error],
-                showError: true
-              }
+    this.setState(({ form }) =>
+      form.topErrorOnly
+        ? {
+            form: {
+              ...form,
+              errors: [...form.errors, error],
+              showError: true
             }
-          : {
-              [inputType]: {
-                ...this.state[inputType],
-                error,
-                showError: true
-              }
+          }
+        : {
+            [inputType]: {
+              ...this.state[inputType],
+              error,
+              showError: true
             }
+          }
     );
   };
 

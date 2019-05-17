@@ -3,12 +3,7 @@ import PropTypes from 'prop-types';
 import { Button } from '../../Button';
 import { Modal } from '../index';
 
-export class MockModalManager extends React.Component {
-  propTypes = {
-    children: PropTypes.node,
-    rightSide: PropTypes.bool
-  };
-
+class MockModalManager extends React.Component {
   constructor() {
     super();
     this.state = { showModal: false };
@@ -102,7 +97,17 @@ export class MockModalManager extends React.Component {
   }
 }
 
-export const basicExampleSource = `
+MockModalManager.propTypes = {
+  children: PropTypes.node,
+  rightSide: PropTypes.bool
+};
+
+MockModalManager.defaultProps = {
+  children: null,
+  rightSide: false
+};
+
+const basicExampleSource = `
   <Button bsStyle="primary" bsSize="large" onClick={this.open}>
   Launch basic modal
   </Button>
@@ -161,3 +166,4 @@ export const basicExampleSource = `
     </Modal.Footer>
   </Modal>
 `;
+export { MockModalManager, basicExampleSource };
