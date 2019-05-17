@@ -32,5 +32,10 @@
   },
   "dependencies": {
     "react-wooden-tree": "^1.1.2"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   }
 }
