@@ -56,21 +56,12 @@ export class Checkbox extends React.Component<CheckboxProps> {
       checked,
       ...props
     } = this.props;
-<<<<<<< HEAD
-    let value: boolean;
-    if (isChecked === false || checked === false) {
-      value = false
-    }
-    if (isChecked === true || checked === true) {
-      value = true
-=======
     let value;
     if (isChecked === false || checked === false) {
       value = false;
     }
     if (isChecked === true || checked === true) {
       value = true;
->>>>>>> upstream/master
     }
     return (
       <div className={css(styles.check, className)}>

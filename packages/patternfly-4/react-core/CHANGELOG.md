@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.20.0...@patternfly/react-core@3.21.0) (2019-05-17)
+
+
+### Bug Fixes
+
+* **build:** update snapshots and fix linter errors ([#2031](https://github.com/patternfly/patternfly-react/issues/2031)) ([236d1d5](https://github.com/patternfly/patternfly-react/commit/236d1d5))
+* **Checkbox:** Set checked value correctly ([#1929](https://github.com/patternfly/patternfly-react/issues/1929)) ([43d5283](https://github.com/patternfly/patternfly-react/commit/43d5283))
+
+
+### Features
+
+* **alert:** convert alert to TS ([#1978](https://github.com/patternfly/patternfly-react/issues/1978)) ([72a86f3](https://github.com/patternfly/patternfly-react/commit/72a86f3)), closes [#2023](https://github.com/patternfly/patternfly-react/issues/2023)
+* **brand:** Converted brand component to typescript ([#1918](https://github.com/patternfly/patternfly-react/issues/1918)) ([2c52451](https://github.com/patternfly/patternfly-react/commit/2c52451))
+
+
+
+
+
 # [3.20.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.19.0...@patternfly/react-core@3.20.0) (2019-05-16)
 
 

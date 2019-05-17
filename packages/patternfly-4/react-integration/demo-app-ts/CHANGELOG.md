@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.2.0...demo-app-ts@1.3.0) (2019-05-17)
+
+
+### Features
+
+* **alert:** convert alert to TS ([#1978](https://github.com/patternfly/patternfly-react/issues/1978)) ([72a86f3](https://github.com/patternfly/patternfly-react/commit/72a86f3)), closes [#2023](https://github.com/patternfly/patternfly-react/issues/2023)
+* **brand:** Converted brand component to typescript ([#1918](https://github.com/patternfly/patternfly-react/issues/1918)) ([2c52451](https://github.com/patternfly/patternfly-react/commit/2c52451))
+
+
+
+
+
 # [1.2.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.1.5...demo-app-ts@1.2.0) (2019-05-16)
 
 
