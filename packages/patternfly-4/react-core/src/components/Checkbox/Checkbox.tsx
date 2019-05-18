@@ -24,14 +24,16 @@ export interface CheckboxProps
   'aria-label': string;
 }
 
+// tslint:disable-next-line:no-empty
+const defaultOnChange = () => {};
+
 export class Checkbox extends React.Component<CheckboxProps> {
   static defaultProps = {
     className: '',
     isValid: true,
     isDisabled: false,
     isChecked: false,
-    // tslint:disable-next-line:no-empty
-    onChange: () => {}
+    onChange: defaultOnChange
   };
 
   constructor(props: any) {
@@ -39,9 +41,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
   }
 
   private handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
-    if (this.props.onChange) {
-      this.props.onChange(event.currentTarget.checked, event);
-    }
+    this.props.onChange(event.currentTarget.checked, event);
   };
 
   render() {
@@ -54,14 +54,18 @@ export class Checkbox extends React.Component<CheckboxProps> {
       isChecked,
       label,
       checked,
+      defaultChecked,
       ...props
     } = this.props;
-    let value;
-    if (isChecked === false || checked === false) {
-      value = false;
+    const checkedProps: { checked?: boolean; defaultChecked?: boolean } = {};
+    if ([true, false].includes(checked) || isChecked === true) {
+      checkedProps.checked =  checked || isChecked;
     }
-    if (isChecked === true || checked === true) {
-      value = true;
+    if(onChange !== defaultOnChange) {
+      checkedProps.checked = isChecked
+    }
+    if ([false, true].includes(defaultChecked)) {
+      checkedProps.defaultChecked = defaultChecked;
     }
     return (
       <div className={css(styles.check, className)}>
@@ -73,7 +77,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
           aria-invalid={!isValid}
           aria-label={ariaLabel}
           disabled={isDisabled}
-          checked={value}
+          {...checkedProps}
         />
         {label && (
           <label
