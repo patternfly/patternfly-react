@@ -1,6 +1,7 @@
 export * from './AlertDemo/AlertDemo';
 export * from './AvatarDemo/AvatarDemo';
 export * from './BrandDemo/BrandDemo';
+export * from './CardDemo/CardDemo'; 
 export * from './EmptyStateDemo/EmptyStateDemo';
 export * from './LabelDemo/LabelDemo';
 export * from './ListDemo/ListDemo';

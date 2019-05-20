@@ -1,6 +1,7 @@
 ---
 title: 'Card'
 cssPrefix: 'pf-c-card'
+typescript: true
 ---
 
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
