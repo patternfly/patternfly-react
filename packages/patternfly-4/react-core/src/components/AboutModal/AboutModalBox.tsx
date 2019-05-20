@@ -14,7 +14,7 @@ export const AboutModalBox: React.SFC<AboutModalBoxProps> = ({
   className = '',
   ...props
 }: AboutModalBoxProps) => (
-  <div {...props} role="dialog" aria-modal="true" className={css(styles.aboutModalBox, className)}>
+  <div role="dialog" aria-modal="true" className={css(styles.aboutModalBox, className)} {...props}>
     {children}
   </div>
 );

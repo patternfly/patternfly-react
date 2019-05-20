@@ -25,7 +25,7 @@ export const AboutModalBoxContent: React.SFC<AboutModalBoxContentProps> = ({
   noAboutModalBoxContentContainer = false,
   ...props
 }: AboutModalBoxContentProps) => (
-  <div {...props} className={css(styles.aboutModalBoxContent, className)} id={id}>
+  <div className={css(styles.aboutModalBoxContent, className)} id={id} {...props}>
     <div className={css('pf-c-about-modal-box__body')}>
       {noAboutModalBoxContentContainer
       ? children

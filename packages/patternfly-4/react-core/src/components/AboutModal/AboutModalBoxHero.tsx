@@ -16,9 +16,9 @@ export const AboutModalBoxHero: React.SFC<AboutModalBoxHeroProps> = ({
   ...props
 }: AboutModalBoxHeroProps) => (
   <div
-    {...props}
     style={backgroundImageSrc !== ''
       ? { [c_about_modal_box__hero_sm_BackgroundImage.name as string]: `url(${backgroundImageSrc})`}
       : {}}
-    className={css(styles.aboutModalBoxHero, className)} />
+    className={css(styles.aboutModalBoxHero, className)}
+    {...props} />
 );

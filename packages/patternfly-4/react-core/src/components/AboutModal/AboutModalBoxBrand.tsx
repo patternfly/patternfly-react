@@ -17,7 +17,7 @@ export const AboutModalBoxBrand: React.SFC<AboutModalBoxBrandProps> = ({
   alt,
   ...props
 }: AboutModalBoxBrandProps) => (
-  <div {...props} className={css(styles.aboutModalBoxBrand, className)}>
+  <div className={css(styles.aboutModalBoxBrand, className)} {...props}>
     <img className={css(styles.aboutModalBoxBrandImage)} src={src} alt={alt} />
   </div>
 );
