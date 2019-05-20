@@ -21,9 +21,9 @@ export interface ChipProps extends React.HTMLProps<HTMLDivElement> {
   /** Function that is called when clicking on the chip button */
   onClick?: (event: React.MouseEvent) => void
   /** Internal flag for which component will be used for chip */
-  component?: string | React.ReactNode; 
+  component?: React.ReactNode; 
   /** Position of the tooltip which is displayed if text is longer */
-  tooltipPosition?: keyof typeof TooltipPosition;
+  tooltipPosition?: 'top' | 'bottom' | 'left' | 'right';
 }
 
 interface ChipState {

@@ -19,6 +19,11 @@ describe('Chip Group Demo Test', () => {
     cy.get('.pf-c-chip__text').contains('Show Less')
   });
 
+  it('Verify show less button works', () => {
+    cy.get('.pf-m-overflow').children('button').click();
+    cy.get('.pf-c-chip__text').contains('more')
+  });
+
   it('Verify delete button on first chip', () => {
     const chip = cy.get('.pf-c-chip').children('#pf-random-id-0')
     cy.get('#remove_pf-random-id-0').click();
