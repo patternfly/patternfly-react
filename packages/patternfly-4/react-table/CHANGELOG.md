@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.7.8...@patternfly/react-table@2.8.0) (2019-05-20)
+
+
+### Features
+
+* **button:** Converted button component to typescript ([#1903](https://github.com/patternfly/patternfly-react/issues/1903)) ([2b9d252](https://github.com/patternfly/patternfly-react/commit/2b9d252))
+
+
+
+
+
 ## [2.7.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.7.7...@patternfly/react-table@2.7.8) (2019-05-20)
 
 **Note:** Version bump only for package @patternfly/react-table

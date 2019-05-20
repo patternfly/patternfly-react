@@ -56,7 +56,7 @@ exports[`BreadcrumbHeading component should render default breadcrumbHeading 1`]
 </li>
 `;
 
-exports[`BreadcrumbHeading component should render link breadcrumbTItle 1`] = `
+exports[`BreadcrumbHeading component should render link breadcrumbTitle 1`] = `
 <li
   className="pf-c-breadcrumb__item"
 >

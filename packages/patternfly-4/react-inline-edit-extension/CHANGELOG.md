@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.3.44...@patternfly/react-inline-edit-extension@2.4.0) (2019-05-20)
+
+
+### Features
+
+* **button:** Converted button component to typescript ([#1903](https://github.com/patternfly/patternfly-react/issues/1903)) ([2b9d252](https://github.com/patternfly/patternfly-react/commit/2b9d252))
+
+
+
+
+
 ## [2.3.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.3.43...@patternfly/react-inline-edit-extension@2.3.44) (2019-05-20)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension

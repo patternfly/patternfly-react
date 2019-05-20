@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.7.0...demo-app-ts@1.8.0) (2019-05-20)
+
+
+### Features
+
+* **button:** Converted button component to typescript ([#1903](https://github.com/patternfly/patternfly-react/issues/1903)) ([2b9d252](https://github.com/patternfly/patternfly-react/commit/2b9d252))
+
+
+
+
+
 # [1.7.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.6.0...demo-app-ts@1.7.0) (2019-05-20)
 
 
