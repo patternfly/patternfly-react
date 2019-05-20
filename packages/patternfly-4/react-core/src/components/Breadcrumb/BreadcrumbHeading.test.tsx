@@ -1,5 +1,5 @@
-import React from 'react';
-import BreadcrumbHeading from './BreadcrumbHeading';
+import * as React from 'react';
+import { BreadcrumbHeading } from './BreadcrumbHeading';
 import { shallow } from 'enzyme';
 
 describe('BreadcrumbHeading component', () => {
@@ -18,7 +18,7 @@ describe('BreadcrumbHeading component', () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('should render link breadcrumbTItle', () => {
+  test('should render link breadcrumbTitle', () => {
     const view = shallow(<BreadcrumbHeading to="/somewhere">Item</BreadcrumbHeading>);
     expect(view).toMatchSnapshot();
   });

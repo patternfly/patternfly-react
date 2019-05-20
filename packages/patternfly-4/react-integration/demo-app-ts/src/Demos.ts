@@ -26,6 +26,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BrandDemo
   },
   {
+    id: 'breadcrumb-demo',
+    name: 'Breadcrumb Demo', 
+    componentType: Examples.BreadcrumbDemo
+  },
+  {
     id: 'button-demo', 
     name: 'Button Demo', 
     componentType: Examples.ButtonDemo
