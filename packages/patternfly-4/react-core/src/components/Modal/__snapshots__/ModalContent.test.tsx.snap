@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal Content Test isOpen 1`] = `
+<Backdrop
+  className=""
+>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
+    <Component
+      className=""
+      id="id"
+      isLarge={false}
+      isSmall={false}
+      style={Object {}}
+      title="Test Modal Content title"
+    >
+      <Component
+        onClose={[Function]}
+      />
+      <Component
+        hideTitle={false}
+      >
+         
+        Test Modal Content title
+         
+      </Component>
+      <Component
+        id="id"
+      >
+        This is a ModalBox header
+      </Component>
+    </Component>
+  </FocusTrap>
+</Backdrop>
+`;
+
+exports[`Modal Content Test only body 1`] = `
+<Backdrop
+  className=""
+>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
+    <Component
+      className=""
+      id="id"
+      isLarge={false}
+      isSmall={false}
+      style={Object {}}
+      title="Test Modal Content title"
+    >
+      <Component
+        onClose={[Function]}
+      />
+      <Component
+        hideTitle={false}
+      >
+         
+        Test Modal Content title
+         
+      </Component>
+      <Component
+        id="id"
+      >
+        This is a ModalBox header
+      </Component>
+    </Component>
+  </FocusTrap>
+</Backdrop>
+`;
+
+exports[`Modal Content Test with footer 1`] = `
+<Backdrop
+  className=""
+>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
+    <Component
+      className=""
+      id="id"
+      isLarge={false}
+      isSmall={false}
+      style={Object {}}
+      title="Test Modal Content title"
+    >
+      <Component
+        onClose={[Function]}
+      />
+      <Component
+        hideTitle={false}
+      >
+         
+        Test Modal Content title
+         
+      </Component>
+      <Component
+        id="id"
+      >
+        This is a ModalBox header
+      </Component>
+      <Component>
+         
+        Testing
+         
+      </Component>
+    </Component>
+  </FocusTrap>
+</Backdrop>
+`;
+
+exports[`Modal Content Test with onclose 1`] = `
+<Backdrop
+  className=""
+>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
+    <Component
+      className=""
+      id="id"
+      isLarge={true}
+      isSmall={false}
+      style={Object {}}
+      title="Test Modal Content title"
+    >
+      <Component
+        onClose={[Function]}
+      />
+      <Component
+        hideTitle={false}
+      >
+         
+        Test Modal Content title
+         
+      </Component>
+      <Component
+        id="id"
+      >
+        This is a ModalBox header
+      </Component>
+      <Component>
+         
+        Testing footer
+         
+      </Component>
+    </Component>
+  </FocusTrap>
+</Backdrop>
+`;
+
+exports[`Modal Content test without footer 1`] = `
+<Backdrop
+  className=""
+>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
+    <Component
+      className=""
+      id="id"
+      isLarge={false}
+      isSmall={false}
+      style={Object {}}
+      title="Test Modal Content title"
+    >
+      <Component
+        onClose={[Function]}
+      />
+      <Component
+        hideTitle={false}
+      >
+         
+        Test Modal Content title
+         
+      </Component>
+      <Component
+        id="id"
+      >
+        This is a ModalBox header
+      </Component>
+    </Component>
+  </FocusTrap>
+</Backdrop>
+`;

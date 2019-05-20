@@ -18815,7 +18815,7 @@ react-docgen@^3.0.0-beta11:
     node-dir "^0.1.10"
     recast "^0.16.0"
 
-react-dom@^16.2.0, react-dom@^16.8.4, react-dom@~16.8.4:
+react-dom@^16.8.4, react-dom@^16.8.6, react-dom@~16.8.4:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.6.tgz#71d6303f631e8b0097f56165ef608f051ff6e10f"
   integrity sha512-1nL7PIq9LTL3fthPqwkvr2zY7phIPjYrT0jp4HjyEQrEROnw4dG41VVwi/wfoCneoleqrNX7iAD+pXebJZwrwA==
@@ -19180,15 +19180,15 @@ react-virtualized@9.x:
     prop-types "^15.6.0"
     react-lifecycles-compat "^3.0.4"
 
-react-wooden-tree@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/react-wooden-tree/-/react-wooden-tree-1.1.2.tgz#e5e419f9601ed01f3dcd76712e205fae42dceca4"
-  integrity sha512-aLGcqjlSWv+EhAPnlfeSDbaMoTwR1IemVDtdDk5VVFau0FzB0e4DKWg2GqVRFBC16iY621lJNGxbi+Lj4/P5HQ==
+react-wooden-tree@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-wooden-tree/-/react-wooden-tree-2.0.1.tgz#9468a1f1a0c99f5b26bfbf8e88b991672858e14d"
+  integrity sha512-PslrWpmr+3k+OXeQYQ4nAh1k4OiA/vA4ycGr5go/pijCTFQAS+rr2yHQAj/2AD4UGfoEqyWY72WUHc3Ld/bS0g==
   dependencies:
-    react "^16.2.0"
-    react-dom "^16.2.0"
+    react "^16.8.6"
+    react-dom "^16.8.6"
 
-react@^16.2.0, react@^16.8.4, react@~16.8.4:
+react@^16.8.4, react@^16.8.6, react@~16.8.4:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
   integrity sha512-pC0uMkhLaHm11ZSJULfOBqV4tIZkx87ZLvbbQYunNixAAvjnC+snJCg0XQXn9VIsttVsbZP/H/ewzgsd5fxKXw==
