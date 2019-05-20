@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.8.0...demo-app-ts@1.9.0) (2019-05-20)
+
+
+### Features
+
+* **Breadcrumb:** Convert Breadcrumb jsx file to tsx ([#1723](https://github.com/patternfly/patternfly-react/issues/1723)) ([9151262](https://github.com/patternfly/patternfly-react/commit/9151262))
+
+
+
+
+
 # [1.8.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.7.0...demo-app-ts@1.8.0) (2019-05-20)
 
 

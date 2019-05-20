@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.27.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.26.0...@patternfly/react-core@3.27.0) (2019-05-20)
+
+
+### Bug Fixes
+
+* **wizard:** wizards props extends div element props ([#1993](https://github.com/patternfly/patternfly-react/issues/1993)) ([1e9698e](https://github.com/patternfly/patternfly-react/commit/1e9698e))
+
+
+### Features
+
+* **Breadcrumb:** Convert Breadcrumb jsx file to tsx ([#1723](https://github.com/patternfly/patternfly-react/issues/1723)) ([9151262](https://github.com/patternfly/patternfly-react/commit/9151262))
+
+
+
+
+
 # [3.26.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.25.0...@patternfly/react-core@3.26.0) (2019-05-20)
 
 
