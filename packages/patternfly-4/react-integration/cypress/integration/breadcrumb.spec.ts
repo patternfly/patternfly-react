@@ -6,7 +6,8 @@ describe('Breadcrumb Demo Test', () => {
   });
 
   it('Verify breadcrumb items have link', () => {
-    cy.get('li').children('a');
+    cy.get('li').children('a').should('not.be.undefined');
+    cy.get('li').children('a').should('not.equal', null);
   }); 
 
   it('Verify default section home content', () => {
