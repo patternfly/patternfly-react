@@ -31,6 +31,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ButtonDemo
   },
   {
+    id: 'empty-state-demo',
+    name: 'Empty State Demo',
+    componentType: Examples.EmptyStateDemo
+  },
+  {
     id: 'label-demo',
     name: 'Label Demo',
     componentType: Examples.LabelDemo
@@ -54,6 +59,11 @@ export const Demos: DemoInterface[] = [
     id: 'popover-demo',
     name: 'Popover Demo',
     componentType: Examples.PopoverDemo
+  },
+  {
+    id: 'radio-demo',
+    name: 'Radio Demo',
+    componentType: Examples.RadioDemo
   },
   {
     id: 'tab-demo',
