@@ -5,7 +5,9 @@ import { FormContext } from './FormContext';
 import { Action } from 'history';
 
 export interface ActionGroupProps extends React.HTMLProps<HTMLDivElement> {
+  /** Anything that can be rendered as ActionGroup content. */
   children?: React.ReactNode;
+  /** Additional classes added to the ActionGroup. */
   className?: string;
 }
 

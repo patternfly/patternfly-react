@@ -9,7 +9,7 @@ export interface FormHelperTextProps extends React.HTMLProps<HTMLDivElement> {
   isError?: boolean;
   /** Hides the helper text * */
   isHidden?: boolean;
-  /** Additional classes added to the Helper Text  Item  */
+  /** Additional classes added to the Helper Text Item  */
   className?: string;
 }
 
