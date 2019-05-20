@@ -33,8 +33,8 @@ export class AboutModal extends React.Component<AboutModalProps> {
   private static currentId = 0;
   private container: HTMLElement;
   private id = AboutModal.currentId++;
-  private ariaLabelledBy = `pf-about-modal-title-${this.id}`;
-  private ariaDescribedBy = `pf-about-modal-content-${this.id}`;
+  ariaLabelledBy = `pf-about-modal-title-${this.id}`;
+  ariaDescribedBy = `pf-about-modal-content-${this.id}`;
   static defaultProps = {
     className: '',
     isOpen: false,

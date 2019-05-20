@@ -49,10 +49,10 @@ test('modal does not call onClose for esc key if it is not open', () => {
 });
 
 test('Each modal is given new ariaDescribedById and ariaLabelledbyId', () => {
- const first = shallow(<AboutModal {...props}> Test About Modal </AboutModal>);
- const second = shallow(<AboutModal {...props}> Test About Modal </AboutModal>);
- expect(first.state('ariaLabelledBy')).not.toBe(second.state('ariaLabelledBy'));
- expect(first.state('ariaDescribedBy')).not.toBe(second.state('ariaDescribedBy'));
+ const first = new AboutModal(props);
+ const second = new AboutModal(props);
+ expect(first.ariaLabelledBy).not.toBe(second.ariaLabelledBy);
+ expect(first.ariaDescribedBy).not.toBe(second.ariaDescribedBy);
 });
 
 test('Console error is generated when the logoImageSrc is provided without logoImageAlt', () => {
