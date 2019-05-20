@@ -31,7 +31,7 @@
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm -q"
   },
   "dependencies": {
-    "react-wooden-tree": "^1.1.2"
+    "react-wooden-tree": "^2.0.1"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
