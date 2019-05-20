@@ -12,7 +12,7 @@ const needAccountMesseage = (
 test('check loginpage example against snapshot', () => {
   const view = shallow(
     <LoginPage
-    footerListVariants='inline'
+    footerListVariants="inline"
     brandImgSrc="Brand src"
     brandImgAlt="Pf-logo"
     backgroundImgSrc="Background src"

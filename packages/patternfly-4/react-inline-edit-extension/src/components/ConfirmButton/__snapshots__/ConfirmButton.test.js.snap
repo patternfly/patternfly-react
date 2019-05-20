@@ -2,16 +2,6 @@
 
 exports[`it renders properly 1`] = `
 <Button
-  aria-label={null}
-  className=""
-  component="button"
-  isActive={false}
-  isBlock={false}
-  isDisabled={false}
-  isFocus={false}
-  isHover={false}
-  isInline={false}
-  type="button"
   variant="primary"
 >
   <CheckIcon

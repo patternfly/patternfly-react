@@ -29,8 +29,8 @@ export interface LoginPageProps extends React.HTMLProps<HTMLDivElement> {
   textContent?: string;
   /** Items rendered inside of the Footer List Component of the LoginPage */
   footerListItems?: React.ReactNode;
-  /** Adds list variant styles for the Footer List component of the LoginPage.  Values are 'grid' or 'inline' */
-  footerListVariants?: 'grid' | 'inline';
+  /** Adds list variant styles for the Footer List component of the LoginPage. The only current value is'inline' */
+  footerListVariants?: 'inline';
   /** Title for the Login Main Body Header of the LoginPage */
   loginTitle: string;
   /** Subtitle for the Login Main Body Header of the LoginPage */
