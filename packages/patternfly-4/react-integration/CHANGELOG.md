@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.6.0...@patternfly/react-integration@1.7.0) (2019-05-20)
+
+
+### Features
+
+* **card:** Converted card component to typescript ([#1885](https://github.com/patternfly/patternfly-react/issues/1885)) ([e3e4170](https://github.com/patternfly/patternfly-react/commit/e3e4170))
+* **List:** Convert list to TypeScript ([#1946](https://github.com/patternfly/patternfly-react/issues/1946)) ([ecb2702](https://github.com/patternfly/patternfly-react/commit/ecb2702))
+
+
+
+
+
 # [1.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.5.0...@patternfly/react-integration@1.6.0) (2019-05-17)
 
 
