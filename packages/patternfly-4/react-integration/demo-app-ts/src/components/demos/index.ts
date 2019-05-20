@@ -5,6 +5,7 @@ export * from './BreadcrumbDemo/BreadcrumbDemo';
 export * from './ButtonDemo/ButtonDemo'; 
 export * from './CardDemo/CardDemo'; 
 export * from './EmptyStateDemo/EmptyStateDemo';
+export * from './FormDemo/FormDemo'; 
 export * from './LabelDemo/LabelDemo';
 export * from './ListDemo/ListDemo';
 export * from './LoginPageDemo/LoginPageDemo';

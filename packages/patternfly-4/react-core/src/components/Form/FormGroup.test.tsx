@@ -1,6 +1,6 @@
 import React from 'react';
-import FormGroup from './FormGroup';
-import Form from './Form';
+import { FormGroup } from './FormGroup';
+import { Form } from './Form';
 import { mount } from 'enzyme';
 
 describe('FormGroup component', () => {
@@ -35,7 +35,7 @@ describe('FormGroup component', () => {
 
   test('should render form group variant with node label', () => {
     const view = mount(
-      <FormGroup label={<h1>Header</h1>}>
+      <FormGroup fieldId="id" label={<h1>Header</h1>}>
         <input aria-label="input" />
       </FormGroup>
     );
@@ -44,7 +44,7 @@ describe('FormGroup component', () => {
 
   test('should render form group variant with function label', () => {
     const view = mount(
-      <FormGroup label={returnFunction()}>
+      <FormGroup fieldId="id" label={returnFunction()}>
         <input aria-label="input" />
       </FormGroup>
     );
@@ -82,7 +82,7 @@ describe('FormGroup component', () => {
 
   test('should render form group variant without label', () => {
     const view = mount(
-      <FormGroup>
+      <FormGroup fieldId="id">
         <input aria-label="input" />
       </FormGroup>
     );
@@ -109,7 +109,7 @@ describe('FormGroup component', () => {
 
   test('should render correctly when label is not a string with Children = Array', () => {
     const view = mount(
-      <FormGroup label={returnFunction()}>
+      <FormGroup fieldId="id" label={returnFunction()}>
         <input aria-label="label" />
         <input id="id" />
         <input />

@@ -1,31 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Form/form.css';
-import { css, getModifier } from '@patternfly/react-styles';
-import { FormContext } from '../Form/FormContext';
+import { css } from '@patternfly/react-styles';
+import { FormContext } from './FormContext';
+import { Action } from 'history';
 
-const propTypes = {
+export interface ActionGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Anything that can be rendered as ActionGroup content. */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the ActionGroup. */
-  className: PropTypes.string,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any
-};
+  className?: string;
+}
 
-const defaultProps = {
-  children: null,
-  className: ''
-};
-
-const ActionGroup = ({ className, children, ...props }) => {
+export const ActionGroup: React.FunctionComponent<ActionGroupProps> = ({
+  children = null,
+  className = '',
+  ...props
+}: ActionGroupProps) => {
   const customClassName = css(styles.formGroup, styles.modifiers.action, className);
   const classesHorizontal = css(styles.formHorizontalGroup);
 
   const formActionsComponent = <div className={css(styles.formActions)}>{children}</div>;
   return (
     <FormContext.Consumer>
-      {({ isHorizontal }) => (
+      {({ isHorizontal }: { isHorizontal: boolean }) => (
         <div {...props} className={customClassName}>
           {isHorizontal ? <div className={classesHorizontal}>{formActionsComponent}</div> : formActionsComponent}
         </div>
@@ -33,8 +30,3 @@ const ActionGroup = ({ className, children, ...props }) => {
     </FormContext.Consumer>
   );
 };
-
-ActionGroup.propTypes = propTypes;
-ActionGroup.defaultProps = defaultProps;
-
-export default ActionGroup;

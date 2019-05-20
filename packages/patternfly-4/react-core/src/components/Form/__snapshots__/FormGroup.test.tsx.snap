@@ -1,11 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FormGroup component should render correctly when label is not a string with Children = Array 1`] = `
-<FormGroup
-  className=""
-  isInline={false}
-  isRequired={false}
-  isValid={true}
+<Component
+  fieldId="id"
   label={
     <div>
       label
@@ -17,6 +14,7 @@ exports[`FormGroup component should render correctly when label is not a string 
   >
     <label
       className="pf-c-form__label"
+      htmlFor="id"
     >
       <div>
         label
@@ -30,17 +28,13 @@ exports[`FormGroup component should render correctly when label is not a string 
     />
     <input />
   </div>
-</FormGroup>
+</Component>
 `;
 
 exports[`FormGroup component should render default form group variant 1`] = `
-<FormGroup
-  className=""
+<Component
   fieldId="label-id"
   helperText="this is helper text"
-  isInline={false}
-  isRequired={false}
-  isValid={true}
   label="label"
 >
   <div
@@ -63,16 +57,13 @@ exports[`FormGroup component should render default form group variant 1`] = `
       this is helper text
     </div>
   </div>
-</FormGroup>
+</Component>
 `;
 
 exports[`FormGroup component should render form group invalid variant 1`] = `
-<FormGroup
-  className=""
+<Component
   fieldId="label-id"
   helperTextInvalid="Invalid FormGroup"
-  isInline={false}
-  isRequired={false}
   isValid={false}
   label="label"
 >
@@ -96,16 +87,13 @@ exports[`FormGroup component should render form group invalid variant 1`] = `
       Invalid FormGroup
     </div>
   </div>
-</FormGroup>
+</Component>
 `;
 
 exports[`FormGroup component should render form group required variant 1`] = `
-<FormGroup
-  className=""
+<Component
   fieldId="id"
-  isInline={false}
   isRequired={true}
-  isValid={true}
   label="label"
 >
   <div
@@ -127,21 +115,17 @@ exports[`FormGroup component should render form group required variant 1`] = `
       id="id"
     />
   </div>
-</FormGroup>
+</Component>
 `;
 
 exports[`FormGroup component should render form group variant with function helperText 1`] = `
-<FormGroup
-  className=""
+<Component
   fieldId="label-id"
   helperText={
     <div>
       label
     </div>
   }
-  isInline={false}
-  isRequired={false}
-  isValid={true}
   label="Label"
 >
   <div
@@ -166,15 +150,12 @@ exports[`FormGroup component should render form group variant with function help
       </div>
     </div>
   </div>
-</FormGroup>
+</Component>
 `;
 
 exports[`FormGroup component should render form group variant with function label 1`] = `
-<FormGroup
-  className=""
-  isInline={false}
-  isRequired={false}
-  isValid={true}
+<Component
+  fieldId="id"
   label={
     <div>
       label
@@ -186,6 +167,7 @@ exports[`FormGroup component should render form group variant with function labe
   >
     <label
       className="pf-c-form__label"
+      htmlFor="id"
     >
       <div>
         label
@@ -195,21 +177,17 @@ exports[`FormGroup component should render form group variant with function labe
       aria-label="input"
     />
   </div>
-</FormGroup>
+</Component>
 `;
 
 exports[`FormGroup component should render form group variant with node helperText 1`] = `
-<FormGroup
-  className=""
+<Component
   fieldId="label-id"
   helperText={
     <h1>
       Header
     </h1>
   }
-  isInline={false}
-  isRequired={false}
-  isValid={true}
   label="Label"
 >
   <div
@@ -234,15 +212,12 @@ exports[`FormGroup component should render form group variant with node helperTe
       </h1>
     </div>
   </div>
-</FormGroup>
+</Component>
 `;
 
 exports[`FormGroup component should render form group variant with node label 1`] = `
-<FormGroup
-  className=""
-  isInline={false}
-  isRequired={false}
-  isValid={true}
+<Component
+  fieldId="id"
   label={
     <h1>
       Header
@@ -254,6 +229,7 @@ exports[`FormGroup component should render form group variant with node label 1`
   >
     <label
       className="pf-c-form__label"
+      htmlFor="id"
     >
       <h1>
         Header
@@ -263,16 +239,13 @@ exports[`FormGroup component should render form group variant with node label 1`
       aria-label="input"
     />
   </div>
-</FormGroup>
+</Component>
 `;
 
 exports[`FormGroup component should render form group variant with required label 1`] = `
-<FormGroup
-  className=""
+<Component
   fieldId="label-id"
-  isInline={false}
   isRequired={true}
-  isValid={true}
   label="label"
 >
   <div
@@ -294,15 +267,12 @@ exports[`FormGroup component should render form group variant with required labe
       id="label-id"
     />
   </div>
-</FormGroup>
+</Component>
 `;
 
 exports[`FormGroup component should render form group variant without label 1`] = `
-<FormGroup
-  className=""
-  isInline={false}
-  isRequired={false}
-  isValid={true}
+<Component
+  fieldId="id"
 >
   <div
     className="pf-c-form__group"
@@ -311,25 +281,20 @@ exports[`FormGroup component should render form group variant without label 1`] 
       aria-label="input"
     />
   </div>
-</FormGroup>
+</Component>
 `;
 
 exports[`FormGroup component should render horizontal form group variant 1`] = `
-<Form
-  className=""
+<Component
   isHorizontal={true}
 >
   <form
     className="pf-c-form pf-m-horizontal"
     noValidate={true}
   >
-    <FormGroup
-      className=""
+    <Component
       fieldId="label-id"
       helperText="this is helperText"
-      isInline={false}
-      isRequired={false}
-      isValid={true}
       label="label"
     >
       <div
@@ -356,19 +321,16 @@ exports[`FormGroup component should render horizontal form group variant 1`] = `
           this is helperText
         </div>
       </div>
-    </FormGroup>
+    </Component>
   </form>
-</Form>
+</Component>
 `;
 
 exports[`FormGroup component should render inline form group variant 1`] = `
-<FormGroup
-  className=""
+<Component
   fieldId="label-id"
   helperText="this is helper text"
   isInline={true}
-  isRequired={false}
-  isValid={true}
   label="label"
 >
   <div
@@ -391,5 +353,5 @@ exports[`FormGroup component should render inline form group variant 1`] = `
       this is helper text
     </div>
   </div>
-</FormGroup>
+</Component>
 `;

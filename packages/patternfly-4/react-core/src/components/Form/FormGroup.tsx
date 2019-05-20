@@ -1,59 +1,46 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import { Omit } from '../../helpers/typeUtils';
 import styles from '@patternfly/patternfly/components/Form/form.css';
 import { ASTERISK } from '../../helpers/htmlConstants';
-import { FormContext } from '../Form/FormContext';
+import { FormContext } from './FormContext';
 import { css, getModifier } from '@patternfly/react-styles';
 
-const propTypes = {
+export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Anything that can be rendered as FormGroup content. */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the FormGroup. */
-  className: PropTypes.string,
+  className?: string;
   /** Label text before the field. */
-  label: PropTypes.node,
+  label?: React.ReactNode;
   /** Sets the FormGroup required. */
-  isRequired: PropTypes.bool,
+  isRequired?: boolean;
   /** Sets the FormGroup isValid. */
-  isValid: PropTypes.bool,
+  isValid?: boolean;
   /** Sets the FormGroup isInline. */
-  isInline: PropTypes.bool,
+  isInline?: boolean;
   /** Helper text after the field. It can be a simple text or an object. */
-  helperText: PropTypes.node,
+  helperText?: React.ReactNode;
   /** Helper text after the field when the field is isValid. It can be a simple text or an object. */
-  helperTextInvalid: PropTypes.node,
+  helperTextInvalid?: React.ReactNode;
   /** ID of the included field. It has to be the same for proper working. */
-  fieldId: PropTypes.string.isRequired,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any
-};
+  fieldId: string;
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  label: undefined,
-  isRequired: false,
-  isValid: true,
-  isInline: false,
-  helperText: undefined,
-  helperTextInvalid: undefined
-};
-
-const FormGroup = ({
-  className,
-  children,
+export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
+  children = null,
+  className = '',
   label,
-  isRequired,
-  isValid,
-  isInline,
+  isRequired = false,
+  isValid = true,
+  isInline = false,
   helperText,
   helperTextInvalid,
   fieldId,
   ...props
-}) => (
+}: FormGroupProps) => (
   <FormContext.Consumer>
-    {({ isHorizontal }) => (
-      <div {...props} className={css(styles.formGroup, getModifier(styles, isInline && 'inline'), className)}>
+    {({ isHorizontal }: { isHorizontal: boolean }) => (
+      <div {...props} className={css(styles.formGroup, isInline ? getModifier(styles, 'inline', className) : '')}>
         {label && (
           <label className={css(styles.formLabel)} htmlFor={fieldId}>
             {label}
@@ -67,7 +54,7 @@ const FormGroup = ({
         {isHorizontal ? <div className={css(styles.formHorizontalGroup)}>{children}</div> : children}
         {((isValid && helperText) || (!isValid && helperTextInvalid)) && (
           <div
-            className={css(styles.formHelperText, getModifier(styles, !isValid && 'error'))}
+            className={css(styles.formHelperText, !isValid ? getModifier(styles, 'error') : '')}
             id={`${fieldId}-helper`}
             aria-live="polite"
           >
@@ -78,8 +65,3 @@ const FormGroup = ({
     )}
   </FormContext.Consumer>
 );
-
-FormGroup.propTypes = propTypes;
-FormGroup.defaultProps = defaultProps;
-
-export default FormGroup;
