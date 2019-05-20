@@ -2,7 +2,7 @@
 
 exports[`EmptyState Main 1`] = `
 <div
-  className="pf-c-empty-state pf-m-lg"
+  className="pf-c-empty-state styles.modifiers.lg"
 >
   <Component
     headingLevel="h5"
@@ -10,11 +10,9 @@ exports[`EmptyState Main 1`] = `
   >
     HTTP Proxies
   </Component>
-  <EmptyStateBody
-    className=""
-  >
+  <Component>
     Defining HTTP Proxies that exist on your network allows you to perform various actions through those proxies.
-  </EmptyStateBody>
+  </Component>
   <Button
     aria-label={null}
     className=""
@@ -30,9 +28,7 @@ exports[`EmptyState Main 1`] = `
   >
     New HTTP Proxy
   </Button>
-  <EmptyStateSecondaryActions
-    className=""
-  >
+  <Component>
     <Button
       aria-label="learn more action"
       className=""
@@ -48,7 +44,7 @@ exports[`EmptyState Main 1`] = `
     >
       Learn more about this in the documentation.
     </Button>
-  </EmptyStateSecondaryActions>
+  </Component>
 </div>
 `;
 
@@ -64,7 +60,7 @@ exports[`EmptyState Main variant regular 1`] = `
 
 exports[`EmptyState Main variant small 1`] = `
 <div
-  className="pf-c-empty-state pf-m-sm"
+  className="pf-c-empty-state styles.modifiers.sm"
 >
   <Component>
     EmptyState small

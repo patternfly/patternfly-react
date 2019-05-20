@@ -9,8 +9,13 @@ describe('Form Demo Test', () => {
     cy.get('input').should('have.value', 'Five');
   });
 
-  it('Verify form error', () => {
-    cy.get('.pf-m-error').contains('Age has to be a number'); 
+  it('Verify form allows correct input', () => {
+    cy.get('input').clear().type('5');
+    cy.get('.pf-c-form__helper-text').contains('Please write your age'); 
   }); 
 
+  it('Verify form identifies input error', () => {
+    cy.get('input').clear().type('Something');
+    cy.get('.pf-c-form__helper-text').contains('Age has to be a number'); 
+  });
 })
