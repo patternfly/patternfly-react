@@ -1,5 +1,5 @@
 import React from 'react';
-import WoodenTreeView from './index';
+import WoodenTreeView, { ActionTypes } from './index';
 
 const data = [
   {
@@ -35,44 +35,40 @@ const data = [
   }
 ];
 
-const EXPANDED = 'state.expanded';
-const CHECKED = 'state.checked';
-const DISABLED = 'state.disabled';
-const SELECTED = 'state.selected';
-const NODES = 'nodes';
-const LOADING = 'loading';
-
 const actionMapper = {
-  [EXPANDED]: WoodenTreeView.nodeExpanded,
-  [CHECKED]: WoodenTreeView.nodeChecked,
-  [DISABLED]: WoodenTreeView.nodeDisabled,
-  [SELECTED]: WoodenTreeView.nodeSelected,
-  [NODES]: WoodenTreeView.nodeChildren,
-  [LOADING]: WoodenTreeView.nodeLoading
+  [ActionTypes.EXPANDED]: WoodenTreeView.nodeExpanded,
+  [ActionTypes.CHECKED]: WoodenTreeView.nodeChecked,
+  [ActionTypes.DISABLED]: WoodenTreeView.nodeDisabled,
+  [ActionTypes.SELECTED]: WoodenTreeView.nodeSelected,
+  [ActionTypes.CHILD_NODES]: WoodenTreeView.nodeChildren,
+  [ActionTypes.LOADING]: WoodenTreeView.nodeLoading
 };
 
 class TreeViewExample extends React.Component {
   state = {
-    tree: WoodenTreeView.initTree(data)
+    tree: WoodenTreeView.convertHierarchicalTree(WoodenTreeView.initHierarchicalTree(data))
   };
 
   /**
    * The callback function for changing data in the tree.
    *
-   * @param {string} nodeId The nodeId of the node.
-   * @param {string} type The field name which changed.
-   * @param {boolean} value The new value to assign.
+   * @param {[string, string, any]} commands The array of node changing commands.
    */
-  onDataChange = (nodeId, type, value) => {
-    let node = WoodenTreeView.nodeSelector(this.state.tree, nodeId);
-    if (node == null) {
-      return;
+  onDataChange = commands => {
+    let tree = { ...this.state.tree };
+    for (let i = 0; i < commands.length; i++) {
+      const command = commands[i];
+      let node = WoodenTreeView.nodeSelector(tree, command.nodeId);
+      if (node !== null) {
+        if (actionMapper.hasOwnProperty(command.type)) {
+          node = actionMapper[command.type](node, command.value);
+          tree = WoodenTreeView.nodeUpdater(tree, node);
+        } else if (command.type === ActionTypes.ADD_NODES) {
+          tree = WoodenTreeView.addNodes(tree, command.value);
+        }
+      }
     }
-
-    if (actionMapper.hasOwnProperty(type)) {
-      node = actionMapper[type](node, value);
-      this.setState({ tree: WoodenTreeView.nodeUpdater(this.state.tree, node) });
-    }
+    this.setState({ tree });
   };
 
   render() {
@@ -81,7 +77,9 @@ class TreeViewExample extends React.Component {
         <WoodenTreeView
           nodeIcon="fa fa-file-o"
           data={this.state.tree}
-          onDataChange={this.onDataChange}
+          callbacks={{
+            onDataChange: this.onDataChange
+          }}
           {...this.props}
         />
       </div>

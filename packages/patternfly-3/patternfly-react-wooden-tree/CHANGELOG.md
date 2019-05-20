@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.1.4 (2019-05-20)
+
+
+### Performance Improvements
+
+* **react-wooden-tree:** major version bump ([#2001](https://github.com/patternfly/patternfly-react/issues/2001)) ([a42090b](https://github.com/patternfly/patternfly-react/commit/a42090b))
+
+
+
+
+
 ## 1.1.3 (2019-05-17)
 
 **Note:** Version bump only for package patternfly-react-wooden-tree

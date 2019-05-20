@@ -31,9 +31,39 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BrandDemo
   },
   {
+    id: 'breadcrumb-demo',
+    name: 'Breadcrumb Demo', 
+    componentType: Examples.BreadcrumbDemo
+  },
+  {
+    id: 'button-demo', 
+    name: 'Button Demo', 
+    componentType: Examples.ButtonDemo
+  }, 
+  {
+    id: 'card-demo', 
+    name: 'Card Demo',
+    componentType: Examples.CardDemo
+  },
+  {
+    id: 'empty-state-demo',
+    name: 'Empty State Demo',
+    componentType: Examples.EmptyStateDemo
+  },
+  {
+    id: 'form-demo', 
+    name: 'Form Demo', 
+    componentType: Examples.FormDemo
+  },
+  {
     id: 'label-demo',
     name: 'Label Demo',
     componentType: Examples.LabelDemo
+  },
+  {
+    id: 'list-demo',
+    name: 'List Demo',
+    componentType: Examples.ListDemo
   },
   {
     id: 'login-page-demo',
@@ -54,6 +84,11 @@ export const Demos: DemoInterface[] = [
     id: 'popover-demo',
     name: 'Popover Demo',
     componentType: Examples.PopoverDemo
+  },
+  {
+    id: 'radio-demo',
+    name: 'Radio Demo',
+    componentType: Examples.RadioDemo
   },
   {
     id: 'tab-demo',

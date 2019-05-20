@@ -29,7 +29,7 @@ Once you’ve completed development of a new component, you need to perform a bu
 Running the demo app
 Run the following command from the root directory to launch the demo app:
 
-`yarn start demo:app`
+`yarn start:demo-app`
 
 Once the demo app is launched, all saved changes you make to the code should be applied automatically.
 
@@ -62,4 +62,4 @@ Once you’ve completed writing your integration tests, run all tests to verify 
 
 Run the following command from the root directory to run all tests:
 
-`yarn run test:integration`
+`yarn test:integration`

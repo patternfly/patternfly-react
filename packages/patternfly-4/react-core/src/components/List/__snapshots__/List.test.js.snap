@@ -1,115 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`list grid list 1`] = `
-<List
-  className=""
-  variant="grid"
->
-  <ul
-    className="pf-c-list"
-  >
-    <ListItems>
-      <List
-        className=""
-        variant={null}
-      >
-        <ul
-          className="pf-c-list"
-        >
-          <ListItem>
-            <li>
-              First
-            </li>
-          </ListItem>
-          <ListItem>
-            <li>
-              Second
-            </li>
-          </ListItem>
-          <ListItem>
-            <li>
-              Third
-            </li>
-          </ListItem>
-        </ul>
-      </List>
-    </ListItems>
-  </ul>
-</List>
-`;
-
 exports[`list inline list 1`] = `
-<List
-  className=""
+<Component
   variant="inline"
 >
   <ul
     className="pf-c-list pf-m-inline"
   >
     <ListItems>
-      <List
-        className=""
-        variant={null}
-      >
+      <Component>
         <ul
           className="pf-c-list"
         >
-          <ListItem>
+          <Component>
             <li>
               First
             </li>
-          </ListItem>
-          <ListItem>
+          </Component>
+          <Component>
             <li>
               Second
             </li>
-          </ListItem>
-          <ListItem>
+          </Component>
+          <Component>
             <li>
               Third
             </li>
-          </ListItem>
+          </Component>
         </ul>
-      </List>
+      </Component>
     </ListItems>
   </ul>
-</List>
+</Component>
 `;
 
 exports[`list simple list 1`] = `
-<List
-  className=""
-  variant={null}
->
+<Component>
   <ul
     className="pf-c-list"
   >
     <ListItems>
-      <List
-        className=""
-        variant={null}
-      >
+      <Component>
         <ul
           className="pf-c-list"
         >
-          <ListItem>
+          <Component>
             <li>
               First
             </li>
-          </ListItem>
-          <ListItem>
+          </Component>
+          <Component>
             <li>
               Second
             </li>
-          </ListItem>
-          <ListItem>
+          </Component>
+          <Component>
             <li>
               Third
             </li>
-          </ListItem>
+          </Component>
         </ul>
-      </List>
+      </Component>
     </ListItems>
   </ul>
-</List>
+</Component>
 `;
