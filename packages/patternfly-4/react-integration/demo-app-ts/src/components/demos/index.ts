@@ -2,6 +2,7 @@ export * from './AlertDemo/AlertDemo';
 export * from './AvatarDemo/AvatarDemo';
 export * from './BrandDemo/BrandDemo'; 
 export * from './BreadcrumbDemo/BreadcrumbDemo'; 
+export * from './ButtonDemo/ButtonDemo'; 
 export * from './CardDemo/CardDemo'; 
 export * from './EmptyStateDemo/EmptyStateDemo';
 export * from './LabelDemo/LabelDemo';
