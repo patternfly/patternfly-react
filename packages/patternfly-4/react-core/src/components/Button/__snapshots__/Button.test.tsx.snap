@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`aria-disabled is set to true and tabIndex to -1 if component is not a button and is disabled 1`] = `
+<a
+  aria-disabled={true}
+  aria-label={null}
+  className="pf-c-button pf-m-primary pf-m-disabled"
+  disabled={null}
+  tabIndex={-1}
+  type={null}
+>
+  Disabled Anchor Button
+</a>
+`;
+
+exports[`danger button 1`] = `
+<button
+  aria-disabled={null}
+  aria-label="danger"
+  className="pf-c-button pf-m-danger"
+  disabled={false}
+  tabIndex={null}
+  type="button"
+>
+  danger
+   Button
+</button>
+`;
+
+exports[`isBlock 1`] = `
+<button
+  aria-disabled={null}
+  aria-label={null}
+  className="pf-c-button pf-m-primary pf-m-block"
+  disabled={false}
+  tabIndex={null}
+  type="button"
+>
+  Block Button
+</button>
+`;
+
+exports[`isDisabled 1`] = `
+<button
+  aria-disabled={null}
+  aria-label={null}
+  className="pf-c-button pf-m-primary pf-m-disabled"
+  disabled={true}
+  tabIndex={null}
+  type="button"
+>
+  Disabled Button
+</button>
+`;
+
+exports[`isFocus 1`] = `
+<button
+  aria-disabled={null}
+  aria-label={null}
+  className="pf-c-button pf-m-primary pf-m-focus"
+  disabled={false}
+  tabIndex={null}
+  type="button"
+>
+  Focused Button
+</button>
+`;
+
+exports[`isHover 1`] = `
+<button
+  aria-disabled={null}
+  aria-label={null}
+  className="pf-c-button pf-m-primary pf-m-hover"
+  disabled={false}
+  tabIndex={null}
+  type="button"
+>
+  Hovered Button
+</button>
+`;
+
+exports[`isInline 1`] = `
+<button
+  aria-disabled={null}
+  aria-label={null}
+  className="pf-c-button pf-m-link pf-m-inline"
+  disabled={false}
+  tabIndex={null}
+  type="button"
+>
+  Hovered Button
+</button>
+`;
+
+exports[`link button 1`] = `
+<button
+  aria-disabled={null}
+  aria-label="link"
+  className="pf-c-button pf-m-link"
+  disabled={false}
+  tabIndex={null}
+  type="button"
+>
+  link
+   Button
+</button>
+`;
+
+exports[`plain button 1`] = `
+<button
+  aria-disabled={null}
+  aria-label="plain"
+  className="pf-c-button pf-m-plain"
+  disabled={false}
+  tabIndex={null}
+  type="button"
+>
+  plain
+   Button
+</button>
+`;
+
+exports[`primary button 1`] = `
+<button
+  aria-disabled={null}
+  aria-label="primary"
+  className="pf-c-button pf-m-primary"
+  disabled={false}
+  tabIndex={null}
+  type="button"
+>
+  primary
+   Button
+</button>
+`;
+
+exports[`secondary button 1`] = `
+<button
+  aria-disabled={null}
+  aria-label="secondary"
+  className="pf-c-button pf-m-secondary"
+  disabled={false}
+  tabIndex={null}
+  type="button"
+>
+  secondary
+   Button
+</button>
+`;
+
+exports[`tertiary button 1`] = `
+<button
+  aria-disabled={null}
+  aria-label="tertiary"
+  className="pf-c-button pf-m-tertiary"
+  disabled={false}
+  tabIndex={null}
+  type="button"
+>
+  tertiary
+   Button
+</button>
+`;
