@@ -76,22 +76,15 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel uses the reme
   <ActionGroup
     className=""
   >
-    <Button
-      aria-label={null}
-      className=""
-      component="button"
-      isActive={false}
+    <Component
       isBlock={true}
       isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      isInline={false}
       onClick={[Function]}
       type="submit"
       variant="primary"
     >
       Log In
-    </Button>
+    </Component>
   </ActionGroup>
 </Form>
 `;
@@ -172,22 +165,15 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
   <ActionGroup
     className=""
   >
-    <Button
-      aria-label={null}
-      className=""
-      component="button"
-      isActive={false}
+    <Component
       isBlock={true}
       isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      isInline={false}
       onClick={[Function]}
       type="submit"
       variant="primary"
     >
       Log In
-    </Button>
+    </Component>
   </ActionGroup>
 </Form>
 `;
@@ -249,22 +235,15 @@ exports[`should render Login form 1`] = `
   <ActionGroup
     className=""
   >
-    <Button
-      aria-label={null}
-      className=""
-      component="button"
-      isActive={false}
+    <Component
       isBlock={true}
       isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      isInline={false}
       onClick={[Function]}
       type="submit"
       variant="primary"
     >
       Log In
-    </Button>
+    </Component>
   </ActionGroup>
 </Form>
 `;

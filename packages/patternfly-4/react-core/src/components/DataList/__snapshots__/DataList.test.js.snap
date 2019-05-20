@@ -44,22 +44,11 @@ exports[`DataList DataListAction button 1`] = `
   <div
     className="pf-c-data-list__action"
   >
-    <Button
-      aria-label={null}
-      className=""
-      component="button"
+    <Component
       id="delete-item-1"
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      isInline={false}
-      type="button"
-      variant="primary"
     >
       Delete
-    </Button>
+    </Component>
   </div>
 </div>
 `;
