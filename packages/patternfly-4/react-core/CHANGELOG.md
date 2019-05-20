@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.26.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.25.0...@patternfly/react-core@3.26.0) (2019-05-20)
+
+
+### Features
+
+* **button:** Converted button component to typescript ([#1903](https://github.com/patternfly/patternfly-react/issues/1903)) ([2b9d252](https://github.com/patternfly/patternfly-react/commit/2b9d252))
+
+
+
+
+
 # [3.25.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.24.0...@patternfly/react-core@3.25.0) (2019-05-20)
 
 
