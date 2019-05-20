@@ -3,6 +3,71 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.5.0...@patternfly/react-integration@1.6.0) (2019-05-17)
+
+
+### Features
+
+* **EmptyState:** Convert empty state to TypeScript ([#1917](https://github.com/patternfly/patternfly-react/issues/1917)) ([1fb9934](https://github.com/patternfly/patternfly-react/commit/1fb9934))
+
+
+
+
+
+# [1.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.4.1...@patternfly/react-integration@1.5.0) (2019-05-17)
+
+
+### Features
+
+* **Radio:** Convert radio to TypeScript ([#1945](https://github.com/patternfly/patternfly-react/issues/1945)) ([11a77d4](https://github.com/patternfly/patternfly-react/commit/11a77d4))
+
+
+
+
+
+## [1.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.4.0...@patternfly/react-integration@1.4.1) (2019-05-17)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# [1.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.3.0...@patternfly/react-integration@1.4.0) (2019-05-17)
+
+
+### Features
+
+* **LoginPage:** Convert LoginPage to typescript, add integration tests, and demo ([#1967](https://github.com/patternfly/patternfly-react/issues/1967)) ([4657da1](https://github.com/patternfly/patternfly-react/commit/4657da1))
+
+
+
+
+
+# [1.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.2.0...@patternfly/react-integration@1.3.0) (2019-05-17)
+
+
+### Features
+
+* **alert:** convert alert to TS ([#1978](https://github.com/patternfly/patternfly-react/issues/1978)) ([72a86f3](https://github.com/patternfly/patternfly-react/commit/72a86f3)), closes [#2023](https://github.com/patternfly/patternfly-react/issues/2023)
+* **brand:** Converted brand component to typescript ([#1918](https://github.com/patternfly/patternfly-react/issues/1918)) ([2c52451](https://github.com/patternfly/patternfly-react/commit/2c52451))
+
+
+
+
+
+# 1.2.0 (2019-05-16)
+
+
+### Features
+
+* **table:** add umd to react-table ([#1966](https://github.com/patternfly/patternfly-react/issues/1966)) ([a48836b](https://github.com/patternfly/patternfly-react/commit/a48836b))
+* **Text:** Convert Text to TypeScript ([#1907](https://github.com/patternfly/patternfly-react/issues/1907)) ([ad8e1f5](https://github.com/patternfly/patternfly-react/commit/ad8e1f5)), closes [#1897](https://github.com/patternfly/patternfly-react/issues/1897)
+
+
+
+
+
 ## [1.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.1.0...@patternfly/react-integration@1.1.1) (2019-05-10)
 
 

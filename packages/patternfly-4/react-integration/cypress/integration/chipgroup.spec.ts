@@ -15,9 +15,12 @@ describe('Chip Group Demo Test', () => {
 
   it('Verify more button works', () => {
     cy.get('.pf-m-overflow').children('button').click();
+    cy.get('.pf-c-chip__text').contains('Show Less')
   });
 
   it('Verify delete button on first chip', () => {
-    cy.get('.pf-c-chip').children('#remove_pf-random-id-0').click();
+    const chip = cy.get('.pf-c-chip').children('#pf-random-id-0')
+    cy.get('#remove_pf-random-id-0').click();
+    chip.should('not.exist')
   });
 });

@@ -4,7 +4,7 @@ import LoginPage from './LoginPage';
 
 const SocialLoginPagePattern = ({ container, header, footerLinks, card }) => (
   <LoginPage.SocialContainer {...container}>
-    <LoginPage.Alert {...container.alert} />
+    <LoginPage.Alerts alert={container.alert} />
     <LoginPage.Header {...header} />
     <LoginCard.Social>
       <LoginCard.Header>

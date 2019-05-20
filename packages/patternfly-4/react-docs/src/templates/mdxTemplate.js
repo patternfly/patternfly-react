@@ -6,7 +6,6 @@ import { Title, PageSection } from '@patternfly-safe/react-core';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from '../components/mdx-renderer';
 
-
 const components = {
   code: LiveEdit,
   pre: React.Fragment
@@ -15,7 +14,7 @@ const components = {
 const MdxTemplate = ({ data }) => {
   const cssPrefix = data.mdx.frontmatter.cssPrefix;
   let section = data.mdx.frontmatter.section || 'component';
-  const props = data.jsProps.nodes
+  const props = data.props.nodes
     // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
     // We *should* use the MDXRenderer scope to get the names of these, but that's pretty difficult
     .filter(node => data.mdx.code.body.indexOf(node.name) !== -1)
@@ -73,7 +72,7 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
       cssPrefix
     }
   }
-  jsProps: allComponentMetadata(filter: {path: {regex: $pathRegex}, name: {ne: null}}) {
+  props: allComponentMetadata(filter: {path: {regex: $pathRegex}, name: {ne: null}}) {
     nodes {
       name
       props {
@@ -85,6 +84,7 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
         }
         tsType {
           name
+          raw
         }
         defaultValue {
           value
