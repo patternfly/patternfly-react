@@ -14,12 +14,11 @@ exports[`check loginpage example against snapshot 1`] = `
         <p>
           This is placeholder text only.
         </p>
-        <List
-          className=""
+        <Unknown
           variant="inline"
         >
           English
-        </List>
+        </Unknown>
       </Unknown>
     }
     header={

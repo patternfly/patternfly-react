@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card';
+import { Card } from './Card';
 import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {
@@ -25,7 +25,7 @@ test('allows passing in a string as the component', () => {
 });
 
 test('allows passing in a React Component as the component', () => {
-  const Component = () => null;
+  const Component = () => <div>im a div</div>;
   const view = shallow(<Card component={Component} />);
   expect(view.type()).toBe(Component);
 });

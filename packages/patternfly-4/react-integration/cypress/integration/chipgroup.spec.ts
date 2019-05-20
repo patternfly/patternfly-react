@@ -10,7 +10,8 @@ describe('Chip Group Demo Test', () => {
   });
 
   it('Verify chip has badge', () => {
-    cy.get('span').children('.pf-c-badge')
+    cy.get('span').children('.pf-c-badge').should('not.be.undefined');
+    cy.get('span').children('.pf-c-badge').should('not.equal', null);
   })
 
   it('Verify more button works', () => {

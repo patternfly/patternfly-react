@@ -1,6 +1,7 @@
 ---
 title: 'List'
 cssPrefix: 'pf-c-list'
+typescript: true
 ---
 
 import { List, ListItem } from '@patternfly/react-core';
@@ -29,23 +30,6 @@ InlineList = (
     <ListItem>First</ListItem>
     <ListItem>Second</ListItem>
     <ListItem>Third</ListItem>
-  </List>
-);
-```
-
-## Grid list
-```js
-import React from 'react';
-import { List, ListItem } from '@patternfly/react-core';
-
-GridList = () => (
-  <List variant="grid">
-    <ListItem>First</ListItem>
-    <ListItem>Second</ListItem>
-    <ListItem>Third</ListItem>
-    <ListItem>Fourth</ListItem>
-    <ListItem>Fifth</ListItem>
-    <ListItem>Sixth</ListItem>
   </List>
 );
 ```

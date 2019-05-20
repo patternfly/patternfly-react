@@ -26,6 +26,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BrandDemo
   },
   {
+    id: 'card-demo', 
+    name: 'Card Demo',
+    componentType: Examples.CardDemo
+  },
+  {
     id: 'chipgroup-demo', 
     name: 'ChipGroup Demo',
     componentType: Examples.BadgeChip 
@@ -39,6 +44,11 @@ export const Demos: DemoInterface[] = [
     id: 'label-demo',
     name: 'Label Demo',
     componentType: Examples.LabelDemo
+  },
+  {
+    id: 'list-demo',
+    name: 'List Demo',
+    componentType: Examples.ListDemo
   },
   {
     id: 'login-page-demo',
