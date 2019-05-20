@@ -64,22 +64,15 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel uses the reme
     />
   </Component>
   <Component>
-    <Button
-      aria-label={null}
-      className=""
-      component="button"
-      isActive={false}
+    <Component
       isBlock={true}
       isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      isInline={false}
       onClick={[Function]}
       type="submit"
       variant="primary"
     >
       Log In
-    </Button>
+    </Component>
   </Component>
 </Component>
 `;
@@ -148,22 +141,15 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
     />
   </Component>
   <Component>
-    <Button
-      aria-label={null}
-      className=""
-      component="button"
-      isActive={false}
+    <Component
       isBlock={true}
       isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      isInline={false}
       onClick={[Function]}
       type="submit"
       variant="primary"
     >
       Log In
-    </Button>
+    </Component>
   </Component>
 </Component>
 `;
@@ -217,22 +203,15 @@ exports[`should render Login form 1`] = `
     />
   </Component>
   <Component>
-    <Button
-      aria-label={null}
-      className=""
-      component="button"
-      isActive={false}
+    <Component
       isBlock={true}
       isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      isInline={false}
       onClick={[Function]}
       type="submit"
       variant="primary"
     >
       Log In
-    </Button>
+    </Component>
   </Component>
 </Component>
 `;

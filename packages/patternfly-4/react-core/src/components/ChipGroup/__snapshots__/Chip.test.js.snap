@@ -33,23 +33,15 @@ exports[`Chip readonly 1`] = `
 `;
 
 exports[`ChipButton 1`] = `
-<Button
+<Component
   aria-label="close"
   className="chip-bttn-cls"
-  component="button"
   id="my-chip-button"
-  isActive={false}
-  isBlock={false}
-  isDisabled={false}
-  isFocus={false}
-  isHover={false}
-  isInline={false}
   onClick={[Function]}
-  type="button"
   variant="plain"
 >
   <b>
     Close
   </b>
-</Button>
+</Component>
 `;

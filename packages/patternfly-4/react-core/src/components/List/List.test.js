@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import List from './List';
-import ListItem from './ListItem';
+import { List } from './List';
+import { ListItem } from './ListItem';
 
 const ListItems = () => (
   <React.Fragment>
@@ -26,15 +26,6 @@ describe('list', () => {
   test('inline list', () => {
     const view = mount(
       <List variant="inline">
-        <ListItems />
-      </List>
-    );
-    expect(view).toMatchSnapshot();
-  });
-
-  test('grid list', () => {
-    const view = mount(
-      <List variant="grid">
         <ListItems />
       </List>
     );

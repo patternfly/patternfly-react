@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.34.3 (2019-05-20)
+
+
+### Bug Fixes
+
+* **HorizontalNav:** Horizontal nav is not exported for build. ([#2041](https://github.com/patternfly/patternfly-react/issues/2041)) ([2b04c04](https://github.com/patternfly/patternfly-react/commit/2b04c04)), closes [#2040](https://github.com/patternfly/patternfly-react/issues/2040)
+
+
+
+
+
 ## [2.34.2](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.34.1...patternfly-react@2.34.2) (2019-05-17)
 
 **Note:** Version bump only for package patternfly-react
