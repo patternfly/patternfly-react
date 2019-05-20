@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import SingleSelect from './SingleSelect';
 import CheckboxSelect from './CheckboxSelect';
 import SelectToggle from './SelectToggle';
+import SelectOption from './SelectOption';
 import { SelectContext, SelectVariant } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
 
@@ -101,10 +102,10 @@ class Select extends React.Component {
     }
     const filteredChildren =
       e.target.value !== ''
-        ? this.props.children.filter(child => child.props.value.search(input) === 0)
+        ? React.Children.toArray(this.props.children).filter(child => child.props.value.search(input) === 0)
         : this.props.children;
     if (filteredChildren.length === 0) {
-      filteredChildren.push(<div className={css(styles.selectMenuItem)}>No results found</div>);
+      filteredChildren.push(<SelectOption isDisabled key={0} value="No results found" />);
     }
     this.setState({
       typeaheadValue: e.target.value,
@@ -149,7 +150,7 @@ class Select extends React.Component {
     const selectToggleId = `pf-toggle-id-${currentId++}`;
     let childPlaceholderText = null;
     if (!selections && !placeholderText) {
-      const childPlaceholder = children.filter(child => child.props.isPlaceholder === true);
+      const childPlaceholder = React.Children.toArray(children).filter(child => child.props.isPlaceholder === true);
       childPlaceholderText =
         (childPlaceholder[0] && childPlaceholder[0].props.value) || (children[0] && children[0].props.value);
     }
