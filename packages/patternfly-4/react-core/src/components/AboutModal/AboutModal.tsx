@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
 import { canUseDOM } from 'exenv';
 import { KEY_CODES } from '../../helpers/constants';
-import { AboutModalContainer } from './helpers/AboutModalContainer';
+import { AboutModalContainer } from './AboutModalContainer';
 
 export interface AboutModalProps {
   /** Content rendered inside the about modal  */

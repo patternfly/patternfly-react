@@ -5,8 +5,8 @@ import { AboutModalBoxHero } from './AboutModalBoxHero';
 import { AboutModalBoxBrand } from './AboutModalBoxBrand';
 import { AboutModalBoxCloseButton } from './AboutModalBoxCloseButton';
 import { AboutModalBox } from './AboutModalBox';
-import Backdrop from '../../Backdrop/Backdrop';
-import Bullseye from '../../../layouts/Bullseye/Bullseye';
+import Backdrop from '../Backdrop/Backdrop';
+import Bullseye from '../../layouts/Bullseye/Bullseye';
 
 export interface AboutModalContainerProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the About Modal Box Content.  */
