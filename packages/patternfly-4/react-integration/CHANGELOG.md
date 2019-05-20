@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.9.0...@patternfly/react-integration@1.10.0) (2019-05-20)
+
+
+### Features
+
+* **form:** Converted form component to typescript ([#1933](https://github.com/patternfly/patternfly-react/issues/1933)) ([110684d](https://github.com/patternfly/patternfly-react/commit/110684d))
+
+
+
+
+
 # [1.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.8.0...@patternfly/react-integration@1.9.0) (2019-05-20)
 
 
