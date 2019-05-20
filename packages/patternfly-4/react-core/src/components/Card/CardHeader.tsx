@@ -4,9 +4,9 @@ import styles from '@patternfly/patternfly/components/Card/card.css';
 import titleStyles from '@patternfly/patternfly/components/Title/title.css';
 
 export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
-    /** content rendered inside the Card Footer */
+    /** Content rendered inside the Card Footer */
     children?: React.ReactNode; 
-    /** additional classes added to the Header */
+    /** Additional classes added to the Header */
     className?: string; 
 }
 
