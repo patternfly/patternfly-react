@@ -29,14 +29,12 @@ export interface AboutModalProps {
   noAboutModalBoxContentContainer?: boolean;
 };
 
-interface AboutModalState {
-  ariaLabelledBy: string;
-  ariaDescribedBy: string;
-  container: HTMLElement;
-}
-
-export class AboutModal extends React.Component<AboutModalProps, AboutModalState> {
+export class AboutModal extends React.Component<AboutModalProps> {
   private static currentId = 0;
+  private container: HTMLElement;
+  private id = AboutModal.currentId++;
+  private ariaLabelledBy = `pf-about-modal-title-${this.id}`;
+  private ariaDescribedBy = `pf-about-modal-content-${this.id}`;
   static defaultProps = {
     className: '',
     isOpen: false,
@@ -49,11 +47,6 @@ export class AboutModal extends React.Component<AboutModalProps, AboutModalState
 
   constructor(props: AboutModalProps) {
     super(props);
-    this.state = {
-      container: undefined,
-      ariaLabelledBy: `pf-about-modal-title-${AboutModal.currentId++}`,
-      ariaDescribedBy: `pf-about-modal-content-${AboutModal.currentId++}`
-    };
     if (props.brandImageSrc && !props.brandImageAlt) {
       // tslint:disable-next-line:no-console
       console.error('AboutModal:', 'brandImageAlt is required when a brandImageSrc is specified');
@@ -67,10 +60,9 @@ export class AboutModal extends React.Component<AboutModalProps, AboutModalState
   };
 
   componentDidMount() {
-    if (!this.state.container) {
-      const container = document.createElement('div');
-      this.setState({ container });
-      document.body.appendChild(container);
+    if (!this.container) {
+      this.container = document.createElement('div');
+      document.body.appendChild(this.container);
       document.addEventListener('keydown', this.handleEscKeyClick, false);
     }
     if (this.props.isOpen) {
@@ -89,24 +81,24 @@ export class AboutModal extends React.Component<AboutModalProps, AboutModalState
   }
 
   componentWillUnmount() {
-    if (this.state.container) {
-      document.body.removeChild(this.state.container);
+    if (this.container) {
+      document.body.removeChild(this.container);
     }
     document.removeEventListener('keydown', this.handleEscKeyClick, false);
   }
 
   render() {
-    if (!canUseDOM || !this.state.container) {
+    if (!canUseDOM || !this.container) {
       return null;
     }
 
     return ReactDOM.createPortal(
       <AboutModalContainer
+        ariaLabelledbyId={this.ariaLabelledBy}
+        ariaDescribedById={this.ariaDescribedBy}
         {...this.props}
-        ariaLabelledbyId={this.state.ariaLabelledBy}
-        ariaDescribedById={this.state.ariaDescribedBy}
       />,
-      this.state.container
+      this.container
     );
   }
 }
