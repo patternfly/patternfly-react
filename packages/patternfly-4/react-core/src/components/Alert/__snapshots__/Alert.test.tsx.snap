@@ -73,18 +73,9 @@ exports[`Alert - danger Action Close Button 1`] = `
         title=""
         variantLabel="Danger alert:"
       >
-        <Button
+        <Component
           aria-label="Close"
-          className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           onClick={[MockFunction]}
-          type="button"
           variant="plain"
         >
           <button
@@ -122,7 +113,7 @@ exports[`Alert - danger Action Close Button 1`] = `
               </svg>
             </TimesIcon>
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -199,18 +190,9 @@ exports[`Alert - danger Action Link 1`] = `
         title=""
         variantLabel="Danger alert:"
       >
-        <Button
-          aria-label={null}
+        <Component
           className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           title=""
-          type="button"
           variant="link"
           variantLabel="Danger alert:"
         >
@@ -226,7 +208,7 @@ exports[`Alert - danger Action Link 1`] = `
           >
             test
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -304,18 +286,9 @@ exports[`Alert - danger Action and Title 1`] = `
         title="Some title"
         variantLabel="Danger alert:"
       >
-        <Button
-          aria-label={null}
+        <Component
           className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           title="Some title"
-          type="button"
           variant="link"
           variantLabel="Danger alert:"
         >
@@ -331,7 +304,7 @@ exports[`Alert - danger Action and Title 1`] = `
           >
             test
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -410,18 +383,9 @@ exports[`Alert - danger Custom aria label 1`] = `
         title="Some title"
         variantLabel="Danger alert:"
       >
-        <Button
-          aria-label={null}
+        <Component
           className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           title="Some title"
-          type="button"
           variant="link"
           variantLabel="Danger alert:"
         >
@@ -437,7 +401,7 @@ exports[`Alert - danger Custom aria label 1`] = `
           >
             test
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -642,18 +606,9 @@ exports[`Alert - info Action Close Button 1`] = `
         title=""
         variantLabel="Info alert:"
       >
-        <Button
+        <Component
           aria-label="Close"
-          className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           onClick={[MockFunction]}
-          type="button"
           variant="plain"
         >
           <button
@@ -691,7 +646,7 @@ exports[`Alert - info Action Close Button 1`] = `
               </svg>
             </TimesIcon>
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -768,18 +723,9 @@ exports[`Alert - info Action Link 1`] = `
         title=""
         variantLabel="Info alert:"
       >
-        <Button
-          aria-label={null}
+        <Component
           className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           title=""
-          type="button"
           variant="link"
           variantLabel="Info alert:"
         >
@@ -795,7 +741,7 @@ exports[`Alert - info Action Link 1`] = `
           >
             test
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -873,18 +819,9 @@ exports[`Alert - info Action and Title 1`] = `
         title="Some title"
         variantLabel="Info alert:"
       >
-        <Button
-          aria-label={null}
+        <Component
           className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           title="Some title"
-          type="button"
           variant="link"
           variantLabel="Info alert:"
         >
@@ -900,7 +837,7 @@ exports[`Alert - info Action and Title 1`] = `
           >
             test
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -979,18 +916,9 @@ exports[`Alert - info Custom aria label 1`] = `
         title="Some title"
         variantLabel="Info alert:"
       >
-        <Button
-          aria-label={null}
+        <Component
           className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           title="Some title"
-          type="button"
           variant="link"
           variantLabel="Info alert:"
         >
@@ -1006,7 +934,7 @@ exports[`Alert - info Custom aria label 1`] = `
           >
             test
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -1211,18 +1139,9 @@ exports[`Alert - success Action Close Button 1`] = `
         title=""
         variantLabel="Success alert:"
       >
-        <Button
+        <Component
           aria-label="Close"
-          className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           onClick={[MockFunction]}
-          type="button"
           variant="plain"
         >
           <button
@@ -1260,7 +1179,7 @@ exports[`Alert - success Action Close Button 1`] = `
               </svg>
             </TimesIcon>
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -1337,18 +1256,9 @@ exports[`Alert - success Action Link 1`] = `
         title=""
         variantLabel="Success alert:"
       >
-        <Button
-          aria-label={null}
+        <Component
           className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           title=""
-          type="button"
           variant="link"
           variantLabel="Success alert:"
         >
@@ -1364,7 +1274,7 @@ exports[`Alert - success Action Link 1`] = `
           >
             test
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -1442,18 +1352,9 @@ exports[`Alert - success Action and Title 1`] = `
         title="Some title"
         variantLabel="Success alert:"
       >
-        <Button
-          aria-label={null}
+        <Component
           className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           title="Some title"
-          type="button"
           variant="link"
           variantLabel="Success alert:"
         >
@@ -1469,7 +1370,7 @@ exports[`Alert - success Action and Title 1`] = `
           >
             test
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -1548,18 +1449,9 @@ exports[`Alert - success Custom aria label 1`] = `
         title="Some title"
         variantLabel="Success alert:"
       >
-        <Button
-          aria-label={null}
+        <Component
           className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           title="Some title"
-          type="button"
           variant="link"
           variantLabel="Success alert:"
         >
@@ -1575,7 +1467,7 @@ exports[`Alert - success Custom aria label 1`] = `
           >
             test
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -1780,18 +1672,9 @@ exports[`Alert - warning Action Close Button 1`] = `
         title=""
         variantLabel="Warning alert:"
       >
-        <Button
+        <Component
           aria-label="Close"
-          className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           onClick={[MockFunction]}
-          type="button"
           variant="plain"
         >
           <button
@@ -1829,7 +1712,7 @@ exports[`Alert - warning Action Close Button 1`] = `
               </svg>
             </TimesIcon>
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -1906,18 +1789,9 @@ exports[`Alert - warning Action Link 1`] = `
         title=""
         variantLabel="Warning alert:"
       >
-        <Button
-          aria-label={null}
+        <Component
           className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           title=""
-          type="button"
           variant="link"
           variantLabel="Warning alert:"
         >
@@ -1933,7 +1807,7 @@ exports[`Alert - warning Action Link 1`] = `
           >
             test
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -2011,18 +1885,9 @@ exports[`Alert - warning Action and Title 1`] = `
         title="Some title"
         variantLabel="Warning alert:"
       >
-        <Button
-          aria-label={null}
+        <Component
           className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           title="Some title"
-          type="button"
           variant="link"
           variantLabel="Warning alert:"
         >
@@ -2038,7 +1903,7 @@ exports[`Alert - warning Action and Title 1`] = `
           >
             test
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>
@@ -2117,18 +1982,9 @@ exports[`Alert - warning Custom aria label 1`] = `
         title="Some title"
         variantLabel="Warning alert:"
       >
-        <Button
-          aria-label={null}
+        <Component
           className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          isInline={false}
           title="Some title"
-          type="button"
           variant="link"
           variantLabel="Warning alert:"
         >
@@ -2144,7 +2000,7 @@ exports[`Alert - warning Custom aria label 1`] = `
           >
             test
           </button>
-        </Button>
+        </Component>
       </Component>
     </div>
   </div>

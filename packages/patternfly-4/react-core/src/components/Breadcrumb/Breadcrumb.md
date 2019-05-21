@@ -1,6 +1,7 @@
 ---
 title: 'Breadcrumb'
 cssPrefix: 'pf-c-breadcrumb'
+typescript: true
 ---
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 

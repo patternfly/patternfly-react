@@ -44,7 +44,7 @@ test('Check page horizontal layout example against snapshot', () => {
 test('Check page to verify breadcrumb is created', () => {
   const Header = <PageHeader logo="Logo" toolbar="Toolbar" avatar=" | Avatar" nav="Navigation" />;
   const Sidebar = <PageSidebar isNavOpen />;
-  const PageBreadcrumb = (
+  const PageBreadcrumb = () => (
     <Breadcrumb>
       <BreadcrumbItem>Section Home</BreadcrumbItem>
       <BreadcrumbItem to="#">Section Title</BreadcrumbItem>

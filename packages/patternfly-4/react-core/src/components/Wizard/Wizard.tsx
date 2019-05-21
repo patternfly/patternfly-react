@@ -42,7 +42,7 @@ export interface WizardStep {
 
 export type WizardStepFunctionType = (newStep: { id?: string | number; name: string; }, prevStep: { prevId?: string | number; prevName: string; }) => void;
 
-export interface WizardProps {
+export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   /** True to show the wizard */
   isOpen?: boolean;
   /** If true makes the navigation more compact */
@@ -437,7 +437,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
                     titleId={this.titleId}
                     descriptionId={this.descriptionId}
                     onClose={onClose}
-                    title={title} 
+                    title={title}
                     description={description}
                     ariaLabelCloseButton={ariaLabelCloseButton} />
                   <WizardToggle
