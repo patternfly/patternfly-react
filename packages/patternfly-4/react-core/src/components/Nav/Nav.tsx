@@ -66,7 +66,7 @@ export class Nav extends React.Component<NavProps> {
   }
 
   render() {
-    const { 'aria-label': ariaLabel, children, className, onSelect, ...props } = this.props;
+    const { 'aria-label': ariaLabel, children, className, onSelect, onToggle, ...props } = this.props;
     const childrenProps:any = (children as any).props;
 
     return (

@@ -10,7 +10,6 @@ exports[`Default Nav List - Trigger item active update 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    onToggle={[Function]}
   >
     <Component>
       <ul
@@ -100,7 +99,6 @@ exports[`Default Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    onToggle={[Function]}
   >
     <Component>
       <ul
@@ -190,7 +188,6 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    onToggle={[Function]}
   >
     <Component>
       <ul
@@ -346,7 +343,6 @@ exports[`Expandable Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    onToggle={[Function]}
   >
     <Component>
       <ul
@@ -502,7 +498,6 @@ exports[`Expandable Nav List with aria label 1`] = `
   <nav
     aria-label="Test"
     className="pf-c-nav"
-    onToggle={[Function]}
   >
     <Component>
       <ul
@@ -664,7 +659,6 @@ exports[`Horizontal Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    onToggle={[Function]}
   >
     <Component
       variant="horizontal"
@@ -756,7 +750,6 @@ exports[`Nav Grouped List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    onToggle={[Function]}
   >
     <Component
       id="grp-1"
@@ -960,7 +953,6 @@ exports[`Nav List with custom item nodes 1`] = `
   <nav
     aria-label="Local"
     className="pf-c-nav"
-    onToggle={[Function]}
   >
     <Component
       variant="tertiary"
@@ -1001,7 +993,6 @@ exports[`Simple Nav List 1`] = `
   <nav
     aria-label="Global"
     className="pf-c-nav"
-    onToggle={[Function]}
   >
     <Component
       variant="simple"
@@ -1093,7 +1084,6 @@ exports[`Tertiary Nav List 1`] = `
   <nav
     aria-label="Local"
     className="pf-c-nav"
-    onToggle={[Function]}
   >
     <Component
       variant="tertiary"

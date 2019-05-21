@@ -15,7 +15,7 @@ export interface NavExpandableProps extends React.DetailedHTMLProps<React.LiHTML
   /** Boolean to programatically expand or collapse section */
   isExpanded?: boolean;
   /** Anything that can be rendered inside of the expandable list */
-  children?: React.ReactNode | string;
+  children?: React.ReactNode;
   /** Additional classes added to the container */
   className?: string;
   /** Group identifier, will be returned with the onToggle and onSelect callback passed to the Nav component */
