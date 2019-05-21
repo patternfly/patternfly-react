@@ -39,6 +39,6 @@ describe('ChipGroup', () => {
 
   test('chip group will not render if no children passed', () => {
     const view = shallow(<ChipGroup />);
-    expect(view.equals(null)).toBe(true);
+    expect(view.html()).toBeNull();
   });
 });

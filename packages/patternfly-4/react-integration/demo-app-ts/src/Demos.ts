@@ -46,6 +46,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.CardDemo
   },
   {
+    id: 'chipgroup-demo', 
+    name: 'ChipGroup Demo',
+    componentType: Examples.BadgeChip 
+  },
+  {
     id: 'empty-state-demo',
     name: 'Empty State Demo',
     componentType: Examples.EmptyStateDemo
