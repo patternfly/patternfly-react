@@ -1,5 +1,6 @@
 export * from './AlertDemo/AlertDemo';
 export * from './AvatarDemo/AvatarDemo';
+export * from './BadgeDemo/BadgeDemo'; 
 export * from './BrandDemo/BrandDemo'; 
 export * from './BreadcrumbDemo/BreadcrumbDemo'; 
 export * from './ButtonDemo/ButtonDemo'; 
