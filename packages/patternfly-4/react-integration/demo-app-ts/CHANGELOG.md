@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.11.1...demo-app-ts@1.12.0) (2019-05-21)
+
+
+### Features
+
+* **Badge:** Convert badge to typescript ([#2048](https://github.com/patternfly/patternfly-react/issues/2048)) ([836f484](https://github.com/patternfly/patternfly-react/commit/836f484))
+* **ChipGroup:** Converted ChipGroup component to typescript ([#1951](https://github.com/patternfly/patternfly-react/issues/1951)) ([f13ce5b](https://github.com/patternfly/patternfly-react/commit/f13ce5b))
+
+
+
+
+
 ## [1.11.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.11.0...demo-app-ts@1.11.1) (2019-05-21)
 
 **Note:** Version bump only for package demo-app-ts
