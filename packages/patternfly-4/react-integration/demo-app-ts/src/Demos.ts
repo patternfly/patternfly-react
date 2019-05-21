@@ -11,6 +11,11 @@ interface DemoInterface {
 /** Add the name of the demo and it's component here to have them show up in the demo app */
 export const Demos: DemoInterface[] = [
   {
+    id: 'about-modal-demo',
+    name: 'About Modal Demo',
+    componentType: Examples.AboutModalDemo
+  },
+  {
     id: 'alert-demo',
     name: 'Alert Demo',
     componentType: Examples.AlertDemo

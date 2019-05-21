@@ -21,11 +21,10 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
 exports[`AboutModalBoxCloseButton Test onclose 1`] = `
 <div
   className="pf-c-about-modal-box__close"
-  onclose={[MockFunction]}
 >
   <Component
     aria-label="Close Dialog"
-    onClick={[Function]}
+    onClick={[MockFunction]}
     variant="plain"
   >
     <TimesIcon

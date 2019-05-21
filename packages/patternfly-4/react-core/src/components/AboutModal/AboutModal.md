@@ -1,6 +1,7 @@
 ---
 title: 'About modal'
 cssPrefix: 'pf-c-about-modal-box'
+typescript: true
 ---
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';

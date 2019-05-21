@@ -1,6 +1,6 @@
-import AboutModalBoxContent from './AboutModalBoxContent';
-import React from 'react';
+import * as React from 'react';
 import { shallow } from 'enzyme';
+import { AboutModalBoxContent } from './AboutModalBoxContent';
 
 test('AboutModalBoxContent Test', () => {
   const view = shallow(

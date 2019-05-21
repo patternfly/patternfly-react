@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import { shallow } from 'enzyme';
-import AboutModalContainer from './AboutModalContainer';
+import { AboutModalContainer } from './AboutModalContainer';
 
 const props = {
   children: 'modal content',
@@ -28,7 +28,7 @@ test('About Modal Container Test isOpen', () => {
 
 test('About Modal Container Test with onlose', () => {
   const view = shallow(
-    <AboutModalContainer onclose={() => undefined} {...props}>
+    <AboutModalContainer onClose={() => undefined} {...props}>
       This is ModalBox content
     </AboutModalContainer>
   );

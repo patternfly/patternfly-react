@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import { shallow } from 'enzyme';
-import AboutModalBoxCloseButton from './AboutModalBoxCloseButton';
+import { AboutModalBoxCloseButton } from './AboutModalBoxCloseButton';
 
 test('AboutModalBoxCloseButton Test', () => {
   const view = shallow(<AboutModalBoxCloseButton />);
@@ -9,6 +9,6 @@ test('AboutModalBoxCloseButton Test', () => {
 
 test('AboutModalBoxCloseButton Test onclose', () => {
   const onClose = jest.fn();
-  const view = shallow(<AboutModalBoxCloseButton onclose={onClose} />);
+  const view = shallow(<AboutModalBoxCloseButton onClose={onClose} />);
   expect(view).toMatchSnapshot();
 });

@@ -1,3 +1,4 @@
+export * from './AboutModal/AboutModalDemo';
 export * from './AlertDemo/AlertDemo';
 export * from './AvatarDemo/AvatarDemo';
 export * from './BrandDemo/BrandDemo'; 
