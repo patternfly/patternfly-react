@@ -1,22 +1,20 @@
 ---
-title: 'Line chart'
+title: 'Line'
 section: 'charts'
 ---
 
-import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme, ChartAxis } from '@patternfly/react-charts';
-import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-line.scss';
 
-## Green themed line chart
+## Green line chart
 ```js
 import React from 'react';
-import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme, ChartAxis } from '@patternfly/react-charts';
-import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
 
-<div style={{ display: 'flex-inline' }}>
-  <div style={{ width: 450, height: 360 }}>
-    <div>
-      <Chart theme={ChartTheme.light.green}>
+<div>
+  <div className="line-chart-inline">
+    <div className="line-chart-container">
+      <Chart themeColor={ChartThemeColor.green}>
         <ChartGroup>
           <ChartLine
             data={[
@@ -60,79 +58,77 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
         <ChartAxis dependentAxis tickValues={[2, 5, 8]} />
       </Chart>
     </div>
-    <div className="chart-legend">
-      <ChartLegend
-        data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
-        title="Average number of pets"
-        height={50}
-        theme={ChartTheme.light.green}
-      />
-    </div>
+    <ChartLegend
+      data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
+      orientation="vertical"
+      title="Average number of pets"
+      themeColor={ChartThemeColor.green}
+      y={80}
+    />
   </div>
 </div>
 ```
 
-## Multi-color themed line chart
+## Multi-color line chart
 ```js
 import React from 'react';
-import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme, ChartAxis } from '@patternfly/react-charts';
-import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
-<div style={{ display: 'flex-inline' }}>
-  <div style={{ width: 450, height: 360 }}>
-    <div>
-      <Chart theme={ChartTheme.light.multi}>
-        <ChartGroup>
-          <ChartLine
-            data={[
-              { name: 'Cats', x: 1, y: 1 },
-              { name: 'Cats', x: 2, y: 2 },
-              { name: 'Cats', x: 3, y: 5 },
-              { name: 'Cats', x: 4, y: 3 }
-            ]}
-          />
-          <ChartLine
-            data={[
-              { name: 'Dogs', x: 1, y: 2 },
-              { name: 'Dogs', x: 2, y: 1 },
-              { name: 'Dogs', x: 3, y: 7 },
-              { name: 'Dogs', x: 4, y: 4 }
-            ]}
-            style={{
-              data: {
-                strokeDasharray: '3,3'
-              }
-            }}
-          />
-          <ChartLine
-            data={[
-              { name: 'Birds', x: 1, y: 3 },
-              { name: 'Birds', x: 2, y: 4 },
-              { name: 'Birds', x: 3, y: 9 },
-              { name: 'Birds', x: 4, y: 5 }
-            ]}
-          />
-          <ChartLine
-            data={[
-              { name: 'Mice', x: 1, y: 3 },
-              { name: 'Mice', x: 2, y: 3 },
-              { name: 'Mice', x: 3, y: 8 },
-              { name: 'Mice', x: 4, y: 7 }
-            ]}
-          />
-        </ChartGroup>
-        <ChartAxis tickValues={[2, 3, 4]} />
-        <ChartAxis dependentAxis tickValues={[2, 5, 8]} />
-      </Chart>
-    </div>
-    <div className="chart-legend">
-      <ChartLegend
-        data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
-        title="Average number of pets"
-        height={50}
-        theme={ChartTheme.light.multi}
-      />
-    </div>
+<div>
+  <div className="line-chart-container">
+    <Chart
+      themeColor={ChartThemeColor.multi}
+      themeVariant={ChartThemeVariant.light}
+    >
+      <ChartGroup>
+        <ChartLine
+          data={[
+            { name: 'Cats', x: 1, y: 1 },
+            { name: 'Cats', x: 2, y: 2 },
+            { name: 'Cats', x: 3, y: 5 },
+            { name: 'Cats', x: 4, y: 3 }
+          ]}
+        />
+        <ChartLine
+          data={[
+            { name: 'Dogs', x: 1, y: 2 },
+            { name: 'Dogs', x: 2, y: 1 },
+            { name: 'Dogs', x: 3, y: 7 },
+            { name: 'Dogs', x: 4, y: 4 }
+          ]}
+          style={{
+            data: {
+              strokeDasharray: '3,3'
+            }
+          }}
+        />
+        <ChartLine
+          data={[
+            { name: 'Birds', x: 1, y: 3 },
+            { name: 'Birds', x: 2, y: 4 },
+            { name: 'Birds', x: 3, y: 9 },
+            { name: 'Birds', x: 4, y: 5 }
+          ]}
+        />
+        <ChartLine
+          data={[
+            { name: 'Mice', x: 1, y: 3 },
+            { name: 'Mice', x: 2, y: 3 },
+            { name: 'Mice', x: 3, y: 8 },
+            { name: 'Mice', x: 4, y: 7 }
+          ]}
+        />
+      </ChartGroup>
+      <ChartAxis tickValues={[2, 3, 4]} />
+      <ChartAxis dependentAxis tickValues={[2, 5, 8]} />
+    </Chart>
   </div>
+  <ChartLegend
+    data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
+    height={50}
+    themeColor={ChartThemeColor.multi}
+    themeVariant={ChartThemeVariant.light}
+    title="Average number of pets"
+  />
 </div>
 ```

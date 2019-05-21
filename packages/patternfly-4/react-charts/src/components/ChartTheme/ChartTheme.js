@@ -1,20 +1,18 @@
-import ThemeDarkBlue from './theme-dark-blue';
-import ThemeDarkGreen from './theme-dark-green';
-import ThemeDarkMulti from './theme-dark-multi';
-import ThemeLightBlue from './theme-light-blue';
-import ThemeLightGreen from './theme-light-green';
-import ThemeLightMulti from './theme-light-multi';
+import { default as DonutTheme } from './themes/theme-donut';
+import { default as VictoryTheme } from './themes/theme-victory';
 
-export default {
-  default: ThemeLightBlue,
-  dark: {
-    blue: ThemeDarkBlue,
-    green: ThemeDarkGreen,
-    multi: ThemeDarkMulti
-  },
-  light: {
-    blue: ThemeLightBlue,
-    green: ThemeLightGreen,
-    multi: ThemeLightMulti
-  }
+export const ChartBaseTheme = VictoryTheme;
+export const ChartDonutTheme = DonutTheme;
+
+export const ChartThemeColor = {
+  blue: 'blue',
+  default: 'blue',
+  green: 'green',
+  multi: 'multi'
+};
+
+export const ChartThemeVariant = {
+  dark: 'dark',
+  default: 'light',
+  light: 'light'
 };

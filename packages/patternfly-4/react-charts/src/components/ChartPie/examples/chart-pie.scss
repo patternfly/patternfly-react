@@ -1,17 +1,12 @@
 .ws-preview {
   & > * {
-    .chart-container {
-      height: 200px;
-      width: 300px;
+    .pie-chart-container {
+      height: 230px;
+      width: 230px;
     }
 
-    .chart-inline {
+    .pie-chart-inline {
       display: inline-flex;
-    }
-
-    .chart-title {
-      margin-bottom: 25px;
-      margin-left: 10px;
     }
   }
 }

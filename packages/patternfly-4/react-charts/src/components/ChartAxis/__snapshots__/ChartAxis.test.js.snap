@@ -47,8 +47,8 @@ exports[`ChartAxis 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
@@ -66,7 +66,7 @@ exports[`ChartAxis 1`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "axis": Object {
         "colorScale": Array [
@@ -75,12 +75,12 @@ exports[`ChartAxis 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#72767b",
+            "stroke": "#D1D1D1",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -113,7 +113,7 @@ exports[`ChartAxis 1`] = `
             "stroke": "transparent",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "bar": Object {
         "barWidth": 10,
@@ -123,8 +123,8 @@ exports[`ChartAxis 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "stroke": "none",
@@ -138,7 +138,7 @@ exports[`ChartAxis 1`] = `
             "stroke": "transparent",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "boxplot": Object {
         "boxWidth": 20,
@@ -148,8 +148,8 @@ exports[`ChartAxis 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "max": Object {
             "padding": 8,
@@ -215,7 +215,7 @@ exports[`ChartAxis 1`] = `
             "stroke": "transparent",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "candlestick": Object {
         "candleColors": Object {
@@ -228,8 +228,8 @@ exports[`ChartAxis 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "stroke": "#73bcf7",
@@ -245,7 +245,7 @@ exports[`ChartAxis 1`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "chart": Object {
         "colorScale": Array [
@@ -254,14 +254,14 @@ exports[`ChartAxis 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "parent": Object {
             "border": "1px solid #bee1f4",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "errorbar": Object {
         "borderWidth": 8,
@@ -271,8 +271,8 @@ exports[`ChartAxis 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -289,7 +289,7 @@ exports[`ChartAxis 1`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "group": Object {
         "colorScale": Array [
@@ -298,9 +298,9 @@ exports[`ChartAxis 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
-        "width": 451,
+        "height": 300,
+        "padding": 50,
+        "width": 450,
       },
       "legend": Object {
         "colorScale": Array [
@@ -341,8 +341,8 @@ exports[`ChartAxis 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -359,7 +359,7 @@ exports[`ChartAxis 1`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "pie": Object {
         "colorScale": Array [
@@ -368,11 +368,11 @@ exports[`ChartAxis 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "padding": 20,
+        "height": 230,
+        "padding": 8,
         "style": Object {
           "data": Object {
             "padding": 8,
-            "stroke": "transparent",
             "strokeWidth": 1,
           },
           "labels": Object {
@@ -381,9 +381,10 @@ exports[`ChartAxis 1`] = `
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,
-            "stroke": "transparent",
+            "stroke": "#EDEDED",
           },
         },
+        "width": 230,
       },
       "scatter": Object {
         "colorScale": Array [
@@ -392,8 +393,8 @@ exports[`ChartAxis 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
@@ -410,7 +411,7 @@ exports[`ChartAxis 1`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "stack": Object {
         "colorScale": Array [
@@ -419,34 +420,35 @@ exports[`ChartAxis 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "stroke": "#fff",
             "strokeWidth": 1,
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "tooltip": Object {
         "cornerRadius": 0,
         "flyoutStyle": Object {
           "cornerRadius": 0,
-          "fill": "#fff",
+          "fill": "#151515",
           "pointerEvents": "none",
           "stroke": "#151515",
-          "strokeWidth": 1,
+          "strokeWidth": 0,
         },
         "pointerLength": 10,
+        "pointerWidth": 20,
         "style": Object {
-          "fill": "#fff",
+          "fill": "#EDEDED",
           "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
           "fontSize": 14,
           "letterSpacing": "normal",
-          "padding": 8,
+          "padding": 16,
           "pointerEvents": "none",
-          "stroke": "#151515",
+          "stroke": "#EDEDED",
           "textAnchor": "middle",
         },
       },
@@ -457,8 +459,8 @@ exports[`ChartAxis 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -466,8 +468,9 @@ exports[`ChartAxis 1`] = `
             "strokeWidth": 0,
           },
           "flyout": Object {
-            "fill": "#fff",
+            "fill": "#151515",
             "pointerEvents": "none",
+            "stroke": "#151515",
             "strokeWidth": 1,
           },
           "labels": Object {
@@ -477,11 +480,11 @@ exports[`ChartAxis 1`] = `
             "letterSpacing": "normal",
             "padding": 8,
             "pointerEvents": "none",
-            "stroke": "transparent",
+            "stroke": "#EDEDED",
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
     }
   }
@@ -550,8 +553,8 @@ exports[`ChartAxis 2`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
@@ -569,7 +572,7 @@ exports[`ChartAxis 2`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "axis": Object {
         "colorScale": Array [
@@ -578,12 +581,12 @@ exports[`ChartAxis 2`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#72767b",
+            "stroke": "#D1D1D1",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -616,7 +619,7 @@ exports[`ChartAxis 2`] = `
             "stroke": "transparent",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "bar": Object {
         "barWidth": 10,
@@ -626,8 +629,8 @@ exports[`ChartAxis 2`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "stroke": "none",
@@ -641,7 +644,7 @@ exports[`ChartAxis 2`] = `
             "stroke": "transparent",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "boxplot": Object {
         "boxWidth": 20,
@@ -651,8 +654,8 @@ exports[`ChartAxis 2`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "max": Object {
             "padding": 8,
@@ -718,7 +721,7 @@ exports[`ChartAxis 2`] = `
             "stroke": "transparent",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "candlestick": Object {
         "candleColors": Object {
@@ -731,8 +734,8 @@ exports[`ChartAxis 2`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "stroke": "#73bcf7",
@@ -748,7 +751,7 @@ exports[`ChartAxis 2`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "chart": Object {
         "colorScale": Array [
@@ -757,14 +760,14 @@ exports[`ChartAxis 2`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "parent": Object {
             "border": "1px solid #bee1f4",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "errorbar": Object {
         "borderWidth": 8,
@@ -774,8 +777,8 @@ exports[`ChartAxis 2`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -792,7 +795,7 @@ exports[`ChartAxis 2`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "group": Object {
         "colorScale": Array [
@@ -801,9 +804,9 @@ exports[`ChartAxis 2`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
-        "width": 451,
+        "height": 300,
+        "padding": 50,
+        "width": 450,
       },
       "legend": Object {
         "colorScale": Array [
@@ -844,8 +847,8 @@ exports[`ChartAxis 2`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -862,7 +865,7 @@ exports[`ChartAxis 2`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "pie": Object {
         "colorScale": Array [
@@ -871,11 +874,11 @@ exports[`ChartAxis 2`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "padding": 20,
+        "height": 230,
+        "padding": 8,
         "style": Object {
           "data": Object {
             "padding": 8,
-            "stroke": "transparent",
             "strokeWidth": 1,
           },
           "labels": Object {
@@ -884,9 +887,10 @@ exports[`ChartAxis 2`] = `
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,
-            "stroke": "transparent",
+            "stroke": "#EDEDED",
           },
         },
+        "width": 230,
       },
       "scatter": Object {
         "colorScale": Array [
@@ -895,8 +899,8 @@ exports[`ChartAxis 2`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
@@ -913,7 +917,7 @@ exports[`ChartAxis 2`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "stack": Object {
         "colorScale": Array [
@@ -922,34 +926,35 @@ exports[`ChartAxis 2`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "stroke": "#fff",
             "strokeWidth": 1,
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "tooltip": Object {
         "cornerRadius": 0,
         "flyoutStyle": Object {
           "cornerRadius": 0,
-          "fill": "#fff",
+          "fill": "#151515",
           "pointerEvents": "none",
           "stroke": "#151515",
-          "strokeWidth": 1,
+          "strokeWidth": 0,
         },
         "pointerLength": 10,
+        "pointerWidth": 20,
         "style": Object {
-          "fill": "#fff",
+          "fill": "#EDEDED",
           "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
           "fontSize": 14,
           "letterSpacing": "normal",
-          "padding": 8,
+          "padding": 16,
           "pointerEvents": "none",
-          "stroke": "#151515",
+          "stroke": "#EDEDED",
           "textAnchor": "middle",
         },
       },
@@ -960,8 +965,8 @@ exports[`ChartAxis 2`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -969,8 +974,9 @@ exports[`ChartAxis 2`] = `
             "strokeWidth": 0,
           },
           "flyout": Object {
-            "fill": "#fff",
+            "fill": "#151515",
             "pointerEvents": "none",
+            "stroke": "#151515",
             "strokeWidth": 1,
           },
           "labels": Object {
@@ -980,11 +986,11 @@ exports[`ChartAxis 2`] = `
             "letterSpacing": "normal",
             "padding": 8,
             "pointerEvents": "none",
-            "stroke": "transparent",
+            "stroke": "#EDEDED",
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
     }
   }
@@ -3170,8 +3176,8 @@ exports[`renders component data 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
@@ -3189,7 +3195,7 @@ exports[`renders component data 1`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "axis": Object {
         "colorScale": Array [
@@ -3198,12 +3204,12 @@ exports[`renders component data 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#72767b",
+            "stroke": "#D1D1D1",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -3236,7 +3242,7 @@ exports[`renders component data 1`] = `
             "stroke": "transparent",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "bar": Object {
         "barWidth": 10,
@@ -3246,8 +3252,8 @@ exports[`renders component data 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "stroke": "none",
@@ -3261,7 +3267,7 @@ exports[`renders component data 1`] = `
             "stroke": "transparent",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "boxplot": Object {
         "boxWidth": 20,
@@ -3271,8 +3277,8 @@ exports[`renders component data 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "max": Object {
             "padding": 8,
@@ -3338,7 +3344,7 @@ exports[`renders component data 1`] = `
             "stroke": "transparent",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "candlestick": Object {
         "candleColors": Object {
@@ -3351,8 +3357,8 @@ exports[`renders component data 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "stroke": "#73bcf7",
@@ -3368,7 +3374,7 @@ exports[`renders component data 1`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "chart": Object {
         "colorScale": Array [
@@ -3377,14 +3383,14 @@ exports[`renders component data 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "parent": Object {
             "border": "1px solid #bee1f4",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "errorbar": Object {
         "borderWidth": 8,
@@ -3394,8 +3400,8 @@ exports[`renders component data 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -3412,7 +3418,7 @@ exports[`renders component data 1`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "group": Object {
         "colorScale": Array [
@@ -3421,9 +3427,9 @@ exports[`renders component data 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
-        "width": 451,
+        "height": 300,
+        "padding": 50,
+        "width": 450,
       },
       "legend": Object {
         "colorScale": Array [
@@ -3464,8 +3470,8 @@ exports[`renders component data 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -3482,7 +3488,7 @@ exports[`renders component data 1`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "pie": Object {
         "colorScale": Array [
@@ -3491,11 +3497,11 @@ exports[`renders component data 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "padding": 20,
+        "height": 230,
+        "padding": 8,
         "style": Object {
           "data": Object {
             "padding": 8,
-            "stroke": "transparent",
             "strokeWidth": 1,
           },
           "labels": Object {
@@ -3504,9 +3510,10 @@ exports[`renders component data 1`] = `
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,
-            "stroke": "transparent",
+            "stroke": "#EDEDED",
           },
         },
+        "width": 230,
       },
       "scatter": Object {
         "colorScale": Array [
@@ -3515,8 +3522,8 @@ exports[`renders component data 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
@@ -3533,7 +3540,7 @@ exports[`renders component data 1`] = `
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "stack": Object {
         "colorScale": Array [
@@ -3542,34 +3549,35 @@ exports[`renders component data 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "stroke": "#fff",
             "strokeWidth": 1,
           },
         },
-        "width": 451,
+        "width": 450,
       },
       "tooltip": Object {
         "cornerRadius": 0,
         "flyoutStyle": Object {
           "cornerRadius": 0,
-          "fill": "#fff",
+          "fill": "#151515",
           "pointerEvents": "none",
           "stroke": "#151515",
-          "strokeWidth": 1,
+          "strokeWidth": 0,
         },
         "pointerLength": 10,
+        "pointerWidth": 20,
         "style": Object {
-          "fill": "#fff",
+          "fill": "#EDEDED",
           "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
           "fontSize": 14,
           "letterSpacing": "normal",
-          "padding": 8,
+          "padding": 16,
           "pointerEvents": "none",
-          "stroke": "#151515",
+          "stroke": "#EDEDED",
           "textAnchor": "middle",
         },
       },
@@ -3580,8 +3588,8 @@ exports[`renders component data 1`] = `
           "#73bcf7",
           "#0066ff",
         ],
-        "height": 301,
-        "padding": 8,
+        "height": 300,
+        "padding": 50,
         "style": Object {
           "data": Object {
             "fill": "transparent",
@@ -3589,8 +3597,9 @@ exports[`renders component data 1`] = `
             "strokeWidth": 0,
           },
           "flyout": Object {
-            "fill": "#fff",
+            "fill": "#151515",
             "pointerEvents": "none",
+            "stroke": "#151515",
             "strokeWidth": 1,
           },
           "labels": Object {
@@ -3600,11 +3609,11 @@ exports[`renders component data 1`] = `
             "letterSpacing": "normal",
             "padding": 8,
             "pointerEvents": "none",
-            "stroke": "transparent",
+            "stroke": "#EDEDED",
             "textAnchor": "middle",
           },
         },
-        "width": 451,
+        "width": 450,
       },
     }
   }
