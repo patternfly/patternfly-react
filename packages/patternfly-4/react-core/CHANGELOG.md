@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.29.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.28.1...@patternfly/react-core@3.29.0) (2019-05-21)
+
+
+### Features
+
+* **ts:** convert aboutmodal to TS ([#1968](https://github.com/patternfly/patternfly-react/issues/1968)) ([7dd9526](https://github.com/patternfly/patternfly-react/commit/7dd9526))
+
+
+
+
+
 ## [3.28.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.28.0...@patternfly/react-core@3.28.1) (2019-05-21)
 
 

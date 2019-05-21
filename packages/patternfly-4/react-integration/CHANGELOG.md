@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.10.0...@patternfly/react-integration@1.11.0) (2019-05-21)
+
+
+### Features
+
+* **ts:** convert aboutmodal to TS ([#1968](https://github.com/patternfly/patternfly-react/issues/1968)) ([7dd9526](https://github.com/patternfly/patternfly-react/commit/7dd9526))
+
+
+
+
+
 # [1.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.9.0...@patternfly/react-integration@1.10.0) (2019-05-20)
 
 
