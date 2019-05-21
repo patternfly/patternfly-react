@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.5.0 (2019-05-21)
+
+
+### Features
+
+* **ts:** convert aboutmodal to TS ([#1968](https://github.com/patternfly/patternfly-react/issues/1968)) ([7dd9526](https://github.com/patternfly/patternfly-react/commit/7dd9526))
+
+
+
+
+
 ## [3.4.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.4.5...@patternfly/react-charts@3.4.6) (2019-05-09)
 
 **Note:** Version bump only for package @patternfly/react-charts

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.12.0...demo-app-ts@1.13.0) (2019-05-21)
+
+
+### Features
+
+* **Checkbox:** Add checkbox demo with tests ([#2049](https://github.com/patternfly/patternfly-react/issues/2049)) ([24ba245](https://github.com/patternfly/patternfly-react/commit/24ba245))
+
+
+
+
+
 # [1.12.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.11.1...demo-app-ts@1.12.0) (2019-05-21)
 
 
