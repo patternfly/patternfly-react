@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.28.0...@patternfly/react-core@3.28.1) (2019-05-21)
+
+
+### Bug Fixes
+
+* **Select:** account for direct JSX children ([#2042](https://github.com/patternfly/patternfly-react/issues/2042)) ([67dd3b5](https://github.com/patternfly/patternfly-react/commit/67dd3b5))
+
+
+
+
+
 # [3.28.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.27.0...@patternfly/react-core@3.28.0) (2019-05-20)
 
 
