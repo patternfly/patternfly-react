@@ -5,19 +5,12 @@ describe('Alert Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/alert-demo-nav-link');
   });
  
-  it('Verify success alert', () => {
-    cy.get('.pf-c-alert').should('have.class', 'pf-m-success');
+  it('Verify info alert', () => {
+    cy.get('.pf-c-alert').should('have.class', 'pf-m-info');
   });
- 
-  it('Verify success notification title default', () => {
-    cy.get('.pf-c-alert__title').contains('Success notification title');
-  });
- 
-  it('Verify success notification description default', () => {
-    cy.get('.pf-c-alert__description').contains('Success notification description');
-  });
- 
-  it('Verify success action button exists', () => {
-    cy.get('button').should('have.class', 'pf-m-link');
+
+  it('Verify alert closes', () => {
+    cy.get('#test-button').click();
+    cy.get('.pf-c-alert').should('not.exist');
   });
 });

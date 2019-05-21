@@ -1,4 +1,4 @@
-import Badge from './Badge';
+import { Badge } from './Badge';
 import React from 'react';
 import { shallow } from 'enzyme';
 

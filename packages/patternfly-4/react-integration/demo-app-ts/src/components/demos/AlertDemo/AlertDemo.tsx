@@ -1,29 +1,33 @@
-import { Alert, AlertProps, AlertActionCloseButton, AlertActionLink } from '@patternfly/react-core';
-import React, { Component } from 'react';
+import { Alert, AlertActionCloseButton } from '@patternfly/react-core';
+import React from 'react';
 
-export class AlertDemo extends Component {
-  myAlertProps: AlertProps = {
-    action: <AlertActionCloseButton />,
-    title: 'Success notification title',
-    variant: 'success'
-  };
+interface AlertDemoState {
+  alertOneVisible: boolean;
+}
 
+export class AlertDemo extends React.Component<null, AlertDemoState> {
+  constructor(props) {
+    super(props);
+    this.state = { alertOneVisible: true };
+  }
+
+  hideAlertOne = () => this.setState({ alertOneVisible: false });
+  
   render() {
+    const { alertOneVisible } = this.state;
     return (
       <React.Fragment>
-        <Alert variant={this.myAlertProps.variant} title={this.myAlertProps.title} action={this.myAlertProps.action}>
-          Success notification description. <a href="#">This is a link.</a>
-        </Alert>
-
-        <Alert variant={this.myAlertProps.variant} title={this.myAlertProps.title} action={this.myAlertProps.action} />
-
-        <Alert
-          variant={this.myAlertProps.variant}
-          title={this.myAlertProps.title}
-          action={<AlertActionLink>Action Button</AlertActionLink>}
-        />
-        <Alert variant={this.myAlertProps.variant} title={this.myAlertProps.title} />
+        {alertOneVisible && (
+          <Alert
+            variant="info"
+            title="Info alert title"
+            action={<AlertActionCloseButton id="test-button" onClose={this.hideAlertOne} />}
+          >
+            Info alert description. <a href="#">This is a link.</a>
+          </Alert>
+        )}
       </React.Fragment>
     );
   }
 }
+

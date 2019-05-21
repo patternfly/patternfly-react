@@ -1,25 +1,64 @@
-import React from 'react';
+import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
-import ChipButton from './ChipButton';
+import { ChipButton } from './ChipButton';
+import { OneOf } from '../../helpers/typeUtils';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 import { TimesCircleIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/patternfly/components/Chip/chip.css';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
-import { componentShape } from '../../helpers/componentShape';
 
-class Chip extends React.Component {
-  span = React.createRef();
-  state = { isTooltipVisible: false };
+export interface ChipProps extends React.HTMLProps<HTMLDivElement> {
+  /** Content rendered inside the chip text */
+  children?: React.ReactNode;
+  /** Aria Label for close button */
+  closeBtnAriaLabel?: string;
+  /** Additional classes added to the chip item */
+  className?: string; 
+  /** Flag indicating if the chip has overflow */
+  isOverflowChip?: boolean;
+  /** Flag if chip is read only */
+  isReadOnly?: boolean;
+  /** Function that is called when clicking on the chip button */
+  onClick?: (event: React.MouseEvent) => void
+  /** Internal flag for which component will be used for chip */
+  component?: React.ReactNode; 
+  /** Position of the tooltip which is displayed if text is longer */
+  tooltipPosition?: 'top' | 'bottom' | 'left' | 'right';
+}
+
+interface ChipState {
+  isTooltipVisible: boolean;
+}
+
+export class Chip extends React.Component<ChipProps, ChipState> {
+  constructor(props: ChipProps){
+    super(props); 
+    this.state = {
+      isTooltipVisible: false
+    }
+  }
+  span = React.createRef<HTMLSpanElement>(); 
+
+  static defaultProps = {
+    closeBtnAriaLabel: 'close',
+    className: '',
+    isOverflowChip: false,
+    isReadOnly: false,
+    tooltipPosition: 'top',
+    onClick: () => undefined as any,
+    component: 'div'
+  }
 
   componentDidMount() {
     this.setState({
-      isTooltipVisible: this.span.current && this.span.current.offsetWidth < this.span.current.scrollWidth
+      isTooltipVisible: Boolean(this.span.current && 
+        this.span.current.offsetWidth < this.span.current.scrollWidth)
     });
   }
 
   renderOverflowChip = () => {
-    const { children, className, onClick, component: Component } = this.props;
+    const { children, className, onClick } = this.props;
+    const Component = this.props.component as any;
     return (
       <Component className={css(styles.chip, styles.modifiers.overflow, className)}>
         <ChipButton onClick={onClick}>
@@ -29,16 +68,16 @@ class Chip extends React.Component {
     );
   };
 
-  renderChip = randomId => {
+  renderChip = (randomId: string) => {
     const {
       children,
       closeBtnAriaLabel,
       tooltipPosition,
       className,
-      component: Component,
       onClick,
       isReadOnly
     } = this.props;
+    const Component = this.props.component as any;
     if (this.state.isTooltipVisible) {
       return (
         <Tooltip position={tooltipPosition} content={children}>
@@ -78,42 +117,11 @@ class Chip extends React.Component {
       </Component>
     );
   };
-
-  render() {
+  
+  render(){
     const { isOverflowChip } = this.props;
     return (
       <GenerateId>{randomId => (isOverflowChip ? this.renderOverflowChip() : this.renderChip(randomId))}</GenerateId>
     );
   }
-}
-Chip.propTypes = {
-  /** Content rendered inside the chip text */
-  children: PropTypes.node,
-  /** Aria Label for close button */
-  closeBtnAriaLabel: PropTypes.string,
-  /** Additional classes added to the chip item */
-  className: PropTypes.string,
-  /** Flag indicating if the chip has overflow */
-  isOverflowChip: PropTypes.bool,
-  /** Flag if chip is read only */
-  isReadOnly: PropTypes.bool,
-  /** Function that is called when clicking on the chip button */
-  onClick: PropTypes.func,
-  /** Interal flag for which component will be used for chip */
-  component: componentShape,
-  /** Position of the tooltip which is displayed if text is longer */
-  tooltipPosition: PropTypes.oneOf(Object.values(TooltipPosition))
 };
-
-Chip.defaultProps = {
-  children: null,
-  closeBtnAriaLabel: 'close',
-  className: '',
-  isOverflowChip: false,
-  isReadOnly: false,
-  tooltipPosition: 'top',
-  onClick: () => {},
-  component: 'div'
-};
-
-export default Chip;

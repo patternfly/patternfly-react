@@ -1,56 +1,56 @@
 ---
-title: 'Pie chart'
+title: 'Pie'
 section: 'charts'
 ---
 
-## Blue-themed pie chart
+## Blue pie chart
 
-import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';
-import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+import { ChartLegend, ChartPie, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-pie.scss';
 
 ```js
 import React from 'react';
-import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';
-import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+import { ChartLegend, ChartPie } from '@patternfly/react-charts';
 
 <div>
-  <div style={{ height: 450, width: 450 }}>
-    <ChartPie
-      data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-      labels={datum => `${datum.x}: ${datum.y}`}
-      theme={ChartTheme.light.blue}
+  <div className="pie-chart-inline">
+    <div className="pie-chart-container">
+      <ChartPie
+        data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+        labels={datum => `${datum.x}: ${datum.y}`}
+      />
+    </div>
+    <ChartLegend
+      data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
+      height={230}
+      orientation={'vertical'}
+      y={70}
     />
   </div>
-  <ChartLegend
-    data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
-    orientation={'vertical'}
-    theme={ChartTheme.light.blue}
-    y={150}
-  />
 </div>
 ```
 
-## Multi-color themed pie chart
+## Multi-color pie chart
 ```js
 import React from 'react';
-import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';
-import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+import { ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 <div>
-  <div style={{ height: 450, width: 450 }}>
+  <div className="pie-chart-container">
     <ChartPie
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       labels={datum => `${datum.x}: ${datum.y}`}
-      theme={ChartTheme.light.multi}
+      themeColor={ChartThemeColor.multi}
+      themeVariant={ChartThemeVariant.light}
     />
   </div>
   <ChartLegend
     data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
+    height={35}
     orientation={'horizontal'}
-    theme={ChartTheme.light.multi}
-    height={100}
-    x={150}
+    themeColor={ChartThemeColor.multi}
+    themeVariant={ChartThemeVariant.light}
+    x={8}
   />
 </div>
 ```

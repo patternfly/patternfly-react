@@ -1507,10 +1507,9 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       >
                         Mr
                       </span>
-                      <ChipButton
+                      <Component
                         aria-labelledby="remove_pf-random-id-0 pf-random-id-0"
                         ariaLabel="Remove"
-                        className=""
                         id="remove_pf-random-id-0"
                         onClick={[Function]}
                       >
@@ -1561,7 +1560,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                             </TimesCircleIcon>
                           </button>
                         </Component>
-                      </ChipButton>
+                      </Component>
                     </li>
                   </GenerateId>
                 </Chip>
@@ -1580,12 +1579,10 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     <li
                       className="pf-c-chip pf-m-overflow"
                     >
-                      <ChipButton
-                        ariaLabel="close"
-                        className=""
+                      <Component
                         onClick={[Function]}
                       >
-                        <Button
+                        <Component
                           aria-label="close"
                           className=""
                           onClick={[Function]}
@@ -1606,8 +1603,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                               1 more
                             </span>
                           </button>
-                        </Button>
-                      </ChipButton>
+                        </Component>
+                      </Component>
                     </li>
                   </GenerateId>
                 </Chip>
