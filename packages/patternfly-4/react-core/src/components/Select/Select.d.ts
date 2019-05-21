@@ -11,9 +11,10 @@ export interface SelectProps extends HTMLProps<HTMLOptionElement> {
   isExpanded?: boolean;
   isGrouped?: boolean;
   onToggle(value: boolean): void;
+  onSelect(event: ReactEventHandler<HTMLOptionElement, Event>, element: string, isPlaceholder: boolean): void;
   onClear?() : void;
   placeholderText?: string | ReactNode;
-  selections?: string | Array<string>;
+  selections?: string | Array<string> | null;
   variant?: string;
   width?: string | number;
   ariaLabelledBy?: string;

@@ -11,6 +11,11 @@ interface DemoInterface {
 /** Add the name of the demo and it's component here to have them show up in the demo app */
 export const Demos: DemoInterface[] = [
   {
+    id: 'about-modal-demo',
+    name: 'About Modal Demo',
+    componentType: Examples.AboutModalDemo
+  },
+  {
     id: 'alert-demo',
     name: 'Alert Demo',
     componentType: Examples.AlertDemo
@@ -44,6 +49,11 @@ export const Demos: DemoInterface[] = [
     id: 'checkbox-demo', 
     name: 'Checkbox Demo', 
     componentType: Examples.CheckboxDemo
+  }, 
+  {
+    id: 'chipgroup-demo', 
+    name: 'ChipGroup Demo',
+    componentType: Examples.BadgeChip 
   },
   {
     id: 'empty-state-demo',
