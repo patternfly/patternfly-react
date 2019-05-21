@@ -41,6 +41,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.CardDemo
   },
   {
+    id: 'checkbox-demo', 
+    name: 'Checkbox Demo', 
+    componentType: Examples.CheckboxDemo
+  },
+  {
     id: 'empty-state-demo',
     name: 'Empty State Demo',
     componentType: Examples.EmptyStateDemo
