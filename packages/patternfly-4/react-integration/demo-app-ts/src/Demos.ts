@@ -51,6 +51,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.CardDemo
   },
   {
+    id: 'checkbox-demo', 
+    name: 'Checkbox Demo', 
+    componentType: Examples.CheckboxDemo
+  }, 
+  {
     id: 'chipgroup-demo', 
     name: 'ChipGroup Demo',
     componentType: Examples.BadgeChip 
