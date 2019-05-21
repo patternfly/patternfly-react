@@ -84,19 +84,19 @@ class PageLayoutHorizontalNav extends React.Component {
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList variant={NavVariants.horizontal}>
-          <NavItem to="#nav-link1" itemId={0} isActive={activeItem === 0}>
+          <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
           </NavItem>
-          <NavItem to="#nav-link2" itemId={1} isActive={activeItem === 1}>
+          <NavItem itemId={1} isActive={activeItem === 1}>
             Policy
           </NavItem>
-          <NavItem to="#nav-link3" itemId={2} isActive={activeItem === 2}>
+          <NavItem itemId={2} isActive={activeItem === 2}>
             Authentication
           </NavItem>
-          <NavItem to="#nav-link4" itemId={3} isActive={activeItem === 3}>
+          <NavItem itemId={3} isActive={activeItem === 3}>
             Network Services
           </NavItem>
-          <NavItem to="#nav-link5" itemId={4} isActive={activeItem === 4}>
+          <NavItem itemId={4} isActive={activeItem === 4}>
             Server
           </NavItem>
         </NavList>

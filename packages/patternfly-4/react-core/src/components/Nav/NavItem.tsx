@@ -35,21 +35,24 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   ...props
 }: NavItemProps) => {
 
-  const renderDefaultLink = ():React.ReactNode => (
-    <NavContext.Consumer>
-      {(context: any) => (
-        <a
-          href={to}
-          onClick={e => context.onSelect(e, groupId, itemId, to, preventDefault, onClick)}
-          className={css(styles.navLink, isActive && styles.modifiers.current, className)}
-          aria-current={isActive ? 'page' : null}
-          {...props}
-        >
-          {children}
-        </a>
-      )}
-    </NavContext.Consumer>
-  );
+  const renderDefaultLink = ():React.ReactNode => {
+    const preventLinkDefault = preventDefault || !to;
+    return (
+      <NavContext.Consumer>
+        {(context: any) => (
+          <a
+            href={to}
+            onClick={e => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
+            className={css(styles.navLink, isActive && styles.modifiers.current, className)}
+            aria-current={isActive ? 'page' : null}
+            {...props}
+          >
+            {children}
+          </a>
+        )}
+      </NavContext.Consumer>
+    );
+  };
 
   const renderClonedChild = (child: React.ReactElement): React.ReactNode => (
     <NavContext.Consumer>
