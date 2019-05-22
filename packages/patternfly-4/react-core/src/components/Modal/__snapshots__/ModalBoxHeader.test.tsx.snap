@@ -12,17 +12,7 @@ exports[`ModalBoxHeader Test 1`] = `
 </Fragment>
 `;
 
-exports[`ModalBoxHeader Test hideTitle 1`] = `
-<Fragment>
-  <Component
-    className="pf-u-screen-reader"
-    headingLevel="h1"
-    size="2xl"
-  >
-    This is a ModalBox header
-  </Component>
-</Fragment>
-`;
+exports[`ModalBoxHeader Test hideTitle 1`] = `""`;
 
 exports[`ModalBoxHeader Test with H3 1`] = `
 <Fragment>

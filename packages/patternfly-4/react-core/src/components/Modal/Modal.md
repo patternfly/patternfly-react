@@ -241,7 +241,6 @@ class NoHeader extends React.Component {
         </Button>
         <Modal
           isLarge
-          title="Modal Header"
           isOpen={isModalOpen}
           hideTitle={true}
           ariaDescribedById="no-header-example"
