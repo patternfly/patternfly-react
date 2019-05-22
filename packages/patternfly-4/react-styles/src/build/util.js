@@ -1,7 +1,7 @@
 import path from 'path';
 import { readFileSync } from 'fs';
 import css from 'css';
-import { outputFileSync, copyFileSync, ensureDir } from 'fs-extra';
+import { outputFileSync, ensureDir } from 'fs-extra';
 import relative from 'relative';
 
 export const packageName = '@patternfly/react-styles';
@@ -54,9 +54,6 @@ export function writeCSSFile(destinationPath, contents) {
 
 export function writeCSSJSFile(rootPath, originalPath, destinationPath, contents) {
   outputFileSync(destinationPath, contents);
-  const removeRE = new RegExp(`${rootPath}/?`);
-  const inFormatted = originalPath.replace(removeRE, '');
-  const outFormatted = destinationPath.replace(removeRE, '');
 }
 
 export function getRelativeImportPath(from, to) {

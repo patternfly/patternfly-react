@@ -35,6 +35,7 @@
     "resolve-from": "^4.0.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "glob": "^7.1.2",
     "rimraf": "^2.6.2"
