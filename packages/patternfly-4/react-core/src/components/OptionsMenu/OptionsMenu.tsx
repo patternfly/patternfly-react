@@ -33,55 +33,37 @@ export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement>{
   direction?:  'up' | 'down';
 }
 
-export class OptionsMenu extends React.Component<OptionsMenuProps> {
-
-  static defaultProps = {
-    className: '',
-    isOpen: false,
-    isPlain: false,
-    ariaLabelMenu: '',
-    direction: OptionsMenuDirection.down,
-    position: OptionsMenuPosition.left,
-  };
-
-  constructor(props: OptionsMenuProps) {
-    super(props);
-  }
-
-  render() {
-    const {
-      className,
-      direction,
-      position,
-      id,
-      isOpen,
-      isPlain,
-      ariaLabelMenu,
-      menuItems,
-      toggle } = this.props;
-    return (
-      <div id={id}
-           className={
-             css(styles.optionsMenu,
-               direction === OptionsMenuDirection.up && getModifier(styles, 'top'),
-               position === OptionsMenuPosition.right && getModifier(styles, 'align-right'),
-               isOpen && getModifier(styles, 'expanded'),
-               className)}>
-        {React.Children.map(toggle, oneToggle =>
-          React.cloneElement(oneToggle, {
-            parentId: id,
-            isOpen,
-            isPlain,
-          }))}
-        {isOpen &&
-        <ul className={css(styles.optionsMenuMenu,
-          position === OptionsMenuPosition.right && getModifier(styles, 'align-right'))}
-            {...ariaLabelMenu ? {'aria-label': ariaLabelMenu} : {'aria-labelledby': `${id}-toggle`}}>
-          {menuItems.map((item) => {
-            return item;
-          })}
-        </ul>}
-      </div>
-    )
-  }
-}
+export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
+  className = '',
+  isOpen = false,
+  isPlain = false,
+  ariaLabelMenu = '',
+  direction = OptionsMenuDirection.down,
+  position = OptionsMenuPosition.left,
+  id,
+  menuItems,
+  toggle,
+}: OptionsMenuProps) => (
+  <div id={id}
+       className={
+         css(styles.optionsMenu,
+           direction === OptionsMenuDirection.up && getModifier(styles, 'top'),
+           position === OptionsMenuPosition.right && getModifier(styles, 'align-right'),
+           isOpen && getModifier(styles, 'expanded'),
+           className)}>
+    {React.Children.map(toggle, oneToggle =>
+      React.cloneElement(oneToggle, {
+        parentId: id,
+        isOpen,
+        isPlain,
+      }))}
+    {isOpen &&
+    <ul className={css(styles.optionsMenuMenu,
+      position === OptionsMenuPosition.right && getModifier(styles, 'align-right'))}
+        {...ariaLabelMenu ? {'aria-label': ariaLabelMenu} : {'aria-labelledby': `${id}-toggle`}}>
+      {menuItems.map((item: React.ReactNode) => {
+        return item;
+      })}
+    </ul>}
+  </div>
+);

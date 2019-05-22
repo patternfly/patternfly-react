@@ -1,77 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`optionsMenu expanded 1`] = `
-<OptionsMenu
-  ariaLabelMenu=""
-  className=""
-  direction="down"
+<Component
   id="expanded"
   isOpen={true}
-  isPlain={false}
   menuItems={
     Array [
       <Unknown>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        <Unknown>
           Name
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Date
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
+        </Unknown>
+        <Unknown
           isDisabled={true}
-          isSelected={false}
-          onSelect={[Function]}
         >
           Disabled
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Size
-        </OptionsMenuItem>
+        </Unknown>
       </Unknown>,
       <Unknown />,
       <Unknown>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        <Unknown>
           Ascending
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Descending
-        </OptionsMenuItem>
+        </Unknown>
       </Unknown>,
     ]
   }
-  position="left"
   toggle={
     <Unknown>
       Options Menu
@@ -141,13 +102,8 @@ exports[`optionsMenu expanded 1`] = `
             aria-label=""
             className=""
           >
-            <OptionsMenuItem
-              className=""
-              id=""
-              isDisabled={false}
-              isSelected={false}
+            <Component
               key="name"
-              onSelect={[Function]}
             >
               <li>
                 <button
@@ -192,14 +148,9 @@ exports[`optionsMenu expanded 1`] = `
                   </i>
                 </button>
               </li>
-            </OptionsMenuItem>
-            <OptionsMenuItem
-              className=""
-              id=""
-              isDisabled={false}
-              isSelected={false}
+            </Component>
+            <Component
               key="date"
-              onSelect={[Function]}
             >
               <li>
                 <button
@@ -244,14 +195,10 @@ exports[`optionsMenu expanded 1`] = `
                   </i>
                 </button>
               </li>
-            </OptionsMenuItem>
-            <OptionsMenuItem
-              className=""
-              id=""
+            </Component>
+            <Component
               isDisabled={true}
-              isSelected={false}
               key="disabled"
-              onSelect={[Function]}
             >
               <li>
                 <button
@@ -296,14 +243,9 @@ exports[`optionsMenu expanded 1`] = `
                   </i>
                 </button>
               </li>
-            </OptionsMenuItem>
-            <OptionsMenuItem
-              className=""
-              id=""
-              isDisabled={false}
-              isSelected={false}
+            </Component>
+            <Component
               key="size"
-              onSelect={[Function]}
             >
               <li>
                 <button
@@ -348,7 +290,7 @@ exports[`optionsMenu expanded 1`] = `
                   </i>
                 </button>
               </li>
-            </OptionsMenuItem>
+            </Component>
           </ul>
         </li>
       </Component>
@@ -368,13 +310,8 @@ exports[`optionsMenu expanded 1`] = `
             aria-label=""
             className=""
           >
-            <OptionsMenuItem
-              className=""
-              id=""
-              isDisabled={false}
-              isSelected={false}
+            <Component
               key="ascending"
-              onSelect={[Function]}
             >
               <li>
                 <button
@@ -419,14 +356,9 @@ exports[`optionsMenu expanded 1`] = `
                   </i>
                 </button>
               </li>
-            </OptionsMenuItem>
-            <OptionsMenuItem
-              className=""
-              id=""
-              isDisabled={false}
-              isSelected={false}
+            </Component>
+            <Component
               key="descending"
-              onSelect={[Function]}
             >
               <li>
                 <button
@@ -471,87 +403,48 @@ exports[`optionsMenu expanded 1`] = `
                   </i>
                 </button>
               </li>
-            </OptionsMenuItem>
+            </Component>
           </ul>
         </li>
       </Component>
     </ul>
   </div>
-</OptionsMenu>
+</Component>
 `;
 
 exports[`optionsMenu open up 1`] = `
-<OptionsMenu
-  ariaLabelMenu=""
-  className=""
+<Component
   direction="up"
   id="openUp"
-  isOpen={false}
-  isPlain={false}
   menuItems={
     Array [
       <Unknown>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        <Unknown>
           Name
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Date
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
+        </Unknown>
+        <Unknown
           isDisabled={true}
-          isSelected={false}
-          onSelect={[Function]}
         >
           Disabled
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Size
-        </OptionsMenuItem>
+        </Unknown>
       </Unknown>,
       <Unknown />,
       <Unknown>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        <Unknown>
           Ascending
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Descending
-        </OptionsMenuItem>
+        </Unknown>
       </Unknown>,
     ]
   }
-  position="left"
   toggle={
     <Unknown>
       Options Menu
@@ -610,81 +503,42 @@ exports[`optionsMenu open up 1`] = `
       </button>
     </Component>
   </div>
-</OptionsMenu>
+</Component>
 `;
 
 exports[`optionsMenu plain 1`] = `
-<OptionsMenu
-  ariaLabelMenu=""
-  className=""
-  direction="down"
+<Component
   id="plain"
-  isOpen={false}
   isPlain={true}
   menuItems={
     Array [
       <Unknown>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        <Unknown>
           Name
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Date
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
+        </Unknown>
+        <Unknown
           isDisabled={true}
-          isSelected={false}
-          onSelect={[Function]}
         >
           Disabled
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Size
-        </OptionsMenuItem>
+        </Unknown>
       </Unknown>,
       <Unknown />,
       <Unknown>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        <Unknown>
           Ascending
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Descending
-        </OptionsMenuItem>
+        </Unknown>
       </Unknown>,
     ]
   }
-  position="left"
   toggle={
     <Unknown>
       Options Menu
@@ -740,81 +594,41 @@ exports[`optionsMenu plain 1`] = `
       </button>
     </Component>
   </div>
-</OptionsMenu>
+</Component>
 `;
 
 exports[`optionsMenu regular 1`] = `
-<OptionsMenu
-  ariaLabelMenu=""
-  className=""
-  direction="down"
+<Component
   id="regular"
-  isOpen={false}
-  isPlain={false}
   menuItems={
     Array [
       <Unknown>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        <Unknown>
           Name
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Date
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
+        </Unknown>
+        <Unknown
           isDisabled={true}
-          isSelected={false}
-          onSelect={[Function]}
         >
           Disabled
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Size
-        </OptionsMenuItem>
+        </Unknown>
       </Unknown>,
       <Unknown />,
       <Unknown>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        <Unknown>
           Ascending
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Descending
-        </OptionsMenuItem>
+        </Unknown>
       </Unknown>,
     ]
   }
-  position="left"
   toggle={
     <Unknown>
       Options Menu
@@ -873,77 +687,39 @@ exports[`optionsMenu regular 1`] = `
       </button>
     </Component>
   </div>
-</OptionsMenu>
+</Component>
 `;
 
 exports[`optionsMenu right aligned + open up 1`] = `
-<OptionsMenu
-  ariaLabelMenu=""
-  className=""
+<Component
   direction="up"
   id="rightAlignedOpenUp"
-  isOpen={false}
-  isPlain={false}
   menuItems={
     Array [
       <Unknown>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        <Unknown>
           Name
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Date
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
+        </Unknown>
+        <Unknown
           isDisabled={true}
-          isSelected={false}
-          onSelect={[Function]}
         >
           Disabled
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Size
-        </OptionsMenuItem>
+        </Unknown>
       </Unknown>,
       <Unknown />,
       <Unknown>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        <Unknown>
           Ascending
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Descending
-        </OptionsMenuItem>
+        </Unknown>
       </Unknown>,
     ]
   }
@@ -1006,77 +782,38 @@ exports[`optionsMenu right aligned + open up 1`] = `
       </button>
     </Component>
   </div>
-</OptionsMenu>
+</Component>
 `;
 
 exports[`optionsMenu right aligned 1`] = `
-<OptionsMenu
-  ariaLabelMenu=""
-  className=""
-  direction="down"
+<Component
   id="rightAligned"
-  isOpen={false}
-  isPlain={false}
   menuItems={
     Array [
       <Unknown>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        <Unknown>
           Name
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Date
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
+        </Unknown>
+        <Unknown
           isDisabled={true}
-          isSelected={false}
-          onSelect={[Function]}
         >
           Disabled
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Size
-        </OptionsMenuItem>
+        </Unknown>
       </Unknown>,
       <Unknown />,
       <Unknown>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        <Unknown>
           Ascending
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Descending
-        </OptionsMenuItem>
+        </Unknown>
       </Unknown>,
     ]
   }
@@ -1139,81 +876,41 @@ exports[`optionsMenu right aligned 1`] = `
       </button>
     </Component>
   </div>
-</OptionsMenu>
+</Component>
 `;
 
 exports[`optionsMenu text 1`] = `
-<OptionsMenu
-  ariaLabelMenu=""
-  className=""
-  direction="down"
+<Component
   id="text"
-  isOpen={false}
-  isPlain={false}
   menuItems={
     Array [
       <Unknown>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        <Unknown>
           Name
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Date
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
+        </Unknown>
+        <Unknown
           isDisabled={true}
-          isSelected={false}
-          onSelect={[Function]}
         >
           Disabled
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Size
-        </OptionsMenuItem>
+        </Unknown>
       </Unknown>,
       <Unknown />,
       <Unknown>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        <Unknown>
           Ascending
-        </OptionsMenuItem>
-        <OptionsMenuItem
-          className=""
-          id=""
-          isDisabled={false}
-          isSelected={false}
-          onSelect={[Function]}
-        >
+        </Unknown>
+        <Unknown>
           Descending
-        </OptionsMenuItem>
+        </Unknown>
       </Unknown>,
     ]
   }
-  position="left"
   toggle={
     <Unknown
       toggleButtonContents={
@@ -1262,5 +959,5 @@ exports[`optionsMenu text 1`] = `
       </div>
     </Component>
   </div>
-</OptionsMenu>
+</Component>
 `;
