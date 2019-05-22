@@ -110,15 +110,25 @@ class ClassificationBanner extends React.Component {
 }
 
 ClassificationBanner.propTypes = {
+  /** Child nodes **/
   children: PropTypes.node,
+  /** Option to display system hostname that user has logged into **/
   hostName: PropTypes.string,
+  /** Option to display user login **/
   userName: PropTypes.string,
+  /** Option to close classification banner **/
   closeButton: PropTypes.bool,
+  /** Option to enable or disable classification banner across bottom screen **/
   bottomBanner: PropTypes.bool,
+  /** Whether banner's state is closed or not **/
   closed: PropTypes.bool,
+  /** Option to configure location of user login on the banner **/
   userNamePosition: PropTypes.string,
+  /** Option to configure location of hostname on the banner **/
   hostNamePosition: PropTypes.string,
+  /** Option to configure banner color. Hex code is supported e.g. #39a5dc **/
   bannerColor: PropTypes.string,
+  /** Classification level or custom text to display in top and bottom banner **/
   title: PropTypes.string
 };
 
