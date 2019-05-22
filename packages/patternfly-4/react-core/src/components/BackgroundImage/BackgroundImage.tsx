@@ -22,15 +22,22 @@ export enum BackgroundImageSrc {
   filter = 'filter'
 };
 
-const variableMap = {
+const cssVariables = {
   [BackgroundImageSrc.xs]: c_background_image_BackgroundImage && c_background_image_BackgroundImage.name,
   [BackgroundImageSrc.xs2x]: c_background_image_BackgroundImage_2x && c_background_image_BackgroundImage_2x.name,
   [BackgroundImageSrc.sm]: c_background_image_BackgroundImage_sm && c_background_image_BackgroundImage_sm.name,
   [BackgroundImageSrc.sm2x]: c_background_image_BackgroundImage_sm_2x && c_background_image_BackgroundImage_sm_2x.name,
-  [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg && c_background_image_BackgroundImage_lg.name
+  [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg && c_background_image_BackgroundImage_lg.name,
 };
 
-export type BackgroundImageSrcMap = { [K in keyof typeof BackgroundImageSrc]: string };
+export interface BackgroundImageSrcMap {
+  xs: string,
+  xs2x: string,
+  sm: string,
+  sm2x: string,
+  lg: string,
+  filter: string
+};
 
 export interface BackgroundImageProps extends Omit<React.HTMLProps<HTMLDivElement>, 'src'> {
   /** Additional classes added to the background. */
@@ -44,29 +51,35 @@ export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
   src,
   ...props
 }: BackgroundImageProps) => {
-   // Default string value to handle all sizes
-   const variableOverrides = typeof src === 'string'
-     ? Object.keys(BackgroundImageSrc).reduce(
-         (prev: any, size: string) => ({
-           ...prev,
-           [BackgroundImageSrc[size as keyof typeof BackgroundImageSrc]]: src
-         }),
-         {}
-       )
-     : src;
+  let srcMap = src;
+  // Default string value to handle all sizes
+  if (typeof src === 'string') {
+    srcMap = {
+      [BackgroundImageSrc.xs]: src,
+      [BackgroundImageSrc.xs2x]: src,
+      [BackgroundImageSrc.sm]: src,
+      [BackgroundImageSrc.sm2x]: src,
+      [BackgroundImageSrc.lg]: src,
+      [BackgroundImageSrc.filter]: '', // unused
+    };
+  }
 
+  // Build stylesheet based on cssVariables
+  let cssSheet = '';
+  (Object.keys(cssVariables) as [keyof typeof srcMap]).forEach(size => {
+    cssSheet += `${cssVariables[size as keyof typeof cssVariables]}: url('${srcMap[size]}');`
+  });
+
+  // Create emotion stylesheet to inject new css
   const bgStyles = StyleSheet.create({
     bgOverrides: `&.pf-c-background-image {
-      ${Object.keys(variableOverrides).reduce(
-        (prev: any, size: string) => `${prev.length ? prev : ''}${variableMap[size as keyof typeof variableMap]}: url('${variableOverrides[size as keyof typeof variableOverrides]}');`,
-        {}
-      )}
-    }`
-    });
+      ${cssSheet}
+    }`});
+  
   return (
-    <div className={css(styles.backgroundImage, bgStyles.bgOverrides, className)}>
+    <div className={css(styles.backgroundImage, bgStyles.bgOverrides, className)} {...props}>
       <svg xmlns="http://www.w3.org/2000/svg" className="pf-c-background-image__filter" width="0" height="0">
-        <filter id="image_overlay" width="">
+        <filter id="image_overlay" width="0">
           <feColorMatrix type="matrix"
             values="1 0 0 0 0
             1 0 0 0 0

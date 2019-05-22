@@ -2,9 +2,8 @@
 
 exports[`check loginpage example against snapshot 1`] = `
 <Fragment>
-  <BackgroundImage
+  <Component
     alt="Pf-background"
-    className=""
     src="Background src"
   />
   <Component
