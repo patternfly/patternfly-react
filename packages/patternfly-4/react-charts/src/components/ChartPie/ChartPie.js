@@ -48,9 +48,7 @@ const ChartPie = ({
   themeVariant,
   theme = getTheme(themeColor, themeVariant), // destructure last
   ...rest
-}) => (
-  <VictoryPie labelComponent={<ChartTooltip theme={theme} />} theme={theme} {...rest} />
-);
+}) => <VictoryPie labelComponent={<ChartTooltip theme={theme} />} theme={theme} {...rest} />;
 
 // Note: VictoryPie.role must be hoisted
 hoistNonReactStatics(ChartPie, VictoryPie);

@@ -5,7 +5,7 @@ import ChartPoint from './ChartPoint';
 
 Object.values([true, false]).forEach(isRead => {
   test(`Chart`, () => {
-    const view = shallow(<ChartLegend dataComponent={<ChartPoint />}/>);
+    const view = shallow(<ChartLegend dataComponent={<ChartPoint />} />);
     expect(view).toMatchSnapshot();
   });
 });
@@ -13,9 +13,7 @@ Object.values([true, false]).forEach(isRead => {
 test('renders component data', () => {
   const view = shallow(
     <ChartLegend
-      data={[
-        { name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash'} }
-      ]}
+      data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }]}
       title="Average number of pets"
       height={50}
       width={200}

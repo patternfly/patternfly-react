@@ -25,9 +25,7 @@ const ChartAxis = ({
   themeVariant,
   theme = getTheme(themeColor, themeVariant), // destructure last
   ...rest
-}) => (
-  <VictoryAxis theme={theme} {...rest}/>
-);
+}) => <VictoryAxis theme={theme} {...rest} />;
 
 hoistNonReactStatics(ChartAxis, VictoryAxis);
 ChartAxis.propTypes = propTypes;

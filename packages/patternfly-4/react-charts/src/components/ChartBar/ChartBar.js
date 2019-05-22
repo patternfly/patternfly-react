@@ -25,9 +25,7 @@ const ChartBar = ({
   themeVariant,
   theme = getTheme(themeColor, themeVariant), // destructure last
   ...rest
-}) => (
-  <VictoryBar theme={theme} {...rest} />
-);
+}) => <VictoryBar theme={theme} {...rest} />;
 
 // Note: VictoryBar.getDomain & VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBar, VictoryBar);
