@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import { Omit } from '../../helpers/typeUtils';
 
 import { css, StyleSheet } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/BackgroundImage/background-image.css';
@@ -13,13 +13,13 @@ import {
   c_background_image_BackgroundImage_lg
 } from '@patternfly/react-tokens';
 
-export const BackgroundImageSrc = {
-  xs: 'xs',
-  xs2x: 'xs2x',
-  sm: 'sm',
-  sm2x: 'sm2x',
-  lg: 'lg',
-  filter: 'filter'
+export enum BackgroundImageSrc {
+  xs = 'xs',
+  xs2x = 'xs2x',
+  sm = 'sm',
+  sm2x = 'sm2x',
+  lg = 'lg',
+  filter = 'filter'
 };
 
 const variableMap = {
@@ -30,49 +30,39 @@ const variableMap = {
   [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg && c_background_image_BackgroundImage_lg.name
 };
 
-export const propTypes = {
+export type BackgroundImageSrcMap = { [K in keyof typeof BackgroundImageSrc]: string };
+
+export interface BackgroundImageProps extends Omit<React.HTMLProps<HTMLDivElement>, 'src'> {
   /** Additional classes added to the background. */
-  className: PropTypes.string,
+  className?: string; 
   /** Override image styles using a string or BackgroundImageSrc */
-  src: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      xs: PropTypes.string,
-      xs2x: PropTypes.string,
-      sm: PropTypes.string,
-      sm2x: PropTypes.string,
-      lg: PropTypes.string,
-      filter: PropTypes.string
-    })
-  ]).isRequired
+  src: string | BackgroundImageSrcMap; 
 };
 
-export const defaultProps = {
-  className: ''
-};
-
-const BackgroundImage = ({ className, src, ...props }) => {
-  // Default string value to handle all sizes
-  const variableOverrides =
-    typeof src === 'string'
-      ? Object.keys(BackgroundImageSrc).reduce(
-          (prev, size) => ({
-            ...prev,
-            [BackgroundImageSrc[size]]: src
-          }),
-          {}
-        )
-      : src;
+export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
+  className = '', 
+  src,
+  ...props
+}: BackgroundImageProps) => {
+   // Default string value to handle all sizes
+   const variableOverrides = typeof src === 'string'
+     ? Object.keys(BackgroundImageSrc).reduce(
+         (prev: any, size: string) => ({
+           ...prev,
+           [BackgroundImageSrc[size as keyof typeof BackgroundImageSrc]]: src
+         }),
+         {}
+       )
+     : src;
 
   const bgStyles = StyleSheet.create({
     bgOverrides: `&.pf-c-background-image {
       ${Object.keys(variableOverrides).reduce(
-        (prev, size) => `${prev.length ? prev : ''}${variableMap[size]}: url('${variableOverrides[size]}');`,
+        (prev: any, size: string) => `${prev.length ? prev : ''}${variableMap[size as keyof typeof variableMap]}: url('${variableOverrides[size as keyof typeof variableOverrides]}');`,
         {}
       )}
     }`
     });
-
   return (
     <div className={css(styles.backgroundImage, bgStyles.bgOverrides, className)}>
       <svg xmlns="http://www.w3.org/2000/svg" className="pf-c-background-image__filter" width="0" height="0">
@@ -83,17 +73,13 @@ const BackgroundImage = ({ className, src, ...props }) => {
             1 0 0 0 0
             0 0 0 1 0" />
           <feComponentTransfer colorInterpolationFilters="sRGB" result="duotone">
-            <feFuncR type="table" tableValues="0.086274509803922 0.43921568627451"></feFuncR>
-            <feFuncG type="table" tableValues="0.086274509803922 0.43921568627451"></feFuncG>
-            <feFuncB type="table" tableValues="0.086274509803922 0.43921568627451"></feFuncB>
-            <feFuncA type="table" tableValues="0 1"></feFuncA>
+            <feFuncR type="table" tableValues="0.086274509803922 0.43921568627451" />
+            <feFuncG type="table" tableValues="0.086274509803922 0.43921568627451" />
+            <feFuncB type="table" tableValues="0.086274509803922 0.43921568627451" />
+            <feFuncA type="table" tableValues="0 1" />
           </feComponentTransfer>
         </filter>
       </svg>
     </div>
   );
 };
-
-BackgroundImage.propTypes = propTypes;
-BackgroundImage.defaultProps = defaultProps;
-export default BackgroundImage;
