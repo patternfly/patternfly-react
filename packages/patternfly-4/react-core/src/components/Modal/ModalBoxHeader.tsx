@@ -22,11 +22,9 @@ export const ModalBoxHeader: React.FunctionComponent<ModalBoxHeaderProps> = ({
   headingLevel = TitleLevel.h1,
   ...props
 }: ModalBoxHeaderProps) => {
-  const hidden = hideTitle ? css(accessibleStyles.screenReader) : '';
-
-  return (
+  return hideTitle ? null : (
     <React.Fragment>
-      <Title size="2xl" headingLevel={headingLevel} className={className + hidden} {...props}>
+      <Title size="2xl" headingLevel={headingLevel} className={className} {...props}>
         {children}
       </Title>
     </React.Fragment>
