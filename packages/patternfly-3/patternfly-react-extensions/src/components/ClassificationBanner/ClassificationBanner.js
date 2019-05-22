@@ -93,6 +93,7 @@ class ClassificationBanner extends React.Component {
           <div className="classification-banner-pf-banner-right">
             <i
               id="classification-banner-close-btn"
+	      data-toggle="tooltip" data-placement="bottom" title="Close banner"
               className={classificationBannerClasses.closeButton}
               onClick={this.onClose}
             />
