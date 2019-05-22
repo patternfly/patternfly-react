@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.30.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.30.0...@patternfly/react-core@3.30.1) (2019-05-22)
+
+
+### Bug Fixes
+
+* **modal:** do not render title when hideTitle is true ([#2057](https://github.com/patternfly/patternfly-react/issues/2057)) ([e152246](https://github.com/patternfly/patternfly-react/commit/e152246))
+
+
+
+
+
 # [3.30.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.29.1...@patternfly/react-core@3.30.0) (2019-05-21)
 
 
