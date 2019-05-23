@@ -22,6 +22,8 @@ const AccordionToggle = ({ className, id, isExpanded, children, ...props }) => (
 );
 
 AccordionToggle.propTypes = {
+  /** Content rendered inside the Accordion toggle */
+  children: PropTypes.node,
   /** Additional classes added to the Accordion Toggle */
   className: PropTypes.string,
   /** Flag to show if the expanded content of the Accordion item is visible */
@@ -29,11 +31,12 @@ AccordionToggle.propTypes = {
   /** Identify the Accordion toggle number */
   id: PropTypes.string.isRequired,
   /** Additional props are spread to the container <dt> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 AccordionToggle.defaultProps = {
   className: '',
+  children: null,
   isExpanded: false
 };
 

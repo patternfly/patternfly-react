@@ -4,6 +4,7 @@ exports[`checkbox select options disabled renders disabled successfully 1`] = `
 <CheckboxSelectOption
   className=""
   isDisabled={true}
+  keyHandler={[Function]}
   onClick={[Function]}
   sendRef={
     [MockFunction] {
@@ -54,6 +55,7 @@ exports[`checkbox select options hover renders with checked successfully 1`] = `
   className=""
   isChecked={true}
   isDisabled={false}
+  keyHandler={[Function]}
   onClick={[Function]}
   sendRef={
     [MockFunction] {
@@ -103,6 +105,7 @@ exports[`checkbox select options renders with value parameter successfully 1`] =
 <CheckboxSelectOption
   className=""
   isDisabled={false}
+  keyHandler={[Function]}
   onClick={[Function]}
   sendRef={
     [MockFunction] {

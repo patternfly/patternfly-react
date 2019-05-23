@@ -40,7 +40,7 @@ const propTypes = {
   /** Flag for variant, determines toggle rules and interaction */
   variant: PropTypes.oneOf(['single', 'checkbox', 'typeahead', 'typeaheadmulti']),
   /** Additional props are spread to the container <button> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

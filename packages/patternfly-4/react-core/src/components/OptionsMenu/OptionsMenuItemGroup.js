@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const OptionsMenuItemsGroup = ({
-  children,
-  className,
-  ariaLabel,
-}) => (
+const OptionsMenuItemsGroup = ({ children, className, ariaLabel }) => (
   <li>
     <ul className={className} aria-label={ariaLabel}>
       {children}
@@ -19,13 +15,13 @@ OptionsMenuItemsGroup.propTypes = {
   /** Classes applied to root element of the Options menu items group */
   className: PropTypes.string,
   /** Provides an accessible name for the Options menu items group */
-  ariaLabel: PropTypes.string,
+  ariaLabel: PropTypes.string
 };
 
-OptionsMenuItemsGroup.defaultValues = {
+OptionsMenuItemsGroup.defaultProps = {
   children: null,
   className: '',
-  ariaLabel: '',
+  ariaLabel: ''
 };
 
 export default OptionsMenuItemsGroup;

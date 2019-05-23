@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Button/button.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import { KEY_CODES } from '../../helpers/constants';
 
 const propTypes = {
   /** HTML ID of toggle */
   id: PropTypes.string.isRequired,
+  /** Type to put on the button */
+  type: PropTypes.string,
   /** Anything which can be rendered as toggle */
   children: PropTypes.node,
   /** Classes applied to root element of toggle */
@@ -15,6 +17,8 @@ const propTypes = {
   isOpen: PropTypes.bool,
   /** Callback called when toggle is clicked */
   onToggle: PropTypes.func,
+  /** Callback for toggle open on keyboard entry */
+  onEnter: PropTypes.func,
   /** Element which wraps toggle */
   parentRef: PropTypes.any,
   /** Forces focus state */
@@ -26,11 +30,12 @@ const propTypes = {
   /** Display the toggle with no border or background */
   isPlain: PropTypes.bool,
   /** Additional props are spread to the container <button> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
   children: null,
+  type: '',
   className: '',
   isOpen: false,
   parentRef: null,
@@ -38,7 +43,8 @@ const defaultProps = {
   isHovered: false,
   isActive: false,
   isPlain: false,
-  onToggle: Function.prototype
+  onToggle: Function.prototype,
+  onEnter: Function.prototype
 };
 
 class ApplicationLauncherToggle extends Component {

@@ -1,7 +1,7 @@
 import React, { cloneElement } from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Page/page.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import { global_breakpoint_md as globalBreakpointMd } from '@patternfly/react-tokens';
 import { debounce } from '../../helpers/util';
 
@@ -30,7 +30,7 @@ const propTypes = {
    * Returns object { mobileView: boolean, windowSize: number } */
   onPageResize: PropTypes.func,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

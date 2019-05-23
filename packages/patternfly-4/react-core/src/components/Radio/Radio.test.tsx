@@ -1,6 +1,6 @@
-import React from 'react';
-import { Radio } from './Radio';
+import * as React from 'react';
 import { shallow } from 'enzyme';
+import { Radio } from './Radio';
 
 const props = {
   onChange: jest.fn()
@@ -23,7 +23,8 @@ describe('Radio check component', () => {
   });
 
   test('label is string', () => {
-    const view = shallow(<Radio label="Label" id="check" isChecked aria-label="check" name="check" />);
+    const view = shallow(
+      <Radio label="Label" id="check" isChecked aria-label="check" name="check" />);
     expect(view).toMatchSnapshot();
   });
 

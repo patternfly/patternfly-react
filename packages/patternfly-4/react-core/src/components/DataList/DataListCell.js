@@ -1,6 +1,6 @@
 import React from 'react';
-import { css, getModifier } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
+import { css, getModifier } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
 
 const DataListCell = ({ children, className, width, isFilled, alignRight, isIcon, ...props }) => (
@@ -33,7 +33,7 @@ DataListCell.propTypes = {
   /** Set to true if the cell content is an Icon */
   isIcon: PropTypes.bool,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 DataListCell.defaultProps = {

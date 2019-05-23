@@ -16,7 +16,10 @@ const defaultProps = {
 
 const ToggleTemplate = ({ firstIndex, lastIndex, itemCount, itemsTitle }) => (
   <Fragment>
-    <strong>{firstIndex} - {lastIndex}</strong> of <strong>{itemCount}</strong> {itemsTitle}
+    <strong>
+      {firstIndex} - {lastIndex}
+    </strong>{' '}
+    of <strong>{itemCount}</strong> {itemsTitle}
   </Fragment>
 );
 

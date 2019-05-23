@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { BackgroundImage, BackgroundImageSrc } from '@patternfly/react-core';
 
 class SimpleBackgroundImage extends React.Component {

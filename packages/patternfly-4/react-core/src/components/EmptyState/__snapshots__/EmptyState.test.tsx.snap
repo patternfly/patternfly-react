@@ -33,7 +33,9 @@ exports[`EmptyState Main variant regular 1`] = `
 <div
   className="pf-c-empty-state"
 >
-  <Component>
+  <Component
+    size="md"
+  >
     EmptyState full
   </Component>
 </div>
@@ -43,7 +45,9 @@ exports[`EmptyState Main variant small 1`] = `
 <div
   className="pf-c-empty-state styles.modifiers.sm"
 >
-  <Component>
+  <Component
+    size="md"
+  >
     EmptyState small
   </Component>
 </div>
