@@ -1,10 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import { mount } from 'enzyme';
-import Nav from './Nav';
-import NavList from './NavList';
-import NavGroup from './NavGroup';
-import NavItem from './NavItem';
-import NavExpandable from './NavExpandable';
+import { Nav } from './Nav';
+import { NavList } from './NavList';
+import { NavGroup } from './NavGroup';
+import { NavItem } from './NavItem';
+import { NavExpandable } from './NavExpandable';
 
 const props = {
   items: [
@@ -20,8 +20,8 @@ beforeEach(() => {
 });
 
 const context = {
-  onSelect: () => undefined,
-  onToggle: () => undefined
+  onSelect: () => undefined as any,
+  onToggle: () => undefined as any
 };
 
 test('Default Nav List', () => {
