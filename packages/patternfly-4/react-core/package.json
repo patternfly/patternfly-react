@@ -71,6 +71,7 @@
     "babel-plugin-transform-imports": "^1.5.0",
     "babel-plugin-typescript-to-proptypes": "^0.17.1",
     "css": "^2.2.3",
+    "enzyme": "3.9.0",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
     "rimraf": "^2.6.2",
