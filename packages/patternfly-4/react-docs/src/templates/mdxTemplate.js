@@ -80,20 +80,17 @@ query GetComponent($fileAbsolutePath: String!, $propComponents: [String]!) {
       name
       props {
         name
-        props {
+        description
+        required
+        type {
           name
-          description
-          required
-          type {
-            name
-          }
-          tsType {
-            name
-            raw
-          }
-          defaultValue {
-            value
-          }
+        }
+        tsType {
+          name
+          raw
+        }
+        defaultValue {
+          value
         }
       }
     }

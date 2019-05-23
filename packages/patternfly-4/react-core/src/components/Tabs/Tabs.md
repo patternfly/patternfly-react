@@ -1,7 +1,7 @@
 ---
 title: 'Tabs'
 cssPrefix: 'pf-c-tabs'
-propComponents: ['Tab', 'Tabs', 'TabContent']
+propComponents: ['Tab', 'Tabs']
 ---
 
 ## Simple tabs
