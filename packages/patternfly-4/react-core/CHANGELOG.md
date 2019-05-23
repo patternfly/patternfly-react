@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.30.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.30.0...@patternfly/react-core@3.30.1) (2019-05-22)
+
+
+### Bug Fixes
+
+* **modal:** do not render title when hideTitle is true ([#2057](https://github.com/patternfly/patternfly-react/issues/2057)) ([e152246](https://github.com/patternfly/patternfly-react/commit/e152246))
+
+
+
+
+
+# [3.30.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.29.1...@patternfly/react-core@3.30.0) (2019-05-21)
+
+
+### Features
+
+* **Badge:** Convert badge to typescript ([#2048](https://github.com/patternfly/patternfly-react/issues/2048)) ([836f484](https://github.com/patternfly/patternfly-react/commit/836f484))
+* **ChipGroup:** Converted ChipGroup component to typescript ([#1951](https://github.com/patternfly/patternfly-react/issues/1951)) ([f13ce5b](https://github.com/patternfly/patternfly-react/commit/f13ce5b))
+
+
+
+
+
 ## [3.29.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.29.0...@patternfly/react-core@3.29.1) (2019-05-21)
 
 

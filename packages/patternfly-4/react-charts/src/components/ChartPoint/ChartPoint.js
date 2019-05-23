@@ -10,17 +10,7 @@ class VictoryPoint extends Point {
   static propTypes = {
     ...Point.propTypes,
     symbol: PropTypes.oneOfType([
-      PropTypes.oneOf([
-        'circle',
-        'diamond',
-        'plus',
-        'minus',
-        'square',
-        'star',
-        'triangleDown',
-        'triangleUp',
-        'dash',
-      ]),
+      PropTypes.oneOf(['circle', 'diamond', 'plus', 'minus', 'square', 'star', 'triangleDown', 'triangleUp', 'dash']),
       PropTypes.func
     ])
   };
@@ -48,9 +38,7 @@ class VictoryPoint extends Point {
   }
 }
 
-const ChartPoint = (props) => (
-  <VictoryPoint {...props}/>
-);
+const ChartPoint = props => <VictoryPoint {...props} />;
 
 hoistNonReactStatics(ChartPoint, Point);
 

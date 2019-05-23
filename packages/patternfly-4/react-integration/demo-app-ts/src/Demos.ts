@@ -31,6 +31,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BackgroundImageDemo
   },
   {
+    id: 'badge-demo', 
+    name: 'Badge Demo', 
+    componentType: Examples.BadgeDemo 
+  },
+  {
     id: 'brand-demo',
     name: 'Brand Demo',
     componentType: Examples.BrandDemo
@@ -50,6 +55,11 @@ export const Demos: DemoInterface[] = [
     name: 'Card Demo',
     componentType: Examples.CardDemo
   },
+  {
+    id: 'checkbox-demo', 
+    name: 'Checkbox Demo', 
+    componentType: Examples.CheckboxDemo
+  }, 
   {
     id: 'chipgroup-demo', 
     name: 'ChipGroup Demo',

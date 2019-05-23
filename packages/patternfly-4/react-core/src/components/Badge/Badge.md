@@ -1,6 +1,7 @@
 ---
 title: 'Badge'
 cssPrefix: 'pf-c-badge'
+typescript: true 
 ---
 import { Badge } from '@patternfly/react-core';
 
