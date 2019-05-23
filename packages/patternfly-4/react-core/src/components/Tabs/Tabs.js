@@ -74,6 +74,10 @@ class Tabs extends React.Component {
       // most recently selected tabContent
       tabContentRef.current.hidden = false;
     }
+    // Update scroll button state and which button to highlight
+    setTimeout(() => {
+      this.handleScrollButtons();
+    }, 1);
   }
 
   handleScrollButtons = () => {
@@ -204,7 +208,7 @@ class Tabs extends React.Component {
             </button>
           )}
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
-            {children.map((child, index) => (
+            {React.Children.map(children, (child, index) => (
               <li
                 key={index}
                 className={css(
@@ -214,7 +218,6 @@ class Tabs extends React.Component {
                 )}
               >
                 <Tab
-                  {...child.props}
                   ref={node => {
                     this.child = node;
                   }}
@@ -226,6 +229,7 @@ class Tabs extends React.Component {
                       ? child.props.tabContentId
                       : `pf-tab-section-${child.props.eventKey}-${child.props.id || uniqueId}`
                   }
+                  {...child.props}
                 >
                   {child.props.title}
                 </Tab>
