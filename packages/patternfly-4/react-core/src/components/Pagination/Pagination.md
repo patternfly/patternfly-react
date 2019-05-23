@@ -1,6 +1,7 @@
 ---
 title: 'Pagination'
 cssPrefix: null
+propComponents: ['Pagination']
 ---
 
 import { Pagination, PaginationVariant } from '@patternfly/react-core';

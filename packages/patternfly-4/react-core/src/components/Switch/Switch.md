@@ -1,6 +1,7 @@
 ---
 title: 'Switch'
 cssPrefix: 'pf-c-switch'
+propComponents: ['Switch']
 ---
 
 import { Switch } from '@patternfly/react-core';

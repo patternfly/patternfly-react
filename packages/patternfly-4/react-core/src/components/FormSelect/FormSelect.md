@@ -1,6 +1,7 @@
 ---
 title: 'FormSelect'
 cssPrefix: 'pf-c-form-control'
+propComponents: ['FormSelect', 'FormSelectOption', 'FormSelectOptionGroup']
 ---
 
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';

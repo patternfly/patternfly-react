@@ -2,6 +2,7 @@
 title: 'Button'
 cssPrefix: 'pf-c-button'
 typescript: true
+propComponents: ['Button']
 ---
 
 ## Block button

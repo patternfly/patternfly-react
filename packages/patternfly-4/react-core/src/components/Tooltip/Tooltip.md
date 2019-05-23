@@ -1,6 +1,7 @@
 ---
 title: 'Tooltip'
 cssPrefix: 'pf-c-tooltip'
+propComponents: ['Tooltip']
 ---
 
 import { Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';

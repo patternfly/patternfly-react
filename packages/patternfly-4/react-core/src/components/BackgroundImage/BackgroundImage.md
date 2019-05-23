@@ -1,6 +1,7 @@
 ---
 title: 'Background image'
 cssPrefix: 'pf-c-background-image'
+propComponents: ['BackgroundImage', 'BackgroundImageSrc']
 ---
 
 import LinkPreview from '@content/../LinkPreview';

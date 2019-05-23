@@ -1,6 +1,7 @@
 ---
 title: 'Page'
 cssPrefix: 'pf-c-page'
+propComponents: ['Page', 'PageHeader', 'PageSidebar', 'PageSection']
 ---
 
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
