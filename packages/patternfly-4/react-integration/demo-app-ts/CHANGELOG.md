@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.13.1...demo-app-ts@1.14.0) (2019-05-23)
+
+
+### Features
+
+* **Nav:** Convert Nav component to typescript, add Demos ([#2005](https://github.com/patternfly/patternfly-react/issues/2005)) ([f8961fa](https://github.com/patternfly/patternfly-react/commit/f8961fa))
+
+
+
+
+
 ## [1.13.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.13.0...demo-app-ts@1.13.1) (2019-05-22)
 
 **Note:** Version bump only for package demo-app-ts

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.31.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.30.1...@patternfly/react-core@3.31.0) (2019-05-23)
+
+
+### Features
+
+* **Nav:** Convert Nav component to typescript, add Demos ([#2005](https://github.com/patternfly/patternfly-react/issues/2005)) ([f8961fa](https://github.com/patternfly/patternfly-react/commit/f8961fa))
+
+
+
+
+
 ## [3.30.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.30.0...@patternfly/react-core@3.30.1) (2019-05-22)
 
 
