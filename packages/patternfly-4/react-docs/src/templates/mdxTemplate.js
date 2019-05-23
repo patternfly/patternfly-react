@@ -14,8 +14,6 @@ const components = {
 const MdxTemplate = ({ data }) => {
   const cssPrefix = data.mdx.frontmatter.cssPrefix;
   let section = data.mdx.frontmatter.section || 'component';
-  // We *should* use the MDXRenderer scope to get the names of these, but that's pretty difficult
-  // So instead, we just put it in the frontmatter for now
   const props = data.props.nodes
     .map(node => ({ name: node.name, props: node.props }))
     .sort((e1, e2) => e1.name.localeCompare(e2.name));
@@ -58,7 +56,6 @@ const MdxTemplate = ({ data }) => {
 // See how to filter from: https://www.gatsbyjs.org/docs/graphql-reference/
 // We want the markdown from gatsby-mdx
 // We want component metadata from gatsby-transformer-react-docgen-typescript
-// for ALL components in that folder
 export const pageQuery = graphql`
 query GetComponent($fileAbsolutePath: String!, $propComponents: [String]!) {
   mdx(fileAbsolutePath: { eq: $fileAbsolutePath }) {

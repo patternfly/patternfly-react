@@ -1,6 +1,7 @@
 ---
 title: 'Area'
 section: 'charts'
+propComponents: ['ChartArea', 'ChartGroup', 'ChartLegend', 'ChartVoronoiContainer']
 ---
 
 import { ChartArea, ChartGroup, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';

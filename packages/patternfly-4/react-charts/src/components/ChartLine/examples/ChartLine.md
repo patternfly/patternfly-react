@@ -1,6 +1,7 @@
 ---
 title: 'Line'
 section: 'charts'
+propComponents: ['Chart', 'ChartAxis', 'ChartGroup', 'ChartLegend', 'ChartLine', 'ChartThemeColor', 'ChartThemeVariant']
 ---
 
 import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';

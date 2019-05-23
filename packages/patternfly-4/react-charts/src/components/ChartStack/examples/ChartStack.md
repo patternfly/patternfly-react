@@ -1,6 +1,7 @@
 ---
 title: 'Stack'
 section: 'charts'
+propComponents: ['Chart', 'ChartBar', 'ChartStack', 'ChartThemeColor', 'ChartThemeVariant']
 ---
 
 ## Vertical blue stack chart

@@ -1,6 +1,7 @@
 ---
 title: 'Donut'
 section: 'charts'
+propComponents: ['ChartDonut', 'ChartLabel', 'ChartLegend', 'ChartThemeColor', 'ChartThemeVariant']
 ---
 
 import { ChartDonut, ChartLabel, ChartLegend, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
