@@ -247,7 +247,7 @@ class Tabs extends React.Component {
             </button>
           )}
         </Component>
-        {children.map((child, index) =>
+        {React.Children.map(children, (child, index) =>
           !child.props.children ? null : (
             <TabContent key={index} activeKey={activeKey} child={child} id={child.props.id || uniqueId} />
           )
