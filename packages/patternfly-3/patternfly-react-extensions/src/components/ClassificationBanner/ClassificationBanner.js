@@ -64,6 +64,9 @@ class ClassificationBanner extends React.Component {
         },
         'classification-banner-pf-banner-bottom'
       ),
+      closeButton: classNames({
+        'classification-banner-pf-close pficon-error-circle-o': closeButton
+      }),
       children: classNames({
         'classification-banner-pf-children-no-bottom': !this.state.closed && !bottomBanner,
         'classification-banner-pf-children': !this.state.closed && bottomBanner
@@ -91,7 +94,8 @@ class ClassificationBanner extends React.Component {
           <div className="classification-banner-pf-banner-right">
             {closeButton && (
               <Button
-                bsStyle="btn btn-link classification-banner-pf-close pficon-error-circle-o"
+                className={classificationBannerClasses.closeButton}
+                bsStyle="link"
                 bsSize="small"
                 data-toggle="tooltip"
                 data-placement="bottom"

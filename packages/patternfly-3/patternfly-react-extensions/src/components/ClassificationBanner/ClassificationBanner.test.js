@@ -19,10 +19,12 @@ test('ClassificationBanner renders properly', () => {
 test('ClassificationBanner expectedly executes mouse click and is dismissed', () => {
   const component = mount(
     testClassificationBannerSnapshot({
+      closeButton: true,
       closed: false
     })
   );
-  const closeButton = component.find('#classification-banner-close-btn');
+
+  const closeButton = component.find('button');
   closeButton.simulate('click');
   expect(component.state('closed')).toBe(true);
 });
