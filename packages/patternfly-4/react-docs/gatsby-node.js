@@ -32,6 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
           section
           fullscreen
           typescript
+          propComponents
         }
       }
     }
@@ -69,7 +70,7 @@ exports.createPages = ({ graphql, actions }) => {
             title: node.frontmatter.title,
             typescript: node.frontmatter.typescript, // For a badge
             fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
-            pathRegex: `/${folderName}\/.*/` // Helps us get the docgenned props
+            pathRegex: node.frontmatter.propComponents // Helps us get the docgenned props
           }
         });
       }
@@ -78,7 +79,7 @@ exports.createPages = ({ graphql, actions }) => {
 };
 
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
+exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
