@@ -25,9 +25,7 @@ const ChartTooltip = ({
   themeVariant,
   theme = getTheme(themeColor, themeVariant), // destructure last
   ...rest
-}) => (
-  <VictoryTooltip theme={theme} {...rest} />
-);
+}) => <VictoryTooltip theme={theme} {...rest} />;
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
 hoistNonReactStatics(ChartTooltip, VictoryTooltip);

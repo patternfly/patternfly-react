@@ -111,6 +111,23 @@ class ContextBody extends React.Component {
   }
 }
 
+ContextBody.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
+  headerData: PropTypes.array,
+  rows: PropTypes.array,
+  rowKey: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  onRowClick: PropTypes.func
+};
+
+ContextBody.defaultProps = {
+  className: '',
+  children: null,
+  headerData: [],
+  rows: [],
+  onRowClick: () => undefined
+};
+
 const TableBody = props => (
   <TableContext.Consumer>
     {({ headerData, rows }) => <ContextBody headerData={headerData} rows={rows} {...props} />}

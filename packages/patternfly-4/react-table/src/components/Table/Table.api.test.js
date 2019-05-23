@@ -2,7 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { Table, TableHeader, TableBody, sortable } from './index';
 import { rows, columns, actions } from '../../test-helpers/data-sets';
-import MockedTable from '../../test-helpers/MockedTableChanges';
 
 describe('Collapsible table', () => {
   test('should call correct function', () => {

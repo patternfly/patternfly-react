@@ -6,11 +6,13 @@ import { Button } from '@patternfly/react-core';
 import styles from '@patternfly/patternfly/components/Table/table.css';
 
 const propTypes = {
+  className: PropTypes.string,
   children: PropTypes.node,
   onToggle: PropTypes.func,
   isOpen: PropTypes.bool
 };
 const defaultProps = {
+  className: '',
   children: null,
   isOpen: undefined,
   onToggle: null

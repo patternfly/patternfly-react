@@ -12,12 +12,19 @@ const defaultProps = {
   className: ''
 };
 
-class ContextHeader extends React.Component {
-  render() {
-    const { className, headerRows, ...props } = this.props;
-    return <Header {...props} headerRows={headerRows} className={className} />;
-  }
-}
+const ContextHeader = ({ className, headerRows, ...props }) => (
+  <Header {...props} headerRows={headerRows} className={className} />
+);
+
+ContextHeader.propTypes = {
+  className: PropTypes.string,
+  headerRows: PropTypes.array
+};
+
+ContextHeader.defaultProps = {
+  className: '',
+  headerRows: undefined
+};
 
 const TableHeader = ({ ...props }) => (
   <TableContext.Consumer>

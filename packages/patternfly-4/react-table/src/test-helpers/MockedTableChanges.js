@@ -13,6 +13,12 @@ export const withContext = ({ context = {}, contextType = {} }) => WrappedCompon
       return <WrappedComponent>{this.props.children}</WrappedComponent>;
     }
   }
+  WithContext.propTypes = {
+    children: PropTypes.node
+  };
+  WithContext.defaultProps = {
+    children: null
+  };
   WithContext.WrappedComponent = WrappedComponent;
   WithContext.childContextTypes = contextType;
 
@@ -33,10 +39,22 @@ export const TableProvider = withContext({
   contextType: { columns: PropTypes.any, renderers: PropTypes.any }
 })('table');
 
-export default ({ updateFunc, columns }) => (
+const MockedTableChanges = ({ updateFunc, columns }) => (
   <TableContext.Provider value={{ updateHeaderData: updateFunc }}>
     <TableProvider>
       <TableHeader headerRows={columns} />
     </TableProvider>
   </TableContext.Provider>
 );
+
+MockedTableChanges.propTypes = {
+  updateFunc: PropTypes.func,
+  columns: PropTypes.array
+};
+
+MockedTableChanges.defaultProps = {
+  updateFunc: () => undefined,
+  columns: []
+};
+
+export default MockedTableChanges;
