@@ -36,7 +36,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `);
+  }`);
 
   return mdx.then(({ data }) => {
     data.allMdx.nodes.forEach(node => {

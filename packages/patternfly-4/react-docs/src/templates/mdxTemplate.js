@@ -98,6 +98,6 @@ query GetComponent($fileAbsolutePath: String!, $propComponents: [String]!) {
       }
     }
   }
-`;
+}`;
 
 export default MdxTemplate;
