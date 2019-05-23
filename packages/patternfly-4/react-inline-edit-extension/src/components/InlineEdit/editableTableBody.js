@@ -58,7 +58,7 @@ const resolveCascadeEditability = rows => {
 const onRow = (event, row, rowProps, computedData, { onRowClick, editConfig }) => {
   const { target } = event;
   const cell = target.closest('[data-key]');
-  const cellNumber = parseInt(cell && cell.getAttribute('data-key'));
+  const cellNumber = parseInt(cell && cell.getAttribute('data-key'), 10);
   const hasCellNumber = !Number.isNaN(cellNumber);
 
   let onEditCellClicked;
@@ -115,6 +115,19 @@ const Body = ({ BodyComponent, rows, editConfig, onRowClick, ...props }) => {
       }
     />
   );
+};
+
+Body.propTypes = {
+  BodyComponent: PropTypes.node.isRequired,
+  rows: PropTypes.array,
+  editConfig: PropTypes.any,
+  onRowClick: PropTypes.func
+};
+
+Body.defaultProps = {
+  rows: [],
+  editConfig: null,
+  onRowClick: () => undefined
 };
 
 const editableTableBody = BodyComponent => {

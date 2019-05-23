@@ -25,9 +25,7 @@ const ChartLine = ({
   themeVariant,
   theme = getTheme(themeColor, themeVariant), // destructure last
   ...rest
-}) => (
-  <VictoryLine theme={theme} {...rest} />
-);
+}) => <VictoryLine theme={theme} {...rest} />;
 
 // Note: VictoryLine.role must be hoisted
 hoistNonReactStatics(ChartLine, VictoryLine);

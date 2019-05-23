@@ -6,11 +6,11 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { Page, PageHeader, PageSidebar } from '@patternfly-safe/react-core';
 import SiteNav from '../components/siteNav';
-
 
 const SidebarLayout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,24 +29,23 @@ const SidebarLayout = ({ children }) => {
           }
         }
       }
-    }`);
+    }
+  `);
 
-  const prInfo = data.allEnvVars.edges
-    .filter(({ node }) => node.name === 'PR_INFO')[0].node;
+  const prInfo = data.allEnvVars.edges.filter(({ node }) => node.name === 'PR_INFO')[0].node;
 
   const Header = (
     <PageHeader
-      style={{ backgroundColor: "black" }}
+      style={{ backgroundColor: 'black' }}
       logo={prInfo.num ? `PR #${prInfo.num}` : data.site.siteMetadata.title}
       logoProps={{
-        href: prInfo.url ? prInfo.url : "/"
+        href: prInfo.url ? prInfo.url : '/'
       }}
-      showNavToggle />
+      showNavToggle
+    />
   );
 
-  const SideBar = (
-    <PageSidebar nav={<SiteNav />} />
-  );
+  const SideBar = <PageSidebar nav={<SiteNav />} />;
 
   return (
     <React.Fragment>
@@ -55,14 +54,22 @@ const SidebarLayout = ({ children }) => {
         <meta charSet="utf-8" />
         <meta name="description" content="PatternFly React Documentation" />
         <meta name="keywords" content="React, PatternFly, Red Hat" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       </Helmet>
       {/* Nothing quite like dogfooding your own components */}
-      <Page style={{ height: "100vh" }} header={Header} sidebar={SideBar} isManagedSidebar>
+      <Page style={{ height: '100vh' }} header={Header} sidebar={SideBar} isManagedSidebar>
         {children}
       </Page>
-    </React.Fragment >
+    </React.Fragment>
   );
-}
+};
+
+SidebarLayout.propTypes = {
+  children: PropTypes.node
+};
+
+SidebarLayout.defaultProps = {
+  children: null
+};
 
 export default SidebarLayout;

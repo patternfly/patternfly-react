@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import SidebarLayout from './sidebarLayout';
 import { CSSVars, PropsTable, LiveEdit } from '../components/componentDocs';
@@ -12,11 +13,9 @@ const components = {
 };
 
 const MdxTemplate = ({ data }) => {
-  const cssPrefix = data.mdx.frontmatter.cssPrefix;
-  let section = data.mdx.frontmatter.section || 'component';
-  const props = data.props.nodes
-    .map(node => ({ name: node.name, props: node.props }))
-    .sort((e1, e2) => e1.name.localeCompare(e2.name));
+  const { cssPrefix } = data.mdx.frontmatter;
+  const section = data.mdx.frontmatter.section || 'component';
+  const nodes = data.props.nodes;
 
   return (
     <SidebarLayout>
@@ -25,31 +24,39 @@ const MdxTemplate = ({ data }) => {
           {data.mdx.frontmatter.title} {section.indexOf('-') === -1 ? section : ''}
         </Title>
         <MDXProvider components={components}>
-          <MDXRenderer>
-            {data.mdx.code.body}
-          </MDXRenderer>
+          <MDXRenderer>{data.mdx.code.body}</MDXRenderer>
         </MDXProvider>
       </PageSection>
 
-      {props.length > 0 && props.map(component =>
-        <PageSection key={component.name}>
-          {props.description}
-          <PropsTable caption={`${component.name} properties`} propList={component.props} />
+      {nodes.length > 0 &&
+        nodes.map(component => (
+          <PageSection key={component.name}>
+            {nodes.description}
+            <PropsTable caption={`${component.name} properties`} propList={component.props} />
+          </PageSection>
+        ))}
+
+      {cssPrefix && (
+        <PageSection>
+          <CSSVars
+            caption={
+              <p>
+                CSS Variables starting with <strong>--{cssPrefix}</strong> from&nbsp;
+                <a href="https://github.com/patternfly/patternfly-next/" target="_blank" rel="noopener noreferrer">
+                  patternfly-next
+                </a>
+              </p>
+            }
+            cssPrefix={cssPrefix}
+          />
         </PageSection>
       )}
-
-      {cssPrefix &&
-        <PageSection>
-          <CSSVars caption={
-            <p>
-              CSS Variables starting with <strong>--{cssPrefix}</strong> from&nbsp;
-                <a href="https://github.com/patternfly/patternfly-next/" target="_blank">patternfly-next</a>
-            </p>
-          } cssPrefix={cssPrefix} />
-        </PageSection>
-      }
     </SidebarLayout>
   );
+};
+
+MdxTemplate.propTypes = {
+  data: PropTypes.any.isRequired
 };
 
 // Test queries in http://localhost:8000/___graphql
@@ -73,22 +80,24 @@ query GetComponent($fileAbsolutePath: String!, $propComponents: [String]!) {
       name
       props {
         name
-        description
-        required
-        type {
+        props {
           name
-        }
-        tsType {
-          name
-          raw
-        }
-        defaultValue {
-          value
+          description
+          required
+          type {
+            name
+          }
+          tsType {
+            name
+            raw
+          }
+          defaultValue {
+            value
+          }
         }
       }
     }
   }
-}
 `;
 
 export default MdxTemplate;

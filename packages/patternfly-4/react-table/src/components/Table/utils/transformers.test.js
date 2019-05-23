@@ -237,7 +237,7 @@ describe('Transformer functions', () => {
         { rowIndex: 2, rowData: { parent: 1, noPadding: true }, column: { extraParams: {} } }
       );
       expect(returned).toMatchObject({ colSpan: 5, id: 'expanded-content2', className: 'pf-m-no-padding' });
-    })
+    });
   });
 
   test('scopeColTransformer', () => {
