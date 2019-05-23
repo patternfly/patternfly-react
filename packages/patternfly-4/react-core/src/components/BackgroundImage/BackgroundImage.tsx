@@ -30,7 +30,7 @@ const cssVariables = {
   [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg && c_background_image_BackgroundImage_lg.name,
 };
 
-interface BackgroundImageSrcMap {
+export interface BackgroundImageSrcMap {
   xs: string,
   xs2x: string,
   sm: string,
