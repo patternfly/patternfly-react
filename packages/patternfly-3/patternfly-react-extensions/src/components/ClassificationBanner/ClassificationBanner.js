@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'patternfly-react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -63,9 +64,6 @@ class ClassificationBanner extends React.Component {
         },
         'classification-banner-pf-banner-bottom'
       ),
-      closeButton: classNames({
-        'classification-banner-pf-close pficon-error-circle-o': closeButton
-      }),
       children: classNames({
         'classification-banner-pf-children-no-bottom': !this.state.closed && !bottomBanner,
         'classification-banner-pf-children': !this.state.closed && bottomBanner
@@ -91,12 +89,16 @@ class ClassificationBanner extends React.Component {
           </div>
           <div className="classification-banner-pf-classification-level">{title}</div>
           <div className="classification-banner-pf-banner-right">
-            <i
-              id="classification-banner-close-btn"
-	      data-toggle="tooltip" data-placement="bottom" title="Close banner"
-              className={classificationBannerClasses.closeButton}
-              onClick={this.onClose}
-            />
+            {closeButton && (
+              <Button
+                bsStyle="btn btn-link classification-banner-pf-close pficon-error-circle-o"
+                bsSize="small"
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Close"
+                onClick={this.onClose}
+              />
+            )}
             {rightLabels[0]}
             {rightLabels[1]}
           </div>
