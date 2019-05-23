@@ -11,7 +11,7 @@ const propTypes = {
   /** additional classes added to the Split Layout Item */
   className: PropTypes.string,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
