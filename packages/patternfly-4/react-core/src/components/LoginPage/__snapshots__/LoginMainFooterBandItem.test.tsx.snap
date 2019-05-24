@@ -2,16 +2,16 @@
 
 exports[`LoginFooterItem  with custom node 1`] = `
 <p
-  className="[object Object]-item"
+  className="pf-c-login__main-footer-band-item"
 >
   <CustomNode />
 </p>
 `;
 
-exports[`className is added to the root element 1`] = `"[object Object]-item extra-class"`;
+exports[`className is added to the root element 1`] = `"pf-c-login__main-footer-band-item extra-class"`;
 
 exports[`renders with PatternFly Core styles 1`] = `
 <p
-  className="[object Object]-item"
+  className="pf-c-login__main-footer-band-item"
 />
 `;
