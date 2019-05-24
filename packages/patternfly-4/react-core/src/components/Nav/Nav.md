@@ -13,7 +13,8 @@ import {
   NavItemSeparator,
   NavList,
   NavGroup,
-  NavVariants
+  NavVariants,
+  PageHeader
 } from '@patternfly/react-core';
 
 ```js
@@ -66,7 +67,7 @@ class NavSimpleList extends React.Component {
 }
 ```
 
-## Nav (grouped)
+## Grouped nav
 ```js
 import React from 'react';
 import {
@@ -124,7 +125,7 @@ class NavGroupedList extends React.Component {
 }
 ```
 
-## Nav (default)
+## Default nav
 ```js
 import React from 'react';
 import {
@@ -174,7 +175,7 @@ class NavDefaultList extends React.Component {
 }
 ```
 
-## Nav (expandable)
+## Expandable nav
 ```js
 import React from 'react';
 import {
@@ -278,7 +279,7 @@ class NavExpandableList extends React.Component {
 }
 ```
 
-## Nav (expandable+titles)
+## Expandable nav (w/subnav titles)
 ```js
 import React from 'react';
 import {
@@ -376,7 +377,7 @@ class NavExpandableTitlesList extends React.Component {
 }
 ```
 
-## Nav (mixed)
+## Nav mixed
 ```js
 import React from 'react';
 import {
@@ -477,7 +478,7 @@ class NavMixedList extends React.Component {
 }
 ```
 
-## Nav (horizontal)
+## Horizontal nav (only in PageHeader)
 ```js
 import React from 'react';
 import {
@@ -487,7 +488,8 @@ import {
   NavItemSeparator,
   NavList,
   NavGroup,
-  NavVariants
+  NavVariants,
+  PageHeader
 } from '@patternfly/react-core';
 
 class NavHorizontalList extends React.Component {
@@ -505,28 +507,26 @@ class NavHorizontalList extends React.Component {
 
   render() {
     const { activeItem } = this.state;
+    const nav = (
+      <Nav onSelect={this.onSelect}>
+        <NavList variant={NavVariants.horizontal}>
+          {Array.apply(0, Array(10)).map(function (x, i) {
+            const num = i + 1;
+            return <NavItem key={num} itemId={num} isActive={activeItem === num}>
+              Horizontal nav item {num}
+            </NavItem>;
+          })}
+        </NavList>
+      </Nav>
+    );
     return (
-      <div style={{ backgroundColor: '#292e34', padding: '1rem' }}>
-        <Nav onSelect={this.onSelect}>
-          <NavList variant={NavVariants.horizontal}>
-            <NavItem preventDefault to="#horizontal-link1" itemId={0} isActive={activeItem === 0}>
-              Item 1
-            </NavItem>
-            <NavItem preventDefault to="#horizontal-link2" itemId={1} isActive={activeItem === 1}>
-              Item 2
-            </NavItem>
-            <NavItem preventDefault to="#horizontal-link3" itemId={2} isActive={activeItem === 2}>
-              Item 3
-            </NavItem>
-          </NavList>
-        </Nav>
-      </div>
+      <PageHeader topNav={nav} style={{ backgroundColor: 'rgb(21, 21, 21)' }} />
     );
   }
 }
 ```
 
-## Nav (tertiary)
+## Tertiary nav
 ```js
 import React from 'react';
 import {
@@ -557,18 +557,12 @@ class NavTertiaryList extends React.Component {
     return (
       <Nav onSelect={this.onSelect}>
         <NavList variant={NavVariants.tertiary}>
-          <NavItem preventDefault to="#tertiary-link1" itemId={0} isActive={activeItem === 0}>
-            Link 1
-          </NavItem>
-          <NavItem preventDefault to="#tertiary-link2" itemId={1} isActive={activeItem === 1}>
-            Link 2
-          </NavItem>
-          <NavItem preventDefault to="#tertiary-link3" itemId={2} isActive={activeItem === 2}>
-            Link 3
-          </NavItem>
-          <NavItem preventDefault to="#tertiary-link4" itemId={3} isActive={activeItem === 3}>
-            Link 4
-          </NavItem>
+          {Array.apply(0, Array(10)).map(function (x, i) {
+            const num = i + 1;
+            return <NavItem key={num} itemId={num} isActive={activeItem === num}>
+              Tertiary nav item {num}
+            </NavItem>;
+          })}
         </NavList>
       </Nav>
     );

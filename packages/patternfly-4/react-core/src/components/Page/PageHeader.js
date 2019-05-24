@@ -57,34 +57,40 @@ const PageHeader = ({
   ...props
 }) => (
   <header role="banner" className={css(styles.pageHeader, className)} {...props}>
-    <div className={css(styles.pageHeaderBrand)}>
-      {showNavToggle && (
-        <div className={css(styles.pageHeaderBrandToggle)}>
-          <Button
-            id="nav-toggle"
-            onClick={onNavToggle}
-            aria-label={ariaLabel}
-            aria-controls="page-sidebar"
-            aria-expanded={isNavOpen ? 'true' : 'false'}
-            variant={ButtonVariant.plain}
-          >
-            <BarsIcon />
-          </Button>
-        </div>
-      )}
-      <a className={css(styles.pageHeaderBrandLink)} {...logoProps}>
-        {logo}
-      </a>
-    </div>
+    {(showNavToggle || logo) && (
+      <div className={css(styles.pageHeaderBrand)}>
+        {showNavToggle && (
+          <div className={css(styles.pageHeaderBrandToggle)}>
+            <Button
+              id="nav-toggle"
+              onClick={onNavToggle}
+              aria-label={ariaLabel}
+              aria-controls="page-sidebar"
+              aria-expanded={isNavOpen ? 'true' : 'false'}
+              variant={ButtonVariant.plain}
+            >
+              <BarsIcon />
+            </Button>
+          </div>
+        )}
+        {logo && (
+          <a className={css(styles.pageHeaderBrandLink)} {...logoProps}>
+            {logo}
+          </a>
+        )}
+      </div>
+    )}
     {/* Hide for now until we have the context selector component */}
     {/* <div className={css(styles.pageHeaderSelector)}>
       pf-c-context-selector
     </div> */}
     {topNav && <div className={css(styles.pageHeaderNav)}>{topNav}</div>}
-    <div className={css(styles.pageHeaderTools)}>
-      {toolbar}
-      {avatar}
-    </div>
+    {(toolbar || avatar) && (
+      <div className={css(styles.pageHeaderTools)}>
+        {toolbar}
+        {avatar}
+      </div>
+    )}
   </header>
 );
 
