@@ -79,10 +79,12 @@ jobs:
       install: skip
       script:
         - yarn build:docs
-    - name: Lint, Stylelint, and TSLint
+    - name: TSLint, ESLint, and Stylelint 
       install: skip
       script:
         - yarn lint:ts
+        - yarn lint:js
+        - yarn lint:versions
         - yarn lint:style
 
     - stage: Deploy
