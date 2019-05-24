@@ -50,7 +50,7 @@
     "victory-core": "^32.2.0"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "2.6.5",
+    "@patternfly/patternfly": "2.8.1",
     "@patternfly/react-tokens": "^2.5.2",
     "css": "^2.2.3",
     "enzyme": "3.9.0",
