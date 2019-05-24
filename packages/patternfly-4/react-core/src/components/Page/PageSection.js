@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Page/page.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 
 export const PageSectionVariants = {
   default: 'default',
@@ -24,7 +24,7 @@ const propTypes = {
   /** Modifies a main page section to have no padding on mobile */
   noPaddingMobile: PropTypes.bool,
   /** Additional props are spread to the container <section> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
@@ -44,7 +44,18 @@ const PageSection = ({ className, children, variant, noPadding, noPaddingMobile,
     [PageSectionVariants.darker]: styles.modifiers.dark_100
   };
   return (
-    <section {...props} className={css(styles.pageMainSection, noPadding && styles.modifiers.noPadding, noPaddingMobile && styles.modifiers.noPaddingMobile, variantStyle[variant], isFilled === false && styles.modifiers.noFill, isFilled === true && styles.modifiers.fill , className)}>
+    <section
+      {...props}
+      className={css(
+        styles.pageMainSection,
+        noPadding && styles.modifiers.noPadding,
+        noPaddingMobile && styles.modifiers.noPaddingMobile,
+        variantStyle[variant],
+        isFilled === false && styles.modifiers.noFill,
+        isFilled === true && styles.modifiers.fill,
+        className
+      )}
+    >
       {children}
     </section>
   );

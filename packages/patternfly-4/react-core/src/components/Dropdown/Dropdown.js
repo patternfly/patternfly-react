@@ -1,7 +1,7 @@
 import React, { Children, cloneElement } from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Dropdown/dropdown.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import DropdownMenu from './DropdownMenu';
 import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
 
@@ -37,7 +37,7 @@ const propTypes = {
   /** Function callback called when user selects item */
   onSelect: PropTypes.func,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

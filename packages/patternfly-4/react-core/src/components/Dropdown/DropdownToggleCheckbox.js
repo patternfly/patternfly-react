@@ -12,6 +12,8 @@ const propTypes = {
   isDisabled: PropTypes.bool,
   /** Flag to show if the checkbox is checked */
   isChecked: PropTypes.bool,
+  /** Alternate Flag to show if the checkbox is checked */
+  checked: PropTypes.bool,
   /** A callback for when the checkbox selection changes */
   onChange: PropTypes.func,
   /** Id of the checkbox */
@@ -19,7 +21,7 @@ const propTypes = {
   /** Aria-label of the checkbox */
   'aria-label': PropTypes.any.isRequired,
   /** Additional props are spread to the <input> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
@@ -27,6 +29,7 @@ const defaultProps = {
   isValid: true,
   isDisabled: false,
   isChecked: null,
+  checked: null,
   onChange: () => undefined
 };
 
@@ -36,7 +39,7 @@ class DropdownToggleCheckbox extends React.Component {
   };
 
   render() {
-    const { className, onChange, isValid, isDisabled, isChecked, label, checked, ...props } = this.props;
+    const { className, onChange, isValid, isDisabled, isChecked, checked, ...props } = this.props;
     return (
       <label className={css(styles.dropdownToggleCheck, className)} htmlFor={props.id}>
         <input

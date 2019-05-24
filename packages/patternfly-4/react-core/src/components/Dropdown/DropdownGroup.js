@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Dropdown/dropdown.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 
 const propTypes = {
   /** Checkboxes within group */
@@ -11,7 +11,7 @@ const propTypes = {
   /** Group label */
   label: PropTypes.string,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

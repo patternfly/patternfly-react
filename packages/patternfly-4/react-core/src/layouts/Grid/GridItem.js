@@ -48,7 +48,7 @@ const propTypes = {
   /** the number of columns the grid item is offset on xLarge device. Value should be a number 1-12   */
   xlOffset: PropTypes.oneOf(gridSpans),
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

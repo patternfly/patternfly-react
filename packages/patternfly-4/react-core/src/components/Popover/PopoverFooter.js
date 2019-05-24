@@ -9,16 +9,16 @@ const PopoverFooter = ({ children, className, ...rest }) => (
   </footer>
 );
 
-const propTypes = {
+PopoverFooter.propTypes = {
   /** Additional classes added to the Popover Footer */
   className: PropTypes.string,
   /** Footer node */
   children: PropTypes.any,
   /** Additional props are spread to the container <footer> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
-const defaultProps = {
+PopoverFooter.defaultProps = {
   children: null,
   className: ''
 };

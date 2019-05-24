@@ -7,7 +7,7 @@ import ToggleTemplate from './ToggleTemplate';
 import Navigation from './Navigation';
 import PaginationOptionsMenu from './PaginationOptionsMenu';
 
-const perPageOptions = [
+const defaultPerPageOptions = [
   {
     title: '10',
     value: 10
@@ -24,23 +24,29 @@ const perPageOptions = [
     title: '100',
     value: 100
   }
-]
+];
 
 export const PaginationVariant = {
   top: 'top',
   bottom: 'bottom'
-}
+};
 
 const propTypes = {
+  /** What should be rendered inside */
+  children: PropTypes.node,
+  /** Additional classes for the container. */
+  className: PropTypes.string,
   /** Position where pagination is rendered. */
   variant: PropTypes.oneOf(Object.values(PaginationVariant)),
   /** Number of items per page. */
   perPage: PropTypes.number,
   /** Select from options to number of items per page. */
-  perPageOptions: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.node,
-    value: PropTypes.number
-  })),
+  perPageOptions: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.node,
+      value: PropTypes.number
+    })
+  ),
   /** Total number of items. */
   itemCount: PropTypes.number.isRequired,
   /** Current page number. */
@@ -49,8 +55,6 @@ const propTypes = {
   itemsStart: PropTypes.number,
   /** Last index of items on current page. */
   itemsEnd: PropTypes.number,
-  /** Number of pages. */
-  amountOfPages: PropTypes.number,
   /** ID to ideintify widget on page. */
   widgetId: PropTypes.string,
   /** Direction of dropdown context menu. */
@@ -85,11 +89,13 @@ const propTypes = {
   onPageInput: PropTypes.func,
   /** Function called when user selects number of items per page. */
   onPerPageSelect: PropTypes.func
-}
+};
 
 const defaultProps = {
+  children: null,
+  className: '',
   variant: PaginationVariant.top,
-  perPage: perPageOptions[0].value,
+  perPage: defaultPerPageOptions[0].value,
   titles: {
     items: 'items',
     pages: 'pages',
@@ -104,7 +110,9 @@ const defaultProps = {
     paginationTitle: 'Pagination'
   },
   page: 1,
-  perPageOptions,
+  itemsStart: 0,
+  itemsEnd: 0,
+  perPageOptions: defaultPerPageOptions,
   dropDirection: DropdownDirection.down,
   widgetId: 'pagination-options-menu',
   toggleTemplate: ToggleTemplate,
@@ -115,7 +123,7 @@ const defaultProps = {
   onNextClick: () => undefined,
   onPageInput: () => undefined,
   onLastClick: () => undefined
-}
+};
 
 const Pagination = ({
   perPage,
@@ -142,19 +150,21 @@ const Pagination = ({
 }) => {
   const lastPage = Math.ceil(itemCount / perPage);
   const firstIndex = itemCount === 0 ? 0 : (page - 1) * perPage + 1;
-  const lastIndex = itemCount === 0 ? 0 : page === lastPage ? itemCount : page * perPage;
+  let lastIndex;
+  if (itemCount === 0) {
+    lastIndex = 0;
+  } else {
+    lastIndex = page === lastPage ? itemCount : page * perPage;
+  }
+
   return (
-    <div className={
-        css(styles.pagination, variant === PaginationVariant.bottom && styles.modifiers.footer , className)
-      }
+    <div
+      className={css(styles.pagination, variant === PaginationVariant.bottom && styles.modifiers.footer, className)}
       {...props}
     >
-      {
-        variant === PaginationVariant.top &&
-        <div className={css(styles.paginationTotalItems)}>
-          {`${itemCount} ${titles.items}`}
-        </div>
-      }
+      {variant === PaginationVariant.top && (
+        <div className={css(styles.paginationTotalItems)}>{`${itemCount} ${titles.items}`}</div>
+      )}
       <PaginationOptionsMenu
         itemsPerPageTitle={titles.itemsPerPage}
         perPageSuffix={titles.perPageSuffix}
@@ -189,8 +199,8 @@ const Pagination = ({
       />
       {children}
     </div>
-  )
-}
+  );
+};
 
 Pagination.propTypes = propTypes;
 Pagination.defaultProps = defaultProps;

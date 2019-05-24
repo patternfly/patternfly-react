@@ -3,7 +3,7 @@ import styles from '@patternfly/patternfly/components/AppLauncher/app-launcher.c
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { ApplicationLauncherPosition } from './applicationLauncherConstants';
-import { DropdownContext, DropdownArrowContext } from '../Dropdown/dropdownConstants';
+import { DropdownArrowContext } from '../Dropdown/dropdownConstants';
 import ReactDOM from 'react-dom';
 import { keyHandler } from '../../helpers/util';
 import { KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
@@ -13,18 +13,24 @@ const propTypes = {
   children: PropTypes.node,
   /** Classess applied to root element of dropdown menu */
   className: PropTypes.string,
+  /** internal index of the item */
+  index: PropTypes.number,
   /** Flag to indicate if menu is opened */
   isOpen: PropTypes.bool,
+  /** Flag to indicate if menu should be opened on enter */
+  openedOnEnter: PropTypes.bool,
   /** Indicates where menu will be alligned horizontally */
   position: PropTypes.oneOf(Object.values(ApplicationLauncherPosition)),
   /** Additional props are spread to the container component */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
   children: null,
   className: '',
+  index: null,
   isOpen: true,
+  openedOnEnter: false,
   position: ApplicationLauncherPosition.left
 };
 
@@ -45,8 +51,9 @@ class ApplicationLauncherMenu extends React.Component {
     } else if (event.keyCode === KEY_CODES.ARROW_DOWN) {
       keyHandler(this.props.index, KEYHANDLER_DIRECTION.DOWN, this.refsCollection, this.props.children);
     } else if (event.key === KEY_CODES.ENTER) {
-      if (!this.ref.current.getAttribute) ReactDOM.findDOMNode(this.ref.current).click();
-      else {
+      if (!this.ref.current.getAttribute) {
+        ReactDOM.findDOMNode(this.ref.current).click(); // eslint-disable-line react/no-find-dom-node
+      } else {
         this.ref.current.click && this.ref.current.click();
       }
     }
@@ -60,7 +67,7 @@ class ApplicationLauncherMenu extends React.Component {
 
   sendRef = (index, node, isDisabled) => {
     if (!node.getAttribute) {
-      this.refsCollection[index] = ReactDOM.findDOMNode(node);
+      this.refsCollection[index] = ReactDOM.findDOMNode(node); // eslint-disable-line react/no-find-dom-node
     } else if (isDisabled || node.getAttribute('role') === 'separator') {
       this.refsCollection[index] = null;
     } else {
@@ -78,7 +85,7 @@ class ApplicationLauncherMenu extends React.Component {
   }
 
   render() {
-    const { className, isOpen, position, children, component: Component, openedOnEnter, ...props } = this.props;
+    const { className, isOpen, position, children, openedOnEnter, ...props } = this.props;
 
     return (
       <DropdownArrowContext.Provider

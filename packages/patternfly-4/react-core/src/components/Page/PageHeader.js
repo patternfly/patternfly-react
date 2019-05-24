@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Page/page.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import { BarsIcon } from '@patternfly/react-icons';
 import { Button, ButtonVariant } from '../../components/Button';
 
@@ -27,7 +27,7 @@ const propTypes = {
   /** Callback function to handle the side nav toggle button */
   'aria-label': PropTypes.string,
   /** Additional props are spread to the container <header> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

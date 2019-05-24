@@ -8,6 +8,10 @@ const props = {
 };
 
 test('expanded content render', () => {
-  const view = shallow(<ExpandedContent {...props} onChange={() => {}}>This is my text</ExpandedContent>);
+  const view = shallow(
+    <ExpandedContent {...props} onChange={() => {}}>
+      This is my text
+    </ExpandedContent>
+  );
   expect(view).toMatchSnapshot();
 });

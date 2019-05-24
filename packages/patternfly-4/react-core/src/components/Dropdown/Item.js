@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DropdownItem from './DropdownItem';
-import { css } from '@patternfly/react-styles';
 import { componentShape } from '../../helpers/componentShape';
 import { DropdownArrowContext } from './dropdownConstants';
 
@@ -25,7 +24,7 @@ Item.propTypes = {
   /** Default hyperlink location */
   href: PropTypes.string,
   /** Additional props are passed to the DropdownItem */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 Item.defaultProps = {
   children: null,

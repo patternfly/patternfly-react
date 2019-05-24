@@ -12,7 +12,9 @@ const menuItems = [
   <OptionsMenuItemGroup key="first group">
     <OptionsMenuItem key="name">Name</OptionsMenuItem>
     <OptionsMenuItem key="date">Date</OptionsMenuItem>
-    <OptionsMenuItem isDisabled key="disabled">Disabled</OptionsMenuItem>
+    <OptionsMenuItem isDisabled key="disabled">
+      Disabled
+    </OptionsMenuItem>
     <OptionsMenuItem key="size">Size</OptionsMenuItem>
   </OptionsMenuItemGroup>,
   <OptionsMenuSeparator key="separator" />,
@@ -25,20 +27,18 @@ const menuItems = [
 describe('optionsMenu', () => {
   test('regular', () => {
     const view = mount(
-      <OptionsMenu id='regular'
-         menuItems={menuItems}
-         toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
-      />
+      <OptionsMenu id="regular" menuItems={menuItems} toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>} />
     );
     expect(view).toMatchSnapshot();
   });
 
   test('right aligned', () => {
     const view = mount(
-      <OptionsMenu id='rightAligned'
+      <OptionsMenu
+        id="rightAligned"
         menuItems={menuItems}
         position={OptionsMenuPosition.right}
-          toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
+        toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
       />
     );
     expect(view).toMatchSnapshot();
@@ -46,7 +46,8 @@ describe('optionsMenu', () => {
 
   test('open up', () => {
     const view = mount(
-      <OptionsMenu id='openUp'
+      <OptionsMenu
+        id="openUp"
         menuItems={menuItems}
         direction={OptionsMenuDirection.up}
         toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
@@ -57,7 +58,8 @@ describe('optionsMenu', () => {
 
   test('right aligned + open up', () => {
     const view = mount(
-      <OptionsMenu id='rightAlignedOpenUp'
+      <OptionsMenu
+        id="rightAlignedOpenUp"
         menuItems={menuItems}
         position={OptionsMenuPosition.right}
         direction={OptionsMenuDirection.up}
@@ -69,7 +71,8 @@ describe('optionsMenu', () => {
 
   test('expanded', () => {
     const view = mount(
-      <OptionsMenu id='expanded'
+      <OptionsMenu
+        id="expanded"
         menuItems={menuItems}
         isOpen
         toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
@@ -80,10 +83,11 @@ describe('optionsMenu', () => {
 
   test('plain', () => {
     const view = mount(
-      <OptionsMenu id='plain'
-         menuItems={menuItems}
-         isPlain
-         toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
+      <OptionsMenu
+        id="plain"
+        menuItems={menuItems}
+        isPlain
+        toggle={<OptionsMenuToggle>Options Menu</OptionsMenuToggle>}
       />
     );
     expect(view).toMatchSnapshot();
@@ -91,9 +95,12 @@ describe('optionsMenu', () => {
 
   test('text', () => {
     const view = mount(
-      <OptionsMenu id='text'
-         menuItems={menuItems}
-                   toggle={<OptionsMenuToggleWithText toggleButtonContents={<React.Fragment>Test</React.Fragment>} toggleText="Test" />}
+      <OptionsMenu
+        id="text"
+        menuItems={menuItems}
+        toggle={
+          <OptionsMenuToggleWithText toggleButtonContents={<React.Fragment>Test</React.Fragment>} toggleText="Test" />
+        }
       />
     );
     expect(view).toMatchSnapshot();

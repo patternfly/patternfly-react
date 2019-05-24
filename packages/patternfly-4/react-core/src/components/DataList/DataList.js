@@ -1,15 +1,10 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
 
 const DataList = ({ children, className, 'aria-label': ariaLabel, ...props }) => (
-  <ul
-    className={css(styles.dataList, className)}
-    role="list"
-    aria-label={ariaLabel}
-    {...props}
-  >
+  <ul className={css(styles.dataList, className)} aria-label={ariaLabel} {...props}>
     {children}
   </ul>
 );
@@ -22,7 +17,7 @@ DataList.propTypes = {
   /** Adds accessible text to the DataList list */
   'aria-label': PropTypes.string.isRequired,
   /** Additional props are spread to the container <ul> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 DataList.defaultProps = {

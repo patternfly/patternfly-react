@@ -38,7 +38,8 @@ const propTypes = {
 const defaultProps = {
   variant: ProgressVariant.info,
   measureLocation: ProgressMeasureLocation.Top,
-  title: ''
+  title: '',
+  label: null
 };
 
 const variantToIcon = {

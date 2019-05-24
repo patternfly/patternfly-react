@@ -29,7 +29,7 @@ PopoverDialog.propTypes = {
   /** PopoverDialog body */
   children: PropTypes.node.isRequired,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 PopoverDialog.defaultProps = {

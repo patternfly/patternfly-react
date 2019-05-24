@@ -5,15 +5,13 @@ import { Form, FormGroup, TextInput } from '@patternfly/react-core';
 const propTypes = {
   formValue: PropTypes.string,
   isFormValid: PropTypes.bool,
-  goToStep: PropTypes.func,
-  currentStep: PropTypes.number
+  onChange: PropTypes.func
 };
 
 const defaultProps = {
   formValue: '',
   isFormValid: false,
-  goToStep: null,
-  currentStep: null
+  onChange: () => undefined
 };
 
 class SampleForm extends React.Component {
@@ -33,7 +31,6 @@ class SampleForm extends React.Component {
 
   render() {
     const { value, isValid } = this.state;
-    const { formValue, isFormValid, goToStep, currentStep } = this.props;
 
     return (
       <Form>

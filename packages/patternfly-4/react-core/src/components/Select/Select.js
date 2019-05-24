@@ -1,17 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Select/select.css';
 import badgeStyles from '@patternfly/patternfly/components/Badge/badge.css';
 import formStyles from '@patternfly/patternfly/components/FormControl/form-control.css';
 import buttonStyles from '@patternfly/patternfly/components/Button/button.css';
 import { css } from '@patternfly/react-styles';
 import { TimesCircleIcon } from '@patternfly/react-icons';
-import PropTypes from 'prop-types';
+import { Chip, ChipGroup } from '../ChipGroup';
 import SingleSelect from './SingleSelect';
 import CheckboxSelect from './CheckboxSelect';
 import SelectToggle from './SelectToggle';
 import SelectOption from './SelectOption';
 import { SelectContext, SelectVariant } from './selectConstants';
-import { Chip, ChipGroup } from '../ChipGroup';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -52,7 +52,7 @@ const propTypes = {
   /** Width of the select container as a number of px or string percentage */
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Additional props are spread to the container <ul> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

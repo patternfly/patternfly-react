@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Switch/switch.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
-import { getUniqueId } from '../../helpers/util';
 import { CheckIcon } from '@patternfly/react-icons';
+import { getUniqueId } from '../../helpers/util';
 
 const propTypes = {
   /** id for the label. */
@@ -23,9 +23,10 @@ const propTypes = {
     if (!props.id && !props['aria-label']) {
       return new Error('Switch requires either an id or aria-label to be specified');
     }
+    return null;
   },
   /** Additional props are spread to the container <input> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
@@ -54,21 +55,23 @@ class Switch extends React.Component {
           checked={isChecked}
           disabled={isDisabled}
         />
-        {label !== ''
-          ? <React.Fragment>
-              <span className={css(styles.switchToggle)} />
-              <span className={css(styles.switchLabel, styles.modifiers.on)} aria-hidden="true">
-                {label}
-              </span>
-              <span className={css(styles.switchLabel, styles.modifiers.off)} aria-hidden="true">
-                {label}
-              </span>
-            </React.Fragment>
-          : <span className={css(styles.switchToggle)}>
-              <div className={css(styles.switchToggleIcon)} aria-hidden="true">
-                <CheckIcon noVerticalAlign />
-              </div>
-            </span>}
+        {label !== '' ? (
+          <React.Fragment>
+            <span className={css(styles.switchToggle)} />
+            <span className={css(styles.switchLabel, styles.modifiers.on)} aria-hidden="true">
+              {label}
+            </span>
+            <span className={css(styles.switchLabel, styles.modifiers.off)} aria-hidden="true">
+              {label}
+            </span>
+          </React.Fragment>
+        ) : (
+          <span className={css(styles.switchToggle)}>
+            <div className={css(styles.switchToggleIcon)} aria-hidden="true">
+              <CheckIcon noVerticalAlign />
+            </div>
+          </span>
+        )}
       </label>
     );
   }

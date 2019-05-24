@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Dropdown/dropdown.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import { KEY_CODES } from '../../helpers/constants';
 
 const propTypes = {
   /** HTML ID of dropdown toggle */
   id: PropTypes.string.isRequired,
+  /** Type to put on the button */
+  type: PropTypes.string,
   /** Anything which can be rendered as dropdown toggle */
   children: PropTypes.node,
   /** Classes applied to root element of dropdown toggle */
@@ -15,6 +17,8 @@ const propTypes = {
   isOpen: PropTypes.bool,
   /** Callback called when toggle is clicked */
   onToggle: PropTypes.func,
+  /** Callback called when the Enter key is pressed */
+  onEnter: PropTypes.func,
   /** Element which wraps toggle */
   parentRef: PropTypes.any,
   /** Forces focus state */
@@ -29,13 +33,16 @@ const propTypes = {
   isPlain: PropTypes.bool,
   /** Style the toggle as a child of a split button */
   isSplitButton: PropTypes.bool,
+  /** Flag for aria popup */
+  ariaHasPopup: PropTypes.bool,
   /** Additional props are spread to the container <button> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
   children: null,
   className: '',
+  type: null,
   isOpen: false,
   parentRef: null,
   isFocused: false,
@@ -43,7 +50,10 @@ const defaultProps = {
   isActive: false,
   isDisabled: false,
   isPlain: false,
-  onToggle: Function.prototype
+  isSplitButton: false,
+  ariaHasPopup: undefined,
+  onToggle: Function.prototype,
+  onEnter: Function.prototype
 };
 
 class Toggle extends Component {

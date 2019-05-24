@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/ContextSelector/context-selector.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 
 const propTypes = {
   /** Content rendered inside the Context Selector Menu */
@@ -11,7 +11,7 @@ const propTypes = {
   /** Flag to indicate if Context Selector menu is opened */
   isOpen: PropTypes.bool,
   /** Additional props are spread to the container component */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
