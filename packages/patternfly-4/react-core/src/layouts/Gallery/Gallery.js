@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/layouts/Gallery/gallery.css';
+import styles from '@patternfly/react-styles/css/layouts/Gallery/gallery';
 import { GutterSize, getGutterModifier } from '../../styles/gutters';
 
 const propTypes = {

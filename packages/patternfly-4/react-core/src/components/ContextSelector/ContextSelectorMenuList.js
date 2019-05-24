@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly/components/ContextSelector/context-selector.css';
+import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 

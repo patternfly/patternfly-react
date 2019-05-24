@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly/components/InputGroup/input-group.css';
+import styles from '@patternfly/react-styles/css/components/InputGroup/input-group';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { FormSelect } from '../FormSelect';

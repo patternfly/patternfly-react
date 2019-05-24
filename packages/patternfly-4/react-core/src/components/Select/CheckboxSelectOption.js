@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from '@patternfly/patternfly/components/Select/select.css';
-import { default as checkStyles } from '@patternfly/patternfly/components/Check/check.css';
+import styles from '@patternfly/react-styles/css/components/Select/select';
+import { default as checkStyles } from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { SelectContext, KeyTypes } from './selectConstants';

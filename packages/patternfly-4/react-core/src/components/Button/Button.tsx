@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/Button/button.css';
+import styles from '@patternfly/react-styles/css/components/Button/button';
 import { css, getModifier } from '@patternfly/react-styles';
 
 export enum ButtonVariant {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/Card/card.css';
-import titleStyles from '@patternfly/patternfly/components/Title/title.css';
+import styles from '@patternfly/react-styles/css/components/Card/card';
+import titleStyles from '@patternfly/react-styles/css/components/Title/title';
 
 export interface CardHeaderProps extends React.HTMLProps<HTMLDivElement> {
     /** Content rendered inside the Card Footer */

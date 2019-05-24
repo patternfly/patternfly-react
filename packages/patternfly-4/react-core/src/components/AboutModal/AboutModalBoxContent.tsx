@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/AboutModalBox/about-modal-box.css';
-import titleStyles from '@patternfly/patternfly/components/Title/title.css';
-import contentStyles from '@patternfly/patternfly/components/Content/content.css';
+import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-modal-box';
+import titleStyles from '@patternfly/react-styles/css/components/Title/title';
+import contentStyles from '@patternfly/react-styles/css/components/Content/content';
 
 export interface AboutModalBoxContentProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the AboutModalBoxContent  */

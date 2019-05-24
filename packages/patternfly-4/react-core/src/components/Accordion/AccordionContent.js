@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/Accordion/accordion.css';
+import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 
 const AccordionContent = ({ className, children, id, isHidden, isFixed, 'aria-label': ariaLabel, ...props }) => (
   <dd

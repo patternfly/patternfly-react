@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { NavVariants } from './NavVariants';
-import styles from '@patternfly/patternfly/components/Nav/nav.css';
+import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 
 export interface NavListProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLUListElement>, HTMLUListElement> {

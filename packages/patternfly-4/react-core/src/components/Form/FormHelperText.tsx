@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css, getModifier } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/Form/form.css';
+import styles from '@patternfly/react-styles/css/components/Form/form';
 
 export interface FormHelperTextProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Helper Text Item */

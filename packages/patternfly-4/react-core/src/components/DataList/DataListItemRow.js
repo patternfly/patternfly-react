@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/components/DataList/data-list.css';
+import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 
 const DataListItemRow = ({ children, className, rowid, ...props }) => (
   <div className={css(styles.dataListItemRow, className)} {...props}>

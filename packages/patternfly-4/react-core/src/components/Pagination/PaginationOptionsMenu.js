@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/components/OptionsMenu/options-menu.css';
-import paginationStyles from '@patternfly/patternfly/components/Pagination/pagination.css';
+import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
+import paginationStyles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
 import { Dropdown, DropdownItem, DropdownDirection } from '../Dropdown';
 import { CheckIcon } from '@patternfly/react-icons';

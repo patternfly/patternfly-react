@@ -1,6 +1,6 @@
 import React, { Children, cloneElement, Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/components/OptionsMenu/options-menu.css';
+import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { css, getModifier } from '@patternfly/react-styles';
 import { OptionsMenuDirection, OptionsMenuPosition } from './optionsMenuConstants';
 

@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { canUseDOM } from 'exenv';
 import { KEY_CODES } from '../../helpers/constants';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
+import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { Backdrop } from '../Backdrop';
 import { Bullseye } from '../../layouts/Bullseye';
 import { WizardHeader } from './WizardHeader';

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/Content/content.css';
+import styles from '@patternfly/react-styles/css/components/Content/content';
 import { StyleSheet, css } from '@patternfly/react-styles';
 
 export interface TextContentProps extends React.HTMLProps<HTMLDivElement> {
