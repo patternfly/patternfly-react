@@ -37,11 +37,13 @@
   },
   "scripts": {
     "build": "yarn build:babel && node ./scripts/copyTS.js",
-    "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm'",
-    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js -q",
-    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm -q",
+    "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm && yarn build:babel:umd'",
+    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js --extensions '.js,.ts,.tsx'",
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm --extensions '.js,.ts,.tsx'",
+    "build:babel:umd": "cross-env BABEL_ENV=production:umd babel dist/esm --out-dir dist/umd --plugins transform-es2015-modules-umd --extensions '.js,.ts,.tsx' -q",
     "clean": "rimraf dist",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps"
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps",
+    "typecheck": "tsc -p tsconfig.typecheck.json"
   },
   "optionalDependencies": {
     "@types/victory": "^31.0.15",
@@ -50,12 +52,25 @@
     "victory-core": "^32.2.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-object-assign": "^7.0.0",
+    "@babel/plugin-transform-typescript": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "@patternfly/patternfly": "2.6.5",
     "@patternfly/react-tokens": "^2.5.2",
+    "babel-plugin-typescript-to-proptypes": "^0.17.1",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "css": "^2.2.3",
     "enzyme": "3.9.0",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "typescript": "3.4.5"
   }
 }
