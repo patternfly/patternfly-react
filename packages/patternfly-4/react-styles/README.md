@@ -50,7 +50,7 @@ The babel plugin will take care of transforming and `.css` imports to javascript
 ```jsx
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/Button/styles.css';
+import styles from '@patternfly/patternfly/components/Button/styles';
 import overrides from './Button.overrides.css';
 
 const Button = ({ children, variant }) => <button className={css(styles.button)}>{children}</button>;
