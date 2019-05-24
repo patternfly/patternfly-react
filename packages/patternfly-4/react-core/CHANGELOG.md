@@ -3,6 +3,223 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.32.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.0...@patternfly/react-core@3.32.1) (2019-05-24)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.32.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.31.0...@patternfly/react-core@3.32.0) (2019-05-24)
+
+
+### Features
+
+* **page:** add fill and no-fill modifiers to page sections ([#1973](https://github.com/patternfly/patternfly-react/issues/1973)) ([eef6513](https://github.com/patternfly/patternfly-react/commit/eef6513))
+
+
+
+
+
+# [3.31.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.30.1...@patternfly/react-core@3.31.0) (2019-05-23)
+
+
+### Features
+
+* **Nav:** Convert Nav component to typescript, add Demos ([#2005](https://github.com/patternfly/patternfly-react/issues/2005)) ([f8961fa](https://github.com/patternfly/patternfly-react/commit/f8961fa))
+
+
+
+
+
+## [3.30.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.30.0...@patternfly/react-core@3.30.1) (2019-05-22)
+
+
+### Bug Fixes
+
+* **modal:** do not render title when hideTitle is true ([#2057](https://github.com/patternfly/patternfly-react/issues/2057)) ([e152246](https://github.com/patternfly/patternfly-react/commit/e152246))
+
+
+
+
+
+# [3.30.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.29.1...@patternfly/react-core@3.30.0) (2019-05-21)
+
+
+### Features
+
+* **Badge:** Convert badge to typescript ([#2048](https://github.com/patternfly/patternfly-react/issues/2048)) ([836f484](https://github.com/patternfly/patternfly-react/commit/836f484))
+* **ChipGroup:** Converted ChipGroup component to typescript ([#1951](https://github.com/patternfly/patternfly-react/issues/1951)) ([f13ce5b](https://github.com/patternfly/patternfly-react/commit/f13ce5b))
+
+
+
+
+
+## [3.29.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.29.0...@patternfly/react-core@3.29.1) (2019-05-21)
+
+
+### Bug Fixes
+
+* **Select:** changed prop TypeScript definitions ([#2047](https://github.com/patternfly/patternfly-react/issues/2047)) ([c9eb042](https://github.com/patternfly/patternfly-react/commit/c9eb042))
+
+
+
+
+
+# [3.29.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.28.1...@patternfly/react-core@3.29.0) (2019-05-21)
+
+
+### Features
+
+* **ts:** convert aboutmodal to TS ([#1968](https://github.com/patternfly/patternfly-react/issues/1968)) ([7dd9526](https://github.com/patternfly/patternfly-react/commit/7dd9526))
+
+
+
+
+
+## [3.28.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.28.0...@patternfly/react-core@3.28.1) (2019-05-21)
+
+
+### Bug Fixes
+
+* **Select:** account for direct JSX children ([#2042](https://github.com/patternfly/patternfly-react/issues/2042)) ([67dd3b5](https://github.com/patternfly/patternfly-react/commit/67dd3b5))
+
+
+
+
+
+# [3.28.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.27.0...@patternfly/react-core@3.28.0) (2019-05-20)
+
+
+### Features
+
+* **form:** Converted form component to typescript ([#1933](https://github.com/patternfly/patternfly-react/issues/1933)) ([110684d](https://github.com/patternfly/patternfly-react/commit/110684d))
+
+
+
+
+
+# [3.27.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.26.0...@patternfly/react-core@3.27.0) (2019-05-20)
+
+
+### Bug Fixes
+
+* **wizard:** wizards props extends div element props ([#1993](https://github.com/patternfly/patternfly-react/issues/1993)) ([1e9698e](https://github.com/patternfly/patternfly-react/commit/1e9698e))
+
+
+### Features
+
+* **Breadcrumb:** Convert Breadcrumb jsx file to tsx ([#1723](https://github.com/patternfly/patternfly-react/issues/1723)) ([9151262](https://github.com/patternfly/patternfly-react/commit/9151262))
+
+
+
+
+
+# [3.26.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.25.0...@patternfly/react-core@3.26.0) (2019-05-20)
+
+
+### Features
+
+* **button:** Converted button component to typescript ([#1903](https://github.com/patternfly/patternfly-react/issues/1903)) ([2b9d252](https://github.com/patternfly/patternfly-react/commit/2b9d252))
+
+
+
+
+
+# [3.25.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.24.0...@patternfly/react-core@3.25.0) (2019-05-20)
+
+
+### Features
+
+* **card:** Converted card component to typescript ([#1885](https://github.com/patternfly/patternfly-react/issues/1885)) ([e3e4170](https://github.com/patternfly/patternfly-react/commit/e3e4170))
+* **List:** Convert list to TypeScript ([#1946](https://github.com/patternfly/patternfly-react/issues/1946)) ([ecb2702](https://github.com/patternfly/patternfly-react/commit/ecb2702))
+
+
+
+
+
+# [3.24.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.23.1...@patternfly/react-core@3.24.0) (2019-05-17)
+
+
+### Features
+
+* **EmptyState:** Convert empty state to TypeScript ([#1917](https://github.com/patternfly/patternfly-react/issues/1917)) ([1fb9934](https://github.com/patternfly/patternfly-react/commit/1fb9934))
+
+
+
+
+
+## [3.23.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.23.0...@patternfly/react-core@3.23.1) (2019-05-17)
+
+
+### Bug Fixes
+
+* **Dropdown:** handle on enter focusing when options are disabled ([#2025](https://github.com/patternfly/patternfly-react/issues/2025)) ([8903702](https://github.com/patternfly/patternfly-react/commit/8903702))
+
+
+
+
+
+# [3.23.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.22.1...@patternfly/react-core@3.23.0) (2019-05-17)
+
+
+### Features
+
+* **Radio:** Convert radio to TypeScript ([#1945](https://github.com/patternfly/patternfly-react/issues/1945)) ([11a77d4](https://github.com/patternfly/patternfly-react/commit/11a77d4))
+
+
+
+
+
+## [3.22.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.22.0...@patternfly/react-core@3.22.1) (2019-05-17)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.22.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.21.0...@patternfly/react-core@3.22.0) (2019-05-17)
+
+
+### Features
+
+* **LoginPage:** Convert LoginPage to typescript, add integration tests, and demo ([#1967](https://github.com/patternfly/patternfly-react/issues/1967)) ([4657da1](https://github.com/patternfly/patternfly-react/commit/4657da1))
+
+
+
+
+
+# [3.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.20.0...@patternfly/react-core@3.21.0) (2019-05-17)
+
+
+### Bug Fixes
+
+* **build:** update snapshots and fix linter errors ([#2031](https://github.com/patternfly/patternfly-react/issues/2031)) ([236d1d5](https://github.com/patternfly/patternfly-react/commit/236d1d5))
+* **Checkbox:** Set checked value correctly ([#1929](https://github.com/patternfly/patternfly-react/issues/1929)) ([43d5283](https://github.com/patternfly/patternfly-react/commit/43d5283))
+
+
+### Features
+
+* **alert:** convert alert to TS ([#1978](https://github.com/patternfly/patternfly-react/issues/1978)) ([72a86f3](https://github.com/patternfly/patternfly-react/commit/72a86f3)), closes [#2023](https://github.com/patternfly/patternfly-react/issues/2023)
+* **brand:** Converted brand component to typescript ([#1918](https://github.com/patternfly/patternfly-react/issues/1918)) ([2c52451](https://github.com/patternfly/patternfly-react/commit/2c52451))
+
+
+
+
+
+# [3.20.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.19.0...@patternfly/react-core@3.20.0) (2019-05-16)
+
+
+### Features
+
+* **Text:** Convert Text to TypeScript ([#1907](https://github.com/patternfly/patternfly-react/issues/1907)) ([ad8e1f5](https://github.com/patternfly/patternfly-react/commit/ad8e1f5)), closes [#1897](https://github.com/patternfly/patternfly-react/issues/1897)
+
+
+
+
+
 # [3.19.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.18.2...@patternfly/react-core@3.19.0) (2019-05-13)
 
 

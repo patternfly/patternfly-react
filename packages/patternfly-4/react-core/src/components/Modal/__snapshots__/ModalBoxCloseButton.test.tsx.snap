@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalBoxCloseButton Test 1`] = `
+<Fragment>
+  <Component
+    aria-label="Close"
+    className="test-box-close-button-class"
+    onClick={[MockFunction]}
+    variant="plain"
+  >
+    <TimesIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </Component>
+</Fragment>
+`;

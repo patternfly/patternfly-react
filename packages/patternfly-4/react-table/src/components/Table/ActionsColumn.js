@@ -67,20 +67,19 @@ class ActionsColumn extends React.Component {
           position={dropdownPosition}
           direction={dropdownDirection}
           isOpen={isOpen}
-          dropdownItems={items.map(
-            ({ title, itemKey, onClick, isSeparator, ...props }, key) =>
-              isSeparator ? (
-                <DropdownSeparator {...props} key={itemKey || key} data-key={itemKey || key} />
-              ) : (
-                <DropdownItem
-                  onClick={event => this.onSelect(event, onClick)}
-                  {...props}
-                  key={itemKey || key}
-                  data-key={itemKey || key}
-                >
-                  {title}
-                </DropdownItem>
-              )
+          dropdownItems={items.map(({ title, itemKey, onClick, isSeparator, ...props }, key) =>
+            isSeparator ? (
+              <DropdownSeparator {...props} key={itemKey || key} data-key={itemKey || key} />
+            ) : (
+              <DropdownItem
+                onClick={event => this.onSelect(event, onClick)}
+                {...props}
+                key={itemKey || key}
+                data-key={itemKey || key}
+              >
+                {title}
+              </DropdownItem>
+            )
           )}
           isPlain
         />

@@ -78,33 +78,33 @@ class PageLayoutGroupsNav extends React.Component {
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavGroup title="System Panel">
-          <NavItem to="#grouped-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
+          <NavItem itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
             Overview
           </NavItem>
-          <NavItem to="#grouped-2" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
+          <NavItem itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
             Resource Usage
           </NavItem>
-          <NavItem to="#grouped-3" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
+          <NavItem itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
             Hypervisors
           </NavItem>
-          <NavItem to="#grouped-4" itemId="grp-1_itm-4" isActive={activeItem === 'grp-1_itm-4'}>
+          <NavItem itemId="grp-1_itm-4" isActive={activeItem === 'grp-1_itm-4'}>
             Instances
           </NavItem>
-          <NavItem to="#grouped-5" itemId="grp-1_itm-5" isActive={activeItem === 'grp-1_itm-5'}>
+          <NavItem itemId="grp-1_itm-5" isActive={activeItem === 'grp-1_itm-5'}>
             Volumes
           </NavItem>
-          <NavItem to="#grouped-6" itemId="grp-1_itm-6" isActive={activeItem === 'grp-1_itm-6'}>
+          <NavItem itemId="grp-1_itm-6" isActive={activeItem === 'grp-1_itm-6'}>
             Network
           </NavItem>
         </NavGroup>
         <NavGroup title="Policy">
-          <NavItem to="#grouped-7" itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'}>
+          <NavItem itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'}>
             Hosts
           </NavItem>
-          <NavItem to="#grouped-8" itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'}>
+          <NavItem itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'}>
             Virtual Machines
           </NavItem>
-          <NavItem to="#grouped-9" itemId="grp-2_itm-3" isActive={activeItem === 'grp-2_itm-3'}>
+          <NavItem itemId="grp-2_itm-3" isActive={activeItem === 'grp-2_itm-3'}>
             Storage
           </NavItem>
         </NavGroup>

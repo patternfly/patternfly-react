@@ -51,31 +51,13 @@ exports[`ConfirmButtons renders correctly 1`] = `
   >
     <ConfirmButton
       aria-label="Confirm"
-      className=""
-      component="button"
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      isInline={false}
       key="confirm"
       onMouseUp={[MockFunction]}
-      type="button"
       variant="primary"
     >
       <Button
         aria-label="Confirm"
-        className=""
-        component="button"
-        isActive={false}
-        isBlock={false}
-        isDisabled={false}
-        isFocus={false}
-        isHover={false}
-        isInline={false}
         onMouseUp={[MockFunction]}
-        type="button"
         variant="primary"
       >
         <button
@@ -117,31 +99,13 @@ exports[`ConfirmButtons renders correctly 1`] = `
     </ConfirmButton>
     <CancelButton
       aria-label="Discard"
-      className=""
-      component="button"
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      isInline={false}
       key="cancel"
       onMouseUp={[MockFunction]}
-      type="button"
       variant="plain"
     >
       <Button
         aria-label="Discard"
-        className=""
-        component="button"
-        isActive={false}
-        isBlock={false}
-        isDisabled={false}
-        isFocus={false}
-        isHover={false}
-        isInline={false}
         onMouseUp={[MockFunction]}
-        type="button"
         variant="plain"
       >
         <button

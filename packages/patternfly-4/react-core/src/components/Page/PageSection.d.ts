@@ -12,6 +12,7 @@ export interface PageSectionProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
   className?: string;
   variant?: OneOf<typeof PageSectionVariants, keyof typeof PageSectionVariants>;
+  isFilled?: boolean;
   noPadding?: boolean;
   noPaddingMobile?: boolean;
 }

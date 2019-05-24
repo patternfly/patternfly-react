@@ -237,7 +237,7 @@ class SecondaryTabsNavVariant extends React.Component {
         aria-label="Local"
         variant={TabsVariant.nav}
       >
-        <Tab eventKey={0} title="Tab item 1" href="#">
+        <Tab eventKey={0} title="Tab item 1">
           <Tabs
             activeKey={this.state.activeTabKey2}
             isSecondary
@@ -245,21 +245,21 @@ class SecondaryTabsNavVariant extends React.Component {
             aria-label="Local secondary"
             variant={TabsVariant.nav}
           >
-            <Tab eventKey={10} title="Secondary tab item 1" href="#">
+            <Tab eventKey={10} title="Secondary tab item 1">
               Secondary tab item 1 item section
             </Tab>
-            <Tab eventKey={11} title="Secondary tab item 2" href="#">
+            <Tab eventKey={11} title="Secondary tab item 2">
               Secondary tab item 2 section
             </Tab>
-            <Tab eventKey={12} title="Secondary tab item 3" href="#">
+            <Tab eventKey={12} title="Secondary tab item 3">
               Secondary tab item 3 section
             </Tab>
           </Tabs>
         </Tab>
-        <Tab eventKey={1} title="Tab item 2" href="#">
+        <Tab eventKey={1} title="Tab item 2">
           Tab 2 section
         </Tab>
-        <Tab eventKey={2} title="Tab item 3" href="#">
+        <Tab eventKey={2} title="Tab item 3">
           Tab 3 section
         </Tab>
       </Tabs>
@@ -296,13 +296,13 @@ class TabsNavVariant extends React.Component {
         aria-label="Local"
         variant={TabsVariant.nav}
       >
-        <Tab eventKey={0} title="Tab item 1" href="#">
+        <Tab eventKey={0} title="Tab item 1">
           Tab 1 section
         </Tab>
-        <Tab eventKey={1} title="Tab item 2" href="#">
+        <Tab eventKey={1} title="Tab item 2">
           Tab 2 section
         </Tab>
-        <Tab eventKey={2} title="Tab item 3" href="#">
+        <Tab eventKey={2} title="Tab item 3">
           Tab 3 section
         </Tab>
       </Tabs>

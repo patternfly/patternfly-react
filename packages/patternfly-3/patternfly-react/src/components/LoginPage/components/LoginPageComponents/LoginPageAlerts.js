@@ -16,10 +16,7 @@ const LoginPageAlerts = ({ alert }) => {
 };
 
 LoginPageAlerts.propTypes = {
-  alert: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object
-  ])
+  alert: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 
 LoginPageAlerts.defaultProps = {

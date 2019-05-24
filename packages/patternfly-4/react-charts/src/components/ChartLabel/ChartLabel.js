@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
@@ -10,8 +11,9 @@ export const propTypes = {
   '': PropTypes.any
 };
 
-// Note: VictoryLabel.role must be hoisted
 const ChartLabel = props => <VictoryLabel {...props} />;
+
+// Note: VictoryLabel.role must be hoisted
 hoistNonReactStatics(ChartLabel, VictoryLabel);
 ChartLabel.propTypes = propTypes;
 

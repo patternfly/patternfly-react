@@ -1,6 +1,7 @@
 ---
 title: 'Form'
 cssPrefix: 'pf-c-form'
+typescript: true
 ---
 
 ## Simple form

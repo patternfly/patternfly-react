@@ -1,4 +1,4 @@
-import { Avatar, AvatarProps } from '@patternfly/react-core';
+import { Avatar, AvatarProps} from '@patternfly/react-core';
 import React, { Component } from 'react';
 import avatarImg from '../../../assets/images/imgAvatar.svg';
 

@@ -1,6 +1,7 @@
 ---
 title: 'Text'
 cssPrefix: 'pf-c-content'
+typescript: true
 ---
 
 import {

@@ -1,5 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Check page section with fill and no padding example against snapshot 1`] = `
+<PageSection
+  className=""
+  isFilled={true}
+  noPadding={true}
+  noPaddingMobile={false}
+  variant="default"
+>
+  <section
+    className="pf-c-page__main-section pf-m-no-padding pf-m-fill"
+  />
+</PageSection>
+`;
+
+exports[`Check page section with fill example against snapshot 1`] = `
+<PageSection
+  className=""
+  isFilled={true}
+  noPadding={false}
+  noPaddingMobile={false}
+  variant="default"
+>
+  <section
+    className="pf-c-page__main-section pf-m-fill"
+  />
+</PageSection>
+`;
+
+exports[`Check page section with no fill example against snapshot 1`] = `
+<PageSection
+  className=""
+  isFilled={false}
+  noPadding={false}
+  noPaddingMobile={false}
+  variant="default"
+>
+  <section
+    className="pf-c-page__main-section pf-m-no-fill"
+  />
+</PageSection>
+`;
+
 exports[`Check page section with no padding example against snapshot 1`] = `
 <PageSection
   className=""

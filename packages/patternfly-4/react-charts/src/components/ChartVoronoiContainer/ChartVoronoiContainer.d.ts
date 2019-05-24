@@ -4,6 +4,8 @@ export interface ChartVoronoiContainerProps extends
     victory.VictoryCommonProps,
     victory.VictoryContainerProps,
     victory.VictoryMultiLabeableProps {
+  themeColor?: string;
+  themeVariant?: string;
   voronoiDimension?: 'x' | 'y';
 }
 

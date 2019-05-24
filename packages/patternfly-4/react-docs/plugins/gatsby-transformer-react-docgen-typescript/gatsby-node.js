@@ -1,52 +1,48 @@
 const reactDocgen = require('react-docgen');
 
 function isSource(node) {
-  if (!node ||
+  if (
+    !node ||
     node.relativePath.indexOf('/example') !== -1 ||
     node.relativePath.indexOf('.docs') !== -1 ||
-    node.relativePath.indexOf('.md') !== -1)
+    node.relativePath.indexOf('.md') !== -1
+  )
     return false;
 
   return true;
 }
 
 function canParse(node) {
-  return node && (isTSX(node) || isJSX(node)) && isSource(node)
+  return node && (isTSX(node) || isJSX(node)) && isSource(node);
 }
 
 function isTSX(node) {
-  return node.internal.mediaType === `application/typescript` ||
+  return (
+    node.internal.mediaType === `application/typescript` ||
     node.internal.mediaType === `text/tsx` ||
     node.extension === 'tsx'
+  );
 }
 
 function isJSX(node) {
-  return node.internal.mediaType === `application/javascript` ||
-    node.internal.mediaType === `text/jsx`
+  return node.internal.mediaType === `application/javascript` || node.internal.mediaType === `text/jsx`;
 }
 
 function flattenProps(props) {
-  let res = [];
+  const res = [];
   if (props) {
-    Object.entries(props).forEach(
-      ([key, value]) => {
-        value.name = key;
-        res.push(value);
-      });
+    Object.entries(props).forEach(([key, value]) => {
+      value.name = key;
+      res.push(value);
+    });
   }
 
   return res;
 }
 
 // Docs https://www.gatsbyjs.org/docs/actions/#createNode
-async function onCreateNode({
-  node,
-  actions,
-  loadNodeContent,
-  createNodeId,
-  createContentDigest,
-}) {
-  if (!canParse(node)) return
+async function onCreateNode({ node, actions, loadNodeContent, createNodeId, createContentDigest }) {
+  if (!canParse(node)) return;
 
   const sourceText = await loadNodeContent(node);
   let parsed = null;
@@ -55,7 +51,7 @@ async function onCreateNode({
       filename: node.absolutePath
     });
   } catch (err) {
-    console.warn('No component found in', node.absolutePath);
+    console.warn('No component found in', node.absolutePath); // eslint-disable-line no-console
   }
 
   if (parsed) {
@@ -70,11 +66,11 @@ async function onCreateNode({
       parent: node.id,
       internal: {
         contentDigest: createContentDigest(node),
-        type: `ComponentMetadata`,
-      },
-    }
-    actions.createNode(metadataNode)
-    actions.createParentChildLink({ parent: node, child: metadataNode })
+        type: `ComponentMetadata`
+      }
+    };
+    actions.createNode(metadataNode);
+    actions.createParentChildLink({ parent: node, child: metadataNode });
   }
 }
 

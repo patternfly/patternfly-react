@@ -20,7 +20,14 @@ module.exports = {
             ]
           }
         ],
+        'import/no-extraneous-dependencies': 'off',
         'import/extensions': 'off'
+      }
+    },
+    {
+      files: ['**/examples/*.js'],
+      rules: {
+        'react/prefer-stateless-function': 'off'
       }
     }
   ],

@@ -19,6 +19,8 @@ const propTypes = {
   variant: PropTypes.oneOf(Object.values(PageSectionVariants)),
   /** Modifies a main page section to have no padding */
   noPadding: PropTypes.bool,
+  /** Enables the page section to fill the available vertical space */
+  isFilled: PropTypes.bool,
   /** Modifies a main page section to have no padding on mobile */
   noPaddingMobile: PropTypes.bool,
   /** Additional props are spread to the container <section> */
@@ -29,20 +31,20 @@ const defaultProps = {
   children: null,
   className: '',
   variant: 'default',
+  isFilled: undefined,
   noPadding: false,
   noPaddingMobile: false
 };
 
-const PageSection = ({ className, children, variant, noPadding, noPaddingMobile, ...props }) => {
+const PageSection = ({ className, children, variant, noPadding, noPaddingMobile, isFilled, ...props }) => {
   const variantStyle = {
     [PageSectionVariants.default]: '',
     [PageSectionVariants.light]: styles.modifiers.light,
     [PageSectionVariants.dark]: styles.modifiers.dark_200,
     [PageSectionVariants.darker]: styles.modifiers.dark_100
   };
-
   return (
-    <section {...props} className={css(styles.pageMainSection, noPadding && styles.modifiers.noPadding, noPaddingMobile && styles.modifiers.noPaddingMobile, variantStyle[variant], className)}>
+    <section {...props} className={css(styles.pageMainSection, noPadding && styles.modifiers.noPadding, noPaddingMobile && styles.modifiers.noPaddingMobile, variantStyle[variant], isFilled === false && styles.modifiers.noFill, isFilled === true && styles.modifiers.fill , className)}>
       {children}
     </section>
   );

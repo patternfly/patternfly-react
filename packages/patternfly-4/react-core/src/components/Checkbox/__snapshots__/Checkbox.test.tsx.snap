@@ -24,6 +24,7 @@ exports[`isDisabled 1`] = `
   <input
     aria-invalid={false}
     aria-label="check"
+    checked={false}
     className="pf-c-check__input"
     disabled={true}
     id="check"
@@ -160,6 +161,7 @@ exports[`uncontrolled 1`] = `
   <input
     aria-invalid={false}
     aria-label="check"
+    checked={false}
     className="pf-c-check__input"
     disabled={false}
     id="check"

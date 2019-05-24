@@ -21,7 +21,7 @@ const Icons = () => {
     fontSize: labelFontSize.var
   };
 
-  const getLabel = (label) => {
+  const getLabel = label => {
     let res = '';
     label = label.replace(/[iI]con/g, '');
     for (let i = 0; i < label.length; i++) {
@@ -32,15 +32,15 @@ const Icons = () => {
     }
 
     return res;
-  }
+  };
 
   return (
     <SidebarLayout>
       <PageSection>
-        <Title size="4xl" headingLevel="h1">Icons</Title>
-        <Text>
-          These are all Patternfly React Icons.
-        </Text>
+        <Title size="4xl" headingLevel="h1">
+          Icons
+        </Title>
+        <Text>These are all Patternfly React Icons.</Text>
         <Grid>
           {allIcons.map(([id, Icon]) => (
             <GridItem key={id} style={cellStyle} sm={6} md={4} lg={2}>
@@ -54,6 +54,6 @@ const Icons = () => {
       </PageSection>
     </SidebarLayout>
   );
-}
+};
 
 export default Icons;

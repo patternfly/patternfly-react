@@ -1507,27 +1507,18 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       >
                         Mr
                       </span>
-                      <ChipButton
+                      <Component
                         aria-labelledby="remove_pf-random-id-0 pf-random-id-0"
                         ariaLabel="Remove"
-                        className=""
                         id="remove_pf-random-id-0"
                         onClick={[Function]}
                       >
-                        <Button
+                        <Component
                           aria-label="Remove"
                           aria-labelledby="remove_pf-random-id-0 pf-random-id-0"
                           className=""
-                          component="button"
                           id="remove_pf-random-id-0"
-                          isActive={false}
-                          isBlock={false}
-                          isDisabled={false}
-                          isFocus={false}
-                          isHover={false}
-                          isInline={false}
                           onClick={[Function]}
-                          type="button"
                           variant="plain"
                         >
                           <button
@@ -1568,8 +1559,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                               </svg>
                             </TimesCircleIcon>
                           </button>
-                        </Button>
-                      </ChipButton>
+                        </Component>
+                      </Component>
                     </li>
                   </GenerateId>
                 </Chip>
@@ -1588,23 +1579,13 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     <li
                       className="pf-c-chip pf-m-overflow"
                     >
-                      <ChipButton
-                        ariaLabel="close"
-                        className=""
+                      <Component
                         onClick={[Function]}
                       >
-                        <Button
+                        <Component
                           aria-label="close"
                           className=""
-                          component="button"
-                          isActive={false}
-                          isBlock={false}
-                          isDisabled={false}
-                          isFocus={false}
-                          isHover={false}
-                          isInline={false}
                           onClick={[Function]}
-                          type="button"
                           variant="plain"
                         >
                           <button
@@ -1622,8 +1603,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                               1 more
                             </span>
                           </button>
-                        </Button>
-                      </ChipButton>
+                        </Component>
+                      </Component>
                     </li>
                   </GenerateId>
                 </Chip>
@@ -1976,12 +1957,16 @@ exports[`typeahead multi select test onChange 1`] = `
             class="pf-c-select__menu"
             role="listbox"
           >
-            <div
-              class="pf-c-select__menu-item"
-              index="0"
+            <li
+              role="presentation"
             >
-              No results found
-            </div>
+              <button
+                class="pf-c-select__menu-item pf-m-disabled"
+                role="option"
+              >
+                No results found
+              </button>
+            </li>
           </ul>
         </div>
       }
@@ -2060,16 +2045,32 @@ exports[`typeahead multi select test onChange 1`] = `
         className="pf-c-select__menu"
         role="listbox"
       >
-        <div
-          className="pf-c-select__menu-item"
+        <SelectOption
+          className=""
           index={0}
+          isDisabled={true}
+          isPlaceholder={false}
           isSelected={false}
-          key=".0"
+          key=".$0"
           keyHandler={[Function]}
+          onClick={[Function]}
           sendRef={[Function]}
+          value="No results found"
         >
-          No results found
-        </div>
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item pf-m-disabled"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+            >
+              No results found
+            </button>
+          </li>
+        </SelectOption>
       </ul>
     </SingleSelect>
   </div>
@@ -2777,12 +2778,16 @@ exports[`typeahead select test onChange 1`] = `
             class="pf-c-select__menu"
             role="listbox"
           >
-            <div
-              class="pf-c-select__menu-item"
-              index="0"
+            <li
+              role="presentation"
             >
-              No results found
-            </div>
+              <button
+                class="pf-c-select__menu-item pf-m-disabled"
+                role="option"
+              >
+                No results found
+              </button>
+            </li>
           </ul>
         </div>
       }
@@ -2861,16 +2866,32 @@ exports[`typeahead select test onChange 1`] = `
         className="pf-c-select__menu"
         role="listbox"
       >
-        <div
-          className="pf-c-select__menu-item"
+        <SelectOption
+          className=""
           index={0}
+          isDisabled={true}
+          isPlaceholder={false}
           isSelected={false}
-          key=".0"
+          key=".$0"
           keyHandler={[Function]}
+          onClick={[Function]}
           sendRef={[Function]}
+          value="No results found"
         >
-          No results found
-        </div>
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item pf-m-disabled"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+            >
+              No results found
+            </button>
+          </li>
+        </SelectOption>
       </ul>
     </SingleSelect>
   </div>

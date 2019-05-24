@@ -11,6 +11,11 @@ interface DemoInterface {
 /** Add the name of the demo and it's component here to have them show up in the demo app */
 export const Demos: DemoInterface[] = [
   {
+    id: 'about-modal-demo',
+    name: 'About Modal Demo',
+    componentType: Examples.AboutModalDemo
+  },
+  {
     id: 'alert-demo',
     name: 'Alert Demo',
     componentType: Examples.AlertDemo
@@ -21,9 +26,69 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AvatarDemo
   },
   {
+    id: 'badge-demo', 
+    name: 'Badge Demo', 
+    componentType: Examples.BadgeDemo 
+  },
+  {
+    id: 'brand-demo',
+    name: 'Brand Demo',
+    componentType: Examples.BrandDemo
+  },
+  {
+    id: 'breadcrumb-demo',
+    name: 'Breadcrumb Demo', 
+    componentType: Examples.BreadcrumbDemo
+  },
+  {
+    id: 'button-demo', 
+    name: 'Button Demo', 
+    componentType: Examples.ButtonDemo
+  }, 
+  {
+    id: 'card-demo', 
+    name: 'Card Demo',
+    componentType: Examples.CardDemo
+  },
+  {
+    id: 'checkbox-demo', 
+    name: 'Checkbox Demo', 
+    componentType: Examples.CheckboxDemo
+  }, 
+  {
+    id: 'chipgroup-demo', 
+    name: 'ChipGroup Demo',
+    componentType: Examples.BadgeChip 
+  },
+  {
+    id: 'empty-state-demo',
+    name: 'Empty State Demo',
+    componentType: Examples.EmptyStateDemo
+  },
+  {
+    id: 'form-demo', 
+    name: 'Form Demo', 
+    componentType: Examples.FormDemo
+  },
+  {
     id: 'label-demo',
     name: 'Label Demo',
     componentType: Examples.LabelDemo
+  },
+  {
+    id: 'list-demo',
+    name: 'List Demo',
+    componentType: Examples.ListDemo
+  },
+  {
+    id: 'login-page-demo',
+    name: 'Login Page Demo',
+    componentType: Examples.LoginPageDemo
+  },
+  {
+    id: 'modal-demo',
+    name: 'Modal Demo',
+    componentType: Examples.ModalDemo
   },
   {
     id: 'nav-demo',
@@ -36,9 +101,19 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.PopoverDemo
   },
   {
+    id: 'radio-demo',
+    name: 'Radio Demo',
+    componentType: Examples.RadioDemo
+  },
+  {
     id: 'tab-demo',
     name: 'Tab Demo',
     componentType: Examples.TabDemo
+  },
+  {
+    id: 'text-demo',
+    name: 'Text Demo',
+    componentType: Examples.TextDemo
   },
   {
     id: 'title-demo',
