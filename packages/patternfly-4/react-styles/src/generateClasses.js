@@ -7,7 +7,7 @@ const { dirname, resolve, join, parse } = require('path');
 const { readFileSync, readdirSync } = require('fs');
 const { outputFileSync } = require('fs-extra');
 
-const outDir = resolve(__dirname, '../dist/js/css');
+const outDir = resolve(__dirname, '../css');
 const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
 //const templateDir = resolve(__dirname, './templates');
 
