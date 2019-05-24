@@ -4,6 +4,7 @@ import { dirname, extname, resolve, basename } from 'path';
 import resolveFrom from 'resolve-from';
 import {
   cssToJS,
+  cssToJSNew,
   getCSS,
   getFullCSS,
   styleSheetToken,
@@ -132,16 +133,23 @@ export default declare(({ types: t }) => {
             const { srcDir, outDir } = options;
             const cssOutputPath = getCSSOutputPath(outDir, rootPath, cssfilePath);
             const cssJsOutputPath = `${cssOutputPath}.js`;
+            //const cssTsOutputPath = `${cssOutputPath}-new.js`;
             const cssFileName = `./${basename(cssfilePath)}`;
             const scriptOutputPath = resolve(file.opts.filename).replace(resolve(srcDir), outDir);
 
             if (!outputFiles.has(cssOutputPath)) {
               writeCSSFile(cssOutputPath, fullCssString);
+              // writeCSSJSFile(
+              //   rootPath,
+              //   cssfilePath,
+              //   cssJsOutputPath,
+              //   cssToJS(cssString, cssFileName, options.useModules)
+              // );
               writeCSSJSFile(
                 rootPath,
                 cssfilePath,
                 cssJsOutputPath,
-                cssToJS(cssString, cssFileName, options.useModules)
+                cssToJSNew(cssString, cssFileName, options.useModules)
               );
               outputFiles.add(cssOutputPath);
             }

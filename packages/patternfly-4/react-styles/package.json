@@ -18,7 +18,8 @@
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm -q",
     "build:babel:umd": "cross-env BABEL_ENV=production:umd babel dist/esm --out-dir dist/umd --plugins transform-es2015-modules-umd -q",
     "clean": "rimraf dist",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose",
+    "buildcss": "node src/generateClasses.js"
   },
   "dependencies": {
     "@babel/helper-plugin-utils": "^7.0.0-beta.48",
@@ -35,6 +36,7 @@
     "resolve-from": "^4.0.0"
   },
   "devDependencies": {
+    "@patternfly/patternfly": "2.6.5",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "glob": "^7.1.2",
     "rimraf": "^2.6.2"
