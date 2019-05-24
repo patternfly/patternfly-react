@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.32.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.31.0...@patternfly/react-core@3.32.0) (2019-05-24)
+
+
+### Features
+
+* **page:** add fill and no-fill modifiers to page sections ([#1973](https://github.com/patternfly/patternfly-react/issues/1973)) ([eef6513](https://github.com/patternfly/patternfly-react/commit/eef6513))
+
+
+
+
+
 # [3.31.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.30.1...@patternfly/react-core@3.31.0) (2019-05-23)
 
 
