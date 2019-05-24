@@ -129,3 +129,52 @@ class VerticalPage extends React.Component {
   }
 }
 ```
+## Main section fill/no-fill modifiers
+```js
+import React from 'react';
+import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+
+class FillPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isNavOpen: true
+    };
+    this.onNavToggle = () => {
+      this.setState({
+        isNavOpen: !this.state.isNavOpen
+      });
+    };
+  }
+
+  render() {
+    const { isNavOpen } = this.state;
+
+    const logoProps = {
+      href: 'https://patternfly.org',
+      onClick: () => console.log('clicked logo'),
+      target: '_blank'
+    };
+    const Header = (
+      <PageHeader
+        logo="Logo"
+        logoProps={logoProps}
+        toolbar="Toolbar"
+        avatar=" | Avatar"
+        showNavToggle
+        isNavOpen={isNavOpen}
+        onNavToggle={this.onNavToggle}
+      />
+    );
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
+
+    return (
+      <Page header={Header} sidebar={Sidebar}>
+        <PageSection style={{height: '10em'}}>This section is set to the default fill variant</PageSection>
+        <PageSection style={{height: '10em'}} isFilled={true}>This section fills the available space.</PageSection>
+        <PageSection style={{height: '10em'}} isFilled={false}> This section does not fill the available space.</PageSection>
+      </Page>
+    );
+  }
+}
+```
