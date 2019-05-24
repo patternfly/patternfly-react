@@ -7,7 +7,7 @@ const { dirname, resolve, join, parse } = require('path');
 const { readFileSync, readdirSync } = require('fs');
 const { outputFileSync } = require('fs-extra');
 
-const outDir = resolve(__dirname, '../dist');
+const outDir = resolve(__dirname, '../css');
 const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
 //const templateDir = resolve(__dirname, './templates');
 
@@ -22,10 +22,10 @@ const tokens = {};
 cssFiles.forEach(filePath => {
   const absFilePath = resolve(pfStylesDir, filePath);
   const cssContent = readFileSync(absFilePath, 'utf8');
-  let newClass = cssToJSNew(cssContent);
-  const cssOutputPath = getCSSOutputPath(resolve(outDir, '@patternfly'), filePath);
-  const cssJsOutputPath = `${cssOutputPath}.js`;
-  console.log(cssJsOutputPath);
+  const newClass = cssToJSNew(cssContent);
+
+  const cssOutputPath = getCSSOutputPath(outDir, filePath);
+  const cssJsOutputPath = cssOutputPath.replace('.css', '.js');
   outputFileSync(cssOutputPath, cssContent);
   outputFileSync(cssJsOutputPath, newClass);
 });

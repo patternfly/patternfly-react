@@ -138,19 +138,19 @@ export default declare(({ types: t }) => {
             const scriptOutputPath = resolve(file.opts.filename).replace(resolve(srcDir), outDir);
 
             if (!outputFiles.has(cssOutputPath)) {
-              writeCSSFile(cssOutputPath, fullCssString);
+              // writeCSSFile(cssOutputPath, fullCssString);
               // writeCSSJSFile(
               //   rootPath,
               //   cssfilePath,
               //   cssJsOutputPath,
               //   cssToJS(cssString, cssFileName, options.useModules)
               // );
-              writeCSSJSFile(
-                rootPath,
-                cssfilePath,
-                cssJsOutputPath,
-                cssToJSNew(cssString, cssFileName, options.useModules)
-              );
+              // writeCSSJSFile(
+              //   rootPath,
+              //   cssfilePath,
+              //   cssJsOutputPath,
+              //   cssToJSNew(cssString, cssFileName, options.useModules)
+              // );
               outputFiles.add(cssOutputPath);
             }
             path.node.source.value = getRelativeImportPath(scriptOutputPath, cssJsOutputPath);
