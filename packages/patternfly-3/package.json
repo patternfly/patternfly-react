@@ -5,7 +5,6 @@
     "access": "private"
   },
   "scripts": {
-    "lint": "yarn lint:js && yarn lint:styles",
     "lint:fix": "yarn lint:js --fix && yarn lint:styles --fix",
     "lint:js": "eslint --max-warnings 0 '**/*.js'",
     "lint:styles": "yarn stylelint",
