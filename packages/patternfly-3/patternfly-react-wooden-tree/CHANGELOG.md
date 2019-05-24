@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.1.5 (2019-05-24)
+
+
+### Bug Fixes
+
+* **Charts:** Fix type definitions for chart themes ([#2062](https://github.com/patternfly/patternfly-react/issues/2062)) ([63ff308](https://github.com/patternfly/patternfly-react/commit/63ff308)), closes [#2061](https://github.com/patternfly/patternfly-react/issues/2061)
+
+
+
+
+
 ## 1.1.4 (2019-05-20)
 
 
