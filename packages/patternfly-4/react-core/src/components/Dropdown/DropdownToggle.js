@@ -59,7 +59,7 @@ DropdownToggle.propTypes = {
   /** Accessible label for the dropdown toggle button */
   'aria-label': PropTypes.any,
   /** Additional props are spread to the container component */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 DropdownToggle.defaultProps = {

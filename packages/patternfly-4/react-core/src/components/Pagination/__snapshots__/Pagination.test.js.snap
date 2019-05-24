@@ -2,8 +2,11 @@
 
 exports[`component render custom pagination toggle 1`] = `
 <Pagination
+  className=""
   dropDirection="down"
   itemCount={40}
+  itemsEnd={0}
+  itemsStart={0}
   onFirstClick={[Function]}
   onLastClick={[Function]}
   onNextClick={[Function]}
@@ -61,12 +64,13 @@ exports[`component render custom pagination toggle 1`] = `
       40 items
     </div>
     <PaginationOptionsMenu
+      className=""
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={0}
       itemCount={40}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
-      lastIndex={10}
+      lastIndex={0}
       onPerPageSelect={[Function]}
       optionsToggle="Select"
       perPage={10}
@@ -191,11 +195,11 @@ exports[`component render custom pagination toggle 1`] = `
           position="left"
           toggle={
             <OptionsToggle
-              firstIndex={1}
+              firstIndex={0}
               isOpen={false}
               itemCount={40}
               itemsTitle="items"
-              lastIndex={10}
+              lastIndex={0}
               onToggle={[Function]}
               optionsToggle="Select"
               toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
@@ -208,14 +212,14 @@ exports[`component render custom pagination toggle 1`] = `
           >
             <OptionsToggle
               ariaHasPopup={true}
-              firstIndex={1}
+              firstIndex={0}
               id="pf-toggle-id-8"
               isOpen={false}
               isPlain={true}
               itemCount={40}
               itemsTitle="items"
               key=".0"
-              lastIndex={10}
+              lastIndex={0}
               onEnter={[Function]}
               onToggle={[Function]}
               optionsToggle="Select"
@@ -228,7 +232,7 @@ exports[`component render custom pagination toggle 1`] = `
                 <span
                   className="pf-c-options-menu__toggle-text"
                 >
-                  1 - 10 - 40 - items
+                  0 - 0 - 40 - items
                 </span>
                 <button
                   aria-expanded={false}
@@ -273,6 +277,7 @@ exports[`component render custom pagination toggle 1`] = `
       </div>
     </PaginationOptionsMenu>
     <Navigation
+      className=""
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
@@ -498,8 +503,11 @@ exports[`component render custom pagination toggle 1`] = `
 
 exports[`component render custom perPageOptions 1`] = `
 <Pagination
+  className=""
   dropDirection="down"
   itemCount={40}
+  itemsEnd={0}
+  itemsStart={0}
   onFirstClick={[Function]}
   onLastClick={[Function]}
   onNextClick={[Function]}
@@ -545,12 +553,13 @@ exports[`component render custom perPageOptions 1`] = `
       40 items
     </div>
     <PaginationOptionsMenu
+      className=""
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={0}
       itemCount={40}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
-      lastIndex={10}
+      lastIndex={0}
       onPerPageSelect={[Function]}
       optionsToggle="Select"
       perPage={10}
@@ -606,11 +615,11 @@ exports[`component render custom perPageOptions 1`] = `
           position="left"
           toggle={
             <OptionsToggle
-              firstIndex={1}
+              firstIndex={0}
               isOpen={false}
               itemCount={40}
               itemsTitle="items"
-              lastIndex={10}
+              lastIndex={0}
               onToggle={[Function]}
               optionsToggle="Select"
               toggleTemplate={[Function]}
@@ -623,14 +632,14 @@ exports[`component render custom perPageOptions 1`] = `
           >
             <OptionsToggle
               ariaHasPopup={true}
-              firstIndex={1}
+              firstIndex={0}
               id="pf-toggle-id-4"
               isOpen={false}
               isPlain={true}
               itemCount={40}
               itemsTitle="items"
               key=".0"
-              lastIndex={10}
+              lastIndex={0}
               onEnter={[Function]}
               onToggle={[Function]}
               optionsToggle="Select"
@@ -644,17 +653,18 @@ exports[`component render custom perPageOptions 1`] = `
                   className="pf-c-options-menu__toggle-text"
                 >
                   <ToggleTemplate
-                    firstIndex={1}
+                    firstIndex={0}
                     itemCount={40}
                     itemsTitle="items"
-                    lastIndex={10}
+                    lastIndex={0}
                   >
                     <strong>
-                      1
+                      0
                        - 
-                      10
+                      0
                     </strong>
-                     of 
+                     
+                    of 
                     <strong>
                       40
                     </strong>
@@ -705,6 +715,7 @@ exports[`component render custom perPageOptions 1`] = `
       </div>
     </PaginationOptionsMenu>
     <Navigation
+      className=""
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
@@ -930,6 +941,7 @@ exports[`component render custom perPageOptions 1`] = `
 
 exports[`component render custom start end 1`] = `
 <Pagination
+  className=""
   dropDirection="down"
   itemCount={40}
   itemsEnd={15}
@@ -991,6 +1003,7 @@ exports[`component render custom start end 1`] = `
       40 items
     </div>
     <PaginationOptionsMenu
+      className=""
       dropDirection="down"
       firstIndex={5}
       itemCount={40}
@@ -1169,7 +1182,8 @@ exports[`component render custom start end 1`] = `
                        - 
                       15
                     </strong>
-                     of 
+                     
+                    of 
                     <strong>
                       40
                     </strong>
@@ -1220,6 +1234,7 @@ exports[`component render custom start end 1`] = `
       </div>
     </PaginationOptionsMenu>
     <Navigation
+      className=""
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
@@ -1445,8 +1460,11 @@ exports[`component render custom start end 1`] = `
 
 exports[`component render last page 1`] = `
 <Pagination
+  className=""
   dropDirection="down"
   itemCount={20}
+  itemsEnd={0}
+  itemsStart={0}
   onFirstClick={[Function]}
   onLastClick={[Function]}
   onNextClick={[Function]}
@@ -1504,12 +1522,13 @@ exports[`component render last page 1`] = `
       20 items
     </div>
     <PaginationOptionsMenu
+      className=""
       dropDirection="down"
-      firstIndex={11}
+      firstIndex={0}
       itemCount={20}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
-      lastIndex={20}
+      lastIndex={0}
       onPerPageSelect={[Function]}
       optionsToggle="Select"
       perPage={10}
@@ -1634,11 +1653,11 @@ exports[`component render last page 1`] = `
           position="left"
           toggle={
             <OptionsToggle
-              firstIndex={11}
+              firstIndex={0}
               isOpen={false}
               itemCount={20}
               itemsTitle="items"
-              lastIndex={20}
+              lastIndex={0}
               onToggle={[Function]}
               optionsToggle="Select"
               toggleTemplate={[Function]}
@@ -1651,14 +1670,14 @@ exports[`component render last page 1`] = `
           >
             <OptionsToggle
               ariaHasPopup={true}
-              firstIndex={11}
+              firstIndex={0}
               id="pf-toggle-id-3"
               isOpen={false}
               isPlain={true}
               itemCount={20}
               itemsTitle="items"
               key=".0"
-              lastIndex={20}
+              lastIndex={0}
               onEnter={[Function]}
               onToggle={[Function]}
               optionsToggle="Select"
@@ -1672,17 +1691,18 @@ exports[`component render last page 1`] = `
                   className="pf-c-options-menu__toggle-text"
                 >
                   <ToggleTemplate
-                    firstIndex={11}
+                    firstIndex={0}
                     itemCount={20}
                     itemsTitle="items"
-                    lastIndex={20}
+                    lastIndex={0}
                   >
                     <strong>
-                      11
+                      0
                        - 
-                      20
+                      0
                     </strong>
-                     of 
+                     
+                    of 
                     <strong>
                       20
                     </strong>
@@ -1733,6 +1753,7 @@ exports[`component render last page 1`] = `
       </div>
     </PaginationOptionsMenu>
     <Navigation
+      className=""
       currPage="Current page"
       lastPage={2}
       onFirstClick={[Function]}
@@ -1958,8 +1979,11 @@ exports[`component render last page 1`] = `
 
 exports[`component render limited number of pages 1`] = `
 <Pagination
+  className=""
   dropDirection="down"
   itemCount={20}
+  itemsEnd={0}
+  itemsStart={0}
   onFirstClick={[Function]}
   onLastClick={[Function]}
   onNextClick={[Function]}
@@ -2017,12 +2041,13 @@ exports[`component render limited number of pages 1`] = `
       20 items
     </div>
     <PaginationOptionsMenu
+      className=""
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={0}
       itemCount={20}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
-      lastIndex={20}
+      lastIndex={0}
       onPerPageSelect={[Function]}
       optionsToggle="Select"
       perPage={20}
@@ -2147,11 +2172,11 @@ exports[`component render limited number of pages 1`] = `
           position="left"
           toggle={
             <OptionsToggle
-              firstIndex={1}
+              firstIndex={0}
               isOpen={false}
               itemCount={20}
               itemsTitle="items"
-              lastIndex={20}
+              lastIndex={0}
               onToggle={[Function]}
               optionsToggle="Select"
               toggleTemplate={[Function]}
@@ -2164,14 +2189,14 @@ exports[`component render limited number of pages 1`] = `
           >
             <OptionsToggle
               ariaHasPopup={true}
-              firstIndex={1}
+              firstIndex={0}
               id="pf-toggle-id-2"
               isOpen={false}
               isPlain={true}
               itemCount={20}
               itemsTitle="items"
               key=".0"
-              lastIndex={20}
+              lastIndex={0}
               onEnter={[Function]}
               onToggle={[Function]}
               optionsToggle="Select"
@@ -2185,17 +2210,18 @@ exports[`component render limited number of pages 1`] = `
                   className="pf-c-options-menu__toggle-text"
                 >
                   <ToggleTemplate
-                    firstIndex={1}
+                    firstIndex={0}
                     itemCount={20}
                     itemsTitle="items"
-                    lastIndex={20}
+                    lastIndex={0}
                   >
                     <strong>
-                      1
+                      0
                        - 
-                      20
+                      0
                     </strong>
-                     of 
+                     
+                    of 
                     <strong>
                       20
                     </strong>
@@ -2246,6 +2272,7 @@ exports[`component render limited number of pages 1`] = `
       </div>
     </PaginationOptionsMenu>
     <Navigation
+      className=""
       currPage="Current page"
       lastPage={1}
       onFirstClick={[Function]}
@@ -2471,8 +2498,11 @@ exports[`component render limited number of pages 1`] = `
 
 exports[`component render no items 1`] = `
 <Pagination
+  className=""
   dropDirection="down"
   itemCount={0}
+  itemsEnd={0}
+  itemsStart={0}
   onFirstClick={[Function]}
   onLastClick={[Function]}
   onNextClick={[Function]}
@@ -2530,6 +2560,7 @@ exports[`component render no items 1`] = `
       0 items
     </div>
     <PaginationOptionsMenu
+      className=""
       dropDirection="down"
       firstIndex={0}
       itemCount={0}
@@ -2708,7 +2739,8 @@ exports[`component render no items 1`] = `
                        - 
                       0
                     </strong>
-                     of 
+                     
+                    of 
                     <strong>
                       0
                     </strong>
@@ -2759,6 +2791,7 @@ exports[`component render no items 1`] = `
       </div>
     </PaginationOptionsMenu>
     <Navigation
+      className=""
       currPage="Current page"
       lastPage={0}
       onFirstClick={[Function]}
@@ -2984,8 +3017,11 @@ exports[`component render no items 1`] = `
 
 exports[`component render should render correctly bottom 1`] = `
 <Pagination
+  className=""
   dropDirection="down"
   itemCount={20}
+  itemsEnd={0}
+  itemsStart={0}
   onFirstClick={[Function]}
   onLastClick={[Function]}
   onNextClick={[Function]}
@@ -3038,12 +3074,13 @@ exports[`component render should render correctly bottom 1`] = `
     className="pf-c-pagination pf-m-footer"
   >
     <PaginationOptionsMenu
+      className=""
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={0}
       itemCount={20}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
-      lastIndex={10}
+      lastIndex={0}
       onPerPageSelect={[Function]}
       optionsToggle="Select"
       perPage={10}
@@ -3168,11 +3205,11 @@ exports[`component render should render correctly bottom 1`] = `
           position="left"
           toggle={
             <OptionsToggle
-              firstIndex={1}
+              firstIndex={0}
               isOpen={false}
               itemCount={20}
               itemsTitle="items"
-              lastIndex={10}
+              lastIndex={0}
               onToggle={[Function]}
               optionsToggle="Select"
               toggleTemplate={[Function]}
@@ -3185,14 +3222,14 @@ exports[`component render should render correctly bottom 1`] = `
           >
             <OptionsToggle
               ariaHasPopup={true}
-              firstIndex={1}
+              firstIndex={0}
               id="pf-toggle-id-1"
               isOpen={false}
               isPlain={true}
               itemCount={20}
               itemsTitle="items"
               key=".0"
-              lastIndex={10}
+              lastIndex={0}
               onEnter={[Function]}
               onToggle={[Function]}
               optionsToggle="Select"
@@ -3206,17 +3243,18 @@ exports[`component render should render correctly bottom 1`] = `
                   className="pf-c-options-menu__toggle-text"
                 >
                   <ToggleTemplate
-                    firstIndex={1}
+                    firstIndex={0}
                     itemCount={20}
                     itemsTitle="items"
-                    lastIndex={10}
+                    lastIndex={0}
                   >
                     <strong>
-                      1
+                      0
                        - 
-                      10
+                      0
                     </strong>
-                     of 
+                     
+                    of 
                     <strong>
                       20
                     </strong>
@@ -3267,6 +3305,7 @@ exports[`component render should render correctly bottom 1`] = `
       </div>
     </PaginationOptionsMenu>
     <Navigation
+      className=""
       currPage="Current page"
       lastPage={2}
       onFirstClick={[Function]}
@@ -3492,8 +3531,11 @@ exports[`component render should render correctly bottom 1`] = `
 
 exports[`component render should render correctly top 1`] = `
 <Pagination
+  className=""
   dropDirection="down"
   itemCount={20}
+  itemsEnd={0}
+  itemsStart={0}
   onFirstClick={[Function]}
   onLastClick={[Function]}
   onNextClick={[Function]}
@@ -3551,12 +3593,13 @@ exports[`component render should render correctly top 1`] = `
       20 items
     </div>
     <PaginationOptionsMenu
+      className=""
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={0}
       itemCount={20}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
-      lastIndex={10}
+      lastIndex={0}
       onPerPageSelect={[Function]}
       optionsToggle="Select"
       perPage={10}
@@ -3681,11 +3724,11 @@ exports[`component render should render correctly top 1`] = `
           position="left"
           toggle={
             <OptionsToggle
-              firstIndex={1}
+              firstIndex={0}
               isOpen={false}
               itemCount={20}
               itemsTitle="items"
-              lastIndex={10}
+              lastIndex={0}
               onToggle={[Function]}
               optionsToggle="Select"
               toggleTemplate={[Function]}
@@ -3698,14 +3741,14 @@ exports[`component render should render correctly top 1`] = `
           >
             <OptionsToggle
               ariaHasPopup={true}
-              firstIndex={1}
+              firstIndex={0}
               id="pf-toggle-id-0"
               isOpen={false}
               isPlain={true}
               itemCount={20}
               itemsTitle="items"
               key=".0"
-              lastIndex={10}
+              lastIndex={0}
               onEnter={[Function]}
               onToggle={[Function]}
               optionsToggle="Select"
@@ -3719,17 +3762,18 @@ exports[`component render should render correctly top 1`] = `
                   className="pf-c-options-menu__toggle-text"
                 >
                   <ToggleTemplate
-                    firstIndex={1}
+                    firstIndex={0}
                     itemCount={20}
                     itemsTitle="items"
-                    lastIndex={10}
+                    lastIndex={0}
                   >
                     <strong>
-                      1
+                      0
                        - 
-                      10
+                      0
                     </strong>
-                     of 
+                     
+                    of 
                     <strong>
                       20
                     </strong>
@@ -3780,6 +3824,7 @@ exports[`component render should render correctly top 1`] = `
       </div>
     </PaginationOptionsMenu>
     <Navigation
+      className=""
       currPage="Current page"
       lastPage={2}
       onFirstClick={[Function]}
@@ -4005,8 +4050,11 @@ exports[`component render should render correctly top 1`] = `
 
 exports[`component render titles 1`] = `
 <Pagination
+  className=""
   dropDirection="down"
   itemCount={40}
+  itemsEnd={0}
+  itemsStart={0}
   onFirstClick={[Function]}
   onLastClick={[Function]}
   onNextClick={[Function]}
@@ -4055,12 +4103,13 @@ exports[`component render titles 1`] = `
       40 values
     </div>
     <PaginationOptionsMenu
+      className=""
       dropDirection="down"
-      firstIndex={1}
+      firstIndex={0}
       itemCount={40}
       itemsPerPageTitle="Items per page"
       itemsTitle="values"
-      lastIndex={10}
+      lastIndex={0}
       onPerPageSelect={[Function]}
       optionsToggle="Select"
       perPage={10}
@@ -4185,11 +4234,11 @@ exports[`component render titles 1`] = `
           position="left"
           toggle={
             <OptionsToggle
-              firstIndex={1}
+              firstIndex={0}
               isOpen={false}
               itemCount={40}
               itemsTitle="values"
-              lastIndex={10}
+              lastIndex={0}
               onToggle={[Function]}
               optionsToggle="Select"
               toggleTemplate={[Function]}
@@ -4202,14 +4251,14 @@ exports[`component render titles 1`] = `
           >
             <OptionsToggle
               ariaHasPopup={true}
-              firstIndex={1}
+              firstIndex={0}
               id="pf-toggle-id-7"
               isOpen={false}
               isPlain={true}
               itemCount={40}
               itemsTitle="values"
               key=".0"
-              lastIndex={10}
+              lastIndex={0}
               onEnter={[Function]}
               onToggle={[Function]}
               optionsToggle="Select"
@@ -4223,17 +4272,18 @@ exports[`component render titles 1`] = `
                   className="pf-c-options-menu__toggle-text"
                 >
                   <ToggleTemplate
-                    firstIndex={1}
+                    firstIndex={0}
                     itemCount={40}
                     itemsTitle="values"
-                    lastIndex={10}
+                    lastIndex={0}
                   >
                     <strong>
-                      1
+                      0
                        - 
-                      10
+                      0
                     </strong>
-                     of 
+                     
+                    of 
                     <strong>
                       40
                     </strong>
@@ -4284,6 +4334,7 @@ exports[`component render titles 1`] = `
       </div>
     </PaginationOptionsMenu>
     <Navigation
+      className=""
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
@@ -4509,8 +4560,11 @@ exports[`component render titles 1`] = `
 
 exports[`component render up drop direction 1`] = `
 <Pagination
+  className=""
   dropDirection="up"
   itemCount={40}
+  itemsEnd={0}
+  itemsStart={0}
   onFirstClick={[Function]}
   onLastClick={[Function]}
   onNextClick={[Function]}
@@ -4568,12 +4622,13 @@ exports[`component render up drop direction 1`] = `
       40 items
     </div>
     <PaginationOptionsMenu
+      className=""
       dropDirection="up"
-      firstIndex={1}
+      firstIndex={0}
       itemCount={40}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
-      lastIndex={10}
+      lastIndex={0}
       onPerPageSelect={[Function]}
       optionsToggle="Select"
       perPage={10}
@@ -4698,11 +4753,11 @@ exports[`component render up drop direction 1`] = `
           position="left"
           toggle={
             <OptionsToggle
-              firstIndex={1}
+              firstIndex={0}
               isOpen={false}
               itemCount={40}
               itemsTitle="items"
-              lastIndex={10}
+              lastIndex={0}
               onToggle={[Function]}
               optionsToggle="Select"
               toggleTemplate={[Function]}
@@ -4715,14 +4770,14 @@ exports[`component render up drop direction 1`] = `
           >
             <OptionsToggle
               ariaHasPopup={true}
-              firstIndex={1}
+              firstIndex={0}
               id="pf-toggle-id-9"
               isOpen={false}
               isPlain={true}
               itemCount={40}
               itemsTitle="items"
               key=".0"
-              lastIndex={10}
+              lastIndex={0}
               onEnter={[Function]}
               onToggle={[Function]}
               optionsToggle="Select"
@@ -4736,17 +4791,18 @@ exports[`component render up drop direction 1`] = `
                   className="pf-c-options-menu__toggle-text"
                 >
                   <ToggleTemplate
-                    firstIndex={1}
+                    firstIndex={0}
                     itemCount={40}
                     itemsTitle="items"
-                    lastIndex={10}
+                    lastIndex={0}
                   >
                     <strong>
-                      1
+                      0
                        - 
-                      10
+                      0
                     </strong>
-                     of 
+                     
+                    of 
                     <strong>
                       40
                     </strong>
@@ -4797,6 +4853,7 @@ exports[`component render up drop direction 1`] = `
       </div>
     </PaginationOptionsMenu>
     <Navigation
+      className=""
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}

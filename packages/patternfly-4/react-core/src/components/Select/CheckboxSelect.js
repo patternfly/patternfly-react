@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import FocusTrap from 'focus-trap-react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import { default as formStyles } from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import { keyHandler } from '../../helpers/util';
-import FocusTrap from 'focus-trap-react';
 
 const propTypes = {
   /** Content rendered inside the CheckboxSelect */
@@ -18,7 +18,7 @@ const propTypes = {
   /** Currently checked options */
   checked: PropTypes.arrayOf(PropTypes.string),
   /** Additional props are spread to the container <select> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

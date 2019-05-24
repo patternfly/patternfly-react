@@ -7,15 +7,16 @@ import { Dropdown, DropdownItem, DropdownDirection } from '../Dropdown';
 import { CheckIcon } from '@patternfly/react-icons';
 import OptionsToggle from './OptionsToggle';
 
-
 const propTypes = {
   className: PropTypes.string,
   widgetId: PropTypes.string,
   dropDirection: PropTypes.oneOf(Object.values(DropdownDirection)),
-  perPageOptions: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.node,
-    value: PropTypes.number
-  })),
+  perPageOptions: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.node,
+      value: PropTypes.number
+    })
+  ),
   itemsPerPageTitle: PropTypes.string,
   perPageSuffix: PropTypes.string,
   itemsTitle: PropTypes.string,
@@ -29,22 +30,35 @@ const propTypes = {
 };
 
 const defaultProps = {
+  className: '',
+  widgetId: '',
   dropDirection: DropdownDirection.down,
+  perPageOptions: [],
   itemsTitle: 'items',
   itemsPerPageTitle: 'Items per page',
   perPageSuffix: 'per page',
   optionsToggle: 'Select',
-  toggleTemplate: ({ firstIndex, lastIndex, itemCount, itemsTitle }) => (
+  itemCount: 0,
+  firstIndex: 0,
+  lastIndex: 0,
+  perPage: 0,
+  toggleTemplate: (
+    { firstIndex, lastIndex, itemCount, itemsTitle } // eslint-disable-line react/prop-types
+  ) => (
     <React.Fragment>
-      <strong>{firstIndex} - {lastIndex}</strong> of<strong>{itemCount}</strong> {itemsTitle}
+      <strong>
+        {firstIndex} - {lastIndex}
+      </strong>{' '}
+      of<strong>{itemCount}</strong> {itemsTitle}
     </React.Fragment>
-  )
+  ),
+  onPerPageSelect: Function.prototype
 };
 
 class PaginationOptionsMenu extends Component {
   state = {
     isOpen: false
-  }
+  };
 
   onToggle = isOpen => {
     this.setState({
@@ -61,21 +75,23 @@ class PaginationOptionsMenu extends Component {
   renderItems = () => {
     const { perPageOptions, onPerPageSelect, perPage, perPageSuffix } = this.props;
     return perPageOptions.map(({ value, title }) => (
-      <DropdownItem key={value}
+      <DropdownItem
+        key={value}
         component="button"
         data-action={`per-page-${value}`}
         className={css(styles.optionsMenuMenuItem, perPage === value && 'pf-m-selected')}
-        onClick={(event) => onPerPageSelect(event, value)}
+        onClick={event => onPerPageSelect(event, value)}
       >
         {title}
         <span className={css(paginationStyles.paginationMenuText)}>{` ${perPageSuffix}`}</span>
-        {
-          perPage === value &&
-          <i className={css(styles.optionsMenuMenuItemIcon)} ><CheckIcon /></i>
-        }
+        {perPage === value && (
+          <i className={css(styles.optionsMenuMenuItemIcon)}>
+            <CheckIcon />
+          </i>
+        )}
       </DropdownItem>
-    ))
-  }
+    ));
+  };
 
   render() {
     const {
@@ -97,8 +113,11 @@ class PaginationOptionsMenu extends Component {
     } = this.props;
     return (
       <div className={css(styles.optionsMenu, className)} {...props}>
-        <span id={`${widgetId}-label`} hidden>{itemsPerPageTitle}:</span>
-        <Dropdown direction={dropDirection}
+        <span id={`${widgetId}-label`} hidden>
+          {itemsPerPageTitle}:
+        </span>
+        <Dropdown
+          direction={dropDirection}
           onSelect={this.onSelect}
           isOpen={this.state.isOpen}
           toggle={
@@ -117,8 +136,8 @@ class PaginationOptionsMenu extends Component {
           dropdownItems={this.renderItems()}
           isPlain
         />
-    </div>
-    )
+      </div>
+    );
   }
 }
 

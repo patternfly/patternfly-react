@@ -17,7 +17,7 @@ const propTypes = {
   /** Callback for when this Options menu item is selected */
   onSelect: PropTypes.func,
   /** Unique id of this Options menu item */
-  id: PropTypes.string,
+  id: PropTypes.string
 };
 
 const defaultProps = {
@@ -26,11 +26,10 @@ const defaultProps = {
   isSelected: false,
   isDisabled: false,
   onSelect: Function.prototype,
-  id: '',
+  id: ''
 };
 
 class OptionsMenuItem extends React.Component {
-
   onKeyDown = event => {
     // Detected key press on this item, notify the menu parent so that the appropriate
     // item can be focused
@@ -43,19 +42,23 @@ class OptionsMenuItem extends React.Component {
 
   render() {
     const { onSelect, isDisabled, isSelected, className, children, id, ...props } = this.props;
-    return <li>
-      <button
-        className={css(styles.optionsMenuMenuItem, isDisabled && getModifier(styles, 'disabled'), className)}
-        aria-disabled={isDisabled}
-        onClick={onSelect}
-        onKeyDown={this.onKeyDown}
-        aria-selected={isSelected}
-        id={id}
-        {...props}>
-        {children}
-        <i className={css(styles.optionsMenuMenuItemIcon)} aria-hidden={true} hidden={!isSelected}><CheckIcon/></i>
-      </button>
-    </li>
+    return (
+      <li>
+        <button
+          className={css(styles.optionsMenuMenuItem, isDisabled && getModifier(styles, 'disabled'), className)}
+          aria-disabled={isDisabled}
+          onClick={onSelect}
+          onKeyDown={this.onKeyDown}
+          id={id}
+          {...props}
+        >
+          {children}
+          <i className={css(styles.optionsMenuMenuItemIcon)} aria-hidden hidden={!isSelected}>
+            <CheckIcon />
+          </i>
+        </button>
+      </li>
+    );
   }
 }
 

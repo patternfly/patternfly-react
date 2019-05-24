@@ -3,21 +3,17 @@ import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 
-const OptionsMenuSeparator = ({ className, ...props}) => (
-  <li
-    className={css(styles.optionsMenuSeparator, className)}
-    role="separator"
-    {...props}
-  />
+const OptionsMenuSeparator = ({ className, ...props }) => (
+  <li className={css(styles.optionsMenuSeparator, className)} role="separator" {...props} />
 );
 
 OptionsMenuSeparator.propTypes = {
   /** Classes applied to root element of Options menu separator item */
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 
 OptionsMenuSeparator.defaultProps = {
-  className: '',
+  className: ''
 };
 
 export default OptionsMenuSeparator;

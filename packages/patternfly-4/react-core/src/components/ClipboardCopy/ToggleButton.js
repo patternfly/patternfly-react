@@ -11,7 +11,7 @@ const ToggleButton = ({ isExpanded, onClick, className, id, textId, contentId, .
     id={id}
     aria-labelledby={`${id} ${textId}`}
     aria-controls={`${contentId}`}
-    aria-expanded={`${isExpanded}`}
+    aria-expanded={isExpanded}
     {...props}
   >
     <AngleRightIcon aria-hidden="true" className={css(styles.clipboardCopyGroupToggleIcon)} />

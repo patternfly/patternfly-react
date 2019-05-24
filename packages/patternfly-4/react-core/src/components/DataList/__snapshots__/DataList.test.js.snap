@@ -160,7 +160,6 @@ exports[`DataList List 1`] = `
 <ul
   aria-label="this is a simple list"
   className="pf-c-data-list data-list-custom"
-  role="list"
 />
 `;
 
@@ -168,7 +167,6 @@ exports[`DataList List default 1`] = `
 <ul
   aria-label="this is a simple list"
   className="pf-c-data-list"
-  role="list"
 />
 `;
 

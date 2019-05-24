@@ -5,13 +5,13 @@ import PageSection from './PageSection';
 jest.mock('./Page');
 
 test('Check page section with no padding example against snapshot', () => {
-  const Section = <PageSection noPadding={true} />;
+  const Section = <PageSection noPadding />;
   const view = mount(Section);
   expect(view).toMatchSnapshot();
 });
 
 test('Check page section with no padding on mobile example against snapshot', () => {
-  const Section = <PageSection noPaddingMobile={true} />;
+  const Section = <PageSection noPaddingMobile />;
   const view = mount(Section);
   expect(view).toMatchSnapshot();
 });
@@ -23,14 +23,13 @@ test('Check page section with no fill example against snapshot', () => {
 });
 
 test('Check page section with fill example against snapshot', () => {
-  const Section = <PageSection isFilled={true} />;
+  const Section = <PageSection isFilled />;
   const view = mount(Section);
   expect(view).toMatchSnapshot();
 });
 
 test('Check page section with fill and no padding example against snapshot', () => {
-  const Section = <PageSection isFilled={true} noPadding={true} />;
+  const Section = <PageSection isFilled noPadding />;
   const view = mount(Section);
   expect(view).toMatchSnapshot();
 });
-

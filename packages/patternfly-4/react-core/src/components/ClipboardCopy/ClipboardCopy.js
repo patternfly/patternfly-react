@@ -162,10 +162,11 @@ ClipboardCopy.propTypes = {
   /** The text which is copied. */
   children: PropTypes.node.isRequired,
   /** Additional props are spread to the container <div>. */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 ClipboardCopy.defaultProps = {
+  className: '',
   hoverTip: 'Copy to clipboard',
   clickTip: 'Successfully copied to clipboard!',
   isReadOnly: false,

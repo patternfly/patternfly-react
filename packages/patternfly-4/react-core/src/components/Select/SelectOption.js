@@ -25,7 +25,7 @@ const propTypes = {
   /** Internal callback for keyboard navigation */
   keyHandler: PropTypes.func,
   /** Additional props are spread to the container <button> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

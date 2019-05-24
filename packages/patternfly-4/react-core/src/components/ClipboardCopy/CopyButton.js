@@ -19,7 +19,7 @@ const CopyButton = ({
   ...props
 }) => (
   <Tooltip
-    trigger={'mouseenter focus click'}
+    trigger="mouseenter focus click"
     exitDelay={exitDelay}
     entryDelay={entryDelay}
     maxWidth={maxWidth}

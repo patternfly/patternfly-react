@@ -253,6 +253,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         </ForwardRef>
       }
       className={null}
+      eventKey={null}
       id="tab1"
       innerRef={null}
     >
@@ -262,6 +263,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         className="pf-c-tab-content"
         hidden={false}
         id="pf-tab-section-0-tab1"
+        index={null}
         role="tabpanel"
         tabIndex="0"
       >
@@ -296,6 +298,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         </ForwardRef>
       }
       className={null}
+      eventKey={null}
       id="tab2"
       innerRef={null}
     >
@@ -305,6 +308,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         className="pf-c-tab-content"
         hidden={true}
         id="pf-tab-section-1-tab2"
+        index={null}
         role="tabpanel"
         tabIndex="0"
       >
@@ -339,6 +343,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         </ForwardRef>
       }
       className={null}
+      eventKey={null}
       id="tab3"
       innerRef={null}
     >
@@ -348,6 +353,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         className="pf-c-tab-content"
         hidden={true}
         id="pf-tab-section-2-tab3"
+        index={null}
         role="tabpanel"
         tabIndex="0"
       >
@@ -611,6 +617,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         </ForwardRef>
       }
       className={null}
+      eventKey={null}
       id="tab1"
       innerRef={null}
     >
@@ -620,6 +627,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         className="pf-c-tab-content"
         hidden={false}
         id="pf-tab-section-0-tab1"
+        index={null}
         role="tabpanel"
         tabIndex="0"
       >
@@ -654,6 +662,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         </ForwardRef>
       }
       className={null}
+      eventKey={null}
       id="tab2"
       innerRef={null}
     >
@@ -663,6 +672,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         className="pf-c-tab-content"
         hidden={true}
         id="pf-tab-section-1-tab2"
+        index={null}
         role="tabpanel"
         tabIndex="0"
       >
@@ -697,6 +707,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         </ForwardRef>
       }
       className={null}
+      eventKey={null}
       id="tab3"
       innerRef={null}
     >
@@ -706,6 +717,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         className="pf-c-tab-content"
         hidden={true}
         id="pf-tab-section-2-tab3"
+        index={null}
         role="tabpanel"
         tabIndex="0"
       >
@@ -969,6 +981,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         </ForwardRef>
       }
       className={null}
+      eventKey={null}
       id="tab1"
       innerRef={null}
     >
@@ -978,6 +991,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         className="pf-c-tab-content"
         hidden={false}
         id="pf-tab-section-0-tab1"
+        index={null}
         role="tabpanel"
         tabIndex="0"
       >
@@ -1012,6 +1026,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         </ForwardRef>
       }
       className={null}
+      eventKey={null}
       id="tab2"
       innerRef={null}
     >
@@ -1021,6 +1036,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         className="pf-c-tab-content"
         hidden={true}
         id="pf-tab-section-1-tab2"
+        index={null}
         role="tabpanel"
         tabIndex="0"
       >
@@ -1055,6 +1071,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         </ForwardRef>
       }
       className={null}
+      eventKey={null}
       id="tab3"
       innerRef={null}
     >
@@ -1064,6 +1081,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         className="pf-c-tab-content"
         hidden={true}
         id="pf-tab-section-2-tab3"
+        index={null}
         role="tabpanel"
         tabIndex="0"
       >

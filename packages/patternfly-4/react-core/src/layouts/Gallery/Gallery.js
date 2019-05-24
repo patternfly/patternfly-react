@@ -12,7 +12,7 @@ const propTypes = {
   /** Adds space between children. Options are sm, md or lg */
   gutter: PropTypes.oneOf(Object.keys(GutterSize)),
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

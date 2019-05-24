@@ -14,12 +14,10 @@ const InputGroup = ({ className, children, ...props }) => {
   return (
     <div className={css(styles.inputGroup, className)} {...props}>
       {idItem
-        ? React.Children.map(
-            children,
-            child =>
-              formCtrls.includes(child.type.toString())
-                ? React.cloneElement(child, { 'aria-describedby': idItem.props.id })
-                : child
+        ? React.Children.map(children, child =>
+            formCtrls.includes(child.type.toString())
+              ? React.cloneElement(child, { 'aria-describedby': idItem.props.id })
+              : child
           )
         : children}
     </div>

@@ -21,11 +21,7 @@ test('tooltip renders', () => {
 
 test('tooltip triggered by click', () => {
   const view = shallow(
-    <Tooltip
-      position="top"
-      trigger="click"
-      content={<p>my content</p>}
-    >
+    <Tooltip position="top" trigger="click" content={<p>my content</p>}>
       <div>Toggle tooltip</div>
     </Tooltip>
   );

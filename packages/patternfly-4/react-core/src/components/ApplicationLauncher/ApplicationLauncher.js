@@ -5,15 +5,12 @@ import PropTypes from 'prop-types';
 import ApplicationLauncherMenu from './ApplicationLauncherMenu';
 import Toggle from './Toggle';
 import { ThIcon } from '@patternfly/react-icons';
-import { ApplicationLauncherDirection, ApplicationLauncherPosition } from './applicationLauncherConstants';
 import { DropdownContext } from '../Dropdown/dropdownConstants';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
 
 export const propTypes = {
   /** Additional element css classes */
   className: PropTypes.string,
-  /** Display menu above or below dropdown toggle */
-  direction: PropTypes.oneOf(Object.values(ApplicationLauncherDirection)),
   /** Array of DropdownItem nodes that will be rendered in the dropdown Menu list */
   dropdownItems: PropTypes.array,
   /** open bool */
@@ -22,20 +19,16 @@ export const propTypes = {
   onSelect: PropTypes.func,
   /** Callback called when application launcher toggle is clicked */
   onToggle: PropTypes.func,
-  /** Indicates where menu will be alligned horizontally */
-  position: PropTypes.oneOf(Object.values(ApplicationLauncherPosition)),
   /** Adds accessible text to the button. Required for plain buttons */
   'aria-label': PropTypes.string
 };
 
 export const defaultProps = {
   className: '',
-  direction: ApplicationLauncherDirection.down,
   dropdownItems: [],
   isOpen: false,
   onSelect: Function.prototype,
   onToggle: Function.prototype,
-  position: ApplicationLauncherPosition.left,
   'aria-label': 'Actions'
 };
 
@@ -49,16 +42,7 @@ class ApplicationLauncher extends React.Component {
   }
 
   render() {
-    const {
-      'aria-label': ariaLabel,
-      children,
-      dropdownItems,
-      className,
-      isOpen,
-      onSelect,
-      onToggle,
-      ...props
-    } = this.props;
+    const { 'aria-label': ariaLabel, dropdownItems, className, isOpen, onSelect, onToggle } = this.props;
     return (
       <GenerateId>
         {randomId => (

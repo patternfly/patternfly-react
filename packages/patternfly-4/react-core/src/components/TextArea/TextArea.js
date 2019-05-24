@@ -22,7 +22,7 @@ const propTypes = {
     return null;
   },
   /** Additional props are spread to the container <textarea> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

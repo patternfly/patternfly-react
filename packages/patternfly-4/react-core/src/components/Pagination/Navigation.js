@@ -6,6 +6,7 @@ import { AngleLeftIcon, AngleDoubleLeftIcon, AngleRightIcon, AngleDoubleRightIco
 import { Button, ButtonVariant } from '../Button';
 
 const propTypes = {
+  className: PropTypes.string,
   lastPage: PropTypes.number,
   pagesTitle: PropTypes.string,
   toLastPage: PropTypes.string,
@@ -23,6 +24,8 @@ const propTypes = {
   onPageInput: PropTypes.func
 };
 const defaultProps = {
+  className: '',
+  lastPage: 0,
   pagesTitle: '',
   toLastPage: 'Go to last page',
   toNextPage: 'Go to next page',
@@ -30,7 +33,6 @@ const defaultProps = {
   toPreviousPage: 'Go to previous page',
   currPage: 'Current page',
   paginationTitle: 'Pagination',
-  onSetPage: () => undefined,
   onNextClick: () => undefined,
   onPreviousClick: () => undefined,
   onFirstClick: () => undefined,
@@ -56,81 +58,81 @@ const Navigation = ({
   onPageInput,
   className,
   ...props
-}) => {
-  return (
-    <nav className={css(styles.paginationNav, className)} aria-label={paginationTitle} {...props}>
-      <Button
-        variant={ButtonVariant.plain}
-        isDisabled={page === 1}
-        aria-label={toFirstPage}
-        data-action="first"
-        onClick={(event) => {
-          onFirstClick(event, 1);
-          onSetPage(event, 1)
+}) => (
+  <nav className={css(styles.paginationNav, className)} aria-label={paginationTitle} {...props}>
+    <Button
+      variant={ButtonVariant.plain}
+      isDisabled={page === 1}
+      aria-label={toFirstPage}
+      data-action="first"
+      onClick={event => {
+        onFirstClick(event, 1);
+        onSetPage(event, 1);
+      }}
+    >
+      <AngleDoubleLeftIcon />
+    </Button>
+    <Button
+      variant={ButtonVariant.plain}
+      isDisabled={page === 1}
+      data-action="previous"
+      onClick={event => {
+        const newPage = page - 1 >= 1 ? page - 1 : 1;
+        onPreviousClick(event, newPage);
+        onSetPage(event, newPage);
+      }}
+      aria-label={toPreviousPage}
+    >
+      <AngleLeftIcon />
+    </Button>
+    <div className={css(styles.paginationNavPageSelect)}>
+      <input
+        className={css(styles.formControl)}
+        aria-label={currPage}
+        type="number"
+        min="1"
+        max={lastPage}
+        value={page}
+        onChange={event => {
+          let inputPage = Number.parseInt(event.target.value, 10);
+          inputPage = Number.isNaN(inputPage) ? page : inputPage;
+          inputPage = inputPage > lastPage ? lastPage : inputPage;
+          inputPage = inputPage < 1 ? 1 : inputPage;
+          onSetPage(event, Number.isNaN(inputPage) ? page : inputPage);
+          onPageInput(event, Number.isNaN(inputPage) ? page : inputPage);
         }}
-      >
-        <AngleDoubleLeftIcon />
-      </Button>
-      <Button
-        variant={ButtonVariant.plain}
-        isDisabled={page === 1}
-        data-action="previous"
-        onClick={(event) => {
-          const newPage = page - 1 >= 1 ? page - 1 : 1
-          onPreviousClick(event, newPage);
-          onSetPage(event, newPage);
-        }}
-        aria-label={toPreviousPage}
-      >
-        <AngleLeftIcon />
-      </Button>
-      <div className={css(styles.paginationNavPageSelect)}>
-        <input
-          className={css(styles.formControl)}
-          aria-label={currPage}
-          type="number"
-          min="1"
-          max={lastPage}
-          value={page}
-          onChange={(event) => {
-            let inputPage = Number.parseInt(event.target.value);
-            inputPage = isNaN(inputPage) ? page : inputPage;
-            inputPage = inputPage > lastPage ? lastPage : inputPage;
-            inputPage = inputPage < 1 ? 1 : inputPage;
-            onSetPage(event, isNaN(inputPage) ? page : inputPage);
-            onPageInput(event, isNaN(inputPage) ? page : inputPage);
-          }}
-        />
-        <span aria-hidden="true">of {lastPage} {pagesTitle}</span>
-      </div>
-      <Button
-        variant={ButtonVariant.plain}
-        isDisabled={page === lastPage}
-        aria-label={toNextPage}
-        data-action="next"
-        onClick={(event) => {
-          const newPage = page + 1 <= lastPage ? page + 1 : lastPage
-          onNextClick(event, newPage);
-          onSetPage(event, newPage);
-        }}
-      >
-        <AngleRightIcon />
-      </Button>
-      <Button
-        variant={ButtonVariant.plain}
-        isDisabled={page === lastPage}
-        aria-label={toLastPage}
-        data-action="last"
-        onClick={(event) => {
-          onLastClick(event, lastPage);
-          onSetPage(event, lastPage);
-        }}
-      >
-        <AngleDoubleRightIcon />
-      </Button>
-    </nav>
-  )
-};
+      />
+      <span aria-hidden="true">
+        of {lastPage} {pagesTitle}
+      </span>
+    </div>
+    <Button
+      variant={ButtonVariant.plain}
+      isDisabled={page === lastPage}
+      aria-label={toNextPage}
+      data-action="next"
+      onClick={event => {
+        const newPage = page + 1 <= lastPage ? page + 1 : lastPage;
+        onNextClick(event, newPage);
+        onSetPage(event, newPage);
+      }}
+    >
+      <AngleRightIcon />
+    </Button>
+    <Button
+      variant={ButtonVariant.plain}
+      isDisabled={page === lastPage}
+      aria-label={toLastPage}
+      data-action="last"
+      onClick={event => {
+        onLastClick(event, lastPage);
+        onSetPage(event, lastPage);
+      }}
+    >
+      <AngleDoubleRightIcon />
+    </Button>
+  </nav>
+);
 
 Navigation.propTypes = propTypes;
 Navigation.defaultProps = defaultProps;

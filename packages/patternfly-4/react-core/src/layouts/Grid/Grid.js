@@ -26,7 +26,7 @@ const propTypes = {
   /** the number of columns all grid items should span on a xLarge device */
   xl: gridItemSpanValueShape,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

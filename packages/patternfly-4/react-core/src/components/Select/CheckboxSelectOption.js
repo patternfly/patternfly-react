@@ -12,20 +12,32 @@ const propTypes = {
   className: PropTypes.string,
   /** the value for the option */
   value: PropTypes.string,
+  /** internal index of the option */
+  index: PropTypes.number,
+  /** flag indicating if the option is checked */
+  isChecked: PropTypes.bool,
   /** flag indicating if the option is disabled */
   isDisabled: PropTypes.bool,
   /** Optional on click callback */
   onClick: PropTypes.func,
+  /** Internal callback for ref tracking */
+  sendRef: PropTypes.func,
+  /** Internal callback for keyboard navigation */
+  keyHandler: PropTypes.func,
   /** Additional props are spread to the container <button> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
   children: null,
   className: '',
   value: null,
+  index: undefined,
+  isChecked: undefined,
   isDisabled: false,
-  onClick: Function.prototype
+  onClick: Function.prototype,
+  sendRef: Function.prototype,
+  keyHandler: Function.prototype
 };
 
 class CheckboxSelectOption extends React.Component {
