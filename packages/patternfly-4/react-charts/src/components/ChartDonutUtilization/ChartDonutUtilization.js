@@ -2,16 +2,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { VictoryPie } from 'victory';
+import { map, property } from 'lodash';
+import { VictoryLegend } from 'victory';
+import { Data } from 'victory-core';
 import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme';
 import ChartContainer from '../ChartContainer/ChartContainer';
 import ChartLabel from '../ChartLabel/ChartLabel';
 import ChartLegend from '../ChartLegend/ChartLegend';
+import ChartPie from '../ChartPie/ChartPie';
 import { styles } from '../ChartTheme/themes/theme-donut-utilization';
-import ChartTooltip from '../ChartTooltip/ChartTooltip';
 import { ChartDonutUtilizationStaticTheme } from '../ChartTheme/ChartTheme';
-import { getChartTransform, getChartTx, getLegendTransform } from '../ChartUtils/chart-transforms';
-import { getDimensions } from '../ChartUtils/chart-legend';
+import { getChartOrigin, getChartOriginX, getChartOriginY } from '../ChartUtils/chart-origin';
+import { getLegendX, getLegendY } from '../ChartUtils/chart-legend';
 
 export const propTypes = {
   /**
@@ -22,16 +24,23 @@ export const propTypes = {
    * The data prop specifies the data to be plotted,
    * where data X-value is the slice label (string or number),
    * and Y-value is the corresponding number value represented by the slice
+   * Data should be in the form of a single data point.
+   * The data point may be any format you wish (depending on the `x` and `y` accessor props),
+   * but by default, an object with x and y properties is expected.
    *
-   * Note: The 'y' prop is expected to represent a percentage
+   * Note: The Y-value is expected to represent a percentage
    *
    * @example data={{ x: 'GBps capacity', y: 75 }}
    */
-  data: PropTypes.any,
+  data: PropTypes.object,
   /**
    * Defines a horizontal shift from the x coordinate. This should not be set manually.
    */
   donutDx: PropTypes.number,
+  /**
+   * Defines a vertical shift from the y coordinate. This should not be set manually.
+   */
+  donutDy: PropTypes.number,
   /**
    * Specifies the height of the donut chart. This value should be given as a
    * number of pixels.
@@ -94,7 +103,7 @@ export const propTypes = {
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  legendData: PropTypes.any,
+  legendData: PropTypes.arrayOf(PropTypes.object),
   /**
    * The orientation prop takes a string that defines whether legend data
    * are displayed in a row or column. When orientation is "horizontal",
@@ -145,17 +154,13 @@ export const propTypes = {
    * The dynamic portion of the chart will change colors when data reaches the given threshold. Colors may be
    * overridden, but defaults shall be provided.
    *
-   * @example thresholds={[{ value: 60, color: '#F0AB00' }, { value: 90, color: 'C9190B' }]}
+   * @example thresholds={[{ value: 60, color: '#F0AB00' }, { value: 90, color: '#C9190B' }]}
    */
-  thresholds: PropTypes.any,
+  thresholds: PropTypes.arrayOf(PropTypes.object),
   /**
    * The title for the donut chart
    */
   title: PropTypes.string,
-  /**
-   * Defines a horizontal shift from the x coordinate. This should not be set manually.
-   */
-  tooltipDx: PropTypes.number,
   /**
    * Specifies the width of the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
@@ -167,12 +172,35 @@ export const propTypes = {
    * Note: The parent container must be set to the same width in order to maintain the aspect ratio. Otherwise, the
    * innerRadius may need to be set when using this property.
    */
-  width: PropTypes.number
+  width: PropTypes.number,
+  /**
+   * The x prop specifies how to access the X value of each data point.
+   * If given as a function, it will be run on each data point, and returned value will be used.
+   * If given as an integer, it will be used as an array index for array-type data points.
+   * If given as a string, it will be used as a property key for object-type data points.
+   * If given as an array of strings, or a string containing dots or brackets,
+   * it will be used as a nested object property path (for details see Lodash docs for _.get).
+   * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
+   * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
+   */
+  x: PropTypes.oneOfType([PropTypes.func, PropTypes.number, PropTypes.string, PropTypes.array]),
+  /**
+   * The y prop specifies how to access the Y value of each data point.
+   * If given as a function, it will be run on each data point, and returned value will be used.
+   * If given as an integer, it will be used as an array index for array-type data points.
+   * If given as a string, it will be used as a property key for object-type data points.
+   * If given as an array of strings, or a string containing dots or brackets,
+   * it will be used as a nested object property path (for details see Lodash docs for _.get).
+   * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
+   * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
+   */
+  y: PropTypes.oneOfType([PropTypes.func, PropTypes.number, PropTypes.string, PropTypes.array])
 };
 
 const ChartDonutUtilization = ({
-  data = {},
-  donutDx,
+  data,
+  donutDx = 0,
+  donutDy = 0,
   donutOrientation = 'left',
   legendComponent,
   legendData,
@@ -184,8 +212,9 @@ const ChartDonutUtilization = ({
   themeVariant,
   thresholds,
   title,
-  tooltipDx,
   transform,
+  x,
+  y,
 
   // destructure last
   theme = getDonutUtilizationTheme(themeColor, themeVariant),
@@ -196,14 +225,20 @@ const ChartDonutUtilization = ({
   width = theme.pie.width,
   ...rest
 }) => {
-  // Returns computed data representing the pie chart percentage
+  // Returns computed data representing pie chart slices
   const getComputedData = () => {
-    const computedData = [{ ...data }];
+    const datum = getData();
+    const computedData = [{ x: datum[0]._x, y: datum[0]._y || 0 }];
     if (showStatic) {
-      const yVal = data.y ? data.y : 0;
-      computedData.push({ y: 100 - yVal });
+      computedData.push({ y: datum[0]._x ? Math.abs(100 - datum[0]._y) : 100 });
     }
     return computedData;
+  };
+
+  const getData = () => {
+    const datum = [{ ...data }];
+    const accessorTypes = ['x', 'y'];
+    return Data.formatData(datum, { x, y }, accessorTypes);
   };
 
   // Returns thresholds with default color scale
@@ -221,13 +256,40 @@ const ChartDonutUtilization = ({
     return result;
   };
 
-  // Returns legend component
-  const getLegendComponent = () => {
+  // Returns legend
+  const getLegend = () => {
     if (legendComponent) {
       return legendComponent;
     }
     if (legendData) {
-      return <ChartLegend data={legendData} orientation={legendOrientation} standalone={false} theme={theme} />;
+      return (
+        <ChartLegend
+          data={legendData}
+          orientation={legendOrientation}
+          standalone={false}
+          theme={theme}
+          x={getLegendX({
+            chartOrientation: donutOrientation,
+            legendOrientation,
+            legendWidth: legendDimensions.width,
+            theme,
+            width
+          })}
+          y={getLegendY({
+            chartDy: donutDy,
+            chartHeight: donutHeight,
+            chartOrientation: donutOrientation,
+            chartType: 'pie',
+            height,
+            legendData,
+            legendHeight: legendDimensions.height,
+            legendOrientation,
+            legendWidth: legendDimensions.width,
+            theme,
+            width
+          })}
+        />
+      );
     }
     return null;
   };
@@ -237,10 +299,12 @@ const ChartDonutUtilization = ({
     const newTheme = { ...theme };
 
     if (data) {
+      const datum = [{ ...data }];
       const donutThresholds = getDonutThresholds();
+      const yVal = map(datum, property(y || 'y'));
 
       for (let i = 0; i < donutThresholds.length; i++) {
-        if (data.y >= donutThresholds[i].value) {
+        if (yVal >= donutThresholds[i].value) {
           // Merge just the first color of dynamic (blue, green, etc.) with static (grey) for expected colorScale
           newTheme.pie.colorScale = [donutThresholds[i].color, ...ChartDonutUtilizationStaticTheme.pie.colorScale];
           newTheme.legend.colorScale = [
@@ -255,7 +319,7 @@ const ChartDonutUtilization = ({
 
   // Legend dimensions
   const legendDimensions = legendData
-    ? getDimensions({
+    ? VictoryLegend.getDimensions({
         data: legendData,
         orientation: legendOrientation,
         theme
@@ -264,79 +328,60 @@ const ChartDonutUtilization = ({
 
   const chart = (
     <React.Fragment>
-      <g
-        transform={
-          !legendComponent
-            ? getChartTransform({
-                chartDx: donutDx,
-                chartOrientation: donutOrientation,
-                chartWidth: donutWidth,
-                width
-              })
-            : ''
-        }
-      >
-        <ChartLabel
-          style={[styles.label.title, styles.label.subTitle]}
-          text={title && subTitle ? [title, subTitle] : title}
-          textAnchor="middle"
-          verticalAnchor="middle"
-          x={donutWidth / 2}
-          y={donutHeight / 2}
-        />
-        <VictoryPie
-          data={getComputedData()}
-          height={donutHeight}
-          innerRadius={innerRadius > 0 ? innerRadius : 0}
-          labelComponent={
-            <ChartTooltip
-              theme={theme}
-              dx={getChartTx({
-                chartDx: tooltipDx,
-                chartOrientation: donutOrientation,
-                chartWidth: donutWidth,
-                width
-              })}
-            />
-          }
-          standalone={false}
-          theme={getThresholdTheme()}
-          width={donutWidth}
-          {...rest}
-        />
-      </g>
-      <g
-        transform={
-          !legendComponent
-            ? getLegendTransform({
-                chartHeight: donutHeight,
-                chartOrientation: donutOrientation,
-                height,
-                legendData,
-                legendHeight: legendDimensions.height,
-                legendOrientation,
-                legendWidth: legendDimensions.width,
-                theme,
-                width
-              })
-            : ''
-        }
-      >
-        {getLegendComponent()}
-      </g>
+      <ChartLabel
+        style={[styles.label.title, styles.label.subTitle]}
+        text={title && subTitle ? [title, subTitle] : title}
+        textAnchor="middle"
+        verticalAnchor="middle"
+        x={getChartOriginX({
+          chartDx: donutDx,
+          chartWidth: donutWidth,
+          chartOrientation: donutOrientation,
+          width
+        })}
+        y={getChartOriginY({
+          chartDy: donutDy,
+          chartHeight: donutHeight,
+          chartOrientation: donutOrientation,
+          height
+        })}
+      />
+      <ChartPie
+        data={getComputedData()}
+        height={donutHeight}
+        innerRadius={innerRadius > 0 ? innerRadius : 0}
+        origin={getChartOrigin({
+          chartDx: donutDx,
+          chartDy: donutDy,
+          chartHeight: donutHeight,
+          chartWidth: donutWidth,
+          chartOrientation: donutOrientation,
+          height,
+          width
+        })}
+        standalone={false}
+        theme={getThresholdTheme()}
+        width={donutWidth}
+        {...rest}
+      />
     </React.Fragment>
   );
+
   return standalone ? (
     <ChartContainer height={height} width={width}>
       {chart}
+      {getLegend()}
     </ChartContainer>
   ) : (
-    chart
+    <React.Fragment>
+      {chart}
+      {getLegend()}
+    </React.Fragment>
   );
 };
 
-// Note: VictoryPie.role must be hoisted
-hoistNonReactStatics(ChartDonutUtilization, VictoryPie);
+// Note: ChartPie.role must be hoisted
+hoistNonReactStatics(ChartDonutUtilization, ChartPie);
 ChartDonutUtilization.propTypes = propTypes;
 
 export default ChartDonutUtilization;

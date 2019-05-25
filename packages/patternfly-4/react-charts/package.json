@@ -50,7 +50,8 @@
     "hoist-non-react-statics": "^3.3.0",
     "lodash": "^4.17.11",
     "victory": "^32.2.3",
-    "victory-core": "^32.2.3"
+    "victory-core": "^32.2.3",
+    "victory-legend": "^32.2.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

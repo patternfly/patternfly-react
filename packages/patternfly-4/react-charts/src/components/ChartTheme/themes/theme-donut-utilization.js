@@ -13,10 +13,7 @@ export const styles = {
     orientation: 'vertical'
   },
   thresholds: {
-    colorScale: [
-      '#F0AB00',
-      'C9190B'
-    ],
+    colorScale: ['#F0AB00', '#C9190B']
   }
 };
 
@@ -31,17 +28,11 @@ export const dynamicDonut = {
 
 export const staticDonut = {
   legend: {
-    colorScale: [
-      '#EDEDED',
-      '#D2D2D2',
-      '#BBBBBB'
-    ]
+    colorScale: ['#EDEDED', '#D2D2D2', '#BBBBBB']
   },
   pie: {
-    colorScale: [
-      '#EDEDED'
-    ]
+    colorScale: ['#EDEDED']
   }
-}
+};
 
 export default dynamicDonut;

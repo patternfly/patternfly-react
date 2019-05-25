@@ -1,14 +1,12 @@
 /* eslint-disable react/require-default-props,react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Data } from 'victory-core';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { VictoryPie } from 'victory';
 import { getDonutThresholdDynamicTheme, getDonutThresholdStaticTheme } from '../ChartUtils/chart-theme';
 import ChartContainer from '../ChartContainer/ChartContainer';
-import { dynamicDonut as ChartDonutThresholdDynamicTheme } from '../ChartTheme/themes/theme-donut-threshold';
-import ChartDonutUtilization from '../ChartDonutUtilization/ChartDonutUtilization';
-import ChartTooltip from '../ChartTooltip/ChartTooltip';
-import { getChartTransform, getChartTx } from '../ChartUtils/chart-transforms';
+import ChartPie from '../ChartPie/ChartPie';
+import { getChartOrigin } from '../ChartUtils/chart-origin';
 
 export const propTypes = {
   /**
@@ -23,11 +21,11 @@ export const propTypes = {
    * Each data point may be any format you wish (depending on the `x` and `y` accessor props),
    * but by default, an object with x and y properties is expected.
    *
-   * Note: The 'y' prop is expected to represent a percentage
+   * Note: The Y-value is expected to represent a percentage
    *
    * @example data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
    */
-  data: PropTypes.any,
+  data: PropTypes.arrayOf(PropTypes.object),
   /**
    * Specifies the height of the donut threshold chart. This value should be given as a
    * number of pixels.
@@ -57,9 +55,9 @@ export const propTypes = {
    */
   donutWidth: PropTypes.number,
   /**
-   * The utilization donut chart to render with the threshold donut chart.
+   * The utilization donut chart to render with the threshold donut chart
    */
-  children: PropTypes.oneOfType([PropTypes.objectOf(ChartDonutUtilization)]),
+  children: PropTypes.node,
   /**
    * Specifies the height the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
@@ -110,7 +108,29 @@ export const propTypes = {
    *
    * Note: innerRadius may need to be set when using this property.
    */
-  width: PropTypes.number
+  width: PropTypes.number,
+  /**
+   * The x prop specifies how to access the X value of each data point.
+   * If given as a function, it will be run on each data point, and returned value will be used.
+   * If given as an integer, it will be used as an array index for array-type data points.
+   * If given as a string, it will be used as a property key for object-type data points.
+   * If given as an array of strings, or a string containing dots or brackets,
+   * it will be used as a nested object property path (for details see Lodash docs for _.get).
+   * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
+   * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
+   */
+  x: PropTypes.oneOfType([PropTypes.func, PropTypes.number, PropTypes.string, PropTypes.array]),
+  /**
+   * The y prop specifies how to access the Y value of each data point.
+   * If given as a function, it will be run on each data point, and returned value will be used.
+   * If given as an integer, it will be used as an array index for array-type data points.
+   * If given as a string, it will be used as a property key for object-type data points.
+   * If given as an array of strings, or a string containing dots or brackets,
+   * it will be used as a nested object property path (for details see Lodash docs for _.get).
+   * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
+   * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
+   */
+  y: PropTypes.oneOfType([PropTypes.func, PropTypes.number, PropTypes.string, PropTypes.array])
 };
 
 const ChartDonutThreshold = ({
@@ -121,6 +141,8 @@ const ChartDonutThreshold = ({
   standalone = true,
   themeColor,
   themeVariant,
+  x,
+  y,
 
   // destructure last
   theme = getDonutThresholdStaticTheme(themeColor, themeVariant),
@@ -131,95 +153,85 @@ const ChartDonutThreshold = ({
   width = theme.pie.width,
   ...rest
 }) => {
-  // Returns computed data representing pie chart percentages
+  // Returns computed data representing pie chart slices
   const getComputedData = () => {
     const computedData = [];
-    data.forEach(datum => {
-      const i = computedData.length;
-      computedData.push({
-        x: datum.x,
-        y: i > 0 ? datum.y - data[i - 1].y : datum.y
-      });
+    const datum = getData(data);
+    let prevYVal = 0;
+    datum.forEach(dataPoint => {
+      computedData.push({ x: dataPoint._x, y: dataPoint._y ? Math.abs(dataPoint._y - prevYVal) : 0 });
+      prevYVal = dataPoint._y;
     });
-    if (computedData.length) {
-      computedData.push({ y: 100 - data[computedData.length - 1].y });
-    }
+    computedData.push({ y: prevYVal ? Math.abs(100 - prevYVal) : 0 });
     return computedData;
   };
 
-  const getDonutDx = orientation =>
-    orientation === 'right' ? -(theme.pie.height - ChartDonutThresholdDynamicTheme.pie.height) / 2 : 0;
+  const getData = datum => {
+    const accessorTypes = ['x', 'y'];
+    return Data.formatData(datum, { x, y }, accessorTypes);
+  };
 
-  const getTooltipDx = orientation => {
+  // Returns the horizontal shift for the dynamic utilization donut cart
+  const getDynamicDonutDx = (dynamicTheme, orientation) => {
     switch (orientation) {
       case 'left':
-        return (theme.pie.height - ChartDonutThresholdDynamicTheme.pie.height) / 2;
+        return Math.round((theme.pie.width - dynamicTheme.pie.width) / 2);
+      case 'right':
+        return -Math.round((theme.pie.width - dynamicTheme.pie.width) / 2);
       default:
-        return getDonutDx(orientation);
+        return 0;
     }
   };
 
-  // Returns tranform coordinate for dynamic donut chart
-  const getTransform = () => {
-    const ty = Math.round((theme.pie.width - ChartDonutThresholdDynamicTheme.pie.width) / 2);
-    let tx = 0;
+  // Returns the vertical shift for the dynamic utilization donut cart
+  const getDynamicDonutDy = dynamicTheme => Math.round((theme.pie.height - dynamicTheme.pie.height) / 2);
 
-    if (donutOrientation === 'left') {
-      tx = Math.round((theme.pie.height - ChartDonutThresholdDynamicTheme.pie.height) / 2);
-    }
-    return `translate(${tx}, ${ty})`;
-  };
-
-  const renderChildren = () => {
-    return React.Children.toArray(children).map(child => {
-      const dataVal = child.props.data ? child.props.data.y : 0;
+  // Render dynamic utilization donut cart
+  const renderChildren = () =>
+    React.Children.toArray(children).map(child => {
+      const datum = getData([{ ...child.props.data }]);
       const orientation = child.props.donutOrientation || donutOrientation;
-      const dynamicTheme = getDonutThresholdDynamicTheme(
-        child.props.themeColor || themeColor,
-        child.props.themeVariant || themeVariant
-      );
+      const dynamicTheme =
+        child.props.theme ||
+        getDonutThresholdDynamicTheme(child.props.themeColor || themeColor, child.props.themeVariant || themeVariant);
       return React.cloneElement(child, {
-        donutDx: child.props.donutDx || getDonutDx(orientation),
-        donutHeight: child.props.donutHeight || ChartDonutThresholdDynamicTheme.pie.height,
+        donutDx: child.props.donutDx || getDynamicDonutDx(dynamicTheme, orientation),
+        donutDy: child.props.donutDy || getDynamicDonutDy(dynamicTheme),
+        donutHeight: child.props.donutHeight || dynamicTheme.pie.height,
         donutOrientation: orientation,
-        donutWidth: child.props.donutWidth || ChartDonutThresholdDynamicTheme.pie.width,
-        endAngle: child.props.endAngle || 360 * (dataVal / 100),
+        donutWidth: child.props.donutWidth || dynamicTheme.pie.width,
+        endAngle: child.props.endAngle || 360 * (datum[0]._y ? datum[0]._y / 100 : 100),
         height: child.props.height || height,
-        showStatic: child.props.showStatic !== undefined || false,
+        showStatic: child.props.showStatic || false,
         standalone: false,
-        theme: child.props.theme || dynamicTheme,
-        tooltipDx: child.props.tooltipDx || getTooltipDx(orientation),
+        theme: dynamicTheme,
         width: child.props.width || width
       });
     });
-  };
 
+  // Static threshold dount chart
   const chart = (
     <React.Fragment>
-      <g transform={getChartTransform({ chartWidth: donutWidth, chartOrientation: donutOrientation, width })}>
-        <VictoryPie
-          data={getComputedData()}
-          height={donutHeight}
-          innerRadius={innerRadius > 0 ? innerRadius : 0}
-          labelComponent={
-            <ChartTooltip
-              theme={theme}
-              dx={getChartTx({
-                chartOrientation: donutOrientation,
-                chartWidth: donutWidth,
-                width
-              })}
-            />
-          }
-          standalone={false}
-          theme={theme}
-          width={donutWidth}
-          {...rest}
-        />
-      </g>
-      <g transform={getTransform()}>{renderChildren()}</g>
+      <ChartPie
+        data={getComputedData()}
+        height={donutHeight}
+        innerRadius={innerRadius > 0 ? innerRadius : 0}
+        origin={getChartOrigin({
+          chartHeight: donutHeight,
+          chartWidth: donutWidth,
+          chartOrientation: donutOrientation,
+          height,
+          width
+        })}
+        standalone={false}
+        theme={theme}
+        width={donutWidth}
+        {...rest}
+      />
+      {renderChildren()}
     </React.Fragment>
   );
+
   return standalone ? (
     <ChartContainer width={width} height={height}>
       {chart}
@@ -229,8 +241,8 @@ const ChartDonutThreshold = ({
   );
 };
 
-// Note: VictoryPie.role must be hoisted
-hoistNonReactStatics(ChartDonutThreshold, VictoryPie);
+// Note: ChartPie.role must be hoisted
+hoistNonReactStatics(ChartDonutThreshold, ChartPie);
 ChartDonutThreshold.propTypes = propTypes;
 
 export default ChartDonutThreshold;

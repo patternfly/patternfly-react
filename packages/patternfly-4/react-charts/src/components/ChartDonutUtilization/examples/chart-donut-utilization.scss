@@ -1,5 +1,20 @@
 .ws-preview {
   & > * {
+    .donut-threshold-chart-horz {
+      height: 230px;
+      width: 492px;
+    }
+
+    .donut-threshold-chart-horz-sm {
+      height: 230px;
+      width: 475px;
+    }
+
+    .donut-threshold-chart-vert {
+      height: 325px;
+      width: 275px;
+    }
+
     .donut-utilization-chart {
       height: 230px;
       width: 230px;

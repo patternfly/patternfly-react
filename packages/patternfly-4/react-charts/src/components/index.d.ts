@@ -5,7 +5,6 @@ export * from './ChartAxis';
 export * from './ChartBar';
 export * from './ChartContainer';
 export * from './ChartDonut';
-export * from './ChartDonutThreshold';
 export * from './ChartDonutUtilization';
 export * from './ChartGroup';
 export * from './ChartLabel';

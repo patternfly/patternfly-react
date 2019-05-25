@@ -5,32 +5,11 @@ exports[`Chart 1`] = `
   height={230}
   width={230}
 >
-  <ChartLabel
-    style={
-      Array [
-        Object {
-          "fontSize": 26,
-        },
-        Object {
-          "fill": "#bbb",
-          "fontSize": 16,
-        },
-      ]
-    }
-    textAnchor="middle"
-    verticalAnchor="middle"
-    x={115}
-    y={115}
-  />
   <ChartPie
     data={
       Array [
         Object {
-          "x": 0,
-          "y": Object {},
-        },
-        Object {
-          "y": 100,
+          "y": 0,
         },
       ]
     }
@@ -310,9 +289,9 @@ exports[`Chart 1`] = `
         "legend": Object {
           "colorScale": Array [
             "#06c",
-            "#EDEDED",
-            "#D2D2D2",
-            "#BBBBBB",
+            "#bee1f4",
+            "#73bcf7",
+            "#0066ff",
           ],
           "gutter": 20,
           "orientation": "horizontal",
@@ -368,8 +347,10 @@ exports[`Chart 1`] = `
         },
         "pie": Object {
           "colorScale": Array [
-            "#06c",
             "#EDEDED",
+            "#D2D2D2",
+            "#BBBBBB",
+            "#0066ff",
           ],
           "height": 230,
           "padAngle": 1,
@@ -502,32 +483,11 @@ exports[`Chart 2`] = `
   height={230}
   width={230}
 >
-  <ChartLabel
-    style={
-      Array [
-        Object {
-          "fontSize": 26,
-        },
-        Object {
-          "fill": "#bbb",
-          "fontSize": 16,
-        },
-      ]
-    }
-    textAnchor="middle"
-    verticalAnchor="middle"
-    x={115}
-    y={115}
-  />
   <ChartPie
     data={
       Array [
         Object {
-          "x": 0,
-          "y": Object {},
-        },
-        Object {
-          "y": 100,
+          "y": 0,
         },
       ]
     }
@@ -807,9 +767,9 @@ exports[`Chart 2`] = `
         "legend": Object {
           "colorScale": Array [
             "#06c",
-            "#EDEDED",
-            "#D2D2D2",
-            "#BBBBBB",
+            "#bee1f4",
+            "#73bcf7",
+            "#0066ff",
           ],
           "gutter": 20,
           "orientation": "horizontal",
@@ -865,8 +825,10 @@ exports[`Chart 2`] = `
         },
         "pie": Object {
           "colorScale": Array [
-            "#06c",
             "#EDEDED",
+            "#D2D2D2",
+            "#BBBBBB",
+            "#0066ff",
           ],
           "height": 230,
           "padAngle": 1,
@@ -999,45 +961,23 @@ exports[`renders component data 1`] = `
   height={200}
   width={200}
 >
-  <ChartLabel
-    style={
-      Array [
-        Object {
-          "fontSize": 26,
-        },
-        Object {
-          "fill": "#bbb",
-          "fontSize": 16,
-        },
-      ]
-    }
-    textAnchor="middle"
-    verticalAnchor="middle"
-    x={115}
-    y={115}
-  />
   <ChartPie
     data={
       Array [
         Object {
-          "x": 0,
-          "y": Object {
-            "0": Object {
-              "x": "Cats",
-              "y": 35,
-            },
-            "1": Object {
-              "x": "Dogs",
-              "y": 55,
-            },
-            "2": Object {
-              "x": "Birds",
-              "y": 10,
-            },
-          },
+          "x": "Cats",
+          "y": 35,
         },
         Object {
-          "y": 100,
+          "x": "Dogs",
+          "y": 20,
+        },
+        Object {
+          "x": "Birds",
+          "y": 45,
+        },
+        Object {
+          "y": 90,
         },
       ]
     }
@@ -1317,9 +1257,9 @@ exports[`renders component data 1`] = `
         "legend": Object {
           "colorScale": Array [
             "#06c",
-            "#EDEDED",
-            "#D2D2D2",
-            "#BBBBBB",
+            "#bee1f4",
+            "#73bcf7",
+            "#0066ff",
           ],
           "gutter": 20,
           "orientation": "horizontal",
@@ -1375,8 +1315,10 @@ exports[`renders component data 1`] = `
         },
         "pie": Object {
           "colorScale": Array [
-            "#06c",
             "#EDEDED",
+            "#D2D2D2",
+            "#BBBBBB",
+            "#0066ff",
           ],
           "height": 230,
           "padAngle": 1,

@@ -19,41 +19,37 @@ import {
 } from '../ChartTheme';
 
 // Apply custom properties to color and base themes
-export function getCustomTheme(themeColor, themeVariant, customTheme) {
-  return merge(getTheme(themeColor, themeVariant), customTheme);
-}
+export const getCustomTheme = (themeColor, themeVariant, customTheme) =>
+  merge(getTheme(themeColor, themeVariant), customTheme);
 
 // Apply donut properties onto pie chart theme
-export function getDonutTheme(themeColor, themeVariant) {
-  return getCustomTheme(themeColor, themeVariant, ChartDonutTheme);
-}
+export const getDonutTheme = (themeColor, themeVariant) => getCustomTheme(themeColor, themeVariant, ChartDonutTheme);
 
 // Apply dynamic donut threshold properties onto pie chart theme
-export function getDonutThresholdDynamicTheme(themeColor, themeVariant) {
+export const getDonutThresholdDynamicTheme = (themeColor, themeVariant) => {
   const theme = getCustomTheme(themeColor, themeVariant, ChartDonutThresholdDynamicTheme);
 
   // Merge just the first color of dynamic (blue, green, etc.) with static (grey) for expected colorScale
   theme.legend.colorScale = [theme.pie.colorScale[0], ...ChartDonutThresholdDynamicTheme.legend.colorScale];
   return theme;
-}
+};
 
 // Apply static donut threshold properties onto pie chart theme
-export function getDonutThresholdStaticTheme(themeColor, themeVariant) {
-  return getCustomTheme(themeColor, themeVariant, ChartDonutThresholdStaticTheme);
-}
+export const getDonutThresholdStaticTheme = (themeColor, themeVariant) =>
+  getCustomTheme(themeColor, themeVariant, ChartDonutThresholdStaticTheme);
 
 // Apply donut utilization properties onto pie chart theme
-export function getDonutUtilizationTheme(themeColor, themeVariant) {
+export const getDonutUtilizationTheme = (themeColor, themeVariant) => {
   const theme = getCustomTheme(themeColor, themeVariant, ChartDonutUtilizationDynamicTheme);
 
   // Merge just the first color of dynamic (blue, green, etc.) with static (grey) for expected colorScale
   theme.pie.colorScale = [theme.pie.colorScale[0], ...ChartDonutUtilizationStaticTheme.pie.colorScale];
   theme.legend.colorScale = [theme.legend.colorScale[0], ...ChartDonutUtilizationStaticTheme.legend.colorScale];
   return theme;
-}
+};
 
 // Returns dark theme colors
-export function getDarkThemeColors(themeColor) {
+export const getDarkThemeColors = themeColor => {
   switch (themeColor) {
     case ChartThemeColor.blue:
       return ThemeColorDarkBlue;
@@ -66,10 +62,10 @@ export function getDarkThemeColors(themeColor) {
     default:
       return ThemeColorDarkBlue;
   }
-}
+};
 
 // Returns light theme colors
-export function getLightThemeColors(themeColor) {
+export const getLightThemeColors = themeColor => {
   switch (themeColor) {
     case ChartThemeColor.blue:
       return ThemeColorLightBlue;
@@ -82,10 +78,10 @@ export function getLightThemeColors(themeColor) {
     default:
       return ThemeColorLightBlue;
   }
-}
+};
 
 // Applies theme color and variant to base theme
-export function getTheme(themeColor, themeVariant) {
+export const getTheme = (themeColor, themeVariant) => {
   // Deep clone
   const baseTheme = {
     ...JSON.parse(JSON.stringify(ChartBaseTheme))
@@ -98,4 +94,4 @@ export function getTheme(themeColor, themeVariant) {
     default:
       return merge(baseTheme, getLightThemeColors(themeColor));
   }
-}
+};

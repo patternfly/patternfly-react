@@ -3,10 +3,7 @@
 // Dynamic properties to extend Victory theme
 export const dynamicDonut = {
   legend: {
-    colorScale: [
-      '#D2D2D2',
-      '#BBBBBB'
-    ]
+    colorScale: ['#D2D2D2', '#BBBBBB']
   },
   pie: {
     height: 202,
@@ -17,11 +14,7 @@ export const dynamicDonut = {
 // Static (threshold) properties to extend Victory theme
 export const staticDonut = {
   pie: {
-    colorScale: [
-      '#EDEDED',
-      '#D2D2D2',
-      '#BBBBBB'
-    ],
+    colorScale: ['#EDEDED', '#D2D2D2', '#BBBBBB'],
     height: 230,
     padAngle: 1,
     width: 230

@@ -1,12 +1,5 @@
-export {
-  getChartPadding,
-  getChartTransform,
-  getLegendPadding,
-  getLegendTx,
-  getLegendTy,
-  getLegendTransform
-} from './chart-transforms';
-
+export { getLegendX, getLegendY } from './chart-legend';
+export { getChartOrigin, getChartOriginX, getChartOriginY } from './chart-origin';
 export {
   getCustomTheme,
   getDonutTheme,
