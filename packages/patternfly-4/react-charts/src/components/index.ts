@@ -4,7 +4,6 @@ export * from './ChartArea';
 export * from './ChartAxis';
 export * from './ChartBar';
 export * from './ChartContainer';
-export * from './ChartZoomContainer';
 export * from './ChartDonut';
 export * from './ChartDonutUtilization';
 export * from './ChartGroup';
