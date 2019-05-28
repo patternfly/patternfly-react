@@ -10,7 +10,10 @@ exports[`optionsMenu expanded 1`] = `
   isPlain={false}
   menuItems={
     Array [
-      <OptionsMenuItemsGroup>
+      <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
+      >
         <OptionsMenuItem
           className=""
           id=""
@@ -51,7 +54,10 @@ exports[`optionsMenu expanded 1`] = `
       <OptionsMenuSeparator
         className=""
       />,
-      <OptionsMenuItemsGroup>
+      <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
+      >
         <OptionsMenuItem
           className=""
           id=""
@@ -151,10 +157,15 @@ exports[`optionsMenu expanded 1`] = `
       className="pf-c-options-menu__menu"
     >
       <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
         key="first group"
       >
         <li>
-          <ul>
+          <ul
+            aria-label=""
+            className=""
+          >
             <OptionsMenuItem
               className=""
               id=""
@@ -166,7 +177,6 @@ exports[`optionsMenu expanded 1`] = `
               <li>
                 <button
                   aria-disabled={false}
-                  aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
                   onClick={[Function]}
@@ -218,7 +228,6 @@ exports[`optionsMenu expanded 1`] = `
               <li>
                 <button
                   aria-disabled={false}
-                  aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
                   onClick={[Function]}
@@ -270,7 +279,6 @@ exports[`optionsMenu expanded 1`] = `
               <li>
                 <button
                   aria-disabled={true}
-                  aria-selected={false}
                   className="pf-c-options-menu__menu-item pf-m-disabled"
                   id=""
                   onClick={[Function]}
@@ -322,7 +330,6 @@ exports[`optionsMenu expanded 1`] = `
               <li>
                 <button
                   aria-disabled={false}
-                  aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
                   onClick={[Function]}
@@ -376,10 +383,15 @@ exports[`optionsMenu expanded 1`] = `
         />
       </OptionsMenuSeparator>
       <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
         key="second group"
       >
         <li>
-          <ul>
+          <ul
+            aria-label=""
+            className=""
+          >
             <OptionsMenuItem
               className=""
               id=""
@@ -391,7 +403,6 @@ exports[`optionsMenu expanded 1`] = `
               <li>
                 <button
                   aria-disabled={false}
-                  aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
                   onClick={[Function]}
@@ -443,7 +454,6 @@ exports[`optionsMenu expanded 1`] = `
               <li>
                 <button
                   aria-disabled={false}
-                  aria-selected={false}
                   className="pf-c-options-menu__menu-item"
                   id=""
                   onClick={[Function]}
@@ -502,7 +512,10 @@ exports[`optionsMenu open up 1`] = `
   isPlain={false}
   menuItems={
     Array [
-      <OptionsMenuItemsGroup>
+      <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
+      >
         <OptionsMenuItem
           className=""
           id=""
@@ -543,7 +556,10 @@ exports[`optionsMenu open up 1`] = `
       <OptionsMenuSeparator
         className=""
       />,
-      <OptionsMenuItemsGroup>
+      <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
+      >
         <OptionsMenuItem
           className=""
           id=""
@@ -652,7 +668,10 @@ exports[`optionsMenu plain 1`] = `
   isPlain={true}
   menuItems={
     Array [
-      <OptionsMenuItemsGroup>
+      <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
+      >
         <OptionsMenuItem
           className=""
           id=""
@@ -693,7 +712,10 @@ exports[`optionsMenu plain 1`] = `
       <OptionsMenuSeparator
         className=""
       />,
-      <OptionsMenuItemsGroup>
+      <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
+      >
         <OptionsMenuItem
           className=""
           id=""
@@ -802,7 +824,10 @@ exports[`optionsMenu regular 1`] = `
   isPlain={false}
   menuItems={
     Array [
-      <OptionsMenuItemsGroup>
+      <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
+      >
         <OptionsMenuItem
           className=""
           id=""
@@ -843,7 +868,10 @@ exports[`optionsMenu regular 1`] = `
       <OptionsMenuSeparator
         className=""
       />,
-      <OptionsMenuItemsGroup>
+      <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
+      >
         <OptionsMenuItem
           className=""
           id=""
@@ -952,7 +980,10 @@ exports[`optionsMenu right aligned + open up 1`] = `
   isPlain={false}
   menuItems={
     Array [
-      <OptionsMenuItemsGroup>
+      <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
+      >
         <OptionsMenuItem
           className=""
           id=""
@@ -993,7 +1024,10 @@ exports[`optionsMenu right aligned + open up 1`] = `
       <OptionsMenuSeparator
         className=""
       />,
-      <OptionsMenuItemsGroup>
+      <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
+      >
         <OptionsMenuItem
           className=""
           id=""
@@ -1102,7 +1136,10 @@ exports[`optionsMenu right aligned 1`] = `
   isPlain={false}
   menuItems={
     Array [
-      <OptionsMenuItemsGroup>
+      <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
+      >
         <OptionsMenuItem
           className=""
           id=""
@@ -1143,7 +1180,10 @@ exports[`optionsMenu right aligned 1`] = `
       <OptionsMenuSeparator
         className=""
       />,
-      <OptionsMenuItemsGroup>
+      <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
+      >
         <OptionsMenuItem
           className=""
           id=""
@@ -1252,7 +1292,10 @@ exports[`optionsMenu text 1`] = `
   isPlain={false}
   menuItems={
     Array [
-      <OptionsMenuItemsGroup>
+      <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
+      >
         <OptionsMenuItem
           className=""
           id=""
@@ -1293,7 +1336,10 @@ exports[`optionsMenu text 1`] = `
       <OptionsMenuSeparator
         className=""
       />,
-      <OptionsMenuItemsGroup>
+      <OptionsMenuItemsGroup
+        ariaLabel=""
+        className=""
+      >
         <OptionsMenuItem
           className=""
           id=""

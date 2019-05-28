@@ -20,12 +20,22 @@ module.exports = {
             ]
           }
         ],
+        'import/no-extraneous-dependencies': 'off',
         'import/extensions': 'off'
+      }
+    },
+    {
+      files: ['**/examples/*.js'],
+      rules: {
+        'react/prefer-stateless-function': 'off'
       }
     }
   ],
   settings: {
     'import/resolver': {
+      node: {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
       webpack: {
         config: {
           resolve: {

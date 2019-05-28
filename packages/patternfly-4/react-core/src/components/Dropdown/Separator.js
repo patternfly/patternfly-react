@@ -1,10 +1,10 @@
 import React from 'react';
-import DropdownItem from './DropdownItem';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Dropdown/dropdown.css';
 import { css } from '@patternfly/react-styles';
 import { componentShape } from '../../helpers/componentShape';
 import { DropdownArrowContext } from './dropdownConstants';
+import DropdownItem from './DropdownItem';
 
 const Separator = ({ className, ...props }) => (
   <DropdownArrowContext.Consumer>
@@ -34,7 +34,7 @@ Separator.propTypes = {
   /** Default hyperlink location */
   href: PropTypes.string,
   /** Additional props are passed to the DropdownItem */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 Separator.defaultProps = {
   children: null,

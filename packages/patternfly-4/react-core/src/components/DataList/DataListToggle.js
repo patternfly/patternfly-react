@@ -38,6 +38,8 @@ DataListToggle.propTypes = {
   isExpanded: PropTypes.bool,
   /** Identify the DataList toggle number */
   id: PropTypes.string.isRequired,
+  /** Id for the row */
+  rowid: PropTypes.string,
   /** Adds accessible text to the DataList toggle */
   'aria-labelledby': PropTypes.string,
   /** Adds accessible text to the DataList toggle */
@@ -45,10 +47,11 @@ DataListToggle.propTypes = {
   /** Allows users of some screen readers to shift focus to the controlled element. Should be used when the controlled contents are not adjacent to the toggle that controls them. */
   'aria-controls': PropTypes.string,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 DataListToggle.defaultProps = {
+  rowid: '',
   'aria-controls': '',
   'aria-label': 'Details',
   'aria-labelledby': '',

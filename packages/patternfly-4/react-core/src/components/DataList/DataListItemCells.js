@@ -1,6 +1,6 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
 
 const DataListItemCells = ({ className, dataListCells, rowid, ...props }) => (
@@ -14,12 +14,15 @@ DataListItemCells.propTypes = {
   className: PropTypes.string,
   /** Array of <DataListCell> nodes that are rendered one after the other. */
   dataListCells: PropTypes.arrayOf(PropTypes.node).isRequired,
+  /** Id for the row */
+  rowid: PropTypes.string,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 DataListItemCells.defaultProps = {
-  className: ''
+  className: '',
+  rowid: ''
 };
 
 export default DataListItemCells;

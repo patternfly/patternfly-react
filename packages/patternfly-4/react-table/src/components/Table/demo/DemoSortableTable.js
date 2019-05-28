@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { Table, TableHeader, TableBody, TableVariant, sortable, SortByDirection } from '@patternfly/react-table';
 
 export default class DemoSortableTable extends React.Component {
@@ -20,7 +21,13 @@ export default class DemoSortableTable extends React.Component {
   }
 
   onSort(_event, index, direction) {
-    const sortedRows = this.state.rows.sort((a, b) => (a[index] < b[index] ? -1 : a[index] > b[index] ? 1 : 0));
+    const sortedRows = this.state.rows.sort((a, b) => {
+      if (a[index] < b[index]) {
+        return -1;
+      }
+      return a[index] > b[index] ? 1 : 0;
+    });
+
     this.setState({
       sortBy: {
         index,

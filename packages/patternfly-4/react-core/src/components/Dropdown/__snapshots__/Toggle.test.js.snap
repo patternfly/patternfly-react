@@ -22,8 +22,11 @@ exports[`Dropdown toggle 1`] = `
     isHovered={false}
     isOpen={false}
     isPlain={false}
+    isSplitButton={false}
+    onEnter={[Function]}
     onToggle={[Function]}
     parentRef={null}
+    type={null}
   >
     <button
       aria-expanded={false}
@@ -95,8 +98,11 @@ exports[`Kebab toggle 1`] = `
     isHovered={false}
     isOpen={false}
     isPlain={false}
+    isSplitButton={false}
+    onEnter={[Function]}
     onToggle={[Function]}
     parentRef={null}
+    type={null}
   >
     <button
       aria-expanded={false}

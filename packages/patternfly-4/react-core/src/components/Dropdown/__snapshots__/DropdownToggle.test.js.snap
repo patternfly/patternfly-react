@@ -22,8 +22,11 @@ exports[`state active 1`] = `
     isHovered={false}
     isOpen={false}
     isPlain={false}
+    isSplitButton={false}
+    onEnter={[Function]}
     onToggle={[Function]}
     parentRef={<div />}
+    type={null}
   >
     <button
       aria-expanded={false}
@@ -93,8 +96,11 @@ exports[`state focus 1`] = `
     isHovered={false}
     isOpen={false}
     isPlain={false}
+    isSplitButton={false}
+    onEnter={[Function]}
     onToggle={[Function]}
     parentRef={<div />}
+    type={null}
   >
     <button
       aria-expanded={false}
@@ -164,8 +170,11 @@ exports[`state hover 1`] = `
     isHovered={true}
     isOpen={false}
     isPlain={false}
+    isSplitButton={false}
+    onEnter={[Function]}
     onToggle={[Function]}
     parentRef={<div />}
+    type={null}
   >
     <button
       aria-expanded={false}

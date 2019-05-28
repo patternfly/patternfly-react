@@ -12,7 +12,7 @@ const propTypes = {
   /** content rendered inside the Level layout */
   children: PropTypes.node,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 const defaultProps = {
   gutter: null,

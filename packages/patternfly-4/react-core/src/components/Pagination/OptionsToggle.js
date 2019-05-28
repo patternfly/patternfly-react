@@ -14,18 +14,19 @@ const OptionsToggle = ({
   widgetId,
   onToggle,
   isOpen,
-  toggleTemplate: ToggleTemplate,
+  toggleTemplate: ToggleTemplate
 }) => (
   <div className={css(styles.optionsMenuToggle, getModifier(styles, 'plain'), getModifier(styles, 'text'))}>
     <span className={css(styles.optionsMenuToggleText)}>
-      {
-          typeof ToggleTemplate === 'string' ? 
-            fillTemplate(ToggleTemplate, { firstIndex, lastIndex, itemCount, itemsTitle }) :
-            <ToggleTemplate firstIndex={firstIndex} lastIndex={lastIndex} itemCount={itemCount} itemsTitle={itemsTitle} />
-      }
+      {typeof ToggleTemplate === 'string' ? (
+        fillTemplate(ToggleTemplate, { firstIndex, lastIndex, itemCount, itemsTitle })
+      ) : (
+        <ToggleTemplate firstIndex={firstIndex} lastIndex={lastIndex} itemCount={itemCount} itemsTitle={itemsTitle} />
+      )}
     </span>
     <button
-      className={css(styles.optionsMenuToggleButton)} id={`${widgetId}-toggle`}
+      className={css(styles.optionsMenuToggleButton)}
+      id={`${widgetId}-toggle`}
       aria-haspopup="listbox"
       aria-labelledby={`${widgetId}-toggle ${widgetId}-label`}
       aria-label={optionsToggle}
@@ -35,11 +36,12 @@ const OptionsToggle = ({
     >
       <CaretDownIcon />
     </button>
-  </div >
+  </div>
 );
 
 OptionsToggle.propTypes = {
   itemsTitle: PropTypes.string,
+  optionsToggle: PropTypes.string,
   firstIndex: PropTypes.number,
   lastIndex: PropTypes.number,
   itemCount: PropTypes.number,
@@ -55,8 +57,10 @@ OptionsToggle.defaultProps = {
   firstIndex: 0,
   lastIndex: 0,
   itemCount: 0,
+  widgetId: '',
   onToggle: () => undefined,
-  isOpen: false
-}
+  isOpen: false,
+  toggleTemplate: ''
+};
 
 export default OptionsToggle;

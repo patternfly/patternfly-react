@@ -20,18 +20,9 @@ const SpanSlider = ({ label, id, onChange, min, value }) => (
       <label htmlFor={id}>{label}</label>
     </GridItem>
     <GridItem span={7}>
-      <input
-        id={id}
-        type="range"
-        min={min}
-        max={12}
-        value={value}
-        onChange={onChange}
-      />
+      <input id={id} type="range" min={min} max={12} value={value} onChange={onChange} />
     </GridItem>
-    <GridItem span={1}>
-      {value}
-    </GridItem>
+    <GridItem span={1}>{value}</GridItem>
   </Grid>
 );
 

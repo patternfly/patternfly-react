@@ -38,7 +38,7 @@ const propTypes = {
   /** Classes applied to toolbar item */
   className: PropTypes.string,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

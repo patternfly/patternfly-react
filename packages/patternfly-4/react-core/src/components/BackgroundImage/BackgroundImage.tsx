@@ -64,7 +64,7 @@ export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
     };
   }
 
-  // Build stylesheet based on cssVariables
+  // Build stylesheet string based on cssVariables
   let cssSheet = '';
   (Object.keys(cssVariables) as [keyof typeof srcMap]).forEach(size => {
     cssSheet += `${cssVariables[size as keyof typeof cssVariables]}: url('${srcMap[size]}');`
@@ -84,7 +84,8 @@ export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
             values="1 0 0 0 0
             1 0 0 0 0
             1 0 0 0 0
-            0 0 0 1 0" />
+            0 0 0 1 0"
+          />
           <feComponentTransfer colorInterpolationFilters="sRGB" result="duotone">
             <feFuncR type="table" tableValues="0.086274509803922 0.43921568627451" />
             <feFuncG type="table" tableValues="0.086274509803922 0.43921568627451" />

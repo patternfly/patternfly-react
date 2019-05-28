@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Page/page.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 
 const propTypes = {
   /** Additional classes added to the page sidebar */
@@ -11,7 +11,7 @@ const propTypes = {
   /** Programmatically manage if the side nav is shown, if isManagedSidebar is set to true in the Page component, this prop is managed */
   isNavOpen: PropTypes.bool,
   /** Additional props are spread to the container <aside> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

@@ -15,7 +15,7 @@ class VictoryPoint extends Point {
     ])
   };
 
-  getPath(props) {
+  getPath = props => {
     const { datum, active, x, y } = props;
     const size = Helpers.evaluateProp(props.size, datum, active);
     if (props.getPath) {
@@ -35,7 +35,7 @@ class VictoryPoint extends Point {
     const symbol = Helpers.evaluateProp(props.symbol, datum, active);
     const symbolFunction = typeof pathFunctions[symbol] === 'function' ? pathFunctions[symbol] : pathFunctions.circle;
     return symbolFunction(x, y, size);
-  }
+  };
 }
 
 const ChartPoint = props => <VictoryPoint {...props} />;

@@ -6,14 +6,17 @@ import styles from '@patternfly/patternfly/components/Accordion/accordion.css';
 const AccordionContent = ({ className, children, id, isHidden, isFixed, 'aria-label': ariaLabel, ...props }) => (
   <dd
     id={id}
-    className={css(styles.accordionExpandedContent, isFixed && styles.modifiers.fixed, !isHidden && styles.modifiers.expanded, className)} 
+    className={css(
+      styles.accordionExpandedContent,
+      isFixed && styles.modifiers.fixed,
+      !isHidden && styles.modifiers.expanded,
+      className
+    )}
     hidden={isHidden}
     aria-label={ariaLabel}
     {...props}
   >
-  <div className={css(styles.accordionExpandedContentBody)}>
-    {children}
-  </div>
+    <div className={css(styles.accordionExpandedContentBody)}>{children}</div>
   </dd>
 );
 
@@ -31,10 +34,11 @@ AccordionContent.propTypes = {
   /** Adds accessible text to the Accordion content */
   'aria-label': PropTypes.string,
   /** Additional props are spread to the container <dd> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 AccordionContent.defaultProps = {
+  children: null,
   className: '',
   id: '',
   isHidden: false,

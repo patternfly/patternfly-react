@@ -1,14 +1,9 @@
-import React from "react";
-import { useMDXComponents, mdx } from "@mdx-js/react";
-import { useMDXScope } from "gatsby-mdx/context";
+import React from 'react';
+import { useMDXComponents, mdx } from '@mdx-js/react';
+import { useMDXScope } from 'gatsby-mdx/context';
 
 // Copy of `import { MDXRenderer } from 'gatsby-mdx';` with some added injection.
-export function MDXRenderer({
-  scope,
-  components,
-  children,
-  ...props
-}) {
+export function MDXRenderer({ scope, components, children, ...props }) {
   const mdxComponents = useMDXComponents(components);
   const mdxScope = useMDXScope(scope);
 
@@ -28,16 +23,16 @@ export function MDXRenderer({
   children = children.replace(/_frontmatter: _frontmatter/gm, '');
   const keys = Object.keys(fullScope);
   const values = keys.map(key => fullScope[key]);
-  const fn = new Function("_fn", ...keys, `${children}`);
+  const fn = new Function('_fn', ...keys, `${children}`); // eslint-disable-line no-new-func
 
   const End = fn({}, ...values);
   const element = React.createElement(End, { components: mdxComponents, ...props });
 
   // Inject our scope into our custom <code> component.
-  let propComponents = element.props.components;
+  const propComponents = element.props.components;
   if (propComponents && propComponents.code) {
     propComponents.code.prototype.getScope = () => fullScope;
   }
 
   return element;
-};
+}

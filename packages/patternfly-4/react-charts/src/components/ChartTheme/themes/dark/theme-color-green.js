@@ -16,11 +16,7 @@ const COLOR_AXIS_FILL = 'transparent';
 const COLOR_AXIS_STROKE = '#D1D1D1';
 const COLOR_FILL = global_active_color_200.value;
 const COLOR_LABEL = global_Color_light_100.value;
-const COLOR_SCALE = [
-  global_success_color_100.value,
-  global_success_color_200.value,
-  '#59C768'
-];
+const COLOR_SCALE = [global_success_color_100.value, global_success_color_200.value, '#59C768'];
 const COLOR_STACK_STROKE = global_Color_dark_200.value;
 const COLOR_STROKE = global_active_color_300.value;
 const COLOR_TOOLTIP_FILL = '#151515';

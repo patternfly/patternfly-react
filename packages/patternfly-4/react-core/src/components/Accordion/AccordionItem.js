@@ -7,7 +7,7 @@ AccordionItem.propTypes = {
   /** Content rendered inside the Accordion item */
   children: PropTypes.node,
   /** Additional props are spread to the container  */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 AccordionItem.defaultProps = {

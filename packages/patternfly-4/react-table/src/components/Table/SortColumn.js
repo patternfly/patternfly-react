@@ -25,11 +25,13 @@ export const SortByDirection = {
 };
 
 const SortColumn = ({ isSortedBy, children, className, onSort, sortDirection, ...props }) => {
-  const SortedByIcon = isSortedBy
-    ? sortDirection === 'asc'
-      ? LongArrowAltUpIcon
-      : LongArrowAltDownIcon
-    : ArrowsAltVIcon;
+  let SortedByIcon;
+  if (isSortedBy) {
+    SortedByIcon = sortDirection === 'asc' ? LongArrowAltUpIcon : LongArrowAltDownIcon;
+  } else {
+    SortedByIcon = ArrowsAltVIcon;
+  }
+
   return (
     <button {...props} className={css(className)} onClick={event => onSort && onSort(event)}>
       {children}

@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/ContextSelector/context-selector.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import { ContextSelectorContext } from './contextSelectorConstants';
 
 const propTypes = {
@@ -15,8 +15,12 @@ const propTypes = {
   isHovered: PropTypes.bool,
   /** Callback for click event */
   onClick: PropTypes.func,
+  /** internal index of the item */
+  index: PropTypes.number,
+  /** Internal callback for ref tracking */
+  sendRef: PropTypes.func,
   /** Additional props are spread to the button element */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
@@ -24,7 +28,9 @@ const defaultProps = {
   className: '',
   isHovered: false,
   isDisabled: false,
-  onClick: () => {}
+  onClick: () => {},
+  index: undefined,
+  sendRef: Function.prototype
 };
 
 class ContextSelectorItem extends React.Component {

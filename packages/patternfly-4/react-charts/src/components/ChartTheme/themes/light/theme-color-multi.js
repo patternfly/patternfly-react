@@ -3,7 +3,6 @@ import {
   global_active_color_200,
   global_active_color_300,
   global_Color_dark_100,
-  global_Color_dark_200,
   global_Color_light_100
 } from '@patternfly/react-tokens';
 import { default as ColorTheme } from '../theme-color';
@@ -15,12 +14,7 @@ const COLOR_AXIS_FILL = 'transparent';
 const COLOR_AXIS_STROKE = '#D1D1D1';
 const COLOR_FILL = global_active_color_200.value;
 const COLOR_LABEL = global_Color_dark_100.value;
-const COLOR_SCALE = [
-  '#39a5dc',
-  '#9C92F5',
-  '#59C768',
-  '#FFD47D'
-];
+const COLOR_SCALE = ['#39a5dc', '#9C92F5', '#59C768', '#FFD47D'];
 const COLOR_STACK_STROKE = global_Color_light_100.value;
 const COLOR_STROKE = global_active_color_300.value;
 const COLOR_TOOLTIP_FILL = '#EDEDED';

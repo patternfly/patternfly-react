@@ -153,33 +153,32 @@ const defaultProps = {
   className: '',
   variant: null,
   borders: true,
+  sortBy: undefined,
+  onSelect: undefined,
+  onSort: undefined,
+  actions: undefined,
+  actionResolver: undefined,
+  areActionsDisabled: undefined,
+  bodyWrapper: undefined,
+  rowWrapper: undefined,
   rowLabeledBy: 'simple-node',
   expandId: 'expandable-toggle',
   contentId: 'expanded-content',
   dropdownPosition: DropdownPosition.right,
   dropdownDirection: DropdownDirection.down,
+  header: undefined,
+  caption: undefined,
+  'aria-label': undefined,
   gridBreakPoint: TableGridBreakpoint.gridMd
 };
 
 export const TableContext = React.createContext();
 
 class Table extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      headerData: []
-    };
-    this.isSelected = this.isSelected.bind(this);
-    this.areAllRowsSelected = this.areAllRowsSelected.bind(this);
-  }
+  isSelected = row => row.selected === true;
 
-  isSelected(row) {
-    return row.selected === true;
-  }
-
-  areAllRowsSelected(rows) {
-    return rows.every(row => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
-  }
+  areAllRowsSelected = rows =>
+    rows.every(row => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
 
   render() {
     const {
