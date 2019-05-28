@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "build": "yarn typecheck && yarn build:babel && yarn build:types && node ./scripts/copyTS.js && node ./build/copyStyles.js",
+    "build": "yarn typecheck && yarn build:babel && yarn build:types && node ./scripts/copyTS.js && node ./scripts/copyStyles.js",
     "build:babel": "concurrently 'yarn build:babel:esm && yarn build:babel:umd' 'yarn build:babel:cjs'",
     "build:babel:cjs": "babel src --out-dir dist/js --extensions '.js,.ts,.tsx' -q",
     "build:babel:esm": "babel src --out-dir dist/esm --extensions '.js,.ts,.tsx' -q",

@@ -12,7 +12,7 @@
     "tag": "prerelease"
   },
   "scripts": {
-    "build": "yarn build:babel && node ./scripts/copyTS.js && yarn build:css && yarn build:types",
+    "build": "yarn build:babel && node ./scripts/copyTS.js && yarn build:css && yarn build:types && node ./scripts/copyStyles.js",
     "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm && yarn build:babel:umd'",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js -q",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm -q",
