@@ -3,22 +3,17 @@ const camelcase = require('camel-case');
 
 const glob = require('glob');
 const { dirname, resolve, join, parse } = require('path');
-//const { parse } = require('css');
-const { readFileSync, readdirSync } = require('fs');
+const { readFileSync } = require('fs');
 const { outputFileSync } = require('fs-extra');
 
 const outDir = resolve(__dirname, '../css');
 const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
-//const templateDir = resolve(__dirname, './templates');
 
 const cssFiles = glob.sync('**/*.css', {
   cwd: pfStylesDir,
   ignore: ['assets/**']
 });
 
-// const formatCustomPropertyName = key => key.replace('--pf-', '').replace(/-+/g, '_');
-
-const tokens = {};
 cssFiles.forEach(filePath => {
   const absFilePath = resolve(pfStylesDir, filePath);
   const cssContent = readFileSync(absFilePath, 'utf8');
@@ -30,44 +25,6 @@ cssFiles.forEach(filePath => {
   outputFileSync(cssJsOutputPath, newClass);
 });
 
-// readdirSync(templateDir).forEach(templateFile => {
-//   const template = require(join(templateDir, templateFile));
-//   outputFileSync(template.getOutputPath({ outDir }), template.getContent({ tokens }));
-// });
-
-
-// import path from 'path';
-// import { readFileSync } from 'fs';
-// import css from 'css';
-// import { outputFileSync, copyFileSync, ensureDir } from 'fs-extra';
-// import relative from 'relative';
-// import { getCSSClasses, isModifier, formatClassName } from '../utils';
-
-// export const packageName = '@patternfly/react-styles';
-// export const styleSheetToken = 'StyleSheet';
-//
-// export function cssToJS(cssString, cssOutputPath = '', useModules = false) {
-//   let cssRequire = '';
-//   let cssImport = '';
-//   if (cssOutputPath) {
-//     cssRequire = `require('${cssOutputPath}');`;
-//     cssImport = `import '${cssOutputPath}';`;
-//   }
-//   if (useModules) {
-//     return `import { ${styleSheetToken} } from '${packageName}';
-// ${cssImport}
-//
-// export default ${styleSheetToken}.parse(\`${cssString}\`);
-// `;
-//   }
-//
-//   return `const { ${styleSheetToken} } = require('${packageName}');
-// ${cssRequire}
-//
-// module.exports = ${styleSheetToken}.parse(\`${cssString}\`);
-// `;
-// }
-
 function cssToJSNew(cssString, cssOutputPath = '', useModules = false) {
   let cssRequire = '';
   let cssImport = '';
@@ -78,12 +35,12 @@ function cssToJSNew(cssString, cssOutputPath = '', useModules = false) {
 
   const cssClasses = getCSSClasses(cssString);
   const distinctValues = [...new Set(cssClasses)];
-  let classDeclaration = [];
-  let modifiersDeclaration = [];
+  const classDeclaration = [];
+  const modifiersDeclaration = [];
 
-  distinctValues.forEach((className) => {
+  distinctValues.forEach(className => {
     const key = formatClassName(className);
-    let cleanClass = className.replace('.', '').trim();
+    const cleanClass = className.replace('.', '').trim();
     if (isModifier(className)) {
       modifiersDeclaration.push(`'${key}': '${cleanClass}'`);
     } else {

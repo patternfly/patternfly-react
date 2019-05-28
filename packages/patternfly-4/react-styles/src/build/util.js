@@ -40,12 +40,12 @@ export function cssToJSNew(cssString, cssOutputPath = '', useModules = false) {
 
   const cssClasses = getCSSClasses(cssString);
   const distinctValues = [...new Set(cssClasses)];
-  let classDeclaration = [];
-  let modifiersDeclaration = [];
+  const classDeclaration = [];
+  const modifiersDeclaration = [];
 
-  distinctValues.forEach((className) => {
+  distinctValues.forEach(className => {
     const key = formatClassName(className);
-    let cleanClass = className.replace('.', '').trim();
+    const cleanClass = className.replace('.', '').trim();
     if (isModifier(className)) {
       modifiersDeclaration.push(`'${key}': '${cleanClass}'`);
     } else {
