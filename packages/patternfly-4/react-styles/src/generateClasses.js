@@ -18,7 +18,7 @@ cssFiles.forEach(filePath => {
   const absFilePath = resolve(pfStylesDir, filePath);
   const cssContent = readFileSync(absFilePath, 'utf8');
   const cssOutputPath = getCSSOutputPath(outDir, filePath);
-  const newClass = cssToJSNew(cssContent, './' + cssOutputPath.split('/').pop(), true);
+  const newClass = cssToJSNew(cssContent, `./${cssOutputPath.split('/').pop()}`, true);
 
   outputFileSync(cssOutputPath, cssContent);
   outputFileSync(cssOutputPath.replace('.css', '.ts'), newClass);
