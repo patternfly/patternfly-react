@@ -2,20 +2,28 @@ import { TextInput, TextInputProps, inputTypes } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 export class TextInputDemo extends Component {
+  state = {
+    value: ''
+  };
+
   handleTextInputChange = value => {
     this.setState({ value });
   };
+
   myTextInputProps: TextInputProps = {
     onChange: this.handleTextInputChange,
   };
+
   myDisabledTextInputProps: TextInputProps = {
     isDisabled: true,
     value: 'disabled text input example'
   };
+
   myReadOnlyTextInputProps: TextInputProps = {
     isReadOnly: true,
     value: 'read only text input example'
   };
+
   myValidTextInputProps: TextInputProps = {
     isValid: false
   };
