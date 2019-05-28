@@ -45,7 +45,7 @@
     "react": "^16.4.0"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "2.6.5",
+    "@patternfly/patternfly": "2.8.2",
     "babel-core": "^6.26.0",
     "css": "^2.2.3",
     "enzyme": "3.9.0",
