@@ -17,22 +17,14 @@ const cssFiles = glob.sync('**/*.css', {
 cssFiles.forEach(filePath => {
   const absFilePath = resolve(pfStylesDir, filePath);
   const cssContent = readFileSync(absFilePath, 'utf8');
-  const newClass = cssToJSNew(cssContent);
-
   const cssOutputPath = getCSSOutputPath(outDir, filePath);
-  const cssJsOutputPath = cssOutputPath.replace('.css', '.js');
+  const newClass = cssToJSNew(cssContent, './' + cssOutputPath.split('/').pop(), true);
+
   outputFileSync(cssOutputPath, cssContent);
-  outputFileSync(cssJsOutputPath, newClass);
+  outputFileSync(cssOutputPath.replace('.css', '.ts'), newClass);
 });
 
 function cssToJSNew(cssString, cssOutputPath = '', useModules = false) {
-  let cssRequire = '';
-  let cssImport = '';
-  if (cssOutputPath) {
-    cssRequire = `require('${cssOutputPath}');`;
-    cssImport = `import '${cssOutputPath}';`;
-  }
-
   const cssClasses = getCSSClasses(cssString);
   const distinctValues = [...new Set(cssClasses)];
   const classDeclaration = [];
@@ -50,27 +42,24 @@ function cssToJSNew(cssString, cssOutputPath = '', useModules = false) {
   const classSection = classDeclaration.length > 0 ? `${classDeclaration.join(',\n  ')},` : '';
 
   if (useModules) {
-    return `${cssImport}
+    return `import '${cssOutputPath}';
 
 export default {
   ${classSection}
   modifiers: {
     ${modifiersDeclaration.join(',\n    ')}
   }
-}
-`;
+}`;
   }
 
-  return `${cssRequire}
+  return `require('${cssOutputPath}');
 
-module.exports = {
+export default {
   ${classSection}
   modifiers: {
     ${modifiersDeclaration.join(',\n    ')}
   }
-}
-
-`;
+}`;
 }
 
 function getCSSClasses(cssString) {
