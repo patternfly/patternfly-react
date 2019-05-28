@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.32.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.3...@patternfly/react-core@3.32.4) (2019-05-28)
+
+
+### Bug Fixes
+
+* **Pagination PF4:** set default items start and end to null ([#2089](https://github.com/patternfly/patternfly-react/issues/2089)) ([44c489c](https://github.com/patternfly/patternfly-react/commit/44c489c))
+
+
+
+
+
 ## [3.32.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.2...@patternfly/react-core@3.32.3) (2019-05-24)
 
 **Note:** Version bump only for package @patternfly/react-core
