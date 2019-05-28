@@ -7,7 +7,7 @@ propComponents: ['Chart', 'ChartBar', 'ChartGroup']
 
 ## Default Bar Chart
 
-import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartThemeVariant, ChartZoomContainer } from '@patternfly/react-charts';
 import './chart-bar.scss';
 
 ```js
@@ -46,14 +46,15 @@ import { Chart, ChartBar, ChartGroup } from '@patternfly/react-charts';
 </div>
 ```
 
-## Grouped Bar Chart with Light Multi-Color Theme
+## Multi-color bar chart with zoom
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartThemeVariant, ChartZoomContainer } from '@patternfly/react-charts';
 
 <div>
   <div className="bar-chart-container">
     <Chart
+      containerComponent={<ChartZoomContainer/>}
       domainPadding={{ x: [30, 25] }}
       themeColor={ChartThemeColor.multi}
       themeVariant={ChartThemeVariant.light}

@@ -5,7 +5,8 @@ typescript: true
 propComponents: ['Chart', 'ChartBar', 'ChartStack']
 ---
 
-import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+## Vertical blue stack chart
+import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant, ChartZoomContainer } from '@patternfly/react-charts';
 import './chart-stack.scss';
 
 ## Vertical blue stack chart
@@ -27,14 +28,15 @@ import { Chart, ChartBar, ChartStack } from '@patternfly/react-charts';
 </div>
 ```
 
-## Vertical multi-color stack chart
+## Vertical multi-color stack chart with zoom
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant, ChartZoomContainer } from '@patternfly/react-charts';
 
 <div>
   <div className="stack-chart-container">
     <Chart
+      containerComponent={<ChartZoomContainer/>}
       themeColor={ChartThemeColor.multi}
       themeVariant={ChartThemeVariant.light}
     >
