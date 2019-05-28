@@ -3,6 +3,14 @@ import { Button } from 'patternfly-react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+const defaultColors = {
+  'pf-red': 1,
+  'pf-blue': 1,
+  'pf-green': 1,
+  'pf-orange': 1,
+  'pf-yellow': 1
+};
+
 /**
  * ClassificationBanner Component for PatternFly React
  */
@@ -10,14 +18,15 @@ class ClassificationBanner extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      closed: props.closed || false
-    };
+    this.state = { closed: props.closed };
+    this.onClose = this.onClose.bind(this);
   }
 
-  onClose = () => {
-    this.setState({ closed: true });
-  };
+  onClose(e) {
+    this.setState({
+      closed: !this.state.closed
+    });
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.closed !== this.state.closed) {
@@ -39,29 +48,15 @@ class ClassificationBanner extends React.Component {
       ...props
     } = this.props;
 
-    const defaultColors = {
-      'pf-red': 1,
-      'pf-blue': 1,
-      'pf-green': 1,
-      'pf-orange': 1,
-      'pf-yellow': 1
-    };
-
     const classificationBannerClasses = {
       top: classNames(
         'classification-banner-pf-banner',
         'classification-banner-pf-banner-top',
-        {
-          'classification-banner-pf-hide': this.state.closed
-        },
         defaultColors[bannerColor] ? `classification-banner-${bannerColor}` : ''
       ),
       bottom: classNames(
         'classification-banner-pf-banner',
         defaultColors[bannerColor] ? `classification-banner-${bannerColor}` : '',
-        {
-          'classification-banner-pf-hide': !bottomBanner || this.state.closed
-        },
         'classification-banner-pf-banner-bottom'
       ),
       closeButton: classNames({
@@ -85,32 +80,36 @@ class ClassificationBanner extends React.Component {
 
     return (
       <div {...props}>
-        <nav style={bannerBackgroundStyle} className={classificationBannerClasses.top}>
-          <div className="classification-banner-pf-banner-left">
-            {leftLabels[0]}
-            {leftLabels[1]}
-          </div>
-          <div className="classification-banner-pf-classification-level">{title}</div>
-          <div className="classification-banner-pf-banner-right">
-            {closeButton && (
-              <Button
-                className={classificationBannerClasses.closeButton}
-                bsStyle="link"
-                bsSize="small"
-                data-toggle="tooltip"
-                data-placement="bottom"
-                title="Close"
-                onClick={this.onClose}
-              />
-            )}
-            {rightLabels[0]}
-            {rightLabels[1]}
-          </div>
-        </nav>
+        {!this.state.closed && (
+          <nav style={bannerBackgroundStyle} className={classificationBannerClasses.top}>
+            <div className="classification-banner-pf-banner-left">
+              {leftLabels[0]}
+              {leftLabels[1]}
+            </div>
+            <div className="classification-banner-pf-classification-level">{title}</div>
+            <div className="classification-banner-pf-banner-right">
+              {closeButton && (
+                <Button
+                  className={classificationBannerClasses.closeButton}
+                  bsStyle="link"
+                  bsSize="small"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Close"
+                  onClick={e => this.onClose(e)}
+                />
+              )}
+              {rightLabels[0]}
+              {rightLabels[1]}
+            </div>
+          </nav>
+        )}
         <div className={classificationBannerClasses.children}>{children}</div>
-        <footer style={bannerBackgroundStyle} className={classificationBannerClasses.bottom}>
-          <div className="classification-banner-pf-classification-level">{title}</div>
-        </footer>
+        {!this.state.closed && bottomBanner && (
+          <footer style={bannerBackgroundStyle} className={classificationBannerClasses.bottom}>
+            <div className="classification-banner-pf-classification-level">{title}</div>
+          </footer>
+        )}
       </div>
     );
   }
