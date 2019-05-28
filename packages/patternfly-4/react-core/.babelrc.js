@@ -4,8 +4,7 @@ const modules = babelENV !== 'production:esm' ? 'commonjs' : false;
 module.exports = {
   presets: [['@babel/env', { modules }], '@babel/react'],
   ignore: (() => {
-    const ignore = ['src/**/__snapshots__'];
-    ignore.push('src/**/*.d.ts');
+    const ignore = ['**/__snapshots__', '**/*.d.ts'];
     if (babelENV.includes('production')) {
       ignore.push('test.js', '__mocks__');
     }
