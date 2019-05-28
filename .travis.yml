@@ -61,6 +61,7 @@ jobs:
       name: (PF4) Jest Tests
       install: skip
       script:
+        - ls packages/patternfly-4/react-styles/css
         - yarn test:pf4
         - npx codecov -F patternfly4
     - name: (PF3 and Misc) Jest Tests
