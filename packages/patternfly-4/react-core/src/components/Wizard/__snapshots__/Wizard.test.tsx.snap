@@ -15,9 +15,7 @@ exports[`Wizard should match snapshot 1`] = `
       paused={false}
       tag="div"
     >
-      <Backdrop
-        className=""
-      >
+      <Unknown>
         <Bullseye
           className=""
           component="div"
@@ -138,7 +136,7 @@ exports[`Wizard should match snapshot 1`] = `
             </div>
           </Context.Provider>
         </Bullseye>
-      </Backdrop>
+      </Unknown>
     </FocusTrap>,
     "containerInfo": <div>
       <div>
