@@ -110,8 +110,8 @@ const defaultProps = {
     paginationTitle: 'Pagination'
   },
   page: 1,
-  itemsStart: 0,
-  itemsEnd: 0,
+  itemsStart: null,
+  itemsEnd: null,
   perPageOptions: defaultPerPageOptions,
   dropDirection: DropdownDirection.down,
   widgetId: 'pagination-options-menu',
@@ -171,8 +171,8 @@ const Pagination = ({
         itemsTitle={titles.items}
         optionsToggle={titles.optionsToggle}
         perPageOptions={perPageOptions}
-        firstIndex={itemsStart !== undefined ? itemsStart : firstIndex}
-        lastIndex={itemsEnd !== undefined ? itemsEnd : lastIndex}
+        firstIndex={itemsStart !== null ? itemsStart : firstIndex}
+        lastIndex={itemsEnd !== null ? itemsEnd : lastIndex}
         itemCount={itemCount}
         perPage={perPage}
         onPerPageSelect={onPerPageSelect}

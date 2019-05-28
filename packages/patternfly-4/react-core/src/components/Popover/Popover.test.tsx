@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import { shallow } from 'enzyme';
-import { Popover } from './index';
+import { Popover } from './Popover';
 
 test('popover renders close-button, header and body', () => {
   const view = shallow(
