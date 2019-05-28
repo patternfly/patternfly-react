@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Popover/popover.css';
 import { css, getModifier } from '@patternfly/react-styles';
 
@@ -10,7 +9,12 @@ export const PopoverPosition = {
   right: 'right'
 };
 
-const PopoverDialog = ({ position, children, className, ...props }) => (
+export const PopoverDialog: React.FunctionComponent<PopoverDialogProps> = ({
+    position = 'top', 
+    children = null,
+    className = null,
+    ...props 
+  }) => (
   <div
     className={css(styles.popover, getModifier(styles, position, styles.modifiers.top), className)}
     role="dialog"
@@ -21,20 +25,11 @@ const PopoverDialog = ({ position, children, className, ...props }) => (
   </div>
 );
 
-PopoverDialog.propTypes = {
+export interface PopoverDialogProps extends React.HTMLProps<HTMLDivElement> {
   /** PopoverDialog position */
-  position: PropTypes.oneOf(Object.values(PopoverPosition)),
+  position?: 'top' | 'bottom' | 'left' | 'right';
   /** PopoverDialog additional class */
-  className: PropTypes.string,
+  className?: string;
   /** PopoverDialog body */
-  children: PropTypes.node.isRequired,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
-
-PopoverDialog.defaultProps = {
-  position: 'top',
-  className: null
-};
-
-export default PopoverDialog;
+  children: React.ReactNode;
+}
