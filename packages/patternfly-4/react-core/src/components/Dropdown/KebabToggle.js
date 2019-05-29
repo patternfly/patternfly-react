@@ -37,7 +37,7 @@ Kebab.propTypes = {
   /** Display the toggle with no border or background */
   isPlain: PropTypes.bool,
   /** Additional props are spread to the container component */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 Kebab.defaultProps = {
   id: '',

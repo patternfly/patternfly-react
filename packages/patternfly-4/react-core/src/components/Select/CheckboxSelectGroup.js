@@ -10,14 +10,17 @@ const propTypes = {
   className: PropTypes.string,
   /** Group label */
   label: PropTypes.string,
+  /** ID on the title container */
+  titleId: PropTypes.any,
   /** Additional props are spread to the container <select> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
   children: null,
   className: '',
-  label: ''
+  label: '',
+  titleId: ''
 };
 
 const CheckboxSelectGroup = ({ children, className, label, titleId, ...props }) => (

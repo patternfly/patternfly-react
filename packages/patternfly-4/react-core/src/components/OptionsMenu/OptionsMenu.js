@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, Component } from 'react';
+import React, { Children, cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/OptionsMenu/options-menu.css';
 import { css, getModifier } from '@patternfly/react-styles';
@@ -22,7 +22,7 @@ const propTypes = {
   /** Display menu above or below Options menu toggle */
   direction: PropTypes.oneOf(Object.values(OptionsMenuDirection)),
   /** Indicates where menu will be aligned horizontally */
-  position: PropTypes.oneOf(Object.values(OptionsMenuPosition)),
+  position: PropTypes.oneOf(Object.values(OptionsMenuPosition))
 };
 
 const defaultProps = {
@@ -31,48 +31,40 @@ const defaultProps = {
   isPlain: false,
   ariaLabelMenu: '',
   direction: OptionsMenuDirection.down,
-  position: OptionsMenuPosition.left,
+  position: OptionsMenuPosition.left
 };
 
-class OptionsMenu extends Component {
-
-  render() {
-    const {
-      className,
-      direction,
-      position,
-      id,
-      isOpen,
-      isPlain,
-      ariaLabelMenu,
-      menuItems,
-      toggle } = this.props;
-    return (
-      <div id={id}
-        className={
-          css(styles.optionsMenu,
-            direction === OptionsMenuDirection.up && getModifier(styles, 'top'),
-            position === OptionsMenuPosition.right && getModifier(styles, 'align-right'),
-            isOpen && getModifier(styles, 'expanded'),
-            className)}>
-        {Children.map(toggle, oneToggle =>
-          cloneElement(oneToggle, {
-            parentId: id,
-            isOpen,
-            isPlain,
-          }))}
-        {isOpen &&
-        <ul className={css(styles.optionsMenuMenu,
-          position === OptionsMenuPosition.right && getModifier(styles, 'align-right'))}
-          {...ariaLabelMenu ? {'aria-label': ariaLabelMenu} : {'aria-labelledby': `${id}-toggle`}}>
-          {menuItems.map((item) => {
-            return item;
-          })}
-        </ul>}
-      </div>
-    )
-  }
-}
+const OptionsMenu = ({ className, direction, position, id, isOpen, isPlain, ariaLabelMenu, menuItems, toggle }) => (
+  <div
+    id={id}
+    className={css(
+      styles.optionsMenu,
+      direction === OptionsMenuDirection.up && getModifier(styles, 'top'),
+      position === OptionsMenuPosition.right && getModifier(styles, 'align-right'),
+      isOpen && getModifier(styles, 'expanded'),
+      className
+    )}
+  >
+    {Children.map(toggle, oneToggle =>
+      cloneElement(oneToggle, {
+        parentId: id,
+        isOpen,
+        isPlain
+      })
+    )}
+    {isOpen && (
+      <ul
+        className={css(
+          styles.optionsMenuMenu,
+          position === OptionsMenuPosition.right && getModifier(styles, 'align-right')
+        )}
+        {...(ariaLabelMenu ? { 'aria-label': ariaLabelMenu } : { 'aria-labelledby': `${id}-toggle` })}
+      >
+        {menuItems.map(item => item)}
+      </ul>
+    )}
+  </div>
+);
 
 OptionsMenu.propTypes = propTypes;
 OptionsMenu.defaultProps = defaultProps;

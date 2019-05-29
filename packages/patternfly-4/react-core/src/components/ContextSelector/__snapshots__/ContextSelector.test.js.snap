@@ -104,6 +104,7 @@ exports[`Renders ContextSelector open 1`] = `
             isHovered={false}
             key="0"
             onClick={[Function]}
+            sendRef={[Function]}
           >
             My Project
           </ContextSelectorItem>
@@ -113,6 +114,7 @@ exports[`Renders ContextSelector open 1`] = `
             isHovered={false}
             key="1"
             onClick={[Function]}
+            sendRef={[Function]}
           >
             OpenShift Cluster
           </ContextSelectorItem>
@@ -122,6 +124,7 @@ exports[`Renders ContextSelector open 1`] = `
             isHovered={false}
             key="2"
             onClick={[Function]}
+            sendRef={[Function]}
           >
             Production Ansible
           </ContextSelectorItem>
@@ -131,6 +134,7 @@ exports[`Renders ContextSelector open 1`] = `
             isHovered={false}
             key="3"
             onClick={[Function]}
+            sendRef={[Function]}
           >
             AWS
           </ContextSelectorItem>
@@ -140,6 +144,7 @@ exports[`Renders ContextSelector open 1`] = `
             isHovered={false}
             key="4"
             onClick={[Function]}
+            sendRef={[Function]}
           >
             Azure
           </ContextSelectorItem>

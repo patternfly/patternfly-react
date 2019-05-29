@@ -12,6 +12,7 @@ exports[`copy button render 1`] = `
   enableFlip={true}
   entryDelay={2000}
   exitDelay={1000}
+  isAppLauncher={false}
   maxWidth="500px"
   position="right"
   trigger="mouseenter focus click"

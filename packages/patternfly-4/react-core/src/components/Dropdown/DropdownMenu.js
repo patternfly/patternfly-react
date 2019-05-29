@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Dropdown/dropdown.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import { componentShape } from '../../helpers/componentShape';
 import ReactDOM from 'react-dom';
 import { keyHandler } from '../../helpers/util';
-import { DropdownPosition, DropdownDirection, DropdownArrowContext, DropdownContext } from './dropdownConstants';
+import { DropdownPosition, DropdownArrowContext, DropdownContext } from './dropdownConstants';
 import { KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
 
 const propTypes = {
@@ -15,6 +15,8 @@ const propTypes = {
   className: PropTypes.string,
   /** Flag to indicate if menu is opened */
   isOpen: PropTypes.bool,
+  /** Flag to indicate if menu should be opened on enter */
+  openedOnEnter: PropTypes.bool,
   /** Indicates which component will be used as dropdown menu */
   component: componentShape,
   /** Indicates where menu will be alligned horizontally */
@@ -22,13 +24,14 @@ const propTypes = {
   /** Flag to indicate if menu is grouped */
   isGrouped: PropTypes.bool,
   /** Additional props are spread to the container component */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
   children: null,
   className: '',
   isOpen: true,
+  openedOnEnter: false,
   position: DropdownPosition.left,
   component: 'ul',
   isGrouped: false
@@ -46,7 +49,7 @@ class DropdownMenu extends React.Component {
       if (this.props.component === 'ul') focusTarget && focusTarget.focus();
       else {
         (focusTarget.current.focus && focusTarget.current.focus()) ||
-          (focusTarget && ReactDOM.findDOMNode(focusTarget.current).focus());
+          (focusTarget && ReactDOM.findDOMNode(focusTarget.current).focus()); // eslint-disable-line react/no-find-dom-node
       }
     }
   }
@@ -63,7 +66,7 @@ class DropdownMenu extends React.Component {
 
   sendRef = (index, node, isDisabled) => {
     if (!node.getAttribute) {
-      this.refsCollection[index] = ReactDOM.findDOMNode(node);
+      this.refsCollection[index] = ReactDOM.findDOMNode(node); // eslint-disable-line react/no-find-dom-node
     } else if (isDisabled || node.getAttribute('role') === 'separator') {
       this.refsCollection[index] = null;
     } else {

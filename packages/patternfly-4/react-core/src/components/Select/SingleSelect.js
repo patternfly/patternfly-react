@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Select/select.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import { keyHandler } from '../../helpers/util';
 
 const propTypes = {
@@ -16,7 +16,7 @@ const propTypes = {
   /** Currently selected option */
   selected: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   /** Additional props are spread to the container <select> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

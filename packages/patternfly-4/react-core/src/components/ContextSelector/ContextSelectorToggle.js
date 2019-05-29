@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { CaretDownIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/patternfly/components/ContextSelector/context-selector.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import { KEY_CODES } from '../../helpers/constants';
 
 const propTypes = {
@@ -27,7 +27,7 @@ const propTypes = {
   /** Forces active state */
   isActive: PropTypes.bool,
   /** Additional props are spread to the container <button> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

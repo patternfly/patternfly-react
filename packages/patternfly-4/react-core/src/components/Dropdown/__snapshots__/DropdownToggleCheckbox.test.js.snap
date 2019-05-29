@@ -25,6 +25,7 @@ exports[`isDisabled 1`] = `
   <input
     aria-invalid={false}
     aria-label="check"
+    checked={null}
     disabled={true}
     id="check"
     onChange={[Function]}
@@ -45,6 +46,7 @@ exports[`passing HTML attribute 1`] = `
     checked={true}
     disabled={false}
     id="check"
+    label="label"
     onChange={[Function]}
     type="checkbox"
   />
@@ -62,6 +64,7 @@ exports[`passing class 1`] = `
     checked={true}
     disabled={false}
     id="check"
+    label="label"
     onChange={[Function]}
     type="checkbox"
   />
@@ -76,6 +79,7 @@ exports[`uncontrolled 1`] = `
   <input
     aria-invalid={false}
     aria-label="check"
+    checked={null}
     disabled={false}
     id="check"
     onChange={[Function]}

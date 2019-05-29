@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Page/page.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import { BarsIcon } from '@patternfly/react-icons';
 import { Button, ButtonVariant } from '../../components/Button';
 
@@ -27,7 +27,7 @@ const propTypes = {
   /** Callback function to handle the side nav toggle button */
   'aria-label': PropTypes.string,
   /** Additional props are spread to the container <header> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
@@ -57,34 +57,40 @@ const PageHeader = ({
   ...props
 }) => (
   <header role="banner" className={css(styles.pageHeader, className)} {...props}>
-    <div className={css(styles.pageHeaderBrand)}>
-      {showNavToggle && (
-        <div className={css(styles.pageHeaderBrandToggle)}>
-          <Button
-            id="nav-toggle"
-            onClick={onNavToggle}
-            aria-label={ariaLabel}
-            aria-controls="page-sidebar"
-            aria-expanded={isNavOpen ? 'true' : 'false'}
-            variant={ButtonVariant.plain}
-          >
-            <BarsIcon />
-          </Button>
-        </div>
-      )}
-      <a className={css(styles.pageHeaderBrandLink)} {...logoProps}>
-        {logo}
-      </a>
-    </div>
+    {(showNavToggle || logo) && (
+      <div className={css(styles.pageHeaderBrand)}>
+        {showNavToggle && (
+          <div className={css(styles.pageHeaderBrandToggle)}>
+            <Button
+              id="nav-toggle"
+              onClick={onNavToggle}
+              aria-label={ariaLabel}
+              aria-controls="page-sidebar"
+              aria-expanded={isNavOpen ? 'true' : 'false'}
+              variant={ButtonVariant.plain}
+            >
+              <BarsIcon />
+            </Button>
+          </div>
+        )}
+        {logo && (
+          <a className={css(styles.pageHeaderBrandLink)} {...logoProps}>
+            {logo}
+          </a>
+        )}
+      </div>
+    )}
     {/* Hide for now until we have the context selector component */}
     {/* <div className={css(styles.pageHeaderSelector)}>
       pf-c-context-selector
     </div> */}
     {topNav && <div className={css(styles.pageHeaderNav)}>{topNav}</div>}
-    <div className={css(styles.pageHeaderTools)}>
-      {toolbar}
-      {avatar}
-    </div>
+    {(toolbar || avatar) && (
+      <div className={css(styles.pageHeaderTools)}>
+        {toolbar}
+        {avatar}
+      </div>
+    )}
   </header>
 );
 

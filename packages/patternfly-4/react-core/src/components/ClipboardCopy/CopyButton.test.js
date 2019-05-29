@@ -21,7 +21,11 @@ test('copy button render', () => {
 
 test('copy button onClick', () => {
   const onclick = jest.fn();
-  const view = shallow(<CopyButton {...props} onClick={onclick}>Copy to Clipboard</CopyButton>);
+  const view = shallow(
+    <CopyButton {...props} onClick={onclick}>
+      Copy to Clipboard
+    </CopyButton>
+  );
   view.find('button').simulate('click');
   expect(onclick).toBeCalled();
 });

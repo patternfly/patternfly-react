@@ -9,7 +9,7 @@ PopoverArrow.propTypes = {
   /** Popover arrow additional className */
   className: PropTypes.string,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 PopoverArrow.defaultProps = {

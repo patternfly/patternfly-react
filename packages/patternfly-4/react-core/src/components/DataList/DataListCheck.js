@@ -1,6 +1,6 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
 
 const DataListCheck = ({ className, onChange, isValid, isDisabled, isChecked, checked, ...props }) => (
@@ -27,12 +27,14 @@ DataListCheck.propTypes = {
   isDisabled: PropTypes.bool,
   /** Flag to show if the DataList checkbox is checked */
   isChecked: PropTypes.bool,
+  /** Alternate Flag to show if the DataList checkbox is checked */
+  checked: PropTypes.bool,
   /** A callback for when the DataList checkbox selection changes */
   onChange: PropTypes.func,
   /** Aria-labelledby of the DataList checkbox */
   'aria-labelledby': PropTypes.string.isRequired,
   /** Additional props are spread to the <input> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 DataListCheck.defaultProps = {
@@ -40,6 +42,7 @@ DataListCheck.defaultProps = {
   isValid: true,
   isDisabled: false,
   isChecked: null,
+  checked: null,
   onChange: () => undefined
 };
 

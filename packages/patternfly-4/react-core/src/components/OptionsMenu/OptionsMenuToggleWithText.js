@@ -4,32 +4,38 @@ import { css, getModifier } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/OptionsMenu/options-menu.css';
 
 const OptionsMenuToggleWithText = ({
-                                     parentId,
-                                     toggleText,
-                                     toggleTextClassName,
-                                     toggleButtonContents,
-                                     toggleButtonContentsClassName,
-                                     onToggle,
-                                     isOpen,
-                                     isPlain,
-                                     isHovered,
-                                     isActive,
-                                     isFocused,
-                                     "aria-label": ariaLabel
-                                   }) => (
-  <div className={css(styles.optionsMenuToggle,
-    getModifier(styles, 'text'),
-    isPlain && getModifier(styles, 'plain'),
-    isHovered && getModifier(styles, 'hover'),
-    isActive && getModifier(styles, 'active'),
-    isFocused && getModifier(styles, 'focus'))}>
+  parentId,
+  toggleText,
+  toggleTextClassName,
+  toggleButtonContents,
+  toggleButtonContentsClassName,
+  onToggle,
+  isOpen,
+  isPlain,
+  isHovered,
+  isActive,
+  isFocused,
+  'aria-label': ariaLabel
+}) => (
+  <div
+    className={css(
+      styles.optionsMenuToggle,
+      getModifier(styles, 'text'),
+      isPlain && getModifier(styles, 'plain'),
+      isHovered && getModifier(styles, 'hover'),
+      isActive && getModifier(styles, 'active'),
+      isFocused && getModifier(styles, 'focus')
+    )}
+  >
     <span className={css(styles.optionsMenuToggleText, toggleTextClassName)}>{toggleText}</span>
-    <button className={css(styles.optionsMenuToggleButton, toggleButtonContentsClassName)}
-            id={`${parentId}-toggle`}
-            aria-haspopup="listbox"
-            aria-label={ariaLabel}
-            aria-expanded={isOpen}
-            onClick={onToggle}>
+    <button
+      className={css(styles.optionsMenuToggleButton, toggleButtonContentsClassName)}
+      id={`${parentId}-toggle`}
+      aria-haspopup="listbox"
+      aria-label={ariaLabel}
+      aria-expanded={isOpen}
+      onClick={onToggle}
+    >
       {toggleButtonContents}
     </button>
   </div>
@@ -38,9 +44,9 @@ const OptionsMenuToggleWithText = ({
 OptionsMenuToggleWithText.propTypes = {
   /** Id of the parent Options menu component */
   parentId: PropTypes.string,
-  /** Content to be rendered inside the Options menu toggle as text or another non-interactive element*/
+  /** Content to be rendered inside the Options menu toggle as text or another non-interactive element */
   toggleText: PropTypes.node.isRequired,
-  /** classes to be added to the Options menu toggle text*/
+  /** classes to be added to the Options menu toggle text */
   toggleTextClassName: PropTypes.string,
   /** Content to be rendered inside the Options menu toggle button */
   toggleButtonContents: PropTypes.node.isRequired,
@@ -55,11 +61,11 @@ OptionsMenuToggleWithText.propTypes = {
   /** Forces display of the hover state of the Options menu button */
   isHovered: PropTypes.bool,
   /** Forces display of the active state of the Options menu button */
-  isActive:  PropTypes.bool,
+  isActive: PropTypes.bool,
   /** Forces display of the hover state of the Options menu button */
   isFocused: PropTypes.bool,
   /** Provides an accessible name for the button when an icon is used instead of text */
-  "aria-label": PropTypes.string,
+  'aria-label': PropTypes.string
 };
 
 OptionsMenuToggleWithText.defaultProps = {
@@ -72,7 +78,7 @@ OptionsMenuToggleWithText.defaultProps = {
   isHovered: false,
   isActive: false,
   isFocused: false,
-  "aria-label": 'Options menu',
+  'aria-label': 'Options menu'
 };
 
 export default OptionsMenuToggleWithText;

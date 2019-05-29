@@ -12,7 +12,7 @@ Object.values([true, false]).forEach(isRead => {
   });
 });
 
-xtest('allows tooltip via container component', () => {
+test('allows tooltip via container component', () => {
   const view = shallow(
     <ChartGroup containerComponent={<ChartVoronoiContainer labels="This is a tooltip" />} height={200} width={200}>
       <ChartArea

@@ -46,6 +46,7 @@ class SimpleApplicationLauncher extends React.Component {
     ];
     return (
       <ApplicationLauncher
+        direction="up"
         onSelect={this.onSelect}
         onToggle={this.onToggle}
         isOpen={isOpen}

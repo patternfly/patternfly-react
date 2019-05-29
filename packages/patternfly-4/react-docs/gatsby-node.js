@@ -23,26 +23,26 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 // Create pages for markdown files
 exports.createPages = ({ graphql, actions }) => {
   const mdx = graphql(`
-  {
-    allMdx {
-      nodes {
-        fileAbsolutePath
-        frontmatter {
-          title
-          section
-          fullscreen
-          typescript
-          propComponents
+    {
+      allMdx {
+        nodes {
+          fileAbsolutePath
+          frontmatter {
+            title
+            section
+            fullscreen
+            typescript
+            propComponents
+          }
         }
       }
     }
-  }`);
+  `);
 
   return mdx.then(({ data }) => {
     data.allMdx.nodes.forEach(node => {
       const componentName = navHelpers.getFileName(node.fileAbsolutePath);
       const parentFolderName = navHelpers.getParentFolder(node.fileAbsolutePath, 3);
-      const folderName = navHelpers.getParentFolder(node.fileAbsolutePath);
       const section = node.frontmatter.section ? node.frontmatter.section : 'components';
 
       let link = '/bad-page/';
@@ -69,14 +69,13 @@ exports.createPages = ({ graphql, actions }) => {
             title: node.frontmatter.title,
             typescript: node.frontmatter.typescript, // For a badge
             fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
-            propComponents: node.frontmatter.propComponents || [], // Helps us get the docgenned props
+            propComponents: node.frontmatter.propComponents || [] // Helps us get the docgenned props
           }
         });
       }
     });
   });
 };
-
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({

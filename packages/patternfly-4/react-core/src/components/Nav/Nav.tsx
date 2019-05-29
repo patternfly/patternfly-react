@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Nav/nav.css';
 import { css } from '@patternfly/react-styles';
+import { NavVariants } from './NavVariants';
 
 import { Omit } from '../../helpers/typeUtils';
 
@@ -36,6 +37,19 @@ export class Nav extends React.Component<NavProps> {
     onToggle: () => undefined
   };
 
+  state = {
+    showLeftScrollButton: false,
+    showRightScrollButton: false
+  };
+
+  updateScrollButtonState = (state: { showLeftScrollButton: boolean, showRightScrollButton: boolean }) => {
+    const { showLeftScrollButton, showRightScrollButton } = state;
+    this.setState({
+      showLeftScrollButton,
+      showRightScrollButton
+    });
+  };
+
   // Callback from NavItem
   onSelect(
     event: React.FormEvent<HTMLInputElement>,
@@ -67,6 +81,7 @@ export class Nav extends React.Component<NavProps> {
 
   render() {
     const { 'aria-label': ariaLabel, children, className, onSelect, onToggle, ...props } = this.props;
+    const { showLeftScrollButton, showRightScrollButton } = this.state;
     const childrenProps:any = (children as any).props;
 
     return (
@@ -80,11 +95,12 @@ export class Nav extends React.Component<NavProps> {
             preventDefault: boolean,
             onClick: (e: React.FormEvent<HTMLInputElement>, itemId: number | string, groupId: number | string, to: string) => void
           ) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
-          onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) => this.onToggle(event, groupId, expanded)
+          onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) => this.onToggle(event, groupId, expanded),
+          updateScrollButtonState: this.updateScrollButtonState
         }}
       >
         <nav
-          className={css(styles.nav, className)}
+          className={css(styles.nav, showLeftScrollButton && styles.modifiers.start, showRightScrollButton && styles.modifiers.end, className)}
           aria-label={
             ariaLabel === ''
               ? typeof childrenProps !== 'undefined' && childrenProps.variant === 'tertiary' ? 'Local' : 'Global'

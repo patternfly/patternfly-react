@@ -15,7 +15,7 @@ const components = {
 const MdxTemplate = ({ data }) => {
   const { cssPrefix } = data.mdx.frontmatter;
   const section = data.mdx.frontmatter.section || 'component';
-  const nodes = data.props.nodes;
+  const { nodes } = data.props;
 
   return (
     <SidebarLayout>
@@ -64,37 +64,38 @@ MdxTemplate.propTypes = {
 // We want the markdown from gatsby-mdx
 // We want component metadata from gatsby-transformer-react-docgen-typescript
 export const pageQuery = graphql`
-query GetComponent($fileAbsolutePath: String!, $propComponents: [String]!) {
-  mdx(fileAbsolutePath: { eq: $fileAbsolutePath }) {
-    code {
-      body
+  query GetComponent($fileAbsolutePath: String!, $propComponents: [String]!) {
+    mdx(fileAbsolutePath: { eq: $fileAbsolutePath }) {
+      code {
+        body
+      }
+      frontmatter {
+        title
+        section
+        cssPrefix
+      }
     }
-    frontmatter {
-      title
-      section
-      cssPrefix
-    }
-  }
-  props: allComponentMetadata(filter: {name: {in: $propComponents}}) {
-    nodes {
-      name
-      props {
+    props: allComponentMetadata(filter: { name: { in: $propComponents } }) {
+      nodes {
         name
-        description
-        required
-        type {
+        props {
           name
-        }
-        tsType {
-          name
-          raw
-        }
-        defaultValue {
-          value
+          description
+          required
+          type {
+            name
+          }
+          tsType {
+            name
+            raw
+          }
+          defaultValue {
+            value
+          }
         }
       }
     }
   }
-}`;
+`;
 
 export default MdxTemplate;

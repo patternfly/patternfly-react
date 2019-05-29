@@ -23,12 +23,16 @@ test('isDisabled', () => {
 });
 
 test('passing class', () => {
-  const view = shallow(<DropdownToggleCheckbox label="label" className="class-123" id="check" isChecked aria-label="check" />);
+  const view = shallow(
+    <DropdownToggleCheckbox label="label" className="class-123" id="check" isChecked aria-label="check" />
+  );
   expect(view).toMatchSnapshot();
 });
 
 test('passing HTML attribute', () => {
-  const view = shallow(<DropdownToggleCheckbox label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />);
+  const view = shallow(
+    <DropdownToggleCheckbox label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />
+  );
   expect(view).toMatchSnapshot();
 });
 

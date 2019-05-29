@@ -11,7 +11,7 @@ const propTypes = {
   /** flag indicating if the Option Group is disabled */
   isDisabled: PropTypes.bool,
   /** Additional props are spread to the container <optgroup> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

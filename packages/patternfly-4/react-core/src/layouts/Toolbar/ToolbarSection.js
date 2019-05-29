@@ -45,7 +45,7 @@ const propTypes = {
     return null;
   },
   /** Additional props are spread to the container <section> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

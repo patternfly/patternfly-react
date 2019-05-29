@@ -1,6 +1,6 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
+import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
 
 class DataListAction extends React.Component {
@@ -53,7 +53,7 @@ DataListAction.propTypes = {
   /** Adds accessible text to the DataList Action */
   'aria-label': PropTypes.string.isRequired,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 DataListAction.defaultProps = {

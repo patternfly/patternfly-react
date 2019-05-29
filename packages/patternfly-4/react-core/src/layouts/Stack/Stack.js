@@ -15,7 +15,7 @@ const propTypes = {
   /** Sets the base component to render. defaults to div */
   component: componentShape,
   /** Additional props are spread to the container component */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

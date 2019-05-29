@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "4.4.15",
+  "version": "4.4.22",
   "author": "Red Hat",
   "license": "MIT",
   "private": true,
@@ -9,14 +9,15 @@
     "build:docs": "yarn build:static && gatsby build --prefix-paths",
     "build:static": "shx cp -r ../react-core/dist/styles/* static",
     "clean": "rimraf .cache public static/assets static/base.css",
-    "develop": "yarn build:static && gatsby develop",
+    "clean:mdx": "rimraf .cache/caches/gatsby-mdx",
+    "develop": "yarn build:static && yarn clean:mdx && gatsby develop",
     "serve": "gatsby serve --prefix-paths"
   },
   "dependencies": {
     "@mdx-js/mdx": "1.0.2",
     "@mdx-js/react": "1.0.2",
     "@patternfly/patternfly": "2.6.5",
-    "@patternfly/react-core": "^3.31.0",
+    "@patternfly/react-core": "^3.32.5",
     "@patternfly/react-icons": "^3.9.2",
     "gatsby": "2.3.14",
     "gatsby-mdx": "0.6.3",
