@@ -2028,6 +2028,7 @@ exports[`typeahead multi select test onChange 1`] = `
             >
               <button
                 class="pf-c-select__menu-item pf-m-disabled"
+                id="No results found-0"
                 role="option"
               >
                 No results found
@@ -2116,13 +2117,16 @@ exports[`typeahead multi select test onChange 1`] = `
       >
         <SelectOption
           className=""
+          id="No results found-0"
           index={0}
           isDisabled={true}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$0"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="No results found"
         >
@@ -2132,6 +2136,7 @@ exports[`typeahead multi select test onChange 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item pf-m-disabled"
+              id="No results found-0"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
@@ -2897,6 +2902,7 @@ exports[`typeahead select test onChange 1`] = `
             >
               <button
                 class="pf-c-select__menu-item pf-m-disabled"
+                id="No results found-0"
                 role="option"
               >
                 No results found
@@ -2985,13 +2991,16 @@ exports[`typeahead select test onChange 1`] = `
       >
         <SelectOption
           className=""
+          id="No results found-0"
           index={0}
           isDisabled={true}
+          isFocused={null}
           isPlaceholder={false}
           isSelected={false}
           key=".$0"
           keyHandler={[Function]}
           onClick={[Function]}
+          sendListRef={[Function]}
           sendRef={[Function]}
           value="No results found"
         >
@@ -3001,6 +3010,7 @@ exports[`typeahead select test onChange 1`] = `
             <button
               aria-selected={null}
               className="pf-c-select__menu-item pf-m-disabled"
+              id="No results found-0"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"

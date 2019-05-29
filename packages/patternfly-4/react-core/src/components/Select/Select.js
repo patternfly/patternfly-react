@@ -110,8 +110,8 @@ class Select extends React.Component {
       e.target.value !== ''
         ? React.Children.toArray(this.props.children).filter(child => child.props.value.search(input) === 0)
         : this.props.children;
-    if (filteredChildren.length === 0) {
-      filteredChildren.push(<SelectOption isDisabled key={0} value="No results found" />);
+    if (typeaheadFilteredChildren.length === 0) {
+      typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value="No results found" />);
     }
     this.setState({
       typeaheadInputValue: e.target.value,
