@@ -1,6 +1,7 @@
 ---
 title: "Options menu"
 cssPrefix: "pf-c-options-menu"
+propComponents: ['OptionsMenu', 'OptionsMenuItem', 'OptionsMenuSeparator', 'OptionsMenuToggle', 'OptionsMenuToggleWithText']
 typescript: true
 ---
 import React from 'react';
