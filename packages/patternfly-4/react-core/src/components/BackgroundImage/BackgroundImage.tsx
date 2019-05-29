@@ -36,7 +36,7 @@ export interface BackgroundImageSrcMap {
   sm: string,
   sm2x: string,
   lg: string,
-  filter: string
+  filter?: string
 };
 
 export interface BackgroundImageProps extends Omit<React.HTMLProps<HTMLDivElement>, 'src'> {
