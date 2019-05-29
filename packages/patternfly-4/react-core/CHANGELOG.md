@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.32.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.6...@patternfly/react-core@3.32.7) (2019-05-29)
+
+
+### Bug Fixes
+
+* **popover:** maxWidth typescript error with maxWidth ([#2110](https://github.com/patternfly/patternfly-react/issues/2110)) ([e41ae79](https://github.com/patternfly/patternfly-react/commit/e41ae79))
+
+
+
+
+
 ## [3.32.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.5...@patternfly/react-core@3.32.6) (2019-05-29)
 
 
