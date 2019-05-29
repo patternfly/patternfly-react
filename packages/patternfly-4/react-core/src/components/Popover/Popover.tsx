@@ -72,7 +72,7 @@ export interface PopoverProps {
   /** z-index of the popover */
   zIndex?: number;
   /** Maximum width of the tooltip (default 18.75rem) */
-  maxWidth: string;
+  maxWidth?: string;
   /** Aria label for the Close button */
   closeBtnAriaLabel?: string;
 }
