@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
 import { FormEvent } from 'react';
 
-export enum inputTypes {
+export enum TextInputTypes {
   text = 'text',
   date = 'date',
   datetimeLocal = 'datetime-local',
