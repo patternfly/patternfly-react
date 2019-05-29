@@ -29,12 +29,10 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
   };
 
   singleOptionOnToggle = () => {
-    console.log(this.state);
     this.setState({ singleOptionIsOpen: !this.state.singleOptionIsOpen })
   };
 
   modifiedOnToggle = () => {
-    console.log(this.state);
     this.setState({ modifiedIsOpen: !this.state.modifiedIsOpen })
   };
 

@@ -41,7 +41,8 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   isHovered = false,
   isActive = false,
   isFocused = false,
-  'aria-label': ariaLabel = 'Options menu'
+  'aria-label': ariaLabel = 'Options menu',
+  ...props
 }: OptionsMenuToggleWithTextProps) => (
 
   <div className={css(styles.optionsMenuToggle,
@@ -49,7 +50,8 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
     isPlain && getModifier(styles, 'plain'),
     isHovered && getModifier(styles, 'hover'),
     isActive && getModifier(styles, 'active'),
-    isFocused && getModifier(styles, 'focus'))}>
+    isFocused && getModifier(styles, 'focus'))}
+    {...props}>
     <span className={css(styles.optionsMenuToggleText, toggleTextClassName)}>{toggleText}</span>
     <button className={css(styles.optionsMenuToggleButton, toggleButtonContentsClassName)}
             id={`${parentId}-toggle`}
