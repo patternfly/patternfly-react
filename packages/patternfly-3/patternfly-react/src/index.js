@@ -57,3 +57,4 @@ export * from './components/Wizard';
 export { patternfly, layout } from './common/patternfly';
 export * from './components/ExpandCollapse';
 export * from './components/Overlay';
+export * from './components/BreadcrumbSwitcher';

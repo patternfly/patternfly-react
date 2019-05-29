@@ -2,6 +2,7 @@
 title: 'Breadcrumb'
 cssPrefix: 'pf-c-breadcrumb'
 typescript: true
+propComponents: ['Breadcrumb', 'BreadcrumbItem', 'BreadcrumbHeading']
 ---
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 

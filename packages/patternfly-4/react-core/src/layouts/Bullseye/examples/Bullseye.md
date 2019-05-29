@@ -2,6 +2,7 @@
 title: 'Bullseye'
 cssPrefix: 'pf-l-bullseye'
 section: 'layouts'
+propComponents: ['Bullseye']
 ---
 
 import { Bullseye } from '@patternfly/react-core';

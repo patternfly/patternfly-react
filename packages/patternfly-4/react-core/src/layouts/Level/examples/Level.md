@@ -2,6 +2,7 @@
 title: 'Level'
 cssPrefix: 'pf-l-level'
 section: 'layouts'
+propComponents: ['Level', 'LevelItem']
 ---
 
 import { Level, LevelItem } from '@patternfly/react-core';

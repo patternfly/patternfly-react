@@ -2,6 +2,7 @@
 title: 'Form'
 cssPrefix: 'pf-c-form'
 typescript: true
+propComponents: ['ActionGroup', 'Form', 'FormGroup', 'FormHelperText']
 ---
 
 ## Simple form

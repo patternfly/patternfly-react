@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.1...@patternfly/react-charts@3.6.2) (2019-05-29)
+
+
+### Bug Fixes
+
+* **docs:** use frontmatter for what props to show in docs ([#2072](https://github.com/patternfly/patternfly-react/issues/2072)) ([20e6b12](https://github.com/patternfly/patternfly-react/commit/20e6b12))
+
+
+
+
+
 ## [3.6.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.0...@patternfly/react-charts@3.6.1) (2019-05-29)
 
 **Note:** Version bump only for package @patternfly/react-charts

@@ -2,6 +2,7 @@
 title: 'Grid'
 cssPrefix: 'pf-l-grid'
 section: 'layouts'
+propComponents: ['Grid', 'GridItem']
 ---
 
 ## Simple grid

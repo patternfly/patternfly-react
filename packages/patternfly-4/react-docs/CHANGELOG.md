@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.4.22...@patternfly/react-docs@4.4.23) (2019-05-29)
+
+
+### Bug Fixes
+
+* **docs:** use frontmatter for what props to show in docs ([#2072](https://github.com/patternfly/patternfly-react/issues/2072)) ([20e6b12](https://github.com/patternfly/patternfly-react/commit/20e6b12))
+
+
+
+
+
 ## [4.4.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.4.21...@patternfly/react-docs@4.4.22) (2019-05-28)
 
 **Note:** Version bump only for package @patternfly/react-docs
