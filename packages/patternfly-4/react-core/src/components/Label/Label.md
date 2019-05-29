@@ -1,6 +1,7 @@
 ---
 title: 'Label'
 cssPrefix: 'pf-c-label'
+propComponents: ['Label']
 ---
 
 import { Label } from '@patternfly/react-core';

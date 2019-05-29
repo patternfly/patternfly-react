@@ -1,6 +1,7 @@
 ---
 title: 'Bar'
 section: 'charts'
+propComponents: ['Chart', 'ChartBar', 'ChartGroup', 'ChartThemeColor', 'ChartThemeVariant']
 ---
 
 ## Blue bar chart

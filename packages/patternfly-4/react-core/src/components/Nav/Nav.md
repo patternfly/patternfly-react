@@ -2,6 +2,7 @@
 title: 'Nav'
 cssPrefix: 'pf-c-nav'
 typescript: true
+propComponents: ['Nav', 'NavList', 'NavGroup', 'NavItem', 'NavItemSeparator', 'NavExpandable']
 ---
 
 ## Simple nav

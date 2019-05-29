@@ -1,6 +1,7 @@
 ---
 title: 'Text input'
 cssPrefix: 'pf-c-form-control'
+propComponents: ['TextInput']
 ---
 
 import { TextInput } from '@patternfly/react-core';

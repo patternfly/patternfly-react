@@ -2,6 +2,7 @@
 title: 'Brand'
 cssPrefix: null
 typescript: true
+propComponents: ['Brand']
 ---
 ## Simple brand
 
