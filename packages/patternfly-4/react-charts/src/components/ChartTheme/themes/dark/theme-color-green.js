@@ -13,7 +13,7 @@ import { default as ColorTheme } from '../theme-color';
 
 // Colors
 const COLOR_AXIS_FILL = 'transparent';
-const COLOR_AXIS_STROKE = '#D1D1D1';
+const COLOR_AXIS_STROKE = '#D2D2D2';
 const COLOR_FILL = global_active_color_200.value;
 const COLOR_LABEL = global_Color_light_100.value;
 const COLOR_SCALE = [global_success_color_100.value, global_success_color_200.value, '#59C768'];

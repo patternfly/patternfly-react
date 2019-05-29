@@ -62,7 +62,7 @@ exports[`ChartTooltip 1`] = `
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#D1D1D1",
+            "stroke": "#D2D2D2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -535,7 +535,7 @@ exports[`ChartTooltip 2`] = `
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#D1D1D1",
+            "stroke": "#D2D2D2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -1000,7 +1000,7 @@ exports[`allows tooltip via container component 1`] = `
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#D1D1D1",
+            "stroke": "#D2D2D2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,

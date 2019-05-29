@@ -56,7 +56,7 @@ exports[`ChartGroup 1`] = `
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#D1D1D1",
+            "stroke": "#D2D2D2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -523,7 +523,7 @@ exports[`ChartGroup 2`] = `
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#D1D1D1",
+            "stroke": "#D2D2D2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -991,7 +991,7 @@ exports[`renders container children 1`] = `
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#D1D1D1",
+            "stroke": "#D2D2D2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,

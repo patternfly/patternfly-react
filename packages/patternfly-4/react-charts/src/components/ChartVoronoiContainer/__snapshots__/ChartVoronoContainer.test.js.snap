@@ -79,7 +79,7 @@ exports[`ChartVoronoiContainer 1`] = `
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#D1D1D1",
+            "stroke": "#D2D2D2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -569,7 +569,7 @@ exports[`ChartVoronoiContainer 2`] = `
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#D1D1D1",
+            "stroke": "#D2D2D2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -1030,7 +1030,7 @@ exports[`renders container via ChartGroup 1`] = `
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#D1D1D1",
+            "stroke": "#D2D2D2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,

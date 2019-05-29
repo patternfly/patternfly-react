@@ -2188,7 +2188,7 @@ exports[`Chart 1`] = `
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#D1D1D1",
+            "stroke": "#D2D2D2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -4787,7 +4787,7 @@ exports[`Chart 2`] = `
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#D1D1D1",
+            "stroke": "#D2D2D2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -7392,7 +7392,7 @@ exports[`renders axis and component children 1`] = `
         "style": Object {
           "axis": Object {
             "fill": "transparent",
-            "stroke": "#D1D1D1",
+            "stroke": "#D2D2D2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
