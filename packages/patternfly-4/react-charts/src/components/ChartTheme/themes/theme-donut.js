@@ -3,7 +3,7 @@ export const styles = {
   label: {
     subTitle: {
       fill: '#bbb',
-      fontSize: 18
+      fontSize: 16
     },
     title: {
       fontSize: 26

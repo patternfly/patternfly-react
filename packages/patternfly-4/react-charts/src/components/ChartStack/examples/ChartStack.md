@@ -3,11 +3,10 @@ title: 'Stack'
 section: 'charts'
 ---
 
-## Vertical blue stack chart
-
 import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-stack.scss';
 
+## Vertical blue stack chart
 ```js
 import React from 'react';
 import { Chart, ChartBar, ChartStack } from '@patternfly/react-charts';
