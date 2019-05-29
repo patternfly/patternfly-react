@@ -109,6 +109,7 @@ exports[`ChartTooltip 1`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
+            "fill": "#06c",
             "stroke": "none",
           },
           "labels": Object {
@@ -582,6 +583,7 @@ exports[`ChartTooltip 2`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
+            "fill": "#06c",
             "stroke": "none",
           },
           "labels": Object {
@@ -1047,6 +1049,7 @@ exports[`allows tooltip via container component 1`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
+            "fill": "#06c",
             "stroke": "none",
           },
           "labels": Object {

@@ -126,6 +126,7 @@ exports[`ChartVoronoiContainer 1`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
+            "fill": "#06c",
             "stroke": "none",
           },
           "labels": Object {
@@ -616,6 +617,7 @@ exports[`ChartVoronoiContainer 2`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
+            "fill": "#06c",
             "stroke": "none",
           },
           "labels": Object {
@@ -1077,6 +1079,7 @@ exports[`renders container via ChartGroup 1`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
+            "fill": "#06c",
             "stroke": "none",
           },
           "labels": Object {

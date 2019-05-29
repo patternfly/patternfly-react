@@ -45,6 +45,9 @@ export default props => {
     bar: {
       colorScale: COLOR_SCALE,
       style: {
+        data: {
+          fill: COLOR_SCALE[0]
+        },
         labels: {
           fill: COLOR_LABEL
         }

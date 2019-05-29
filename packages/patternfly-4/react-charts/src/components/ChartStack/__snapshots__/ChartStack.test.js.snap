@@ -102,6 +102,7 @@ exports[`Chart 1`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
+            "fill": "#06c",
             "stroke": "none",
           },
           "labels": Object {
@@ -568,6 +569,7 @@ exports[`Chart 2`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
+            "fill": "#06c",
             "stroke": "none",
           },
           "labels": Object {
@@ -3176,6 +3178,7 @@ exports[`renders component data 1`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
+            "fill": "#06c",
             "stroke": "none",
           },
           "labels": Object {
