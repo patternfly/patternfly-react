@@ -13,6 +13,22 @@ export const propTypes = {
    */
   '': PropTypes.any,
   /**
+   * The containerComponent prop takes an entire component which will be used to
+   * create a container element for standalone charts.
+   * The new element created from the passed containerComponent wil be provided with
+   * these props from VictoryArea: height, width, children
+   * (the chart itself) and style. Props that are not provided by the
+   * child chart component include title and desc, both of which
+   * are intended to add accessibility to Victory components. The more descriptive these props
+   * are, the more accessible your data will be for people using screen readers.
+   * Any of these props may be overridden by passing in props to the supplied component,
+   * or modified or ignored within the custom component itself. If a dataComponent is
+   * not provided, VictoryArea will use the default VictoryContainer component.
+   * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows how popular each dog breed is by percentage in Seattle." />
+   * @default <ChartContainer/>
+   */
+  containerComponent: PropTypes.element,
+  /**
    * Specifies the height the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
    *
@@ -26,6 +42,8 @@ export const propTypes = {
    * attribute, or a static container with absolute width and height.
    *
    * Useful when legend is located inside a chart -- default is false.
+   *
+   * Note: Not compatible with containerComponent prop
    */
   responsive: PropTypes.bool,
   /**
@@ -56,19 +74,16 @@ export const propTypes = {
 };
 
 const ChartLegend = ({
+  dataComponent = <ChartPoint />,
   responsive = true,
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
+
+  // destructure last
+  theme = getTheme(themeColor, themeVariant),
+  containerComponent = <ChartContainer responsive={responsive} theme={theme} />,
   ...rest
-}) => (
-  <VictoryLegend
-    containerComponent={<ChartContainer responsive={responsive} />}
-    dataComponent={<ChartPoint />}
-    theme={theme}
-    {...rest}
-  />
-);
+}) => <VictoryLegend containerComponent={containerComponent} dataComponent={dataComponent} theme={theme} {...rest} />;
 
 // Note: VictoryLegend.role must be hoisted
 hoistNonReactStatics(ChartLegend, VictoryLegend);
