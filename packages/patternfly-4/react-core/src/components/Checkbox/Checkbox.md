@@ -2,6 +2,7 @@
 title: 'Checkbox'
 cssPrefix: 'pf-c-check'
 typescript: true
+propComponents: ['Checkbox']
 ---
 
 import { Checkbox } from '@patternfly/react-core';

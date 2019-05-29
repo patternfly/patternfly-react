@@ -2,6 +2,7 @@
 title: 'Avatar'
 cssPrefix: 'pf-c-avatar'
 typescript: true
+propComponents: ['Avatar']
 ---
 
 ## Simple avatar

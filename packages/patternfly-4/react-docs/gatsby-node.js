@@ -32,6 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
             section
             fullscreen
             typescript
+            propComponents
           }
         }
       }
@@ -42,7 +43,6 @@ exports.createPages = ({ graphql, actions }) => {
     data.allMdx.nodes.forEach(node => {
       const componentName = navHelpers.getFileName(node.fileAbsolutePath);
       const parentFolderName = navHelpers.getParentFolder(node.fileAbsolutePath, 3);
-      const folderName = navHelpers.getParentFolder(node.fileAbsolutePath);
       const section = node.frontmatter.section ? node.frontmatter.section : 'components';
 
       let link = '/bad-page/';
@@ -61,7 +61,7 @@ exports.createPages = ({ graphql, actions }) => {
       } else {
         // Normal templated component pages
         link = `/${section}/${componentName}/`.toLowerCase();
-        // console.log('adding page', link, node.frontmatter.typescript);
+        // console.log('adding page', link, node.frontmatter.propComponents);
         actions.createPage({
           path: link,
           component: path.resolve('./src/templates/mdxTemplate.js'),
@@ -69,8 +69,7 @@ exports.createPages = ({ graphql, actions }) => {
             title: node.frontmatter.title,
             typescript: node.frontmatter.typescript, // For a badge
             fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
-            // eslint-disable-next-line no-useless-escape
-            pathRegex: `/${folderName}\/.*/` // Helps us get the docgenned props
+            propComponents: node.frontmatter.propComponents || [] // Helps us get the docgenned props
           }
         });
       }
@@ -78,7 +77,7 @@ exports.createPages = ({ graphql, actions }) => {
   });
 };
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
+exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {

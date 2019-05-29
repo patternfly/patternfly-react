@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryPie } from 'victory';
 import ChartTooltip from '../ChartTooltip/ChartTooltip';
-import { getTheme } from '../ChartTheme/themes/theme-utils';
+import { getTheme } from '../ChartUtils/chart-theme';
 
 export const propTypes = {
   /**
@@ -12,7 +12,7 @@ export const propTypes = {
    */
   '': PropTypes.any,
   /**
-   * The height props specifies the height the svg viewBox of the chart container. This value should be given as a
+   * Specifies the height the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
@@ -22,16 +22,24 @@ export const propTypes = {
    * Note: innerRadius may need to be set when using this property.
    */
   height: PropTypes.number,
-  /*
-   * Specifies the theme color; blue (default), green, or multi-color. Overridden by the theme property.
+  /**
+   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   *
+   * Note: Not compatible with theme prop
+   *
+   * @example themeColor={ChartThemeColor.blue}
    */
   themeColor: PropTypes.string,
-  /*
-   * Specifies the theme variant; 'dark' or 'light' (default). Overridden by the theme property.
+  /**
+   * Specifies the theme variant. Valid values are 'dark' or 'light'
+   *
+   * Note: Not compatible with theme prop
+   *
+   * @example themeVariant={ChartThemeVariant.light}
    */
   themeVariant: PropTypes.string,
   /**
-   * The width props specifies the width of the svg viewBox of the chart container. This value should be given as a
+   * Specifies the width of the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and

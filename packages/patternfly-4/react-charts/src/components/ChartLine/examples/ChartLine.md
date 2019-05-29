@@ -1,6 +1,7 @@
 ---
 title: 'Line'
 section: 'charts'
+propComponents: ['Chart', 'ChartAxis', 'ChartGroup', 'ChartLegend', 'ChartLine', 'ChartThemeColor', 'ChartThemeVariant']
 ---
 
 import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
@@ -61,6 +62,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor }
     <ChartLegend
       data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
       orientation="vertical"
+      responsive={false}
       title="Average number of pets"
       themeColor={ChartThemeColor.green}
       y={80}
@@ -126,6 +128,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, 
   <ChartLegend
     data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
     height={50}
+    responsive={false}
     themeColor={ChartThemeColor.multi}
     themeVariant={ChartThemeVariant.light}
     title="Average number of pets"

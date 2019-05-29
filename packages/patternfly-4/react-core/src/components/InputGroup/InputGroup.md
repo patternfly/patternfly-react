@@ -1,6 +1,7 @@
 ---
 title: 'Input group'
 cssPrefix: null
+propComponents: ['InputGroup', 'InputGroupText']
 ---
 
 ## Simple input group

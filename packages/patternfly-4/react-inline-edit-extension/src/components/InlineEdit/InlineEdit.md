@@ -1,6 +1,7 @@
 ---
 title: 'Inline edit'
 section: 'inline table'
+propComponents: ['TableTextInput']
 ---
 
 ## Editable table with inline edit row

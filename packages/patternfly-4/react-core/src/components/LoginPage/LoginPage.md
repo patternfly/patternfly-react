@@ -2,6 +2,7 @@
 title: 'Login page'
 cssPrefix: 'pf-c-login'
 typescript: true
+propComponents: ['LoginPage', 'Login', 'LoginForm', 'LoginMainBody', 'LoginMainHeader', 'LoginHeader', 'LoginFooter', 'LoginMainFooter', 'LoginFooterItem', 'LoginMainFooterBandItem', 'LoginMainFooterLinksItem']
 ---
 
 import LinkPreview from '@content/../LinkPreview';

@@ -2,6 +2,7 @@
 title: 'Popover'
 cssPrefix: 'pf-c-popover'
 typescript: true
+propComponents: ['Popover']
 ---
 
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
