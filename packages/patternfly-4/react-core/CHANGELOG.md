@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.32.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.7...@patternfly/react-core@3.32.8) (2019-05-29)
+
+
+### Bug Fixes
+
+* **Select:** update SelectProps interface, clean up demos ([#2107](https://github.com/patternfly/patternfly-react/issues/2107)) ([b56ea35](https://github.com/patternfly/patternfly-react/commit/b56ea35))
+
+
+
+
+
 ## [3.32.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.6...@patternfly/react-core@3.32.7) (2019-05-29)
 
 
