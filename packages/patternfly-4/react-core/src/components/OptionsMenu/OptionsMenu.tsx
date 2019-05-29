@@ -43,6 +43,7 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
   id,
   menuItems,
   toggle,
+  ...props
 }: OptionsMenuProps) => (
   <div id={id}
        className={
@@ -50,7 +51,8 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
            direction === OptionsMenuDirection.up && getModifier(styles, 'top'),
            position === OptionsMenuPosition.right && getModifier(styles, 'align-right'),
            isOpen && getModifier(styles, 'expanded'),
-           className)}>
+           className)}
+       {...props}>
     {React.Children.map(toggle, oneToggle =>
       React.cloneElement(oneToggle, {
         parentId: id,
@@ -61,9 +63,7 @@ export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
     <ul className={css(styles.optionsMenuMenu,
       position === OptionsMenuPosition.right && getModifier(styles, 'align-right'))}
         {...ariaLabelMenu ? {'aria-label': ariaLabelMenu} : {'aria-labelledby': `${id}-toggle`}}>
-      {menuItems.map((item: React.ReactNode) => {
-        return item;
-      })}
+      {menuItems}
     </ul>}
   </div>
 );

@@ -13,8 +13,9 @@ export const OptionsMenuItemGroup: React.FunctionComponent<OptionsMenuItemGroupP
   children = null,
   className = '',
   ariaLabel = '',
+  ...props
 }: OptionsMenuItemGroupProps) => (
-  <li>
+  <li {...props}>
     <ul className={className} aria-label={ariaLabel}>
       {children}
     </ul>
