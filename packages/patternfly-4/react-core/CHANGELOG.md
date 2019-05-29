@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.32.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.5...@patternfly/react-core@3.32.6) (2019-05-29)
+
+
+### Bug Fixes
+
+* **docs:** use frontmatter for what props to show in docs ([#2072](https://github.com/patternfly/patternfly-react/issues/2072)) ([20e6b12](https://github.com/patternfly/patternfly-react/commit/20e6b12))
+
+
+
+
+
 ## [3.32.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.4...@patternfly/react-core@3.32.5) (2019-05-28)
 
 **Note:** Version bump only for package @patternfly/react-core
