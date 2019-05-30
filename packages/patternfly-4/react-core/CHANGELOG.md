@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.32.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.9...@patternfly/react-core@3.32.10) (2019-05-30)
+
+
+### Bug Fixes
+
+* **popover:** make PopoverPosition an enum ([#2113](https://github.com/patternfly/patternfly-react/issues/2113)) ([4afe336](https://github.com/patternfly/patternfly-react/commit/4afe336))
+
+
+
+
+
 ## [3.32.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.8...@patternfly/react-core@3.32.9) (2019-05-29)
 
 **Note:** Version bump only for package @patternfly/react-core
