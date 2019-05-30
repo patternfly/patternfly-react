@@ -966,6 +966,7 @@ exports[`select single select renders expanded successfully 1`] = `
       isExpanded={false}
       openedOnEnter={false}
       selected={null}
+      sendRef={[Function]}
     >
       <ul
         aria-label={null}
