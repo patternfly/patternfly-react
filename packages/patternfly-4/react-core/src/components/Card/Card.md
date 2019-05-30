@@ -6,7 +6,7 @@ propComponents: ['Card', 'CardHeader', 'CardBody', 'CardFooter']
 ---
 
 import { Card, CardActions, CardHead, CardHeader, CardBody, CardFooter, Checkbox, DropdownActions } from '@patternfly/react-core';
-import brandImg from './examples/brandImg.svg'; 
+import brandImg2 from './examples/brandImg2.svg'; 
 
 ## Simple card
 ```js
@@ -96,13 +96,14 @@ NoFillBodyCard = () => (
 ```js
 import React from 'react'; 
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHead, CardActions, CardHeader, CardBody } from '@patternfly/react-core'; 
-import BrandImg from './examples/brandImg.svg'; 
+import brandImg2 from './examples/brandImg2.svg'; 
 
 class KebabDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      check1: false
     };
     this.onToggle = isOpen => {
       this.setState({
@@ -114,6 +115,12 @@ class KebabDropdown extends React.Component {
         isOpen: !this.state.isOpen
       });
     };
+    this.onClick = (checked, event) => {
+      const target = event.target; 
+      const value = target.type === 'checkbox' ? target.checked : target.value; 
+      const name = target.name; 
+      this.setState({ [name]: value }); 
+    }; 
   }
 
   render() {
@@ -138,9 +145,15 @@ class KebabDropdown extends React.Component {
     return (
       <Card>
         <CardHead>
-          <img src={brandImg} />
+            <p> img goes here </p>
           <CardActions>
-            <Checkbox />
+            <Checkbox 
+              isChecked={this.state.check1}
+              onChange={this.onClick}
+              aria-label="card checkbox example"
+              id="check-1"
+              name="check1"
+            />
             <Dropdown
               onSelect={this.onSelect}
               toggle={<KebabToggle onToggle={this.onToggle} />}
