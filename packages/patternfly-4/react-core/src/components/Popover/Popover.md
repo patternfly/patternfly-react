@@ -10,11 +10,11 @@ import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-co
 ## Simple popover
 ```js
 import React from 'react';
-import { Popover, Button } from '@patternfly/react-core';
+import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
 SimplePopover = () => (
   <Popover
-    position="right"
+    position={PopoverPosition.right}
     headerContent={<div>Popover Header</div>}
     bodyContent={
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
@@ -120,7 +120,7 @@ import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-co
 
 HeadlessPopover = () => (
   <Popover
-    position="right"
+    position={PopoverPosition.right}
     bodyContent={
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }

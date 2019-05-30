@@ -20,11 +20,11 @@ import { ReactElement } from 'react';
 const FocusTrap: any = require('focus-trap-react');
 tippyStyles();
 
-export const PopoverPosition = {
-  top: 'top',
-  bottom: 'bottom',
-  left: 'left',
-  right: 'right'
+export enum PopoverPosition {
+  top = 'top',
+  bottom = 'bottom',
+  left = 'left',
+  right = 'right'
 };
 
 export interface PopoverProps {
