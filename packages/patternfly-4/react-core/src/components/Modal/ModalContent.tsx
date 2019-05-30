@@ -6,6 +6,7 @@ import * as React from 'react';
 const FocusTrap: any = require('focus-trap-react');
 
 import styles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
+import titleStyles from '@patternfly/react-styles/css/components/Title/title';
 import { css } from '@patternfly/react-styles';
 
 import { Backdrop } from '../Backdrop/Backdrop';
@@ -26,13 +27,17 @@ export interface ModalContentProps {
   isSmall?: boolean;
   /** Flag to show the modal */
   isOpen?: boolean;
-  /** Content of the Modal Header */
+  /** Complex header (more than just text), supersedes title for header content */
+  header?: React.ReactNode,
+  /** Simple text content of the Modal Header, also used for aria-label on the body */
   title: string;
-  /** Flag to show the title */
+  /** Flag to show the title (ignored for custom headers) */
   hideTitle?: boolean;
   /** Default width of the content. */
   width?: number | string;
-  /** Content of the Modal Footer */
+  /** Custom footer */
+  footer?: React.ReactNode,
+  /** Action buttons to add to the standard Modal Footer, ignored if `footer` is given */
   actions?: any,
   /** A callback for when the close button is clicked */
   onClose?: () => void;
@@ -46,8 +51,10 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   children,
   className = '',
   isOpen = false,
+  header = null,
   title,
   hideTitle = false,
+  footer = null,
   actions = [],
   onClose = () => undefined as any,
   isLarge = false,
@@ -57,12 +64,17 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   id = '',
   ...props
 }) => {
-  const modalBoxHeader = <ModalBoxHeader hideTitle={hideTitle}> {title} </ModalBoxHeader>;
-  const modalBoxFooter = actions.length > 0 && <ModalBoxFooter> {actions} </ModalBoxFooter>;
   if (!isOpen) {
     return null;
   }
 
+  const modalBoxHeader = header ?
+    <div className={css(titleStyles.title)}>{header}</div> :
+    <ModalBoxHeader hideTitle={hideTitle}> {title} </ModalBoxHeader>;
+
+  const modalBoxFooter = footer ?
+    <ModalBoxFooter>{footer}</ModalBoxFooter> :
+    actions.length > 0 && <ModalBoxFooter>{actions}</ModalBoxFooter>;
   const boxStyle = width === -1 ? {} : { width };
 
   return (

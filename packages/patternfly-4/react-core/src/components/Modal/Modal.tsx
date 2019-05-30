@@ -15,13 +15,17 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Flag to show the modal */
   isOpen?: boolean;
-  /** Content of the Modal Header */
+  /** Complex header (more than just text), supersedes title for header content */
+  header?: React.ReactNode,
+  /** Simple text content of the Modal Header, also used for aria-label on the body */
   title: string;
   /** Flag to hide the title */
   hideTitle?: boolean;
   /** Id to use for Modal Box description */
   ariaDescribedById?: string;
-  /** Action buttons to put in the Modal Footer */
+  /** Custom footer */
+  footer?: React.ReactNode,
+  /** Action buttons to add to the standard Modal Footer, ignored if `footer` is given */
   actions?: any,
   /** A callback for when the close button is clicked */
   onClose?: () => void;
