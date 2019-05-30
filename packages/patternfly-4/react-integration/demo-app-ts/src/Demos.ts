@@ -96,6 +96,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.NavDemo
   },
   {
+    id: 'options-menu-demo',
+    name: 'Options Menu Demo',
+    componentType: Examples.OptionsMenuDemo
+  },
+  {
     id: 'popover-demo',
     name: 'Popover Demo',
     componentType: Examples.PopoverDemo
