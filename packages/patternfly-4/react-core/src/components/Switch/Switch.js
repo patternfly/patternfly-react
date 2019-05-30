@@ -45,7 +45,12 @@ class Switch extends React.Component {
   render() {
     const { id, className, label, isChecked, isDisabled, onChange, ...props } = this.props;
     return (
-      <label className={css(styles.switch, className)} htmlFor={this.id}>
+      <label
+        className={css(styles.switch, className)}
+        htmlFor={this.id}
+        data-ouia-component-type="Switch"
+        data-ouia-component-id={this.id}
+      >
         <input
           {...props}
           id={this.id}
