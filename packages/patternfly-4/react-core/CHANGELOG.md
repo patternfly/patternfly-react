@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.33.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.10...@patternfly/react-core@3.33.0) (2019-05-30)
+
+
+### Features
+
+* **OptionsMenu:** Options Menu Component Typescript Conversion ([#2002](https://github.com/patternfly/patternfly-react/issues/2002)) ([402718b](https://github.com/patternfly/patternfly-react/commit/402718b))
+
+
+
+
+
 ## [3.32.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.9...@patternfly/react-core@3.32.10) (2019-05-30)
 
 
