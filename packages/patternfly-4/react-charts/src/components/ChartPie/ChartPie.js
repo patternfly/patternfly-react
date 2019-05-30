@@ -23,6 +23,11 @@ export const propTypes = {
    */
   height: PropTypes.number,
   /**
+   * The labelComponent prop specified the component that will be rendered when labels are defined
+   * on VictoryVoronoiContainer. If the labels prop is omitted, no label component will be rendered.
+   */
+  labelComponent: PropTypes.element,
+  /**
    * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
    *
    * Note: Not compatible with theme prop
@@ -54,9 +59,12 @@ export const propTypes = {
 const ChartPie = ({
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
+
+  // destructure last
+  theme = getTheme(themeColor, themeVariant),
+  labelComponent = <ChartTooltip theme={theme} />,
   ...rest
-}) => <VictoryPie labelComponent={<ChartTooltip theme={theme} />} theme={theme} {...rest} />;
+}) => <VictoryPie labelComponent={labelComponent} theme={theme} {...rest} />;
 
 // Note: VictoryPie.role must be hoisted
 hoistNonReactStatics(ChartPie, VictoryPie);
