@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.3...@patternfly/react-charts@3.6.4) (2019-05-30)
+
+
+### Bug Fixes
+
+* **charts:** Add defaults for component props ([#2103](https://github.com/patternfly/patternfly-react/issues/2103)) ([ca98322](https://github.com/patternfly/patternfly-react/commit/ca98322))
+
+
+
+
+
 ## [3.6.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.2...@patternfly/react-charts@3.6.3) (2019-05-29)
 
 **Note:** Version bump only for package @patternfly/react-charts

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.33.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.33.0...@patternfly/react-core@3.33.1) (2019-05-30)
+
+
+### Bug Fixes
+
+* **checkbox:** set checked if onChanged is not the default ([#2037](https://github.com/patternfly/patternfly-react/issues/2037)) ([2237fa5](https://github.com/patternfly/patternfly-react/commit/2237fa5))
+
+
+
+
+
 # [3.33.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.10...@patternfly/react-core@3.33.0) (2019-05-30)
 
 
