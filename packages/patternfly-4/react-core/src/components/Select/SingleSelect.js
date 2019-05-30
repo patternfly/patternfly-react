@@ -15,6 +15,8 @@ const propTypes = {
   openedOnEnter: PropTypes.bool,
   /** Currently selected option */
   selected: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  /** Internal handler for ref handling */
+  sendRef: PropTypes.function,
   /** Additional props are spread to the container <select> */
   '': PropTypes.any // eslint-disable-line react/require-default-props
 };
@@ -23,7 +25,8 @@ const defaultProps = {
   className: '',
   isExpanded: false,
   openedOnEnter: false,
-  selected: ''
+  selected: '',
+  sendRef: Function.prototype
 };
 
 class SingleSelect extends React.Component {

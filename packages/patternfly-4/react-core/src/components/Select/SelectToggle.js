@@ -39,6 +39,8 @@ const propTypes = {
   ariaLabelToggle: PropTypes.string,
   /** Flag for variant, determines toggle rules and interaction */
   variant: PropTypes.oneOf(['single', 'checkbox', 'typeahead', 'typeaheadmulti']),
+  /** Internal handler for typeahead keyboard navigation */
+  handleTypeaheadKeys: PropTypes.Function,
   /** Additional props are spread to the container <button> */
   '': PropTypes.any // eslint-disable-line react/require-default-props
 };
@@ -58,7 +60,8 @@ const defaultProps = {
   type: 'button',
   onToggle: Function.prototype,
   onEnter: Function.prototype,
-  onClose: Function.prototype
+  onClose: Function.prototype,
+  handleTypeaheadKeys: Function.prototype
 };
 
 class SelectToggle extends Component {
