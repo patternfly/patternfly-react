@@ -5,7 +5,8 @@ typescript: true
 propComponents: ['Card', 'CardHeader', 'CardBody', 'CardFooter']
 ---
 
-import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardActions, CardHead, CardHeader, CardBody, CardFooter, Checkbox, DropdownActions } from '@patternfly/react-core';
+import brandImg from './examples/brandImg.svg'; 
 
 ## Simple card
 ```js
@@ -89,6 +90,73 @@ NoFillBodyCard = () => (
     <CardFooter>Footer</CardFooter>
   </Card>
 );
+```
+
+## Card with image and actions 
+```js
+import React from 'react'; 
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHead, CardActions, CardHeader, CardBody } from '@patternfly/react-core'; 
+import BrandImg from './examples/brandImg.svg'; 
+
+class KebabDropdown extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    const dropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownSeparator key="separator" />,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
+    return (
+      <Card>
+        <CardHead>
+          <img src={brandImg} />
+          <CardActions>
+            <Checkbox />
+            <Dropdown
+              onSelect={this.onSelect}
+              toggle={<KebabToggle onToggle={this.onToggle} />}
+              isOpen={isOpen}
+              isPlain
+              dropdownItems={dropdownItems}
+            />
+          </CardActions>
+        </CardHead>
+        <CardHeader>Header</CardHeader>
+        <CardBody>Body</CardBody>
+        <CardFooter>Footer</CardFooter>
+      </Card>
+    );
+  }
+}
 ```
 
 ## Card hover example
