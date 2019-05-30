@@ -10,7 +10,7 @@
     "build:static": "shx cp -r ../react-core/dist/styles/* static",
     "clean": "rimraf .cache public static/assets static/base.css",
     "clean:mdx": "rimraf .cache/caches/gatsby-mdx",
-    "develop": "yarn build:static && yarn clean:mdx && gatsby develop",
+    "develop": "yarn build:static && gatsby develop",
     "serve": "gatsby serve --prefix-paths"
   },
   "dependencies": {
