@@ -16,7 +16,7 @@ export interface WizardNavItemProps {
   /** Callback for when the nav item is clicked */
   onNavItemClick?: (step: number) => any;
   /** Component used to render WizardNavItem */
-  linkComponent?: React.ReactNode;
+  navItemComponent?: React.ReactNode;
 }
 
 export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
@@ -26,20 +26,20 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
   isDisabled = false,
   step,
   onNavItemClick = () => undefined,
-  linkComponent = 'a'
+  navItemComponent = 'a'
 }: WizardNavItemProps) => {
-  const LinkComponent = linkComponent as any;
+  const NavItemComponent = navItemComponent as any;
 
   return (
     <li className={css(styles.wizardNavItem)}>
-      <LinkComponent
+      <NavItemComponent
         aria-current={isCurrent && !children ? 'page' : false}
         onClick={() => onNavItemClick(step)}
         className={css(styles.wizardNavLink, isCurrent && 'pf-m-current', isDisabled && 'pf-m-disabled')}
         aria-disabled={isDisabled ? true : false}
         tabIndex={isDisabled ? -1 : undefined}>
         {text}
-      </LinkComponent>
+      </NavItemComponent>
       {children}
     </li>
   );

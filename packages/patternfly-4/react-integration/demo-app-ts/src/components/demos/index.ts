@@ -20,6 +20,7 @@ export * from './ModalDemo/ModalDemo';
 export * from './NavDemo/NavDemo';
 export * from './OptionsMenuDemo/OptionsMenuDemo';
 export * from './PopoverDemo/PopoverDemo';
+export * from './PageDemo/PageDemo';
 export * from './RadioDemo/RadioDemo';
 export * from './TabsDemo/TabsDemo';
 export * from './TextAreaDemo/TextAreaDemo';

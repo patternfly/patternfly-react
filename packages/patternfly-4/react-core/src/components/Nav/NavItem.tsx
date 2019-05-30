@@ -22,7 +22,7 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>,  
   /** Callback for item click */
   onClick?: NavSelectClickHandler;
   /** Component used to render NavItems */
-  linkComponent?: React.ReactNode;
+  component?: React.ReactNode;
 }
 
 export const NavItem: React.FunctionComponent<NavItemProps> = ({
@@ -34,17 +34,17 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
   itemId = null as string,
   preventDefault = false,
   onClick = null as NavSelectClickHandler,
-  linkComponent = 'a',
+  component = 'a',
   ...props
 }: NavItemProps) => {
-  const LinkComponent = linkComponent as any;
+  const Component = component as any;
 
   const renderDefaultLink = (): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
     return (
       <NavContext.Consumer>
         {(context: any) => (
-          <LinkComponent
+          <Component
             href={to}
             onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
             className={css(styles.navLink, isActive && styles.modifiers.current, className)}
@@ -52,7 +52,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
             {...props}
           >
             {children}
-          </LinkComponent>
+          </Component>
         )}
       </NavContext.Consumer>
     );

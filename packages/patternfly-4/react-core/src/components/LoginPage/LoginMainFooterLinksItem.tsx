@@ -11,7 +11,7 @@ export interface LoginMainFooterLinksItemProps extends React.HTMLProps<HTMLLIEle
   target?: string;
   /** Additional classes added to the Footer Link Item  */
   className?: string;
-  /** Component used to render WizardNavItem */
+  /** Component used to render the Footer Link Item */
   linkComponent?: React.ReactNode;
 }
 

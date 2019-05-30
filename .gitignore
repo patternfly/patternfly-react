@@ -28,6 +28,8 @@ lerna-debug.log
 .vscode
 # For prettier
 !.vscode/settings.json
+# For vim
+*.swp
 
 # Deploy directory
 .public
