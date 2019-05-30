@@ -6,7 +6,7 @@ propComponents: ['Card', 'CardHeader', 'CardBody', 'CardFooter']
 ---
 
 import { Card, CardActions, CardHead, CardHeader, CardBody, CardFooter, Checkbox, DropdownActions } from '@patternfly/react-core';
-import brandImg2 from './examples/brandImg2.svg'; 
+import pfLogo from './examples/pfLogo.svg'; 
 
 ## Simple card
 ```js
@@ -26,7 +26,7 @@ SimpleCard = () => (
 ```js
 import React from 'react'; 
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHead, CardActions, CardHeader, CardBody } from '@patternfly/react-core'; 
-import brandImg2 from './examples/brandImg2.svg'; 
+import pfLogo from './examples/pfLogo.svg'; 
 
 class KebabDropdown extends React.Component {
   constructor(props) {
@@ -75,7 +75,7 @@ class KebabDropdown extends React.Component {
     return (
       <Card>
         <CardHead>
-            <span> img goes here </span>
+          <img src={pfLogo} />
           <CardActions>
             <Checkbox 
               isChecked={this.state.check1}
@@ -342,7 +342,7 @@ import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 ImageCard = () => (
   <Card>
     <CardHead>
-      <span>img goes here</span> 
+      <img src={pfLogo} />
     </CardHead> 
     <CardHeader>Header</CardHeader>
     <CardBody>Body</CardBody>
