@@ -31,11 +31,11 @@ export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpanded
     const { className, children, onChange, ...props } = this.props;
     return (
       <div
-        suppressContentEditableWarning={true}
+        suppressContentEditableWarning
         ref={this.contentRef}
         className={css(styles.clipboardCopyExpandableContent, className)}
         onInput={ (e: any) => onChange(e.target.innerText, e)}
-        contentEditable={true}
+        contentEditable
         {...props}
       />
     );
