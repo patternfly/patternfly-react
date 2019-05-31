@@ -354,7 +354,7 @@ export interface ChartPieProps extends VictoryPieProps {
   y?: DataGetterPropType;
 }
 
-const ChartPie: React.FunctionComponent<ChartPieProps> = ({
+export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   themeColor,
   themeVariant,
   theme = getTheme(themeColor, themeVariant), // destructure last
@@ -363,5 +363,3 @@ const ChartPie: React.FunctionComponent<ChartPieProps> = ({
 
 // Note: VictoryPie.role must be hoisted
 hoistNonReactStatics(ChartPie, VictoryPie);
-
-export default ChartPie;

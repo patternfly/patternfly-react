@@ -9,7 +9,7 @@ import {
 import { Data } from 'victory-core';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import ChartContainer from '../ChartContainer/ChartContainer';
-import { default as ChartPie, ChartPieProps } from '../ChartPie/ChartPie';
+import { ChartPie, ChartPieProps } from '../ChartPie/ChartPie';
 import { ChartThemeDefinition } from "../ChartTheme";
 import { getChartOrigin } from '../ChartUtils/chart-origin';
 import { getDonutThresholdDynamicTheme, getDonutThresholdStaticTheme } from '../ChartUtils/chart-theme';
@@ -399,7 +399,7 @@ export interface ChartDonutThresholdProps extends ChartPieProps {
   y?: DataGetterPropType;
 }
 
-const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdProps> = ({
+export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdProps> = ({
   children,
   data = [],
   donutOrientation = 'left',
@@ -510,5 +510,3 @@ const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdProps> = (
 
 // Note: ChartPie.role must be hoisted
 hoistNonReactStatics(ChartDonutThreshold, ChartPie);
-
-export default ChartDonutThreshold;

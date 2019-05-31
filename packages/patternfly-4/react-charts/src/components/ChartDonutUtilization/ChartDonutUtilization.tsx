@@ -16,7 +16,7 @@ import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme';
 import ChartContainer from '../ChartContainer/ChartContainer';
 import ChartLabel from '../ChartLabel/ChartLabel';
 import ChartLegend from '../ChartLegend/ChartLegend';
-import { default as ChartPie, ChartPieProps } from "../ChartPie/ChartPie";
+import { ChartPie, ChartPieProps } from "../ChartPie/ChartPie";
 import { styles } from '../ChartTheme/themes/theme-donut-utilization';
 import { ChartThemeDefinition, ChartDonutUtilizationStaticTheme } from '../ChartTheme/ChartTheme';
 import { getChartOrigin, getChartOriginX, getChartOriginY } from '../ChartUtils/chart-origin';
@@ -460,7 +460,7 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
   y?: DataGetterPropType;
 }
 
-const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizationProps> = ({
+export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizationProps> = ({
   data,
   donutDx = 0,
   donutDy = 0,
@@ -639,5 +639,3 @@ const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizationProps>
 
 // Note: ChartPie.role must be hoisted
 hoistNonReactStatics(ChartDonutUtilization, ChartPie);
-
-export default ChartDonutUtilization;

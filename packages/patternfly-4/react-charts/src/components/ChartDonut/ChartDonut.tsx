@@ -14,7 +14,7 @@ import {
 import { getDonutTheme } from '../ChartUtils/chart-theme';
 import ChartContainer from '../ChartContainer/ChartContainer';
 import ChartLabel from '../ChartLabel/ChartLabel';
-import { default as ChartPie, ChartPieProps } from '../ChartPie/ChartPie';
+import { ChartPie, ChartPieProps } from '../ChartPie/ChartPie';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { default as ChartDonutTheme, styles } from '../ChartTheme/themes/theme-donut';
 import ChartTooltip from '../ChartTooltip/ChartTooltip';
@@ -365,7 +365,7 @@ export interface ChartDonutProps extends ChartPieProps {
   y?: DataGetterPropType;
 }
 
-const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
+export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   height = ChartDonutTheme.pie.height,
   standalone = true,
   subTitle,
@@ -412,5 +412,3 @@ const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
 
 // Note: VictoryPie.role must be hoisted
 hoistNonReactStatics(ChartDonut, ChartPie);
-
-export default ChartDonut;
