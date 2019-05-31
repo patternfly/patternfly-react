@@ -1,6 +1,8 @@
 {
-  "extends": "../react-core/tsconfig.gen-dts.json",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": "."
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist/js"
   }
 }

@@ -1,6 +1,7 @@
 {
-  "extends": "../react-core/tsconfig.typecheck.json",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": "."
+    "allowJs": true,
+    "noEmit": true
   }
 }
