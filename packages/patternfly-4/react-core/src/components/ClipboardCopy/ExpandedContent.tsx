@@ -1,12 +1,22 @@
-import React from 'react';
-import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
+import * as React from 'react';
+import styles from '@patternfly/patternfly/components/ClipboardCopy/clipboard-copy.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
+import { ClipboardCopyProps } from './ClipboardCopy';
 
-class ExpandedContent extends React.Component {
-  constructor(props) {
+export interface ExpandedContentProps extends ClipboardCopyProps {
+  className?: string; 
+  children: React.ReactNode; 
+  onChange: () => void; 
+}
+
+export class ExpandedContent extends React.Component<ExpandedContentProps> {
+  contentRef = React.createRef<HTMLDivElement>();
+  constructor(props: any) {
     super(props);
-    this.contentRef = React.createRef();
+  }
+
+  static defaultProps = {
+    className: ''
   }
 
   componentDidMount() {
@@ -29,15 +39,3 @@ class ExpandedContent extends React.Component {
     );
   }
 }
-
-ExpandedContent.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  onChange: PropTypes.func.isRequired
-};
-
-ExpandedContent.defaultProps = {
-  className: ''
-};
-
-export default ExpandedContent;

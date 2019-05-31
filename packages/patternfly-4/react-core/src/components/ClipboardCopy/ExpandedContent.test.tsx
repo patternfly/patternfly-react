@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ExpandedContent from './ExpandedContent';
+import { ExpandedContent } from './ExpandedContent';
 
 const props = {
   className: 'class-1',
