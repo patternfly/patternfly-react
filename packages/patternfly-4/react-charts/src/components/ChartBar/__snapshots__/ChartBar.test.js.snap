@@ -3622,7 +3622,7 @@ exports[`renders component data 1`] = `
   }
   width={300}
 >
-  <ChartGroup
+  <Component
     offset={11}
   >
     <ChartBar
@@ -3713,6 +3713,6 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-  </ChartGroup>
+  </Component>
 </VictoryChart>
 `;

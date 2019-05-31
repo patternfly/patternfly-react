@@ -1404,7 +1404,7 @@ exports[`renders container children 1`] = `
   }
   width={200}
 >
-  <ChartArea
+  <Component
     data={
       Array [
         Object {
@@ -1430,7 +1430,7 @@ exports[`renders container children 1`] = `
       ]
     }
   />
-  <ChartArea
+  <Component
     data={
       Array [
         Object {

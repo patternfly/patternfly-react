@@ -7805,7 +7805,7 @@ exports[`renders axis and component children 1`] = `
   }
   width={200}
 >
-  <ChartGroup>
+  <Component>
     <ChartLine
       data={
         Array [
@@ -7894,6 +7894,6 @@ exports[`renders axis and component children 1`] = `
         ]
       }
     />
-  </ChartGroup>
+  </Component>
 </VictoryChart>
 `;

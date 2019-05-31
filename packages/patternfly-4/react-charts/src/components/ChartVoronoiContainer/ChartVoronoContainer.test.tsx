@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import ChartArea from '../ChartArea/ChartArea';
-import ChartGroup from '../ChartGroup/ChartGroup';
+import { ChartArea } from '../ChartArea/ChartArea';
+import { ChartGroup } from '../ChartGroup/ChartGroup';
 import ChartVoronoiContainer from '../ChartLine/ChartLine';
 
 

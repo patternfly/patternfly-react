@@ -3587,7 +3587,7 @@ exports[`renders component data 1`] = `
   }
   width={200}
 >
-  <ChartGroup>
+  <Component>
     <ChartLine
       data={
         Array [
@@ -3676,6 +3676,6 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-  </ChartGroup>
+  </Component>
 </VictoryChart>
 `;

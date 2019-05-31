@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { Chart } from './Chart';
-import ChartGroup from '../ChartGroup/ChartGroup';
+import { ChartGroup } from '../ChartGroup/ChartGroup';
 import ChartLine from '../ChartLine/ChartLine';
 
 Object.values([true, false]).forEach(isRead => {
