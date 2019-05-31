@@ -1,3 +1,6 @@
 {
-  "extends": "../react-core/tsconfig.gen-dts.json"
+  "extends": "../react-core/tsconfig.gen-dts.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  }
 }

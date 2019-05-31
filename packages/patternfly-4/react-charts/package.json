@@ -68,6 +68,7 @@
     "@babel/preset-react": "^7.0.0",
     "@patternfly/patternfly": "2.8.2",
     "@patternfly/react-tokens": "^2.5.3",
+    "@patternfly/react-icons": "^3.9.3",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-typescript-to-proptypes": "^0.17.1",
     "css": "^2.2.3",
