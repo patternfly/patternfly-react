@@ -22,7 +22,7 @@ exports[`Chart 1`] = `
     x={115}
     y={115}
   />
-  <ChartPie
+  <Component
     data={
       Array [
         Object {
@@ -519,7 +519,7 @@ exports[`Chart 2`] = `
     x={115}
     y={115}
   />
-  <ChartPie
+  <Component
     data={
       Array [
         Object {
@@ -1016,7 +1016,7 @@ exports[`renders component data 1`] = `
     x={115}
     y={115}
   />
-  <ChartPie
+  <Component
     data={
       Array [
         Object {

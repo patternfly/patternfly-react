@@ -5,7 +5,7 @@ exports[`Chart 1`] = `
   height={230}
   width={230}
 >
-  <ChartPie
+  <Component
     data={
       Array [
         Object {
@@ -483,7 +483,7 @@ exports[`Chart 2`] = `
   height={230}
   width={230}
 >
-  <ChartPie
+  <Component
     data={
       Array [
         Object {
@@ -961,7 +961,7 @@ exports[`renders component data 1`] = `
   height={200}
   width={200}
 >
-  <ChartPie
+  <Component
     data={
       Array [
         Object {
