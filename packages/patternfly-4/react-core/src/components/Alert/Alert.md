@@ -195,7 +195,7 @@ class DangerAlert extends React.Component {
 }
 ```
 
-## Inline alert Variations
+## Inline alert variations
 ```js
 import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
