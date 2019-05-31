@@ -13,6 +13,7 @@ export * from './CardDemo/CardDemo';
 export * from './CheckboxDemo/CheckboxDemo'; 
 export * from './ChipGroupDemo/ChipGroupDemo';
 export * from './ContextSelectorDemo/ContextSelectorDemo'; 
+export * from './ClipboardCopyDemo/ClipboardCopyDemo'; 
 export * from './EmptyStateDemo/EmptyStateDemo';
 export * from './FormDemo/FormDemo'; 
 export * from './LabelDemo/LabelDemo';
