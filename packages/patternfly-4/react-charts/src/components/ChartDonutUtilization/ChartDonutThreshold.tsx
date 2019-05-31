@@ -8,7 +8,7 @@ import {
 } from "victory";
 import { Data } from 'victory-core';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import ChartContainer from '../ChartContainer/ChartContainer';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartPie, ChartPieProps } from '../ChartPie/ChartPie';
 import { ChartThemeDefinition } from "../ChartTheme";
 import { getChartOrigin } from '../ChartUtils/chart-origin';

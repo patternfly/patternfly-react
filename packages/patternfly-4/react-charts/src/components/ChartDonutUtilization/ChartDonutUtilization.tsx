@@ -13,7 +13,7 @@ import {
 } from 'victory';
 import { Data } from 'victory-core';
 import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme';
-import ChartContainer from '../ChartContainer/ChartContainer';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
 import ChartLabel from '../ChartLabel/ChartLabel';
 import ChartLegend from '../ChartLegend/ChartLegend';
 import { ChartPie, ChartPieProps } from "../ChartPie/ChartPie";

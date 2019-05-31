@@ -8,7 +8,7 @@ exports[`Chart 1`] = `
     />
   }
   containerComponent={
-    <ChartContainer
+    <UNDEFINED
       responsive={true}
       theme={
         Object {
@@ -1008,7 +1008,7 @@ exports[`Chart 2`] = `
     />
   }
   containerComponent={
-    <ChartContainer
+    <UNDEFINED
       responsive={true}
       theme={
         Object {
@@ -2417,7 +2417,7 @@ exports[`renders container via ChartLegend 1`] = `
     />
   }
   containerComponent={
-    <ChartContainer
+    <UNDEFINED
       responsive={true}
       theme={
         Object {

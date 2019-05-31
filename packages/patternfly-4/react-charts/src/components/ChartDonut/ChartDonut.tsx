@@ -12,7 +12,7 @@ import {
   VictoryStyleInterface
 } from 'victory';
 import { getDonutTheme } from '../ChartUtils/chart-theme';
-import ChartContainer from '../ChartContainer/ChartContainer';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
 import ChartLabel from '../ChartLabel/ChartLabel';
 import { ChartPie, ChartPieProps } from '../ChartPie/ChartPie';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';

@@ -1,8 +1,9 @@
-import ChartArea from '../Chart/Chart';
+import * as React from 'react';
+import { shallow } from 'enzyme';
+import ChartArea from '../ChartArea/ChartArea';
 import ChartGroup from '../ChartGroup/ChartGroup';
 import ChartVoronoiContainer from '../ChartLine/ChartLine';
-import React from 'react';
-import { shallow } from 'enzyme';
+
 
 Object.values([true, false]).forEach(isRead => {
   test(`ChartVoronoiContainer`, () => {

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Chart 1`] = `
-<ChartContainer
+<Component
   height={230}
   width={230}
 >
@@ -936,11 +936,11 @@ exports[`Chart 1`] = `
     }
     width={230}
   />
-</ChartContainer>
+</Component>
 `;
 
 exports[`Chart 2`] = `
-<ChartContainer
+<Component
   height={230}
   width={230}
 >
@@ -1875,11 +1875,11 @@ exports[`Chart 2`] = `
     }
     width={230}
   />
-</ChartContainer>
+</Component>
 `;
 
 exports[`renders component data 1`] = `
-<ChartContainer
+<Component
   height={200}
   width={200}
 >
@@ -2830,5 +2830,5 @@ exports[`renders component data 1`] = `
     }
     width={200}
   />
-</ChartContainer>
+</Component>
 `;
