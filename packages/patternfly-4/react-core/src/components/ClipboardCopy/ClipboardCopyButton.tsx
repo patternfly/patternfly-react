@@ -5,7 +5,7 @@ import { CopyIcon } from '@patternfly/react-icons';
 import { OneOf } from '../../helpers/typeUtils'; 
 import { Tooltip, TooltipPosition } from '../Tooltip';
 
-export interface CopyButtonProps extends React.HTMLProps<HTMLButtonElement> {
+export interface ClipboardCopyButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   onClick: (event: React.MouseEvent) => void; 
   children: React.ReactNode; 
   id: string; 
@@ -20,23 +20,26 @@ export interface CopyButtonProps extends React.HTMLProps<HTMLButtonElement> {
   'aria-label'?: string; 
 }
 
-export const CopyButton: React.FunctionComponent<CopyButtonProps> = ({
+export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonProps> = ({
+  onClick,
   className = '',
   exitDelay = 100,
   entryDelay = 100,
   maxWidth = '100px',
   position = 'top',
   'aria-label': ariaLabel = 'Copyable input',
+  id, 
+  textId,
+  children,
   ...props
-}: CopyButtonProps) => {
-  return (
+}: ClipboardCopyButtonProps) => (
   <Tooltip
     trigger="mouseenter focus click"
     exitDelay={exitDelay}
     entryDelay={entryDelay}
     maxWidth={maxWidth}
     position={position}
-    content={<div>{this.children}</div>}
+    content={<div>{children}</div>}
   >
     <button
       onClick={onClick}
@@ -49,4 +52,4 @@ export const CopyButton: React.FunctionComponent<CopyButtonProps> = ({
       <CopyIcon />
     </button>
   </Tooltip>
-)};
+);

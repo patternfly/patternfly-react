@@ -6,9 +6,9 @@ import { PopoverPosition } from '../Popover';
 import { TextInput } from '../TextInput';
 import { TooltipPosition } from '../Tooltip';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
-import { CopyButton } from './CopyButton';
+import { ClipboardCopyButton } from './ClipboardCopyButton';
 import { ClipboardCopyToggle } from './ClipboardCopyToggle';
-import { ExpandedContent } from './ExpandedContent';
+import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
 
 export const clipboardCopyFunc = (event: any, text: string) => {
   const clipboard = event.currentTarget.parentElement;
@@ -59,7 +59,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   /** A function that is triggered on clicking the copy button. */
   onCopy?: (event: React.ClipboardEvent<HTMLDivElement>, text?: React.ReactNode) => void;
   /** A function that is triggered on changing the text. */
-  onChange?: (text?: React.ReactNode) => void;
+  onChange?: (text?: string | number) => void;
   /** The text which is copied. */
   children?: React.ReactNode;
 }
@@ -91,7 +91,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     toggleAriaLabel: 'Show content'
   }
   
-  expandContent = (expanded: boolean) => {
+  expandContent = (_event: React.MouseEvent<Element, MouseEvent>) => {
     this.setState(prevState => ({
       expanded: !prevState.expanded
     }));
@@ -117,7 +117,8 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
       variant,
       position,
       className,
-      ...props
+      onChange, // Don't pass to <div>
+      ...divProps
     } = this.props;
     const textIdPrefix = 'text-input-';
     const toggleIdPrefix = 'toggle-';
@@ -125,7 +126,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     return (
       <div
         className={css(styles.clipboardCopy, this.state.expanded && styles.modifiers.expanded, className)}
-        {...props}
+        {...divProps}
       >
         <GenerateId prefix="">
           {id => (
@@ -134,7 +135,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                 {variant === 'expansion' && (
                   <ClipboardCopyToggle
                     isExpanded={this.state.expanded}
-                    onClick={() =>this.expandContent}
+                    onClick={this.expandContent}
                     id={`${toggleIdPrefix}-${id}`}
                     textId={`${textIdPrefix}-${id}`}
                     contentId={`${contentIdPrefix}-${id}`}
@@ -148,7 +149,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                   id={`text-input-${id}`}
                   aria-label={textAriaLabel}
                 />
-                <CopyButton
+                <ClipboardCopyButton
                   exitDelay={exitDelay}
                   entryDelay={entryDelay}
                   maxWidth={maxWidth}
@@ -171,12 +172,12 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                   }}
                 >
                   {this.state.copied ? clickTip : hoverTip}
-                </CopyButton>
+                </ClipboardCopyButton>
               </div>
               {this.state.expanded && (
-                <ExpandedContent id={`content-${id}`} onChange={() => this.updateText}>
+                <ClipboardCopyExpanded id={`content-${id}`} onChange={this.updateText}>
                   {this.state.text}
-                </ExpandedContent>
+                </ClipboardCopyExpanded>
               )}
             </React.Fragment>
           )}

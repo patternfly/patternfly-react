@@ -2,26 +2,28 @@ import * as React from 'react';
 import styles from '@patternfly/patternfly/components/ClipboardCopy/clipboard-copy.css';
 import { css } from '@patternfly/react-styles';
 import { ClipboardCopyProps } from './ClipboardCopy';
+import { Omit } from '../../helpers/typeUtils';
 
-export interface ExpandedContentProps extends ClipboardCopyProps {
+export interface ClipboardCopyExpandedProps extends Omit<ClipboardCopyProps, 'onChange'> {
   className?: string; 
   children: React.ReactNode; 
-  onChange: () => void; 
+  onChange?: (text: string, e: React.FormEvent<HTMLDivElement>) => void; 
 }
 
-export class ExpandedContent extends React.Component<ExpandedContentProps> {
+export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpandedProps> {
   contentRef = React.createRef<HTMLDivElement>();
   constructor(props: any) {
     super(props);
   }
 
   static defaultProps = {
+    onChange: (): any => undefined, 
     className: ''
   }
 
   componentDidMount() {
     if (this.contentRef.current) {
-      this.contentRef.current.innerText = this.props.children;
+      this.contentRef.current.innerText = this.props.children as string;
     }
   }
 
@@ -29,11 +31,11 @@ export class ExpandedContent extends React.Component<ExpandedContentProps> {
     const { className, children, onChange, ...props } = this.props;
     return (
       <div
-        suppressContentEditableWarning="true"
+        suppressContentEditableWarning={true}
         ref={this.contentRef}
         className={css(styles.clipboardCopyExpandableContent, className)}
-        onInput={e => onChange(e.target.innerText, e)}
-        contentEditable="true"
+        onInput={ (e: any) => onChange(e.target.innerText, e)}
+        contentEditable={true}
         {...props}
       />
     );
