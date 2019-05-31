@@ -19,7 +19,7 @@ export const AboutModalBoxHeader: React.SFC<AboutModalBoxHeaderProps> = ({
   ...props
 }: AboutModalBoxHeaderProps) => (
   <div className={css(styles.aboutModalBoxHeader, className)} {...props}>
-    <Title headingLevel="h1" size="4xl" id={id}>
+    <Title headingLevel="h1" size="xl4" id={id}>
       {productName}
     </Title>
   </div>

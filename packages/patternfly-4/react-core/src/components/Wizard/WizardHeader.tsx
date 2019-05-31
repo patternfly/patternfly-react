@@ -32,7 +32,7 @@ export const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
       <Button variant="plain" className={css(styles.wizardClose)} aria-label={ariaLabelCloseButton} onClick={onClose}>
         <TimesIcon aria-hidden="true" />
       </Button>
-      <Title size="3xl" className={css(styles.wizardTitle)} aria-label={title} id={titleId}>{title}</Title>
+      <Title size="xl3" className={css(styles.wizardTitle)} aria-label={title} id={titleId}>{title}</Title>
       {description && <p className={css(styles.wizardDescription)} id={descriptionId}>
         {description}
       </p>}
