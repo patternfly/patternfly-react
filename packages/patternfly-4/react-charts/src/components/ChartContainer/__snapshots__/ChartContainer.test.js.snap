@@ -22,45 +22,7 @@ exports[`Chart 1`] = `
     x={115}
     y={115}
   />
-  <VictoryPie
-    containerComponent={
-      <VictoryContainer
-        className="VictoryContainer"
-        portalComponent={<Portal />}
-        portalZIndex={99}
-        responsive={true}
-      />
-    }
-    data={
-      Array [
-        Object {
-          "x": "A",
-          "y": 1,
-        },
-        Object {
-          "x": "B",
-          "y": 2,
-        },
-        Object {
-          "x": "C",
-          "y": 3,
-        },
-        Object {
-          "x": "D",
-          "y": 1,
-        },
-        Object {
-          "x": "E",
-          "y": 2,
-        },
-      ]
-    }
-    dataComponent={
-      <Slice
-        pathComponent={<Path />}
-      />
-    }
-    groupComponent={<g />}
+  <ChartPie
     height={230}
     innerRadius={98}
     labelComponent={
@@ -519,7 +481,6 @@ exports[`Chart 1`] = `
         }
       />
     }
-    sortOrder="ascending"
     standalone={false}
     theme={
       Object {
@@ -1000,45 +961,7 @@ exports[`Chart 2`] = `
     x={115}
     y={115}
   />
-  <VictoryPie
-    containerComponent={
-      <VictoryContainer
-        className="VictoryContainer"
-        portalComponent={<Portal />}
-        portalZIndex={99}
-        responsive={true}
-      />
-    }
-    data={
-      Array [
-        Object {
-          "x": "A",
-          "y": 1,
-        },
-        Object {
-          "x": "B",
-          "y": 2,
-        },
-        Object {
-          "x": "C",
-          "y": 3,
-        },
-        Object {
-          "x": "D",
-          "y": 1,
-        },
-        Object {
-          "x": "E",
-          "y": 2,
-        },
-      ]
-    }
-    dataComponent={
-      <Slice
-        pathComponent={<Path />}
-      />
-    }
-    groupComponent={<g />}
+  <ChartPie
     height={230}
     innerRadius={98}
     labelComponent={
@@ -1497,7 +1420,6 @@ exports[`Chart 2`] = `
         }
       />
     }
-    sortOrder="ascending"
     standalone={false}
     theme={
       Object {
@@ -1979,15 +1901,7 @@ exports[`renders container via ChartLegend 1`] = `
     x={100}
     y={25}
   />
-  <VictoryPie
-    containerComponent={
-      <VictoryContainer
-        className="VictoryContainer"
-        portalComponent={<Portal />}
-        portalZIndex={99}
-        responsive={true}
-      />
-    }
+  <ChartPie
     data={
       Array [
         Object {
@@ -1998,12 +1912,6 @@ exports[`renders container via ChartLegend 1`] = `
         },
       ]
     }
-    dataComponent={
-      <Slice
-        pathComponent={<Path />}
-      />
-    }
-    groupComponent={<g />}
     height={50}
     innerRadius={8}
     labelComponent={
@@ -2462,7 +2370,6 @@ exports[`renders container via ChartLegend 1`] = `
         }
       />
     }
-    sortOrder="ascending"
     standalone={false}
     theme={
       Object {

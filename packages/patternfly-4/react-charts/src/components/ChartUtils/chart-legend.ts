@@ -1,15 +1,43 @@
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+
+interface ChartLegendPaddingXInterface {
+  chartOrientation: string;
+  legendOrientation: string;
+  legendWidth: number;
+  theme: ChartThemeDefinition;
+  width: number;
+}
+
+interface ChartLegendPaddingYInterface {
+  chartDy?: number;
+  chartHeight: number;
+  chartOrientation: string;
+  chartType: string;
+  height: number;
+  legendData: any[]
+  legendHeight: number;
+  theme: ChartThemeDefinition;
+}
+
 // Returns chart padding
-export const getChartPadding = (chartType = 'chart', theme) => {
+export const getChartPadding = (chartType: string = 'chart', theme: ChartThemeDefinition) => {
   const offset = 4;
-  const padding = theme && theme[chartType] ? theme[chartType].padding * 2 : 0;
+  const padding = theme && theme[chartType as keyof ChartThemeDefinition]
+    ? theme[chartType as keyof ChartThemeDefinition].padding * 2 : 0;
   return padding + offset;
 };
 
 // Returns legend padding
-export const getLegendPadding = legendData => (legendData && legendData.length > 0 ? 15 : 0);
+export const getLegendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 15 : 0);
 
 // Returns x coordinate for legend
-export const getLegendX = ({ chartOrientation, legendOrientation, legendWidth, theme, width }) => {
+export const getLegendX = ({
+  chartOrientation,
+  legendOrientation,
+  legendWidth,
+  theme,
+  width
+}: ChartLegendPaddingXInterface) => {
   if (!legendWidth) {
     return 0;
   }
@@ -36,7 +64,7 @@ export const getLegendY = ({
   legendData,
   legendHeight,
   theme
-}) => {
+}: ChartLegendPaddingYInterface) => {
   // Todo: Get padding for other types of charts
   const dHeight = chartHeight ? chartHeight + getChartPadding(chartType, theme) : 0;
   const lHeight = legendHeight ? legendHeight + getLegendPadding(legendData) : 0;

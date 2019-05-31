@@ -1,5 +1,19 @@
+interface ChartThemeColorsInterface {
+  COLOR_AXIS_FILL: string;
+  COLOR_AXIS_STROKE: string;
+  COLOR_FILL: string;
+  COLOR_LABEL: string;
+  COLOR_SCALE: string[];
+  COLOR_STACK_STROKE: string;
+  COLOR_STROKE: string;
+  COLOR_TOOLTIP_FILL: string;
+  COLOR_TOOLTIP_STROKE: string;
+  COLOR_TOOLTIP_FLYOUT_FILL: string;
+  COLOR_TOOLTIP_FLYOUT_STROKE: string;
+}
+
 // Victory theme properties only
-export default props => {
+export default (props: ChartThemeColorsInterface) => {
   const {
     COLOR_AXIS_FILL,
     COLOR_AXIS_STROKE,

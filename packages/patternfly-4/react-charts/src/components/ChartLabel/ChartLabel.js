@@ -8,7 +8,8 @@ export const propTypes = {
   /**
    * See TypeScript API docs: https://formidable.com/open-source/victory/docs/victory-label/
    */
-  '': PropTypes.any
+  '': PropTypes.any,
+  style: PropTypes.any
 };
 
 const ChartLabel = props => <VictoryLabel {...props} />;
