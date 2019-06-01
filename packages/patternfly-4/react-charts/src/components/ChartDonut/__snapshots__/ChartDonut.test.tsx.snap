@@ -26,7 +26,7 @@ exports[`Chart 1`] = `
     height={230}
     innerRadius={98}
     labelComponent={
-      <ChartTooltip
+      <Unknown
         theme={
           Object {
             "area": Object {
@@ -965,7 +965,7 @@ exports[`Chart 2`] = `
     height={230}
     innerRadius={98}
     labelComponent={
-      <ChartTooltip
+      <Unknown
         theme={
           Object {
             "area": Object {
@@ -1920,7 +1920,7 @@ exports[`renders component data 1`] = `
     height={200}
     innerRadius={83}
     labelComponent={
-      <ChartTooltip
+      <Unknown
         theme={
           Object {
             "area": Object {

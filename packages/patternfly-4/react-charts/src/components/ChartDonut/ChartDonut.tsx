@@ -17,7 +17,7 @@ import ChartLabel from '../ChartLabel/ChartLabel';
 import { ChartPie, ChartPieProps } from '../ChartPie/ChartPie';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { default as ChartDonutTheme, styles } from '../ChartTheme/themes/theme-donut';
-import ChartTooltip from '../ChartTooltip/ChartTooltip';
+import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
 
 export enum ChartDonutLabelPosition {
   centroid = 'centroid',

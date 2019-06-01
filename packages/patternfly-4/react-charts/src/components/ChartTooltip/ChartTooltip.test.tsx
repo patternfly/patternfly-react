@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import { shallow } from 'enzyme';
-import { ChartArea } from '../Chart/Chart';
+import { ChartArea } from '../ChartArea/ChartArea';
 import { ChartGroup } from '../ChartGroup/ChartGroup';
-import ChartVoronoiContainer from '../ChartVoronoiContainer/ChartVoronoiContainer';
-import ChartTooltip from './ChartTooltip';
+import { ChartVoronoiContainer } from '../ChartVoronoiContainer/ChartVoronoiContainer';
+import { ChartTooltip } from './ChartTooltip';
 
 Object.values([true, false]).forEach(isRead => {
   test(`ChartTooltip`, () => {
@@ -14,7 +14,11 @@ Object.values([true, false]).forEach(isRead => {
 
 test('allows tooltip via container component', () => {
   const view = shallow(
-    <ChartGroup containerComponent={<ChartVoronoiContainer labels="This is a tooltip" />} height={200} width={200}>
+    <ChartGroup
+      containerComponent={<ChartVoronoiContainer labels={(point) => "y: " + point.y} />}
+      height={200}
+      width={200}
+    >
       <ChartArea
         data={[
           { name: 'Cats', x: 1, y: 1 },

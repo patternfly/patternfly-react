@@ -5,7 +5,7 @@ import {
   VictoryVoronoiContainerProps
 } from 'victory';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import ChartTooltip from '../ChartTooltip/ChartTooltip';
+import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
 import { getTheme } from '../ChartUtils/chart-theme';
 
 /**

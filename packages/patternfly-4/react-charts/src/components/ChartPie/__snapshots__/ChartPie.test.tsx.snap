@@ -41,7 +41,7 @@ exports[`Chart 1`] = `
   }
   groupComponent={<g />}
   labelComponent={
-    <ChartTooltip
+    <Unknown
       theme={
         Object {
           "area": Object {
@@ -992,7 +992,7 @@ exports[`Chart 2`] = `
   }
   groupComponent={<g />}
   labelComponent={
-    <ChartTooltip
+    <Unknown
       theme={
         Object {
           "area": Object {
@@ -1936,7 +1936,7 @@ exports[`renders component data 1`] = `
   groupComponent={<g />}
   height={200}
   labelComponent={
-    <ChartTooltip
+    <Unknown
       theme={
         Object {
           "area": Object {

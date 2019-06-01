@@ -951,8 +951,8 @@ exports[`ChartTooltip 2`] = `
 exports[`allows tooltip via container component 1`] = `
 <VictoryGroup
   containerComponent={
-    <UNDEFINED
-      labels="This is a tooltip"
+    <Unknown
+      labels={[Function]}
     />
   }
   groupComponent={<g />}
