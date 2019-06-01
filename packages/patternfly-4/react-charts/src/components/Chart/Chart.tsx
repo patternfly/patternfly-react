@@ -27,7 +27,6 @@ export interface ChartProps extends VictoryChartProps {
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    *
-   * @type: boolean || object
    * See https://formidable.com/open-source/victory/docs/victory-chart/#animate
    */
   animate?: AnimatePropTypeInterface;

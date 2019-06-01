@@ -14,7 +14,7 @@ import {
 import { Data } from 'victory-core';
 import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme';
 import { ChartContainer } from '../ChartContainer/ChartContainer';
-import ChartLabel from '../ChartLabel/ChartLabel';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartLegend } from '../ChartLegend/ChartLegend';
 import { ChartPie, ChartPieProps } from "../ChartPie/ChartPie";
 import { styles } from '../ChartTheme/themes/theme-donut-utilization';
@@ -571,7 +571,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   const chart = (
     <React.Fragment>
       <ChartLabel
-        style={[styles.label.title, styles.label.subTitle] as any} // Todo: fix in ChartLabel. Arrays are supported, but @types/victory is wrong
+        style={[styles.label.title, styles.label.subTitle] as any} // Todo: Arrays are supported, but @types/victory is wrong
         text={title && subTitle ? [title, subTitle] : title}
         textAnchor="middle"
         verticalAnchor="middle"

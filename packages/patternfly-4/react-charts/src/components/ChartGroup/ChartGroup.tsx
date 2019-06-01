@@ -20,6 +20,11 @@ import {
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
 
+export enum ChartGroupSortOrder {
+  ascending = 'ascending',
+  descending = 'descending'
+};
+
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
@@ -30,6 +35,8 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-group#animate
    */
   animate?: AnimatePropTypeInterface;
   /**
@@ -38,6 +45,8 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * these arrays of values specified for x and y. If this prop is not set,
    * categorical data will be plotted in the order it was given in the data array
    * @example ["dogs", "cats", "mice"]
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-group#categories
    */
   categories?: CategoryPropType;
   /**
@@ -46,15 +55,17 @@ export interface ChartGroupProps extends VictoryGroupProps {
   children?:  React.ReactNode;
   /**
    * The color prop is an optional prop that defines a single color to be applied to the
-   * children of VictoryGroup. The color prop will override colors specified via colorScale.
+   * children of ChartGroup. The color prop will override colors specified via colorScale.
    */
   color?: string;
   /**
    * The colorScale prop is an optional prop that defines the color scale the chart's bars
    * will be created on. This prop should be given as an array of CSS colors, or as a string
-   * corresponding to one of the built in color scales. VictoryBar will automatically assign
+   * corresponding to one of the built in color scales. ChartBar will automatically assign
    * values from this color scale to the bars unless colors are explicitly provided in the
    * `dataAttributes` prop.
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-group#colorscale
    */
   colorScale?: ColorScalePropType;
   /**
@@ -88,6 +99,8 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * If this prop is not provided, a domain will be calculated from data, or other
    * available information.
    * @example [-1, 1], {x: [0, 100], y: [0, 1]}
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-group#domain
    */
   domain?: DomainPropType;
   /**
@@ -95,11 +108,15 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * beginning and end of a domain. This prop is useful for explicitly spacing ticks farther
    * from the origin to prevent crowding. This prop should be given as an object with
    * numbers specified for x and y.
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-group#domainpadding
    */
   domainPadding?: DomainPaddingPropType;
   /**
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-group#eventkey
    */
   eventKey?: StringOrNumberOrCallback;
   /**
@@ -138,6 +155,8 @@ export interface ChartGroupProps extends VictoryGroupProps {
    *     }
    *   }
    * ]}
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-group#events
    */
   events?: EventPropTypeInterface<"data" | "labels" | "parent", "all">[];
   /**
@@ -233,6 +252,8 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-group#padding
    */
   padding?: PaddingProps;
   /**
@@ -264,6 +285,8 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
    * as a d3 scale function, or as an object with scales specified for x and y
    * @example d3Scale.time(), {x: "linear", y: "log"}
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-group#scale
    */
   scale?: ScalePropType | D3Scale | {
     x?: ScalePropType | D3Scale;
@@ -313,6 +336,8 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * width, and padding props, as they are used to calculate the alignment of
    * components within chart.
    * @example {data: {fill: "red"}, labels: {fontSize: 12}}
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-group#style
    */
   style?: VictoryStyleInterface;
   /**
@@ -322,8 +347,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * ChartArea. If you are wrapping ChartArea in ChartChart, ChartStack, or
    * ChartGroup, please call the theme on the outermost wrapper component instead.
    *
-   * @type: object
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#theme
+   * See https://formidable.com/open-source/victory/docs/victory-group#theme
    */
   theme?: ChartThemeDefinition;
   /**
@@ -356,6 +380,8 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-group#x
    */
   x?: DataGetterPropType;
   /**
@@ -367,6 +393,8 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-group#y
    */
   y?: DataGetterPropType;
   /**
@@ -374,6 +402,8 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * This prop is useful for defining custom baselines for components like ChartBar or ChartArea.
    * This prop may be given in a variety of formats.
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-group#x0
    */
   y0?: DataGetterPropType;
 };

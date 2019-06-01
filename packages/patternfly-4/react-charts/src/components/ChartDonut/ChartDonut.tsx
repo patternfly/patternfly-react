@@ -13,7 +13,7 @@ import {
 } from 'victory';
 import { getDonutTheme } from '../ChartUtils/chart-theme';
 import { ChartContainer } from '../ChartContainer/ChartContainer';
-import ChartLabel from '../ChartLabel/ChartLabel';
+import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartPie, ChartPieProps } from '../ChartPie/ChartPie';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { default as ChartDonutTheme, styles } from '../ChartTheme/themes/theme-donut';
@@ -370,7 +370,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   const chart = (
     <React.Fragment>
       <ChartLabel
-        style={[styles.label.title, styles.label.subTitle] as any}
+        style={[styles.label.title, styles.label.subTitle] as any} // Todo: Arrays are supported, but @types/victory is wrong
         text={title && subTitle ? [title, subTitle] : title}
         textAnchor="middle"
         verticalAnchor="middle"

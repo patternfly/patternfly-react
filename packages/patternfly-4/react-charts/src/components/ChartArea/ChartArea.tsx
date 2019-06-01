@@ -35,10 +35,6 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    *
-<<<<<<< Updated upstream
-=======
-   * @type: boolean || object
->>>>>>> Stashed changes
    * See https://formidable.com/open-source/victory/docs/victory-area#animate
    */
   animate?: AnimatePropTypeInterface;
@@ -49,10 +45,6 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * categorical data will be plotted in the order it was given in the data array
    * @example ["dogs", "cats", "mice"]
    *
-<<<<<<< Updated upstream
-=======
-   * @type: array[string] || { x: array[string], y: array[string] }
->>>>>>> Stashed changes
    * See https://formidable.com/open-source/victory/docs/victory-area#categories
    */
   categories?: CategoryPropType;
@@ -98,10 +90,6 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * available information.
    * @example [-1, 1], {x: [0, 100], y: [0, 1]}
    *
-<<<<<<< Updated upstream
-=======
-   * @type: array[low, high] || { x: [low, high], y: [low, high] }
->>>>>>> Stashed changes
    * See https://formidable.com/open-source/victory/docs/victory-area#domain
    */
   domain?: DomainPropType;
@@ -111,10 +99,6 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * from the origin to prevent crowding. This prop should be given as an object with
    * numbers specified for x and y.
    *
-<<<<<<< Updated upstream
-=======
-   * @type: number || array[left, right] || { x: [left, right], y: [bottom, top] }
->>>>>>> Stashed changes
    * See https://formidable.com/open-source/victory/docs/victory-area#domainpadding
    */
   domainPadding?: DomainPaddingPropType;
@@ -122,10 +106,6 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
    *
-<<<<<<< Updated upstream
-=======
-   * @type: string || integer || array[string] || function
->>>>>>> Stashed changes
    * See https://formidable.com/open-source/victory/docs/victory-area#eventkey
    */
   eventKey?: StringOrNumberOrCallback;
@@ -166,10 +146,6 @@ export interface ChartAreaProps extends VictoryAreaProps {
    *   }
    * ]}
    *
-<<<<<<< Updated upstream
-=======
-   * @type: array[object]
->>>>>>> Stashed changes
    * See https://formidable.com/open-source/victory/docs/victory-area#events
    */
   events?: EventPropTypeInterface<"data" | "labels" | "parent", "all">[];
@@ -197,10 +173,6 @@ export interface ChartAreaProps extends VictoryAreaProps {
   /**
    * The interpolation prop determines how data points should be connected when plotting a line
    *
-<<<<<<< Updated upstream
-=======
-   * @type: options
->>>>>>> Stashed changes
    * See https://formidable.com/open-source/victory/docs/victory-area#interpolation
    */
   interpolation?: InterpolationPropType;
@@ -269,11 +241,8 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
-<<<<<<< Updated upstream
    *
    * See https://formidable.com/open-source/victory/docs/victory-area#padding
-=======
->>>>>>> Stashed changes
    */
   padding?: PaddingProps;
   /**
@@ -365,12 +334,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * ChartArea. If you are wrapping ChartArea in ChartChart, ChartStack, or
    * ChartGroup, please call the theme on the outermost wrapper component instead.
    *
-<<<<<<< Updated upstream
    * See https://formidable.com/open-source/victory/docs/victory-area/#theme
-=======
-   * @type: object
-   * See https://formidable.com/open-source/victory/docs/victory-chart/#theme
->>>>>>> Stashed changes
    */
   theme?: ChartThemeDefinition;
   /**
@@ -403,11 +367,8 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
-<<<<<<< Updated upstream
    *
    * See https://formidable.com/open-source/victory/docs/victory-area#x
-=======
->>>>>>> Stashed changes
    */
   x?: DataGetterPropType;
   /**
@@ -419,11 +380,8 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
-<<<<<<< Updated upstream
    *
    * See https://formidable.com/open-source/victory/docs/victory-area#y
-=======
->>>>>>> Stashed changes
    */
   y?: DataGetterPropType;
   /**

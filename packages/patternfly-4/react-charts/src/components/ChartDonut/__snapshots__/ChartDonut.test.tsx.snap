@@ -5,7 +5,7 @@ exports[`Chart 1`] = `
   height={230}
   width={230}
 >
-  <ChartLabel
+  <Component
     style={
       Array [
         Object {
@@ -944,7 +944,7 @@ exports[`Chart 2`] = `
   height={230}
   width={230}
 >
-  <ChartLabel
+  <Component
     style={
       Array [
         Object {
@@ -1883,7 +1883,7 @@ exports[`renders component data 1`] = `
   height={200}
   width={200}
 >
-  <ChartLabel
+  <Component
     style={
       Array [
         Object {

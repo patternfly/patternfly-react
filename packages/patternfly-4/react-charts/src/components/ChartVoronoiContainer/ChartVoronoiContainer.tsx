@@ -8,6 +8,11 @@ import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
 import { getTheme } from '../ChartUtils/chart-theme';
 
+export enum ChartVoronoiDimension {
+  x = 'x',
+  y = 'y'
+};
+
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */

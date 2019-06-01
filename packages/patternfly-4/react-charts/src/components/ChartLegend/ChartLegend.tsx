@@ -301,8 +301,9 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   theme = getTheme(themeColor, themeVariant),
   containerComponent = <ChartContainer responsive={responsive} theme={theme} />,
   ...rest
-}: ChartLegendProps) =>
-  <VictoryLegend containerComponent={containerComponent} dataComponent={dataComponent} theme={theme} {...rest} />;
+}: ChartLegendProps) => (
+  <VictoryLegend containerComponent={containerComponent} dataComponent={dataComponent} theme={theme} {...rest} />
+);
 
 // Note: VictoryLegend.role must be hoisted
 hoistNonReactStatics(ChartLegend, VictoryLegend);
