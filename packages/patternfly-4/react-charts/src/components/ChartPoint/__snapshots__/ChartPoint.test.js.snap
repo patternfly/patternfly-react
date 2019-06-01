@@ -8,7 +8,7 @@ exports[`Chart 1`] = `
     />
   }
   containerComponent={
-    <UNDEFINED
+    <Unknown
       responsive={true}
       theme={
         Object {
@@ -956,7 +956,7 @@ exports[`Chart 2`] = `
     />
   }
   containerComponent={
-    <UNDEFINED
+    <Unknown
       responsive={true}
       theme={
         Object {
@@ -1904,7 +1904,7 @@ exports[`renders component data 1`] = `
     />
   }
   containerComponent={
-    <UNDEFINED
+    <Unknown
       responsive={true}
       theme={
         Object {

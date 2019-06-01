@@ -29,6 +29,8 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-area#animate
    */
   animate?: AnimatePropTypeInterface;
   /**
@@ -37,6 +39,8 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * these arrays of values specified for x and y. If this prop is not set,
    * categorical data will be plotted in the order it was given in the data array
    * @example ["dogs", "cats", "mice"]
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-area#categories
    */
   categories?: CategoryPropType;
   /**
@@ -52,7 +56,6 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * or modified or ignored within the custom component itself. If a dataComponent is
    * not provided, ChartArea will use the default ChartContainer component.
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows..." />
-   * @default <ChartContainer/>
    */
   containerComponent?: React.ReactElement<any>;
   /**
@@ -72,7 +75,6 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * Any of these props may be overridden by passing in props to the supplied component,
    * or modified or ignored within the custom component itself. If a dataComponent is
    * not provided, ChartArea will use its default Area component.
-   * @default <Area/>
    */
   dataComponent?: React.ReactElement;
   /**
@@ -82,6 +84,8 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * If this prop is not provided, a domain will be calculated from data, or other
    * available information.
    * @example [-1, 1], {x: [0, 100], y: [0, 1]}
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-area#domain
    */
   domain?: DomainPropType;
   /**
@@ -89,11 +93,15 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * beginning and end of a domain. This prop is useful for explicitly spacing ticks farther
    * from the origin to prevent crowding. This prop should be given as an object with
    * numbers specified for x and y.
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-area#domainpadding
    */
   domainPadding?: DomainPaddingPropType;
   /**
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-area#eventkey
    */
   eventKey?: StringOrNumberOrCallback;
   /**
@@ -132,6 +140,8 @@ export interface ChartAreaProps extends VictoryAreaProps {
    *     }
    *   }
    * ]}
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-area#events
    */
   events?: EventPropTypeInterface<"data" | "labels" | "parent", "all">[];
   /**
@@ -142,7 +152,6 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
-   * @default <g/>
    */
   groupComponent?: React.ReactElement<any>;
   /**
@@ -154,12 +163,12 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * The horizontal prop determines whether data will be plotted horizontally.
    * When this prop is set to true, the independent variable will be plotted on the y axis
    * and the dependent variable will be plotted on the x axis.
-   * @default false
    */
   horizontal?: boolean;
   /**
    * The interpolation prop determines how data points should be connected when plotting a line
-   * @default "linear"
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-area#interpolation
    */
   interpolation?: InterpolationPropType;
   /**
@@ -227,7 +236,8 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
-   * @default 50
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-area#padding
    */
   padding?: PaddingProps;
   /**
@@ -259,7 +269,6 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
    * as a d3 scale function, or as an object with scales specified for x and y
    * @example d3Scale.time(), {x: "linear", y: "log"}
-   * @default "linear"
    */
   scale?: ScalePropType | D3Scale | {
     x?: ScalePropType | D3Scale;
@@ -301,7 +310,6 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
    * compose ChartAxis with other components within an enclosing <svg> tag.
-   * @default true
    */
   standalone?: boolean;
   /**
@@ -310,6 +318,8 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * width, and padding props, as they are used to calculate the alignment of
    * components within chart.
    * @example {data: {fill: "red"}, labels: {fontSize: 12}}
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-area#style
    */
   style?: VictoryStyleInterface;
   /**
@@ -319,8 +329,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * ChartArea. If you are wrapping ChartArea in ChartChart, ChartStack, or
    * ChartGroup, please call the theme on the outermost wrapper component instead.
    *
-   * @type: object
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#theme
+   * See https://formidable.com/open-source/victory/docs/victory-area/#theme
    */
   theme?: ChartThemeDefinition;
   /**
@@ -353,7 +362,8 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
-   * @default "x"
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-area#x
    */
   x?: DataGetterPropType;
   /**
@@ -365,7 +375,8 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
-   * @default "y"
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-area#y
    */
   y?: DataGetterPropType;
   /**
@@ -373,6 +384,8 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * This prop is useful for defining custom baselines for components like ChartBar or ChartArea.
    * This prop may be given in a variety of formats.
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-area#y0
    */
   y0?: DataGetterPropType;
 };

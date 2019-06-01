@@ -20,7 +20,6 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * This prop defaults to an empty string.
    * @example "Golden retreivers make up 30%, Labs make up 25%, and other dog breeds are
    * not represented above 5% each."
-   * @default ""
    */
   desc?: string;
   /**
@@ -41,11 +40,10 @@ export interface ChartContainerProps extends VictoryContainerProps {
   /**
    * The responsive prop specifies whether the rendered container should be a responsive container
    * with a viewBox attribute, or a static container with absolute width and height.
-   * @default true
    */
   responsive?: boolean;
   /**
-   * The style prop specifies styles for your VictoryContainer. Any valid inline style properties
+   * The style prop specifies styles for your ChartContainer. Any valid inline style properties
    * will be applied. Height and width should be specified via the height
    * and width props, as they are used to calculate the alignment of
    * components within the container. Styles from the child component will
@@ -60,8 +58,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * ChartArea. If you are wrapping ChartArea in ChartChart, ChartStack, or
    * ChartGroup, please call the theme on the outermost wrapper component instead.
    *
-   * @type: object
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#theme
+   * See https://formidable.com/open-source/victory/docs/common-container-props#theme
    */
   theme?: ChartThemeDefinition;
   /**
@@ -83,9 +80,8 @@ export interface ChartContainerProps extends VictoryContainerProps {
   /**
    * The title prop specifies the title to be applied to the SVG to assist
    * accessibility for screen readers. The more descriptive this title is, the more
-   * useful it will be. If no title prop is passed, it will default to Victory Chart.
+   * useful it will be. If no title prop is passed, it will default to Chart.
    * @example "Popularity of Dog Breeds by Percentage"
-   * @default "Victory Chart"
    */
   title?: string;
   /**

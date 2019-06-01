@@ -41,7 +41,6 @@ export interface ChartDonutProps extends ChartPieProps {
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    *
-   * @type: boolean || object
    * See https://formidable.com/open-source/victory/docs/victory-pie/#animate
    */
   animate?: AnimatePropTypeInterface;
@@ -52,7 +51,6 @@ export interface ChartDonutProps extends ChartPieProps {
    * categorical data will be plotted in the order it was given in the data array
    * @example ["dogs", "cats", "mice"]
    *
-   * @type: array[string] || { x: array[string], y: array[string] }
    * See https://formidable.com/open-source/victory/docs/victory-pie/#categories
    */
   categories?: CategoryPropType;
@@ -63,7 +61,6 @@ export interface ChartDonutProps extends ChartPieProps {
    * values from this color scale to the pie slices unless colors are explicitly provided in the
    * data object
    *
-   * @type: array[string]
    * See https://formidable.com/open-source/victory/docs/victory-pie/#colorScale
    */
   colorScale?: ColorScalePropType;
@@ -116,7 +113,6 @@ export interface ChartDonutProps extends ChartPieProps {
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
    *
-   * @type: string || integer || array[string] || function
    * See https://formidable.com/open-source/victory/docs/victory-pie/#eventKey
    */
   eventKey?: StringOrNumberOrCallback;
@@ -160,7 +156,6 @@ export interface ChartDonutProps extends ChartPieProps {
    *   }
    * ]}
    *
-   * @type: array[object]
    * See https://formidable.com/open-source/victory/docs/victory-pie/#events
    */
   events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback | string[] | number[]>[];
@@ -172,7 +167,6 @@ export interface ChartDonutProps extends ChartPieProps {
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
-   * @default <g/>
    */
   groupComponent?: React.ReactElement<any>;
   /**
@@ -243,7 +237,6 @@ export interface ChartDonutProps extends ChartPieProps {
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
    *
-   * @type: number || { top: number, bottom: number, left: number, right: number }
    * See https://formidable.com/open-source/victory/docs/victory-pie/#padding
    */
   padding?: PaddingProps;
@@ -271,7 +264,6 @@ export interface ChartDonutProps extends ChartPieProps {
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
    * compose ChartAxis with other components within an enclosing <svg> tag.
-   * @default true
    */
   standalone?: boolean;
   /**
@@ -285,7 +277,6 @@ export interface ChartDonutProps extends ChartPieProps {
    * padding should be specified via the height, width, and padding props.
    * @example {data: {stroke: "black"}, label: {fontSize: 10}}
    *
-   * @type: { parent: object, data: object, labels: object }
    * See https://formidable.com/open-source/victory/docs/victory-pie/#style
    */
   style?: VictoryStyleInterface;
@@ -300,7 +291,6 @@ export interface ChartDonutProps extends ChartPieProps {
    * ChartArea. If you are wrapping ChartArea in Chart, ChartStack, or
    * ChartGroup, please call the theme on the outermost wrapper component instead.
    *
-   * @type: object
    * See https://formidable.com/open-source/victory/docs/victory-pie/#theme
    */
   theme?: ChartThemeDefinition;
@@ -345,7 +335,6 @@ export interface ChartDonutProps extends ChartPieProps {
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
    *
-   * @type: string || integer || array[string] || function
    * See https://formidable.com/open-source/victory/docs/victory-pie/#x
    */
   x?: DataGetterPropType;
@@ -359,7 +348,6 @@ export interface ChartDonutProps extends ChartPieProps {
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
    *
-   * @type: string || integer || array[string] || function
    * See https://formidable.com/open-source/victory/docs/victory-pie/#y
    */
   y?: DataGetterPropType;

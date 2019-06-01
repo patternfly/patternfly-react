@@ -28,7 +28,7 @@ export interface ChartProps extends VictoryChartProps {
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    *
    * @type: boolean || object
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#animate
+   * See https://formidable.com/open-source/victory/docs/victory-chart/#animate
    */
   animate?: AnimatePropTypeInterface;
   /**
@@ -57,6 +57,8 @@ export interface ChartProps extends VictoryChartProps {
    * If this prop is not provided, a domain will be calculated from data, or other
    * available information.
    * @example: [-1, 1], {x: [0, 100], y: [0, 1]}
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-chart#domain
    */
   domain?: DomainPropType;
   /**
@@ -64,16 +66,22 @@ export interface ChartProps extends VictoryChartProps {
    * beginning and end of a domain. This prop is useful for explicitly spacing ticks farther
    * from the origin to prevent crowding. This prop should be given as an object with
    * numbers specified for x and y.
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-chart#domainpadding
    */
   domainPadding?: DomainPaddingPropType;
   /**
-   * The overall end angle of the pie in degrees. This prop is used in conjunction with
-   * startAngle to create a pie that spans only a segment of a circle.
+   * The endAngle props defines the overall end angle of a polar chart in degrees. This prop is used in conjunction with
+   * startAngle to create polar chart that spans only a segment of a circle, or to change overall rotation of the chart.
+   * This prop should be given as a number of degrees. Degrees are defined as starting at the 3 o'clock position, and
+   * proceeding counterclockwise.
    */
   endAngle?: number;
   /**
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-chart#events
    */
   eventKey?: StringOrNumberOrCallback;
   /**
@@ -116,8 +124,7 @@ export interface ChartProps extends VictoryChartProps {
    *   }
    * ]}
    *
-   * @type: array[object]
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#events
+   * See https://formidable.com/open-source/victory/docs/victory-chart/#events
    */
   events?: EventPropTypeInterface<string, StringOrNumberOrCallback>[];
   /**
@@ -128,7 +135,6 @@ export interface ChartProps extends VictoryChartProps {
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
-   * @default <g/>
    */
   groupComponent?: React.ReactElement<any>;
   /**
@@ -148,9 +154,7 @@ export interface ChartProps extends VictoryChartProps {
    */
   horizontal?: boolean;
   /**
-   * When creating a donut chart, this prop determines the number of pixels between
-   * the center of the chart and the inner edge of a donut. When this prop is set to zero
-   * a regular pie chart is rendered.
+   * When the innerRadius prop is set, polar charts will be hollow rather than circular.
    */
   innerRadius?: number;
   /**
@@ -189,8 +193,7 @@ export interface ChartProps extends VictoryChartProps {
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
    *
-   * @type: number || { top: number, bottom: number, left: number, right: number }
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#padding
+   * See https://formidable.com/open-source/victory/docs/victory-chart/#padding
    */
   padding?: PaddingProps;
   /**
@@ -217,7 +220,6 @@ export interface ChartProps extends VictoryChartProps {
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
    * as a d3 scale function, or as an object with scales specified for x and y
    * @example d3Scale.time(), {x: "linear", y: "log"}
-   * @default "linear"
    */
   scale?: ScalePropType | D3Scale | {
     x?: ScalePropType | D3Scale;
@@ -249,22 +251,21 @@ export interface ChartProps extends VictoryChartProps {
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
    * compose ChartAxis with other components within an enclosing <svg> tag.
-   * @default true
    */
   standalone?: boolean;
   /**
-   * The overall start angle of the pie in degrees. This prop is used in conjunction with
-   * endAngle to create a pie that spans only a segment of a circle.
+   * The startAngle props defines the overall start angle of a polar chart in degrees. This prop is used in conjunction
+   * with endAngle to create polar chart that spans only a segment of a circle, or to change overall rotation of the
+   * chart. This prop should be given as a number of degrees. Degrees are defined as starting at the 3 o'clock position,
+   * and proceeding counterclockwise.
    */
   startAngle?: number;
   /**
-   * The style prop specifies styles for your pie. ChartPie relies on Radium,
-   * so valid Radium style objects should work for this prop. Height, width, and
-   * padding should be specified via the height, width, and padding props.
-   * @example {data: {stroke: "black"}, label: {fontSize: 10}}
+   * The style prop defines the style of the component. The style prop should be given as an object with styles defined
+   * for data, labels and parent. Any valid svg styles are supported, but width, height, and padding should be specified
+   * via props as they determine relative layout for components in Chart.
    *
-   * @type: { parent: object, data: object, labels: object }
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#style
+   * See https://formidable.com/open-source/victory/docs/victory-chart/#style
    */
   style?: VictoryStyleInterface;
   /**
@@ -274,8 +275,7 @@ export interface ChartProps extends VictoryChartProps {
    * ChartArea. If you are wrapping ChartArea in ChartChart, ChartStack, or
    * ChartGroup, please call the theme on the outermost wrapper component instead.
    *
-   * @type: object
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#theme
+   * See https://formidable.com/open-source/victory/docs/victory-chart/#theme
    */
   theme?: ChartThemeDefinition;
   /**

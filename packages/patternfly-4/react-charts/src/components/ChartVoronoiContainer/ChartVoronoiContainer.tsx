@@ -24,15 +24,15 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * labels corresponding to points within a voronoi area. When this prop is set to false,
    * the onActivated and onDeactivated callbacks will still fire, but no mutations to label
    * components will occur via Victory’s event system. Labels defined directly on
-   * VictoryVoronoiContainer via the labels prop will still appear when this prop is set to false.
+   * ChartVoronoiContainer via the labels prop will still appear when this prop is set to false.
    */
   activateLabels?: boolean;
   /**
-   * When the disable prop is set to true, VictoryVoronoiContainer events will not fire.
+   * When the disable prop is set to true, ChartVoronoiContainer events will not fire.
    */
   disable?: boolean;
   /**
-   * When a labels prop is provided to VictoryVoronoiContainer it will render a label component
+   * When a labels prop is provided to ChartVoronoiContainer it will render a label component
    * rather than activating labels on the child components it renders. This is useful for
    * creating multi- point tooltips. This prop should be given as a function which will be called
    * once for each active point. The labels function will be called with the arguments point,
@@ -42,19 +42,19 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
   labels?: (point: any, index: number, points: any[]) => string;
   /**
    * The labelComponent prop specified the component that will be rendered when labels are defined
-   * on VictoryVoronoiContainer. If the labels prop is omitted, no label component will be rendered.
+   * on ChartVoronoiContainer. If the labels prop is omitted, no label component will be rendered.
    */
   labelComponent?: React.ReactElement;
   /**
    * The onActivated prop accepts a function to be called whenever new data points are activated.
    * The function is called with the parameters points (an array of active data objects) and props
-   * (the props used by VictoryVoronoiContainer).
+   * (the props used by ChartVoronoiContainer).
    */
   onActivated?: (points: any[], props: VictoryVoronoiContainerProps) => void;
   /**
    * The onDeactivated prop accepts a function to be called whenever points are deactivated. The
    * function is called with the parameters points (an array of the newly-deactivated data objects)
-   * and props (the props used by VictoryVoronoiContainer).
+   * and props (the props used by ChartVoronoiContainer).
    */
   onDeactivated?: (points: any[], props: VictoryVoronoiContainerProps) => void;
   /**
@@ -69,8 +69,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * ChartArea. If you are wrapping ChartArea in ChartChart, ChartStack, or
    * ChartGroup, please call the theme on the outermost wrapper component instead.
    *
-   * @type: object
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#theme
+   * See https://formidable.com/open-source/victory/docs/victory-voronoi-container#theme
    */
   theme?: ChartThemeDefinition;
   /**
@@ -92,7 +91,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
   /**
    * The voronoiBlacklist prop is used to specify a list of components to ignore when calculating a
    * shared voronoi diagram. Components with a name prop matching an element in the voronoiBlacklist
-   * array will be ignored by VictoryVoronoiContainer. Ignored components will never be flagged as
+   * array will be ignored by ChartVoronoiContainer. Ignored components will never be flagged as
    * active, and will not contribute date to shared tooltips or labels.
    */
   voronoiBlacklist?: string[];

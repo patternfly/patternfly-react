@@ -38,7 +38,6 @@ export interface ChartPieProps extends VictoryPieProps {
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    *
-   * @type: boolean || object
    * See https://formidable.com/open-source/victory/docs/victory-pie/#animate
    */
   animate?: AnimatePropTypeInterface;
@@ -49,7 +48,6 @@ export interface ChartPieProps extends VictoryPieProps {
    * categorical data will be plotted in the order it was given in the data array
    * @example ["dogs", "cats", "mice"]
    *
-   * @type: array[string] || { x: array[string], y: array[string] }
    * See https://formidable.com/open-source/victory/docs/victory-pie/#categories
    */
   categories?: CategoryPropType;
@@ -60,7 +58,6 @@ export interface ChartPieProps extends VictoryPieProps {
    * values from this color scale to the pie slices unless colors are explicitly provided in the
    * data object
    *
-   * @type: array[string]
    * See https://formidable.com/open-source/victory/docs/victory-pie/#colorScale
    */
   colorScale?: ColorScalePropType;
@@ -113,7 +110,6 @@ export interface ChartPieProps extends VictoryPieProps {
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
    *
-   * @type: string || integer || array[string] || function
    * See https://formidable.com/open-source/victory/docs/victory-pie/#eventKey
    */
   eventKey?: StringOrNumberOrCallback;
@@ -157,7 +153,6 @@ export interface ChartPieProps extends VictoryPieProps {
    *   }
    * ]}
    *
-   * @type: array[object]
    * See https://formidable.com/open-source/victory/docs/victory-pie/#events
    */
   events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback | string[] | number[]>[];
@@ -169,7 +164,6 @@ export interface ChartPieProps extends VictoryPieProps {
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
-   * @default <g/>
    */
   groupComponent?: React.ReactElement<any>;
   /**
@@ -179,8 +173,6 @@ export interface ChartPieProps extends VictoryPieProps {
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
-   *
-   * Note: innerRadius may need to be set when using this property.
    */
   height?: number;
   /**
@@ -240,14 +232,12 @@ export interface ChartPieProps extends VictoryPieProps {
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
    *
-   * @type: number || { top: number, bottom: number, left: number, right: number }
    * See https://formidable.com/open-source/victory/docs/victory-pie/#padding
    */
   padding?: PaddingProps;
   /**
    * Specifies the radius of the chart. If this property is not provided it is computed
    * from width, height, and padding props
-   *
    */
   radius?: number;
   /**
@@ -256,8 +246,7 @@ export interface ChartPieProps extends VictoryPieProps {
   sharedEvents?: any;
   /**
    * Use the sortKey prop to indicate how data should be sorted. This prop
-   * is given directly to the lodash sortBy function to be executed on the
-   * final dataset.
+   * is given directly to the lodash sortBy function to be executed on the final dataset.
    */
   sortKey?: string | string[] | Function;
   /**
@@ -268,7 +257,6 @@ export interface ChartPieProps extends VictoryPieProps {
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
    * compose ChartAxis with other components within an enclosing <svg> tag.
-   * @default true
    */
   standalone?: boolean;
   /**
@@ -282,7 +270,6 @@ export interface ChartPieProps extends VictoryPieProps {
    * padding should be specified via the height, width, and padding props.
    * @example {data: {stroke: "black"}, label: {fontSize: 10}}
    *
-   * @type: { parent: object, data: object, labels: object }
    * See https://formidable.com/open-source/victory/docs/victory-pie/#style
    */
   style?: VictoryStyleInterface;
@@ -293,7 +280,6 @@ export interface ChartPieProps extends VictoryPieProps {
    * ChartArea. If you are wrapping ChartArea in ChartChart, ChartStack, or
    * ChartGroup, please call the theme on the outermost wrapper component instead.
    *
-   * @type: object
    * See https://formidable.com/open-source/victory/docs/victory-pie/#theme
    */
   theme?: ChartThemeDefinition;
@@ -320,8 +306,6 @@ export interface ChartPieProps extends VictoryPieProps {
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
-   *
-   * Note: innerRadius may need to be set when using this property.
    */
   width?: number;
   /**
@@ -334,7 +318,6 @@ export interface ChartPieProps extends VictoryPieProps {
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
    *
-   * @type: string || integer || array[string] || function
    * See https://formidable.com/open-source/victory/docs/victory-pie/#x
    */
   x?: DataGetterPropType;
@@ -348,7 +331,6 @@ export interface ChartPieProps extends VictoryPieProps {
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
    *
-   * @type: string || integer || array[string] || function
    * See https://formidable.com/open-source/victory/docs/victory-pie/#y
    */
   y?: DataGetterPropType;

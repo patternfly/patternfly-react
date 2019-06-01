@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ChartLegend from '../ChartLegend/ChartLegend';
+import { ChartLegend } from '../ChartLegend/ChartLegend';
 import ChartPoint from './ChartPoint';
 
 Object.values([true, false]).forEach(isRead => {
