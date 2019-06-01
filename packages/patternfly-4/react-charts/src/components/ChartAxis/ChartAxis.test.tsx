@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import { shallow } from 'enzyme';
 import { Chart } from '../Chart/Chart';
-import ChartAxis from './ChartAxis';
+import { ChartAxis } from './ChartAxis';
 import { ChartGroup } from '../ChartGroup/ChartGroup';
 import ChartLine from '../ChartLine/ChartLine';
 

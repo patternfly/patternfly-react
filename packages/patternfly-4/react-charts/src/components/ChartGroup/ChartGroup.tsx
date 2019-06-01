@@ -70,7 +70,6 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * or modified or ignored within the custom component itself. If a dataComponent is
    * not provided, ChartArea will use the default ChartContainer component.
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows..." />
-   * @default <ChartContainer/>
    */
   containerComponent?: React.ReactElement<any>;
   /**
@@ -149,7 +148,6 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
-   * @default <g/>
    */
   groupComponent?: React.ReactElement<any>;
   /**
@@ -161,7 +159,6 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * The horizontal prop determines whether data will be plotted horizontally.
    * When this prop is set to true, the independent variable will be plotted on the y axis
    * and the dependent variable will be plotted on the x axis.
-   * @default false
    */
   horizontal?: boolean;
   /**
@@ -236,7 +233,6 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
-   * @default 50
    */
   padding?: PaddingProps;
   /**
@@ -268,7 +264,6 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
    * as a d3 scale function, or as an object with scales specified for x and y
    * @example d3Scale.time(), {x: "linear", y: "log"}
-   * @default "linear"
    */
   scale?: ScalePropType | D3Scale | {
     x?: ScalePropType | D3Scale;
@@ -310,7 +305,6 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
    * compose ChartAxis with other components within an enclosing <svg> tag.
-   * @default true
    */
   standalone?: boolean;
   /**
@@ -362,7 +356,6 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
-   * @default "x"
    */
   x?: DataGetterPropType;
   /**
@@ -374,7 +367,6 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
-   * @default "y"
    */
   y?: DataGetterPropType;
   /**

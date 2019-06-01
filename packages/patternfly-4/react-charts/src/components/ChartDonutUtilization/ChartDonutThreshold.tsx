@@ -212,7 +212,6 @@ export interface ChartDonutThresholdProps extends ChartPieProps {
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
    * to a <g> tag on web, and a react-native-svg <G> tag on mobile
-   * @default <g/>
    */
   groupComponent?: React.ReactElement<any>;
   /**
@@ -298,7 +297,6 @@ export interface ChartDonutThresholdProps extends ChartPieProps {
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
    * compose ChartAxis with other components within an enclosing <svg> tag.
-   * @default true
    */
   standalone?: boolean;
   /**

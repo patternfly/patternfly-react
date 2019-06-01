@@ -144,8 +144,6 @@ export interface ChartProps extends VictoryChartProps {
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
-   *
-   * Note: innerRadius may need to be set when using this property.
    */
   height?: number;
   /**
@@ -301,8 +299,6 @@ export interface ChartProps extends VictoryChartProps {
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
-   *
-   * Note: innerRadius may need to be set when using this property.
    */
   width?: number;
 }

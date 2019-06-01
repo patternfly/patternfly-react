@@ -3712,7 +3712,7 @@ exports[`renders component data 1`] = `
       }
     />
   </Component>
-  <ChartAxis
+  <Component
     tickValues={
       Array [
         2,
@@ -3721,7 +3721,7 @@ exports[`renders component data 1`] = `
       ]
     }
   />
-  <ChartAxis
+  <Component
     dependentAxis={true}
     tickValues={
       Array [
