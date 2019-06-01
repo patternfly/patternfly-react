@@ -1,7 +1,7 @@
 // TODO Replace label props with PF css when available
 
-// Dynamic properties to extend Victory theme
-export const dynamicDonut = {
+// Donut threshold dynamic theme
+export const DonutThresholdDynamicTheme = {
   legend: {
     colorScale: ['#D2D2D2', '#BBBBBB']
   },
@@ -11,8 +11,8 @@ export const dynamicDonut = {
   }
 };
 
-// Static (threshold) properties to extend Victory theme
-export const staticDonut = {
+// Donut threshold static theme
+export const DonutThresholdStaticTheme = {
   pie: {
     colorScale: ['#EDEDED', '#D2D2D2', '#BBBBBB'],
     height: 230,
@@ -20,5 +20,3 @@ export const staticDonut = {
     width: 230
   }
 };
-
-export default staticDonut;

@@ -16,7 +16,7 @@ import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartPie, ChartPieProps } from '../ChartPie/ChartPie';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { default as ChartDonutTheme, styles } from '../ChartTheme/themes/theme-donut';
+import { DonutStyles, DonutTheme } from '../ChartTheme/themes/donut-theme';
 import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
 
 export enum ChartDonutLabelPosition {
@@ -354,13 +354,13 @@ export interface ChartDonutProps extends ChartPieProps {
 }
 
 export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
-  height = ChartDonutTheme.pie.height,
+  height = DonutTheme.pie.height,
   standalone = true,
   subTitle,
   themeColor,
   themeVariant,
   title,
-  width = ChartDonutTheme.pie.width,
+  width = DonutTheme.pie.width,
 
   // destructure last
   innerRadius = ((height || width) - 34) / 2,
@@ -370,7 +370,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   const chart = (
     <React.Fragment>
       <ChartLabel
-        style={[styles.label.title, styles.label.subTitle] as any} // Todo: Arrays are supported, but @types/victory is wrong
+        style={[DonutStyles.label.title, DonutStyles.label.subTitle] as any} // Todo: Array supported, but @types/victory is wrong
         text={title && subTitle ? [title, subTitle] : title}
         textAnchor="middle"
         verticalAnchor="middle"

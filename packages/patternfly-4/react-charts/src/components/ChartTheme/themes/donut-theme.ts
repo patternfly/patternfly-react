@@ -1,5 +1,7 @@
 // TODO Replace label props with PF css when available
-export const styles = {
+
+// Donut styles
+export const DonutStyles = {
   label: {
     subTitle: {
       fill: '#bbb',
@@ -11,8 +13,8 @@ export const styles = {
   }
 };
 
-// Donut properties to extend Victory theme
-export default {
+// Donut theme
+export const DonutTheme = {
   pie: {
     height: 230,
     padAngle: 1,

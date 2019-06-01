@@ -1,14 +1,14 @@
 import { VictoryThemeDefinition } from 'victory';
-import { default as DonutTheme } from './themes/theme-donut';
+import { BaseTheme } from './themes/base-theme';
+import { DonutTheme } from './themes/donut-theme';
 import {
-  dynamicDonut as DonutThresholdDynamicTheme,
-  staticDonut as DonutThresholdStaticTheme
-} from './themes/theme-donut-threshold';
+  DonutThresholdDynamicTheme,
+  DonutThresholdStaticTheme
+} from './themes/donut-threshold-theme';
 import {
-  dynamicDonut as DonutUtilizationDynamicTheme,
-  staticDonut as DonutUtilizationStaticTheme
-} from './themes/theme-donut-utilization';
-import { default as VictoryTheme } from './themes/theme-victory';
+  DonutUtilizationDynamicTheme,
+  DonutUtilizationStaticTheme
+} from './themes/donut-utilization-theme';
 
 export interface ChartThemeDefinition extends VictoryThemeDefinition {
   area?: any;
@@ -42,7 +42,7 @@ interface ChartThemeVariantInterface {
   light: string;
 }
 
-export const ChartBaseTheme: ChartThemeDefinition = VictoryTheme;
+export const ChartBaseTheme: ChartThemeDefinition = BaseTheme;
 export const ChartDonutUtilizationDynamicTheme: ChartThemeDefinition = DonutUtilizationDynamicTheme;
 export const ChartDonutUtilizationStaticTheme: ChartThemeDefinition = DonutUtilizationStaticTheme;
 export const ChartDonutTheme: ChartThemeDefinition = DonutTheme;

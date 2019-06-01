@@ -1,12 +1,12 @@
 import { merge } from 'lodash';
-import ThemeColorDarkBlue from '../ChartTheme/themes/dark/theme-color-blue';
-import ThemeColorDarkGreen from '../ChartTheme/themes/dark/theme-color-green';
-import ThemeColorDarkGrey from '../ChartTheme/themes/dark/theme-color-grey';
-import ThemeColorDarkMulti from '../ChartTheme/themes/dark/theme-color-multi';
-import ThemeColorLightBlue from '../ChartTheme/themes/light/theme-color-blue';
-import ThemeColorLightGreen from '../ChartTheme/themes/light/theme-color-green';
-import ThemeColorLightGrey from '../ChartTheme/themes/light/theme-color-grey';
-import ThemeColorLightMulti from '../ChartTheme/themes/light/theme-color-multi';
+import { DarkBlueColorTheme } from '../ChartTheme/themes/dark/blue-color-theme';
+import { DarkGreenColorTheme } from '../ChartTheme/themes/dark/green-color-theme';
+import { DarkGreyColorTheme } from '../ChartTheme/themes/dark/grey-color-theme';
+import { DarkMultiColorTheme } from '../ChartTheme/themes/dark/multi-color-theme';
+import { LightBlueColorTheme } from '../ChartTheme/themes/light/blue-color-theme';
+import { LightGreenColorTheme } from '../ChartTheme/themes/light/green-color-theme';
+import { LightGreyColorTheme } from '../ChartTheme/themes/light/grey-color-theme';
+import { LightMultiColorTheme } from '../ChartTheme/themes/light/multi-color-theme';
 import {
   ChartBaseTheme,
   ChartDonutTheme,
@@ -56,15 +56,15 @@ export const getDonutUtilizationTheme = (themeColor: string, themeVariant: strin
 export const getDarkThemeColors = (themeColor: string) => {
   switch (themeColor) {
     case ChartThemeColor.blue:
-      return ThemeColorDarkBlue;
+      return DarkBlueColorTheme;
     case ChartThemeColor.green:
-      return ThemeColorDarkGreen;
+      return DarkGreenColorTheme;
     case ChartThemeColor.grey:
-      return ThemeColorDarkGrey;
+      return DarkGreyColorTheme;
     case ChartThemeColor.multi:
-      return ThemeColorDarkMulti;
+      return DarkMultiColorTheme;
     default:
-      return ThemeColorDarkBlue;
+      return DarkBlueColorTheme;
   }
 };
 
@@ -72,15 +72,15 @@ export const getDarkThemeColors = (themeColor: string) => {
 export const getLightThemeColors = (themeColor: string) => {
   switch (themeColor) {
     case ChartThemeColor.blue:
-      return ThemeColorLightBlue;
+      return LightBlueColorTheme;
     case ChartThemeColor.green:
-      return ThemeColorLightGreen;
+      return LightGreenColorTheme;
     case ChartThemeColor.grey:
-      return ThemeColorLightGrey;
+      return LightGreyColorTheme;
     case ChartThemeColor.multi:
-      return ThemeColorLightMulti;
+      return LightMultiColorTheme;
     default:
-      return ThemeColorLightBlue;
+      return LightBlueColorTheme;
   }
 };
 

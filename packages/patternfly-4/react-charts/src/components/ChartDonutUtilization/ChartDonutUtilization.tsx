@@ -17,7 +17,7 @@ import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartLabel } from '../ChartLabel/ChartLabel';
 import { ChartLegend } from '../ChartLegend/ChartLegend';
 import { ChartPie, ChartPieProps } from "../ChartPie/ChartPie";
-import { styles } from '../ChartTheme/themes/theme-donut-utilization';
+import { DonutUtilizationStyles } from '../ChartTheme/themes/donut-utilization-theme';
 import { ChartThemeDefinition, ChartDonutUtilizationStaticTheme } from '../ChartTheme/ChartTheme';
 import { getChartOrigin, getChartOriginX, getChartOriginY } from '../ChartUtils/chart-origin';
 import { getLegendX, getLegendY } from '../ChartUtils/chart-legend';
@@ -452,7 +452,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   donutOrientation = 'left',
   legendComponent,
   legendData,
-  legendOrientation = styles.legend.orientation as ChartDonutUtilizationLabelOrientation,
+  legendOrientation = DonutUtilizationStyles.legend.orientation as ChartDonutUtilizationLabelOrientation,
   showStatic = true,
   standalone = true,
   subTitle,
@@ -492,10 +492,10 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   const getDonutThresholds = () => {
     const result = [];
     if (thresholds) {
-      const numColors = styles.thresholds.colorScale.length;
+      const numColors = DonutUtilizationStyles.thresholds.colorScale.length;
       for (let i = 0; i < thresholds.length; i++) {
         result.push({
-          color: thresholds[i].color ? thresholds[i].color : styles.thresholds.colorScale[i % numColors],
+          color: thresholds[i].color ? thresholds[i].color : DonutUtilizationStyles.thresholds.colorScale[i % numColors],
           value: thresholds[i].value
         });
       }
@@ -571,7 +571,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   const chart = (
     <React.Fragment>
       <ChartLabel
-        style={[styles.label.title, styles.label.subTitle] as any} // Todo: Arrays are supported, but @types/victory is wrong
+        style={[DonutUtilizationStyles.label.title, DonutUtilizationStyles.label.subTitle] as any} // Todo: Array supported, but @types/victory is wrong
         text={title && subTitle ? [title, subTitle] : title}
         textAnchor="middle"
         verticalAnchor="middle"

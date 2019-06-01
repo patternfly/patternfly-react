@@ -1,4 +1,4 @@
-interface ChartThemeColorsInterface {
+interface ColorThemeInterface {
   COLOR_AXIS_FILL: string;
   COLOR_AXIS_STROKE: string;
   COLOR_FILL: string;
@@ -13,7 +13,7 @@ interface ChartThemeColorsInterface {
 }
 
 // Victory theme properties only
-export default (props: ChartThemeColorsInterface) => {
+export const ColorTheme = (props: ColorThemeInterface) => {
   const {
     COLOR_AXIS_FILL,
     COLOR_AXIS_STROKE,

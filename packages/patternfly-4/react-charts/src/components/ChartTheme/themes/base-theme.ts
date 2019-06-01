@@ -33,7 +33,7 @@ const STROKE_LINE_CAP = 'round';
 const STROKE_LINE_JOIN = 'round';
 
 // Victory theme properties only
-export default {
+export const BaseTheme = {
   area: {
     ...LAYOUT_PROPS,
     style: {

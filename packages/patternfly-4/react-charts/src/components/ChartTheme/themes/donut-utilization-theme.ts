@@ -1,5 +1,7 @@
 // TODO Replace label props with PF css when available
-export const styles = {
+
+// Donut utilization styles
+export const DonutUtilizationStyles = {
   label: {
     subTitle: {
       fill: '#bbb',
@@ -17,8 +19,8 @@ export const styles = {
   }
 };
 
-// Donut utilization properties to extend Victory theme
-export const dynamicDonut = {
+// Donut utilization dynamic theme
+export const DonutUtilizationDynamicTheme = {
   pie: {
     height: 230,
     padAngle: 1,
@@ -26,7 +28,8 @@ export const dynamicDonut = {
   }
 };
 
-export const staticDonut = {
+// Donut utilization static theme
+export const DonutUtilizationStaticTheme = {
   legend: {
     colorScale: ['#EDEDED', '#D2D2D2', '#BBBBBB']
   },
@@ -34,5 +37,3 @@ export const staticDonut = {
     colorScale: ['#EDEDED']
   }
 };
-
-export default dynamicDonut;
