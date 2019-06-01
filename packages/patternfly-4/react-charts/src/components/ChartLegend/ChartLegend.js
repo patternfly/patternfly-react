@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryLegend } from 'victory';
-import ChartContainer from '../ChartContainer/ChartContainer';
+import { ChartContainer } from '../ChartContainer/ChartContainer';
 import ChartPoint from '../ChartPoint/ChartPoint';
 import { getTheme } from '../ChartUtils/chart-theme';
 

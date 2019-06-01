@@ -45,6 +45,15 @@ export interface ChartContainerProps extends VictoryContainerProps {
    */
   responsive?: boolean;
   /**
+   * The style prop specifies styles for your VictoryContainer. Any valid inline style properties
+   * will be applied. Height and width should be specified via the height
+   * and width props, as they are used to calculate the alignment of
+   * components within the container. Styles from the child component will
+   * also be passed, if any exist.
+   * @examples {border: 1px solid red}
+   */
+  style?: React.CSSProperties;
+  /**
    * The theme prop takes a style object with nested data, labels, and parent objects.
    * You can create this object yourself, or you can use a theme provided by
    * When using ChartArea as a solo component, implement the theme directly on
@@ -71,15 +80,6 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * @example themeVariant={ChartThemeVariant.light}
    */
   themeVariant?: string;
-  /**
-   * The style prop specifies styles for your VictoryContainer. Any valid inline style properties
-   * will be applied. Height and width should be specified via the height
-   * and width props, as they are used to calculate the alignment of
-   * components within the container. Styles from the child component will
-   * also be passed, if any exist.
-   * @examples {border: 1px solid red}
-   */
-  style?: React.CSSProperties;
   /**
    * The title prop specifies the title to be applied to the SVG to assist
    * accessibility for screen readers. The more descriptive this title is, the more
