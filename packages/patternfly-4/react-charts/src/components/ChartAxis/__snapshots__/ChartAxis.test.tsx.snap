@@ -3623,7 +3623,7 @@ exports[`renders component data 1`] = `
   width={300}
 >
   <Component>
-    <ChartLine
+    <Component
       data={
         Array [
           Object {
@@ -3645,7 +3645,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <ChartLine
+    <Component
       data={
         Array [
           Object {
@@ -3667,7 +3667,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <ChartLine
+    <Component
       data={
         Array [
           Object {
@@ -3689,7 +3689,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <ChartLine
+    <Component
       data={
         Array [
           Object {
