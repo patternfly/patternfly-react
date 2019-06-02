@@ -13,7 +13,7 @@ import {
   VictoryStyleInterface
 } from 'victory';
 import { ChartContainer } from '../ChartContainer/ChartContainer';
-import ChartPoint from '../ChartPoint/ChartPoint';
+import { ChartPoint } from '../ChartPoint/ChartPoint';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
 

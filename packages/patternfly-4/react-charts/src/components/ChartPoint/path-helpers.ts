@@ -1,12 +1,12 @@
-export default {
-  circle(x, y, size) {
+export const PathHelpers = {
+  circle(x: number, y: number, size: number) {
     return `M ${x}, ${y}
       m ${-size}, 0
       a ${size}, ${size} 0 1,0 ${size * 2},0
       a ${size}, ${size} 0 1,0 ${-size * 2},0`;
   },
 
-  square(x, y, size) {
+  square(x: number, y: number, size: number) {
     const baseSize = 0.87 * size;
     const x0 = x - baseSize;
     const y1 = y + baseSize;
@@ -18,7 +18,7 @@ export default {
       z`;
   },
 
-  diamond(x, y, size) {
+  diamond(x: number, y: number, size: number) {
     const baseSize = 0.87 * size;
     const length = Math.sqrt(2 * (baseSize * baseSize));
     return `M ${x}, ${y + length}
@@ -29,7 +29,7 @@ export default {
       z`;
   },
 
-  triangleDown(x, y, size) {
+  triangleDown(x: number, y: number, size: number) {
     const height = (size / 2) * Math.sqrt(3);
     const x0 = x - size;
     const x1 = x + size;
@@ -41,7 +41,7 @@ export default {
       z`;
   },
 
-  triangleUp(x, y, size) {
+  triangleUp(x: number, y: number, size: number) {
     const height = (size / 2) * Math.sqrt(3);
     const x0 = x - size;
     const x1 = x + size;
@@ -53,7 +53,7 @@ export default {
       z`;
   },
 
-  plus(x, y, size) {
+  plus(x: number, y: number, size: number) {
     const baseSize = 1.1 * size;
     const distance = baseSize / 1.5;
     return `
@@ -72,7 +72,7 @@ export default {
       z`;
   },
 
-  minus(x, y, size) {
+  minus(x: number, y: number, size: number) {
     const baseSize = 1.1 * size;
     const lineHeight = baseSize - baseSize * 0.3;
     const x0 = x - baseSize;
@@ -85,7 +85,7 @@ export default {
       z`;
   },
 
-  star(x, y, size) {
+  star(x: number, y: number, size: number) {
     const baseSize = 1.35 * size;
     const angle = Math.PI / 5;
     const range = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -97,8 +97,7 @@ export default {
     return `M ${starCoords.join('L')} z`;
   },
 
-  // Todo: Submit dash symbol to victory-core, providing PF4 doesn't need a smaller lineHeight for dash and minus?
-  dash(x, y, size) {
+  dash(x: number, y: number, size: number) {
     const baseSize = 1.1 * size;
     const lineHeight = baseSize - baseSize * 0.3;
     const x0 = x - baseSize;

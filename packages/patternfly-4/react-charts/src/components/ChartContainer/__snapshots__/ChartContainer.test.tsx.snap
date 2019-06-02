@@ -501,7 +501,7 @@ exports[`Chart 1`] = `
       },
     ]
   }
-  dataComponent={<ChartPoint />}
+  dataComponent={<Unknown />}
   groupComponent={<g />}
   labelComponent={
     <VictoryLabel
@@ -1912,7 +1912,7 @@ exports[`Chart 2`] = `
       },
     ]
   }
-  dataComponent={<ChartPoint />}
+  dataComponent={<Unknown />}
   groupComponent={<g />}
   labelComponent={
     <VictoryLabel
@@ -2914,7 +2914,7 @@ exports[`renders container via ChartLegend 1`] = `
       },
     ]
   }
-  dataComponent={<ChartPoint />}
+  dataComponent={<Unknown />}
   groupComponent={<g />}
   height={50}
   labelComponent={
