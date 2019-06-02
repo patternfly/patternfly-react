@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import { shallow } from 'enzyme';
 import { Chart } from '../Chart/Chart';
 import { ChartBar } from '../ChartBar/ChartBar';
-import ChartStack from './ChartStack';
+import { ChartStack } from './ChartStack';
 
 Object.values([true, false]).forEach(isRead => {
   test(`Chart`, () => {

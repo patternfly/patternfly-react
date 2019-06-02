@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { Chart } from '../Chart/Chart';
 import { ChartAxis } from './ChartAxis';
 import { ChartGroup } from '../ChartGroup/ChartGroup';
-import ChartLine from '../ChartLine/ChartLine';
+import { ChartLine } from '../ChartLine/ChartLine';
 
 Object.values([true, false]).forEach(isRead => {
   test(`ChartAxis`, () => {

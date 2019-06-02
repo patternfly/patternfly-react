@@ -19,6 +19,7 @@ import {
 } from 'victory';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
+import {ReactNode} from "react";
 
 export enum ChartGroupSortOrder {
   ascending = 'ascending',
@@ -52,7 +53,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
   /**
    * The children to render with the chart
    */
-  children?:  React.ReactNode;
+  children?: React.ReactNode;
   /**
    * The color prop is an optional prop that defines a single color to be applied to the
    * children of ChartGroup. The color prop will override colors specified via colorScale.

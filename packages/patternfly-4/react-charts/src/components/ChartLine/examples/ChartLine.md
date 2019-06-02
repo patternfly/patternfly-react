@@ -1,6 +1,7 @@
 ---
 title: 'Line'
 section: 'charts'
+typescript: true
 propComponents: ['Chart', 'ChartAxis', 'ChartGroup', 'ChartLegend', 'ChartLine', 'ChartThemeColor', 'ChartThemeVariant']
 ---
 

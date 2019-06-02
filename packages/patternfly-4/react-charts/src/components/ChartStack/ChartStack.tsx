@@ -2,6 +2,8 @@ import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
   AnimatePropTypeInterface,
+  CategoryPropType,
+  ColorScalePropType,
   D3Scale,
   DomainPropType,
   DomainPaddingPropType,
@@ -9,9 +11,9 @@ import {
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
-  VictoryChart,
-  VictoryChartProps,
-  VictoryStyleInterface
+  VictoryStyleInterface,
+  VictoryStack,
+  VictoryStackProps
 } from 'victory';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
@@ -19,7 +21,7 @@ import { getTheme } from '../ChartUtils/chart-theme';
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
-export interface ChartProps extends VictoryChartProps {
+export interface ChartStackProps extends VictoryStackProps {
   /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
@@ -27,13 +29,38 @@ export interface ChartProps extends VictoryChartProps {
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    *
-   * See https://formidable.com/open-source/victory/docs/victory-chart/#animate
+   * See https://formidable.com/open-source/victory/docs/victory-stack#animate
    */
   animate?: AnimatePropTypeInterface;
   /**
-   * The children to render with the chart
+   * The categories prop specifies how categorical data for a chart should be ordered.
+   * This prop should be given as an array of string values, or an object with
+   * these values for x and y. When categories are not given as an object
+   * When this prop is set on a wrapper component, it will dictate the categories of
+   * its the children. If this prop is not set, any categories on child component
+   * or catigorical data, will be merged to create a shared set of categories.
+   * @example ["dogs", "cats", "mice"]
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-stack#categories
+   */
+  categories?: CategoryPropType;
+  /**
+   * ChartStack works with any combination of the following children: ChartArea, ChartBar, VictoryCandlestick,
+   * VictoryErrorBar, ChartGroup, ChartLine, VictoryScatter, ChartStack, and ChartVoronoi. Children supplied to
+   * ChartGroup will be cloned and rendered with new props so that all children share common props such as domain and
+   * scale.
    */
   children?: React.ReactElement<any> | React.ReactElement<any>[];
+  /**
+   * The colorScale prop is an optional prop that defines the color scale the chart's bars
+   * will be created on. This prop should be given as an array of CSS colors, or as a string
+   * corresponding to one of the built in color scales. ChartStack will automatically assign
+   * values from this color scale to the bars unless colors are explicitly provided in the
+   * `dataAttributes` prop.
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-stack#colorscale
+   */
+  colorScale?: ColorScalePropType;
   /**
    * The containerComponent prop takes an entire component which will be used to
    * create a container element for standalone charts.
@@ -46,7 +73,7 @@ export interface ChartProps extends VictoryChartProps {
    * Any of these props may be overridden by passing in props to the supplied component,
    * or modified or ignored within the custom component itself. If a dataComponent is
    * not provided, ChartArea will use the default ChartContainer component.
-   * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
+   * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows..." />
    */
   containerComponent?: React.ReactElement<any>;
   /**
@@ -57,7 +84,7 @@ export interface ChartProps extends VictoryChartProps {
    * available information.
    * @example: [-1, 1], {x: [0, 100], y: [0, 1]}
    *
-   * See https://formidable.com/open-source/victory/docs/victory-chart#domain
+   * See https://formidable.com/open-source/victory/docs/victory-stack#domain
    */
   domain?: DomainPropType;
   /**
@@ -66,33 +93,27 @@ export interface ChartProps extends VictoryChartProps {
    * from the origin to prevent crowding. This prop should be given as an object with
    * numbers specified for x and y.
    *
-   * See https://formidable.com/open-source/victory/docs/victory-chart#domainpadding
+   * See https://formidable.com/open-source/victory/docs/victory-stack#domainpadding
    */
   domainPadding?: DomainPaddingPropType;
-  /**
-   * The endAngle props defines the overall end angle of a polar chart in degrees. This prop is used in conjunction with
-   * startAngle to create polar chart that spans only a segment of a circle, or to change overall rotation of the chart.
-   * This prop should be given as a number of degrees. Degrees are defined as starting at the 3 o'clock position, and
-   * proceeding counterclockwise.
-   */
-  endAngle?: number;
   /**
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
    *
-   * See https://formidable.com/open-source/victory/docs/victory-chart#events
+   * See https://formidable.com/open-source/victory/docs/victory-stack#eventkey
    */
   eventKey?: StringOrNumberOrCallback;
   /**
-   * The event prop takes an array of event objects. Event objects are composed of
-   * a target, an eventKey, and eventHandlers. Targets may be any valid style namespace
-   * for a given component, so "data" and "labels" are all valid targets for ChartPie
-   * events. The eventKey may optionally be used to select a single element by index rather than
+   * The event prop take an array of event objects. Event objects are composed of
+   * a childName, target, eventKey, and eventHandlers. Targets may be any valid style namespace
+   * for a given component, (i.e. "data" and "labels"). The childName will refer to an
+   * individual child of ChartStack, either by its name prop, or by index. The eventKey
+   * may optionally be used to select a single element by index or eventKey rather than
    * an entire set. The eventHandlers object should be given as an object whose keys are standard
    * event names (i.e. onClick) and whose values are event callbacks. The return value
    * of an event handler is used to modify elemnts. The return value should be given
-   * as an object or an array of objects with optional target and eventKey keys,
-   * and a mutation key whose value is a function. The target and eventKey keys
+   * as an object or an array of objects with optional target and eventKey and childName keys,
+   * and a mutation key whose value is a function. The target and eventKey and childName keys
    * will default to those corresponding to the element the event handler was attached to.
    * The mutation function will be called with the calculated props for the individual selected
    * element (i.e. a single bar), and the object returned from the mutation function
@@ -101,17 +122,17 @@ export interface ChartProps extends VictoryChartProps {
    * events={[
    *   {
    *     target: "data",
-   *     eventKey: 1,
+   *     childName: "firstBar",
    *     eventHandlers: {
    *       onClick: () => {
    *         return [
    *            {
-   *              eventKey: 2,
+   *              childName: "secondBar",
    *              mutation: (props) => {
    *                return {style: merge({}, props.style, {fill: "orange"})};
    *              }
    *            }, {
-   *              eventKey: 2,
+   *              childName: "secondBar",
    *              target: "labels",
    *              mutation: () => {
    *                return {text: "hey"};
@@ -123,11 +144,11 @@ export interface ChartProps extends VictoryChartProps {
    *   }
    * ]}
    *
-   * See https://formidable.com/open-source/victory/docs/victory-chart/#events
+   * See https://formidable.com/open-source/victory/docs/victory-stack#events
    */
-  events?: EventPropTypeInterface<string, StringOrNumberOrCallback>[];
+  events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback>[];
   /**
-   * ChartLegend uses the standard externalEventMutations prop.
+   * ChartStack uses the standard externalEventMutations prop.
    */
   externalEventMutations?: any[];
   /**
@@ -137,23 +158,37 @@ export interface ChartProps extends VictoryChartProps {
    */
   groupComponent?: React.ReactElement<any>;
   /**
-   * Specifies the height the svg viewBox of the chart container. This value should be given as a
-   * number of pixels.
-   *
-   * Because Victory renders responsive containers, the width and height props do not determine the width and
-   * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
-   * pixels will depend on the size of the container the chart is rendered into.
+   * The height props specifies the height the svg viewBox of the chart container.
+   * This value should be given as a number of pixels
    */
   height?: number;
   /**
-   * The horizontal prop determines whether data will be plotted horizontally. When this prop is set to true, the
-   * independent variable will be plotted on the y axis and the dependent variable will be plotted on the x axis.
+   * The horizontal prop determines whether the bars will be laid vertically or
+   * horizontally. The bars will be vertical if this prop is false or unspecified,
+   * or horizontal if the prop is set to true.
    */
   horizontal?: boolean;
   /**
-   * When the innerRadius prop is set, polar charts will be hollow rather than circular.
+   * The labelComponent prop takes in an entire label component which will be used
+   * to create a label for the area. The new element created from the passed labelComponent
+   * will be supplied with the following properties: x, y, index, data, verticalAnchor,
+   * textAnchor, angle, style, text, and events. any of these props may be overridden
+   * by passing in props to the supplied component, or modified or ignored within
+   * the custom component itself. If labelComponent is omitted, a new ChartLabel
+   * will be created with props described above. This labelComponent prop should be used to
+   * provide a series label for ChartArea. If individual labels are required for each
+   * data point, they should be created by composing ChartArea with VictoryScatter
    */
-  innerRadius?: number;
+  labelComponent?: React.ReactElement<any>;
+  /**
+   * The labels prop defines labels that will appear above each bar in your chart.
+   * This prop should be given as an array of values or as a function of data.
+   * If given as an array, the number of elements in the array should be equal to
+   * the length of the data array. Labels may also be added directly to the data object
+   * like data={[{x: 1, y: 1, label: "first"}]}.
+   * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
+   */
+  labels?: string[] | ((data: any) => string);
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
@@ -185,12 +220,21 @@ export interface ChartProps extends VictoryChartProps {
    */
   minDomain?: number | { x?: number, y?: number };
   /**
+   * The name prop is used to reference a component instance when defining shared events.
+   */
+  name?: string;
+  /**
+   * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
+   * **This prop should not be set manually.**
+   */
+  origin?: { x: number, y: number };
+  /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
    *
-   * See https://formidable.com/open-source/victory/docs/victory-chart/#padding
+   * See https://formidable.com/open-source/victory/docs/victory-stack#padding
    */
   padding?: PaddingProps;
   /**
@@ -203,7 +247,7 @@ export interface ChartProps extends VictoryChartProps {
    * corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this
    * corresponds to a range of angles and radii. When this value is not given it will be calculated from the width,
    * height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given
-   * chart must share the same range, so setting this prop on children nested within Chart, ChartStack, or
+   * chart must share the same range, so setting this prop on children nested within Chart or
    * ChartGroup will have no effect. This prop is usually not set manually.
    *
    * examples:
@@ -217,6 +261,8 @@ export interface ChartProps extends VictoryChartProps {
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
    * as a d3 scale function, or as an object with scales specified for x and y
    * @example d3Scale.time(), {x: "linear", y: "log"}
+   *
+   * See https://formidable.com/open-source/victory/docs/victory-stack#scale
    */
   scale?: ScalePropType | D3Scale | {
     x?: ScalePropType | D3Scale;
@@ -247,29 +293,24 @@ export interface ChartProps extends VictoryChartProps {
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
-   * compose Chart with other components within an enclosing <svg> tag.
+   * compose ChartArea with other components within an enclosing <svg> tag.
    */
   standalone?: boolean;
   /**
-   * The startAngle props defines the overall start angle of a polar chart in degrees. This prop is used in conjunction
-   * with endAngle to create polar chart that spans only a segment of a circle, or to change overall rotation of the
-   * chart. This prop should be given as a number of degrees. Degrees are defined as starting at the 3 o'clock position,
-   * and proceeding counterclockwise.
-   */
-  startAngle?: number;
-  /**
-   * The style prop defines the style of the component. The style prop should be given as an object with styles defined
-   * for data, labels and parent. Any valid svg styles are supported, but width, height, and padding should be specified
-   * via props as they determine relative layout for components in Chart.
+   * The style prop specifies styles for your grouped chart. These styles will be
+   * applied to all grouped children
    *
-   * See https://formidable.com/open-source/victory/docs/victory-chart/#style
+   * See https://formidable.com/open-source/victory/docs/victory-stack#style
    */
   style?: VictoryStyleInterface;
   /**
-   * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
-   * props defined in theme may be overwritten by props specified on the component instance.
+   * The theme prop takes a style object with nested data, labels, and parent objects.
+   * You can create this object yourself, or you can use a theme provided by
+   * When using ChartArea as a solo component, implement the theme directly on
+   * ChartArea. If you are wrapping ChartArea in ChartChart or ChartGroup,
+   * please call the theme on the outermost wrapper component instead.
    *
-   * See https://formidable.com/open-source/victory/docs/victory-chart/#theme
+   * See https://formidable.com/open-source/victory/docs/victory-stack/#theme
    */
   theme?: ChartThemeDefinition;
   /**
@@ -289,26 +330,28 @@ export interface ChartProps extends VictoryChartProps {
    */
   themeVariant?: string;
   /**
-   * Specifies the width of the svg viewBox of the chart container. This value should be given as a
-   * number of pixels.
-   *
-   * Because Victory renders responsive containers, the width and height props do not determine the width and
-   * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
-   * pixels will depend on the size of the container the chart is rendered into.
+   * The width props specifies the width of the svg viewBox of the chart container
+   * This value should be given as a number of pixels
    */
   width?: number;
+  /**
+   * The xOffset prop is used for grouping stacks of bars. This prop will be set
+   * by the ChartGroup component wrapper, or can be set manually.
+   */
+  xOffset?: number;
 }
 
-export const Chart: React.FunctionComponent<ChartProps> = ({
+export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
   children,
   themeColor,
   themeVariant,
   theme = getTheme(themeColor, themeVariant), // destructure last
   ...rest
-}: ChartProps) => (
-  <VictoryChart theme={theme} {...rest}>
+}: ChartStackProps) => (
+  <VictoryStack theme={theme} {...rest}>
     {children}
-  </VictoryChart>
+  </VictoryStack>
 );
 
-hoistNonReactStatics(Chart, VictoryChart);
+// Note: VictoryStack.getChildren & VictoryStack.role must be hoisted
+hoistNonReactStatics(ChartStack, VictoryStack);
