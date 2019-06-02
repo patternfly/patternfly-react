@@ -56,14 +56,14 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * The containerComponent prop takes an entire component which will be used to
    * create a container element for standalone charts.
    * The new element created from the passed containerComponent wil be provided with
-   * these props from ChartArea: height, width, children
+   * these props from ChartAxis: height, width, children
    * (the chart itself) and style. Props that are not provided by the
    * child chart component include title and desc, both of which
    * are intended to add accessibility to Victory components. The more descriptive these props
    * are, the more accessible your data will be for people using screen readers.
    * Any of these props may be overridden by passing in props to the supplied component,
    * or modified or ignored within the custom component itself. If a dataComponent is
-   * not provided, ChartArea will use the default ChartContainer component.
+   * not provided, ChartAxis will use the default ChartContainer component.
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
   containerComponent?: React.ReactElement<any>;
@@ -338,9 +338,9 @@ export interface ChartAxisProps extends VictoryAxisProps {
   /**
    * The theme prop takes a style object with nested data, labels, and parent objects.
    * You can create this object yourself, or you can use a theme provided by
-   * When using ChartArea as a solo component, implement the theme directly on
-   * ChartArea. If you are wrapping ChartArea in ChartChart, ChartStack, or
-   * ChartGroup, please call the theme on the outermost wrapper component instead.
+   * When using ChartAxis as a solo component, implement the theme directly on
+   * ChartAxis. If you are wrapping ChartAxis in ChartChart or ChartGroup,
+   * please call the theme on the outermost wrapper component instead.
    *
    * See https://formidable.com/open-source/victory/docs/victory-axis#theme
    */

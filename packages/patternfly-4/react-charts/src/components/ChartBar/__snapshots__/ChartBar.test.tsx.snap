@@ -3625,7 +3625,7 @@ exports[`renders component data 1`] = `
   <Component
     offset={11}
   >
-    <ChartBar
+    <Component
       data={
         Array [
           Object {
@@ -3647,7 +3647,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <ChartBar
+    <Component
       data={
         Array [
           Object {
@@ -3669,7 +3669,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <ChartBar
+    <Component
       data={
         Array [
           Object {
@@ -3691,7 +3691,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <ChartBar
+    <Component
       data={
         Array [
           Object {

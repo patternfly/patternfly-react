@@ -65,14 +65,14 @@ export interface ChartPieProps extends VictoryPieProps {
    * The containerComponent prop takes an entire component which will be used to
    * create a container element for standalone charts.
    * The new element created from the passed containerComponent wil be provided with
-   * these props from ChartArea: height, width, children
+   * these props from ChartPie: height, width, children
    * (the chart itself) and style. Props that are not provided by the
    * child chart component include title and desc, both of which
    * are intended to add accessibility to Victory components. The more descriptive these props
    * are, the more accessible your data will be for people using screen readers.
    * Any of these props may be overridden by passing in props to the supplied component,
    * or modified or ignored within the custom component itself. If a dataComponent is
-   * not provided, ChartArea will use the default ChartContainer component.
+   * not provided, ChartPie will use the default ChartContainer component.
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
   containerComponent?: React.ReactElement<any>;
@@ -157,7 +157,7 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback | string[] | number[]>[];
   /**
-   * ChartLegend uses the standard externalEventMutations prop.
+   * ChartPie uses the standard externalEventMutations prop.
    */
   externalEventMutations?: any[];
   /**
@@ -189,8 +189,8 @@ export interface ChartPieProps extends VictoryPieProps {
    * by passing in props to the supplied component, or modified or ignored within
    * the custom component itself. If labelComponent is omitted, a new ChartLabel
    * will be created with props described above. This labelComponent prop should be used to
-   * provide a series label for ChartArea. If individual labels are required for each
-   * data point, they should be created by composing ChartArea with VictoryScatter
+   * provide a series label for ChartPie. If individual labels are required for each
+   * data point, they should be created by composing ChartPie with VictoryScatter
    */
   labelComponent?: React.ReactElement<any>;
   /**
@@ -256,7 +256,7 @@ export interface ChartPieProps extends VictoryPieProps {
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
-   * compose ChartAxis with other components within an enclosing <svg> tag.
+   * compose ChartPie with other components within an enclosing <svg> tag.
    */
   standalone?: boolean;
   /**
@@ -276,9 +276,9 @@ export interface ChartPieProps extends VictoryPieProps {
   /**
    * The theme prop takes a style object with nested data, labels, and parent objects.
    * You can create this object yourself, or you can use a theme provided by
-   * When using ChartArea as a solo component, implement the theme directly on
-   * ChartArea. If you are wrapping ChartArea in ChartChart, ChartStack, or
-   * ChartGroup, please call the theme on the outermost wrapper component instead.
+   * When using ChartPie as a solo component, implement the theme directly on
+   * ChartPie. If you are wrapping ChartPie in ChartChart or ChartGroup,
+   * please call the theme on the outermost wrapper component instead.
    *
    * See https://formidable.com/open-source/victory/docs/victory-pie/#theme
    */

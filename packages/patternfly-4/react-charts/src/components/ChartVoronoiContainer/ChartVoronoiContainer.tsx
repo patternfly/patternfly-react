@@ -68,11 +68,8 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    */
   radius?: number;
   /**
-   * The theme prop takes a style object with nested data, labels, and parent objects.
-   * You can create this object yourself, or you can use a theme provided by
-   * When using ChartArea as a solo component, implement the theme directly on
-   * ChartArea. If you are wrapping ChartArea in ChartChart, ChartStack, or
-   * ChartGroup, please call the theme on the outermost wrapper component instead.
+   * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
+   * props defined in theme may be overwritten by props specified on the component instance.
    *
    * See https://formidable.com/open-source/victory/docs/victory-voronoi-container#theme
    */

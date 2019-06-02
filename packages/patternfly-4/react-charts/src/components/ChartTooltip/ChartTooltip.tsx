@@ -154,7 +154,8 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    */
   text?: StringOrNumberOrCallback | string[] | number[];
   /**
-   * ChartAxis uses the standard theme prop. Read about it here
+   * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
+   * props defined in theme may be overwritten by props specified on the component instance.
    *
    * See https://formidable.com/open-source/victory/docs/common-container-props#theme
    */

@@ -3543,7 +3543,7 @@ exports[`renders component data 1`] = `
   width={300}
 >
   <ChartStack>
-    <ChartBar
+    <Component
       data={
         Array [
           Object {
@@ -3565,7 +3565,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <ChartBar
+    <Component
       data={
         Array [
           Object {
@@ -3587,7 +3587,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <ChartBar
+    <Component
       data={
         Array [
           Object {
@@ -3609,7 +3609,7 @@ exports[`renders component data 1`] = `
         ]
       }
     />
-    <ChartBar
+    <Component
       data={
         Array [
           Object {

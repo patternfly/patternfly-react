@@ -9,25 +9,27 @@ import {
   DomainPaddingPropType,
   EventPropTypeInterface,
   InterpolationPropType,
+  NumberOrCallback,
   PaddingProps,
   ScalePropType,
   StringOrNumberOrCallback,
   VictoryStyleInterface,
-  VictoryArea,
-  VictoryAreaProps
+  VictoryBar,
+  VictoryBarProps
 } from 'victory';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
 
-export enum ChartAreaSortOrder {
-  ascending = 'ascending',
-  descending = 'descending'
-};
-
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
-export interface ChartAreaProps extends VictoryAreaProps {
+export interface ChartBarProps extends VictoryBarProps {
+  /**
+   * The alignment prop specifies how bars should be aligned relative to their data points.
+   * This prop may be given as “start”, “middle” or “end”. When this prop is not specified,
+   * bars will have “middle” alignment relative to their data points.
+   */
+  alignment?: "start" | "middle" | "end";
   /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
@@ -35,9 +37,24 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    *
-   * See https://formidable.com/open-source/victory/docs/victory-area#animate
+   * See https://formidable.com/open-source/victory/docs/victory-bar#animate
    */
   animate?: AnimatePropTypeInterface;
+  /**
+   * The barRatio prop specifies an approximate ratio between bar widths and spaces between bars.
+   * When width is not specified via the barWidth prop or in bar styles, the barRatio prop will
+   * be used to calculate a default width for each bar given the total number of bars in the data series
+   * and the overall width of the chart.
+   */
+  barRatio?: number;
+  /**
+   * The barWidth prop is used to specify the width of each bar. This prop may be given as
+   * a number of pixels or as a function that returns a number. When this prop is given as
+   * a function, it will be evaluated with the arguments datum, and active. When this value
+   * is not given, a default value will be calculated based on the overall dimensions of
+   * the chart, and the number of bars.
+   */
+  barWidth?: NumberOrCallback;
   /**
    * The categories prop specifies how categorical data for a chart should be ordered.
    * This prop should be given as an array of string values, or an object with
@@ -45,24 +62,38 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * categorical data will be plotted in the order it was given in the data array
    * @example ["dogs", "cats", "mice"]
    *
-   * See https://formidable.com/open-source/victory/docs/victory-area#categories
+   * See https://formidable.com/open-source/victory/docs/victory-bar#categories
    */
   categories?: CategoryPropType;
   /**
    * The containerComponent prop takes an entire component which will be used to
    * create a container element for standalone charts.
    * The new element created from the passed containerComponent wil be provided with
-   * these props from ChartArea: height, width, children
+   * these props from ChartBar: height, width, children
    * (the chart itself) and style. Props that are not provided by the
    * child chart component include title and desc, both of which
    * are intended to add accessibility to Victory components. The more descriptive these props
    * are, the more accessible your data will be for people using screen readers.
    * Any of these props may be overridden by passing in props to the supplied component,
    * or modified or ignored within the custom component itself. If a dataComponent is
-   * not provided, ChartArea will use the default ChartContainer component.
+   * not provided, ChartBar will use the default ChartContainer component.
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows..." />
    */
   containerComponent?: React.ReactElement<any>;
+  /**
+   * The cornerRadius prop specifies a radius to apply to each bar.
+   * If this prop is given as a single number, the radius will only be applied to the top of each bar.
+   * When this prop is given as a function, it will be evaluated with the arguments datum, and active.
+   */
+  cornerRadius?: NumberOrCallback
+    | {
+    top?: number | (NumberOrCallback),
+    topLeft?: number | (NumberOrCallback),
+    topRight?: number | (NumberOrCallback),
+    bottom?: number | (NumberOrCallback),
+    bottomLeft?: number | (NumberOrCallback),
+    bottomRight?: number | (NumberOrCallback)
+  };
   /**
    * The data prop specifies the data to be plotted. Data should be in the form of an array
    * of data points, or an array of arrays of data points for multiple datasets.
@@ -73,13 +104,13 @@ export interface ChartAreaProps extends VictoryAreaProps {
    */
   data?: any[];
   /**
-   * The dataComponent prop takes an entire component which will be used to create an area.
+   * The dataComponent prop takes an entire component which will be used to create a bar.
    * The new element created from the passed dataComponent will be provided with the
-   * following properties calculated by ChartArea: a scale, style, events, interpolation,
+   * following properties calculated by ChartBar: a scale, style, events, interpolation,
    * and an array of modified data objects (including x, y, and calculated y0 and y1).
    * Any of these props may be overridden by passing in props to the supplied component,
    * or modified or ignored within the custom component itself. If a dataComponent is
-   * not provided, ChartArea will use its default Area component.
+   * not provided, ChartBar will use its default Bar component.
    */
   dataComponent?: React.ReactElement;
   /**
@@ -90,7 +121,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * available information.
    * @example [-1, 1], {x: [0, 100], y: [0, 1]}
    *
-   * See https://formidable.com/open-source/victory/docs/victory-area#domain
+   * See https://formidable.com/open-source/victory/docs/victory-bar#domain
    */
   domain?: DomainPropType;
   /**
@@ -99,42 +130,45 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * from the origin to prevent crowding. This prop should be given as an object with
    * numbers specified for x and y.
    *
-   * See https://formidable.com/open-source/victory/docs/victory-area#domainpadding
+   * See https://formidable.com/open-source/victory/docs/victory-bar#domainpadding
    */
   domainPadding?: DomainPaddingPropType;
   /**
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
    *
-   * See https://formidable.com/open-source/victory/docs/victory-area#eventkey
+   * See https://formidable.com/open-source/victory/docs/victory-bar#eventkey
    */
   eventKey?: StringOrNumberOrCallback;
   /**
    * The event prop take an array of event objects. Event objects are composed of
    * a target, an eventKey, and eventHandlers. Targets may be any valid style namespace
-   * for a given component, so "data" and "labels" are all valid targets for ChartArea events.
-   * Since ChartArea only renders a single element, the eventKey property is not used.
-   * The eventHandlers object should be given as an object whose keys are standard
+   * for a given component, so "data" and "labels" are all valid targets for VictoryBar events.
+   * The eventKey may optionally be used to select a single element by index rather than an entire
+   * set. The eventHandlers object should be given as an object whose keys are standard
    * event names (i.e. onClick) and whose values are event callbacks. The return value
    * of an event handler is used to modify elemnts. The return value should be given
    * as an object or an array of objects with optional target and eventKey keys,
    * and a mutation key whose value is a function. The target and eventKey keys
    * will default to those corresponding to the element the event handler was attached to.
    * The mutation function will be called with the calculated props for the individual selected
-   * element (i.e. an area), and the object returned from the mutation function
+   * element (i.e. a single bar), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
    * @example
    * events={[
    *   {
    *     target: "data",
+   *     eventKey: "thisOne",
    *     eventHandlers: {
    *       onClick: () => {
    *         return [
    *            {
+   *              eventKey: "theOtherOne",
    *              mutation: (props) => {
    *                return {style: merge({}, props.style, {fill: "orange"})};
    *              }
    *            }, {
+   *              eventKey: "theOtherOne",
    *              target: "labels",
    *              mutation: () => {
    *                return {text: "hey"};
@@ -145,12 +179,10 @@ export interface ChartAreaProps extends VictoryAreaProps {
    *     }
    *   }
    * ]}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-area#events
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", "all">[];
+  events?: EventPropTypeInterface<"data" | "labels" | "parent", number | string>[];
   /**
-   * ChartArea uses the standard externalEventMutations prop.
+   * ChartBar uses the standard externalEventMutations prop.
    */
   externalEventMutations?: any[];
   /**
@@ -165,27 +197,21 @@ export interface ChartAreaProps extends VictoryAreaProps {
    */
   height?: number;
   /**
-   * The horizontal prop determines whether data will be plotted horizontally.
-   * When this prop is set to true, the independent variable will be plotted on the y axis
-   * and the dependent variable will be plotted on the x axis.
+   * The horizontal prop determines whether the bars will be laid vertically or
+   * horizontally. The bars will be vertical if this prop is false or unspecified,
+   * or horizontal if the prop is set to true.
    */
   horizontal?: boolean;
   /**
-   * The interpolation prop determines how data points should be connected when plotting a line
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-area#interpolation
-   */
-  interpolation?: InterpolationPropType;
-  /**
    * The labelComponent prop takes in an entire label component which will be used
-   * to create a label for the area. The new element created from the passed labelComponent
+   * to create a label for the bar. The new element created from the passed labelComponent
    * will be supplied with the following properties: x, y, index, data, verticalAnchor,
    * textAnchor, angle, style, text, and events. any of these props may be overridden
    * by passing in props to the supplied component, or modified or ignored within
    * the custom component itself. If labelComponent is omitted, a new ChartLabel
    * will be created with props described above. This labelComponent prop should be used to
-   * provide a series label for ChartArea. If individual labels are required for each
-   * data point, they should be created by composing ChartArea with VictoryScatter
+   * provide a series label for ChartBar. If individual labels are required for each
+   * data point, they should be created by composing ChartBar with VictoryScatter
    */
   labelComponent?: React.ReactElement<any>;
   /**
@@ -242,7 +268,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
    *
-   * See https://formidable.com/open-source/victory/docs/victory-area#padding
+   * See https://formidable.com/open-source/victory/docs/victory-bar#padding
    */
   padding?: PaddingProps;
   /**
@@ -314,27 +340,27 @@ export interface ChartAreaProps extends VictoryAreaProps {
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
-   * compose ChartArea with other components within an enclosing <svg> tag.
+   * compose ChartBar with other components within an enclosing <svg> tag.
    */
   standalone?: boolean;
   /**
-   * The style prop specifies styles for your ChartArea. Any valid inline style properties
+   * The style prop specifies styles for your ChartBar. Any valid inline style properties
    * will be applied. Height, width, and padding should be specified via the height,
    * width, and padding props, as they are used to calculate the alignment of
    * components within chart.
    * @example {data: {fill: "red"}, labels: {fontSize: 12}}
    *
-   * See https://formidable.com/open-source/victory/docs/victory-area#style
+   * See https://formidable.com/open-source/victory/docs/victory-bar#style
    */
   style?: VictoryStyleInterface;
   /**
    * The theme prop takes a style object with nested data, labels, and parent objects.
    * You can create this object yourself, or you can use a theme provided by
-   * When using ChartArea as a solo component, implement the theme directly on
-   * ChartArea. If you are wrapping ChartArea in ChartChart or ChartGroup,
+   * When using ChartBar as a solo component, implement the theme directly on
+   * ChartBar. If you are wrapping ChartBar in ChartChart or ChartGroup,
    * please call the theme on the outermost wrapper component instead.
    *
-   * See https://formidable.com/open-source/victory/docs/victory-area/#theme
+   * See https://formidable.com/open-source/victory/docs/victory-bar/#theme
    */
   theme?: ChartThemeDefinition;
   /**
@@ -368,7 +394,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
    *
-   * See https://formidable.com/open-source/victory/docs/victory-area#x
+   * See https://formidable.com/open-source/victory/docs/victory-bar#x
    */
   x?: DataGetterPropType;
   /**
@@ -381,26 +407,26 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
    *
-   * See https://formidable.com/open-source/victory/docs/victory-area#y
+   * See https://formidable.com/open-source/victory/docs/victory-bar#y
    */
   y?: DataGetterPropType;
   /**
    * Use y0 data accessor prop to determine how the component defines the baseline y0 data.
-   * This prop is useful for defining custom baselines for components like ChartArea.
+   * This prop is useful for defining custom baselines for components like ChartBar.
    * This prop may be given in a variety of formats.
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
    *
-   * See https://formidable.com/open-source/victory/docs/victory-area#y0
+   * See https://formidable.com/open-source/victory/docs/victory-bar#y0
    */
   y0?: DataGetterPropType;
-};
+}
 
-export const ChartArea: React.FunctionComponent<ChartAreaProps> = ({
+export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
   themeColor,
   themeVariant,
   theme = getTheme(themeColor, themeVariant), // destructure last
   ...rest
-}: ChartAreaProps) => <VictoryArea theme={theme} {...rest} />;
+}: ChartBarProps) => <VictoryBar theme={theme} {...rest} />;
 
-// Note: VictoryArea.role must be hoisted
-hoistNonReactStatics(ChartArea, VictoryArea);
+// Note: VictoryBar.getDomain & VictoryBar.role must be hoisted
+hoistNonReactStatics(ChartBar, VictoryBar);

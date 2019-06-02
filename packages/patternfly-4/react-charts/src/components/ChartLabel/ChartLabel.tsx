@@ -151,17 +151,20 @@ export interface ChartLabelProps extends VictoryLabelProps {
    *
    * See https://formidable.com/open-source/victory/docs/victory-label#textanchor
    */
+  // Todo: function not working as type
   // textAnchor?: TextAnchorType | { (): TextAnchorType };
   /**
    * The transform prop applies a transform to the rendered `<text>` element.
    * In addition to being a string, it can be an object containing transform definitions for easier authoring.
    */
+  // Todo: function not working as type
   // transform?: string | {} | { (): string | {} };
   /**
    * The verticalAnchor prop defines how the text is vertically positioned relative to the given `x` and `y` coordinates
    *
    * See https://formidable.com/open-source/victory/docs/victory-label#verticalanchor
    */
+  // Todo: function not working as type
   // verticalAnchor?: VerticalAnchorType | { (): VerticalAnchorType };
   /**
    * The x prop defines the x coordinate to use as a basis for horizontal positioning.

@@ -57,7 +57,7 @@ export interface ChartDonutProps extends ChartPieProps {
   /**
    * The colorScale prop is an optional prop that defines the color scale the pie
    * will be created on. This prop should be given as an array of CSS colors, or as a string
-   * corresponding to one of the built in color scales. ChartPie will automatically assign
+   * corresponding to one of the built in color scales. ChartDonut will automatically assign
    * values from this color scale to the pie slices unless colors are explicitly provided in the
    * data object
    *
@@ -68,19 +68,19 @@ export interface ChartDonutProps extends ChartPieProps {
    * The containerComponent prop takes an entire component which will be used to
    * create a container element for standalone charts.
    * The new element created from the passed containerComponent wil be provided with
-   * these props from ChartArea: height, width, children
+   * these props from ChartDonut: height, width, children
    * (the chart itself) and style. Props that are not provided by the
    * child chart component include title and desc, both of which
    * are intended to add accessibility to Victory components. The more descriptive these props
    * are, the more accessible your data will be for people using screen readers.
    * Any of these props may be overridden by passing in props to the supplied component,
    * or modified or ignored within the custom component itself. If a dataComponent is
-   * not provided, ChartArea will use the default ChartContainer component.
+   * not provided, ChartDonut will use the default ChartContainer component.
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
   containerComponent?: React.ReactElement<any>;
   /**
-   * Set the cornerRadius for every dataComponent (Slice by default) within ChartPie
+   * Set the cornerRadius for every dataComponent (Slice by default) within ChartDonut
    */
   cornerRadius?: number;
   /**
@@ -98,10 +98,10 @@ export interface ChartDonutProps extends ChartPieProps {
    * The dataComponent prop takes an entire, HTML-complete data component which will be used to
    * create slices for each datum in the pie chart. The new element created from the passed
    * dataComponent will have the property datum set by the pie chart for the point it renders;
-   * properties style and pathFunction calculated by ChartPie; an index property set
+   * properties style and pathFunction calculated by ChartDonut; an index property set
    * corresponding to the location of the datum in the data provided to the pie; events bound to
-   * the ChartPie; and the d3 compatible slice object.
-   * If a dataComponent is not provided, ChartPie's Slice component will be used.
+   * the ChartDonut; and the d3 compatible slice object.
+   * If a dataComponent is not provided, ChartDonut's Slice component will be used.
    */
   dataComponent?: React.ReactElement<any>;
   /**
@@ -119,7 +119,7 @@ export interface ChartDonutProps extends ChartPieProps {
   /**
    * The event prop takes an array of event objects. Event objects are composed of
    * a target, an eventKey, and eventHandlers. Targets may be any valid style namespace
-   * for a given component, so "data" and "labels" are all valid targets for ChartPie
+   * for a given component, so "data" and "labels" are all valid targets for ChartDonut
    * events. The eventKey may optionally be used to select a single element by index rather than
    * an entire set. The eventHandlers object should be given as an object whose keys are standard
    * event names (i.e. onClick) and whose values are event callbacks. The return value
@@ -160,7 +160,7 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback | string[] | number[]>[];
   /**
-   * ChartLegend uses the standard externalEventMutations prop.
+   * ChartDonut uses the standard externalEventMutations prop.
    */
   externalEventMutations?: any[];
   /**
@@ -194,8 +194,8 @@ export interface ChartDonutProps extends ChartPieProps {
    * by passing in props to the supplied component, or modified or ignored within
    * the custom component itself. If labelComponent is omitted, a new ChartLabel
    * will be created with props described above. This labelComponent prop should be used to
-   * provide a series label for ChartArea. If individual labels are required for each
-   * data point, they should be created by composing ChartArea with VictoryScatter
+   * provide a series label for ChartDonut. If individual labels are required for each
+   * data point, they should be created by composing ChartDonut with VictoryScatter
    */
   labelComponent?: React.ReactElement<any>;
   /**
@@ -263,7 +263,7 @@ export interface ChartDonutProps extends ChartPieProps {
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
-   * compose ChartAxis with other components within an enclosing <svg> tag.
+   * compose ChartDonut with other components within an enclosing <svg> tag.
    */
   standalone?: boolean;
   /**
@@ -272,7 +272,7 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   startAngle?: number;
   /**
-   * The style prop specifies styles for your pie. ChartPie relies on Radium,
+   * The style prop specifies styles for your pie. ChartDonut relies on Radium,
    * so valid Radium style objects should work for this prop. Height, width, and
    * padding should be specified via the height, width, and padding props.
    * @example {data: {stroke: "black"}, label: {fontSize: 10}}
@@ -287,9 +287,9 @@ export interface ChartDonutProps extends ChartPieProps {
   /**
    * The theme prop takes a style object with nested data, labels, and parent objects.
    * You can create this object yourself, or you can use a theme provided by
-   * When using ChartArea as a solo component, implement the theme directly on
-   * ChartArea. If you are wrapping ChartArea in Chart, ChartStack, or
-   * ChartGroup, please call the theme on the outermost wrapper component instead.
+   * When using ChartDonut as a solo component, implement the theme directly on
+   * ChartDonut. If you are wrapping ChartDonut in ChartChart or ChartGroup,
+   * please call the theme on the outermost wrapper component instead.
    *
    * See https://formidable.com/open-source/victory/docs/victory-pie/#theme
    */

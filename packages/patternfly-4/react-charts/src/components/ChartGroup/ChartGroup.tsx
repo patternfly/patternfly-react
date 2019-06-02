@@ -61,7 +61,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
   /**
    * The colorScale prop is an optional prop that defines the color scale the chart's bars
    * will be created on. This prop should be given as an array of CSS colors, or as a string
-   * corresponding to one of the built in color scales. ChartBar will automatically assign
+   * corresponding to one of the built in color scales. ChartGroup will automatically assign
    * values from this color scale to the bars unless colors are explicitly provided in the
    * `dataAttributes` prop.
    *
@@ -72,14 +72,14 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * The containerComponent prop takes an entire component which will be used to
    * create a container element for standalone charts.
    * The new element created from the passed containerComponent wil be provided with
-   * these props from ChartArea: height, width, children
+   * these props from ChartGroup: height, width, children
    * (the chart itself) and style. Props that are not provided by the
    * child chart component include title and desc, both of which
    * are intended to add accessibility to Victory components. The more descriptive these props
    * are, the more accessible your data will be for people using screen readers.
    * Any of these props may be overridden by passing in props to the supplied component,
    * or modified or ignored within the custom component itself. If a dataComponent is
-   * not provided, ChartArea will use the default ChartContainer component.
+   * not provided, ChartGroup will use the default ChartContainer component.
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows..." />
    */
   containerComponent?: React.ReactElement<any>;
@@ -122,8 +122,8 @@ export interface ChartGroupProps extends VictoryGroupProps {
   /**
    * The event prop take an array of event objects. Event objects are composed of
    * a target, an eventKey, and eventHandlers. Targets may be any valid style namespace
-   * for a given component, so "data" and "labels" are all valid targets for ChartArea events.
-   * Since ChartArea only renders a single element, the eventKey property is not used.
+   * for a given component, so "data" and "labels" are all valid targets for ChartGroup events.
+   * Since ChartGroup only renders a single element, the eventKey property is not used.
    * The eventHandlers object should be given as an object whose keys are standard
    * event names (i.e. onClick) and whose values are event callbacks. The return value
    * of an event handler is used to modify elemnts. The return value should be given
@@ -160,7 +160,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    */
   events?: EventPropTypeInterface<"data" | "labels" | "parent", "all">[];
   /**
-   * ChartLegend uses the standard externalEventMutations prop.
+   * ChartGroup uses the standard externalEventMutations prop.
    */
   externalEventMutations?: any[];
   /**
@@ -188,8 +188,8 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * by passing in props to the supplied component, or modified or ignored within
    * the custom component itself. If labelComponent is omitted, a new ChartLabel
    * will be created with props described above. This labelComponent prop should be used to
-   * provide a series label for ChartArea. If individual labels are required for each
-   * data point, they should be created by composing ChartArea with VictoryScatter
+   * provide a series label for ChartGroup. If individual labels are required for each
+   * data point, they should be created by composing ChartGroup with VictoryScatter
    */
   labelComponent?: React.ReactElement<any>;
   /**
@@ -266,7 +266,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this
    * corresponds to a range of angles and radii. When this value is not given it will be calculated from the width,
    * height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given
-   * chart must share the same range, so setting this prop on children nested within Chart, ChartStack, or
+   * chart must share the same range, so setting this prop on children nested within Chart,
    * ChartGroup will have no effect. This prop is usually not set manually.
    *
    * examples:
@@ -327,11 +327,11 @@ export interface ChartGroupProps extends VictoryGroupProps {
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
-   * compose ChartAxis with other components within an enclosing <svg> tag.
+   * compose ChartGroup with other components within an enclosing <svg> tag.
    */
   standalone?: boolean;
   /**
-   * The style prop specifies styles for your ChartArea. Any valid inline style properties
+   * The style prop specifies styles for your ChartGroup. Any valid inline style properties
    * will be applied. Height, width, and padding should be specified via the height,
    * width, and padding props, as they are used to calculate the alignment of
    * components within chart.
@@ -341,11 +341,8 @@ export interface ChartGroupProps extends VictoryGroupProps {
    */
   style?: VictoryStyleInterface;
   /**
-   * The theme prop takes a style object with nested data, labels, and parent objects.
-   * You can create this object yourself, or you can use a theme provided by
-   * When using ChartArea as a solo component, implement the theme directly on
-   * ChartArea. If you are wrapping ChartArea in ChartChart, ChartStack, or
-   * ChartGroup, please call the theme on the outermost wrapper component instead.
+   * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
+   * props defined in theme may be overwritten by props specified on the component instance.
    *
    * See https://formidable.com/open-source/victory/docs/victory-group#theme
    */

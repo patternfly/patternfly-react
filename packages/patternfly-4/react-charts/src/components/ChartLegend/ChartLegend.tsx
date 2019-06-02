@@ -73,14 +73,14 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * The containerComponent prop takes an entire component which will be used to
    * create a container element for standalone charts.
    * The new element created from the passed containerComponent wil be provided with
-   * these props from ChartArea: height, width, children
+   * these props from ChartLegend: height, width, children
    * (the chart itself) and style. Props that are not provided by the
    * child chart component include title and desc, both of which
    * are intended to add accessibility to Victory components. The more descriptive these props
    * are, the more accessible your data will be for people using screen readers.
    * Any of these props may be overridden by passing in props to the supplied component,
    * or modified or ignored within the custom component itself. If a dataComponent is
-   * not provided, ChartArea will use the default ChartContainer component.
+   * not provided, ChartLegend will use the default ChartContainer component.
    * @example <ChartContainer title="Chart of Dog Breeds" desc="This chart shows ..." />
    */
   containerComponent?: React.ReactElement<any>;
@@ -206,11 +206,11 @@ export interface ChartLegendProps extends VictoryLegendProps {
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
-   * compose ChartAxis with other components within an enclosing <svg> tag.
+   * compose ChartLegend with other components within an enclosing <svg> tag.
    */
   standalone?: boolean;
   /**
-   * The style prop specifies styles for your pie. ChartPie relies on Radium,
+   * The style prop specifies styles for your pie. ChartLegend relies on Radium,
    * so valid Radium style objects should work for this prop. Height, width, and
    * padding should be specified via the height, width, and padding props.
    * @example {data: {stroke: "black"}, label: {fontSize: 10}}
@@ -226,8 +226,8 @@ export interface ChartLegendProps extends VictoryLegendProps {
   /**
    * The theme prop takes a style object with nested data, labels, and parent objects.
    * You can create this object yourself, or you can use a theme provided by
-   * When using ChartArea as a solo component, implement the theme directly on
-   * ChartArea. If you are wrapping ChartArea in ChartChart, ChartStack, or
+   * When using ChartLegend as a solo component, implement the theme directly on
+   * ChartLegend. If you are wrapping ChartLegend in ChartChart or
    * ChartGroup, please call the theme on the outermost wrapper component instead.
    *
    * See https://formidable.com/open-source/victory/docs/victory-legend/#theme
