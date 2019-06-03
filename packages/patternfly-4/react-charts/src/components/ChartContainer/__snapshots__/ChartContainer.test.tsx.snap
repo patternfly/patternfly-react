@@ -38,33 +38,6 @@ exports[`Chart 1`] = `
                 "textAnchor": "middle",
               },
             },
-<<<<<<< HEAD
-            "bar": Object {
-              "barWidth": 10,
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "height": 300,
-              "padding": 50,
-              "style": Object {
-                "data": Object {
-                  "fill": "#06c",
-                  "stroke": "none",
-                },
-                "labels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                },
-              },
-              "width": 450,
-=======
             "width": 450,
           },
           "axis": Object {
@@ -111,7 +84,6 @@ exports[`Chart 1`] = `
                 "size": 1,
                 "stroke": "transparent",
               },
->>>>>>> Fix test and update snapshots
             },
             "width": 450,
           },
@@ -588,31 +560,6 @@ exports[`Chart 1`] = `
             "stroke": "transparent",
           },
         },
-<<<<<<< HEAD
-        "bar": Object {
-          "barWidth": 10,
-          "colorScale": Array [
-            "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
-          ],
-          "height": 300,
-          "padding": 50,
-          "style": Object {
-            "data": Object {
-              "fill": "#06c",
-              "stroke": "none",
-            },
-            "labels": Object {
-              "fill": "#151515",
-              "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-              "fontSize": 14,
-              "letterSpacing": "normal",
-              "padding": 10,
-              "stroke": "transparent",
-            },
-=======
         "width": 450,
       },
       "bar": Object {
@@ -637,7 +584,6 @@ exports[`Chart 1`] = `
             "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
->>>>>>> Fix test and update snapshots
           },
         },
         "width": 450,
@@ -1427,442 +1373,6 @@ exports[`Chart 2`] = `
               "textAnchor": "middle",
             },
           },
-<<<<<<< HEAD
-          "width": 450,
-        },
-      }
-    }
-    width={230}
-  />
-</ChartContainer>
-`;
-
-exports[`Chart 2`] = `
-<ChartContainer
-  height={230}
-  width={230}
->
-  <ChartLabel
-    style={
-      Array [
-        Object {
-          "fontSize": 26,
-        },
-        Object {
-          "fill": "#bbb",
-          "fontSize": 16,
-        },
-      ]
-    }
-    textAnchor="middle"
-    verticalAnchor="middle"
-    x={115}
-    y={115}
-  />
-  <ChartPie
-    height={230}
-    innerRadius={98}
-    labelComponent={
-      <ChartTooltip
-        theme={
-          Object {
-            "area": Object {
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "height": 300,
-              "padding": 50,
-              "style": Object {
-                "data": Object {
-                  "fill": "#bee1f4",
-                  "fillOpacity": 0.4,
-                  "stroke": "#73bcf7",
-                  "strokeWidth": 2,
-                },
-                "labels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                  "textAnchor": "middle",
-                },
-              },
-              "width": 450,
-            },
-            "axis": Object {
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "height": 300,
-              "padding": 50,
-              "style": Object {
-                "axis": Object {
-                  "fill": "transparent",
-                  "stroke": "#D2D2D2",
-                  "strokeLinecap": "round",
-                  "strokeLinejoin": "round",
-                  "strokeWidth": 1,
-                },
-                "axisLabel": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 100,
-                  "stroke": "transparent",
-                  "textAnchor": "middle",
-                },
-                "grid": Object {
-                  "fill": "none",
-                  "pointerEvents": "painted",
-                  "stroke": "none",
-                },
-                "tickLabels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                },
-                "ticks": Object {
-                  "fill": "transparent",
-                  "size": 1,
-                  "stroke": "transparent",
-                },
-              },
-              "width": 450,
-            },
-            "bar": Object {
-              "barWidth": 10,
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "height": 300,
-              "padding": 50,
-              "style": Object {
-                "data": Object {
-                  "fill": "#06c",
-                  "stroke": "none",
-                },
-                "labels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                },
-              },
-              "width": 450,
-            },
-            "boxplot": Object {
-              "boxWidth": 20,
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "height": 300,
-              "padding": 50,
-              "style": Object {
-                "max": Object {
-                  "padding": 8,
-                  "stroke": "#73bcf7",
-                  "strokeWidth": 1,
-                },
-                "maxLabels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                },
-                "median": Object {
-                  "padding": 8,
-                  "stroke": "#73bcf7",
-                  "strokeWidth": 1,
-                },
-                "medianLabels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                },
-                "min": Object {
-                  "padding": 8,
-                  "stroke": "#73bcf7",
-                  "strokeWidth": 1,
-                },
-                "minLabels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                },
-                "q1": Object {
-                  "fill": "#bee1f4",
-                  "padding": 8,
-                },
-                "q1Labels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                },
-                "q3": Object {
-                  "fill": "#bee1f4",
-                  "padding": 8,
-                },
-                "q3Labels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                },
-              },
-              "width": 450,
-            },
-            "candlestick": Object {
-              "candleColors": Object {
-                "negative": "#73bcf7",
-                "positive": "#bee1f4",
-              },
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "height": 300,
-              "padding": 50,
-              "style": Object {
-                "data": Object {
-                  "stroke": "#73bcf7",
-                  "strokeWidth": 1,
-                },
-                "labels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                  "textAnchor": "middle",
-                },
-              },
-              "width": 450,
-            },
-            "chart": Object {
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "height": 300,
-              "padding": 50,
-              "style": Object {
-                "parent": Object {
-                  "border": "1px solid #bee1f4",
-                },
-              },
-              "width": 450,
-            },
-            "errorbar": Object {
-              "borderWidth": 8,
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "height": 300,
-              "padding": 50,
-              "style": Object {
-                "data": Object {
-                  "fill": "transparent",
-                  "stroke": "#73bcf7",
-                  "strokeWidth": 2,
-                },
-                "labels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                  "textAnchor": "middle",
-                },
-              },
-              "width": 450,
-            },
-            "group": Object {
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "height": 300,
-              "padding": 50,
-              "width": 450,
-            },
-            "legend": Object {
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "gutter": 20,
-              "orientation": "horizontal",
-              "style": Object {
-                "data": Object {
-                  "type": "square",
-                },
-                "labels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                },
-                "title": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 2,
-                  "stroke": "transparent",
-                },
-              },
-              "titleOrientation": "top",
-            },
-            "line": Object {
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "height": 300,
-              "padding": 50,
-              "style": Object {
-                "data": Object {
-                  "fill": "transparent",
-                  "stroke": "#73bcf7",
-                  "strokeWidth": 2,
-                },
-                "labels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                  "textAnchor": "middle",
-                },
-              },
-              "width": 450,
-            },
-            "pie": Object {
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "height": 230,
-              "padAngle": 1,
-              "padding": 8,
-              "style": Object {
-                "data": Object {
-                  "padding": 8,
-                  "strokeWidth": 1,
-                },
-                "labels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 8,
-                  "stroke": "#EDEDED",
-                },
-              },
-              "width": 230,
-            },
-            "scatter": Object {
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "height": 300,
-              "padding": 50,
-              "style": Object {
-                "data": Object {
-                  "fill": "#bee1f4",
-                  "stroke": "transparent",
-                  "strokeWidth": 0,
-                },
-                "labels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                  "textAnchor": "middle",
-                },
-              },
-              "width": 450,
-            },
-            "stack": Object {
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "height": 300,
-              "padding": 50,
-              "style": Object {
-                "data": Object {
-                  "stroke": "#fff",
-                  "strokeWidth": 1,
-                },
-              },
-              "width": 450,
-            },
-            "tooltip": Object {
-              "cornerRadius": 0,
-              "flyoutStyle": Object {
-                "cornerRadius": 0,
-=======
           "voronoi": Object {
             "colorScale": Array [
               "#06c",
@@ -1879,7 +1389,6 @@ exports[`Chart 2`] = `
                 "strokeWidth": 0,
               },
               "flyout": Object {
->>>>>>> Fix test and update snapshots
                 "fill": "#151515",
                 "pointerEvents": "none",
                 "stroke": "#151515",
@@ -1999,31 +1508,6 @@ exports[`Chart 2`] = `
             "stroke": "transparent",
           },
         },
-<<<<<<< HEAD
-        "bar": Object {
-          "barWidth": 10,
-          "colorScale": Array [
-            "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
-          ],
-          "height": 300,
-          "padding": 50,
-          "style": Object {
-            "data": Object {
-              "fill": "#06c",
-              "stroke": "none",
-            },
-            "labels": Object {
-              "fill": "#151515",
-              "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-              "fontSize": 14,
-              "letterSpacing": "normal",
-              "padding": 10,
-              "stroke": "transparent",
-            },
-=======
         "width": 450,
       },
       "bar": Object {
@@ -2048,7 +1532,6 @@ exports[`Chart 2`] = `
             "letterSpacing": "normal",
             "padding": 10,
             "stroke": "transparent",
->>>>>>> Fix test and update snapshots
           },
         },
         "width": 450,
@@ -2524,33 +2007,6 @@ exports[`renders container via ChartLegend 1`] = `
                 "stroke": "transparent",
               },
             },
-<<<<<<< HEAD
-            "bar": Object {
-              "barWidth": 10,
-              "colorScale": Array [
-                "#06c",
-                "#bee1f4",
-                "#73bcf7",
-                "#0066ff",
-              ],
-              "height": 300,
-              "padding": 50,
-              "style": Object {
-                "data": Object {
-                  "fill": "#06c",
-                  "stroke": "none",
-                },
-                "labels": Object {
-                  "fill": "#151515",
-                  "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-                  "fontSize": 14,
-                  "letterSpacing": "normal",
-                  "padding": 10,
-                  "stroke": "transparent",
-                },
-              },
-              "width": 450,
-=======
             "width": 450,
           },
           "boxplot": Object {
@@ -2627,7 +2083,6 @@ exports[`renders container via ChartLegend 1`] = `
                 "padding": 10,
                 "stroke": "transparent",
               },
->>>>>>> Fix test and update snapshots
             },
             "width": 450,
           },
@@ -2955,31 +2410,6 @@ exports[`renders container via ChartLegend 1`] = `
             "textAnchor": "middle",
           },
         },
-<<<<<<< HEAD
-        "bar": Object {
-          "barWidth": 10,
-          "colorScale": Array [
-            "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
-          ],
-          "height": 300,
-          "padding": 50,
-          "style": Object {
-            "data": Object {
-              "fill": "#06c",
-              "stroke": "none",
-            },
-            "labels": Object {
-              "fill": "#151515",
-              "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-              "fontSize": 14,
-              "letterSpacing": "normal",
-              "padding": 10,
-              "stroke": "transparent",
-            },
-=======
         "width": 450,
       },
       "axis": Object {
@@ -3025,7 +2455,6 @@ exports[`renders container via ChartLegend 1`] = `
             "fill": "transparent",
             "size": 1,
             "stroke": "transparent",
->>>>>>> Fix test and update snapshots
           },
         },
         "width": 450,
