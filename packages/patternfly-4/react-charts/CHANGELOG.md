@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.5...@patternfly/react-charts@3.6.6) (2019-06-03)
+
+
+### Performance Improvements
+
+* **charts:** breaking change bump ([#2141](https://github.com/patternfly/patternfly-react/issues/2141)) ([10296da](https://github.com/patternfly/patternfly-react/commit/10296da))
+
+
+
+
+
 ## [3.6.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.4...@patternfly/react-charts@3.6.5) (2019-06-03)
 
 
