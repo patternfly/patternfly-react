@@ -5,7 +5,6 @@ typescript: true
 propComponents: ['Chart', 'ChartBar', 'ChartStack']
 ---
 
-## Vertical blue stack chart
 import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-stack.scss';
 
