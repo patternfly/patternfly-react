@@ -19,7 +19,10 @@ const propTypes = {
   /** Callback for toggle open on keyboard entry */
   onEnter: PropTypes.func,
   /** Element which wraps toggle */
-  parentRef: PropTypes.any,
+  parentRef: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
   /** Forces focus state */
   isFocused: PropTypes.bool,
   /** Forces hover state */

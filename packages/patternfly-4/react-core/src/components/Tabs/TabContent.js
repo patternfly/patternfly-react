@@ -14,7 +14,10 @@ const propTypes = {
   /** uniquely identifies the controlling Tab if used outside Tabs component */
   eventKey: PropTypes.number,
   /** Callback for the section ref */
-  innerRef: PropTypes.func,
+  innerRef: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
   /** id passed from parent to identify the content section */
   id: PropTypes.string.isRequired,
   /** title of controlling Tab if used outside Tabs component */

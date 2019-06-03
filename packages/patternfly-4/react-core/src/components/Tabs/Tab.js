@@ -16,8 +16,14 @@ const propTypes = {
   /** child id for case in which a TabContent section is defined outside of a Tabs component */
   tabContentId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** child reference for case in which a TabContent section is defined outside of a Tabs component */
-  tabContentRef: PropTypes.node,
-  forwardRef: PropTypes.node // purposefully not documented
+  tabContentRef: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
+  forwardRef: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]) // purposefully not documented
 };
 
 const defaultProps = {
@@ -26,16 +32,14 @@ const defaultProps = {
   href: null,
   tabContentId: null,
   tabContentRef: null,
-  forwardRef: undefined
+  forwardRef: null
 };
 
 const withForwardedRef = Component => {
-  class TabContainer extends React.Component {
-    render() {
-      const { tabContentRef, ...rest } = this.props; // eslint-disable-line react/prop-types
-      return <Component ref={tabContentRef} {...rest} />;
-    }
-  }
+  const TabContainer = props => {
+    const { tabContentRef, ...rest } = props; // eslint-disable-line react/prop-types
+    return <Component ref={tabContentRef} {...rest} />;
+  };
   return React.forwardRef((props, tabContentRef) => <TabContainer {...props} forwardRef={tabContentRef} />);
 };
 

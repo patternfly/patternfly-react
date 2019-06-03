@@ -20,7 +20,10 @@ const propTypes = {
   /** Callback called when the Enter key is pressed */
   onEnter: PropTypes.func,
   /** Element which wraps toggle */
-  parentRef: PropTypes.any,
+  parentRef: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  ]),
   /** Forces focus state */
   isFocused: PropTypes.bool,
   /** Forces hover state */
