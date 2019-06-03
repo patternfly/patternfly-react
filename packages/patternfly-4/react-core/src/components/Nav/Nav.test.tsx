@@ -26,10 +26,10 @@ const context = {
 
 test('Default Nav List', () => {
   const view = mount(
-    <Nav>
-      <NavList>
+    <Nav className="test=nav-class">
+      <NavList className="test-nav-list-class">
         {props.items.map(item => (
-          <NavItem to={item.to} key={item.to}>
+          <NavItem to={item.to} key={item.to} className="test-nav-item-class">
             {item.label}
           </NavItem>
         ))}
@@ -196,12 +196,11 @@ test('Tertiary Nav List', () => {
 });
 
 test('Nav List with custom item nodes', () => {
-  const CustomNode = () => <div>My custom node</div>;
   const view = mount(
     <Nav>
       <NavList variant="tertiary">
-        <NavItem to="/components/nav#link1">
-          <CustomNode />
+        <NavItem to="/components/nav#link1" className="test-nav-item-class">
+          <div className="my-custom-node">My custom node</div>
         </NavItem>
       </NavList>
     </Nav>,

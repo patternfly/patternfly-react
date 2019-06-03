@@ -97,33 +97,34 @@ exports[`Default Nav List - Trigger item active update 1`] = `
 exports[`Default Nav List 1`] = `
 <Nav
   aria-label=""
-  className=""
+  className="test=nav-class"
   onSelect={[Function]}
   onToggle={[Function]}
 >
   <nav
     aria-label="Global"
-    className="pf-c-nav"
+    className="pf-c-nav test=nav-class"
   >
     <NavList
       ariaLeftScroll="Scroll left"
       ariaRightScroll="Scroll right"
-      className=""
+      className="test-nav-list-class"
       variant="default"
     >
       <ul
-        className="pf-c-nav__list"
+        className="pf-c-nav__list test-nav-list-class"
       >
         <Component
+          className="test-nav-item-class"
           key="#link1"
           to="#link1"
         >
           <li
-            className="pf-c-nav__item"
+            className="pf-c-nav__item test-nav-item-class"
           >
             <a
               aria-current={null}
-              className="pf-c-nav__link"
+              className="pf-c-nav__link test-nav-item-class"
               href="#link1"
               onClick={[Function]}
             >
@@ -132,15 +133,16 @@ exports[`Default Nav List 1`] = `
           </li>
         </Component>
         <Component
+          className="test-nav-item-class"
           key="#link2"
           to="#link2"
         >
           <li
-            className="pf-c-nav__item"
+            className="pf-c-nav__item test-nav-item-class"
           >
             <a
               aria-current={null}
-              className="pf-c-nav__link"
+              className="pf-c-nav__link test-nav-item-class"
               href="#link2"
               onClick={[Function]}
             >
@@ -149,15 +151,16 @@ exports[`Default Nav List 1`] = `
           </li>
         </Component>
         <Component
+          className="test-nav-item-class"
           key="#link3"
           to="#link3"
         >
           <li
-            className="pf-c-nav__item"
+            className="pf-c-nav__item test-nav-item-class"
           >
             <a
               aria-current={null}
-              className="pf-c-nav__link"
+              className="pf-c-nav__link test-nav-item-class"
               href="#link3"
               onClick={[Function]}
             >
@@ -166,15 +169,16 @@ exports[`Default Nav List 1`] = `
           </li>
         </Component>
         <Component
+          className="test-nav-item-class"
           key="#link4"
           to="#link4"
         >
           <li
-            className="pf-c-nav__item"
+            className="pf-c-nav__item test-nav-item-class"
           >
             <a
               aria-current={null}
-              className="pf-c-nav__link"
+              className="pf-c-nav__link test-nav-item-class"
               href="#link4"
               onClick={[Function]}
             >
@@ -1095,20 +1099,19 @@ exports[`Nav List with custom item nodes 1`] = `
         className="pf-c-nav__tertiary-list"
       >
         <Component
+          className="test-nav-item-class"
           to="/components/nav#link1"
         >
           <li
-            className="pf-c-nav__item"
+            className="pf-c-nav__item test-nav-item-class"
           >
-            <CustomNode
+            <div
               aria-current={null}
-              className="pf-c-nav__link"
+              className="pf-c-nav__link my-custom-node"
               onClick={[Function]}
             >
-              <div>
-                My custom node
-              </div>
-            </CustomNode>
+              My custom node
+            </div>
           </li>
         </Component>
       </ul>
