@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.6.0 (2019-06-03)
+
+
+### Features
+
+* **component:** Add Time Picker component ([#1875](https://github.com/patternfly/patternfly-react/issues/1875)) ([00996e9](https://github.com/patternfly/patternfly-react/commit/00996e9))
+
+
+
+
+
 ## [4.5.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.5.0...@patternfly/react-docs@4.5.1) (2019-05-30)
 
 **Note:** Version bump only for package @patternfly/react-docs

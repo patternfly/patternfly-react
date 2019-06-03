@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.5.0 (2019-06-03)
+
+
+### Features
+
+* **component:** Add Time Picker component ([#1875](https://github.com/patternfly/patternfly-react/issues/1875)) ([00996e9](https://github.com/patternfly/patternfly-react/commit/00996e9))
+
+
+
+
+
 ## [2.4.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.4.20...@patternfly/react-inline-edit-extension@2.4.21) (2019-05-30)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension
