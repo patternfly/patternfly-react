@@ -6,6 +6,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ## [3.6.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.4...@patternfly/react-charts@3.6.5) (2019-06-03)
 
 
+
 ### Bug Fixes
 
 * **Charts:** Fix themes for bar chart default colors ([#2112](https://github.com/patternfly/patternfly-react/issues/2112)) ([7b290ab](https://github.com/patternfly/patternfly-react/commit/7b290ab)), closes [#2111](https://github.com/patternfly/patternfly-react/issues/2111)
