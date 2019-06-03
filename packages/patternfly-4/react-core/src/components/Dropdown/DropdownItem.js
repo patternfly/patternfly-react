@@ -28,10 +28,7 @@ const propTypes = {
   index: PropTypes.number,
   context: PropTypes.shape({
     keyHandler: PropTypes.func,
-    sendRef: PropTypes.oneOfType([
-      PropTypes.func, 
-      PropTypes.shape({ current: PropTypes.instanceOf(Element) })
-    ])
+    sendRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.instanceOf(React.Element) })])
   }),
   /** Callback for click event */
   onClick: PropTypes.func,

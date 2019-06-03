@@ -18,10 +18,7 @@ const propTypes = {
   /** internal index of the item */
   index: PropTypes.number,
   /** Internal callback for ref tracking */
-  sendRef: PropTypes.oneOfType([
-    PropTypes.func, 
-    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
-  ]),
+  sendRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.instanceOf(React.Element) })]),
   /** Additional props are spread to the button element */
   '': PropTypes.any // eslint-disable-line react/require-default-props
 };

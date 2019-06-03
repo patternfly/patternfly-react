@@ -25,10 +25,7 @@ Kebab.propTypes = {
   /** Callback called when toggle is clicked */
   onToggle: PropTypes.func,
   /** Element which wraps toggle */
-  parentRef: PropTypes.oneOfType([
-    PropTypes.func, 
-    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
-  ]),
+  parentRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.instanceOf(React.Element) })]),
   /** Forces focus state */
   isFocused: PropTypes.bool,
   /** Forces hover state */

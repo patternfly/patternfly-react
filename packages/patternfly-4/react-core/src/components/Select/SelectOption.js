@@ -21,10 +21,7 @@ const propTypes = {
   /** Optional on click callback */
   onClick: PropTypes.func,
   /** Internal callback for ref tracking */
-  sendRef: PropTypes.oneOfType([
-    PropTypes.func, 
-    PropTypes.shape({ current: PropTypes.instanceOf(Element) })
-  ]),
+  sendRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.instanceOf(React.Element) })]),
   /** Internal callback for keyboard navigation */
   keyHandler: PropTypes.func,
   /** Additional props are spread to the container <button> */
