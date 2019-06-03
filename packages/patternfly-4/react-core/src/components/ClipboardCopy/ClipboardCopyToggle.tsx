@@ -4,13 +4,11 @@ import { css } from '@patternfly/react-styles';
 import { AngleRightIcon } from '@patternfly/react-icons';
 
 export interface ClipboardCopyToggleProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  /** Function that is called when clicking on the toggle button */
   onClick: (event: React.MouseEvent) => void; 
   id: string; 
   textId: string; 
   contentId: string; 
   isExpanded?: boolean; 
-  /** Additional classes added to the toggle button */
   className?: string; 
 }
 

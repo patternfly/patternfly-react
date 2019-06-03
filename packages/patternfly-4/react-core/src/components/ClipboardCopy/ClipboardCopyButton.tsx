@@ -10,13 +10,11 @@ export interface ClipboardCopyButtonProps extends React.DetailedHTMLProps<React.
   children: React.ReactNode; 
   id: string; 
   textId: string; 
-  /** Content rendered inside the button */
   className?: string; 
   exitDelay?: number; 
   entryDelay?: number; 
   maxWidth?: string; 
   position?: OneOf<typeof TooltipPosition, keyof typeof TooltipPosition>; 
-  /** Adds accessible text to the button. */
   'aria-label'?: string; 
 }
 
