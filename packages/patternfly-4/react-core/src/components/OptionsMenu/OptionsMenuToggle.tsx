@@ -2,6 +2,7 @@ import * as React from 'react';
 import { CaretDownIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { css, getModifier } from '@patternfly/react-styles';
+import Toggle from '../Dropdown/Toggle';
 
 export interface OptionsMenuToggleProps  extends React.HTMLProps<HTMLButtonElement>{
   /** Id of the parent Options menu component */
@@ -26,6 +27,8 @@ export interface OptionsMenuToggleProps  extends React.HTMLProps<HTMLButtonEleme
   toggleTemplate?: React.ReactElement<any>
 }
 
+
+
 export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> = ({
     parentId = '',
     onToggle = () => null as any,
@@ -40,7 +43,7 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
 }: OptionsMenuToggleProps) => {
 
   return (
-    <button
+    <Toggle
       className={css(styles.optionsMenuToggle,
         isPlain && getModifier(styles, 'plain'),
         isHovered && getModifier(styles, 'hover'),
@@ -57,6 +60,6 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
         ? <span className={css(styles.optionsMenuToggleText)}>{toggleTemplate}</span>
         : <React.Fragment>{toggleTemplate}</React.Fragment>)}
       {!hideCaret && <CaretDownIcon aria-hidden className={css(styles.optionsMenuToggleIcon)}/>}
-    </button>
+    </Toggle>
   );
 };

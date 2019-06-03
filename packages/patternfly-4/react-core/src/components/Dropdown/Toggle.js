@@ -122,7 +122,6 @@ class Toggle extends Component {
     } = this.props;
     return (
       <button
-        {...props}
         id={id}
         ref={toggle => {
           this.toggle = toggle;
@@ -142,6 +141,7 @@ class Toggle extends Component {
         aria-haspopup={ariaHasPopup}
         onKeyDown={this.onKeyDown}
         disabled={isDisabled}
+        {...props}
       >
         {children}
       </button>
@@ -151,5 +151,4 @@ class Toggle extends Component {
 
 Toggle.propTypes = propTypes;
 Toggle.defaultProps = defaultProps;
-
 export default Toggle;
