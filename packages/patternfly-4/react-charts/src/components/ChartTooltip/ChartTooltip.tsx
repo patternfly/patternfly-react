@@ -17,6 +17,10 @@ import { getTheme } from '../ChartUtils/chart-theme';
  */
 export interface ChartTooltipProps extends VictoryTooltipProps {
   /**
+   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-tooltip/
+   */
+  ' '?: any;
+  /**
    * The active prop specifies whether the tooltip component should be displayed.
    */
   active?: boolean;
@@ -31,8 +35,6 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
   /**
    * The cornerRadius prop determines corner radius of the flyout container. This prop may be given as a positive number
    * or a function of datum.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-tooltip#cornerradius
    */
   cornerRadius?: NumberOrCallback;
   /**
@@ -47,14 +49,10 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
   datum?: {};
   /**
    * The dx prop defines a horizontal shift from the x coordinate.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-tooltip#dx
    */
   dx?: StringOrNumberOrCallback;
   /**
    * The dy prop defines a vertical shift from the y coordinate.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-tooltip#dy
    */
   dy?: StringOrNumberOrCallback;
   /**
@@ -77,8 +75,6 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
   /**
    * The style prop applies SVG style properties to the rendered flyout container. These props will be passed to the
    * flyoutComponent.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-tooltip#flyoutstyle
    */
   flyoutStyle?: VictoryStyleObject;
   /**
@@ -90,8 +86,6 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * The height prop defines the height of the tooltip flyout. This prop may be given as a positive number or a function
    * of datum. If this prop is not set, height will be determined based on an approximate text size calculated from the
    * text and style props provided to ChartTooltip.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-tooltip#height
    */
   height?: NumberOrCallback;
   /**
@@ -118,22 +112,16 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * This prop can be given as “top”, “bottom”, “left”, “right”, or as a function of datum that returns one of these
    * values. If this prop is not provided it will be determined from the sign of the datum, and the value of the
    * horizontal prop.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-tooltip#orientation
    */
   orientation?: OrientationTypes;
   /**
    * The pointerLength prop determines the length of the triangular pointer extending from the flyout. This prop may be
    * given as a positive number or a function of datum.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-tooltip#pointerlength
    */
   pointerLength?: NumberOrCallback;
   /**
    * The pointerWidth prop determines the width of the base of the triangular pointer extending from
    * the flyout. This prop may be given as a positive number or a function of datum.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-tooltip#pointerwidth
    */
   pointerWidth?: NumberOrCallback;
   /**
@@ -149,15 +137,11 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * The text prop defines the text ChartTooltip will render. The text prop may be given as a string, number, or
    * function of datum. When ChartLabel is used as the labelComponent, strings may include newline characters, which
    * ChartLabel will split in to separate <tspan/> elements.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-tooltip#text
    */
   text?: StringOrNumberOrCallback | string[] | number[];
   /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.
-   *
-   * See https://formidable.com/open-source/victory/docs/common-container-props#theme
    */
   theme?: ChartThemeDefinition;
   /**
@@ -180,8 +164,6 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * The width prop defines the width of the tooltip flyout. This prop may be given as a positive number or a function
    * of datum. If this prop is not set, width will be determined based on an approximate text size calculated from the
    * text and style props provided to ChartTooltip.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-tooltip#width
    */
   width?: NumberOrCallback;
   /**

@@ -18,6 +18,10 @@ export enum ChartVoronoiDimension {
  */
 export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps {
   /**
+   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-voronoi-container
+   */
+  ' '?: any;
+  /**
    * When the activateData prop is set to true, the active prop will be set to true on all
    * data components within a voronoi area. When this prop is set to false, the onActivated
    * and onDeactivated callbacks will still fire, but no mutations to data components will
@@ -70,8 +74,6 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
   /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-voronoi-container#theme
    */
   theme?: ChartThemeDefinition;
   /**

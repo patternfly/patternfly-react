@@ -2,7 +2,7 @@
 title: 'Stack'
 section: 'charts'
 typescript: true
-propComponents: ['Chart', 'ChartBar', 'ChartStack', 'ChartThemeColor', 'ChartThemeVariant']
+propComponents: ['Chart', 'ChartBar', 'ChartStack']
 ---
 
 import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';

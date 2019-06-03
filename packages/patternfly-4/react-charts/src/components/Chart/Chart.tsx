@@ -21,13 +21,15 @@ import { getTheme } from '../ChartUtils/chart-theme';
  */
 export interface ChartProps extends VictoryChartProps {
   /**
+   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-area/
+   */
+  ' '?: any;
+  /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-chart/#animate
    */
   animate?: AnimatePropTypeInterface;
   /**
@@ -56,8 +58,6 @@ export interface ChartProps extends VictoryChartProps {
    * If this prop is not provided, a domain will be calculated from data, or other
    * available information.
    * @example: [-1, 1], {x: [0, 100], y: [0, 1]}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-chart#domain
    */
   domain?: DomainPropType;
   /**
@@ -65,8 +65,6 @@ export interface ChartProps extends VictoryChartProps {
    * beginning and end of a domain. This prop is useful for explicitly spacing ticks farther
    * from the origin to prevent crowding. This prop should be given as an object with
    * numbers specified for x and y.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-chart#domainpadding
    */
   domainPadding?: DomainPaddingPropType;
   /**
@@ -79,8 +77,6 @@ export interface ChartProps extends VictoryChartProps {
   /**
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-chart#events
    */
   eventKey?: StringOrNumberOrCallback;
   /**
@@ -122,8 +118,6 @@ export interface ChartProps extends VictoryChartProps {
    *     }
    *   }
    * ]}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-chart/#events
    */
   events?: EventPropTypeInterface<string, StringOrNumberOrCallback>[];
   /**
@@ -189,8 +183,6 @@ export interface ChartProps extends VictoryChartProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-chart/#padding
    */
   padding?: PaddingProps;
   /**
@@ -261,15 +253,11 @@ export interface ChartProps extends VictoryChartProps {
    * The style prop defines the style of the component. The style prop should be given as an object with styles defined
    * for data, labels and parent. Any valid svg styles are supported, but width, height, and padding should be specified
    * via props as they determine relative layout for components in Chart.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-chart/#style
    */
   style?: VictoryStyleInterface;
   /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-chart/#theme
    */
   theme?: ChartThemeDefinition;
   /**

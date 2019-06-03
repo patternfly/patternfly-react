@@ -49,13 +49,15 @@ export enum ChartDonutUtilizationSortOrder {
  */
 export interface ChartDonutUtilizationProps extends ChartPieProps {
   /**
+   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-pie/
+   */
+  ' '?: any;
+  /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#animate
    */
   animate?: AnimatePropTypeInterface;
   /**
@@ -64,8 +66,6 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * these arrays of values specified for x and y. If this prop is not set,
    * categorical data will be plotted in the order it was given in the data array
    * @example ["dogs", "cats", "mice"]
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#categories
    */
   categories?: CategoryPropType;
   /**
@@ -74,8 +74,6 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * corresponding to one of the built in color scales. ChartDonutUtilization will automatically assign
    * values from this color scale to the pie slices unless colors are explicitly provided in the
    * data object
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#colorScale
    */
   colorScale?: ColorScalePropType;
   /**
@@ -164,8 +162,6 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
   /**
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#eventKey
    */
   eventKey?: StringOrNumberOrCallback;
   /**
@@ -207,8 +203,6 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    *     }
    *   }
    * ]}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#events
    */
   events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback | string[] | number[]>[];
   /**
@@ -318,8 +312,6 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#padding
    */
   padding?: PaddingProps;
   /**
@@ -361,8 +353,6 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * so valid Radium style objects should work for this prop. Height, width, and
    * padding should be specified via the height, width, and padding props.
    * @example {data: {stroke: "black"}, label: {fontSize: 10}}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#style
    */
   style?: VictoryStyleInterface;
   /**
@@ -375,8 +365,6 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * When using ChartDonutUtilization as a solo component, implement the theme directly on
    * ChartDonutUtilization. If you are wrapping ChartDonutUtilization in ChartChart, ChartGroup, or ChartThreshold
    * please call the theme on the outermost wrapper component instead.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#theme
    */
   theme?: ChartThemeDefinition;
   /**
@@ -426,8 +414,6 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#x
    */
   x?: DataGetterPropType;
   /**
@@ -439,8 +425,6 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-pie/#y
    */
   y?: DataGetterPropType;
 }

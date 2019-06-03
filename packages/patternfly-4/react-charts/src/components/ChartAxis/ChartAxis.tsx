@@ -19,13 +19,15 @@ import { ChartThemeDefinition } from "../ChartTheme";
  */
 export interface ChartAxisProps extends VictoryAxisProps {
   /**
+   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-axis/
+   */
+  ' '?: any;
+  /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-axis#animate
    */
   animate?: AnimatePropTypeInterface;
   /**
@@ -82,8 +84,6 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * given as a array of the minimum and maximum expected values for your axis.
    * If this value is not given it will be calculated based on the scale or tickValues.
    * @examples [-1, 1]
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-axis#domain
    */
   domain?: DomainPropType;
   /**
@@ -91,8 +91,6 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * beginning and end of a domain. This prop is useful for explicitly spacing ticks farther
    * from the origin to prevent crowding. This prop should be given as an object with
    * numbers specified for x and y.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-axis#domainpadding
    */
   domainPadding?: DomainPaddingPropType;
   /**
@@ -133,8 +131,6 @@ export interface ChartAxisProps extends VictoryAxisProps {
    *     }
    *   }
    * ]}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-axis#events
    */
   events?: EventPropTypeInterface<"axis" | "axisLabel" | "grid" | "ticks" | "tickLabels" | "parent", number | string>[];
   /**
@@ -241,8 +237,6 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-axis/#padding
    */
   padding?: PaddingProps;
   /**
@@ -264,8 +258,6 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
    * as a d3 scale function, or as an object with scales specified for x and y
    * @example d3Scale.time(), {x: "linear", y: "log"}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-axis#scale
    */
   scale?: ScalePropType | D3Scale | {
     x?: ScalePropType | D3Scale;
@@ -341,8 +333,6 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * When using ChartAxis as a solo component, implement the theme directly on
    * ChartAxis. If you are wrapping ChartAxis in ChartChart or ChartGroup,
    * please call the theme on the outermost wrapper component instead.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-axis#theme
    */
   theme?: ChartThemeDefinition;
   /**

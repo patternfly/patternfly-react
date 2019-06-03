@@ -10,9 +10,13 @@ import { getTheme } from '../ChartUtils/chart-theme';
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  *
- * Note VictoryContainer support other props (e.g., children), but they're undocumented and not typed
+ * Note: VictoryContainer may support other props (e.g., children), but they're undocumented and not typed
  */
 export interface ChartContainerProps extends VictoryContainerProps {
+  /**
+   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-container/
+   */
+  ' '?: any;
   /**
    * The desc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers. The more info about the chart provided in
@@ -54,8 +58,6 @@ export interface ChartContainerProps extends VictoryContainerProps {
   /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.
-   *
-   * See https://formidable.com/open-source/victory/docs/common-container-props#theme
    */
   theme?: ChartThemeDefinition;
   /**

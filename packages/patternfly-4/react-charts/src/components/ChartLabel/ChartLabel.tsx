@@ -27,6 +27,10 @@ type TextAnchorType = 'start' | 'middle' | 'end' | 'inherit';
  */
 export interface ChartLabelProps extends VictoryLabelProps {
   /**
+   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-label/
+   */
+  ' '?: any;
+  /**
    * The active prop specifies whether the label is active or not. The active prop is set by defaultEvents in components
    * like ChartTooltip and VictorySelectionContainer. The active prop is used when evaluating functional styles and
    * props.
@@ -41,8 +45,6 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * This is necessary because of SVG, which (a) positions the *bottom* of the text at `y`, and (b) has no notion of
    * line height. The value should ideally use the same units as `lineHeight` and `dy`, preferably ems. If given a
    * unitless number, it is assumed to be ems.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-label#capheight
    */
   capHeight?: StringOrNumberOrCallback;
   /**
@@ -75,15 +77,11 @@ export interface ChartLabelProps extends VictoryLabelProps {
   direction?: 'rtl' | 'ltr' | 'inherit';
   /**
    * The dx prop defines a horizontal shift from the `x` coordinate.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-label#dx
    */
   dx?: StringOrNumberOrCallback;
   /**
    * The dy prop defines a vertical shift from the `y` coordinate. Since this component already accounts for
    * `capHeight`, `lineHeight`, and `verticalAnchor`, this will usually not be necessary.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-label#dy
    */
   dy?: StringOrNumberOrCallback;
   /**
@@ -109,8 +107,6 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * but the result is similar: a roughly equal amount of extra space is distributed above and below the line of text.
    * The value should ideally use the same units as `capHeight` and `dy`, preferably ems.
    * If given a unitless number, it is assumed to be ems.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-label#lineheight
    */
   lineHeight?: StringOrNumberOrCallback;
   /**
@@ -142,14 +138,10 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * of datum, or an array of any of these. Strings may include newline characters, which ChartLabel will split into
    * separate <tspan/> elements. When text is given as an array, separate <tspan/> elements will be created for each
    * element in the array.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-label#text
    */
   text?: string[] | StringOrNumberOrCallback;
   /**
    * The textAnchor prop defines how the text is horizontally positioned relative to the given `x` and `y` coordinates.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-label#textanchor
    */
   // Todo: function not working as type
   // textAnchor?: TextAnchorType | { (): TextAnchorType };
@@ -161,8 +153,6 @@ export interface ChartLabelProps extends VictoryLabelProps {
   // transform?: string | {} | { (): string | {} };
   /**
    * The verticalAnchor prop defines how the text is vertically positioned relative to the given `x` and `y` coordinates
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-label#verticalanchor
    */
   // Todo: function not working as type
   // verticalAnchor?: VerticalAnchorType | { (): VerticalAnchorType };

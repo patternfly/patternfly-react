@@ -32,6 +32,10 @@ export enum ChartLegendRowGutter {
  */
 export interface ChartLegendProps extends VictoryLegendProps {
   /**
+   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-legend/
+   */
+  ' '?: any;
+  /**
    * The borderComponent prop takes a component instance which will be responsible
    * for rendering a border around the legend. The new element created from the passed
    * borderComponent will be provided with the following properties calculated by
@@ -65,8 +69,6 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * index, unless they are explicitly specified in the data object.
    * Colors will repeat when there are more symbols than colors in the
    * provided colorScale.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-legend#colorscale
    */
   colorScale?: ColorScalePropType;
   /**
@@ -111,14 +113,10 @@ export interface ChartLegendProps extends VictoryLegendProps {
   /**
    * ChartLegend uses the standard eventKey prop to specify how event targets
    * are addressed. This prop is not commonly used.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-legend#eventkey
    */
   eventKey?: StringOrNumberOrCallback | string[];
   /**
    * ChartLegend uses the standard events prop.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-legend#events
    */
   events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback>[];
   /**
@@ -179,8 +177,6 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-legend/#padding
    */
   padding?: PaddingProps;
   /**
@@ -214,8 +210,6 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * so valid Radium style objects should work for this prop. Height, width, and
    * padding should be specified via the height, width, and padding props.
    * @example {data: {stroke: "black"}, label: {fontSize: 10}}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-legend/#style
    */
   style?: VictoryStyleInterface;
   /**
@@ -229,8 +223,6 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * When using ChartLegend as a solo component, implement the theme directly on
    * ChartLegend. If you are wrapping ChartLegend in ChartChart or
    * ChartGroup, please call the theme on the outermost wrapper component instead.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-legend/#theme
    */
   theme?: ChartThemeDefinition;
   /**
@@ -268,8 +260,6 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * The titleOrientation prop specifies where the a title should be rendered
    * in relation to the rest of the legend. Possible values
    * for this prop are “top”, “bottom”, “left”, and “right”.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-legend#titleorientation
    */
   titleOrientation?: OrientationTypes;
   /**

@@ -29,13 +29,15 @@ export enum ChartLineSortOrder {
  */
 export interface ChartLineProps extends VictoryLineProps {
   /**
+   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-line/
+   */
+  ' '?: any;
+  /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-line#animate
    */
   animate?: AnimatePropTypeInterface;
   /**
@@ -44,8 +46,6 @@ export interface ChartLineProps extends VictoryLineProps {
    * these arrays of values specified for x and y. If this prop is not set,
    * categorical data will be plotted in the order it was given in the data array
    * @example ["dogs", "cats", "mice"]
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-line#categories
    */
   categories?: CategoryPropType;
   /**
@@ -89,8 +89,6 @@ export interface ChartLineProps extends VictoryLineProps {
    * If this prop is not provided, a domain will be calculated from data, or other
    * available information.
    * @example [-1, 1], {x: [0, 100], y: [0, 1]}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-line#domain
    */
   domain?: DomainPropType;
   /**
@@ -98,15 +96,11 @@ export interface ChartLineProps extends VictoryLineProps {
    * beginning and end of a domain. This prop is useful for explicitly spacing ticks farther
    * from the origin to prevent crowding. This prop should be given as an object with
    * numbers specified for x and y.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-line#domainpadding
    */
   domainPadding?: DomainPaddingPropType;
   /**
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-line#eventkey
    */
   eventKey?: StringOrNumberOrCallback;
   /**
@@ -145,8 +139,6 @@ export interface ChartLineProps extends VictoryLineProps {
    *     }
    *   }
    * ]}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-line#events
    */
   events?: EventPropTypeInterface<"data" | "labels" | "parent", number | string>[];
   /**
@@ -172,8 +164,6 @@ export interface ChartLineProps extends VictoryLineProps {
   horizontal?: boolean;
   /**
    * The interpolation prop determines how data points should be connected when plotting a line
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-line#interpolation
    */
   interpolation?: InterpolationPropType;
   /**
@@ -241,8 +231,6 @@ export interface ChartLineProps extends VictoryLineProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-line#padding
    */
   padding?: PaddingProps;
   /**
@@ -323,8 +311,6 @@ export interface ChartLineProps extends VictoryLineProps {
    * width, and padding props, as they are used to calculate the alignment of
    * components within chart.
    * @example {data: {fill: "red"}, labels: {fontSize: 12}}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-line#style
    */
   style?: VictoryStyleInterface;
   /**
@@ -333,8 +319,6 @@ export interface ChartLineProps extends VictoryLineProps {
    * When using ChartLine as a solo component, implement the theme directly on
    * ChartLine. If you are wrapping ChartLine in ChartChart or ChartGroup,
    * please call the theme on the outermost wrapper component instead.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-line/#theme
    */
   theme?: ChartThemeDefinition;
   /**
@@ -367,8 +351,6 @@ export interface ChartLineProps extends VictoryLineProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-line#x
    */
   x?: DataGetterPropType;
   /**
@@ -380,8 +362,6 @@ export interface ChartLineProps extends VictoryLineProps {
    * it will be used as a nested object property path (for details see Lodash docs for _.get).
    * If `null` or `undefined`, the data value will be used as is (identity function/pass-through).
    * @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-line#y
    */
   y?: DataGetterPropType;
   /**
@@ -389,8 +369,6 @@ export interface ChartLineProps extends VictoryLineProps {
    * This prop is useful for defining custom baselines for components like ChartLine.
    * This prop may be given in a variety of formats.
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-line#y0
    */
   y0?: DataGetterPropType;
 };

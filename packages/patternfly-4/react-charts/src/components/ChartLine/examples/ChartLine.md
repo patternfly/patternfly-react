@@ -2,10 +2,10 @@
 title: 'Line'
 section: 'charts'
 typescript: true
-propComponents: ['Chart', 'ChartAxis', 'ChartGroup', 'ChartLegend', 'ChartLine', 'ChartThemeColor', 'ChartThemeVariant']
+propComponents: ['Chart', 'ChartAxis', 'ChartGroup', 'ChartLegend', 'ChartLine']
 ---
 
-import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
 import './chart-line.scss';
 
 ## Green line chart

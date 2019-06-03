@@ -23,13 +23,15 @@ import { getTheme } from '../ChartUtils/chart-theme';
  */
 export interface ChartStackProps extends VictoryStackProps {
   /**
+   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-stack/
+   */
+  ' '?: any;
+  /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-stack#animate
    */
   animate?: AnimatePropTypeInterface;
   /**
@@ -40,8 +42,6 @@ export interface ChartStackProps extends VictoryStackProps {
    * its the children. If this prop is not set, any categories on child component
    * or catigorical data, will be merged to create a shared set of categories.
    * @example ["dogs", "cats", "mice"]
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-stack#categories
    */
   categories?: CategoryPropType;
   /**
@@ -57,8 +57,6 @@ export interface ChartStackProps extends VictoryStackProps {
    * corresponding to one of the built in color scales. ChartStack will automatically assign
    * values from this color scale to the bars unless colors are explicitly provided in the
    * `dataAttributes` prop.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-stack#colorscale
    */
   colorScale?: ColorScalePropType;
   /**
@@ -83,8 +81,6 @@ export interface ChartStackProps extends VictoryStackProps {
    * If this prop is not provided, a domain will be calculated from data, or other
    * available information.
    * @example: [-1, 1], {x: [0, 100], y: [0, 1]}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-stack#domain
    */
   domain?: DomainPropType;
   /**
@@ -92,15 +88,11 @@ export interface ChartStackProps extends VictoryStackProps {
    * beginning and end of a domain. This prop is useful for explicitly spacing ticks farther
    * from the origin to prevent crowding. This prop should be given as an object with
    * numbers specified for x and y.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-stack#domainpadding
    */
   domainPadding?: DomainPaddingPropType;
   /**
    * Similar to data accessor props `x` and `y`, this prop may be used to functionally
    * assign eventKeys to data
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-stack#eventkey
    */
   eventKey?: StringOrNumberOrCallback;
   /**
@@ -143,8 +135,6 @@ export interface ChartStackProps extends VictoryStackProps {
    *     }
    *   }
    * ]}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-stack#events
    */
   events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback>[];
   /**
@@ -233,8 +223,6 @@ export interface ChartStackProps extends VictoryStackProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-stack#padding
    */
   padding?: PaddingProps;
   /**
@@ -261,8 +249,6 @@ export interface ChartStackProps extends VictoryStackProps {
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
    * as a d3 scale function, or as an object with scales specified for x and y
    * @example d3Scale.time(), {x: "linear", y: "log"}
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-stack#scale
    */
   scale?: ScalePropType | D3Scale | {
     x?: ScalePropType | D3Scale;
@@ -299,8 +285,6 @@ export interface ChartStackProps extends VictoryStackProps {
   /**
    * The style prop specifies styles for your grouped chart. These styles will be
    * applied to all grouped children
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-stack#style
    */
   style?: VictoryStyleInterface;
   /**
@@ -309,8 +293,6 @@ export interface ChartStackProps extends VictoryStackProps {
    * When using ChartArea as a solo component, implement the theme directly on
    * ChartArea. If you are wrapping ChartArea in ChartChart or ChartGroup,
    * please call the theme on the outermost wrapper component instead.
-   *
-   * See https://formidable.com/open-source/victory/docs/victory-stack/#theme
    */
   theme?: ChartThemeDefinition;
   /**

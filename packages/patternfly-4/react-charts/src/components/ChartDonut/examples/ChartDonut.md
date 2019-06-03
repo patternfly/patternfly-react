@@ -5,7 +5,7 @@ typescript: true
 propComponents: ['ChartDonut', 'ChartLegend']
 ---
 
-import { ChartDonut, ChartLabel, ChartLegend, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { ChartDonut, ChartLegend, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-donut.scss';
 
 ## Blue donut chart

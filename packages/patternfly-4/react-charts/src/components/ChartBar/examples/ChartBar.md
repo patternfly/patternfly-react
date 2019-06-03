@@ -2,7 +2,7 @@
 title: 'Bar'
 section: 'charts'
 typescript: true
-propComponents: ['Chart', 'ChartBar', 'ChartGroup', 'ChartThemeColor', 'ChartThemeVariant']
+propComponents: ['Chart', 'ChartBar', 'ChartGroup']
 ---
 
 ## Default Bar Chart
