@@ -8,7 +8,6 @@ propComponents: ['Chart', 'ChartBar', 'ChartStack']
 ## Vertical blue stack chart
 import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-stack.scss';
-import { VictoryZoomContainer } from 'victory';
 
 ## Vertical blue stack chart
 ```js
@@ -33,12 +32,11 @@ import { Chart, ChartBar, ChartStack } from '@patternfly/react-charts';
 ```js
 import React from 'react';
 import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
-import { VictoryZoomContainer } from 'victory';
 
 <div>
   <div className="stack-chart-container">
     <Chart
-      containerComponent={<VictoryZoomContainer/>}
+      allowZoom={true}
       themeColor={ChartThemeColor.multi}
       themeVariant={ChartThemeVariant.light}
     >
