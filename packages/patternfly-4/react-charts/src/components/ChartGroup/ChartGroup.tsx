@@ -15,7 +15,8 @@ import {
   StringOrNumberOrCallback,
   VictoryStyleInterface,
   VictoryGroup,
-  VictoryGroupProps, VictoryZoomContainer, VictoryChart
+  VictoryGroupProps,
+  VictoryZoomContainer
 } from 'victory';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
