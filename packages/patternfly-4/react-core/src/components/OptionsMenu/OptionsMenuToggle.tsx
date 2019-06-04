@@ -2,7 +2,7 @@ import * as React from 'react';
 import { CaretDownIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { css, getModifier } from '@patternfly/react-styles';
-import Toggle from '../Dropdown/Toggle';
+const Toggle: any = require('../Dropdown/Toggle').default;
 
 export interface OptionsMenuToggleProps  extends React.HTMLProps<HTMLButtonElement>{
   /** Id of the parent Options menu component */
@@ -54,7 +54,12 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
       aria-haspopup="listbox"
       aria-label={ariaLabel}
       aria-expanded={isOpen}
-      onClick={onToggle}
+      isOpen={isOpen}
+      isHovered={isHovered}
+      isActive={isActive}
+      isFocused={isFocused}
+      onToggle={onToggle}
+      parentRef={document.getElementById(parentId)}
     >
       {toggleTemplate && (!isPlain
         ? <span className={css(styles.optionsMenuToggleText)}>{toggleTemplate}</span>
