@@ -10,7 +10,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-
 ## [3.6.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.5...@patternfly/react-charts@3.6.6) (2019-06-03)
 
 
