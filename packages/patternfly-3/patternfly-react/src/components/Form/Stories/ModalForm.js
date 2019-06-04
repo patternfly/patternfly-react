@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Button } from '../../Button';
 import { Modal } from '../../Modal';
 import { Icon } from '../../Icon';
-import { Form, FormGroup, FormControl, ControlLabel } from '../index';
+import { Form } from '../index';
 
 class ModalForm extends React.Component {
   constructor() {
@@ -46,15 +46,10 @@ class ModalForm extends React.Component {
 }
 
 ModalForm.propTypes = {
-  children: PropTypes.node,
-  showLoading: PropTypes.bool,
-  formFields: PropTypes.array,
-  formButtons: PropTypes.array,
-  formSpinner: PropTypes.node
-};
-
-ModalForm.defaultProps = {
-  children: null,
+  showLoading: PropTypes.bool.isRequired,
+  formFields: PropTypes.array.isRequired,
+  formButtons: PropTypes.array.isRequired,
+  formSpinner: PropTypes.node.isRequired
 };
 
 export { ModalForm };

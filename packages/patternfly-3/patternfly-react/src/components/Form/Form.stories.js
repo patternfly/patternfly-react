@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
@@ -218,7 +217,6 @@ exampleStories.add(
     if (bsSize) buttonsProps.bsSize = bsSize;
     if (disabled) buttonsProps.disabled = disabled;
 
-    let showModal = boolean('Show Modal', false);
     const showLoading = boolean('Show Loading', false);
     const formFields = BasicFormFields.map(formField => HorizontalFormField({ ...formField, ...formFieldsKnobs }));
     const formButtons = BasicFormButtons.map(({ text, ...props }) => (
@@ -230,7 +228,7 @@ exampleStories.add(
       <div style={{ paddingTop: '20px', paddingBottom: '10px' }}>{[...BasicFormSpinner].reverse()}</div>
     );
     const story = (
-      <ModalForm 
+      <ModalForm
         showLoading={showLoading}
         formFields={formFields}
         formButtons={formButtons}
