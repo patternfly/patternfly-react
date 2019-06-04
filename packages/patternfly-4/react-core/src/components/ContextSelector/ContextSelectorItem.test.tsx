@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import ContextSelectorItem from './ContextSelectorItem';
+import { ContextSelectorItem } from './ContextSelectorItem';
 
 test('Renders ContextSelectorItem', () => {
   const view = shallow(
-    <ContextSelectorItem sendRef={jest.fn()} index="0">
+    <ContextSelectorItem sendRef={jest.fn()} index={0}>
       My Project
     </ContextSelectorItem>
   );
@@ -13,7 +13,7 @@ test('Renders ContextSelectorItem', () => {
 
 test('Renders ContextSelectorItem disabled and hovered', () => {
   const view = shallow(
-    <ContextSelectorItem isDisabled isHovered sendRef={jest.fn()} index="0">
+    <ContextSelectorItem isDisabled isHovered sendRef={jest.fn()} index={0}>
       My Project
     </ContextSelectorItem>
   );
@@ -23,7 +23,7 @@ test('Renders ContextSelectorItem disabled and hovered', () => {
 test('Verify onClick is called ', () => {
   const mockfn = jest.fn();
   const view = mount(
-    <ContextSelectorItem isHovered onClick={mockfn} sendRef={jest.fn()} index="0">
+    <ContextSelectorItem isHovered onClick={mockfn} sendRef={jest.fn()} index={0}>
       My Project
     </ContextSelectorItem>
   );

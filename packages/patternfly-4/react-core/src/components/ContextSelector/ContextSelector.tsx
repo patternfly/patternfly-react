@@ -1,11 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import FocusTrap from 'focus-trap-react';
 import styles from '@patternfly/patternfly/components/ContextSelector/context-selector.css';
 import { css } from '@patternfly/react-styles';
 import { SearchIcon } from '@patternfly/react-icons';
-import ContextSelectorToggle from './ContextSelectorToggle';
-import ContextSelectorMenuList from './ContextSelectorMenuList';
+import { ContextSelectorToggle } from './ContextSelectorToggle';
+import { ContextSelectorMenuList } from './ContextSelectorMenuList';
 import { ContextSelectorContext } from './contextSelectorConstants';
 import { Button, ButtonVariant } from '../Button';
 import { TextInput } from '../TextInput';
@@ -16,54 +15,55 @@ import { KEY_CODES } from '../../helpers/constants';
 let currentId = 0;
 const newId = currentId++;
 
-const propTypes = {
+export interface ContextSelectorProps {
   /** content rendered inside the Context Selector */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Classes applied to root element of Context Selector */
-  className: PropTypes.string,
+  className?: string;
   /** Flag to indicate if Context Selector is opened */
-  isOpen: PropTypes.bool,
+  isOpen?: boolean;
   /** Function callback called when user clicks toggle button */
-  onToggle: PropTypes.func,
+  onToggle?: (value: boolean) => void;
   /** Function callback called when user selects item */
-  onSelect: PropTypes.func,
+  onSelect?: (event: any, value: React.ReactNode) => void;
   /** Labels the Context Selector for Screen Readers */
-  screenReaderLabel: PropTypes.string,
+  screenReaderLabel?: string;
   /** Text that appears in the Context Selector Toggle */
-  toggleText: PropTypes.string,
+  toggleText?: string;
   /** aria-label for the Context Selector Search Button */
-  searchButtonAriaLabel: PropTypes.string,
+  searchButtonAriaLabel?: string;
   /** Value in the Search field */
-  searchInputValue: PropTypes.string,
+  searchInputValue?: string;
   /** Function callback called when user changes the Search Input */
-  onSearchInputChange: PropTypes.func,
+  onSearchInputChange?(value: string): void; 
   /** Search Input placeholder */
-  searchInputPlaceholder: PropTypes.string,
+  searchInputPlaceholder?: string;
   /** Function callback for when Search Button is clicked */
-  onSearchButtonClick: PropTypes.func
-};
+  onSearchButtonClick?(event: React.SyntheticEvent<HTMLButtonElement>): void; 
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  isOpen: false,
-  onToggle: () => {},
-  onSelect: () => {},
-  screenReaderLabel: '',
-  toggleText: '',
-  searchButtonAriaLabel: 'Search menu items',
-  searchInputValue: '',
-  onSearchInputChange: () => {},
-  searchInputPlaceholder: 'Search',
-  onSearchButtonClick: () => {}
-};
+export class ContextSelector extends React.Component<ContextSelectorProps> {
 
-class ContextSelector extends React.Component {
-  parentRef = React.createRef();
+  static defaultProps = {
+    children: null as React.ReactNode,
+    className: '',
+    isOpen: false,
+    onToggle: () => undefined as any,
+    onSelect: () => undefined as any,
+    screenReaderLabel: '',
+    toggleText: '',
+    searchButtonAriaLabel: 'Search menu items',
+    searchInputValue: '',
+    onSearchInputChange: () => undefined as any,
+    searchInputPlaceholder: 'Search',
+    onSearchButtonClick: () => undefined as any
+  }
 
-  onEnterPressed = event => {
+  parentRef: React.RefObject<HTMLDivElement> = React.createRef();
+
+  onEnterPressed = (event: any) => {
     if (event.charCode === KEY_CODES.ENTER) {
-      this.props.onSearchButtonClick();
+      this.props.onSearchButtonClick(null);
     }
   };
 
@@ -140,8 +140,3 @@ class ContextSelector extends React.Component {
     );
   }
 }
-
-ContextSelector.propTypes = propTypes;
-ContextSelector.defaultProps = defaultProps;
-
-export default ContextSelector;
