@@ -10,7 +10,7 @@ import {
   DonutUtilizationStaticTheme
 } from './themes/donut-utilization-theme';
 
-export interface ChartThemeDefinition extends VictoryThemeDefinition {
+export interface ChartThemeDefinitionInterface extends VictoryThemeDefinition {
   area?: any;
   axis?: any;
   bar?: any;
@@ -42,13 +42,6 @@ interface ChartThemeVariantInterface {
   light: string;
 }
 
-export const ChartBaseTheme: ChartThemeDefinition = BaseTheme;
-export const ChartDonutUtilizationDynamicTheme: ChartThemeDefinition = DonutUtilizationDynamicTheme;
-export const ChartDonutUtilizationStaticTheme: ChartThemeDefinition = DonutUtilizationStaticTheme;
-export const ChartDonutTheme: ChartThemeDefinition = DonutTheme;
-export const ChartDonutThresholdDynamicTheme: ChartThemeDefinition = DonutThresholdDynamicTheme;
-export const ChartDonutThresholdStaticTheme: ChartThemeDefinition = DonutThresholdStaticTheme;
-
 export const ChartThemeColor: ChartThemeColorInterface = {
   blue: 'blue',
   default: 'blue',
@@ -62,3 +55,12 @@ export const ChartThemeVariant: ChartThemeVariantInterface = {
   default: 'light',
   light: 'light'
 };
+
+export type ChartThemeDefinition = ChartThemeDefinitionInterface;
+
+export const ChartBaseTheme: ChartThemeDefinition = BaseTheme;
+export const ChartDonutUtilizationDynamicTheme: ChartThemeDefinition = DonutUtilizationDynamicTheme;
+export const ChartDonutUtilizationStaticTheme: ChartThemeDefinition = DonutUtilizationStaticTheme;
+export const ChartDonutTheme: ChartThemeDefinition = DonutTheme;
+export const ChartDonutThresholdDynamicTheme: ChartThemeDefinition = DonutThresholdDynamicTheme;
+export const ChartDonutThresholdStaticTheme: ChartThemeDefinition = DonutThresholdStaticTheme;
