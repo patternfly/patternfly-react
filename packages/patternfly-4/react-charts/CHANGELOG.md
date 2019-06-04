@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.0.1...@patternfly/react-charts@4.0.2) (2019-06-04)
+
+
+### Bug Fixes
+
+* **charts:** Chart & ChartStack to use ReactNode as children type ([#2155](https://github.com/patternfly/patternfly-react/issues/2155)) ([0b0a828](https://github.com/patternfly/patternfly-react/commit/0b0a828))
+
+
+
+
+
 ## [4.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.0.0...@patternfly/react-charts@4.0.1) (2019-06-04)
 
 
