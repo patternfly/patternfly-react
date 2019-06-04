@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.0.0...@patternfly/react-charts@4.0.1) (2019-06-04)
+
+
+### Bug Fixes
+
+* **charts:** remove ChartThemeDefinition export from index.ts ([#2149](https://github.com/patternfly/patternfly-react/issues/2149)) ([9929698](https://github.com/patternfly/patternfly-react/commit/9929698))
+
+
+
+
+
 # [4.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.7...@patternfly/react-charts@4.0.0) (2019-06-04)
 
 
