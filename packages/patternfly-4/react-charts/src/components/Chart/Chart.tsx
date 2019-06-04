@@ -35,7 +35,7 @@ export interface ChartProps extends VictoryChartProps {
   /**
    * The children to render with the chart
    */
-  children?: React.ReactElement<any> | React.ReactElement<any>[];
+  children?: React.ReactNode;
   /**
    * The containerComponent prop takes an entire component which will be used to
    * create a container element for standalone charts.

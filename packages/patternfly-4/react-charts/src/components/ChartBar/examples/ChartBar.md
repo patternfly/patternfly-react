@@ -5,7 +5,7 @@ typescript: true
 propComponents: ['Chart', 'ChartBar', 'ChartGroup']
 ---
 
-## Default Bar Chart
+## Simple Bar Chart
 
 import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-bar.scss';

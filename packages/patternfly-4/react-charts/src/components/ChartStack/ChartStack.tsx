@@ -50,7 +50,7 @@ export interface ChartStackProps extends VictoryStackProps {
    * ChartGroup will be cloned and rendered with new props so that all children share common props such as domain and
    * scale.
    */
-  children?: React.ReactElement<any> | React.ReactElement<any>[];
+  children?: React.ReactNode;
   /**
    * The colorScale prop is an optional prop that defines the color scale the chart's bars
    * will be created on. This prop should be given as an array of CSS colors, or as a string
