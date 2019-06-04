@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.7...@patternfly/react-charts@4.0.0) (2019-06-04)
+
+
+### chore
+
+* **charts:** major bump react-charts ([#2143](https://github.com/patternfly/patternfly-react/issues/2143)) ([90b334e](https://github.com/patternfly/patternfly-react/commit/90b334e))
+
+
+### BREAKING CHANGES
+
+* **charts:** - Changed default Chart padding property to show axis
+- Refactored ChartTheme colors and utils for donut utilization theme
+- ChartLegend now defaults to be responsive
+
+
+
+
+
 ## [3.6.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.6...@patternfly/react-charts@3.6.7) (2019-06-03)
 
 **Note:** Version bump only for package @patternfly/react-charts
