@@ -6,6 +6,5 @@ export {
   ChartDonutUtilizationDynamicTheme,
   ChartDonutUtilizationStaticTheme,
   ChartThemeColor,
-  ChartThemeDefinition,
   ChartThemeVariant
 } from './ChartTheme';

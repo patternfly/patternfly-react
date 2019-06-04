@@ -12,7 +12,7 @@ import {
   VictoryAxisProps,
 } from 'victory';
 import { getTheme } from '../ChartUtils/chart-theme';
-import { ChartThemeDefinition } from "../ChartTheme";
+import { ChartThemeDefinition } from "../ChartTheme/ChartTheme";
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts

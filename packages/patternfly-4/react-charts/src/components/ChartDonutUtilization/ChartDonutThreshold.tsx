@@ -10,7 +10,7 @@ import { Data } from 'victory-core';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartPie, ChartPieProps } from '../ChartPie/ChartPie';
-import { ChartThemeDefinition } from "../ChartTheme";
+import { ChartThemeDefinition } from "../ChartTheme/ChartTheme";
 import { getChartOrigin } from '../ChartUtils/chart-origin';
 import { getDonutThresholdDynamicTheme, getDonutThresholdStaticTheme } from '../ChartUtils/chart-theme';
 

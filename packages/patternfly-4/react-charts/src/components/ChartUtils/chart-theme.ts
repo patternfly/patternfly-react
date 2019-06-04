@@ -14,10 +14,10 @@ import {
   ChartDonutUtilizationStaticTheme,
   ChartDonutThresholdDynamicTheme,
   ChartDonutThresholdStaticTheme,
-  ChartThemeColor,
   ChartThemeDefinition,
+  ChartThemeColor,
   ChartThemeVariant
-} from '../ChartTheme';
+} from '../ChartTheme/ChartTheme';
 
 // Apply custom properties to color and base themes
 export const getCustomTheme = (themeColor: string, themeVariant: string,
