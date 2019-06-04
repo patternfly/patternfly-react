@@ -16,11 +16,7 @@ const propTypes = {
   /** child id for case in which a TabContent section is defined outside of a Tabs component */
   tabContentId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** child reference for case in which a TabContent section is defined outside of a Tabs component */
-  tabContentRef: PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
-    PropTypes.string
-  ])
+  tabContentRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.any }), PropTypes.string])
 };
 
 const defaultProps = {
