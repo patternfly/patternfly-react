@@ -14,11 +14,11 @@ export interface ContextSelectorItemProps {
   /** Forces display of the hover state of the element */
   isHovered?: boolean; 
   /** Callback for click event */
-  onClick: Function; 
+  onClick: (event: React.MouseEvent) => void; 
   /** internal index of the item */
   index: number; 
   /** Internal callback for ref tracking */
-  sendRef: Function; 
+  sendRef: (index: number, current: any) => void; 
 }
 
 export class ContextSelectorItem extends React.Component<ContextSelectorItemProps>{
@@ -55,8 +55,8 @@ export class ContextSelectorItem extends React.Component<ContextSelectorItemProp
               ref={this.ref}
               onClick={event => {
                 if (!isDisabled) {
-                  onClick && onClick(event);
-                  onSelect && onSelect(event, children);
+                  onClick(event);
+                  onSelect(event, children);
                 }
               }}
               {...props}

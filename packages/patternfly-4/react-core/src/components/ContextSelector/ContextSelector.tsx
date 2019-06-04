@@ -1,5 +1,4 @@
 import * as React from 'react';
-import FocusTrap from 'focus-trap-react';
 import styles from '@patternfly/patternfly/components/ContextSelector/context-selector.css';
 import { css } from '@patternfly/react-styles';
 import { SearchIcon } from '@patternfly/react-icons';
@@ -10,6 +9,11 @@ import { Button, ButtonVariant } from '../Button';
 import { TextInput } from '../TextInput';
 import { InputGroup } from '../InputGroup';
 import { KEY_CODES } from '../../helpers/constants';
+
+// Can't use ES6 imports :(
+// The types for it are also wrong, we should probably ditch this dependency.
+// tslint:disable-next-line
+const FocusTrap: any = require('focus-trap-react');
 
 // seed for the aria-labelledby ID
 let currentId = 0;

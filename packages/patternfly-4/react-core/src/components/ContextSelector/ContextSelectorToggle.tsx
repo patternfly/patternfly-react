@@ -16,7 +16,7 @@ export interface ContextSelectorToggleProps {
   /** Callback called when toggle is clicked */
   onToggle?: (event: any, value: boolean) => void;
   /** Callback for toggle open on keyboard entry */
-  onEnter: Function; 
+  onEnter: () => void; 
   /** Element which wraps toggle */
   parentRef?: any; 
   /** Forces focus state */
@@ -57,7 +57,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
   onDocClick = (event: any) => {
     const { isOpen, parentRef, onToggle } = this.props;
     if (isOpen && parentRef && !parentRef.contains(event.target)) {
-      onToggle && onToggle(null, false);
+      onToggle(null, false);
       this.toggle.current.focus();
     }
   };
@@ -66,7 +66,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
     const { isOpen, parentRef, onToggle } = this.props;
     const keyCode = event.keyCode || event.which;
     if (isOpen && keyCode === KEY_CODES.ESCAPE_KEY && parentRef && parentRef.contains(event.target)) {
-      onToggle && onToggle(null, false);
+      onToggle(null, false);
       this.toggle.current.focus();
     }
   };
@@ -113,9 +113,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
           className
         )}
         type="button"
-        onClick={event => {
-          onToggle && onToggle(event, !isOpen);
-        }}
+        onClick={event => onToggle(event, !isOpen)}
         aria-expanded={isOpen}
         onKeyDown={this.onKeyDown}
       >
