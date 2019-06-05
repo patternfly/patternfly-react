@@ -10,40 +10,11 @@ module.exports = {
     }
     return ignore;
   })(),
-  env: {
-    'production:esm': {
-      plugins: [
-        '@babel/plugin-transform-typescript',
-        'babel-plugin-typescript-to-proptypes',
-        '@babel/plugin-proposal-export-default-from',
-        '@babel/proposal-class-properties',
-        '@babel/proposal-object-rest-spread',
-        [
-          '@patternfly/react-styles/babel',
-          {
-            srcDir: './src',
-            outDir: './dist/esm',
-            useModules: true
-          }
-        ]
-      ]
-    },
-    'production:cjs': {
-      plugins: [
-        '@babel/plugin-transform-typescript',
-        'babel-plugin-typescript-to-proptypes',
-        '@babel/plugin-proposal-export-default-from',
-        '@babel/proposal-class-properties',
-        '@babel/proposal-object-rest-spread',
-        [
-          '@patternfly/react-styles/babel',
-          {
-            srcDir: './src',
-            outDir: './dist/js',
-            useModules: false
-          }
-        ]
-      ]
-    }
-  }
+  plugins: [
+    '@babel/plugin-transform-typescript',
+    'babel-plugin-typescript-to-proptypes',
+    '@babel/plugin-proposal-export-default-from',
+    '@babel/proposal-class-properties',
+    '@babel/proposal-object-rest-spread',
+  ]
 };

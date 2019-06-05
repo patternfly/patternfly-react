@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { NavVariants } from './NavVariants';
-import styles from '@patternfly/patternfly/components/Nav/nav.css';
+import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { AngleLeftIcon, AngleRightIcon } from '@patternfly/react-icons';
 import { isElementInView } from '../../helpers/util';

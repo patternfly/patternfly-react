@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styles from '@patternfly/patternfly/components/Select/select.css';
-import buttonStyles from '@patternfly/patternfly/components/Button/button.css';
+import styles from '@patternfly/react-styles/css/components/Select/select';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { CaretDownIcon } from '@patternfly/react-icons';

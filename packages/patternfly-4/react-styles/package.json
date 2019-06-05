@@ -12,12 +12,14 @@
     "tag": "prerelease"
   },
   "scripts": {
-    "build": "yarn build:babel && node ./scripts/copyTS.js",
-    "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm' && yarn build:babel:umd",
+    "build": "yarn build:babel && node ./scripts/copyTS.js && yarn build:css && yarn build:types && node ./scripts/copyStyles.js",
+    "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm && yarn build:babel:umd'",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js -q",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm -q",
     "build:babel:umd": "cross-env BABEL_ENV=production:umd babel dist/esm --out-dir dist/umd --plugins transform-es2015-modules-umd -q",
-    "clean": "rimraf dist",
+    "build:css": "node src/generateClasses.js",
+    "build:types": "tsc",
+    "clean": "rimraf dist css",
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
   },
   "dependencies": {
@@ -32,10 +34,11 @@
     "fs-extra": "^6.0.1",
     "jsdom": "^15.1.0",
     "relative": "^3.0.2",
-    "resolve-from": "^4.0.0"
+    "resolve-from": "^4.0.0",
+    "typescript": "3.4.5"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "@patternfly/patternfly": "2.8.2",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "glob": "^7.1.2",
     "rimraf": "^2.6.2"

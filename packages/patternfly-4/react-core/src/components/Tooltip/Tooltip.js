@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Tippy from '@tippy.js/react';
-import styles from '@patternfly/patternfly/components/Tooltip/tooltip.css';
+import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import { css, getModifier } from '@patternfly/react-styles';
 import TooltipArrow from './TooltipArrow';
 import TooltipContent from './TooltipContent';

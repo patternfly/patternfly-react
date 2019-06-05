@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/EmptyState/empty-state.css';
+import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 
 export interface EmptyStateBodyProps extends React.HTMLProps<HTMLParagraphElement> {
   /** Content rendered inside the EmptyState */

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
+import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 import { Button, ButtonVariant } from '../Button';
 import { WizardStep } from './Wizard';
 

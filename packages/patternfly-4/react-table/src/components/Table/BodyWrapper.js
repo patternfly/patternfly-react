@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import styles from '@patternfly/patternfly/components/Table/table.css';
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from '@patternfly/react-styles/css/components/Table/table';
 import { css } from '@patternfly/react-styles';
 import { mapOpenedRows } from './utils/headerUtils';
-import PropTypes from 'prop-types';
 
 // eslint-disable-next-line react/prefer-stateless-function
-class BodyWrapper extends Component {
+class BodyWrapper extends React.Component {
   render() {
     const { children, mappedRows, ...props } = this.props;
     if (mappedRows.some(row => row.hasOwnProperty('parent'))) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { debounce } from '@patternfly/react-core';
-import styles from '@patternfly/patternfly/components/Table/table.css';
+import styles from '@patternfly/react-styles/css/components/Table/table';
 import { css } from '@patternfly/react-styles';
 
 class RowWrapper extends React.Component {

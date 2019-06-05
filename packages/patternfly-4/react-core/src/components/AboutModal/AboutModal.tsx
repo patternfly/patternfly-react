@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
+import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { canUseDOM } from 'exenv';
 import { KEY_CODES } from '../../helpers/constants';
 import { AboutModalContainer } from './AboutModalContainer';

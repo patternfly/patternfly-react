@@ -1,5 +1,5 @@
-import { cssToJS } from '../util';
+import { cssToJSNew } from '../util';
 
 export default function pfStyleLoader(source, cssOutputPath) {
-  return cssToJS(source, cssOutputPath, false);
+  return cssToJSNew(source, cssOutputPath, false);
 }

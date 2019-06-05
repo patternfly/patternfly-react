@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/components/Select/select.css';
-import badgeStyles from '@patternfly/patternfly/components/Badge/badge.css';
-import formStyles from '@patternfly/patternfly/components/FormControl/form-control.css';
-import buttonStyles from '@patternfly/patternfly/components/Button/button.css';
+import styles from '@patternfly/react-styles/css/components/Select/select';
+import badgeStyles from '@patternfly/react-styles/css/components/Badge/badge';
+import formStyles from '@patternfly/react-styles/css/components/FormControl/form-control';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import { TimesCircleIcon } from '@patternfly/react-icons';
 import { Chip, ChipGroup } from '../ChipGroup';

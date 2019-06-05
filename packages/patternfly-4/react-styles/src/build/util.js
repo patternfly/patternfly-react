@@ -3,6 +3,7 @@ import { readFileSync } from 'fs';
 import css from 'css';
 import { outputFileSync, ensureDir } from 'fs-extra';
 import relative from 'relative';
+import { getCSSClasses, isModifier, formatClassName } from '../utils';
 
 export const packageName = '@patternfly/react-styles';
 export const styleSheetToken = 'StyleSheet';
@@ -26,6 +27,54 @@ export default ${styleSheetToken}.parse(\`${cssString}\`);
 ${cssRequire}
 
 module.exports = ${styleSheetToken}.parse(\`${cssString}\`);
+`;
+}
+
+export function cssToJSNew(cssString, cssOutputPath = '', useModules = false) {
+  let cssRequire = '';
+  let cssImport = '';
+  if (cssOutputPath) {
+    cssRequire = `require('${cssOutputPath}');`;
+    cssImport = `import '${cssOutputPath}';`;
+  }
+
+  const cssClasses = getCSSClasses(cssString);
+  const distinctValues = [...new Set(cssClasses)];
+  const classDeclaration = [];
+  const modifiersDeclaration = [];
+
+  distinctValues.forEach(className => {
+    const key = formatClassName(className);
+    const cleanClass = className.replace('.', '').trim();
+    if (isModifier(className)) {
+      modifiersDeclaration.push(`'${key}': '${cleanClass}'`);
+    } else {
+      classDeclaration.push(`${key}: '${cleanClass}'`);
+    }
+  });
+  const classSection = classDeclaration.length > 0 ? `${classDeclaration.join(',\n  ')},` : '';
+
+  if (useModules) {
+    return `${cssImport}
+
+export default {
+  ${classSection}
+  modifiers: {
+    ${modifiersDeclaration.join(',\n    ')}
+  }
+}
+`;
+  }
+
+  return `${cssRequire}
+
+module.exports = {
+  ${classSection}
+  modifiers: {
+    ${modifiersDeclaration.join(',\n    ')}
+  }
+}
+
 `;
 }
 
