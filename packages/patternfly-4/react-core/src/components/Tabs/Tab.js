@@ -16,8 +16,7 @@ const propTypes = {
   /** child id for case in which a TabContent section is defined outside of a Tabs component */
   tabContentId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** child reference for case in which a TabContent section is defined outside of a Tabs component */
-  tabContentRef: PropTypes.node,
-  forwardRef: PropTypes.node // purposefully not documented
+  tabContentRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.any }), PropTypes.string])
 };
 
 const defaultProps = {
@@ -25,15 +24,14 @@ const defaultProps = {
   className: '',
   href: null,
   tabContentId: null,
-  tabContentRef: null,
-  forwardRef: undefined
+  tabContentRef: null
 };
 
 const withForwardedRef = Component => {
   class TabContainer extends React.Component {
     render() {
-      const { tabContentRef, ...rest } = this.props; // eslint-disable-line react/prop-types
-      return <Component ref={tabContentRef} {...rest} />;
+      const { forwardRef, ...rest } = this.props; // eslint-disable-line react/prop-types
+      return <Component ref={forwardRef} {...rest} />;
     }
   }
   return React.forwardRef((props, tabContentRef) => <TabContainer {...props} forwardRef={tabContentRef} />);
@@ -41,8 +39,8 @@ const withForwardedRef = Component => {
 
 class Tab extends React.Component {
   render() {
-    // destructuring to prevent console warnings for applying eventKey, forwardRef, and tabContentId to a DOM element and remove title from the DOM element
-    const { children, eventKey, tabContentId, tabContentRef, forwardRef, title, ...props } = this.props;
+    // destructuring to prevent console warnings for applying eventKey, and tabContentId to a DOM element and remove title from the DOM element
+    const { children, eventKey, tabContentId, tabContentRef, title, ...props } = this.props;
     const Component = props.href ? 'a' : 'button';
     return (
       <Component {...props} ref={tabContentRef}>

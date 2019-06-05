@@ -8,7 +8,7 @@ export interface TabProps extends Omit<HTMLProps<HTMLDivElement>, 'id'> {
   eventKey: number;
   id?: string;
   tabContentId?: string | number;
-  tabContentRef?: HTMLElement;
+  tabContentRef?: any;
   title: string;
 }
 
