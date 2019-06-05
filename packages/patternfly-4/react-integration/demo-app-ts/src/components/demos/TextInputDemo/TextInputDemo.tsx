@@ -1,4 +1,4 @@
-import { TextInput, TextInputProps, TextInputTypes } from '@patternfly/react-core';
+import { TextInput, TextInputProps } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 export class TextInputDemo extends Component {
