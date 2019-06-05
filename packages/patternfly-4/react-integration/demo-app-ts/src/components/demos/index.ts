@@ -20,6 +20,7 @@ export * from './PopoverDemo/PopoverDemo';
 export * from './RadioDemo/RadioDemo';
 export * from './TabsDemo/TabsDemo';
 export * from './TextDemo/TextDemo';
+export * from './TextInputDemo/TextInputDemo';
 export * from './TitleDemo/TitleDemo';
 export * from './TooltipDemo/TooltipDemo';
 export * from './WizardDemo/WizardDemo';
