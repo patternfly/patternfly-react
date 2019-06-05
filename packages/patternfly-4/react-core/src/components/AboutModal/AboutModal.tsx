@@ -59,7 +59,7 @@ export class AboutModal extends React.Component<AboutModalProps> {
     }
   };
 
-  componentDidMount() {
+  private appendContainer = () => {
     if (!this.container) {
       this.container = document.createElement('div');
       document.body.appendChild(this.container);
@@ -70,6 +70,10 @@ export class AboutModal extends React.Component<AboutModalProps> {
     } else {
       document.body.classList.remove(css(styles.backdropOpen));
     }
+  }
+
+  componentDidMount() {
+    this.appendContainer();
   }
 
   componentDidUpdate() {
@@ -88,8 +92,11 @@ export class AboutModal extends React.Component<AboutModalProps> {
   }
 
   render() {
-    if (!canUseDOM || !this.container) {
+    if (!canUseDOM) {
       return null;
+    }
+    if(canUseDOM && !this.container) {
+      this.appendContainer();
     }
 
     return ReactDOM.createPortal(
