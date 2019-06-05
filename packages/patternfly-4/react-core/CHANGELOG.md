@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.36.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.35.0...@patternfly/react-core@3.36.0) (2019-06-05)
+
+
+### Bug Fixes
+
+* **NavItem:** Maintain className passed to custom NavItems ([#2134](https://github.com/patternfly/patternfly-react/issues/2134)) ([8f38b97](https://github.com/patternfly/patternfly-react/commit/8f38b97))
+
+
+### Features
+
+* **react-styles:** move react styles ([#2085](https://github.com/patternfly/patternfly-react/issues/2085)) ([81d1ed2](https://github.com/patternfly/patternfly-react/commit/81d1ed2))
+
+
+
+
+
 # [3.35.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.34.2...@patternfly/react-core@3.35.0) (2019-06-05)
 
 

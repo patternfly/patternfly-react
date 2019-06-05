@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.36.0 (2019-06-05)
+
+
+### Features
+
+* **react-styles:** move react styles ([#2085](https://github.com/patternfly/patternfly-react/issues/2085)) ([81d1ed2](https://github.com/patternfly/patternfly-react/commit/81d1ed2))
+* **VictoryZoomContainer:** Give examples of Victory Zoom component to allow zo… ([#1879](https://github.com/patternfly/patternfly-react/issues/1879)) ([235c174](https://github.com/patternfly/patternfly-react/commit/235c174)), closes [#1715](https://github.com/patternfly/patternfly-react/issues/1715)
+
+
+
+
+
 ## [2.35.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.35.0...patternfly-react@2.35.1) (2019-05-31)
 
 **Note:** Version bump only for package patternfly-react

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.4.6...@patternfly/react-styled-system@3.5.0) (2019-06-05)
+
+
+### Features
+
+* **react-styles:** move react styles ([#2085](https://github.com/patternfly/patternfly-react/issues/2085)) ([81d1ed2](https://github.com/patternfly/patternfly-react/commit/81d1ed2))
+
+
+
+
+
 ## 3.4.6 (2019-06-05)
 
 **Note:** Version bump only for package @patternfly/react-styled-system

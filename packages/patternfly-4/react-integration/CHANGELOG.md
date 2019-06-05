@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.17.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.16.0...@patternfly/react-integration@1.17.0) (2019-06-05)
+
+
+### Features
+
+* **react-styles:** move react styles ([#2085](https://github.com/patternfly/patternfly-react/issues/2085)) ([81d1ed2](https://github.com/patternfly/patternfly-react/commit/81d1ed2))
+
+
+
+
+
 # 1.16.0 (2019-06-05)
 
 
