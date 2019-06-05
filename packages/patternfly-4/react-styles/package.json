@@ -38,7 +38,7 @@
     "typescript": "3.4.5"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "2.8.2",
+    "@patternfly/patternfly": "2.11.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "glob": "^7.1.2",
     "rimraf": "^2.6.2"
