@@ -2,6 +2,7 @@
 title: 'Split'
 cssPrefix: 'pf-l-split'
 section: 'layouts'
+propComponents: ['Split', 'SplitItem']
 ---
 
 import { Split, SplitItem } from '@patternfly/react-core';

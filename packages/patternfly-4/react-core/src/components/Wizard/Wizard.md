@@ -2,6 +2,7 @@
 title: 'Wizard'
 cssPrefix: 'pf-c-wizard'
 typescript: true
+propComponents: ['Wizard', 'WizardNav', 'WizardNavItem', 'WizardHeader', 'WizardBody', 'WizardFooter', 'WizardToggle']
 ---
 
 import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';

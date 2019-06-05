@@ -3,6 +3,7 @@ title: 'Skip to content'
 section: 'components'
 cssPrefix: 'pf-c-skip-to-content'
 typescript: true
+propComponents: ['SkipToContent']
 ---
 
 import LinkPreview from '@content/../LinkPreview';

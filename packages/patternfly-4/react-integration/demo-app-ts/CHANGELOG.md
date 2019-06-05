@@ -3,6 +3,92 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.16.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.16.1...demo-app-ts@1.16.2) (2019-06-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [1.16.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.16.0...demo-app-ts@1.16.1) (2019-06-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# 1.16.0 (2019-06-03)
+
+
+### Features
+
+* **component:** Add Time Picker component ([#1875](https://github.com/patternfly/patternfly-react/issues/1875)) ([00996e9](https://github.com/patternfly/patternfly-react/commit/00996e9))
+
+
+
+
+
+## [1.15.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.15.0...demo-app-ts@1.15.1) (2019-05-30)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [1.15.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.14.11...demo-app-ts@1.15.0) (2019-05-30)
+
+
+### Features
+
+* **OptionsMenu:** Options Menu Component Typescript Conversion ([#2002](https://github.com/patternfly/patternfly-react/issues/2002)) ([402718b](https://github.com/patternfly/patternfly-react/commit/402718b))
+
+
+
+
+
+## [1.14.11](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.14.10...demo-app-ts@1.14.11) (2019-05-30)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [1.14.10](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.14.9...demo-app-ts@1.14.10) (2019-05-29)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [1.14.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.14.8...demo-app-ts@1.14.9) (2019-05-29)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [1.14.8](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.14.7...demo-app-ts@1.14.8) (2019-05-29)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [1.14.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.14.6...demo-app-ts@1.14.7) (2019-05-29)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [1.14.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.14.5...demo-app-ts@1.14.6) (2019-05-28)
 
 **Note:** Version bump only for package demo-app-ts

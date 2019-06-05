@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.35.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.35.0...patternfly-react@2.35.1) (2019-05-31)
+
+**Note:** Version bump only for package patternfly-react
+
+
+
+
+
+# 2.35.0 (2019-05-31)
+
+
+### Features
+
+* **component:** Add Time Picker component ([#1875](https://github.com/patternfly/patternfly-react/issues/1875)) ([00996e9](https://github.com/patternfly/patternfly-react/commit/00996e9))
+
+
+
+
+
+## 2.34.4 (2019-05-29)
+
+
+### Bug Fixes
+
+* **index.js:** [PF3] Export BreadcrumbSwitcher from patternfly-react index ([#2097](https://github.com/patternfly/patternfly-react/issues/2097)) ([132ccf8](https://github.com/patternfly/patternfly-react/commit/132ccf8))
+
+
+
+
+
 ## 2.34.3 (2019-05-20)
 
 

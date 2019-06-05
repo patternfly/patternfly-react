@@ -3,6 +3,100 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.5.2...@patternfly/react-inline-edit-extension@2.5.3) (2019-06-05)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.5.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.5.1...@patternfly/react-inline-edit-extension@2.5.2) (2019-06-05)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.5.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.5.0...@patternfly/react-inline-edit-extension@2.5.1) (2019-06-05)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+# 2.5.0 (2019-06-03)
+
+
+### Features
+
+* **component:** Add Time Picker component ([#1875](https://github.com/patternfly/patternfly-react/issues/1875)) ([00996e9](https://github.com/patternfly/patternfly-react/commit/00996e9))
+
+
+
+
+
+## [2.4.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.4.20...@patternfly/react-inline-edit-extension@2.4.21) (2019-05-30)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.4.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.4.19...@patternfly/react-inline-edit-extension@2.4.20) (2019-05-30)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.4.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.4.18...@patternfly/react-inline-edit-extension@2.4.19) (2019-05-30)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.4.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.4.17...@patternfly/react-inline-edit-extension@2.4.18) (2019-05-29)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.4.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.4.16...@patternfly/react-inline-edit-extension@2.4.17) (2019-05-29)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.4.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.4.15...@patternfly/react-inline-edit-extension@2.4.16) (2019-05-29)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.4.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.4.14...@patternfly/react-inline-edit-extension@2.4.15) (2019-05-29)
+
+
+### Bug Fixes
+
+* **docs:** use frontmatter for what props to show in docs ([#2072](https://github.com/patternfly/patternfly-react/issues/2072)) ([20e6b12](https://github.com/patternfly/patternfly-react/commit/20e6b12))
+
+
+
+
+
 ## [2.4.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.4.13...@patternfly/react-inline-edit-extension@2.4.14) (2019-05-28)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension

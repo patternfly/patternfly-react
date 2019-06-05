@@ -3,6 +3,110 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.34.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.34.1...@patternfly/react-core@3.34.2) (2019-06-05)
+
+
+### Bug Fixes
+
+* **aboutmodal:** support isOpen initially set true in about modal ([#2153](https://github.com/patternfly/patternfly-react/issues/2153)) ([d8209ad](https://github.com/patternfly/patternfly-react/commit/d8209ad))
+
+
+
+
+
+## [3.34.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.34.0...@patternfly/react-core@3.34.1) (2019-06-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# 3.34.0 (2019-06-03)
+
+
+### Features
+
+* **component:** Add Time Picker component ([#1875](https://github.com/patternfly/patternfly-react/issues/1875)) ([00996e9](https://github.com/patternfly/patternfly-react/commit/00996e9))
+
+
+
+
+
+## [3.33.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.33.0...@patternfly/react-core@3.33.1) (2019-05-30)
+
+
+### Bug Fixes
+
+* **checkbox:** set checked if onChanged is not the default ([#2037](https://github.com/patternfly/patternfly-react/issues/2037)) ([2237fa5](https://github.com/patternfly/patternfly-react/commit/2237fa5))
+
+
+
+
+
+# [3.33.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.10...@patternfly/react-core@3.33.0) (2019-05-30)
+
+
+### Features
+
+* **OptionsMenu:** Options Menu Component Typescript Conversion ([#2002](https://github.com/patternfly/patternfly-react/issues/2002)) ([402718b](https://github.com/patternfly/patternfly-react/commit/402718b))
+
+
+
+
+
+## [3.32.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.9...@patternfly/react-core@3.32.10) (2019-05-30)
+
+
+### Bug Fixes
+
+* **popover:** make PopoverPosition an enum ([#2113](https://github.com/patternfly/patternfly-react/issues/2113)) ([4afe336](https://github.com/patternfly/patternfly-react/commit/4afe336))
+
+
+
+
+
+## [3.32.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.8...@patternfly/react-core@3.32.9) (2019-05-29)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.32.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.7...@patternfly/react-core@3.32.8) (2019-05-29)
+
+
+### Bug Fixes
+
+* **Select:** update SelectProps interface, clean up demos ([#2107](https://github.com/patternfly/patternfly-react/issues/2107)) ([b56ea35](https://github.com/patternfly/patternfly-react/commit/b56ea35))
+
+
+
+
+
+## [3.32.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.6...@patternfly/react-core@3.32.7) (2019-05-29)
+
+
+### Bug Fixes
+
+* **popover:** maxWidth typescript error with maxWidth ([#2110](https://github.com/patternfly/patternfly-react/issues/2110)) ([e41ae79](https://github.com/patternfly/patternfly-react/commit/e41ae79))
+
+
+
+
+
+## [3.32.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.5...@patternfly/react-core@3.32.6) (2019-05-29)
+
+
+### Bug Fixes
+
+* **docs:** use frontmatter for what props to show in docs ([#2072](https://github.com/patternfly/patternfly-react/issues/2072)) ([20e6b12](https://github.com/patternfly/patternfly-react/commit/20e6b12))
+
+
+
+
+
 ## [3.32.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.4...@patternfly/react-core@3.32.5) (2019-05-28)
 
 **Note:** Version bump only for package @patternfly/react-core

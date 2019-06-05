@@ -83,7 +83,6 @@ class ComplexToolbarDemo extends React.Component {
       const { isDropDownOpen } = this.state;
       return (
         <Dropdown
-            onToggle={this.onDropDownToggle}
             onSelect={this.onDropDownSelect}
             position={DropdownPosition.right}
             toggle={<DropdownToggle onToggle={this.onDropDownToggle}>All</DropdownToggle>}
@@ -105,7 +104,6 @@ class ComplexToolbarDemo extends React.Component {
 
       return (
         <Dropdown
-            onToggle={this.onKebabToggle}
             onSelect={this.onKebabSelect}
             position={DropdownPosition.right}
             toggle={<KebabToggle onToggle={this.onKebabToggle} />}

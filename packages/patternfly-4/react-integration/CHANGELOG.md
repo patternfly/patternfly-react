@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.15.0 (2019-05-30)
+
+
+### Features
+
+* **OptionsMenu:** Options Menu Component Typescript Conversion ([#2002](https://github.com/patternfly/patternfly-react/issues/2002)) ([402718b](https://github.com/patternfly/patternfly-react/commit/402718b))
+
+
+
+
+
 ## 1.14.1 (2019-05-28)
 
 **Note:** Version bump only for package @patternfly/react-integration

@@ -15,6 +15,7 @@ export * from './ListDemo/ListDemo';
 export * from './LoginPageDemo/LoginPageDemo';
 export * from './ModalDemo/ModalDemo';
 export * from './NavDemo/NavDemo';
+export * from './OptionsMenuDemo/OptionsMenuDemo';
 export * from './PopoverDemo/PopoverDemo';
 export * from './RadioDemo/RadioDemo';
 export * from './TabsDemo/TabsDemo';

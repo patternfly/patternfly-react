@@ -20,11 +20,11 @@ import { ReactElement } from 'react';
 const FocusTrap: any = require('focus-trap-react');
 tippyStyles();
 
-export const PopoverPosition = {
-  top: 'top',
-  bottom: 'bottom',
-  left: 'left',
-  right: 'right'
+export enum PopoverPosition {
+  top = 'top',
+  bottom = 'bottom',
+  left = 'left',
+  right = 'right'
 };
 
 export interface PopoverProps {
@@ -72,7 +72,7 @@ export interface PopoverProps {
   /** z-index of the popover */
   zIndex?: number;
   /** Maximum width of the tooltip (default 18.75rem) */
-  maxWidth: string;
+  maxWidth?: string;
   /** Aria label for the Close button */
   closeBtnAriaLabel?: string;
 }

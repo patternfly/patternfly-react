@@ -2,6 +2,7 @@
 title: 'List'
 cssPrefix: 'pf-c-list'
 typescript: true
+propComponents: ['List', 'ListItem']
 ---
 
 import { List, ListItem } from '@patternfly/react-core';

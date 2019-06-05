@@ -1,6 +1,7 @@
 ---
 title: 'Progress'
 cssPrefix: 'pf-c-progress'
+propComponents: ['Progress']
 ---
 
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';

@@ -1,6 +1,7 @@
 ---
 title: 'Text area'
 cssPrefix: 'pf-c-form-control'
+propComponents: ['TextArea']
 ---
 
 import { TextArea } from '@patternfly/react-core';

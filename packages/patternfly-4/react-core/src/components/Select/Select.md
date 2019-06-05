@@ -1,6 +1,7 @@
 ---
 title: 'Select'
 cssPrefix: 'pf-c-select'
+propComponents: ['Select', 'SelectOption', 'CheckboxSelectGroup', 'CheckboxSelectOption']
 ---
 
 import { Select, SelectOption, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption } from '@patternfly/react-core';

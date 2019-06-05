@@ -1,6 +1,7 @@
 ---
 title: 'Accordion'
 cssPrefix: 'pf-c-accordion'
+propComponents: ['Accordion', 'AccordionItem', 'AccordionContent', 'AccordionToggle']
 ---
 
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';
