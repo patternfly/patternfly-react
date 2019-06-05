@@ -12,6 +12,7 @@ import CheckboxSelect from './CheckboxSelect';
 import SelectToggle from './SelectToggle';
 import SelectOption from './SelectOption';
 import { SelectContext, SelectVariant } from './selectConstants';
+import { getNextIndex } from '../../helpers/util';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -77,9 +78,12 @@ class Select extends React.Component {
   parentRef = React.createRef();
   state = {
     openedOnEnter: false,
-    typeaheadValue: null,
-    filteredChildren: this.props.children
+    typeaheadInputValue: null,
+    typeaheadActiveChild: null,
+    typeaheadFilteredChildren: this.props.children,
+    typeaheadCurrIndex: -1
   };
+  refCollection = [];
 
   onEnter = () => {
     this.setState({ openedOnEnter: true });
@@ -88,8 +92,10 @@ class Select extends React.Component {
   onClose = () => {
     this.setState({
       openedOnEnter: false,
-      typeaheadValue: null,
-      filteredChildren: this.props.children
+      typeaheadInputValue: null,
+      typeaheadActiveChild: null,
+      typeaheadFilteredChildren: this.props.children,
+      typeaheadCurrIndex: -1
     });
   };
 
@@ -100,17 +106,20 @@ class Select extends React.Component {
     } catch (err) {
       input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
     }
-    const filteredChildren =
+    const typeaheadFilteredChildren =
       e.target.value !== ''
         ? React.Children.toArray(this.props.children).filter(child => child.props.value.search(input) === 0)
         : this.props.children;
-    if (filteredChildren.length === 0) {
-      filteredChildren.push(<SelectOption isDisabled key={0} value="No results found" />);
+    if (typeaheadFilteredChildren.length === 0) {
+      typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value="No results found" />);
     }
     this.setState({
-      typeaheadValue: e.target.value,
-      filteredChildren
+      typeaheadInputValue: e.target.value,
+      typeaheadCurrIndex: -1,
+      typeaheadFilteredChildren,
+      typeaheadActiveChild: null
     });
+    this.refCollection = [];
   };
 
   onClick = e => {
@@ -120,9 +129,52 @@ class Select extends React.Component {
   clearSelection = e => {
     e.stopPropagation();
     this.setState({
-      typeaheadValue: '',
-      filteredChildren: this.props.children
+      typeaheadInputValue: '',
+      typeaheadActiveChild: null,
+      typeaheadFilteredChildren: this.props.children,
+      typeaheadCurrIndex: -1
     });
+  };
+
+  extendTypeaheadChildren(typeaheadActiveChild) {
+    return this.state.typeaheadFilteredChildren.map(child =>
+      React.cloneElement(child, {
+        isFocused: typeaheadActiveChild && typeaheadActiveChild.innerText === child.props.value
+      })
+    );
+  }
+
+  sendRef = (ref, index) => {
+    this.refCollection[index] = ref;
+  };
+
+  handleTypeaheadKeys = position => {
+    const { isExpanded, onSelect } = this.props;
+    const { typeaheadActiveChild, typeaheadCurrIndex } = this.state;
+    if (isExpanded) {
+      if (position === 'enter' && (typeaheadActiveChild || this.refCollection[0])) {
+        this.setState({
+          typeaheadInputValue:
+            (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0].innerText
+        });
+        onSelect &&
+          onSelect(null, (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0].innerText);
+      } else {
+        let nextIndex;
+        if (typeaheadCurrIndex === -1 && position === 'down') {
+          nextIndex = 0;
+        } else if (typeaheadCurrIndex === -1 && position === 'up') {
+          nextIndex = this.refCollection.length - 1;
+        } else {
+          nextIndex = getNextIndex(typeaheadCurrIndex, position, this.refCollection);
+        }
+        this.setState({
+          typeaheadCurrIndex: nextIndex,
+          typeaheadActiveChild: this.refCollection[nextIndex],
+          typeaheadInputValue: this.refCollection[nextIndex].innerText
+        });
+      }
+    }
   };
 
   render() {
@@ -146,7 +198,7 @@ class Select extends React.Component {
       width,
       ...props
     } = this.props;
-    const { openedOnEnter, typeaheadValue, filteredChildren } = this.state;
+    const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild } = this.state;
     const selectToggleId = `pf-toggle-id-${currentId++}`;
     let childPlaceholderText = null;
     if (!selections && !placeholderText) {
@@ -185,6 +237,7 @@ class Select extends React.Component {
             ariaLabelledBy={`${ariaLabelledBy || ''} ${selectToggleId}`}
             variant={variant}
             ariaLabelToggle={ariaLabelToggle}
+            handleTypeaheadKeys={this.handleTypeaheadKeys}
           >
             {variant === SelectVariant.single && (
               <div className={css(styles.selectToggleWrapper)}>
@@ -210,12 +263,14 @@ class Select extends React.Component {
                 <div className={css(styles.selectToggleWrapper)}>
                   <input
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                    aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
                     id="select-single-typeahead-typeahead"
                     aria-label={ariaLabelTypeAhead}
                     placeholder={placeholderText}
-                    value={typeaheadValue !== null ? typeaheadValue : selections || ''}
+                    value={typeaheadInputValue !== null ? typeaheadInputValue : selections || ''}
                     type="text"
                     onChange={this.onChange}
+                    autoComplete="off"
                   />
                 </div>
                 {selections && (
@@ -238,12 +293,14 @@ class Select extends React.Component {
                   {selections && selections.length > 0 && selectedChips}
                   <input
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                    aria-activedescendant={typeaheadActiveChild}
                     id="select-multi-typeahead-typeahead"
                     aria-label={ariaLabelTypeAhead}
                     placeholder={placeholderText}
-                    value={typeaheadValue !== null ? typeaheadValue : ''}
+                    value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
                     type="text"
                     onChange={this.onChange}
+                    autoComplete="off"
                   />
                 </div>
                 {selections && selections.length > 0 && (
@@ -290,8 +347,9 @@ class Select extends React.Component {
               openedOnEnter={openedOnEnter}
               aria-label={ariaLabel}
               aria-labelledby={ariaLabelledBy}
+              sendRef={this.sendRef}
             >
-              {filteredChildren}
+              {this.extendTypeaheadChildren(typeaheadActiveChild)}
             </SingleSelect>
           )}
         </SelectContext.Provider>

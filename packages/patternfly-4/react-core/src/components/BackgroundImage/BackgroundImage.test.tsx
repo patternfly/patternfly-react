@@ -1,5 +1,5 @@
-import BackgroundImage, { BackgroundImageSrc } from './BackgroundImage';
-import React from 'react';
+import { BackgroundImage, BackgroundImageSrc } from './BackgroundImage';
+import * as React from 'react';
 import { shallow } from 'enzyme';
 
 const images = {

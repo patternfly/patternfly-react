@@ -18,10 +18,14 @@ const propTypes = {
   isPlaceholder: PropTypes.bool,
   /** Internal flag indicating if the option is selected */
   isSelected: PropTypes.bool,
+  /** Internal flag indicating if the option is focused */
+  isFocused: PropTypes.bool,
   /** Optional on click callback */
   onClick: PropTypes.func,
   /** Internal callback for ref tracking */
   sendRef: PropTypes.func,
+  /** Internal callback for ref tracking */
+  sendListRef: PropTypes.func,
   /** Internal callback for keyboard navigation */
   keyHandler: PropTypes.func,
   /** Additional props are spread to the container <button> */
@@ -35,8 +39,10 @@ const defaultProps = {
   isDisabled: false,
   isPlaceholder: false,
   isSelected: false,
+  isFocused: false,
   onClick: Function.prototype,
   sendRef: Function.prototype,
+  sendListRef: Function.prototype,
   keyHandler: Function.prototype
 };
 
@@ -44,6 +50,11 @@ class SelectOption extends React.Component {
   ref = React.createRef();
 
   componentDidMount() {
+    this.props.sendRef(this.ref.current, this.props.index);
+    this.props.sendListRef(this.ref.current, this.props.index);
+  }
+
+  componentDidUpdate() {
     this.props.sendRef(this.ref.current, this.props.index);
   }
 
@@ -67,7 +78,9 @@ class SelectOption extends React.Component {
       isDisabled,
       isPlaceholder,
       isSelected,
+      isFocused,
       sendRef,
+      sendListRef,
       keyHandler,
       index,
       ...props
@@ -82,6 +95,7 @@ class SelectOption extends React.Component {
                 styles.selectMenuItem,
                 isSelected && styles.modifiers.selected,
                 isDisabled && styles.modifiers.disabled,
+                isFocused && styles.modifiers.focus,
                 className
               )}
               onClick={event => {

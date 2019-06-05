@@ -39,6 +39,8 @@ const propTypes = {
   ariaLabelToggle: PropTypes.string,
   /** Flag for variant, determines toggle rules and interaction */
   variant: PropTypes.oneOf(['single', 'checkbox', 'typeahead', 'typeaheadmulti']),
+  /** Internal handler for typeahead keyboard navigation */
+  handleTypeaheadKeys: PropTypes.Function,
   /** Additional props are spread to the container <button> */
   '': PropTypes.any // eslint-disable-line react/require-default-props
 };
@@ -58,7 +60,8 @@ const defaultProps = {
   type: 'button',
   onToggle: Function.prototype,
   onEnter: Function.prototype,
-  onClose: Function.prototype
+  onClose: Function.prototype,
+  handleTypeaheadKeys: Function.prototype
 };
 
 class SelectToggle extends Component {
@@ -99,7 +102,20 @@ class SelectToggle extends Component {
   };
 
   onKeyDown = event => {
-    const { isExpanded, onToggle, variant, onClose, onEnter } = this.props;
+    const { isExpanded, onToggle, variant, onClose, onEnter, handleTypeaheadKeys } = this.props;
+    if (
+      (event.key === KeyTypes.ArrowDown || event.key === KeyTypes.ArrowUp) &&
+      (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti)
+    )
+      handleTypeaheadKeys((event.key === KeyTypes.ArrowDown && 'down') || (event.key === KeyTypes.ArrowUp && 'up'));
+    if (
+      event.key === KeyTypes.Enter &&
+      (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti)
+    ) {
+      if (isExpanded) handleTypeaheadKeys('enter');
+      else onToggle && onToggle(!isExpanded);
+    }
+
     if (
       (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) ||
       (event.key === KeyTypes.Tab && !isExpanded) ||
@@ -132,6 +148,7 @@ class SelectToggle extends Component {
       onToggle,
       onEnter,
       onClose,
+      handleTypeaheadKeys,
       parentRef,
       id,
       type,
