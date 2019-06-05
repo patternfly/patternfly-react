@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import { Omit } from '../../helpers/typeUtils';
 
 import { css, StyleSheet } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/BackgroundImage/background-image.css';
@@ -13,72 +13,74 @@ import {
   c_background_image_BackgroundImage_lg
 } from '@patternfly/react-tokens';
 
-export const BackgroundImageSrc = {
-  xs: 'xs',
-  xs2x: 'xs2x',
-  sm: 'sm',
-  sm2x: 'sm2x',
-  lg: 'lg',
-  filter: 'filter'
+export enum BackgroundImageSrc {
+  xs = 'xs',
+  xs2x = 'xs2x',
+  sm = 'sm',
+  sm2x = 'sm2x',
+  lg = 'lg',
+  filter = 'filter'
 };
 
-const variableMap = {
+const cssVariables = {
   [BackgroundImageSrc.xs]: c_background_image_BackgroundImage && c_background_image_BackgroundImage.name,
   [BackgroundImageSrc.xs2x]: c_background_image_BackgroundImage_2x && c_background_image_BackgroundImage_2x.name,
   [BackgroundImageSrc.sm]: c_background_image_BackgroundImage_sm && c_background_image_BackgroundImage_sm.name,
   [BackgroundImageSrc.sm2x]: c_background_image_BackgroundImage_sm_2x && c_background_image_BackgroundImage_sm_2x.name,
-  [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg && c_background_image_BackgroundImage_lg.name
+  [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg && c_background_image_BackgroundImage_lg.name,
 };
 
-export const propTypes = {
+export interface BackgroundImageSrcMap {
+  xs: string,
+  xs2x: string,
+  sm: string,
+  sm2x: string,
+  lg: string,
+  filter?: string
+};
+
+export interface BackgroundImageProps extends Omit<React.HTMLProps<HTMLDivElement>, 'src'> {
   /** Additional classes added to the background. */
-  className: PropTypes.string,
+  className?: string; 
   /** Override image styles using a string or BackgroundImageSrc */
-  src: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.shape({
-      xs: PropTypes.string,
-      xs2x: PropTypes.string,
-      sm: PropTypes.string,
-      sm2x: PropTypes.string,
-      lg: PropTypes.string,
-      filter: PropTypes.string
-    })
-  ]).isRequired
+  src: string | BackgroundImageSrcMap; 
 };
 
-export const defaultProps = {
-  className: ''
-};
-
-const BackgroundImage = ({ className, src, ...props }) => {
+export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
+  className = '', 
+  src,
+  ...props
+}: BackgroundImageProps) => {
+  let srcMap = src;
   // Default string value to handle all sizes
-  const variableOverrides =
-    typeof src === 'string'
-      ? Object.keys(BackgroundImageSrc).reduce(
-          (prev, size) => ({
-            ...prev,
-            [BackgroundImageSrc[size]]: src
-          }),
-          {}
-        )
-      : src;
+  if (typeof src === 'string') {
+    srcMap = {
+      [BackgroundImageSrc.xs]: src,
+      [BackgroundImageSrc.xs2x]: src,
+      [BackgroundImageSrc.sm]: src,
+      [BackgroundImageSrc.sm2x]: src,
+      [BackgroundImageSrc.lg]: src,
+      [BackgroundImageSrc.filter]: '', // unused
+    };
+  }
 
-  const bgStyles = StyleSheet.create({
-    bgOverrides: `&.pf-c-background-image {
-      ${Object.keys(variableOverrides).reduce(
-        (prev, size) => `${prev.length ? prev : ''}${variableMap[size]}: url('${variableOverrides[size]}');`,
-        {}
-      )}
-    }`
+  // Build stylesheet string based on cssVariables
+  let cssSheet = '';
+  (Object.keys(cssVariables) as [keyof typeof srcMap]).forEach(size => {
+    cssSheet += `${cssVariables[size as keyof typeof cssVariables]}: url('${srcMap[size]}');`
   });
 
+  // Create emotion stylesheet to inject new css
+  const bgStyles = StyleSheet.create({
+    bgOverrides: `&.pf-c-background-image {
+      ${cssSheet}
+    }`});
+  
   return (
-    <div className={css(styles.backgroundImage, bgStyles.bgOverrides, className)}>
+    <div className={css(styles.backgroundImage, bgStyles.bgOverrides, className)} {...props}>
       <svg xmlns="http://www.w3.org/2000/svg" className="pf-c-background-image__filter" width="0" height="0">
-        <filter id="image_overlay" width="">
-          <feColorMatrix
-            type="matrix"
+        <filter id="image_overlay" width="0">
+          <feColorMatrix type="matrix"
             values="1 0 0 0 0
             1 0 0 0 0
             1 0 0 0 0
@@ -95,7 +97,3 @@ const BackgroundImage = ({ className, src, ...props }) => {
     </div>
   );
 };
-
-BackgroundImage.propTypes = propTypes;
-BackgroundImage.defaultProps = defaultProps;
-export default BackgroundImage;

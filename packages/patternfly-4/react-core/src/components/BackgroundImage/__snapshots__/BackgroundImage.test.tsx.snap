@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BackgroundImage 1`] = `
-.pf-c-background-image.css-va8362 {
+.pf-c-background-image.css-f86rs0 {
   display: block;
 }
 
 <div
-  className="pf-c-background-image css-va8362"
+  className="pf-c-background-image css-f86rs0"
 >
   <svg
     className="pf-c-background-image__filter"
@@ -16,11 +16,14 @@ exports[`BackgroundImage 1`] = `
   >
     <filter
       id="image_overlay"
-      width=""
+      width="0"
     >
       <feColorMatrix
         type="matrix"
-        values="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0"
+        values="1 0 0 0 0
+            1 0 0 0 0
+            1 0 0 0 0
+            0 0 0 1 0"
       />
       <feComponentTransfer
         colorInterpolationFilters="sRGB"
@@ -49,12 +52,12 @@ exports[`BackgroundImage 1`] = `
 `;
 
 exports[`BackgroundImage 2`] = `
-.pf-c-background-image.css-va8362 {
+.pf-c-background-image.css-f86rs0 {
   display: block;
 }
 
 <div
-  className="pf-c-background-image css-va8362"
+  className="pf-c-background-image css-f86rs0"
 >
   <svg
     className="pf-c-background-image__filter"
@@ -64,11 +67,14 @@ exports[`BackgroundImage 2`] = `
   >
     <filter
       id="image_overlay"
-      width=""
+      width="0"
     >
       <feColorMatrix
         type="matrix"
-        values="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0"
+        values="1 0 0 0 0
+            1 0 0 0 0
+            1 0 0 0 0
+            0 0 0 1 0"
       />
       <feComponentTransfer
         colorInterpolationFilters="sRGB"
@@ -97,12 +103,12 @@ exports[`BackgroundImage 2`] = `
 `;
 
 exports[`allows passing in a single string as the image src 1`] = `
-.pf-c-background-image.css-15v5rkq {
+.pf-c-background-image.css-14j9mpj {
   display: block;
 }
 
 <div
-  className="pf-c-background-image css-15v5rkq"
+  className="pf-c-background-image css-14j9mpj"
 >
   <svg
     className="pf-c-background-image__filter"
@@ -112,11 +118,14 @@ exports[`allows passing in a single string as the image src 1`] = `
   >
     <filter
       id="image_overlay"
-      width=""
+      width="0"
     >
       <feColorMatrix
         type="matrix"
-        values="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0"
+        values="1 0 0 0 0
+            1 0 0 0 0
+            1 0 0 0 0
+            0 0 0 1 0"
       />
       <feComponentTransfer
         colorInterpolationFilters="sRGB"

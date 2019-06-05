@@ -1,6 +1,7 @@
 ---
 title: 'Background image'
 cssPrefix: 'pf-c-background-image'
+typescript: true
 propComponents: ['BackgroundImage', 'BackgroundImageSrc']
 ---
 
