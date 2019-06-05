@@ -4,22 +4,35 @@ import { css } from '@patternfly/react-styles';
 import { AngleRightIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 
-const AccordionToggle = ({ className, id, isExpanded, children, ...props }) => (
-  <dt>
-    <h3>
-      <button
-        id={id}
-        className={css(styles.accordionToggle, isExpanded && styles.modifiers.expanded, className)}
-        {...props}
-        variant="plain"
-        aria-expanded={isExpanded}
-      >
-        <span className={css(styles.accordionToggleText)}>{children}</span>
-        <AngleRightIcon className={css(styles.accordionToggleIcon)} />
-      </button>
-    </h3>
-  </dt>
-);
+export const HeadingLevelTypes = {
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  h4: 'h4',
+  h5: 'h5',
+  h6: 'h6'
+};
+
+const AccordionToggle = ({ className, headingLevel, id, isExpanded, children, ...props }) => {
+  const HeadingLevel = HeadingLevelTypes[headingLevel];
+
+  return (
+    <dt>
+      <HeadingLevel>
+        <button
+          id={id}
+          className={css(styles.accordionToggle, isExpanded && styles.modifiers.expanded, className)}
+          {...props}
+          variant="plain"
+          aria-expanded={isExpanded}
+        >
+          <span className={css(styles.accordionToggleText)}>{children}</span>
+          <AngleRightIcon className={css(styles.accordionToggleIcon)} />
+        </button>
+      </HeadingLevel>
+    </dt>
+  );
+};
 
 AccordionToggle.propTypes = {
   /** Content rendered inside the Accordion toggle */
@@ -30,6 +43,8 @@ AccordionToggle.propTypes = {
   isExpanded: PropTypes.bool,
   /** Identify the Accordion toggle number */
   id: PropTypes.string.isRequired,
+  /** Allows user to specify heading level */
+  headingLevel: PropTypes.oneOf(Object.values(HeadingLevelTypes)),
   /** Additional props are spread to the container <dt> */
   '': PropTypes.any // eslint-disable-line react/require-default-props
 };
@@ -37,6 +52,7 @@ AccordionToggle.propTypes = {
 AccordionToggle.defaultProps = {
   className: '',
   children: null,
+  headingLevel: 'h1',
   isExpanded: false
 };
 

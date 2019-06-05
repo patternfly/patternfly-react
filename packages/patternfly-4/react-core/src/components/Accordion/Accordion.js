@@ -14,6 +14,8 @@ Accordion.propTypes = {
   children: PropTypes.node,
   /** Additional classes added to the Accordion */
   className: PropTypes.string,
+  /** Allows user to specify heading level */
+  headingLevel: PropTypes.oneOf(Object.values(HeadingLevelTypes)),
   /** Adds accessible text to the Accordion */
   'aria-label': PropTypes.string,
   /** Additional props are spread to the container <dl> */
@@ -23,6 +25,7 @@ Accordion.propTypes = {
 Accordion.defaultProps = {
   children: null,
   className: '',
+  headingLevel: '',
   'aria-label': ''
 };
 
