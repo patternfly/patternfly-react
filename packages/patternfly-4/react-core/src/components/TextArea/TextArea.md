@@ -2,7 +2,9 @@
 title: 'Text area'
 cssPrefix: 'pf-c-form-control'
 propComponents: ['TextArea']
+typescript: true
 ---
+
 
 import { TextArea } from '@patternfly/react-core';
 
@@ -18,7 +20,7 @@ class SimpleTextArea extends React.Component {
       value: ''
     };
 
-    this.handleInvalidTextAreaChange = value => {
+    this.handleTextAreaChange = value => {
       this.setState({ value });
     };
   }
@@ -42,7 +44,8 @@ class InvalidTextArea extends React.Component {
     this.state = {
       value: ''
     };
-    this.handleTextAreaChange = value => {
+    
+    this.handleInvalidTextAreaChange = value => {
       this.setState({ value });
     };
   }

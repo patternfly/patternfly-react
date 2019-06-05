@@ -121,6 +121,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabDemo
   },
   {
+    id: 'text-area',
+    name: 'Text Area Demo',
+    componentType: Examples.TextAreaDemo
+  },
+  {
     id: 'text-demo',
     name: 'Text Demo',
     componentType: Examples.TextDemo
