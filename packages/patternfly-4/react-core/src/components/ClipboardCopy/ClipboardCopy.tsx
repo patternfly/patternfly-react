@@ -45,7 +45,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
   /** Flag to show if the input is read only. */
   isReadOnly?: boolean;
   /** Adds Clipboard Copy variant styles. */
-  variant?: OneOf<typeof ClipboardCopyVariant, keyof typeof ClipboardCopyVariant>;
+  variant?: typeof ClipboardCopyVariant | 'inline' | 'expansion'; 
   /** Copy button popover position. */
   position?: OneOf<typeof PopoverPosition, keyof typeof PopoverPosition>;
   /** Maximum width of the tooltip (default 150px). */
