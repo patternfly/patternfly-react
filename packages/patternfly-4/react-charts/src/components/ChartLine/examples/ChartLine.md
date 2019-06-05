@@ -5,18 +5,20 @@ typescript: true
 propComponents: ['Chart', 'ChartAxis', 'ChartGroup', 'ChartLegend', 'ChartLine']
 ---
 
-import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { VictoryZoomContainer } from 'victory';
 import './chart-line.scss';
 
-## Green line chart
+## Green line chart with zoom along x axis
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
+import { VictoryZoomContainer } from 'victory';
 
 <div>
   <div className="line-chart-inline">
     <div className="line-chart-container">
-      <Chart themeColor={ChartThemeColor.green}>
+      <Chart themeColor={ChartThemeColor.green} containerComponent={<VictoryZoomContainer zoomDimension="x" />}>
         <ChartGroup>
           <ChartLine
             data={[

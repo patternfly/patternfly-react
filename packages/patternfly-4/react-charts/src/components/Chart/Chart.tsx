@@ -11,7 +11,8 @@ import {
   StringOrNumberOrCallback,
   VictoryChart,
   VictoryChartProps,
-  VictoryStyleInterface
+  VictoryStyleInterface,
+  VictoryZoomContainer
 } from 'victory';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getTheme } from '../ChartUtils/chart-theme';
@@ -24,6 +25,14 @@ export interface ChartProps extends VictoryChartProps {
    * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-area/
    */
   ' '?: any;
+  /**
+   * Specifies the zoom capability of the container component. A value of true allows the chart to
+   * zoom in and out. Zoom events are controlled by scrolling. When zoomed in, panning events are
+   * controlled by dragging. By default this value is set to false.
+   *
+   * Note: Only compatible with charts that display an x, y axis
+   */
+  allowZoom?: boolean;
   /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
@@ -288,13 +297,15 @@ export interface ChartProps extends VictoryChartProps {
 }
 
 export const Chart: React.FunctionComponent<ChartProps> = ({
+  allowZoom = false,
   children,
   themeColor,
   themeVariant,
   theme = getTheme(themeColor, themeVariant), // destructure last
+  containerComponent = allowZoom ? <VictoryZoomContainer /> : undefined,
   ...rest
 }: ChartProps) => (
-  <VictoryChart theme={theme} {...rest}>
+  <VictoryChart containerComponent={containerComponent} theme={theme} {...rest}>
     {children}
   </VictoryChart>
 );
