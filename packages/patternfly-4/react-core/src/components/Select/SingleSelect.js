@@ -15,6 +15,8 @@ const propTypes = {
   openedOnEnter: PropTypes.bool,
   /** Currently selected option */
   selected: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  /** Internal handler for ref handling */
+  sendRef: PropTypes.function,
   /** Additional props are spread to the container <select> */
   '': PropTypes.any // eslint-disable-line react/require-default-props
 };
@@ -23,7 +25,8 @@ const defaultProps = {
   className: '',
   isExpanded: false,
   openedOnEnter: false,
-  selected: ''
+  selected: '',
+  sendRef: Function.prototype
 };
 
 class SingleSelect extends React.Component {
@@ -31,36 +34,39 @@ class SingleSelect extends React.Component {
 
   componentDidMount() {
     if (this.props.openedOnEnter) {
-      const selectedRef = this.refCollection.filter(ref => ref.classList.contains('pf-c-select__menu-item--match'));
+      const selectedRef = this.refCollection.filter(ref => ref.classList.contains('pf-m-selected'));
       selectedRef && selectedRef[0] ? selectedRef[0].focus() : this.refCollection[0].focus();
     }
   }
 
   extendChildren() {
-    const { selected } = this.props;
-    return React.Children.map(this.props.children, (child, index) =>
-      React.cloneElement(child, {
-        isSelected:
-          selected && selected.constructor === Array
-            ? selected && selected.includes(child.props.value)
-            : selected === child.props.value,
-        sendRef: this.sendRef,
+    const { selected, sendRef } = this.props;
+    return React.Children.map(this.props.children, (child, index) => {
+      const isSelected =
+        selected && selected.constructor === Array
+          ? selected && selected.includes(child.props.value)
+          : selected === child.props.value;
+      return React.cloneElement(child, {
+        id: `${child.props.value}-${index}`,
+        isSelected,
+        sendRef,
+        sendListRef: this.sendListRef,
         keyHandler: this.childKeyHandler,
         index
-      })
-    );
+      });
+    });
   }
-
-  sendRef = (ref, index) => {
-    this.refCollection[index] = ref;
-  };
 
   childKeyHandler = (index, position) => {
     keyHandler(index, position, this.refCollection, this.props.children);
   };
 
+  sendListRef = (ref, index) => {
+    this.refCollection[index] = ref;
+  };
+
   render() {
-    const { children, className, isExpanded, openedOnEnter, selected, ...props } = this.props;
+    const { children, className, isExpanded, openedOnEnter, selected, sendRef, ...props } = this.props;
     this.renderedChildren = this.extendChildren();
     return (
       <ul {...props} className={css(styles.selectMenu, className)} role="listbox">
