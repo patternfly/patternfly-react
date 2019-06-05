@@ -14,7 +14,8 @@ import mergeProps from './merge-props';
 import { tableBodyRowDefaults, tableBodyRowTypes } from './types';
 
 class BodyRow extends React.Component {
-  shouldComponentUpdate(nextProps) { // eslint-disable-line no-unused-vars
+  shouldComponentUpdate(nextProps) {
+    // eslint-disable-line no-unused-vars
     const previousProps = this.props;
 
     // Check for row based override.
@@ -29,14 +30,11 @@ class BodyRow extends React.Component {
     }
 
     return !(
-      columnsAreEqual(previousProps.columns, nextProps.columns) &&
-      isEqual(previousProps.rowData, nextProps.rowData)
+      columnsAreEqual(previousProps.columns, nextProps.columns) && isEqual(previousProps.rowData, nextProps.rowData)
     );
   }
   render() {
-    const {
-      columns, renderers, onRow, rowKey, rowIndex, rowData
-    } = this.props;
+    const { columns, renderers, onRow, rowKey, rowIndex, rowData } = this.props;
 
     return React.createElement(
       renderers.row,
@@ -44,10 +42,7 @@ class BodyRow extends React.Component {
       columns.map((column, columnIndex) => {
         const { property, cell, props } = column;
         const evaluatedProperty = property || (cell && cell.property);
-        const {
-          transforms = [],
-          formatters = []
-        } = cell || {}; // TODO: test against this case
+        const { transforms = [], formatters = [] } = cell || {}; // TODO: test against this case
         const extraParameters = {
           columnIndex,
           property: evaluatedProperty,
@@ -66,14 +61,13 @@ class BodyRow extends React.Component {
           renderers.cell,
           {
             key: `${columnIndex}-cell`,
-            ...mergeProps(
-              props,
-              cell && cell.props,
-              transformed
-            )
+            ...mergeProps(props, cell && cell.props, transformed)
           },
-          transformed.children || evaluateFormatters(formatters)(rowData[`_${evaluatedProperty}`] ||
-              rowData[evaluatedProperty], extraParameters)
+          transformed.children ||
+            evaluateFormatters(formatters)(
+              rowData[`_${evaluatedProperty}`] || rowData[evaluatedProperty],
+              extraParameters
+            )
         );
       })
     );

@@ -3,7 +3,7 @@
 import * as React from 'react';
 import ScalingCellSizeAndPositionManager from './utils/ScalingCellSizeAndPositionManager';
 
-export type CellPosition = {columnIndex: number, rowIndex: number};
+export type CellPosition = { columnIndex: number, rowIndex: number };
 
 export type CellRendererParams = {
   columnIndex: number,
@@ -12,13 +12,13 @@ export type CellRendererParams = {
   key: string,
   parent: Object,
   rowIndex: number,
-  style: Object,
+  style: Object
 };
 
 export type CellRenderer = (props: CellRendererParams) => React.Element<*>;
 
-export type CellCache = {[key: string]: React.Element<*>};
-export type StyleCache = {[key: string]: Object};
+export type CellCache = { [key: string]: React.Element<*> };
+export type StyleCache = { [key: string]: Object };
 
 export type CellRangeRendererParams = {
   cellCache: CellCache,
@@ -39,14 +39,12 @@ export type CellRangeRendererParams = {
   styleCache: StyleCache,
   verticalOffsetAdjustment: number,
   visibleColumnIndices: Object,
-  visibleRowIndices: Object,
+  visibleRowIndices: Object
 };
 
-export type CellRangeRenderer = (
-  params: CellRangeRendererParams,
-) => React.Element<*>[];
+export type CellRangeRenderer = (params: CellRangeRendererParams) => React.Element<*>[];
 
-export type CellSizeGetter = (params: {index: number}) => number;
+export type CellSizeGetter = (params: { index: number }) => number;
 
 export type CellSize = CellSizeGetter | number;
 
@@ -58,13 +56,13 @@ export type Scroll = {
   scrollHeight: number,
   scrollLeft: number,
   scrollTop: number,
-  scrollWidth: number,
+  scrollWidth: number
 };
 
 export type ScrollbarPresenceChange = {
   horizontal: boolean,
   vertical: boolean,
-  size: number,
+  size: number
 };
 
 export type RenderedSection = {
@@ -75,7 +73,7 @@ export type RenderedSection = {
   rowOverscanStartIndex: number,
   rowOverscanStopIndex: number,
   rowStartIndex: number,
-  rowStopIndex: number,
+  rowStopIndex: number
 };
 
 export type OverscanIndicesGetterParams = {
@@ -95,21 +93,19 @@ export type OverscanIndicesGetterParams = {
   startIndex: number,
 
   // End of range of visible cells
-  stopIndex: number,
+  stopIndex: number
 };
 
 export type OverscanIndices = {
   overscanStartIndex: number,
-  overscanStopIndex: number,
+  overscanStopIndex: number
 };
 
-export type OverscanIndicesGetter = (
-  params: OverscanIndicesGetterParams,
-) => OverscanIndices;
+export type OverscanIndicesGetter = (params: OverscanIndicesGetterParams) => OverscanIndices;
 
 export type Alignment = 'auto' | 'end' | 'start' | 'center';
 
 export type VisibleCellRange = {
   start?: number,
-  stop?: number,
+  stop?: number
 };

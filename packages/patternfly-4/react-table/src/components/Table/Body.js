@@ -121,7 +121,8 @@ ContextBody.propTypes = {
   headerData: PropTypes.array,
   rows: PropTypes.array,
   rowKey: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-  onRowClick: PropTypes.func
+  onRowClick: PropTypes.func,
+  onRow: PropTypes.func
 };
 
 ContextBody.defaultProps = {
@@ -129,7 +130,8 @@ ContextBody.defaultProps = {
   children: null,
   headerData: [],
   rows: [],
-  onRowClick: () => undefined
+  onRowClick: () => undefined,
+  onRow: () => undefined
 };
 
 const TableBody = props => (

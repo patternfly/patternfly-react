@@ -1,4 +1,5 @@
 /** @flow */
+/* eslint-disable */
 
 import LinearLayoutVector from 'linear-layout-vector';
 import type { Alignment, CellSizeGetter, VisibleCellRange } from '../types';
