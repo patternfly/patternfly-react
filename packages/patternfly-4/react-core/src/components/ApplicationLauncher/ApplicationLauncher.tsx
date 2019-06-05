@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { ApplicationLauncherMenu } from './ApplicationLauncherMenu';
 import { ApplicationLauncherToggle } from './ApplicationLauncherToggle';
 import { ThIcon } from '@patternfly/react-icons';
-import DropdownContext from '../Dropdown/dropdownConstants';
+import { DropdownContext } from '../Dropdown/dropdownConstants';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
 
 export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement> {
@@ -15,21 +15,20 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
     /** open bool */
     isOpen: boolean; 
     /** Function callback called when user selects item */
-    onSelect: (event: React.SyntheticEvent<HTMLDivElement>) => void;
+    onSelect: (event: any) => void;
     /** Callback called when application launcher toggle is clicked */
     onToggle?: (value: boolean) => void; 
     /** Adds accessible text to the button. Required for plain buttons */
     'aria-label': string; 
 }
 
-export class ApplicationLauncher extends React.Component<ApplicationLauncherProps> {
-  
+export class ApplicationLauncher extends React.Component<ApplicationLauncherProps> { 
   static defaultProps = {
     className: '',
     dropdownItems: [] as React.ReactNode[],
     isOpen: false,
-    onSelect: Function.prototype,
-    onToggle: Function.prototype,
+    onSelect: (_event: any): any => undefined,
+    onToggle: (_value: boolean): any => undefined,
     'aria-label': 'Actions'
   };
 
@@ -68,7 +67,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
                 })
             )}
             {isOpen && (
-              <DropdownContext.Provider value={(event: any) => onSelect && onSelect(event)}>
+              <DropdownContext.Provider value={{ onSelect } }>
                 <ApplicationLauncherMenu
                   isOpen={isOpen}
                   position="left"
