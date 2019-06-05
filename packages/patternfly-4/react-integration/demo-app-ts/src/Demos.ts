@@ -121,6 +121,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TextDemo
   },
   {
+    id: 'text-input-demo',
+    name: 'Text Input Demo',
+    componentType: Examples.TextInputDemo
+  },
+  {
     id: 'title-demo',
     name: 'Title Demo',
     componentType: Examples.TitleDemo
