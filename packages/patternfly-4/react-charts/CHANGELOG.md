@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.1.0 (2019-06-05)
+
+
+### Features
+
+* **background image:** Convert background image to typescript ([#2070](https://github.com/patternfly/patternfly-react/issues/2070)) ([d4ae6db](https://github.com/patternfly/patternfly-react/commit/d4ae6db))
+* **VictoryZoomContainer:** Give examples of Victory Zoom component to allow zo… ([#1879](https://github.com/patternfly/patternfly-react/issues/1879)) ([235c174](https://github.com/patternfly/patternfly-react/commit/235c174)), closes [#1715](https://github.com/patternfly/patternfly-react/issues/1715)
+
+
+
+
+
 ## [4.0.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.0.1...@patternfly/react-charts@4.0.2) (2019-06-04)
 
 

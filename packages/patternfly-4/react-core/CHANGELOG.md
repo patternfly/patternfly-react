@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.35.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.34.2...@patternfly/react-core@3.35.0) (2019-06-05)
+
+
+### Features
+
+* **background image:** Convert background image to typescript ([#2070](https://github.com/patternfly/patternfly-react/issues/2070)) ([d4ae6db](https://github.com/patternfly/patternfly-react/commit/d4ae6db))
+* **Select:** add typeahead keyboard navigation ([#2013](https://github.com/patternfly/patternfly-react/issues/2013)) ([60b4d91](https://github.com/patternfly/patternfly-react/commit/60b4d91))
+* **TextInput:** Convert text input to TypeScript ([#1914](https://github.com/patternfly/patternfly-react/issues/1914)) ([1707236](https://github.com/patternfly/patternfly-react/commit/1707236)), closes [#1908](https://github.com/patternfly/patternfly-react/issues/1908)
+
+
+
+
+
 ## [3.34.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.34.1...@patternfly/react-core@3.34.2) (2019-06-05)
 
 

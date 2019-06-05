@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.17.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.16.2...demo-app-ts@1.17.0) (2019-06-05)
+
+
+### Features
+
+* **background image:** Convert background image to typescript ([#2070](https://github.com/patternfly/patternfly-react/issues/2070)) ([d4ae6db](https://github.com/patternfly/patternfly-react/commit/d4ae6db))
+* **TextInput:** Convert text input to TypeScript ([#1914](https://github.com/patternfly/patternfly-react/issues/1914)) ([1707236](https://github.com/patternfly/patternfly-react/commit/1707236)), closes [#1908](https://github.com/patternfly/patternfly-react/issues/1908)
+
+
+
+
+
 ## [1.16.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.16.1...demo-app-ts@1.16.2) (2019-06-05)
 
 **Note:** Version bump only for package demo-app-ts

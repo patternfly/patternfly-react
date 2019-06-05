@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.5.3...@patternfly/react-inline-edit-extension@2.6.0) (2019-06-05)
+
+
+### Features
+
+* **TextInput:** Convert text input to TypeScript ([#1914](https://github.com/patternfly/patternfly-react/issues/1914)) ([1707236](https://github.com/patternfly/patternfly-react/commit/1707236)), closes [#1908](https://github.com/patternfly/patternfly-react/issues/1908)
+
+
+
+
+
 ## [2.5.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.5.2...@patternfly/react-inline-edit-extension@2.5.3) (2019-06-05)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension
