@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import styles from '@patternfly/patternfly/components/AppLauncher/app-launcher.css';
+import styles from '@patternfly/react-styles/components/AppLauncher/app-launcher';
 import { css } from '@patternfly/react-styles';
 import { ApplicationLauncherPosition } from './applicationLauncherConstants';
 import { DropdownArrowContext } from '../Dropdown/dropdownConstants';
