@@ -3,6 +3,153 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.1.0...@patternfly/react-charts@4.1.1) (2019-06-05)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# 4.1.0 (2019-06-05)
+
+
+### Features
+
+* **background image:** Convert background image to typescript ([#2070](https://github.com/patternfly/patternfly-react/issues/2070)) ([d4ae6db](https://github.com/patternfly/patternfly-react/commit/d4ae6db))
+* **VictoryZoomContainer:** Give examples of Victory Zoom component to allow zo… ([#1879](https://github.com/patternfly/patternfly-react/issues/1879)) ([235c174](https://github.com/patternfly/patternfly-react/commit/235c174)), closes [#1715](https://github.com/patternfly/patternfly-react/issues/1715)
+
+
+
+
+
+## [4.0.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.0.1...@patternfly/react-charts@4.0.2) (2019-06-04)
+
+
+### Bug Fixes
+
+* **charts:** Chart & ChartStack to use ReactNode as children type ([#2155](https://github.com/patternfly/patternfly-react/issues/2155)) ([0b0a828](https://github.com/patternfly/patternfly-react/commit/0b0a828))
+
+
+
+
+
+## [4.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.0.0...@patternfly/react-charts@4.0.1) (2019-06-04)
+
+
+### Bug Fixes
+
+* **charts:** remove ChartThemeDefinition export from index.ts ([#2149](https://github.com/patternfly/patternfly-react/issues/2149)) ([9929698](https://github.com/patternfly/patternfly-react/commit/9929698))
+
+
+
+
+
+# [4.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.7...@patternfly/react-charts@4.0.0) (2019-06-04)
+
+
+### chore
+
+* **charts:** major bump react-charts ([#2143](https://github.com/patternfly/patternfly-react/issues/2143)) ([90b334e](https://github.com/patternfly/patternfly-react/commit/90b334e))
+
+
+### BREAKING CHANGES
+
+* **charts:** - Changed default Chart padding property to show axis
+- Refactored ChartTheme colors and utils for donut utilization theme
+- ChartLegend now defaults to be responsive
+
+
+
+
+
+## [3.6.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.6...@patternfly/react-charts@3.6.7) (2019-06-03)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+## [3.6.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.5...@patternfly/react-charts@3.6.6) (2019-06-03)
+
+
+### Performance Improvements
+
+* **charts:** breaking change bump ([#2141](https://github.com/patternfly/patternfly-react/issues/2141)) ([10296da](https://github.com/patternfly/patternfly-react/commit/10296da))
+
+
+
+
+
+## [3.6.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.4...@patternfly/react-charts@3.6.5) (2019-06-03)
+
+
+
+### Bug Fixes
+
+* **Charts:** Fix themes for bar chart default colors ([#2112](https://github.com/patternfly/patternfly-react/issues/2112)) ([7b290ab](https://github.com/patternfly/patternfly-react/commit/7b290ab)), closes [#2111](https://github.com/patternfly/patternfly-react/issues/2111)
+
+
+
+
+
+## [3.6.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.3...@patternfly/react-charts@3.6.4) (2019-05-30)
+
+
+### Bug Fixes
+
+* **charts:** Add defaults for component props ([#2103](https://github.com/patternfly/patternfly-react/issues/2103)) ([ca98322](https://github.com/patternfly/patternfly-react/commit/ca98322))
+
+
+
+
+
+## [3.6.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.2...@patternfly/react-charts@3.6.3) (2019-05-29)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [3.6.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.1...@patternfly/react-charts@3.6.2) (2019-05-29)
+
+
+### Bug Fixes
+
+* **docs:** use frontmatter for what props to show in docs ([#2072](https://github.com/patternfly/patternfly-react/issues/2072)) ([20e6b12](https://github.com/patternfly/patternfly-react/commit/20e6b12))
+
+
+
+
+
+## [3.6.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.6.0...@patternfly/react-charts@3.6.1) (2019-05-29)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [3.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.5.2...@patternfly/react-charts@3.6.0) (2019-05-28)
+
+
+### Features
+
+* **charts:** add typescript support to react-charts ([#2081](https://github.com/patternfly/patternfly-react/issues/2081)) ([42c2845](https://github.com/patternfly/patternfly-react/commit/42c2845))
+
+
+
+
+
+## [3.5.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.5.1...@patternfly/react-charts@3.5.2) (2019-05-24)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
 ## [3.5.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@3.5.0...@patternfly/react-charts@3.5.1) (2019-05-23)
 
 

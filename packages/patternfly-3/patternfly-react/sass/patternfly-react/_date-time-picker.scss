@@ -1,0 +1,70 @@
+.bootstrap-datetimepicker-widget.date-time-picker-pf.top {
+  margin-top: -10px;
+}
+
+.bootstrap-datetimepicker-widget.date-time-picker-pf.bottom {
+  margin-top: 10px;
+}
+
+.bootstrap-datetimepicker-widget.date-picker-pf,
+.bootstrap-datetimepicker-widget.date-time-picker-pf {
+  max-width: none;
+
+  .popover-content {
+    color: $color-pf-black-900;
+    padding: 0;
+  }
+
+  .clock-btn {
+    border: 0;
+    box-shadow: none;
+    color: #363636;
+    display: block;
+    padding-bottom: 4px;
+    padding-top: 4px;
+  }
+
+  table td {
+    .today-button {
+      padding: 0 16px 0 0;
+      border: 0;
+      background-color: transparent;
+
+      span {
+        height: 24px;
+        line-height: 24px;
+        color: $color-pf-blue-400;
+      }
+    }
+  }
+
+  &.bootstrap-timepicker-widget {
+    width: 16em;
+
+    .popover-content {
+      padding-left: 0;
+    }
+  }
+
+  &.date-picker-pf {
+    .popover-content {
+      padding: 10px;
+    }
+  }
+
+  .datepicker tr td span {
+    height: 53px;
+  }
+
+  .timepicker {
+    table td {
+      height: initial;
+      line-height: initial;
+    }
+  }
+
+  .timepicker-hours .table-condensed > tbody > tr > td,
+  .timepicker-minutes .table-condensed > tbody > tr > td {
+    padding: 7px 0;
+  }
+}

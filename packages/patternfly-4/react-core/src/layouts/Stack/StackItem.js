@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/layouts/Stack/stack.css';
+import styles from '@patternfly/react-styles/css/layouts/Stack/stack';
 import { css } from '@patternfly/react-styles';
 
 const propTypes = {
@@ -11,7 +11,7 @@ const propTypes = {
   /** content rendered inside the Stack Layout Item */
   className: PropTypes.string,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

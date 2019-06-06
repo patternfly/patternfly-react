@@ -56,9 +56,11 @@ exports[`KebabToggle basic 1`] = `
         isHovered={false}
         isOpen={true}
         isPlain={false}
+        isSplitButton={false}
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
+        type={null}
       >
         <button
           aria-expanded={true}
@@ -105,6 +107,7 @@ exports[`KebabToggle basic 1`] = `
       component="div"
       isGrouped={false}
       isOpen={true}
+      openedOnEnter={false}
       position="left"
     >
       <ul
@@ -147,9 +150,11 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Link
       </DropdownItem>,
@@ -164,9 +169,11 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Action
       </DropdownItem>,
@@ -181,9 +188,11 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Link
       </DropdownItem>,
@@ -198,9 +207,11 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Action
       </DropdownItem>,
@@ -222,9 +233,11 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Link
       </DropdownItem>,
@@ -239,9 +252,11 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Action
       </DropdownItem>,
@@ -298,9 +313,11 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        isSplitButton={false}
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
+        type={null}
       >
         <button
           aria-expanded={false}
@@ -362,9 +379,11 @@ exports[`KebabToggle dropup 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Link
       </DropdownItem>,
@@ -379,9 +398,11 @@ exports[`KebabToggle dropup 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Action
       </DropdownItem>,
@@ -396,9 +417,11 @@ exports[`KebabToggle dropup 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Link
       </DropdownItem>,
@@ -413,9 +436,11 @@ exports[`KebabToggle dropup 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Action
       </DropdownItem>,
@@ -437,9 +462,11 @@ exports[`KebabToggle dropup 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Link
       </DropdownItem>,
@@ -454,9 +481,11 @@ exports[`KebabToggle dropup 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Action
       </DropdownItem>,
@@ -513,9 +542,11 @@ exports[`KebabToggle dropup 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        isSplitButton={false}
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
+        type={null}
       >
         <button
           aria-expanded={false}
@@ -577,9 +608,11 @@ exports[`KebabToggle expanded 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Link
       </DropdownItem>,
@@ -594,9 +627,11 @@ exports[`KebabToggle expanded 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Action
       </DropdownItem>,
@@ -611,9 +646,11 @@ exports[`KebabToggle expanded 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Link
       </DropdownItem>,
@@ -628,9 +665,11 @@ exports[`KebabToggle expanded 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Action
       </DropdownItem>,
@@ -652,9 +691,11 @@ exports[`KebabToggle expanded 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Link
       </DropdownItem>,
@@ -669,9 +710,11 @@ exports[`KebabToggle expanded 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Action
       </DropdownItem>,
@@ -728,9 +771,11 @@ exports[`KebabToggle expanded 1`] = `
         isHovered={false}
         isOpen={true}
         isPlain={false}
+        isSplitButton={false}
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
+        type={null}
       >
         <button
           aria-expanded={true}
@@ -777,6 +822,7 @@ exports[`KebabToggle expanded 1`] = `
       component="ul"
       isGrouped={false}
       isOpen={true}
+      openedOnEnter={false}
       position="left"
     >
       <ul
@@ -796,10 +842,12 @@ exports[`KebabToggle expanded 1`] = `
           }
           href="#"
           index={0}
+          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           key=".$link"
           onClick={[Function]}
+          role={null}
         >
           <li
             role="none"
@@ -810,6 +858,7 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role={null}
             >
               Link
             </a>
@@ -826,10 +875,12 @@ exports[`KebabToggle expanded 1`] = `
           }
           href="#"
           index={1}
+          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           key=".$action"
           onClick={[Function]}
+          role={null}
         >
           <li
             role="none"
@@ -840,6 +891,7 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role={null}
               type="button"
             >
               Action
@@ -857,10 +909,12 @@ exports[`KebabToggle expanded 1`] = `
           }
           href="#"
           index={2}
+          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           key=".$disabled link"
           onClick={[Function]}
+          role={null}
         >
           <li
             role="none"
@@ -871,6 +925,7 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role={null}
               tabIndex={-1}
             >
               Disabled Link
@@ -888,10 +943,12 @@ exports[`KebabToggle expanded 1`] = `
           }
           href="#"
           index={3}
+          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           key=".$disabled action"
           onClick={[Function]}
+          role={null}
         >
           <li
             role="none"
@@ -902,6 +959,7 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role={null}
               type="button"
             >
               Disabled Action
@@ -928,6 +986,7 @@ exports[`KebabToggle expanded 1`] = `
             }
             href="#"
             index={4}
+            isAppLauncher={false}
             isDisabled={false}
             isHovered={false}
             onClick={[Function]}
@@ -957,10 +1016,12 @@ exports[`KebabToggle expanded 1`] = `
           }
           href="#"
           index={5}
+          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           key=".$separated link"
           onClick={[Function]}
+          role={null}
         >
           <li
             role="none"
@@ -971,6 +1032,7 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role={null}
             >
               Separated Link
             </a>
@@ -987,10 +1049,12 @@ exports[`KebabToggle expanded 1`] = `
           }
           href="#"
           index={6}
+          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           key=".$separated action"
           onClick={[Function]}
+          role={null}
         >
           <li
             role="none"
@@ -1001,6 +1065,7 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role={null}
               type="button"
             >
               Separated Action
@@ -1030,9 +1095,11 @@ exports[`KebabToggle plain 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Link
       </DropdownItem>,
@@ -1047,9 +1114,11 @@ exports[`KebabToggle plain 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Action
       </DropdownItem>,
@@ -1064,9 +1133,11 @@ exports[`KebabToggle plain 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Link
       </DropdownItem>,
@@ -1081,9 +1152,11 @@ exports[`KebabToggle plain 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Action
       </DropdownItem>,
@@ -1105,9 +1178,11 @@ exports[`KebabToggle plain 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Link
       </DropdownItem>,
@@ -1122,9 +1197,11 @@ exports[`KebabToggle plain 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Action
       </DropdownItem>,
@@ -1181,9 +1258,11 @@ exports[`KebabToggle plain 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={true}
+        isSplitButton={false}
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
+        type={null}
       >
         <button
           aria-expanded={false}
@@ -1245,9 +1324,11 @@ exports[`KebabToggle regular 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Link
       </DropdownItem>,
@@ -1262,9 +1343,11 @@ exports[`KebabToggle regular 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Action
       </DropdownItem>,
@@ -1279,9 +1362,11 @@ exports[`KebabToggle regular 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Link
       </DropdownItem>,
@@ -1296,9 +1381,11 @@ exports[`KebabToggle regular 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Action
       </DropdownItem>,
@@ -1320,9 +1407,11 @@ exports[`KebabToggle regular 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Link
       </DropdownItem>,
@@ -1337,9 +1426,11 @@ exports[`KebabToggle regular 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Action
       </DropdownItem>,
@@ -1396,9 +1487,11 @@ exports[`KebabToggle regular 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        isSplitButton={false}
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
+        type={null}
       >
         <button
           aria-expanded={false}
@@ -1460,9 +1553,11 @@ exports[`KebabToggle right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Link
       </DropdownItem>,
@@ -1477,9 +1572,11 @@ exports[`KebabToggle right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Action
       </DropdownItem>,
@@ -1494,9 +1591,11 @@ exports[`KebabToggle right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Link
       </DropdownItem>,
@@ -1511,9 +1610,11 @@ exports[`KebabToggle right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Action
       </DropdownItem>,
@@ -1535,9 +1636,11 @@ exports[`KebabToggle right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Link
       </DropdownItem>,
@@ -1552,9 +1655,11 @@ exports[`KebabToggle right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Action
       </DropdownItem>,
@@ -1611,9 +1716,11 @@ exports[`KebabToggle right aligned 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        isSplitButton={false}
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
+        type={null}
       >
         <button
           aria-expanded={false}
@@ -1713,9 +1820,11 @@ exports[`dropdown basic 1`] = `
         isHovered={false}
         isOpen={true}
         isPlain={false}
+        isSplitButton={false}
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
+        type={null}
       >
         <button
           aria-expanded={true}
@@ -1768,6 +1877,7 @@ exports[`dropdown basic 1`] = `
       component="div"
       isGrouped={false}
       isOpen={true}
+      openedOnEnter={false}
       position="left"
     >
       <ul
@@ -1810,9 +1920,11 @@ exports[`dropdown dropup + right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Link
       </DropdownItem>,
@@ -1827,9 +1939,11 @@ exports[`dropdown dropup + right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Action
       </DropdownItem>,
@@ -1844,9 +1958,11 @@ exports[`dropdown dropup + right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Link
       </DropdownItem>,
@@ -1861,9 +1977,11 @@ exports[`dropdown dropup + right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Action
       </DropdownItem>,
@@ -1885,9 +2003,11 @@ exports[`dropdown dropup + right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Link
       </DropdownItem>,
@@ -1902,9 +2022,11 @@ exports[`dropdown dropup + right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Action
       </DropdownItem>,
@@ -1960,9 +2082,11 @@ exports[`dropdown dropup + right aligned 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        isSplitButton={false}
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
+        type={null}
       >
         <button
           aria-expanded={false}
@@ -2030,9 +2154,11 @@ exports[`dropdown dropup 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Link
       </DropdownItem>,
@@ -2047,9 +2173,11 @@ exports[`dropdown dropup 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Action
       </DropdownItem>,
@@ -2064,9 +2192,11 @@ exports[`dropdown dropup 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Link
       </DropdownItem>,
@@ -2081,9 +2211,11 @@ exports[`dropdown dropup 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Action
       </DropdownItem>,
@@ -2105,9 +2237,11 @@ exports[`dropdown dropup 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Link
       </DropdownItem>,
@@ -2122,9 +2256,11 @@ exports[`dropdown dropup 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Action
       </DropdownItem>,
@@ -2180,9 +2316,11 @@ exports[`dropdown dropup 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        isSplitButton={false}
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
+        type={null}
       >
         <button
           aria-expanded={false}
@@ -2250,9 +2388,11 @@ exports[`dropdown expanded 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Link
       </DropdownItem>,
@@ -2267,9 +2407,11 @@ exports[`dropdown expanded 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Action
       </DropdownItem>,
@@ -2284,9 +2426,11 @@ exports[`dropdown expanded 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Link
       </DropdownItem>,
@@ -2301,9 +2445,11 @@ exports[`dropdown expanded 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Action
       </DropdownItem>,
@@ -2325,9 +2471,11 @@ exports[`dropdown expanded 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Link
       </DropdownItem>,
@@ -2342,9 +2490,11 @@ exports[`dropdown expanded 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Action
       </DropdownItem>,
@@ -2400,9 +2550,11 @@ exports[`dropdown expanded 1`] = `
         isHovered={false}
         isOpen={true}
         isPlain={false}
+        isSplitButton={false}
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
+        type={null}
       >
         <button
           aria-expanded={true}
@@ -2455,6 +2607,7 @@ exports[`dropdown expanded 1`] = `
       component="ul"
       isGrouped={false}
       isOpen={true}
+      openedOnEnter={false}
       position="left"
     >
       <ul
@@ -2474,10 +2627,12 @@ exports[`dropdown expanded 1`] = `
           }
           href="#"
           index={0}
+          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           key=".$link"
           onClick={[Function]}
+          role={null}
         >
           <li
             role="none"
@@ -2488,6 +2643,7 @@ exports[`dropdown expanded 1`] = `
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role={null}
             >
               Link
             </a>
@@ -2504,10 +2660,12 @@ exports[`dropdown expanded 1`] = `
           }
           href="#"
           index={1}
+          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           key=".$action"
           onClick={[Function]}
+          role={null}
         >
           <li
             role="none"
@@ -2518,6 +2676,7 @@ exports[`dropdown expanded 1`] = `
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role={null}
               type="button"
             >
               Action
@@ -2535,10 +2694,12 @@ exports[`dropdown expanded 1`] = `
           }
           href="#"
           index={2}
+          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           key=".$disabled link"
           onClick={[Function]}
+          role={null}
         >
           <li
             role="none"
@@ -2549,6 +2710,7 @@ exports[`dropdown expanded 1`] = `
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role={null}
               tabIndex={-1}
             >
               Disabled Link
@@ -2566,10 +2728,12 @@ exports[`dropdown expanded 1`] = `
           }
           href="#"
           index={3}
+          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           key=".$disabled action"
           onClick={[Function]}
+          role={null}
         >
           <li
             role="none"
@@ -2580,6 +2744,7 @@ exports[`dropdown expanded 1`] = `
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role={null}
               type="button"
             >
               Disabled Action
@@ -2606,6 +2771,7 @@ exports[`dropdown expanded 1`] = `
             }
             href="#"
             index={4}
+            isAppLauncher={false}
             isDisabled={false}
             isHovered={false}
             onClick={[Function]}
@@ -2635,10 +2801,12 @@ exports[`dropdown expanded 1`] = `
           }
           href="#"
           index={5}
+          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           key=".$separated link"
           onClick={[Function]}
+          role={null}
         >
           <li
             role="none"
@@ -2649,6 +2817,7 @@ exports[`dropdown expanded 1`] = `
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role={null}
             >
               Separated Link
             </a>
@@ -2665,10 +2834,12 @@ exports[`dropdown expanded 1`] = `
           }
           href="#"
           index={6}
+          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           key=".$separated action"
           onClick={[Function]}
+          role={null}
         >
           <li
             role="none"
@@ -2679,6 +2850,7 @@ exports[`dropdown expanded 1`] = `
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
+              role={null}
               type="button"
             >
               Separated Action
@@ -2708,9 +2880,11 @@ exports[`dropdown regular 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Link
       </DropdownItem>,
@@ -2725,9 +2899,11 @@ exports[`dropdown regular 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Action
       </DropdownItem>,
@@ -2742,9 +2918,11 @@ exports[`dropdown regular 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Link
       </DropdownItem>,
@@ -2759,9 +2937,11 @@ exports[`dropdown regular 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Action
       </DropdownItem>,
@@ -2783,9 +2963,11 @@ exports[`dropdown regular 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Link
       </DropdownItem>,
@@ -2800,9 +2982,11 @@ exports[`dropdown regular 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Action
       </DropdownItem>,
@@ -2858,9 +3042,11 @@ exports[`dropdown regular 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        isSplitButton={false}
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
+        type={null}
       >
         <button
           aria-expanded={false}
@@ -2928,9 +3114,11 @@ exports[`dropdown right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Link
       </DropdownItem>,
@@ -2945,9 +3133,11 @@ exports[`dropdown right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Action
       </DropdownItem>,
@@ -2962,9 +3152,11 @@ exports[`dropdown right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Link
       </DropdownItem>,
@@ -2979,9 +3171,11 @@ exports[`dropdown right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Disabled Action
       </DropdownItem>,
@@ -3003,9 +3197,11 @@ exports[`dropdown right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Link
       </DropdownItem>,
@@ -3020,9 +3216,11 @@ exports[`dropdown right aligned 1`] = `
         }
         href="#"
         index={-1}
+        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        role={null}
       >
         Separated Action
       </DropdownItem>,
@@ -3078,9 +3276,11 @@ exports[`dropdown right aligned 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        isSplitButton={false}
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
+        type={null}
       >
         <button
           aria-expanded={false}

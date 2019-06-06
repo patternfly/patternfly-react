@@ -29,6 +29,11 @@ export const Demos: DemoInterface[] = [
     id: 'backdrop-demo', 
     name: 'Backdrop Demo', 
     componentType: Examples.BackdropDemo
+  }, 
+  {
+    id: 'backgroundimage-demo',
+    name: 'Background Image Demo', 
+    componentType: Examples.BackgroundImageDemo
   },
   {
     id: 'badge-demo', 
@@ -101,6 +106,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.NavDemo
   },
   {
+    id: 'options-menu-demo',
+    name: 'Options Menu Demo',
+    componentType: Examples.OptionsMenuDemo
+  },
+  {
     id: 'popover-demo',
     name: 'Popover Demo',
     componentType: Examples.PopoverDemo
@@ -119,6 +129,11 @@ export const Demos: DemoInterface[] = [
     id: 'text-demo',
     name: 'Text Demo',
     componentType: Examples.TextDemo
+  },
+  {
+    id: 'text-input-demo',
+    name: 'Text Input Demo',
+    componentType: Examples.TextInputDemo
   },
   {
     id: 'title-demo',

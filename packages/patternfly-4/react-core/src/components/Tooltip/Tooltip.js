@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Tippy from '@tippy.js/react';
-import styles from '@patternfly/patternfly/components/Tooltip/tooltip.css';
+import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import { css, getModifier } from '@patternfly/react-styles';
 import TooltipArrow from './TooltipArrow';
 import TooltipContent from './TooltipContent';
@@ -40,7 +40,9 @@ const propTypes = {
   /** z-index of the tooltip */
   zIndex: PropTypes.number,
   /** Maximum width of the tooltip (default 12.5rem) */
-  maxWidth: PropTypes.string
+  maxWidth: PropTypes.string,
+  /** If true, displays as an application launcher */
+  isAppLauncher: PropTypes.bool
 };
 
 const defaultProps = {
@@ -52,7 +54,8 @@ const defaultProps = {
   exitDelay: 500,
   appendTo: () => document.body,
   zIndex: 9999,
-  maxWidth: tooltipMaxWidth && tooltipMaxWidth.value
+  maxWidth: tooltipMaxWidth && tooltipMaxWidth.value,
+  isAppLauncher: false
 };
 
 class Tooltip extends React.Component {

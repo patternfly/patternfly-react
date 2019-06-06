@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/layouts/Grid/grid.css';
+import styles from '@patternfly/react-styles/css/layouts/Grid/grid';
 import { css } from '@patternfly/react-styles';
 import { DeviceSizes } from '../../styles/sizes';
 import {
@@ -48,7 +48,7 @@ const propTypes = {
   /** the number of columns the grid item is offset on xLarge device. Value should be a number 1-12   */
   xlOffset: PropTypes.oneOf(gridSpans),
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

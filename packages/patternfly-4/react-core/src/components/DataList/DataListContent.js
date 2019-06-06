@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/DataList/data-list.css';
+import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 
 const DataListContent = ({
   className,
@@ -31,6 +31,8 @@ DataListContent.propTypes = {
   className: PropTypes.string,
   /** Identify the DataListContent item */
   id: PropTypes.string,
+  /** Id for the row */
+  rowid: PropTypes.string,
   /** Flag to show if the expanded content of the DataList item is visible */
   isHidden: PropTypes.bool,
   /** Flag to remove padding from the expandable content */
@@ -38,13 +40,14 @@ DataListContent.propTypes = {
   /** Adds accessible text to the DataList toggle */
   'aria-label': PropTypes.string.isRequired,
   /** Additional props are spread to the container <section> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 DataListContent.defaultProps = {
   children: null,
   className: '',
   id: '',
+  rowid: '',
   isHidden: false,
   noPadding: false
 };

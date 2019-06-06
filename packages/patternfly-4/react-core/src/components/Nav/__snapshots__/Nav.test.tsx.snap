@@ -11,7 +11,12 @@ exports[`Default Nav List - Trigger item active update 1`] = `
     aria-label="Global"
     className="pf-c-nav"
   >
-    <Component>
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      className=""
+      variant="default"
+    >
       <ul
         className="pf-c-nav__list"
       >
@@ -84,7 +89,7 @@ exports[`Default Nav List - Trigger item active update 1`] = `
           </li>
         </Component>
       </ul>
-    </Component>
+    </NavList>
   </nav>
 </Nav>
 `;
@@ -92,28 +97,34 @@ exports[`Default Nav List - Trigger item active update 1`] = `
 exports[`Default Nav List 1`] = `
 <Nav
   aria-label=""
-  className=""
+  className="test=nav-class"
   onSelect={[Function]}
   onToggle={[Function]}
 >
   <nav
     aria-label="Global"
-    className="pf-c-nav"
+    className="pf-c-nav test=nav-class"
   >
-    <Component>
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      className="test-nav-list-class"
+      variant="default"
+    >
       <ul
-        className="pf-c-nav__list"
+        className="pf-c-nav__list test-nav-list-class"
       >
         <Component
+          className="test-nav-item-class"
           key="#link1"
           to="#link1"
         >
           <li
-            className="pf-c-nav__item"
+            className="pf-c-nav__item test-nav-item-class"
           >
             <a
               aria-current={null}
-              className="pf-c-nav__link"
+              className="pf-c-nav__link test-nav-item-class"
               href="#link1"
               onClick={[Function]}
             >
@@ -122,15 +133,16 @@ exports[`Default Nav List 1`] = `
           </li>
         </Component>
         <Component
+          className="test-nav-item-class"
           key="#link2"
           to="#link2"
         >
           <li
-            className="pf-c-nav__item"
+            className="pf-c-nav__item test-nav-item-class"
           >
             <a
               aria-current={null}
-              className="pf-c-nav__link"
+              className="pf-c-nav__link test-nav-item-class"
               href="#link2"
               onClick={[Function]}
             >
@@ -139,15 +151,16 @@ exports[`Default Nav List 1`] = `
           </li>
         </Component>
         <Component
+          className="test-nav-item-class"
           key="#link3"
           to="#link3"
         >
           <li
-            className="pf-c-nav__item"
+            className="pf-c-nav__item test-nav-item-class"
           >
             <a
               aria-current={null}
-              className="pf-c-nav__link"
+              className="pf-c-nav__link test-nav-item-class"
               href="#link3"
               onClick={[Function]}
             >
@@ -156,15 +169,16 @@ exports[`Default Nav List 1`] = `
           </li>
         </Component>
         <Component
+          className="test-nav-item-class"
           key="#link4"
           to="#link4"
         >
           <li
-            className="pf-c-nav__item"
+            className="pf-c-nav__item test-nav-item-class"
           >
             <a
               aria-current={null}
-              className="pf-c-nav__link"
+              className="pf-c-nav__link test-nav-item-class"
               href="#link4"
               onClick={[Function]}
             >
@@ -173,7 +187,7 @@ exports[`Default Nav List 1`] = `
           </li>
         </Component>
       </ul>
-    </Component>
+    </NavList>
   </nav>
 </Nav>
 `;
@@ -189,7 +203,12 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
     aria-label="Global"
     className="pf-c-nav"
   >
-    <Component>
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      className=""
+      variant="default"
+    >
       <ul
         className="pf-c-nav__list"
       >
@@ -328,7 +347,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
           </li>
         </NavExpandable>
       </ul>
-    </Component>
+    </NavList>
   </nav>
 </Nav>
 `;
@@ -344,7 +363,12 @@ exports[`Expandable Nav List 1`] = `
     aria-label="Global"
     className="pf-c-nav"
   >
-    <Component>
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      className=""
+      variant="default"
+    >
       <ul
         className="pf-c-nav__list"
       >
@@ -483,7 +507,7 @@ exports[`Expandable Nav List 1`] = `
           </li>
         </NavExpandable>
       </ul>
-    </Component>
+    </NavList>
   </nav>
 </Nav>
 `;
@@ -499,7 +523,12 @@ exports[`Expandable Nav List with aria label 1`] = `
     aria-label="Test"
     className="pf-c-nav"
   >
-    <Component>
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      className=""
+      variant="default"
+    >
       <ul
         className="pf-c-nav__list"
       >
@@ -644,7 +673,7 @@ exports[`Expandable Nav List with aria label 1`] = `
           </li>
         </NavExpandable>
       </ul>
-    </Component>
+    </NavList>
   </nav>
 </Nav>
 `;
@@ -660,9 +689,43 @@ exports[`Horizontal Nav List 1`] = `
     aria-label="Global"
     className="pf-c-nav"
   >
-    <Component
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      className=""
       variant="horizontal"
     >
+      <button
+        aria-label="Scroll left"
+        className="pf-c-nav__scroll-button"
+        onClick={[Function]}
+      >
+        <AngleLeftIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+              transform=""
+            />
+          </svg>
+        </AngleLeftIcon>
+      </button>
       <ul
         className="pf-c-nav__horizontal-list"
       >
@@ -735,7 +798,38 @@ exports[`Horizontal Nav List 1`] = `
           </li>
         </Component>
       </ul>
-    </Component>
+      <button
+        aria-label="Scroll right"
+        className="pf-c-nav__scroll-button"
+        onClick={[Function]}
+      >
+        <AngleRightIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+              transform=""
+            />
+          </svg>
+        </AngleRightIcon>
+      </button>
+    </NavList>
   </nav>
 </Nav>
 `;
@@ -768,7 +862,12 @@ exports[`Nav Grouped List 1`] = `
         <ul
           className="pf-c-nav__simple-list"
         >
-          <Component>
+          <NavList
+            ariaLeftScroll="Scroll left"
+            ariaRightScroll="Scroll right"
+            className=""
+            variant="default"
+          >
             <ul
               className="pf-c-nav__list"
             >
@@ -841,7 +940,7 @@ exports[`Nav Grouped List 1`] = `
                 </li>
               </Component>
             </ul>
-          </Component>
+          </NavList>
         </ul>
       </section>
     </Component>
@@ -862,7 +961,12 @@ exports[`Nav Grouped List 1`] = `
         <ul
           className="pf-c-nav__simple-list"
         >
-          <Component>
+          <NavList
+            ariaLeftScroll="Scroll left"
+            ariaRightScroll="Scroll right"
+            className=""
+            variant="default"
+          >
             <ul
               className="pf-c-nav__list"
             >
@@ -935,7 +1039,7 @@ exports[`Nav Grouped List 1`] = `
                 </li>
               </Component>
             </ul>
-          </Component>
+          </NavList>
         </ul>
       </section>
     </Component>
@@ -954,31 +1058,95 @@ exports[`Nav List with custom item nodes 1`] = `
     aria-label="Local"
     className="pf-c-nav"
   >
-    <Component
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      className=""
       variant="tertiary"
     >
+      <button
+        aria-label="Scroll left"
+        className="pf-c-nav__scroll-button"
+        onClick={[Function]}
+      >
+        <AngleLeftIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+              transform=""
+            />
+          </svg>
+        </AngleLeftIcon>
+      </button>
       <ul
         className="pf-c-nav__tertiary-list"
       >
         <Component
+          className="test-nav-item-class"
           to="/components/nav#link1"
         >
           <li
-            className="pf-c-nav__item"
+            className="pf-c-nav__item test-nav-item-class"
           >
-            <CustomNode
+            <div
               aria-current={null}
-              className="pf-c-nav__link"
+              className="pf-c-nav__link my-custom-node"
               onClick={[Function]}
             >
-              <div>
-                My custom node
-              </div>
-            </CustomNode>
+              My custom node
+            </div>
           </li>
         </Component>
       </ul>
-    </Component>
+      <button
+        aria-label="Scroll right"
+        className="pf-c-nav__scroll-button"
+        onClick={[Function]}
+      >
+        <AngleRightIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+              transform=""
+            />
+          </svg>
+        </AngleRightIcon>
+      </button>
+    </NavList>
   </nav>
 </Nav>
 `;
@@ -994,7 +1162,10 @@ exports[`Simple Nav List 1`] = `
     aria-label="Global"
     className="pf-c-nav"
   >
-    <Component
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      className=""
       variant="simple"
     >
       <ul
@@ -1069,7 +1240,7 @@ exports[`Simple Nav List 1`] = `
           </li>
         </Component>
       </ul>
-    </Component>
+    </NavList>
   </nav>
 </Nav>
 `;
@@ -1085,9 +1256,43 @@ exports[`Tertiary Nav List 1`] = `
     aria-label="Local"
     className="pf-c-nav"
   >
-    <Component
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      className=""
       variant="tertiary"
     >
+      <button
+        aria-label="Scroll left"
+        className="pf-c-nav__scroll-button"
+        onClick={[Function]}
+      >
+        <AngleLeftIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+              transform=""
+            />
+          </svg>
+        </AngleLeftIcon>
+      </button>
       <ul
         className="pf-c-nav__tertiary-list"
       >
@@ -1160,7 +1365,38 @@ exports[`Tertiary Nav List 1`] = `
           </li>
         </Component>
       </ul>
-    </Component>
+      <button
+        aria-label="Scroll right"
+        className="pf-c-nav__scroll-button"
+        onClick={[Function]}
+      >
+        <AngleRightIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 256 512"
+            width="1em"
+          >
+            <path
+              d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+              transform=""
+            />
+          </svg>
+        </AngleRightIcon>
+      </button>
+    </NavList>
   </nav>
 </Nav>
 `;

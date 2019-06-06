@@ -2,6 +2,7 @@
 title: 'Stack'
 cssPrefix: 'pf-l-stack'
 section: 'layouts'
+propComponents: ['Stack', 'StackItem']
 ---
 
 import { Stack, StackItem } from '@patternfly/react-core';

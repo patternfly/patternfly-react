@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/AboutModalBox/about-modal-box.css';
+import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-modal-box';
 import { Button, ButtonVariant } from '../Button';
 import { TimesIcon } from '@patternfly/react-icons';
 

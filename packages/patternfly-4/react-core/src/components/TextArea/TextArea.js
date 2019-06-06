@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly/components/FormControl/form-control.css';
+import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 
@@ -22,7 +22,7 @@ const propTypes = {
     return null;
   },
   /** Additional props are spread to the container <textarea> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

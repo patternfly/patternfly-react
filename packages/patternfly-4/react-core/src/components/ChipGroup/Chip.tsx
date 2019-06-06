@@ -4,7 +4,7 @@ import { ChipButton } from './ChipButton';
 import { OneOf } from '../../helpers/typeUtils';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 import { TimesCircleIcon } from '@patternfly/react-icons';
-import styles from '@patternfly/patternfly/components/Chip/chip.css';
+import styles from '@patternfly/react-styles/css/components/Chip/chip';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
 
 export interface ChipProps extends React.HTMLProps<HTMLDivElement> {

@@ -1,9 +1,11 @@
 ---
 title: 'Donut'
 section: 'charts'
+typescript: true
+propComponents: ['ChartDonut', 'ChartLegend']
 ---
 
-import { ChartDonut, ChartLabel, ChartLegend, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { ChartDonut, ChartLegend, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-donut.scss';
 
 ## Blue donut chart
@@ -26,6 +28,7 @@ import { ChartDonut, ChartLegend } from '@patternfly/react-charts';
       data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
       height={230}
       orientation="vertical"
+      responsive={false}
       y={70}
     />
   </div>
@@ -52,6 +55,7 @@ import { ChartDonut, ChartLegend, ChartThemeColor, ChartThemeVariant } from '@pa
     data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
     height={35}
     orientation={'horizontal'}
+    responsive={false}
     themeColor={ChartThemeColor.multi}
     themeVariant={ChartThemeVariant.light}
     x={8}

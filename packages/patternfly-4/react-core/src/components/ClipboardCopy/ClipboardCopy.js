@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly/components/ClipboardCopy/clipboard-copy.css';
+import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { TextInput } from '../TextInput';
@@ -162,10 +162,11 @@ ClipboardCopy.propTypes = {
   /** The text which is copied. */
   children: PropTypes.node.isRequired,
   /** Additional props are spread to the container <div>. */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 ClipboardCopy.defaultProps = {
+  className: '',
   hoverTip: 'Copy to clipboard',
   clickTip: 'Successfully copied to clipboard!',
   isReadOnly: false,

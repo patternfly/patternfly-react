@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
+import styles from '@patternfly/react-styles/css/components/Wizard/wizard';
 
 export interface WizardNavItemProps {
   /** Can nest a WizardNav component for substeps */

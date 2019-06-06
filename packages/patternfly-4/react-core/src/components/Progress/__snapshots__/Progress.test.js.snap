@@ -4,6 +4,7 @@ exports[`Progress measure location inside 1`] = `
 <Progress
   className=""
   id="inside-progress"
+  label={null}
   max={100}
   measureLocation="inside"
   min={0}
@@ -28,6 +29,7 @@ exports[`Progress measure location inside 1`] = `
           "aria-valuenow": 33,
         }
       }
+      label={null}
       measureLocation="inside"
       parentId="inside-progress"
       title=""
@@ -85,6 +87,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
 <Progress
   className=""
   id="large-progress"
+  label={null}
   max={100}
   measureLocation="inside"
   min={0}
@@ -109,6 +112,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
           "aria-valuenow": 33,
         }
       }
+      label={null}
       measureLocation="inside"
       parentId="large-progress"
       title=""
@@ -166,6 +170,7 @@ exports[`Progress measure location none 1`] = `
 <Progress
   className=""
   id="none-progress"
+  label={null}
   max={100}
   measureLocation="none"
   min={0}
@@ -190,6 +195,7 @@ exports[`Progress measure location none 1`] = `
           "aria-valuenow": 33,
         }
       }
+      label={null}
       measureLocation="none"
       parentId="none-progress"
       title=""
@@ -245,6 +251,7 @@ exports[`Progress measure location outside 1`] = `
 <Progress
   className=""
   id="outside-progress"
+  label={null}
   max={100}
   measureLocation="outside"
   min={0}
@@ -269,6 +276,7 @@ exports[`Progress measure location outside 1`] = `
           "aria-valuenow": 33,
         }
       }
+      label={null}
       measureLocation="outside"
       parentId="outside-progress"
       title=""
@@ -330,6 +338,7 @@ exports[`Progress measure location top 1`] = `
 <Progress
   className=""
   id="top-progress"
+  label={null}
   max={100}
   measureLocation="top"
   min={0}
@@ -354,6 +363,7 @@ exports[`Progress measure location top 1`] = `
           "aria-valuenow": 33,
         }
       }
+      label={null}
       measureLocation="top"
       parentId="top-progress"
       title=""
@@ -415,6 +425,7 @@ exports[`Progress size lg 1`] = `
 <Progress
   className=""
   id="lg-progress"
+  label={null}
   max={100}
   measureLocation="top"
   min={0}
@@ -439,6 +450,7 @@ exports[`Progress size lg 1`] = `
           "aria-valuenow": 33,
         }
       }
+      label={null}
       measureLocation="top"
       parentId="lg-progress"
       title=""
@@ -500,6 +512,7 @@ exports[`Progress size md 1`] = `
 <Progress
   className=""
   id="md-progress"
+  label={null}
   max={100}
   measureLocation="top"
   min={0}
@@ -524,6 +537,7 @@ exports[`Progress size md 1`] = `
           "aria-valuenow": 33,
         }
       }
+      label={null}
       measureLocation="top"
       parentId="md-progress"
       title=""
@@ -585,6 +599,7 @@ exports[`Progress size sm 1`] = `
 <Progress
   className=""
   id="sm-progress"
+  label={null}
   max={100}
   measureLocation="top"
   min={0}
@@ -609,6 +624,7 @@ exports[`Progress size sm 1`] = `
           "aria-valuenow": 33,
         }
       }
+      label={null}
       measureLocation="top"
       parentId="sm-progress"
       title=""
@@ -670,6 +686,7 @@ exports[`Progress variant danger 1`] = `
 <Progress
   className=""
   id="danger-progress"
+  label={null}
   max={100}
   measureLocation="top"
   min={0}
@@ -694,6 +711,7 @@ exports[`Progress variant danger 1`] = `
           "aria-valuenow": 33,
         }
       }
+      label={null}
       measureLocation="top"
       parentId="danger-progress"
       title=""
@@ -784,6 +802,7 @@ exports[`Progress variant info 1`] = `
 <Progress
   className=""
   id="info-progress"
+  label={null}
   max={100}
   measureLocation="top"
   min={0}
@@ -808,6 +827,7 @@ exports[`Progress variant info 1`] = `
           "aria-valuenow": 33,
         }
       }
+      label={null}
       measureLocation="top"
       parentId="info-progress"
       title=""
@@ -869,6 +889,7 @@ exports[`Progress variant success 1`] = `
 <Progress
   className=""
   id="success-progress"
+  label={null}
   max={100}
   measureLocation="top"
   min={0}
@@ -893,6 +914,7 @@ exports[`Progress variant success 1`] = `
           "aria-valuenow": 33,
         }
       }
+      label={null}
       measureLocation="top"
       parentId="success-progress"
       title=""
@@ -983,6 +1005,7 @@ exports[`Progress with aria-valuetext 1`] = `
 <Progress
   className=""
   id="progress-aria-valuetext"
+  label={null}
   max={100}
   measureLocation="top"
   min={0}
@@ -1008,6 +1031,7 @@ exports[`Progress with aria-valuetext 1`] = `
           "aria-valuetext": "Descriptive text here",
         }
       }
+      label={null}
       measureLocation="top"
       parentId="progress-aria-valuetext"
       title=""
@@ -1071,6 +1095,7 @@ exports[`Simple progress 1`] = `
 <Progress
   className=""
   id="progress-simple-example"
+  label={null}
   max={100}
   measureLocation="top"
   min={0}
@@ -1095,6 +1120,7 @@ exports[`Simple progress 1`] = `
           "aria-valuenow": 33,
         }
       }
+      label={null}
       measureLocation="top"
       parentId="progress-simple-example"
       title=""
@@ -1243,6 +1269,7 @@ exports[`no value specified 1`] = `
 <Progress
   className=""
   id="no-value"
+  label={null}
   max={100}
   measureLocation="top"
   min={0}
@@ -1267,6 +1294,7 @@ exports[`no value specified 1`] = `
           "aria-valuenow": 0,
         }
       }
+      label={null}
       measureLocation="top"
       parentId="no-value"
       title=""
@@ -1328,6 +1356,7 @@ exports[`value higher than maxValue 1`] = `
 <Progress
   className=""
   id="higher-max-value"
+  label={null}
   max={60}
   measureLocation="top"
   min={0}
@@ -1352,6 +1381,7 @@ exports[`value higher than maxValue 1`] = `
           "aria-valuenow": 77,
         }
       }
+      label={null}
       measureLocation="top"
       parentId="higher-max-value"
       title=""
@@ -1413,6 +1443,7 @@ exports[`value lower than minValue 1`] = `
 <Progress
   className=""
   id="lower-min-value"
+  label={null}
   max={100}
   measureLocation="top"
   min={40}
@@ -1437,6 +1468,7 @@ exports[`value lower than minValue 1`] = `
           "aria-valuenow": 33,
         }
       }
+      label={null}
       measureLocation="top"
       parentId="lower-min-value"
       title=""
@@ -1498,6 +1530,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
 <Progress
   className=""
   id="scaled-range-value"
+  label={null}
   max={80}
   measureLocation="top"
   min={10}
@@ -1522,6 +1555,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
           "aria-valuenow": 50,
         }
       }
+      label={null}
       measureLocation="top"
       parentId="scaled-range-value"
       title=""
@@ -1583,6 +1617,7 @@ exports[`value scaled with maxValue 1`] = `
 <Progress
   className=""
   id="scaled-max-value"
+  label={null}
   max={80}
   measureLocation="top"
   min={0}
@@ -1607,6 +1642,7 @@ exports[`value scaled with maxValue 1`] = `
           "aria-valuenow": 50,
         }
       }
+      label={null}
       measureLocation="top"
       parentId="scaled-max-value"
       title=""
@@ -1668,6 +1704,7 @@ exports[`value scaled with minValue 1`] = `
 <Progress
   className=""
   id="scaled-min-value"
+  label={null}
   max={100}
   measureLocation="top"
   min={10}
@@ -1692,6 +1729,7 @@ exports[`value scaled with minValue 1`] = `
           "aria-valuenow": 50,
         }
       }
+      label={null}
       measureLocation="top"
       parentId="scaled-min-value"
       title=""

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/layouts/Level/level.css';
+import styles from '@patternfly/react-styles/css/layouts/Level/level';
 import { GutterSize, getGutterModifier } from '../../styles/gutters';
 
 const propTypes = {
@@ -12,7 +12,7 @@ const propTypes = {
   /** content rendered inside the Level layout */
   children: PropTypes.node,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 const defaultProps = {
   gutter: null,

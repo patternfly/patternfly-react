@@ -32,10 +32,10 @@ async function getInvalidPackages() {
   const packages = (await new Project(__dirname).getPackages())
     .filter(p => p.scripts.build) // Only packages that have a build target
     .filter(p => isPf3
-      ? p.location.indexOf('patternfly-3') > 0 || commonPackages.indexOf(p.name) > 0
+      ? p.location.indexOf('patternfly-3') > 0 || commonPackages.indexOf(p.name) >= 0
       : true) // Based off argv
     .filter(p => isPf4
-      ? p.location.indexOf('patternfly-4') > 0 || commonPackages.indexOf(p.name) > 0
+      ? p.location.indexOf('patternfly-4') > 0 || commonPackages.indexOf(p.name) >= 0
       : true) // Based off argv
 
   for (let p of packages) {

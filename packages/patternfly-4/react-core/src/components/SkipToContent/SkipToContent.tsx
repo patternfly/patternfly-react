@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/SkipToContent/skip-to-content.css';
-import buttonStyles from '@patternfly/patternfly/components/Button/button.css';
+import styles from '@patternfly/react-styles/css/components/SkipToContent/skip-to-content';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css, getModifier } from '@patternfly/react-styles';
 
 export interface SkipToContentProps

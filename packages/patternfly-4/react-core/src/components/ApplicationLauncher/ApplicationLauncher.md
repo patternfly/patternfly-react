@@ -1,6 +1,7 @@
 ---
 title: 'Application launcher'
 cssPrefix: 'pf-c-app-launcher'
+propComponents: ['ApplicationLauncher']
 ---
 import { ApplicationLauncher, DropdownItem, Tooltip } from '@patternfly/react-core';
 
@@ -45,6 +46,7 @@ class SimpleApplicationLauncher extends React.Component {
     ];
     return (
       <ApplicationLauncher
+        direction="up"
         onSelect={this.onSelect}
         onToggle={this.onToggle}
         isOpen={isOpen}

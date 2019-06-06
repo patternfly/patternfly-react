@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '@patternfly/patternfly/components/Progress/progress.css';
-import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
+import styles from '@patternfly/react-styles/css/components/Progress/progress';
+import { css } from '@patternfly/react-styles';
 
 const propTypes = {
   /** What should be rendered inside progress bar. */
@@ -13,7 +13,7 @@ const propTypes = {
   /** Minimal value of progress. */
   ariaProps: PropTypes.object.isRequired,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

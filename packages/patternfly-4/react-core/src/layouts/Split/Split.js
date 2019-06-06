@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/layouts/Split/split.css';
+import styles from '@patternfly/react-styles/css/layouts/Split/split';
 import { componentShape } from '../../helpers/componentShape';
 import { GutterSize, getGutterModifier } from '../../styles/gutters';
 import { css } from '@patternfly/react-styles';
@@ -15,7 +15,7 @@ const propTypes = {
   /** Sets the base component to render. defaults to div */
   component: componentShape,
   /** Additional props are spread to the container component */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/Nav/nav.css';
+import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
 import { NavContext, NavSelectClickHandler } from './Nav';
@@ -59,7 +59,7 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
       {(context: any) =>
         React.cloneElement(child, {
           onClick: (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
-          className: css(styles.navLink, isActive && styles.modifiers.current, className),
+          className: css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className),
           'aria-current': isActive ? 'page' : null
         })
       }

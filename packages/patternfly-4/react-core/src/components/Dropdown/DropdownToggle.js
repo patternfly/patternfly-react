@@ -2,7 +2,7 @@ import React from 'react';
 import { CaretDownIcon } from '@patternfly/react-icons';
 import PropTypes from 'prop-types';
 import Toggle from './Toggle';
-import styles from '@patternfly/patternfly/components/Dropdown/dropdown.css';
+import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 
 const DropdownToggle = ({ children, iconComponent: IconComponent, splitButtonItems, ...props }) => {
@@ -59,7 +59,7 @@ DropdownToggle.propTypes = {
   /** Accessible label for the dropdown toggle button */
   'aria-label': PropTypes.any,
   /** Additional props are spread to the container component */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 DropdownToggle.defaultProps = {

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import progressStyle from '@patternfly/patternfly/components/Progress/progress.css';
+import progressStyle from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { CheckCircleIcon, TimesCircleIcon } from '@patternfly/react-icons';
@@ -38,7 +38,8 @@ const propTypes = {
 const defaultProps = {
   variant: ProgressVariant.info,
   measureLocation: ProgressMeasureLocation.Top,
-  title: ''
+  title: '',
+  label: null
 };
 
 const variantToIcon = {

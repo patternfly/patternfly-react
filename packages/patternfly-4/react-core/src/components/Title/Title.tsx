@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css, getModifier } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
-import styles from '@patternfly/patternfly/components/Title/title.css';
+import styles from '@patternfly/react-styles/css/components/Title/title';
 import { BaseSizes } from '../../styles/sizes';
 
 export enum TitleLevel {

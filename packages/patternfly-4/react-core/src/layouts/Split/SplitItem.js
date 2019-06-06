@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/layouts/Split/split.css';
+import styles from '@patternfly/react-styles/css/layouts/Split/split';
 import { css } from '@patternfly/react-styles';
 
 const propTypes = {
@@ -11,7 +11,7 @@ const propTypes = {
   /** additional classes added to the Split Layout Item */
   className: PropTypes.string,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

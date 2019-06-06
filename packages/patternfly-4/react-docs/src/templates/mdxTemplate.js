@@ -15,12 +15,7 @@ const components = {
 const MdxTemplate = ({ data }) => {
   const { cssPrefix } = data.mdx.frontmatter;
   const section = data.mdx.frontmatter.section || 'component';
-  const nodes = data.props.nodes
-    // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
-    // We *should* use the MDXRenderer scope to get the names of these, but that's pretty difficult
-    .filter(node => data.mdx.code.body.indexOf(node.name) !== -1)
-    .map(node => ({ name: node.name, props: node.props }))
-    .sort((e1, e2) => e1.name.localeCompare(e2.name));
+  const { nodes } = data.props;
 
   return (
     <SidebarLayout>
@@ -68,9 +63,8 @@ MdxTemplate.propTypes = {
 // See how to filter from: https://www.gatsbyjs.org/docs/graphql-reference/
 // We want the markdown from gatsby-mdx
 // We want component metadata from gatsby-transformer-react-docgen-typescript
-// for ALL components in that folder
 export const pageQuery = graphql`
-  query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
+  query GetComponent($fileAbsolutePath: String!, $propComponents: [String]!) {
     mdx(fileAbsolutePath: { eq: $fileAbsolutePath }) {
       code {
         body
@@ -81,7 +75,7 @@ export const pageQuery = graphql`
         cssPrefix
       }
     }
-    props: allComponentMetadata(filter: { path: { regex: $pathRegex }, name: { ne: null } }) {
+    props: allComponentMetadata(filter: { name: { in: $propComponents } }) {
       nodes {
         name
         props {

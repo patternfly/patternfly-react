@@ -1,7 +1,7 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/components/Accordion/accordion.css';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 
 const Accordion = ({ children, className, 'aria-label': ariaLabel, ...props }) => (
   <dl className={css(styles.accordion, className)} aria-label={ariaLabel} {...props}>
@@ -17,7 +17,7 @@ Accordion.propTypes = {
   /** Adds accessible text to the Accordion */
   'aria-label': PropTypes.string,
   /** Additional props are spread to the container <dl> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 Accordion.defaultProps = {

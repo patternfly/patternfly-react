@@ -5,7 +5,7 @@ const propTypes = {
   /** content rendered inside the Gallery Item */
   children: PropTypes.any,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {

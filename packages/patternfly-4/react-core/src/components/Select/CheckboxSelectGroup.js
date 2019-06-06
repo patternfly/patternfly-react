@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly/components/Select/select.css';
+import styles from '@patternfly/react-styles/css/components/Select/select';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 
@@ -10,14 +10,17 @@ const propTypes = {
   className: PropTypes.string,
   /** Group label */
   label: PropTypes.string,
+  /** ID on the title container */
+  titleId: PropTypes.any,
   /** Additional props are spread to the container <select> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
   children: null,
   className: '',
-  label: ''
+  label: '',
+  titleId: ''
 };
 
 const CheckboxSelectGroup = ({ children, className, label, titleId, ...props }) => (

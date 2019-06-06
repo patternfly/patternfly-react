@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly/components/ClipboardCopy/clipboard-copy.css';
+import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
 import { AngleRightIcon } from '@patternfly/react-icons';
 import PropTypes from 'prop-types';
@@ -11,7 +11,7 @@ const ToggleButton = ({ isExpanded, onClick, className, id, textId, contentId, .
     id={id}
     aria-labelledby={`${id} ${textId}`}
     aria-controls={`${contentId}`}
-    aria-expanded={`${isExpanded}`}
+    aria-expanded={isExpanded}
     {...props}
   >
     <AngleRightIcon aria-hidden="true" className={css(styles.clipboardCopyGroupToggleIcon)} />

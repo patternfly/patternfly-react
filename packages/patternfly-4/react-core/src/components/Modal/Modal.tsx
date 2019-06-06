@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { canUseDOM } from 'exenv';
 
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
+import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 
 import { KEY_CODES } from '../../helpers/constants';
 import { ModalContent } from './ModalContent';

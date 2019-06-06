@@ -1,14 +1,14 @@
 import React from 'react';
-import styles from '@patternfly/patternfly/components/ContextSelector/context-selector.css';
+import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import FocusTrap from 'focus-trap-react';
+import { SearchIcon } from '@patternfly/react-icons';
 import ContextSelectorToggle from './ContextSelectorToggle';
 import ContextSelectorMenuList from './ContextSelectorMenuList';
 import { ContextSelectorContext } from './contextSelectorConstants';
 import { Button, ButtonVariant } from '../Button';
 import { TextInput } from '../TextInput';
-import { SearchIcon } from '@patternfly/react-icons';
 import { InputGroup } from '../InputGroup';
 import { KEY_CODES } from '../../helpers/constants';
 

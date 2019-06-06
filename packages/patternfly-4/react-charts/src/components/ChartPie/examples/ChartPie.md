@@ -1,6 +1,8 @@
 ---
 title: 'Pie'
 section: 'charts'
+typescript: true
+propComponents: ['ChartLegend', 'ChartPie']
 ---
 
 ## Blue pie chart
@@ -24,6 +26,7 @@ import { ChartLegend, ChartPie } from '@patternfly/react-charts';
       data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
       height={230}
       orientation={'vertical'}
+      responsive={false}
       y={70}
     />
   </div>
@@ -48,6 +51,7 @@ import { ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts
     data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
     height={35}
     orientation={'horizontal'}
+    responsive={false}
     themeColor={ChartThemeColor.multi}
     themeVariant={ChartThemeVariant.light}
     x={8}

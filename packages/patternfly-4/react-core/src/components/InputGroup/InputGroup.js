@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly/components/InputGroup/input-group.css';
+import styles from '@patternfly/react-styles/css/components/InputGroup/input-group';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { FormSelect } from '../FormSelect';
@@ -14,12 +14,10 @@ const InputGroup = ({ className, children, ...props }) => {
   return (
     <div className={css(styles.inputGroup, className)} {...props}>
       {idItem
-        ? React.Children.map(
-            children,
-            child =>
-              formCtrls.includes(child.type.toString())
-                ? React.cloneElement(child, { 'aria-describedby': idItem.props.id })
-                : child
+        ? React.Children.map(children, child =>
+            formCtrls.includes(child.type.toString())
+              ? React.cloneElement(child, { 'aria-describedby': idItem.props.id })
+              : child
           )
         : children}
     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { LongArrowAltUpIcon, LongArrowAltDownIcon, ArrowsAltVIcon } from '@patternfly/react-icons';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/Table/table.css';
+import styles from '@patternfly/react-styles/css/components/Table/table';
 
 const propTypes = {
   children: PropTypes.node,

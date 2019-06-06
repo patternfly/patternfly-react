@@ -1,13 +1,14 @@
 ---
 title: 'Stack'
 section: 'charts'
+typescript: true
+propComponents: ['Chart', 'ChartBar', 'ChartStack']
 ---
-
-## Vertical blue stack chart
 
 import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-stack.scss';
 
+## Vertical blue stack chart
 ```js
 import React from 'react';
 import { Chart, ChartBar, ChartStack } from '@patternfly/react-charts';
@@ -26,7 +27,7 @@ import { Chart, ChartBar, ChartStack } from '@patternfly/react-charts';
 </div>
 ```
 
-## Vertical multi-color stack chart
+## Vertical multi-color stack chart with zoom
 ```js
 import React from 'react';
 import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
@@ -34,6 +35,7 @@ import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from 
 <div>
   <div className="stack-chart-container">
     <Chart
+      allowZoom={true}
       themeColor={ChartThemeColor.multi}
       themeVariant={ChartThemeVariant.light}
     >

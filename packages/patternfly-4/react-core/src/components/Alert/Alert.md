@@ -2,6 +2,7 @@
 title: 'Alert'
 cssPrefix: 'pf-c-alert'
 typescript: true
+propComponents: ['Alert', 'AlertActionCloseButton', 'AlertActionLink']
 ---
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 import './examples/alert.scss';

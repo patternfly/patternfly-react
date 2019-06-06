@@ -1,20 +1,24 @@
 ---
 title: 'Line'
 section: 'charts'
+typescript: true
+propComponents: ['Chart', 'ChartAxis', 'ChartGroup', 'ChartLegend', 'ChartLine']
 ---
 
 import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { VictoryZoomContainer } from 'victory';
 import './chart-line.scss';
 
-## Green line chart
+## Green line chart with zoom along x axis
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
+import { VictoryZoomContainer } from 'victory';
 
 <div>
   <div className="line-chart-inline">
     <div className="line-chart-container">
-      <Chart themeColor={ChartThemeColor.green}>
+      <Chart themeColor={ChartThemeColor.green} containerComponent={<VictoryZoomContainer zoomDimension="x" />}>
         <ChartGroup>
           <ChartLine
             data={[
@@ -61,6 +65,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor }
     <ChartLegend
       data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
       orientation="vertical"
+      responsive={false}
       title="Average number of pets"
       themeColor={ChartThemeColor.green}
       y={80}
@@ -126,6 +131,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, 
   <ChartLegend
     data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
     height={50}
+    responsive={false}
     themeColor={ChartThemeColor.multi}
     themeVariant={ChartThemeVariant.light}
     title="Average number of pets"

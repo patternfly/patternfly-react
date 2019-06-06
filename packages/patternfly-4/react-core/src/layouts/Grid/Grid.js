@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/layouts/Grid/grid.css';
+import styles from '@patternfly/react-styles/css/layouts/Grid/grid';
 import { css } from '@patternfly/react-styles';
 import { GutterSize, getGutterModifier } from '../../styles/gutters';
 import { getGridSpanModifier, gridSpans } from './gridUtils';
@@ -26,7 +26,7 @@ const propTypes = {
   /** the number of columns all grid items should span on a xLarge device */
   xl: gridItemSpanValueShape,
   /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  '': PropTypes.any // eslint-disable-line react/require-default-props
 };
 
 const defaultProps = {
