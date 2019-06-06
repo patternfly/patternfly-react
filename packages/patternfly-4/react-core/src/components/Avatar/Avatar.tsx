@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/Avatar/avatar.css';
+import styles from '@patternfly/react-styles/css/components/Avatar/avatar';
 import { css } from '@patternfly/react-styles';
 
 export interface AvatarProps

@@ -31,8 +31,8 @@ import {
   ToolbarItem
 } from '@patternfly/react-core';
 // make sure you've installed @patternfly/patternfly
-import accessibleStyles from '@patternfly/patternfly/utilities/Accessibility/accessibility.css';
-import spacingStyles from '@patternfly/patternfly/utilities/Spacing/spacing.css';
+import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
+import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.png';

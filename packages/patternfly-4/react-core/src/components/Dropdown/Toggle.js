@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/components/Dropdown/dropdown.css';
+import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { KEY_CODES } from '../../helpers/constants';
 

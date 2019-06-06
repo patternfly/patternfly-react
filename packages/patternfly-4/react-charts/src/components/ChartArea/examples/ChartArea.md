@@ -1,6 +1,7 @@
 ---
 title: 'Area'
 section: 'charts'
+typescript: true
 propComponents: ['ChartArea', 'ChartGroup', 'ChartLegend', 'ChartVoronoiContainer']
 ---
 

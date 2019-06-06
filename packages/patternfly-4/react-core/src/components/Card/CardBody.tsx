@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/Card/card.css';
+import styles from '@patternfly/react-styles/css/components/Card/card';
 import { css } from '@patternfly/react-styles';
 
 export interface CardBodyProps extends React.HTMLProps<HTMLDivElement> {

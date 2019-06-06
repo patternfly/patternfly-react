@@ -1,6 +1,8 @@
 ---
 title: 'Donut utilization'
 section: 'charts'
+typescript: true
+propComponents: ['ChartDonutThreshold', 'ChartDonutUtilization']
 ---
 
 import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import accessibleStyles from '@patternfly/patternfly/utilities/Accessibility/accessibility.css';
+import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { css } from '@patternfly/react-styles';
 
 import { Title, TitleLevel } from '../Title';

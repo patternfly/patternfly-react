@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/DataList/data-list.css';
+import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 
 const DataListContent = ({
   className,

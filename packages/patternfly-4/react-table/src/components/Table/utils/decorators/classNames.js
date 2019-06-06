@@ -1,5 +1,5 @@
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/Table/table.css';
+import styles from '@patternfly/react-styles/css/components/Table/table';
 
 const pickProperties = (object, properties) =>
   properties.reduce((picked, property) => ({ ...picked, [property]: object[property] }), {});

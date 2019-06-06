@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/Radio/radio.css';
+import styles from '@patternfly/react-styles/css/components/Radio/radio';
 import { css, getModifier } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
 

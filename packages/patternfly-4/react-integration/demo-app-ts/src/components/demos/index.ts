@@ -1,6 +1,7 @@
 export * from './AboutModal/AboutModalDemo';
 export * from './AlertDemo/AlertDemo';
 export * from './AvatarDemo/AvatarDemo';
+export * from './BackgroundImageDemo/BackgroundImageDemo'; 
 export * from './BadgeDemo/BadgeDemo'; 
 export * from './BrandDemo/BrandDemo'; 
 export * from './BreadcrumbDemo/BreadcrumbDemo'; 
@@ -21,6 +22,7 @@ export * from './PopoverDemo/PopoverDemo';
 export * from './RadioDemo/RadioDemo';
 export * from './TabsDemo/TabsDemo';
 export * from './TextDemo/TextDemo';
+export * from './TextInputDemo/TextInputDemo';
 export * from './TitleDemo/TitleDemo';
 export * from './TooltipDemo/TooltipDemo';
 export * from './WizardDemo/WizardDemo';

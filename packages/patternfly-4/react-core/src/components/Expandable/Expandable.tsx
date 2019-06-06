@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/Expandable/expandable.css';
+import styles from '@patternfly/react-styles/css/components/Expandable/expandable';
 import { css } from '@patternfly/react-styles';
 import { AngleRightIcon } from '@patternfly/react-icons';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/components/Switch/switch.css';
+import styles from '@patternfly/react-styles/css/components/Switch/switch';
 import { css } from '@patternfly/react-styles';
 import { CheckIcon } from '@patternfly/react-icons';
 import { getUniqueId } from '../../helpers/util';

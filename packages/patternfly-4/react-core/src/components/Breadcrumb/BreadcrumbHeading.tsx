@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/Breadcrumb/breadcrumb.css';
+import styles from '@patternfly/react-styles/css/components/Breadcrumb/breadcrumb';
 import { css } from '@patternfly/react-styles';
 
 export interface BreadcrumbHeadingProps extends React.HTMLProps<HTMLLIElement> {
