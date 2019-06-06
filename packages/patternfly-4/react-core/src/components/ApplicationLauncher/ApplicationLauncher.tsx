@@ -40,7 +40,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
   };
 
   componentDidUpdate() {
-    if (!this.props.isOpen) this.openedOnEnter = false;
+    if (!this.props.isOpen){ this.openedOnEnter = false};
   }
 
   render() {

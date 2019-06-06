@@ -62,9 +62,9 @@ export class ApplicationLauncherToggle extends React.Component<ApplicationLaunch
 
   onDocClick = (event: any) => {
     if (this.props.isOpen && this.props.parentRef && !this.props.parentRef.contains(event.target)) {
-      this.props.onToggle && this.props.onToggle(false);
+      this.props.onToggle(false);
       this.toggle.current.focus();
-    }
+      }
   };
 
   onEscPress = (event: any) => {
@@ -76,13 +76,13 @@ export class ApplicationLauncherToggle extends React.Component<ApplicationLaunch
       parentRef &&
       parentRef.contains(event.target)
     ) {
-      this.props.onToggle && this.props.onToggle(false);
+      this.props.onToggle(false);
       this.toggle.current.focus();
     }
   };
 
   onKeyDown = (event: any) => {
-    if (event.keyCode === KEY_CODES.TAB && !this.props.isOpen) return;
+    if (event.keyCode === KEY_CODES.TAB && !this.props.isOpen) {return};
     event.preventDefault();
     if (
       (event.keyCode === KEY_CODES.TAB || event.keyCode === KEY_CODES.ENTER || event.key === ' ') &&

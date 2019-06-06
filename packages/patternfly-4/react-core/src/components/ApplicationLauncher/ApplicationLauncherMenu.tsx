@@ -42,7 +42,7 @@ export class ApplicationLauncherMenu extends React.Component<ApplicationLauncher
   onKeyDown = (event: any) => {
     // Detected key press on this item, notify the menu parent so that the appropriate
     // item can be focused
-    if (event.key === KEY_CODES.TAB) return;
+    if (event.key === KEY_CODES.TAB) {return};
     event.preventDefault();
     if (event.keyCode === KEY_CODES.ARROW_UP) {
       keyHandler(this.props.index, KEYHANDLER_DIRECTION.UP, this.refsCollection, this.props.children as any[]);
@@ -52,7 +52,7 @@ export class ApplicationLauncherMenu extends React.Component<ApplicationLauncher
       // if (!this.ref.current.getAttribute) {
       //   ReactDOM.findDOMNode(this.ref.current).click(); // eslint-disable-line react/no-find-dom-node
       // } else {
-      this.ref.current.click && this.ref.current.click();
+      this.ref.current.click();
       // }
     }
   };
