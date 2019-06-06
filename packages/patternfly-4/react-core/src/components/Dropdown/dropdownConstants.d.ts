@@ -1,21 +1,21 @@
 import * as React from 'react';
 import { any } from 'glamor';
 
-export const DropdownPosition = {
-  right: 'right',
-  left: 'left'
-};
+export enum DropdownPosition {
+  right = 'right',
+  left = 'left'
+}
 
-export const DropdownDirection = {
-  up: 'up',
-  down: 'down'
-};
+export enum DropdownDirection {
+  up = 'up',
+  down = 'down'
+}
 
-export const DropdownContext = React.createContext({
-  onSelect: (event: any): any => undefined
-});
+export const DropdownContext: React.Context<
+  (event: any) => void
+>
 
-export const DropdownArrowContext = React.createContext({
-  keyHandler: null,
-  sendRef: null
-});
+export const DropdownArrowContext: React.Context<{
+  keyHandler: (index: number, position: any, custom: boolean) => void,
+  sendRef: (index: number, node: any, isDisabled: boolean) => void
+}>

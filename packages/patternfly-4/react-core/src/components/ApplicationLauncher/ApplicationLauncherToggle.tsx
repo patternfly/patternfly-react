@@ -61,8 +61,7 @@ export class ApplicationLauncherToggle extends React.Component<ApplicationLaunch
   };
 
   onDocClick = (event: any) => {
-    console.log(this.props)
-    if (this.props.isOpen && this.props.parentRef && !this.props.parentRef.contains(event.target)) {
+    if (this.props.isOpen && this.props.parentRef.current && !this.props.parentRef.current.contains(event.target)) {
       this.props.onToggle(false);
       this.toggle.current.focus();
       }

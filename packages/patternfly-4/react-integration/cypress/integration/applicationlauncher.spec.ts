@@ -9,8 +9,16 @@ describe('Application Launcher Demo Test', () => {
     cy.get('button').should('have.class', 'pf-c-button pf-m-plain');
   });
 
-  it('Verify clicking app launcher loads menu', () => {
+  it('Verify app launcher menu toggle', () => {
     cy.get('#pf-random-id-0').click();
     cy.get('ul').should('have.class', 'pf-c-app-launcher__menu');
+    cy.get('#pf-random-id-0').click(); 
+    cy.get('.pf-c-app-launcher__menu').should('not.exist'); 
+  });
+
+  it('Verify onSelect', () => {
+    cy.get('#pf-random-id-0').click(); 
+    cy.get('.pf-c-app-launcher__menu-item').first().click(); 
+    cy.log('This works');
   });
 });
