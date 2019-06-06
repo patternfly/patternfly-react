@@ -26,7 +26,8 @@ export class TextArea extends React.Component<TextAreaProps> {
     className: '',
     isRequired: false,
     isValid: true,
-    'aria-label': null as string,
+    onChange: () => {},
+    'aria-label': null as string
   }
   
 
