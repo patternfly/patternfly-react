@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/ModalBox/modal-box.css';
+import styles from '@patternfly/react-styles/css/components/ModalBox/modal-box';
 
 export interface ModalBoxFooterProps {
   /** Content rendered inside the Footer */

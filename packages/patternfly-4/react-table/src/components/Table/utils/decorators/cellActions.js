@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/Table/table.css';
+import styles from '@patternfly/react-styles/css/components/Table/table';
 import ActionsColumn from '../../ActionsColumn';
 
 const resolveOrDefault = (resolver, defaultValue, ...data) =>

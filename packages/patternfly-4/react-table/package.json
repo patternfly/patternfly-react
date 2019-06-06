@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-table",
-  "version": "2.8.20",
+  "version": "2.10.0",
   "description": "This library provides a set of React table components for use with the PatternFly 4",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -28,9 +28,9 @@
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-table#readme",
   "dependencies": {
     "@patternfly/patternfly": "2.8.2",
-    "@patternfly/react-core": "^3.33.0",
+    "@patternfly/react-core": "^3.36.0",
     "@patternfly/react-icons": "^3.9.3",
-    "@patternfly/react-styles": "^3.2.3",
+    "@patternfly/react-styles": "^3.3.0",
     "exenv": "^1.2.2",
     "reactabular-table": "^8.14.0"
   },
@@ -41,10 +41,10 @@
   },
   "scripts": {
     "build": "yarn build:babel && node ./scripts/copyTS.js && node ./build/copyStyles.js",
-    "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm' && yarn build:babel:umd",
-    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js -q",
-    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm -q",
-    "build:babel:umd": "cross-env BABEL_ENV=production:umd babel dist/esm --out-dir dist/umd --plugins transform-es2015-modules-umd  --extensions '.js,.ts,.tsx' -q",
+    "build:babel": "concurrently 'yarn build:babel:esm && yarn build:babel:umd' 'yarn build:babel:cjs'",
+    "build:babel:cjs": "babel src --out-dir dist/js -q",
+    "build:babel:esm": "babel src --out-dir dist/esm -q",
+    "build:babel:umd": "babel dist/esm --out-dir dist/umd --plugins transform-es2015-modules-umd  --extensions '.js,.ts,.tsx' -q",
     "clean": "rimraf dist",
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
   },

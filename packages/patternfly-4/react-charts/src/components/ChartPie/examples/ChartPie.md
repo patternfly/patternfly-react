@@ -1,7 +1,8 @@
 ---
 title: 'Pie'
 section: 'charts'
-propComponents: ['ChartLegend', 'ChartPie', 'ChartThemeColor', 'ChartThemeVariant']
+typescript: true
+propComponents: ['ChartLegend', 'ChartPie']
 ---
 
 ## Blue pie chart

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css, getModifier } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/OptionsMenu/options-menu.css';
+import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { CheckIcon } from '@patternfly/react-icons';
 import { KEY_CODES } from '../../helpers';
 import { Omit } from '../../helpers/typeUtils';

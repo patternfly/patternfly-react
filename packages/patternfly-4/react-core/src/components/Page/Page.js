@@ -1,6 +1,6 @@
 import React, { cloneElement } from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/components/Page/page.css';
+import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import { global_breakpoint_md as globalBreakpointMd } from '@patternfly/react-tokens';
 import { debounce } from '../../helpers/util';

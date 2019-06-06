@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/ChipGroup/chip-group.css';
+import styles from '@patternfly/react-styles/css/components/ChipGroup/chip-group';
 import { css } from '@patternfly/react-styles';
 import { Chip } from './Chip';
 import { fillTemplate } from '../../helpers';

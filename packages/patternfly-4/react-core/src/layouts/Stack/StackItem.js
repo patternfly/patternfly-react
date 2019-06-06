@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/layouts/Stack/stack.css';
+import styles from '@patternfly/react-styles/css/layouts/Stack/stack';
 import { css } from '@patternfly/react-styles';
 
 const propTypes = {

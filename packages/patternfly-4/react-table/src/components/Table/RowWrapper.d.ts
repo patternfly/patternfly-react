@@ -1,11 +1,11 @@
-import { UIEventHandler } from 'react';
+import { FunctionComponent, UIEventHandler } from 'react';
 
 export interface RowWrapperRow {
   isOpen: Boolean;
   isExpanded: Boolean;
 }
 
-export interface RowWrapper {
+export interface RowWrapperProps {
   trRef?: Function;
   onScroll?: UIEventHandler;
   onResize?: UIEventHandler;
@@ -13,4 +13,7 @@ export interface RowWrapper {
   rowProps?: Object;
 }
 
+declare const RowWrapper: FunctionComponent<RowWrapperProps>;
+
 export default RowWrapper;
+

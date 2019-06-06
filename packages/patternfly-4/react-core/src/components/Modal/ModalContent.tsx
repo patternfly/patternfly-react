@@ -5,7 +5,7 @@ import * as React from 'react';
 // tslint:disable-next-line
 const FocusTrap: any = require('focus-trap-react');
 
-import styles from '@patternfly/patternfly/layouts/Bullseye/bullseye.css';
+import styles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 import { css } from '@patternfly/react-styles';
 
 import Backdrop from '../Backdrop/Backdrop';

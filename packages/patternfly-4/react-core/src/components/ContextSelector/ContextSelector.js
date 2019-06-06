@@ -1,8 +1,8 @@
 import React from 'react';
+import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
+import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import FocusTrap from 'focus-trap-react';
-import styles from '@patternfly/patternfly/components/ContextSelector/context-selector.css';
-import { css } from '@patternfly/react-styles';
 import { SearchIcon } from '@patternfly/react-icons';
 import ContextSelectorToggle from './ContextSelectorToggle';
 import ContextSelectorMenuList from './ContextSelectorMenuList';

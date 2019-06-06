@@ -12,7 +12,6 @@ exports[`focused table text input 1`] = `
     isRequired={false}
     isValid={true}
     onBlur={[Function]}
-    onChange={[Function]}
     type="text"
   />
 </Fragment>
@@ -30,7 +29,6 @@ exports[`simple table text input 1`] = `
     isRequired={false}
     isValid={true}
     onBlur={[Function]}
-    onChange={[Function]}
     type="text"
   />
 </Fragment>

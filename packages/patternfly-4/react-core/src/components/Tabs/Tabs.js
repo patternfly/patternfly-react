@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/Tabs/tabs.css';
+import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { AngleLeftIcon, AngleRightIcon } from '@patternfly/react-icons';

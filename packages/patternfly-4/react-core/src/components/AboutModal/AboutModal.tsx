@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
+import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { canUseDOM } from 'exenv';
 import { KEY_CODES } from '../../helpers/constants';
 import { AboutModalContainer } from './AboutModalContainer';
@@ -59,7 +59,7 @@ export class AboutModal extends React.Component<AboutModalProps> {
     }
   };
 
-  componentDidMount() {
+  private appendContainer = () => {
     if (!this.container) {
       this.container = document.createElement('div');
       document.body.appendChild(this.container);
@@ -70,6 +70,10 @@ export class AboutModal extends React.Component<AboutModalProps> {
     } else {
       document.body.classList.remove(css(styles.backdropOpen));
     }
+  }
+
+  componentDidMount() {
+    this.appendContainer();
   }
 
   componentDidUpdate() {
@@ -88,8 +92,11 @@ export class AboutModal extends React.Component<AboutModalProps> {
   }
 
   render() {
-    if (!canUseDOM || !this.container) {
+    if (!canUseDOM) {
       return null;
+    }
+    if(canUseDOM && !this.container) {
+      this.appendContainer();
     }
 
     return ReactDOM.createPortal(

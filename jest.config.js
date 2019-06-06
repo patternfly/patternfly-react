@@ -29,7 +29,7 @@ module.exports = {
   ],
   snapshotSerializers: [
     "enzyme-to-json/serializer",
-    "<rootDir>/packages/patternfly-4/react-core/build/snapshot-serializer"
+    "<rootDir>/packages/patternfly-4/react-core/scripts/snapshot-serializer"
   ],
   transform: {
     "^.+\\.(ts|tsx)?$": "ts-jest",

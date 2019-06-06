@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/components/Button/button.css';
+import styles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import { KEY_CODES } from '../../helpers/constants';
 

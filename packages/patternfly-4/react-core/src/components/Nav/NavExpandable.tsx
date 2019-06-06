@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/Nav/nav.css';
-import a11yStyles from '@patternfly/patternfly/utilities/Accessibility/accessibility.css';
+import styles from '@patternfly/react-styles/css/components/Nav/nav';
+import a11yStyles from '@patternfly/react-styles/css/utilities/Accessibility/accessibility';
 import { css } from '@patternfly/react-styles';
 import { AngleRightIcon } from '@patternfly/react-icons';
 

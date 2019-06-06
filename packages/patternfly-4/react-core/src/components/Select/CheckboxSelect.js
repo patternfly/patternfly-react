@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FocusTrap from 'focus-trap-react';
-import styles from '@patternfly/patternfly/components/Select/select.css';
-import { default as formStyles } from '@patternfly/patternfly/components/Form/form.css';
+import styles from '@patternfly/react-styles/css/components/Select/select';
+import { default as formStyles } from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 import { keyHandler } from '../../helpers/util';
 

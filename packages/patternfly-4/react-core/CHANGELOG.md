@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.36.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.35.0...@patternfly/react-core@3.36.0) (2019-06-05)
+
+
+### Bug Fixes
+
+* **NavItem:** Maintain className passed to custom NavItems ([#2134](https://github.com/patternfly/patternfly-react/issues/2134)) ([8f38b97](https://github.com/patternfly/patternfly-react/commit/8f38b97))
+
+
+### Features
+
+* **react-styles:** move react styles ([#2085](https://github.com/patternfly/patternfly-react/issues/2085)) ([81d1ed2](https://github.com/patternfly/patternfly-react/commit/81d1ed2))
+
+
+
+
+
+# [3.35.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.34.2...@patternfly/react-core@3.35.0) (2019-06-05)
+
+
+### Features
+
+* **background image:** Convert background image to typescript ([#2070](https://github.com/patternfly/patternfly-react/issues/2070)) ([d4ae6db](https://github.com/patternfly/patternfly-react/commit/d4ae6db))
+* **Select:** add typeahead keyboard navigation ([#2013](https://github.com/patternfly/patternfly-react/issues/2013)) ([60b4d91](https://github.com/patternfly/patternfly-react/commit/60b4d91))
+* **TextInput:** Convert text input to TypeScript ([#1914](https://github.com/patternfly/patternfly-react/issues/1914)) ([1707236](https://github.com/patternfly/patternfly-react/commit/1707236)), closes [#1908](https://github.com/patternfly/patternfly-react/issues/1908)
+
+
+
+
+
+## [3.34.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.34.1...@patternfly/react-core@3.34.2) (2019-06-05)
+
+
+### Bug Fixes
+
+* **aboutmodal:** support isOpen initially set true in about modal ([#2153](https://github.com/patternfly/patternfly-react/issues/2153)) ([d8209ad](https://github.com/patternfly/patternfly-react/commit/d8209ad))
+
+
+
+
+
+## [3.34.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.34.0...@patternfly/react-core@3.34.1) (2019-06-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# 3.34.0 (2019-06-03)
+
+
+### Features
+
+* **component:** Add Time Picker component ([#1875](https://github.com/patternfly/patternfly-react/issues/1875)) ([00996e9](https://github.com/patternfly/patternfly-react/commit/00996e9))
+
+
+
+
+
+## [3.33.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.33.0...@patternfly/react-core@3.33.1) (2019-05-30)
+
+
+### Bug Fixes
+
+* **checkbox:** set checked if onChanged is not the default ([#2037](https://github.com/patternfly/patternfly-react/issues/2037)) ([2237fa5](https://github.com/patternfly/patternfly-react/commit/2237fa5))
+
+
+
+
+
 # [3.33.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.32.10...@patternfly/react-core@3.33.0) (2019-05-30)
 
 
