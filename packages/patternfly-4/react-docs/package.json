@@ -21,7 +21,6 @@
     "@patternfly/react-icons": "^3.9.3",
     "gatsby": "2.3.14",
     "gatsby-mdx": "0.6.3",
-    "gatsby-plugin-flow": "^1.0.5",
     "gatsby-plugin-react-helmet": "^3.0.11",
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-source-filesystem": "^2.0.28",
