@@ -75,21 +75,21 @@ class KebabDropdown extends React.Component {
     return (
       <Card>
         <CardHead>
-          <img src={pfLogo} />
+          <img src={pfLogo} style={{height: "50px"}}/>
           <CardActions>
-            <Checkbox 
-              isChecked={this.state.check1}
-              onChange={this.onClick}
-              aria-label="card checkbox example"
-              id="check-1"
-              name="check1"
-            />
             <Dropdown
               onSelect={this.onSelect}
               toggle={<KebabToggle onToggle={this.onToggle} />}
               isOpen={isOpen}
               isPlain
               dropdownItems={dropdownItems}
+            />
+            <Checkbox 
+              isChecked={this.state.check1}
+              onChange={this.onClick}
+              aria-label="card checkbox example"
+              id="check-1"
+              name="check1"
             />
           </CardActions>
         </CardHead>
@@ -155,19 +155,19 @@ class KebabDropdown extends React.Component {
       <Card>
         <CardHead>
           <CardActions>
-            <Checkbox 
-              isChecked={this.state.check1}
-              onChange={this.onClick}
-              aria-label="card checkbox example"
-              id="check-1"
-              name="check1"
-            />
             <Dropdown
               onSelect={this.onSelect}
               toggle={<KebabToggle onToggle={this.onToggle} />}
               isOpen={isOpen}
               isPlain
               dropdownItems={dropdownItems}
+            />
+            <Checkbox 
+              isChecked={this.state.check1}
+              onChange={this.onClick}
+              aria-label="card checkbox example"
+              id="check-1"
+              name="check1"
             />
           </CardActions>
         <CardHeader>This is a really really really really really really really really really really long header</CardHeader>
@@ -233,101 +233,23 @@ class KebabDropdown extends React.Component {
       <Card>
         <CardHead>
           <CardActions>
-            <Checkbox 
-              isChecked={this.state.check1}
-              onChange={this.onClick}
-              aria-label="card checkbox example"
-              id="check-1"
-              name="check1"
-            />
             <Dropdown
               onSelect={this.onSelect}
               toggle={<KebabToggle onToggle={this.onToggle} />}
               isOpen={isOpen}
               isPlain
               dropdownItems={dropdownItems}
+            />
+            <Checkbox 
+              isChecked={this.state.check1}
+              onChange={this.onClick}
+              aria-label="card checkbox example"
+              id="check-1"
+              name="check1"
             />
           </CardActions>
         </CardHead>
         <CardBody>This is the card body, there is only actions in the card head.</CardBody>
-      </Card>
-    );
-  }
-}
-```
-
-## Only card body and actions in the card head
-```js
- import React from 'react'; 
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHead, CardActions, CardHeader, CardBody } from '@patternfly/react-core'; 
-
-class KebabDropdown extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-      check1: false
-    };
-    this.onToggle = isOpen => {
-      this.setState({
-        isOpen
-      });
-    };
-    this.onSelect = event => {
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
-    };
-    this.onClick = (checked, event) => {
-      const target = event.target; 
-      const value = target.type === 'checkbox' ? target.checked : target.value; 
-      const name = target.name; 
-      this.setState({ [name]: value }); 
-    }; 
-  }
-
-  render() {
-    const { isOpen } = this.state;
-    const dropdownItems = [
-      <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action" component="button">
-        Action
-      </DropdownItem>,
-      <DropdownItem key="disabled link" isDisabled>
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem key="disabled action" isDisabled component="button">
-        Disabled Action
-      </DropdownItem>,
-      <DropdownSeparator key="separator" />,
-      <DropdownItem key="separated link">Separated Link</DropdownItem>,
-      <DropdownItem key="separated action" component="button">
-        Separated Action
-      </DropdownItem>
-    ];
-    return (
-      <Card>
-        <CardHead>
-          <CardActions>
-            <Checkbox 
-              isChecked={this.state.check1}
-              onChange={this.onClick}
-              aria-label="card checkbox example"
-              id="check-1"
-              name="check1"
-            />
-            <Dropdown
-              onSelect={this.onSelect}
-              toggle={<KebabToggle onToggle={this.onToggle} />}
-              isOpen={isOpen}
-              isPlain
-              dropdownItems={dropdownItems}
-            />
-          </CardActions>
-            <CardBody>
-              This is the card body, there is only actions in the card head. This is the card body, there is only actions in the card head. This is the card body, there is only actions in the card head. This is the card body, there is only actions in the card head. This is the card body, there is only actions in the card head. This is the card body, there is only actions in the card head. This is the card body, there is only actions in the card head. This is the card body, there is only actions in the card head.
-            </CardBody>
-        </CardHead>
       </Card>
     );
   }
@@ -342,7 +264,7 @@ import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 ImageCard = () => (
   <Card>
     <CardHead>
-      <img src={pfLogo} />
+      <img src={pfLogo} style={{height: "50px"}}/>
     </CardHead> 
     <CardHeader>Header</CardHeader>
     <CardBody>Body</CardBody>
