@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/List/list.css';
+import styles from '@patternfly/react-styles/css/components/List/list';
 import { css, getModifier } from '@patternfly/react-styles';
 
 export enum ListVariant {

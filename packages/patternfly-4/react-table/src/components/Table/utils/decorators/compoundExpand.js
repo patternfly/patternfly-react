@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Button } from '@patternfly/react-core';
-import styles from '@patternfly/patternfly/components/Table/table.css';
+import styles from '@patternfly/react-styles/css/components/Table/table';
 
 export const compoundExpand = (value, { rowIndex, columnIndex, rowData, column, property }) => {
   if (!value) {

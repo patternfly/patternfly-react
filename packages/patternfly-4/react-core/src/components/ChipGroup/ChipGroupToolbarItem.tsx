@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/ChipGroup/chip-group.css';
+import styles from '@patternfly/react-styles/css/components/ChipGroup/chip-group';
 
 export interface ChipGroupToolbarItemProps extends React.HTMLProps<HTMLUListElement> {
   /**  Category name text */  

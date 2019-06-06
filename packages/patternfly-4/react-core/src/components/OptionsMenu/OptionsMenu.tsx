@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/OptionsMenu/options-menu.css';
+import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { css, getModifier } from '@patternfly/react-styles';
 
 export enum OptionsMenuPosition {

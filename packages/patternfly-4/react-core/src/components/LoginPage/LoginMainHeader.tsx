@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Title, TitleLevel} from '../Title';
 import {css} from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly/components/Login/login.css';
+import styles from '@patternfly/react-styles/css/components/Login/login';
 
 export interface LoginMainHeaderProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Login Main Header */

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly/components/Dropdown/dropdown.css';
+import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 

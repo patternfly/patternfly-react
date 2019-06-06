@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/Label/label.css';
+import styles from '@patternfly/react-styles/css/components/Label/label';
 import { css } from '@patternfly/react-styles';
 
 export interface LabelProps extends React.HTMLProps<HTMLSpanElement> {

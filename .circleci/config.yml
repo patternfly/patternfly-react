@@ -19,7 +19,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-            - packages/react-icons/node_modules/
+            - packages/react-icons/node_modules
             - packages/patternfly-4/react-core/node_modules
             - packages/patternfly-4/react-docs/node_modules
             - packages/patternfly-4/react-charts/node_modules
@@ -42,7 +42,6 @@ jobs:
             cp -r packages/patternfly-4/react-docs/public .public/patternfly-4 &&
             cp -r .public/patternfly-4/assets .public/assets &&
             cp .public/patternfly-4/favicon* .public
-          no_output_timeout: 30m
       - run:
           name: Deploy Docs
           command: if [ -n "$CIRCLE_PULL_REQUEST" ]; then .circleci/upload_preview.sh; fi

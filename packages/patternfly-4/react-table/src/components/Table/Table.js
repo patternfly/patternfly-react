@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from '@patternfly/patternfly/components/Table/table.css';
-import stylesGrid from '@patternfly/patternfly/components/Table/table-grid.css';
+import styles from '@patternfly/react-styles/css/components/Table/table';
+import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
 import { Provider } from 'reactabular-table';
 import { DropdownPosition, DropdownDirection } from '@patternfly/react-core';
 import { css, getModifier } from '@patternfly/react-styles';

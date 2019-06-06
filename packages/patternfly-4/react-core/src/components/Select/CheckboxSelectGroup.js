@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly/components/Select/select.css';
+import styles from '@patternfly/react-styles/css/components/Select/select';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 

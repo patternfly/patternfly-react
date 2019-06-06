@@ -2,7 +2,7 @@ import * as React from 'react';
 import Tippy from '@tippy.js/react';
 import { Instance as TippyInstance, BasicPlacement } from 'tippy.js';
 import { KEY_CODES } from '../../helpers/constants';
-import styles from '@patternfly/patternfly/components/Popover/popover.css';
+import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { css, getModifier } from '@patternfly/react-styles';
 import { PopoverArrow } from './PopoverArrow';
 import { PopoverContent } from './PopoverContent';

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.19.0 (2019-06-05)
+
+
+### Features
+
+* **VictoryZoomContainer:** Give examples of Victory Zoom component to allow zo… ([#1879](https://github.com/patternfly/patternfly-react/issues/1879)) ([235c174](https://github.com/patternfly/patternfly-react/commit/235c174)), closes [#1715](https://github.com/patternfly/patternfly-react/issues/1715)
+
+
+
+
+
 ## [2.18.13](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.18.12...patternfly-react-extensions@2.18.13) (2019-05-31)
 
 **Note:** Version bump only for package patternfly-react-extensions

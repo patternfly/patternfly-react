@@ -26,6 +26,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AvatarDemo
   },
   {
+    id: 'backgroundimage-demo',
+    name: 'Background Image Demo', 
+    componentType: Examples.BackgroundImageDemo
+  },
+  {
     id: 'badge-demo', 
     name: 'Badge Demo', 
     componentType: Examples.BadgeDemo 
@@ -119,6 +124,11 @@ export const Demos: DemoInterface[] = [
     id: 'text-demo',
     name: 'Text Demo',
     componentType: Examples.TextDemo
+  },
+  {
+    id: 'text-input-demo',
+    name: 'Text Input Demo',
+    componentType: Examples.TextInputDemo
   },
   {
     id: 'title-demo',
