@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/components/AppLauncher/app-launcher';
+import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
 import { css } from '@patternfly/react-styles';
 import { ApplicationLauncherMenu } from './ApplicationLauncherMenu';
 import { ApplicationLauncherToggle } from './ApplicationLauncherToggle';
