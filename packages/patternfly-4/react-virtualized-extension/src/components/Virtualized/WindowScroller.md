@@ -132,46 +132,47 @@ class WindowScrollerExample extends React.Component {
           overflowY: 'scroll',
           scrollBehavior: 'smooth',
           WebkitOverflowScrolling: 'touch',
-          padding: 5,
           position: 'relative'
         }}
       >
-        <Table
-          caption="WindowScoller allows scrolling of a parent container or the window instead of tbody. It also can be used to dynamically size the table to the size of the scroll element."
-          cells={columns}
-          rows={rows}
-          gridBreakPoint={TableGridBreakpoint.none}
-          role="presentation"
-        >
-          <TableHeader />
-        </Table>
-        <WindowScroller scrollElement={scollableElement}>
-          {({height, isScrolling, registerChild, onChildScroll, scrollTop}) => (
-            <AutoSizer disableHeight>
-              {({width}) => (
-                <div ref={registerChild}>
-                  <VirtualTableBody
-                    autoHeight
-                    className={'pf-c-table pf-c-virtualized pf-c-window-scroller'}
-                    deferredMeasurementCache={measurementCache}
-                    rowHeight={measurementCache.rowHeight}
-                    height={height || 0}
-                    isScrolling={isScrolling}
-                    onScroll={onChildScroll}
-                    overscanRowCount={2}
-                    columns={columns}
-                    rows={rows}
-                    rowCount={rows.length}
-                    rowRenderer={rowRenderer}
-                    scrollToIndex={scrollToIndex}
-                    scrollTop={scrollTop}
-                    width={width}
-                  />
-                </div>
-              )}
-            </AutoSizer>
-          )}
-      </WindowScroller>
+        <div style={{ padding: 15}}> {/* WindowScroller scrollbar gutter spacing */}
+          <Table
+            caption="WindowScoller allows scrolling of a parent container or the window instead of tbody. It also can be used to dynamically size the table to the size of the scroll element."
+            cells={columns}
+            rows={rows}
+            gridBreakPoint={TableGridBreakpoint.none}
+            role="presentation"
+          >
+            <TableHeader />
+          </Table>
+          <WindowScroller scrollElement={scollableElement}>
+            {({height, isScrolling, registerChild, onChildScroll, scrollTop}) => (
+              <AutoSizer disableHeight>
+                {({width}) => (
+                  <div ref={registerChild}>
+                    <VirtualTableBody
+                      autoHeight
+                      className={'pf-c-table pf-c-virtualized pf-c-window-scroller'}
+                      deferredMeasurementCache={measurementCache}
+                      rowHeight={measurementCache.rowHeight}
+                      height={height || 0}
+                      isScrolling={isScrolling}
+                      onScroll={onChildScroll}
+                      overscanRowCount={2}
+                      columns={columns}
+                      rows={rows}
+                      rowCount={rows.length}
+                      rowRenderer={rowRenderer}
+                      scrollToIndex={scrollToIndex}
+                      scrollTop={scrollTop}
+                      width={width}
+                    />
+                  </div>
+                )}
+              </AutoSizer>
+            )}
+        </WindowScroller>
+      </div>
     </div>
     );
   }
