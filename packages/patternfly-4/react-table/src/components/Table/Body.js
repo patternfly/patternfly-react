@@ -1,5 +1,5 @@
 import React from 'react';
-import { Body } from 'reactabular-table';
+import { Body } from './base';
 import PropTypes from 'prop-types';
 import { TableContext } from './Table';
 import { isRowExpanded } from './utils';
@@ -29,10 +29,14 @@ const flagVisibility = rows => {
 
 class ContextBody extends React.Component {
   onRow = (row, rowProps) => {
-    const { onRowClick } = this.props;
+    const { onRowClick, onRow } = this.props;
+    const extendedRowProps = {
+      ...rowProps,
+      ...(onRow ? onRow(row, rowProps) : {})
+    };
     return {
       row,
-      rowProps,
+      rowProps: extendedRowProps,
       onMouseDown: event => {
         const computedData = {
           isInput: event.target.tagName !== 'INPUT',
@@ -117,7 +121,8 @@ ContextBody.propTypes = {
   headerData: PropTypes.array,
   rows: PropTypes.array,
   rowKey: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-  onRowClick: PropTypes.func
+  onRowClick: PropTypes.func,
+  onRow: PropTypes.func
 };
 
 ContextBody.defaultProps = {
@@ -125,7 +130,8 @@ ContextBody.defaultProps = {
   children: null,
   headerData: [],
   rows: [],
-  onRowClick: () => undefined
+  onRowClick: () => undefined,
+  onRow: () => undefined
 };
 
 const TableBody = props => (
