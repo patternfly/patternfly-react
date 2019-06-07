@@ -26,7 +26,6 @@ export class TextArea extends React.Component<TextAreaProps> {
     className: '',
     isRequired: false,
     isValid: true,
-    onChange: () => {},
     'aria-label': null as string
   }
   
@@ -40,7 +39,7 @@ export class TextArea extends React.Component<TextAreaProps> {
   }
 
   private handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-      this.props.onChange(event.currentTarget.value, event);
+    this.props.onChange &&this.props.onChange(event.currentTarget.value, event);
   }
 
   render() {
