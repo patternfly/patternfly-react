@@ -83,6 +83,7 @@ class KebabDropdown extends React.Component {
               isOpen={isOpen}
               isPlain
               dropdownItems={dropdownItems}
+              position={'right'}
             />
             <Checkbox 
               isChecked={this.state.check1}
@@ -161,6 +162,7 @@ class KebabDropdown extends React.Component {
               isOpen={isOpen}
               isPlain
               dropdownItems={dropdownItems}
+              position={'right'}
             />
             <Checkbox 
               isChecked={this.state.check1}
@@ -239,6 +241,7 @@ class KebabDropdown extends React.Component {
               isOpen={isOpen}
               isPlain
               dropdownItems={dropdownItems}
+              position={'right'}
             />
             <Checkbox 
               isChecked={this.state.check1}
