@@ -1,8 +1,7 @@
-/** @flow */
 /* eslint-disable */
 
 import * as React from 'react';
-import type {
+import {
   NoContentRenderer,
   Alignment,
   CellSize,
@@ -11,8 +10,6 @@ import type {
   RenderedSection,
   CellRendererParams,
   Scroll as VirtualGridScroll,
-  RowRenderer,
-  RenderedRows,
   Scroll
 } from './types';
 
@@ -55,7 +52,7 @@ type Props = {
 
   /** Callback invoked with information about the slice of rows that were just rendered.  */
 
-  onRowsRendered: (params: RenderedRows) => void,
+  onRowsRendered: (params: any) => void,
 
   /**
    * Callback invoked whenever the scroll offset changes within the inner scrollable region.
@@ -76,7 +73,7 @@ type Props = {
   rowHeight: CellSize,
 
   /** Responsible for rendering a row given an index; ({ index: number }): node */
-  rowRenderer: RowRenderer,
+  rowRenderer: any,
 
   /** Number of rows in list. */
   rowCount: number,
@@ -99,9 +96,9 @@ type Props = {
   /** Width of list */
   width: number,
 
-  columns: Array,
+  columns: any[],
 
-  rows: Array
+  rows: any[]
 };
 
 export default class VirtualTableBody extends React.PureComponent<Props> {
@@ -118,7 +115,7 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
     style: {}
   };
 
-  VirtualGrid: ?React.ElementRef<typeof VirtualGrid>;
+  VirtualGrid: any;
 
   forceUpdateVirtualGrid() {
     if (this.VirtualGrid) {
@@ -199,11 +196,12 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
 
     const classNames = clsx('ReactVirtualized__List', className);
 
+    const VirtualGridAny = VirtualGrid as any;
     return (
       // note: these aria props if rendered will break a11y for role="presentation"
       // this approach attempts to fix non standard table grids
       // see: https://www.html5accessibility.com/tests/aria-table-fix.html
-      <VirtualGrid
+      <VirtualGridAny
         {...this.props}
         style={{
           tableLayout: 'fixed',
@@ -260,7 +258,7 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
     });
   };
 
-  _setRef = (ref: ?React.ElementRef<typeof VirtualGrid>) => {
+  _setRef = (ref: any) => {
     this.VirtualGrid = ref;
   };
 

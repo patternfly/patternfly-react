@@ -1,5 +1,3 @@
-// @flow
-
 /**
  * Helper method that determines when to recalculate row or column metadata.
  */
@@ -9,7 +7,7 @@ type Params<T> = {
   cellCount: number,
 
   // Width or height of cells for the current axis
-  cellSize: ?number,
+  cellSize?: number,
 
   // Method to invoke if cell metadata should be recalculated
   computeMetadataCallback: (props: T) => void,
@@ -21,7 +19,7 @@ type Params<T> = {
   nextCellsCount: number,
 
   // Newly updated width or height of cells for the current axis
-  nextCellSize: ?number,
+  nextCellSize?: number,
 
   // Newly updated scroll-to-index
   nextScrollToIndex: number,
@@ -43,7 +41,7 @@ export default function calculateSizeAndPositionDataAndUpdateScrollOffset({
   nextScrollToIndex,
   scrollToIndex,
   updateScrollOffsetForScrollToIndex
-}: Params<*>) {
+}: Params<any>) {
   // Don't compare cell sizes if they are functions because inline functions would cause infinite loops.
   // In that event users should use the manual recompute methods to inform of changes.
   if (
