@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-table",
-  "version": "2.10.1",
+  "version": "2.10.2",
   "description": "This library provides a set of React table components for use with the PatternFly 4",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -35,10 +35,10 @@
     "exenv": "^1.2.2"
   },
   "peerDependencies": {
+    "lodash-es": "4.x",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
-    "react-dom": "^15.6.2 || ^16.4.0",
-    "lodash-es": "4.x"
+    "react-dom": "^15.6.2 || ^16.4.0"
   },
   "scripts": {
     "build": "yarn build:babel && node ./scripts/copyTS.js && node ./build/copyStyles.js",
