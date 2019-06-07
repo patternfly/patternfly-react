@@ -123,6 +123,7 @@ class PaginationOptionsMenu extends Component {
           toggle={
             <OptionsToggle
               optionsToggle={optionsToggle}
+              showToggle={perPageOptions && perPageOptions.length > 0}
               itemsTitle={itemsTitle}
               onToggle={this.onToggle}
               isOpen={this.state.isOpen}

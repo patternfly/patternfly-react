@@ -14,6 +14,7 @@ const OptionsToggle = ({
   widgetId,
   onToggle,
   isOpen,
+  showToggle,
   toggleTemplate: ToggleTemplate
 }) => (
   <div className={css(styles.optionsMenuToggle, getModifier(styles, 'plain'), getModifier(styles, 'text'))}>
@@ -24,18 +25,20 @@ const OptionsToggle = ({
         <ToggleTemplate firstIndex={firstIndex} lastIndex={lastIndex} itemCount={itemCount} itemsTitle={itemsTitle} />
       )}
     </span>
-    <button
-      className={css(styles.optionsMenuToggleButton)}
-      id={`${widgetId}-toggle`}
-      aria-haspopup="listbox"
-      aria-labelledby={`${widgetId}-toggle ${widgetId}-label`}
-      aria-label={optionsToggle}
-      aria-expanded={isOpen}
-      onClick={() => onToggle(!isOpen)}
-      type="button"
-    >
-      <CaretDownIcon />
-    </button>
+    {showToggle && (
+      <button
+        className={css(styles.optionsMenuToggleButton)}
+        id={`${widgetId}-toggle`}
+        aria-haspopup="listbox"
+        aria-labelledby={`${widgetId}-toggle ${widgetId}-label`}
+        aria-label={optionsToggle}
+        aria-expanded={isOpen}
+        onClick={() => onToggle(!isOpen)}
+        type="button"
+      >
+        <CaretDownIcon />
+      </button>
+    )}
   </div>
 );
 
@@ -48,6 +51,7 @@ OptionsToggle.propTypes = {
   widgetId: PropTypes.string,
   onToggle: PropTypes.func,
   isOpen: PropTypes.bool,
+  showToggle: PropTypes.bool,
   toggleTemplate: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 };
 
@@ -60,6 +64,7 @@ OptionsToggle.defaultProps = {
   widgetId: '',
   onToggle: () => undefined,
   isOpen: false,
+  showToggle: true,
   toggleTemplate: ''
 };
 
