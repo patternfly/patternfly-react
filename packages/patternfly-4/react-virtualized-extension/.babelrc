@@ -1,6 +1,0 @@
-{
-  "presets": [
-    "../.babelrc.js",
-    "flow"
-  ]
-}
