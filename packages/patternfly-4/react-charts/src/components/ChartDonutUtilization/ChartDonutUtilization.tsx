@@ -61,6 +61,13 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    */
   animate?: AnimatePropTypeInterface;
   /**
+   * The capHeight prop defines a text metric for the font being used: the expected height of capital letters.
+   * This is necessary because of SVG, which (a) positions the *bottom* of the text at `y`, and (b) has no notion of
+   * line height. The value should ideally use the same units as `lineHeight` and `dy`, preferably ems. If given a
+   * unitless number, it is assumed to be ems.
+   */
+  capHeight?: StringOrNumberOrCallback;
+  /**
    * The categories prop specifies how categorical data for a chart should be ordered.
    * This prop should be given as an array of string values, or an object with
    * these arrays of values specified for x and y. If this prop is not set,
@@ -134,8 +141,14 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
    *
-   * Note: The parent container must be set to the same height in order to maintain the aspect ratio. Otherwise, the
-   * innerRadius may need to be set when using this property.
+   * Note: When adding a legend, height (the overall SVG height) may need to be larger than donutHeight (the donut size)
+   * in order to accommodate the extra legend.
+   *
+   * By default, donutHeight is the min. of either height or width. This covers most use cases in order to accommodate
+   * legends within the same SVG. However, donutHeight (not height) may need to be set in order to adjust the donut
+   * height.
+   *
+   * The innerRadius may also need to be set when changing the donut size.
    */
   donutHeight?: number;
   /**
@@ -150,8 +163,13 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
    *
-   * Note: The parent container must be set to the same height in order to maintain the aspect ratio. Otherwise, the
-   * innerRadius may need to be set when using this property.
+   * Note: When adding a legend, width (the overall SVG width) may need to be larger than donutWidth (the donut size)
+   * in order to accommodate the extra legend.
+   *
+   * By default, donutWidth is the min. of either height or width. This covers most use cases in order to accommodate
+   * legends within the same SVG. However, donutWidth (not width) may need to be set in order to adjust the donut width.
+   *
+   * The innerRadius may also need to be set when changing the donut size.
    */
   donutWidth?: number;
   /**
@@ -223,7 +241,10 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
    *
-   * Note: innerRadius may need to be set when using this property.
+   * Note: When adding a legend, height (the overall SVG height) may need to be larger than donutHeight (the donut size)
+   * in order to accommodate the extra legend.
+   *
+   * Typically, the parent container is set to the same height in order to maintain the aspect ratio.
    */
   height?: number;
   /**
@@ -402,7 +423,10 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
    *
-   * Note: innerRadius may need to be set when using this property.
+   * Note: When adding a legend, width (the overall SVG width) may need to be larger than donutWidth (the donut size)
+   * in order to accommodate the extra legend.
+   *
+   * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
    */
   width?: number;
   /**
@@ -449,11 +473,12 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
 
   // destructure last
   theme = getDonutUtilizationTheme(themeColor, themeVariant),
-  donutHeight = theme.pie.height,
-  donutWidth = theme.pie.width,
+  capHeight = title && subTitle ? 1.1 : undefined,
   height = theme.pie.height,
-  innerRadius = ((donutHeight || donutWidth) - 34) / 2,
   width = theme.pie.width,
+  donutHeight = Math.min(height, width),
+  donutWidth = Math.min(height, width),
+  innerRadius = (Math.min(donutHeight, donutWidth) - 34) / 2,
   ...rest
 }: ChartDonutUtilizationProps) => {
   // Returns computed data representing pie chart slices
@@ -555,6 +580,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   const chart = (
     <React.Fragment>
       <ChartLabel
+        capHeight={capHeight}
         style={[DonutUtilizationStyles.label.title, DonutUtilizationStyles.label.subTitle] as any} // Todo: Array supported, but @types/victory is wrong
         text={title && subTitle ? [title, subTitle] : title}
         textAnchor="middle"
