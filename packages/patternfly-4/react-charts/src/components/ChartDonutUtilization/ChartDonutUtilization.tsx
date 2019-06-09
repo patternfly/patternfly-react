@@ -271,7 +271,9 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    */
   labelPosition?: 'startAngle' | 'endAngle' | 'centroid';
   /**
-   * The legend component to render with chart. This overrides other legend props.
+   * The legend component to render with chart.
+   *
+   * Note: Default legend properties may be applied
    */
   legendComponent?: React.ReactElement<any>;
   /**
@@ -281,8 +283,6 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * Data should be in the form of an array of data points.
    * Each data point may be any format you wish (depending on the `x` and `y` accessor props),
    * but by default, an object with x and y properties is expected.
-   *
-   * Note: Not compatible with legendComponent prop.
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
@@ -295,9 +295,6 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * and text-wrapping is not currently supported, so "vertical"
    * orientation is both the default setting and recommended for
    * displaying many series of data.
-   *
-   * Note: May need to set legendHeight and legendWidth in order to position properly.
-   * Not compatible with legendComponent prop.
    */
   legendOrientation?: 'horizontal' | 'vertical';
   /**
@@ -515,9 +512,31 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   // Returns legend
   const getLegend = () => {
     if (legendComponent) {
-      return legendComponent;
-    }
-    if (legendData) {
+      const props = legendComponent.props;
+      return React.cloneElement(legendComponent, {
+        data: props.data ? props.data : legendData,
+        orientation: props.legendOrientation ? props.legendOrientation : legendOrientation,
+        standalone: false,
+        theme: props.theme ? props.theme : theme,
+        x: props.x ? props.x : getLegendX({
+          chartOrientation: donutOrientation,
+          legendOrientation: props.legendOrientation ? props.legendOrientation : legendOrientation,
+          legendWidth: getLegendDimensions().width,
+          theme,
+          width
+        }),
+        y: props.y ? props.y : getLegendY({
+          chartDy: donutDy,
+          chartHeight: donutHeight,
+          chartOrientation: donutOrientation,
+          chartType: 'pie',
+          height,
+          legendData: props.data ? props.data : legendData,
+          legendHeight: getLegendDimensions().height,
+          theme
+        })
+      });
+    } else if (legendData) {
       return (
         <ChartLegend
           data={legendData}
@@ -527,7 +546,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
           x={getLegendX({
             chartOrientation: donutOrientation,
             legendOrientation,
-            legendWidth: legendDimensions.width,
+            legendWidth: getLegendDimensions().width,
             theme,
             width
           })}
@@ -538,7 +557,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
             chartType: 'pie',
             height,
             legendData,
-            legendHeight: legendDimensions.height,
+            legendHeight: getLegendDimensions().height,
             theme
           })}
         />
@@ -546,6 +565,25 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
     }
     return null;
   };
+
+  // Legend dimensions
+  const getLegendDimensions = () => {
+    if (legendComponent) {
+      const props = legendComponent.props;
+      return (VictoryLegend as any).getDimensions({
+        data: props.data ? props.data : legendData,
+        orientation: props.legendOrientation ? props.legendOrientation : legendOrientation,
+        theme: props.theme ? props.theme : theme,
+      });
+    } else if (legendData) {
+      return (VictoryLegend as any).getDimensions({
+        data: legendData,
+        orientation: legendOrientation,
+        theme
+      });
+    }
+    return {};
+  }
 
   // Returns theme based on threshold and current value
   const getThresholdTheme = () => {
@@ -567,15 +605,6 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
     }
     return newTheme;
   };
-
-  // Legend dimensions
-  const legendDimensions = legendData
-    ? (VictoryLegend as any).getDimensions({
-        data: legendData,
-        orientation: legendOrientation,
-        theme
-      })
-    : {};
 
   const chart = (
     <React.Fragment>

@@ -245,7 +245,7 @@ class ThresholdChart extends React.Component {
 }
 ```
 
-## Green donut utilization chart with static thresholds and right-aligned legend
+## Green donut utilization chart with static thresholds and right-aligned (custom) legend
 ```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
@@ -282,7 +282,11 @@ class ThresholdChart extends React.Component {
             <ChartDonutUtilization
               data={{ x: 'GBps capacity', y: used }}
               labels={datum => datum.x ? `${datum.x} - ${datum.y}%` : null}
-              legendData={[{ name: `GBps capacity - ${used}%` }, { name: 'Warning threshold at - 60%' }, { name: 'Danger threshold at - 90%' }]}
+              legendComponent={
+                <ChartLegend
+                  data={[{ name: `GBps capacity - ${used}%` }, { name: 'Warning threshold at - 60%' }, { name: 'Danger threshold at - 90%' }]}
+                />
+              }
               subTitle="of 100 GBps"
               title={`${used}%`}
               themeColor={ChartThemeColor.green}
