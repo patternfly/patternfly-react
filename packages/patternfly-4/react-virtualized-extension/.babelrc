@@ -1,6 +1,3 @@
 {
-  "presets": [
-    "../.babelrc.js",
-    "flow"
-  ]
+  "extends": "../.babelrc"
 }

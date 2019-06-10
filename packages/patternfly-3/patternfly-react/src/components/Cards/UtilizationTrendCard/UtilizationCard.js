@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card } from '../index';
+import Card from '../Card';
 
 const UtilizationCard = ({ children, className, ...props }) => {
   const classes = classNames('card-pf-utilization', className);

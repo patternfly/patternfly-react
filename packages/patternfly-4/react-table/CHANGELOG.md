@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.10.3...@patternfly/react-table@2.10.4) (2019-06-10)
+
+
+### Bug Fixes
+
+* **react-table:** Fix error Unknown event handler property `onCollapse`. It will be ignored. ([#2195](https://github.com/patternfly/patternfly-react/issues/2195)) ([2cbdfb8](https://github.com/patternfly/patternfly-react/commit/2cbdfb8))
+* **react-table:** Some props of IRow should not required ([#2196](https://github.com/patternfly/patternfly-react/issues/2196)) ([343f928](https://github.com/patternfly/patternfly-react/commit/343f928))
+
+
+
+
+
 ## [2.10.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.10.2...@patternfly/react-table@2.10.3) (2019-06-07)
 
 **Note:** Version bump only for package @patternfly/react-table

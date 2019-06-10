@@ -1,5 +1,3 @@
 {
-  "presets": [
-    "../.babelrc.js"
-  ]
+  "extends": "../.babelrc"
 }
