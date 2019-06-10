@@ -7,27 +7,27 @@ import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
 
 export interface SelectOptionProps {
   /** Additional classes added to the Select Option */
-  className: string;
+  className?: string;
   /** Internal index of the option */
-  index: number;
+  index?: number;
   /** The value for the option */
   value: string;
   /** Flag indicating if the option is disabled */
-  isDisabled: boolean;
+  isDisabled?: boolean;
   /** Flag indicating if the option acts as a placeholder */
-  isPlaceholder: boolean;
+  isPlaceholder?: boolean;
   /** Internal flag indicating if the option is selected */
-  isSelected: boolean;
+  isSelected?: boolean;
   /** Internal flag indicating if the option is checked */
-  isChecked: boolean;
+  isChecked?: boolean;
   /** Internal flag indicating if the option is focused */
-  isFocused: boolean;
+  isFocused?: boolean;
   /** Internal callback for ref tracking */
-  sendRef: (ref: React.ReactNode, index: number) => void;
+  sendRef?: (ref: React.ReactNode, index: number) => void;
   /** Internal callback for keyboard navigation */
-  keyHandler: (index: number, position: string) => void;
+  keyHandler?: (index: number, position: string) => void;
   /** Optional callback for click event */
-  onClick: (event: React.MouseEvent | React.ChangeEvent) => void;
+  onClick?: (event: React.MouseEvent | React.ChangeEvent) => void;
 }
 
 export class SelectOption extends React.Component<SelectOptionProps> {

@@ -21,9 +21,9 @@ export interface SelectMenuProps {
   /** Internal flag for specifiying how the menu was opened */
   openedOnEnter?: boolean;
   /** Internal callback for ref tracking */
-  sendRef: (ref: React.ReactNode, index: number) => void;
+  sendRef?: (ref: React.ReactNode, index: number) => void;
   /** Internal callback for keyboard navigation */
-  keyHandler: (index: number, position: string) => void;
+  keyHandler?: (index: number, position: string) => void;
 }
 
 export class SelectMenu extends React.Component<SelectMenuProps> {
