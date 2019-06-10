@@ -1,8 +1,7 @@
-/** @flow */
 /* eslint-disable */
 
 import LinearLayoutVector from 'linear-layout-vector';
-import type { Alignment, CellSizeGetter, VisibleCellRange } from '../types';
+import { Alignment, CellSizeGetter, VisibleCellRange } from '../types';
 
 type CellSizeAndPositionManagerParams = {
   cellCount: number,
@@ -40,7 +39,7 @@ type SizeAndPositionData = {
 export default class CellSizeAndPositionManager {
   // Cache of size and position data for cells, mapped by cell index.
   // Note that invalid values may exist in this map so only rely on cells up to this._lastMeasuredIndex
-  _layoutVector: LinearLayoutVector;
+  _layoutVector;
 
   // Measurements for cells up to this index can be trusted; cells afterward should be estimated.
   _lastMeasuredIndex = -1;

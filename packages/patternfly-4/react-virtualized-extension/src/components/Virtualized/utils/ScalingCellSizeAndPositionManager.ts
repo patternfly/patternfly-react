@@ -1,7 +1,6 @@
-/** @flow */
 /* eslint-disable */
 
-import type { Alignment, CellSizeGetter, VisibleCellRange } from '../types';
+import { Alignment, CellSizeGetter, VisibleCellRange } from '../types';
 
 import CellSizeAndPositionManager from './CellSizeAndPositionManager';
 import { getMaxElementSize } from './maxElementSize.js';

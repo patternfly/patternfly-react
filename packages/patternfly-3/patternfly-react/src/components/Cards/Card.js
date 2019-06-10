@@ -2,25 +2,6 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import CardTitle from './CardTitle';
-import CardBody from './CardBody';
-import CardHeading from './CardHeading';
-import CardFooter from './CardFooter';
-import CardLink from './CardLink';
-import CardGrid from './CardGrid';
-import CardDropdownButton from './CardDropdownButton';
-import CardHeightMatching from './CardHeightMatching';
-import {
-  UtilizationCard,
-  UtilizationCardDetails,
-  UtilizationCardDetailsCount,
-  UtilizationCardDetailsDesc,
-  UtilizationCardDetailsLine1,
-  UtilizationCardDetailsLine2
-} from './UtilizationTrendCard';
-
-import { AggregateStatusCount, AggregateStatusNotifications, AggregateStatusNotification } from './AggregateStatusCard';
-
 /**
  * Card Component for PatternFly React
  */
@@ -68,23 +49,5 @@ Card.defaultProps = {
   matchHeight: false,
   cardRef: null
 };
-
-Card.Title = CardTitle;
-Card.Body = CardBody;
-Card.Heading = CardHeading;
-Card.Footer = CardFooter;
-Card.Link = CardLink;
-Card.Grid = CardGrid;
-Card.DropdownButton = CardDropdownButton;
-Card.HeightMatching = CardHeightMatching;
-Card.UtilizationCard = UtilizationCard;
-Card.UtilizationCardDetails = UtilizationCardDetails;
-Card.UtilizationCardDetailsCount = UtilizationCardDetailsCount;
-Card.UtilizationCardDetailsDesc = UtilizationCardDetailsDesc;
-Card.UtilizationCardDetailsLine1 = UtilizationCardDetailsLine1;
-Card.UtilizationCardDetailsLine2 = UtilizationCardDetailsLine2;
-Card.AggregateStatusCount = AggregateStatusCount;
-Card.AggregateStatusNotifications = AggregateStatusNotifications;
-Card.AggregateStatusNotification = AggregateStatusNotification;
 
 export default Card;

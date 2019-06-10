@@ -1,23 +1,4 @@
-/** @flow */
 /* eslint-disable */
-
-import type {
-  CellRenderer,
-  CellRangeRenderer,
-  CellPosition,
-  CellSize,
-  CellSizeGetter,
-  NoContentRenderer,
-  Scroll,
-  ScrollbarPresenceChange,
-  RenderedSection,
-  OverscanIndicesGetter,
-  Alignment,
-  CellCache,
-  StyleCache
-} from './types';
-import type { AnimationTimeoutId } from './utils/requestAnimationTimeout';
-
 import * as React from 'react';
 import clsx from 'clsx';
 import calculateSizeAndPositionDataAndUpdateScrollOffset from './utils/calculateSizeAndPositionDataAndUpdateScrollOffset';
@@ -33,6 +14,22 @@ import scrollbarSize from 'dom-helpers/util/scrollbarSize';
 import { polyfill } from 'react-lifecycles-compat';
 import { requestAnimationTimeout, cancelAnimationTimeout } from './utils/requestAnimationTimeout';
 
+import {
+  CellRenderer,
+  CellRangeRenderer,
+  CellPosition,
+  CellSize,
+  CellSizeGetter,
+  NoContentRenderer,
+  Scroll,
+  ScrollbarPresenceChange,
+  RenderedSection,
+  OverscanIndicesGetter,
+  Alignment,
+  CellCache,
+  StyleCache
+} from './types';
+import { overflow } from 'styled-system';
 /**
  * Specifies the number of milliseconds during which to disable pointer events while a scroll is in progress.
  * This improves performance and makes scrolling smoother.
@@ -93,19 +90,19 @@ type Props = {
   columnWidth: CellSize,
 
   /** Unfiltered props for the VirtualGrid container. */
-  containerProps?: Object,
+  containerProps?: any,
 
   /** ARIA role for the cell-container.  */
   containerRole: string,
 
   /** Optional inline style applied to inner cell-container */
-  containerStyle: Object,
+  containerStyle: any,
 
   /**
    * If CellMeasurer is used to measure this VirtualGrid's children, this should be a pointer to its CellMeasurerCache.
    * A shared CellMeasurerCache reference enables VirtualGrid and CellMeasurer to share measurement data.
    */
-  deferredMeasurementCache?: Object,
+  deferredMeasurementCache?: any,
 
   /**
    * Used to estimate the total width of a VirtualGrid before all of its columns have actually been measured.
@@ -212,10 +209,10 @@ type Props = {
   scrollToRow: number,
 
   /** Optional inline style */
-  style: Object,
+  style: any,
 
   /** Tab index for focus */
-  tabIndex: ?number,
+  tabIndex?: number,
 
   /** Width of VirtualGrid; this property determines the number of visible (vs virtualized) columns.  */
   width: number,
@@ -236,8 +233,8 @@ type InstanceProps = {
   prevIsScrolling: boolean,
   prevScrollToColumn: number,
   prevScrollToRow: number,
-  prevScrollLeft: ?number,
-  prevScrollTop: ?number,
+  prevScrollLeft?: number,
+  prevScrollTop?: number,
 
   columnSizeAndPositionManager: ScalingCellSizeAndPositionManager,
   rowSizeAndPositionManager: ScalingCellSizeAndPositionManager,
@@ -247,14 +244,14 @@ type InstanceProps = {
 };
 
 type State = {
-  instanceProps: InstanceProps,
-  isScrolling: boolean,
-  scrollDirectionHorizontal: -1 | 1,
-  scrollDirectionVertical: -1 | 1,
-  scrollLeft: number,
-  scrollTop: number,
-  scrollPositionChangeReason: 'observed' | 'requested' | null,
-  needToResetStyleCache: boolean
+  instanceProps?: InstanceProps,
+  isScrolling?: boolean,
+  scrollDirectionHorizontal?: -1 | 1,
+  scrollDirectionVertical?: -1 | 1,
+  scrollLeft?: number,
+  scrollTop?: number,
+  scrollPositionChangeReason?: 'observed' | 'requested',
+  needToResetStyleCache?: boolean
 };
 
 /**
@@ -307,7 +304,7 @@ class VirtualGrid extends React.PureComponent<Props, State> {
   _scrollbarPresenceChanged = false;
   _scrollingContainer: Element;
 
-  _childrenToDisplay: React.Element<*>[];
+  _childrenToDisplay: React.ReactElement<any>[];
 
   _columnStartIndex: number;
   _columnStopIndex: number;
@@ -321,7 +318,7 @@ class VirtualGrid extends React.PureComponent<Props, State> {
   _initialScrollTop: number;
   _initialScrollLeft: number;
 
-  _disablePointerEventsTimeoutId: ?AnimationTimeoutId;
+  _disablePointerEventsTimeoutId;
 
   _styleCache: StyleCache = {};
   _cellCache: CellCache = {};
@@ -461,11 +458,11 @@ class VirtualGrid extends React.PureComponent<Props, State> {
             : SCROLL_DIRECTION_BACKWARD
           : this.state.scrollDirectionVertical;
 
-      const newState: $Shape<State> = {
+      const newState: State = {
         isScrolling: true,
         scrollDirectionHorizontal,
         scrollDirectionVertical,
-        scrollPositionChangeReason: SCROLL_POSITION_CHANGE_REASONS.OBSERVED
+        scrollPositionChangeReason: SCROLL_POSITION_CHANGE_REASONS.OBSERVED as 'observed' | 'requested'
       };
 
       if (!autoHeight) {
@@ -523,7 +520,7 @@ class VirtualGrid extends React.PureComponent<Props, State> {
    * This function should be called if dynamic column or row sizes have changed but nothing else has.
    * Since VirtualGrid only receives :columnCount and :rowCount it has no way of detecting when the underlying data changes.
    */
-  recomputeVirtualGridSize({ columnIndex = 0, rowIndex = 0 }: CellPosition = {}) {
+  recomputeVirtualGridSize({ columnIndex = 0, rowIndex = 0 } = {}) {
     const { scrollToColumn, scrollToRow } = this.props;
     const { instanceProps } = this.state;
 
@@ -779,8 +776,8 @@ class VirtualGrid extends React.PureComponent<Props, State> {
    * 2) New scroll props overriding the current state
    * 3) Cells-count or cells-size has changed, making previous scroll offsets invalid
    */
-  static getDerivedStateFromProps(nextProps: Props, prevState: State): $Shape<State> {
-    const newState = {};
+  static getDerivedStateFromProps(nextProps: Props, prevState: State): State {
+    const newState: State = {};
     const { instanceProps } = prevState;
 
     if (
@@ -917,7 +914,17 @@ class VirtualGrid extends React.PureComponent<Props, State> {
 
     const isScrolling = this._isScrolling();
 
-    const gridStyle: Object = {
+    const gridStyle: {
+      boxSizing: string,
+      direction: string,
+      height: string | number,
+      position: string,
+      width: string | number,
+      WebkitOverflowScrolling: string,
+      willChange: string,
+      overflowX?: string,
+      overflowY?: string
+    } = {
       boxSizing: 'border-box',
       direction: 'ltr',
       height: autoHeight ? 'auto' : height,
@@ -1291,8 +1298,8 @@ class VirtualGrid extends React.PureComponent<Props, State> {
     prevState: State,
     scrollLeft?: number,
     scrollTop?: number
-  }): $Shape<State> {
-    const newState: Object = {
+  }): State {
+    const newState: any = {
       scrollPositionChangeReason: SCROLL_POSITION_CHANGE_REASONS.REQUESTED
     };
 
@@ -1335,7 +1342,7 @@ class VirtualGrid extends React.PureComponent<Props, State> {
   }
 
   static _wrapSizeGetter(value: CellSize): CellSizeGetter {
-    return typeof value === 'function' ? value : () => (value: any);
+    return typeof value === 'function' ? value : () => value as any;
   }
 
   static _getCalculatedScrollLeft(nextProps: Props, prevState: State) {
@@ -1363,7 +1370,7 @@ class VirtualGrid extends React.PureComponent<Props, State> {
     return VirtualGrid._getCalculatedScrollLeft(props, state);
   }
 
-  static _getScrollLeftForScrollToColumnStateUpdate(nextProps: Props, prevState: State): $Shape<State> {
+  static _getScrollLeftForScrollToColumnStateUpdate(nextProps: Props, prevState: State): State {
     const { scrollLeft } = prevState;
     const calculatedScrollLeft = VirtualGrid._getCalculatedScrollLeft(nextProps, prevState);
 
@@ -1437,7 +1444,7 @@ class VirtualGrid extends React.PureComponent<Props, State> {
     }
   }
 
-  static _getScrollTopForScrollToRowStateUpdate(nextProps: Props, prevState: State): $Shape<State> {
+  static _getScrollTopForScrollToRowStateUpdate(nextProps: Props, prevState: State): State {
     const { scrollTop } = prevState;
     const calculatedScrollTop = VirtualGrid._getCalculatedScrollTop(nextProps, prevState);
 
@@ -1464,7 +1471,7 @@ class VirtualGrid extends React.PureComponent<Props, State> {
     // This invalid event can be detected by comparing event.target to this component's scrollable DOM element.
     // See issue #404 for more information.
     if (event.target === this._scrollingContainer) {
-      this.handleScrollEvent((event.target: any));
+      this.handleScrollEvent(event.target as any);
     }
   };
 }

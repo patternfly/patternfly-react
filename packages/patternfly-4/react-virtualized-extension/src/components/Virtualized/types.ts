@@ -1,24 +1,22 @@
-// @flow
-
 import * as React from 'react';
 import ScalingCellSizeAndPositionManager from './utils/ScalingCellSizeAndPositionManager';
 
-export type CellPosition = { columnIndex: number, rowIndex: number };
+export type CellPosition = { columnIndex?: number, rowIndex?: number };
 
 export type CellRendererParams = {
   columnIndex: number,
   isScrolling: boolean,
   isVisible: boolean,
   key: string,
-  parent: Object,
+  parent: any,
   rowIndex: number,
-  style: Object
+  style: any
 };
 
-export type CellRenderer = (props: CellRendererParams) => React.Element<*>;
+export type CellRenderer = (props: CellRendererParams) => React.ReactElement<any>;
 
-export type CellCache = { [key: string]: React.Element<*> };
-export type StyleCache = { [key: string]: Object };
+export type CellCache = { [key: string]: React.ReactElement<any> };
+export type StyleCache = { [key: string]: any };
 
 export type CellRangeRendererParams = {
   cellCache: CellCache,
@@ -26,11 +24,11 @@ export type CellRangeRendererParams = {
   columnSizeAndPositionManager: ScalingCellSizeAndPositionManager,
   columnStartIndex: number,
   columnStopIndex: number,
-  deferredMeasurementCache?: Object,
+  deferredMeasurementCache?: any,
   horizontalOffsetAdjustment: number,
   isScrolling: boolean,
   isScrollingOptOut: boolean,
-  parent: Object,
+  parent: any,
   rowSizeAndPositionManager: ScalingCellSizeAndPositionManager,
   rowStartIndex: number,
   rowStopIndex: number,
@@ -38,17 +36,17 @@ export type CellRangeRendererParams = {
   scrollTop: number,
   styleCache: StyleCache,
   verticalOffsetAdjustment: number,
-  visibleColumnIndices: Object,
-  visibleRowIndices: Object
+  visibleColumnIndices: any,
+  visibleRowIndices: any
 };
 
-export type CellRangeRenderer = (params: CellRangeRendererParams) => React.Element<*>[];
+export type CellRangeRenderer = (params: CellRangeRendererParams) => React.ReactElement<any>[];
 
 export type CellSizeGetter = (params: { index: number }) => number;
 
 export type CellSize = CellSizeGetter | number;
 
-export type NoContentRenderer = () => React.Element<*> | null;
+export type NoContentRenderer = () => React.ReactElement<any> | null;
 
 export type Scroll = {
   clientHeight: number,

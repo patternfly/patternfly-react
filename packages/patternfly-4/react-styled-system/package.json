@@ -27,9 +27,10 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
     "build": "yarn build:babel && node ./scripts/copyTS.js",
-    "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm'",
-    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js -q",
-    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm -q",
+    "build:babel": "concurrently 'yarn build:babel:esm && yarn build:babel:umd' 'yarn build:babel:cjs'",
+    "build:babel:cjs": "babel --extensions '.js,.ts,.tsx' src --out-dir dist/js --presets=@babel/env",
+    "build:babel:esm": "babel --extensions '.js,.ts,.tsx' src --out-dir dist/esm",
+    "build:babel:umd": "babel dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "clean": "rimraf dist",
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
   },
@@ -45,8 +46,17 @@
     "react": "^16.4.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-typescript": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "@patternfly/patternfly": "2.8.2",
-    "babel-core": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-plugin-typescript-to-proptypes": "^0.17.1",
     "css": "^2.2.3",
     "enzyme": "3.9.0",
     "fs-extra": "^6.0.1",

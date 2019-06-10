@@ -1,6 +1,6 @@
-import 'raf/polyfill';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+require('raf/polyfill');
+const { configure } = require('enzyme');
+const Adapter = require('enzyme-adapter-react-16');
 
 const MutationObserverPolyfill = require('mutation-observer');
 // referenced from '@novnc/nvnc/core/util/events.js'

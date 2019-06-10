@@ -1,7 +1,6 @@
-/** @flow */
 /* eslint-disable */
 
-import type { CellRangeRendererParams } from './types';
+import { CellRangeRendererParams } from './types';
 
 /**
  * Default implementation of cellRangeRenderer used by Grid.

@@ -1,6 +1,4 @@
-// @flow
-
-import type { Alignment, CellSize } from '../types';
+import { Alignment, CellSize } from '../types';
 
 import ScalingCellSizeAndPositionManager from './ScalingCellSizeAndPositionManager.js';
 
