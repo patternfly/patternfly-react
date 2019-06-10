@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.10.5...@patternfly/react-table@2.11.0) (2019-06-10)
+
+
+### Features
+
+* **Table:** Add support for .pf-m-grid-2xl breakpoint ([#2206](https://github.com/patternfly/patternfly-react/issues/2206)) ([0f9ebf9](https://github.com/patternfly/patternfly-react/commit/0f9ebf9))
+
+
+
+
+
 ## [2.10.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.10.4...@patternfly/react-table@2.10.5) (2019-06-10)
 
 **Note:** Version bump only for package @patternfly/react-table
