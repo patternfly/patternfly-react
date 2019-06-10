@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.19.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.18.3...demo-app-ts@1.19.0) (2019-06-10)
+
+
+### Features
+
+* **backdrop:** Convert backdrop to typescript ([#2105](https://github.com/patternfly/patternfly-react/issues/2105)) ([fd3d771](https://github.com/patternfly/patternfly-react/commit/fd3d771))
+
+
+
+
+
 ## [1.18.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.18.2...demo-app-ts@1.18.3) (2019-06-10)
 
 **Note:** Version bump only for package demo-app-ts

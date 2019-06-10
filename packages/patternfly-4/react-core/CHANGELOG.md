@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.38.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.37.1...@patternfly/react-core@3.38.0) (2019-06-10)
+
+
+### Features
+
+* **backdrop:** Convert backdrop to typescript ([#2105](https://github.com/patternfly/patternfly-react/issues/2105)) ([fd3d771](https://github.com/patternfly/patternfly-react/commit/fd3d771))
+
+
+
+
+
 ## [3.37.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.37.0...@patternfly/react-core@3.37.1) (2019-06-10)
 
 **Note:** Version bump only for package @patternfly/react-core

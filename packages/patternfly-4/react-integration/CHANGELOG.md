@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.18.0 (2019-06-10)
+
+
+### Features
+
+* **backdrop:** Convert backdrop to typescript ([#2105](https://github.com/patternfly/patternfly-react/issues/2105)) ([fd3d771](https://github.com/patternfly/patternfly-react/commit/fd3d771))
+* **PF4: Pagination:** When empty array sent to pagination no per page should be visible ([#2175](https://github.com/patternfly/patternfly-react/issues/2175)) ([cb97dfd](https://github.com/patternfly/patternfly-react/commit/cb97dfd))
+
+
+
+
+
 # [1.17.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.16.0...@patternfly/react-integration@1.17.0) (2019-06-05)
 
 
