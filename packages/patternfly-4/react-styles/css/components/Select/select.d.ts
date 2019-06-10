@@ -1,0 +1,36 @@
+import './select.css';
+declare const _default: {
+    select: string;
+    selectToggle: string;
+    selectToggleClear: string;
+    selectToggleButton: string;
+    selectToggleArrow: string;
+    selectToggleText: string;
+    selectToggleWrapper: string;
+    chip: string;
+    button: string;
+    formControl: string;
+    chipGroup: string;
+    selectToggleBadge: string;
+    selectToggleTypeahead: string;
+    selectMenu: string;
+    selectMenuItem: string;
+    selectMenuItemIcon: string;
+    selectMenuItemMatch: string;
+    selectSeparator: string;
+    selectMenuGroup: string;
+    selectMenuGroupTitle: string;
+    modifiers: {
+        'hover': string;
+        'active': string;
+        'expanded': string;
+        'plain': string;
+        'typeahead': string;
+        'top': string;
+        'focus': string;
+        'alignRight': string;
+        'disabled': string;
+        'selected': string;
+    };
+};
+export default _default;

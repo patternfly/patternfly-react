@@ -1,0 +1,20 @@
+import './accessibility.css';
+declare const _default: {
+    screenReader: string;
+    visible: string;
+    hidden: string;
+    screenReaderOnSm: string;
+    visibleOnSm: string;
+    hiddenOnSm: string;
+    screenReaderOnMd: string;
+    visibleOnMd: string;
+    hiddenOnMd: string;
+    screenReaderOnLg: string;
+    visibleOnLg: string;
+    hiddenOnLg: string;
+    screenReaderOnXl: string;
+    visibleOnXl: string;
+    hiddenOnXl: string;
+    modifiers: {};
+};
+export default _default;

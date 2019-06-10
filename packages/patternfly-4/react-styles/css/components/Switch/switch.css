@@ -1,0 +1,103 @@
+/* stylelint-enable */
+/* stylelint-disable */
+/* stylelint-enable */
+.pf-c-switch {
+  --pf-c-switch--Height: calc(var(--pf-global--FontSize--md) * var(--pf-global--LineHeight--md));
+  --pf-c-switch--Width: calc(var(--pf-c-switch--Height) * var(--pf-global--golden-ratio));
+  --pf-c-switch--LineHeight: var(--pf-global--LineHeight--md);
+  --pf-c-switch__input--checked__toggle--BackgroundColor: var(--pf-global--primary-color--100);
+  --pf-c-switch__input--checked__toggle--before--Transform: translateX(calc(var(--pf-c-switch--Width) - var(--pf-c-switch__toggle--before--Width) - 2 * var(--pf-c-switch__toggle--before--Left)));
+  --pf-c-switch__input--checked__label--Color: var(--pf-global--Color--dark-100);
+  --pf-c-switch__input--not-checked__label--Color: var(--pf-global--disabled-color--100);
+  --pf-c-switch__input--disabled__label--Color: var(--pf-global--disabled-color--100);
+  --pf-c-switch__input--disabled__toggle--BackgroundColor: var(--pf-global--Color--dark-200);
+  --pf-c-switch__input--disabled__toggle--before--BackgroundColor: var(--pf-global--disabled-color--200);
+  --pf-c-switch__toggle--BackgroundColor: var(--pf-global--disabled-color--200);
+  --pf-c-switch__toggle--BorderRadius: var(--pf-c-switch--Height);
+  --pf-c-switch__toggle--before--Top: calc(var(--pf-c-switch--Height) / 2 * (1 - 1 / var(--pf-global--golden-ratio)));
+  --pf-c-switch__toggle--before--Left: var(--pf-c-switch__toggle--before--Top);
+  --pf-c-switch__toggle--before--Width: calc(var(--pf-c-switch--Height) / var(--pf-global--golden-ratio));
+  --pf-c-switch__toggle--before--Height: var(--pf-c-switch__toggle--before--Width);
+  --pf-c-switch__toggle--before--BackgroundColor: var(--pf-global--BackgroundColor--100);
+  --pf-c-switch__toggle--before--BorderRadius: var(--pf-global--BorderRadius--lg);
+  --pf-c-switch__toggle--before--BoxShadow: var(--pf-global--BoxShadow--md);
+  --pf-c-switch__toggle-icon--FontSize: var(--pf-global--icon--FontSize--sm);
+  --pf-c-switch__toggle-icon--Color: var(--pf-global--Color--light-100);
+  --pf-c-switch__toggle-icon--PaddingLeft: var(--pf-global--spacer--sm);
+  --pf-c-switch__toggle-icon--Top: 0.4375rem;
+  --pf-c-switch__label--PaddingLeft: var(--pf-global--spacer--md);
+  --pf-c-switch__label--FontSize: var(--pf-global--FontSize--md);
+  --pf-c-switch__label--FontWeight: var(--pf-global--FontWeight--normal);
+  --pf-c-switch__label--LineHeight: var(--pf-global--LineHeight--md);
+  --pf-c-switch__label--Color: var(--pf-global--Color--dark-100);
+  position: relative;
+  display: inline-block;
+  height: var(--pf-c-switch--Height);
+  line-height: var(--pf-c-switch--LineHeight);
+  vertical-align: middle;
+  cursor: pointer;
+  /* stylelint-enable */ }
+  .pf-c-switch .pf-c-switch__input {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    /* stylelint-disable */ }
+    .pf-c-switch .pf-c-switch__input:checked ~ .pf-c-switch__label {
+      color: var(--pf-c-switch__input--checked__label--Color); }
+    .pf-c-switch .pf-c-switch__input:checked ~ .pf-c-switch__toggle {
+      background-color: var(--pf-c-switch__input--checked__toggle--BackgroundColor); }
+      .pf-c-switch .pf-c-switch__input:checked ~ .pf-c-switch__toggle::before {
+        transform: var(--pf-c-switch__input--checked__toggle--before--Transform); }
+    .pf-c-switch .pf-c-switch__input:checked ~ .pf-m-off {
+      display: none; }
+    .pf-c-switch .pf-c-switch__input:not(:checked) ~ .pf-c-switch__label {
+      color: var(--pf-c-switch__input--not-checked__label--Color); }
+    .pf-c-switch .pf-c-switch__input:not(:checked) ~ .pf-c-switch__toggle .pf-c-switch__toggle-icon {
+      display: none;
+      visibility: hidden; }
+    .pf-c-switch .pf-c-switch__input:not(:checked) ~ .pf-m-on {
+      display: none; }
+    .pf-c-switch .pf-c-switch__input:disabled {
+      cursor: not-allowed; }
+      .pf-c-switch .pf-c-switch__input:disabled ~ .pf-c-switch__label {
+        color: var(--pf-c-switch__input--disabled__label--Color);
+        cursor: not-allowed; }
+      .pf-c-switch .pf-c-switch__input:disabled ~ .pf-c-switch__toggle {
+        cursor: not-allowed;
+        background-color: var(--pf-c-switch__input--disabled__toggle--BackgroundColor); }
+        .pf-c-switch .pf-c-switch__input:disabled ~ .pf-c-switch__toggle::before {
+          background-color: var(--pf-c-switch__input--disabled__toggle--before--BackgroundColor); }
+  .pf-c-switch .pf-c-switch__toggle {
+    position: relative;
+    display: inline-block;
+    width: var(--pf-c-switch--Width);
+    height: var(--pf-c-switch--Height);
+    background-color: var(--pf-c-switch__toggle--BackgroundColor);
+    border-radius: var(--pf-c-switch__toggle--BorderRadius); }
+    .pf-c-switch .pf-c-switch__toggle::before {
+      position: absolute;
+      top: var(--pf-c-switch__toggle--before--Top);
+      left: var(--pf-c-switch__toggle--before--Left);
+      display: block;
+      width: var(--pf-c-switch__toggle--before--Width);
+      height: var(--pf-c-switch__toggle--before--Height);
+      content: "";
+      background-color: var(--pf-c-switch__toggle--before--BackgroundColor);
+      border-radius: var(--pf-c-switch__toggle--before--BorderRadius);
+      box-shadow: var(--pf-c-switch__toggle--before--BoxShadow);
+      transition: transform .25s ease 0s, width .25s ease 0s, left .25s ease 0s;
+      transform: translateX(0); }
+  .pf-c-switch .pf-c-switch__toggle-icon {
+    position: absolute;
+    top: var(--pf-c-switch__toggle-icon--Top);
+    padding-left: var(--pf-c-switch__toggle-icon--PaddingLeft);
+    font-size: var(--pf-c-switch__toggle-icon--FontSize);
+    color: var(--pf-c-switch__toggle-icon--Color); }
+  .pf-c-switch .pf-c-switch__label {
+    display: inline-block;
+    padding-left: var(--pf-c-switch__label--PaddingLeft);
+    font-size: var(--pf-c-switch__label--FontSize);
+    font-weight: var(--pf-c-switch__label--FontWeight);
+    line-height: var(--pf-c-switch__label--LineHeight);
+    color: var(--pf-c-switch__label--Color);
+    vertical-align: top; }

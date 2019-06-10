@@ -1,0 +1,38 @@
+import './page.css';
+declare const _default: {
+    pageHeader: string;
+    pageMainSection: string;
+    card: string;
+    button: string;
+    page: string;
+    pageHeaderBrand: string;
+    pageHeaderBrandLink: string;
+    brand: string;
+    pageHeaderBrandToggle: string;
+    pageHeaderNav: string;
+    nav: string;
+    navScrollButton: string;
+    pageHeaderTools: string;
+    avatar: string;
+    pageHeaderToolsGroup: string;
+    pageSidebar: string;
+    pageSidebarBody: string;
+    pageMain: string;
+    pageMainNav: string;
+    pageMainBreadcrumb: string;
+    modifiers: {
+        'icons': string;
+        'mobile': string;
+        'user': string;
+        'expanded': string;
+        'collapsed': string;
+        'fill': string;
+        'noFill': string;
+        'light': string;
+        'dark_100': string;
+        'dark_200': string;
+        'noPadding': string;
+        'noPaddingMobile': string;
+    };
+};
+export default _default;

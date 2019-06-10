@@ -1,0 +1,71 @@
+/* stylelint-enable */
+/* stylelint-disable */
+/* stylelint-enable */
+.pf-c-app-launcher {
+  --pf-c-app-launcher__menu--BackgroundColor: var(--pf-global--BackgroundColor--light-100);
+  --pf-c-app-launcher__menu--BorderWidth: var(--pf-global--BorderWidth--sm);
+  --pf-c-app-launcher__menu--BoxShadow: var(--pf-global--BoxShadow--md);
+  --pf-c-app-launcher__menu--PaddingTop: var(--pf-global--spacer--sm);
+  --pf-c-app-launcher__menu--PaddingBottom: var(--pf-global--spacer--sm);
+  --pf-c-app-launcher__menu--Top: calc(100% + var(--pf-global--spacer--xs));
+  --pf-c-app-launcher__menu--ZIndex: var(--pf-global--ZIndex--xs);
+  --pf-c-app-launcher__toggle--PaddingTop: var(--pf-global--spacer--form-element);
+  --pf-c-app-launcher__toggle--PaddingRight: var(--pf-global--spacer--md);
+  --pf-c-app-launcher__toggle--PaddingBottom: var(--pf-global--spacer--form-element);
+  --pf-c-app-launcher__toggle--PaddingLeft: var(--pf-global--spacer--md);
+  --pf-c-app-launcher__toggle--Color: var(--pf-global--Color--200);
+  --pf-c-app-launcher__toggle--hover--Color: var(--pf-global--Color--100);
+  --pf-c-app-launcher__toggle--active--Color: var(--pf-global--Color--100);
+  --pf-c-app-launcher__toggle--focus--Color: var(--pf-global--Color--100);
+  --pf-c-app-launcher__toggle--m-expanded--Color: var(--pf-global--Color--100);
+  --pf-c-app-launcher__menu-item--PaddingTop: var(--pf-global--spacer--sm);
+  --pf-c-app-launcher__menu-item--PaddingRight: var(--pf-global--spacer--md);
+  --pf-c-app-launcher__menu-item--PaddingBottom: var(--pf-global--spacer--sm);
+  --pf-c-app-launcher__menu-item--PaddingLeft: var(--pf-global--spacer--md);
+  --pf-c-app-launcher__menu-item--Color: var(--pf-global--Color--dark-100);
+  --pf-c-app-launcher__menu-item--FontWeight: var(--pf-global--FontWeight--normal);
+  --pf-c-app-launcher__menu-item--disabled--Color: var(--pf-global--Color--dark-200);
+  --pf-c-app-launcher__menu-item--hover--BackgroundColor: var(--pf-global--BackgroundColor--light-300);
+  position: relative;
+  display: inline-block;
+  max-width: 100%; }
+  .pf-c-app-launcher.pf-m-expanded > .pf-c-app-launcher__toggle {
+    color: var(--pf-c-app-launcher__toggle--m-expanded--Color); }
+
+.pf-c-app-launcher__toggle {
+  padding: var(--pf-c-app-launcher__toggle--PaddingTop) var(--pf-c-app-launcher__toggle--PaddingRight) var(--pf-c-app-launcher__toggle--PaddingBottom) var(--pf-c-app-launcher__toggle--PaddingLeft);
+  color: var(--pf-c-app-launcher__toggle--Color);
+  border: none; }
+  .pf-c-app-launcher__toggle:hover, .pf-c-app-launcher__toggle.pf-m-hover {
+    --pf-c-app-launcher__toggle--Color: var(--pf-c-app-launcher__toggle--hover--Color); }
+  .pf-c-app-launcher__toggle:active, .pf-c-app-launcher__toggle.pf-m-active {
+    --pf-c-app-launcher__toggle--Color: var(--pf-c-app-launcher__toggle--active--Color); }
+  .pf-c-app-launcher__toggle:focus, .pf-c-app-launcher__toggle.pf-m-focus {
+    --pf-c-app-launcher__toggle--Color: var(--pf-c-app-launcher__toggle--focus--Color); }
+
+.pf-c-app-launcher__menu {
+  position: absolute;
+  top: var(--pf-c-app-launcher__menu--Top);
+  z-index: var(--pf-c-app-launcher__menu--ZIndex);
+  min-width: 100%;
+  padding-top: var(--pf-c-app-launcher__menu--PaddingTop);
+  padding-bottom: var(--pf-c-app-launcher__menu--PaddingBottom);
+  background-color: var(--pf-c-app-launcher__menu--BackgroundColor);
+  background-clip: padding-box;
+  border: var(--pf-c-app-launcher__menu--BorderWidth) solid transparent;
+  box-shadow: var(--pf-c-app-launcher__menu--BoxShadow); }
+
+.pf-c-app-launcher__menu-item {
+  display: block;
+  width: 100%;
+  padding: var(--pf-c-app-launcher__menu-item--PaddingTop) var(--pf-c-app-launcher__menu-item--PaddingRight) var(--pf-c-app-launcher__menu-item--PaddingBottom) var(--pf-c-app-launcher__menu-item--PaddingLeft);
+  font-weight: var(--pf-c-app-launcher__menu-item--FontWeight);
+  color: var(--pf-c-app-launcher__menu-item--Color);
+  white-space: nowrap; }
+  .pf-c-app-launcher__menu-item:hover, .pf-c-app-launcher__menu-item.pf-m-hover, .pf-c-app-launcher__menu-item:focus, .pf-c-app-launcher__menu-item.pf-m-focus {
+    text-decoration: none;
+    background-color: var(--pf-c-app-launcher__menu-item--hover--BackgroundColor); }
+  .pf-c-app-launcher__menu-item:disabled, .pf-c-app-launcher__menu-item.pf-m-disabled {
+    --pf-c-app-launcher__menu-item--Color: var(--pf-c-app-launcher__menu-item--disabled--Color);
+    pointer-events: none;
+    background-color: transparent; }

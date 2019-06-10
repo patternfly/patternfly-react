@@ -1,0 +1,25 @@
+import './alignment.css';
+declare const _default: {
+    textAlignLeft: string;
+    textAlignCenter: string;
+    textAlignRight: string;
+    textAlignJustify: string;
+    textAlignLeftOnSm: string;
+    textAlignCenterOnSm: string;
+    textAlignRightOnSm: string;
+    textAlignJustifyOnSm: string;
+    textAlignLeftOnMd: string;
+    textAlignCenterOnMd: string;
+    textAlignRightOnMd: string;
+    textAlignJustifyOnMd: string;
+    textAlignLeftOnLg: string;
+    textAlignCenterOnLg: string;
+    textAlignRightOnLg: string;
+    textAlignJustifyOnLg: string;
+    textAlignLeftOnXl: string;
+    textAlignCenterOnXl: string;
+    textAlignRightOnXl: string;
+    textAlignJustifyOnXl: string;
+    modifiers: {};
+};
+export default _default;

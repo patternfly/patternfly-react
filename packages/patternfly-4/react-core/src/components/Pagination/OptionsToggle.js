@@ -4,45 +4,45 @@ import { CaretDownIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { css, getModifier } from '@patternfly/react-styles';
 import { fillTemplate, KEY_CODES } from '../../helpers';
-import Toggle from '../Dropdown/Toggle';
+// import Toggle from '../Dropdown/Toggle';
 
-const OptionsToggle = ({
-  itemsTitle,
-  optionsToggle,
-  firstIndex,
-  lastIndex,
-  itemCount,
-  widgetId,
-  onToggle,
-  isOpen,
-  onEnter,
-  parentRef,
-  toggleTemplate: ToggleTemplate
-}) => (
-  <div className={css(styles.optionsMenuToggle, getModifier(styles, 'plain'), getModifier(styles, 'text'))}>
-    <span className={css(styles.optionsMenuToggleText)}>
-      {typeof ToggleTemplate === 'string' ? (
-        fillTemplate(ToggleTemplate, { firstIndex, lastIndex, itemCount, itemsTitle })
-      ) : (
-        <ToggleTemplate firstIndex={firstIndex} lastIndex={lastIndex} itemCount={itemCount} itemsTitle={itemsTitle} />
-      )}
-    </span>
-    <Toggle
-      className={css(styles.optionsMenuToggleButton)}
-      id={`${widgetId}-toggle`}
-      aria-haspopup="listbox"
-      aria-labelledby={`${widgetId}-toggle ${widgetId}-label`}
-      aria-label={optionsToggle}
-      aria-expanded={isOpen}
-      onClick={() => onToggle(!isOpen)}
-      type="button"
-    >
-      <CaretDownIcon />
-    </Toggle>
-  </div>
-);
+// const OptionsToggle = ({
+//   itemsTitle,
+//   optionsToggle,
+//   firstIndex,
+//   lastIndex,
+//   itemCount,
+//   widgetId,
+//   onToggle,
+//   isOpen,
+//   onEnter,
+//   parentRef,
+//   toggleTemplate: ToggleTemplate
+// }) => (
+//   <div className={css(styles.optionsMenuToggle, getModifier(styles, 'plain'), getModifier(styles, 'text'))}>
+//     <span className={css(styles.optionsMenuToggleText)}>
+//       {typeof ToggleTemplate === 'string' ? (
+//         fillTemplate(ToggleTemplate, { firstIndex, lastIndex, itemCount, itemsTitle })
+//       ) : (
+//         <ToggleTemplate firstIndex={firstIndex} lastIndex={lastIndex} itemCount={itemCount} itemsTitle={itemsTitle} />
+//       )}
+//     </span>
+//     <Toggle
+//       className={css(styles.optionsMenuToggleButton)}
+//       id={`${widgetId}-toggle`}
+//       aria-haspopup="listbox"
+//       aria-labelledby={`${widgetId}-toggle ${widgetId}-label`}
+//       aria-label={optionsToggle}
+//       aria-expanded={isOpen}
+//       onClick={() => onToggle(!isOpen)}
+//       type="button"
+//     >
+//       <CaretDownIcon />
+//     </Toggle>
+//   </div>
+// );
 
-OptionsToggle.propTypes = {
+testOptionsToggle.propTypes = {
   itemsTitle: PropTypes.string,
   optionsToggle: PropTypes.string,
   firstIndex: PropTypes.number,
@@ -56,7 +56,7 @@ OptionsToggle.propTypes = {
   parentRef: PropTypes.any
 };
 
-OptionsToggle.defaultProps = {
+testOptionsToggle.defaultProps = {
   itemsTitle: 'items',
   optionsToggle: 'Select',
   firstIndex: 0,
@@ -85,39 +85,90 @@ class testOptionsToggle extends Component {
 
   onDocClick = event => {
     // eslint-disable-next-line react/prop-types
-    if (OptionsToggle.isOpen && OptionsToggle.parentRef && !OptionsToggle.parentRef.contains(event.target)) {
-      OptionsToggle.onToggle && OptionsToggle.onToggle(false, event);
-      OptionsToggle.focus();
+    if (
+      testOptionsToggle.isOpen &&
+      testOptionsToggle.parentRef &&
+      !testOptionsToggle.parentRef.contains(event.target)
+    ) {
+      testOptionsToggle.onToggle && testOptionsToggle.onToggle(false, event);
+      testOptionsToggle.focus();
     }
   };
 
   onEscPress = event => {
-    const { parentRef } = OptionsToggle;
+    const { parentRef } = testOptionsToggle;
     const keyCode = event.keyCode || event.which;
     if (
-      OptionsToggle.isOpen &&
+      testOptionsToggle.isOpen &&
       (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&
       parentRef &&
       parentRef.contains(event.target)
     ) {
-      OptionsToggle.onToggle && OptionsToggle.onToggle(false, event);
-      OptionsToggle.focus();
+      testOptionsToggle.onToggle && testOptionsToggle.onToggle(false, event);
+      testOptionsToggle.focus();
     }
   };
 
   onKeyDown = event => {
-    if (event.key === 'Tab' && !OptionsToggle.isOpen) return;
+    if (event.key === 'Tab' && !testOptionsToggle.isOpen) return;
     event.preventDefault();
-    if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && OptionsToggle.isOpen) {
-      OptionsToggle.onToggle(!OptionsToggle.isOpen, event);
-    } else if ((event.key === 'Enter' || event.key === ' ') && !OptionsToggle.isOpen) {
-      OptionsToggle.onToggle(!OptionsToggle.isOpen, event);
-      OptionsToggle.onEnter();
+    if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && testOptionsToggle.isOpen) {
+      testOptionsToggle.onToggle(!testOptionsToggle.isOpen, event);
+    } else if ((event.key === 'Enter' || event.key === ' ') && !testOptionsToggle.isOpen) {
+      testOptionsToggle.onToggle(!testOptionsToggle.isOpen, event);
+      testOptionsToggle.onEnter();
     }
   };
+
+  render() {
+    const {
+      itemsTitle,
+      optionsToggle,
+      firstIndex,
+      lastIndex,
+      itemCount,
+      widgetId,
+      onToggle,
+      isOpen,
+      onEnter,
+      parentRef,
+      toggleTemplate: ToggleTemplate,
+      ...props
+    } = this.props;
+
+    return (
+      <div className={css(styles.optionsMenuToggle, getModifier(styles, 'plain'), getModifier(styles, 'text'))}>
+        <span className={css(styles.optionsMenuToggleText)}>
+          {typeof ToggleTemplate === 'string' ? (
+            fillTemplate(ToggleTemplate, { firstIndex, lastIndex, itemCount, itemsTitle })
+          ) : (
+            <ToggleTemplate
+              firstIndex={firstIndex}
+              lastIndex={lastIndex}
+              itemCount={itemCount}
+              itemsTitle={itemsTitle}
+            />
+          )}
+        </span>
+        <button
+          className={css(styles.optionsMenuToggleButton)}
+          id={`${widgetId}-toggle`}
+          aria-haspopup="listbox"
+          aria-labelledby={`${widgetId}-toggle ${widgetId}-label`}
+          aria-label={optionsToggle}
+          aria-expanded={isOpen}
+          onClick={() => onToggle(!isOpen)}
+          {...props}
+          type="button"
+        >
+          <CaretDownIcon />
+        </button>
+      </div>
+    );
+  }
 }
 
-testOptionsToggle.propTypes = OptionsToggle.propTypes;
-testOptionsToggle.defaultProps = OptionsToggle.defaultProps;
+// testOptionsToggle.propTypes = propTypes;
+// testOptionsToggle.defaultProps = defaultProps;
 
-export default OptionsToggle;
+export default testOptionsToggle;
