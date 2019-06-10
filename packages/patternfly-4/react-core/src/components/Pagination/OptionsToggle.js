@@ -42,35 +42,7 @@ import { fillTemplate, KEY_CODES } from '../../helpers';
 //   </div>
 // );
 
-testOptionsToggle.propTypes = {
-  itemsTitle: PropTypes.string,
-  optionsToggle: PropTypes.string,
-  firstIndex: PropTypes.number,
-  lastIndex: PropTypes.number,
-  itemCount: PropTypes.number,
-  widgetId: PropTypes.string,
-  onToggle: PropTypes.func,
-  isOpen: PropTypes.bool,
-  toggleTemplate: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-  onEnter: PropTypes.func,
-  parentRef: PropTypes.any
-};
-
-testOptionsToggle.defaultProps = {
-  itemsTitle: 'items',
-  optionsToggle: 'Select',
-  firstIndex: 0,
-  lastIndex: 0,
-  itemCount: 0,
-  widgetId: '',
-  onToggle: Function.prototype,
-  isOpen: false,
-  toggleTemplate: '',
-  onEnter: Function.prototype,
-  parentRef: null
-};
-
-class testOptionsToggle extends Component {
+class TestOptionsToggle extends Component {
   componentDidMount = () => {
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
@@ -86,37 +58,37 @@ class testOptionsToggle extends Component {
   onDocClick = event => {
     // eslint-disable-next-line react/prop-types
     if (
-      testOptionsToggle.isOpen &&
-      testOptionsToggle.parentRef &&
-      !testOptionsToggle.parentRef.contains(event.target)
+      TestOptionsToggle.isOpen &&
+      TestOptionsToggle.parentRef &&
+      !TestOptionsToggle.parentRef.contains(event.target)
     ) {
-      testOptionsToggle.onToggle && testOptionsToggle.onToggle(false, event);
-      testOptionsToggle.focus();
+      TestOptionsToggle.onToggle && TestOptionsToggle.onToggle(false, event);
+      TestOptionsToggle.focus();
     }
   };
 
   onEscPress = event => {
-    const { parentRef } = testOptionsToggle;
+    const { parentRef } = TestOptionsToggle;
     const keyCode = event.keyCode || event.which;
     if (
-      testOptionsToggle.isOpen &&
+      TestOptionsToggle.isOpen &&
       (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&
       parentRef &&
       parentRef.contains(event.target)
     ) {
-      testOptionsToggle.onToggle && testOptionsToggle.onToggle(false, event);
-      testOptionsToggle.focus();
+      TestOptionsToggle.onToggle && TestOptionsToggle.onToggle(false, event);
+      TestOptionsToggle.focus();
     }
   };
 
   onKeyDown = event => {
-    if (event.key === 'Tab' && !testOptionsToggle.isOpen) return;
+    if (event.key === 'Tab' && !TestOptionsToggle.isOpen) return;
     event.preventDefault();
-    if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && testOptionsToggle.isOpen) {
-      testOptionsToggle.onToggle(!testOptionsToggle.isOpen, event);
-    } else if ((event.key === 'Enter' || event.key === ' ') && !testOptionsToggle.isOpen) {
-      testOptionsToggle.onToggle(!testOptionsToggle.isOpen, event);
-      testOptionsToggle.onEnter();
+    if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && TestOptionsToggle.isOpen) {
+      TestOptionsToggle.onToggle(!TestOptionsToggle.isOpen, event);
+    } else if ((event.key === 'Enter' || event.key === ' ') && !TestOptionsToggle.isOpen) {
+      TestOptionsToggle.onToggle(!TestOptionsToggle.isOpen, event);
+      TestOptionsToggle.onEnter();
     }
   };
 
@@ -168,7 +140,35 @@ class testOptionsToggle extends Component {
   }
 }
 
-// testOptionsToggle.propTypes = propTypes;
-// testOptionsToggle.defaultProps = defaultProps;
+TestOptionsToggle.propTypes = {
+  itemsTitle: PropTypes.string,
+  testOptionsToggle: PropTypes.string,
+  firstIndex: PropTypes.number,
+  lastIndex: PropTypes.number,
+  itemCount: PropTypes.number,
+  widgetId: PropTypes.string,
+  onToggle: PropTypes.func,
+  isOpen: PropTypes.bool,
+  toggleTemplate: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  onEnter: PropTypes.func,
+  parentRef: PropTypes.any
+};
 
-export default testOptionsToggle;
+TestOptionsToggle.defaultProps = {
+  itemsTitle: 'items',
+  testOptionsToggle: 'Select',
+  firstIndex: 0,
+  lastIndex: 0,
+  itemCount: 0,
+  widgetId: '',
+  onToggle: Function.prototype,
+  isOpen: false,
+  toggleTemplate: '',
+  onEnter: Function.prototype,
+  parentRef: null
+};
+
+// TestOptionsToggle.propTypes = this.propTypes;
+// TestOptionsToggle.defaultProps = this.defaultProps;
+
+export default TestOptionsToggle;

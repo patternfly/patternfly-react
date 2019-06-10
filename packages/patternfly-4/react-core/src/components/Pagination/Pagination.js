@@ -69,7 +69,7 @@ const propTypes = {
     toPreviousPage: PropTypes.string,
     toLastPage: PropTypes.string,
     toNextPage: PropTypes.string,
-    optionsToggle: PropTypes.string,
+    testOptionsToggle: PropTypes.string,
     currPage: PropTypes.string,
     paginationTitle: PropTypes.string
   }),
@@ -105,7 +105,7 @@ const defaultProps = {
     toPreviousPage: 'Go to previous page',
     toLastPage: 'Go to last page',
     toNextPage: 'Go to next page',
-    optionsToggle: 'Select',
+    testOptionsToggle: 'Select',
     currPage: 'Current page',
     paginationTitle: 'Pagination'
   },
@@ -169,7 +169,7 @@ const Pagination = ({
         itemsPerPageTitle={titles.itemsPerPage}
         perPageSuffix={titles.perPageSuffix}
         itemsTitle={titles.items}
-        optionsToggle={titles.optionsToggle}
+        testOptionsToggle={titles.testOptionsToggle}
         perPageOptions={perPageOptions}
         firstIndex={itemsStart !== null ? itemsStart : firstIndex}
         lastIndex={itemsEnd !== null ? itemsEnd : lastIndex}
