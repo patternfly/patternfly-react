@@ -49,11 +49,7 @@ export class ApplicationLauncherMenu extends React.Component<ApplicationLauncher
     } else if (event.keyCode === KEY_CODES.ARROW_DOWN) {
       keyHandler(this.props.index, KEYHANDLER_DIRECTION.DOWN, this.refsCollection, this.props.children as any[]);
     } else if (event.key === KEY_CODES.ENTER) {
-      // if (!this.ref.current.getAttribute) {
-      //   ReactDOM.findDOMNode(this.ref.current).click(); // eslint-disable-line react/no-find-dom-node
-      // } else {
       this.ref.current.click();
-      // }
     }
   };
 

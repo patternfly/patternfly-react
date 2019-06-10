@@ -60,14 +60,14 @@ export class ApplicationLauncherToggle extends React.Component<ApplicationLaunch
     document.removeEventListener('keydown', this.onEscPress);
   };
 
-  onDocClick = (event: any) => {
+  onDocClick = (event: TouchEvent | MouseEvent) => {
     if (this.props.isOpen && this.props.parentRef.current && !this.props.parentRef.current.contains(event.target)) {
       this.props.onToggle(false);
       this.toggle.current.focus();
       }
   };
 
-  onEscPress = (event: any) => {
+  onEscPress = (event: KeyboardEvent) => {
     const { parentRef } = this.props;
     const keyCode = event.keyCode || event.which;
     if (
@@ -81,7 +81,7 @@ export class ApplicationLauncherToggle extends React.Component<ApplicationLaunch
     }
   };
 
-  onKeyDown = (event: any) => {
+  onKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
     if (event.keyCode === KEY_CODES.TAB && !this.props.isOpen) {return};
     event.preventDefault();
     if (
