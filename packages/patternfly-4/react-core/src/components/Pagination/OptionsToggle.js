@@ -56,12 +56,13 @@ class TestOptionsToggle extends Component {
   };
 
   onDocClick = event => {
-    // eslint-disable-next-line react/prop-types
     if (
       TestOptionsToggle.isOpen &&
       TestOptionsToggle.parentRef &&
       !TestOptionsToggle.parentRef.contains(event.target)
     ) {
+      // eslint-disable-next-line no-console
+      console.log('helrlo');
       TestOptionsToggle.onToggle && TestOptionsToggle.onToggle(false, event);
       TestOptionsToggle.focus();
     }
@@ -95,7 +96,7 @@ class TestOptionsToggle extends Component {
   render() {
     const {
       itemsTitle,
-      optionsToggle,
+      testOptionsToggle,
       firstIndex,
       lastIndex,
       itemCount,
@@ -127,7 +128,7 @@ class TestOptionsToggle extends Component {
           id={`${widgetId}-toggle`}
           aria-haspopup="listbox"
           aria-labelledby={`${widgetId}-toggle ${widgetId}-label`}
-          aria-label={optionsToggle}
+          aria-label={testOptionsToggle}
           aria-expanded={isOpen}
           onClick={() => onToggle(!isOpen)}
           {...props}
