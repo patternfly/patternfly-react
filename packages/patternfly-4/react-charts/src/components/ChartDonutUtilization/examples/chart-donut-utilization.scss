@@ -1,18 +1,33 @@
 .ws-preview {
   & > * {
-    .donut-threshold-chart-horz {
+    .donut-threshold-chart {
       height: 230px;
-      width: 492px;
+      width: 230px;
     }
 
-    .donut-threshold-chart-horz-sm {
+    .donut-threshold-chart-sm {
+      height: 175px;
+      width: 175px;
+    }
+
+    .donut-threshold-chart-legend-bottom {
+      height: 325px;
+      width: 230px;
+    }
+
+    .donut-threshold-chart-legend-left {
       height: 230px;
       width: 475px;
     }
 
-    .donut-threshold-chart-vert {
-      height: 325px;
-      width: 275px;
+    .donut-threshold-chart-legend-right {
+      height: 230px;
+      width: 492px;
+    }
+
+    .donut-threshold-chart-legend-right-sm {
+      height: 175px;
+      width: 425px;
     }
 
     .donut-utilization-chart {
@@ -20,19 +35,29 @@
       width: 230px;
     }
 
-    .donut-utilization-chart-horz {
-      height: 230px;
-      width: 435px;
+    .donut-utilization-chart-sm {
+      height: 150px;
+      width: 150px;
     }
 
-    .donut-utilization-chart-horz-sm {
+    .donut-utilization-chart-legend-bottom {
+      height: 275px;
+      width: 300px;
+    }
+
+    .donut-utilization-chart-legend-left {
       height: 230px;
       width: 425px;
     }
 
-    .donut-utilization-chart-vert {
-      height: 275px;
-      width: 300px;
+    .donut-utilization-chart-legend-right {
+      height: 230px;
+      width: 435px;
+    }
+
+    .donut-utilization-chart-legend-right-sm {
+      height: 150px;
+      width: 350px;
     }
   }
 }
