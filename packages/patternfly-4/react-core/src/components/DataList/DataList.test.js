@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import DataList from './DataList';
-import DataListItem from './DataListItem';
-import DataListAction from './DataListAction';
-import DataListCell from './DataListCell';
-import DataListToggle from './DataListToggle';
-import DataListItemCells from './DataListItemCells';
-import DataListItemRow from './DataListItemRow';
-import DataListContent from './DataListContent';
+import { DataList } from './DataList';
+import { DataListItem } from './DataListItem';
+import { DataListAction } from './DataListAction';
+import { DataListCell } from './DataListCell';
+import { DataListToggle } from './DataListToggle';
+import { DataListItemCells } from './DataListItemCells';
+import { DataListItemRow } from './DataListItemRow';
+import { DataListContent } from './DataListContent';
 import { Button } from '../Button';
 import { DropdownItem, Dropdown, KebabToggle, DropdownPosition } from '../Dropdown';
 
