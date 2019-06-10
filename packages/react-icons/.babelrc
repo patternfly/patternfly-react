@@ -1,0 +1,3 @@
+{
+  "extends": "../patternfly-4/.babelrc"
+}
