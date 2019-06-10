@@ -1015,8 +1015,8 @@ exports[`renders component data 1`] = `
     }
     textAnchor="middle"
     verticalAnchor="middle"
-    x={115}
-    y={115}
+    x={100}
+    y={100}
   />
   <Component
     data={
@@ -1030,12 +1030,12 @@ exports[`renders component data 1`] = `
         },
       ]
     }
-    height={230}
-    innerRadius={98}
+    height={200}
+    innerRadius={83}
     origin={
       Object {
-        "x": 115,
-        "y": 115,
+        "x": 100,
+        "y": 100,
       }
     }
     standalone={false}
@@ -1489,7 +1489,7 @@ exports[`renders component data 1`] = `
         },
       }
     }
-    width={230}
+    width={200}
   />
 </Component>
 `;

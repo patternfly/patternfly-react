@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.6.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.6.8...@patternfly/react-docs@4.6.9) (2019-06-10)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.6.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.6.7...@patternfly/react-docs@4.6.8) (2019-06-07)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.6.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.6.6...@patternfly/react-docs@4.6.7) (2019-06-07)
+
+
+### Bug Fixes
+
+* **react-docs:** react-virtualized live edit ([#2187](https://github.com/patternfly/patternfly-react/issues/2187)) ([41d76dc](https://github.com/patternfly/patternfly-react/commit/41d76dc))
+
+
+
+
+
+## [4.6.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.6.5...@patternfly/react-docs@4.6.6) (2019-06-07)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
 ## [4.6.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.6.4...@patternfly/react-docs@4.6.5) (2019-06-06)
 
 **Note:** Version bump only for package @patternfly/react-docs

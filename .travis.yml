@@ -32,6 +32,8 @@ cache:
     - packages/patternfly-4/react-tokens/dist
     - packages/patternfly-4/react-inline-edit-extension/dist
     - packages/patternfly-4/react-integration/demo-app-ts/build
+    - packages/patternfly-4/react-virtualized-extension/dist
+    - packages/patternfly-4/react-topology/dist
     - packages/patternfly-4/react-docs/public # To cache PF4 docs
     - .cache # For incremental builds
 git:

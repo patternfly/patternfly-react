@@ -26,7 +26,7 @@ module.exports = {
     "<rootDir>/packages/patternfly-4/react-core/scripts/snapshot-serializer"
   ],
   transform: {
-    '^.+\\.(ts|tsx)?$': 'ts-jest',
+    '^.+\\.(ts|tsx?)$': 'ts-jest',
     '^.+\\.jsx?$': 'babel-jest',
     '\\.(css)$': '<rootDir>/packages/patternfly-4/react-styles/jest-transform.js'
   },

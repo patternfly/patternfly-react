@@ -28,6 +28,11 @@ describe('component render', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  test('empty per page options', () => {
+    const wrapper = mount(<Pagination itemCount={40} perPageOptions={[]} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   test('no items', () => {
     const wrapper = mount(<Pagination itemCount={0} />);
     expect(wrapper).toMatchSnapshot();

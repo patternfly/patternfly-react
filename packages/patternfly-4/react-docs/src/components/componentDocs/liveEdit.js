@@ -12,6 +12,7 @@ import * as ReactInlineEdit from '@patternfly/react-inline-edit-extension';
 import * as ReactStyledSystem from '@patternfly/react-styled-system';
 import * as ReactStyles from '@patternfly/react-styles';
 import * as ReactTable from '@patternfly/react-table';
+import * as ReactVirtualizedExtension from '@patternfly/react-virtualized-extension';
 import * as ReactTokens from '@patternfly/react-tokens';
 
 import './live-edit.scss';
@@ -46,6 +47,7 @@ export class LiveEdit extends React.Component {
             ...ReactStyledSystem,
             ...ReactStyles,
             ...ReactTable,
+            ...ReactVirtualizedExtension,
             ...ReactTokens
           }
         : {};

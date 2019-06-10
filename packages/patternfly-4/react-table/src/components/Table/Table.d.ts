@@ -77,9 +77,9 @@ export interface IRowCell {
 
 export interface IRow {
   cells: Array<ReactNode | IRowCell>;
-  isOpen: Boolean;
-  parent: Number;
-  props: any;
+  isOpen?: Boolean;
+  parent?: Number;
+  props?: any;
   fullWidth?: Boolean;
   noPadding?: Boolean;
 }
