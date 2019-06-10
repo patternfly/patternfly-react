@@ -43,7 +43,7 @@ export interface ContextSelectorProps {
   /** Search Input placeholder */
   searchInputPlaceholder?: string;
   /** Function callback for when Search Button is clicked */
-  onSearchButtonClick?(event: React.SyntheticEvent<HTMLButtonElement>): void; 
+  onSearchButtonClick?(event?: React.SyntheticEvent<HTMLButtonElement>): void; 
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps> {
@@ -67,7 +67,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
 
   onEnterPressed = (event: any) => {
     if (event.charCode === KEY_CODES.ENTER) {
-      this.props.onSearchButtonClick(null);
+      this.props.onSearchButtonClick();
     }
   };
 
