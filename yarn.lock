@@ -1737,6 +1737,25 @@
   version "2.12.5"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.12.5.tgz#f2c5924deb875a8cde95e09e6d5c9022f00429da"
 
+"@patternfly/patternfly@2.8.2":
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.8.2.tgz#8362795b17a73be76dd9408b3c0d370e8a030d77"
+
+"@patternfly/react-virtualized-extension@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@patternfly/react-virtualized-extension/-/react-virtualized-extension-1.0.1.tgz#d5e5e416445d7bc55170a96e3c04caf8c98e309b"
+  dependencies:
+    "@patternfly/patternfly" "2.8.2"
+    "@patternfly/react-core" "^3.36.0"
+    "@patternfly/react-icons" "^3.9.3"
+    "@patternfly/react-styles" "^3.3.0"
+    clsx "^1.0.1"
+    dom-helpers "^2.4.0 || ^3.0.0"
+    exenv "^1.2.2"
+    linear-layout-vector "0.0.1"
+    react-lifecycles-compat "^3.0.4"
+    react-virtualized "9.21.1"
+
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
   resolved "https://registry.yarnpkg.com/@pieh/friendly-errors-webpack-plugin/-/friendly-errors-webpack-plugin-1.7.0-chalk-2.tgz#2e9da9d3ade9d18d013333eb408c457d04eabac0"
@@ -5913,7 +5932,6 @@ clone@^1.0.2:
 clsx@^1.0.1:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.0.4.tgz#0c0171f6d5cb2fe83848463c15fcc26b4df8c2ec"
-  integrity sha512-1mQ557MIZTrL/140j+JVdRM6e31/OA4vTYxXgqIIZlndyfjHpyawKZia1Im05Vp9BWmImkcNrNtFYQMyFcgJDg==
 
 cmd-shim@^2.0.2:
   version "2.0.2"
@@ -12112,7 +12130,6 @@ jsdom@^11.5.1:
 jsdom@^15.1.0:
   version "15.1.0"
   resolved "https://registry.yarnpkg.com/jsdom/-/jsdom-15.1.0.tgz#80c5f0dd69466742ab1194f15d301bdd01417596"
-  integrity sha512-QEmc2XIkNfCK3KRfa9ljMJjC4kAGdVgRrs/pCBsQG/QoKz0B42+C58f6TdAmhq/rw494eFCoLHxX6+hWuxb96Q==
   dependencies:
     abab "^2.0.0"
     acorn "^6.0.4"
@@ -12559,7 +12576,6 @@ liftoff@^2.5.0:
 linear-layout-vector@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/linear-layout-vector/-/linear-layout-vector-0.0.1.tgz#398114d7303b6ecc7fd6b273af7b8401d8ba9c70"
-  integrity sha1-OYEU1zA7bsx/1rJzr3uEAdi6nHA=
 
 listr-silent-renderer@^1.1.1:
   version "1.1.1"
@@ -21117,7 +21133,6 @@ ws@^5.2.0, ws@^5.2.1:
 ws@^6.1.2:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/ws/-/ws-6.2.1.tgz#442fdf0a47ed64f59b6a5d8ff130f4748ed524fb"
-  integrity sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
   dependencies:
     async-limiter "~1.0.0"
 
