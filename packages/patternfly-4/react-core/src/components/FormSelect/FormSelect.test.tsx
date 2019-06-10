@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import FormSelect from './FormSelect';
-import FormSelectOption from './FormSelectOption';
-import FormSelectOptionGroup from './FormSelectOptionGroup';
+import { FormSelect } from './FormSelect';
+import { FormSelectOption } from './FormSelectOption';
+import { FormSelectOptionGroup } from './FormSelectOptionGroup';
 
 const props = {
   options: [
