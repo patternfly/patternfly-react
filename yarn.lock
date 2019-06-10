@@ -1714,9 +1714,28 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
+"@patternfly/patternfly@2.12.5":
+  version "2.12.5"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.12.5.tgz#f2c5924deb875a8cde95e09e6d5c9022f00429da"
+
 "@patternfly/patternfly@2.8.2":
   version "2.8.2"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.8.2.tgz#8362795b17a73be76dd9408b3c0d370e8a030d77"
+
+"@patternfly/react-virtualized-extension@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@patternfly/react-virtualized-extension/-/react-virtualized-extension-1.0.1.tgz#d5e5e416445d7bc55170a96e3c04caf8c98e309b"
+  dependencies:
+    "@patternfly/patternfly" "2.8.2"
+    "@patternfly/react-core" "^3.36.0"
+    "@patternfly/react-icons" "^3.9.3"
+    "@patternfly/react-styles" "^3.3.0"
+    clsx "^1.0.1"
+    dom-helpers "^2.4.0 || ^3.0.0"
+    exenv "^1.2.2"
+    linear-layout-vector "0.0.1"
+    react-lifecycles-compat "^3.0.4"
+    react-virtualized "9.21.1"
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
