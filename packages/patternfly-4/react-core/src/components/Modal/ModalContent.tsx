@@ -8,7 +8,7 @@ const FocusTrap: any = require('focus-trap-react');
 import styles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 import { css } from '@patternfly/react-styles';
 
-import Backdrop from '../Backdrop/Backdrop';
+import { Backdrop } from '../Backdrop/Backdrop';
 import { ModalBoxBody } from './ModalBoxBody';
 import { ModalBoxHeader } from './ModalBoxHeader';
 import { ModalBoxCloseButton } from './ModalBoxCloseButton';

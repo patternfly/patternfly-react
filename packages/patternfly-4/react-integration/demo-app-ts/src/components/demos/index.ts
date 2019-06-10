@@ -1,6 +1,7 @@
 export * from './AboutModal/AboutModalDemo';
 export * from './AlertDemo/AlertDemo';
 export * from './AvatarDemo/AvatarDemo';
+export * from './BackdropDemo/BackdropDemo'; 
 export * from './BackgroundImageDemo/BackgroundImageDemo'; 
 export * from './BadgeDemo/BadgeDemo'; 
 export * from './BrandDemo/BrandDemo'; 
