@@ -76,6 +76,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.FormDemo
   },
   {
+    id: 'form-select-demo', 
+    name: 'Form Select Demo', 
+    componentType: Examples.FormSelectDemo 
+  },
+  {
     id: 'label-demo',
     name: 'Label Demo',
     componentType: Examples.LabelDemo

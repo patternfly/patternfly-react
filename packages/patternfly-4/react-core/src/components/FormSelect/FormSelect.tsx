@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/FormControl/form-con
 import { css } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
 
-export interface FormSelectProps extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'> {
+export interface FormSelectProps extends Omit<React.HTMLProps<HTMLSelectElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'> {
     /** content rendered inside the FormSelect */
     children: React.ReactNode; 
     /** additional classes added to the FormSelect control */
@@ -21,15 +21,16 @@ export interface FormSelectProps extends Omit<React.HTMLProps<HTMLInputElement>,
     /** Optional callback for updating when selection changes */
     onChange?: (value: string, event: React.FormEvent<HTMLSelectElement>) => void;
     /** Custom flag to show that the FormSelect requires an associated id or aria-label. */
-    // 'aria-label': props => {
-    //   if (!props.id && !props['aria-label']) {
-    //     return new Error('FormSelect requires either an id or aria-label to be specified');
-    //   }
-    //   return null;
-    // }; 
+    'aria-label'?: string;
 }
 
 export class FormSelect extends React.Component<FormSelectProps> {
+  constructor(props: FormSelectProps) {
+    super(props);
+    if (!props.id && !props['aria-label']) {
+      console.error('FormSelect requires either an id or aria-label to be specified');
+    }
+  }
 
   static defaultProps = {
     className: '',
@@ -38,8 +39,7 @@ export class FormSelect extends React.Component<FormSelectProps> {
     isDisabled: false,
     onBlur: (): any => undefined,
     onFocus: (): any => undefined,
-    onChange: (): any => undefined,
-    'aria-label': null
+    onChange: (): any => undefined
   };
 
   handleChange = (event: any) => {
