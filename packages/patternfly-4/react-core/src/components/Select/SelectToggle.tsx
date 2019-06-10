@@ -1,70 +1,73 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import { CaretDownIcon } from '@patternfly/react-icons';
 import { KeyTypes, SelectVariant } from './selectConstants';
 
-const propTypes = {
+export interface SelectToggleProps {
   /** HTML ID of dropdown toggle */
-  id: PropTypes.string.isRequired,
+  id: string;
   /** Anything which can be rendered as dropdown toggle */
-  children: PropTypes.node,
+  children: React.ReactNode;
   /** Classes applied to root element of dropdown toggle */
-  className: PropTypes.string,
+  className?: string;
   /** Flag to indicate if select is expanded */
-  isExpanded: PropTypes.bool,
+  isExpanded?: boolean;
   /** Callback called when toggle is clicked */
-  onToggle: PropTypes.func,
+  onToggle?: (isExpanded: boolean) => void;
   /** Callback for toggle open on keyboard entry */
-  onEnter: PropTypes.func,
+  onEnter?: () => void;
   /** Callback for toggle close */
-  onClose: PropTypes.func,
+  onClose?: () => void;
+  /** Internal callback for toggle keyboard navigation */
+  handleTypeaheadKeys?: (position: string) => void;
   /** Element which wraps toggle */
-  parentRef: PropTypes.any,
+  parentRef: React.RefObject<HTMLDivElement>;
   /** Forces focus state */
-  isFocused: PropTypes.bool,
+  isFocused?: boolean;
   /** Forces hover state */
-  isHovered: PropTypes.bool,
+  isHovered?: boolean;
   /** Forces active state */
-  isActive: PropTypes.bool,
+  isActive?: boolean;
   /** Display the toggle with no border or background */
-  isPlain: PropTypes.bool,
+  isPlain?: boolean;
   /** Type of the toggle button, defaults to 'button' */
-  type: PropTypes.string,
+  type?: 'reset' | 'button' | 'submit' | undefined;
   /** Id of label for the Select aria-labelledby */
-  ariaLabelledBy: PropTypes.string,
+  ariaLabelledBy?: string;
   /** Label for toggle of select variants */
-  ariaLabelToggle: PropTypes.string,
+  ariaLabelToggle?: string;
   /** Flag for variant, determines toggle rules and interaction */
-  variant: PropTypes.oneOf(['single', 'checkbox', 'typeahead', 'typeaheadmulti']),
-  /** Internal handler for typeahead keyboard navigation */
-  handleTypeaheadKeys: PropTypes.Function,
-  /** Additional props are spread to the container <button> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
+  variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  isExpanded: false,
-  parentRef: null,
-  isFocused: false,
-  isHovered: false,
-  isActive: false,
-  isPlain: false,
-  variant: false,
-  ariaLabelledBy: null,
-  ariaLabelToggle: null,
-  type: 'button',
-  onToggle: Function.prototype,
-  onEnter: Function.prototype,
-  onClose: Function.prototype,
-  handleTypeaheadKeys: Function.prototype
-};
+export class SelectToggle extends React.Component<SelectToggleProps> {
+  private toggle: React.RefObject<HTMLDivElement> | React.RefObject<HTMLButtonElement>;
 
-class SelectToggle extends Component {
+  static defaultProps = {
+    className: '',
+    isExpanded: false,
+    isFocused: false,
+    isHovered: false,
+    isActive: false,
+    isPlain: false,
+    variant: false,
+    ariaLabelledBy: '',
+    ariaLabelToggle: '',
+    type: 'button',
+    onToggle: Function.prototype,
+    onEnter: Function.prototype,
+    onClose: Function.prototype
+  };
+
+  constructor(props: SelectToggleProps) {
+    super(props);
+    const { variant } = this.props;
+    const isTypeahead = variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti;
+    this.toggle = isTypeahead ? React.createRef<HTMLDivElement>() : React.createRef<HTMLButtonElement>();
+  }
+
   componentDidMount() {
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
@@ -77,43 +80,49 @@ class SelectToggle extends Component {
     document.removeEventListener('keydown', this.onEscPress);
   }
 
-  onDocClick = event => {
+  onDocClick = (event: Event) => {
     const { parentRef, isExpanded, onToggle, onClose } = this.props;
-    if (isExpanded && parentRef && !parentRef.contains(event.target)) {
-      onToggle && onToggle(false);
-      onClose && onClose();
-      this.toggle.focus();
+    if (isExpanded && parentRef && !parentRef.current.contains(event.target as Node)) {
+      onToggle(false);
+      onClose();
+      this.toggle.current.focus();
     }
   };
 
-  onEscPress = event => {
+  onEscPress = (event: KeyboardEvent) => {
     const { parentRef, isExpanded, variant, onToggle, onClose } = this.props;
-    if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) return;
+    if (event.key === KeyTypes.Tab && variant === SelectVariant.checkbox) {
+      return;
+    }
     if (
       isExpanded &&
       (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) &&
       parentRef &&
-      parentRef.contains(event.target)
+      parentRef.current.contains(event.target as Node)
     ) {
-      onToggle && onToggle(false);
-      onClose && onClose();
-      this.toggle.focus();
+      onToggle(false);
+      onClose();
+      this.toggle.current.focus();
     }
   };
 
-  onKeyDown = event => {
+  onKeyDown = (event: React.KeyboardEvent) => {
     const { isExpanded, onToggle, variant, onClose, onEnter, handleTypeaheadKeys } = this.props;
     if (
       (event.key === KeyTypes.ArrowDown || event.key === KeyTypes.ArrowUp) &&
       (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti)
-    )
+    ) {
       handleTypeaheadKeys((event.key === KeyTypes.ArrowDown && 'down') || (event.key === KeyTypes.ArrowUp && 'up'));
+    }
     if (
       event.key === KeyTypes.Enter &&
       (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti)
     ) {
-      if (isExpanded) handleTypeaheadKeys('enter');
-      else onToggle && onToggle(!isExpanded);
+      if (isExpanded) {
+        handleTypeaheadKeys('enter');
+      } else {
+        onToggle(!isExpanded);
+      }
     }
 
     if (
@@ -122,13 +131,14 @@ class SelectToggle extends Component {
       (event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space) ||
       ((event.key === KeyTypes.Space || event.key === KeyTypes.Enter) &&
         (variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti))
-    )
+    ) {
       return;
+    }
     event.preventDefault();
     if ((event.key === KeyTypes.Tab || event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && isExpanded) {
-      onToggle && onToggle(!isExpanded);
-      onClose && onClose();
-      this.toggle.focus();
+      onToggle(!isExpanded);
+      onClose();
+      this.toggle.current.focus();
     } else if ((event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && !isExpanded) {
       onToggle(!isExpanded);
       onEnter();
@@ -157,61 +167,83 @@ class SelectToggle extends Component {
       ...props
     } = this.props;
     const isTypeahead = variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti;
-    const ToggleComponent = isTypeahead ? 'div' : 'button';
-    const toggleProps = {
+    const toggleProps: {
+      id: string;
+      'aria-labelledby': string;
+      'aria-expanded': boolean;
+      'aria-haspopup': 'listbox' | null;
+    } = {
       id,
       'aria-labelledby': ariaLabelledBy,
       'aria-expanded': isExpanded,
       'aria-haspopup': (variant !== SelectVariant.checkbox && 'listbox') || null
     };
     return (
-      <ToggleComponent
-        {...props}
-        ref={toggle => {
-          this.toggle = toggle;
-        }}
-        className={css(
-          styles.selectToggle,
-          isFocused && styles.modifiers.focus,
-          isHovered && styles.modifiers.hover,
-          isActive && styles.modifiers.active,
-          isPlain && styles.modifiers.plain,
-          isTypeahead && styles.modifiers.typeahead,
-          className
-        )}
-        type={!isTypeahead ? type : null}
-        onClick={_event => {
-          if (isTypeahead) onToggle && onToggle(true);
-          else {
-            onToggle && onToggle(!isExpanded);
-            if (isExpanded) onClose && onClose();
-          }
-        }}
-        onKeyDown={this.onKeyDown}
-        {...!isTypeahead && toggleProps}
-      >
-        {children}
-        {isTypeahead && (
+      <React.Fragment>
+        {!isTypeahead && (
           <button
-            className={css(buttonStyles.button, styles.selectToggleButton)}
-            {...isTypeahead && toggleProps}
-            aria-label={ariaLabelToggle}
+            {...props}
+            {...toggleProps}
+            ref={this.toggle as React.RefObject<HTMLButtonElement>}
+            type={type}
+            className={css(
+              styles.selectToggle,
+              isFocused && styles.modifiers.focus,
+              isHovered && styles.modifiers.hover,
+              isActive && styles.modifiers.active,
+              isPlain && styles.modifiers.plain,
+              className
+            )}
             onClick={_event => {
-              _event.stopPropagation();
-              onToggle && onToggle(!isExpanded);
-              if (isExpanded) onClose && onClose();
+              onToggle(!isExpanded);
+              if (isExpanded) {
+                onClose();
+              }
             }}
+            onKeyDown={this.onKeyDown}
           >
+            {children}
             <CaretDownIcon className={css(styles.selectToggleArrow)} />
           </button>
         )}
-        {!isTypeahead && <CaretDownIcon className={css(styles.selectToggleArrow)} />}
-      </ToggleComponent>
+        {isTypeahead && (
+          <div
+            {...props}
+            ref={this.toggle as React.RefObject<HTMLDivElement>}
+            className={css(
+              styles.selectToggle,
+              isFocused && styles.modifiers.focus,
+              isHovered && styles.modifiers.hover,
+              isActive && styles.modifiers.active,
+              isPlain && styles.modifiers.plain,
+              isTypeahead && styles.modifiers.typeahead,
+              className
+            )}
+            onClick={_event => {
+              onToggle(true);
+            }}
+            onKeyDown={this.onKeyDown}
+          >
+            {children}
+            <button
+              {...toggleProps}
+              className={css(buttonStyles.button, styles.selectToggleButton)}
+              aria-label={ariaLabelToggle}
+              onClick={_event => {
+                _event.stopPropagation();
+                onToggle(!isExpanded);
+                if (isExpanded) {
+                  onClose();
+                }
+              }}
+            >
+              <CaretDownIcon className={css(styles.selectToggleArrow)} />
+            </button>
+          </div>
+        )}
+      </React.Fragment>
     );
   }
 }
-
-SelectToggle.propTypes = propTypes;
-SelectToggle.defaultProps = defaultProps;
 
 export default SelectToggle;

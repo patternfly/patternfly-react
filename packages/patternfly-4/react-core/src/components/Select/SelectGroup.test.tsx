@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CheckboxSelectGroup from './CheckboxSelectGroup';
+import SelectGroup from './SelectGroup';
 
 describe('checkbox select options', () => {
   test('renders with children successfully', () => {
     const view = shallow(
-      <CheckboxSelectGroup label="test">
+      <SelectGroup label="test">
         <div>child</div>
-      </CheckboxSelectGroup>
+      </SelectGroup>
     );
     expect(view).toMatchSnapshot();
   });

@@ -1,5 +1,4 @@
-export { default as Select } from './Select';
-export { default as SelectOption } from './SelectOption';
-export { SelectContext, SelectVariant } from './selectConstants';
-export { default as CheckboxSelectGroup } from './CheckboxSelectGroup';
-export { default as CheckboxSelectOption } from './CheckboxSelectOption';
+export * from './Select';
+export * from './SelectOption';
+export * from './selectConstants';
+export * from './SelectGroup';

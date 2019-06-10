@@ -33,3 +33,4 @@ export * from './TextInputDemo/TextInputDemo';
 export * from './TitleDemo/TitleDemo';
 export * from './TooltipDemo/TooltipDemo';
 export * from './WizardDemo/WizardDemo';
+export * from './SelectDemo/SelectDemo';

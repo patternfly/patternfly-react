@@ -1,72 +1,73 @@
-import React from 'react';
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
+import { default as checkStyles } from '@patternfly/react-styles/css/components/Check/check';
 import { css } from '@patternfly/react-styles';
 import { CheckIcon } from '@patternfly/react-icons';
-import PropTypes from 'prop-types';
-import { SelectContext, KeyTypes } from './selectConstants';
+import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
 
-const propTypes = {
-  /** additional classes added to the Select Option */
-  className: PropTypes.string,
-  /** the value for the option */
-  value: PropTypes.string,
-  /** internal index of the option */
-  index: PropTypes.number,
-  /** flag indicating if the option is disabled */
-  isDisabled: PropTypes.bool,
-  /** flag indicating if the option acts as a placeholder */
-  isPlaceholder: PropTypes.bool,
+export interface SelectOptionProps {
+  /** Additional classes added to the Select Option */
+  className: string;
+  /** Internal index of the option */
+  index: number;
+  /** The value for the option */
+  value: string;
+  /** Flag indicating if the option is disabled */
+  isDisabled: boolean;
+  /** Flag indicating if the option acts as a placeholder */
+  isPlaceholder: boolean;
   /** Internal flag indicating if the option is selected */
-  isSelected: PropTypes.bool,
+  isSelected: boolean;
+  /** Internal flag indicating if the option is checked */
+  isChecked: boolean;
   /** Internal flag indicating if the option is focused */
-  isFocused: PropTypes.bool,
-  /** Optional on click callback */
-  onClick: PropTypes.func,
+  isFocused: boolean;
   /** Internal callback for ref tracking */
-  sendRef: PropTypes.func,
-  /** Internal callback for ref tracking */
-  sendListRef: PropTypes.func,
+  sendRef: (ref: React.ReactNode, index: number) => void;
   /** Internal callback for keyboard navigation */
-  keyHandler: PropTypes.func,
-  /** Additional props are spread to the container <button> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
+  keyHandler: (index: number, position: string) => void;
+  /** Optional callback for click event */
+  onClick: (event: React.MouseEvent | React.ChangeEvent) => void;
+}
 
-const defaultProps = {
-  className: '',
-  value: null,
-  index: 0,
-  isDisabled: false,
-  isPlaceholder: false,
-  isSelected: false,
-  isFocused: false,
-  onClick: Function.prototype,
-  sendRef: Function.prototype,
-  sendListRef: Function.prototype,
-  keyHandler: Function.prototype
-};
-
-class SelectOption extends React.Component {
-  ref = React.createRef();
+export class SelectOption extends React.Component<SelectOptionProps> {
+  private ref = React.createRef<any>();
+  static defaultProps = {
+    className: '',
+    value: '',
+    index: 0,
+    isDisabled: false,
+    isPlaceholder: false,
+    isSelected: false,
+    isChecked: false,
+    isFocused: false,
+    onClick: Function.prototype,
+    sendRef: Function.prototype,
+    keyHandler: Function.prototype
+  };
 
   componentDidMount() {
     this.props.sendRef(this.ref.current, this.props.index);
-    this.props.sendListRef(this.ref.current, this.props.index);
   }
 
   componentDidUpdate() {
     this.props.sendRef(this.ref.current, this.props.index);
   }
 
-  onKeyDown = event => {
-    if (event.key === KeyTypes.Tab) return;
+  onKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === KeyTypes.Tab) {
+      return;
+    }
     event.preventDefault();
     if (event.key === KeyTypes.ArrowUp) {
       this.props.keyHandler(this.props.index, 'up');
     } else if (event.key === KeyTypes.ArrowDown) {
       this.props.keyHandler(this.props.index, 'down');
     } else if (event.key === KeyTypes.Enter) {
-      this.ref.current.click && this.ref.current.click();
+      this.ref.current.click();
+      if (this.context.variant === SelectVariant.checkbox) {
+        this.ref.current.focus();
+      }
     }
   };
 
@@ -78,49 +79,78 @@ class SelectOption extends React.Component {
       isDisabled,
       isPlaceholder,
       isSelected,
+      isChecked,
       isFocused,
       sendRef,
-      sendListRef,
       keyHandler,
       index,
       ...props
     } = this.props;
     return (
-      <SelectContext.Consumer>
-        {({ onSelect, onClose }) => (
-          <li role="presentation">
-            <button
-              {...props}
-              className={css(
-                styles.selectMenuItem,
-                isSelected && styles.modifiers.selected,
-                isDisabled && styles.modifiers.disabled,
-                isFocused && styles.modifiers.focus,
-                className
-              )}
-              onClick={event => {
-                if (!isDisabled) {
-                  onClick && onClick(event);
-                  onSelect && onSelect(event, value, isPlaceholder);
-                  onClose && onClose();
-                }
-              }}
-              role="option"
-              aria-selected={isSelected || null}
-              ref={this.ref}
-              onKeyDown={this.onKeyDown}
-            >
-              {value}
-              {isSelected && <CheckIcon noVerticalAlign className={css(styles.selectMenuItemIcon)} aria-hidden />}
-            </button>
-          </li>
+      <SelectConsumer>
+        {({ onSelect, onClose, variant }) => (
+          <React.Fragment>
+            {variant !== SelectVariant.checkbox && (
+              <li role="presentation">
+                <button
+                  {...props}
+                  className={css(
+                    styles.selectMenuItem,
+                    isSelected && styles.modifiers.selected,
+                    isDisabled && styles.modifiers.disabled,
+                    isFocused && styles.modifiers.focus,
+                    className
+                  )}
+                  onClick={event => {
+                    if (!isDisabled) {
+                      onClick(event);
+                      onSelect(event, value, isPlaceholder);
+                      onClose();
+                    }
+                  }}
+                  role="option"
+                  aria-selected={isSelected || null}
+                  ref={this.ref}
+                  onKeyDown={this.onKeyDown}
+                >
+                  {value}
+                  {isSelected && <CheckIcon className={css(styles.selectMenuItemIcon)} aria-hidden />}
+                </button>
+              </li>
+            )}
+            {variant === SelectVariant.checkbox && (
+              <label
+                {...props}
+                className={css(
+                  checkStyles.check,
+                  styles.selectMenuItem,
+                  isDisabled && styles.modifiers.disabled,
+                  className
+                )}
+                onKeyDown={this.onKeyDown}
+              >
+                <input
+                  id={value}
+                  className={css(checkStyles.checkInput)}
+                  type="checkbox"
+                  onChange={event => {
+                    if (!isDisabled) {
+                      onClick(event);
+                      onSelect(event, value);
+                    }
+                  }}
+                  ref={this.ref}
+                  checked={isChecked || false}
+                  disabled={isDisabled}
+                />
+                <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{value}</span>
+              </label>
+            )}
+          </React.Fragment>
         )}
-      </SelectContext.Consumer>
+      </SelectConsumer>
     );
   }
 }
-
-SelectOption.propTypes = propTypes;
-SelectOption.defaultProps = defaultProps;
 
 export default SelectOption;
