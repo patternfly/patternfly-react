@@ -18,10 +18,10 @@ export interface DropdownItemProps extends React.HTMLProps<HTMLAnchorElement> {
   /** Default hyperlink location */
   href?: string; 
   index?: number; 
-  // context?: PropTypes.shape({
-  //   keyHandler?: PropTypes.func,
-  //   sendRef?: PropTypes.func
-  // }),
+  context?: {
+    keyHandler?: (index: number, direction: string) => void,
+    sendRef?: (index: number, ref: any, isDisabled: boolean) => void
+  };
   /** Callback for click event */
   onClick?: () => void; 
 }

@@ -10,8 +10,8 @@ export interface DropdownProps extends HTMLProps<HTMLDivElement> {
   isAction?: boolean;
   isGrouped?: boolean;
   onSelect?(event: React.SyntheticEvent<HTMLDivElement>): void;
-  position?: typeof DropdownPosition | 'right' | 'left';
-  direction?: typeof DropdownDirection | 'up' | 'down';
+  position?: DropdownPosition | 'right' | 'left';
+  direction?: DropdownDirection | 'up' | 'down';
   toggle?: ReactNode;
 }
 
