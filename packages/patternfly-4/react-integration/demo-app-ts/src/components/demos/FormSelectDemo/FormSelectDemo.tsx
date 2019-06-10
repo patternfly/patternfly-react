@@ -6,13 +6,11 @@ interface FormSelectState {
 }
 
 export class FormSelectDemo extends Component<{}, FormSelectState> {
+  groups: any[];
   constructor(props) {
     super(props);
     this.state = {
       value: '2'
-    };
-    this.onChange = (value: string, event: any) => {
-      this.setState({ value });
     };
     this.groups = [
       {
@@ -40,11 +38,16 @@ export class FormSelectDemo extends Component<{}, FormSelectState> {
         ]
       }
     ];
-    this.getOptionLbl = option => option.label;
-    this.getOptionVal = option => option.value;
-    this.getOptionsGroupLbl = group => group && group.groupLabel;
-    this.getGroupOptions = group => group && group.options;
   }
+
+  onChange = (value: string, event: any) => {
+    this.setState({ value });
+  };
+
+  getOptionLbl = option => option.label;
+  getOptionVal = option => option.value;
+  getOptionsGroupLbl = group => group && group.groupLabel;
+  getGroupOptions = group => group && group.options;
 
   render() {
     return (
