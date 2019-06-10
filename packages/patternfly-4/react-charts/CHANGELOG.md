@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.1.2 (2019-06-10)
+
+
+### Bug Fixes
+
+* **charts:** align label vertically and add donutHeight/Width defaults ([#2193](https://github.com/patternfly/patternfly-react/issues/2193)) ([59aadfc](https://github.com/patternfly/patternfly-react/commit/59aadfc))
+
+
+
+
+
 ## [4.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.1.0...@patternfly/react-charts@4.1.1) (2019-06-05)
 
 **Note:** Version bump only for package @patternfly/react-charts
