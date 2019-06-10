@@ -85,7 +85,8 @@ class KebabDropdown extends React.Component {
               dropdownItems={dropdownItems}
               position={'right'}
             />
-            <Checkbox 
+            <input
+              type="checkbox" 
               isChecked={this.state.check1}
               onChange={this.onClick}
               aria-label="card checkbox example"
@@ -164,7 +165,8 @@ class KebabDropdown extends React.Component {
               dropdownItems={dropdownItems}
               position={'right'}
             />
-            <Checkbox 
+            <input
+              type="checkbox" 
               isChecked={this.state.check1}
               onChange={this.onClick}
               aria-label="card checkbox example"
@@ -243,7 +245,8 @@ class KebabDropdown extends React.Component {
               dropdownItems={dropdownItems}
               position={'right'}
             />
-            <Checkbox 
+            <input
+              type="checkbox" 
               isChecked={this.state.check1}
               onChange={this.onClick}
               aria-label="card checkbox example"
