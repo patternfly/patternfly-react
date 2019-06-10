@@ -11,7 +11,8 @@ export const TableGridBreakpoint: {
   grid: 'grid',
   gridMd: 'grid-md',
   gridLg: 'grid-lg',
-  gridXl: 'grid-xl'
+  gridXl: 'grid-xl',
+  grid2xl: 'grid-2xl'
 };
 
 export const TableVariant: {
