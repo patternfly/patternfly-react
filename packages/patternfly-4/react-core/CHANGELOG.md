@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.39.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.38.1...@patternfly/react-core@3.39.0) (2019-06-11)
+
+
+### Features
+
+* **Topology:** Add @patternfly/react-topology package ([#2170](https://github.com/patternfly/patternfly-react/issues/2170)) ([58eb9cc](https://github.com/patternfly/patternfly-react/commit/58eb9cc))
+
+
+
+
+
 ## [3.38.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.38.0...@patternfly/react-core@3.38.1) (2019-06-11)
 
 **Note:** Version bump only for package @patternfly/react-core

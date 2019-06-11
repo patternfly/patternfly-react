@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.6.11...@patternfly/react-docs@4.7.0) (2019-06-11)
+
+
+### Features
+
+* **Topology:** Add @patternfly/react-topology package ([#2170](https://github.com/patternfly/patternfly-react/issues/2170)) ([58eb9cc](https://github.com/patternfly/patternfly-react/commit/58eb9cc))
+
+
+
+
+
 ## [4.6.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.6.10...@patternfly/react-docs@4.6.11) (2019-06-11)
 
 **Note:** Version bump only for package @patternfly/react-docs
