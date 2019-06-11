@@ -96,6 +96,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.FormDemo
   },
   {
+    id: 'input-group-demo', 
+    name: 'Input Group Demo', 
+    componentType: Examples.InputGroupDemo
+  },
+  {
     id: 'label-demo',
     name: 'Label Demo',
     componentType: Examples.LabelDemo
