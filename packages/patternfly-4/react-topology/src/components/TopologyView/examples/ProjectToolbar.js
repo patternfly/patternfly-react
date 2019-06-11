@@ -107,7 +107,7 @@ export class ProjectToolbar extends React.Component {
 
   render() {
     return (
-      <Toolbar className="project-toolbar">
+      <Toolbar className="project-toolbar pf-u-mx-md pf-u-mt-md">
         <ToolbarGroup>
           <ToolbarItem className="pf-u-mr-xl">{this.renderProjectDropdown()}</ToolbarItem>
           <ToolbarItem className="pf-u-mr-md">{this.renderApplicationDropdown()}</ToolbarItem>
