@@ -14,6 +14,7 @@ import * as ReactStyles from '@patternfly/react-styles';
 import * as ReactTable from '@patternfly/react-table';
 import * as ReactVirtualizedExtension from '@patternfly/react-virtualized-extension';
 import * as ReactTokens from '@patternfly/react-tokens';
+import * as ReactTopology from '@patternfly/react-topology';
 
 import './live-edit.scss';
 
@@ -48,7 +49,8 @@ export class LiveEdit extends React.Component {
             ...ReactStyles,
             ...ReactTable,
             ...ReactVirtualizedExtension,
-            ...ReactTokens
+            ...ReactTokens,
+            ...ReactTopology
           }
         : {};
     this.scope = {
