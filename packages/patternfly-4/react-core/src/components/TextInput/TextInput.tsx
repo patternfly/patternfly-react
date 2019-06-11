@@ -47,7 +47,8 @@ export class TextInput extends React.Component<TextInputProps> {
     isValid: true,
     isDisabled: false,
     isReadOnly: false,
-    type: 'text'
+    type: 'text', 
+    onChange: (): any => undefined
   }
 
   constructor(props: TextInputProps) {

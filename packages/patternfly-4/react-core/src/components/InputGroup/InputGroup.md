@@ -2,6 +2,7 @@
 title: 'Input group'
 cssPrefix: null
 propComponents: ['InputGroup', 'InputGroupText']
+typescript: true
 ---
 
 ## Simple input group
