@@ -1,6 +1,7 @@
 ---
 title: 'Tooltip'
 cssPrefix: 'pf-c-tooltip'
+typescript: true
 propComponents: ['Tooltip']
 ---
 

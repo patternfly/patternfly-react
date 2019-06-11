@@ -9,16 +9,12 @@ exports[`tooltip renders 1`] = `
       className="pf-c-tooltip"
       role="tooltip"
     >
-      <TooltipArrow
-        className={null}
-      />
-      <TooltipContent
-        className={null}
-      >
+      <Unknown />
+      <Unknown>
         <div>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
         </div>
-      </TooltipContent>
+      </Unknown>
     </div>
   }
   delay={
