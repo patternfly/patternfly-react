@@ -5,7 +5,7 @@ import paginationStyles from '@patternfly/react-styles/css/components/Pagination
 import { css } from '@patternfly/react-styles';
 import { Dropdown, DropdownItem, DropdownDirection } from '../Dropdown';
 import { CheckIcon } from '@patternfly/react-icons';
-import TestOptionsToggle from './OptionsToggle';
+import OptionsToggle from './OptionsToggle';
 
 const propTypes = {
   className: PropTypes.string,
@@ -20,7 +20,7 @@ const propTypes = {
   itemsPerPageTitle: PropTypes.string,
   perPageSuffix: PropTypes.string,
   itemsTitle: PropTypes.string,
-  testOptionsToggle: PropTypes.string,
+  optionsToggle: PropTypes.string,
   itemCount: PropTypes.number,
   firstIndex: PropTypes.number,
   lastIndex: PropTypes.number,
@@ -37,7 +37,7 @@ const defaultProps = {
   itemsTitle: 'items',
   itemsPerPageTitle: 'Items per page',
   perPageSuffix: 'per page',
-  testOptionsToggle: 'Select',
+  optionsToggle: 'Select',
   itemCount: 0,
   firstIndex: 0,
   lastIndex: 0,
@@ -101,7 +101,7 @@ class PaginationOptionsMenu extends Component {
       perPageOptions,
       itemsPerPageTitle,
       itemsTitle,
-      testOptionsToggle,
+      optionsToggle,
       itemCount,
       firstIndex,
       lastIndex,
@@ -121,8 +121,8 @@ class PaginationOptionsMenu extends Component {
           onSelect={this.onSelect}
           isOpen={this.state.isOpen}
           toggle={
-            <TestOptionsToggle
-              testOptionsToggle={testOptionsToggle}
+            <OptionsToggle
+              optionsToggle={OptionsToggle}
               itemsTitle={itemsTitle}
               onToggle={this.onToggle}
               isOpen={this.state.isOpen}
