@@ -22,6 +22,7 @@ export * from './OptionsMenuDemo/OptionsMenuDemo';
 export * from './PopoverDemo/PopoverDemo';
 export * from './RadioDemo/RadioDemo';
 export * from './TabsDemo/TabsDemo';
+export * from './TextAreaDemo/TextAreaDemo';
 export * from './TextDemo/TextDemo';
 export * from './TextInputDemo/TextInputDemo';
 export * from './TitleDemo/TitleDemo';
