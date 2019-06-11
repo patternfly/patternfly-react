@@ -17,6 +17,7 @@ export interface AlertProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'action' | 'title'> {
   /** Adds Alert variant styles  */
   variant: 'success' | 'danger' | 'warning' | 'info';
+  /** Flag to indicate if the Alert is inline */
   isInline?: boolean;
   /** Title of the Alert  */
   title: React.ReactNode;

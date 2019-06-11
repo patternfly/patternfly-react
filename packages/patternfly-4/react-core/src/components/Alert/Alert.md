@@ -181,7 +181,7 @@ class DangerAlert extends React.Component {
 import React from 'react';
 import { Alert } from '@patternfly/react-core';
 
-class DangerAlert extends React.Component {
+class InlineAlert extends React.Component {
   render() {
     return (
       <React.Fragment>
@@ -200,7 +200,7 @@ class DangerAlert extends React.Component {
 import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 
-class SuccessAlert extends React.Component {
+class InlineAlertVariations extends React.Component {
   constructor(props) {
     super(props);
     this.state = { alertOneVisible: true, alertTwoVisible: true };
