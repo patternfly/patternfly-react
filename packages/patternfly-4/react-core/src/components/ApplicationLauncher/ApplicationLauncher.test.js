@@ -31,7 +31,7 @@ describe('ApplicationLauncher', () => {
   });
 
   test('right aligned', () => {
-    const view = shallow(<ApplicationLauncher dropdownItems={dropdownItems} position={DropdownPosition.right}/>);
+    const view = shallow(<ApplicationLauncher dropdownItems={dropdownItems} position={DropdownPosition.right} />);
     expect(view).toMatchSnapshot();
   });
 
