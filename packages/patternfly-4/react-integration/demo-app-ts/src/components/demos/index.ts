@@ -1,4 +1,5 @@
 export * from './AboutModal/AboutModalDemo';
+export * from './ApplicationLauncherDemo/ApplicationLauncherDemo'; 
 export * from './AlertDemo/AlertDemo';
 export * from './AvatarDemo/AvatarDemo';
 export * from './BackdropDemo/BackdropDemo'; 

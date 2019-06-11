@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ApplicationLauncher from './ApplicationLauncher';
-import DropdownItem from '../Dropdown/DropdownItem';
+import { ApplicationLauncher } from './ApplicationLauncher';
+import { DropdownItem } from '../Dropdown/DropdownItem';
 
 import { DropdownPosition, DropdownDirection } from '../Dropdown/dropdownConstants';
 import DropdownSeparator from '../Dropdown/Separator';

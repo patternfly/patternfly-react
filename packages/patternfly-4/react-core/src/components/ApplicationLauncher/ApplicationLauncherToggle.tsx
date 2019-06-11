@@ -1,53 +1,53 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import { KEY_CODES } from '../../helpers/constants';
 
-const propTypes = {
-  /** HTML ID of toggle */
-  id: PropTypes.string.isRequired,
-  /** Type to put on the button */
-  type: PropTypes.string,
-  /** Anything which can be rendered as toggle */
-  children: PropTypes.node,
-  /** Classes applied to root element of toggle */
-  className: PropTypes.string,
-  /** Flag to indicate if menu is opened */
-  isOpen: PropTypes.bool,
-  /** Callback called when toggle is clicked */
-  onToggle: PropTypes.func,
-  /** Callback for toggle open on keyboard entry */
-  onEnter: PropTypes.func,
-  /** Element which wraps toggle */
-  parentRef: PropTypes.any,
-  /** Forces focus state */
-  isFocused: PropTypes.bool,
-  /** Forces hover state */
-  isHovered: PropTypes.bool,
-  /** Forces active state */
-  isActive: PropTypes.bool,
-  /** Display the toggle with no border or background */
-  isPlain: PropTypes.bool,
-  /** Additional props are spread to the container <button> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
+export interface ApplicationLauncherToggleProps extends React.HTMLProps<HTMLButtonElement> {
+   /** HTML ID of toggle */
+   id: string; 
+   /** Type to put on the button */
+   type?: string; 
+   /** Anything which can be rendered as toggle */
+   children?: React.ReactNode; 
+   /** Classes applied to root element of toggle */
+   className?: string; 
+   /** Flag to indicate if menu is opened */
+   isOpen?: boolean; 
+   /** Callback called when toggle is clicked */
+   onToggle?: (value: boolean) => void; 
+   /** Callback for toggle open on keyboard entry */
+   onEnter?: () => void; 
+   /** Element which wraps toggle */
+   parentRef?: any; 
+   /** Forces focus state */
+   isFocused?: boolean; 
+   /** Forces hover state */
+   isHovered?: boolean; 
+   /** Forces active state */
+   isActive?: boolean; 
+   /** Display the toggle with no border or background */
+   isPlain?: boolean; 
+}
 
-const defaultProps = {
-  children: null,
-  type: '',
-  className: '',
-  isOpen: false,
-  parentRef: null,
-  isFocused: false,
-  isHovered: false,
-  isActive: false,
-  isPlain: false,
-  onToggle: Function.prototype,
-  onEnter: Function.prototype
-};
+export class ApplicationLauncherToggle extends React.Component<ApplicationLauncherToggleProps> {
 
-class ApplicationLauncherToggle extends Component {
+  static defaultProps = {
+    children: null as React.ReactNode,
+    type: '',
+    className: '',
+    isOpen: false,
+    parentRef: null as any,
+    isFocused: false,
+    isHovered: false,
+    isActive: false,
+    isPlain: false,
+    onToggle: Function.prototype,
+    onEnter: Function.prototype
+  };
+
+  toggle = React.createRef<HTMLButtonElement>();
+
   componentDidMount = () => {
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
@@ -60,14 +60,14 @@ class ApplicationLauncherToggle extends Component {
     document.removeEventListener('keydown', this.onEscPress);
   };
 
-  onDocClick = event => {
-    if (this.props.isOpen && this.props.parentRef && !this.props.parentRef.contains(event.target)) {
-      this.props.onToggle && this.props.onToggle(false);
-      this.toggle.focus();
-    }
+  onDocClick = (event: TouchEvent | MouseEvent) => {
+    if (this.props.isOpen && this.props.parentRef.current && !this.props.parentRef.current.contains(event.target)) {
+      this.props.onToggle(false);
+      this.toggle.current.focus();
+      }
   };
 
-  onEscPress = event => {
+  onEscPress = (event: KeyboardEvent) => {
     const { parentRef } = this.props;
     const keyCode = event.keyCode || event.which;
     if (
@@ -76,13 +76,13 @@ class ApplicationLauncherToggle extends Component {
       parentRef &&
       parentRef.contains(event.target)
     ) {
-      this.props.onToggle && this.props.onToggle(false);
-      this.toggle.focus();
+      this.props.onToggle(false);
+      this.toggle.current.focus();
     }
   };
 
-  onKeyDown = event => {
-    if (event.keyCode === KEY_CODES.TAB && !this.props.isOpen) return;
+  onKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (event.keyCode === KEY_CODES.TAB && !this.props.isOpen) {return};
     event.preventDefault();
     if (
       (event.keyCode === KEY_CODES.TAB || event.keyCode === KEY_CODES.ENTER || event.key === ' ') &&
@@ -115,9 +115,7 @@ class ApplicationLauncherToggle extends Component {
       <button
         {...props}
         id={id}
-        ref={toggle => {
-          this.toggle = toggle;
-        }}
+        ref={this.toggle}
         className={css(
           styles.button,
           isFocused && styles.modifiers.focus,
@@ -126,7 +124,7 @@ class ApplicationLauncherToggle extends Component {
           isPlain && styles.modifiers.plain,
           className
         )}
-        type={type || 'button'}
+        type={(type || 'button') as 'button' | 'submit'}
         onClick={_event => onToggle && onToggle(!isOpen)}
         aria-expanded={isOpen}
         onKeyDown={this.onKeyDown}
@@ -136,8 +134,3 @@ class ApplicationLauncherToggle extends Component {
     );
   }
 }
-
-ApplicationLauncherToggle.propTypes = propTypes;
-ApplicationLauncherToggle.defaultProps = defaultProps;
-
-export default ApplicationLauncherToggle;

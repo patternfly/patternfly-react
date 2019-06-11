@@ -21,6 +21,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AlertDemo
   },
   {
+    id: 'application-launcher-demo',
+    name: 'Application Launcher Demo', 
+    componentType: Examples.ApplicationLauncherDemo
+  },
+  {
     id: 'avatar-demo',
     name: 'Avatar Demo',
     componentType: Examples.AvatarDemo

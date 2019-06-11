@@ -2,6 +2,7 @@
 title: 'Application launcher'
 cssPrefix: 'pf-c-app-launcher'
 propComponents: ['ApplicationLauncher']
+typescript: true 
 ---
 import { ApplicationLauncher, DropdownItem, Tooltip } from '@patternfly/react-core';
 
