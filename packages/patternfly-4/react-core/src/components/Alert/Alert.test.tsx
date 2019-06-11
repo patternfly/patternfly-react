@@ -1,9 +1,14 @@
 import * as React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import { Alert, AlertVariant } from './Alert';
 import { AlertActionLink }  from './AlertActionLink';
 import { AlertActionCloseButton } from './AlertActionCloseButton';
+
+test('default Alert variant is info', () => {
+  const view = shallow(<Alert title="this is a test">Alert testing</Alert>)
+  expect(view.props().className).toMatch(/pf-m-info/);
+})
 
 Object.values(AlertVariant).forEach(variant => {
   describe(`Alert - ${variant}`, () => {
