@@ -4,7 +4,10 @@
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ],
   "description": "",
   "author": "Red Hat",
   "publishConfig": {
