@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.7.0...@patternfly/react-docs@4.8.0) (2019-06-11)
+
+
+### Features
+
+* **Card:** Add support for images and actions ([#2122](https://github.com/patternfly/patternfly-react/issues/2122)) ([7832518](https://github.com/patternfly/patternfly-react/commit/7832518))
+
+
+
+
+
 # [4.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.6.11...@patternfly/react-docs@4.7.0) (2019-06-11)
 
 

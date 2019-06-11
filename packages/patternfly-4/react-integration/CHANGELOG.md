@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.19.0 (2019-06-11)
+
+
+### Features
+
+* **ApplicationLauncher:** Convert application launcher to typescript ([#2166](https://github.com/patternfly/patternfly-react/issues/2166)) ([9b90f94](https://github.com/patternfly/patternfly-react/commit/9b90f94))
+* **Table:** Add support for .pf-m-grid-2xl breakpoint ([#2206](https://github.com/patternfly/patternfly-react/issues/2206)) ([0f9ebf9](https://github.com/patternfly/patternfly-react/commit/0f9ebf9))
+
+
+
+
+
 # 1.18.0 (2019-06-10)
 
 

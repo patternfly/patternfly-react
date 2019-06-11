@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.40.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.39.0...@patternfly/react-core@3.40.0) (2019-06-11)
+
+
+### Features
+
+* **ApplicationLauncher:** Convert application launcher to typescript ([#2166](https://github.com/patternfly/patternfly-react/issues/2166)) ([9b90f94](https://github.com/patternfly/patternfly-react/commit/9b90f94))
+* **Card:** Add support for images and actions ([#2122](https://github.com/patternfly/patternfly-react/issues/2122)) ([7832518](https://github.com/patternfly/patternfly-react/commit/7832518))
+
+
+
+
+
 # [3.39.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.38.1...@patternfly/react-core@3.39.0) (2019-06-11)
 
 
