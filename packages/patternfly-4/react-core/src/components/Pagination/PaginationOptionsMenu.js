@@ -113,6 +113,9 @@ class PaginationOptionsMenu extends Component {
     } = this.props;
     return (
       <div className={css(styles.optionsMenu, className)} {...props}>
+        {ref => {
+          this.parentRef = ref;
+        }}
         <span id={`${widgetId}-label`} hidden>
           {itemsPerPageTitle}:
         </span>

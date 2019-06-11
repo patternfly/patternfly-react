@@ -200,9 +200,6 @@ class OptionsToggle extends Component {
     return (
       <div
         className={css(styles.optionsMenuToggle, getModifier(styles, 'plain'), getModifier(styles, 'text'))}
-        ref={ref => {
-          this.parentRef = ref;
-        }}
       >
         <span className={css(styles.optionsMenuToggleText)}>
           {typeof ToggleTemplate === 'string' ? (
@@ -219,8 +216,8 @@ class OptionsToggle extends Component {
         {showToggle && (
           <DropdownToggle
             aria-label={optionsToggle}
-            onClick={() => onToggle(!isOpen)}
-            onToggle={onToggle}
+            onToggle={() => onToggle(!isOpen)}
+            // onToggle={onToggle}
             isOpen={isOpen}
             id={`${widgetId}-toggle`}
             isSplitButton
