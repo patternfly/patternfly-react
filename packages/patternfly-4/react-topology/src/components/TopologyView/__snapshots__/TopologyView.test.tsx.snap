@@ -26,11 +26,11 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
       id="simple-test-id"
     >
       <StackItem
-        className="pf-u-mt-md"
+        className=""
         isFilled={true}
       >
         <div
-          className="pf-l-stack__item pf-m-fill pf-u-mt-md"
+          className="pf-l-stack__item pf-m-fill"
         >
           <div
             className="pf-topology-content"
@@ -89,11 +89,11 @@ exports[`TopologyView should display topology correctly 1`] = `
       id="simple-test-id"
     >
       <StackItem
-        className="pf-u-mx-xl pf-u-mt-md"
+        className=""
         isFilled={false}
       >
         <div
-          className="pf-l-stack__item pf-u-mx-xl pf-u-mt-md"
+          className="pf-l-stack__item"
         >
           <div
             id="test-context-bar"
@@ -101,11 +101,11 @@ exports[`TopologyView should display topology correctly 1`] = `
         </div>
       </StackItem>
       <StackItem
-        className="pf-u-mx-xl pf-u-mt-md"
+        className=""
         isFilled={false}
       >
         <div
-          className="pf-l-stack__item pf-u-mx-xl pf-u-mt-md"
+          className="pf-l-stack__item"
         >
           <div
             id="test-view-bar"
@@ -113,11 +113,11 @@ exports[`TopologyView should display topology correctly 1`] = `
         </div>
       </StackItem>
       <StackItem
-        className="pf-u-mt-md"
+        className=""
         isFilled={true}
       >
         <div
-          className="pf-l-stack__item pf-m-fill pf-u-mt-md"
+          className="pf-l-stack__item pf-m-fill"
         >
           <div
             className="pf-topology-content"

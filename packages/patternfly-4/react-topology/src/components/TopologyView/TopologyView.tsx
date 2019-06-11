@@ -28,9 +28,9 @@ export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
 }: TopologyViewProps) => {
   return (
     <Stack className={className} {...props}>
-      {contextToolbar && <StackItem className="pf-u-mx-xl pf-u-mt-md" isFilled={false}>{contextToolbar}</StackItem>}
-      {viewToolbar && <StackItem className="pf-u-mx-xl pf-u-mt-md" isFilled={false}>{viewToolbar}</StackItem>}
-      <StackItem isFilled className="pf-u-mt-md">
+      {contextToolbar && <StackItem isFilled={false}>{contextToolbar}</StackItem>}
+      {viewToolbar && <StackItem isFilled={false}>{viewToolbar}</StackItem>}
+      <StackItem isFilled>
         <div className="pf-topology-content">
           {children}
           {controlBar && <span className="pf-topology-control-bar">{controlBar}</span>}
