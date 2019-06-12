@@ -65,6 +65,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
           color="currentColor"
+          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -482,6 +483,7 @@ exports[`checkbox select renders closed successfully 1`] = `
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
           color="currentColor"
+          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -577,6 +579,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
           color="currentColor"
+          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -836,6 +839,7 @@ exports[`select single select renders closed successfully 1`] = `
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
           color="currentColor"
+          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -933,6 +937,7 @@ exports[`select single select renders expanded successfully 1`] = `
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
           color="currentColor"
+          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1178,6 +1183,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
             color="currentColor"
+            noVerticalAlign={false}
             size="sm"
             title={null}
           >
@@ -1287,6 +1293,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
             color="currentColor"
+            noVerticalAlign={false}
             size="sm"
             title={null}
           >
@@ -1581,6 +1588,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                             <TimesCircleIcon
                               aria-hidden="true"
                               color="currentColor"
+                              noVerticalAlign={false}
                               size="sm"
                               title={null}
                             >
@@ -1677,6 +1685,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           <TimesCircleIcon
             aria-hidden={true}
             color="currentColor"
+            noVerticalAlign={false}
             size="sm"
             title={null}
           >
@@ -1713,6 +1722,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
             color="currentColor"
+            noVerticalAlign={false}
             size="sm"
             title={null}
           >
@@ -2074,6 +2084,7 @@ exports[`typeahead multi select test onChange 1`] = `
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
             color="currentColor"
+            noVerticalAlign={false}
             size="sm"
             title={null}
           >
@@ -2230,6 +2241,7 @@ exports[`typeahead select renders closed successfully 1`] = `
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
             color="currentColor"
+            noVerticalAlign={false}
             size="sm"
             title={null}
           >
@@ -2339,6 +2351,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
             color="currentColor"
+            noVerticalAlign={false}
             size="sm"
             title={null}
           >
@@ -2581,6 +2594,7 @@ exports[`typeahead select renders selected successfully 1`] = `
           <TimesCircleIcon
             aria-hidden={true}
             color="currentColor"
+            noVerticalAlign={false}
             size="sm"
             title={null}
           >
@@ -2617,6 +2631,7 @@ exports[`typeahead select renders selected successfully 1`] = `
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
             color="currentColor"
+            noVerticalAlign={false}
             size="sm"
             title={null}
           >
@@ -2948,6 +2963,7 @@ exports[`typeahead select test onChange 1`] = `
           <CaretDownIcon
             className="pf-c-select__toggle-arrow"
             color="currentColor"
+            noVerticalAlign={false}
             size="sm"
             title={null}
           >

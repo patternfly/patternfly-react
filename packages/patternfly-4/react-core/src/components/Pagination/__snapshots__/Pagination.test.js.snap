@@ -133,6 +133,7 @@ exports[`component render custom pagination toggle 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -334,12 +335,33 @@ exports[`component render custom pagination toggle 1`] = `
                 <div
                   className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
                 >
+<<<<<<< HEAD
                   <span
                     className="pf-c-options-menu__toggle-text"
                   >
                     1 - 10 - 40 - items
                   </span>
                   <DropdownToggle
+=======
+                  1 - 10 - 40 - items
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+<<<<<<< HEAD
+                  <Toggle
+>>>>>>> update snaps
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     iconComponent={[Function]}
@@ -352,6 +374,17 @@ exports[`component render custom pagination toggle 1`] = `
                     isSplitButton={true}
                     onToggle={[Function]}
                     parentRef={null}
+<<<<<<< HEAD
+=======
+                    type={null}
+=======
+                  <CaretDownIcon
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
+                    title={null}
+>>>>>>> update snaps
+>>>>>>> update snaps
                   >
                     <Toggle
                       aria-label="Select"
@@ -457,6 +490,7 @@ exports[`component render custom pagination toggle 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -501,6 +535,7 @@ exports[`component render custom pagination toggle 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -566,6 +601,7 @@ exports[`component render custom pagination toggle 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -610,6 +646,7 @@ exports[`component render custom pagination toggle 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -840,6 +877,7 @@ exports[`component render custom perPageOptions 1`] = `
                   <span
                     className="pf-c-options-menu__toggle-text"
                   >
+<<<<<<< HEAD
                     <ToggleTemplate
                       firstIndex={1}
                       itemCount={40}
@@ -861,6 +899,38 @@ exports[`component render custom perPageOptions 1`] = `
                     </ToggleTemplate>
                   </span>
                   <DropdownToggle
+=======
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      40
+                    </strong>
+                     
+                    items
+                  </ToggleTemplate>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+<<<<<<< HEAD
+                  <Toggle
+>>>>>>> update snaps
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     iconComponent={[Function]}
@@ -873,6 +943,17 @@ exports[`component render custom perPageOptions 1`] = `
                     isSplitButton={true}
                     onToggle={[Function]}
                     parentRef={null}
+<<<<<<< HEAD
+=======
+                    type={null}
+=======
+                  <CaretDownIcon
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
+                    title={null}
+>>>>>>> update snaps
+>>>>>>> update snaps
                   >
                     <Toggle
                       aria-label="Select"
@@ -978,6 +1059,7 @@ exports[`component render custom perPageOptions 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1022,6 +1104,7 @@ exports[`component render custom perPageOptions 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1087,6 +1170,7 @@ exports[`component render custom perPageOptions 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1131,6 +1215,7 @@ exports[`component render custom perPageOptions 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1295,6 +1380,7 @@ exports[`component render custom start end 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -1499,6 +1585,7 @@ exports[`component render custom start end 1`] = `
                   <span
                     className="pf-c-options-menu__toggle-text"
                   >
+<<<<<<< HEAD
                     <ToggleTemplate
                       firstIndex={5}
                       itemCount={40}
@@ -1520,6 +1607,38 @@ exports[`component render custom start end 1`] = `
                     </ToggleTemplate>
                   </span>
                   <DropdownToggle
+=======
+                    <strong>
+                      5
+                       - 
+                      15
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      40
+                    </strong>
+                     
+                    items
+                  </ToggleTemplate>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+<<<<<<< HEAD
+                  <Toggle
+>>>>>>> update snaps
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     iconComponent={[Function]}
@@ -1532,6 +1651,17 @@ exports[`component render custom start end 1`] = `
                     isSplitButton={true}
                     onToggle={[Function]}
                     parentRef={null}
+<<<<<<< HEAD
+=======
+                    type={null}
+=======
+                  <CaretDownIcon
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
+                    title={null}
+>>>>>>> update snaps
+>>>>>>> update snaps
                   >
                     <Toggle
                       aria-label="Select"
@@ -1637,6 +1767,7 @@ exports[`component render custom start end 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1681,6 +1812,7 @@ exports[`component render custom start end 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1746,6 +1878,7 @@ exports[`component render custom start end 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1790,6 +1923,7 @@ exports[`component render custom start end 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2036,6 +2170,7 @@ exports[`component render empty per page options 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2080,6 +2215,7 @@ exports[`component render empty per page options 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2145,6 +2281,7 @@ exports[`component render empty per page options 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2189,6 +2326,7 @@ exports[`component render empty per page options 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2353,6 +2491,7 @@ exports[`component render last page 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -2557,6 +2696,7 @@ exports[`component render last page 1`] = `
                   <span
                     className="pf-c-options-menu__toggle-text"
                   >
+<<<<<<< HEAD
                     <ToggleTemplate
                       firstIndex={11}
                       itemCount={20}
@@ -2578,6 +2718,38 @@ exports[`component render last page 1`] = `
                     </ToggleTemplate>
                   </span>
                   <DropdownToggle
+=======
+                    <strong>
+                      11
+                       - 
+                      20
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      20
+                    </strong>
+                     
+                    items
+                  </ToggleTemplate>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+<<<<<<< HEAD
+                  <Toggle
+>>>>>>> update snaps
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     iconComponent={[Function]}
@@ -2590,6 +2762,17 @@ exports[`component render last page 1`] = `
                     isSplitButton={true}
                     onToggle={[Function]}
                     parentRef={null}
+<<<<<<< HEAD
+=======
+                    type={null}
+=======
+                  <CaretDownIcon
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
+                    title={null}
+>>>>>>> update snaps
+>>>>>>> update snaps
                   >
                     <Toggle
                       aria-label="Select"
@@ -2695,6 +2878,7 @@ exports[`component render last page 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2739,6 +2923,7 @@ exports[`component render last page 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2804,6 +2989,7 @@ exports[`component render last page 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2848,6 +3034,7 @@ exports[`component render last page 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3028,6 +3215,7 @@ exports[`component render limited number of pages 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -3216,6 +3404,7 @@ exports[`component render limited number of pages 1`] = `
                   <span
                     className="pf-c-options-menu__toggle-text"
                   >
+<<<<<<< HEAD
                     <ToggleTemplate
                       firstIndex={1}
                       itemCount={20}
@@ -3237,6 +3426,38 @@ exports[`component render limited number of pages 1`] = `
                     </ToggleTemplate>
                   </span>
                   <DropdownToggle
+=======
+                    <strong>
+                      1
+                       - 
+                      20
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      20
+                    </strong>
+                     
+                    items
+                  </ToggleTemplate>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+<<<<<<< HEAD
+                  <Toggle
+>>>>>>> update snaps
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     iconComponent={[Function]}
@@ -3249,6 +3470,17 @@ exports[`component render limited number of pages 1`] = `
                     isSplitButton={true}
                     onToggle={[Function]}
                     parentRef={null}
+<<<<<<< HEAD
+=======
+                    type={null}
+=======
+                  <CaretDownIcon
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
+                    title={null}
+>>>>>>> update snaps
+>>>>>>> update snaps
                   >
                     <Toggle
                       aria-label="Select"
@@ -3354,6 +3586,7 @@ exports[`component render limited number of pages 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3398,6 +3631,7 @@ exports[`component render limited number of pages 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3463,6 +3697,7 @@ exports[`component render limited number of pages 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3507,6 +3742,7 @@ exports[`component render limited number of pages 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3671,6 +3907,7 @@ exports[`component render no items 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -3875,6 +4112,7 @@ exports[`component render no items 1`] = `
                   <span
                     className="pf-c-options-menu__toggle-text"
                   >
+<<<<<<< HEAD
                     <ToggleTemplate
                       firstIndex={0}
                       itemCount={0}
@@ -3896,6 +4134,38 @@ exports[`component render no items 1`] = `
                     </ToggleTemplate>
                   </span>
                   <DropdownToggle
+=======
+                    <strong>
+                      0
+                       - 
+                      0
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      0
+                    </strong>
+                     
+                    items
+                  </ToggleTemplate>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+<<<<<<< HEAD
+                  <Toggle
+>>>>>>> update snaps
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     iconComponent={[Function]}
@@ -3908,6 +4178,17 @@ exports[`component render no items 1`] = `
                     isSplitButton={true}
                     onToggle={[Function]}
                     parentRef={null}
+<<<<<<< HEAD
+=======
+                    type={null}
+=======
+                  <CaretDownIcon
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
+                    title={null}
+>>>>>>> update snaps
+>>>>>>> update snaps
                   >
                     <Toggle
                       aria-label="Select"
@@ -4013,6 +4294,7 @@ exports[`component render no items 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4057,6 +4339,7 @@ exports[`component render no items 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4122,6 +4405,7 @@ exports[`component render no items 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4166,6 +4450,7 @@ exports[`component render no items 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4325,6 +4610,7 @@ exports[`component render should render correctly bottom 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -4529,6 +4815,7 @@ exports[`component render should render correctly bottom 1`] = `
                   <span
                     className="pf-c-options-menu__toggle-text"
                   >
+<<<<<<< HEAD
                     <ToggleTemplate
                       firstIndex={1}
                       itemCount={20}
@@ -4550,6 +4837,38 @@ exports[`component render should render correctly bottom 1`] = `
                     </ToggleTemplate>
                   </span>
                   <DropdownToggle
+=======
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      20
+                    </strong>
+                     
+                    items
+                  </ToggleTemplate>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+<<<<<<< HEAD
+                  <Toggle
+>>>>>>> update snaps
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     iconComponent={[Function]}
@@ -4562,6 +4881,17 @@ exports[`component render should render correctly bottom 1`] = `
                     isSplitButton={true}
                     onToggle={[Function]}
                     parentRef={null}
+<<<<<<< HEAD
+=======
+                    type={null}
+=======
+                  <CaretDownIcon
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
+                    title={null}
+>>>>>>> update snaps
+>>>>>>> update snaps
                   >
                     <Toggle
                       aria-label="Select"
@@ -4667,6 +4997,7 @@ exports[`component render should render correctly bottom 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4711,6 +5042,7 @@ exports[`component render should render correctly bottom 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4776,6 +5108,7 @@ exports[`component render should render correctly bottom 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4820,6 +5153,7 @@ exports[`component render should render correctly bottom 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4984,6 +5318,7 @@ exports[`component render should render correctly top 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -5188,6 +5523,7 @@ exports[`component render should render correctly top 1`] = `
                   <span
                     className="pf-c-options-menu__toggle-text"
                   >
+<<<<<<< HEAD
                     <ToggleTemplate
                       firstIndex={1}
                       itemCount={20}
@@ -5209,6 +5545,38 @@ exports[`component render should render correctly top 1`] = `
                     </ToggleTemplate>
                   </span>
                   <DropdownToggle
+=======
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      20
+                    </strong>
+                     
+                    items
+                  </ToggleTemplate>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+<<<<<<< HEAD
+                  <Toggle
+>>>>>>> update snaps
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     iconComponent={[Function]}
@@ -5221,6 +5589,17 @@ exports[`component render should render correctly top 1`] = `
                     isSplitButton={true}
                     onToggle={[Function]}
                     parentRef={null}
+<<<<<<< HEAD
+=======
+                    type={null}
+=======
+                  <CaretDownIcon
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
+                    title={null}
+>>>>>>> update snaps
+>>>>>>> update snaps
                   >
                     <Toggle
                       aria-label="Select"
@@ -5326,6 +5705,7 @@ exports[`component render should render correctly top 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5370,6 +5750,7 @@ exports[`component render should render correctly top 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5435,6 +5816,7 @@ exports[`component render should render correctly top 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5479,6 +5861,7 @@ exports[`component render should render correctly top 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5634,6 +6017,7 @@ exports[`component render titles 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -5838,6 +6222,7 @@ exports[`component render titles 1`] = `
                   <span
                     className="pf-c-options-menu__toggle-text"
                   >
+<<<<<<< HEAD
                     <ToggleTemplate
                       firstIndex={1}
                       itemCount={40}
@@ -5859,6 +6244,38 @@ exports[`component render titles 1`] = `
                     </ToggleTemplate>
                   </span>
                   <DropdownToggle
+=======
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      40
+                    </strong>
+                     
+                    values
+                  </ToggleTemplate>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+<<<<<<< HEAD
+                  <Toggle
+>>>>>>> update snaps
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     iconComponent={[Function]}
@@ -5871,6 +6288,17 @@ exports[`component render titles 1`] = `
                     isSplitButton={true}
                     onToggle={[Function]}
                     parentRef={null}
+<<<<<<< HEAD
+=======
+                    type={null}
+=======
+                  <CaretDownIcon
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
+                    title={null}
+>>>>>>> update snaps
+>>>>>>> update snaps
                   >
                     <Toggle
                       aria-label="Select"
@@ -5976,6 +6404,7 @@ exports[`component render titles 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6020,6 +6449,7 @@ exports[`component render titles 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6085,6 +6515,7 @@ exports[`component render titles 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6129,6 +6560,7 @@ exports[`component render titles 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6293,6 +6725,7 @@ exports[`component render up drop direction 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -6497,6 +6930,7 @@ exports[`component render up drop direction 1`] = `
                   <span
                     className="pf-c-options-menu__toggle-text"
                   >
+<<<<<<< HEAD
                     <ToggleTemplate
                       firstIndex={1}
                       itemCount={40}
@@ -6518,6 +6952,38 @@ exports[`component render up drop direction 1`] = `
                     </ToggleTemplate>
                   </span>
                   <DropdownToggle
+=======
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      40
+                    </strong>
+                     
+                    items
+                  </ToggleTemplate>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+<<<<<<< HEAD
+                  <Toggle
+>>>>>>> update snaps
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     iconComponent={[Function]}
@@ -6530,6 +6996,17 @@ exports[`component render up drop direction 1`] = `
                     isSplitButton={true}
                     onToggle={[Function]}
                     parentRef={null}
+<<<<<<< HEAD
+=======
+                    type={null}
+=======
+                  <CaretDownIcon
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
+                    title={null}
+>>>>>>> update snaps
+>>>>>>> update snaps
                   >
                     <Toggle
                       aria-label="Select"
@@ -6635,6 +7112,7 @@ exports[`component render up drop direction 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6679,6 +7157,7 @@ exports[`component render up drop direction 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6744,6 +7223,7 @@ exports[`component render up drop direction 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6788,6 +7268,7 @@ exports[`component render up drop direction 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
