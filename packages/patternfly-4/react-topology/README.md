@@ -2,7 +2,7 @@
 
 This package provides Topology View components based on [PatternFly 4][patternfly-4]
 
-### Prerequisite
+### Prerequisites
 
 #### Node Environment
 
