@@ -26,7 +26,7 @@ Once you’ve completed development of a new component, you need to perform a bu
 
 ## Running the demo app
 
-Run the following command from the `packages/patternfly-4/react-integration/demo-app-ts` directory to launch the demo app:
+Run the following command from the root directory to launch the demo app:
 
 `yarn start:demo-app`
 
