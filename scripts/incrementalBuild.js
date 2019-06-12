@@ -40,7 +40,7 @@ async function getInvalidPackages() {
 
   for (let p of packages) {
     const watchDir = getDir(p.name);
-    p.hash = await hashDir(`${p.location}/${watchDir}`);
+    p.hash = hashDir(`${p.location}/${watchDir}`);
     p.valid = cache && cache[p.name] === p.hash;
     if (p.valid) {
       console.info('Skipping', p.name, '(already built).');
