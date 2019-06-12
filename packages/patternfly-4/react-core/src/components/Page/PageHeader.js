@@ -12,6 +12,8 @@ const propTypes = {
   logo: PropTypes.node,
   /** Additional props passed to the logo anchor container */
   logoProps: PropTypes.object,
+  /** Component to use to wrap the passed <logo> */
+  logoComponent: PropTypes.node,
   /** Component to render the toolbar (e.g. <Toolbar />) */
   toolbar: PropTypes.node,
   /** Component to render the avatar (e.g. <Avatar /> */
@@ -34,6 +36,7 @@ const defaultProps = {
   className: '',
   logo: null,
   logoProps: null,
+  logoComponent: 'a',
   toolbar: null,
   avatar: null,
   topNav: null,
@@ -47,6 +50,7 @@ const PageHeader = ({
   className,
   logo,
   logoProps,
+  logoComponent: LogoComponent,
   toolbar,
   avatar,
   topNav,
@@ -74,9 +78,9 @@ const PageHeader = ({
           </div>
         )}
         {logo && (
-          <a className={css(styles.pageHeaderBrandLink)} {...logoProps}>
+          <LogoComponent className={css(styles.pageHeaderBrandLink)} {...logoProps}>
             {logo}
-          </a>
+          </LogoComponent>
         )}
       </div>
     )}

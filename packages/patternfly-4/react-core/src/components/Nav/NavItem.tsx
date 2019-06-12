@@ -20,35 +20,39 @@ export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>,  
   /** If true prevents the default anchor link action to occur. Set to true if you want to handle navigation yourself. */
   preventDefault?: boolean;
   /** Callback for item click */
-  onClick?: NavSelectClickHandler
+  onClick?: NavSelectClickHandler;
+  /** Component used to render NavItems */
+  component?: React.ReactNode;
 }
 
 export const NavItem: React.FunctionComponent<NavItemProps> = ({
-   children = null as React.ReactNode,
-   className = '',
-   to = '',
-   isActive = false,
-   groupId = null as string,
-   itemId = null as string,
-   preventDefault = false,
-   onClick = null as NavSelectClickHandler,
+  children = null as React.ReactNode,
+  className = '',
+  to = '',
+  isActive = false,
+  groupId = null as string,
+  itemId = null as string,
+  preventDefault = false,
+  onClick = null as NavSelectClickHandler,
+  component = 'a',
   ...props
 }: NavItemProps) => {
+  const Component = component as any;
 
-  const renderDefaultLink = ():React.ReactNode => {
+  const renderDefaultLink = (): React.ReactNode => {
     const preventLinkDefault = preventDefault || !to;
     return (
       <NavContext.Consumer>
         {(context: any) => (
-          <a
+          <Component
             href={to}
-            onClick={e => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
+            onClick={(e: any) => context.onSelect(e, groupId, itemId, to, preventLinkDefault, onClick)}
             className={css(styles.navLink, isActive && styles.modifiers.current, className)}
             aria-current={isActive ? 'page' : null}
             {...props}
           >
             {children}
-          </a>
+          </Component>
         )}
       </NavContext.Consumer>
     );
