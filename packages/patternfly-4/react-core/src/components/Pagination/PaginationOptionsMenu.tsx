@@ -16,10 +16,7 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   /** Menu will open up or open down from the Options menu toggle */
   dropDirection?: 'up' | 'down';
   /** Array of titles and values which will be the options on the Options Menu dropdown */
-  perPageOptions?: {
-    title?: React.ReactNode,
-    value?: number
-  }[];
+  perPageOptions?: PerPageOptions[];
   /** The Title of the Pagination Options Menu */
   itemsPerPageTitle?: string;
   /** The suffix to be displayed after each option on the Options Menu dropdown */
