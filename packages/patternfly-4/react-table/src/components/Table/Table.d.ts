@@ -48,12 +48,12 @@ export interface IExtra extends IExtraData {
 }
 
 export interface ISortBy {
-  index?: Number;
+  index?: number;
   direction?: OneOf<typeof SortByDirection, keyof typeof SortByDirection>;
 }
 
 export interface IAction {
-  title: String;
+  title: string;
   onClick: (event: MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
 }
 
@@ -61,13 +61,18 @@ export interface ISeparator {
   isSeparator: Boolean
 }
 
+export interface IDecorator extends HTMLProps<HTMLElement> {
+  isVisible: boolean;
+  children?: React.ReactNode;
+}
+
 export interface ICell {
-  title: String;
-  transforms?: Array<Function>;
-  cellTransforms?: Array<Function>;
-  columnTransforms?: Array<Function>;
-  formatters?: Array<Function>;
-  cellFormatters?: Array<Function>;
+  title: string;
+  transforms?: ((value: any) => IDecorator)[];
+  cellTransforms?: ((value: any) => IDecorator)[];
+  columnTransforms?: ((value: any) => IDecorator)[];
+  formatters?: ((value: any) => IDecorator)[];
+  cellFormatters?: ((value: any) => IDecorator)[];
   props: any;
 }
 
@@ -79,7 +84,7 @@ export interface IRowCell {
 export interface IRow {
   cells: Array<ReactNode | IRowCell>;
   isOpen?: Boolean;
-  parent?: Number;
+  parent?: number;
   props?: any;
   fullWidth?: Boolean;
   noPadding?: Boolean;
@@ -101,13 +106,13 @@ export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSe
   areActionsDisabled?: (rowData: IRowData, extraData: IExtraData) => boolean;
   header?: ReactNode;
   caption?: ReactNode;
-  rowLabeledBy?: String;
-  expandId?: String;
-  contentId?: String;
+  rowLabeledBy?: string;
+  expandId?: string;
+  contentId?: string;
   dropdownPosition?: OneOf<typeof DropdownPosition, keyof typeof DropdownPosition>;
   dropdownDirection?: OneOf<typeof DropdownDirection, keyof typeof DropdownDirection>;
-  rows: Array<IRow | Array<String>>;
-  cells: Array<ICell | String>;
+  rows: Array<IRow | Array<string>>;
+  cells: Array<ICell | string>;
   bodyWrapper?: Function;
   rowWrapper?: Function;
 }
