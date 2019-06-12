@@ -46,3 +46,7 @@ export function getClassName(styleObj = {}) {
 export function getInsertedStyles() {
   return Object.values(emotionCache.inserted);
 }
+
+export function pickProperties(object, properties) {
+  return properties.reduce((picked, property) => ({ ...picked, [property]: object[property] }), {});
+}
