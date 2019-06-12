@@ -1,68 +1,74 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
+import { OneOf, Omit } from '../../helpers/typeUtils';
 import { AngleLeftIcon, AngleRightIcon } from '@patternfly/react-icons';
 import { getUniqueId, isElementInView, sideElementIsOutOfView } from '../../helpers/util';
 import { SIDE } from '../../helpers/constants';
-import TabContent from './TabContent';
-import Tab from './Tab';
+import { TabContent } from './TabContent';
+import { Tab } from './Tab';
 
-export const TabsVariant = {
-  div: 'div',
-  nav: 'nav'
-};
+export enum TabsVariant {
+  div = 'div',
+  nav = 'nav'
+}
 
-const propTypes = {
-  /** content rendered inside the Tabs Component. */
-  children: PropTypes.node.isRequired,
-  /** additional classes added to the Tabs */
-  className: PropTypes.string,
-  /** the index of the active tab */
-  activeKey: PropTypes.number,
-  /** handle tab selection */
-  onSelect: PropTypes.func,
-  /** uniquely identifies the Tabs */
-  id: PropTypes.string,
-  /** enables the filled tab list layout */
-  isFilled: PropTypes.bool,
-  /** enables Secondary Tab styling */
-  isSecondary: PropTypes.bool,
-  /** aria-label for the left Scroll Button */
-  leftScrollAriaLabel: PropTypes.string,
-  /** aria-label for the right Scroll Button */
-  rightScrollAriaLabel: PropTypes.string,
-  /** determines what tag is used around the Tabs. Use "nav" to define the Tabs inside a navigation region */
-  variant: PropTypes.oneOf(Object.values(TabsVariant)),
-  /** provides an accessible label for the Tabs. Labels should be unique for each set of Tabs that are present on a page. When variant is set to nav, this prop should be defined to differentiate the Tabs from other navigation regions on the page. */
-  'aria-label': PropTypes.string
-};
+export interface TabsProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect'> {
+/** content rendered inside the Tabs Component. */
+children: React.ReactNode; 
+/** additional classes added to the Tabs */
+className?: string; 
+/** the index of the active tab */
+activeKey?: number; 
+/** handle tab selection */
+onSelect?: (event: React.FormEvent<HTMLInputElement>, eventKey: number) => void; 
+/** uniquely identifies the Tabs */
+id?: string; 
+/** enables the filled tab list layout */
+isFilled?: boolean; 
+/** enables Secondary Tab styling */
+isSecondary?: boolean; 
+/** aria-label for the left Scroll Button */
+leftScrollAriaLabel?: string; 
+/** aria-label for the right Scroll Button */
+rightScrollAriaLabel?: string; 
+/** determines what tag is used around the Tabs. Use "nav" to define the Tabs inside a navigation region */
+variant: OneOf<typeof TabsVariant, keyof typeof TabsVariant>;
+/** provides an accessible label for the Tabs. Labels should be unique for each set of Tabs that are present on a page. When variant is set to nav, this prop should be defined to differentiate the Tabs from other navigation regions on the page. */
+'aria-label'?: string; 
+}
 
-const defaultProps = {
-  className: '',
-  activeKey: 0,
-  onSelect: () => undefined,
-  id: null,
-  isFilled: false,
-  isSecondary: false,
-  leftScrollAriaLabel: 'Scroll left',
-  rightScrollAriaLabel: 'Scroll Right',
-  'aria-label': null,
-  variant: TabsVariant.div
-};
+export interface TabsState {
+  showLeftScrollButton: boolean;
+  showRightScrollButton: boolean;
+  highlightLeftScrollButton: boolean;
+  highlightRightScrollButton: boolean;
+}
 
-class Tabs extends React.Component {
-  static propTypes = propTypes;
-  static defaultProps = defaultProps;
-
-  state = {
-    showLeftScrollButton: false,
-    showRightScrollButton: false,
-    highlightLeftScrollButton: false,
-    highlightRightScrollButton: false
-  };
-
+export class Tabs extends React.Component<TabsProps, TabsState> {
   tabList = React.createRef();
+  constructor(props: TabsProps) {
+    super(props); 
+    this.state = {
+      showLeftScrollButton: false,
+      showRightScrollButton: false,
+      highlightLeftScrollButton: false,
+      highlightRightScrollButton: false
+    }
+  }
+
+  static defaultProps = {
+    className: '',
+    activeKey: 0,
+    onSelect: () => undefined,
+    id: null,
+    isFilled: false,
+    isSecondary: false,
+    leftScrollAriaLabel: 'Scroll left',
+    rightScrollAriaLabel: 'Scroll Right',
+    'aria-label': null,
+    variant: TabsVariant.div
+  };
 
   handleTabClick(event, eventKey, tabContentRef) {
     this.props.onSelect(event, eventKey);
@@ -256,8 +262,3 @@ class Tabs extends React.Component {
     );
   }
 }
-
-Tabs.propTypes = propTypes;
-Tabs.defaultProps = defaultProps;
-
-export default Tabs;
