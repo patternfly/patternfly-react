@@ -17,9 +17,9 @@
   "scripts": {
     "build": "yarn build:babel && node ./scripts/copyTS.js && yarn build:css && yarn build:types && node ./scripts/copyStyles.js",
     "build:babel": "concurrently 'yarn build:babel:esm && yarn build:babel:umd' 'yarn build:babel:cjs'",
-    "build:babel:cjs": "babel --extensions '.js,.ts,.tsx' src --out-dir dist/js --presets=@babel/preset-env",
-    "build:babel:esm": "babel --extensions '.js,.ts,.tsx' src --out-dir dist/esm",
-    "build:babel:umd": "babel dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
+    "build:babel:cjs": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/js --presets=@babel/preset-env",
+    "build:babel:esm": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/esm",
+    "build:babel:umd": "babel --source-maps --extensions '.js' dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "build:css": "node src/generateClasses.js",
     "build:types": "tsc",
     "clean": "rimraf dist css",
