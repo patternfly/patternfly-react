@@ -12,5 +12,5 @@ describe('Input Group Demo Test', () => {
   it('Verify number input only allows numbers', () => {
     cy.get('#textInput5').type('Hi');
     cy.get('#textInput5').should('have.value', ''); 
-  })
+  });
 })
