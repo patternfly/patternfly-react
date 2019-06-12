@@ -67,6 +67,20 @@ Object.values(AlertVariant).forEach(variant => {
         </Alert>
       );
       expect(view).toMatchSnapshot();
+
+    });
+
+    test('inline variation', () => {
+      const view = mount(
+        <Alert
+          variant={variant}
+          isInline
+          title="Some title"
+        >
+          Some alert
+        </Alert>
+      );
+      expect(view).toMatchSnapshot();
     });
   });
 });
