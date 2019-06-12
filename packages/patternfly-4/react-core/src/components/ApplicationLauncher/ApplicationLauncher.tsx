@@ -67,7 +67,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
                 })
             )}
             {isOpen && (
-              <DropdownContext.Provider value={ onSelect }>
+              <DropdownContext.Provider value={{ onSelect }}>
                 <ApplicationLauncherMenu
                   isOpen={isOpen}
                   position="left"

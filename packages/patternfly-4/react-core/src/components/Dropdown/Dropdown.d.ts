@@ -17,4 +17,6 @@ export interface DropdownProps extends HTMLProps<HTMLDivElement> {
 
 declare const Dropdown: FunctionComponent<DropdownProps>;
 
+export const DropdownWithContext: FunctionComponent<DropdownProps>;
+
 export default Dropdown;

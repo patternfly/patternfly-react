@@ -112,7 +112,6 @@ class DropdownItem extends React.Component {
       this.props.role === 'separator'
         ? (classes = className)
         : (classes = css(
-            dropdownStyles.dropdownMenuItem,
             isDisabled && dropdownStyles.modifiers.disabled,
             isHovered && dropdownStyles.modifiers.hover,
             className
@@ -120,7 +119,7 @@ class DropdownItem extends React.Component {
     }
     return (
       <DropdownContext.Consumer>
-        {onSelect => (
+        {({ onSelect, itemClass }) => (
           <li role="none">
             {React.isValidElement(children) ? (
               React.Children.map(children, child =>
@@ -128,7 +127,8 @@ class DropdownItem extends React.Component {
                   className: `${css(
                     isDisabled && dropdownStyles.modifiers.disabled,
                     isHovered && dropdownStyles.modifiers.hover,
-                    className
+                    className,
+                    itemClass
                   )} ${child.props.className}`,
                   ref: this.ref,
                   onKeyDown: this.onKeyDown,
@@ -143,7 +143,7 @@ class DropdownItem extends React.Component {
             ) : (
               <Component
                 {...additionalProps}
-                className={classes}
+                className={css(classes, this.props.role !== 'separator' && itemClass)}
                 ref={this.ref}
                 onKeyDown={this.onKeyDown}
                 onClick={event => {

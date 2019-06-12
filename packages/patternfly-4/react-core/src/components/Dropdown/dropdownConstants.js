@@ -11,7 +11,11 @@ export const DropdownDirection = {
 };
 
 export const DropdownContext = React.createContext({
-  onSelect: () => {}
+  onSelect: () => {},
+  menuClass: '',
+  itemClass: '',
+  toggleClass: '',
+  baseClass: ''
 });
 
 export const DropdownArrowContext = React.createContext({
