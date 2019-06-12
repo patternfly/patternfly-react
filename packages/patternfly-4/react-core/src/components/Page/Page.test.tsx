@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import { mount } from 'enzyme';
-import Page from './Page';
-import PageHeader from './PageHeader';
-import PageSidebar from './PageSidebar';
-import PageSection from './PageSection';
+import { Page } from './Page';
+import { PageHeader } from './PageHeader';
+import { PageSidebar } from './PageSidebar';
+import { PageSection } from './PageSection';
 import { Breadcrumb, BreadcrumbItem } from '../Breadcrumb';
 import { SkipToContent } from '../SkipToContent';
 
@@ -28,10 +28,10 @@ test('Check page vertical layout example against snapshot', () => {
 });
 
 test('Check page horizontal layout example against snapshot', () => {
-  const Header = <PageHeader logo="Logo" toolbar="Toolbar" avatar=" | Avatar" nav="Navigation" />;
+  const Header = <PageHeader logo="Logo" toolbar="Toolbar" avatar=" | Avatar" topNav="Navigation" />;
   const Sidebar = <PageSidebar isNavOpen />;
   const view = mount(
-    <Page {...props} layout="horizontal" header={Header} sidebar={Sidebar}>
+    <Page {...props} header={Header} sidebar={Sidebar}>
       <PageSection variant="default">Section with default background</PageSection>
       <PageSection variant="light">Section with light background</PageSection>
       <PageSection variant="dark">Section with dark background</PageSection>
@@ -42,7 +42,7 @@ test('Check page horizontal layout example against snapshot', () => {
 });
 
 test('Check page to verify breadcrumb is created', () => {
-  const Header = <PageHeader logo="Logo" toolbar="Toolbar" avatar=" | Avatar" nav="Navigation" />;
+  const Header = <PageHeader logo="Logo" toolbar="Toolbar" avatar=" | Avatar" topNav="Navigation" />;
   const Sidebar = <PageSidebar isNavOpen />;
   const PageBreadcrumb = () => (
     <Breadcrumb>
@@ -55,7 +55,7 @@ test('Check page to verify breadcrumb is created', () => {
     </Breadcrumb>
   );
   const view = mount(
-    <Page {...props} layout="horizontal" header={Header} sidebar={Sidebar} breadcrumb={PageBreadcrumb}>
+    <Page {...props} header={Header} sidebar={Sidebar} breadcrumb={PageBreadcrumb}>
       <PageSection variant="default">Section with default background</PageSection>
       <PageSection variant="light">Section with light background</PageSection>
       <PageSection variant="dark">Section with dark background</PageSection>
@@ -66,7 +66,7 @@ test('Check page to verify breadcrumb is created', () => {
 });
 
 test('Check page to verify skip to content is created', () => {
-  const Header = <PageHeader logo="Logo" toolbar="Toolbar" avatar=" | Avatar" nav="Navigation" />;
+  const Header = <PageHeader logo="Logo" toolbar="Toolbar" avatar=" | Avatar" topNav="Navigation" />;
   const Sidebar = <PageSidebar isNavOpen />;
   const PageBreadcrumb = (
     <Breadcrumb>
@@ -82,7 +82,6 @@ test('Check page to verify skip to content is created', () => {
   const view = mount(
     <Page
       {...props}
-      layout="horizontal"
       header={Header}
       sidebar={Sidebar}
       breadcrumb={PageBreadcrumb}
