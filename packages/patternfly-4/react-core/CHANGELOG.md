@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.42.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.41.0...@patternfly/react-core@3.42.0) (2019-06-12)
+
+
+### Features
+
+* **Alert:** Add the inline alert modifier ([#2126](https://github.com/patternfly/patternfly-react/issues/2126)) ([230e83a](https://github.com/patternfly/patternfly-react/commit/230e83a)), closes [#1934](https://github.com/patternfly/patternfly-react/issues/1934)
+
+
+
+
+
 # [3.41.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.40.0...@patternfly/react-core@3.41.0) (2019-06-12)
 
 
