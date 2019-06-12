@@ -3,17 +3,17 @@ const path = require('path');
 const crypto = require('crypto');
 
 // http://stackoverflow.com/a/5827895/4241030
-function filewalker(dir, done) {
+function filewalker(dir) {
   let results = [];
 
 	fs.readdirSync(dir).forEach(file => {
     filePath = path.resolve(dir, file);
 
-    const stat = fs.statSync(filePath)
+    const stat = fs.statSync(filePath);
     // If directory, execute a recursive call
-    if (stat && stat.isDirectory()) {
-      results.concat(filewalker(filePath));
-    } else {
+    if (stat && stat.isDirectory() && !stat.isSymbolicLink()) {
+      results = results.concat(filewalker(filePath));
+    } else if (stat && stat.isFile()) {
       results.push(filePath);
     }
   });
