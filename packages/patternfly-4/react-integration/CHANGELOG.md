@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.20.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.19.1...@patternfly/react-integration@1.20.0) (2019-06-12)
+
+
+### Features
+
+* **react-core:** allow dynamic rendering of anchor components ([#2117](https://github.com/patternfly/patternfly-react/issues/2117)) ([c1c3be9](https://github.com/patternfly/patternfly-react/commit/c1c3be9))
+
+
+
+
+
 ## [1.19.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.19.0...@patternfly/react-integration@1.19.1) (2019-06-12)
 
 **Note:** Version bump only for package @patternfly/react-integration

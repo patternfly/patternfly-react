@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.41.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.40.0...@patternfly/react-core@3.41.0) (2019-06-12)
+
+
+### Features
+
+* **react-core:** allow dynamic rendering of anchor components ([#2117](https://github.com/patternfly/patternfly-react/issues/2117)) ([c1c3be9](https://github.com/patternfly/patternfly-react/commit/c1c3be9))
+
+
+
+
+
 # [3.40.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.39.0...@patternfly/react-core@3.40.0) (2019-06-11)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.21.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.20.0...demo-app-ts@1.21.0) (2019-06-12)
+
+
+### Features
+
+* **react-core:** allow dynamic rendering of anchor components ([#2117](https://github.com/patternfly/patternfly-react/issues/2117)) ([c1c3be9](https://github.com/patternfly/patternfly-react/commit/c1c3be9))
+
+
+
+
+
 # [1.20.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.19.2...demo-app-ts@1.20.0) (2019-06-11)
 
 
