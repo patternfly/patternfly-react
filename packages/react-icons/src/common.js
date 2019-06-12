@@ -11,6 +11,7 @@ export const propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOf(Object.keys(IconSize)),
   title: PropTypes.string
+  
 };
 
 export const defaultProps = {
