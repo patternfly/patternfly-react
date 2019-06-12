@@ -6,23 +6,6 @@ exports[`Chart 1`] = `
   width={230}
 >
   <Component
-    style={
-      Array [
-        Object {
-          "fontSize": 24,
-        },
-        Object {
-          "fill": "#bbb",
-          "fontSize": 14,
-        },
-      ]
-    }
-    textAnchor="middle"
-    verticalAnchor="middle"
-    x={115}
-    y={115}
-  />
-  <Component
     height={230}
     innerRadius={98}
     labelComponent={
@@ -480,6 +463,12 @@ exports[`Chart 1`] = `
           }
         }
       />
+    }
+    origin={
+      Object {
+        "x": 115,
+        "y": 115,
+      }
     }
     standalone={false}
     theme={
@@ -945,23 +934,6 @@ exports[`Chart 2`] = `
   width={230}
 >
   <Component
-    style={
-      Array [
-        Object {
-          "fontSize": 24,
-        },
-        Object {
-          "fill": "#bbb",
-          "fontSize": 14,
-        },
-      ]
-    }
-    textAnchor="middle"
-    verticalAnchor="middle"
-    x={115}
-    y={115}
-  />
-  <Component
     height={230}
     innerRadius={98}
     labelComponent={
@@ -1419,6 +1391,12 @@ exports[`Chart 2`] = `
           }
         }
       />
+    }
+    origin={
+      Object {
+        "x": 115,
+        "y": 115,
+      }
     }
     standalone={false}
     theme={
@@ -1883,23 +1861,6 @@ exports[`renders component data 1`] = `
   height={200}
   width={200}
 >
-  <Component
-    style={
-      Array [
-        Object {
-          "fontSize": 24,
-        },
-        Object {
-          "fill": "#bbb",
-          "fontSize": 14,
-        },
-      ]
-    }
-    textAnchor="middle"
-    verticalAnchor="middle"
-    x={100}
-    y={100}
-  />
   <Component
     data={
       Array [
@@ -2374,6 +2335,12 @@ exports[`renders component data 1`] = `
           }
         }
       />
+    }
+    origin={
+      Object {
+        "x": 100,
+        "y": 100,
+      }
     }
     standalone={false}
     theme={
