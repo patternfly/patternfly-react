@@ -6,7 +6,7 @@ import { css, getModifier } from '@patternfly/react-styles';
 import { fillTemplate } from '../../helpers';
 import { DropdownToggle } from '../Dropdown';
 
-export function OptionsToggle(props) {
+function OptionsToggle(props) {
   const {
     itemsTitle,
     optionsToggle,
