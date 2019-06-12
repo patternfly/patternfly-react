@@ -119,7 +119,6 @@ class PaginationOptionsMenu extends Component {
           this.parentRef = ref;
         }}
       >
-        {' '}
         <span id={`${widgetId}-label`} hidden>
           {itemsPerPageTitle}:
         </span>
