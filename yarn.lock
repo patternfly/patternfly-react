@@ -1714,9 +1714,9 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@patternfly/patternfly@2.12.5":
-  version "2.12.5"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.12.5.tgz#f2c5924deb875a8cde95e09e6d5c9022f00429da"
+"@patternfly/patternfly@2.12.6":
+  version "2.12.6"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.12.6.tgz#d3eeb1c47c410f1f7952d6a81cc799222982eed6"
 
 "@patternfly/patternfly@2.8.2":
   version "2.8.2"
