@@ -12,6 +12,11 @@ test('controlled', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('controlled - 3rd state', () => {
+  const view = shallow(<Checkbox isChecked={null} id="check" aria-label="check" />);
+  expect(view).toMatchSnapshot();
+});
+
 test('uncontrolled', () => {
   const view = shallow(<Checkbox id="check" aria-label="check" />);
   expect(view).toMatchSnapshot();

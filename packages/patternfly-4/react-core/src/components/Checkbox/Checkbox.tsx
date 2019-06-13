@@ -21,7 +21,7 @@ export interface CheckboxProps
   /** Id of the checkbox. */
   id: string;
   /** Aria-label of the checkbox. */
-  'aria-label': string;
+  'aria-label'?: string;
 }
 
 // tslint:disable-next-line:no-empty
@@ -67,6 +67,8 @@ export class Checkbox extends React.Component<CheckboxProps> {
     if ([false, true].includes(defaultChecked)) {
       checkedProps.defaultChecked = defaultChecked;
     }
+
+    checkedProps.checked = checkedProps.checked === null ? false : checkedProps.checked;
     return (
       <div className={css(styles.check, className)}>
         <input
@@ -77,6 +79,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
           aria-invalid={!isValid}
           aria-label={ariaLabel}
           disabled={isDisabled}
+          ref={elem => elem && (elem.indeterminate = isChecked === null)}
           {...checkedProps}
         />
         {label && (
