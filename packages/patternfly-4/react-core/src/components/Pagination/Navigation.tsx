@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Pagination/paginatio
 import { css } from '@patternfly/react-styles';
 import { AngleLeftIcon, AngleDoubleLeftIcon, AngleRightIcon, AngleDoubleRightIcon } from '@patternfly/react-icons';
 import { Button, ButtonVariant } from '../Button';
+import { pluralize } from '../../helpers';
 
 export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   /** Additional classes for the container */
@@ -102,7 +103,7 @@ export const Navigation: React.FunctionComponent<NavigationProps> = ({
         }}
       />
       <span aria-hidden="true">
-        of {lastPage} {pagesTitle}
+        of {pluralize(lastPage, pagesTitle)}
       </span>
     </div>
     <Button

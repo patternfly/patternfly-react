@@ -141,6 +141,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   return (
     <div
       className={css(styles.pagination, variant === PaginationVariant.bottom && styles.modifiers.footer, className)}
+      id={widgetId}
       {...props}
     >
       {variant === PaginationVariant.top && (
