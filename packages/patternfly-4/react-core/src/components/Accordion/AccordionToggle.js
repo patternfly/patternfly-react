@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import { AngleRightIcon } from '@patternfly/react-icons';
-<<<<<<< HEAD
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 import { accordionContext, HeadingLevelTypes } from './Accordion';
 
