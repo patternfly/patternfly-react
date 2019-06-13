@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.12.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.12.0...@patternfly/react-table@2.12.1) (2019-06-13)
+
+
+### Bug Fixes
+
+* **react-table:** collapse column icon behavior ([#2267](https://github.com/patternfly/patternfly-react/issues/2267)) ([eb0d436](https://github.com/patternfly/patternfly-react/commit/eb0d436))
+
+
+
+
+
 # [2.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.11.8...@patternfly/react-table@2.12.0) (2019-06-13)
 
 
