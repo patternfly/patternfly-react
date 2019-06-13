@@ -183,11 +183,6 @@ exports[`component render custom pagination toggle 1`] = `
               <div
                 className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <span
-                  className="pf-c-options-menu__toggle-text"
-                >
-                  1 - 10 - 40 - items
-                </span>
                 <DropdownToggle
                   aria-label="Select"
                   className="pf-c-options-menu__toggle-button"
@@ -228,8 +223,17 @@ exports[`component render custom pagination toggle 1`] = `
                       onKeyDown={[Function]}
                       type="button"
                     >
+                      <span
+                        className="pf-c-dropdown__toggle-text"
+                      >
+                        <span
+                          className="pf-c-options-menu__toggle-text"
+                        >
+                          1 - 10 - 40 - items
+                        </span>
+                      </span>
                       <CaretDownIcon
-                        className=""
+                        className="pf-c-dropdown__toggle-icon"
                         color="currentColor"
                         size="sm"
                         title={null}
@@ -237,7 +241,7 @@ exports[`component render custom pagination toggle 1`] = `
                         <svg
                           aria-hidden={true}
                           aria-labelledby={null}
-                          className=""
+                          className="pf-c-dropdown__toggle-icon"
                           fill="currentColor"
                           height="1em"
                           role="img"
@@ -607,29 +611,6 @@ exports[`component render custom perPageOptions 1`] = `
               <div
                 className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <span
-                  className="pf-c-options-menu__toggle-text"
-                >
-                  <Component
-                    firstIndex={1}
-                    itemCount={40}
-                    itemsTitle="items"
-                    lastIndex={10}
-                  >
-                    <strong>
-                      1
-                       - 
-                      10
-                    </strong>
-                     
-                    of 
-                    <strong>
-                      40
-                    </strong>
-                     
-                    items
-                  </Component>
-                </span>
                 <DropdownToggle
                   aria-label="Select"
                   className="pf-c-options-menu__toggle-button"
@@ -670,8 +651,35 @@ exports[`component render custom perPageOptions 1`] = `
                       onKeyDown={[Function]}
                       type="button"
                     >
+                      <span
+                        className="pf-c-dropdown__toggle-text"
+                      >
+                        <span
+                          className="pf-c-options-menu__toggle-text"
+                        >
+                          <Component
+                            firstIndex={1}
+                            itemCount={40}
+                            itemsTitle="items"
+                            lastIndex={10}
+                          >
+                            <strong>
+                              1
+                               - 
+                              10
+                            </strong>
+                             
+                            of 
+                            <strong>
+                              40
+                            </strong>
+                             
+                            items
+                          </Component>
+                        </span>
+                      </span>
                       <CaretDownIcon
-                        className=""
+                        className="pf-c-dropdown__toggle-icon"
                         color="currentColor"
                         size="sm"
                         title={null}
@@ -679,7 +687,7 @@ exports[`component render custom perPageOptions 1`] = `
                         <svg
                           aria-hidden={true}
                           aria-labelledby={null}
-                          className=""
+                          className="pf-c-dropdown__toggle-icon"
                           fill="currentColor"
                           height="1em"
                           role="img"
@@ -1112,29 +1120,6 @@ exports[`component render custom start end 1`] = `
               <div
                 className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <span
-                  className="pf-c-options-menu__toggle-text"
-                >
-                  <Component
-                    firstIndex={5}
-                    itemCount={40}
-                    itemsTitle="items"
-                    lastIndex={15}
-                  >
-                    <strong>
-                      5
-                       - 
-                      15
-                    </strong>
-                     
-                    of 
-                    <strong>
-                      40
-                    </strong>
-                     
-                    items
-                  </Component>
-                </span>
                 <DropdownToggle
                   aria-label="Select"
                   className="pf-c-options-menu__toggle-button"
@@ -1175,8 +1160,35 @@ exports[`component render custom start end 1`] = `
                       onKeyDown={[Function]}
                       type="button"
                     >
+                      <span
+                        className="pf-c-dropdown__toggle-text"
+                      >
+                        <span
+                          className="pf-c-options-menu__toggle-text"
+                        >
+                          <Component
+                            firstIndex={5}
+                            itemCount={40}
+                            itemsTitle="items"
+                            lastIndex={15}
+                          >
+                            <strong>
+                              5
+                               - 
+                              15
+                            </strong>
+                             
+                            of 
+                            <strong>
+                              40
+                            </strong>
+                             
+                            items
+                          </Component>
+                        </span>
+                      </span>
                       <CaretDownIcon
-                        className=""
+                        className="pf-c-dropdown__toggle-icon"
                         color="currentColor"
                         size="sm"
                         title={null}
@@ -1184,7 +1196,7 @@ exports[`component render custom start end 1`] = `
                         <svg
                           aria-hidden={true}
                           aria-labelledby={null}
-                          className=""
+                          className="pf-c-dropdown__toggle-icon"
                           fill="currentColor"
                           height="1em"
                           role="img"
@@ -1520,31 +1532,7 @@ exports[`component render empty per page options 1`] = `
             >
               <div
                 className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
-              >
-                <span
-                  className="pf-c-options-menu__toggle-text"
-                >
-                  <Component
-                    firstIndex={1}
-                    itemCount={40}
-                    itemsTitle="items"
-                    lastIndex={10}
-                  >
-                    <strong>
-                      1
-                       - 
-                      10
-                    </strong>
-                     
-                    of 
-                    <strong>
-                      40
-                    </strong>
-                     
-                    items
-                  </Component>
-                </span>
-              </div>
+              />
             </Component>
           </div>
         </Dropdown>
@@ -1956,29 +1944,6 @@ exports[`component render last page 1`] = `
               <div
                 className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <span
-                  className="pf-c-options-menu__toggle-text"
-                >
-                  <Component
-                    firstIndex={11}
-                    itemCount={20}
-                    itemsTitle="items"
-                    lastIndex={20}
-                  >
-                    <strong>
-                      11
-                       - 
-                      20
-                    </strong>
-                     
-                    of 
-                    <strong>
-                      20
-                    </strong>
-                     
-                    items
-                  </Component>
-                </span>
                 <DropdownToggle
                   aria-label="Select"
                   className="pf-c-options-menu__toggle-button"
@@ -2019,8 +1984,35 @@ exports[`component render last page 1`] = `
                       onKeyDown={[Function]}
                       type="button"
                     >
+                      <span
+                        className="pf-c-dropdown__toggle-text"
+                      >
+                        <span
+                          className="pf-c-options-menu__toggle-text"
+                        >
+                          <Component
+                            firstIndex={11}
+                            itemCount={20}
+                            itemsTitle="items"
+                            lastIndex={20}
+                          >
+                            <strong>
+                              11
+                               - 
+                              20
+                            </strong>
+                             
+                            of 
+                            <strong>
+                              20
+                            </strong>
+                             
+                            items
+                          </Component>
+                        </span>
+                      </span>
                       <CaretDownIcon
-                        className=""
+                        className="pf-c-dropdown__toggle-icon"
                         color="currentColor"
                         size="sm"
                         title={null}
@@ -2028,7 +2020,7 @@ exports[`component render last page 1`] = `
                         <svg
                           aria-hidden={true}
                           aria-labelledby={null}
-                          className=""
+                          className="pf-c-dropdown__toggle-icon"
                           fill="currentColor"
                           height="1em"
                           role="img"
@@ -2460,29 +2452,6 @@ exports[`component render limited number of pages 1`] = `
               <div
                 className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <span
-                  className="pf-c-options-menu__toggle-text"
-                >
-                  <Component
-                    firstIndex={1}
-                    itemCount={20}
-                    itemsTitle="items"
-                    lastIndex={20}
-                  >
-                    <strong>
-                      1
-                       - 
-                      20
-                    </strong>
-                     
-                    of 
-                    <strong>
-                      20
-                    </strong>
-                     
-                    items
-                  </Component>
-                </span>
                 <DropdownToggle
                   aria-label="Select"
                   className="pf-c-options-menu__toggle-button"
@@ -2523,8 +2492,35 @@ exports[`component render limited number of pages 1`] = `
                       onKeyDown={[Function]}
                       type="button"
                     >
+                      <span
+                        className="pf-c-dropdown__toggle-text"
+                      >
+                        <span
+                          className="pf-c-options-menu__toggle-text"
+                        >
+                          <Component
+                            firstIndex={1}
+                            itemCount={20}
+                            itemsTitle="items"
+                            lastIndex={20}
+                          >
+                            <strong>
+                              1
+                               - 
+                              20
+                            </strong>
+                             
+                            of 
+                            <strong>
+                              20
+                            </strong>
+                             
+                            items
+                          </Component>
+                        </span>
+                      </span>
                       <CaretDownIcon
-                        className=""
+                        className="pf-c-dropdown__toggle-icon"
                         color="currentColor"
                         size="sm"
                         title={null}
@@ -2532,7 +2528,7 @@ exports[`component render limited number of pages 1`] = `
                         <svg
                           aria-hidden={true}
                           aria-labelledby={null}
-                          className=""
+                          className="pf-c-dropdown__toggle-icon"
                           fill="currentColor"
                           height="1em"
                           role="img"
@@ -2963,29 +2959,6 @@ exports[`component render no items 1`] = `
               <div
                 className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <span
-                  className="pf-c-options-menu__toggle-text"
-                >
-                  <Component
-                    firstIndex={0}
-                    itemCount={0}
-                    itemsTitle="items"
-                    lastIndex={0}
-                  >
-                    <strong>
-                      0
-                       - 
-                      0
-                    </strong>
-                     
-                    of 
-                    <strong>
-                      0
-                    </strong>
-                     
-                    items
-                  </Component>
-                </span>
                 <DropdownToggle
                   aria-label="Select"
                   className="pf-c-options-menu__toggle-button"
@@ -3026,8 +2999,35 @@ exports[`component render no items 1`] = `
                       onKeyDown={[Function]}
                       type="button"
                     >
+                      <span
+                        className="pf-c-dropdown__toggle-text"
+                      >
+                        <span
+                          className="pf-c-options-menu__toggle-text"
+                        >
+                          <Component
+                            firstIndex={0}
+                            itemCount={0}
+                            itemsTitle="items"
+                            lastIndex={0}
+                          >
+                            <strong>
+                              0
+                               - 
+                              0
+                            </strong>
+                             
+                            of 
+                            <strong>
+                              0
+                            </strong>
+                             
+                            items
+                          </Component>
+                        </span>
+                      </span>
                       <CaretDownIcon
-                        className=""
+                        className="pf-c-dropdown__toggle-icon"
                         color="currentColor"
                         size="sm"
                         title={null}
@@ -3035,7 +3035,7 @@ exports[`component render no items 1`] = `
                         <svg
                           aria-hidden={true}
                           aria-labelledby={null}
-                          className=""
+                          className="pf-c-dropdown__toggle-icon"
                           fill="currentColor"
                           height="1em"
                           role="img"
@@ -3462,29 +3462,6 @@ exports[`component render should render correctly bottom 1`] = `
               <div
                 className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <span
-                  className="pf-c-options-menu__toggle-text"
-                >
-                  <Component
-                    firstIndex={1}
-                    itemCount={20}
-                    itemsTitle="items"
-                    lastIndex={10}
-                  >
-                    <strong>
-                      1
-                       - 
-                      10
-                    </strong>
-                     
-                    of 
-                    <strong>
-                      20
-                    </strong>
-                     
-                    items
-                  </Component>
-                </span>
                 <DropdownToggle
                   aria-label="Select"
                   className="pf-c-options-menu__toggle-button"
@@ -3525,8 +3502,35 @@ exports[`component render should render correctly bottom 1`] = `
                       onKeyDown={[Function]}
                       type="button"
                     >
+                      <span
+                        className="pf-c-dropdown__toggle-text"
+                      >
+                        <span
+                          className="pf-c-options-menu__toggle-text"
+                        >
+                          <Component
+                            firstIndex={1}
+                            itemCount={20}
+                            itemsTitle="items"
+                            lastIndex={10}
+                          >
+                            <strong>
+                              1
+                               - 
+                              10
+                            </strong>
+                             
+                            of 
+                            <strong>
+                              20
+                            </strong>
+                             
+                            items
+                          </Component>
+                        </span>
+                      </span>
                       <CaretDownIcon
-                        className=""
+                        className="pf-c-dropdown__toggle-icon"
                         color="currentColor"
                         size="sm"
                         title={null}
@@ -3534,7 +3538,7 @@ exports[`component render should render correctly bottom 1`] = `
                         <svg
                           aria-hidden={true}
                           aria-labelledby={null}
-                          className=""
+                          className="pf-c-dropdown__toggle-icon"
                           fill="currentColor"
                           height="1em"
                           role="img"
@@ -3965,29 +3969,6 @@ exports[`component render should render correctly top 1`] = `
               <div
                 className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <span
-                  className="pf-c-options-menu__toggle-text"
-                >
-                  <Component
-                    firstIndex={1}
-                    itemCount={20}
-                    itemsTitle="items"
-                    lastIndex={10}
-                  >
-                    <strong>
-                      1
-                       - 
-                      10
-                    </strong>
-                     
-                    of 
-                    <strong>
-                      20
-                    </strong>
-                     
-                    items
-                  </Component>
-                </span>
                 <DropdownToggle
                   aria-label="Select"
                   className="pf-c-options-menu__toggle-button"
@@ -4028,8 +4009,35 @@ exports[`component render should render correctly top 1`] = `
                       onKeyDown={[Function]}
                       type="button"
                     >
+                      <span
+                        className="pf-c-dropdown__toggle-text"
+                      >
+                        <span
+                          className="pf-c-options-menu__toggle-text"
+                        >
+                          <Component
+                            firstIndex={1}
+                            itemCount={20}
+                            itemsTitle="items"
+                            lastIndex={10}
+                          >
+                            <strong>
+                              1
+                               - 
+                              10
+                            </strong>
+                             
+                            of 
+                            <strong>
+                              20
+                            </strong>
+                             
+                            items
+                          </Component>
+                        </span>
+                      </span>
                       <CaretDownIcon
-                        className=""
+                        className="pf-c-dropdown__toggle-icon"
                         color="currentColor"
                         size="sm"
                         title={null}
@@ -4037,7 +4045,7 @@ exports[`component render should render correctly top 1`] = `
                         <svg
                           aria-hidden={true}
                           aria-labelledby={null}
-                          className=""
+                          className="pf-c-dropdown__toggle-icon"
                           fill="currentColor"
                           height="1em"
                           role="img"
@@ -4474,29 +4482,6 @@ exports[`component render titles 1`] = `
               <div
                 className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <span
-                  className="pf-c-options-menu__toggle-text"
-                >
-                  <Component
-                    firstIndex={1}
-                    itemCount={40}
-                    itemsTitle="values"
-                    lastIndex={10}
-                  >
-                    <strong>
-                      1
-                       - 
-                      10
-                    </strong>
-                     
-                    of 
-                    <strong>
-                      40
-                    </strong>
-                     
-                    values
-                  </Component>
-                </span>
                 <DropdownToggle
                   aria-label="Select"
                   className="pf-c-options-menu__toggle-button"
@@ -4537,8 +4522,35 @@ exports[`component render titles 1`] = `
                       onKeyDown={[Function]}
                       type="button"
                     >
+                      <span
+                        className="pf-c-dropdown__toggle-text"
+                      >
+                        <span
+                          className="pf-c-options-menu__toggle-text"
+                        >
+                          <Component
+                            firstIndex={1}
+                            itemCount={40}
+                            itemsTitle="values"
+                            lastIndex={10}
+                          >
+                            <strong>
+                              1
+                               - 
+                              10
+                            </strong>
+                             
+                            of 
+                            <strong>
+                              40
+                            </strong>
+                             
+                            values
+                          </Component>
+                        </span>
+                      </span>
                       <CaretDownIcon
-                        className=""
+                        className="pf-c-dropdown__toggle-icon"
                         color="currentColor"
                         size="sm"
                         title={null}
@@ -4546,7 +4558,7 @@ exports[`component render titles 1`] = `
                         <svg
                           aria-hidden={true}
                           aria-labelledby={null}
-                          className=""
+                          className="pf-c-dropdown__toggle-icon"
                           fill="currentColor"
                           height="1em"
                           role="img"
@@ -4971,29 +4983,6 @@ exports[`component render up drop direction 1`] = `
               <div
                 className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <span
-                  className="pf-c-options-menu__toggle-text"
-                >
-                  <Component
-                    firstIndex={1}
-                    itemCount={40}
-                    itemsTitle="items"
-                    lastIndex={10}
-                  >
-                    <strong>
-                      1
-                       - 
-                      10
-                    </strong>
-                     
-                    of 
-                    <strong>
-                      40
-                    </strong>
-                     
-                    items
-                  </Component>
-                </span>
                 <DropdownToggle
                   aria-label="Select"
                   className="pf-c-options-menu__toggle-button"
@@ -5034,8 +5023,35 @@ exports[`component render up drop direction 1`] = `
                       onKeyDown={[Function]}
                       type="button"
                     >
+                      <span
+                        className="pf-c-dropdown__toggle-text"
+                      >
+                        <span
+                          className="pf-c-options-menu__toggle-text"
+                        >
+                          <Component
+                            firstIndex={1}
+                            itemCount={40}
+                            itemsTitle="items"
+                            lastIndex={10}
+                          >
+                            <strong>
+                              1
+                               - 
+                              10
+                            </strong>
+                             
+                            of 
+                            <strong>
+                              40
+                            </strong>
+                             
+                            items
+                          </Component>
+                        </span>
+                      </span>
                       <CaretDownIcon
-                        className=""
+                        className="pf-c-dropdown__toggle-icon"
                         color="currentColor"
                         size="sm"
                         title={null}
@@ -5043,7 +5059,7 @@ exports[`component render up drop direction 1`] = `
                         <svg
                           aria-hidden={true}
                           aria-labelledby={null}
-                          className=""
+                          className="pf-c-dropdown__toggle-icon"
                           fill="currentColor"
                           height="1em"
                           role="img"

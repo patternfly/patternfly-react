@@ -46,13 +46,6 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
 }:OptionsToggleProps ) => {
   return (
     <div className={css(styles.optionsMenuToggle, getModifier(styles, 'plain'), getModifier(styles, 'text'))} >
-      <span className={css(styles.optionsMenuToggleText)}>
-        {typeof ToggleTemplate === 'string' ? (
-          fillTemplate(ToggleTemplate, { firstIndex, lastIndex, itemCount, itemsTitle })
-        ) : (
-          <ToggleTemplate firstIndex={firstIndex} lastIndex={lastIndex} itemCount={itemCount} itemsTitle={itemsTitle}/>
-        )}
-      </span>
       {showToggle && (
         <DropdownToggle
           aria-label={optionsToggle}
@@ -62,7 +55,15 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
           isSplitButton
           className={styles.optionsMenuToggleButton}
           parentRef={parentRef}
-        />
+        >
+          <span className={css(styles.optionsMenuToggleText)}>
+            {typeof ToggleTemplate === 'string' ? (
+              fillTemplate(ToggleTemplate, { firstIndex, lastIndex, itemCount, itemsTitle })
+            ) : (
+              <ToggleTemplate firstIndex={firstIndex} lastIndex={lastIndex} itemCount={itemCount} itemsTitle={itemsTitle}/>
+            )}
+          </span>
+        </DropdownToggle>
       )}
     </div>);
 };
