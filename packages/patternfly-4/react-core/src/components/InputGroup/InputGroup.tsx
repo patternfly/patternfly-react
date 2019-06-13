@@ -1,16 +1,15 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/InputGroup/input-group';
 import { css } from '@patternfly/react-styles';
-import { Omit } from '../../helpers/typeUtils'
 import { FormSelect } from '../FormSelect';
 import { TextArea } from '../TextArea';
 import { TextInput } from '../TextInput';
 
-export interface InputGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'children'> {
-/** Additional classes added to the input group. */
-className?: string; 
-/** Content rendered inside the input group. */
-children: React.ReactNode;
+export interface InputGroupProps extends React.HTMLProps<HTMLDivElement> {
+  /** Additional classes added to the input group. */
+  className?: string; 
+  /** Content rendered inside the input group. */
+  children: React.ReactNode;
 }
 
 export const InputGroup: React.FunctionComponent<InputGroupProps> = ({

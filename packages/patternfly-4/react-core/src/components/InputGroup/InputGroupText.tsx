@@ -9,7 +9,7 @@ export interface InputGroupTextProps extends Omit<React.HTMLProps<HTMLSpanElemen
   /** Content rendered inside the input group text. */
   children: React.ReactNode; 
   /** Component that wraps the input group text. */
-  component?: React.ReactNode; // componentShape
+  component?: React.ReactNode; 
 }
 
 export const InputGroupText: React.FunctionComponent<InputGroupTextProps> = ({
@@ -18,9 +18,10 @@ export const InputGroupText: React.FunctionComponent<InputGroupTextProps> = ({
   children,
   ...props
 }: InputGroupTextProps) => {
-  const Component = component as any
-  return(
-  <Component className={css(styles.inputGroupText, className)} {...props}>
-    {children}
-  </Component>
-)};
+  const Component = component as any;
+  return (
+    <Component className={css(styles.inputGroupText, className)} {...props}>
+      {children}
+    </Component>
+  );
+};
