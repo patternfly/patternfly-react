@@ -10,6 +10,7 @@ export {
   IRow,
   IRowData,
   IColumn,
+  IDecorator,
   IExtra,
   IExtraData,
   IExtraColumnData
