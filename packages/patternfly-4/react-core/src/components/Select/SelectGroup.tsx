@@ -13,7 +13,7 @@ export interface SelectGroupProps {
   titleId?: string;
 }
 
-export const SelectGroup: React.SFC<SelectGroupProps> = ({
+export const SelectGroup: React.FunctionComponent<SelectGroupProps> = ({
   children = [] as React.ReactNode[],
   className = '',
   label = '',
