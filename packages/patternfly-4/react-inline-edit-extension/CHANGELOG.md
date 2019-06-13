@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.7.14...@patternfly/react-inline-edit-extension@2.8.0) (2019-06-13)
+
+
+### Features
+
+* **build:** add source maps ([#2142](https://github.com/patternfly/patternfly-react/issues/2142)) ([5076c48](https://github.com/patternfly/patternfly-react/commit/5076c48))
+
+
+
+
+
 ## [2.7.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.7.13...@patternfly/react-inline-edit-extension@2.7.14) (2019-06-13)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension

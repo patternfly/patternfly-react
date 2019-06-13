@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.6.0 (2019-06-13)
+
+
+### Bug Fixes
+
+* **topology:** Fixes JS dist for react-topology ([#2230](https://github.com/patternfly/patternfly-react/issues/2230)) ([337510a](https://github.com/patternfly/patternfly-react/commit/337510a))
+
+
+### Features
+
+* **build:** add source maps ([#2142](https://github.com/patternfly/patternfly-react/issues/2142)) ([5076c48](https://github.com/patternfly/patternfly-react/commit/5076c48))
+
+
+
+
+
 ## [3.5.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.5.2...@patternfly/react-styled-system@3.5.3) (2019-06-11)
 
 **Note:** Version bump only for package @patternfly/react-styled-system

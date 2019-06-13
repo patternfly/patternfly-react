@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.1.6...@patternfly/react-topology@2.2.0) (2019-06-13)
+
+
+### Features
+
+* **build:** add source maps ([#2142](https://github.com/patternfly/patternfly-react/issues/2142)) ([5076c48](https://github.com/patternfly/patternfly-react/commit/5076c48))
+
+
+
+
+
 ## [2.1.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.1.5...@patternfly/react-topology@2.1.6) (2019-06-13)
 
 **Note:** Version bump only for package @patternfly/react-topology

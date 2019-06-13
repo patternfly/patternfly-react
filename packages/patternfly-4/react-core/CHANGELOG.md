@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.43.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.42.1...@patternfly/react-core@3.43.0) (2019-06-13)
+
+
+### Features
+
+* **build:** add source maps ([#2142](https://github.com/patternfly/patternfly-react/issues/2142)) ([5076c48](https://github.com/patternfly/patternfly-react/commit/5076c48))
+
+
+
+
+
 ## [3.42.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.42.0...@patternfly/react-core@3.42.1) (2019-06-13)
 
 

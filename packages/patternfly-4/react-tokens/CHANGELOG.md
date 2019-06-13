@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.6.0 (2019-06-13)
+
+
+### Bug Fixes
+
+* **topology:** Fixes JS dist for react-topology ([#2230](https://github.com/patternfly/patternfly-react/issues/2230)) ([337510a](https://github.com/patternfly/patternfly-react/commit/337510a))
+
+
+### Features
+
+* **build:** add source maps ([#2142](https://github.com/patternfly/patternfly-react/issues/2142)) ([5076c48](https://github.com/patternfly/patternfly-react/commit/5076c48))
+
+
+
+
+
 ## [2.5.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.5.4...@patternfly/react-tokens@2.5.5) (2019-06-10)
 
 **Note:** Version bump only for package @patternfly/react-tokens
