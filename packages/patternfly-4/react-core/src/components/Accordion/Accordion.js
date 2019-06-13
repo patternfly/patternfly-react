@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
+<<<<<<< HEAD
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 import AccordionToggle from './AccordionToggle';
 
