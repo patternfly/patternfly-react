@@ -1,8 +1,6 @@
-/* eslint-disable react/no-multi-comp */
 import * as React from 'react';
-import { Omit } from '../../helpers/typeUtils';
 
-export interface TabProps extends Omit<React.HTMLProps<HTMLDivElement>, 'id'> {
+export interface TabProps extends React.HTMLProps<HTMLAnchorElement | HTMLButtonElement> {
   /** content rendered inside the Tab content area. */
   children?: React.ReactNode; 
   /** additional classes added to the Tab */
@@ -16,44 +14,37 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLDivElement>, 'id'> {
   /** child id for case in which a TabContent section is defined outside of a Tabs component */
   tabContentId?: string | number; 
   /** child reference for case in which a TabContent section is defined outside of a Tabs component */
-  tabContentRef?: any; 
-  // tabContentRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.any }), PropTypes.string])
+  tabContentRef?: React.RefObject<any>;
 }
 
-const withForwardedRef = Component => {
-  class TabContainer extends React.Component {
-    forwardRef = React.createRef<HTMLDivElement>();
-    render() {
-      const { forwardRef, ...rest } = this.props; // eslint-disable-line react/prop-types
-      return <Component ref={forwardRef} {...rest} />;
-    }
+const Tab0: React.FC<TabProps> = ({
+  children,
+  eventKey,
+  className = '',
+  tabContentId,
+  tabContentRef,
+  title,
+  ...props
+}: TabProps) => {
+  // destructuring to prevent console warnings for applying eventKey, and tabContentId to a DOM element and remove title from the DOM element
+  const Component = (props.href ? 'a' : 'button') as any;
+  return (
+    <Component {...props} className={className} ref={tabContentRef}>
+      {children}
+    </Component>
+  );
+}
+
+interface ForwardedRefProps extends TabProps {
+  forwardRef: React.Ref<any>;
+}
+
+const withForwardedRef = (Component: any) => {
+  const TabContainer: React.FC<ForwardedRefProps> = (props: ForwardedRefProps) => {
+    const { forwardRef, ...rest } = props;
+    return <Component ref={forwardRef} {...rest} />;
   }
-  return React.forwardRef((props, tabContentRef) => <TabContainer {...props} forwardRef={tabContentRef} />);
+  return React.forwardRef((props: TabProps, tabContentRef) => <TabContainer {...props} forwardRef={tabContentRef} />);
 };
 
-export class Tab extends React.Component<TabProps>{
-  constructor(props: TabProps) {
-    super(props); 
-  }
-
-  static defaultProps = {
-    children: null,
-    className: '',
-    href: null,
-    tabContentId: null,
-    tabContentRef: null
-  };
-
-  render() {
-    // destructuring to prevent console warnings for applying eventKey, and tabContentId to a DOM element and remove title from the DOM element
-    const { children, eventKey, tabContentId, tabContentRef, title, ...props } = this.props;
-    const Component = props.href ? 'a' : 'button';
-    return (
-      <Component {...props} ref={tabContentRef}>
-        {children}
-      </Component>
-    );
-  }
-}
-
-// export default withForwardedRef(Tab);
+export const Tab = withForwardedRef(Tab0);
