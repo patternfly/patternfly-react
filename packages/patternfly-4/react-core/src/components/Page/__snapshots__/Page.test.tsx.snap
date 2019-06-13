@@ -76,7 +76,15 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       className="pf-c-page__main"
       role="main"
     >
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       <Component
+=======
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="default"
       >
         <section
@@ -84,8 +92,17 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         >
           Section with default background
         </section>
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       </Component>
       <Component
+=======
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="light"
       >
         <section
@@ -93,8 +110,17 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         >
           Section with light background
         </section>
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       </Component>
       <Component
+=======
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="dark"
       >
         <section
@@ -102,8 +128,17 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         >
           Section with dark background
         </section>
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       </Component>
       <Component
+=======
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="darker"
       >
         <section
@@ -198,7 +233,15 @@ exports[`Check page to verify breadcrumb is created 1`] = `
       >
         <Component />
       </section>
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       <Component
+=======
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="default"
       >
         <section
@@ -206,8 +249,17 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         >
           Section with default background
         </section>
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       </Component>
       <Component
+=======
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="light"
       >
         <section
@@ -215,8 +267,17 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         >
           Section with light background
         </section>
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       </Component>
       <Component
+=======
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="dark"
       >
         <section
@@ -224,8 +285,17 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         >
           Section with dark background
         </section>
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       </Component>
       <Component
+=======
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="darker"
       >
         <section
@@ -521,7 +591,15 @@ exports[`Check page to verify skip to content is created 1`] = `
       <a
         id="main-content-page-layout-default-nav"
       />
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       <Component
+=======
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="default"
       >
         <section
@@ -529,8 +607,17 @@ exports[`Check page to verify skip to content is created 1`] = `
         >
           Section with default background
         </section>
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       </Component>
       <Component
+=======
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="light"
       >
         <section
@@ -538,8 +625,17 @@ exports[`Check page to verify skip to content is created 1`] = `
         >
           Section with light background
         </section>
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       </Component>
       <Component
+=======
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="dark"
       >
         <section
@@ -547,8 +643,17 @@ exports[`Check page to verify skip to content is created 1`] = `
         >
           Section with dark background
         </section>
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       </Component>
       <Component
+=======
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="darker"
       >
         <section
@@ -637,7 +742,15 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       className="pf-c-page__main"
       role="main"
     >
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       <Component
+=======
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="default"
       >
         <section
@@ -645,8 +758,17 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         >
           Section with default background
         </section>
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       </Component>
       <Component
+=======
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="light"
       >
         <section
@@ -654,8 +776,17 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         >
           Section with light background
         </section>
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       </Component>
       <Component
+=======
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="dark"
       >
         <section
@@ -663,8 +794,17 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         >
           Section with dark background
         </section>
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.tsx.snap
       </Component>
       <Component
+=======
+      </PageSection>
+      <PageSection
+        className=""
+        noPadding={false}
+        noPaddingMobile={false}
+        type="default"
+>>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/Page.test.js.snap
         variant="darker"
       >
         <section
