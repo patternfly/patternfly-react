@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.42.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.42.0...@patternfly/react-core@3.42.1) (2019-06-13)
+
+
+### Bug Fixes
+
+* **pagination:** dropdown closes on click outside of menu area ([#2235](https://github.com/patternfly/patternfly-react/issues/2235)) ([a2942c2](https://github.com/patternfly/patternfly-react/commit/a2942c2))
+
+
+
+
+
 # [3.42.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.41.0...@patternfly/react-core@3.42.0) (2019-06-12)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 4.2.0 (2019-06-13)
+
+
+### Bug Fixes
+
+* **charts:** labels should use the overpass font ([#2232](https://github.com/patternfly/patternfly-react/issues/2232)) ([7b4e100](https://github.com/patternfly/patternfly-react/commit/7b4e100))
+
+
+### Features
+
+* **react-core:** allow dynamic rendering of anchor components ([#2117](https://github.com/patternfly/patternfly-react/issues/2117)) ([c1c3be9](https://github.com/patternfly/patternfly-react/commit/c1c3be9))
+
+
+
+
+
 ## [4.1.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.1.4...@patternfly/react-charts@4.1.5) (2019-06-11)
 
 **Note:** Version bump only for package @patternfly/react-charts
