@@ -28,7 +28,7 @@ export class PageDemo extends React.Component {
         showNavToggle
         isNavOpen={isNavOpen}
         onNavToggle={this.onNavToggle}
-		linkComponent={'div'}
+		    logoComponent={'div'}
       />
     );
     const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;

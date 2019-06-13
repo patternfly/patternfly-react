@@ -16,13 +16,9 @@ describe('Application Launcher Demo Test', () => {
     cy.get('.pf-c-app-launcher__menu').should('not.exist'); 
   });
 
-  // it('Verify onSelect', () => {
-  //   cy.window().then(win => {
-  //     const spy = cy.spy(win.console, "log");
-  //     cy.get('#pf-random-id-0').click(); 
-  //     cy.get('.pf-c-app-launcher__menu-item').first().click();
-  //     win.console.log('hi'); 
-  //     expect(spy).to.be.called.callCount(2);
-  //   });
-  // });
+  it('Verify application click works', () => {
+    cy.get('#pf-random-id-0').click(); 
+    cy.get('.pf-c-app-launcher__menu-item').first().click();
+    cy.url().should('eq', 'http://patternfly-react.surge.sh/');
+  })
 });
