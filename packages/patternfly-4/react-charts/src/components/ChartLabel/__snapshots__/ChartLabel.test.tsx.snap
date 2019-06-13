@@ -5,6 +5,11 @@ exports[`Chart 1`] = `
   capHeight={0.71}
   direction="inherit"
   lineHeight={1}
+  style={
+    Object {
+      "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+    }
+  }
   textComponent={<Text />}
   tspanComponent={<TSpan />}
 />
@@ -15,6 +20,11 @@ exports[`Chart 2`] = `
   capHeight={0.71}
   direction="inherit"
   lineHeight={1}
+  style={
+    Object {
+      "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+    }
+  }
   textComponent={<Text />}
   tspanComponent={<TSpan />}
 />
@@ -25,6 +35,11 @@ exports[`renders component text 1`] = `
   capHeight={0.71}
   direction="inherit"
   lineHeight={1}
+  style={
+    Object {
+      "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+    }
+  }
   text="This is a test"
   textComponent={<Text />}
   tspanComponent={<TSpan />}

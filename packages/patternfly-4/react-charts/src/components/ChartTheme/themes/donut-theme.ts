@@ -5,10 +5,10 @@ export const DonutStyles = {
   label: {
     subTitle: {
       fill: '#bbb',
-      fontSize: 16
+      fontSize: 14
     },
     title: {
-      fontSize: 26
+      fontSize: 24
     }
   }
 };
