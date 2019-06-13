@@ -1,62 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`component render custom pagination toggle 1`] = `
-<Pagination
-  className=""
-  dropDirection="down"
+<Component
   itemCount={40}
-  itemsEnd={null}
-  itemsStart={null}
-  onFirstClick={[Function]}
-  onLastClick={[Function]}
-  onNextClick={[Function]}
-  onPageInput={[Function]}
-  onPerPageSelect={[Function]}
-  onPreviousClick={[Function]}
-  onSetPage={[Function]}
-  page={1}
-  perPage={10}
-  perPageOptions={
-    Array [
-      Object {
-        "title": "10",
-        "value": 10,
-      },
-      Object {
-        "title": "20",
-        "value": 20,
-      },
-      Object {
-        "title": "50",
-        "value": 50,
-      },
-      Object {
-        "title": "100",
-        "value": 100,
-      },
-    ]
-  }
-  titles={
-    Object {
-      "currPage": "Current page",
-      "items": "items",
-      "itemsPerPage": "Items per page",
-      "optionsToggle": "Select",
-      "pages": "pages",
-      "paginationTitle": "Pagination",
-      "perPageSuffix": "per page",
-      "toFirstPage": "Go to first page",
-      "toLastPage": "Go to last page",
-      "toNextPage": "Go to next page",
-      "toPreviousPage": "Go to previous page",
-    }
-  }
   toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
-  variant="top"
-  widgetId="pagination-options-menu"
 >
   <div
     className="pf-c-pagination"
+    id="pagination-options-menu"
   >
     <div
       className="pf-c-pagination__total-items"
@@ -113,16 +64,14 @@ exports[`component render custom pagination toggle 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <DropdownItem
+              <Item
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -135,22 +84,19 @@ exports[`component render custom pagination toggle 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
-                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
                 </i>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -158,17 +104,15 @@ exports[`component render custom pagination toggle 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -176,17 +120,15 @@ exports[`component render custom pagination toggle 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -194,7 +136,7 @@ exports[`component render custom pagination toggle 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
+              </Item>,
             ]
           }
           isGrouped={false}
@@ -203,7 +145,7 @@ exports[`component render custom pagination toggle 1`] = `
           onSelect={[Function]}
           position="left"
           toggle={
-            <OptionsToggle
+            <Unknown
               firstIndex={1}
               isOpen={false}
               itemCount={40}
@@ -218,225 +160,111 @@ exports[`component render custom pagination toggle 1`] = `
             />
           }
         >
-          <DropdownWithContext
-            className=""
-            direction="down"
-            dropdownItems={
-              Array [
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item pf-m-selected"
-                  component="button"
-                  data-action="per-page-10"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  10
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                  <i
-                    className="pf-c-options-menu__menu-item-icon"
-                  >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    />
-                  </i>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-20"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  20
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-50"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  50
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-100"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  100
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-              ]
-            }
-            isGrouped={false}
-            isOpen={false}
-            isPlain={true}
-            onSelect={[Function]}
-            position="left"
-            toggle={
-              <OptionsToggle
-                firstIndex={1}
-                isOpen={false}
-                itemCount={40}
-                itemsTitle="items"
-                lastIndex={10}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
-                widgetId="pagination-options-menu"
-              />
-            }
+          <div
+            className="pf-c-dropdown"
           >
-            <div
-              className="pf-c-dropdown"
+            <Component
+              ariaHasPopup={true}
+              firstIndex={1}
+              id="pf-toggle-id-9"
+              isOpen={false}
+              isPlain={true}
+              itemCount={40}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={10}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              showToggle={true}
+              toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
+              widgetId="pagination-options-menu"
             >
-              <OptionsToggle
-                ariaHasPopup={true}
-                firstIndex={1}
-                id="pf-toggle-id-9"
-                isOpen={false}
-                isPlain={true}
-                itemCount={40}
-                itemsTitle="items"
-                key=".0"
-                lastIndex={10}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
-                widgetId="pagination-options-menu"
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <div
-                  className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                <span
+                  className="pf-c-options-menu__toggle-text"
                 >
-                  <span
-                    className="pf-c-options-menu__toggle-text"
-                  >
-                    1 - 10 - 40 - items
-                  </span>
-                  <DropdownToggle
+                  1 - 10 - 40 - items
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+                  <Toggle
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
-                    iconComponent={[Function]}
                     id="pagination-options-menu-toggle"
                     isActive={false}
+                    isDisabled={false}
                     isFocused={false}
                     isHovered={false}
                     isOpen={false}
                     isPlain={false}
                     isSplitButton={true}
+                    onEnter={[Function]}
                     onToggle={[Function]}
                     parentRef={null}
+                    type={null}
                   >
-                    <Toggle
+                    <button
+                      aria-expanded={false}
                       aria-label="Select"
-                      className="pf-c-options-menu__toggle-button"
+                      className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
+                      disabled={false}
                       id="pagination-options-menu-toggle"
-                      isActive={false}
-                      isDisabled={false}
-                      isFocused={false}
-                      isHovered={false}
-                      isOpen={false}
-                      isPlain={false}
-                      isSplitButton={true}
-                      onEnter={[Function]}
-                      onToggle={[Function]}
-                      parentRef={null}
-                      type={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
                     >
-                      <button
-                        aria-expanded={false}
-                        aria-label="Select"
-                        className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
-                        disabled={false}
-                        id="pagination-options-menu-toggle"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        type="button"
+                      <CaretDownIcon
+                        className=""
+                        color="currentColor"
+                        size="sm"
+                        title={null}
                       >
-                        <CaretDownIcon
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
                           className=""
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            className=""
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
                             }
-                            viewBox="0 0 320 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                              transform=""
-                            />
-                          </svg>
-                        </CaretDownIcon>
-                      </button>
-                    </Toggle>
-                  </DropdownToggle>
-                </div>
-              </OptionsToggle>
-            </div>
-          </DropdownWithContext>
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </CaretDownIcon>
+                    </button>
+                  </Toggle>
+                </DropdownToggle>
+              </div>
+            </Component>
+          </div>
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Navigation
-      className=""
+    <Component
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
@@ -446,7 +274,7 @@ exports[`component render custom pagination toggle 1`] = `
       onPreviousClick={[Function]}
       onSetPage={[Function]}
       page={1}
-      pagesTitle="pages"
+      pagesTitle="page"
       paginationTitle="Pagination"
       toFirstPage="Go to first page"
       toLastPage="Go to last page"
@@ -476,7 +304,6 @@ exports[`component render custom pagination toggle 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -521,7 +348,6 @@ exports[`component render custom pagination toggle 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -563,9 +389,7 @@ exports[`component render custom pagination toggle 1`] = `
             aria-hidden="true"
           >
             of 
-            4
-             
-            pages
+            4 pages
           </span>
         </div>
         <Component
@@ -587,7 +411,6 @@ exports[`component render custom pagination toggle 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -632,7 +455,6 @@ exports[`component render custom pagination toggle 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -659,27 +481,14 @@ exports[`component render custom pagination toggle 1`] = `
           </button>
         </Component>
       </nav>
-    </Navigation>
+    </Component>
   </div>
-</Pagination>
+</Component>
 `;
 
 exports[`component render custom perPageOptions 1`] = `
-<Pagination
-  className=""
-  dropDirection="down"
+<Component
   itemCount={40}
-  itemsEnd={null}
-  itemsStart={null}
-  onFirstClick={[Function]}
-  onLastClick={[Function]}
-  onNextClick={[Function]}
-  onPageInput={[Function]}
-  onPerPageSelect={[Function]}
-  onPreviousClick={[Function]}
-  onSetPage={[Function]}
-  page={1}
-  perPage={10}
   perPageOptions={
     Array [
       Object {
@@ -688,27 +497,10 @@ exports[`component render custom perPageOptions 1`] = `
       },
     ]
   }
-  titles={
-    Object {
-      "currPage": "Current page",
-      "items": "items",
-      "itemsPerPage": "Items per page",
-      "optionsToggle": "Select",
-      "pages": "pages",
-      "paginationTitle": "Pagination",
-      "perPageSuffix": "per page",
-      "toFirstPage": "Go to first page",
-      "toLastPage": "Go to last page",
-      "toNextPage": "Go to next page",
-      "toPreviousPage": "Go to previous page",
-    }
-  }
-  toggleTemplate={[Function]}
-  variant="top"
-  widgetId="pagination-options-menu"
 >
   <div
     className="pf-c-pagination"
+    id="pagination-options-menu"
   >
     <div
       className="pf-c-pagination__total-items"
@@ -753,16 +545,14 @@ exports[`component render custom perPageOptions 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <DropdownItem
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-1"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 some
                 <span
@@ -770,7 +560,7 @@ exports[`component render custom perPageOptions 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
+              </Item>,
             ]
           }
           isGrouped={false}
@@ -779,7 +569,7 @@ exports[`component render custom perPageOptions 1`] = `
           onSelect={[Function]}
           position="left"
           toggle={
-            <OptionsToggle
+            <Unknown
               firstIndex={1}
               isOpen={false}
               itemCount={40}
@@ -794,179 +584,129 @@ exports[`component render custom perPageOptions 1`] = `
             />
           }
         >
-          <DropdownWithContext
-            className=""
-            direction="down"
-            dropdownItems={
-              Array [
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-1"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  some
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-              ]
-            }
-            isGrouped={false}
-            isOpen={false}
-            isPlain={true}
-            onSelect={[Function]}
-            position="left"
-            toggle={
-              <OptionsToggle
-                firstIndex={1}
-                isOpen={false}
-                itemCount={40}
-                itemsTitle="items"
-                lastIndex={10}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
-              />
-            }
+          <div
+            className="pf-c-dropdown"
           >
-            <div
-              className="pf-c-dropdown"
+            <Component
+              ariaHasPopup={true}
+              firstIndex={1}
+              id="pf-toggle-id-4"
+              isOpen={false}
+              isPlain={true}
+              itemCount={40}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={10}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              showToggle={true}
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
             >
-              <OptionsToggle
-                ariaHasPopup={true}
-                firstIndex={1}
-                id="pf-toggle-id-4"
-                isOpen={false}
-                isPlain={true}
-                itemCount={40}
-                itemsTitle="items"
-                key=".0"
-                lastIndex={10}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <div
-                  className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                <span
+                  className="pf-c-options-menu__toggle-text"
                 >
-                  <span
-                    className="pf-c-options-menu__toggle-text"
+                  <Component
+                    firstIndex={1}
+                    itemCount={40}
+                    itemsTitle="items"
+                    lastIndex={10}
                   >
-                    <ToggleTemplate
-                      firstIndex={1}
-                      itemCount={40}
-                      itemsTitle="items"
-                      lastIndex={10}
-                    >
-                      <strong>
-                        1
-                         - 
-                        10
-                      </strong>
-                       
-                      of 
-                      <strong>
-                        40
-                      </strong>
-                       
-                      items
-                    </ToggleTemplate>
-                  </span>
-                  <DropdownToggle
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      40
+                    </strong>
+                     
+                    items
+                  </Component>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+                  <Toggle
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
-                    iconComponent={[Function]}
                     id="pagination-options-menu-toggle"
                     isActive={false}
+                    isDisabled={false}
                     isFocused={false}
                     isHovered={false}
                     isOpen={false}
                     isPlain={false}
                     isSplitButton={true}
+                    onEnter={[Function]}
                     onToggle={[Function]}
                     parentRef={null}
+                    type={null}
                   >
-                    <Toggle
+                    <button
+                      aria-expanded={false}
                       aria-label="Select"
-                      className="pf-c-options-menu__toggle-button"
+                      className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
+                      disabled={false}
                       id="pagination-options-menu-toggle"
-                      isActive={false}
-                      isDisabled={false}
-                      isFocused={false}
-                      isHovered={false}
-                      isOpen={false}
-                      isPlain={false}
-                      isSplitButton={true}
-                      onEnter={[Function]}
-                      onToggle={[Function]}
-                      parentRef={null}
-                      type={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
                     >
-                      <button
-                        aria-expanded={false}
-                        aria-label="Select"
-                        className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
-                        disabled={false}
-                        id="pagination-options-menu-toggle"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        type="button"
+                      <CaretDownIcon
+                        className=""
+                        color="currentColor"
+                        size="sm"
+                        title={null}
                       >
-                        <CaretDownIcon
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
                           className=""
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            className=""
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
                             }
-                            viewBox="0 0 320 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                              transform=""
-                            />
-                          </svg>
-                        </CaretDownIcon>
-                      </button>
-                    </Toggle>
-                  </DropdownToggle>
-                </div>
-              </OptionsToggle>
-            </div>
-          </DropdownWithContext>
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </CaretDownIcon>
+                    </button>
+                  </Toggle>
+                </DropdownToggle>
+              </div>
+            </Component>
+          </div>
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Navigation
-      className=""
+    <Component
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
@@ -976,7 +716,7 @@ exports[`component render custom perPageOptions 1`] = `
       onPreviousClick={[Function]}
       onSetPage={[Function]}
       page={1}
-      pagesTitle="pages"
+      pagesTitle="page"
       paginationTitle="Pagination"
       toFirstPage="Go to first page"
       toLastPage="Go to last page"
@@ -1006,7 +746,6 @@ exports[`component render custom perPageOptions 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1051,7 +790,6 @@ exports[`component render custom perPageOptions 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1093,9 +831,7 @@ exports[`component render custom perPageOptions 1`] = `
             aria-hidden="true"
           >
             of 
-            4
-             
-            pages
+            4 pages
           </span>
         </div>
         <Component
@@ -1117,7 +853,6 @@ exports[`component render custom perPageOptions 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1162,7 +897,6 @@ exports[`component render custom perPageOptions 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1189,68 +923,20 @@ exports[`component render custom perPageOptions 1`] = `
           </button>
         </Component>
       </nav>
-    </Navigation>
+    </Component>
   </div>
-</Pagination>
+</Component>
 `;
 
 exports[`component render custom start end 1`] = `
-<Pagination
-  className=""
-  dropDirection="down"
+<Component
   itemCount={40}
   itemsEnd={15}
   itemsStart={5}
-  onFirstClick={[Function]}
-  onLastClick={[Function]}
-  onNextClick={[Function]}
-  onPageInput={[Function]}
-  onPerPageSelect={[Function]}
-  onPreviousClick={[Function]}
-  onSetPage={[Function]}
-  page={1}
-  perPage={10}
-  perPageOptions={
-    Array [
-      Object {
-        "title": "10",
-        "value": 10,
-      },
-      Object {
-        "title": "20",
-        "value": 20,
-      },
-      Object {
-        "title": "50",
-        "value": 50,
-      },
-      Object {
-        "title": "100",
-        "value": 100,
-      },
-    ]
-  }
-  titles={
-    Object {
-      "currPage": "Current page",
-      "items": "items",
-      "itemsPerPage": "Items per page",
-      "optionsToggle": "Select",
-      "pages": "pages",
-      "paginationTitle": "Pagination",
-      "perPageSuffix": "per page",
-      "toFirstPage": "Go to first page",
-      "toLastPage": "Go to last page",
-      "toNextPage": "Go to next page",
-      "toPreviousPage": "Go to previous page",
-    }
-  }
-  toggleTemplate={[Function]}
-  variant="top"
-  widgetId="pagination-options-menu"
 >
   <div
     className="pf-c-pagination"
+    id="pagination-options-menu"
   >
     <div
       className="pf-c-pagination__total-items"
@@ -1307,16 +993,14 @@ exports[`component render custom start end 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <DropdownItem
+              <Item
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -1329,22 +1013,19 @@ exports[`component render custom start end 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
-                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
                 </i>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -1352,17 +1033,15 @@ exports[`component render custom start end 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -1370,17 +1049,15 @@ exports[`component render custom start end 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -1388,7 +1065,7 @@ exports[`component render custom start end 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
+              </Item>,
             ]
           }
           isGrouped={false}
@@ -1397,7 +1074,7 @@ exports[`component render custom start end 1`] = `
           onSelect={[Function]}
           position="left"
           toggle={
-            <OptionsToggle
+            <Unknown
               firstIndex={5}
               isOpen={false}
               itemCount={40}
@@ -1412,243 +1089,129 @@ exports[`component render custom start end 1`] = `
             />
           }
         >
-          <DropdownWithContext
-            className=""
-            direction="down"
-            dropdownItems={
-              Array [
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item pf-m-selected"
-                  component="button"
-                  data-action="per-page-10"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  10
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                  <i
-                    className="pf-c-options-menu__menu-item-icon"
-                  >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    />
-                  </i>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-20"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  20
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-50"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  50
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-100"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  100
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-              ]
-            }
-            isGrouped={false}
-            isOpen={false}
-            isPlain={true}
-            onSelect={[Function]}
-            position="left"
-            toggle={
-              <OptionsToggle
-                firstIndex={5}
-                isOpen={false}
-                itemCount={40}
-                itemsTitle="items"
-                lastIndex={15}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
-              />
-            }
+          <div
+            className="pf-c-dropdown"
           >
-            <div
-              className="pf-c-dropdown"
+            <Component
+              ariaHasPopup={true}
+              firstIndex={5}
+              id="pf-toggle-id-7"
+              isOpen={false}
+              isPlain={true}
+              itemCount={40}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={15}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              showToggle={true}
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
             >
-              <OptionsToggle
-                ariaHasPopup={true}
-                firstIndex={5}
-                id="pf-toggle-id-7"
-                isOpen={false}
-                isPlain={true}
-                itemCount={40}
-                itemsTitle="items"
-                key=".0"
-                lastIndex={15}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <div
-                  className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                <span
+                  className="pf-c-options-menu__toggle-text"
                 >
-                  <span
-                    className="pf-c-options-menu__toggle-text"
+                  <Component
+                    firstIndex={5}
+                    itemCount={40}
+                    itemsTitle="items"
+                    lastIndex={15}
                   >
-                    <ToggleTemplate
-                      firstIndex={5}
-                      itemCount={40}
-                      itemsTitle="items"
-                      lastIndex={15}
-                    >
-                      <strong>
-                        5
-                         - 
-                        15
-                      </strong>
-                       
-                      of 
-                      <strong>
-                        40
-                      </strong>
-                       
-                      items
-                    </ToggleTemplate>
-                  </span>
-                  <DropdownToggle
+                    <strong>
+                      5
+                       - 
+                      15
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      40
+                    </strong>
+                     
+                    items
+                  </Component>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+                  <Toggle
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
-                    iconComponent={[Function]}
                     id="pagination-options-menu-toggle"
                     isActive={false}
+                    isDisabled={false}
                     isFocused={false}
                     isHovered={false}
                     isOpen={false}
                     isPlain={false}
                     isSplitButton={true}
+                    onEnter={[Function]}
                     onToggle={[Function]}
                     parentRef={null}
+                    type={null}
                   >
-                    <Toggle
+                    <button
+                      aria-expanded={false}
                       aria-label="Select"
-                      className="pf-c-options-menu__toggle-button"
+                      className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
+                      disabled={false}
                       id="pagination-options-menu-toggle"
-                      isActive={false}
-                      isDisabled={false}
-                      isFocused={false}
-                      isHovered={false}
-                      isOpen={false}
-                      isPlain={false}
-                      isSplitButton={true}
-                      onEnter={[Function]}
-                      onToggle={[Function]}
-                      parentRef={null}
-                      type={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
                     >
-                      <button
-                        aria-expanded={false}
-                        aria-label="Select"
-                        className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
-                        disabled={false}
-                        id="pagination-options-menu-toggle"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        type="button"
+                      <CaretDownIcon
+                        className=""
+                        color="currentColor"
+                        size="sm"
+                        title={null}
                       >
-                        <CaretDownIcon
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
                           className=""
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            className=""
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
                             }
-                            viewBox="0 0 320 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                              transform=""
-                            />
-                          </svg>
-                        </CaretDownIcon>
-                      </button>
-                    </Toggle>
-                  </DropdownToggle>
-                </div>
-              </OptionsToggle>
-            </div>
-          </DropdownWithContext>
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </CaretDownIcon>
+                    </button>
+                  </Toggle>
+                </DropdownToggle>
+              </div>
+            </Component>
+          </div>
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Navigation
-      className=""
+    <Component
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
@@ -1658,7 +1221,7 @@ exports[`component render custom start end 1`] = `
       onPreviousClick={[Function]}
       onSetPage={[Function]}
       page={1}
-      pagesTitle="pages"
+      pagesTitle="page"
       paginationTitle="Pagination"
       toFirstPage="Go to first page"
       toLastPage="Go to last page"
@@ -1688,7 +1251,6 @@ exports[`component render custom start end 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1733,7 +1295,6 @@ exports[`component render custom start end 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1775,9 +1336,7 @@ exports[`component render custom start end 1`] = `
             aria-hidden="true"
           >
             of 
-            4
-             
-            pages
+            4 pages
           </span>
         </div>
         <Component
@@ -1799,7 +1358,6 @@ exports[`component render custom start end 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1844,7 +1402,6 @@ exports[`component render custom start end 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1871,49 +1428,19 @@ exports[`component render custom start end 1`] = `
           </button>
         </Component>
       </nav>
-    </Navigation>
+    </Component>
   </div>
-</Pagination>
+</Component>
 `;
 
 exports[`component render empty per page options 1`] = `
-<Pagination
-  className=""
-  dropDirection="down"
+<Component
   itemCount={40}
-  itemsEnd={null}
-  itemsStart={null}
-  onFirstClick={[Function]}
-  onLastClick={[Function]}
-  onNextClick={[Function]}
-  onPageInput={[Function]}
-  onPerPageSelect={[Function]}
-  onPreviousClick={[Function]}
-  onSetPage={[Function]}
-  page={1}
-  perPage={10}
   perPageOptions={Array []}
-  titles={
-    Object {
-      "currPage": "Current page",
-      "items": "items",
-      "itemsPerPage": "Items per page",
-      "optionsToggle": "Select",
-      "pages": "pages",
-      "paginationTitle": "Pagination",
-      "perPageSuffix": "per page",
-      "toFirstPage": "Go to first page",
-      "toLastPage": "Go to last page",
-      "toNextPage": "Go to next page",
-      "toPreviousPage": "Go to previous page",
-    }
-  }
-  toggleTemplate={[Function]}
-  variant="top"
-  widgetId="pagination-options-menu"
 >
   <div
     className="pf-c-pagination"
+    id="pagination-options-menu"
   >
     <div
       className="pf-c-pagination__total-items"
@@ -1956,7 +1483,7 @@ exports[`component render empty per page options 1`] = `
           onSelect={[Function]}
           position="left"
           toggle={
-            <OptionsToggle
+            <Unknown
               firstIndex={1}
               isOpen={false}
               itemCount={40}
@@ -1971,87 +1498,59 @@ exports[`component render empty per page options 1`] = `
             />
           }
         >
-          <DropdownWithContext
-            className=""
-            direction="down"
-            dropdownItems={Array []}
-            isGrouped={false}
-            isOpen={false}
-            isPlain={true}
-            onSelect={[Function]}
-            position="left"
-            toggle={
-              <OptionsToggle
-                firstIndex={1}
-                isOpen={false}
-                itemCount={40}
-                itemsTitle="items"
-                lastIndex={10}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={false}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
-              />
-            }
+          <div
+            className="pf-c-dropdown"
           >
-            <div
-              className="pf-c-dropdown"
+            <Component
+              ariaHasPopup={null}
+              firstIndex={1}
+              id="pf-toggle-id-5"
+              isOpen={false}
+              isPlain={true}
+              itemCount={40}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={10}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              showToggle={false}
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
             >
-              <OptionsToggle
-                ariaHasPopup={null}
-                firstIndex={1}
-                id="pf-toggle-id-5"
-                isOpen={false}
-                isPlain={true}
-                itemCount={40}
-                itemsTitle="items"
-                key=".0"
-                lastIndex={10}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={false}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <div
-                  className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                <span
+                  className="pf-c-options-menu__toggle-text"
                 >
-                  <span
-                    className="pf-c-options-menu__toggle-text"
+                  <Component
+                    firstIndex={1}
+                    itemCount={40}
+                    itemsTitle="items"
+                    lastIndex={10}
                   >
-                    <ToggleTemplate
-                      firstIndex={1}
-                      itemCount={40}
-                      itemsTitle="items"
-                      lastIndex={10}
-                    >
-                      <strong>
-                        1
-                         - 
-                        10
-                      </strong>
-                       
-                      of 
-                      <strong>
-                        40
-                      </strong>
-                       
-                      items
-                    </ToggleTemplate>
-                  </span>
-                </div>
-              </OptionsToggle>
-            </div>
-          </DropdownWithContext>
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      40
+                    </strong>
+                     
+                    items
+                  </Component>
+                </span>
+              </div>
+            </Component>
+          </div>
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Navigation
-      className=""
+    <Component
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
@@ -2061,7 +1560,7 @@ exports[`component render empty per page options 1`] = `
       onPreviousClick={[Function]}
       onSetPage={[Function]}
       page={1}
-      pagesTitle="pages"
+      pagesTitle="page"
       paginationTitle="Pagination"
       toFirstPage="Go to first page"
       toLastPage="Go to last page"
@@ -2091,7 +1590,6 @@ exports[`component render empty per page options 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2136,7 +1634,6 @@ exports[`component render empty per page options 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2178,9 +1675,7 @@ exports[`component render empty per page options 1`] = `
             aria-hidden="true"
           >
             of 
-            4
-             
-            pages
+            4 pages
           </span>
         </div>
         <Component
@@ -2202,7 +1697,6 @@ exports[`component render empty per page options 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2247,7 +1741,6 @@ exports[`component render empty per page options 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2274,68 +1767,20 @@ exports[`component render empty per page options 1`] = `
           </button>
         </Component>
       </nav>
-    </Navigation>
+    </Component>
   </div>
-</Pagination>
+</Component>
 `;
 
 exports[`component render last page 1`] = `
-<Pagination
-  className=""
-  dropDirection="down"
+<Component
   itemCount={20}
-  itemsEnd={null}
-  itemsStart={null}
-  onFirstClick={[Function]}
-  onLastClick={[Function]}
-  onNextClick={[Function]}
-  onPageInput={[Function]}
-  onPerPageSelect={[Function]}
-  onPreviousClick={[Function]}
-  onSetPage={[Function]}
   page={2}
   perPage={10}
-  perPageOptions={
-    Array [
-      Object {
-        "title": "10",
-        "value": 10,
-      },
-      Object {
-        "title": "20",
-        "value": 20,
-      },
-      Object {
-        "title": "50",
-        "value": 50,
-      },
-      Object {
-        "title": "100",
-        "value": 100,
-      },
-    ]
-  }
-  titles={
-    Object {
-      "currPage": "Current page",
-      "items": "items",
-      "itemsPerPage": "Items per page",
-      "optionsToggle": "Select",
-      "pages": "pages",
-      "paginationTitle": "Pagination",
-      "perPageSuffix": "per page",
-      "toFirstPage": "Go to first page",
-      "toLastPage": "Go to last page",
-      "toNextPage": "Go to next page",
-      "toPreviousPage": "Go to previous page",
-    }
-  }
-  toggleTemplate={[Function]}
-  variant="top"
-  widgetId="pagination-options-menu"
 >
   <div
     className="pf-c-pagination"
+    id="pagination-options-menu"
   >
     <div
       className="pf-c-pagination__total-items"
@@ -2392,16 +1837,14 @@ exports[`component render last page 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <DropdownItem
+              <Item
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -2414,22 +1857,19 @@ exports[`component render last page 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
-                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
                 </i>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -2437,17 +1877,15 @@ exports[`component render last page 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -2455,17 +1893,15 @@ exports[`component render last page 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -2473,7 +1909,7 @@ exports[`component render last page 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
+              </Item>,
             ]
           }
           isGrouped={false}
@@ -2482,7 +1918,7 @@ exports[`component render last page 1`] = `
           onSelect={[Function]}
           position="left"
           toggle={
-            <OptionsToggle
+            <Unknown
               firstIndex={11}
               isOpen={false}
               itemCount={20}
@@ -2497,243 +1933,129 @@ exports[`component render last page 1`] = `
             />
           }
         >
-          <DropdownWithContext
-            className=""
-            direction="down"
-            dropdownItems={
-              Array [
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item pf-m-selected"
-                  component="button"
-                  data-action="per-page-10"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  10
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                  <i
-                    className="pf-c-options-menu__menu-item-icon"
-                  >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    />
-                  </i>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-20"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  20
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-50"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  50
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-100"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  100
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-              ]
-            }
-            isGrouped={false}
-            isOpen={false}
-            isPlain={true}
-            onSelect={[Function]}
-            position="left"
-            toggle={
-              <OptionsToggle
-                firstIndex={11}
-                isOpen={false}
-                itemCount={20}
-                itemsTitle="items"
-                lastIndex={20}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
-              />
-            }
+          <div
+            className="pf-c-dropdown"
           >
-            <div
-              className="pf-c-dropdown"
+            <Component
+              ariaHasPopup={true}
+              firstIndex={11}
+              id="pf-toggle-id-3"
+              isOpen={false}
+              isPlain={true}
+              itemCount={20}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={20}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              showToggle={true}
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
             >
-              <OptionsToggle
-                ariaHasPopup={true}
-                firstIndex={11}
-                id="pf-toggle-id-3"
-                isOpen={false}
-                isPlain={true}
-                itemCount={20}
-                itemsTitle="items"
-                key=".0"
-                lastIndex={20}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <div
-                  className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                <span
+                  className="pf-c-options-menu__toggle-text"
                 >
-                  <span
-                    className="pf-c-options-menu__toggle-text"
+                  <Component
+                    firstIndex={11}
+                    itemCount={20}
+                    itemsTitle="items"
+                    lastIndex={20}
                   >
-                    <ToggleTemplate
-                      firstIndex={11}
-                      itemCount={20}
-                      itemsTitle="items"
-                      lastIndex={20}
-                    >
-                      <strong>
-                        11
-                         - 
-                        20
-                      </strong>
-                       
-                      of 
-                      <strong>
-                        20
-                      </strong>
-                       
-                      items
-                    </ToggleTemplate>
-                  </span>
-                  <DropdownToggle
+                    <strong>
+                      11
+                       - 
+                      20
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      20
+                    </strong>
+                     
+                    items
+                  </Component>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+                  <Toggle
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
-                    iconComponent={[Function]}
                     id="pagination-options-menu-toggle"
                     isActive={false}
+                    isDisabled={false}
                     isFocused={false}
                     isHovered={false}
                     isOpen={false}
                     isPlain={false}
                     isSplitButton={true}
+                    onEnter={[Function]}
                     onToggle={[Function]}
                     parentRef={null}
+                    type={null}
                   >
-                    <Toggle
+                    <button
+                      aria-expanded={false}
                       aria-label="Select"
-                      className="pf-c-options-menu__toggle-button"
+                      className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
+                      disabled={false}
                       id="pagination-options-menu-toggle"
-                      isActive={false}
-                      isDisabled={false}
-                      isFocused={false}
-                      isHovered={false}
-                      isOpen={false}
-                      isPlain={false}
-                      isSplitButton={true}
-                      onEnter={[Function]}
-                      onToggle={[Function]}
-                      parentRef={null}
-                      type={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
                     >
-                      <button
-                        aria-expanded={false}
-                        aria-label="Select"
-                        className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
-                        disabled={false}
-                        id="pagination-options-menu-toggle"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        type="button"
+                      <CaretDownIcon
+                        className=""
+                        color="currentColor"
+                        size="sm"
+                        title={null}
                       >
-                        <CaretDownIcon
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
                           className=""
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            className=""
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
                             }
-                            viewBox="0 0 320 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                              transform=""
-                            />
-                          </svg>
-                        </CaretDownIcon>
-                      </button>
-                    </Toggle>
-                  </DropdownToggle>
-                </div>
-              </OptionsToggle>
-            </div>
-          </DropdownWithContext>
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </CaretDownIcon>
+                    </button>
+                  </Toggle>
+                </DropdownToggle>
+              </div>
+            </Component>
+          </div>
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Navigation
-      className=""
+    <Component
       currPage="Current page"
       lastPage={2}
       onFirstClick={[Function]}
@@ -2743,7 +2065,7 @@ exports[`component render last page 1`] = `
       onPreviousClick={[Function]}
       onSetPage={[Function]}
       page={2}
-      pagesTitle="pages"
+      pagesTitle="page"
       paginationTitle="Pagination"
       toFirstPage="Go to first page"
       toLastPage="Go to last page"
@@ -2773,7 +2095,6 @@ exports[`component render last page 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2818,7 +2139,6 @@ exports[`component render last page 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2860,9 +2180,7 @@ exports[`component render last page 1`] = `
             aria-hidden="true"
           >
             of 
-            2
-             
-            pages
+            2 pages
           </span>
         </div>
         <Component
@@ -2884,7 +2202,6 @@ exports[`component render last page 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2929,7 +2246,6 @@ exports[`component render last page 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2956,68 +2272,19 @@ exports[`component render last page 1`] = `
           </button>
         </Component>
       </nav>
-    </Navigation>
+    </Component>
   </div>
-</Pagination>
+</Component>
 `;
 
 exports[`component render limited number of pages 1`] = `
-<Pagination
-  className=""
-  dropDirection="down"
+<Component
   itemCount={20}
-  itemsEnd={null}
-  itemsStart={null}
-  onFirstClick={[Function]}
-  onLastClick={[Function]}
-  onNextClick={[Function]}
-  onPageInput={[Function]}
-  onPerPageSelect={[Function]}
-  onPreviousClick={[Function]}
-  onSetPage={[Function]}
-  page={1}
   perPage={20}
-  perPageOptions={
-    Array [
-      Object {
-        "title": "10",
-        "value": 10,
-      },
-      Object {
-        "title": "20",
-        "value": 20,
-      },
-      Object {
-        "title": "50",
-        "value": 50,
-      },
-      Object {
-        "title": "100",
-        "value": 100,
-      },
-    ]
-  }
-  titles={
-    Object {
-      "currPage": "Current page",
-      "items": "items",
-      "itemsPerPage": "Items per page",
-      "optionsToggle": "Select",
-      "pages": "pages",
-      "paginationTitle": "Pagination",
-      "perPageSuffix": "per page",
-      "toFirstPage": "Go to first page",
-      "toLastPage": "Go to last page",
-      "toNextPage": "Go to next page",
-      "toPreviousPage": "Go to previous page",
-    }
-  }
-  toggleTemplate={[Function]}
-  variant="top"
-  widgetId="pagination-options-menu"
 >
   <div
     className="pf-c-pagination"
+    id="pagination-options-menu"
   >
     <div
       className="pf-c-pagination__total-items"
@@ -3074,16 +2341,14 @@ exports[`component render limited number of pages 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <DropdownItem
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-10"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -3091,17 +2356,15 @@ exports[`component render limited number of pages 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-20"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -3114,22 +2377,19 @@ exports[`component render limited number of pages 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
-                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
                 </i>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -3137,17 +2397,15 @@ exports[`component render limited number of pages 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -3155,7 +2413,7 @@ exports[`component render limited number of pages 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
+              </Item>,
             ]
           }
           isGrouped={false}
@@ -3164,7 +2422,7 @@ exports[`component render limited number of pages 1`] = `
           onSelect={[Function]}
           position="left"
           toggle={
-            <OptionsToggle
+            <Unknown
               firstIndex={1}
               isOpen={false}
               itemCount={20}
@@ -3179,243 +2437,129 @@ exports[`component render limited number of pages 1`] = `
             />
           }
         >
-          <DropdownWithContext
-            className=""
-            direction="down"
-            dropdownItems={
-              Array [
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-10"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  10
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item pf-m-selected"
-                  component="button"
-                  data-action="per-page-20"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  20
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                  <i
-                    className="pf-c-options-menu__menu-item-icon"
-                  >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    />
-                  </i>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-50"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  50
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-100"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  100
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-              ]
-            }
-            isGrouped={false}
-            isOpen={false}
-            isPlain={true}
-            onSelect={[Function]}
-            position="left"
-            toggle={
-              <OptionsToggle
-                firstIndex={1}
-                isOpen={false}
-                itemCount={20}
-                itemsTitle="items"
-                lastIndex={20}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
-              />
-            }
+          <div
+            className="pf-c-dropdown"
           >
-            <div
-              className="pf-c-dropdown"
+            <Component
+              ariaHasPopup={true}
+              firstIndex={1}
+              id="pf-toggle-id-2"
+              isOpen={false}
+              isPlain={true}
+              itemCount={20}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={20}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              showToggle={true}
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
             >
-              <OptionsToggle
-                ariaHasPopup={true}
-                firstIndex={1}
-                id="pf-toggle-id-2"
-                isOpen={false}
-                isPlain={true}
-                itemCount={20}
-                itemsTitle="items"
-                key=".0"
-                lastIndex={20}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <div
-                  className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                <span
+                  className="pf-c-options-menu__toggle-text"
                 >
-                  <span
-                    className="pf-c-options-menu__toggle-text"
+                  <Component
+                    firstIndex={1}
+                    itemCount={20}
+                    itemsTitle="items"
+                    lastIndex={20}
                   >
-                    <ToggleTemplate
-                      firstIndex={1}
-                      itemCount={20}
-                      itemsTitle="items"
-                      lastIndex={20}
-                    >
-                      <strong>
-                        1
-                         - 
-                        20
-                      </strong>
-                       
-                      of 
-                      <strong>
-                        20
-                      </strong>
-                       
-                      items
-                    </ToggleTemplate>
-                  </span>
-                  <DropdownToggle
+                    <strong>
+                      1
+                       - 
+                      20
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      20
+                    </strong>
+                     
+                    items
+                  </Component>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+                  <Toggle
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
-                    iconComponent={[Function]}
                     id="pagination-options-menu-toggle"
                     isActive={false}
+                    isDisabled={false}
                     isFocused={false}
                     isHovered={false}
                     isOpen={false}
                     isPlain={false}
                     isSplitButton={true}
+                    onEnter={[Function]}
                     onToggle={[Function]}
                     parentRef={null}
+                    type={null}
                   >
-                    <Toggle
+                    <button
+                      aria-expanded={false}
                       aria-label="Select"
-                      className="pf-c-options-menu__toggle-button"
+                      className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
+                      disabled={false}
                       id="pagination-options-menu-toggle"
-                      isActive={false}
-                      isDisabled={false}
-                      isFocused={false}
-                      isHovered={false}
-                      isOpen={false}
-                      isPlain={false}
-                      isSplitButton={true}
-                      onEnter={[Function]}
-                      onToggle={[Function]}
-                      parentRef={null}
-                      type={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
                     >
-                      <button
-                        aria-expanded={false}
-                        aria-label="Select"
-                        className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
-                        disabled={false}
-                        id="pagination-options-menu-toggle"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        type="button"
+                      <CaretDownIcon
+                        className=""
+                        color="currentColor"
+                        size="sm"
+                        title={null}
                       >
-                        <CaretDownIcon
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
                           className=""
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            className=""
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
                             }
-                            viewBox="0 0 320 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                              transform=""
-                            />
-                          </svg>
-                        </CaretDownIcon>
-                      </button>
-                    </Toggle>
-                  </DropdownToggle>
-                </div>
-              </OptionsToggle>
-            </div>
-          </DropdownWithContext>
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </CaretDownIcon>
+                    </button>
+                  </Toggle>
+                </DropdownToggle>
+              </div>
+            </Component>
+          </div>
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Navigation
-      className=""
+    <Component
       currPage="Current page"
       lastPage={1}
       onFirstClick={[Function]}
@@ -3425,7 +2569,7 @@ exports[`component render limited number of pages 1`] = `
       onPreviousClick={[Function]}
       onSetPage={[Function]}
       page={1}
-      pagesTitle="pages"
+      pagesTitle="page"
       paginationTitle="Pagination"
       toFirstPage="Go to first page"
       toLastPage="Go to last page"
@@ -3455,7 +2599,6 @@ exports[`component render limited number of pages 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3500,7 +2643,6 @@ exports[`component render limited number of pages 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3542,9 +2684,7 @@ exports[`component render limited number of pages 1`] = `
             aria-hidden="true"
           >
             of 
-            1
-             
-            pages
+            1 page
           </span>
         </div>
         <Component
@@ -3566,7 +2706,6 @@ exports[`component render limited number of pages 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3611,7 +2750,6 @@ exports[`component render limited number of pages 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3638,68 +2776,18 @@ exports[`component render limited number of pages 1`] = `
           </button>
         </Component>
       </nav>
-    </Navigation>
+    </Component>
   </div>
-</Pagination>
+</Component>
 `;
 
 exports[`component render no items 1`] = `
-<Pagination
-  className=""
-  dropDirection="down"
+<Component
   itemCount={0}
-  itemsEnd={null}
-  itemsStart={null}
-  onFirstClick={[Function]}
-  onLastClick={[Function]}
-  onNextClick={[Function]}
-  onPageInput={[Function]}
-  onPerPageSelect={[Function]}
-  onPreviousClick={[Function]}
-  onSetPage={[Function]}
-  page={1}
-  perPage={10}
-  perPageOptions={
-    Array [
-      Object {
-        "title": "10",
-        "value": 10,
-      },
-      Object {
-        "title": "20",
-        "value": 20,
-      },
-      Object {
-        "title": "50",
-        "value": 50,
-      },
-      Object {
-        "title": "100",
-        "value": 100,
-      },
-    ]
-  }
-  titles={
-    Object {
-      "currPage": "Current page",
-      "items": "items",
-      "itemsPerPage": "Items per page",
-      "optionsToggle": "Select",
-      "pages": "pages",
-      "paginationTitle": "Pagination",
-      "perPageSuffix": "per page",
-      "toFirstPage": "Go to first page",
-      "toLastPage": "Go to last page",
-      "toNextPage": "Go to next page",
-      "toPreviousPage": "Go to previous page",
-    }
-  }
-  toggleTemplate={[Function]}
-  variant="top"
-  widgetId="pagination-options-menu"
 >
   <div
     className="pf-c-pagination"
+    id="pagination-options-menu"
   >
     <div
       className="pf-c-pagination__total-items"
@@ -3756,16 +2844,14 @@ exports[`component render no items 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <DropdownItem
+              <Item
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -3778,22 +2864,19 @@ exports[`component render no items 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
-                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
                 </i>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -3801,17 +2884,15 @@ exports[`component render no items 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -3819,17 +2900,15 @@ exports[`component render no items 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -3837,7 +2916,7 @@ exports[`component render no items 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
+              </Item>,
             ]
           }
           isGrouped={false}
@@ -3846,7 +2925,7 @@ exports[`component render no items 1`] = `
           onSelect={[Function]}
           position="left"
           toggle={
-            <OptionsToggle
+            <Unknown
               firstIndex={0}
               isOpen={false}
               itemCount={0}
@@ -3861,243 +2940,129 @@ exports[`component render no items 1`] = `
             />
           }
         >
-          <DropdownWithContext
-            className=""
-            direction="down"
-            dropdownItems={
-              Array [
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item pf-m-selected"
-                  component="button"
-                  data-action="per-page-10"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  10
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                  <i
-                    className="pf-c-options-menu__menu-item-icon"
-                  >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    />
-                  </i>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-20"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  20
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-50"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  50
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-100"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  100
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-              ]
-            }
-            isGrouped={false}
-            isOpen={false}
-            isPlain={true}
-            onSelect={[Function]}
-            position="left"
-            toggle={
-              <OptionsToggle
-                firstIndex={0}
-                isOpen={false}
-                itemCount={0}
-                itemsTitle="items"
-                lastIndex={0}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
-              />
-            }
+          <div
+            className="pf-c-dropdown"
           >
-            <div
-              className="pf-c-dropdown"
+            <Component
+              ariaHasPopup={true}
+              firstIndex={0}
+              id="pf-toggle-id-6"
+              isOpen={false}
+              isPlain={true}
+              itemCount={0}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={0}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              showToggle={true}
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
             >
-              <OptionsToggle
-                ariaHasPopup={true}
-                firstIndex={0}
-                id="pf-toggle-id-6"
-                isOpen={false}
-                isPlain={true}
-                itemCount={0}
-                itemsTitle="items"
-                key=".0"
-                lastIndex={0}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <div
-                  className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                <span
+                  className="pf-c-options-menu__toggle-text"
                 >
-                  <span
-                    className="pf-c-options-menu__toggle-text"
+                  <Component
+                    firstIndex={0}
+                    itemCount={0}
+                    itemsTitle="items"
+                    lastIndex={0}
                   >
-                    <ToggleTemplate
-                      firstIndex={0}
-                      itemCount={0}
-                      itemsTitle="items"
-                      lastIndex={0}
-                    >
-                      <strong>
-                        0
-                         - 
-                        0
-                      </strong>
-                       
-                      of 
-                      <strong>
-                        0
-                      </strong>
-                       
-                      items
-                    </ToggleTemplate>
-                  </span>
-                  <DropdownToggle
+                    <strong>
+                      0
+                       - 
+                      0
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      0
+                    </strong>
+                     
+                    items
+                  </Component>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+                  <Toggle
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
-                    iconComponent={[Function]}
                     id="pagination-options-menu-toggle"
                     isActive={false}
+                    isDisabled={false}
                     isFocused={false}
                     isHovered={false}
                     isOpen={false}
                     isPlain={false}
                     isSplitButton={true}
+                    onEnter={[Function]}
                     onToggle={[Function]}
                     parentRef={null}
+                    type={null}
                   >
-                    <Toggle
+                    <button
+                      aria-expanded={false}
                       aria-label="Select"
-                      className="pf-c-options-menu__toggle-button"
+                      className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
+                      disabled={false}
                       id="pagination-options-menu-toggle"
-                      isActive={false}
-                      isDisabled={false}
-                      isFocused={false}
-                      isHovered={false}
-                      isOpen={false}
-                      isPlain={false}
-                      isSplitButton={true}
-                      onEnter={[Function]}
-                      onToggle={[Function]}
-                      parentRef={null}
-                      type={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
                     >
-                      <button
-                        aria-expanded={false}
-                        aria-label="Select"
-                        className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
-                        disabled={false}
-                        id="pagination-options-menu-toggle"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        type="button"
+                      <CaretDownIcon
+                        className=""
+                        color="currentColor"
+                        size="sm"
+                        title={null}
                       >
-                        <CaretDownIcon
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
                           className=""
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            className=""
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
                             }
-                            viewBox="0 0 320 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                              transform=""
-                            />
-                          </svg>
-                        </CaretDownIcon>
-                      </button>
-                    </Toggle>
-                  </DropdownToggle>
-                </div>
-              </OptionsToggle>
-            </div>
-          </DropdownWithContext>
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </CaretDownIcon>
+                    </button>
+                  </Toggle>
+                </DropdownToggle>
+              </div>
+            </Component>
+          </div>
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Navigation
-      className=""
+    <Component
       currPage="Current page"
       lastPage={0}
       onFirstClick={[Function]}
@@ -4107,7 +3072,7 @@ exports[`component render no items 1`] = `
       onPreviousClick={[Function]}
       onSetPage={[Function]}
       page={1}
-      pagesTitle="pages"
+      pagesTitle="page"
       paginationTitle="Pagination"
       toFirstPage="Go to first page"
       toLastPage="Go to last page"
@@ -4137,7 +3102,6 @@ exports[`component render no items 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4182,7 +3146,6 @@ exports[`component render no items 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4224,9 +3187,7 @@ exports[`component render no items 1`] = `
             aria-hidden="true"
           >
             of 
-            0
-             
-            pages
+            0 pages
           </span>
         </div>
         <Component
@@ -4248,7 +3209,6 @@ exports[`component render no items 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4293,7 +3253,6 @@ exports[`component render no items 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4320,68 +3279,19 @@ exports[`component render no items 1`] = `
           </button>
         </Component>
       </nav>
-    </Navigation>
+    </Component>
   </div>
-</Pagination>
+</Component>
 `;
 
 exports[`component render should render correctly bottom 1`] = `
-<Pagination
-  className=""
-  dropDirection="down"
+<Component
   itemCount={20}
-  itemsEnd={null}
-  itemsStart={null}
-  onFirstClick={[Function]}
-  onLastClick={[Function]}
-  onNextClick={[Function]}
-  onPageInput={[Function]}
-  onPerPageSelect={[Function]}
-  onPreviousClick={[Function]}
-  onSetPage={[Function]}
-  page={1}
-  perPage={10}
-  perPageOptions={
-    Array [
-      Object {
-        "title": "10",
-        "value": 10,
-      },
-      Object {
-        "title": "20",
-        "value": 20,
-      },
-      Object {
-        "title": "50",
-        "value": 50,
-      },
-      Object {
-        "title": "100",
-        "value": 100,
-      },
-    ]
-  }
-  titles={
-    Object {
-      "currPage": "Current page",
-      "items": "items",
-      "itemsPerPage": "Items per page",
-      "optionsToggle": "Select",
-      "pages": "pages",
-      "paginationTitle": "Pagination",
-      "perPageSuffix": "per page",
-      "toFirstPage": "Go to first page",
-      "toLastPage": "Go to last page",
-      "toNextPage": "Go to next page",
-      "toPreviousPage": "Go to previous page",
-    }
-  }
-  toggleTemplate={[Function]}
   variant="bottom"
-  widgetId="pagination-options-menu"
 >
   <div
     className="pf-c-pagination pf-m-footer"
+    id="pagination-options-menu"
   >
     <PaginationOptionsMenu
       className=""
@@ -4433,16 +3343,14 @@ exports[`component render should render correctly bottom 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <DropdownItem
+              <Item
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -4455,22 +3363,19 @@ exports[`component render should render correctly bottom 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
-                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
                 </i>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -4478,17 +3383,15 @@ exports[`component render should render correctly bottom 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -4496,17 +3399,15 @@ exports[`component render should render correctly bottom 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -4514,7 +3415,7 @@ exports[`component render should render correctly bottom 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
+              </Item>,
             ]
           }
           isGrouped={false}
@@ -4523,7 +3424,7 @@ exports[`component render should render correctly bottom 1`] = `
           onSelect={[Function]}
           position="left"
           toggle={
-            <OptionsToggle
+            <Unknown
               firstIndex={1}
               isOpen={false}
               itemCount={20}
@@ -4538,243 +3439,129 @@ exports[`component render should render correctly bottom 1`] = `
             />
           }
         >
-          <DropdownWithContext
-            className=""
-            direction="down"
-            dropdownItems={
-              Array [
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item pf-m-selected"
-                  component="button"
-                  data-action="per-page-10"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  10
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                  <i
-                    className="pf-c-options-menu__menu-item-icon"
-                  >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    />
-                  </i>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-20"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  20
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-50"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  50
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-100"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  100
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-              ]
-            }
-            isGrouped={false}
-            isOpen={false}
-            isPlain={true}
-            onSelect={[Function]}
-            position="left"
-            toggle={
-              <OptionsToggle
-                firstIndex={1}
-                isOpen={false}
-                itemCount={20}
-                itemsTitle="items"
-                lastIndex={10}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
-              />
-            }
+          <div
+            className="pf-c-dropdown"
           >
-            <div
-              className="pf-c-dropdown"
+            <Component
+              ariaHasPopup={true}
+              firstIndex={1}
+              id="pf-toggle-id-1"
+              isOpen={false}
+              isPlain={true}
+              itemCount={20}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={10}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              showToggle={true}
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
             >
-              <OptionsToggle
-                ariaHasPopup={true}
-                firstIndex={1}
-                id="pf-toggle-id-1"
-                isOpen={false}
-                isPlain={true}
-                itemCount={20}
-                itemsTitle="items"
-                key=".0"
-                lastIndex={10}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <div
-                  className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                <span
+                  className="pf-c-options-menu__toggle-text"
                 >
-                  <span
-                    className="pf-c-options-menu__toggle-text"
+                  <Component
+                    firstIndex={1}
+                    itemCount={20}
+                    itemsTitle="items"
+                    lastIndex={10}
                   >
-                    <ToggleTemplate
-                      firstIndex={1}
-                      itemCount={20}
-                      itemsTitle="items"
-                      lastIndex={10}
-                    >
-                      <strong>
-                        1
-                         - 
-                        10
-                      </strong>
-                       
-                      of 
-                      <strong>
-                        20
-                      </strong>
-                       
-                      items
-                    </ToggleTemplate>
-                  </span>
-                  <DropdownToggle
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      20
+                    </strong>
+                     
+                    items
+                  </Component>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+                  <Toggle
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
-                    iconComponent={[Function]}
                     id="pagination-options-menu-toggle"
                     isActive={false}
+                    isDisabled={false}
                     isFocused={false}
                     isHovered={false}
                     isOpen={false}
                     isPlain={false}
                     isSplitButton={true}
+                    onEnter={[Function]}
                     onToggle={[Function]}
                     parentRef={null}
+                    type={null}
                   >
-                    <Toggle
+                    <button
+                      aria-expanded={false}
                       aria-label="Select"
-                      className="pf-c-options-menu__toggle-button"
+                      className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
+                      disabled={false}
                       id="pagination-options-menu-toggle"
-                      isActive={false}
-                      isDisabled={false}
-                      isFocused={false}
-                      isHovered={false}
-                      isOpen={false}
-                      isPlain={false}
-                      isSplitButton={true}
-                      onEnter={[Function]}
-                      onToggle={[Function]}
-                      parentRef={null}
-                      type={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
                     >
-                      <button
-                        aria-expanded={false}
-                        aria-label="Select"
-                        className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
-                        disabled={false}
-                        id="pagination-options-menu-toggle"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        type="button"
+                      <CaretDownIcon
+                        className=""
+                        color="currentColor"
+                        size="sm"
+                        title={null}
                       >
-                        <CaretDownIcon
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
                           className=""
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            className=""
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
                             }
-                            viewBox="0 0 320 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                              transform=""
-                            />
-                          </svg>
-                        </CaretDownIcon>
-                      </button>
-                    </Toggle>
-                  </DropdownToggle>
-                </div>
-              </OptionsToggle>
-            </div>
-          </DropdownWithContext>
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </CaretDownIcon>
+                    </button>
+                  </Toggle>
+                </DropdownToggle>
+              </div>
+            </Component>
+          </div>
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Navigation
-      className=""
+    <Component
       currPage="Current page"
       lastPage={2}
       onFirstClick={[Function]}
@@ -4784,7 +3571,7 @@ exports[`component render should render correctly bottom 1`] = `
       onPreviousClick={[Function]}
       onSetPage={[Function]}
       page={1}
-      pagesTitle="pages"
+      pagesTitle="page"
       paginationTitle="Pagination"
       toFirstPage="Go to first page"
       toLastPage="Go to last page"
@@ -4814,7 +3601,6 @@ exports[`component render should render correctly bottom 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4859,7 +3645,6 @@ exports[`component render should render correctly bottom 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4901,9 +3686,7 @@ exports[`component render should render correctly bottom 1`] = `
             aria-hidden="true"
           >
             of 
-            2
-             
-            pages
+            2 pages
           </span>
         </div>
         <Component
@@ -4925,7 +3708,6 @@ exports[`component render should render correctly bottom 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4970,7 +3752,6 @@ exports[`component render should render correctly bottom 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4997,68 +3778,18 @@ exports[`component render should render correctly bottom 1`] = `
           </button>
         </Component>
       </nav>
-    </Navigation>
+    </Component>
   </div>
-</Pagination>
+</Component>
 `;
 
 exports[`component render should render correctly top 1`] = `
-<Pagination
-  className=""
-  dropDirection="down"
+<Component
   itemCount={20}
-  itemsEnd={null}
-  itemsStart={null}
-  onFirstClick={[Function]}
-  onLastClick={[Function]}
-  onNextClick={[Function]}
-  onPageInput={[Function]}
-  onPerPageSelect={[Function]}
-  onPreviousClick={[Function]}
-  onSetPage={[Function]}
-  page={1}
-  perPage={10}
-  perPageOptions={
-    Array [
-      Object {
-        "title": "10",
-        "value": 10,
-      },
-      Object {
-        "title": "20",
-        "value": 20,
-      },
-      Object {
-        "title": "50",
-        "value": 50,
-      },
-      Object {
-        "title": "100",
-        "value": 100,
-      },
-    ]
-  }
-  titles={
-    Object {
-      "currPage": "Current page",
-      "items": "items",
-      "itemsPerPage": "Items per page",
-      "optionsToggle": "Select",
-      "pages": "pages",
-      "paginationTitle": "Pagination",
-      "perPageSuffix": "per page",
-      "toFirstPage": "Go to first page",
-      "toLastPage": "Go to last page",
-      "toNextPage": "Go to next page",
-      "toPreviousPage": "Go to previous page",
-    }
-  }
-  toggleTemplate={[Function]}
-  variant="top"
-  widgetId="pagination-options-menu"
 >
   <div
     className="pf-c-pagination"
+    id="pagination-options-menu"
   >
     <div
       className="pf-c-pagination__total-items"
@@ -5115,16 +3846,14 @@ exports[`component render should render correctly top 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <DropdownItem
+              <Item
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -5137,22 +3866,19 @@ exports[`component render should render correctly top 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
-                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
                 </i>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -5160,17 +3886,15 @@ exports[`component render should render correctly top 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -5178,17 +3902,15 @@ exports[`component render should render correctly top 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -5196,7 +3918,7 @@ exports[`component render should render correctly top 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
+              </Item>,
             ]
           }
           isGrouped={false}
@@ -5205,7 +3927,7 @@ exports[`component render should render correctly top 1`] = `
           onSelect={[Function]}
           position="left"
           toggle={
-            <OptionsToggle
+            <Unknown
               firstIndex={1}
               isOpen={false}
               itemCount={20}
@@ -5220,243 +3942,129 @@ exports[`component render should render correctly top 1`] = `
             />
           }
         >
-          <DropdownWithContext
-            className=""
-            direction="down"
-            dropdownItems={
-              Array [
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item pf-m-selected"
-                  component="button"
-                  data-action="per-page-10"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  10
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                  <i
-                    className="pf-c-options-menu__menu-item-icon"
-                  >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    />
-                  </i>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-20"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  20
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-50"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  50
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-100"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  100
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-              ]
-            }
-            isGrouped={false}
-            isOpen={false}
-            isPlain={true}
-            onSelect={[Function]}
-            position="left"
-            toggle={
-              <OptionsToggle
-                firstIndex={1}
-                isOpen={false}
-                itemCount={20}
-                itemsTitle="items"
-                lastIndex={10}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
-              />
-            }
+          <div
+            className="pf-c-dropdown"
           >
-            <div
-              className="pf-c-dropdown"
+            <Component
+              ariaHasPopup={true}
+              firstIndex={1}
+              id="pf-toggle-id-0"
+              isOpen={false}
+              isPlain={true}
+              itemCount={20}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={10}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              showToggle={true}
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
             >
-              <OptionsToggle
-                ariaHasPopup={true}
-                firstIndex={1}
-                id="pf-toggle-id-0"
-                isOpen={false}
-                isPlain={true}
-                itemCount={20}
-                itemsTitle="items"
-                key=".0"
-                lastIndex={10}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <div
-                  className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                <span
+                  className="pf-c-options-menu__toggle-text"
                 >
-                  <span
-                    className="pf-c-options-menu__toggle-text"
+                  <Component
+                    firstIndex={1}
+                    itemCount={20}
+                    itemsTitle="items"
+                    lastIndex={10}
                   >
-                    <ToggleTemplate
-                      firstIndex={1}
-                      itemCount={20}
-                      itemsTitle="items"
-                      lastIndex={10}
-                    >
-                      <strong>
-                        1
-                         - 
-                        10
-                      </strong>
-                       
-                      of 
-                      <strong>
-                        20
-                      </strong>
-                       
-                      items
-                    </ToggleTemplate>
-                  </span>
-                  <DropdownToggle
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      20
+                    </strong>
+                     
+                    items
+                  </Component>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+                  <Toggle
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
-                    iconComponent={[Function]}
                     id="pagination-options-menu-toggle"
                     isActive={false}
+                    isDisabled={false}
                     isFocused={false}
                     isHovered={false}
                     isOpen={false}
                     isPlain={false}
                     isSplitButton={true}
+                    onEnter={[Function]}
                     onToggle={[Function]}
                     parentRef={null}
+                    type={null}
                   >
-                    <Toggle
+                    <button
+                      aria-expanded={false}
                       aria-label="Select"
-                      className="pf-c-options-menu__toggle-button"
+                      className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
+                      disabled={false}
                       id="pagination-options-menu-toggle"
-                      isActive={false}
-                      isDisabled={false}
-                      isFocused={false}
-                      isHovered={false}
-                      isOpen={false}
-                      isPlain={false}
-                      isSplitButton={true}
-                      onEnter={[Function]}
-                      onToggle={[Function]}
-                      parentRef={null}
-                      type={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
                     >
-                      <button
-                        aria-expanded={false}
-                        aria-label="Select"
-                        className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
-                        disabled={false}
-                        id="pagination-options-menu-toggle"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        type="button"
+                      <CaretDownIcon
+                        className=""
+                        color="currentColor"
+                        size="sm"
+                        title={null}
                       >
-                        <CaretDownIcon
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
                           className=""
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            className=""
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
                             }
-                            viewBox="0 0 320 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                              transform=""
-                            />
-                          </svg>
-                        </CaretDownIcon>
-                      </button>
-                    </Toggle>
-                  </DropdownToggle>
-                </div>
-              </OptionsToggle>
-            </div>
-          </DropdownWithContext>
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </CaretDownIcon>
+                    </button>
+                  </Toggle>
+                </DropdownToggle>
+              </div>
+            </Component>
+          </div>
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Navigation
-      className=""
+    <Component
       currPage="Current page"
       lastPage={2}
       onFirstClick={[Function]}
@@ -5466,7 +4074,7 @@ exports[`component render should render correctly top 1`] = `
       onPreviousClick={[Function]}
       onSetPage={[Function]}
       page={1}
-      pagesTitle="pages"
+      pagesTitle="page"
       paginationTitle="Pagination"
       toFirstPage="Go to first page"
       toLastPage="Go to last page"
@@ -5496,7 +4104,6 @@ exports[`component render should render correctly top 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5541,7 +4148,6 @@ exports[`component render should render correctly top 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5583,9 +4189,7 @@ exports[`component render should render correctly top 1`] = `
             aria-hidden="true"
           >
             of 
-            2
-             
-            pages
+            2 pages
           </span>
         </div>
         <Component
@@ -5607,7 +4211,6 @@ exports[`component render should render correctly top 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5652,7 +4255,6 @@ exports[`component render should render correctly top 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5679,59 +4281,24 @@ exports[`component render should render correctly top 1`] = `
           </button>
         </Component>
       </nav>
-    </Navigation>
+    </Component>
   </div>
-</Pagination>
+</Component>
 `;
 
 exports[`component render titles 1`] = `
-<Pagination
-  className=""
-  dropDirection="down"
+<Component
   itemCount={40}
-  itemsEnd={null}
-  itemsStart={null}
-  onFirstClick={[Function]}
-  onLastClick={[Function]}
-  onNextClick={[Function]}
-  onPageInput={[Function]}
-  onPerPageSelect={[Function]}
-  onPreviousClick={[Function]}
-  onSetPage={[Function]}
-  page={1}
-  perPage={10}
-  perPageOptions={
-    Array [
-      Object {
-        "title": "10",
-        "value": 10,
-      },
-      Object {
-        "title": "20",
-        "value": 20,
-      },
-      Object {
-        "title": "50",
-        "value": 50,
-      },
-      Object {
-        "title": "100",
-        "value": 100,
-      },
-    ]
-  }
   titles={
     Object {
       "items": "values",
       "pages": "books",
     }
   }
-  toggleTemplate={[Function]}
-  variant="top"
-  widgetId="pagination-options-menu"
 >
   <div
     className="pf-c-pagination"
+    id="pagination-options-menu"
   >
     <div
       className="pf-c-pagination__total-items"
@@ -5788,16 +4355,14 @@ exports[`component render titles 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <DropdownItem
+              <Item
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -5810,22 +4375,19 @@ exports[`component render titles 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
-                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
                 </i>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -5833,17 +4395,15 @@ exports[`component render titles 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -5851,17 +4411,15 @@ exports[`component render titles 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -5869,7 +4427,7 @@ exports[`component render titles 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
+              </Item>,
             ]
           }
           isGrouped={false}
@@ -5878,7 +4436,7 @@ exports[`component render titles 1`] = `
           onSelect={[Function]}
           position="left"
           toggle={
-            <OptionsToggle
+            <Unknown
               firstIndex={1}
               isOpen={false}
               itemCount={40}
@@ -5893,244 +4451,129 @@ exports[`component render titles 1`] = `
             />
           }
         >
-          <DropdownWithContext
-            className=""
-            direction="down"
-            dropdownItems={
-              Array [
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item pf-m-selected"
-                  component="button"
-                  data-action="per-page-10"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  10
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                  <i
-                    className="pf-c-options-menu__menu-item-icon"
-                  >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    />
-                  </i>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-20"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  20
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-50"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  50
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-100"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  100
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-              ]
-            }
-            isGrouped={false}
-            isOpen={false}
-            isPlain={true}
-            onSelect={[Function]}
-            position="left"
-            toggle={
-              <OptionsToggle
-                firstIndex={1}
-                isOpen={false}
-                itemCount={40}
-                itemsTitle="values"
-                lastIndex={10}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
-              />
-            }
+          <div
+            className="pf-c-dropdown"
           >
-            <div
-              className="pf-c-dropdown"
+            <Component
+              ariaHasPopup={true}
+              firstIndex={1}
+              id="pf-toggle-id-8"
+              isOpen={false}
+              isPlain={true}
+              itemCount={40}
+              itemsTitle="values"
+              key=".0"
+              lastIndex={10}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              showToggle={true}
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
             >
-              <OptionsToggle
-                ariaHasPopup={true}
-                firstIndex={1}
-                id="pf-toggle-id-8"
-                isOpen={false}
-                isPlain={true}
-                itemCount={40}
-                itemsTitle="values"
-                key=".0"
-                lastIndex={10}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <div
-                  className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                <span
+                  className="pf-c-options-menu__toggle-text"
                 >
-                  <span
-                    className="pf-c-options-menu__toggle-text"
+                  <Component
+                    firstIndex={1}
+                    itemCount={40}
+                    itemsTitle="values"
+                    lastIndex={10}
                   >
-                    <ToggleTemplate
-                      firstIndex={1}
-                      itemCount={40}
-                      itemsTitle="values"
-                      lastIndex={10}
-                    >
-                      <strong>
-                        1
-                         - 
-                        10
-                      </strong>
-                       
-                      of 
-                      <strong>
-                        40
-                      </strong>
-                       
-                      values
-                    </ToggleTemplate>
-                  </span>
-                  <DropdownToggle
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      40
+                    </strong>
+                     
+                    values
+                  </Component>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+                  <Toggle
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
-                    iconComponent={[Function]}
                     id="pagination-options-menu-toggle"
                     isActive={false}
+                    isDisabled={false}
                     isFocused={false}
                     isHovered={false}
                     isOpen={false}
                     isPlain={false}
                     isSplitButton={true}
+                    onEnter={[Function]}
                     onToggle={[Function]}
                     parentRef={null}
+                    type={null}
                   >
-                    <Toggle
+                    <button
+                      aria-expanded={false}
                       aria-label="Select"
-                      className="pf-c-options-menu__toggle-button"
+                      className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
+                      disabled={false}
                       id="pagination-options-menu-toggle"
-                      isActive={false}
-                      isDisabled={false}
-                      isFocused={false}
-                      isHovered={false}
-                      isOpen={false}
-                      isPlain={false}
-                      isSplitButton={true}
-                      onEnter={[Function]}
-                      onToggle={[Function]}
-                      parentRef={null}
-                      type={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
                     >
-                      <button
-                        aria-expanded={false}
-                        aria-label="Select"
-                        className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
-                        disabled={false}
-                        id="pagination-options-menu-toggle"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        type="button"
+                      <CaretDownIcon
+                        className=""
+                        color="currentColor"
+                        size="sm"
+                        title={null}
                       >
-                        <CaretDownIcon
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
                           className=""
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            className=""
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
                             }
-                            viewBox="0 0 320 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                              transform=""
-                            />
-                          </svg>
-                        </CaretDownIcon>
-                      </button>
-                    </Toggle>
-                  </DropdownToggle>
-                </div>
-              </OptionsToggle>
-            </div>
-          </DropdownWithContext>
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </CaretDownIcon>
+                    </button>
+                  </Toggle>
+                </DropdownToggle>
+              </div>
+            </Component>
+          </div>
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Navigation
-      className=""
-      currPage="Current page"
+    <Component
       lastPage={4}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -6139,12 +4582,6 @@ exports[`component render titles 1`] = `
       onPreviousClick={[Function]}
       onSetPage={[Function]}
       page={1}
-      pagesTitle="books"
-      paginationTitle="Pagination"
-      toFirstPage="Go to first page"
-      toLastPage="Go to last page"
-      toNextPage="Go to next page"
-      toPreviousPage="Go to previous page"
     >
       <nav
         aria-label="Pagination"
@@ -6169,7 +4606,6 @@ exports[`component render titles 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6214,7 +4650,6 @@ exports[`component render titles 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6256,9 +4691,7 @@ exports[`component render titles 1`] = `
             aria-hidden="true"
           >
             of 
-            4
-             
-            books
+            4 s
           </span>
         </div>
         <Component
@@ -6280,7 +4713,6 @@ exports[`component render titles 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6325,7 +4757,6 @@ exports[`component render titles 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6352,68 +4783,19 @@ exports[`component render titles 1`] = `
           </button>
         </Component>
       </nav>
-    </Navigation>
+    </Component>
   </div>
-</Pagination>
+</Component>
 `;
 
 exports[`component render up drop direction 1`] = `
-<Pagination
-  className=""
+<Component
   dropDirection="up"
   itemCount={40}
-  itemsEnd={null}
-  itemsStart={null}
-  onFirstClick={[Function]}
-  onLastClick={[Function]}
-  onNextClick={[Function]}
-  onPageInput={[Function]}
-  onPerPageSelect={[Function]}
-  onPreviousClick={[Function]}
-  onSetPage={[Function]}
-  page={1}
-  perPage={10}
-  perPageOptions={
-    Array [
-      Object {
-        "title": "10",
-        "value": 10,
-      },
-      Object {
-        "title": "20",
-        "value": 20,
-      },
-      Object {
-        "title": "50",
-        "value": 50,
-      },
-      Object {
-        "title": "100",
-        "value": 100,
-      },
-    ]
-  }
-  titles={
-    Object {
-      "currPage": "Current page",
-      "items": "items",
-      "itemsPerPage": "Items per page",
-      "optionsToggle": "Select",
-      "pages": "pages",
-      "paginationTitle": "Pagination",
-      "perPageSuffix": "per page",
-      "toFirstPage": "Go to first page",
-      "toLastPage": "Go to last page",
-      "toNextPage": "Go to next page",
-      "toPreviousPage": "Go to previous page",
-    }
-  }
-  toggleTemplate={[Function]}
-  variant="top"
-  widgetId="pagination-options-menu"
 >
   <div
     className="pf-c-pagination"
+    id="pagination-options-menu"
   >
     <div
       className="pf-c-pagination__total-items"
@@ -6470,16 +4852,14 @@ exports[`component render up drop direction 1`] = `
           direction="up"
           dropdownItems={
             Array [
-              <DropdownItem
+              <Item
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -6492,22 +4872,19 @@ exports[`component render up drop direction 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
-                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
                 </i>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -6515,17 +4892,15 @@ exports[`component render up drop direction 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -6533,17 +4908,15 @@ exports[`component render up drop direction 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Item>,
+              <Item
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href=""
+                href="#"
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -6551,7 +4924,7 @@ exports[`component render up drop direction 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
+              </Item>,
             ]
           }
           isGrouped={false}
@@ -6560,7 +4933,7 @@ exports[`component render up drop direction 1`] = `
           onSelect={[Function]}
           position="left"
           toggle={
-            <OptionsToggle
+            <Unknown
               firstIndex={1}
               isOpen={false}
               itemCount={40}
@@ -6575,243 +4948,129 @@ exports[`component render up drop direction 1`] = `
             />
           }
         >
-          <DropdownWithContext
-            className=""
-            direction="up"
-            dropdownItems={
-              Array [
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item pf-m-selected"
-                  component="button"
-                  data-action="per-page-10"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  10
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                  <i
-                    className="pf-c-options-menu__menu-item-icon"
-                  >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    />
-                  </i>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-20"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  20
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-50"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  50
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-                <DropdownItem
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-100"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
-                  onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
-                >
-                  100
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </DropdownItem>,
-              ]
-            }
-            isGrouped={false}
-            isOpen={false}
-            isPlain={true}
-            onSelect={[Function]}
-            position="left"
-            toggle={
-              <OptionsToggle
-                firstIndex={1}
-                isOpen={false}
-                itemCount={40}
-                itemsTitle="items"
-                lastIndex={10}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
-              />
-            }
+          <div
+            className="pf-c-dropdown pf-m-top"
           >
-            <div
-              className="pf-c-dropdown pf-m-top"
+            <Component
+              ariaHasPopup={true}
+              firstIndex={1}
+              id="pf-toggle-id-10"
+              isOpen={false}
+              isPlain={true}
+              itemCount={40}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={10}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              showToggle={true}
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
             >
-              <OptionsToggle
-                ariaHasPopup={true}
-                firstIndex={1}
-                id="pf-toggle-id-10"
-                isOpen={false}
-                isPlain={true}
-                itemCount={40}
-                itemsTitle="items"
-                key=".0"
-                lastIndex={10}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
               >
-                <div
-                  className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                <span
+                  className="pf-c-options-menu__toggle-text"
                 >
-                  <span
-                    className="pf-c-options-menu__toggle-text"
+                  <Component
+                    firstIndex={1}
+                    itemCount={40}
+                    itemsTitle="items"
+                    lastIndex={10}
                   >
-                    <ToggleTemplate
-                      firstIndex={1}
-                      itemCount={40}
-                      itemsTitle="items"
-                      lastIndex={10}
-                    >
-                      <strong>
-                        1
-                         - 
-                        10
-                      </strong>
-                       
-                      of 
-                      <strong>
-                        40
-                      </strong>
-                       
-                      items
-                    </ToggleTemplate>
-                  </span>
-                  <DropdownToggle
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     
+                    of 
+                    <strong>
+                      40
+                    </strong>
+                     
+                    items
+                  </Component>
+                </span>
+                <DropdownToggle
+                  aria-label="Select"
+                  className="pf-c-options-menu__toggle-button"
+                  iconComponent={[Function]}
+                  id="pagination-options-menu-toggle"
+                  isActive={false}
+                  isFocused={false}
+                  isHovered={false}
+                  isOpen={false}
+                  isPlain={false}
+                  isSplitButton={true}
+                  onToggle={[Function]}
+                  parentRef={null}
+                >
+                  <Toggle
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
-                    iconComponent={[Function]}
                     id="pagination-options-menu-toggle"
                     isActive={false}
+                    isDisabled={false}
                     isFocused={false}
                     isHovered={false}
                     isOpen={false}
                     isPlain={false}
                     isSplitButton={true}
+                    onEnter={[Function]}
                     onToggle={[Function]}
                     parentRef={null}
+                    type={null}
                   >
-                    <Toggle
+                    <button
+                      aria-expanded={false}
                       aria-label="Select"
-                      className="pf-c-options-menu__toggle-button"
+                      className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
+                      disabled={false}
                       id="pagination-options-menu-toggle"
-                      isActive={false}
-                      isDisabled={false}
-                      isFocused={false}
-                      isHovered={false}
-                      isOpen={false}
-                      isPlain={false}
-                      isSplitButton={true}
-                      onEnter={[Function]}
-                      onToggle={[Function]}
-                      parentRef={null}
-                      type={null}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      type="button"
                     >
-                      <button
-                        aria-expanded={false}
-                        aria-label="Select"
-                        className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
-                        disabled={false}
-                        id="pagination-options-menu-toggle"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        type="button"
+                      <CaretDownIcon
+                        className=""
+                        color="currentColor"
+                        size="sm"
+                        title={null}
                       >
-                        <CaretDownIcon
+                        <svg
+                          aria-hidden={true}
+                          aria-labelledby={null}
                           className=""
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            className=""
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style={
+                            Object {
+                              "verticalAlign": "-0.125em",
                             }
-                            viewBox="0 0 320 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                              transform=""
-                            />
-                          </svg>
-                        </CaretDownIcon>
-                      </button>
-                    </Toggle>
-                  </DropdownToggle>
-                </div>
-              </OptionsToggle>
-            </div>
-          </DropdownWithContext>
+                          }
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </CaretDownIcon>
+                    </button>
+                  </Toggle>
+                </DropdownToggle>
+              </div>
+            </Component>
+          </div>
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Navigation
-      className=""
+    <Component
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
@@ -6821,7 +5080,7 @@ exports[`component render up drop direction 1`] = `
       onPreviousClick={[Function]}
       onSetPage={[Function]}
       page={1}
-      pagesTitle="pages"
+      pagesTitle="page"
       paginationTitle="Pagination"
       toFirstPage="Go to first page"
       toLastPage="Go to last page"
@@ -6851,7 +5110,6 @@ exports[`component render up drop direction 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6896,7 +5154,6 @@ exports[`component render up drop direction 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6938,9 +5195,7 @@ exports[`component render up drop direction 1`] = `
             aria-hidden="true"
           >
             of 
-            4
-             
-            pages
+            4 pages
           </span>
         </div>
         <Component
@@ -6962,7 +5217,6 @@ exports[`component render up drop direction 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -7007,7 +5261,6 @@ exports[`component render up drop direction 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -7034,7 +5287,7 @@ exports[`component render up drop direction 1`] = `
           </button>
         </Component>
       </nav>
-    </Navigation>
+    </Component>
   </div>
-</Pagination>
+</Component>
 `;

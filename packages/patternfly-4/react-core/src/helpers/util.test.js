@@ -1,7 +1,15 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { ApplicationLauncher, DropdownItem, Dropdown, DropdownToggle } from '@patternfly/react-core';
-import { capitalize, getUniqueId, debounce, isElementInView, sideElementIsOutOfView, fillTemplate, pluralize } from './util';
+import {
+  capitalize,
+  getUniqueId,
+  debounce,
+  isElementInView,
+  sideElementIsOutOfView,
+  fillTemplate,
+  pluralize
+} from './util';
 import { KEY_CODES, SIDE } from './constants';
 
 const createMockHtmlElement = bounds => ({
