@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.45.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.44.0...@patternfly/react-core@3.45.0) (2019-06-14)
+
+
+### Features
+
+* **PF4: Application launcher:** Use dropdown components in App launcher ([#2101](https://github.com/patternfly/patternfly-react/issues/2101)) ([44a2ea1](https://github.com/patternfly/patternfly-react/commit/44a2ea1))
+
+
+
+
+
 # [3.44.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.43.0...@patternfly/react-core@3.44.0) (2019-06-14)
 
 
