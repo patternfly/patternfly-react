@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.21.0 (2019-06-14)
+
+
+### Features
+
+* **Accordion:** Accordion Component TypeScript Conversion ([#2121](https://github.com/patternfly/patternfly-react/issues/2121)) ([e2e981d](https://github.com/patternfly/patternfly-react/commit/e2e981d))
+
+
+
+
+
 # [1.20.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.19.1...@patternfly/react-integration@1.20.0) (2019-06-12)
 
 

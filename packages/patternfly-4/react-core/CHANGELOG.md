@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.46.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.45.0...@patternfly/react-core@3.46.0) (2019-06-14)
+
+
+### Bug Fixes
+
+* **Alert:** set the variant prop to info by default ([#2218](https://github.com/patternfly/patternfly-react/issues/2218)) ([bd8afad](https://github.com/patternfly/patternfly-react/commit/bd8afad))
+* **react-icons:** add noVerticalAlign prop to d.ts file ([#2238](https://github.com/patternfly/patternfly-react/issues/2238)) ([c50143c](https://github.com/patternfly/patternfly-react/commit/c50143c)), closes [#2237](https://github.com/patternfly/patternfly-react/issues/2237)
+
+
+### Features
+
+* **Accordion:** Accordion Component TypeScript Conversion ([#2121](https://github.com/patternfly/patternfly-react/issues/2121)) ([e2e981d](https://github.com/patternfly/patternfly-react/commit/e2e981d))
+
+
+
+
+
 # [3.45.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.44.0...@patternfly/react-core@3.45.0) (2019-06-14)
 
 
