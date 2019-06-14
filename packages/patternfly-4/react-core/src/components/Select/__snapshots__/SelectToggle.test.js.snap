@@ -33,6 +33,7 @@ exports[`state active 1`] = `
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
       color="currentColor"
+      noVerticalAlign={false}
       size="sm"
       title={null}
     >
@@ -94,6 +95,7 @@ exports[`state focus 1`] = `
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
       color="currentColor"
+      noVerticalAlign={false}
       size="sm"
       title={null}
     >
@@ -155,6 +157,7 @@ exports[`state hover 1`] = `
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
       color="currentColor"
+      noVerticalAlign={false}
       size="sm"
       title={null}
     >

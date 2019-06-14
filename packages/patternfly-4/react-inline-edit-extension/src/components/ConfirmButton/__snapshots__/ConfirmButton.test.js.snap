@@ -6,6 +6,7 @@ exports[`it renders properly 1`] = `
 >
   <CheckIcon
     color="currentColor"
+    noVerticalAlign={false}
     size="sm"
     title={null}
   />

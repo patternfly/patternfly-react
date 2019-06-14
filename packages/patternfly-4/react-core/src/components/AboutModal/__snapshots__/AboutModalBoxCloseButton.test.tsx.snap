@@ -11,6 +11,7 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
   >
     <TimesIcon
       color="currentColor"
+      noVerticalAlign={false}
       size="sm"
       title={null}
     />
@@ -29,6 +30,7 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
   >
     <TimesIcon
       color="currentColor"
+      noVerticalAlign={false}
       size="sm"
       title={null}
     />
