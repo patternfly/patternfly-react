@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Select from './Select';
-import SelectOption from './SelectOption';
-import SelectGroup from './SelectGroup';
+import { Select } from './Select';
+import { SelectOption } from './SelectOption';
+import { SelectGroup } from './SelectGroup';
 import { SelectVariant } from './selectConstants';
 
 const selectOptions = [

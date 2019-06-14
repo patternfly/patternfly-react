@@ -5,7 +5,7 @@ propComponents: ['Select', 'SelectOption', 'SelectGroup']
 typescript: true
 ---
 
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
 
 ## Single select input
 

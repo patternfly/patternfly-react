@@ -19,15 +19,11 @@ export const SelectGroup: React.FunctionComponent<SelectGroupProps> = ({
   label = '',
   titleId = '',
   ...props
-}) => (
-  <React.Fragment>
-    <div {...props} className={css(styles.selectMenuGroup, className)}>
-      <div className={css(styles.selectMenuGroupTitle)} id={titleId} aria-hidden>
-        {label}
-      </div>
-      {children}
+}: SelectGroupProps) => (
+  <div {...props} className={css(styles.selectMenuGroup, className)}>
+    <div className={css(styles.selectMenuGroupTitle)} id={titleId} aria-hidden>
+      {label}
     </div>
-  </React.Fragment>
+    {children}
+  </div>
 );
-
-export default SelectGroup;

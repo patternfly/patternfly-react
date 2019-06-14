@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SelectOption from './SelectOption';
+import { SelectOption } from './SelectOption';
 
 describe('select options', () => {
   test('renders with value parameter successfully', () => {

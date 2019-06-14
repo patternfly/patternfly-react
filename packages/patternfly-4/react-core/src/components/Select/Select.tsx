@@ -5,9 +5,9 @@ import formStyles from '@patternfly/react-styles/css/components/FormControl/form
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import { TimesCircleIcon } from '@patternfly/react-icons';
-import SelectMenu from './SelectMenu';
-import SelectOption from './SelectOption';
-import SelectToggle from './SelectToggle';
+import { SelectMenu } from './SelectMenu';
+import { SelectOption } from './SelectOption';
+import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex } from '../../helpers/util';
@@ -386,5 +386,3 @@ export class Select extends React.Component<SelectProps, SelectState> {
     );
   }
 }
-
-export default Select;

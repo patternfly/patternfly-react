@@ -150,5 +150,3 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
     );
   }
 }
-
-export default SelectMenu;

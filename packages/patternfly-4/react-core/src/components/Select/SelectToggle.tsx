@@ -246,4 +246,3 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
   }
 }
 
-export default SelectToggle;

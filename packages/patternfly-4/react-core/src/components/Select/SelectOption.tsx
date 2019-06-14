@@ -152,5 +152,3 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     );
   }
 }
-
-export default SelectOption;
