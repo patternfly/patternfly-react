@@ -50,13 +50,13 @@ import { ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts
     </div>
   </div>
   <ChartLegend
-        data={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-        height={35}
-        orientation={'horizontal'}
-        responsive={false}
-        themeColor={ChartThemeColor.multi}
-        themeVariant={ChartThemeVariant.light}
-        x={8}
-      />
+    data={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
+    height={35}
+    orientation={'horizontal'}
+    responsive={false}
+    themeColor={ChartThemeColor.multi}
+    themeVariant={ChartThemeVariant.light}
+    x={8}
+  />
 </div>
 ```

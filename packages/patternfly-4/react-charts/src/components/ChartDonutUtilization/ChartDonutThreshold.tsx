@@ -511,10 +511,9 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   const renderChildren = () =>
     React.Children.toArray(children).map(child => {
       if (child.props) {
-        const {data: childData, ...childProps} = child.props;
+        const { data: childData, ...childProps } = child.props;
         const datum = Data.formatData([childData], childProps, ['x', 'y']); // Format child data independently of this component's props
-        const dynamicTheme =
-          childProps.theme ||
+        const dynamicTheme = childProps.theme ||
           getDonutThresholdDynamicTheme(childProps.themeColor || themeColor,
             childProps.themeVariant || themeVariant);
         const legendPos = childProps.legendPosition || legendPosition;
