@@ -16,7 +16,7 @@ export enum AlertVariant {
 export interface AlertProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'action' | 'title'> {
   /** Adds Alert variant styles  */
-  variant: 'success' | 'danger' | 'warning' | 'info';
+  variant?: 'success' | 'danger' | 'warning' | 'info';
   /** Flag to indicate if the Alert is inline */
   isInline?: boolean;
   /** Title of the Alert  */
@@ -34,7 +34,7 @@ export interface AlertProps
 };
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
-  variant,
+  variant = AlertVariant.info,
   isInline = false,
   variantLabel = `${capitalize(variant)} alert:`,
   'aria-label': ariaLabel = `${capitalize(variant)} Alert`,
