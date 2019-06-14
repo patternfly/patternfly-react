@@ -1,7 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { ApplicationLauncher } from './ApplicationLauncher';
-import { DropdownItem } from '../Dropdown/DropdownItem';
+import DropdownItem from '../Dropdown/DropdownItem';
 
 import { DropdownPosition, DropdownDirection } from '../Dropdown/dropdownConstants';
 import DropdownSeparator from '../Dropdown/Separator';
@@ -26,22 +26,22 @@ const dropdownItems = [
 
 describe('ApplicationLauncher', () => {
   test('regular', () => {
-    const view = shallow(<ApplicationLauncher dropdownItems={dropdownItems} />);
+    const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} />);
     expect(view).toMatchSnapshot();
   });
 
   test('right aligned', () => {
-    const view = shallow(<ApplicationLauncher dropdownItems={dropdownItems} position={DropdownPosition.right} />);
+    const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} position={DropdownPosition.right} />);
     expect(view).toMatchSnapshot();
   });
 
   test('dropup', () => {
-    const view = shallow(<ApplicationLauncher dropdownItems={dropdownItems} direction={DropdownDirection.up} />);
+    const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} direction={DropdownDirection.up} />);
     expect(view).toMatchSnapshot();
   });
 
   test('dropup + right aligned', () => {
-    const view = shallow(
+    const view = mount(
       <ApplicationLauncher
         dropdownItems={dropdownItems}
         direction={DropdownDirection.up}
@@ -52,7 +52,7 @@ describe('ApplicationLauncher', () => {
   });
 
   test('expanded', () => {
-    const view = shallow(<ApplicationLauncher dropdownItems={dropdownItems} isOpen />);
+    const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} isOpen />);
     expect(view).toMatchSnapshot();
   });
 });
