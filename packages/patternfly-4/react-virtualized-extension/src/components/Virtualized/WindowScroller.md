@@ -95,7 +95,7 @@ class WindowScrollerExample extends React.Component {
       const {rows, columns} = this.state;
       const text = rows[index].cells[0];
 
-      const className = clsx({
+      const className = clsx('pf-l-grid', {
         isVisible: isVisible
       });
 
