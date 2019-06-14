@@ -474,17 +474,6 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
     return Math.round((donutHeight - dynamicHeight) / 2);
   }
 
-  // Returns the vertical shift for the donut utilization legend and subtitle
-  const getDy = (dynamicTheme: ChartThemeDefinition, position: string) => {
-    const dynamicWidth = donutWidth - (theme.pie.width - dynamicTheme.pie.width);
-    switch (position) {
-      case 'bottom':
-        return getDonutDy(dynamicTheme) + Math.round((donutWidth - dynamicWidth) / 2);
-      default:
-        return getDonutDy(dynamicTheme);
-    }
-  }
-
   // Returns the horizontal shift for the donut utilization legend
   const getLegendDx = (dynamicTheme: ChartThemeDefinition, position: string) => {
     const dynamicWidth = donutWidth - (theme.pie.width - dynamicTheme.pie.width);
@@ -495,6 +484,17 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
         return 0;
     }
   };
+
+  // Returns the vertical shift for the donut utilization legend and subtitle
+  const getLegendAndSubTitleDy = (dynamicTheme: ChartThemeDefinition, position: string) => {
+    const dynamicWidth = donutWidth - (theme.pie.width - dynamicTheme.pie.width);
+    switch (position) {
+      case 'bottom':
+        return getDonutDy(dynamicTheme) + Math.round((donutWidth - dynamicWidth) / 2);
+      default:
+        return getDonutDy(dynamicTheme);
+    }
+  }
 
   // Returns the horizontal shift for the donut utilization subtitle
   const getSubTitleDx = (dynamicTheme: ChartThemeDefinition, position: string) => {
@@ -528,19 +528,18 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
           endAngle: 360 * (datum[0]._y ? datum[0]._y / 100 : 0),
           height,
           legendDx: getLegendDx(dynamicTheme, legendPos),
-          legendDy: getDy(dynamicTheme, legendPos),
+          legendDy: getLegendAndSubTitleDy(dynamicTheme, legendPos),
           legendPosition: legendPos,
           showStatic: false,
           standalone: false,
           subTitleDx: getSubTitleDx(dynamicTheme, subTitlePos),
-          subTitleDy: getDy(dynamicTheme, subTitlePos),
+          subTitleDy: getLegendAndSubTitleDy(dynamicTheme, subTitlePos),
           subTitlePosition: subTitlePos,
           theme: dynamicTheme,
           width,
           ...childProps,
         });
       }
-      return child;
     });
 
   // Static threshold dount chart

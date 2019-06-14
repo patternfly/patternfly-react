@@ -492,7 +492,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   // destructure last
   theme = getDonutTheme(themeColor, themeVariant),
   legendOrientation = theme.legend.orientation as ChartDonutLegendOrientation,
-  capHeight = title && subTitle ? 1.1 : undefined,
+  capHeight = 1.1,
   height = theme.pie.height,
   width = theme.pie.width,
   donutHeight = Math.min(height, width),
@@ -575,7 +575,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     const props = titleComponent ? titleComponent.props : {};
     const showBoth = title && subTitle && subTitlePosition == ChartDonutSubTitlePosition.center;
     return React.cloneElement(titleComponent, {
-      capHeight: showBoth ? capHeight : undefined,
+      ...showBoth && { capHeight },
       style: [DonutStyles.label.title, DonutStyles.label.subTitle],
       text: showBoth ? [title, subTitle] : title,
       textAnchor: 'middle',
