@@ -16,6 +16,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AboutModalDemo
   },
   {
+    id: 'accordion-demo',
+    name: 'Accordion Demo',
+    componentType: Examples.AccordionDemo
+  },
+  {
     id: 'alert-demo',
     name: 'Alert Demo',
     componentType: Examples.AlertDemo
