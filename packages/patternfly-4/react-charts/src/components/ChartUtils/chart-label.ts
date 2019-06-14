@@ -1,4 +1,3 @@
-import { getLegendDimensions } from './chart-legend';
 import { CommonStyles } from '../ChartTheme/themes/common-theme';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 

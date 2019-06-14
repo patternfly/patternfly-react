@@ -147,11 +147,11 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   donutHeight?: number;
   /**
-   * Defines a horizontal shift from the x coordinate. This should not be set manually.
+   * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
   donutDx?: number;
   /**
-   * Defines a vertical shift from the y coordinate. This should not be set manually.
+   * Defines a vertical shift from the y coordinate. It should not be set manually.
    */
   donutDy?: number;
   /**
@@ -299,11 +299,11 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   legendData?: any[];
   /**
-   * Defines a horizontal shift from the x coordinate. This should not be set manually.
+   * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
   legendDx?: number;
   /**
-   * Defines a vertical shift from the y coordinate. This should not be set manually.
+   * Defines a vertical shift from the y coordinate. It should not be set manually.
    */
   legendDy?: number;
   /**
@@ -390,11 +390,11 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   subTitleComponent?: React.ReactElement<any>;
   /**
-   * Defines a horizontal shift from the x coordinate. This should not be set manually.
+   * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
   subTitleDx?: number;
   /**
-   * Defines a vertical shift from the y coordinate. This should not be set manually.
+   * Defines a vertical shift from the y coordinate. It should not be set manually.
    */
   subTitleDy?: number;
   /**
@@ -506,12 +506,6 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       return null;
     }
     const props = legendComponent.props ? legendComponent.props : {};
-    const legendDimensions = getLegendDimensions({
-      legendData,
-      legendOrientation,
-      legendProps: props,
-      theme
-    });
     return React.cloneElement(legendComponent, {
       data: legendData,
       orientation: legendOrientation,
@@ -523,7 +517,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         legendData,
         legendOrientation: props.legendOrientation ? props.legendOrientation : legendOrientation,
         legendPosition,
-        legendWidth: legendDimensions.width,
+        legendProps: props,
         theme,
         svgWidth: width
       }),
@@ -532,7 +526,8 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         chartType: 'pie',
         dy: legendDy,
         legendData: props.data ? props.data : legendData,
-        legendHeight: legendDimensions.height,
+        legendOrientation: props.legendOrientation ? props.legendOrientation : legendOrientation,
+        legendProps: props,
         legendPosition,
         theme
       }),

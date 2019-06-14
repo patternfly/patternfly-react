@@ -1,4 +1,5 @@
 import { VictoryLegend } from 'victory';
+import { TextSize } from 'victory-core';
 import { ChartLegendProps } from '../ChartLegend/ChartLegend';
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { CommonStyles } from '../ChartTheme/themes/common-theme';
@@ -9,7 +10,7 @@ interface ChartLegendPaddingXInterface {
   legendData: any[]; // The legend data used to determine width
   legendOrientation: string; // Orientation of legend (e.g., vertical, horizontal)
   legendPosition: string; // Position of legend (e.g., bottom, right)
-  legendWidth: number; // Width of legend within SVG
+  legendProps: any; // The legend props used to determine width
   svgWidth: number; // Overall width of SVG
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
 }
@@ -19,8 +20,9 @@ interface ChartLegendPaddingYInterface {
   chartType: string; // The type of chart (e.g., pie) to lookup for props like padding
   dy?: number; // Vertical shift from the x coordinate
   legendData: any[]; // The legend data used to determine width
-  legendHeight: number; // Height of legend within SVG
+  legendOrientation: string; // Orientation of legend (e.g., vertical, horizontal)
   legendPosition: string; // Position of legend (e.g., bottom, right)
+  legendProps: any; // The legend props used to determine width
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
 }
 
@@ -31,6 +33,12 @@ interface ChartLegendDimensionsInterface {
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
 }
 
+interface ChartLegendTextSizeInterface {
+  legendData: any[]; // The legend data used to determine width
+  legendOrientation?: string; // Orientation of legend (e.g., vertical, horizontal)
+  theme: ChartThemeDefinition; // The theme that will be applied to the chart
+}
+
 // Returns chart padding
 export const getChartPadding = (chartType: string = 'chart', theme: ChartThemeDefinition) => {
   const offset = 4;
@@ -38,7 +46,6 @@ export const getChartPadding = (chartType: string = 'chart', theme: ChartThemeDe
     ? theme[chartType as keyof ChartThemeDefinition].padding * 2 : 0;
   return padding + offset;
 };
-
 
 // Returns legend dimensions
 export const getLegendDimensions = ({
@@ -63,22 +70,27 @@ export const getLegendX = ({
   chartWidth,
   dx = 0,
   legendData,
-  legendPosition,
   legendOrientation,
-  legendWidth,
-  svgWidth
+  legendPosition,
+  legendProps,
+  svgWidth,
+  theme
 }: ChartLegendPaddingXInterface) => {
-  if (!legendWidth) {
-    return 0;
-  }
-  const borderPadding = getBorderPaddingWorkAround(legendData, legendOrientation);
-
-  const test = Math.round((svgWidth - (legendWidth - borderPadding)) / 2) + dx;
-
+  const legendDimensions = getLegendDimensions({
+    legendData,
+    legendOrientation,
+    legendProps,
+    theme
+  });
+  const textSizeWorkAround = getTextSizeWorkAround({
+    legendData,
+    legendOrientation,
+    theme
+  });
   switch (legendPosition) {
     case 'bottom':
-      return svgWidth > legendWidth - borderPadding
-        ? Math.round((svgWidth - (legendWidth - borderPadding)) / 2) + dx : dx;
+      return svgWidth > legendDimensions.width - textSizeWorkAround
+        ? Math.round((svgWidth - (legendDimensions.width - textSizeWorkAround)) / 2) + dx : dx;
     case 'right':
       return chartWidth + CommonStyles.legend.margin + dx;
     default:
@@ -93,12 +105,19 @@ export const getLegendY = ({
   legendPosition,
   chartType,
   legendData,
-  legendHeight,
+  legendOrientation,
+  legendProps,
   theme
 }: ChartLegendPaddingYInterface) => {
+  const legendDimensions = getLegendDimensions({
+    legendData,
+    legendOrientation,
+    legendProps,
+    theme
+  });
   const getLegendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 15 : 0);
   const dHeight = chartHeight ? chartHeight + getChartPadding(chartType, theme) : 0;
-  const lHeight = legendHeight ? legendHeight + getLegendPadding(legendData) : 0;
+  const lHeight = legendDimensions.height ? legendDimensions.height + getLegendPadding(legendData) : 0;
 
   switch (legendPosition) {
     case 'bottom':
@@ -112,19 +131,34 @@ export const getLegendY = ({
   }
 };
 
-const getBorderPaddingWorkAround = (legendData: any[], legendOrientation: string) => {
-  const offset = .4;
-  let result = 0;
-  if (legendData && legendOrientation === 'vertical') {
-    // For vertical legends, the greatest number of chars affects right-side border padding
+// Returns an approximation of over-sized text width due to growing character count
+//
+// See https://github.com/FormidableLabs/victory/issues/864
+const getTextSizeWorkAround = ({
+  legendData,
+  legendOrientation,
+  theme
+}: ChartLegendTextSizeInterface) => {
+  const style = theme.legend.style.labels;
+  if (!(legendData && style.fontFamily.includes('overpass'))) {
+    return 0;
+  }
+
+  // For horizontal legends, account for the growing char count of the last legend item
+  let result = legendData[legendData.length - 1].name;
+
+  // For vertical legends, account for the growing char count of the longest legend item
+  if (legendOrientation === 'vertical') {
     legendData.forEach(data => {
-      if (data.name && data.name.length > result) {
-        result = data.name.length;
+      if (data.name && data.name.length > result.length) {
+        result = data.name;
       }
     });
-  } else if (legendData && legendData[legendData.length - 1].name) {
-    // For horizontal legends, the number of chars for the last legend item affects right-side border padding
-    result = legendData[legendData.length - 1].name.length;
   }
-  return result + result * offset;
+  const textSize = TextSize.approximateTextSize(result,  style);
+  const adjustedTextSize = TextSize.approximateTextSize(result,  {
+    ...style,
+    characterConstant: 2.5875 // Average pixels per glyph
+  });
+  return Math.abs(textSize.width - adjustedTextSize.width);
 };

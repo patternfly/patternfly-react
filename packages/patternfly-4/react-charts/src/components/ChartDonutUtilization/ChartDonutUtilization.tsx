@@ -126,11 +126,11 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   dataComponent?: React.ReactElement<any>;
   /**
-   * Defines a horizontal shift from the x coordinate. This should not be set manually.
+   * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
   donutDx?: number;
   /**
-   * Defines a vertical shift from the y coordinate. This should not be set manually.
+   * Defines a vertical shift from the y coordinate. It should not be set manually.
    */
   donutDy?: number;
   /**
@@ -169,11 +169,11 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   donutWidth?: number;
   /**
-   * Defines a horizontal shift from the x coordinate for legend and subtitle. This should not be set manually.
+   * Defines a horizontal shift from the x coordinate for legend and subtitle. It should not be set manually.
    */
   dx?: number;
   /**
-   * Defines a vertical shift from the y coordinate for legend and subtitle. This should not be set manually.
+   * Defines a vertical shift from the y coordinate for legend and subtitle. It should not be set manually.
    */
   dy?: number;
   /**
@@ -293,11 +293,11 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   legendData?: any[];
   /**
-   * Defines a horizontal shift from the x coordinate. This should not be set manually.
+   * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
   legendDx?: number;
   /**
-   * Defines a vertical shift from the y coordinate. This should not be set manually.
+   * Defines a vertical shift from the y coordinate. It should not be set manually.
    */
   legendDy?: number;
   /**
@@ -359,7 +359,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   sharedEvents?: any;
   /**
-   * This will show the static, unused portion of the donut chart
+   * This will show the static, unused portion of the donut chart. It should not be set manually.
    */
   showStatic?: boolean;
   /**
@@ -401,11 +401,11 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   subTitleComponent?: React.ReactElement<any>;
   /**
-   * Defines a horizontal shift from the x coordinate. This should not be set manually.
+   * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
   subTitleDx?: number;
   /**
-   * Defines a vertical shift from the y coordinate. This should not be set manually.
+   * Defines a vertical shift from the y coordinate. It should not be set manually.
    */
   subTitleDy?: number;
   /**
