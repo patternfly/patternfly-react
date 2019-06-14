@@ -52,7 +52,7 @@ const defaultProps = {
   onSelect: Function.prototype
 };
 
-class Dropdown extends React.Component {
+export class DropdownWithContext extends React.Component {
   onEnter = () => {
     this.openedOnEnter = true;
   };
@@ -88,48 +88,66 @@ class Dropdown extends React.Component {
       renderedContent = children;
     }
     return (
-      <div
-        {...props}
-        className={css(
-          styles.dropdown,
-          direction === DropdownDirection.up && styles.modifiers.top,
-          isOpen && styles.modifiers.expanded,
-          className
+      <DropdownContext.Consumer>
+        {({ baseClass }) => (
+          <div
+            {...props}
+            className={css(
+              baseClass,
+              direction === DropdownDirection.up && styles.modifiers.top,
+              isOpen && styles.modifiers.expanded,
+              className
+            )}
+            ref={ref => {
+              this.parentRef = ref;
+            }}
+          >
+            {Children.map(toggle, oneToggle =>
+              cloneElement(oneToggle, {
+                parentRef: this.parentRef,
+                isOpen,
+                id,
+                isPlain,
+                ariaHasPopup,
+                onEnter: this.onEnter
+              })
+            )}
+            {isOpen && (
+              <DropdownMenu
+                component={component}
+                isOpen={isOpen}
+                position={position}
+                aria-labelledby={id}
+                openedOnEnter={this.openedOnEnter}
+                isGrouped={isGrouped}
+              >
+                {renderedContent}
+              </DropdownMenu>
+            )}
+          </div>
         )}
-        ref={ref => {
-          this.parentRef = ref;
-        }}
-      >
-        {Children.map(toggle, oneToggle =>
-          cloneElement(oneToggle, {
-            parentRef: this.parentRef,
-            isOpen,
-            id,
-            isPlain,
-            ariaHasPopup,
-            onEnter: this.onEnter
-          })
-        )}
-        {isOpen && (
-          <DropdownContext.Provider value={event => onSelect && onSelect(event)}>
-            <DropdownMenu
-              component={component}
-              isOpen={isOpen}
-              position={position}
-              aria-labelledby={id}
-              openedOnEnter={this.openedOnEnter}
-              isGrouped={isGrouped}
-            >
-              {renderedContent}
-            </DropdownMenu>
-          </DropdownContext.Provider>
-        )}
-      </div>
+      </DropdownContext.Consumer>
     );
   }
 }
 
+const Dropdown = ({ onSelect, ...props }) => (
+  <DropdownContext.Provider
+    value={{
+      onSelect: event => onSelect && onSelect(event),
+      menuClass: styles.dropdownMenu,
+      itemClass: styles.dropdownMenuItem,
+      toggleClass: styles.dropdownToggle,
+      baseClass: styles.dropdown
+    }}
+  >
+    <DropdownWithContext {...props} />
+  </DropdownContext.Provider>
+);
+
 Dropdown.propTypes = propTypes;
 Dropdown.defaultProps = defaultProps;
+DropdownWithContext.propTypes = propTypes;
+DropdownWithContext.defaultProps = defaultProps;
 
 export default Dropdown;

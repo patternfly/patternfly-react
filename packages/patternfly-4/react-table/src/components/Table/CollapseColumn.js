@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AngleDownIcon, AngleRightIcon } from '@patternfly/react-icons';
+import { AngleDownIcon } from '@patternfly/react-icons';
 import { css } from '@patternfly/react-styles';
 import { Button } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
@@ -29,7 +29,7 @@ const CollapseColumn = ({ children, onToggle, isOpen, className, ...props }) => 
         onClick={onToggle}
         aria-expanded={isOpen}
       >
-        {isOpen ? <AngleDownIcon /> : <AngleRightIcon />}
+        <AngleDownIcon />
       </Button>
     )}
     {children}

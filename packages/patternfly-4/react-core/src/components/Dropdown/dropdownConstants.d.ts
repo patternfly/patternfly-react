@@ -11,9 +11,13 @@ export enum DropdownDirection {
   down = 'down'
 }
 
-export const DropdownContext: React.Context<
-  (event: any) => void
->
+export const DropdownContext: React.Context<{
+  onSelect: (event: any) => void,
+  menuClass?: string,
+  itemClass?: string,
+  toggleClass?: string,
+  baseClass?: string
+}>
 
 export const DropdownArrowContext: React.Context<{
   keyHandler: (index: number, position: any, custom: boolean) => void,

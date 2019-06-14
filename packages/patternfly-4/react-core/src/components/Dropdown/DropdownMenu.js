@@ -148,10 +148,10 @@ class DropdownMenu extends React.Component {
       >
         {Component === 'div' ? (
           <DropdownContext.Consumer>
-            {onSelect => (
+            {({ onSelect, menuClass }) => (
               <ul
                 className={css(
-                  styles.dropdownMenu,
+                  menuClass,
                   position === DropdownPosition.right && styles.modifiers.alignRight,
                   className
                 )}
@@ -164,31 +164,39 @@ class DropdownMenu extends React.Component {
           </DropdownContext.Consumer>
         ) : (
           (isGrouped && (
-            <div
-              {...props}
-              className={css(
-                styles.dropdownMenu,
-                position === DropdownPosition.right && styles.modifiers.alignRight,
-                className
+            <DropdownContext.Consumer>
+              {({ menuClass }) => (
+                <div
+                  {...props}
+                  className={css(
+                    menuClass,
+                    position === DropdownPosition.right && styles.modifiers.alignRight,
+                    className
+                  )}
+                  hidden={!isOpen}
+                  role="menu"
+                >
+                  {this.extendChildren()}
+                </div>
               )}
-              hidden={!isOpen}
-              role="menu"
-            >
-              {this.extendChildren()}
-            </div>
+            </DropdownContext.Consumer>
           )) || (
-            <Component
-              {...props}
-              className={css(
-                styles.dropdownMenu,
-                position === DropdownPosition.right && styles.modifiers.alignRight,
-                className
+            <DropdownContext.Consumer>
+              {({ menuClass }) => (
+                <Component
+                  {...props}
+                  className={css(
+                    menuClass,
+                    position === DropdownPosition.right && styles.modifiers.alignRight,
+                    className
+                  )}
+                  hidden={!isOpen}
+                  role="menu"
+                >
+                  {this.extendChildren()}
+                </Component>
               )}
-              hidden={!isOpen}
-              role="menu"
-            >
-              {this.extendChildren()}
-            </Component>
+            </DropdownContext.Consumer>
           )
         )}
       </DropdownArrowContext.Provider>

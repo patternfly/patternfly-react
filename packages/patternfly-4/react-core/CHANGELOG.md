@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.44.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.43.0...@patternfly/react-core@3.44.0) (2019-06-14)
+
+
+### Features
+
+* **PF4 Dropdown:** Wrap dropdown with context ([#2227](https://github.com/patternfly/patternfly-react/issues/2227)) ([5bb8051](https://github.com/patternfly/patternfly-react/commit/5bb8051))
+
+
+
+
+
 # [3.43.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.42.1...@patternfly/react-core@3.43.0) (2019-06-13)
 
 

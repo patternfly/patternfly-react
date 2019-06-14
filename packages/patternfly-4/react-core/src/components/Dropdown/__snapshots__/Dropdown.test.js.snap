@@ -26,26 +26,35 @@ exports[`KebabToggle basic 1`] = `
     />
   }
 >
-  <div
-    className="pf-c-dropdown pf-m-expanded"
+  <DropdownWithContext
+    className=""
+    direction="down"
+    dropdownItems={Array []}
+    isGrouped={false}
+    isOpen={true}
+    isPlain={false}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <Kebab
+        aria-label="Actions"
+        className=""
+        id="Dropdown Toggle"
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      />
+    }
   >
-    <Kebab
-      aria-label="Actions"
-      ariaHasPopup={null}
-      className=""
-      id="Dropdown Toggle"
-      isActive={false}
-      isDisabled={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={true}
-      isPlain={false}
-      key=".0"
-      onEnter={[Function]}
-      onToggle={[Function]}
-      parentRef={null}
+    <div
+      className="pf-c-dropdown pf-m-expanded"
     >
-      <Toggle
+      <Kebab
         aria-label="Actions"
         ariaHasPopup={null}
         className=""
@@ -56,80 +65,97 @@ exports[`KebabToggle basic 1`] = `
         isHovered={false}
         isOpen={true}
         isPlain={false}
-        isSplitButton={false}
+        key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
-        type={null}
       >
-        <button
-          aria-expanded={true}
-          aria-haspopup={null}
+        <Toggle
           aria-label="Actions"
-          className="pf-c-dropdown__toggle"
-          disabled={false}
+          ariaHasPopup={null}
+          className=""
           id="Dropdown Toggle"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={true}
+          isPlain={false}
+          isSplitButton={false}
+          onEnter={[Function]}
+          onToggle={[Function]}
+          parentRef={null}
+          type={null}
         >
-          <EllipsisVIcon
-            color="currentColor"
-            size="sm"
-            title={null}
+          <button
+            aria-expanded={true}
+            aria-haspopup={null}
+            aria-label="Actions"
+            className="pf-c-dropdown__toggle"
+            disabled={false}
+            id="Dropdown Toggle"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 192 512"
-              width="1em"
+            <EllipsisVIcon
+              color="currentColor"
+              size="sm"
+              title={null}
             >
-              <path
-                d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                transform=""
-              />
-            </svg>
-          </EllipsisVIcon>
-        </button>
-      </Toggle>
-    </Kebab>
-    <DropdownMenu
-      aria-labelledby="Dropdown Toggle"
-      className=""
-      component="div"
-      isGrouped={false}
-      isOpen={true}
-      openedOnEnter={false}
-      position="left"
-    >
-      <ul
-        className="pf-c-dropdown__menu"
-        hidden={false}
-        onClick={[Function]}
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 192 512"
+                width="1em"
+              >
+                <path
+                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  transform=""
+                />
+              </svg>
+            </EllipsisVIcon>
+          </button>
+        </Toggle>
+      </Kebab>
+      <DropdownMenu
+        aria-labelledby="Dropdown Toggle"
+        className=""
+        component="div"
+        isGrouped={false}
+        isOpen={true}
+        openedOnEnter={false}
+        position="left"
       >
-        <div
-          aria-labelledby="Dropdown Toggle"
+        <ul
+          className="pf-c-dropdown__menu"
+          hidden={false}
+          onClick={[Function]}
         >
           <div
-            className="pf-c-dropdown__menu-item"
-            key=".0"
-            onKeyDown={[Function]}
-            tabIndex={-1}
+            aria-labelledby="Dropdown Toggle"
           >
-            BASIC
+            <div
+              className="pf-c-dropdown__menu-item"
+              key=".0"
+              onKeyDown={[Function]}
+              tabIndex={-1}
+            >
+              BASIC
+            </div>
           </div>
-        </div>
-      </ul>
-    </DropdownMenu>
-  </div>
+        </ul>
+      </DropdownMenu>
+    </div>
+  </DropdownWithContext>
 </Dropdown>
 `;
 
@@ -283,26 +309,159 @@ exports[`KebabToggle dropup + right aligned 1`] = `
     />
   }
 >
-  <div
-    className="pf-c-dropdown pf-m-top"
+  <DropdownWithContext
+    className=""
+    direction="up"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isGrouped={false}
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="right"
+    toggle={
+      <Kebab
+        aria-label="Actions"
+        className=""
+        id="Dropdown Toggle"
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      />
+    }
   >
-    <Kebab
-      aria-label="Actions"
-      ariaHasPopup={true}
-      className=""
-      id="Dropdown Toggle"
-      isActive={false}
-      isDisabled={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      key=".0"
-      onEnter={[Function]}
-      onToggle={[Function]}
-      parentRef={null}
+    <div
+      className="pf-c-dropdown pf-m-top"
     >
-      <Toggle
+      <Kebab
         aria-label="Actions"
         ariaHasPopup={true}
         className=""
@@ -313,52 +472,69 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
-        isSplitButton={false}
+        key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
-        type={null}
       >
-        <button
-          aria-expanded={false}
-          aria-haspopup={true}
+        <Toggle
           aria-label="Actions"
-          className="pf-c-dropdown__toggle"
-          disabled={false}
+          ariaHasPopup={true}
+          className=""
           id="Dropdown Toggle"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={false}
+          isSplitButton={false}
+          onEnter={[Function]}
+          onToggle={[Function]}
+          parentRef={null}
+          type={null}
         >
-          <EllipsisVIcon
-            color="currentColor"
-            size="sm"
-            title={null}
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="Actions"
+            className="pf-c-dropdown__toggle"
+            disabled={false}
+            id="Dropdown Toggle"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 192 512"
-              width="1em"
+            <EllipsisVIcon
+              color="currentColor"
+              size="sm"
+              title={null}
             >
-              <path
-                d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                transform=""
-              />
-            </svg>
-          </EllipsisVIcon>
-        </button>
-      </Toggle>
-    </Kebab>
-  </div>
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 192 512"
+                width="1em"
+              >
+                <path
+                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  transform=""
+                />
+              </svg>
+            </EllipsisVIcon>
+          </button>
+        </Toggle>
+      </Kebab>
+    </div>
+  </DropdownWithContext>
 </Dropdown>
 `;
 
@@ -512,26 +688,159 @@ exports[`KebabToggle dropup 1`] = `
     />
   }
 >
-  <div
-    className="pf-c-dropdown pf-m-top"
+  <DropdownWithContext
+    className=""
+    direction="up"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isGrouped={false}
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <Kebab
+        aria-label="Actions"
+        className=""
+        id="Dropdown Toggle"
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      />
+    }
   >
-    <Kebab
-      aria-label="Actions"
-      ariaHasPopup={true}
-      className=""
-      id="Dropdown Toggle"
-      isActive={false}
-      isDisabled={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      key=".0"
-      onEnter={[Function]}
-      onToggle={[Function]}
-      parentRef={null}
+    <div
+      className="pf-c-dropdown pf-m-top"
     >
-      <Toggle
+      <Kebab
         aria-label="Actions"
         ariaHasPopup={true}
         className=""
@@ -542,52 +851,69 @@ exports[`KebabToggle dropup 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
-        isSplitButton={false}
+        key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
-        type={null}
       >
-        <button
-          aria-expanded={false}
-          aria-haspopup={true}
+        <Toggle
           aria-label="Actions"
-          className="pf-c-dropdown__toggle"
-          disabled={false}
+          ariaHasPopup={true}
+          className=""
           id="Dropdown Toggle"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={false}
+          isSplitButton={false}
+          onEnter={[Function]}
+          onToggle={[Function]}
+          parentRef={null}
+          type={null}
         >
-          <EllipsisVIcon
-            color="currentColor"
-            size="sm"
-            title={null}
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="Actions"
+            className="pf-c-dropdown__toggle"
+            disabled={false}
+            id="Dropdown Toggle"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 192 512"
-              width="1em"
+            <EllipsisVIcon
+              color="currentColor"
+              size="sm"
+              title={null}
             >
-              <path
-                d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                transform=""
-              />
-            </svg>
-          </EllipsisVIcon>
-        </button>
-      </Toggle>
-    </Kebab>
-  </div>
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 192 512"
+                width="1em"
+              >
+                <path
+                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  transform=""
+                />
+              </svg>
+            </EllipsisVIcon>
+          </button>
+        </Toggle>
+      </Kebab>
+    </div>
+  </DropdownWithContext>
 </Dropdown>
 `;
 
@@ -741,26 +1067,159 @@ exports[`KebabToggle expanded 1`] = `
     />
   }
 >
-  <div
-    className="pf-c-dropdown pf-m-expanded"
+  <DropdownWithContext
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isGrouped={false}
+    isOpen={true}
+    isPlain={false}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <Kebab
+        aria-label="Actions"
+        className=""
+        id="Dropdown Toggle"
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      />
+    }
   >
-    <Kebab
-      aria-label="Actions"
-      ariaHasPopup={true}
-      className=""
-      id="Dropdown Toggle"
-      isActive={false}
-      isDisabled={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={true}
-      isPlain={false}
-      key=".0"
-      onEnter={[Function]}
-      onToggle={[Function]}
-      parentRef={null}
+    <div
+      className="pf-c-dropdown pf-m-expanded"
     >
-      <Toggle
+      <Kebab
         aria-label="Actions"
         ariaHasPopup={true}
         className=""
@@ -771,213 +1230,85 @@ exports[`KebabToggle expanded 1`] = `
         isHovered={false}
         isOpen={true}
         isPlain={false}
-        isSplitButton={false}
+        key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
-        type={null}
       >
-        <button
-          aria-expanded={true}
-          aria-haspopup={true}
+        <Toggle
           aria-label="Actions"
-          className="pf-c-dropdown__toggle"
-          disabled={false}
+          ariaHasPopup={true}
+          className=""
           id="Dropdown Toggle"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={true}
+          isPlain={false}
+          isSplitButton={false}
+          onEnter={[Function]}
+          onToggle={[Function]}
+          parentRef={null}
+          type={null}
         >
-          <EllipsisVIcon
-            color="currentColor"
-            size="sm"
-            title={null}
+          <button
+            aria-expanded={true}
+            aria-haspopup={true}
+            aria-label="Actions"
+            className="pf-c-dropdown__toggle"
+            disabled={false}
+            id="Dropdown Toggle"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
+            <EllipsisVIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
                 }
-              }
-              viewBox="0 0 192 512"
-              width="1em"
-            >
-              <path
-                d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                transform=""
-              />
-            </svg>
-          </EllipsisVIcon>
-        </button>
-      </Toggle>
-    </Kebab>
-    <DropdownMenu
-      aria-labelledby="Dropdown Toggle"
-      className=""
-      component="ul"
-      isGrouped={false}
-      isOpen={true}
-      openedOnEnter={false}
-      position="left"
-    >
-      <ul
+                viewBox="0 0 192 512"
+                width="1em"
+              >
+                <path
+                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  transform=""
+                />
+              </svg>
+            </EllipsisVIcon>
+          </button>
+        </Toggle>
+      </Kebab>
+      <DropdownMenu
         aria-labelledby="Dropdown Toggle"
-        className="pf-c-dropdown__menu"
-        hidden={false}
-        role="menu"
+        className=""
+        component="ul"
+        isGrouped={false}
+        isOpen={true}
+        openedOnEnter={false}
+        position="left"
       >
-        <DropdownItem
-          className=""
-          component="a"
-          context={
-            Object {
-              "keyHandler": [Function],
-              "sendRef": [Function],
-            }
-          }
-          href="#"
-          index={0}
-          isAppLauncher={false}
-          isDisabled={false}
-          isHovered={false}
-          key=".$link"
-          onClick={[Function]}
-          role={null}
-        >
-          <li
-            role="none"
-          >
-            <a
-              aria-disabled={false}
-              className="pf-c-dropdown__menu-item"
-              href="#"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role={null}
-            >
-              Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          context={
-            Object {
-              "keyHandler": [Function],
-              "sendRef": [Function],
-            }
-          }
-          href="#"
-          index={1}
-          isAppLauncher={false}
-          isDisabled={false}
-          isHovered={false}
-          key=".$action"
-          onClick={[Function]}
-          role={null}
-        >
-          <li
-            role="none"
-          >
-            <button
-              className="pf-c-dropdown__menu-item"
-              disabled={false}
-              href="#"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role={null}
-              type="button"
-            >
-              Action
-            </button>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="a"
-          context={
-            Object {
-              "keyHandler": [Function],
-              "sendRef": [Function],
-            }
-          }
-          href="#"
-          index={2}
-          isAppLauncher={false}
-          isDisabled={true}
-          isHovered={false}
-          key=".$disabled link"
-          onClick={[Function]}
-          role={null}
-        >
-          <li
-            role="none"
-          >
-            <a
-              aria-disabled={true}
-              className="pf-c-dropdown__menu-item pf-m-disabled"
-              href="#"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role={null}
-              tabIndex={-1}
-            >
-              Disabled Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          context={
-            Object {
-              "keyHandler": [Function],
-              "sendRef": [Function],
-            }
-          }
-          href="#"
-          index={3}
-          isAppLauncher={false}
-          isDisabled={true}
-          isHovered={false}
-          key=".$disabled action"
-          onClick={[Function]}
-          role={null}
-        >
-          <li
-            role="none"
-          >
-            <button
-              className="pf-c-dropdown__menu-item pf-m-disabled"
-              disabled={true}
-              href="#"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role={null}
-              type="button"
-            >
-              Disabled Action
-            </button>
-          </li>
-        </DropdownItem>
-        <Separator
-          className=""
-          component="a"
-          href="#"
-          index={4}
-          isDisabled={false}
-          isHovered={false}
-          key=".$separator"
+        <ul
+          aria-labelledby="Dropdown Toggle"
+          className="pf-c-dropdown__menu"
+          hidden={false}
+          role="menu"
         >
           <DropdownItem
-            className="pf-c-dropdown__separator"
-            component="div"
+            className=""
+            component="a"
             context={
               Object {
                 "keyHandler": [Function],
@@ -985,96 +1316,241 @@ exports[`KebabToggle expanded 1`] = `
               }
             }
             href="#"
-            index={4}
+            index={0}
             isAppLauncher={false}
             isDisabled={false}
             isHovered={false}
+            key=".$link"
             onClick={[Function]}
-            role="separator"
+            role={null}
           >
             <li
               role="none"
             >
-              <div
-                className="pf-c-dropdown__separator"
+              <a
+                aria-disabled={false}
+                className="pf-c-dropdown__menu-item"
                 href="#"
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="separator"
-              />
+                role={null}
+              >
+                Link
+              </a>
             </li>
           </DropdownItem>
-        </Separator>
-        <DropdownItem
-          className=""
-          component="a"
-          context={
-            Object {
-              "keyHandler": [Function],
-              "sendRef": [Function],
+          <DropdownItem
+            className=""
+            component="button"
+            context={
+              Object {
+                "keyHandler": [Function],
+                "sendRef": [Function],
+              }
             }
-          }
-          href="#"
-          index={5}
-          isAppLauncher={false}
-          isDisabled={false}
-          isHovered={false}
-          key=".$separated link"
-          onClick={[Function]}
-          role={null}
-        >
-          <li
-            role="none"
+            href="#"
+            index={1}
+            isAppLauncher={false}
+            isDisabled={false}
+            isHovered={false}
+            key=".$action"
+            onClick={[Function]}
+            role={null}
           >
-            <a
-              aria-disabled={false}
-              className="pf-c-dropdown__menu-item"
-              href="#"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role={null}
+            <li
+              role="none"
             >
-              Separated Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          context={
-            Object {
-              "keyHandler": [Function],
-              "sendRef": [Function],
+              <button
+                className="pf-c-dropdown__menu-item"
+                disabled={false}
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role={null}
+                type="button"
+              >
+                Action
+              </button>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="a"
+            context={
+              Object {
+                "keyHandler": [Function],
+                "sendRef": [Function],
+              }
             }
-          }
-          href="#"
-          index={6}
-          isAppLauncher={false}
-          isDisabled={false}
-          isHovered={false}
-          key=".$separated action"
-          onClick={[Function]}
-          role={null}
-        >
-          <li
-            role="none"
+            href="#"
+            index={2}
+            isAppLauncher={false}
+            isDisabled={true}
+            isHovered={false}
+            key=".$disabled link"
+            onClick={[Function]}
+            role={null}
           >
-            <button
-              className="pf-c-dropdown__menu-item"
-              disabled={false}
-              href="#"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role={null}
-              type="button"
+            <li
+              role="none"
             >
-              Separated Action
-            </button>
-          </li>
-        </DropdownItem>
-      </ul>
-    </DropdownMenu>
-  </div>
+              <a
+                aria-disabled={true}
+                className="pf-m-disabled pf-c-dropdown__menu-item"
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role={null}
+                tabIndex={-1}
+              >
+                Disabled Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            context={
+              Object {
+                "keyHandler": [Function],
+                "sendRef": [Function],
+              }
+            }
+            href="#"
+            index={3}
+            isAppLauncher={false}
+            isDisabled={true}
+            isHovered={false}
+            key=".$disabled action"
+            onClick={[Function]}
+            role={null}
+          >
+            <li
+              role="none"
+            >
+              <button
+                className="pf-m-disabled pf-c-dropdown__menu-item"
+                disabled={true}
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role={null}
+                type="button"
+              >
+                Disabled Action
+              </button>
+            </li>
+          </DropdownItem>
+          <Separator
+            className=""
+            component="a"
+            href="#"
+            index={4}
+            isDisabled={false}
+            isHovered={false}
+            key=".$separator"
+          >
+            <DropdownItem
+              className="pf-c-dropdown__separator"
+              component="div"
+              context={
+                Object {
+                  "keyHandler": [Function],
+                  "sendRef": [Function],
+                }
+              }
+              href="#"
+              index={4}
+              isAppLauncher={false}
+              isDisabled={false}
+              isHovered={false}
+              onClick={[Function]}
+              role="separator"
+            >
+              <li
+                role="none"
+              >
+                <div
+                  className="pf-c-dropdown__separator"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="separator"
+                />
+              </li>
+            </DropdownItem>
+          </Separator>
+          <DropdownItem
+            className=""
+            component="a"
+            context={
+              Object {
+                "keyHandler": [Function],
+                "sendRef": [Function],
+              }
+            }
+            href="#"
+            index={5}
+            isAppLauncher={false}
+            isDisabled={false}
+            isHovered={false}
+            key=".$separated link"
+            onClick={[Function]}
+            role={null}
+          >
+            <li
+              role="none"
+            >
+              <a
+                aria-disabled={false}
+                className="pf-c-dropdown__menu-item"
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role={null}
+              >
+                Separated Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            context={
+              Object {
+                "keyHandler": [Function],
+                "sendRef": [Function],
+              }
+            }
+            href="#"
+            index={6}
+            isAppLauncher={false}
+            isDisabled={false}
+            isHovered={false}
+            key=".$separated action"
+            onClick={[Function]}
+            role={null}
+          >
+            <li
+              role="none"
+            >
+              <button
+                className="pf-c-dropdown__menu-item"
+                disabled={false}
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role={null}
+                type="button"
+              >
+                Separated Action
+              </button>
+            </li>
+          </DropdownItem>
+        </ul>
+      </DropdownMenu>
+    </div>
+  </DropdownWithContext>
 </Dropdown>
 `;
 
@@ -1228,26 +1704,159 @@ exports[`KebabToggle plain 1`] = `
     />
   }
 >
-  <div
-    className="pf-c-dropdown"
+  <DropdownWithContext
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isGrouped={false}
+    isOpen={false}
+    isPlain={true}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <Kebab
+        aria-label="Actions"
+        className=""
+        id="Dropdown Toggle"
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      />
+    }
   >
-    <Kebab
-      aria-label="Actions"
-      ariaHasPopup={true}
-      className=""
-      id="Dropdown Toggle"
-      isActive={false}
-      isDisabled={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={true}
-      key=".0"
-      onEnter={[Function]}
-      onToggle={[Function]}
-      parentRef={null}
+    <div
+      className="pf-c-dropdown"
     >
-      <Toggle
+      <Kebab
         aria-label="Actions"
         ariaHasPopup={true}
         className=""
@@ -1258,52 +1867,69 @@ exports[`KebabToggle plain 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={true}
-        isSplitButton={false}
+        key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
-        type={null}
       >
-        <button
-          aria-expanded={false}
-          aria-haspopup={true}
+        <Toggle
           aria-label="Actions"
-          className="pf-c-dropdown__toggle pf-m-plain"
-          disabled={false}
+          ariaHasPopup={true}
+          className=""
           id="Dropdown Toggle"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={true}
+          isSplitButton={false}
+          onEnter={[Function]}
+          onToggle={[Function]}
+          parentRef={null}
+          type={null}
         >
-          <EllipsisVIcon
-            color="currentColor"
-            size="sm"
-            title={null}
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="Actions"
+            className="pf-c-dropdown__toggle pf-m-plain"
+            disabled={false}
+            id="Dropdown Toggle"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 192 512"
-              width="1em"
+            <EllipsisVIcon
+              color="currentColor"
+              size="sm"
+              title={null}
             >
-              <path
-                d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                transform=""
-              />
-            </svg>
-          </EllipsisVIcon>
-        </button>
-      </Toggle>
-    </Kebab>
-  </div>
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 192 512"
+                width="1em"
+              >
+                <path
+                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  transform=""
+                />
+              </svg>
+            </EllipsisVIcon>
+          </button>
+        </Toggle>
+      </Kebab>
+    </div>
+  </DropdownWithContext>
 </Dropdown>
 `;
 
@@ -1457,26 +2083,159 @@ exports[`KebabToggle regular 1`] = `
     />
   }
 >
-  <div
-    className="pf-c-dropdown"
+  <DropdownWithContext
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isGrouped={false}
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <Kebab
+        aria-label="Actions"
+        className=""
+        id="Dropdown Toggle"
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      />
+    }
   >
-    <Kebab
-      aria-label="Actions"
-      ariaHasPopup={true}
-      className=""
-      id="Dropdown Toggle"
-      isActive={false}
-      isDisabled={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      key=".0"
-      onEnter={[Function]}
-      onToggle={[Function]}
-      parentRef={null}
+    <div
+      className="pf-c-dropdown"
     >
-      <Toggle
+      <Kebab
         aria-label="Actions"
         ariaHasPopup={true}
         className=""
@@ -1487,52 +2246,69 @@ exports[`KebabToggle regular 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
-        isSplitButton={false}
+        key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
-        type={null}
       >
-        <button
-          aria-expanded={false}
-          aria-haspopup={true}
+        <Toggle
           aria-label="Actions"
-          className="pf-c-dropdown__toggle"
-          disabled={false}
+          ariaHasPopup={true}
+          className=""
           id="Dropdown Toggle"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={false}
+          isSplitButton={false}
+          onEnter={[Function]}
+          onToggle={[Function]}
+          parentRef={null}
+          type={null}
         >
-          <EllipsisVIcon
-            color="currentColor"
-            size="sm"
-            title={null}
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="Actions"
+            className="pf-c-dropdown__toggle"
+            disabled={false}
+            id="Dropdown Toggle"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 192 512"
-              width="1em"
+            <EllipsisVIcon
+              color="currentColor"
+              size="sm"
+              title={null}
             >
-              <path
-                d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                transform=""
-              />
-            </svg>
-          </EllipsisVIcon>
-        </button>
-      </Toggle>
-    </Kebab>
-  </div>
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 192 512"
+                width="1em"
+              >
+                <path
+                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  transform=""
+                />
+              </svg>
+            </EllipsisVIcon>
+          </button>
+        </Toggle>
+      </Kebab>
+    </div>
+  </DropdownWithContext>
 </Dropdown>
 `;
 
@@ -1686,26 +2462,159 @@ exports[`KebabToggle right aligned 1`] = `
     />
   }
 >
-  <div
-    className="pf-c-dropdown"
+  <DropdownWithContext
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isGrouped={false}
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="right"
+    toggle={
+      <Kebab
+        aria-label="Actions"
+        className=""
+        id="Dropdown Toggle"
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      />
+    }
   >
-    <Kebab
-      aria-label="Actions"
-      ariaHasPopup={true}
-      className=""
-      id="Dropdown Toggle"
-      isActive={false}
-      isDisabled={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      key=".0"
-      onEnter={[Function]}
-      onToggle={[Function]}
-      parentRef={null}
+    <div
+      className="pf-c-dropdown"
     >
-      <Toggle
+      <Kebab
         aria-label="Actions"
         ariaHasPopup={true}
         className=""
@@ -1716,52 +2625,69 @@ exports[`KebabToggle right aligned 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
-        isSplitButton={false}
+        key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
-        type={null}
       >
-        <button
-          aria-expanded={false}
-          aria-haspopup={true}
+        <Toggle
           aria-label="Actions"
-          className="pf-c-dropdown__toggle"
-          disabled={false}
+          ariaHasPopup={true}
+          className=""
           id="Dropdown Toggle"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={false}
+          isSplitButton={false}
+          onEnter={[Function]}
+          onToggle={[Function]}
+          parentRef={null}
+          type={null}
         >
-          <EllipsisVIcon
-            color="currentColor"
-            size="sm"
-            title={null}
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="Actions"
+            className="pf-c-dropdown__toggle"
+            disabled={false}
+            id="Dropdown Toggle"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
           >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 192 512"
-              width="1em"
+            <EllipsisVIcon
+              color="currentColor"
+              size="sm"
+              title={null}
             >
-              <path
-                d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                transform=""
-              />
-            </svg>
-          </EllipsisVIcon>
-        </button>
-      </Toggle>
-    </Kebab>
-  </div>
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 192 512"
+                width="1em"
+              >
+                <path
+                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  transform=""
+                />
+              </svg>
+            </EllipsisVIcon>
+          </button>
+        </Toggle>
+      </Kebab>
+    </div>
+  </DropdownWithContext>
 </Dropdown>
 `;
 
@@ -1792,114 +2718,141 @@ exports[`dropdown basic 1`] = `
     </DropdownToggle>
   }
 >
-  <div
-    className="pf-c-dropdown pf-m-expanded"
-  >
-    <DropdownToggle
-      ariaHasPopup={null}
-      className=""
-      iconComponent={[Function]}
-      id="Dropdown Toggle"
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={true}
-      isPlain={false}
-      key=".0"
-      onEnter={[Function]}
-      onToggle={[Function]}
-      parentRef={null}
-    >
-      <Toggle
-        ariaHasPopup={null}
+  <DropdownWithContext
+    className=""
+    direction="down"
+    dropdownItems={Array []}
+    isGrouped={false}
+    isOpen={true}
+    isPlain={false}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <DropdownToggle
         className=""
+        iconComponent={[Function]}
         id="Dropdown Toggle"
         isActive={false}
-        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        Dropdown
+      </DropdownToggle>
+    }
+  >
+    <div
+      className="pf-c-dropdown pf-m-expanded"
+    >
+      <DropdownToggle
+        ariaHasPopup={null}
+        className=""
+        iconComponent={[Function]}
+        id="Dropdown Toggle"
+        isActive={false}
         isFocused={false}
         isHovered={false}
         isOpen={true}
         isPlain={false}
-        isSplitButton={false}
+        key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
-        type={null}
       >
-        <button
-          aria-expanded={true}
-          aria-haspopup={null}
-          className="pf-c-dropdown__toggle"
-          disabled={false}
+        <Toggle
+          ariaHasPopup={null}
+          className=""
           id="Dropdown Toggle"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={true}
+          isPlain={false}
+          isSplitButton={false}
+          onEnter={[Function]}
+          onToggle={[Function]}
+          parentRef={null}
+          type={null}
         >
-          <span
-            className="pf-c-dropdown__toggle-text"
+          <button
+            aria-expanded={true}
+            aria-haspopup={null}
+            className="pf-c-dropdown__toggle"
+            disabled={false}
+            id="Dropdown Toggle"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
           >
-            Dropdown
-          </span>
-          <CaretDownIcon
-            className="pf-c-dropdown__toggle-icon"
-            color="currentColor"
-            size="sm"
-            title={null}
-          >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-dropdown__toggle-icon"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
+            <span
+              className="pf-c-dropdown__toggle-text"
             >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </CaretDownIcon>
-        </button>
-      </Toggle>
-    </DropdownToggle>
-    <DropdownMenu
-      aria-labelledby="Dropdown Toggle"
-      className=""
-      component="div"
-      isGrouped={false}
-      isOpen={true}
-      openedOnEnter={false}
-      position="left"
-    >
-      <ul
-        className="pf-c-dropdown__menu"
-        hidden={false}
-        onClick={[Function]}
+              Dropdown
+            </span>
+            <CaretDownIcon
+              className="pf-c-dropdown__toggle-icon"
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                className="pf-c-dropdown__toggle-icon"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 320 512"
+                width="1em"
+              >
+                <path
+                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  transform=""
+                />
+              </svg>
+            </CaretDownIcon>
+          </button>
+        </Toggle>
+      </DropdownToggle>
+      <DropdownMenu
+        aria-labelledby="Dropdown Toggle"
+        className=""
+        component="div"
+        isGrouped={false}
+        isOpen={true}
+        openedOnEnter={false}
+        position="left"
       >
-        <div
-          aria-labelledby="Dropdown Toggle"
+        <ul
+          className="pf-c-dropdown__menu"
+          hidden={false}
+          onClick={[Function]}
         >
           <div
-            className="pf-c-dropdown__menu-item"
-            key=".0"
-            onKeyDown={[Function]}
-            tabIndex={-1}
+            aria-labelledby="Dropdown Toggle"
           >
-            BASIC
+            <div
+              className="pf-c-dropdown__menu-item"
+              key=".0"
+              onKeyDown={[Function]}
+              tabIndex={-1}
+            >
+              BASIC
+            </div>
           </div>
-        </div>
-      </ul>
-    </DropdownMenu>
-  </div>
+        </ul>
+      </DropdownMenu>
+    </div>
+  </DropdownWithContext>
 </Dropdown>
 `;
 
@@ -2054,86 +3007,237 @@ exports[`dropdown dropup + right aligned 1`] = `
     </DropdownToggle>
   }
 >
-  <div
-    className="pf-c-dropdown pf-m-top"
-  >
-    <DropdownToggle
-      ariaHasPopup={true}
-      className=""
-      iconComponent={[Function]}
-      id="Dropdown Toggle"
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      key=".0"
-      onEnter={[Function]}
-      onToggle={[Function]}
-      parentRef={null}
-    >
-      <Toggle
-        ariaHasPopup={true}
+  <DropdownWithContext
+    className=""
+    direction="up"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isGrouped={false}
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="right"
+    toggle={
+      <DropdownToggle
         className=""
+        iconComponent={[Function]}
         id="Dropdown Toggle"
         isActive={false}
-        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={false}
         isPlain={false}
-        isSplitButton={false}
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        Dropdown
+      </DropdownToggle>
+    }
+  >
+    <div
+      className="pf-c-dropdown pf-m-top"
+    >
+      <DropdownToggle
+        ariaHasPopup={true}
+        className=""
+        iconComponent={[Function]}
+        id="Dropdown Toggle"
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
-        type={null}
       >
-        <button
-          aria-expanded={false}
-          aria-haspopup={true}
-          className="pf-c-dropdown__toggle"
-          disabled={false}
+        <Toggle
+          ariaHasPopup={true}
+          className=""
           id="Dropdown Toggle"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={false}
+          isSplitButton={false}
+          onEnter={[Function]}
+          onToggle={[Function]}
+          parentRef={null}
+          type={null}
         >
-          <span
-            className="pf-c-dropdown__toggle-text"
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            className="pf-c-dropdown__toggle"
+            disabled={false}
+            id="Dropdown Toggle"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
           >
-            Dropdown
-          </span>
-          <CaretDownIcon
-            className="pf-c-dropdown__toggle-icon"
-            color="currentColor"
-            size="sm"
-            title={null}
-          >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-dropdown__toggle-icon"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
+            <span
+              className="pf-c-dropdown__toggle-text"
             >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </CaretDownIcon>
-        </button>
-      </Toggle>
-    </DropdownToggle>
-  </div>
+              Dropdown
+            </span>
+            <CaretDownIcon
+              className="pf-c-dropdown__toggle-icon"
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                className="pf-c-dropdown__toggle-icon"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 320 512"
+                width="1em"
+              >
+                <path
+                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  transform=""
+                />
+              </svg>
+            </CaretDownIcon>
+          </button>
+        </Toggle>
+      </DropdownToggle>
+    </div>
+  </DropdownWithContext>
 </Dropdown>
 `;
 
@@ -2288,86 +3392,237 @@ exports[`dropdown dropup 1`] = `
     </DropdownToggle>
   }
 >
-  <div
-    className="pf-c-dropdown pf-m-top"
-  >
-    <DropdownToggle
-      ariaHasPopup={true}
-      className=""
-      iconComponent={[Function]}
-      id="Dropdown Toggle"
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      key=".0"
-      onEnter={[Function]}
-      onToggle={[Function]}
-      parentRef={null}
-    >
-      <Toggle
-        ariaHasPopup={true}
+  <DropdownWithContext
+    className=""
+    direction="up"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isGrouped={false}
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <DropdownToggle
         className=""
+        iconComponent={[Function]}
         id="Dropdown Toggle"
         isActive={false}
-        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={false}
         isPlain={false}
-        isSplitButton={false}
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        Dropdown
+      </DropdownToggle>
+    }
+  >
+    <div
+      className="pf-c-dropdown pf-m-top"
+    >
+      <DropdownToggle
+        ariaHasPopup={true}
+        className=""
+        iconComponent={[Function]}
+        id="Dropdown Toggle"
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
-        type={null}
       >
-        <button
-          aria-expanded={false}
-          aria-haspopup={true}
-          className="pf-c-dropdown__toggle"
-          disabled={false}
+        <Toggle
+          ariaHasPopup={true}
+          className=""
           id="Dropdown Toggle"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={false}
+          isSplitButton={false}
+          onEnter={[Function]}
+          onToggle={[Function]}
+          parentRef={null}
+          type={null}
         >
-          <span
-            className="pf-c-dropdown__toggle-text"
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            className="pf-c-dropdown__toggle"
+            disabled={false}
+            id="Dropdown Toggle"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
           >
-            Dropdown
-          </span>
-          <CaretDownIcon
-            className="pf-c-dropdown__toggle-icon"
-            color="currentColor"
-            size="sm"
-            title={null}
-          >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-dropdown__toggle-icon"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
+            <span
+              className="pf-c-dropdown__toggle-text"
             >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </CaretDownIcon>
-        </button>
-      </Toggle>
-    </DropdownToggle>
-  </div>
+              Dropdown
+            </span>
+            <CaretDownIcon
+              className="pf-c-dropdown__toggle-icon"
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                className="pf-c-dropdown__toggle-icon"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 320 512"
+                width="1em"
+              >
+                <path
+                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  transform=""
+                />
+              </svg>
+            </CaretDownIcon>
+          </button>
+        </Toggle>
+      </DropdownToggle>
+    </div>
+  </DropdownWithContext>
 </Dropdown>
 `;
 
@@ -2522,100 +3777,11 @@ exports[`dropdown expanded 1`] = `
     </DropdownToggle>
   }
 >
-  <div
-    className="pf-c-dropdown pf-m-expanded"
-  >
-    <DropdownToggle
-      ariaHasPopup={true}
-      className=""
-      iconComponent={[Function]}
-      id="Dropdown Toggle"
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={true}
-      isPlain={false}
-      key=".0"
-      onEnter={[Function]}
-      onToggle={[Function]}
-      parentRef={null}
-    >
-      <Toggle
-        ariaHasPopup={true}
-        className=""
-        id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={true}
-        isPlain={false}
-        isSplitButton={false}
-        onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={null}
-        type={null}
-      >
-        <button
-          aria-expanded={true}
-          aria-haspopup={true}
-          className="pf-c-dropdown__toggle"
-          disabled={false}
-          id="Dropdown Toggle"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
-        >
-          <span
-            className="pf-c-dropdown__toggle-text"
-          >
-            Dropdown
-          </span>
-          <CaretDownIcon
-            className="pf-c-dropdown__toggle-icon"
-            color="currentColor"
-            size="sm"
-            title={null}
-          >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-dropdown__toggle-icon"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
-            >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </CaretDownIcon>
-        </button>
-      </Toggle>
-    </DropdownToggle>
-    <DropdownMenu
-      aria-labelledby="Dropdown Toggle"
-      className=""
-      component="ul"
-      isGrouped={false}
-      isOpen={true}
-      openedOnEnter={false}
-      position="left"
-    >
-      <ul
-        aria-labelledby="Dropdown Toggle"
-        className="pf-c-dropdown__menu"
-        hidden={false}
-        role="menu"
-      >
+  <DropdownWithContext
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
         <DropdownItem
           className=""
           component="a"
@@ -2626,29 +3792,15 @@ exports[`dropdown expanded 1`] = `
             }
           }
           href="#"
-          index={0}
+          index={-1}
           isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
-          key=".$link"
           onClick={[Function]}
           role={null}
         >
-          <li
-            role="none"
-          >
-            <a
-              aria-disabled={false}
-              className="pf-c-dropdown__menu-item"
-              href="#"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role={null}
-            >
-              Link
-            </a>
-          </li>
-        </DropdownItem>
+          Link
+        </DropdownItem>,
         <DropdownItem
           className=""
           component="button"
@@ -2659,30 +3811,15 @@ exports[`dropdown expanded 1`] = `
             }
           }
           href="#"
-          index={1}
+          index={-1}
           isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
-          key=".$action"
           onClick={[Function]}
           role={null}
         >
-          <li
-            role="none"
-          >
-            <button
-              className="pf-c-dropdown__menu-item"
-              disabled={false}
-              href="#"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role={null}
-              type="button"
-            >
-              Action
-            </button>
-          </li>
-        </DropdownItem>
+          Action
+        </DropdownItem>,
         <DropdownItem
           className=""
           component="a"
@@ -2693,30 +3830,15 @@ exports[`dropdown expanded 1`] = `
             }
           }
           href="#"
-          index={2}
+          index={-1}
           isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
-          key=".$disabled link"
           onClick={[Function]}
           role={null}
         >
-          <li
-            role="none"
-          >
-            <a
-              aria-disabled={true}
-              className="pf-c-dropdown__menu-item pf-m-disabled"
-              href="#"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role={null}
-              tabIndex={-1}
-            >
-              Disabled Link
-            </a>
-          </li>
-        </DropdownItem>
+          Disabled Link
+        </DropdownItem>,
         <DropdownItem
           className=""
           component="button"
@@ -2727,42 +3849,181 @@ exports[`dropdown expanded 1`] = `
             }
           }
           href="#"
-          index={3}
+          index={-1}
           isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
-          key=".$disabled action"
           onClick={[Function]}
           role={null}
         >
-          <li
-            role="none"
-          >
-            <button
-              className="pf-c-dropdown__menu-item pf-m-disabled"
-              disabled={true}
-              href="#"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role={null}
-              type="button"
-            >
-              Disabled Action
-            </button>
-          </li>
-        </DropdownItem>
+          Disabled Action
+        </DropdownItem>,
         <Separator
           className=""
           component="a"
           href="#"
-          index={4}
           isDisabled={false}
           isHovered={false}
-          key=".$separator"
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isGrouped={false}
+    isOpen={true}
+    isPlain={false}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <DropdownToggle
+        className=""
+        iconComponent={[Function]}
+        id="Dropdown Toggle"
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        Dropdown
+      </DropdownToggle>
+    }
+  >
+    <div
+      className="pf-c-dropdown pf-m-expanded"
+    >
+      <DropdownToggle
+        ariaHasPopup={true}
+        className=""
+        iconComponent={[Function]}
+        id="Dropdown Toggle"
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={true}
+        isPlain={false}
+        key=".0"
+        onEnter={[Function]}
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        <Toggle
+          ariaHasPopup={true}
+          className=""
+          id="Dropdown Toggle"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={true}
+          isPlain={false}
+          isSplitButton={false}
+          onEnter={[Function]}
+          onToggle={[Function]}
+          parentRef={null}
+          type={null}
+        >
+          <button
+            aria-expanded={true}
+            aria-haspopup={true}
+            className="pf-c-dropdown__toggle"
+            disabled={false}
+            id="Dropdown Toggle"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
+          >
+            <span
+              className="pf-c-dropdown__toggle-text"
+            >
+              Dropdown
+            </span>
+            <CaretDownIcon
+              className="pf-c-dropdown__toggle-icon"
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                className="pf-c-dropdown__toggle-icon"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 320 512"
+                width="1em"
+              >
+                <path
+                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  transform=""
+                />
+              </svg>
+            </CaretDownIcon>
+          </button>
+        </Toggle>
+      </DropdownToggle>
+      <DropdownMenu
+        aria-labelledby="Dropdown Toggle"
+        className=""
+        component="ul"
+        isGrouped={false}
+        isOpen={true}
+        openedOnEnter={false}
+        position="left"
+      >
+        <ul
+          aria-labelledby="Dropdown Toggle"
+          className="pf-c-dropdown__menu"
+          hidden={false}
+          role="menu"
         >
           <DropdownItem
-            className="pf-c-dropdown__separator"
-            component="div"
+            className=""
+            component="a"
             context={
               Object {
                 "keyHandler": [Function],
@@ -2770,96 +4031,241 @@ exports[`dropdown expanded 1`] = `
               }
             }
             href="#"
-            index={4}
+            index={0}
             isAppLauncher={false}
             isDisabled={false}
             isHovered={false}
+            key=".$link"
             onClick={[Function]}
-            role="separator"
+            role={null}
           >
             <li
               role="none"
             >
-              <div
-                className="pf-c-dropdown__separator"
+              <a
+                aria-disabled={false}
+                className="pf-c-dropdown__menu-item"
                 href="#"
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role="separator"
-              />
+                role={null}
+              >
+                Link
+              </a>
             </li>
           </DropdownItem>
-        </Separator>
-        <DropdownItem
-          className=""
-          component="a"
-          context={
-            Object {
-              "keyHandler": [Function],
-              "sendRef": [Function],
+          <DropdownItem
+            className=""
+            component="button"
+            context={
+              Object {
+                "keyHandler": [Function],
+                "sendRef": [Function],
+              }
             }
-          }
-          href="#"
-          index={5}
-          isAppLauncher={false}
-          isDisabled={false}
-          isHovered={false}
-          key=".$separated link"
-          onClick={[Function]}
-          role={null}
-        >
-          <li
-            role="none"
+            href="#"
+            index={1}
+            isAppLauncher={false}
+            isDisabled={false}
+            isHovered={false}
+            key=".$action"
+            onClick={[Function]}
+            role={null}
           >
-            <a
-              aria-disabled={false}
-              className="pf-c-dropdown__menu-item"
-              href="#"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role={null}
+            <li
+              role="none"
             >
-              Separated Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          context={
-            Object {
-              "keyHandler": [Function],
-              "sendRef": [Function],
+              <button
+                className="pf-c-dropdown__menu-item"
+                disabled={false}
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role={null}
+                type="button"
+              >
+                Action
+              </button>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="a"
+            context={
+              Object {
+                "keyHandler": [Function],
+                "sendRef": [Function],
+              }
             }
-          }
-          href="#"
-          index={6}
-          isAppLauncher={false}
-          isDisabled={false}
-          isHovered={false}
-          key=".$separated action"
-          onClick={[Function]}
-          role={null}
-        >
-          <li
-            role="none"
+            href="#"
+            index={2}
+            isAppLauncher={false}
+            isDisabled={true}
+            isHovered={false}
+            key=".$disabled link"
+            onClick={[Function]}
+            role={null}
           >
-            <button
-              className="pf-c-dropdown__menu-item"
-              disabled={false}
-              href="#"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role={null}
-              type="button"
+            <li
+              role="none"
             >
-              Separated Action
-            </button>
-          </li>
-        </DropdownItem>
-      </ul>
-    </DropdownMenu>
-  </div>
+              <a
+                aria-disabled={true}
+                className="pf-m-disabled pf-c-dropdown__menu-item"
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role={null}
+                tabIndex={-1}
+              >
+                Disabled Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            context={
+              Object {
+                "keyHandler": [Function],
+                "sendRef": [Function],
+              }
+            }
+            href="#"
+            index={3}
+            isAppLauncher={false}
+            isDisabled={true}
+            isHovered={false}
+            key=".$disabled action"
+            onClick={[Function]}
+            role={null}
+          >
+            <li
+              role="none"
+            >
+              <button
+                className="pf-m-disabled pf-c-dropdown__menu-item"
+                disabled={true}
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role={null}
+                type="button"
+              >
+                Disabled Action
+              </button>
+            </li>
+          </DropdownItem>
+          <Separator
+            className=""
+            component="a"
+            href="#"
+            index={4}
+            isDisabled={false}
+            isHovered={false}
+            key=".$separator"
+          >
+            <DropdownItem
+              className="pf-c-dropdown__separator"
+              component="div"
+              context={
+                Object {
+                  "keyHandler": [Function],
+                  "sendRef": [Function],
+                }
+              }
+              href="#"
+              index={4}
+              isAppLauncher={false}
+              isDisabled={false}
+              isHovered={false}
+              onClick={[Function]}
+              role="separator"
+            >
+              <li
+                role="none"
+              >
+                <div
+                  className="pf-c-dropdown__separator"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="separator"
+                />
+              </li>
+            </DropdownItem>
+          </Separator>
+          <DropdownItem
+            className=""
+            component="a"
+            context={
+              Object {
+                "keyHandler": [Function],
+                "sendRef": [Function],
+              }
+            }
+            href="#"
+            index={5}
+            isAppLauncher={false}
+            isDisabled={false}
+            isHovered={false}
+            key=".$separated link"
+            onClick={[Function]}
+            role={null}
+          >
+            <li
+              role="none"
+            >
+              <a
+                aria-disabled={false}
+                className="pf-c-dropdown__menu-item"
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role={null}
+              >
+                Separated Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            context={
+              Object {
+                "keyHandler": [Function],
+                "sendRef": [Function],
+              }
+            }
+            href="#"
+            index={6}
+            isAppLauncher={false}
+            isDisabled={false}
+            isHovered={false}
+            key=".$separated action"
+            onClick={[Function]}
+            role={null}
+          >
+            <li
+              role="none"
+            >
+              <button
+                className="pf-c-dropdown__menu-item"
+                disabled={false}
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role={null}
+                type="button"
+              >
+                Separated Action
+              </button>
+            </li>
+          </DropdownItem>
+        </ul>
+      </DropdownMenu>
+    </div>
+  </DropdownWithContext>
 </Dropdown>
 `;
 
@@ -3014,86 +4420,237 @@ exports[`dropdown regular 1`] = `
     </DropdownToggle>
   }
 >
-  <div
-    className="pf-c-dropdown"
-  >
-    <DropdownToggle
-      ariaHasPopup={true}
-      className=""
-      iconComponent={[Function]}
-      id="Dropdown Toggle"
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      key=".0"
-      onEnter={[Function]}
-      onToggle={[Function]}
-      parentRef={null}
-    >
-      <Toggle
-        ariaHasPopup={true}
+  <DropdownWithContext
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isGrouped={false}
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <DropdownToggle
         className=""
+        iconComponent={[Function]}
         id="Dropdown Toggle"
         isActive={false}
-        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={false}
         isPlain={false}
-        isSplitButton={false}
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        Dropdown
+      </DropdownToggle>
+    }
+  >
+    <div
+      className="pf-c-dropdown"
+    >
+      <DropdownToggle
+        ariaHasPopup={true}
+        className=""
+        iconComponent={[Function]}
+        id="Dropdown Toggle"
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
-        type={null}
       >
-        <button
-          aria-expanded={false}
-          aria-haspopup={true}
-          className="pf-c-dropdown__toggle"
-          disabled={false}
+        <Toggle
+          ariaHasPopup={true}
+          className=""
           id="Dropdown Toggle"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={false}
+          isSplitButton={false}
+          onEnter={[Function]}
+          onToggle={[Function]}
+          parentRef={null}
+          type={null}
         >
-          <span
-            className="pf-c-dropdown__toggle-text"
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            className="pf-c-dropdown__toggle"
+            disabled={false}
+            id="Dropdown Toggle"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
           >
-            Dropdown
-          </span>
-          <CaretDownIcon
-            className="pf-c-dropdown__toggle-icon"
-            color="currentColor"
-            size="sm"
-            title={null}
-          >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-dropdown__toggle-icon"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
+            <span
+              className="pf-c-dropdown__toggle-text"
             >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </CaretDownIcon>
-        </button>
-      </Toggle>
-    </DropdownToggle>
-  </div>
+              Dropdown
+            </span>
+            <CaretDownIcon
+              className="pf-c-dropdown__toggle-icon"
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                className="pf-c-dropdown__toggle-icon"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 320 512"
+                width="1em"
+              >
+                <path
+                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  transform=""
+                />
+              </svg>
+            </CaretDownIcon>
+          </button>
+        </Toggle>
+      </DropdownToggle>
+    </div>
+  </DropdownWithContext>
 </Dropdown>
 `;
 
@@ -3248,85 +4805,236 @@ exports[`dropdown right aligned 1`] = `
     </DropdownToggle>
   }
 >
-  <div
-    className="pf-c-dropdown"
-  >
-    <DropdownToggle
-      ariaHasPopup={true}
-      className=""
-      iconComponent={[Function]}
-      id="Dropdown Toggle"
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      key=".0"
-      onEnter={[Function]}
-      onToggle={[Function]}
-      parentRef={null}
-    >
-      <Toggle
-        ariaHasPopup={true}
+  <DropdownWithContext
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={true}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={-1}
+          isAppLauncher={false}
+          isDisabled={false}
+          isHovered={false}
+          onClick={[Function]}
+          role={null}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isGrouped={false}
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="right"
+    toggle={
+      <DropdownToggle
         className=""
+        iconComponent={[Function]}
         id="Dropdown Toggle"
         isActive={false}
-        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={false}
         isPlain={false}
-        isSplitButton={false}
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        Dropdown
+      </DropdownToggle>
+    }
+  >
+    <div
+      className="pf-c-dropdown"
+    >
+      <DropdownToggle
+        ariaHasPopup={true}
+        className=""
+        iconComponent={[Function]}
+        id="Dropdown Toggle"
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
-        type={null}
       >
-        <button
-          aria-expanded={false}
-          aria-haspopup={true}
-          className="pf-c-dropdown__toggle"
-          disabled={false}
+        <Toggle
+          ariaHasPopup={true}
+          className=""
           id="Dropdown Toggle"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          type="button"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={false}
+          isSplitButton={false}
+          onEnter={[Function]}
+          onToggle={[Function]}
+          parentRef={null}
+          type={null}
         >
-          <span
-            className="pf-c-dropdown__toggle-text"
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            className="pf-c-dropdown__toggle"
+            disabled={false}
+            id="Dropdown Toggle"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            type="button"
           >
-            Dropdown
-          </span>
-          <CaretDownIcon
-            className="pf-c-dropdown__toggle-icon"
-            color="currentColor"
-            size="sm"
-            title={null}
-          >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              className="pf-c-dropdown__toggle-icon"
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 320 512"
-              width="1em"
+            <span
+              className="pf-c-dropdown__toggle-text"
             >
-              <path
-                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                transform=""
-              />
-            </svg>
-          </CaretDownIcon>
-        </button>
-      </Toggle>
-    </DropdownToggle>
-  </div>
+              Dropdown
+            </span>
+            <CaretDownIcon
+              className="pf-c-dropdown__toggle-icon"
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                className="pf-c-dropdown__toggle-icon"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 320 512"
+                width="1em"
+              >
+                <path
+                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  transform=""
+                />
+              </svg>
+            </CaretDownIcon>
+          </button>
+        </Toggle>
+      </DropdownToggle>
+    </div>
+  </DropdownWithContext>
 </Dropdown>
 `;
