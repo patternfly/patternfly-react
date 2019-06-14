@@ -558,6 +558,7 @@ exports[`Alert - danger inline variation 1`] = `
       >
         <ExclamationCircleIcon
           color="currentColor"
+          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1162,6 +1163,7 @@ exports[`Alert - info inline variation 1`] = `
       >
         <InfoCircleIcon
           color="currentColor"
+          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1766,6 +1768,7 @@ exports[`Alert - success inline variation 1`] = `
       >
         <CheckCircleIcon
           color="currentColor"
+          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -2370,6 +2373,7 @@ exports[`Alert - warning inline variation 1`] = `
       >
         <ExclamationTriangleIcon
           color="currentColor"
+          noVerticalAlign={false}
           size="sm"
           title={null}
         >
