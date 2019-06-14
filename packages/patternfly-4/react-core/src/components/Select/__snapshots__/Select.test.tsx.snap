@@ -2686,6 +2686,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 aria-hidden={true}
                 className="pf-c-select__menu-item-icon"
                 color="currentColor"
+                noVerticalAlign={false}
                 size="sm"
                 title={null}
               >
@@ -2744,6 +2745,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 aria-hidden={true}
                 className="pf-c-select__menu-item-icon"
                 color="currentColor"
+                noVerticalAlign={false}
                 size="sm"
                 title={null}
               >
@@ -3892,6 +3894,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                 aria-hidden={true}
                 className="pf-c-select__menu-item-icon"
                 color="currentColor"
+                noVerticalAlign={false}
                 size="sm"
                 title={null}
               >
