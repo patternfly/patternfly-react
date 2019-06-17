@@ -1,9 +1,6 @@
 version: 2
 jobs:
   build:
-    branches:
-        ignore:
-          - master
     docker:
       - image: circleci/node:8.15
     working_directory: ~/repo
@@ -12,36 +9,74 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v{{ .Environment.CACHE_VERSION }}-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - v{{ .Environment.CACHE_VERSION }}-build-{{ .Branch }}-{{ checksum "yarn.lock" }}
       - run:
           name: Conditional install
           command: if [ ! -d node_modules ]; then yarn install --frozen-lockfile; fi
       - save_cache:
+          # This saves 2.5 minutes or more of `yarn install`
+          # Include paths from `find . -name package.json`
           paths:
             - node_modules
+            - packages/eslint-plugin-patternfly-react/node_modules
+            - packages/patternfly-3/node_modules
+            - packages/patternfly-4/node_modules
+            - packages/react-codemods/node_modules
             - packages/react-icons/node_modules
+            - packages/patternfly-3/patternfly-react/node_modules
+            - packages/patternfly-3/patternfly-react-extensions/node_modules
+            - packages/patternfly-3/patternfly-react-wooden-tree/node_modules
+            - packages/patternfly-3/patternfly-react/react-console/node_modules
+            - packages/patternfly-4/react-charts/node_modules
             - packages/patternfly-4/react-core/node_modules
             - packages/patternfly-4/react-docs/node_modules
-            - packages/patternfly-4/react-charts/node_modules
+            - packages/patternfly-4/react-docs/plugins/gatsby-transformer-react-docgen-typescript/node_modules
+            - packages/patternfly-4/react-inline-edit-extension/node_modules
+            - packages/patternfly-4/react-integration/node_modules
+            - packages/patternfly-4/react-integration/demo-app-ts/node_modules
+            - packages/patternfly-4/react-styled-system/node_modules
             - packages/patternfly-4/react-styles/node_modules
-            - packages/patternfly-3/patternfly-react/node_modules
-            - .cache # Incremental builds
-          key: v{{ .Environment.CACHE_VERSION }}-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - packages/patternfly-4/react-table/node_modules
+            - packages/patternfly-4/react-tokens/node_modules
+            - packages/patternfly-4/react-topology/node_modules
+            - packages/patternfly-4/react-virtualized-extension/node_modules
+          key: v{{ .Environment.CACHE_VERSION }}-build-{{ .Branch }}-{{ checksum "yarn.lock" }}
       - run:
           name: Build Dist
           command: yarn build
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            # Paths made by `yarn build`
+            - packages/*/dist
+            - packages/patternfly-4/react-styles/css
+              #      - run:
+              #          name: (PF3) Build Storybook
+              #          command: |
+              #            yarn build:storybook &&
+              #            cp -r .out .public/patternfly-3
+              #      - run:
+              #          name: (PF4) Build Docs
+              #          command: |
+              #            yarn build:docs &&
+              #            cp -r packages/patternfly-4/react-docs/public .public/patternfly-4 &&
+              #            cp -r .public/patternfly-4/assets .public/assets &&
+              #            cp .public/patternfly-4/favicon* .public
+              #      - run:
+              #          name: Deploy Docs
+              #          command: if [ -n "$CIRCLE_PULL_REQUEST" ]; then .circleci/upload_preview.sh; fi
+  jest_pf4_tests:
+    docker:
+      - image: circleci/node:8.15
+    working_directory: ~/repo
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v{{ .Environment.CACHE_VERSION }}-build-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - attach_workspace:
+          at: ~/repo
       - run:
-          name: (PF3) Build Storybook
-          command: |
-            yarn build:storybook &&
-            cp -r .out .public/patternfly-3
-      - run:
-          name: (PF4) Build Docs
-          command: |
-            yarn build:docs &&
-            cp -r packages/patternfly-4/react-docs/public .public/patternfly-4 &&
-            cp -r .public/patternfly-4/assets .public/assets &&
-            cp .public/patternfly-4/favicon* .public
-      - run:
-          name: Deploy Docs
-          command: if [ -n "$CIRCLE_PULL_REQUEST" ]; then .circleci/upload_preview.sh; fi
+          name: Jest Tests
+          command: yarn test:pf4
