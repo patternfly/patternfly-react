@@ -4,6 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Accordion/accordion'
 import { AngleRightIcon } from '@patternfly/react-icons';
 import { AccordionContext } from './Accordion';
 import { Omit } from '../../helpers/typeUtils';
+import { ElementType } from 'react';
 
 export interface AccordionToggleProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'type'> {
   /** Content rendered inside the Accordion toggle  */
@@ -25,8 +26,8 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
 }: AccordionToggleProps) => (
   <dt>
     <AccordionContext.Consumer>
-      {(HeadingLevel: string) => (
-        <HeadingLevel>
+      {(TitleLevel: any) => (
+        <TitleLevel>
           <button
             id={id}
             className={css(styles.accordionToggle, isExpanded && styles.modifiers.expanded, className)}
@@ -36,7 +37,7 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
             <span className={css(styles.accordionToggleText)}>{children}</span>
             <AngleRightIcon className={css(styles.accordionToggleIcon)} />
           </button>
-        </HeadingLevel>
+        </TitleLevel>
       )}
     </AccordionContext.Consumer>
   </dt>
