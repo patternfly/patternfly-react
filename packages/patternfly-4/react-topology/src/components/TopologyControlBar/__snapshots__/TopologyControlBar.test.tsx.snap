@@ -70,7 +70,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
         "hidden": false,
         "icon": <SearchMinusIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         />,
@@ -84,7 +83,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
         "hidden": true,
         "icon": <ExpandArrowsAltIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         />,
@@ -98,7 +96,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
         "hidden": false,
         "icon": <ExpandIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         />,
@@ -350,7 +347,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     >
                       <SearchMinusIcon
                         color="currentColor"
-                        noVerticalAlign={false}
                         size="sm"
                         title={null}
                       >
@@ -513,7 +509,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     >
                       <ExpandIcon
                         color="currentColor"
-                        noVerticalAlign={false}
                         size="sm"
                         title={null}
                       >
@@ -673,7 +668,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         "hidden": false,
         "icon": <SearchPlusIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         />,
@@ -687,7 +681,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         "hidden": false,
         "icon": <SearchMinusIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         />,
@@ -701,7 +694,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         "hidden": false,
         "icon": <ExpandArrowsAltIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         />,
@@ -715,7 +707,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
         "hidden": false,
         "icon": <ExpandIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         />,
@@ -837,7 +828,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     >
                       <SearchPlusIcon
                         color="currentColor"
-                        noVerticalAlign={false}
                         size="sm"
                         title={null}
                       >
@@ -1000,7 +990,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     >
                       <SearchMinusIcon
                         color="currentColor"
-                        noVerticalAlign={false}
                         size="sm"
                         title={null}
                       >
@@ -1163,7 +1152,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     >
                       <ExpandArrowsAltIcon
                         color="currentColor"
-                        noVerticalAlign={false}
                         size="sm"
                         title={null}
                       >
@@ -1326,7 +1314,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     >
                       <ExpandIcon
                         color="currentColor"
-                        noVerticalAlign={false}
                         size="sm"
                         title={null}
                       >

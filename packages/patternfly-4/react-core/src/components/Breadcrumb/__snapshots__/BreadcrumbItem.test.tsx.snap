@@ -18,7 +18,6 @@ exports[`BreadcrumbItem component should render breadcrumbItem with className 1`
   >
     <AngleRightIcon
       color="currentColor"
-      noVerticalAlign={false}
       size="sm"
       title={null}
     />
@@ -38,7 +37,6 @@ exports[`BreadcrumbItem component should render breadcrumbItem with custom eleme
   >
     <AngleRightIcon
       color="currentColor"
-      noVerticalAlign={false}
       size="sm"
       title={null}
     />
@@ -57,7 +55,6 @@ exports[`BreadcrumbItem component should render breadcrumbItem with id 1`] = `
   >
     <AngleRightIcon
       color="currentColor"
-      noVerticalAlign={false}
       size="sm"
       title={null}
     />
@@ -75,7 +72,6 @@ exports[`BreadcrumbItem component should render breadcrumbItem with target 1`] =
   >
     <AngleRightIcon
       color="currentColor"
-      noVerticalAlign={false}
       size="sm"
       title={null}
     />
@@ -93,7 +89,6 @@ exports[`BreadcrumbItem component should render default breadcrumbItem 1`] = `
   >
     <AngleRightIcon
       color="currentColor"
-      noVerticalAlign={false}
       size="sm"
       title={null}
     />
@@ -117,7 +112,6 @@ exports[`BreadcrumbItem component should render link breadcrumbItem 1`] = `
   >
     <AngleRightIcon
       color="currentColor"
-      noVerticalAlign={false}
       size="sm"
       title={null}
     />

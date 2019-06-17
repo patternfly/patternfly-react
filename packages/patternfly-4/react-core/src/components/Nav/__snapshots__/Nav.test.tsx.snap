@@ -241,7 +241,6 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                 <AngleRightIcon
                   aria-hidden="true"
                   color="currentColor"
-                  noVerticalAlign={false}
                   size="sm"
                   title={null}
                 >
@@ -402,7 +401,6 @@ exports[`Expandable Nav List 1`] = `
                 <AngleRightIcon
                   aria-hidden="true"
                   color="currentColor"
-                  noVerticalAlign={false}
                   size="sm"
                   title={null}
                 >
@@ -563,7 +561,6 @@ exports[`Expandable Nav List with aria label 1`] = `
                 <AngleRightIcon
                   aria-hidden="true"
                   color="currentColor"
-                  noVerticalAlign={false}
                   size="sm"
                   title={null}
                 >
@@ -705,7 +702,6 @@ exports[`Horizontal Nav List 1`] = `
       >
         <AngleLeftIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -809,7 +805,6 @@ exports[`Horizontal Nav List 1`] = `
       >
         <AngleRightIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1076,7 +1071,6 @@ exports[`Nav List with custom item nodes 1`] = `
       >
         <AngleLeftIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1128,7 +1122,6 @@ exports[`Nav List with custom item nodes 1`] = `
       >
         <AngleRightIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1276,7 +1269,6 @@ exports[`Tertiary Nav List 1`] = `
       >
         <AngleLeftIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1380,7 +1372,6 @@ exports[`Tertiary Nav List 1`] = `
       >
         <AngleRightIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >

@@ -45,7 +45,6 @@ exports[`Dropdown toggle 1`] = `
       <CaretDownIcon
         className="pf-c-dropdown__toggle-icon"
         color="currentColor"
-        noVerticalAlign={false}
         size="sm"
         title={null}
       >
@@ -117,7 +116,6 @@ exports[`Kebab toggle 1`] = `
     >
       <EllipsisVIcon
         color="currentColor"
-        noVerticalAlign={false}
         size="sm"
         title={null}
       >
