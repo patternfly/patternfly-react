@@ -19,12 +19,16 @@ workflows:
     - build_integration:
         requires:
         - build
-    - build_docs:
+    - build_pf4_docs:
+        requires:
+        - build
+    - build_pf3_docs:
         requires:
         - build
     - upload_docs:
         requires:
-        - build_docs
+        - build_pf3_docs
+        - build_pf4_docs
 jobs:
   install:
     docker:
@@ -156,7 +160,7 @@ jobs:
     - run:
         name: StyleLint
         command: yarn lint:style
-  build_docs:
+  build_pf3_docs:
     docker:
     - image: circleci/node:8.15
     working_directory: ~/repo
@@ -170,18 +174,28 @@ jobs:
     - run:
         name: Build PF3 Storybook Static Site
         command: yarn build:storybook
-    - run:
-        name: Build PF4 Gatsby Static Site
-        command: yarn build:docs
-    - run:
-        name: Build docs Folder
-        command: .circleci/copy-docs.sh
     - persist_to_workspace:
         root: ~/repo
         paths:
-        - docs/
-    - store_artifacts:
-        path: ~/repo/docs/
+        - .out/
+  build_pf4_docs:
+    docker:
+    - image: circleci/node:8.15
+    working_directory: ~/repo
+    steps:
+    - checkout
+    - restore_cache:
+        keys:
+        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+    - attach_workspace:
+        at: ~/repo
+    - run:
+        name: Build PF4 Gatsby Static Site
+        command: yarn build:docs
+    - persist_to_workspace:
+        root: ~/repo
+        paths:
+        - packages/patternfly-4/react-docs/public/
   upload_docs:
     docker:
     - image: circleci/node:8.15
@@ -190,5 +204,10 @@ jobs:
     - attach_workspace:
         at: ~/repo
     - run:
+        name: Build docs Folder
+        command: .circleci/copy-docs.sh
+    - store_artifacts:
+        path: ~/repo/docs/
+    - run:
         name: Upload Docs to surge.sh
-        command: .circleci/upload_docs.sh
+        command: .circleci/upload-docs.sh
