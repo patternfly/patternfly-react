@@ -1,25 +1,9 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
+import {TitleLevel} from '../Title';
 
 export const AccordionContext = React.createContext('h3');
-
-export enum HeadingLevel {
-  h1 = 'h1',
-  h2 = 'h2',
-  h3 = 'h3',
-  h4 = 'h4',
-  h5 = 'h5',
-  h6 = 'h6'
-}
-
-// declare global {
-//   namespace JSX {
-//     interface IntrinsicElements {
-//       'HeadingLevel': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
-//     }
-//   }
-// }
 
 export interface AccordionProps extends React.HTMLProps<HTMLDListElement> {
   /** Content rendered inside the Accordion  */
@@ -40,6 +24,6 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
   ...props
 }: AccordionProps) => (
   <dl className={css(styles.accordion, className)} aria-label={ariaLabel} {...props}>
-    <AccordionContext.Provider value={ headingLevel }>{children}</AccordionContext.Provider>
+    <AccordionContext.Provider value={headingLevel}>{children}</AccordionContext.Provider>
   </dl>
 );
