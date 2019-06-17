@@ -735,7 +735,6 @@ exports[`Progress variant danger 1`] = `
         >
           <TimesCircleIcon
             color="currentColor"
-            noVerticalAlign={false}
             size="sm"
             title={null}
           >
@@ -939,7 +938,6 @@ exports[`Progress variant success 1`] = `
         >
           <CheckCircleIcon
             color="currentColor"
-            noVerticalAlign={false}
             size="sm"
             title={null}
           >

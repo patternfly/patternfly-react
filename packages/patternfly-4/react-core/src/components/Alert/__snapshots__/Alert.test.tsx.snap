@@ -23,7 +23,6 @@ exports[`Alert - danger Action Close Button 1`] = `
       >
         <ExclamationCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -90,7 +89,6 @@ exports[`Alert - danger Action Close Button 1`] = `
           >
             <TimesIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -144,7 +142,6 @@ exports[`Alert - danger Action Link 1`] = `
       >
         <ExclamationCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -240,7 +237,6 @@ exports[`Alert - danger Action and Title 1`] = `
       >
         <ExclamationCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -338,7 +334,6 @@ exports[`Alert - danger Custom aria label 1`] = `
       >
         <ExclamationCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -430,7 +425,6 @@ exports[`Alert - danger Description 1`] = `
       >
         <ExclamationCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -493,7 +487,6 @@ exports[`Alert - danger Title 1`] = `
       >
         <ExclamationCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -558,7 +551,6 @@ exports[`Alert - danger inline variation 1`] = `
       >
         <ExclamationCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -628,7 +620,6 @@ exports[`Alert - info Action Close Button 1`] = `
       >
         <InfoCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -695,7 +686,6 @@ exports[`Alert - info Action Close Button 1`] = `
           >
             <TimesIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -749,7 +739,6 @@ exports[`Alert - info Action Link 1`] = `
       >
         <InfoCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -845,7 +834,6 @@ exports[`Alert - info Action and Title 1`] = `
       >
         <InfoCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -943,7 +931,6 @@ exports[`Alert - info Custom aria label 1`] = `
       >
         <InfoCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1035,7 +1022,6 @@ exports[`Alert - info Description 1`] = `
       >
         <InfoCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1098,7 +1084,6 @@ exports[`Alert - info Title 1`] = `
       >
         <InfoCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1163,7 +1148,6 @@ exports[`Alert - info inline variation 1`] = `
       >
         <InfoCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1233,7 +1217,6 @@ exports[`Alert - success Action Close Button 1`] = `
       >
         <CheckCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1300,7 +1283,6 @@ exports[`Alert - success Action Close Button 1`] = `
           >
             <TimesIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1354,7 +1336,6 @@ exports[`Alert - success Action Link 1`] = `
       >
         <CheckCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1450,7 +1431,6 @@ exports[`Alert - success Action and Title 1`] = `
       >
         <CheckCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1548,7 +1528,6 @@ exports[`Alert - success Custom aria label 1`] = `
       >
         <CheckCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1640,7 +1619,6 @@ exports[`Alert - success Description 1`] = `
       >
         <CheckCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1703,7 +1681,6 @@ exports[`Alert - success Title 1`] = `
       >
         <CheckCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1768,7 +1745,6 @@ exports[`Alert - success inline variation 1`] = `
       >
         <CheckCircleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1838,7 +1814,6 @@ exports[`Alert - warning Action Close Button 1`] = `
       >
         <ExclamationTriangleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -1905,7 +1880,6 @@ exports[`Alert - warning Action Close Button 1`] = `
           >
             <TimesIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1959,7 +1933,6 @@ exports[`Alert - warning Action Link 1`] = `
       >
         <ExclamationTriangleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -2055,7 +2028,6 @@ exports[`Alert - warning Action and Title 1`] = `
       >
         <ExclamationTriangleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -2153,7 +2125,6 @@ exports[`Alert - warning Custom aria label 1`] = `
       >
         <ExclamationTriangleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -2245,7 +2216,6 @@ exports[`Alert - warning Description 1`] = `
       >
         <ExclamationTriangleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -2308,7 +2278,6 @@ exports[`Alert - warning Title 1`] = `
       >
         <ExclamationTriangleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -2373,7 +2342,6 @@ exports[`Alert - warning inline variation 1`] = `
       >
         <ExclamationTriangleIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
