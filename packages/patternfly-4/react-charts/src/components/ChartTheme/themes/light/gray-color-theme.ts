@@ -1,10 +1,10 @@
 /* eslint-disable camelcase */
 import {
-  chart_color_blue_100,
-  chart_color_blue_200,
-  chart_color_blue_300,
-  chart_color_blue_400,
-  chart_color_blue_500,
+  chart_color_black_100,
+  chart_color_black_200,
+  chart_color_black_300,
+  chart_color_black_400,
+  chart_color_black_500,
   global_active_color_200,
   global_active_color_300,
   global_Color_dark_100,
@@ -29,14 +29,14 @@ const COLOR_TOOLTIP_FLYOUT_STROKE = '#151515';
 // Color scale
 // See https://docs.google.com/document/d/1cw10pJFXWruB1SA8TQwituxn5Ss6KpxYPCOYGrH8qAY/edit
 const COLOR_SCALE = [
-  chart_color_blue_300.value,
-  chart_color_blue_100.value,
-  chart_color_blue_500.value,
-  chart_color_blue_200.value,
-  chart_color_blue_400.value
+  chart_color_black_300.value,
+  chart_color_black_100.value,
+  chart_color_black_500.value,
+  chart_color_black_200.value,
+  chart_color_black_400.value
 ];
 
-export const LightBlueColorTheme = ColorTheme({
+export const LightGrayColorTheme = ColorTheme({
   COLOR_AXIS_FILL,
   COLOR_AXIS_STROKE,
   COLOR_FILL,
