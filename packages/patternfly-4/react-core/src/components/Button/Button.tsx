@@ -41,8 +41,8 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'plain' ;
   /** Adds accessible text to the button. */
   'aria-label'?: string; 
-  /** Icon for the button */
-  icon?: React.ReactType | null;
+  /** Icon for the button if variant is a link */
+  icon?: React.ReactNode | null;
 }
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
