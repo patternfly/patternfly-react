@@ -3,145 +3,145 @@ workflows:
   version: 2
   build_accept_deploy:
     jobs:
-      - install
-      - build:
-          requires:
-            - install
-      - lint:
-          requires:
-            - install
-      - jest_pf4_tests:
-          requires:
-            - build
-      - jest_other_tests:
-          requires:
-            - build
-      - integration_build:
-          requires:
-            - build
+    - install
+    - build:
+        requires:
+        - install
+    - lint:
+        requires:
+        - build
+    - jest_pf4_tests:
+        requires:
+        - build
+    - jest_other_tests:
+        requires:
+        - build
+    - integration_build:
+        requires:
+        - build
 jobs:
   install:
     docker:
     - image: circleci/node:8.15
     working_directory: ~/repo
     steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - v{{ .Environment.CACHE_VERSION }}-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - run:
-          name: Conditional install
-          command: if [ ! -d node_modules ]; then yarn install --frozen-lockfile; fi
-      - save_cache:
-          paths:
-            - node_modules/
-            - packages/patternfly-3/patternfly-react-extensions/node_modules/
-            - packages/patternfly-3/patternfly-react-wooden-tree/node_modules/
-            - packages/patternfly-3/patternfly-react/node_modules/
-            - packages/patternfly-3/react-console/node_modules/
-            - packages/patternfly-4/react-charts/node_modules/
-            - packages/patternfly-4/react-core/node_modules/
-            - packages/patternfly-4/react-docs/node_modules/
-            - packages/patternfly-4/react-docs/plugins/gatsby-transformer-react-docgen-typescript/node_modules/
-            - packages/patternfly-4/react-inline-edit-extension/node_modules/
-            - packages/patternfly-4/react-integration/demo-app-ts/node_modules/
-            - packages/patternfly-4/react-integration/node_modules/
-            - packages/patternfly-4/react-styled-system/node_modules/
-            - packages/patternfly-4/react-styles/node_modules/
-            - packages/patternfly-4/react-table/node_modules/
-            - packages/patternfly-4/react-tokens/node_modules/
-            - packages/patternfly-4/react-topology/node_modules/
-            - packages/patternfly-4/react-virtualized-extension/node_modules/
-            - packages/react-codemods/node_modules/
-            - packages/react-icons/node_modules/
-          key: v{{ .Environment.CACHE_VERSION }}-deps-{{ .Branch }}-{{ checksum "yarn.lock"}}
+    - checkout
+    - restore_cache:
+        keys:
+        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+    - run:
+        name: Conditional install
+        command: if [ ! -d node_modules ]; then yarn install --frozen-lockfile; fi
+    - save_cache:
+        paths:
+        - node_modules/
+        - packages/patternfly-3/patternfly-react-extensions/node_modules/
+        - packages/patternfly-3/patternfly-react-wooden-tree/node_modules/
+        - packages/patternfly-3/patternfly-react/node_modules/
+        - packages/patternfly-3/react-console/node_modules/
+        - packages/patternfly-4/react-charts/node_modules/
+        - packages/patternfly-4/react-core/node_modules/
+        - packages/patternfly-4/react-docs/node_modules/
+        - packages/patternfly-4/react-docs/plugins/gatsby-transformer-react-docgen-typescript/node_modules/
+        - packages/patternfly-4/react-inline-edit-extension/node_modules/
+        - packages/patternfly-4/react-integration/demo-app-ts/node_modules/
+        - packages/patternfly-4/react-integration/node_modules/
+        - packages/patternfly-4/react-styled-system/node_modules/
+        - packages/patternfly-4/react-styles/node_modules/
+        - packages/patternfly-4/react-table/node_modules/
+        - packages/patternfly-4/react-tokens/node_modules/
+        - packages/patternfly-4/react-topology/node_modules/
+        - packages/patternfly-4/react-virtualized-extension/node_modules/
+        - packages/react-codemods/node_modules/
+        - packages/react-icons/node_modules/
+        key: v{{ .Environment.CACHE_VERSION }}-deps-{{ .Branch }}-{{ checksum "yarn.lock"}}
   build:
     docker:
-      - image: circleci/node:8.15
+    - image: circleci/node:8.15
     working_directory: ~/repo
     steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v{{ .Environment.CACHE_VERSION }}-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - run:
-          name: Debug
-          command: git clean -ndfx
-      - run:
-          name: Build Dist
-          command: yarn build
-      - persist_to_workspace:
-          root: ~/repo
-          paths:
-            # Paths made by `yarn build`
-            - packages/*/dist
-            - packages/patternfly-4/react-styles/css
+    - checkout
+    - restore_cache:
+        keys:
+        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+    - run:
+        name: Debug
+        command: git clean -ndfx
+    - run:
+        name: Build Dist
+        command: yarn build
+    - persist_to_workspace:
+        root: ~/repo
+        paths:
+        # Paths made by `yarn build`
+        - packages/*/dist
+        - packages/patternfly-4/react-styles/css
   jest_pf4_tests:
     docker:
-      - image: circleci/node:8.15
+    - image: circleci/node:8.15
     working_directory: ~/repo
     steps:
-      - checkout
-      - restore_cache:
+    - checkout
+    - restore_cache:
         keys:
-          - v{{ .Environment.CACHE_VERSION }}-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: PF4 Jest Tests
-          command: yarn test:pf4 --maxWorkers=2
+        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+    - attach_workspace:
+        at: ~/repo
+    - run:
+        name: PF4 Jest Tests
+        command: yarn test:pf4 --maxWorkers=2
   jest_other_tests:
     docker:
-      - image: circleci/node:8.15
+    - image: circleci/node:8.15
     working_directory: ~/repo
     steps:
-      - checkout
-      - restore_cache:
+    - checkout
+    - restore_cache:
         keys:
-          - v{{ .Environment.CACHE_VERSION }}-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: PF3 Jest Tests
-          command: yarn test:pf3 --maxWorkers=2
-      - run:
-          name: Other Tests
-          command: yarn test:misc --maxWorkers=2
+        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+    - attach_workspace:
+        at: ~/repo
+    - run:
+        name: PF3 Jest Tests
+        command: yarn test:pf3 --maxWorkers=2
+    - run:
+        name: Other Tests
+        command: yarn test:misc --maxWorkers=2
   integration_build:
     docker:
-      - image: circleci/node:8.15
+    - image: circleci/node:8.15
     working_directory: ~/repo
     steps:
-      - checkout
-      - restore_cache:
+    - checkout
+    - restore_cache:
         keys:
-          - v{{ .Environment.CACHE_VERSION }}-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - attach_workspace:
-          at: ~/repo
-      - run:
-          name: Build Cypress Integration Tests
-          command: yarn build:integration
+        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+    - attach_workspace:
+        at: ~/repo
+    - run:
+        name: Build Cypress Integration Tests
+        command: yarn build:integration
   lint:
     docker:
-      - image: circleci/node:8.15
+    - image: circleci/node:8.15
     working_directory: ~/repo
     steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - v{{ .Environment.CACHE_VERSION }}-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - run:
-          name: TSLint
-          command: yarn lint:ts
-      - run:
-          name: ESLint
-          command: yarn lint:js
-      - run:
-          name: "@patternfly/patternfly Versions Match"
-          command: yarn lint:versions
-      - run:
-          name: StyleLint
-          command: yarn lint:style
+    - checkout
+    - restore_cache:
+        keys:
+        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+    - run:
+        name: TSLint
+        command: yarn lint:ts
+    - run:
+        name: ESLint
+        command: yarn lint:js
+    - run:
+        name: "@patternfly/patternfly Versions Match"
+        command: yarn lint:versions
+    - run:
+        name: StyleLint
+        command: yarn lint:style
 
 #      - run:
 #          name: (PF3) Build Storybook
