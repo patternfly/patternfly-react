@@ -31,7 +31,7 @@ export class ApplicationLauncherDemo extends React.Component<null, ApplicationLa
     const { isOpen } = this.state;
     const dropdownItems = [
       <Tooltip content={<div>Launch Application 1</div>}>
-        <DropdownItem key="application_1" component="a">
+        <DropdownItem key="application_1" component="a" href="http://patternfly-react.surge.sh/">
           Application 1
         </DropdownItem>
       </Tooltip>
