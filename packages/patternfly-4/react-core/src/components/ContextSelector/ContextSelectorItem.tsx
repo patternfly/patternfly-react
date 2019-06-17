@@ -1,40 +1,38 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
 import { ContextSelectorContext } from './contextSelectorConstants';
 
-const propTypes = {
+export interface ContextSelectorItemProps {
   /** Anything which can be rendered as Context Selector item */
-  children: PropTypes.node,
+  children?: React.ReactNode; 
   /** Classes applied to root element of the Context Selector item */
-  className: PropTypes.string,
+  className?: string; 
   /** Render Context  Selector item as disabled */
-  isDisabled: PropTypes.bool,
+  isDisabled?: boolean; 
+  // isSelected?
   /** Forces display of the hover state of the element */
-  isHovered: PropTypes.bool,
+  isHovered?: boolean; 
   /** Callback for click event */
-  onClick: PropTypes.func,
+  onClick: (event: React.MouseEvent) => void; 
   /** internal index of the item */
-  index: PropTypes.number,
+  index: number; 
   /** Internal callback for ref tracking */
-  sendRef: PropTypes.func,
-  /** Additional props are spread to the button element */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
+  sendRef: (index: number, current: any) => void; 
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  isHovered: false,
-  isDisabled: false,
-  onClick: () => {},
-  index: undefined,
-  sendRef: Function.prototype
-};
-
-class ContextSelectorItem extends React.Component {
-  ref = React.createRef();
+export class ContextSelectorItem extends React.Component<ContextSelectorItemProps>{
+  static defaultProps = {
+    children: null as React.ReactNode,
+    className: '',
+    isHovered: false,
+    isDisabled: false,
+    onClick: (): any => undefined,
+    index: undefined as number,
+    sendRef: Function.prototype
+  }
+  
+  ref: React.RefObject<HTMLButtonElement> = React.createRef();
 
   componentDidMount() {
     /* eslint-disable-next-line */
@@ -57,8 +55,8 @@ class ContextSelectorItem extends React.Component {
               ref={this.ref}
               onClick={event => {
                 if (!isDisabled) {
-                  onClick && onClick(event);
-                  onSelect && onSelect(event, children);
+                  onClick(event);
+                  onSelect(event, children);
                 }
               }}
               {...props}
@@ -71,8 +69,3 @@ class ContextSelectorItem extends React.Component {
     );
   }
 }
-
-ContextSelectorItem.propTypes = propTypes;
-ContextSelectorItem.defaultProps = defaultProps;
-
-export default ContextSelectorItem;

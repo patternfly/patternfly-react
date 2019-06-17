@@ -1,48 +1,47 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import { CaretDownIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
 import { KEY_CODES } from '../../helpers/constants';
 
-const propTypes = {
+export interface ContextSelectorToggleProps {
   /** HTML ID of toggle */
-  id: PropTypes.string.isRequired,
+  id: string;
   /** Classes applied to root element of toggle */
-  className: PropTypes.string,
+  className?: string; 
   /** Text that appears in the Context Selector Toggle */
-  toggleText: PropTypes.string,
+  toggleText?: string; 
   /** Flag to indicate if menu is opened */
-  isOpen: PropTypes.bool,
+  isOpen?: boolean; 
   /** Callback called when toggle is clicked */
-  onToggle: PropTypes.func,
+  onToggle?: (event: any, value: boolean) => void;
   /** Callback for toggle open on keyboard entry */
-  onEnter: PropTypes.func,
+  onEnter: () => void; 
   /** Element which wraps toggle */
-  parentRef: PropTypes.any,
+  parentRef?: any; 
   /** Forces focus state */
-  isFocused: PropTypes.bool,
+  isFocused?: boolean; 
   /** Forces hover state */
-  isHovered: PropTypes.bool,
+  isHovered?: boolean;
   /** Forces active state */
-  isActive: PropTypes.bool,
-  /** Additional props are spread to the container <button> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
+  isActive?: boolean; 
+}
 
-const defaultProps = {
-  className: '',
-  toggleText: '',
-  isOpen: false,
-  onEnter: () => {},
-  parentRef: null,
-  isFocused: false,
-  isHovered: false,
-  isActive: false,
-  onToggle: () => {}
-};
+export class ContextSelectorToggle extends React.Component<ContextSelectorToggleProps> {
+  static defaultProps = {
+    className: '',
+    toggleText: '',
+    isOpen: false,
+    onEnter: () => undefined as any,
+    parentRef: null as any,
+    isFocused: false,
+    isHovered: false,
+    isActive: false,
+    onToggle: (event: any, value: boolean) => undefined as any 
+  };
 
-class ContextSelectorToggle extends Component {
+  toggle: React.RefObject<HTMLButtonElement> = React.createRef();
+
   componentDidMount = () => {
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
@@ -55,34 +54,34 @@ class ContextSelectorToggle extends Component {
     document.removeEventListener('keydown', this.onEscPress);
   };
 
-  onDocClick = event => {
+  onDocClick = (event: any) => {
     const { isOpen, parentRef, onToggle } = this.props;
     if (isOpen && parentRef && !parentRef.contains(event.target)) {
-      onToggle && onToggle(false);
-      this.toggle.focus();
+      onToggle(null, false);
+      this.toggle.current.focus();
     }
   };
 
-  onEscPress = event => {
+  onEscPress = (event: any) => {
     const { isOpen, parentRef, onToggle } = this.props;
     const keyCode = event.keyCode || event.which;
     if (isOpen && keyCode === KEY_CODES.ESCAPE_KEY && parentRef && parentRef.contains(event.target)) {
-      onToggle && onToggle(false);
-      this.toggle.focus();
+      onToggle(null, false);
+      this.toggle.current.focus();
     }
   };
 
-  onKeyDown = event => {
+  onKeyDown = (event: any) => {
     const { isOpen, onToggle, onEnter } = this.props;
-    if ((event.keyCode === KEY_CODES.TAB && !isOpen) || event.key !== KEY_CODES.ENTER) return;
+    if ((event.keyCode === KEY_CODES.TAB && !isOpen) || event.key !== KEY_CODES.ENTER) { return };
     event.preventDefault();
     if (
       (event.keyCode === KEY_CODES.TAB || event.keyCode === KEY_CODES.ENTER || event.key !== KEY_CODES.SPACE) &&
       isOpen
     ) {
-      onToggle(!isOpen);
+      onToggle(null, !isOpen);
     } else if ((event.keyCode === KEY_CODES.ENTER || event.key === ' ') && !isOpen) {
-      onToggle(!isOpen);
+      onToggle(null, !isOpen);
       onEnter();
     }
   };
@@ -105,9 +104,7 @@ class ContextSelectorToggle extends Component {
       <button
         {...props}
         id={id}
-        ref={toggle => {
-          this.toggle = toggle;
-        }}
+        ref={this.toggle}
         className={css(
           styles.contextSelectorToggle,
           isFocused && styles.modifiers.focus,
@@ -116,9 +113,7 @@ class ContextSelectorToggle extends Component {
           className
         )}
         type="button"
-        onClick={event => {
-          onToggle && onToggle(event, !isOpen);
-        }}
+        onClick={event => onToggle(event, !isOpen)}
         aria-expanded={isOpen}
         onKeyDown={this.onKeyDown}
       >
@@ -128,8 +123,3 @@ class ContextSelectorToggle extends Component {
     );
   }
 }
-
-ContextSelectorToggle.propTypes = propTypes;
-ContextSelectorToggle.defaultProps = defaultProps;
-
-export default ContextSelectorToggle;

@@ -81,6 +81,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BadgeChip 
   },
   {
+    id: 'context-selector-demo', 
+    name: 'ContextSelector Demo', 
+    componentType: Examples.ContextSelectorDemo
+  },
+  {
     id: 'empty-state-demo',
     name: 'Empty State Demo',
     componentType: Examples.EmptyStateDemo

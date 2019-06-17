@@ -1,17 +1,19 @@
----
-title: 'Context selector'
-propComponents: ['ContextSelector', 'ContextSelectorItem']
-typescript: true
----
-
-import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
-
-## Simple context selector
-```js
 import React from 'react';
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
 
-class SimpleContextSelector extends React.Component {
+interface ContextSelectorState {
+  isOpen: boolean; 
+  selected: string;
+  searchValue: string; 
+  filteredItems: Array<string>; 
+}
+
+export class ContextSelectorDemo extends React.Component<{}, ContextSelectorState> {
+  items: Array<string>; 
+  onToggle: (event: any, isOpen: any) => void;
+  onSelect: (event: any, value: string) => void; 
+  onSearchInputChange: (value: string) => void; 
+  onSearchButtonClick: (event: any) => void; 
   constructor(props) {
     super(props);
     this.items = [
@@ -69,7 +71,7 @@ class SimpleContextSelector extends React.Component {
         onSearchInputChange={this.onSearchInputChange}
         isOpen={isOpen}
         searchInputValue={searchValue}
-        onToggle={this.onToggle}
+        onToggle={(event: any) => this.onToggle(event, !isOpen)}
         onSelect={this.onSelect}
         onSearchButtonClick={this.onSearchButtonClick}
         screenReaderLabel="Selected Project:"
@@ -81,4 +83,3 @@ class SimpleContextSelector extends React.Component {
     );
   }
 }
-```

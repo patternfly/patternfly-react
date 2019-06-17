@@ -3,8 +3,7 @@
 exports[`Renders ContextSelectorMenuList closed 1`] = `
 <ul
   className="pf-c-context-selector__menu-list"
-  hidden={false}
-  openedOnEnter={false}
+  hidden={true}
   role="menu"
 >
   <ContextSelectorItem
@@ -68,8 +67,7 @@ exports[`Renders ContextSelectorMenuList closed 1`] = `
 exports[`Renders ContextSelectorMenuList open 1`] = `
 <ul
   className="pf-c-context-selector__menu-list"
-  hidden={false}
-  openedOnEnter={false}
+  hidden={true}
   role="menu"
 >
   <ContextSelectorItem
