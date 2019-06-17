@@ -54,7 +54,7 @@ jobs:
         - packages/patternfly-4/react-virtualized-extension/node_modules/
         - packages/react-codemods/node_modules/
         - packages/react-icons/node_modules/
-        key: v{{ .Environment.CACHE_VERSION }}-deps-{{ .Branch }}-{{ checksum "yarn.lock"}}
+        key: deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
   build:
     docker:
     - image: circleci/node:8.15
