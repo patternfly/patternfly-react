@@ -51,7 +51,7 @@ jobs:
           at: ~/repo
       - run:
           name: PF4 Jest Tests
-          command: yarn test:pf4
+          command: yarn test:pf4 --maxWorkers=2
   jest_other_tests:
     docker:
       - image: circleci/node:8.15
@@ -62,10 +62,10 @@ jobs:
           at: ~/repo
       - run:
           name: PF3 Jest Tests
-          command: yarn test:pf3
+          command: yarn test:pf3 --maxWorkers=2
       - run:
           name: Other Tests
-          command: yarn test:misc
+          command: yarn test:misc --maxWorkers=2
   integration_build:
     docker:
       - image: circleci/node:8.15
