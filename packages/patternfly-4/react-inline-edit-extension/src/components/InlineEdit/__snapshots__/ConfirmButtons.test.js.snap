@@ -71,6 +71,7 @@ exports[`ConfirmButtons renders correctly 1`] = `
         >
           <CheckIcon
             color="currentColor"
+            noVerticalAlign={false}
             size="sm"
             title={null}
           >
@@ -119,6 +120,7 @@ exports[`ConfirmButtons renders correctly 1`] = `
         >
           <CloseIcon
             color="currentColor"
+            noVerticalAlign={false}
             size="sm"
             title={null}
           >
