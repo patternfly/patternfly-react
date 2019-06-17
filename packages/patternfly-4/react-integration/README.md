@@ -3,7 +3,7 @@
 ## Overview
 PatternFly 4 React provides an integration testing demo app as an environment to verify and test PatternFly 4 code changes and contributions.
 
-The demo app is written in TypeScript and includes Cypress. We use Cypress for integration testing. If you’re new to Cypress and want to learn more, you can start with their documentation. 
+The demo app is written in TypeScript and includes Cypress. We use Cypress for integration testing. If you’re new to Cypress and want to learn more, you can start with their documentation.
 
 * [Cypress Documentation](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell)
 * [Cypress API](https://docs.cypress.io/api/api/table-of-contents.html)
@@ -26,7 +26,6 @@ Once you’ve completed development of a new component, you need to perform a bu
 
 ## Running the demo app
 
-Running the demo app
 Run the following command from the root directory to launch the demo app:
 
 `yarn start:demo-app`
@@ -38,7 +37,7 @@ Once the demo app is launched, all saved changes you make to the code should be 
 Before you can start writing a Cypress test, you need to build a demo page to test against.
 
 1. Go to the [component demo section](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration/demo-app-ts/src/components/demos) and create a new folder to add your demo page.
-2. To see your demo in app navigation, add your demo to the [Demo.ts](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration/emo-app-ts/src/Demos.ts) file.
+2. To see your demo in app navigation, add your demo to the [Demo.ts](https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-integration/demo-app-ts/src/Demos.ts) file.
 
 
 ## Building Cypress tests

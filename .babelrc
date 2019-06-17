@@ -1,3 +1,0 @@
-{
-  "presets": ["./packages/patternfly-3/.babelrc.js"]
-}

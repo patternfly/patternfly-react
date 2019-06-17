@@ -20,6 +20,7 @@ module.exports = {
               '@patternfly-safe/react-core',
               '@patternfly-safe/react-icons',
               '@patternfly-safe/react-tokens',
+              '@patternfly/react-topology',
               '@patternfly-safe/patternfly/patternfly.css'
             ]
           }

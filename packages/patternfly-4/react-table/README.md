@@ -48,7 +48,7 @@ class SimpleTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
+      columns: [{ title: 'Repositories', props: null }, 'Branches', { title: 'Pull requests', props: null }, 'Workspaces', 'Last Commit'],
       rows: [['one', 'two', 'three', 'four', 'five']]
     };
   }

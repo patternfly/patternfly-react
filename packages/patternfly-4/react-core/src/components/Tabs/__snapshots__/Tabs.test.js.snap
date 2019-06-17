@@ -26,6 +26,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
     >
       <AngleLeftIcon
         color="currentColor"
+        noVerticalAlign={false}
         size="sm"
         title={null}
       >
@@ -198,6 +199,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
     >
       <AngleRightIcon
         color="currentColor"
+        noVerticalAlign={false}
         size="sm"
         title={null}
       >
@@ -387,6 +389,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
     >
       <AngleLeftIcon
         color="currentColor"
+        noVerticalAlign={false}
         size="sm"
         title={null}
       >
@@ -559,6 +562,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
     >
       <AngleRightIcon
         color="currentColor"
+        noVerticalAlign={false}
         size="sm"
         title={null}
       >
@@ -748,6 +752,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
     >
       <AngleLeftIcon
         color="currentColor"
+        noVerticalAlign={false}
         size="sm"
         title={null}
       >
@@ -920,6 +925,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
     >
       <AngleRightIcon
         color="currentColor"
+        noVerticalAlign={false}
         size="sm"
         title={null}
       >
@@ -1098,6 +1104,7 @@ exports[`should render accessible tabs 1`] = `
     >
       <AngleLeftIcon
         color="currentColor"
+        noVerticalAlign={false}
         size="sm"
         title={null}
       />
@@ -1163,6 +1170,7 @@ exports[`should render accessible tabs 1`] = `
     >
       <AngleRightIcon
         color="currentColor"
+        noVerticalAlign={false}
         size="sm"
         title={null}
       />
@@ -1231,6 +1239,7 @@ exports[`should render filled tabs 1`] = `
     >
       <AngleLeftIcon
         color="currentColor"
+        noVerticalAlign={false}
         size="sm"
         title={null}
       />
@@ -1293,6 +1302,7 @@ exports[`should render filled tabs 1`] = `
     >
       <AngleRightIcon
         color="currentColor"
+        noVerticalAlign={false}
         size="sm"
         title={null}
       />
@@ -1358,6 +1368,7 @@ exports[`should render secondary tabs 1`] = `
     >
       <AngleLeftIcon
         color="currentColor"
+        noVerticalAlign={false}
         size="sm"
         title={null}
       />
@@ -1420,6 +1431,7 @@ exports[`should render secondary tabs 1`] = `
     >
       <AngleRightIcon
         color="currentColor"
+        noVerticalAlign={false}
         size="sm"
         title={null}
       />
@@ -1517,6 +1529,7 @@ exports[`should render simple tabs 1`] = `
     >
       <AngleLeftIcon
         color="currentColor"
+        noVerticalAlign={false}
         size="sm"
         title={null}
       />
@@ -1579,6 +1592,7 @@ exports[`should render simple tabs 1`] = `
     >
       <AngleRightIcon
         color="currentColor"
+        noVerticalAlign={false}
         size="sm"
         title={null}
       />

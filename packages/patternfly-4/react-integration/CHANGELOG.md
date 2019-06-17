@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.21.0 (2019-06-14)
+
+
+### Features
+
+* **Accordion:** Accordion Component TypeScript Conversion ([#2121](https://github.com/patternfly/patternfly-react/issues/2121)) ([e2e981d](https://github.com/patternfly/patternfly-react/commit/e2e981d))
+
+
+
+
+
+# [1.20.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.19.1...@patternfly/react-integration@1.20.0) (2019-06-12)
+
+
+### Features
+
+* **react-core:** allow dynamic rendering of anchor components ([#2117](https://github.com/patternfly/patternfly-react/issues/2117)) ([c1c3be9](https://github.com/patternfly/patternfly-react/commit/c1c3be9))
+
+
+
+
+
+## [1.19.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.19.0...@patternfly/react-integration@1.19.1) (2019-06-12)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# 1.19.0 (2019-06-11)
+
+
+### Features
+
+* **ApplicationLauncher:** Convert application launcher to typescript ([#2166](https://github.com/patternfly/patternfly-react/issues/2166)) ([9b90f94](https://github.com/patternfly/patternfly-react/commit/9b90f94))
+* **Table:** Add support for .pf-m-grid-2xl breakpoint ([#2206](https://github.com/patternfly/patternfly-react/issues/2206)) ([0f9ebf9](https://github.com/patternfly/patternfly-react/commit/0f9ebf9))
+
+
+
+
+
+# 1.18.0 (2019-06-10)
+
+
+### Features
+
+* **backdrop:** Convert backdrop to typescript ([#2105](https://github.com/patternfly/patternfly-react/issues/2105)) ([fd3d771](https://github.com/patternfly/patternfly-react/commit/fd3d771))
+* **PF4: Pagination:** When empty array sent to pagination no per page should be visible ([#2175](https://github.com/patternfly/patternfly-react/issues/2175)) ([cb97dfd](https://github.com/patternfly/patternfly-react/commit/cb97dfd))
+
+
+
+
+
 # [1.17.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.16.0...@patternfly/react-integration@1.17.0) (2019-06-05)
 
 

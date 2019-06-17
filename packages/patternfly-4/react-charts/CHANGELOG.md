@@ -3,6 +3,84 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.3.1...@patternfly/react-charts@4.3.2) (2019-06-14)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [4.3.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.3.0...@patternfly/react-charts@4.3.1) (2019-06-14)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [4.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.2.0...@patternfly/react-charts@4.3.0) (2019-06-13)
+
+
+### Features
+
+* **build:** add source maps ([#2142](https://github.com/patternfly/patternfly-react/issues/2142)) ([5076c48](https://github.com/patternfly/patternfly-react/commit/5076c48))
+
+
+
+
+
+# 4.2.0 (2019-06-13)
+
+
+### Bug Fixes
+
+* **charts:** labels should use the overpass font ([#2232](https://github.com/patternfly/patternfly-react/issues/2232)) ([7b4e100](https://github.com/patternfly/patternfly-react/commit/7b4e100))
+
+
+### Features
+
+* **react-core:** allow dynamic rendering of anchor components ([#2117](https://github.com/patternfly/patternfly-react/issues/2117)) ([c1c3be9](https://github.com/patternfly/patternfly-react/commit/c1c3be9))
+
+
+
+
+
+## [4.1.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.1.4...@patternfly/react-charts@4.1.5) (2019-06-11)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [4.1.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.1.3...@patternfly/react-charts@4.1.4) (2019-06-10)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [4.1.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.1.2...@patternfly/react-charts@4.1.3) (2019-06-10)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## 4.1.2 (2019-06-10)
+
+
+### Bug Fixes
+
+* **charts:** align label vertically and add donutHeight/Width defaults ([#2193](https://github.com/patternfly/patternfly-react/issues/2193)) ([59aadfc](https://github.com/patternfly/patternfly-react/commit/59aadfc))
+
+
+
+
+
 ## [4.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.1.0...@patternfly/react-charts@4.1.1) (2019-06-05)
 
 **Note:** Version bump only for package @patternfly/react-charts

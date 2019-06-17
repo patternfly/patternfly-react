@@ -16,6 +16,7 @@ exports[`Renders ContextSelectorToggle 1`] = `
     aria-hidden={true}
     className="pf-c-context-selector__toggle-icon"
     color="currentColor"
+    noVerticalAlign={false}
     size="sm"
     title={null}
   />
@@ -50,6 +51,7 @@ exports[`Verify ESC press  1`] = `
       aria-hidden={true}
       className="pf-c-context-selector__toggle-icon"
       color="currentColor"
+      noVerticalAlign={false}
       size="sm"
       title={null}
     >
@@ -106,6 +108,7 @@ exports[`Verify ESC press with not isOpen 1`] = `
       aria-hidden={true}
       className="pf-c-context-selector__toggle-icon"
       color="currentColor"
+      noVerticalAlign={false}
       size="sm"
       title={null}
     >
@@ -162,6 +165,7 @@ exports[`Verify keydown enter  1`] = `
       aria-hidden={true}
       className="pf-c-context-selector__toggle-icon"
       color="currentColor"
+      noVerticalAlign={false}
       size="sm"
       title={null}
     >
@@ -218,6 +222,7 @@ exports[`Verify keydown tab  1`] = `
       aria-hidden={true}
       className="pf-c-context-selector__toggle-icon"
       color="currentColor"
+      noVerticalAlign={false}
       size="sm"
       title={null}
     >

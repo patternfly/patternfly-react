@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
-import { Provider } from 'reactabular-table';
+import { Provider } from './base';
 import { DropdownPosition, DropdownDirection } from '@patternfly/react-core';
 import { css, getModifier } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
@@ -17,7 +17,8 @@ export const TableGridBreakpoint = {
   grid: 'grid',
   gridMd: 'grid-md',
   gridLg: 'grid-lg',
-  gridXl: 'grid-xl'
+  gridXl: 'grid-xl',
+  grid2xl: 'grid-2xl'
 };
 
 export const TableVariant = {
@@ -125,25 +126,26 @@ const propTypes = {
   dropdownDirection: PropTypes.oneOf(Object.values(DropdownDirection)),
   /** Header to display above table for accessibility reasons. */
   header: props => {
-    if (!props['aria-label'] && !props.caption && !props.header) {
+    if (!props['aria-label'] && !props.caption && !props.header && !props.role === 'presentation') {
       throw new Error('Specify at least one of: header, caption, aria-label');
     }
     return null;
   },
   /** Caption to display in table for accessibility reasons. */
   caption: props => {
-    if (!props['aria-label'] && !props.caption && !props.header) {
+    if (!props['aria-label'] && !props.caption && !props.header && !props.role === 'presentation') {
       throw new Error('Specify at least one of: header, caption, aria-label');
     }
     return null;
   },
   /** aria-label in table for accessibility reasons. */
   'aria-label': props => {
-    if (!props['aria-label'] && !props.caption && !props.header) {
+    if (!props['aria-label'] && !props.caption && !props.header && !props.role === 'presentation') {
       throw new Error('Specify at least one of: header, caption, aria-label');
     }
     return null;
-  }
+  },
+  role: PropTypes.string
 };
 
 const defaultProps = {
@@ -169,7 +171,8 @@ const defaultProps = {
   header: undefined,
   caption: undefined,
   'aria-label': undefined,
-  gridBreakPoint: TableGridBreakpoint.gridMd
+  gridBreakPoint: TableGridBreakpoint.gridMd,
+  role: 'grid'
 };
 
 export const TableContext = React.createContext();
@@ -206,6 +209,7 @@ class Table extends React.Component {
       bodyWrapper,
       rowWrapper,
       borders,
+      role,
       ...props
     } = this.props;
 
@@ -248,7 +252,7 @@ class Table extends React.Component {
             }
           }}
           columns={headerData}
-          role="grid"
+          role={role}
           className={css(
             styles.table,
             gridBreakPoint && getModifier(stylesGrid, gridBreakPoint),

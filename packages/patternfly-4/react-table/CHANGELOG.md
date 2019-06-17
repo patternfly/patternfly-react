@@ -3,6 +3,188 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.13.2...@patternfly/react-table@2.13.3) (2019-06-14)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.13.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.13.1...@patternfly/react-table@2.13.2) (2019-06-14)
+
+
+### Bug Fixes
+
+* **react-icons:** add noVerticalAlign prop to d.ts file ([#2238](https://github.com/patternfly/patternfly-react/issues/2238)) ([c50143c](https://github.com/patternfly/patternfly-react/commit/c50143c)), closes [#2237](https://github.com/patternfly/patternfly-react/issues/2237)
+
+
+
+
+
+## [2.13.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.13.0...@patternfly/react-table@2.13.1) (2019-06-14)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+# [2.13.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.12.1...@patternfly/react-table@2.13.0) (2019-06-14)
+
+
+### Features
+
+* **PF4 Dropdown:** Wrap dropdown with context ([#2227](https://github.com/patternfly/patternfly-react/issues/2227)) ([5bb8051](https://github.com/patternfly/patternfly-react/commit/5bb8051))
+
+
+
+
+
+## [2.12.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.12.0...@patternfly/react-table@2.12.1) (2019-06-13)
+
+
+### Bug Fixes
+
+* **react-table:** collapse column icon behavior ([#2267](https://github.com/patternfly/patternfly-react/issues/2267)) ([eb0d436](https://github.com/patternfly/patternfly-react/commit/eb0d436))
+
+
+
+
+
+# [2.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.11.8...@patternfly/react-table@2.12.0) (2019-06-13)
+
+
+### Features
+
+* **build:** add source maps ([#2142](https://github.com/patternfly/patternfly-react/issues/2142)) ([5076c48](https://github.com/patternfly/patternfly-react/commit/5076c48))
+
+
+
+
+
+## [2.11.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.11.7...@patternfly/react-table@2.11.8) (2019-06-13)
+
+
+### Bug Fixes
+
+* **types:** use ts type instead of js type ([#2248](https://github.com/patternfly/patternfly-react/issues/2248)) ([7b6468c](https://github.com/patternfly/patternfly-react/commit/7b6468c))
+
+
+
+
+
+## [2.11.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.11.6...@patternfly/react-table@2.11.7) (2019-06-13)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.11.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.11.5...@patternfly/react-table@2.11.6) (2019-06-12)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.11.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.11.4...@patternfly/react-table@2.11.5) (2019-06-12)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.11.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.11.3...@patternfly/react-table@2.11.4) (2019-06-12)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.11.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.11.2...@patternfly/react-table@2.11.3) (2019-06-11)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.11.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.11.1...@patternfly/react-table@2.11.2) (2019-06-11)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.11.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.11.0...@patternfly/react-table@2.11.1) (2019-06-11)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+# [2.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.10.5...@patternfly/react-table@2.11.0) (2019-06-10)
+
+
+### Features
+
+* **Table:** Add support for .pf-m-grid-2xl breakpoint ([#2206](https://github.com/patternfly/patternfly-react/issues/2206)) ([0f9ebf9](https://github.com/patternfly/patternfly-react/commit/0f9ebf9))
+
+
+
+
+
+## [2.10.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.10.4...@patternfly/react-table@2.10.5) (2019-06-10)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.10.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.10.3...@patternfly/react-table@2.10.4) (2019-06-10)
+
+
+### Bug Fixes
+
+* **react-table:** Fix error Unknown event handler property `onCollapse`. It will be ignored. ([#2195](https://github.com/patternfly/patternfly-react/issues/2195)) ([2cbdfb8](https://github.com/patternfly/patternfly-react/commit/2cbdfb8))
+* **react-table:** Some props of IRow should not required ([#2196](https://github.com/patternfly/patternfly-react/issues/2196)) ([343f928](https://github.com/patternfly/patternfly-react/commit/343f928))
+
+
+
+
+
+## [2.10.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.10.2...@patternfly/react-table@2.10.3) (2019-06-07)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.10.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.10.1...@patternfly/react-table@2.10.2) (2019-06-07)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.10.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.10.0...@patternfly/react-table@2.10.1) (2019-06-06)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
 # [2.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.9.4...@patternfly/react-table@2.10.0) (2019-06-05)
 
 

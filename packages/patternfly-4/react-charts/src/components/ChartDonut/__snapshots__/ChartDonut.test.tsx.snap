@@ -9,11 +9,11 @@ exports[`Chart 1`] = `
     style={
       Array [
         Object {
-          "fontSize": 26,
+          "fontSize": 24,
         },
         Object {
           "fill": "#bbb",
-          "fontSize": 16,
+          "fontSize": 14,
         },
       ]
     }
@@ -948,11 +948,11 @@ exports[`Chart 2`] = `
     style={
       Array [
         Object {
-          "fontSize": 26,
+          "fontSize": 24,
         },
         Object {
           "fill": "#bbb",
-          "fontSize": 16,
+          "fontSize": 14,
         },
       ]
     }
@@ -1887,11 +1887,11 @@ exports[`renders component data 1`] = `
     style={
       Array [
         Object {
-          "fontSize": 26,
+          "fontSize": 24,
         },
         Object {
           "fill": "#bbb",
-          "fontSize": 16,
+          "fontSize": 14,
         },
       ]
     }

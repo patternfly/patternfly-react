@@ -10,13 +10,15 @@ export const IconSize = {
 export const propTypes = {
   color: PropTypes.string,
   size: PropTypes.oneOf(Object.keys(IconSize)),
-  title: PropTypes.string
+  title: PropTypes.string,
+  noVerticalAlign: PropTypes.bool
 };
 
 export const defaultProps = {
   color: 'currentColor',
   size: IconSize.sm,
-  title: null
+  title: null,
+  noVerticalAlign: false
 };
 
 export const getSize = size => {

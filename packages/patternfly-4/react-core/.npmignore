@@ -1,7 +1,6 @@
-src
 build
 dist/**/demos
 dist/**/examples
 dist/**/__snapshots__
-dist/**/*.docs.js
 dist/**/*.test.js
+dist/**/*.map
