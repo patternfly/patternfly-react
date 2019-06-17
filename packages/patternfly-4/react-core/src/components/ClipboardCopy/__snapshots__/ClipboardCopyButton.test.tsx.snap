@@ -28,7 +28,6 @@ exports[`copy button render 1`] = `
   >
     <CopyIcon
       color="currentColor"
-      noVerticalAlign={false}
       size="sm"
       title={null}
     />

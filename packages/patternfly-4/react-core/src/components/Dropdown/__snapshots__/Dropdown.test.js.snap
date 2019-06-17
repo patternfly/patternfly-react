@@ -100,7 +100,6 @@ exports[`KebabToggle basic 1`] = `
           >
             <EllipsisVIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -512,7 +511,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           >
             <EllipsisVIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -896,7 +894,6 @@ exports[`KebabToggle dropup 1`] = `
           >
             <EllipsisVIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1280,7 +1277,6 @@ exports[`KebabToggle expanded 1`] = `
           >
             <EllipsisVIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1925,7 +1921,6 @@ exports[`KebabToggle plain 1`] = `
           >
             <EllipsisVIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2309,7 +2304,6 @@ exports[`KebabToggle regular 1`] = `
           >
             <EllipsisVIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2693,7 +2687,6 @@ exports[`KebabToggle right aligned 1`] = `
           >
             <EllipsisVIcon
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2830,7 +2823,6 @@ exports[`dropdown basic 1`] = `
             <CaretDownIcon
               className="pf-c-dropdown__toggle-icon"
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3248,7 +3240,6 @@ exports[`dropdown dropup + right aligned 1`] = `
             <CaretDownIcon
               className="pf-c-dropdown__toggle-icon"
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3638,7 +3629,6 @@ exports[`dropdown dropup 1`] = `
             <CaretDownIcon
               className="pf-c-dropdown__toggle-icon"
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4028,7 +4018,6 @@ exports[`dropdown expanded 1`] = `
             <CaretDownIcon
               className="pf-c-dropdown__toggle-icon"
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4679,7 +4668,6 @@ exports[`dropdown regular 1`] = `
             <CaretDownIcon
               className="pf-c-dropdown__toggle-icon"
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5069,7 +5057,6 @@ exports[`dropdown right aligned 1`] = `
             <CaretDownIcon
               className="pf-c-dropdown__toggle-icon"
               color="currentColor"
-              noVerticalAlign={false}
               size="sm"
               title={null}
             >

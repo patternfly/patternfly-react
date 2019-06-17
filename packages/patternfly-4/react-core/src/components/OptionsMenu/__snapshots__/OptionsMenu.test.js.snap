@@ -64,7 +64,6 @@ exports[`optionsMenu expanded 1`] = `
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -123,7 +122,6 @@ exports[`optionsMenu expanded 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
-                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     >
@@ -171,7 +169,6 @@ exports[`optionsMenu expanded 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
-                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     >
@@ -220,7 +217,6 @@ exports[`optionsMenu expanded 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
-                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     >
@@ -268,7 +264,6 @@ exports[`optionsMenu expanded 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
-                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     >
@@ -335,7 +330,6 @@ exports[`optionsMenu expanded 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
-                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     >
@@ -383,7 +377,6 @@ exports[`optionsMenu expanded 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
-                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     >
@@ -580,7 +573,6 @@ exports[`optionsMenu open up 1`] = `
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -672,7 +664,6 @@ exports[`optionsMenu plain 1`] = `
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -766,7 +757,6 @@ exports[`optionsMenu regular 1`] = `
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -862,7 +852,6 @@ exports[`optionsMenu right aligned + open up 1`] = `
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >
@@ -957,7 +946,6 @@ exports[`optionsMenu right aligned 1`] = `
           aria-hidden={true}
           className="pf-c-options-menu__toggle-icon"
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         >

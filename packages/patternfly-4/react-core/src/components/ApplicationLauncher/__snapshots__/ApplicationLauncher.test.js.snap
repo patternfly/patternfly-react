@@ -185,7 +185,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
       >
         <ThIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         />
@@ -246,7 +245,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
             >
               <ThIcon
                 color="currentColor"
-                noVerticalAlign={false}
                 size="sm"
                 title={null}
               >
@@ -464,7 +462,6 @@ exports[`ApplicationLauncher dropup 1`] = `
       >
         <ThIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         />
@@ -525,7 +522,6 @@ exports[`ApplicationLauncher dropup 1`] = `
             >
               <ThIcon
                 color="currentColor"
-                noVerticalAlign={false}
                 size="sm"
                 title={null}
               >
@@ -743,7 +739,6 @@ exports[`ApplicationLauncher expanded 1`] = `
       >
         <ThIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         />
@@ -804,7 +799,6 @@ exports[`ApplicationLauncher expanded 1`] = `
             >
               <ThIcon
                 color="currentColor"
-                noVerticalAlign={false}
                 size="sm"
                 title={null}
               >
@@ -1360,7 +1354,6 @@ exports[`ApplicationLauncher regular 1`] = `
       >
         <ThIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         />
@@ -1421,7 +1414,6 @@ exports[`ApplicationLauncher regular 1`] = `
             >
               <ThIcon
                 color="currentColor"
-                noVerticalAlign={false}
                 size="sm"
                 title={null}
               >
@@ -1639,7 +1631,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
       >
         <ThIcon
           color="currentColor"
-          noVerticalAlign={false}
           size="sm"
           title={null}
         />
@@ -1700,7 +1691,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
             >
               <ThIcon
                 color="currentColor"
-                noVerticalAlign={false}
                 size="sm"
                 title={null}
               >

@@ -380,7 +380,6 @@ exports[`Check page to verify skip to content is created 1`] = `
                   >
                     <AngleRightIcon
                       color="currentColor"
-                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     >
@@ -425,7 +424,6 @@ exports[`Check page to verify skip to content is created 1`] = `
                   >
                     <AngleRightIcon
                       color="currentColor"
-                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     >
@@ -470,7 +468,6 @@ exports[`Check page to verify skip to content is created 1`] = `
                   >
                     <AngleRightIcon
                       color="currentColor"
-                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     >
