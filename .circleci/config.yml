@@ -1,4 +1,12 @@
 version: 2
+workflows:
+  version: 2
+  build_accept_deploy:
+    jobs:
+      - build
+      - jest_pf4_tests:
+          requires:
+            - build
 jobs:
   build:
     docker:
@@ -42,6 +50,9 @@ jobs:
             - packages/patternfly-4/react-virtualized-extension/node_modules
           key: v{{ .Environment.CACHE_VERSION }}-build-{{ .Branch }}-{{ checksum "yarn.lock" }}
       - run:
+          name: Install
+          command: yarn install
+      - run:
           name: Build Dist
           command: yarn build
       - persist_to_workspace:
@@ -80,3 +91,4 @@ jobs:
       - run:
           name: Jest Tests
           command: yarn test:pf4
+
