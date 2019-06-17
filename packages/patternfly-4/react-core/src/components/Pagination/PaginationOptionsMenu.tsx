@@ -111,14 +111,16 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
   render() {
     const { className, widgetId, itemsPerPageTitle, dropDirection, optionsToggle, perPageOptions, toggleTemplate, firstIndex, lastIndex, itemCount, itemsTitle } = this.props;
     const { isOpen } = this.state;
+
     let parentRef = null;
+    const setParentRef = (ref: HTMLElement) => {
+      parentRef = ref;
+    };
 
     return (
       <div
         className={css(styles.optionsMenu, className)}
-        ref={ref => {
-          parentRef = ref;
-        }}
+        ref={setParentRef}
       >
       <span id={`${widgetId}-label`} hidden>
         {itemsPerPageTitle}:
@@ -148,4 +150,4 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
       </div>
     );
   }
-};
+}
