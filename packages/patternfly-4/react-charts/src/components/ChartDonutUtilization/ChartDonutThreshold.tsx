@@ -392,6 +392,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   children,
   data = [],
   donutOrientation = 'left',
+  labels = [], // Don't show any tooltip labels by default, let consumer override if needed
   standalone = true,
   themeColor,
   themeVariant,
@@ -405,25 +406,34 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   donutHeight = Math.min(height, width),
   donutWidth = Math.min(height, width),
   innerRadius = (Math.min(donutHeight, donutWidth) - 34) / 2,
-
   ...rest
 }: ChartDonutThresholdProps) => {
+
   // Returns computed data representing pie chart slices
   const getComputedData = () => {
-    const computedData = [];
-    const datum = getData(data);
-    let prevYVal = 0;
-    datum.forEach((dataPoint: {_x?: any, _y: any}) => {
-      computedData.push({ x: dataPoint._x, y: dataPoint._y ? Math.abs(dataPoint._y - prevYVal) : 0 });
-      prevYVal = dataPoint._y;
-    });
-    computedData.push({ y: prevYVal ? Math.abs(100 - prevYVal) : 0 });
-    return computedData;
-  };
+    // Format and sort data. Sorting ensures thresholds are displayed in the correct order and simplifies calculations.
+    const datum = Data.formatData(data, {x, y, ...rest}, ['x', 'y']).sort((a: any,b: any) => a._y - b._y);
 
-  const getData = (datum: any[]) => {
-    const accessorTypes = ['x', 'y'];
-    return Data.formatData(datum, { x, y, ...rest }, accessorTypes);
+    // Data must be offset so that the sum of all data point y-values (including the final slice) == 100.
+    const [prev, computedData] = datum.reduce((acc: [number, any], dataPoint: {_x: number | string, _y: number}) => {
+      return [
+        dataPoint._y, // Set the previous value to current y value
+        [
+          ...acc[1],
+          {
+            x: dataPoint._x, // Conditionally add x property only if it is in the original data object
+            y: dataPoint._y - acc[0] // Must be offset by previous value
+          }
+        ]
+      ];
+    }, [0, []]);
+
+    return [
+      ...computedData,
+      {
+        y: prev ? (100 - prev) : 0
+      }
+    ];
   };
 
   // Returns the horizontal shift for the dynamic utilization donut cart
@@ -449,24 +459,27 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   const renderChildren = () =>
     React.Children.toArray(children).map(child => {
       if (child.props) {
-        const datum = getData([{ ...child.props.data }]);
-        const orientation = child.props.donutOrientation || donutOrientation;
+        const {data: childData, ...childProps} = child.props;
+        const datum = Data.formatData([childData], childProps, ['x', 'y']); // Format child data independently of this component's props
+        const orientation = childProps.donutOrientation || donutOrientation;
         const dynamicTheme =
-          child.props.theme ||
-          getDonutThresholdDynamicTheme(child.props.themeColor || themeColor,
-            child.props.themeVariant || themeVariant);
+          childProps.theme ||
+          getDonutThresholdDynamicTheme(childProps.themeColor || themeColor,
+            childProps.themeVariant || themeVariant);
         return React.cloneElement(child, {
-          donutDx: child.props.donutDx || getDynamicDonutDx(dynamicTheme, orientation),
-          donutDy: child.props.donutDy || getDynamicDonutDy(dynamicTheme),
-          donutHeight: child.props.donutHeight || donutHeight - (theme.pie.height - dynamicTheme.pie.height),
+          data: childData,
+          donutDx: getDynamicDonutDx(dynamicTheme, orientation),
+          donutDy: getDynamicDonutDy(dynamicTheme),
+          donutHeight: donutHeight - (theme.pie.height - dynamicTheme.pie.height),
           donutOrientation: orientation,
-          donutWidth: child.props.donutWidth || donutWidth - (theme.pie.width - dynamicTheme.pie.width),
-          endAngle: child.props.endAngle || 360 * (datum[0]._y ? datum[0]._y / 100 : 100),
-          height: child.props.height || height,
-          showStatic: child.props.showStatic || false,
+          donutWidth: donutWidth - (theme.pie.width - dynamicTheme.pie.width),
+          endAngle: 360 * (datum[0]._y ? datum[0]._y / 100 : 100),
+          height,
+          showStatic: false,
           standalone: false,
           theme: dynamicTheme,
-          width: child.props.width || width
+          width: width,
+          ...childProps,
         });
       }
       return child;
@@ -479,6 +492,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
         data={getComputedData()}
         height={donutHeight}
         innerRadius={innerRadius > 0 ? innerRadius : 0}
+        labels={labels}
         origin={getChartOrigin({
           chartHeight: donutHeight,
           chartWidth: donutWidth,
