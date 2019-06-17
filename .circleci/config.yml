@@ -15,50 +15,18 @@ jobs:
     steps:
       - checkout
       # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v{{ .Environment.CACHE_VERSION }}-build-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - run:
-          name: Conditional install
-          command: if [ ! -d node_modules ]; then yarn install --frozen-lockfile; fi
-      - save_cache:
-          # This saves 2.5 minutes or more of `yarn install`
-          # Include paths from `find . -name package.json`
-          paths:
-            - node_modules
-            - packages/eslint-plugin-patternfly-react/node_modules
-            - packages/patternfly-3/node_modules
-            - packages/patternfly-4/node_modules
-            - packages/react-codemods/node_modules
-            - packages/react-icons/node_modules
-            - packages/patternfly-3/patternfly-react/node_modules
-            - packages/patternfly-3/patternfly-react-extensions/node_modules
-            - packages/patternfly-3/patternfly-react-wooden-tree/node_modules
-            - packages/patternfly-3/patternfly-react/react-console/node_modules
-            - packages/patternfly-4/react-charts/node_modules
-            - packages/patternfly-4/react-core/node_modules
-            - packages/patternfly-4/react-docs/node_modules
-            - packages/patternfly-4/react-docs/plugins/gatsby-transformer-react-docgen-typescript/node_modules
-            - packages/patternfly-4/react-inline-edit-extension/node_modules
-            - packages/patternfly-4/react-integration/node_modules
-            - packages/patternfly-4/react-integration/demo-app-ts/node_modules
-            - packages/patternfly-4/react-styled-system/node_modules
-            - packages/patternfly-4/react-styles/node_modules
-            - packages/patternfly-4/react-table/node_modules
-            - packages/patternfly-4/react-tokens/node_modules
-            - packages/patternfly-4/react-topology/node_modules
-            - packages/patternfly-4/react-virtualized-extension/node_modules
-          key: v{{ .Environment.CACHE_VERSION }}-build-{{ .Branch }}-{{ checksum "yarn.lock" }}
       - run:
           name: Install
-          command: yarn install
+          command: yarn install --frozen-lockfile
       - run:
           name: Build Dist
           command: yarn build
       - persist_to_workspace:
           root: ~/repo
           paths:
-            # Paths made by `yarn build`
+            # Paths made by `yarn install` and `yarn build`
+            - node_modules
+            - packages/*/node_modules
             - packages/*/dist
             - packages/patternfly-4/react-styles/css
               #      - run:
