@@ -32,5 +32,4 @@ lerna-debug.log
 *.swp
 
 # Deploy directory
-.public
-!.public/index.html
+docs

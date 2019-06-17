@@ -1,7 +1,7 @@
 version: 2
 workflows:
   version: 2
-  build_accept_deploy:
+  build_test_deploy:
     jobs:
     - install
     - build:
@@ -10,15 +10,21 @@ workflows:
     - lint:
         requires:
         - build
-    - jest_pf4_tests:
+    - test_jest_pf4:
         requires:
         - build
-    - jest_other_tests:
+    - test_jest_other:
         requires:
         - build
-    - integration_build:
+    - build_integration:
         requires:
         - build
+    - build_docs:
+        requires:
+        - build
+    - upload_docs:
+        requires:
+        - build_docs
 jobs:
   install:
     docker:
@@ -64,24 +70,25 @@ jobs:
     - restore_cache:
         keys:
         - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
-    - run:
-        name: Debug
-        command: git clean -ndfx
+    - restore_cache:
+        keys:
+        - lastbuild-v{{.Environment.CACHE_VERSION}}-{{.Branch}}
     - run:
         name: Build Dist
         command: yarn build
-    - run:
-        name: Debug2
-        command: git clean -ndfx
+    - save_cache:
+        paths:
+        - .cache/
+        key: lastbuild-v{{.Environment.CACHE_VERSION}}-{{.Branch}}
     - persist_to_workspace:
         root: ~/repo
         paths:
         # Paths made by `yarn build`
-        - packages/*/dist
-        - packages/patternfly-3/*/dist
-        - packages/patternfly-4/*/dist
-        - packages/patternfly-4/react-styles/css
-  jest_pf4_tests:
+        - packages/*/dist/
+        - packages/patternfly-3/*/dist/
+        - packages/patternfly-4/*/dist/
+        - packages/patternfly-4/react-styles/css/
+  test_jest_pf4:
     docker:
     - image: circleci/node:8.15
     working_directory: ~/repo
@@ -95,7 +102,7 @@ jobs:
     - run:
         name: PF4 Jest Tests
         command: yarn test:pf4 --maxWorkers=2
-  jest_other_tests:
+  test_jest_other:
     docker:
     - image: circleci/node:8.15
     working_directory: ~/repo
@@ -112,7 +119,7 @@ jobs:
     - run:
         name: Other Tests
         command: yarn test:misc --maxWorkers=2
-  integration_build:
+  build_integration:
     docker:
     - image: circleci/node:8.15
     working_directory: ~/repo
@@ -149,19 +156,39 @@ jobs:
     - run:
         name: StyleLint
         command: yarn lint:style
-
-#      - run:
-#          name: (PF3) Build Storybook
-#          command: |
-#            yarn build:storybook &&
-#            cp -r .out .public/patternfly-3
-#      - run:
-#          name: (PF4) Build Docs
-#          command: |
-#            yarn build:docs &&
-#            cp -r packages/patternfly-4/react-docs/public .public/patternfly-4 &&
-#            cp -r .public/patternfly-4/assets .public/assets &&
-#            cp .public/patternfly-4/favicon* .public
-#      - run:
-#          name: Deploy Docs
-#          command: if [ -n "$CIRCLE_PULL_REQUEST" ]; then .circleci/upload_preview.sh; fi
+  build_docs:
+    docker:
+    - image: circleci/node:8.15
+    working_directory: ~/repo
+    steps:
+    - checkout
+    - restore_cache:
+        keys:
+        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+    - attach_workspace:
+        at: ~/repo
+    - run:
+        name: Build PF3 Storybook Static Site
+        command: yarn build:storybook
+    - run:
+        name: Build PF4 Gatsby Static Site
+        command: yarn build:docs
+    - run:
+        name: Build docs Folder
+        command: .circleci/copy-docs.sh
+    - persist_to_workspace:
+        root: ~/repo
+        paths:
+        - docs/
+    - store_artifacts:
+        path: ~/repo/docs/
+  upload_docs:
+    docker:
+    - image: circleci/node:8.15
+    working_directory: ~/repo
+    steps:
+    - attach_workspace:
+        at: ~/repo
+    - run:
+        name: Upload Docs to surge.sh
+        command: .circleci/upload_docs.sh
