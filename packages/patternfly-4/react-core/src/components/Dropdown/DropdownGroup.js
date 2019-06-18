@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
+import { DropdownContext } from './dropdownConstants';
 
 const propTypes = {
   /** Checkboxes within group */
@@ -21,16 +21,18 @@ const defaultProps = {
 };
 
 const DropdownGroup = ({ children, className, label, ...props }) => (
-  <React.Fragment>
-    <section {...props} className={css(styles.dropdownGroup, className)}>
-      {label && (
-        <h1 className={css(styles.dropdownGroupTitle)} aria-hidden>
-          {label}
-        </h1>
-      )}
-      <ul>{children}</ul>
-    </section>
-  </React.Fragment>
+  <DropdownContext.Consumer>
+    {({ sectionClass, sectionTitleClass }) => (
+      <section {...props} className={css(sectionClass, className)}>
+        {label && (
+          <h1 className={css(sectionTitleClass)} aria-hidden>
+            {label}
+          </h1>
+        )}
+        <ul>{children}</ul>
+      </section>
+    )}
+  </DropdownContext.Consumer>
 );
 
 DropdownGroup.propTypes = propTypes;

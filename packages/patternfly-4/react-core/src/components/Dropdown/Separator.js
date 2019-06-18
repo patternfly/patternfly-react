@@ -1,23 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import { componentShape } from '../../helpers/componentShape';
-import { DropdownArrowContext } from './dropdownConstants';
-import DropdownItem from './DropdownItem';
+import { DropdownContext, DropdownArrowContext } from './dropdownConstants';
+import DropdownItem from './InternalDropdownItem';
 
 const Separator = ({ className, ...props }) => (
-  <DropdownArrowContext.Consumer>
-    {context => (
-      <DropdownItem
-        {...props}
-        context={context}
-        className={css(styles.dropdownSeparator, className)}
-        component="div"
-        role="separator"
-      />
+  <DropdownContext.Consumer>
+    {({ separatorClass }) => (
+      <DropdownArrowContext.Consumer>
+        {context => (
+          <DropdownItem
+            {...props}
+            context={context}
+            className={css(separatorClass, className)}
+            component="div"
+            role="separator"
+          />
+        )}
+      </DropdownArrowContext.Consumer>
     )}
-  </DropdownArrowContext.Consumer>
+  </DropdownContext.Consumer>
 );
 
 Separator.propTypes = {

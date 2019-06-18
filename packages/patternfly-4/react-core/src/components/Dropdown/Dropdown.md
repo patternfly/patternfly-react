@@ -5,7 +5,7 @@ propComponents: ['Dropdown', 'DropdownGroup', 'DropdownItem', 'DropdownToggle', 
 ---
 
 import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, DropdownGroup } from '@patternfly/react-core';
-import { ThIcon } from '@patternfly/react-icons';
+import { ThIcon, UnknownIcon } from '@patternfly/react-icons';
 
 ## Simple dropdown
 
@@ -91,9 +91,11 @@ class GroupedDropdown extends React.Component {
     const { isOpen } = this.state;
     const dropdownItems = [
       <DropdownGroup key="group 1">
-        <DropdownItem key="group 1 link">Link</DropdownItem>
-        <DropdownItem key="group 1 action" component="button">
-          Action
+        <DropdownItem key="group 1 link">
+          <UnknownIcon className="pf-c-app-launcher__menu-item-icon" />
+          <span class="pf-c-app-launcher__menu-item-text">
+              Link not in group
+          </span>
         </DropdownItem>
       </DropdownGroup>,
       <DropdownGroup label="Group 2" key="group 2">

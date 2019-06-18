@@ -16,7 +16,13 @@ export const DropdownContext: React.Context<{
   menuClass?: string,
   itemClass?: string,
   toggleClass?: string,
-  baseClass?: string
+  baseClass?: string,
+  baseComponent?: string,
+  sectionClass?: string,
+  sectionTitleClass?: string,
+  disabledClass?: string,
+  hoverClass?: string,
+  separatorClass?: string
 }>
 
 export const DropdownArrowContext: React.Context<{
