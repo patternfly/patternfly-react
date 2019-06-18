@@ -2,12 +2,27 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { Accordion } from './Accordion';
 import { AccordionToggle } from './AccordionToggle';
+import { AccordionContent } from './AccordionContent';
+import { AccordionItem } from './AccordionItem';
 
 describe('Accordion', () => {
   test('Accordion default', () => {
     const view = shallow(<Accordion aria-label="this is a simple accordion" />);
     expect(view.render()).toMatchSnapshot();
   });
+
+  test('Accordion with non-default headingLevel', () => {
+    const view = shallow(
+      <Accordion headingLevel="h2">
+        <AccordionItem>
+          <AccordionToggle id="item-1">Item One</AccordionToggle>
+          <AccordionContent>Item One Content</AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    );
+    expect(view.render()).toMatchSnapshot();
+  });
+
 
   test('It should pass optional aria props', () => {
     const view = mount(
