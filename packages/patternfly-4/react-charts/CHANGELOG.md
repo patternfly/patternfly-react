@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.3.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.3.2...@patternfly/react-charts@4.3.3) (2019-06-18)
+
+
+### Bug Fixes
+
+* **ChartDonutThreshold:** Don't show static threshold donut tooltips by default. ([#2270](https://github.com/patternfly/patternfly-react/issues/2270)) ([7d9bd16](https://github.com/patternfly/patternfly-react/commit/7d9bd16))
+
+
+
+
+
 ## [4.3.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.3.1...@patternfly/react-charts@4.3.2) (2019-06-14)
 
 **Note:** Version bump only for package @patternfly/react-charts

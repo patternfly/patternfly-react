@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.23.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.22.1...demo-app-ts@1.23.0) (2019-06-18)
+
+
+### Features
+
+* **ContextSelector:** Convert context selector to typescript ([#2147](https://github.com/patternfly/patternfly-react/issues/2147)) ([9a4f484](https://github.com/patternfly/patternfly-react/commit/9a4f484))
+
+
+
+
+
 ## [1.22.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.22.0...demo-app-ts@1.22.1) (2019-06-14)
 
 **Note:** Version bump only for package demo-app-ts
