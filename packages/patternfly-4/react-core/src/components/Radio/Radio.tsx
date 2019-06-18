@@ -28,7 +28,8 @@ export class Radio extends React.Component<RadioProps> {
   static defaultProps = {
     className: '',
     isDisabled: false,
-    isValid: true
+    isValid: true,
+    onChange: Function.prototype
   }
 
   constructor(props: RadioProps) {
@@ -60,14 +61,14 @@ export class Radio extends React.Component<RadioProps> {
       <div className={css(styles.radio, className)}>
         <input
           {...props}
-          aria-label={label ? undefined : ariaLabel}
           className={css(styles.radioInput)}
           type="radio"
           onChange={this.handleChange}
           aria-invalid={!isValid}
           disabled={isDisabled}
           checked={checked || isChecked}
-          defaultChecked={isChecked ? undefined : defaultChecked}
+          {...!isChecked && {defaultChecked: defaultChecked}}
+          {...!label && {"aria-label": ariaLabel}}
         />
         {label && (
           <label className={css(styles.radioLabel, getModifier(styles, isDisabled && 'disabled' as any))} htmlFor={props.id}>
