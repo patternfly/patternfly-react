@@ -32,7 +32,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   ...props
 }: ClipboardCopyButtonProps) => (
   <Tooltip
-    trigger="mouseenter focus click'"
+    trigger="mouseenter focus click"
     exitDelay={exitDelay}
     entryDelay={entryDelay}
     maxWidth={maxWidth}
