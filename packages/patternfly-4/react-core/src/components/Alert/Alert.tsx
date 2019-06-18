@@ -59,7 +59,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       <h4 className={css(styles.alertTitle)}>{readerTitle}</h4>
       {children && (
         <div className={css(styles.alertDescription)}>
-          <p>{children}</p>
+          {children}
         </div>
       )}
       {action && (
