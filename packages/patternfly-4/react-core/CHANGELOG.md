@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.48.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.46.1...@patternfly/react-core@3.48.0) (2019-06-18)
+
+
+### Features
+
+* **ContextSelector:** Convert context selector to typescript ([#2147](https://github.com/patternfly/patternfly-react/issues/2147)) ([9a4f484](https://github.com/patternfly/patternfly-react/commit/9a4f484))
+
+
+
+
+
 # [3.47.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.46.1...@patternfly/react-core@3.47.0) (2019-06-18)
 
 
