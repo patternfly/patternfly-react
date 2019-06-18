@@ -1,9 +1,8 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/ClipboardCopy/clipboard-copy.css';
+import styles from '@patternfly/react-styles/css/components/ClipboardCopy/clipboard-copy';
 import { css } from '@patternfly/react-styles';
 import { CopyIcon } from '@patternfly/react-icons';
-import { OneOf } from '../../helpers/typeUtils'; 
-import { Tooltip, TooltipPosition } from '../Tooltip';
+import { Tooltip } from '../Tooltip';
 
 export interface ClipboardCopyButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   onClick: (event: React.MouseEvent) => void; 
