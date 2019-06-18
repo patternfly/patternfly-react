@@ -160,7 +160,8 @@ class MultipleOptions extends React.Component {
         id="options-menu-multiple-options-example" 
         menuItems={menuItems} 
         isOpen={isOpen}
-        toggle={toggle} />
+        toggle={toggle}
+        isGrouped />
     );
   }
 }
@@ -357,7 +358,6 @@ class PlainWithText extends React.Component {
       this.state = {
         isOpen: false,
         toggleText: <React.Fragment>Custom text</React.Fragment>,
-        buttonContents: <CaretDownIcon/>,
         customOption1: true,
         customOption2: false,
         customOption3: false
@@ -390,7 +390,7 @@ class PlainWithText extends React.Component {
       <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.customOption2} id="customOption2" key="option 2">Option 2</OptionsMenuItem>,
       <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.customOption3} id="customOption3" key="option 3">Option 3</OptionsMenuItem>
     ];
-    const toggle = <OptionsMenuToggleWithText toggleText={toggleText} toggleButtonContents={buttonContents} onToggle={this.onToggle} />;
+    const toggle = <OptionsMenuToggleWithText toggleText={toggleText} onToggle={this.onToggle} />;
 
     return (
       <OptionsMenu 

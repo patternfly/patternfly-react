@@ -10,8 +10,28 @@ export enum DropdownDirection {
   down = 'down'
 };
 
-export const DropdownContext = React.createContext({
+export const DropdownContext = React.createContext<{
+  onSelect?: (event?: any) => void;
+  id?: string;
+  toggleIconClass?: string;
+  toggleTextClass?: string;
+  menuClass?: string;
+  itemClass?: string;
+  toggleClass?: string;
+  baseClass?: string;
+  baseComponent?: string;
+  sectionClass?: string;
+  sectionTitleClass?: string;
+  sectionComponent?: string;
+  disabledClass?: string;
+  hoverClass?: string;
+  separatorClass?: string;
+  menuComponent?: string;
+}>({
   onSelect: (event?: any) => undefined as any,
+  id: '',
+  toggleIconClass: '',
+  toggleTextClass: '',
   menuClass: '',
   itemClass: '',
   toggleClass: '',
@@ -22,7 +42,8 @@ export const DropdownContext = React.createContext({
   sectionComponent: 'section',
   disabledClass: '',
   hoverClass: '',
-  separatorClass: ''
+  separatorClass: '',
+  menuComponent: 'ul'
 });
 
 export const DropdownArrowContext = React.createContext({

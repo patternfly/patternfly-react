@@ -90,7 +90,7 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
     }
     return (
       <DropdownContext.Consumer>
-        {({ baseClass, baseComponent }) => {
+        {({ baseClass, baseComponent, id: contextId }) => {
           const BaseComponent = baseComponent as any;
           return (
             <BaseComponent
@@ -118,7 +118,7 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
                   component={component}
                   isOpen={isOpen}
                   position={position}
-                  aria-labelledby={id}
+                  aria-labelledby={contextId ? `${contextId}-toggle` : id}
                   openedOnEnter={this.openedOnEnter}
                   isGrouped={isGrouped}
                 >
@@ -141,6 +141,8 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
   <DropdownContext.Provider
     value={{
       onSelect: event => onSelect && onSelect(event),
+      toggleTextClass: styles.dropdownToggleText,
+      toggleIconClass: styles.dropdownToggleIcon,
       menuClass: styles.dropdownMenu,
       itemClass: styles.dropdownMenuItem,
       toggleClass: styles.dropdownToggle,
