@@ -1,10 +1,12 @@
 version: 2
 
+# Adapted from https://github.com/circleci/circleci-docs/blob/master/.circleci/config.yml
+# I'd love to find docs on this syntax.
 references:
   js_deps_cache_key: &js_deps_cache_key
-    js-deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+    js-deps-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   build_cache_key: &build_cache_key
-    build-cache-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+    build-cache-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   attach_workspace: &attach_workspace
     attach_workspace:
       at: ~/project
@@ -17,7 +19,10 @@ workflows:
     - build:
         requires:
         - install
-    - lint:
+    - build_pf4_docs:
+        requires:
+        - build
+    - build_pf3_docs:
         requires:
         - build
     - test_jest_pf4:
@@ -29,10 +34,7 @@ workflows:
     - build_integration:
         requires:
         - build
-    - build_pf4_docs:
-        requires:
-        - build
-    - build_pf3_docs:
+    - lint:
         requires:
         - build
     - upload_docs:
@@ -199,8 +201,6 @@ jobs:
     - run:
         name: Build docs Folder
         command: .circleci/copy-docs.sh
-    - store_artifacts:
-        path: ~/project/docs/
     - run:
         name: Upload Docs to surge.sh
         command: .circleci/upload-docs.sh

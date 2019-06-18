@@ -11,13 +11,13 @@ then
   # https://en.wikipedia.org/wiki/Domain_Name_System#Domain_name_syntax
   # So, just replace "/" or "." with "-"
   DEPLOY_SUBDOMAIN=`echo "${REPONAME}-pr-$PR_NUM" | tr '[\/|\.]' '-' | cut -c1-253`
-  ALREADY_DEPLOYED=`yarn run surge list | grep ${DEPLOY_SUBDOMAIN}`
+  ALREADY_DEPLOYED=`npx surge list | grep ${DEPLOY_SUBDOMAIN}`
 else
   DEPLOY_SUBDOMAIN=${REPONAME}
 fi
 
 DEPLOY_DOMAIN="https://${DEPLOY_SUBDOMAIN}.surge.sh"
-yarn run surge --project docs --domain $DEPLOY_DOMAIN;
+npx surge --project docs --domain $DEPLOY_DOMAIN;
 
 if [ -n "${CIRCLE_PULL_REQUEST}" ] && [ -z "${ALREADY_DEPLOYED}" ] # Leave a Github comment
 then
