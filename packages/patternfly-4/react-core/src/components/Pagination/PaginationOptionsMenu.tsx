@@ -44,7 +44,7 @@ interface PaginationOptionsMenuState {
 }
 
 export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenuProps, PaginationOptionsMenuState> {
-
+  private parentRef = React.createRef<HTMLDivElement>();
   static defaultProps = {
    className: '',
    widgetId: '',
@@ -112,19 +112,14 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
     const { className, widgetId, itemsPerPageTitle, dropDirection, optionsToggle, perPageOptions, toggleTemplate, firstIndex, lastIndex, itemCount, itemsTitle } = this.props;
     const { isOpen } = this.state;
 
-    let parentRef = null;
-    const setParentRef = (ref: HTMLElement) => {
-      parentRef = ref;
-    };
-
     return (
       <div
         className={css(styles.optionsMenu, className)}
-        ref={setParentRef}
+        ref={this.parentRef}
       >
-      <span id={`${widgetId}-label`} hidden>
-        {itemsPerPageTitle}:
-      </span>
+        <span id={`${widgetId}-label`} hidden>
+          {itemsPerPageTitle}:
+        </span>
         <Dropdown
           direction={dropDirection}
           onSelect={this.onSelect}
@@ -141,7 +136,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
               itemCount={itemCount}
               itemsTitle={itemsTitle}
               toggleTemplate={toggleTemplate}
-              parentRef={parentRef}
+              parentRef={this.parentRef.current}
             />
           }
           dropdownItems={this.renderItems()}
