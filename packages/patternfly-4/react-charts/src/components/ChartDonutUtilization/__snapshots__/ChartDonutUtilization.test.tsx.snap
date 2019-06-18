@@ -6,23 +6,6 @@ exports[`Chart 1`] = `
   width={230}
 >
   <Component
-    style={
-      Array [
-        Object {
-          "fontSize": 24,
-        },
-        Object {
-          "fill": "#bbb",
-          "fontSize": 14,
-        },
-      ]
-    }
-    textAnchor="middle"
-    verticalAnchor="middle"
-    x={115}
-    y={115}
-  />
-  <Component
     data={
       Array [
         Object {
@@ -34,14 +17,9 @@ exports[`Chart 1`] = `
         },
       ]
     }
+    donutHeight={230}
+    donutWidth={230}
     height={230}
-    innerRadius={98}
-    origin={
-      Object {
-        "x": 115,
-        "y": 115,
-      }
-    }
     standalone={false}
     theme={
       Object {
@@ -516,23 +494,6 @@ exports[`Chart 2`] = `
   width={230}
 >
   <Component
-    style={
-      Array [
-        Object {
-          "fontSize": 24,
-        },
-        Object {
-          "fill": "#bbb",
-          "fontSize": 14,
-        },
-      ]
-    }
-    textAnchor="middle"
-    verticalAnchor="middle"
-    x={115}
-    y={115}
-  />
-  <Component
     data={
       Array [
         Object {
@@ -544,14 +505,9 @@ exports[`Chart 2`] = `
         },
       ]
     }
+    donutHeight={230}
+    donutWidth={230}
     height={230}
-    innerRadius={98}
-    origin={
-      Object {
-        "x": 115,
-        "y": 115,
-      }
-    }
     standalone={false}
     theme={
       Object {
@@ -1026,23 +982,6 @@ exports[`renders component data 1`] = `
   width={200}
 >
   <Component
-    style={
-      Array [
-        Object {
-          "fontSize": 24,
-        },
-        Object {
-          "fill": "#bbb",
-          "fontSize": 14,
-        },
-      ]
-    }
-    textAnchor="middle"
-    verticalAnchor="middle"
-    x={100}
-    y={100}
-  />
-  <Component
     data={
       Array [
         Object {
@@ -1054,14 +993,9 @@ exports[`renders component data 1`] = `
         },
       ]
     }
+    donutHeight={200}
+    donutWidth={200}
     height={200}
-    innerRadius={83}
-    origin={
-      Object {
-        "x": 100,
-        "y": 100,
-      }
-    }
     standalone={false}
     theme={
       Object {

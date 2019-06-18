@@ -1,12 +1,38 @@
 .ws-preview {
   & > * {
-    .donut-chart-container {
+    .donut-chart {
       height: 230px;
       width: 230px;
     }
 
-    .donut-chart-inline {
-      display: inline-flex;
+    .donut-chart-sm {
+      height: 150px;
+      width: 150px;
+    }
+
+    .donut-chart-legend-bottom {
+      height: 275px;
+      width: 300px;
+    }
+
+    .donut-chart-legend-right {
+      height: 230px;
+      width: 350px;
+    }
+
+    .donut-chart-legend-right-sm {
+      height: 150px;
+      width: 275px;
+    }
+
+    .donut-chart-legend-right-subtitle-bottom-sm {
+      height: 175px;
+      width: 275px;
+    }
+
+    .donut-chart-legend-bottom-subtitle-right-sm {
+      height: 200px;
+      width: 300px;
     }
   }
 }
