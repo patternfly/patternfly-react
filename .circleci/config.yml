@@ -76,6 +76,9 @@ workflows:
         requires:
         - build_pf3_docs
         - build_pf4_docs
+    - deploy_prerelease:
+        requires:
+        - build
 jobs:
   build:
     docker:
@@ -204,3 +207,11 @@ jobs:
     - run:
         name: Upload docs to surge.sh
         command: .circleci/upload-docs.sh
+  deploy_prerelease:
+    docker:
+    - image: circleci/node:8.15
+    steps:
+    - *attach_workspace
+    - run:
+        name: Deploy to NPM and Github
+        command: .circleci/release.sh

@@ -2,9 +2,8 @@
 echo "Preparing release environment..."
 git config --global user.email "patternfly-build@redhat.com"
 git config --global user.name "patternfly-build"
-git config credential.helper store
-
-echo "https://${GH_USERNAME}:${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" > ~/.git-credentials
+# git config credential.helper store
+# echo "https://${GH_USERNAME}:${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" > ~/.git-credentials
 echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 
 echo "Doing a release..."
