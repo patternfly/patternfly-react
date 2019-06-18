@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
-import {TitleLevel} from '../Title';
 
 export const AccordionContext = React.createContext('h3');
 

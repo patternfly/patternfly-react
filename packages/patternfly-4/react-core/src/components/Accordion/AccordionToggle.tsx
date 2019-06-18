@@ -26,8 +26,8 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
 }: AccordionToggleProps) => (
   <dt>
     <AccordionContext.Consumer>
-      {(TitleLevel: any) => (
-        <TitleLevel>
+      {(AccordionHeadingLevel: any) => (
+        <AccordionHeadingLevel>
           <button
             id={id}
             className={css(styles.accordionToggle, isExpanded && styles.modifiers.expanded, className)}
@@ -37,7 +37,7 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
             <span className={css(styles.accordionToggleText)}>{children}</span>
             <AngleRightIcon className={css(styles.accordionToggleIcon)} />
           </button>
-        </TitleLevel>
+        </AccordionHeadingLevel>
       )}
     </AccordionContext.Consumer>
   </dt>
