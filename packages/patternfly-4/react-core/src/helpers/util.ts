@@ -112,7 +112,6 @@ export function keyHandler(index: number, position: string, refsCollection: any[
     return;
   }
   let nextIndex;
-  debugger;
   if (position === 'up') {
     if (index === 0) {
       // loop back to end
