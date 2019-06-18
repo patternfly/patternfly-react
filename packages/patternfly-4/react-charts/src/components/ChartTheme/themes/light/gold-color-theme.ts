@@ -1,14 +1,14 @@
 /* eslint-disable camelcase */
 import {
-  chart_color_blue_100,
-  chart_color_blue_200,
-  chart_color_blue_300,
-  chart_color_blue_400,
-  chart_color_blue_500,
+  chart_color_gold_100,
+  chart_color_gold_200,
+  chart_color_gold_300,
+  chart_color_gold_400,
+  chart_color_gold_500,
+  global_Color_dark_100,
+  global_Color_light_100,
   global_active_color_200,
   global_active_color_300,
-  global_Color_dark_100,
-  global_Color_light_100
 } from '@patternfly/react-tokens';
 import { ColorTheme } from '../color-theme';
 
@@ -29,14 +29,15 @@ const COLOR_TOOLTIP_FLYOUT_STROKE = '#151515';
 // Color scale
 // See https://docs.google.com/document/d/1cw10pJFXWruB1SA8TQwituxn5Ss6KpxYPCOYGrH8qAY/edit
 const COLOR_SCALE = [
-  chart_color_blue_300.value,
-  chart_color_blue_100.value,
-  chart_color_blue_500.value,
-  chart_color_blue_200.value,
-  chart_color_blue_400.value
+  chart_color_gold_300.value,
+  chart_color_gold_100.value,
+  chart_color_gold_500.value,
+  chart_color_gold_200.value,
+  chart_color_gold_400.value,
+
 ];
 
-export const LightBlueColorTheme = ColorTheme({
+export const LightGoldColorTheme = ColorTheme({
   COLOR_AXIS_FILL,
   COLOR_AXIS_STROKE,
   COLOR_FILL,
@@ -48,4 +49,4 @@ export const LightBlueColorTheme = ColorTheme({
   COLOR_TOOLTIP_STROKE,
   COLOR_TOOLTIP_FLYOUT_FILL,
   COLOR_TOOLTIP_FLYOUT_STROKE
-});
+}) ;
