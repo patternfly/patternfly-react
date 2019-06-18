@@ -1,4 +1,14 @@
 version: 2
+
+references:
+  js_deps_cache_key: &js_deps_cache_key
+    js-deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+  build_cache_key: &build_cache_key
+    build-cache-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: ~/project
+
 workflows:
   version: 2
   build_test_deploy:
@@ -33,12 +43,15 @@ jobs:
   install:
     docker:
     - image: circleci/node:8.15
-    working_directory: ~/repo
     steps:
     - checkout
+    - persist_to_workspace:
+        root: ~/project
+        paths:
+          - "*"
     - restore_cache:
         keys:
-        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+        - *js_deps_cache_key
     - run:
         name: Conditional install
         command: if [ ! -d node_modules ]; then yarn install --frozen-lockfile; fi
@@ -64,59 +77,52 @@ jobs:
         - packages/patternfly-4/react-virtualized-extension/node_modules/
         - packages/react-codemods/node_modules/
         - packages/react-icons/node_modules/
-        key: deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+        key: *js_deps_cache_key
   build:
     docker:
     - image: circleci/node:8.15
-    working_directory: ~/repo
     steps:
-    - checkout
+    - *attach_workspace
     - restore_cache:
         keys:
-        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
+        - *js_deps_cache_key
     - restore_cache:
         keys:
-        - lastbuild-v{{.Environment.CACHE_VERSION}}-{{.Branch}}
+        - *build_cache_key
     - run:
         name: Build Dist
         command: yarn build
     - save_cache:
         paths:
         - .cache/
-        key: lastbuild-v{{.Environment.CACHE_VERSION}}-{{.Branch}}
+        key: *build_cache_key
     - persist_to_workspace:
-        root: ~/repo
+        root: ~/project
         paths:
         # Paths made by `yarn build`
-        - packages/*/dist/
-        - packages/patternfly-3/*/dist/
-        - packages/patternfly-4/*/dist/
+        - packages/*/dist
+        - packages/patternfly-3/*/dist
+        - packages/patternfly-4/*/dist
         - packages/patternfly-4/react-styles/css/
   test_jest_pf4:
     docker:
     - image: circleci/node:8.15
-    working_directory: ~/repo
     steps:
-    - checkout
+    - *attach_workspace
     - restore_cache:
         keys:
-        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
-    - attach_workspace:
-        at: ~/repo
+        - *js_deps_cache_key
     - run:
         name: PF4 Jest Tests
         command: yarn test:pf4 --maxWorkers=2
   test_jest_other:
     docker:
     - image: circleci/node:8.15
-    working_directory: ~/repo
     steps:
-    - checkout
+    - *attach_workspace
     - restore_cache:
         keys:
-        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
-    - attach_workspace:
-        at: ~/repo
+        - *js_deps_cache_key
     - run:
         name: PF3 Jest Tests
         command: yarn test:pf3 --maxWorkers=2
@@ -126,28 +132,23 @@ jobs:
   build_integration:
     docker:
     - image: circleci/node:8.15
-    working_directory: ~/repo
     steps:
-    - checkout
+    - *attach_workspace
     - restore_cache:
         keys:
-        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
-    - attach_workspace:
-        at: ~/repo
+        - *js_deps_cache_key
     - run:
         name: Build Cypress Integration Tests
         command: yarn build:integration
   lint:
     docker:
     - image: circleci/node:8.15
-    working_directory: ~/repo
+    working_directory: ~/project
     steps:
-    - checkout
+    - *attach_workspace
     - restore_cache:
         keys:
-        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
-    - attach_workspace:
-        at: ~/repo
+        - *js_deps_cache_key
     - run:
         name: TSLint
         command: yarn lint:ts
@@ -163,51 +164,43 @@ jobs:
   build_pf3_docs:
     docker:
     - image: circleci/node:8.15
-    working_directory: ~/repo
     steps:
-    - checkout
+    - *attach_workspace
     - restore_cache:
         keys:
-        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
-    - attach_workspace:
-        at: ~/repo
+        - *js_deps_cache_key
     - run:
         name: Build PF3 Storybook Static Site
         command: yarn build:storybook
     - persist_to_workspace:
-        root: ~/repo
+        root: ~/project
         paths:
         - .out/
   build_pf4_docs:
     docker:
     - image: circleci/node:8.15
-    working_directory: ~/repo
     steps:
-    - checkout
+    - *attach_workspace
     - restore_cache:
         keys:
-        - deps-v{{.Environment.CACHE_VERSION}}-{{.Branch}}-{{checksum "yarn.lock"}}
-    - attach_workspace:
-        at: ~/repo
+        - *js_deps_cache_key
     - run:
         name: Build PF4 Gatsby Static Site
         command: yarn build:docs
     - persist_to_workspace:
-        root: ~/repo
+        root: ~/project
         paths:
         - packages/patternfly-4/react-docs/public/
   upload_docs:
     docker:
     - image: circleci/node:8.15
-    working_directory: ~/repo
     steps:
-    - attach_workspace:
-        at: ~/repo
+    - *attach_workspace
     - run:
         name: Build docs Folder
         command: .circleci/copy-docs.sh
     - store_artifacts:
-        path: ~/repo/docs/
+        path: ~/project/docs/
     - run:
         name: Upload Docs to surge.sh
         command: .circleci/upload-docs.sh
