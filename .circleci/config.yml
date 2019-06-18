@@ -78,7 +78,11 @@ workflows:
         - build_pf4_docs
     - deploy_prerelease:
         requires:
-        - build
+        - build_pf3_docs
+        - build_pf4_docs
+        filters:
+          branches:
+            only: master
 jobs:
   build:
     docker:
@@ -212,6 +216,9 @@ jobs:
     - image: circleci/node:8.15
     steps:
     - *attach_workspace
+    - run:
+        name: Avoid hosts unknown for github
+        command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
     - run:
         name: Deploy to NPM and Github
         command: .circleci/release.sh
