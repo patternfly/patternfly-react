@@ -79,7 +79,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     hoverTip: 'Copy to clipboard',
     clickTip: 'Successfully copied to clipboard!',
     isReadOnly: false,
-    variant: ClipboardCopyVariant.inline,
+    variant: 'inline', 
     position: TooltipPosition.top,
     maxWidth: '150px',
     exitDelay: 1600,

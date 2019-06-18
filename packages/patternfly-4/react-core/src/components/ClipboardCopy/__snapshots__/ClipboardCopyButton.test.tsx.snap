@@ -15,7 +15,7 @@ exports[`copy button render 1`] = `
   isAppLauncher={false}
   maxWidth="500px"
   position="right"
-  trigger="mouseenter focus click"
+  trigger="mouseenter focus click'"
   zIndex={9999}
 >
   <button

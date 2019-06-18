@@ -14,7 +14,7 @@ export interface ClipboardCopyButtonProps extends React.DetailedHTMLProps<React.
   exitDelay?: number; 
   entryDelay?: number; 
   maxWidth?: string; 
-  position?: OneOf<typeof TooltipPosition, keyof typeof TooltipPosition>; 
+  position?: 'top' | 'bottom' | 'left' | 'right'; 
   'aria-label'?: string; 
 }
 
@@ -32,7 +32,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   ...props
 }: ClipboardCopyButtonProps) => (
   <Tooltip
-    trigger="mouseenter focus click"
+    trigger="mouseenter focus click'"
     exitDelay={exitDelay}
     entryDelay={entryDelay}
     maxWidth={maxWidth}
