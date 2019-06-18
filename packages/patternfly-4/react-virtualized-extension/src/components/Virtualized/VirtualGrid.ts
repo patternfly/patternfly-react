@@ -53,7 +53,7 @@ type ScrollPosition = {
 };
 
 type Props = {
-  'aria-label': string,
+  'aria-label'?: string,
   'aria-readonly'?: boolean,
 
   /**
