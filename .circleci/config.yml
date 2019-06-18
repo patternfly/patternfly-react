@@ -24,6 +24,23 @@ references:
   - packages/patternfly-4/react-virtualized-extension/node_modules/
   - packages/react-codemods/node_modules/
   - packages/react-icons/node_modules/
+  build_cache_paths: &build_cache_paths
+  - .cache/
+  - packages/patternfly-3/patternfly-react-extensions/dist/
+  - packages/patternfly-3/patternfly-react-wooden-tree/dist/
+  - packages/patternfly-3/patternfly-react/dist/
+  - packages/patternfly-3/react-console/dist/
+  - packages/patternfly-4/react-charts/dist/
+  - packages/patternfly-4/react-core/dist/
+  - packages/patternfly-4/react-inline-edit-extension/dist/
+  - packages/patternfly-4/react-styled-system/dist/
+  - packages/patternfly-4/react-styles/css/
+  - packages/patternfly-4/react-styles/dist/
+  - packages/patternfly-4/react-table/dist/
+  - packages/patternfly-4/react-tokens/dist/
+  - packages/patternfly-4/react-topology/dist/
+  - packages/patternfly-4/react-virtualized-extension/dist/
+  - packages/react-icons/dist/
   js_deps_cache_key: &js_deps_cache_key
     js-deps-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
   build_cache_key: &build_cache_key
@@ -36,10 +53,7 @@ workflows:
   version: 2
   build_test_deploy:
     jobs:
-    - install
-    - build:
-        requires:
-        - install
+    - build
     - build_pf4_docs:
         requires:
         - build
@@ -63,7 +77,7 @@ workflows:
         - build_pf3_docs
         - build_pf4_docs
 jobs:
-  install:
+  build:
     docker:
     - image: circleci/node:8.15
     steps:
@@ -81,14 +95,6 @@ jobs:
     - save_cache:
         paths: *js_deps_paths
         key: *js_deps_cache_key
-  build:
-    docker:
-    - image: circleci/node:8.15
-    steps:
-    - *attach_workspace
-    - restore_cache:
-        keys:
-        - *js_deps_cache_key
     - restore_cache:
         keys:
         - *build_cache_key
@@ -96,8 +102,7 @@ jobs:
         name: Build Dist
         command: yarn build
     - save_cache:
-        paths:
-        - .cache/
+        paths: *build_cache_paths
         key: *build_cache_key
     - persist_to_workspace:
         root: ~/project
