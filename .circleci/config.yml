@@ -80,9 +80,9 @@ workflows:
         requires:
         - build_pf3_docs
         - build_pf4_docs
-        filters:
-          branches:
-            only: master
+          #        filters:
+          #          branches:
+          #            only: master
 jobs:
   build:
     docker:
