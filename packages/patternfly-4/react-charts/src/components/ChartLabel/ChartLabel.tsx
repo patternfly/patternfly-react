@@ -6,7 +6,7 @@ import {
   VictoryLabel,
   VictoryLabelProps
 } from 'victory';
-import { LabelStyles } from '../ChartTheme/themes/label-theme';
+import { ChartCommonStyles } from '../ChartTheme';
 
 export enum ChartLabelDirection {
   rtl = 'rtl',
@@ -170,7 +170,9 @@ export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
   style,
   ...rest
 }: ChartLabelProps) => {
-  const applyDefaultStyle = (customStyle: React.CSSProperties) => defaults(customStyle, LabelStyles);
+  const applyDefaultStyle = (customStyle: React.CSSProperties) => defaults(customStyle, {
+    fontFamily: ChartCommonStyles.label.fontFamily
+  });
   const newStyle = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
   return <VictoryLabel style={newStyle as any} {...rest} />;
 }

@@ -1,17 +1,13 @@
 .ws-preview {
   & > * {
-    .line-chart-container {
+    .line-chart-legend-bottom {
+      height: 275px;
       width: 450px;
     }
 
-    .line-chart-inline {
-      display: inline-flex;
-    }
-
-    .line-chart-overflow {
-      & svg {
-        overflow: visible;
-      }
+    .line-chart-legend-right {
+      height: 250px;
+      width: 600px;
     }
   }
 }

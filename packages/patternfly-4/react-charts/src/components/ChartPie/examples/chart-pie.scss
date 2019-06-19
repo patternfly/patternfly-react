@@ -1,23 +1,13 @@
 .ws-preview {
   & > * {
-    .pie-chart-container {
-      display: flex;
-      justify-content: center;
-      width: 300px;
-    }
-
-    .pie-chart-inline {
-      display: inline-flex;
-    }
-
     .pie-chart-legend-bottom {
-      height: 230px;
-      width: 230px;
+      height: 275px;
+      width: 300px;
     }
 
     .pie-chart-legend-right {
       height: 230px;
-      width: 230px;
+      width: 350px;
     }
   }
 }

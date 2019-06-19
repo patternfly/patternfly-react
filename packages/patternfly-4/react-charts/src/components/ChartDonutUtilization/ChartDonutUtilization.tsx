@@ -8,15 +8,23 @@ import {
   EventPropTypeInterface,
   PaddingProps,
   StringOrNumberOrCallback,
+  VictoryPie,
   VictoryStyleInterface
 } from 'victory';
 import { Data } from 'victory-core';
+<<<<<<< HEAD
 import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartDonut, ChartDonutProps } from "../ChartDonut/ChartDonut";
 import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme';
 import { DonutUtilizationStyles } from '../ChartTheme/themes/donut-utilization-theme';
 import { orderBy } from 'lodash';
+=======
+import { ChartContainer } from '../ChartContainer';
+import { ChartDonut, ChartDonutProps } from "../ChartDonut";
+import { ChartThemeDefinition, ChartDonutUtilizationStaticTheme, ChartDonutUtilizationStyles } from '../ChartTheme';
+import { getDonutUtilizationTheme } from '../ChartUtils';
+>>>>>>> feat(charts): add legend support to area chart
 
 export enum ChartDonutUtilizationLabelPosition {
   centroid = 'centroid',
@@ -254,8 +262,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
   height?: number;
   /**
    * When creating a donut chart, this prop determines the number of pixels between
-   * the center of the chart and the inner edge of a donut. When this prop is set to zero
-   * a regular pie chart is rendered.
+   * the center of the chart and the inner edge.
    */
   innerRadius?: number;
   /**
@@ -598,5 +605,5 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   );
 };
 
-// Note: ChartDonut.role must be hoisted
-hoistNonReactStatics(ChartDonutUtilization, ChartDonut);
+// Note: VictoryPie.role must be hoisted
+hoistNonReactStatics(ChartDonutUtilization, VictoryPie);

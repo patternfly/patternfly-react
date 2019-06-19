@@ -14,8 +14,14 @@ import {
   VictoryStyleInterface,
   VictoryZoomContainer
 } from 'victory';
-import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { getTheme } from '../ChartUtils/chart-theme';
+import {
+  ChartLegend,
+  ChartLegendOrientation,
+  ChartLegendPosition,
+  ChartLegendWrapper
+} from "../ChartLegend";
+import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
+import { getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -158,6 +164,38 @@ export interface ChartProps extends VictoryChartProps {
    */
   innerRadius?: number;
   /**
+   * The legend component to render with chart.
+   *
+   * Note: Use legendData so the legend width can be calculated and positioned properly.
+   * Default legend properties may be applied
+   */
+  legendComponent?: React.ReactElement<any>;
+  /**
+   * The data prop specifies the data to be plotted,
+   * where data X-value is the slice label (string or number),
+   * and Y-value is the corresponding number value represented by the slice
+   * Data should be in the form of an array of data points.
+   * Each data point may be any format you wish (depending on the `x` and `y` accessor props),
+   * but by default, an object with x and y properties is expected.
+   *
+   * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
+   */
+  legendData?: any[];
+  /**
+   * The orientation prop takes a string that defines whether legend data
+   * are displayed in a row or column. When orientation is "horizontal",
+   * legend items will be displayed in a single row. When orientation is
+   * "vertical", legend items will be displayed in a single column. Line
+   * and text-wrapping is not currently supported, so "vertical"
+   * orientation is both the default setting and recommended for
+   * displaying many series of data.
+   */
+  legendOrientation?: 'horizontal' | 'vertical';
+  /**
+   * The legend position relation to the area chart. Valid values are 'bottom' and 'right'
+   */
+  legendPosition?: 'bottom' | 'right';
+  /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
    * prop is set in addition to maximumDomain, domain will be used.
@@ -299,15 +337,88 @@ export interface ChartProps extends VictoryChartProps {
 export const Chart: React.FunctionComponent<ChartProps> = ({
   allowZoom = false,
   children,
+  containerComponent = allowZoom ? <VictoryZoomContainer /> : undefined,
+  legendData,
+  legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
+  padding = {},
+  standalone = true,
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
-  containerComponent = allowZoom ? <VictoryZoomContainer /> : undefined,
+
+  // destructure last
+  theme = getTheme(themeColor, themeVariant),
+  legendOrientation = theme.legend.orientation as ChartLegendOrientation,
+  legendComponent = <ChartLegend data={legendData} orientation={legendOrientation} theme={theme} />,
+  height = theme.chart.height,
+  width = theme.chart.width,
   ...rest
-}: ChartProps) => (
-  <VictoryChart containerComponent={containerComponent} theme={theme} {...rest}>
-    {children}
-  </VictoryChart>
-);
+}: ChartProps) => {
+  const defaultPadding = {
+    bottom: theme.chart.padding,
+    left: theme.chart.padding,
+    top: theme.chart.padding,
+    right: theme.chart.padding,
+    ...(padding as any)
+  };
+
+  const chartSize = {
+    height: Math.abs(height - (defaultPadding.bottom + defaultPadding.top)),
+    width: Math.abs(width - (defaultPadding.left + defaultPadding.right))
+  };
+
+  const getLegendComponent = () => {
+    const legendProps = legendComponent.props ? legendComponent.props : {};
+    return React.cloneElement(legendComponent as React.ReactElement<any>, {
+      data: legendData,
+      orientation: legendOrientation,
+      theme,
+      ...legendProps
+    });
+  };
+
+  // Returns a legend
+  const getLegend = () => {
+    if (!legendComponent.props.data) {
+      return null;
+    }
+    let dx = 0;
+    let dy = defaultPadding.top || 0;
+    if (legendPosition === ChartLegendPosition.bottom) {
+      dy += ChartCommonStyles.legend.margin;
+    } else if (legendPosition === ChartLegendPosition.right) {
+      dx += defaultPadding.left;
+    }
+    return (
+      <ChartLegendWrapper
+        chartHeight={chartSize.height}
+        chartType="pie"
+        chartWidth={chartSize.width}
+        dx={dx}
+        dy={dy}
+        orientation={legendOrientation}
+        position={legendPosition}
+        svgHeight={height}
+        svgWidth={width}
+        theme={theme}
+      >
+        {getLegendComponent()}
+      </ChartLegendWrapper>
+    );
+  };
+
+  return (
+    <VictoryChart
+      containerComponent={containerComponent}
+      height={height}
+      padding={defaultPadding}
+      theme={theme}
+      width={width}
+      {...rest}
+    >
+      {children}
+      {getLegend()}
+    </VictoryChart>
+  );
+};
 
 hoistNonReactStatics(Chart, VictoryChart);
