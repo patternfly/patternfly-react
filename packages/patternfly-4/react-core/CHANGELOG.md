@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.50.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.49.1...@patternfly/react-core@3.50.0) (2019-06-19)
+
+
+### Features
+
+* **FormSelect:** Convert form select to typescript ([#2204](https://github.com/patternfly/patternfly-react/issues/2204)) ([373e012](https://github.com/patternfly/patternfly-react/commit/373e012))
+
+
+
+
+
 ## [3.49.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.49.0...@patternfly/react-core@3.49.1) (2019-06-19)
 
 
