@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.49.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.49.0...@patternfly/react-core@3.49.1) (2019-06-19)
+
+
+### Bug Fixes
+
+* **Alert:** remove the <p> from the Alert description ([#2293](https://github.com/patternfly/patternfly-react/issues/2293)) ([ccaf11e](https://github.com/patternfly/patternfly-react/commit/ccaf11e)), closes [#2283](https://github.com/patternfly/patternfly-react/issues/2283)
+
+
+
+
+
 # [3.49.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.5...@patternfly/react-core@3.49.0) (2019-06-19)
 
 
