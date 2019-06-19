@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import FormSelect from './FormSelect';
-import FormSelectOption from './FormSelectOption';
-import FormSelectOptionGroup from './FormSelectOptionGroup';
+import { FormSelect } from './FormSelect';
+import { FormSelectOption } from './FormSelectOption';
+import { FormSelectOptionGroup } from './FormSelectOptionGroup';
 
 const props = {
   options: [
@@ -83,8 +83,8 @@ test('Disabled FormSelect input ', () => {
 });
 
 test('FormSelect input with aria-label does not generate console error', () => {
-  const myMock = jest.fn();
-  global.console = { error: myMock };
+  const myMock = jest.fn() as any;
+  global.console = { error: myMock } as any;
   const view = shallow(
     <FormSelect aria-label="FormSelect with aria-label">
       <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
@@ -95,8 +95,8 @@ test('FormSelect input with aria-label does not generate console error', () => {
 });
 
 test('FormSelect input with id does not generate console error', () => {
-  const myMock = jest.fn();
-  global.console = { error: myMock };
+  const myMock = jest.fn() as any;
+  global.console = { error: myMock } as any;
   const view = shallow(
     <FormSelect id="id">
       <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
@@ -107,8 +107,8 @@ test('FormSelect input with id does not generate console error', () => {
 });
 
 test('FormSelect input with no aria-label or id generates console error', () => {
-  const myMock = jest.fn();
-  global.console = { error: myMock };
+  const myMock = jest.fn() as any;
+  global.console = { error: myMock } as any;
   const view = shallow(
     <FormSelect>
       <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
