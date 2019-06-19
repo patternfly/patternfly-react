@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
-import { Omit } from '../../helpers/typeUtils';
 
-export interface DataListContentProps extends Omit<React.HTMLProps<HTMLElement>, 'aria-label'> {
+export interface DataListContentProps extends React.HTMLProps<HTMLElement> {
   /** Content rendered inside the DataList item */
   children?: React.ReactNode;
   /** Additional classes added to the DataList cell */
@@ -29,7 +28,7 @@ export const DataListContent: React.FunctionComponent<DataListContentProps> = ({
   noPadding = false,
   rowid = '',
   ...props
-}) => (
+}: DataListContentProps) => (
   <section
     id={id}
     className={css(styles.dataListExpandableContent, className)}

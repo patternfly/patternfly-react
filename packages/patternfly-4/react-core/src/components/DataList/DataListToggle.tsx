@@ -3,9 +3,8 @@ import { css } from '@patternfly/react-styles';
 import { AngleRightIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { Button, ButtonVariant } from '../Button';
-import { Omit } from '../../helpers/typeUtils';
 
-export interface DataListToggleProps extends Omit<React.HTMLProps<HTMLDivElement>, 'aria-labelledby' | 'aria-label' | 'id'> {
+export interface DataListToggleProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the DataList cell */
   className?: string;
   /** Flag to show if the expanded content of the DataList item is visible */
@@ -31,7 +30,7 @@ export const DataListToggle: React.FunctionComponent<DataListToggleProps> = ({
   rowid = '',
   id,
   ...props
-}) => (
+}: DataListToggleProps) => (
   <div className={css(styles.dataListItemControl, className)} {...props}>
     <div className={css(styles.dataListToggle)}>
       <Button

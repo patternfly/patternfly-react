@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { Omit } from '../../helpers/typeUtils';
 
-export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'aria-labelledby'> {
+export interface DataListCheckProps extends Omit<React.HTMLProps<HTMLInputElement>, 'onChange'> {
   /** Additional classes added to the DataList item checkbox */
   className?: string;
   /** Flag to show if the DataList checkbox selection is valid or invalid */
@@ -28,7 +28,7 @@ export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
   isChecked = null,
   checked = null,
   ...props
-}) => (
+}: DataListCheckProps) => (
   <div className={css(styles.dataListItemControl, className)}>
     <div className={css('pf-c-data-list__check')}>
       <input

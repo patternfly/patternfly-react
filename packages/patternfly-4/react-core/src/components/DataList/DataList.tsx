@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
-import { Omit } from '../../helpers/typeUtils';
 
 export interface DataListProps extends React.HTMLProps<HTMLUListElement> {
   /* Content rendered inside the DataList list */
@@ -17,7 +16,7 @@ export const DataList: React.FunctionComponent<DataListProps> = ({
   className = '',
   'aria-label': ariaLabel,
   ...props
-}) => (
+}: DataListProps) => (
   <ul className={css(styles.dataList, className)} aria-label={ariaLabel} {...props}>
     {children}
   </ul>
