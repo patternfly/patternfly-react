@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.49.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.5...@patternfly/react-core@3.49.0) (2019-06-19)
+
+
+### Features
+
+* **Button:** add icon property and wrapper css ([#2205](https://github.com/patternfly/patternfly-react/issues/2205)) ([14d1d70](https://github.com/patternfly/patternfly-react/commit/14d1d70))
+
+
+
+
+
 ## [3.48.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.4...@patternfly/react-core@3.48.5) (2019-06-18)
 
 **Note:** Version bump only for package @patternfly/react-core
