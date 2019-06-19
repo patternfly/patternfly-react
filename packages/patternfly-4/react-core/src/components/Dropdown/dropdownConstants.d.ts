@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { any } from 'glamor';
 
 export enum DropdownPosition {
   right = 'right',
