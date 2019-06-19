@@ -8,30 +8,14 @@ import {
   EventPropTypeInterface,
   PaddingProps,
   StringOrNumberOrCallback,
-  VictoryLegend,
   VictoryStyleInterface
 } from 'victory';
 import { Data } from 'victory-core';
-import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme';
 import { ChartContainer } from '../ChartContainer/ChartContainer';
-import { ChartLabel } from '../ChartLabel/ChartLabel';
-import { ChartLegend } from '../ChartLegend/ChartLegend';
-import { ChartPie, ChartPieProps } from "../ChartPie/ChartPie";
-import { DonutUtilizationStyles } from '../ChartTheme/themes/donut-utilization-theme';
+import { ChartDonut, ChartDonutProps } from "../ChartDonut/ChartDonut";
 import { ChartThemeDefinition, ChartDonutUtilizationStaticTheme } from '../ChartTheme/ChartTheme';
-import { getChartOrigin, getChartOriginX, getChartOriginY } from '../ChartUtils/chart-origin';
-import { getLegendX, getLegendY } from '../ChartUtils/chart-legend';
-
-export enum ChartDonutUtilizationDonutOrientation {
-  left = 'left',
-  right = 'right',
-  top = 'top'
-};
-
-export enum ChartDonutUtilizationLabelOrientation {
-  horizontal = 'horizontal',
-  vertical = 'vertical'
-};
+import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme';
+import { DonutUtilizationStyles } from '../ChartTheme/themes/donut-utilization-theme';
 
 export enum ChartDonutUtilizationLabelPosition {
   centroid = 'centroid',
@@ -39,15 +23,31 @@ export enum ChartDonutUtilizationLabelPosition {
   startAngle = 'startAngle'
 };
 
+export enum ChartDonutUtilizationLegendOrientation {
+  horizontal = 'horizontal',
+  vertical = 'vertical'
+};
+
+export enum ChartDonutUtilizationLegendPosition {
+  bottom = 'bottom',
+  right = 'right'
+};
+
 export enum ChartDonutUtilizationSortOrder {
   ascending = 'ascending',
   descending = 'descending'
 };
 
+export enum ChartDonutUtilizationSubTitlePosition {
+  bottom = 'bottom',
+  center = 'center',
+  right = 'right'
+}
+
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
-export interface ChartDonutUtilizationProps extends ChartPieProps {
+export interface ChartDonutUtilizationProps extends ChartDonutProps {
   /**
    * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-pie/
    */
@@ -60,6 +60,13 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
   animate?: AnimatePropTypeInterface;
+  /**
+   * The capHeight prop defines a text metric for the font being used: the expected height of capital letters.
+   * This is necessary because of SVG, which (a) positions the *bottom* of the text at `y`, and (b) has no notion of
+   * line height. The value should ideally use the same units as `lineHeight` and `dy`, preferably ems. If given a
+   * unitless number, it is assumed to be ems.
+   */
+  capHeight?: StringOrNumberOrCallback;
   /**
    * The categories prop specifies how categorical data for a chart should be ordered.
    * This prop should be given as an array of string values, or an object with
@@ -119,11 +126,11 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    */
   dataComponent?: React.ReactElement<any>;
   /**
-   * Defines a horizontal shift from the x coordinate. This should not be set manually.
+   * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
   donutDx?: number;
   /**
-   * Defines a vertical shift from the y coordinate. This should not be set manually.
+   * Defines a vertical shift from the y coordinate. It should not be set manually.
    */
   donutDy?: number;
   /**
@@ -134,14 +141,16 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
    *
-   * Note: The parent container must be set to the same height in order to maintain the aspect ratio. Otherwise, the
-   * innerRadius may need to be set when using this property.
+   * Note: When adding a legend, height (the overall SVG height) may need to be larger than donutHeight (the donut size)
+   * in order to accommodate the extra legend.
+   *
+   * By default, donutHeight is the min. of either height or width. This covers most use cases in order to accommodate
+   * legends within the same SVG. However, donutHeight (not height) may need to be set in order to adjust the donut
+   * height.
+   *
+   * The innerRadius may also need to be set when changing the donut size.
    */
   donutHeight?: number;
-  /**
-   * The orientation of the donut chart in relation to the legend. Valid values are 'left', 'top', and 'right'
-   */
-  donutOrientation?: 'left' | 'right' | 'top';
   /**
    * Specifies the width of the donut chart. This value should be given as a
    * number of pixels.
@@ -150,10 +159,23 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
    *
-   * Note: The parent container must be set to the same height in order to maintain the aspect ratio. Otherwise, the
-   * innerRadius may need to be set when using this property.
+   * Note: When adding a legend, width (the overall SVG width) may need to be larger than donutWidth (the donut size)
+   * in order to accommodate the extra legend.
+   *
+   * By default, donutWidth is the min. of either height or width. This covers most use cases in order to accommodate
+   * legends within the same SVG. However, donutWidth (not width) may need to be set in order to adjust the donut width.
+   *
+   * The innerRadius may also need to be set when changing the donut size.
    */
   donutWidth?: number;
+  /**
+   * Defines a horizontal shift from the x coordinate for legend and subtitle. It should not be set manually.
+   */
+  dx?: number;
+  /**
+   * Defines a vertical shift from the y coordinate for legend and subtitle. It should not be set manually.
+   */
+  dy?: number;
   /**
    * The overall end angle of the pie in degrees. This prop is used in conjunction with
    * startAngle to create a pie that spans only a segment of a circle.
@@ -223,7 +245,10 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
    *
-   * Note: innerRadius may need to be set when using this property.
+   * Note: When adding a legend, height (the overall SVG height) may need to be larger than donutHeight (the donut size)
+   * in order to accommodate the extra legend.
+   *
+   * Typically, the parent container is set to the same height in order to maintain the aspect ratio.
    */
   height?: number;
   /**
@@ -250,7 +275,10 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    */
   labelPosition?: 'startAngle' | 'endAngle' | 'centroid';
   /**
-   * The legend component to render with chart. This overrides other legend props.
+   * The legend component to render with chart.
+   *
+   * Note: Use legendData so the legend width can be calculated and positioned properly.
+   * Default legend properties may be applied
    */
   legendComponent?: React.ReactElement<any>;
   /**
@@ -261,11 +289,17 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * Each data point may be any format you wish (depending on the `x` and `y` accessor props),
    * but by default, an object with x and y properties is expected.
    *
-   * Note: Not compatible with legendComponent prop.
-   *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
   legendData?: any[];
+  /**
+   * Defines a horizontal shift from the x coordinate. It should not be set manually.
+   */
+  legendDx?: number;
+  /**
+   * Defines a vertical shift from the y coordinate. It should not be set manually.
+   */
+  legendDy?: number;
   /**
    * The orientation prop takes a string that defines whether legend data
    * are displayed in a row or column. When orientation is "horizontal",
@@ -274,11 +308,12 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * and text-wrapping is not currently supported, so "vertical"
    * orientation is both the default setting and recommended for
    * displaying many series of data.
-   *
-   * Note: May need to set legendHeight and legendWidth in order to position properly.
-   * Not compatible with legendComponent prop.
    */
   legendOrientation?: 'horizontal' | 'vertical';
+  /**
+   * The legend position relation to the donut chart. Valid values are 'bottom' and 'right'
+   */
+  legendPosition?: 'bottom' | 'right';
   /**
    * The labelRadius prop defines the radius of the arc that will be used for positioning each slice label.
    * If this prop is not set, the label radius will default to the radius of the pie + label padding.
@@ -324,7 +359,7 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    */
   sharedEvents?: any;
   /**
-   * This will show the static, unused portion of the donut chart
+   * This will show the static, unused portion of the donut chart. It should not be set manually.
    */
   showStatic?: boolean;
   /**
@@ -356,9 +391,27 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    */
   style?: VictoryStyleInterface;
   /**
-   * The subtitle for the donut chart
+   * The subtitle for the donut chart label
    */
   subTitle?: string;
+  /**
+   * The label component to render the chart subTitle.
+   *
+   * Note: Default label properties may be applied
+   */
+  subTitleComponent?: React.ReactElement<any>;
+  /**
+   * Defines a horizontal shift from the x coordinate. It should not be set manually.
+   */
+  subTitleDx?: number;
+  /**
+   * Defines a vertical shift from the y coordinate. It should not be set manually.
+   */
+  subTitleDy?: number;
+  /**
+   * The orientation of the donut chart in relation to the legend. Valid values are 'bottom', 'center', and 'right'
+   */
+  subTitlePosition?: 'bottom' | 'center' | 'right';
   /**
    * The theme prop takes a style object with nested data, labels, and parent objects.
    * You can create this object yourself, or you can use a theme provided by
@@ -384,7 +437,7 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    */
   themeVariant?: string;
   /**
-   * The title for the donut chart
+   * The title for the donut chart label
    */
   title?: string;
   /**
@@ -402,7 +455,10 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
    *
-   * Note: innerRadius may need to be set when using this property.
+   * Note: When adding a legend, width (the overall SVG width) may need to be larger than donutWidth (the donut size)
+   * in order to accommodate the extra legend.
+   *
+   * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
    */
   width?: number;
   /**
@@ -431,29 +487,20 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
 
 export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizationProps> = ({
   data,
-  donutDx = 0,
-  donutDy = 0,
-  donutOrientation = 'left',
-  legendComponent,
-  legendData,
-  legendOrientation = DonutUtilizationStyles.legend.orientation as ChartDonutUtilizationLabelOrientation,
   showStatic = true,
   standalone = true,
-  subTitle,
   themeColor,
   themeVariant,
   thresholds,
-  title,
   x,
   y,
 
   // destructure last
   theme = getDonutUtilizationTheme(themeColor, themeVariant),
-  donutHeight = theme.pie.height,
-  donutWidth = theme.pie.width,
   height = theme.pie.height,
-  innerRadius = ((donutHeight || donutWidth) - 34) / 2,
   width = theme.pie.width,
+  donutHeight = Math.min(height, width),
+  donutWidth = Math.min(height, width, donutHeight),
   ...rest
 }: ChartDonutUtilizationProps) => {
   // Returns computed data representing pie chart slices
@@ -487,41 +534,6 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
     return result;
   };
 
-  // Returns legend
-  const getLegend = () => {
-    if (legendComponent) {
-      return legendComponent;
-    }
-    if (legendData) {
-      return (
-        <ChartLegend
-          data={legendData}
-          orientation={legendOrientation}
-          standalone={false}
-          theme={theme}
-          x={getLegendX({
-            chartOrientation: donutOrientation,
-            legendOrientation,
-            legendWidth: legendDimensions.width,
-            theme,
-            width
-          })}
-          y={getLegendY({
-            chartDy: donutDy,
-            chartHeight: donutHeight,
-            chartOrientation: donutOrientation,
-            chartType: 'pie',
-            height,
-            legendData,
-            legendHeight: legendDimensions.height,
-            theme
-          })}
-        />
-      );
-    }
-    return null;
-  };
-
   // Returns theme based on threshold and current value
   const getThresholdTheme = () => {
     const newTheme = { ...theme };
@@ -543,51 +555,16 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
     return newTheme;
   };
 
-  // Legend dimensions
-  const legendDimensions = legendData
-    ? (VictoryLegend as any).getDimensions({
-        data: legendData,
-        orientation: legendOrientation,
-        theme
-      })
-    : {};
-
   const chart = (
     <React.Fragment>
-      <ChartLabel
-        style={[DonutUtilizationStyles.label.title, DonutUtilizationStyles.label.subTitle] as any} // Todo: Array supported, but @types/victory is wrong
-        text={title && subTitle ? [title, subTitle] : title}
-        textAnchor="middle"
-        verticalAnchor="middle"
-        x={getChartOriginX({
-          chartDx: donutDx,
-          chartWidth: donutWidth,
-          chartOrientation: donutOrientation,
-          width
-        })}
-        y={getChartOriginY({
-          chartDy: donutDy,
-          chartHeight: donutHeight,
-          chartOrientation: donutOrientation,
-          height
-        })}
-      />
-      <ChartPie
+      <ChartDonut
         data={getComputedData()}
-        height={donutHeight}
-        innerRadius={innerRadius > 0 ? innerRadius : 0}
-        origin={getChartOrigin({
-          chartDx: donutDx,
-          chartDy: donutDy,
-          chartHeight: donutHeight,
-          chartWidth: donutWidth,
-          chartOrientation: donutOrientation,
-          height,
-          width
-        })}
+        donutHeight={donutHeight}
+        donutWidth={donutWidth}
+        height={height}
         standalone={false}
         theme={getThresholdTheme()}
-        width={donutWidth}
+        width={width}
         {...rest}
       />
     </React.Fragment>
@@ -596,15 +573,13 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   return standalone ? (
     <ChartContainer height={height} width={width}>
       {chart}
-      {getLegend()}
     </ChartContainer>
   ) : (
     <React.Fragment>
       {chart}
-      {getLegend()}
     </React.Fragment>
   );
 };
 
-// Note: ChartPie.role must be hoisted
-hoistNonReactStatics(ChartDonutUtilization, ChartPie);
+// Note: ChartDonut.role must be hoisted
+hoistNonReactStatics(ChartDonutUtilization, ChartDonut);

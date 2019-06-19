@@ -4,12 +4,18 @@
 export const DonutStyles = {
   label: {
     subTitle: {
+      // Victory props only
       fill: '#bbb',
-      fontSize: 16
+      fontSize: 14
     },
+    subTitlePosition: 'center',
     title: {
-      fontSize: 26
+      // Victory props only
+      fontSize: 24
     }
+  },
+  legend: {
+    position: 'right'
   }
 };
 

@@ -16,15 +16,30 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AboutModalDemo
   },
   {
+    id: 'accordion-demo',
+    name: 'Accordion Demo',
+    componentType: Examples.AccordionDemo
+  },
+  {
     id: 'alert-demo',
     name: 'Alert Demo',
     componentType: Examples.AlertDemo
+  },
+  {
+    id: 'application-launcher-demo',
+    name: 'Application Launcher Demo', 
+    componentType: Examples.ApplicationLauncherDemo
   },
   {
     id: 'avatar-demo',
     name: 'Avatar Demo',
     componentType: Examples.AvatarDemo
   },
+  {
+    id: 'backdrop-demo', 
+    name: 'Backdrop Demo', 
+    componentType: Examples.BackdropDemo
+  }, 
   {
     id: 'backgroundimage-demo',
     name: 'Background Image Demo', 
@@ -64,6 +79,11 @@ export const Demos: DemoInterface[] = [
     id: 'chipgroup-demo', 
     name: 'ChipGroup Demo',
     componentType: Examples.BadgeChip 
+  },
+  {
+    id: 'context-selector-demo', 
+    name: 'ContextSelector Demo', 
+    componentType: Examples.ContextSelectorDemo
   },
   {
     id: 'empty-state-demo',
@@ -106,6 +126,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.OptionsMenuDemo
   },
   {
+    id: 'page-demo',
+    name: 'Page Demo',
+    componentType: Examples.PageDemo
+  },
+  {
     id: 'popover-demo',
     name: 'Popover Demo',
     componentType: Examples.PopoverDemo
@@ -119,6 +144,11 @@ export const Demos: DemoInterface[] = [
     id: 'tab-demo',
     name: 'Tab Demo',
     componentType: Examples.TabDemo
+  },
+  {
+    id: 'text-area',
+    name: 'Text Area Demo',
+    componentType: Examples.TextAreaDemo
   },
   {
     id: 'text-demo',

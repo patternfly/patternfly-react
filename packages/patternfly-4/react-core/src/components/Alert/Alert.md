@@ -175,3 +175,70 @@ class DangerAlert extends React.Component {
   }
 }
 ```
+
+## Inline alert types
+```js
+import React from 'react';
+import { Alert } from '@patternfly/react-core';
+
+class InlineAlert extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Alert variant="info" isInline title="Info inline alert title"/>
+        <Alert variant="success" isInline title="Success inline alert title" />
+        <Alert variant="warning" isInline title="Warning inline alert title" />
+        <Alert variant="danger" isInline title="Danger inline alert title" />
+      </React.Fragment>
+    );
+  }
+}
+```
+
+## Inline alert variations
+```js
+import React from 'react';
+import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
+
+class InlineAlertVariations extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { alertOneVisible: true, alertTwoVisible: true };
+    this.hideAlertOne = () => this.setState({ alertOneVisible: false });
+    this.hideAlertTwo = () => this.setState({ alertTwoVisible: false });
+  }
+  render() {
+    const { alertOneVisible, alertTwoVisible } = this.state;
+    return (
+      <React.Fragment>
+        {alertOneVisible && (
+          <Alert
+            variant="success"
+            isInline
+            title="Success alert title"
+            action={<AlertActionCloseButton onClose={this.hideAlertOne} />}
+          >
+            Success alert description. <a href="#">This is a link.</a>
+          </Alert>
+        )}
+        {alertTwoVisible && (
+          <Alert
+            variant="success"
+            isInline
+            title="Success alert title"
+            action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
+          />
+        )}
+        <Alert
+          variant="success"
+          isInline
+          title="Success alert title"
+          action={<AlertActionLink>Action Button</AlertActionLink>}
+        />
+        <Alert variant="success" isInline title="Success alert title" />
+      </React.Fragment>
+    );
+  }
+}
+```
+

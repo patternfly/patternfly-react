@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
+import { DropdownContext } from './dropdownConstants';
 import { css } from '@patternfly/react-styles';
 import { KEY_CODES } from '../../helpers/constants';
 
@@ -121,30 +122,34 @@ class Toggle extends Component {
       ...props
     } = this.props;
     return (
-      <button
-        {...props}
-        id={id}
-        ref={toggle => {
-          this.toggle = toggle;
-        }}
-        className={css(
-          isSplitButton ? styles.dropdownToggleButton : styles.dropdownToggle,
-          isFocused && styles.modifiers.focus,
-          isHovered && styles.modifiers.hover,
-          isActive && styles.modifiers.active,
-          isPlain && styles.modifiers.plain,
-          isDisabled && styles.modifiers.disabled,
-          className
+      <DropdownContext.Consumer>
+        {({ toggleClass }) => (
+          <button
+            {...props}
+            id={id}
+            ref={toggle => {
+              this.toggle = toggle;
+            }}
+            className={css(
+              isSplitButton ? styles.dropdownToggleButton : toggleClass || styles.dropdownToggle,
+              isFocused && styles.modifiers.focus,
+              isHovered && styles.modifiers.hover,
+              isActive && styles.modifiers.active,
+              isPlain && styles.modifiers.plain,
+              isDisabled && styles.modifiers.disabled,
+              className
+            )}
+            type={type || 'button'}
+            onClick={event => onToggle && onToggle(!isOpen, event)}
+            aria-expanded={isOpen}
+            aria-haspopup={ariaHasPopup}
+            onKeyDown={this.onKeyDown}
+            disabled={isDisabled}
+          >
+            {children}
+          </button>
         )}
-        type={type || 'button'}
-        onClick={event => onToggle && onToggle(!isOpen, event)}
-        aria-expanded={isOpen}
-        aria-haspopup={ariaHasPopup}
-        onKeyDown={this.onKeyDown}
-        disabled={isDisabled}
-      >
-        {children}
-      </button>
+      </DropdownContext.Consumer>
     );
   }
 }

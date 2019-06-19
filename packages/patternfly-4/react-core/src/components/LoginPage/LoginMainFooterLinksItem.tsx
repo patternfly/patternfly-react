@@ -11,6 +11,8 @@ export interface LoginMainFooterLinksItemProps extends React.HTMLProps<HTMLLIEle
   target?: string;
   /** Additional classes added to the Footer Link Item  */
   className?: string;
+  /** Component used to render the Footer Link Item */
+  linkComponent?: React.ReactNode;
 }
 
 export const LoginMainFooterLinksItem: React.FunctionComponent<LoginMainFooterLinksItemProps> = ({
@@ -18,11 +20,16 @@ export const LoginMainFooterLinksItem: React.FunctionComponent<LoginMainFooterLi
   href = '',
   target = '',
   className = '',
+  linkComponent = 'a',
   ...props
-}: LoginMainFooterLinksItemProps) => (
-  <li className={css(styles.loginMainFooterLinksItem, className)} {...props}>
-    <a className={css(styles.loginMainFooterLinksItemLink)} href={href} target={target}>
-      {children}
-    </a>
-  </li>
-);
+}: LoginMainFooterLinksItemProps) => {
+  const LinkComponent = linkComponent as any;
+
+  return (
+    <li className={css(styles.loginMainFooterLinksItem, className)} {...props}>
+      <LinkComponent className={css(styles.loginMainFooterLinksItemLink)} href={href} target={target}>
+        {children}
+      </LinkComponent>
+    </li>
+  );
+}

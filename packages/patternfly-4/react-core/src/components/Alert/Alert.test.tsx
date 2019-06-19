@@ -1,9 +1,14 @@
 import * as React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import { Alert, AlertVariant } from './Alert';
 import { AlertActionLink }  from './AlertActionLink';
 import { AlertActionCloseButton } from './AlertActionCloseButton';
+
+test('default Alert variant is info', () => {
+  const view = shallow(<Alert title="this is a test">Alert testing</Alert>)
+  expect(view.props().className).toMatch(/pf-m-info/);
+})
 
 Object.values(AlertVariant).forEach(variant => {
   describe(`Alert - ${variant}`, () => {
@@ -61,6 +66,20 @@ Object.values(AlertVariant).forEach(variant => {
           variant={variant}
           aria-label={`Custom aria label for ${variant}`}
           action={<AlertActionLink>test</AlertActionLink>}
+          title="Some title"
+        >
+          Some alert
+        </Alert>
+      );
+      expect(view).toMatchSnapshot();
+
+    });
+
+    test('inline variation', () => {
+      const view = mount(
+        <Alert
+          variant={variant}
+          isInline
           title="Some title"
         >
           Some alert

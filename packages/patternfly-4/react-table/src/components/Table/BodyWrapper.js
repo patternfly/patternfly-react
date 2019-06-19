@@ -7,7 +7,7 @@ import { mapOpenedRows } from './utils/headerUtils';
 // eslint-disable-next-line react/prefer-stateless-function
 class BodyWrapper extends React.Component {
   render() {
-    const { mappedRows, tbodyRef, ...props } = this.props;
+    const { mappedRows, tbodyRef, rows, onCollapse, ...props } = this.props;
     if (mappedRows && mappedRows.some(row => row.hasOwnProperty('parent'))) {
       return (
         <React.Fragment>

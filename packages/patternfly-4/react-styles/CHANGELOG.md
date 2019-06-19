@@ -3,6 +3,65 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.4.1...@patternfly/react-styles@3.4.2) (2019-06-18)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.4.0...@patternfly/react-styles@3.4.1) (2019-06-14)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+# 3.4.0 (2019-06-13)
+
+
+### Bug Fixes
+
+* **topology:** Fixes JS dist for react-topology ([#2230](https://github.com/patternfly/patternfly-react/issues/2230)) ([337510a](https://github.com/patternfly/patternfly-react/commit/337510a))
+
+
+### Features
+
+* **build:** add source maps ([#2142](https://github.com/patternfly/patternfly-react/issues/2142)) ([5076c48](https://github.com/patternfly/patternfly-react/commit/5076c48))
+
+
+
+
+
+## [3.3.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.3.2...@patternfly/react-styles@3.3.3) (2019-06-11)
+
+
+### Bug Fixes
+
+* **styles:** add sideeffects to react-styles ([#2207](https://github.com/patternfly/patternfly-react/issues/2207)) ([6365c33](https://github.com/patternfly/patternfly-react/commit/6365c33))
+
+
+
+
+
+## [3.3.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.3.1...@patternfly/react-styles@3.3.2) (2019-06-10)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## 3.3.1 (2019-06-10)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
 # [3.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.2.4...@patternfly/react-styles@3.3.0) (2019-06-05)
 
 

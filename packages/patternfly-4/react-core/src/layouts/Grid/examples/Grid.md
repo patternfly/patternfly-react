@@ -8,13 +8,11 @@ propComponents: ['Grid', 'GridItem']
 ## Simple grid
 
 import { Grid, GridItem, Button } from '@patternfly/react-core';
-import ItemControl from './ItemControl';
 import './grid.scss';
 
 ```js
 import React from 'react';
 import { Grid, GridItem, Button } from '@patternfly/react-core';
-import ItemControl from './ItemControl';
 
 <Grid>
   <GridItem span={8}>span = 8</GridItem>
@@ -40,7 +38,6 @@ import ItemControl from './ItemControl';
 ```js
 import React from 'react';
 import { Grid, GridItem, Button } from '@patternfly/react-core';
-import ItemControl from './ItemControl';
 
 <Grid gutter="md">
   <GridItem span={8}>span = 8</GridItem>
@@ -86,8 +83,3 @@ import ItemControl from './ItemControl';
 </Grid>
 ```
 
-## Grid playground
-
-import GridPlayground from './GridPlayground';
-
-<GridPlayground />

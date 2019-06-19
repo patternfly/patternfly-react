@@ -11,7 +11,7 @@ const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.c
 
 const cssFiles = glob.sync('**/*.css', {
   cwd: pfStylesDir,
-  ignore: ['assets/**']
+  ignore: ['assets/**', '*ie11*.css']
 });
 
 cssFiles.forEach(filePath => {

@@ -16,14 +16,14 @@ import { ChartLegend, ChartPie } from '@patternfly/react-charts';
 
 <div>
   <div className="pie-chart-inline">
-    <div className="pie-chart-container">
+    <div className="pie-chart-legend-right">
       <ChartPie
         data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
         labels={datum => `${datum.x}: ${datum.y}`}
       />
     </div>
     <ChartLegend
-      data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
+      data={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
       height={230}
       orientation={'vertical'}
       responsive={false}
@@ -40,15 +40,17 @@ import { ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts
 
 <div>
   <div className="pie-chart-container">
-    <ChartPie
-      data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-      labels={datum => `${datum.x}: ${datum.y}`}
-      themeColor={ChartThemeColor.multi}
-      themeVariant={ChartThemeVariant.light}
-    />
+    <div className="pie-chart-legend-bottom">
+      <ChartPie
+        data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+        labels={datum => `${datum.x}: ${datum.y}`}
+        themeColor={ChartThemeColor.multi}
+        themeVariant={ChartThemeVariant.light}
+      />
+    </div>
   </div>
   <ChartLegend
-    data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
+    data={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
     height={35}
     orientation={'horizontal'}
     responsive={false}

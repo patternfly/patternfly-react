@@ -73,7 +73,7 @@ class VirtualizedExample extends React.Component {
       const {rows, columns} = this.state;
       const text = rows[index].cells[0];
 
-      const className = clsx({
+      const className = clsx('pf-l-grid', {
         isVisible: isVisible
       });
 
@@ -216,7 +216,7 @@ class SortableExample extends React.Component {
       const {rows, columns} = this.state;
       const text = rows[index].cells[0];
 
-      const className = clsx({
+      const className = clsx('pf-l-grid', {
         isVisible: isVisible
       });
 
@@ -365,7 +365,7 @@ class SelectableExample extends React.Component {
       const {rows, columns} = this.state;
       const text = rows[index].cells[0];
 
-      const className = clsx({
+      const className = clsx('pf-l-grid', {
         isVisible: isVisible
       });
 
@@ -518,7 +518,7 @@ class ActionsExample extends React.Component {
       const {rows, columns, actions} = this.state;
       const text = rows[index].cells[0];
 
-      const className = clsx({
+      const className = clsx('pf-l-grid', {
         isVisible: isVisible
       });
 

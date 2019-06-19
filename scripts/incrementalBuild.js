@@ -1,3 +1,5 @@
+// This script should be replaced by some standard incremental build system
+// `tsc` is a pretty good example...
 const fs = require('fs');
 const { hashDir } = require("./hashDir");
 const Project = require('@lerna/project');
@@ -17,15 +19,25 @@ const isPf4 = process.argv.length > 2 && process.argv[2] === 'pf4';
 const commonPackages = [
   '@patternfly/react-icons'
 ];
+
 // Assume src directory gets made into dist
-const getDir = (packageName) => {
+const getSrcDirs = packageName => {
   switch(packageName) {
     case '@patternfly/react-icons':
-      return 'build'
+      return ['build', 'src']
     default:
-      return 'src'
+      return ['src']
   }
 };
+
+const hashPackageSrc = (packageLoc, packageName) => {
+  let hash = 0;
+  for (let srcDir of getSrcDirs(packageName)) {
+    hash += hashDir(`${packageLoc}/${srcDir}`);
+  }
+
+  return hash;
+}
 
 // These are packages we need to rebuild
 async function getInvalidPackages() {
@@ -39,8 +51,7 @@ async function getInvalidPackages() {
       : true) // Based off argv
 
   for (let p of packages) {
-    const watchDir = getDir(p.name);
-    p.hash = await hashDir(`${p.location}/${watchDir}`);
+    p.hash = hashPackageSrc(p.location, p.name);
     p.valid = cache && cache[p.name] === p.hash;
     if (p.valid) {
       console.info('Skipping', p.name, '(already built).');
@@ -50,25 +61,21 @@ async function getInvalidPackages() {
   return packages.filter(p => !p.valid);
 }
 
-async function incrementalBuild() {
-  const packages = await getInvalidPackages();
-
+getInvalidPackages().then(packages => {
   if (packages.length > 0) {
     // Run for all invalid packages
-    await RunCommand({
+    RunCommand({
       cwd: '.',
       script: 'build',
       npmClient: 'yarn',
-      scope: packages.map(p => p.name),
-      stream: true
-    });
-    // Mark as valid
-    packages.forEach(p => cache[p.name] = p.hash);
-    if (!fs.existsSync('.cache')) {
-      fs.mkdirSync('.cache');
-    }
-    fs.writeFileSync(cacheFile, JSON.stringify(cache, null, 2));
+      scope: packages.map(p => p.name)
+    }).then(() => {
+      // Mark as valid
+      packages.forEach(p => cache[p.name] = p.hash);
+      if (!fs.existsSync('.cache')) {
+        fs.mkdirSync('.cache');
+      }
+      fs.writeFileSync(cacheFile, JSON.stringify(cache, null, 2));
+    })
   }
-}
-
-incrementalBuild().then();
+});

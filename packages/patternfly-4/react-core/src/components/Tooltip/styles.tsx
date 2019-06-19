@@ -10,7 +10,7 @@ export const tippyStyles = () => {
   // export const overrides = StyleSheet.parse(
   injectGlobal(`
   .pf-tippy-theme {
-    &.tippy-tooltip { 
+    &.tippy-tooltip {
       background-color: unset;
       font-size: unset;
       color: unset;
@@ -19,9 +19,6 @@ export const tippyStyles = () => {
       text-align: unset;
       padding: unset;
       cursor: text;
-      .tippy-content {
-        pointer-events: none;
-      }
     }
     .pf-c-tooltip, .pf-c-popover {
       max-width: unset;
@@ -33,42 +30,42 @@ export const tippyStyles = () => {
   .tippy-popper[x-placement^=top] .pf-c-tooltip__arrow {
     bottom: 0;
     left: 50%;
-    transform: var(--pf-c-tooltip__arrow--m-top--Transform); 
+    transform: var(--pf-c-tooltip__arrow--m-top--Transform);
   }
   .tippy-popper[x-placement^=bottom] .pf-c-tooltip__arrow {
     top: 0;
     left: 50%;
-    transform: var(--pf-c-tooltip__arrow--m-bottom--Transform); 
+    transform: var(--pf-c-tooltip__arrow--m-bottom--Transform);
   }
   .tippy-popper[x-placement^=left] .pf-c-tooltip__arrow {
     top: 50%;
     right: 0;
-    transform: var(--pf-c-tooltip__arrow--m-left--Transform); 
+    transform: var(--pf-c-tooltip__arrow--m-left--Transform);
   }
   .tippy-popper[x-placement^=right] .pf-c-tooltip__arrow {
     top: 50%;
     left: 0;
-    transform: var(--pf-c-tooltip__arrow--m-right--Transform); 
+    transform: var(--pf-c-tooltip__arrow--m-right--Transform);
   }
   .tippy-popper[x-placement^=top] .pf-c-popover__arrow {
     bottom: 0;
     left: 50%;
-    transform: var(--pf-c-popover__arrow--m-top--Transform); 
+    transform: var(--pf-c-popover__arrow--m-top--Transform);
   }
   .tippy-popper[x-placement^=bottom] .pf-c-popover__arrow {
     top: 0;
     left: 50%;
-    transform: var(--pf-c-popover__arrow--m-bottom--Transform); 
+    transform: var(--pf-c-popover__arrow--m-bottom--Transform);
   }
   .tippy-popper[x-placement^=left] .pf-c-popover__arrow {
     top: 50%;
     right: 0;
-    transform: var(--pf-c-popover__arrow--m-left--Transform); 
+    transform: var(--pf-c-popover__arrow--m-left--Transform);
   }
   .tippy-popper[x-placement^=right] .pf-c-popover__arrow {
     top: 50%;
     left: 0;
-    transform: var(--pf-c-popover__arrow--m-right--Transform); 
-  }  
+    transform: var(--pf-c-popover__arrow--m-right--Transform);
+  }
 `);
 };

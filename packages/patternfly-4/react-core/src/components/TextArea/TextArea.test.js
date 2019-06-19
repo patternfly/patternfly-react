@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TextArea from './TextArea';
+import { TextArea } from './TextArea';
 
 const props = {
   onChange: jest.fn(),
