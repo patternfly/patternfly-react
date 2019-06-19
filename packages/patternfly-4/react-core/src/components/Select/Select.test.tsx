@@ -2,7 +2,9 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { Select } from './Select';
 import { SelectOption } from './SelectOption';
+import { CheckboxSelectOption } from './CheckboxSelectOption';
 import { SelectGroup } from './SelectGroup';
+import { CheckboxSelectGroup } from './CheckboxSelectGroup';
 import { SelectVariant } from './selectConstants';
 
 const selectOptions = [
@@ -10,6 +12,13 @@ const selectOptions = [
   <SelectOption value="Mrs" key="1" />,
   <SelectOption value="Ms" key="2" />,
   <SelectOption value="Other" key="3" />
+];
+
+const checkboxSelectOptions = [
+  <CheckboxSelectOption value="Mr" key="0" />,
+  <CheckboxSelectOption value="Mrs" key="1" />,
+  <CheckboxSelectOption value="Ms" key="2" />,
+  <CheckboxSelectOption value="Other" key="3" />
 ];
 
 describe('select', () => {
@@ -32,6 +41,16 @@ describe('select', () => {
       expect(view).toMatchSnapshot();
     });
   });
+
+  test('renders select groups successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded isGrouped>
+        <SelectGroup label="group 1">{selectOptions}</SelectGroup>
+        <SelectGroup label="group 2">{selectOptions}</SelectGroup>
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
 });
 
 describe('checkbox select', () => {
@@ -39,6 +58,15 @@ describe('checkbox select', () => {
     const view = mount(
       <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()}>
         {selectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders closed successfully - old classes', () => {
+    const view = mount(
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {checkboxSelectOptions}
       </Select>
     );
     expect(view).toMatchSnapshot();
@@ -53,11 +81,30 @@ describe('checkbox select', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('renders expanded successfully - old classes', () => {
+    const view = mount(
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+        {checkboxSelectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
   test('renders checkbox select groups successfully', () => {
     const view = mount(
       <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded isGrouped>
         <SelectGroup label="group 1">{selectOptions}</SelectGroup>
         <SelectGroup label="group 2">{selectOptions}</SelectGroup>
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders checkbox select groups successfully - old classes', () => {
+    const view = mount(
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded isGrouped>
+        <CheckboxSelectGroup label="group 1">{checkboxSelectOptions}</CheckboxSelectGroup>
+        <CheckboxSelectGroup label="group 2">{checkboxSelectOptions}</CheckboxSelectGroup>
       </Select>
     );
     expect(view).toMatchSnapshot();

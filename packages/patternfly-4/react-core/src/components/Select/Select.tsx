@@ -31,7 +31,7 @@ export interface SelectProps {
   /** Id for select toggle element */
   toggleId?: string;
   /** Adds accessible text to Select */
-  ariaLabel?: string;
+  'aria-label'?: string;
   /** Id of label for the Select aria-labelledby */
   ariaLabelledBy?: string;
   /** Label for input field of type ahead select variants */
@@ -43,11 +43,7 @@ export interface SelectProps {
   /** Label for remove chip button of multiple type ahead select variant */
   ariaLabelRemove?: string;
   /** Callback for selection behavior */
-  onSelect?: (
-    event: React.MouseEvent | React.ChangeEvent,
-    value: string,
-    isPlaceholder?: boolean
-  ) => void;
+  onSelect?: (event: React.MouseEvent | React.ChangeEvent, value: string, isPlaceholder?: boolean) => void;
   /** Callback for toggle button behavior */
   onToggle: (isExpanded: boolean) => void;
   /** Callback for typeahead clear button */
@@ -76,7 +72,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     toggleId: null as string,
     isExpanded: false,
     isGrouped: false,
-    ariaLabel: '',
+    'aria-label': '',
     ariaLabelledBy: '',
     ariaLabelTypeAhead: '',
     ariaLabelClear: 'Clear all',
@@ -217,7 +213,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       ariaLabelClear,
       ariaLabelToggle,
       ariaLabelRemove,
-      ariaLabel,
+      'aria-label': ariaLabel,
       placeholderText,
       width,
       ...props
