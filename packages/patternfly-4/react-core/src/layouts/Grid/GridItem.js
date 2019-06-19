@@ -47,6 +47,12 @@ const propTypes = {
   xlRowSpan: PropTypes.oneOf(gridSpans),
   /** the number of columns the grid item is offset on xLarge device. Value should be a number 1-12   */
   xlOffset: PropTypes.oneOf(gridSpans),
+  /** the number of columns the grid item spans on 2xLarge device. Value should be a number 1-12   */
+  xl2: PropTypes.oneOf(gridSpans),
+  /** the number of rows the grid item spans on 2xLarge device. Value should be a number 1-12   */
+  xl2RowSpan: PropTypes.oneOf(gridSpans),
+  /** the number of columns the grid item is offset on 2xLarge device. Value should be a number 1-12   */
+  xl2Offset: PropTypes.oneOf(gridSpans),
   /** Additional props are spread to the container <div> */
   '': PropTypes.any // eslint-disable-line react/require-default-props
 };
@@ -68,7 +74,10 @@ const defaultProps = {
   lgOffset: null,
   xl: null,
   xlRowSpan: null,
-  xlOffset: null
+  xlOffset: null,
+  xl2: null,
+  xl2RowSpan: null,
+  xl2Offset: null
 };
 
 const GridItem = ({ children, className, span, rowSpan, offset, ...props }) => {
@@ -79,19 +88,15 @@ const GridItem = ({ children, className, span, rowSpan, offset, ...props }) => {
     rowSpan && getRowSpanModifier(rowSpan)
   ];
 
-  Object.keys(DeviceSizes).forEach(size => {
-    const popProp = (propKey, getModifierFn) => {
+  Object.entries(DeviceSizes).forEach(([propKey, classModifier]) => {
       const propValue = props[propKey];
       if (propValue) {
-        classes.push(getModifierFn(propValue, size));
-      }
+        classes.push(getSpanModifier(propValue, classModifier));
+        classes.push(getRowSpanModifier(getRowSpanKey(propValue), classModifier));
+        classes.push(getOffsetModifier(getOffsetKey(propValue), classModifier));
+      };
       delete props[propKey];
-    };
-
-    popProp(size, getSpanModifier);
-    popProp(getRowSpanKey(size), getRowSpanModifier);
-    popProp(getOffsetKey(size), getOffsetModifier);
-  });
+  }); 
 
   return (
     <div className={css(...classes, className)} {...props}>

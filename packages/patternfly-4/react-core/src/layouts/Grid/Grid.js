@@ -25,6 +25,8 @@ const propTypes = {
   lg: gridItemSpanValueShape,
   /** the number of columns all grid items should span on a xLarge device */
   xl: gridItemSpanValueShape,
+  /** the number of columns all grid items should span on a 2xLarge device */
+  xl2: gridItemSpanValueShape,
   /** Additional props are spread to the container <div> */
   '': PropTypes.any // eslint-disable-line react/require-default-props
 };
@@ -37,22 +39,19 @@ const defaultProps = {
   sm: null,
   md: null,
   lg: null,
-  xl: null
+  xl: null,
+  xl2: null
 };
 
 const Grid = ({ children, className, gutter, span, ...props }) => {
   const classes = [styles.grid, span && getGridSpanModifier(span)];
 
-  Object.keys(DeviceSizes).forEach(size => {
-    const popProp = (propKey, getModifierFn) => {
-      const propValue = props[propKey];
-      if (propValue) {
-        classes.push(getModifierFn(propValue, size));
-      }
-      delete props[propKey];
-    };
-
-    popProp(size, getGridSpanModifier);
+  Object.entries(DeviceSizes).forEach(([propKey, gridSpanModifier]) => {
+    const propValue = props[propKey];
+    if (propValue) {
+      classes.push(getGridSpanModifier(propValue, gridSpanModifier));
+    }
+    delete props[propKey];
   });
 
   return (
