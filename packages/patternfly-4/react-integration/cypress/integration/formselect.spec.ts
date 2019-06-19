@@ -15,6 +15,5 @@ describe('Form Select Demo Test', () => {
 
   it('Verify disabled select', () => {
     cy.get('.pf-c-form-control').find('optgroup[label="Group3"]').should('be.disabled')
-    // cy.get('optgroup').last().should('be.disabled')
   });
 })
