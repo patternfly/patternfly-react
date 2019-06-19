@@ -60,6 +60,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
         baseComponent: 'nav',
         sectionClass: styles.appLauncherGroup,
         sectionTitleClass: styles.appLauncherGroupTitle,
+        sectionComponent: 'section',
         disabledClass: styles.modifiers.disabled,
         hoverClass: styles.modifiers.hover,
         separatorClass: styles.appLauncherSeparator

@@ -9,7 +9,7 @@ const propTypes = {
   /** Additional classes added to the DropdownGroup control */
   className: PropTypes.string,
   /** Group label */
-  label: PropTypes.string,
+  label: PropTypes.node,
   /** Additional props are spread to the container <div> */
   '': PropTypes.any // eslint-disable-line react/require-default-props
 };
@@ -22,15 +22,15 @@ const defaultProps = {
 
 const DropdownGroup = ({ children, className, label, ...props }) => (
   <DropdownContext.Consumer>
-    {({ sectionClass, sectionTitleClass }) => (
-      <section {...props} className={css(sectionClass, className)}>
+    {({ sectionClass, sectionTitleClass, sectionComponent: SectionComponent }) => (
+      <SectionComponent {...props} className={css(sectionClass, className)}>
         {label && (
           <h1 className={css(sectionTitleClass)} aria-hidden>
             {label}
           </h1>
         )}
         <ul>{children}</ul>
-      </section>
+      </SectionComponent>
     )}
   </DropdownContext.Consumer>
 );

@@ -19,6 +19,7 @@ export const DropdownContext: React.Context<{
   baseComponent?: string,
   sectionClass?: string,
   sectionTitleClass?: string,
+  sectionComponent?: string,
   disabledClass?: string,
   hoverClass?: string,
   separatorClass?: string

@@ -142,6 +142,7 @@ const Dropdown = ({ onSelect, ...props }) => (
       baseComponent: 'div',
       sectionClass: styles.dropdownGroup,
       sectionTitleClass: styles.dropdownGroupTitle,
+      sectionComponent: 'section',
       disabledClass: styles.modifiers.disabled,
       hoverClass: styles.modifiers.hover,
       separatorClass: styles.dropdownSeparator
