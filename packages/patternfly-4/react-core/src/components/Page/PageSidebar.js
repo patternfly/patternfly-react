@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
+import { PageContextConsumer } from './Page';
 
 const propTypes = {
   /** Additional classes added to the page sidebar */
@@ -21,18 +22,26 @@ const defaultProps = {
 };
 
 const PageSidebar = ({ className, nav, isNavOpen, ...props }) => (
-  <div
-    id="page-sidebar"
-    className={css(
-      styles.pageSidebar,
-      isNavOpen && styles.modifiers.expanded,
-      !isNavOpen && styles.modifiers.collapsed,
-      className
-    )}
-    {...props}
-  >
-    <div className={css(styles.pageSidebarBody)}>{nav}</div>
-  </div>
+  <PageContextConsumer>
+    {({ isManagedSidebar, isNavOpen: managedIsNavOpen }) => {
+      const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
+
+      return (
+        <div
+          id="page-sidebar"
+          className={css(
+            styles.pageSidebar,
+            navOpen && styles.modifiers.expanded,
+            !navOpen && styles.modifiers.collapsed,
+            className
+          )}
+          {...props}
+        >
+          <div className={css(styles.pageSidebarBody)}>{nav}</div>
+        </div>
+      );
+    }}
+  </PageContextConsumer>
 );
 
 PageSidebar.propTypes = propTypes;

@@ -1,4 +1,4 @@
-import React, { cloneElement } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
@@ -9,6 +9,10 @@ export const PageLayouts = {
   vertical: 'vertical',
   horizontal: 'horizontal'
 };
+
+const PageContext = React.createContext({});
+export const PageContextProvider = PageContext.Provider;
+export const PageContextConsumer = PageContext.Consumer;
 
 const propTypes = {
   /** Content rendered inside the main section of the page layout (e.g. <PageSection />) */
@@ -101,26 +105,25 @@ class Page extends React.Component {
     } = this.props;
     const { mobileView, mobileIsNavOpen, desktopIsNavOpen } = this.state;
 
+    const context = {
+      isManagedSidebar,
+      onNavToggle: mobileView ? this.onNavToggleMobile : this.onNavToggleDesktop,
+      isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen
+    };
+
     return (
-      <div {...rest} className={css(styles.page, className)}>
-        {skipToContent}
-        {isManagedSidebar
-          ? cloneElement(header, {
-              onNavToggle: mobileView ? this.onNavToggleMobile : this.onNavToggleDesktop,
-              isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen
-            })
-          : header}
-        {isManagedSidebar
-          ? cloneElement(sidebar, {
-              isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen
-            })
-          : sidebar}
-        <main role="main" className={css(styles.pageMain)}>
-          {breadcrumb && <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>}
-          {skipToContent && <a id={skipToContent.props.href.replace(/#*/, '')} />}
-          {children}
-        </main>
-      </div>
+      <PageContextProvider value={context}>
+        <div {...rest} className={css(styles.page, className)}>
+          {skipToContent}
+          {header}
+          {sidebar}
+          <main role="main" className={css(styles.pageMain)}>
+            {breadcrumb && <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>}
+            {skipToContent && <a id={skipToContent.props.href.replace(/#*/, '')} />}
+            {children}
+          </main>
+        </div>
+      </PageContextProvider>
     );
   }
 }
