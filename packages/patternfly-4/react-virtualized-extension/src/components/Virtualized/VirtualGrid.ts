@@ -29,7 +29,6 @@ import {
   CellCache,
   StyleCache
 } from './types';
-import { overflow } from 'styled-system';
 /**
  * Specifies the number of milliseconds during which to disable pointer events while a scroll is in progress.
  * This improves performance and makes scrolling smoother.
