@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.1.15...@patternfly/react-virtualized-extension@1.1.16) (2019-06-20)
+
+
+### Bug Fixes
+
+* **virtual-scroll:** add columnCount prop to VirtualTableBody ([#2313](https://github.com/patternfly/patternfly-react/issues/2313)) ([11f86b8](https://github.com/patternfly/patternfly-react/commit/11f86b8))
+
+
+
+
+
 ## [1.1.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.1.14...@patternfly/react-virtualized-extension@1.1.15) (2019-06-19)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension
