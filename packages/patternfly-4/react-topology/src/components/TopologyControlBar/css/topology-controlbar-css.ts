@@ -11,6 +11,7 @@ export const topologyControlbarCss = StyleSheet.parse(`
       border: none;
       border-radius: var(--pf-global--BorderRadius--sm);
       box-shadow: var(--pf-global--BoxShadow--sm);
+      margin-top: var(--pf-global--spacer--xs);
     }
     .pf-c-button.pf-m-tertiary:after {
       display: none;
