@@ -8,30 +8,14 @@ import {
   EventPropTypeInterface,
   PaddingProps,
   StringOrNumberOrCallback,
-  VictoryLegend,
   VictoryStyleInterface
 } from 'victory';
 import { Data } from 'victory-core';
-import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme';
 import { ChartContainer } from '../ChartContainer/ChartContainer';
-import { ChartLabel } from '../ChartLabel/ChartLabel';
-import { ChartLegend } from '../ChartLegend/ChartLegend';
-import { ChartPie, ChartPieProps } from "../ChartPie/ChartPie";
-import { DonutUtilizationStyles } from '../ChartTheme/themes/donut-utilization-theme';
+import { ChartDonut, ChartDonutProps } from "../ChartDonut/ChartDonut";
 import { ChartThemeDefinition, ChartDonutUtilizationStaticTheme } from '../ChartTheme/ChartTheme';
-import { getChartOrigin, getChartOriginX, getChartOriginY } from '../ChartUtils/chart-origin';
-import { getLegendX, getLegendY } from '../ChartUtils/chart-legend';
-
-export enum ChartDonutUtilizationDonutOrientation {
-  left = 'left',
-  right = 'right',
-  top = 'top'
-};
-
-export enum ChartDonutUtilizationLabelOrientation {
-  horizontal = 'horizontal',
-  vertical = 'vertical'
-};
+import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme';
+import { DonutUtilizationStyles } from '../ChartTheme/themes/donut-utilization-theme';
 
 export enum ChartDonutUtilizationLabelPosition {
   centroid = 'centroid',
@@ -39,15 +23,31 @@ export enum ChartDonutUtilizationLabelPosition {
   startAngle = 'startAngle'
 };
 
+export enum ChartDonutUtilizationLegendOrientation {
+  horizontal = 'horizontal',
+  vertical = 'vertical'
+};
+
+export enum ChartDonutUtilizationLegendPosition {
+  bottom = 'bottom',
+  right = 'right'
+};
+
 export enum ChartDonutUtilizationSortOrder {
   ascending = 'ascending',
   descending = 'descending'
 };
 
+export enum ChartDonutUtilizationSubTitlePosition {
+  bottom = 'bottom',
+  center = 'center',
+  right = 'right'
+}
+
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
-export interface ChartDonutUtilizationProps extends ChartPieProps {
+export interface ChartDonutUtilizationProps extends ChartDonutProps {
   /**
    * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-pie/
    */
@@ -126,11 +126,11 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    */
   dataComponent?: React.ReactElement<any>;
   /**
-   * Defines a horizontal shift from the x coordinate. This should not be set manually.
+   * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
   donutDx?: number;
   /**
-   * Defines a vertical shift from the y coordinate. This should not be set manually.
+   * Defines a vertical shift from the y coordinate. It should not be set manually.
    */
   donutDy?: number;
   /**
@@ -152,10 +152,6 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    */
   donutHeight?: number;
   /**
-   * The orientation of the donut chart in relation to the legend. Valid values are 'left', 'top', and 'right'
-   */
-  donutOrientation?: 'left' | 'right' | 'top';
-  /**
    * Specifies the width of the donut chart. This value should be given as a
    * number of pixels.
    *
@@ -172,6 +168,14 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * The innerRadius may also need to be set when changing the donut size.
    */
   donutWidth?: number;
+  /**
+   * Defines a horizontal shift from the x coordinate for legend and subtitle. It should not be set manually.
+   */
+  dx?: number;
+  /**
+   * Defines a vertical shift from the y coordinate for legend and subtitle. It should not be set manually.
+   */
+  dy?: number;
   /**
    * The overall end angle of the pie in degrees. This prop is used in conjunction with
    * startAngle to create a pie that spans only a segment of a circle.
@@ -273,7 +277,8 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
   /**
    * The legend component to render with chart.
    *
-   * Note: Default legend properties may be applied
+   * Note: Use legendData so the legend width can be calculated and positioned properly.
+   * Default legend properties may be applied
    */
   legendComponent?: React.ReactElement<any>;
   /**
@@ -288,6 +293,14 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    */
   legendData?: any[];
   /**
+   * Defines a horizontal shift from the x coordinate. It should not be set manually.
+   */
+  legendDx?: number;
+  /**
+   * Defines a vertical shift from the y coordinate. It should not be set manually.
+   */
+  legendDy?: number;
+  /**
    * The orientation prop takes a string that defines whether legend data
    * are displayed in a row or column. When orientation is "horizontal",
    * legend items will be displayed in a single row. When orientation is
@@ -297,6 +310,10 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    * displaying many series of data.
    */
   legendOrientation?: 'horizontal' | 'vertical';
+  /**
+   * The legend position relation to the donut chart. Valid values are 'bottom' and 'right'
+   */
+  legendPosition?: 'bottom' | 'right';
   /**
    * The labelRadius prop defines the radius of the arc that will be used for positioning each slice label.
    * If this prop is not set, the label radius will default to the radius of the pie + label padding.
@@ -342,7 +359,7 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    */
   sharedEvents?: any;
   /**
-   * This will show the static, unused portion of the donut chart
+   * This will show the static, unused portion of the donut chart. It should not be set manually.
    */
   showStatic?: boolean;
   /**
@@ -374,9 +391,27 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    */
   style?: VictoryStyleInterface;
   /**
-   * The subtitle for the donut chart
+   * The subtitle for the donut chart label
    */
   subTitle?: string;
+  /**
+   * The label component to render the chart subTitle.
+   *
+   * Note: Default label properties may be applied
+   */
+  subTitleComponent?: React.ReactElement<any>;
+  /**
+   * Defines a horizontal shift from the x coordinate. It should not be set manually.
+   */
+  subTitleDx?: number;
+  /**
+   * Defines a vertical shift from the y coordinate. It should not be set manually.
+   */
+  subTitleDy?: number;
+  /**
+   * The orientation of the donut chart in relation to the legend. Valid values are 'bottom', 'center', and 'right'
+   */
+  subTitlePosition?: 'bottom' | 'center' | 'right';
   /**
    * The theme prop takes a style object with nested data, labels, and parent objects.
    * You can create this object yourself, or you can use a theme provided by
@@ -402,7 +437,7 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
    */
   themeVariant?: string;
   /**
-   * The title for the donut chart
+   * The title for the donut chart label
    */
   title?: string;
   /**
@@ -452,30 +487,20 @@ export interface ChartDonutUtilizationProps extends ChartPieProps {
 
 export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizationProps> = ({
   data,
-  donutDx = 0,
-  donutDy = 0,
-  donutOrientation = 'left',
-  legendComponent,
-  legendData,
-  legendOrientation = DonutUtilizationStyles.legend.orientation as ChartDonutUtilizationLabelOrientation,
   showStatic = true,
   standalone = true,
-  subTitle,
   themeColor,
   themeVariant,
   thresholds,
-  title,
   x,
   y,
 
   // destructure last
   theme = getDonutUtilizationTheme(themeColor, themeVariant),
-  capHeight = title && subTitle ? 1.1 : undefined,
   height = theme.pie.height,
   width = theme.pie.width,
   donutHeight = Math.min(height, width),
-  donutWidth = Math.min(height, width),
-  innerRadius = (Math.min(donutHeight, donutWidth) - 34) / 2,
+  donutWidth = Math.min(height, width, donutHeight),
   ...rest
 }: ChartDonutUtilizationProps) => {
   // Returns computed data representing pie chart slices
@@ -509,82 +534,6 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
     return result;
   };
 
-  // Returns legend
-  const getLegend = () => {
-    if (legendComponent) {
-      const props = legendComponent.props;
-      return React.cloneElement(legendComponent, {
-        data: props.data ? props.data : legendData,
-        orientation: props.legendOrientation ? props.legendOrientation : legendOrientation,
-        standalone: false,
-        theme: props.theme ? props.theme : theme,
-        x: props.x ? props.x : getLegendX({
-          chartOrientation: donutOrientation,
-          legendOrientation: props.legendOrientation ? props.legendOrientation : legendOrientation,
-          legendWidth: getLegendDimensions().width,
-          theme,
-          width
-        }),
-        y: props.y ? props.y : getLegendY({
-          chartDy: donutDy,
-          chartHeight: donutHeight,
-          chartOrientation: donutOrientation,
-          chartType: 'pie',
-          height,
-          legendData: props.data ? props.data : legendData,
-          legendHeight: getLegendDimensions().height,
-          theme
-        })
-      });
-    } else if (legendData) {
-      return (
-        <ChartLegend
-          data={legendData}
-          orientation={legendOrientation}
-          standalone={false}
-          theme={theme}
-          x={getLegendX({
-            chartOrientation: donutOrientation,
-            legendOrientation,
-            legendWidth: getLegendDimensions().width,
-            theme,
-            width
-          })}
-          y={getLegendY({
-            chartDy: donutDy,
-            chartHeight: donutHeight,
-            chartOrientation: donutOrientation,
-            chartType: 'pie',
-            height,
-            legendData,
-            legendHeight: getLegendDimensions().height,
-            theme
-          })}
-        />
-      );
-    }
-    return null;
-  };
-
-  // Legend dimensions
-  const getLegendDimensions = () => {
-    if (legendComponent) {
-      const props = legendComponent.props;
-      return (VictoryLegend as any).getDimensions({
-        data: props.data ? props.data : legendData,
-        orientation: props.legendOrientation ? props.legendOrientation : legendOrientation,
-        theme: props.theme ? props.theme : theme,
-      });
-    } else if (legendData) {
-      return (VictoryLegend as any).getDimensions({
-        data: legendData,
-        orientation: legendOrientation,
-        theme
-      });
-    }
-    return {};
-  }
-
   // Returns theme based on threshold and current value
   const getThresholdTheme = () => {
     const newTheme = { ...theme };
@@ -608,41 +557,14 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
 
   const chart = (
     <React.Fragment>
-      <ChartLabel
-        capHeight={capHeight}
-        style={[DonutUtilizationStyles.label.title, DonutUtilizationStyles.label.subTitle] as any} // Todo: Array supported, but @types/victory is wrong
-        text={title && subTitle ? [title, subTitle] : title}
-        textAnchor="middle"
-        verticalAnchor="middle"
-        x={getChartOriginX({
-          chartDx: donutDx,
-          chartWidth: donutWidth,
-          chartOrientation: donutOrientation,
-          width
-        })}
-        y={getChartOriginY({
-          chartDy: donutDy,
-          chartHeight: donutHeight,
-          chartOrientation: donutOrientation,
-          height
-        })}
-      />
-      <ChartPie
+      <ChartDonut
         data={getComputedData()}
-        height={donutHeight}
-        innerRadius={innerRadius > 0 ? innerRadius : 0}
-        origin={getChartOrigin({
-          chartDx: donutDx,
-          chartDy: donutDy,
-          chartHeight: donutHeight,
-          chartWidth: donutWidth,
-          chartOrientation: donutOrientation,
-          height,
-          width
-        })}
+        donutHeight={donutHeight}
+        donutWidth={donutWidth}
+        height={height}
         standalone={false}
         theme={getThresholdTheme()}
-        width={donutWidth}
+        width={width}
         {...rest}
       />
     </React.Fragment>
@@ -651,15 +573,13 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   return standalone ? (
     <ChartContainer height={height} width={width}>
       {chart}
-      {getLegend()}
     </ChartContainer>
   ) : (
     <React.Fragment>
       {chart}
-      {getLegend()}
     </React.Fragment>
   );
 };
 
-// Note: ChartPie.role must be hoisted
-hoistNonReactStatics(ChartDonutUtilization, ChartPie);
+// Note: ChartDonut.role must be hoisted
+hoistNonReactStatics(ChartDonutUtilization, ChartDonut);

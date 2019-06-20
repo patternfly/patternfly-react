@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.25.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.25.0...demo-app-ts@1.25.1) (2019-06-19)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [1.25.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.24.7...demo-app-ts@1.25.0) (2019-06-19)
+
+
+### Features
+
+* **FormSelect:** Convert form select to typescript ([#2204](https://github.com/patternfly/patternfly-react/issues/2204)) ([373e012](https://github.com/patternfly/patternfly-react/commit/373e012))
+
+
+
+
+
+## [1.24.7](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.24.6...demo-app-ts@1.24.7) (2019-06-19)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [1.24.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.24.5...demo-app-ts@1.24.6) (2019-06-19)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [1.24.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.24.4...demo-app-ts@1.24.5) (2019-06-18)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [1.24.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.24.3...demo-app-ts@1.24.4) (2019-06-18)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [1.24.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.24.2...demo-app-ts@1.24.3) (2019-06-18)
 
 **Note:** Version bump only for package demo-app-ts

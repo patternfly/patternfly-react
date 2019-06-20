@@ -3,6 +3,54 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.8.15...@patternfly/react-inline-edit-extension@2.8.16) (2019-06-19)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.8.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.8.14...@patternfly/react-inline-edit-extension@2.8.15) (2019-06-19)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.8.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.8.13...@patternfly/react-inline-edit-extension@2.8.14) (2019-06-19)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.8.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.8.12...@patternfly/react-inline-edit-extension@2.8.13) (2019-06-19)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.8.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.8.11...@patternfly/react-inline-edit-extension@2.8.12) (2019-06-18)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.8.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.8.10...@patternfly/react-inline-edit-extension@2.8.11) (2019-06-18)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
 ## [2.8.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.8.9...@patternfly/react-inline-edit-extension@2.8.10) (2019-06-18)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension

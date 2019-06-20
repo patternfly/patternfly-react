@@ -41,6 +41,8 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'plain' ;
   /** Adds accessible text to the button. */
   'aria-label'?: string; 
+  /** Icon for the button if variant is a link */
+  icon?: React.ReactNode | null;
 }
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
@@ -56,6 +58,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   type = ButtonType.button,
   variant = ButtonVariant.primary,
   'aria-label': ariaLabel = null, 
+  icon = null,
   ...props
 }: ButtonProps) => {
   const Component = component as any;
@@ -80,6 +83,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
     tabIndex={isDisabled && !isButtonElement ? -1 : null}
     type={isButtonElement ? type : null}
   >
+    {(icon && variant === ButtonVariant.link) && <span className="pf-c-button__icon">{icon}</span>}
     {children}
   </Component>
   );

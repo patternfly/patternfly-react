@@ -14,7 +14,6 @@ exports[`Chart 1`] = `
       ]
     }
     height={230}
-    innerRadius={98}
     labels={Array []}
     origin={
       Object {
@@ -508,7 +507,6 @@ exports[`Chart 2`] = `
       ]
     }
     height={230}
-    innerRadius={98}
     labels={Array []}
     origin={
       Object {
@@ -1014,7 +1012,6 @@ exports[`renders component data 1`] = `
       ]
     }
     height={200}
-    innerRadius={83}
     labels={Array []}
     origin={
       Object {

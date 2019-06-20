@@ -42,6 +42,9 @@ export const getDonutThresholdDynamicTheme = (themeColor: string, themeVariant: 
 
   // Merge just the first color of dynamic (blue, green, etc.) with static (grey) for expected colorScale
   theme.legend.colorScale = [theme.pie.colorScale[0], ...ChartDonutThresholdDynamicTheme.legend.colorScale];
+
+  // Merge the threshold colors in case users want to show the unused data
+  theme.pie.colorScale = [theme.pie.colorScale[0], ...ChartDonutThresholdStaticTheme.pie.colorScale];
   return theme;
 };
 
