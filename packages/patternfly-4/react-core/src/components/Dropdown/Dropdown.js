@@ -89,8 +89,8 @@ export class DropdownWithContext extends React.Component {
     }
     return (
       <DropdownContext.Consumer>
-        {({ baseClass }) => (
-          <div
+        {({ baseClass, baseComponent: BaseComponent }) => (
+          <BaseComponent
             {...props}
             className={css(
               baseClass,
@@ -124,7 +124,7 @@ export class DropdownWithContext extends React.Component {
                 {renderedContent}
               </DropdownMenu>
             )}
-          </div>
+          </BaseComponent>
         )}
       </DropdownContext.Consumer>
     );
@@ -138,7 +138,14 @@ const Dropdown = ({ onSelect, ...props }) => (
       menuClass: styles.dropdownMenu,
       itemClass: styles.dropdownMenuItem,
       toggleClass: styles.dropdownToggle,
-      baseClass: styles.dropdown
+      baseClass: styles.dropdown,
+      baseComponent: 'div',
+      sectionClass: styles.dropdownGroup,
+      sectionTitleClass: styles.dropdownGroupTitle,
+      sectionComponent: 'section',
+      disabledClass: styles.modifiers.disabled,
+      hoverClass: styles.modifiers.hover,
+      separatorClass: styles.dropdownSeparator
     }}
   >
     <DropdownWithContext {...props} />

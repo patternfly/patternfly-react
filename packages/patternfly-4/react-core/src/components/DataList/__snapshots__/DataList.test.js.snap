@@ -65,26 +65,30 @@ exports[`DataList DataListAction dropdown 1`] = `
       direction="down"
       dropdownItems={
         Array [
-          <Item
+          <DropdownItem
             className=""
             component="button"
-            href="#"
+            href=""
             isDisabled={false}
             isHovered={false}
             onClick={[MockFunction]}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             action-1
-          </Item>,
-          <Item
+          </DropdownItem>,
+          <DropdownItem
             className=""
             component="button"
-            href="#"
+            href=""
             isDisabled={false}
             isHovered={false}
             onClick={[MockFunction]}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             action-2
-          </Item>,
+          </DropdownItem>,
         ]
       }
       isGrouped={false}
