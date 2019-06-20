@@ -53,10 +53,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -142,10 +138,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -340,10 +332,6 @@ exports[`ApplicationLauncher dropup 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -429,10 +417,6 @@ exports[`ApplicationLauncher dropup 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -627,10 +611,6 @@ exports[`ApplicationLauncher expanded 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -716,10 +696,6 @@ exports[`ApplicationLauncher expanded 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -1063,11 +1039,7 @@ exports[`ApplicationLauncher expanded 1`] = `
           </DropdownItem>
           <Separator
             className=""
-            component="a"
-            href="#"
             index={4}
-            isDisabled={false}
-            isHovered={false}
             key=".$separator"
           >
             <DropdownItem
@@ -1079,7 +1051,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
-              href="#"
+              href=""
               index={4}
               isDisabled={false}
               isHovered={false}
@@ -1093,7 +1065,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               >
                 <div
                   className="pf-c-app-launcher__separator"
-                  href="#"
+                  href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="separator"
@@ -1256,10 +1228,6 @@ exports[`ApplicationLauncher regular 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -1345,10 +1313,6 @@ exports[`ApplicationLauncher regular 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -1543,10 +1507,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -1632,10 +1592,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""

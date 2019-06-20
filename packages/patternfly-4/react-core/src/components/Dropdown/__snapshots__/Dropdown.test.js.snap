@@ -248,10 +248,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -403,10 +399,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -640,10 +632,6 @@ exports[`KebabToggle dropup 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -795,10 +783,6 @@ exports[`KebabToggle dropup 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -1032,10 +1016,6 @@ exports[`KebabToggle expanded 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -1187,10 +1167,6 @@ exports[`KebabToggle expanded 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -1487,11 +1463,7 @@ exports[`KebabToggle expanded 1`] = `
           </DropdownItem>
           <Separator
             className=""
-            component="a"
-            href="#"
             index={4}
-            isDisabled={false}
-            isHovered={false}
             key=".$separator"
           >
             <DropdownItem
@@ -1503,7 +1475,7 @@ exports[`KebabToggle expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
-              href="#"
+              href=""
               index={4}
               isDisabled={false}
               isHovered={false}
@@ -1517,7 +1489,7 @@ exports[`KebabToggle expanded 1`] = `
               >
                 <div
                   className="pf-c-dropdown__separator"
-                  href="#"
+                  href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="separator"
@@ -1689,10 +1661,6 @@ exports[`KebabToggle plain 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -1844,10 +1812,6 @@ exports[`KebabToggle plain 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -2081,10 +2045,6 @@ exports[`KebabToggle regular 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -2236,10 +2196,6 @@ exports[`KebabToggle regular 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -2473,10 +2429,6 @@ exports[`KebabToggle right aligned 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -2628,10 +2580,6 @@ exports[`KebabToggle right aligned 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -3031,10 +2979,6 @@ exports[`dropdown dropup + right aligned 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -3187,10 +3131,6 @@ exports[`dropdown dropup + right aligned 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -3429,10 +3369,6 @@ exports[`dropdown dropup 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -3585,10 +3521,6 @@ exports[`dropdown dropup 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -3827,10 +3759,6 @@ exports[`dropdown expanded 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -3983,10 +3911,6 @@ exports[`dropdown expanded 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -4288,11 +4212,7 @@ exports[`dropdown expanded 1`] = `
           </DropdownItem>
           <Separator
             className=""
-            component="a"
-            href="#"
             index={4}
-            isDisabled={false}
-            isHovered={false}
             key=".$separator"
           >
             <DropdownItem
@@ -4304,7 +4224,7 @@ exports[`dropdown expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
-              href="#"
+              href=""
               index={4}
               isDisabled={false}
               isHovered={false}
@@ -4318,7 +4238,7 @@ exports[`dropdown expanded 1`] = `
               >
                 <div
                   className="pf-c-dropdown__separator"
-                  href="#"
+                  href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="separator"
@@ -4490,10 +4410,6 @@ exports[`dropdown regular 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -4646,10 +4562,6 @@ exports[`dropdown regular 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -4888,10 +4800,6 @@ exports[`dropdown right aligned 1`] = `
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -5044,10 +4952,6 @@ exports[`dropdown right aligned 1`] = `
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
