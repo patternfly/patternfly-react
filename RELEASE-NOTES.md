@@ -46,6 +46,13 @@ RC2 contains the following improvements/fixes:
 - Refactored themes for bar chart default colors (#2112)
 - Added default for component props (#2103)
 
+## Docs
+- Use frontmatter for what props to show in docs (#2072)
+- If you add new imports to your MDX file, rerun yarn develop which now clears the gatsby-mdx cache and lets you be on your merry way (#2059)
+- Hide inherited typescript props (#1866)
+- Use mdx for docs (#1753)
+- Reverted bodywrapper conversion to stateless-function (#2161)
+
 ## TypeScript Conversions
 We are in the process of converting all components to TypeScript to provide better types to consumers. The following components have been converted:
 - Alert (#1978)
@@ -63,10 +70,3 @@ We are in the process of converting all components to TypeScript to provide bett
 - Popover (#2023)
 - Radio (#1945)
 - Text (#1907)
-
-## Docs
-- Use frontmatter for what props to show in docs (#2072)
-- If you add new imports to your MDX file, rerun yarn develop which now clears the gatsby-mdx cache and lets you be on your merry way (#2059)
-- Hide inherited typescript props (#1866)
-- Use mdx for docs (#1753)
-- Reverted bodywrapper conversion to stateless-function (#2161)
