@@ -105,15 +105,14 @@ class DropdownItem extends React.Component {
       additionalProps.type = additionalProps.type || 'button';
     }
 
-    const renderWithTooltip = childNode => {
-      return tooltip ? (
+    const renderWithTooltip = childNode =>
+      tooltip ? (
         <Tooltip content={tooltip} {...tooltipProps}>
           {childNode}
         </Tooltip>
       ) : (
         childNode
       );
-    }
 
     return (
       <DropdownContext.Consumer>
