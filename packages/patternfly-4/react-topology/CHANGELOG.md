@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.2.15...@patternfly/react-topology@2.3.0) (2019-06-20)
+
+
+### Features
+
+* ** topology-sidebar:** Adds TopologySidebar to react-topology ([#2286](https://github.com/patternfly/patternfly-react/issues/2286)) ([a5dc8bb](https://github.com/patternfly/patternfly-react/commit/a5dc8bb))
+
+
+
+
+
 ## [2.2.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.2.14...@patternfly/react-topology@2.2.15) (2019-06-19)
 
 **Note:** Version bump only for package @patternfly/react-topology
