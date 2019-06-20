@@ -29,7 +29,7 @@ const DropdownGroup = ({ children, className, label, ...props }) => (
             {label}
           </h1>
         )}
-        <ul>{children}</ul>
+        <ul role="none">{children}</ul>
       </SectionComponent>
     )}
   </DropdownContext.Consumer>

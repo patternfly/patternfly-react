@@ -12,6 +12,10 @@ export interface ApplicationLauncherItemProps {
   icon?: React.ReactNode;
   /** If clicking on the item should open the page in a separate window */
   isExternal?: boolean;
+  /** Tooltip to display when hovered over the item */
+  tooltip?: React.ReactNode;
+  /** Additional tooltip props forwarded to the Tooltip component */
+  tooltipProps?: any;
 }
 
 export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLauncherItemProps & DropdownItemProps> = ({
@@ -20,23 +24,28 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
   icon = null,
   isExternal = false,
   href,
+  tooltip = null,
+  tooltipProps = null,
   ...props
-}: ApplicationLauncherItemProps & DropdownItemProps) => (
-  <DropdownItem 
-    component={href ? 'a' : 'div'}
-    href={href || null}
-    className={css(isExternal && styles.modifiers.external, className)}
-    // add style until https://github.com/patternfly/patternfly-next/issues/1944 is fixed
-    style={!href ? { cursor: 'pointer' } : null}
-    {...props}
-  >
-    {icon && <ApplicationLauncherIcon>{icon}</ApplicationLauncherIcon>}
-    {icon ? <ApplicationLauncherText>{children}</ApplicationLauncherText> : children}
-    {isExternal && (
-      <>
-        <span className={css(styles.appLauncherMenuItemExternalIcon)}><ExternalLinkAltIcon /></span>
-        <span className={css(accessibleStyles.screenReader)}>(opens new window)</span>
-      </>
-    )}
-  </DropdownItem>
-);
+}: ApplicationLauncherItemProps & DropdownItemProps) => {
+  return (
+    <DropdownItem 
+      component={href ? 'a' : 'div'}
+      href={href || null}
+      className={css(isExternal && styles.modifiers.external, className)}
+      // add style until https://github.com/patternfly/patternfly-next/issues/1944 is fixed
+      style={!href ? { cursor: 'pointer' } : null}
+      tooltip={tooltip}
+      tooltipProps={tooltipProps}
+      {...props}
+    >
+      {icon && <ApplicationLauncherIcon>{icon}</ApplicationLauncherIcon>}
+      {icon ? <ApplicationLauncherText>{children}</ApplicationLauncherText> : children}
+      {isExternal && (
+        <>
+          <span className={css(styles.appLauncherMenuItemExternalIcon)}><ExternalLinkAltIcon /></span>
+          <span className={css(accessibleStyles.screenReader)}>(opens new window)</span>
+        </>
+      )}
+    </DropdownItem>
+)};

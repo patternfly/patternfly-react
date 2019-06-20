@@ -105,11 +105,15 @@ class DropdownItem extends React.Component {
       additionalProps.type = additionalProps.type || 'button';
     }
 
-    const renderWithTooltip = childNode => (
-      <Tooltip content={tooltip} {...tooltipProps}>
-        <span>{childNode}</span>
-      </Tooltip>
-    );
+    const renderWithTooltip = childNode => {
+      return tooltip ? (
+        <Tooltip content={tooltip} {...tooltipProps}>
+          {childNode}
+        </Tooltip>
+      ) : (
+        childNode
+      );
+    }
 
     return (
       <DropdownContext.Consumer>
@@ -121,44 +125,44 @@ class DropdownItem extends React.Component {
           }
           return (
             <li role="none">
-              {React.isValidElement(children) ? (
-                React.Children.map(children, child => {
-                  const clonedElement = React.cloneElement(child, {
-                    className: css(
-                      isDisabled && disabledClass,
-                      isHovered && hoverClass,
-                      className,
-                      itemClass,
-                      child.props.className
-                    ),
-                    ref: this.ref,
-                    onKeyDown: this.onKeyDown,
-                    onClick: event => {
-                      if (!isDisabled) {
-                        onClick && onClick(event);
-                        onSelect && onSelect(event);
+              {React.isValidElement(children)
+                ? React.Children.map(children, child => {
+                    const clonedElement = React.cloneElement(child, {
+                      className: css(
+                        isDisabled && disabledClass,
+                        isHovered && hoverClass,
+                        className,
+                        itemClass,
+                        child.props.className
+                      ),
+                      ref: this.ref,
+                      onKeyDown: this.onKeyDown,
+                      onClick: event => {
+                        if (!isDisabled) {
+                          onClick && onClick(event);
+                          onSelect && onSelect(event);
+                        }
                       }
-                    }
-                  });
-                  return tooltip ? renderWithTooltip(tooltip, clonedElement) : clonedElement;
-                })
-              ) : (
-                <Component
-                  {...additionalProps}
-                  href={href || null}
-                  className={css(classes, this.props.role !== 'separator' && itemClass)}
-                  ref={this.ref}
-                  onKeyDown={this.onKeyDown}
-                  onClick={event => {
-                    if (!isDisabled) {
-                      onClick && onClick(event);
-                      onSelect && onSelect(event);
-                    }
-                  }}
-                >
-                  {tooltip ? renderWithTooltip(tooltip, children) : children}
-                </Component>
-              )}
+                    });
+                    return renderWithTooltip(clonedElement);
+                  })
+                : renderWithTooltip(
+                    <Component
+                      {...additionalProps}
+                      href={href || null}
+                      className={css(classes, this.props.role !== 'separator' && itemClass)}
+                      ref={this.ref}
+                      onKeyDown={this.onKeyDown}
+                      onClick={event => {
+                        if (!isDisabled) {
+                          onClick && onClick(event);
+                          onSelect && onSelect(event);
+                        }
+                      }}
+                    >
+                      {children}
+                    </Component>
+                  )}
             </li>
           );
         }}

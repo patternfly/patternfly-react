@@ -42,7 +42,9 @@ const propTypes = {
   /** Maximum width of the tooltip (default 12.5rem) */
   maxWidth: PropTypes.string,
   /** If true, displays as an application launcher */
-  isAppLauncher: PropTypes.bool
+  isAppLauncher: PropTypes.bool,
+  /** Distance of the tooltip to its target */
+  distance: PropTypes.number
 };
 
 const defaultProps = {
@@ -55,7 +57,8 @@ const defaultProps = {
   appendTo: () => document.body,
   zIndex: 9999,
   maxWidth: tooltipMaxWidth && tooltipMaxWidth.value,
-  isAppLauncher: false
+  isAppLauncher: false,
+  distance: 15
 };
 
 class Tooltip extends React.Component {
@@ -97,6 +100,7 @@ class Tooltip extends React.Component {
       zIndex,
       maxWidth,
       isAppLauncher,
+      distance,
       ...rest
     } = this.props;
     const content = (
@@ -123,7 +127,7 @@ class Tooltip extends React.Component {
         placement={position}
         trigger={trigger}
         delay={[entryDelay, exitDelay]}
-        distance={15}
+        distance={distance}
         flip={enableFlip}
         popperOptions={{
           modifiers: {

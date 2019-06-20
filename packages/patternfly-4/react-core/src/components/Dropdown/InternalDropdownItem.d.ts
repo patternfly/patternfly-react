@@ -15,6 +15,10 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   isHovered?: boolean; 
   /** Default hyperlink location */
   href?: string; 
+  /** Tooltip to display when hovered over the item */
+  tooltip: React.ReactNode;
+  /** Additional tooltip props forwarded to the Tooltip component */
+  tooltipProps: any;
   index?: number; 
   context?: {
     keyHandler?: (index: number, direction: string) => void,

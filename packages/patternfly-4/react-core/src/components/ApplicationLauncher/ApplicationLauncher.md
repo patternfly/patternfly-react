@@ -36,16 +36,16 @@ class SimpleApplicationLauncher extends React.Component {
   render() {
     const { isOpen } = this.state;
     const appLauncherItems = [
-      <ApplicationLauncherItem key="application_1" href="#">
+      <ApplicationLauncherItem key="application_1a" href="#">
         Application 1 (anchor link)
       </ApplicationLauncherItem>,
-      <ApplicationLauncherItem key="application_2" onClick={() => alert('Clicked item 2')}>
+      <ApplicationLauncherItem key="application_2a" onClick={() => alert('Clicked item 2')}>
         Application 2 (div with onClick)
       </ApplicationLauncherItem>,
-      <ApplicationLauncherItem key="application_3" onClick={() => alert('Clicked item 3')}>
+      <ApplicationLauncherItem key="application_3a" onClick={() => alert('Clicked item 3')}>
         Application 3 (div with onClick)
       </ApplicationLauncherItem>,
-      <ApplicationLauncherItem key="disabled_application_4" isDisabled>
+      <ApplicationLauncherItem key="disabled_application_4a" isDisabled>
         Unavailable Application
       </ApplicationLauncherItem>
     ];
@@ -87,15 +87,29 @@ class TooltipApplicationLauncher extends React.Component {
   render() {
     const { isOpen } = this.state;
     const appLauncherItems = [
-      <ApplicationLauncherItem key="application_1" href="#" tooltip={<div>Launch Application 1</div>}>
+      <ApplicationLauncherItem 
+        key="application_1b" 
+        href="#" 
+        tooltip={<div>Launch Application 1</div>}
+      >
         Application 1 (anchor link)
       </ApplicationLauncherItem>
       ,
-      <ApplicationLauncherItem key="application_2" tooltip={<div>Launch Application 2</div>} tooltipProps={{ position: 'right' }} onClick={() => alert('Clicked item 2')}>
+      <ApplicationLauncherItem 
+        key="application_2b" 
+        tooltip={<div>Launch Application 2</div>} 
+        tooltipProps={{ position: 'right' }} 
+        onClick={() => alert('Clicked item 2')}
+      >
         Application 2 (onClick)
       </ApplicationLauncherItem>
       ,
-      <ApplicationLauncherItem key="application_3" tooltip={<div>Launch Application 3</div>} tooltipProps={{ position: 'bottom' }} onClick={() => alert('Clicked item 3')}>
+      <ApplicationLauncherItem 
+        key="application_3b" 
+        tooltip={<div>Launch Application 3</div>} 
+        tooltipProps={{ position: 'bottom' }} 
+        onClick={() => alert('Clicked item 3')}
+      >
         Application 3 (onClick)
       </ApplicationLauncherItem>
     ];
@@ -139,18 +153,18 @@ class ApplicationLauncherSections extends React.Component {
     const { isOpen } = this.state;
     const icon = <img src={pfIcon} />;
     const appLauncherItems = [
-      <ApplicationLauncherGroup key="group 1">
+      <ApplicationLauncherGroup key="group 1c">
         <ApplicationLauncherItem key="group 1a" icon={icon}>
           Item without group title
         </ApplicationLauncherItem>
         <ApplicationLauncherSeparator key="separator" />
       </ApplicationLauncherGroup>,
-      <ApplicationLauncherGroup label="Group 2" key="group 2">
+      <ApplicationLauncherGroup label="Group 2" key="group 2c">
         <ApplicationLauncherItem key="group 2a" isExternal icon={icon}>Group 2 div</ApplicationLauncherItem>
         <ApplicationLauncherItem key="group 2b" isExternal href="#" icon={icon}>Group 2 anchor link</ApplicationLauncherItem>
         <ApplicationLauncherSeparator key="separator" />
       </ApplicationLauncherGroup>,
-      <ApplicationLauncherGroup label="Group 3" key="group 3">
+      <ApplicationLauncherGroup label="Group 3" key="group 3c">
         <ApplicationLauncherItem key="group 3a" isExternal icon={icon}>Group 3 div</ApplicationLauncherItem>
         <ApplicationLauncherItem key="group 3b" isExternal href="#" icon={icon}>Group 3 anchor link</ApplicationLauncherItem>
       </ApplicationLauncherGroup>
