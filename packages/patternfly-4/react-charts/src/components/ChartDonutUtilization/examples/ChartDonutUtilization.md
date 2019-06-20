@@ -76,6 +76,58 @@ class UtilizationChart extends React.Component {
 }
 ```
 
+## Simple, inverted donut utilization chart with right-aligned legend
+```js
+import React from 'react';
+import { ChartDonutUtilization } from '@patternfly/react-charts';
+
+class UtilizationChart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      spacer: '',
+      used: 100
+    };
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      const { used } = this.state;
+      const val = (((used - 10) % 100) + 100) % 100;
+      this.setState({
+        spacer: val < 10 ? ' ' : '',
+        used: val
+      });
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  render() {
+    const { spacer, used } = this.state;
+    return (
+      <div>
+        <div className="donut-utilization-chart-legend-right">
+          <ChartDonutUtilization
+            data={{ x: 'GBps capacity', y: used }}
+            invert
+            labels={datum => datum.x ? `${datum.x}: ${datum.y}%` : null}
+            legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
+            legendOrientation="vertical"
+            subTitle="of 100 GBps"
+            title={`${used}%`}
+            thresholds={[{ value: 60 }, { value: 20 }]}
+            width={435}
+          />
+        </div>
+      </div>
+    );
+  }
+}
+```
+
 ## Simple, green donut utilization chart with right-aligned legend
 ```js
 import React from 'react';
@@ -219,6 +271,63 @@ class ThresholdChart extends React.Component {
               subTitle="of 100 GBps"
               title={`${used}%`}
               thresholds={[{ value: 60 }, { value: 90 }]}
+            />
+          </ChartDonutThreshold>
+        </div>
+      </div>
+    );
+  }
+}
+```
+
+## Donut utilization chart with inverted static thresholds and right-aligned legend
+```js
+import React from 'react';
+import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
+
+class ThresholdChart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      spacer: '',
+      used: 100
+    };
+  }
+  
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      const { used } = this.state;
+      const val = (((used - 10) % 100) + 100) % 100;
+      this.setState({
+        spacer: val < 10 ? ' ' : '',
+        used: val
+      });
+    }, 1000);
+  }
+    
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  render() {
+    const { used } = this.state;
+    return (
+      <div>
+        <div className="donut-threshold-chart-legend-right">
+          <ChartDonutThreshold
+            data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 20%', y: 20 }]}
+            invert
+            labels={datum => datum.x ? datum.x : null}
+            width={500}
+          >
+            <ChartDonutUtilization
+              data={{ x: 'Storage capacity', y: used }}
+              labels={datum => datum.x ? `${datum.x}: ${datum.y}%` : null}
+              legendData={[{ name: `Storage capacity: ${used}%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 20%' }]}
+              legendOrientation="vertical"
+              subTitle="of 100 GBps"
+              title={`${used}%`}
+              thresholds={[{ value: 60 }, { value: 20 }]}
             />
           </ChartDonutThreshold>
         </div>

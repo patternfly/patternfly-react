@@ -16,6 +16,7 @@ import { ChartDonut, ChartDonutProps } from "../ChartDonut/ChartDonut";
 import { ChartThemeDefinition, ChartDonutUtilizationStaticTheme } from '../ChartTheme/ChartTheme';
 import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme';
 import { DonutUtilizationStyles } from '../ChartTheme/themes/donut-utilization-theme';
+import { cloneDeep } from 'lodash';
 
 export enum ChartDonutUtilizationLabelPosition {
   centroid = 'centroid',
@@ -258,6 +259,13 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   innerRadius?: number;
   /**
+   * Invert the threshold color scale used to represent warnings, errors, etc.
+   *
+   * Instead of showing a warning at 60% and an error at 90%; for example, this would allow users to show a warning
+   * below 60% and an error below 20%
+   */
+  invert?: boolean;
+  /**
    * The labelComponent prop takes in an entire label component which will be used
    * to create a label for the area. The new element created from the passed labelComponent
    * will be supplied with the following properties: x, y, index, data, verticalAnchor,
@@ -487,6 +495,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
 
 export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizationProps> = ({
   data,
+  invert = false,
   showStatic = true,
   standalone = true,
   themeColor,
@@ -515,8 +524,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
 
   const getData = () => {
     const datum = [{ ...data }];
-    const accessorTypes = ['x', 'y'];
-    return Data.formatData(datum, { x, y, ...rest }, accessorTypes);
+    return Data.formatData(datum, { x, y, ...rest }, ['x', 'y']).sort((a: any,b: any) => a._y - b._y);
   };
 
   // Returns thresholds with default color scale
@@ -541,14 +549,20 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
     if (data) {
       const datum = getData();
       const donutThresholds = getDonutThresholds();
+      const mergeThemeProps = (i: number) => {
+        // Merge just the first color of dynamic (blue, green, etc.) with static (gray) for expected colorScale
+        newTheme.pie.colorScale[0] = donutThresholds[i].color;
+        newTheme.legend.colorScale[0] = donutThresholds[i].color;
+      };
       for (let i = 0; i < donutThresholds.length; i++) {
-        if (datum[0]._y >= donutThresholds[i].value) {
-          // Merge just the first color of dynamic (blue, green, etc.) with static (grey) for expected colorScale
-          newTheme.pie.colorScale = [donutThresholds[i].color, ...ChartDonutUtilizationStaticTheme.pie.colorScale];
-          newTheme.legend.colorScale = [
-            donutThresholds[i].color,
-            ...ChartDonutUtilizationStaticTheme.legend.colorScale
-          ];
+        if (invert) {
+          if (datum[0]._y <= donutThresholds[i].value) {
+            mergeThemeProps(i);
+          }
+        } else {
+          if (datum[0]._y >= donutThresholds[i].value) {
+            mergeThemeProps(i);
+          }
         }
       }
     }
