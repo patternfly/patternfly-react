@@ -3,6 +3,275 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.50.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.0...@patternfly/react-core@3.50.1) (2019-06-19)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.50.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.49.1...@patternfly/react-core@3.50.0) (2019-06-19)
+
+
+### Features
+
+* **FormSelect:** Convert form select to typescript ([#2204](https://github.com/patternfly/patternfly-react/issues/2204)) ([373e012](https://github.com/patternfly/patternfly-react/commit/373e012))
+
+
+
+
+
+## [3.49.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.49.0...@patternfly/react-core@3.49.1) (2019-06-19)
+
+
+### Bug Fixes
+
+* **Alert:** remove the <p> from the Alert description ([#2293](https://github.com/patternfly/patternfly-react/issues/2293)) ([ccaf11e](https://github.com/patternfly/patternfly-react/commit/ccaf11e)), closes [#2283](https://github.com/patternfly/patternfly-react/issues/2283)
+
+
+
+
+
+# [3.49.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.5...@patternfly/react-core@3.49.0) (2019-06-19)
+
+
+### Features
+
+* **Button:** add icon property and wrapper css ([#2205](https://github.com/patternfly/patternfly-react/issues/2205)) ([14d1d70](https://github.com/patternfly/patternfly-react/commit/14d1d70))
+
+
+
+
+
+## [3.48.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.4...@patternfly/react-core@3.48.5) (2019-06-18)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.48.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.3...@patternfly/react-core@3.48.4) (2019-06-18)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.48.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.2...@patternfly/react-core@3.48.3) (2019-06-18)
+
+
+### Bug Fixes
+
+* **popover:** reset pointer-events to capture default target bounds ([#2284](https://github.com/patternfly/patternfly-react/issues/2284)) ([910c667](https://github.com/patternfly/patternfly-react/commit/910c667))
+
+
+
+
+
+## [3.48.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.1...@patternfly/react-core@3.48.2) (2019-06-18)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.48.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.0...@patternfly/react-core@3.48.1) (2019-06-18)
+
+
+### Bug Fixes
+
+* **Accordion:** final changes ([#2290](https://github.com/patternfly/patternfly-react/issues/2290)) ([6fce654](https://github.com/patternfly/patternfly-react/commit/6fce654))
+
+
+
+
+
+# [3.48.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.46.1...@patternfly/react-core@3.48.0) (2019-06-18)
+
+
+### Features
+
+* **ContextSelector:** Convert context selector to typescript ([#2147](https://github.com/patternfly/patternfly-react/issues/2147)) ([9a4f484](https://github.com/patternfly/patternfly-react/commit/9a4f484))
+
+
+
+
+
+# [3.47.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.46.1...@patternfly/react-core@3.47.0) (2019-06-18)
+
+
+### Features
+
+* **ContextSelector:** Convert context selector to typescript ([#2147](https://github.com/patternfly/patternfly-react/issues/2147)) ([9a4f484](https://github.com/patternfly/patternfly-react/commit/9a4f484))
+
+
+
+
+
+## [3.46.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.46.0...@patternfly/react-core@3.46.1) (2019-06-14)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.46.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.45.0...@patternfly/react-core@3.46.0) (2019-06-14)
+
+
+### Bug Fixes
+
+* **Alert:** set the variant prop to info by default ([#2218](https://github.com/patternfly/patternfly-react/issues/2218)) ([bd8afad](https://github.com/patternfly/patternfly-react/commit/bd8afad))
+* **react-icons:** add noVerticalAlign prop to d.ts file ([#2238](https://github.com/patternfly/patternfly-react/issues/2238)) ([c50143c](https://github.com/patternfly/patternfly-react/commit/c50143c)), closes [#2237](https://github.com/patternfly/patternfly-react/issues/2237)
+
+
+### Features
+
+* **Accordion:** Accordion Component TypeScript Conversion ([#2121](https://github.com/patternfly/patternfly-react/issues/2121)) ([e2e981d](https://github.com/patternfly/patternfly-react/commit/e2e981d))
+
+
+
+
+
+# [3.45.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.44.0...@patternfly/react-core@3.45.0) (2019-06-14)
+
+
+### Features
+
+* **PF4: Application launcher:** Use dropdown components in App launcher ([#2101](https://github.com/patternfly/patternfly-react/issues/2101)) ([44a2ea1](https://github.com/patternfly/patternfly-react/commit/44a2ea1))
+
+
+
+
+
+# [3.44.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.43.0...@patternfly/react-core@3.44.0) (2019-06-14)
+
+
+### Features
+
+* **PF4 Dropdown:** Wrap dropdown with context ([#2227](https://github.com/patternfly/patternfly-react/issues/2227)) ([5bb8051](https://github.com/patternfly/patternfly-react/commit/5bb8051))
+
+
+
+
+
+# [3.43.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.42.1...@patternfly/react-core@3.43.0) (2019-06-13)
+
+
+### Features
+
+* **build:** add source maps ([#2142](https://github.com/patternfly/patternfly-react/issues/2142)) ([5076c48](https://github.com/patternfly/patternfly-react/commit/5076c48))
+
+
+
+
+
+## [3.42.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.42.0...@patternfly/react-core@3.42.1) (2019-06-13)
+
+
+### Bug Fixes
+
+* **pagination:** dropdown closes on click outside of menu area ([#2235](https://github.com/patternfly/patternfly-react/issues/2235)) ([a2942c2](https://github.com/patternfly/patternfly-react/commit/a2942c2))
+
+
+
+
+
+# [3.42.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.41.0...@patternfly/react-core@3.42.0) (2019-06-12)
+
+
+### Features
+
+* **Alert:** Add the inline alert modifier ([#2126](https://github.com/patternfly/patternfly-react/issues/2126)) ([230e83a](https://github.com/patternfly/patternfly-react/commit/230e83a)), closes [#1934](https://github.com/patternfly/patternfly-react/issues/1934)
+
+
+
+
+
+# [3.41.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.40.0...@patternfly/react-core@3.41.0) (2019-06-12)
+
+
+### Features
+
+* **react-core:** allow dynamic rendering of anchor components ([#2117](https://github.com/patternfly/patternfly-react/issues/2117)) ([c1c3be9](https://github.com/patternfly/patternfly-react/commit/c1c3be9))
+
+
+
+
+
+# [3.40.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.39.0...@patternfly/react-core@3.40.0) (2019-06-11)
+
+
+### Features
+
+* **ApplicationLauncher:** Convert application launcher to typescript ([#2166](https://github.com/patternfly/patternfly-react/issues/2166)) ([9b90f94](https://github.com/patternfly/patternfly-react/commit/9b90f94))
+* **Card:** Add support for images and actions ([#2122](https://github.com/patternfly/patternfly-react/issues/2122)) ([7832518](https://github.com/patternfly/patternfly-react/commit/7832518))
+
+
+
+
+
+# [3.39.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.38.1...@patternfly/react-core@3.39.0) (2019-06-11)
+
+
+### Features
+
+* **Topology:** Add @patternfly/react-topology package ([#2170](https://github.com/patternfly/patternfly-react/issues/2170)) ([58eb9cc](https://github.com/patternfly/patternfly-react/commit/58eb9cc))
+
+
+
+
+
+## [3.38.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.38.0...@patternfly/react-core@3.38.1) (2019-06-11)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.38.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.37.1...@patternfly/react-core@3.38.0) (2019-06-10)
+
+
+### Features
+
+* **backdrop:** Convert backdrop to typescript ([#2105](https://github.com/patternfly/patternfly-react/issues/2105)) ([fd3d771](https://github.com/patternfly/patternfly-react/commit/fd3d771))
+
+
+
+
+
+## [3.37.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.37.0...@patternfly/react-core@3.37.1) (2019-06-10)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.37.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.36.1...@patternfly/react-core@3.37.0) (2019-06-07)
+
+
+### Features
+
+* **PF4: Pagination:** When empty array sent to pagination no per page should be visible ([#2175](https://github.com/patternfly/patternfly-react/issues/2175)) ([cb97dfd](https://github.com/patternfly/patternfly-react/commit/cb97dfd))
+
+
+
+
+
+## [3.36.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.36.0...@patternfly/react-core@3.36.1) (2019-06-06)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 # [3.36.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.35.0...@patternfly/react-core@3.36.0) (2019-06-05)
 
 

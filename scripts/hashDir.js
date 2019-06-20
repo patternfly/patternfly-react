@@ -3,49 +3,33 @@ const path = require('path');
 const crypto = require('crypto');
 
 // http://stackoverflow.com/a/5827895/4241030
-function filewalker(dir, done) {
+function filewalker(dir) {
   let results = [];
 
-  fs.readdir(dir, function(err, list) {
-    if (err) return done(err);
+	fs.readdirSync(dir).forEach(file => {
+    filePath = path.resolve(dir, file);
 
-    var pending = list.length;
-
-    if (!pending) return done(null, results);
-
-    list.forEach(function(file){
-      file = path.resolve(dir, file);
-
-      fs.stat(file, function(err, stat){
-        // If directory, execute a recursive call
-        if (stat && stat.isDirectory()) {
-          filewalker(file, function(err, res){
-            results = results.concat(res);
-            if (!--pending) done(null, results);
-          });
-        } else {
-          results.push(file);
-          if (!--pending) done(null, results);
-        }
-      });
-    });
+    const stat = fs.statSync(filePath);
+    // If directory, execute a recursive call
+    if (stat && stat.isDirectory() && !stat.isSymbolicLink()) {
+      results = results.concat(filewalker(filePath));
+    } else if (stat && stat.isFile()) {
+      results.push(filePath);
+    }
   });
+
+  return results;
 };
 
 function hashDir(dirPath) {
   const md5 = crypto.createHash('md5');
 
-  return new Promise((resolve, reject) => {
-    filewalker(dirPath, (err, files) => {
-      if (err) reject(err);
-
-      files.sort().forEach(file => {
-        const fileContents = fs.readFileSync(file);
-        md5.update(fileContents);
-      });
-      resolve(md5.digest('hex'));
-    })
+  const files = filewalker(dirPath);
+  files.sort().forEach(file => {
+    const fileContents = fs.readFileSync(file);
+    md5.update(fileContents);
   });
+  return md5.digest('hex');
 }
 
 module.exports = {

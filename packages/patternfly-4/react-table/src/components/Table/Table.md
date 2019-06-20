@@ -763,8 +763,7 @@ class CollapsibleTable extends React.Component {
       columns: [
         {
           title: 'Header cell',
-          cellFormatters: [expandable],
-          cellTransforms: [headerCol()]
+          cellFormatters: [expandable]
         },
         'Branches',
         { title: 'Pull requests' },

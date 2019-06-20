@@ -2,18 +2,6 @@
 
 // Donut utilization styles
 export const DonutUtilizationStyles = {
-  label: {
-    subTitle: {
-      fill: '#bbb',
-      fontSize: 16
-    },
-    title: {
-      fontSize: 26
-    }
-  },
-  legend: {
-    orientation: 'vertical'
-  },
   thresholds: {
     colorScale: ['#F0AB00', '#C9190B']
   }

@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-styled-system",
-  "version": "3.5.0",
+  "version": "3.6.2",
   "description": "Experimental: Styled System package with PatternFly 4 theming",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -27,15 +27,16 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
     "build": "yarn build:babel && node ./scripts/copyTS.js",
-    "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm'",
-    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js -q",
-    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm -q",
+    "build:babel": "concurrently 'yarn build:babel:esm && yarn build:babel:umd' 'yarn build:babel:cjs'",
+    "build:babel:cjs": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/js --presets=@babel/env",
+    "build:babel:esm": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/esm",
+    "build:babel:umd": "babel --source-maps --extensions '.js' dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "clean": "rimraf dist",
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
   },
   "dependencies": {
-    "@patternfly/react-styles": "^3.3.0",
-    "@patternfly/react-tokens": "^2.5.3",
+    "@patternfly/react-styles": "^3.4.2",
+    "@patternfly/react-tokens": "^2.6.1",
     "emotion-theming": "^9.2.9",
     "react-emotion": "^9.2.9",
     "styled-system": "^3.1.11"
@@ -45,8 +46,17 @@
     "react": "^16.4.0"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "2.8.2",
-    "babel-core": "^6.26.0",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-typescript": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@patternfly/patternfly": "2.13.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-plugin-typescript-to-proptypes": "^0.17.1",
     "css": "^2.2.3",
     "enzyme": "3.9.0",
     "fs-extra": "^6.0.1",

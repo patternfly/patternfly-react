@@ -1,12 +1,20 @@
 import { merge } from 'lodash';
 import { DarkBlueColorTheme } from '../ChartTheme/themes/dark/blue-color-theme';
+import { DarkCyanColorTheme } from '../ChartTheme/themes/dark/cyan-color-theme';
+import { DarkGoldColorTheme } from '../ChartTheme/themes/dark/gold-color-theme';
+import { DarkGrayColorTheme } from '../ChartTheme/themes/dark/gray-color-theme';
 import { DarkGreenColorTheme } from '../ChartTheme/themes/dark/green-color-theme';
-import { DarkGreyColorTheme } from '../ChartTheme/themes/dark/grey-color-theme';
 import { DarkMultiColorTheme } from '../ChartTheme/themes/dark/multi-color-theme';
+import { DarkOrangeColorTheme } from '../ChartTheme/themes/dark/orange-color-theme';
+import { DarkPurpleColorTheme } from '../ChartTheme/themes/dark/purple-color-theme';
 import { LightBlueColorTheme } from '../ChartTheme/themes/light/blue-color-theme';
+import { LightCyanColorTheme } from '../ChartTheme/themes/light/cyan-color-theme';
+import { LightGoldColorTheme } from '../ChartTheme/themes/light/gold-color-theme';
+import { LightGrayColorTheme } from '../ChartTheme/themes/light/gray-color-theme';
 import { LightGreenColorTheme } from '../ChartTheme/themes/light/green-color-theme';
-import { LightGreyColorTheme } from '../ChartTheme/themes/light/grey-color-theme';
 import { LightMultiColorTheme } from '../ChartTheme/themes/light/multi-color-theme';
+import { LightOrangeColorTheme } from '../ChartTheme/themes/light/orange-color-theme';
+import { LightPurpleColorTheme } from '../ChartTheme/themes/light/purple-color-theme';
 import {
   ChartBaseTheme,
   ChartDonutTheme,
@@ -34,6 +42,9 @@ export const getDonutThresholdDynamicTheme = (themeColor: string, themeVariant: 
 
   // Merge just the first color of dynamic (blue, green, etc.) with static (grey) for expected colorScale
   theme.legend.colorScale = [theme.pie.colorScale[0], ...ChartDonutThresholdDynamicTheme.legend.colorScale];
+
+  // Merge the threshold colors in case users want to show the unused data
+  theme.pie.colorScale = [theme.pie.colorScale[0], ...ChartDonutThresholdStaticTheme.pie.colorScale];
   return theme;
 };
 
@@ -57,12 +68,20 @@ export const getDarkThemeColors = (themeColor: string) => {
   switch (themeColor) {
     case ChartThemeColor.blue:
       return DarkBlueColorTheme;
+    case ChartThemeColor.cyan:
+      return DarkCyanColorTheme;
+    case ChartThemeColor.gold:
+      return DarkGoldColorTheme;
+    case ChartThemeColor.gray:
+      return DarkGrayColorTheme;
     case ChartThemeColor.green:
       return DarkGreenColorTheme;
-    case ChartThemeColor.grey:
-      return DarkGreyColorTheme;
     case ChartThemeColor.multi:
       return DarkMultiColorTheme;
+    case ChartThemeColor.orange:
+      return DarkOrangeColorTheme;
+    case ChartThemeColor.purple:
+      return DarkPurpleColorTheme;
     default:
       return DarkBlueColorTheme;
   }
@@ -73,12 +92,20 @@ export const getLightThemeColors = (themeColor: string) => {
   switch (themeColor) {
     case ChartThemeColor.blue:
       return LightBlueColorTheme;
+    case ChartThemeColor.cyan:
+      return LightCyanColorTheme;
+    case ChartThemeColor.gold:
+      return LightGoldColorTheme;
+    case ChartThemeColor.gray:
+      return LightGrayColorTheme;
     case ChartThemeColor.green:
       return LightGreenColorTheme;
-    case ChartThemeColor.grey:
-      return LightGreyColorTheme;
     case ChartThemeColor.multi:
       return LightMultiColorTheme;
+    case ChartThemeColor.orange:
+      return LightOrangeColorTheme;
+    case ChartThemeColor.purple:
+      return LightPurpleColorTheme;
     default:
       return LightBlueColorTheme;
   }

@@ -112,7 +112,13 @@ class PaginationOptionsMenu extends Component {
       ...props
     } = this.props;
     return (
-      <div className={css(styles.optionsMenu, className)} {...props}>
+      <div
+        className={css(styles.optionsMenu, className)}
+        {...props}
+        ref={ref => {
+          this.parentRef = ref;
+        }}
+      >
         <span id={`${widgetId}-label`} hidden>
           {itemsPerPageTitle}:
         </span>
@@ -123,6 +129,7 @@ class PaginationOptionsMenu extends Component {
           toggle={
             <OptionsToggle
               optionsToggle={optionsToggle}
+              showToggle={perPageOptions && perPageOptions.length > 0}
               itemsTitle={itemsTitle}
               onToggle={this.onToggle}
               isOpen={this.state.isOpen}
@@ -130,6 +137,7 @@ class PaginationOptionsMenu extends Component {
               lastIndex={lastIndex}
               itemCount={itemCount}
               widgetId={widgetId}
+              parentRef={this.parentRef}
               toggleTemplate={toggleTemplate}
             />
           }

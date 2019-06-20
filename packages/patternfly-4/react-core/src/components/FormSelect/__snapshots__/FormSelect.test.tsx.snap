@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Disabled FormSelect input  1`] = `
+<select
+  aria-invalid={false}
+  aria-label="disabled  FormSelect"
+  className="pf-c-form-control"
+  disabled={true}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value=""
+>
+  <Component
+    key="1"
+    label="Mr"
+    value="mr"
+  />
+</select>
+`;
+
+exports[`FormSelect input with aria-label does not generate console error 1`] = `
+<select
+  aria-invalid={false}
+  aria-label="FormSelect with aria-label"
+  className="pf-c-form-control"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value=""
+>
+  <Component
+    key="1"
+    label="Mr"
+    value="mr"
+  />
+</select>
+`;
+
+exports[`FormSelect input with id does not generate console error 1`] = `
+<select
+  aria-invalid={false}
+  className="pf-c-form-control"
+  disabled={false}
+  id="id"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value=""
+>
+  <Component
+    key="1"
+    label="Mr"
+    value="mr"
+  />
+</select>
+`;
+
+exports[`FormSelect input with no aria-label or id generates console error 1`] = `
+<select
+  aria-invalid={false}
+  className="pf-c-form-control"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value=""
+>
+  <Component
+    key="1"
+    label="Mr"
+    value="mr"
+  />
+</select>
+`;
+
+exports[`Grouped FormSelect input 1`] = `
+<select
+  aria-invalid={false}
+  aria-label=" grouped FormSelect"
+  className="pf-c-form-control"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value="2"
+>
+  <Component
+    isDisabled={false}
+    key="0"
+    label="Group1"
+  >
+    <Component
+      isDisabled={false}
+      key="0"
+      label="The First Option"
+      value="1"
+    />
+    <Component
+      isDisabled={false}
+      key="1"
+      label="Second option is selected by default"
+      value="2"
+    />
+  </Component>
+  <Component
+    isDisabled={false}
+    key="1"
+    label="Group2"
+  >
+    <Component
+      isDisabled={false}
+      key="0"
+      label="The Third Option"
+      value="3"
+    />
+    <Component
+      isDisabled={false}
+      key="1"
+      label="The Fourth option"
+      value="4"
+    />
+  </Component>
+  <Component
+    isDisabled={true}
+    key="2"
+    label="Group3"
+  >
+    <Component
+      isDisabled={false}
+      key="0"
+      label="The Fifth Option"
+      value="5"
+    />
+    <Component
+      isDisabled={false}
+      key="1"
+      label="The Sixth option"
+      value="6"
+    />
+  </Component>
+</select>
+`;
+
+exports[`Simple FormSelect input 1`] = `
+<select
+  aria-invalid={false}
+  aria-label="simple FormSelect"
+  className="pf-c-form-control"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value="mrs"
+>
+  <Component
+    isDisabled={true}
+    key="0"
+    label="Please Choose"
+    value="please choose"
+  />
+  <Component
+    isDisabled={false}
+    key="1"
+    label="Mr"
+    value="mr"
+  />
+  <Component
+    isDisabled={false}
+    key="2"
+    label="Miss"
+    value="miss"
+  />
+  <Component
+    isDisabled={false}
+    key="3"
+    label="Mrs"
+    value="mrs"
+  />
+  <Component
+    isDisabled={false}
+    key="4"
+    label="Ms"
+    value="ms"
+  />
+  <Component
+    isDisabled={false}
+    key="5"
+    label="Dr"
+    value="dr"
+  />
+  <Component
+    isDisabled={true}
+    key="6"
+    label="Other"
+    value="other"
+  />
+</select>
+`;
+
+exports[`invalid FormSelect input 1`] = `
+<select
+  aria-invalid={true}
+  aria-label="invalid FormSelect"
+  className="pf-c-form-control"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value=""
+>
+  <Component
+    key="1"
+    label="Mr"
+    value="mr"
+  />
+</select>
+`;
+
+exports[`required FormSelect input 1`] = `
+<select
+  aria-invalid={false}
+  aria-label="required FormSelect"
+  className="pf-c-form-control"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  required={true}
+  value=""
+>
+  <Component
+    key="1"
+    label="Mr"
+    value="mr"
+  />
+</select>
+`;

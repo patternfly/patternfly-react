@@ -2,15 +2,12 @@
 
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
 import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
-import { Icon } from '../Icon';
 import { Col, Row, Grid } from '../Grid';
 import { Button } from '../Button';
-import { Modal } from '../Modal';
 import { Form, FormGroup, FormControl, ControlLabel } from './index';
 
 import { FormExample, FormExampleSource } from './Stories/FormExample';
@@ -21,6 +18,7 @@ import { InputGroupsFormFields, getInputGroupsFormKnobs } from './Stories/InputG
 import { InlineFormField } from './Stories/InlineFormField';
 import { HorizontalFormField } from './Stories/HorizontalFormField';
 import { VerticalFormField } from './Stories/VerticalFormField';
+import { ModalForm } from './Stories/ModalForm';
 import { name } from '../../../package.json';
 
 const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.FORMS_AND_CONTROLS}/Forms`, module);
@@ -219,7 +217,6 @@ exampleStories.add(
     if (bsSize) buttonsProps.bsSize = bsSize;
     if (disabled) buttonsProps.disabled = disabled;
 
-    const showModal = boolean('Show Modal', true);
     const showLoading = boolean('Show Loading', false);
     const formFields = BasicFormFields.map(formField => HorizontalFormField({ ...formField, ...formFieldsKnobs }));
     const formButtons = BasicFormButtons.map(({ text, ...props }) => (
@@ -231,21 +228,12 @@ exampleStories.add(
       <div style={{ paddingTop: '20px', paddingBottom: '10px' }}>{[...BasicFormSpinner].reverse()}</div>
     );
     const story = (
-      <Modal show={showModal}>
-        <Modal.Header>
-          <button className="close" onClick={action('Close')} aria-hidden="true" aria-label="Close">
-            <Icon type="pf" name="close" />
-          </button>
-          <Modal.Title>Basic Settings</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form horizontal>{formFields}</Form>
-        </Modal.Body>
-        <Modal.Footer>
-          {formButtons}
-          {showLoading && formSpinner}
-        </Modal.Footer>
-      </Modal>
+      <ModalForm
+        showLoading={showLoading}
+        formFields={formFields}
+        formButtons={formButtons}
+        formSpinner={formSpinner}
+      />
     );
 
     return inlineTemplate({

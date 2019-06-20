@@ -6,6 +6,7 @@ exports[`it renders properly 1`] = `
 >
   <CloseIcon
     color="currentColor"
+    noVerticalAlign={false}
     size="sm"
     title={null}
   />

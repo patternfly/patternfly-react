@@ -1,47 +1,226 @@
 version: 2
+
+# Adapted from https://github.com/circleci/circleci-docs/blob/master/.circleci/config.yml
+# I'd love to find docs on this syntax.
+references:
+  js_deps_paths: &js_deps_paths
+  - node_modules/
+  - packages/patternfly-3/patternfly-react-extensions/node_modules/
+  - packages/patternfly-3/patternfly-react-wooden-tree/node_modules/
+  - packages/patternfly-3/patternfly-react/node_modules/
+  - packages/patternfly-3/react-console/node_modules/
+  - packages/patternfly-4/react-charts/node_modules/
+  - packages/patternfly-4/react-core/node_modules/
+  - packages/patternfly-4/react-docs/node_modules/
+  - packages/patternfly-4/react-docs/plugins/gatsby-transformer-react-docgen-typescript/node_modules/
+  - packages/patternfly-4/react-inline-edit-extension/node_modules/
+  - packages/patternfly-4/react-integration/demo-app-ts/node_modules/
+  - packages/patternfly-4/react-integration/node_modules/
+  - packages/patternfly-4/react-styled-system/node_modules/
+  - packages/patternfly-4/react-styles/node_modules/
+  - packages/patternfly-4/react-table/node_modules/
+  - packages/patternfly-4/react-tokens/node_modules/
+  - packages/patternfly-4/react-topology/node_modules/
+  - packages/patternfly-4/react-virtualized-extension/node_modules/
+  - packages/react-codemods/node_modules/
+  - packages/react-icons/node_modules/
+  build_cache_paths: &build_cache_paths
+  - .cache/
+  - packages/patternfly-3/patternfly-react-extensions/dist/
+  - packages/patternfly-3/patternfly-react-wooden-tree/dist/
+  - packages/patternfly-3/patternfly-react/dist/
+  - packages/patternfly-3/react-console/dist/
+  - packages/patternfly-4/react-charts/dist/
+  - packages/patternfly-4/react-core/dist/
+  - packages/patternfly-4/react-inline-edit-extension/dist/
+  - packages/patternfly-4/react-styled-system/dist/
+  - packages/patternfly-4/react-styles/css/
+  - packages/patternfly-4/react-styles/dist/
+  - packages/patternfly-4/react-table/dist/
+  - packages/patternfly-4/react-tokens/dist/
+  - packages/patternfly-4/react-topology/dist/
+  - packages/patternfly-4/react-virtualized-extension/dist/
+  - packages/react-icons/dist/
+  js_deps_cache_key: &js_deps_cache_key
+    js-deps-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
+  build_cache_key: &build_cache_key
+    build-cache-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: ~/project
+
+workflows:
+  version: 2
+  build_test_deploy:
+    jobs:
+    - build
+    - build_pf4_docs:
+        requires:
+        - build
+    - build_pf3_docs:
+        requires:
+        - build
+    - test_jest_pf4:
+        requires:
+        - build
+    - test_jest_other:
+        requires:
+        - build
+    - build_integration:
+        requires:
+        - build
+    - lint:
+        requires:
+        - build
+    - upload_docs:
+        requires:
+        - build_pf3_docs
+        - build_pf4_docs
+    - deploy_prerelease:
+        requires:
+        - test_jest_pf4
+        - test_jest_other
+        - build_pf3_docs
+        - build_pf4_docs
+        filters:
+          branches:
+            only: master
 jobs:
   build:
-    branches:
-        ignore:
-          - master
     docker:
-      - image: circleci/node:8.15
-    working_directory: ~/repo
+    - image: circleci/node:8.15
     steps:
-      - checkout
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v{{ .Environment.CACHE_VERSION }}-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - run:
-          name: Conditional install
-          command: if [ ! -d node_modules ]; then yarn install --frozen-lockfile; fi
-      - save_cache:
-          paths:
-            - node_modules
-            - packages/react-icons/node_modules
-            - packages/patternfly-4/react-core/node_modules
-            - packages/patternfly-4/react-docs/node_modules
-            - packages/patternfly-4/react-charts/node_modules
-            - packages/patternfly-4/react-styles/node_modules
-            - packages/patternfly-3/patternfly-react/node_modules
-            - .cache # Incremental builds
-          key: v{{ .Environment.CACHE_VERSION }}-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - run:
-          name: Build Dist
-          command: yarn build
-      - run:
-          name: (PF3) Build Storybook
-          command: |
-            yarn build:storybook &&
-            cp -r .out .public/patternfly-3
-      - run:
-          name: (PF4) Build Docs
-          command: |
-            yarn build:docs &&
-            cp -r packages/patternfly-4/react-docs/public .public/patternfly-4 &&
-            cp -r .public/patternfly-4/assets .public/assets &&
-            cp .public/patternfly-4/favicon* .public
-      - run:
-          name: Deploy Docs
-          command: if [ -n "$CIRCLE_PULL_REQUEST" ]; then .circleci/upload_preview.sh; fi
+    - checkout
+    - persist_to_workspace:
+        root: ~/project
+        paths:
+          - "*"
+    - restore_cache:
+        keys:
+        - *js_deps_cache_key
+    - run:
+        name: Conditional install
+        command: if [ ! -d node_modules ]; then yarn install --frozen-lockfile; fi
+    - save_cache:
+        paths: *js_deps_paths
+        key: *js_deps_cache_key
+    - restore_cache:
+        keys:
+        - *build_cache_key
+    - run:
+        name: Build Dist
+        command: yarn build
+    - save_cache:
+        paths: *build_cache_paths
+        key: *build_cache_key
+    - persist_to_workspace:
+        root: ~/project
+        paths: *build_cache_paths
+  test_jest_pf4:
+    docker:
+    - image: circleci/node:8.15
+    steps:
+    - *attach_workspace
+    - restore_cache:
+        keys:
+        - *js_deps_cache_key
+    - run:
+        name: PF4 Jest Tests
+        command: yarn test:pf4 --maxWorkers=2
+  test_jest_other:
+    docker:
+    - image: circleci/node:8.15
+    steps:
+    - *attach_workspace
+    - restore_cache:
+        keys:
+        - *js_deps_cache_key
+    - run:
+        name: PF3 Jest Tests
+        command: yarn test:pf3 --maxWorkers=2
+    - run:
+        name: Other Tests
+        command: yarn test:misc --maxWorkers=2
+  build_integration:
+    docker:
+    - image: circleci/node:8.15
+    steps:
+    - *attach_workspace
+    - restore_cache:
+        keys:
+        - *js_deps_cache_key
+    - run:
+        name: Build Cypress Integration Tests
+        command: yarn build:integration
+  lint:
+    docker:
+    - image: circleci/node:8.15
+    steps:
+    - *attach_workspace
+    - restore_cache:
+        keys:
+        - *js_deps_cache_key
+    - run:
+        name: TSLint
+        command: yarn lint:ts
+    - run:
+        name: ESLint
+        command: yarn lint:js
+    - run:
+        name: "@patternfly/patternfly Versions Match"
+        command: yarn lint:versions
+    - run:
+        name: StyleLint
+        command: yarn lint:style
+  build_pf3_docs:
+    docker:
+    - image: circleci/node:8.15
+    steps:
+    - *attach_workspace
+    - restore_cache:
+        keys:
+        - *js_deps_cache_key
+    - run:
+        name: Build PF3 Storybook Static Site
+        command: yarn build:storybook
+    - persist_to_workspace:
+        root: ~/project
+        paths:
+        - .out/
+  build_pf4_docs:
+    docker:
+    - image: circleci/node:8.15
+    steps:
+    - *attach_workspace
+    - restore_cache:
+        keys:
+        - *js_deps_cache_key
+    - run:
+        name: Build PF4 Gatsby Static Site
+        command: yarn build:docs
+    - persist_to_workspace:
+        root: ~/project
+        paths:
+        - packages/patternfly-4/react-docs/public/
+  upload_docs:
+    docker:
+    - image: circleci/node:8.15
+    steps:
+    - *attach_workspace
+    - run:
+        name: Build docs Folder
+        command: .circleci/copy-docs.sh
+    - run:
+        name: Upload docs to surge.sh
+        command: .circleci/upload-docs.sh
+  deploy_prerelease:
+    docker:
+    - image: circleci/node:8.15
+    steps:
+    - *attach_workspace
+    - run:
+        name: Avoid hosts unknown for github
+        command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+    - run:
+        name: Deploy to NPM and Github
+        command: .circleci/release.sh

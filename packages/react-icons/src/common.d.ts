@@ -12,6 +12,7 @@ export interface IconProps extends Omit<HTMLProps<SVGElement>, 'size'> {
   color?: string;
   size?: OneOf<typeof IconSize, keyof typeof IconSize>;
   title?: string;
+  noVerticalAlign?: boolean;
 }
 
 export const propTypes: Record<'size' | 'color', any>;

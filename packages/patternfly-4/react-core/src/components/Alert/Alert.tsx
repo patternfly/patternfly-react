@@ -16,7 +16,9 @@ export enum AlertVariant {
 export interface AlertProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'action' | 'title'> {
   /** Adds Alert variant styles  */
-  variant: 'success' | 'danger' | 'warning' | 'info';
+  variant?: 'success' | 'danger' | 'warning' | 'info';
+  /** Flag to indicate if the Alert is inline */
+  isInline?: boolean;
   /** Title of the Alert  */
   title: React.ReactNode;
   /** Action button to put in the Alert. Should be <AlertActionLink> or <AlertActionCloseButton> */
@@ -32,7 +34,8 @@ export interface AlertProps
 };
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
-  variant,
+  variant = AlertVariant.info,
+  isInline = false,
   variantLabel = `${capitalize(variant)} alert:`,
   'aria-label': ariaLabel = `${capitalize(variant)} Alert`,
   action = null,
@@ -48,7 +51,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     </React.Fragment>
   );
 
-  const customClassName = css(styles.alert, getModifier(styles, variant, styles.modifiers.info), className);
+  const customClassName = css(styles.alert, isInline && styles.modifiers.inline, getModifier(styles, variant, styles.modifiers.info), className);
 
   return (
     <div {...props} className={customClassName} aria-label={ariaLabel}>
@@ -56,7 +59,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
       <h4 className={css(styles.alertTitle)}>{readerTitle}</h4>
       {children && (
         <div className={css(styles.alertDescription)}>
-          <p>{children}</p>
+          {children}
         </div>
       )}
       {action && (

@@ -30,10 +30,14 @@ export interface ChartThemeDefinitionInterface extends VictoryThemeDefinition {
 
 interface ChartThemeColorInterface {
   blue: string;
+  cyan: string;
   default: string;
+  gold: string;
+  gray: string;
   green: string;
-  grey: string;
   multi: string;
+  orange: string;
+  purple: string;
 }
 
 interface ChartThemeVariantInterface {
@@ -44,10 +48,14 @@ interface ChartThemeVariantInterface {
 
 export const ChartThemeColor: ChartThemeColorInterface = {
   blue: 'blue',
+  cyan: 'cyan',
   default: 'blue',
+  gold: 'gold',
+  gray: 'gray',
   green: 'green',
-  grey: 'grey',
-  multi: 'multi'
+  multi: 'multi',
+  orange: 'orange',
+  purple: 'purple'
 };
 
 export const ChartThemeVariant: ChartThemeVariantInterface = {

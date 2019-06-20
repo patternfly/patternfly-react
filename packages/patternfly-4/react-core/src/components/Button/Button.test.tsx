@@ -1,6 +1,7 @@
 import { Button, ButtonVariant } from './Button';
 import React from 'react';
 import { shallow } from 'enzyme';
+import { CartArrowDownIcon } from '@patternfly/react-icons';
 
 Object.values(ButtonVariant).forEach(variant => {
   test(`${variant} button`, () => {
@@ -17,6 +18,15 @@ test('it adds an aria-label to plain buttons', () => {
   const label = 'aria-label test';
   const view = shallow(<Button aria-label={label} />);
   expect(view.find('button').props()['aria-label']).toBe(label);
+});
+
+test('link with icon', () => {
+  const view = shallow(
+    <Button variant={ButtonVariant.link} icon={<CartArrowDownIcon />}>
+      Block Button
+    </Button>
+  );
+  expect(view).toMatchSnapshot();
 });
 
 test('isBlock', () => {

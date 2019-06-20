@@ -1,12 +1,12 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
+import { defaults } from 'lodash';
 import {
   StringOrNumberOrCallback,
-  // TextAnchorType,
-  // VerticalAnchorType,
   VictoryLabel,
   VictoryLabelProps
 } from 'victory';
+import { LabelStyles } from '../ChartTheme/themes/label-theme';
 
 export enum ChartLabelDirection {
   rtl = 'rtl',
@@ -132,7 +132,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
   /**
    * The style prop applies CSS properties to the rendered `<text>` element.
    */
-  style?: React.CSSProperties;
+  style?: React.CSSProperties; // Todo: style accepts arrays, but TS definition is wrong
   /**
    * The text prop defines the text ChartLabel will render. The text prop may be given as a string, number, a function
    * of datum, or an array of any of these. Strings may include newline characters, which ChartLabel will split into
@@ -166,8 +166,14 @@ export interface ChartLabelProps extends VictoryLabelProps {
   y?: number;
 };
 
-export const ChartLabel: React.FunctionComponent<ChartLabelProps> = (props: ChartLabelProps) =>
-  <VictoryLabel {...props} />;
+export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
+  style,
+  ...rest
+}: ChartLabelProps) => {
+  const applyDefaultStyle = (customStyle: React.CSSProperties) => defaults(customStyle, LabelStyles);
+  const newStyle = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
+  return <VictoryLabel style={newStyle as any} {...rest} />;
+}
 
 // Note: VictoryLabel.role must be hoisted
 hoistNonReactStatics(ChartLabel, VictoryLabel);

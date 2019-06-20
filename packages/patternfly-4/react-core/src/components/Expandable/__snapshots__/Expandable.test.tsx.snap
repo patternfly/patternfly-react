@@ -13,6 +13,7 @@ exports[`Expandable 1`] = `
       aria-hidden={true}
       className="pf-c-expandable__toggle-icon"
       color="currentColor"
+      noVerticalAlign={false}
       size="sm"
       title={null}
     />
@@ -40,6 +41,7 @@ exports[`Renders Expandable expanded 1`] = `
       aria-hidden={true}
       className="pf-c-expandable__toggle-icon"
       color="currentColor"
+      noVerticalAlign={false}
       size="sm"
       title={null}
     />
