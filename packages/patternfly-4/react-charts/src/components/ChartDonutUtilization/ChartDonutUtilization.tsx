@@ -12,19 +12,11 @@ import {
   VictoryStyleInterface
 } from 'victory';
 import { Data } from 'victory-core';
-<<<<<<< HEAD
-import { ChartContainer } from '../ChartContainer/ChartContainer';
-import { ChartDonut, ChartDonutProps } from "../ChartDonut/ChartDonut";
-import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme';
-import { DonutUtilizationStyles } from '../ChartTheme/themes/donut-utilization-theme';
-import { orderBy } from 'lodash';
-=======
 import { ChartContainer } from '../ChartContainer';
 import { ChartDonut, ChartDonutProps } from "../ChartDonut";
-import { ChartThemeDefinition, ChartDonutUtilizationStaticTheme, ChartDonutUtilizationStyles } from '../ChartTheme';
+import { ChartThemeDefinition, ChartDonutUtilizationStyles } from '../ChartTheme';
 import { getDonutUtilizationTheme } from '../ChartUtils';
->>>>>>> feat(charts): add legend support to area chart
+import { orderBy } from 'lodash';
 
 export enum ChartDonutUtilizationLabelPosition {
   centroid = 'centroid',
@@ -540,11 +532,11 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
     if (thresholds) {
       // Ensure thresholds are in sorted order
       const sThresholds = orderBy(thresholds, 'value', invert ? 'desc' : 'asc');
-      const numColors = DonutUtilizationStyles.thresholds.colorScale.length;
+      const numColors = ChartDonutUtilizationStyles.thresholds.colorScale.length;
       for (let i = 0; i < sThresholds.length; i++) {
         result.push({
           color: sThresholds[i].color
-            ? sThresholds[i].color : DonutUtilizationStyles.thresholds.colorScale[i % numColors],
+            ? sThresholds[i].color : ChartDonutUtilizationStyles.thresholds.colorScale[i % numColors],
           value: sThresholds[i].value
         });
       }

@@ -5,7 +5,7 @@ typescript: true
 propComponents: ['Chart', 'ChartArea', 'ChartGroup', 'ChartVoronoiContainer']
 ---
 
-import { Chart, ChartArea, ChartGroup, ChartLegend, ChartLegendWrapper, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLegend, ChartLegendWrapper, ChartVoronoiContainer } from '@patternfly/react-charts';
 import './chart-area.scss';
 
 ## Simple area chart with right-aligned legend
@@ -43,7 +43,7 @@ import { Chart, ChartArea, ChartGroup } from '@patternfly/react-charts';
 ## Cyan area chart with tooltip and right-aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div>
   <div className="area-chart-legend-right">
@@ -87,6 +87,8 @@ import { Chart, ChartArea, ChartGroup, ChartThemeColor, ChartVoronoiContainer } 
           ]}
         />
       </ChartGroup>
+      <ChartAxis dependentAxis showGrid />
+      <ChartAxis />
     </Chart>
   </div>
 </div>
@@ -95,7 +97,7 @@ import { Chart, ChartArea, ChartGroup, ChartThemeColor, ChartVoronoiContainer } 
 ## Multi-color area chart with tooltip and bottom-aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 
 <div>
   <div className="area-chart-legend-bottom">
@@ -138,6 +140,8 @@ import { Chart, ChartArea, ChartGroup, ChartThemeColor } from '@patternfly/react
           ]}
         />
       </ChartGroup>
+      <ChartAxis dependentAxis showGrid />
+      <ChartAxis />
     </Chart>
   </div>
 </div>

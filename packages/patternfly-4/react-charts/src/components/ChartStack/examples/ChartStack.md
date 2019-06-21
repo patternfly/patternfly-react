@@ -60,6 +60,8 @@ import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
         <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
         <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
       </ChartStack>
+      <ChartAxis dependentAxis showGrid />
+      <ChartAxis />
     </Chart>
   </div>
 </div>
@@ -89,6 +91,8 @@ import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
         <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
         <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
       </ChartStack>
+      <ChartAxis dependentAxis showGrid />
+      <ChartAxis />
     </Chart>
   </div>
 </div>

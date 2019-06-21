@@ -12,7 +12,7 @@ import {
   VictoryAxisProps,
 } from 'victory';
 import { ChartThemeDefinition } from "../ChartTheme";
-import { getTheme } from '../ChartUtils';
+import { getAxisTheme, getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -268,6 +268,10 @@ export interface ChartAxisProps extends VictoryAxisProps {
    */
   sharedEvents?: any;
   /**
+   * Show axis grid and ticks
+   */
+  showGrid?: boolean;
+  /**
    * By default domainPadding is coerced to existing quadrants. This means that if a given domain only includes positive
    * values, no amount of padding applied by domainPadding will result in a domain with negative values. This is the
    * desired behavior in most cases. For users that need to apply padding without regard to quadrant, the
@@ -404,10 +408,17 @@ export interface ChartAxisProps extends VictoryAxisProps {
 }
 
 export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
+  showGrid = false,
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
+
+  // destructure last
+  theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartAxisProps) => <VictoryAxis theme={theme} {...rest} />;
+}: ChartAxisProps) => {
+  return (
+    <VictoryAxis theme={showGrid ? getAxisTheme(themeColor, themeVariant) : theme} {...rest} />
+  );
+}
 
 hoistNonReactStatics(ChartAxis, VictoryAxis);
