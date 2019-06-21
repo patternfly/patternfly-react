@@ -43,12 +43,6 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
 `;
 
 exports[`TopologyView should display topology correctly 1`] = `
-.pf-topology-control-bar {
-  display: block;
-  position: absolute;
-  bottom: 1rem;
-  left: 2rem;
-}
 .pf-topology-content {
   display: flex;
   background-color: #ededed;
@@ -141,12 +135,6 @@ exports[`TopologyView should display topology correctly 1`] = `
 `;
 
 exports[`TopologyView should display topology sidebar correctly 1`] = `
-.pf-topology-control-bar {
-  display: block;
-  position: absolute;
-  bottom: 1rem;
-  left: 2rem;
-}
 .pf-topology-content {
   display: flex;
   background-color: #ededed;
@@ -248,12 +236,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
 `;
 
 exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
-.pf-topology-control-bar {
-  display: block;
-  position: absolute;
-  bottom: 1rem;
-  left: 2rem;
-}
 .pf-topology-content {
   display: flex;
   background-color: #ededed;
