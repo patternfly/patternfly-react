@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.50.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.3...@patternfly/react-core@3.50.4) (2019-06-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.50.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.2...@patternfly/react-core@3.50.3) (2019-06-20)
+
+
+### Bug Fixes
+
+* **Alert:** fix close button action ([#2308](https://github.com/patternfly/patternfly-react/issues/2308)) ([175352c](https://github.com/patternfly/patternfly-react/commit/175352c)), closes [patternfly/patternfly-org#1213](https://github.com/patternfly/patternfly-org/issues/1213)
+
+
+
+
+
+## [3.50.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.1...@patternfly/react-core@3.50.2) (2019-06-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [3.50.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.0...@patternfly/react-core@3.50.1) (2019-06-19)
 
 **Note:** Version bump only for package @patternfly/react-core

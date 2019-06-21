@@ -115,7 +115,7 @@ export class ViewToolbar extends React.Component {
 
   render() {
     return (
-      <Toolbar className="view-toolbar pf-u-mx-md pf-u-my-md">
+      <Toolbar className="view-toolbar pf-u-px-md pf-u-py-md" style={{ borderBottom: '1px solid #ccc' }}>
         <ToolbarGroup>
           <ToolbarItem>{this.renderFilterTypeDropdown()}</ToolbarItem>
           <ToolbarItem className="pf-u-mr-md">{this.renderFilterInput()}</ToolbarItem>
