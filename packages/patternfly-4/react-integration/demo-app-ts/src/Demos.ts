@@ -4,7 +4,7 @@ interface DemoInterface {
   /** ID for the demo, it will be used to help generate general ids to help with testing */
   id: string,
   /** The name of the demo */
-  name: string
+  name: string,
   /** Demo component associated with the demo  */
   componentType: any
 }
@@ -31,6 +31,16 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ApplicationLauncherDemo
   },
   {
+    id: 'area-chart-custom-colors-demo',
+    name: 'Area Chart Custom Colors Demo',
+    componentType: Examples.CustomColorsDemo
+  },
+  {
+    id: 'area-chart-simple-demo',
+    name: 'Area Chart Simple Demo',
+    componentType: Examples.SimpleAreaDemo
+  },
+  {
     id: 'avatar-demo',
     name: 'Avatar Demo',
     componentType: Examples.AvatarDemo
@@ -49,6 +59,26 @@ export const Demos: DemoInterface[] = [
     id: 'badge-demo',
     name: 'Badge Demo',
     componentType: Examples.BadgeDemo
+  },
+  {
+    id: 'blue-bar-grouped-demo',
+    name: 'Bar Chart Grouped Blue Demo',
+    componentType: Examples.BlueBarGroupedDemo
+  },
+  {
+    id: 'color-bar-zoom-demo',
+    name: 'Bar Chart Multi-colored with Zoom Demo',
+    componentType: Examples.ColorBarZoomDemo
+  },
+  {
+    id: 'color-bar-zoom-no-axes-demo',
+    name: 'Bar Chart Multi-colored with Zoom; No X, Y axis Demo',
+    componentType: Examples.ColorBarZoomNoAxesDemo
+  },
+  {
+    id: 'bar-chart-simple-demo',
+    name: 'Bar Chart Simple Demo',
+    componentType: Examples.SimpleBarDemo
   },
   {
     id: 'brand-demo',
@@ -86,8 +116,18 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ClipboardCopyDemo
   },
   {
-    id: 'context-selector-demo',
-    name: 'ContextSelector Demo',
+    id: 'donut-chart-blue-demo',
+    name: 'Donut Chart Blue Demo',
+    componentType: Examples.BlueDonutDemo
+  },
+  {
+    id: 'donut-chart-color-demo',
+    name: 'Donut Chart Color Demo',
+    componentType: Examples.ColorDonutDemo
+  },
+  {
+    id: 'context-selector-demo', 
+    name: 'ContextSelector Demo', 
     componentType: Examples.ContextSelectorDemo
   },
   {
@@ -175,6 +215,7 @@ export const Demos: DemoInterface[] = [
     name: 'Radio Demo',
     componentType: Examples.RadioDemo
   },
+
   {
     id: 'select-demo',
     name: 'Select Demo',
