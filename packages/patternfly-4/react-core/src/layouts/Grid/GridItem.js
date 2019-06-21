@@ -80,10 +80,6 @@ const defaultProps = {
   xl2Offset: null
 };
 
-const getClass = (propValue, getModifierFn, size) => {
-  return getModifierFn(propValue, size);
-};
-
 const GridItem = ({ children, className, span, rowSpan, offset, ...props }) => {
   const classes = [
     styles.gridItem,
