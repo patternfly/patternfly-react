@@ -6,19 +6,23 @@ export const topologyControlbarCss = StyleSheet.parse(`
     bottom: var(--pf-global--spacer--md);
     left: var(--pf-global--spacer--xl);
     
-    .pf-c-button.pf-m-tertiary {
+    &__button.pf-c-button.pf-m-tertiary {
+      padding-left: var(--pf-global--spacer--sm);
+      padding-right: var(--pf-global--spacer--sm);
+      margin-right: var(--pf-global--spacer--xs);
+      margin-top: var(--pf-global--spacer--xs);
       background-color: var(--pf-global--BackgroundColor--100);
       border: none;
       border-radius: var(--pf-global--BorderRadius--sm);
       box-shadow: var(--pf-global--BoxShadow--sm);
-      margin-top: var(--pf-global--spacer--xs);
-    }
-    .pf-c-button.pf-m-tertiary:after {
-      display: none;
-    }
-    .pf-c-button.pf-m-tertiary:hover {
-      border: none;
-      box-shadow: var(--pf-global--BoxShadow--md);
+
+      &:after {
+        display: none;
+      }
+      &:hover {
+        border: none;
+        box-shadow: var(--pf-global--BoxShadow--md);
+      }
     }
   }
 `);

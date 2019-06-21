@@ -1,7 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TopologyControlBar should accept button options correctly 1`] = `
-.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button.pf-u-px-sm.pf-u-mr-xs {
+.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button {
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-right: 0.25rem;
+  margin-top: 0.25rem;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 0.0625rem 0.125rem 0 rgba(3, 3, 3, 0.2);
+}
+.pf-topology-control-bar__button {
   display: block;
 }
 .pf-c-tooltip__arrow {
@@ -13,7 +23,17 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
 .pf-l-toolbar__item {
   display: block;
 }
-.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button.pf-u-px-sm.pf-u-mr-xs {
+.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button {
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-right: 0.25rem;
+  margin-top: 0.25rem;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 0.0625rem 0.125rem 0 rgba(3, 3, 3, 0.2);
+}
+.pf-topology-control-bar__button {
   display: block;
 }
 .pf-c-tooltip__arrow {
@@ -25,7 +45,17 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
 .pf-l-toolbar__item {
   display: block;
 }
-.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button.pf-u-px-sm.pf-u-mr-xs.pf-m-disabled {
+.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button.pf-m-disabled {
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-right: 0.25rem;
+  margin-top: 0.25rem;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 0.0625rem 0.125rem 0 rgba(3, 3, 3, 0.2);
+}
+.pf-topology-control-bar__button.pf-m-disabled {
   display: block;
 }
 .pf-c-tooltip__arrow {
@@ -193,7 +223,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 >
                   <Button
                     aria-disabled={false}
-                    className="pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs"
+                    className="pf-topology-control-bar__button"
                     disabled={false}
                     id="zoom-in"
                     onClick={[Function]}
@@ -202,7 +232,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     <button
                       aria-disabled={null}
                       aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs"
+                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
                       disabled={false}
                       id="zoom-in"
                       onClick={[Function]}
@@ -334,7 +364,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 >
                   <Button
                     aria-disabled={false}
-                    className="pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs"
+                    className="pf-topology-control-bar__button"
                     disabled={false}
                     id="zoom-out"
                     onClick={[Function]}
@@ -343,7 +373,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     <button
                       aria-disabled={null}
                       aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs"
+                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
                       disabled={false}
                       id="zoom-out"
                       onClick={[Function]}
@@ -498,7 +528,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 >
                   <Button
                     aria-disabled={true}
-                    className="pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs pf-m-disabled"
+                    className="pf-topology-control-bar__button pf-m-disabled"
                     disabled={true}
                     id="reset-view"
                     onClick={[Function]}
@@ -507,7 +537,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     <button
                       aria-disabled={null}
                       aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs pf-m-disabled"
+                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-m-disabled"
                       disabled={false}
                       id="reset-view"
                       onClick={[Function]}
@@ -600,7 +630,17 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
 `;
 
 exports[`TopologyControlBar should display the default controls correctly 1`] = `
-.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button.pf-u-px-sm.pf-u-mr-xs {
+.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button {
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-right: 0.25rem;
+  margin-top: 0.25rem;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 0.0625rem 0.125rem 0 rgba(3, 3, 3, 0.2);
+}
+.pf-topology-control-bar__button {
   display: block;
 }
 .pf-c-tooltip__arrow {
@@ -612,7 +652,17 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
 .pf-l-toolbar__item {
   display: block;
 }
-.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button.pf-u-px-sm.pf-u-mr-xs {
+.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button {
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-right: 0.25rem;
+  margin-top: 0.25rem;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 0.0625rem 0.125rem 0 rgba(3, 3, 3, 0.2);
+}
+.pf-topology-control-bar__button {
   display: block;
 }
 .pf-c-tooltip__arrow {
@@ -624,7 +674,17 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
 .pf-l-toolbar__item {
   display: block;
 }
-.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button.pf-u-px-sm.pf-u-mr-xs {
+.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button {
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-right: 0.25rem;
+  margin-top: 0.25rem;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 0.0625rem 0.125rem 0 rgba(3, 3, 3, 0.2);
+}
+.pf-topology-control-bar__button {
   display: block;
 }
 .pf-c-tooltip__arrow {
@@ -636,7 +696,17 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
 .pf-l-toolbar__item {
   display: block;
 }
-.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button.pf-u-px-sm.pf-u-mr-xs {
+.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button {
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-right: 0.25rem;
+  margin-top: 0.25rem;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 0.0625rem 0.125rem 0 rgba(3, 3, 3, 0.2);
+}
+.pf-topology-control-bar__button {
   display: block;
 }
 .pf-c-tooltip__arrow {
@@ -648,7 +718,17 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
 .pf-l-toolbar__item {
   display: block;
 }
-.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button.pf-u-px-sm.pf-u-mr-xs {
+.pf-c-button.pf-m-tertiary.pf-topology-control-bar__button {
+  display: block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-right: 0.25rem;
+  margin-top: 0.25rem;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 0.0625rem 0.125rem 0 rgba(3, 3, 3, 0.2);
+}
+.pf-topology-control-bar__button {
   display: block;
 }
 .pf-l-toolbar__item {
@@ -823,7 +903,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 >
                   <Button
                     aria-disabled={false}
-                    className="pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs"
+                    className="pf-topology-control-bar__button"
                     disabled={false}
                     id="zoom-in"
                     onClick={[Function]}
@@ -832,7 +912,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     <button
                       aria-disabled={null}
                       aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs"
+                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
                       disabled={false}
                       id="zoom-in"
                       onClick={[Function]}
@@ -987,7 +1067,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 >
                   <Button
                     aria-disabled={false}
-                    className="pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs"
+                    className="pf-topology-control-bar__button"
                     disabled={false}
                     id="zoom-out"
                     onClick={[Function]}
@@ -996,7 +1076,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     <button
                       aria-disabled={null}
                       aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs"
+                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
                       disabled={false}
                       id="zoom-out"
                       onClick={[Function]}
@@ -1151,7 +1231,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 >
                   <Button
                     aria-disabled={false}
-                    className="pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs"
+                    className="pf-topology-control-bar__button"
                     disabled={false}
                     id="fit-to-screen"
                     onClick={[Function]}
@@ -1160,7 +1240,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     <button
                       aria-disabled={null}
                       aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs"
+                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
                       disabled={false}
                       id="fit-to-screen"
                       onClick={[Function]}
@@ -1315,7 +1395,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 >
                   <Button
                     aria-disabled={false}
-                    className="pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs"
+                    className="pf-topology-control-bar__button"
                     disabled={false}
                     id="reset-view"
                     onClick={[Function]}
@@ -1324,7 +1404,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     <button
                       aria-disabled={null}
                       aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs"
+                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
                       disabled={false}
                       id="reset-view"
                       onClick={[Function]}
@@ -1418,7 +1498,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
             >
               <Button
                 aria-disabled={false}
-                className="pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs"
+                className="pf-topology-control-bar__button"
                 disabled={false}
                 id="legend"
                 onClick={[Function]}
@@ -1427,7 +1507,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 <button
                   aria-disabled={null}
                   aria-label={null}
-                  className="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs"
+                  className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
                   disabled={false}
                   id="legend"
                   onClick={[Function]}
