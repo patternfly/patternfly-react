@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.3.3...@patternfly/react-topology@2.3.4) (2019-06-21)
+
+
+### Bug Fixes
+
+* **topology:** Remove utility PF from control bar buttons ([#2319](https://github.com/patternfly/patternfly-react/issues/2319)) ([ad2fc23](https://github.com/patternfly/patternfly-react/commit/ad2fc23))
+
+
+
+
+
 ## [2.3.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.3.2...@patternfly/react-topology@2.3.3) (2019-06-20)
 
 **Note:** Version bump only for package @patternfly/react-topology
