@@ -80,6 +80,10 @@ const defaultProps = {
   xl2Offset: null
 };
 
+const getClass = (propValue, getModifierFn, size) => {
+  return getModifierFn(propValue, size);
+};
+
 const GridItem = ({ children, className, span, rowSpan, offset, ...props }) => {
   const classes = [
     styles.gridItem,
@@ -89,13 +93,21 @@ const GridItem = ({ children, className, span, rowSpan, offset, ...props }) => {
   ];
 
   Object.entries(DeviceSizes).forEach(([propKey, classModifier]) => {
-    const propValue = props[propKey];
-    if (propValue) {
-      classes.push(getSpanModifier(propValue, classModifier));
-      classes.push(getRowSpanModifier(getRowSpanKey(propValue), classModifier));
-      classes.push(getOffsetModifier(getOffsetKey(propValue), classModifier));
+    const spanValue = props[propKey];
+    if (spanValue) {
+      classes.push(getSpanModifier(spanValue, classModifier));
+      delete props[propKey];
     }
-    delete props[propKey];
+    const rowSpanValue = props[getRowSpanKey(propKey)];
+    if (rowSpanValue) {
+      classes.push(getRowSpanModifier(rowSpanValue, classModifier));
+      delete props[getRowSpanKey(propKey)];
+    }
+    const offsetValue = props[getOffsetKey(propKey)];
+    if (offsetValue) {
+      classes.push(getOffsetModifier(offsetValue, classModifier));
+      delete props[getOffsetKey(propKey)];
+    }
   });
 
   return (

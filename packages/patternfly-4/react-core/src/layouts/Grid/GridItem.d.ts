@@ -18,6 +18,9 @@ export interface GridItemProps extends HTMLProps<HTMLDivElement> {
   xl?: GridItemSpanValue;
   xlRowSpan?: GridItemSpanValue;
   xlOffset?: GridItemSpanValue;
+  xl2?: GridItemSpanValue;
+  xl2RowSpan?: GridItemSpanValue;
+  xl2Offset?: GridItemSpanValue;
 }
 
 declare const GridItem: FunctionComponent<GridItemProps>;
