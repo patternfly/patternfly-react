@@ -59,6 +59,8 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiC
       themeColor={ChartThemeColor.cyan}
       width={800}
     >
+      <ChartAxis />
+      <ChartAxis dependentAxis showGrid />
       <ChartGroup>
         <ChartArea
           data={[
@@ -87,8 +89,6 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiC
           ]}
         />
       </ChartGroup>
-      <ChartAxis dependentAxis showGrid />
-      <ChartAxis />
     </Chart>
   </div>
 </div>
@@ -112,6 +112,8 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
       themeColor={ChartThemeColor.multi}
       width={650}
     >
+      <ChartAxis />
+      <ChartAxis dependentAxis showGrid />
       <ChartGroup>
         <ChartArea
           data={[
@@ -140,8 +142,6 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
           ]}
         />
       </ChartGroup>
-      <ChartAxis dependentAxis showGrid />
-      <ChartAxis />
     </Chart>
   </div>
 </div>

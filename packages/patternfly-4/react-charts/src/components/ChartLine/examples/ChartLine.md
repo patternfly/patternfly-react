@@ -26,6 +26,8 @@ import { Chart, ChartAxis, ChartGroup, ChartLine } from '@patternfly/react-chart
       }}
       width={600}
     >
+      <ChartAxis tickValues={[2, 3, 4]} />
+      <ChartAxis dependentAxis tickValues={[2, 5, 8]} />
       <ChartGroup>
         <ChartLine
           data={[
@@ -36,8 +38,6 @@ import { Chart, ChartAxis, ChartGroup, ChartLine } from '@patternfly/react-chart
           ]}
         />
       </ChartGroup>
-      <ChartAxis dependentAxis tickValues={[2, 5, 8]} />
-      <ChartAxis tickValues={[2, 3, 4]} />
     </Chart>
   </div>
 </div>
@@ -63,6 +63,8 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patte
       themeColor={ChartThemeColor.green}
       width={600}
     >
+      <ChartAxis tickValues={[2, 3, 4]} />
+      <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
       <ChartGroup>
         <ChartLine
           data={[
@@ -102,8 +104,6 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patte
           ]}
         />
       </ChartGroup>
-      <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
-      <ChartAxis tickValues={[2, 3, 4]} />
     </Chart>
   </div>
 </div>
@@ -129,6 +129,8 @@ import { VictoryZoomContainer } from 'victory';
       themeColor={ChartThemeColor.multi}
       width={450}
     >
+      <ChartAxis tickValues={[2, 3, 4]} />
+      <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
       <ChartGroup>
         <ChartLine
           data={[
@@ -168,8 +170,6 @@ import { VictoryZoomContainer } from 'victory';
           ]}
         />
       </ChartGroup>
-      <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
-      <ChartAxis tickValues={[2, 3, 4]} />
     </Chart>
   </div>
 </div>
