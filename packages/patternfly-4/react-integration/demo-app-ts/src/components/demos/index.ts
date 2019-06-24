@@ -21,9 +21,13 @@ export * from './ChipGroupDemo/ChipGroupDemo';
 export * from './ContextSelectorDemo/ContextSelectorDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyDemo';
 export * from './ContextSelectorDemo/ContextSelectorDemo';
-export * from './DataListDemo/DataListDemo';
-export * from './DonutChartDemo/BlueDonutDemo';
-export * from './DonutChartDemo/ColorDonutDemo';
+export * from './DonutChartDemo/DonutBottomAlignedLegendDemo';
+export * from './DonutChartDemo/DonutSmallBottomAlignedLegend';
+export * from './DonutChartDemo/DonutSmallDemo';
+export * from './DonutChartDemo/DonutSmallRightAlignedLegendDemo';
+export * from './DonutChartDemo/DonutRightAlignedLegendColorDemo';
+export * from './DonutChartDemo/DonutRightAlignedLegendDemo';
+export * from './DonutChartDemo/DonutSimpleDemo';
 export * from './DonutUtilizationChartDemo/DonutUtilizationSimpleBottomDemo'
 export * from './DonutUtilizationChartDemo/DonutUtilizationSimpleDemo'
 export * from './EmptyStateDemo/EmptyStateDemo';

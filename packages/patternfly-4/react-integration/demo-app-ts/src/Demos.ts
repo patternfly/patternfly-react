@@ -121,14 +121,34 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ContextSelectorDemo
   },
   {
-    id: 'donut-chart-blue-demo',
-    name: 'Donut Chart Blue Demo',
-    componentType: Examples.SimpleDonutDemo
+    id: 'donut-chart-bottom-legend-demo',
+    name: 'Donut Chart with Bottom Aligned Legend Demo',
+    componentType: Examples.DonutBottomAlignedLegendDemo
   },
   {
-    id: 'donut-chart-color-demo',
-    name: 'Donut Chart Color Demo',
-    componentType: Examples.ColorDonutDemo
+    id: 'donut-chart-small-bottom-legend-demo',
+    name: 'Donut Chart Small with Bottom Aligned Legend Demo',
+    componentType: Examples.DonutSmallBottomAlignedLegend
+  },
+  {
+    id: 'donut-chart-small-demo',
+    name: 'Donut Chart Small Demo',
+    componentType: Examples.DonutSmallDemo
+  },
+  {
+    id: 'donut-chart-small-right-legend-demo',
+    name: 'Donut Chart Small with Right Aligned Legend Demo',
+    componentType: Examples.DonutSmallRightAlignedLegendDemo
+  },
+  {
+    id: 'donut-chart-right-legend-color-demo',
+    name: 'Donut Chart Multi-colored with Right Aligned Legend Demo',
+    componentType: Examples.DonutBottomAlignedLegendDemo
+  },
+  {
+    id: 'donut-chart-right-legend-demo',
+    name: 'Donut Chart with Right Aligned Legend Demo',
+    componentType: Examples.DonutRightAlignedLegendDemo
   },
   {
     id: 'donut-utilization-simple-bottom-demo',

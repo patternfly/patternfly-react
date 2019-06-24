@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
-export class DonutChartSmallDemo extends React.Component {
+export class DonutSmallRightAlignedLegendDemo extends React.Component {
 
   render() {
     return (
