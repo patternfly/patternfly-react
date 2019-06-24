@@ -10,24 +10,34 @@
       width: 175px;
     }
 
-    .donut-threshold-chart-legend-bottom {
-      height: 325px;
-      width: 230px;
+    .donut-threshold-chart-legend-bottom-horz {
+      height: 275px;
+      width: 675px;
     }
 
-    .donut-threshold-chart-legend-left {
-      height: 230px;
-      width: 475px;
+    .donut-threshold-chart-legend-bottom-vert {
+      height: 350px;
+      width: 230px;
     }
 
     .donut-threshold-chart-legend-right {
       height: 230px;
-      width: 492px;
+      width: 500px;
     }
 
     .donut-threshold-chart-legend-right-sm {
       height: 175px;
       width: 425px;
+    }
+
+    .donut-threshold-chart-legend-right-subtitle-bottom-sm {
+      height: 200px;
+      width: 425px;
+    }
+
+    .donut-threshold-chart-legend-bottom-subtitle-right-sm {
+      height: 225px;
+      width: 675px;
     }
 
     .donut-utilization-chart {
@@ -40,14 +50,14 @@
       width: 150px;
     }
 
-    .donut-utilization-chart-legend-bottom {
+    .donut-utilization-chart-legend-bottom-horz {
       height: 275px;
       width: 300px;
     }
 
-    .donut-utilization-chart-legend-left {
-      height: 230px;
-      width: 425px;
+    .donut-utilization-chart-legend-bottom-vert {
+      height: 300px;
+      width: 230px;
     }
 
     .donut-utilization-chart-legend-right {
@@ -57,6 +67,16 @@
 
     .donut-utilization-chart-legend-right-sm {
       height: 150px;
+      width: 350px;
+    }
+
+    .donut-utilization-chart-legend-bottom-subtitle-right-sm {
+      height: 200px;
+      width: 350px;
+    }
+
+    .donut-utilization-chart-legend-right-subtitle-bottom-sm {
+      height: 175px;
       width: 350px;
     }
   }

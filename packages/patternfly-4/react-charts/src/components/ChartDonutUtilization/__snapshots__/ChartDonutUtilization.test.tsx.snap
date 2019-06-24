@@ -6,23 +6,6 @@ exports[`Chart 1`] = `
   width={230}
 >
   <Component
-    style={
-      Array [
-        Object {
-          "fontSize": 24,
-        },
-        Object {
-          "fill": "#bbb",
-          "fontSize": 14,
-        },
-      ]
-    }
-    textAnchor="middle"
-    verticalAnchor="middle"
-    x={115}
-    y={115}
-  />
-  <Component
     data={
       Array [
         Object {
@@ -34,23 +17,19 @@ exports[`Chart 1`] = `
         },
       ]
     }
+    donutHeight={230}
+    donutWidth={230}
     height={230}
-    innerRadius={98}
-    origin={
-      Object {
-        "x": 115,
-        "y": 115,
-      }
-    }
     standalone={false}
     theme={
       Object {
         "area": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -76,9 +55,10 @@ exports[`Chart 1`] = `
         "axis": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -124,9 +104,10 @@ exports[`Chart 1`] = `
           "barWidth": 10,
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -150,9 +131,10 @@ exports[`Chart 1`] = `
           "boxWidth": 20,
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -230,9 +212,10 @@ exports[`Chart 1`] = `
           },
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -256,9 +239,10 @@ exports[`Chart 1`] = `
         "chart": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -273,9 +257,10 @@ exports[`Chart 1`] = `
           "borderWidth": 8,
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -300,9 +285,10 @@ exports[`Chart 1`] = `
         "group": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -343,9 +329,10 @@ exports[`Chart 1`] = `
         "line": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -394,9 +381,10 @@ exports[`Chart 1`] = `
         "scatter": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -421,9 +409,10 @@ exports[`Chart 1`] = `
         "stack": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -460,9 +449,10 @@ exports[`Chart 1`] = `
         "voronoi": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -504,23 +494,6 @@ exports[`Chart 2`] = `
   width={230}
 >
   <Component
-    style={
-      Array [
-        Object {
-          "fontSize": 24,
-        },
-        Object {
-          "fill": "#bbb",
-          "fontSize": 14,
-        },
-      ]
-    }
-    textAnchor="middle"
-    verticalAnchor="middle"
-    x={115}
-    y={115}
-  />
-  <Component
     data={
       Array [
         Object {
@@ -532,23 +505,19 @@ exports[`Chart 2`] = `
         },
       ]
     }
+    donutHeight={230}
+    donutWidth={230}
     height={230}
-    innerRadius={98}
-    origin={
-      Object {
-        "x": 115,
-        "y": 115,
-      }
-    }
     standalone={false}
     theme={
       Object {
         "area": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -574,9 +543,10 @@ exports[`Chart 2`] = `
         "axis": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -622,9 +592,10 @@ exports[`Chart 2`] = `
           "barWidth": 10,
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -648,9 +619,10 @@ exports[`Chart 2`] = `
           "boxWidth": 20,
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -728,9 +700,10 @@ exports[`Chart 2`] = `
           },
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -754,9 +727,10 @@ exports[`Chart 2`] = `
         "chart": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -771,9 +745,10 @@ exports[`Chart 2`] = `
           "borderWidth": 8,
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -798,9 +773,10 @@ exports[`Chart 2`] = `
         "group": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -841,9 +817,10 @@ exports[`Chart 2`] = `
         "line": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -892,9 +869,10 @@ exports[`Chart 2`] = `
         "scatter": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -919,9 +897,10 @@ exports[`Chart 2`] = `
         "stack": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -958,9 +937,10 @@ exports[`Chart 2`] = `
         "voronoi": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -1002,23 +982,6 @@ exports[`renders component data 1`] = `
   width={200}
 >
   <Component
-    style={
-      Array [
-        Object {
-          "fontSize": 24,
-        },
-        Object {
-          "fill": "#bbb",
-          "fontSize": 14,
-        },
-      ]
-    }
-    textAnchor="middle"
-    verticalAnchor="middle"
-    x={100}
-    y={100}
-  />
-  <Component
     data={
       Array [
         Object {
@@ -1030,23 +993,19 @@ exports[`renders component data 1`] = `
         },
       ]
     }
+    donutHeight={200}
+    donutWidth={200}
     height={200}
-    innerRadius={83}
-    origin={
-      Object {
-        "x": 100,
-        "y": 100,
-      }
-    }
     standalone={false}
     theme={
       Object {
         "area": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -1072,9 +1031,10 @@ exports[`renders component data 1`] = `
         "axis": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -1120,9 +1080,10 @@ exports[`renders component data 1`] = `
           "barWidth": 10,
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -1146,9 +1107,10 @@ exports[`renders component data 1`] = `
           "boxWidth": 20,
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -1226,9 +1188,10 @@ exports[`renders component data 1`] = `
           },
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -1252,9 +1215,10 @@ exports[`renders component data 1`] = `
         "chart": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -1269,9 +1233,10 @@ exports[`renders component data 1`] = `
           "borderWidth": 8,
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -1296,9 +1261,10 @@ exports[`renders component data 1`] = `
         "group": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -1339,9 +1305,10 @@ exports[`renders component data 1`] = `
         "line": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -1390,9 +1357,10 @@ exports[`renders component data 1`] = `
         "scatter": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -1417,9 +1385,10 @@ exports[`renders component data 1`] = `
         "stack": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,
@@ -1456,9 +1425,10 @@ exports[`renders component data 1`] = `
         "voronoi": Object {
           "colorScale": Array [
             "#06c",
-            "#bee1f4",
-            "#73bcf7",
-            "#0066ff",
+            "#8bc1f7",
+            "#002f5d",
+            "#519de9",
+            "#004b95",
           ],
           "height": 300,
           "padding": 50,

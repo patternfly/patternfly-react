@@ -3,6 +3,128 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.50.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.4...@patternfly/react-core@3.50.5) (2019-06-21)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.50.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.3...@patternfly/react-core@3.50.4) (2019-06-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.50.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.2...@patternfly/react-core@3.50.3) (2019-06-20)
+
+
+### Bug Fixes
+
+* **Alert:** fix close button action ([#2308](https://github.com/patternfly/patternfly-react/issues/2308)) ([175352c](https://github.com/patternfly/patternfly-react/commit/175352c)), closes [patternfly/patternfly-org#1213](https://github.com/patternfly/patternfly-org/issues/1213)
+
+
+
+
+
+## [3.50.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.1...@patternfly/react-core@3.50.2) (2019-06-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.50.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.0...@patternfly/react-core@3.50.1) (2019-06-19)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.50.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.49.1...@patternfly/react-core@3.50.0) (2019-06-19)
+
+
+### Features
+
+* **FormSelect:** Convert form select to typescript ([#2204](https://github.com/patternfly/patternfly-react/issues/2204)) ([373e012](https://github.com/patternfly/patternfly-react/commit/373e012))
+
+
+
+
+
+## [3.49.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.49.0...@patternfly/react-core@3.49.1) (2019-06-19)
+
+
+### Bug Fixes
+
+* **Alert:** remove the <p> from the Alert description ([#2293](https://github.com/patternfly/patternfly-react/issues/2293)) ([ccaf11e](https://github.com/patternfly/patternfly-react/commit/ccaf11e)), closes [#2283](https://github.com/patternfly/patternfly-react/issues/2283)
+
+
+
+
+
+# [3.49.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.5...@patternfly/react-core@3.49.0) (2019-06-19)
+
+
+### Features
+
+* **Button:** add icon property and wrapper css ([#2205](https://github.com/patternfly/patternfly-react/issues/2205)) ([14d1d70](https://github.com/patternfly/patternfly-react/commit/14d1d70))
+
+
+
+
+
+## [3.48.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.4...@patternfly/react-core@3.48.5) (2019-06-18)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.48.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.3...@patternfly/react-core@3.48.4) (2019-06-18)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.48.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.2...@patternfly/react-core@3.48.3) (2019-06-18)
+
+
+### Bug Fixes
+
+* **popover:** reset pointer-events to capture default target bounds ([#2284](https://github.com/patternfly/patternfly-react/issues/2284)) ([910c667](https://github.com/patternfly/patternfly-react/commit/910c667))
+
+
+
+
+
+## [3.48.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.1...@patternfly/react-core@3.48.2) (2019-06-18)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.48.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.48.0...@patternfly/react-core@3.48.1) (2019-06-18)
+
+
+### Bug Fixes
+
+* **Accordion:** final changes ([#2290](https://github.com/patternfly/patternfly-react/issues/2290)) ([6fce654](https://github.com/patternfly/patternfly-react/commit/6fce654))
+
+
+
+
+
 # [3.48.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.46.1...@patternfly/react-core@3.48.0) (2019-06-18)
 
 

@@ -16,6 +16,7 @@ export * from './ContextSelectorDemo/ContextSelectorDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyDemo'; 
 export * from './EmptyStateDemo/EmptyStateDemo';
 export * from './FormDemo/FormDemo'; 
+export * from './FormSelectDemo/FormSelectDemo'; 
 export * from './LabelDemo/LabelDemo';
 export * from './ListDemo/ListDemo';
 export * from './LoginPageDemo/LoginPageDemo';

@@ -96,7 +96,9 @@ type Props = {
   /** Width of list */
   width: number,
 
-  columns: any[],
+  columns?: any[],
+
+  columnCount?: number,
 
   rows: any[]
 };
@@ -192,7 +194,7 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
   }
 
   render() {
-    const { className, noRowsRenderer, scrollToIndex, width, columns, rows, tabIndex, style } = this.props;
+    const { className, noRowsRenderer, scrollToIndex, width, columns, columnCount, rows, tabIndex, style } = this.props;
 
     const classNames = clsx('ReactVirtualized__List', className);
 
@@ -219,7 +221,7 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
         cellRenderer={this._cellRenderer}
         className={classNames}
         columnWidth={width}
-        columnCount={columns.length}
+        columnCount={columns ? columns.length : columnCount}
         noContentRenderer={noRowsRenderer}
         onScroll={this._onScroll}
         onSectionRendered={this._onSectionRendered}

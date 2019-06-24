@@ -106,6 +106,29 @@ exports[`link button 1`] = `
 </button>
 `;
 
+exports[`link with icon 1`] = `
+<button
+  aria-disabled={null}
+  aria-label={null}
+  className="pf-c-button pf-m-link"
+  disabled={false}
+  tabIndex={null}
+  type="button"
+>
+  <span
+    className="pf-c-button__icon"
+  >
+    <CartArrowDownIcon
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+      title={null}
+    />
+  </span>
+  Block Button
+</button>
+`;
+
 exports[`plain button 1`] = `
 <button
   aria-disabled={null}

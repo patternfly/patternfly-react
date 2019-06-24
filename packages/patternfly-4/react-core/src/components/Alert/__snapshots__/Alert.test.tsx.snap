@@ -61,9 +61,7 @@ exports[`Alert - danger Action Close Button 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -182,9 +180,7 @@ exports[`Alert - danger Action Link 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -279,9 +275,7 @@ exports[`Alert - danger Action and Title 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -377,9 +371,7 @@ exports[`Alert - danger Custom aria label 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -468,9 +460,7 @@ exports[`Alert - danger Description 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
   </div>
 </Component>
@@ -532,9 +522,7 @@ exports[`Alert - danger Title 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
   </div>
 </Component>
@@ -597,9 +585,7 @@ exports[`Alert - danger inline variation 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
   </div>
 </Component>
@@ -666,9 +652,7 @@ exports[`Alert - info Action Close Button 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -787,9 +771,7 @@ exports[`Alert - info Action Link 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -884,9 +866,7 @@ exports[`Alert - info Action and Title 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -982,9 +962,7 @@ exports[`Alert - info Custom aria label 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -1073,9 +1051,7 @@ exports[`Alert - info Description 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
   </div>
 </Component>
@@ -1137,9 +1113,7 @@ exports[`Alert - info Title 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
   </div>
 </Component>
@@ -1202,9 +1176,7 @@ exports[`Alert - info inline variation 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
   </div>
 </Component>
@@ -1271,9 +1243,7 @@ exports[`Alert - success Action Close Button 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -1392,9 +1362,7 @@ exports[`Alert - success Action Link 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -1489,9 +1457,7 @@ exports[`Alert - success Action and Title 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -1587,9 +1553,7 @@ exports[`Alert - success Custom aria label 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -1678,9 +1642,7 @@ exports[`Alert - success Description 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
   </div>
 </Component>
@@ -1742,9 +1704,7 @@ exports[`Alert - success Title 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
   </div>
 </Component>
@@ -1807,9 +1767,7 @@ exports[`Alert - success inline variation 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
   </div>
 </Component>
@@ -1876,9 +1834,7 @@ exports[`Alert - warning Action Close Button 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -1997,9 +1953,7 @@ exports[`Alert - warning Action Link 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -2094,9 +2048,7 @@ exports[`Alert - warning Action and Title 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -2192,9 +2144,7 @@ exports[`Alert - warning Custom aria label 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
     <div
       className="pf-c-alert__action"
@@ -2283,9 +2233,7 @@ exports[`Alert - warning Description 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
   </div>
 </Component>
@@ -2347,9 +2295,7 @@ exports[`Alert - warning Title 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
   </div>
 </Component>
@@ -2412,9 +2358,7 @@ exports[`Alert - warning inline variation 1`] = `
     <div
       className="pf-c-alert__description"
     >
-      <p>
-        Some alert
-      </p>
+      Some alert
     </div>
   </div>
 </Component>

@@ -1,61 +1,63 @@
 interface ChartOriginInterface {
-  chartDx?: number;
-  chartDy?: number;
-  chartHeight: number;
-  chartOrientation: string;
-  chartWidth: number;
-  height: number;
-  width: number;
+  chartHeight: number; // Height of chart (e.g., donut) within SVG
+  chartWidth: number; // Width of chart (e.g., donut) within SVG
+  dx?: number; // Horizontal shift from the x coordinate
+  dy?: number; // vertical shift from the x coordinate
+  legendPosition?: string; // Position of legend (e.g., bottom, right)
+  svgWidth: number; // Overall width of SVG
 }
 
 interface ChartOriginXInterface {
-  chartDx?: number;
-  chartOrientation: string;
-  chartWidth: number;
-  width: number;
+  chartWidth: number; // Width of chart (e.g., donut) within SVG
+  dx?: number; // Horizontal shift from the x coordinate
+  legendPosition?: string; // Position of legend (e.g., bottom, right)
+  svgWidth: number; // Overall width of SVG
 }
 
 interface ChartOriginYInterface {
-  chartDy?: number;
-  chartHeight: number;
-  chartOrientation: string;
-  height: number;
+  chartHeight: number; // Height of chart (e.g., donut) within SVG
+  dy?: number; // vertical shift from the x coordinate
+  legendPosition?: string; // Position of legend (e.g., bottom, right)
 }
 
 // Returns origin x and y coordinates
 export const getChartOrigin = ({
-  chartDx = 0,
-  chartDy = 0,
   chartHeight,
-  chartOrientation,
   chartWidth,
-  height,
-  width
+  dx = 0,
+  dy = 0,
+  legendPosition,
+  svgWidth
 }: ChartOriginInterface) => ({
-  x: getChartOriginX({ chartDx, chartOrientation, chartWidth, width }),
-  y: getChartOriginY({ chartDy, chartHeight, chartOrientation, height })
+  x: getChartOriginX({ chartWidth, dx, legendPosition, svgWidth }),
+  y: getChartOriginY({ chartHeight, dy, legendPosition })
 });
 
 // Returns origin x coordinate
-export const getChartOriginX = ({ chartDx = 0, chartOrientation, chartWidth, width }: ChartOriginXInterface) => {
-  switch (chartOrientation) {
-    case 'left':
-      return (chartWidth ? Math.round(chartWidth / 2) : 0) + chartDx;
-    case 'right':
-      return (width > chartWidth ? Math.round(width - chartWidth / 2) : 0) + chartDx;
-    case 'top':
-      return (width ? Math.round(width / 2) : 0) + chartDx;
+export const getChartOriginX = ({
+  chartWidth,
+  dx = 0,
+  legendPosition,
+  svgWidth
+}: ChartOriginXInterface) => {
+  switch (legendPosition) {
+    case 'bottom':
+      return Math.round(svgWidth / 2) + dx;
     default:
-      return 0;
+      return Math.round(chartWidth / 2) + dx;
   }
 };
 
 // Returns origin y coordinate
-export const getChartOriginY = ({ chartDy = 0, chartHeight, chartOrientation, height }: ChartOriginYInterface) => {
-  switch (chartOrientation) {
-    case 'bottom':
-      return chartDy; // TBD...
+export const getChartOriginY = ({
+  chartHeight,
+  dy = 0,
+  legendPosition
+}: ChartOriginYInterface) => {
+  switch (legendPosition) {
+    case 'top':
+      return dy; // TBD...
     default:
-      return (chartHeight ? Math.round(chartHeight / 2) : 0) + chartDy;
+      return Math.round(chartHeight / 2) + dy;
   }
 };

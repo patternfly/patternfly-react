@@ -73,14 +73,10 @@ class VirtualizedExample extends React.Component {
       const {rows, columns} = this.state;
       const text = rows[index].cells[0];
 
-      const className = clsx('pf-l-grid', {
+      const className = clsx({
         isVisible: isVisible
       });
 
-      // do not render non visible elements (this excludes overscan)
-      if(!isVisible){
-        return null;
-      }
       return <CellMeasurer
         cache={measurementCache}
         columnIndex={0}
@@ -120,7 +116,7 @@ class VirtualizedExample extends React.Component {
               rowHeight={measurementCache.rowHeight}
               height={400}
               overscanRowCount={2}
-              columns={columns}
+              columnCount={1}
               rows={rows}
               rowCount={rows.length}
               rowRenderer={rowRenderer}
@@ -216,14 +212,9 @@ class SortableExample extends React.Component {
       const {rows, columns} = this.state;
       const text = rows[index].cells[0];
 
-      const className = clsx('pf-l-grid', {
+      const className = clsx({
         isVisible: isVisible
       });
-
-      // do not render non visible elements (this excludes overscan)
-      if(!isVisible){
-        return null;
-      }
       return <CellMeasurer
         cache={measurementCache}
         columnIndex={0}
@@ -266,7 +257,7 @@ class SortableExample extends React.Component {
               rowHeight={measurementCache.rowHeight}
               height={400}
               overscanRowCount={2}
-              columns={columns}
+              columnCount={1}
               rows={rows}
               rowCount={rows.length}
               rowRenderer={rowRenderer}
@@ -365,14 +356,10 @@ class SelectableExample extends React.Component {
       const {rows, columns} = this.state;
       const text = rows[index].cells[0];
 
-      const className = clsx('pf-l-grid', {
+      const className = clsx({
         isVisible: isVisible
       });
 
-      // do not render non visible elements (this excludes overscan)
-      if(!isVisible){
-        return null;
-      }
       return <CellMeasurer
         cache={measurementCache}
         columnIndex={0}
@@ -420,7 +407,7 @@ class SelectableExample extends React.Component {
               rowHeight={measurementCache.rowHeight}
               height={400}
               overscanRowCount={2}
-              columns={columns}
+              columnCount={1}
               rows={rows}
               rowCount={rows.length}
               rowRenderer={rowRenderer}
@@ -518,14 +505,10 @@ class ActionsExample extends React.Component {
       const {rows, columns, actions} = this.state;
       const text = rows[index].cells[0];
 
-      const className = clsx('pf-l-grid', {
+      const className = clsx({
         isVisible: isVisible
       });
 
-      // do not render non visible elements (this excludes overscan)
-      if(!isVisible){
-        return null;
-      }
       return <CellMeasurer
         cache={measurementCache}
         columnIndex={0}
@@ -573,7 +556,7 @@ class ActionsExample extends React.Component {
               rowHeight={measurementCache.rowHeight}
               height={400}
               overscanRowCount={2}
-              columns={columns}
+              columnCount={1}
               rows={rows}
               rowCount={rows.length}
               rowRenderer={rowRenderer}

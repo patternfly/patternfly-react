@@ -175,13 +175,14 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Link
       </DropdownItem>,
@@ -194,13 +195,14 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Action
       </DropdownItem>,
@@ -213,13 +215,14 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Link
       </DropdownItem>,
@@ -232,22 +235,19 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Action
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -258,13 +258,14 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Link
       </DropdownItem>,
@@ -277,13 +278,14 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Action
       </DropdownItem>,
@@ -324,13 +326,14 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Link
         </DropdownItem>,
@@ -343,13 +346,14 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Action
         </DropdownItem>,
@@ -362,13 +366,14 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Link
         </DropdownItem>,
@@ -381,22 +386,19 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Action
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -407,13 +409,14 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Link
         </DropdownItem>,
@@ -426,13 +429,14 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Action
         </DropdownItem>,
@@ -555,13 +559,14 @@ exports[`KebabToggle dropup 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Link
       </DropdownItem>,
@@ -574,13 +579,14 @@ exports[`KebabToggle dropup 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Action
       </DropdownItem>,
@@ -593,13 +599,14 @@ exports[`KebabToggle dropup 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Link
       </DropdownItem>,
@@ -612,22 +619,19 @@ exports[`KebabToggle dropup 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Action
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -638,13 +642,14 @@ exports[`KebabToggle dropup 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Link
       </DropdownItem>,
@@ -657,13 +662,14 @@ exports[`KebabToggle dropup 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Action
       </DropdownItem>,
@@ -704,13 +710,14 @@ exports[`KebabToggle dropup 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Link
         </DropdownItem>,
@@ -723,13 +730,14 @@ exports[`KebabToggle dropup 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Action
         </DropdownItem>,
@@ -742,13 +750,14 @@ exports[`KebabToggle dropup 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Link
         </DropdownItem>,
@@ -761,22 +770,19 @@ exports[`KebabToggle dropup 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Action
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -787,13 +793,14 @@ exports[`KebabToggle dropup 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Link
         </DropdownItem>,
@@ -806,13 +813,14 @@ exports[`KebabToggle dropup 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Action
         </DropdownItem>,
@@ -935,13 +943,14 @@ exports[`KebabToggle expanded 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Link
       </DropdownItem>,
@@ -954,13 +963,14 @@ exports[`KebabToggle expanded 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Action
       </DropdownItem>,
@@ -973,13 +983,14 @@ exports[`KebabToggle expanded 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Link
       </DropdownItem>,
@@ -992,22 +1003,19 @@ exports[`KebabToggle expanded 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Action
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -1018,13 +1026,14 @@ exports[`KebabToggle expanded 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Link
       </DropdownItem>,
@@ -1037,13 +1046,14 @@ exports[`KebabToggle expanded 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Action
       </DropdownItem>,
@@ -1084,13 +1094,14 @@ exports[`KebabToggle expanded 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Link
         </DropdownItem>,
@@ -1103,13 +1114,14 @@ exports[`KebabToggle expanded 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Action
         </DropdownItem>,
@@ -1122,13 +1134,14 @@ exports[`KebabToggle expanded 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Link
         </DropdownItem>,
@@ -1141,22 +1154,19 @@ exports[`KebabToggle expanded 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Action
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -1167,13 +1177,14 @@ exports[`KebabToggle expanded 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Link
         </DropdownItem>,
@@ -1186,13 +1197,14 @@ exports[`KebabToggle expanded 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Action
         </DropdownItem>,
@@ -1319,14 +1331,15 @@ exports[`KebabToggle expanded 1`] = `
                 "sendRef": [Function],
               }
             }
-            href="#"
+            href=""
             index={0}
-            isAppLauncher={false}
             isDisabled={false}
             isHovered={false}
             key=".$link"
             onClick={[Function]}
             role={null}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             <li
               role="none"
@@ -1334,7 +1347,7 @@ exports[`KebabToggle expanded 1`] = `
               <a
                 aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
-                href="#"
+                href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role={null}
@@ -1352,14 +1365,15 @@ exports[`KebabToggle expanded 1`] = `
                 "sendRef": [Function],
               }
             }
-            href="#"
+            href=""
             index={1}
-            isAppLauncher={false}
             isDisabled={false}
             isHovered={false}
             key=".$action"
             onClick={[Function]}
             role={null}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             <li
               role="none"
@@ -1367,7 +1381,7 @@ exports[`KebabToggle expanded 1`] = `
               <button
                 className="pf-c-dropdown__menu-item"
                 disabled={false}
-                href="#"
+                href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role={null}
@@ -1386,14 +1400,15 @@ exports[`KebabToggle expanded 1`] = `
                 "sendRef": [Function],
               }
             }
-            href="#"
+            href=""
             index={2}
-            isAppLauncher={false}
             isDisabled={true}
             isHovered={false}
             key=".$disabled link"
             onClick={[Function]}
             role={null}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             <li
               role="none"
@@ -1401,7 +1416,7 @@ exports[`KebabToggle expanded 1`] = `
               <a
                 aria-disabled={true}
                 className="pf-m-disabled pf-c-dropdown__menu-item"
-                href="#"
+                href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role={null}
@@ -1420,14 +1435,15 @@ exports[`KebabToggle expanded 1`] = `
                 "sendRef": [Function],
               }
             }
-            href="#"
+            href=""
             index={3}
-            isAppLauncher={false}
             isDisabled={true}
             isHovered={false}
             key=".$disabled action"
             onClick={[Function]}
             role={null}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             <li
               role="none"
@@ -1435,7 +1451,7 @@ exports[`KebabToggle expanded 1`] = `
               <button
                 className="pf-m-disabled pf-c-dropdown__menu-item"
                 disabled={true}
-                href="#"
+                href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role={null}
@@ -1447,11 +1463,7 @@ exports[`KebabToggle expanded 1`] = `
           </DropdownItem>
           <Separator
             className=""
-            component="a"
-            href="#"
             index={4}
-            isDisabled={false}
-            isHovered={false}
             key=".$separator"
           >
             <DropdownItem
@@ -1463,20 +1475,21 @@ exports[`KebabToggle expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
-              href="#"
+              href=""
               index={4}
-              isAppLauncher={false}
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
               role="separator"
+              tooltip={null}
+              tooltipProps={Object {}}
             >
               <li
                 role="none"
               >
                 <div
                   className="pf-c-dropdown__separator"
-                  href="#"
+                  href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="separator"
@@ -1493,14 +1506,15 @@ exports[`KebabToggle expanded 1`] = `
                 "sendRef": [Function],
               }
             }
-            href="#"
+            href=""
             index={5}
-            isAppLauncher={false}
             isDisabled={false}
             isHovered={false}
             key=".$separated link"
             onClick={[Function]}
             role={null}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             <li
               role="none"
@@ -1508,7 +1522,7 @@ exports[`KebabToggle expanded 1`] = `
               <a
                 aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
-                href="#"
+                href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role={null}
@@ -1526,14 +1540,15 @@ exports[`KebabToggle expanded 1`] = `
                 "sendRef": [Function],
               }
             }
-            href="#"
+            href=""
             index={6}
-            isAppLauncher={false}
             isDisabled={false}
             isHovered={false}
             key=".$separated action"
             onClick={[Function]}
             role={null}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             <li
               role="none"
@@ -1541,7 +1556,7 @@ exports[`KebabToggle expanded 1`] = `
               <button
                 className="pf-c-dropdown__menu-item"
                 disabled={false}
-                href="#"
+                href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role={null}
@@ -1573,13 +1588,14 @@ exports[`KebabToggle plain 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Link
       </DropdownItem>,
@@ -1592,13 +1608,14 @@ exports[`KebabToggle plain 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Action
       </DropdownItem>,
@@ -1611,13 +1628,14 @@ exports[`KebabToggle plain 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Link
       </DropdownItem>,
@@ -1630,22 +1648,19 @@ exports[`KebabToggle plain 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Action
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -1656,13 +1671,14 @@ exports[`KebabToggle plain 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Link
       </DropdownItem>,
@@ -1675,13 +1691,14 @@ exports[`KebabToggle plain 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Action
       </DropdownItem>,
@@ -1722,13 +1739,14 @@ exports[`KebabToggle plain 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Link
         </DropdownItem>,
@@ -1741,13 +1759,14 @@ exports[`KebabToggle plain 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Action
         </DropdownItem>,
@@ -1760,13 +1779,14 @@ exports[`KebabToggle plain 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Link
         </DropdownItem>,
@@ -1779,22 +1799,19 @@ exports[`KebabToggle plain 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Action
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -1805,13 +1822,14 @@ exports[`KebabToggle plain 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Link
         </DropdownItem>,
@@ -1824,13 +1842,14 @@ exports[`KebabToggle plain 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Action
         </DropdownItem>,
@@ -1953,13 +1972,14 @@ exports[`KebabToggle regular 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Link
       </DropdownItem>,
@@ -1972,13 +1992,14 @@ exports[`KebabToggle regular 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Action
       </DropdownItem>,
@@ -1991,13 +2012,14 @@ exports[`KebabToggle regular 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Link
       </DropdownItem>,
@@ -2010,22 +2032,19 @@ exports[`KebabToggle regular 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Action
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -2036,13 +2055,14 @@ exports[`KebabToggle regular 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Link
       </DropdownItem>,
@@ -2055,13 +2075,14 @@ exports[`KebabToggle regular 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Action
       </DropdownItem>,
@@ -2102,13 +2123,14 @@ exports[`KebabToggle regular 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Link
         </DropdownItem>,
@@ -2121,13 +2143,14 @@ exports[`KebabToggle regular 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Action
         </DropdownItem>,
@@ -2140,13 +2163,14 @@ exports[`KebabToggle regular 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Link
         </DropdownItem>,
@@ -2159,22 +2183,19 @@ exports[`KebabToggle regular 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Action
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -2185,13 +2206,14 @@ exports[`KebabToggle regular 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Link
         </DropdownItem>,
@@ -2204,13 +2226,14 @@ exports[`KebabToggle regular 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Action
         </DropdownItem>,
@@ -2333,13 +2356,14 @@ exports[`KebabToggle right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Link
       </DropdownItem>,
@@ -2352,13 +2376,14 @@ exports[`KebabToggle right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Action
       </DropdownItem>,
@@ -2371,13 +2396,14 @@ exports[`KebabToggle right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Link
       </DropdownItem>,
@@ -2390,22 +2416,19 @@ exports[`KebabToggle right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Action
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -2416,13 +2439,14 @@ exports[`KebabToggle right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Link
       </DropdownItem>,
@@ -2435,13 +2459,14 @@ exports[`KebabToggle right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Action
       </DropdownItem>,
@@ -2482,13 +2507,14 @@ exports[`KebabToggle right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Link
         </DropdownItem>,
@@ -2501,13 +2527,14 @@ exports[`KebabToggle right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Action
         </DropdownItem>,
@@ -2520,13 +2547,14 @@ exports[`KebabToggle right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Link
         </DropdownItem>,
@@ -2539,22 +2567,19 @@ exports[`KebabToggle right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Action
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -2565,13 +2590,14 @@ exports[`KebabToggle right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Link
         </DropdownItem>,
@@ -2584,13 +2610,14 @@ exports[`KebabToggle right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Action
         </DropdownItem>,
@@ -2879,13 +2906,14 @@ exports[`dropdown dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Link
       </DropdownItem>,
@@ -2898,13 +2926,14 @@ exports[`dropdown dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Action
       </DropdownItem>,
@@ -2917,13 +2946,14 @@ exports[`dropdown dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Link
       </DropdownItem>,
@@ -2936,22 +2966,19 @@ exports[`dropdown dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Action
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -2962,13 +2989,14 @@ exports[`dropdown dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Link
       </DropdownItem>,
@@ -2981,13 +3009,14 @@ exports[`dropdown dropup + right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Action
       </DropdownItem>,
@@ -3029,13 +3058,14 @@ exports[`dropdown dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Link
         </DropdownItem>,
@@ -3048,13 +3078,14 @@ exports[`dropdown dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Action
         </DropdownItem>,
@@ -3067,13 +3098,14 @@ exports[`dropdown dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Link
         </DropdownItem>,
@@ -3086,22 +3118,19 @@ exports[`dropdown dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Action
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -3112,13 +3141,14 @@ exports[`dropdown dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Link
         </DropdownItem>,
@@ -3131,13 +3161,14 @@ exports[`dropdown dropup + right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Action
         </DropdownItem>,
@@ -3265,13 +3296,14 @@ exports[`dropdown dropup 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Link
       </DropdownItem>,
@@ -3284,13 +3316,14 @@ exports[`dropdown dropup 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Action
       </DropdownItem>,
@@ -3303,13 +3336,14 @@ exports[`dropdown dropup 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Link
       </DropdownItem>,
@@ -3322,22 +3356,19 @@ exports[`dropdown dropup 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Action
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -3348,13 +3379,14 @@ exports[`dropdown dropup 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Link
       </DropdownItem>,
@@ -3367,13 +3399,14 @@ exports[`dropdown dropup 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Action
       </DropdownItem>,
@@ -3415,13 +3448,14 @@ exports[`dropdown dropup 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Link
         </DropdownItem>,
@@ -3434,13 +3468,14 @@ exports[`dropdown dropup 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Action
         </DropdownItem>,
@@ -3453,13 +3488,14 @@ exports[`dropdown dropup 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Link
         </DropdownItem>,
@@ -3472,22 +3508,19 @@ exports[`dropdown dropup 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Action
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -3498,13 +3531,14 @@ exports[`dropdown dropup 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Link
         </DropdownItem>,
@@ -3517,13 +3551,14 @@ exports[`dropdown dropup 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Action
         </DropdownItem>,
@@ -3651,13 +3686,14 @@ exports[`dropdown expanded 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Link
       </DropdownItem>,
@@ -3670,13 +3706,14 @@ exports[`dropdown expanded 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Action
       </DropdownItem>,
@@ -3689,13 +3726,14 @@ exports[`dropdown expanded 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Link
       </DropdownItem>,
@@ -3708,22 +3746,19 @@ exports[`dropdown expanded 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Action
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -3734,13 +3769,14 @@ exports[`dropdown expanded 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Link
       </DropdownItem>,
@@ -3753,13 +3789,14 @@ exports[`dropdown expanded 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Action
       </DropdownItem>,
@@ -3801,13 +3838,14 @@ exports[`dropdown expanded 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Link
         </DropdownItem>,
@@ -3820,13 +3858,14 @@ exports[`dropdown expanded 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Action
         </DropdownItem>,
@@ -3839,13 +3878,14 @@ exports[`dropdown expanded 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Link
         </DropdownItem>,
@@ -3858,22 +3898,19 @@ exports[`dropdown expanded 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Action
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -3884,13 +3921,14 @@ exports[`dropdown expanded 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Link
         </DropdownItem>,
@@ -3903,13 +3941,14 @@ exports[`dropdown expanded 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Action
         </DropdownItem>,
@@ -4041,14 +4080,15 @@ exports[`dropdown expanded 1`] = `
                 "sendRef": [Function],
               }
             }
-            href="#"
+            href=""
             index={0}
-            isAppLauncher={false}
             isDisabled={false}
             isHovered={false}
             key=".$link"
             onClick={[Function]}
             role={null}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             <li
               role="none"
@@ -4056,7 +4096,7 @@ exports[`dropdown expanded 1`] = `
               <a
                 aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
-                href="#"
+                href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role={null}
@@ -4074,14 +4114,15 @@ exports[`dropdown expanded 1`] = `
                 "sendRef": [Function],
               }
             }
-            href="#"
+            href=""
             index={1}
-            isAppLauncher={false}
             isDisabled={false}
             isHovered={false}
             key=".$action"
             onClick={[Function]}
             role={null}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             <li
               role="none"
@@ -4089,7 +4130,7 @@ exports[`dropdown expanded 1`] = `
               <button
                 className="pf-c-dropdown__menu-item"
                 disabled={false}
-                href="#"
+                href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role={null}
@@ -4108,14 +4149,15 @@ exports[`dropdown expanded 1`] = `
                 "sendRef": [Function],
               }
             }
-            href="#"
+            href=""
             index={2}
-            isAppLauncher={false}
             isDisabled={true}
             isHovered={false}
             key=".$disabled link"
             onClick={[Function]}
             role={null}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             <li
               role="none"
@@ -4123,7 +4165,7 @@ exports[`dropdown expanded 1`] = `
               <a
                 aria-disabled={true}
                 className="pf-m-disabled pf-c-dropdown__menu-item"
-                href="#"
+                href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role={null}
@@ -4142,14 +4184,15 @@ exports[`dropdown expanded 1`] = `
                 "sendRef": [Function],
               }
             }
-            href="#"
+            href=""
             index={3}
-            isAppLauncher={false}
             isDisabled={true}
             isHovered={false}
             key=".$disabled action"
             onClick={[Function]}
             role={null}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             <li
               role="none"
@@ -4157,7 +4200,7 @@ exports[`dropdown expanded 1`] = `
               <button
                 className="pf-m-disabled pf-c-dropdown__menu-item"
                 disabled={true}
-                href="#"
+                href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role={null}
@@ -4169,11 +4212,7 @@ exports[`dropdown expanded 1`] = `
           </DropdownItem>
           <Separator
             className=""
-            component="a"
-            href="#"
             index={4}
-            isDisabled={false}
-            isHovered={false}
             key=".$separator"
           >
             <DropdownItem
@@ -4185,20 +4224,21 @@ exports[`dropdown expanded 1`] = `
                   "sendRef": [Function],
                 }
               }
-              href="#"
+              href=""
               index={4}
-              isAppLauncher={false}
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
               role="separator"
+              tooltip={null}
+              tooltipProps={Object {}}
             >
               <li
                 role="none"
               >
                 <div
                   className="pf-c-dropdown__separator"
-                  href="#"
+                  href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="separator"
@@ -4215,14 +4255,15 @@ exports[`dropdown expanded 1`] = `
                 "sendRef": [Function],
               }
             }
-            href="#"
+            href=""
             index={5}
-            isAppLauncher={false}
             isDisabled={false}
             isHovered={false}
             key=".$separated link"
             onClick={[Function]}
             role={null}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             <li
               role="none"
@@ -4230,7 +4271,7 @@ exports[`dropdown expanded 1`] = `
               <a
                 aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
-                href="#"
+                href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role={null}
@@ -4248,14 +4289,15 @@ exports[`dropdown expanded 1`] = `
                 "sendRef": [Function],
               }
             }
-            href="#"
+            href=""
             index={6}
-            isAppLauncher={false}
             isDisabled={false}
             isHovered={false}
             key=".$separated action"
             onClick={[Function]}
             role={null}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             <li
               role="none"
@@ -4263,7 +4305,7 @@ exports[`dropdown expanded 1`] = `
               <button
                 className="pf-c-dropdown__menu-item"
                 disabled={false}
-                href="#"
+                href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role={null}
@@ -4295,13 +4337,14 @@ exports[`dropdown regular 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Link
       </DropdownItem>,
@@ -4314,13 +4357,14 @@ exports[`dropdown regular 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Action
       </DropdownItem>,
@@ -4333,13 +4377,14 @@ exports[`dropdown regular 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Link
       </DropdownItem>,
@@ -4352,22 +4397,19 @@ exports[`dropdown regular 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Action
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -4378,13 +4420,14 @@ exports[`dropdown regular 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Link
       </DropdownItem>,
@@ -4397,13 +4440,14 @@ exports[`dropdown regular 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Action
       </DropdownItem>,
@@ -4445,13 +4489,14 @@ exports[`dropdown regular 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Link
         </DropdownItem>,
@@ -4464,13 +4509,14 @@ exports[`dropdown regular 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Action
         </DropdownItem>,
@@ -4483,13 +4529,14 @@ exports[`dropdown regular 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Link
         </DropdownItem>,
@@ -4502,22 +4549,19 @@ exports[`dropdown regular 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Action
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -4528,13 +4572,14 @@ exports[`dropdown regular 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Link
         </DropdownItem>,
@@ -4547,13 +4592,14 @@ exports[`dropdown regular 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Action
         </DropdownItem>,
@@ -4681,13 +4727,14 @@ exports[`dropdown right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Link
       </DropdownItem>,
@@ -4700,13 +4747,14 @@ exports[`dropdown right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Action
       </DropdownItem>,
@@ -4719,13 +4767,14 @@ exports[`dropdown right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Link
       </DropdownItem>,
@@ -4738,22 +4787,19 @@ exports[`dropdown right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Disabled Action
       </DropdownItem>,
       <Separator
         className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
       />,
       <DropdownItem
         className=""
@@ -4764,13 +4810,14 @@ exports[`dropdown right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Link
       </DropdownItem>,
@@ -4783,13 +4830,14 @@ exports[`dropdown right aligned 1`] = `
             "sendRef": [Function],
           }
         }
-        href="#"
+        href=""
         index={-1}
-        isAppLauncher={false}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
         role={null}
+        tooltip={null}
+        tooltipProps={Object {}}
       >
         Separated Action
       </DropdownItem>,
@@ -4831,13 +4879,14 @@ exports[`dropdown right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Link
         </DropdownItem>,
@@ -4850,13 +4899,14 @@ exports[`dropdown right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Action
         </DropdownItem>,
@@ -4869,13 +4919,14 @@ exports[`dropdown right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Link
         </DropdownItem>,
@@ -4888,22 +4939,19 @@ exports[`dropdown right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Disabled Action
         </DropdownItem>,
         <Separator
           className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
         />,
         <DropdownItem
           className=""
@@ -4914,13 +4962,14 @@ exports[`dropdown right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Link
         </DropdownItem>,
@@ -4933,13 +4982,14 @@ exports[`dropdown right aligned 1`] = `
               "sendRef": [Function],
             }
           }
-          href="#"
+          href=""
           index={-1}
-          isAppLauncher={false}
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
           role={null}
+          tooltip={null}
+          tooltipProps={Object {}}
         >
           Separated Action
         </DropdownItem>,

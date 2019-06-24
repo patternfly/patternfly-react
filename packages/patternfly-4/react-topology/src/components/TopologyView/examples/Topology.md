@@ -1,36 +1,50 @@
 ---
 title: 'TopologyView'
+typescript: true
 ---
 
 Note: Topology lives in its own package at [`@patternfly/react-topology`](https://www.npmjs.com/package/@patternfly/react-topology)
 
 import { ExternalLinkAltIcon, FilmIcon, GlassCheersIcon } from '@patternfly/react-icons';
-import { TopologyView, TopologyControlBar, createTopologyControlButtons } from '@patternfly/react-topology';
+import { TopologyView, TopologyControlBar, createTopologyControlButtons, TopologySideBar } from '@patternfly/react-topology';
 import { ProjectToolbar } from './ProjectToolbar';
 import { ViewToolbar } from './ViewToolbar';
+import { ItemDetails } from './ItemDetails';
 import './topology-example.scss';
 
 ## TopologyView - Default Controls
 
 ```js
 import React from 'react';
-import { TopologyView, TopologyControlBar, createTopologyControlButtons } from '@patternfly/react-topology';
+import { TopologyView, TopologyControlBar, createTopologyControlButtons, TopologySideBar } from '@patternfly/react-topology';
 import { ProjectToolbar } from './ProjectToolbar';
 import { ViewToolbar } from './ViewToolbar';
+import { ItemDetails } from './ItemDetails';
 
 class DefaultTopologyView extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { detailsShown: false };
+  }
 
   render() {
+    const { detailsShown } = this.state;
     const controlButtons = createTopologyControlButtons();
+    const sideBar = <ItemDetails show={detailsShown} onClose={() => this.setState({ detailsShown: false })} />;
 
     return (
       <div className="topology-example">
-        <TopologyView
+        <TopologyView 
           contextToolbar={<ProjectToolbar />}
           viewToolbar={<ViewToolbar />}
           controlBar={<TopologyControlBar controlButtons={controlButtons} />}
+          sideBar={sideBar}
+          sideBarOpen={detailsShown}
         >
-          <div>CANVAS</div>
+          <button onClick={() => this.setState({ detailsShown: !detailsShown })}>
+            {detailsShown ? 'Hide Details' : 'Show Details'}
+          </button>
         </TopologyView>
       </div>
     );
@@ -46,8 +60,15 @@ import { TopologyView, TopologyControlBar, createTopologyControlButtons } from '
 import { ViewToolbar } from './ViewToolbar';
 
 class SelectedTopologyView extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { detailsShown: false };
+  }
 
   render() {
+    const { detailsShown } = this.state;
+    const sideBar = <ItemDetails show={detailsShown} onClose={() => this.setState({ detailsShown: false })} />;
     const controlButtons = createTopologyControlButtons({ fitToScreen: false, legend: false });
 
     return (
@@ -55,8 +76,12 @@ class SelectedTopologyView extends React.Component {
         <TopologyView
           viewToolbar={<ViewToolbar />}
           controlBar={<TopologyControlBar controlButtons={controlButtons} />}
+          sideBar={sideBar}
+          sideBarOpen={detailsShown}
         >
-          <div>CANVAS</div>
+          <button onClick={() => this.setState({ detailsShown: !detailsShown })}>
+            {detailsShown ? 'Hide Details' : 'Show Details'}
+          </button>
         </TopologyView>
       </div>
     );
@@ -73,8 +98,15 @@ import { TopologyView, TopologyControlBar, createTopologyControlButtons } from '
 import { ViewToolbar } from './ViewToolbar';
 
 class CustomTopologyView extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { detailsShown: false };
+  }
 
   render() {
+    const { detailsShown } = this.state;
+    const sideBar = <ItemDetails show={detailsShown} onClose={() => this.setState({ detailsShown: false })} />;
     const customButtons = [
       {
         id: 'custom-1',
@@ -111,8 +143,12 @@ class CustomTopologyView extends React.Component {
         <TopologyView
           viewToolbar={<ViewToolbar />}
           controlBar={<TopologyControlBar controlButtons={controlButtons} />}
+          sideBar={sideBar}
+          sideBarOpen={detailsShown}
         >
-          <div>CANVAS</div>
+          <button onClick={() => this.setState({ detailsShown: !detailsShown })}>
+            {detailsShown ? 'Hide Details' : 'Show Details'}
+          </button>
         </TopologyView>
       </div>
     );
