@@ -1,72 +1,74 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import Tippy from '@tippy.js/react';
+import { Instance as TippyInstance } from 'tippy.js';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import { css, getModifier } from '@patternfly/react-styles';
-import TooltipArrow from './TooltipArrow';
-import TooltipContent from './TooltipContent';
+import { TooltipArrow } from './TooltipArrow';
+import { TooltipContent } from './TooltipContent';
 import { KEY_CODES } from '../../helpers/constants';
 import { c_tooltip_MaxWidth as tooltipMaxWidth } from '@patternfly/react-tokens';
 import { tippyStyles } from './styles';
+import { ReactElement } from 'react';
 
 tippyStyles();
 
-export const TooltipPosition = {
-  top: 'top',
-  bottom: 'bottom',
-  left: 'left',
-  right: 'right'
+export enum TooltipPosition {
+  top = 'top',
+  bottom = 'bottom',
+  left = 'left',
+  right = 'right'
 };
 
-const propTypes = {
+export interface TooltipProps {
   /** Tooltip position */
-  position: PropTypes.oneOf(Object.keys(TooltipPosition).map(key => TooltipPosition[key])),
+  position?: 'top' | 'bottom' | 'left' | 'right';
   /** Tooltip trigger: click, mouseenter, focus */
-  trigger: PropTypes.string,
+  trigger?: string;
   /** If true, tries to keep the tooltip in view by flipping it if necessary */
-  enableFlip: PropTypes.bool,
+  enableFlip?: boolean;
   /** Tooltip additional class */
-  className: PropTypes.string,
+  className?: string;
   /** Tooltip content */
-  content: PropTypes.node.isRequired,
+  content: React.ReactNode;
   /** The reference element to which the tooltip is relatively placed to */
-  children: PropTypes.element.isRequired,
+  children: ReactElement<any>;
   /** Delay in ms before the tooltip appears */
-  entryDelay: PropTypes.number,
+  entryDelay?: number;
   /** Delay in ms before the tooltip disappears */
-  exitDelay: PropTypes.number,
+  exitDelay?: number;
   /** The element to append the tooltip to, defaults to body */
-  appendTo: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  appendTo?: Element | ((ref: Element) => Element);
   /** z-index of the tooltip */
-  zIndex: PropTypes.number,
+  zIndex?: number;
   /** Maximum width of the tooltip (default 12.5rem) */
-  maxWidth: PropTypes.string,
+  maxWidth?: string;
   /** If true, displays as an application launcher */
-  isAppLauncher: PropTypes.bool,
-  /** Distance of the tooltip to its target */
-  distance: PropTypes.number
+  isAppLauncher?: boolean;
+  /** Distance of the tooltip to its target, defaults to 15 */
+  distance?: number;
 };
 
-const defaultProps = {
-  position: 'top',
-  trigger: 'mouseenter focus',
-  enableFlip: true,
-  className: null,
-  entryDelay: 500,
-  exitDelay: 500,
-  appendTo: () => document.body,
-  zIndex: 9999,
-  maxWidth: tooltipMaxWidth && tooltipMaxWidth.value,
-  isAppLauncher: false,
-  distance: 15
-};
+export class Tooltip extends React.Component<TooltipProps> {
+  private tip: TippyInstance;
+  static defaultProps = {
+    position: 'top',
+    trigger: 'mouseenter focus',
+    enableFlip: true,
+    className: '',
+    entryDelay: 500,
+    exitDelay: 500,
+    appendTo: () => document.body,
+    zIndex: 9999,
+    maxWidth: tooltipMaxWidth && tooltipMaxWidth.value,
+    isAppLauncher: false,
+    distance: 15
+  };
 
-class Tooltip extends React.Component {
-  storeTippyInstance = tip => {
+  storeTippyInstance = (tip:TippyInstance) => {
     this.tip = tip;
   };
 
-  handleEscKeyClick = event => {
+  handleEscKeyClick = (event: KeyboardEvent) => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.tip.state.isVisible) {
       this.tip.hide();
     }
@@ -145,8 +147,3 @@ class Tooltip extends React.Component {
     );
   }
 }
-
-Tooltip.propTypes = propTypes;
-Tooltip.defaultProps = defaultProps;
-
-export default Tooltip;

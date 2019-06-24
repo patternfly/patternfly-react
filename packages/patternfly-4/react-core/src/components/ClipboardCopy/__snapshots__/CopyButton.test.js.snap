@@ -3,7 +3,7 @@
 exports[`copy button render 1`] = `
 <Tooltip
   appendTo={[Function]}
-  className={null}
+  className=""
   content={
     <div>
       Copy Me
