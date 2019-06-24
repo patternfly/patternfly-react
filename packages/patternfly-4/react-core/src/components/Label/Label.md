@@ -1,6 +1,7 @@
 ---
 title: 'Label'
 cssPrefix: 'pf-c-label'
+typescript: true
 propComponents: ['Label']
 ---
 
