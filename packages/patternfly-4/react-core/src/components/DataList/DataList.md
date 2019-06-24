@@ -2,6 +2,7 @@
 title: 'Data list'
 cssPrefix: 'pf-c-data-list'
 propComponents: ['DataList', 'DataListAction', 'DataListCell', 'DataListCheck', 'DataListItem', 'DataListItemCells', 'DataListItemRow', 'DataListToggle', 'DataListContent']
+typescript: true
 ---
 
 ## Simple data list
