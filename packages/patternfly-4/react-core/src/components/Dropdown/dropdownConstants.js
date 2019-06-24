@@ -15,7 +15,14 @@ export const DropdownContext = React.createContext({
   menuClass: '',
   itemClass: '',
   toggleClass: '',
-  baseClass: ''
+  baseClass: '',
+  baseComponent: 'div',
+  sectionClass: '',
+  sectionTitleClass: '',
+  sectionComponent: 'section',
+  disabledClass: '',
+  hoverClass: '',
+  separatorClass: ''
 });
 
 export const DropdownArrowContext = React.createContext({

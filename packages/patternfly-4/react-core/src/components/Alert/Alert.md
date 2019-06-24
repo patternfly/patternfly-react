@@ -19,7 +19,7 @@ class InfoAlert extends React.Component {
     this.hideAlertOne = () => this.setState({ alertOneVisible: false });
     this.hideAlertTwo = () => this.setState({ alertTwoVisible: false });
   }
-  
+
   render() {
     const { alertOneVisible, alertTwoVisible } = this.state;
     return (
@@ -156,7 +156,7 @@ class DangerAlert extends React.Component {
           <Alert
             variant="danger"
             title="Danger alert title"
-            action={<AlertActionCloseButton action={<AlertActionCloseButton onClose={this.hideAlertOne} />} />}
+            action={<AlertActionCloseButton onClose={this.hideAlertOne} />}
           >
             Danger alert description. <a href="#">This is a link.</a>
           </Alert>
@@ -241,4 +241,3 @@ class InlineAlertVariations extends React.Component {
   }
 }
 ```
-

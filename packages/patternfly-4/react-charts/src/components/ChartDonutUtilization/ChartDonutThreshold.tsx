@@ -246,6 +246,10 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   innerRadius?: number;
   /**
+   * Invert the threshold color scale used to represent warnings, errors, etc.
+   */
+  invert?: boolean;
+  /**
    * The labelRadius prop defines the radius of the arc that will be used for positioning each slice label.
    * If this prop is not set, the label radius will default to the radius of the pie + label padding.
    */
@@ -363,13 +367,6 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   title?: string;
   /**
-   * The dynamic portion of the chart will change colors when data reaches the given threshold. Colors may be
-   * overridden, but defaults shall be provided.
-   *
-   * @example thresholds={[{ value: 60, color: '#F0AB00' }, { value: 90, color: '#C9190B' }]}
-   */
-  thresholds?: any[];
-  /**
    * Specifies the width of the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
    *
@@ -410,6 +407,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
 export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdProps> = ({
   children,
   data = [],
+  invert = false,
   labels = [], // Don't show any tooltip labels by default, let consumer override if needed
   legendComponent,
   legendData,
@@ -422,7 +420,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   y,
 
   // destructure last
-  theme = getDonutThresholdStaticTheme(themeColor, themeVariant),
+  theme = getDonutThresholdStaticTheme(themeColor, themeVariant, invert),
   height = theme.pie.height,
   width = theme.pie.width,
   donutHeight = Math.min(height, width),
@@ -526,6 +524,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
           donutWidth: donutWidth - (theme.pie.width - dynamicTheme.pie.width),
           endAngle: 360 * (datum[0]._y ? datum[0]._y / 100 : 0),
           height,
+          invert,
           legendDx: getLegendDx(dynamicTheme, legendPos),
           legendDy: getLegendAndSubTitleDy(dynamicTheme, legendPos),
           legendPosition: legendPos,

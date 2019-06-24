@@ -1,16 +1,16 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import DropdownItem from './DropdownItem';
+import InternalDropdownItem from './InternalDropdownItem';
 import DropdownSeparator from './Separator';
 
 describe('dropdown items', () => {
   test('a', () => {
-    const view = shallow(<DropdownItem>Something</DropdownItem>);
+    const view = shallow(<InternalDropdownItem>Something</InternalDropdownItem>);
     expect(view).toMatchSnapshot();
   });
 
   test('button', () => {
-    const view = shallow(<DropdownItem component="button">Something</DropdownItem>);
+    const view = shallow(<InternalDropdownItem component="button">Something</InternalDropdownItem>);
     expect(view).toMatchSnapshot();
   });
 
@@ -21,14 +21,14 @@ describe('dropdown items', () => {
 
   describe('hover', () => {
     test('a', () => {
-      const view = shallow(<DropdownItem isHovered>Something</DropdownItem>);
+      const view = shallow(<InternalDropdownItem isHovered>Something</InternalDropdownItem>);
       expect(view).toMatchSnapshot();
     });
     test('button', () => {
       const view = shallow(
-        <DropdownItem isHovered component="button">
+        <InternalDropdownItem isHovered component="button">
           Something
-        </DropdownItem>
+        </InternalDropdownItem>
       );
       expect(view).toMatchSnapshot();
     });
@@ -36,14 +36,14 @@ describe('dropdown items', () => {
 
   describe('disabled', () => {
     test('a', () => {
-      const view = shallow(<DropdownItem isDisabled>Something</DropdownItem>);
+      const view = shallow(<InternalDropdownItem isDisabled>Something</InternalDropdownItem>);
       expect(view).toMatchSnapshot();
     });
     test('button', () => {
       const view = shallow(
-        <DropdownItem isDisabled component="button">
+        <InternalDropdownItem isDisabled component="button">
           Something
-        </DropdownItem>
+        </InternalDropdownItem>
       );
       expect(view).toMatchSnapshot();
     });

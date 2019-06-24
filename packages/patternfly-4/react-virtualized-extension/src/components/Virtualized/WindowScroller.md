@@ -39,6 +39,12 @@ class WindowScrollerExample extends React.Component {
         id: UUID(),
         cells
       });
+
+      this._cellMeasurementCache = new CellMeasurerCache({
+        fixedWidth: true,
+        minHeight: 44,
+        keyMapper: rowIndex => rowIndex
+      });
     }
 
     this.scrollableElement = React.createRef();
@@ -57,6 +63,7 @@ class WindowScrollerExample extends React.Component {
     };
 
     this._handleResize = this._handleResize.bind(this);
+    this._bindBodyRef = this._bindBodyRef.bind(this);
   }
 
   componentDidMount(){
@@ -79,32 +86,27 @@ class WindowScrollerExample extends React.Component {
   }
 
   _handleResize() {
-    this.forceUpdate();
+    this._cellMeasurementCache.clearAll();
+    this._bodyRef.recomputeVirtualGridSize();
+  }
+
+  _bindBodyRef(ref) {
+    this._bodyRef = ref;
   }
 
   render() {
     const {scrollToIndex, columns, rows, scollableElement} = this.state;
 
-    const measurementCache = new CellMeasurerCache({
-      fixedWidth: true,
-      minHeight: 44,
-      keyMapper: rowIndex => rowIndex
-    });
-
     const rowRenderer = ({index, isScrolling, isVisible, key, style, parent}) => {
       const {rows, columns} = this.state;
       const text = rows[index].cells[0];
 
-      const className = clsx('pf-l-grid', {
+      const className = clsx({
         isVisible: isVisible
       });
 
-      // do not render non visible elements (this excludes overscan)
-      if(!isVisible){
-        return null;
-      }
       return <CellMeasurer
-        cache={measurementCache}
+        cache={this._cellMeasurementCache}
         columnIndex={0}
         key={key}
         parent={parent}
@@ -151,15 +153,17 @@ class WindowScrollerExample extends React.Component {
                 {({width}) => (
                   <div ref={registerChild}>
                     <VirtualTableBody
+                      ref={this._bindBodyRef}
                       autoHeight
                       className={'pf-c-table pf-c-virtualized pf-c-window-scroller'}
-                      deferredMeasurementCache={measurementCache}
-                      rowHeight={measurementCache.rowHeight}
+                      deferredMeasurementCache={this._cellMeasurementCache}
+                      rowHeight={this._cellMeasurementCache.rowHeight}
                       height={height || 0}
                       isScrolling={isScrolling}
+                      isScrollingOptOut={true}
                       onScroll={onChildScroll}
                       overscanRowCount={2}
-                      columns={columns}
+                      columnCount={1}
                       rows={rows}
                       rowCount={rows.length}
                       rowRenderer={rowRenderer}

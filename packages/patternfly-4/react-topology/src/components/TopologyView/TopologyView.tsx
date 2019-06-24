@@ -16,6 +16,9 @@ export interface TopologyViewProps extends React.HTMLProps<HTMLDivElement> {
   viewToolbar?: React.ReactNode;
   /** Topology control bar (typically a TopologyControlBar), used to manipulate the graph layout */
   controlBar?: React.ReactNode;
+  /** Topology side bar (typically a TopologySideBar), used to display information for elements in graph */
+  sideBar?: React.ReactNode;
+  sideBarOpen?: boolean;
 };
 
 export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
@@ -24,17 +27,24 @@ export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
   viewToolbar = null,
   children = null,
   controlBar = null,
+  sideBar = null,
+  sideBarOpen = false,
   ...props
 }: TopologyViewProps) => {
+  const containerClasses =
+    `${sideBar ? 'pf-topology-container__with-sidebar' : ''}` +
+    `${sideBarOpen ? ' pf-topology-container__with-sidebar--open' : ''}`;
+
   return (
     <Stack className={className} {...props}>
       {contextToolbar && <StackItem isFilled={false}>{contextToolbar}</StackItem>}
       {viewToolbar && <StackItem isFilled={false}>{viewToolbar}</StackItem>}
-      <StackItem isFilled>
+      <StackItem isFilled className={containerClasses}>
         <div className="pf-topology-content">
           {children}
           {controlBar && <span className="pf-topology-control-bar">{controlBar}</span>}
         </div>
+        {sideBar}
       </StackItem>
     </Stack>
   );

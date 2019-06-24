@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
-import { css } from '@patternfly/react-styles';
 import { ThIcon } from '@patternfly/react-icons';
 import { DropdownDirection, DropdownPosition, DropdownToggle, DropdownContext } from '../Dropdown';
 import { DropdownWithContext } from '../Dropdown/Dropdown';
@@ -10,8 +9,15 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
     className: string;
     /** Display menu above or below dropdown toggle */
     direction: DropdownDirection;
-    /** Array of DropdownItem nodes that will be rendered in the dropdown Menu list */
+    /** 
+     * @deprecated
+     * Use the items prop instead
+     * 
+     * Array of DropdownItem nodes that will be rendered in the dropdown Menu list
+     */
     dropdownItems: React.ReactNode[];
+    /** Array of application launcher items */
+    items: React.ReactNode[];
     /** Render Application launcher toggle as disabled icon */
     isDisabled: boolean;
     /** open bool */
@@ -24,6 +30,8 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
     onToggle?: (value: boolean) => void;
     /** Adds accessible text to the button. Required for plain buttons */
     'aria-label': string;
+    /** Flag to indicate if application launcher has groups */
+    isGrouped: boolean;
 }
 
 export class ApplicationLauncher extends React.Component<ApplicationLauncherProps> {
@@ -32,26 +40,37 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     isDisabled: false,
     direction: DropdownDirection.down,
     dropdownItems: [] as React.ReactNode[],
+    items: [] as React.ReactNode[],
     isOpen: false,
     position: DropdownPosition.left,
     onSelect: (_event: any): any => undefined,
     onToggle: (_value: boolean): any => undefined,
-    'aria-label': 'Actions'
+    'aria-label': 'Application launcher',
+    isGrouped: false
   };
   render() {
-    const { 'aria-label': ariaLabel, isOpen, onToggle, onSelect, isDisabled, className, ...props } = this.props;
+    const { 'aria-label': ariaLabel, isOpen, onToggle, onSelect, isDisabled, className, isGrouped, dropdownItems, items, ...props } = this.props;
     return (
       <DropdownContext.Provider value={{
         onSelect,
-        menuClass: css(styles.appLauncherMenu),
-        itemClass: css(styles.appLauncherMenuItem),
-        toggleClass: css(styles.appLauncherToggle),
-        baseClass: css(styles.appLauncher)
+        menuClass: styles.appLauncherMenu,
+        itemClass: styles.appLauncherMenuItem,
+        toggleClass: styles.appLauncherToggle,
+        baseClass: styles.appLauncher,
+        baseComponent: 'nav',
+        sectionClass: styles.appLauncherGroup,
+        sectionTitleClass: styles.appLauncherGroupTitle,
+        sectionComponent: 'section',
+        disabledClass: styles.modifiers.disabled,
+        hoverClass: styles.modifiers.hover,
+        separatorClass: styles.appLauncherSeparator
       }}>
         <DropdownWithContext
           {...props}
+          dropdownItems={items.length ? items : dropdownItems}
           isOpen={isOpen}
           className={className}
+          aria-label={ariaLabel}
           toggle={
             <DropdownToggle
               iconComponent={null}
@@ -63,7 +82,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
               <ThIcon />
             </DropdownToggle>
           }
-          isPlain
+          isGrouped={isGrouped}
         />
       </DropdownContext.Provider>
     );
