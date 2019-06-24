@@ -63,7 +63,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
 
   constructor(props: SelectToggleProps) {
     super(props);
-    const { variant } = this.props;
+    const { variant } = props;
     const isTypeahead = variant === SelectVariant.typeahead || variant === SelectVariant.typeaheadMulti;
     this.toggle = isTypeahead ? React.createRef<HTMLDivElement>() : React.createRef<HTMLButtonElement>();
   }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`checkbox select options renders with children successfully 1`] = `
+exports[`select group renders with children successfully 1`] = `
 <div
   className="pf-c-select__menu-group"
 >

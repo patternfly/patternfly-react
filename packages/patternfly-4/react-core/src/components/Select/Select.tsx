@@ -93,8 +93,8 @@ export class Select extends React.Component<SelectProps, SelectState> {
     typeaheadCurrIndex: -1
   };
 
-  componentDidUpdate = () => {
-    if (this.state.openedOnEnter) {
+  componentDidUpdate = (prevProps: SelectProps, prevState: SelectState) => {
+    if (!prevState.openedOnEnter && this.state.openedOnEnter) {
       this.refCollection[0].focus();
     }
   };
