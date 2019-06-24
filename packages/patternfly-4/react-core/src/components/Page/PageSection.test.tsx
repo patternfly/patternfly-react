@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import { mount } from 'enzyme';
-import PageSection from './PageSection';
+import { PageSection } from './PageSection';
 
 jest.mock('./Page');
 

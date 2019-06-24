@@ -6,30 +6,19 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   breadcrumb={null}
   className="my-page-class"
   header={
-    <PageHeader
-      aria-label="Global navigation"
+    <Unknown
       avatar=" | Avatar"
-      className=""
-      isNavOpen={true}
       logo="Logo"
-      logoComponent="a"
-      logoProps={null}
-      nav="Navigation"
-      onNavToggle={[Function]}
-      showNavToggle={false}
       toolbar="Toolbar"
-      topNav={null}
+      topNav="Navigation"
     />
   }
   id="PageId"
   isManagedSidebar={false}
-  layout="horizontal"
-  onPageResize={null}
+  onPageResize={[Function]}
   sidebar={
-    <PageSidebar
-      className=""
+    <Unknown
       isNavOpen={true}
-      nav={null}
     />
   }
   skipToContent={null}
@@ -38,25 +27,15 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     aria-label="Page layout"
     className="pf-c-page my-page-class"
     id="PageId"
-    layout="horizontal"
   >
-    <PageHeader
-      aria-label="Global navigation"
+    <Component
       avatar=" | Avatar"
-      className=""
-      isNavOpen={true}
       logo="Logo"
-      logoComponent="a"
-      logoProps={null}
-      nav="Navigation"
-      onNavToggle={[Function]}
-      showNavToggle={false}
       toolbar="Toolbar"
-      topNav={null}
+      topNav="Navigation"
     >
       <header
         className="pf-c-page__header"
-        nav="Navigation"
         role="banner"
       >
         <div
@@ -69,17 +48,20 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
           </a>
         </div>
         <div
+          className="pf-c-page__header-nav"
+        >
+          Navigation
+        </div>
+        <div
           className="pf-c-page__header-tools"
         >
           Toolbar
            | Avatar
         </div>
       </header>
-    </PageHeader>
-    <PageSidebar
-      className=""
+    </Component>
+    <Component
       isNavOpen={true}
-      nav={null}
     >
       <div
         className="pf-c-page__sidebar pf-m-expanded"
@@ -89,15 +71,12 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
           className="pf-c-page__sidebar-body"
         />
       </div>
-    </PageSidebar>
+    </Component>
     <main
       className="pf-c-page__main"
       role="main"
     >
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      <Component
         variant="default"
       >
         <section
@@ -105,11 +84,8 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         >
           Section with default background
         </section>
-      </PageSection>
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      </Component>
+      <Component
         variant="light"
       >
         <section
@@ -117,11 +93,8 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         >
           Section with light background
         </section>
-      </PageSection>
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      </Component>
+      <Component
         variant="dark"
       >
         <section
@@ -129,11 +102,8 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         >
           Section with dark background
         </section>
-      </PageSection>
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      </Component>
+      <Component
         variant="darker"
       >
         <section
@@ -141,7 +111,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         >
           Section with darker background
         </section>
-      </PageSection>
+      </Component>
     </main>
   </div>
 </Page>
@@ -153,30 +123,19 @@ exports[`Check page to verify breadcrumb is created 1`] = `
   breadcrumb={[Function]}
   className="my-page-class"
   header={
-    <PageHeader
-      aria-label="Global navigation"
+    <Unknown
       avatar=" | Avatar"
-      className=""
-      isNavOpen={true}
       logo="Logo"
-      logoComponent="a"
-      logoProps={null}
-      nav="Navigation"
-      onNavToggle={[Function]}
-      showNavToggle={false}
       toolbar="Toolbar"
-      topNav={null}
+      topNav="Navigation"
     />
   }
   id="PageId"
   isManagedSidebar={false}
-  layout="horizontal"
-  onPageResize={null}
+  onPageResize={[Function]}
   sidebar={
-    <PageSidebar
-      className=""
+    <Unknown
       isNavOpen={true}
-      nav={null}
     />
   }
   skipToContent={null}
@@ -185,25 +144,15 @@ exports[`Check page to verify breadcrumb is created 1`] = `
     aria-label="Page layout"
     className="pf-c-page my-page-class"
     id="PageId"
-    layout="horizontal"
   >
-    <PageHeader
-      aria-label="Global navigation"
+    <Component
       avatar=" | Avatar"
-      className=""
-      isNavOpen={true}
       logo="Logo"
-      logoComponent="a"
-      logoProps={null}
-      nav="Navigation"
-      onNavToggle={[Function]}
-      showNavToggle={false}
       toolbar="Toolbar"
-      topNav={null}
+      topNav="Navigation"
     >
       <header
         className="pf-c-page__header"
-        nav="Navigation"
         role="banner"
       >
         <div
@@ -216,17 +165,20 @@ exports[`Check page to verify breadcrumb is created 1`] = `
           </a>
         </div>
         <div
+          className="pf-c-page__header-nav"
+        >
+          Navigation
+        </div>
+        <div
           className="pf-c-page__header-tools"
         >
           Toolbar
            | Avatar
         </div>
       </header>
-    </PageHeader>
-    <PageSidebar
-      className=""
+    </Component>
+    <Component
       isNavOpen={true}
-      nav={null}
     >
       <div
         className="pf-c-page__sidebar pf-m-expanded"
@@ -236,7 +188,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
           className="pf-c-page__sidebar-body"
         />
       </div>
-    </PageSidebar>
+    </Component>
     <main
       className="pf-c-page__main"
       role="main"
@@ -246,10 +198,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
       >
         <Component />
       </section>
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      <Component
         variant="default"
       >
         <section
@@ -257,11 +206,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         >
           Section with default background
         </section>
-      </PageSection>
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      </Component>
+      <Component
         variant="light"
       >
         <section
@@ -269,11 +215,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         >
           Section with light background
         </section>
-      </PageSection>
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      </Component>
+      <Component
         variant="dark"
       >
         <section
@@ -281,11 +224,8 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         >
           Section with dark background
         </section>
-      </PageSection>
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      </Component>
+      <Component
         variant="darker"
       >
         <section
@@ -293,7 +233,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
         >
           Section with darker background
         </section>
-      </PageSection>
+      </Component>
     </main>
   </div>
 </Page>
@@ -327,30 +267,19 @@ exports[`Check page to verify skip to content is created 1`] = `
   }
   className="my-page-class"
   header={
-    <PageHeader
-      aria-label="Global navigation"
+    <Unknown
       avatar=" | Avatar"
-      className=""
-      isNavOpen={true}
       logo="Logo"
-      logoComponent="a"
-      logoProps={null}
-      nav="Navigation"
-      onNavToggle={[Function]}
-      showNavToggle={false}
       toolbar="Toolbar"
-      topNav={null}
+      topNav="Navigation"
     />
   }
   id="PageId"
   isManagedSidebar={false}
-  layout="horizontal"
-  onPageResize={null}
+  onPageResize={[Function]}
   sidebar={
-    <PageSidebar
-      className=""
+    <Unknown
       isNavOpen={true}
-      nav={null}
     />
   }
   skipToContent={
@@ -368,7 +297,6 @@ exports[`Check page to verify skip to content is created 1`] = `
     aria-label="Page layout"
     className="pf-c-page my-page-class"
     id="PageId"
-    layout="horizontal"
   >
     <SkipToContent
       className=""
@@ -383,23 +311,14 @@ exports[`Check page to verify skip to content is created 1`] = `
         Skip to Content
       </a>
     </SkipToContent>
-    <PageHeader
-      aria-label="Global navigation"
+    <Component
       avatar=" | Avatar"
-      className=""
-      isNavOpen={true}
       logo="Logo"
-      logoComponent="a"
-      logoProps={null}
-      nav="Navigation"
-      onNavToggle={[Function]}
-      showNavToggle={false}
       toolbar="Toolbar"
-      topNav={null}
+      topNav="Navigation"
     >
       <header
         className="pf-c-page__header"
-        nav="Navigation"
         role="banner"
       >
         <div
@@ -412,17 +331,20 @@ exports[`Check page to verify skip to content is created 1`] = `
           </a>
         </div>
         <div
+          className="pf-c-page__header-nav"
+        >
+          Navigation
+        </div>
+        <div
           className="pf-c-page__header-tools"
         >
           Toolbar
            | Avatar
         </div>
       </header>
-    </PageHeader>
-    <PageSidebar
-      className=""
+    </Component>
+    <Component
       isNavOpen={true}
-      nav={null}
     >
       <div
         className="pf-c-page__sidebar pf-m-expanded"
@@ -432,7 +354,7 @@ exports[`Check page to verify skip to content is created 1`] = `
           className="pf-c-page__sidebar-body"
         />
       </div>
-    </PageSidebar>
+    </Component>
     <main
       className="pf-c-page__main"
       role="main"
@@ -599,10 +521,7 @@ exports[`Check page to verify skip to content is created 1`] = `
       <a
         id="main-content-page-layout-default-nav"
       />
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      <Component
         variant="default"
       >
         <section
@@ -610,11 +529,8 @@ exports[`Check page to verify skip to content is created 1`] = `
         >
           Section with default background
         </section>
-      </PageSection>
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      </Component>
+      <Component
         variant="light"
       >
         <section
@@ -622,11 +538,8 @@ exports[`Check page to verify skip to content is created 1`] = `
         >
           Section with light background
         </section>
-      </PageSection>
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      </Component>
+      <Component
         variant="dark"
       >
         <section
@@ -634,11 +547,8 @@ exports[`Check page to verify skip to content is created 1`] = `
         >
           Section with dark background
         </section>
-      </PageSection>
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      </Component>
+      <Component
         variant="darker"
       >
         <section
@@ -646,7 +556,7 @@ exports[`Check page to verify skip to content is created 1`] = `
         >
           Section with darker background
         </section>
-      </PageSection>
+      </Component>
     </main>
   </div>
 </Page>
@@ -658,26 +568,18 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   breadcrumb={null}
   className="my-page-class"
   header={
-    <PageHeader
-      aria-label="Global navigation"
+    <Unknown
       avatar=" | Avatar"
-      className=""
-      isNavOpen={true}
       logo="Logo"
-      logoComponent="a"
-      logoProps={null}
       onNavToggle={[Function]}
-      showNavToggle={false}
       toolbar="Toolbar"
-      topNav={null}
     />
   }
   id="PageId"
   isManagedSidebar={false}
-  onPageResize={null}
+  onPageResize={[Function]}
   sidebar={
-    <PageSidebar
-      className=""
+    <Unknown
       isNavOpen={true}
       nav="Navigation"
     />
@@ -689,18 +591,11 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     className="pf-c-page my-page-class"
     id="PageId"
   >
-    <PageHeader
-      aria-label="Global navigation"
+    <Component
       avatar=" | Avatar"
-      className=""
-      isNavOpen={true}
       logo="Logo"
-      logoComponent="a"
-      logoProps={null}
       onNavToggle={[Function]}
-      showNavToggle={false}
       toolbar="Toolbar"
-      topNav={null}
     >
       <header
         className="pf-c-page__header"
@@ -722,9 +617,8 @@ exports[`Check page vertical layout example against snapshot 1`] = `
            | Avatar
         </div>
       </header>
-    </PageHeader>
-    <PageSidebar
-      className=""
+    </Component>
+    <Component
       isNavOpen={true}
       nav="Navigation"
     >
@@ -738,15 +632,12 @@ exports[`Check page vertical layout example against snapshot 1`] = `
           Navigation
         </div>
       </div>
-    </PageSidebar>
+    </Component>
     <main
       className="pf-c-page__main"
       role="main"
     >
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      <Component
         variant="default"
       >
         <section
@@ -754,11 +645,8 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         >
           Section with default background
         </section>
-      </PageSection>
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      </Component>
+      <Component
         variant="light"
       >
         <section
@@ -766,11 +654,8 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         >
           Section with light background
         </section>
-      </PageSection>
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      </Component>
+      <Component
         variant="dark"
       >
         <section
@@ -778,11 +663,8 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         >
           Section with dark background
         </section>
-      </PageSection>
-      <PageSection
-        className=""
-        noPadding={false}
-        noPaddingMobile={false}
+      </Component>
+      <Component
         variant="darker"
       >
         <section
@@ -790,7 +672,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         >
           Section with darker background
         </section>
-      </PageSection>
+      </Component>
     </main>
   </div>
 </Page>

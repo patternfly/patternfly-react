@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import { mount } from 'enzyme';
-import PageHeader from './PageHeader';
+import { PageHeader } from './PageHeader';
 
 jest.mock('./Page');
 

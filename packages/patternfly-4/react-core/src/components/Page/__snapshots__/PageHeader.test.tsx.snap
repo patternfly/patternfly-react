@@ -1,18 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check page vertical layout example against snapshot 1`] = `
-<PageHeader
-  aria-label="Global navigation"
+<Component
   avatar=" | Avatar"
-  className=""
-  isNavOpen={true}
   logo="Logo"
-  logoComponent="a"
-  logoProps={null}
   onNavToggle={[Function]}
-  showNavToggle={false}
   toolbar="Toolbar"
-  topNav={null}
 >
   <header
     className="pf-c-page__header"
@@ -34,5 +27,5 @@ exports[`Check page vertical layout example against snapshot 1`] = `
        | Avatar
     </div>
   </header>
-</PageHeader>
+</Component>
 `;

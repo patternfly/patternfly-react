@@ -1,42 +1,38 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 
-export const PageSectionVariants = {
-  default: 'default',
-  light: 'light',
-  dark: 'dark',
-  darker: 'darker'
+export enum PageSectionVariants {
+  default = 'default',
+  light = 'light',
+  dark = 'dark',
+  darker = 'darker'
 };
 
-const propTypes = {
+export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the section */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the section */
-  className: PropTypes.string,
+  className?: string;
   /** Section background color variant */
-  variant: PropTypes.oneOf(Object.values(PageSectionVariants)),
-  /** Modifies a main page section to have no padding */
-  noPadding: PropTypes.bool,
+  variant?: 'default' | 'light' | 'dark' | 'darker' | PageSectionVariants
   /** Enables the page section to fill the available vertical space */
-  isFilled: PropTypes.bool,
+  isFilled?: boolean;
+  /** Modifies a main page section to have no padding */
+  noPadding?: boolean;
   /** Modifies a main page section to have no padding on mobile */
-  noPaddingMobile: PropTypes.bool,
-  /** Additional props are spread to the container <section> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
+  noPaddingMobile?: boolean;
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  variant: 'default',
-  isFilled: undefined,
-  noPadding: false,
-  noPaddingMobile: false
-};
-
-const PageSection = ({ className, children, variant, noPadding, noPaddingMobile, isFilled, ...props }) => {
+export const PageSection =
+  ({ className='',
+     children,
+     variant='default',
+     noPadding=false,
+     noPaddingMobile=false,
+     isFilled,
+     ...props
+  }: PageSectionProps) => {
   const variantStyle = {
     [PageSectionVariants.default]: '',
     [PageSectionVariants.light]: styles.modifiers.light,
@@ -60,8 +56,3 @@ const PageSection = ({ className, children, variant, noPadding, noPaddingMobile,
     </section>
   );
 };
-
-PageSection.propTypes = propTypes;
-PageSection.defaultProps = defaultProps;
-
-export default PageSection;

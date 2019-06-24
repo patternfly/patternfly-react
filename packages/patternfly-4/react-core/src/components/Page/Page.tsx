@@ -1,58 +1,65 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import { global_breakpoint_md as globalBreakpointMd } from '@patternfly/react-tokens';
 import { debounce } from '../../helpers/util';
 
-export const PageLayouts = {
-  vertical: 'vertical',
-  horizontal: 'horizontal'
+export enum PageLayouts {
+  vertical = 'vertical',
+  horizontal = 'horizontal'
 };
 
 const PageContext = React.createContext({});
 export const PageContextProvider = PageContext.Provider;
 export const PageContextConsumer = PageContext.Consumer;
 
-const propTypes = {
+export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the main section of the page layout (e.g. <PageSection />) */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes added to the page layout */
-  className: PropTypes.string,
+  className?: string;
   /** Header component (e.g. <PageHeader />) */
-  header: PropTypes.node,
+  header?: React.ReactNode;
   /** Sidebar component for a side nav (e.g. <PageSidebar />) */
-  sidebar: PropTypes.node,
+  sidebar?: React.ReactNode;
   /** Skip to content component for the page */
-  skipToContent: PropTypes.node,
+  skipToContent?: React.ReactElement;
+  /**
+   * If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
+   * the sidebar component or add a callback onNavToggle function into the PageHeader component
+   */
+  isManagedSidebar?: boolean;
+  /**
+   * Can add callback to be notified when resize occurs, for example to set the sidebar isNav prop to false for a width < 768px
+   * Returns object { mobileView: boolean, windowSize: number }
+   */
+  onPageResize?: (object: any) => void;
   /** Breadcrumb component for the page */
-  breadcrumb: PropTypes.node,
-  /** If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
-   * the sidebar component or add a callback onNavToggle function into the PageHeader component */
-  isManagedSidebar: PropTypes.bool,
-  /** Can add callback to be notified when resize occurs, for example to set the sidebar isNav prop to false for a width < 768px
-   * Returns object { mobileView: boolean, windowSize: number } */
-  onPageResize: PropTypes.func,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
+  breadcrumb?: React.ReactNode;
+}
 
-const defaultProps = {
-  breadcrumb: null,
-  children: null,
-  className: '',
-  header: null,
-  sidebar: null,
-  skipToContent: null,
-  isManagedSidebar: false,
-  onPageResize: null
-};
+export interface PageState {
+  desktopIsNavOpen: boolean;
+  mobileIsNavOpen: boolean;
+  mobileView: boolean;
+}
 
-class Page extends React.Component {
+export class Page extends React.Component<PageProps, PageState> {
   state = {
     desktopIsNavOpen: true,
     mobileIsNavOpen: false,
     mobileView: false
+  };
+
+  static defaultProps = {
+    breadcrumb: null as React.ReactNode,
+    children: null as React.ReactNode,
+    className: '',
+    header: null as React.ReactNode,
+    sidebar: null as React.ReactNode,
+    skipToContent: null as React.ReactElement,
+    isManagedSidebar: false,
+    onPageResize: ():void => null
   };
 
   componentDidMount() {
@@ -66,14 +73,18 @@ class Page extends React.Component {
 
   componentWillUnmount() {
     const { isManagedSidebar, onPageResize } = this.props;
-    (isManagedSidebar || onPageResize) && window.removeEventListener('resize', debounce(this.handleResize, 250));
+    if (isManagedSidebar || onPageResize) {
+      window.removeEventListener('resize', debounce(this.handleResize, 250));
+    }
   }
 
-  handleResize = e => {
+  handleResize = () => {
     const { onPageResize } = this.props;
     const windowSize = window.innerWidth;
     const mobileView = windowSize < Number.parseInt(globalBreakpointMd.value, 10);
-    onPageResize && onPageResize({ mobileView, windowSize });
+    if (onPageResize) {
+      onPageResize({ mobileView, windowSize });
+    }
     this.setState(prevState => ({
       mobileView
     }));
@@ -127,8 +138,3 @@ class Page extends React.Component {
     );
   }
 }
-
-Page.propTypes = propTypes;
-Page.defaultProps = defaultProps;
-
-export default Page;

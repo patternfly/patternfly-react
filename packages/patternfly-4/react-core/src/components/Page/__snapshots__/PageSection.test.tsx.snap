@@ -1,69 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check page section with fill and no padding example against snapshot 1`] = `
-<PageSection
-  className=""
+<Component
   isFilled={true}
   noPadding={true}
-  noPaddingMobile={false}
-  variant="default"
 >
   <section
     className="pf-c-page__main-section pf-m-no-padding pf-m-fill"
   />
-</PageSection>
+</Component>
 `;
 
 exports[`Check page section with fill example against snapshot 1`] = `
-<PageSection
-  className=""
+<Component
   isFilled={true}
-  noPadding={false}
-  noPaddingMobile={false}
-  variant="default"
 >
   <section
     className="pf-c-page__main-section pf-m-fill"
   />
-</PageSection>
+</Component>
 `;
 
 exports[`Check page section with no fill example against snapshot 1`] = `
-<PageSection
-  className=""
+<Component
   isFilled={false}
-  noPadding={false}
-  noPaddingMobile={false}
-  variant="default"
 >
   <section
     className="pf-c-page__main-section pf-m-no-fill"
   />
-</PageSection>
+</Component>
 `;
 
 exports[`Check page section with no padding example against snapshot 1`] = `
-<PageSection
-  className=""
+<Component
   noPadding={true}
-  noPaddingMobile={false}
-  variant="default"
 >
   <section
     className="pf-c-page__main-section pf-m-no-padding"
   />
-</PageSection>
+</Component>
 `;
 
 exports[`Check page section with no padding on mobile example against snapshot 1`] = `
-<PageSection
-  className=""
-  noPadding={false}
+<Component
   noPaddingMobile={true}
-  variant="default"
 >
   <section
     className="pf-c-page__main-section pf-m-no-padding-mobile"
   />
-</PageSection>
+</Component>
 `;
