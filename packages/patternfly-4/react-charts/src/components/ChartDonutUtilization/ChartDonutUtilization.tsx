@@ -13,10 +13,10 @@ import {
 import { Data } from 'victory-core';
 import { ChartContainer } from '../ChartContainer/ChartContainer';
 import { ChartDonut, ChartDonutProps } from "../ChartDonut/ChartDonut";
-import { ChartThemeDefinition, ChartDonutUtilizationStaticTheme } from '../ChartTheme/ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
 import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme';
 import { DonutUtilizationStyles } from '../ChartTheme/themes/donut-utilization-theme';
-import { cloneDeep } from 'lodash';
+import { orderBy } from 'lodash';
 
 export enum ChartDonutUtilizationLabelPosition {
   centroid = 'centroid',
@@ -531,11 +531,14 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   const getDonutThresholds = () => {
     const result = [];
     if (thresholds) {
+      // Ensure thresholds are in sorted order
+      const sThresholds = orderBy(thresholds, 'value', invert ? 'desc' : 'asc');
       const numColors = DonutUtilizationStyles.thresholds.colorScale.length;
-      for (let i = 0; i < thresholds.length; i++) {
+      for (let i = 0; i < sThresholds.length; i++) {
         result.push({
-          color: thresholds[i].color ? thresholds[i].color : DonutUtilizationStyles.thresholds.colorScale[i % numColors],
-          value: thresholds[i].value
+          color: sThresholds[i].color
+            ? sThresholds[i].color : DonutUtilizationStyles.thresholds.colorScale[i % numColors],
+          value: sThresholds[i].value
         });
       }
     }
