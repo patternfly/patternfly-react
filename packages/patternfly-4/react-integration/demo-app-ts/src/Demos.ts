@@ -123,7 +123,7 @@ export const Demos: DemoInterface[] = [
   {
     id: 'donut-chart-blue-demo',
     name: 'Donut Chart Blue Demo',
-    componentType: Examples.BlueDonutDemo
+    componentType: Examples.SimpleDonutDemo
   },
   {
     id: 'donut-chart-color-demo',
