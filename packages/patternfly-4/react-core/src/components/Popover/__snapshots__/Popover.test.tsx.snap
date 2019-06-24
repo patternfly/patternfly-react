@@ -19,7 +19,7 @@ exports[`popover can specify position as object value 1`] = `
       [Function]
     </GenerateId>
   }
-  distance={25}
+  distance={30}
   flip={true}
   hideOnClick={false}
   ignoreAttributes={true}
@@ -78,7 +78,7 @@ exports[`popover renders close-button, header and body 1`] = `
       [Function]
     </GenerateId>
   }
-  distance={25}
+  distance={30}
   flip={true}
   hideOnClick={false}
   ignoreAttributes={true}
