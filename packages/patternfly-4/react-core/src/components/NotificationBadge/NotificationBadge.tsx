@@ -1,30 +1,28 @@
 import * as React from 'react';
-import { Button,  ButtonVariant } from '../Button';
+import { Button, ButtonVariant, ButtonProps } from '../Button';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/NotificationBadge/notification-badge';
 
-export interface NotificationBadgeProps extends React.HTMLProps<HTMLButtonElement> {
-  /**  Adds styling to the badge to indicate it has been read */
+export interface NotificationBadgeProps extends ButtonProps {
+  /**  Adds styling to the notification badge to indicate it has been read */
   isRead?: boolean;
-  /** content rendered inside the Badge */
+  /** content rendered inside the Notification Badge */
   children?: React.ReactNode;
-  /** additional classes added to the Badge */
+  /** additional classes added to the Notification Badge */
   className?: string;
-  /** Adds accessible text to the button. */
-  'aria-label'?: string; 
+  /** Adds accessible text to the Notification Badge. */
+  'aria-label'?: string;
 }
 
-export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> = ({ 
-  isRead = false, 
-  className = '', 
-  children = '', 
-  ...props }: NotificationBadgeProps) => {
-
-     return (
-    <Button variant={ButtonVariant.plain} className={ className }>
-        <span className={css(styles.notificationBadge, (isRead ? styles.modifiers.read : styles.modifiers.unread))}>
-            {children}
-        </span>
-    </Button>
-)}
-;
+export const NotificationBadge: React.FunctionComponent<NotificationBadgeProps> = ({
+  isRead = false,
+  className,
+  children,
+  ...props
+}: NotificationBadgeProps) => (
+  <Button variant={ButtonVariant.plain} className={className} {...props}>
+    <span className={css(styles.notificationBadge, isRead ? styles.modifiers.read : styles.modifiers.unread)}>
+      {children}
+    </span>
+  </Button>
+);
