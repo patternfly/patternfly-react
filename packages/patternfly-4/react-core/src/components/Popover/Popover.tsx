@@ -252,7 +252,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
         boundary="window"
         className="pf-tippy"
         content={content}
-        distance={25}
+        distance={30}
         flip={enableFlip}
         hideOnClick={shouldHideOnClick()}
         interactive
