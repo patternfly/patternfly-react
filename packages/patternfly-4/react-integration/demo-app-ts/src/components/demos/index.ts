@@ -24,11 +24,15 @@ export * from './ContextSelectorDemo/ContextSelectorDemo';
 export * from './DataListDemo/DataListDemo';
 export * from './DonutChartDemo/BlueDonutDemo';
 export * from './DonutChartDemo/ColorDonutDemo';
+export * from './DonutUtilizationChartDemo/DonutUtilizationSimpleBottomDemo'
+export * from './DonutUtilizationChartDemo/DonutUtilizationSimpleDemo'
 export * from './EmptyStateDemo/EmptyStateDemo';
 export * from './FormDemo/FormDemo';
 export * from './FormSelectDemo/FormSelectDemo';
 export * from './InputGroupDemo/InputGroupDemo';
 export * from './LabelDemo/LabelDemo';
+export * from './LineChartDemo/LineChartColorDemo';
+export * from './LineChartDemo/LineChartGreenZoomDemo';
 export * from './ListDemo/ListDemo';
 export * from './LoginPageDemo/LoginPageDemo';
 export * from './ModalDemo/ModalDemo';
@@ -41,6 +45,9 @@ export * from './PaginationDemo/PaginationDemo';
 export * from './ProgressDemo/ProgressDemo';
 export * from './RadioDemo/RadioDemo';
 export * from './SwitchDemo/SwitchDemo';
+export * from './StackChartDemo/StackHorizontalBlueDemo'
+export * from './StackChartDemo/StackVerticalBlueDemo'
+export * from './StackChartDemo/StackVerticalColorZoomDemo'
 export * from './TabsDemo/TabsDemo';
 export * from './TextAreaDemo/TextAreaDemo';
 export * from './TextDemo/TextDemo';

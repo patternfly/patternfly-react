@@ -11,6 +11,7 @@ export class DonutUtilizationSimpleDemo extends React.Component {
             labels={datum => datum.x ? `${datum.x} - ${datum.y}%` : null}
             subTitle="of 100 GBps"
             title="75%"
+            width={500}
           />
         </div>
       </div>

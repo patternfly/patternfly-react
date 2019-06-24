@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChartDonut, ChartLegend } from '@patternfly/react-charts';
+import { ChartDonut, ChartDonutUtilization, ChartLegend } from '@patternfly/react-charts';
 
 export class BlueDonutDemo extends React.Component {
 
@@ -13,13 +13,13 @@ export class BlueDonutDemo extends React.Component {
               labels={datum => `${datum.x}: ${datum.y}`}
               subTitle="Pets"
               title="100"
+              width={500}
             />
           </div>
           <ChartLegend
             data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
-            height={230}
             orientation="vertical"
-            responsive={false}
+            responsive
             y={70}
           />
         </div>

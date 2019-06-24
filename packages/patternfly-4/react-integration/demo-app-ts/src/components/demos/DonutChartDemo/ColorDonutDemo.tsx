@@ -14,16 +14,18 @@ export class ColorDonutDemo extends React.Component {
             themeColor={ChartThemeColor.multi}
             themeVariant={ChartThemeVariant.light}
             title="100"
+            width={500}
           />
         </div>
         <ChartLegend
           data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
           height={35}
+          width={500}
           orientation={'horizontal'}
           responsive={false}
           themeColor={ChartThemeColor.multi}
           themeVariant={ChartThemeVariant.light}
-          x={8}
+          x={500}
         />
       </div>
 
