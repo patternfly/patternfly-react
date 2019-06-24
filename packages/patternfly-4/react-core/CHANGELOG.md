@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.53.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.52.1...@patternfly/react-core@3.53.0) (2019-06-24)
+
+
+### Features
+
+* **form:** wrap form label text in new element ([#2332](https://github.com/patternfly/patternfly-react/issues/2332)) ([b1301a3](https://github.com/patternfly/patternfly-react/commit/b1301a3))
+
+
+
+
+
 ## [3.52.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.52.0...@patternfly/react-core@3.52.1) (2019-06-24)
 
 **Note:** Version bump only for package @patternfly/react-core

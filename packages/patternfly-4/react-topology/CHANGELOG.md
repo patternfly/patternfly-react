@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.4.1...@patternfly/react-topology@2.4.2) (2019-06-24)
+
+
+### Bug Fixes
+
+* **topology:** Fix react-topology distribution JS ([#2330](https://github.com/patternfly/patternfly-react/issues/2330)) ([2f4e6e8](https://github.com/patternfly/patternfly-react/commit/2f4e6e8))
+
+
+
+
+
 ## [2.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.4.0...@patternfly/react-topology@2.4.1) (2019-06-24)
 
 **Note:** Version bump only for package @patternfly/react-topology
