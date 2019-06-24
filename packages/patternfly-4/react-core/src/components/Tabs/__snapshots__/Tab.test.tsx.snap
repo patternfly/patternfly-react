@@ -4,8 +4,6 @@ exports[`should render active tab 1`] = `
 <TabContainer
   eventKey={0}
   forwardRef={null}
-  id="tab1"
-  isActive={true}
   title="Tab item 1"
 >
   Tab 1 section
@@ -16,7 +14,6 @@ exports[`should render tab 1`] = `
 <TabContainer
   eventKey={0}
   forwardRef={null}
-  id="tab1"
   title="Tab item 1"
 >
   Tab 1 section
