@@ -41,6 +41,7 @@ export const Expandable: React.SFC<ExpandableProps> = ({
         isHovered && styles.modifiers.hover,
         isActive && styles.modifiers.active
       )}
+      type="button"
       aria-expanded={isExpanded}
       onClick={onToggle}
     >
