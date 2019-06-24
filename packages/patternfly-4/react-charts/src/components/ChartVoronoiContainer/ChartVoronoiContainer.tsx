@@ -1,8 +1,6 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
-  createContainer,
-  VictoryContainer,
   VictoryVoronoiContainer,
   VictoryVoronoiContainerProps
 } from 'victory';
