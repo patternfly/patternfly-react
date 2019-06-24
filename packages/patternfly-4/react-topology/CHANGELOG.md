@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.3.8...@patternfly/react-topology@2.4.0) (2019-06-24)
+
+
+### Features
+
+* **tippy:** upgrade tippy deps and apply api changes ([#2326](https://github.com/patternfly/patternfly-react/issues/2326)) ([b2dc2e2](https://github.com/patternfly/patternfly-react/commit/b2dc2e2))
+
+
+
+
+
 ## [2.3.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.3.7...@patternfly/react-topology@2.3.8) (2019-06-24)
 
 **Note:** Version bump only for package @patternfly/react-topology

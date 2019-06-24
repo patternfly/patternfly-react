@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.52.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.51.2...@patternfly/react-core@3.52.0) (2019-06-24)
+
+
+### Features
+
+* **tippy:** upgrade tippy deps and apply api changes ([#2326](https://github.com/patternfly/patternfly-react/issues/2326)) ([b2dc2e2](https://github.com/patternfly/patternfly-react/commit/b2dc2e2))
+
+
+
+
+
 ## [3.51.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.51.1...@patternfly/react-core@3.51.2) (2019-06-24)
 
 **Note:** Version bump only for package @patternfly/react-core
