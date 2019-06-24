@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.51.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.5...@patternfly/react-core@3.51.0) (2019-06-24)
+
+
+### Features
+
+* **Tabs:** Convert tabs to typescript ([#2253](https://github.com/patternfly/patternfly-react/issues/2253)) ([e4e5b16](https://github.com/patternfly/patternfly-react/commit/e4e5b16))
+
+
+
+
+
 ## [3.50.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.4...@patternfly/react-core@3.50.5) (2019-06-21)
 
 **Note:** Version bump only for package @patternfly/react-core
