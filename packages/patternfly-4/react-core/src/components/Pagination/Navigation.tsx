@@ -58,7 +58,7 @@ export const Navigation: React.FunctionComponent<NavigationProps> = ({
   onLastClick = () => undefined,
   onPageInput = () => undefined,
   ...props
-}) => (
+}: NavigationProps) => (
   <nav className={css(styles.paginationNav, className)} aria-label={paginationTitle} {...props}>
     <Button
       variant={ButtonVariant.plain}
