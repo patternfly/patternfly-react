@@ -60,7 +60,7 @@ class SimpleForm extends React.Component {
     return (
       <Form>
         <FormGroup
-          label="Required Name"
+          label="Name"
           isRequired
           fieldId="simple-form-name"
           helperText="Please provide your full name"
@@ -75,7 +75,7 @@ class SimpleForm extends React.Component {
             onChange={this.handleTextInputChange1}
           />
         </FormGroup>
-        <FormGroup label="Required Email" isRequired fieldId="simple-form-email">
+        <FormGroup label="Email" isRequired fieldId="simple-form-email">
           <TextInput
             isRequired
             type="email"
@@ -96,7 +96,7 @@ class SimpleForm extends React.Component {
             onChange={this.handleTextInputChange3}
           />
         </FormGroup>
-        <FormGroup isInline label="required How can we contact you?" isRequired fieldId="inline-radio1">
+        <FormGroup isInline label="How can we contact you?" isRequired fieldId="inline-radio1">
           <Radio id="inlineradio1" name="inlineradios" label="Email" aria-label="Email" />
           <Radio id="inlineradio2" name="inlineradios" label="Phone" aria-label="Phone" />
           <Radio
@@ -176,7 +176,7 @@ class HorizontalForm extends React.Component {
     return (
       <Form isHorizontal>
         <FormGroup
-          label="Required Name"
+          label="Name"
           isRequired
           fieldId="horizontal-form-name"
           helperText="Please provide your full name"
