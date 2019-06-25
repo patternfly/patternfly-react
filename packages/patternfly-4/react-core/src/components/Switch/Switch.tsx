@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { HTMLProps, FormEvent } from 'react';
 import styles from '@patternfly/react-styles/css/components/Switch/switch';
 import { css } from '@patternfly/react-styles';
 import { CheckIcon } from '@patternfly/react-icons';
 import { getUniqueId } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
 
-export interface SwitchProps extends Omit<HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
+export interface SwitchProps extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
   /** id for the label. */
   id?: string,
   /** Additional classes added to the Switch */
@@ -18,7 +17,7 @@ export interface SwitchProps extends Omit<HTMLProps<HTMLInputElement>, 'type' | 
   /** Flag to show if the Switch is disabled. */
   isDisabled?: boolean,
   /** A callback for when the Switch selection changes. (isChecked, event) => {} */
-  onChange?(checked: boolean, event: FormEvent<HTMLInputElement>): void;
+  onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
   /** Adds accessible text to the Switch, and should describe the isChecked="true" state. When label is defined, aria-label should be set to the text string that is visible when isChecked is true. */
   'aria-label'?: string
 };
@@ -40,7 +39,7 @@ export class Switch extends React.Component<SwitchProps> {
     super(props);
     if (!props.id && !props['aria-label']) {
       // tslint:disable-next-line:no-console
-      console.error('Switch: Switch requires either an id or aria-label to be specified');
+      console.error('Switch:F Switch requires either an id or aria-label to be specified');
     }
     this.id =props.id || getUniqueId();
   }
@@ -79,5 +78,3 @@ export class Switch extends React.Component<SwitchProps> {
     );
   }
 }
-
-export default Switch;
