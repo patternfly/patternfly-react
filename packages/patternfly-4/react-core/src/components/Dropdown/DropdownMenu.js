@@ -41,16 +41,14 @@ class DropdownMenu extends React.Component {
   refsCollection = [];
 
   componentDidMount() {
-    if (this.props.openedOnEnter) {
-      const focusTarget =
-        this.refsCollection.filter(
-          ref => ref && ((ref.current && !ref.current.hasAttribute('disabled')) || !ref.hasAttribute('disabled'))
-        )[0] || null;
-      if (this.props.component === 'ul') focusTarget && focusTarget.focus();
-      else {
-        (focusTarget.current.focus && focusTarget.current.focus()) ||
-          (focusTarget && ReactDOM.findDOMNode(focusTarget.current).focus()); // eslint-disable-line react/no-find-dom-node
-      }
+    const focusTarget =
+      this.refsCollection.filter(
+        ref => ref && ((ref.current && !ref.current.hasAttribute('disabled')) || !ref.hasAttribute('disabled'))
+      )[0] || null;
+    if (this.props.component === 'ul') focusTarget && focusTarget.focus();
+    else {
+      (focusTarget.current.focus && focusTarget.current.focus()) ||
+        (focusTarget && ReactDOM.findDOMNode(focusTarget.current).focus()); // eslint-disable-line react/no-find-dom-node
     }
   }
 
