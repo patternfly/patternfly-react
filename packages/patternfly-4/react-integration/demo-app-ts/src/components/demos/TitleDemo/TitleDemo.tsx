@@ -7,6 +7,11 @@ const myProps: TitleProps = {
 };
 
 export class TitleDemo extends Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
     <React.Fragment>

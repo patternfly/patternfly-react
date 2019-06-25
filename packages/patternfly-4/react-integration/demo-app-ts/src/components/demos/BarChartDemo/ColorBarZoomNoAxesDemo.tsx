@@ -2,6 +2,11 @@ import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
 export class ColorBarZoomNoAxesDemo extends React.Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     return (
       <div>

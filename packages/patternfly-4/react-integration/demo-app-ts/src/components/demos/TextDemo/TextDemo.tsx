@@ -13,6 +13,10 @@ export class TextDemo extends Component {
    children: 'Text list item'
  }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
  render() {
    return (
      <TextContent>

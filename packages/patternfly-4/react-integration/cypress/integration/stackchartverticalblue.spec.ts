@@ -1,0 +1,16 @@
+describe('Stack Chart Vertical Blue Demo Test', () => {
+  it('Navigate to demo section', () => {
+    cy.visit('http://localhost:3000/');
+    cy.get('#stack-vertical-blue-demo-nav-item-link').click();
+    cy.url().should('eq', 'http://localhost:3000/stack-vertical-blue-demo-nav-link');
+  });
+
+  it('Verify stack chart', () => {
+    cy.get('.VictoryContainer').should('exist');
+  });
+
+  it('Verify legend string', () => {
+    cy.get('text').contains('Cats');
+  });
+});
+

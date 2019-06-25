@@ -21,6 +21,7 @@ export * from './ChipGroupDemo/ChipGroupDemo';
 export * from './ContextSelectorDemo/ContextSelectorDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyDemo';
 export * from './ContextSelectorDemo/ContextSelectorDemo';
+export * from './DataListDemo/DataListDemo'
 export * from './DonutChartDemo/DonutBottomAlignedLegendDemo';
 export * from './DonutChartDemo/DonutSmallBottomAlignedLegend';
 export * from './DonutChartDemo/DonutSmallDemo';

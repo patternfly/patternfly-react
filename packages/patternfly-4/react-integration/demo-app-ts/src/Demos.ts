@@ -143,7 +143,7 @@ export const Demos: DemoInterface[] = [
   {
     id: 'donut-chart-right-legend-color-demo',
     name: 'Donut Chart Multi-colored with Right Aligned Legend Demo',
-    componentType: Examples.DonutBottomAlignedLegendDemo
+    componentType: Examples.DonutRightAlignedLegendColorDemo
   },
   {
     id: 'donut-chart-right-legend-demo',

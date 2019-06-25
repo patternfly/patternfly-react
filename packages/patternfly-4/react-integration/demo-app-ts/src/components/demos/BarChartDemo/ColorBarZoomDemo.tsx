@@ -3,6 +3,11 @@ import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartThemeVariant } from 
 
 
 export class ColorBarZoomDemo extends React.Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+  
   render() {
     return (
       <div>

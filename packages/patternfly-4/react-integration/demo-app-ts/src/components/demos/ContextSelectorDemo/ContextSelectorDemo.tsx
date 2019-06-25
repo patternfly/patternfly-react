@@ -61,6 +61,10 @@ export class ContextSelectorDemo extends React.Component<{}, ContextSelectorStat
 
       this.setState({ filteredItems: filtered || [] });
     };
+}
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
   }
 
   render() {

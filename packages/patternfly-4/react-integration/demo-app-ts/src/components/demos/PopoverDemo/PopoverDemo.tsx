@@ -9,13 +9,20 @@ export class PopoverDemo extends Component {
     children: <div id='popoverTarget'>Hello</div>
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
-    return <Popover
+
+    return (
+      <Popover
       headerContent={this.myPopoverProps.headerContent}
       bodyContent={this.myPopoverProps.bodyContent}
       footerContent={this.myPopoverProps.footerContent}
     >
       {this.myPopoverProps.children}
-    </Popover>;
+    </Popover>
+  );
   };
 }

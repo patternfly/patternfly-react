@@ -27,6 +27,7 @@ export class SimpleAreaDemo extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     setTimeout(() => {
       this.setState({ width: this.containerRef.current.clientWidth });
       window.addEventListener('resize', this.handleResize);

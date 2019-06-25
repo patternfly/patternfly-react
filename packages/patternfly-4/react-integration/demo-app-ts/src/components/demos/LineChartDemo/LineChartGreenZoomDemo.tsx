@@ -3,9 +3,13 @@ import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor }
 import { VictoryZoomContainer } from 'victory';
 
 export class LineChartGreenZoomDemo extends React.Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
-
     <div>
       <div className="line-chart-inline">
         <div className="line-chart-container">

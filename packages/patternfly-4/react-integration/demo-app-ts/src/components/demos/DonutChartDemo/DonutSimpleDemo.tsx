@@ -3,6 +3,10 @@ import { ChartDonut, ChartDonutUtilization, ChartLegend } from '@patternfly/reac
 
 export class DonutSimpleDemo extends React.Component {
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     return (
       <div>

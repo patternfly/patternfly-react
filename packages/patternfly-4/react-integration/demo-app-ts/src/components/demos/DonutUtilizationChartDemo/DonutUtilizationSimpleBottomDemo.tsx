@@ -8,6 +8,11 @@ interface Testing {
 }
 
 export class DonutUtilizationSimpleBottomDemo extends React.Component<Testing> {
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     return (
     <div>
@@ -15,7 +20,7 @@ export class DonutUtilizationSimpleBottomDemo extends React.Component<Testing> {
         <ChartDonutUtilization
           data={{ x: 'GBps capacity', y: 45 }}
           donutHeight={230}
-          donutOrientation="top"
+          // donutOrientation="top"
           height={275}
           labels={datum => datum.x ? `${datum.x} - ${datum.y}%` : null}
           legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}

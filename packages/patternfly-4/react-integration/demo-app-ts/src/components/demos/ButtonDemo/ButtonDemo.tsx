@@ -7,6 +7,11 @@ export class ButtonDemo extends React.Component {
     href: 'https://github.com/patternfly/patternfly-next',
     target: '_blank'
   }
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -28,4 +33,3 @@ export class ButtonDemo extends React.Component {
   }
 }
 
-  

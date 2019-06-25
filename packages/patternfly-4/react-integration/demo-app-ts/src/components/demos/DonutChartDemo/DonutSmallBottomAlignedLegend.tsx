@@ -3,9 +3,13 @@ import { ChartDonut } from '@patternfly/react-charts';
 
 export class DonutSmallBottomAlignedLegend extends React.Component {
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     return (
-      <div>
+      <div style={{width: '30%', paddingTop: '50px', paddingLeft: '50px'}}>
         <div className="donut-chart-legend-bottom-subtitle-right-sm">
           <ChartDonut
             data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}

@@ -3,6 +3,10 @@ import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, 
 
 export class LineChartColorDemo extends React.Component {
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
     <div>

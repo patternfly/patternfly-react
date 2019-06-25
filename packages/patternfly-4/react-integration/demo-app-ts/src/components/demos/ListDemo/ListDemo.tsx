@@ -3,7 +3,11 @@ import React, { Component } from 'react';
 export class ListDemo extends Component {
  myInlineListProps: ListProps = {
   variant: ListVariant.inline
- }
+ };
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 
  render() {
    return (

@@ -11,6 +11,10 @@ export class AlertDemo extends React.Component<null, AlertDemoState> {
     this.state = { alertOneVisible: true };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   hideAlertOne = () => this.setState({ alertOneVisible: false });
   
   render() {

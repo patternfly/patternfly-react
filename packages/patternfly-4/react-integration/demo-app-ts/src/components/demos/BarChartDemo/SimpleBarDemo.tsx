@@ -2,6 +2,11 @@ import React from 'react';
 import { Chart, ChartBar } from '@patternfly/react-charts';
 
 export class SimpleBarDemo extends React.Component {
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     return (
     <div>
