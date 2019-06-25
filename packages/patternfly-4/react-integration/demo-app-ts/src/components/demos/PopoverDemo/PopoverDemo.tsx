@@ -5,8 +5,8 @@ export class PopoverDemo extends Component {
   myPopoverProps = {
     headerContent: <div>Popover Header</div>,
     bodyContent: <div>Popover Body</div>,
-    footerContent: "Popover Footer",
-    children: <div id='popoverTarget'>Hello</div>
+    footerContent: 'Popover Footer',
+    children: <div id="popoverTarget">Hello</div>
   };
 
   componentDidMount() {
