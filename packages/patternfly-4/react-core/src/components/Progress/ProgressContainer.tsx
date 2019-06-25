@@ -2,7 +2,7 @@ import * as React from 'react';
 import progressStyle from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 import { CheckCircleIcon, TimesCircleIcon } from '@patternfly/react-icons';
-import { ProgressBar } from './ProgressBar';
+import { AriaProps, ProgressBar } from './ProgressBar';
 import { Omit } from '../../helpers/typeUtils';
 
 export enum ProgressMeasureLocation {
@@ -20,7 +20,7 @@ export enum ProgressVariant {
 
 export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Properties needed for aria support */
-  ariaProps: object;
+  ariaProps: AriaProps;
   /** Progress component DOM ID. */
   parentId: string;
   /** Progress title. */

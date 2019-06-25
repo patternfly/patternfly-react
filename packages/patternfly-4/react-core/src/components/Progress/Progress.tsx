@@ -25,7 +25,7 @@ export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'si
   /** Text description of current progress value to display instead of percentage. */
   label?: React.ReactNode;
   /** Actual value of progress. */
-  value: number;
+  value?: number;
   /** DOM id for progress component. */
   id?: string;
   /** Minimal value of progress. */
@@ -77,7 +77,7 @@ export class Progress extends React.Component<ProgressProps> {
       'aria-describedby': `${this.id}-description`,
       'aria-valuemin': min,
       'aria-valuenow': value,
-      'aria-valuemax': max,
+      'aria-valuemax': max
     };
 
     if (valueText) {

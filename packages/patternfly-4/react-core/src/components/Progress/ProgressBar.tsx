@@ -2,6 +2,14 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
 
+export interface AriaProps {
+  'aria-describedby'?: string;
+  'aria-valuemin'?: number;
+  'aria-valuenow'?: number;
+  'aria-valuemax'?: number;
+  'aria-valuetext'?: string;
+}
+
 export interface ProgressBarProps extends React.HTMLProps<HTMLDivElement> {
   /** What should be rendered inside progress bar. */
   children?: React.ReactNode;
@@ -10,7 +18,7 @@ export interface ProgressBarProps extends React.HTMLProps<HTMLDivElement> {
   /** Actual progress value. */
   value: number;
   /** Minimal value of progress. */
-  ariaProps: object;
+  ariaProps: AriaProps;
 };
 
 export const ProgressBar: React.FunctionComponent<ProgressBarProps> = ({
