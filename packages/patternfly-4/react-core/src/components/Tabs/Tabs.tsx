@@ -15,27 +15,27 @@ export enum TabsVariant {
 
 export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivElement>, 'onSelect'> {
   /** content rendered inside the Tabs Component. */
-  children: React.ReactNode; 
+  children: React.ReactNode;
   /** additional classes added to the Tabs */
-  className?: string; 
+  className?: string;
   /** the index of the active tab */
-  activeKey?: number; 
+  activeKey?: number;
   /** handle tab selection */
-  onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number) => void; 
+  onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number) => void;
   /** uniquely identifies the Tabs */
-  id?: string; 
+  id?: string;
   /** enables the filled tab list layout */
-  isFilled?: boolean; 
+  isFilled?: boolean;
   /** enables Secondary Tab styling */
-  isSecondary?: boolean; 
+  isSecondary?: boolean;
   /** aria-label for the left Scroll Button */
-  leftScrollAriaLabel?: string; 
+  leftScrollAriaLabel?: string;
   /** aria-label for the right Scroll Button */
-  rightScrollAriaLabel?: string; 
+  rightScrollAriaLabel?: string;
   /** determines what tag is used around the Tabs. Use "nav" to define the Tabs inside a navigation region */
-  variant: typeof TabsVariant | 'div' | 'nav'; 
+  variant?: typeof TabsVariant | 'div' | 'nav';
   /** provides an accessible label for the Tabs. Labels should be unique for each set of Tabs that are present on a page. When variant is set to nav, this prop should be defined to differentiate the Tabs from other navigation regions on the page. */
-  'aria-label'?: string; 
+  'aria-label'?: string;
 }
 
 export interface TabsState {
@@ -48,7 +48,7 @@ export interface TabsState {
 export class Tabs extends React.Component<TabsProps, TabsState> {
   tabList = React.createRef<HTMLUListElement>();
   constructor(props: TabsProps) {
-    super(props); 
+    super(props);
     this.state = {
       showLeftScrollButton: false,
       showRightScrollButton: false,
