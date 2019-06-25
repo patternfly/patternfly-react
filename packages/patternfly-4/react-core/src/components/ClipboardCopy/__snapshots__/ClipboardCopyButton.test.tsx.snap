@@ -2,7 +2,9 @@
 
 exports[`copy button render 1`] = `
 <Tooltip
+  animation="scale"
   appendTo={[Function]}
+  aria="describedby"
   className=""
   content={
     <div>
@@ -13,9 +15,11 @@ exports[`copy button render 1`] = `
   enableFlip={true}
   entryDelay={2000}
   exitDelay={1000}
+  hideOnClick={true}
   isAppLauncher={false}
   maxWidth="500px"
   position="right"
+  showOnInit={false}
   trigger="mouseenter focus click"
   zIndex={9999}
 >

@@ -1,16 +1,13 @@
 import * as React from 'react';
-import Tippy from '@tippy.js/react';
+import Tippy, { TippyProps } from '@tippy.js/react';
 import { Instance as TippyInstance } from 'tippy.js';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import { css, getModifier } from '@patternfly/react-styles';
 import { TooltipArrow } from './TooltipArrow';
 import { TooltipContent } from './TooltipContent';
 import { KEY_CODES } from '../../helpers/constants';
+import { Omit } from '../../helpers/typeUtils';
 import { c_tooltip_MaxWidth as tooltipMaxWidth } from '@patternfly/react-tokens';
-import { tippyStyles } from './styles';
-import { ReactElement } from 'react';
-
-tippyStyles();
 
 export enum TooltipPosition {
   top = 'top',
@@ -19,7 +16,11 @@ export enum TooltipPosition {
   right = 'right'
 };
 
-export interface TooltipProps {
+export interface TooltipProps extends Omit<TippyProps, 'content'> {
+  /** The type of transition animation */
+  animation?: 'fade' | 'scale' | 'shift-toward' | 'perspective' | 'shift-away';
+  /** The aria-* attribute applied to the reference element. */
+  aria?: 'describedby' | 'labelledby' | null
   /** Tooltip position */
   position?: 'top' | 'bottom' | 'left' | 'right';
   /** Tooltip trigger: click, mouseenter, focus */
@@ -31,7 +32,7 @@ export interface TooltipProps {
   /** Tooltip content */
   content: React.ReactNode;
   /** The reference element to which the tooltip is relatively placed to */
-  children: ReactElement<any>;
+  children: React.ReactElement<any>;
   /** Delay in ms before the tooltip appears */
   entryDelay?: number;
   /** Delay in ms before the tooltip disappears */
@@ -46,11 +47,17 @@ export interface TooltipProps {
   isAppLauncher?: boolean;
   /** Distance of the tooltip to its target, defaults to 15 */
   distance?: number;
+  /** If the tooltip should display automatically on init */
+  showOnInit?: boolean;
+  /** Determines if the tooltip should hide if a click event is fired outside of it */
+  hideOnClick?: boolean;
 };
 
 export class Tooltip extends React.Component<TooltipProps> {
   private tip: TippyInstance;
   static defaultProps = {
+    animation: 'scale',
+    aria: 'describedby',
     position: 'top',
     trigger: 'mouseenter focus',
     enableFlip: true,
@@ -61,7 +68,9 @@ export class Tooltip extends React.Component<TooltipProps> {
     zIndex: 9999,
     maxWidth: tooltipMaxWidth && tooltipMaxWidth.value,
     isAppLauncher: false,
-    distance: 15
+    distance: 15,
+    showOnInit: false,
+    hideOnClick: true
   };
 
   storeTippyInstance = (tip:TippyInstance) => {
@@ -90,6 +99,8 @@ export class Tooltip extends React.Component<TooltipProps> {
 
   render() {
     const {
+      animation,
+      aria,
       position,
       trigger,
       enableFlip,
@@ -103,6 +114,8 @@ export class Tooltip extends React.Component<TooltipProps> {
       maxWidth,
       isAppLauncher,
       distance,
+      showOnInit,
+      hideOnClick,
       ...rest
     } = this.props;
     const content = (
@@ -117,7 +130,8 @@ export class Tooltip extends React.Component<TooltipProps> {
     );
     return (
       <Tippy
-        animation="scale"
+        aria={aria}
+        animation={animation}
         animateFill={false}
         appendTo={appendTo}
         boundary="window"
@@ -126,8 +140,9 @@ export class Tooltip extends React.Component<TooltipProps> {
         delay={[entryDelay, exitDelay]}
         distance={distance}
         flip={enableFlip}
-        interactive
+        hideOnClick={hideOnClick}
         ignoreAttributes
+        interactive
         lazy
         maxWidth={maxWidth}
         onCreate={this.storeTippyInstance}
@@ -142,6 +157,7 @@ export class Tooltip extends React.Component<TooltipProps> {
             }
           }
         }}
+        showOnInit={showOnInit}
         trigger={trigger}
         zIndex={zIndex}
       >

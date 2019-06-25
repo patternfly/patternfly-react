@@ -1,0 +1,12 @@
+diff --git a/node_modules/@tippy.js/react/esm/index.js b/node_modules/@tippy.js/react/esm/index.js
+index f82a3a4..20c7466 100644
+--- a/node_modules/@tippy.js/react/esm/index.js
++++ b/node_modules/@tippy.js/react/esm/index.js
+@@ -1,5 +1,5 @@
+-import tippy from 'tippy.js';
+-export { default as tippy } from 'tippy.js';
++import tippy from 'tippy.js/esm';
++export { default as tippy } from 'tippy.js/esm';
+ import React, { forwardRef, cloneElement, useState, useRef, useLayoutEffect, useEffect, Children } from 'react';
+ import { createPortal } from 'react-dom';
+ import PropTypes from 'prop-types';

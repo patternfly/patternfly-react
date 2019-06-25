@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Tippy from '@tippy.js/react';
+import Tippy, { TippyProps } from '@tippy.js/react';
 import { Instance as TippyInstance } from 'tippy.js';
 import { KEY_CODES } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
@@ -12,13 +12,11 @@ import { PopoverFooter } from './PopoverFooter';
 import { PopoverCloseButton } from './PopoverCloseButton';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
 import { c_popover_MaxWidth as popoverMaxWidth } from '@patternfly/react-tokens';
-import { tippyStyles } from '../Tooltip/styles';
 import { ReactElement } from 'react';
 // Can't use ES6 imports :(
 // The types for it are also wrong, we should probably ditch this dependency.
 // tslint:disable-next-line
 const FocusTrap: any = require('focus-trap-react');
-tippyStyles();
 
 export enum PopoverPosition {
   top = 'top',
@@ -27,7 +25,9 @@ export enum PopoverPosition {
   right = 'right'
 };
 
-export interface PopoverProps {
+export interface PopoverProps extends TippyProps {
+  /** The type of transition animation */
+  animation?: 'fade' | 'scale' | 'shift-toward' | 'perspective' | 'shift-away';
   /** Popover position */
   position?: 'top' | 'bottom' | 'left' | 'right';
   /** If true, tries to keep the popover in view by flipping it if necessary */
@@ -46,7 +46,7 @@ export interface PopoverProps {
   /**
    * True to show the popover programmatically. Used in conjunction with the shouldClose prop.
    * By default, the popover child element handles click events automatically. If you want to control this programmatically,
-   * the popover will not auto-close if the Close button is clicked, ESC key is used, or if a click occurs outside the popover.
+   * the popover will not auto-close if the Close button is clicked, or if a click occurs outside the popover.
    * Instead, the consumer is responsible for closing the popover themselves by adding a callback listener for the shouldClose prop.
    */
   isVisible?: boolean | null;
@@ -84,6 +84,7 @@ export interface PopoverState {
 export class Popover extends React.Component<PopoverProps, PopoverState> {
   private tip: TippyInstance;
   static defaultProps = {
+    animation: 'scale',
     position: 'top',
     enableFlip: true,
     className: '',
@@ -178,6 +179,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
 
   render() {
     const {
+      animation,
       position,
       enableFlip,
       children,
@@ -246,7 +248,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     return (
       <Tippy
         a11y={false}
-        animation="scale"
+        animation={animation}
         animateFill={false}
         appendTo={appendTo}
         boundary="window"

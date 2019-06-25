@@ -5,6 +5,8 @@ const { parse: parseCSS, stringify: stringifyCSS } = require('css');
 
 const baseCSSFilename = 'patternfly-base.css';
 const stylesDir = resolve(__dirname, '../dist/styles');
+const baseTippyStylesPath = resolve(__dirname, '../../../../node_modules/tippy.js/index.css');
+const tippyOverridesPath = resolve(__dirname, '../src/styles/tippyOverrides.css');
 const pfDir = dirname(require.resolve(`@patternfly/patternfly/${baseCSSFilename}`));
 
 const css = readFileSync(join(pfDir, baseCSSFilename), 'utf8');
@@ -33,6 +35,8 @@ ast.stylesheet.rules = ast.stylesheet.rules.filter(rule => {
   }
 });
 
+copySync(baseTippyStylesPath, join(stylesDir, 'tippy.css'));
+copySync(tippyOverridesPath, join(stylesDir, 'tippyOverrides.css'));
 copySync(join(pfDir, 'assets/images'), join(stylesDir, 'assets/images'));
 copySync(join(pfDir, 'assets/pficon'), join(stylesDir, 'assets/pficon'));
 copySync(join(pfDir, 'assets/fonts'), join(stylesDir, 'assets/fonts'), {
@@ -40,4 +44,8 @@ copySync(join(pfDir, 'assets/fonts'), join(stylesDir, 'assets/fonts'), {
     return !ununsedFontFilesRegExt.test(src);
   }
 });
-writeFileSync(join(stylesDir, 'base.css'), stringifyCSS(ast));
+writeFileSync(join(stylesDir, 'base.css'), `
+  ${stringifyCSS(ast)}
+  \n@import "./tippy.css";
+  \n@import "./tippyOverrides.css";
+`);

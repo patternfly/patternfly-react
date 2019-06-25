@@ -1,14 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`tooltip renders 1`] = `
-.pf-tippy {
-  display: block;
-}
-
 <ForwardRef(TippyWrapper)
   animateFill={false}
   animation="scale"
   appendTo={[Function]}
+  aria="describedby"
   boundary="window"
   className="pf-tippy"
   content={
@@ -32,6 +29,7 @@ exports[`tooltip renders 1`] = `
   }
   distance={15}
   flip={true}
+  hideOnClick={true}
   ignoreAttributes={true}
   interactive={true}
   lazy={true}
@@ -50,6 +48,7 @@ exports[`tooltip renders 1`] = `
       },
     }
   }
+  showOnInit={false}
   trigger="mouseenter focus"
   zIndex={9999}
 >

@@ -5,7 +5,7 @@ typescript: true
 propComponents: ['Tooltip']
 ---
 
-import { Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
+import { Button, Checkbox, Tooltip, TooltipPosition } from '@patternfly/react-core';
 
 ## Simple tooltip
 ```js
@@ -88,12 +88,89 @@ class TooltipPositions extends React.Component {
 import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
 
-<Tooltip
-  position="right"
-  content={
-    <div>Pancetta hamburger alcatra andouille shank frankfurter cow beef meatloaf shankle pork chop capicola tenderloin shoulder.</div>
+class TooltipOverLink extends React.Component {
+  render() {
+    return (
+      <Tooltip
+        position="right"
+        content={
+          <div>PatternFly 4 is an open source design system built to drive consistency and unify teams.</div>
+        }
+      >
+        <a tabIndex={-1} onClick={e => e.preventDefault()} href="https://www.patternfly.org/v4/">Patternfly 4 Website</a>
+      </Tooltip>
+    );
   }
->
-  <a href="">I'm a link with a tooltip!</a>
-</Tooltip>
+}
+```
+
+## Tooltip shown on init
+```js
+import React from 'react';
+import { Button, Tooltip } from '@patternfly/react-core';
+
+class OpenedTooltip extends React.Component {
+  render() {
+    return (
+    <Tooltip
+      position="right"
+      showOnInit
+      aria="labelledby"
+      trigger="manual"
+      hideOnClick={false}
+      content={
+        <div role="info">Pressing esc key will always close opened tooltips.</div>
+      }
+    >
+      <Button tabIndex={-1}>Tooltip shown on init</Button>
+    </Tooltip>
+    );
+  }
+}
+```
+
+## Tooltip using aria-labelledby announcement strategy
+```js
+import React from 'react';
+import { Tooltip } from '@patternfly/react-core';
+
+class LabelledbyTooltip extends React.Component {
+  render() {
+    return (
+      <>
+        <Tooltip
+          aria="labelledby"
+          position="top"
+          content={
+            <div role="status">This link uses aria-labelledby.</div>
+          }
+        >
+          <label style={{marginRight: '6px'}} htmlFor="tooltip-input-1">This element is related to the Tooltip via aria-labelledby</label>
+        </Tooltip>
+        <input id="tooltip-input-1" type="text" placeholder="Example Input" />
+      </>
+    );
+  }
+}
+```
+
+## Tooltip that announces its content immediately via `alert` role
+```js
+import React from 'react';
+import { Tooltip } from '@patternfly/react-core';
+
+class TooltipAlertRole extends React.Component {
+  render() {
+    return (
+    <Tooltip
+      position="top"
+      content={
+        <div role="alert">This is a really important tooltip!</div>
+      }
+    >
+      <span>Span With an Alert Tooltip</span>
+    </Tooltip>
+    );
+  }
+}
 ```

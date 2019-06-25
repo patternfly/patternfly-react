@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`popover can specify position as object value 1`] = `
-.pf-tippy {
-  display: block;
-}
-
 <ForwardRef(TippyWrapper)
   a11y={false}
   animateFill={false}
@@ -60,10 +56,6 @@ exports[`popover can specify position as object value 1`] = `
 `;
 
 exports[`popover renders close-button, header and body 1`] = `
-.pf-tippy {
-  display: block;
-}
-
 <ForwardRef(TippyWrapper)
   a11y={false}
   animateFill={false}
