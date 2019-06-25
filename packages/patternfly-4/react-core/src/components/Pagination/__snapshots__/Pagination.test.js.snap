@@ -64,14 +64,16 @@ exports[`component render custom pagination toggle 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <Item
+              <DropdownItem
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -88,15 +90,17 @@ exports[`component render custom pagination toggle 1`] = `
                     title={null}
                   />
                 </i>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -104,15 +108,17 @@ exports[`component render custom pagination toggle 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -120,15 +126,17 @@ exports[`component render custom pagination toggle 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -136,7 +144,7 @@ exports[`component render custom pagination toggle 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
+              </DropdownItem>,
             ]
           }
           isGrouped={false}
@@ -165,14 +173,16 @@ exports[`component render custom pagination toggle 1`] = `
             direction="down"
             dropdownItems={
               Array [
-                <Item
+                <DropdownItem
                   className="pf-c-options-menu__menu-item pf-m-selected"
                   component="button"
                   data-action="per-page-10"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   10
                   <span
@@ -189,15 +199,17 @@ exports[`component render custom pagination toggle 1`] = `
                       title={null}
                     />
                   </i>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-20"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   20
                   <span
@@ -205,15 +217,17 @@ exports[`component render custom pagination toggle 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-50"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   50
                   <span
@@ -221,15 +235,17 @@ exports[`component render custom pagination toggle 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-100"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   100
                   <span
@@ -237,7 +253,7 @@ exports[`component render custom pagination toggle 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
+                </DropdownItem>,
               ]
             }
             isGrouped={false}
@@ -651,14 +667,16 @@ exports[`component render custom perPageOptions 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <Item
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-1"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 some
                 <span
@@ -666,7 +684,7 @@ exports[`component render custom perPageOptions 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
+              </DropdownItem>,
             ]
           }
           isGrouped={false}
@@ -695,14 +713,16 @@ exports[`component render custom perPageOptions 1`] = `
             direction="down"
             dropdownItems={
               Array [
-                <Item
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-1"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   some
                   <span
@@ -710,7 +730,7 @@ exports[`component render custom perPageOptions 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
+                </DropdownItem>,
               ]
             }
             isGrouped={false}
@@ -1148,14 +1168,16 @@ exports[`component render custom start end 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <Item
+              <DropdownItem
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -1172,15 +1194,17 @@ exports[`component render custom start end 1`] = `
                     title={null}
                   />
                 </i>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -1188,15 +1212,17 @@ exports[`component render custom start end 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -1204,15 +1230,17 @@ exports[`component render custom start end 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -1220,7 +1248,7 @@ exports[`component render custom start end 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
+              </DropdownItem>,
             ]
           }
           isGrouped={false}
@@ -1249,14 +1277,16 @@ exports[`component render custom start end 1`] = `
             direction="down"
             dropdownItems={
               Array [
-                <Item
+                <DropdownItem
                   className="pf-c-options-menu__menu-item pf-m-selected"
                   component="button"
                   data-action="per-page-10"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   10
                   <span
@@ -1273,15 +1303,17 @@ exports[`component render custom start end 1`] = `
                       title={null}
                     />
                   </i>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-20"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   20
                   <span
@@ -1289,15 +1321,17 @@ exports[`component render custom start end 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-50"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   50
                   <span
@@ -1305,15 +1339,17 @@ exports[`component render custom start end 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-100"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   100
                   <span
@@ -1321,7 +1357,7 @@ exports[`component render custom start end 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
+                </DropdownItem>,
               ]
             }
             isGrouped={false}
@@ -2100,14 +2136,16 @@ exports[`component render last page 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <Item
+              <DropdownItem
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -2124,15 +2162,17 @@ exports[`component render last page 1`] = `
                     title={null}
                   />
                 </i>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -2140,15 +2180,17 @@ exports[`component render last page 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -2156,15 +2198,17 @@ exports[`component render last page 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -2172,7 +2216,7 @@ exports[`component render last page 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
+              </DropdownItem>,
             ]
           }
           isGrouped={false}
@@ -2201,14 +2245,16 @@ exports[`component render last page 1`] = `
             direction="down"
             dropdownItems={
               Array [
-                <Item
+                <DropdownItem
                   className="pf-c-options-menu__menu-item pf-m-selected"
                   component="button"
                   data-action="per-page-10"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   10
                   <span
@@ -2225,15 +2271,17 @@ exports[`component render last page 1`] = `
                       title={null}
                     />
                   </i>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-20"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   20
                   <span
@@ -2241,15 +2289,17 @@ exports[`component render last page 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-50"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   50
                   <span
@@ -2257,15 +2307,17 @@ exports[`component render last page 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-100"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   100
                   <span
@@ -2273,7 +2325,7 @@ exports[`component render last page 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
+                </DropdownItem>,
               ]
             }
             isGrouped={false}
@@ -2710,14 +2762,16 @@ exports[`component render limited number of pages 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <Item
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-10"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -2725,15 +2779,17 @@ exports[`component render limited number of pages 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-20"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -2750,15 +2806,17 @@ exports[`component render limited number of pages 1`] = `
                     title={null}
                   />
                 </i>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -2766,15 +2824,17 @@ exports[`component render limited number of pages 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -2782,7 +2842,7 @@ exports[`component render limited number of pages 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
+              </DropdownItem>,
             ]
           }
           isGrouped={false}
@@ -2811,14 +2871,16 @@ exports[`component render limited number of pages 1`] = `
             direction="down"
             dropdownItems={
               Array [
-                <Item
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-10"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   10
                   <span
@@ -2826,15 +2888,17 @@ exports[`component render limited number of pages 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item pf-m-selected"
                   component="button"
                   data-action="per-page-20"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   20
                   <span
@@ -2851,15 +2915,17 @@ exports[`component render limited number of pages 1`] = `
                       title={null}
                     />
                   </i>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-50"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   50
                   <span
@@ -2867,15 +2933,17 @@ exports[`component render limited number of pages 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-100"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   100
                   <span
@@ -2883,7 +2951,7 @@ exports[`component render limited number of pages 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
+                </DropdownItem>,
               ]
             }
             isGrouped={false}
@@ -3319,14 +3387,16 @@ exports[`component render no items 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <Item
+              <DropdownItem
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -3343,15 +3413,17 @@ exports[`component render no items 1`] = `
                     title={null}
                   />
                 </i>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -3359,15 +3431,17 @@ exports[`component render no items 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -3375,15 +3449,17 @@ exports[`component render no items 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -3391,7 +3467,7 @@ exports[`component render no items 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
+              </DropdownItem>,
             ]
           }
           isGrouped={false}
@@ -3420,14 +3496,16 @@ exports[`component render no items 1`] = `
             direction="down"
             dropdownItems={
               Array [
-                <Item
+                <DropdownItem
                   className="pf-c-options-menu__menu-item pf-m-selected"
                   component="button"
                   data-action="per-page-10"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   10
                   <span
@@ -3444,15 +3522,17 @@ exports[`component render no items 1`] = `
                       title={null}
                     />
                   </i>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-20"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   20
                   <span
@@ -3460,15 +3540,17 @@ exports[`component render no items 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-50"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   50
                   <span
@@ -3476,15 +3558,17 @@ exports[`component render no items 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-100"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   100
                   <span
@@ -3492,7 +3576,7 @@ exports[`component render no items 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
+                </DropdownItem>,
               ]
             }
             isGrouped={false}
@@ -3924,14 +4008,16 @@ exports[`component render should render correctly bottom 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <Item
+              <DropdownItem
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -3948,15 +4034,17 @@ exports[`component render should render correctly bottom 1`] = `
                     title={null}
                   />
                 </i>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -3964,15 +4052,17 @@ exports[`component render should render correctly bottom 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -3980,15 +4070,17 @@ exports[`component render should render correctly bottom 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -3996,7 +4088,7 @@ exports[`component render should render correctly bottom 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
+              </DropdownItem>,
             ]
           }
           isGrouped={false}
@@ -4025,14 +4117,16 @@ exports[`component render should render correctly bottom 1`] = `
             direction="down"
             dropdownItems={
               Array [
-                <Item
+                <DropdownItem
                   className="pf-c-options-menu__menu-item pf-m-selected"
                   component="button"
                   data-action="per-page-10"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   10
                   <span
@@ -4049,15 +4143,17 @@ exports[`component render should render correctly bottom 1`] = `
                       title={null}
                     />
                   </i>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-20"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   20
                   <span
@@ -4065,15 +4161,17 @@ exports[`component render should render correctly bottom 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-50"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   50
                   <span
@@ -4081,15 +4179,17 @@ exports[`component render should render correctly bottom 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-100"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   100
                   <span
@@ -4097,7 +4197,7 @@ exports[`component render should render correctly bottom 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
+                </DropdownItem>,
               ]
             }
             isGrouped={false}
@@ -4533,14 +4633,16 @@ exports[`component render should render correctly top 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <Item
+              <DropdownItem
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -4557,15 +4659,17 @@ exports[`component render should render correctly top 1`] = `
                     title={null}
                   />
                 </i>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -4573,15 +4677,17 @@ exports[`component render should render correctly top 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -4589,15 +4695,17 @@ exports[`component render should render correctly top 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -4605,7 +4713,7 @@ exports[`component render should render correctly top 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
+              </DropdownItem>,
             ]
           }
           isGrouped={false}
@@ -4634,14 +4742,16 @@ exports[`component render should render correctly top 1`] = `
             direction="down"
             dropdownItems={
               Array [
-                <Item
+                <DropdownItem
                   className="pf-c-options-menu__menu-item pf-m-selected"
                   component="button"
                   data-action="per-page-10"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   10
                   <span
@@ -4658,15 +4768,17 @@ exports[`component render should render correctly top 1`] = `
                       title={null}
                     />
                   </i>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-20"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   20
                   <span
@@ -4674,15 +4786,17 @@ exports[`component render should render correctly top 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-50"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   50
                   <span
@@ -4690,15 +4804,17 @@ exports[`component render should render correctly top 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-100"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   100
                   <span
@@ -4706,7 +4822,7 @@ exports[`component render should render correctly top 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
+                </DropdownItem>,
               ]
             }
             isGrouped={false}
@@ -5148,14 +5264,16 @@ exports[`component render titles 1`] = `
           direction="down"
           dropdownItems={
             Array [
-              <Item
+              <DropdownItem
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -5172,15 +5290,17 @@ exports[`component render titles 1`] = `
                     title={null}
                   />
                 </i>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -5188,15 +5308,17 @@ exports[`component render titles 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -5204,15 +5326,17 @@ exports[`component render titles 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -5220,7 +5344,7 @@ exports[`component render titles 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
+              </DropdownItem>,
             ]
           }
           isGrouped={false}
@@ -5249,14 +5373,16 @@ exports[`component render titles 1`] = `
             direction="down"
             dropdownItems={
               Array [
-                <Item
+                <DropdownItem
                   className="pf-c-options-menu__menu-item pf-m-selected"
                   component="button"
                   data-action="per-page-10"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   10
                   <span
@@ -5273,15 +5399,17 @@ exports[`component render titles 1`] = `
                       title={null}
                     />
                   </i>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-20"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   20
                   <span
@@ -5289,15 +5417,17 @@ exports[`component render titles 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-50"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   50
                   <span
@@ -5305,15 +5435,17 @@ exports[`component render titles 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-100"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   100
                   <span
@@ -5321,7 +5453,7 @@ exports[`component render titles 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
+                </DropdownItem>,
               ]
             }
             isGrouped={false}
@@ -5751,14 +5883,16 @@ exports[`component render up drop direction 1`] = `
           direction="up"
           dropdownItems={
             Array [
-              <Item
+              <DropdownItem
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -5775,15 +5909,17 @@ exports[`component render up drop direction 1`] = `
                     title={null}
                   />
                 </i>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -5791,15 +5927,17 @@ exports[`component render up drop direction 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -5807,15 +5945,17 @@ exports[`component render up drop direction 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
-              <Item
+              </DropdownItem>,
+              <DropdownItem
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href="#"
+                href=""
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -5823,7 +5963,7 @@ exports[`component render up drop direction 1`] = `
                 >
                    per page
                 </span>
-              </Item>,
+              </DropdownItem>,
             ]
           }
           isGrouped={false}
@@ -5852,14 +5992,16 @@ exports[`component render up drop direction 1`] = `
             direction="up"
             dropdownItems={
               Array [
-                <Item
+                <DropdownItem
                   className="pf-c-options-menu__menu-item pf-m-selected"
                   component="button"
                   data-action="per-page-10"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   10
                   <span
@@ -5876,15 +6018,17 @@ exports[`component render up drop direction 1`] = `
                       title={null}
                     />
                   </i>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-20"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   20
                   <span
@@ -5892,15 +6036,17 @@ exports[`component render up drop direction 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-50"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   50
                   <span
@@ -5908,15 +6054,17 @@ exports[`component render up drop direction 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
-                <Item
+                </DropdownItem>,
+                <DropdownItem
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-100"
-                  href="#"
+                  href=""
                   isDisabled={false}
                   isHovered={false}
                   onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
                 >
                   100
                   <span
@@ -5924,7 +6072,7 @@ exports[`component render up drop direction 1`] = `
                   >
                      per page
                   </span>
-                </Item>,
+                </DropdownItem>,
               ]
             }
             isGrouped={false}
