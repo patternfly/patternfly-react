@@ -60,7 +60,7 @@ class SimpleForm extends React.Component {
     return (
       <Form>
         <FormGroup
-          label="Required Name"
+          label="Name"
           isRequired
           fieldId="simple-form-name"
           helperText="Please provide your full name"
@@ -75,7 +75,7 @@ class SimpleForm extends React.Component {
             onChange={this.handleTextInputChange1}
           />
         </FormGroup>
-        <FormGroup label="Required Email" isRequired fieldId="simple-form-email">
+        <FormGroup label="Email" isRequired fieldId="simple-form-email">
           <TextInput
             isRequired
             type="email"
@@ -176,7 +176,7 @@ class HorizontalForm extends React.Component {
     return (
       <Form isHorizontal>
         <FormGroup
-          label="Required Name"
+          label="Name"
           isRequired
           fieldId="horizontal-form-name"
           helperText="Please provide your full name"
