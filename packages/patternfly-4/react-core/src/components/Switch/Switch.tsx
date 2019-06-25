@@ -39,7 +39,7 @@ export class Switch extends React.Component<SwitchProps> {
     super(props);
     if (!props.id && !props['aria-label']) {
       // tslint:disable-next-line:no-console
-      console.error('Switch:F Switch requires either an id or aria-label to be specified');
+      console.error('Switch: Switch requires either an id or aria-label to be specified');
     }
     this.id =props.id || getUniqueId();
   }
