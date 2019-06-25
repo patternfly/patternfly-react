@@ -96,7 +96,7 @@ class SimpleForm extends React.Component {
             onChange={this.handleTextInputChange3}
           />
         </FormGroup>
-        <FormGroup isInline label="required How can we contact you?" isRequired fieldId="inline-radio1">
+        <FormGroup isInline label="How can we contact you?" isRequired fieldId="inline-radio1">
           <Radio id="inlineradio1" name="inlineradios" label="Email" aria-label="Email" />
           <Radio id="inlineradio2" name="inlineradios" label="Phone" aria-label="Phone" />
           <Radio
