@@ -5,86 +5,94 @@ typescript: true
 propComponents: ['Chart', 'ChartBar', 'ChartStack']
 ---
 
-import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 import './chart-stack.scss';
 
-## Vertical blue stack chart
+## Simple stack chart with right-aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartStack } from '@patternfly/react-charts';
+import { Chart, ChartStack } from '@patternfly/react-charts';
 
 <div>
-  <div className="stack-chart-container">
-    <Chart>
-      <ChartStack domainPadding={{x: [10, 2]}}>
-        <ChartBar data={[{ x: 'Cats', y: 1 }, { x: 'Dogs', y: 2 }, { x: 'Birds', y: 5 }, { x: 'Mice', y: 3 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 2 }, { x: 'Dogs', y: 1 }, { x: 'Birds', y: 7 }, { x: 'Mice', y: 4 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 4 }, { x: 'Dogs', y: 4 }, { x: 'Birds', y: 9 }, { x: 'Mice', y: 7 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 3 }, { x: 'Dogs', y: 3 }, { x: 'Birds', y: 8 }, { x: 'Mice', y: 5 }]} />
-      </ChartStack>
-    </Chart>
-  </div>
-</div>
-```
-
-## Vertical multi-color stack chart with zoom
-```js
-import React from 'react';
-import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
-
-<div>
-  <div className="stack-chart-container">
+  <div className="stack-chart-legend-right">
     <Chart
-      allowZoom={true}
-      themeColor={ChartThemeColor.multi}
-      themeVariant={ChartThemeVariant.light}
+      legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }, { name: 'Mice' }]}
+      legendOrientation="vertical"
+      legendPosition="right"
+      height={250}
+      padding={{
+        right: 200
+      }}
+      width={600}
     >
       <ChartStack domainPadding={{x: [10, 2]}}>
-        <ChartBar data={[{ x: 'Cats', y: 1 }, { x: 'Dogs', y: 2 }, { x: 'Birds', y: 5 }, { x: 'Mice', y: 3 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 2 }, { x: 'Dogs', y: 1 }, { x: 'Birds', y: 7 }, { x: 'Mice', y: 4 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 4 }, { x: 'Dogs', y: 4 }, { x: 'Birds', y: 9 }, { x: 'Mice', y: 7 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 3 }, { x: 'Dogs', y: 3 }, { x: 'Birds', y: 8 }, { x: 'Mice', y: 5 }]} />
+        <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
+        <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
+        <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
+        <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
       </ChartStack>
     </Chart>
   </div>
 </div>
 ```
 
-## Horizontal blue (default) stack chart
+## Gold, horizontal stack chart with bottom-aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartStack } from '@patternfly/react-charts';
+import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 
 <div>
-  <div className="stack-chart-container">
-    <Chart>
-      <ChartStack domainPadding={{x: [10, 2]}} horizontal>
-        <ChartBar data={[{ x: 'Cats', y: 1 }, { x: 'Dogs', y: 2 }, { x: 'Birds', y: 5 }, { x: 'Mice', y: 3 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 2 }, { x: 'Dogs', y: 1 }, { x: 'Birds', y: 7 }, { x: 'Mice', y: 4 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 4 }, { x: 'Dogs', y: 4 }, { x: 'Birds', y: 9 }, { x: 'Mice', y: 7 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 3 }, { x: 'Dogs', y: 3 }, { x: 'Birds', y: 8 }, { x: 'Mice', y: 5 }]} />
-      </ChartStack>
-    </Chart>
-  </div>
-</div>
-```
-
-## Horizontal multi-color stack chart
-```js
-import React from 'react';
-import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
-
-<div>
-  <div className="stack-chart-container">
+  <div className="stack-chart-legend-bottom">
     <Chart
-      themeColor={ChartThemeColor.multi}
-      themeVariant={ChartThemeVariant.light}
+      domainPadding={{ x: [30, 25] }}
+      legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }, { name: 'Mice' }]}
+      legendPosition="bottom"
+      height={275}
+      padding={{
+        bottom: 75
+      }}
+      themeColor={ChartThemeColor.gold}
+      width={450}
     >
+      <ChartAxis />
+      <ChartAxis dependentAxis showGrid />
+      <ChartStack domainPadding={{x: [10, 2]}}>
+        <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
+        <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
+        <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
+        <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
+      </ChartStack>
+      
+    </Chart>
+  </div>
+</div>
+```
+
+## Multi-color, horizontal stack chart with bottom-aligned legend
+```js
+import React from 'react';
+import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
+
+<div>
+  <div className="stack-chart-legend-bottom">
+    <Chart
+      domainPadding={{ x: [30, 25] }}
+      legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }, { name: 'Mice' }]}
+      legendPosition="bottom"
+      height={275}
+      padding={{
+        bottom: 75
+      }}
+      themeColor={ChartThemeColor.multi}
+      width={450}
+    >
+      <ChartAxis />
+      <ChartAxis dependentAxis showGrid />
       <ChartStack domainPadding={{x: [10, 2]}} horizontal>
-        <ChartBar data={[{ x: 'Cats', y: 1 }, { x: 'Dogs', y: 2 }, { x: 'Birds', y: 5 }, { x: 'Mice', y: 3 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 2 }, { x: 'Dogs', y: 1 }, { x: 'Birds', y: 7 }, { x: 'Mice', y: 4 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 4 }, { x: 'Dogs', y: 4 }, { x: 'Birds', y: 9 }, { x: 'Mice', y: 7 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 3 }, { x: 'Dogs', y: 3 }, { x: 'Birds', y: 8 }, { x: 'Mice', y: 5 }]} />
+        <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
+        <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
+        <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
+        <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
       </ChartStack>
     </Chart>
   </div>

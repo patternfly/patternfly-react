@@ -1,16 +1,15 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {
-
   NumberOrCallback,
   OrientationTypes,
   StringOrNumberOrCallback,
   VictoryStyleObject,
   VictoryTooltip,
-  VictoryTooltipProps, VictoryGroupProps
+  VictoryTooltipProps,
 } from 'victory';
-import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { getTheme } from '../ChartUtils/chart-theme';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -71,7 +70,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * described above.
    * Examples: flyoutComponent={<Flyout x={50} y={50}/>}, flyoutComponent={<MyCustomFlyout/>}
    */
-  flyoutComponent?: React.ReactElement;
+  flyoutComponent?: React.ReactElement<any>;
   /**
    * The style prop applies SVG style properties to the rendered flyout container. These props will be passed to the
    * flyoutComponent.
@@ -81,7 +80,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * The groupComponent prop takes a component instance which will be used to create group elements for use within
    * container elements. This prop defaults to a <g> tag.}
    */
-  groupComponent?: React.ReactElement;
+  groupComponent?: React.ReactElement<any>;
   /**
    * The height prop defines the height of the tooltip flyout. This prop may be given as a positive number or a function
    * of datum. If this prop is not set, height will be determined based on an approximate text size calculated from the
@@ -106,7 +105,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * new ChartLabel will be created with the props described above.
    * Examples: labelComponent={<ChartLabel dy={20}/>}, labelComponent={<MyCustomLabel/>}
    */
-  labelComponent?: React.ReactElement;
+  labelComponent?: React.ReactElement<any>;
   /**
    * The orientation prop determines which side of the (x, y) coordinate the tooltip should be rendered on.
    * This prop can be given as “top”, “bottom”, “left”, “right”, or as a function of datum that returns one of these

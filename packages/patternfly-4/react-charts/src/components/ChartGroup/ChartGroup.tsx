@@ -18,9 +18,8 @@ import {
   VictoryGroupProps,
   VictoryZoomContainer
 } from 'victory';
-import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { getTheme } from '../ChartUtils/chart-theme';
-import {ReactNode} from "react";
+import { ChartThemeDefinition } from '../ChartTheme';
+import { getTheme } from '../ChartUtils';
 
 export enum ChartGroupSortOrder {
   ascending = 'ascending',

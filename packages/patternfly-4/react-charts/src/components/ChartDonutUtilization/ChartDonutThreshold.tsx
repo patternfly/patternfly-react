@@ -7,16 +7,15 @@ import {
   EventPropTypeInterface,
   PaddingProps,
   StringOrNumberOrCallback,
+  VictoryPie,
   VictoryStyleInterface
 } from "victory";
 import { Data } from 'victory-core';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { ChartContainer } from '../ChartContainer/ChartContainer';
-import { ChartDonut, ChartDonutProps } from '../ChartDonut/ChartDonut';
-import { ChartThemeDefinition } from "../ChartTheme/ChartTheme";
-import { getChartOrigin } from '../ChartUtils/chart-origin';
-import { getDonutThresholdDynamicTheme, getDonutThresholdStaticTheme } from '../ChartUtils/chart-theme';
-import { DonutStyles } from "../ChartTheme/themes/donut-theme";
+import { ChartContainer } from '../ChartContainer';
+import { ChartDonut, ChartDonutProps } from '../ChartDonut';
+import { ChartCommonStyles, ChartDonutStyles, ChartThemeDefinition } from "../ChartTheme";
+import { getChartOrigin, getDonutThresholdDynamicTheme, getDonutThresholdStaticTheme } from '../ChartUtils';
 
 export enum ChartDonutThresholdDonutOrientation {
   left = 'left',
@@ -241,8 +240,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
   height?: number;
   /**
    * When creating a donut chart, this prop determines the number of pixels between
-   * the center of the chart and the inner edge of a donut. When this prop is set to zero
-   * a regular pie chart is rendered.
+   * the center of the chart and the inner edge.
    */
   innerRadius?: number;
   /**
@@ -411,9 +409,9 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   labels = [], // Don't show any tooltip labels by default, let consumer override if needed
   legendComponent,
   legendData,
-  legendPosition = DonutStyles.legend.position as ChartDonutThresholdLegendPosition,
+  legendPosition = ChartCommonStyles.legend.position as ChartDonutThresholdLegendPosition,
   standalone = true,
-  subTitlePosition = DonutStyles.label.subTitlePosition as ChartDonutThresholdSubTitlePosition,
+  subTitlePosition = ChartDonutStyles.label.subTitlePosition as ChartDonutThresholdSubTitlePosition,
   themeColor,
   themeVariant,
   x,
@@ -538,38 +536,40 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
           ...childProps,
         });
       }
+      return child;
     });
 
   // Static threshold dount chart
   const chart = (
-    <React.Fragment>
-      <ChartDonut
-        data={getComputedData()}
-        height={donutHeight}
-        labels={labels}
-        origin={getChartOrigin({
-          chartHeight: donutHeight,
-          chartWidth: donutWidth,
-          legendPosition,
-          svgWidth: width
-        })}
-        standalone={false}
-        theme={theme}
-        width={donutWidth}
-        {...rest}
-      />
-      {renderChildren()}
-    </React.Fragment>
+    <ChartDonut
+      data={getComputedData()}
+      height={donutHeight}
+      labels={labels}
+      origin={getChartOrigin({
+        chartHeight: donutHeight,
+        chartWidth: donutWidth,
+        legendPosition,
+        svgWidth: width
+      })}
+      standalone={false}
+      theme={theme}
+      width={donutWidth}
+      {...rest}
+    />
   );
 
   return standalone ? (
     <ChartContainer width={width} height={height}>
       {chart}
+      {renderChildren()}
     </ChartContainer>
   ) : (
-    chart
+    <React.Fragment>
+      {chart}
+      {renderChildren()}
+    </React.Fragment>
   );
 };
 
-// Note: ChartDonut.role must be hoisted
-hoistNonReactStatics(ChartDonutThreshold, ChartDonut);
+// Note: VictoryPie.role must be hoisted
+hoistNonReactStatics(ChartDonutThreshold, VictoryPie);

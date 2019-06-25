@@ -1,10 +1,4 @@
-export { getLegendX, getLegendY } from './chart-legend';
-export { getChartOrigin, getChartOriginX, getChartOriginY } from './chart-origin';
-export {
-  getCustomTheme,
-  getDonutTheme,
-  getDonutThresholdDynamicTheme,
-  getDonutThresholdStaticTheme,
-  getDonutUtilizationTheme,
-  getTheme
-} from './chart-theme';
+export * from './chart-label';
+export * from './chart-legend';
+export * from './chart-origin';
+export * from './chart-theme';

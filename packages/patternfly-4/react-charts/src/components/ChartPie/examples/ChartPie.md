@@ -5,58 +5,67 @@ typescript: true
 propComponents: ['ChartLegend', 'ChartPie']
 ---
 
-## Blue pie chart
-
 import { ChartLegend, ChartPie, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-pie.scss';
 
+## Simple pie chart with right-aligned legend
 ```js
 import React from 'react';
-import { ChartLegend, ChartPie } from '@patternfly/react-charts';
+import { ChartPie } from '@patternfly/react-charts';
 
 <div>
-  <div className="pie-chart-inline">
-    <div className="pie-chart-legend-right">
-      <ChartPie
-        data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-        labels={datum => `${datum.x}: ${datum.y}`}
-      />
-    </div>
-    <ChartLegend
-      data={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
+  <div className="pie-chart-legend-right">
+    <ChartPie
+      data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       height={230}
-      orientation={'vertical'}
-      responsive={false}
-      y={70}
+      labels={datum => `${datum.x}: ${datum.y}`}
+      legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
+      legendOrientation="vertical"
+      legendPosition="right"
+      width={350}
     />
   </div>
 </div>
 ```
 
-## Multi-color pie chart
+## Orange pie chart with right-aligned legend
 ```js
 import React from 'react';
-import { ChartLegend, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 <div>
-  <div className="pie-chart-container">
-    <div className="pie-chart-legend-bottom">
-      <ChartPie
-        data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-        labels={datum => `${datum.x}: ${datum.y}`}
-        themeColor={ChartThemeColor.multi}
-        themeVariant={ChartThemeVariant.light}
-      />
-    </div>
+  <div className="pie-chart-legend-right">
+    <ChartPie
+      data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+      height={230}
+      labels={datum => `${datum.x}: ${datum.y}`}
+      legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
+      legendOrientation="vertical"
+      legendPosition="right"
+      themeColor={ChartThemeColor.orange}
+      width={350}
+    />
   </div>
-  <ChartLegend
-    data={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
-    height={35}
-    orientation={'horizontal'}
-    responsive={false}
-    themeColor={ChartThemeColor.multi}
-    themeVariant={ChartThemeVariant.light}
-    x={8}
-  />
+</div>
+```
+
+## Multi-color pie chart with bottom-aligned legend
+```js
+import React from 'react';
+import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
+
+<div>
+  <div className="pie-chart-legend-bottom">
+    <ChartPie
+      data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+      height={275}
+      labels={datum => `${datum.x}: ${datum.y}`}
+      legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
+      legendPosition="bottom"
+      pieHeight={230}
+      themeColor={ChartThemeColor.multi}
+      width={300}
+    />
+  </div>
 </div>
 ```

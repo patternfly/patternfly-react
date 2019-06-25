@@ -10,16 +10,21 @@ import {
   StringOrNumberOrCallback,
   VictoryLegend,
   VictoryLegendProps,
-  VictoryStyleInterface
+  VictoryStyleInterface,
 } from 'victory';
-import { ChartContainer } from '../ChartContainer/ChartContainer';
-import { ChartPoint } from '../ChartPoint/ChartPoint';
-import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { getTheme } from '../ChartUtils/chart-theme';
+import { ChartContainer } from '../ChartContainer';
+import { ChartPoint } from '../ChartPoint';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { getTheme } from '../ChartUtils';
 
 export enum ChartLegendOrientation {
   horizontal = 'horizontal',
   vertical = 'vertical'
+};
+
+export enum ChartLegendPosition {
+  bottom = 'bottom',
+  right = 'right'
 };
 
 export enum ChartLegendRowGutter {
@@ -47,7 +52,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * for the border component is based on approximated
    * text measurements, and may need to be adjusted.
    */
-  borderComponent?: React.ReactElement;
+  borderComponent?: React.ReactElement<any>;
   /**
    * The borderPadding specifies the amount of padding that should
    * be added between the legend items and the border. This prop may be given as
@@ -109,7 +114,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * If a dataComponent is not provided, ChartLegend will use its
    * default Point component.
    */
-  dataComponent?: React.ReactElement;
+  dataComponent?: React.ReactElement<any>;
   /**
    * ChartLegend uses the standard eventKey prop to specify how event targets
    * are addressed. This prop is not commonly used.
@@ -161,7 +166,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * custom component itself. If labelComponent is omitted, a new
    * ChartLabel will be created with the props described above.
    */
-  labelComponent?: React.ReactElement;
+  labelComponent?: React.ReactElement<any>;
   /**
    * The orientation prop takes a string that defines whether legend data
    * are displayed in a row or column. When orientation is "horizontal",
@@ -255,7 +260,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * or ignored within the custom component itself. If labelComponent is omitted,
    * a new ChartLabel will be created with the props described above.
    */
-  titleComponent?: React.ReactElement;
+  titleComponent?: React.ReactElement<any>;
   /**
    * The titleOrientation prop specifies where the a title should be rendered
    * in relation to the rest of the legend. Possible values
@@ -291,9 +296,11 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
   theme = getTheme(themeColor, themeVariant),
   containerComponent = <ChartContainer responsive={responsive} theme={theme} />,
   ...rest
-}: ChartLegendProps) => (
-  <VictoryLegend containerComponent={containerComponent} dataComponent={dataComponent} theme={theme} {...rest} />
-);
+}: ChartLegendProps) => {
+  return (
+    <VictoryLegend containerComponent={containerComponent} dataComponent={dataComponent} theme={theme} {...rest} />
+  );
+};
 
-// Note: VictoryLegend.role must be hoisted
-hoistNonReactStatics(ChartLegend, VictoryLegend);
+// Note: VictoryLegend.role must be hoisted, but getBaseProps causes error with ChartVoronoiContainer
+hoistNonReactStatics(ChartLegend, VictoryLegend, { getBaseProps: true});

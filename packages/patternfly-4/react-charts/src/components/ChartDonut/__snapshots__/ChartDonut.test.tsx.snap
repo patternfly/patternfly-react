@@ -478,12 +478,11 @@ exports[`Chart 1`] = `
         }
       />
     }
-    origin={
-      Object {
-        "x": 115,
-        "y": 115,
-      }
-    }
+    legendPosition="right"
+    pieDx={0}
+    pieDy={0}
+    pieHeight={230}
+    pieWidth={230}
     standalone={false}
     theme={
       Object {
@@ -1434,12 +1433,11 @@ exports[`Chart 2`] = `
         }
       />
     }
-    origin={
-      Object {
-        "x": 115,
-        "y": 115,
-      }
-    }
+    legendPosition="right"
+    pieDx={0}
+    pieDy={0}
+    pieHeight={230}
+    pieWidth={230}
     standalone={false}
     theme={
       Object {
@@ -2406,12 +2404,11 @@ exports[`renders component data 1`] = `
         }
       />
     }
-    origin={
-      Object {
-        "x": 100,
-        "y": 100,
-      }
-    }
+    legendPosition="right"
+    pieDx={0}
+    pieDy={0}
+    pieHeight={200}
+    pieWidth={200}
     standalone={false}
     theme={
       Object {

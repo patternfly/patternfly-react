@@ -8,34 +8,22 @@ import {
   EventPropTypeInterface,
   PaddingProps,
   StringOrNumberOrCallback,
+  VictoryPie,
   VictoryStyleInterface
 } from 'victory';
 import { getDonutTheme } from '../ChartUtils/chart-theme';
-import { ChartContainer } from '../ChartContainer/ChartContainer';
-import { ChartLabel } from '../ChartLabel/ChartLabel';
-import { ChartLegend } from "../ChartLegend/ChartLegend";
-import { ChartPie, ChartPieProps } from '../ChartPie/ChartPie';
-import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { DonutStyles } from '../ChartTheme/themes/donut-theme';
-import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
-import { getLabelX, getLabelY } from "../ChartUtils/chart-label";
-import { getLegendDimensions, getLegendX, getLegendY } from "../ChartUtils/chart-legend";
-import { getChartOrigin } from '../ChartUtils/chart-origin';
+import { ChartContainer } from '../ChartContainer';
+import { ChartLabel } from '../ChartLabel';
+import { ChartLegendPosition } from "../ChartLegend";
+import { ChartPie, ChartPieProps } from '../ChartPie';
+import { ChartCommonStyles, ChartDonutStyles, ChartThemeDefinition } from '../ChartTheme';
+import { ChartTooltip } from '../ChartTooltip';
+import { getLabelX, getLabelY } from "../ChartUtils";
 
 export enum ChartDonutLabelPosition {
   centroid = 'centroid',
   endAngle = 'endAngle',
   startAngle = 'startAngle'
-};
-
-export enum ChartDonutLegendOrientation {
-  horizontal = 'horizontal',
-  vertical = 'vertical'
-};
-
-export enum ChartDonutLegendPosition {
-  bottom = 'bottom',
-  right = 'right'
 };
 
 export enum ChartDonutSortOrder {
@@ -245,8 +233,7 @@ export interface ChartDonutProps extends ChartPieProps {
   height?: number;
   /**
    * When creating a donut chart, this prop determines the number of pixels between
-   * the center of the chart and the inner edge of a donut. When this prop is set to zero
-   * a regular pie chart is rendered.
+   * the center of the chart and the inner edge.
    */
   innerRadius?: number;
   /**
@@ -473,17 +460,13 @@ export interface ChartDonutProps extends ChartPieProps {
 export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   donutDx = 0,
   donutDy = 0,
-  legendComponent = <ChartLegend />,
-  legendData,
-  legendDx = 0,
-  legendDy = 0,
-  legendPosition = DonutStyles.legend.position as ChartDonutLegendPosition,
+  legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
   standalone = true,
   subTitle,
   subTitleComponent = <ChartLabel />,
   subTitleDx = 0,
   subTitleDy = 0,
-  subTitlePosition = DonutStyles.label.subTitlePosition as ChartDonutSubTitlePosition,
+  subTitlePosition = ChartDonutStyles.label.subTitlePosition as ChartDonutSubTitlePosition,
   themeColor,
   themeVariant,
   title,
@@ -491,7 +474,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
 
   // destructure last
   theme = getDonutTheme(themeColor, themeVariant),
-  legendOrientation = theme.legend.orientation as ChartDonutLegendOrientation,
+
   capHeight = 1.1,
   height = theme.pie.height,
   width = theme.pie.width,
@@ -500,49 +483,15 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   innerRadius = (Math.min(donutHeight, donutWidth) - 34) / 2,
   ...rest
 }: ChartDonutProps) => {
-  // Returns legend
-  const getLegend = () => {
-    if (!legendData && !legendComponent.props.data) {
-      return null;
-    }
-    const props = legendComponent.props ? legendComponent.props : {};
-    return React.cloneElement(legendComponent, {
-      data: legendData,
-      orientation: legendOrientation,
-      standalone: false,
-      theme: theme,
-      x: getLegendX({
-        chartWidth: donutWidth,
-        dx: legendDx,
-        legendData,
-        legendOrientation: props.legendOrientation ? props.legendOrientation : legendOrientation,
-        legendPosition,
-        legendProps: props,
-        theme,
-        svgWidth: width
-      }),
-      y: getLegendY({
-        chartHeight: donutHeight,
-        chartType: 'pie',
-        dy: legendDy,
-        legendData: props.data ? props.data : legendData,
-        legendOrientation: props.legendOrientation ? props.legendOrientation : legendOrientation,
-        legendProps: props,
-        legendPosition,
-        theme
-      }),
-      ...props
-    });
-  };
 
   // Returns subtitle
   const getSubTitle = () => {
     if (!subTitle || subTitlePosition === ChartDonutSubTitlePosition.center) {
       return null;
     }
-    const props = titleComponent.props ? titleComponent.props : {};
+    const subTitleProps = titleComponent.props ? titleComponent.props : {};
     return React.cloneElement(titleComponent, {
-      style: DonutStyles.label.subTitle,
+      style: ChartDonutStyles.label.subTitle,
       text: subTitle,
       textAnchor: subTitlePosition === 'right' ? 'start' : 'middle',
       verticalAnchor: 'middle',
@@ -558,7 +507,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         dy: subTitleDy,
         labelPosition: subTitlePosition
       }),
-      ...props
+      ...subTitleProps
     });
   };
 
@@ -567,11 +516,11 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     if (!title) {
       return null;
     }
-    const props = titleComponent ? titleComponent.props : {};
+    const titleProps = titleComponent ? titleComponent.props : {};
     const showBoth = title && subTitle && subTitlePosition == ChartDonutSubTitlePosition.center;
     return React.cloneElement(titleComponent, {
       ...showBoth && { capHeight },
-      style: [DonutStyles.label.title, DonutStyles.label.subTitle],
+      style: [ChartDonutStyles.label.title, ChartDonutStyles.label.subTitle],
       text: showBoth ? [title, subTitle] : title,
       textAnchor: 'middle',
       verticalAnchor: 'middle',
@@ -587,48 +536,41 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
         dy: donutDy,
         labelPosition: 'center'
       }),
-      ...props
+      ...titleProps
     });
   };
 
   const chart = (
-    <React.Fragment>
-      <ChartPie
-        height={donutHeight}
-        innerRadius={innerRadius > 0 ? innerRadius : 0}
-        labelComponent={<ChartTooltip theme={theme} />}
-        origin={getChartOrigin({
-          chartHeight: donutHeight,
-          chartWidth: donutWidth,
-          dx: donutDx,
-          dy: donutDy,
-          legendPosition,
-          svgWidth: width
-        })}
-        standalone={false}
-        theme={theme}
-        width={donutWidth}
-        {...rest}
-      />
-    </React.Fragment>
+    <ChartPie
+      height={height}
+      innerRadius={innerRadius > 0 ? innerRadius : 0}
+      labelComponent={<ChartTooltip theme={theme} />}
+      legendPosition={legendPosition}
+      pieDx={donutDx}
+      pieDy={donutDy}
+      pieHeight={donutHeight}
+      pieWidth={donutWidth}
+      standalone={false}
+      theme={theme}
+      width={width}
+      {...rest}
+    />
   );
 
   return standalone ? (
     <ChartContainer height={height} width={width}>
       {chart}
-      {getLegend()}
       {getTitle()}
       {getSubTitle()}
     </ChartContainer>
   ) : (
     <React.Fragment>
       {chart}
-      {getLegend()}
       {getTitle()}
       {getSubTitle()}
     </React.Fragment>
   );
 };
 
-// Note: ChartPie.role must be hoisted
-hoistNonReactStatics(ChartDonut, ChartPie);
+// Note: VictoryPie.role must be hoisted
+hoistNonReactStatics(ChartDonut, VictoryPie);

@@ -4,9 +4,9 @@ import {
   VictoryVoronoiContainer,
   VictoryVoronoiContainerProps
 } from 'victory';
-import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { ChartTooltip } from '../ChartTooltip/ChartTooltip';
-import { getTheme } from '../ChartUtils/chart-theme';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartTooltip } from '../ChartTooltip';
+import { getTheme } from '../ChartUtils';
 
 export enum ChartVoronoiDimension {
   x = 'x',
@@ -53,7 +53,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * The labelComponent prop specified the component that will be rendered when labels are defined
    * on ChartVoronoiContainer. If the labels prop is omitted, no label component will be rendered.
    */
-  labelComponent?: React.ReactElement;
+  labelComponent?: React.ReactElement<any>;
   /**
    * The onActivated prop accepts a function to be called whenever new data points are activated.
    * The function is called with the parameters points (an array of active data objects) and props
@@ -122,7 +122,13 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
   theme = getTheme(themeColor, themeVariant),
   labelComponent = <ChartTooltip theme={theme} />,
   ...rest
-}: ChartVoronoiContainerProps) => <VictoryVoronoiContainer labelComponent={labelComponent} {...rest} />;
+}: ChartVoronoiContainerProps) => {
+  // Note: theme is required by voronoiContainerMixin, but VictoryVoronoiContainer is missing a prop type
+
+  // @ts-ignore
+  return <VictoryVoronoiContainer labelComponent={labelComponent} theme={theme} {...rest} />;
+}
+ChartVoronoiContainer.defaultProps = (VictoryVoronoiContainer as any).defaultProps;
 
 // Note: VictoryVoronoiContainer.defaultEvents & VictoryContainer.role must be hoisted
 hoistNonReactStatics(ChartVoronoiContainer, VictoryVoronoiContainer);

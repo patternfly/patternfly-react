@@ -16,8 +16,8 @@ import {
   VictoryArea,
   VictoryAreaProps
 } from 'victory';
-import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { getTheme } from '../ChartUtils/chart-theme';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { getTheme } from '../ChartUtils';
 
 export enum ChartAreaSortOrder {
   ascending = 'ascending',
@@ -81,7 +81,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * or modified or ignored within the custom component itself. If a dataComponent is
    * not provided, ChartArea will use its default Area component.
    */
-  dataComponent?: React.ReactElement;
+  dataComponent?: React.ReactElement<any>;
   /**
    * The domain prop describes the range of values your chart will cover. This prop can be
    * given as a array of the minimum and maximum expected values for your bar chart,
