@@ -5,88 +5,95 @@ typescript: true
 propComponents: ['Chart', 'ChartBar', 'ChartGroup']
 ---
 
-## Simple Bar Chart
-
-import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 import './chart-bar.scss';
 
+## Simple bar chart with right-aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartBar } from '@patternfly/react-charts';
 
 <div>
-  <div className="bar-chart-container">
-    <Chart domainPadding={{ x: [30, 25] }}>
-      <ChartBar data={[ { x: 'Cats', y: 1 }, { x: 'Dogs', y: 2 }, { x: 'Birds', y: 5 }, { x: 'Mice', y: 3 } ]} />
+  <div className="bar-chart-legend-right">
+    <Chart
+      domain={{y: [0,9]}}
+      domainPadding={{ x: [30, 25] }}
+      legendData={[{ name: 'Cats' }]}
+      legendOrientation="vertical"
+      legendPosition="right"
+      height={250}
+      padding={{
+        right: 200
+      }}
+      width={600}
+    >
+      <ChartBar data={[ { name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 } ]} />
     </Chart>
   </div>
 </div>
 ```
 
-## Grouped Bar Chart with Light Blue Theme
+## Purple bar chart with tooltip and right-aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartGroup } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 
 <div>
-  <div className="bar-chart-container">
+  <div className="bar-chart-legend-right">
     <Chart
+      containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
       domainPadding={{ x: [30, 25] }}
-      themeColor={ChartThemeColor.blue}
-      themeVariant={ChartThemeVariant.light}
+      legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }, { name: 'Mice' }]}
+      legendOrientation="vertical"
+      legendPosition="right"
+      height={250}
+      padding={{
+        right: 200
+      }}
+      themeColor={ChartThemeColor.purple}
+      width={600}
     >
+      <ChartAxis />
+      <ChartAxis dependentAxis showGrid />
       <ChartGroup offset={11}>
-        <ChartBar data={[{ x: 'Cats', y: 1 }, { x: 'Dogs', y: 2 }, { x: 'Birds', y: 5 }, { x: 'Mice', y: 3 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 2 }, { x: 'Dogs', y: 1 }, { x: 'Birds', y: 7 }, { x: 'Mice', y: 4 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 4 }, { x: 'Dogs', y: 4 }, { x: 'Birds', y: 9 }, { x: 'Mice', y: 7 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 3 }, { x: 'Dogs', y: 3 }, { x: 'Birds', y: 8 }, { x: 'Mice', y: 5 }]} />
+        <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
+        <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
+        <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
+        <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
       </ChartGroup>
     </Chart>
   </div>
 </div>
 ```
 
-## Multi-color bar chart with zoom
+## Multi-color, horizontal bar chart with zoom and bottom-aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 
 <div>
-  <div className="bar-chart-container">
+  <div className="bar-chart-legend-bottom">
     <Chart
-      allowZoom={true}
+      allowZoom
       domainPadding={{ x: [30, 25] }}
+      legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }, { name: 'Mice' }]}
+      legendPosition="bottom"
+      height={400}
+      padding={{
+        bottom: 75
+      }}
       themeColor={ChartThemeColor.multi}
-      themeVariant={ChartThemeVariant.light}
+      width={450}
     >
-      <ChartGroup offset={11}>
-        <ChartBar data={[{ x: 'Cats', y: 1 }, { x: 'Dogs', y: 2 }, { x: 'Birds', y: 5 }, { x: 'Mice', y: 3 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 2 }, { x: 'Dogs', y: 1 }, { x: 'Birds', y: 7 }, { x: 'Mice', y: 4 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 4 }, { x: 'Dogs', y: 4 }, { x: 'Birds', y: 9 }, { x: 'Mice', y: 7 }]} />
-        <ChartBar data={[{ x: 'Cats', y: 3 }, { x: 'Dogs', y: 3 }, { x: 'Birds', y: 8 }, { x: 'Mice', y: 5 }]} />
+      <ChartAxis />
+      <ChartAxis dependentAxis showGrid />
+      <ChartGroup allowZoom={true} offset={11} horizontal>
+        <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
+        <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
+        <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
+        <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
       </ChartGroup>
     </Chart>
-  </div>
-</div>
-```
-
-## Multi-color bar chart with zoom no x,y axis
-```js
-import React from 'react';
-import { ChartBar, ChartGroup, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
-
-<div>
-  <div className="bar-chart-container">
-    <ChartGroup offset={11}
-      allowZoom={true}
-      domainPadding={{ x: [30, 25] }}
-      themeColor={ChartThemeColor.multi}
-      themeVariant={ChartThemeVariant.light}>
-      <ChartBar data={[{ x: 'Cats', y: 1 }, { x: 'Dogs', y: 2 }, { x: 'Birds', y: 5 }, { x: 'Mice', y: 3 }]} />
-      <ChartBar data={[{ x: 'Cats', y: 2 }, { x: 'Dogs', y: 1 }, { x: 'Birds', y: 7 }, { x: 'Mice', y: 4 }]} />
-      <ChartBar data={[{ x: 'Cats', y: 4 }, { x: 'Dogs', y: 4 }, { x: 'Birds', y: 9 }, { x: 'Mice', y: 7 }]} />
-      <ChartBar data={[{ x: 'Cats', y: 3 }, { x: 'Dogs', y: 3 }, { x: 'Birds', y: 8 }, { x: 'Mice', y: 5 }]} />
-    </ChartGroup>
   </div>
 </div>
 ```

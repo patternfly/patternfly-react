@@ -3,6 +3,129 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.53.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.53.2...@patternfly/react-core@3.53.3) (2019-06-25)
+
+
+### Bug Fixes
+
+* **form:** update text in form component ([#2352](https://github.com/patternfly/patternfly-react/issues/2352)) ([929ed2d](https://github.com/patternfly/patternfly-react/commit/929ed2d))
+
+
+
+
+
+## [3.53.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.53.1...@patternfly/react-core@3.53.2) (2019-06-25)
+
+
+### Bug Fixes
+
+* **expandable:** Add button type to the Expandable Component ([#2340](https://github.com/patternfly/patternfly-react/issues/2340)) ([670b8a1](https://github.com/patternfly/patternfly-react/commit/670b8a1))
+* **Tabs:** Make variant prop optional ([#2348](https://github.com/patternfly/patternfly-react/issues/2348)) ([b17fa06](https://github.com/patternfly/patternfly-react/commit/b17fa06)), closes [#2345](https://github.com/patternfly/patternfly-react/issues/2345)
+
+
+
+
+
+## [3.53.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.53.0...@patternfly/react-core@3.53.1) (2019-06-25)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.53.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.52.1...@patternfly/react-core@3.53.0) (2019-06-24)
+
+
+### Features
+
+* **form:** wrap form label text in new element ([#2332](https://github.com/patternfly/patternfly-react/issues/2332)) ([b1301a3](https://github.com/patternfly/patternfly-react/commit/b1301a3))
+
+
+
+
+
+## [3.52.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.52.0...@patternfly/react-core@3.52.1) (2019-06-24)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.52.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.51.2...@patternfly/react-core@3.52.0) (2019-06-24)
+
+
+### Features
+
+* **tippy:** upgrade tippy deps and apply api changes ([#2326](https://github.com/patternfly/patternfly-react/issues/2326)) ([b2dc2e2](https://github.com/patternfly/patternfly-react/commit/b2dc2e2))
+
+
+
+
+
+## [3.51.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.51.1...@patternfly/react-core@3.51.2) (2019-06-24)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.51.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.51.0...@patternfly/react-core@3.51.1) (2019-06-24)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.51.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.5...@patternfly/react-core@3.51.0) (2019-06-24)
+
+
+### Features
+
+* **Tabs:** Convert tabs to typescript ([#2253](https://github.com/patternfly/patternfly-react/issues/2253)) ([e4e5b16](https://github.com/patternfly/patternfly-react/commit/e4e5b16))
+
+
+
+
+
+## [3.50.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.4...@patternfly/react-core@3.50.5) (2019-06-21)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.50.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.3...@patternfly/react-core@3.50.4) (2019-06-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.50.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.2...@patternfly/react-core@3.50.3) (2019-06-20)
+
+
+### Bug Fixes
+
+* **Alert:** fix close button action ([#2308](https://github.com/patternfly/patternfly-react/issues/2308)) ([175352c](https://github.com/patternfly/patternfly-react/commit/175352c)), closes [patternfly/patternfly-org#1213](https://github.com/patternfly/patternfly-org/issues/1213)
+
+
+
+
+
+## [3.50.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.1...@patternfly/react-core@3.50.2) (2019-06-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [3.50.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.50.0...@patternfly/react-core@3.50.1) (2019-06-19)
 
 **Note:** Version bump only for package @patternfly/react-core

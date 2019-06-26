@@ -36,19 +36,19 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.AvatarDemo
   },
   {
-    id: 'backdrop-demo', 
-    name: 'Backdrop Demo', 
+    id: 'backdrop-demo',
+    name: 'Backdrop Demo',
     componentType: Examples.BackdropDemo
-  }, 
+  },
   {
     id: 'backgroundimage-demo',
-    name: 'Background Image Demo', 
+    name: 'Background Image Demo',
     componentType: Examples.BackgroundImageDemo
   },
   {
-    id: 'badge-demo', 
-    name: 'Badge Demo', 
-    componentType: Examples.BadgeDemo 
+    id: 'badge-demo',
+    name: 'Badge Demo',
+    componentType: Examples.BadgeDemo
   },
   {
     id: 'brand-demo',
@@ -57,28 +57,33 @@ export const Demos: DemoInterface[] = [
   },
   {
     id: 'breadcrumb-demo',
-    name: 'Breadcrumb Demo', 
+    name: 'Breadcrumb Demo',
     componentType: Examples.BreadcrumbDemo
   },
   {
-    id: 'button-demo', 
-    name: 'Button Demo', 
+    id: 'button-demo',
+    name: 'Button Demo',
     componentType: Examples.ButtonDemo
-  }, 
+  },
   {
-    id: 'card-demo', 
+    id: 'card-demo',
     name: 'Card Demo',
     componentType: Examples.CardDemo
   },
   {
-    id: 'checkbox-demo', 
-    name: 'Checkbox Demo', 
+    id: 'checkbox-demo',
+    name: 'Checkbox Demo',
     componentType: Examples.CheckboxDemo
-  }, 
+  },
   {
-    id: 'chipgroup-demo', 
+    id: 'chipgroup-demo',
     name: 'ChipGroup Demo',
-    componentType: Examples.BadgeChip 
+    componentType: Examples.BadgeChip
+  },
+  {
+    id: 'data-list-demo',
+    name: 'Data List Demo',
+    componentType: Examples.DataListDemo
   },
   {
     id: 'context-selector-demo', 
@@ -91,8 +96,8 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.EmptyStateDemo
   },
   {
-    id: 'form-demo', 
-    name: 'Form Demo', 
+    id: 'form-demo',
+    name: 'Form Demo',
     componentType: Examples.FormDemo
   },
   {

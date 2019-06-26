@@ -11,8 +11,8 @@ import {
   VictoryAxis,
   VictoryAxisProps,
 } from 'victory';
-import { getTheme } from '../ChartUtils/chart-theme';
-import { ChartThemeDefinition } from "../ChartTheme/ChartTheme";
+import { ChartThemeDefinition } from "../ChartTheme";
+import { getAxisTheme, getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -38,7 +38,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * or modified or ignored within the custom component itself. If an axisComponent
    * is not supplied, ChartAxis will render its default AxisLine component.
    */
-  axisComponent?: React.ReactElement;
+  axisComponent?: React.ReactElement<any>;
   /**
    * The axisLabelComponent prop takes in an entire component which will be used
    * to create the axis label. The new element created from the passed axisLabelComponent
@@ -48,7 +48,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * the custom component itself. If an axisLabelComponent is not supplied, a new
    * ChartLabel will be created with props described above
    */
-  axisLabelComponent?: React.ReactElement;
+  axisLabelComponent?: React.ReactElement<any>;
   /**
    * The axisValue prop may be used instead of axisAngle to position the dependent axis. Ths prop is useful when
    * dependent axes should line up with values on the independent axis.
@@ -151,7 +151,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * or modified or ignored within the custom component itself. If a gridComponent
    * is not supplied, ChartAxis will render its default GridLine component.
    */
-  gridComponent?: React.ReactElement;
+  gridComponent?: React.ReactElement<any>;
   /**
    * The groupComponent prop takes an entire component which will be used to
    * create group elements for use within container elements. This prop defaults
@@ -268,6 +268,10 @@ export interface ChartAxisProps extends VictoryAxisProps {
    */
   sharedEvents?: any;
   /**
+   * Show axis grid and ticks
+   */
+  showGrid?: boolean;
+  /**
    * By default domainPadding is coerced to existing quadrants. This means that if a given domain only includes positive
    * values, no amount of padding applied by domainPadding will result in a domain with negative values. This is the
    * desired behavior in most cases. For users that need to apply padding without regard to quadrant, the
@@ -359,7 +363,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * or modified or ignored within the custom component itself. If a tickComponent
    * is not supplied, ChartAxis will render its default Tick component.
    */
-  tickComponent?: React.ReactElement;
+  tickComponent?: React.ReactElement<any>;
   /**
    * The tickCount prop specifies approximately how many ticks should be drawn on the axis if
    * tickValues are not explicitly provided. This value is calculated by d3 scale and
@@ -384,7 +388,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * the custom component itself. If an tickLabelComponent is not supplied, a new
    * ChartLabel will be created with props described above
    */
-  tickLabelComponent?: React.ReactElement;
+  tickLabelComponent?: React.ReactElement<any>;
   /**
    * The tickValues prop explicitly specifies which tick values to draw on the axis.
    * @example ["apples", "bananas", "oranges"], [2, 4, 6, 8]
@@ -404,10 +408,17 @@ export interface ChartAxisProps extends VictoryAxisProps {
 }
 
 export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
+  showGrid = false,
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
+
+  // destructure last
+  theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartAxisProps) => <VictoryAxis theme={theme} {...rest} />;
+}: ChartAxisProps) => {
+  return (
+    <VictoryAxis theme={showGrid ? getAxisTheme(themeColor, themeVariant) : theme} {...rest} />
+  );
+}
 
 hoistNonReactStatics(ChartAxis, VictoryAxis);

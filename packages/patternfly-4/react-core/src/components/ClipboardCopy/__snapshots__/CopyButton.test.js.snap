@@ -3,12 +3,13 @@
 exports[`copy button render 1`] = `
 <Tooltip
   appendTo={[Function]}
-  className={null}
+  className=""
   content={
     <div>
       Copy Me
     </div>
   }
+  distance={15}
   enableFlip={true}
   entryDelay={2000}
   exitDelay={1000}

@@ -2,27 +2,27 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Dropdown from './Dropdown';
 import { DropdownPosition, DropdownDirection } from './dropdownConstants';
-import DropdownItem from './DropdownItem';
+import InternalDropdownItem from './InternalDropdownItem';
 import DropdownSeparator from './Separator';
 import DropdownToggle from './DropdownToggle';
 import KebabToggle from './KebabToggle';
 
 const dropdownItems = [
-  <DropdownItem key="link">Link</DropdownItem>,
-  <DropdownItem key="action" component="button">
+  <InternalDropdownItem key="link">Link</InternalDropdownItem>,
+  <InternalDropdownItem key="action" component="button">
     Action
-  </DropdownItem>,
-  <DropdownItem key="disabled link" isDisabled>
+  </InternalDropdownItem>,
+  <InternalDropdownItem key="disabled link" isDisabled>
     Disabled Link
-  </DropdownItem>,
-  <DropdownItem key="disabled action" isDisabled component="button">
+  </InternalDropdownItem>,
+  <InternalDropdownItem key="disabled action" isDisabled component="button">
     Disabled Action
-  </DropdownItem>,
+  </InternalDropdownItem>,
   <DropdownSeparator key="separator" />,
-  <DropdownItem key="separated link">Separated Link</DropdownItem>,
-  <DropdownItem key="separated action" component="button">
+  <InternalDropdownItem key="separated link">Separated Link</InternalDropdownItem>,
+  <InternalDropdownItem key="separated action" component="button">
     Separated Action
-  </DropdownItem>
+  </InternalDropdownItem>
 ];
 
 describe('dropdown', () => {

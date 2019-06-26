@@ -12,28 +12,20 @@ exports[`DataList Cells 1`] = `
 <div
   className="pf-c-data-list__item-content"
 >
-  <DataListCell
-    alignRight={false}
+  <Component
     className="data-list-custom"
     id="primary-item"
-    isFilled={true}
-    isIcon={false}
     key="list-id-1"
-    width={1}
   >
     Primary Id
-  </DataListCell>
-  <DataListCell
-    alignRight={false}
+  </Component>
+  <Component
     className="data-list-custom"
     id="primary-item"
-    isFilled={true}
-    isIcon={false}
     key="list-id-2"
-    width={1}
   >
     Primary Id 2
-  </DataListCell>
+  </Component>
 </div>
 `;
 
@@ -65,26 +57,30 @@ exports[`DataList DataListAction dropdown 1`] = `
       direction="down"
       dropdownItems={
         Array [
-          <Item
+          <DropdownItem
             className=""
             component="button"
-            href="#"
+            href=""
             isDisabled={false}
             isHovered={false}
             onClick={[MockFunction]}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             action-1
-          </Item>,
-          <Item
+          </DropdownItem>,
+          <DropdownItem
             className=""
             component="button"
-            href="#"
+            href=""
             isDisabled={false}
             isHovered={false}
             onClick={[MockFunction]}
+            tooltip={null}
+            tooltipProps={Object {}}
           >
             action-2
-          </Item>,
+          </DropdownItem>,
         ]
       }
       isGrouped={false}

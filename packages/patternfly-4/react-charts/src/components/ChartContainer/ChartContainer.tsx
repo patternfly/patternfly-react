@@ -4,8 +4,8 @@ import {
   VictoryContainer,
   VictoryContainerProps
 } from 'victory';
-import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { getTheme } from '../ChartUtils/chart-theme';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts

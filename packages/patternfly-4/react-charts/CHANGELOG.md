@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.3...@patternfly/react-charts@4.4.4) (2019-06-25)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [4.4.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.2...@patternfly/react-charts@4.4.3) (2019-06-25)
+
+
+### Bug Fixes
+
+* **charts:** ensure thresholds are sorted ([#2341](https://github.com/patternfly/patternfly-react/issues/2341)) ([f44d4c5](https://github.com/patternfly/patternfly-react/commit/f44d4c5))
+
+
+
+
+
+## [4.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.1...@patternfly/react-charts@4.4.2) (2019-06-21)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [4.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.0...@patternfly/react-charts@4.4.1) (2019-06-20)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [4.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.3.7...@patternfly/react-charts@4.4.0) (2019-06-20)
+
+
+### Features
+
+* **charts:** add invert prop for reversing thresholds ([#2294](https://github.com/patternfly/patternfly-react/issues/2294)) ([7617e6a](https://github.com/patternfly/patternfly-react/commit/7617e6a))
+
+
+
+
+
 ## [4.3.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.3.6...@patternfly/react-charts@4.3.7) (2019-06-18)
 
 **Note:** Version bump only for package @patternfly/react-charts

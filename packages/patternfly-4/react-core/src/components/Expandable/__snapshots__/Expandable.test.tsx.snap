@@ -8,6 +8,7 @@ exports[`Expandable 1`] = `
     aria-expanded={false}
     className="pf-c-expandable__toggle"
     onClick={[Function]}
+    type="button"
   >
     <AngleRightIcon
       aria-hidden={true}
@@ -36,6 +37,7 @@ exports[`Renders Expandable expanded 1`] = `
     aria-expanded={true}
     className="pf-c-expandable__toggle"
     onClick={[Function]}
+    type="button"
   >
     <AngleRightIcon
       aria-hidden={true}

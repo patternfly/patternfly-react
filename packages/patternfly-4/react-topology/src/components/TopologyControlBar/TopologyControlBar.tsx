@@ -259,7 +259,7 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
     const renderedButton = (
       <Button
         id={button.id}
-        className={`pf-topology-control-bar__button pf-u-px-sm pf-u-mr-xs${button.disabled ? ' pf-m-disabled' : ''}`}
+        className={`pf-topology-control-bar__button${button.disabled ? ' pf-m-disabled' : ''}`}
         onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => handleButtonClick(event, button)}
         disabled={button.disabled}
         aria-disabled={button.disabled}

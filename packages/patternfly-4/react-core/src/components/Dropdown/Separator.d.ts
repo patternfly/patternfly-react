@@ -1,7 +1,6 @@
 import { FunctionComponent } from 'react';
-import { DropdownItemProps } from './DropdownItem';
 
-export interface SeparatorProps extends DropdownItemProps {
+export interface SeparatorProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 declare const Separator: FunctionComponent<SeparatorProps>;

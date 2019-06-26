@@ -16,6 +16,7 @@ import { LightMultiColorTheme } from '../ChartTheme/themes/light/multi-color-the
 import { LightOrangeColorTheme } from '../ChartTheme/themes/light/orange-color-theme';
 import { LightPurpleColorTheme } from '../ChartTheme/themes/light/purple-color-theme';
 import {
+  ChartAxisTheme,
   ChartBaseTheme,
   ChartDonutTheme,
   ChartDonutUtilizationDynamicTheme,
@@ -26,11 +27,18 @@ import {
   ChartThemeColor,
   ChartThemeVariant
 } from '../ChartTheme/ChartTheme';
+import { cloneDeep } from 'lodash';
 
 // Apply custom properties to color and base themes
-export const getCustomTheme = (themeColor: string, themeVariant: string,
-                               customTheme: ChartThemeDefinition): ChartThemeDefinition =>
+export const getCustomTheme = (themeColor: string, themeVariant: string, customTheme: ChartThemeDefinition
+): ChartThemeDefinition =>
   merge(getTheme(themeColor, themeVariant), customTheme);
+
+// Apply axis threshold properties onto base theme
+export const getAxisTheme = (themeColor: string, themeVariant: string) : ChartThemeDefinition => {
+  const theme = getCustomTheme(themeColor, themeVariant, ChartAxisTheme);
+  return theme;
+}
 
 // Apply donut properties onto pie chart theme
 export const getDonutTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
@@ -49,8 +57,14 @@ export const getDonutThresholdDynamicTheme = (themeColor: string, themeVariant: 
 };
 
 // Apply static donut threshold properties onto pie chart theme
-export const getDonutThresholdStaticTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, themeVariant, ChartDonutThresholdStaticTheme);
+export const getDonutThresholdStaticTheme = (themeColor: string, themeVariant: string, invert?: boolean
+): ChartThemeDefinition => {
+  const staticTheme = cloneDeep(ChartDonutThresholdStaticTheme);
+  if (invert) {
+    staticTheme.pie.colorScale = staticTheme.pie.colorScale.reverse();
+  }
+  return getCustomTheme(themeColor, themeVariant, staticTheme);
+};
 
 // Apply donut utilization properties onto pie chart theme
 export const getDonutUtilizationTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {

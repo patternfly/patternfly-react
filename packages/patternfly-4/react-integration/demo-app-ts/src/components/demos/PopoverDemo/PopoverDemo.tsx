@@ -9,7 +9,7 @@ export class PopoverDemo extends Component {
     children: <div id='popoverTarget'>Hello</div>
   };
 
-  render = () => {
+  render() {
     return <Popover
       headerContent={this.myPopoverProps.headerContent}
       bodyContent={this.myPopoverProps.bodyContent}

@@ -1,6 +1,7 @@
 ---
 title: 'Tooltip'
 cssPrefix: 'pf-c-tooltip'
+typescript: true
 propComponents: ['Tooltip']
 ---
 
@@ -80,4 +81,19 @@ class TooltipPositions extends React.Component {
     );
   }
 }
+```
+
+## Tooltip over Link
+```js
+import React from 'react';
+import { Tooltip } from '@patternfly/react-core';
+
+<Tooltip
+  position="right"
+  content={
+    <div>Pancetta hamburger alcatra andouille shank frankfurter cow beef meatloaf shankle pork chop capicola tenderloin shoulder.</div>
+  }
+>
+  <a href="">I'm a link with a tooltip!</a>
+</Tooltip>
 ```

@@ -2,169 +2,147 @@
 title: 'Area'
 section: 'charts'
 typescript: true
-propComponents: ['ChartArea', 'ChartGroup', 'ChartLegend', 'ChartVoronoiContainer']
+propComponents: ['Chart', 'ChartArea', 'ChartGroup', 'ChartVoronoiContainer']
 ---
 
-import { ChartArea, ChartGroup, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLegend, ChartLegendWrapper, ChartVoronoiContainer } from '@patternfly/react-charts';
 import './chart-area.scss';
 
-## Simple chart
+## Simple area chart with right-aligned legend
 ```js
 import React from 'react';
-import { ChartArea, ChartGroup, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartGroup } from '@patternfly/react-charts';
 
-class SimpleChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = React.createRef();
-    this.state = {
-      width: 0
-    };
-
-    this.getTooltipLabel = datum => `${datum.name}: ${datum.y}`;
-
-    this.handleResize = () => {
-      this.setState({ width: this.containerRef.current.clientWidth });
-    };
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ width: this.containerRef.current.clientWidth });
-      window.addEventListener('resize', this.handleResize);
-    });
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-  }
-
-  render() {
-    const { width } = this.state;
-    const container = <ChartVoronoiContainer labels={this.getTooltipLabel} />;
-
-    return (
-      <div ref={this.containerRef}>
-        <div className="area-chart-overflow">
-          <Chart containerComponent={container} height={200} width={width}>
-            <ChartGroup>
-              <ChartArea
-                data={[
-                  { name: 'Cats', x: 1, y: 2 },
-                  { name: 'Cats', x: 2, y: 3 },
-                  { name: 'Cats', x: 3, y: 4 },
-                  { name: 'Cats', x: 4, y: 5 }
-                ]}
-              />
-              <ChartArea
-                data={[
-                  { name: 'Dogs', x: 1, y: 1 },
-                  { name: 'Dogs', x: 2, y: 2 },
-                  { name: 'Dogs', x: 3, y: 3 },
-                  { name: 'Dogs', x: 4, y: 4 },
-                  { name: 'Dogs', x: 5, y: 4 }
-                ]}
-              />
-            </ChartGroup>
-          </Chart>
-        </div>
-        <ChartLegend
-          data={[{ name: 'Cats' }, { name: 'Dogs' }]}
-          height={50}
-          responsive={false}
-          title="Average number of pets"
-          width={width}
+<div>
+  <div className="area-chart-legend-right">
+    <Chart
+      legendData={[{ name: 'Cats' }]}
+      legendOrientation="vertical"
+      legendPosition="right"
+      height={200}
+      padding={{
+        right: 200
+      }}
+      width={800}
+    >
+      <ChartGroup>
+        <ChartArea
+          data={[
+            { name: 'Cats', x: 1, y: 3 },
+            { name: 'Cats', x: 2, y: 4 },
+            { name: 'Cats', x: 3, y: 8 },
+            { name: 'Cats', x: 4, y: 6 }
+          ]}
         />
-      </div>
-    );
-  }
-}
+      </ChartGroup>
+    </Chart>
+  </div>
+</div>
 ```
 
-## Custom colors chart
+## Cyan area chart with tooltip and right-aligned legend
 ```js
 import React from 'react';
-import { ChartArea, ChartGroup, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
-class CustomColorsChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = React.createRef();
-    this.state = {
-      width: 0
-    };
-
-    this.getTooltipLabel = datum => `${datum.name}: ${datum.y}`;
-
-    this.handleResize = () => {
-      this.setState({ width: this.containerRef.current.clientWidth });
-    };
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ width: this.containerRef.current.clientWidth });
-      window.addEventListener('resize', this.handleResize);
-    });
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-  }
-
-  render() {
-    const { width } = this.state;
-    const container = <ChartVoronoiContainer labels={this.getTooltipLabel} />;
-    const cats = {
-      data: {
-        fill: '#486b00', // global_success_color_200.value,
-        stroke: '#92d400' // global_success_color_100.value
-      }
-    };
-    const dogs = {
-      data: {
-        fill: '#007bba', // global_primary_color_100.value,
-        stroke: '#00659c' // global_primary_color_200.value
-      }
-    };
-
-    return (
-      <div ref={this.containerRef}>
-        <div className="area-chart-overflow">
-          <Chart containerComponent={container} height={200} width={width}>
-            <ChartGroup>
-              <ChartArea
-                data={[
-                  { name: 'Cats', x: 1, y: 2 },
-                  { name: 'Cats', x: 2, y: 3 },
-                  { name: 'Cats', x: 3, y: 4 },
-                  { name: 'Cats', x: 4, y: 5 }
-                ]}
-                style={cats}
-              />
-              <ChartArea
-                data={[
-                  { name: 'Dogs', x: 1, y: 1 },
-                  { name: 'Dogs', x: 2, y: 2 },
-                  { name: 'Dogs', x: 3, y: 3 },
-                  { name: 'Dogs', x: 4, y: 4 },
-                  { name: 'Dogs', x: 5, y: 4 }
-                ]}
-                style={dogs}
-              />
-            </ChartGroup>
-          </Chart>
-        </div>
-        <ChartLegend
-          colorScale={[cats.data.fill, dogs.data.fill]}
-          data={[{ name: 'Cats' }, { name: 'Dogs' }]}
-          height={50}
-          responsive={false}
-          title="Average number of pets"
-          width={width}
+<div>
+  <div className="area-chart-legend-right">
+    <Chart
+      containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
+      legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}
+      legendOrientation="vertical"
+      legendPosition="right"
+      height={200}
+      padding={{
+        right: 200
+      }}
+      themeColor={ChartThemeColor.cyan}
+      width={800}
+    >
+      <ChartAxis />
+      <ChartAxis dependentAxis showGrid />
+      <ChartGroup>
+        <ChartArea
+          data={[
+            { name: 'Cats', x: 1, y: 3 },
+            { name: 'Cats', x: 2, y: 4 },
+            { name: 'Cats', x: 3, y: 8 },
+            { name: 'Cats', x: 4, y: 6 }
+          ]}
         />
-      </div>
-    );
-  }
-}
+        <ChartArea
+          data={[
+            { name: 'Birds', x: 1, y: 2 },
+            { name: 'Birds', x: 2, y: 3 },
+            { name: 'Birds', x: 3, y: 4 },
+            { name: 'Birds', x: 4, y: 5 },
+            { name: 'Birds', x: 5, y: 6 }
+          ]}
+        />
+        <ChartArea
+          data={[
+            { name: 'Dogs', x: 1, y: 1 },
+            { name: 'Dogs', x: 2, y: 2 },
+            { name: 'Dogs', x: 3, y: 3 },
+            { name: 'Dogs', x: 4, y: 2 },
+            { name: 'Dogs', x: 5, y: 4 }
+          ]}
+        />
+      </ChartGroup>
+    </Chart>
+  </div>
+</div>
+```
+
+## Multi-color area chart with tooltip and bottom-aligned legend
+```js
+import React from 'react';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
+
+<div>
+  <div className="area-chart-legend-bottom">
+    <Chart
+      containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
+      legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}
+      legendPosition="bottom"
+      height={225}
+      padding={{
+        bottom: 75
+      }}
+      themeColor={ChartThemeColor.multi}
+      width={650}
+    >
+      <ChartAxis />
+      <ChartAxis dependentAxis showGrid />
+      <ChartGroup>
+        <ChartArea
+          data={[
+            { name: 'Cats', x: 1, y: 3 },
+            { name: 'Cats', x: 2, y: 4 },
+            { name: 'Cats', x: 3, y: 8 },
+            { name: 'Cats', x: 4, y: 6 }
+          ]}
+        />
+        <ChartArea
+          data={[
+            { name: 'Birds', x: 1, y: 2 },
+            { name: 'Birds', x: 2, y: 3 },
+            { name: 'Birds', x: 3, y: 4 },
+            { name: 'Birds', x: 4, y: 5 },
+            { name: 'Birds', x: 5, y: 6 }
+          ]}
+        />
+        <ChartArea
+          data={[
+            { name: 'Dogs', x: 1, y: 1 },
+            { name: 'Dogs', x: 2, y: 2 },
+            { name: 'Dogs', x: 3, y: 3 },
+            { name: 'Dogs', x: 4, y: 2 },
+            { name: 'Dogs', x: 5, y: 4 }
+          ]}
+        />
+      </ChartGroup>
+    </Chart>
+  </div>
+</div>
 ```

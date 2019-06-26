@@ -980,7 +980,35 @@ exports[`allows tooltip via container component 1`] = `
 <VictoryGroup
   containerComponent={
     <Unknown
+      activateData={true}
+      activateLabels={true}
+      className="VictoryContainer"
+      labelComponent={
+        <VictoryTooltip
+          active={false}
+          flyoutComponent={
+            <Flyout
+              pathComponent={<Path />}
+            />
+          }
+          groupComponent={<g />}
+          labelComponent={
+            <VictoryLabel
+              capHeight={0.71}
+              direction="inherit"
+              lineHeight={1}
+              textComponent={<Text />}
+              tspanComponent={<TSpan />}
+            />
+          }
+          renderInPortal={true}
+        />
+      }
       labels={[Function]}
+      portalComponent={<Portal />}
+      portalZIndex={99}
+      responsive={true}
+      voronoiPadding={5}
     />
   }
   groupComponent={<g />}

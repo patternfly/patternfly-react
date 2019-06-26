@@ -43,7 +43,9 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
       <div {...props} className={css(styles.formGroup, isInline ? getModifier(styles, 'inline', className) : '')}>
         {label && (
           <label className={css(styles.formLabel)} htmlFor={fieldId}>
-            {label}
+            <span className={css(styles.formLabelText)}>
+              {label}
+            </span>
             {isRequired && (
               <span className={css(styles.formLabelRequired)} aria-hidden="true">
                 {ASTERISK}
