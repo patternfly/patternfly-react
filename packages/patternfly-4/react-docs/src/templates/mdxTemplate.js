@@ -64,7 +64,7 @@ MdxTemplate.propTypes = {
 // We want the markdown from gatsby-mdx
 // We want component metadata from gatsby-transformer-react-docgen-typescript
 export const pageQuery = graphql`
-  query GetComponent($fileAbsolutePath: String!, $propComponents: [String]!) {
+  query GetComponent($fileAbsolutePath: String!, $propComponents: [String]!, $pathRegex: String!) {
     mdx(fileAbsolutePath: { eq: $fileAbsolutePath }) {
       code {
         body
@@ -75,7 +75,7 @@ export const pageQuery = graphql`
         cssPrefix
       }
     }
-    props: allComponentMetadata(filter: { name: { in: $propComponents } }) {
+    props: allComponentMetadata(filter: { name: { in: $propComponents }, path: { regex: $pathRegex } }) {
       nodes {
         name
         props {
