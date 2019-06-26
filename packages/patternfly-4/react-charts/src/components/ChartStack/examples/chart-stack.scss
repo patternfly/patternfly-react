@@ -1,7 +1,13 @@
 .ws-preview {
   & > * {
-    .stack-chart-container {
+    .stack-chart-legend-bottom {
+      height: 275px;
       width: 450px;
+    }
+
+    .stack-chart-legend-right {
+      height: 250px;
+      width: 600px;
     }
   }
 }

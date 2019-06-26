@@ -218,8 +218,11 @@ jobs:
     - image: circleci/node:8.15
     steps:
     - *attach_workspace
+    - restore_cache:
+        keys:
+        - *js_deps_cache_key
     - run:
-        name: Avoid hosts unknown for github
+        name: Avoid Unknown Host for github.com
         command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
     - run:
         name: Deploy to NPM and Github

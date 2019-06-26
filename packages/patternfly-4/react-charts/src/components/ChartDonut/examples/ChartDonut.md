@@ -49,7 +49,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 ## Multi-color donut chart with right-aligned legend
 ```js
 import React from 'react';
-import { ChartDonut } from '@patternfly/react-charts';
+import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
 <div>
   <div className="donut-chart-legend-right">

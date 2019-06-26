@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render active tab 1`] = `
+<TabContainer
+  eventKey={0}
+  forwardRef={null}
+  title="Tab item 1"
+>
+  Tab 1 section
+</TabContainer>
+`;
+
+exports[`should render tab 1`] = `
+<TabContainer
+  eventKey={0}
+  forwardRef={null}
+  title="Tab item 1"
+>
+  Tab 1 section
+</TabContainer>
+`;

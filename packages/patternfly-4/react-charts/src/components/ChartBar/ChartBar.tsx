@@ -17,8 +17,8 @@ import {
   VictoryBar,
   VictoryBarProps
 } from 'victory';
-import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { getTheme } from '../ChartUtils/chart-theme';
+import { ChartThemeDefinition } from '../ChartTheme';
+import { getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -112,7 +112,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * or modified or ignored within the custom component itself. If a dataComponent is
    * not provided, ChartBar will use its default Bar component.
    */
-  dataComponent?: React.ReactElement;
+  dataComponent?: React.ReactElement<any>;
   /**
    * The domain prop describes the range of values your chart will cover. This prop can be
    * given as a array of the minimum and maximum expected values for your bar chart,

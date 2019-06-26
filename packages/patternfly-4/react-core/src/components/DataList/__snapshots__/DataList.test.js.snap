@@ -12,28 +12,20 @@ exports[`DataList Cells 1`] = `
 <div
   className="pf-c-data-list__item-content"
 >
-  <DataListCell
-    alignRight={false}
+  <Component
     className="data-list-custom"
     id="primary-item"
-    isFilled={true}
-    isIcon={false}
     key="list-id-1"
-    width={1}
   >
     Primary Id
-  </DataListCell>
-  <DataListCell
-    alignRight={false}
+  </Component>
+  <Component
     className="data-list-custom"
     id="primary-item"
-    isFilled={true}
-    isIcon={false}
     key="list-id-2"
-    width={1}
   >
     Primary Id 2
-  </DataListCell>
+  </Component>
 </div>
 `;
 

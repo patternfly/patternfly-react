@@ -13,4 +13,4 @@ echo "Doing a release..."
 # Lerna is complicated. Commands: https://github.com/lerna/lerna/tree/master/commands
 # Identify packages that have been updated since the previous tagged release
 # Update their versions and changelogs
-npx lerna publish --conventional-commits --create-release=github --yes
+yarn run lerna publish --conventional-commits --create-release=github --yes

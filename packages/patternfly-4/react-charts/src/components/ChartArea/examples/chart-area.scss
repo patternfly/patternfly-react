@@ -1,9 +1,13 @@
 .ws-preview {
   & > * {
-    .area-chart-overflow {
-      & svg {
-        overflow: visible;
-      }
+    .area-chart-legend-bottom {
+      height: 225px;
+      width: 650px;
+    }
+
+    .area-chart-legend-right {
+      height: 200px;
+      width: 800px;
     }
   }
 }

@@ -1,7 +1,13 @@
 .ws-preview {
   & > * {
-    .bar-chart-container {
+    .bar-chart-legend-bottom {
+      height: 400px;
       width: 450px;
+    }
+
+    .bar-chart-legend-right {
+      height: 250px;
+      width: 600px;
     }
   }
 }

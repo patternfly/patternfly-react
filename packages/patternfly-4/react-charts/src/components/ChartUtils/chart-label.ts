@@ -1,5 +1,5 @@
-import { CommonStyles } from '../ChartTheme/themes/common-theme';
-import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
+import { ChartCommonStyles } from '../ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme';
 
 interface ChartLabelDimensionsInterface {
   label: string; // The label text
@@ -44,9 +44,9 @@ export const getLabelX = ({
     case 'right':
       switch (legendPosition) {
         case 'bottom':
-          return Math.round(svgWidth / 2) + Math.round(chartWidth / 2) + CommonStyles.label.margin + dx;
+          return Math.round(svgWidth / 2) + Math.round(chartWidth / 2) + ChartCommonStyles.label.margin + dx;
         case 'right':
-          return chartWidth + CommonStyles.label.margin + dx;
+          return chartWidth + ChartCommonStyles.label.margin + dx;
         default:
           return dx;
       }
@@ -68,7 +68,7 @@ export const getLabelY = ({
     case 'center':
       return Math.round(chartHeight / 2) + dy;
     case 'bottom':
-      return chartHeight + CommonStyles.label.margin + dy;
+      return chartHeight + ChartCommonStyles.label.margin + dy;
     case 'right':
       return Math.round(chartHeight / 2) + dy;
     default:

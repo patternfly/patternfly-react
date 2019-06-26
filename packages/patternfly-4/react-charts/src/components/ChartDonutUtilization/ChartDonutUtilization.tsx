@@ -8,15 +8,15 @@ import {
   EventPropTypeInterface,
   PaddingProps,
   StringOrNumberOrCallback,
+  VictoryPie,
   VictoryStyleInterface
 } from 'victory';
 import { Data } from 'victory-core';
-import { ChartContainer } from '../ChartContainer/ChartContainer';
-import { ChartDonut, ChartDonutProps } from "../ChartDonut/ChartDonut";
-import { ChartThemeDefinition, ChartDonutUtilizationStaticTheme } from '../ChartTheme/ChartTheme';
-import { getDonutUtilizationTheme } from '../ChartUtils/chart-theme';
-import { DonutUtilizationStyles } from '../ChartTheme/themes/donut-utilization-theme';
-import { cloneDeep } from 'lodash';
+import { ChartContainer } from '../ChartContainer';
+import { ChartDonut, ChartDonutProps } from "../ChartDonut";
+import { ChartThemeDefinition, ChartDonutUtilizationStyles } from '../ChartTheme';
+import { getDonutUtilizationTheme } from '../ChartUtils';
+import { orderBy } from 'lodash';
 
 export enum ChartDonutUtilizationLabelPosition {
   centroid = 'centroid',
@@ -254,8 +254,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
   height?: number;
   /**
    * When creating a donut chart, this prop determines the number of pixels between
-   * the center of the chart and the inner edge of a donut. When this prop is set to zero
-   * a regular pie chart is rendered.
+   * the center of the chart and the inner edge.
    */
   innerRadius?: number;
   /**
@@ -531,11 +530,14 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   const getDonutThresholds = () => {
     const result = [];
     if (thresholds) {
-      const numColors = DonutUtilizationStyles.thresholds.colorScale.length;
-      for (let i = 0; i < thresholds.length; i++) {
+      // Ensure thresholds are in sorted order
+      const sThresholds = orderBy(thresholds, 'value', invert ? 'desc' : 'asc');
+      const numColors = ChartDonutUtilizationStyles.thresholds.colorScale.length;
+      for (let i = 0; i < sThresholds.length; i++) {
         result.push({
-          color: thresholds[i].color ? thresholds[i].color : DonutUtilizationStyles.thresholds.colorScale[i % numColors],
-          value: thresholds[i].value
+          color: sThresholds[i].color
+            ? sThresholds[i].color : ChartDonutUtilizationStyles.thresholds.colorScale[i % numColors],
+          value: sThresholds[i].value
         });
       }
     }
@@ -595,5 +597,5 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   );
 };
 
-// Note: ChartDonut.role must be hoisted
-hoistNonReactStatics(ChartDonutUtilization, ChartDonut);
+// Note: VictoryPie.role must be hoisted
+hoistNonReactStatics(ChartDonutUtilization, VictoryPie);

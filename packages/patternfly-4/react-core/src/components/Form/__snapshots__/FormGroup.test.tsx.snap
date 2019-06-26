@@ -16,9 +16,13 @@ exports[`FormGroup component should render correctly when label is not a string 
       className="pf-c-form__label"
       htmlFor="id"
     >
-      <div>
-        label
-      </div>
+      <span
+        className="pf-c-form__label-text"
+      >
+        <div>
+          label
+        </div>
+      </span>
     </label>
     <input
       aria-label="label"
@@ -44,7 +48,11 @@ exports[`FormGroup component should render default form group variant 1`] = `
       className="pf-c-form__label"
       htmlFor="label-id"
     >
-      label
+      <span
+        className="pf-c-form__label-text"
+      >
+        label
+      </span>
     </label>
     <input
       id="label-id"
@@ -74,7 +82,11 @@ exports[`FormGroup component should render form group invalid variant 1`] = `
       className="pf-c-form__label"
       htmlFor="label-id"
     >
-      label
+      <span
+        className="pf-c-form__label-text"
+      >
+        label
+      </span>
     </label>
     <input
       id="id"
@@ -103,7 +115,11 @@ exports[`FormGroup component should render form group required variant 1`] = `
       className="pf-c-form__label"
       htmlFor="id"
     >
-      label
+      <span
+        className="pf-c-form__label-text"
+      >
+        label
+      </span>
       <span
         aria-hidden="true"
         className="pf-c-form__label-required"
@@ -135,7 +151,11 @@ exports[`FormGroup component should render form group variant with function help
       className="pf-c-form__label"
       htmlFor="label-id"
     >
-      Label
+      <span
+        className="pf-c-form__label-text"
+      >
+        Label
+      </span>
     </label>
     <input
       id="label-id"
@@ -169,9 +189,13 @@ exports[`FormGroup component should render form group variant with function labe
       className="pf-c-form__label"
       htmlFor="id"
     >
-      <div>
-        label
-      </div>
+      <span
+        className="pf-c-form__label-text"
+      >
+        <div>
+          label
+        </div>
+      </span>
     </label>
     <input
       aria-label="input"
@@ -197,7 +221,11 @@ exports[`FormGroup component should render form group variant with node helperTe
       className="pf-c-form__label"
       htmlFor="label-id"
     >
-      Label
+      <span
+        className="pf-c-form__label-text"
+      >
+        Label
+      </span>
     </label>
     <input
       id="label-id"
@@ -231,9 +259,13 @@ exports[`FormGroup component should render form group variant with node label 1`
       className="pf-c-form__label"
       htmlFor="id"
     >
-      <h1>
-        Header
-      </h1>
+      <span
+        className="pf-c-form__label-text"
+      >
+        <h1>
+          Header
+        </h1>
+      </span>
     </label>
     <input
       aria-label="input"
@@ -255,7 +287,11 @@ exports[`FormGroup component should render form group variant with required labe
       className="pf-c-form__label"
       htmlFor="label-id"
     >
-      label
+      <span
+        className="pf-c-form__label-text"
+      >
+        label
+      </span>
       <span
         aria-hidden="true"
         className="pf-c-form__label-required"
@@ -304,7 +340,11 @@ exports[`FormGroup component should render horizontal form group variant 1`] = `
           className="pf-c-form__label"
           htmlFor="label-id"
         >
-          label
+          <span
+            className="pf-c-form__label-text"
+          >
+            label
+          </span>
         </label>
         <div
           className="pf-c-form__horizontal-group"
@@ -340,7 +380,11 @@ exports[`FormGroup component should render inline form group variant 1`] = `
       className="pf-c-form__label"
       htmlFor="label-id"
     >
-      label
+      <span
+        className="pf-c-form__label-text"
+      >
+        label
+      </span>
     </label>
     <input
       id="label-id"

@@ -1,8 +1,7 @@
 import { VictoryLegend } from 'victory';
 import { TextSize } from 'victory-core';
-import { ChartLegendProps } from '../ChartLegend/ChartLegend';
-import { ChartThemeDefinition } from '../ChartTheme/ChartTheme';
-import { CommonStyles } from '../ChartTheme/themes/common-theme';
+import { ChartLegendProps } from '../ChartLegend';
+import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 
 interface ChartLegendPaddingXInterface {
   chartWidth: number; // Width of chart (e.g., donut) within SVG
@@ -92,7 +91,7 @@ export const getLegendX = ({
       return svgWidth > legendDimensions.width - textSizeWorkAround
         ? Math.round((svgWidth - (legendDimensions.width - textSizeWorkAround)) / 2) + dx : dx;
     case 'right':
-      return chartWidth + CommonStyles.legend.margin + dx;
+      return chartWidth + ChartCommonStyles.legend.margin + dx;
     default:
       return dx;
   }
@@ -121,7 +120,7 @@ export const getLegendY = ({
 
   switch (legendPosition) {
     case 'bottom':
-      return chartHeight + CommonStyles.legend.margin + dy;
+      return chartHeight + ChartCommonStyles.legend.margin + dy;
     case 'left':
       return dHeight > lHeight ? Math.round((dHeight - lHeight) / 2) + dy : dy;
     case 'right':

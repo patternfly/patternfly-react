@@ -2145,6 +2145,15 @@ exports[`Chart 1`] = `
     }
   }
   groupComponent={<g />}
+  height={300}
+  padding={
+    Object {
+      "bottom": 50,
+      "left": 50,
+      "right": 50,
+      "top": 50,
+    }
+  }
   standalone={true}
   theme={
     Object {
@@ -2611,6 +2620,7 @@ exports[`Chart 1`] = `
       },
     }
   }
+  width={450}
 />
 `;
 
@@ -4759,6 +4769,15 @@ exports[`Chart 2`] = `
     }
   }
   groupComponent={<g />}
+  height={300}
+  padding={
+    Object {
+      "bottom": 50,
+      "left": 50,
+      "right": 50,
+      "top": 50,
+    }
+  }
   standalone={true}
   theme={
     Object {
@@ -5225,6 +5244,7 @@ exports[`Chart 2`] = `
       },
     }
   }
+  width={450}
 />
 `;
 
@@ -7377,6 +7397,14 @@ exports[`renders axis and component children 1`] = `
   minDomain={
     Object {
       "y": 0,
+    }
+  }
+  padding={
+    Object {
+      "bottom": 50,
+      "left": 50,
+      "right": 50,
+      "top": 50,
     }
   }
   standalone={true}
