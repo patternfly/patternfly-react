@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
-export class DonutUtilizationStaticBottomDemo extends React.Component {
+export class DonutUtilizationSmallStaticBottomDemo extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0 , 0);
@@ -9,7 +9,7 @@ export class DonutUtilizationStaticBottomDemo extends React.Component {
 
   render() {
     return (
-      <div style={{backgroundColor: 'white', width: '70%'}}>
+      <div style={{backgroundColor: 'white', width: '60%', paddingLeft: '50px'}}>
         <div className="donut-threshold-chart-legend-bottom-subtitle-right-sm">
           <ChartDonutThreshold
             data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}

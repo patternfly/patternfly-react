@@ -14,7 +14,6 @@ export class DonutBottomAlignedLegendDemo extends React.Component {
           <ChartDonut
             data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
             donutHeight={230}
-            // donutOrientation="top"
             height={275}
             labels={datum => `${datum.x}: ${datum.y}%`}
             legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}

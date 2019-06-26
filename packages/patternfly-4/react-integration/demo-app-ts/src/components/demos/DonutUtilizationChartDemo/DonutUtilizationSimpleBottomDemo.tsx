@@ -2,12 +2,7 @@ import React from 'react';
 import { ChartDonutThreshold, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
-
-interface Testing {
-  legendWidth: any
-}
-
-export class DonutUtilizationSimpleBottomDemo extends React.Component<Testing> {
+export class DonutUtilizationSimpleBottomDemo extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0)
@@ -15,12 +10,11 @@ export class DonutUtilizationSimpleBottomDemo extends React.Component<Testing> {
 
   render() {
     return (
-    <div>
+    <div style={{backgroundColor: 'white', width: '50%', paddingTop: '50px', paddingLeft: '50px'}}>
       <div className="donut-utilization-chart-legend-bottom">
         <ChartDonutUtilization
           data={{ x: 'GBps capacity', y: 45 }}
           donutHeight={230}
-          // donutOrientation="top"
           height={275}
           labels={datum => datum.x ? `${datum.x} - ${datum.y}%` : null}
           legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}

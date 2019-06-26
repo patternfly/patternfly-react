@@ -9,8 +9,8 @@ export class DonutUtilizationSimpleDemo extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="donut-utilization-chart">
+      <div style={{backgroundColor: 'white', width: '50%'}}>
+        <div className="donut-utilization-chart" style={{display: 'block', margin: '0 auto'}}>
           <ChartDonutUtilization
             data={{ x: 'GBps capacity', y: 75 }}
             labels={datum => datum.x ? `${datum.x} - ${datum.y}%` : null}

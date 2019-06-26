@@ -31,9 +31,14 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ApplicationLauncherDemo
   },
   {
-    id: 'area-chart-custom-colors-demo',
-    name: 'Area Chart Custom Colors Demo',
-    componentType: Examples.CustomColorsDemo
+    id: 'area-chart-color-demo',
+    name: 'Area Chart Color with Bottom Legend Demo',
+    componentType: Examples.ColorAreaBottomLegendDemo
+  },
+  {
+    id: 'area-chart-cyan-demo',
+    name: 'Area Chart Cyan Demo',
+    componentType: Examples.CyanAreaDemo
   },
   {
     id: 'area-chart-simple-demo',
@@ -61,19 +66,14 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BadgeDemo
   },
   {
-    id: 'blue-bar-grouped-demo',
-    name: 'Bar Chart Grouped Blue Demo',
-    componentType: Examples.BlueBarGroupedDemo
+    id: 'purple-bar-grouped-demo',
+    name: 'Bar Chart Grouped Purple Demo',
+    componentType: Examples.PurpleBarGroupedDemo
   },
   {
     id: 'color-bar-zoom-demo',
-    name: 'Bar Chart Multi-colored with Zoom Demo',
+    name: 'Bar Chart Multi-color, horizontal with Zoom and Bottom-aligned Legend Demo',
     componentType: Examples.ColorBarZoomDemo
-  },
-  {
-    id: 'color-bar-zoom-no-axes-demo',
-    name: 'Bar Chart Multi-colored with Zoom; No X, Y axis Demo',
-    componentType: Examples.ColorBarZoomNoAxesDemo
   },
   {
     id: 'bar-chart-simple-demo',
@@ -151,6 +151,16 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DonutRightAlignedLegendDemo
   },
   {
+    id: 'donut-utilization-green-static-right-demo',
+    name: 'Donut Utilization Green Static Right Demo',
+    componentType: Examples.DonutUtilizationGreenStaticRightDemo
+  },
+  {
+    id: 'donut-utilization-inverted-right-demo',
+    name: 'Donut Utilization Inverted Right Demo',
+    componentType: Examples.DonutUtilizationInvertedRightDemo
+  },
+  {
     id: 'donut-utilization-simple-bottom-demo',
     name: 'Donut Utilization Simple Chart, Bottom-aligned Legend Demo',
     componentType: Examples.DonutUtilizationSimpleBottomDemo
@@ -164,6 +174,66 @@ export const Demos: DemoInterface[] = [
     id: 'data-list-demo',
     name: 'Data List Demo',
     componentType: Examples.DataListDemo
+  },
+  {
+    id: 'clipboard-copy-demo',
+    name: 'ClipboardCopy Demo',
+    componentType: Examples.ClipboardCopyDemo
+  },
+  {
+    id: 'donut-utilization-simple-right-demo',
+    name: 'Donut Utilization Simple Right Demo',
+    componentType: Examples.DonutUtilizationSimpleRightDemo
+  },
+  {
+    id: 'donut-utilization-simple-right-green-demo',
+    name: 'Donut Utilization Simple Right Green Demo',
+    componentType: Examples.DonutUtilizationSimpleRightGreenDemo
+  },
+  {
+    id: 'donut-utilization-sm-demo',
+    name: 'Donut Utilization Small Demo',
+    componentType: Examples.DonutUtilizationSmallDemo
+  },
+  {
+    id: 'donut-utilization-sm-right-demo',
+    name: 'Donut Utilization Small Right Demo',
+    componentType: Examples.DonutUtilizationSmallRightDemo
+  },
+  {
+    id: 'donut-utilization-sm-static-bottom-demo',
+    name: 'Donut Utilization Small Static Bottom Demo',
+    componentType: Examples.DonutUtilizationSmallStaticBottomDemo
+  },
+  {
+    id: 'donut-utilization-sm-static-demo',
+    name: 'Donut Utilization Small Static Demo',
+    componentType: Examples.DonutUtilizationSmallStaticDemo
+  },
+  {
+    id: 'donut-utilization-sm-static-right-demo',
+    name: 'Donut Utilization Small Static Right Demo',
+    componentType: Examples.DonutUtilizationSmallStaticRightDemo
+  },
+  {
+    id: 'donut-utilization-static-bottom-demo',
+    name: 'Donut Utilization Static Bottom Demo',
+    componentType: Examples.DonutUtilizationStaticBottomDemo
+  },
+  {
+    id: 'donut-utilization-static-demo',
+    name: 'Donut Utilization Static Demo',
+    componentType: Examples.DonutUtilizationStaticDemo
+  },
+  {
+    id: 'donut-utilization-static-inverted-right-demo',
+    name: 'Donut Utilization Static Inverted Right Demo',
+    componentType: Examples.DonutUtilizationStaticInvertedRightDemo
+  },
+  {
+    id: 'donut-utilization-static-right-demo',
+    name: 'Donut Utilization Static Right Demo',
+    componentType: Examples.DonutUtilizationStaticRightDemo
   },
   {
     id: 'empty-state-demo',

@@ -1,7 +1,7 @@
 import React from 'react';
-import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
+import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
-export class DonutUtilizationStaticRightDemo extends React.Component<{}, { used: number }> {
+export class DonutUtilizationGreenStaticRightDemo extends React.Component <{}, { used: number }> {
 
   interval: any;
   constructor(props) {
@@ -12,7 +12,8 @@ export class DonutUtilizationStaticRightDemo extends React.Component<{}, { used:
   }
 
   componentDidMount() {
-    window.scrollTo(0 , 0);
+
+    window.scrollTo(0, 0);
 
     this.interval = setInterval(() => {
       const { used } = this.state;
@@ -27,12 +28,14 @@ export class DonutUtilizationStaticRightDemo extends React.Component<{}, { used:
   render() {
     const { used } = this.state;
     return (
-      <div style={{backgroundColor: 'white', width: '50%', margin: '0 auto'}}>
-        <div className="donut-threshold-chart-legend-right">
+      <div style={{ backgroundColor: 'white', width: '35%', paddingTop: '50px', margin: '0 auto'}}>
+        <div className="donut-threshold-chart-legend-bottom-vert">
           <ChartDonutThreshold
             data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
+            height={350}
             labels={datum => datum.x ? datum.x : null}
-            width={500}
+            legendPosition="bottom"
+            width={230}
           >
             <ChartDonutUtilization
               data={{ x: 'Storage capacity', y: used }}
@@ -41,6 +44,8 @@ export class DonutUtilizationStaticRightDemo extends React.Component<{}, { used:
               legendOrientation="vertical"
               subTitle="of 100 GBps"
               title={`${used}%`}
+              themeColor={ChartThemeColor.green}
+              themeVariant={ChartThemeVariant.light}
               thresholds={[{ value: 60 }, { value: 90 }]}
             />
           </ChartDonutThreshold>

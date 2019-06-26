@@ -1,22 +1,25 @@
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
-export class DonutUtilizationStaticRightDemo extends React.Component<{}, { used: number }> {
+export class DonutUtilizationStaticInvertedRightDemo extends React.Component<{}, { used: number; spacer: string }> {
 
   interval: any;
   constructor(props) {
     super(props);
     this.state = {
-      used: 0
+      spacer: '',
+      used: 100
     };
   }
 
   componentDidMount() {
-    window.scrollTo(0 , 0);
-
     this.interval = setInterval(() => {
       const { used } = this.state;
-      this.setState({ used: (used + 10) % 100 });
+      const val = (((used - 10) % 100) + 100) % 100;
+      this.setState({
+        spacer: val < 10 ? ' ' : '',
+        used: val
+      });
     }, 1000);
   }
 
@@ -27,21 +30,22 @@ export class DonutUtilizationStaticRightDemo extends React.Component<{}, { used:
   render() {
     const { used } = this.state;
     return (
-      <div style={{backgroundColor: 'white', width: '50%', margin: '0 auto'}}>
+      <div style={{backgroundColor: 'white', width: '50%', paddingLeft: '50px'}}>
         <div className="donut-threshold-chart-legend-right">
           <ChartDonutThreshold
-            data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
+            data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 20%', y: 20 }]}
+            invert
             labels={datum => datum.x ? datum.x : null}
             width={500}
           >
             <ChartDonutUtilization
               data={{ x: 'Storage capacity', y: used }}
               labels={datum => datum.x ? `${datum.x}: ${datum.y}%` : null}
-              legendData={[{ name: `Storage capacity: ${used}%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
+              legendData={[{ name: `Storage capacity: ${used}%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 20%' }]}
               legendOrientation="vertical"
               subTitle="of 100 GBps"
               title={`${used}%`}
-              thresholds={[{ value: 60 }, { value: 90 }]}
+              thresholds={[{ value: 60 }, { value: 20 }]}
             />
           </ChartDonutThreshold>
         </div>

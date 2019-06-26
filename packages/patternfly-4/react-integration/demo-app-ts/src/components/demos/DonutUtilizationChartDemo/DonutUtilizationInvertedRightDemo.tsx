@@ -1,14 +1,13 @@
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
-export class DonutUtilizationSimpleRightDemo extends React.Component<{}, { used: number; spacer: string }> {
+export class DonutUtilizationInvertedRightDemo extends React.Component<{}, { used: number; spacer: string }> {
   interval: any;
-
   constructor(props) {
     super(props);
     this.state = {
       spacer: '',
-      used: 0
+      used: 100
     };
   }
 
@@ -18,7 +17,7 @@ export class DonutUtilizationSimpleRightDemo extends React.Component<{}, { used:
 
     this.interval = setInterval(() => {
       const { used } = this.state;
-      const val = (used + 10) % 100;
+      const val = (((used - 10) % 100) + 100) % 100;
       this.setState({
         spacer: val < 10 ? ' ' : '',
         used: val
@@ -33,20 +32,21 @@ export class DonutUtilizationSimpleRightDemo extends React.Component<{}, { used:
   render() {
     const { spacer, used } = this.state;
     return (
-      <div style={{backgroundColor: 'white', width: '50%', paddingLeft: '50px'}}>
+      <div style={{backgroundColor: 'white', width: '50%'}}>
         <div className="donut-utilization-chart-legend-right">
           <ChartDonutUtilization
             data={{ x: 'GBps capacity', y: used }}
+            invert
             labels={datum => datum.x ? `${datum.x}: ${datum.y}%` : null}
             legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
             legendOrientation="vertical"
             subTitle="of 100 GBps"
             title={`${used}%`}
-            thresholds={[{ value: 60 }, { value: 90 }]}
+            thresholds={[{ value: 60 }, { value: 20 }]}
             width={435}
           />
         </div>
       </div>
-    )
+    );
   }
 }
