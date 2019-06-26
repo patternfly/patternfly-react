@@ -1,5 +1,5 @@
 export { default as ActionsColumn } from './ActionsColumn';
-export { default as Table, TableContext, TableGridBreakpoint, TableVariant } from './Table';
+export { default as Table, TableGridBreakpoint, TableContext, TableVariant } from './Table';
 export { default as TableHeader } from './Header';
 export { default as TableBody } from './Body';
 export { default as BodyWrapper } from './BodyWrapper';

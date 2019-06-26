@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorElement> {
+export interface InternalDropdownItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Anything which can be rendered as dropdown item */
   children?: React.ReactNode; 
   /** Classes applied to root element of dropdown item */
@@ -25,5 +25,5 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
     sendRef?: (index: number, ref: any, isDisabled: boolean) => void
   };
   /** Callback for click event */
-  onClick?: (event:React.MouseEvent<HTMLAnchorElement>|React.KeyboardEvent) => void;
+  onClick?: (event: any) => void;
 }
