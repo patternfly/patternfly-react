@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { css } from '@patternfly/react-styles';
-import { RowWrapper as ReactTableRowWrapper } from '@patternfly/react-table';
 import {
   combineFunctions,
   shallowLeftSideEquals,
@@ -17,7 +16,6 @@ import { inlineEditCss, inlineEditStyles as styles } from './css/inline-edit-css
 inlineEditCss.inject();
 
 const propTypes = {
-  ...ReactTableRowWrapper.propTypes,
   trRef: PropTypes.func,
   className: PropTypes.string,
   onScroll: PropTypes.func,
@@ -38,7 +36,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  ...ReactTableRowWrapper.defaultProps,
   trRef: undefined,
   className: '',
   onScroll: undefined,

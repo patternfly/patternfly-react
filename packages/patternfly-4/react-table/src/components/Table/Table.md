@@ -2,6 +2,7 @@
 title: 'Table'
 cssPrefix: 'pf-c-table'
 section: 'components'
+typescript: true
 propComponents: ['Table', 'TableHeader', 'TableBody']
 ---
 
@@ -524,7 +525,7 @@ class CompactTable extends React.Component {
 
     return (
       <Table
-        caption="Compact Table with border"
+        caption="Compact Table with borderless rows"
         variant={TableVariant.compact}
         borders={false}
         cells={columns}
