@@ -1,29 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check page main nav section against snapshot 1`] = `
-<PageSection
-  className=""
-  noPadding={false}
-  noPaddingMobile={false}
+<Component
   type="nav"
-  variant="default"
 >
   <section
     className="pf-c-page__main-nav"
   />
-</PageSection>
+</Component>
 `;
 
 exports[`Check page section with fill and no padding example against snapshot 1`] = `
 <Component
   isFilled={true}
   noPadding={true}
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/PageSection.test.tsx.snap
-=======
-  noPaddingMobile={false}
-  type="default"
-  variant="default"
->>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/PageSection.test.js.snap
 >
   <section
     className="pf-c-page__main-section pf-m-no-padding pf-m-fill"
@@ -34,13 +24,6 @@ exports[`Check page section with fill and no padding example against snapshot 1`
 exports[`Check page section with fill example against snapshot 1`] = `
 <Component
   isFilled={true}
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/PageSection.test.tsx.snap
-=======
-  noPadding={false}
-  noPaddingMobile={false}
-  type="default"
-  variant="default"
->>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/PageSection.test.js.snap
 >
   <section
     className="pf-c-page__main-section pf-m-fill"
@@ -51,13 +34,6 @@ exports[`Check page section with fill example against snapshot 1`] = `
 exports[`Check page section with no fill example against snapshot 1`] = `
 <Component
   isFilled={false}
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/PageSection.test.tsx.snap
-=======
-  noPadding={false}
-  noPaddingMobile={false}
-  type="default"
-  variant="default"
->>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/PageSection.test.js.snap
 >
   <section
     className="pf-c-page__main-section pf-m-no-fill"
@@ -68,12 +44,6 @@ exports[`Check page section with no fill example against snapshot 1`] = `
 exports[`Check page section with no padding example against snapshot 1`] = `
 <Component
   noPadding={true}
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/PageSection.test.tsx.snap
-=======
-  noPaddingMobile={false}
-  type="default"
-  variant="default"
->>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/PageSection.test.js.snap
 >
   <section
     className="pf-c-page__main-section pf-m-no-padding"
@@ -84,11 +54,6 @@ exports[`Check page section with no padding example against snapshot 1`] = `
 exports[`Check page section with no padding on mobile example against snapshot 1`] = `
 <Component
   noPaddingMobile={true}
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Page/__snapshots__/PageSection.test.tsx.snap
-=======
-  type="default"
-  variant="default"
->>>>>>> feat(Page): add page section main nav type variant:packages/patternfly-4/react-core/src/components/Page/__snapshots__/PageSection.test.js.snap
 >
   <section
     className="pf-c-page__main-section pf-m-no-padding-mobile"
