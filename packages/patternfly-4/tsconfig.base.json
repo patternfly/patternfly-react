@@ -11,5 +11,19 @@
     "strict": true,
     "strictNullChecks": false,
     "target": "es5"
+<<<<<<< HEAD:packages/patternfly-4/tsconfig.base.json
   }
 }
+=======
+  },
+  "include": [
+    "./src/*",
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./src/**/**.test.tsx",
+    "./src/**/**.test.ts",
+    "./src/**/examples/**"
+  ]
+}
+>>>>>>> feat(react-table): convert react-table to typescript:packages/patternfly-4/react-table/tsconfig.base.json
