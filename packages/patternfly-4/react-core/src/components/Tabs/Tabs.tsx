@@ -33,7 +33,7 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** aria-label for the right Scroll Button */
   rightScrollAriaLabel?: string;
   /** determines what tag is used around the Tabs. Use "nav" to define the Tabs inside a navigation region */
-  variant?: typeof TabsVariant | 'div' | 'nav';
+  variant?: 'div' | 'nav';
   /** provides an accessible label for the Tabs. Labels should be unique for each set of Tabs that are present on a page. When variant is set to nav, this prop should be defined to differentiate the Tabs from other navigation regions on the page. */
   'aria-label'?: string;
 }

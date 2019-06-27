@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.54.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.54.0...@patternfly/react-core@3.54.1) (2019-06-27)
+
+
+### Bug Fixes
+
+* **dropdown:** Automatically focus first dropdown item when DropdownMenu mounts ([#2355](https://github.com/patternfly/patternfly-react/issues/2355)) ([276f5fb](https://github.com/patternfly/patternfly-react/commit/276f5fb)), closes [#2083](https://github.com/patternfly/patternfly-react/issues/2083)
+* **Grid:** Update grid layout to support new 2xl breakpoint ([#2305](https://github.com/patternfly/patternfly-react/issues/2305)) ([2025c1c](https://github.com/patternfly/patternfly-react/commit/2025c1c))
+
+
+
+
+
+# [3.54.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.53.4...@patternfly/react-core@3.54.0) (2019-06-27)
+
+
+### Bug Fixes
+
+* **Data list:** Add DataListRow to imports ([#2353](https://github.com/patternfly/patternfly-react/issues/2353)) ([d20d481](https://github.com/patternfly/patternfly-react/commit/d20d481)), closes [#2338](https://github.com/patternfly/patternfly-react/issues/2338)
+
+
+### Features
+
+* **ClipboardCopy:** Convert clipboard copy to typescript ([#2131](https://github.com/patternfly/patternfly-react/issues/2131)) ([44168dd](https://github.com/patternfly/patternfly-react/commit/44168dd))
+* **PF Checkbox:** Add 3rd state to checkbox controlled by consumer ([#2252](https://github.com/patternfly/patternfly-react/issues/2252)) ([cf06254](https://github.com/patternfly/patternfly-react/commit/cf06254))
+
+
+
+
+
+## [3.53.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.53.3...@patternfly/react-core@3.53.4) (2019-06-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [3.53.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.53.2...@patternfly/react-core@3.53.3) (2019-06-25)
 
 
