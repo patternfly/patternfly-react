@@ -31,9 +31,7 @@ export interface TooltipProps extends Omit<HTMLProps<HTMLDivElement>, 'content' 
   /** z-index of the tooltip */
   zIndex?: number;
   /** Size of the tooltip */
-  maxWidth?: '12.5rem';
-  /** Distance of the tooltip to its target, defaults to 15 */
-  distance?: number;
+  maxWidth?: string;
 }
 
 declare const Tooltip: FunctionComponent<TooltipProps>;

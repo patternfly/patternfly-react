@@ -1,30 +1,3 @@
----
-title: 'Input group'
-cssPrefix: null
-propComponents: ['InputGroup', 'InputGroupText']
-typescript: true
----
-
-## Simple input group
-
-import { DollarSignIcon, AtIcon, CalendarAltIcon, SearchIcon, QuestionCircleIcon } from '@patternfly/react-icons';
-import {
-  Button,
-  ButtonVariant,
-  TextArea,
-  InputGroup,
-  InputGroupText,
-  TextInput,
-  Dropdown,
-  DropdownToggle,
-  DropdownItem,
-  Popover,
-  PopoverPosition
-} from '@patternfly/react-core';
-
-Buttons and TextArea
-
-```js
 import React from 'react';
 import { DollarSignIcon, AtIcon, CalendarAltIcon, SearchIcon, QuestionCircleIcon } from '@patternfly/react-icons';
 import {
@@ -41,7 +14,14 @@ import {
   PopoverPosition
 } from '@patternfly/react-core';
 
-class SimpleInputGroups extends React.Component {
+interface InputGroupState {
+  isOpen: boolean, 
+  selected: string
+}
+
+export class InputGroupDemo extends React.Component<{}, InputGroupState> {
+  onToggle: (isOpen: boolean) => void; 
+  onSelect: (event: any) => void; 
   constructor(props) {
     super(props);
     this.state = {
@@ -174,4 +154,3 @@ class SimpleInputGroups extends React.Component {
     );
   }
 }
-```

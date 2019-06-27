@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import InputGroup from './InputGroup';
-import InputGroupText from './InputGroupText';
+import { InputGroup } from './InputGroup';
+import { InputGroupText } from './InputGroupText';
 import { Button } from '../Button';
 import { TextInput } from '../TextInput';
 

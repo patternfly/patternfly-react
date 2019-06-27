@@ -91,6 +91,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ContextSelectorDemo
   },
   {
+    id: 'clipboard-copy-demo', 
+    name: 'ClipboardCopy Demo',
+    componentType: Examples.ClipboardCopyDemo
+  },
+  {
     id: 'empty-state-demo',
     name: 'Empty State Demo',
     componentType: Examples.EmptyStateDemo
@@ -104,6 +109,11 @@ export const Demos: DemoInterface[] = [
     id: 'form-select-demo', 
     name: 'Form Select Demo', 
     componentType: Examples.FormSelectDemo 
+  },
+  {
+    id: 'input-group-demo', 
+    name: 'Input Group Demo', 
+    componentType: Examples.InputGroupDemo
   },
   {
     id: 'label-demo',

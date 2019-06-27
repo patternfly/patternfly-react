@@ -6,6 +6,6 @@ exports[`expanded content render 1`] = `
   contentEditable={true}
   id="id-1"
   onInput={[Function]}
-  suppressContentEditableWarning="true"
+  suppressContentEditableWarning={true}
 />
 `;

@@ -47,6 +47,12 @@ const propTypes = {
   xlRowSpan: PropTypes.oneOf(gridSpans),
   /** the number of columns the grid item is offset on xLarge device. Value should be a number 1-12   */
   xlOffset: PropTypes.oneOf(gridSpans),
+  /** the number of columns the grid item spans on 2xLarge device. Value should be a number 1-12   */
+  xl2: PropTypes.oneOf(gridSpans),
+  /** the number of rows the grid item spans on 2xLarge device. Value should be a number 1-12   */
+  xl2RowSpan: PropTypes.oneOf(gridSpans),
+  /** the number of columns the grid item is offset on 2xLarge device. Value should be a number 1-12   */
+  xl2Offset: PropTypes.oneOf(gridSpans),
   /** Additional props are spread to the container <div> */
   '': PropTypes.any // eslint-disable-line react/require-default-props
 };
@@ -68,7 +74,10 @@ const defaultProps = {
   lgOffset: null,
   xl: null,
   xlRowSpan: null,
-  xlOffset: null
+  xlOffset: null,
+  xl2: null,
+  xl2RowSpan: null,
+  xl2Offset: null
 };
 
 const GridItem = ({ children, className, span, rowSpan, offset, ...props }) => {
@@ -79,18 +88,22 @@ const GridItem = ({ children, className, span, rowSpan, offset, ...props }) => {
     rowSpan && getRowSpanModifier(rowSpan)
   ];
 
-  Object.keys(DeviceSizes).forEach(size => {
-    const popProp = (propKey, getModifierFn) => {
-      const propValue = props[propKey];
-      if (propValue) {
-        classes.push(getModifierFn(propValue, size));
-      }
+  Object.entries(DeviceSizes).forEach(([propKey, classModifier]) => {
+    const spanValue = props[propKey];
+    if (spanValue) {
+      classes.push(getSpanModifier(spanValue, classModifier));
       delete props[propKey];
-    };
-
-    popProp(size, getSpanModifier);
-    popProp(getRowSpanKey(size), getRowSpanModifier);
-    popProp(getOffsetKey(size), getOffsetModifier);
+    }
+    const rowSpanValue = props[getRowSpanKey(propKey)];
+    if (rowSpanValue) {
+      classes.push(getRowSpanModifier(rowSpanValue, classModifier));
+      delete props[getRowSpanKey(propKey)];
+    }
+    const offsetValue = props[getOffsetKey(propKey)];
+    if (offsetValue) {
+      classes.push(getOffsetModifier(offsetValue, classModifier));
+      delete props[getOffsetKey(propKey)];
+    }
   });
 
   return (

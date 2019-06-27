@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`adds 2xl offset classes 1`] = `"pf-l-grid__item"`;
+
+exports[`adds 2xl row classes 1`] = `"pf-l-grid__item"`;
+
+exports[`adds 2xl span class 1`] = `"pf-l-grid__item"`;
+
 exports[`adds lg offset classes 1`] = `"pf-l-grid__item pf-m-offset-1-col-on-lg"`;
 
 exports[`adds lg row classes 1`] = `"pf-l-grid__item pf-m-1-row-on-lg"`;

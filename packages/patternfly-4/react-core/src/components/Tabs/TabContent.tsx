@@ -14,7 +14,6 @@ export interface TabContentProps extends React.HTMLProps<HTMLElement> {
   eventKey?: number; 
   /** Callback for the section ref */
   innerRef?: React.Ref<HTMLElement>;
-//  innerRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({ current: PropTypes.any }), PropTypes.string])
   /** id passed from parent to identify the content section */
   id: string; 
   /** title of controlling Tab if used outside Tabs component */
