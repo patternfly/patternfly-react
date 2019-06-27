@@ -23,7 +23,7 @@ class ExpandedContent extends React.Component {
         ref={this.contentRef}
         className={css(styles.clipboardCopyExpandableContent, className)}
         onInput={e => onChange(e.target.innerText, e)}
-        contentEditable= {!isReadOnly}
+        contentEditable={!isReadOnly}
         {...props}
       />
     );
@@ -33,12 +33,12 @@ class ExpandedContent extends React.Component {
 ExpandedContent.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
-  onChange: PropTypes.func.isRequired, 
+  onChange: PropTypes.func.isRequired,
   isReadOnly: PropTypes.bool
 };
 
 ExpandedContent.defaultProps = {
-  className: '', 
+  className: '',
   isReadOnly: false
 };
 
