@@ -28,26 +28,30 @@ exports[`ChipGroup chip group default 1`] = `
 `;
 
 exports[`ChipGroup chip group with toolbar 1`] = `
-<InnerChipGroup
-  className=""
-  collapsedText="\${remaining} more"
-  expandedText="Show Less"
-  isOpen={false}
-  onToggleCollapse={[Function]}
-  withToolbar={true}
+<ContextProvider
+  value="h4"
 >
-  <Component>
-    <Chip
-      className=""
-      closeBtnAriaLabel="close"
-      component="div"
-      isOverflowChip={false}
-      isReadOnly={false}
-      onClick={[Function]}
-      tooltipPosition="top"
-    >
-      1.1
-    </Chip>
-  </Component>
-</InnerChipGroup>
+  <InnerChipGroup
+    className=""
+    collapsedText="\${remaining} more"
+    expandedText="Show Less"
+    isOpen={false}
+    onToggleCollapse={[Function]}
+    withToolbar={true}
+  >
+    <Component>
+      <Chip
+        className=""
+        closeBtnAriaLabel="close"
+        component="div"
+        isOverflowChip={false}
+        isReadOnly={false}
+        onClick={[Function]}
+        tooltipPosition="top"
+      >
+        1.1
+      </Chip>
+    </Component>
+  </InnerChipGroup>
+</ContextProvider>
 `;
