@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.27.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.26.0...@patternfly/react-integration@1.27.0) (2019-06-27)
+
+
+### Features
+
+* **Notification Badge:** Adds the notification badge component ([#2342](https://github.com/patternfly/patternfly-react/issues/2342)) ([a0e7965](https://github.com/patternfly/patternfly-react/commit/a0e7965)), closes [#2021](https://github.com/patternfly/patternfly-react/issues/2021)
+
+
+
+
+
 # [1.26.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.25.0...@patternfly/react-integration@1.26.0) (2019-06-27)
 
 

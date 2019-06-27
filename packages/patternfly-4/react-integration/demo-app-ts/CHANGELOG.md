@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.28.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.27.2...demo-app-ts@1.28.0) (2019-06-27)
+
+
+### Features
+
+* **Notification Badge:** Adds the notification badge component ([#2342](https://github.com/patternfly/patternfly-react/issues/2342)) ([a0e7965](https://github.com/patternfly/patternfly-react/commit/a0e7965)), closes [#2021](https://github.com/patternfly/patternfly-react/issues/2021)
+
+
+
+
+
 ## [1.27.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.27.1...demo-app-ts@1.27.2) (2019-06-27)
 
 **Note:** Version bump only for package demo-app-ts

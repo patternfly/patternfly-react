@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.4...@patternfly/react-charts@4.4.5) (2019-06-27)
+
+
+### Bug Fixes
+
+* **charts:** adds sparkline example and interpolation to area examples ([#2373](https://github.com/patternfly/patternfly-react/issues/2373)) ([ac68f3f](https://github.com/patternfly/patternfly-react/commit/ac68f3f))
+
+
+
+
+
 ## [4.4.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.3...@patternfly/react-charts@4.4.4) (2019-06-25)
 
 **Note:** Version bump only for package @patternfly/react-charts

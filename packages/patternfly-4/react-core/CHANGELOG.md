@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.57.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.56.1...@patternfly/react-core@3.57.0) (2019-06-27)
+
+
+### Bug Fixes
+
+* **aboutmodal:** change strapline element to paragraph ([#2376](https://github.com/patternfly/patternfly-react/issues/2376)) ([8a06aa2](https://github.com/patternfly/patternfly-react/commit/8a06aa2))
+
+
+### Features
+
+* **Notification Badge:** Adds the notification badge component ([#2342](https://github.com/patternfly/patternfly-react/issues/2342)) ([a0e7965](https://github.com/patternfly/patternfly-react/commit/a0e7965)), closes [#2021](https://github.com/patternfly/patternfly-react/issues/2021)
+
+
+
+
+
 ## [3.56.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.56.0...@patternfly/react-core@3.56.1) (2019-06-27)
 
 
