@@ -10,7 +10,10 @@ describe('Input Group Demo Test', () => {
   });
 
   it('Verify number input only allows numbers', () => {
-    cy.get('#textInput5').type('Hi');
-    cy.get('#textInput5').should('have.value', ''); 
+    const text = cy.get('#textInput5')
+    text.type('Hi');
+    text.should('have.value', ''); 
+    text.type('13'); 
+    text.should('have.value', '13')
   });
 })
