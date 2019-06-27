@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.54.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.54.0...@patternfly/react-core@3.54.1) (2019-06-27)
+
+
+### Bug Fixes
+
+* **dropdown:** Automatically focus first dropdown item when DropdownMenu mounts ([#2355](https://github.com/patternfly/patternfly-react/issues/2355)) ([276f5fb](https://github.com/patternfly/patternfly-react/commit/276f5fb)), closes [#2083](https://github.com/patternfly/patternfly-react/issues/2083)
+* **Grid:** Update grid layout to support new 2xl breakpoint ([#2305](https://github.com/patternfly/patternfly-react/issues/2305)) ([2025c1c](https://github.com/patternfly/patternfly-react/commit/2025c1c))
+
+
+
+
+
 # [3.54.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.53.4...@patternfly/react-core@3.54.0) (2019-06-27)
 
 
