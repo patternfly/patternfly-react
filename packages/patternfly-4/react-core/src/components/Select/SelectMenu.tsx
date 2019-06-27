@@ -3,11 +3,12 @@ import styles from '@patternfly/react-styles/css/components/Select/select';
 import { default as formStyles } from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
 import { SelectConsumer, SelectVariant } from './selectConstants';
+import { Omit } from '../../helpers/typeUtils';
 
 // tslint:disable-next-line
 const FocusTrap: any = require('focus-trap-react');
 
-export interface SelectMenuProps {
+export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'checked' | 'selected' | 'ref'> {
   /** Content rendered inside the SelectMenu */
   children: React.ReactElement[];
   /** Additional classes added to the SelectMenu control */

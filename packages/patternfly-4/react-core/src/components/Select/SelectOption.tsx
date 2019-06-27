@@ -4,8 +4,9 @@ import { default as checkStyles } from '@patternfly/react-styles/css/components/
 import { css } from '@patternfly/react-styles';
 import { CheckIcon } from '@patternfly/react-icons';
 import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
+import { Omit } from '../../helpers/typeUtils';
 
-export interface SelectOptionProps {
+export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 'type' | 'ref'> {
   /** Additional classes added to the Select Option */
   className?: string;
   /** Internal index of the option */

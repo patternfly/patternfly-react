@@ -11,11 +11,12 @@ import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex } from '../../helpers/util';
+import { Omit } from '../../helpers/typeUtils';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
 
-export interface SelectProps {
+export interface SelectProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'> {
   /** Content rendered inside the Select */
   children: React.ReactElement[];
   /** Classes applied to the root of the Select */

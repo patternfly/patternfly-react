@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 import { CaretDownIcon } from '@patternfly/react-icons';
 import { KeyTypes, SelectVariant } from './selectConstants';
 
-export interface SelectToggleProps {
+export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   /** HTML ID of dropdown toggle */
   id: string;
   /** Anything which can be rendered as dropdown toggle */

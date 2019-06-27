@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import { css } from '@patternfly/react-styles';
 
-export interface CheckboxSelectGroupProps {
+export interface CheckboxSelectGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Checkboxes within group */
   children?: React.ReactNode[] | React.ReactNode;
   /** Additional classes added to the CheckboxSelectGroup control */

@@ -4,7 +4,7 @@ import { default as checkStyles } from '@patternfly/react-styles/css/components/
 import { css } from '@patternfly/react-styles';
 import { SelectConsumer, KeyTypes } from './selectConstants';
 
-export interface CheckboxSelectOptionProps {
+export interface CheckboxSelectOptionProps extends React.HTMLProps<HTMLLabelElement> {
   /** The value for the option */
   children?: string;
   /** Additional classes added to the Select Option */
