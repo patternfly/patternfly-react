@@ -1,4 +1,4 @@
-describe('Donut Small Right Legend Demo Test', () => {
+describe('Small donut utilization with right-aligned legend Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#donut-chart-small-right-legend-demo-nav-item-link').click();

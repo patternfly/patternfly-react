@@ -10,7 +10,12 @@ describe('Area Chart Simple Demo Test', () => {
   });
 
   it('Verify legend string', () => {
-    cy.get('text').contains('Average number of pets');
+    cy.get('text').contains('Cats');
+  });
+
+  it('Verify svg width and height', () => {
+    cy.get('.VictoryContainer > svg').should('have.attr', 'width', '800');
+    cy.get('.VictoryContainer > svg').should('have.attr', 'height', '200');
   });
 
 });

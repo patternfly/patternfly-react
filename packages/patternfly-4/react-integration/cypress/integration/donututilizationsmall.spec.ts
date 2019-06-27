@@ -1,4 +1,4 @@
-describe('Donut Small Demo Test', () => {
+describe('Small donut utilization Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#donut-chart-small-demo-nav-item-link').click();

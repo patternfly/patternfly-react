@@ -1,8 +1,8 @@
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
-import { VictoryZoomContainer } from 'victory';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { width } from 'styled-system';
 
-export class LineChartGreenZoomDemo extends React.Component {
+export class LineChartGreenDemo extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -10,10 +10,22 @@ export class LineChartGreenZoomDemo extends React.Component {
 
   render() {
     return (
-    <div>
-      <div className="line-chart-inline">
-        <div className="line-chart-container">
-          <Chart width={1000} themeColor={ChartThemeColor.green} containerComponent={<VictoryZoomContainer zoomDimension="x" />}>
+      <div style={{width: '70%'}}>
+        <div className="line-chart-legend-right">
+          <Chart
+            containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
+            legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
+            legendOrientation="vertical"
+            legendPosition="right"
+            height={250}
+            padding={{
+              right: 200
+            }}
+            themeColor={ChartThemeColor.green}
+            width={600}
+          >
+            <ChartAxis tickValues={[2, 3, 4]} />
+            <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
             <ChartGroup>
               <ChartLine
                 data={[
@@ -53,20 +65,9 @@ export class LineChartGreenZoomDemo extends React.Component {
                 ]}
               />
             </ChartGroup>
-            <ChartAxis tickValues={[2, 3, 4]} />
-            <ChartAxis dependentAxis tickValues={[2, 5, 8]} />
           </Chart>
         </div>
-        <ChartLegend
-          data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
-          orientation="horizontal"
-          responsive={false}
-          title="Average number of pets"
-          themeColor={ChartThemeColor.green}
-          y={80}
-        />
       </div>
-    </div>
     )
   }
 

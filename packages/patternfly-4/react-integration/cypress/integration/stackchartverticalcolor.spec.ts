@@ -12,4 +12,9 @@ describe('Stack Chart Vertical Color Demo Test', () => {
   it('Verify legend string', () => {
     cy.get('text').contains('Cats');
   });
+
+  it('Verify svg width and height', () => {
+    cy.get('.VictoryContainer > svg').should('have.attr', 'width', '450');
+    cy.get('.VictoryContainer > svg').should('have.attr', 'height', '300');
+  });
 });

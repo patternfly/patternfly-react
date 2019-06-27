@@ -1,4 +1,4 @@
-describe('Donut Utilization Demo Test', () => {
+describe('Donut utilization chart with inverted static thresholds and right-aligned legend Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#donut-utilization-simple-demo-nav-item-link').click();

@@ -9,7 +9,7 @@ export class DonutUtilizationSmallStaticBottomDemo extends React.Component {
 
   render() {
     return (
-      <div style={{backgroundColor: 'white', width: '60%', paddingLeft: '50px'}}>
+      <div style={{backgroundColor: 'white', width: '60%'}}>
         <div className="donut-threshold-chart-legend-bottom-subtitle-right-sm">
           <ChartDonutThreshold
             data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}

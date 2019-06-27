@@ -261,14 +261,14 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.LabelDemo
   },
   {
+    id: 'line-chart-green-demo',
+    name: 'Line Chart Green Demo',
+    componentType: Examples.LineChartGreenDemo
+  },
+  {
     id: 'line-chart-color-demo',
     name: 'Line Chart Multi-color Demo',
     componentType: Examples.LineChartColorDemo
-  },
-  {
-    id: 'line-chart-green-zoom-demo',
-    name: 'Line Chart Green with Zoom Demo',
-    componentType: Examples.LineChartGreenZoomDemo
   },
   {
     id: 'list-demo',

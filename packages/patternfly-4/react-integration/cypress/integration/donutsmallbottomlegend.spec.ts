@@ -12,4 +12,9 @@ describe('Donut Small Bottom Legend Demo Test', () => {
   it('Verify legend string', () => {
     cy.get('text').contains('Pets');
   });
+
+  it('Verify svg width and height', () => {
+    cy.get('.VictoryContainer > svg').should('have.attr', 'width', '300');
+    cy.get('.VictoryContainer > svg').should('have.attr', 'height', '200');
+  });
 });

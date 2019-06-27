@@ -9,7 +9,7 @@ export class StackVerticalColorZoomDemo extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{width: '50%'}}>
         <div className="stack-chart-container">
           <Chart
             allowZoom
