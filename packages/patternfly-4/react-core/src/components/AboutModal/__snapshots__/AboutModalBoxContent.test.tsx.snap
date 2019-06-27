@@ -14,14 +14,10 @@ exports[`AboutModalBoxContent Test 1`] = `
       This is a AboutModalBoxContent
     </div>
   </div>
-  <div
+  <p
     className="pf-c-about-modal-box__strapline"
   >
-    <p
-      className="pf-c-title pf-m-md"
-    >
-      trademark
-    </p>
-  </div>
+    trademark
+  </p>
 </div>
 `;

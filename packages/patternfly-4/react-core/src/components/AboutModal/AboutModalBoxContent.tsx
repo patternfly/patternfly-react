@@ -32,8 +32,8 @@ export const AboutModalBoxContent: React.SFC<AboutModalBoxContentProps> = ({
       : <div className={css(contentStyles.content)}>{children}</div>
       }
     </div>
-    <div className={css(styles.aboutModalBoxStrapline)}>
-      <p className={css(titleStyles.title, titleStyles.modifiers.md)}>{trademark}</p>
-    </div>
+    <p className={css(styles.aboutModalBoxStrapline)}>
+      {trademark}
+    </p>
   </div>
 );
