@@ -20,7 +20,7 @@ exports[`Progress measure location inside 1`] = `
     id="inside-progress"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "inside-progress-description",
@@ -43,7 +43,7 @@ exports[`Progress measure location inside 1`] = `
       <div
         className="pf-c-progress__status"
       />
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "inside-progress-description",
@@ -52,7 +52,6 @@ exports[`Progress measure location inside 1`] = `
             "aria-valuenow": 33,
           }
         }
-        className=""
         value={33}
       >
         <div
@@ -77,8 +76,8 @@ exports[`Progress measure location inside 1`] = `
             </span>
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -103,7 +102,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
     id="large-progress"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "large-progress-description",
@@ -126,7 +125,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
       <div
         className="pf-c-progress__status"
       />
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "large-progress-description",
@@ -135,7 +134,6 @@ exports[`Progress measure location inside and small should render large 1`] = `
             "aria-valuenow": 33,
           }
         }
-        className=""
         value={33}
       >
         <div
@@ -160,8 +158,8 @@ exports[`Progress measure location inside and small should render large 1`] = `
             </span>
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -186,7 +184,7 @@ exports[`Progress measure location none 1`] = `
     id="none-progress"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "none-progress-description",
@@ -209,7 +207,7 @@ exports[`Progress measure location none 1`] = `
       <div
         className="pf-c-progress__status"
       />
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "none-progress-description",
@@ -218,7 +216,6 @@ exports[`Progress measure location none 1`] = `
             "aria-valuenow": 33,
           }
         }
-        className=""
         value={33}
       >
         <div
@@ -241,8 +238,8 @@ exports[`Progress measure location none 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -267,7 +264,7 @@ exports[`Progress measure location outside 1`] = `
     id="outside-progress"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "outside-progress-description",
@@ -296,7 +293,7 @@ exports[`Progress measure location outside 1`] = `
           33%
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "outside-progress-description",
@@ -305,7 +302,6 @@ exports[`Progress measure location outside 1`] = `
             "aria-valuenow": 33,
           }
         }
-        className=""
         value={33}
       >
         <div
@@ -328,8 +324,8 @@ exports[`Progress measure location outside 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -354,7 +350,7 @@ exports[`Progress measure location top 1`] = `
     id="top-progress"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "top-progress-description",
@@ -383,7 +379,7 @@ exports[`Progress measure location top 1`] = `
           33%
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "top-progress-description",
@@ -392,7 +388,6 @@ exports[`Progress measure location top 1`] = `
             "aria-valuenow": 33,
           }
         }
-        className=""
         value={33}
       >
         <div
@@ -415,8 +410,8 @@ exports[`Progress measure location top 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -441,7 +436,7 @@ exports[`Progress size lg 1`] = `
     id="lg-progress"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "lg-progress-description",
@@ -470,7 +465,7 @@ exports[`Progress size lg 1`] = `
           33%
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "lg-progress-description",
@@ -479,7 +474,6 @@ exports[`Progress size lg 1`] = `
             "aria-valuenow": 33,
           }
         }
-        className=""
         value={33}
       >
         <div
@@ -502,8 +496,8 @@ exports[`Progress size lg 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -528,7 +522,7 @@ exports[`Progress size md 1`] = `
     id="md-progress"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "md-progress-description",
@@ -557,7 +551,7 @@ exports[`Progress size md 1`] = `
           33%
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "md-progress-description",
@@ -566,7 +560,6 @@ exports[`Progress size md 1`] = `
             "aria-valuenow": 33,
           }
         }
-        className=""
         value={33}
       >
         <div
@@ -589,8 +582,8 @@ exports[`Progress size md 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -615,7 +608,7 @@ exports[`Progress size sm 1`] = `
     id="sm-progress"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "sm-progress-description",
@@ -644,7 +637,7 @@ exports[`Progress size sm 1`] = `
           33%
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "sm-progress-description",
@@ -653,7 +646,6 @@ exports[`Progress size sm 1`] = `
             "aria-valuenow": 33,
           }
         }
-        className=""
         value={33}
       >
         <div
@@ -676,8 +668,8 @@ exports[`Progress size sm 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -702,7 +694,7 @@ exports[`Progress variant danger 1`] = `
     id="danger-progress"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "danger-progress-description",
@@ -761,7 +753,7 @@ exports[`Progress variant danger 1`] = `
           </TimesCircleIcon>
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "danger-progress-description",
@@ -770,7 +762,6 @@ exports[`Progress variant danger 1`] = `
             "aria-valuenow": 33,
           }
         }
-        className=""
         value={33}
       >
         <div
@@ -793,8 +784,8 @@ exports[`Progress variant danger 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -819,7 +810,7 @@ exports[`Progress variant info 1`] = `
     id="info-progress"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "info-progress-description",
@@ -848,7 +839,7 @@ exports[`Progress variant info 1`] = `
           33%
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "info-progress-description",
@@ -857,7 +848,6 @@ exports[`Progress variant info 1`] = `
             "aria-valuenow": 33,
           }
         }
-        className=""
         value={33}
       >
         <div
@@ -880,8 +870,8 @@ exports[`Progress variant info 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -906,7 +896,7 @@ exports[`Progress variant success 1`] = `
     id="success-progress"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "success-progress-description",
@@ -965,7 +955,7 @@ exports[`Progress variant success 1`] = `
           </CheckCircleIcon>
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "success-progress-description",
@@ -974,7 +964,6 @@ exports[`Progress variant success 1`] = `
             "aria-valuenow": 33,
           }
         }
-        className=""
         value={33}
       >
         <div
@@ -997,8 +986,8 @@ exports[`Progress variant success 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -1023,7 +1012,7 @@ exports[`Progress with aria-valuetext 1`] = `
     id="progress-aria-valuetext"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "progress-aria-valuetext-description",
@@ -1053,7 +1042,7 @@ exports[`Progress with aria-valuetext 1`] = `
           33%
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "progress-aria-valuetext-description",
@@ -1063,7 +1052,6 @@ exports[`Progress with aria-valuetext 1`] = `
             "aria-valuetext": "Descriptive text here",
           }
         }
-        className=""
         value={33}
       >
         <div
@@ -1087,8 +1075,8 @@ exports[`Progress with aria-valuetext 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -1113,7 +1101,7 @@ exports[`Simple progress 1`] = `
     id="progress-simple-example"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "progress-simple-example-description",
@@ -1142,7 +1130,7 @@ exports[`Simple progress 1`] = `
           33%
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "progress-simple-example-description",
@@ -1151,7 +1139,6 @@ exports[`Simple progress 1`] = `
             "aria-valuenow": 33,
           }
         }
-        className=""
         value={33}
       >
         <div
@@ -1174,8 +1161,8 @@ exports[`Simple progress 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -1200,7 +1187,7 @@ exports[`additional label 1`] = `
     id="additional-label"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "additional-label-description",
@@ -1229,7 +1216,7 @@ exports[`additional label 1`] = `
           Additional label
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "additional-label-description",
@@ -1238,7 +1225,6 @@ exports[`additional label 1`] = `
             "aria-valuenow": 33,
           }
         }
-        className=""
         value={33}
       >
         <div
@@ -1261,8 +1247,8 @@ exports[`additional label 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -1287,7 +1273,7 @@ exports[`no value specified 1`] = `
     id="no-value"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "no-value-description",
@@ -1316,7 +1302,7 @@ exports[`no value specified 1`] = `
           0%
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "no-value-description",
@@ -1325,7 +1311,6 @@ exports[`no value specified 1`] = `
             "aria-valuenow": 0,
           }
         }
-        className=""
         value={0}
       >
         <div
@@ -1348,8 +1333,8 @@ exports[`no value specified 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -1374,7 +1359,7 @@ exports[`value higher than maxValue 1`] = `
     id="higher-max-value"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "higher-max-value-description",
@@ -1403,7 +1388,7 @@ exports[`value higher than maxValue 1`] = `
           100%
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "higher-max-value-description",
@@ -1412,7 +1397,6 @@ exports[`value higher than maxValue 1`] = `
             "aria-valuenow": 77,
           }
         }
-        className=""
         value={100}
       >
         <div
@@ -1435,8 +1419,8 @@ exports[`value higher than maxValue 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -1461,7 +1445,7 @@ exports[`value lower than minValue 1`] = `
     id="lower-min-value"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "lower-min-value-description",
@@ -1490,7 +1474,7 @@ exports[`value lower than minValue 1`] = `
           0%
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "lower-min-value-description",
@@ -1499,7 +1483,6 @@ exports[`value lower than minValue 1`] = `
             "aria-valuenow": 33,
           }
         }
-        className=""
         value={0}
       >
         <div
@@ -1522,8 +1505,8 @@ exports[`value lower than minValue 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -1548,7 +1531,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
     id="scaled-range-value"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "scaled-range-value-description",
@@ -1577,7 +1560,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
           57%
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "scaled-range-value-description",
@@ -1586,7 +1569,6 @@ exports[`value scaled between minValue and maxValue 1`] = `
             "aria-valuenow": 50,
           }
         }
-        className=""
         value={57}
       >
         <div
@@ -1609,8 +1591,8 @@ exports[`value scaled between minValue and maxValue 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -1635,7 +1617,7 @@ exports[`value scaled with maxValue 1`] = `
     id="scaled-max-value"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "scaled-max-value-description",
@@ -1664,7 +1646,7 @@ exports[`value scaled with maxValue 1`] = `
           62%
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "scaled-max-value-description",
@@ -1673,7 +1655,6 @@ exports[`value scaled with maxValue 1`] = `
             "aria-valuenow": 50,
           }
         }
-        className=""
         value={62}
       >
         <div
@@ -1696,8 +1677,8 @@ exports[`value scaled with maxValue 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;
@@ -1722,7 +1703,7 @@ exports[`value scaled with minValue 1`] = `
     id="scaled-min-value"
     role="progressbar"
   >
-    <ProgressContainer
+    <Component
       ariaProps={
         Object {
           "aria-describedby": "scaled-min-value-description",
@@ -1751,7 +1732,7 @@ exports[`value scaled with minValue 1`] = `
           44%
         </span>
       </div>
-      <ProgressBar
+      <Component
         ariaProps={
           Object {
             "aria-describedby": "scaled-min-value-description",
@@ -1760,7 +1741,6 @@ exports[`value scaled with minValue 1`] = `
             "aria-valuenow": 50,
           }
         }
-        className=""
         value={44}
       >
         <div
@@ -1783,8 +1763,8 @@ exports[`value scaled with minValue 1`] = `
             />
           </div>
         </div>
-      </ProgressBar>
-    </ProgressContainer>
+      </Component>
+    </Component>
   </div>
 </Progress>
 `;

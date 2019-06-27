@@ -2,6 +2,7 @@
 title: 'Progress'
 cssPrefix: 'pf-c-progress'
 propComponents: ['Progress']
+typescript: true
 ---
 
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
@@ -131,5 +132,5 @@ import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
-<Progress value={2} title="Title" value={2} min={0} max={5} label="Step 2: Copying files" valueText="Step 2: Copying files" />
+<Progress value={2} title="Title" min={0} max={5} label="Step 2: Copying files" valueText="Step 2: Copying files" />
 ```

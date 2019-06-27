@@ -1,60 +1,56 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Progress/progress';
 import { css, getModifier } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
-import ProgressContainer, { ProgressMeasureLocation, ProgressVariant } from './ProgressContainer';
+import { ProgressContainer, ProgressMeasureLocation, ProgressVariant } from './ProgressContainer';
 import { getUniqueId } from '../../helpers/util';
+import { Omit } from '../../helpers/typeUtils';
 
-export const ProgressSize = {
-  sm: 'sm',
-  md: 'md',
-  lg: 'lg'
-};
+export enum ProgressSize {
+  sm = 'sm',
+  md = 'md',
+  lg = 'lg',
+}
 
-const propTypes = {
+export interface ProgressProps extends Omit<React.HTMLProps<HTMLDivElement>, 'size' | 'label'> {
   /** Classname for progress component. */
-  className: PropTypes.string,
+  className?: string;
   /** Size variant of progress. */
-  size: PropTypes.oneOf(Object.values(ProgressSize)),
+  size?: 'sm' | 'md' | 'lg';
   /** Where the measure percent will be located. */
-  measureLocation: PropTypes.oneOf(Object.values(ProgressMeasureLocation)),
+  measureLocation?: 'outside' | 'inside' | 'top' | 'none';
   /** Status variant of progress. */
-  variant: PropTypes.oneOf(Object.values(ProgressVariant)),
+  variant?: 'danger' | 'success' | 'info';
   /** Title above progress. */
-  title: PropTypes.string,
-  /** Text description of current progress value to display instead of
-   * percentage. */
-  label: PropTypes.node,
+  title?: string;
+  /** Text description of current progress value to display instead of percentage. */
+  label?: React.ReactNode;
   /** Actual value of progress. */
-  value: PropTypes.number,
+  value?: number;
   /** DOM id for progress component. */
-  id: PropTypes.string,
+  id?: string;
   /** Minimal value of progress. */
-  min: PropTypes.number,
+  min?: number;
   /** Maximum value of progress. */
-  max: PropTypes.number,
-  /** Accessible text description of current progress value, for when value is
-   * not a percentage. Use with label. */
-  valueText: PropTypes.string,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
+  max?: number;
+  /** Accessible text description of current progress value, for when value is not a percentage. Use with label. */
+  valueText?: string;
+}
 
-const defaultProps = {
-  className: '',
-  measureLocation: ProgressMeasureLocation.top,
-  variant: ProgressVariant.info,
-  id: '',
-  title: '',
-  min: 0,
-  max: 100,
-  size: null,
-  label: null,
-  value: 0,
-  valueText: null
-};
+export class Progress extends React.Component<ProgressProps> {
+  static defaultProps = {
+    className: '',
+    measureLocation: ProgressMeasureLocation.top,
+    variant: ProgressVariant.info,
+    id: '',
+    title: '',
+    min: 0,
+    max: 100,
+    size: null as ProgressSize,
+    label: null as React.ReactNode,
+    value: 0,
+    valueText: null as string
+  }
 
-class Progress extends Component {
   id = this.props.id || getUniqueId();
 
   render() {
@@ -77,7 +73,7 @@ class Progress extends Component {
       ...(valueText ? { 'aria-valuetext': valueText } : { 'aria-describedby': `${this.id}-description` })
     };
 
-    const ariaProps = {
+    const ariaProps: {[k: string]: any} = {
       'aria-describedby': `${this.id}-description`,
       'aria-valuemin': min,
       'aria-valuenow': value,
@@ -116,8 +112,3 @@ class Progress extends Component {
     );
   }
 }
-
-Progress.propTypes = propTypes;
-Progress.defaultProps = defaultProps;
-
-export default Progress;

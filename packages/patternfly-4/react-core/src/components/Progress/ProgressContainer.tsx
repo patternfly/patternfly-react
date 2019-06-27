@@ -1,56 +1,57 @@
-import React, { Fragment } from 'react';
+import * as React from 'react';
 import progressStyle from '@patternfly/react-styles/css/components/Progress/progress';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import { CheckCircleIcon, TimesCircleIcon } from '@patternfly/react-icons';
-import ProgressBar from './ProgressBar';
+import { AriaProps, ProgressBar } from './ProgressBar';
+import { Omit } from '../../helpers/typeUtils';
 
-export const ProgressMeasureLocation = {
-  outside: 'outside',
-  inside: 'inside',
-  top: 'top',
-  none: 'none'
-};
+export enum ProgressMeasureLocation {
+  outside = 'outside',
+  inside = 'inside',
+  top = 'top',
+  none = 'none'
+}
 
-export const ProgressVariant = {
-  danger: 'danger',
-  success: 'success',
-  info: 'info'
-};
+export enum ProgressVariant {
+  danger = 'danger',
+  success = 'success',
+  info = 'info'
+}
 
-const propTypes = {
+export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Properties needed for aria support */
-  ariaProps: PropTypes.object.isRequired,
+  ariaProps: AriaProps;
   /** Progress component DOM ID. */
-  parentId: PropTypes.string.isRequired,
+  parentId: string;
   /** Progress title. */
-  title: PropTypes.string,
+  title?: string;
   /** Label to indicate what progress is showing. */
-  label: PropTypes.node,
+  label?: React.ReactNode;
   /** Type of progress status. */
-  variant: PropTypes.oneOf(Object.values(ProgressVariant)),
+  variant?: 'danger' | 'success' | 'info';
   /** Location of progress value. */
-  measureLocation: PropTypes.oneOf(Object.values(ProgressMeasureLocation)),
+  measureLocation?: 'outside' | 'inside' | 'top' | 'none';
   /** Actual progress value. */
-  value: PropTypes.number.isRequired
+  value: number;
 };
 
-const defaultProps = {
-  variant: ProgressVariant.info,
-  measureLocation: ProgressMeasureLocation.Top,
-  title: '',
-  label: null
+const variantToIcon: {[k: string]: React.FunctionComponent} = {
+  danger: TimesCircleIcon,
+  success: CheckCircleIcon
 };
 
-const variantToIcon = {
-  [ProgressVariant.danger]: TimesCircleIcon,
-  [ProgressVariant.success]: CheckCircleIcon
-};
-
-const ProgressContainer = ({ ariaProps, value, title, parentId, label, variant, measureLocation }) => {
+export const ProgressContainer: React.FunctionComponent<ProgressContainerProps> = ({
+  ariaProps,
+  value,
+  title = '',
+  parentId,
+  label = null,
+  variant = ProgressVariant.info,
+  measureLocation = ProgressMeasureLocation.top
+}: ProgressContainerProps) => {
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
   return (
-    <Fragment>
+    <React.Fragment>
       <div className={css(progressStyle.progressDescription)} id={`${parentId}-description`}>
         {title}
       </div>
@@ -67,11 +68,6 @@ const ProgressContainer = ({ ariaProps, value, title, parentId, label, variant, 
       <ProgressBar ariaProps={ariaProps} value={value}>
         {measureLocation === ProgressMeasureLocation.inside && `${value}%`}
       </ProgressBar>
-    </Fragment>
+    </React.Fragment>
   );
 };
-
-ProgressContainer.propTypes = propTypes;
-ProgressContainer.defaultProps = defaultProps;
-
-export default ProgressContainer;
