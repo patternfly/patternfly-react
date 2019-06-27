@@ -118,7 +118,7 @@ class ClipboardCopy extends React.Component {
                 </CopyButton>
               </div>
               {this.state.expanded && (
-                <ExpandedContent id={`content-${id}`} onChange={this.updateText}>
+                <ExpandedContent isReadOnly={isReadOnly} id={`content-${id}`} onChange={this.updateText}>
                   {this.state.text}
                 </ExpandedContent>
               )}
