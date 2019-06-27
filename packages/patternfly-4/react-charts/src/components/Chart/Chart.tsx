@@ -354,10 +354,10 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   ...rest
 }: ChartProps) => {
   const defaultPadding = {
-    bottom: theme.chart.padding,
-    left: theme.chart.padding,
-    top: theme.chart.padding,
-    right: theme.chart.padding,
+    bottom: theme.chart.padding || 0,
+    left: theme.chart.padding || 0,
+    top: theme.chart.padding || 0,
+    right: theme.chart.padding || 0,
     ...(padding as any)
   };
 
