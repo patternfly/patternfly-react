@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.56.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.55.0...@patternfly/react-core@3.56.0) (2019-06-27)
+
+
+### Features
+
+* **Page:** add page section main nav type variant ([#2268](https://github.com/patternfly/patternfly-react/issues/2268)) ([0c0d4a0](https://github.com/patternfly/patternfly-react/commit/0c0d4a0))
+
+
+
+
+
+# [3.55.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.54.1...@patternfly/react-core@3.55.0) (2019-06-27)
+
+
+### Features
+
+* **chipGroup:** add heading level prop to toolbar chip group label ([#2278](https://github.com/patternfly/patternfly-react/issues/2278)) ([d87ce91](https://github.com/patternfly/patternfly-react/commit/d87ce91))
+* **InputGroup:** Convert input group to typescript ([#2220](https://github.com/patternfly/patternfly-react/issues/2220)) ([0313519](https://github.com/patternfly/patternfly-react/commit/0313519))
+
+
+
+
+
 ## [3.54.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.54.0...@patternfly/react-core@3.54.1) (2019-06-27)
 
 

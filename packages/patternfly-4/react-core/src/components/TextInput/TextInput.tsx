@@ -47,7 +47,8 @@ export class TextInput extends React.Component<TextInputProps> {
     isValid: true,
     isDisabled: false,
     isReadOnly: false,
-    type: 'text'
+    type: 'text', 
+    onChange: (): any => undefined
   }
 
   constructor(props: TextInputProps) {
@@ -59,7 +60,9 @@ export class TextInput extends React.Component<TextInputProps> {
   }
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-    this.props.onChange(event.currentTarget.value, event);
+    if (this.props.onChange){
+      this.props.onChange(event.currentTarget.value, event);
+    }
   }
 
   render() {

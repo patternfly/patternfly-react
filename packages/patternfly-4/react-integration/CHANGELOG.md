@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.26.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.25.0...@patternfly/react-integration@1.26.0) (2019-06-27)
+
+
+### Features
+
+* **InputGroup:** Convert input group to typescript ([#2220](https://github.com/patternfly/patternfly-react/issues/2220)) ([0313519](https://github.com/patternfly/patternfly-react/commit/0313519))
+
+
+
+
+
 # [1.25.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.24.3...@patternfly/react-integration@1.25.0) (2019-06-27)
 
 

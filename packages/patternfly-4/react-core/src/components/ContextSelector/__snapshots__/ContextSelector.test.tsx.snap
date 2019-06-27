@@ -54,9 +54,7 @@ exports[`Renders ContextSelector open 1`] = `
       <div
         className="pf-c-context-selector__menu-input"
       >
-        <InputGroup
-          className=""
-        >
+        <Component>
           <TextInput
             aria-label={null}
             aria-labelledby="pf-context-selector-search-button-id-0"
@@ -85,7 +83,7 @@ exports[`Renders ContextSelector open 1`] = `
               title={null}
             />
           </Component>
-        </InputGroup>
+        </Component>
       </div>
       <ContextProvider
         value={

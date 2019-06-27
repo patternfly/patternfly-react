@@ -1,20 +1,30 @@
-import React from 'react';
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/InputGroup/input-group';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import { FormSelect } from '../FormSelect';
 import { TextArea } from '../TextArea';
 import { TextInput } from '../TextInput';
 
-const InputGroup = ({ className, children, ...props }) => {
+export interface InputGroupProps extends React.HTMLProps<HTMLDivElement> {
+  /** Additional classes added to the input group. */
+  className?: string; 
+  /** Content rendered inside the input group. */
+  children: React.ReactNode;
+}
+
+export const InputGroup: React.FunctionComponent<InputGroupProps> = ({
+  className = '', 
+  children,
+  ...props
+}: InputGroupProps) => {
   const formCtrls = [FormSelect, TextArea, TextInput].map(comp => comp.toString());
   const idItem = React.Children.toArray(children).find(
-    child => !formCtrls.includes(child.type.toString()) && child.props.id
-  );
+    (child: any) => !formCtrls.includes(child.type.toString()) && child.props.id
+  ) as React.ReactElement<{id: string}>;
   return (
     <div className={css(styles.inputGroup, className)} {...props}>
       {idItem
-        ? React.Children.map(children, child =>
+        ? React.Children.map(children, (child: any) =>
             formCtrls.includes(child.type.toString())
               ? React.cloneElement(child, { 'aria-describedby': idItem.props.id })
               : child
@@ -22,17 +32,4 @@ const InputGroup = ({ className, children, ...props }) => {
         : children}
     </div>
   );
-};
-
-InputGroup.propTypes = {
-  /** Additional classes added to the input group. */
-  className: PropTypes.string,
-  /** Content rendered inside the input group. */
-  children: PropTypes.node.isRequired
-};
-
-InputGroup.defaultProps = {
-  className: ''
-};
-
-export default InputGroup;
+}
