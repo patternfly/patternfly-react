@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.27.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.26.1...demo-app-ts@1.27.0) (2019-06-27)
+
+
+### Features
+
+* **InputGroup:** Convert input group to typescript ([#2220](https://github.com/patternfly/patternfly-react/issues/2220)) ([0313519](https://github.com/patternfly/patternfly-react/commit/0313519))
+
+
+
+
+
 ## [1.26.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.26.0...demo-app-ts@1.26.1) (2019-06-27)
 
 **Note:** Version bump only for package demo-app-ts
