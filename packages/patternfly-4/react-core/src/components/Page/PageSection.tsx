@@ -20,9 +20,9 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the section */
   className?: string;
   /** Section background color variant */
-  variant?: 'default' | 'light' | 'dark' | 'darker' | PageSectionVariants;
+  variant?: 'default' | 'light' | 'dark' | 'darker';
   /** Section type variant */
-  type?: 'default' | 'nav' | PageSectionTypes;
+  type?: 'default' | 'nav';
   /** Enables the page section to fill the available vertical space */
   isFilled?: boolean;
   /** Modifies a main page section to have no padding */
