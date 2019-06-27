@@ -141,6 +141,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.NavDemo
   },
   {
+    id: 'notification-badge-demo',
+    name: 'Notification Badge Demo',
+    componentType: Examples.NotificationBadgeDemo
+  },
+  {
     id: 'options-menu-demo',
     name: 'Options Menu Demo',
     componentType: Examples.OptionsMenuDemo
