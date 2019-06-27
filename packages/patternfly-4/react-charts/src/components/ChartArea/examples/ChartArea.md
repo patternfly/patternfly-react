@@ -5,40 +5,8 @@ typescript: true
 propComponents: ['Chart', 'ChartArea', 'ChartGroup', 'ChartVoronoiContainer']
 ---
 
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLegend, ChartLegendWrapper, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLabel, ChartLegendWrapper, ChartVoronoiContainer } from '@patternfly/react-charts';
 import './chart-area.scss';
-
-## Simple area chart with right-aligned legend
-```js
-import React from 'react';
-import { Chart, ChartArea, ChartGroup } from '@patternfly/react-charts';
-
-<div>
-  <div className="area-chart-legend-right">
-    <Chart
-      legendData={[{ name: 'Cats' }]}
-      legendOrientation="vertical"
-      legendPosition="right"
-      height={200}
-      padding={{
-        right: 200
-      }}
-      width={800}
-    >
-      <ChartGroup>
-        <ChartArea
-          data={[
-            { name: 'Cats', x: 1, y: 3 },
-            { name: 'Cats', x: 2, y: 4 },
-            { name: 'Cats', x: 3, y: 8 },
-            { name: 'Cats', x: 4, y: 6 }
-          ]}
-        />
-      </ChartGroup>
-    </Chart>
-  </div>
-</div>
-```
 
 ## Cyan area chart with tooltip and right-aligned legend
 ```js
@@ -56,6 +24,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiC
       padding={{
         right: 200
       }}
+      maxDomain={{y: 9}}
       themeColor={ChartThemeColor.cyan}
       width={800}
     >
@@ -69,6 +38,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiC
             { name: 'Cats', x: 3, y: 8 },
             { name: 'Cats', x: 4, y: 6 }
           ]}
+          interpolation="basis"
         />
         <ChartArea
           data={[
@@ -78,6 +48,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiC
             { name: 'Birds', x: 4, y: 5 },
             { name: 'Birds', x: 5, y: 6 }
           ]}
+          interpolation="basis"
         />
         <ChartArea
           data={[
@@ -87,6 +58,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiC
             { name: 'Dogs', x: 4, y: 2 },
             { name: 'Dogs', x: 5, y: 4 }
           ]}
+          interpolation="basis"
         />
       </ChartGroup>
     </Chart>
@@ -109,6 +81,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
       padding={{
         bottom: 75
       }}
+      maxDomain={{y: 9}}
       themeColor={ChartThemeColor.multi}
       width={650}
     >
@@ -122,6 +95,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
             { name: 'Cats', x: 3, y: 8 },
             { name: 'Cats', x: 4, y: 6 }
           ]}
+          interpolation="basis"
         />
         <ChartArea
           data={[
@@ -131,6 +105,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
             { name: 'Birds', x: 4, y: 5 },
             { name: 'Birds', x: 5, y: 6 }
           ]}
+          interpolation="basis"
         />
         <ChartArea
           data={[
@@ -140,9 +115,38 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
             { name: 'Dogs', x: 4, y: 2 },
             { name: 'Dogs', x: 5, y: 4 }
           ]}
+          interpolation="basis"
         />
       </ChartGroup>
     </Chart>
+  </div>
+</div>
+```
+
+## Sparkline chart
+```js
+import React from 'react';
+import { ChartArea, ChartGroup, ChartLabel } from '@patternfly/react-charts';
+
+<div>
+  <div className="sparkline-container">
+    <div className="sparkline-chart">
+      <ChartGroup
+        height={100}
+        padding={0}
+        width={400}
+      >
+        <ChartArea
+          data={[
+            { name: 'Cats', x: 1, y: 3 },
+            { name: 'Cats', x: 2, y: 4 },
+            { name: 'Cats', x: 3, y: 8 },
+            { name: 'Cats', x: 4, y: 6 }
+          ]}
+        />
+      </ChartGroup>
+    </div>
+    <ChartLabel text="CPU utilization"/>
   </div>
 </div>
 ```
