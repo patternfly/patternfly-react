@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.56.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.56.0...@patternfly/react-core@3.56.1) (2019-06-27)
+
+
+### Bug Fixes
+
+* **Radio:** fix warning from undefined starting params ([#2292](https://github.com/patternfly/patternfly-react/issues/2292)) ([fe708e1](https://github.com/patternfly/patternfly-react/commit/fe708e1))
+
+
+
+
+
 # [3.56.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.55.0...@patternfly/react-core@3.56.0) (2019-06-27)
 
 
