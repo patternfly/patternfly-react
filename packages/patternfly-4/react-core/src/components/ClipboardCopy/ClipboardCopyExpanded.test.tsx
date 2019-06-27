@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ExpandedContent from './ExpandedContent';
+import { ClipboardCopyExpanded } from './ClipboardCopyExpanded';
 
 const props = {
   className: 'class-1',
@@ -9,9 +9,9 @@ const props = {
 
 test('expanded content render', () => {
   const view = shallow(
-    <ExpandedContent {...props} onChange={() => {}}>
+    <ClipboardCopyExpanded {...props}>
       This is my text
-    </ExpandedContent>
+    </ClipboardCopyExpanded>
   );
   expect(view).toMatchSnapshot();
 });

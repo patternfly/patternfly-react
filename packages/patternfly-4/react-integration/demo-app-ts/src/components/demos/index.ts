@@ -12,6 +12,8 @@ export * from './ButtonDemo/ButtonDemo';
 export * from './CardDemo/CardDemo';
 export * from './CheckboxDemo/CheckboxDemo';
 export * from './ChipGroupDemo/ChipGroupDemo';
+export * from './ContextSelectorDemo/ContextSelectorDemo'; 
+export * from './ClipboardCopyDemo/ClipboardCopyDemo'; 
 export * from './ContextSelectorDemo/ContextSelectorDemo';
 export * from './DataListDemo/DataListDemo';
 export * from './EmptyStateDemo/EmptyStateDemo';

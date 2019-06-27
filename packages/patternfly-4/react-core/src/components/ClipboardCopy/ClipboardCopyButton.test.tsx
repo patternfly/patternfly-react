@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import CopyButton from './CopyButton';
+import { ClipboardCopyButton } from './ClipboardCopyButton';
 
 const props = {
   id: 'my-id',
@@ -8,23 +8,23 @@ const props = {
   className: 'fancy-copy-button',
   onClick: jest.fn(),
   exitDelay: 1000,
-  entryDelay: 2000,
+  entryDelay: 2000,  
   maxWidth: '500px',
-  position: 'right',
+  position: 'right' as 'right',
   'aria-label': 'click this button to copy text'
 };
 
 test('copy button render', () => {
-  const view = shallow(<CopyButton {...props}>Copy Me</CopyButton>);
+  const view = shallow(<ClipboardCopyButton {...props}>Copy Me</ClipboardCopyButton>);
   expect(view).toMatchSnapshot();
 });
 
 test('copy button onClick', () => {
   const onclick = jest.fn();
   const view = shallow(
-    <CopyButton {...props} onClick={onclick}>
+    <ClipboardCopyButton {...props} onClick={onclick}>
       Copy to Clipboard
-    </CopyButton>
+    </ClipboardCopyButton>
   );
   view.find('button').simulate('click');
   expect(onclick).toBeCalled();
