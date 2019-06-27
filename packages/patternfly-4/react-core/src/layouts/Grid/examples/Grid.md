@@ -65,7 +65,7 @@ import React from 'react';
 import { Grid, GridItem, Button } from '@patternfly/react-core';
 import ItemControl from './ItemControl';
 
-<Grid sm={6} md={4} lg={3}>
+<Grid sm={6} md={4} lg={3} xl2={1}>
   <GridItem pan={3} rowSpan={2}>
     span = 3 rowSpan= 2
   </GridItem>

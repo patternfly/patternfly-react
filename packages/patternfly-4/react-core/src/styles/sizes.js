@@ -13,5 +13,6 @@ export const DeviceSizes = {
   [BaseSizes.sm]: BaseSizes.sm,
   [BaseSizes.md]: BaseSizes.md,
   [BaseSizes.lg]: BaseSizes.lg,
-  [BaseSizes.xl]: BaseSizes.xl
+  [BaseSizes.xl]: BaseSizes.xl,
+  xl2: BaseSizes['2xl']
 };
