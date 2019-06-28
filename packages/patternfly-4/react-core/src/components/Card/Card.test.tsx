@@ -34,3 +34,8 @@ test('card with isHoverable applied ', () => {
   const view = shallow(<Card isHoverable={true} />);
   expect(view).toMatchSnapshot();
 });
+
+test('card with isCompact applied ', () => {
+  const view = shallow(<Card isCompact={true} />);
+  expect(view).toMatchSnapshot();
+});
