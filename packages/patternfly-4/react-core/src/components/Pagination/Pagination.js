@@ -6,6 +6,7 @@ import { DropdownDirection } from '../Dropdown';
 import ToggleTemplate from './ToggleTemplate';
 import Navigation from './Navigation';
 import PaginationOptionsMenu from './PaginationOptionsMenu';
+import { isOUIAEnvironment, getUniqueId as getOIUAUniqueId } from '../../helpers/ouia';
 
 const defaultPerPageOptions = [
   {
@@ -156,10 +157,15 @@ const Pagination = ({
   } else {
     lastIndex = page === lastPage ? itemCount : page * perPage;
   }
+  ouiaId = getOIUAUniqueId();
 
   return (
     <div
       className={css(styles.pagination, variant === PaginationVariant.bottom && styles.modifiers.footer, className)}
+      {...isOUIAEnvironment() && {
+        'data-ouia-component-type': 'Pagination',
+        'data-ouia-component-id': this.ouiaId
+      }}
       {...props}
     >
       {variant === PaginationVariant.top && (
