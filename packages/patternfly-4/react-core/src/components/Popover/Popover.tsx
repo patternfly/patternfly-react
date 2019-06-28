@@ -2,6 +2,7 @@ import * as React from 'react';
 import Tippy, { TippyProps } from '@tippy.js/react';
 import { Instance as TippyInstance } from 'tippy.js';
 import { KEY_CODES } from '../../helpers/constants';
+import { Omit } from '../../helpers/typeUtils';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { css, getModifier } from '@patternfly/react-styles';
 import { PopoverArrow } from './PopoverArrow';
@@ -25,7 +26,7 @@ export enum PopoverPosition {
   right = 'right'
 };
 
-export interface PopoverProps extends TippyProps {
+export interface PopoverProps extends Omit<TippyProps, 'content'> {
   /** The type of transition animation */
   animation?: 'fade' | 'scale' | 'shift-toward' | 'perspective' | 'shift-away';
   /** Popover position */
