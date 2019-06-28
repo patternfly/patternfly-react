@@ -44,8 +44,7 @@ copySync(join(pfDir, 'assets/fonts'), join(stylesDir, 'assets/fonts'), {
     return !ununsedFontFilesRegExt.test(src);
   }
 });
-writeFileSync(join(stylesDir, 'base.css'), `
-  ${stringifyCSS(ast)}
-  \n@import "./tippy.css";
-  \n@import "./tippyOverrides.css";
-`);
+writeFileSync(
+  join(stylesDir, 'base.css'),
+  `${stringifyCSS(ast)} \n@import "./tippy.css"; \n@import "./tippyOverrides.css";`
+);

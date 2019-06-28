@@ -6,6 +6,7 @@ propComponents: ['Popover']
 ---
 
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
+import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
 ## Simple popover
 ```js
@@ -116,19 +117,20 @@ class AdvancedPopover extends React.Component {
 ## Popover (headless)
 ```js
 import * as React from 'react';
-import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
+import { Popover, PopoverPosition } from '@patternfly/react-core';
+import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
 HeadlessPopover = () => (
   <Popover
     position={PopoverPosition.right}
     bodyContent={
-      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+      <div>Popover Body Content</div>
     }
     aria-label="Headless Popover"
     closeBtnAriaLabel="Close Headless Popover"
     footerContent="Popover Footer"
   >
-    <Button>Toggle Headless Popover</Button>
+    <OutlinedQuestionCircleIcon />
   </Popover>
 );
 ```
