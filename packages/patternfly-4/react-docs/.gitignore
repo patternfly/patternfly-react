@@ -19,6 +19,8 @@ public
 # copied files
 static/assets
 static/base.css
+static/tippy.css
+static/tippyOverrides.css
 
 # Mac files
 .DS_Store

@@ -35,6 +35,8 @@ ast.stylesheet.rules = ast.stylesheet.rules.filter(rule => {
   }
 });
 
+copySync(baseTippyStylesPath, join(stylesDir, 'tippy.css'));
+copySync(tippyOverridesPath, join(stylesDir, 'tippyOverrides.css'));
 copySync(join(pfDir, 'assets/images'), join(stylesDir, 'assets/images'));
 copySync(join(pfDir, 'assets/pficon'), join(stylesDir, 'assets/pficon'));
 copySync(join(pfDir, 'assets/fonts'), join(stylesDir, 'assets/fonts'), {
