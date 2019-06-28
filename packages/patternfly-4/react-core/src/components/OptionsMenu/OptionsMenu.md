@@ -87,12 +87,14 @@ class DisabledOptionsMenu extends React.Component {
     
   render() {
     const { toggleTemplateText, isOpen } = this.state;
+    const menuItems = [];
     const toggle = <OptionsMenuToggle isDisabled onToggle={this.onToggle} toggleTemplate={toggleTemplateText} />
 
     return (
       <OptionsMenu 
         id="options-menu-single-disabled-example-toggle" 
         isOpen={isOpen} 
+        menuItems={menuItems}
         toggle={toggle}/>
     );
   }

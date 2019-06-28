@@ -26,7 +26,7 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   /** Forces display of the active state of the Options menu button */
   isActive?: boolean;
   /** Disables the options menu toggle */
-  isDisabled: boolean;
+  isDisabled?: boolean;
   /** Provides an accessible name for the button when an icon is used instead of text */
   'aria-label'?: string;
 }

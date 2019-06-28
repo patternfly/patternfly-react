@@ -45,4 +45,9 @@ describe('Login Page Demo Test', () => {
         cy.get('#options-menu-modified-example.pf-m-expanded').should('not.exist');
       });
   });
+
+  it('Verify disabled options menu', () => {
+    cy.get('#options-menu-modified-disabled').find('.pf-c-options-menu__toggle-button')
+        .should('be.disabled')
+  });
 });

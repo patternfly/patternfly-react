@@ -19,7 +19,7 @@ export interface OptionsMenuToggleProps  extends React.HTMLProps<HTMLButtonEleme
   /** Forces display of the active state of the Options menu */
   isActive?: boolean;
   /** Disables the options menu toggle */
-   isDisabled: boolean;
+   isDisabled?: boolean;
   /** hide the toggle caret */
   hideCaret?: boolean;
   /** Provides an accessible name for the button when an icon is used instead of text */
