@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Switch from './Switch';
+import { Switch } from './Switch';
 
 const props = {
   onChange: jest.fn(),
