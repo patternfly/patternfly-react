@@ -65,6 +65,40 @@ class SingleOption extends React.Component {
 }
 ```
 
+## Options menu - disabled
+```js
+import React from 'react';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
+
+class DisabledOptionsMenu extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        isOpen: false,
+        toggleTemplateText: "Disabled Options menu"
+      };
+
+      this.onToggle = () => {
+          this.setState({
+              isOpen: !this.state.isOpen
+          });
+      };
+    }
+    
+  render() {
+    const { toggleTemplateText, isOpen } = this.state;
+    const toggle = <OptionsMenuToggle isDisabled onToggle={this.onToggle} toggleTemplate={toggleTemplateText} />
+
+    return (
+      <OptionsMenu 
+        id="options-menu-single-disabled-example-toggle" 
+        isOpen={isOpen} 
+        toggle={toggle}/>
+    );
+  }
+}
+```
+
 ## Options menu - multiple options
 ```js
 import React from 'react';
