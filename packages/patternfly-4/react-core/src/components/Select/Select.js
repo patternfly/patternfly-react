@@ -13,6 +13,7 @@ import SelectToggle from './SelectToggle';
 import SelectOption from './SelectOption';
 import { SelectContext, SelectVariant } from './selectConstants';
 import { getNextIndex } from '../../helpers/util';
+import { isOUIAEnvironment, getUniqueId as getOIUAUniqueId } from '../../helpers/ouia';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -219,12 +220,16 @@ class Select extends React.Component {
         </ChipGroup>
       );
     }
-
+    ouiaId = getOIUAUniqueId();
     return (
       <div
         className={css(styles.select, isExpanded && styles.modifiers.expanded, className)}
         ref={this.parentRef}
         style={{ width }}
+        {...isOUIAEnvironment() && {
+          'data-ouia-component-type': 'Select',
+          'data-ouia-component-id': this.ouiaId
+        }}
       >
         <SelectContext.Provider value={{ onSelect, onClose: this.onClose }}>
           <SelectToggle
