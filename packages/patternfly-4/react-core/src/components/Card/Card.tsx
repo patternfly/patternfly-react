@@ -11,6 +11,7 @@ export interface CardProps extends React.HTMLProps<HTMLDivElement> {
   component?: React.ReactNode;
   /** Modifies the card to include hover styles on :hover */
   isHoverable?: boolean;
+  /** Modifies the card to include compact styling */
   isCompact?: boolean; 
 }
 
