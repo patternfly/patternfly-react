@@ -4,6 +4,7 @@ import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
 import DropdownMenu from './DropdownMenu';
 import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
+import { isOUIAEnvironment, getUniqueId as getOIUAUniqueId } from '../../helpers/ouia';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -87,6 +88,7 @@ export class DropdownWithContext extends React.Component {
       component = 'div';
       renderedContent = children;
     }
+    ouiaId = getOIUAUniqueId();
     return (
       <DropdownContext.Consumer>
         {({ baseClass, baseComponent: BaseComponent }) => (
@@ -100,6 +102,10 @@ export class DropdownWithContext extends React.Component {
             )}
             ref={ref => {
               this.parentRef = ref;
+            }}
+            {...isOUIAEnvironment() && {
+              'data-ouia-component-type': 'Dropdown',
+              'data-ouia-component-id': this.ouiaId
             }}
           >
             {Children.map(toggle, oneToggle =>
