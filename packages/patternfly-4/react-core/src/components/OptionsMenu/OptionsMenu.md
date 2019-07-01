@@ -220,9 +220,9 @@ class Plain extends React.Component {
     ];
     const toggleTemplate = <SortAmountDownIcon aria-hidden="true"/>
     
-    const toggle = <OptionsMenuToggle onToggle={this.onDisabledToggle} toggleTemplate={toggleTemplate} aria-label="Sort by" hideCaret/>
+    const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={toggleTemplate} aria-label="Sort by" hideCaret/>
 
-    const disabledToggle = <OptionsMenuToggle isDisabled onToggle={this.onToggle} toggleTemplate={toggleTemplate} aria-label="Sort by" hideCaret/>
+    const disabledToggle = <OptionsMenuToggle isDisabled onToggle={this.onDisabledToggle} toggleTemplate={toggleTemplate} aria-label="Sort by" hideCaret/>
 
     return (
       <React.Fragment>
