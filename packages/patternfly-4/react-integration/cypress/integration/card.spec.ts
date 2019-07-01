@@ -14,6 +14,10 @@ describe('Card Demo Test', () => {
   }); 
 
   it('Verify card is hoverable', () => {
-    cy.get('article').should('have.class', 'pf-m-hoverable')
+    cy.get('article').first().should('have.class', 'pf-m-hoverable')
+  });
+
+  it('Verify card is compact', () => {
+    cy.get('article').last().should('have.class', 'pf-m-compact')
   });
 })
