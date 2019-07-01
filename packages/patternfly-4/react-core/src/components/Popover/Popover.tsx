@@ -6,7 +6,7 @@ import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import { css, getModifier } from '@patternfly/react-styles';
 import { PopoverArrow } from './PopoverArrow';
 import { PopoverContent } from './PopoverContent';
-import { PopoverBody } from './PopoverBody';
+import { PopoverBody }  from './PopoverBody';
 import { PopoverHeader } from './PopoverHeader';
 import { PopoverFooter } from './PopoverFooter';
 import { PopoverCloseButton } from './PopoverCloseButton';
@@ -49,26 +49,26 @@ export interface PopoverProps {
    * the popover will not auto-close if the Close button is clicked, ESC key is used, or if a click occurs outside the popover.
    * Instead, the consumer is responsible for closing the popover themselves by adding a callback listener for the shouldClose prop.
    */
-  isVisible?: boolean | null;
+  isVisible?: boolean;
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the popover Close button is
    * clicked or the ESC key is used
    */
-  shouldClose?: (tip: TippyInstance) => void;
+  shouldClose?: (tip:TippyInstance) => void;
   /** The element to append the popover to, defaults to body */
   appendTo?: Element | ((ref: Element) => Element);
   /** Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */
   hideOnOutsideClick?: boolean;
   /** Lifecycle function invoked when the popover begins to transition out. */
-  onHide?: (tip: TippyInstance) => void;
+  onHide?: (tip:TippyInstance) => void;
   /** Lifecycle function invoked when the popover has fully transitioned out. */
-  onHidden?: (tip: TippyInstance) => void;
+  onHidden?: (tip:TippyInstance) => void;
   /** Lifecycle function invoked when the popover begins to transition in. */
-  onShow?: (tip: TippyInstance) => void;
+  onShow?: (tip:TippyInstance) => void;
   /** Lifecycle function invoked when the popover has fully transitioned in. */
-  onShown?: (tip: TippyInstance) => void;
+  onShown?: (tip:TippyInstance) => void;
   /** Lifecycle function invoked when the popover has been mounted to the DOM. */
-  onMount?: (tip: TippyInstance) => void;
+  onMount?: (tip:TippyInstance) => void;
   /** z-index of the popover */
   zIndex?: number;
   /** Maximum width of the tooltip (default 18.75rem) */
@@ -88,17 +88,17 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     enableFlip: true,
     className: '',
     isVisible: null as boolean,
-    shouldClose: (): void => null,
+    shouldClose: ():void => null,
     'aria-label': '',
     headerContent: null as typeof PopoverHeader,
     footerContent: null as typeof PopoverFooter,
     appendTo: () => document.body,
     hideOnOutsideClick: true,
-    onHide: (): void => null,
-    onHidden: (): void => null,
-    onShow: (): void => null,
-    onShown: (): void => null,
-    onMount: (): void => null,
+    onHide: ():void => null,
+    onHidden: ():void => null,
+    onShow: ():void => null,
+    onShown: ():void => null,
+    onMount: ():void => null,
     zIndex: 9999,
     maxWidth: popoverMaxWidth && popoverMaxWidth.value,
     closeBtnAriaLabel: 'Close'
@@ -135,7 +135,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     document.removeEventListener('keydown', this.handleEscKeyClick, false);
   }
 
-  storeTippyInstance = (tip: TippyInstance) => {
+  storeTippyInstance = (tip:TippyInstance) => {
     this.tip = tip;
   };
 
@@ -144,25 +144,25 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
   };
 
   hideAllPopovers = () => {
-    document.querySelectorAll('.tippy-popper').forEach((popper: any) => {
+    document.querySelectorAll('.tippy-popper').forEach((popper:any) => {
       if (popper._tippy) {
         popper._tippy.hide();
       }
     });
   };
 
-  onHide = (tip: TippyInstance) => {
+  onHide = (tip:TippyInstance)  => {
     if (this.state.isOpen) {
       this.setState({ isOpen: false });
     }
     return this.props.onHide(tip);
   };
 
-  onHidden = (tip: TippyInstance) => this.props.onHidden(tip);
+  onHidden = (tip:TippyInstance)  => this.props.onHidden(tip);
 
-  onMount = (tip: TippyInstance) => this.props.onMount(tip);
+  onMount = (tip:TippyInstance)  => this.props.onMount(tip);
 
-  onShow = (tip: TippyInstance) => {
+  onShow = (tip:TippyInstance)  => {
     const { hideOnOutsideClick, isVisible, onShow } = this.props;
     // hide all other open popovers first if events are managed by us
     if (!hideOnOutsideClick && isVisible === null) {
@@ -174,7 +174,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     return onShow(tip);
   };
 
-  onShown = (tip: TippyInstance) => this.props.onShown(tip);
+  onShown = (tip:TippyInstance)  => this.props.onShown(tip);
 
   render() {
     const {
@@ -207,68 +207,64 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
 
     const content = (
       <GenerateId>
-        {randomId => this.state.isOpen && (
-          <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
-            <div
-              tabIndex={-1}
-              className={css(
-                styles.popover,
-                !enableFlip && getModifier(styles, position, styles.modifiers.top),
-                className
-              )}
-              role="dialog"
-              aria-modal="true"
-              aria-label={headerContent ? undefined : ariaLabel}
-              aria-labelledby={headerContent ? `popover-${randomId}-header` : undefined}
-              aria-describedby={`popover-${randomId}-body`}
-              {...rest}
-            >
-              <PopoverArrow />
-              <PopoverContent>
-                <PopoverCloseButton onClose={this.closePopover} aria-label={closeBtnAriaLabel} />
-                {headerContent && <PopoverHeader id={`popover-${randomId}-header`}>{headerContent}</PopoverHeader>}
-                <PopoverBody id={`popover-${randomId}-body`}>{bodyContent}</PopoverBody>
-                {footerContent && <PopoverFooter>{footerContent}</PopoverFooter>}
-              </PopoverContent>
-            </div>
-          </FocusTrap>
-        )
+        {randomId =>
+          this.state.isOpen && (
+            <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
+              <div
+                className={css(
+                  styles.popover,
+                  !enableFlip && getModifier(styles, position, styles.modifiers.top),
+                  className
+                )}
+                role="dialog"
+                aria-modal="true"
+                aria-label={headerContent ? undefined : ariaLabel}
+                aria-labelledby={headerContent ? `popover-${randomId}-header` : undefined}
+                aria-describedby={`popover-${randomId}-body`}
+                {...rest}
+              >
+                <PopoverArrow />
+                <PopoverContent>
+                  <PopoverCloseButton onClose={this.closePopover} aria-label={closeBtnAriaLabel} />
+                  {headerContent && <PopoverHeader id={`popover-${randomId}-header`}>{headerContent}</PopoverHeader>}
+                  <PopoverBody id={`popover-${randomId}-body`}>{bodyContent}</PopoverBody>
+                  {footerContent && <PopoverFooter>{footerContent}</PopoverFooter>}
+                </PopoverContent>
+              </div>
+            </FocusTrap>
+          )
         }
       </GenerateId>
     );
-    const handleEvents = !!(isVisible === null);
-    const shouldHideOnClick = (): boolean => handleEvents && hideOnOutsideClick;
-    // omit the visible prop if you want the auto-closing behavior when user
-    // clicks outside the popover on the document body somewhere
-    const controlledVisibility = (isVisible === false || isVisible === true)
-      ? { visible: isVisible }
-      : {};
+    const handleEvents = isVisible === null;
+    const shouldHideOnClick = () => {
+      if (handleEvents) {
+        if (hideOnOutsideClick === true) {
+          return true;
+        }
+        return 'toggle';
+      }
+      return false;
+    };
     return (
       <Tippy
-        a11y={false}
-        animation="scale"
-        animateFill={false}
-        appendTo={appendTo}
-        boundary="window"
-        className="pf-tippy"
-        content={content}
-        distance={30}
-        flip={enableFlip}
-        hideOnClick={shouldHideOnClick()}
-        interactive
-        interactiveBorder={0}
-        inertia
-        ignoreAttributes
-        lazy
-        {...controlledVisibility}
         onCreate={this.storeTippyInstance}
         maxWidth={maxWidth}
-        onHide={this.onHide}
-        onHidden={this.onHidden}
-        onMount={this.onMount}
-        onShow={this.onShow}
-        onShown={this.onShown}
+        zIndex={zIndex}
+        appendTo={appendTo}
+        content={content}
+        lazy
+        trigger={handleEvents ? 'click' : 'manual'}
+        isVisible={isVisible}
+        hideOnClick={shouldHideOnClick()}
+        animateFill={false}
+        theme="pf-tippy"
+        performance
+        interactive
+        interactiveBorder={0}
         placement={position}
+        distance={25}
+        flip={enableFlip}
         popperOptions={{
           modifiers: {
             preventOverflow: {
@@ -279,10 +275,13 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
             }
           }
         }}
-        trigger={handleEvents ? 'click' : 'manual'}
-        zIndex={zIndex}
+        onHide={this.onHide}
+        onHidden={this.onHidden}
+        onShow={this.onShow}
+        onShown={this.onShown}
+        onMount={this.onMount}
       >
-        <span>{children}</span>
+        {children}
       </Tippy>
     );
   }

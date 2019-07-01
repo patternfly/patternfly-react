@@ -117,21 +117,20 @@ export class Tooltip extends React.Component<TooltipProps> {
     );
     return (
       <Tippy
-        animation="scale"
-        animateFill={false}
+        onCreate={this.storeTippyInstance}
+        maxWidth={maxWidth}
+        zIndex={zIndex}
         appendTo={appendTo}
-        boundary="window"
-        className="pf-tippy"
         content={content}
+        lazy
+        animateFill={false}
+        theme="pf-tippy"
+        performance
+        placement={position}
+        trigger={trigger}
         delay={[entryDelay, exitDelay]}
         distance={distance}
         flip={enableFlip}
-        interactive
-        ignoreAttributes
-        lazy
-        maxWidth={maxWidth}
-        onCreate={this.storeTippyInstance}
-        placement={position}
         popperOptions={{
           modifiers: {
             preventOverflow: {
@@ -142,10 +141,8 @@ export class Tooltip extends React.Component<TooltipProps> {
             }
           }
         }}
-        trigger={trigger}
-        zIndex={zIndex}
       >
-        <span>{isAppLauncher ? this.extendChildren() : children}</span>
+        {isAppLauncher ? this.extendChildren() : children}
       </Tippy>
     );
   }
