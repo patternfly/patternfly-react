@@ -1,12 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import SelectToggle from './SelectToggle';
+import { SelectToggle } from './SelectToggle';
 
 describe('API', () => {
   test('click on closed', () => {
     const mockToggle = jest.fn();
     const view = mount(
-      <SelectToggle id="Select Toggle" onToggle={mockToggle} parentRef={document.createElement('div')}>
+      <SelectToggle id="Select Toggle" onToggle={mockToggle} parentRef={{ current: document.createElement('div') }}>
         Select
       </SelectToggle>
     );
@@ -21,7 +21,12 @@ describe('API', () => {
   test('click on opened', () => {
     const mockToggle = jest.fn();
     const view = mount(
-      <SelectToggle id="Select Toggle" onToggle={mockToggle} isExpanded parentRef={document.createElement('div')}>
+      <SelectToggle
+        id="Select Toggle"
+        onToggle={mockToggle}
+        isExpanded
+        parentRef={{ current: document.createElement('div') }}
+      >
         Select
       </SelectToggle>
     );
@@ -34,13 +39,18 @@ describe('API', () => {
   });
 
   test('click on document', () => {
-    const map = {};
+    const map = {} as any;
     document.addEventListener = jest.fn((event, cb) => {
       map[event] = cb;
     });
     const mockToggle = jest.fn();
     mount(
-      <SelectToggle id="Select Toggle" onToggle={mockToggle} isExpanded parentRef={document.createElement('div')}>
+      <SelectToggle
+        id="Select Toggle"
+        onToggle={mockToggle}
+        isExpanded
+        parentRef={{ current: document.createElement('div') }}
+      >
         Select
       </SelectToggle>
     );
@@ -50,13 +60,18 @@ describe('API', () => {
   });
 
   test('touch on document', () => {
-    const map = {};
+    const map = {} as any;
     document.addEventListener = jest.fn((event, cb) => {
       map[event] = cb;
     });
     const mockToggle = jest.fn();
     mount(
-      <SelectToggle id="Select Toggle" onToggle={mockToggle} isExpanded parentRef={document.createElement('div')}>
+      <SelectToggle
+        id="Select Toggle"
+        onToggle={mockToggle}
+        isExpanded
+        parentRef={{ current: document.createElement('div') }}
+      >
         Select
       </SelectToggle>
     );
@@ -66,7 +81,7 @@ describe('API', () => {
   });
 
   test('on click outside has been removed', () => {
-    const map = {};
+    const map = {} as any;
     document.addEventListener = jest.fn((event, cb) => {
       map[event] = cb;
     });
@@ -75,7 +90,12 @@ describe('API', () => {
     });
     const mockToggle = jest.fn();
     const view = mount(
-      <SelectToggle id="Select Toggle" onToggle={mockToggle} isExpanded parentRef={document.createElement('div')}>
+      <SelectToggle
+        id="Select Toggle"
+        onToggle={mockToggle}
+        isExpanded
+        parentRef={{ current: document.createElement('div') }}
+      >
         Select
       </SelectToggle>
     );
@@ -86,7 +106,7 @@ describe('API', () => {
   });
 
   test('on touch outside has been removed', () => {
-    const map = {};
+    const map = {} as any;
     document.addEventListener = jest.fn((event, cb) => {
       map[event] = cb;
     });
@@ -95,7 +115,12 @@ describe('API', () => {
     });
     const mockToggle = jest.fn();
     const view = mount(
-      <SelectToggle id="Select Toggle" onToggle={mockToggle} isExpanded parentRef={document.createElement('div')}>
+      <SelectToggle
+        id="Select Toggle"
+        onToggle={mockToggle}
+        isExpanded
+        parentRef={{ current: document.createElement('div') }}
+      >
         Select
       </SelectToggle>
     );
@@ -109,7 +134,7 @@ describe('API', () => {
 describe('state', () => {
   test('hover', () => {
     const view = mount(
-      <SelectToggle id="Select Toggle" isHovered parentRef={document.createElement('div')}>
+      <SelectToggle id="Select Toggle" isHovered parentRef={{ current: document.createElement('div') }}>
         Select
       </SelectToggle>
     );
@@ -118,7 +143,7 @@ describe('state', () => {
 
   test('active', () => {
     const view = mount(
-      <SelectToggle id="Select Toggle" isActive parentRef={document.createElement('div')}>
+      <SelectToggle id="Select Toggle" isActive parentRef={{ current: document.createElement('div') }}>
         Select
       </SelectToggle>
     );
@@ -127,7 +152,7 @@ describe('state', () => {
 
   test('focus', () => {
     const view = mount(
-      <SelectToggle id="Select Toggle" isFocused parentRef={document.createElement('div')}>
+      <SelectToggle id="Select Toggle" isFocused parentRef={{ current: document.createElement('div') }}>
         Select
       </SelectToggle>
     );
