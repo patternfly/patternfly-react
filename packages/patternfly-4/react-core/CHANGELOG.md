@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.0.0...@patternfly/react-core@4.1.0) (2019-07-01)
+
+
+### Features
+
+* **OptionsMenu:** Add disabled modifier to the toggle ([#2401](https://github.com/patternfly/patternfly-react/issues/2401)) ([c6693c1](https://github.com/patternfly/patternfly-react/commit/c6693c1)), closes [#2396](https://github.com/patternfly/patternfly-react/issues/2396)
+
+
+
+
+
 # [4.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.58.0...@patternfly/react-core@4.0.0) (2019-07-01)
 
 
