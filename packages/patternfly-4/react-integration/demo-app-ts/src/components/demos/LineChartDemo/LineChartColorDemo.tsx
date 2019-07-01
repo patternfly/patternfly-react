@@ -11,8 +11,8 @@ export class LineChartColorDemo extends React.Component {
 
   render() {
     return (
-      <div style={{width: '50%'}}>
-        <div className="line-chart-legend-bottom">
+      <div>
+        <div style={{height: '275px', width: '450px'}}>
           <Chart
             containerComponent={<VictoryZoomContainer zoomDimension="x" />}
             legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}

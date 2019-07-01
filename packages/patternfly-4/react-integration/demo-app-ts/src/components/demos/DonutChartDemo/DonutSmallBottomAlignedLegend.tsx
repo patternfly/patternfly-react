@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
-
+// import '/../../../../../chart-donut.css'
 export class DonutSmallBottomAlignedLegend extends React.Component {
 
   componentDidMount() {
@@ -9,8 +9,8 @@ export class DonutSmallBottomAlignedLegend extends React.Component {
 
   render() {
     return (
-      <div style={{width: '30%', paddingTop: '50px', paddingLeft: '50px'}}>
-        <div className="donut-chart-legend-bottom-subtitle-right-sm">
+      <div>
+        <div style={{height: '200px', width: '300px', paddingTop: '50px', paddingLeft: '50px'}}>
           <ChartDonut
             data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
             donutHeight={150}

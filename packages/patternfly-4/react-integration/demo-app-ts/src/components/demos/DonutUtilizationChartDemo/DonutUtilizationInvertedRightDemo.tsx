@@ -32,8 +32,8 @@ export class DonutUtilizationInvertedRightDemo extends React.Component<{}, { use
   render() {
     const { spacer, used } = this.state;
     return (
-      <div style={{backgroundColor: 'white', width: '50%'}}>
-        <div className="donut-utilization-chart-legend-right">
+      <div>
+        <div style={{backgroundColor: 'white', height: '230px', width: '435px'}}>
           <ChartDonutUtilization
             data={{ x: 'GBps capacity', y: used }}
             invert

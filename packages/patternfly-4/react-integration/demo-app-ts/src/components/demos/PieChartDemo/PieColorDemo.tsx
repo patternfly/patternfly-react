@@ -9,8 +9,8 @@ export class PieColorDemo extends React.Component {
 
   render() {
     return (
-      <div style={{width: '35%', paddingTop: '50px', paddingLeft: '50px'}}>
-        <div className="pie-chart-legend-bottom">
+      <div style={{height: '275px', width: '300px', paddingTop: '50px', paddingLeft: '50px'}}>
+        <div>
           <ChartPie
             data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
             height={275}

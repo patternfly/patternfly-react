@@ -27,8 +27,8 @@ export class DonutUtilizationStaticRightDemo extends React.Component<{}, { used:
   render() {
     const { used } = this.state;
     return (
-      <div style={{backgroundColor: 'white', width: '50%', margin: '0 auto'}}>
-        <div className="donut-threshold-chart-legend-right">
+      <div>
+        <div style={{backgroundColor: 'white', height: '230px', width: '500px'}}>
           <ChartDonutThreshold
             data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
             labels={datum => datum.x ? datum.x : null}

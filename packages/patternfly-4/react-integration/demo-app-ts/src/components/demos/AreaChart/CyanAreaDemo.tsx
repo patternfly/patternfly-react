@@ -5,8 +5,8 @@ export class CyanAreaDemo extends React.Component {
   render() {
     return (
 
-      <div style={{width: '100%'}}>
-        <div className="area-chart-legend-right">
+      <div>
+        <div style={{height: '200px', width: '800px'}}>
           <Chart
             containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
             legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}

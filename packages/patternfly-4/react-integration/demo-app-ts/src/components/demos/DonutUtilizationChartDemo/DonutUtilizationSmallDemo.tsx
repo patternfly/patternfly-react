@@ -9,8 +9,8 @@ export class DonutUtilizationSmallDemo extends React.Component{
   }
   render() {
     return (
-      <div style={{backgroundColor: 'white', width: '35%'}}>
-        <div className="donut-utilization-chart-sm">
+      <div>
+        <div style={{backgroundColor: 'white', height: '150px', width: '150px'}}>
           <ChartDonutUtilization
             data={{ x: 'Storage capacity', y: 75 }}
             height={150}

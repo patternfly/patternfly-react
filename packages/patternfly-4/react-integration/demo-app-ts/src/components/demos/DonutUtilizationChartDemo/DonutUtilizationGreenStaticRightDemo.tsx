@@ -28,8 +28,8 @@ export class DonutUtilizationGreenStaticRightDemo extends React.Component <{}, {
   render() {
     const { used } = this.state;
     return (
-      <div style={{ backgroundColor: 'white', width: '35%', paddingTop: '50px', margin: '0 auto'}}>
-        <div className="donut-threshold-chart-legend-bottom-vert">
+      <div>
+        <div style={{backgroundColor: 'white', height: '350px', width: '230px', margin: '0 auto'}}>
           <ChartDonutThreshold
             data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
             height={350}

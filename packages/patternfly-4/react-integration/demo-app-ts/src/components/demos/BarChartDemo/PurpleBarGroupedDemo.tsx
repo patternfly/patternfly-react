@@ -10,8 +10,8 @@ export class PurpleBarGroupedDemo extends React.Component {
 
   render() {
     return (
-      <div style={{width: '70%', paddingLeft: '50px'}}>
-        <div className="bar-chart-legend-right">
+      <div>
+        <div style={{width: '600px', height: '250px', paddingLeft: '50px'}}>
           <Chart
             containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
             domainPadding={{ x: [30, 25] }}

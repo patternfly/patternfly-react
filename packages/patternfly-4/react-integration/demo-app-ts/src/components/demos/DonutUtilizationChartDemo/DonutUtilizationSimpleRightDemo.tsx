@@ -33,8 +33,8 @@ export class DonutUtilizationSimpleRightDemo extends React.Component<{}, { used:
   render() {
     const { spacer, used } = this.state;
     return (
-      <div style={{backgroundColor: 'white', width: '50%', paddingLeft: '50px'}}>
-        <div className="donut-utilization-chart-legend-right">
+      <div>
+        <div style={{backgroundColor: 'white', height: '230px', width: '435px'}}>
           <ChartDonutUtilization
             data={{ x: 'GBps capacity', y: used }}
             labels={datum => datum.x ? `${datum.x}: ${datum.y}%` : null}

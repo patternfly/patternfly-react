@@ -32,8 +32,8 @@ export class DonutUtilizationSimpleRightGreenDemo extends React.Component<{}, { 
   render() {
     const { spacer, used } = this.state;
     return (
-      <div style={{backgroundColor: 'white', width: '50%'}}>
-        <div className="donut-utilization-chart-legend-bottom-vert">
+      <div>
+        <div style={{backgroundColor: 'white', height: '300px', width: '230px'}}>
           <ChartDonutUtilization
             data={{ x: 'Storage capacity', y: used }}
             donutHeight={230}

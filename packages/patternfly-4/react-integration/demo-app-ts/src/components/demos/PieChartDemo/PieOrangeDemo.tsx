@@ -9,8 +9,8 @@ export class PieOrangeDemo extends React.Component {
 
   render() {
     return (
-      <div style={{width: '35%', paddingTop: '50px', paddingLeft: '50px'}}>
-        <div className="pie-chart-legend-right">
+      <div style={{height: '230px', width: '350px', paddingTop: '50px', paddingLeft: '50px'}}>
+        <div>
           <ChartPie
             data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
             height={230}

@@ -30,8 +30,8 @@ export class DonutUtilizationStaticInvertedRightDemo extends React.Component<{},
   render() {
     const { used } = this.state;
     return (
-      <div style={{backgroundColor: 'white', width: '50%', paddingLeft: '50px'}}>
-        <div className="donut-threshold-chart-legend-right">
+      <div>
+        <div style={{backgroundColor: 'white', height: '230px', width: '500px'}}>
           <ChartDonutThreshold
             data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 20%', y: 20 }]}
             invert

@@ -1,37 +1,32 @@
 import React from 'react';
-import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartAxis } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartStack } from '@patternfly/react-charts';
 
-
-export class ColorBarZoomDemo extends React.Component {
+export class StackBlueDemo extends React.Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
   
   render() {
-    return (
+    return(
       <div>
-        <div style={{height: '400px', width: '450px', paddingLeft: '50px'}}>
+        <div style={{height: '250px', width: '600px'}}>
           <Chart
-            allowZoom
-            domainPadding={{ x: [30, 25] }}
             legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }, { name: 'Mice' }]}
-            legendPosition="bottom"
-            height={400}
+            legendOrientation="vertical"
+            legendPosition="right"
+            height={250}
             padding={{
-              bottom: 75
+              right: 200
             }}
-            themeColor={ChartThemeColor.multi}
-            width={450}
+            width={600}
           >
-            <ChartAxis />
-            <ChartAxis dependentAxis showGrid />
-            <ChartGroup allowZoom offset={11} horizontal>
+            <ChartStack domainPadding={{x: [10, 2]}}>
               <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
               <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
               <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
               <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
-            </ChartGroup>
+            </ChartStack>
           </Chart>
         </div>
       </div>

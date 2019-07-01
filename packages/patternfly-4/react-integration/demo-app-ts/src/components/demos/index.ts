@@ -2,7 +2,7 @@ export * from './AboutModal/AboutModalDemo';
 export * from './AccordionDemo/AccordionDemo';
 export * from './ApplicationLauncherDemo/ApplicationLauncherDemo';
 export * from './AlertDemo/AlertDemo';
-export * from './AreaChart/SimpleAreaDemo';
+export * from './AreaChart/SparklineDemo';
 export * from './AreaChart/CyanAreaDemo';
 export * from './AreaChart/ColorAreaBottomLegendDemo';
 export * from './AvatarDemo/AvatarDemo';
@@ -28,7 +28,6 @@ export * from './DonutChartDemo/DonutSmallDemo';
 export * from './DonutChartDemo/DonutSmallRightAlignedLegendDemo';
 export * from './DonutChartDemo/DonutRightAlignedLegendColorDemo';
 export * from './DonutChartDemo/DonutRightAlignedLegendDemo';
-export * from './DonutChartDemo/DonutSimpleDemo';
 export * from './DonutUtilizationChartDemo/DonutUtilizationSimpleBottomDemo'
 export * from './DonutUtilizationChartDemo/DonutUtilizationSimpleDemo'
 export * from './DonutUtilizationChartDemo/DonutUtilizationGreenStaticRightDemo'
@@ -52,6 +51,7 @@ export * from './InputGroupDemo/InputGroupDemo';
 export * from './LabelDemo/LabelDemo';
 export * from './LineChartDemo/LineChartColorDemo';
 export * from './LineChartDemo/LineChartGreenDemo';
+export * from './LineChartDemo/LineChartSimpleDemo';
 export * from './ListDemo/ListDemo';
 export * from './LoginPageDemo/LoginPageDemo';
 export * from './ModalDemo/ModalDemo';
@@ -66,10 +66,9 @@ export * from './PageDemo/PageDemo';
 export * from './PaginationDemo/PaginationDemo';
 export * from './ProgressDemo/ProgressDemo';
 export * from './RadioDemo/RadioDemo';
-export * from './SwitchDemo/SwitchDemo';
-export * from './StackChartDemo/StackHorizontalBlueDemo'
-export * from './StackChartDemo/StackVerticalBlueDemo'
-export * from './StackChartDemo/StackVerticalColorZoomDemo'
+export * from './StackChartDemo/StackBlueDemo'
+export * from './StackChartDemo/StackGoldBottomLegendDemo'
+export * from './StackChartDemo/StackColorZoomDemo'
 export * from './TabsDemo/TabsDemo';
 export * from './TextAreaDemo/TextAreaDemo';
 export * from './TextDemo/TextDemo';

@@ -41,9 +41,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.CyanAreaDemo
   },
   {
-    id: 'area-chart-simple-demo',
-    name: 'Area Chart Simple Demo',
-    componentType: Examples.SimpleAreaDemo
+    id: 'sparkline-chart-demo',
+    name: 'Area Sparkline Chart Demo',
+    componentType: Examples.SparklineDemo
   },
   {
     id: 'avatar-demo',
@@ -121,6 +121,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ContextSelectorDemo
   },
   {
+    id: 'data-list-demo',
+    name: 'Data List Demo',
+    componentType: Examples.DataListDemo
+  },
+  {
     id: 'donut-chart-bottom-legend-demo',
     name: 'Donut Chart with Bottom Aligned Legend Demo',
     componentType: Examples.DonutBottomAlignedLegendDemo
@@ -170,16 +175,7 @@ export const Demos: DemoInterface[] = [
     name: 'Donut Utilization Simple Chart Demo',
     componentType: Examples.DonutUtilizationSimpleDemo
   },
-  {
-    id: 'data-list-demo',
-    name: 'Data List Demo',
-    componentType: Examples.DataListDemo
-  },
-  {
-    id: 'clipboard-copy-demo',
-    name: 'ClipboardCopy Demo',
-    componentType: Examples.ClipboardCopyDemo
-  },
+
   {
     id: 'donut-utilization-simple-right-demo',
     name: 'Donut Utilization Simple Right Demo',
@@ -271,6 +267,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.LineChartColorDemo
   },
   {
+    id: 'line-chart-simple-demo',
+    name: 'Line Chart Simple Demo',
+    componentType: Examples.LineChartSimpleDemo
+  },
+  {
     id: 'list-demo',
     name: 'List Demo',
     componentType: Examples.ListDemo
@@ -336,19 +337,19 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ProgressDemo
   },
   {
-    id: 'stack-horizontal-blue-demo',
-    name: 'Stack Chart Horizontal Blue Demo',
-    componentType: Examples.StackHorizontalBlueDemo
+    id: 'stack-blue-demo',
+    name: 'Stack Chart Blue Demo',
+    componentType: Examples.StackBlueDemo
   },
   {
-    id: 'stack-vertical-blue-demo',
-    name: 'Stack Chart Vertical Blue Demo',
-    componentType: Examples.StackVerticalBlueDemo
+    id: 'stack-gold-bottom-legend-demo',
+    name: 'Stack Chart Gold with Bottom Legend Demo',
+    componentType: Examples.StackGoldBottomLegendDemo
   },
   {
-    id: 'stack-vertical-color-zoom-demo',
-    name: 'Stack Chart Vertical Color with Zoom Demo',
-    componentType: Examples.StackVerticalColorZoomDemo
+    id: 'stack-color-zoom-demo',
+    name: 'Stack Chart Color Demo',
+    componentType: Examples.StackColorZoomDemo
   },
   {
     id: 'radio-demo',

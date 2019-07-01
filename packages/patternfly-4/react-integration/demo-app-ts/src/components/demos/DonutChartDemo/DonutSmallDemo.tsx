@@ -9,8 +9,8 @@ export class DonutSmallDemo extends React.Component {
 
   render() {
     return (
-      <div style={{width: '20%', paddingTop: '50px', paddingLeft: '50px'}}>
-        <div className="donut-chart-sm">
+      <div>
+        <div style={{height: '200px', width: '300px', paddingTop: '50px', paddingLeft: '50px'}}>
           <ChartDonut
             data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
             height={150}

@@ -10,8 +10,8 @@ export class LineChartGreenDemo extends React.Component {
 
   render() {
     return (
-      <div style={{width: '70%'}}>
-        <div className="line-chart-legend-right">
+      <div>
+        <div style={{height: '250px', width: '600px'}}>
           <Chart
             containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
             legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}

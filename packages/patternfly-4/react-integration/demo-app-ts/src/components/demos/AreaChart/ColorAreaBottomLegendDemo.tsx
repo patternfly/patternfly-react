@@ -1,11 +1,12 @@
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import '@patternfly/react-charts/src/components/ChartArea/examples/chart-area.scss';
 
 export class ColorAreaBottomLegendDemo extends React.Component {
 render() {
   return (
-    <div style={{width: '100%', paddingLeft: '50px'}}>
-      <div className="area-chart-legend-bottom">
+    <div>
+      <div style={{height: '225px', width: '650px'}}>
         <Chart
           containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
           legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}

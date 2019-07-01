@@ -10,8 +10,8 @@ export class DonutUtilizationSimpleBottomDemo extends React.Component {
 
   render() {
     return (
-    <div style={{backgroundColor: 'white', width: '50%', paddingTop: '50px', paddingLeft: '50px'}}>
-      <div className="donut-utilization-chart-legend-bottom">
+    <div>
+      <div style={{backgroundColor: 'white', height:'275px', width: '500px', paddingTop: '25px'}}>
         <ChartDonutUtilization
           data={{ x: 'GBps capacity', y: 45 }}
           donutHeight={230}

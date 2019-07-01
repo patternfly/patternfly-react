@@ -9,8 +9,8 @@ export class DonutUtilizationSmallStaticDemo extends React.Component {
 
   render() {
     return(
-      <div style={{backgroundColor: 'white', width: '55%'}}>
-        <div className="donut-threshold-chart-sm" style={{width: '35%', margin: '0 auto'}}>
+      <div>
+        <div style={{backgroundColor: 'white', height: '150px', width: '150px'}}>
           <ChartDonutThreshold
             data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
             height={175}
