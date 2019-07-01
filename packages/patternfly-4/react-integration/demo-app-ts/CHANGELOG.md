@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.29.0...demo-app-ts@2.0.0) (2019-07-01)
+
+
+### Features
+
+* **Select:** convert to Typescript ([#2201](https://github.com/patternfly/patternfly-react/issues/2201)) ([fd9fca1](https://github.com/patternfly/patternfly-react/commit/fd9fca1))
+
+
+### BREAKING CHANGES
+
+* **Select:** Checkbox select variant collapsed into Select. CheckboxSelectGroup now is a generic
+Select Group to be used in any variant.
+
+* fix(Select): fix optional flag on optional params
+
+* fix(Select): add tslint ignore to focus trap require (cannot use ES6)
+
+* fix(Select): fix function component declaration
+
+* feat(Select): add pr feedback, fix docs build
+
+* fix(Select): update test snapshots from rebase
+
+* feat(Select): add backwards compatibility with previous select (removing breaking changes)
+
+old method should still work as well as the new method
+
+* feat(Select): add pr feedback
+
+update tests, minor fixes
+
+* feat(Select): add props extensions
+
+* feat(Select): update props of group
+
+
+
+
+
 # [1.29.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@1.28.2...demo-app-ts@1.29.0) (2019-07-01)
 
 
