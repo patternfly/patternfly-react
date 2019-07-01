@@ -2,10 +2,9 @@
 
 exports[`state active 1`] = `
 <SelectToggle
-  ariaLabelToggle={null}
-  ariaLabelledBy={null}
+  ariaLabelToggle=""
+  ariaLabelledBy=""
   className=""
-  handleTypeaheadKeys={[Function]}
   id="Select Toggle"
   isActive={true}
   isExpanded={false}
@@ -15,14 +14,18 @@ exports[`state active 1`] = `
   onClose={[Function]}
   onEnter={[Function]}
   onToggle={[Function]}
-  parentRef={<div />}
+  parentRef={
+    Object {
+      "current": <div />,
+    }
+  }
   type="button"
   variant={false}
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
-    aria-labelledby={null}
+    aria-labelledby=""
     className="pf-c-select__toggle pf-m-active"
     id="Select Toggle"
     onClick={[Function]}
@@ -64,10 +67,9 @@ exports[`state active 1`] = `
 
 exports[`state focus 1`] = `
 <SelectToggle
-  ariaLabelToggle={null}
-  ariaLabelledBy={null}
+  ariaLabelToggle=""
+  ariaLabelledBy=""
   className=""
-  handleTypeaheadKeys={[Function]}
   id="Select Toggle"
   isActive={false}
   isExpanded={false}
@@ -77,14 +79,18 @@ exports[`state focus 1`] = `
   onClose={[Function]}
   onEnter={[Function]}
   onToggle={[Function]}
-  parentRef={<div />}
+  parentRef={
+    Object {
+      "current": <div />,
+    }
+  }
   type="button"
   variant={false}
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
-    aria-labelledby={null}
+    aria-labelledby=""
     className="pf-c-select__toggle pf-m-focus"
     id="Select Toggle"
     onClick={[Function]}
@@ -126,10 +132,9 @@ exports[`state focus 1`] = `
 
 exports[`state hover 1`] = `
 <SelectToggle
-  ariaLabelToggle={null}
-  ariaLabelledBy={null}
+  ariaLabelToggle=""
+  ariaLabelledBy=""
   className=""
-  handleTypeaheadKeys={[Function]}
   id="Select Toggle"
   isActive={false}
   isExpanded={false}
@@ -139,14 +144,18 @@ exports[`state hover 1`] = `
   onClose={[Function]}
   onEnter={[Function]}
   onToggle={[Function]}
-  parentRef={<div />}
+  parentRef={
+    Object {
+      "current": <div />,
+    }
+  }
   type="button"
   variant={false}
 >
   <button
     aria-expanded={false}
     aria-haspopup="listbox"
-    aria-labelledby={null}
+    aria-labelledby=""
     className="pf-c-select__toggle pf-m-hover"
     id="Select Toggle"
     onClick={[Function]}

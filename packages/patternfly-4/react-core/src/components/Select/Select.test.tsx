@@ -1,10 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Select from './Select';
-import SelectOption from './SelectOption';
+import { Select } from './Select';
+import { SelectOption } from './SelectOption';
+import { CheckboxSelectOption } from './CheckboxSelectOption';
+import { SelectGroup } from './SelectGroup';
+import { CheckboxSelectGroup } from './CheckboxSelectGroup';
 import { SelectVariant } from './selectConstants';
-import CheckboxSelectOption from './CheckboxSelectOption';
-import CheckboxSelectGroup from './CheckboxSelectGroup';
 
 const selectOptions = [
   <SelectOption value="Mr" key="0" />,
@@ -40,10 +41,29 @@ describe('select', () => {
       expect(view).toMatchSnapshot();
     });
   });
+
+  test('renders select groups successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded isGrouped>
+        <SelectGroup label="group 1">{selectOptions}</SelectGroup>
+        <SelectGroup label="group 2">{selectOptions}</SelectGroup>
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
 });
 
 describe('checkbox select', () => {
   test('renders closed successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {selectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders closed successfully - old classes', () => {
     const view = mount(
       <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()}>
         {checkboxSelectOptions}
@@ -55,6 +75,15 @@ describe('checkbox select', () => {
   test('renders expanded successfully', () => {
     const view = mount(
       <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+        {selectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders expanded successfully - old classes', () => {
+    const view = mount(
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
         {checkboxSelectOptions}
       </Select>
     );
@@ -62,6 +91,16 @@ describe('checkbox select', () => {
   });
 
   test('renders checkbox select groups successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded isGrouped>
+        <SelectGroup label="group 1">{selectOptions}</SelectGroup>
+        <SelectGroup label="group 2">{selectOptions}</SelectGroup>
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders checkbox select groups successfully - old classes', () => {
     const view = mount(
       <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded isGrouped>
         <CheckboxSelectGroup label="group 1">{checkboxSelectOptions}</CheckboxSelectGroup>
@@ -101,7 +140,7 @@ describe('typeahead select', () => {
   });
 
   test('test onChange', () => {
-    const mockEvent = { target: { value: 'test' } };
+    const mockEvent = { target: { value: 'test' } } as React.ChangeEvent<HTMLInputElement>;
     const view = mount(
       <Select
         variant={SelectVariant.typeahead}
@@ -113,7 +152,7 @@ describe('typeahead select', () => {
         {selectOptions}
       </Select>
     );
-    const inst = view.instance();
+    const inst = view.instance() as Select;
     inst.onChange(mockEvent);
     view.update();
     expect(view).toMatchSnapshot();
@@ -155,7 +194,7 @@ describe('typeahead multi select', () => {
   });
 
   test('test onChange', () => {
-    const mockEvent = { target: { value: 'test' } };
+    const mockEvent = { target: { value: 'test' } } as React.ChangeEvent<HTMLInputElement>;
     const view = mount(
       <Select
         variant={SelectVariant.typeahead}
@@ -167,7 +206,7 @@ describe('typeahead multi select', () => {
         {selectOptions}
       </Select>
     );
-    const inst = view.instance();
+    const inst = view.instance() as Select;
     inst.onChange(mockEvent);
     view.update();
     expect(view).toMatchSnapshot();
@@ -193,7 +232,7 @@ describe('API', () => {
 
   test('children only, no console error', () => {
     const myMock = jest.fn();
-    global.console = { error: myMock };
+    global.console = { ...global.console, error: myMock };
     mount(
       <Select variant="single" onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
         {selectOptions}

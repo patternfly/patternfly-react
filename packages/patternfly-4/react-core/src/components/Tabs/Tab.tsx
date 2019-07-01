@@ -36,15 +36,17 @@ const Tab0: React.FC<TabProps> = ({
 }
 
 interface ForwardedRefProps extends TabProps {
-  forwardRef: React.Ref<any>;
+  forwardRef?: React.Ref<any>;
 }
 
 const withForwardedRef = (Component: any) => {
-  const TabContainer: React.FC<ForwardedRefProps> = (props: ForwardedRefProps) => {
-    const { forwardRef, ...rest } = props;
-    return <Component ref={forwardRef} {...rest} />;
+  class TabContainer extends React.Component<ForwardedRefProps> {
+    render() {
+      const { forwardRef, ...rest } = this.props;
+      return <Component ref={forwardRef} {...rest} />;
+    }
   }
-  return React.forwardRef((props: TabProps, tabContentRef) => <TabContainer {...props} forwardRef={tabContentRef} />);
+  return React.forwardRef((props: any, tabContentRef) => <TabContainer {...props} forwardRef={tabContentRef} />);
 };
 
 export const Tab = withForwardedRef(Tab0);

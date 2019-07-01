@@ -171,10 +171,15 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.RadioDemo
   },
   {
+    id: 'select-demo',
+    name: 'Select Demo',
+    componentType: Examples.SelectDemo
+  },
+  {
     id: 'stack-demo', 
     name: 'Stack Demo', 
     componentType: Examples.StackDemo
-  },
+  }, 
   {
     id: 'tab-demo',
     name: 'Tab Demo',

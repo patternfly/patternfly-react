@@ -3,6 +3,91 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.0.0...@patternfly/react-core@4.1.0) (2019-07-01)
+
+
+### Features
+
+* **OptionsMenu:** Add disabled modifier to the toggle ([#2401](https://github.com/patternfly/patternfly-react/issues/2401)) ([c6693c1](https://github.com/patternfly/patternfly-react/commit/c6693c1)), closes [#2396](https://github.com/patternfly/patternfly-react/issues/2396)
+
+
+
+
+
+# [4.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.58.0...@patternfly/react-core@4.0.0) (2019-07-01)
+
+
+### Features
+
+* **Select:** convert to Typescript ([#2201](https://github.com/patternfly/patternfly-react/issues/2201)) ([fd9fca1](https://github.com/patternfly/patternfly-react/commit/fd9fca1))
+
+
+### BREAKING CHANGES
+
+* **Select:** Checkbox select variant collapsed into Select. CheckboxSelectGroup now is a generic
+Select Group to be used in any variant.
+
+* fix(Select): fix optional flag on optional params
+
+* fix(Select): add tslint ignore to focus trap require (cannot use ES6)
+
+* fix(Select): fix function component declaration
+
+* feat(Select): add pr feedback, fix docs build
+
+* fix(Select): update test snapshots from rebase
+
+* feat(Select): add backwards compatibility with previous select (removing breaking changes)
+
+old method should still work as well as the new method
+
+* feat(Select): add pr feedback
+
+update tests, minor fixes
+
+* feat(Select): add props extensions
+
+* feat(Select): update props of group
+
+
+
+
+
+# [3.58.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.57.2...@patternfly/react-core@3.58.0) (2019-07-01)
+
+
+### Bug Fixes
+
+* **tabs:** tab container refs ([#2402](https://github.com/patternfly/patternfly-react/issues/2402)) ([3c0a8a1](https://github.com/patternfly/patternfly-react/commit/3c0a8a1))
+
+
+### Features
+
+* **card:** Add compact card variation ([#2399](https://github.com/patternfly/patternfly-react/issues/2399)) ([e27ad9e](https://github.com/patternfly/patternfly-react/commit/e27ad9e))
+
+
+
+
+
+## [3.57.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.57.1...@patternfly/react-core@3.57.2) (2019-07-01)
+
+
+### Bug Fixes
+
+* **grid:** always remove props from {...props} ([#2404](https://github.com/patternfly/patternfly-react/issues/2404)) ([f549b95](https://github.com/patternfly/patternfly-react/commit/f549b95))
+
+
+
+
+
+## [3.57.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.57.0...@patternfly/react-core@3.57.1) (2019-06-28)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 # [3.57.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.56.1...@patternfly/react-core@3.57.0) (2019-06-27)
 
 

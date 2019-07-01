@@ -355,7 +355,21 @@ import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
 HoverableCard = () => (
-  <Card isHoverable={true}>
+  <Card isHoverable>
+    <CardHeader>Header</CardHeader>
+    <CardBody>Body</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+);
+```
+
+## Card compact example
+```js
+import React from 'react';
+import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+
+HoverableCard = () => (
+  <Card isCompact>
     <CardHeader>Header</CardHeader>
     <CardBody>Body</CardBody>
     <CardFooter>Footer</CardFooter>

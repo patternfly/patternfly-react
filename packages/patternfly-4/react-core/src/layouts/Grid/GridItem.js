@@ -90,20 +90,22 @@ const GridItem = ({ children, className, span, rowSpan, offset, ...props }) => {
 
   Object.entries(DeviceSizes).forEach(([propKey, classModifier]) => {
     const spanValue = props[propKey];
+    const rowSpanValue = props[getRowSpanKey(propKey)];
+    const offsetValue = props[getOffsetKey(propKey)];
+
     if (spanValue) {
       classes.push(getSpanModifier(spanValue, classModifier));
-      delete props[propKey];
     }
-    const rowSpanValue = props[getRowSpanKey(propKey)];
     if (rowSpanValue) {
       classes.push(getRowSpanModifier(rowSpanValue, classModifier));
-      delete props[getRowSpanKey(propKey)];
     }
-    const offsetValue = props[getOffsetKey(propKey)];
     if (offsetValue) {
       classes.push(getOffsetModifier(offsetValue, classModifier));
-      delete props[getOffsetKey(propKey)];
     }
+
+    delete props[propKey];
+    delete props[getRowSpanKey(propKey)];
+    delete props[getOffsetKey(propKey)];
   });
 
   return (
