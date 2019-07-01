@@ -1,108 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Gutter lg 1`] = `
-<Stack
-  className=""
-  component="div"
+<Component
   gutter="lg"
 >
   <div
     className="pf-l-stack pf-m-gutter"
   >
-    <StackItem
-      className=""
-      isFilled={false}
-    >
+    <Component>
       <div
         className="pf-l-stack__item"
       >
         Basic content
       </div>
-    </StackItem>
+    </Component>
   </div>
-</Stack>
+</Component>
 `;
 
 exports[`Gutter md 1`] = `
-<Stack
-  className=""
-  component="div"
+<Component
   gutter="md"
 >
   <div
     className="pf-l-stack pf-m-gutter"
   >
-    <StackItem
-      className=""
-      isFilled={false}
-    >
+    <Component>
       <div
         className="pf-l-stack__item"
       >
         Basic content
       </div>
-    </StackItem>
+    </Component>
   </div>
-</Stack>
+</Component>
 `;
 
 exports[`Gutter sm 1`] = `
-<Stack
-  className=""
-  component="div"
+<Component
   gutter="sm"
 >
   <div
     className="pf-l-stack pf-m-gutter"
   >
-    <StackItem
-      className=""
-      isFilled={false}
-    >
+    <Component>
       <div
         className="pf-l-stack__item"
       >
         Basic content
       </div>
-    </StackItem>
+    </Component>
   </div>
-</Stack>
+</Component>
 `;
 
 exports[`isMain defaults to false 1`] = `
-<Stack
-  className=""
-  component="div"
-  gutter={null}
->
+<Component>
   <div
     className="pf-l-stack"
   >
-    <StackItem
-      className=""
-      isFilled={false}
-    >
+    <Component>
       <div
         className="pf-l-stack__item"
       >
         Basic content
       </div>
-    </StackItem>
+    </Component>
   </div>
-</Stack>
+</Component>
 `;
 
 exports[`isMain set to true 1`] = `
-<Stack
-  className=""
-  component="div"
-  gutter={null}
->
+<Component>
   <div
     className="pf-l-stack"
   >
-    <StackItem
-      className=""
+    <Component
       isFilled={true}
     >
       <div
@@ -110,7 +83,7 @@ exports[`isMain set to true 1`] = `
       >
         Filled content
       </div>
-    </StackItem>
+    </Component>
   </div>
-</Stack>
+</Component>
 `;
