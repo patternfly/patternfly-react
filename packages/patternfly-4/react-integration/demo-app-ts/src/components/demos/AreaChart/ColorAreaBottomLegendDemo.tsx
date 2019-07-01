@@ -1,6 +1,5 @@
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
-import '@patternfly/react-charts/src/components/ChartArea/examples/chart-area.scss';
 
 export class ColorAreaBottomLegendDemo extends React.Component {
 render() {
