@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`select options checked renders with checked successfully 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`select options disabled renders disabled successfully 1`] = `
+<SelectOption
+  className=""
+  index={0}
+  isChecked={false}
+  isDisabled={true}
+  isFocused={false}
+  isPlaceholder={false}
+  isSelected={false}
+  keyHandler={[Function]}
+  onClick={[Function]}
+  sendRef={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          <button
+            class="pf-c-select__menu-item pf-m-disabled"
+            role="option"
+          >
+            test
+          </button>,
+          0,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  value="test"
+>
+  <li
+    role="presentation"
+  >
+    <button
+      aria-selected={null}
+      className="pf-c-select__menu-item pf-m-disabled"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="option"
+    >
+      test
+    </button>
+  </li>
+</SelectOption>
+`;
+
+exports[`select options is selected renders selected successfully 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`select options renders with value parameter successfully 1`] = `
+<SelectOption
+  className=""
+  index={0}
+  isChecked={false}
+  isDisabled={false}
+  isFocused={false}
+  isPlaceholder={false}
+  isSelected={false}
+  keyHandler={[Function]}
+  onClick={[Function]}
+  sendRef={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          <button
+            class="pf-c-select__menu-item"
+            role="option"
+          >
+            test
+          </button>,
+          0,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  value="test"
+>
+  <li
+    role="presentation"
+  >
+    <button
+      aria-selected={null}
+      className="pf-c-select__menu-item"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="option"
+    >
+      test
+    </button>
+  </li>
+</SelectOption>
+`;

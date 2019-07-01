@@ -3,6 +3,78 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.0.0...@patternfly/react-integration@2.1.0) (2019-07-01)
+
+
+### Features
+
+* **OptionsMenu:** Add disabled modifier to the toggle ([#2401](https://github.com/patternfly/patternfly-react/issues/2401)) ([c6693c1](https://github.com/patternfly/patternfly-react/commit/c6693c1)), closes [#2396](https://github.com/patternfly/patternfly-react/issues/2396)
+
+
+
+
+
+# [2.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.28.0...@patternfly/react-integration@2.0.0) (2019-07-01)
+
+
+### Features
+
+* **Select:** convert to Typescript ([#2201](https://github.com/patternfly/patternfly-react/issues/2201)) ([fd9fca1](https://github.com/patternfly/patternfly-react/commit/fd9fca1))
+
+
+### BREAKING CHANGES
+
+* **Select:** Checkbox select variant collapsed into Select. CheckboxSelectGroup now is a generic
+Select Group to be used in any variant.
+
+* fix(Select): fix optional flag on optional params
+
+* fix(Select): add tslint ignore to focus trap require (cannot use ES6)
+
+* fix(Select): fix function component declaration
+
+* feat(Select): add pr feedback, fix docs build
+
+* fix(Select): update test snapshots from rebase
+
+* feat(Select): add backwards compatibility with previous select (removing breaking changes)
+
+old method should still work as well as the new method
+
+* feat(Select): add pr feedback
+
+update tests, minor fixes
+
+* feat(Select): add props extensions
+
+* feat(Select): update props of group
+
+
+
+
+
+# [1.28.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.27.0...@patternfly/react-integration@1.28.0) (2019-07-01)
+
+
+### Features
+
+* **card:** Add compact card variation ([#2399](https://github.com/patternfly/patternfly-react/issues/2399)) ([e27ad9e](https://github.com/patternfly/patternfly-react/commit/e27ad9e))
+
+
+
+
+
+# [1.27.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.26.0...@patternfly/react-integration@1.27.0) (2019-06-27)
+
+
+### Features
+
+* **Notification Badge:** Adds the notification badge component ([#2342](https://github.com/patternfly/patternfly-react/issues/2342)) ([a0e7965](https://github.com/patternfly/patternfly-react/commit/a0e7965)), closes [#2021](https://github.com/patternfly/patternfly-react/issues/2021)
+
+
+
+
+
 # [1.26.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.25.0...@patternfly/react-integration@1.26.0) (2019-06-27)
 
 

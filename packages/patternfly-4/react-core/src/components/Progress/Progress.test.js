@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Progress, { ProgressSize } from './Progress';
+import { Progress, ProgressSize } from './Progress';
 import { ProgressVariant, ProgressMeasureLocation } from './ProgressContainer';
 
 test('Simple progress', () => {

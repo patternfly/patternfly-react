@@ -18,6 +18,8 @@ export interface OptionsMenuToggleProps  extends React.HTMLProps<HTMLButtonEleme
   isHovered?: boolean;
   /** Forces display of the active state of the Options menu */
   isActive?: boolean;
+  /** Disables the options menu toggle */
+   isDisabled?: boolean;
   /** hide the toggle caret */
   hideCaret?: boolean;
   /** Provides an accessible name for the button when an icon is used instead of text */
@@ -34,6 +36,7 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
     isHovered = false,
     isActive = false,
     isFocused = false,
+    isDisabled = false,
     toggleTemplate = <React.Fragment/>,
     hideCaret = false,
     'aria-label': ariaLabel = 'Options menu',
@@ -45,7 +48,8 @@ export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> 
         isPlain && getModifier(styles, 'plain'),
         isHovered && getModifier(styles, 'hover'),
         isActive && getModifier(styles, 'active'),
-        isFocused && getModifier(styles, 'focus')
+        isFocused && getModifier(styles, 'focus'),
+        isDisabled && getModifier(styles, 'disabled')
       )}
       id={`${parentId}-toggle`}
       aria-haspopup="listbox"

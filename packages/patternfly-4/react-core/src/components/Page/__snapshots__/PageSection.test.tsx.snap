@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Check page main nav section against snapshot 1`] = `
+<Component
+  type="nav"
+>
+  <section
+    className="pf-c-page__main-nav"
+  />
+</Component>
+`;
+
 exports[`Check page section with fill and no padding example against snapshot 1`] = `
 <Component
   isFilled={true}

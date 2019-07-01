@@ -65,6 +65,42 @@ class SingleOption extends React.Component {
 }
 ```
 
+## Options menu - disabled
+```js
+import React from 'react';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
+
+class DisabledOptionsMenu extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        isOpen: false,
+        toggleTemplateText: "Disabled Options menu"
+      };
+
+      this.onToggle = () => {
+          this.setState({
+              isOpen: !this.state.isOpen
+          });
+      };
+    }
+    
+  render() {
+    const { toggleTemplateText, isOpen } = this.state;
+    const menuItems = [];
+    const toggle = <OptionsMenuToggle isDisabled onToggle={this.onToggle} toggleTemplate={toggleTemplateText} />
+
+    return (
+      <OptionsMenu 
+        id="options-menu-single-disabled-example-toggle" 
+        isOpen={isOpen} 
+        menuItems={menuItems}
+        toggle={toggle}/>
+    );
+  }
+}
+```
+
 ## Options menu - multiple options
 ```js
 import React from 'react';
@@ -140,14 +176,24 @@ class Plain extends React.Component {
       super(props);
       this.state = {
         isOpen: false,
+        isDisabledOpen: false,
         plainOption1: true,
         plainOption2: false,
-        plainOption3: false
+        plainOption3: false,
+        disabledPlainOption1: true,
+        disabledPlainOption2: false,
+        disabledPlainOption3: false
       };
 
       this.onToggle = () => {
           this.setState({
               isOpen: !this.state.isOpen
+          });
+      };
+
+      this.onDisabledToggle = () => {
+          this.setState({
+              isDisabledOpen: !this.state.isDisabledOpen
           });
       };
       
@@ -160,22 +206,37 @@ class Plain extends React.Component {
     }
 
   render() {
-    const { isOpen, plainOption1, plainOption2, plainOption3 } = this.state
+    const { isOpen, isDisabledOpen, plainOption1, plainOption2, plainOption3, disabledPlainOption1, disabledPlainOption2, disabledPlainOption3 } = this.state
     const menuItems = [
       <OptionsMenuItem onSelect={this.onSelect} isSelected={plainOption1} id="plainOption1" key="option 1">Option 1</OptionsMenuItem>,
       <OptionsMenuItem onSelect={this.onSelect} isSelected={plainOption2} id="plainOption2" key="option 2">Option 2</OptionsMenuItem>,
       <OptionsMenuItem onSelect={this.onSelect} isSelected={plainOption3} id="plainOption3" key="option 3">Option 3</OptionsMenuItem>
     ];
+
+    const disabledMenuItems = [
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={disabledPlainOption1} id="disabledPlainOption1" key="disabled option 1">Option 1</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={disabledPlainOption2} id="disabledPlainOption2" key="disabled option 2">Option 2</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={disabledPlainOption3} id="disabledPlainOption3" key="disabled option 3">Option 3</OptionsMenuItem>
+    ];
     const toggleTemplate = <SortAmountDownIcon aria-hidden="true"/>
     
     const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={toggleTemplate} aria-label="Sort by" hideCaret/>
 
+    const disabledToggle = <OptionsMenuToggle isDisabled onToggle={this.onDisabledToggle} toggleTemplate={toggleTemplate} aria-label="Sort by" hideCaret/>
+
     return (
-      <OptionsMenu id="options-menu-plain-example" 
-        isPlain
-        menuItems={menuItems}  
-        isOpen={isOpen}
-        toggle={toggle}/>
+      <React.Fragment>
+        <OptionsMenu id="options-menu-plain-disabled-example" 
+          isPlain
+          menuItems={disabledMenuItems}  
+          isOpen={isDisabledOpen}
+          toggle={disabledToggle}/>
+        <OptionsMenu id="options-menu-plain-example" 
+          isPlain
+          menuItems={menuItems}  
+          isOpen={isOpen}
+          toggle={toggle}/>
+      </React.Fragment>
     );
   }
 }

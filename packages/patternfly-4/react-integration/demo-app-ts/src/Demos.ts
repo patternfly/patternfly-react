@@ -27,7 +27,7 @@ export const Demos: DemoInterface[] = [
   },
   {
     id: 'application-launcher-demo',
-    name: 'Application Launcher Demo', 
+    name: 'Application Launcher Demo',
     componentType: Examples.ApplicationLauncherDemo
   },
   {
@@ -81,19 +81,19 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BadgeChip
   },
   {
-    id: 'data-list-demo',
-    name: 'Data List Demo',
-    componentType: Examples.DataListDemo
+    id: 'clipboard-copy-demo',
+    name: 'ClipboardCopy Demo',
+    componentType: Examples.ClipboardCopyDemo
   },
   {
-    id: 'context-selector-demo', 
-    name: 'ContextSelector Demo', 
+    id: 'context-selector-demo',
+    name: 'ContextSelector Demo',
     componentType: Examples.ContextSelectorDemo
   },
   {
-    id: 'clipboard-copy-demo', 
-    name: 'ClipboardCopy Demo',
-    componentType: Examples.ClipboardCopyDemo
+    id: 'data-list-demo',
+    name: 'Data List Demo',
+    componentType: Examples.DataListDemo
   },
   {
     id: 'empty-state-demo',
@@ -106,9 +106,9 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.FormDemo
   },
   {
-    id: 'form-select-demo', 
-    name: 'Form Select Demo', 
-    componentType: Examples.FormSelectDemo 
+    id: 'form-select-demo',
+    name: 'Form Select Demo',
+    componentType: Examples.FormSelectDemo
   },
   {
     id: 'input-group-demo', 
@@ -141,6 +141,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.NavDemo
   },
   {
+    id: 'notification-badge-demo',
+    name: 'Notification Badge Demo',
+    componentType: Examples.NotificationBadgeDemo
+  },
+  {
     id: 'options-menu-demo',
     name: 'Options Menu Demo',
     componentType: Examples.OptionsMenuDemo
@@ -156,9 +161,19 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.PopoverDemo
   },
   {
+    id: 'progress-demo',
+    name: 'Progress Demo',
+    componentType: Examples.ProgressDemo
+  },
+  {
     id: 'radio-demo',
     name: 'Radio Demo',
     componentType: Examples.RadioDemo
+  },
+  {
+    id: 'select-demo',
+    name: 'Select Demo',
+    componentType: Examples.SelectDemo
   },
   {
     id: 'tab-demo',

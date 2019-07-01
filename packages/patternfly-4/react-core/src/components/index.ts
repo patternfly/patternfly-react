@@ -27,6 +27,7 @@ export * from './List';
 export * from './LoginPage';
 export * from './Modal';
 export * from './Nav';
+export * from './NotificationBadge';
 export * from './OptionsMenu';
 export * from './Page';
 export * from './Pagination';

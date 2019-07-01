@@ -7,7 +7,12 @@ export enum PageSectionVariants {
   light = 'light',
   dark = 'dark',
   darker = 'darker'
-};
+}
+
+export enum PageSectionTypes {
+  default = 'default',
+  nav = 'nav'
+}
 
 export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the section */
@@ -15,7 +20,9 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the section */
   className?: string;
   /** Section background color variant */
-  variant?: 'default' | 'light' | 'dark' | 'darker' | PageSectionVariants
+  variant?: 'default' | 'light' | 'dark' | 'darker';
+  /** Section type variant */
+  type?: 'default' | 'nav';
   /** Enables the page section to fill the available vertical space */
   isFilled?: boolean;
   /** Modifies a main page section to have no padding */
@@ -24,15 +31,20 @@ export interface PageSectionProps extends React.HTMLProps<HTMLDivElement> {
   noPaddingMobile?: boolean;
 }
 
-export const PageSection =
-  ({ className='',
-     children,
-     variant='default',
-     noPadding=false,
-     noPaddingMobile=false,
-     isFilled,
-     ...props
-  }: PageSectionProps) => {
+export const PageSection = ({
+  className = '',
+  children,
+  variant = 'default',
+  type = 'default',
+  noPadding = false,
+  noPaddingMobile = false,
+  isFilled,
+  ...props
+}: PageSectionProps) => {
+  const variantType = {
+    [PageSectionTypes.default]: styles.pageMainSection,
+    [PageSectionTypes.nav]: styles.pageMainNav
+  };
   const variantStyle = {
     [PageSectionVariants.default]: '',
     [PageSectionVariants.light]: styles.modifiers.light,
@@ -43,7 +55,7 @@ export const PageSection =
     <section
       {...props}
       className={css(
-        styles.pageMainSection,
+        variantType[type],
         noPadding && styles.modifiers.noPadding,
         noPaddingMobile && styles.modifiers.noPaddingMobile,
         variantStyle[variant],

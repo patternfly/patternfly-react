@@ -104,4 +104,15 @@ describe('optionsMenu', () => {
     );
     expect(view).toMatchSnapshot();
   });
+
+  test('isDisabled', () => {
+    const view = mount(
+      <OptionsMenu
+        id="disabled"
+        menuItems={menuItems}
+        toggle={<OptionsMenuToggle isDisabled>Options Menu</OptionsMenuToggle>}
+      />
+    );
+    expect(view).toMatchSnapshot();
+  });
 });
