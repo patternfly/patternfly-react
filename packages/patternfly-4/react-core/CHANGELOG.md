@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.58.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.57.2...@patternfly/react-core@3.58.0) (2019-07-01)
+
+
+### Bug Fixes
+
+* **tabs:** tab container refs ([#2402](https://github.com/patternfly/patternfly-react/issues/2402)) ([3c0a8a1](https://github.com/patternfly/patternfly-react/commit/3c0a8a1))
+
+
+### Features
+
+* **card:** Add compact card variation ([#2399](https://github.com/patternfly/patternfly-react/issues/2399)) ([e27ad9e](https://github.com/patternfly/patternfly-react/commit/e27ad9e))
+
+
+
+
+
 ## [3.57.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.57.1...@patternfly/react-core@3.57.2) (2019-07-01)
 
 

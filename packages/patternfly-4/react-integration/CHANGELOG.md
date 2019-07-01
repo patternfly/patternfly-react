@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.28.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.27.0...@patternfly/react-integration@1.28.0) (2019-07-01)
+
+
+### Features
+
+* **card:** Add compact card variation ([#2399](https://github.com/patternfly/patternfly-react/issues/2399)) ([e27ad9e](https://github.com/patternfly/patternfly-react/commit/e27ad9e))
+
+
+
+
+
 # [1.27.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@1.26.0...@patternfly/react-integration@1.27.0) (2019-06-27)
 
 
