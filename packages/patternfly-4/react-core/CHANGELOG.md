@@ -17,8 +17,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **Select:** convert to Typescript ([#2201](https://github.com/patternfly/patternfly-react/issues/2201)) ([fd9fca1](https://github.com/patternfly/patternfly-react/commit/fd9fca1))
 
 
-### BREAKING CHANGES
-
 * **Select:** Checkbox select variant collapsed into Select. CheckboxSelectGroup now is a generic
 Select Group to be used in any variant.
 
@@ -48,7 +46,7 @@ update tests, minor fixes
 
 
 
-## [4.1.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.1.1...@patternfly/react-core@4.1.2) (2019-07-01)
+# (2019-07-01)
 
 
 ### Bug Fixes
@@ -59,7 +57,7 @@ update tests, minor fixes
 
 
 
-## [4.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.1.0...@patternfly/react-core@4.1.1) (2019-07-01)
+# (2019-07-01)
 
 **Note:** Version bump only for package @patternfly/react-core
 
@@ -67,7 +65,7 @@ update tests, minor fixes
 
 
 
-# [4.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@4.0.0...@patternfly/react-core@4.1.0) (2019-07-01)
+# (2019-07-01)
 
 
 ### Features
@@ -78,7 +76,7 @@ update tests, minor fixes
 
 
 
-# [4.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.58.0...@patternfly/react-core@4.0.0) (2019-07-01)
+# (2019-07-01)
 
 
 ### Features
