@@ -13,6 +13,8 @@ export class DonutUtilizationStaticInvertedRightDemo extends React.Component<{},
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
+
     this.interval = setInterval(() => {
       const { used } = this.state;
       const val = (((used - 10) % 100) + 100) % 100;
