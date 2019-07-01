@@ -8,6 +8,7 @@ export interface ClipboardCopyExpandedProps extends Omit<ClipboardCopyProps, 'on
   className?: string; 
   children: React.ReactNode; 
   onChange?: (text: string, e: React.FormEvent<HTMLDivElement>) => void; 
+  isReadOnly: boolean; 
 }
 
 export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpandedProps> {
@@ -18,7 +19,8 @@ export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpanded
 
   static defaultProps = {
     onChange: (): any => undefined, 
-    className: ''
+    className: '', 
+    isReadOnly: false 
   }
 
   componentDidMount() {
@@ -28,14 +30,14 @@ export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpanded
   }
 
   render() {
-    const { className, children, onChange, ...props } = this.props;
+    const { className, children, onChange, isReadOnly, ...props } = this.props;
     return (
       <div
         suppressContentEditableWarning
         ref={this.contentRef}
         className={css(styles.clipboardCopyExpandableContent, className)}
         onInput={ (e: any) => onChange(e.target.innerText, e)}
-        contentEditable
+        contentEditable={!isReadOnly}
         {...props}
       />
     );
