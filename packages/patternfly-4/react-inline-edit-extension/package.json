@@ -38,8 +38,8 @@
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
-    "react": "^16.4.0",
-    "react-dom": "^15.6.2 || ^16.4.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "scripts": {
     "build": "yarn build:babel && node ./scripts/copyTS.js",
