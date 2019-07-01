@@ -8,6 +8,14 @@ describe('checkbox select options', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('renders with children successfully', () => {
+    const view = shallow(
+      <CheckboxSelectOption value="test" sendRef={jest.fn()}>
+        <div>test</div>
+      </CheckboxSelectOption>);
+    expect(view).toMatchSnapshot();
+  });
+
   describe('hover', () => {
     test('renders with checked successfully', () => {
       const view = shallow(<CheckboxSelectOption isChecked value="test" sendRef={jest.fn()} />);
