@@ -86,6 +86,7 @@ exports[`component render custom pagination toggle 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -195,6 +196,7 @@ exports[`component render custom pagination toggle 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
+                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     />
@@ -352,6 +354,7 @@ exports[`component render custom pagination toggle 1`] = `
                         <CaretDownIcon
                           className="pf-c-dropdown__toggle-icon"
                           color="currentColor"
+                          noVerticalAlign={false}
                           size="sm"
                           title={null}
                         >
@@ -426,6 +429,7 @@ exports[`component render custom pagination toggle 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -470,6 +474,7 @@ exports[`component render custom pagination toggle 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -533,6 +538,7 @@ exports[`component render custom pagination toggle 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -577,6 +583,7 @@ exports[`component render custom pagination toggle 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -847,6 +854,7 @@ exports[`component render custom perPageOptions 1`] = `
                         <CaretDownIcon
                           className="pf-c-dropdown__toggle-icon"
                           color="currentColor"
+                          noVerticalAlign={false}
                           size="sm"
                           title={null}
                         >
@@ -921,6 +929,7 @@ exports[`component render custom perPageOptions 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -965,6 +974,7 @@ exports[`component render custom perPageOptions 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1028,6 +1038,7 @@ exports[`component render custom perPageOptions 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1072,6 +1083,7 @@ exports[`component render custom perPageOptions 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1190,6 +1202,7 @@ exports[`component render custom start end 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -1299,6 +1312,7 @@ exports[`component render custom start end 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
+                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     />
@@ -1474,6 +1488,7 @@ exports[`component render custom start end 1`] = `
                         <CaretDownIcon
                           className="pf-c-dropdown__toggle-icon"
                           color="currentColor"
+                          noVerticalAlign={false}
                           size="sm"
                           title={null}
                         >
@@ -1548,6 +1563,7 @@ exports[`component render custom start end 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1592,6 +1608,7 @@ exports[`component render custom start end 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1655,6 +1672,7 @@ exports[`component render custom start end 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1699,6 +1717,7 @@ exports[`component render custom start end 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1889,6 +1908,7 @@ exports[`component render empty per page options 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1933,6 +1953,7 @@ exports[`component render empty per page options 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -1996,6 +2017,7 @@ exports[`component render empty per page options 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2040,6 +2062,7 @@ exports[`component render empty per page options 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2158,6 +2181,7 @@ exports[`component render last page 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -2267,6 +2291,7 @@ exports[`component render last page 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
+                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     />
@@ -2442,6 +2467,7 @@ exports[`component render last page 1`] = `
                         <CaretDownIcon
                           className="pf-c-dropdown__toggle-icon"
                           color="currentColor"
+                          noVerticalAlign={false}
                           size="sm"
                           title={null}
                         >
@@ -2516,6 +2542,7 @@ exports[`component render last page 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2560,6 +2587,7 @@ exports[`component render last page 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2623,6 +2651,7 @@ exports[`component render last page 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2667,6 +2696,7 @@ exports[`component render last page 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -2802,6 +2832,7 @@ exports[`component render limited number of pages 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -2911,6 +2942,7 @@ exports[`component render limited number of pages 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
+                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     />
@@ -3068,6 +3100,7 @@ exports[`component render limited number of pages 1`] = `
                         <CaretDownIcon
                           className="pf-c-dropdown__toggle-icon"
                           color="currentColor"
+                          noVerticalAlign={false}
                           size="sm"
                           title={null}
                         >
@@ -3142,6 +3175,7 @@ exports[`component render limited number of pages 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3186,6 +3220,7 @@ exports[`component render limited number of pages 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3249,6 +3284,7 @@ exports[`component render limited number of pages 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3293,6 +3329,7 @@ exports[`component render limited number of pages 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3409,6 +3446,7 @@ exports[`component render no items 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -3518,6 +3556,7 @@ exports[`component render no items 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
+                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     />
@@ -3693,6 +3732,7 @@ exports[`component render no items 1`] = `
                         <CaretDownIcon
                           className="pf-c-dropdown__toggle-icon"
                           color="currentColor"
+                          noVerticalAlign={false}
                           size="sm"
                           title={null}
                         >
@@ -3767,6 +3807,7 @@ exports[`component render no items 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3811,6 +3852,7 @@ exports[`component render no items 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3874,6 +3916,7 @@ exports[`component render no items 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -3918,6 +3961,7 @@ exports[`component render no items 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4030,6 +4074,7 @@ exports[`component render should render correctly bottom 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -4139,6 +4184,7 @@ exports[`component render should render correctly bottom 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
+                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     />
@@ -4314,6 +4360,7 @@ exports[`component render should render correctly bottom 1`] = `
                         <CaretDownIcon
                           className="pf-c-dropdown__toggle-icon"
                           color="currentColor"
+                          noVerticalAlign={false}
                           size="sm"
                           title={null}
                         >
@@ -4388,6 +4435,7 @@ exports[`component render should render correctly bottom 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4432,6 +4480,7 @@ exports[`component render should render correctly bottom 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4495,6 +4544,7 @@ exports[`component render should render correctly bottom 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4539,6 +4589,7 @@ exports[`component render should render correctly bottom 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -4655,6 +4706,7 @@ exports[`component render should render correctly top 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -4764,6 +4816,7 @@ exports[`component render should render correctly top 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
+                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     />
@@ -4939,6 +4992,7 @@ exports[`component render should render correctly top 1`] = `
                         <CaretDownIcon
                           className="pf-c-dropdown__toggle-icon"
                           color="currentColor"
+                          noVerticalAlign={false}
                           size="sm"
                           title={null}
                         >
@@ -5013,6 +5067,7 @@ exports[`component render should render correctly top 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5057,6 +5112,7 @@ exports[`component render should render correctly top 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5120,6 +5176,7 @@ exports[`component render should render correctly top 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5164,6 +5221,7 @@ exports[`component render should render correctly top 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5286,6 +5344,7 @@ exports[`component render titles 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -5395,6 +5454,7 @@ exports[`component render titles 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
+                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     />
@@ -5570,6 +5630,7 @@ exports[`component render titles 1`] = `
                         <CaretDownIcon
                           className="pf-c-dropdown__toggle-icon"
                           color="currentColor"
+                          noVerticalAlign={false}
                           size="sm"
                           title={null}
                         >
@@ -5637,6 +5698,7 @@ exports[`component render titles 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5681,6 +5743,7 @@ exports[`component render titles 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5744,6 +5807,7 @@ exports[`component render titles 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5788,6 +5852,7 @@ exports[`component render titles 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -5905,6 +5970,7 @@ exports[`component render up drop direction 1`] = `
                 >
                   <CheckIcon
                     color="currentColor"
+                    noVerticalAlign={false}
                     size="sm"
                     title={null}
                   />
@@ -6014,6 +6080,7 @@ exports[`component render up drop direction 1`] = `
                   >
                     <CheckIcon
                       color="currentColor"
+                      noVerticalAlign={false}
                       size="sm"
                       title={null}
                     />
@@ -6189,6 +6256,7 @@ exports[`component render up drop direction 1`] = `
                         <CaretDownIcon
                           className="pf-c-dropdown__toggle-icon"
                           color="currentColor"
+                          noVerticalAlign={false}
                           size="sm"
                           title={null}
                         >
@@ -6263,6 +6331,7 @@ exports[`component render up drop direction 1`] = `
           >
             <AngleDoubleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6307,6 +6376,7 @@ exports[`component render up drop direction 1`] = `
           >
             <AngleLeftIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6370,6 +6440,7 @@ exports[`component render up drop direction 1`] = `
           >
             <AngleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
@@ -6414,6 +6485,7 @@ exports[`component render up drop direction 1`] = `
           >
             <AngleDoubleRightIcon
               color="currentColor"
+              noVerticalAlign={false}
               size="sm"
               title={null}
             >
