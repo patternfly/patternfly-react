@@ -25,6 +25,8 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   isHovered?: boolean;
   /** Forces display of the active state of the Options menu button */
   isActive?: boolean;
+  /** Disables the options menu toggle */
+  isDisabled?: boolean;
   /** Provides an accessible name for the button when an icon is used instead of text */
   'aria-label'?: string;
 }
@@ -41,6 +43,7 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   isHovered = false,
   isActive = false,
   isFocused = false,
+  isDisabled = false,
   'aria-label': ariaLabel = 'Options menu',
   ...props
 }: OptionsMenuToggleWithTextProps) => (
@@ -50,7 +53,8 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
     isPlain && getModifier(styles, 'plain'),
     isHovered && getModifier(styles, 'hover'),
     isActive && getModifier(styles, 'active'),
-    isFocused && getModifier(styles, 'focus'))}
+    isFocused && getModifier(styles, 'focus'),
+    isDisabled && getModifier(styles, 'disabled'))}
     {...props}>
     <span className={css(styles.optionsMenuToggleText, toggleTextClassName)}>{toggleText}</span>
     <button className={css(styles.optionsMenuToggleButton, toggleButtonContentsClassName)}
