@@ -17,8 +17,6 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
 >
   <Stack
     className="my-test-class"
-    component="div"
-    gutter={null}
     id="simple-test-id"
   >
     <div
@@ -74,8 +72,6 @@ exports[`TopologyView should display topology correctly 1`] = `
 >
   <Stack
     className="my-test-class"
-    component="div"
-    gutter={null}
     id="simple-test-id"
   >
     <div
@@ -83,7 +79,6 @@ exports[`TopologyView should display topology correctly 1`] = `
       id="simple-test-id"
     >
       <StackItem
-        className=""
         isFilled={false}
       >
         <div
@@ -95,7 +90,6 @@ exports[`TopologyView should display topology correctly 1`] = `
         </div>
       </StackItem>
       <StackItem
-        className=""
         isFilled={false}
       >
         <div
@@ -172,8 +166,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
 >
   <Stack
     className="my-test-class"
-    component="div"
-    gutter={null}
     id="simple-test-id"
   >
     <div
@@ -181,7 +173,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
       id="simple-test-id"
     >
       <StackItem
-        className=""
         isFilled={false}
       >
         <div
@@ -193,7 +184,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
         </div>
       </StackItem>
       <StackItem
-        className=""
         isFilled={false}
       >
         <div
@@ -273,8 +263,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
 >
   <Stack
     className="my-test-class"
-    component="div"
-    gutter={null}
     id="simple-test-id"
   >
     <div
@@ -282,7 +270,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
       id="simple-test-id"
     >
       <StackItem
-        className=""
         isFilled={false}
       >
         <div
@@ -294,7 +281,6 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
         </div>
       </StackItem>
       <StackItem
-        className=""
         isFilled={false}
       >
         <div
