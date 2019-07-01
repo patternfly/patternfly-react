@@ -25,6 +25,7 @@ class BreadcrumbSearchInput extends React.Component {
           inputRef={input => {
             this.nameInput = input;
           }}
+          autocomplete="off"
           id="breadcrumbs-search"
           placeholder={placeHolder}
           value={searchValue}
