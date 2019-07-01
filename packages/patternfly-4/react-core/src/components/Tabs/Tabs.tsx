@@ -225,7 +225,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               >
                 <Tab
                   className={css(styles.tabsButton)}
-                  onClick={event => this.handleTabClick(event, child.props.eventKey, child.props.tabContentRef)}
+                  onClick={(event: any) => this.handleTabClick(event, child.props.eventKey, child.props.tabContentRef)}
                   id={`pf-tab-${child.props.eventKey}-${child.props.id || uniqueId}`}
                   aria-controls={
                     child.props.tabContentId
