@@ -31,6 +31,7 @@ export * from './PopoverDemo/PopoverDemo';
 export * from './PageDemo/PageDemo';
 export * from './ProgressDemo/ProgressDemo';
 export * from './RadioDemo/RadioDemo';
+export * from './StackDemo/StackDemo'; 
 export * from './TabsDemo/TabsDemo';
 export * from './TextAreaDemo/TextAreaDemo';
 export * from './TextDemo/TextDemo';
