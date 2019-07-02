@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.59.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.0...@patternfly/react-core@3.59.1) (2019-07-02)
+
+
+### Bug Fixes
+
+* **Modal:** get modal container from state to set/unset aria-hidden ([#2406](https://github.com/patternfly/patternfly-react/issues/2406)) ([dd49c7e](https://github.com/patternfly/patternfly-react/commit/dd49c7e))
+
+
+
+
+
 # [3.59.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.58.1...@patternfly/react-core@3.59.0) (2019-07-02)
 
 
