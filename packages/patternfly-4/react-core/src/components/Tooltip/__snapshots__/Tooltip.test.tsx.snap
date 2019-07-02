@@ -1,16 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`tooltip renders 1`] = `
-.pf-tippy {
-  display: block;
-}
-
-<ForwardRef(TippyWrapper)
+<Tippy
   animateFill={false}
-  animation="scale"
   appendTo={[Function]}
-  boundary="window"
-  className="pf-tippy"
   content={
     <div
       className="pf-c-tooltip"
@@ -32,11 +25,10 @@ exports[`tooltip renders 1`] = `
   }
   distance={15}
   flip={true}
-  ignoreAttributes={true}
-  interactive={true}
   lazy={true}
   maxWidth="18.75rem"
   onCreate={[Function]}
+  performance={true}
   placement="top"
   popperOptions={
     Object {
@@ -50,13 +42,12 @@ exports[`tooltip renders 1`] = `
       },
     }
   }
+  theme="pf-tippy"
   trigger="mouseenter focus"
   zIndex={9999}
 >
-  <span>
-    <div>
-      Toggle tooltip
-    </div>
-  </span>
-</ForwardRef(TippyWrapper)>
+  <div>
+    Toggle tooltip
+  </div>
+</Tippy>
 `;

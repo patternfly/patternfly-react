@@ -156,6 +156,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.PageDemo
   },
   {
+    id: 'pagination-demo',
+    name: 'Pagination Demo',
+    componentType: Examples.PaginationDemo
+  },
+  {
     id: 'popover-demo',
     name: 'Popover Demo',
     componentType: Examples.PopoverDemo
@@ -180,6 +185,11 @@ export const Demos: DemoInterface[] = [
     name: 'Stack Demo', 
     componentType: Examples.StackDemo
   }, 
+  {
+    id: 'switch-demo',
+    name: 'Switch Demo',
+    componentType: Examples.SwitchDemo
+  },
   {
     id: 'tab-demo',
     name: 'Tab Demo',

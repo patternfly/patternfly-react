@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.2.0...demo-app-ts@2.2.1) (2019-07-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [2.2.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.1.4...demo-app-ts@2.2.0) (2019-07-02)
+
+
+### Features
+
+* **Pagination:** Pagination Component Typescript Conversion ([#2256](https://github.com/patternfly/patternfly-react/issues/2256)) ([8a29a20](https://github.com/patternfly/patternfly-react/commit/8a29a20))
+
+
+
+
+
+## [2.1.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.1.3...demo-app-ts@2.1.4) (2019-07-01)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [2.1.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.1.2...demo-app-ts@2.1.3) (2019-07-01)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [2.1.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.1.1...demo-app-ts@2.1.2) (2019-07-01)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [2.1.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.1.0...demo-app-ts@2.1.1) (2019-07-01)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 # [2.1.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.0.0...demo-app-ts@2.1.0) (2019-07-01)
 
 

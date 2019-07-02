@@ -1,17 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`popover can specify position as object value 1`] = `
-.pf-tippy {
-  display: block;
-}
-
-<ForwardRef(TippyWrapper)
-  a11y={false}
+<Tippy
   animateFill={false}
-  animation="scale"
   appendTo={[Function]}
-  boundary="window"
-  className="pf-tippy"
   content={
     <GenerateId
       prefix="pf-random-id-"
@@ -19,13 +11,12 @@ exports[`popover can specify position as object value 1`] = `
       [Function]
     </GenerateId>
   }
-  distance={30}
+  distance={25}
   flip={true}
   hideOnClick={false}
-  ignoreAttributes={true}
-  inertia={true}
   interactive={true}
   interactiveBorder={0}
+  isVisible={true}
   lazy={true}
   maxWidth="calc(1.5rem + 18.75rem)"
   onCreate={[Function]}
@@ -34,6 +25,7 @@ exports[`popover can specify position as object value 1`] = `
   onMount={[Function]}
   onShow={[Function]}
   onShown={[Function]}
+  performance={true}
   placement="right"
   popperOptions={
     Object {
@@ -47,30 +39,20 @@ exports[`popover can specify position as object value 1`] = `
       },
     }
   }
+  theme="pf-tippy"
   trigger="manual"
-  visible={true}
   zIndex={9999}
 >
-  <span>
-    <div>
-      Toggle Popover
-    </div>
-  </span>
-</ForwardRef(TippyWrapper)>
+  <div>
+    Toggle Popover
+  </div>
+</Tippy>
 `;
 
 exports[`popover renders close-button, header and body 1`] = `
-.pf-tippy {
-  display: block;
-}
-
-<ForwardRef(TippyWrapper)
-  a11y={false}
+<Tippy
   animateFill={false}
-  animation="scale"
   appendTo={[Function]}
-  boundary="window"
-  className="pf-tippy"
   content={
     <GenerateId
       prefix="pf-random-id-"
@@ -78,13 +60,12 @@ exports[`popover renders close-button, header and body 1`] = `
       [Function]
     </GenerateId>
   }
-  distance={30}
+  distance={25}
   flip={true}
   hideOnClick={false}
-  ignoreAttributes={true}
-  inertia={true}
   interactive={true}
   interactiveBorder={0}
+  isVisible={true}
   lazy={true}
   maxWidth="calc(1.5rem + 18.75rem)"
   onCreate={[Function]}
@@ -93,6 +74,7 @@ exports[`popover renders close-button, header and body 1`] = `
   onMount={[Function]}
   onShow={[Function]}
   onShown={[Function]}
+  performance={true}
   placement="top"
   popperOptions={
     Object {
@@ -106,14 +88,12 @@ exports[`popover renders close-button, header and body 1`] = `
       },
     }
   }
+  theme="pf-tippy"
   trigger="manual"
-  visible={true}
   zIndex={9999}
 >
-  <span>
-    <div>
-      Toggle Popover
-    </div>
-  </span>
-</ForwardRef(TippyWrapper)>
+  <div>
+    Toggle Popover
+  </div>
+</Tippy>
 `;

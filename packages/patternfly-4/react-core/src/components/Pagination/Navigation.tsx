@@ -1,64 +1,64 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
 import { AngleLeftIcon, AngleDoubleLeftIcon, AngleRightIcon, AngleDoubleRightIcon } from '@patternfly/react-icons';
 import { Button, ButtonVariant } from '../Button';
+import { pluralize } from '../../helpers';
 
-const propTypes = {
-  className: PropTypes.string,
-  lastPage: PropTypes.number,
-  pagesTitle: PropTypes.string,
-  toLastPage: PropTypes.string,
-  toPreviousPage: PropTypes.string,
-  toNextPage: PropTypes.string,
-  toFirstPage: PropTypes.string,
-  currPage: PropTypes.string,
-  paginationTitle: PropTypes.string,
-  page: PropTypes.number.isRequired,
-  onSetPage: PropTypes.func.isRequired,
-  onNextClick: PropTypes.func,
-  onPreviousClick: PropTypes.func,
-  onFirstClick: PropTypes.func,
-  onLastClick: PropTypes.func,
-  onPageInput: PropTypes.func
-};
-const defaultProps = {
-  className: '',
-  lastPage: 0,
-  pagesTitle: '',
-  toLastPage: 'Go to last page',
-  toNextPage: 'Go to next page',
-  toFirstPage: 'Go to first page',
-  toPreviousPage: 'Go to previous page',
-  currPage: 'Current page',
-  paginationTitle: 'Pagination',
-  onNextClick: () => undefined,
-  onPreviousClick: () => undefined,
-  onFirstClick: () => undefined,
-  onLastClick: () => undefined,
-  onPageInput: () => undefined
-};
+export interface NavigationProps extends React.HTMLProps<HTMLElement> {
+  /** Additional classes for the container */
+  className?: string;
+  /** The number of the last page */
+  lastPage?: number;
+  /** The title of a page displayed beside the page number */
+  pagesTitle?: string;
+  /** Accessible label for the button which moves to the last page */
+  toLastPage?: string;
+  /** Accessible label for the button which moves to the previous page */
+  toPreviousPage?: string;
+  /** Accessible label for the button which moves to the next page */
+  toNextPage?: string;
+  /** Accessible label for the button which moves to the first page */
+  toFirstPage?: string;
+  /** Accessible label for the input displaying the current page */
+  currPage?: string;
+  /** Accessible label for the pagination component */
+  paginationTitle?: string;
+  /** The number of the current page */
+  page: number;
+  /** Function called when user sets page */
+  onSetPage: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  /** Function called when user clicks to navigate to next page */
+  onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  /** Function called when user clicks to navigate to previous page */
+  onPreviousClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  /** Function called when user clicks to navigate to first page */
+  onFirstClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  /** Function called when user clicks to navigate to last page */
+  onLastClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  /** Function called when user inputs page number */
+  onPageInput?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+}
 
-const Navigation = ({
+export const Navigation: React.FunctionComponent<NavigationProps> = ({
   page,
-  lastPage,
-  pagesTitle,
-  toLastPage,
-  toNextPage,
-  toFirstPage,
-  toPreviousPage,
-  currPage,
-  paginationTitle,
   onSetPage,
-  onNextClick,
-  onPreviousClick,
-  onFirstClick,
-  onLastClick,
-  onPageInput,
-  className,
+  className = '',
+  lastPage = 0,
+  pagesTitle = '',
+  toLastPage = 'Go to last page',
+  toNextPage = 'Go to next page',
+  toFirstPage = 'Go to first page',
+  toPreviousPage = 'Go to previous page',
+  currPage = 'Current page',
+  paginationTitle = 'Pagination',
+  onNextClick = () => undefined,
+  onPreviousClick = () => undefined,
+  onFirstClick = () => undefined,
+  onLastClick = () => undefined,
+  onPageInput = () => undefined,
   ...props
-}) => (
+}: NavigationProps) => (
   <nav className={css(styles.paginationNav, className)} aria-label={paginationTitle} {...props}>
     <Button
       variant={ButtonVariant.plain}
@@ -103,7 +103,7 @@ const Navigation = ({
         }}
       />
       <span aria-hidden="true">
-        of {lastPage} {pagesTitle}
+        of {pluralize(lastPage, pagesTitle)}
       </span>
     </div>
     <Button
@@ -134,7 +134,3 @@ const Navigation = ({
   </nav>
 );
 
-Navigation.propTypes = propTypes;
-Navigation.defaultProps = defaultProps;
-
-export default Navigation;

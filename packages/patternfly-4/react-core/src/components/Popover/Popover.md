@@ -9,7 +9,7 @@ import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-co
 
 ## Simple popover
 ```js
-import * as React from 'react';
+import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
 SimplePopover = () => (
@@ -21,14 +21,14 @@ SimplePopover = () => (
     }
     footerContent="Popover Footer"
   >
-    <Button>Toggle Simple Popover</Button>
+    <Button>Toggle Popover</Button>
   </Popover>
 );
 ```
 
 ## Advanced popover
 ```js
-import * as React from 'react';
+import React from 'react';
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
 
 class AdvancedPopover extends React.Component {
@@ -104,7 +104,7 @@ class AdvancedPopover extends React.Component {
             }
             footerContent="Popover Footer"
           >
-            <Button onClick={this.handleClick}>Toggle Advanced Popover</Button>
+            <Button onClick={this.handleClick}>Toggle Popover</Button>
           </Popover>
         </div>
       </div>
@@ -115,7 +115,7 @@ class AdvancedPopover extends React.Component {
 
 ## Popover (headless)
 ```js
-import * as React from 'react';
+import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
 HeadlessPopover = () => (
@@ -128,17 +128,17 @@ HeadlessPopover = () => (
     closeBtnAriaLabel="Close Headless Popover"
     footerContent="Popover Footer"
   >
-    <Button>Toggle Headless Popover</Button>
+    <Button>Toggle Popover</Button>
   </Popover>
 );
 ```
 
 ## Popover with Link
 ```js
-import * as React from 'react';
+import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
-PopoverWithLink = () => (
+HeadlessPopover = () => (
   <Popover
     position={PopoverPosition.right}
     bodyContent={
@@ -148,7 +148,7 @@ PopoverWithLink = () => (
     closeBtnAriaLabel="Close Popover with Link"
     footerContent="Popover Footer"
   >
-    <Button>Toggle Popover with Link</Button>
+    <Button>Toggle Popover</Button>
   </Popover>
 );
 ```

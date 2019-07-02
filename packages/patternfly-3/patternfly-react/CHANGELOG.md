@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.3](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.2...patternfly-react@2.36.3) (2019-07-01)
+
+
+### Bug Fixes
+
+* **BreadCrumbSwitcher:** disable autocomplete ([#2407](https://github.com/patternfly/patternfly-react/issues/2407)) ([16e4504](https://github.com/patternfly/patternfly-react/commit/16e4504))
+
+
+
+
+
 ## [2.36.2](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.1...patternfly-react@2.36.2) (2019-06-19)
 
 **Note:** Version bump only for package patternfly-react
