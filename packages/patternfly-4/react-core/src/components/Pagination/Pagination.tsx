@@ -1,11 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import { DropdownDirection } from '../Dropdown';
+import { ToggleTemplate, ToggleTemplateProps } from './ToggleTemplate';
 import styles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
-import { DropdownDirection } from '../Dropdown';
-import ToggleTemplate from './ToggleTemplate';
-import Navigation from './Navigation';
-import PaginationOptionsMenu from './PaginationOptionsMenu';
+import { Navigation } from './Navigation';
+import { PaginationOptionsMenu } from './PaginationOptionsMenu';
+
+export enum PaginationVariant {
+  top = 'top',
+  bottom = 'bottom',
+  left = 'left',
+  right = 'right',
+}
 
 const defaultPerPageOptions = [
   {
@@ -26,79 +32,76 @@ const defaultPerPageOptions = [
   }
 ];
 
-export const PaginationVariant = {
-  top: 'top',
-  bottom: 'bottom'
-};
+export interface PerPageOptions {
+  title?: string;
+  value?: number;
+}
 
-const propTypes = {
+export interface PaginationTitles {
+  page?: string;
+  items?: string;
+  itemsPerPage?: string;
+  perPageSuffix?: string;
+  toFirstPage?: string;
+  toPreviousPage?: string;
+  toLastPage?: string;
+  toNextPage?: string;
+  optionsToggle?: string;
+  currPage?: string;
+  paginationTitle?: string;
+}
+
+export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   /** What should be rendered inside */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Additional classes for the container. */
-  className: PropTypes.string,
-  /** Position where pagination is rendered. */
-  variant: PropTypes.oneOf(Object.values(PaginationVariant)),
-  /** Number of items per page. */
-  perPage: PropTypes.number,
-  /** Select from options to number of items per page. */
-  perPageOptions: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.node,
-      value: PropTypes.number
-    })
-  ),
+  className?: string;
   /** Total number of items. */
-  itemCount: PropTypes.number.isRequired,
+  itemCount: number;
+  /** Position where pagination is rendered. */
+  variant?: 'top' | 'bottom' | 'left' | 'right';
+  /** Number of items per page. */
+  perPage?: number;
+  /** Select from options to number of items per page. */
+  perPageOptions?: PerPageOptions[];
   /** Current page number. */
-  page: PropTypes.number,
+  page?: number;
   /** First index of items on current page. */
-  itemsStart: PropTypes.number,
+  itemsStart?: number;
   /** Last index of items on current page. */
-  itemsEnd: PropTypes.number,
+  itemsEnd?: number;
   /** ID to ideintify widget on page. */
-  widgetId: PropTypes.string,
+  widgetId?: string;
   /** Direction of dropdown context menu. */
-  dropDirection: PropTypes.oneOf(Object.values(DropdownDirection)),
+  dropDirection?: 'up' | 'down';
   /** Object with titles to display in pagination. */
-  titles: PropTypes.shape({
-    page: PropTypes.string,
-    items: PropTypes.string,
-    itemsPerPage: PropTypes.string,
-    perPageSuffix: PropTypes.string,
-    toFirstPage: PropTypes.string,
-    toPreviousPage: PropTypes.string,
-    toLastPage: PropTypes.string,
-    toNextPage: PropTypes.string,
-    optionsToggle: PropTypes.string,
-    currPage: PropTypes.string,
-    paginationTitle: PropTypes.string
-  }),
+  titles?: PaginationTitles;
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */
-  toggleTemplate: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
   /** Function called when user sets page. */
-  onSetPage: PropTypes.func,
+  onSetPage?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks on navigate to first page. */
-  onFirstClick: PropTypes.func,
+  onFirstClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks on navigate to previous page. */
-  onPreviousClick: PropTypes.func,
+  onPreviousClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks on navigate to next page. */
-  onNextClick: PropTypes.func,
+  onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks on navigate to last page. */
-  onLastClick: PropTypes.func,
+  onLastClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user inputs page number. */
-  onPageInput: PropTypes.func,
+  onPageInput?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user selects number of items per page. */
-  onPerPageSelect: PropTypes.func
-};
+  onPerPageSelect?: (event: React.MouseEvent<HTMLAnchorElement>|React.KeyboardEvent, perPage: number) => void;
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  variant: PaginationVariant.top,
-  perPage: defaultPerPageOptions[0].value,
-  titles: {
+export const Pagination: React.FunctionComponent<PaginationProps> = ({
+  children = null,
+  className = '',
+  variant = PaginationVariant.top,
+  perPage = defaultPerPageOptions[0].value,
+  titles = {
     items: 'items',
-    pages: 'pages',
+    page: 'page',
     itemsPerPage: 'Items per page',
     perPageSuffix: 'per page',
     toFirstPage: 'Go to first page',
@@ -109,45 +112,23 @@ const defaultProps = {
     currPage: 'Current page',
     paginationTitle: 'Pagination'
   },
-  page: 1,
-  itemsStart: null,
-  itemsEnd: null,
-  perPageOptions: defaultPerPageOptions,
-  dropDirection: DropdownDirection.down,
-  widgetId: 'pagination-options-menu',
-  toggleTemplate: ToggleTemplate,
-  onSetPage: () => undefined,
-  onPerPageSelect: () => undefined,
-  onFirstClick: () => undefined,
-  onPreviousClick: () => undefined,
-  onNextClick: () => undefined,
-  onPageInput: () => undefined,
-  onLastClick: () => undefined
-};
-
-const Pagination = ({
-  perPage,
-  page,
-  className,
-  children,
-  itemsStart,
-  itemsEnd,
-  variant,
-  titles,
+  page = 1,
   itemCount,
-  dropDirection,
-  perPageOptions,
-  onPerPageSelect,
-  onSetPage,
-  onFirstClick,
-  onPreviousClick,
-  onPageInput,
-  onNextClick,
-  onLastClick,
-  toggleTemplate,
-  widgetId,
+  itemsStart = null,
+  itemsEnd = null,
+  perPageOptions = defaultPerPageOptions,
+  dropDirection = DropdownDirection.down,
+  widgetId = 'pagination-options-menu',
+  toggleTemplate = ToggleTemplate,
+  onSetPage = () => undefined,
+  onPerPageSelect = () => undefined,
+  onFirstClick = () => undefined,
+  onPreviousClick = () => undefined,
+  onNextClick = () => undefined,
+  onPageInput = () => undefined,
+  onLastClick = () => undefined,
   ...props
-}) => {
+}: PaginationProps) => {
   const lastPage = Math.ceil(itemCount / perPage);
   const firstIndex = itemCount === 0 ? 0 : (page - 1) * perPage + 1;
   let lastIndex;
@@ -160,6 +141,7 @@ const Pagination = ({
   return (
     <div
       className={css(styles.pagination, variant === PaginationVariant.bottom && styles.modifiers.footer, className)}
+      id={widgetId}
       {...props}
     >
       {variant === PaginationVariant.top && (
@@ -181,7 +163,7 @@ const Pagination = ({
         toggleTemplate={toggleTemplate}
       />
       <Navigation
-        pagesTitle={titles.pages}
+        pagesTitle={titles.page}
         toLastPage={titles.toLastPage}
         toPreviousPage={titles.toPreviousPage}
         toNextPage={titles.toNextPage}
@@ -201,7 +183,3 @@ const Pagination = ({
     </div>
   );
 };
-
-Pagination.propTypes = propTypes;
-Pagination.defaultProps = defaultProps;
-export default Pagination;
