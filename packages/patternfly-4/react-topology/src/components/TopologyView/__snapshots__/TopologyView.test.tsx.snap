@@ -18,7 +18,7 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
   <Stack
     className="my-test-class"
     component="div"
-    gutter={null}
+    gutter={false}
     id="simple-test-id"
   >
     <div
@@ -75,7 +75,7 @@ exports[`TopologyView should display topology correctly 1`] = `
   <Stack
     className="my-test-class"
     component="div"
-    gutter={null}
+    gutter={false}
     id="simple-test-id"
   >
     <div
@@ -173,7 +173,7 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
   <Stack
     className="my-test-class"
     component="div"
-    gutter={null}
+    gutter={false}
     id="simple-test-id"
   >
     <div
@@ -274,7 +274,7 @@ exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
   <Stack
     className="my-test-class"
     component="div"
-    gutter={null}
+    gutter={false}
     id="simple-test-id"
   >
     <div

@@ -1,5 +1,5 @@
-import React from 'react';
-import Bullseye from './Bullseye';
+import * as React from 'react';
+import { Bullseye } from './Bullseye';
 import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {
@@ -25,7 +25,7 @@ test('allows passing in a string as the component', () => {
 });
 
 test('allows passing in a React Component as the component', () => {
-  const Component = () => null;
+  const Component = () => null as any;
   const view = shallow(<Bullseye component={Component} />);
   expect(view.type()).toBe(Component);
 });

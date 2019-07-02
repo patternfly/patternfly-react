@@ -16,10 +16,7 @@ exports[`Wizard should match snapshot 1`] = `
       tag="div"
     >
       <Unknown>
-        <Bullseye
-          className=""
-          component="div"
-        >
+        <Unknown>
           <Context.Provider
             value={
               Object {
@@ -135,7 +132,7 @@ exports[`Wizard should match snapshot 1`] = `
               </Unknown>
             </div>
           </Context.Provider>
-        </Bullseye>
+        </Unknown>
       </Unknown>
     </FocusTrap>,
     "containerInfo": <div>
