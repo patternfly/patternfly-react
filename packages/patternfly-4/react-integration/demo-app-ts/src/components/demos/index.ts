@@ -8,6 +8,7 @@ export * from './BackgroundImageDemo/BackgroundImageDemo';
 export * from './BadgeDemo/BadgeDemo';
 export * from './BrandDemo/BrandDemo';
 export * from './BreadcrumbDemo/BreadcrumbDemo';
+export * from './BullseyeDemo/BullseyeDemo'; 
 export * from './ButtonDemo/ButtonDemo';
 export * from './CardDemo/CardDemo';
 export * from './CheckboxDemo/CheckboxDemo';
