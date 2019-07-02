@@ -29,12 +29,17 @@ export interface AboutModalProps {
   noAboutModalBoxContentContainer?: boolean;
 };
 
-export class AboutModal extends React.Component<AboutModalProps> {
-  private static currentId = 0;
-  private container: HTMLElement;
+interface ModalState {
+  container: HTMLElement;
+}
+
+export class AboutModal extends React.Component<AboutModalProps, AboutModal, ModalState> {
+  private static currentId: number = 0;
   private id = AboutModal.currentId++;
   ariaLabelledBy = `pf-about-modal-title-${this.id}`;
   ariaDescribedBy = `pf-about-modal-content-${this.id}`;
+  container?: HTMLDivElement = undefined;
+
   static defaultProps = {
     className: '',
     isOpen: false,
@@ -51,11 +56,23 @@ export class AboutModal extends React.Component<AboutModalProps> {
       // tslint:disable-next-line:no-console
       console.error('AboutModal:', 'brandImageAlt is required when a brandImageSrc is specified');
     }
+    this.state = {
+      container: undefined
+    };
   }
 
-  private handleEscKeyClick = (event: KeyboardEvent) => {
+  handleEscKeyClick = (event: KeyboardEvent) => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
       this.props.onClose();
+    }
+  };
+
+  toggleSiblingsFromScreenReaders = (hide: boolean) => {
+    const bodyChildren = document.body.children;
+    for (const child of Array.from(bodyChildren)) {
+      if (child !== this.state.container) {
+        hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
+      }
     }
   };
 
@@ -79,8 +96,10 @@ export class AboutModal extends React.Component<AboutModalProps> {
   componentDidUpdate() {
     if (this.props.isOpen) {
       document.body.classList.add(css(styles.backdropOpen));
+      this.toggleSiblingsFromScreenReaders(true);
     } else {
       document.body.classList.remove(css(styles.backdropOpen));
+      this.toggleSiblingsFromScreenReaders(false);
     }
   }
 

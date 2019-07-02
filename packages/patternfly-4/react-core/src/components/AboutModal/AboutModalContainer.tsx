@@ -1,4 +1,11 @@
 import * as React from 'react';
+
+// tslint:disable-next-line
+const FocusTrap: any = require('focus-trap-react');
+
+import styles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
+import { css } from '@patternfly/react-styles';
+
 import { AboutModalBoxContent } from './AboutModalBoxContent';
 import { AboutModalBoxHeader } from './AboutModalBoxHeader';
 import { AboutModalBoxHero } from './AboutModalBoxHero';
@@ -6,7 +13,6 @@ import { AboutModalBoxBrand } from './AboutModalBoxBrand';
 import { AboutModalBoxCloseButton } from './AboutModalBoxCloseButton';
 import { AboutModalBox } from './AboutModalBox';
 import { Backdrop } from '../Backdrop/Backdrop';
-import Bullseye from '../../layouts/Bullseye/Bullseye';
 
 export interface AboutModalContainerProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the About Modal Box Content.  */
@@ -52,7 +58,7 @@ export const AboutModalContainer: React.SFC<AboutModalContainerProps> = ({
   }
   return (
     <Backdrop>
-      <Bullseye>
+      <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
         <AboutModalBox className={className} aria-labelledby={ariaLabelledbyId} aria-describedby={ariaDescribedById}>
           <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
           <AboutModalBoxCloseButton onClose={onClose} />
@@ -62,7 +68,7 @@ export const AboutModalContainer: React.SFC<AboutModalContainerProps> = ({
           </AboutModalBoxContent>
           <AboutModalBoxHero backgroundImageSrc={backgroundImageSrc} />
         </AboutModalBox>
-      </Bullseye>
+      </FocusTrap>
     </Backdrop>
   );
 };
