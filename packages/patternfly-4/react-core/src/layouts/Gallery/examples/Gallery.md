@@ -3,6 +3,7 @@ title: 'Gallery'
 cssPrefix: 'pf-l-gallery'
 section: 'layouts'
 propComponents: ['Gallery', 'GalleryItem']
+typescript: true
 ---
 
 import { Gallery, GalleryItem } from '@patternfly/react-core';
@@ -30,7 +31,7 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
-<Gallery gutter="md">
+<Gallery gutter>
   <GalleryItem>Gallery Item</GalleryItem>
   <GalleryItem>Gallery Item</GalleryItem>
   <GalleryItem>Gallery Item</GalleryItem>
