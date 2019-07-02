@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.6...@patternfly/react-charts@4.4.7) (2019-07-02)
+
+
+### Bug Fixes
+
+* **Chart:** Fix runtime errors related to theme padding ([#2430](https://github.com/patternfly/patternfly-react/issues/2430)) ([a4d9f75](https://github.com/patternfly/patternfly-react/commit/a4d9f75)), closes [#2429](https://github.com/patternfly/patternfly-react/issues/2429)
+
+
+
+
+
 ## [4.4.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.5...@patternfly/react-charts@4.4.6) (2019-06-28)
 
 **Note:** Version bump only for package @patternfly/react-charts
