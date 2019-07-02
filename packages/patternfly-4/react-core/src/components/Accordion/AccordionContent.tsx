@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
+import { AccordionContext } from './AccordionContext';
 
-export interface AccordionContentProps extends React.HTMLProps<HTMLElement> {
+export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Accordion  */
   children?: React.ReactNode;
   /** Additional classes added to the Accordion content  */
@@ -26,18 +27,25 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
   'aria-label': ariaLabel = '',
   ...props
 }: AccordionContentProps) => (
-  <dd
-    id={id}
-    className={css(
-      styles.accordionExpandedContent,
-      isFixed && styles.modifiers.fixed,
-      !isHidden && styles.modifiers.expanded,
-      className
-    )}
-    hidden={isHidden}
-    aria-label={ariaLabel}
-    {...props}
-  >
-    <div className={css(styles.accordionExpandedContentBody)}>{children}</div>
-  </dd>
+  <AccordionContext.Consumer>
+    {({ asDefinitionList }) => {
+      const AccordionContentContainer = asDefinitionList ? 'dd' : 'div';
+      return (
+        <AccordionContentContainer
+          id={id}
+          className={css(
+            styles.accordionExpandedContent,
+            isFixed && styles.modifiers.fixed,
+            !isHidden && styles.modifiers.expanded,
+            className
+          )}
+          hidden={isHidden}
+          aria-label={ariaLabel}
+          {...props}
+        >
+          <div className={css(styles.accordionExpandedContentBody)}>{children}</div>
+        </AccordionContentContainer>
+      );
+    }}
+  </AccordionContext.Consumer>
 );
