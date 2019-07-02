@@ -32,6 +32,7 @@ export * from './PageDemo/PageDemo';
 export * from './PaginationDemo/PaginationDemo';
 export * from './ProgressDemo/ProgressDemo';
 export * from './RadioDemo/RadioDemo';
+export * from './SwitchDemo/SwitchDemo';
 export * from './TabsDemo/TabsDemo';
 export * from './TextAreaDemo/TextAreaDemo';
 export * from './TextDemo/TextDemo';
