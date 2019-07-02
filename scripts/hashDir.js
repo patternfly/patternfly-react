@@ -12,9 +12,10 @@ function filewalker(dir) {
     const stat = fs.statSync(filePath);
     // If directory, execute a recursive call
     if (stat && stat.isDirectory() && !stat.isSymbolicLink()) {
+      results.push({ path: filePath, type: 'dir' });
       results = results.concat(filewalker(filePath));
     } else if (stat && stat.isFile()) {
-      results.push(filePath);
+      results.push({ path: filePath, type: 'file' });
     }
   });
 
@@ -25,10 +26,17 @@ function hashDir(dirPath) {
   const md5 = crypto.createHash('md5');
 
   const files = filewalker(dirPath);
-  files.sort().forEach(file => {
-    const fileContents = fs.readFileSync(file);
-    md5.update(fileContents);
-  });
+  files
+    .sort((f1, f2) => f1.path.localeCompare(f2.path))
+    .forEach(file => {
+      if (file.type === 'file') {
+        const fileContents = fs.readFileSync(file.path);
+        md5.update(fileContents);
+      }
+      else if (file.type === 'dir') {
+        md5.update(file.path);
+      }
+    });
   return md5.digest('hex');
 }
 
