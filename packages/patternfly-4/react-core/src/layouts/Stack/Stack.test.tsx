@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { mount } from 'enzyme';
 import { Stack } from './Stack';
 import { StackItem } from './StackItem';
