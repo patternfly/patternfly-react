@@ -19,6 +19,7 @@ export * from './DataListDemo/DataListDemo';
 export * from './EmptyStateDemo/EmptyStateDemo';
 export * from './FormDemo/FormDemo'; 
 export * from './FormSelectDemo/FormSelectDemo'; 
+export * from './GalleryDemo/GalleryDemo'; 
 export * from './InputGroupDemo/InputGroupDemo'; 
 export * from './LabelDemo/LabelDemo';
 export * from './ListDemo/ListDemo';
