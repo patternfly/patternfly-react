@@ -14,8 +14,7 @@ import {
 import { getDonutTheme } from '../ChartUtils/chart-theme';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
-import { ChartLegendPosition } from "../ChartLegend";
-import { ChartPie, ChartPieProps } from '../ChartPie';
+import { ChartPie, ChartPieLegendPosition, ChartPieProps } from '../ChartPie';
 import { ChartCommonStyles, ChartDonutStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
 import { getLabelX, getLabelY } from "../ChartUtils";
@@ -460,7 +459,7 @@ export interface ChartDonutProps extends ChartPieProps {
 export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   donutDx = 0,
   donutDy = 0,
-  legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
+  legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
   standalone = true,
   subTitle,
   subTitleComponent = <ChartLabel />,

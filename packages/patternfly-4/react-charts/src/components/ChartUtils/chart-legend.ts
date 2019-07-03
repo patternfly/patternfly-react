@@ -90,6 +90,8 @@ export const getLegendX = ({
     case 'bottom':
       return svgWidth > legendDimensions.width - textSizeWorkAround
         ? Math.round((svgWidth - (legendDimensions.width - textSizeWorkAround)) / 2) + dx : dx;
+    case 'bottom-left':
+      return dx;
     case 'right':
       return chartWidth + ChartCommonStyles.legend.margin + dx;
     default:
@@ -120,6 +122,7 @@ export const getLegendY = ({
 
   switch (legendPosition) {
     case 'bottom':
+    case 'bottom-left':
       return chartHeight + ChartCommonStyles.legend.margin + dy;
     case 'left':
       return dHeight > lHeight ? Math.round((dHeight - lHeight) / 2) + dy : dy;
