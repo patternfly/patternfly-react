@@ -1,5 +1,5 @@
-import React from 'react';
-import GridItem from './GridItem';
+import * as React from 'react';
+import { GridItem } from './GridItem';
 import { shallow } from 'enzyme';
 import { DeviceSizes } from '../../styles/sizes';
 import { getOffsetKey, getRowSpanKey } from './gridUtils';

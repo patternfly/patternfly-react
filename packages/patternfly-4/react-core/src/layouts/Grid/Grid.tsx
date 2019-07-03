@@ -1,51 +1,47 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/layouts/Grid/grid';
 import { css } from '@patternfly/react-styles';
-import { GutterSize, getGutterModifier } from '../../styles/gutters';
+import { getGutterModifier } from '../../styles/gutters';
 import { getGridSpanModifier, gridSpans } from './gridUtils';
 import { DeviceSizes } from '../../styles/sizes';
 
-const gridItemSpanValueShape = PropTypes.oneOf(gridSpans);
+export type gridItemSpanValueShape = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
-const propTypes = {
+export interface GridProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the Grid layout */
-  children: PropTypes.any,
+  children?: React.ReactNode; 
   /** additional classes added to the Grid layout */
-  className: PropTypes.string,
+  className?: string; 
   /** Adds space between children. Options are sm, md or lg */
-  gutter: PropTypes.oneOf(Object.keys(GutterSize)),
+  gutter?: boolean; 
   /** The number of rows a column in the grid should span.  Value should be a number 1-12 */
-  span: gridItemSpanValueShape,
+  span?: gridItemSpanValueShape;
   /** the number of columns all grid items should span on a small device */
-  sm: gridItemSpanValueShape,
+  sm?: gridItemSpanValueShape;
   /** the number of columns all grid items should span on a medium device */
-  md: gridItemSpanValueShape,
+  md?: gridItemSpanValueShape;
   /** the number of columns all grid items should span on a large device */
-  lg: gridItemSpanValueShape,
+  lg?: gridItemSpanValueShape;
   /** the number of columns all grid items should span on a xLarge device */
-  xl: gridItemSpanValueShape,
+  xl?: gridItemSpanValueShape;
   /** the number of columns all grid items should span on a 2xLarge device */
-  xl2: gridItemSpanValueShape,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
+  xl2?: gridItemSpanValueShape;
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  gutter: null,
-  span: null,
-  sm: null,
-  md: null,
-  lg: null,
-  xl: null,
-  xl2: null
-};
-
-const Grid = ({ children, className, gutter, span, ...props }) => {
+export const Grid: React.FunctionComponent<GridProps>  = ({
+  children = null,
+  className = '',
+  gutter = null,
+  span = null,
+  sm = null,
+  md = null,
+  lg = null,
+  xl = null,
+  xl2 = null, 
+  ...props
+}: GridProps) => {
   const classes = [styles.grid, span && getGridSpanModifier(span)];
-
+  
   Object.entries(DeviceSizes).forEach(([propKey, gridSpanModifier]) => {
     const propValue = props[propKey];
     if (propValue) {
@@ -53,12 +49,11 @@ const Grid = ({ children, className, gutter, span, ...props }) => {
     }
     delete props[propKey];
   });
-
   return (
     <div
       className={css(
         ...classes,
-        gutter && getGutterModifier(styles, gutter, styles.modifiers && styles.modifiers.gutter),
+        gutter, styles.modifiers && styles.modifiers.gutter,
         className
       )}
       {...props}
@@ -67,8 +62,3 @@ const Grid = ({ children, className, gutter, span, ...props }) => {
     </div>
   );
 };
-
-Grid.propTypes = propTypes;
-Grid.defaultProps = defaultProps;
-
-export default Grid;
