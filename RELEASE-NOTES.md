@@ -24,8 +24,7 @@ These releases are part of the PatternFly 4 - Albatross milestone:
 *   **Data list:** Added DataListRow to imports ([#2353](https://github.com/patternfly/patternfly-react/pull/2353))
 *   **Dropdown:** Automatically focused first dropdown item when DropdownMenu ([#2355](https://github.com/patternfly/patternfly-react/pull/2355))
 *   **Expandable:** Added button type to the expandable component ([#2340](https://github.com/patternfly/patternfly-react/pull/2340))
-*   **Input group:** Convert input group to typescript ([#2220](https://github.com/patternfly/patternfly-react/pull/2220))
-*   **Label:** added typescript flag to the label docs ([#2343](https://github.com/patternfly/patternfly-react/pull/2343))
+*   **Label:** added TypeScript flag to the label docs ([#2343](https://github.com/patternfly/patternfly-react/pull/2343))
 *   **Notification badge:** Added the notification badge component ([#2342)](https://github.com/patternfly/patternfly-react/pull/2342)
 *   **Options menu:** Added disabled modifier to the toggle ([#2401](https://github.com/patternfly/patternfly-react/pull/2401))
 *   **Page:** Added page section main nav type variant ([#2268](https://github.com/patternfly/patternfly-react/pull/2268))
@@ -37,14 +36,15 @@ These releases are part of the PatternFly 4 - Albatross milestone:
     *   Removed size props from {...props} ([#2404](https://github.com/patternfly/patternfly-react/pull/2404))
     *   Updated grid layout to support new 2xl breakpoint ([#2305](https://github.com/patternfly/patternfly-react/pull/2305))
 *   **Tabs:**
-    *   Fixed typescript errors and revert `TabContainer` to a component ([#2402](https://github.com/patternfly/patternfly-react/pull/2402))
+    *   Fixed TypeScript errors and revert `TabContainer` to a component ([#2402](https://github.com/patternfly/patternfly-react/pull/2402))
     *   Remove comment from code ([#2351](https://github.com/patternfly/patternfly-react/pull/2351))
     *   Made variant prop optional ([#2348](https://github.com/patternfly/patternfly-react/pull/2348))
 
-**Typescript conversion**
+**TypeScript conversion**
 *   Copy to clipboard ([#2131](https://github.com/patternfly/patternfly-react/pull/2131))
 *   Progress ([#2307](https://github.com/patternfly/patternfly-react/pull/2307))
 *   Select ([#2201](https://github.com/patternfly/patternfly-react/pull/2201))
+*   Input group: ([#2220](https://github.com/patternfly/patternfly-react/pull/2220))
 
 
 # PatternFly-React RC2.1 (2019-06-11)
@@ -78,7 +78,7 @@ These releases are part of PatternFly 4 - RC2.1:
 
 **Table (@patternfly/react-table@2.11.1):**
 *   Added React-Virtualized PF4 tables ([#2011](https://github.com/patternfly/patternfly-react/pull/2011))
-*   Exported RowWrapper implementation. When using react table in typescript project there was no way to import `RowWrapper` implementation. This PR fixed this problem by exporting `RowWrapperProps` as interface and `RowWrapper` as implementation. ([#2118](https://github.com/patternfly/patternfly-react/pull/2118))
+*   Exported RowWrapper implementation. When using react table in TypeScript project there was no way to import `RowWrapper` implementation. This PR fixed this problem by exporting `RowWrapperProps` as interface and `RowWrapper` as implementation. ([#2118](https://github.com/patternfly/patternfly-react/pull/2118))
 *   Some props of IRow should not required Makes following props of `IRow` to optional isOpen parent props ([#2196](https://github.com/patternfly/patternfly-react/pull/2196))
 *   Fixed error Unknown event handler property `onCollapse`. Removed `rows` and `onCollapse` from `..props `The recently collapse changes added some unknown props of table. Just remove it from <code>..props </code>[(#2195](https://github.com/patternfly/patternfly-react/pull/2195))
 *   Added support for .pf-m-grid-2xl breakpoint. Added breakpoint to list of available breakpoints and updated snapshot. ([#2206](https://github.com/patternfly/patternfly-react/pull/2206))
@@ -163,7 +163,7 @@ RC2 contains the following improvements/fixes:
 ## Docs
 - Use frontmatter for what props to show in docs (#2072)
 - If you add new imports to your MDX file, rerun yarn develop which now clears the gatsby-mdx cache and lets you be on your merry way (#2059)
-- Hide inherited typescript props (#1866)
+- Hide inherited TypeScript props (#1866)
 - Use mdx for docs (#1753)
 - Reverted bodywrapper conversion to stateless-function (#2161)
 
