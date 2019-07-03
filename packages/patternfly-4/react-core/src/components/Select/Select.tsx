@@ -87,7 +87,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     variant: SelectVariant.single,
     width: '',
     onClear: Function.prototype,
-    onFilter: undefined as Function
+    onFilter: undefined as () => {}
   };
 
   state = {
