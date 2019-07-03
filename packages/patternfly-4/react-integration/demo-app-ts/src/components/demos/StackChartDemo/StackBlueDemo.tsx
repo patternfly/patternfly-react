@@ -17,7 +17,10 @@ export class StackBlueDemo extends React.Component {
             legendPosition="right"
             height={250}
             padding={{
-              right: 200
+              bottom: 50,
+              left: 50,
+              right: 200, // Adjusted to accomodate legend
+              top: 50
             }}
             width={600}
           >

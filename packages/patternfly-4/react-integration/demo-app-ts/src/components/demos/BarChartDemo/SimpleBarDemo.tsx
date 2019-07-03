@@ -9,13 +9,27 @@ export class SimpleBarDemo extends React.Component {
 
   render() {
     return (
-    <div>
-      <div style={{width: '600px', height: '250px', paddingLeft: '50px'}}>
-        <Chart domainPadding={{ x: [30, 25] }}>
-          <ChartBar data={[{ x: 'Cats', y: 1 }, { x: 'Dogs', y: 2 }, { x: 'Birds', y: 5 }, { x: 'Mice', y: 3 }]}/>
-        </Chart>
+      <div>
+        <div style={{width: '600px', height: '250px', paddingLeft: '50px'}}>
+          <Chart
+            domain={{y: [0,9]}}
+            domainPadding={{ x: [30, 25] }}
+            legendData={[{ name: 'Cats' }]}
+            legendOrientation="vertical"
+            legendPosition="right"
+            height={250}
+            padding={{
+              bottom: 50,
+              left: 50,
+              right: 200, // Adjusted to accomodate legend
+              top: 50
+            }}
+            width={600}
+          >
+            <ChartBar data={[ { name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 } ]} />
+          </Chart>
+        </div>
       </div>
-    </div>
     )
   };
 }

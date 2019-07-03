@@ -19,7 +19,10 @@ export class ColorBarZoomDemo extends React.Component {
             legendPosition="bottom"
             height={400}
             padding={{
-              bottom: 75
+              bottom: 75, // Adjusted to accomodate legend
+              left: 50,
+              right: 50,
+              top: 50
             }}
             themeColor={ChartThemeColor.multi}
             width={450}

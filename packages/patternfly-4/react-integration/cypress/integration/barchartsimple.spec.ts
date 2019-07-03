@@ -14,7 +14,7 @@ describe('Bar Chart Simple Demo Test', () => {
   });
 
   it('Verify svg width and height', () => {
-    cy.get('.VictoryContainer > svg').should('have.attr', 'width', '450');
-    cy.get('.VictoryContainer > svg').should('have.attr', 'height', '300');
+    cy.get('.VictoryContainer > svg').should('have.attr', 'width', '600');
+    cy.get('.VictoryContainer > svg').should('have.attr', 'height', '250');
   });
 });
