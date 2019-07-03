@@ -21,6 +21,7 @@ export * from './FormDemo/FormDemo';
 export * from './FormSelectDemo/FormSelectDemo';
 export * from './InputGroupDemo/InputGroupDemo';
 export * from './LabelDemo/LabelDemo';
+export * from './LevelDemo/LevelDemo'; 
 export * from './ListDemo/ListDemo';
 export * from './LoginPageDemo/LoginPageDemo';
 export * from './ModalDemo/ModalDemo';
