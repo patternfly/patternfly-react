@@ -3,6 +3,7 @@ title: 'Level'
 cssPrefix: 'pf-l-level'
 section: 'layouts'
 propComponents: ['Level', 'LevelItem']
+typescript: true
 ---
 
 import { Level, LevelItem } from '@patternfly/react-core';
@@ -25,7 +26,7 @@ import { Level, LevelItem } from '@patternfly/react-core';
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 
-<Level gutter="md">
+<Level gutter>
   <LevelItem>Level Item</LevelItem>
   <LevelItem>Level Item</LevelItem>
   <LevelItem>Level Item</LevelItem>

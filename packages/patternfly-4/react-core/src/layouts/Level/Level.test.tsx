@@ -1,12 +1,12 @@
-import React from 'react';
-import Level from './Level';
+import * as React from 'react';
+import { Level } from './Level';
 import { GutterSize } from '../../styles/gutters';
-import LevelItem from './LevelItem';
+import { LevelItem } from './LevelItem';
 import { shallow } from 'enzyme';
 
 Object.values(GutterSize).forEach(gutter => {
   test(`Gutter ${gutter}`, () => {
-    const view = shallow(<Level gutter={gutter} />);
+    const view = shallow(<Level gutter />);
     expect(view).toMatchSnapshot();
   });
 });
