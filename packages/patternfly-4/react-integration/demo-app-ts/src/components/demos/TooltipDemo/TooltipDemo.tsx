@@ -7,6 +7,10 @@ export class TooltipDemo extends Component {
     children: <div id="tooltipTarget">Hello</div>
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <Tooltip content={this.myTooltipProps.content}>
