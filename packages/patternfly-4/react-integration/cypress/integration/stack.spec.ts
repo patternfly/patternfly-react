@@ -12,4 +12,8 @@ describe('Stack Demo Test', () => {
   it('Verify filled stack item', () => {
     cy.get('.pf-l-stack__item').should('have.class', 'pf-m-fill');
   });
+
+  it('Verify alternative badge component', () => {
+    cy.get('.pf-c-page__main-section').find('span').first().should('have.class', 'pf-c-badge pf-m-unread');
+  })
 })
