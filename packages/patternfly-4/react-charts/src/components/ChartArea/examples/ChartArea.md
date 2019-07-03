@@ -22,7 +22,10 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiC
       legendPosition="right"
       height={200}
       padding={{
-        right: 200
+        bottom: 50,
+        left: 50,
+        right: 200, // Adjusted to accomodate legend
+        top: 50
       }}
       maxDomain={{y: 9}}
       themeColor={ChartThemeColor.cyan}
@@ -79,7 +82,10 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
       legendPosition="bottom"
       height={225}
       padding={{
-        bottom: 75
+        bottom: 75, // Adjusted to accomodate legend
+        left: 50,
+        right: 50,
+        top: 50,
       }}
       maxDomain={{y: 9}}
       themeColor={ChartThemeColor.multi}
