@@ -46,6 +46,10 @@ export class RadioDemo extends Component {
   name: 'disabled-2'
  }
 
+ componentDidMount() {
+  window.scrollTo(0, 0);
+ }
+
  render() {
    return (
      <React.Fragment>

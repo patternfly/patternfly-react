@@ -11,6 +11,10 @@ export class PageDemo extends React.Component {
     });
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const { isNavOpen } = this.state;
 

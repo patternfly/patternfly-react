@@ -5,17 +5,24 @@ export class PopoverDemo extends Component {
   myPopoverProps = {
     headerContent: <div>Popover Header</div>,
     bodyContent: <div>Popover Body</div>,
-    footerContent: "Popover Footer",
-    children: <div id='popoverTarget'>Hello</div>
+    footerContent: 'Popover Footer',
+    children: <div id="popoverTarget">Hello</div>
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
-    return <Popover
+
+    return (
+      <Popover
       headerContent={this.myPopoverProps.headerContent}
       bodyContent={this.myPopoverProps.bodyContent}
       footerContent={this.myPopoverProps.footerContent}
     >
       {this.myPopoverProps.children}
-    </Popover>;
+    </Popover>
+  );
   };
 }

@@ -27,6 +27,10 @@ export class NavDemo extends Component {
     this.setState({ simpleActiveItem: result.itemId });
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   renderSimpleNav() {
     const { simpleActiveItem } = this.state;
     return (

@@ -24,6 +24,10 @@ export class FormDemo extends Component<FormProps, FormState>{
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     const { value, isValid } = this.state;
 

@@ -44,6 +44,10 @@ export class FormSelectDemo extends Component<{}, FormSelectState> {
     this.setState({ value });
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   getOptionLbl = option => option.label;
   getOptionVal = option => option.value;
   getOptionsGroupLbl = group => group && group.groupLabel;

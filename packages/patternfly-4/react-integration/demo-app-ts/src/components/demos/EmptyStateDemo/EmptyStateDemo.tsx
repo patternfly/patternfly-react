@@ -68,7 +68,11 @@ export class EmptyStateDemo extends Component {
    variant: EmptyStateVariant.full
  }
 
- render() {
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
+  render() {
    return (
      <React.Fragment>
        <EmptyState children={this.myLargeEmptyStateProps.children} />
