@@ -344,7 +344,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   containerComponent = allowZoom ? <VictoryZoomContainer /> : undefined,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
-  padding = {},
+  padding,
   standalone = true,
   themeColor,
   themeVariant,
