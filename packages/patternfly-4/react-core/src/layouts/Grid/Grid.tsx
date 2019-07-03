@@ -30,7 +30,7 @@ export interface GridProps extends React.HTMLProps<HTMLDivElement> {
 export const Grid: React.FunctionComponent<GridProps>  = ({
   children = null,
   className = '',
-  gutter = null,
+  gutter = false,
   span = null,
   ...props
 }: GridProps) => {
@@ -49,7 +49,7 @@ export const Grid: React.FunctionComponent<GridProps>  = ({
     <div
       className={css(
         ...classes,
-        gutter, styles.modifiers && styles.modifiers.gutter,
+        gutter && styles.modifiers.gutter,
         className
       )}
       {...props}

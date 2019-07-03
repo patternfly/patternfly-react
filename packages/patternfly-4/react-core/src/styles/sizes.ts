@@ -10,9 +10,9 @@ export const BaseSizes = {
 };
 
 export const DeviceSizes = {
-  [BaseSizes.sm]: BaseSizes.sm,
-  [BaseSizes.md]: BaseSizes.md,
-  [BaseSizes.lg]: BaseSizes.lg,
-  [BaseSizes.xl]: BaseSizes.xl,
-  xl2: BaseSizes['2xl']
+  sm: 'Sm',
+  md: 'Md',
+  lg: 'Lg',
+  xl: 'Xl',
+  xl2: '_2xl'
 };
