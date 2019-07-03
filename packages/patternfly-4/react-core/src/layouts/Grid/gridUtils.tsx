@@ -11,10 +11,10 @@ export const getOffsetKey = (size: string) => `${size}Offset` as string;
 
 export const getSizeSuffix = (size: string) => (size ? `-on-${size}` : '') as string;
 
-export const getSpanModifier = (value: number, size: 'sm' | 'md' | 'lg' | 'xl' | 'xl2') => getModifier(styles, `${value}-col${getSizeSuffix(size)}`);
+export const getSpanModifier = (value: number, size: 'sm' | 'md' | 'lg' | 'xl' | '2xl') => getModifier(styles, `${value}-col${getSizeSuffix(size)}`);
 
-export const getGridSpanModifier = (value: number, size: 'sm' | 'md' | 'lg' | 'xl' | 'xl2') => getModifier(styles, `-all-${value}-col${getSizeSuffix(size)}`);
+export const getGridSpanModifier = (value: number, size: 'sm' | 'md' | 'lg' | 'xl' | '2xl') => getModifier(styles, `-all-${value}-col${getSizeSuffix(size)}`);
 
-export const getRowSpanModifier = (value: number, size: 'sm' | 'md' | 'lg' | 'xl' | 'xl2') => getModifier(styles, `${value}-row${getSizeSuffix(size)}`);
+export const getRowSpanModifier = (value: number, size: 'sm' | 'md' | 'lg' | 'xl' | '2xl') => getModifier(styles, `${value}-row${getSizeSuffix(size)}`);
 
-export const getOffsetModifier = (value: number, size: 'sm' | 'md' | 'lg' | 'xl' | 'xl2') => getModifier(styles, `offset-${value}-col${getSizeSuffix(size)}`);
+export const getOffsetModifier = (value: number, size: 'sm' | 'md' | 'lg' | 'xl' | '2xl') => getModifier(styles, `offset-${value}-col${getSizeSuffix(size)}`);
