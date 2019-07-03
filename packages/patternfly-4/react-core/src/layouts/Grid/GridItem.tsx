@@ -1,15 +1,8 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/layouts/Grid/grid';
 import { css } from '@patternfly/react-styles';
+import { getModifier } from '@patternfly/react-styles';
 import { DeviceSizes } from '../../styles/sizes';
-import {
-  getOffsetKey,
-  getOffsetModifier,
-  getRowSpanKey,
-  getRowSpanModifier,
-  getSpanModifier,
-  gridSpans
-} from './gridUtils';
 
 export type gridSpans = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
@@ -55,54 +48,44 @@ export interface GridItemProps extends React.HTMLProps<HTMLDivElement> {
    /** the number of columns the grid item is offset on 2xLarge device. Value should be a number 1-12   */
    xl2Offset?: gridSpans;
 }
+
 export const GridItem: React.FunctionComponent<GridItemProps> = ({
   children = null,
   className = '',
   span = null,
   rowSpan = null,
   offset = null,
-  sm = null,
-  smRowSpan = null,
-  smOffset = null,
-  md = null,
-  mdRowSpan = null,
-  mdOffset = null,
-  lg = null,
-  lgRowSpan = null,
-  lgOffset = null,
-  xl = null,
-  xlRowSpan = null,
-  xlOffset = null,
-  xl2 = null,
-  xl2RowSpan = null,
-  xl2Offset = null, 
   ...props
 }: GridItemProps) => {
   const classes = [
     styles.gridItem,
-    span && getSpanModifier(span),
-    offset && getOffsetModifier(offset),
-    rowSpan && getRowSpanModifier(rowSpan)
+    span && getModifier(styles, `${span}Col`),
+    rowSpan && getModifier(styles, `${rowSpan}Row`),
+    offset && getModifier(styles, `offset_${offset}Col`),
   ];
 
   Object.entries(DeviceSizes).forEach(([propKey, classModifier]) => {
-    const spanValue = props[propKey];
-    const rowSpanValue = props[getRowSpanKey(propKey)];
-    const offsetValue = props[getOffsetKey(propKey)];
+    const key = propKey as keyof typeof DeviceSizes;
+    const rowSpanKey = `${key}RowSpan` as 'smRowSpan' | 'mdRowSpan' | 'lgRowSpan' | 'xlRowSpan' | 'xl2RowSpan';
+    const offsetKey = `${key}Offset` as 'smOffset' | 'mdOffset' | 'lgOffset' | 'xlOffset' | 'xl2Offset';
+
+    const spanValue = props[key] as gridSpans;
+    const rowSpanValue = props[rowSpanKey] as gridSpans;
+    const offsetValue = props[offsetKey] as gridSpans;
 
     if (spanValue) {
-      classes.push(getSpanModifier(spanValue, classModifier));
+      classes.push(getModifier(styles, `${spanValue}ColOn${classModifier}`));
     }
     if (rowSpanValue) {
-      classes.push(getRowSpanModifier(rowSpanValue, classModifier));
+      classes.push(getModifier(styles, `${rowSpanValue}RowOn${classModifier}`));
     }
     if (offsetValue) {
-      classes.push(getOffsetModifier(offsetValue, classModifier));
+      classes.push(getModifier(styles, `offset_${offsetValue}ColOn${classModifier}`));
     }
 
-    delete props[propKey];
-    delete props[getRowSpanKey(propKey)];
-    delete props[getOffsetKey(propKey)];
+    delete props[key];
+    delete props[rowSpanKey];
+    delete props[offsetKey];
   });
 
   return (

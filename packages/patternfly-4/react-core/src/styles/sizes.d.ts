@@ -10,9 +10,9 @@ export const BaseSizes: {
 };
 
 export const DeviceSizes: {
-  sm: 'sm';
-  md: 'md';
-  lg: 'lg';
-  xl: 'xl';
-  xl2: '2xl';
+  sm: 'Sm';
+  md: 'Md';
+  lg: 'Lg';
+  xl: 'Xl';
+  xl2: '_2xl';
 };

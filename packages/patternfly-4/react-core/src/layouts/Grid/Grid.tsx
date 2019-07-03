@@ -1,8 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/layouts/Grid/grid';
 import { css } from '@patternfly/react-styles';
-import { getGutterModifier } from '../../styles/gutters';
-import { getGridSpanModifier, gridSpans } from './gridUtils';
+import { getModifier } from '@patternfly/react-styles';
 import { DeviceSizes } from '../../styles/sizes';
 
 export type gridItemSpanValueShape = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
@@ -33,22 +32,19 @@ export const Grid: React.FunctionComponent<GridProps>  = ({
   className = '',
   gutter = null,
   span = null,
-  sm = null,
-  md = null,
-  lg = null,
-  xl = null,
-  xl2 = null, 
   ...props
 }: GridProps) => {
-  const classes = [styles.grid, span && getGridSpanModifier(span)];
+  const classes = [styles.grid, span && getModifier(styles, `all_${span}Col`)];
   
   Object.entries(DeviceSizes).forEach(([propKey, gridSpanModifier]) => {
-    const propValue = props[propKey];
+    const key = propKey as keyof typeof DeviceSizes;
+    const propValue = props[key] as gridItemSpanValueShape;
     if (propValue) {
-      classes.push(getGridSpanModifier(propValue, gridSpanModifier));
+      classes.push(getModifier(styles, `all_${propValue}ColOn${gridSpanModifier}`));
     }
-    delete props[propKey];
+    delete props[key];
   });
+
   return (
     <div
       className={css(
