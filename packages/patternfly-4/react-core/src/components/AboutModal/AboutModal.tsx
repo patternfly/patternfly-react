@@ -33,12 +33,12 @@ interface ModalState {
   container: HTMLElement;
 }
 
-export class AboutModal extends React.Component<AboutModalProps, AboutModal, ModalState> {
+export class AboutModal extends React.Component<AboutModalProps, ModalState> {
   private static currentId: number = 0;
   private id = AboutModal.currentId++;
   ariaLabelledBy = `pf-about-modal-title-${this.id}`;
   ariaDescribedBy = `pf-about-modal-content-${this.id}`;
-  container?: HTMLDivElement = undefined;
+  container?: HTMLDivElement;
 
   static defaultProps = {
     className: '',
@@ -52,13 +52,15 @@ export class AboutModal extends React.Component<AboutModalProps, AboutModal, Mod
 
   constructor(props: AboutModalProps) {
     super(props);
+
+    this.state = {
+      container: undefined
+    };
+
     if (props.brandImageSrc && !props.brandImageAlt) {
       // tslint:disable-next-line:no-console
       console.error('AboutModal:', 'brandImageAlt is required when a brandImageSrc is specified');
     }
-    this.state = {
-      container: undefined
-    };
   }
 
   handleEscKeyClick = (event: KeyboardEvent) => {

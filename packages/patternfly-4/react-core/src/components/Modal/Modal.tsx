@@ -40,7 +40,7 @@ interface ModalState {
 export class Modal extends React.Component<ModalProps, ModalState> {
   static currentId = 0;
   id = '';
-  container?: HTMLDivElement = undefined;
+  container?: HTMLDivElement;
 
   static defaultProps = {
     className: '',
