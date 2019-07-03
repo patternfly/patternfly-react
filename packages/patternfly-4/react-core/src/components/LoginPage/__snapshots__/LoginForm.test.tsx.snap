@@ -52,7 +52,6 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel uses the reme
     fieldId="pf-login-remember-me-id"
   >
     <Checkbox
-      aria-label="remember me"
       checked={false}
       className=""
       id="pf-login-remember-me-id"
@@ -80,6 +79,7 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel uses the reme
 exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the rememberMeAriaLabel 1`] = `
 <Component
   className=""
+  rememberMeAriaLabel="ARIA remember me"
 >
   <Component
     isError={false}
@@ -129,7 +129,6 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
     fieldId="pf-login-remember-me-id"
   >
     <Checkbox
-      aria-label="ARIA remember me"
       checked={false}
       className=""
       id="pf-login-remember-me-id"
