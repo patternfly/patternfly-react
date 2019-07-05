@@ -39,6 +39,8 @@ export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   isRememberMeChecked?: boolean;
   /** Function that handles the onChange event for the Remember Me Checkbox */
   onChangeRememberMe?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
+  /** Aria Label for the Remember me checkbox, use this to override using the rememberMeLabel */
+  rememberMeAriaLabel?: string;
 }
 
 export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
@@ -59,6 +61,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
   rememberMeLabel = '',
   isRememberMeChecked = false,
   onChangeRememberMe =  () => undefined as any,
+  rememberMeAriaLabel = '',
   ...props
 }: LoginFormProps) => (
   <Form className={className} {...props}>
