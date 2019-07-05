@@ -12,7 +12,7 @@ export interface GridProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the Grid layout */
   className?: string; 
   /** Adds space between children. Options are sm, md or lg */
-  gutter?: boolean; 
+  gutter?: 'sm' | 'md' | 'lg'; 
   /** The number of rows a column in the grid should span.  Value should be a number 1-12 */
   span?: gridItemSpanValueShape;
   /** the number of columns all grid items should span on a small device */
@@ -30,7 +30,7 @@ export interface GridProps extends React.HTMLProps<HTMLDivElement> {
 export const Grid: React.FunctionComponent<GridProps>  = ({
   children = null,
   className = '',
-  gutter = false,
+  gutter = null,
   span = null,
   ...props
 }: GridProps) => {
