@@ -46,9 +46,10 @@ export * from './DonutUtilizationChartDemo/DonutUtilizationStaticDemo'
 export * from './DonutUtilizationChartDemo/DonutUtilizationStaticRightDemo'
 export * from './DonutUtilizationChartDemo/DonutUtilizationSimpleDemo'
 export * from './EmptyStateDemo/EmptyStateDemo';
-export * from './FormDemo/FormDemo';
-export * from './FormSelectDemo/FormSelectDemo';
-export * from './InputGroupDemo/InputGroupDemo';
+export * from './FormDemo/FormDemo'; 
+export * from './FormSelectDemo/FormSelectDemo'; 
+export * from './GalleryDemo/GalleryDemo'; 
+export * from './InputGroupDemo/InputGroupDemo'; 
 export * from './LabelDemo/LabelDemo';
 export * from './LineChartDemo/LineChartColorDemo';
 export * from './LineChartDemo/LineChartGreenDemo';
