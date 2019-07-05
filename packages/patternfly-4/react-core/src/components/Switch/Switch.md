@@ -28,10 +28,10 @@ class SimpleSwitch extends React.Component {
     return (
       <Switch
         id="simple-switch"
-        label={isChecked ? 'Message when on' : 'Message when off'}
+        label="Message when on"
+        labelOff="Message when off"
         isChecked={isChecked}
         onChange={this.handleChange}
-        aria-label="Message when on"
       />
     );
   }
@@ -70,12 +70,13 @@ import { Switch } from '@patternfly/react-core';
 
 DisabledSwitch = () => (
   <React.Fragment>
-    <Switch id="disabled-switch-on" aria-label="Message when on" label="Message when on" isChecked isDisabled />
+    <Switch id="disabled-switch-on" aria-label="Message when on" label="Message when on" labelOff="Message when off" isChecked isDisabled />
     <br />
     <Switch
       id="disabled-switch-off"
       aria-label="Message when on"
-      label="Message when off"
+      label="Message when on"
+      labelOff="Message when off"
       isChecked={false}
       isDisabled
     />
@@ -94,9 +95,9 @@ import { Switch } from '@patternfly/react-core';
 
 UncontrolledSwitch = () => (
   <React.Fragment>
-    <Switch id="uncontrolled-switch-on" aria-label="Message when on" label="Message when on" isChecked />
+    <Switch id="uncontrolled-switch-on" aria-label="Message when on" label="Message when on" labelOff="Message when off" isChecked />
     <br />
-    <Switch id="uncontrolled-switch-off" aria-label="Message when on" label="Message when off" isChecked={false} />
+    <Switch id="uncontrolled-switch-off" aria-label="Message when on" label="Message when on" labelOff="Message when off" isChecked={false} />
     <br />
     <Switch id="uncontrolled-no-label-switch-on" aria-label="Message when on" isChecked />
     <br />
