@@ -1,5 +1,5 @@
-import React from 'react';
-import Gallery from './Gallery';
+import * as React from 'react';
+import { Gallery } from './Gallery';
 import { GutterSize } from '../../styles/gutters';
 import { shallow } from 'enzyme';
 
