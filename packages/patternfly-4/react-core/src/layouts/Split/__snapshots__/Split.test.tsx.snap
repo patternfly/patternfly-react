@@ -1,118 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Gutter lg 1`] = `
-<Split
-  className=""
-  component="div"
+<Component
   gutter="lg"
 >
   <div
     className="pf-l-split pf-m-gutter"
   >
-    <SplitItem
-      className=""
-      isFilled={false}
-    >
+    <Component>
       <div
         className="pf-l-split__item"
       >
         Basic Content
       </div>
-    </SplitItem>
+    </Component>
   </div>
-</Split>
+</Component>
 `;
 
 exports[`Gutter md 1`] = `
-<Split
-  className=""
-  component="div"
+<Component
   gutter="md"
 >
   <div
     className="pf-l-split pf-m-gutter"
   >
-    <SplitItem
-      className=""
-      isFilled={false}
-    >
+    <Component>
       <div
         className="pf-l-split__item"
       >
         Basic Content
       </div>
-    </SplitItem>
+    </Component>
   </div>
-</Split>
+</Component>
 `;
 
 exports[`Gutter sm 1`] = `
-<Split
-  className=""
-  component="div"
+<Component
   gutter="sm"
 >
   <div
     className="pf-l-split pf-m-gutter"
   >
-    <SplitItem
-      className=""
-      isFilled={false}
-    >
+    <Component>
       <div
         className="pf-l-split__item"
       >
         Basic Content
       </div>
-    </SplitItem>
+    </Component>
   </div>
-</Split>
+</Component>
 `;
 
-exports[`isMain 1`] = `
-<Split
-  className=""
-  component="div"
-  gutter={null}
->
+exports[`isFilled 1`] = `
+<Component>
   <div
     className="pf-l-split"
   >
-    <SplitItem
-      className=""
-      isFilled={false}
-      isMain={true}
+    <Component
+      isFilled={true}
     >
       <div
-        className="pf-l-split__item"
-        isMain={true}
+        className="pf-l-split__item pf-m-fill"
       >
         Main content
       </div>
-    </SplitItem>
+    </Component>
   </div>
-</Split>
+</Component>
 `;
 
-exports[`isMain defaults to false 1`] = `
-<Split
-  className=""
-  component="div"
-  gutter={null}
->
+exports[`isFilled defaults to false 1`] = `
+<Component>
   <div
     className="pf-l-split"
   >
-    <SplitItem
-      className=""
-      isFilled={false}
-    >
+    <Component>
       <div
         className="pf-l-split__item"
       >
         Basic content
       </div>
-    </SplitItem>
+    </Component>
   </div>
-</Split>
+</Component>
 `;

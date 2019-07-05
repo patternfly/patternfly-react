@@ -1,19 +1,19 @@
-import React from 'react';
+import * as React from 'react';
 import { mount } from 'enzyme';
-import Split from './Split';
-import SplitItem from './SplitItem';
+import { Split } from './Split';
+import { SplitItem } from './SplitItem';
 import { GutterSize } from '../../styles/gutters';
 
-test('isMain', () => {
+test('isFilled', () => {
   const view = mount(
     <Split>
-      <SplitItem isMain>Main content</SplitItem>
+      <SplitItem isFilled>Main content</SplitItem>
     </Split>
   );
   expect(view).toMatchSnapshot();
 });
 
-test('isMain defaults to false', () => {
+test('isFilled defaults to false', () => {
   const view = mount(
     <Split>
       <SplitItem>Basic content</SplitItem>
