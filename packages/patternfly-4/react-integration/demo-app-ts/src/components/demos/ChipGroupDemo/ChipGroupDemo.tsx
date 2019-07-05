@@ -39,6 +39,10 @@ export class BadgeChip extends Component<{}, BadgeChipState> {
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     const { badgeChipArray } = this.state;
     return (

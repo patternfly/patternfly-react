@@ -24,6 +24,5 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
 }: AccordionProps) => (
   <dl className={css(styles.accordion, className)} aria-label={ariaLabel} {...props}>
     <AccordionContext.Provider value={headingLevel}>{children}</AccordionContext.Provider>
-    {children}
   </dl>
 );

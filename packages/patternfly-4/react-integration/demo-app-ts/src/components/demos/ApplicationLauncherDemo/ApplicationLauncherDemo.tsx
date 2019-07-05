@@ -27,6 +27,10 @@ export class ApplicationLauncherDemo extends React.Component<null, ApplicationLa
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
