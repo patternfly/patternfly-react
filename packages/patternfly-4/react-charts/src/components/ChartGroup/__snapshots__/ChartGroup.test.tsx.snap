@@ -366,7 +366,6 @@ exports[`ChartGroup 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padAngle": 1,
         "padding": 8,
         "style": Object {
           "data": Object {
@@ -860,7 +859,6 @@ exports[`ChartGroup 2`] = `
           "#004b95",
         ],
         "height": 230,
-        "padAngle": 1,
         "padding": 8,
         "style": Object {
           "data": Object {
@@ -1355,7 +1353,6 @@ exports[`renders container children 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padAngle": 1,
         "padding": 8,
         "style": Object {
           "data": Object {
