@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.3.0...@patternfly/react-integration@2.4.0) (2019-07-05)
+
+
+### Features
+
+* **Bullseye:** Convert bullseye to typescript ([#2427](https://github.com/patternfly/patternfly-react/issues/2427)) ([2515be5](https://github.com/patternfly/patternfly-react/commit/2515be5))
+
+
+
+
+
+# [2.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.2.2...@patternfly/react-integration@2.3.0) (2019-07-05)
+
+
+### Features
+
+* **Stack:** Convert stack to typescript ([#2412](https://github.com/patternfly/patternfly-react/issues/2412)) ([a1c34b6](https://github.com/patternfly/patternfly-react/commit/a1c34b6))
+
+
+
+
+
 ## [2.2.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.2.1...@patternfly/react-integration@2.2.2) (2019-07-03)
 
 **Note:** Version bump only for package @patternfly/react-integration

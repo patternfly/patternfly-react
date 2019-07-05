@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.61.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.60.0...@patternfly/react-core@3.61.0) (2019-07-05)
+
+
+### Features
+
+* **Bullseye:** Convert bullseye to typescript ([#2427](https://github.com/patternfly/patternfly-react/issues/2427)) ([2515be5](https://github.com/patternfly/patternfly-react/commit/2515be5))
+
+
+
+
+
+# [3.60.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.5...@patternfly/react-core@3.60.0) (2019-07-05)
+
+
+### Features
+
+* **Stack:** Convert stack to typescript ([#2412](https://github.com/patternfly/patternfly-react/issues/2412)) ([a1c34b6](https://github.com/patternfly/patternfly-react/commit/a1c34b6))
+
+
+
+
+
 ## [3.59.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.4...@patternfly/react-core@3.59.5) (2019-07-05)
 
 

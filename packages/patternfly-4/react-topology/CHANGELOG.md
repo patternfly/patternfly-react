@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.5.0...@patternfly/react-topology@2.5.1) (2019-07-05)
+
+**Note:** Version bump only for package @patternfly/react-topology
+
+
+
+
+
+# [2.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.4.27...@patternfly/react-topology@2.5.0) (2019-07-05)
+
+
+### Features
+
+* **Stack:** Convert stack to typescript ([#2412](https://github.com/patternfly/patternfly-react/issues/2412)) ([a1c34b6](https://github.com/patternfly/patternfly-react/commit/a1c34b6))
+
+
+
+
+
 ## [2.4.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.4.26...@patternfly/react-topology@2.4.27) (2019-07-05)
 
 **Note:** Version bump only for package @patternfly/react-topology

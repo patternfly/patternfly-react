@@ -66,7 +66,6 @@ import {
   chart_pie_data_stroke_Width,
   chart_pie_data_stroke_Color,
   chart_pie_labels_Padding,
-  chart_pie_angle_Padding,
   chart_pie_Height,
   chart_pie_Width,
   chart_scatter_data_stroke_Color,

@@ -2,10 +2,7 @@
 
 exports[`About Modal Container Test isOpen 1`] = `
 <Component>
-  <Bullseye
-    className=""
-    component="div"
-  >
+  <Component>
     <Component
       aria-describedby="ariaDescribedById"
       aria-labelledby="ariaLablledbyId"
@@ -34,7 +31,7 @@ exports[`About Modal Container Test isOpen 1`] = `
         backgroundImageSrc="backgroundImageSrc..."
       />
     </Component>
-  </Bullseye>
+  </Component>
 </Component>
 `;
 

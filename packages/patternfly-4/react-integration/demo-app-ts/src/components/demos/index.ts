@@ -13,10 +13,11 @@ export * from './BarChartDemo/PurpleBarGroupedDemo'
 export * from './BarChartDemo/ColorBarZoomDemo'
 export * from './BarChartDemo/SimpleBarDemo'
 export * from './BrandDemo/BrandDemo';
-export * from './BreadcrumbDemo/BreadcrumbDemo'; 
-export * from './ButtonDemo/ButtonDemo'; 
-export * from './CardDemo/CardDemo'; 
-export * from './CheckboxDemo/CheckboxDemo'; 
+export * from './BreadcrumbDemo/BreadcrumbDemo';
+export * from './BullseyeDemo/BullseyeDemo'; 
+export * from './ButtonDemo/ButtonDemo';
+export * from './CardDemo/CardDemo';
+export * from './CheckboxDemo/CheckboxDemo';
 export * from './ChipGroupDemo/ChipGroupDemo';
 export * from './ContextSelectorDemo/ContextSelectorDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyDemo';
@@ -69,6 +70,7 @@ export * from './RadioDemo/RadioDemo';
 export * from './StackChartDemo/StackBlueDemo'
 export * from './StackChartDemo/StackGoldBottomLegendDemo'
 export * from './StackChartDemo/StackColorZoomDemo'
+export * from './StackDemo/StackDemo'; 
 export * from './SwitchDemo/SwitchDemo';
 export * from './TabsDemo/TabsDemo';
 export * from './TextAreaDemo/TextAreaDemo';
