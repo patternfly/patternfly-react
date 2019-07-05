@@ -363,6 +363,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.SelectDemo
   },
   {
+    id: 'stack-demo', 
+    name: 'Stack Demo', 
+    componentType: Examples.StackDemo
+  }, 
+  {
     id: 'switch-demo',
     name: 'Switch Demo',
     componentType: Examples.SwitchDemo

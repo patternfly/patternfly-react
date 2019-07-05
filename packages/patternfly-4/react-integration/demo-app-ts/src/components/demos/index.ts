@@ -69,6 +69,7 @@ export * from './RadioDemo/RadioDemo';
 export * from './StackChartDemo/StackBlueDemo'
 export * from './StackChartDemo/StackGoldBottomLegendDemo'
 export * from './StackChartDemo/StackColorZoomDemo'
+export * from './StackDemo/StackDemo'; 
 export * from './SwitchDemo/SwitchDemo';
 export * from './TabsDemo/TabsDemo';
 export * from './TextAreaDemo/TextAreaDemo';
