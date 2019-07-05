@@ -66,6 +66,7 @@ export * from './PageDemo/PageDemo';
 export * from './PaginationDemo/PaginationDemo';
 export * from './ProgressDemo/ProgressDemo';
 export * from './RadioDemo/RadioDemo';
+export * from './SplitDemo/SplitDemo'; 
 export * from './StackChartDemo/StackBlueDemo'
 export * from './StackChartDemo/StackGoldBottomLegendDemo'
 export * from './StackChartDemo/StackColorZoomDemo'
