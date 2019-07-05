@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.59.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.4...@patternfly/react-core@3.59.5) (2019-07-05)
+
+
+### Bug Fixes
+
+* **select:** removed ariaLabel from grouped checkbox select ([#2456](https://github.com/patternfly/patternfly-react/issues/2456)) ([415a462](https://github.com/patternfly/patternfly-react/commit/415a462))
+
+
+
+
+
 ## [3.59.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.3...@patternfly/react-core@3.59.4) (2019-07-03)
 
 **Note:** Version bump only for package @patternfly/react-core

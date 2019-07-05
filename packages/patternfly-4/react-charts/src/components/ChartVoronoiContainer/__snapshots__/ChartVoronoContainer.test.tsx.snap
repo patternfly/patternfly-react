@@ -381,7 +381,6 @@ exports[`ChartVoronoiContainer 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padAngle": 1,
         "padding": 8,
         "style": Object {
           "data": Object {
@@ -891,7 +890,6 @@ exports[`ChartVoronoiContainer 2`] = `
           "#004b95",
         ],
         "height": 230,
-        "padAngle": 1,
         "padding": 8,
         "style": Object {
           "data": Object {
@@ -1411,7 +1409,6 @@ exports[`renders container via ChartGroup 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padAngle": 1,
         "padding": 8,
         "style": Object {
           "data": Object {

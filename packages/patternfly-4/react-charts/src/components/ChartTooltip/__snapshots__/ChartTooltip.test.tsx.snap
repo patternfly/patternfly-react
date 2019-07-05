@@ -372,7 +372,6 @@ exports[`ChartTooltip 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padAngle": 1,
         "padding": 8,
         "style": Object {
           "data": Object {
@@ -872,7 +871,6 @@ exports[`ChartTooltip 2`] = `
           "#004b95",
         ],
         "height": 230,
-        "padAngle": 1,
         "padding": 8,
         "style": Object {
           "data": Object {
@@ -1392,7 +1390,6 @@ exports[`allows tooltip via container component 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padAngle": 1,
         "padding": 8,
         "style": Object {
           "data": Object {

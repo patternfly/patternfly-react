@@ -285,7 +285,6 @@ export const BaseTheme = {
   },
   pie: {
     padding: chart_pie_Padding.value,
-    padAngle: chart_pie_angle_Padding.value, // Todo: Should be zero?
     style: {
       data: {
         padding: chart_pie_data_Padding.value,
