@@ -13,8 +13,10 @@ echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 echo "Doing a release..."
 # Lerna is complicated. Commands: https://github.com/lerna/lerna/tree/master/commands
 # Identify packages that have been updated since the previous tagged release
-# Update their versions and changelogs
-if yarn run lerna publish --conventional-commits --create-release=github --yes; # Leave a Github comment
+# Update their versions and changelogs according to angular commit guidelines
+# https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
+yarn run lerna publish --conventional-commits --create-release=github --yes | tee lerna-output.txt
+if grep -i "Successfully published" lerna-output.txt; # Leave a Github comment
 then
   # Use Issues api instead of PR api because
   # PR api requires comments be made on specific files of specific commits
