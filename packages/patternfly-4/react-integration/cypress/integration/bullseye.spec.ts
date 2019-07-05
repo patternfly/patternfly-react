@@ -8,4 +8,8 @@ describe('Bullseye Demo Test', () => {
   it('Verify bullseye', () => {
     cy.get('.pf-l-bullseye').contains('Bullseye ◎ layout')
   }); 
+
+  it('Verify component prop', () => {
+    cy.get('.pf-c-page__main-section').find('span');
+  }); 
 }); 
