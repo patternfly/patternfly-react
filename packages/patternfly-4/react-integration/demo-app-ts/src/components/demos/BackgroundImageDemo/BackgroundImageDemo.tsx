@@ -20,6 +20,11 @@ export class BackgroundImageDemo extends React.Component {
         [BackgroundImageSrc.filter]: ''
     }
   }
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     return (
     <BackgroundImage src={this.myBackgroundProps.src} />

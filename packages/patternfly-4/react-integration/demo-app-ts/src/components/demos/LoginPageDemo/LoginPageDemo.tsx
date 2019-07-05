@@ -68,6 +68,10 @@ export class LoginPageDemo extends React.Component<React.HTMLProps<HTMLDivElemen
     this.setState({ showHelperText: !this.state.usernameValue || !this.state.passwordValue });
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const helperText = (
       <React.Fragment>

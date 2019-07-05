@@ -1,7 +1,15 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { ApplicationLauncher, DropdownItem, Dropdown, DropdownToggle } from '@patternfly/react-core';
-import { capitalize, getUniqueId, debounce, isElementInView, sideElementIsOutOfView, fillTemplate } from './util';
+import {
+  capitalize,
+  getUniqueId,
+  debounce,
+  isElementInView,
+  sideElementIsOutOfView,
+  fillTemplate,
+  pluralize
+} from './util';
 import { KEY_CODES, SIDE } from './constants';
 
 const createMockHtmlElement = bounds => ({
@@ -195,4 +203,10 @@ test('fillTemplate interpolates strings correctly', () => {
   };
   const actual = fillTemplate(templateString, templatVars);
   expect(actual).toEqual(expected);
+});
+
+test('text pluralize', () => {
+  expect(pluralize(1, 'dog')).toEqual('1 dog');
+  expect(pluralize(2, 'dog')).toEqual('2 dogs');
+  expect(pluralize(2, 'finch', 'finches')).toEqual('2 finches');
 });

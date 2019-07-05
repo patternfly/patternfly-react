@@ -8,6 +8,10 @@ export class AvatarDemo extends Component {
     src: avatarImg,
     alt: 'avatar'
   }
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
   
   render() {
     return (

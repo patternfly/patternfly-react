@@ -73,7 +73,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   toggleSiblingsFromScreenReaders = (hide: boolean) => {
     const bodyChildren = document.body.children;
     for (const child of Array.from(bodyChildren)) {
-      if (child !== this.container) {
+      if (child !== this.state.container) {
         hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
       }
     }

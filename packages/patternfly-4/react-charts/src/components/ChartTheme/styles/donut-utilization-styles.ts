@@ -1,8 +1,15 @@
-// TODO Replace label props with PF css when available
+/* eslint-disable camelcase */
+import {
+  chart_donut_threshold_warning_Color,
+  chart_donut_threshold_danger_Color,
+} from '@patternfly/react-tokens';
 
 // Donut utilization styles
 export const DonutUtilizationStyles = {
   thresholds: {
-    colorScale: ['#F0AB00', '#C9190B']
+    colorScale: [
+      chart_donut_threshold_warning_Color.value,
+      chart_donut_threshold_danger_Color.value
+    ]
   }
 };

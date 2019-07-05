@@ -29,6 +29,10 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
     this.setState({ requiredTextAreaValue: value, requiredIsValid: isValid });
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
  render() {
   const { textAreaValue, requiredTextAreaValue, isValid, requiredIsValid  } = this.state
     return (
