@@ -4,7 +4,7 @@ import styles from '@patternfly/react-styles/css/layouts/Level/level';
 
 export interface LevelProps extends React.HTMLProps<HTMLDivElement> {
    /** Adds space between children. Options are sm, md or lg */
-   gutter?: boolean; 
+   gutter?: 'sm' | 'md' | 'lg'; 
    /** additional classes added to the Level layout */
    className?: string; 
    /** content rendered inside the Level layout */
@@ -12,7 +12,7 @@ export interface LevelProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const Level: React.FunctionComponent<LevelProps> = ({
-  gutter = false,
+  gutter = null,
   className = '',
   children = null, 
   ...props
