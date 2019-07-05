@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.3.0...@patternfly/react-integration@2.4.0) (2019-07-05)
+
+
+### Features
+
+* **Bullseye:** Convert bullseye to typescript ([#2427](https://github.com/patternfly/patternfly-react/issues/2427)) ([2515be5](https://github.com/patternfly/patternfly-react/commit/2515be5))
+
+
+
+
+
 # [2.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.2.2...@patternfly/react-integration@2.3.0) (2019-07-05)
 
 
