@@ -38,7 +38,6 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
   private id = AboutModal.currentId++;
   ariaLabelledBy = `pf-about-modal-title-${this.id}`;
   ariaDescribedBy = `pf-about-modal-content-${this.id}`;
-  container?: HTMLDivElement;
 
   static defaultProps = {
     className: '',
@@ -102,8 +101,8 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
   }
 
   componentWillUnmount() {
-    if (this.container) {
-      document.body.removeChild(this.container);
+    if (this.state.container) {
+      document.body.removeChild(this.state.container);
     }
     document.removeEventListener('keydown', this.handleEscKeyClick, false);
   }

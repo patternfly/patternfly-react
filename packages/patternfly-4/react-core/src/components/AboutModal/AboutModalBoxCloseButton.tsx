@@ -16,11 +16,9 @@ export const AboutModalBoxCloseButton: React.SFC<AboutModalBoxCloseButtonProps> 
   onClose = () => undefined as any,
   ...props
 }: AboutModalBoxCloseButtonProps) => (
-  <React.Fragment>
     <div className={css(styles.aboutModalBoxClose, className)} {...props}>
       <Button variant="plain" onClick={onClose} aria-label="Close Dialog">
         <TimesIcon />
       </Button>
     </div>
-  </React.Fragment>
 );
