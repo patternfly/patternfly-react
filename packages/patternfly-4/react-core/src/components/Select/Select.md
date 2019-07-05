@@ -232,7 +232,6 @@ class GroupedCheckboxSelectInput extends React.Component {
         </span>
         <Select
           variant={SelectVariant.checkbox}
-          aria-label="Grouped Checkbox Select Input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           selections={selected}

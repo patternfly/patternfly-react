@@ -31,7 +31,7 @@ exports[`Chart 1`] = `
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -61,7 +61,7 @@ exports[`Chart 1`] = `
               },
               "axisLabel": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 100,
@@ -69,13 +69,15 @@ exports[`Chart 1`] = `
                 "textAnchor": "middle",
               },
               "grid": Object {
-                "fill": "none",
+                "fill": "transparent",
                 "pointerEvents": "painted",
                 "stroke": "none",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
               },
               "tickLabels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -83,8 +85,11 @@ exports[`Chart 1`] = `
               },
               "ticks": Object {
                 "fill": "transparent",
-                "size": 1,
-                "stroke": "transparent",
+                "size": 5,
+                "stroke": "none",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
               },
             },
             "width": 450,
@@ -103,11 +108,13 @@ exports[`Chart 1`] = `
             "style": Object {
               "data": Object {
                 "fill": "#06c",
+                "padding": 8,
                 "stroke": "none",
+                "strokeWidth": 0,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -135,7 +142,7 @@ exports[`Chart 1`] = `
               },
               "maxLabels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -148,7 +155,7 @@ exports[`Chart 1`] = `
               },
               "medianLabels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -161,7 +168,7 @@ exports[`Chart 1`] = `
               },
               "minLabels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -173,7 +180,7 @@ exports[`Chart 1`] = `
               },
               "q1Labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -185,7 +192,7 @@ exports[`Chart 1`] = `
               },
               "q3Labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -215,7 +222,7 @@ exports[`Chart 1`] = `
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -256,12 +263,13 @@ exports[`Chart 1`] = `
             "style": Object {
               "data": Object {
                 "fill": "transparent",
+                "opacity": 1,
                 "stroke": "#73bcf7",
                 "strokeWidth": 2,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -299,7 +307,7 @@ exports[`Chart 1`] = `
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -307,7 +315,7 @@ exports[`Chart 1`] = `
               },
               "title": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 2,
@@ -329,12 +337,13 @@ exports[`Chart 1`] = `
             "style": Object {
               "data": Object {
                 "fill": "transparent",
+                "opacity": 1,
                 "stroke": "#73bcf7",
                 "strokeWidth": 2,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -357,11 +366,12 @@ exports[`Chart 1`] = `
             "style": Object {
               "data": Object {
                 "padding": 8,
+                "stroke": "transparent",
                 "strokeWidth": 1,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 8,
@@ -383,12 +393,13 @@ exports[`Chart 1`] = `
             "style": Object {
               "data": Object {
                 "fill": "#bee1f4",
+                "opacity": 1,
                 "stroke": "transparent",
                 "strokeWidth": 0,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -429,7 +440,7 @@ exports[`Chart 1`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#EDEDED",
-              "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
               "fontSize": 14,
               "letterSpacing": "normal",
               "padding": 16,
@@ -462,7 +473,7 @@ exports[`Chart 1`] = `
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 8,
@@ -520,7 +531,7 @@ exports[`Chart 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -550,7 +561,7 @@ exports[`Chart 1`] = `
           },
           "axisLabel": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 100,
@@ -558,13 +569,15 @@ exports[`Chart 1`] = `
             "textAnchor": "middle",
           },
           "grid": Object {
-            "fill": "none",
+            "fill": "transparent",
             "pointerEvents": "painted",
             "stroke": "none",
+            "strokeLinecap": "round",
+            "strokeLinejoin": "round",
           },
           "tickLabels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -572,8 +585,11 @@ exports[`Chart 1`] = `
           },
           "ticks": Object {
             "fill": "transparent",
-            "size": 1,
-            "stroke": "transparent",
+            "size": 5,
+            "stroke": "none",
+            "strokeLinecap": "round",
+            "strokeLinejoin": "round",
+            "strokeWidth": 1,
           },
         },
         "width": 450,
@@ -592,11 +608,13 @@ exports[`Chart 1`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
+            "padding": 8,
             "stroke": "none",
+            "strokeWidth": 0,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -624,7 +642,7 @@ exports[`Chart 1`] = `
           },
           "maxLabels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -637,7 +655,7 @@ exports[`Chart 1`] = `
           },
           "medianLabels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -650,7 +668,7 @@ exports[`Chart 1`] = `
           },
           "minLabels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -662,7 +680,7 @@ exports[`Chart 1`] = `
           },
           "q1Labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -674,7 +692,7 @@ exports[`Chart 1`] = `
           },
           "q3Labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -704,7 +722,7 @@ exports[`Chart 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -745,12 +763,13 @@ exports[`Chart 1`] = `
         "style": Object {
           "data": Object {
             "fill": "transparent",
+            "opacity": 1,
             "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -788,7 +807,7 @@ exports[`Chart 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -796,7 +815,7 @@ exports[`Chart 1`] = `
           },
           "title": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 2,
@@ -818,12 +837,13 @@ exports[`Chart 1`] = `
         "style": Object {
           "data": Object {
             "fill": "transparent",
+            "opacity": 1,
             "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -846,11 +866,12 @@ exports[`Chart 1`] = `
         "style": Object {
           "data": Object {
             "padding": 8,
+            "stroke": "transparent",
             "strokeWidth": 1,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,
@@ -872,12 +893,13 @@ exports[`Chart 1`] = `
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
+            "opacity": 1,
             "stroke": "transparent",
             "strokeWidth": 0,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -918,7 +940,7 @@ exports[`Chart 1`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#EDEDED",
-          "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+          "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
           "fontSize": 14,
           "letterSpacing": "normal",
           "padding": 16,
@@ -951,7 +973,7 @@ exports[`Chart 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,
@@ -1007,7 +1029,7 @@ exports[`Chart 2`] = `
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -1037,7 +1059,7 @@ exports[`Chart 2`] = `
               },
               "axisLabel": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 100,
@@ -1045,13 +1067,15 @@ exports[`Chart 2`] = `
                 "textAnchor": "middle",
               },
               "grid": Object {
-                "fill": "none",
+                "fill": "transparent",
                 "pointerEvents": "painted",
                 "stroke": "none",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
               },
               "tickLabels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -1059,8 +1083,11 @@ exports[`Chart 2`] = `
               },
               "ticks": Object {
                 "fill": "transparent",
-                "size": 1,
-                "stroke": "transparent",
+                "size": 5,
+                "stroke": "none",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
               },
             },
             "width": 450,
@@ -1079,11 +1106,13 @@ exports[`Chart 2`] = `
             "style": Object {
               "data": Object {
                 "fill": "#06c",
+                "padding": 8,
                 "stroke": "none",
+                "strokeWidth": 0,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -1111,7 +1140,7 @@ exports[`Chart 2`] = `
               },
               "maxLabels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -1124,7 +1153,7 @@ exports[`Chart 2`] = `
               },
               "medianLabels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -1137,7 +1166,7 @@ exports[`Chart 2`] = `
               },
               "minLabels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -1149,7 +1178,7 @@ exports[`Chart 2`] = `
               },
               "q1Labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -1161,7 +1190,7 @@ exports[`Chart 2`] = `
               },
               "q3Labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -1191,7 +1220,7 @@ exports[`Chart 2`] = `
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -1232,12 +1261,13 @@ exports[`Chart 2`] = `
             "style": Object {
               "data": Object {
                 "fill": "transparent",
+                "opacity": 1,
                 "stroke": "#73bcf7",
                 "strokeWidth": 2,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -1275,7 +1305,7 @@ exports[`Chart 2`] = `
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -1283,7 +1313,7 @@ exports[`Chart 2`] = `
               },
               "title": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 2,
@@ -1305,12 +1335,13 @@ exports[`Chart 2`] = `
             "style": Object {
               "data": Object {
                 "fill": "transparent",
+                "opacity": 1,
                 "stroke": "#73bcf7",
                 "strokeWidth": 2,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -1333,11 +1364,12 @@ exports[`Chart 2`] = `
             "style": Object {
               "data": Object {
                 "padding": 8,
+                "stroke": "transparent",
                 "strokeWidth": 1,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 8,
@@ -1359,12 +1391,13 @@ exports[`Chart 2`] = `
             "style": Object {
               "data": Object {
                 "fill": "#bee1f4",
+                "opacity": 1,
                 "stroke": "transparent",
                 "strokeWidth": 0,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -1405,7 +1438,7 @@ exports[`Chart 2`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#EDEDED",
-              "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
               "fontSize": 14,
               "letterSpacing": "normal",
               "padding": 16,
@@ -1438,7 +1471,7 @@ exports[`Chart 2`] = `
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 8,
@@ -1496,7 +1529,7 @@ exports[`Chart 2`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1526,7 +1559,7 @@ exports[`Chart 2`] = `
           },
           "axisLabel": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 100,
@@ -1534,13 +1567,15 @@ exports[`Chart 2`] = `
             "textAnchor": "middle",
           },
           "grid": Object {
-            "fill": "none",
+            "fill": "transparent",
             "pointerEvents": "painted",
             "stroke": "none",
+            "strokeLinecap": "round",
+            "strokeLinejoin": "round",
           },
           "tickLabels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1548,8 +1583,11 @@ exports[`Chart 2`] = `
           },
           "ticks": Object {
             "fill": "transparent",
-            "size": 1,
-            "stroke": "transparent",
+            "size": 5,
+            "stroke": "none",
+            "strokeLinecap": "round",
+            "strokeLinejoin": "round",
+            "strokeWidth": 1,
           },
         },
         "width": 450,
@@ -1568,11 +1606,13 @@ exports[`Chart 2`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
+            "padding": 8,
             "stroke": "none",
+            "strokeWidth": 0,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1600,7 +1640,7 @@ exports[`Chart 2`] = `
           },
           "maxLabels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1613,7 +1653,7 @@ exports[`Chart 2`] = `
           },
           "medianLabels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1626,7 +1666,7 @@ exports[`Chart 2`] = `
           },
           "minLabels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1638,7 +1678,7 @@ exports[`Chart 2`] = `
           },
           "q1Labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1650,7 +1690,7 @@ exports[`Chart 2`] = `
           },
           "q3Labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1680,7 +1720,7 @@ exports[`Chart 2`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1721,12 +1761,13 @@ exports[`Chart 2`] = `
         "style": Object {
           "data": Object {
             "fill": "transparent",
+            "opacity": 1,
             "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1764,7 +1805,7 @@ exports[`Chart 2`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1772,7 +1813,7 @@ exports[`Chart 2`] = `
           },
           "title": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 2,
@@ -1794,12 +1835,13 @@ exports[`Chart 2`] = `
         "style": Object {
           "data": Object {
             "fill": "transparent",
+            "opacity": 1,
             "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1822,11 +1864,12 @@ exports[`Chart 2`] = `
         "style": Object {
           "data": Object {
             "padding": 8,
+            "stroke": "transparent",
             "strokeWidth": 1,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,
@@ -1848,12 +1891,13 @@ exports[`Chart 2`] = `
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
+            "opacity": 1,
             "stroke": "transparent",
             "strokeWidth": 0,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -1894,7 +1938,7 @@ exports[`Chart 2`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#EDEDED",
-          "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+          "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
           "fontSize": 14,
           "letterSpacing": "normal",
           "padding": 16,
@@ -1927,7 +1971,7 @@ exports[`Chart 2`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,
@@ -1983,7 +2027,7 @@ exports[`renders container via ChartLegend 1`] = `
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -2013,7 +2057,7 @@ exports[`renders container via ChartLegend 1`] = `
               },
               "axisLabel": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 100,
@@ -2021,13 +2065,15 @@ exports[`renders container via ChartLegend 1`] = `
                 "textAnchor": "middle",
               },
               "grid": Object {
-                "fill": "none",
+                "fill": "transparent",
                 "pointerEvents": "painted",
                 "stroke": "none",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
               },
               "tickLabels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -2035,8 +2081,11 @@ exports[`renders container via ChartLegend 1`] = `
               },
               "ticks": Object {
                 "fill": "transparent",
-                "size": 1,
-                "stroke": "transparent",
+                "size": 5,
+                "stroke": "none",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
               },
             },
             "width": 450,
@@ -2055,11 +2104,13 @@ exports[`renders container via ChartLegend 1`] = `
             "style": Object {
               "data": Object {
                 "fill": "#06c",
+                "padding": 8,
                 "stroke": "none",
+                "strokeWidth": 0,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -2087,7 +2138,7 @@ exports[`renders container via ChartLegend 1`] = `
               },
               "maxLabels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -2100,7 +2151,7 @@ exports[`renders container via ChartLegend 1`] = `
               },
               "medianLabels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -2113,7 +2164,7 @@ exports[`renders container via ChartLegend 1`] = `
               },
               "minLabels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -2125,7 +2176,7 @@ exports[`renders container via ChartLegend 1`] = `
               },
               "q1Labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -2137,7 +2188,7 @@ exports[`renders container via ChartLegend 1`] = `
               },
               "q3Labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -2167,7 +2218,7 @@ exports[`renders container via ChartLegend 1`] = `
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -2208,12 +2259,13 @@ exports[`renders container via ChartLegend 1`] = `
             "style": Object {
               "data": Object {
                 "fill": "transparent",
+                "opacity": 1,
                 "stroke": "#73bcf7",
                 "strokeWidth": 2,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -2251,7 +2303,7 @@ exports[`renders container via ChartLegend 1`] = `
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -2259,7 +2311,7 @@ exports[`renders container via ChartLegend 1`] = `
               },
               "title": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 2,
@@ -2281,12 +2333,13 @@ exports[`renders container via ChartLegend 1`] = `
             "style": Object {
               "data": Object {
                 "fill": "transparent",
+                "opacity": 1,
                 "stroke": "#73bcf7",
                 "strokeWidth": 2,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -2309,11 +2362,12 @@ exports[`renders container via ChartLegend 1`] = `
             "style": Object {
               "data": Object {
                 "padding": 8,
+                "stroke": "transparent",
                 "strokeWidth": 1,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 8,
@@ -2335,12 +2389,13 @@ exports[`renders container via ChartLegend 1`] = `
             "style": Object {
               "data": Object {
                 "fill": "#bee1f4",
+                "opacity": 1,
                 "stroke": "transparent",
                 "strokeWidth": 0,
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 10,
@@ -2381,7 +2436,7 @@ exports[`renders container via ChartLegend 1`] = `
             "pointerWidth": 20,
             "style": Object {
               "fill": "#EDEDED",
-              "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
               "fontSize": 14,
               "letterSpacing": "normal",
               "padding": 16,
@@ -2414,7 +2469,7 @@ exports[`renders container via ChartLegend 1`] = `
               },
               "labels": Object {
                 "fill": "#151515",
-                "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
                 "fontSize": 14,
                 "letterSpacing": "normal",
                 "padding": 8,
@@ -2473,7 +2528,7 @@ exports[`renders container via ChartLegend 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -2503,7 +2558,7 @@ exports[`renders container via ChartLegend 1`] = `
           },
           "axisLabel": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 100,
@@ -2511,13 +2566,15 @@ exports[`renders container via ChartLegend 1`] = `
             "textAnchor": "middle",
           },
           "grid": Object {
-            "fill": "none",
+            "fill": "transparent",
             "pointerEvents": "painted",
             "stroke": "none",
+            "strokeLinecap": "round",
+            "strokeLinejoin": "round",
           },
           "tickLabels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -2525,8 +2582,11 @@ exports[`renders container via ChartLegend 1`] = `
           },
           "ticks": Object {
             "fill": "transparent",
-            "size": 1,
-            "stroke": "transparent",
+            "size": 5,
+            "stroke": "none",
+            "strokeLinecap": "round",
+            "strokeLinejoin": "round",
+            "strokeWidth": 1,
           },
         },
         "width": 450,
@@ -2545,11 +2605,13 @@ exports[`renders container via ChartLegend 1`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
+            "padding": 8,
             "stroke": "none",
+            "strokeWidth": 0,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -2577,7 +2639,7 @@ exports[`renders container via ChartLegend 1`] = `
           },
           "maxLabels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -2590,7 +2652,7 @@ exports[`renders container via ChartLegend 1`] = `
           },
           "medianLabels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -2603,7 +2665,7 @@ exports[`renders container via ChartLegend 1`] = `
           },
           "minLabels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -2615,7 +2677,7 @@ exports[`renders container via ChartLegend 1`] = `
           },
           "q1Labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -2627,7 +2689,7 @@ exports[`renders container via ChartLegend 1`] = `
           },
           "q3Labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -2657,7 +2719,7 @@ exports[`renders container via ChartLegend 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -2698,12 +2760,13 @@ exports[`renders container via ChartLegend 1`] = `
         "style": Object {
           "data": Object {
             "fill": "transparent",
+            "opacity": 1,
             "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -2741,7 +2804,7 @@ exports[`renders container via ChartLegend 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -2749,7 +2812,7 @@ exports[`renders container via ChartLegend 1`] = `
           },
           "title": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 2,
@@ -2771,12 +2834,13 @@ exports[`renders container via ChartLegend 1`] = `
         "style": Object {
           "data": Object {
             "fill": "transparent",
+            "opacity": 1,
             "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -2799,11 +2863,12 @@ exports[`renders container via ChartLegend 1`] = `
         "style": Object {
           "data": Object {
             "padding": 8,
+            "stroke": "transparent",
             "strokeWidth": 1,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,
@@ -2825,12 +2890,13 @@ exports[`renders container via ChartLegend 1`] = `
         "style": Object {
           "data": Object {
             "fill": "#bee1f4",
+            "opacity": 1,
             "stroke": "transparent",
             "strokeWidth": 0,
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 10,
@@ -2871,7 +2937,7 @@ exports[`renders container via ChartLegend 1`] = `
         "pointerWidth": 20,
         "style": Object {
           "fill": "#EDEDED",
-          "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+          "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
           "fontSize": 14,
           "letterSpacing": "normal",
           "padding": 16,
@@ -2904,7 +2970,7 @@ exports[`renders container via ChartLegend 1`] = `
           },
           "labels": Object {
             "fill": "#151515",
-            "fontFamily": "overpass,overpass,open sans,-apple-system,blinkmacsystemfont,Segoe UI,roboto,Helvetica Neue,arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
             "fontSize": 14,
             "letterSpacing": "normal",
             "padding": 8,

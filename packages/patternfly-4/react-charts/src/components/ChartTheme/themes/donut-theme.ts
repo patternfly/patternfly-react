@@ -1,10 +1,15 @@
-// TODO Replace label props with PF css when available
+/* eslint-disable camelcase */
+import {
+  chart_donut_pie_Height,
+  chart_donut_pie_angle_Padding,
+  chart_donut_pie_Width,
+} from '@patternfly/react-tokens';
 
 // Donut theme
 export const DonutTheme = {
   pie: {
-    height: 230,
-    padAngle: 1,
-    width: 230
+    height: chart_donut_pie_Height.value,
+    padAngle: chart_donut_pie_angle_Padding.value,
+    width: chart_donut_pie_Width.value
   }
 };

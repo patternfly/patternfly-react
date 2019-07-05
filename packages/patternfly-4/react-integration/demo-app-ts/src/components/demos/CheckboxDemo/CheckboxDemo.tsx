@@ -27,6 +27,10 @@ export class CheckboxDemo extends React.Component<{}, CheckboxState> {
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     return (
       <React.Fragment>

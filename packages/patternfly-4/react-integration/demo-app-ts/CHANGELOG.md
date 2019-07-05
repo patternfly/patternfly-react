@@ -3,6 +3,95 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.3.0...demo-app-ts@2.4.0) (2019-07-05)
+
+
+### Features
+
+* **Bullseye:** Convert bullseye to typescript ([#2427](https://github.com/patternfly/patternfly-react/issues/2427)) ([2515be5](https://github.com/patternfly/patternfly-react/commit/2515be5))
+
+
+
+
+
+# [2.3.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.2.5...demo-app-ts@2.3.0) (2019-07-05)
+
+
+### Features
+
+* **Stack:** Convert stack to typescript ([#2412](https://github.com/patternfly/patternfly-react/issues/2412)) ([a1c34b6](https://github.com/patternfly/patternfly-react/commit/a1c34b6))
+
+
+
+
+
+## [2.2.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.2.4...demo-app-ts@2.2.5) (2019-07-05)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [2.2.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.2.3...demo-app-ts@2.2.4) (2019-07-03)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [2.2.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.2.2...demo-app-ts@2.2.3) (2019-07-03)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [2.2.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.2.1...demo-app-ts@2.2.2) (2019-07-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [2.2.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.2.0...demo-app-ts@2.2.1) (2019-07-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [2.2.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.1.4...demo-app-ts@2.2.0) (2019-07-02)
+
+
+### Features
+
+* **Pagination:** Pagination Component Typescript Conversion ([#2256](https://github.com/patternfly/patternfly-react/issues/2256)) ([8a29a20](https://github.com/patternfly/patternfly-react/commit/8a29a20))
+
+
+
+
+
+## [2.1.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.1.3...demo-app-ts@2.1.4) (2019-07-01)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [2.1.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.1.2...demo-app-ts@2.1.3) (2019-07-01)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [2.1.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.1.1...demo-app-ts@2.1.2) (2019-07-01)
 
 **Note:** Version bump only for package demo-app-ts

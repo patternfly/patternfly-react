@@ -13,6 +13,7 @@ export interface DropdownToggleProps extends HTMLProps<HTMLButtonElement> {
   isDisabled?: boolean;
   iconComponent?: ReactType | null;
   splitButtonItems?: ReactNode[];
+  isSplitButton?: boolean;
   'aria-label'?: string;
 }
 

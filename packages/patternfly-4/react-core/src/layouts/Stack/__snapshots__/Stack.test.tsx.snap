@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gutter lg 1`] = `
+<Component
+  gutter="lg"
+>
+  <div
+    className="pf-l-stack pf-m-gutter"
+  >
+    <Component>
+      <div
+        className="pf-l-stack__item"
+      >
+        Basic content
+      </div>
+    </Component>
+  </div>
+</Component>
+`;
+
+exports[`Gutter md 1`] = `
+<Component
+  gutter="md"
+>
+  <div
+    className="pf-l-stack pf-m-gutter"
+  >
+    <Component>
+      <div
+        className="pf-l-stack__item"
+      >
+        Basic content
+      </div>
+    </Component>
+  </div>
+</Component>
+`;
+
+exports[`Gutter sm 1`] = `
+<Component
+  gutter="sm"
+>
+  <div
+    className="pf-l-stack pf-m-gutter"
+  >
+    <Component>
+      <div
+        className="pf-l-stack__item"
+      >
+        Basic content
+      </div>
+    </Component>
+  </div>
+</Component>
+`;
+
+exports[`isMain defaults to false 1`] = `
+<Component>
+  <div
+    className="pf-l-stack"
+  >
+    <Component>
+      <div
+        className="pf-l-stack__item"
+      >
+        Basic content
+      </div>
+    </Component>
+  </div>
+</Component>
+`;
+
+exports[`isMain set to true 1`] = `
+<Component>
+  <div
+    className="pf-l-stack"
+  >
+    <Component
+      isFilled={true}
+    >
+      <div
+        className="pf-l-stack__item pf-m-fill"
+      >
+        Filled content
+      </div>
+    </Component>
+  </div>
+</Component>
+`;

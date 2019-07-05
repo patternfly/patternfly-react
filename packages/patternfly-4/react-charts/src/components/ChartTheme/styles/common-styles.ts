@@ -1,12 +1,16 @@
-import { global_FontFamily_sans_serif } from '@patternfly/react-tokens';
+import {
+  chart_global_FontFamily,
+  chart_global_label_Margin,
+  chart_legend_Margin,
+} from '@patternfly/react-tokens';
 
 export const CommonStyles = {
   label: {
-    fontFamily: global_FontFamily_sans_serif.value,
-    margin: 8
+    fontFamily: chart_global_FontFamily.value,
+    margin: chart_global_label_Margin.value,
   },
   legend: {
-    margin: 16,
-    position: 'right'
+    margin: chart_legend_Margin.value,
+    position: 'right' // Todo: Replace with PF-core var when available
   },
 };

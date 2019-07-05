@@ -1,7 +1,10 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
+import { isFinite } from 'lodash';
+
 import {
   AnimatePropTypeInterface,
+  BlockProps,
   D3Scale,
   DomainPropType,
   DomainPaddingPropType,
@@ -12,7 +15,7 @@ import {
   VictoryChart,
   VictoryChartProps,
   VictoryStyleInterface,
-  VictoryZoomContainer
+  VictoryZoomContainer,
 } from 'victory';
 import {
   ChartLegend,
@@ -22,6 +25,7 @@ import {
 } from "../ChartLegend";
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
+import { getPaddingForSide } from '../ChartUtils/chart-padding';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -340,7 +344,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   containerComponent = allowZoom ? <VictoryZoomContainer /> : undefined,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
-  padding = {},
+  padding,
   standalone = true,
   themeColor,
   themeVariant,
@@ -353,12 +357,12 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   width = theme.chart.width,
   ...rest
 }: ChartProps) => {
+
   const defaultPadding = {
-    bottom: theme.chart.padding || 0,
-    left: theme.chart.padding || 0,
-    top: theme.chart.padding || 0,
-    right: theme.chart.padding || 0,
-    ...(padding as any)
+    bottom: getPaddingForSide('bottom',  padding, theme.chart.padding),
+    left: getPaddingForSide('left', padding, theme.chart.padding),
+    right: getPaddingForSide('right', padding, theme.chart.padding),
+    top: getPaddingForSide('top', padding, theme.chart.padding),
   };
 
   const chartSize = {

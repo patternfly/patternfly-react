@@ -1,4 +1,4 @@
-/* eslint-disable global-require,import/no-dynamic-require */
+/* eslint-disable global-require,import/no-dynamic-require,no-restricted-globals */
 const glob = require('glob');
 const { dirname, resolve, join } = require('path');
 const { parse } = require('css');
@@ -36,9 +36,11 @@ cssFiles.forEach(filePath => {
           const computedValue = tokens[formatCustomPropertyName(match)];
           return computedValue ? computedValue.value : `var(${match})`;
         });
+        // Avoid stringifying numeric chart values
+        const chartNum = decl.property.startsWith('--pf-chart-') && !isNaN(populatedValue);
         tokens[key] = {
           name: property,
-          value: populatedValue,
+          value: chartNum ? Number(populatedValue).valueOf() : populatedValue,
           var: `var(${property})`
         };
       }

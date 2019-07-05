@@ -1,20 +1,34 @@
-// TODO Replace label props with PF css when available
+/* eslint-disable camelcase */
+import {
+  chart_donut_threshold_first_Color,
+  chart_donut_threshold_second_Color,
+  chart_donut_threshold_third_Color,
+  chart_donut_utilization_dynamic_pie_Height,
+  chart_donut_utilization_dynamic_pie_angle_Padding,
+  chart_donut_utilization_dynamic_pie_Width,
+} from '@patternfly/react-tokens';
 
 // Donut utilization dynamic theme
 export const DonutUtilizationDynamicTheme = {
   pie: {
-    height: 230,
-    padAngle: 1,
-    width: 230
+    height: chart_donut_utilization_dynamic_pie_Height.value,
+    padAngle: chart_donut_utilization_dynamic_pie_angle_Padding.value,
+    width: chart_donut_utilization_dynamic_pie_Width.value
   }
 };
 
 // Donut utilization static theme
 export const DonutUtilizationStaticTheme = {
   legend: {
-    colorScale: ['#EDEDED', '#D2D2D2', '#BBBBBB']
+    colorScale: [
+      chart_donut_threshold_first_Color.value,
+      chart_donut_threshold_second_Color.value,
+      chart_donut_threshold_third_Color.value
+    ],
   },
   pie: {
-    colorScale: ['#EDEDED']
+    colorScale: [
+      chart_donut_threshold_first_Color.value
+    ]
   }
 };

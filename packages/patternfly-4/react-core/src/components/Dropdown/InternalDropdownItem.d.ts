@@ -25,5 +25,5 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
     sendRef?: (index: number, ref: any, isDisabled: boolean) => void
   };
   /** Callback for click event */
-  onClick?: () => void; 
+  onClick?: (event:React.MouseEvent<HTMLAnchorElement>|React.KeyboardEvent) => void;
 }

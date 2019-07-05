@@ -6,7 +6,7 @@ describe('Empty State Demo Test', () => {
   });
 
   it('Verify large empty state', () => {
-    cy.get('.\pf-c-empty-state').contains('Large Empty State');
+    cy.get('.pf-c-empty-state').contains('Large Empty State');
   });
 
   it('Verify full empty state', () => {

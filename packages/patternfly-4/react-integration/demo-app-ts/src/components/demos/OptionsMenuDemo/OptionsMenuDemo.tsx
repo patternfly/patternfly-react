@@ -49,6 +49,10 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
     });
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const myOptionsMenuProps: OptionsMenuProps = {
       id: "options-menu-single-option-example",
