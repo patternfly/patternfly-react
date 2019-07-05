@@ -13,10 +13,11 @@ export * from './BarChartDemo/PurpleBarGroupedDemo'
 export * from './BarChartDemo/ColorBarZoomDemo'
 export * from './BarChartDemo/SimpleBarDemo'
 export * from './BrandDemo/BrandDemo';
-export * from './BreadcrumbDemo/BreadcrumbDemo'; 
-export * from './ButtonDemo/ButtonDemo'; 
-export * from './CardDemo/CardDemo'; 
-export * from './CheckboxDemo/CheckboxDemo'; 
+export * from './BreadcrumbDemo/BreadcrumbDemo';
+export * from './BullseyeDemo/BullseyeDemo'; 
+export * from './ButtonDemo/ButtonDemo';
+export * from './CardDemo/CardDemo';
+export * from './CheckboxDemo/CheckboxDemo';
 export * from './ChipGroupDemo/ChipGroupDemo';
 export * from './ContextSelectorDemo/ContextSelectorDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyDemo';

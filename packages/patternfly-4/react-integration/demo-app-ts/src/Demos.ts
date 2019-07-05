@@ -91,6 +91,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BreadcrumbDemo
   },
   {
+    id: 'bullseye-demo', 
+    name: 'Bullseye Demo', 
+    componentType: Examples.BullseyeDemo
+  },
+  {
     id: 'button-demo',
     name: 'Button Demo',
     componentType: Examples.ButtonDemo
