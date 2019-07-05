@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.2.5...demo-app-ts@2.3.0) (2019-07-05)
+
+
+### Features
+
+* **Stack:** Convert stack to typescript ([#2412](https://github.com/patternfly/patternfly-react/issues/2412)) ([a1c34b6](https://github.com/patternfly/patternfly-react/commit/a1c34b6))
+
+
+
+
+
 ## [2.2.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.2.4...demo-app-ts@2.2.5) (2019-07-05)
 
 **Note:** Version bump only for package demo-app-ts
