@@ -172,6 +172,15 @@ jobs:
     - run:
         name: StyleLint
         command: yarn lint:style
+    - run:
+        name: Breaking Change Lint
+        # https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit
+        command: |
+            if git log origin/master..HEAD --format="%b" | grep -i "breaking change";
+            then
+                echo "Breaking change above detected"
+                exit 1
+            fi
   build_pf3_docs:
     docker:
     - image: circleci/node:8.15
