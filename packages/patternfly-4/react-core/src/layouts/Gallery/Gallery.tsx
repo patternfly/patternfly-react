@@ -8,12 +8,12 @@ export interface GalleryProps extends React.HTMLProps<HTMLDivElement> {
   /** additional classes added to the Gallery layout */
   className?: string; 
   /** Adds space between children. */
-  gutter?: boolean; 
+  gutter?: 'sm' | 'md' | 'lg'; 
 }
 export const Gallery: React.FunctionComponent<GalleryProps> = ({
   children = null,
   className = '',
-  gutter = false, 
+  gutter = null, 
   ...props
 }: GalleryProps) => (
   <div
