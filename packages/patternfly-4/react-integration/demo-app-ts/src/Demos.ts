@@ -378,6 +378,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.SelectDemo
   },
   {
+    id: 'split-demo', 
+    name: 'Split Demo', 
+    componentType: Examples.SplitDemo
+  },
+  {
     id: 'stack-demo', 
     name: 'Stack Demo', 
     componentType: Examples.StackDemo
