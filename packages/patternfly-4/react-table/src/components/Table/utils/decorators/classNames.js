@@ -1,8 +1,5 @@
-import { css } from '@patternfly/react-styles';
+import { css, pickProperties } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-
-const pickProperties = (object, properties) =>
-  properties.reduce((picked, property) => ({ ...picked, [property]: object[property] }), {});
 
 export const Visibility = pickProperties(styles.modifiers, [
   'hidden',

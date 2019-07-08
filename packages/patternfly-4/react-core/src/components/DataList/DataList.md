@@ -16,6 +16,7 @@ import {
   DataListCell,
   DataListCheck,
   DataListAction,
+  DataListActionVisibility,
   DataListToggle,
   DataListContent,
   Dropdown,
@@ -24,6 +25,7 @@ import {
   DropdownItem
 } from '@patternfly/react-core';
 import { CodeBranchIcon } from '@patternfly/react-icons';
+import { css } from '@patternfly/react-styles';
 
 ```js
 import React from 'react';
@@ -97,15 +99,35 @@ import {
 class CheckboxActionDataList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isOpen: false };
+    this.state = { isOpen1: false, isOpen2: false, isOpen3: false };
 
-    this.onToggle = isOpen => {
-      this.setState({ isOpen });
+    this.onToggle1 = isOpen1 => {
+      this.setState({ isOpen1 });
     };
 
-    this.onSelect = event => {
+    this.onSelect1 = event => {
       this.setState(prevState => ({
-        isOpen: !prevState.isOpen
+        isOpen1: !prevState.isOpen1
+      }));
+    };
+
+    this.onToggle2 = isOpen2 => {
+      this.setState({ isOpen2 });
+    };
+
+    this.onSelect2 = event => {
+      this.setState(prevState => ({
+        isOpen2: !prevState.isOpen2
+      }));
+    };
+
+    this.onToggle3 = isOpen3 => {
+      this.setState({ isOpen3 });
+    };
+
+    this.onSelect3 = event => {
+      this.setState(prevState => ({
+        isOpen3: !prevState.isOpen3
       }));
     };
   }
@@ -144,9 +166,9 @@ class CheckboxActionDataList extends React.Component {
               <Dropdown
                 isPlain
                 position={DropdownPosition.right}
-                isOpen={this.state.isOpen}
-                onSelect={this.onSelect}
-                toggle={<KebabToggle onToggle={this.onToggle} />}
+                isOpen={this.state.isOpen1}
+                onSelect={this.onSelect1}
+                toggle={<KebabToggle onToggle={this.onToggle1} />}
                 dropdownItems={[
                   <DropdownItem key="link">Link</DropdownItem>,
                   <DropdownItem key="action" component="button">
@@ -175,11 +197,77 @@ class CheckboxActionDataList extends React.Component {
               ]}
             />
             <DataListAction
+              className={css(DataListActionVisibility.hiddenOnLg)}
+              aria-labelledby="check-action-item2 check-action-action2"
+              id="check-action-action2"
+              aria-label="Actions"
+            >
+              <Dropdown
+                isPlain
+                position={DropdownPosition.right}
+                isOpen={this.state.isOpen2}
+                onSelect={this.onSelect2}
+                toggle={<KebabToggle onToggle={this.onToggle2} />}
+                dropdownItems={[
+                  <DropdownItem key="pri-action2" component="button">Primary</DropdownItem>,
+                  <DropdownItem key="sec-action2" component="button">Secondary</DropdownItem>,
+                ]}
+              />
+            </DataListAction>
+            <DataListAction
+              className={css(DataListActionVisibility.visibleOnLg, DataListActionVisibility.hidden)}
               aria-labelledby="check-action-item2 check-action-action2"
               id="check-action-action2"
               aria-label="Actions"
             >
               <Button variant="primary">Primary</Button>
+              <Button variant="secondary">Secondary</Button>
+            </DataListAction>
+          </DataListItemRow>
+        </DataListItem>
+        <DataListItem aria-labelledby="check-action-item3">
+          <DataListItemRow>
+            <DataListCheck aria-labelledby="check-action-item3" name="check-action-check3" />
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell key="primary content">
+                  <span id="check-action-item3">Primary content - Lorem ipsum</span> dolor sit amet, consectetur
+                  adipisicing elit, sed do eiusmod.
+                </DataListCell>,
+                <DataListCell key="secondary content">
+                  Secondary content. Dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+                </DataListCell>
+              ]}
+            />
+            <DataListAction
+              className={css(DataListActionVisibility.hiddenOnXl)}
+              aria-labelledby="check-action-item3 check-action-action3"
+              id="check-action-action3"
+              aria-label="Actions"
+            >
+              <Dropdown
+                isPlain
+                position={DropdownPosition.right}
+                isOpen={this.state.isOpen3}
+                onSelect={this.onSelect3}
+                toggle={<KebabToggle onToggle={this.onToggle3} />}
+                dropdownItems={[
+                  <DropdownItem key="pri-action3" component="button">Primary</DropdownItem>,
+                  <DropdownItem key="sec1-action3" component="button">Secondary</DropdownItem>,
+                  <DropdownItem key="sec2-action3" component="button">Secondary</DropdownItem>,
+                  <DropdownItem key="sec3-action3" component="button">Secondary</DropdownItem>,
+                ]}
+              />
+            </DataListAction>
+            <DataListAction
+              className={css(DataListActionVisibility.visibleOnXl, DataListActionVisibility.hidden)}
+              aria-labelledby="check-action-item3 check-action-action3"
+              id="check-action-action3"
+              aria-label="Actions"
+            >
+              <Button variant="primary">Primary</Button>
+              <Button variant="secondary">Secondary</Button>
+              <Button variant="secondary">Secondary</Button>
               <Button variant="secondary">Secondary</Button>
             </DataListAction>
           </DataListItemRow>
@@ -566,7 +654,7 @@ import {
 class ModifiersDataList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { show: true, isOpen1: false, isOpen2: false };
+    this.state = { show: true, isOpen1: false, isOpen2: false, isOpen3: false };
 
     this.onToggle1 = isOpen1 => {
       this.setState({ isOpen1 });

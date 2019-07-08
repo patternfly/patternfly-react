@@ -5,6 +5,7 @@ export {
   getModifier,
   isModifier,
   getInsertedStyles,
-  getClassName
+  getClassName,
+  pickProperties
 } from './utils';
 
