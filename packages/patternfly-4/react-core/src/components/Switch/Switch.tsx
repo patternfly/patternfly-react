@@ -23,7 +23,11 @@ export interface SwitchProps extends Omit<React.HTMLProps<HTMLInputElement>, 'ty
   'aria-label'?: string
 };
 
-export class Switch extends React.Component<SwitchProps> {
+export interface SwitchState {
+  renderWithOUIA?: boolean;
+}
+
+export class Switch extends React.Component<SwitchProps, SwitchState> {
   id = '';
   ouiaId = getOUIAUniqueId();
 
@@ -44,15 +48,27 @@ export class Switch extends React.Component<SwitchProps> {
       console.error('Switch: Switch requires either an id or aria-label to be specified');
     }
     this.id =props.id || getUniqueId();
+    this.state = {
+      renderWithOUIA: false
+    };
+  }
+
+  componentDidMount() {
+    const { renderWithOUIA } = this.state;
+    const isOuia = isOUIAEnvironment();
+    if (isOuia !== renderWithOUIA) {
+      this.setState({ renderWithOUIA: isOuia });
+    }
   }
 
   render() {
     const { className, label, isChecked, isDisabled, onChange, ...props } = this.props;
+    const { renderWithOUIA } = this.state;
     return (
       <label
         className={css(styles.switch, className)}
         htmlFor={this.id}
-        {...isOUIAEnvironment() && {
+        {...renderWithOUIA && {
           'data-ouia-component-type': 'Switch',
           'data-ouia-component-id': this.ouiaId
         }}
