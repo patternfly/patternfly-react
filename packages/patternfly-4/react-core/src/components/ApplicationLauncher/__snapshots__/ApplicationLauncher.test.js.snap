@@ -88,6 +88,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
+    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
@@ -367,6 +368,7 @@ exports[`ApplicationLauncher dropup 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
+    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
@@ -646,6 +648,7 @@ exports[`ApplicationLauncher expanded 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -834,6 +837,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       </DropdownToggle>
       <DropdownMenu
         aria-labelledby="pf-toggle-id-4"
+        autoFocus={true}
         className=""
         component="ul"
         isGrouped={false}
@@ -843,6 +847,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       >
         <ul
           aria-labelledby="pf-toggle-id-4"
+          autoFocus={true}
           className="pf-c-app-launcher__menu"
           hidden={false}
           role="menu"
@@ -1263,6 +1268,7 @@ exports[`ApplicationLauncher regular 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -1542,6 +1548,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={

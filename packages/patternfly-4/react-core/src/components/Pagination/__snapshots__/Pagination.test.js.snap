@@ -60,6 +60,7 @@ exports[`component render custom pagination toggle 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -170,6 +171,7 @@ exports[`component render custom pagination toggle 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -670,6 +672,7 @@ exports[`component render custom perPageOptions 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -716,6 +719,7 @@ exports[`component render custom perPageOptions 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -1176,6 +1180,7 @@ exports[`component render custom start end 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -1286,6 +1291,7 @@ exports[`component render custom start end 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -1790,6 +1796,7 @@ exports[`component render empty per page options 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={Array []}
@@ -1815,6 +1822,7 @@ exports[`component render empty per page options 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={Array []}
@@ -2155,6 +2163,7 @@ exports[`component render last page 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -2265,6 +2274,7 @@ exports[`component render last page 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -2788,6 +2798,7 @@ exports[`component render limited number of pages 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -2898,6 +2909,7 @@ exports[`component render limited number of pages 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -3420,6 +3432,7 @@ exports[`component render no items 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -3530,6 +3543,7 @@ exports[`component render no items 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -4048,6 +4062,7 @@ exports[`component render should render correctly bottom 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -4158,6 +4173,7 @@ exports[`component render should render correctly bottom 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -4680,6 +4696,7 @@ exports[`component render should render correctly top 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -4790,6 +4807,7 @@ exports[`component render should render correctly top 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -5318,6 +5336,7 @@ exports[`component render titles 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -5428,6 +5447,7 @@ exports[`component render titles 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -5944,6 +5964,7 @@ exports[`component render up drop direction 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="up"
           dropdownItems={
@@ -6054,6 +6075,7 @@ exports[`component render up drop direction 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="up"
             dropdownItems={

@@ -63,6 +63,63 @@ class SimpleDropdown extends React.Component {
 }
 ```
 
+## Dropdown with initial selection
+
+```js
+import React from 'react';
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
+import { ThIcon } from '@patternfly/react-icons';
+
+class IntialSelectionDropdown extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    const dropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button" autoFocus>
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownSeparator key="separator" />,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
+    return (
+      <Dropdown
+        onSelect={this.onSelect}
+        toggle={<DropdownToggle onToggle={this.onToggle}>Dropdown</DropdownToggle>}
+        isOpen={isOpen}
+        dropdownItems={dropdownItems}
+        autoFocus={false}
+      />
+    );
+  }
+}
+```
+
 ## Dropdown with groups
 
 ```js
@@ -584,7 +641,23 @@ class DropdownPanel extends React.Component {
         toggle={<DropdownToggle onToggle={this.onToggle}>Expanded Dropdown</DropdownToggle>}
         isOpen={isOpen}
       >
-        <div>[Panel contents here]</div>
+        <ul className="pf-c-dropdown__menu">
+          <DropdownItem key="link">Link</DropdownItem>
+          <DropdownItem key="action" component="button" autoFocus>
+            Action
+          </DropdownItem>
+          <DropdownItem key="disabled link" isDisabled>
+            Disabled Link
+          </DropdownItem>
+          <DropdownItem key="disabled action" isDisabled component="button">
+            Disabled Action
+          </DropdownItem>
+          <DropdownSeparator key="separator" />
+          <DropdownItem key="separated link">Separated Link</DropdownItem>
+          <DropdownItem key="separated action" component="button">
+            Separated Action
+          </DropdownItem>
+        </ul>
       </Dropdown>
     );
   }
