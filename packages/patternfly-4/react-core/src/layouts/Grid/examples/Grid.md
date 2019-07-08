@@ -8,12 +8,12 @@ typescript: true
 
 ## Simple grid
 
-import { Grid, GridItem, Button } from '@patternfly/react-core';
+import { Grid, GridItem } from '@patternfly/react-core';
 import './grid.scss';
 
 ```js
 import React from 'react';
-import { Grid, GridItem, Button } from '@patternfly/react-core';
+import { Grid, GridItem } from '@patternfly/react-core';
 
 <Grid>
   <GridItem span={8}>span = 8</GridItem>
@@ -38,7 +38,7 @@ import { Grid, GridItem, Button } from '@patternfly/react-core';
 ## Grid with gutters
 ```js
 import React from 'react';
-import { Grid, GridItem, Button } from '@patternfly/react-core';
+import { Grid, GridItem } from '@patternfly/react-core';
 
 <Grid gutter="md">
   <GridItem span={8}>span = 8</GridItem>
@@ -63,7 +63,7 @@ import { Grid, GridItem, Button } from '@patternfly/react-core';
 ## Grid with overrides
 ```js
 import React from 'react';
-import { Grid, GridItem, Button } from '@patternfly/react-core';
+import { Grid, GridItem } from '@patternfly/react-core';
 import ItemControl from './ItemControl';
 
 <Grid sm={6} md={4} lg={3} xl2={1}>
