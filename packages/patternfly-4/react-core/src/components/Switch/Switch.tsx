@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { CheckIcon } from '@patternfly/react-icons';
 import { getUniqueId } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
-import { isOUIAEnvironment, getUniqueId as getOUIAUniqueId } from '../../helpers/ouia';
+import { WithOUIA, InjectedOUIAProps } from '../WithOUIA';
 
 export interface SwitchProps extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
   /** id for the label. */
@@ -23,13 +23,8 @@ export interface SwitchProps extends Omit<React.HTMLProps<HTMLInputElement>, 'ty
   'aria-label'?: string
 };
 
-export interface SwitchState {
-  renderWithOUIA?: boolean;
-}
-
-export class Switch extends React.Component<SwitchProps, SwitchState> {
+export class Switch extends React.Component<SwitchProps> {
   id = '';
-  ouiaId = getOUIAUniqueId();
 
   static defaultProps = {
     id: '',
@@ -48,58 +43,50 @@ export class Switch extends React.Component<SwitchProps, SwitchState> {
       console.error('Switch: Switch requires either an id or aria-label to be specified');
     }
     this.id =props.id || getUniqueId();
-    this.state = {
-      renderWithOUIA: false
-    };
-  }
-
-  componentDidMount() {
-    const { renderWithOUIA } = this.state;
-    const isOuia = isOUIAEnvironment();
-    if (isOuia !== renderWithOUIA) {
-      this.setState({ renderWithOUIA: isOuia });
-    }
   }
 
   render() {
     const { className, label, isChecked, isDisabled, onChange, ...props } = this.props;
-    const { renderWithOUIA } = this.state;
     return (
-      <label
-        className={css(styles.switch, className)}
-        htmlFor={this.id}
-        {...renderWithOUIA && {
-          'data-ouia-component-type': 'Switch',
-          'data-ouia-component-id': this.ouiaId
-        }}
-      >
-        <input
-          {...props}
-          id={this.id}
-          className={css(styles.switchInput)}
-          type="checkbox"
-          onChange={event => onChange(event.currentTarget.checked, event)}
-          checked={isChecked}
-          disabled={isDisabled}
-        />
-        {label !== '' ? (
-          <React.Fragment>
-            <span className={css(styles.switchToggle)} />
-            <span className={css(styles.switchLabel, styles.modifiers.on)} aria-hidden="true">
-              {label}
-            </span>
-            <span className={css(styles.switchLabel, styles.modifiers.off)} aria-hidden="true">
-              {label}
-            </span>
-          </React.Fragment>
-        ) : (
-          <span className={css(styles.switchToggle)}>
-            <div className={css(styles.switchToggleIcon)} aria-hidden="true">
-              <CheckIcon noVerticalAlign />
-            </div>
-          </span>
+      <WithOUIA>
+        {(ouiaProps: InjectedOUIAProps) => (
+          <label
+            className={css(styles.switch, className)}
+            htmlFor={this.id}
+            {...ouiaProps.renderWithOUIA && {
+              'data-ouia-component-type': 'Switch',
+              'data-ouia-component-id': ouiaProps.ouiaId
+            }}
+          >
+            <input
+              {...props}
+              id={this.id}
+              className={css(styles.switchInput)}
+              type="checkbox"
+              onChange={event => onChange(event.currentTarget.checked, event)}
+              checked={isChecked}
+              disabled={isDisabled}
+            />
+            {label !== '' ? (
+              <React.Fragment>
+                <span className={css(styles.switchToggle)} />
+                <span className={css(styles.switchLabel, styles.modifiers.on)} aria-hidden="true">
+                  {label}
+                </span>
+                <span className={css(styles.switchLabel, styles.modifiers.off)} aria-hidden="true">
+                  {label}
+                </span>
+              </React.Fragment>
+            ) : (
+              <span className={css(styles.switchToggle)}>
+                <div className={css(styles.switchToggleIcon)} aria-hidden="true">
+                  <CheckIcon noVerticalAlign />
+                </div>
+              </span>
+            )}
+          </label>
         )}
-      </label>
+      </WithOUIA>
     );
   }
 }
