@@ -6,6 +6,7 @@ const { parse } = require('path');
 const ROOT_DIR = '..';
 const PCKGS = `${ROOT_DIR}/packages/patternfly-3`;
 
+// TODO: Use lerna helpers instead
 const packages = readdirSync(path.resolve(__dirname, PCKGS))
   .filter(onePckg => statSync(path.resolve(__dirname, `${PCKGS}/${onePckg}`)).isDirectory())
   .map(file => parse(file).name)
@@ -50,10 +51,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
         {
           loader: 'sass-loader',
           options: {
-            includePaths: [
-              ...packages.map(onePck => `${onePck}/sass/`),
-              ...Object.values(pkg.sassIncludes).map(includePath => path.resolve(__dirname, `../${includePath}`))
-            ]
+            importer: require('../packages/patternfly-3/node-sass-patternfly-importer.js')
           }
         }
       ]

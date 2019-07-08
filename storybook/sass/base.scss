@@ -15,15 +15,15 @@ $icon-font-path: '~patternfly/dist/fonts/';
 /**
   Patternfly React Specific Extensions
 */
-@import 'patternfly-react';
+@import '~patternfly-react/sass/patternfly-react';
 
 /**
   patternfly-react-extensions
 */
-@import 'patternfly-react-extensions';
+@import '~patternfly-react-extensions/sass/patternfly-react-extensions';
 
 /**
   @patternfly/react-console
  */
 @import "~xterm/dist/xterm.css";
-@import 'console';
+@import '~@patternfly/react-console/sass/console';
