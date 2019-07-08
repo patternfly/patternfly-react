@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 
 Object.values(GutterSize).forEach(gutter => {
   test(`gutter ${gutter}`, () => {
-    const view = shallow(<Grid gutter />);
+    const view = shallow(<Grid gutter="md" />);
     expect(view).toMatchSnapshot();
   });
 });
