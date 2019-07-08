@@ -3,6 +3,7 @@ title: 'Grid'
 cssPrefix: 'pf-l-grid'
 section: 'layouts'
 propComponents: ['Grid', 'GridItem']
+typescript: true 
 ---
 
 ## Simple grid

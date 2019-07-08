@@ -3,7 +3,7 @@ import { Title, TitleSize } from '../Title';
 import { Omit } from '../../helpers/typeUtils';
 
 export const PopoverHeader: React.FunctionComponent<PopoverHeaderProps> = ({ children, id, ...props }) => (
-  <Title headingLevel="h6" size={TitleSize.xl} id={id} {...props}>
+  <Title headingLevel="h6" size="xl" id={id} {...props}>
     {children}
   </Title>
 );
