@@ -23,18 +23,13 @@
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
   "homepage": "https://github.com/patternfly/patternfly-react/blob/master/packages/patternfly-react-extensions/README.md",
-  "sassIncludes": {
-    "patternfly": "../../../node_modules/patternfly/dist/sass",
-    "bootstrap": "../../../node_modules/bootstrap-sass/assets/stylesheets",
-    "fontAwesome": "../../../node_modules/font-awesome-sass/assets/stylesheets"
-  },
   "scripts": {
     "build": "yarn build:sass && yarn build:less && yarn build:babel",
-    "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm'",
+    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js -q",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm -q",
     "build:less": "shx mkdir -p dist/less && shx cp -r less/* dist/less",
-    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/patternfly-react-extensions/* dist/sass && cross-env node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/patternfly-react-extensions.scss",
+    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/patternfly-react-extensions/* dist/sass && node-sass --output-style compressed --importer=../node-sass-patternfly-importer.js -o dist/css sass/patternfly-react-extensions.scss",
     "clean": "rimraf dist"
   },
   "dependencies": {
@@ -62,6 +57,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "node-sass": "^4.12.0",
     "rimraf": "^2.6.2",
     "shx": "^0.3.2"
   },

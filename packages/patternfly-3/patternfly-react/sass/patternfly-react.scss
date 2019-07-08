@@ -19,5 +19,5 @@ $icon-font-path: '~patternfly/dist/fonts/';
   Patternfly React Specific Extensions
 */
 
-@import 'patternfly-react/patternfly-react';
-@import 'patternfly-react/compound-label';
+@import './patternfly-react/patternfly-react';
+@import './patternfly-react/compound-label';
