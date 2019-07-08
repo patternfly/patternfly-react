@@ -78,6 +78,7 @@ export * from './TextAreaDemo/TextAreaDemo';
 export * from './TextDemo/TextDemo';
 export * from './TextInputDemo/TextInputDemo';
 export * from './TitleDemo/TitleDemo';
+export * from './ToolbarDemo/ToolbarDemo'; 
 export * from './TooltipDemo/TooltipDemo';
 export * from './WizardDemo/WizardDemo';
 export * from './SelectDemo/SelectDemo';
