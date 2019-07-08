@@ -1,6 +1,14 @@
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
+
+export interface ToolbarSectionProps extends React.HTMLProps<HTMLDivElement> {
+  /** Anything that can be rendered as toolbar section */
+  children?: React.ReactNode; 
+  /** Classes applied to toolbar section */
+  className?: string; 
+  /** Aria label applied to toolbar section */
+  'aria-label'?: string; 
+}
 
 // toolbar css
 const toolbarCss = StyleSheet.parse(`
@@ -32,27 +40,19 @@ const toolbarCss = StyleSheet.parse(`
 
 toolbarCss.inject();
 
-const propTypes = {
-  /** Anything that can be rendered as toolbar content */
-  children: PropTypes.node,
-  /** Classes applied to toolbar parent */
-  className: PropTypes.string,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
+export const ToolbarSection: React.FunctionComponent<ToolbarSectionProps> = ({
+  children = null,
+  className = null,
+  'aria-label': ariaLabel,
+  ...props
+}: ToolbarSectionProps) => {
+  if (!ariaLabel) {
+    throw new Error('ToolbarSection requires aria-label to be specified');
+  }
 
-const defaultProps = {
-  children: null,
-  className: null
-};
-
-const Toolbar = ({ children, className, ...props }) => (
-  <div {...props} className={css('pf-l-toolbar', className)}>
-    {children}
-  </div>
-);
-
-Toolbar.propTypes = propTypes;
-Toolbar.defaultProps = defaultProps;
-
-export default Toolbar;
+  return (
+    <section {...props} className={css('pf-l-toolbar__section', className)}>
+      {children}
+    </section>
+  );
+}

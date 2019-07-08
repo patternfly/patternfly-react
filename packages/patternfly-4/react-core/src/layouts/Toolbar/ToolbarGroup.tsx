@@ -1,7 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 
+export interface ToolbarGroupProps extends React.HTMLProps<HTMLDivElement> {
+  /** Anything that can be rendered as one toolbar group */
+  children?: React.ReactNode;
+  /** Classes applied to toolbar group */
+  className?: string; 
+}
 // toolbar css
 const toolbarCss = StyleSheet.parse(`
   .pf-l-toolbar {
@@ -32,35 +37,12 @@ const toolbarCss = StyleSheet.parse(`
 
 toolbarCss.inject();
 
-const propTypes = {
-  /** Anything that can be rendered as toolbar section */
-  children: PropTypes.node,
-  /** Classes applied to toolbar section */
-  className: PropTypes.string,
-  /** Aria label applied to toolbar section */
-  'aria-label': props => {
-    if (!props['aria-label']) {
-      return new Error('ToolbarSection requires aria-label to be specified');
-    }
-    return null;
-  },
-  /** Additional props are spread to the container <section> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
-
-const defaultProps = {
-  children: null,
-  className: null,
-  'aria-label': null
-};
-
-const ToolbarSection = ({ children, className, ...props }) => (
-  <section {...props} className={css('pf-l-toolbar__section', className)}>
+export const ToolbarGroup: React.FunctionComponent<ToolbarGroupProps> = ({
+  children = null,
+  className = null,
+  ...props
+}: ToolbarGroupProps) => (
+  <div {...props} className={css('pf-l-toolbar__group', className)}>
     {children}
-  </section>
+  </div>
 );
-
-ToolbarSection.propTypes = propTypes;
-ToolbarSection.defaultProps = defaultProps;
-
-export default ToolbarSection;

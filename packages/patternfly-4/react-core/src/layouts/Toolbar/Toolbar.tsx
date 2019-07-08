@@ -1,6 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
+
+export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
+  /** Anything that can be rendered as toolbar content */
+  children?: React.ReactNode; 
+  /** Classes applied to toolbar parent */
+  className?: string; 
+}
 
 // toolbar css
 const toolbarCss = StyleSheet.parse(`
@@ -32,27 +38,12 @@ const toolbarCss = StyleSheet.parse(`
 
 toolbarCss.inject();
 
-const propTypes = {
-  /** Anything that can be rendered as one toolbar group */
-  children: PropTypes.node,
-  /** Classes applied to toolbar group */
-  className: PropTypes.string,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
-
-const defaultProps = {
-  children: null,
-  className: null
-};
-
-const ToolbarGroup = ({ children, className, ...props }) => (
-  <div {...props} className={css('pf-l-toolbar__group', className)}>
+export const Toolbar: React.FunctionComponent<ToolbarProps> = ({ 
+  children = null,
+  className = null,
+  ...props 
+}: ToolbarProps) => (
+  <div {...props} className={css('pf-l-toolbar', className)}>
     {children}
   </div>
 );
-
-ToolbarGroup.propTypes = propTypes;
-ToolbarGroup.defaultProps = defaultProps;
-
-export default ToolbarGroup;
