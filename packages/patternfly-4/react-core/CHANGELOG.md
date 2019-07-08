@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.64.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.63.0...@patternfly/react-core@3.64.0) (2019-07-08)
+
+
+### Features
+
+* **Level:** Convert level to typescript ([#2450](https://github.com/patternfly/patternfly-react/issues/2450)) ([5c891a0](https://github.com/patternfly/patternfly-react/commit/5c891a0))
+
+
+
+
+
 # [3.63.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.62.1...@patternfly/react-core@3.63.0) (2019-07-08)
 
 
