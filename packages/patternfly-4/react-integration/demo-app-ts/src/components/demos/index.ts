@@ -51,6 +51,7 @@ export * from './FormSelectDemo/FormSelectDemo';
 export * from './GalleryDemo/GalleryDemo'; 
 export * from './InputGroupDemo/InputGroupDemo'; 
 export * from './LabelDemo/LabelDemo';
+export * from './LevelDemo/LevelDemo'; 
 export * from './LineChartDemo/LineChartColorDemo';
 export * from './LineChartDemo/LineChartGreenDemo';
 export * from './LineChartDemo/LineChartSimpleDemo';

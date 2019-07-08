@@ -267,6 +267,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.LabelDemo
   },
   {
+    id: 'level-demo', 
+    name: 'Level Demo', 
+    componentType: Examples.LevelDemo
+  },
+  {
     id: 'line-chart-green-demo',
     name: 'Line Chart Green Demo',
     componentType: Examples.LineChartGreenDemo
