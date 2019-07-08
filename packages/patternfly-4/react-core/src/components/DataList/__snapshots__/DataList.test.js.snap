@@ -46,6 +46,7 @@ exports[`DataList DataListAction dropdown 1`] = `
   className="pf-c-data-list__item-action"
 >
   <Dropdown
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={

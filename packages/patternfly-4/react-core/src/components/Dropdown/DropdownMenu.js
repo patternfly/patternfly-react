@@ -17,6 +17,9 @@ const propTypes = {
   isOpen: PropTypes.bool,
   /** Flag to indicate if menu should be opened on enter */
   openedOnEnter: PropTypes.bool,
+  /** Flag to indicate if the first dropdown item should gain initial focus, set false when adding
+   * a specific auto-focus item (like a current selection) otherwise leave as true */
+  autoFocus: PropTypes.bool,
   /** Indicates which component will be used as dropdown menu */
   component: componentShape,
   /** Indicates where menu will be alligned horizontally */
@@ -32,6 +35,7 @@ const defaultProps = {
   className: '',
   isOpen: true,
   openedOnEnter: false,
+  autoFocus: true,
   position: DropdownPosition.left,
   component: 'ul',
   isGrouped: false
@@ -41,14 +45,18 @@ class DropdownMenu extends React.Component {
   refsCollection = [];
 
   componentDidMount() {
-    const focusTarget =
-      this.refsCollection.filter(
-        ref => ref && ((ref.current && !ref.current.hasAttribute('disabled')) || !ref.hasAttribute('disabled'))
-      )[0] || null;
-    if (this.props.component === 'ul') focusTarget && focusTarget.focus();
-    else {
-      (focusTarget.current.focus && focusTarget.current.focus()) ||
-        (focusTarget && ReactDOM.findDOMNode(focusTarget.current).focus()); // eslint-disable-line react/no-find-dom-node
+    const { autoFocus } = this.props;
+
+    if (this.props.component === 'ul' && autoFocus) {
+      const focusTarget =
+        this.refsCollection.filter(
+          ref => ref && ((ref.current && !ref.current.hasAttribute('disabled')) || !ref.hasAttribute('disabled'))
+        )[0] || null;
+      if (this.props.component === 'ul') focusTarget && focusTarget.focus();
+      else {
+        (focusTarget.current.focus && focusTarget.current.focus()) ||
+          (focusTarget && ReactDOM.findDOMNode(focusTarget.current).focus()); // eslint-disable-line react/no-find-dom-node
+      }
     }
   }
 
