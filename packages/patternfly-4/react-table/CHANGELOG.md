@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.13.56...@patternfly/react-table@2.14.0) (2019-07-08)
+
+
+### Features
+
+* **datalist:** add hidden and visible breakpoints ([#2251](https://github.com/patternfly/patternfly-react/issues/2251)) ([fdbde6d](https://github.com/patternfly/patternfly-react/commit/fdbde6d))
+
+
+
+
+
 ## [2.13.56](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.13.55...@patternfly/react-table@2.13.56) (2019-07-08)
 
 **Note:** Version bump only for package @patternfly/react-table
