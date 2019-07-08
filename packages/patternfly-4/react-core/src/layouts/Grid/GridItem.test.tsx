@@ -26,13 +26,13 @@ Object.values(DeviceSizes).forEach(size => {
   });
 
   test(`adds ${size} offset classes`, () => {
-    const props = { [`offset_${size}Col`]: 1 };
+    const props = { [`${size}Offset`]: 1 };
     const view = shallow(<GridItem {...props} />);
     expect(view.props().className).toMatchSnapshot();
   });
 
   test(`adds ${size} row classes`, () => {
-    const props = { [`${size}Row`]: 1 };
+    const props = { [`${size}RowSpan`]: 1 };
     const view = shallow(<GridItem {...props} />);
     expect(view.props().className).toMatchSnapshot();
   });
