@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.6.10...@patternfly/react-styled-system@3.6.11) (2019-07-08)
+
+
+### Bug Fixes
+
+* **build:** make pf3/pf4 build on windows ([#2471](https://github.com/patternfly/patternfly-react/issues/2471)) ([5bbc4a2](https://github.com/patternfly/patternfly-react/commit/5bbc4a2))
+
+
+
+
+
 ## [3.6.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@3.6.9...@patternfly/react-styled-system@3.6.10) (2019-07-08)
 
 **Note:** Version bump only for package @patternfly/react-styled-system

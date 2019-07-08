@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.13...@patternfly/react-charts@4.4.14) (2019-07-08)
+
+
+### Bug Fixes
+
+* **build:** make pf3/pf4 build on windows ([#2471](https://github.com/patternfly/patternfly-react/issues/2471)) ([5bbc4a2](https://github.com/patternfly/patternfly-react/commit/5bbc4a2))
+
+
+
+
+
 ## [4.4.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.12...@patternfly/react-charts@4.4.13) (2019-07-08)
 
 **Note:** Version bump only for package @patternfly/react-charts

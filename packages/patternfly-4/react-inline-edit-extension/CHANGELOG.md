@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.9.27...@patternfly/react-inline-edit-extension@2.9.28) (2019-07-08)
+
+
+### Bug Fixes
+
+* **build:** make pf3/pf4 build on windows ([#2471](https://github.com/patternfly/patternfly-react/issues/2471)) ([5bbc4a2](https://github.com/patternfly/patternfly-react/commit/5bbc4a2))
+
+
+
+
+
 ## [2.9.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.9.26...@patternfly/react-inline-edit-extension@2.9.27) (2019-07-08)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension

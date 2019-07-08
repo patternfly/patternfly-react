@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.7.0...demo-app-ts@2.7.1) (2019-07-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 # [2.7.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.6.1...demo-app-ts@2.7.0) (2019-07-08)
 
 
