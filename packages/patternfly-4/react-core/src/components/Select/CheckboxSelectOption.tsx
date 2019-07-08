@@ -28,7 +28,6 @@ export interface CheckboxSelectOptionProps extends React.HTMLProps<HTMLLabelElem
 export class CheckboxSelectOption extends React.Component<CheckboxSelectOptionProps> {
   private ref = React.createRef<any>();
   static defaultProps = {
-    children: undefined as React.ReactNode,
     className: '',
     value: '',
     index: 0,
@@ -91,7 +90,7 @@ export class CheckboxSelectOption extends React.Component<CheckboxSelectOptionPr
               checked={isChecked || false}
               disabled={isDisabled}
             />
-            <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{children && children || value}</span>
+            <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{children || value}</span>
           </label>
         )}
       </SelectConsumer>
