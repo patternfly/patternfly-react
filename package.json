@@ -63,7 +63,6 @@
     "lerna": "^3.13.0",
     "minimist": "^1.2.0",
     "mutation-observer": "^1.0.3",
-    "node-sass": "^4.8.3",
     "plop": "^2.0.0",
     "prettier": "^1.16.1",
     "prettier-eslint": "^8.8.1",
@@ -83,11 +82,6 @@
     "sortabular": "^1.5.1",
     "table-resolver": "^3.2.0"
   },
-  "sassIncludes": {
-    "patternfly": "node_modules/patternfly/dist/sass",
-    "bootstrap": "node_modules/bootstrap-sass/assets/stylesheets",
-    "fontAwesome": "node_modules/font-awesome-sass/assets/stylesheets"
-  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "node scripts/incrementalBuild.js",
@@ -105,11 +99,11 @@
     "lint:style": "lerna run stylelint",
     "lint:ts": "lerna run lint:ts --parallel",
     "lint:versions": "lerna run lint:versions",
-    "prettier": "prettier --write 'storybook/**/*.js' 'packages/**/*.js' 'scripts/**/*.js'",
+    "prettier": "prettier --write \"storybook/**/*.js\" \"packages/**/*.js\" \"scripts/**/*.js\"",
     "start": "yarn start:pf3",
     "start:cypress": "lerna run cypress:open",
     "start:demo-app": "lerna run start:demo-app --stream",
-    "start:pf3": "concurrently 'yarn storybook' 'yarn storybook:openurl'",
+    "start:pf3": "concurrently \"yarn storybook\" \"yarn storybook:openurl\"",
     "start:pf4": "yarn build:pf4 && lerna run develop --parallel --stream",
     "storybook:openurl": "node ./storybook/openBrowser.js",
     "storybook": "start-storybook -c storybook -p 6006",
