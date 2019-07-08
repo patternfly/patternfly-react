@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.6.0...@patternfly/react-integration@2.7.0) (2019-07-08)
+
+
+### Features
+
+* **Split:** Convert split to typescript ([#2466](https://github.com/patternfly/patternfly-react/issues/2466)) ([a544f31](https://github.com/patternfly/patternfly-react/commit/a544f31))
+
+
+
+
+
 # [2.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.5.0...@patternfly/react-integration@2.6.0) (2019-07-08)
 
 
