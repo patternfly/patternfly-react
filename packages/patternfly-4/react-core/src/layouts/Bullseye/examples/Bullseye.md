@@ -3,6 +3,7 @@ title: 'Bullseye'
 cssPrefix: 'pf-l-bullseye'
 section: 'layouts'
 propComponents: ['Bullseye']
+typescript: true 
 ---
 
 import { Bullseye } from '@patternfly/react-core';

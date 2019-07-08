@@ -5,6 +5,11 @@ export class WizardDemo extends Component {
   state = {
     isOpen: false
   };
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     const steps: WizardStep[] = [
       { name: 'A', component: <p>Step 1</p> },

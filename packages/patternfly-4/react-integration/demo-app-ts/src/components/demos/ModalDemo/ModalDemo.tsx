@@ -49,6 +49,10 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     }));
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   renderModal() {
     const { isModalOpen } = this.state;
 

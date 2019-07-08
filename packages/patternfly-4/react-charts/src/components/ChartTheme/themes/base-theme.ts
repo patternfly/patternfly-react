@@ -1,36 +1,129 @@
 /* eslint-disable camelcase */
-import { global_FontFamily_sans_serif } from '@patternfly/react-tokens';
+import {
+  chart_global_FontFamily,
+  chart_global_letter_spacing,
+  chart_global_FontSize_sm,
+  chart_global_label_Padding,
+  chart_global_label_stroke,
+  chart_global_label_text_anchor,
+  chart_global_layout_Padding,
+  chart_global_layout_Height,
+  chart_global_layout_Width,
+  chart_global_stroke_line_cap,
+  chart_global_stroke_line_join,
+  chart_area_data_Fill,
+  chart_area_Opacity,
+  chart_area_stroke_Width,
+  chart_axis_axis_stroke_Width,
+  chart_axis_axis_stroke_Color,
+  chart_axis_axis_Fill,
+  chart_axis_axis_label_Padding,
+  chart_axis_axis_label_stroke_Color,
+  chart_axis_grid_Fill,
+  chart_axis_grid_PointerEvents,
+  chart_axis_tick_Fill,
+  chart_axis_tick_Width,
+  chart_axis_tick_label_Fill,
+  chart_bar_Width,
+  chart_bar_data_stroke,
+  chart_bar_data_Fill,
+  chart_bar_data_Padding,
+  chart_bar_data_stroke_Width,
+  chart_boxplot_max_Padding,
+  chart_boxplot_max_stroke_Color,
+  chart_boxplot_max_stroke_Width,
+  chart_boxplot_median_Padding,
+  chart_boxplot_median_stroke_Color,
+  chart_boxplot_median_stroke_Width,
+  chart_boxplot_min_Padding,
+  chart_boxplot_min_stroke_Width,
+  chart_boxplot_min_stroke_Color,
+  chart_boxplot_lower_quartile_Padding,
+  chart_boxplot_lower_quartile_Fill,
+  chart_boxplot_upper_quartile_Padding,
+  chart_boxplot_upper_quartile_Fill,
+  chart_boxplot_box_Width,
+  chart_candelstick_data_stroke_Width,
+  chart_candelstick_data_stroke_Color,
+  chart_candelstick_candle_positive_Color,
+  chart_candelstick_candle_negative_Color,
+  chart_errorbar_BorderWidth,
+  chart_errorbar_data_Fill,
+  chart_errorbar_data_Opacity,
+  chart_errorbar_data_stroke_Width,
+  chart_errorbar_data_stroke_Color,
+  chart_legend_gutter_Width,
+  chart_legend_orientation,
+  chart_legend_title_orientation,
+  chart_legend_data_type,
+  chart_legend_title_Padding,
+  chart_line_data_Fill,
+  chart_line_data_Opacity,
+  chart_line_data_stroke_Width,
+  chart_line_data_stroke_Color,
+  chart_pie_Padding,
+  chart_pie_data_Padding,
+  chart_pie_data_stroke_Width,
+  chart_pie_data_stroke_Color,
+  chart_pie_labels_Padding,
+  chart_pie_Height,
+  chart_pie_Width,
+  chart_scatter_data_stroke_Color,
+  chart_scatter_data_stroke_Width,
+  chart_scatter_data_Opacity,
+  chart_scatter_data_Fill,
+  chart_stack_data_stroke_Width,
+  chart_tooltip_corner_radius,
+  chart_tooltip_pointer_length,
+  chart_tooltip_flyoutStyle_corner_radius,
+  chart_tooltip_flyoutStyle_stroke_Width,
+  chart_tooltip_flyoutStyle_PointerEvents,
+  chart_tooltip_flyoutStyle_stroke_Color,
+  chart_tooltip_flyoutStyle_Fill,
+  chart_tooltip_pointer_Width,
+  chart_tooltip_Padding,
+  chart_tooltip_PointerEvents,
+  chart_voronoi_data_Fill,
+  chart_voronoi_data_stroke_Color,
+  chart_voronoi_data_stroke_Width,
+  chart_voronoi_labels_Padding,
+  chart_voronoi_labels_PointerEvents,
+  chart_voronoi_flyout_stroke_Width,
+  chart_voronoi_flyout_PointerEvents,
+  chart_voronoi_flyout_stroke_Color,
+  chart_voronoi_flyout_stroke_Fill,
+} from '@patternfly/react-tokens';
 
-// TODO Replace values with PF css variable when available
+// Note: Values must be in pixles
 
 // Typography
-const TYPOGRAPHY_FONT_FAMILY = global_FontFamily_sans_serif.value;
-const TYPOGRAPHY_LETTER_SPACING = 'normal';
-const TYPOGRAPHY_FONT_SIZE = 14; // Value must be in pixles
+const TYPOGRAPHY_FONT_FAMILY = chart_global_FontFamily.value;
+const TYPOGRAPHY_LETTER_SPACING = chart_global_letter_spacing.value;
+const TYPOGRAPHY_FONT_SIZE = chart_global_FontSize_sm.value;
 
 // Labels
 const LABEL_PROPS = {
   fontFamily: TYPOGRAPHY_FONT_FAMILY,
   fontSize: TYPOGRAPHY_FONT_SIZE,
   letterSpacing: TYPOGRAPHY_LETTER_SPACING,
-  padding: 10, // Value must be in pixles
-  stroke: 'transparent'
+  padding: chart_global_label_Padding.value,
+  stroke: chart_global_label_stroke.value
 };
 const LABEL_CENTERED_PROPS = {
   ...LABEL_PROPS,
-  textAnchor: 'middle'
+  textAnchor: chart_global_label_text_anchor.value
 };
 
 // Layout
 const LAYOUT_PROPS = {
-  padding: 50,
-  height: 300,
-  width: 450
+  padding: chart_global_layout_Padding.value,
+  height: chart_global_layout_Height.value,
+  width: chart_global_layout_Width.value
 };
 
 // Strokes
-const STROKE_LINE_CAP = 'round';
-const STROKE_LINE_JOIN = 'round';
+const STROKE_LINE_CAP = chart_global_stroke_line_cap.value;
+const STROKE_LINE_JOIN = chart_global_stroke_line_join.value;
 
 // Victory theme properties only
 export const BaseTheme = {
@@ -38,8 +131,9 @@ export const BaseTheme = {
     ...LAYOUT_PROPS,
     style: {
       data: {
-        fillOpacity: 0.4,
-        strokeWidth: 2
+        fill: chart_area_data_Fill.value,
+        fillOpacity: chart_area_Opacity.value,
+        strokeWidth: chart_area_stroke_Width.value
       },
       labels: LABEL_CENTERED_PROPS
     }
@@ -48,33 +142,47 @@ export const BaseTheme = {
     ...LAYOUT_PROPS,
     style: {
       axis: {
-        strokeWidth: 1,
+        fill: chart_axis_axis_Fill.value,
+        strokeWidth: chart_axis_axis_stroke_Width.value,
+        stroke: chart_axis_axis_stroke_Color.value,
         strokeLinecap: STROKE_LINE_CAP,
         strokeLinejoin: STROKE_LINE_JOIN
       },
       axisLabel: {
         ...LABEL_CENTERED_PROPS,
-        padding: 100
+        padding: chart_axis_axis_label_Padding.value,
+        stroke: chart_axis_axis_label_stroke_Color.value
       },
       grid: {
-        fill: 'none',
-        stroke: 'none', // Todo: Need to show for one axis only
-        pointerEvents: 'painted'
+        fill: chart_axis_grid_Fill.value,
+        stroke: 'none',
+        pointerEvents: chart_axis_grid_PointerEvents.value,
+        strokeLinecap: STROKE_LINE_CAP,
+        strokeLinejoin: STROKE_LINE_JOIN
       },
       ticks: {
-        fill: 'transparent',
-        size: 1,
-        stroke: 'transparent'
+        fill: chart_axis_tick_Fill.value,
+        size: 5, // chart_axis_tick_Width.value, // Todo: value should be 5
+        stroke: 'none',
+        strokeLinecap: STROKE_LINE_CAP,
+        strokeLinejoin: STROKE_LINE_JOIN,
+        strokeWidth: chart_axis_tick_Width.value
       },
-      tickLabels: LABEL_PROPS
+      tickLabels: {
+        ...LABEL_PROPS,
+        fill: chart_axis_tick_label_Fill.value
+      }
     }
   },
   bar: {
     ...LAYOUT_PROPS,
-    barWidth: 10,
+    barWidth: chart_bar_Width.value,
     style: {
       data: {
-        stroke: 'none'
+        fill: chart_bar_data_Fill.value,
+        padding: chart_bar_data_Padding.value,
+        stroke: chart_bar_data_stroke.value,
+        strokeWidth: chart_bar_data_stroke_Width.value
       },
       labels: LABEL_PROPS
     }
@@ -83,55 +191,62 @@ export const BaseTheme = {
     ...LAYOUT_PROPS,
     style: {
       max: {
-        padding: 8,
-        strokeWidth: 1
+        padding: chart_boxplot_max_Padding.value,
+        stroke: chart_boxplot_max_stroke_Color.value,
+        strokeWidth: chart_boxplot_max_stroke_Width.value
       },
       maxLabels: LABEL_PROPS,
       median: {
-        padding: 8,
-        strokeWidth: 1
+        padding: chart_boxplot_median_Padding.value,
+        stroke: chart_boxplot_median_stroke_Color.value,
+        strokeWidth: chart_boxplot_median_stroke_Width.value
       },
       medianLabels: LABEL_PROPS,
       min: {
-        padding: 8,
-        strokeWidth: 1
+        padding: chart_boxplot_min_Padding.value,
+        stroke: chart_boxplot_min_stroke_Color.value,
+        strokeWidth: chart_boxplot_min_stroke_Width.value
       },
       minLabels: LABEL_PROPS,
       q1: {
-        padding: 8
+        fill: chart_boxplot_lower_quartile_Fill.value,
+        padding: chart_boxplot_lower_quartile_Padding.value
       },
       q1Labels: LABEL_PROPS,
       q3: {
-        padding: 8
+        fill: chart_boxplot_upper_quartile_Fill.value,
+        padding: chart_boxplot_upper_quartile_Padding.value
       },
       q3Labels: LABEL_PROPS
     },
-    boxWidth: 20
+    boxWidth: chart_boxplot_box_Width.value
   },
   candlestick: {
     ...LAYOUT_PROPS,
+    candleColors: {
+      positive: chart_candelstick_candle_positive_Color.value,
+      negative: chart_candelstick_candle_negative_Color.value
+    },
     style: {
       data: {
-        strokeWidth: 1
+        stroke: chart_candelstick_data_stroke_Color.value,
+        strokeWidth: chart_candelstick_data_stroke_Width.value
       },
       labels: LABEL_CENTERED_PROPS
     }
   },
   chart: {
-    ...LAYOUT_PROPS,
-    style: {
-      parent: {
-        border: `1px solid`
-      }
-    }
+    ...LAYOUT_PROPS
   },
   errorbar: {
     ...LAYOUT_PROPS,
-    borderWidth: 8,
+    borderWidth: chart_errorbar_BorderWidth.value,
     style: {
       data: {
-        fill: 'transparent',
-        strokeWidth: 2
+        fill: chart_errorbar_data_Fill.value,
+        opacity: chart_errorbar_data_Opacity.value,
+        stroke: chart_errorbar_data_stroke_Color.value,
+        strokeWidth: chart_errorbar_data_stroke_Width.value
       },
       labels: LABEL_CENTERED_PROPS
     }
@@ -140,18 +255,18 @@ export const BaseTheme = {
     ...LAYOUT_PROPS
   },
   legend: {
-    gutter: 20,
-    orientation: 'horizontal',
-    titleOrientation: 'top',
+    gutter: chart_legend_gutter_Width.value,
+    orientation: chart_legend_orientation.value,
+    titleOrientation: chart_legend_title_orientation.value,
     style: {
       data: {
-        type: 'square'
+        type: chart_legend_data_type.value
       },
       labels: LABEL_PROPS,
       title: {
         ...LABEL_PROPS,
         fontSize: TYPOGRAPHY_FONT_SIZE,
-        padding: 2
+        padding: chart_legend_title_Padding.value
       }
     }
   },
@@ -159,34 +274,38 @@ export const BaseTheme = {
     ...LAYOUT_PROPS,
     style: {
       data: {
-        fill: 'transparent',
-        strokeWidth: 2
+        fill: chart_line_data_Fill.value,
+        opacity: chart_line_data_Opacity.value,
+        stroke: chart_line_data_stroke_Color.value,
+        strokeWidth: chart_line_data_stroke_Width.value
       },
       labels: LABEL_CENTERED_PROPS
     }
   },
   pie: {
-    padding: 8,
+    padding: chart_pie_Padding.value,
     style: {
       data: {
-        padding: 8,
-        // stroke: 'transparent',
-        strokeWidth: 1
+        padding: chart_pie_data_Padding.value,
+        stroke: chart_pie_data_stroke_Color.value,
+        strokeWidth: chart_pie_data_stroke_Width.value
       },
       labels: {
         ...LABEL_PROPS,
-        padding: 8
+        padding: chart_pie_labels_Padding.value
       }
     },
-    height: 230,
-    width: 230
+    height: chart_pie_Height.value,
+    width: chart_pie_Width.value
   },
   scatter: {
     ...LAYOUT_PROPS,
     style: {
       data: {
-        stroke: 'transparent',
-        strokeWidth: 0
+        fill: chart_scatter_data_Fill.value,
+        opacity: chart_scatter_data_Opacity.value,
+        stroke: chart_scatter_data_stroke_Color.value,
+        strokeWidth: chart_scatter_data_stroke_Width.value
       },
       labels: LABEL_CENTERED_PROPS
     }
@@ -195,42 +314,46 @@ export const BaseTheme = {
     ...LAYOUT_PROPS,
     style: {
       data: {
-        strokeWidth: 1
+        strokeWidth: chart_stack_data_stroke_Width.value
       }
     }
   },
   tooltip: {
-    cornerRadius: 0,
+    cornerRadius: chart_tooltip_corner_radius.value,
     flyoutStyle: {
-      cornerRadius: 0,
-      strokeWidth: 0,
-      pointerEvents: 'none'
+      cornerRadius: chart_tooltip_flyoutStyle_corner_radius.value,
+      fill: chart_tooltip_flyoutStyle_Fill.value,
+      pointerEvents: chart_tooltip_flyoutStyle_PointerEvents.value,
+      stroke: chart_tooltip_flyoutStyle_stroke_Color.value,
+      strokeWidth: chart_tooltip_flyoutStyle_stroke_Width.value
     },
-    pointerLength: 10,
-    pointerWidth: 20,
+    pointerLength: chart_tooltip_pointer_length.value,
+    pointerWidth: chart_tooltip_pointer_Width.value,
     style: {
       ...LABEL_CENTERED_PROPS,
-      padding: 16,
-      pointerEvents: 'none'
+      padding: chart_tooltip_Padding.value,
+      pointerEvents: chart_tooltip_PointerEvents.value
     }
   },
   voronoi: {
     ...LAYOUT_PROPS,
     style: {
       data: {
-        fill: 'transparent',
-        stroke: 'transparent',
-        strokeWidth: 0
+        fill: chart_voronoi_data_Fill.value,
+        stroke: chart_voronoi_data_stroke_Color.value,
+        strokeWidth: chart_voronoi_data_stroke_Width.value
       },
       labels: {
         ...LABEL_CENTERED_PROPS,
-        padding: 8,
-        pointerEvents: 'none'
+        padding: chart_voronoi_labels_Padding.value,
+        pointerEvents: chart_voronoi_labels_PointerEvents.value
       },
       // Note: These properties override tooltip
       flyout: {
-        strokeWidth: 1,
-        pointerEvents: 'none'
+        fill: chart_voronoi_flyout_stroke_Fill.value,
+        pointerEvents: chart_voronoi_flyout_PointerEvents.value,
+        stroke: chart_voronoi_flyout_stroke_Color.value,
+        strokeWidth: chart_voronoi_flyout_stroke_Width.value,
       }
     }
   }

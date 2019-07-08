@@ -3,6 +3,90 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.62.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.62.0...@patternfly/react-core@3.62.1) (2019-07-06)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.62.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.61.1...@patternfly/react-core@3.62.0) (2019-07-05)
+
+
+### Features
+
+* **Gallery:** Convert gallery to typescript ([#2432](https://github.com/patternfly/patternfly-react/issues/2432)) ([f351fd0](https://github.com/patternfly/patternfly-react/commit/f351fd0))
+
+
+
+
+
+## [3.61.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.61.0...@patternfly/react-core@3.61.1) (2019-07-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.61.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.60.0...@patternfly/react-core@3.61.0) (2019-07-05)
+
+
+### Features
+
+* **Bullseye:** Convert bullseye to typescript ([#2427](https://github.com/patternfly/patternfly-react/issues/2427)) ([2515be5](https://github.com/patternfly/patternfly-react/commit/2515be5))
+
+
+
+
+
+# [3.60.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.5...@patternfly/react-core@3.60.0) (2019-07-05)
+
+
+### Features
+
+* **Stack:** Convert stack to typescript ([#2412](https://github.com/patternfly/patternfly-react/issues/2412)) ([a1c34b6](https://github.com/patternfly/patternfly-react/commit/a1c34b6))
+
+
+
+
+
+## [3.59.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.4...@patternfly/react-core@3.59.5) (2019-07-05)
+
+
+### Bug Fixes
+
+* **select:** removed ariaLabel from grouped checkbox select ([#2456](https://github.com/patternfly/patternfly-react/issues/2456)) ([415a462](https://github.com/patternfly/patternfly-react/commit/415a462))
+
+
+
+
+
+## [3.59.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.3...@patternfly/react-core@3.59.4) (2019-07-03)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.59.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.2...@patternfly/react-core@3.59.3) (2019-07-03)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.59.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.1...@patternfly/react-core@3.59.2) (2019-07-02)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [3.59.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.59.0...@patternfly/react-core@3.59.1) (2019-07-02)
 
 

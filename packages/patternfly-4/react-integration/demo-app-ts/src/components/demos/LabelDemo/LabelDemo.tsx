@@ -6,6 +6,10 @@ export class LabelDemo extends Component {
    children: "Compact label"
  }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
  render() {
    return (
      <React.Fragment>

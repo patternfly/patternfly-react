@@ -10,6 +10,10 @@ export class AccordionDemo extends React.Component<null, AccordionDemoState> {
     expanded: null
   };
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   onToggle = (id: string) => {
     const { expanded } = this.state;
     this.setState({ expanded: id !== expanded ? id : null });
