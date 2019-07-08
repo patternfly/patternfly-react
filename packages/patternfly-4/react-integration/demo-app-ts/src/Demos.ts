@@ -418,6 +418,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TitleDemo
   },
   {
+    id: 'toolbar-demo', 
+    name: 'Toolbar Demo', 
+    componentType: Examples.ToolbarDemo
+  },
+  {
     id: 'tooltip-demo',
     name: 'Tooltip Demo',
     componentType: Examples.TooltipDemo
