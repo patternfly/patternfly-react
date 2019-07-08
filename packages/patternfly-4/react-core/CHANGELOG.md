@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.67.0...@patternfly/react-core@3.67.1) (2019-07-08)
+
+
+### Bug Fixes
+
+* **Dropdown:** Provide option to not autofocus on first item ([#2473](https://github.com/patternfly/patternfly-react/issues/2473)) ([f094b2d](https://github.com/patternfly/patternfly-react/commit/f094b2d))
+
+
+
+
+
 # [3.67.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.66.1...@patternfly/react-core@3.67.0) (2019-07-08)
 
 
