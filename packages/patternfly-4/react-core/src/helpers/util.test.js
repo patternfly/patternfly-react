@@ -88,7 +88,6 @@ test('sideElementIsOutOfView Returns NONE when in view', () => {
   expect(sideElementIsOutOfView(container, element)).toBe(SIDE.NONE);
 });
 
-// eslint-disable-next-line jest/no-disabled-tests
 describe('keyHandler works on ApplicationLauncher', () => {
   document.body.innerHTML = '<!doctype html><html><body></body></html>';
   const dropdownItems = [
