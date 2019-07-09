@@ -149,7 +149,6 @@ describe('keyHandler works on ApplicationLauncher', () => {
   });
 });
 
-// eslint-disable-next-line jest/no-disabled-tests
 describe('keyHandler works on Dropdown', () => {
   document.body.innerHTML = '<!doctype html><html><body></body></html>';
   const dropdownItems = [
