@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.14...@patternfly/react-charts@4.4.15) (2019-07-09)
+
+
+### Bug Fixes
+
+* **charts:** update pf-core vars ([#2480](https://github.com/patternfly/patternfly-react/issues/2480)) ([6c36ec7](https://github.com/patternfly/patternfly-react/commit/6c36ec7))
+
+
+
+
+
 ## [4.4.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.13...@patternfly/react-charts@4.4.14) (2019-07-08)
 
 
