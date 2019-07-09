@@ -22,3 +22,5 @@ export function getCSSClasses(cssString: string): string[];
 export function getInsertedStyles(): string[];
 
 export function getClassName(obj: StyleDeclarationStatic | string): string;
+
+export function pickProperties(object: any, properties: string[]): any;
