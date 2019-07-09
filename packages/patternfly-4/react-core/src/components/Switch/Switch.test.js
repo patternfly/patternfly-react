@@ -49,11 +49,7 @@ test('switch is not checked and disabled', () => {
 });
 
 test('switch passes value and event to onChange handler', () => {
-  const newValue = true;
-  const event = {
-    currentTarget: { checked: newValue }
-  };
   const view = mount(<Switch id="onChange-switch" {...props} />);
-  view.find('input').simulate('change', event);
-  expect(view).toMatchSnapshot();
+  view.find('input').simulate('change', { target: { checked: true } });
+  expect(view.find('input').prop('checked')).toBe(true);
 });
