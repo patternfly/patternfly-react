@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.67.2...@patternfly/react-core@3.67.3) (2019-07-09)
+
+
+### Bug Fixes
+
+* **unit tests:** tests now pass in util.test.js ([#2489](https://github.com/patternfly/patternfly-react/issues/2489)) ([86981f6](https://github.com/patternfly/patternfly-react/commit/86981f6))
+
+
+
+
+
 ## [3.67.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.67.1...@patternfly/react-core@3.67.2) (2019-07-09)
 
 **Note:** Version bump only for package @patternfly/react-core
