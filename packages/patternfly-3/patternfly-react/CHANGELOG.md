@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.5](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.4...patternfly-react@2.36.5) (2019-07-09)
+
+
+### Bug Fixes
+
+* **BreadCrumbSwitcher:** Fix Autocomplete camelCase ([#2457](https://github.com/patternfly/patternfly-react/issues/2457)) ([eb3e23a](https://github.com/patternfly/patternfly-react/commit/eb3e23a))
+
+
+
+
+
 ## [2.36.4](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.3...patternfly-react@2.36.4) (2019-07-08)
 
 

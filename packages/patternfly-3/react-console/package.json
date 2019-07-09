@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-console",
-  "version": "1.11.4",
+  "version": "1.11.5",
   "private": false,
   "description": "This library provides a set of Console React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
@@ -54,7 +54,7 @@
     "babel-preset-react": "^6.24.1",
     "node-sass": "^4.12.0",
     "patternfly": "^3.58.0",
-    "patternfly-react": "^2.36.4",
+    "patternfly-react": "^2.36.5",
     "rimraf": "^2.6.2",
     "shx": "^0.3.2"
   },
