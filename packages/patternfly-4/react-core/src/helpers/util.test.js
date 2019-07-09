@@ -224,7 +224,8 @@ describe('keyHandler works on Dropdown', () => {
       which: KEY_CODES.ARROW_UP
     });
     focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('second');  });
+    expect(focusedElement.getAttribute('id')).toEqual('second');
+  });
 });
 
 test('fillTemplate interpolates strings correctly', () => {
