@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.5.1...@patternfly/react-styles@3.5.2) (2019-07-09)
+
+
+### Bug Fixes
+
+* **styles:** Add pickProperties to react-styles utils exports ([#2481](https://github.com/patternfly/patternfly-react/issues/2481)) ([c32d9a8](https://github.com/patternfly/patternfly-react/commit/c32d9a8))
+
+
+
+
+
 ## [3.5.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.5.0...@patternfly/react-styles@3.5.1) (2019-07-08)
 
 
