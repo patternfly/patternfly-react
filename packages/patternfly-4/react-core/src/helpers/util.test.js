@@ -120,39 +120,32 @@ describe('keyHandler works on ApplicationLauncher', () => {
   });
 
   test('keyHandler regresses backward', () => {
-    let focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('second');
-
     secondDropdownItem.simulate('keydown', {
       key: 'ArrowUp',
       keyCode: KEY_CODES.ARROW_UP,
       which: KEY_CODES.ARROW_UP
     });
-    focusedElement = document.activeElement;
+    const focusedElement = document.activeElement;
     expect(focusedElement.getAttribute('id')).toEqual('first');
   });
 
   test('keyHandler skips disabled items and loops down to top', () => {
-    let focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('first');
     secondDropdownItem.simulate('keydown', {
       key: 'ArrowDown',
       keyCode: KEY_CODES.ARROW_DOWN,
       which: KEY_CODES.ARROW_DOWN
     });
-    focusedElement = document.activeElement;
+    const focusedElement = document.activeElement;
     expect(focusedElement.getAttribute('id')).toEqual('first');
   });
 
   test('keyHandler loops top to bottom', () => {
-    let focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('first');
     firstDropdownItem.simulate('keydown', {
       key: 'ArrowUp',
       keyCode: KEY_CODES.ARROW_UP,
       which: KEY_CODES.ARROW_UP
     });
-    focusedElement = document.activeElement;
+    const focusedElement = document.activeElement;
     expect(focusedElement.getAttribute('id')).toEqual('second');
   });
 });
@@ -191,39 +184,32 @@ describe('keyHandler works on Dropdown', () => {
   });
 
   test('keyHandler regresses backward', () => {
-    let focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('second');
-
     secondDropdownItem.simulate('keydown', {
       key: 'ArrowUp',
       keyCode: KEY_CODES.ARROW_UP,
       which: KEY_CODES.ARROW_UP
     });
-    focusedElement = document.activeElement;
+    const focusedElement = document.activeElement;
     expect(focusedElement.getAttribute('id')).toEqual('first');
   });
 
   test('keyHandler skips disabled items and loops down to top', () => {
-    let focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('first');
     secondDropdownItem.simulate('keydown', {
       key: 'ArrowDown',
       keyCode: KEY_CODES.ARROW_DOWN,
       which: KEY_CODES.ARROW_DOWN
     });
-    focusedElement = document.activeElement;
+    const focusedElement = document.activeElement;
     expect(focusedElement.getAttribute('id')).toEqual('first');
   });
 
   test('keyHandler loops top to bottom', () => {
-    let focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('first');
     firstDropdownItem.simulate('keydown', {
       key: 'ArrowUp',
       keyCode: KEY_CODES.ARROW_UP,
       which: KEY_CODES.ARROW_UP
     });
-    focusedElement = document.activeElement;
+    const focusedElement = document.activeElement;
     expect(focusedElement.getAttribute('id')).toEqual('second');
   });
 });
