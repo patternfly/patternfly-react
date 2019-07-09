@@ -88,18 +88,16 @@ test('sideElementIsOutOfView Returns NONE when in view', () => {
   expect(sideElementIsOutOfView(container, element)).toBe(SIDE.NONE);
 });
 
-// TODO: Fix keyHandler Tests!!!
-// eslint-disable-next-line jest/no-disabled-tests
-xdescribe('keyHandler works on ApplicationLauncher', () => {
+describe('keyHandler works on ApplicationLauncher', () => {
   document.body.innerHTML = '<!doctype html><html><body></body></html>';
   const dropdownItems = [
-    <DropdownItem key="link" id="first">
-      Link
+    <DropdownItem key=" 1" id="first" component="button">
+      Action 1
     </DropdownItem>,
-    <DropdownItem key="action" id="second" component="button">
-      Action
+    <DropdownItem key="2" id="second" component="button">
+      Action 2
     </DropdownItem>,
-    <DropdownItem key="disabled link" id="third" isDisabled>
+    <DropdownItem key="3" id="third" component="button" isDisabled>
       Disabled Link
     </DropdownItem>
   ];
@@ -107,8 +105,8 @@ xdescribe('keyHandler works on ApplicationLauncher', () => {
     attachTo: document.getElementsByName('div')[0]
   });
 
-  const firstDropdownItem = view.find('#first').first();
-  const secondDropdownItem = view.find('#second').first();
+  const firstDropdownItem = view.find('#first button').first();
+  const secondDropdownItem = view.find('#second button').first();
 
   test('keyHandler advances forward', () => {
     firstDropdownItem.simulate('keydown', {
@@ -116,13 +114,18 @@ xdescribe('keyHandler works on ApplicationLauncher', () => {
       keyCode: KEY_CODES.ARROW_DOWN,
       which: KEY_CODES.ARROW_DOWN
     });
-    const focusElement = view.find(':focus').first();
-    expect(secondDropdownItem === focusElement).toBe(true);
+    const focusedElement = document.activeElement;
+    expect(focusedElement.getAttribute('id')).toEqual('second');
   });
 
   test('keyHandler regresses backward', () => {
-    secondDropdownItem.simulate('keydown', { key: 'ArrowUp', keyCode: KEY_CODES.ARROW_UP, which: KEY_CODES.ARROW_UP });
-    expect(firstDropdownItem === document.activeElement).toBe(true);
+    secondDropdownItem.simulate('keydown', {
+      key: 'ArrowUp',
+      keyCode: KEY_CODES.ARROW_UP,
+      which: KEY_CODES.ARROW_UP
+    });
+    const focusedElement = document.activeElement;
+    expect(focusedElement.getAttribute('id')).toEqual('first');
   });
 
   test('keyHandler skips disabled items and loops down to top', () => {
@@ -131,27 +134,31 @@ xdescribe('keyHandler works on ApplicationLauncher', () => {
       keyCode: KEY_CODES.ARROW_DOWN,
       which: KEY_CODES.ARROW_DOWN
     });
-    expect(firstDropdownItem === document.activeElement).toBe(true);
+    const focusedElement = document.activeElement;
+    expect(focusedElement.getAttribute('id')).toEqual('first');
   });
 
   test('keyHandler loops top to bottom', () => {
-    firstDropdownItem.simulate('keydown', { key: 'ArrowUp', keyCode: KEY_CODES.ARROW_UP, which: KEY_CODES.ARROW_UP });
-    expect(secondDropdownItem === document.activeElement).toBe(true);
+    firstDropdownItem.simulate('keydown', {
+      key: 'ArrowUp',
+      keyCode: KEY_CODES.ARROW_UP,
+      which: KEY_CODES.ARROW_UP
+    });
+    const focusedElement = document.activeElement;
+    expect(focusedElement.getAttribute('id')).toEqual('second');
   });
 });
 
-// TODO: Fix keyHandler Tests!!!
-// eslint-disable-next-line jest/no-disabled-tests
-xdescribe('keyHandler works on Dropdown', () => {
+describe('keyHandler works on Dropdown', () => {
   document.body.innerHTML = '<!doctype html><html><body></body></html>';
   const dropdownItems = [
-    <DropdownItem key="link" id="first">
-      Link
+    <DropdownItem key=" 1" id="first" component="button">
+      Action 1
     </DropdownItem>,
-    <DropdownItem key="action" id="second" component="button">
-      Action
+    <DropdownItem key="2" id="second" component="button">
+      Action 2
     </DropdownItem>,
-    <DropdownItem key="disabled link" id="third" isDisabled>
+    <DropdownItem key="3" id="third" component="button" isDisabled>
       Disabled Link
     </DropdownItem>
   ];
@@ -161,8 +168,8 @@ xdescribe('keyHandler works on Dropdown', () => {
       attachTo: document.getElementsByName('div')[0]
     }
   );
-  const firstDropdownItem = view.find('#first').first();
-  const secondDropdownItem = view.find('#second').first();
+  const firstDropdownItem = view.find('#first button').first();
+  const secondDropdownItem = view.find('#second button').first();
 
   test('keyHandler advances forward', () => {
     firstDropdownItem.simulate('keydown', {
@@ -170,12 +177,18 @@ xdescribe('keyHandler works on Dropdown', () => {
       keyCode: KEY_CODES.ARROW_DOWN,
       which: KEY_CODES.ARROW_DOWN
     });
-    expect(secondDropdownItem === document.activeElement).toBe(true);
+    const focusedElement = document.activeElement;
+    expect(focusedElement.getAttribute('id')).toEqual('second');
   });
 
   test('keyHandler regresses backward', () => {
-    secondDropdownItem.simulate('keydown', { key: 'ArrowUp', keyCode: KEY_CODES.ARROW_UP, which: KEY_CODES.ARROW_UP });
-    expect(firstDropdownItem === document.activeElement).toBe(true);
+    secondDropdownItem.simulate('keydown', {
+      key: 'ArrowUp',
+      keyCode: KEY_CODES.ARROW_UP,
+      which: KEY_CODES.ARROW_UP
+    });
+    const focusedElement = document.activeElement;
+    expect(focusedElement.getAttribute('id')).toEqual('first');
   });
 
   test('keyHandler skips disabled items and loops down to top', () => {
@@ -184,12 +197,18 @@ xdescribe('keyHandler works on Dropdown', () => {
       keyCode: KEY_CODES.ARROW_DOWN,
       which: KEY_CODES.ARROW_DOWN
     });
-    expect(firstDropdownItem === document.activeElement).toBe(true);
+    const focusedElement = document.activeElement;
+    expect(focusedElement.getAttribute('id')).toEqual('first');
   });
 
   test('keyHandler loops top to bottom', () => {
-    firstDropdownItem.simulate('keydown', { key: 'ArrowUp', keyCode: KEY_CODES.ARROW_UP, which: KEY_CODES.ARROW_UP });
-    expect(secondDropdownItem === document.activeElement).toBe(true);
+    firstDropdownItem.simulate('keydown', {
+      key: 'ArrowUp',
+      keyCode: KEY_CODES.ARROW_UP,
+      which: KEY_CODES.ARROW_UP
+    });
+    const focusedElement = document.activeElement;
+    expect(focusedElement.getAttribute('id')).toEqual('second');
   });
 });
 
