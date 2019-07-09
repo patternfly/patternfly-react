@@ -5,7 +5,7 @@ import { Title, TitleSize, TitleLevel } from '.';
 Object.values(TitleSize).forEach(size => {
   test(`${size} Title`, () => {
     const view = shallow(
-      <Title size={size as 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl'} headingLevel={TitleLevel.h1}>
+      <Title size={size} headingLevel={TitleLevel.h1}>
         {size} Title
       </Title>
     );

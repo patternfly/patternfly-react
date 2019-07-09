@@ -15,7 +15,7 @@ export enum TitleLevel {
 
 export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 'size' | 'className'> {
   /** the size of the Title  */
-  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | keyof typeof BaseSizes;
+  size: keyof typeof BaseSizes;
   /** content rendered inside the Title */
   children?: React.ReactNode;
   /** Additional classes added to the Title */
