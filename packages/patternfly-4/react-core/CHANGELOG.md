@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.69.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.68.0...@patternfly/react-core@3.69.0) (2019-07-10)
+
+
+### Features
+
+* **Tabs:** Allow eventKey to accept a string ([#2493](https://github.com/patternfly/patternfly-react/issues/2493)) ([1bde27c](https://github.com/patternfly/patternfly-react/commit/1bde27c)), closes [#1446](https://github.com/patternfly/patternfly-react/issues/1446)
+
+
+
+
+
 # [3.68.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.67.4...@patternfly/react-core@3.68.0) (2019-07-10)
 
 

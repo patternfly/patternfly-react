@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.10.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.9.0...demo-app-ts@2.10.0) (2019-07-10)
+
+
+### Features
+
+* **Tabs:** Allow eventKey to accept a string ([#2493](https://github.com/patternfly/patternfly-react/issues/2493)) ([1bde27c](https://github.com/patternfly/patternfly-react/commit/1bde27c)), closes [#1446](https://github.com/patternfly/patternfly-react/issues/1446)
+
+
+
+
+
 # [2.9.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.8.4...demo-app-ts@2.9.0) (2019-07-10)
 
 
