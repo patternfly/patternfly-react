@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.8.0...@patternfly/react-integration@2.9.0) (2019-07-10)
+
+
+### Features
+
+* **Grid:** Convert grid to typescript ([#2443](https://github.com/patternfly/patternfly-react/issues/2443)) ([d4f8231](https://github.com/patternfly/patternfly-react/commit/d4f8231))
+
+
+
+
+
 # [2.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.7.0...@patternfly/react-integration@2.8.0) (2019-07-08)
 
 

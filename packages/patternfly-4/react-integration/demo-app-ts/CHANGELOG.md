@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.8.4...demo-app-ts@2.9.0) (2019-07-10)
+
+
+### Features
+
+* **Grid:** Convert grid to typescript ([#2443](https://github.com/patternfly/patternfly-react/issues/2443)) ([d4f8231](https://github.com/patternfly/patternfly-react/commit/d4f8231))
+
+
+
+
+
 ## [2.8.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.8.3...demo-app-ts@2.8.4) (2019-07-10)
 
 **Note:** Version bump only for package demo-app-ts
