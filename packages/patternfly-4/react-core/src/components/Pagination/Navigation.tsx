@@ -77,12 +77,12 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     return inputPage;
   }
 
-  onChange(event: React.ChangeEvent<HTMLInputElement>, lastPage: number): void {
+  private onChange(event: React.ChangeEvent<HTMLInputElement>, lastPage: number): void {
     const inputPage = this.parseInteger(event.target.value, lastPage);
     this.setState({ userInputPage: Number.isNaN(inputPage as number) ? event.target.value : inputPage });
   }
 
-  onKeyDown(event: React.KeyboardEvent<HTMLInputElement>, page: number | string, lastPage: number, onPageInput: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void, onSetPage: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void): void {
+  private onKeyDown(event: React.KeyboardEvent<HTMLInputElement>, page: number | string, lastPage: number, onPageInput: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void, onSetPage: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void): void {
     if (event.keyCode === KEY_CODES.ENTER) {
       const inputPage = this.parseInteger(this.state.userInputPage, lastPage) as number;
       onPageInput(event, Number.isNaN(inputPage) ? page as number : inputPage);
