@@ -76,6 +76,7 @@ export * from './StackChartDemo/StackColorZoomDemo'
 export * from './StackDemo/StackDemo'; 
 export * from './SwitchDemo/SwitchDemo';
 export * from './TabsDemo/TabsDemo';
+export * from './TabsDemo/TabsStringEventKeyDemo';
 export * from './TextAreaDemo/TextAreaDemo';
 export * from './TextDemo/TextDemo';
 export * from './TextInputDemo/TextInputDemo';

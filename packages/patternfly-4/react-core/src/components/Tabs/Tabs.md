@@ -340,6 +340,7 @@ class SeparateTabContent extends React.Component {
   render() {
     return (
       <React.Fragment>
+      <div id
         <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
           <Tab eventKey={0} title="Tab item 1" tabContentId="refTab1Section" tabContentRef={this.contentRef1} />
           <Tab eventKey={1} title="Tab item 2" tabContentId="refTab2Section" tabContentRef={this.contentRef2} />

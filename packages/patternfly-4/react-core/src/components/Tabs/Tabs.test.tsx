@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { Tabs } from './Tabs';
 import { Tab } from './Tab';
+import { TabContent } from './TabContent';
 
 test('should render simple tabs', () => {
   const view = shallow(
@@ -140,3 +141,21 @@ test('should call handleScrollButtons tabs with scrolls', () => {
   view.simulate('scroll');
   expect(view).toMatchSnapshot();
 });
+
+test('should render tabs with eventKey Strings', () => {
+  const view = shallow(
+    <Tabs id="simpleTabs">
+      <Tab id="tab1" eventKey={'one'} title="Tab item 1">
+        Tab 1 section
+      </Tab>
+      <Tab id="tab2" eventKey={'two'} title="Tab item 2">
+        Tab 2 section
+      </Tab>
+      <Tab id="tab3" eventKey={'three'} title="Tab item 3">
+        Tab 3 section
+      </Tab>
+    </Tabs>
+  );
+  expect(view).toMatchSnapshot();
+});
+
