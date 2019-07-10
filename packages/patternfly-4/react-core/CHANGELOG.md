@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.67.3...@patternfly/react-core@3.67.4) (2019-07-10)
+
+
+### Bug Fixes
+
+* **ApplicationLauncher:** Allow custom icon for application launcher toggle ([#2492](https://github.com/patternfly/patternfly-react/issues/2492)) ([9cdc85d](https://github.com/patternfly/patternfly-react/commit/9cdc85d))
+
+
+
+
+
 ## [3.67.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.67.2...@patternfly/react-core@3.67.3) (2019-07-09)
 
 
