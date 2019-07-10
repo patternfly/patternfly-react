@@ -489,8 +489,8 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     if (!subTitle || subTitlePosition === ChartDonutSubTitlePosition.center) {
       return null;
     }
-    const subTitleProps = titleComponent.props ? titleComponent.props : {};
-    return React.cloneElement(titleComponent, {
+    const subTitleProps = subTitleComponent.props ? subTitleComponent.props : {};
+    return React.cloneElement(subTitleComponent, {
       style: ChartDonutStyles.label.subTitle,
       text: subTitle,
       textAnchor: subTitlePosition === 'right' ? 'start' : 'middle',
