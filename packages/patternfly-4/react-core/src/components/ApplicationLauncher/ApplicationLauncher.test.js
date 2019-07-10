@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { HelpIcon } from '@patternfly/react-icons';
 import { ApplicationLauncher } from './ApplicationLauncher';
 import DropdownItem from '../Dropdown/DropdownItem';
 
@@ -53,6 +54,13 @@ describe('ApplicationLauncher', () => {
 
   test('expanded', () => {
     const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} isOpen />);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('custom icon', () => {
+    const view = mount(
+      <ApplicationLauncher dropdownItems={dropdownItems} isOpen toggleIcon={<HelpIcon id="test-icon" />} />
+    );
     expect(view).toMatchSnapshot();
   });
 });
