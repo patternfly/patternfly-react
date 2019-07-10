@@ -403,6 +403,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabDemo
   },
   {
+    id: 'tab-string-event-key-demo',
+    name: 'Tab String Event Key Demo',
+    componentType: Examples.TabsStringEventKeyDemo
+  },
+  {
     id: 'text-area',
     name: 'Text Area Demo',
     componentType: Examples.TextAreaDemo

@@ -19,9 +19,9 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** additional classes added to the Tabs */
   className?: string;
   /** the index of the active tab */
-  activeKey?: number;
+  activeKey?: number | string;
   /** handle tab selection */
-  onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number) => void;
+  onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
   /** uniquely identifies the Tabs */
   id?: string;
   /** enables the filled tab list layout */
