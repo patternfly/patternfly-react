@@ -30,7 +30,7 @@ import { getPaddingForSide } from '../ChartUtils/chart-padding';
  */
 export interface ChartProps extends VictoryChartProps {
   /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-area/
+   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-chart/
    */
   ' '?: any;
   /**

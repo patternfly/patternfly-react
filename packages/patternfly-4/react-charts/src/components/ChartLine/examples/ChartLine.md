@@ -5,11 +5,11 @@ typescript: true
 propComponents: ['Chart', 'ChartAxis', 'ChartGroup', 'ChartLegend', 'ChartLine']
 ---
 
-import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartTooltip, ChartThemeVariant } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory';
 import './chart-line.scss';
 
-## Simple line chart with right-aligned legend
+## Simple line chart with tooltip and right-aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine } from '@patternfly/react-charts';
@@ -17,6 +17,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLine } from '@patternfly/react-chart
 <div>
   <div className="line-chart-legend-right">
     <Chart
+      containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
       legendData={[{ name: 'Cats' }]}
       legendOrientation="vertical"
       legendPosition="right"
@@ -118,7 +119,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patte
 ## Multi-color line chart with x-axis zoom and bottom-aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
+import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory';
 
 <div>

@@ -8,7 +8,7 @@ propComponents: ['Chart', 'ChartBar', 'ChartGroup']
 import { Chart, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 import './chart-bar.scss';
 
-## Simple bar chart with right-aligned legend
+## Simple bar chart with tooltip and right-aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartBar } from '@patternfly/react-charts';
@@ -16,6 +16,7 @@ import { Chart, ChartBar } from '@patternfly/react-charts';
 <div>
   <div className="bar-chart-legend-right">
     <Chart
+      containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} voronoiDimension="x" />}
       domain={{y: [0,9]}}
       domainPadding={{ x: [30, 25] }}
       legendData={[{ name: 'Cats' }]}
@@ -39,12 +40,12 @@ import { Chart, ChartBar } from '@patternfly/react-charts';
 ## Purple bar chart with tooltip and right-aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div>
   <div className="bar-chart-legend-right">
     <Chart
-      containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
+      containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} voronoiDimension="x" />}
       domainPadding={{ x: [30, 25] }}
       legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }, { name: 'Mice' }]}
       legendOrientation="vertical"
@@ -88,7 +89,7 @@ import { Chart, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-
       padding={{
         bottom: 75, // Adjusted to accomodate legend
         left: 50,
-        right: 50,
+        right: 100, // Adjusted to accomodate tooltip
         top: 50
       }}
       themeColor={ChartThemeColor.multi}

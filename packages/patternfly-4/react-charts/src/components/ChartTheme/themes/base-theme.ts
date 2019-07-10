@@ -3,6 +3,7 @@ import {
   chart_global_FontFamily,
   chart_global_letter_spacing,
   chart_global_FontSize_sm,
+  chart_global_label_Fill,
   chart_global_label_Padding,
   chart_global_label_stroke,
   chart_global_label_text_anchor,
@@ -76,6 +77,7 @@ import {
   chart_stack_data_stroke_Width,
   chart_tooltip_corner_radius,
   chart_tooltip_pointer_length,
+  chart_tooltip_Fill,
   chart_tooltip_flyoutStyle_corner_radius,
   chart_tooltip_flyoutStyle_stroke_Width,
   chart_tooltip_flyoutStyle_PointerEvents,
@@ -87,6 +89,7 @@ import {
   chart_voronoi_data_Fill,
   chart_voronoi_data_stroke_Color,
   chart_voronoi_data_stroke_Width,
+  chart_voronoi_labels_Fill,
   chart_voronoi_labels_Padding,
   chart_voronoi_labels_PointerEvents,
   chart_voronoi_flyout_stroke_Width,
@@ -134,6 +137,7 @@ export const BaseTheme = {
       data: {
         fill: chart_area_data_Fill.value,
         fillOpacity: chart_area_Opacity.value,
+        stroke: chart_global_label_stroke.value,
         strokeWidth: chart_area_stroke_Width.value
       },
       labels: LABEL_CENTERED_PROPS
@@ -323,15 +327,15 @@ export const BaseTheme = {
     cornerRadius: chart_tooltip_corner_radius.value,
     flyoutStyle: {
       cornerRadius: chart_tooltip_flyoutStyle_corner_radius.value,
-      fill: chart_tooltip_flyoutStyle_Fill.value,
+      fill: chart_tooltip_flyoutStyle_Fill.value, // background
       pointerEvents: chart_tooltip_flyoutStyle_PointerEvents.value,
-      stroke: chart_tooltip_flyoutStyle_stroke_Color.value,
+      stroke: chart_tooltip_flyoutStyle_stroke_Color.value, // border
       strokeWidth: chart_tooltip_flyoutStyle_stroke_Width.value
     },
     pointerLength: chart_tooltip_pointer_length.value,
     pointerWidth: chart_tooltip_pointer_Width.value,
     style: {
-      ...LABEL_CENTERED_PROPS,
+      fill: chart_tooltip_Fill.value, // text
       padding: chart_tooltip_Padding.value,
       pointerEvents: chart_tooltip_PointerEvents.value
     }
@@ -346,14 +350,15 @@ export const BaseTheme = {
       },
       labels: {
         ...LABEL_CENTERED_PROPS,
+        fill: chart_voronoi_labels_Fill.value, // text
         padding: chart_voronoi_labels_Padding.value,
         pointerEvents: chart_voronoi_labels_PointerEvents.value
       },
       // Note: These properties override tooltip
       flyout: {
-        fill: chart_voronoi_flyout_stroke_Fill.value,
+        fill: chart_voronoi_flyout_stroke_Fill.value, // background
         pointerEvents: chart_voronoi_flyout_PointerEvents.value,
-        stroke: chart_voronoi_flyout_stroke_Color.value,
+        stroke: chart_voronoi_flyout_stroke_Color.value, // border
         strokeWidth: chart_voronoi_flyout_stroke_Width.value,
       }
     }
