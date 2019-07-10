@@ -14,7 +14,7 @@ export const EmptyStateBody: React.FunctionComponent<EmptyStateBodyProps> = ({
   className = '',
   ...props
 }: EmptyStateBodyProps) => (
-  <p className={css(styles.emptyStateBody, className)} {...props}>
+  <div className={css(styles.emptyStateBody, className)} {...props}>
     {children}
-  </p>
+  </div>
 );
