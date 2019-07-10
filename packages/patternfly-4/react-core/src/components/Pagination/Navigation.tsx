@@ -26,7 +26,7 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   /** Accessible label for the pagination component */
   paginationTitle?: string;
   /** The number of the current page */
-  page: number | React.ReactText;
+  page: React.ReactText;
   /** Function called when user sets page */
   onSetPage: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks to navigate to next page */
@@ -42,7 +42,7 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
 }
 
 export interface NavigationState {
-  userInputPage?: React.ReactText | number;
+  userInputPage?: React.ReactText;
 }
 
 export class Navigation extends React.Component<NavigationProps, NavigationState> {
@@ -68,7 +68,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     onPageInput: () => undefined as any,
   };
 
-  private parseInteger(input: React.ReactText, lastPage: number): number | string {
+  private static parseInteger(input: React.ReactText, lastPage: number): number {
     let inputPage = Number.parseInt(input as string, 10);
     if (!Number.isNaN(inputPage)) {
       inputPage = inputPage > lastPage ? lastPage : inputPage;
@@ -78,13 +78,13 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
   }
 
   private onChange(event: React.ChangeEvent<HTMLInputElement>, lastPage: number): void {
-    const inputPage = this.parseInteger(event.target.value, lastPage);
+    const inputPage = Navigation.parseInteger(event.target.value, lastPage);
     this.setState({ userInputPage: Number.isNaN(inputPage as number) ? event.target.value : inputPage });
   }
 
   private onKeyDown(event: React.KeyboardEvent<HTMLInputElement>, page: number | string, lastPage: number, onPageInput: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void, onSetPage: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void): void {
     if (event.keyCode === KEY_CODES.ENTER) {
-      const inputPage = this.parseInteger(this.state.userInputPage, lastPage) as number;
+      const inputPage = Navigation.parseInteger(this.state.userInputPage, lastPage) as number;
       onPageInput(event, Number.isNaN(inputPage) ? page as number : inputPage);
       onSetPage(event, Number.isNaN(inputPage) ? page as number : inputPage);
     }

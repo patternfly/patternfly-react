@@ -1,4 +1,4 @@
-describe('Login Page Demo Test', () => {
+describe('Pagination Demo Test', () => {
   it('Navigate to Pagination section', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#pagination-demo-nav-item-link').click();
