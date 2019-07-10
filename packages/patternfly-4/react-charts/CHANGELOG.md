@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.17...@patternfly/react-charts@4.5.0) (2019-07-10)
+
+
+### Features
+
+* **charts:** adds bottom-left legend position ([#2442](https://github.com/patternfly/patternfly-react/issues/2442)) ([1f52911](https://github.com/patternfly/patternfly-react/commit/1f52911))
+
+
+
+
+
 ## [4.4.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.16...@patternfly/react-charts@4.4.17) (2019-07-10)
 
 
