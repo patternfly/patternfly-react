@@ -1,63 +1,61 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { DropdownContext } from './dropdownConstants';
 import { css } from '@patternfly/react-styles';
 import { KEY_CODES } from '../../helpers/constants';
 
-const propTypes = {
+export interface ToggleProps {
   /** HTML ID of dropdown toggle */
-  id: PropTypes.string.isRequired,
+  id: string;
   /** Type to put on the button */
-  type: PropTypes.string,
+  type?: string;
   /** Anything which can be rendered as dropdown toggle */
-  children: PropTypes.node,
+  children?: React.ReactNode;
   /** Classes applied to root element of dropdown toggle */
-  className: PropTypes.string,
+  className?: string;
   /** Flag to indicate if menu is opened */
-  isOpen: PropTypes.bool,
+  isOpen?: boolean;
   /** Callback called when toggle is clicked */
-  onToggle: PropTypes.func,
+  onToggle?: Function;
   /** Callback called when the Enter key is pressed */
-  onEnter: PropTypes.func,
+  onEnter?: Function;
   /** Element which wraps toggle */
-  parentRef: PropTypes.any,
+  parentRef?: any;
   /** Forces focus state */
-  isFocused: PropTypes.bool,
+  isFocused?: boolean;
   /** Forces hover state */
-  isHovered: PropTypes.bool,
+  isHovered?: boolean;
   /** Forces active state */
-  isActive: PropTypes.bool,
+  isActive?: boolean;
   /** Disables the dropdown toggle */
-  isDisabled: PropTypes.bool,
+  isDisabled?: boolean;
   /** Display the toggle with no border or background */
-  isPlain: PropTypes.bool,
+  isPlain?: boolean;
   /** Style the toggle as a child of a split button */
-  isSplitButton: PropTypes.bool,
+  isSplitButton?: boolean;
   /** Flag for aria popup */
-  ariaHasPopup: PropTypes.bool,
-  /** Additional props are spread to the container <button> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
+  ariaHasPopup?: boolean;
+} 
 
-const defaultProps = {
-  children: null,
-  className: '',
-  type: null,
-  isOpen: false,
-  parentRef: null,
-  isFocused: false,
-  isHovered: false,
-  isActive: false,
-  isDisabled: false,
-  isPlain: false,
-  isSplitButton: false,
-  ariaHasPopup: undefined,
-  onToggle: Function.prototype,
-  onEnter: Function.prototype
-};
+export class Toggle extends React.Component<ToggleProps> {
 
-class Toggle extends Component {
+  static defaultProps = {
+    children: null,
+    className: '',
+    type: null,
+    isOpen: false,
+    parentRef: null,
+    isFocused: false,
+    isHovered: false,
+    isActive: false,
+    isDisabled: false,
+    isPlain: false,
+    isSplitButton: false,
+    ariaHasPopup: undefined,
+    onToggle: Function.prototype,
+    onEnter: Function.prototype
+  };
+
   componentDidMount = () => {
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
@@ -153,8 +151,3 @@ class Toggle extends Component {
     );
   }
 }
-
-Toggle.propTypes = propTypes;
-Toggle.defaultProps = defaultProps;
-
-export default Toggle;

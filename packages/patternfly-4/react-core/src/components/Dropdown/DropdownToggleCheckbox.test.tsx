@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import { shallow } from 'enzyme';
-import DropdownToggleCheckbox from './DropdownToggleCheckbox';
+import { DropdownToggleCheckbox } from './DropdownToggleCheckbox';
 
 const props = {
   onChange: jest.fn(),

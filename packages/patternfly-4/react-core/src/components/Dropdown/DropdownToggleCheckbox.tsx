@@ -1,39 +1,38 @@
-import React from 'react';
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
+import { Omit } from '../../helpers/typeUtils';
 
-const propTypes = {
+export interface DropdownToggleCheckboxProps extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled'> { 
   /** Additional classes added to the DropdownToggleCheckbox */
-  className: PropTypes.string,
+  className?: string; 
   /** Flag to show if the checkbox selection is valid or invalid */
-  isValid: PropTypes.bool,
+  isValid?: boolean; 
   /** Flag to show if the checkbox is disabled */
-  isDisabled: PropTypes.bool,
+  isDisabled?: boolean; 
   /** Flag to show if the checkbox is checked */
-  isChecked: PropTypes.bool,
+  isChecked?: boolean; 
   /** Alternate Flag to show if the checkbox is checked */
-  checked: PropTypes.bool,
+  checked?: boolean; 
   /** A callback for when the checkbox selection changes */
-  onChange: PropTypes.func,
+  onChangeonChange?(checked: boolean, event: React.FormEvent<HTMLInputElement>): void;
   /** Id of the checkbox */
-  id: PropTypes.string.isRequired,
+  id: string; 
   /** Aria-label of the checkbox */
-  'aria-label': PropTypes.any.isRequired,
-  /** Additional props are spread to the <input> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
+  'aria-label': string; 
+}
 
-const defaultProps = {
-  className: '',
-  isValid: true,
-  isDisabled: false,
-  isChecked: null,
-  checked: null,
-  onChange: () => undefined
-};
+export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckboxProps> {
+  
+  static defaultProps = {
+    className: '',
+    isValid: true,
+    isDisabled: false,
+    isChecked: null,
+    checked: null,
+    onChange: () => undefined
+  };
 
-class DropdownToggleCheckbox extends React.Component {
   handleChange = event => {
     this.props.onChange(event.currentTarget.checked, event);
   };
@@ -54,8 +53,3 @@ class DropdownToggleCheckbox extends React.Component {
     );
   }
 }
-
-DropdownToggleCheckbox.propTypes = propTypes;
-DropdownToggleCheckbox.defaultProps = defaultProps;
-
-export default DropdownToggleCheckbox;

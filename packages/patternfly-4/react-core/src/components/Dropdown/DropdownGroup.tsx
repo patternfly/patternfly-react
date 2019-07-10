@@ -1,26 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { DropdownContext } from './dropdownConstants';
+import { Omit } from '../../helpers/typeUtils';
 
-const propTypes = {
+export interface DropdownGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Checkboxes within group */
-  children: PropTypes.node,
+  children?: React.ReactNode; 
   /** Additional classes added to the DropdownGroup control */
-  className: PropTypes.string,
+  className?: string; 
   /** Group label */
-  label: PropTypes.node,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
+  label?: React.ReactNode; 
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  label: ''
-};
-
-const DropdownGroup = ({ children, className, label, ...props }) => (
+export const DropdownGroup: React.Component<DropdownGroupProps> = ({
+  children = null,
+  className = '',
+  label = '',
+  ...props
+  }: DropdownGroupProps) => (
   <DropdownContext.Consumer>
     {({ sectionClass, sectionTitleClass, sectionComponent: SectionComponent }) => (
       <SectionComponent {...props} className={css(sectionClass, className)}>
@@ -34,8 +31,3 @@ const DropdownGroup = ({ children, className, label, ...props }) => (
     )}
   </DropdownContext.Consumer>
 );
-
-DropdownGroup.propTypes = propTypes;
-DropdownGroup.defaultProps = defaultProps;
-
-export default DropdownGroup;

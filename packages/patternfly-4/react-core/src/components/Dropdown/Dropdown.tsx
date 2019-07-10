@@ -1,58 +1,56 @@
-import React, { Children, cloneElement } from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
-import DropdownMenu from './DropdownMenu';
+import { DropdownMenu } from './DropdownMenu';
 import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
+
+export interface DropdownProps extends React.HTMLProps<HTMLDivElement>{
+  /** Anything which can be rendered in a dropdown */
+  children?: React.ReactNode; 
+  /** Classes applied to root element of dropdown */
+  className?: string; 
+  /** Array of DropdownItem nodes that will be rendered in the dropdown Menu list */
+  dropdownItems?: Array<any>; 
+  /** Flag to indicate if menu is opened */
+  isOpen?: boolean; 
+  /** Display the toggle with no border or background */
+  isPlain?: boolean; 
+  /** Indicates where menu will be aligned horizontally */
+  position?: DropdownPosition | 'right' | 'left';
+  /** Display menu above or below dropdown toggle */
+  direction?: DropdownDirection | 'up' | 'down';
+  /** Flag to indicate if dropdown has groups */
+  isGrouped?: boolean;
+  /** Placeholder to use custom toggle elements */
+  toggle: React.ReactNode; 
+  /** Function callback called when user selects item */
+  onSelect?(event: React.SyntheticEvent<HTMLDivElement>): void;
+}
 
 // seed for the aria-labelledby ID
 let currentId = 0;
 
-const propTypes = {
-  /** Anything which can be rendered in a dropdown */
-  children: props => {
-    if (props.dropdownItems && props.dropdownItems.length > 0 && props.children) {
-      return new Error(
-        `Children and dropdownItems props have been provided. Only the dropdownItems prop items will be rendered `
-      );
-    }
-    return null;
-  },
-  /** Classes applied to root element of dropdown */
-  className: PropTypes.string,
-  /** Array of DropdownItem nodes that will be rendered in the dropdown Menu list */
-  dropdownItems: PropTypes.array,
-  /** Flag to indicate if menu is opened */
-  isOpen: PropTypes.bool,
-  /** Display the toggle with no border or background */
-  isPlain: PropTypes.bool,
-  /** Indicates where menu will be aligned horizontally */
-  position: PropTypes.oneOf(Object.values(DropdownPosition)),
-  /** Display menu above or below dropdown toggle */
-  direction: PropTypes.oneOf(Object.values(DropdownDirection)),
-  /** Flag to indicate if dropdown has groups */
-  isGrouped: PropTypes.bool,
-  /** Placeholder to use custom toggle elements */
-  toggle: PropTypes.node.isRequired,
-  /** Function callback called when user selects item */
-  onSelect: PropTypes.func,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
-
-const defaultProps = {
-  children: null,
-  className: '',
-  dropdownItems: [],
-  isOpen: false,
-  isPlain: false,
-  isGrouped: false,
-  position: DropdownPosition.left,
-  direction: DropdownDirection.down,
-  onSelect: Function.prototype
-};
-
-export class DropdownWithContext extends React.Component {
+export class DropdownWithContext extends React.Component<DropdownProps> {
+  
+  static defaultProps = {
+    children: (props: any) => {
+      if (props.dropdownItems && props.dropdownItems.length > 0 && props.children) {
+        return new Error(
+          `Children and dropdownItems props have been provided. Only the dropdownItems prop items will be rendered `
+        );
+      }
+      return null;
+    },
+    className: '',
+    dropdownItems: [],
+    isOpen: false,
+    isPlain: false,
+    isGrouped: false,
+    position: DropdownPosition.left,
+    direction: DropdownDirection.down,
+    onSelect: Function.prototype
+  };
+  
   onEnter = () => {
     this.openedOnEnter = true;
   };
@@ -151,10 +149,3 @@ const Dropdown = ({ onSelect, ...props }) => (
     <DropdownWithContext {...props} />
   </DropdownContext.Provider>
 );
-
-Dropdown.propTypes = propTypes;
-Dropdown.defaultProps = defaultProps;
-DropdownWithContext.propTypes = propTypes;
-DropdownWithContext.defaultProps = defaultProps;
-
-export default Dropdown;

@@ -1,44 +1,40 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
-import { componentShape } from '../../helpers/componentShape';
 import ReactDOM from 'react-dom';
 import { keyHandler } from '../../helpers/util';
 import { DropdownPosition, DropdownArrowContext, DropdownContext } from './dropdownConstants';
 import { KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
 
-const propTypes = {
+export interface DropdownMenuProps {
   /** Anything which can be rendered as dropdown items */
-  children: PropTypes.node,
+  children?: React.ReactNode; 
   /** Classess applied to root element of dropdown menu */
-  className: PropTypes.string,
+  className?: string; 
   /** Flag to indicate if menu is opened */
-  isOpen: PropTypes.bool,
+  isOpen?: boolean; 
   /** Flag to indicate if menu should be opened on enter */
-  openedOnEnter: PropTypes.bool,
+  openedOnEnter?: boolean; 
   /** Indicates which component will be used as dropdown menu */
-  component: componentShape,
+  component?: React.ReactNode; 
   /** Indicates where menu will be alligned horizontally */
-  position: PropTypes.oneOf(Object.values(DropdownPosition)),
+  position?: DropdownPosition | 'right' | 'left';
   /** Flag to indicate if menu is grouped */
-  isGrouped: PropTypes.bool,
-  /** Additional props are spread to the container component */
-  '': PropTypes.any // eslint-disable-line react/require-default-props
-};
+  isGrouped?: boolean; 
+}
 
-const defaultProps = {
-  children: null,
-  className: '',
-  isOpen: true,
-  openedOnEnter: false,
-  position: DropdownPosition.left,
-  component: 'ul',
-  isGrouped: false
-};
-
-class DropdownMenu extends React.Component {
+export class DropdownMenu extends React.Component<DropdownMenuProps> {
   refsCollection = [];
+
+  static defaultProps = {
+    children: null,
+    className: '',
+    isOpen: true,
+    openedOnEnter: false,
+    position: DropdownPosition.left,
+    component: 'ul',
+    isGrouped: false
+  };
 
   componentDidMount() {
     const focusTarget =
@@ -52,7 +48,7 @@ class DropdownMenu extends React.Component {
     }
   }
 
-  childKeyHandler = (index, position, custom = false) => {
+  childKeyHandler = (index: number, position: string, custom = false) => {
     keyHandler(
       index,
       position,
@@ -201,8 +197,3 @@ class DropdownMenu extends React.Component {
     );
   }
 }
-
-DropdownMenu.propTypes = propTypes;
-DropdownMenu.defaultProps = defaultProps;
-
-export default DropdownMenu;

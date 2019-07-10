@@ -1,13 +1,13 @@
-import React from 'react';
+import * as React from 'react';
 
-export const DropdownPosition = {
-  right: 'right',
-  left: 'left'
+export enum DropdownPosition {
+  right = 'right',
+  left = 'left'
 };
 
-export const DropdownDirection = {
-  up: 'up',
-  down: 'down'
+export enum DropdownDirection {
+  up = 'up',
+  down = 'down'
 };
 
 export const DropdownContext = React.createContext({
