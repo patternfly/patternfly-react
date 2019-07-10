@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.16...@patternfly/react-charts@4.4.17) (2019-07-10)
+
+
+### Bug Fixes
+
+* **ChartDonut:** Replaced prop `titleComponent` if function `getSubTitle` by `subTitleComponent`. ([#2488](https://github.com/patternfly/patternfly-react/issues/2488)) ([18190a4](https://github.com/patternfly/patternfly-react/commit/18190a4)), closes [#2486](https://github.com/patternfly/patternfly-react/issues/2486)
+
+
+
+
+
 ## [4.4.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.15...@patternfly/react-charts@4.4.16) (2019-07-09)
 
 **Note:** Version bump only for package @patternfly/react-charts
