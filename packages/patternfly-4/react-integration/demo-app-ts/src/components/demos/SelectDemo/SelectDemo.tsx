@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 export interface SelectDemoState {
   singleIsExpanded: boolean,
   singleSelected: string,
+  customSingleIsExpanded: boolean,
+  customSingleSelected: string,
   checkIsExpanded: boolean,
   checkSelected: string[],
   typeaheadIsExpanded: boolean,
@@ -16,6 +18,8 @@ export class SelectDemo extends Component<SelectDemoState> {
   state = {
     singleIsExpanded: false,
     singleSelected: null,
+    customSingleIsExpanded: false,
+    customSingleSelected: null,
     checkIsExpanded: false,
     checkSelected: [],
     typeaheadIsExpanded: false,
@@ -57,6 +61,12 @@ export class SelectDemo extends Component<SelectDemoState> {
     });
   };
 
+  customSingleOnToggle = (customSingleIsExpanded: boolean) => {
+    this.setState({
+      customSingleIsExpanded
+    });
+  };
+
   checkOnToggle = (checkIsExpanded: boolean) => {
     this.setState({
       checkIsExpanded
@@ -81,6 +91,17 @@ export class SelectDemo extends Component<SelectDemoState> {
       this.setState({
         singleSelected: selection,
         singleIsExpanded: false
+      });
+      console.log('selected:', selection);
+    }
+  };
+
+  customSingleOnSelect = (event: any, selection: string, isPlaceholder: boolean) => {
+    if (isPlaceholder) this.clearSelection();
+    else {
+      this.setState({
+        customSingleSelected: selection,
+        customSingleIsExpanded: false
       });
       console.log('selected:', selection);
     }
@@ -131,6 +152,8 @@ export class SelectDemo extends Component<SelectDemoState> {
     this.setState({
       singleSelected: null,
       singleIsExpanded: false,
+      customSingleSelected: null,
+      customSingleIsExpanded: false,
       checkSelected: [], 
       checkIsExpanded: false,
       typeaheadSelected: null,
@@ -167,6 +190,42 @@ export class SelectDemo extends Component<SelectDemoState> {
                 value={option.value}
                 isPlaceholder={option.isPlaceholder}
               />
+            ))}
+          </Select>
+        </div>
+      </StackItem>
+    );
+  }
+
+  renderCustomSingleSelect() {
+    const { customSingleIsExpanded, customSingleSelected } = this.state;
+    const titleId = 'title-id';
+    return (
+      <StackItem isFilled={false}>
+        <Title size="2xl">Custom Single Select</Title>
+        <div>
+          <span id={titleId} hidden>
+            Title
+          </span>
+          <Select
+            toggleId="custom-select"
+            variant={SelectVariant.single}
+            aria-label="CUstomSelect Input"
+            onToggle={this.customSingleOnToggle}
+            onSelect={this.customSingleOnSelect}
+            selections={customSingleSelected}
+            isExpanded={customSingleIsExpanded}
+            ariaLabelledBy={titleId}
+          >
+            {this.singleOptions.map((option, index) => (
+              <SelectOption
+                isDisabled={option.disabled}
+                key={index}
+                value={option.value}
+                isPlaceholder={option.isPlaceholder}
+              >
+                <div>test-{option.value}</div>
+              </SelectOption>
             ))}
           </Select>
         </div>
@@ -268,6 +327,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   render() {
     return <Stack gutter="md">
       {this.renderSingleSelect()}
+      {this.renderCustomSingleSelect()}
       {this.renderCheckboxSelect()}
       {this.renderTypeaheadSelect()}
       {this.renderTypeaheadMultiSelect()}

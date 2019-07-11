@@ -11,6 +11,12 @@ describe('Select Test', () => {
     cy.get('#single-select').contains('Miss').should('exist');
   });
 
+  it('Verify Custom Single Select', () => {
+    cy.get('#single-select').click();
+    cy.get('#Miss-2').click();
+    cy.get('#single-select').contains('test-Miss').should('exist');
+  });
+
   it('Verify Checkbox Select', () => {
     cy.get('#check-select').click();
     cy.get('.pf-c-form__fieldset > :nth-child(1)').click();

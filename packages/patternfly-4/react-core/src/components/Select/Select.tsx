@@ -197,6 +197,15 @@ export class Select extends React.Component<SelectProps, SelectState> {
     }
   };
 
+  getDisplayText = (value: string) => {
+    if(!value) return;
+    const { children } = this.props;
+    const item = children.filter(child => child.props.value === value)[0];
+
+    if(item && item.props.children) return item.props.children;
+    else return item.props.value;
+  }
+
   render() {
     const {
       children,
@@ -234,7 +243,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
           {selections &&
             (selections as string[]).map(item => (
               <Chip key={item} onClick={e => onSelect(e, item)} closeBtnAriaLabel={ariaLabelRemove}>
-                {item}
+                {this.getDisplayText(item)}
               </Chip>
             ))}
         </ChipGroup>
@@ -263,7 +272,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
             {variant === SelectVariant.single && (
               <div className={css(styles.selectToggleWrapper)}>
                 <span className={css(styles.selectToggleText)}>
-                  {selections || placeholderText || childPlaceholderText}
+                  {this.getDisplayText(selections as string) || placeholderText || childPlaceholderText}
                 </span>
               </div>
             )}
