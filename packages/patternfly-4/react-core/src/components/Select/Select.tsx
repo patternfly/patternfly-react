@@ -16,7 +16,8 @@ import { Omit } from '../../helpers/typeUtils';
 // seed for the aria-labelledby ID
 let currentId = 0;
 
-export interface SelectProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'> {
+export interface SelectProps
+  extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'> {
   /** Content rendered inside the Select */
   children: React.ReactElement[];
   /** Classes applied to the root of the Select */
@@ -198,13 +199,17 @@ export class Select extends React.Component<SelectProps, SelectState> {
   };
 
   getDisplayText = (value: string) => {
-    if(!value) return;
+    if (!value) {
+      return;
+    }
     const { children } = this.props;
     const item = children.filter(child => child.props.value === value)[0];
 
-    if(item && item.props.children) return item.props.children;
-    else return item.props.value;
-  }
+    if (item && item.props.children) {
+      return item.props.children;
+    }
+    return item.props.value;
+  };
 
   render() {
     const {
