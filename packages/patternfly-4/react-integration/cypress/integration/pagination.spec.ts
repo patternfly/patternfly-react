@@ -1,4 +1,4 @@
-describe('Login Page Demo Test', () => {
+describe('Pagination Demo Test', () => {
   it('Navigate to Pagination section', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#pagination-demo-nav-item-link').click();
@@ -58,7 +58,11 @@ describe('Login Page Demo Test', () => {
           .then(toggleText => expect(toggleText).to.have.text('11 - 20 of 523 items'));
         cy.get('#pagination-options-menu-top').find('.pf-c-pagination__nav-page-select input')
           .then(input => expect(input).to.have.value('2'));
+      });
 
+    cy.get('#pagination-options-menu-bottom').find('button[data-action="next"]')
+      .then((button: JQuery<HTMLButtonElement>) => {
+        cy.wrap(button).click();
         cy.get('#pagination-options-menu-bottom').find('button[data-action="first"]')
           .then(firstButton => expect(firstButton).not.to.be.disabled);
         cy.get('#pagination-options-menu-bottom').find('button[data-action="previous"]')
@@ -67,6 +71,7 @@ describe('Login Page Demo Test', () => {
           .then(toggleText => expect(toggleText).to.have.text('11 - 20 of 523 items'));
         cy.get('#pagination-options-menu-bottom').find('.pf-c-pagination__nav-page-select input')
           .then(input => expect(input).to.have.value('2'));
-    });
+      });
+
   });
 });
