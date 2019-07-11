@@ -59,7 +59,7 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
   };
 
   componentDidUpdate() {
-    if (!this.props.isOpen) this.openedOnEnter = false;
+    if (!this.props.isOpen){ this.openedOnEnter = false;}
   }
 
   render() {

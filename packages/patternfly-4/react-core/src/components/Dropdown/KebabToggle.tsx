@@ -15,7 +15,7 @@ export interface KebabToggleProps extends DropdownToggleProps {
   /** Label Toggle button */
   'aria-label'?: string;
   /** Callback called when toggle is clicked */
-  onToggle?: Function;
+  onToggle?: () => void; 
   /** Element which wraps toggle */
   parentRef?: any;
   /** Forces focus state */
@@ -32,25 +32,34 @@ export interface KebabToggleProps extends DropdownToggleProps {
   type?: 'button' | 'submit' | 'reset';
 }
 
-const defaultAriaLabel = 'Actions';
-
-export const Kebab: React.FunctionComponent<KebabToggleProps> = ({
+export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
   id = '',
   children = null,
   className = '',
   isOpen = false,
-  'aria-label' : ariaLabel = defaultAriaLabel,
+  'aria-label' : ariaLabel = 'Actions',
   parentRef = null,
   isFocused = false,
   isHovered = false,
   isActive = false,
   isPlain = false,
   isDisabled = false,
-  onToggle = Function.prototype,
+  onToggle = () => undefined as void,
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
 }: KebabToggleProps) => (
-  <Toggle id={id} {...props}>
-    <EllipsisVIcon />
+  <Toggle
+    id={id}
+    className={className}
+    isOpen={isOpen}
+    aria-label={ariaLabel}
+    parentRef={parentRef}
+    isFocused={isFocused}
+    isHovered={isHovered}
+    isActive={isActive}
+    isPlain={isPlain}
+    isDisabled={isDisabled}
+    onToggle={onToggle}
+    {...props}>
   </Toggle>
 );

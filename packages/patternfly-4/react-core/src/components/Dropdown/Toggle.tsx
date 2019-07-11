@@ -16,9 +16,9 @@ export interface ToggleProps {
   /** Flag to indicate if menu is opened */
   isOpen?: boolean;
   /** Callback called when toggle is clicked */
-  onToggle?: Function;
+  onToggle?: (isOpen: boolean, event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>) => void;
   /** Callback called when the Enter key is pressed */
-  onEnter?: Function;
+  onEnter?: () => void;
   /** Element which wraps toggle */
   parentRef?: any;
   /** Forces focus state */
@@ -66,8 +66,8 @@ export class Toggle extends React.Component<ToggleProps> {
   };
 
   onDocClick = (event: MouseEvent | TouchEvent) => {
-    if (this.props.isOpen && this.props.parentRef && !this.props.parentRef.contains(event.target)) {
-      this.props.onToggle && this.props.onToggle(false, event);
+    if (this.props.isOpen && this.props.parentRef && !this.props.parentRef.current.contains(event.target)) {
+      this.props.onToggle(false, event);
       this.buttonRef.current.focus();
     }
   };
@@ -81,13 +81,13 @@ export class Toggle extends React.Component<ToggleProps> {
       parentRef &&
       parentRef.contains(event.target)
     ) {
-      this.props.onToggle && this.props.onToggle(false, event);
+      this.props.onToggle(false, event);
       this.buttonRef.current.focus();
     }
   };
 
   onKeyDown = (event: React.KeyboardEvent<any>) => {
-    if (event.key === 'Tab' && !this.props.isOpen) return;
+    if (event.key === 'Tab' && !this.props.isOpen) { return };
     event.preventDefault();
     if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && this.props.isOpen) {
       this.props.onToggle(!this.props.isOpen, event);
@@ -133,7 +133,7 @@ export class Toggle extends React.Component<ToggleProps> {
               className
             )}
             type={type || 'button'}
-            onClick={event => onToggle && onToggle(!isOpen, event)}
+            onClick={event => onToggle(!isOpen, event)}
             aria-expanded={isOpen}
             aria-haspopup={ariaHasPopup}
             onKeyDown={this.onKeyDown}

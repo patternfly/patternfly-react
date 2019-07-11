@@ -14,7 +14,7 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   /** Flag to indicate if menu is opened */
   isOpen?: boolean; 
   /** Callback called when toggle is clicked */
-  onToggle?: Function; 
+  onToggle?: (isOpen: boolean) => void; 
   /** Element which wraps toggle */
   parentRef?: HTMLElement; 
   /** Forces focus state */
@@ -48,14 +48,24 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   isActive = false,
   isDisabled = false,
   isPlain = false,
-  onToggle = Function.prototype,
+  onToggle = (_isOpen: boolean) => undefined as any,
   iconComponent: IconComponent = CaretDownIcon,
   splitButtonItems,
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
 }: DropdownToggleProps) => {
   const toggle = (
-    <Toggle id={id} {...props} {...splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' }}>
+    <Toggle id={id}
+      className={className}
+      isOpen={isOpen}
+      parentRef={parentRef}
+      isFocused={isFocused}
+      isHovered={isHovered}
+      isActive={isActive}
+      isDisabled={isDisabled}
+      isPlain={isPlain}
+      onToggle={onToggle}
+      {...splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' }}>
       {children && <span className={IconComponent && css(styles.dropdownToggleText)}>{children}</span>}
       {IconComponent && <IconComponent className={css(children && styles.dropdownToggleIcon)} />}
     </Toggle>

@@ -42,12 +42,13 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     isDisabled: false,
     href: '',
     tooltipProps: {},
-    onClick: Function.prototype,
+    onClick: (event: React.MouseEvent<HTMLAnchorElement>) => undefined as any,
+    onSelect: () => undefined as any,
     index: -1,
     context: {
       keyHandler: Function.prototype,
       sendRef: Function.prototype
-    }
+    },
   };
 
   componentDidMount() {
@@ -57,7 +58,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
   onKeyDown = (event: any) => {
     // Detected key press on this item, notify the menu parent so that the appropriate
     // item can be focused
-    if (event.keyCode === KEY_CODES.TAB) return;
+    if (event.keyCode === KEY_CODES.TAB) { return };
     event.preventDefault();
     if (event.keyCode === KEY_CODES.ARROW_UP) {
       this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.UP);
@@ -121,8 +122,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                       onKeyDown: this.onKeyDown,
                       onClick: event => {
                         if (!isDisabled) {
-                          onClick && onClick(event);
-                          onSelect && onSelect();
+                          onClick(event);
+                          onSelect();
                         }
                       }
                     });
@@ -137,8 +138,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                       onKeyDown={this.onKeyDown}
                       onClick={(event: MouseEvent) => {
                         if (!isDisabled) {
-                          onClick && onClick(event);
-                          onSelect && onSelect();
+                          onClick(event);
+                          onSelect();
                         }
                       }}
                     >

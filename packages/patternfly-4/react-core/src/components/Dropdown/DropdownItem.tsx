@@ -34,6 +34,19 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   ...props
 }: DropdownItemProps) => (
   <DropdownArrowContext.Consumer>
-    {context => <InternalDropdownItem context={context} role="menuitem" tabIndex={-1} {...props} />}
+    {context => 
+      <InternalDropdownItem
+        context={context}
+        role="menuitem"
+        tabIndex={-1}
+        children={children}
+        className={className}
+        component={component}
+        isDisabled={isDisabled}
+        isHovered={isHovered}
+        href={href}
+        tooltip={tooltip}
+        tooltipProps={tooltipProps}
+        {...props} />}
   </DropdownArrowContext.Consumer>
 );
