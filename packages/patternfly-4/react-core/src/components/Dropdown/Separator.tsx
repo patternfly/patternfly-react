@@ -1,22 +1,25 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { DropdownContext, DropdownArrowContext } from './dropdownConstants';
-import { DropdownItem } from './InternalDropdownItem';
+import { InternalDropdownItem } from './InternalDropdownItem';
 
-export interface SeparatorProps extends React.HTMLProps<HTMLDivElement> {
- /** Classes applied to root element of dropdown item */
- className?: string; 
+export interface SeparatorProps extends React.HTMLProps<HTMLAnchorElement> {
+  /** Classes applied to root element of dropdown item */
+  className?: string;
+  /** Click event to pass to InternalDropdownItem */
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent | MouseEvent) => void;
 }
 
-export const Separator: React.Component<SeparatorProps> = ({
+export const DropdownSeparator: React.FunctionComponent<SeparatorProps> = ({
   className = '',
+  ref, // Types of Ref are different for React.FC vs React.Component
   ...props
 }: SeparatorProps) => (
   <DropdownContext.Consumer>
     {({ separatorClass }) => (
       <DropdownArrowContext.Consumer>
         {context => (
-          <DropdownItem
+          <InternalDropdownItem
             {...props}
             context={context}
             className={css(separatorClass, className)}

@@ -10,7 +10,7 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement>{
   /** Classes applied to root element of dropdown */
   className?: string; 
   /** Array of DropdownItem nodes that will be rendered in the dropdown Menu list */
-  dropdownItems?: Array<any>; 
+  dropdownItems?: any[]; 
   /** Flag to indicate if menu is opened */
   isOpen?: boolean; 
   /** Display the toggle with no border or background */
@@ -22,7 +22,7 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement>{
   /** Flag to indicate if dropdown has groups */
   isGrouped?: boolean;
   /** Placeholder to use custom toggle elements */
-  toggle: React.ReactNode; 
+  toggle: React.ReactElement<any>; 
   /** Function callback called when user selects item */
   onSelect?(event: React.SyntheticEvent<HTMLDivElement>): void;
 }
@@ -31,18 +31,12 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement>{
 let currentId = 0;
 
 export class DropdownWithContext extends React.Component<DropdownProps> {
+  openedOnEnter = false;
+  baseComponentRef = React.createRef<any>();
   
   static defaultProps = {
-    children: (props: any) => {
-      if (props.dropdownItems && props.dropdownItems.length > 0 && props.children) {
-        return new Error(
-          `Children and dropdownItems props have been provided. Only the dropdownItems prop items will be rendered `
-        );
-      }
-      return null;
-    },
     className: '',
-    dropdownItems: [],
+    dropdownItems: [] as any[],
     isOpen: false,
     isPlain: false,
     isGrouped: false,
@@ -50,6 +44,15 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
     direction: DropdownDirection.down,
     onSelect: Function.prototype
   };
+
+  constructor(props: DropdownProps) {
+    super(props);
+    if (props.dropdownItems && props.dropdownItems.length > 0 && props.children) {
+      throw new Error(
+        `Children and dropdownItems props have been provided. Only the dropdownItems prop items will be rendered `
+      );
+    }
+  }
   
   onEnter = () => {
     this.openedOnEnter = true;
@@ -74,62 +77,67 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
       ...props
     } = this.props;
     const id = toggle.props.id || `pf-toggle-id-${currentId++}`;
-    let component;
-    let renderedContent;
-    let ariaHasPopup = null;
+    let component: string;
+    let renderedContent: React.ReactNode[];
+    let ariaHasPopup = false;
     if (dropdownItems && dropdownItems.length > 0) {
       component = 'ul';
       renderedContent = dropdownItems;
       ariaHasPopup = true;
     } else {
       component = 'div';
-      renderedContent = children;
+      renderedContent = React.Children.toArray(children);
     }
     return (
       <DropdownContext.Consumer>
-        {({ baseClass, baseComponent: BaseComponent }) => (
-          <BaseComponent
-            {...props}
-            className={css(
-              baseClass,
-              direction === DropdownDirection.up && styles.modifiers.top,
-              isOpen && styles.modifiers.expanded,
-              className
-            )}
-            ref={ref => {
-              this.parentRef = ref;
-            }}
-          >
-            {Children.map(toggle, oneToggle =>
-              cloneElement(oneToggle, {
-                parentRef: this.parentRef,
-                isOpen,
-                id,
-                isPlain,
-                ariaHasPopup,
-                onEnter: this.onEnter
-              })
-            )}
-            {isOpen && (
-              <DropdownMenu
-                component={component}
-                isOpen={isOpen}
-                position={position}
-                aria-labelledby={id}
-                openedOnEnter={this.openedOnEnter}
-                isGrouped={isGrouped}
-              >
-                {renderedContent}
-              </DropdownMenu>
-            )}
-          </BaseComponent>
-        )}
+        {({ baseClass, baseComponent }) => {
+          const BaseComponent = baseComponent as any;
+          return (
+            <BaseComponent
+              {...props}
+              className={css(
+                baseClass,
+                direction === DropdownDirection.up && styles.modifiers.top,
+                isOpen && styles.modifiers.expanded,
+                className
+              )}
+              ref={this.baseComponentRef}
+            >
+              {React.Children.map(toggle, oneToggle =>
+                React.cloneElement(oneToggle, {
+                  parentRef: this.baseComponentRef,
+                  isOpen,
+                  id,
+                  isPlain,
+                  ariaHasPopup,
+                  onEnter: this.onEnter
+                })
+              )}
+              {isOpen && (
+                <DropdownMenu
+                  component={component}
+                  isOpen={isOpen}
+                  position={position}
+                  aria-labelledby={id}
+                  openedOnEnter={this.openedOnEnter}
+                  isGrouped={isGrouped}
+                >
+                  {renderedContent}
+                </DropdownMenu>
+              )}
+            </BaseComponent>
+          );
+        }}
       </DropdownContext.Consumer>
     );
   }
 }
 
-const Dropdown = ({ onSelect, ...props }) => (
+export const Dropdown: React.FunctionComponent<DropdownProps> = ({
+  onSelect,
+  ref, // Types of Ref are different for React.FC vs React.Component
+  ...props
+}: DropdownProps) => (
   <DropdownContext.Provider
     value={{
       onSelect: event => onSelect && onSelect(event),

@@ -8,7 +8,7 @@ export interface ToggleProps {
   /** HTML ID of dropdown toggle */
   id: string;
   /** Type to put on the button */
-  type?: string;
+  type?: 'button' | 'submit' | 'reset';
   /** Anything which can be rendered as dropdown toggle */
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown toggle */
@@ -38,20 +38,17 @@ export interface ToggleProps {
 } 
 
 export class Toggle extends React.Component<ToggleProps> {
+  private buttonRef = React.createRef<HTMLButtonElement>();
 
   static defaultProps = {
-    children: null,
     className: '',
-    type: null,
     isOpen: false,
-    parentRef: null,
     isFocused: false,
     isHovered: false,
     isActive: false,
     isDisabled: false,
     isPlain: false,
     isSplitButton: false,
-    ariaHasPopup: undefined,
     onToggle: Function.prototype,
     onEnter: Function.prototype
   };
@@ -68,14 +65,14 @@ export class Toggle extends React.Component<ToggleProps> {
     document.removeEventListener('keydown', this.onEscPress);
   };
 
-  onDocClick = event => {
+  onDocClick = (event: MouseEvent | TouchEvent) => {
     if (this.props.isOpen && this.props.parentRef && !this.props.parentRef.contains(event.target)) {
       this.props.onToggle && this.props.onToggle(false, event);
-      this.toggle.focus();
+      this.buttonRef.current.focus();
     }
   };
 
-  onEscPress = event => {
+  onEscPress = (event: KeyboardEvent) => {
     const { parentRef } = this.props;
     const keyCode = event.keyCode || event.which;
     if (
@@ -85,11 +82,11 @@ export class Toggle extends React.Component<ToggleProps> {
       parentRef.contains(event.target)
     ) {
       this.props.onToggle && this.props.onToggle(false, event);
-      this.toggle.focus();
+      this.buttonRef.current.focus();
     }
   };
 
-  onKeyDown = event => {
+  onKeyDown = (event: React.KeyboardEvent<any>) => {
     if (event.key === 'Tab' && !this.props.isOpen) return;
     event.preventDefault();
     if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && this.props.isOpen) {
@@ -125,9 +122,7 @@ export class Toggle extends React.Component<ToggleProps> {
           <button
             {...props}
             id={id}
-            ref={toggle => {
-              this.toggle = toggle;
-            }}
+            ref={this.buttonRef}
             className={css(
               isSplitButton ? styles.dropdownToggleButton : toggleClass || styles.dropdownToggle,
               isFocused && styles.modifiers.focus,

@@ -52,7 +52,6 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
           onToggle={onToggle}
           isOpen={isOpen}
           id={`${widgetId}-toggle`}
-          isSplitButton
           className={styles.optionsMenuToggleButton}
           parentRef={parentRef}
         >

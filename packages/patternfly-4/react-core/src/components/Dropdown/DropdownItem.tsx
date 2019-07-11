@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { InternalDropdownItem } from './InternalDropdownItem';
+import { InternalDropdownItemProps, InternalDropdownItem } from './InternalDropdownItem';
 import { DropdownArrowContext } from './dropdownConstants';
 
 export interface DropdownItemProps extends InternalDropdownItemProps {
@@ -21,7 +21,7 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   tooltipProps?: any;
 }
 
-export const DropdownItem: React.Component<DropdownItemProps> = ({ 
+export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({ 
   children = null,
   className = '',
   component = 'a',
@@ -30,6 +30,7 @@ export const DropdownItem: React.Component<DropdownItemProps> = ({
   href = '',
   tooltip = null,
   tooltipProps = {},
+  ref, // Types of Ref are different for React.FC vs React.Component
   ...props
 }: DropdownItemProps) => (
   <DropdownArrowContext.Consumer>

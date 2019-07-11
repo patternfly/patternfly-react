@@ -1,5 +1,4 @@
 import * as React from 'react';
-import ReactDOM from 'react-dom';
 import { css } from '@patternfly/react-styles';
 import { DropdownContext } from './dropdownConstants';
 import { KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
@@ -30,21 +29,18 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
     sendRef?: (index: number, ref: any, isDisabled: boolean) => void
   };
   /** Callback for click event */
-  onClick?: (event:React.MouseEvent<HTMLAnchorElement>|React.KeyboardEvent) => void;
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent | MouseEvent) => void;
 }
 
-export class DropdownItem extends React.Component<InternalDropdownItemProps> {
-  ref = React.createRef();
+export class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
+  ref = React.createRef<HTMLElement>();
 
   static defaultProps = {
-    children: null,
     className: '',
     isHovered: false,
     component: 'a',
-    role: null,
     isDisabled: false,
     href: '',
-    tooltip: null,
     tooltipProps: {},
     onClick: Function.prototype,
     index: -1,
@@ -58,7 +54,7 @@ export class DropdownItem extends React.Component<InternalDropdownItemProps> {
     this.props.context.sendRef(this.props.index, this.ref.current, this.props.isDisabled);
   }
 
-  onKeyDown = event => {
+  onKeyDown = (event: any) => {
     // Detected key press on this item, notify the menu parent so that the appropriate
     // item can be focused
     if (event.keyCode === KEY_CODES.TAB) return;
@@ -67,12 +63,8 @@ export class DropdownItem extends React.Component<InternalDropdownItemProps> {
       this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.UP);
     } else if (event.keyCode === KEY_CODES.ARROW_DOWN) {
       this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.DOWN);
-    } else if (event.keyCode === KEY_CODES.ENTER) {
-      if (!this.ref.current.getAttribute) {
-        ReactDOM.findDOMNode(this.ref.current).click(); // eslint-disable-line react/no-find-dom-node
-      } else {
-        this.ref.current.click && this.ref.current.click();
-      }
+    } else if (event.keyCode === KEY_CODES.ENTER && this.ref.current && this.ref.current.click) {
+      this.ref.current.click();
     }
   };
 
@@ -83,15 +75,15 @@ export class DropdownItem extends React.Component<InternalDropdownItemProps> {
       isHovered,
       context,
       onClick,
-      component: Component,
+      component,
       isDisabled,
       index,
       href,
       tooltip,
       tooltipProps,
-      ...props
+      ...additionalProps
     } = this.props;
-    const additionalProps = props;
+    const Component = component as any;
     let classes;
     if (Component === 'a') {
       additionalProps['aria-disabled'] = isDisabled;
@@ -101,7 +93,7 @@ export class DropdownItem extends React.Component<InternalDropdownItemProps> {
       additionalProps.type = additionalProps.type || 'button';
     }
 
-    const renderWithTooltip = childNode =>
+    const renderWithTooltip = (childNode: React.ReactNode) =>
       tooltip ? (
         <Tooltip content={tooltip} {...tooltipProps}>
           {childNode}
@@ -122,20 +114,15 @@ export class DropdownItem extends React.Component<InternalDropdownItemProps> {
             <li role="none">
               {React.isValidElement(children)
                 ? React.Children.map(children, child => {
-                    const clonedElement = React.cloneElement(child, {
-                      className: css(
-                        isDisabled && disabledClass,
-                        isHovered && hoverClass,
-                        className,
-                        itemClass,
-                        child.props.className
-                      ),
+                    const toClone = child as React.ReactHTMLElement<any>;
+                    const clonedElement = React.cloneElement(toClone, {
+                      className: 's',
                       ref: this.ref,
                       onKeyDown: this.onKeyDown,
                       onClick: event => {
                         if (!isDisabled) {
                           onClick && onClick(event);
-                          onSelect && onSelect(event);
+                          onSelect && onSelect();
                         }
                       }
                     });
@@ -148,10 +135,10 @@ export class DropdownItem extends React.Component<InternalDropdownItemProps> {
                       className={css(classes, this.props.role !== 'separator' && itemClass)}
                       ref={this.ref}
                       onKeyDown={this.onKeyDown}
-                      onClick={event => {
+                      onClick={(event: MouseEvent) => {
                         if (!isDisabled) {
                           onClick && onClick(event);
-                          onSelect && onSelect(event);
+                          onSelect && onSelect();
                         }
                       }}
                     >

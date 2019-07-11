@@ -24,16 +24,20 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   /** Forces active state */
   isActive?: boolean; 
   /** Display the toggle with no border or background */
-  isPlain?: boolean; 
+  isPlain?: boolean;
+  /** Whether or not the <div> has a disabled state */
+  isDisabled?: boolean; 
   /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
   iconComponent?: React.ReactType | null; 
   /** Elements to display before the toggle button. When included, renders the toggle as a split button. */
   splitButtonItems?: React.ReactNode[]; 
   /** Accessible label for the dropdown toggle button */
-  'aria-label'?: string; 
+  'aria-label'?: string;
+  /** Type to put on the button */
+  type?: 'button' | 'submit' | 'reset';
 }
 
-export const DropdownToggle: React.Component<DropdownToggleProps> = ({
+export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   id = '',
   children = null,
   className = '',
@@ -42,14 +46,16 @@ export const DropdownToggle: React.Component<DropdownToggleProps> = ({
   isFocused = false,
   isHovered = false,
   isActive = false,
+  isDisabled = false,
   isPlain = false,
   onToggle = Function.prototype,
   iconComponent: IconComponent = CaretDownIcon,
   splitButtonItems,
+  ref, // Types of Ref are different for React.FC vs React.Component
   ...props
 }: DropdownToggleProps) => {
   const toggle = (
-    <Toggle {...props} {...splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' }}>
+    <Toggle id={id} {...props} {...splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' }}>
       {children && <span className={IconComponent && css(styles.dropdownToggleText)}>{children}</span>}
       {IconComponent && <IconComponent className={css(children && styles.dropdownToggleIcon)} />}
     </Toggle>
@@ -61,7 +67,7 @@ export const DropdownToggle: React.Component<DropdownToggleProps> = ({
         className={css(
           styles.dropdownToggle,
           styles.modifiers.splitButton,
-          props.isDisabled && styles.modifiers.disabled
+          isDisabled && styles.modifiers.disabled
         )}
       >
         {splitButtonItems}

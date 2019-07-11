@@ -36,7 +36,7 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */
   toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
   /** Function called when user selects number of items per page. */
-  onPerPageSelect?: (event: React.MouseEvent<HTMLAnchorElement>|React.KeyboardEvent, perPage: number) => void;
+  onPerPageSelect?: (event: React.MouseEvent | React.KeyboardEvent | MouseEvent, perPage: number) => void;
 }
 
 interface PaginationOptionsMenuState {
@@ -95,7 +95,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
         component="button"
         data-action={`per-page-${value}`}
         className={css(styles.optionsMenuMenuItem, perPage === value && 'pf-m-selected')}
-        onClick={(event:React.MouseEvent<HTMLAnchorElement>|React.KeyboardEvent) => onPerPageSelect(event, value)}
+        onClick={event => onPerPageSelect(event, value)}
       >
         {title}
         <span className={css(paginationStyles.paginationMenuText)}>{` ${perPageSuffix}`}</span>

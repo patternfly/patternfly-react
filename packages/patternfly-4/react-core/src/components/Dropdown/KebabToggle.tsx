@@ -28,11 +28,13 @@ export interface KebabToggleProps extends DropdownToggleProps {
   isDisabled?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
+  /** Type to put on the button */
+  type?: 'button' | 'submit' | 'reset';
 }
 
 const defaultAriaLabel = 'Actions';
 
-export const Kebab: React.Component<KebabToggleProps> = ({
+export const Kebab: React.FunctionComponent<KebabToggleProps> = ({
   id = '',
   children = null,
   className = '',
@@ -45,9 +47,10 @@ export const Kebab: React.Component<KebabToggleProps> = ({
   isPlain = false,
   isDisabled = false,
   onToggle = Function.prototype,
+  ref, // Types of Ref are different for React.FC vs React.Component
   ...props
 }: KebabToggleProps) => (
-  <Toggle {...props}>
+  <Toggle id={id} {...props}>
     <EllipsisVIcon />
   </Toggle>
 );

@@ -5,33 +5,33 @@ import { DropdownDirection, DropdownPosition, DropdownToggle, DropdownContext } 
 import { DropdownWithContext } from '../Dropdown/Dropdown';
 
 export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement> {
-    /** Additional element css classes */
-    className: string;
-    /** Display menu above or below dropdown toggle */
-    direction: DropdownDirection;
-    /** 
-     * @deprecated
-     * Use the items prop instead
-     * 
-     * Array of DropdownItem nodes that will be rendered in the dropdown Menu list
-     */
-    dropdownItems: React.ReactNode[];
-    /** Array of application launcher items */
-    items: React.ReactNode[];
-    /** Render Application launcher toggle as disabled icon */
-    isDisabled: boolean;
-    /** open bool */
-    isOpen: boolean;
-    /** Indicates where menu will be alligned horizontally */
-    position: DropdownPosition;
-    /** Function callback called when user selects item */
-    onSelect: (event: any) => void;
-    /** Callback called when application launcher toggle is clicked */
-    onToggle?: (value: boolean) => void;
-    /** Adds accessible text to the button. Required for plain buttons */
-    'aria-label': string;
-    /** Flag to indicate if application launcher has groups */
-    isGrouped: boolean;
+  /** Additional element css classes */
+  className: string;
+  /** Display menu above or below dropdown toggle */
+  direction: DropdownDirection;
+  /** 
+   * @deprecated
+   * Use the items prop instead
+   * 
+   * Array of DropdownItem nodes that will be rendered in the dropdown Menu list
+   */
+  dropdownItems: React.ReactNode[];
+  /** Array of application launcher items */
+  items: React.ReactNode[];
+  /** Render Application launcher toggle as disabled icon */
+  isDisabled: boolean;
+  /** open bool */
+  isOpen: boolean;
+  /** Indicates where menu will be alligned horizontally */
+  position: DropdownPosition;
+  /** Function callback called when user selects item */
+  onSelect: (event: any) => void;
+  /** Callback called when application launcher toggle is clicked */
+  onToggle?: (value: boolean) => void;
+  /** Adds accessible text to the button. Required for plain buttons */
+  'aria-label': string;
+  /** Flag to indicate if application launcher has groups */
+  isGrouped: boolean;
 }
 
 export class ApplicationLauncher extends React.Component<ApplicationLauncherProps> {
@@ -49,7 +49,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     isGrouped: false
   };
   render() {
-    const { 'aria-label': ariaLabel, isOpen, onToggle, onSelect, isDisabled, className, isGrouped, dropdownItems, items, ...props } = this.props;
+    const { 'aria-label': ariaLabel, isOpen, onToggle, onSelect, isDisabled, className, isGrouped, dropdownItems, items, ref, ...props } = this.props;
     return (
       <DropdownContext.Provider value={{
         onSelect,

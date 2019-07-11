@@ -5,21 +5,21 @@ import { Omit } from '../../helpers/typeUtils';
 
 export interface DropdownToggleCheckboxProps extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled'> { 
   /** Additional classes added to the DropdownToggleCheckbox */
-  className?: string; 
+  className?: string;
   /** Flag to show if the checkbox selection is valid or invalid */
-  isValid?: boolean; 
+  isValid?: boolean;
   /** Flag to show if the checkbox is disabled */
-  isDisabled?: boolean; 
+  isDisabled?: boolean;
   /** Flag to show if the checkbox is checked */
-  isChecked?: boolean; 
+  isChecked?: boolean | null;
   /** Alternate Flag to show if the checkbox is checked */
-  checked?: boolean; 
+  checked?: boolean | null;
   /** A callback for when the checkbox selection changes */
-  onChangeonChange?(checked: boolean, event: React.FormEvent<HTMLInputElement>): void;
+  onChange?(checked: boolean, event: React.FormEvent<HTMLInputElement>): void;
   /** Id of the checkbox */
-  id: string; 
+  id: string;
   /** Aria-label of the checkbox */
-  'aria-label': string; 
+  'aria-label': string;
 }
 
 export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckboxProps> {
@@ -28,12 +28,12 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
     className: '',
     isValid: true,
     isDisabled: false,
-    isChecked: null,
-    checked: null,
-    onChange: () => undefined
+    isChecked: null as boolean | null,
+    checked: null as boolean | null,
+    onChange: () => undefined as any
   };
 
-  handleChange = event => {
+  handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.props.onChange(event.currentTarget.checked, event);
   };
 

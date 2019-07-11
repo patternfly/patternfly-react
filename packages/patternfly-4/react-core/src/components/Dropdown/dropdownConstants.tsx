@@ -11,7 +11,7 @@ export enum DropdownDirection {
 };
 
 export const DropdownContext = React.createContext({
-  onSelect: () => {},
+  onSelect: (event?: any) => {},
   menuClass: '',
   itemClass: '',
   toggleClass: '',

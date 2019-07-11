@@ -91,7 +91,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   /** Function called when user inputs page number. */
   onPageInput?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user selects number of items per page. */
-  onPerPageSelect?: (event: React.MouseEvent<HTMLAnchorElement>|React.KeyboardEvent, perPage: number) => void;
+  onPerPageSelect?: (event: React.MouseEvent | React.KeyboardEvent | MouseEvent, perPage: number) => void;
 }
 
 export const Pagination: React.FunctionComponent<PaginationProps> = ({
@@ -157,7 +157,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         lastIndex={itemsEnd !== null ? itemsEnd : lastIndex}
         itemCount={itemCount}
         perPage={perPage}
-        onPerPageSelect={onPerPageSelect}
+        onPerPageSelect={(event) => onPerPageSelect(event, perPage)}
         dropDirection={dropDirection}
         widgetId={widgetId}
         toggleTemplate={toggleTemplate}
