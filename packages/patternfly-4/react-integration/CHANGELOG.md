@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.10.0...@patternfly/react-integration@2.11.0) (2019-07-11)
+
+
+### Features
+
+* **Pagination:** Let users enter numbers into the input field ([#2417](https://github.com/patternfly/patternfly-react/issues/2417)) ([38ed9d8](https://github.com/patternfly/patternfly-react/commit/38ed9d8)), closes [#2344](https://github.com/patternfly/patternfly-react/issues/2344)
+
+
+
+
+
 # [2.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.9.0...@patternfly/react-integration@2.10.0) (2019-07-10)
 
 

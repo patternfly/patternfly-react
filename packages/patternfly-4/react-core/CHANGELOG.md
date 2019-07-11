@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.70.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.69.0...@patternfly/react-core@3.70.0) (2019-07-11)
+
+
+### Features
+
+* **Pagination:** Let users enter numbers into the input field ([#2417](https://github.com/patternfly/patternfly-react/issues/2417)) ([38ed9d8](https://github.com/patternfly/patternfly-react/commit/38ed9d8)), closes [#2344](https://github.com/patternfly/patternfly-react/issues/2344)
+
+
+
+
+
 # [3.69.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.68.0...@patternfly/react-core@3.69.0) (2019-07-10)
 
 
