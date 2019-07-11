@@ -20,6 +20,7 @@ import {
 } from 'victory';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
+import {ChartContainer} from "../ChartContainer";
 
 export enum ChartGroupSortOrder {
   ascending = 'ascending',
@@ -50,6 +51,20 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
   animate?: AnimatePropTypeInterface;
+  /**
+   * The ariaDesc prop specifies the description of the chart/SVG to assist with
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the desc prop of containerComponent
+   */
+  ariaDesc?: string;
+  /**
+   * The ariaTitle prop specifies the title to be applied to the SVG to assist
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the title prop of containerComponent
+   */
+  ariaTitle?: string;
   /**
    * The categories prop specifies how categorical data for a chart should be ordered.
    * This prop should be given as an array of string values, or an object with
@@ -392,17 +407,30 @@ export interface ChartGroupProps extends VictoryGroupProps {
 
 export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
   allowZoom = false,
+  ariaDesc,
+  ariaTitle,
   children,
+  containerComponent = allowZoom ? <VictoryZoomContainer /> : <ChartContainer />,
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
-  containerComponent = allowZoom ? <VictoryZoomContainer /> : undefined,
+
+  // destructure last
+  theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartGroupProps) => (
-  <VictoryGroup containerComponent={containerComponent} theme={theme} {...rest}>
-    {children}
-  </VictoryGroup>
-);
+}: ChartGroupProps) => {
+  const container = React.cloneElement(containerComponent as React.ReactElement<any>, {
+    desc: ariaDesc,
+    title: ariaTitle,
+    theme,
+    ...containerComponent.props
+  });
+
+  return (
+    <VictoryGroup containerComponent={container} theme={theme} {...rest}>
+      {children}
+    </VictoryGroup>
+  );
+};
 
 // Note: VictoryGroup.role must be hoisted
 hoistNonReactStatics(ChartGroup, VictoryGroup);

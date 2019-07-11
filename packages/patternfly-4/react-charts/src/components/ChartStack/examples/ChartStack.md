@@ -8,7 +8,7 @@ propComponents: ['Chart', 'ChartBar', 'ChartStack']
 import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 import './chart-stack.scss';
 
-## Simple stack chart with tooltip and right-aligned legend
+## Simple stack chart with right aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartStack,ChartTooltip } from '@patternfly/react-charts';
@@ -16,6 +16,8 @@ import { Chart, ChartStack,ChartTooltip } from '@patternfly/react-charts';
 <div>
   <div className="stack-chart-legend-right">
     <Chart
+      ariaDesc="Average number of pets"
+      ariaTitle="Stack chart example"
       legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }, { name: 'Mice' }]}
       legendOrientation="vertical"
       legendPosition="right"
@@ -28,6 +30,8 @@ import { Chart, ChartStack,ChartTooltip } from '@patternfly/react-charts';
       }}
       width={600}
     >
+      <ChartAxis />
+      <ChartAxis dependentAxis showGrid />
       <ChartStack domainPadding={{x: [10, 2]}}>
         <ChartBar 
           data={[
@@ -71,7 +75,7 @@ import { Chart, ChartStack,ChartTooltip } from '@patternfly/react-charts';
 </div>
 ```
 
-## Gold, horizontal stack chart with tooltip and bottom-aligned legend
+## Gold, horizontal stack chart with bottom aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
@@ -79,6 +83,8 @@ import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 <div>
   <div className="stack-chart-legend-bottom">
     <Chart
+      ariaDesc="Average number of pets"
+      ariaTitle="Stack chart example"
       domainPadding={{ x: [30, 25] }}
       legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }, { name: 'Mice' }]}
       legendPosition="bottom"
@@ -137,7 +143,7 @@ import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 </div>
 ```
 
-## Multi-color, horizontal stack chart with tooltip and bottom-aligned legend
+## Multi-color, horizontal stack chart with bottom-left aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
@@ -145,9 +151,11 @@ import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 <div>
   <div className="stack-chart-legend-bottom">
     <Chart
+      ariaDesc="Average number of pets"
+      ariaTitle="Stack chart example"
       domainPadding={{ x: [30, 25] }}
       legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }, { name: 'Mice' }]}
-      legendPosition="bottom"
+      legendPosition="bottom-left"
       height={275}
       padding={{
         bottom: 75, // Adjusted to accomodate legend

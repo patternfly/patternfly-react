@@ -62,6 +62,20 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   animate?: AnimatePropTypeInterface;
   /**
+   * The ariaDesc prop specifies the description of the chart/SVG to assist with
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the desc prop of containerComponent
+   */
+  ariaDesc?: string;
+  /**
+   * The ariaTitle prop specifies the title to be applied to the SVG to assist
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the title prop of containerComponent
+   */
+  ariaTitle?: string;
+  /**
    * The capHeight prop defines a text metric for the font being used: the expected height of capital letters.
    * This is necessary because of SVG, which (a) positions the *bottom* of the text at `y`, and (b) has no notion of
    * line height. The value should ideally use the same units as `lineHeight` and `dy`, preferably ems. If given a
@@ -126,6 +140,18 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * If a dataComponent is not provided, ChartDonutUtilization's Slice component will be used.
    */
   dataComponent?: React.ReactElement<any>;
+  /**
+   * The desc prop specifies the description of the chart/SVG to assist with
+   * accessibility for screen readers. The more info about the chart provided in
+   * the description, the more usable it will be for people using screen readers.
+   * This prop defaults to an empty string.
+   *
+   * Note: Overridden by containerComponent
+   *
+   * @example "Golden retreivers make up 30%, Labs make up 25%, and other dog breeds are
+   * not represented above 5% each."
+   */
+  desc?: string;
   /**
    * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
@@ -493,6 +519,8 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
 }
 
 export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizationProps> = ({
+  ariaDesc,
+  ariaTitle,
   data,
   invert = false,
   showStatic = true,
@@ -587,7 +615,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   );
 
   return standalone ? (
-    <ChartContainer height={height} width={width}>
+    <ChartContainer desc={ariaDesc} height={height} title={ariaTitle} width={width}>
       {chart}
     </ChartContainer>
   ) : (
