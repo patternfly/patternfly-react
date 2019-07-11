@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.6](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.5...patternfly-react@2.36.6) (2019-07-09)
+
+
+### Bug Fixes
+
+* **pf3-react:** add .css back to LESS import ([#2491](https://github.com/patternfly/patternfly-react/issues/2491)) ([c577d2b](https://github.com/patternfly/patternfly-react/commit/c577d2b))
+
+
+
+
+
+## [2.36.5](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.4...patternfly-react@2.36.5) (2019-07-09)
+
+
+### Bug Fixes
+
+* **BreadCrumbSwitcher:** Fix Autocomplete camelCase ([#2457](https://github.com/patternfly/patternfly-react/issues/2457)) ([eb3e23a](https://github.com/patternfly/patternfly-react/commit/eb3e23a))
+
+
+
+
+
+## [2.36.4](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.3...patternfly-react@2.36.4) (2019-07-08)
+
+
+### Bug Fixes
+
+* **build:** make pf3/pf4 build on windows ([#2471](https://github.com/patternfly/patternfly-react/issues/2471)) ([5bbc4a2](https://github.com/patternfly/patternfly-react/commit/5bbc4a2))
+
+
+
+
+
 ## [2.36.3](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.2...patternfly-react@2.36.3) (2019-07-01)
 
 

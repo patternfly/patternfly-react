@@ -5,13 +5,17 @@
       width: 650px;
     }
 
+    .area-chart-legend-bottom-responsive {
+      height: 225px;
+    }
+
     .area-chart-legend-right {
       height: 200px;
       width: 800px;
     }
 
     .sparkline-chart {
-      height: 100px;
+      height: 75px;
       width: 400px;
     }
 
@@ -19,6 +23,9 @@
       margin-left: 50px;
       margin-top: 50px;
       height: 135px;
+      & svg {
+        overflow: visible;
+      }
     }
   }
 }

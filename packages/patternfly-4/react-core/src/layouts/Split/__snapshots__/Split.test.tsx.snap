@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gutter lg 1`] = `
+<Component
+  gutter="lg"
+>
+  <div
+    className="pf-l-split pf-m-gutter"
+  >
+    <Component>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </Component>
+  </div>
+</Component>
+`;
+
+exports[`Gutter md 1`] = `
+<Component
+  gutter="md"
+>
+  <div
+    className="pf-l-split pf-m-gutter"
+  >
+    <Component>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </Component>
+  </div>
+</Component>
+`;
+
+exports[`Gutter sm 1`] = `
+<Component
+  gutter="sm"
+>
+  <div
+    className="pf-l-split pf-m-gutter"
+  >
+    <Component>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic Content
+      </div>
+    </Component>
+  </div>
+</Component>
+`;
+
+exports[`isFilled 1`] = `
+<Component>
+  <div
+    className="pf-l-split"
+  >
+    <Component
+      isFilled={true}
+    >
+      <div
+        className="pf-l-split__item pf-m-fill"
+      >
+        Main content
+      </div>
+    </Component>
+  </div>
+</Component>
+`;
+
+exports[`isFilled defaults to false 1`] = `
+<Component>
+  <div
+    className="pf-l-split"
+  >
+    <Component>
+      <div
+        className="pf-l-split__item"
+      >
+        Basic content
+      </div>
+    </Component>
+  </div>
+</Component>
+`;

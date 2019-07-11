@@ -15,6 +15,10 @@ export interface DropdownMenuProps {
   isOpen?: boolean; 
   /** Flag to indicate if menu should be opened on enter */
   openedOnEnter?: boolean; 
+  /** Flag to indicate if the first dropdown item should gain initial focus, set false when adding
+   * a specific auto-focus item (like a current selection) otherwise leave as true 
+   */
+  autoFocus?: boolean;
   /** Indicates which component will be used as dropdown menu */
   component?: React.ReactNode; 
   /** Indicates where menu will be alligned horizontally */
@@ -37,20 +41,31 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     className: '',
     isOpen: true,
     openedOnEnter: false,
+    autoFocus: true,
     position: DropdownPosition.left,
     component: 'ul',
     isGrouped: false
   };
 
   componentDidMount() {
-    const focusTarget = this.refsCollection.find(
-      ref => ref && (ref.current && !ref.current.hasAttribute('disabled')));
-    if (!focusTarget) return;
-    if (this.props.component === 'ul') focusTarget.current.focus();
-    else if (!focusTarget.current.focus) {
-      // eslint-disable-line react/no-find-dom-node
-      const node = ReactDOM.findDOMNode(focusTarget.current) as HTMLElement;
-      node.focus();
+    const { autoFocus } = this.props;
+
+    if (this.props.component === 'ul' && autoFocus) {
+      const focusTarget = this.refsCollection.find(
+        ref => ref && (ref.current && !ref.current.hasAttribute('disabled'))
+      );
+      if (focusTarget && focusTarget.current) {
+        if (focusTarget.current.focus) {
+          focusTarget.current.focus();
+        }
+        else {
+          const searchedFocusTarget = ReactDOM.findDOMNode(focusTarget.current) as HTMLElement;
+          searchedFocusTarget.focus()
+        }
+      }
+      else if (focusTarget) {
+        ; // eslint-disable-line react/no-find-dom-node
+      }
     }
   }
 
@@ -115,7 +130,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
         )}${child.props.className ? child.props.className : ''}`,
         tabIndex: -1,
         onKeyDown: (event: React.KeyboardEvent<any>) => {
-          if (event.keyCode === KEY_CODES.TAB) return;
+          if (event.keyCode === KEY_CODES.TAB) { return };
           event.preventDefault();
           if (event.keyCode === KEY_CODES.ARROW_UP) {
             keyHandler(index, KEYHANDLER_DIRECTION.UP, this.refsCollection, React.Children.toArray(this.props.children), true);

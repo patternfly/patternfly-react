@@ -13,7 +13,7 @@ import {
   VictoryStyleInterface
 } from 'victory';
 import { ChartContainer } from '../ChartContainer';
-import { ChartLegend, ChartLegendOrientation, ChartLegendPosition, ChartLegendWrapper } from "../ChartLegend";
+import { ChartLegend, ChartLegendOrientation, ChartLegendWrapper } from "../ChartLegend";
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
 import { getChartOrigin, getTheme } from '../ChartUtils';
@@ -22,6 +22,11 @@ export enum ChartPieLabelPosition {
   centroid = 'centroid',
   endAngle = 'endAngle',
   startAngle = 'startAngle'
+};
+
+export enum ChartPieLegendPosition {
+  bottom = 'bottom',
+  right = 'right'
 };
 
 export enum ChartPieSortOrder {
@@ -411,7 +416,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   legendData,
   legendDx = 0,
   legendDy = 0,
-  legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
+  legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
   standalone = true,
   themeColor,
   themeVariant,

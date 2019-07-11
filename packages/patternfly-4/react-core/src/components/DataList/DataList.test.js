@@ -2,13 +2,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { DataList } from './DataList';
 import { DataListItem } from './DataListItem';
-import { DataListAction } from './DataListAction';
+import { DataListAction, DataListActionVisibility } from './DataListAction';
 import { DataListCell } from './DataListCell';
 import { DataListToggle } from './DataListToggle';
 import { DataListItemCells } from './DataListItemCells';
 import { DataListItemRow } from './DataListItemRow';
 import { DataListContent } from './DataListContent';
 import { Button } from '../Button';
+import { css } from '@patternfly/react-styles';
 import { DropdownItem, Dropdown, KebabToggle, DropdownPosition } from '../Dropdown';
 
 describe('DataList', () => {
@@ -139,6 +140,35 @@ describe('DataList', () => {
       </DataListAction>
     );
     expect(view).toMatchSnapshot();
+  });
+
+  test('DataListAction visibility - show button when lg', () => {
+    const view = shallow(
+      <DataListAction
+        className={css(DataListActionVisibility.visibleOnLg, DataListActionVisibility.hidden)}
+        aria-labelledby="check-action-item2 check-action-action2"
+        id="check-action-action2"
+        aria-label="Actions"
+      >
+        <Button variant="primary">Primary</Button>
+      </DataListAction>
+    );
+    expect(view.find('div').props().className).toContain('pf-m-hidden');
+    expect(view.find('div').props().className).toContain('pf-m-visible-on-lg');
+  });
+
+  test('DataListAction visibility - hide button on 2xl', () => {
+    const view = shallow(
+      <DataListAction
+        className={css(DataListActionVisibility.hiddenOn2Xl)}
+        aria-labelledby="check-action-item2 check-action-action2"
+        id="check-action-action2"
+        aria-label="Actions"
+      >
+        <Button variant="primary">Primary</Button>
+      </DataListAction>
+    );
+    expect(view.find('div').props().className).toContain('pf-m-hidden-on-2xl');
   });
 
   test('DataListContent', () => {

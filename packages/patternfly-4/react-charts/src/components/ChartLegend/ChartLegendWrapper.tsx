@@ -83,9 +83,9 @@ export interface ChartLegendWrapperProps {
    */
   orientation?: 'horizontal' | 'vertical';
   /**
-   * The legend position relation to the donut chart. Valid values are 'bottom' and 'right'
+   * The legend position relation to the donut chart. Valid values are 'bottom', 'bottom-left', and 'right'
    */
-  position?: 'bottom' | 'right';
+  position?: 'bottom' | 'bottom-left' | 'right';
   /**
    * Specifies the height the svg viewBox of the chart container. This value should be given as a
    * number of pixels.

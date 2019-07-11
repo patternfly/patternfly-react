@@ -29,12 +29,16 @@ export interface AboutModalProps {
   noAboutModalBoxContentContainer?: boolean;
 };
 
-export class AboutModal extends React.Component<AboutModalProps> {
-  private static currentId = 0;
-  private container: HTMLElement;
+interface ModalState {
+  container: HTMLElement;
+}
+
+export class AboutModal extends React.Component<AboutModalProps, ModalState> {
+  private static currentId: number = 0;
   private id = AboutModal.currentId++;
   ariaLabelledBy = `pf-about-modal-title-${this.id}`;
   ariaDescribedBy = `pf-about-modal-content-${this.id}`;
+
   static defaultProps = {
     className: '',
     isOpen: false,
@@ -47,65 +51,78 @@ export class AboutModal extends React.Component<AboutModalProps> {
 
   constructor(props: AboutModalProps) {
     super(props);
+
+    this.state = {
+      container: undefined
+    };
+
     if (props.brandImageSrc && !props.brandImageAlt) {
       // tslint:disable-next-line:no-console
       console.error('AboutModal:', 'brandImageAlt is required when a brandImageSrc is specified');
     }
   }
 
-  private handleEscKeyClick = (event: KeyboardEvent) => {
+  handleEscKeyClick = (event: KeyboardEvent) => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
       this.props.onClose();
     }
   };
 
-  private appendContainer = () => {
-    if (!this.container) {
-      this.container = document.createElement('div');
-      document.body.appendChild(this.container);
-      document.addEventListener('keydown', this.handleEscKeyClick, false);
+  toggleSiblingsFromScreenReaders = (hide: boolean) => {
+    const bodyChildren = document.body.children;
+    for (const child of Array.from(bodyChildren)) {
+      if (child !== this.state.container) {
+        hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
+      }
     }
-    if (this.props.isOpen) {
-      document.body.classList.add(css(styles.backdropOpen));
-    } else {
-      document.body.classList.remove(css(styles.backdropOpen));
-    }
-  }
+  };
 
   componentDidMount() {
-    this.appendContainer();
-  }
+      const container = document.createElement('div');
+      this.setState({ container });
+      document.body.appendChild(container);
+      document.addEventListener('keydown', this.handleEscKeyClick, false);
+
+      if (this.props.isOpen) {
+        document.body.classList.add(css(styles.backdropOpen));
+      } else {
+        document.body.classList.remove(css(styles.backdropOpen));
+      }
+    }
 
   componentDidUpdate() {
     if (this.props.isOpen) {
       document.body.classList.add(css(styles.backdropOpen));
+      this.toggleSiblingsFromScreenReaders(true);
     } else {
       document.body.classList.remove(css(styles.backdropOpen));
+      this.toggleSiblingsFromScreenReaders(false);
     }
   }
 
   componentWillUnmount() {
-    if (this.container) {
-      document.body.removeChild(this.container);
+    if (this.state.container) {
+      document.body.removeChild(this.state.container);
     }
     document.removeEventListener('keydown', this.handleEscKeyClick, false);
   }
 
   render() {
-    if (!canUseDOM) {
+
+    const { ...props } = this.props;
+    const { container } = this.state;
+
+    if (!canUseDOM || !container) {
       return null;
-    }
-    if(canUseDOM && !this.container) {
-      this.appendContainer();
     }
 
     return ReactDOM.createPortal(
       <AboutModalContainer
         ariaLabelledbyId={this.ariaLabelledBy}
         ariaDescribedById={this.ariaDescribedBy}
-        {...this.props}
+        {...props}
       />,
-      this.container
+      container
     );
   }
 }

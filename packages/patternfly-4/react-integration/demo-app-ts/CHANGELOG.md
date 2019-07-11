@@ -3,6 +3,139 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.11.0...demo-app-ts@2.11.1) (2019-07-11)
+
+
+### Bug Fixes
+
+* **login page:** removes ariaLabel from checkbox ([#2455](https://github.com/patternfly/patternfly-react/issues/2455)) ([3cf57e3](https://github.com/patternfly/patternfly-react/commit/3cf57e3))
+
+
+
+
+
+# [2.11.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.10.0...demo-app-ts@2.11.0) (2019-07-11)
+
+
+### Features
+
+* **Pagination:** Let users enter numbers into the input field ([#2417](https://github.com/patternfly/patternfly-react/issues/2417)) ([38ed9d8](https://github.com/patternfly/patternfly-react/commit/38ed9d8)), closes [#2344](https://github.com/patternfly/patternfly-react/issues/2344)
+
+
+
+
+
+# [2.10.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.9.0...demo-app-ts@2.10.0) (2019-07-10)
+
+
+### Features
+
+* **Tabs:** Allow eventKey to accept a string ([#2493](https://github.com/patternfly/patternfly-react/issues/2493)) ([1bde27c](https://github.com/patternfly/patternfly-react/commit/1bde27c)), closes [#1446](https://github.com/patternfly/patternfly-react/issues/1446)
+
+
+
+
+
+# [2.9.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.8.4...demo-app-ts@2.9.0) (2019-07-10)
+
+
+### Features
+
+* **Grid:** Convert grid to typescript ([#2443](https://github.com/patternfly/patternfly-react/issues/2443)) ([d4f8231](https://github.com/patternfly/patternfly-react/commit/d4f8231))
+
+
+
+
+
+## [2.8.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.8.3...demo-app-ts@2.8.4) (2019-07-10)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [2.8.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.8.2...demo-app-ts@2.8.3) (2019-07-09)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [2.8.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.8.1...demo-app-ts@2.8.2) (2019-07-09)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [2.8.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.8.0...demo-app-ts@2.8.1) (2019-07-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [2.8.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.7.1...demo-app-ts@2.8.0) (2019-07-08)
+
+
+### Features
+
+* **Toolbar:** Convert toolbar to typescript ([#2475](https://github.com/patternfly/patternfly-react/issues/2475)) ([b508e5d](https://github.com/patternfly/patternfly-react/commit/b508e5d))
+
+
+
+
+
+## [2.7.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.7.0...demo-app-ts@2.7.1) (2019-07-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [2.7.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.6.1...demo-app-ts@2.7.0) (2019-07-08)
+
+
+### Features
+
+* **Split:** Convert split to typescript ([#2466](https://github.com/patternfly/patternfly-react/issues/2466)) ([a544f31](https://github.com/patternfly/patternfly-react/commit/a544f31))
+
+
+
+
+
+## [2.6.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.6.0...demo-app-ts@2.6.1) (2019-07-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [2.6.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.5.2...demo-app-ts@2.6.0) (2019-07-08)
+
+
+### Features
+
+* **Level:** Convert level to typescript ([#2450](https://github.com/patternfly/patternfly-react/issues/2450)) ([5c891a0](https://github.com/patternfly/patternfly-react/commit/5c891a0))
+
+
+
+
+
+## [2.5.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.5.1...demo-app-ts@2.5.2) (2019-07-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [2.5.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.5.0...demo-app-ts@2.5.1) (2019-07-06)
 
 **Note:** Version bump only for package demo-app-ts

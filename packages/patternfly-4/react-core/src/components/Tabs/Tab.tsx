@@ -10,7 +10,7 @@ export interface TabProps extends React.HTMLProps<HTMLAnchorElement | HTMLButton
   /** Tab title */
   title: string; 
   /** uniquely identifies the tab */
-  eventKey: number; 
+  eventKey: number | string; 
   /** child id for case in which a TabContent section is defined outside of a Tabs component */
   tabContentId?: string | number; 
   /** child reference for case in which a TabContent section is defined outside of a Tabs component */

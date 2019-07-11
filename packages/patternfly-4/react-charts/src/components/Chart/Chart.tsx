@@ -1,10 +1,8 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import { isFinite } from 'lodash';
 
 import {
   AnimatePropTypeInterface,
-  BlockProps,
   D3Scale,
   DomainPropType,
   DomainPaddingPropType,
@@ -32,7 +30,7 @@ import { getPaddingForSide } from '../ChartUtils/chart-padding';
  */
 export interface ChartProps extends VictoryChartProps {
   /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-area/
+   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-chart/
    */
   ' '?: any;
   /**
@@ -196,9 +194,9 @@ export interface ChartProps extends VictoryChartProps {
    */
   legendOrientation?: 'horizontal' | 'vertical';
   /**
-   * The legend position relation to the area chart. Valid values are 'bottom' and 'right'
+   * The legend position relation to the area chart. Valid values are 'bottom', 'bottom-left', and 'right'
    */
-  legendPosition?: 'bottom' | 'right';
+  legendPosition?: 'bottom' | 'bottom-left' | 'right';
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
@@ -389,6 +387,9 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     let dy = defaultPadding.top || 0;
     if (legendPosition === ChartLegendPosition.bottom) {
       dy += ChartCommonStyles.legend.margin;
+    } else if (legendPosition === ChartLegendPosition.bottomLeft) {
+      dy += ChartCommonStyles.legend.margin;
+      dx += defaultPadding.left > 10 ? defaultPadding.left - 10 : -10;
     } else if (legendPosition === ChartLegendPosition.right) {
       dx += defaultPadding.left;
     }

@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.10.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.9...@patternfly/react-icons@3.10.10) (2019-07-10)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## [3.10.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.8...@patternfly/react-icons@3.10.9) (2019-07-08)
+
+
+### Bug Fixes
+
+* **build:** make pf3/pf4 build on windows ([#2471](https://github.com/patternfly/patternfly-react/issues/2471)) ([5bbc4a2](https://github.com/patternfly/patternfly-react/commit/5bbc4a2))
+
+
+
+
+
 ## [3.10.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.7...@patternfly/react-icons@3.10.8) (2019-07-06)
 
 **Note:** Version bump only for package @patternfly/react-icons

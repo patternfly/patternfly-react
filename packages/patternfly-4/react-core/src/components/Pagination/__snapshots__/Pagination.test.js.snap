@@ -60,6 +60,7 @@ exports[`component render custom pagination toggle 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -170,6 +171,7 @@ exports[`component render custom pagination toggle 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -389,7 +391,8 @@ exports[`component render custom pagination toggle 1`] = `
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Component
+    <Navigation
+      className=""
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
@@ -509,6 +512,7 @@ exports[`component render custom pagination toggle 1`] = `
             max={4}
             min="1"
             onChange={[Function]}
+            onKeyDown={[Function]}
             type="number"
             value={1}
           />
@@ -610,7 +614,7 @@ exports[`component render custom pagination toggle 1`] = `
           </button>
         </Component>
       </nav>
-    </Component>
+    </Navigation>
   </div>
 </Component>
 `;
@@ -670,6 +674,7 @@ exports[`component render custom perPageOptions 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -716,6 +721,7 @@ exports[`component render custom perPageOptions 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -889,7 +895,8 @@ exports[`component render custom perPageOptions 1`] = `
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Component
+    <Navigation
+      className=""
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
@@ -1009,6 +1016,7 @@ exports[`component render custom perPageOptions 1`] = `
             max={4}
             min="1"
             onChange={[Function]}
+            onKeyDown={[Function]}
             type="number"
             value={1}
           />
@@ -1110,7 +1118,7 @@ exports[`component render custom perPageOptions 1`] = `
           </button>
         </Component>
       </nav>
-    </Component>
+    </Navigation>
   </div>
 </Component>
 `;
@@ -1176,6 +1184,7 @@ exports[`component render custom start end 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -1286,6 +1295,7 @@ exports[`component render custom start end 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -1523,7 +1533,8 @@ exports[`component render custom start end 1`] = `
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Component
+    <Navigation
+      className=""
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
@@ -1643,6 +1654,7 @@ exports[`component render custom start end 1`] = `
             max={4}
             min="1"
             onChange={[Function]}
+            onKeyDown={[Function]}
             type="number"
             value={1}
           />
@@ -1744,7 +1756,7 @@ exports[`component render custom start end 1`] = `
           </button>
         </Component>
       </nav>
-    </Component>
+    </Navigation>
   </div>
 </Component>
 `;
@@ -1790,6 +1802,7 @@ exports[`component render empty per page options 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={Array []}
@@ -1815,6 +1828,7 @@ exports[`component render empty per page options 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={Array []}
@@ -1868,7 +1882,8 @@ exports[`component render empty per page options 1`] = `
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Component
+    <Navigation
+      className=""
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
@@ -1988,6 +2003,7 @@ exports[`component render empty per page options 1`] = `
             max={4}
             min="1"
             onChange={[Function]}
+            onKeyDown={[Function]}
             type="number"
             value={1}
           />
@@ -2089,7 +2105,7 @@ exports[`component render empty per page options 1`] = `
           </button>
         </Component>
       </nav>
-    </Component>
+    </Navigation>
   </div>
 </Component>
 `;
@@ -2155,6 +2171,7 @@ exports[`component render last page 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -2265,6 +2282,7 @@ exports[`component render last page 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -2502,7 +2520,8 @@ exports[`component render last page 1`] = `
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Component
+    <Navigation
+      className=""
       currPage="Current page"
       lastPage={2}
       onFirstClick={[Function]}
@@ -2622,6 +2641,7 @@ exports[`component render last page 1`] = `
             max={2}
             min="1"
             onChange={[Function]}
+            onKeyDown={[Function]}
             type="number"
             value={2}
           />
@@ -2723,7 +2743,7 @@ exports[`component render last page 1`] = `
           </button>
         </Component>
       </nav>
-    </Component>
+    </Navigation>
   </div>
 </Component>
 `;
@@ -2788,6 +2808,7 @@ exports[`component render limited number of pages 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -2898,6 +2919,7 @@ exports[`component render limited number of pages 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -3135,7 +3157,8 @@ exports[`component render limited number of pages 1`] = `
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Component
+    <Navigation
+      className=""
       currPage="Current page"
       lastPage={1}
       onFirstClick={[Function]}
@@ -3255,6 +3278,7 @@ exports[`component render limited number of pages 1`] = `
             max={1}
             min="1"
             onChange={[Function]}
+            onKeyDown={[Function]}
             type="number"
             value={1}
           />
@@ -3356,7 +3380,7 @@ exports[`component render limited number of pages 1`] = `
           </button>
         </Component>
       </nav>
-    </Component>
+    </Navigation>
   </div>
 </Component>
 `;
@@ -3420,6 +3444,7 @@ exports[`component render no items 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -3530,6 +3555,7 @@ exports[`component render no items 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -3767,7 +3793,8 @@ exports[`component render no items 1`] = `
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Component
+    <Navigation
+      className=""
       currPage="Current page"
       lastPage={0}
       onFirstClick={[Function]}
@@ -3887,6 +3914,7 @@ exports[`component render no items 1`] = `
             max={0}
             min="1"
             onChange={[Function]}
+            onKeyDown={[Function]}
             type="number"
             value={1}
           />
@@ -3988,7 +4016,7 @@ exports[`component render no items 1`] = `
           </button>
         </Component>
       </nav>
-    </Component>
+    </Navigation>
   </div>
 </Component>
 `;
@@ -4048,6 +4076,7 @@ exports[`component render should render correctly bottom 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -4158,6 +4187,7 @@ exports[`component render should render correctly bottom 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -4395,7 +4425,8 @@ exports[`component render should render correctly bottom 1`] = `
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Component
+    <Navigation
+      className=""
       currPage="Current page"
       lastPage={2}
       onFirstClick={[Function]}
@@ -4515,6 +4546,7 @@ exports[`component render should render correctly bottom 1`] = `
             max={2}
             min="1"
             onChange={[Function]}
+            onKeyDown={[Function]}
             type="number"
             value={1}
           />
@@ -4616,7 +4648,7 @@ exports[`component render should render correctly bottom 1`] = `
           </button>
         </Component>
       </nav>
-    </Component>
+    </Navigation>
   </div>
 </Component>
 `;
@@ -4680,6 +4712,7 @@ exports[`component render should render correctly top 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -4790,6 +4823,7 @@ exports[`component render should render correctly top 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -5027,7 +5061,8 @@ exports[`component render should render correctly top 1`] = `
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Component
+    <Navigation
+      className=""
       currPage="Current page"
       lastPage={2}
       onFirstClick={[Function]}
@@ -5147,6 +5182,7 @@ exports[`component render should render correctly top 1`] = `
             max={2}
             min="1"
             onChange={[Function]}
+            onKeyDown={[Function]}
             type="number"
             value={1}
           />
@@ -5248,7 +5284,7 @@ exports[`component render should render correctly top 1`] = `
           </button>
         </Component>
       </nav>
-    </Component>
+    </Navigation>
   </div>
 </Component>
 `;
@@ -5318,6 +5354,7 @@ exports[`component render titles 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="down"
           dropdownItems={
@@ -5428,6 +5465,7 @@ exports[`component render titles 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="down"
             dropdownItems={
@@ -5665,7 +5703,9 @@ exports[`component render titles 1`] = `
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Component
+    <Navigation
+      className=""
+      currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -5674,6 +5714,12 @@ exports[`component render titles 1`] = `
       onPreviousClick={[Function]}
       onSetPage={[Function]}
       page={1}
+      pagesTitle=""
+      paginationTitle="Pagination"
+      toFirstPage="Go to first page"
+      toLastPage="Go to last page"
+      toNextPage="Go to next page"
+      toPreviousPage="Go to previous page"
     >
       <nav
         aria-label="Pagination"
@@ -5778,6 +5824,7 @@ exports[`component render titles 1`] = `
             max={4}
             min="1"
             onChange={[Function]}
+            onKeyDown={[Function]}
             type="number"
             value={1}
           />
@@ -5879,7 +5926,7 @@ exports[`component render titles 1`] = `
           </button>
         </Component>
       </nav>
-    </Component>
+    </Navigation>
   </div>
 </Component>
 `;
@@ -5944,6 +5991,7 @@ exports[`component render up drop direction 1`] = `
           :
         </span>
         <Dropdown
+          autoFocus={true}
           className=""
           direction="up"
           dropdownItems={
@@ -6054,6 +6102,7 @@ exports[`component render up drop direction 1`] = `
           }
         >
           <DropdownWithContext
+            autoFocus={true}
             className=""
             direction="up"
             dropdownItems={
@@ -6291,7 +6340,8 @@ exports[`component render up drop direction 1`] = `
         </Dropdown>
       </div>
     </PaginationOptionsMenu>
-    <Component
+    <Navigation
+      className=""
       currPage="Current page"
       lastPage={4}
       onFirstClick={[Function]}
@@ -6411,6 +6461,7 @@ exports[`component render up drop direction 1`] = `
             max={4}
             min="1"
             onChange={[Function]}
+            onKeyDown={[Function]}
             type="number"
             value={1}
           />
@@ -6512,7 +6563,7 @@ exports[`component render up drop direction 1`] = `
           </button>
         </Component>
       </nav>
-    </Component>
+    </Navigation>
   </div>
 </Component>
 `;

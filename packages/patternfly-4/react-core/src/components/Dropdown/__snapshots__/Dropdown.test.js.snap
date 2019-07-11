@@ -2,6 +2,7 @@
 
 exports[`KebabToggle basic 1`] = `
 <Dropdown
+  autoFocus={true}
   className=""
   direction="down"
   dropdownItems={Array []}
@@ -27,6 +28,7 @@ exports[`KebabToggle basic 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={Array []}
@@ -129,6 +131,7 @@ exports[`KebabToggle basic 1`] = `
       </Kebab>
       <DropdownMenu
         aria-labelledby="Dropdown Toggle"
+        autoFocus={true}
         className=""
         component="div"
         isGrouped={false}
@@ -143,6 +146,7 @@ exports[`KebabToggle basic 1`] = `
         >
           <div
             aria-labelledby="Dropdown Toggle"
+            autoFocus={true}
           >
             <div
               className="pf-c-dropdown__menu-item"
@@ -162,6 +166,7 @@ exports[`KebabToggle basic 1`] = `
 
 exports[`KebabToggle dropup + right aligned 1`] = `
 <Dropdown
+  autoFocus={true}
   className=""
   direction="up"
   dropdownItems={
@@ -313,6 +318,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
@@ -546,6 +552,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
 
 exports[`KebabToggle dropup 1`] = `
 <Dropdown
+  autoFocus={true}
   className=""
   direction="up"
   dropdownItems={
@@ -697,6 +704,7 @@ exports[`KebabToggle dropup 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
@@ -930,6 +938,7 @@ exports[`KebabToggle dropup 1`] = `
 
 exports[`KebabToggle expanded 1`] = `
 <Dropdown
+  autoFocus={true}
   className=""
   direction="down"
   dropdownItems={
@@ -1081,6 +1090,7 @@ exports[`KebabToggle expanded 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -1309,6 +1319,7 @@ exports[`KebabToggle expanded 1`] = `
       </Kebab>
       <DropdownMenu
         aria-labelledby="Dropdown Toggle"
+        autoFocus={true}
         className=""
         component="ul"
         isGrouped={false}
@@ -1318,6 +1329,7 @@ exports[`KebabToggle expanded 1`] = `
       >
         <ul
           aria-labelledby="Dropdown Toggle"
+          autoFocus={true}
           className="pf-c-dropdown__menu"
           hidden={false}
           role="menu"
@@ -1575,6 +1587,7 @@ exports[`KebabToggle expanded 1`] = `
 
 exports[`KebabToggle plain 1`] = `
 <Dropdown
+  autoFocus={true}
   className=""
   direction="down"
   dropdownItems={
@@ -1726,6 +1739,7 @@ exports[`KebabToggle plain 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -1959,6 +1973,7 @@ exports[`KebabToggle plain 1`] = `
 
 exports[`KebabToggle regular 1`] = `
 <Dropdown
+  autoFocus={true}
   className=""
   direction="down"
   dropdownItems={
@@ -2110,6 +2125,7 @@ exports[`KebabToggle regular 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -2343,6 +2359,7 @@ exports[`KebabToggle regular 1`] = `
 
 exports[`KebabToggle right aligned 1`] = `
 <Dropdown
+  autoFocus={true}
   className=""
   direction="down"
   dropdownItems={
@@ -2494,6 +2511,7 @@ exports[`KebabToggle right aligned 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -2727,6 +2745,7 @@ exports[`KebabToggle right aligned 1`] = `
 
 exports[`dropdown basic 1`] = `
 <Dropdown
+  autoFocus={true}
   className=""
   direction="down"
   dropdownItems={Array []}
@@ -2753,6 +2772,7 @@ exports[`dropdown basic 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={Array []}
@@ -2860,6 +2880,7 @@ exports[`dropdown basic 1`] = `
       </DropdownToggle>
       <DropdownMenu
         aria-labelledby="Dropdown Toggle"
+        autoFocus={true}
         className=""
         component="div"
         isGrouped={false}
@@ -2874,6 +2895,7 @@ exports[`dropdown basic 1`] = `
         >
           <div
             aria-labelledby="Dropdown Toggle"
+            autoFocus={true}
           >
             <div
               className="pf-c-dropdown__menu-item"
@@ -2893,6 +2915,7 @@ exports[`dropdown basic 1`] = `
 
 exports[`dropdown dropup + right aligned 1`] = `
 <Dropdown
+  autoFocus={true}
   className=""
   direction="up"
   dropdownItems={
@@ -3045,6 +3068,7 @@ exports[`dropdown dropup + right aligned 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
@@ -3283,6 +3307,7 @@ exports[`dropdown dropup + right aligned 1`] = `
 
 exports[`dropdown dropup 1`] = `
 <Dropdown
+  autoFocus={true}
   className=""
   direction="up"
   dropdownItems={
@@ -3435,6 +3460,7 @@ exports[`dropdown dropup 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
@@ -3673,6 +3699,7 @@ exports[`dropdown dropup 1`] = `
 
 exports[`dropdown expanded 1`] = `
 <Dropdown
+  autoFocus={true}
   className=""
   direction="down"
   dropdownItems={
@@ -3825,6 +3852,7 @@ exports[`dropdown expanded 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -4058,6 +4086,7 @@ exports[`dropdown expanded 1`] = `
       </DropdownToggle>
       <DropdownMenu
         aria-labelledby="Dropdown Toggle"
+        autoFocus={true}
         className=""
         component="ul"
         isGrouped={false}
@@ -4067,6 +4096,7 @@ exports[`dropdown expanded 1`] = `
       >
         <ul
           aria-labelledby="Dropdown Toggle"
+          autoFocus={true}
           className="pf-c-dropdown__menu"
           hidden={false}
           role="menu"
@@ -4324,6 +4354,7 @@ exports[`dropdown expanded 1`] = `
 
 exports[`dropdown regular 1`] = `
 <Dropdown
+  autoFocus={true}
   className=""
   direction="down"
   dropdownItems={
@@ -4476,6 +4507,7 @@ exports[`dropdown regular 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -4714,6 +4746,7 @@ exports[`dropdown regular 1`] = `
 
 exports[`dropdown right aligned 1`] = `
 <Dropdown
+  autoFocus={true}
   className=""
   direction="down"
   dropdownItems={
@@ -4866,6 +4899,7 @@ exports[`dropdown right aligned 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={

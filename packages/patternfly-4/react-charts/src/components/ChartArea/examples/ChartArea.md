@@ -8,10 +8,10 @@ propComponents: ['Chart', 'ChartArea', 'ChartGroup', 'ChartVoronoiContainer']
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLabel, ChartLegendWrapper, ChartVoronoiContainer } from '@patternfly/react-charts';
 import './chart-area.scss';
 
-## Cyan area chart with tooltip and right-aligned legend
+## Simple area chart with tooltip and right-aligned legend
 ```js
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div>
   <div className="area-chart-legend-right">
@@ -28,7 +28,6 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiC
         top: 50
       }}
       maxDomain={{y: 9}}
-      themeColor={ChartThemeColor.cyan}
       width={800}
     >
       <ChartAxis />
@@ -69,7 +68,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiC
 </div>
 ```
 
-## Multi-color area chart with tooltip and bottom-aligned legend
+## Cyan area chart with tooltip and bottom-aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
@@ -88,7 +87,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
         top: 50,
       }}
       maxDomain={{y: 9}}
-      themeColor={ChartThemeColor.multi}
+      themeColor={ChartThemeColor.cyan}
       width={650}
     >
       <ChartAxis />
@@ -129,6 +128,96 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
 </div>
 ```
 
+## Multi-color chart with tooltip, bottom-aligned legend, and responsive width
+```js
+import React from 'react';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
+
+class MultiColorChart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.containerRef = React.createRef();
+    this.state = {
+      width: 0
+    };
+    this.handleResize = () => {
+      this.setState({ width: this.containerRef.current.clientWidth });
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ width: this.containerRef.current.clientWidth });
+      window.addEventListener('resize', this.handleResize);
+    });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  render() {
+    const { width } = this.state;
+    
+    return (
+      <div ref={this.containerRef}>
+        <div className="area-chart-legend-bottom-responsive">
+          <Chart
+            containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
+            legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}
+            legendPosition="bottom-left"
+            height={225}
+            padding={{
+              bottom: 75, // Adjusted to accomodate legend
+              left: 50,
+              right: 50,
+              top: 50,
+            }}
+            maxDomain={{y: 9}}
+            themeColor={ChartThemeColor.multi}
+            width={width}
+          >
+            <ChartAxis />
+            <ChartAxis dependentAxis showGrid />
+            <ChartGroup>
+              <ChartArea
+                data={[
+                  { name: 'Cats', x: 1, y: 3 },
+                  { name: 'Cats', x: 2, y: 4 },
+                  { name: 'Cats', x: 3, y: 8 },
+                  { name: 'Cats', x: 4, y: 6 }
+                ]}
+                interpolation="basis"
+              />
+             <ChartArea
+               data={[
+                  { name: 'Birds', x: 1, y: 2 },
+                  { name: 'Birds', x: 2, y: 3 },
+                  { name: 'Birds', x: 3, y: 4 },
+                  { name: 'Birds', x: 4, y: 5 },
+                  { name: 'Birds', x: 5, y: 6 }
+                ]}
+                interpolation="basis"
+              />
+              <ChartArea
+                data={[
+                  { name: 'Dogs', x: 1, y: 1 },
+                  { name: 'Dogs', x: 2, y: 2 },
+                  { name: 'Dogs', x: 3, y: 3 },
+                  { name: 'Dogs', x: 4, y: 2 },
+                  { name: 'Dogs', x: 5, y: 4 }
+                ]}
+                interpolation="basis"
+              />
+            </ChartGroup>
+          </Chart>
+        </div>
+      </div>
+    );
+  }
+}
+```
+
 ## Sparkline chart
 ```js
 import React from 'react';
@@ -138,7 +227,8 @@ import { ChartArea, ChartGroup, ChartLabel } from '@patternfly/react-charts';
   <div className="sparkline-container">
     <div className="sparkline-chart">
       <ChartGroup
-        height={100}
+        containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} voronoiDimension="x" />}
+        height={75}
         padding={0}
         width={400}
       >

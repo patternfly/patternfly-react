@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.5.2...@patternfly/react-styles@3.5.3) (2019-07-10)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.5.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.5.1...@patternfly/react-styles@3.5.2) (2019-07-09)
+
+
+### Bug Fixes
+
+* **styles:** Add pickProperties to react-styles utils exports ([#2481](https://github.com/patternfly/patternfly-react/issues/2481)) ([c32d9a8](https://github.com/patternfly/patternfly-react/commit/c32d9a8))
+
+
+
+
+
+## [3.5.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.5.0...@patternfly/react-styles@3.5.1) (2019-07-08)
+
+
+### Bug Fixes
+
+* **build:** make pf3/pf4 build on windows ([#2471](https://github.com/patternfly/patternfly-react/issues/2471)) ([5bbc4a2](https://github.com/patternfly/patternfly-react/commit/5bbc4a2))
+
+
+
+
+
+# [3.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.4.8...@patternfly/react-styles@3.5.0) (2019-07-08)
+
+
+### Features
+
+* **datalist:** add hidden and visible breakpoints ([#2251](https://github.com/patternfly/patternfly-react/issues/2251)) ([fdbde6d](https://github.com/patternfly/patternfly-react/commit/fdbde6d))
+
+
+
+
+
 ## [3.4.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.4.7...@patternfly/react-styles@3.4.8) (2019-07-06)
 
 **Note:** Version bump only for package @patternfly/react-styles

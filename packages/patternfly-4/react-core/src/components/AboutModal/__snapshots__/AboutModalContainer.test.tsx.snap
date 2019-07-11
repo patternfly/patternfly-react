@@ -2,7 +2,18 @@
 
 exports[`About Modal Container Test isOpen 1`] = `
 <Component>
-  <Component>
+  <FocusTrap
+    _createFocusTrap={[Function]}
+    active={true}
+    className="pf-l-bullseye"
+    focusTrapOptions={
+      Object {
+        "clickOutsideDeactivates": true,
+      }
+    }
+    paused={false}
+    tag="div"
+  >
     <Component
       aria-describedby="ariaDescribedById"
       aria-labelledby="ariaLablledbyId"
@@ -31,7 +42,7 @@ exports[`About Modal Container Test isOpen 1`] = `
         backgroundImageSrc="backgroundImageSrc..."
       />
     </Component>
-  </Component>
+  </FocusTrap>
 </Component>
 `;
 

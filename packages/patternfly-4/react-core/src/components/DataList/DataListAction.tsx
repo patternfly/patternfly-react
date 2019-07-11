@@ -1,7 +1,25 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
+import { css, pickProperties } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataList/data-list';
 import { Omit } from '../../helpers/typeUtils';
+
+const visibilityModifiers = pickProperties(styles.modifiers, [
+  'hidden',
+  'hiddenOnSm',
+  'hiddenOnMd',
+  'hiddenOnLg',
+  'hiddenOnXl',
+  'hiddenOn_2xl',
+  'visibleOnSm',
+  'visibleOnMd',
+  'visibleOnLg',
+  'visibleOnXl',
+  'visibleOn_2xl'
+]);
+
+export const DataListActionVisibility = Object.keys(visibilityModifiers)
+  .map(key => [key.replace('_2xl', '2Xl'), visibilityModifiers[key]])
+  .reduce((acc, curr) => ({ ...acc, [curr[0]]: curr[1] }), {});
 
 export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement>, 'children'> {
   /** Content rendered as DataList Action  (e.g <Button> or <Dropdown>) */
@@ -22,8 +40,8 @@ interface DataListActionState {
 
 export class DataListAction extends React.Component<DataListActionProps, DataListActionState> {
   static defaultProps = {
-    className: '',
-  }
+    className: ''
+  };
 
   constructor(props: DataListActionProps) {
     super(props);
@@ -53,10 +71,8 @@ export class DataListAction extends React.Component<DataListActionProps, DataLis
     } = this.props;
 
     return (
-      <div className={css(styles.dataListItemAction, className)}>
-        <div className={css(styles.dataListAction, className)} {...props}>
-          {children}
-        </div>
+      <div className={css(styles.dataListItemAction, className)} {...props}>
+        {children}
       </div>
     );
   }

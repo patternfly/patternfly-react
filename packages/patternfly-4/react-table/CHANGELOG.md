@@ -3,6 +3,127 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.10...@patternfly/react-table@2.14.11) (2019-07-11)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.14.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.9...@patternfly/react-table@2.14.10) (2019-07-11)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.14.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.8...@patternfly/react-table@2.14.9) (2019-07-10)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.14.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.7...@patternfly/react-table@2.14.8) (2019-07-10)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.14.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.6...@patternfly/react-table@2.14.7) (2019-07-10)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.14.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.5...@patternfly/react-table@2.14.6) (2019-07-09)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.14.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.4...@patternfly/react-table@2.14.5) (2019-07-09)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.14.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.3...@patternfly/react-table@2.14.4) (2019-07-08)
+
+
+### Bug Fixes
+
+* **Dropdown:** Provide option to not autofocus on first item ([#2473](https://github.com/patternfly/patternfly-react/issues/2473)) ([f094b2d](https://github.com/patternfly/patternfly-react/commit/f094b2d))
+
+
+
+
+
+## [2.14.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.2...@patternfly/react-table@2.14.3) (2019-07-08)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.14.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.1...@patternfly/react-table@2.14.2) (2019-07-08)
+
+
+### Bug Fixes
+
+* **build:** make pf3/pf4 build on windows ([#2471](https://github.com/patternfly/patternfly-react/issues/2471)) ([5bbc4a2](https://github.com/patternfly/patternfly-react/commit/5bbc4a2))
+
+
+
+
+
+## [2.14.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.0...@patternfly/react-table@2.14.1) (2019-07-08)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+# [2.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.13.56...@patternfly/react-table@2.14.0) (2019-07-08)
+
+
+### Features
+
+* **datalist:** add hidden and visible breakpoints ([#2251](https://github.com/patternfly/patternfly-react/issues/2251)) ([fdbde6d](https://github.com/patternfly/patternfly-react/commit/fdbde6d))
+
+
+
+
+
+## [2.13.56](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.13.55...@patternfly/react-table@2.13.56) (2019-07-08)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.13.55](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.13.54...@patternfly/react-table@2.13.55) (2019-07-08)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
 ## [2.13.54](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.13.53...@patternfly/react-table@2.13.54) (2019-07-06)
 
 **Note:** Version bump only for package @patternfly/react-table

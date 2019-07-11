@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-charts",
-  "version": "4.4.12",
+  "version": "4.5.2",
   "description": "This library provides a set of React chart components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
-    "@patternfly/react-styles": "^3.4.8"
+    "@patternfly/react-styles": "^3.5.3"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
@@ -37,10 +37,10 @@
   },
   "scripts": {
     "build": "yarn build:babel && yarn build:types && node ./scripts/copyTS.js",
-    "build:babel": "concurrently 'yarn build:babel:esm && yarn build:babel:umd' 'yarn build:babel:cjs'",
-    "build:babel:cjs": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/js --presets=@babel/env",
-    "build:babel:esm": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/esm",
-    "build:babel:umd": "babel --source-maps --extensions '.js' dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
+    "build:babel": "concurrently \"yarn build:babel:esm && yarn build:babel:umd\" \"yarn build:babel:cjs\"",
+    "build:babel:cjs": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
+    "build:babel:esm": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
+    "build:babel:umd": "babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "build:types": "tsc -p tsconfig.gen-dts.json",
     "clean": "rimraf dist",
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps",
@@ -64,9 +64,9 @@
     "@babel/plugin-transform-typescript": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@patternfly/patternfly": "2.17.2",
-    "@patternfly/react-icons": "^3.10.8",
-    "@patternfly/react-tokens": "^2.6.8",
+    "@patternfly/patternfly": "2.17.3",
+    "@patternfly/react-icons": "^3.10.10",
+    "@patternfly/react-tokens": "^2.6.9",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-typescript-to-proptypes": "^0.17.1",
     "css": "^2.2.3",

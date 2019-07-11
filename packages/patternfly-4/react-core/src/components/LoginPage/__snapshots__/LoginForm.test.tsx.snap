@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel uses the rememberMeLabel 1`] = `
+exports[`LoginForm with rememberMeLabel 1`] = `
 <Component
   className=""
 >
@@ -52,7 +52,6 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel uses the reme
     fieldId="pf-login-remember-me-id"
   >
     <Checkbox
-      aria-label="remember me"
       checked={false}
       className=""
       id="pf-login-remember-me-id"
@@ -129,7 +128,6 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
     fieldId="pf-login-remember-me-id"
   >
     <Checkbox
-      aria-label="ARIA remember me"
       checked={false}
       className=""
       id="pf-login-remember-me-id"
