@@ -2,6 +2,11 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 import { DropdownToggle } from './DropdownToggle';
 
+interface MapType {
+  touchstart?: ({ target: Document}) => void;
+  mousedown?: ({ target: Document }) => void;
+}
+
 describe('API', () => {
   test('click on closed', () => {
     const mockToggle = jest.fn();
@@ -34,9 +39,9 @@ describe('API', () => {
   });
 
   test('click on document', () => {
-    const map = {};
+    const map: MapType = {};
     document.addEventListener = jest.fn((event, cb) => {
-      map[event] = cb;
+      map[event as 'touchstart' | 'mousdown'] = cb;
     });
     const mockToggle = jest.fn();
     mount(
@@ -50,9 +55,9 @@ describe('API', () => {
   });
 
   test('touch on document', () => {
-    const map = {};
+    const map: MapType = {};
     document.addEventListener = jest.fn((event, cb) => {
-      map[event] = cb;
+      map[event as 'touchstart' | 'mousdown'] = cb;
     });
     const mockToggle = jest.fn();
     mount(
@@ -66,12 +71,12 @@ describe('API', () => {
   });
 
   test('on click outside has been removed', () => {
-    const map = {};
+    const map: MapType = {};
     document.addEventListener = jest.fn((event, cb) => {
-      map[event] = cb;
+      map[event as 'touchstart' | 'mousdown'] = cb;
     });
     document.removeEventListener = jest.fn((event, cb) => {
-      if (map[event] === cb) map[event] = () => {};
+      if (map[event as 'touchstart' | 'mousdown'] === cb) map[event] = () => {};
     });
     const mockToggle = jest.fn();
     const view = mount(
@@ -86,7 +91,7 @@ describe('API', () => {
   });
 
   test('on touch outside has been removed', () => {
-    const map = {};
+    const map: MapType = {};
     document.addEventListener = jest.fn((event, cb) => {
       map[event] = cb;
     });

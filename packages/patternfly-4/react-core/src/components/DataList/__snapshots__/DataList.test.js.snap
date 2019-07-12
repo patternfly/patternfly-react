@@ -45,58 +45,26 @@ exports[`DataList DataListAction dropdown 1`] = `
 <div
   className="pf-c-data-list__item-action"
 >
-  <Dropdown
-    autoFocus={true}
-    className=""
-    direction="down"
+  <Component
     dropdownItems={
       Array [
-        <DropdownItem
-          className=""
+        <Unknown
           component="button"
-          href=""
-          isDisabled={false}
-          isHovered={false}
           onClick={[MockFunction]}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           action-1
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
-          isDisabled={false}
-          isHovered={false}
           onClick={[MockFunction]}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           action-2
-        </DropdownItem>,
+        </Unknown>,
       ]
     }
-    isGrouped={false}
-    isOpen={false}
     isPlain={true}
-    onSelect={[Function]}
     position="right"
-    toggle={
-      <Kebab
-        aria-label="Actions"
-        className=""
-        id=""
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
-      />
-    }
+    toggle={<Unknown />}
   />
 </div>
 `;

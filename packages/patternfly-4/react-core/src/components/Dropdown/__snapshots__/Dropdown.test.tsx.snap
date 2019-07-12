@@ -1,34 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`KebabToggle basic 1`] = `
-<Dropdown
-  autoFocus={true}
-  className=""
-  direction="down"
-  dropdownItems={Array []}
-  isGrouped={false}
+<Component
   isOpen={true}
-  isPlain={false}
-  onSelect={[Function]}
-  position="left"
   toggle={
-    <Kebab
-      aria-label="Actions"
-      className=""
+    <Unknown
       id="Dropdown Toggle"
-      isActive={false}
-      isDisabled={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
     />
   }
 >
   <DropdownWithContext
-    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={Array []}
@@ -38,43 +19,55 @@ exports[`KebabToggle basic 1`] = `
     onSelect={[Function]}
     position="left"
     toggle={
-      <Kebab
-        aria-label="Actions"
-        className=""
+      <Unknown
         id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
       />
     }
   >
     <div
       className="pf-c-dropdown pf-m-expanded"
     >
-      <Kebab
-        aria-label="Actions"
-        ariaHasPopup={null}
-        className=""
+      <Component
+        ariaHasPopup={false}
         id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={true}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-dropdown pf-m-expanded"
+            >
+              <button
+                aria-expanded="true"
+                aria-haspopup="false"
+                aria-label="Actions"
+                class="pf-c-dropdown__toggle"
+                id="Dropdown Toggle"
+                type="button"
+              />
+              <ul
+                class="pf-c-dropdown__menu"
+              >
+                <div
+                  aria-labelledby="Dropdown Toggle"
+                >
+                  <div
+                    class="pf-c-dropdown__menu-item"
+                    tabindex="-1"
+                  >
+                    BASIC
+                  </div>
+                </div>
+              </ul>
+            </div>,
+          }
+        }
       >
         <Toggle
           aria-label="Actions"
-          ariaHasPopup={null}
+          ariaHasPopup={false}
           className=""
           id="Dropdown Toggle"
           isActive={false}
@@ -86,12 +79,40 @@ exports[`KebabToggle basic 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-dropdown pf-m-expanded"
+              >
+                <button
+                  aria-expanded="true"
+                  aria-haspopup="false"
+                  aria-label="Actions"
+                  class="pf-c-dropdown__toggle"
+                  id="Dropdown Toggle"
+                  type="button"
+                />
+                <ul
+                  class="pf-c-dropdown__menu"
+                >
+                  <div
+                    aria-labelledby="Dropdown Toggle"
+                  >
+                    <div
+                      class="pf-c-dropdown__menu-item"
+                      tabindex="-1"
+                    >
+                      BASIC
+                    </div>
+                  </div>
+                </ul>
+              </div>,
+            }
+          }
         >
           <button
             aria-expanded={true}
-            aria-haspopup={null}
+            aria-haspopup={false}
             aria-label="Actions"
             className="pf-c-dropdown__toggle"
             disabled={false}
@@ -99,36 +120,9 @@ exports[`KebabToggle basic 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
-          >
-            <EllipsisVIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 192 512"
-                width="1em"
-              >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                  transform=""
-                />
-              </svg>
-            </EllipsisVIcon>
-          </button>
+          />
         </Toggle>
-      </Kebab>
+      </Component>
       <DropdownMenu
         aria-labelledby="Dropdown Toggle"
         autoFocus={true}
@@ -150,7 +144,7 @@ exports[`KebabToggle basic 1`] = `
           >
             <div
               className="pf-c-dropdown__menu-item"
-              key=".0"
+              key=".$.0"
               onKeyDown={[Function]}
               tabIndex={-1}
             >
@@ -161,17 +155,15 @@ exports[`KebabToggle basic 1`] = `
       </DropdownMenu>
     </div>
   </DropdownWithContext>
-</Dropdown>
+</Component>
 `;
 
 exports[`KebabToggle dropup + right aligned 1`] = `
-<Dropdown
-  autoFocus={true}
-  className=""
+<Component
   direction="up"
   dropdownItems={
     Array [
-      <DropdownItem
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -185,13 +177,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -205,13 +196,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -225,13 +215,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -245,16 +234,13 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <Unknown />,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -268,13 +254,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -288,42 +273,26 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </InternalDropdownItem>,
     ]
   }
-  isGrouped={false}
-  isOpen={false}
-  isPlain={false}
-  onSelect={[Function]}
   position="right"
   toggle={
-    <Kebab
-      aria-label="Actions"
-      className=""
+    <Unknown
       id="Dropdown Toggle"
-      isActive={false}
-      isDisabled={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
     />
   }
 >
   <DropdownWithContext
-    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
       Array [
-        <DropdownItem
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -337,13 +306,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -357,13 +325,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -377,13 +344,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -397,16 +363,13 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <Unknown />,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -420,13 +383,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -440,12 +402,11 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </InternalDropdownItem>,
       ]
     }
     isGrouped={false}
@@ -454,39 +415,37 @@ exports[`KebabToggle dropup + right aligned 1`] = `
     onSelect={[Function]}
     position="right"
     toggle={
-      <Kebab
-        aria-label="Actions"
-        className=""
+      <Unknown
         id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
       />
     }
   >
     <div
       className="pf-c-dropdown pf-m-top"
     >
-      <Kebab
-        aria-label="Actions"
+      <Component
         ariaHasPopup={true}
-        className=""
         id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-dropdown pf-m-top"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="Actions"
+                class="pf-c-dropdown__toggle"
+                id="Dropdown Toggle"
+                type="button"
+              />
+            </div>,
+          }
+        }
       >
         <Toggle
           aria-label="Actions"
@@ -502,8 +461,22 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-dropdown pf-m-top"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-label="Actions"
+                  class="pf-c-dropdown__toggle"
+                  id="Dropdown Toggle"
+                  type="button"
+                />
+              </div>,
+            }
+          }
         >
           <button
             aria-expanded={false}
@@ -515,49 +488,20 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
-          >
-            <EllipsisVIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 192 512"
-                width="1em"
-              >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                  transform=""
-                />
-              </svg>
-            </EllipsisVIcon>
-          </button>
+          />
         </Toggle>
-      </Kebab>
+      </Component>
     </div>
   </DropdownWithContext>
-</Dropdown>
+</Component>
 `;
 
 exports[`KebabToggle dropup 1`] = `
-<Dropdown
-  autoFocus={true}
-  className=""
+<Component
   direction="up"
   dropdownItems={
     Array [
-      <DropdownItem
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -571,13 +515,12 @@ exports[`KebabToggle dropup 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -591,13 +534,12 @@ exports[`KebabToggle dropup 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -611,13 +553,12 @@ exports[`KebabToggle dropup 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -631,16 +572,13 @@ exports[`KebabToggle dropup 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <Unknown />,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -654,13 +592,12 @@ exports[`KebabToggle dropup 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -674,42 +611,25 @@ exports[`KebabToggle dropup 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </InternalDropdownItem>,
     ]
   }
-  isGrouped={false}
-  isOpen={false}
-  isPlain={false}
-  onSelect={[Function]}
-  position="left"
   toggle={
-    <Kebab
-      aria-label="Actions"
-      className=""
+    <Unknown
       id="Dropdown Toggle"
-      isActive={false}
-      isDisabled={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
     />
   }
 >
   <DropdownWithContext
-    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
       Array [
-        <DropdownItem
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -723,13 +643,12 @@ exports[`KebabToggle dropup 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -743,13 +662,12 @@ exports[`KebabToggle dropup 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -763,13 +681,12 @@ exports[`KebabToggle dropup 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -783,16 +700,13 @@ exports[`KebabToggle dropup 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <Unknown />,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -806,13 +720,12 @@ exports[`KebabToggle dropup 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -826,12 +739,11 @@ exports[`KebabToggle dropup 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </InternalDropdownItem>,
       ]
     }
     isGrouped={false}
@@ -840,39 +752,37 @@ exports[`KebabToggle dropup 1`] = `
     onSelect={[Function]}
     position="left"
     toggle={
-      <Kebab
-        aria-label="Actions"
-        className=""
+      <Unknown
         id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
       />
     }
   >
     <div
       className="pf-c-dropdown pf-m-top"
     >
-      <Kebab
-        aria-label="Actions"
+      <Component
         ariaHasPopup={true}
-        className=""
         id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-dropdown pf-m-top"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="Actions"
+                class="pf-c-dropdown__toggle"
+                id="Dropdown Toggle"
+                type="button"
+              />
+            </div>,
+          }
+        }
       >
         <Toggle
           aria-label="Actions"
@@ -888,8 +798,22 @@ exports[`KebabToggle dropup 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-dropdown pf-m-top"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-label="Actions"
+                  class="pf-c-dropdown__toggle"
+                  id="Dropdown Toggle"
+                  type="button"
+                />
+              </div>,
+            }
+          }
         >
           <button
             aria-expanded={false}
@@ -901,49 +825,19 @@ exports[`KebabToggle dropup 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
-          >
-            <EllipsisVIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 192 512"
-                width="1em"
-              >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                  transform=""
-                />
-              </svg>
-            </EllipsisVIcon>
-          </button>
+          />
         </Toggle>
-      </Kebab>
+      </Component>
     </div>
   </DropdownWithContext>
-</Dropdown>
+</Component>
 `;
 
 exports[`KebabToggle expanded 1`] = `
-<Dropdown
-  autoFocus={true}
-  className=""
-  direction="down"
+<Component
   dropdownItems={
     Array [
-      <DropdownItem
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -957,13 +851,12 @@ exports[`KebabToggle expanded 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -977,13 +870,12 @@ exports[`KebabToggle expanded 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -997,13 +889,12 @@ exports[`KebabToggle expanded 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -1017,16 +908,13 @@ exports[`KebabToggle expanded 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <Unknown />,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -1040,13 +928,12 @@ exports[`KebabToggle expanded 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -1060,42 +947,26 @@ exports[`KebabToggle expanded 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </InternalDropdownItem>,
     ]
   }
-  isGrouped={false}
   isOpen={true}
-  isPlain={false}
-  onSelect={[Function]}
-  position="left"
   toggle={
-    <Kebab
-      aria-label="Actions"
-      className=""
+    <Unknown
       id="Dropdown Toggle"
-      isActive={false}
-      isDisabled={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
     />
   }
 >
   <DropdownWithContext
-    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -1109,13 +980,12 @@ exports[`KebabToggle expanded 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -1129,13 +999,12 @@ exports[`KebabToggle expanded 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -1149,13 +1018,12 @@ exports[`KebabToggle expanded 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -1169,16 +1037,13 @@ exports[`KebabToggle expanded 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <Unknown />,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -1192,13 +1057,12 @@ exports[`KebabToggle expanded 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -1212,12 +1076,11 @@ exports[`KebabToggle expanded 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </InternalDropdownItem>,
       ]
     }
     isGrouped={false}
@@ -1226,39 +1089,113 @@ exports[`KebabToggle expanded 1`] = `
     onSelect={[Function]}
     position="left"
     toggle={
-      <Kebab
-        aria-label="Actions"
-        className=""
+      <Unknown
         id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
       />
     }
   >
     <div
       className="pf-c-dropdown pf-m-expanded"
     >
-      <Kebab
-        aria-label="Actions"
+      <Component
         ariaHasPopup={true}
-        className=""
         id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={true}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-dropdown pf-m-expanded"
+            >
+              <button
+                aria-expanded="true"
+                aria-haspopup="true"
+                aria-label="Actions"
+                class="pf-c-dropdown__toggle"
+                id="Dropdown Toggle"
+                type="button"
+              />
+              <ul
+                aria-labelledby="Dropdown Toggle"
+                class="pf-c-dropdown__menu"
+                role="menu"
+              >
+                <li
+                  role="none"
+                >
+                  <a
+                    aria-disabled="false"
+                    class="pf-c-dropdown__menu-item"
+                  >
+                    Link
+                  </a>
+                </li>
+                <li
+                  role="none"
+                >
+                  <button
+                    class="pf-c-dropdown__menu-item"
+                    type="button"
+                  >
+                    Action
+                  </button>
+                </li>
+                <li
+                  role="none"
+                >
+                  <a
+                    aria-disabled="true"
+                    class="pf-m-disabled pf-c-dropdown__menu-item"
+                    tabindex="-1"
+                  >
+                    Disabled Link
+                  </a>
+                </li>
+                <li
+                  role="none"
+                >
+                  <button
+                    class="pf-m-disabled pf-c-dropdown__menu-item"
+                    disabled=""
+                    type="button"
+                  >
+                    Disabled Action
+                  </button>
+                </li>
+                <li
+                  role="none"
+                >
+                  <div
+                    class="pf-c-dropdown__separator"
+                    role="separator"
+                  />
+                </li>
+                <li
+                  role="none"
+                >
+                  <a
+                    aria-disabled="false"
+                    class="pf-c-dropdown__menu-item"
+                  >
+                    Separated Link
+                  </a>
+                </li>
+                <li
+                  role="none"
+                >
+                  <button
+                    class="pf-c-dropdown__menu-item"
+                    type="button"
+                  >
+                    Separated Action
+                  </button>
+                </li>
+              </ul>
+            </div>,
+          }
+        }
       >
         <Toggle
           aria-label="Actions"
@@ -1274,8 +1211,98 @@ exports[`KebabToggle expanded 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-dropdown pf-m-expanded"
+              >
+                <button
+                  aria-expanded="true"
+                  aria-haspopup="true"
+                  aria-label="Actions"
+                  class="pf-c-dropdown__toggle"
+                  id="Dropdown Toggle"
+                  type="button"
+                />
+                <ul
+                  aria-labelledby="Dropdown Toggle"
+                  class="pf-c-dropdown__menu"
+                  role="menu"
+                >
+                  <li
+                    role="none"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-dropdown__menu-item"
+                    >
+                      Link
+                    </a>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <button
+                      class="pf-c-dropdown__menu-item"
+                      type="button"
+                    >
+                      Action
+                    </button>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <a
+                      aria-disabled="true"
+                      class="pf-m-disabled pf-c-dropdown__menu-item"
+                      tabindex="-1"
+                    >
+                      Disabled Link
+                    </a>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <button
+                      class="pf-m-disabled pf-c-dropdown__menu-item"
+                      disabled=""
+                      type="button"
+                    >
+                      Disabled Action
+                    </button>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <div
+                      class="pf-c-dropdown__separator"
+                      role="separator"
+                    />
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-dropdown__menu-item"
+                    >
+                      Separated Link
+                    </a>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <button
+                      class="pf-c-dropdown__menu-item"
+                      type="button"
+                    >
+                      Separated Action
+                    </button>
+                  </li>
+                </ul>
+              </div>,
+            }
+          }
         >
           <button
             aria-expanded={true}
@@ -1287,36 +1314,9 @@ exports[`KebabToggle expanded 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
-          >
-            <EllipsisVIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 192 512"
-                width="1em"
-              >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                  transform=""
-                />
-              </svg>
-            </EllipsisVIcon>
-          </button>
+          />
         </Toggle>
-      </Kebab>
+      </Component>
       <DropdownMenu
         aria-labelledby="Dropdown Toggle"
         autoFocus={true}
@@ -1334,7 +1334,7 @@ exports[`KebabToggle expanded 1`] = `
           hidden={false}
           role="menu"
         >
-          <DropdownItem
+          <InternalDropdownItem
             className=""
             component="a"
             context={
@@ -1349,8 +1349,7 @@ exports[`KebabToggle expanded 1`] = `
             isHovered={false}
             key=".$link"
             onClick={[Function]}
-            role={null}
-            tooltip={null}
+            onSelect={[Function]}
             tooltipProps={Object {}}
           >
             <li
@@ -1362,13 +1361,13 @@ exports[`KebabToggle expanded 1`] = `
                 href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role={null}
+                onSelect={[Function]}
               >
                 Link
               </a>
             </li>
-          </DropdownItem>
-          <DropdownItem
+          </InternalDropdownItem>
+          <InternalDropdownItem
             className=""
             component="button"
             context={
@@ -1383,8 +1382,7 @@ exports[`KebabToggle expanded 1`] = `
             isHovered={false}
             key=".$action"
             onClick={[Function]}
-            role={null}
-            tooltip={null}
+            onSelect={[Function]}
             tooltipProps={Object {}}
           >
             <li
@@ -1396,14 +1394,14 @@ exports[`KebabToggle expanded 1`] = `
                 href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role={null}
+                onSelect={[Function]}
                 type="button"
               >
                 Action
               </button>
             </li>
-          </DropdownItem>
-          <DropdownItem
+          </InternalDropdownItem>
+          <InternalDropdownItem
             className=""
             component="a"
             context={
@@ -1418,8 +1416,7 @@ exports[`KebabToggle expanded 1`] = `
             isHovered={false}
             key=".$disabled link"
             onClick={[Function]}
-            role={null}
-            tooltip={null}
+            onSelect={[Function]}
             tooltipProps={Object {}}
           >
             <li
@@ -1431,14 +1428,14 @@ exports[`KebabToggle expanded 1`] = `
                 href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role={null}
+                onSelect={[Function]}
                 tabIndex={-1}
               >
                 Disabled Link
               </a>
             </li>
-          </DropdownItem>
-          <DropdownItem
+          </InternalDropdownItem>
+          <InternalDropdownItem
             className=""
             component="button"
             context={
@@ -1453,8 +1450,7 @@ exports[`KebabToggle expanded 1`] = `
             isHovered={false}
             key=".$disabled action"
             onClick={[Function]}
-            role={null}
-            tooltip={null}
+            onSelect={[Function]}
             tooltipProps={Object {}}
           >
             <li
@@ -1466,19 +1462,18 @@ exports[`KebabToggle expanded 1`] = `
                 href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role={null}
+                onSelect={[Function]}
                 type="button"
               >
                 Disabled Action
               </button>
             </li>
-          </DropdownItem>
-          <Separator
-            className=""
+          </InternalDropdownItem>
+          <Component
             index={4}
             key=".$separator"
           >
-            <DropdownItem
+            <InternalDropdownItem
               className="pf-c-dropdown__separator"
               component="div"
               context={
@@ -1492,8 +1487,8 @@ exports[`KebabToggle expanded 1`] = `
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="separator"
-              tooltip={null}
               tooltipProps={Object {}}
             >
               <li
@@ -1504,12 +1499,13 @@ exports[`KebabToggle expanded 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="separator"
                 />
               </li>
-            </DropdownItem>
-          </Separator>
-          <DropdownItem
+            </InternalDropdownItem>
+          </Component>
+          <InternalDropdownItem
             className=""
             component="a"
             context={
@@ -1524,8 +1520,7 @@ exports[`KebabToggle expanded 1`] = `
             isHovered={false}
             key=".$separated link"
             onClick={[Function]}
-            role={null}
-            tooltip={null}
+            onSelect={[Function]}
             tooltipProps={Object {}}
           >
             <li
@@ -1537,13 +1532,13 @@ exports[`KebabToggle expanded 1`] = `
                 href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role={null}
+                onSelect={[Function]}
               >
                 Separated Link
               </a>
             </li>
-          </DropdownItem>
-          <DropdownItem
+          </InternalDropdownItem>
+          <InternalDropdownItem
             className=""
             component="button"
             context={
@@ -1558,8 +1553,7 @@ exports[`KebabToggle expanded 1`] = `
             isHovered={false}
             key=".$separated action"
             onClick={[Function]}
-            role={null}
-            tooltip={null}
+            onSelect={[Function]}
             tooltipProps={Object {}}
           >
             <li
@@ -1571,28 +1565,25 @@ exports[`KebabToggle expanded 1`] = `
                 href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role={null}
+                onSelect={[Function]}
                 type="button"
               >
                 Separated Action
               </button>
             </li>
-          </DropdownItem>
+          </InternalDropdownItem>
         </ul>
       </DropdownMenu>
     </div>
   </DropdownWithContext>
-</Dropdown>
+</Component>
 `;
 
 exports[`KebabToggle plain 1`] = `
-<Dropdown
-  autoFocus={true}
-  className=""
-  direction="down"
+<Component
   dropdownItems={
     Array [
-      <DropdownItem
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -1606,13 +1597,12 @@ exports[`KebabToggle plain 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -1626,13 +1616,12 @@ exports[`KebabToggle plain 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -1646,13 +1635,12 @@ exports[`KebabToggle plain 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -1666,16 +1654,13 @@ exports[`KebabToggle plain 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <Unknown />,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -1689,13 +1674,12 @@ exports[`KebabToggle plain 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -1709,42 +1693,26 @@ exports[`KebabToggle plain 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </InternalDropdownItem>,
     ]
   }
-  isGrouped={false}
-  isOpen={false}
   isPlain={true}
-  onSelect={[Function]}
-  position="left"
   toggle={
-    <Kebab
-      aria-label="Actions"
-      className=""
+    <Unknown
       id="Dropdown Toggle"
-      isActive={false}
-      isDisabled={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
     />
   }
 >
   <DropdownWithContext
-    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -1758,13 +1726,12 @@ exports[`KebabToggle plain 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -1778,13 +1745,12 @@ exports[`KebabToggle plain 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -1798,13 +1764,12 @@ exports[`KebabToggle plain 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -1818,16 +1783,13 @@ exports[`KebabToggle plain 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <Unknown />,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -1841,13 +1803,12 @@ exports[`KebabToggle plain 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -1861,12 +1822,11 @@ exports[`KebabToggle plain 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </InternalDropdownItem>,
       ]
     }
     isGrouped={false}
@@ -1875,39 +1835,37 @@ exports[`KebabToggle plain 1`] = `
     onSelect={[Function]}
     position="left"
     toggle={
-      <Kebab
-        aria-label="Actions"
-        className=""
+      <Unknown
         id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
       />
     }
   >
     <div
       className="pf-c-dropdown"
     >
-      <Kebab
-        aria-label="Actions"
+      <Component
         ariaHasPopup={true}
-        className=""
         id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
         isPlain={true}
         key=".0"
         onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="Actions"
+                class="pf-c-dropdown__toggle pf-m-plain"
+                id="Dropdown Toggle"
+                type="button"
+              />
+            </div>,
+          }
+        }
       >
         <Toggle
           aria-label="Actions"
@@ -1923,8 +1881,22 @@ exports[`KebabToggle plain 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-dropdown"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-label="Actions"
+                  class="pf-c-dropdown__toggle pf-m-plain"
+                  id="Dropdown Toggle"
+                  type="button"
+                />
+              </div>,
+            }
+          }
         >
           <button
             aria-expanded={false}
@@ -1936,49 +1908,19 @@ exports[`KebabToggle plain 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
-          >
-            <EllipsisVIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 192 512"
-                width="1em"
-              >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                  transform=""
-                />
-              </svg>
-            </EllipsisVIcon>
-          </button>
+          />
         </Toggle>
-      </Kebab>
+      </Component>
     </div>
   </DropdownWithContext>
-</Dropdown>
+</Component>
 `;
 
 exports[`KebabToggle regular 1`] = `
-<Dropdown
-  autoFocus={true}
-  className=""
-  direction="down"
+<Component
   dropdownItems={
     Array [
-      <DropdownItem
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -1992,13 +1934,12 @@ exports[`KebabToggle regular 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -2012,13 +1953,12 @@ exports[`KebabToggle regular 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -2032,13 +1972,12 @@ exports[`KebabToggle regular 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -2052,16 +1991,13 @@ exports[`KebabToggle regular 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <Unknown />,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -2075,13 +2011,12 @@ exports[`KebabToggle regular 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -2095,42 +2030,25 @@ exports[`KebabToggle regular 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </InternalDropdownItem>,
     ]
   }
-  isGrouped={false}
-  isOpen={false}
-  isPlain={false}
-  onSelect={[Function]}
-  position="left"
   toggle={
-    <Kebab
-      aria-label="Actions"
-      className=""
+    <Unknown
       id="Dropdown Toggle"
-      isActive={false}
-      isDisabled={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
     />
   }
 >
   <DropdownWithContext
-    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -2144,13 +2062,12 @@ exports[`KebabToggle regular 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -2164,13 +2081,12 @@ exports[`KebabToggle regular 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -2184,13 +2100,12 @@ exports[`KebabToggle regular 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -2204,16 +2119,13 @@ exports[`KebabToggle regular 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <Unknown />,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -2227,13 +2139,12 @@ exports[`KebabToggle regular 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -2247,12 +2158,11 @@ exports[`KebabToggle regular 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </InternalDropdownItem>,
       ]
     }
     isGrouped={false}
@@ -2261,39 +2171,37 @@ exports[`KebabToggle regular 1`] = `
     onSelect={[Function]}
     position="left"
     toggle={
-      <Kebab
-        aria-label="Actions"
-        className=""
+      <Unknown
         id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
       />
     }
   >
     <div
       className="pf-c-dropdown"
     >
-      <Kebab
-        aria-label="Actions"
+      <Component
         ariaHasPopup={true}
-        className=""
         id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="Actions"
+                class="pf-c-dropdown__toggle"
+                id="Dropdown Toggle"
+                type="button"
+              />
+            </div>,
+          }
+        }
       >
         <Toggle
           aria-label="Actions"
@@ -2309,8 +2217,22 @@ exports[`KebabToggle regular 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-dropdown"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-label="Actions"
+                  class="pf-c-dropdown__toggle"
+                  id="Dropdown Toggle"
+                  type="button"
+                />
+              </div>,
+            }
+          }
         >
           <button
             aria-expanded={false}
@@ -2322,49 +2244,19 @@ exports[`KebabToggle regular 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
-          >
-            <EllipsisVIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 192 512"
-                width="1em"
-              >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                  transform=""
-                />
-              </svg>
-            </EllipsisVIcon>
-          </button>
+          />
         </Toggle>
-      </Kebab>
+      </Component>
     </div>
   </DropdownWithContext>
-</Dropdown>
+</Component>
 `;
 
 exports[`KebabToggle right aligned 1`] = `
-<Dropdown
-  autoFocus={true}
-  className=""
-  direction="down"
+<Component
   dropdownItems={
     Array [
-      <DropdownItem
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -2378,13 +2270,12 @@ exports[`KebabToggle right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -2398,13 +2289,12 @@ exports[`KebabToggle right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -2418,13 +2308,12 @@ exports[`KebabToggle right aligned 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -2438,16 +2327,13 @@ exports[`KebabToggle right aligned 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <Unknown />,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -2461,13 +2347,12 @@ exports[`KebabToggle right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -2481,42 +2366,26 @@ exports[`KebabToggle right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </InternalDropdownItem>,
     ]
   }
-  isGrouped={false}
-  isOpen={false}
-  isPlain={false}
-  onSelect={[Function]}
   position="right"
   toggle={
-    <Kebab
-      aria-label="Actions"
-      className=""
+    <Unknown
       id="Dropdown Toggle"
-      isActive={false}
-      isDisabled={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
     />
   }
 >
   <DropdownWithContext
-    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -2530,13 +2399,12 @@ exports[`KebabToggle right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -2550,13 +2418,12 @@ exports[`KebabToggle right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -2570,13 +2437,12 @@ exports[`KebabToggle right aligned 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -2590,16 +2456,13 @@ exports[`KebabToggle right aligned 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <Unknown />,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -2613,13 +2476,12 @@ exports[`KebabToggle right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -2633,12 +2495,11 @@ exports[`KebabToggle right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </InternalDropdownItem>,
       ]
     }
     isGrouped={false}
@@ -2647,39 +2508,37 @@ exports[`KebabToggle right aligned 1`] = `
     onSelect={[Function]}
     position="right"
     toggle={
-      <Kebab
-        aria-label="Actions"
-        className=""
+      <Unknown
         id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
       />
     }
   >
     <div
       className="pf-c-dropdown"
     >
-      <Kebab
-        aria-label="Actions"
+      <Component
         ariaHasPopup={true}
-        className=""
         id="Dropdown Toggle"
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-dropdown"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="Actions"
+                class="pf-c-dropdown__toggle"
+                id="Dropdown Toggle"
+                type="button"
+              />
+            </div>,
+          }
+        }
       >
         <Toggle
           aria-label="Actions"
@@ -2695,8 +2554,22 @@ exports[`KebabToggle right aligned 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-dropdown"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-label="Actions"
+                  class="pf-c-dropdown__toggle"
+                  id="Dropdown Toggle"
+                  type="button"
+                />
+              </div>,
+            }
+          }
         >
           <button
             aria-expanded={false}
@@ -2708,71 +2581,26 @@ exports[`KebabToggle right aligned 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
-          >
-            <EllipsisVIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 192 512"
-                width="1em"
-              >
-                <path
-                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
-                  transform=""
-                />
-              </svg>
-            </EllipsisVIcon>
-          </button>
+          />
         </Toggle>
-      </Kebab>
+      </Component>
     </div>
   </DropdownWithContext>
-</Dropdown>
+</Component>
 `;
 
 exports[`dropdown basic 1`] = `
-<Dropdown
-  autoFocus={true}
-  className=""
-  direction="down"
-  dropdownItems={Array []}
-  isGrouped={false}
+<Component
   isOpen={true}
-  isPlain={false}
-  onSelect={[Function]}
-  position="left"
   toggle={
-    <DropdownToggle
-      className=""
-      iconComponent={[Function]}
+    <Unknown
       id="Dropdown Toggle"
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
     >
       Dropdown
-    </DropdownToggle>
+    </Unknown>
   }
 >
   <DropdownWithContext
-    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={Array []}
@@ -2782,42 +2610,74 @@ exports[`dropdown basic 1`] = `
     onSelect={[Function]}
     position="left"
     toggle={
-      <DropdownToggle
-        className=""
-        iconComponent={[Function]}
+      <Unknown
         id="Dropdown Toggle"
-        isActive={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
       >
         Dropdown
-      </DropdownToggle>
+      </Unknown>
     }
   >
     <div
       className="pf-c-dropdown pf-m-expanded"
     >
-      <DropdownToggle
-        ariaHasPopup={null}
-        className=""
-        iconComponent={[Function]}
+      <Component
+        ariaHasPopup={false}
         id="Dropdown Toggle"
-        isActive={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={true}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-dropdown pf-m-expanded"
+            >
+              <button
+                aria-expanded="true"
+                class="pf-c-dropdown__toggle"
+                id="Dropdown Toggle"
+                type="button"
+              >
+                <span
+                  class="pf-c-dropdown__toggle-text"
+                >
+                  Dropdown
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="pf-c-dropdown__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+              <ul
+                class="pf-c-dropdown__menu"
+              >
+                <div
+                  aria-labelledby="Dropdown Toggle"
+                >
+                  <div
+                    class="pf-c-dropdown__menu-item"
+                    tabindex="-1"
+                  >
+                    BASIC
+                  </div>
+                </div>
+              </ul>
+            </div>,
+          }
+        }
       >
         <Toggle
-          ariaHasPopup={null}
           className=""
           id="Dropdown Toggle"
           isActive={false}
@@ -2829,12 +2689,58 @@ exports[`dropdown basic 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-dropdown pf-m-expanded"
+              >
+                <button
+                  aria-expanded="true"
+                  class="pf-c-dropdown__toggle"
+                  id="Dropdown Toggle"
+                  type="button"
+                >
+                  <span
+                    class="pf-c-dropdown__toggle-text"
+                  >
+                    Dropdown
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    class="pf-c-dropdown__toggle-icon"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
+                <ul
+                  class="pf-c-dropdown__menu"
+                >
+                  <div
+                    aria-labelledby="Dropdown Toggle"
+                  >
+                    <div
+                      class="pf-c-dropdown__menu-item"
+                      tabindex="-1"
+                    >
+                      BASIC
+                    </div>
+                  </div>
+                </ul>
+              </div>,
+            }
+          }
         >
           <button
             aria-expanded={true}
-            aria-haspopup={null}
             className="pf-c-dropdown__toggle"
             disabled={false}
             id="Dropdown Toggle"
@@ -2877,7 +2783,7 @@ exports[`dropdown basic 1`] = `
             </CaretDownIcon>
           </button>
         </Toggle>
-      </DropdownToggle>
+      </Component>
       <DropdownMenu
         aria-labelledby="Dropdown Toggle"
         autoFocus={true}
@@ -2899,7 +2805,7 @@ exports[`dropdown basic 1`] = `
           >
             <div
               className="pf-c-dropdown__menu-item"
-              key=".0"
+              key=".$.0"
               onKeyDown={[Function]}
               tabIndex={-1}
             >
@@ -2910,17 +2816,15 @@ exports[`dropdown basic 1`] = `
       </DropdownMenu>
     </div>
   </DropdownWithContext>
-</Dropdown>
+</Component>
 `;
 
 exports[`dropdown dropup + right aligned 1`] = `
-<Dropdown
-  autoFocus={true}
-  className=""
+<Component
   direction="up"
   dropdownItems={
     Array [
-      <DropdownItem
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -2934,13 +2838,12 @@ exports[`dropdown dropup + right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -2954,13 +2857,12 @@ exports[`dropdown dropup + right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -2974,13 +2876,12 @@ exports[`dropdown dropup + right aligned 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -2994,16 +2895,13 @@ exports[`dropdown dropup + right aligned 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <Unknown />,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -3017,13 +2915,12 @@ exports[`dropdown dropup + right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -3037,43 +2934,28 @@ exports[`dropdown dropup + right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </InternalDropdownItem>,
     ]
   }
-  isGrouped={false}
-  isOpen={false}
-  isPlain={false}
-  onSelect={[Function]}
   position="right"
   toggle={
-    <DropdownToggle
-      className=""
-      iconComponent={[Function]}
+    <Unknown
       id="Dropdown Toggle"
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
     >
       Dropdown
-    </DropdownToggle>
+    </Unknown>
   }
 >
   <DropdownWithContext
-    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
       Array [
-        <DropdownItem
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -3087,13 +2969,12 @@ exports[`dropdown dropup + right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -3107,13 +2988,12 @@ exports[`dropdown dropup + right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -3127,13 +3007,12 @@ exports[`dropdown dropup + right aligned 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -3147,16 +3026,13 @@ exports[`dropdown dropup + right aligned 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <Unknown />,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -3170,13 +3046,12 @@ exports[`dropdown dropup + right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -3190,12 +3065,11 @@ exports[`dropdown dropup + right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </InternalDropdownItem>,
       ]
     }
     isGrouped={false}
@@ -3204,42 +3078,60 @@ exports[`dropdown dropup + right aligned 1`] = `
     onSelect={[Function]}
     position="right"
     toggle={
-      <DropdownToggle
-        className=""
-        iconComponent={[Function]}
+      <Unknown
         id="Dropdown Toggle"
-        isActive={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
       >
         Dropdown
-      </DropdownToggle>
+      </Unknown>
     }
   >
     <div
       className="pf-c-dropdown pf-m-top"
     >
-      <DropdownToggle
+      <Component
         ariaHasPopup={true}
-        className=""
-        iconComponent={[Function]}
         id="Dropdown Toggle"
-        isActive={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-dropdown pf-m-top"
+            >
+              <button
+                aria-expanded="false"
+                class="pf-c-dropdown__toggle"
+                id="Dropdown Toggle"
+                type="button"
+              >
+                <span
+                  class="pf-c-dropdown__toggle-text"
+                >
+                  Dropdown
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="pf-c-dropdown__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+            </div>,
+          }
+        }
       >
         <Toggle
-          ariaHasPopup={true}
           className=""
           id="Dropdown Toggle"
           isActive={false}
@@ -3251,12 +3143,44 @@ exports[`dropdown dropup + right aligned 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-dropdown pf-m-top"
+              >
+                <button
+                  aria-expanded="false"
+                  class="pf-c-dropdown__toggle"
+                  id="Dropdown Toggle"
+                  type="button"
+                >
+                  <span
+                    class="pf-c-dropdown__toggle-text"
+                  >
+                    Dropdown
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    class="pf-c-dropdown__toggle-icon"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
+              </div>,
+            }
+          }
         >
           <button
             aria-expanded={false}
-            aria-haspopup={true}
             className="pf-c-dropdown__toggle"
             disabled={false}
             id="Dropdown Toggle"
@@ -3299,20 +3223,18 @@ exports[`dropdown dropup + right aligned 1`] = `
             </CaretDownIcon>
           </button>
         </Toggle>
-      </DropdownToggle>
+      </Component>
     </div>
   </DropdownWithContext>
-</Dropdown>
+</Component>
 `;
 
 exports[`dropdown dropup 1`] = `
-<Dropdown
-  autoFocus={true}
-  className=""
+<Component
   direction="up"
   dropdownItems={
     Array [
-      <DropdownItem
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -3326,13 +3248,12 @@ exports[`dropdown dropup 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -3346,13 +3267,12 @@ exports[`dropdown dropup 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -3366,13 +3286,12 @@ exports[`dropdown dropup 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -3386,16 +3305,13 @@ exports[`dropdown dropup 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <Unknown />,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -3409,13 +3325,12 @@ exports[`dropdown dropup 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -3429,43 +3344,27 @@ exports[`dropdown dropup 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </InternalDropdownItem>,
     ]
   }
-  isGrouped={false}
-  isOpen={false}
-  isPlain={false}
-  onSelect={[Function]}
-  position="left"
   toggle={
-    <DropdownToggle
-      className=""
-      iconComponent={[Function]}
+    <Unknown
       id="Dropdown Toggle"
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
     >
       Dropdown
-    </DropdownToggle>
+    </Unknown>
   }
 >
   <DropdownWithContext
-    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
       Array [
-        <DropdownItem
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -3479,13 +3378,12 @@ exports[`dropdown dropup 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -3499,13 +3397,12 @@ exports[`dropdown dropup 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -3519,13 +3416,12 @@ exports[`dropdown dropup 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -3539,16 +3435,13 @@ exports[`dropdown dropup 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <Unknown />,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -3562,13 +3455,12 @@ exports[`dropdown dropup 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -3582,12 +3474,11 @@ exports[`dropdown dropup 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </InternalDropdownItem>,
       ]
     }
     isGrouped={false}
@@ -3596,42 +3487,60 @@ exports[`dropdown dropup 1`] = `
     onSelect={[Function]}
     position="left"
     toggle={
-      <DropdownToggle
-        className=""
-        iconComponent={[Function]}
+      <Unknown
         id="Dropdown Toggle"
-        isActive={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
       >
         Dropdown
-      </DropdownToggle>
+      </Unknown>
     }
   >
     <div
       className="pf-c-dropdown pf-m-top"
     >
-      <DropdownToggle
+      <Component
         ariaHasPopup={true}
-        className=""
-        iconComponent={[Function]}
         id="Dropdown Toggle"
-        isActive={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-dropdown pf-m-top"
+            >
+              <button
+                aria-expanded="false"
+                class="pf-c-dropdown__toggle"
+                id="Dropdown Toggle"
+                type="button"
+              >
+                <span
+                  class="pf-c-dropdown__toggle-text"
+                >
+                  Dropdown
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="pf-c-dropdown__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+            </div>,
+          }
+        }
       >
         <Toggle
-          ariaHasPopup={true}
           className=""
           id="Dropdown Toggle"
           isActive={false}
@@ -3643,12 +3552,44 @@ exports[`dropdown dropup 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-dropdown pf-m-top"
+              >
+                <button
+                  aria-expanded="false"
+                  class="pf-c-dropdown__toggle"
+                  id="Dropdown Toggle"
+                  type="button"
+                >
+                  <span
+                    class="pf-c-dropdown__toggle-text"
+                  >
+                    Dropdown
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    class="pf-c-dropdown__toggle-icon"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
+              </div>,
+            }
+          }
         >
           <button
             aria-expanded={false}
-            aria-haspopup={true}
             className="pf-c-dropdown__toggle"
             disabled={false}
             id="Dropdown Toggle"
@@ -3691,20 +3632,17 @@ exports[`dropdown dropup 1`] = `
             </CaretDownIcon>
           </button>
         </Toggle>
-      </DropdownToggle>
+      </Component>
     </div>
   </DropdownWithContext>
-</Dropdown>
+</Component>
 `;
 
 exports[`dropdown expanded 1`] = `
-<Dropdown
-  autoFocus={true}
-  className=""
-  direction="down"
+<Component
   dropdownItems={
     Array [
-      <DropdownItem
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -3718,13 +3656,12 @@ exports[`dropdown expanded 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -3738,13 +3675,12 @@ exports[`dropdown expanded 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -3758,13 +3694,12 @@ exports[`dropdown expanded 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -3778,16 +3713,13 @@ exports[`dropdown expanded 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <Unknown />,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -3801,13 +3733,12 @@ exports[`dropdown expanded 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -3821,43 +3752,28 @@ exports[`dropdown expanded 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </InternalDropdownItem>,
     ]
   }
-  isGrouped={false}
   isOpen={true}
-  isPlain={false}
-  onSelect={[Function]}
-  position="left"
   toggle={
-    <DropdownToggle
-      className=""
-      iconComponent={[Function]}
+    <Unknown
       id="Dropdown Toggle"
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
     >
       Dropdown
-    </DropdownToggle>
+    </Unknown>
   }
 >
   <DropdownWithContext
-    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -3871,13 +3787,12 @@ exports[`dropdown expanded 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -3891,13 +3806,12 @@ exports[`dropdown expanded 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -3911,13 +3825,12 @@ exports[`dropdown expanded 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -3931,16 +3844,13 @@ exports[`dropdown expanded 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <Unknown />,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -3954,13 +3864,12 @@ exports[`dropdown expanded 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -3974,12 +3883,11 @@ exports[`dropdown expanded 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </InternalDropdownItem>,
       ]
     }
     isGrouped={false}
@@ -3988,42 +3896,136 @@ exports[`dropdown expanded 1`] = `
     onSelect={[Function]}
     position="left"
     toggle={
-      <DropdownToggle
-        className=""
-        iconComponent={[Function]}
+      <Unknown
         id="Dropdown Toggle"
-        isActive={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
       >
         Dropdown
-      </DropdownToggle>
+      </Unknown>
     }
   >
     <div
       className="pf-c-dropdown pf-m-expanded"
     >
-      <DropdownToggle
+      <Component
         ariaHasPopup={true}
-        className=""
-        iconComponent={[Function]}
         id="Dropdown Toggle"
-        isActive={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={true}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-dropdown pf-m-expanded"
+            >
+              <button
+                aria-expanded="true"
+                class="pf-c-dropdown__toggle"
+                id="Dropdown Toggle"
+                type="button"
+              >
+                <span
+                  class="pf-c-dropdown__toggle-text"
+                >
+                  Dropdown
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="pf-c-dropdown__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+              <ul
+                aria-labelledby="Dropdown Toggle"
+                class="pf-c-dropdown__menu"
+                role="menu"
+              >
+                <li
+                  role="none"
+                >
+                  <a
+                    aria-disabled="false"
+                    class="pf-c-dropdown__menu-item"
+                  >
+                    Link
+                  </a>
+                </li>
+                <li
+                  role="none"
+                >
+                  <button
+                    class="pf-c-dropdown__menu-item"
+                    type="button"
+                  >
+                    Action
+                  </button>
+                </li>
+                <li
+                  role="none"
+                >
+                  <a
+                    aria-disabled="true"
+                    class="pf-m-disabled pf-c-dropdown__menu-item"
+                    tabindex="-1"
+                  >
+                    Disabled Link
+                  </a>
+                </li>
+                <li
+                  role="none"
+                >
+                  <button
+                    class="pf-m-disabled pf-c-dropdown__menu-item"
+                    disabled=""
+                    type="button"
+                  >
+                    Disabled Action
+                  </button>
+                </li>
+                <li
+                  role="none"
+                >
+                  <div
+                    class="pf-c-dropdown__separator"
+                    role="separator"
+                  />
+                </li>
+                <li
+                  role="none"
+                >
+                  <a
+                    aria-disabled="false"
+                    class="pf-c-dropdown__menu-item"
+                  >
+                    Separated Link
+                  </a>
+                </li>
+                <li
+                  role="none"
+                >
+                  <button
+                    class="pf-c-dropdown__menu-item"
+                    type="button"
+                  >
+                    Separated Action
+                  </button>
+                </li>
+              </ul>
+            </div>,
+          }
+        }
       >
         <Toggle
-          ariaHasPopup={true}
           className=""
           id="Dropdown Toggle"
           isActive={false}
@@ -4035,12 +4037,120 @@ exports[`dropdown expanded 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-dropdown pf-m-expanded"
+              >
+                <button
+                  aria-expanded="true"
+                  class="pf-c-dropdown__toggle"
+                  id="Dropdown Toggle"
+                  type="button"
+                >
+                  <span
+                    class="pf-c-dropdown__toggle-text"
+                  >
+                    Dropdown
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    class="pf-c-dropdown__toggle-icon"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
+                <ul
+                  aria-labelledby="Dropdown Toggle"
+                  class="pf-c-dropdown__menu"
+                  role="menu"
+                >
+                  <li
+                    role="none"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-dropdown__menu-item"
+                    >
+                      Link
+                    </a>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <button
+                      class="pf-c-dropdown__menu-item"
+                      type="button"
+                    >
+                      Action
+                    </button>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <a
+                      aria-disabled="true"
+                      class="pf-m-disabled pf-c-dropdown__menu-item"
+                      tabindex="-1"
+                    >
+                      Disabled Link
+                    </a>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <button
+                      class="pf-m-disabled pf-c-dropdown__menu-item"
+                      disabled=""
+                      type="button"
+                    >
+                      Disabled Action
+                    </button>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <div
+                      class="pf-c-dropdown__separator"
+                      role="separator"
+                    />
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-dropdown__menu-item"
+                    >
+                      Separated Link
+                    </a>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <button
+                      class="pf-c-dropdown__menu-item"
+                      type="button"
+                    >
+                      Separated Action
+                    </button>
+                  </li>
+                </ul>
+              </div>,
+            }
+          }
         >
           <button
             aria-expanded={true}
-            aria-haspopup={true}
             className="pf-c-dropdown__toggle"
             disabled={false}
             id="Dropdown Toggle"
@@ -4083,7 +4193,7 @@ exports[`dropdown expanded 1`] = `
             </CaretDownIcon>
           </button>
         </Toggle>
-      </DropdownToggle>
+      </Component>
       <DropdownMenu
         aria-labelledby="Dropdown Toggle"
         autoFocus={true}
@@ -4101,7 +4211,7 @@ exports[`dropdown expanded 1`] = `
           hidden={false}
           role="menu"
         >
-          <DropdownItem
+          <InternalDropdownItem
             className=""
             component="a"
             context={
@@ -4116,8 +4226,7 @@ exports[`dropdown expanded 1`] = `
             isHovered={false}
             key=".$link"
             onClick={[Function]}
-            role={null}
-            tooltip={null}
+            onSelect={[Function]}
             tooltipProps={Object {}}
           >
             <li
@@ -4129,13 +4238,13 @@ exports[`dropdown expanded 1`] = `
                 href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role={null}
+                onSelect={[Function]}
               >
                 Link
               </a>
             </li>
-          </DropdownItem>
-          <DropdownItem
+          </InternalDropdownItem>
+          <InternalDropdownItem
             className=""
             component="button"
             context={
@@ -4150,8 +4259,7 @@ exports[`dropdown expanded 1`] = `
             isHovered={false}
             key=".$action"
             onClick={[Function]}
-            role={null}
-            tooltip={null}
+            onSelect={[Function]}
             tooltipProps={Object {}}
           >
             <li
@@ -4163,14 +4271,14 @@ exports[`dropdown expanded 1`] = `
                 href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role={null}
+                onSelect={[Function]}
                 type="button"
               >
                 Action
               </button>
             </li>
-          </DropdownItem>
-          <DropdownItem
+          </InternalDropdownItem>
+          <InternalDropdownItem
             className=""
             component="a"
             context={
@@ -4185,8 +4293,7 @@ exports[`dropdown expanded 1`] = `
             isHovered={false}
             key=".$disabled link"
             onClick={[Function]}
-            role={null}
-            tooltip={null}
+            onSelect={[Function]}
             tooltipProps={Object {}}
           >
             <li
@@ -4198,14 +4305,14 @@ exports[`dropdown expanded 1`] = `
                 href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role={null}
+                onSelect={[Function]}
                 tabIndex={-1}
               >
                 Disabled Link
               </a>
             </li>
-          </DropdownItem>
-          <DropdownItem
+          </InternalDropdownItem>
+          <InternalDropdownItem
             className=""
             component="button"
             context={
@@ -4220,8 +4327,7 @@ exports[`dropdown expanded 1`] = `
             isHovered={false}
             key=".$disabled action"
             onClick={[Function]}
-            role={null}
-            tooltip={null}
+            onSelect={[Function]}
             tooltipProps={Object {}}
           >
             <li
@@ -4233,19 +4339,18 @@ exports[`dropdown expanded 1`] = `
                 href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role={null}
+                onSelect={[Function]}
                 type="button"
               >
                 Disabled Action
               </button>
             </li>
-          </DropdownItem>
-          <Separator
-            className=""
+          </InternalDropdownItem>
+          <Component
             index={4}
             key=".$separator"
           >
-            <DropdownItem
+            <InternalDropdownItem
               className="pf-c-dropdown__separator"
               component="div"
               context={
@@ -4259,8 +4364,8 @@ exports[`dropdown expanded 1`] = `
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="separator"
-              tooltip={null}
               tooltipProps={Object {}}
             >
               <li
@@ -4271,12 +4376,13 @@ exports[`dropdown expanded 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="separator"
                 />
               </li>
-            </DropdownItem>
-          </Separator>
-          <DropdownItem
+            </InternalDropdownItem>
+          </Component>
+          <InternalDropdownItem
             className=""
             component="a"
             context={
@@ -4291,8 +4397,7 @@ exports[`dropdown expanded 1`] = `
             isHovered={false}
             key=".$separated link"
             onClick={[Function]}
-            role={null}
-            tooltip={null}
+            onSelect={[Function]}
             tooltipProps={Object {}}
           >
             <li
@@ -4304,13 +4409,13 @@ exports[`dropdown expanded 1`] = `
                 href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role={null}
+                onSelect={[Function]}
               >
                 Separated Link
               </a>
             </li>
-          </DropdownItem>
-          <DropdownItem
+          </InternalDropdownItem>
+          <InternalDropdownItem
             className=""
             component="button"
             context={
@@ -4325,8 +4430,7 @@ exports[`dropdown expanded 1`] = `
             isHovered={false}
             key=".$separated action"
             onClick={[Function]}
-            role={null}
-            tooltip={null}
+            onSelect={[Function]}
             tooltipProps={Object {}}
           >
             <li
@@ -4338,28 +4442,25 @@ exports[`dropdown expanded 1`] = `
                 href={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                role={null}
+                onSelect={[Function]}
                 type="button"
               >
                 Separated Action
               </button>
             </li>
-          </DropdownItem>
+          </InternalDropdownItem>
         </ul>
       </DropdownMenu>
     </div>
   </DropdownWithContext>
-</Dropdown>
+</Component>
 `;
 
 exports[`dropdown regular 1`] = `
-<Dropdown
-  autoFocus={true}
-  className=""
-  direction="down"
+<Component
   dropdownItems={
     Array [
-      <DropdownItem
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -4373,13 +4474,12 @@ exports[`dropdown regular 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -4393,13 +4493,12 @@ exports[`dropdown regular 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -4413,13 +4512,12 @@ exports[`dropdown regular 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -4433,16 +4531,13 @@ exports[`dropdown regular 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <Unknown />,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -4456,13 +4551,12 @@ exports[`dropdown regular 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -4476,43 +4570,27 @@ exports[`dropdown regular 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </InternalDropdownItem>,
     ]
   }
-  isGrouped={false}
-  isOpen={false}
-  isPlain={false}
-  onSelect={[Function]}
-  position="left"
   toggle={
-    <DropdownToggle
-      className=""
-      iconComponent={[Function]}
+    <Unknown
       id="Dropdown Toggle"
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
     >
       Dropdown
-    </DropdownToggle>
+    </Unknown>
   }
 >
   <DropdownWithContext
-    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -4526,13 +4604,12 @@ exports[`dropdown regular 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -4546,13 +4623,12 @@ exports[`dropdown regular 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -4566,13 +4642,12 @@ exports[`dropdown regular 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -4586,16 +4661,13 @@ exports[`dropdown regular 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <Unknown />,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -4609,13 +4681,12 @@ exports[`dropdown regular 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -4629,12 +4700,11 @@ exports[`dropdown regular 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </InternalDropdownItem>,
       ]
     }
     isGrouped={false}
@@ -4643,42 +4713,60 @@ exports[`dropdown regular 1`] = `
     onSelect={[Function]}
     position="left"
     toggle={
-      <DropdownToggle
-        className=""
-        iconComponent={[Function]}
+      <Unknown
         id="Dropdown Toggle"
-        isActive={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
       >
         Dropdown
-      </DropdownToggle>
+      </Unknown>
     }
   >
     <div
       className="pf-c-dropdown"
     >
-      <DropdownToggle
+      <Component
         ariaHasPopup={true}
-        className=""
-        iconComponent={[Function]}
         id="Dropdown Toggle"
-        isActive={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-dropdown"
+            >
+              <button
+                aria-expanded="false"
+                class="pf-c-dropdown__toggle"
+                id="Dropdown Toggle"
+                type="button"
+              >
+                <span
+                  class="pf-c-dropdown__toggle-text"
+                >
+                  Dropdown
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="pf-c-dropdown__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+            </div>,
+          }
+        }
       >
         <Toggle
-          ariaHasPopup={true}
           className=""
           id="Dropdown Toggle"
           isActive={false}
@@ -4690,12 +4778,44 @@ exports[`dropdown regular 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-dropdown"
+              >
+                <button
+                  aria-expanded="false"
+                  class="pf-c-dropdown__toggle"
+                  id="Dropdown Toggle"
+                  type="button"
+                >
+                  <span
+                    class="pf-c-dropdown__toggle-text"
+                  >
+                    Dropdown
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    class="pf-c-dropdown__toggle-icon"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
+              </div>,
+            }
+          }
         >
           <button
             aria-expanded={false}
-            aria-haspopup={true}
             className="pf-c-dropdown__toggle"
             disabled={false}
             id="Dropdown Toggle"
@@ -4738,20 +4858,17 @@ exports[`dropdown regular 1`] = `
             </CaretDownIcon>
           </button>
         </Toggle>
-      </DropdownToggle>
+      </Component>
     </div>
   </DropdownWithContext>
-</Dropdown>
+</Component>
 `;
 
 exports[`dropdown right aligned 1`] = `
-<Dropdown
-  autoFocus={true}
-  className=""
-  direction="down"
+<Component
   dropdownItems={
     Array [
-      <DropdownItem
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -4765,13 +4882,12 @@ exports[`dropdown right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -4785,13 +4901,12 @@ exports[`dropdown right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -4805,13 +4920,12 @@ exports[`dropdown right aligned 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -4825,16 +4939,13 @@ exports[`dropdown right aligned 1`] = `
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <Unknown />,
+      <InternalDropdownItem
         className=""
         component="a"
         context={
@@ -4848,13 +4959,12 @@ exports[`dropdown right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
+      </InternalDropdownItem>,
+      <InternalDropdownItem
         className=""
         component="button"
         context={
@@ -4868,43 +4978,28 @@ exports[`dropdown right aligned 1`] = `
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        role={null}
-        tooltip={null}
+        onSelect={[Function]}
         tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </InternalDropdownItem>,
     ]
   }
-  isGrouped={false}
-  isOpen={false}
-  isPlain={false}
-  onSelect={[Function]}
   position="right"
   toggle={
-    <DropdownToggle
-      className=""
-      iconComponent={[Function]}
+    <Unknown
       id="Dropdown Toggle"
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
     >
       Dropdown
-    </DropdownToggle>
+    </Unknown>
   }
 >
   <DropdownWithContext
-    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -4918,13 +5013,12 @@ exports[`dropdown right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -4938,13 +5032,12 @@ exports[`dropdown right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -4958,13 +5051,12 @@ exports[`dropdown right aligned 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -4978,16 +5070,13 @@ exports[`dropdown right aligned 1`] = `
           isDisabled={true}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <Unknown />,
+        <InternalDropdownItem
           className=""
           component="a"
           context={
@@ -5001,13 +5090,12 @@ exports[`dropdown right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
+        </InternalDropdownItem>,
+        <InternalDropdownItem
           className=""
           component="button"
           context={
@@ -5021,12 +5109,11 @@ exports[`dropdown right aligned 1`] = `
           isDisabled={false}
           isHovered={false}
           onClick={[Function]}
-          role={null}
-          tooltip={null}
+          onSelect={[Function]}
           tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </InternalDropdownItem>,
       ]
     }
     isGrouped={false}
@@ -5035,42 +5122,60 @@ exports[`dropdown right aligned 1`] = `
     onSelect={[Function]}
     position="right"
     toggle={
-      <DropdownToggle
-        className=""
-        iconComponent={[Function]}
+      <Unknown
         id="Dropdown Toggle"
-        isActive={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
       >
         Dropdown
-      </DropdownToggle>
+      </Unknown>
     }
   >
     <div
       className="pf-c-dropdown"
     >
-      <DropdownToggle
+      <Component
         ariaHasPopup={true}
-        className=""
-        iconComponent={[Function]}
         id="Dropdown Toggle"
-        isActive={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
-        onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-dropdown"
+            >
+              <button
+                aria-expanded="false"
+                class="pf-c-dropdown__toggle"
+                id="Dropdown Toggle"
+                type="button"
+              >
+                <span
+                  class="pf-c-dropdown__toggle-text"
+                >
+                  Dropdown
+                </span>
+                <svg
+                  aria-hidden="true"
+                  class="pf-c-dropdown__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+            </div>,
+          }
+        }
       >
         <Toggle
-          ariaHasPopup={true}
           className=""
           id="Dropdown Toggle"
           isActive={false}
@@ -5082,12 +5187,44 @@ exports[`dropdown right aligned 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-dropdown"
+              >
+                <button
+                  aria-expanded="false"
+                  class="pf-c-dropdown__toggle"
+                  id="Dropdown Toggle"
+                  type="button"
+                >
+                  <span
+                    class="pf-c-dropdown__toggle-text"
+                  >
+                    Dropdown
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    class="pf-c-dropdown__toggle-icon"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
+              </div>,
+            }
+          }
         >
           <button
             aria-expanded={false}
-            aria-haspopup={true}
             className="pf-c-dropdown__toggle"
             disabled={false}
             id="Dropdown Toggle"
@@ -5130,8 +5267,8 @@ exports[`dropdown right aligned 1`] = `
             </CaretDownIcon>
           </button>
         </Toggle>
-      </DropdownToggle>
+      </Component>
     </div>
   </DropdownWithContext>
-</Dropdown>
+</Component>
 `;

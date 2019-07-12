@@ -61,5 +61,6 @@ export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
     isDisabled={isDisabled}
     onToggle={onToggle}
     {...props}>
+    <EllipsisVIcon />
   </Toggle>
 );

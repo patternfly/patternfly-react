@@ -172,7 +172,7 @@ describe('API', () => {
 
   test('dropdownItems and children console error ', () => {
     const myMock = jest.fn();
-    global.console = { error: myMock };
+    global.console = { error: myMock } as any;
     mount(
       <Dropdown
         dropdownItems={dropdownItems}
@@ -187,7 +187,7 @@ describe('API', () => {
 
   test('dropdownItems only, no console error ', () => {
     const myMock = jest.fn();
-    global.console = { error: myMock };
+    global.console = { error: myMock } as any;
     mount(
       <Dropdown
         dropdownItems={dropdownItems}
@@ -200,7 +200,7 @@ describe('API', () => {
 
   test('children only, no console ', () => {
     const myMock = jest.fn();
-    global.console = { error: myMock };
+    global.console = { error: myMock } as any;
     mount(
       <Dropdown isOpen toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}>
         <div>Children items</div>
