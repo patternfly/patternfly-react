@@ -16,8 +16,6 @@ export interface OptionsMenuItemProps extends Omit<React.HTMLProps<HTMLButtonEle
   isDisabled?: boolean;
   /** Callback for when this Options menu item is selected */
   onSelect?: (event: React.MouseEvent<HTMLButtonElement>|React.KeyboardEvent) => void;
-  /** Prevents event bubbling from child components in button element */
-  handleChildClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** Unique id of this Options menu item */
   id?: string;
 }
@@ -29,7 +27,6 @@ export const OptionsMenuItem: React.FunctionComponent<OptionsMenuItemProps> = ({
   isSelected = false,
   isDisabled = false,
   onSelect = () => null as any,
-  handleChildClick = () => null as any,
   id = '',
   ...props
 }: OptionsMenuItemProps) => {
@@ -57,7 +54,7 @@ export const OptionsMenuItem: React.FunctionComponent<OptionsMenuItemProps> = ({
         id={id}
         {...props}>
         {children}
-        <i onClick={handleChildClick} className={css(styles.optionsMenuMenuItemIcon)} aria-hidden hidden={!isSelected}><CheckIcon/></i>
+        <i className={css(styles.optionsMenuMenuItemIcon)} aria-hidden hidden={!isSelected}><CheckIcon/></i>
       </button>
     </li>
   );

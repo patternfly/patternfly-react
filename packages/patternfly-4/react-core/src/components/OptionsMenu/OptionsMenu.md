@@ -38,24 +38,20 @@ class SingleOption extends React.Component {
       };
       
       this.onSelect = event => {
-        const id = event.target.id;
+        const id = event.currentTarget.id;
         this.setState(() => {
           return { selectedOption: id };
         });
       };
       
-       this.handleChildClick = event => {
-             event.stopPropagation();
-             event.preventDefault();
-        }
     }
     
   render() {
     const { selectedOption, toggleTemplateText, isOpen } = this.state;
     const menuItems = [
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={selectedOption === "singleOption1"} id="singleOption1" key="option 1">Option 1</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={selectedOption === "singleOption2"} id="singleOption2" key="option 2">Option 2</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={selectedOption === "singleOption3"} id="singleOption3" key="option 3">Option 3</OptionsMenuItem>
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={selectedOption === "singleOption1"} id="singleOption1" key="option 1">Option 1</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={selectedOption === "singleOption2"} id="singleOption2" key="option 2">Option 2</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={selectedOption === "singleOption3"} id="singleOption3" key="option 3">Option 3</OptionsMenuItem>
     ];
     const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={toggleTemplateText} />
 
@@ -127,20 +123,15 @@ class MultipleOptions extends React.Component {
           });
       };
       
-       this.handleChildClick = event => {
-         event.stopPropagation();
-         event.preventDefault();
-       }
-      
       this.onSelectColumn = event => {
-        const id = event.target.id;
+        const id = event.currentTarget.id;
         this.setState(() => {
           return { sortColumn: id };
         });
       };
       
       this.onSelectDirection = event => {
-        const id = event.target.id;
+        const id = event.currentTarget.id;
         this.setState(() => {
           return { sortDirection: id };
         });
@@ -151,15 +142,15 @@ class MultipleOptions extends React.Component {
     const { sortColumn, sortDirection, toggleTemplateText, isOpen } = this.state;
     const menuItems = [
         <OptionsMenuItemGroup key="first group" aria-label="Sort Column">
-          <OptionsMenuItem onSelect={this.onSelectColumn} handleChildClick={this.handleChildClick} isSelected={sortColumn === "name"} id="name" key="name">Name</OptionsMenuItem>
-          <OptionsMenuItem onSelect={this.onSelectColumn} handleChildClick={this.handleChildClick} isSelected={sortColumn === "date"} id="date" key="date">Date</OptionsMenuItem>
-          <OptionsMenuItem isDisabled onSelect={this.onSelectColumn} handleChildClick={this.handleChildClick} isSelected={sortColumn === "disabled"} id="disabled" key="disabled">Disabled</OptionsMenuItem>
-          <OptionsMenuItem onSelect={this.onSelectColumn} handleChildClick={this.handleChildClick} isSelected={sortColumn === "size"} id="size" key="size">Size</OptionsMenuItem>
+          <OptionsMenuItem onSelect={this.onSelectColumn} isSelected={sortColumn === "name"} id="name" key="name">Name</OptionsMenuItem>
+          <OptionsMenuItem onSelect={this.onSelectColumn} isSelected={sortColumn === "date"} id="date" key="date">Date</OptionsMenuItem>
+          <OptionsMenuItem isDisabled onSelect={this.onSelectColumn} isSelected={sortColumn === "disabled"} id="disabled" key="disabled">Disabled</OptionsMenuItem>
+          <OptionsMenuItem onSelect={this.onSelectColumn} isSelected={sortColumn === "size"} id="size" key="size">Size</OptionsMenuItem>
         </OptionsMenuItemGroup>,
         <OptionsMenuSeparator key="separator"/>,
         <OptionsMenuItemGroup key="second group" aria-label="Sort Direction">
-          <OptionsMenuItem onSelect={this.onSelectDirection} handleChildClick={this.handleChildClick} isSelected={sortDirection === "ascending"} id="ascending" key="ascending">Ascending</OptionsMenuItem>
-          <OptionsMenuItem onSelect={this.onSelectDirection} handleChildClick={this.handleChildClick} isSelected={sortDirection === "descending"} id="descending" key="descending">Descending</OptionsMenuItem>
+          <OptionsMenuItem onSelect={this.onSelectDirection} isSelected={sortDirection === "ascending"} id="ascending" key="ascending">Ascending</OptionsMenuItem>
+          <OptionsMenuItem onSelect={this.onSelectDirection} isSelected={sortDirection === "descending"} id="descending" key="descending">Descending</OptionsMenuItem>
         </OptionsMenuItemGroup>
       ];
     const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={toggleTemplateText} />
@@ -208,30 +199,25 @@ class Plain extends React.Component {
       };
       
       this.onSelect = event => {
-        const id = event.target.id;
+        const id = event.currentTarget.id;
         this.setState((prevState) => {
           return { [id]: !prevState[id] };
         });
       };
-      
-      this.handleChildClick = event => {
-        event.stopPropagation();
-        event.preventDefault();
-      }
     }
 
   render() {
     const { isOpen, isDisabledOpen, plainOption1, plainOption2, plainOption3, disabledPlainOption1, disabledPlainOption2, disabledPlainOption3 } = this.state
     const menuItems = [
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={plainOption1} id="plainOption1" key="option 1">Option 1</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={plainOption2} id="plainOption2" key="option 2">Option 2</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={plainOption3} id="plainOption3" key="option 3">Option 3</OptionsMenuItem>
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={plainOption1} id="plainOption1" key="option 1">Option 1</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={plainOption2} id="plainOption2" key="option 2">Option 2</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={plainOption3} id="plainOption3" key="option 3">Option 3</OptionsMenuItem>
     ];
 
     const disabledMenuItems = [
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={disabledPlainOption1} id="disabledPlainOption1" key="disabled option 1">Option 1</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={disabledPlainOption2} id="disabledPlainOption2" key="disabled option 2">Option 2</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={disabledPlainOption3} id="disabledPlainOption3" key="disabled option 3">Option 3</OptionsMenuItem>
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={disabledPlainOption1} id="disabledPlainOption1" key="disabled option 1">Option 1</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={disabledPlainOption2} id="disabledPlainOption2" key="disabled option 2">Option 2</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={disabledPlainOption3} id="disabledPlainOption3" key="disabled option 3">Option 3</OptionsMenuItem>
     ];
     const toggleTemplate = <SortAmountDownIcon aria-hidden="true"/>
     
@@ -280,25 +266,19 @@ class Top extends React.Component {
     };
     
     this.onSelect = event => {
-      const id = event.target.id;
+      const id = event.currentTarget.id;
       this.setState((prevState) => {
         return { [id]: !prevState[id] };
       });
     };
-    
-    this.handleChildClick = event => {
-      event.stopPropagation();
-      event.preventDefault();
-    }
-           
   }
 
   render() {
     const { isOpen, topOption1, topOption2, topOption3, toggleTemplateText } = this.state
     const menuItems = [
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={topOption1} id="topOption1" key="option 1">Option 1</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={topOption2} id="topOption2" key="option 2">Option 2</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={topOption3} id="topOption3" key="option 3">Option 3</OptionsMenuItem>
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={topOption1} id="topOption1" key="option 1">Option 1</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={topOption2} id="topOption2" key="option 2">Option 2</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={topOption3} id="topOption3" key="option 3">Option 3</OptionsMenuItem>
     ];
     const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={toggleTemplateText} />
 
@@ -337,25 +317,19 @@ class AlignRight extends React.Component {
     };
     
     this.onSelect = event => {
-      const id = event.target.id;
+      const id = event.currentTarget.id;
       this.setState((prevState) => {
         return { [id]: !prevState[id] };
       });
     };
-    
-    this.handleChildClick = event => {
-      event.stopPropagation();
-      event.preventDefault();
-    }
-        
   }
 
   render() {
     const { isOpen, toggleTemplateText, rightOption1, rightOption2, rightOption3 } = this.state;
     const menuItems = [
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={rightOption1} id="rightOption1" key="option 1">Right option 1</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={rightOption2} id="rightOption2" key="option 2">Right option 2</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={rightOption3} id="rightOption3" key="option 3">Right option 3</OptionsMenuItem>
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={rightOption1} id="rightOption1" key="option 1">Right option 1</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={rightOption2} id="rightOption2" key="option 2">Right option 2</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={rightOption3} id="rightOption3" key="option 3">Right option 3</OptionsMenuItem>
     ];
     const toggle = <OptionsMenuToggle onToggle={this.onToggle} toggleTemplate={toggleTemplateText} />
 
@@ -396,7 +370,7 @@ class PlainWithText extends React.Component {
       };
       
       this.onSelect = event => {
-        const id = event.target.id;
+        const id = event.currentTarget.id;
         this.setState((prevState) => {
           return { [id]: !prevState[id] };
         });
@@ -407,19 +381,14 @@ class PlainWithText extends React.Component {
           isOpen: !this.state.isOpen
         });
       };
-      
-      this.handleChildClick = event => {
-        event.stopPropagation();
-        event.preventDefault();
-      }
     }
 
   render() {
     const { isOpen, toggleText, buttonContents } = this.state;
     const menuItems = [
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={this.state.customOption1} id="customOption1" key="option 1">Option 1</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={this.state.customOption2} id="customOption2" key="option 2">Option 2</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} handleChildClick={this.handleChildClick} isSelected={this.state.customOption3} id="customOption3" key="option 3">Option 3</OptionsMenuItem>
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.customOption1} id="customOption1" key="option 1">Option 1</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.customOption2} id="customOption2" key="option 2">Option 2</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.customOption3} id="customOption3" key="option 3">Option 3</OptionsMenuItem>
     ];
     const toggle = <OptionsMenuToggleWithText toggleText={toggleText} toggleButtonContents={buttonContents} onToggle={this.onToggle} />;
 
