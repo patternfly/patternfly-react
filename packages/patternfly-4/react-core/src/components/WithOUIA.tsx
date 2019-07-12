@@ -1,9 +1,13 @@
 import * as React from 'react';
-import { isOUIAEnvironment, getUniqueId as getOUIAUniqueId } from '../helpers/ouia';
+import { isOUIAEnvironment, getUniqueId, generateOUIAId } from '../helpers/ouia';
 
 export interface InjectedOUIAProps {
   renderWithOUIA: boolean;
   ouiaId: number;
+}
+
+export interface OuiaProps {
+  'data-ouia-component-id'?: number | string;
 }
 
 export interface WithOUIAProps {
@@ -18,14 +22,17 @@ export interface WithOUIAState {
 export class WithOUIA extends React.Component<WithOUIAProps, WithOUIAState> {
   state: WithOUIAState = {
     renderWithOUIA: false,
-    ouiaId: getOUIAUniqueId()
+    ouiaId: null
   };
 
   componentDidMount() {
     const { renderWithOUIA } = this.state;
     const isOuia = isOUIAEnvironment();
     if (isOuia !== renderWithOUIA) {
-      this.setState({ renderWithOUIA: isOuia });
+      this.setState({ 
+        renderWithOUIA: isOuia,
+        ouiaId: generateOUIAId() ? getUniqueId() : null
+      });
     }
   }
 

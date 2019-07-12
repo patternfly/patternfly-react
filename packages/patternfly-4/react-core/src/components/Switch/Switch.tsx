@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { CheckIcon } from '@patternfly/react-icons';
 import { getUniqueId } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
-import { WithOUIA, InjectedOUIAProps } from '../WithOUIA';
+import { WithOUIA, InjectedOUIAProps, OuiaProps } from '../WithOUIA';
 
 export interface SwitchProps extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
   /** id for the label. */
@@ -23,7 +23,7 @@ export interface SwitchProps extends Omit<React.HTMLProps<HTMLInputElement>, 'ty
   'aria-label'?: string
 };
 
-export class Switch extends React.Component<SwitchProps> {
+export class Switch extends React.Component<SwitchProps & OuiaProps> {
   id = '';
 
   static defaultProps = {
@@ -46,7 +46,7 @@ export class Switch extends React.Component<SwitchProps> {
   }
 
   render() {
-    const { className, label, isChecked, isDisabled, onChange, ...props } = this.props;
+    const { className, label, isChecked, isDisabled, onChange, 'data-ouia-component-id': ouiaId, ...props } = this.props;
     return (
       <WithOUIA>
         {(ouiaProps: InjectedOUIAProps) => (
@@ -55,7 +55,7 @@ export class Switch extends React.Component<SwitchProps> {
             htmlFor={this.id}
             {...ouiaProps.renderWithOUIA && {
               'data-ouia-component-type': 'Switch',
-              'data-ouia-component-id': ouiaProps.ouiaId
+              'data-ouia-component-id': ouiaId || ouiaProps.ouiaId
             }}
           >
             <input
