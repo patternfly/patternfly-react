@@ -12,6 +12,12 @@ exports[`checkbox select options hover renders with checked successfully 1`] = `
 </ContextConsumer>
 `;
 
+exports[`checkbox select options renders with children successfully 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
 exports[`checkbox select options renders with value parameter successfully 1`] = `
 <ContextConsumer>
   <Component />
