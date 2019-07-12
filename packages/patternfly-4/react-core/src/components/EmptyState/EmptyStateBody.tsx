@@ -2,7 +2,7 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/EmptyState/empty-state';
 
-export interface EmptyStateBodyProps extends React.HTMLProps<HTMLParagraphElement> {
+export interface EmptyStateBodyProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the EmptyState */
   children?: React.ReactNode;
   /** Additional classes added to the EmptyState */
@@ -14,7 +14,7 @@ export const EmptyStateBody: React.FunctionComponent<EmptyStateBodyProps> = ({
   className = '',
   ...props
 }: EmptyStateBodyProps) => (
-  <p className={css(styles.emptyStateBody, className)} {...props}>
+  <div className={css(styles.emptyStateBody, className)} {...props}>
     {children}
-  </p>
+  </div>
 );
