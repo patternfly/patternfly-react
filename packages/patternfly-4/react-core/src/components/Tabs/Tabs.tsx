@@ -204,7 +204,6 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           )}
           {...props}
         >
-          {!isSecondary && (
             <button
               className={css(styles.tabsScrollButton)}
               aria-label={leftScrollAriaLabel}
@@ -212,7 +211,6 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             >
               <AngleLeftIcon />
             </button>
-          )}
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
             {React.Children.map(children, (child: any, index) => (
               <li
@@ -239,7 +237,6 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               </li>
             ))}
           </ul>
-          {!isSecondary && (
             <button
               className={css(styles.tabsScrollButton)}
               aria-label={rightScrollAriaLabel}
@@ -247,7 +244,6 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             >
               <AngleRightIcon />
             </button>
-          )}
         </Component>
         {React.Children.map(children, (child: any, index) =>
           !child.props.children ? null : (
