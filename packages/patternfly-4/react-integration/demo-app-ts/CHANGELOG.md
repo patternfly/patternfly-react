@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.12.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.11.1...demo-app-ts@2.12.0) (2019-07-12)
+
+
+### Features
+
+* **Select:** add optional display via children to option ([#2419](https://github.com/patternfly/patternfly-react/issues/2419)) ([03be1a7](https://github.com/patternfly/patternfly-react/commit/03be1a7))
+
+
+
+
+
 ## [2.11.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.11.0...demo-app-ts@2.11.1) (2019-07-11)
 
 

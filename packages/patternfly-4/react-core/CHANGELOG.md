@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.71.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.70.1...@patternfly/react-core@3.71.0) (2019-07-12)
+
+
+### Features
+
+* **Select:** add optional display via children to option ([#2419](https://github.com/patternfly/patternfly-react/issues/2419)) ([03be1a7](https://github.com/patternfly/patternfly-react/commit/03be1a7))
+
+
+
+
+
 ## [3.70.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.70.0...@patternfly/react-core@3.70.1) (2019-07-11)
 
 
