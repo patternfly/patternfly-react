@@ -46,7 +46,22 @@ exports[`KebabToggle basic 1`] = `
                 class="pf-c-dropdown__toggle"
                 id="Dropdown Toggle"
                 type="button"
-              />
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                    transform=""
+                  />
+                </svg>
+              </button>
               <ul
                 class="pf-c-dropdown__menu"
               >
@@ -91,7 +106,22 @@ exports[`KebabToggle basic 1`] = `
                   class="pf-c-dropdown__toggle"
                   id="Dropdown Toggle"
                   type="button"
-                />
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 192 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
                 <ul
                   class="pf-c-dropdown__menu"
                 >
@@ -120,7 +150,34 @@ exports[`KebabToggle basic 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
-          />
+          >
+            <EllipsisVIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 192 512"
+                width="1em"
+              >
+                <path
+                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  transform=""
+                />
+              </svg>
+            </EllipsisVIcon>
+          </button>
         </Toggle>
       </Component>
       <DropdownMenu
@@ -442,7 +499,22 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                 class="pf-c-dropdown__toggle"
                 id="Dropdown Toggle"
                 type="button"
-              />
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                    transform=""
+                  />
+                </svg>
+              </button>
             </div>,
           }
         }
@@ -473,7 +545,22 @@ exports[`KebabToggle dropup + right aligned 1`] = `
                   class="pf-c-dropdown__toggle"
                   id="Dropdown Toggle"
                   type="button"
-                />
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 192 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
               </div>,
             }
           }
@@ -488,7 +575,34 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
-          />
+          >
+            <EllipsisVIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 192 512"
+                width="1em"
+              >
+                <path
+                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  transform=""
+                />
+              </svg>
+            </EllipsisVIcon>
+          </button>
         </Toggle>
       </Component>
     </div>
@@ -779,7 +893,22 @@ exports[`KebabToggle dropup 1`] = `
                 class="pf-c-dropdown__toggle"
                 id="Dropdown Toggle"
                 type="button"
-              />
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                    transform=""
+                  />
+                </svg>
+              </button>
             </div>,
           }
         }
@@ -810,7 +939,22 @@ exports[`KebabToggle dropup 1`] = `
                   class="pf-c-dropdown__toggle"
                   id="Dropdown Toggle"
                   type="button"
-                />
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 192 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
               </div>,
             }
           }
@@ -825,7 +969,34 @@ exports[`KebabToggle dropup 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
-          />
+          >
+            <EllipsisVIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 192 512"
+                width="1em"
+              >
+                <path
+                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  transform=""
+                />
+              </svg>
+            </EllipsisVIcon>
+          </button>
         </Toggle>
       </Component>
     </div>
@@ -1116,7 +1287,22 @@ exports[`KebabToggle expanded 1`] = `
                 class="pf-c-dropdown__toggle"
                 id="Dropdown Toggle"
                 type="button"
-              />
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                    transform=""
+                  />
+                </svg>
+              </button>
               <ul
                 aria-labelledby="Dropdown Toggle"
                 class="pf-c-dropdown__menu"
@@ -1223,7 +1409,22 @@ exports[`KebabToggle expanded 1`] = `
                   class="pf-c-dropdown__toggle"
                   id="Dropdown Toggle"
                   type="button"
-                />
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 192 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
                 <ul
                   aria-labelledby="Dropdown Toggle"
                   class="pf-c-dropdown__menu"
@@ -1314,7 +1515,34 @@ exports[`KebabToggle expanded 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
-          />
+          >
+            <EllipsisVIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 192 512"
+                width="1em"
+              >
+                <path
+                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  transform=""
+                />
+              </svg>
+            </EllipsisVIcon>
+          </button>
         </Toggle>
       </Component>
       <DropdownMenu
@@ -1862,7 +2090,22 @@ exports[`KebabToggle plain 1`] = `
                 class="pf-c-dropdown__toggle pf-m-plain"
                 id="Dropdown Toggle"
                 type="button"
-              />
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                    transform=""
+                  />
+                </svg>
+              </button>
             </div>,
           }
         }
@@ -1893,7 +2136,22 @@ exports[`KebabToggle plain 1`] = `
                   class="pf-c-dropdown__toggle pf-m-plain"
                   id="Dropdown Toggle"
                   type="button"
-                />
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 192 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
               </div>,
             }
           }
@@ -1908,7 +2166,34 @@ exports[`KebabToggle plain 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
-          />
+          >
+            <EllipsisVIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 192 512"
+                width="1em"
+              >
+                <path
+                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  transform=""
+                />
+              </svg>
+            </EllipsisVIcon>
+          </button>
         </Toggle>
       </Component>
     </div>
@@ -2198,7 +2483,22 @@ exports[`KebabToggle regular 1`] = `
                 class="pf-c-dropdown__toggle"
                 id="Dropdown Toggle"
                 type="button"
-              />
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                    transform=""
+                  />
+                </svg>
+              </button>
             </div>,
           }
         }
@@ -2229,7 +2529,22 @@ exports[`KebabToggle regular 1`] = `
                   class="pf-c-dropdown__toggle"
                   id="Dropdown Toggle"
                   type="button"
-                />
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 192 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
               </div>,
             }
           }
@@ -2244,7 +2559,34 @@ exports[`KebabToggle regular 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
-          />
+          >
+            <EllipsisVIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 192 512"
+                width="1em"
+              >
+                <path
+                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  transform=""
+                />
+              </svg>
+            </EllipsisVIcon>
+          </button>
         </Toggle>
       </Component>
     </div>
@@ -2535,7 +2877,22 @@ exports[`KebabToggle right aligned 1`] = `
                 class="pf-c-dropdown__toggle"
                 id="Dropdown Toggle"
                 type="button"
-              />
+              >
+                <svg
+                  aria-hidden="true"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 192 512"
+                  width="1em"
+                >
+                  <path
+                    d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                    transform=""
+                  />
+                </svg>
+              </button>
             </div>,
           }
         }
@@ -2566,7 +2923,22 @@ exports[`KebabToggle right aligned 1`] = `
                   class="pf-c-dropdown__toggle"
                   id="Dropdown Toggle"
                   type="button"
-                />
+                >
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 192 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
               </div>,
             }
           }
@@ -2581,7 +2953,34 @@ exports[`KebabToggle right aligned 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
             type="button"
-          />
+          >
+            <EllipsisVIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 192 512"
+                width="1em"
+              >
+                <path
+                  d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                  transform=""
+                />
+              </svg>
+            </EllipsisVIcon>
+          </button>
         </Toggle>
       </Component>
     </div>

@@ -2,11 +2,6 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 import { DropdownToggle } from './DropdownToggle';
 
-interface MapType {
-  touchstart?: ({ target: Document}) => void;
-  mousedown?: ({ target: Document }) => void;
-}
-
 describe('API', () => {
   test('click on closed', () => {
     const mockToggle = jest.fn();
@@ -38,45 +33,15 @@ describe('API', () => {
     expect(mockToggle.mock.calls[0][0]).toBe(false);
   });
 
-  test('click on document', () => {
-    const map: MapType = {};
-    document.addEventListener = jest.fn((event, cb) => {
-      map[event as 'touchstart' | 'mousdown'] = cb;
-    });
-    const mockToggle = jest.fn();
-    mount(
-      <DropdownToggle id="Dropdown Toggle" onToggle={mockToggle} isOpen parentRef={document.createElement('div')}>
-        Dropdown
-      </DropdownToggle>
-    );
-
-    map.mousedown({ target: document });
-    expect(mockToggle.mock.calls[0][0]).toBe(false);
-  });
-
-  test('touch on document', () => {
-    const map: MapType = {};
-    document.addEventListener = jest.fn((event, cb) => {
-      map[event as 'touchstart' | 'mousdown'] = cb;
-    });
-    const mockToggle = jest.fn();
-    mount(
-      <DropdownToggle id="Dropdown Toggle" onToggle={mockToggle} isOpen parentRef={document.createElement('div')}>
-        Dropdown
-      </DropdownToggle>
-    );
-
-    map.touchstart({ target: document });
-    expect(mockToggle.mock.calls[0][0]).toBe(false);
-  });
-
   test('on click outside has been removed', () => {
-    const map: MapType = {};
+    let mousedown: EventListenerOrEventListenerObject = () => {};
     document.addEventListener = jest.fn((event, cb) => {
-      map[event as 'touchstart' | 'mousdown'] = cb;
+      mousedown = cb;
     });
     document.removeEventListener = jest.fn((event, cb) => {
-      if (map[event as 'touchstart' | 'mousdown'] === cb) map[event] = () => {};
+      if (mousedown === cb) {
+        mousedown = () => {};
+      }
     });
     const mockToggle = jest.fn();
     const view = mount(
@@ -85,18 +50,20 @@ describe('API', () => {
       </DropdownToggle>
     );
     view.unmount();
-    map.mousedown({ target: document });
+    mousedown({ target: document } as any);
     expect(mockToggle.mock.calls).toHaveLength(0);
     expect(document.removeEventListener).toHaveBeenCalledWith('mousedown', expect.any(Function));
   });
 
   test('on touch outside has been removed', () => {
-    const map: MapType = {};
+    let touchstart: EventListenerOrEventListenerObject = () => {};
     document.addEventListener = jest.fn((event, cb) => {
-      map[event] = cb;
+      touchstart = cb;
     });
     document.removeEventListener = jest.fn((event, cb) => {
-      if (map[event] === cb) map[event] = () => {};
+      if (touchstart === cb) {
+        touchstart = () => {};
+      }
     });
     const mockToggle = jest.fn();
     const view = mount(
@@ -105,7 +72,7 @@ describe('API', () => {
       </DropdownToggle>
     );
     view.unmount();
-    map.touchstart({ target: document });
+    touchstart({ target: document } as any);
     expect(mockToggle.mock.calls).toHaveLength(0);
     expect(document.removeEventListener).toHaveBeenCalledWith('touchstart', expect.any(Function));
   });

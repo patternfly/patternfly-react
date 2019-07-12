@@ -30,6 +30,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   href = '',
   tooltip = null,
   tooltipProps = {},
+  onClick,
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
 }: DropdownItemProps) => (
@@ -47,6 +48,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         href={href}
         tooltip={tooltip}
         tooltipProps={tooltipProps}
+        onClick={onClick}
         {...props} />}
   </DropdownArrowContext.Consumer>
 );

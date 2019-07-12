@@ -29,7 +29,7 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
     sendRef?: (index: number, ref: any, isDisabled: boolean) => void
   };
   /** Callback for click event */
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent | MouseEvent) => void;
+  onClick?: (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => void;
 }
 
 export class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
@@ -120,7 +120,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                       className: 's',
                       ref: this.ref,
                       onKeyDown: this.onKeyDown,
-                      onClick: event => {
+                      onClick: (event: React.MouseEvent) => {
                         if (!isDisabled) {
                           onClick(event);
                           onSelect();

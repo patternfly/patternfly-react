@@ -171,9 +171,7 @@ describe('API', () => {
   });
 
   test('dropdownItems and children console error ', () => {
-    const myMock = jest.fn();
-    global.console = { error: myMock } as any;
-    mount(
+    expect(() => mount(
       <Dropdown
         dropdownItems={dropdownItems}
         isOpen
@@ -181,8 +179,7 @@ describe('API', () => {
       >
         <div>Children items</div>
       </Dropdown>
-    );
-    expect(myMock).toBeCalled();
+    )).toThrowError();
   });
 
   test('dropdownItems only, no console error ', () => {

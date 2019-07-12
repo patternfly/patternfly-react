@@ -157,7 +157,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         lastIndex={itemsEnd !== null ? itemsEnd : lastIndex}
         itemCount={itemCount}
         perPage={perPage}
-        onPerPageSelect={(event) => onPerPageSelect(event, perPage)}
+        onPerPageSelect={onPerPageSelect}
         dropDirection={dropDirection}
         widgetId={widgetId}
         toggleTemplate={toggleTemplate}
