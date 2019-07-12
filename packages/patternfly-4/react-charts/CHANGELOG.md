@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.5.2...@patternfly/react-charts@4.6.0) (2019-07-12)
+
+
+### Features
+
+* **charts:** added ariaLabelDesc and ariaLabelTitle props ([#2500](https://github.com/patternfly/patternfly-react/issues/2500)) ([0e5ac2b](https://github.com/patternfly/patternfly-react/commit/0e5ac2b))
+
+
+
+
+
 ## [4.5.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.5.1...@patternfly/react-charts@4.5.2) (2019-07-11)
 
 
