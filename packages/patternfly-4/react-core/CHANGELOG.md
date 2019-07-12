@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.72.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.71.0...@patternfly/react-core@3.72.0) (2019-07-12)
+
+
+### Features
+
+* **EmptyState:** update EmptyStateBody to use <div> instead of <p> ([#2499](https://github.com/patternfly/patternfly-react/issues/2499)) ([233fe25](https://github.com/patternfly/patternfly-react/commit/233fe25)), closes [#2494](https://github.com/patternfly/patternfly-react/issues/2494)
+
+
+
+
+
 # [3.71.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.70.1...@patternfly/react-core@3.71.0) (2019-07-12)
 
 
