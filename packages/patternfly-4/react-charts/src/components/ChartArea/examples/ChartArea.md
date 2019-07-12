@@ -8,7 +8,7 @@ propComponents: ['Chart', 'ChartArea', 'ChartGroup', 'ChartVoronoiContainer']
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLabel, ChartLegendWrapper, ChartVoronoiContainer } from '@patternfly/react-charts';
 import './chart-area.scss';
 
-## Simple area chart with tooltip and right-aligned legend
+## Simple area chart with right aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
@@ -16,18 +16,20 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
 <div>
   <div className="area-chart-legend-right">
     <Chart
+      ariaDesc="Average number of pets"
+      ariaTitle="Area chart example"
       containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
       legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}
       legendOrientation="vertical"
       legendPosition="right"
       height={200}
+      maxDomain={{y: 9}}
       padding={{
         bottom: 50,
         left: 50,
         right: 200, // Adjusted to accomodate legend
         top: 50
       }}
-      maxDomain={{y: 9}}
       width={800}
     >
       <ChartAxis />
@@ -68,7 +70,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
 </div>
 ```
 
-## Cyan area chart with tooltip and bottom-aligned legend
+## Cyan area chart with bottom aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
@@ -76,6 +78,8 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
 <div>
   <div className="area-chart-legend-bottom">
     <Chart
+      ariaDesc="Average number of pets"
+      ariaTitle="Donut chart example"
       containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
       legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}
       legendPosition="bottom"
@@ -128,7 +132,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
 </div>
 ```
 
-## Multi-color chart with tooltip, bottom-aligned legend, and responsive width
+## Multi-color chart with bottom-left aligned legend and responsive container
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
@@ -163,6 +167,8 @@ class MultiColorChart extends React.Component {
       <div ref={this.containerRef}>
         <div className="area-chart-legend-bottom-responsive">
           <Chart
+            ariaDesc="Average number of pets"
+            ariaTitle="Donut chart example"
             containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
             legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}
             legendPosition="bottom-left"
@@ -227,7 +233,9 @@ import { ChartArea, ChartGroup, ChartLabel } from '@patternfly/react-charts';
   <div className="sparkline-container">
     <div className="sparkline-chart">
       <ChartGroup
-        containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} voronoiDimension="x" />}
+        ariaDesc="Average number of pets"
+        ariaTitle="Sparkline chart example"
+        containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
         height={75}
         padding={0}
         width={400}

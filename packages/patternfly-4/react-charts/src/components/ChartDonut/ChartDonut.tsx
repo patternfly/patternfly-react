@@ -53,6 +53,20 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   animate?: AnimatePropTypeInterface;
   /**
+   * The ariaDesc prop specifies the description of the chart/SVG to assist with
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the desc prop of containerComponent
+   */
+  ariaDesc?: string;
+  /**
+   * The ariaTitle prop specifies the title to be applied to the SVG to assist
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the title prop of containerComponent
+   */
+  ariaTitle?: string;
+  /**
    * The capHeight prop defines a text metric for the font being used: the expected height of capital letters.
    * This is necessary because of SVG, which (a) positions the *bottom* of the text at `y`, and (b) has no notion of
    * line height. The value should ideally use the same units as `lineHeight` and `dy`, preferably ems. If given a
@@ -457,6 +471,8 @@ export interface ChartDonutProps extends ChartPieProps {
 }
 
 export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
+  ariaDesc,
+  ariaTitle,
   donutDx = 0,
   donutDy = 0,
   legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
@@ -557,7 +573,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   );
 
   return standalone ? (
-    <ChartContainer height={height} width={width}>
+    <ChartContainer desc={ariaDesc} height={height} title={ariaTitle} width={width}>
       {chart}
       {getTitle()}
       {getSubTitle()}
