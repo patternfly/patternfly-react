@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.72.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.72.0...@patternfly/react-core@3.72.1) (2019-07-15)
+
+
+### Bug Fixes
+
+* **options menu:** update examples to trigger select on the whole item ([#2513](https://github.com/patternfly/patternfly-react/issues/2513)) ([a533a7c](https://github.com/patternfly/patternfly-react/commit/a533a7c))
+
+
+
+
+
 # [3.72.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.71.0...@patternfly/react-core@3.72.0) (2019-07-12)
 
 
