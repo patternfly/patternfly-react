@@ -15,6 +15,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   }
   id="PageId"
   isManagedSidebar={false}
+  mainContainerId={null}
   onPageResize={[Function]}
   sidebar={
     <Unknown
@@ -74,7 +75,9 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     </Component>
     <main
       className="pf-c-page__main"
+      id={null}
       role="main"
+      tabIndex={-1}
     >
       <Component
         variant="default"
@@ -132,6 +135,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
   }
   id="PageId"
   isManagedSidebar={false}
+  mainContainerId={null}
   onPageResize={[Function]}
   sidebar={
     <Unknown
@@ -191,7 +195,9 @@ exports[`Check page to verify breadcrumb is created 1`] = `
     </Component>
     <main
       className="pf-c-page__main"
+      id={null}
       role="main"
+      tabIndex={-1}
     >
       <section
         className="pf-c-page__main-breadcrumb"
@@ -276,6 +282,7 @@ exports[`Check page to verify skip to content is created 1`] = `
   }
   id="PageId"
   isManagedSidebar={false}
+  mainContainerId={null}
   onPageResize={[Function]}
   sidebar={
     <Unknown
@@ -357,7 +364,9 @@ exports[`Check page to verify skip to content is created 1`] = `
     </Component>
     <main
       className="pf-c-page__main"
+      id={null}
       role="main"
+      tabIndex={-1}
     >
       <section
         className="pf-c-page__main-breadcrumb"
@@ -518,9 +527,6 @@ exports[`Check page to verify skip to content is created 1`] = `
           </nav>
         </Component>
       </section>
-      <a
-        id="main-content-page-layout-default-nav"
-      />
       <Component
         variant="default"
       >
@@ -577,6 +583,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   }
   id="PageId"
   isManagedSidebar={false}
+  mainContainerId={null}
   onPageResize={[Function]}
   sidebar={
     <Unknown
@@ -635,7 +642,9 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     </Component>
     <main
       className="pf-c-page__main"
+      id={null}
       role="main"
+      tabIndex={-1}
     >
       <Component
         variant="default"
