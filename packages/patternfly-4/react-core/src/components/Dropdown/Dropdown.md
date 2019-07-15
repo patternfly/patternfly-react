@@ -457,7 +457,7 @@ class IconDropdown extends React.Component {
       <Dropdown
         onSelect={this.onSelect}
         toggle={
-          <DropdownToggle iconComponent={null} onToggle={this.onToggle}>
+          <DropdownToggle iconComponent={null} onToggle={this.onToggle} aria-label="Applications">
             <ThIcon />
           </DropdownToggle>
         }
