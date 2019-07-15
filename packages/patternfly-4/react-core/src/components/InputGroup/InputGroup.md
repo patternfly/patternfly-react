@@ -113,7 +113,6 @@ class SimpleInputGroups extends React.Component {
               </DropdownItem>
             ]}
           />
-          </Dropdown>
           <TextInput id="textInput3" aria-label="input with dropdown and button" />
           <Button id="inputDropdownButton1">Button</Button>
         </InputGroup>
