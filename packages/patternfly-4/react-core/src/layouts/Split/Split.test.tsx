@@ -2,7 +2,6 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 import { Split } from './Split';
 import { SplitItem } from './SplitItem';
-import { GutterSize } from '../../styles/gutters';
 
 test('isFilled', () => {
   const view = mount(
@@ -22,10 +21,10 @@ test('isFilled defaults to false', () => {
   expect(view).toMatchSnapshot();
 });
 
-Object.values(GutterSize).forEach(gutter => {
-  test(`Gutter ${gutter}`, () => {
+[true, false].forEach(hasGutter => {
+  test(`Gutter ${hasGutter}`, () => {
     const view = mount(
-      <Split gutter={gutter}>
+      <Split hasGutter={hasGutter}>
         <SplitItem>Basic Content</SplitItem>
       </Split>
     );

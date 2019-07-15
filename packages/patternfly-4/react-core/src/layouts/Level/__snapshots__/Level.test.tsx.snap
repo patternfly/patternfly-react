@@ -1,18 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Gutter lg 1`] = `
+exports[`Gutter false 1`] = `
 <div
-  className="pf-l-level pf-m-gutter"
+  className="pf-l-level"
 />
 `;
 
-exports[`Gutter md 1`] = `
-<div
-  className="pf-l-level pf-m-gutter"
-/>
-`;
-
-exports[`Gutter sm 1`] = `
+exports[`Gutter true 1`] = `
 <div
   className="pf-l-level pf-m-gutter"
 />

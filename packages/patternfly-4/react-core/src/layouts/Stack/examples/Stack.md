@@ -26,7 +26,7 @@ import { Stack, StackItem } from '@patternfly/react-core';
 import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 
-<Stack gutter="md">
+<Stack hasGutter>
   <StackItem>content</StackItem>
   <StackItem isFilled>pf-m-fill</StackItem>
   <StackItem>content</StackItem>

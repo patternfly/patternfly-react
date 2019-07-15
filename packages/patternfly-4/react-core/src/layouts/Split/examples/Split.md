@@ -26,7 +26,7 @@ import { Split, SplitItem } from '@patternfly/react-core';
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
-<Split gutter="md">
+<Split hasGutter>
   <SplitItem>content</SplitItem>
   <SplitItem isFilled>pf-m-fill</SplitItem>
   <SplitItem>content</SplitItem>

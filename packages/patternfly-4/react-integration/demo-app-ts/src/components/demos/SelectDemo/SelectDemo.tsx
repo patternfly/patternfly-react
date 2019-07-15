@@ -384,7 +384,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   }
 
   render() {
-    return <Stack gutter="md">
+    return <Stack hasGutter>
       {this.renderSingleSelect()}
       {this.renderCustomSingleSelect()}
       {this.renderCheckboxSelect()}

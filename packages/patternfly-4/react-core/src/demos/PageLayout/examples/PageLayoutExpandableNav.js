@@ -226,7 +226,7 @@ class PageLayoutExpandableNav extends React.Component {
             </TextContent>
           </PageSection>
           <PageSection>
-            <Gallery gutter="md">
+            <Gallery hasGutter>
               {Array.apply(0, Array(10)).map((x, i) => (
                 <GalleryItem key={i}>
                   <Card>
