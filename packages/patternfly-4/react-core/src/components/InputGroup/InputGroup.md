@@ -97,7 +97,6 @@ class SimpleInputGroups extends React.Component {
             toggle={
               <DropdownToggle onToggle={this.onToggle}>
                 {this.state.selected ? this.state.selected : 'Dropdown'}
-                Dropdown
               </DropdownToggle>
             }
             isOpen={this.state.isOpen}
