@@ -99,6 +99,12 @@ export class Select extends React.Component<SelectProps, SelectState> {
     if (!prevState.openedOnEnter && this.state.openedOnEnter) {
       this.refCollection[0].focus();
     }
+
+    if (prevProps.children !== this.props.children) {
+      this.setState({
+        typeaheadFilteredChildren: React.Children.toArray(this.props.children)
+      });
+    }
   };
 
   onEnter = () => {
