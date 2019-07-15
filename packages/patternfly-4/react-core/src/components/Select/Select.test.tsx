@@ -6,7 +6,6 @@ import { CheckboxSelectOption } from './CheckboxSelectOption';
 import { SelectGroup } from './SelectGroup';
 import { CheckboxSelectGroup } from './CheckboxSelectGroup';
 import { SelectVariant } from './selectConstants';
-import { SelectContext } from '../../../dist/js';
 
 const selectOptions = [
   <SelectOption value="Mr" key="0" />,
