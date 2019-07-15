@@ -237,6 +237,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DonutUtilizationStaticRightDemo
   },
   {
+    id: 'dropdown-demo', 
+    name: 'Dropdown Demo', 
+    componentType: Examples.DropdownDemo
+  },
+  {
     id: 'empty-state-demo',
     name: 'Empty State Demo',
     componentType: Examples.EmptyStateDemo

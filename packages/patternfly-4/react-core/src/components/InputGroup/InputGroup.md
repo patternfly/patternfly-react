@@ -97,6 +97,7 @@ class SimpleInputGroups extends React.Component {
             toggle={
               <DropdownToggle onToggle={this.onToggle}>
                 {this.state.selected ? this.state.selected : 'Dropdown'}
+                Dropdown
               </DropdownToggle>
             }
             isOpen={this.state.isOpen}
@@ -111,8 +112,7 @@ class SimpleInputGroups extends React.Component {
                 Option 3
               </DropdownItem>
             ]}
-          >
-            Dropdown
+          />
           </Dropdown>
           <TextInput id="textInput3" aria-label="input with dropdown and button" />
           <Button id="inputDropdownButton1">Button</Button>
