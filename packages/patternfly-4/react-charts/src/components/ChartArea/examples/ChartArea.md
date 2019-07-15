@@ -79,7 +79,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
   <div className="area-chart-legend-bottom">
     <Chart
       ariaDesc="Average number of pets"
-      ariaTitle="Donut chart example"
+      ariaTitle="Area chart example"
       containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
       legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}
       legendPosition="bottom"
@@ -168,7 +168,7 @@ class MultiColorChart extends React.Component {
         <div className="area-chart-legend-bottom-responsive">
           <Chart
             ariaDesc="Average number of pets"
-            ariaTitle="Donut chart example"
+            ariaTitle="Area chart example"
             containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
             legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}
             legendPosition="bottom-left"
