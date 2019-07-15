@@ -38,11 +38,12 @@ class SingleOption extends React.Component {
       };
       
       this.onSelect = event => {
-        const id = event.target.id;
+        const id = event.currentTarget.id;
         this.setState(() => {
           return { selectedOption: id };
         });
       };
+      
     }
     
   render() {
@@ -123,14 +124,14 @@ class MultipleOptions extends React.Component {
       };
       
       this.onSelectColumn = event => {
-        const id = event.target.id;
+        const id = event.currentTarget.id;
         this.setState(() => {
           return { sortColumn: id };
         });
       };
       
       this.onSelectDirection = event => {
-        const id = event.target.id;
+        const id = event.currentTarget.id;
         this.setState(() => {
           return { sortDirection: id };
         });
@@ -198,7 +199,7 @@ class Plain extends React.Component {
       };
       
       this.onSelect = event => {
-        const id = event.target.id;
+        const id = event.currentTarget.id;
         this.setState((prevState) => {
           return { [id]: !prevState[id] };
         });
@@ -265,7 +266,7 @@ class Top extends React.Component {
     };
     
     this.onSelect = event => {
-      const id = event.target.id;
+      const id = event.currentTarget.id;
       this.setState((prevState) => {
         return { [id]: !prevState[id] };
       });
@@ -316,7 +317,7 @@ class AlignRight extends React.Component {
     };
     
     this.onSelect = event => {
-      const id = event.target.id;
+      const id = event.currentTarget.id;
       this.setState((prevState) => {
         return { [id]: !prevState[id] };
       });
@@ -369,7 +370,7 @@ class PlainWithText extends React.Component {
       };
       
       this.onSelect = event => {
-        const id = event.target.id;
+        const id = event.currentTarget.id;
         this.setState((prevState) => {
           return { [id]: !prevState[id] };
         });
