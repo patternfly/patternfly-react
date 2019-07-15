@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 
-export interface TabContentProps extends React.HTMLProps<HTMLElement> {
+export interface TabContentProps extends React.AllHTMLAttributes<HTMLElement> {
   /** content rendered inside the tab content area if used outside Tabs component */
   children?: any;
   /** Child to show in the content area */

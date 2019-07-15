@@ -12,9 +12,9 @@ export class TabDemo extends Component {
   constructor(props) {
     super(props);
 
-    this.contentRef1 = React.createRef<HTMLDivElement>();
-    this.contentRef2 = React.createRef<HTMLDivElement>();
-    this.contentRef3 = React.createRef<HTMLDivElement>();
+    this.contentRef1 = React.createRef<HTMLElement>();
+    this.contentRef2 = React.createRef<HTMLElement>();
+    this.contentRef3 = React.createRef<HTMLElement>();
   }
 
   // Toggle currently active tab
