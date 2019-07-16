@@ -65,7 +65,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     isFilled: false,
     isSecondary: false,
     leftScrollAriaLabel: 'Scroll left',
-    rightScrollAriaLabel: 'Scroll Right',
+    rightScrollAriaLabel: 'Scroll right',
     variant: TabsVariant.div
   };
 
