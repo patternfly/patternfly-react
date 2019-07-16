@@ -23,8 +23,7 @@ import {
   ChartLegendWrapper
 } from "../ChartLegend";
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
-import { getPaddingForSide } from '../ChartUtils/chart-padding';
+import { getPaddingForSide, getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -169,6 +168,8 @@ export interface ChartProps extends VictoryChartProps {
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
+   *
+   * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
    */
   height?: number;
   /**
@@ -347,6 +348,8 @@ export interface ChartProps extends VictoryChartProps {
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
+   *
+   * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
    */
   width?: number;
 }
@@ -372,7 +375,6 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   width = theme.chart.width,
   ...rest
 }: ChartProps) => {
-
   const defaultPadding = {
     bottom: getPaddingForSide('bottom',  padding, theme.chart.padding),
     left: getPaddingForSide('left', padding, theme.chart.padding),
@@ -405,7 +407,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       return null;
     }
     let dx = 0;
-    let dy = defaultPadding.top || 0;
+    let dy = defaultPadding.top;
     if (legendPosition === ChartLegendPosition.bottom) {
       dy += ChartCommonStyles.legend.margin;
     } else if (legendPosition === ChartLegendPosition.bottomLeft) {

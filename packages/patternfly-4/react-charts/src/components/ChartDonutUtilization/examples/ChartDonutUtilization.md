@@ -134,7 +134,7 @@ class UtilizationChart extends React.Component {
 }
 ```
 
-## Simple, green donut utilization chart with right aligned legend
+## Simple, green donut utilization chart with right aligned, vertical legend
 ```js
 import React from 'react';
 import { ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';

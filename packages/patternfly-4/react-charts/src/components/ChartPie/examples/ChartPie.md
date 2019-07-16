@@ -24,7 +24,6 @@ import { ChartPie } from '@patternfly/react-charts';
       legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
       legendOrientation="vertical"
       legendPosition="right"
-      
       width={350}
     />
   </div>
