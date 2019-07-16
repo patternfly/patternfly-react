@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
 import { AngleLeftIcon, AngleRightIcon } from '@patternfly/react-icons';
@@ -205,7 +206,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           {...props}
         >
             <button
-              className={css(styles.tabsScrollButton)}
+              className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
               aria-label={leftScrollAriaLabel}
               onClick={this.scrollLeft}
             >
@@ -238,7 +239,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             ))}
           </ul>
             <button
-              className={css(styles.tabsScrollButton)}
+              className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
               aria-label={rightScrollAriaLabel}
               onClick={this.scrollRight}
             >
