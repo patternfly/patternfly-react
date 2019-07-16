@@ -58,7 +58,7 @@
     "@babel/plugin-transform-typescript": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@patternfly/patternfly": "2.20.0",
+    "@patternfly/patternfly": "2.21.0",
     "@types/enzyme": "3.9.0",
     "@types/exenv": "^1.2.0",
     "@types/jest": "^24.0.11",
