@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { CheckIcon } from '@patternfly/react-icons';
 import { getUniqueId } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
-import { WithOUIA, InjectedOUIAProps, OuiaProps } from '../WithOUIA';
+import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 export interface SwitchProps extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
   /** id for the label. */
@@ -23,7 +23,7 @@ export interface SwitchProps extends Omit<React.HTMLProps<HTMLInputElement>, 'ty
   'aria-label'?: string
 };
 
-export class Switch extends React.Component<SwitchProps & OuiaProps> {
+class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
   id = '';
 
   static defaultProps = {
@@ -36,7 +36,7 @@ export class Switch extends React.Component<SwitchProps & OuiaProps> {
     onChange: () => undefined as any
   };
 
-  constructor(props: SwitchProps) {
+  constructor(props: SwitchProps & InjectedOuiaProps) {
     super(props);
     if (!props.id && !props['aria-label']) {
       // tslint:disable-next-line:no-console
@@ -46,47 +46,47 @@ export class Switch extends React.Component<SwitchProps & OuiaProps> {
   }
 
   render() {
-    const { className, label, isChecked, isDisabled, onChange, 'data-ouia-component-id': ouiaId, ...props } = this.props;
+    const { className, label, isChecked, isDisabled, onChange, ouiaContext, ...props } = this.props;
     return (
-      <WithOUIA>
-        {(ouiaProps: InjectedOUIAProps) => (
-          <label
-            className={css(styles.switch, className)}
-            htmlFor={this.id}
-            {...ouiaProps.renderWithOUIA && {
-              'data-ouia-component-type': 'Switch',
-              'data-ouia-component-id': ouiaId || ouiaProps.ouiaId
-            }}
-          >
-            <input
-              {...props}
-              id={this.id}
-              className={css(styles.switchInput)}
-              type="checkbox"
-              onChange={event => onChange(event.currentTarget.checked, event)}
-              checked={isChecked}
-              disabled={isDisabled}
-            />
-            {label !== '' ? (
-              <React.Fragment>
-                <span className={css(styles.switchToggle)} />
-                <span className={css(styles.switchLabel, styles.modifiers.on)} aria-hidden="true">
-                  {label}
-                </span>
-                <span className={css(styles.switchLabel, styles.modifiers.off)} aria-hidden="true">
-                  {label}
-                </span>
-              </React.Fragment>
-            ) : (
-              <span className={css(styles.switchToggle)}>
-                <div className={css(styles.switchToggleIcon)} aria-hidden="true">
-                  <CheckIcon noVerticalAlign />
-                </div>
-              </span>
-            )}
-          </label>
+      <label
+        className={css(styles.switch, className)}
+        htmlFor={this.id}
+        {...ouiaContext.isOuia && {
+          'data-ouia-component-type': 'Switch',
+          'data-ouia-component-id': ouiaContext.ouiaId
+        }}
+      >
+        <input
+          {...props}
+          id={this.id}
+          className={css(styles.switchInput)}
+          type="checkbox"
+          onChange={event => onChange(event.currentTarget.checked, event)}
+          checked={isChecked}
+          disabled={isDisabled}
+        />
+        {label !== '' ? (
+          <React.Fragment>
+            <span className={css(styles.switchToggle)} />
+            <span className={css(styles.switchLabel, styles.modifiers.on)} aria-hidden="true">
+              {label}
+            </span>
+            <span className={css(styles.switchLabel, styles.modifiers.off)} aria-hidden="true">
+              {label}
+            </span>
+          </React.Fragment>
+        ) : (
+          <span className={css(styles.switchToggle)}>
+            <div className={css(styles.switchToggleIcon)} aria-hidden="true">
+              <CheckIcon noVerticalAlign />
+            </div>
+          </span>
         )}
-      </WithOUIA>
+      </label>
     );
   }
 }
+
+const SwitchWithOuiaContext = withOuiaContext(Switch);
+
+export { SwitchWithOuiaContext as Switch };
