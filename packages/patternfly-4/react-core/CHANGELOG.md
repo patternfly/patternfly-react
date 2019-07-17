@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.73.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.72.3...@patternfly/react-core@3.73.0) (2019-07-17)
+
+
+### Features
+
+* **Tabs:** Implement overflow styles for secondary tabs ([#2512](https://github.com/patternfly/patternfly-react/issues/2512)) ([d840c4d](https://github.com/patternfly/patternfly-react/commit/d840c4d))
+
+
+
+
+
 ## [3.72.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.72.2...@patternfly/react-core@3.72.3) (2019-07-17)
 
 **Note:** Version bump only for package @patternfly/react-core
