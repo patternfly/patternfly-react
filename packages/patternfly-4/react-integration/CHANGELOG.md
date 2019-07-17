@@ -3,6 +3,72 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.11.1...@patternfly/react-integration@2.12.0) (2019-07-12)
+
+
+### Features
+
+* **Select:** add optional display via children to option ([#2419](https://github.com/patternfly/patternfly-react/issues/2419)) ([03be1a7](https://github.com/patternfly/patternfly-react/commit/03be1a7))
+
+
+
+
+
+## [2.11.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.11.0...@patternfly/react-integration@2.11.1) (2019-07-11)
+
+
+### Bug Fixes
+
+* **login page:** removes ariaLabel from checkbox ([#2455](https://github.com/patternfly/patternfly-react/issues/2455)) ([3cf57e3](https://github.com/patternfly/patternfly-react/commit/3cf57e3))
+
+
+
+
+
+# [2.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.10.0...@patternfly/react-integration@2.11.0) (2019-07-11)
+
+
+### Features
+
+* **Pagination:** Let users enter numbers into the input field ([#2417](https://github.com/patternfly/patternfly-react/issues/2417)) ([38ed9d8](https://github.com/patternfly/patternfly-react/commit/38ed9d8)), closes [#2344](https://github.com/patternfly/patternfly-react/issues/2344)
+
+
+
+
+
+# [2.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.9.0...@patternfly/react-integration@2.10.0) (2019-07-10)
+
+
+### Features
+
+* **Tabs:** Allow eventKey to accept a string ([#2493](https://github.com/patternfly/patternfly-react/issues/2493)) ([1bde27c](https://github.com/patternfly/patternfly-react/commit/1bde27c)), closes [#1446](https://github.com/patternfly/patternfly-react/issues/1446)
+
+
+
+
+
+# [2.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.8.0...@patternfly/react-integration@2.9.0) (2019-07-10)
+
+
+### Features
+
+* **Grid:** Convert grid to typescript ([#2443](https://github.com/patternfly/patternfly-react/issues/2443)) ([d4f8231](https://github.com/patternfly/patternfly-react/commit/d4f8231))
+
+
+
+
+
+# [2.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.7.0...@patternfly/react-integration@2.8.0) (2019-07-08)
+
+
+### Features
+
+* **Toolbar:** Convert toolbar to typescript ([#2475](https://github.com/patternfly/patternfly-react/issues/2475)) ([b508e5d](https://github.com/patternfly/patternfly-react/commit/b508e5d))
+
+
+
+
+
 # [2.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.6.0...@patternfly/react-integration@2.7.0) (2019-07-08)
 
 

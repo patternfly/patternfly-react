@@ -8,6 +8,7 @@ Note: Application launcher is built on Dropdown, for extended API go to [`Dropdo
 To add a tooltip, use the `tooltip` prop and optionally add more tooltip props by using `tooltipProps`. For more tooltip information go to [`Tooltip`](/components/tooltip/).
 
 import { ApplicationLauncher, ApplicationLauncherIcon, ApplicationLauncherText, ApplicationLauncherItem, ApplicationLauncherGroup, ApplicationLauncherSeparator } from '@patternfly/react-core';
+import { HelpIcon } from '@patternfly/react-icons';
 import pfIcon from './examples/pf-logo-small.svg';
 
 ## Simple application launcher
@@ -176,6 +177,59 @@ class ApplicationLauncherSections extends React.Component {
         isOpen={isOpen}
         items={appLauncherItems}
         isGrouped
+      />
+    );
+  }
+}
+```
+
+## Application launcher w/ custom icon
+```js
+import React from 'react';
+import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
+import { HelpIcon } from '@patternfly/react-icons';
+
+class ApplicationLauncheIcon extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    const appLauncherItems = [
+      <ApplicationLauncherItem key="application_1a" href="#">
+        Application 1 (anchor link)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="application_2a" onClick={() => alert('Clicked item 2')}>
+        Application 2 (div with onClick)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="application_3a" onClick={() => alert('Clicked item 3')}>
+        Application 3 (div with onClick)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="disabled_application_4a" isDisabled>
+        Unavailable Application
+      </ApplicationLauncherItem>
+    ];
+    return (
+      <ApplicationLauncher
+        onSelect={this.onSelect}
+        onToggle={this.onToggle}
+        isOpen={isOpen}
+        items={appLauncherItems}
+        toggleIcon={<HelpIcon />}
       />
     );
   }

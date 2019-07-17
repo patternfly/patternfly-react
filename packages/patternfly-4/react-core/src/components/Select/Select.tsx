@@ -16,7 +16,8 @@ import { Omit } from '../../helpers/typeUtils';
 // seed for the aria-labelledby ID
 let currentId = 0;
 
-export interface SelectProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'> {
+export interface SelectProps
+  extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'> {
   /** Content rendered inside the Select */
   children: React.ReactElement[];
   /** Classes applied to the root of the Select */
@@ -124,7 +125,8 @@ export class Select extends React.Component<SelectProps, SelectState> {
     const typeaheadFilteredChildren =
       e.target.value !== ''
         ? React.Children.toArray(this.props.children).filter(
-            (child: React.ReactNode) => (child as React.ReactElement).props.value.search(input) === 0
+            (child: React.ReactNode) =>
+              this.getDisplay((child as React.ReactElement).props.value, 'text').search(input) === 0
           )
         : React.Children.toArray(this.props.children);
     if (typeaheadFilteredChildren.length === 0) {
@@ -156,7 +158,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
   extendTypeaheadChildren(typeaheadActiveChild: HTMLElement) {
     return this.state.typeaheadFilteredChildren.map((child: React.ReactNode) =>
       React.cloneElement(child as React.ReactElement, {
-        isFocused: typeaheadActiveChild && typeaheadActiveChild.innerText === (child as React.ReactElement).props.value
+        isFocused:
+          typeaheadActiveChild &&
+          typeaheadActiveChild.innerText === this.getDisplay((child as React.ReactElement).props.value, 'text')
       })
     );
   }
@@ -178,7 +182,11 @@ export class Select extends React.Component<SelectProps, SelectState> {
           typeaheadInputValue:
             (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0].innerText
         });
-        onSelect(null, (typeaheadActiveChild && typeaheadActiveChild.innerText) || this.refCollection[0].innerText);
+        if (typeaheadActiveChild) {
+          typeaheadActiveChild.click();
+        } else {
+          this.refCollection[0].click();
+        }
       } else {
         let nextIndex;
         if (typeaheadCurrIndex === -1 && position === 'down') {
@@ -195,6 +203,40 @@ export class Select extends React.Component<SelectProps, SelectState> {
         });
       }
     }
+  };
+
+  getDisplay = (value: string, type: 'node' | 'text' = 'node') => {
+    if (!value) {
+      return;
+    }
+
+    const { children } = this.props;
+    const item = children.filter(child => child.props.value === value)[0];
+
+    if (item && item.props.children) {
+      if (type === 'node') {
+        return item.props.children;
+      }
+      return this.findText(item);
+    }
+    return item.props.value;
+  };
+
+  findText: (item: React.ReactElement) => string = (item: React.ReactElement) => {
+    if (!item.props || !item.props.children) {
+      if (typeof item !== 'string') {
+        return '';
+      }
+      return item;
+    }
+    if (typeof item.props.children === 'string') {
+      return item.props.children;
+    }
+    const multi: string[] = [];
+    React.Children.toArray(item.props.children).forEach((child: React.ReactElement) =>
+      multi.push(this.findText(child))
+    );
+    return multi.join('');
   };
 
   render() {
@@ -225,7 +267,8 @@ export class Select extends React.Component<SelectProps, SelectState> {
     if (!selections && !placeholderText) {
       const childPlaceholder = React.Children.toArray(children.filter(child => child.props.isPlaceholder === true));
       childPlaceholderText =
-        (childPlaceholder[0] && childPlaceholder[0].props.value) || (children[0] && children[0].props.value);
+        (childPlaceholder[0] && this.getDisplay(childPlaceholder[0].props.value, 'node')) ||
+        (children[0] && this.getDisplay(children[0].props.value, 'node'));
     }
     let selectedChips = null;
     if (variant === SelectVariant.typeaheadMulti) {
@@ -234,7 +277,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
           {selections &&
             (selections as string[]).map(item => (
               <Chip key={item} onClick={e => onSelect(e, item)} closeBtnAriaLabel={ariaLabelRemove}>
-                {item}
+                {this.getDisplay(item, 'node')}
               </Chip>
             ))}
         </ChipGroup>
@@ -263,7 +306,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
             {variant === SelectVariant.single && (
               <div className={css(styles.selectToggleWrapper)}>
                 <span className={css(styles.selectToggleText)}>
-                  {selections || placeholderText || childPlaceholderText}
+                  {this.getDisplay(selections as string, 'node') || placeholderText || childPlaceholderText}
                 </span>
               </div>
             )}
@@ -288,7 +331,11 @@ export class Select extends React.Component<SelectProps, SelectState> {
                     id="select-typeahead"
                     aria-label={ariaLabelTypeAhead}
                     placeholder={placeholderText as string}
-                    value={typeaheadInputValue !== null ? typeaheadInputValue : selections || ''}
+                    value={
+                      typeaheadInputValue !== null
+                        ? typeaheadInputValue
+                        : this.getDisplay(selections as string, 'text') || ''
+                    }
                     type="text"
                     onChange={this.onChange}
                     autoComplete="off"

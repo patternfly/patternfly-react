@@ -67,6 +67,20 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   animate?: AnimatePropTypeInterface;
   /**
+   * The ariaDesc prop specifies the description of the chart/SVG to assist with
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the desc prop of containerComponent
+   */
+  ariaDesc?: string;
+  /**
+   * The ariaTitle prop specifies the title to be applied to the SVG to assist
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the title prop of containerComponent
+   */
+  ariaTitle?: string;
+  /**
    * The categories prop specifies how categorical data for a chart should be ordered.
    * This prop should be given as an array of string values, or an object with
    * these arrays of values specified for x and y. If this prop is not set,
@@ -128,6 +142,18 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    * If a dataComponent is not provided, ChartDonutThreshold's Slice component will be used.
    */
   dataComponent?: React.ReactElement<any>;
+  /**
+   * The desc prop specifies the description of the chart/SVG to assist with
+   * accessibility for screen readers. The more info about the chart provided in
+   * the description, the more usable it will be for people using screen readers.
+   * This prop defaults to an empty string.
+   *
+   * Note: Overridden by containerComponent
+   *
+   * @example "Golden retreivers make up 30%, Labs make up 25%, and other dog breeds are
+   * not represented above 5% each."
+   */
+  desc?: string;
   /**
    * Specifies the height of the donut threshold chart. This value should be given as a
    * number of pixels.
@@ -403,6 +429,8 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
 }
 
 export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdProps> = ({
+  ariaDesc,
+  ariaTitle,
   children,
   data = [],
   invert = false,
@@ -559,7 +587,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   );
 
   return standalone ? (
-    <ChartContainer width={width} height={height}>
+    <ChartContainer desc={ariaDesc} height={height} title={ariaTitle} width={width}>
       {chart}
       {renderChildren()}
     </ChartContainer>

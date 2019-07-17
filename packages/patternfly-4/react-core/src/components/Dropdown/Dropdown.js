@@ -24,6 +24,10 @@ const propTypes = {
   dropdownItems: PropTypes.array,
   /** Flag to indicate if menu is opened */
   isOpen: PropTypes.bool,
+  /** Flag to indicate if the first dropdown item should gain initial focus, set false when adding
+   * a specific auto-focus item (like a current selection) otherwise leave as true (this is only applicable
+   * when passing an array of dropdownItems) */
+  autoFocus: PropTypes.bool,
   /** Display the toggle with no border or background */
   isPlain: PropTypes.bool,
   /** Indicates where menu will be aligned horizontally */
@@ -45,6 +49,7 @@ const defaultProps = {
   className: '',
   dropdownItems: [],
   isOpen: false,
+  autoFocus: true,
   isPlain: false,
   isGrouped: false,
   position: DropdownPosition.left,
@@ -68,6 +73,7 @@ export class DropdownWithContext extends React.Component {
       direction,
       dropdownItems,
       isOpen,
+      autoFocus,
       isPlain,
       isGrouped,
       onSelect,
@@ -116,6 +122,7 @@ export class DropdownWithContext extends React.Component {
               <DropdownMenu
                 component={component}
                 isOpen={isOpen}
+                autoFocus={autoFocus}
                 position={position}
                 aria-labelledby={id}
                 openedOnEnter={this.openedOnEnter}

@@ -257,6 +257,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.GalleryDemo
   },
   {
+    id: 'grid-demo',
+    name: 'Grid Demo',
+    componentType: Examples.GridDemo
+  },
+  {
     id: 'input-group-demo', 
     name: 'Input Group Demo', 
     componentType: Examples.InputGroupDemo
@@ -398,6 +403,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabDemo
   },
   {
+    id: 'tab-string-event-key-demo',
+    name: 'Tab String Event Key Demo',
+    componentType: Examples.TabsStringEventKeyDemo
+  },
+  {
     id: 'text-area',
     name: 'Text Area Demo',
     componentType: Examples.TextAreaDemo
@@ -416,6 +426,11 @@ export const Demos: DemoInterface[] = [
     id: 'title-demo',
     name: 'Title Demo',
     componentType: Examples.TitleDemo
+  },
+  {
+    id: 'toolbar-demo', 
+    name: 'Toolbar Demo', 
+    componentType: Examples.ToolbarDemo
   },
   {
     id: 'tooltip-demo',

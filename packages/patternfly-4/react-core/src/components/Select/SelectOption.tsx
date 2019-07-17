@@ -7,6 +7,8 @@ import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
 import { Omit } from '../../helpers/typeUtils';
 
 export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 'type' | 'ref'> {
+  /** Optional alternate display for the option */
+  children?: React.ReactNode;
   /** Additional classes added to the Select Option */
   className?: string;
   /** Internal index of the option */
@@ -74,6 +76,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
 
   render() {
     const {
+      children,
       className,
       value,
       onClick,
@@ -114,7 +117,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   ref={this.ref}
                   onKeyDown={this.onKeyDown}
                 >
-                  {value}
+                  {children || value}
                   {isSelected && <CheckIcon className={css(styles.selectMenuItemIcon)} aria-hidden />}
                 </button>
               </li>
@@ -144,7 +147,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   checked={isChecked || false}
                   disabled={isDisabled}
                 />
-                <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{value}</span>
+                <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{children || value}</span>
               </label>
             )}
           </React.Fragment>

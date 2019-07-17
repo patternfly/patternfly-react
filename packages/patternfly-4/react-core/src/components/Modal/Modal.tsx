@@ -40,7 +40,6 @@ interface ModalState {
 export class Modal extends React.Component<ModalProps, ModalState> {
   static currentId = 0;
   id = '';
-  container?: HTMLDivElement = undefined;
 
   static defaultProps = {
     className: '',
@@ -103,8 +102,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   }
 
   componentWillUnmount() {
-    if (this.container) {
-      document.body.removeChild(this.container);
+    if (this.state.container) {
+      document.body.removeChild(this.state.container);
     }
     document.removeEventListener('keydown', this.handleEscKeyClick, false);
     document.body.classList.remove(css(styles.backdropOpen));

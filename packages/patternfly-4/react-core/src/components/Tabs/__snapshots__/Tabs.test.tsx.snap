@@ -9,7 +9,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
   isSecondary={false}
   leftScrollAriaLabel="Scroll left"
   onSelect={[Function]}
-  rightScrollAriaLabel="Scroll Right"
+  rightScrollAriaLabel="Scroll right"
   variant="div"
 >
   <div
@@ -177,7 +177,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
@@ -341,7 +341,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
   isSecondary={false}
   leftScrollAriaLabel="Scroll left"
   onSelect={[Function]}
-  rightScrollAriaLabel="Scroll Right"
+  rightScrollAriaLabel="Scroll right"
   variant="div"
 >
   <div
@@ -509,7 +509,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
@@ -673,7 +673,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
   isSecondary={false}
   leftScrollAriaLabel="Scroll left"
   onSelect={[Function]}
-  rightScrollAriaLabel="Scroll Right"
+  rightScrollAriaLabel="Scroll right"
   variant="div"
 >
   <div
@@ -841,7 +841,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
@@ -1069,7 +1069,7 @@ exports[`should render accessible tabs 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
@@ -1198,7 +1198,7 @@ exports[`should render filled tabs 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
@@ -1324,7 +1324,7 @@ exports[`should render secondary tabs 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
@@ -1351,7 +1351,7 @@ exports[`should render secondary tabs 1`] = `
           isSecondary={false}
           leftScrollAriaLabel="Scroll left"
           onSelect={[Function]}
-          rightScrollAriaLabel="Scroll Right"
+          rightScrollAriaLabel="Scroll right"
           variant="div"
         >
           <ForwardRef
@@ -1481,7 +1481,7 @@ exports[`should render simple tabs 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
@@ -1526,6 +1526,132 @@ exports[`should render simple tabs 1`] = `
     child={
       <ForwardRef
         eventKey={2}
+        id="tab3"
+        title="Tab item 3"
+      >
+        Tab 3 section
+      </ForwardRef>
+    }
+    id="tab3"
+    key="2/.2"
+  />
+</Fragment>
+`;
+
+exports[`should render tabs with eventKey Strings 1`] = `
+<Fragment>
+  <div
+    className="pf-c-tabs"
+    onSelect={[Function]}
+  >
+    <button
+      aria-label="Scroll left"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+    >
+      <AngleLeftIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+        title={null}
+      />
+    </button>
+    <ul
+      className="pf-c-tabs__list"
+      onScroll={[Function]}
+    >
+      <li
+        className="pf-c-tabs__item"
+        key="0/.0"
+      >
+        <ForwardRef
+          aria-controls="pf-tab-section-one-tab1"
+          className="pf-c-tabs__button"
+          eventKey="one"
+          id="tab1"
+          onClick={[Function]}
+          title="Tab item 1"
+        >
+          Tab item 1
+        </ForwardRef>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="1/.1"
+      >
+        <ForwardRef
+          aria-controls="pf-tab-section-two-tab2"
+          className="pf-c-tabs__button"
+          eventKey="two"
+          id="tab2"
+          onClick={[Function]}
+          title="Tab item 2"
+        >
+          Tab item 2
+        </ForwardRef>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="2/.2"
+      >
+        <ForwardRef
+          aria-controls="pf-tab-section-three-tab3"
+          className="pf-c-tabs__button"
+          eventKey="three"
+          id="tab3"
+          onClick={[Function]}
+          title="Tab item 3"
+        >
+          Tab item 3
+        </ForwardRef>
+      </li>
+    </ul>
+    <button
+      aria-label="Scroll right"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+    >
+      <AngleRightIcon
+        color="currentColor"
+        noVerticalAlign={false}
+        size="sm"
+        title={null}
+      />
+    </button>
+  </div>
+  <ForwardRef
+    activeKey={0}
+    child={
+      <ForwardRef
+        eventKey="one"
+        id="tab1"
+        title="Tab item 1"
+      >
+        Tab 1 section
+      </ForwardRef>
+    }
+    id="tab1"
+    key="0/.0"
+  />
+  <ForwardRef
+    activeKey={0}
+    child={
+      <ForwardRef
+        eventKey="two"
+        id="tab2"
+        title="Tab item 2"
+      >
+        Tab 2 section
+      </ForwardRef>
+    }
+    id="tab2"
+    key="1/.1"
+  />
+  <ForwardRef
+    activeKey={0}
+    child={
+      <ForwardRef
+        eventKey="three"
         id="tab3"
         title="Tab item 3"
       >

@@ -147,14 +147,11 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
       className="pf-l-toolbar default-test-class"
       id="default-test-id"
     >
-      <ToolbarGroup
-        className={null}
-      >
+      <ToolbarGroup>
         <div
           className="pf-l-toolbar__group"
         >
           <ToolbarItem
-            className={null}
             key="zoom-in"
           >
             <div
@@ -287,7 +284,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
             </div>
           </ToolbarItem>
           <ToolbarItem
-            className={null}
             key="zoom-out"
           >
             <div
@@ -443,7 +439,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
             </div>
           </ToolbarItem>
           <ToolbarItem
-            className={null}
             key="reset-view"
           >
             <div
@@ -803,14 +798,11 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
       className="pf-l-toolbar default-test-class"
       id="default-test-id"
     >
-      <ToolbarGroup
-        className={null}
-      >
+      <ToolbarGroup>
         <div
           className="pf-l-toolbar__group"
         >
           <ToolbarItem
-            className={null}
             key="zoom-in"
           >
             <div
@@ -966,7 +958,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
             </div>
           </ToolbarItem>
           <ToolbarItem
-            className={null}
             key="zoom-out"
           >
             <div
@@ -1122,7 +1113,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
             </div>
           </ToolbarItem>
           <ToolbarItem
-            className={null}
             key="fit-to-screen"
           >
             <div
@@ -1278,7 +1268,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
             </div>
           </ToolbarItem>
           <ToolbarItem
-            className={null}
             key="reset-view"
           >
             <div
@@ -1434,7 +1423,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
             </div>
           </ToolbarItem>
           <ToolbarItem
-            className={null}
             key="legend"
           >
             <div

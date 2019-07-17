@@ -18,40 +18,32 @@ exports[`Simple toolbar with single group 1`] = `
   align-items: center;
 }
 
-<Toolbar
-  className={null}
->
+<Component>
   <div
     className="pf-l-toolbar"
   >
-    <ToolbarGroup
-      className={null}
-    >
+    <Component>
       <div
         className="pf-l-toolbar__group"
       >
-        <ToolbarItem
-          className={null}
-        >
+        <Component>
           <div
             className="pf-l-toolbar__item"
           >
             Item 1
           </div>
-        </ToolbarItem>
-        <ToolbarItem
-          className={null}
-        >
+        </Component>
+        <Component>
           <div
             className="pf-l-toolbar__item"
           >
             Item 2
           </div>
-        </ToolbarItem>
+        </Component>
       </div>
-    </ToolbarGroup>
+    </Component>
   </div>
-</Toolbar>
+</Component>
 `;
 
 exports[`Toolbar with multiple groups 1`] = `
@@ -94,92 +86,72 @@ exports[`Toolbar with multiple groups 1`] = `
   align-items: center;
 }
 
-<Toolbar
-  className={null}
->
+<Component>
   <div
     className="pf-l-toolbar"
   >
-    <ToolbarGroup
-      className={null}
-    >
+    <Component>
       <div
         className="pf-l-toolbar__group"
       >
-        <ToolbarItem
-          className={null}
-        >
+        <Component>
           <div
             className="pf-l-toolbar__item"
           >
             Item 1
           </div>
-        </ToolbarItem>
-        <ToolbarItem
-          className={null}
-        >
+        </Component>
+        <Component>
           <div
             className="pf-l-toolbar__item"
           >
             Item 2
           </div>
-        </ToolbarItem>
+        </Component>
       </div>
-    </ToolbarGroup>
-    <ToolbarGroup
-      className={null}
-    >
+    </Component>
+    <Component>
       <div
         className="pf-l-toolbar__group"
       >
-        <ToolbarItem
-          className={null}
-        >
+        <Component>
           <div
             className="pf-l-toolbar__item"
           >
             Item 3
           </div>
-        </ToolbarItem>
+        </Component>
       </div>
-    </ToolbarGroup>
-    <ToolbarGroup
-      className={null}
-    >
+    </Component>
+    <Component>
       <div
         className="pf-l-toolbar__group"
       >
-        <ToolbarItem
-          className={null}
-        >
+        <Component>
           <div
             className="pf-l-toolbar__item"
           >
             Item 4
           </div>
-        </ToolbarItem>
-        <ToolbarItem
-          className={null}
-        >
+        </Component>
+        <Component>
           <div
             className="pf-l-toolbar__item"
           >
             Item 5
           </div>
-        </ToolbarItem>
-        <ToolbarItem
-          className={null}
-        >
+        </Component>
+        <Component>
           <div
             className="pf-l-toolbar__item"
           >
             Item 6
           </div>
-        </ToolbarItem>
+        </Component>
       </div>
-    </ToolbarGroup>
+    </Component>
   </div>
-</Toolbar>
+</Component>
 `;
 
 exports[`Toolbar with sections 1`] = `
@@ -234,110 +206,86 @@ exports[`Toolbar with sections 1`] = `
   align-items: center;
 }
 
-<Toolbar
-  className={null}
->
+<Component>
   <div
     className="pf-l-toolbar"
   >
-    <ToolbarSection
+    <Component
       aria-label="First section"
-      className={null}
     >
       <section
-        aria-label="First section"
         className="pf-l-toolbar__section"
       >
-        <ToolbarGroup
-          className={null}
-        >
+        <Component>
           <div
             className="pf-l-toolbar__group"
           >
-            <ToolbarItem
-              className={null}
-            >
+            <Component>
               <div
                 className="pf-l-toolbar__item"
               >
                 Item 1
               </div>
-            </ToolbarItem>
-            <ToolbarItem
-              className={null}
-            >
+            </Component>
+            <Component>
               <div
                 className="pf-l-toolbar__item"
               >
                 Item 2
               </div>
-            </ToolbarItem>
+            </Component>
           </div>
-        </ToolbarGroup>
-        <ToolbarGroup
-          className={null}
-        >
+        </Component>
+        <Component>
           <div
             className="pf-l-toolbar__group"
           >
-            <ToolbarItem
-              className={null}
-            >
+            <Component>
               <div
                 className="pf-l-toolbar__item"
               >
                 Item 3
               </div>
-            </ToolbarItem>
+            </Component>
           </div>
-        </ToolbarGroup>
+        </Component>
       </section>
-    </ToolbarSection>
-    <ToolbarSection
+    </Component>
+    <Component
       aria-label="Second section"
-      className={null}
     >
       <section
-        aria-label="Second section"
         className="pf-l-toolbar__section"
       >
-        <ToolbarGroup
-          className={null}
-        >
+        <Component>
           <div
             className="pf-l-toolbar__group"
           >
-            <ToolbarItem
-              className={null}
-            >
+            <Component>
               <div
                 className="pf-l-toolbar__item"
               >
                 Item 4
               </div>
-            </ToolbarItem>
-            <ToolbarItem
-              className={null}
-            >
+            </Component>
+            <Component>
               <div
                 className="pf-l-toolbar__item"
               >
                 Item 5
               </div>
-            </ToolbarItem>
-            <ToolbarItem
-              className={null}
-            >
+            </Component>
+            <Component>
               <div
                 className="pf-l-toolbar__item"
               >
                 Item 6
               </div>
-            </ToolbarItem>
+            </Component>
           </div>
-        </ToolbarGroup>
+        </Component>
       </section>
-    </ToolbarSection>
+    </Component>
   </div>
-</Toolbar>
+</Component>
 `;

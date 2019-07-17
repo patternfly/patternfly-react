@@ -11,6 +11,12 @@ describe('Select Test', () => {
     cy.get('#single-select').contains('Miss').should('exist');
   });
 
+  it('Verify Custom Single Select', () => {
+    cy.get('#custom-select').click();
+    cy.get('#Miss-2').click();
+    cy.get('#custom-select').contains('text-Miss').should('exist');
+  });
+
   it('Verify Checkbox Select', () => {
     cy.get('#check-select').click();
     cy.get('.pf-c-form__fieldset > :nth-child(1)').click();
@@ -49,5 +55,16 @@ describe('Select Test', () => {
     cy.get('.pf-c-chip').contains('Florida').should('not.exist');
     cy.get('.pf-c-select__toggle > .pf-m-plain').click();
     cy.get('.pf-c-chip').should('not.exist');
+  });
+
+  it('Verify Custom Typeahead Multi Select', () => {
+    cy.get('#custom-typeahead-multi-select').click();
+    cy.get('#Florida-1').click();
+    cy.get('.pf-c-chip').contains('div-Florida-test_span').should('exist');
+    cy.get('#Alabama-0').click();
+    cy.get('.pf-m-overflow > .pf-c-button').should('exist');
+    cy.get('#Florida-1').click();
+    cy.get('.pf-c-chip').contains('div-Alabama-test_span').should('exist');
+    cy.get('.pf-m-overflow > .pf-c-button').should('not.exist');
   });
 });

@@ -1,6 +1,11 @@
 .ws-preview {
   & > * {
     .bar-chart-legend-bottom {
+      height: 275px;
+      width: 450px;
+    }
+
+    .bar-chart-legend-bottom-left {
       height: 400px;
       width: 450px;
     }

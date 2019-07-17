@@ -3,6 +3,112 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.6.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.6.2...@patternfly/react-charts@4.6.3) (2019-07-17)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [4.6.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.6.1...@patternfly/react-charts@4.6.2) (2019-07-16)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [4.6.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.6.0...@patternfly/react-charts@4.6.1) (2019-07-15)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [4.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.5.2...@patternfly/react-charts@4.6.0) (2019-07-12)
+
+
+### Features
+
+* **charts:** added ariaLabelDesc and ariaLabelTitle props ([#2500](https://github.com/patternfly/patternfly-react/issues/2500)) ([0e5ac2b](https://github.com/patternfly/patternfly-react/commit/0e5ac2b))
+
+
+
+
+
+## [4.5.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.5.1...@patternfly/react-charts@4.5.2) (2019-07-11)
+
+
+### Bug Fixes
+
+* **charts:** adjust pf-core vars & add tooltip examples ([#2497](https://github.com/patternfly/patternfly-react/issues/2497)) ([e19eb37](https://github.com/patternfly/patternfly-react/commit/e19eb37))
+
+
+
+
+
+## [4.5.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.5.0...@patternfly/react-charts@4.5.1) (2019-07-10)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [4.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.17...@patternfly/react-charts@4.5.0) (2019-07-10)
+
+
+### Features
+
+* **charts:** adds bottom-left legend position ([#2442](https://github.com/patternfly/patternfly-react/issues/2442)) ([1f52911](https://github.com/patternfly/patternfly-react/commit/1f52911))
+
+
+
+
+
+## [4.4.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.16...@patternfly/react-charts@4.4.17) (2019-07-10)
+
+
+### Bug Fixes
+
+* **ChartDonut:** Replaced prop `titleComponent` if function `getSubTitle` by `subTitleComponent`. ([#2488](https://github.com/patternfly/patternfly-react/issues/2488)) ([18190a4](https://github.com/patternfly/patternfly-react/commit/18190a4)), closes [#2486](https://github.com/patternfly/patternfly-react/issues/2486)
+
+
+
+
+
+## [4.4.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.15...@patternfly/react-charts@4.4.16) (2019-07-09)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [4.4.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.14...@patternfly/react-charts@4.4.15) (2019-07-09)
+
+
+### Bug Fixes
+
+* **charts:** update pf-core vars ([#2480](https://github.com/patternfly/patternfly-react/issues/2480)) ([6c36ec7](https://github.com/patternfly/patternfly-react/commit/6c36ec7))
+
+
+
+
+
+## [4.4.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.13...@patternfly/react-charts@4.4.14) (2019-07-08)
+
+
+### Bug Fixes
+
+* **build:** make pf3/pf4 build on windows ([#2471](https://github.com/patternfly/patternfly-react/issues/2471)) ([5bbc4a2](https://github.com/patternfly/patternfly-react/commit/5bbc4a2))
+
+
+
+
+
 ## [4.4.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.4.12...@patternfly/react-charts@4.4.13) (2019-07-08)
 
 **Note:** Version bump only for package @patternfly/react-charts

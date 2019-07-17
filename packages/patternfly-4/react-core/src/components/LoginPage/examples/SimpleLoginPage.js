@@ -134,7 +134,6 @@ class SimpleLoginPage extends React.Component {
         rememberMeLabel="Keep me logged in for 30 days."
         isRememberMeChecked={this.state.isRememberMeChecked}
         onChangeRememberMe={this.onRememberMeClick}
-        rememberMeAriaLabel="Remember me Checkbox"
         onLoginButtonClick={this.onLoginButtonClick}
       />
     );

@@ -20,6 +20,7 @@ export interface OptionsMenuItemProps extends Omit<React.HTMLProps<HTMLButtonEle
   id?: string;
 }
 
+
 export const OptionsMenuItem: React.FunctionComponent<OptionsMenuItemProps> = ({
   children = null as React.ReactNode,
   className = '',
@@ -41,7 +42,6 @@ export const OptionsMenuItem: React.FunctionComponent<OptionsMenuItemProps> = ({
       onSelect(event);
     }
   };
-
 
   return (
     <li>

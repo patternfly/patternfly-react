@@ -2,6 +2,7 @@ import {
   chart_global_FontFamily,
   chart_global_label_Margin,
   chart_legend_Margin,
+  chart_legend_position
 } from '@patternfly/react-tokens';
 
 export const CommonStyles = {
@@ -11,6 +12,6 @@ export const CommonStyles = {
   },
   legend: {
     margin: chart_legend_Margin.value,
-    position: 'right' // Todo: Replace with PF-core var when available
+    position: chart_legend_position.value
   },
 };

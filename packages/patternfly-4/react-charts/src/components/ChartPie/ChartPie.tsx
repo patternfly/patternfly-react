@@ -10,10 +10,10 @@ import {
   StringOrNumberOrCallback,
   VictoryPie,
   VictoryPieProps,
-  VictoryStyleInterface
+  VictoryStyleInterface, VictoryZoomContainer
 } from 'victory';
 import { ChartContainer } from '../ChartContainer';
-import { ChartLegend, ChartLegendOrientation, ChartLegendPosition, ChartLegendWrapper } from "../ChartLegend";
+import { ChartLegend, ChartLegendOrientation, ChartLegendWrapper } from "../ChartLegend";
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
 import { getChartOrigin, getTheme } from '../ChartUtils';
@@ -22,6 +22,11 @@ export enum ChartPieLabelPosition {
   centroid = 'centroid',
   endAngle = 'endAngle',
   startAngle = 'startAngle'
+};
+
+export enum ChartPieLegendPosition {
+  bottom = 'bottom',
+  right = 'right'
 };
 
 export enum ChartPieSortOrder {
@@ -45,6 +50,20 @@ export interface ChartPieProps extends VictoryPieProps {
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
   animate?: AnimatePropTypeInterface;
+  /**
+   * The ariaDesc prop specifies the description of the chart/SVG to assist with
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the desc prop of containerComponent
+   */
+  ariaDesc?: string;
+  /**
+   * The ariaTitle prop specifies the title to be applied to the SVG to assist
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the title prop of containerComponent
+   */
+  ariaTitle?: string;
   /**
    * The categories prop specifies how categorical data for a chart should be ordered.
    * This prop should be given as an array of string values, or an object with
@@ -406,12 +425,15 @@ export interface ChartPieProps extends VictoryPieProps {
 }
 
 export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
+  ariaDesc,
+  ariaTitle,
   pieDx = 0,
   pieDy = 0,
+  legendComponent = <ChartLegend/>,
   legendData,
   legendDx = 0,
   legendDy = 0,
-  legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
+  legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
   standalone = true,
   themeColor,
   themeVariant,
@@ -419,7 +441,6 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   // destructure last
   theme = getTheme(themeColor, themeVariant),
   legendOrientation = theme.legend.orientation as ChartLegendOrientation,
-  legendComponent = <ChartLegend data={legendData} orientation={legendOrientation}/>,
   height = theme.pie.height,
   width = theme.pie.width,
   pieHeight = Math.min(height, width),
@@ -445,32 +466,45 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     />
   );
 
-  const legend = (
-    <ChartLegendWrapper
-      chartHeight={pieHeight}
-      chartType="pie"
-      chartWidth={pieWidth}
-      dx={legendDx}
-      dy={legendDy}
-      orientation={legendOrientation}
-      position={legendPosition}
-      svgHeight={height}
-      svgWidth={width}
-      theme={theme}
-    >
-      {legendComponent}
-    </ChartLegendWrapper>
-  );
+  const legend = React.cloneElement(legendComponent as React.ReactElement<any>, {
+    data: legendData,
+    orientation: legendOrientation,
+    theme,
+    ...legendComponent.props
+  });
+
+  // Returns a wrapped legend
+  const getWrappedLegend = () => {
+    if (!legend.props.data) {
+      return null;
+    }
+    return (
+      <ChartLegendWrapper
+        chartHeight={pieHeight}
+        chartType="pie"
+        chartWidth={pieWidth}
+        dx={legendDx}
+        dy={legendDy}
+        orientation={legendOrientation}
+        position={legendPosition}
+        svgHeight={height}
+        svgWidth={width}
+        theme={theme}
+      >
+        {legend}
+      </ChartLegendWrapper>
+    );
+  };
 
   return standalone ? (
-    <ChartContainer height={height} width={width}>
+    <ChartContainer desc={ariaDesc} height={height} title={ariaTitle} width={width}>
       {chart}
-      {legend}
+      {getWrappedLegend()}
     </ChartContainer>
   ) : (
     <React.Fragment>
       {chart}
-      {legend}
+      {getWrappedLegend()}
     </React.Fragment>
   );
 }
