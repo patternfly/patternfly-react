@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
 import { AngleLeftIcon, AngleRightIcon } from '@patternfly/react-icons';
@@ -64,7 +65,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     isFilled: false,
     isSecondary: false,
     leftScrollAriaLabel: 'Scroll left',
-    rightScrollAriaLabel: 'Scroll Right',
+    rightScrollAriaLabel: 'Scroll right',
     variant: TabsVariant.div
   };
 
@@ -204,15 +205,13 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           )}
           {...props}
         >
-          {!isSecondary && (
             <button
-              className={css(styles.tabsScrollButton)}
+              className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
               aria-label={leftScrollAriaLabel}
               onClick={this.scrollLeft}
             >
               <AngleLeftIcon />
             </button>
-          )}
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
             {React.Children.map(children, (child: any, index) => (
               <li
@@ -239,15 +238,13 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               </li>
             ))}
           </ul>
-          {!isSecondary && (
             <button
-              className={css(styles.tabsScrollButton)}
+              className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
               aria-label={rightScrollAriaLabel}
               onClick={this.scrollRight}
             >
               <AngleRightIcon />
             </button>
-          )}
         </Component>
         {React.Children.map(children, (child: any, index) =>
           !child.props.children ? null : (

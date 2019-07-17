@@ -9,7 +9,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
   isSecondary={false}
   leftScrollAriaLabel="Scroll left"
   onSelect={[Function]}
-  rightScrollAriaLabel="Scroll Right"
+  rightScrollAriaLabel="Scroll right"
   variant="div"
 >
   <div
@@ -177,7 +177,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
@@ -341,7 +341,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
   isSecondary={false}
   leftScrollAriaLabel="Scroll left"
   onSelect={[Function]}
-  rightScrollAriaLabel="Scroll Right"
+  rightScrollAriaLabel="Scroll right"
   variant="div"
 >
   <div
@@ -509,7 +509,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
@@ -673,7 +673,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
   isSecondary={false}
   leftScrollAriaLabel="Scroll left"
   onSelect={[Function]}
-  rightScrollAriaLabel="Scroll Right"
+  rightScrollAriaLabel="Scroll right"
   variant="div"
 >
   <div
@@ -841,7 +841,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
@@ -1069,7 +1069,7 @@ exports[`should render accessible tabs 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
@@ -1198,7 +1198,7 @@ exports[`should render filled tabs 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
@@ -1324,7 +1324,7 @@ exports[`should render secondary tabs 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
@@ -1351,7 +1351,7 @@ exports[`should render secondary tabs 1`] = `
           isSecondary={false}
           leftScrollAriaLabel="Scroll left"
           onSelect={[Function]}
-          rightScrollAriaLabel="Scroll Right"
+          rightScrollAriaLabel="Scroll right"
           variant="div"
         >
           <ForwardRef
@@ -1481,7 +1481,7 @@ exports[`should render simple tabs 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
@@ -1607,7 +1607,7 @@ exports[`should render tabs with eventKey Strings 1`] = `
       </li>
     </ul>
     <button
-      aria-label="Scroll Right"
+      aria-label="Scroll right"
       className="pf-c-tabs__scroll-button"
       onClick={[Function]}
     >
