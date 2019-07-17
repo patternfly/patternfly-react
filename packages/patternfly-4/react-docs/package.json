@@ -16,7 +16,7 @@
   "dependencies": {
     "@mdx-js/mdx": "1.0.2",
     "@mdx-js/react": "1.0.2",
-    "@patternfly/patternfly": "2.21.2",
+    "@patternfly/patternfly": "2.21.3",
     "@patternfly/react-core": "^3.73.0",
     "@patternfly/react-icons": "^3.10.12",
     "@patternfly/react-virtualized-extension": "^1.1.76",
