@@ -2045,13 +2045,6 @@
     "@svgr/core" "^2.4.1"
     loader-utils "^1.1.0"
 
-"@tippy.js/react@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@tippy.js/react/-/react-1.1.1.tgz#91476726529e31d4c9f9074d995d0fa31f3b6e2d"
-  dependencies:
-    prop-types "^15.6.2"
-    tippy.js "^3.2.0"
-
 "@types/c3@^0.6.0":
   version "0.6.4"
   resolved "https://registry.yarnpkg.com/@types/c3/-/c3-0.6.4.tgz#449830da0e1a2fc4feceb87f97de7ee5965e183b"

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`popover can specify position as object value 1`] = `
-<Tippy
+<PopoverBase
   animateFill={false}
   appendTo={[Function]}
   content={
@@ -46,11 +46,11 @@ exports[`popover can specify position as object value 1`] = `
   <div>
     Toggle Popover
   </div>
-</Tippy>
+</PopoverBase>
 `;
 
 exports[`popover renders close-button, header and body 1`] = `
-<Tippy
+<PopoverBase
   animateFill={false}
   appendTo={[Function]}
   content={
@@ -95,5 +95,5 @@ exports[`popover renders close-button, header and body 1`] = `
   <div>
     Toggle Popover
   </div>
-</Tippy>
+</PopoverBase>
 `;

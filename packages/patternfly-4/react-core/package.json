@@ -44,10 +44,10 @@
     "@patternfly/react-icons": "^3.10.12",
     "@patternfly/react-styles": "^3.5.5",
     "@patternfly/react-tokens": "^2.6.11",
-    "@tippy.js/react": "^1.1.1",
     "emotion": "^9.2.9",
     "exenv": "^1.2.2",
-    "focus-trap-react": "^4.0.1"
+    "focus-trap-react": "^4.0.1",
+    "tippy.js": "^3.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

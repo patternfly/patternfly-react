@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Tippy from '@tippy.js/react';
+import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
 import { Instance as TippyInstance } from 'tippy.js';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import { css, getModifier } from '@patternfly/react-styles';
@@ -7,10 +7,10 @@ import { TooltipArrow } from './TooltipArrow';
 import { TooltipContent } from './TooltipContent';
 import { KEY_CODES } from '../../helpers/constants';
 import { c_tooltip_MaxWidth as tooltipMaxWidth } from '@patternfly/react-tokens';
-import { tippyStyles } from './styles';
+import { popoverBaseStyles } from './styles';
 import { ReactElement } from 'react';
 
-tippyStyles();
+popoverBaseStyles();
 
 export enum TooltipPosition {
   top = 'top',
@@ -116,7 +116,7 @@ export class Tooltip extends React.Component<TooltipProps> {
       </div>
     );
     return (
-      <Tippy
+      <PopoverBase
         onCreate={this.storeTippyInstance}
         maxWidth={maxWidth}
         zIndex={zIndex}
@@ -143,7 +143,7 @@ export class Tooltip extends React.Component<TooltipProps> {
         }}
       >
         {isAppLauncher ? this.extendChildren() : children}
-      </Tippy>
+      </PopoverBase>
     );
   }
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Tippy from '@tippy.js/react';
+import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
 import { Instance as TippyInstance } from 'tippy.js';
 import { KEY_CODES } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
@@ -12,13 +12,13 @@ import { PopoverFooter } from './PopoverFooter';
 import { PopoverCloseButton } from './PopoverCloseButton';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
 import { c_popover_MaxWidth as popoverMaxWidth } from '@patternfly/react-tokens';
-import { tippyStyles } from '../Tooltip/styles';
+import { popoverBaseStyles } from '../Tooltip/styles';
 import { ReactElement } from 'react';
 // Can't use ES6 imports :(
 // The types for it are also wrong, we should probably ditch this dependency.
 // tslint:disable-next-line
 const FocusTrap: any = require('focus-trap-react');
-tippyStyles();
+popoverBaseStyles();
 
 export enum PopoverPosition {
   top = 'top',
@@ -247,7 +247,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       return false;
     };
     return (
-      <Tippy
+      <PopoverBase
         onCreate={this.storeTippyInstance}
         maxWidth={maxWidth}
         zIndex={zIndex}
@@ -282,7 +282,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
         onMount={this.onMount}
       >
         {children}
-      </Tippy>
+      </PopoverBase>
     );
   }
 }

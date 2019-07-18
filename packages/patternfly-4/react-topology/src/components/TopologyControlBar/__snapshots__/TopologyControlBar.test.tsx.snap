@@ -171,7 +171,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
-                <Tippy
+                <PopoverBase
                   animateFill={false}
                   appendTo={[Function]}
                   content={
@@ -279,7 +279,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       </TooltipContent>
                     </div>
                   </Portal>
-                </Tippy>
+                </PopoverBase>
               </Tooltip>
             </div>
           </ToolbarItem>
@@ -303,7 +303,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
-                <Tippy
+                <PopoverBase
                   animateFill={false}
                   appendTo={[Function]}
                   content={
@@ -434,7 +434,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       </TooltipContent>
                     </div>
                   </Portal>
-                </Tippy>
+                </PopoverBase>
               </Tooltip>
             </div>
           </ToolbarItem>
@@ -458,7 +458,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
-                <Tippy
+                <PopoverBase
                   animateFill={false}
                   appendTo={[Function]}
                   content={
@@ -589,7 +589,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       </TooltipContent>
                     </div>
                   </Portal>
-                </Tippy>
+                </PopoverBase>
               </Tooltip>
             </div>
           </ToolbarItem>
@@ -822,7 +822,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
-                <Tippy
+                <PopoverBase
                   animateFill={false}
                   appendTo={[Function]}
                   content={
@@ -953,7 +953,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       </TooltipContent>
                     </div>
                   </Portal>
-                </Tippy>
+                </PopoverBase>
               </Tooltip>
             </div>
           </ToolbarItem>
@@ -977,7 +977,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
-                <Tippy
+                <PopoverBase
                   animateFill={false}
                   appendTo={[Function]}
                   content={
@@ -1108,7 +1108,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       </TooltipContent>
                     </div>
                   </Portal>
-                </Tippy>
+                </PopoverBase>
               </Tooltip>
             </div>
           </ToolbarItem>
@@ -1132,7 +1132,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
-                <Tippy
+                <PopoverBase
                   animateFill={false}
                   appendTo={[Function]}
                   content={
@@ -1263,7 +1263,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       </TooltipContent>
                     </div>
                   </Portal>
-                </Tippy>
+                </PopoverBase>
               </Tooltip>
             </div>
           </ToolbarItem>
@@ -1287,7 +1287,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
-                <Tippy
+                <PopoverBase
                   animateFill={false}
                   appendTo={[Function]}
                   content={
@@ -1418,7 +1418,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       </TooltipContent>
                     </div>
                   </Portal>
-                </Tippy>
+                </PopoverBase>
               </Tooltip>
             </div>
           </ToolbarItem>
