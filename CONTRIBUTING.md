@@ -33,7 +33,7 @@ agree to abide by its terms. To report violations, send an email to [patternfly@
 
 ## Issues and Project Board
 
-We use issues to track work items, such as bug reports and feature requests. Issues can be found in the [issue tracker](https://github.com/patternfly/patternfly-react/issues) or [project board](https://github.com/patternfly/patternfly-react/projects/1). We use the project board to help visualize and manage status of an issue, and we use labels to help prioritize and identify issues.
+We use issues to track work items, such as bug reports and feature requests. Issues can be found in the [issue tracker](https://github.com/patternfly/patternfly-react/issues) or on our [Zenhub project board](https://github.com/patternfly/patternfly-react/issues#workspaces/pf4-workspace-5b2142ff9499cb7cdaf1e632/board?repos=84372347). The [Zenhub extension](https://www.zenhub.com/extension) is required to view the project board. We use the project board to help visualize and manage status of an issue, and we use labels to help prioritize and identify issues.
 
 ### Issue Labels
 
@@ -103,7 +103,7 @@ To create an issue for adding a new component to the repo, please observe the fo
 2.  If the component exists in PatternFly core (meaning CSS and the pattern design exists), then create an issue with the following details:
     - Assign the label `enhancement` to the issue
     - Include the text “Component -“ in the beginning of the title if the issue captures a new component
-    - If the component is documented as a [PatternFly Library Pattern](http://www.patternfly.org/pattern-library/), include a link to it.
+    - If the component is documented as a [PatternFly Library Pattern](https://www.patternfly.org/v3/pattern-library/), include a link to it.
 3.  If a component is not in PatternFly, but you feel it would be a good addition to the library, please do the following:
     - Open a new GitHub issue and tag it with the Extension label
     - Reach out on the patternfly-react channel on slack, the mailing list or the forum to see if the issue is approved as an extension
@@ -112,26 +112,11 @@ To create an issue for adding a new component to the repo, please observe the fo
         - For PatternFly 4 components, direction will be given as to which package it will go in.  Generally, we are recommending most extension components go in individual packages.  Several smaller common components may end up being grouped together.  In the future, a generator for extension component packages will be created.
     - Extension components do not undergo the same rigorous design or coding review process as core PatternFly components.  If enough members of the community find them useful, we will work to move them into our core PatternFly system by starting the design process for the idea.
 
-### Contributing Components
-
-Components that are ready to be contributed can be found on the project board in the backlog column. They are identified with the text “Component” in the issue title.
-
-Once you’ve identified a component to contribute, component contributions should observe the following high level process:
-
-1.  On the Issue page for the component, click the link “assign yourself” if it is visible. If not, then add a comment to the issue stating that you are working the issue. A member of the admin team can invite you to the contributors group later.
-2.  In the project board, move the issue to **In Progress**
-3.  Implement the component observing our [react component requirements](#react-component-requirements)
-    and [code contribution guidelines](#code-contribution-guidelines).
-4.  Submit your pull request and be sure to reference the `enhancement` issue so that others interested in this component may discuss.
-5.  Test your component. Once the pull request is merged, please test the component can successfully be used as intended downstream.
-
-If you submit a pull request, then please also contribute by reviewing other pull requests. Please remember that reviewing other contributions is just as important!
-
 ### Adding Styling for your Components
 
-Ideally, all the styles that are needed for the components in patternfly-react would be defined in the core [patternfly](https://github.com/patternfly/patternfly) repo. However, there may be cases where additional styles are needed to complete the patternfly-react component contribution. In the case where the styles are specific to the component implementation in the patternfly-react repo, then the styles would remain in the repo. In the case where the component does not exist yet in the core pattenrfly repo and styles are needed for the component in the patternfly-react repo, then the styles would only remain in the patternfly-react repo until the component is added to the core patternfly repo. Once the styles are available as part of core patternfly repo, it will be removed from the patternfly-react repo.
+Ideally, all the styles that are needed for the components in patternfly-react would be defined in the core [patternfly](https://github.com/patternfly/patternfly) or [patternfly-react](https://github.com/patternfly/patternfly-next) repos. However, there may be cases where additional styles are needed to complete the patternfly-react component contribution. In the case where the styles are specific to the component implementation in the patternfly-react repo, then the styles would remain in the repo. In the case where the component does not exist yet in the core pattenrfly repo and styles are needed for the component in the patternfly-react repo, then the styles would only remain in the patternfly-react repo until the component is added to the core patternfly repo. Once the styles are available as part of core patternfly repo, it will be removed from the patternfly-react repo.
 
-When it is necessary to add styling in the patternfly-react repo, the styling should be done in both Less and Sass (in the future a converter will be provided, see [Issue #169](https://github.com/patternfly/patternfly-react/issues/169)).
+When it is necessary to add styling in the patternfly-react repo, the styling should be done in both Less and Sass.
 
 Inside the package directory:
 
@@ -164,60 +149,26 @@ Currently the following generators are provided
 
 Please ensure that all React UI components contributed meet the following guidelines:
 
-- This repository serves as a UI / presentational component library only. This means we should not be introducing container components which subscribe to state updates or handle data fetching (i.e. redux aware components). Prefer [stateless functional components](http://buildwithreact.com/article/stateless-functional-components)
-  when possible and accept [props](https://facebook.github.io/react/docs/components-and-props.html) as UI display parameters.
-- Provide a [single default export](http://exploringjs.com/es6/ch_modules.html#_single-default-export) for exporting your React UI component as an ES6 Module in your component's jsx definition.
-- For PatternFly 3 components, provide an associated `.stories.js` [story](https://getstorybook.io/docs/react-storybook/basics/writing-stories) for your component. Stories should demonstrate as many different UI states for your component as possible. Use Storybook [knobs](https://github.com/storybooks/storybook-addon-knobs) to enable dynamic visualizations of your component's props.
-  For PatternFly 4 components, provide associated examples for documentation in the examples directory for the component.
+- This repository serves as a UI / presentational component library only. This means we should not be introducing container components which subscribe to state updates or handle data fetching (i.e. redux aware components). Prefer [stateless functional components](http://buildwithreact.com/article/stateless-functional-components) when possible and accept [props](https://facebook.github.io/react/docs/components-and-props.html) as UI display parameters.
+- For PatternFly 3 components, provide an associated `.stories.js` [story](https://getstorybook.io/docs/react-storybook/basics/writing-stories) for your component. Stories should demonstrate as many different UI states for your component as possible. Use Storybook [knobs](https://github.com/storybooks/storybook-addon-knobs) to enable dynamic visualizations of your component's props. For PatternFly 4 components, provide a `.md` file for the docs.
 - Provide a [jest snapshot test](https://facebook.github.io/jest/docs/snapshot-testing.html) to ensure your UI markup does not change unexpectedly.
 - Ensure the component's rendered design and Storybook stories for PatternFly 3 or Documentation examples for PatternFly 4 meet [PatternFly design standard](https://github.com/patternfly/patternfly-design).
   **Note:** If your component does not yet have PatternFly design documentation, the PatternFly React design team will first confirm that the pattern passes the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) and then start the process for generating design documentation.
-- Ensure the code is properly formatted and there are no linting errors. PatternFly React uses custom eslint configuration based on [Javascript Standard Style](https://standardjs.com/) and [Prettier](https://github.com/prettier/prettier) for code formatting. You can automatically format your code with `yarn prettier` and run the project's linter with `yarn lint`.
-
-### Code Consistency
-
-- All files and folders under your package's `src/components` should name with PascalCase except `index.js` files
-- If you need a constant file, it should be called `{Component_Name}Constants.js` (Component_Name with PascalCase)
-- Each component should treat as a standalone package and live under its own folder. If you think your component can be made completely independent from other components, create it as a new package. This reduces the dependency tree and improves performance downstream. It also makes exported bundles lighter.
-- Single file per component with **default export**
-- Avoid using the bindMethods syntax for attaching methods to a class. Instead use class properties for example `testMethod = () => { return 'test'}`
-- When component is a set of components (e.g., ListGroup and ListGroupItem),
-  they should live in the same folder named on the parent component (e.g., ListGroup)
-- Each component folder should have an `index.js` file with **named exports** of all the relevant components in the folder
-- Always prefer **default imports** between components in the same folder
-- Components that are not getting exported (to consumers) from
-  the `index.js` file should be in a subfolder named `InnerComponents`
+- Ensure the code is properly formatted and there are no linting errors. You can check by running project's linter with `yarn lint`.
+- Avoid using the bindMethods syntax for attaching methods to a class. Instead use [class properties.](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties)
 - Storybooks for PatternFly 3
   - Provide a storybook with your component named on the parent component with a `.stories.js` suffix (e.g., `ListGroup.stories.js`)
   - When your stories contain multiple files, put them in a subfolder named `Stories`
   - `src/**/*.stories.js` and `src/**/Stories/` are excluded from the package build output
 - Documentation for PatternFly 4
-  - Provide documentation for your component with a single Markdown file. (e.g., `ListGroup.md`)
-    See how to write documentation in the [`react-docs` README](./packages/patternfly-4/react-docs/README.md)
-- When writing a component and you want to use the classnames package, be sure to import and name it `classNames`. For example - `import classNames from 'classnames'`
-- When destructuring or spreading expressions , use ...props as the variable name.
-- Exporting components from other libraries (without manipulating them)
-  to consumers is a common task, use:
-
-  ```js
-  # Badge/Badge.js
-  import { Badge } from 'react-bootstrap';
-  export default Badge;
-
-  # Badge/index.js
-  export { default as Badge } from './Badge';
-
-  # index.js
-  export * from './Badge';
-  ```
-
-  **Please see the [Getting Started Readme](./GETTING-STARTED.md) for additional information in getting started with building PatterFly 4 react components.**
+  - Provide documentation for your component with a single Markdown file. (e.g., `ListGroup.md`) 614830
+  See how to write documentation in the [`react-docs` README](./packages/patternfly-4/react-docs/README.md)
 
 ### Code Contribution Guidelines
 
 Adhering to the following process is the best way to get your work included in the project:
 
-1.  [Fork](https://help.github.com/fork-a-repo/) the project, clone your fork, and configure the remotes:
+1. [Fork](https://help.github.com/fork-a-repo/) the project, clone your fork, and configure the remotes:
 
 ```bash
 # Clone your fork of the repo into the current directory
@@ -228,45 +179,19 @@ cd patternfly-react
 git remote add upstream https://github.com/patternfly/patternfly-react.git
 ```
 
-2.  Create a branch:
+2. Create a branch:
 
 ```text
-$ git checkout -b my-branch -t upstream/master
+$ git checkout -b my-branch upstream/master
 ```
 
-3. Generate your Component
-
-```bash
-# Run the tool to Generate the component scaffolding
- yarn generate
-```
-
-- When you select the option to generate a PatternFly 3 component, a structure resembling the following is generated
-  ```text
-  packages/patternfly-3/patternfly-react/src/components/[ComponentName]/
-    index.js - Barrel File exporting public exports
-    ComponentName.js - Component Implementation
-    ComponentName.test.js - Component Tests
-    ComponentName.stories.js - Component Stories
-  ```
-- When you select the option to generate a PatternFly 4 component, a structure resembling the following is generated
-  ```text
-  packages/patternfly-4/react-core/src/[type]/[ComponentName]/
-    index.js - Barrel File exporting public exports
-    ComponentName.js - Component Implementation
-    ComponentName.test.js - Component Tests
-    ComponentName.md - Component Docs
-  ```
-
-4.  Develop your component. After development is complete, ensure tests and lint standards pass.
+3. Develop your component. After development is complete, ensure tests and lint standards pass.
 
 ```text
 $ yarn test
 ```
 
-Ensure no lint errors are introduced in `yarn-error.log` after running this command.
-
-5.  Add a commit using `yarn commit`:
+4. Add a commit using `yarn commit`:
 
 This project uses [`lerna`](https://lernajs.io/) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow this convention for your commit messages.
 
@@ -281,7 +206,7 @@ $ yarn commit
 
 ... and follow the instruction of the interactive prompt.
 
-6.  Rebase
+5. Rebase
 
 Use `git rebase` (not `git merge`) to sync your work from time to time. Ensure all commits related to a single issue have been [squashed](https://github.com/ginatrapani/todo.txt-android/wiki/Squash-All-Commits-Related-to-a-Single-Issue-into-a-Single-Commit).
 
@@ -290,25 +215,21 @@ $ git fetch upstream
 $ git rebase upstream/master
 ```
 
-7.  Push
+6. Push
 
 ```text
 $ git push origin my-branch
 ```
 
-8.  Create a Pull Request
+7. Create a Pull Request
 
 [Open a pull request](https://help.github.com/articles/using-pull-requests/) with a clear title and description against the `master` branch. Please be sure to include all of the following in your PR:
 
 - Any relevant issues associated with this pull request (`enhancement` issues, `bug` issues, etc.)
-- Storybook and Documentation
-  - Include a link to the design documentation in the [PatternFly Pattern Library](http://www.patternfly.org/pattern-library/) if it exists. If a PatternFly design does not exist yet, then provide a description that explains when the component would be used and what goal or task it helps to accomplish.
-
-A link to the Storybook (PatternFly 3) and demo documentation (PatternFly 4) will be automatically generated and posted as a comment after the pull request build is complete.
 
 Once your pull request has been reviewed, if all conditions above have been met your pull request will be approved and merged.
 
-Please help in ensuring all relevant issues are closed and that any subsequent issues needed have been noted with this pull request.
+Please help in ensuring all relevant issues are closed and that any follow-up issues needed have created.
 
 ### Guidelines for React implementation from Core
 
@@ -366,8 +287,8 @@ The process for revoking someone's maintainer status is a discussion limited to 
 ### Quick tips for new maintainers
 
 - If something you merged broke something, it’s your responsibility to resolve or coordinate how to resolve the issue.
-- Do not merge your own commits
-- Do not merge commits blindly. If you do not fully understand a pull request, ask existing maintainers to take a look
+- Do not merge your own commits.
+- Do not merge commits blindly. If you do not fully understand a pull request, ask existing maintainers to take a look.
 - Do not merge if the build is failing. Wait until tests are green to merge.
 
 [1]: http://contributor-covenant.org/version/1/4/code_of_conduct.md

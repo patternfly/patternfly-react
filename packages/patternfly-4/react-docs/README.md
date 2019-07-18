@@ -1,5 +1,17 @@
 # React-docs
 
+This is a private Gatsby project to demonstrate PatternFly 4 components. It itself is built using PatternFly 4 components.
+
+## Running
+To start a local dev server at http://localhost:8000 :
+
+`yarn develop`
+
+## Building
+Gatsby is a static site generator. It outputs a public folder.
+
+`yarn build`
+
 ## Writing your docs
 
 Gatsby recursively scans all `../../patternfly-4` directories for *.md files. Your Markdown file can have the following frontmatter:
@@ -32,7 +44,7 @@ Gatsby is a static site generator that doubles as a hot-module reloader for buil
 
 We have to more or less build our own version of [React Styleguidist](https://github.com/styleguidist/react-styleguidist). We can't just use [React Styleguidist](https://github.com/styleguidist/react-styleguidist) because [patternfly-next](https://github.com/patternfly/patternfly-next) and [patternfly-org](https://github.com/patternfly/patternfly-org) also uses Gatsby for their docs and the two are currently being merged and styled at [v2.patternfly.org](v2.patternfly.org).
 
-1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where we which Gatsby plugins to include. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where we specify which Gatsby plugins to include. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
   - We include our own plugin `gatsby-transformer-react-docgen-typescript` for transforming component source files into metadata via [React Docgen](https://github.com/reactjs/react-docgen) and [React Docgen Typescript](https://github.com/styleguidist/react-docgen-typescript).
   - We use `gatsby-mdx` to parse the *.md files into React Functional Components. We use the generated HTML _except for in <code> tags_, where we instead use our own `components/componentDocs/liveEdit.js` component.
 

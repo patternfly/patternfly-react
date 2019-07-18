@@ -15,7 +15,7 @@ When making a new PatternFly 4 contribution, you’ll need to write a Cypress te
 
 This README will show you how to launch the demo app and use Cypress to run your tests against it.
 
-## Building your react component
+## Building your React component
 Building your React component
 Once you’ve completed development of a new component, you need to perform a build before you can start writing integration tests.
 

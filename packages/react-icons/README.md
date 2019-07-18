@@ -1,5 +1,7 @@
 # @patternfly/react-icons
 
+![npm badge](https://img.shields.io/npm/v/@patternfly/react-icons.svg?style=for-the-badge)
+
 PatternFly 4 Icons as React Components.
 
 ## Usage
@@ -33,4 +35,16 @@ module.exports = {
     bigPlus: {width: 1024, height: 1024, svgPathData: 'M2 1 h1 v1 h1 v1 h-1 v1 h-1 v-1 h-1 v-1 h1 z'}
   }
 }
+```
+
+### Building
+
+To build just react-tokens, run `yarn run lerna run build --scope=@patternfly/react-icons`.
+
+### Testing
+
+Testing is done at the root of this repo. To only run the patternfly-react tests:
+
+```
+yarn test packages/patternfly-4/react-icons
 ```

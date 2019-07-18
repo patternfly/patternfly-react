@@ -1,33 +1,17 @@
 # @patternfly/react-core
 
-This package provides Core PatternFly components for the [PatternFly 4][patternfly-4].
+![npm badge](https://img.shields.io/npm/v/@patternfly/react-core.svg?style=for-the-badge)
 
-### Prerequisite
+This package provides functionality and styles for essential PatternFly components. It depends on [PatternFly 4 CSS][patternfly-4]. The repo can be found [here][patternfly-repo].
 
-#### Node Environment
-
-This project currently supports Node [Active LTS](https://github.com/nodejs/Release#release-schedule) releases. Please stay current with Node Active LTS when developing patternfly-react.
-
-For example, to develop with Node 8, use the following:
-
-```
-nvm install 8
-nvm use 8
-```
-
-This project also requires a Yarn version of >=1.6.0. The latest version can be installed [here](https://yarnpkg.com/).
 
 ### Installing
 
-```
-yarn add @patternfly/react-core
-```
+Use your favorite package manager to install our package from npm: 
 
-or
+`yarn add @patternfly/react-core`
 
-```
-npm install @patternfly/react-core --save
-```
+`npm install @patternfly/react-core --save`
 
 # Usage
 
@@ -49,54 +33,9 @@ export default <Button variant="primary">Button</Button>;
 
 All css related to each component is provided within it. There is no component level CSS to import.
 
-# Applying Red Hat Fonts (Optional) 
-If you would like to use Red Hat fonts instead of Overpass, simply add the class `.pf-m-redhat-font` to an element that wraps your application (ideally `<html>` or `<body>`) to adopt the CSS changes that introduce the Red Hat fonts into PatternFly.
-
-
-# Documentation
-
-This project uses Gatsby. For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
-
-A comprehensive list of components and detailed usage of each can be found on the [PatternFly React Docs][docs] website
-You can also find how each component is meant to be used from a design perspective on the [PatternFly 4 Core][patternfly-4] website.
-
-Note: All commands below assume you are on the root directory in this repository.
-
-### Install
-
-Run to install all the dependencies
-
-```sh
-yarn install && yarn build
-```
-
-### Running
-
-To start the site locally.
-
-```sh
-yarn start:pf4
-```
-
 ### Building
 
-To build the site.
-
-```sh
-yarn build:docs
-```
-
-# Contributing Components
-
-This library makes use of the babel plugin from [@patternfly/react-styles](../react-styles/README.md) to enable providing the CSS alongside the components. This removes the need for consumers to use (style|css|sass)-loaders. For an example of using CSS from core you can reference [Button.js](./src/components/Button/Button.js). For any CSS not provided by core please use the `StyleSheet.create` utility from [@patternfly/react-styles](../react-styles/README.md). This will prevent collisions with any consumers, and allow the CSS to be bundled with the component.
-
-### Building
-
-```
-yarn build
-```
-
-Note the build scripts for this are located in the root package.json under `yarn build`.
+To build just react-core, run `yarn run lerna run build --scope=@patternfly/react-core`.
 
 ### Testing
 
@@ -106,7 +45,6 @@ Testing is done at the root of this repo. To only run the patternfly-react tests
 yarn test packages/patternfly-4/react-core
 ```
 
-[patternfly-4]: https://github.com/patternfly/patternfly-next
+[patternfly-4]: https://pf4.patternfly.org
+[patternfly-repo]: https://github.com/patternfly/patternfly-next
 [docs]: https://patternfly-react.surge.sh/patternfly-4
-
-

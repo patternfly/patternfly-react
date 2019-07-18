@@ -1,12 +1,12 @@
 # @patternfly/react-styles
 
-Library that provides CSS-in-JS capabilities along with build plugins to convert raw css imports to a consumable form for JS. This approach is very similar to how [css-modules][css-modules] works.
+![npm badge](https://img.shields.io/npm/v/@patternfly/react-styles.svg?style=for-the-badge)
 
-## Getting started
+Library that provides CSS-in-JS capabilities along with build plugins to convert raw css imports to a consumable form for JS. This approach is very similar to how [css-modules][css-modules] works.
 
 This library has 3 main parts.
 
-1. A [babel][babel] plugin to transform css imports into a JS import
+1. A [script](./src/generateClasses.js) to create JS objects from CSS classes
 1. A `StyleSheet` helper that parses raw css and returns a JS object to reference classnames.
 1. A `css` helper function to combine string CSS classes and any returned from the `StyleSheet`. It also takes care of doing the CSS injection.
 
@@ -120,11 +120,11 @@ const Button = ({
 
 ### Server Rendering
 
-Since the css is referenced from JS server rendering is supported. For an example of this see: [gatsby-ssr.js](../site/gatsby-ssr.js)
+Since the css is referenced from JS server rendering is supported.
 
 ### Snapshot Testing
 
-This package exports a snapshot serializer to produce more useful snapshots. Below is an example
+This package exports a snapshot serializer to produce more useful snapshots. Below is an example.
 
 #### Before
 
@@ -197,7 +197,6 @@ This is similar to the utilities [jest-aphrodite-react][jest-aphrodite-react], [
 
 [classnames]: https://github.com/JedWatson/classnames
 [css-modules]: https://github.com/css-modules/css-modules
-[babel]: https://github.com/babel/babel
 [jest-styled-components]: https://github.com/styled-components/jest-styled-components#snapshot-testing
 [jest-glamor-react]: https://github.com/kentcdodds/jest-glamor-react
 [jest-aphrodite-react]: https://github.com/dmiller9911/jest-aphrodite-react
