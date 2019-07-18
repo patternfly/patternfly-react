@@ -1,23 +1,17 @@
 import { ChartCommonStyles } from '../ChartTheme';
-import { ChartThemeDefinition } from '../ChartTheme';
-
-interface ChartLabelDimensionsInterface {
-  label: string; // The label text
-  theme: ChartThemeDefinition; // The theme that will be applied to the chart
-}
 
 interface ChartLabelPaddingXInterface {
   dx?: number; // Horizontal shift from the x coordinate
   chartWidth: number; // Width of chart (e.g., donut) within SVG
-  labelPosition: string; // Position of label (e.g., bottom, right)
-  legendPosition: string; // Position of legend (e.g., bottom, right)
+  labelPosition?: 'bottom' | 'center' | 'right'; // Position of label
+  legendPosition?: 'bottom' | 'bottom-left' | 'right'; // Position of legend
   svgWidth: number; // Overall width of SVG
 }
 
 interface ChartLabelPaddingYInterface {
   dy?: number; // Vertical shift from the x coordinate
   chartHeight: number; // Width of chart (e.g., donut) within SVG
-  labelPosition: string; // Position of label (e.g., bottom, right)
+  labelPosition?: 'bottom' | 'center' | 'right'; // Position of label
 }
 
 // Returns x coordinate for label
@@ -59,7 +53,7 @@ export const getLabelX = ({
 export const getLabelY = ({
   chartHeight,
   dy = 0,
-  labelPosition,
+  labelPosition
 }: ChartLabelPaddingYInterface) => {
   if (!chartHeight) {
     return 0;

@@ -2,13 +2,14 @@ import { VictoryLegend } from 'victory';
 import { TextSize } from 'victory-core';
 import { ChartLegendProps } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
+import { getPaddingForSide } from "./chart-padding";
 
 interface ChartLegendPaddingXInterface {
   chartWidth: number; // Width of chart (e.g., donut) within SVG
   dx?: number; // Horizontal shift from the x coordinate
   legendData: any[]; // The legend data used to determine width
-  legendOrientation: string; // Orientation of legend (e.g., vertical, horizontal)
-  legendPosition: string; // Position of legend (e.g., bottom, right)
+  legendOrientation: 'horizontal' | 'vertical'; // Orientation of legend
+  legendPosition: 'bottom' | 'bottom-left' | 'right'; // Position of legend
   legendProps: any; // The legend props used to determine width
   svgWidth: number; // Overall width of SVG
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
@@ -19,32 +20,24 @@ interface ChartLegendPaddingYInterface {
   chartType: string; // The type of chart (e.g., pie) to lookup for props like padding
   dy?: number; // Vertical shift from the x coordinate
   legendData: any[]; // The legend data used to determine width
-  legendOrientation: string; // Orientation of legend (e.g., vertical, horizontal)
-  legendPosition: string; // Position of legend (e.g., bottom, right)
+  legendOrientation: 'horizontal' | 'vertical'; // Orientation of legend
+  legendPosition: 'bottom' | 'bottom-left' | 'right'; // Position of legend
   legendProps: any; // The legend props used to determine width
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
 }
 
 interface ChartLegendDimensionsInterface {
   legendData: any[]; // The legend data used to determine width
-  legendOrientation: string; // Orientation of legend (e.g., vertical, horizontal)
+  legendOrientation: 'horizontal' | 'vertical'; // Orientation of legend
   legendProps: ChartLegendProps; // Legend properties
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
 }
 
 interface ChartLegendTextSizeInterface {
   legendData: any[]; // The legend data used to determine width
-  legendOrientation?: string; // Orientation of legend (e.g., vertical, horizontal)
+  legendOrientation?: 'horizontal' | 'vertical'; // Orientation of legend
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
 }
-
-// Returns chart padding
-export const getChartPadding = (chartType: string = 'chart', theme: ChartThemeDefinition) => {
-  const offset = 4;
-  const padding = theme && theme[chartType as keyof ChartThemeDefinition]
-    ? theme[chartType as keyof ChartThemeDefinition].padding * 2 : 0;
-  return padding + offset;
-};
 
 // Returns legend dimensions
 export const getLegendDimensions = ({
@@ -110,24 +103,30 @@ export const getLegendY = ({
   legendProps,
   theme
 }: ChartLegendPaddingYInterface) => {
+  // Chart height with padding
+  const defaultPadding = {
+    bottom: getPaddingForSide('bottom',  theme[chartType as keyof ChartThemeDefinition].padding, 0),
+    top: getPaddingForSide('top', theme[chartType as keyof ChartThemeDefinition].padding, 0),
+  };
+  const chartPadding = defaultPadding.bottom + defaultPadding.top + 4;
+  const cHeight = chartHeight ? chartHeight + chartPadding : 0;
+
+  // Legend width with padding
   const legendDimensions = getLegendDimensions({
     legendData,
     legendOrientation,
     legendProps,
     theme
   });
-  const getLegendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 15 : 0);
-  const dHeight = chartHeight ? chartHeight + getChartPadding(chartType, theme) : 0;
-  const lHeight = legendDimensions.height ? legendDimensions.height + getLegendPadding(legendData) : 0;
+  const legendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 15 : 0);
+  const lHeight = legendDimensions.height ? legendDimensions.height + legendPadding(legendData) : 0;
 
   switch (legendPosition) {
     case 'bottom':
     case 'bottom-left':
       return chartHeight + ChartCommonStyles.legend.margin + dy;
-    case 'left':
-      return dHeight > lHeight ? Math.round((dHeight - lHeight) / 2) + dy : dy;
     case 'right':
-      return dHeight > lHeight ? Math.round((dHeight - lHeight) / 2) + dy : dy;
+      return cHeight > lHeight ? Math.round((cHeight - lHeight) / 2) + dy : dy;
     default:
       return dy;
   }
