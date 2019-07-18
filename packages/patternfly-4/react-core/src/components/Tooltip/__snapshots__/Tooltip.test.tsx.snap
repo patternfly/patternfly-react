@@ -4,6 +4,7 @@ exports[`tooltip renders 1`] = `
 <PopoverBase
   animateFill={false}
   appendTo={[Function]}
+  aria="describedby"
   content={
     <div
       className="pf-c-tooltip"
