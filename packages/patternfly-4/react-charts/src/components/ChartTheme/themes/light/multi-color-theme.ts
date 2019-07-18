@@ -41,14 +41,14 @@ import { ColorTheme } from '../color-theme';
 // The color order below improves the color contrast in unordered charts
 // See https://github.com/patternfly/patternfly-next/issues/1551
 const COLOR_SCALE = [
-  chart_color_blue_300.value,
+  chart_color_blue_100.value,
   chart_color_gold_300.value,
   chart_color_green_300.value,
   chart_color_purple_300.value,
   chart_color_orange_300.value,
   chart_color_cyan_300.value,
   chart_color_black_300.value,
-  chart_color_blue_100.value,
+  chart_color_blue_300.value,
   chart_color_gold_500.value,
   chart_color_green_100.value,
   chart_color_purple_500.value,
