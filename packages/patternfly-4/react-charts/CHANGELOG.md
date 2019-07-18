@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.6.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.6.3...@patternfly/react-charts@4.6.4) (2019-07-18)
+
+
+### Bug Fixes
+
+* **charts:** add individual padding vars for donut charts ([#2529](https://github.com/patternfly/patternfly-react/issues/2529)) ([771eee8](https://github.com/patternfly/patternfly-react/commit/771eee8))
+
+
+
+
+
 ## [4.6.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.6.2...@patternfly/react-charts@4.6.3) (2019-07-17)
 
 **Note:** Version bump only for package @patternfly/react-charts
