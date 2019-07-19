@@ -4,7 +4,7 @@ import { debounce } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { css } from '@patternfly/react-styles';
 
-class RowWrapper extends React.Component {
+export class RowWrapper extends React.Component {
   constructor(props) {
     super(props);
 
@@ -99,5 +99,3 @@ RowWrapper.defaultProps = {
   },
   rowProps: null
 };
-
-export default RowWrapper;

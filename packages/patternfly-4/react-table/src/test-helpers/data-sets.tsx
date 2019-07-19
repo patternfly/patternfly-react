@@ -44,17 +44,20 @@ export const rows: any = [
 export const actions: any = [
   {
     title: 'Some action',
-    onClick: (event, rowId) => console.log('clicked on Some action, on row: ', rowId)
+    onClick: ({ event }: { event: React.MouseEvent<HTMLAnchorElement, MouseEvent> }, { rowId }: { rowId: number }) =>
+      console.log('clicked on Some action, on row: ', rowId)
   },
   {
     title: <div>Another action</div>,
-    onClick: (event, rowId) => console.log('clicked on Another action, on row: ', rowId)
+    onClick: ({ event }: { event: React.MouseEvent<HTMLAnchorElement, MouseEvent> }, { rowId }: { rowId: number }) =>
+      console.log('clicked on Another action, on row: ', rowId)
   },
   {
     isSeparator: true
   },
   {
     title: 'Third action',
-    onClick: (event, rowId) => console.log('clicked on Third action, on row: ', rowId)
+    onClick: ({ event }: { event: React.MouseEvent<HTMLAnchorElement, MouseEvent> }, { rowId }: { rowId: number }) =>
+      console.log('clicked on Third action, on row: ', rowId)
   }
 ];

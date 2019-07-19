@@ -9,9 +9,9 @@ import {
   cellWidth,
   headerCol,
   sortable,
-  expandable
+  expandable,
+  compoundExpand
 } from './index';
-const compoundExpand = require('./utils/decorators/compoundExpand');
 import { rows, columns, actions } from '../../test-helpers/data-sets';
 
 describe('Simple table', () => {
