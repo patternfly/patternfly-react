@@ -143,7 +143,7 @@ import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 </div>
 ```
 
-## Multi-color, horizontal stack chart with bottom-left aligned legend
+## Multi-color (ordered), horizontal stack chart with bottom-left aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
@@ -163,7 +163,7 @@ import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
         right: 50, 
         top: 50
       }}
-      themeColor={ChartThemeColor.multi}
+      themeColor={ChartThemeColor.multiOrdered}
       width={450}
     >
       <ChartAxis />

@@ -53,7 +53,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 </div>
 ```
 
-## Multi-color pie chart with bottom aligned legend
+## Multi-color (ordered) pie chart with bottom aligned legend
 ```js
 import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
@@ -69,7 +69,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
       legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
       legendPosition="bottom"
       pieHeight={230}
-      themeColor={ChartThemeColor.multi}
+      themeColor={ChartThemeColor.multiOrdered}
       width={300}
     />
   </div>

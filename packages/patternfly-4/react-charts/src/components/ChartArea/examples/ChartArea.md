@@ -132,7 +132,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
 </div>
 ```
 
-## Multi-color chart with bottom-left aligned legend and responsive container
+## Multi-color (unorderd) chart with bottom-left aligned legend and responsive container
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
@@ -180,7 +180,7 @@ class MultiColorChart extends React.Component {
               top: 50,
             }}
             maxDomain={{y: 9}}
-            themeColor={ChartThemeColor.multi}
+            themeColor={ChartThemeColor.multiUnordered}
             width={width}
           >
             <ChartAxis />

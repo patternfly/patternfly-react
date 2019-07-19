@@ -147,7 +147,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patte
 </div>
 ```
 
-## Multi-color line chart with x-axis zoom, bottom-left aligned legend, and responsive container
+## Multi-color (unorderd) line chart with x-axis zoom, bottom-left aligned legend, and responsive container
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
@@ -195,7 +195,7 @@ class MultiColorChart extends React.Component {
               right: 50,
               top: 50
             }}
-            themeColor={ChartThemeColor.multi}
+            themeColor={ChartThemeColor.multiUnordered}
             width={width}
            >
             <ChartAxis tickValues={[2, 3, 4]} />
