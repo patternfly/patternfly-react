@@ -33,6 +33,15 @@ then
     JSON="{\"body\":\"Your changes have been released in: ${COMMENT}Thanks for your contribution! :tada:\"}"
     echo "Adding github PR comment ${GITHUB_PR_COMMENTS} ${JSON}"
     curl -H "Authorization: token ${GH_PR_TOKEN}" --request POST "${GITHUB_PR_COMMENTS}" --data "${JSON}"
+
+    # Trigger downstream tests for quarkster
+    curl -s -X POST \
+      -H "Content-Type: application/json" \
+      -H "Accept: application/json" \
+      -H "Travis-API-Version: 3" \
+      -H "Authorization: token $QUARCKSTER_TOKEN" \
+      -d '{"request": {"branch": "master"}}' \
+      https://api.travis-ci.org/repo/RedHatQE%2Fwidgetastic.patternfly4/requests
   fi
 else
   echo "Failed lerna publish"
