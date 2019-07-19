@@ -21,18 +21,18 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement>{
   direction?: DropdownDirection | 'up' | 'down';
   /** Flag to indicate if dropdown has groups */
   isGrouped?: boolean;
-  /** Placeholder to use custom toggle elements */
+  /** Toggle for the dropdown, examples: <DropdownToggle> or <DropdownToggleCheckbox> */
   toggle: React.ReactElement<any>; 
   /** Function callback called when user selects item */
   onSelect?(event: React.SyntheticEvent<HTMLDivElement>): void;
 }
 
-// seed for the aria-labelledby ID
-let currentId = 0;
-
 export class DropdownWithContext extends React.Component<DropdownProps> {
   openedOnEnter = false;
   baseComponentRef = React.createRef<any>();
+
+  // seed for the aria-labelledby ID
+  static currentId = 0;
   
   static defaultProps = {
     className: '',
@@ -76,7 +76,7 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
       toggle,
       ...props
     } = this.props;
-    const id = toggle.props.id || `pf-toggle-id-${currentId++}`;
+    const id = toggle.props.id || `pf-toggle-id-${DropdownWithContext.currentId++}`;
     let component: string;
     let renderedContent: React.ReactNode[];
     let ariaHasPopup = false;
