@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { mount } from 'enzyme';
 import {
   Table,
@@ -9,9 +9,9 @@ import {
   cellWidth,
   headerCol,
   sortable,
-  expandable,
-  compoundExpand
+  expandable
 } from './index';
+const compoundExpand = require('./utils/decorators/compoundExpand');
 import { rows, columns, actions } from '../../test-helpers/data-sets';
 
 describe('Simple table', () => {
@@ -46,7 +46,7 @@ describe('Simple table', () => {
 });
 
 test('Sortable table', () => {
-  const onSortCall = () => undefined;
+  const onSortCall = () => undefined as any;
   columns[0] = { ...columns[0], transforms: [sortable] };
   const view = mount(
     <Table aria-label="Aria labeled" onSort={onSortCall} sortBy={{}} cells={columns} rows={rows}>
@@ -133,7 +133,7 @@ test('Collapsible table', () => {
   rows[3] = { ...rows[3], isOpen: false };
   rows[4] = { ...rows[4], parent: 3 };
   columns[0] = { ...columns[0], cellFormatters: [expandable] };
-  const onCollapse = () => undefined;
+  const onCollapse = () => undefined as any;
   const view = mount(
     <Table aria-label="Aria labeled" onCollapse={onCollapse} cells={columns} rows={rows}>
       <TableHeader />
@@ -144,17 +144,17 @@ test('Collapsible table', () => {
 });
 
 test('Compound Expandable table', () => {
-  const compoundColumns = [
+  const compoundColumns: any = [
     { title: 'col1', cell: { transforms: [compoundExpand] } },
     { title: 'col2', cell: { transforms: [compoundExpand] } }
   ];
-  const compoundRows = [
+  const compoundRows: any = [
     { isOpen: true, cells: [{ title: '1', props: { isOpen: true } }, { title: '2', props: { isOpen: false } }] },
     { parent: 0, compoundParent: 0, cells: [{ title: 'expanded', props: { colSpan: 2 } }] },
     { isOpen: false, cells: [{ title: '3', props: { isOpen: false } }, { title: '4', props: { isOpen: false } }] },
     { parent: 2, compoundParent: 0, cells: [{ title: 'expanded', props: { colSpan: 2 } }] }
   ];
-  const onExpand = () => undefined;
+  const onExpand = () => undefined as any;
   const view = mount(
     <Table aria-label="Aria labeled" onExpand={onExpand} cells={compoundColumns} rows={compoundRows}>
       <TableHeader />
@@ -168,7 +168,7 @@ test('Collapsible nested table', () => {
   rows[0] = { ...rows[0], isOpen: false };
   rows[1] = { ...rows[1], parent: 0, isOpen: true };
   rows[2] = { ...rows[2], parent: 1 };
-  const onCollapse = () => undefined;
+  const onCollapse = () => undefined as any;
   const view = mount(
     <Table aria-label="Aria labeled" onCollapse={onCollapse} cells={columns} rows={rows}>
       <TableHeader />
@@ -179,7 +179,7 @@ test('Collapsible nested table', () => {
 });
 
 test('Selectable table', () => {
-  const onSelect = () => undefined;
+  const onSelect = () => undefined as any;
   const view = mount(
     <Table aria-label="Aria labeled" onSelect={onSelect} cells={columns} rows={rows}>
       <TableHeader />
@@ -215,7 +215,7 @@ test('Selectable table with selected expandable row', () => {
         parent: 0
       }
     ],
-    onSelect: f => f
+    onSelect: (f: any) => f
   };
 
   const view = mount(

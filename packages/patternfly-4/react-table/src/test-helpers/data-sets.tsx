@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import React from 'react';
+import * as React from 'react';
 
-export const columns = [
+export const columns: any = [
   { title: 'Header cell' },
   'Branches',
   { title: 'Pull requests' },
@@ -11,7 +11,7 @@ export const columns = [
   }
 ];
 
-export const rows = [
+export const rows: any = [
   {
     cells: ['one', 'two', 'three', 'four', 'five']
   },
@@ -41,7 +41,7 @@ export const rows = [
   }
 ];
 
-export const actions = [
+export const actions: any = [
   {
     title: 'Some action',
     onClick: (event, rowId) => console.log('clicked on Some action, on row: ', rowId)
