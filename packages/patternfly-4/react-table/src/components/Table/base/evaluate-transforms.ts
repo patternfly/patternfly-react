@@ -1,16 +1,17 @@
 /**
- * evaluate-transforms.js
+ * evaluate-transforms.ts
  *
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  * */
 import { isFunction } from 'lodash-es';
-import mergeProps from './merge-props';
+import { mergeProps } from './merge-props';
+import { transformsType, extraParamsType } from './types';
 
-function evaluateTransforms(transforms = [], value, extraParameters = {}) {
+export function evaluateTransforms(transforms:transformsType = [], value: string | object, extraParameters:extraParamsType = {}) {
   if (process.env.NODE_ENV !== 'production') {
     if (!transforms.every(isFunction)) {
-      throw new Error("All transforms weren't functions!", transforms);
+      throw new Error("All transforms weren't functions!");
     }
   }
 
@@ -20,5 +21,3 @@ function evaluateTransforms(transforms = [], value, extraParameters = {}) {
 
   return mergeProps(...transforms.map(transform => transform(value, extraParameters)));
 }
-
-export default evaluateTransforms;

@@ -1,11 +1,13 @@
 /**
- * evaluate-formatters.js
+ * evaluate-formatters.ts
  *
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  * */
-function evaluateFormatters(formatters) {
-  return (value, extra) =>
+import { formattersType, formatterValueType, extraParamsType } from './types';
+
+export function evaluateFormatters(formatters: formattersType) {
+  return (value: formatterValueType, extra: extraParamsType) =>
     formatters.reduce(
       (parameters, formatter) => ({
         value: formatter(parameters.value, parameters.extra),
@@ -14,5 +16,3 @@ function evaluateFormatters(formatters) {
       { value, extra }
     ).value;
 }
-
-export default evaluateFormatters;

@@ -1,21 +1,33 @@
 /**
- * header-row.js
+ * header-row.tsx
  *
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  * */
-import React from 'react';
-import evaluateFormatters from './evaluate-formatters';
-import evaluateTransforms from './evaluate-transforms';
-import mergeProps from './merge-props';
-import { tableHeaderRowTypes, tableHeaderRowDefaults } from './types';
+import * as React from 'react';
+import { evaluateFormatters } from './evaluate-formatters';
+import { evaluateTransforms } from './evaluate-transforms';
+import { mergeProps } from './merge-props';
+import { createElementType, ColumnType, HeaderType, RowsType, RenderersTypes } from './types';
 
-const HeaderRow = ({ rowData, rowIndex, renderers, onRow }) =>
-  React.createElement(
-    renderers.row,
+export interface HeaderRowProps {
+  rowData: RowsType;
+  rowIndex: number;
+  renderers: RenderersTypes["renderers"]["header"];
+  onRow?: Function;
+}
+
+export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
+  rowData,
+  rowIndex, 
+  renderers,
+  onRow = () => Object 
+}) => {
+  return React.createElement(
+    renderers.row as createElementType,
     onRow(rowData, { rowIndex }),
-    rowData.map((column, columnIndex) => {
-      const { property, header = {}, props = {} } = column;
+    (rowData as []).map((column: ColumnType, columnIndex: number) => {
+      const { property, header = {} as HeaderType, props = {} } = column;
       const evaluatedProperty = property || (header && header.property);
       const { label, transforms = [], formatters = [] } = header;
       const extraParameters = {
@@ -30,7 +42,7 @@ const HeaderRow = ({ rowData, rowIndex, renderers, onRow }) =>
       }
 
       return React.createElement(
-        renderers.cell,
+        renderers.cell as createElementType,
         {
           key: `${columnIndex}-header`,
           ...mergeProps(props, header && header.props, transformedProps)
@@ -39,7 +51,4 @@ const HeaderRow = ({ rowData, rowIndex, renderers, onRow }) =>
       );
     })
   );
-HeaderRow.defaultProps = tableHeaderRowDefaults;
-HeaderRow.propTypes = tableHeaderRowTypes;
-
-export default HeaderRow;
+};

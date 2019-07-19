@@ -7,7 +7,7 @@
 import { mergeWith } from 'lodash-es';
 import classNames from 'classnames';
 
-function mergePropPair(...props) {
+export function mergeProps(...props: any) {
   const firstProps = props[0];
   const restProps = props.slice(1);
 
@@ -16,7 +16,7 @@ function mergePropPair(...props) {
   }
 
   // Avoid mutating the first prop collection
-  return mergeWith(mergeWith({}, firstProps), ...restProps, (a, b, key) => {
+  return mergeWith(mergeWith({}, firstProps), ...restProps, (a: any, b: any, key: any) => {
     if (key === 'children') {
       // Children have to be merged in reverse order for Reactabular
       // logic to work.
@@ -31,6 +31,4 @@ function mergePropPair(...props) {
 
     return undefined;
   });
-}
-
-export default mergePropPair;
+};

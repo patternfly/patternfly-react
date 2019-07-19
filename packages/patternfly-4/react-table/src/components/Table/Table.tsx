@@ -113,7 +113,8 @@ export interface IRow {
   noPadding?: Boolean;
 }
 
-export interface TableProps extends Omit<Omit<React.HTMLProps<HTMLTableElement>, 'onSelect'>, 'rows'> {
+export interface TableProps {
+  'aria-label'?: string;
   children?: React.ReactNode;
   className?: string;
   variant?: 'compact';
@@ -138,6 +139,7 @@ export interface TableProps extends Omit<Omit<React.HTMLProps<HTMLTableElement>,
   cells: Array<ICell | string>;
   bodyWrapper?: Function;
   rowWrapper?: Function;
+  role?: string;
 }
 
 export const TableContext = React.createContext({
@@ -171,6 +173,7 @@ class Table extends React.Component<TableProps, {}> {
     
   render(){
     const {
+      'aria-label': ariaLabel,
       caption,
       header,
       className,
@@ -199,8 +202,9 @@ class Table extends React.Component<TableProps, {}> {
       ...props
     } = this.props;
 
-    if (!this.props['aria-label'] && !caption && !header && role !== 'presentation') {
-      throw new Error('Specify at least one of: header, caption, aria-label');
+    if (!ariaLabel && !caption && !header && role !== 'presentation') {
+      // tslint:disable-next-line:no-console
+      console.error('Table: Specify at least one of: header, caption, aria-label')
     }
 
     const headerData = calculateColumns(cells, {
@@ -232,6 +236,7 @@ class Table extends React.Component<TableProps, {}> {
         {header}
         <Provider
           {...props}
+          aria-label = {ariaLabel}
           renderers={{
             body: {
               wrapper: bodyWrapper || BodyWrapper,

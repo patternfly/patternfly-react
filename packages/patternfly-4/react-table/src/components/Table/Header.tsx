@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Header } from './base';
 import { IHeaderRow, TableContext } from './Table';
+import { RowsType } from './base/types';
 
 interface ContextHeaderProps {
   className?: string;
@@ -12,7 +13,8 @@ const ContextHeader: React.FunctionComponent<ContextHeaderProps> = ({
   headerRows = undefined as IHeaderRow[],
   ...props
 } : ContextHeaderProps ) => (
-  <Header {...props} headerRows={headerRows} className={className} />
+  // note: IHeader[] can be made to extend RowsTypes[] in the future so base types are consistent
+  <Header {...props} headerRows={headerRows as RowsType[]} className={className} />
 );
 
 export interface HeaderProps extends React.HTMLProps<HTMLTableRowElement> {
