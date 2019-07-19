@@ -4,7 +4,7 @@ exports[`false Badge 1`] = `
 <span
   className="pf-c-badge pf-m-unread"
 >
-  Im expiremental!
+  Im experimental!
   unread
    Badge
 </span>
@@ -14,7 +14,7 @@ exports[`true Badge 1`] = `
 <span
   className="pf-c-badge pf-m-read"
 >
-  Im expiremental!
+  Im experimental!
   read
    Badge
 </span>
