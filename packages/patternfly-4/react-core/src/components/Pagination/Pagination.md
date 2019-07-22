@@ -36,7 +36,7 @@ class PaginationTop extends React.Component {
   render() {
     return (
       <Pagination
-        itemCount={523}
+        itemCount={0}
         perPage={this.state.perPage}
         page={this.state.page}
         onSetPage={this.onSetPage}

@@ -18,6 +18,11 @@ describe('component render', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  test('zero results', () => {
+    const wrapper = mount(<Pagination itemCount={0} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   test('last page', () => {
     const wrapper = mount(<Pagination itemCount={20} perPage={10} page={2} />);
     expect(wrapper).toMatchSnapshot();
