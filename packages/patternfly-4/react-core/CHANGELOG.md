@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.75.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.74.0...@patternfly/react-core@3.75.0) (2019-07-22)
+
+
+### Features
+
+* **experimental:** add POC for experimental button and badge ([#2363](https://github.com/patternfly/patternfly-react/issues/2363)) ([3d4d322](https://github.com/patternfly/patternfly-react/commit/3d4d322))
+
+
+
+
+
 # [3.74.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.73.2...@patternfly/react-core@3.74.0) (2019-07-22)
 
 
