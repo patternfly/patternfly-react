@@ -84,7 +84,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     placeholderText: '',
     variant: SelectVariant.single,
     width: '',
-    onClear: Function.prototype
+    onClear: Function.prototype,
   };
 
   state = {
@@ -121,6 +121,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
       input = new RegExp(e.target.value, 'i');
     } catch (err) {
       input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+    }
+    if (!this.props.isExpanded) {
+      this.props.onToggle(true);
     }
     const typeaheadFilteredChildren =
       e.target.value !== ''
