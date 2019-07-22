@@ -125,6 +125,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
     if (!this.props.isExpanded) {
       this.props.onToggle(true);
     }
+    if (e.target.value === '') {
+      this.props.onToggle(false);
+    }
     const typeaheadFilteredChildren =
       e.target.value !== ''
         ? React.Children.toArray(this.props.children).filter(
@@ -132,6 +135,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
               this.getDisplay((child as React.ReactElement).props.value, 'text').search(input) === 0
           )
         : React.Children.toArray(this.props.children);
+
     if (typeaheadFilteredChildren.length === 0) {
       typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value="No results found" />);
     }
