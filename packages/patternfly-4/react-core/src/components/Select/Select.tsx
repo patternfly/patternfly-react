@@ -84,7 +84,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     placeholderText: '',
     variant: SelectVariant.single,
     width: '',
-    onClear: Function.prototype,
+    onClear: Function.prototype
   };
 
   state = {
