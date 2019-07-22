@@ -83,7 +83,7 @@ import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } f
 </div>
 ```
 
-## Multi-color, horizontal bar chart with zoom and bottom-left aligned legend
+## Multi-color (ordered), horizontal bar chart with zoom and bottom-left aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
@@ -104,7 +104,7 @@ import { Chart, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-
         right: 100, // Adjusted to accomodate tooltip
         top: 50
       }}
-      themeColor={ChartThemeColor.multi}
+      themeColor={ChartThemeColor.multiOrdered}
       width={450}
     >
       <ChartAxis />
