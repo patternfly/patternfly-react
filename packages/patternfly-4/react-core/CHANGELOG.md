@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.74.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.73.2...@patternfly/react-core@3.74.0) (2019-07-22)
+
+
+### Features
+
+* **Select:** update typeahead filtered list when children change ([#2518](https://github.com/patternfly/patternfly-react/issues/2518)) ([85562fe](https://github.com/patternfly/patternfly-react/commit/85562fe))
+
+
+
+
+
 ## [3.73.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.73.1...@patternfly/react-core@3.73.2) (2019-07-22)
 
 **Note:** Version bump only for package @patternfly/react-core
