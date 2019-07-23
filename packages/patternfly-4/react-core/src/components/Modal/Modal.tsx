@@ -17,6 +17,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   isOpen?: boolean;
   /** Complex header (more than just text), supersedes title for header content */
   header?: React.ReactNode,
+  /** document where the Modal will be created and shown (via React.Portal) */
+  targetDocument?: HTMLDocument;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title: string;
   /** Flag to hide the title */
@@ -50,6 +52,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   static defaultProps = {
     className: '',
     isOpen: false,
+    targetDocument: window.document,
     hideTitle: false,
     showClose: true,
     ariaDescribedById: '',
@@ -77,7 +80,8 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   };
 
   toggleSiblingsFromScreenReaders = (hide: boolean) => {
-    const bodyChildren = document.body.children;
+    const { targetDocument } = this.props;
+    const bodyChildren = targetDocument.body.children;
     for (const child of Array.from(bodyChildren)) {
       if (child !== this.state.container) {
         hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
@@ -86,34 +90,37 @@ export class Modal extends React.Component<ModalProps, ModalState> {
   };
 
   componentDidMount() {
-    const container = document.createElement('div');
+    const { targetDocument } = this.props;
+    const container = targetDocument.createElement('div');
     this.setState({ container });
-    document.body.appendChild(container);
-    document.addEventListener('keydown', this.handleEscKeyClick, false);
+    targetDocument.body.appendChild(container);
+    targetDocument.addEventListener('keydown', this.handleEscKeyClick, false);
 
     if (this.props.isOpen) {
-      document.body.classList.add(css(styles.backdropOpen));
+      targetDocument.body.classList.add(css(styles.backdropOpen));
     } else {
-      document.body.classList.remove(css(styles.backdropOpen));
+      targetDocument.body.classList.remove(css(styles.backdropOpen));
     }
   }
 
   componentDidUpdate() {
+    const { targetDocument } = this.props;
     if (this.props.isOpen) {
-      document.body.classList.add(css(styles.backdropOpen));
+      targetDocument.body.classList.add(css(styles.backdropOpen));
       this.toggleSiblingsFromScreenReaders(true);
     } else {
-      document.body.classList.remove(css(styles.backdropOpen));
+      targetDocument.body.classList.remove(css(styles.backdropOpen));
       this.toggleSiblingsFromScreenReaders(false);
     }
   }
 
   componentWillUnmount() {
+    const { targetDocument } = this.props;
     if (this.state.container) {
-      document.body.removeChild(this.state.container);
+      targetDocument.body.removeChild(this.state.container);
     }
-    document.removeEventListener('keydown', this.handleEscKeyClick, false);
-    document.body.classList.remove(css(styles.backdropOpen));
+    targetDocument.removeEventListener('keydown', this.handleEscKeyClick, false);
+    targetDocument.body.classList.remove(css(styles.backdropOpen));
   }
 
   render() {
