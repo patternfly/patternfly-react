@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Chart 1`] = `
+exports[`ChartLegend 1`] = `
 <VictoryLegend
   borderComponent={
     <Border
@@ -84,7 +84,7 @@ exports[`Chart 1`] = `
               "ticks": Object {
                 "fill": "transparent",
                 "size": 5,
-                "stroke": "none",
+                "stroke": "#d2d2d2",
                 "strokeLinecap": "round",
                 "strokeLinejoin": "round",
                 "strokeWidth": 1,
@@ -558,7 +558,7 @@ exports[`Chart 1`] = `
           "ticks": Object {
             "fill": "transparent",
             "size": 5,
-            "stroke": "none",
+            "stroke": "#d2d2d2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -946,7 +946,7 @@ exports[`Chart 1`] = `
 />
 `;
 
-exports[`Chart 2`] = `
+exports[`ChartLegend 2`] = `
 <VictoryLegend
   borderComponent={
     <Border
@@ -1030,7 +1030,7 @@ exports[`Chart 2`] = `
               "ticks": Object {
                 "fill": "transparent",
                 "size": 5,
-                "stroke": "none",
+                "stroke": "#d2d2d2",
                 "strokeLinecap": "round",
                 "strokeLinejoin": "round",
                 "strokeWidth": 1,
@@ -1504,7 +1504,7 @@ exports[`Chart 2`] = `
           "ticks": Object {
             "fill": "transparent",
             "size": 5,
-            "stroke": "none",
+            "stroke": "#d2d2d2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -1976,7 +1976,7 @@ exports[`renders component data 1`] = `
               "ticks": Object {
                 "fill": "transparent",
                 "size": 5,
-                "stroke": "none",
+                "stroke": "#d2d2d2",
                 "strokeLinecap": "round",
                 "strokeLinejoin": "round",
                 "strokeWidth": 1,
@@ -2451,7 +2451,7 @@ exports[`renders component data 1`] = `
           "ticks": Object {
             "fill": "transparent",
             "size": 5,
-            "stroke": "none",
+            "stroke": "#d2d2d2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,

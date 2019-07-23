@@ -106,8 +106,8 @@ export interface ChartLineProps extends VictoryLineProps {
   /**
    * The event prop take an array of event objects. Event objects are composed of
    * a target, an eventKey, and eventHandlers. Targets may be any valid style namespace
-   * for a given component, so "data" and "labels" are all valid targets for VictoryLine events.
-   * Since VictoryLine only renders a single element, the eventKey property is not used.
+   * for a given component, so "data" and "labels" are all valid targets for ChartLine events.
+   * Since ChartLine only renders a single element, the eventKey property is not used.
    * The eventHandlers object should be given as an object whose keys are standard
    * event names (i.e. onClick) and whose values are event callbacks. The return value
    * of an event handler is used to modify elemnts. The return value should be given

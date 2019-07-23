@@ -145,15 +145,15 @@ class MultiColorChart extends React.Component {
       width: 0
     };
     this.handleResize = () => {
-      this.setState({ width: this.containerRef.current.clientWidth });
+      if(this.containerRef.current && this.containerRef.current.clientWidth){
+        this.setState({ width: this.containerRef.current.clientWidth });
+      }
     };
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ width: this.containerRef.current.clientWidth });
-      window.addEventListener('resize', this.handleResize);
-    });
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {

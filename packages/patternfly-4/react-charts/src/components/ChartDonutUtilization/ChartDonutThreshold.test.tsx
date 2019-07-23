@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { ChartDonutThreshold } from './ChartDonutThreshold';
 
 Object.values([true, false]).forEach(isRead => {
-  test(`Chart`, () => {
+  test(`ChartDonutThreshold`, () => {
     const view = shallow(<ChartDonutThreshold />);
     expect(view).toMatchSnapshot();
   });

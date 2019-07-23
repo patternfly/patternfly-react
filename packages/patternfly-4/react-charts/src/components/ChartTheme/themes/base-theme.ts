@@ -24,6 +24,7 @@ import {
   chart_axis_grid_PointerEvents,
   chart_axis_tick_Fill,
   chart_axis_tick_Size,
+  chart_axis_tick_stroke_Color,
   chart_axis_tick_Width,
   chart_axis_tick_label_Fill,
   chart_bar_Width,
@@ -168,7 +169,7 @@ export const BaseTheme = {
       ticks: {
         fill: chart_axis_tick_Fill.value,
         size: chart_axis_tick_Size.value,
-        stroke: 'none',
+        stroke: chart_axis_tick_stroke_Color.value,
         strokeLinecap: STROKE_LINE_CAP,
         strokeLinejoin: STROKE_LINE_JOIN,
         strokeWidth: chart_axis_tick_Width.value
