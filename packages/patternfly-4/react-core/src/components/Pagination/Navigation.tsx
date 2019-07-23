@@ -56,7 +56,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
   static defaultProps = {
     className: '',
     lastPage: 0,
-    firstIndex: 0,
+    firstPage: 0,
     pagesTitle: '',
     toLastPage: 'Go to last page',
     toNextPage: 'Go to next page',

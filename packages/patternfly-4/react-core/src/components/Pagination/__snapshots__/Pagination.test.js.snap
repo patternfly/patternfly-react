@@ -467,7 +467,6 @@ exports[`component render custom pagination toggle 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-      firstIndex={0}
       firstPage={1}
       lastPage={4}
       onFirstClick={[Function]}
@@ -487,7 +486,6 @@ exports[`component render custom pagination toggle 1`] = `
       <nav
         aria-label="Pagination"
         className="pf-c-pagination__nav"
-        firstIndex={0}
       >
         <Component
           aria-label="Go to first page"
@@ -1110,7 +1108,6 @@ exports[`component render custom perPageOptions 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-      firstIndex={0}
       firstPage={1}
       lastPage={4}
       onFirstClick={[Function]}
@@ -1130,7 +1127,6 @@ exports[`component render custom perPageOptions 1`] = `
       <nav
         aria-label="Pagination"
         className="pf-c-pagination__nav"
-        firstIndex={0}
       >
         <Component
           aria-label="Go to first page"
@@ -1857,7 +1853,6 @@ exports[`component render custom start end 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-      firstIndex={0}
       firstPage={5}
       lastPage={4}
       onFirstClick={[Function]}
@@ -1877,7 +1872,6 @@ exports[`component render custom start end 1`] = `
       <nav
         aria-label="Pagination"
         className="pf-c-pagination__nav"
-        firstIndex={0}
       >
         <Component
           aria-label="Go to first page"
@@ -2215,7 +2209,6 @@ exports[`component render empty per page options 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-      firstIndex={0}
       firstPage={1}
       lastPage={4}
       onFirstClick={[Function]}
@@ -2235,7 +2228,6 @@ exports[`component render empty per page options 1`] = `
       <nav
         aria-label="Pagination"
         className="pf-c-pagination__nav"
-        firstIndex={0}
       >
         <Component
           aria-label="Go to first page"
@@ -2962,7 +2954,6 @@ exports[`component render last page 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-      firstIndex={0}
       firstPage={11}
       lastPage={2}
       onFirstClick={[Function]}
@@ -2982,7 +2973,6 @@ exports[`component render last page 1`] = `
       <nav
         aria-label="Pagination"
         className="pf-c-pagination__nav"
-        firstIndex={0}
       >
         <Component
           aria-label="Go to first page"
@@ -3708,7 +3698,6 @@ exports[`component render limited number of pages 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-      firstIndex={0}
       firstPage={1}
       lastPage={1}
       onFirstClick={[Function]}
@@ -3728,7 +3717,6 @@ exports[`component render limited number of pages 1`] = `
       <nav
         aria-label="Pagination"
         className="pf-c-pagination__nav"
-        firstIndex={0}
       >
         <Component
           aria-label="Go to first page"
@@ -4453,7 +4441,6 @@ exports[`component render no items 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-      firstIndex={0}
       firstPage={0}
       lastPage={0}
       onFirstClick={[Function]}
@@ -4473,7 +4460,6 @@ exports[`component render no items 1`] = `
       <nav
         aria-label="Pagination"
         className="pf-c-pagination__nav"
-        firstIndex={0}
       >
         <Component
           aria-label="Go to first page"
@@ -5194,7 +5180,6 @@ exports[`component render should render correctly bottom 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-      firstIndex={0}
       firstPage={1}
       lastPage={2}
       onFirstClick={[Function]}
@@ -5214,7 +5199,6 @@ exports[`component render should render correctly bottom 1`] = `
       <nav
         aria-label="Pagination"
         className="pf-c-pagination__nav"
-        firstIndex={0}
       >
         <Component
           aria-label="Go to first page"
@@ -5939,7 +5923,6 @@ exports[`component render should render correctly top 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-      firstIndex={0}
       firstPage={1}
       lastPage={2}
       onFirstClick={[Function]}
@@ -5959,7 +5942,6 @@ exports[`component render should render correctly top 1`] = `
       <nav
         aria-label="Pagination"
         className="pf-c-pagination__nav"
-        firstIndex={0}
       >
         <Component
           aria-label="Go to first page"
@@ -6690,7 +6672,6 @@ exports[`component render titles 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-      firstIndex={0}
       firstPage={1}
       lastPage={4}
       onFirstClick={[Function]}
@@ -6710,7 +6691,6 @@ exports[`component render titles 1`] = `
       <nav
         aria-label="Pagination"
         className="pf-c-pagination__nav"
-        firstIndex={0}
       >
         <Component
           aria-label="Go to first page"
@@ -7436,7 +7416,6 @@ exports[`component render up drop direction 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-      firstIndex={0}
       firstPage={1}
       lastPage={4}
       onFirstClick={[Function]}
@@ -7456,7 +7435,6 @@ exports[`component render up drop direction 1`] = `
       <nav
         aria-label="Pagination"
         className="pf-c-pagination__nav"
-        firstIndex={0}
       >
         <Component
           aria-label="Go to first page"
@@ -8075,7 +8053,6 @@ exports[`component render zero results 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-      firstIndex={0}
       firstPage={0}
       lastPage={0}
       onFirstClick={[Function]}
@@ -8095,7 +8072,6 @@ exports[`component render zero results 1`] = `
       <nav
         aria-label="Pagination"
         className="pf-c-pagination__nav"
-        firstIndex={0}
       >
         <Component
           aria-label="Go to first page"
