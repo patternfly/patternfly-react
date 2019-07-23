@@ -50,7 +50,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 </div>
 ```
 
-## Multi-color donut chart with right aligned legend
+## Multi-color (ordered) donut chart with right aligned legend
 ```js
 import React from 'react';
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
@@ -67,7 +67,7 @@ import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/reac
       legendPosition="right"
       subTitle="Pets"
       title="100"
-      themeColor={ChartThemeColor.multi}
+      themeColor={ChartThemeColor.multiOrdered}
       themeVariant={ChartThemeVariant.light}
       width={350}
     />

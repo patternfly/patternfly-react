@@ -38,7 +38,7 @@ import {
 } from '@patternfly/react-tokens';
 import { ColorTheme } from '../color-theme';
 
-// The color order below improves the color contrast in unordered charts
+// The color order below improves the color contrast in unordered charts; area & line
 // See https://github.com/patternfly/patternfly-next/issues/1551
 const COLOR_SCALE = [
   chart_color_blue_300.value,
@@ -78,6 +78,6 @@ const COLOR_SCALE = [
   chart_color_black_400.value
 ];
 
-export const LightMultiColorTheme = ColorTheme({
+export const LightMultiColorUnorderedTheme = ColorTheme({
   COLOR_SCALE
 });

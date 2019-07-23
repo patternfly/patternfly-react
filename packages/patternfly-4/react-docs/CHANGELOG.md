@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.9.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.9.0...@patternfly/react-docs@4.9.1) (2019-07-22)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+# [4.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.8.83...@patternfly/react-docs@4.9.0) (2019-07-22)
+
+
+### Features
+
+* **experimental:** add POC for experimental button and badge ([#2363](https://github.com/patternfly/patternfly-react/issues/2363)) ([3d4d322](https://github.com/patternfly/patternfly-react/commit/3d4d322))
+
+
+
+
+
+## [4.8.83](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.8.82...@patternfly/react-docs@4.8.83) (2019-07-22)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
+## [4.8.82](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.8.81...@patternfly/react-docs@4.8.82) (2019-07-22)
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+
+
+
+
 ## [4.8.81](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.8.80...@patternfly/react-docs@4.8.81) (2019-07-18)
 
 **Note:** Version bump only for package @patternfly/react-docs

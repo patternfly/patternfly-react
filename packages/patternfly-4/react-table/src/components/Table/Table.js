@@ -180,8 +180,12 @@ export const TableContext = React.createContext();
 class Table extends React.Component {
   isSelected = row => row.selected === true;
 
-  areAllRowsSelected = rows =>
-    rows.every(row => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
+  areAllRowsSelected = rows => {
+    if (rows === undefined || rows.length === 0) {
+      return false;
+    }
+    return rows.every(row => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
+  };
 
   render() {
     const {

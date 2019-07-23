@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.21...@patternfly/react-table@2.14.22) (2019-07-22)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.14.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.20...@patternfly/react-table@2.14.21) (2019-07-22)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.14.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.19...@patternfly/react-table@2.14.20) (2019-07-22)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.14.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.18...@patternfly/react-table@2.14.19) (2019-07-22)
+
+
+### Bug Fixes
+
+* **react-table:** Add exports for compoundExpand. ([#2554](https://github.com/patternfly/patternfly-react/issues/2554)) ([6cdd352](https://github.com/patternfly/patternfly-react/commit/6cdd352))
+* **react-table:** check empty array in areAllRowsSelected ([#2527](https://github.com/patternfly/patternfly-react/issues/2527)) ([5980944](https://github.com/patternfly/patternfly-react/commit/5980944))
+
+
+
+
+
 ## [2.14.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.17...@patternfly/react-table@2.14.18) (2019-07-18)
 
 **Note:** Version bump only for package @patternfly/react-table

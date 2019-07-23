@@ -4,7 +4,8 @@ import { DarkCyanColorTheme } from '../ChartTheme/themes/dark/cyan-color-theme';
 import { DarkGoldColorTheme } from '../ChartTheme/themes/dark/gold-color-theme';
 import { DarkGrayColorTheme } from '../ChartTheme/themes/dark/gray-color-theme';
 import { DarkGreenColorTheme } from '../ChartTheme/themes/dark/green-color-theme';
-import { DarkMultiColorTheme } from '../ChartTheme/themes/dark/multi-color-theme';
+import { DarkMultiColorOrderedTheme } from '../ChartTheme/themes/dark/multi-color-ordered-theme';
+import { DarkMultiColorUnorderedTheme } from '../ChartTheme/themes/dark/multi-color-unordered-theme';
 import { DarkOrangeColorTheme } from '../ChartTheme/themes/dark/orange-color-theme';
 import { DarkPurpleColorTheme } from '../ChartTheme/themes/dark/purple-color-theme';
 import { LightBlueColorTheme } from '../ChartTheme/themes/light/blue-color-theme';
@@ -12,7 +13,8 @@ import { LightCyanColorTheme } from '../ChartTheme/themes/light/cyan-color-theme
 import { LightGoldColorTheme } from '../ChartTheme/themes/light/gold-color-theme';
 import { LightGrayColorTheme } from '../ChartTheme/themes/light/gray-color-theme';
 import { LightGreenColorTheme } from '../ChartTheme/themes/light/green-color-theme';
-import { LightMultiColorTheme } from '../ChartTheme/themes/light/multi-color-theme';
+import { LightMultiColorOrderedTheme } from '../ChartTheme/themes/light/multi-color-ordered-theme';
+import { LightMultiColorUnorderedTheme } from '../ChartTheme/themes/light/multi-color-unordered-theme';
 import { LightOrangeColorTheme } from '../ChartTheme/themes/light/orange-color-theme';
 import { LightPurpleColorTheme } from '../ChartTheme/themes/light/purple-color-theme';
 import {
@@ -91,7 +93,10 @@ export const getDarkThemeColors = (themeColor: string) => {
     case ChartThemeColor.green:
       return DarkGreenColorTheme;
     case ChartThemeColor.multi:
-      return DarkMultiColorTheme;
+    case ChartThemeColor.multiOrdered:
+      return DarkMultiColorOrderedTheme;
+    case ChartThemeColor.multiUnordered:
+      return DarkMultiColorUnorderedTheme;
     case ChartThemeColor.orange:
       return DarkOrangeColorTheme;
     case ChartThemeColor.purple:
@@ -115,7 +120,10 @@ export const getLightThemeColors = (themeColor: string) => {
     case ChartThemeColor.green:
       return LightGreenColorTheme;
     case ChartThemeColor.multi:
-      return LightMultiColorTheme;
+    case ChartThemeColor.multiOrdered:
+      return LightMultiColorOrderedTheme;
+    case ChartThemeColor.multiUnordered:
+      return LightMultiColorUnorderedTheme;
     case ChartThemeColor.orange:
       return LightOrangeColorTheme;
     case ChartThemeColor.purple:
