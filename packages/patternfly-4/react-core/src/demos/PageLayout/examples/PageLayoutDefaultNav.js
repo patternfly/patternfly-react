@@ -169,8 +169,9 @@ class PageLayoutDefaultNav extends React.Component {
       />
     );
     const Sidebar = <PageSidebar nav={PageNav} />;
+    const pageId = 'main-content-page-layout-default-nav';
     const PageSkipToContent = (
-      <SkipToContent href="#main-content-page-layout-default-nav"> Skip to Content</SkipToContent>
+      <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>
     );
 
     const PageBreadcrumb = (
@@ -192,6 +193,7 @@ class PageLayoutDefaultNav extends React.Component {
           isManagedSidebar
           skipToContent={PageSkipToContent}
           breadcrumb={PageBreadcrumb}
+          mainContainerId={pageId}
         >
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>

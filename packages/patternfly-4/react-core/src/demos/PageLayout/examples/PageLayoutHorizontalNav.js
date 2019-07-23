@@ -179,14 +179,14 @@ class PageLayoutHorizontalNav extends React.Component {
         </BreadcrumbItem>
       </Breadcrumb>
     );
-
+    const pageId = 'main-content-page-layout-horizontal-nav'
     const PageSkipToContent = (
-      <SkipToContent href="#main-content-page-layout-default-nav">Skip to Content</SkipToContent>
+      <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>
     );
 
     return (
       <React.Fragment>
-        <Page header={Header} skipToContent={PageSkipToContent} breadcrumb={PageBreadcrumb}>
+        <Page header={Header} skipToContent={PageSkipToContent} breadcrumb={PageBreadcrumb} mainContainerId={pageId}>
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>
