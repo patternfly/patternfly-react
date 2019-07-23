@@ -19,7 +19,6 @@ async function getCorePackages() {
 
 // https://github.com/lerna/lerna/blob/master/core/package/index.js
 getCorePackages().then(packages => packages.forEach(package => {
-  console.log('hello', process.argv[2]);
   const json = require(package.manifestLocation);
   if (json.dependencies && json.dependencies['@patternfly/patternfly']) {
     json.dependencies['@patternfly/patternfly'] = process.argv[2];
