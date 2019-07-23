@@ -1,0 +1,40 @@
+.ws-preview {
+  & > * {
+    /** Horizontal bullets */
+    .bullet-chart-horz {
+      height: 150px;
+      width: 600px;
+    }
+    .bullet-chart-horz-legend-bottom {
+      height: 200px;
+      width: 600px;
+    }
+    .bullet-chart-horz-responsive-legend-bottom {
+      height: 250px;
+    }
+    .bullet-chart-horz-legend-right {
+      height: 200px;
+      width: 700px;
+    }
+
+    /* Vertical bullet */
+    .bullet-chart-vert-legend-bottom {
+      height: 500px;
+      width: 500px;
+    }
+
+    /* Bullet groups */
+    .bullet-chart-horz-group-legend-bottom {
+      height: 500px;
+      width: 600px;
+    }
+    .bullet-chart-vert-group-legend-bottom {
+      height: 600px;
+      width: 500px;
+    }
+    .bullet-chart-horz-group-title-legend-bottom {
+      height: 600px;
+      width: 600px;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChartBulletTitle 1`] = `
+<Component
+  height={140}
+  width={450}
+>
+  <Component
+    style={
+      Array [
+        Object {
+          "fontSize": 18,
+        },
+        Object {
+          "fill": "#bbb",
+          "fontSize": 14,
+        },
+      ]
+    }
+    textAnchor="end"
+    verticalAnchor="middle"
+    x={36}
+    y={70}
+  />
+</Component>
+`;
+
+exports[`ChartBulletTitle 2`] = `
+<Component
+  height={140}
+  width={450}
+>
+  <Component
+    style={
+      Array [
+        Object {
+          "fontSize": 18,
+        },
+        Object {
+          "fill": "#bbb",
+          "fontSize": 14,
+        },
+      ]
+    }
+    textAnchor="end"
+    verticalAnchor="middle"
+    x={36}
+    y={70}
+  />
+</Component>
+`;
+
+exports[`renders component data 1`] = `
+<Component
+  height={140}
+  width={450}
+>
+  <Component
+    capHeight={1.1}
+    style={
+      Array [
+        Object {
+          "fontSize": 18,
+        },
+        Object {
+          "fill": "#bbb",
+          "fontSize": 14,
+        },
+      ]
+    }
+    text={
+      Array [
+        "Text label",
+        "Measure details",
+      ]
+    }
+    textAnchor="end"
+    verticalAnchor="middle"
+    x={36}
+    y={70}
+  />
+</Component>
+`;
