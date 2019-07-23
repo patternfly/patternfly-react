@@ -64,7 +64,7 @@
     "@babel/plugin-transform-typescript": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@patternfly/patternfly": "2.21.2",
+    "@patternfly/patternfly": "^2.23.0",
     "@patternfly/react-icons": "^3.10.12",
     "@patternfly/react-tokens": "^2.6.11",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
