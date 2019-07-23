@@ -122,12 +122,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     } catch (err) {
       input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
     }
-    if (!this.props.isExpanded) {
-      this.props.onToggle(true);
-    }
-    if (e.target.value === '') {
-      this.props.onToggle(false);
-    }
+
     const typeaheadFilteredChildren =
       e.target.value !== ''
         ? React.Children.toArray(this.props.children).filter(
@@ -178,6 +173,12 @@ export class Select extends React.Component<SelectProps, SelectState> {
 
   handleArrowKeys = (index: number, position: string) => {
     keyHandler(index, position, this.refCollection, this.refCollection);
+  };
+
+  handleFocus = () => {
+    if (!this.props.isExpanded) {
+      this.props.onToggle(true);
+    }
   };
 
   handleTypeaheadKeys = (position: string) => {
@@ -345,6 +346,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                     }
                     type="text"
                     onChange={this.onChange}
+                    onFocus={this.handleFocus}
                     autoComplete="off"
                   />
                 </div>
@@ -375,6 +377,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                     value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
                     type="text"
                     onChange={this.onChange}
+                    onFocus={this.handleFocus}
                     autoComplete="off"
                   />
                 </div>
