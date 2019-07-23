@@ -170,9 +170,7 @@ class PageLayoutDefaultNav extends React.Component {
     );
     const Sidebar = <PageSidebar nav={PageNav} />;
     const pageId = 'main-content-page-layout-default-nav';
-    const PageSkipToContent = (
-      <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>
-    );
+    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 
     const PageBreadcrumb = (
       <Breadcrumb>

@@ -204,9 +204,7 @@ class PageLayoutExpandableNav extends React.Component {
       </Breadcrumb>
     );
     const pageId = 'main-content-page-layout-expandable-nav';
-    const PageSkipToContent = (
-      <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>
-    );
+    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 
     return (
       <React.Fragment>

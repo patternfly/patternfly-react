@@ -182,7 +182,13 @@ class PageLayoutGroupsNav extends React.Component {
 
     return (
       <React.Fragment>
-        <Page header={Header} sidebar={Sidebar} isManagedSidebar skipToContent={PageSkipToContent} mainContainerId={pageId}>
+        <Page
+          header={Header}
+          sidebar={Sidebar}
+          isManagedSidebar
+          skipToContent={PageSkipToContent}
+          mainContainerId={pageId}
+        >
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>

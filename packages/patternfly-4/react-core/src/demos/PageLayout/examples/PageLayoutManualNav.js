@@ -198,13 +198,17 @@ class PageLayoutManualNav extends React.Component {
     );
     const Sidebar = <PageSidebar nav={PageNav} isNavOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop} />;
     const pageId = 'main-content-page-layout-manual-nav';
-    const PageSkipToContent = (
-      <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>
-    );
+    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 
     return (
       <React.Fragment>
-        <Page header={Header} sidebar={Sidebar} onPageResize={this.onPageResize} skipToContent={PageSkipToContent} mainContainerId={pageId}>
+        <Page
+          header={Header}
+          sidebar={Sidebar}
+          onPageResize={this.onPageResize}
+          skipToContent={PageSkipToContent}
+          mainContainerId={pageId}
+        >
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>
