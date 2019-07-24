@@ -2994,6 +2994,17 @@ exports[`dropdown basic 1`] = `
   toggle={
     <Unknown
       id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+      isActive={false}
+      isDisabled={false}
+      isFocused={false}
+      isHovered={false}
+      isOpen={false}
+      isPlain={false}
+      onToggle={[Function]}
+      parentRef={null}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
     >
       Dropdown
     </Unknown>
@@ -3011,6 +3022,17 @@ exports[`dropdown basic 1`] = `
     toggle={
       <Unknown
         id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
       >
         Dropdown
       </Unknown>
@@ -3022,6 +3044,13 @@ exports[`dropdown basic 1`] = `
       <Component
         ariaHasPopup={false}
         id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
         isOpen={true}
         isPlain={false}
         key=".0"
@@ -3344,6 +3373,17 @@ exports[`dropdown dropup + right aligned 1`] = `
   toggle={
     <Unknown
       id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+      isActive={false}
+      isDisabled={false}
+      isFocused={false}
+      isHovered={false}
+      isOpen={false}
+      isPlain={false}
+      onToggle={[Function]}
+      parentRef={null}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
     >
       Dropdown
     </Unknown>
@@ -3479,6 +3519,17 @@ exports[`dropdown dropup + right aligned 1`] = `
     toggle={
       <Unknown
         id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
       >
         Dropdown
       </Unknown>
@@ -3490,6 +3541,13 @@ exports[`dropdown dropup + right aligned 1`] = `
       <Component
         ariaHasPopup={true}
         id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
         isOpen={false}
         isPlain={false}
         key=".0"
@@ -3753,6 +3811,17 @@ exports[`dropdown dropup 1`] = `
   toggle={
     <Unknown
       id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+      isActive={false}
+      isDisabled={false}
+      isFocused={false}
+      isHovered={false}
+      isOpen={false}
+      isPlain={false}
+      onToggle={[Function]}
+      parentRef={null}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
     >
       Dropdown
     </Unknown>
@@ -3888,6 +3957,17 @@ exports[`dropdown dropup 1`] = `
     toggle={
       <Unknown
         id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
       >
         Dropdown
       </Unknown>
@@ -3899,6 +3979,13 @@ exports[`dropdown dropup 1`] = `
       <Component
         ariaHasPopup={true}
         id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
         isOpen={false}
         isPlain={false}
         key=".0"
@@ -4162,6 +4249,17 @@ exports[`dropdown expanded 1`] = `
   toggle={
     <Unknown
       id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+      isActive={false}
+      isDisabled={false}
+      isFocused={false}
+      isHovered={false}
+      isOpen={false}
+      isPlain={false}
+      onToggle={[Function]}
+      parentRef={null}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
     >
       Dropdown
     </Unknown>
@@ -4297,6 +4395,17 @@ exports[`dropdown expanded 1`] = `
     toggle={
       <Unknown
         id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
       >
         Dropdown
       </Unknown>
@@ -4308,6 +4417,13 @@ exports[`dropdown expanded 1`] = `
       <Component
         ariaHasPopup={true}
         id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
         isOpen={true}
         isPlain={false}
         key=".0"
@@ -4979,6 +5095,17 @@ exports[`dropdown regular 1`] = `
   toggle={
     <Unknown
       id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+      isActive={false}
+      isDisabled={false}
+      isFocused={false}
+      isHovered={false}
+      isOpen={false}
+      isPlain={false}
+      onToggle={[Function]}
+      parentRef={null}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
     >
       Dropdown
     </Unknown>
@@ -5114,6 +5241,17 @@ exports[`dropdown regular 1`] = `
     toggle={
       <Unknown
         id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
       >
         Dropdown
       </Unknown>
@@ -5125,6 +5263,13 @@ exports[`dropdown regular 1`] = `
       <Component
         ariaHasPopup={true}
         id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
         isOpen={false}
         isPlain={false}
         key=".0"
@@ -5388,6 +5533,17 @@ exports[`dropdown right aligned 1`] = `
   toggle={
     <Unknown
       id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+      isActive={false}
+      isDisabled={false}
+      isFocused={false}
+      isHovered={false}
+      isOpen={false}
+      isPlain={false}
+      onToggle={[Function]}
+      parentRef={null}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
     >
       Dropdown
     </Unknown>
@@ -5523,6 +5679,17 @@ exports[`dropdown right aligned 1`] = `
     toggle={
       <Unknown
         id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
       >
         Dropdown
       </Unknown>
@@ -5534,6 +5701,13 @@ exports[`dropdown right aligned 1`] = `
       <Component
         ariaHasPopup={true}
         id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap
+=======
+        isActive={false}
+        isDisabled={false}
+        isFocused={false}
+        isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Dropdown.test.js.snap
         isOpen={false}
         isPlain={false}
         key=".0"

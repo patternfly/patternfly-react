@@ -13,6 +13,8 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   className?: string;
   /** Id added to the title of the Pagination Options Menu */
   widgetId?: string;
+  /** Flag indicating if Pagination Options Menu is disabled */
+  isDisabled?: boolean;
   /** Menu will open up or open down from the Options menu toggle */
   dropDirection?: 'up' | 'down';
   /** Array of titles and values which will be the options on the Options Menu dropdown */
@@ -48,6 +50,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
   static defaultProps = {
    className: '',
    widgetId: '',
+   isDisabled: false,
    dropDirection: DropdownDirection.down,
    perPageOptions: [] as PerPageOptions[],
    itemsPerPageTitle: 'Items per page',
@@ -109,7 +112,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
   };
 
   render() {
-    const { className, widgetId, itemsPerPageTitle, dropDirection, optionsToggle, perPageOptions, toggleTemplate, firstIndex, lastIndex, itemCount, itemsTitle } = this.props;
+    const { className, widgetId, isDisabled, itemsPerPageTitle, dropDirection, optionsToggle, perPageOptions, toggleTemplate, firstIndex, lastIndex, itemCount, itemsTitle } = this.props;
     const { isOpen } = this.state;
 
     return (
@@ -137,6 +140,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
               itemsTitle={itemsTitle}
               toggleTemplate={toggleTemplate}
               parentRef={this.parentRef.current}
+              isDisabled={isDisabled}
             />
           }
           dropdownItems={this.renderItems()}

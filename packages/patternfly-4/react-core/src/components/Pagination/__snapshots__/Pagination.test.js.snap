@@ -18,6 +18,7 @@ exports[`component render custom pagination toggle 1`] = `
       className=""
       dropDirection="down"
       firstIndex={1}
+      isDisabled={false}
       itemCount={40}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
@@ -133,6 +134,7 @@ exports[`component render custom pagination toggle 1`] = `
           toggle={
             <Unknown
               firstIndex={1}
+              isDisabled={false}
               isOpen={false}
               itemCount={40}
               itemsTitle="items"
@@ -223,6 +225,7 @@ exports[`component render custom pagination toggle 1`] = `
             toggle={
               <Unknown
                 firstIndex={1}
+                isDisabled={false}
                 isOpen={false}
                 itemCount={40}
                 itemsTitle="items"
@@ -243,6 +246,10 @@ exports[`component render custom pagination toggle 1`] = `
                 ariaHasPopup={true}
                 firstIndex={1}
                 id="pf-toggle-id-10"
+<<<<<<< HEAD
+=======
+                isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={40}
@@ -306,7 +313,17 @@ exports[`component render custom pagination toggle 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD
                     isDisabled={false}
+=======
+<<<<<<< HEAD
+=======
+                    isActive={false}
+                    isDisabled={false}
+                    isFocused={false}
+                    isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
+>>>>>>> feat(Pagination): add disabled flag for whole component
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -468,7 +485,11 @@ exports[`component render custom pagination toggle 1`] = `
     <Navigation
       className=""
       currPage="Current page"
+<<<<<<< HEAD
       firstPage={1}
+=======
+      isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={4}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -720,6 +741,7 @@ exports[`component render custom perPageOptions 1`] = `
       className=""
       dropDirection="down"
       firstIndex={1}
+      isDisabled={false}
       itemCount={40}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
@@ -774,6 +796,7 @@ exports[`component render custom perPageOptions 1`] = `
           toggle={
             <Unknown
               firstIndex={1}
+              isDisabled={false}
               isOpen={false}
               itemCount={40}
               itemsTitle="items"
@@ -815,6 +838,7 @@ exports[`component render custom perPageOptions 1`] = `
             toggle={
               <Unknown
                 firstIndex={1}
+                isDisabled={false}
                 isOpen={false}
                 itemCount={40}
                 itemsTitle="items"
@@ -835,6 +859,10 @@ exports[`component render custom perPageOptions 1`] = `
                 ariaHasPopup={true}
                 firstIndex={1}
                 id="pf-toggle-id-5"
+<<<<<<< HEAD
+=======
+                isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={40}
@@ -909,7 +937,17 @@ exports[`component render custom perPageOptions 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD
                     isDisabled={false}
+=======
+<<<<<<< HEAD
+=======
+                    isActive={false}
+                    isDisabled={false}
+                    isFocused={false}
+                    isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
+>>>>>>> feat(Pagination): add disabled flag for whole component
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -1111,7 +1149,11 @@ exports[`component render custom perPageOptions 1`] = `
     <Navigation
       className=""
       currPage="Current page"
+<<<<<<< HEAD
       firstPage={1}
+=======
+      isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={4}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -1357,6 +1399,7 @@ exports[`component render custom start end 1`] = `
       className=""
       dropDirection="down"
       firstIndex={5}
+      isDisabled={false}
       itemCount={40}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
@@ -1472,6 +1515,7 @@ exports[`component render custom start end 1`] = `
           toggle={
             <Unknown
               firstIndex={5}
+              isDisabled={false}
               isOpen={false}
               itemCount={40}
               itemsTitle="items"
@@ -1562,6 +1606,7 @@ exports[`component render custom start end 1`] = `
             toggle={
               <Unknown
                 firstIndex={5}
+                isDisabled={false}
                 isOpen={false}
                 itemCount={40}
                 itemsTitle="items"
@@ -1582,6 +1627,10 @@ exports[`component render custom start end 1`] = `
                 ariaHasPopup={true}
                 firstIndex={5}
                 id="pf-toggle-id-8"
+<<<<<<< HEAD
+=======
+                isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={40}
@@ -1656,7 +1705,17 @@ exports[`component render custom start end 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD
                     isDisabled={false}
+=======
+<<<<<<< HEAD
+=======
+                    isActive={false}
+                    isDisabled={false}
+                    isFocused={false}
+                    isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
+>>>>>>> feat(Pagination): add disabled flag for whole component
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -1858,7 +1917,11 @@ exports[`component render custom start end 1`] = `
     <Navigation
       className=""
       currPage="Current page"
+<<<<<<< HEAD
       firstPage={5}
+=======
+      isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={4}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -2103,6 +2166,7 @@ exports[`component render empty per page options 1`] = `
       className=""
       dropDirection="down"
       firstIndex={1}
+      isDisabled={false}
       itemCount={40}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
@@ -2134,6 +2198,7 @@ exports[`component render empty per page options 1`] = `
           toggle={
             <Unknown
               firstIndex={1}
+              isDisabled={false}
               isOpen={false}
               itemCount={40}
               itemsTitle="items"
@@ -2159,6 +2224,7 @@ exports[`component render empty per page options 1`] = `
             toggle={
               <Unknown
                 firstIndex={1}
+                isDisabled={false}
                 isOpen={false}
                 itemCount={40}
                 itemsTitle="items"
@@ -2179,6 +2245,10 @@ exports[`component render empty per page options 1`] = `
                 ariaHasPopup={false}
                 firstIndex={1}
                 id="pf-toggle-id-6"
+<<<<<<< HEAD
+=======
+                isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={40}
@@ -2215,7 +2285,11 @@ exports[`component render empty per page options 1`] = `
     <Navigation
       className=""
       currPage="Current page"
+<<<<<<< HEAD
       firstPage={1}
+=======
+      isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={4}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -2461,6 +2535,7 @@ exports[`component render last page 1`] = `
       className=""
       dropDirection="down"
       firstIndex={11}
+      isDisabled={false}
       itemCount={20}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
@@ -2576,6 +2651,7 @@ exports[`component render last page 1`] = `
           toggle={
             <Unknown
               firstIndex={11}
+              isDisabled={false}
               isOpen={false}
               itemCount={20}
               itemsTitle="items"
@@ -2666,6 +2742,7 @@ exports[`component render last page 1`] = `
             toggle={
               <Unknown
                 firstIndex={11}
+                isDisabled={false}
                 isOpen={false}
                 itemCount={20}
                 itemsTitle="items"
@@ -2686,6 +2763,10 @@ exports[`component render last page 1`] = `
                 ariaHasPopup={true}
                 firstIndex={11}
                 id="pf-toggle-id-4"
+<<<<<<< HEAD
+=======
+                isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={20}
@@ -2760,7 +2841,17 @@ exports[`component render last page 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD
                     isDisabled={false}
+=======
+<<<<<<< HEAD
+=======
+                    isActive={false}
+                    isDisabled={false}
+                    isFocused={false}
+                    isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
+>>>>>>> feat(Pagination): add disabled flag for whole component
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -2962,7 +3053,11 @@ exports[`component render last page 1`] = `
     <Navigation
       className=""
       currPage="Current page"
+<<<<<<< HEAD
       firstPage={11}
+=======
+      isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={2}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -3207,6 +3302,7 @@ exports[`component render limited number of pages 1`] = `
       className=""
       dropDirection="down"
       firstIndex={1}
+      isDisabled={false}
       itemCount={20}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
@@ -3322,6 +3418,7 @@ exports[`component render limited number of pages 1`] = `
           toggle={
             <Unknown
               firstIndex={1}
+              isDisabled={false}
               isOpen={false}
               itemCount={20}
               itemsTitle="items"
@@ -3412,6 +3509,7 @@ exports[`component render limited number of pages 1`] = `
             toggle={
               <Unknown
                 firstIndex={1}
+                isDisabled={false}
                 isOpen={false}
                 itemCount={20}
                 itemsTitle="items"
@@ -3431,7 +3529,8 @@ exports[`component render limited number of pages 1`] = `
               <Component
                 ariaHasPopup={true}
                 firstIndex={1}
-                id="pf-toggle-id-2"
+                id="pf-toggle-id-3"
+                isDisabled={false}
                 isOpen={false}
                 isPlain={true}
                 itemCount={20}
@@ -3506,7 +3605,17 @@ exports[`component render limited number of pages 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD
                     isDisabled={false}
+=======
+<<<<<<< HEAD
+=======
+                    isActive={false}
+                    isDisabled={false}
+                    isFocused={false}
+                    isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
+>>>>>>> feat(Pagination): add disabled flag for whole component
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -3708,7 +3817,11 @@ exports[`component render limited number of pages 1`] = `
     <Navigation
       className=""
       currPage="Current page"
+<<<<<<< HEAD
       firstPage={1}
+=======
+      isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={1}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -3824,7 +3937,11 @@ exports[`component render limited number of pages 1`] = `
           <input
             aria-label="Current page"
             className="pf-c-form-control"
+<<<<<<< HEAD
             disabled={true}
+=======
+            disabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
             max={1}
             min={1}
             onChange={[Function]}
@@ -3952,6 +4069,7 @@ exports[`component render no items 1`] = `
       className=""
       dropDirection="down"
       firstIndex={0}
+      isDisabled={false}
       itemCount={0}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
@@ -4067,6 +4185,7 @@ exports[`component render no items 1`] = `
           toggle={
             <Unknown
               firstIndex={0}
+              isDisabled={false}
               isOpen={false}
               itemCount={0}
               itemsTitle="items"
@@ -4157,6 +4276,7 @@ exports[`component render no items 1`] = `
             toggle={
               <Unknown
                 firstIndex={0}
+                isDisabled={false}
                 isOpen={false}
                 itemCount={0}
                 itemsTitle="items"
@@ -4177,6 +4297,10 @@ exports[`component render no items 1`] = `
                 ariaHasPopup={true}
                 firstIndex={0}
                 id="pf-toggle-id-7"
+<<<<<<< HEAD
+=======
+                isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={0}
@@ -4252,7 +4376,17 @@ exports[`component render no items 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD
                     isDisabled={true}
+=======
+<<<<<<< HEAD
+=======
+                    isActive={false}
+                    isDisabled={false}
+                    isFocused={false}
+                    isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
+>>>>>>> feat(Pagination): add disabled flag for whole component
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -4456,7 +4590,11 @@ exports[`component render no items 1`] = `
     <Navigation
       className=""
       currPage="Current page"
+<<<<<<< HEAD
       firstPage={0}
+=======
+      isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={0}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -4572,7 +4710,11 @@ exports[`component render no items 1`] = `
           <input
             aria-label="Current page"
             className="pf-c-form-control"
+<<<<<<< HEAD
             disabled={true}
+=======
+            disabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
             max={0}
             min={0}
             onChange={[Function]}
@@ -4696,6 +4838,7 @@ exports[`component render should render correctly bottom 1`] = `
       className=""
       dropDirection="down"
       firstIndex={1}
+      isDisabled={false}
       itemCount={20}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
@@ -4811,6 +4954,7 @@ exports[`component render should render correctly bottom 1`] = `
           toggle={
             <Unknown
               firstIndex={1}
+              isDisabled={false}
               isOpen={false}
               itemCount={20}
               itemsTitle="items"
@@ -4901,6 +5045,7 @@ exports[`component render should render correctly bottom 1`] = `
             toggle={
               <Unknown
                 firstIndex={1}
+                isDisabled={false}
                 isOpen={false}
                 itemCount={20}
                 itemsTitle="items"
@@ -4921,6 +5066,7 @@ exports[`component render should render correctly bottom 1`] = `
                 ariaHasPopup={true}
                 firstIndex={1}
                 id="pf-toggle-id-1"
+                isDisabled={false}
                 isOpen={false}
                 isPlain={true}
                 itemCount={20}
@@ -4995,7 +5141,17 @@ exports[`component render should render correctly bottom 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD
                     isDisabled={false}
+=======
+<<<<<<< HEAD
+=======
+                    isActive={false}
+                    isDisabled={false}
+                    isFocused={false}
+                    isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
+>>>>>>> feat(Pagination): add disabled flag for whole component
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -5197,7 +5353,11 @@ exports[`component render should render correctly bottom 1`] = `
     <Navigation
       className=""
       currPage="Current page"
+<<<<<<< HEAD
       firstPage={1}
+=======
+      isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={2}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -5386,6 +5546,780 @@ exports[`component render should render correctly bottom 1`] = `
             className="pf-c-button pf-m-plain"
             data-action="last"
             disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Component>
+      </nav>
+    </Navigation>
+  </div>
+</Component>
+`;
+
+exports[`component render should render correctly disabled 1`] = `
+<Component
+  isDisabled={true}
+  itemCount={20}
+>
+  <div
+    className="pf-c-pagination"
+    id="pagination-options-menu"
+  >
+    <div
+      className="pf-c-pagination__total-items"
+    >
+      20 items
+    </div>
+    <PaginationOptionsMenu
+      className=""
+      dropDirection="down"
+      firstIndex={1}
+      isDisabled={true}
+      itemCount={20}
+      itemsPerPageTitle="Items per page"
+      itemsTitle="items"
+      lastIndex={10}
+      onPerPageSelect={[Function]}
+      optionsToggle="Select"
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      perPageSuffix="per page"
+      toggleTemplate={[Function]}
+      widgetId="pagination-options-menu"
+    >
+      <div
+        className="pf-c-options-menu"
+      >
+        <span
+          hidden={true}
+          id="pagination-options-menu-label"
+        >
+          Items per page
+          :
+        </span>
+        <Component
+          direction="down"
+          dropdownItems={
+            Array [
+              <Unknown
+                className="pf-c-options-menu__menu-item pf-m-selected"
+                component="button"
+                data-action="per-page-10"
+                onClick={[Function]}
+              >
+                10
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
+                <i
+                  className="pf-c-options-menu__menu-item-icon"
+                >
+                  <CheckIcon
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
+                    title={null}
+                  />
+                </i>
+              </Unknown>,
+              <Unknown
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-20"
+                onClick={[Function]}
+              >
+                20
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
+              </Unknown>,
+              <Unknown
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-50"
+                onClick={[Function]}
+              >
+                50
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
+              </Unknown>,
+              <Unknown
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-100"
+                onClick={[Function]}
+              >
+                100
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
+              </Unknown>,
+            ]
+          }
+          isOpen={false}
+          isPlain={true}
+          onSelect={[Function]}
+          toggle={
+            <Unknown
+              firstIndex={1}
+              isDisabled={true}
+              isOpen={false}
+              itemCount={20}
+              itemsTitle="items"
+              lastIndex={10}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              parentRef={null}
+              showToggle={true}
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            />
+          }
+        >
+          <DropdownWithContext
+            className=""
+            direction="down"
+            dropdownItems={
+              Array [
+                <Unknown
+                  className="pf-c-options-menu__menu-item pf-m-selected"
+                  component="button"
+                  data-action="per-page-10"
+                  onClick={[Function]}
+                >
+                  10
+                  <span
+                    className="pf-c-pagination__menu-text"
+                  >
+                     per page
+                  </span>
+                  <i
+                    className="pf-c-options-menu__menu-item-icon"
+                  >
+                    <CheckIcon
+                      color="currentColor"
+                      noVerticalAlign={false}
+                      size="sm"
+                      title={null}
+                    />
+                  </i>
+                </Unknown>,
+                <Unknown
+                  className="pf-c-options-menu__menu-item"
+                  component="button"
+                  data-action="per-page-20"
+                  onClick={[Function]}
+                >
+                  20
+                  <span
+                    className="pf-c-pagination__menu-text"
+                  >
+                     per page
+                  </span>
+                </Unknown>,
+                <Unknown
+                  className="pf-c-options-menu__menu-item"
+                  component="button"
+                  data-action="per-page-50"
+                  onClick={[Function]}
+                >
+                  50
+                  <span
+                    className="pf-c-pagination__menu-text"
+                  >
+                     per page
+                  </span>
+                </Unknown>,
+                <Unknown
+                  className="pf-c-options-menu__menu-item"
+                  component="button"
+                  data-action="per-page-100"
+                  onClick={[Function]}
+                >
+                  100
+                  <span
+                    className="pf-c-pagination__menu-text"
+                  >
+                     per page
+                  </span>
+                </Unknown>,
+              ]
+            }
+            isGrouped={false}
+            isOpen={false}
+            isPlain={true}
+            onSelect={[Function]}
+            position="left"
+            toggle={
+              <Unknown
+                firstIndex={1}
+                isDisabled={true}
+                isOpen={false}
+                itemCount={20}
+                itemsTitle="items"
+                lastIndex={10}
+                onToggle={[Function]}
+                optionsToggle="Select"
+                parentRef={null}
+                showToggle={true}
+                toggleTemplate={[Function]}
+                widgetId="pagination-options-menu"
+              />
+            }
+          >
+            <div
+              className="pf-c-dropdown"
+            >
+              <Component
+                ariaHasPopup={true}
+                firstIndex={1}
+                id="pf-toggle-id-2"
+                isDisabled={true}
+                isOpen={false}
+                isPlain={true}
+                itemCount={20}
+                itemsTitle="items"
+                key=".0"
+                lastIndex={10}
+                onEnter={[Function]}
+                onToggle={[Function]}
+                optionsToggle="Select"
+                parentRef={
+                  Object {
+                    "current": <div
+                      class="pf-c-dropdown"
+                    >
+                      <div
+                        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                      >
+                        <button
+                          aria-expanded="false"
+                          class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
+                          id="pagination-options-menu-toggle"
+                          type="button"
+                        >
+                          <span
+                            class="pf-c-dropdown__toggle-text"
+                          >
+                            <span
+                              class="pf-c-options-menu__toggle-text"
+                            >
+                              <strong>
+                                1
+                                 - 
+                                10
+                              </strong>
+                               
+                              of 
+                              <strong>
+                                20
+                              </strong>
+                               
+                              items
+                            </span>
+                          </span>
+                          <svg
+                            aria-hidden="true"
+                            class="pf-c-dropdown__toggle-icon"
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style="vertical-align: -0.125em;"
+                            viewBox="0 0 320 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                              transform=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>,
+                  }
+                }
+                showToggle={true}
+                toggleTemplate={[Function]}
+                widgetId="pagination-options-menu"
+              >
+                <div
+                  className="pf-c-options-menu__toggle pf-m-disabled pf-m-plain pf-m-text"
+                >
+                  <Component
+                    aria-label="Select"
+                    className="pf-c-options-menu__toggle-button"
+                    id="pagination-options-menu-toggle"
+<<<<<<< HEAD
+                    isDisabled={false}
+=======
+<<<<<<< HEAD
+=======
+                    isActive={false}
+                    isDisabled={true}
+                    isFocused={false}
+                    isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
+>>>>>>> feat(Pagination): add disabled flag for whole component
+                    isOpen={false}
+                    onToggle={[Function]}
+                    parentRef={
+                      Object {
+                        "current": <div
+                          class="pf-c-dropdown"
+                        >
+                          <div
+                            class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                          >
+                            <button
+                              aria-expanded="false"
+                              class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
+                              id="pagination-options-menu-toggle"
+                              type="button"
+                            >
+                              <span
+                                class="pf-c-dropdown__toggle-text"
+                              >
+                                <span
+                                  class="pf-c-options-menu__toggle-text"
+                                >
+                                  <strong>
+                                    1
+                                     - 
+                                    10
+                                  </strong>
+                                   
+                                  of 
+                                  <strong>
+                                    20
+                                  </strong>
+                                   
+                                  items
+                                </span>
+                              </span>
+                              <svg
+                                aria-hidden="true"
+                                class="pf-c-dropdown__toggle-icon"
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style="vertical-align: -0.125em;"
+                                viewBox="0 0 320 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                                  transform=""
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>,
+                      }
+                    }
+                  >
+                    <Toggle
+                      className="pf-c-options-menu__toggle-button"
+                      id="pagination-options-menu-toggle"
+                      isActive={false}
+                      isDisabled={true}
+                      isFocused={false}
+                      isHovered={false}
+                      isOpen={false}
+                      isPlain={false}
+                      isSplitButton={false}
+                      onEnter={[Function]}
+                      onToggle={[Function]}
+                      parentRef={
+                        Object {
+                          "current": <div
+                            class="pf-c-dropdown"
+                          >
+                            <div
+                              class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                            >
+                              <button
+                                aria-expanded="false"
+                                class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
+                                id="pagination-options-menu-toggle"
+                                type="button"
+                              >
+                                <span
+                                  class="pf-c-dropdown__toggle-text"
+                                >
+                                  <span
+                                    class="pf-c-options-menu__toggle-text"
+                                  >
+                                    <strong>
+                                      1
+                                       - 
+                                      10
+                                    </strong>
+                                     
+                                    of 
+                                    <strong>
+                                      20
+                                    </strong>
+                                     
+                                    items
+                                  </span>
+                                </span>
+                                <svg
+                                  aria-hidden="true"
+                                  class="pf-c-dropdown__toggle-icon"
+                                  fill="currentColor"
+                                  height="1em"
+                                  role="img"
+                                  style="vertical-align: -0.125em;"
+                                  viewBox="0 0 320 512"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                                    transform=""
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>,
+                        }
+                      }
+                    >
+                      <button
+                        aria-expanded={false}
+<<<<<<< HEAD
+                        className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
+                        disabled={false}
+=======
+                        aria-label="Select"
+                        className="pf-c-dropdown__toggle-button pf-m-disabled pf-c-options-menu__toggle-button"
+                        disabled={true}
+>>>>>>> feat(Pagination): add disabled flag for whole component
+                        id="pagination-options-menu-toggle"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        type="button"
+                      >
+                        <span
+                          className="pf-c-dropdown__toggle-text"
+                        >
+                          <span
+                            className="pf-c-options-menu__toggle-text"
+                          >
+                            <Component
+                              firstIndex={1}
+                              itemCount={20}
+                              itemsTitle="items"
+                              lastIndex={10}
+                            >
+                              <strong>
+                                1
+                                 - 
+                                10
+                              </strong>
+                               
+                              of 
+                              <strong>
+                                20
+                              </strong>
+                               
+                              items
+                            </Component>
+                          </span>
+                        </span>
+                        <CaretDownIcon
+                          className="pf-c-dropdown__toggle-icon"
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
+                          title={null}
+                        >
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            className="pf-c-dropdown__toggle-icon"
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 320 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                              transform=""
+                            />
+                          </svg>
+                        </CaretDownIcon>
+                      </button>
+                    </Toggle>
+                  </Component>
+                </div>
+              </Component>
+            </div>
+          </DropdownWithContext>
+        </Component>
+      </div>
+    </PaginationOptionsMenu>
+    <Navigation
+      className=""
+      currPage="Current page"
+<<<<<<< HEAD
+      firstPage={1}
+=======
+      isDisabled={true}
+>>>>>>> feat(Pagination): add disabled flag for whole component
+      lastPage={2}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
+      page={1}
+      pagesTitle="page"
+      paginationTitle="Pagination"
+      toFirstPage="Go to first page"
+      toLastPage="Go to last page"
+      toNextPage="Go to next page"
+      toPreviousPage="Go to previous page"
+    >
+      <nav
+        aria-label="Pagination"
+        className="pf-c-pagination__nav"
+      >
+        <Component
+          aria-label="Go to first page"
+          data-action="first"
+          isDisabled={true}
+          onClick={[Function]}
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to first page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="first"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Component>
+        <Component
+          aria-label="Go to previous page"
+          data-action="previous"
+          isDisabled={true}
+          onClick={[Function]}
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to previous page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="previous"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  transform=""
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Component>
+        <div
+          className="pf-c-pagination__nav-page-select"
+        >
+          <input
+            aria-label="Current page"
+            className="pf-c-form-control"
+<<<<<<< HEAD
+            disabled={false}
+=======
+            disabled={true}
+>>>>>>> feat(Pagination): add disabled flag for whole component
+            max={2}
+            min={1}
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            type="number"
+            value={1}
+          />
+          <span
+            aria-hidden="true"
+          >
+            of 
+            2 pages
+          </span>
+        </div>
+        <Component
+          aria-label="Go to next page"
+          data-action="next"
+          isDisabled={true}
+          onClick={[Function]}
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to next page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="next"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Component>
+        <Component
+          aria-label="Go to last page"
+          data-action="last"
+          isDisabled={true}
+          onClick={[Function]}
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to last page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="last"
+            disabled={true}
             onClick={[Function]}
             tabIndex={null}
             type="button"
@@ -5441,6 +6375,7 @@ exports[`component render should render correctly top 1`] = `
       className=""
       dropDirection="down"
       firstIndex={1}
+      isDisabled={false}
       itemCount={20}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
@@ -5556,6 +6491,7 @@ exports[`component render should render correctly top 1`] = `
           toggle={
             <Unknown
               firstIndex={1}
+              isDisabled={false}
               isOpen={false}
               itemCount={20}
               itemsTitle="items"
@@ -5646,6 +6582,7 @@ exports[`component render should render correctly top 1`] = `
             toggle={
               <Unknown
                 firstIndex={1}
+                isDisabled={false}
                 isOpen={false}
                 itemCount={20}
                 itemsTitle="items"
@@ -5665,762 +6602,16 @@ exports[`component render should render correctly top 1`] = `
               <Component
                 ariaHasPopup={true}
                 firstIndex={1}
-                id="pf-toggle-id-0"
-                isOpen={false}
-                isPlain={true}
-                itemCount={20}
-                itemsTitle="items"
-                key=".0"
-                lastIndex={10}
-                onEnter={[Function]}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={
-                  Object {
-                    "current": <div
-                      class="pf-c-dropdown"
-                    >
-                      <div
-                        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
-                      >
-                        <button
-                          aria-expanded="false"
-                          class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
-                          id="pagination-options-menu-toggle"
-                          type="button"
-                        >
-                          <span
-                            class="pf-c-dropdown__toggle-text"
-                          >
-                            <span
-                              class="pf-c-options-menu__toggle-text"
-                            >
-                              <strong>
-                                1
-                                 - 
-                                10
-                              </strong>
-                               
-                              of 
-                              <strong>
-                                20
-                              </strong>
-                               
-                              items
-                            </span>
-                          </span>
-                          <svg
-                            aria-hidden="true"
-                            class="pf-c-dropdown__toggle-icon"
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style="vertical-align: -0.125em;"
-                            viewBox="0 0 320 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                              transform=""
-                            />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>,
-                  }
-                }
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
-              >
-                <div
-                  className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
-                >
-                  <Component
-                    aria-label="Select"
-                    className="pf-c-options-menu__toggle-button"
-                    id="pagination-options-menu-toggle"
-                    isDisabled={false}
-                    isOpen={false}
-                    onToggle={[Function]}
-                    parentRef={
-                      Object {
-                        "current": <div
-                          class="pf-c-dropdown"
-                        >
-                          <div
-                            class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
-                          >
-                            <button
-                              aria-expanded="false"
-                              class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
-                              id="pagination-options-menu-toggle"
-                              type="button"
-                            >
-                              <span
-                                class="pf-c-dropdown__toggle-text"
-                              >
-                                <span
-                                  class="pf-c-options-menu__toggle-text"
-                                >
-                                  <strong>
-                                    1
-                                     - 
-                                    10
-                                  </strong>
-                                   
-                                  of 
-                                  <strong>
-                                    20
-                                  </strong>
-                                   
-                                  items
-                                </span>
-                              </span>
-                              <svg
-                                aria-hidden="true"
-                                class="pf-c-dropdown__toggle-icon"
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style="vertical-align: -0.125em;"
-                                viewBox="0 0 320 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                                  transform=""
-                                />
-                              </svg>
-                            </button>
-                          </div>
-                        </div>,
-                      }
-                    }
-                  >
-                    <Toggle
-                      className="pf-c-options-menu__toggle-button"
-                      id="pagination-options-menu-toggle"
-                      isActive={false}
-                      isDisabled={false}
-                      isFocused={false}
-                      isHovered={false}
-                      isOpen={false}
-                      isPlain={false}
-                      isSplitButton={false}
-                      onEnter={[Function]}
-                      onToggle={[Function]}
-                      parentRef={
-                        Object {
-                          "current": <div
-                            class="pf-c-dropdown"
-                          >
-                            <div
-                              class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
-                            >
-                              <button
-                                aria-expanded="false"
-                                class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
-                                id="pagination-options-menu-toggle"
-                                type="button"
-                              >
-                                <span
-                                  class="pf-c-dropdown__toggle-text"
-                                >
-                                  <span
-                                    class="pf-c-options-menu__toggle-text"
-                                  >
-                                    <strong>
-                                      1
-                                       - 
-                                      10
-                                    </strong>
-                                     
-                                    of 
-                                    <strong>
-                                      20
-                                    </strong>
-                                     
-                                    items
-                                  </span>
-                                </span>
-                                <svg
-                                  aria-hidden="true"
-                                  class="pf-c-dropdown__toggle-icon"
-                                  fill="currentColor"
-                                  height="1em"
-                                  role="img"
-                                  style="vertical-align: -0.125em;"
-                                  viewBox="0 0 320 512"
-                                  width="1em"
-                                >
-                                  <path
-                                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                                    transform=""
-                                  />
-                                </svg>
-                              </button>
-                            </div>
-                          </div>,
-                        }
-                      }
-                    >
-                      <button
-                        aria-expanded={false}
-                        className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
-                        disabled={false}
-                        id="pagination-options-menu-toggle"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        type="button"
-                      >
-                        <span
-                          className="pf-c-dropdown__toggle-text"
-                        >
-                          <span
-                            className="pf-c-options-menu__toggle-text"
-                          >
-                            <Component
-                              firstIndex={1}
-                              itemCount={20}
-                              itemsTitle="items"
-                              lastIndex={10}
-                            >
-                              <strong>
-                                1
-                                 - 
-                                10
-                              </strong>
-                               
-                              of 
-                              <strong>
-                                20
-                              </strong>
-                               
-                              items
-                            </Component>
-                          </span>
-                        </span>
-                        <CaretDownIcon
-                          className="pf-c-dropdown__toggle-icon"
-                          color="currentColor"
-                          noVerticalAlign={false}
-                          size="sm"
-                          title={null}
-                        >
-                          <svg
-                            aria-hidden={true}
-                            aria-labelledby={null}
-                            className="pf-c-dropdown__toggle-icon"
-                            fill="currentColor"
-                            height="1em"
-                            role="img"
-                            style={
-                              Object {
-                                "verticalAlign": "-0.125em",
-                              }
-                            }
-                            viewBox="0 0 320 512"
-                            width="1em"
-                          >
-                            <path
-                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                              transform=""
-                            />
-                          </svg>
-                        </CaretDownIcon>
-                      </button>
-                    </Toggle>
-                  </Component>
-                </div>
-              </Component>
-            </div>
-          </DropdownWithContext>
-        </Component>
-      </div>
-    </PaginationOptionsMenu>
-    <Navigation
-      className=""
-      currPage="Current page"
-      firstPage={1}
-      lastPage={2}
-      onFirstClick={[Function]}
-      onLastClick={[Function]}
-      onNextClick={[Function]}
-      onPageInput={[Function]}
-      onPreviousClick={[Function]}
-      onSetPage={[Function]}
-      page={1}
-      pagesTitle="page"
-      paginationTitle="Pagination"
-      toFirstPage="Go to first page"
-      toLastPage="Go to last page"
-      toNextPage="Go to next page"
-      toPreviousPage="Go to previous page"
-    >
-      <nav
-        aria-label="Pagination"
-        className="pf-c-pagination__nav"
-      >
-        <Component
-          aria-label="Go to first page"
-          data-action="first"
-          isDisabled={true}
-          onClick={[Function]}
-          variant="plain"
-        >
-          <button
-            aria-disabled={null}
-            aria-label="Go to first page"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-action="first"
-            disabled={true}
-            onClick={[Function]}
-            tabIndex={null}
-            type="button"
-          >
-            <AngleDoubleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 448 512"
-                width="1em"
-              >
-                <path
-                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-                  transform=""
-                />
-              </svg>
-            </AngleDoubleLeftIcon>
-          </button>
-        </Component>
-        <Component
-          aria-label="Go to previous page"
-          data-action="previous"
-          isDisabled={true}
-          onClick={[Function]}
-          variant="plain"
-        >
-          <button
-            aria-disabled={null}
-            aria-label="Go to previous page"
-            className="pf-c-button pf-m-plain pf-m-disabled"
-            data-action="previous"
-            disabled={true}
-            onClick={[Function]}
-            tabIndex={null}
-            type="button"
-          >
-            <AngleLeftIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
-              >
-                <path
-                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                  transform=""
-                />
-              </svg>
-            </AngleLeftIcon>
-          </button>
-        </Component>
-        <div
-          className="pf-c-pagination__nav-page-select"
-        >
-          <input
-            aria-label="Current page"
-            className="pf-c-form-control"
-            disabled={false}
-            max={2}
-            min={1}
-            onChange={[Function]}
-            onKeyDown={[Function]}
-            type="number"
-            value={1}
-          />
-          <span
-            aria-hidden="true"
-          >
-            of 
-            2 pages
-          </span>
-        </div>
-        <Component
-          aria-label="Go to next page"
-          data-action="next"
-          isDisabled={false}
-          onClick={[Function]}
-          variant="plain"
-        >
-          <button
-            aria-disabled={null}
-            aria-label="Go to next page"
-            className="pf-c-button pf-m-plain"
-            data-action="next"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={null}
-            type="button"
-          >
-            <AngleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 256 512"
-                width="1em"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                  transform=""
-                />
-              </svg>
-            </AngleRightIcon>
-          </button>
-        </Component>
-        <Component
-          aria-label="Go to last page"
-          data-action="last"
-          isDisabled={false}
-          onClick={[Function]}
-          variant="plain"
-        >
-          <button
-            aria-disabled={null}
-            aria-label="Go to last page"
-            className="pf-c-button pf-m-plain"
-            data-action="last"
-            disabled={false}
-            onClick={[Function]}
-            tabIndex={null}
-            type="button"
-          >
-            <AngleDoubleRightIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 448 512"
-                width="1em"
-              >
-                <path
-                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-                  transform=""
-                />
-              </svg>
-            </AngleDoubleRightIcon>
-          </button>
-        </Component>
-      </nav>
-    </Navigation>
-  </div>
-</Component>
-`;
-
-exports[`component render titles 1`] = `
-<Component
-  itemCount={40}
-  titles={
-    Object {
-      "items": "values",
-      "pages": "books",
-    }
-  }
->
-  <div
-    className="pf-c-pagination"
-    id="pagination-options-menu"
-  >
-    <div
-      className="pf-c-pagination__total-items"
-    >
-      40 values
-    </div>
-    <PaginationOptionsMenu
-      className=""
-      dropDirection="down"
-      firstIndex={1}
-      itemCount={40}
-      itemsPerPageTitle="Items per page"
-      itemsTitle="values"
-      lastIndex={10}
-      onPerPageSelect={[Function]}
-      optionsToggle="Select"
-      perPage={10}
-      perPageOptions={
-        Array [
-          Object {
-            "title": "10",
-            "value": 10,
-          },
-          Object {
-            "title": "20",
-            "value": 20,
-          },
-          Object {
-            "title": "50",
-            "value": 50,
-          },
-          Object {
-            "title": "100",
-            "value": 100,
-          },
-        ]
-      }
-      perPageSuffix="per page"
-      toggleTemplate={[Function]}
-      widgetId="pagination-options-menu"
-    >
-      <div
-        className="pf-c-options-menu"
-      >
-        <span
-          hidden={true}
-          id="pagination-options-menu-label"
-        >
-          Items per page
-          :
-        </span>
-        <Component
-          direction="down"
-          dropdownItems={
-            Array [
-              <Unknown
-                className="pf-c-options-menu__menu-item pf-m-selected"
-                component="button"
-                data-action="per-page-10"
-                onClick={[Function]}
-              >
-                10
-                <span
-                  className="pf-c-pagination__menu-text"
-                >
-                   per page
-                </span>
-                <i
-                  className="pf-c-options-menu__menu-item-icon"
-                >
-                  <CheckIcon
-                    color="currentColor"
-                    noVerticalAlign={false}
-                    size="sm"
-                    title={null}
-                  />
-                </i>
-              </Unknown>,
-              <Unknown
-                className="pf-c-options-menu__menu-item"
-                component="button"
-                data-action="per-page-20"
-                onClick={[Function]}
-              >
-                20
-                <span
-                  className="pf-c-pagination__menu-text"
-                >
-                   per page
-                </span>
-              </Unknown>,
-              <Unknown
-                className="pf-c-options-menu__menu-item"
-                component="button"
-                data-action="per-page-50"
-                onClick={[Function]}
-              >
-                50
-                <span
-                  className="pf-c-pagination__menu-text"
-                >
-                   per page
-                </span>
-              </Unknown>,
-              <Unknown
-                className="pf-c-options-menu__menu-item"
-                component="button"
-                data-action="per-page-100"
-                onClick={[Function]}
-              >
-                100
-                <span
-                  className="pf-c-pagination__menu-text"
-                >
-                   per page
-                </span>
-              </Unknown>,
-            ]
-          }
-          isOpen={false}
-          isPlain={true}
-          onSelect={[Function]}
-          toggle={
-            <Unknown
-              firstIndex={1}
-              isOpen={false}
-              itemCount={40}
-              itemsTitle="values"
-              lastIndex={10}
-              onToggle={[Function]}
-              optionsToggle="Select"
-              parentRef={null}
-              showToggle={true}
-              toggleTemplate={[Function]}
-              widgetId="pagination-options-menu"
-            />
-          }
-        >
-          <DropdownWithContext
-            className=""
-            direction="down"
-            dropdownItems={
-              Array [
-                <Unknown
-                  className="pf-c-options-menu__menu-item pf-m-selected"
-                  component="button"
-                  data-action="per-page-10"
-                  onClick={[Function]}
-                >
-                  10
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                  <i
-                    className="pf-c-options-menu__menu-item-icon"
-                  >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    />
-                  </i>
-                </Unknown>,
-                <Unknown
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-20"
-                  onClick={[Function]}
-                >
-                  20
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </Unknown>,
-                <Unknown
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-50"
-                  onClick={[Function]}
-                >
-                  50
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </Unknown>,
-                <Unknown
-                  className="pf-c-options-menu__menu-item"
-                  component="button"
-                  data-action="per-page-100"
-                  onClick={[Function]}
-                >
-                  100
-                  <span
-                    className="pf-c-pagination__menu-text"
-                  >
-                     per page
-                  </span>
-                </Unknown>,
-              ]
-            }
-            isGrouped={false}
-            isOpen={false}
-            isPlain={true}
-            onSelect={[Function]}
-            position="left"
-            toggle={
-              <Unknown
-                firstIndex={1}
-                isOpen={false}
-                itemCount={40}
-                itemsTitle="values"
-                lastIndex={10}
-                onToggle={[Function]}
-                optionsToggle="Select"
-                parentRef={null}
-                showToggle={true}
-                toggleTemplate={[Function]}
-                widgetId="pagination-options-menu"
-              />
-            }
-          >
-            <div
-              className="pf-c-dropdown"
-            >
-              <Component
-                ariaHasPopup={true}
-                firstIndex={1}
+<<<<<<< HEAD
                 id="pf-toggle-id-9"
+=======
+                id="pf-toggle-id-0"
+                isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
-                itemCount={40}
-                itemsTitle="values"
+                itemCount={20}
+                itemsTitle="items"
                 key=".0"
                 lastIndex={10}
                 onEnter={[Function]}
@@ -6491,7 +6682,17 @@ exports[`component render titles 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD
                     isDisabled={false}
+=======
+<<<<<<< HEAD
+=======
+                    isActive={false}
+                    isDisabled={false}
+                    isFocused={false}
+                    isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
+>>>>>>> feat(Pagination): add disabled flag for whole component
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -6633,8 +6834,8 @@ exports[`component render titles 1`] = `
                           >
                             <Component
                               firstIndex={1}
-                              itemCount={40}
-                              itemsTitle="values"
+                              itemCount={20}
+                              itemsTitle="items"
                               lastIndex={10}
                             >
                               <strong>
@@ -6645,10 +6846,10 @@ exports[`component render titles 1`] = `
                                
                               of 
                               <strong>
-                                40
+                                20
                               </strong>
                                
-                              values
+                              items
                             </Component>
                           </span>
                         </span>
@@ -6693,8 +6894,13 @@ exports[`component render titles 1`] = `
     <Navigation
       className=""
       currPage="Current page"
+<<<<<<< HEAD
       firstPage={1}
       lastPage={4}
+=======
+      isDisabled={false}
+      lastPage={2}
+>>>>>>> feat(Pagination): add disabled flag for whole component
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -6702,7 +6908,7 @@ exports[`component render titles 1`] = `
       onPreviousClick={[Function]}
       onSetPage={[Function]}
       page={1}
-      pagesTitle=""
+      pagesTitle="page"
       paginationTitle="Pagination"
       toFirstPage="Go to first page"
       toLastPage="Go to last page"
@@ -6810,8 +7016,13 @@ exports[`component render titles 1`] = `
             aria-label="Current page"
             className="pf-c-form-control"
             disabled={false}
+<<<<<<< HEAD
             max={4}
             min={1}
+=======
+            max={2}
+            min="1"
+>>>>>>> feat(Pagination): add disabled flag for whole component
             onChange={[Function]}
             onKeyDown={[Function]}
             type="number"
@@ -6821,7 +7032,7 @@ exports[`component render titles 1`] = `
             aria-hidden="true"
           >
             of 
-            4 s
+            2 pages
           </span>
         </div>
         <Component
@@ -6920,10 +7131,15 @@ exports[`component render titles 1`] = `
 </Component>
 `;
 
-exports[`component render up drop direction 1`] = `
+exports[`component render titles 1`] = `
 <Component
-  dropDirection="up"
   itemCount={40}
+  titles={
+    Object {
+      "items": "values",
+      "pages": "books",
+    }
+  }
 >
   <div
     className="pf-c-pagination"
@@ -6932,15 +7148,16 @@ exports[`component render up drop direction 1`] = `
     <div
       className="pf-c-pagination__total-items"
     >
-      40 items
+      40 values
     </div>
     <PaginationOptionsMenu
       className=""
-      dropDirection="up"
+      dropDirection="down"
       firstIndex={1}
+      isDisabled={false}
       itemCount={40}
       itemsPerPageTitle="Items per page"
-      itemsTitle="items"
+      itemsTitle="values"
       lastIndex={10}
       onPerPageSelect={[Function]}
       optionsToggle="Select"
@@ -6979,8 +7196,15 @@ exports[`component render up drop direction 1`] = `
           Items per page
           :
         </span>
+<<<<<<< HEAD
         <Component
           direction="up"
+=======
+        <Dropdown
+          autoFocus={true}
+          className=""
+          direction="down"
+>>>>>>> feat(Pagination): add disabled flag for whole component
           dropdownItems={
             Array [
               <Unknown
@@ -7053,9 +7277,10 @@ exports[`component render up drop direction 1`] = `
           toggle={
             <Unknown
               firstIndex={1}
+              isDisabled={false}
               isOpen={false}
               itemCount={40}
-              itemsTitle="items"
+              itemsTitle="values"
               lastIndex={10}
               onToggle={[Function]}
               optionsToggle="Select"
@@ -7068,7 +7293,7 @@ exports[`component render up drop direction 1`] = `
         >
           <DropdownWithContext
             className=""
-            direction="up"
+            direction="down"
             dropdownItems={
               Array [
                 <Unknown
@@ -7143,9 +7368,10 @@ exports[`component render up drop direction 1`] = `
             toggle={
               <Unknown
                 firstIndex={1}
+                isDisabled={false}
                 isOpen={false}
                 itemCount={40}
-                itemsTitle="items"
+                itemsTitle="values"
                 lastIndex={10}
                 onToggle={[Function]}
                 optionsToggle="Select"
@@ -7157,16 +7383,21 @@ exports[`component render up drop direction 1`] = `
             }
           >
             <div
-              className="pf-c-dropdown pf-m-top"
+              className="pf-c-dropdown"
             >
               <Component
                 ariaHasPopup={true}
                 firstIndex={1}
+<<<<<<< HEAD
                 id="pf-toggle-id-11"
+=======
+                id="pf-toggle-id-9"
+                isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={40}
-                itemsTitle="items"
+                itemsTitle="values"
                 key=".0"
                 lastIndex={10}
                 onEnter={[Function]}
@@ -7237,7 +7468,17 @@ exports[`component render up drop direction 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD
                     isDisabled={false}
+=======
+<<<<<<< HEAD
+=======
+                    isActive={false}
+                    isDisabled={false}
+                    isFocused={false}
+                    isHovered={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
+>>>>>>> feat(Pagination): add disabled flag for whole component
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -7380,6 +7621,656 @@ exports[`component render up drop direction 1`] = `
                             <Component
                               firstIndex={1}
                               itemCount={40}
+                              itemsTitle="values"
+                              lastIndex={10}
+                            >
+                              <strong>
+                                1
+                                 - 
+                                10
+                              </strong>
+                               
+                              of 
+                              <strong>
+                                40
+                              </strong>
+                               
+                              values
+                            </Component>
+                          </span>
+                        </span>
+                        <CaretDownIcon
+                          className="pf-c-dropdown__toggle-icon"
+                          color="currentColor"
+                          noVerticalAlign={false}
+                          size="sm"
+                          title={null}
+                        >
+                          <svg
+                            aria-hidden={true}
+                            aria-labelledby={null}
+                            className="pf-c-dropdown__toggle-icon"
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style={
+                              Object {
+                                "verticalAlign": "-0.125em",
+                              }
+                            }
+                            viewBox="0 0 320 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                              transform=""
+                            />
+                          </svg>
+                        </CaretDownIcon>
+                      </button>
+                    </Toggle>
+                  </Component>
+                </div>
+              </Component>
+            </div>
+          </DropdownWithContext>
+        </Component>
+      </div>
+    </PaginationOptionsMenu>
+    <Navigation
+      className=""
+      currPage="Current page"
+<<<<<<< HEAD
+      firstPage={1}
+=======
+      isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
+      lastPage={4}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
+      page={1}
+      pagesTitle=""
+      paginationTitle="Pagination"
+      toFirstPage="Go to first page"
+      toLastPage="Go to last page"
+      toNextPage="Go to next page"
+      toPreviousPage="Go to previous page"
+    >
+      <nav
+        aria-label="Pagination"
+        className="pf-c-pagination__nav"
+      >
+        <Component
+          aria-label="Go to first page"
+          data-action="first"
+          isDisabled={true}
+          onClick={[Function]}
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to first page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="first"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Component>
+        <Component
+          aria-label="Go to previous page"
+          data-action="previous"
+          isDisabled={true}
+          onClick={[Function]}
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to previous page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="previous"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  transform=""
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Component>
+        <div
+          className="pf-c-pagination__nav-page-select"
+        >
+          <input
+            aria-label="Current page"
+            className="pf-c-form-control"
+            disabled={false}
+<<<<<<< HEAD
+=======
+            max={4}
+            min="1"
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            type="number"
+            value={1}
+          />
+          <span
+            aria-hidden="true"
+          >
+            of 
+            4 s
+          </span>
+        </div>
+        <Component
+          aria-label="Go to next page"
+          data-action="next"
+          isDisabled={false}
+          onClick={[Function]}
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to next page"
+            className="pf-c-button pf-m-plain"
+            data-action="next"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Component>
+        <Component
+          aria-label="Go to last page"
+          data-action="last"
+          isDisabled={false}
+          onClick={[Function]}
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to last page"
+            className="pf-c-button pf-m-plain"
+            data-action="last"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              noVerticalAlign={false}
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Component>
+      </nav>
+    </Navigation>
+  </div>
+</Component>
+`;
+
+exports[`component render up drop direction 1`] = `
+<Component
+  dropDirection="up"
+  itemCount={40}
+>
+  <div
+    className="pf-c-pagination"
+    id="pagination-options-menu"
+  >
+    <div
+      className="pf-c-pagination__total-items"
+    >
+      40 items
+    </div>
+    <PaginationOptionsMenu
+      className=""
+      dropDirection="up"
+      firstIndex={1}
+      isDisabled={false}
+      itemCount={40}
+      itemsPerPageTitle="Items per page"
+      itemsTitle="items"
+      lastIndex={10}
+      onPerPageSelect={[Function]}
+      optionsToggle="Select"
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      perPageSuffix="per page"
+      toggleTemplate={[Function]}
+      widgetId="pagination-options-menu"
+    >
+      <div
+        className="pf-c-options-menu"
+      >
+        <span
+          hidden={true}
+          id="pagination-options-menu-label"
+        >
+          Items per page
+          :
+        </span>
+        <Dropdown
+          autoFocus={true}
+          className=""
+          direction="up"
+          dropdownItems={
+            Array [
+              <DropdownItem
+                className="pf-c-options-menu__menu-item pf-m-selected"
+                component="button"
+                data-action="per-page-10"
+                href=""
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
+              >
+                10
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
+                <i
+                  className="pf-c-options-menu__menu-item-icon"
+                >
+                  <CheckIcon
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
+                    title={null}
+                  />
+                </i>
+              </DropdownItem>,
+              <DropdownItem
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-20"
+                href=""
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
+              >
+                20
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
+              </DropdownItem>,
+              <DropdownItem
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-50"
+                href=""
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
+              >
+                50
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
+              </DropdownItem>,
+              <DropdownItem
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-100"
+                href=""
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+                tooltip={null}
+                tooltipProps={Object {}}
+              >
+                100
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
+              </DropdownItem>,
+            ]
+          }
+          isGrouped={false}
+          isOpen={false}
+          isPlain={true}
+          onSelect={[Function]}
+          position="left"
+          toggle={
+            <Unknown
+              firstIndex={1}
+              isDisabled={false}
+              isOpen={false}
+              itemCount={40}
+              itemsTitle="items"
+              lastIndex={10}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              parentRef={null}
+              showToggle={true}
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            />
+          }
+        >
+          <DropdownWithContext
+            autoFocus={true}
+            className=""
+            direction="up"
+            dropdownItems={
+              Array [
+                <DropdownItem
+                  className="pf-c-options-menu__menu-item pf-m-selected"
+                  component="button"
+                  data-action="per-page-10"
+                  href=""
+                  isDisabled={false}
+                  isHovered={false}
+                  onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
+                >
+                  10
+                  <span
+                    className="pf-c-pagination__menu-text"
+                  >
+                     per page
+                  </span>
+                  <i
+                    className="pf-c-options-menu__menu-item-icon"
+                  >
+                    <CheckIcon
+                      color="currentColor"
+                      noVerticalAlign={false}
+                      size="sm"
+                      title={null}
+                    />
+                  </i>
+                </DropdownItem>,
+                <DropdownItem
+                  className="pf-c-options-menu__menu-item"
+                  component="button"
+                  data-action="per-page-20"
+                  href=""
+                  isDisabled={false}
+                  isHovered={false}
+                  onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
+                >
+                  20
+                  <span
+                    className="pf-c-pagination__menu-text"
+                  >
+                     per page
+                  </span>
+                </DropdownItem>,
+                <DropdownItem
+                  className="pf-c-options-menu__menu-item"
+                  component="button"
+                  data-action="per-page-50"
+                  href=""
+                  isDisabled={false}
+                  isHovered={false}
+                  onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
+                >
+                  50
+                  <span
+                    className="pf-c-pagination__menu-text"
+                  >
+                     per page
+                  </span>
+                </DropdownItem>,
+                <DropdownItem
+                  className="pf-c-options-menu__menu-item"
+                  component="button"
+                  data-action="per-page-100"
+                  href=""
+                  isDisabled={false}
+                  isHovered={false}
+                  onClick={[Function]}
+                  tooltip={null}
+                  tooltipProps={Object {}}
+                >
+                  100
+                  <span
+                    className="pf-c-pagination__menu-text"
+                  >
+                     per page
+                  </span>
+                </DropdownItem>,
+              ]
+            }
+            isGrouped={false}
+            isOpen={false}
+            isPlain={true}
+            onSelect={[Function]}
+            position="left"
+            toggle={
+              <Unknown
+                firstIndex={1}
+                isDisabled={false}
+                isOpen={false}
+                itemCount={40}
+                itemsTitle="items"
+                lastIndex={10}
+                onToggle={[Function]}
+                optionsToggle="Select"
+                parentRef={null}
+                showToggle={true}
+                toggleTemplate={[Function]}
+                widgetId="pagination-options-menu"
+              />
+            }
+          >
+            <div
+              className="pf-c-dropdown pf-m-top"
+            >
+              <Component
+                ariaHasPopup={true}
+                firstIndex={1}
+                id="pf-toggle-id-11"
+                isDisabled={false}
+                isOpen={false}
+                isPlain={true}
+                itemCount={40}
+                itemsTitle="items"
+                key=".0"
+                lastIndex={10}
+                onEnter={[Function]}
+                onToggle={[Function]}
+                optionsToggle="Select"
+                showToggle={true}
+                toggleTemplate={[Function]}
+                widgetId="pagination-options-menu"
+              >
+                <div
+                  className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                >
+                  <DropdownToggle
+                    aria-label="Select"
+                    className="pf-c-options-menu__toggle-button"
+                    iconComponent={[Function]}
+                    id="pagination-options-menu-toggle"
+                    isActive={false}
+                    isDisabled={false}
+                    isFocused={false}
+                    isHovered={false}
+                    isOpen={false}
+                    isPlain={false}
+                    isSplitButton={true}
+                    onToggle={[Function]}
+                    parentRef={null}
+                  >
+                    <Toggle
+                      aria-label="Select"
+                      className="pf-c-options-menu__toggle-button"
+                      id="pagination-options-menu-toggle"
+                      isActive={false}
+                      isDisabled={false}
+                      isFocused={false}
+                      isHovered={false}
+                      isOpen={false}
+                      isPlain={false}
+                      isSplitButton={true}
+                      onEnter={[Function]}
+                      onToggle={[Function]}
+                      parentRef={null}
+                      type={null}
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-label="Select"
+                        className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
+                        disabled={false}
+                        id="pagination-options-menu-toggle"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        type="button"
+                      >
+                        <span
+                          className="pf-c-dropdown__toggle-text"
+                        >
+                          <span
+                            className="pf-c-options-menu__toggle-text"
+                          >
+                            <Component
+                              firstIndex={1}
+                              itemCount={40}
                               itemsTitle="items"
                               lastIndex={10}
                             >
@@ -7428,18 +8319,18 @@ exports[`component render up drop direction 1`] = `
                         </CaretDownIcon>
                       </button>
                     </Toggle>
-                  </Component>
+                  </DropdownToggle>
                 </div>
               </Component>
             </div>
           </DropdownWithContext>
-        </Component>
+        </Dropdown>
       </div>
     </PaginationOptionsMenu>
     <Navigation
       className=""
       currPage="Current page"
-      firstPage={1}
+      isDisabled={false}
       lastPage={4}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -7556,6 +8447,7 @@ exports[`component render up drop direction 1`] = `
             aria-label="Current page"
             className="pf-c-form-control"
             disabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component
             max={4}
             min={1}
             onChange={[Function]}

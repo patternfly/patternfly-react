@@ -13,6 +13,11 @@ describe('component render', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  test('should render correctly disabled', () => {
+    const wrapper = mount(<Pagination itemCount={20} isDisabled />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   test('limited number of pages', () => {
     const wrapper = mount(<Pagination itemCount={20} perPage={20} />);
     expect(wrapper).toMatchSnapshot();

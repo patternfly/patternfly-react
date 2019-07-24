@@ -60,6 +60,8 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   itemCount: number;
   /** Position where pagination is rendered. */
   variant?: 'top' | 'bottom' | 'left' | 'right';
+  /** Flag indicating if pagination is disabled */
+  isDisabled?: boolean;
   /** Number of items per page. */
   perPage?: number;
   /** Select from options to number of items per page. */
@@ -100,6 +102,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   children = null,
   className = '',
   variant = PaginationVariant.top,
+  isDisabled = false,
   perPage = defaultPerPageOptions[0].value,
   titles = {
     items: 'items',
@@ -170,6 +173,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         dropDirection={dropDirection}
         widgetId={widgetId}
         toggleTemplate={toggleTemplate}
+        isDisabled={isDisabled}
       />
       <Navigation
         pagesTitle={titles.page}
@@ -188,6 +192,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         onNextClick={onNextClick}
         onLastClick={onLastClick}
         onPageInput={onPageInput}
+        isDisabled={isDisabled}
       />
       {children}
     </div>

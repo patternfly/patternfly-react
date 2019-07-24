@@ -4,6 +4,15 @@ exports[`state active 1`] = `
 <Component
   id="Dropdown Toggle"
   isActive={true}
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/DropdownToggle.test.tsx.snap
+=======
+  isDisabled={false}
+  isFocused={false}
+  isHovered={false}
+  isOpen={false}
+  isPlain={false}
+  onToggle={[Function]}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/DropdownToggle.test.js.snap
   parentRef={<div />}
 >
   <Toggle
@@ -70,6 +79,11 @@ exports[`state active 1`] = `
 exports[`state focus 1`] = `
 <Component
   id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/DropdownToggle.test.tsx.snap
+=======
+  isActive={false}
+  isDisabled={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/DropdownToggle.test.js.snap
   isFocused={true}
   parentRef={<div />}
 >
@@ -137,6 +151,12 @@ exports[`state focus 1`] = `
 exports[`state hover 1`] = `
 <Component
   id="Dropdown Toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/DropdownToggle.test.tsx.snap
+=======
+  isActive={false}
+  isDisabled={false}
+  isFocused={false}
+>>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/DropdownToggle.test.js.snap
   isHovered={true}
   parentRef={<div />}
 >

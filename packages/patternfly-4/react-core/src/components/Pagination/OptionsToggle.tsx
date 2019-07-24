@@ -25,6 +25,8 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   onToggle?: (isOpen: boolean) => void,
   /** Flag indicating if the Options Menu dropdown is open or not */
   isOpen?: boolean,
+  /** Flag indicating if the Options Menu is disabled */
+  isDisabled?: boolean,
   /** */
   parentRef?: HTMLElement;
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */
@@ -41,11 +43,12 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   showToggle = true,
   onToggle = (_isOpen: boolean) => undefined as any,
   isOpen = false,
+  isDisabled = false,
   parentRef = null,
   toggleTemplate: ToggleTemplate = '',
 }:OptionsToggleProps ) => {
   return (
-    <div className={css(styles.optionsMenuToggle, getModifier(styles, 'plain'), getModifier(styles, 'text'))} >
+    <div className={css(styles.optionsMenuToggle, isDisabled && getModifier(styles, 'disabled'), getModifier(styles, 'plain'), getModifier(styles, 'text'))} >
       {showToggle && (
         <DropdownToggle
           aria-label={optionsToggle}
@@ -55,6 +58,7 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
           id={`${widgetId}-toggle`}
           className={styles.optionsMenuToggleButton}
           parentRef={parentRef}
+          isDisabled={isDisabled}
         >
           <span className={css(styles.optionsMenuToggleText)}>
             {typeof ToggleTemplate === 'string' ? (
