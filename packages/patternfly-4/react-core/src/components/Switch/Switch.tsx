@@ -46,14 +46,14 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
   }
 
   render() {
-    const { className, label, isChecked, isDisabled, onChange, ouiaContext, ...props } = this.props;
+    const { className, label, isChecked, isDisabled, onChange, ouiaContext, ouiaId, ...props } = this.props;
     return (
       <label
         className={css(styles.switch, className)}
         htmlFor={this.id}
         {...ouiaContext.isOuia && {
           'data-ouia-component-type': 'Switch',
-          'data-ouia-component-id': ouiaContext.ouiaId
+          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
         }}
       >
         <input

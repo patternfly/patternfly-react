@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { isOUIAEnvironment, getUniqueId, generateOUIAId } from './ouia';
+import { Omit } from '../../helpers/typeUtils';
 
 export const OuiaContext = React.createContext<OuiaContextProps | null>(null);
 
 export interface InjectedOuiaProps {
-  ouiaContext: OuiaContextProps;
+  ouiaContext?: OuiaContextProps;
+  ouiaId?: number | string;
 }
 
 export interface OuiaContextProps {
   isOuia?: boolean;
   ouiaId?: number | string;
 }
-
-type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
 export function withOuiaContext<P extends { ouiaContext?: OuiaContextProps }, R = Omit<P, 'ouiaContext'>>(
   WrappedComponent: React.ComponentClass<P> | React.FunctionComponent<P>
