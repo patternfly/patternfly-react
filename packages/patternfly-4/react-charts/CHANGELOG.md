@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.7.0...@patternfly/react-charts@4.7.1) (2019-07-24)
+
+
+### Bug Fixes
+
+* **charts:** use vars to enable Red Hat fonts ([#2584](https://github.com/patternfly/patternfly-react/issues/2584)) ([d555f2a](https://github.com/patternfly/patternfly-react/commit/d555f2a))
+
+
+
+
+
 # [4.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.6.5...@patternfly/react-charts@4.7.0) (2019-07-22)
 
 
