@@ -5,7 +5,7 @@ propComponents: ['Switch']
 typescript: true
 ---
 
-import { Switch, OuiaContext } from '@patternfly/react-core';
+import { Switch } from '@patternfly/react-core';
 
 ## Simple switch
 ```js
@@ -26,16 +26,13 @@ class SimpleSwitch extends React.Component {
   render() {
     const { isChecked } = this.state;
     return (
-      <OuiaContext.Provider value={{ isOuia: true }}>
       <Switch
-        ouiaId="asdd"
         id="simple-switch"
         label={isChecked ? 'Message when on' : 'Message when off'}
         isChecked={isChecked}
         onChange={this.handleChange}
         aria-label="Message when on"
       />
-      </OuiaContext.Provider>
     );
   }
 }
