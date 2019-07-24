@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { CheckIcon } from '@patternfly/react-icons';
 import { getUniqueId } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
-import { isOUIAEnvironment, getUniqueId as getOUIAUniqueId } from '../../helpers/ouia';
+import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 export interface SwitchProps extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
   /** id for the label. */
@@ -23,9 +23,8 @@ export interface SwitchProps extends Omit<React.HTMLProps<HTMLInputElement>, 'ty
   'aria-label'?: string
 };
 
-export class Switch extends React.Component<SwitchProps> {
+class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
   id = '';
-  ouiaId = getOUIAUniqueId();
 
   static defaultProps = {
     id: '',
@@ -37,7 +36,7 @@ export class Switch extends React.Component<SwitchProps> {
     onChange: () => undefined as any
   };
 
-  constructor(props: SwitchProps) {
+  constructor(props: SwitchProps & InjectedOuiaProps) {
     super(props);
     if (!props.id && !props['aria-label']) {
       // tslint:disable-next-line:no-console
@@ -47,14 +46,14 @@ export class Switch extends React.Component<SwitchProps> {
   }
 
   render() {
-    const { className, label, isChecked, isDisabled, onChange, ...props } = this.props;
+    const { className, label, isChecked, isDisabled, onChange, ouiaContext, ouiaId, ...props } = this.props;
     return (
       <label
         className={css(styles.switch, className)}
         htmlFor={this.id}
-        {...isOUIAEnvironment() && {
+        {...ouiaContext.isOuia && {
           'data-ouia-component-type': 'Switch',
-          'data-ouia-component-id': this.ouiaId
+          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
         }}
       >
         <input
@@ -87,3 +86,7 @@ export class Switch extends React.Component<SwitchProps> {
     );
   }
 }
+
+const SwitchWithOuiaContext = withOuiaContext(Switch);
+
+export { SwitchWithOuiaContext as Switch };

@@ -322,6 +322,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.OptionsMenuDemo
   },
   {
+    id: 'ouia-demo',
+    name: 'Ouia Demo',
+    componentType: Examples.OuiaDemo
+  },
+  {
     id: 'page-demo',
     name: 'Page Demo',
     componentType: Examples.PageDemo
