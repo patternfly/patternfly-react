@@ -9,20 +9,27 @@ import { getComposer } from './ChartConstants';
 const { pfSetDonutChartTitle } = patternfly;
 const colIndexOfMaxValue = columns => columns.reduce((iMax, x, i, arr) => (x[1] > arr[iMax][1] ? i : iMax), 0);
 
+const truncateNum = (num, precision) => {
+  const pointNotation = num.toString().split('.');
+  if (pointNotation.length === 1) return pointNotation[0];
+  return `${pointNotation[0]}.${pointNotation[1].slice(0, precision)}`;
+};
+
 const setDonutTitle = obj => {
   let primary;
   let secondary;
 
   const { props } = obj;
   const { data, title = {} } = props;
+  const { type, precision = 0 } = title;
   const { columns } = data;
   const sum = columns.reduce((acc, x) => acc + x[1], 0);
   const iMax = colIndexOfMaxValue(columns);
+  const percentage = (100 * columns[iMax][1]) / sum;
 
-  switch (title.type) {
+  switch (type) {
     case 'percent':
-      primary = `${Math.round((100 * columns[iMax][1]) / sum).toString()}%`;
-      [secondary] = columns[iMax];
+      primary = precision ? `${truncateNum(percentage, precision)}%` : `${Math.round(percentage)}%`;
       break;
     case 'max':
       primary = Math.round(columns[iMax][1]).toString();
