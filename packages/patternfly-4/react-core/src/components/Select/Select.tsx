@@ -128,6 +128,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     } catch (err) {
       input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
     }
+
     const typeaheadFilteredChildren =
       e.target.value !== ''
         ? React.Children.toArray(this.props.children).filter(
@@ -135,6 +136,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
               this.getDisplay((child as React.ReactElement).props.value, 'text').search(input) === 0
           )
         : React.Children.toArray(this.props.children);
+
     if (typeaheadFilteredChildren.length === 0) {
       typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value="No results found" />);
     }
@@ -177,6 +179,12 @@ export class Select extends React.Component<SelectProps, SelectState> {
 
   handleArrowKeys = (index: number, position: string) => {
     keyHandler(index, position, this.refCollection, this.refCollection);
+  };
+
+  handleFocus = () => {
+    if (!this.props.isExpanded) {
+      this.props.onToggle(true);
+    }
   };
 
   handleTypeaheadKeys = (position: string) => {
@@ -344,6 +352,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                     }
                     type="text"
                     onChange={this.onChange}
+                    onFocus={this.handleFocus}
                     autoComplete="off"
                   />
                 </div>
@@ -374,6 +383,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                     value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
                     type="text"
                     onChange={this.onChange}
+                    onFocus={this.handleFocus}
                     autoComplete="off"
                   />
                 </div>
