@@ -407,7 +407,7 @@ class MultiTypeaheadSelectInput extends React.Component {
 }
 ```
 
-## Plain typeahead select input
+## Plain multiple typeahead select input
 
 ```js
 import React from 'react';
