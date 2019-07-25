@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.15.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.25...@patternfly/react-table@2.15.0) (2019-07-25)
+
+
+### Features
+
+* **Dropdown:** Convert dropdown to typescript ([#2502](https://github.com/patternfly/patternfly-react/issues/2502)) ([14474fe](https://github.com/patternfly/patternfly-react/commit/14474fe))
+
+
+
+
+
 ## [2.14.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.14.24...@patternfly/react-table@2.14.25) (2019-07-25)
 
 **Note:** Version bump only for package @patternfly/react-table

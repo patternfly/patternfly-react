@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.13.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.12.1...@patternfly/react-integration@2.13.0) (2019-07-25)
+
+
+### Features
+
+* **Dropdown:** Convert dropdown to typescript ([#2502](https://github.com/patternfly/patternfly-react/issues/2502)) ([14474fe](https://github.com/patternfly/patternfly-react/commit/14474fe))
+
+
+
+
+
 ## [2.12.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.12.0...@patternfly/react-integration@2.12.1) (2019-07-24)
 
 **Note:** Version bump only for package @patternfly/react-integration
