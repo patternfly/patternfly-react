@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.7.1...@patternfly/react-charts@4.7.2) (2019-07-25)
+
+
+### Bug Fixes
+
+* **chart:** ensure dynamic chart size is never less than zero ([#2590](https://github.com/patternfly/patternfly-react/issues/2590)) ([9e9b48e](https://github.com/patternfly/patternfly-react/commit/9e9b48e))
+
+
+
+
+
 ## [4.7.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.7.0...@patternfly/react-charts@4.7.1) (2019-07-24)
 
 

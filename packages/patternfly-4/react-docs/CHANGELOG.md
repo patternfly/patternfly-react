@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.9.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.9.6...@patternfly/react-docs@4.9.7) (2019-07-25)
+
+
+### Bug Fixes
+
+* **docs:** make name column not wrap ([#2583](https://github.com/patternfly/patternfly-react/issues/2583)) ([7a9f24d](https://github.com/patternfly/patternfly-react/commit/7a9f24d))
+
+
+
+
+
 ## [4.9.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.9.5...@patternfly/react-docs@4.9.6) (2019-07-25)
 
 **Note:** Version bump only for package @patternfly/react-docs
