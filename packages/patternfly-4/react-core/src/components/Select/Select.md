@@ -406,3 +406,91 @@ class MultiTypeaheadSelectInput extends React.Component {
   }
 }
 ```
+
+## Plain typeahead select input
+
+```js
+import React from 'react';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+class PlainSelectInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.options = [
+      { value: 'Alabama', disabled: false },
+      { value: 'Florida', disabled: false },
+      { value: 'New Jersey', disabled: false },
+      { value: 'New Mexico', disabled: false },
+      { value: 'New York', disabled: false },
+      { value: 'North Carolina', disabled: false }
+    ];
+
+    this.state = {
+      isExpanded: false,
+      isPlain: true,
+      selected: []
+    };
+
+    this.onToggle = isExpanded => {
+      this.setState({
+        isExpanded,
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: [],
+        isExpanded: false
+      });
+    };
+  }
+
+  render() {
+    const { isExpanded, isPlain, selected } = this.state;
+    const titleId = 'plain-typeahead-select-id';
+
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Select a state
+        </span>
+        <Select
+          variant={SelectVariant.typeaheadMulti}
+          aria-label="Select a state"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          onClear={this.clearSelection}
+          selections={selected}
+          isExpanded={isExpanded}
+          isPlain={isPlain}
+          ariaLabelledBy={titleId}
+          placeholderText="Select a state"
+        >
+          {this.options.map((option, index) => (
+            <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+          ))}
+        </Select>
+      </div>
+    );
+  }
+}
+```
+
+
+
+
