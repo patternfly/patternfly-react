@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.76.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.75.3...@patternfly/react-core@3.76.0) (2019-07-25)
+
+
+### Features
+
+* **Tooltip:** Added support for aria prop from Tippy library ([#2539](https://github.com/patternfly/patternfly-react/issues/2539)) ([54dce53](https://github.com/patternfly/patternfly-react/commit/54dce53)), closes [#1458](https://github.com/patternfly/patternfly-react/issues/1458)
+
+
+
+
+
 ## [3.75.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.75.2...@patternfly/react-core@3.75.3) (2019-07-24)
 
 **Note:** Version bump only for package @patternfly/react-core
