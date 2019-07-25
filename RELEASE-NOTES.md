@@ -150,7 +150,7 @@
 *  Use frontmatter for what props to show in docs ([#2072](https://github.com/patternfly/patternfly-react/pull/2072))
 *  If you add new imports to your MDX file, rerun yarn develop which now clears the gatsby-mdx cache and lets you be on your merry way ([#2059](https://github.com/patternfly/patternfly-react/pull/2059))
 *  Hide inherited TypeScript props ([#1866](https://github.com/patternfly/patternfly-react/pull/1866))
-*  Use mdx for docs ([#1753](https://github.com/patternfly/patternfly-react/pull/1753))
+*  Use MDX for docs ([#1753](https://github.com/patternfly/patternfly-react/pull/1753))
 *  Reverted bodywrapper conversion to stateless-function ([#2161](https://github.com/patternfly/patternfly-react/pull/2161))
 ## TypeScript Conversions
 We are in the process of converting all components to TypeScript to provide better types for consumers. The following components have been converted:
