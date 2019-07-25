@@ -46,6 +46,8 @@ export interface TooltipProps {
   isAppLauncher?: boolean;
   /** Distance of the tooltip to its target, defaults to 15 */
   distance?: number;
+  /** Aria-labelledby or aria-describedby for tooltip */
+  aria?: 'describedby' | 'labelledby';
 };
 
 export class Tooltip extends React.Component<TooltipProps> {
@@ -61,7 +63,8 @@ export class Tooltip extends React.Component<TooltipProps> {
     zIndex: 9999,
     maxWidth: tooltipMaxWidth && tooltipMaxWidth.value,
     isAppLauncher: false,
-    distance: 15
+    distance: 15,
+    aria: 'describedby'
   };
 
   storeTippyInstance = (tip:TippyInstance) => {
@@ -103,6 +106,7 @@ export class Tooltip extends React.Component<TooltipProps> {
       maxWidth,
       isAppLauncher,
       distance,
+      aria,
       ...rest
     } = this.props;
     const content = (
@@ -117,6 +121,7 @@ export class Tooltip extends React.Component<TooltipProps> {
     );
     return (
       <PopoverBase
+        aria={aria}
         onCreate={this.storeTippyInstance}
         maxWidth={maxWidth}
         zIndex={zIndex}

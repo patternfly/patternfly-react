@@ -159,6 +159,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
             >
               <Tooltip
                 appendTo={[Function]}
+                aria="describedby"
                 className=""
                 content="test zoom in tooltip"
                 distance={15}
@@ -174,6 +175,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 <PopoverBase
                   animateFill={false}
                   appendTo={[Function]}
+                  aria="describedby"
                   content={
                     <div
                       className="pf-c-tooltip"
@@ -291,6 +293,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
             >
               <Tooltip
                 appendTo={[Function]}
+                aria="describedby"
                 className=""
                 content="Zoom Out"
                 distance={15}
@@ -306,6 +309,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 <PopoverBase
                   animateFill={false}
                   appendTo={[Function]}
+                  aria="describedby"
                   content={
                     <div
                       className="pf-c-tooltip"
@@ -446,6 +450,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
             >
               <Tooltip
                 appendTo={[Function]}
+                aria="describedby"
                 className=""
                 content="Reset View"
                 distance={15}
@@ -461,6 +466,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 <PopoverBase
                   animateFill={false}
                   appendTo={[Function]}
+                  aria="describedby"
                   content={
                     <div
                       className="pf-c-tooltip"
@@ -810,6 +816,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
             >
               <Tooltip
                 appendTo={[Function]}
+                aria="describedby"
                 className=""
                 content="Zoom In"
                 distance={15}
@@ -825,6 +832,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 <PopoverBase
                   animateFill={false}
                   appendTo={[Function]}
+                  aria="describedby"
                   content={
                     <div
                       className="pf-c-tooltip"
@@ -965,6 +973,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
             >
               <Tooltip
                 appendTo={[Function]}
+                aria="describedby"
                 className=""
                 content="Zoom Out"
                 distance={15}
@@ -980,6 +989,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 <PopoverBase
                   animateFill={false}
                   appendTo={[Function]}
+                  aria="describedby"
                   content={
                     <div
                       className="pf-c-tooltip"
@@ -1120,6 +1130,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
             >
               <Tooltip
                 appendTo={[Function]}
+                aria="describedby"
                 className=""
                 content="Fit to Screen"
                 distance={15}
@@ -1135,6 +1146,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 <PopoverBase
                   animateFill={false}
                   appendTo={[Function]}
+                  aria="describedby"
                   content={
                     <div
                       className="pf-c-tooltip"
@@ -1275,6 +1287,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
             >
               <Tooltip
                 appendTo={[Function]}
+                aria="describedby"
                 className=""
                 content="Reset View"
                 distance={15}
@@ -1290,6 +1303,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 <PopoverBase
                   animateFill={false}
                   appendTo={[Function]}
+                  aria="describedby"
                   content={
                     <div
                       className="pf-c-tooltip"
