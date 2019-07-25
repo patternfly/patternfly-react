@@ -551,12 +551,14 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
             childProps.themeVariant || themeVariant);
         const legendPos = childProps.legendPosition || legendPosition;
         const subTitlePos = childProps.subTitlePosition || subTitlePosition;
+        const donutSizeDiff = theme.pie.height - dynamicTheme.pie.height; // static - dynamic chart heights
+        const childDountSize = donutSize > donutSizeDiff ? donutSize - donutSizeDiff : 0; // not visible < 50px
         return React.cloneElement(child, {
           data: childData,
           donutDx: getDonutDx(dynamicTheme, legendPos),
           donutDy: getDonutDy(dynamicTheme),
-          donutHeight: donutSize - (theme.pie.height - dynamicTheme.pie.height),
-          donutWidth: donutSize - (theme.pie.width - dynamicTheme.pie.width),
+          donutHeight: childDountSize,
+          donutWidth: childDountSize,
           endAngle: 360 * (datum[0]._y ? datum[0]._y / 100 : 0),
           height,
           invert,
