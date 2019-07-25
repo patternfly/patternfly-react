@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.77.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.77.0...@patternfly/react-core@3.77.1) (2019-07-25)
+
+
+### Bug Fixes
+
+* **form:** replace radio with check ([#2567](https://github.com/patternfly/patternfly-react/issues/2567)) ([f5516de](https://github.com/patternfly/patternfly-react/commit/f5516de))
+
+
+
+
+
 # [3.77.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.76.0...@patternfly/react-core@3.77.0) (2019-07-25)
 
 
