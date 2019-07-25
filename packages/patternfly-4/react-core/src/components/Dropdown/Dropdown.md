@@ -2,6 +2,7 @@
 title: 'Dropdown'
 cssPrefix: 'pf-c-dropdown'
 propComponents: ['Dropdown', 'DropdownGroup', 'DropdownItem', 'DropdownToggle', 'DropdownToggleCheckbox']
+typescript: true
 ---
 
 import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, DropdownGroup } from '@patternfly/react-core';

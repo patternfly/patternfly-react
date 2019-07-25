@@ -7,75 +7,34 @@ exports[`ApplicationLauncher custom icon 1`] = `
   direction="down"
   dropdownItems={
     Array [
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
-      >
+      <Unknown>
         Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
+      </Unknown>,
+      <Unknown
         isDisabled={true}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
         isDisabled={true}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
-      >
+      </Unknown>,
+      <Unknown />,
+      <Unknown>
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </Unknown>,
     ]
   }
   isDisabled={false}
@@ -97,80 +56,38 @@ exports[`ApplicationLauncher custom icon 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
-    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
-        >
+        <Unknown>
           Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
+        </Unknown>,
+        <Unknown
           isDisabled={true}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
           isDisabled={true}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
-        >
+        </Unknown>,
+        <Unknown />,
+        <Unknown>
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </Unknown>,
       ]
     }
     isGrouped={false}
@@ -179,19 +96,12 @@ exports[`ApplicationLauncher custom icon 1`] = `
     onSelect={[Function]}
     position="left"
     toggle={
-      <DropdownToggle
+      <Unknown
         aria-label="Application launcher"
-        className=""
         iconComponent={null}
-        id=""
-        isActive={false}
         isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={true}
-        isPlain={false}
         onToggle={[Function]}
-        parentRef={null}
       >
         <HelpIcon
           color="currentColor"
@@ -200,33 +110,146 @@ exports[`ApplicationLauncher custom icon 1`] = `
           size="sm"
           title={null}
         />
-      </DropdownToggle>
+      </Unknown>
     }
   >
     <nav
       aria-label="Application launcher"
       className="pf-c-app-launcher pf-m-expanded"
     >
-      <DropdownToggle
+      <Component
         aria-label="Application launcher"
         ariaHasPopup={true}
-        className=""
         iconComponent={null}
         id="pf-toggle-id-5"
-        isActive={false}
         isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={true}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <nav
+              aria-label="Application launcher"
+              class="pf-c-app-launcher pf-m-expanded"
+            >
+              <button
+                aria-expanded="true"
+                class="pf-c-app-launcher__toggle"
+                id="pf-toggle-id-5"
+                type="button"
+              >
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    id="test-icon"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 64 1024 1024"
+                    width="1em"
+                  >
+                    <path
+                      d="M512.059-73.143c-282.338 0-512.059 229.673-512.059 512.025 0 282.235 229.721 511.975 512.059 511.975 282.281 0 511.941-229.735 511.941-511.975 0.005-282.352-229.659-512.025-511.941-512.025zM512.059 826.523c-213.826 0-387.728-173.856-387.728-387.643 0-213.89 173.904-387.694 387.728-387.694 213.717 0 387.671 173.803 387.671 387.694 0.005 213.785-173.957 387.643-387.671 387.643zM585.143 164.571v109.714c0 4.951-1.808 9.237-5.429 12.857s-7.906 5.429-12.857 5.429h-109.714c-4.953 0-9.239-1.808-12.857-5.429s-5.429-7.906-5.429-12.857v-109.714c0-4.951 1.81-9.237 5.429-12.857s7.904-5.429 12.857-5.429h109.714c4.951 0 9.237 1.808 12.857 5.429s5.429 7.906 5.429 12.857zM521.616 365.714c118.343 0 214.286 88.965 214.286 187.429s-95.943 178.286-214.286 178.286c-173.045 0-208.091-93.714-213.963-171.113 0-7.936 6.729-9.838 15.872-9.838s108.073 0 113.143 0c6.096 0 14.475 0.633 17.554 10.571 0 48.857 135.968 54.953 135.968-7.904 0-31.506-29.717-63.817-68.571-66.194s-82.286-7.607-82.286-54.199c0-13.022 0-25.673 0-44.693 0-19.015 9.717-22.343 27.431-22.343s54.853-0.002 54.853-0.002z"
+                      transform="rotate(180 0 512) scale(-1 1)"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                aria-labelledby="pf-toggle-id-5"
+                class="pf-c-app-launcher__menu"
+                role="menu"
+              >
+                <li
+                  role="none"
+                >
+                  <a
+                    aria-disabled="false"
+                    class="pf-c-app-launcher__menu-item"
+                    role="menuitem"
+                    tabindex="-1"
+                  >
+                    Link
+                  </a>
+                </li>
+                <li
+                  role="none"
+                >
+                  <button
+                    class="pf-c-app-launcher__menu-item"
+                    role="menuitem"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    Action
+                  </button>
+                </li>
+                <li
+                  role="none"
+                >
+                  <a
+                    aria-disabled="true"
+                    class="pf-m-disabled pf-c-app-launcher__menu-item"
+                    role="menuitem"
+                    tabindex="-1"
+                  >
+                    Disabled Link
+                  </a>
+                </li>
+                <li
+                  role="none"
+                >
+                  <button
+                    class="pf-m-disabled pf-c-app-launcher__menu-item"
+                    disabled=""
+                    role="menuitem"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    Disabled Action
+                  </button>
+                </li>
+                <li
+                  role="none"
+                >
+                  <div
+                    class="pf-c-app-launcher__separator"
+                    role="separator"
+                  />
+                </li>
+                <li
+                  role="none"
+                >
+                  <a
+                    aria-disabled="false"
+                    class="pf-c-app-launcher__menu-item"
+                    role="menuitem"
+                    tabindex="-1"
+                  >
+                    Separated Link
+                  </a>
+                </li>
+                <li
+                  role="none"
+                >
+                  <button
+                    class="pf-c-app-launcher__menu-item"
+                    role="menuitem"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    Separated Action
+                  </button>
+                </li>
+              </ul>
+            </nav>,
+          }
+        }
       >
         <Toggle
-          aria-label="Application launcher"
-          ariaHasPopup={true}
           className=""
           id="pf-toggle-id-5"
           isActive={false}
@@ -238,13 +261,129 @@ exports[`ApplicationLauncher custom icon 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <nav
+                aria-label="Application launcher"
+                class="pf-c-app-launcher pf-m-expanded"
+              >
+                <button
+                  aria-expanded="true"
+                  class="pf-c-app-launcher__toggle"
+                  id="pf-toggle-id-5"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      id="test-icon"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 64 1024 1024"
+                      width="1em"
+                    >
+                      <path
+                        d="M512.059-73.143c-282.338 0-512.059 229.673-512.059 512.025 0 282.235 229.721 511.975 512.059 511.975 282.281 0 511.941-229.735 511.941-511.975 0.005-282.352-229.659-512.025-511.941-512.025zM512.059 826.523c-213.826 0-387.728-173.856-387.728-387.643 0-213.89 173.904-387.694 387.728-387.694 213.717 0 387.671 173.803 387.671 387.694 0.005 213.785-173.957 387.643-387.671 387.643zM585.143 164.571v109.714c0 4.951-1.808 9.237-5.429 12.857s-7.906 5.429-12.857 5.429h-109.714c-4.953 0-9.239-1.808-12.857-5.429s-5.429-7.906-5.429-12.857v-109.714c0-4.951 1.81-9.237 5.429-12.857s7.904-5.429 12.857-5.429h109.714c4.951 0 9.237 1.808 12.857 5.429s5.429 7.906 5.429 12.857zM521.616 365.714c118.343 0 214.286 88.965 214.286 187.429s-95.943 178.286-214.286 178.286c-173.045 0-208.091-93.714-213.963-171.113 0-7.936 6.729-9.838 15.872-9.838s108.073 0 113.143 0c6.096 0 14.475 0.633 17.554 10.571 0 48.857 135.968 54.953 135.968-7.904 0-31.506-29.717-63.817-68.571-66.194s-82.286-7.607-82.286-54.199c0-13.022 0-25.673 0-44.693 0-19.015 9.717-22.343 27.431-22.343s54.853-0.002 54.853-0.002z"
+                        transform="rotate(180 0 512) scale(-1 1)"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  aria-labelledby="pf-toggle-id-5"
+                  class="pf-c-app-launcher__menu"
+                  role="menu"
+                >
+                  <li
+                    role="none"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-app-launcher__menu-item"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Link
+                    </a>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <button
+                      class="pf-c-app-launcher__menu-item"
+                      role="menuitem"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      Action
+                    </button>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <a
+                      aria-disabled="true"
+                      class="pf-m-disabled pf-c-app-launcher__menu-item"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Disabled Link
+                    </a>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <button
+                      class="pf-m-disabled pf-c-app-launcher__menu-item"
+                      disabled=""
+                      role="menuitem"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      Disabled Action
+                    </button>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <div
+                      class="pf-c-app-launcher__separator"
+                      role="separator"
+                    />
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-app-launcher__menu-item"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Separated Link
+                    </a>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <button
+                      class="pf-c-app-launcher__menu-item"
+                      role="menuitem"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      Separated Action
+                    </button>
+                  </li>
+                </ul>
+              </nav>,
+            }
+          }
         >
           <button
             aria-expanded={true}
-            aria-haspopup={true}
-            aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
             id="pf-toggle-id-5"
@@ -286,7 +425,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
             </span>
           </button>
         </Toggle>
-      </DropdownToggle>
+      </Component>
       <DropdownMenu
         aria-labelledby="pf-toggle-id-5"
         autoFocus={true}
@@ -304,18 +443,11 @@ exports[`ApplicationLauncher custom icon 1`] = `
           hidden={false}
           role="menu"
         >
-          <DropdownItem
-            className=""
-            component="a"
-            href=""
+          <Component
             index={0}
-            isDisabled={false}
-            isHovered={false}
             key=".$link"
-            tooltip={null}
-            tooltipProps={Object {}}
           >
-            <DropdownItem
+            <InternalDropdownItem
               className=""
               component="a"
               context={
@@ -329,6 +461,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="menuitem"
               tabIndex={-1}
               tooltip={null}
@@ -343,26 +476,21 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                 >
                   Link
                 </a>
               </li>
-            </DropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            className=""
+            </InternalDropdownItem>
+          </Component>
+          <Component
             component="button"
-            href=""
             index={1}
-            isDisabled={false}
-            isHovered={false}
             key=".$action"
-            tooltip={null}
-            tooltipProps={Object {}}
           >
-            <DropdownItem
+            <InternalDropdownItem
               className=""
               component="button"
               context={
@@ -376,6 +504,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="menuitem"
               tabIndex={-1}
               tooltip={null}
@@ -390,6 +519,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   type="button"
@@ -397,20 +527,14 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   Action
                 </button>
               </li>
-            </DropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            className=""
-            component="a"
-            href=""
+            </InternalDropdownItem>
+          </Component>
+          <Component
             index={2}
             isDisabled={true}
-            isHovered={false}
             key=".$disabled link"
-            tooltip={null}
-            tooltipProps={Object {}}
           >
-            <DropdownItem
+            <InternalDropdownItem
               className=""
               component="a"
               context={
@@ -424,6 +548,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               isDisabled={true}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="menuitem"
               tabIndex={-1}
               tooltip={null}
@@ -438,26 +563,22 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                 >
                   Disabled Link
                 </a>
               </li>
-            </DropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            className=""
+            </InternalDropdownItem>
+          </Component>
+          <Component
             component="button"
-            href=""
             index={3}
             isDisabled={true}
-            isHovered={false}
             key=".$disabled action"
-            tooltip={null}
-            tooltipProps={Object {}}
           >
-            <DropdownItem
+            <InternalDropdownItem
               className=""
               component="button"
               context={
@@ -471,6 +592,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               isDisabled={true}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="menuitem"
               tabIndex={-1}
               tooltip={null}
@@ -485,6 +607,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   type="button"
@@ -492,14 +615,13 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   Disabled Action
                 </button>
               </li>
-            </DropdownItem>
-          </DropdownItem>
-          <Separator
-            className=""
+            </InternalDropdownItem>
+          </Component>
+          <Component
             index={4}
             key=".$separator"
           >
-            <DropdownItem
+            <InternalDropdownItem
               className="pf-c-app-launcher__separator"
               component="div"
               context={
@@ -513,8 +635,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="separator"
-              tooltip={null}
               tooltipProps={Object {}}
             >
               <li
@@ -525,23 +647,17 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="separator"
                 />
               </li>
-            </DropdownItem>
-          </Separator>
-          <DropdownItem
-            className=""
-            component="a"
-            href=""
+            </InternalDropdownItem>
+          </Component>
+          <Component
             index={5}
-            isDisabled={false}
-            isHovered={false}
             key=".$separated link"
-            tooltip={null}
-            tooltipProps={Object {}}
           >
-            <DropdownItem
+            <InternalDropdownItem
               className=""
               component="a"
               context={
@@ -555,6 +671,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="menuitem"
               tabIndex={-1}
               tooltip={null}
@@ -569,26 +686,21 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                 >
                   Separated Link
                 </a>
               </li>
-            </DropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            className=""
+            </InternalDropdownItem>
+          </Component>
+          <Component
             component="button"
-            href=""
             index={6}
-            isDisabled={false}
-            isHovered={false}
             key=".$separated action"
-            tooltip={null}
-            tooltipProps={Object {}}
           >
-            <DropdownItem
+            <InternalDropdownItem
               className=""
               component="button"
               context={
@@ -602,6 +714,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="menuitem"
               tabIndex={-1}
               tooltip={null}
@@ -616,6 +729,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   type="button"
@@ -623,8 +737,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   Separated Action
                 </button>
               </li>
-            </DropdownItem>
-          </DropdownItem>
+            </InternalDropdownItem>
+          </Component>
         </ul>
       </DropdownMenu>
     </nav>
@@ -639,75 +753,34 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
   direction="up"
   dropdownItems={
     Array [
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
-      >
+      <Unknown>
         Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
+      </Unknown>,
+      <Unknown
         isDisabled={true}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
         isDisabled={true}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
-      >
+      </Unknown>,
+      <Unknown />,
+      <Unknown>
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </Unknown>,
     ]
   }
   isDisabled={false}
@@ -728,80 +801,38 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
-    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
       Array [
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
-        >
+        <Unknown>
           Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
+        </Unknown>,
+        <Unknown
           isDisabled={true}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
           isDisabled={true}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
-        >
+        </Unknown>,
+        <Unknown />,
+        <Unknown>
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </Unknown>,
       ]
     }
     isGrouped={false}
@@ -810,19 +841,12 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
     onSelect={[Function]}
     position="right"
     toggle={
-      <DropdownToggle
+      <Unknown
         aria-label="Application launcher"
-        className=""
         iconComponent={null}
-        id=""
-        isActive={false}
         isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
-        isPlain={false}
         onToggle={[Function]}
-        parentRef={null}
       >
         <ThIcon
           color="currentColor"
@@ -830,33 +854,58 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
           size="sm"
           title={null}
         />
-      </DropdownToggle>
+      </Unknown>
     }
   >
     <nav
       aria-label="Application launcher"
       className="pf-c-app-launcher pf-m-top"
     >
-      <DropdownToggle
+      <Component
         aria-label="Application launcher"
         ariaHasPopup={true}
-        className=""
         iconComponent={null}
         id="pf-toggle-id-3"
-        isActive={false}
         isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <nav
+              aria-label="Application launcher"
+              class="pf-c-app-launcher pf-m-top"
+            >
+              <button
+                aria-expanded="false"
+                class="pf-c-app-launcher__toggle"
+                id="pf-toggle-id-3"
+                type="button"
+              >
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 512 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                      transform=""
+                    />
+                  </svg>
+                </span>
+              </button>
+            </nav>,
+          }
+        }
       >
         <Toggle
-          aria-label="Application launcher"
-          ariaHasPopup={true}
           className=""
           id="pf-toggle-id-3"
           isActive={false}
@@ -868,13 +917,41 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <nav
+                aria-label="Application launcher"
+                class="pf-c-app-launcher pf-m-top"
+              >
+                <button
+                  aria-expanded="false"
+                  class="pf-c-app-launcher__toggle"
+                  id="pf-toggle-id-3"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                        transform=""
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </nav>,
+            }
+          }
         >
           <button
             aria-expanded={false}
-            aria-haspopup={true}
-            aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
             id="pf-toggle-id-3"
@@ -914,7 +991,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
             </span>
           </button>
         </Toggle>
-      </DropdownToggle>
+      </Component>
     </nav>
   </DropdownWithContext>
 </ApplicationLauncher>
@@ -927,75 +1004,34 @@ exports[`ApplicationLauncher dropup 1`] = `
   direction="up"
   dropdownItems={
     Array [
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
-      >
+      <Unknown>
         Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
+      </Unknown>,
+      <Unknown
         isDisabled={true}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
         isDisabled={true}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
-      >
+      </Unknown>,
+      <Unknown />,
+      <Unknown>
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </Unknown>,
     ]
   }
   isDisabled={false}
@@ -1016,80 +1052,38 @@ exports[`ApplicationLauncher dropup 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
-    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
       Array [
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
-        >
+        <Unknown>
           Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
+        </Unknown>,
+        <Unknown
           isDisabled={true}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
           isDisabled={true}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
-        >
+        </Unknown>,
+        <Unknown />,
+        <Unknown>
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </Unknown>,
       ]
     }
     isGrouped={false}
@@ -1098,19 +1092,12 @@ exports[`ApplicationLauncher dropup 1`] = `
     onSelect={[Function]}
     position="left"
     toggle={
-      <DropdownToggle
+      <Unknown
         aria-label="Application launcher"
-        className=""
         iconComponent={null}
-        id=""
-        isActive={false}
         isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
-        isPlain={false}
         onToggle={[Function]}
-        parentRef={null}
       >
         <ThIcon
           color="currentColor"
@@ -1118,33 +1105,58 @@ exports[`ApplicationLauncher dropup 1`] = `
           size="sm"
           title={null}
         />
-      </DropdownToggle>
+      </Unknown>
     }
   >
     <nav
       aria-label="Application launcher"
       className="pf-c-app-launcher pf-m-top"
     >
-      <DropdownToggle
+      <Component
         aria-label="Application launcher"
         ariaHasPopup={true}
-        className=""
         iconComponent={null}
         id="pf-toggle-id-2"
-        isActive={false}
         isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <nav
+              aria-label="Application launcher"
+              class="pf-c-app-launcher pf-m-top"
+            >
+              <button
+                aria-expanded="false"
+                class="pf-c-app-launcher__toggle"
+                id="pf-toggle-id-2"
+                type="button"
+              >
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 512 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                      transform=""
+                    />
+                  </svg>
+                </span>
+              </button>
+            </nav>,
+          }
+        }
       >
         <Toggle
-          aria-label="Application launcher"
-          ariaHasPopup={true}
           className=""
           id="pf-toggle-id-2"
           isActive={false}
@@ -1156,13 +1168,41 @@ exports[`ApplicationLauncher dropup 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <nav
+                aria-label="Application launcher"
+                class="pf-c-app-launcher pf-m-top"
+              >
+                <button
+                  aria-expanded="false"
+                  class="pf-c-app-launcher__toggle"
+                  id="pf-toggle-id-2"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                        transform=""
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </nav>,
+            }
+          }
         >
           <button
             aria-expanded={false}
-            aria-haspopup={true}
-            aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
             id="pf-toggle-id-2"
@@ -1202,7 +1242,7 @@ exports[`ApplicationLauncher dropup 1`] = `
             </span>
           </button>
         </Toggle>
-      </DropdownToggle>
+      </Component>
     </nav>
   </DropdownWithContext>
 </ApplicationLauncher>
@@ -1215,75 +1255,34 @@ exports[`ApplicationLauncher expanded 1`] = `
   direction="down"
   dropdownItems={
     Array [
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
-      >
+      <Unknown>
         Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
+      </Unknown>,
+      <Unknown
         isDisabled={true}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
         isDisabled={true}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
-      >
+      </Unknown>,
+      <Unknown />,
+      <Unknown>
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </Unknown>,
     ]
   }
   isDisabled={false}
@@ -1304,80 +1303,38 @@ exports[`ApplicationLauncher expanded 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
-    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
-        >
+        <Unknown>
           Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
+        </Unknown>,
+        <Unknown
           isDisabled={true}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
           isDisabled={true}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
-        >
+        </Unknown>,
+        <Unknown />,
+        <Unknown>
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </Unknown>,
       ]
     }
     isGrouped={false}
@@ -1386,19 +1343,12 @@ exports[`ApplicationLauncher expanded 1`] = `
     onSelect={[Function]}
     position="left"
     toggle={
-      <DropdownToggle
+      <Unknown
         aria-label="Application launcher"
-        className=""
         iconComponent={null}
-        id=""
-        isActive={false}
         isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={true}
-        isPlain={false}
         onToggle={[Function]}
-        parentRef={null}
       >
         <ThIcon
           color="currentColor"
@@ -1406,33 +1356,145 @@ exports[`ApplicationLauncher expanded 1`] = `
           size="sm"
           title={null}
         />
-      </DropdownToggle>
+      </Unknown>
     }
   >
     <nav
       aria-label="Application launcher"
       className="pf-c-app-launcher pf-m-expanded"
     >
-      <DropdownToggle
+      <Component
         aria-label="Application launcher"
         ariaHasPopup={true}
-        className=""
         iconComponent={null}
         id="pf-toggle-id-4"
-        isActive={false}
         isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={true}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <nav
+              aria-label="Application launcher"
+              class="pf-c-app-launcher pf-m-expanded"
+            >
+              <button
+                aria-expanded="true"
+                class="pf-c-app-launcher__toggle"
+                id="pf-toggle-id-4"
+                type="button"
+              >
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 512 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                      transform=""
+                    />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                aria-labelledby="pf-toggle-id-4"
+                class="pf-c-app-launcher__menu"
+                role="menu"
+              >
+                <li
+                  role="none"
+                >
+                  <a
+                    aria-disabled="false"
+                    class="pf-c-app-launcher__menu-item"
+                    role="menuitem"
+                    tabindex="-1"
+                  >
+                    Link
+                  </a>
+                </li>
+                <li
+                  role="none"
+                >
+                  <button
+                    class="pf-c-app-launcher__menu-item"
+                    role="menuitem"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    Action
+                  </button>
+                </li>
+                <li
+                  role="none"
+                >
+                  <a
+                    aria-disabled="true"
+                    class="pf-m-disabled pf-c-app-launcher__menu-item"
+                    role="menuitem"
+                    tabindex="-1"
+                  >
+                    Disabled Link
+                  </a>
+                </li>
+                <li
+                  role="none"
+                >
+                  <button
+                    class="pf-m-disabled pf-c-app-launcher__menu-item"
+                    disabled=""
+                    role="menuitem"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    Disabled Action
+                  </button>
+                </li>
+                <li
+                  role="none"
+                >
+                  <div
+                    class="pf-c-app-launcher__separator"
+                    role="separator"
+                  />
+                </li>
+                <li
+                  role="none"
+                >
+                  <a
+                    aria-disabled="false"
+                    class="pf-c-app-launcher__menu-item"
+                    role="menuitem"
+                    tabindex="-1"
+                  >
+                    Separated Link
+                  </a>
+                </li>
+                <li
+                  role="none"
+                >
+                  <button
+                    class="pf-c-app-launcher__menu-item"
+                    role="menuitem"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    Separated Action
+                  </button>
+                </li>
+              </ul>
+            </nav>,
+          }
+        }
       >
         <Toggle
-          aria-label="Application launcher"
-          ariaHasPopup={true}
           className=""
           id="pf-toggle-id-4"
           isActive={false}
@@ -1444,13 +1506,128 @@ exports[`ApplicationLauncher expanded 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <nav
+                aria-label="Application launcher"
+                class="pf-c-app-launcher pf-m-expanded"
+              >
+                <button
+                  aria-expanded="true"
+                  class="pf-c-app-launcher__toggle"
+                  id="pf-toggle-id-4"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                        transform=""
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <ul
+                  aria-labelledby="pf-toggle-id-4"
+                  class="pf-c-app-launcher__menu"
+                  role="menu"
+                >
+                  <li
+                    role="none"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-app-launcher__menu-item"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Link
+                    </a>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <button
+                      class="pf-c-app-launcher__menu-item"
+                      role="menuitem"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      Action
+                    </button>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <a
+                      aria-disabled="true"
+                      class="pf-m-disabled pf-c-app-launcher__menu-item"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Disabled Link
+                    </a>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <button
+                      class="pf-m-disabled pf-c-app-launcher__menu-item"
+                      disabled=""
+                      role="menuitem"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      Disabled Action
+                    </button>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <div
+                      class="pf-c-app-launcher__separator"
+                      role="separator"
+                    />
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="pf-c-app-launcher__menu-item"
+                      role="menuitem"
+                      tabindex="-1"
+                    >
+                      Separated Link
+                    </a>
+                  </li>
+                  <li
+                    role="none"
+                  >
+                    <button
+                      class="pf-c-app-launcher__menu-item"
+                      role="menuitem"
+                      tabindex="-1"
+                      type="button"
+                    >
+                      Separated Action
+                    </button>
+                  </li>
+                </ul>
+              </nav>,
+            }
+          }
         >
           <button
             aria-expanded={true}
-            aria-haspopup={true}
-            aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
             id="pf-toggle-id-4"
@@ -1490,7 +1667,7 @@ exports[`ApplicationLauncher expanded 1`] = `
             </span>
           </button>
         </Toggle>
-      </DropdownToggle>
+      </Component>
       <DropdownMenu
         aria-labelledby="pf-toggle-id-4"
         autoFocus={true}
@@ -1508,18 +1685,11 @@ exports[`ApplicationLauncher expanded 1`] = `
           hidden={false}
           role="menu"
         >
-          <DropdownItem
-            className=""
-            component="a"
-            href=""
+          <Component
             index={0}
-            isDisabled={false}
-            isHovered={false}
             key=".$link"
-            tooltip={null}
-            tooltipProps={Object {}}
           >
-            <DropdownItem
+            <InternalDropdownItem
               className=""
               component="a"
               context={
@@ -1533,6 +1703,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="menuitem"
               tabIndex={-1}
               tooltip={null}
@@ -1547,26 +1718,21 @@ exports[`ApplicationLauncher expanded 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                 >
                   Link
                 </a>
               </li>
-            </DropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            className=""
+            </InternalDropdownItem>
+          </Component>
+          <Component
             component="button"
-            href=""
             index={1}
-            isDisabled={false}
-            isHovered={false}
             key=".$action"
-            tooltip={null}
-            tooltipProps={Object {}}
           >
-            <DropdownItem
+            <InternalDropdownItem
               className=""
               component="button"
               context={
@@ -1580,6 +1746,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="menuitem"
               tabIndex={-1}
               tooltip={null}
@@ -1594,6 +1761,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   type="button"
@@ -1601,20 +1769,14 @@ exports[`ApplicationLauncher expanded 1`] = `
                   Action
                 </button>
               </li>
-            </DropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            className=""
-            component="a"
-            href=""
+            </InternalDropdownItem>
+          </Component>
+          <Component
             index={2}
             isDisabled={true}
-            isHovered={false}
             key=".$disabled link"
-            tooltip={null}
-            tooltipProps={Object {}}
           >
-            <DropdownItem
+            <InternalDropdownItem
               className=""
               component="a"
               context={
@@ -1628,6 +1790,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               isDisabled={true}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="menuitem"
               tabIndex={-1}
               tooltip={null}
@@ -1642,26 +1805,22 @@ exports[`ApplicationLauncher expanded 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                 >
                   Disabled Link
                 </a>
               </li>
-            </DropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            className=""
+            </InternalDropdownItem>
+          </Component>
+          <Component
             component="button"
-            href=""
             index={3}
             isDisabled={true}
-            isHovered={false}
             key=".$disabled action"
-            tooltip={null}
-            tooltipProps={Object {}}
           >
-            <DropdownItem
+            <InternalDropdownItem
               className=""
               component="button"
               context={
@@ -1675,6 +1834,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               isDisabled={true}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="menuitem"
               tabIndex={-1}
               tooltip={null}
@@ -1689,6 +1849,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   type="button"
@@ -1696,14 +1857,13 @@ exports[`ApplicationLauncher expanded 1`] = `
                   Disabled Action
                 </button>
               </li>
-            </DropdownItem>
-          </DropdownItem>
-          <Separator
-            className=""
+            </InternalDropdownItem>
+          </Component>
+          <Component
             index={4}
             key=".$separator"
           >
-            <DropdownItem
+            <InternalDropdownItem
               className="pf-c-app-launcher__separator"
               component="div"
               context={
@@ -1717,8 +1877,8 @@ exports[`ApplicationLauncher expanded 1`] = `
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="separator"
-              tooltip={null}
               tooltipProps={Object {}}
             >
               <li
@@ -1729,23 +1889,17 @@ exports[`ApplicationLauncher expanded 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="separator"
                 />
               </li>
-            </DropdownItem>
-          </Separator>
-          <DropdownItem
-            className=""
-            component="a"
-            href=""
+            </InternalDropdownItem>
+          </Component>
+          <Component
             index={5}
-            isDisabled={false}
-            isHovered={false}
             key=".$separated link"
-            tooltip={null}
-            tooltipProps={Object {}}
           >
-            <DropdownItem
+            <InternalDropdownItem
               className=""
               component="a"
               context={
@@ -1759,6 +1913,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="menuitem"
               tabIndex={-1}
               tooltip={null}
@@ -1773,26 +1928,21 @@ exports[`ApplicationLauncher expanded 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                 >
                   Separated Link
                 </a>
               </li>
-            </DropdownItem>
-          </DropdownItem>
-          <DropdownItem
-            className=""
+            </InternalDropdownItem>
+          </Component>
+          <Component
             component="button"
-            href=""
             index={6}
-            isDisabled={false}
-            isHovered={false}
             key=".$separated action"
-            tooltip={null}
-            tooltipProps={Object {}}
           >
-            <DropdownItem
+            <InternalDropdownItem
               className=""
               component="button"
               context={
@@ -1806,6 +1956,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
+              onSelect={[Function]}
               role="menuitem"
               tabIndex={-1}
               tooltip={null}
@@ -1820,6 +1971,7 @@ exports[`ApplicationLauncher expanded 1`] = `
                   href={null}
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  onSelect={[Function]}
                   role="menuitem"
                   tabIndex={-1}
                   type="button"
@@ -1827,8 +1979,8 @@ exports[`ApplicationLauncher expanded 1`] = `
                   Separated Action
                 </button>
               </li>
-            </DropdownItem>
-          </DropdownItem>
+            </InternalDropdownItem>
+          </Component>
         </ul>
       </DropdownMenu>
     </nav>
@@ -1843,75 +1995,34 @@ exports[`ApplicationLauncher regular 1`] = `
   direction="down"
   dropdownItems={
     Array [
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
-      >
+      <Unknown>
         Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
+      </Unknown>,
+      <Unknown
         isDisabled={true}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
         isDisabled={true}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
-      >
+      </Unknown>,
+      <Unknown />,
+      <Unknown>
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </Unknown>,
     ]
   }
   isDisabled={false}
@@ -1932,80 +2043,38 @@ exports[`ApplicationLauncher regular 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
-    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
-        >
+        <Unknown>
           Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
+        </Unknown>,
+        <Unknown
           isDisabled={true}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
           isDisabled={true}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
-        >
+        </Unknown>,
+        <Unknown />,
+        <Unknown>
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </Unknown>,
       ]
     }
     isGrouped={false}
@@ -2014,19 +2083,12 @@ exports[`ApplicationLauncher regular 1`] = `
     onSelect={[Function]}
     position="left"
     toggle={
-      <DropdownToggle
+      <Unknown
         aria-label="Application launcher"
-        className=""
         iconComponent={null}
-        id=""
-        isActive={false}
         isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
-        isPlain={false}
         onToggle={[Function]}
-        parentRef={null}
       >
         <ThIcon
           color="currentColor"
@@ -2034,33 +2096,58 @@ exports[`ApplicationLauncher regular 1`] = `
           size="sm"
           title={null}
         />
-      </DropdownToggle>
+      </Unknown>
     }
   >
     <nav
       aria-label="Application launcher"
       className="pf-c-app-launcher"
     >
-      <DropdownToggle
+      <Component
         aria-label="Application launcher"
         ariaHasPopup={true}
-        className=""
         iconComponent={null}
         id="pf-toggle-id-0"
-        isActive={false}
         isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <nav
+              aria-label="Application launcher"
+              class="pf-c-app-launcher"
+            >
+              <button
+                aria-expanded="false"
+                class="pf-c-app-launcher__toggle"
+                id="pf-toggle-id-0"
+                type="button"
+              >
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 512 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                      transform=""
+                    />
+                  </svg>
+                </span>
+              </button>
+            </nav>,
+          }
+        }
       >
         <Toggle
-          aria-label="Application launcher"
-          ariaHasPopup={true}
           className=""
           id="pf-toggle-id-0"
           isActive={false}
@@ -2072,13 +2159,41 @@ exports[`ApplicationLauncher regular 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <nav
+                aria-label="Application launcher"
+                class="pf-c-app-launcher"
+              >
+                <button
+                  aria-expanded="false"
+                  class="pf-c-app-launcher__toggle"
+                  id="pf-toggle-id-0"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                        transform=""
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </nav>,
+            }
+          }
         >
           <button
             aria-expanded={false}
-            aria-haspopup={true}
-            aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
             id="pf-toggle-id-0"
@@ -2118,7 +2233,7 @@ exports[`ApplicationLauncher regular 1`] = `
             </span>
           </button>
         </Toggle>
-      </DropdownToggle>
+      </Component>
     </nav>
   </DropdownWithContext>
 </ApplicationLauncher>
@@ -2131,75 +2246,34 @@ exports[`ApplicationLauncher right aligned 1`] = `
   direction="down"
   dropdownItems={
     Array [
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
-      >
+      <Unknown>
         Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Action
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
+      </Unknown>,
+      <Unknown
         isDisabled={true}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
         isDisabled={true}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-      />,
-      <DropdownItem
-        className=""
-        component="a"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
-      >
+      </Unknown>,
+      <Unknown />,
+      <Unknown>
         Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
+      </Unknown>,
+      <Unknown
         component="button"
-        href=""
-        isDisabled={false}
-        isHovered={false}
-        tooltip={null}
-        tooltipProps={Object {}}
       >
         Separated Action
-      </DropdownItem>,
+      </Unknown>,
     ]
   }
   isDisabled={false}
@@ -2220,80 +2294,38 @@ exports[`ApplicationLauncher right aligned 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
-    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
       Array [
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
-        >
+        <Unknown>
           Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Action
-        </DropdownItem>,
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
+        </Unknown>,
+        <Unknown
           isDisabled={true}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Disabled Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
           isDisabled={true}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-        />,
-        <DropdownItem
-          className=""
-          component="a"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
-        >
+        </Unknown>,
+        <Unknown />,
+        <Unknown>
           Separated Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
+        </Unknown>,
+        <Unknown
           component="button"
-          href=""
-          isDisabled={false}
-          isHovered={false}
-          tooltip={null}
-          tooltipProps={Object {}}
         >
           Separated Action
-        </DropdownItem>,
+        </Unknown>,
       ]
     }
     isGrouped={false}
@@ -2302,19 +2334,12 @@ exports[`ApplicationLauncher right aligned 1`] = `
     onSelect={[Function]}
     position="right"
     toggle={
-      <DropdownToggle
+      <Unknown
         aria-label="Application launcher"
-        className=""
         iconComponent={null}
-        id=""
-        isActive={false}
         isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
-        isPlain={false}
         onToggle={[Function]}
-        parentRef={null}
       >
         <ThIcon
           color="currentColor"
@@ -2322,33 +2347,58 @@ exports[`ApplicationLauncher right aligned 1`] = `
           size="sm"
           title={null}
         />
-      </DropdownToggle>
+      </Unknown>
     }
   >
     <nav
       aria-label="Application launcher"
       className="pf-c-app-launcher"
     >
-      <DropdownToggle
+      <Component
         aria-label="Application launcher"
         ariaHasPopup={true}
-        className=""
         iconComponent={null}
         id="pf-toggle-id-1"
-        isActive={false}
         isDisabled={false}
-        isFocused={false}
-        isHovered={false}
         isOpen={false}
         isPlain={false}
         key=".0"
         onEnter={[Function]}
         onToggle={[Function]}
-        parentRef={null}
+        parentRef={
+          Object {
+            "current": <nav
+              aria-label="Application launcher"
+              class="pf-c-app-launcher"
+            >
+              <button
+                aria-expanded="false"
+                class="pf-c-app-launcher__toggle"
+                id="pf-toggle-id-1"
+                type="button"
+              >
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 512 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                      transform=""
+                    />
+                  </svg>
+                </span>
+              </button>
+            </nav>,
+          }
+        }
       >
         <Toggle
-          aria-label="Application launcher"
-          ariaHasPopup={true}
           className=""
           id="pf-toggle-id-1"
           isActive={false}
@@ -2360,13 +2410,41 @@ exports[`ApplicationLauncher right aligned 1`] = `
           isSplitButton={false}
           onEnter={[Function]}
           onToggle={[Function]}
-          parentRef={null}
-          type={null}
+          parentRef={
+            Object {
+              "current": <nav
+                aria-label="Application launcher"
+                class="pf-c-app-launcher"
+              >
+                <button
+                  aria-expanded="false"
+                  class="pf-c-app-launcher__toggle"
+                  id="pf-toggle-id-1"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 512 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                        transform=""
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </nav>,
+            }
+          }
         >
           <button
             aria-expanded={false}
-            aria-haspopup={true}
-            aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
             id="pf-toggle-id-1"
@@ -2406,7 +2484,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
             </span>
           </button>
         </Toggle>
-      </DropdownToggle>
+      </Component>
     </nav>
   </DropdownWithContext>
 </ApplicationLauncher>

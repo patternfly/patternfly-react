@@ -63,6 +63,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       isGrouped,
       dropdownItems,
       items,
+      ref,
       ...props
     } = this.props;
     return (
