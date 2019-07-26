@@ -149,7 +149,8 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
             className={css(styles.formControl)}
             aria-label={currPage}
             type="number"
-            min="1"
+            disabled={page === firstPage && page === lastPage}
+            min={lastPage <= 0 && firstPage <=0 ? 0 : 1}
             max={lastPage}
             value={userInputPage}
             onKeyDown={event => this.onKeyDown(event, page, lastPage, onPageInput, onSetPage)}
