@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.13.1...demo-app-ts@2.13.2) (2019-07-26)
+
+
+### Bug Fixes
+
+* **page:** skip to content should point to primary content container ([#2519](https://github.com/patternfly/patternfly-react/issues/2519)) ([1f709bd](https://github.com/patternfly/patternfly-react/commit/1f709bd))
+
+
+
+
+
 ## [2.13.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.13.0...demo-app-ts@2.13.1) (2019-07-25)
 
 **Note:** Version bump only for package demo-app-ts

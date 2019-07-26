@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.13.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.13.0...@patternfly/react-integration@2.13.1) (2019-07-26)
+
+
+### Bug Fixes
+
+* **page:** skip to content should point to primary content container ([#2519](https://github.com/patternfly/patternfly-react/issues/2519)) ([1f709bd](https://github.com/patternfly/patternfly-react/commit/1f709bd))
+
+
+
+
+
 # [2.13.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.12.1...@patternfly/react-integration@2.13.0) (2019-07-25)
 
 

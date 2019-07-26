@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.77.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.77.1...@patternfly/react-core@3.77.2) (2019-07-26)
+
+
+### Bug Fixes
+
+* **page:** skip to content should point to primary content container ([#2519](https://github.com/patternfly/patternfly-react/issues/2519)) ([1f709bd](https://github.com/patternfly/patternfly-react/commit/1f709bd))
+* **PF4: Pagination:** When 0 or negative number is passed to Pagintion show 0 pages ([#2558](https://github.com/patternfly/patternfly-react/issues/2558)) ([7dee544](https://github.com/patternfly/patternfly-react/commit/7dee544)), closes [#2557](https://github.com/patternfly/patternfly-react/issues/2557)
+
+
+
+
+
 ## [3.77.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.77.0...@patternfly/react-core@3.77.1) (2019-07-25)
 
 
