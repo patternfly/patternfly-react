@@ -246,10 +246,7 @@ exports[`component render custom pagination toggle 1`] = `
                 ariaHasPopup={true}
                 firstIndex={1}
                 id="pf-toggle-id-10"
-<<<<<<< HEAD
-=======
                 isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={40}
@@ -313,6 +310,7 @@ exports[`component render custom pagination toggle 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
 <<<<<<< HEAD
                     isDisabled={false}
 =======
@@ -324,6 +322,9 @@ exports[`component render custom pagination toggle 1`] = `
                     isHovered={false}
 >>>>>>> feat(Pagination): add disabled flag for whole component
 >>>>>>> feat(Pagination): add disabled flag for whole component
+=======
+                    isDisabled={false}
+>>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -937,6 +938,7 @@ exports[`component render custom perPageOptions 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
 <<<<<<< HEAD
                     isDisabled={false}
 =======
@@ -948,6 +950,9 @@ exports[`component render custom perPageOptions 1`] = `
                     isHovered={false}
 >>>>>>> feat(Pagination): add disabled flag for whole component
 >>>>>>> feat(Pagination): add disabled flag for whole component
+=======
+                    isDisabled={false}
+>>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -1705,6 +1710,7 @@ exports[`component render custom start end 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
 <<<<<<< HEAD
                     isDisabled={false}
 =======
@@ -1716,6 +1722,9 @@ exports[`component render custom start end 1`] = `
                     isHovered={false}
 >>>>>>> feat(Pagination): add disabled flag for whole component
 >>>>>>> feat(Pagination): add disabled flag for whole component
+=======
+                    isDisabled={false}
+>>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -2841,6 +2850,7 @@ exports[`component render last page 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
 <<<<<<< HEAD
                     isDisabled={false}
 =======
@@ -2852,6 +2862,9 @@ exports[`component render last page 1`] = `
                     isHovered={false}
 >>>>>>> feat(Pagination): add disabled flag for whole component
 >>>>>>> feat(Pagination): add disabled flag for whole component
+=======
+                    isDisabled={false}
+>>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -3605,6 +3618,7 @@ exports[`component render limited number of pages 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
 <<<<<<< HEAD
                     isDisabled={false}
 =======
@@ -3616,6 +3630,9 @@ exports[`component render limited number of pages 1`] = `
                     isHovered={false}
 >>>>>>> feat(Pagination): add disabled flag for whole component
 >>>>>>> feat(Pagination): add disabled flag for whole component
+=======
+                    isDisabled={false}
+>>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -4376,6 +4393,7 @@ exports[`component render no items 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
 <<<<<<< HEAD
                     isDisabled={true}
 =======
@@ -4387,6 +4405,9 @@ exports[`component render no items 1`] = `
                     isHovered={false}
 >>>>>>> feat(Pagination): add disabled flag for whole component
 >>>>>>> feat(Pagination): add disabled flag for whole component
+=======
+                    isDisabled={false}
+>>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -5141,6 +5162,7 @@ exports[`component render should render correctly bottom 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
 <<<<<<< HEAD
                     isDisabled={false}
 =======
@@ -5152,6 +5174,9 @@ exports[`component render should render correctly bottom 1`] = `
                     isHovered={false}
 >>>>>>> feat(Pagination): add disabled flag for whole component
 >>>>>>> feat(Pagination): add disabled flag for whole component
+=======
+                    isDisabled={false}
+>>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -5846,11 +5871,12 @@ exports[`component render should render correctly disabled 1`] = `
                       class="pf-c-dropdown"
                     >
                       <div
-                        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                        class="pf-c-options-menu__toggle pf-m-disabled pf-m-plain pf-m-text"
                       >
                         <button
                           aria-expanded="false"
-                          class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
+                          class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                          disabled=""
                           id="pagination-options-menu-toggle"
                           type="button"
                         >
@@ -5905,6 +5931,7 @@ exports[`component render should render correctly disabled 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
 <<<<<<< HEAD
                     isDisabled={false}
 =======
@@ -5916,6 +5943,9 @@ exports[`component render should render correctly disabled 1`] = `
                     isHovered={false}
 >>>>>>> feat(Pagination): add disabled flag for whole component
 >>>>>>> feat(Pagination): add disabled flag for whole component
+=======
+                    isDisabled={true}
+>>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -5924,11 +5954,12 @@ exports[`component render should render correctly disabled 1`] = `
                           class="pf-c-dropdown"
                         >
                           <div
-                            class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                            class="pf-c-options-menu__toggle pf-m-disabled pf-m-plain pf-m-text"
                           >
                             <button
                               aria-expanded="false"
-                              class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
+                              class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                              disabled=""
                               id="pagination-options-menu-toggle"
                               type="button"
                             >
@@ -5991,11 +6022,12 @@ exports[`component render should render correctly disabled 1`] = `
                             class="pf-c-dropdown"
                           >
                             <div
-                              class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                              class="pf-c-options-menu__toggle pf-m-disabled pf-m-plain pf-m-text"
                             >
                               <button
                                 aria-expanded="false"
-                                class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
+                                class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                                disabled=""
                                 id="pagination-options-menu-toggle"
                                 type="button"
                               >
@@ -6042,14 +6074,8 @@ exports[`component render should render correctly disabled 1`] = `
                     >
                       <button
                         aria-expanded={false}
-<<<<<<< HEAD
-                        className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
-                        disabled={false}
-=======
-                        aria-label="Select"
-                        className="pf-c-dropdown__toggle-button pf-m-disabled pf-c-options-menu__toggle-button"
+                        className="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
                         disabled={true}
->>>>>>> feat(Pagination): add disabled flag for whole component
                         id="pagination-options-menu-toggle"
                         onClick={[Function]}
                         onKeyDown={[Function]}
@@ -6645,10 +6671,10 @@ exports[`component render should render correctly top 1`] = `
                                
                               of 
                               <strong>
-                                40
+                                20
                               </strong>
                                
-                              values
+                              items
                             </span>
                           </span>
                           <svg
@@ -6682,6 +6708,7 @@ exports[`component render should render correctly top 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
 <<<<<<< HEAD
                     isDisabled={false}
 =======
@@ -6693,6 +6720,9 @@ exports[`component render should render correctly top 1`] = `
                     isHovered={false}
 >>>>>>> feat(Pagination): add disabled flag for whole component
 >>>>>>> feat(Pagination): add disabled flag for whole component
+=======
+                    isDisabled={false}
+>>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -6723,10 +6753,10 @@ exports[`component render should render correctly top 1`] = `
                                    
                                   of 
                                   <strong>
-                                    40
+                                    20
                                   </strong>
                                    
-                                  values
+                                  items
                                 </span>
                               </span>
                               <svg
@@ -6790,10 +6820,10 @@ exports[`component render should render correctly top 1`] = `
                                      
                                     of 
                                     <strong>
-                                      40
+                                      20
                                     </strong>
                                      
-                                    values
+                                    items
                                   </span>
                                 </span>
                                 <svg
@@ -7196,15 +7226,8 @@ exports[`component render titles 1`] = `
           Items per page
           :
         </span>
-<<<<<<< HEAD
         <Component
-          direction="up"
-=======
-        <Dropdown
-          autoFocus={true}
-          className=""
           direction="down"
->>>>>>> feat(Pagination): add disabled flag for whole component
           dropdownItems={
             Array [
               <Unknown
@@ -7406,7 +7429,7 @@ exports[`component render titles 1`] = `
                 parentRef={
                   Object {
                     "current": <div
-                      class="pf-c-dropdown pf-m-top"
+                      class="pf-c-dropdown"
                     >
                       <div
                         class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
@@ -7434,7 +7457,7 @@ exports[`component render titles 1`] = `
                                 40
                               </strong>
                                
-                              items
+                              values
                             </span>
                           </span>
                           <svg
@@ -7468,6 +7491,7 @@ exports[`component render titles 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
+<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
 <<<<<<< HEAD
                     isDisabled={false}
 =======
@@ -7479,12 +7503,15 @@ exports[`component render titles 1`] = `
                     isHovered={false}
 >>>>>>> feat(Pagination): add disabled flag for whole component
 >>>>>>> feat(Pagination): add disabled flag for whole component
+=======
+                    isDisabled={false}
+>>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
                       Object {
                         "current": <div
-                          class="pf-c-dropdown pf-m-top"
+                          class="pf-c-dropdown"
                         >
                           <div
                             class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
@@ -7512,7 +7539,7 @@ exports[`component render titles 1`] = `
                                     40
                                   </strong>
                                    
-                                  items
+                                  values
                                 </span>
                               </span>
                               <svg
@@ -7551,7 +7578,7 @@ exports[`component render titles 1`] = `
                       parentRef={
                         Object {
                           "current": <div
-                            class="pf-c-dropdown pf-m-top"
+                            class="pf-c-dropdown"
                           >
                             <div
                               class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
@@ -7579,7 +7606,7 @@ exports[`component render titles 1`] = `
                                       40
                                     </strong>
                                      
-                                    items
+                                    values
                                   </span>
                                 </span>
                                 <svg
@@ -7973,22 +8000,15 @@ exports[`component render up drop direction 1`] = `
           Items per page
           :
         </span>
-        <Dropdown
-          autoFocus={true}
-          className=""
+        <Component
           direction="up"
           dropdownItems={
             Array [
-              <DropdownItem
+              <Unknown
                 className="pf-c-options-menu__menu-item pf-m-selected"
                 component="button"
                 data-action="per-page-10"
-                href=""
-                isDisabled={false}
-                isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 10
                 <span
@@ -8006,17 +8026,12 @@ exports[`component render up drop direction 1`] = `
                     title={null}
                   />
                 </i>
-              </DropdownItem>,
-              <DropdownItem
+              </Unknown>,
+              <Unknown
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-20"
-                href=""
-                isDisabled={false}
-                isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 20
                 <span
@@ -8024,17 +8039,12 @@ exports[`component render up drop direction 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Unknown>,
+              <Unknown
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-50"
-                href=""
-                isDisabled={false}
-                isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 50
                 <span
@@ -8042,17 +8052,12 @@ exports[`component render up drop direction 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
-              <DropdownItem
+              </Unknown>,
+              <Unknown
                 className="pf-c-options-menu__menu-item"
                 component="button"
                 data-action="per-page-100"
-                href=""
-                isDisabled={false}
-                isHovered={false}
                 onClick={[Function]}
-                tooltip={null}
-                tooltipProps={Object {}}
               >
                 100
                 <span
@@ -8060,14 +8065,12 @@ exports[`component render up drop direction 1`] = `
                 >
                    per page
                 </span>
-              </DropdownItem>,
+              </Unknown>,
             ]
           }
-          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
-          position="left"
           toggle={
             <Unknown
               firstIndex={1}
@@ -8086,21 +8089,15 @@ exports[`component render up drop direction 1`] = `
           }
         >
           <DropdownWithContext
-            autoFocus={true}
             className=""
             direction="up"
             dropdownItems={
               Array [
-                <DropdownItem
+                <Unknown
                   className="pf-c-options-menu__menu-item pf-m-selected"
                   component="button"
                   data-action="per-page-10"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
                   onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
                 >
                   10
                   <span
@@ -8118,17 +8115,12 @@ exports[`component render up drop direction 1`] = `
                       title={null}
                     />
                   </i>
-                </DropdownItem>,
-                <DropdownItem
+                </Unknown>,
+                <Unknown
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-20"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
                   onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
                 >
                   20
                   <span
@@ -8136,17 +8128,12 @@ exports[`component render up drop direction 1`] = `
                   >
                      per page
                   </span>
-                </DropdownItem>,
-                <DropdownItem
+                </Unknown>,
+                <Unknown
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-50"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
                   onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
                 >
                   50
                   <span
@@ -8154,17 +8141,12 @@ exports[`component render up drop direction 1`] = `
                   >
                      per page
                   </span>
-                </DropdownItem>,
-                <DropdownItem
+                </Unknown>,
+                <Unknown
                   className="pf-c-options-menu__menu-item"
                   component="button"
                   data-action="per-page-100"
-                  href=""
-                  isDisabled={false}
-                  isHovered={false}
                   onClick={[Function]}
-                  tooltip={null}
-                  tooltipProps={Object {}}
                 >
                   100
                   <span
@@ -8172,7 +8154,7 @@ exports[`component render up drop direction 1`] = `
                   >
                      per page
                   </span>
-                </DropdownItem>,
+                </Unknown>,
               ]
             }
             isGrouped={false}
@@ -8214,6 +8196,60 @@ exports[`component render up drop direction 1`] = `
                 onEnter={[Function]}
                 onToggle={[Function]}
                 optionsToggle="Select"
+                parentRef={
+                  Object {
+                    "current": <div
+                      class="pf-c-dropdown pf-m-top"
+                    >
+                      <div
+                        class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                      >
+                        <button
+                          aria-expanded="false"
+                          class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
+                          id="pagination-options-menu-toggle"
+                          type="button"
+                        >
+                          <span
+                            class="pf-c-dropdown__toggle-text"
+                          >
+                            <span
+                              class="pf-c-options-menu__toggle-text"
+                            >
+                              <strong>
+                                1
+                                 - 
+                                10
+                              </strong>
+                               
+                              of 
+                              <strong>
+                                40
+                              </strong>
+                               
+                              items
+                            </span>
+                          </span>
+                          <svg
+                            aria-hidden="true"
+                            class="pf-c-dropdown__toggle-icon"
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style="vertical-align: -0.125em;"
+                            viewBox="0 0 320 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                              transform=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>,
+                  }
+                }
                 showToggle={true}
                 toggleTemplate={[Function]}
                 widgetId="pagination-options-menu"
@@ -8221,23 +8257,69 @@ exports[`component render up drop direction 1`] = `
                 <div
                   className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
                 >
-                  <DropdownToggle
+                  <Component
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
-                    iconComponent={[Function]}
                     id="pagination-options-menu-toggle"
-                    isActive={false}
                     isDisabled={false}
-                    isFocused={false}
-                    isHovered={false}
                     isOpen={false}
-                    isPlain={false}
-                    isSplitButton={true}
                     onToggle={[Function]}
-                    parentRef={null}
+                    parentRef={
+                      Object {
+                        "current": <div
+                          class="pf-c-dropdown pf-m-top"
+                        >
+                          <div
+                            class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                          >
+                            <button
+                              aria-expanded="false"
+                              class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
+                              id="pagination-options-menu-toggle"
+                              type="button"
+                            >
+                              <span
+                                class="pf-c-dropdown__toggle-text"
+                              >
+                                <span
+                                  class="pf-c-options-menu__toggle-text"
+                                >
+                                  <strong>
+                                    1
+                                     - 
+                                    10
+                                  </strong>
+                                   
+                                  of 
+                                  <strong>
+                                    40
+                                  </strong>
+                                   
+                                  items
+                                </span>
+                              </span>
+                              <svg
+                                aria-hidden="true"
+                                class="pf-c-dropdown__toggle-icon"
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style="vertical-align: -0.125em;"
+                                viewBox="0 0 320 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                                  transform=""
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>,
+                      }
+                    }
                   >
                     <Toggle
-                      aria-label="Select"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -8246,16 +8328,67 @@ exports[`component render up drop direction 1`] = `
                       isHovered={false}
                       isOpen={false}
                       isPlain={false}
-                      isSplitButton={true}
+                      isSplitButton={false}
                       onEnter={[Function]}
                       onToggle={[Function]}
-                      parentRef={null}
-                      type={null}
+                      parentRef={
+                        Object {
+                          "current": <div
+                            class="pf-c-dropdown pf-m-top"
+                          >
+                            <div
+                              class="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+                            >
+                              <button
+                                aria-expanded="false"
+                                class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
+                                id="pagination-options-menu-toggle"
+                                type="button"
+                              >
+                                <span
+                                  class="pf-c-dropdown__toggle-text"
+                                >
+                                  <span
+                                    class="pf-c-options-menu__toggle-text"
+                                  >
+                                    <strong>
+                                      1
+                                       - 
+                                      10
+                                    </strong>
+                                     
+                                    of 
+                                    <strong>
+                                      40
+                                    </strong>
+                                     
+                                    items
+                                  </span>
+                                </span>
+                                <svg
+                                  aria-hidden="true"
+                                  class="pf-c-dropdown__toggle-icon"
+                                  fill="currentColor"
+                                  height="1em"
+                                  role="img"
+                                  style="vertical-align: -0.125em;"
+                                  viewBox="0 0 320 512"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                                    transform=""
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>,
+                        }
+                      }
                     >
                       <button
                         aria-expanded={false}
-                        aria-label="Select"
-                        className="pf-c-dropdown__toggle-button pf-c-options-menu__toggle-button"
+                        className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
                         onClick={[Function]}
@@ -8319,12 +8452,12 @@ exports[`component render up drop direction 1`] = `
                         </CaretDownIcon>
                       </button>
                     </Toggle>
-                  </DropdownToggle>
+                  </Component>
                 </div>
               </Component>
             </div>
           </DropdownWithContext>
-        </Dropdown>
+        </Component>
       </div>
     </PaginationOptionsMenu>
     <Navigation

@@ -3,17 +3,6 @@
 exports[`Dropdown toggle 1`] = `
 <Component
   id="Dropdown Toggle"
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Toggle.test.tsx.snap
-=======
-  isActive={false}
-  isDisabled={false}
-  isFocused={false}
-  isHovered={false}
-  isOpen={false}
-  isPlain={false}
-  onToggle={[Function]}
-  parentRef={null}
->>>>>>> feat(Pagination): add disabled flag for whole component:packages/patternfly-4/react-core/src/components/Dropdown/__snapshots__/Toggle.test.js.snap
 >
   <Toggle
     className=""
