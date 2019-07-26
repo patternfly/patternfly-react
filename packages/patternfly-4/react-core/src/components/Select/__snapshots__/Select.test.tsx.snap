@@ -2447,6 +2447,7 @@ exports[`select custom select filter filters properly 1`] = `
             className="pf-c-form-control pf-c-select__toggle-typeahead"
             id="select-typeahead"
             onChange={[Function]}
+            onFocus={[Function]}
             placeholder=""
             type="text"
             value="r"
