@@ -130,9 +130,9 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   ...props
 }: PaginationProps) => {
   const lastPage = Math.ceil(itemCount / perPage);
-  const firstIndex = itemCount === 0 ? 0 : (page - 1) * perPage + 1;
+  const firstIndex = itemCount <= 0 ? 0 : (page - 1) * perPage + 1;
   let lastIndex;
-  if (itemCount === 0) {
+  if (itemCount <= 0) {
     lastIndex = 0;
   } else {
     lastIndex = page === lastPage ? itemCount : page * perPage;
@@ -170,7 +170,8 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         toFirstPage={titles.toFirstPage}
         currPage={titles.currPage}
         paginationTitle={titles.paginationTitle}
-        page={page}
+        page={itemCount <= 0 ? 0 : page}
+        firstPage={itemsStart !== null ? itemsStart : firstIndex}
         lastPage={lastPage}
         onSetPage={onSetPage}
         onFirstClick={onFirstClick}

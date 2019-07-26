@@ -50,6 +50,7 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
         <DropdownToggle
           aria-label={optionsToggle}
           onToggle={onToggle}
+          isDisabled={itemCount <= 0}
           isOpen={isOpen}
           id={`${widgetId}-toggle`}
           className={styles.optionsMenuToggleButton}
