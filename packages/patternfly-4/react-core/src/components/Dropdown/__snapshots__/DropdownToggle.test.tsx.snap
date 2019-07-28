@@ -30,6 +30,7 @@ exports[`state active 1`] = `
       type="button"
     >
       <span
+        aria-label="dropdown toggle button"
         className="pf-c-dropdown__toggle-text"
       >
         Dropdown
@@ -97,6 +98,7 @@ exports[`state focus 1`] = `
       type="button"
     >
       <span
+        aria-label="dropdown toggle button"
         className="pf-c-dropdown__toggle-text"
       >
         Dropdown
@@ -164,6 +166,7 @@ exports[`state hover 1`] = `
       type="button"
     >
       <span
+        aria-label="dropdown toggle button"
         className="pf-c-dropdown__toggle-text"
       >
         Dropdown

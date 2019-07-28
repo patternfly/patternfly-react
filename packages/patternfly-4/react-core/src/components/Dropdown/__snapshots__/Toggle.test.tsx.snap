@@ -28,6 +28,7 @@ exports[`Dropdown toggle 1`] = `
       type="button"
     >
       <span
+        aria-label="dropdown toggle button"
         className="pf-c-dropdown__toggle-text"
       >
         Dropdown

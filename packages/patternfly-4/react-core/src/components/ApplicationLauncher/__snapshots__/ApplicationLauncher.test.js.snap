@@ -140,7 +140,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 id="pf-toggle-id-5"
                 type="button"
               >
-                <span>
+                <span
+                  aria-label="Application launcher"
+                >
                   <svg
                     aria-hidden="true"
                     fill="currentColor"
@@ -273,7 +275,9 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   id="pf-toggle-id-5"
                   type="button"
                 >
-                  <span>
+                  <span
+                    aria-label="Application launcher"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -392,6 +396,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
             type="button"
           >
             <span
+              aria-label="Application launcher"
               className={null}
             >
               <HelpIcon
@@ -884,7 +889,9 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
                 id="pf-toggle-id-3"
                 type="button"
               >
-                <span>
+                <span
+                  aria-label="Application launcher"
+                >
                   <svg
                     aria-hidden="true"
                     fill="currentColor"
@@ -929,7 +936,9 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
                   id="pf-toggle-id-3"
                   type="button"
                 >
-                  <span>
+                  <span
+                    aria-label="Application launcher"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -960,6 +969,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
             type="button"
           >
             <span
+              aria-label="Application launcher"
               className={null}
             >
               <ThIcon
@@ -1135,7 +1145,9 @@ exports[`ApplicationLauncher dropup 1`] = `
                 id="pf-toggle-id-2"
                 type="button"
               >
-                <span>
+                <span
+                  aria-label="Application launcher"
+                >
                   <svg
                     aria-hidden="true"
                     fill="currentColor"
@@ -1180,7 +1192,9 @@ exports[`ApplicationLauncher dropup 1`] = `
                   id="pf-toggle-id-2"
                   type="button"
                 >
-                  <span>
+                  <span
+                    aria-label="Application launcher"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -1211,6 +1225,7 @@ exports[`ApplicationLauncher dropup 1`] = `
             type="button"
           >
             <span
+              aria-label="Application launcher"
               className={null}
             >
               <ThIcon
@@ -1386,7 +1401,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                 id="pf-toggle-id-4"
                 type="button"
               >
-                <span>
+                <span
+                  aria-label="Application launcher"
+                >
                   <svg
                     aria-hidden="true"
                     fill="currentColor"
@@ -1518,7 +1535,9 @@ exports[`ApplicationLauncher expanded 1`] = `
                   id="pf-toggle-id-4"
                   type="button"
                 >
-                  <span>
+                  <span
+                    aria-label="Application launcher"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -1636,6 +1655,7 @@ exports[`ApplicationLauncher expanded 1`] = `
             type="button"
           >
             <span
+              aria-label="Application launcher"
               className={null}
             >
               <ThIcon
@@ -2126,7 +2146,9 @@ exports[`ApplicationLauncher regular 1`] = `
                 id="pf-toggle-id-0"
                 type="button"
               >
-                <span>
+                <span
+                  aria-label="Application launcher"
+                >
                   <svg
                     aria-hidden="true"
                     fill="currentColor"
@@ -2171,7 +2193,9 @@ exports[`ApplicationLauncher regular 1`] = `
                   id="pf-toggle-id-0"
                   type="button"
                 >
-                  <span>
+                  <span
+                    aria-label="Application launcher"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -2202,6 +2226,7 @@ exports[`ApplicationLauncher regular 1`] = `
             type="button"
           >
             <span
+              aria-label="Application launcher"
               className={null}
             >
               <ThIcon
@@ -2377,7 +2402,9 @@ exports[`ApplicationLauncher right aligned 1`] = `
                 id="pf-toggle-id-1"
                 type="button"
               >
-                <span>
+                <span
+                  aria-label="Application launcher"
+                >
                   <svg
                     aria-hidden="true"
                     fill="currentColor"
@@ -2422,7 +2449,9 @@ exports[`ApplicationLauncher right aligned 1`] = `
                   id="pf-toggle-id-1"
                   type="button"
                 >
-                  <span>
+                  <span
+                    aria-label="Application launcher"
+                  >
                     <svg
                       aria-hidden="true"
                       fill="currentColor"
@@ -2453,6 +2482,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
             type="button"
           >
             <span
+              aria-label="Application launcher"
               className={null}
             >
               <ThIcon

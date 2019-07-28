@@ -3038,6 +3038,7 @@ exports[`dropdown basic 1`] = `
                 type="button"
               >
                 <span
+                  aria-label="dropdown toggle button"
                   class="pf-c-dropdown__toggle-text"
                 >
                   Dropdown
@@ -3100,6 +3101,7 @@ exports[`dropdown basic 1`] = `
                   type="button"
                 >
                   <span
+                    aria-label="dropdown toggle button"
                     class="pf-c-dropdown__toggle-text"
                   >
                     Dropdown
@@ -3148,6 +3150,7 @@ exports[`dropdown basic 1`] = `
             type="button"
           >
             <span
+              aria-label="dropdown toggle button"
               className="pf-c-dropdown__toggle-text"
             >
               Dropdown
@@ -3506,6 +3509,7 @@ exports[`dropdown dropup + right aligned 1`] = `
                 type="button"
               >
                 <span
+                  aria-label="dropdown toggle button"
                   class="pf-c-dropdown__toggle-text"
                 >
                   Dropdown
@@ -3554,6 +3558,7 @@ exports[`dropdown dropup + right aligned 1`] = `
                   type="button"
                 >
                   <span
+                    aria-label="dropdown toggle button"
                     class="pf-c-dropdown__toggle-text"
                   >
                     Dropdown
@@ -3588,6 +3593,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             type="button"
           >
             <span
+              aria-label="dropdown toggle button"
               className="pf-c-dropdown__toggle-text"
             >
               Dropdown
@@ -3915,6 +3921,7 @@ exports[`dropdown dropup 1`] = `
                 type="button"
               >
                 <span
+                  aria-label="dropdown toggle button"
                   class="pf-c-dropdown__toggle-text"
                 >
                   Dropdown
@@ -3963,6 +3970,7 @@ exports[`dropdown dropup 1`] = `
                   type="button"
                 >
                   <span
+                    aria-label="dropdown toggle button"
                     class="pf-c-dropdown__toggle-text"
                   >
                     Dropdown
@@ -3997,6 +4005,7 @@ exports[`dropdown dropup 1`] = `
             type="button"
           >
             <span
+              aria-label="dropdown toggle button"
               className="pf-c-dropdown__toggle-text"
             >
               Dropdown
@@ -4324,6 +4333,7 @@ exports[`dropdown expanded 1`] = `
                 type="button"
               >
                 <span
+                  aria-label="dropdown toggle button"
                   class="pf-c-dropdown__toggle-text"
                 >
                   Dropdown
@@ -4448,6 +4458,7 @@ exports[`dropdown expanded 1`] = `
                   type="button"
                 >
                   <span
+                    aria-label="dropdown toggle button"
                     class="pf-c-dropdown__toggle-text"
                   >
                     Dropdown
@@ -4558,6 +4569,7 @@ exports[`dropdown expanded 1`] = `
             type="button"
           >
             <span
+              aria-label="dropdown toggle button"
               className="pf-c-dropdown__toggle-text"
             >
               Dropdown
@@ -5141,6 +5153,7 @@ exports[`dropdown regular 1`] = `
                 type="button"
               >
                 <span
+                  aria-label="dropdown toggle button"
                   class="pf-c-dropdown__toggle-text"
                 >
                   Dropdown
@@ -5189,6 +5202,7 @@ exports[`dropdown regular 1`] = `
                   type="button"
                 >
                   <span
+                    aria-label="dropdown toggle button"
                     class="pf-c-dropdown__toggle-text"
                   >
                     Dropdown
@@ -5223,6 +5237,7 @@ exports[`dropdown regular 1`] = `
             type="button"
           >
             <span
+              aria-label="dropdown toggle button"
               className="pf-c-dropdown__toggle-text"
             >
               Dropdown
@@ -5550,6 +5565,7 @@ exports[`dropdown right aligned 1`] = `
                 type="button"
               >
                 <span
+                  aria-label="dropdown toggle button"
                   class="pf-c-dropdown__toggle-text"
                 >
                   Dropdown
@@ -5598,6 +5614,7 @@ exports[`dropdown right aligned 1`] = `
                   type="button"
                 >
                   <span
+                    aria-label="dropdown toggle button"
                     class="pf-c-dropdown__toggle-text"
                   >
                     Dropdown
@@ -5632,6 +5649,7 @@ exports[`dropdown right aligned 1`] = `
             type="button"
           >
             <span
+              aria-label="dropdown toggle button"
               className="pf-c-dropdown__toggle-text"
             >
               Dropdown

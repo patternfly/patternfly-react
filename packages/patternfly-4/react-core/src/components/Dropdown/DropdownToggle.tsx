@@ -66,7 +66,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
       isPlain={isPlain}
       onToggle={onToggle}
       {...splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' }}>
-      {children && <span className={IconComponent && css(styles.dropdownToggleText)}>{children}</span>}
+      {children && <span className={IconComponent && css(styles.dropdownToggleText)} aria-label={props['aria-label'] || 'dropdown toggle button'}>{children}</span>}
       {IconComponent && <IconComponent className={css(children && styles.dropdownToggleIcon)} />}
     </Toggle>
   );

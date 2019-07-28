@@ -589,7 +589,7 @@ class SplitButtonDisabledDropdown extends React.Component {
           <DropdownToggle
             splitButtonItems={[
               <DropdownToggleCheckbox
-                id="example-checkbox-1"
+                id="example-checkbox-2"
                 key="checkbox"
                 aria-label="Select all"
                 isDisabled
