@@ -10,6 +10,7 @@ export {
   sortable,
   headerCol,
   cellWidth,
+  wrappable,
   expandable,
   isRowExpanded,
   textCenter,

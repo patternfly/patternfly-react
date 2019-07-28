@@ -2,6 +2,7 @@ export { default as selectable } from './decorators/selectable';
 export { default as sortable } from './decorators/sortable';
 export { default as cellActions } from './decorators/cellActions';
 export { default as cellWidth } from './decorators/cellWidth';
+export { default as wrappable } from './decorators/wrappable';
 export { default as textCenter } from './decorators/textCenter';
 export { collapsible, expandedRow, expandable } from './decorators/collapsible';
 export { compoundExpand } from './decorators/compoundExpand';
