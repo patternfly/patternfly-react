@@ -15,6 +15,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   }
   id="PageId"
   isManagedSidebar={false}
+  isManagedSidebarOpen={true}
   mainContainerId={null}
   onPageResize={[Function]}
   sidebar={
@@ -135,6 +136,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
   }
   id="PageId"
   isManagedSidebar={false}
+  isManagedSidebarOpen={true}
   mainContainerId={null}
   onPageResize={[Function]}
   sidebar={
@@ -438,6 +440,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
   }
   id="PageId"
   isManagedSidebar={false}
+  isManagedSidebarOpen={true}
   mainContainerId="main-content-page-layout-test-nav"
   onPageResize={[Function]}
   sidebar={
@@ -739,6 +742,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   }
   id="PageId"
   isManagedSidebar={false}
+  isManagedSidebarOpen={true}
   mainContainerId={null}
   onPageResize={[Function]}
   sidebar={
