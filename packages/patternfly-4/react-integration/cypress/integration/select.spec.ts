@@ -57,14 +57,23 @@ describe('Select Test', () => {
     cy.get('.pf-c-chip').should('not.exist');
   });
 
-  it('Verify Custom Typeahead Multi Select', () => {
-    cy.get('#custom-typeahead-multi-select').click();
+  it('Verify Plain Typeahead Multi Select', () => {
+    cy.get('#typeahead-multi-select').click();
     cy.get('#Florida-1').click();
-    cy.get('.pf-c-chip').contains('div-Florida-test_span').should('exist');
+    cy.get('.pf-c-chip').contains('Florida').should('exist');
     cy.get('#Alabama-0').click();
     cy.get('.pf-m-overflow > .pf-c-button').should('exist');
     cy.get('#Florida-1').click();
-    cy.get('.pf-c-chip').contains('div-Alabama-test_span').should('exist');
+    cy.get('.pf-c-chip').contains('Alabama').should('exist');
     cy.get('.pf-m-overflow > .pf-c-button').should('not.exist');
+    cy.get('#Florida-1').click();
+    cy.get('.pf-m-overflow > .pf-c-button').should('exist');
+    cy.get('.pf-m-overflow > .pf-c-button').click();
+    cy.get('.pf-c-chip').contains('Florida').should('exist');
+    cy.get('.pf-c-chip').contains('Alabama').should('exist');
+    cy.get('.pf-c-chip').contains('.pf-c-chip', 'Florida').children('button').click();
+    cy.get('.pf-c-chip').contains('Florida').should('not.exist');
+    cy.get('.pf-c-select__toggle > .pf-m-plain').click();
+    cy.get('.pf-c-chip').should('not.exist');
   });
 });

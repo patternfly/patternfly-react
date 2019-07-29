@@ -14,7 +14,8 @@ export interface SelectDemoState {
   typeaheadMultiIsExpanded: boolean,
   typeaheadMultiSelected: string[],
   customTypeaheadMultiIsExpanded: boolean,
-  customTypeaheadMultiSelected: string[]
+  customTypeaheadMultiSelected: string[],
+  customTypeaheadMultiIsPlain: boolean
 }
 
 export class SelectDemo extends Component<SelectDemoState> {
@@ -30,7 +31,8 @@ export class SelectDemo extends Component<SelectDemoState> {
     typeaheadMultiIsExpanded: false,
     typeaheadMultiSelected: [],
     customTypeaheadMultiIsExpanded: false,
-    customTypeaheadMultiSelected: []
+    customTypeaheadMultiSelected: [],
+    plainTypeaheadMultiIsPlain: true
   };
 
   singleOptions = [
@@ -180,7 +182,7 @@ export class SelectDemo extends Component<SelectDemoState> {
       singleIsExpanded: false,
       customSingleSelected: null,
       customSingleIsExpanded: false,
-      checkSelected: [], 
+      checkSelected: [],
       checkIsExpanded: false,
       typeaheadSelected: null,
       typeaheadIsExpanded: false,
@@ -383,14 +385,51 @@ export class SelectDemo extends Component<SelectDemoState> {
     );
   }
 
+  renderPlainTypeaheadMultiSelect() {
+    const { customTypeaheadMultiIsExpanded, customTypeaheadMultiSelected, plainTypeaheadMultiIsPlain } = this.state;
+    const titleId = 'plain-typeahead-select-id';
+
+    return (
+      <StackItem isFilled={false}>
+        <Title size="2xl">Custom Typeahead Plain Multi Select</Title>
+        <div>
+          <span id={titleId} hidden>
+            Select a state
+          </span>
+        <Select
+          variant={SelectVariant.typeaheadMulti}
+          aria-label="Select a state"
+          onToggle={this.customTypeaheadMultiOnToggle}
+          onSelect={this.customTypeaheadMultiOnSelect}
+          onClear={this.clearSelection}
+          selections={customTypeaheadMultiSelected}
+          isExpanded={customTypeaheadMultiIsExpanded}
+          isPlain={plainTypeaheadMultiIsPlain}
+          ariaLabelledBy={titleId}
+          placeholderText="Select a state"
+        >
+          {this.typeaheadOptions.map((option, index) => (
+            <SelectOption isDisabled={option.disabled} key={index} value={option.value}>
+              <div>div-{option.value}<span>-test_span</span><CartArrowDownIcon /></div>
+            </SelectOption>
+          ))}
+        </Select>
+        </div>
+      </StackItem>
+    );
+  }
+
   render() {
-    return <Stack gutter="md">
+    return (
+      <Stack gutter="md">
       {this.renderSingleSelect()}
       {this.renderCustomSingleSelect()}
       {this.renderCheckboxSelect()}
       {this.renderTypeaheadSelect()}
       {this.renderTypeaheadMultiSelect()}
       {this.renderCustomTypeaheadMultiSelect()}
+      {this.renderPlainTypeaheadMultiSelect()}
     </Stack>
+    )
   }
 }
