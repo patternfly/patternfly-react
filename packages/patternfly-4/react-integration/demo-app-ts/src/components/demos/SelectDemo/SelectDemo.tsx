@@ -13,9 +13,12 @@ export interface SelectDemoState {
   typeaheadSelected: string,
   typeaheadMultiIsExpanded: boolean,
   typeaheadMultiSelected: string[],
+  plainTypeaheadMultiIsExpanded: boolean,
+  plainTypeaheadMultiSelected: string[],
+  plainTypeaheadMultiIsPlain: boolean,
   customTypeaheadMultiIsExpanded: boolean,
-  customTypeaheadMultiSelected: string[],
-  customTypeaheadMultiIsPlain: boolean
+  customTypeaheadMultiSelected: string[]
+
 }
 
 export class SelectDemo extends Component<SelectDemoState> {
@@ -30,9 +33,11 @@ export class SelectDemo extends Component<SelectDemoState> {
     typeaheadSelected: null,
     typeaheadMultiIsExpanded: false,
     typeaheadMultiSelected: [],
+    plainTypeaheadMultiIsExpanded: false,
+    plainTypeaheadMultiSelected: [],
+    plainTypeaheadMultiIsPlain: true,
     customTypeaheadMultiIsExpanded: false,
     customTypeaheadMultiSelected: [],
-    plainTypeaheadMultiIsPlain: true
   };
 
   singleOptions = [
@@ -90,13 +95,19 @@ export class SelectDemo extends Component<SelectDemoState> {
     this.setState({
       typeaheadMultiIsExpanded
     })
-  }
+  };
+
+  plainTypeaheadMultiOnToggle = (plainTypeaheadMultiIsExpanded: boolean) => {
+    this.setState({
+      plainTypeaheadMultiIsExpanded
+    })
+  };
 
   customTypeaheadMultiOnToggle = (customTypeaheadMultiIsExpanded: boolean) => {
     this.setState({
       customTypeaheadMultiIsExpanded
     })
-  }
+  };
 
   singleOnSelect = (event: any, selection: string, isPlaceholder: boolean) => {
     if (isPlaceholder) this.clearSelection();
@@ -161,6 +172,21 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
+  plainTypeaheadMultiOnSelect = (event: any, selection: string) => {
+    const { plainTypeaheadMultiSelected } = this.state;
+    if (plainTypeaheadMultiSelected.includes(selection)) {
+      this.setState(
+        (prevState: SelectDemoState) => ({ plainTypeaheadMultiSelected: prevState.plainTypeaheadMultiSelected.filter(item => item !== selection) }),
+        () => console.log('selections: ', this.state.plainTypeaheadMultiSelected)
+      );
+    } else {
+      this.setState(
+        (prevState: SelectDemoState) => ({ plainTypeaheadMultiSelected: [...prevState.plainTypeaheadMultiSelected, selection] }),
+        () => console.log('selections: ', this.state.plainTypeaheadMultiSelected)
+      );
+    }
+  };
+
   customTypeaheadMultiOnSelect = (event: any, selection: string) => {
     const { customTypeaheadMultiSelected } = this.state;
     if (customTypeaheadMultiSelected.includes(selection)) {
@@ -188,6 +214,8 @@ export class SelectDemo extends Component<SelectDemoState> {
       typeaheadIsExpanded: false,
       typeaheadMultiSelected: [],
       typeaheadMultiIsExpanded: false,
+      plainTypeaheadMultiSelected: [],
+      plainTypeaheadMultiIsExpanded: false,
       customTypeaheadMultiSelected: [],
       customTypeaheadMultiIsExpanded: false
     });
@@ -386,8 +414,8 @@ export class SelectDemo extends Component<SelectDemoState> {
   }
 
   renderPlainTypeaheadMultiSelect() {
-    const { customTypeaheadMultiIsExpanded, customTypeaheadMultiSelected, plainTypeaheadMultiIsPlain } = this.state;
-    const titleId = 'plain-typeahead-select-id';
+    const { plainTypeaheadMultiIsExpanded, plainTypeaheadMultiSelected, plainTypeaheadMultiIsPlain } = this.state;
+    const titleId = 'multi-typeahead-plain-id';
 
     return (
       <StackItem isFilled={false}>
@@ -397,13 +425,14 @@ export class SelectDemo extends Component<SelectDemoState> {
             Select a state
           </span>
         <Select
+          toggleId="custom-typeahead-plain-multi-select"
           variant={SelectVariant.typeaheadMulti}
           aria-label="Select a state"
-          onToggle={this.customTypeaheadMultiOnToggle}
-          onSelect={this.customTypeaheadMultiOnSelect}
+          onToggle={this.plainTypeaheadMultiOnToggle}
+          onSelect={this.plainTypeaheadMultiOnSelect}
           onClear={this.clearSelection}
-          selections={customTypeaheadMultiSelected}
-          isExpanded={customTypeaheadMultiIsExpanded}
+          selections={plainTypeaheadMultiSelected}
+          isExpanded={plainTypeaheadMultiIsExpanded}
           isPlain={plainTypeaheadMultiIsPlain}
           ariaLabelledBy={titleId}
           placeholderText="Select a state"
