@@ -42,6 +42,41 @@ describe('select', () => {
     });
   });
 
+  describe('custom select filter', () => {
+    test('filters properly', () => {
+      const customFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
+        let input: RegExp;
+        try {
+          input = new RegExp(e.target.value, 'i');
+        } catch (err) {
+          input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+        }
+        let typeaheadFilteredChildren =
+          e.target.value !== ''
+            ? selectOptions.filter(
+                (child: React.ReactNode) => input.test((child as React.ReactElement).props.value)
+              )
+            : selectOptions;
+        return typeaheadFilteredChildren;
+      }
+      const view = mount(
+        <Select 
+          variant={SelectVariant.typeahead} 
+          onSelect={jest.fn()} 
+          onToggle={jest.fn()} 
+          onFilter={customFilter}
+          isExpanded={true}
+        >
+          {selectOptions}
+        </Select>
+      );
+      view.find('input').simulate('change', {target: { value: 'r' }});
+      view.update();
+      expect((view.state('typeaheadFilteredChildren') as []).length).toBe(3);
+      expect(view).toMatchSnapshot();
+    });
+  });
+
   test('renders select groups successfully', () => {
     const view = mount(
       <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded isGrouped>

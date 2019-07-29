@@ -50,6 +50,8 @@ export interface SelectProps
   onToggle: (isExpanded: boolean) => void;
   /** Callback for typeahead clear button */
   onClear?: (event: React.MouseEvent) => void;
+  /** Optional callback for custom filtering */
+  onFilter?: (e: React.ChangeEvent<HTMLInputElement>) => React.ReactElement[];
   /** Variant of rendered Select */
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Width of the select container as a number of px or string percentage */
@@ -84,7 +86,8 @@ export class Select extends React.Component<SelectProps, SelectState> {
     placeholderText: '',
     variant: SelectVariant.single,
     width: '',
-    onClear: Function.prototype
+    onClear: Function.prototype,
+    onFilter: undefined as () => {}
   };
 
   state = {
@@ -122,21 +125,25 @@ export class Select extends React.Component<SelectProps, SelectState> {
   };
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let input: RegExp;
-    try {
-      input = new RegExp(e.target.value, 'i');
-    } catch (err) {
-      input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
-    }
-
-    const typeaheadFilteredChildren =
-      e.target.value !== ''
-        ? React.Children.toArray(this.props.children).filter(
+    const { onFilter } = this.props;
+    let typeaheadFilteredChildren;
+    if (onFilter) {
+      typeaheadFilteredChildren = onFilter(e);
+    } else {
+      let input: RegExp;
+      try {
+        input = new RegExp(e.target.value, 'i');
+      } catch (err) {
+        input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+      }
+      typeaheadFilteredChildren =
+        e.target.value !== ''
+          ? React.Children.toArray(this.props.children).filter(
             (child: React.ReactNode) =>
               this.getDisplay((child as React.ReactElement).props.value, 'text').search(input) === 0
-          )
-        : React.Children.toArray(this.props.children);
-
+            )
+          : React.Children.toArray(this.props.children);
+    }
     if (typeaheadFilteredChildren.length === 0) {
       typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value="No results found" />);
     }
@@ -261,6 +268,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       onToggle,
       onSelect,
       onClear,
+      onFilter,
       toggleId,
       isExpanded,
       isGrouped,
