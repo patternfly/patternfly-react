@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.78.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.77.2...@patternfly/react-core@3.78.0) (2019-07-29)
+
+
+### Bug Fixes
+
+* **Dropdown:** adds aria-label for icon only example ([#2517](https://github.com/patternfly/patternfly-react/issues/2517)) ([dd2dc02](https://github.com/patternfly/patternfly-react/commit/dd2dc02))
+
+
+### Features
+
+* **Select:** add select custom filter callback ([#2434](https://github.com/patternfly/patternfly-react/issues/2434)) ([878a107](https://github.com/patternfly/patternfly-react/commit/878a107))
+
+
+
+
+
 ## [3.77.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.77.1...@patternfly/react-core@3.77.2) (2019-07-26)
 
 
