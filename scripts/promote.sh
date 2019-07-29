@@ -17,5 +17,5 @@ do
   LATEST=$(echo $VERSIONS | grep -Poe 'latest: [\d.]+' | sed 's/latest: //g')
   PRERELEASE=$(echo $VERSIONS | grep -Poe 'prerelease: [\d.]+' | sed 's/prerelease: //g')
   echo "Promoting ${PACK}@${PRERELEASE} to latest from ${LATEST}"
-  echo "npm dist-tag add latest ${PACK}@${PRERELEASE}"
+  echo "npm dist-tag add ${PACK}@${PRERELEASE} latest"
 done
