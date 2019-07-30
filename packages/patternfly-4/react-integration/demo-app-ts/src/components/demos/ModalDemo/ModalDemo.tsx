@@ -1,11 +1,13 @@
 import React from 'react';
-import { Modal, Button, Grid, GridItem } from '@patternfly/react-core';
+import { Modal, Button, Title, TitleLevel, BaseSizes } from '@patternfly/react-core';
+import { WarningTriangleIcon } from '@patternfly/react-icons';
 
 type ModalDemoState = {
   isModalOpen: boolean;
   isSmallModalOpen: boolean;
   isLargeModalOpen: boolean;
   isHalfWidthModalOpen: boolean;
+  isCustomHeaderFooterModalOpen: boolean;
   isNoHeaderModalOpen: boolean;
 };
 
@@ -16,6 +18,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     isSmallModalOpen: false,
     isLargeModalOpen: false,
     isHalfWidthModalOpen: false,
+    isCustomHeaderFooterModalOpen: false,
     isNoHeaderModalOpen: false
   };
 
@@ -40,6 +43,12 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
   handleHalfWidthModalToggle = () => {
     this.setState(({ isHalfWidthModalOpen }) => ({
       isHalfWidthModalOpen: !isHalfWidthModalOpen
+    }));
+  };
+
+  handleCustomHeaderFooterModalToggle = () => {
+    this.setState(({ isCustomHeaderFooterModalOpen }) => ({
+      isCustomHeaderFooterModalOpen: !isCustomHeaderFooterModalOpen
     }));
   };
 
@@ -160,6 +169,50 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     );
   }
 
+  renderCustomHeaderFooterModal(){
+    const {isCustomHeaderFooterModalOpen} = this.state;
+
+    const header = (
+      <React.Fragment>
+        <Title id="customHeaderTitle" headingLevel={TitleLevel.h1} size={BaseSizes["2xl"]}>
+          Custom Modal Header/Footer
+        </Title>
+        <p id="customHeaderDescription" className="pf-u-pt-sm">
+          Allows for custom content in the header and/or footer by passing components.
+        </p>
+      </React.Fragment>
+    );
+
+    const footer = (
+      <Title id="customFooterTitle" headingLevel={TitleLevel.h4} size={BaseSizes.sm}>
+        <WarningTriangleIcon />
+        <span  className="pf-u-pl-sm">Custom modal footer.</span>
+      </Title>
+    );
+
+    return (
+      <Modal
+        isLarge
+        isOpen={isCustomHeaderFooterModalOpen}
+        header={header}
+        title="custom header example"
+        ariaDescribedById="custom-header-example"
+        onClose={this.handleCustomHeaderFooterModalToggle}
+        footer={footer}
+      >
+          <span id="custom-header-example">
+            When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
+            aria-describedby value.
+          </span>
+        <br />
+        <br />
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </Modal>
+    );
+  }
+
   renderNoHeaderModal() {
     const {isNoHeaderModalOpen} = this.state;
 
@@ -210,6 +263,9 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
           <Button style={buttonStyle} variant="primary" onClick={this.handleHalfWidthModalToggle} id="showHalfWidthModalButton">
             Show 50% Width Modal
           </Button>
+          <Button style={buttonStyle} variant="primary" onClick={this.handleCustomHeaderFooterModalToggle} id="showCustomHeaderFooterModalButton">
+            Show Custom Header/Footer Modal
+          </Button>
           <Button style={buttonStyle} variant="primary" onClick={this.handleNoHeaderModalToggle} id="showNoHeaderModalButton">
             Show No Header Modal
           </Button>
@@ -218,6 +274,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         {this.renderSmallModal()}
         {this.renderLargeModal()}
         {this.renderHalfWidthModal()}
+        {this.renderCustomHeaderFooterModal()}
         {this.renderNoHeaderModal()}
       </React.Fragment>
     );
