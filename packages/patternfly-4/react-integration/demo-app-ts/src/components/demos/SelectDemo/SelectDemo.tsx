@@ -63,7 +63,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     { value: 'Florida', disabled: false },
     { value: 'New Jersey', disabled: false },
     { value: 'New Mexico', disabled: false },
-    { value: 'New York', disabled: false },
+    { value: { statename: 'New York', abreviation: 'NY', something: 'else', toString: () => 'New York' }, disabled: false },
     { value: 'North Carolina', disabled: false }
   ];
 
@@ -116,18 +116,18 @@ export class SelectDemo extends Component<SelectDemoState> {
         singleSelected: selection,
         singleIsExpanded: false
       });
-      console.log('selected:', selection);
+      console.log('selected:', selection.toString());
     }
   };
 
-  customSingleOnSelect = (event: any, selection: string, isPlaceholder: boolean) => {
+  customSingleOnSelect = (event: any, selection: string | object, isPlaceholder: boolean) => {
     if (isPlaceholder) this.clearSelection();
     else {
       this.setState({
         customSingleSelected: selection,
         customSingleIsExpanded: false
       });
-      console.log('selected:', selection);
+      console.log('selected:', selection.toString());
     }
   };
 
@@ -146,18 +146,18 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  typeaheadOnSelect = (event: any, selection: string, isPlaceholder: boolean) => {
+  typeaheadOnSelect = (event: any, selection: string | object, isPlaceholder: boolean) => {
     if (isPlaceholder) this.clearSelection();
     else {
       this.setState({
         typeaheadSelected: selection,
         typeaheadIsExpanded: false
       });
-      console.log('selected:', selection);
+      console.log('selected:', selection.toString());
     }
   };
 
-  typeaheadMultiOnSelect = (event: any, selection: string) => {
+  typeaheadMultiOnSelect = (event: any, selection: string | object) => {
     const { typeaheadMultiSelected } = this.state;
     if (typeaheadMultiSelected.includes(selection)) {
       this.setState(
@@ -404,7 +404,7 @@ export class SelectDemo extends Component<SelectDemoState> {
           >
             {this.typeaheadOptions.map((option, index) => (
               <SelectOption isDisabled={option.disabled} key={index} value={option.value}>
-                <div>div-{option.value}<span>-test_span</span><CartArrowDownIcon /></div>
+                <div>div-{option.value.toString()}<span>-test_span</span><CartArrowDownIcon /></div>
               </SelectOption>
             ))}
           </Select>
