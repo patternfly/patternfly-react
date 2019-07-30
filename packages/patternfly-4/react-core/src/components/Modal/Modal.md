@@ -315,6 +315,7 @@ class NoHeader extends React.Component {
           isOpen={isModalOpen}
           hideTitle={true}
           title="no header example"
+          showClose={false}
           ariaDescribedById="no-header-example"
           onClose={this.handleModalToggle}
           actions={[

@@ -33,6 +33,8 @@ export interface ModalContentProps {
   title: string;
   /** Flag to show the title (ignored for custom headers) */
   hideTitle?: boolean;
+  /** Flag to show the close button in the header area of the modal */
+  showClose?: boolean;
   /** Default width of the content. */
   width?: number | string;
   /** Custom footer */
@@ -54,6 +56,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   header = null,
   title,
   hideTitle = false,
+  showClose = true,
   footer = null,
   actions = [],
   onClose = () => undefined as any,
@@ -88,7 +91,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
           title={title}
           id={ariaDescribedById || id}
         >
-          <ModalBoxCloseButton onClose={onClose} />
+          {showClose && <ModalBoxCloseButton onClose={onClose} />}
           {modalBoxHeader}
           <ModalBoxBody {...props} id={id}>
             {children}
