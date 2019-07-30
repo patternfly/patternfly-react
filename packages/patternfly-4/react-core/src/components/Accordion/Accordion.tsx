@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
-
-export const AccordionContext = React.createContext('h3');
+import {AccordionContext} from './AccordionContext';
 
 export interface AccordionProps extends React.HTMLProps<HTMLDListElement> {
   /** Content rendered inside the Accordion  */
@@ -11,8 +10,10 @@ export interface AccordionProps extends React.HTMLProps<HTMLDListElement> {
   className?: string;
   /** Adds accessible text to the Accordion */
   'aria-label'?: string;
-  /** the heading level to use */
+  /** Heading level to use */
   headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /** Flag to indicate whether use definition list or div */
+  asDefinitionList?: boolean;
 }
 
 export const Accordion: React.FunctionComponent<AccordionProps> = ({
@@ -20,9 +21,15 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
   className = '',
   'aria-label': ariaLabel = '',
   headingLevel = 'h3',
+  asDefinitionList = true,
   ...props
-}: AccordionProps) => (
-  <dl className={css(styles.accordion, className)} aria-label={ariaLabel} {...props}>
-    <AccordionContext.Provider value={headingLevel}>{children}</AccordionContext.Provider>
-  </dl>
-);
+}: AccordionProps) => {
+  const AccordionList: any = asDefinitionList ? 'dl' : 'div';
+  return (
+    <AccordionList className={css(styles.accordion, className)} aria-label={ariaLabel} {...props}>
+      <AccordionContext.Provider value={{ AccordionHeadingLevel: headingLevel, asDefinitionList }}>
+        {children}
+      </AccordionContext.Provider>
+    </AccordionList>
+  );
+};
