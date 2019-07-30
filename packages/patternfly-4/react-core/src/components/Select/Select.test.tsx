@@ -5,7 +5,7 @@ import { SelectOption, SelectOptionObject } from './SelectOption';
 import { CheckboxSelectOption } from './CheckboxSelectOption';
 import { SelectGroup } from './SelectGroup';
 import { CheckboxSelectGroup } from './CheckboxSelectGroup';
-import { SelectVariant } from './selectConstants';
+import { SelectVariant, SelectDirection } from './selectConstants';
 
 class User implements SelectOptionObject {
   private firstName: string;
@@ -77,6 +77,15 @@ describe('select', () => {
       );
       expect(view).toMatchSnapshot();
     });
+  });
+
+  test('renders up drection successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.single} direction={SelectDirection.up} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {selectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
   });
 
   describe('custom select filter', () => {

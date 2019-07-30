@@ -23,6 +23,11 @@ export enum SelectVariant {
   typeaheadMulti = 'typeaheadmulti'
 }
 
+export enum SelectDirection {
+  up = 'up',
+  down = 'down'
+}
+
 export const KeyTypes = {
   Tab: 'Tab',
   Space: ' ',
