@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.13.1...@patternfly/react-integration@2.14.0) (2019-07-30)
+
+
+### Features
+
+* **Modal:** Allow custom header and footer ([#2120](https://github.com/patternfly/patternfly-react/issues/2120)) ([9d2f157](https://github.com/patternfly/patternfly-react/commit/9d2f157))
+
+
+
+
+
 ## [2.13.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.13.0...@patternfly/react-integration@2.13.1) (2019-07-26)
 
 

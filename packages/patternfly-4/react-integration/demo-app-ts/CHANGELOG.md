@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.14.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.13.3...demo-app-ts@2.14.0) (2019-07-30)
+
+
+### Features
+
+* **Modal:** Allow custom header and footer ([#2120](https://github.com/patternfly/patternfly-react/issues/2120)) ([9d2f157](https://github.com/patternfly/patternfly-react/commit/9d2f157))
+
+
+
+
+
 ## [2.13.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.13.2...demo-app-ts@2.13.3) (2019-07-29)
 
 **Note:** Version bump only for package demo-app-ts
