@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.80.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.79.0...@patternfly/react-core@3.80.0) (2019-07-30)
+
+
+### Features
+
+* **accordion:** add definition list use case ([#2422](https://github.com/patternfly/patternfly-react/issues/2422)) ([7211713](https://github.com/patternfly/patternfly-react/commit/7211713))
+
+
+
+
+
 # [3.79.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.78.0...@patternfly/react-core@3.79.0) (2019-07-30)
 
 
