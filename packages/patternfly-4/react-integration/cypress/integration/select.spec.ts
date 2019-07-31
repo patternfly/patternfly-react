@@ -66,5 +66,17 @@ describe('Select Test', () => {
     cy.get('#Florida-1').click();
     cy.get('.pf-c-chip').contains('div-Alabama-test_span').should('exist');
     cy.get('.pf-m-overflow > .pf-c-button').should('not.exist');
+    cy.get('.pf-c-select__toggle > .pf-m-plain').click();
+  });
+
+  it('Verify Custom Typeahead Plain Multi Select', () => {
+    cy.get('#custom-typeahead-plain-multi-select').click();
+    cy.get('#Florida-1').click();
+    cy.get('.pf-c-chip').contains('div-Florida-test_span').should('exist');
+    cy.get('#Alabama-0').click();
+    cy.get('.pf-m-overflow > .pf-c-button').should('exist');
+    cy.get('#Florida-1').click();
+    cy.get('.pf-c-chip').contains('div-Alabama-test_span').should('exist');
+    cy.get('.pf-m-overflow > .pf-c-button').should('not.exist');
   });
 });

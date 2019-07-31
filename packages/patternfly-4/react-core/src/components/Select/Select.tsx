@@ -26,6 +26,8 @@ export interface SelectProps
   isExpanded?: boolean;
   /** Flag to indicate if select options are grouped */
   isGrouped?: boolean;
+  /** Display the toggle with no border or background */
+  isPlain?: boolean;
   /** Title text of Select */
   placeholderText?: string | React.ReactNode;
   /** Selected item */
@@ -76,6 +78,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     toggleId: null as string,
     isExpanded: false,
     isGrouped: false,
+    isPlain: false,
     'aria-label': '',
     ariaLabelledBy: '',
     ariaLabelTypeAhead: '',
@@ -272,6 +275,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       toggleId,
       isExpanded,
       isGrouped,
+      isPlain,
       selections,
       ariaLabelledBy,
       ariaLabelTypeAhead,
@@ -317,6 +321,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
             id={selectToggleId}
             parentRef={this.parentRef}
             isExpanded={isExpanded}
+            isPlain={isPlain}
             onToggle={onToggle}
             onEnter={this.onEnter}
             onClose={this.onClose}
