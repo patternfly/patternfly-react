@@ -245,7 +245,7 @@ exports[`component render custom pagination toggle 1`] = `
               <Component
                 ariaHasPopup={true}
                 firstIndex={1}
-                id="pf-toggle-id-10"
+                id="pf-toggle-id-11"
                 isDisabled={false}
                 isOpen={false}
                 isPlain={true}
@@ -310,21 +310,7 @@ exports[`component render custom pagination toggle 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
-<<<<<<< HEAD
                     isDisabled={false}
-=======
-<<<<<<< HEAD
-=======
-                    isActive={false}
-                    isDisabled={false}
-                    isFocused={false}
-                    isHovered={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
->>>>>>> feat(Pagination): add disabled flag for whole component
-=======
-                    isDisabled={false}
->>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -486,11 +472,8 @@ exports[`component render custom pagination toggle 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-<<<<<<< HEAD
       firstPage={1}
-=======
       isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={4}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -859,11 +842,8 @@ exports[`component render custom perPageOptions 1`] = `
               <Component
                 ariaHasPopup={true}
                 firstIndex={1}
-                id="pf-toggle-id-5"
-<<<<<<< HEAD
-=======
+                id="pf-toggle-id-6"
                 isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={40}
@@ -938,21 +918,7 @@ exports[`component render custom perPageOptions 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
-<<<<<<< HEAD
                     isDisabled={false}
-=======
-<<<<<<< HEAD
-=======
-                    isActive={false}
-                    isDisabled={false}
-                    isFocused={false}
-                    isHovered={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
->>>>>>> feat(Pagination): add disabled flag for whole component
-=======
-                    isDisabled={false}
->>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -1154,11 +1120,8 @@ exports[`component render custom perPageOptions 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-<<<<<<< HEAD
       firstPage={1}
-=======
       isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={4}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -1631,11 +1594,8 @@ exports[`component render custom start end 1`] = `
               <Component
                 ariaHasPopup={true}
                 firstIndex={5}
-                id="pf-toggle-id-8"
-<<<<<<< HEAD
-=======
+                id="pf-toggle-id-9"
                 isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={40}
@@ -1710,21 +1670,7 @@ exports[`component render custom start end 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
-<<<<<<< HEAD
                     isDisabled={false}
-=======
-<<<<<<< HEAD
-=======
-                    isActive={false}
-                    isDisabled={false}
-                    isFocused={false}
-                    isHovered={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
->>>>>>> feat(Pagination): add disabled flag for whole component
-=======
-                    isDisabled={false}
->>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -1926,11 +1872,8 @@ exports[`component render custom start end 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-<<<<<<< HEAD
       firstPage={5}
-=======
       isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={4}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -2253,11 +2196,8 @@ exports[`component render empty per page options 1`] = `
               <Component
                 ariaHasPopup={false}
                 firstIndex={1}
-                id="pf-toggle-id-6"
-<<<<<<< HEAD
-=======
+                id="pf-toggle-id-7"
                 isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={40}
@@ -2294,11 +2234,8 @@ exports[`component render empty per page options 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-<<<<<<< HEAD
       firstPage={1}
-=======
       isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={4}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -2771,11 +2708,8 @@ exports[`component render last page 1`] = `
               <Component
                 ariaHasPopup={true}
                 firstIndex={11}
-                id="pf-toggle-id-4"
-<<<<<<< HEAD
-=======
+                id="pf-toggle-id-5"
                 isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={20}
@@ -2850,21 +2784,7 @@ exports[`component render last page 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
-<<<<<<< HEAD
                     isDisabled={false}
-=======
-<<<<<<< HEAD
-=======
-                    isActive={false}
-                    isDisabled={false}
-                    isFocused={false}
-                    isHovered={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
->>>>>>> feat(Pagination): add disabled flag for whole component
-=======
-                    isDisabled={false}
->>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -3066,11 +2986,8 @@ exports[`component render last page 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-<<<<<<< HEAD
       firstPage={11}
-=======
       isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={2}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -3618,21 +3535,7 @@ exports[`component render limited number of pages 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
-<<<<<<< HEAD
                     isDisabled={false}
-=======
-<<<<<<< HEAD
-=======
-                    isActive={false}
-                    isDisabled={false}
-                    isFocused={false}
-                    isHovered={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
->>>>>>> feat(Pagination): add disabled flag for whole component
-=======
-                    isDisabled={false}
->>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -3834,11 +3737,8 @@ exports[`component render limited number of pages 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-<<<<<<< HEAD
       firstPage={1}
-=======
       isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={1}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -3954,11 +3854,7 @@ exports[`component render limited number of pages 1`] = `
           <input
             aria-label="Current page"
             className="pf-c-form-control"
-<<<<<<< HEAD
             disabled={true}
-=======
-            disabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
             max={1}
             min={1}
             onChange={[Function]}
@@ -4313,11 +4209,8 @@ exports[`component render no items 1`] = `
               <Component
                 ariaHasPopup={true}
                 firstIndex={0}
-                id="pf-toggle-id-7"
-<<<<<<< HEAD
-=======
+                id="pf-toggle-id-8"
                 isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={0}
@@ -4393,21 +4286,7 @@ exports[`component render no items 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
-<<<<<<< HEAD
                     isDisabled={true}
-=======
-<<<<<<< HEAD
-=======
-                    isActive={false}
-                    isDisabled={false}
-                    isFocused={false}
-                    isHovered={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
->>>>>>> feat(Pagination): add disabled flag for whole component
-=======
-                    isDisabled={false}
->>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -4611,11 +4490,8 @@ exports[`component render no items 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-<<<<<<< HEAD
       firstPage={0}
-=======
       isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={0}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -4731,11 +4607,7 @@ exports[`component render no items 1`] = `
           <input
             aria-label="Current page"
             className="pf-c-form-control"
-<<<<<<< HEAD
             disabled={true}
-=======
-            disabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
             max={0}
             min={0}
             onChange={[Function]}
@@ -5162,21 +5034,7 @@ exports[`component render should render correctly bottom 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
-<<<<<<< HEAD
                     isDisabled={false}
-=======
-<<<<<<< HEAD
-=======
-                    isActive={false}
-                    isDisabled={false}
-                    isFocused={false}
-                    isHovered={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
->>>>>>> feat(Pagination): add disabled flag for whole component
-=======
-                    isDisabled={false}
->>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -5378,11 +5236,8 @@ exports[`component render should render correctly bottom 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-<<<<<<< HEAD
       firstPage={1}
-=======
       isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={2}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -5931,21 +5786,7 @@ exports[`component render should render correctly disabled 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
-<<<<<<< HEAD
-                    isDisabled={false}
-=======
-<<<<<<< HEAD
-=======
-                    isActive={false}
                     isDisabled={true}
-                    isFocused={false}
-                    isHovered={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
->>>>>>> feat(Pagination): add disabled flag for whole component
-=======
-                    isDisabled={true}
->>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -6149,11 +5990,8 @@ exports[`component render should render correctly disabled 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-<<<<<<< HEAD
       firstPage={1}
-=======
       isDisabled={true}
->>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={2}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -6269,11 +6107,7 @@ exports[`component render should render correctly disabled 1`] = `
           <input
             aria-label="Current page"
             className="pf-c-form-control"
-<<<<<<< HEAD
-            disabled={false}
-=======
             disabled={true}
->>>>>>> feat(Pagination): add disabled flag for whole component
             max={2}
             min={1}
             onChange={[Function]}
@@ -6628,12 +6462,8 @@ exports[`component render should render correctly top 1`] = `
               <Component
                 ariaHasPopup={true}
                 firstIndex={1}
-<<<<<<< HEAD
-                id="pf-toggle-id-9"
-=======
                 id="pf-toggle-id-0"
                 isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={20}
@@ -6708,21 +6538,7 @@ exports[`component render should render correctly top 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
-<<<<<<< HEAD
                     isDisabled={false}
-=======
-<<<<<<< HEAD
-=======
-                    isActive={false}
-                    isDisabled={false}
-                    isFocused={false}
-                    isHovered={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
->>>>>>> feat(Pagination): add disabled flag for whole component
-=======
-                    isDisabled={false}
->>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -6924,13 +6740,9 @@ exports[`component render should render correctly top 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-<<<<<<< HEAD
       firstPage={1}
-      lastPage={4}
-=======
       isDisabled={false}
       lastPage={2}
->>>>>>> feat(Pagination): add disabled flag for whole component
       onFirstClick={[Function]}
       onLastClick={[Function]}
       onNextClick={[Function]}
@@ -7046,13 +6858,8 @@ exports[`component render should render correctly top 1`] = `
             aria-label="Current page"
             className="pf-c-form-control"
             disabled={false}
-<<<<<<< HEAD
-            max={4}
-            min={1}
-=======
             max={2}
-            min="1"
->>>>>>> feat(Pagination): add disabled flag for whole component
+            min={1}
             onChange={[Function]}
             onKeyDown={[Function]}
             type="number"
@@ -7411,12 +7218,8 @@ exports[`component render titles 1`] = `
               <Component
                 ariaHasPopup={true}
                 firstIndex={1}
-<<<<<<< HEAD
-                id="pf-toggle-id-11"
-=======
-                id="pf-toggle-id-9"
+                id="pf-toggle-id-10"
                 isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
                 isOpen={false}
                 isPlain={true}
                 itemCount={40}
@@ -7491,21 +7294,7 @@ exports[`component render titles 1`] = `
                     aria-label="Select"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
-<<<<<<< HEAD:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.js.snap
-<<<<<<< HEAD
                     isDisabled={false}
-=======
-<<<<<<< HEAD
-=======
-                    isActive={false}
-                    isDisabled={false}
-                    isFocused={false}
-                    isHovered={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
->>>>>>> feat(Pagination): add disabled flag for whole component
-=======
-                    isDisabled={false}
->>>>>>> feat(Pagination): rebase master, update pagination test to tsx:packages/patternfly-4/react-core/src/components/Pagination/__snapshots__/Pagination.test.tsx.snap
                     isOpen={false}
                     onToggle={[Function]}
                     parentRef={
@@ -7707,11 +7496,8 @@ exports[`component render titles 1`] = `
     <Navigation
       className=""
       currPage="Current page"
-<<<<<<< HEAD
       firstPage={1}
-=======
       isDisabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
       lastPage={4}
       onFirstClick={[Function]}
       onLastClick={[Function]}
@@ -7828,10 +7614,8 @@ exports[`component render titles 1`] = `
             aria-label="Current page"
             className="pf-c-form-control"
             disabled={false}
-<<<<<<< HEAD
-=======
             max={4}
-            min="1"
+            min={1}
             onChange={[Function]}
             onKeyDown={[Function]}
             type="number"
@@ -8185,7 +7969,7 @@ exports[`component render up drop direction 1`] = `
               <Component
                 ariaHasPopup={true}
                 firstIndex={1}
-                id="pf-toggle-id-11"
+                id="pf-toggle-id-12"
                 isDisabled={false}
                 isOpen={false}
                 isPlain={true}
@@ -8463,6 +8247,7 @@ exports[`component render up drop direction 1`] = `
     <Navigation
       className=""
       currPage="Current page"
+      firstPage={1}
       isDisabled={false}
       lastPage={4}
       onFirstClick={[Function]}
@@ -8580,7 +8365,6 @@ exports[`component render up drop direction 1`] = `
             aria-label="Current page"
             className="pf-c-form-control"
             disabled={false}
->>>>>>> feat(Pagination): add disabled flag for whole component
             max={4}
             min={1}
             onChange={[Function]}
@@ -8708,6 +8492,7 @@ exports[`component render zero results 1`] = `
       className=""
       dropDirection="down"
       firstIndex={0}
+      isDisabled={false}
       itemCount={0}
       itemsPerPageTitle="Items per page"
       itemsTitle="items"
@@ -8823,6 +8608,7 @@ exports[`component render zero results 1`] = `
           toggle={
             <Unknown
               firstIndex={0}
+              isDisabled={false}
               isOpen={false}
               itemCount={0}
               itemsTitle="items"
@@ -8913,6 +8699,7 @@ exports[`component render zero results 1`] = `
             toggle={
               <Unknown
                 firstIndex={0}
+                isDisabled={false}
                 isOpen={false}
                 itemCount={0}
                 itemsTitle="items"
@@ -8932,7 +8719,8 @@ exports[`component render zero results 1`] = `
               <Component
                 ariaHasPopup={true}
                 firstIndex={0}
-                id="pf-toggle-id-3"
+                id="pf-toggle-id-4"
+                isDisabled={false}
                 isOpen={false}
                 isPlain={true}
                 itemCount={0}
@@ -9213,6 +9001,7 @@ exports[`component render zero results 1`] = `
       className=""
       currPage="Current page"
       firstPage={0}
+      isDisabled={false}
       lastPage={0}
       onFirstClick={[Function]}
       onLastClick={[Function]}
