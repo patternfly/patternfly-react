@@ -2399,6 +2399,7 @@ exports[`select custom select filter filters properly 1`] = `
                   class="pf-c-select__menu-item"
                   id="Mr-0"
                   role="option"
+                  type="button"
                 >
                   Mr
                 </button>
@@ -2410,6 +2411,7 @@ exports[`select custom select filter filters properly 1`] = `
                   class="pf-c-select__menu-item"
                   id="Mrs-1"
                   role="option"
+                  type="button"
                 >
                   Mrs
                 </button>
@@ -2421,6 +2423,7 @@ exports[`select custom select filter filters properly 1`] = `
                   class="pf-c-select__menu-item"
                   id="Other-2"
                   role="option"
+                  type="button"
                 >
                   Other
                 </button>
@@ -2535,6 +2538,7 @@ exports[`select custom select filter filters properly 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Mr
             </button>
@@ -2565,6 +2569,7 @@ exports[`select custom select filter filters properly 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Mrs
             </button>
@@ -2595,6 +2600,7 @@ exports[`select custom select filter filters properly 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Other
             </button>
@@ -2708,6 +2714,7 @@ exports[`select renders select groups successfully 1`] = `
                   <button
                     class="pf-c-select__menu-item"
                     role="option"
+                    type="button"
                   >
                     Mr
                   </button>
@@ -2718,6 +2725,7 @@ exports[`select renders select groups successfully 1`] = `
                   <button
                     class="pf-c-select__menu-item"
                     role="option"
+                    type="button"
                   >
                     Mrs
                   </button>
@@ -2728,6 +2736,7 @@ exports[`select renders select groups successfully 1`] = `
                   <button
                     class="pf-c-select__menu-item"
                     role="option"
+                    type="button"
                   >
                     Ms
                   </button>
@@ -2738,6 +2747,7 @@ exports[`select renders select groups successfully 1`] = `
                   <button
                     class="pf-c-select__menu-item"
                     role="option"
+                    type="button"
                   >
                     Other
                   </button>
@@ -2761,6 +2771,7 @@ exports[`select renders select groups successfully 1`] = `
                   <button
                     class="pf-c-select__menu-item"
                     role="option"
+                    type="button"
                   >
                     Mr
                   </button>
@@ -2771,6 +2782,7 @@ exports[`select renders select groups successfully 1`] = `
                   <button
                     class="pf-c-select__menu-item"
                     role="option"
+                    type="button"
                   >
                     Mrs
                   </button>
@@ -2781,6 +2793,7 @@ exports[`select renders select groups successfully 1`] = `
                   <button
                     class="pf-c-select__menu-item"
                     role="option"
+                    type="button"
                   >
                     Ms
                   </button>
@@ -2791,6 +2804,7 @@ exports[`select renders select groups successfully 1`] = `
                   <button
                     class="pf-c-select__menu-item"
                     role="option"
+                    type="button"
                   >
                     Other
                   </button>
@@ -2914,6 +2928,7 @@ exports[`select renders select groups successfully 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="option"
+                  type="button"
                 >
                   Mr
                 </button>
@@ -2942,6 +2957,7 @@ exports[`select renders select groups successfully 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="option"
+                  type="button"
                 >
                   Mrs
                 </button>
@@ -2970,6 +2986,7 @@ exports[`select renders select groups successfully 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="option"
+                  type="button"
                 >
                   Ms
                 </button>
@@ -2998,6 +3015,7 @@ exports[`select renders select groups successfully 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="option"
+                  type="button"
                 >
                   Other
                 </button>
@@ -3052,6 +3070,7 @@ exports[`select renders select groups successfully 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="option"
+                  type="button"
                 >
                   Mr
                 </button>
@@ -3080,6 +3099,7 @@ exports[`select renders select groups successfully 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="option"
+                  type="button"
                 >
                   Mrs
                 </button>
@@ -3108,6 +3128,7 @@ exports[`select renders select groups successfully 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="option"
+                  type="button"
                 >
                   Ms
                 </button>
@@ -3136,6 +3157,7 @@ exports[`select renders select groups successfully 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="option"
+                  type="button"
                 >
                   Other
                 </button>
@@ -3381,6 +3403,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Mr-0"
                   role="option"
+                  type="button"
                 >
                   Mr
                 </button>
@@ -3392,6 +3415,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Mrs-1"
                   role="option"
+                  type="button"
                 >
                   Mrs
                 </button>
@@ -3403,6 +3427,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Ms-2"
                   role="option"
+                  type="button"
                 >
                   Ms
                 </button>
@@ -3414,6 +3439,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Other-3"
                   role="option"
+                  type="button"
                 >
                   Other
                 </button>
@@ -3516,6 +3542,7 @@ exports[`select single select renders expanded successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Mr
             </button>
@@ -3546,6 +3573,7 @@ exports[`select single select renders expanded successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Mrs
             </button>
@@ -3576,6 +3604,7 @@ exports[`select single select renders expanded successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Ms
             </button>
@@ -3606,6 +3635,7 @@ exports[`select single select renders expanded successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Other
             </button>
@@ -3881,6 +3911,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Mr-0"
                   role="option"
+                  type="button"
                 >
                   Mr
                 </button>
@@ -3892,6 +3923,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Mrs-1"
                   role="option"
+                  type="button"
                 >
                   Mrs
                 </button>
@@ -3903,6 +3935,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Ms-2"
                   role="option"
+                  type="button"
                 >
                   Ms
                 </button>
@@ -3914,6 +3947,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Other-3"
                   role="option"
+                  type="button"
                 >
                   Other
                 </button>
@@ -4028,6 +4062,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Mr
             </button>
@@ -4058,6 +4093,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Mrs
             </button>
@@ -4088,6 +4124,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Ms
             </button>
@@ -4118,6 +4155,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Other
             </button>
@@ -4251,6 +4289,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               <button
                 aria-label="Clear all"
                 class="pf-c-button pf-m-plain pf-c-select__toggle-clear"
+                type="button"
               >
                 <svg
                   aria-hidden="true"
@@ -4306,6 +4345,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   class="pf-c-select__menu-item pf-m-selected"
                   id="Mr-0"
                   role="option"
+                  type="button"
                 >
                   Mr
                   <svg
@@ -4333,6 +4373,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   class="pf-c-select__menu-item pf-m-selected"
                   id="Mrs-1"
                   role="option"
+                  type="button"
                 >
                   Mrs
                   <svg
@@ -4359,6 +4400,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Ms-2"
                   role="option"
+                  type="button"
                 >
                   Ms
                 </button>
@@ -4370,6 +4412,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Other-3"
                   role="option"
+                  type="button"
                 >
                   Other
                 </button>
@@ -4550,6 +4593,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           aria-label="Clear all"
           className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
           onClick={[Function]}
+          type="button"
         >
           <TimesCircleIcon
             aria-hidden={true}
@@ -4666,6 +4710,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Mr
               <CheckIcon
@@ -4725,6 +4770,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Mrs
               <CheckIcon
@@ -4784,6 +4830,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Ms
             </button>
@@ -4814,6 +4861,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Other
             </button>
@@ -4927,6 +4975,7 @@ exports[`typeahead multi select test onChange 1`] = `
                   class="pf-c-select__menu-item pf-m-disabled"
                   id="No results found-0"
                   role="option"
+                  type="button"
                 >
                   No results found
                 </button>
@@ -5041,6 +5090,7 @@ exports[`typeahead multi select test onChange 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               No results found
             </button>
@@ -5314,6 +5364,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Mr-0"
                   role="option"
+                  type="button"
                 >
                   Mr
                 </button>
@@ -5325,6 +5376,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Mrs-1"
                   role="option"
+                  type="button"
                 >
                   Mrs
                 </button>
@@ -5336,6 +5388,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Ms-2"
                   role="option"
+                  type="button"
                 >
                   Ms
                 </button>
@@ -5347,6 +5400,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Other-3"
                   role="option"
+                  type="button"
                 >
                   Other
                 </button>
@@ -5461,6 +5515,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Mr
             </button>
@@ -5491,6 +5546,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Mrs
             </button>
@@ -5521,6 +5577,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Ms
             </button>
@@ -5551,6 +5608,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Other
             </button>
@@ -5628,6 +5686,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               <button
                 aria-label="Clear all"
                 class="pf-c-button pf-m-plain pf-c-select__toggle-clear"
+                type="button"
               >
                 <svg
                   aria-hidden="true"
@@ -5683,6 +5742,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   class="pf-c-select__menu-item pf-m-selected"
                   id="Mr-0"
                   role="option"
+                  type="button"
                 >
                   Mr
                   <svg
@@ -5709,6 +5769,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Mrs-1"
                   role="option"
+                  type="button"
                 >
                   Mrs
                 </button>
@@ -5720,6 +5781,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Ms-2"
                   role="option"
+                  type="button"
                 >
                   Ms
                 </button>
@@ -5731,6 +5793,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   class="pf-c-select__menu-item"
                   id="Other-3"
                   role="option"
+                  type="button"
                 >
                   Other
                 </button>
@@ -5767,6 +5830,7 @@ exports[`typeahead select renders selected successfully 1`] = `
           aria-label="Clear all"
           className="pf-c-button pf-m-plain pf-c-select__toggle-clear"
           onClick={[Function]}
+          type="button"
         >
           <TimesCircleIcon
             aria-hidden={true}
@@ -5878,6 +5942,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Mr
               <CheckIcon
@@ -5937,6 +6002,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Mrs
             </button>
@@ -5967,6 +6033,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Ms
             </button>
@@ -5997,6 +6064,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               Other
             </button>
@@ -6110,6 +6178,7 @@ exports[`typeahead select test onChange 1`] = `
                   class="pf-c-select__menu-item pf-m-disabled"
                   id="No results found-0"
                   role="option"
+                  type="button"
                 >
                   No results found
                 </button>
@@ -6224,6 +6293,7 @@ exports[`typeahead select test onChange 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               role="option"
+              type="button"
             >
               No results found
             </button>
