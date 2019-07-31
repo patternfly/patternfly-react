@@ -28,6 +28,8 @@ export interface SelectProps
   isGrouped?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
+  /** Flad to inficate if select is disabled */
+  isDisabled?: boolean;
   /** Title text of Select */
   placeholderText?: string | React.ReactNode;
   /** Selected item */
@@ -79,6 +81,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     isExpanded: false,
     isGrouped: false,
     isPlain: false,
+    isDisabled: false,
     'aria-label': '',
     ariaLabelledBy: '',
     ariaLabelTypeAhead: '',
@@ -276,6 +279,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       isExpanded,
       isGrouped,
       isPlain,
+      isDisabled,
       selections,
       ariaLabelledBy,
       ariaLabelTypeAhead,
@@ -309,7 +313,6 @@ export class Select extends React.Component<SelectProps, SelectState> {
         </ChipGroup>
       );
     }
-
     return (
       <div
         className={css(styles.select, isExpanded && styles.modifiers.expanded, className)}
@@ -329,6 +332,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
             variant={variant}
             ariaLabelToggle={ariaLabelToggle}
             handleTypeaheadKeys={this.handleTypeaheadKeys}
+            isDisabled={isDisabled}
           >
             {variant === SelectVariant.single && (
               <div className={css(styles.selectToggleWrapper)}>

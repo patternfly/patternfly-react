@@ -32,6 +32,8 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   isActive?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
+  /** Flag indicating if select is disabled */
+  isDisabled?: boolean;
   /** Type of the toggle button, defaults to 'button' */
   type?: 'reset' | 'button' | 'submit' | undefined;
   /** Id of label for the Select aria-labelledby */
@@ -52,6 +54,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     isHovered: false,
     isActive: false,
     isPlain: false,
+    isDisabled: false,
     variant: false,
     ariaLabelledBy: '',
     ariaLabelToggle: '',
@@ -154,6 +157,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       isActive,
       isHovered,
       isPlain,
+      isDisabled,
       variant,
       onToggle,
       onEnter,
@@ -190,6 +194,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               styles.selectToggle,
               isFocused && styles.modifiers.focus,
               isHovered && styles.modifiers.hover,
+              isDisabled && styles.modifiers.disabled,
               isActive && styles.modifiers.active,
               isPlain && styles.modifiers.plain,
               className
@@ -201,6 +206,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               }
             }}
             onKeyDown={this.onKeyDown}
+            disabled={isDisabled}
           >
             {children}
             <CaretDownIcon className={css(styles.selectToggleArrow)} />
@@ -215,6 +221,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               isFocused && styles.modifiers.focus,
               isHovered && styles.modifiers.hover,
               isActive && styles.modifiers.active,
+              isDisabled && styles.modifiers.disabled,
               isPlain && styles.modifiers.plain,
               isTypeahead && styles.modifiers.typeahead,
               className
@@ -236,6 +243,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
                   onClose();
                 }
               }}
+              disabled={isDisabled}
             >
               <CaretDownIcon className={css(styles.selectToggleArrow)} />
             </button>
