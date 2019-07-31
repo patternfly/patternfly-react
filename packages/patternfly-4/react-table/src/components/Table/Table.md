@@ -19,6 +19,7 @@ import {
   compoundExpand,
   cellWidth,
   textCenter,
+  wrappable,
   classNames,
   Visibility
 } from '@patternfly/react-table';
@@ -1026,6 +1027,50 @@ class CompoundExpandableTable extends React.Component {
 
     return (
       <Table caption="Compound expandable table" onExpand={this.onExpand} rows={rows} cells={columns}>
+        <TableHeader />
+        <TableBody />
+      </Table>
+    );
+  }
+}
+```
+
+## Table with headers that wrap
+
+```js
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  wrappable
+} from '@patternfly/react-table';
+
+class CompactTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        {title: 'This is a really long table header that goes on for a long time 1.', transforms: [wrappable]},
+        {title: 'This is a really long table header that goes on for a long time 2.', transforms: [wrappable]},
+        {title: 'This is a really long table header that goes on for a long time 3.', transforms: [wrappable]},
+        {title: 'This is a really long table header that goes on for a long time 4.', transforms: [wrappable]},
+        {title: 'This is a really long table header that goes on for a long time 5.', transforms: [wrappable]},
+      ],
+      rows: [
+        ['Repository 1', '10', '25', '5', '2 days ago'],
+        ['Repository 2', '10', '25', '5', '2 days ago'],
+        ['Repository 3', '10', '25', '5', '2 days ago'],
+        ['Repository 4', '10', '25', '5', '2 days ago'],
+      ]
+    };
+  }
+
+  render() {
+    const { columns, rows } = this.state;
+
+    return (
+      <Table caption="Wrappable headers" cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
