@@ -36,7 +36,7 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   /** Adds inline styling to a link button */
   isInline?: boolean;
   /** Sets button type */
-  type?: 'button' | 'submit';
+  type?: 'button' | 'submit' | 'reset';
   /** Adds button variant styles */
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'plain' ;
   /** Adds accessible text to the button. */
