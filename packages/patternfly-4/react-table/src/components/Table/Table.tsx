@@ -101,18 +101,19 @@ export type IActions = (IAction | ISeparator)[];
 export type IActionsResolver = (rowData: IRowData, extraData: IExtraData) => (IAction | ISeparator)[];
 export type IAreActionsDisabled = (rowData: IRowData, extraData: IExtraData) => boolean;
 
-export interface IDecorator extends React.HTMLProps<HTMLElement> {
-  isVisible: boolean;
-  children?: React.ReactNode;
+// to be removed in future, this interface is no longer accurate
+export interface IDecorator extends React.HTMLProps<HTMLElement> {	
+  isVisible: boolean;	
+  children?: React.ReactNode;	
 }
 
 export interface ICell {
   title?: string;
-  transforms?: ((value: any) => IDecorator)[];
-  cellTransforms?: ((value: any) => IDecorator)[];
-  columnTransforms?: ((value: any) => IDecorator)[];
-  formatters?: ((value: any) => IDecorator)[];
-  cellFormatters?: ((value: any) => IDecorator)[];
+  transforms?: ((...args: any) => any)[];
+  cellTransforms?: ((...args: any) => any)[];
+  columnTransforms?: ((...args: any) => any)[];
+  formatters?: ((...args: any) => any)[];
+  cellFormatters?: ((...args: any) => any)[];
   props?: any;
   data?: any;
   header?: any;
