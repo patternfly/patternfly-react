@@ -34,7 +34,7 @@ exports[`ChartTooltip 1`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
-            "fill": "#151515",
+            "fill": "#06c",
             "fillOpacity": 0.4,
             "stroke": "transparent",
             "strokeWidth": 2,
@@ -331,7 +331,7 @@ exports[`ChartTooltip 1`] = `
           "data": Object {
             "fill": "transparent",
             "opacity": 1,
-            "stroke": "#151515",
+            "stroke": "#06c",
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -507,7 +507,7 @@ exports[`ChartTooltip 2`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
-            "fill": "#151515",
+            "fill": "#06c",
             "fillOpacity": 0.4,
             "stroke": "transparent",
             "strokeWidth": 2,
@@ -804,7 +804,7 @@ exports[`ChartTooltip 2`] = `
           "data": Object {
             "fill": "transparent",
             "opacity": 1,
-            "stroke": "#151515",
+            "stroke": "#06c",
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -992,7 +992,7 @@ exports[`allows tooltip via container component 1`] = `
             "padding": 50,
             "style": Object {
               "data": Object {
-                "fill": "#151515",
+                "fill": "#06c",
                 "fillOpacity": 0.4,
                 "stroke": "transparent",
                 "strokeWidth": 2,
@@ -1289,7 +1289,7 @@ exports[`allows tooltip via container component 1`] = `
               "data": Object {
                 "fill": "transparent",
                 "opacity": 1,
-                "stroke": "#151515",
+                "stroke": "#06c",
                 "strokeWidth": 2,
               },
               "labels": Object {
@@ -1450,7 +1450,7 @@ exports[`allows tooltip via container component 1`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
-            "fill": "#151515",
+            "fill": "#06c",
             "fillOpacity": 0.4,
             "stroke": "transparent",
             "strokeWidth": 2,
@@ -1747,7 +1747,7 @@ exports[`allows tooltip via container component 1`] = `
           "data": Object {
             "fill": "transparent",
             "opacity": 1,
-            "stroke": "#151515",
+            "stroke": "#06c",
             "strokeWidth": 2,
           },
           "labels": Object {

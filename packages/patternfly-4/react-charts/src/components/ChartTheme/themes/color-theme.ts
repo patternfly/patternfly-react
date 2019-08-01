@@ -10,7 +10,12 @@ export const ColorTheme = (props: ColorThemeInterface) => {
 
   return {
     area: {
-      colorScale: COLOR_SCALE
+      colorScale: COLOR_SCALE,
+      style: {
+        data: {
+          fill: COLOR_SCALE[0]
+        }
+      }
     },
     axis: {
       colorScale: COLOR_SCALE
@@ -42,7 +47,12 @@ export const ColorTheme = (props: ColorThemeInterface) => {
       colorScale: COLOR_SCALE
     },
     line: {
-      colorScale: COLOR_SCALE
+      colorScale: COLOR_SCALE,
+      style: {
+        data: {
+          stroke: COLOR_SCALE[0]
+        }
+      }
     },
     pie: {
       colorScale: COLOR_SCALE
