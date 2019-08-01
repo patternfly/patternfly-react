@@ -210,3 +210,121 @@ import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
   </div>
 </div>
 ```
+
+## Monthly vertical stack with bottom aligned legend and responsive container
+```js
+import React from 'react';
+import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
+
+class ResponsiveStack extends React.Component {
+  constructor(props) {
+    super(props);
+    this.containerRef = React.createRef();
+    this.state = {
+      width: 0
+    };
+    this.handleResize = () => {
+      this.setState({ width: this.containerRef.current.clientWidth });
+    };
+    this.renderChartBars = () => {
+      let bars = [];
+      for(let i = 1; i < 32; i++){
+        bars.push({ x: `Aug. ${i}`, y: Math.floor(Math.random() * 6) + 1 });
+      };
+
+      let socketBars = bars.map(tick => {
+        return {
+          x: tick.x,
+          y: tick.y,
+          name: 'Sockets',
+          label: `${tick.x} Sockets: ${tick.y}`
+        };
+      });
+
+      let coresBars = bars.map(tick => {
+        return {
+          x: tick.x,
+          y: tick.y,
+          name: 'Cores',
+          label: `${tick.x} Cores: ${tick.y}`
+        };
+      });
+
+      let nodesBars = bars.map(tick => {
+        return {
+          x: tick.x,
+          y: tick.y,
+          name: 'Nodes',
+          label: `${tick.x} Nodes: ${tick.y}`
+        };
+      });
+
+      return [
+        <ChartBar 
+          data={socketBars} 
+          labelComponent={<ChartTooltip />}
+        />,
+        <ChartBar 
+          data={coresBars} 
+          labelComponent={<ChartTooltip />}
+        />,
+        <ChartBar 
+          data={nodesBars} 
+          labelComponent={<ChartTooltip />}
+        />,
+      ];
+    }
+    this.getTickValues = () => {
+      let tickValues = [];
+      for(let i = 1; i < 32; i++){
+        if (i % 5 == 0){
+          tickValues.push(`Aug. ${i}`);
+        }
+      }
+      return tickValues;
+    }
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ width: this.containerRef.current.clientWidth });
+      window.addEventListener('resize', this.handleResize);
+    });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  render(){
+    const { width } = this.state;
+    return (
+      <div ref={this.containerRef}>
+        <div>
+          <Chart
+            ariaDesc="Average number of pets"
+            ariaTitle="Stack chart example"
+            domainPadding={{ x: [30, 25] }}
+            legendData={[{ name: 'Sockets' }, { name: 'Cores' }, { name: 'Nodes' }]}
+            legendPosition="bottom"
+            height={275}
+            padding={{
+              bottom: 75, // Adjusted to accomodate legend
+              left: 50,
+              right: 50, 
+              top: 50
+            }}
+            width={width}
+          >
+            <ChartAxis tickValues = {this.getTickValues()} />
+            <ChartAxis dependentAxis showGrid />
+            <ChartStack domainPadding={{x: [10, 2]}}>
+              { this.renderChartBars() }
+            </ChartStack>
+          </Chart>
+        </div>
+      </div>
+    )
+  }
+}
+```
