@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.14.0...@patternfly/react-integration@2.14.1) (2019-08-01)
+
+
+### Bug Fixes
+
+* **select:** add isPlain variation/prop to Select.tsx, snapshot tests, and integration ([#2588](https://github.com/patternfly/patternfly-react/issues/2588)) ([0809b28](https://github.com/patternfly/patternfly-react/commit/0809b28))
+
+
+
+
+
 # [2.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.13.1...@patternfly/react-integration@2.14.0) (2019-07-30)
 
 

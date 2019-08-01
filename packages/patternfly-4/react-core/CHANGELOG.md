@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.80.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.80.2...@patternfly/react-core@3.80.3) (2019-08-01)
+
+
+### Bug Fixes
+
+* **button:** add 'reset' to types ([#2622](https://github.com/patternfly/patternfly-react/issues/2622)) ([8ee40c0](https://github.com/patternfly/patternfly-react/commit/8ee40c0))
+* **select:** add isPlain variation/prop to Select.tsx, snapshot tests, and integration ([#2588](https://github.com/patternfly/patternfly-react/issues/2588)) ([0809b28](https://github.com/patternfly/patternfly-react/commit/0809b28))
+
+
+
+
+
 ## [3.80.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.80.1...@patternfly/react-core@3.80.2) (2019-07-30)
 
 **Note:** Version bump only for package @patternfly/react-core

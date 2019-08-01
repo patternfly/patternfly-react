@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.16.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.15.7...@patternfly/react-table@2.16.0) (2019-08-01)
+
+
+### Features
+
+* **Table:** Add the wrap transform ([#2615](https://github.com/patternfly/patternfly-react/issues/2615)) ([e808939](https://github.com/patternfly/patternfly-react/commit/e808939))
+
+
+
+
+
 ## [2.15.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.15.6...@patternfly/react-table@2.15.7) (2019-07-30)
 
 **Note:** Version bump only for package @patternfly/react-table
