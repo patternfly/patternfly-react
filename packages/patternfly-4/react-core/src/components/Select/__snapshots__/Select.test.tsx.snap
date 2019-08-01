@@ -2313,6 +2313,7 @@ exports[`select custom select filter filters properly 1`] = `
   className=""
   isExpanded={true}
   isGrouped={false}
+  isPlain={false}
   onClear={[Function]}
   onFilter={[Function]}
   onSelect={[MockFunction]}
