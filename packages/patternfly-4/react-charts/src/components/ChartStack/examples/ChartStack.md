@@ -302,8 +302,8 @@ class ResponsiveStack extends React.Component {
       <div ref={this.containerRef}>
         <div>
           <Chart
-            ariaDesc="Average number of pets"
-            ariaTitle="Stack chart example"
+            ariaDesc="Stack Chart with monthly metric data"
+            ariaTitle="Monthly Stack Chart"
             domainPadding={{ x: [30, 25] }}
             legendData={[{ name: 'Sockets' }, { name: 'Cores' }, { name: 'Nodes' }]}
             legendPosition="bottom"
@@ -316,7 +316,7 @@ class ResponsiveStack extends React.Component {
             }}
             width={width}
           >
-            <ChartAxis tickValues = {this.getTickValues()} />
+            <ChartAxis tickValues = {this.getTickValues()} fixLabelOverlap />
             <ChartAxis dependentAxis showGrid />
             <ChartStack domainPadding={{x: [10, 2]}}>
               { this.renderChartBars() }
