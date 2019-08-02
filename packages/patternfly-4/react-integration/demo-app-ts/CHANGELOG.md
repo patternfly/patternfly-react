@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.14.4...demo-app-ts@2.14.5) (2019-08-02)
+
+
+### Bug Fixes
+
+* **Select:** Prevent select from submitting forms ([#2621](https://github.com/patternfly/patternfly-react/issues/2621)) ([37f0a99](https://github.com/patternfly/patternfly-react/commit/37f0a99)), closes [#2029](https://github.com/patternfly/patternfly-react/issues/2029)
+
+
+
+
+
 ## [2.14.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.14.3...demo-app-ts@2.14.4) (2019-08-01)
 
 
