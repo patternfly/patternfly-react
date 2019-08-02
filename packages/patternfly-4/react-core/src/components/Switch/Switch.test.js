@@ -19,12 +19,12 @@ test('switch label id is auto generated', () => {
 });
 
 test('switch is checked', () => {
-  const view = mount(<Switch id="switch-is-checked" label="On" isChecked />);
+  const view = mount(<Switch id="switch-is-checked" label="On" labelOff="Off" isChecked />);
   expect(view).toMatchSnapshot();
 });
 
 test('switch is not checked', () => {
-  const view = mount(<Switch id="switch-is-not-checked" label="Off" isChecked={false} />);
+  const view = mount(<Switch id="switch-is-not-checked" label="On" labelOff="Off" isChecked={false} />);
   expect(view).toMatchSnapshot();
 });
 
