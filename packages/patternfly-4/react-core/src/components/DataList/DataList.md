@@ -476,7 +476,7 @@ class ExpandableDataList extends React.Component {
               dataListCells={[
                 <DataListCell isIcon key="icon">
                   <CodeBranchIcon />
-                </DataListCell>,
+                </DataListCell>
                 <DataListCell key="primary content">
                   <div id="ex-item1">Primary content</div>
                   <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
@@ -589,7 +589,7 @@ class ExpandableDataList extends React.Component {
                   <CodeBranchIcon />
                 </DataListCell>,
                 <DataListCell key="tertiary content">
-                  <div id="ex-item2">Tertiary content</div>
+                  <div id="ex-item3">Tertiary content</div>
                   <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                 </DataListCell>,
                 <DataListCell key="secondary content">
@@ -694,7 +694,7 @@ class ModifiersDataList extends React.Component {
         <DataList aria-label="Width modifier data list example 1">
           <DataListItem aria-labelledby="width-ex1-item1">
             <DataListItemRow>
-              <DataListCheck aria-labelledby="width-ex1-check1" name="width-ex1-item1" />
+              <DataListCheck aria-labelledby="width-ex1-item1" name="width-ex1-item1" />
               <DataListItemCells
                 dataListCells={[
                   <DataListCell key="default">
@@ -723,7 +723,7 @@ class ModifiersDataList extends React.Component {
         <DataList aria-label="Width modifier data list example 2">
           <DataListItem aria-labelledby="width-ex2-item1">
             <DataListItemRow>
-              <DataListCheck aria-labelledby="width-ex2-check1" name="width-ex2-check1" />
+              <DataListCheck aria-labelledby="width-ex2-item1" name="width-ex2-item1" />
               <DataListItemCells
                 dataListCells={[
                   <DataListCell width={2} key="width 2">
@@ -777,7 +777,7 @@ class ModifiersDataList extends React.Component {
                 aria-controls="width-ex3-expand1"
                 onClick={() => this.setState({ show: !this.state.show })}
               />
-              <DataListCheck aria-labelledby="width-ex3-check1" name="width-ex3-check1" />
+              <DataListCheck aria-labelledby="width-ex3-item1" name="width-ex3-item1" />
               <DataListItemCells
                 dataListCells={[
                   <DataListCell width={5} key="width 5">
