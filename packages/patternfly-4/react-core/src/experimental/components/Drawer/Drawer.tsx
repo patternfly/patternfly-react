@@ -24,11 +24,12 @@ export const Drawer: React.SFC<DrawerProps> = ({
   panelContent,
   ...props
 }: DrawerProps) => (
-  <div {...props} className={css(styles.drawer, className)}>
+  <div {...props} className={css(styles.drawer,
+    isExpanded && styles.modifiers.expanded,
+    isInline && styles.modifiers.inline,
+    className)}>
      <div className={css(
-       styles.drawerContent,
-       isExpanded && styles.modifiers.expanded,
-       isInline && styles.modifiers.inline)}> { children } </div>
+       styles.drawerContent)}> { children } </div>
      { panelContent }
   </div>
 );
