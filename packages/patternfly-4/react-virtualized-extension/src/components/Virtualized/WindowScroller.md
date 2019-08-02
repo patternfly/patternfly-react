@@ -3,6 +3,12 @@ title: 'Window Scroller'
 section: 'Virtual Scroll'
 ---
 
+Note: React Virtualized Extension lives in its own package at [`@patternfly/react-virtualized-extension`](https://www.npmjs.com/package/@patternfly/react-virtualized-extension)!
+<br />
+This package is currently an extension. Extension components do not undergo the same rigorous design or coding review process as core PatternFly components. If enough members of the community find them useful, we will work to move them into our core PatternFly system by starting the design process for the idea.
+<br />
+<br />
+
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
