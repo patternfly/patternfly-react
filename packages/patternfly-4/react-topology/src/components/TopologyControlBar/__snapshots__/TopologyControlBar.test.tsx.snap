@@ -3,8 +3,6 @@
 exports[`TopologyControlBar should accept button options correctly 1`] = `
 .pf-c-button.pf-m-tertiary.pf-topology-control-bar__button {
   display: block;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   margin-right: 0.25rem;
   margin-top: 0.25rem;
   background-color: #ffffff;
@@ -25,8 +23,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
 }
 .pf-c-button.pf-m-tertiary.pf-topology-control-bar__button {
   display: block;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   margin-right: 0.25rem;
   margin-top: 0.25rem;
   background-color: #ffffff;
@@ -47,8 +43,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
 }
 .pf-c-button.pf-m-tertiary.pf-topology-control-bar__button.pf-m-disabled {
   display: block;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   margin-right: 0.25rem;
   margin-top: 0.25rem;
   background-color: #ffffff;
@@ -609,8 +603,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
 exports[`TopologyControlBar should display the default controls correctly 1`] = `
 .pf-c-button.pf-m-tertiary.pf-topology-control-bar__button {
   display: block;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   margin-right: 0.25rem;
   margin-top: 0.25rem;
   background-color: #ffffff;
@@ -631,8 +623,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
 }
 .pf-c-button.pf-m-tertiary.pf-topology-control-bar__button {
   display: block;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   margin-right: 0.25rem;
   margin-top: 0.25rem;
   background-color: #ffffff;
@@ -653,8 +643,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
 }
 .pf-c-button.pf-m-tertiary.pf-topology-control-bar__button {
   display: block;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   margin-right: 0.25rem;
   margin-top: 0.25rem;
   background-color: #ffffff;
@@ -675,8 +663,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
 }
 .pf-c-button.pf-m-tertiary.pf-topology-control-bar__button {
   display: block;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   margin-right: 0.25rem;
   margin-top: 0.25rem;
   background-color: #ffffff;
@@ -697,8 +683,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
 }
 .pf-c-button.pf-m-tertiary.pf-topology-control-bar__button {
   display: block;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   margin-right: 0.25rem;
   margin-top: 0.25rem;
   background-color: #ffffff;

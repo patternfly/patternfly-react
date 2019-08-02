@@ -7,8 +7,6 @@ export const topologyControlbarCss = StyleSheet.parse(`
     left: var(--pf-global--spacer--xl);
     
     &__button.pf-c-button.pf-m-tertiary {
-      padding-left: var(--pf-global--spacer--sm);
-      padding-right: var(--pf-global--spacer--sm);
       margin-right: var(--pf-global--spacer--xs);
       margin-top: var(--pf-global--spacer--xs);
       background-color: var(--pf-global--BackgroundColor--100);
