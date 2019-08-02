@@ -32,9 +32,9 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
    */
   isManagedSidebar?: boolean;
   /**
-   * If true, the managed the sidebar is initially open for desktop view
+   * If true, the managed sidebar is initially open for desktop view
    */
-  isManagedSidebarOpen?: boolean;
+  defaultManagedSidebarOpen?: boolean;
   /**
    * Can add callback to be notified when resize occurs, for example to set the sidebar isNav prop to false for a width < 768px
    * Returns object { mobileView: boolean, windowSize: number }
@@ -60,7 +60,7 @@ export class Page extends React.Component<PageProps, PageState> {
     sidebar: null as React.ReactNode,
     skipToContent: null as React.ReactElement,
     isManagedSidebar: false,
-    isManagedSidebarOpen: true,
+    defaultManagedSidebarOpen: true,
     onPageResize: ():void => null,
     mainContainerId: null as string
   };
@@ -68,8 +68,8 @@ export class Page extends React.Component<PageProps, PageState> {
   constructor(props: PageProps) {
     super(props);
 
-    const {isManagedSidebar, isManagedSidebarOpen} = props;
-    const managedSidebarOpen = !isManagedSidebar ? true : isManagedSidebar && isManagedSidebarOpen;
+    const {isManagedSidebar, defaultManagedSidebarOpen} = props;
+    const managedSidebarOpen = !isManagedSidebar ? true : defaultManagedSidebarOpen;
     this.state = {
       desktopIsNavOpen: managedSidebarOpen,
       mobileIsNavOpen: false,
@@ -127,7 +127,7 @@ export class Page extends React.Component<PageProps, PageState> {
       skipToContent,
       mainContainerId,
       isManagedSidebar,
-      isManagedSidebarOpen,
+      defaultManagedSidebarOpen,
       onPageResize,
       ...rest
     } = this.props;
