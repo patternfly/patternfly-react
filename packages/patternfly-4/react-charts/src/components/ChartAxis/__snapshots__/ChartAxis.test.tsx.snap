@@ -52,7 +52,7 @@ exports[`ChartAxis 1`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
-            "fill": "#151515",
+            "fill": "#06c",
             "fillOpacity": 0.4,
             "stroke": "transparent",
             "strokeWidth": 2,
@@ -349,7 +349,7 @@ exports[`ChartAxis 1`] = `
           "data": Object {
             "fill": "transparent",
             "opacity": 1,
-            "stroke": "#151515",
+            "stroke": "#06c",
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -558,7 +558,7 @@ exports[`ChartAxis 2`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
-            "fill": "#151515",
+            "fill": "#06c",
             "fillOpacity": 0.4,
             "stroke": "transparent",
             "strokeWidth": 2,
@@ -855,7 +855,7 @@ exports[`ChartAxis 2`] = `
           "data": Object {
             "fill": "transparent",
             "opacity": 1,
-            "stroke": "#151515",
+            "stroke": "#06c",
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -1030,7 +1030,7 @@ exports[`renders component data 1`] = `
             "padding": 50,
             "style": Object {
               "data": Object {
-                "fill": "#151515",
+                "fill": "#06c",
                 "fillOpacity": 0.4,
                 "stroke": "transparent",
                 "strokeWidth": 2,
@@ -1327,7 +1327,7 @@ exports[`renders component data 1`] = `
               "data": Object {
                 "fill": "transparent",
                 "opacity": 1,
-                "stroke": "#151515",
+                "stroke": "#06c",
                 "strokeWidth": 2,
               },
               "labels": Object {
@@ -3635,7 +3635,7 @@ exports[`renders component data 1`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
-            "fill": "#151515",
+            "fill": "#06c",
             "fillOpacity": 0.4,
             "stroke": "transparent",
             "strokeWidth": 2,
@@ -3932,7 +3932,7 @@ exports[`renders component data 1`] = `
           "data": Object {
             "fill": "transparent",
             "opacity": 1,
-            "stroke": "#151515",
+            "stroke": "#06c",
             "strokeWidth": 2,
           },
           "labels": Object {
