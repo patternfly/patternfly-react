@@ -45,6 +45,7 @@ export * from './DonutUtilizationChartDemo/DonutUtilizationStaticInvertedRightDe
 export * from './DonutUtilizationChartDemo/DonutUtilizationStaticDemo'
 export * from './DonutUtilizationChartDemo/DonutUtilizationStaticRightDemo'
 export * from './DonutUtilizationChartDemo/DonutUtilizationSimpleDemo'
+export * from './DropdownDemo/DropdownDemo'
 export * from './EmptyStateDemo/EmptyStateDemo';
 export * from './FormDemo/FormDemo'; 
 export * from './FormSelectDemo/FormSelectDemo'; 
@@ -62,6 +63,7 @@ export * from './ModalDemo/ModalDemo';
 export * from './NavDemo/NavDemo';
 export * from './NotificationBadgeDemo/NotificationBadgeDemo';
 export * from './OptionsMenuDemo/OptionsMenuDemo';
+export * from './OuiaDemo/OuiaDemo';
 export * from './PieChartDemo/PieBlueDemo';
 export * from './PieChartDemo/PieColorDemo';
 export * from './PieChartDemo/PieOrangeDemo';

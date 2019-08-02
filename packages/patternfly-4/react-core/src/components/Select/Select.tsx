@@ -26,6 +26,8 @@ export interface SelectProps
   isExpanded?: boolean;
   /** Flag to indicate if select options are grouped */
   isGrouped?: boolean;
+  /** Display the toggle with no border or background */
+  isPlain?: boolean;
   /** Title text of Select */
   placeholderText?: string | React.ReactNode;
   /** Selected item */
@@ -50,6 +52,8 @@ export interface SelectProps
   onToggle: (isExpanded: boolean) => void;
   /** Callback for typeahead clear button */
   onClear?: (event: React.MouseEvent) => void;
+  /** Optional callback for custom filtering */
+  onFilter?: (e: React.ChangeEvent<HTMLInputElement>) => React.ReactElement[];
   /** Variant of rendered Select */
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Width of the select container as a number of px or string percentage */
@@ -74,6 +78,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     toggleId: null as string,
     isExpanded: false,
     isGrouped: false,
+    isPlain: false,
     'aria-label': '',
     ariaLabelledBy: '',
     ariaLabelTypeAhead: '',
@@ -84,7 +89,8 @@ export class Select extends React.Component<SelectProps, SelectState> {
     placeholderText: '',
     variant: SelectVariant.single,
     width: '',
-    onClear: Function.prototype
+    onClear: Function.prototype,
+    onFilter: undefined as () => {}
   };
 
   state = {
@@ -98,6 +104,12 @@ export class Select extends React.Component<SelectProps, SelectState> {
   componentDidUpdate = (prevProps: SelectProps, prevState: SelectState) => {
     if (!prevState.openedOnEnter && this.state.openedOnEnter) {
       this.refCollection[0].focus();
+    }
+
+    if (prevProps.children !== this.props.children) {
+      this.setState({
+        typeaheadFilteredChildren: React.Children.toArray(this.props.children)
+      });
     }
   };
 
@@ -116,19 +128,25 @@ export class Select extends React.Component<SelectProps, SelectState> {
   };
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let input: RegExp;
-    try {
-      input = new RegExp(e.target.value, 'i');
-    } catch (err) {
-      input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
-    }
-    const typeaheadFilteredChildren =
-      e.target.value !== ''
-        ? React.Children.toArray(this.props.children).filter(
+    const { onFilter } = this.props;
+    let typeaheadFilteredChildren;
+    if (onFilter) {
+      typeaheadFilteredChildren = onFilter(e);
+    } else {
+      let input: RegExp;
+      try {
+        input = new RegExp(e.target.value, 'i');
+      } catch (err) {
+        input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+      }
+      typeaheadFilteredChildren =
+        e.target.value !== ''
+          ? React.Children.toArray(this.props.children).filter(
             (child: React.ReactNode) =>
               this.getDisplay((child as React.ReactElement).props.value, 'text').search(input) === 0
-          )
-        : React.Children.toArray(this.props.children);
+            )
+          : React.Children.toArray(this.props.children);
+    }
     if (typeaheadFilteredChildren.length === 0) {
       typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value="No results found" />);
     }
@@ -171,6 +189,12 @@ export class Select extends React.Component<SelectProps, SelectState> {
 
   handleArrowKeys = (index: number, position: string) => {
     keyHandler(index, position, this.refCollection, this.refCollection);
+  };
+
+  handleFocus = () => {
+    if (!this.props.isExpanded) {
+      this.props.onToggle(true);
+    }
   };
 
   handleTypeaheadKeys = (position: string) => {
@@ -247,9 +271,11 @@ export class Select extends React.Component<SelectProps, SelectState> {
       onToggle,
       onSelect,
       onClear,
+      onFilter,
       toggleId,
       isExpanded,
       isGrouped,
+      isPlain,
       selections,
       ariaLabelledBy,
       ariaLabelTypeAhead,
@@ -295,6 +321,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
             id={selectToggleId}
             parentRef={this.parentRef}
             isExpanded={isExpanded}
+            isPlain={isPlain}
             onToggle={onToggle}
             onEnter={this.onEnter}
             onClose={this.onClose}
@@ -338,6 +365,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                     }
                     type="text"
                     onChange={this.onChange}
+                    onFocus={this.handleFocus}
                     autoComplete="off"
                   />
                 </div>
@@ -368,6 +396,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                     value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
                     type="text"
                     onChange={this.onChange}
+                    onFocus={this.handleFocus}
                     autoComplete="off"
                   />
                 </div>

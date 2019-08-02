@@ -237,6 +237,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DonutUtilizationStaticRightDemo
   },
   {
+    id: 'dropdown-demo', 
+    name: 'Dropdown Demo', 
+    componentType: Examples.DropdownDemo
+  },
+  {
     id: 'empty-state-demo',
     name: 'Empty State Demo',
     componentType: Examples.EmptyStateDemo
@@ -320,6 +325,11 @@ export const Demos: DemoInterface[] = [
     id: 'options-menu-demo',
     name: 'Options Menu Demo',
     componentType: Examples.OptionsMenuDemo
+  },
+  {
+    id: 'ouia-demo',
+    name: 'Ouia Demo',
+    componentType: Examples.OuiaDemo
   },
   {
     id: 'page-demo',

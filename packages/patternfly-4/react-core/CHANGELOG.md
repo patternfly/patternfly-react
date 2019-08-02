@@ -3,6 +3,179 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.80.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.80.2...@patternfly/react-core@3.80.3) (2019-08-01)
+
+
+### Bug Fixes
+
+* **button:** add 'reset' to types ([#2622](https://github.com/patternfly/patternfly-react/issues/2622)) ([8ee40c0](https://github.com/patternfly/patternfly-react/commit/8ee40c0))
+* **select:** add isPlain variation/prop to Select.tsx, snapshot tests, and integration ([#2588](https://github.com/patternfly/patternfly-react/issues/2588)) ([0809b28](https://github.com/patternfly/patternfly-react/commit/0809b28))
+
+
+
+
+
+## [3.80.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.80.1...@patternfly/react-core@3.80.2) (2019-07-30)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.80.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.80.0...@patternfly/react-core@3.80.1) (2019-07-30)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.80.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.79.0...@patternfly/react-core@3.80.0) (2019-07-30)
+
+
+### Features
+
+* **accordion:** add definition list use case ([#2422](https://github.com/patternfly/patternfly-react/issues/2422)) ([7211713](https://github.com/patternfly/patternfly-react/commit/7211713))
+
+
+
+
+
+# [3.79.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.78.0...@patternfly/react-core@3.79.0) (2019-07-30)
+
+
+### Features
+
+* **Modal:** Allow custom header and footer ([#2120](https://github.com/patternfly/patternfly-react/issues/2120)) ([9d2f157](https://github.com/patternfly/patternfly-react/commit/9d2f157))
+
+
+
+
+
+# [3.78.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.77.2...@patternfly/react-core@3.78.0) (2019-07-29)
+
+
+### Bug Fixes
+
+* **Dropdown:** adds aria-label for icon only example ([#2517](https://github.com/patternfly/patternfly-react/issues/2517)) ([dd2dc02](https://github.com/patternfly/patternfly-react/commit/dd2dc02))
+
+
+### Features
+
+* **Select:** add select custom filter callback ([#2434](https://github.com/patternfly/patternfly-react/issues/2434)) ([878a107](https://github.com/patternfly/patternfly-react/commit/878a107))
+
+
+
+
+
+## [3.77.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.77.1...@patternfly/react-core@3.77.2) (2019-07-26)
+
+
+### Bug Fixes
+
+* **page:** skip to content should point to primary content container ([#2519](https://github.com/patternfly/patternfly-react/issues/2519)) ([1f709bd](https://github.com/patternfly/patternfly-react/commit/1f709bd))
+* **PF4: Pagination:** When 0 or negative number is passed to Pagintion show 0 pages ([#2558](https://github.com/patternfly/patternfly-react/issues/2558)) ([7dee544](https://github.com/patternfly/patternfly-react/commit/7dee544)), closes [#2557](https://github.com/patternfly/patternfly-react/issues/2557)
+
+
+
+
+
+## [3.77.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.77.0...@patternfly/react-core@3.77.1) (2019-07-25)
+
+
+### Bug Fixes
+
+* **form:** replace radio with check ([#2567](https://github.com/patternfly/patternfly-react/issues/2567)) ([f5516de](https://github.com/patternfly/patternfly-react/commit/f5516de))
+
+
+
+
+
+# [3.77.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.76.0...@patternfly/react-core@3.77.0) (2019-07-25)
+
+
+### Features
+
+* **Dropdown:** Convert dropdown to typescript ([#2502](https://github.com/patternfly/patternfly-react/issues/2502)) ([14474fe](https://github.com/patternfly/patternfly-react/commit/14474fe))
+
+
+
+
+
+# [3.76.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.75.3...@patternfly/react-core@3.76.0) (2019-07-25)
+
+
+### Features
+
+* **Tooltip:** Added support for aria prop from Tippy library ([#2539](https://github.com/patternfly/patternfly-react/issues/2539)) ([54dce53](https://github.com/patternfly/patternfly-react/commit/54dce53)), closes [#1458](https://github.com/patternfly/patternfly-react/issues/1458)
+
+
+
+
+
+## [3.75.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.75.2...@patternfly/react-core@3.75.3) (2019-07-24)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.75.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.75.1...@patternfly/react-core@3.75.2) (2019-07-24)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.75.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.75.0...@patternfly/react-core@3.75.1) (2019-07-22)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.75.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.74.0...@patternfly/react-core@3.75.0) (2019-07-22)
+
+
+### Features
+
+* **experimental:** add POC for experimental button and badge ([#2363](https://github.com/patternfly/patternfly-react/issues/2363)) ([3d4d322](https://github.com/patternfly/patternfly-react/commit/3d4d322))
+
+
+
+
+
+# [3.74.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.73.2...@patternfly/react-core@3.74.0) (2019-07-22)
+
+
+### Features
+
+* **Select:** update typeahead filtered list when children change ([#2518](https://github.com/patternfly/patternfly-react/issues/2518)) ([85562fe](https://github.com/patternfly/patternfly-react/commit/85562fe))
+
+
+
+
+
+## [3.73.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.73.1...@patternfly/react-core@3.73.2) (2019-07-22)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.73.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.73.0...@patternfly/react-core@3.73.1) (2019-07-18)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 # [3.73.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.72.3...@patternfly/react-core@3.73.0) (2019-07-17)
 
 

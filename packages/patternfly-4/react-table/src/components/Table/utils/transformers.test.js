@@ -11,6 +11,7 @@ import {
   mapProps,
   expandable,
   expandedRow,
+  wrappable,
   textCenter
 } from './transformers';
 import { DropdownDirection, DropdownPosition } from '@patternfly/react-core';
@@ -266,5 +267,9 @@ describe('Transformer functions', () => {
 
   test('textCenter', () => {
     expect(textCenter()).toEqual({ textCenter: true });
+  });
+
+  test('wrappable', () => {
+    expect(wrappable()).toEqual({ className: 'pf-m-wrap' });
   });
 });

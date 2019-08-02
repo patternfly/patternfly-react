@@ -24,6 +24,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   sidebar?: React.ReactNode;
   /** Skip to content component for the page */
   skipToContent?: React.ReactElement;
+  /** an id to use for the [role="main"] element */
+  mainContainerId?: string;
   /**
    * If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
    * the sidebar component or add a callback onNavToggle function into the PageHeader component
@@ -59,7 +61,8 @@ export class Page extends React.Component<PageProps, PageState> {
     sidebar: null as React.ReactNode,
     skipToContent: null as React.ReactElement,
     isManagedSidebar: false,
-    onPageResize: ():void => null
+    onPageResize: ():void => null,
+    mainContainerId: null as string
   };
 
   componentDidMount() {
@@ -110,6 +113,7 @@ export class Page extends React.Component<PageProps, PageState> {
       header,
       sidebar,
       skipToContent,
+      mainContainerId,
       isManagedSidebar,
       onPageResize,
       ...rest
@@ -128,9 +132,8 @@ export class Page extends React.Component<PageProps, PageState> {
           {skipToContent}
           {header}
           {sidebar}
-          <main role="main" className={css(styles.pageMain)}>
+          <main role="main" id={mainContainerId} className={css(styles.pageMain)} tabIndex={-1}>
             {breadcrumb && <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>}
-            {skipToContent && <a id={skipToContent.props.href.replace(/#*/, '')} />}
             {children}
           </main>
         </div>

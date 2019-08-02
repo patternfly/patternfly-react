@@ -52,6 +52,7 @@ const SidebarLayout = ({ children }) => {
       <Helmet>
         <html lang="en-US" />
         <meta charSet="utf-8" />
+        <body className="pf-m-redhat-font" />
         <meta name="description" content="PatternFly React Documentation" />
         <meta name="keywords" content="React, PatternFly, Red Hat" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Tippy from '@tippy.js/react';
+import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
 import { Instance as TippyInstance } from 'tippy.js';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import { css, getModifier } from '@patternfly/react-styles';
@@ -7,10 +7,10 @@ import { TooltipArrow } from './TooltipArrow';
 import { TooltipContent } from './TooltipContent';
 import { KEY_CODES } from '../../helpers/constants';
 import { c_tooltip_MaxWidth as tooltipMaxWidth } from '@patternfly/react-tokens';
-import { tippyStyles } from './styles';
+import { popoverBaseStyles } from './styles';
 import { ReactElement } from 'react';
 
-tippyStyles();
+popoverBaseStyles();
 
 export enum TooltipPosition {
   top = 'top',
@@ -46,6 +46,8 @@ export interface TooltipProps {
   isAppLauncher?: boolean;
   /** Distance of the tooltip to its target, defaults to 15 */
   distance?: number;
+  /** Aria-labelledby or aria-describedby for tooltip */
+  aria?: 'describedby' | 'labelledby';
 };
 
 export class Tooltip extends React.Component<TooltipProps> {
@@ -61,7 +63,8 @@ export class Tooltip extends React.Component<TooltipProps> {
     zIndex: 9999,
     maxWidth: tooltipMaxWidth && tooltipMaxWidth.value,
     isAppLauncher: false,
-    distance: 15
+    distance: 15,
+    aria: 'describedby'
   };
 
   storeTippyInstance = (tip:TippyInstance) => {
@@ -103,6 +106,7 @@ export class Tooltip extends React.Component<TooltipProps> {
       maxWidth,
       isAppLauncher,
       distance,
+      aria,
       ...rest
     } = this.props;
     const content = (
@@ -116,7 +120,8 @@ export class Tooltip extends React.Component<TooltipProps> {
       </div>
     );
     return (
-      <Tippy
+      <PopoverBase
+        aria={aria}
         onCreate={this.storeTippyInstance}
         maxWidth={maxWidth}
         zIndex={zIndex}
@@ -143,7 +148,7 @@ export class Tooltip extends React.Component<TooltipProps> {
         }}
       >
         {isAppLauncher ? this.extendChildren() : children}
-      </Tippy>
+      </PopoverBase>
     );
   }
 }

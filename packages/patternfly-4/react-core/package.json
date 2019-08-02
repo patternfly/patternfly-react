@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-core",
-  "version": "3.73.0",
+  "version": "3.80.3",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -41,13 +41,13 @@
     "typecheck": "tsc -p tsconfig.typecheck.json"
   },
   "dependencies": {
-    "@patternfly/react-icons": "^3.10.12",
-    "@patternfly/react-styles": "^3.5.5",
-    "@patternfly/react-tokens": "^2.6.11",
-    "@tippy.js/react": "^1.1.1",
+    "@patternfly/react-icons": "^3.10.14",
+    "@patternfly/react-styles": "^3.5.7",
+    "@patternfly/react-tokens": "^2.6.13",
     "emotion": "^9.2.9",
     "exenv": "^1.2.2",
-    "focus-trap-react": "^4.0.1"
+    "focus-trap-react": "^4.0.1",
+    "tippy.js": "^3.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -58,7 +58,7 @@
     "@babel/plugin-transform-typescript": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@patternfly/patternfly": "2.21.2",
+    "@patternfly/patternfly": "2.23.0",
     "@types/enzyme": "3.9.0",
     "@types/exenv": "^1.2.0",
     "@types/jest": "^24.0.11",

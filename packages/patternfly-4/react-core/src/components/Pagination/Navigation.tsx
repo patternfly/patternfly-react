@@ -11,6 +11,8 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   className?: string;
   /** The number of the last page */
   lastPage?: number;
+  /** The number of first page where pagination starts */
+  firstPage?: number;
   /** The title of a page displayed beside the page number */
   pagesTitle?: string;
   /** Accessible label for the button which moves to the last page */
@@ -54,6 +56,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
   static defaultProps = {
     className: '',
     lastPage: 0,
+    firstPage: 0,
     pagesTitle: '',
     toLastPage: 'Go to last page',
     toNextPage: 'Go to next page',
@@ -94,6 +97,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     const {
       page,
       lastPage,
+      firstPage,
       pagesTitle,
       toLastPage,
       toNextPage,
@@ -115,7 +119,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
       <nav className={css(styles.paginationNav, className)} aria-label={paginationTitle} {...props}>
         <Button
           variant={ButtonVariant.plain}
-          isDisabled={page === 1}
+          isDisabled={page === firstPage}
           aria-label={toFirstPage}
           data-action="first"
           onClick={event => {
@@ -128,7 +132,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
         </Button>
         <Button
           variant={ButtonVariant.plain}
-          isDisabled={page === 1}
+          isDisabled={page === firstPage}
           data-action="previous"
           onClick={event => {
             const newPage = page as number - 1 >= 1 ? page as number - 1 : 1;
@@ -145,7 +149,8 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
             className={css(styles.formControl)}
             aria-label={currPage}
             type="number"
-            min="1"
+            disabled={page === firstPage && page === lastPage}
+            min={lastPage <= 0 && firstPage <=0 ? 0 : 1}
             max={lastPage}
             value={userInputPage}
             onKeyDown={event => this.onKeyDown(event, page, lastPage, onPageInput, onSetPage)}

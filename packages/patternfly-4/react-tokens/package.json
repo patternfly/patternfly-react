@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-tokens",
-  "version": "2.6.11",
+  "version": "2.6.13",
   "description": "This library provides access to the design tokens of PatternFly 4 from JavaScript",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -32,7 +32,7 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
-    "@patternfly/patternfly": "2.21.2",
+    "@patternfly/patternfly": "2.23.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",

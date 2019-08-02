@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.7](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.6...patternfly-react@2.36.7) (2019-07-24)
+
+
+### Bug Fixes
+
+* **Donut Chart:** Add fixed point notation into percentage donut charts ([#2375](https://github.com/patternfly/patternfly-react/issues/2375)) ([937d2d7](https://github.com/patternfly/patternfly-react/commit/937d2d7))
+
+
+
+
+
 ## [2.36.6](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.5...patternfly-react@2.36.6) (2019-07-09)
 
 

@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`tooltip renders 1`] = `
-<Tippy
+<PopoverBase
   animateFill={false}
   appendTo={[Function]}
+  aria="describedby"
   content={
     <div
       className="pf-c-tooltip"
@@ -49,5 +50,5 @@ exports[`tooltip renders 1`] = `
   <div>
     Toggle tooltip
   </div>
-</Tippy>
+</PopoverBase>
 `;

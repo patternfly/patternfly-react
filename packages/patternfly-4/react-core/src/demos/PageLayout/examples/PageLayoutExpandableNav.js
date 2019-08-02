@@ -203,9 +203,8 @@ class PageLayoutExpandableNav extends React.Component {
         </BreadcrumbItem>
       </Breadcrumb>
     );
-    const PageSkipToContent = (
-      <SkipToContent href="#main-content-page-layout-expandable-nav">Skip to Content</SkipToContent>
-    );
+    const pageId = 'main-content-page-layout-expandable-nav';
+    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 
     return (
       <React.Fragment>
@@ -215,6 +214,7 @@ class PageLayoutExpandableNav extends React.Component {
           isManagedSidebar
           skipToContent={PageSkipToContent}
           breadcrumb={PageBreadcrumb}
+          mainContainerId={pageId}
         >
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>

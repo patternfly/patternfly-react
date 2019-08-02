@@ -171,7 +171,9 @@ export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
   ...rest
 }: ChartLabelProps) => {
   const applyDefaultStyle = (customStyle: React.CSSProperties) => defaults(customStyle, {
-    fontFamily: ChartCommonStyles.label.fontFamily
+    fontFamily: ChartCommonStyles.label.fontFamily,
+    fontSize: ChartCommonStyles.label.fontSize,
+    letterSpacing: ChartCommonStyles.label.letterSpacing
   });
   const newStyle = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
   return <VictoryLabel style={newStyle as any} {...rest} />;

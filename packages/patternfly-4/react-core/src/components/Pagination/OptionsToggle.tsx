@@ -39,7 +39,7 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   itemCount = 0,
   widgetId = '',
   showToggle = true,
-  onToggle = () => undefined,
+  onToggle = (_isOpen: boolean) => undefined as any,
   isOpen = false,
   parentRef = null,
   toggleTemplate: ToggleTemplate = '',
@@ -50,9 +50,9 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
         <DropdownToggle
           aria-label={optionsToggle}
           onToggle={onToggle}
+          isDisabled={itemCount <= 0}
           isOpen={isOpen}
           id={`${widgetId}-toggle`}
-          isSplitButton
           className={styles.optionsMenuToggleButton}
           parentRef={parentRef}
         >

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { KEY_CODES } from '../../helpers/constants';
 import { css } from '../../../../react-styles/dist/js';
 import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
@@ -54,4 +54,13 @@ test('modal removes body backdropOpen class when removed', () => {
   view.setProps({ isOpen: false });
   view.update();
   expect(document.body.className).not.toContain(css(styles.backdropOpen));
+});
+
+test('modal shows/hides the close button based on showClose (default true)', () => {
+  const view = mount(<Modal {...props} isOpen />);
+  view.update();
+  expect(view.exists('.pf-c-modal-box .pf-c-button')).toBeTruthy();
+  view.setProps({ showClose: false });
+  view.update();
+  expect(view.exists('.pf-c-modal-box .pf-c-button')).toBeFalsy();
 });

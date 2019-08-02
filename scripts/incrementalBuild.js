@@ -6,11 +6,12 @@ const Project = require('@lerna/project');
 const RunCommand = require('@lerna/run')
 
 // Load cache
-const cacheFile = '.cache/incrementalCache'
-let cache = {}
+const cacheFile = '.cache/incrementalCache';
+let cache = {};
 if (fs.existsSync(cacheFile)) {
   cache = JSON.parse(fs.readFileSync(cacheFile, 'utf8'));
 }
+const yarnLockHash = hashDir('yarn.lock');
 
 // Package filtering
 const isPf3 = process.argv.length > 2 && process.argv[2] === 'pf3';
@@ -48,7 +49,7 @@ async function getInvalidPackages() {
       : true) // Based off argv
     .filter(p => isPf4
       ? p.location.indexOf('patternfly-4') > 0 || commonPackages.indexOf(p.name) >= 0
-      : true) // Based off argv
+      : true); // Based off argv
 
   for (let p of packages) {
     p.hash = hashPackageSrc(p.location, p.name);
@@ -56,6 +57,11 @@ async function getInvalidPackages() {
     if (p.valid) {
       console.info('Skipping', p.name, '(already built).');
     }
+  }
+
+  // Invalidate everything if any deps change.
+  if (cache['yarn.lock'] !== yarnLockHash) {
+    return packages;
   }
 
   return packages.filter(p => !p.valid);
@@ -75,6 +81,7 @@ getInvalidPackages().then(packages => {
       if (!fs.existsSync('.cache')) {
         fs.mkdirSync('.cache');
       }
+      cache['yarn.lock'] = yarnLockHash;
       fs.writeFileSync(cacheFile, JSON.stringify(cache, null, 2));
     })
   }

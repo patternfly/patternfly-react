@@ -69,7 +69,8 @@ exports.createPages = ({ graphql, actions }) => {
             title: node.frontmatter.title,
             typescript: node.frontmatter.typescript, // For a badge
             fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
-            propComponents: node.frontmatter.propComponents || [] // Helps us get the docgenned props
+            propComponents: node.frontmatter.propComponents || [], // Helps us get the docgenned props
+            pathRegex: node.frontmatter.section === 'experimental' ? '/.*/experimental/.*/' : '/^((?!experimental).)*$/' // Since experimental components have same class names
           }
         });
       }

@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.14.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.14.0...@patternfly/react-integration@2.14.1) (2019-08-01)
+
+
+### Bug Fixes
+
+* **select:** add isPlain variation/prop to Select.tsx, snapshot tests, and integration ([#2588](https://github.com/patternfly/patternfly-react/issues/2588)) ([0809b28](https://github.com/patternfly/patternfly-react/commit/0809b28))
+
+
+
+
+
+# [2.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.13.1...@patternfly/react-integration@2.14.0) (2019-07-30)
+
+
+### Features
+
+* **Modal:** Allow custom header and footer ([#2120](https://github.com/patternfly/patternfly-react/issues/2120)) ([9d2f157](https://github.com/patternfly/patternfly-react/commit/9d2f157))
+
+
+
+
+
+## [2.13.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.13.0...@patternfly/react-integration@2.13.1) (2019-07-26)
+
+
+### Bug Fixes
+
+* **page:** skip to content should point to primary content container ([#2519](https://github.com/patternfly/patternfly-react/issues/2519)) ([1f709bd](https://github.com/patternfly/patternfly-react/commit/1f709bd))
+
+
+
+
+
+# [2.13.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.12.1...@patternfly/react-integration@2.13.0) (2019-07-25)
+
+
+### Features
+
+* **Dropdown:** Convert dropdown to typescript ([#2502](https://github.com/patternfly/patternfly-react/issues/2502)) ([14474fe](https://github.com/patternfly/patternfly-react/commit/14474fe))
+
+
+
+
+
+## [2.12.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.12.0...@patternfly/react-integration@2.12.1) (2019-07-24)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
 # [2.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.11.1...@patternfly/react-integration@2.12.0) (2019-07-12)
 
 
