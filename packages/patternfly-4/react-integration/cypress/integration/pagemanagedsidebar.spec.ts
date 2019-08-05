@@ -1,18 +1,18 @@
-describe('Page Demo Test', () => {
+describe('Page Managed Sidebar Demo Test', () => {
   it('Navigate to page section', () => {
     cy.visit('http://localhost:3000/');
-    cy.get('#page-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/page-demo-nav-link')
+    cy.get('#page-managed-sidebar-demo-nav-item-link').click();
+    cy.url().should('eq', 'http://localhost:3000/page-managed-sidebar-demo-nav-link')
   });
 
   it('Test Page elements', () => {
     cy.get('#nav-toggle').then((hamburgerIcon: JQuery<HTMLDivElement>) => {
-      cy.get('#page-demo').within(() => {
+      cy.get('#page-managed-sidebar-demo').within(() => {
         cy.get('.pf-c-page__sidebar.pf-m-expanded').should('exist');
         cy.get('.pf-c-page__sidebar.pf-m-collapsed').should('not.exist');
       });
       cy.wrap(hamburgerIcon).click();
-      cy.get('#page-demo').within(() => {
+      cy.get('#page-managed-sidebar-demo').within(() => {
         cy.get('.pf-c-page__sidebar.pf-m-collapsed').should('exist');
         cy.get('.pf-c-page__sidebar.pf-m-expanded').should('not.exist');
       });

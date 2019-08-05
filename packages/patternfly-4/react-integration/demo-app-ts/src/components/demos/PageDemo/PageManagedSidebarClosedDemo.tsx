@@ -1,30 +1,12 @@
 import React from 'react';
-import {
-  Page,
-  PageHeader,
-  PageSidebar,
-  PageSection,
-  PageSectionVariants,
-  SkipToContent
-} from '@patternfly/react-core';
+import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 
-export class PageDemo extends React.Component {
-  state = {
-    isNavOpen: true
-  };
-  onNavToggle = () => {
-    this.setState({
-    	isNavOpen: !this.state.isNavOpen
-    });
-  };
-
+export class PageManagedSidebarClosedDemo extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
 
   render() {
-    const { isNavOpen } = this.state;
-
     const logoProps = {
       href: 'https://patternfly.org',
       onClick: () => console.log('clicked logo'),
@@ -37,19 +19,13 @@ export class PageDemo extends React.Component {
         toolbar="Toolbar"
         avatar=" | Avatar"
         showNavToggle
-        isNavOpen={isNavOpen}
-        onNavToggle={this.onNavToggle}
         logoComponent={'div'}
       />
     );
-    const pageId = 'page-demo-page-id';
-    const PageSkipToContent = (
-      <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>
-    );
-    const Sidebar = <PageSidebar id="page-demo-sidebar" nav="Navigation" isNavOpen={isNavOpen} />;
+    const Sidebar = <PageSidebar nav="Navigation" />;
 
     return (
-      <Page id="page-demo" header={Header} sidebar={Sidebar} mainContainerId={pageId} skipToContent={PageSkipToContent}>
+      <Page id="page-managed-sidebar-closed-demo" header={Header} sidebar={Sidebar} isManagedSidebar defaultManagedSidebarOpen={false}>
         <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
         <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
         <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
