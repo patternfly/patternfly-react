@@ -7,6 +7,47 @@ propComponents: ['Alert', 'AlertActionCloseButton', 'AlertActionLink']
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 import './examples/alert.scss';
 
+## Default alert
+```js
+import React from 'react';
+import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
+
+class DefaultAlert extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { alertOneVisible: true, alertTwoVisible: true };
+    this.hideAlertOne = () => this.setState({ alertOneVisible: false });
+    this.hideAlertTwo = () => this.setState({ alertTwoVisible: false });
+  }
+
+  render() {
+    const { alertOneVisible, alertTwoVisible } = this.state;
+    return (
+      <React.Fragment>
+        {alertOneVisible && (
+          <Alert
+            variant="default"
+            title="Default alert title"
+            action={<AlertActionCloseButton onClose={this.hideAlertOne} />}
+          >
+            Info alert description. <a href="#">This is a link.</a>
+          </Alert>
+        )}
+        {alertTwoVisible && (
+          <Alert
+            variant="default"
+            title="Default alert title"
+            action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
+          />
+        )}
+        <Alert variant="default" title="Default alert title" action={<AlertActionLink>Action Button</AlertActionLink>} />
+        <Alert variant="default" title="Default alert title" />
+      </React.Fragment>
+    );
+  }
+}
+```
+
 ## Info alert
 ```js
 import React from 'react';
@@ -185,6 +226,7 @@ class InlineAlert extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Alert variant="default" isInline title="Default inline alert title"/>
         <Alert variant="info" isInline title="Info inline alert title"/>
         <Alert variant="success" isInline title="Success inline alert title" />
         <Alert variant="warning" isInline title="Warning inline alert title" />
