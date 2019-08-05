@@ -136,7 +136,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
                 {this.extendChildren()}
               </ul>
             )}
-            {variant === SelectVariant.checkbox && (
+            {variant === SelectVariant.checkbox && React.Children.count(children) > 0 && (
               <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
                 <div className={css(styles.selectMenu, className)}>
                   <form noValidate className={css(formStyles.form)}>
@@ -144,6 +144,13 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
                   </form>
                 </div>
               </FocusTrap>
+            )}
+            {variant === SelectVariant.checkbox && React.Children.count(children) === 0 && (
+              <div className={css(styles.selectMenu, className)}>
+                <form noValidate className={css(formStyles.form)}>
+                  <div className={css(formStyles.formGroup)}/>
+                </form>
+              </div>
             )}
           </React.Fragment>
         )}
