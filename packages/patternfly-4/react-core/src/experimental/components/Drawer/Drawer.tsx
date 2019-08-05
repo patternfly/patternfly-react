@@ -13,7 +13,7 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   /** Indicates if the content element and panel element are displayed side by side. */
   isInline: boolean;
   /** Content to rendered in the left hand panel */
-  panelContent?: typeof DrawerPanelContent;
+  panelContent?: React.ReactNode;
 }
 
 export const Drawer: React.SFC<DrawerProps> = ({
