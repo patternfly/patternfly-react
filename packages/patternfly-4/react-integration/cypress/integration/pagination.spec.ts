@@ -5,8 +5,23 @@ describe('Pagination Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/pagination-demo-nav-link');
   });
 
+  it('should be disabled when flag is present', () => {
+    cy.get('#pagination-options-menu-disabled').find('.pf-c-options-menu__toggle-text')
+      .then(toggleText => expect(toggleText).to.have.text('1 - 20 of 523 items'));
+    cy.get('#pagination-options-menu-disabled').find('button[data-action="first"]')
+      .then(button => expect(button).to.be.disabled);
+    cy.get('#pagination-options-menu-disabled').find('button[data-action="previous"]')
+      .then(button => expect(button).to.be.disabled);
+    cy.get('#pagination-options-menu-disabled').find('button[data-action="next"]')
+      .then(button => expect(button).to.be.disabled);
+    cy.get('#pagination-options-menu-disabled').find('button[data-action="last"]')
+      .then(button => expect(button).to.be.disabled);
+    cy.get('#pagination-options-menu-disabled > .pf-c-options-menu > .pf-c-dropdown').find('button')
+      .then(button => expect(button).to.be.disabled);
+  });
+
   it('Verify initial state', () => {
-    cy.get('.pf-c-pagination').should('have.length', 2);
+    cy.get('.pf-c-pagination').should('have.length', 3);
     cy.get('#pagination-options-menu-bottom.pf-c-pagination.pf-m-footer').should('exist');
     cy.get('#pagination-options-menu-top').find('.pf-c-options-menu__toggle-text')
       .then(toggleText => expect(toggleText).to.have.text('1 - 20 of 523 items'));
