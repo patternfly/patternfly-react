@@ -64,6 +64,8 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   perPage?: number;
   /** Select from options to number of items per page. */
   perPageOptions?: PerPageOptions[];
+  /** Page we start at. */
+  firstPage?: number;
   /** Current page number. */
   page?: number;
   /** First index of items on current page. */
@@ -112,6 +114,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
     currPage: 'Current page',
     paginationTitle: 'Pagination'
   },
+  firstPage = 1,
   page = 1,
   itemCount,
   itemsStart = null,
@@ -130,6 +133,12 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   ...props
 }: PaginationProps) => {
   const lastPage = Math.ceil(itemCount / perPage);
+  if (page < firstPage) {
+    page = firstPage;
+  } else if (page > lastPage) {
+    page = lastPage;
+  }
+
   const firstIndex = itemCount <= 0 ? 0 : (page - 1) * perPage + 1;
   let lastIndex;
   if (itemCount <= 0) {
