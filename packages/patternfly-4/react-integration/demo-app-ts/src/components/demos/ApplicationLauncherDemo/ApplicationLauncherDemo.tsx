@@ -63,7 +63,7 @@ export class ApplicationLauncherDemo extends React.Component<null, ApplicationLa
         onSelect={this.onSelect}
         onToggle={this.onToggle}
         isOpen={isOpen}
-        dropdownItems={dropdownItems}
+        items={dropdownItems}
       />
     );
   }

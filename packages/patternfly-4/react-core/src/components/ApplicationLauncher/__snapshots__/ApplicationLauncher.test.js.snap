@@ -5,7 +5,10 @@ exports[`ApplicationLauncher custom icon 1`] = `
   aria-label="Application launcher"
   className=""
   direction="down"
-  dropdownItems={
+  isDisabled={false}
+  isGrouped={false}
+  isOpen={true}
+  items={
     Array [
       <Unknown>
         Link
@@ -37,10 +40,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
       </Unknown>,
     ]
   }
-  isDisabled={false}
-  isGrouped={false}
-  isOpen={true}
-  items={Array []}
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -751,7 +750,10 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
   aria-label="Application launcher"
   className=""
   direction="up"
-  dropdownItems={
+  isDisabled={false}
+  isGrouped={false}
+  isOpen={false}
+  items={
     Array [
       <Unknown>
         Link
@@ -783,10 +785,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
       </Unknown>,
     ]
   }
-  isDisabled={false}
-  isGrouped={false}
-  isOpen={false}
-  items={Array []}
   onSelect={[Function]}
   onToggle={[Function]}
   position="right"
@@ -1002,7 +1000,10 @@ exports[`ApplicationLauncher dropup 1`] = `
   aria-label="Application launcher"
   className=""
   direction="up"
-  dropdownItems={
+  isDisabled={false}
+  isGrouped={false}
+  isOpen={false}
+  items={
     Array [
       <Unknown>
         Link
@@ -1034,10 +1035,6 @@ exports[`ApplicationLauncher dropup 1`] = `
       </Unknown>,
     ]
   }
-  isDisabled={false}
-  isGrouped={false}
-  isOpen={false}
-  items={Array []}
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -1253,7 +1250,10 @@ exports[`ApplicationLauncher expanded 1`] = `
   aria-label="Application launcher"
   className=""
   direction="down"
-  dropdownItems={
+  isDisabled={false}
+  isGrouped={false}
+  isOpen={true}
+  items={
     Array [
       <Unknown>
         Link
@@ -1285,10 +1285,6 @@ exports[`ApplicationLauncher expanded 1`] = `
       </Unknown>,
     ]
   }
-  isDisabled={false}
-  isGrouped={false}
-  isOpen={true}
-  items={Array []}
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -1993,7 +1989,10 @@ exports[`ApplicationLauncher regular 1`] = `
   aria-label="Application launcher"
   className=""
   direction="down"
-  dropdownItems={
+  isDisabled={false}
+  isGrouped={false}
+  isOpen={false}
+  items={
     Array [
       <Unknown>
         Link
@@ -2025,10 +2024,6 @@ exports[`ApplicationLauncher regular 1`] = `
       </Unknown>,
     ]
   }
-  isDisabled={false}
-  isGrouped={false}
-  isOpen={false}
-  items={Array []}
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -2244,7 +2239,10 @@ exports[`ApplicationLauncher right aligned 1`] = `
   aria-label="Application launcher"
   className=""
   direction="down"
-  dropdownItems={
+  isDisabled={false}
+  isGrouped={false}
+  isOpen={false}
+  items={
     Array [
       <Unknown>
         Link
@@ -2276,10 +2274,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
       </Unknown>,
     ]
   }
-  isDisabled={false}
-  isGrouped={false}
-  isOpen={false}
-  items={Array []}
   onSelect={[Function]}
   onToggle={[Function]}
   position="right"

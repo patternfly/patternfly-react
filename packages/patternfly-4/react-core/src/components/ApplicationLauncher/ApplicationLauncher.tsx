@@ -9,13 +9,6 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
     className?: string;
     /** Display menu above or below dropdown toggle */
     direction?: DropdownDirection;
-    /**
-     * @deprecated
-     * Use the items prop instead
-     *
-     * Array of DropdownItem nodes that will be rendered in the dropdown Menu list
-     */
-    dropdownItems?: React.ReactNode[];
     /** Array of application launcher items */
     items?: React.ReactNode[];
     /** Render Application launcher toggle as disabled icon */
@@ -41,7 +34,6 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
     className: '',
     isDisabled: false,
     direction: DropdownDirection.down,
-    dropdownItems: [] as React.ReactNode[],
     items: [] as React.ReactNode[],
     isOpen: false,
     position: DropdownPosition.left,
@@ -61,7 +53,6 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       isDisabled,
       className,
       isGrouped,
-      dropdownItems,
       items,
       ref,
       ...props
@@ -83,7 +74,7 @@ export class ApplicationLauncher extends React.Component<ApplicationLauncherProp
       }}>
         <DropdownWithContext
           {...props}
-          dropdownItems={items.length ? items : dropdownItems}
+          dropdownItems={items}
           isOpen={isOpen}
           className={className}
           aria-label={ariaLabel}
