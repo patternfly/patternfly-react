@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.15.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.14.6...demo-app-ts@2.15.0) (2019-08-05)
+
+
+### Features
+
+* **Page:** Allow the nav to default to closed for managed sidebar ([#2608](https://github.com/patternfly/patternfly-react/issues/2608)) ([6489375](https://github.com/patternfly/patternfly-react/commit/6489375)), closes [#1658](https://github.com/patternfly/patternfly-react/issues/1658)
+
+
+
+
+
+## [2.14.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.14.5...demo-app-ts@2.14.6) (2019-08-02)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [2.14.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.14.4...demo-app-ts@2.14.5) (2019-08-02)
+
+
+### Bug Fixes
+
+* **Select:** Prevent select from submitting forms ([#2621](https://github.com/patternfly/patternfly-react/issues/2621)) ([37f0a99](https://github.com/patternfly/patternfly-react/commit/37f0a99)), closes [#2029](https://github.com/patternfly/patternfly-react/issues/2029)
+
+
+
+
+
+## [2.14.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.14.3...demo-app-ts@2.14.4) (2019-08-01)
+
+
+### Bug Fixes
+
+* **select:** add isPlain variation/prop to Select.tsx, snapshot tests, and integration ([#2588](https://github.com/patternfly/patternfly-react/issues/2588)) ([0809b28](https://github.com/patternfly/patternfly-react/commit/0809b28))
+
+
+
+
+
 ## [2.14.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.14.2...demo-app-ts@2.14.3) (2019-07-30)
 
 **Note:** Version bump only for package demo-app-ts

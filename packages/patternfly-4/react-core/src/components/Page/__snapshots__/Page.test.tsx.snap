@@ -5,6 +5,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   aria-label="Page layout"
   breadcrumb={null}
   className="my-page-class"
+  defaultManagedSidebarOpen={true}
   header={
     <Unknown
       avatar=" | Avatar"
@@ -125,6 +126,7 @@ exports[`Check page to verify breadcrumb is created 1`] = `
   aria-label="Page layout"
   breadcrumb={<PageBreadcrumb />}
   className="my-page-class"
+  defaultManagedSidebarOpen={true}
   header={
     <Unknown
       avatar=" | Avatar"
@@ -428,6 +430,7 @@ exports[`Check page to verify skip to content points to main content region 1`] 
     </Unknown>
   }
   className="my-page-class"
+  defaultManagedSidebarOpen={true}
   header={
     <Unknown
       avatar=" | Avatar"
@@ -729,6 +732,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   aria-label="Page layout"
   breadcrumb={null}
   className="my-page-class"
+  defaultManagedSidebarOpen={true}
   header={
     <Unknown
       avatar=" | Avatar"

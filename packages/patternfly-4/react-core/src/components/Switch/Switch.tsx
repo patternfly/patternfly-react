@@ -11,8 +11,10 @@ export interface SwitchProps extends Omit<React.HTMLProps<HTMLInputElement>, 'ty
   id?: string,
   /** Additional classes added to the Switch */
   className?: string,
-  /** Text value for the label */
+  /** Text value for the label when on */
   label?: string,
+  /** Text value for the label when off */
+  labelOff?: string,
   /** Flag to show if the Switch is checked. */
   isChecked?: boolean,
   /** Flag to show if the Switch is disabled. */
@@ -30,6 +32,7 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
     id: '',
     className: '',
     label: '',
+    labelOff: '',
     isChecked: true,
     isDisabled: false,
     'aria-label': '',
@@ -46,7 +49,8 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
   }
 
   render() {
-    const { className, label, isChecked, isDisabled, onChange, ouiaContext, ouiaId, ...props } = this.props;
+    const { className, label, labelOff, isChecked, isDisabled, onChange, ouiaContext, ouiaId, ...props } = this.props;
+    const isAriaLabelledBy = props['aria-label'] === '';
     return (
       <label
         className={css(styles.switch, className)}
@@ -64,15 +68,24 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
           onChange={event => onChange(event.currentTarget.checked, event)}
           checked={isChecked}
           disabled={isDisabled}
+          aria-labelledby={isAriaLabelledBy ? `${this.id}-on`: null}
         />
-        {label !== '' ? (
+        {label !== '' || labelOff !== '' ? (
           <React.Fragment>
             <span className={css(styles.switchToggle)} />
-            <span className={css(styles.switchLabel, styles.modifiers.on)} aria-hidden="true">
+            <span
+              className={css(styles.switchLabel, styles.modifiers.on)}
+              id={isAriaLabelledBy ? `${this.id}-on` : null}
+              aria-hidden="true"
+            >
               {label}
             </span>
-            <span className={css(styles.switchLabel, styles.modifiers.off)} aria-hidden="true">
-              {label}
+            <span
+              className={css(styles.switchLabel, styles.modifiers.off)}
+              id={isAriaLabelledBy ? `${this.id}-off` : null}
+              aria-hidden="true"
+            >
+              {labelOff}
             </span>
           </React.Fragment>
         ) : (

@@ -337,6 +337,16 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.PageDemo
   },
   {
+    id: 'page-managed-sidebar-demo',
+    name: 'Page Managed Sidebar Demo',
+    componentType: Examples.PageManagedSidebarDemo
+  },
+  {
+    id: 'page-managed-sidebar-closed-demo',
+    name: 'Page Managed Sidebar Closed Demo',
+    componentType: Examples.PageManagedSidebarClosedDemo
+  },
+  {
     id: 'pagination-demo',
     name: 'Pagination Demo',
     componentType: Examples.PaginationDemo

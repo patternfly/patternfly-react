@@ -3,6 +3,51 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.82.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.81.0...@patternfly/react-core@3.82.0) (2019-08-05)
+
+
+### Features
+
+* **Page:** Allow the nav to default to closed for managed sidebar ([#2608](https://github.com/patternfly/patternfly-react/issues/2608)) ([6489375](https://github.com/patternfly/patternfly-react/commit/6489375)), closes [#1658](https://github.com/patternfly/patternfly-react/issues/1658)
+
+
+
+
+
+# [3.81.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.80.4...@patternfly/react-core@3.81.0) (2019-08-02)
+
+
+### Features
+
+* **switch:** add aria-labelledby to input ([#2468](https://github.com/patternfly/patternfly-react/issues/2468)) ([0f7cd6e](https://github.com/patternfly/patternfly-react/commit/0f7cd6e))
+
+
+
+
+
+## [3.80.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.80.3...@patternfly/react-core@3.80.4) (2019-08-02)
+
+
+### Bug Fixes
+
+* **Select:** Prevent select from submitting forms ([#2621](https://github.com/patternfly/patternfly-react/issues/2621)) ([37f0a99](https://github.com/patternfly/patternfly-react/commit/37f0a99)), closes [#2029](https://github.com/patternfly/patternfly-react/issues/2029)
+
+
+
+
+
+## [3.80.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.80.2...@patternfly/react-core@3.80.3) (2019-08-01)
+
+
+### Bug Fixes
+
+* **button:** add 'reset' to types ([#2622](https://github.com/patternfly/patternfly-react/issues/2622)) ([8ee40c0](https://github.com/patternfly/patternfly-react/commit/8ee40c0))
+* **select:** add isPlain variation/prop to Select.tsx, snapshot tests, and integration ([#2588](https://github.com/patternfly/patternfly-react/issues/2588)) ([0809b28](https://github.com/patternfly/patternfly-react/commit/0809b28))
+
+
+
+
+
 ## [3.80.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.80.1...@patternfly/react-core@3.80.2) (2019-07-30)
 
 **Note:** Version bump only for package @patternfly/react-core

@@ -377,6 +377,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                       onClear(e);
                     }}
                     aria-label={ariaLabelClear}
+                    type="button"
                   >
                     <TimesCircleIcon aria-hidden />
                   </button>
@@ -408,6 +409,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                       onClear(e);
                     }}
                     aria-label={ariaLabelClear}
+                    type="button"
                   >
                     <TimesCircleIcon aria-hidden />
                   </button>

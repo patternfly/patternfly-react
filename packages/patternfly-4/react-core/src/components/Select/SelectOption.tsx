@@ -116,6 +116,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   aria-selected={isSelected || null}
                   ref={this.ref}
                   onKeyDown={this.onKeyDown}
+                  type="button"
                 >
                   {children || value}
                   {isSelected && <CheckIcon className={css(styles.selectMenuItemIcon)} aria-hidden />}

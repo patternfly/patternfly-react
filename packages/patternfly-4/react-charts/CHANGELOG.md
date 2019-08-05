@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.7.2...@patternfly/react-charts@4.7.3) (2019-08-02)
+
+
+### Bug Fixes
+
+* **Chart Themes:** Fix missing fill and stroke colors for area and line charts ([#2626](https://github.com/patternfly/patternfly-react/issues/2626)) ([9d3138c](https://github.com/patternfly/patternfly-react/commit/9d3138c)), closes [#2624](https://github.com/patternfly/patternfly-react/issues/2624)
+
+
+
+
+
 ## [4.7.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.7.1...@patternfly/react-charts@4.7.2) (2019-07-25)
 
 
