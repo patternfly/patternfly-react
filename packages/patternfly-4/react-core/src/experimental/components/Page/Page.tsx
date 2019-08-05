@@ -27,8 +27,8 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   skipToContent?: React.ReactElement;
   /** an id to use for the [role="main"] element */
   mainContainerId?: string;
-  /** Content rendered in the drawer */
-  drawerPanelContent?: typeof DrawerPanelContent;
+  /** Content rendered in the drawer (e.g. <DrawerPanelContent /> ) */
+  drawerPanelContent?: React.ReactNode;
   /** Indicate if the drawer is expanded */
   isDrawerPanelExpanded?: boolean;
   /** Indicates if the content element and panel element are displayed side by side. */
