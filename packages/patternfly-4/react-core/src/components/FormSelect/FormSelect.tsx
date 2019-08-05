@@ -1,5 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
+import { ASTERISK } from '../../helpers/htmlConstants';
+import { FormContext } from '../Form/FormContext';
 import { css } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
 
@@ -14,6 +16,8 @@ export interface FormSelectProps extends Omit<React.HTMLProps<HTMLSelectElement>
     isValid?: boolean; 
     /** Flag indicating the FormSelect is disabled */
     isDisabled?: boolean; 
+    /** Sets the FormSelectrequired. */
+    isRequired?: boolean;
     /** Optional callback for updating when selection loses focus */
     onBlur?: (event: React.FormEvent<HTMLSelectElement>) => void;
     /** Optional callback for updating when selection gets focus */
@@ -38,6 +42,7 @@ export class FormSelect extends React.Component<FormSelectProps> {
     value: '',
     isValid: true,
     isDisabled: false,
+    isRequired: false,
     onBlur: (): any => undefined,
     onFocus: (): any => undefined,
     onChange: (): any => undefined
@@ -48,7 +53,7 @@ export class FormSelect extends React.Component<FormSelectProps> {
   };
 
   render() {
-    const { children, className, value, isValid, isDisabled, ...props } = this.props;
+    const { children, className, value, isValid, isDisabled, isRequired, ...props } = this.props;
     return (
       <select
         {...props}
@@ -56,6 +61,7 @@ export class FormSelect extends React.Component<FormSelectProps> {
         aria-invalid={!isValid}
         onChange={this.handleChange}
         disabled={isDisabled}
+        required={isRequired}
         value={value}
       >
         {children}
