@@ -93,6 +93,13 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     }
   }
 
+  componentDidUpdate() {
+    //Typical usage, don't forget to compare the props
+    if (this.state.userInputPage !== this.props.page) {
+      this.setState({ userInputPage: this.props.page });
+    }
+   }
+
   render () {
     const {
       page,
