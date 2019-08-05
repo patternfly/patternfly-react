@@ -1714,10 +1714,9 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@patternfly/patternfly@2.23.0":
-  version "2.23.0"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.23.0.tgz#3351eb69a0e45aaf055940b0ad4a7fde6102a174"
-  integrity sha512-vL0Bn66R7Yrkmv0kuhDzi1FJCdMpayfkCJW/WJJf0Ahf3YjDXdwNY+2kUcC55hkLVLzlK3+kx2l8d0FdJ9y0aQ==
+"@patternfly/patternfly@2.24.0":
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.24.0.tgz#dec25e8bf1593b6a4acdb18d167cb5c9f3e71378"
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
