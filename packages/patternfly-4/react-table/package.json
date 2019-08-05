@@ -34,7 +34,7 @@
     "@patternfly/react-tokens": "^2.6.13",
     "classnames": "^2.2.5",
     "exenv": "^1.2.2",
-    "lodash-es": "^4.2.1"
+    "lodash": "^4.2.1"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",

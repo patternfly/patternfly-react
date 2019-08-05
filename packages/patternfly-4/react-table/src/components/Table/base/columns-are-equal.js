@@ -4,7 +4,7 @@
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  * */
-import { isFunction, isEqualWith } from 'lodash-es';
+import { isFunction, isEqualWith } from 'lodash';
 
 function columnsAreEqual(oldColumns, newColumns) {
   return isEqualWith(oldColumns, newColumns, (a, b) => {
