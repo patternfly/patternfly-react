@@ -1,7 +1,5 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import { ASTERISK } from '../../helpers/htmlConstants';
-import { FormContext } from '../Form/FormContext';
 import { css } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
 
