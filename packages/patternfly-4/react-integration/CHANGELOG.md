@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.15.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.14.2...@patternfly/react-integration@2.15.0) (2019-08-05)
+
+
+### Features
+
+* **Page:** Allow the nav to default to closed for managed sidebar ([#2608](https://github.com/patternfly/patternfly-react/issues/2608)) ([6489375](https://github.com/patternfly/patternfly-react/commit/6489375)), closes [#1658](https://github.com/patternfly/patternfly-react/issues/1658)
+
+
+
+
+
 ## [2.14.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.14.1...@patternfly/react-integration@2.14.2) (2019-08-02)
 
 

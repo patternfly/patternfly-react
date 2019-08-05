@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.82.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.81.0...@patternfly/react-core@3.82.0) (2019-08-05)
+
+
+### Features
+
+* **Page:** Allow the nav to default to closed for managed sidebar ([#2608](https://github.com/patternfly/patternfly-react/issues/2608)) ([6489375](https://github.com/patternfly/patternfly-react/commit/6489375)), closes [#1658](https://github.com/patternfly/patternfly-react/issues/1658)
+
+
+
+
+
 # [3.81.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.80.4...@patternfly/react-core@3.81.0) (2019-08-02)
 
 
