@@ -40,7 +40,7 @@
   },
   "peerDependencies": {
     "@patternfly/react-table": "^2.10.0",
-    "lodash-es": "4.x",
+    "lodash": "4.x",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^15.6.2 || ^16.4.0"

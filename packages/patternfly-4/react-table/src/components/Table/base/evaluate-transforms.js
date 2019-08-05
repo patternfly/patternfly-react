@@ -4,7 +4,7 @@
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  * */
-import { isFunction } from 'lodash-es';
+import { isFunction } from 'lodash';
 import mergeProps from './merge-props';
 
 function evaluateTransforms(transforms = [], value, extraParameters = {}) {

@@ -4,7 +4,7 @@
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  * */
-import { isEqual, isFunction } from 'lodash-es';
+import { isEqual, isFunction } from 'lodash';
 import React from 'react';
 import { tableBodyTypes, tableBodyDefaults, tableBodyContextTypes } from './types';
 import BodyRow from './body-row';

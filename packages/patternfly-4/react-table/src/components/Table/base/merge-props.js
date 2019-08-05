@@ -4,7 +4,7 @@
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  * */
-import { mergeWith } from 'lodash-es';
+import { mergeWith } from 'lodash';
 import classNames from 'classnames';
 
 function mergePropPair(...props) {
