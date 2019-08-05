@@ -1,11 +1,12 @@
 import React from 'react';
-import { Drawer, DrawerPanelContent } from '@patternfly/react-core/dist/esm/experimental';
+import { Drawer, DrawerPanelContent, DrawerProps } from '@patternfly/react-core/dist/esm/experimental';
 import { Button } from '@patternfly/react-core';
 
 export interface DrawerDemoState {
   isExpanded: boolean;
 }
-export class DrawerDemo extends React.Component<{}, { isExpanded: boolean }> {
+
+export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
   constructor(props) {
     super(props);
     this.state = {

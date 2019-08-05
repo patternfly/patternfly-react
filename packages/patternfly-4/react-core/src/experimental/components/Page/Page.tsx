@@ -3,7 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Page/page';
 import { css } from '@patternfly/react-styles';
 import { global_breakpoint_md as globalBreakpointMd } from '@patternfly/react-tokens';
 import { debounce } from '../../../helpers/util';
-import { Drawer, DrawerPanelContent } from '../Drawer';
+import { Drawer } from '../Drawer';
 
 export enum PageLayouts {
   vertical = 'vertical',

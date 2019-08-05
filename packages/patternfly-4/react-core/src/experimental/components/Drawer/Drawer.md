@@ -15,7 +15,7 @@ import { Alert } from '@patternfly/react-core';
 </Alert>
 <br />
 
-## Simple Drawer Component
+## Simple drawer component
 
 ```js
 import React {ReactFragment} from 'react';
@@ -53,7 +53,7 @@ class SimpleDrawer extends React.Component {
 ```
 
 
-## Simple Drawer Content Inline Component
+## Simple drawer content inline component
 
 ```js
 import React {ReactFragment} from 'react';
