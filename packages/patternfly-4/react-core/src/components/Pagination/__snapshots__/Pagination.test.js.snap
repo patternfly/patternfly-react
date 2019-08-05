@@ -9,7 +9,6 @@ exports[`component render custom pagination toggle 1`] = `
     className="pf-c-pagination"
     id="pagination-options-menu"
   >
-    1 &lt; 1 &lt; 4
     <div
       className="pf-c-pagination__total-items"
     >
@@ -712,7 +711,6 @@ exports[`component render custom perPageOptions 1`] = `
     className="pf-c-pagination"
     id="pagination-options-menu"
   >
-    1 &lt; 1 &lt; 4
     <div
       className="pf-c-pagination__total-items"
     >
@@ -1350,7 +1348,6 @@ exports[`component render custom start end 1`] = `
     className="pf-c-pagination"
     id="pagination-options-menu"
   >
-    1 &lt; 1 &lt; 4
     <div
       className="pf-c-pagination__total-items"
     >
@@ -2097,7 +2094,6 @@ exports[`component render empty per page options 1`] = `
     className="pf-c-pagination"
     id="pagination-options-menu"
   >
-    1 &lt; 1 &lt; 4
     <div
       className="pf-c-pagination__total-items"
     >
@@ -2456,7 +2452,6 @@ exports[`component render last page 1`] = `
     className="pf-c-pagination"
     id="pagination-options-menu"
   >
-    1 &lt; 2 &lt; 2
     <div
       className="pf-c-pagination__total-items"
     >
@@ -3203,7 +3198,6 @@ exports[`component render limited number of pages 1`] = `
     className="pf-c-pagination"
     id="pagination-options-menu"
   >
-    1 &lt; 1 &lt; 1
     <div
       className="pf-c-pagination__total-items"
     >
@@ -3949,7 +3943,6 @@ exports[`component render no items 1`] = `
     className="pf-c-pagination"
     id="pagination-options-menu"
   >
-    1 &lt; 0 &lt; 0
     <div
       className="pf-c-pagination__total-items"
     >
@@ -4699,7 +4692,6 @@ exports[`component render should render correctly bottom 1`] = `
     className="pf-c-pagination pf-m-footer"
     id="pagination-options-menu"
   >
-    1 &lt; 1 &lt; 2
     <PaginationOptionsMenu
       className=""
       dropDirection="down"
@@ -5440,7 +5432,6 @@ exports[`component render should render correctly top 1`] = `
     className="pf-c-pagination"
     id="pagination-options-menu"
   >
-    1 &lt; 1 &lt; 2
     <div
       className="pf-c-pagination__total-items"
     >
@@ -6192,7 +6183,6 @@ exports[`component render titles 1`] = `
     className="pf-c-pagination"
     id="pagination-options-menu"
   >
-    1 &lt; 1 &lt; 4
     <div
       className="pf-c-pagination__total-items"
     >
@@ -6939,7 +6929,6 @@ exports[`component render up drop direction 1`] = `
     className="pf-c-pagination"
     id="pagination-options-menu"
   >
-    1 &lt; 1 &lt; 4
     <div
       className="pf-c-pagination__total-items"
     >
@@ -7685,7 +7674,6 @@ exports[`component render zero results 1`] = `
     className="pf-c-pagination"
     id="pagination-options-menu"
   >
-    1 &lt; 0 &lt; 0
     <div
       className="pf-c-pagination__total-items"
     >
