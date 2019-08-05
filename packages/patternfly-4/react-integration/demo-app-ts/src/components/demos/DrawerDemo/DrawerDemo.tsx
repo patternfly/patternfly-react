@@ -29,7 +29,7 @@ export class DrawerDemo extends React.Component<{}, { isExpanded: boolean }> {
 
     return (
       <React.Fragment>
-        <Button onClick={this.onClick}>Toggle Drawer</Button>
+        <Button id="toggleButton" onClick={this.onClick}>Toggle Drawer</Button>
         <Drawer isExpanded={isExpanded} isInline panelContent={panelContent}>
           {drawerContent}
         </Drawer>
