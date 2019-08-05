@@ -77,7 +77,6 @@
     "clean-css-cli": "^4.2.1",
     "react-axe": "^3.0.2",
     "react-diff-view": "^1.8.1",
-    "react-virtualized": "9.x",
     "rimraf": "^2.6.2",
     "shx": "^0.3.2"
   }
