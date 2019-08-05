@@ -4,7 +4,7 @@
  * Forked from reactabular-table version 8.14.0
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  * */
-import { isArray } from 'lodash-es';
+import { isArray } from 'lodash';
 
 function resolveRowKey({ rowData, rowIndex, rowKey }) {
   if (typeof rowKey === 'function') {

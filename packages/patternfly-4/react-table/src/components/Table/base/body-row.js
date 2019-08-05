@@ -5,7 +5,7 @@
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  * */
 
-import { isEqual, isFunction } from 'lodash-es';
+import { isEqual, isFunction } from 'lodash';
 import React from 'react';
 import columnsAreEqual from './columns-are-equal';
 import evaluateFormatters from './evaluate-formatters';
