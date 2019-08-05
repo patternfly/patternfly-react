@@ -36,7 +36,7 @@
     "exenv": "^1.2.2",
     "linear-layout-vector": "0.0.1",
     "react-lifecycles-compat": "^3.0.4",
-    "react-virtualized": "9.21.1"
+    "react-virtualized": "^9.21.1"
   },
   "peerDependencies": {
     "@patternfly/react-table": "^2.10.0",
