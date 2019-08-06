@@ -5,19 +5,21 @@ import {
   CheckCircleIcon,
   ExclamationCircleIcon,
   ExclamationTriangleIcon,
-  InfoCircleIcon
+  InfoCircleIcon,
+  BellIcon
 } from '@patternfly/react-icons';
 
 export const variantIcons = {
   success: CheckCircleIcon,
   danger: ExclamationCircleIcon,
   warning: ExclamationTriangleIcon,
-  info: InfoCircleIcon
+  info: InfoCircleIcon,
+  default: BellIcon
 };
 
 export interface AlertIconProps extends React.HTMLProps<HTMLDivElement> {
   /** variant */
-  variant: 'success' | 'danger' | 'warning' | 'info';
+  variant: 'success' | 'danger' | 'warning' | 'info' | 'default';
   /** className */
   className?: string;
 };
