@@ -3,6 +3,8 @@ import styles from '@patternfly/react-styles/css/components/ChipGroup/chip-group
 import { css } from '@patternfly/react-styles';
 import { Chip } from './Chip';
 import { fillTemplate } from '../../helpers';
+import { isoParse } from 'd3';
+import { isExtraneousPopstateEvent } from 'history/DOMUtils';
 
 export const ChipGroupContext = React.createContext('');
 
@@ -11,6 +13,8 @@ export interface ChipGroupProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the chip item */
   className?: string; 
+    /** Flag for having the chip group default to expanded */
+  isOpenOnInit?: boolean;
   /** Customizable "Show Less" text string */
   expandedText?: string;
   /** Customizeable template string. Use variable "${remaining}" for the overflow chip count. */
@@ -29,7 +33,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState>{
   constructor(props: ChipGroupProps) {
     super(props); 
     this.state = {
-      isOpen: false
+      isOpen: this.props.isOpenOnInit
     }
   }
   
@@ -37,7 +41,8 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState>{
     className: '',
     expandedText: 'Show Less',
     collapsedText: '${remaining} more',
-    withToolbar: false
+    withToolbar: false,
+    isOpenOnInit: false
   }
 
   toggleCollapse = () => {
