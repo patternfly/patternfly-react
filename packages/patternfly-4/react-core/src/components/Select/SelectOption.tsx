@@ -151,7 +151,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   checked={isChecked || false}
                   disabled={isDisabled}
                 />
-                <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{children || value}</span>
+                <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{children || value.toString()}</span>
               </label>
             )}
           </React.Fragment>

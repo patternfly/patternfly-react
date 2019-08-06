@@ -21,7 +21,7 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   /** Currently selected option (for single, typeahead variants) */
   selected?: string | SelectOptionObject | (string | SelectOptionObject)[];
   /** Currently checked options (for checkbox variant) */
-  checked?: string[];
+  checked?: (string | SelectOptionObject) [];
   /** Internal flag for specifiying how the menu was opened */
   openedOnEnter?: boolean;
   /** Internal callback for ref tracking */
@@ -64,7 +64,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
         ? selected && (Array.isArray(selected) && selected.includes(child.props.value))
         : selected === child.props.value;
     return React.cloneElement(child, {
-      id: `${child.props.value}-${index}`,
+      id: `${child.props.value ? child.props.value.toString() : ''}-${index}`,
       isSelected,
       sendRef,
       keyHandler,

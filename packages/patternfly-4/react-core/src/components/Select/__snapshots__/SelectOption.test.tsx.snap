@@ -64,6 +64,69 @@ exports[`select options is selected renders selected successfully 1`] = `
 </ContextConsumer>
 `;
 
+exports[`select options renders with custom display and custom user object successfully 1`] = `
+<SelectOption
+  className=""
+  index={0}
+  isChecked={false}
+  isDisabled={false}
+  isFocused={false}
+  isPlaceholder={false}
+  isSelected={false}
+  keyHandler={[Function]}
+  onClick={[Function]}
+  sendRef={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          <button
+            class="pf-c-select__menu-item"
+            role="option"
+            type="button"
+          >
+            <div>
+              test display
+            </div>
+          </button>,
+          0,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  value={
+    User {
+      "firstName": "Test",
+      "lastName": "User",
+      "title": "Mr.",
+      "toString": [Function],
+    }
+  }
+>
+  <li
+    role="presentation"
+  >
+    <button
+      aria-selected={null}
+      className="pf-c-select__menu-item"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="option"
+      type="button"
+    >
+      <div>
+        test display
+      </div>
+    </button>
+  </li>
+</SelectOption>
+`;
+
 exports[`select options renders with custom display successfully 1`] = `
 <SelectOption
   className=""
@@ -115,6 +178,65 @@ exports[`select options renders with custom display successfully 1`] = `
       <div>
         test display
       </div>
+    </button>
+  </li>
+</SelectOption>
+`;
+
+exports[`select options renders with custom user object successfully 1`] = `
+<SelectOption
+  className=""
+  index={0}
+  isChecked={false}
+  isDisabled={false}
+  isFocused={false}
+  isPlaceholder={false}
+  isSelected={false}
+  keyHandler={[Function]}
+  onClick={[Function]}
+  sendRef={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          <button
+            class="pf-c-select__menu-item"
+            role="option"
+            type="button"
+          >
+            Mr.: Test User
+          </button>,
+          0,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  value={
+    User {
+      "firstName": "Test",
+      "lastName": "User",
+      "title": "Mr.",
+      "toString": [Function],
+    }
+  }
+>
+  <li
+    role="presentation"
+  >
+    <button
+      aria-selected={null}
+      className="pf-c-select__menu-item"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="option"
+      type="button"
+    >
+      Mr.: Test User
     </button>
   </li>
 </SelectOption>

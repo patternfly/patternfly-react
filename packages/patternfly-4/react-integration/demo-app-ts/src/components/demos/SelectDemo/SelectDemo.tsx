@@ -1,6 +1,7 @@
 import { Select, SelectOption, SelectVariant, Stack, StackItem, Title } from '@patternfly/react-core';
 import React, { Component } from 'react';
 import { CartArrowDownIcon } from '@patternfly/react-icons';
+import { State } from '../../../common/State';
 
 export interface SelectDemoState {
   singleIsExpanded: boolean,
@@ -439,7 +440,7 @@ export class SelectDemo extends Component<SelectDemoState> {
         >
           {this.typeaheadOptions.map((option, index) => (
             <SelectOption isDisabled={option.disabled} key={index} value={option.value}>
-              <div>div-{option.value}<span>-test_span</span><CartArrowDownIcon /></div>
+              <div>div-{option.value.toString()}<span>-test_span</span><CartArrowDownIcon /></div>
             </SelectOption>
           ))}
         </Select>
