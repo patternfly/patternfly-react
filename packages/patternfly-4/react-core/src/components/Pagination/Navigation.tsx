@@ -29,7 +29,7 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   paginationTitle?: string;
   /** The number of the current page */
   page: React.ReactText;
-  /** Function called when user sets page */
+  /** Function called when page is changed */
   onSetPage: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks to navigate to next page */
   onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
@@ -93,6 +93,12 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     }
   }
 
+  componentDidUpdate(lastState: NavigationProps) {
+    if (this.props.page !== lastState.page && this.props.page <= this.props.lastPage && this.state.userInputPage !== this.props.page) {
+      this.setState({ userInputPage: this.props.page });
+    }
+   }
+
   render () {
     const {
       page,
@@ -150,7 +156,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
             aria-label={currPage}
             type="number"
             disabled={page === firstPage && page === lastPage}
-            min={lastPage <= 0 && firstPage <=0 ? 0 : 1}
+            min={lastPage <= 0 && firstPage <= 0 ? 0 : 1}
             max={lastPage}
             value={userInputPage}
             onKeyDown={event => this.onKeyDown(event, page, lastPage, onPageInput, onSetPage)}
