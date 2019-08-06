@@ -135,15 +135,15 @@ export class Select extends React.Component<SelectProps, SelectState> {
     } else {
       let input: RegExp;
       try {
-        input = new RegExp(e.target.value, 'i');
+        input = new RegExp(e.target.value.toString(), 'i');
       } catch (err) {
-        input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+        input = new RegExp(e.target.value.toString().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
       }
       typeaheadFilteredChildren =
-        e.target.value !== ''
+        e.target.value.toString() !== ''
           ? React.Children.toArray(this.props.children).filter(
             (child: React.ReactNode) =>
-              this.getDisplay((child as React.ReactElement).props.value, 'text').search(input) === 0
+              this.getDisplay((child as React.ReactElement).props.value.toString(), 'text').search(input) === 0
             )
           : React.Children.toArray(this.props.children);
     }
@@ -178,7 +178,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       React.cloneElement(child as React.ReactElement, {
         isFocused:
           typeaheadActiveChild &&
-          typeaheadActiveChild.innerText === this.getDisplay((child as React.ReactElement).props.value, 'text')
+          typeaheadActiveChild.innerText === this.getDisplay((child as React.ReactElement).props.value.toString(), 'text')
       })
     );
   }

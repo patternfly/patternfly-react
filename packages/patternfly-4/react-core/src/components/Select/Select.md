@@ -518,12 +518,12 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
     }
   }
     this.options = [
-      { value: this.createState('Alabama', 'AL', 'Montgomery', 1846), disabled: false },
-      { value: this.createState('Florida', 'FL', 'Tailahassee', 1845), disabled: false },
-      { value: this.createState('New Jersey', 'NJ', 'Trenton', 1787), disabled: false },
-      { value: this.createState('New Mexico', 'NM', 'Santa Fe', 1912), disabled: false },
-      { value: this.createState('New York', 'NY', 'Albany', 1788), disabled: false },
-      { value: this.createState('North Carolina', 'NC', 'Raleigh', 1789),disabled: false }
+      <SelectOption value={ this.createState('Alabama', 'AL', 'Montgomery', 1846)} />,
+      <SelectOption value={ this.createState('Florida', 'FL', 'Tailahassee', 1845)} />,
+      <SelectOption value={ this.createState('New Jersey', 'NJ', 'Trenton', 1787)} />,
+      <SelectOption value={ this.createState('New Mexico', 'NM', 'Santa Fe', 1912)} />,
+      <SelectOption value={ this.createState('New York', 'NY', 'Albany', 1788)} />,
+      <SelectOption value={ this.createState('North Carolina', 'NC', 'Raleigh', 1789)} />
     ];
 
     this.state = {
@@ -558,6 +558,21 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
         isExpanded: false
       });
     };
+
+
+    this.customFilter = (e) => {
+      let input;
+      try {
+        input = new RegExp(e.target.value.toString(), 'i');
+      } catch (err) {
+        input = new RegExp(e.target.value.toString().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+      }
+      let typeaheadFilteredChildren =
+        e.target.value.toString() !== ''
+          ? this.options.filter(option => input.test(option.props.value.toString()))
+          : this.options;
+      return typeaheadFilteredChildren;
+    }
   }
 
   render() {
@@ -575,14 +590,13 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
           onToggle={this.onToggle}
           onSelect={this.onSelect}
           onClear={this.clearSelection}
+          onFilter={this.customFilter}
           selections={selected}
           isExpanded={isExpanded}
           ariaLabelledBy={titleId}
           placeholderText="Select a state"
         >
-          {this.options.map((option, index) => (
-            <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
-          ))}
+          {this.options}
         </Select>
       </div>
     );
