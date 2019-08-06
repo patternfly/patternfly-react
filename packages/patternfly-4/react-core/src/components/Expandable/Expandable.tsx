@@ -45,8 +45,7 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
   }
 
   render() {
-    let {
-      isExpanded,
+    const {
       onToggle: onToggleProp,
       isFocused,
       isHovered,
@@ -56,6 +55,7 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
       children,
       ...props
     } = this.props;
+    let isExpanded
     let onToggle = onToggleProp;
     
     if (isExpanded === undefined) {
