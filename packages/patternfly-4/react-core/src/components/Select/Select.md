@@ -497,7 +497,98 @@ class MultiTypeaheadSelectInput extends React.Component {
   }
 }
 ```
+## Multiple typeahead select input with custom objects
 
+```js
+import React from 'react';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+
+class MultiTypeaheadSelectInputCustomObjects extends React.Component {
+  constructor(props) {
+    super(props);
+    this.createState = (name, abbreviation, capital, founded) => {
+    return {
+      name: name,
+      abbreviation: abbreviation,
+      capital: capital,
+      founded: founded,
+      toString: function() {
+        return `${this.name} (${this.abbreviation}) - Founded: ${this.founded}`;
+      }
+    }
+  }
+    this.options = [
+      { value: this.createState('Alabama', 'AL', 'Montgomery', 1846), disabled: false },
+      { value: this.createState('Florida', 'FL', 'Tailahassee', 1845), disabled: false },
+      { value: this.createState('New Jersey', 'NJ', 'Trenton', 1787), disabled: false },
+      { value: this.createState('New Mexico', 'NM', 'Santa Fe', 1912), disabled: false },
+      { value: this.createState('New York', 'NY', 'Albany', 1788), disabled: false },
+      { value: this.createState('North Carolina', 'NC', 'Raleigh', 1789),disabled: false }
+    ];
+
+    this.state = {
+      isExpanded: false,
+      selected: []
+    };
+
+    this.onToggle = isExpanded => {
+      this.setState({
+        isExpanded
+      });
+    };
+
+    this.onSelect = (event, selection) => {
+      const { selected } = this.state;
+      if (selected.includes(selection)) {
+        this.setState(
+          prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      } else {
+        this.setState(
+          prevState => ({ selected: [...prevState.selected, selection] }),
+          () => console.log('selections: ', this.state.selected)
+        );
+      }
+    };
+
+    this.clearSelection = () => {
+      this.setState({
+        selected: [],
+        isExpanded: false
+      });
+    };
+  }
+
+  render() {
+    const { isExpanded, selected } = this.state;
+    const titleId = 'multi-typeahead-select-id';
+
+    return (
+      <div>
+        <span id={titleId} hidden>
+          Select a state
+        </span>
+        <Select
+          variant={SelectVariant.typeaheadMulti}
+          aria-label="Select a state"
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          onClear={this.clearSelection}
+          selections={selected}
+          isExpanded={isExpanded}
+          ariaLabelledBy={titleId}
+          placeholderText="Select a state"
+        >
+          {this.options.map((option, index) => (
+            <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+          ))}
+        </Select>
+      </div>
+    );
+  }
+}
+```
 ## Plain multiple typeahead select input
 
 ```js
