@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.82.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.82.1...@patternfly/react-core@3.82.2) (2019-08-06)
+
+
+### Bug Fixes
+
+* **Pagination:** Fix pagination to update page count ([#2639](https://github.com/patternfly/patternfly-react/issues/2639)) ([ff9c745](https://github.com/patternfly/patternfly-react/commit/ff9c745))
+
+
+
+
+
 ## [3.82.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.82.0...@patternfly/react-core@3.82.1) (2019-08-05)
 
 **Note:** Version bump only for package @patternfly/react-core
