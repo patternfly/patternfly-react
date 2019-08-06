@@ -3,8 +3,6 @@ import styles from '@patternfly/react-styles/css/components/ChipGroup/chip-group
 import { css } from '@patternfly/react-styles';
 import { Chip } from './Chip';
 import { fillTemplate } from '../../helpers';
-import { isoParse } from 'd3';
-import { isExtraneousPopstateEvent } from 'history/DOMUtils';
 
 export const ChipGroupContext = React.createContext('');
 

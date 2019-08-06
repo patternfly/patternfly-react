@@ -9,6 +9,7 @@ exports[`ChipGroup chip group default 1`] = `
     collapsedText="\${remaining} more"
     expandedText="Show Less"
     isOpen={false}
+    isOpenOnInit={false}
     onToggleCollapse={[Function]}
     withToolbar={false}
   >
@@ -36,6 +37,7 @@ exports[`ChipGroup chip group with toolbar 1`] = `
     collapsedText="\${remaining} more"
     expandedText="Show Less"
     isOpen={false}
+    isOpenOnInit={false}
     onToggleCollapse={[Function]}
     withToolbar={true}
   >

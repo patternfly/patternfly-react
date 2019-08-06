@@ -4449,6 +4449,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             className=""
             collapsedText="\${remaining} more"
             expandedText="Show Less"
+            isOpenOnInit={false}
             withToolbar={false}
           >
             <ul
@@ -4459,6 +4460,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 collapsedText="\${remaining} more"
                 expandedText="Show Less"
                 isOpen={false}
+                isOpenOnInit={false}
                 onToggleCollapse={[Function]}
                 withToolbar={false}
               >
