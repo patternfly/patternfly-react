@@ -5,7 +5,6 @@ exports[`Expandable 1`] = `
   className="pf-c-expandable"
 >
   <button
-    aria-expanded={false}
     className="pf-c-expandable__toggle"
     onClick={[Function]}
     type="button"
