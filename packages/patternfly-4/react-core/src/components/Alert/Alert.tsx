@@ -52,7 +52,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     </React.Fragment>
   );
 
-  const customClassName = css(styles.alert, isInline && styles.modifiers.inline, (variant != AlertVariant.default ) && getModifier(styles, variant, styles.modifiers.info), className);
+  const customClassName = css(styles.alert, isInline && styles.modifiers.inline, (variant !== AlertVariant.default ) && getModifier(styles, variant, styles.modifiers.info), className);
 
   return (
     <div {...props} className={customClassName} aria-label={ariaLabel}>
