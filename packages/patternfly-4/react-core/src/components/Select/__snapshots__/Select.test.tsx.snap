@@ -4448,8 +4448,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           <ChipGroup
             className=""
             collapsedText="\${remaining} more"
+            defaultIsOpen={false}
             expandedText="Show Less"
-            isOpenOnInit={false}
             withToolbar={false}
           >
             <ul
@@ -4458,9 +4458,9 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               <InnerChipGroup
                 className=""
                 collapsedText="\${remaining} more"
+                defaultIsOpen={false}
                 expandedText="Show Less"
                 isOpen={false}
-                isOpenOnInit={false}
                 onToggleCollapse={[Function]}
                 withToolbar={false}
               >
