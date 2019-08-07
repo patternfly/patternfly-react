@@ -71,7 +71,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
       {helperText}
     </FormHelperText>
     <FormGroup label={usernameLabel} isRequired isValid={isValidUsername} fieldId="pf-login-username-id">
-      <TextInput
+      <TextInput autoFocus
         id="pf-login-username-id"
         isRequired
         isValid={isValidUsername}
