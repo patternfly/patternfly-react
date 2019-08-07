@@ -123,7 +123,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                       onClick: (event: React.MouseEvent) => {
                         if (!isDisabled) {
                           onClick(event);
-                          onSelect();
+                          onSelect(event);
                         }
                       }
                     });
@@ -139,7 +139,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                       onClick={(event: MouseEvent) => {
                         if (!isDisabled) {
                           onClick(event);
-                          onSelect();
+                          onSelect(event);
                         }
                       }}
                     >
