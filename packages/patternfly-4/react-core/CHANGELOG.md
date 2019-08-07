@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.82.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.82.3...@patternfly/react-core@3.82.4) (2019-08-07)
+
+
+### Bug Fixes
+
+* **Dropdown:** pass event object through onSelect ([#2657](https://github.com/patternfly/patternfly-react/issues/2657)) ([078fe56](https://github.com/patternfly/patternfly-react/commit/078fe56))
+
+
+
+
+
 ## [3.82.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.82.2...@patternfly/react-core@3.82.3) (2019-08-06)
 
 **Note:** Version bump only for package @patternfly/react-core
