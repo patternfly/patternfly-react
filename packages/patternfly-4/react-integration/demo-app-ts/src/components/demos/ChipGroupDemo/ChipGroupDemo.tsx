@@ -46,7 +46,7 @@ export class BadgeChip extends Component<{}, BadgeChipState> {
   render() {
     const { badgeChipArray } = this.state;
     return (
-      <ChipGroup>
+      <ChipGroup defaultIsOpen={false}>
         {badgeChipArray.map(chip => (
           <Chip key={chip.name} onClick={() => this.deleteItem(chip.name)}>
             {chip.name}
