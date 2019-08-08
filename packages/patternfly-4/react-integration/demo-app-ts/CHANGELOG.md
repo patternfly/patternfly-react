@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.17.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.16.0...demo-app-ts@2.17.0) (2019-08-08)
+
+
+### Features
+
+* **Pagination:** add disabled flag for whole component ([#2586](https://github.com/patternfly/patternfly-react/issues/2586)) ([7683f68](https://github.com/patternfly/patternfly-react/commit/7683f68))
+
+
+
+
+
 # [2.16.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.15.4...demo-app-ts@2.16.0) (2019-08-08)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.84.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.83.0...@patternfly/react-core@3.84.0) (2019-08-08)
+
+
+### Bug Fixes
+
+* **Checkbox:** Updated ids so none repeat ([#2663](https://github.com/patternfly/patternfly-react/issues/2663)) ([6319986](https://github.com/patternfly/patternfly-react/commit/6319986)), closes [#2619](https://github.com/patternfly/patternfly-react/issues/2619)
+
+
+### Features
+
+* **Pagination:** add disabled flag for whole component ([#2586](https://github.com/patternfly/patternfly-react/issues/2586)) ([7683f68](https://github.com/patternfly/patternfly-react/commit/7683f68))
+
+
+
+
+
 # [3.83.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.82.4...@patternfly/react-core@3.83.0) (2019-08-08)
 
 
