@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Select/select';
 import { default as formStyles } from '@patternfly/react-styles/css/components/Form/form';
 import { css } from '@patternfly/react-styles';
+import { SelectOptionObject } from './SelectOption';
 import { SelectConsumer, SelectVariant } from './selectConstants';
 import { Omit } from '../../helpers/typeUtils';
 
@@ -18,9 +19,9 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   /** Flag indicating the Select options are grouped */
   isGrouped?: boolean;
   /** Currently selected option (for single, typeahead variants) */
-  selected?: string | string[];
+  selected?: string | SelectOptionObject | (string | SelectOptionObject)[];
   /** Currently checked options (for checkbox variant) */
-  checked?: string[];
+  checked?: (string | SelectOptionObject) [];
   /** Internal flag for specifiying how the menu was opened */
   openedOnEnter?: boolean;
   /** Internal callback for ref tracking */
@@ -60,10 +61,10 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
     const { selected, sendRef, keyHandler } = this.props;
     const isSelected =
       selected && selected.constructor === Array
-        ? selected && selected.includes(child.props.value)
+        ? selected && (Array.isArray(selected) && selected.includes(child.props.value))
         : selected === child.props.value;
     return React.cloneElement(child, {
-      id: `${child.props.value}-${index}`,
+      id: `${child.props.value ? child.props.value.toString() : ''}-${index}`,
       isSelected,
       sendRef,
       keyHandler,

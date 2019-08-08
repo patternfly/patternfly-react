@@ -6,7 +6,7 @@ import buttonStyles from '@patternfly/react-styles/css/components/Button/button'
 import { css } from '@patternfly/react-styles';
 import { TimesCircleIcon } from '@patternfly/react-icons';
 import { SelectMenu } from './SelectMenu';
-import { SelectOption } from './SelectOption';
+import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectToggle } from './SelectToggle';
 import { SelectContext, SelectVariant } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
@@ -17,7 +17,7 @@ import { Omit } from '../../helpers/typeUtils';
 let currentId = 0;
 
 export interface SelectProps
-  extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'> {
+  extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected' > {
   /** Content rendered inside the Select */
   children: React.ReactElement[];
   /** Classes applied to the root of the Select */
@@ -31,7 +31,7 @@ export interface SelectProps
   /** Title text of Select */
   placeholderText?: string | React.ReactNode;
   /** Selected item */
-  selections?: string[] | string;
+  selections?: string | SelectOptionObject | (string | SelectOptionObject)[];
   /** Id for select toggle element */
   toggleId?: string;
   /** Adds accessible text to Select */
@@ -47,7 +47,7 @@ export interface SelectProps
   /** Label for remove chip button of multiple type ahead select variant */
   ariaLabelRemove?: string;
   /** Callback for selection behavior */
-  onSelect?: (event: React.MouseEvent | React.ChangeEvent, value: string, isPlaceholder?: boolean) => void;
+  onSelect?: (event: React.MouseEvent | React.ChangeEvent, value: string | SelectOptionObject, isPlaceholder?: boolean) => void;
   /** Callback for toggle button behavior */
   onToggle: (isExpanded: boolean) => void;
   /** Callback for typeahead clear button */
@@ -135,15 +135,15 @@ export class Select extends React.Component<SelectProps, SelectState> {
     } else {
       let input: RegExp;
       try {
-        input = new RegExp(e.target.value, 'i');
+        input = new RegExp(e.target.value.toString(), 'i');
       } catch (err) {
-        input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+        input = new RegExp(e.target.value.toString().replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
       }
       typeaheadFilteredChildren =
-        e.target.value !== ''
+        e.target.value.toString() !== ''
           ? React.Children.toArray(this.props.children).filter(
             (child: React.ReactNode) =>
-              this.getDisplay((child as React.ReactElement).props.value, 'text').search(input) === 0
+              this.getDisplay((child as React.ReactElement).props.value.toString(), 'text').search(input) === 0
             )
           : React.Children.toArray(this.props.children);
     }
@@ -178,7 +178,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       React.cloneElement(child as React.ReactElement, {
         isFocused:
           typeaheadActiveChild &&
-          typeaheadActiveChild.innerText === this.getDisplay((child as React.ReactElement).props.value, 'text')
+          typeaheadActiveChild.innerText === this.getDisplay((child as React.ReactElement).props.value.toString(), 'text')
       })
     );
   }
@@ -229,13 +229,13 @@ export class Select extends React.Component<SelectProps, SelectState> {
     }
   };
 
-  getDisplay = (value: string, type: 'node' | 'text' = 'node') => {
+  getDisplay = (value: string | SelectOptionObject, type: 'node' | 'text' = 'node') => {
     if (!value) {
       return;
     }
 
     const { children } = this.props;
-    const item = children.filter(child => child.props.value === value)[0];
+    const item = children.filter(child => child.props.value.toString() === value.toString())[0];
 
     if (item && item.props.children) {
       if (type === 'node') {
@@ -243,7 +243,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       }
       return this.findText(item);
     }
-    return item.props.value;
+    return item.props.value.toString();
   };
 
   findText: (item: React.ReactElement) => string = (item: React.ReactElement) => {
@@ -341,7 +341,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
                   <span className={css(styles.selectToggleText)}>{placeholderText}</span>
-                  {selections && selections.length > 0 && (
+                  {selections && (Array.isArray(selections) && selections.length > 0) && (
                     <div className={css(styles.selectToggleBadge)}>
                       <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>{selections.length}</span>
                     </div>
@@ -387,7 +387,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
             {variant === SelectVariant.typeaheadMulti && (
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
-                  {selections && selections.length > 0 && selectedChips}
+                  {selections && (Array.isArray(selections) && selections.length > 0)&& selectedChips}
                   <input
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                     aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
@@ -401,7 +401,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                     autoComplete="off"
                   />
                 </div>
-                {selections && selections.length > 0 && (
+                {selections && (Array.isArray(selections) && selections.length > 0) && (
                   <button
                     className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
                     onClick={e => {
