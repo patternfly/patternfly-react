@@ -10,7 +10,7 @@ interface BadgeChipState {
     }>
 }
 
-export class ChipGroupDemo extends Component<{}, BadgeChipState> {
+export class ChipGroupDefaultIsOpenDemo extends Component<{}, BadgeChipState> {
   deleteItem: (id: any) => void;
   constructor(props) {
     super(props);
@@ -46,7 +46,7 @@ export class ChipGroupDemo extends Component<{}, BadgeChipState> {
   render() {
     const { badgeChipArray } = this.state;
     return (
-      <ChipGroup>
+      <ChipGroup defaultIsOpen>
         {badgeChipArray.map(chip => (
           <Chip key={chip.name} onClick={() => this.deleteItem(chip.name)}>
             {chip.name}

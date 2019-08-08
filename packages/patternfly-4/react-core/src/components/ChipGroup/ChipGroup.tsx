@@ -11,7 +11,7 @@ export interface ChipGroupProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the chip item */
   className?: string; 
-    /** Flag for having the chip group default to expanded */
+  /** Flag for having the chip group default to expanded */
   defaultIsOpen?: boolean;
   /** Customizable "Show Less" text string */
   expandedText?: string;

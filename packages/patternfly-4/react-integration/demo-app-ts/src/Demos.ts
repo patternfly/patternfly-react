@@ -113,7 +113,12 @@ export const Demos: DemoInterface[] = [
   {
     id: 'chipgroup-demo',
     name: 'ChipGroup Demo',
-    componentType: Examples.BadgeChip
+    componentType: Examples.ChipGroupDemo
+  },
+  {
+    id: 'chipgroup-default-is-open-demo',
+    name: 'ChipGroup Default is Open Demo',
+    componentType: Examples.ChipGroupDefaultIsOpenDemo
   },
   {
     id: 'clipboard-copy-demo',
