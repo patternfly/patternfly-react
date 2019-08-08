@@ -5,7 +5,6 @@ import { useMDXScope } from 'gatsby-mdx/context';
 // Copy of `import { MDXRenderer } from 'gatsby-mdx';` with some added injection.
 export function MDXRenderer({ scope, components, children, ...props }) {
   const mdxComponents = useMDXComponents(components);
-  debugger;
   const mdxScope = useMDXScope(scope);
 
   if (!children) {
