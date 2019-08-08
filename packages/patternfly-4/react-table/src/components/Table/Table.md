@@ -41,70 +41,175 @@ import {
   Table,
   TableHeader,
   TableBody,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
+  textCenter,
+} from '@patternfly/react-table';
+
+function SimpleTable() {
+  const cells = [
+    'Repositories',
+    'Branches',
+    'Pull requests',
+    'Workspaces',
+    'Last Commit'
+  ];
+  const rows = [
+    ['Foo', 2, 0, 6, 1533635470],
+    ['Bar', 1, 11, 2, 1564566670],
+    ['Baz', 6, 4, 99, 1565167870],    
+  ];
+
+  return (
+    <Table caption="Simple Table" cells={cells} rows={rows}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
+}
+```
+
+## Cell/row options
+
+```js
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
   cellWidth,
   textCenter,
 } from '@patternfly/react-table';
 
-class SimpleTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [
-        { title: 'Repositories' },
-        'Branches',
-        { title: 'Pull requests' },
-        'Workspaces',
-        {
-          title: 'Last Commit',
-          transforms: [textCenter],
-          cellTransforms: [textCenter]
-        }
-      ],
-      rows: [
-        {
-          cells: ['one', 'two', 'three', 'four', 'five']
-        },
-        {
-          cells: [
-            {
-              title: <div>one - 2</div>,
-              props: { title: 'hover title', colSpan: 3 }
-            },
-            'four - 2',
-            'five - 2'
-          ]
-        },
-        {
-          cells: [
-            'one - 3',
-            'two - 3',
-            'three - 3',
-            'four - 3',
-            {
-              title: 'five - 3 (not centered)',
-              props: { textCenter: false }
-            }
-          ]
-        }
-      ]
+function SimpleCustomTable() {
+  const cells = [
+    // Equivalent to just passing the string
+    { title: 'Repositories' }, 
+    'Branches',
+    { title: 'Pull requests' },
+    'Workspaces',
+    // Will run the `transform` functions on the header, and the 
+    // `cellTransforms` on the cells. Transformers are used to inject
+    // extra props to the the cell component. In this case we use the
+    // builtin `textCenter` transformer to instruct the cell to apply
+    // the required stylings to center the cell content.
+    {
+      title: 'Last Commit',
+      transforms: [textCenter],
+      cellTransforms: [textCenter]
+    }
+  ];
+  const rows = [
+    ['Foo', 2, 0, 6, 1533635470],
+    [
+      // Cell content can also be defined as a JSX element.
+      // Extra props can be passed to the cell (the `td` element).
+      {
+        title: <div>Bar 👾</div>,
+        props: { title: 'hover title', colSpan: 3 }
+      },
+      2,
+      {
+        title: <div>1564566670</div>
+      }
+    ],
+    [
+      'Baz', 
+      6, 
+      4, 
+      99,
+      // In this example, we disable the default cellTransform for this specific cell, setting the `textCenter` prop to `false`.
+      {
+        title: '1565167870 (not centered)',
+        props: { textCenter: false }
+      }
+    ]
+  ];
+
+  return (
+    <Table caption="Cell/rows options" cells={cells} rows={rows}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
+}
+```
+
+## Cell formatters
+
+```js
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  textCenter
+} from '@patternfly/react-table';
+import {
+  CheckIcon,
+  TimesIcon
+} from '@patternfly/react-icons';
+
+function CellFormatters() {
+  const rows = [
+    ['Foo', 1533635470, 1],
+    ['Bar', 1564566670, 0],
+    ['Baz', 1565167870, 1],    
+  ];
+
+  // A component that displays a CI build status.
+  // *Heads-up* - this component definition should *not* stay inside
+  // the main component function in a real world application; it's
+  // done this way in this example as a work-around against the 
+  // limitation of one component per example of the documentation
+  // system in use.
+  const CIStatusIcon = ({ passing }) => {
+    const styles = {
+      color: passing 
+        ? 'var(--pf-global--success-color--200)' 
+        : 'var(--pf-global--danger-color--100)'
     };
-  }
-
-  render() {
-    const { columns, rows } = this.state;
-
+    const icon = passing ? <CheckIcon /> : <TimesIcon />;
+    const text = passing ? 'Passing' : 'Failing';
     return (
-      <Table caption="Simple Table" cells={columns} rows={rows}>
-        <TableHeader />
-        <TableBody />
-      </Table>
+      <div style={styles}>
+        {icon} {text}
+      </div>
     );
+  };
+
+  // Last commit comes as a unix timestamp (in seconds). We specify
+  // a formatter that convert it to something readable by humans.
+  const lastCommitTimestampToLocalHuman = (value, extraProps) => {
+    return new Date(value * 1000).toLocaleString();
   }
+
+  // CI Status comes as a boolean value. We specify a formatter that
+  // passes the value to the `CIStatusIcon` we wrote.
+  const statusToIcon = (value, extraProps) => {
+    return <CIStatusIcon passing={value} />;
+  }
+
+  const cells = [
+    'Repositories',
+    {
+      title: 'Last Commit',
+      cellFormatters: [lastCommitTimestampToLocalHuman]
+    },
+    {
+      title: 'CI Status',
+      cellFormatters: [statusToIcon],
+      // We apply some transforms to both the header and the cell, to make
+      // it centered. 
+      transforms: [textCenter],
+      cellTransforms: [textCenter]
+    }
+  ];
+
+  return (
+    <Table caption="Cell formatters" cells={cells} rows={rows}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
 }
 ```
 
@@ -117,51 +222,43 @@ import {
   TableHeader,
   TableBody,
   sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  cellWidth
 } from '@patternfly/react-table';
 
-class SortableTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [
-        { title: 'Repositories', transforms: [sortable] },
-        'Branches',
-        { title: 'Pull requests', transforms: [sortable] },
-        'Workspaces',
-        'Last Commit'
-      ],
-      rows: [['one', 'two', 'a', 'four', 'five'], ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
-      sortBy: {}
-    };
-    this.onSort = this.onSort.bind(this);
-  }
+function SortableTable () {
+  const rows = [
+    ['Foo', 2, 0, 6, 1533635470],
+    ['Bar', 1, 11, 2, 1564566670],
+    ['Baz', 6, 4, 99, 1565167870],
+  ];
 
-  onSort(_event, index, direction) {
-    const sortedRows = this.state.rows.sort((a, b) => (a[index] < b[index] ? -1 : a[index] > b[index] ? 1 : 0));
-    this.setState({
-      sortBy: {
-        index,
-        direction
-      },
-      rows: direction === SortByDirection.asc ? sortedRows : sortedRows.reverse()
+  const cells = [
+    { title: 'Repositories', transforms: [sortable] },
+    { title: 'Branches', transforms: [sortable] },
+    { title: 'Pull requests', transforms: [sortable] },
+    { title: 'Workspaces', transforms: [sortable] },
+    { title: 'Last Commit', transforms: [sortable] }
+  ];
+
+  const [sortBy, setSortBy] = React.useState({});
+  const onSort = (_event, index, direction) => {
+    setSortBy({
+      index,
+      direction
     });
-  }
+  };
 
-  render() {
-    const { columns, rows, sortBy } = this.state;
+  const sortedRows = !sortBy.direction ? rows : rows.sort(
+    (a, b) => (a[sortBy.index] < b[sortBy.index] ? -1 : a[sortBy.index] > b[sortBy.index] ? 1 : 0) 
+    * 
+    (sortBy.direction === 'desc' ? -1 : 1)
+  );
 
-    return (
-      <Table caption="Sortable Table" sortBy={sortBy} onSort={this.onSort} cells={columns} rows={rows}>
-        <TableHeader />
-        <TableBody />
-      </Table>
-    );
-  }
+  return (
+    <Table caption="Sortable Table" sortBy={sortBy} onSort={onSort} cells={cells} rows={rows}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
 }
 ```
 
@@ -173,66 +270,90 @@ import {
   Table,
   TableHeader,
   TableBody,
-  sortable,
-  SortByDirection,
   headerCol,
-  TableVariant,
-  expandable,
-  cellWidth
+  sortable,
+  useSelectableRows
 } from '@patternfly/react-table';
 
-class SelectableTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [
-        { title: 'Repositories', cellTransforms: [headerCol()] },
-        'Branches',
-        { title: 'Pull requests' },
-        'Workspaces',
-        'Last Commit'
-      ],
-      rows: [
-        {
-          cells: ['one', 'two', 'a', 'four', 'five']
-        },
-        {
-          cells: ['a', 'two', 'k', 'four', 'five']
-        },
-        {
-          cells: ['p', 'two', 'b', 'four', 'five']
-        }
-      ]
-    };
-    this.onSelect = this.onSelect.bind(this);
-  }
+function SelectableTable () {
+  const rows = [
+    ['Foo', 2, 0, 6, 1533635470],
+    ['Bar', 1, 11, 2, 1564566670],
+    ['Baz', 6, 4, 99, 1565167870],
+  ];
+  
+  const cells = [
+    { title: 'Repositories', cellTransforms: [headerCol()] },
+    'Branches',
+    'Pull requests',
+    'Workspaces',
+    'Last Commit',
+  ];
+  
+  const [selectedRows, onSelect] = useSelectableRows(rows);
 
-  onSelect(event, isSelected, rowId) {
-    let rows;
-    if (rowId === -1) {
-      rows = this.state.rows.map(oneRow => {
-        oneRow.selected = isSelected;
-        return oneRow;
-      });
-    } else {
-      rows = [...this.state.rows];
-      rows[rowId].selected = isSelected;
-    }
-    this.setState({
-      rows
+  return (
+    <Table caption="Selectable Table" onSelect={onSelect} cells={cells} rows={selectedRows}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
+}
+```
+
+## Sortable and selectable table
+
+```js
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  headerCol,
+  useSelectableRows
+} from '@patternfly/react-table';
+
+function SortableAndSelectableTable () {
+  const rows = [
+    ['Foo', 2, 0, 6, 1533635470],
+    ['Bar', 1, 11, 2, 1564566670],
+    ['Baz', 6, 4, 99, 1565167870],
+  ];
+  
+  const cells = [
+    { title: 'Repositories', transforms: [sortable], cellTransforms: [headerCol()] },
+    { title: 'Branches', transforms: [sortable] },
+    { title: 'Pull requests', transforms: [sortable] },
+    { title: 'Workspaces', transforms: [sortable] },
+    { title: 'Last Commit', transforms: [sortable] }
+  ];
+  
+  const [sortBy, setSortBy] = React.useState({});
+  const onSort = (_event, index, direction) => {
+    setSortBy({
+      index,
+      direction
     });
-  }
+  };
 
-  render() {
-    const { columns, rows } = this.state;
+  const sortedRows = !sortBy.direction ? rows : rows.sort(
+    (a, b) => (a[sortBy.index] < b[sortBy.index] ? -1 : a[sortBy.index] > b[sortBy.index] ? 1 : 0) 
+    * 
+    (sortBy.direction === 'desc' ? -1 : 1)
+  );
 
-    return (
-      <Table caption="Selectable Table" onSelect={this.onSelect} cells={columns} rows={rows}>
-        <TableHeader />
-        <TableBody />
-      </Table>
-    );
-  }
+  // we need to specify the getRowKey callback to use unique ids to identify the
+  // selected rows. We use the repository name in this example.  
+  const [sortedAndSelectedRows, onSelect] = useSelectableRows(sortedRows,  {
+    getRowKey: (rowData, rowIndex) => rowData[0]
+  });
+
+  return (
+    <Table caption="Sortable And Selectable Table" onSort={onSort} onSelect={onSelect} cells={cells} rows={sortedAndSelectedRows}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
 }
 ```
 
