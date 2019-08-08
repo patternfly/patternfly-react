@@ -119,14 +119,14 @@ export const TableBody = ({
   ...props
 }: TableBodyProps) => (
   <TableContext.Consumer>
-    {({ headerData, rows }) => 
+    {({ headerData, rows, ...rest }) => 
       <ContextBody 
-        headerData={headerData} 
-        rows={rows as IRow[]} 
+        headerData={headerData}
+        rows={rows as IRow[]}
         onRow={onRow}
         className={className}
         children={children}
         rowKey={rowKey}
-        onRowClick={onRowClick} {...props} />}
+        onRowClick={onRowClick} {...props} {...rest} />}
   </TableContext.Consumer>
 );
