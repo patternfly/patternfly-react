@@ -476,7 +476,7 @@ class ExpandableDataList extends React.Component {
               dataListCells={[
                 <DataListCell isIcon key="icon">
                   <CodeBranchIcon />
-                </DataListCell>
+                </DataListCell>,
                 <DataListCell key="primary content">
                   <div id="ex-item1">Primary content</div>
                   <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
