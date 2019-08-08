@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Drawer. */
   className?: string;
-  /** Content to rendered in the left hand panel */
+  /** Content to rendered in the drawer */
   children?: React.ReactNode;
 }
 
