@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 
 import { fillTemplate } from '../../helpers';
 import { ToggleTemplateProps } from './ToggleTemplate';
@@ -48,7 +48,7 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   toggleTemplate: ToggleTemplate = '',
 }:OptionsToggleProps ) => {
   return (
-    <div className={css(styles.optionsMenuToggle, isDisabled && getModifier(styles, 'disabled'), getModifier(styles, 'plain'), getModifier(styles, 'text'))} >
+    <div className={css(styles.optionsMenuToggle, isDisabled && styles.modifiers.disabled, styles.modifiers.plain, styles.modifiers.text)} >
       {showToggle && (
         <DropdownToggle
           aria-label={optionsToggle}

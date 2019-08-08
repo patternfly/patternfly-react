@@ -92,7 +92,7 @@ class PaginationBottom extends React.Component {
 import React from 'react';
 import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
-class PaginationTop extends React.Component {
+class PaginationDisabled extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
