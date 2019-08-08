@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.83.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.82.4...@patternfly/react-core@3.83.0) (2019-08-08)
+
+
+### Bug Fixes
+
+* **select:** disable focus trap on checkbox select with no children ([#2647](https://github.com/patternfly/patternfly-react/issues/2647)) ([f5f6ab6](https://github.com/patternfly/patternfly-react/commit/f5f6ab6))
+
+
+### Features
+
+* **Select:** Adds the ability to pass in a user defined object ([#2612](https://github.com/patternfly/patternfly-react/issues/2612)) ([9037033](https://github.com/patternfly/patternfly-react/commit/9037033)), closes [#2045](https://github.com/patternfly/patternfly-react/issues/2045)
+
+
+
+
+
 ## [3.82.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.82.3...@patternfly/react-core@3.82.4) (2019-08-07)
 
 
