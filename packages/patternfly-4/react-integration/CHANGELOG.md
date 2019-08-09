@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.19.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.18.0...@patternfly/react-integration@2.19.0) (2019-08-09)
+
+
+### Features
+
+* **Select:** add disabled flag for component ([#2678](https://github.com/patternfly/patternfly-react/issues/2678)) ([a72124f](https://github.com/patternfly/patternfly-react/commit/a72124f))
+
+
+
+
+
 # [2.18.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.17.0...@patternfly/react-integration@2.18.0) (2019-08-09)
 
 
