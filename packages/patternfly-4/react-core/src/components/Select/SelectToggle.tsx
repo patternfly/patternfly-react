@@ -227,7 +227,9 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               className
             )}
             onClick={_event => {
-              onToggle(true);
+              if(!isDisabled) {
+                onToggle(true);
+              }
             }}
             onKeyDown={this.onKeyDown}
           >

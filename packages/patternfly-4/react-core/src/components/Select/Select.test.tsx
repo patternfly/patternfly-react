@@ -52,6 +52,15 @@ describe('select', () => {
       expect(view).toMatchSnapshot();
     });
 
+    test('renders disabled successfully', () => {
+      const view = mount(
+        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isDisabled>
+          {selectOptions}
+        </Select>
+      );
+      expect(view).toMatchSnapshot();
+    });
+
     test('renders expanded successfully', () => {
       const view = mount(
         <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>

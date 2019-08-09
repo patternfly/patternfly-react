@@ -371,6 +371,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                     onChange={this.onChange}
                     onFocus={this.handleFocus}
                     autoComplete="off"
+                    disabled={isDisabled}
                   />
                 </div>
                 {selections && (
@@ -382,6 +383,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                     }}
                     aria-label={ariaLabelClear}
                     type="button"
+                    disabled={isDisabled}
                   >
                     <TimesCircleIcon aria-hidden />
                   </button>
@@ -403,6 +405,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                     onChange={this.onChange}
                     onFocus={this.handleFocus}
                     autoComplete="off"
+                    disabled={isDisabled}
                   />
                 </div>
                 {selections && (Array.isArray(selections) && selections.length > 0) && (
@@ -414,6 +417,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                     }}
                     aria-label={ariaLabelClear}
                     type="button"
+                    disabled={isDisabled}
                   >
                     <TimesCircleIcon aria-hidden />
                   </button>
