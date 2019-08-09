@@ -11,7 +11,7 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   isExpanded: boolean;
   /** Indicates if the content element and panel element are displayed side by side. */
   isInline: boolean;
-  /** Content to rendered in the left hand panel */
+  /** Content rendered in the drawer */
   panelContent?: React.ReactNode;
 }
 
