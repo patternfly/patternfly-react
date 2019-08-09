@@ -119,7 +119,7 @@ export const TableBody = ({
   ...props
 }: TableBodyProps) => (
   <TableContext.Consumer>
-    {({ headerData, rows, ...rest }) => 
+    {({ headerData = [], rows = [], ...rest }) => 
       <ContextBody 
         headerData={headerData}
         rows={rows as IRow[]}

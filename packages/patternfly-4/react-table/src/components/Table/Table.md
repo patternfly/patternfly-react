@@ -66,25 +66,31 @@ class SimpleTable extends React.Component {
         }
       ],
       rows: [
-        ['one', 'two', 'three', 'four', 'five'],
-        [
-          {
-            title: <div>one - 2</div>,
-            props: { title: 'hover title', colSpan: 3 }
-          },
-          'four - 2',
-          'five - 2'
-        ],
-        [
-          'one - 3',
-          'two - 3',
-          'three - 3',
-          'four - 3',
-          {
-            title: 'five - 3 (not centered)',
-            props: { textCenter: false }
-          }
-        ]
+        {
+          cells: ['one', 'two', 'three', 'four', 'five']
+        },
+        {
+          cells: [
+            {
+              title: <div>one - 2</div>,
+              props: { title: 'hover title', colSpan: 3 }
+            },
+            'four - 2',
+            'five - 2'
+          ]
+        },
+        {
+          cells: [
+            'one - 3',
+            'two - 3',
+            'three - 3',
+            'four - 3',
+            {
+              title: 'five - 3 (not centered)',
+              props: { textCenter: false }
+            }
+          ]
+        }
       ]
     };
   }
@@ -506,7 +512,7 @@ import {
   cellWidth
 } from '@patternfly/react-table';
 
-class CompactTable extends React.Component {
+class CompactTableBorderlessRows extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -1047,7 +1053,7 @@ import {
   wrappable
 } from '@patternfly/react-table';
 
-class CompactTable extends React.Component {
+class WrappableHeadersTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

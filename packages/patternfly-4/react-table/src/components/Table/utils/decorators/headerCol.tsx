@@ -7,7 +7,7 @@ export const headerCol = (id: string = 'simple-node') => {
     const result = typeof value === 'object' ? value.title : value;
     return {
       component: 'th',
-      children: <div id={id + rowIndex}>{result}</div>
+      children: <div id={`${id}${rowIndex}`}>{result}</div>
     };
   };
 

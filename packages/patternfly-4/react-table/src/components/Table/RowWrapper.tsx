@@ -44,10 +44,10 @@ export class RowWrapper extends React.Component<RowWrapperProps, {}> {
     this._unmounted = false;
 
     if (this.props.onScroll) {
-      window.addEventListener('scroll', this.handleScroll as any);
+      window.addEventListener('scroll', this.handleScroll);
     }
     if (this.props.onResize) {
-      window.addEventListener('resize', this.handleResize as any);
+      window.addEventListener('resize', this.handleResize);
     }
   }
 
@@ -55,22 +55,22 @@ export class RowWrapper extends React.Component<RowWrapperProps, {}> {
     this._unmounted = true;
 
     if (this.props.onScroll) {
-      window.removeEventListener('scroll', this.handleScroll as any);
+      window.removeEventListener('scroll', this.handleScroll);
     }
     if (this.props.onResize) {
-      window.removeEventListener('resize', this.handleResize as any);
+      window.removeEventListener('resize', this.handleResize);
     }
   }
 
-  handleScroll = (event: React.UIEvent<Element>): void => {
+  handleScroll = (event: Event): void => {
     if (!this._unmounted) {
-      this.props.onScroll(event);
+      this.props.onScroll((event as unknown) as React.UIEvent<Element>);
     }
   };
 
-  handleResize = (event: React.UIEvent<Element>) => {
+  handleResize = (event: Event) => {
     if (!this._unmounted) {
-      this.props.onResize(event);
+      this.props.onResize((event as unknown) as React.UIEvent<Element>);
     }
   };
 

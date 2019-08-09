@@ -14,6 +14,6 @@ export const Visibility = pickProperties(styles.modifiers, [
 ]);
 
 // tslint:disable-next-line:no-shadowed-variable
-export const classNames = (...classNames: any[]) => () => ({
+export const classNames = (...classNames: string[]) => () => ({
   className: css(...classNames)
 });

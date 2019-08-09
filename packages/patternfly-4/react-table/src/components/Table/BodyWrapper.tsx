@@ -9,7 +9,7 @@ export interface BodyWrapperProps {
   mappedRows?: IRow[];
   rows?: IRow[];
   onCollapse?: (event: React.MouseEvent, rowIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => undefined;
-  tbodyRef?: React.Ref<any>;
+  tbodyRef?: React.Ref<any> | Function;
   headerRows?: IHeaderRow[];
 }
 
@@ -29,7 +29,7 @@ export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
             {...props}
             className={css(oneRow.isOpen && styles.modifiers.expanded)}
             key={`tbody-${key}`}
-            ref={tbodyRef}
+            ref={tbodyRef as React.Ref<any>}
           >
             {oneRow.rows}
           </tbody>
@@ -38,5 +38,5 @@ export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
     );
   }
 
-  return <tbody {...props} ref={tbodyRef} />;
+  return <tbody {...props} ref={tbodyRef as React.Ref<any>} />;
 };
