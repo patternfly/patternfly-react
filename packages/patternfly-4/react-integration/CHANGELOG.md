@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.18.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.17.0...@patternfly/react-integration@2.18.0) (2019-08-09)
+
+
+### Features
+
+* **drawer:** Added the drawer component to experimental ([#2633](https://github.com/patternfly/patternfly-react/issues/2633)) ([ff6d905](https://github.com/patternfly/patternfly-react/commit/ff6d905)), closes [#1938](https://github.com/patternfly/patternfly-react/issues/1938)
+
+
+
+
+
+# [2.17.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.16.0...@patternfly/react-integration@2.17.0) (2019-08-08)
+
+
+### Features
+
+* **Pagination:** add disabled flag for whole component ([#2586](https://github.com/patternfly/patternfly-react/issues/2586)) ([7683f68](https://github.com/patternfly/patternfly-react/commit/7683f68))
+
+
+
+
+
+# [2.16.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.15.1...@patternfly/react-integration@2.16.0) (2019-08-08)
+
+
+### Features
+
+* **Select:** Adds the ability to pass in a user defined object ([#2612](https://github.com/patternfly/patternfly-react/issues/2612)) ([9037033](https://github.com/patternfly/patternfly-react/commit/9037033)), closes [#2045](https://github.com/patternfly/patternfly-react/issues/2045)
+
+
+
+
+
 ## [2.15.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.15.0...@patternfly/react-integration@2.15.1) (2019-08-06)
 
 **Note:** Version bump only for package @patternfly/react-integration

@@ -1,9 +1,10 @@
 import * as React from 'react';
+import { SelectOptionObject } from './SelectOption';
 
 export interface SelectContextInterface {
   onSelect: (
     event: React.MouseEvent<any, MouseEvent> | React.ChangeEvent<HTMLInputElement>,
-    value: string,
+    value: string | SelectOptionObject,
     isPlaceholder?: boolean
   ) => void;
   onClose: () => void;

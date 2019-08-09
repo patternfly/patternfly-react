@@ -31,6 +31,7 @@ class VncConsole extends React.Component {
       path,
       encrypt,
       resizeSession,
+      scaleViewport,
       viewOnly,
       shared,
       credentials,
@@ -53,7 +54,7 @@ class VncConsole extends React.Component {
       this.rfb = new RFB(this.novncElem, url, options);
       this.addEventListeners();
       this.rfb.viewOnly = viewOnly;
-      this.rfb.scaleViewport = false; // if the remote session is smaller than HTML container, the view will be centered
+      this.rfb.scaleViewport = scaleViewport;
       this.rfb.resizeSession = resizeSession;
     } catch (e) {
       onInitFailed && onInitFailed(e);
@@ -62,17 +63,17 @@ class VncConsole extends React.Component {
   }
 
   componentWillUnmount() {
-    this.removeEventListeners();
     this.disconnect();
+    this.removeEventListeners();
+    this.rfb = undefined;
   }
 
-  disconnect() {
+  disconnect = () => {
     if (!this.rfb) {
       return;
     }
     this.rfb.disconnect();
-    this.rfb = undefined;
-  }
+  };
 
   onConnected = () => {
     this.setState({ status: CONNECTED });
@@ -95,11 +96,11 @@ class VncConsole extends React.Component {
     this.props.onSecurityFailure(e);
   };
 
-  removeEventListeners() {
+  removeEventListeners = () => {
     this.rfb.removeEventListener('connect', this.onConnected);
     this.rfb.removeEventListener('disconnect', this.onDisconnected);
     this.rfb.removeEventListener('securityfailure', this.onSecurityFailure);
-  }
+  };
 
   setNovncElem = e => {
     this.novncElem = e;
@@ -113,7 +114,14 @@ class VncConsole extends React.Component {
   };
 
   render() {
-    const { textDisconnected, textConnecting, textSendShortcut, textCtrlAltDel } = this.props;
+    const {
+      textDisconnected,
+      textConnecting,
+      textSendShortcut,
+      textCtrlAltDel,
+      textDisconnect,
+      portalToolbarTo
+    } = this.props;
 
     let status = null;
     let rightContent = null;
@@ -121,9 +129,12 @@ class VncConsole extends React.Component {
       case CONNECTED:
         rightContent = (
           <VncActions
+            portalToolbarTo={portalToolbarTo}
             onCtrlAltDel={this.onCtrlAltDel}
             textSendShortcut={textSendShortcut}
             textCtrlAltDel={textCtrlAltDel}
+            textDisconnect={textDisconnect}
+            onDisconnect={this.disconnect}
           />
         );
         break;
@@ -143,11 +154,21 @@ class VncConsole extends React.Component {
     return (
       <div className={classNames('vnc-console', this.props.topClassName)}>
         {this.props.children}
-        <Toolbar.RightContent>{rightContent}</Toolbar.RightContent>
-        <Toolbar.Results>
-          {status}
-          {this.novncStaticComponent}
-        </Toolbar.Results>
+        {portalToolbarTo ? (
+          <React.Fragment>
+            {rightContent}
+            {status}
+            {this.novncStaticComponent}
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <Toolbar.RightContent>{rightContent}</Toolbar.RightContent>
+            <Toolbar.Results>
+              {status}
+              {this.novncStaticComponent}
+            </Toolbar.Results>
+          </React.Fragment>
+        )}
       </div>
     );
   }
@@ -163,11 +184,13 @@ VncConsole.propTypes = {
   path: PropTypes.string /** host:port/path */,
   encrypt: PropTypes.bool /** For all following, see: https://github.com/novnc/noVNC/blob/master/docs/API.md */,
   resizeSession: PropTypes.bool /** Change remote session size according to local HTML container */,
+  scaleViewport: PropTypes.bool /** Scale session size according to parent HTML container */,
   viewOnly: PropTypes.bool,
   shared: PropTypes.bool,
   credentials: PropTypes.object /** { username: '', password: '', target: ''} */,
   repeaterID: PropTypes.string,
   vncLogging: PropTypes.string /** log-level for noVNC */,
+  portalToolbarTo: PropTypes.string,
 
   topClassName: PropTypes.string /** Enable customization */,
 
@@ -175,8 +198,12 @@ VncConsole.propTypes = {
   onInitFailed: PropTypes.func /** Initialization of RFB failed */,
   onSecurityFailure: PropTypes.func /** Handshake failed */,
 
-  textConnecting: PropTypes.string /** For localization */,
+  textConnecting: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node
+  ]) /** For localization and better integration */,
   textDisconnected: PropTypes.string,
+  textDisconnect: PropTypes.string,
   textSendShortcut: PropTypes.string,
   textCtrlAltDel: PropTypes.string
 };
@@ -188,11 +215,13 @@ VncConsole.defaultProps = {
   path: '',
   encrypt: false,
   resizeSession: true,
+  scaleViewport: false,
   viewOnly: false,
   shared: false,
   credentials: undefined,
   repeaterID: '',
   vncLogging: 'warn',
+  portalToolbarTo: '',
 
   topClassName: '',
 
@@ -202,6 +231,7 @@ VncConsole.defaultProps = {
 
   textConnecting: 'Connecting',
   textDisconnected: 'Disconnected',
+  textDisconnect: 'Disconnect',
   textSendShortcut: undefined /** Default value defined in VncActions */,
   textCtrlAltDel: undefined /** Default value defined in VncActions */
 };

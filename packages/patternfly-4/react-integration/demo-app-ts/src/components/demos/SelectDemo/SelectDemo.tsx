@@ -1,6 +1,7 @@
-import { Select, SelectOption, SelectVariant, Stack, StackItem, Title } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, Stack, StackItem, Title, SelectOptionObject } from '@patternfly/react-core';
 import React, { Component } from 'react';
 import { CartArrowDownIcon } from '@patternfly/react-icons';
+import { State } from '../../../common/State';
 
 export interface SelectDemoState {
   singleIsExpanded: boolean,
@@ -52,19 +53,29 @@ export class SelectDemo extends Component<SelectDemoState> {
 
   checkboxOptions = [
     <SelectOption key={0} value="Active" />,
-    <SelectOption key={1} value="Cancelled" />,
+    <SelectOption key={1} value={{numericValue: 0, toString: () => 'Cancelled'} as SelectOptionObject} />,
     <SelectOption key={2} value="Paused" />,
     <SelectOption key={3} value="Warning" />,
     <SelectOption key={4} value="Restarted" />
   ];
 
   typeaheadOptions = [
-    { value: 'Alabama', disabled: false },
+    
+    { value: new State('Alabama', 'AL', 'Montgomery', 1846)},
     { value: 'Florida', disabled: false },
     { value: 'New Jersey', disabled: false },
-    { value: 'New Mexico', disabled: false },
-    { value: 'New York', disabled: false },
-    { value: 'North Carolina', disabled: false }
+    { value: new State('New Mexico', 'NM', 'Santa Fe', 1912), disabled: false },
+    { value: new State('New York', 'NY', 'Albany', 1788), disabled: false },
+    { value: new State('North Carolina', 'NC', 'Raleigh', 1789), disabled:false}
+  ];
+
+  customSelectValueOptions = [
+    <SelectOption key={6} value={ new State('Alabama', 'AL', 'Montgomery', 1846)} />,
+    <SelectOption key={7} value={ new State('Florida', 'FL', 'Tailahassee', 1845)} />,
+    <SelectOption key={8} value={ new State('New Jersey', 'NJ', 'Trenton', 1787)} />,
+    <SelectOption key={9} value={ new State('New Mexico', 'NM', 'Santa Fe', 1912)} />,
+    <SelectOption key={10} value={ new State('New York', 'NY', 'Albany', 1788)} />,
+    <SelectOption key={11} value={ new State('North Carolina', 'NC', 'Raleigh', 1789)} />
   ];
 
   singleOnToggle = (singleIsExpanded: boolean) => {
@@ -116,18 +127,18 @@ export class SelectDemo extends Component<SelectDemoState> {
         singleSelected: selection,
         singleIsExpanded: false
       });
-      console.log('selected:', selection);
+      console.log('selected:', selection.toString());
     }
   };
 
-  customSingleOnSelect = (event: any, selection: string, isPlaceholder: boolean) => {
+  customSingleOnSelect = (event: any, selection: string | object, isPlaceholder: boolean) => {
     if (isPlaceholder) this.clearSelection();
     else {
       this.setState({
         customSingleSelected: selection,
         customSingleIsExpanded: false
       });
-      console.log('selected:', selection);
+      console.log('selected:', selection.toString());
     }
   };
 
@@ -146,18 +157,18 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   };
 
-  typeaheadOnSelect = (event: any, selection: string, isPlaceholder: boolean) => {
+  typeaheadOnSelect = (event: any, selection: string | object, isPlaceholder: boolean) => {
     if (isPlaceholder) this.clearSelection();
     else {
       this.setState({
         typeaheadSelected: selection,
         typeaheadIsExpanded: false
       });
-      console.log('selected:', selection);
+      console.log('selected:', selection.toString());
     }
   };
 
-  typeaheadMultiOnSelect = (event: any, selection: string) => {
+  typeaheadMultiOnSelect = (event: any, selection: string | object) => {
     const { typeaheadMultiSelected } = this.state;
     if (typeaheadMultiSelected.includes(selection)) {
       this.setState(
@@ -404,7 +415,7 @@ export class SelectDemo extends Component<SelectDemoState> {
           >
             {this.typeaheadOptions.map((option, index) => (
               <SelectOption isDisabled={option.disabled} key={index} value={option.value}>
-                <div>div-{option.value}<span>-test_span</span><CartArrowDownIcon /></div>
+                <div>div-{option.value.toString()}<span>-test_span</span><CartArrowDownIcon /></div>
               </SelectOption>
             ))}
           </Select>
@@ -439,7 +450,7 @@ export class SelectDemo extends Component<SelectDemoState> {
         >
           {this.typeaheadOptions.map((option, index) => (
             <SelectOption isDisabled={option.disabled} key={index} value={option.value}>
-              <div>div-{option.value}<span>-test_span</span><CartArrowDownIcon /></div>
+              <div>div-{option.value.toString()}<span>-test_span</span><CartArrowDownIcon /></div>
             </SelectOption>
           ))}
         </Select>

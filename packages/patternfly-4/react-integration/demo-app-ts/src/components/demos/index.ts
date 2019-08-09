@@ -45,6 +45,7 @@ export * from './DonutUtilizationChartDemo/DonutUtilizationStaticInvertedRightDe
 export * from './DonutUtilizationChartDemo/DonutUtilizationStaticDemo'
 export * from './DonutUtilizationChartDemo/DonutUtilizationStaticRightDemo'
 export * from './DonutUtilizationChartDemo/DonutUtilizationSimpleDemo'
+export * from './DrawerDemo/DrawerDemo';
 export * from './DropdownDemo/DropdownDemo'
 export * from './EmptyStateDemo/EmptyStateDemo';
 export * from './FormDemo/FormDemo'; 
