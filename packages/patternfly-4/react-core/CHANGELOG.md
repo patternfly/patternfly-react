@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.85.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.84.1...@patternfly/react-core@3.85.0) (2019-08-09)
+
+
+### Features
+
+* **drawer:** Added the drawer component to experimental ([#2633](https://github.com/patternfly/patternfly-react/issues/2633)) ([ff6d905](https://github.com/patternfly/patternfly-react/commit/ff6d905)), closes [#1938](https://github.com/patternfly/patternfly-react/issues/1938)
+
+
+
+
+
 ## [3.84.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.84.0...@patternfly/react-core@3.84.1) (2019-08-09)
 
 

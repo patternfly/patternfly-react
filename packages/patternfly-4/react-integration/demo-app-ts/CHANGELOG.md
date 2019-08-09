@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.18.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.17.1...demo-app-ts@2.18.0) (2019-08-09)
+
+
+### Features
+
+* **drawer:** Added the drawer component to experimental ([#2633](https://github.com/patternfly/patternfly-react/issues/2633)) ([ff6d905](https://github.com/patternfly/patternfly-react/commit/ff6d905)), closes [#1938](https://github.com/patternfly/patternfly-react/issues/1938)
+
+
+
+
+
 ## [2.17.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.17.0...demo-app-ts@2.17.1) (2019-08-09)
 
 **Note:** Version bump only for package demo-app-ts
