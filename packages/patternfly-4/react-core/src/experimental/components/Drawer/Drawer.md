@@ -19,7 +19,7 @@ import { Alert } from '@patternfly/react-core';
 
 ```js
 import React {ReactFragment} from 'react';
-import { Drawer } from '@patternfly/react-core/dist/esm/experimental';
+import { Drawer, DrawerPanelContent } from '@patternfly/react-core/dist/esm/experimental';
 import { Button } from '@patternfly/react-core';
 
 class SimpleDrawer extends React.Component {
