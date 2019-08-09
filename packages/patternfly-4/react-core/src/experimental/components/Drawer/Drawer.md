@@ -2,7 +2,7 @@
 title: 'Drawer'
 cssPrefix: 'pf-c-drawer'
 typescript: true
-propComponents: ['Drawer']
+propComponents: ['Drawer', 'DrawerPanelContent']
 section: 'experimental'
 ---
 
