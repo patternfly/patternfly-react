@@ -11,6 +11,10 @@ describe('Select Test', () => {
     cy.get('#single-select').contains('Miss').should('exist');
   });
 
+  it('Verify Disabled Single Select', () => {
+    cy.get('#disabled-single-select').should('be.disabled');
+  });
+
   it('Verify Custom Single Select', () => {
     cy.get('#custom-select').click();
     cy.get('#Miss-2').click();

@@ -5,13 +5,13 @@ propComponents: ['Select', 'SelectOption', 'SelectGroup']
 typescript: true
 ---
 
-import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectGroup, Checkbox } from '@patternfly/react-core';
 
 ## Single select input
 
 ```js
 import React from 'react';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, Checkbox } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
   constructor(props) {
@@ -28,7 +28,8 @@ class SingleSelectInput extends React.Component {
 
     this.state = {
       isExpanded: false,
-      selected: null
+      selected: null,
+      isDisabled: false
     };
 
     this.onToggle = isExpanded => {
@@ -54,10 +55,16 @@ class SingleSelectInput extends React.Component {
         isExpanded: false
       });
     };
+
+    this.toggleDisabled = (checked) => {
+      this.setState({
+        isDisabled: checked
+      })
+    }
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isExpanded, selected, isDisabled } = this.state;
     const titleId = 'title-id';
     return (
       <div>
@@ -72,6 +79,7 @@ class SingleSelectInput extends React.Component {
           selections={selected}
           isExpanded={isExpanded}
           ariaLabelledBy={titleId}
+          isDisabled={isDisabled}
         >
           {this.options.map((option, index) => (
             <SelectOption
@@ -82,6 +90,14 @@ class SingleSelectInput extends React.Component {
             />
           ))}
         </Select>
+        <Checkbox
+          label="isDisabled"
+          isChecked={this.state.isDisabled}
+          onChange={this.toggleDisabled}
+          aria-label="disabled checkbox"
+          id="toggle-disabled"
+          name="toggle-disabled"
+        />
       </div>
     );
   }
@@ -258,17 +274,18 @@ class TypeaheadSelectInput extends React.Component {
   constructor(props) {
     super(props);
     this.options = [
-      { value: 'Alabama', disabled: false },
-      { value: 'Florida', disabled: false },
-      { value: 'New Jersey', disabled: false },
-      { value: 'New Mexico', disabled: false },
-      { value: 'New York', disabled: false },
-      { value: 'North Carolina', disabled: false }
+      { value: 'Alabama' },
+      { value: 'Florida' },
+      { value: 'New Jersey' },
+      { value: 'New Mexico' },
+      { value: 'New York' },
+      { value: 'North Carolina' }
     ];
 
     this.state = {
       isExpanded: false,
-      selected: null
+      selected: null,
+      isDisabled: false
     };
 
     this.onToggle = isExpanded => {
@@ -294,10 +311,16 @@ class TypeaheadSelectInput extends React.Component {
         isExpanded: false
       });
     };
+
+     this.toggleDisabled = (checked) => {
+      this.setState({
+        isDisabled: checked
+      })
+    }
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isExpanded, selected, isDisabled } = this.state;
     const titleId = 'typeahead-select-id';
     return (
       <div>
@@ -314,11 +337,20 @@ class TypeaheadSelectInput extends React.Component {
           isExpanded={isExpanded}
           ariaLabelledBy={titleId}
           placeholderText="Select a state"
+          isDisabled={isDisabled}
         >
           {this.options.map((option, index) => (
             <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
           ))}
         </Select>
+        <Checkbox
+          label="isDisabled"
+          isChecked={this.state.isDisabled}
+          onChange={this.toggleDisabled}
+          aria-label="toggle disabled checkbox"
+          id="toggle-disabled-typeahead"
+          name="toggle-disabled-typeahead"
+        />
       </div>
     );
   }
