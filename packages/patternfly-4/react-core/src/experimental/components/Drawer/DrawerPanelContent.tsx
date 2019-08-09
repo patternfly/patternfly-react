@@ -14,7 +14,7 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
 export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
   className = '',
   children,
-  hasPadding = false,
+  hasPadding = true,
   ...props
 }: DrawerPanelContentProps) => (
       <aside className={css(styles.drawerPanel, className)} {...props}>
