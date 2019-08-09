@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.84.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.84.0...@patternfly/react-core@3.84.1) (2019-08-09)
+
+
+### Bug Fixes
+
+* **docs:** Fix a11y issues in Documentation ([#2634](https://github.com/patternfly/patternfly-react/issues/2634)) ([b0d29a3](https://github.com/patternfly/patternfly-react/commit/b0d29a3))
+
+
+
+
+
 # [3.84.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.83.0...@patternfly/react-core@3.84.0) (2019-08-08)
 
 
