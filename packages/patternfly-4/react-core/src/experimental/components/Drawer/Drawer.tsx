@@ -5,7 +5,7 @@ import { css } from '@patternfly/react-styles';
 export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the Drawer. */
   className?: string;
-  /** Content rendered inside the button */
+  /** Content rendered in the left hand panel */
   children?: React.ReactNode;
   /** Indicate if the drawer is expanded */
   isExpanded: boolean;
