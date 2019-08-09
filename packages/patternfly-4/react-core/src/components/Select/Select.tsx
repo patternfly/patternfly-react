@@ -28,7 +28,7 @@ export interface SelectProps
   isGrouped?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
-  /** Flad to inficate if select is disabled */
+  /** Flag to inficate if select is disabled */
   isDisabled?: boolean;
   /** Title text of Select */
   placeholderText?: string | React.ReactNode;
