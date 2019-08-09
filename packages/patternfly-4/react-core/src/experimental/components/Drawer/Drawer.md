@@ -57,7 +57,7 @@ class SimpleDrawer extends React.Component {
 
 ```js
 import React {ReactFragment} from 'react';
-import { Drawer } from '@patternfly/react-core/dist/esm/experimental';
+import { Drawer, DrawerPanelContent } from '@patternfly/react-core/dist/esm/experimental';
 import { Button } from '@patternfly/react-core';
 
 class SimpleDrawerInlineContent extends React.Component {
