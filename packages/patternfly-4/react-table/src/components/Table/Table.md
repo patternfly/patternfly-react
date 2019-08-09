@@ -222,39 +222,36 @@ import {
   TableHeader,
   TableBody,
   sortable,
+  SortHelpers,
+  useSortableRows
 } from '@patternfly/react-table';
 
 function SortableTable () {
   const rows = [
     ['Foo', 2, 0, 6, 1533635470],
-    ['Bar', 1, 11, 2, 1564566670],
+    ['Bar', 1, 11, 2, { title: <div>⏰ 1564566670</div>, value: 1564566670 }],
     ['Baz', 6, 4, 99, 1565167870],
+    ['Qux', undefined, 4, undefined, 1565167870],
   ];
+  
+  const sortLastCommit = (a, b, aObj, bObj) => {
+    a = aObj.value || a;
+    b = bObj.value || b;
+    return SortHelpers.numbers(a, b); 
+  }; 
 
   const cells = [
-    { title: 'Repositories', transforms: [sortable] },
-    { title: 'Branches', transforms: [sortable] },
-    { title: 'Pull requests', transforms: [sortable] },
-    { title: 'Workspaces', transforms: [sortable] },
-    { title: 'Last Commit', transforms: [sortable] }
+    { title: 'Repositories', transforms: [sortable(SortHelpers.strings)] },
+    { title: 'Branches', transforms: [sortable(SortHelpers.numbers)] },
+    { title: 'Pull requests', transforms: [sortable(SortHelpers.numbers)] },
+    { title: 'Workspaces', transforms: [sortable(SortHelpers.numbers)] },
+    { title: 'Last Commit', transforms: [sortable(sortLastCommit)] }
   ];
 
-  const [sortBy, setSortBy] = React.useState({});
-  const onSort = (_event, index, direction) => {
-    setSortBy({
-      index,
-      direction
-    });
-  };
-
-  const sortedRows = !sortBy.direction ? rows : rows.sort(
-    (a, b) => (a[sortBy.index] < b[sortBy.index] ? -1 : a[sortBy.index] > b[sortBy.index] ? 1 : 0) 
-    * 
-    (sortBy.direction === 'desc' ? -1 : 1)
-  );
+  const [sortedRows, onSort, sortBy] = useSortableRows(rows);
 
   return (
-    <Table caption="Sortable Table" sortBy={sortBy} onSort={onSort} cells={cells} rows={rows}>
+    <Table caption="Sortable Table" sortBy={sortBy} onSort={onSort} cells={cells} rows={sortedRows}>
       <TableHeader />
       <TableBody />
     </Table>
@@ -321,26 +318,14 @@ function SortableAndSelectableTable () {
   ];
   
   const cells = [
-    { title: 'Repositories', transforms: [sortable], cellTransforms: [headerCol()] },
-    { title: 'Branches', transforms: [sortable] },
-    { title: 'Pull requests', transforms: [sortable] },
-    { title: 'Workspaces', transforms: [sortable] },
-    { title: 'Last Commit', transforms: [sortable] }
+    { title: 'Repositories', transforms: [sortable(SortHelpers.strings)], cellTransforms: [headerCol()] },
+    { title: 'Branches', transforms: [sortable(SortHelpers.numbers)] },
+    { title: 'Pull requests', transforms: [sortable(SortHelpers.numbers)] },
+    { title: 'Workspaces', transforms: [sortable(SortHelpers.numbers)] },
+    { title: 'Last Commit', transforms: [sortable(SortHelpers.numbers)] }
   ];
   
-  const [sortBy, setSortBy] = React.useState({});
-  const onSort = (_event, index, direction) => {
-    setSortBy({
-      index,
-      direction
-    });
-  };
-
-  const sortedRows = !sortBy.direction ? rows : rows.sort(
-    (a, b) => (a[sortBy.index] < b[sortBy.index] ? -1 : a[sortBy.index] > b[sortBy.index] ? 1 : 0) 
-    * 
-    (sortBy.direction === 'desc' ? -1 : 1)
-  );
+  const [sortedRows, onSort, sortBy] = useSortableRows(rows, cells);
 
   // we need to specify the getRowKey callback to use unique ids to identify the
   // selected rows. We use the repository name in this example.  
@@ -349,7 +334,7 @@ function SortableAndSelectableTable () {
   });
 
   return (
-    <Table caption="Sortable And Selectable Table" onSort={onSort} onSelect={onSelect} cells={cells} rows={sortedAndSelectedRows}>
+    <Table caption="Sortable And Selectable Table" onSort={onSort} sortBy={sortBy} onSelect={onSelect} cells={cells} rows={sortedAndSelectedRows}>
       <TableHeader />
       <TableBody />
     </Table>

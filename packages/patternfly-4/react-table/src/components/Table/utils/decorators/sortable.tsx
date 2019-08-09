@@ -7,15 +7,20 @@ import { SortColumn } from '../../SortColumn';
 
 export const sortable = (label: IFormatterValueType, { columnIndex, column, property }: IExtra) => {
   const {
-    extraParams: { sortBy, onSort }
+    extraParams: { sortBy, onSort, firstUserColumnIndex }
   } = column;
+
+  // correct the column index based on the presence of extra columns added on the
+  // left of the user provided ones
+  const correctedColumnIndex = columnIndex - firstUserColumnIndex;
+
   const extraData = {
-    columnIndex,
+    columnIndex: correctedColumnIndex,
     column,
     property
   };
 
-  const isSortedBy = sortBy && columnIndex === sortBy.index;
+  const isSortedBy = sortBy && correctedColumnIndex === sortBy.index;
   function sortClicked(event: React.MouseEvent) {
     let reversedDirection;
     if (!isSortedBy) {
@@ -24,7 +29,7 @@ export const sortable = (label: IFormatterValueType, { columnIndex, column, prop
       reversedDirection = sortBy.direction === SortByDirection.asc ? SortByDirection.desc : SortByDirection.asc;
     }
     // tslint:disable-next-line:no-unused-expression
-    onSort && onSort(event, columnIndex, reversedDirection, extraData);
+    onSort && onSort(event, correctedColumnIndex, reversedDirection, extraData);
   }
 
   return {
