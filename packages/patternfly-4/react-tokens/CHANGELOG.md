@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.14...@patternfly/react-tokens@2.6.15) (2019-08-09)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
 ## [2.6.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.13...@patternfly/react-tokens@2.6.14) (2019-08-05)
 
 **Note:** Version bump only for package @patternfly/react-tokens
