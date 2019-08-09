@@ -31,8 +31,12 @@ export class BodyRow extends React.Component<BodyRowProps, {}> {
     const {columns, rowData} = this.props;
 =======
   shouldComponentUpdate(nextProps: BodyRowProps){
+<<<<<<< HEAD
     const previousProps = this.props;
 >>>>>>> feat(react-table): convert react-table to typescript
+=======
+    const {columns, rowData} = this.props;
+>>>>>>> review updates
 
     // Check for row based override.
     const { renderers } = nextProps;
@@ -46,7 +50,7 @@ export class BodyRow extends React.Component<BodyRowProps, {}> {
     }
 
     return !(
-      columnsAreEqual(previousProps.columns, nextProps.columns) && isEqual(previousProps.rowData, nextProps.rowData)
+      columnsAreEqual(columns, nextProps.columns) && isEqual(rowData, nextProps.rowData)
     );
   }
   render() {
