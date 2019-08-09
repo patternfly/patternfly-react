@@ -7,15 +7,18 @@ export interface DrawerPanelContentProps extends React.HTMLProps<HTMLDivElement>
   className?: string;
   /** Content to rendered in the drawer */
   children?: React.ReactNode;
+  /** Indicates if there should be padding around the drawer */
+  hasPadding?: boolean;
 }
 
 export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
   className = '',
   children,
+  hasPadding = false,
   ...props
 }: DrawerPanelContentProps) => (
       <aside className={css(styles.drawerPanel, className)} {...props}>
-        <div className={css(styles.drawerPanelBody, styles.modifiers.noPadding)}>
+        <div className={css(styles.drawerPanelBody, hasPadding === false && styles.modifiers.noPadding)}>
           { children }
         </div>
       </aside>
