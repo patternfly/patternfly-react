@@ -70,7 +70,11 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
     variant: TabsVariant.div
   };
 
-  handleTabClick(event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number, tabContentRef: React.RefObject<any>) {
+  handleTabClick(
+    event: React.MouseEvent<HTMLElement, MouseEvent>,
+    eventKey: number,
+    tabContentRef: React.RefObject<any>
+  ) {
     this.props.onSelect(event, eventKey);
     // process any tab content sections outside of the component
     if (tabContentRef) {
@@ -212,46 +216,46 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
           }}
           {...props}
         >
-            <button
-              className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
-              aria-label={leftScrollAriaLabel}
-              onClick={this.scrollLeft}
-            >
-              <AngleLeftIcon />
-            </button>
+          <button
+            className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
+            aria-label={leftScrollAriaLabel}
+            onClick={this.scrollLeft}
+          >
+            <AngleLeftIcon />
+          </button>
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
-            {React.Children.map(children, (child: any, index) => (
-              <li
-                key={index}
-                className={css(
-                  styles.tabsItem,
-                  child.props.eventKey === activeKey && styles.modifiers.current,
-                  className
-                )}
-              >
-                <Tab
-                  className={css(styles.tabsButton)}
-                  onClick={(event: any) => this.handleTabClick(event, child.props.eventKey, child.props.tabContentRef)}
-                  id={`pf-tab-${child.props.eventKey}-${child.props.id || uniqueId}`}
-                  aria-controls={
-                    child.props.tabContentId
-                      ? `${child.props.tabContentId}`
-                      : `pf-tab-section-${child.props.eventKey}-${child.props.id || uniqueId}`
-                  }
-                  {...child.props}
+            {React.Children.map(children, (child: any, index) => {
+              const { title, eventKey, tabContentRef, id: childId, tabContentId, ...rest } = child.props;
+              return (
+                <li
+                  key={index}
+                  className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, className)}
                 >
-                  {child.props.title}
-                </Tab>
-              </li>
-            ))}
+                  <Tab
+                    className={css(styles.tabsButton)}
+                    onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef)}
+                    id={`pf-tab-${eventKey}-${childId || uniqueId}`}
+                    aria-controls={
+                      tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`
+                    }
+                    tabContentId={tabContentId}
+                    tabContentRef={tabContentRef}
+                    eventKey={eventKey}
+                    {...rest}
+                  >
+                    {title}
+                  </Tab>
+                </li>
+              );
+            })}
           </ul>
-            <button
-              className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
-              aria-label={rightScrollAriaLabel}
-              onClick={this.scrollRight}
-            >
-              <AngleRightIcon />
-            </button>
+          <button
+            className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
+            aria-label={rightScrollAriaLabel}
+            onClick={this.scrollRight}
+          >
+            <AngleRightIcon />
+          </button>
         </Component>
         {React.Children.map(children, (child: any, index) =>
           !child.props.children ? null : (

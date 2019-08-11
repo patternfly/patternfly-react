@@ -34,7 +34,7 @@ export class TabDemo extends Component {
         <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
           <Tab id="demoTab1" eventKey={0} title="Tab item 1" tabContentId="demoTab1Section" tabContentRef={this.contentRef1} />
           <Tab id="demoTab2" eventKey={1} title="Tab item 2" tabContentId="demoTab2Section" tabContentRef={this.contentRef2} />
-          <Tab id="demoTab3" eventKey={2} title="Tab item 3" tabContentId="demoTab3Section" tabContentRef={this.contentRef3} />
+          <Tab id="demoTab3" eventKey={2} title={<i>Tab item 3</i>} tabContentId="demoTab3Section" tabContentRef={this.contentRef3} />
         </Tabs>
         <div>
           <TabContent eventKey={0} id="demoTab1Section" ref={this.contentRef1} aria-label="Tab item 1" onAuxClick={(event) => console.log(event)}>

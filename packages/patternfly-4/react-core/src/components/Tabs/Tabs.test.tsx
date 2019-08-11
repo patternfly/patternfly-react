@@ -15,6 +15,17 @@ test('should render simple tabs', () => {
       <Tab id="tab3" eventKey={2} title="Tab item 3">
         Tab 3 section
       </Tab>
+      <Tab
+        id="tab4"
+        eventKey={3}
+        title={
+          <b>
+            Tab item <i>4</i>
+          </b>
+        }
+      >
+        Tab 4 section
+      </Tab>
     </Tabs>
   );
   expect(view).toMatchSnapshot();
