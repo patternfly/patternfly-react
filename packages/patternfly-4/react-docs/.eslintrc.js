@@ -21,7 +21,8 @@ module.exports = {
               '@patternfly-safe/react-icons',
               '@patternfly-safe/react-tokens',
               '@patternfly/react-topology',
-              '@patternfly-safe/patternfly/patternfly.css'
+              '@patternfly-safe/patternfly/patternfly.css',
+              '@patternfly-safe/patternfly/components/Drawer/drawer.css'
             ]
           }
         ],

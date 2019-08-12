@@ -3,6 +3,79 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.86.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.85.1...@patternfly/react-core@3.86.0) (2019-08-09)
+
+
+### Features
+
+* **Select:** add disabled flag for component ([#2678](https://github.com/patternfly/patternfly-react/issues/2678)) ([a72124f](https://github.com/patternfly/patternfly-react/commit/a72124f))
+
+
+
+
+
+## [3.85.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.85.0...@patternfly/react-core@3.85.1) (2019-08-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.85.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.84.1...@patternfly/react-core@3.85.0) (2019-08-09)
+
+
+### Features
+
+* **drawer:** Added the drawer component to experimental ([#2633](https://github.com/patternfly/patternfly-react/issues/2633)) ([ff6d905](https://github.com/patternfly/patternfly-react/commit/ff6d905)), closes [#1938](https://github.com/patternfly/patternfly-react/issues/1938)
+
+
+
+
+
+## [3.84.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.84.0...@patternfly/react-core@3.84.1) (2019-08-09)
+
+
+### Bug Fixes
+
+* **docs:** Fix a11y issues in Documentation ([#2634](https://github.com/patternfly/patternfly-react/issues/2634)) ([b0d29a3](https://github.com/patternfly/patternfly-react/commit/b0d29a3))
+
+
+
+
+
+# [3.84.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.83.0...@patternfly/react-core@3.84.0) (2019-08-08)
+
+
+### Bug Fixes
+
+* **Checkbox:** Updated ids so none repeat ([#2663](https://github.com/patternfly/patternfly-react/issues/2663)) ([6319986](https://github.com/patternfly/patternfly-react/commit/6319986)), closes [#2619](https://github.com/patternfly/patternfly-react/issues/2619)
+
+
+### Features
+
+* **Pagination:** add disabled flag for whole component ([#2586](https://github.com/patternfly/patternfly-react/issues/2586)) ([7683f68](https://github.com/patternfly/patternfly-react/commit/7683f68))
+
+
+
+
+
+# [3.83.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.82.4...@patternfly/react-core@3.83.0) (2019-08-08)
+
+
+### Bug Fixes
+
+* **select:** disable focus trap on checkbox select with no children ([#2647](https://github.com/patternfly/patternfly-react/issues/2647)) ([f5f6ab6](https://github.com/patternfly/patternfly-react/commit/f5f6ab6))
+
+
+### Features
+
+* **Select:** Adds the ability to pass in a user defined object ([#2612](https://github.com/patternfly/patternfly-react/issues/2612)) ([9037033](https://github.com/patternfly/patternfly-react/commit/9037033)), closes [#2045](https://github.com/patternfly/patternfly-react/issues/2045)
+
+
+
+
+
 ## [3.82.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.82.3...@patternfly/react-core@3.82.4) (2019-08-07)
 
 

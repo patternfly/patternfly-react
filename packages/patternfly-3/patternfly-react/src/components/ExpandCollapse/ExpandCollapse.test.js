@@ -107,3 +107,15 @@ test('ExpandCollapse with explicit override prop', () => {
   expect(view.find('span.fa-angle-down')).toHaveLength(1);
   expect(view.find('.btn-link').text()).toEqual('Hide Advanced Options');
 });
+
+test('ExpandCollapse with explicit onToggle callback', () => {
+  const callback = jest.fn();
+  const view = mount(
+    <ExpandCollapse onToggle={callback}>
+      <div id="content">My text</div>
+    </ExpandCollapse>
+  );
+  const button = view.find('.btn-link');
+  button.simulate('click');
+  expect(callback).toBeCalled();
+});

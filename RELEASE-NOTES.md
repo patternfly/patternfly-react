@@ -1,3 +1,71 @@
+# 2019.06 release notes (2019-08-13)
+Packages released:
+-
+
+## Charts
+- Used vars to enable Red Hat fonts. When the pf-m-redhat-font selector is added to the page, the Red Hat font is expected to be used instead of the default Overpass font. This change ensures that charts and its labels use the Red Hat font as expected
+([#2584](https://github.com/patternfly/patternfly-react/pull/2584))
+- The donut threshold chart used to generate a 'width must be a non-negative' warning when donutWidth values are zero. This change ensures the dynamic chart size is never less than zero  ([#2590](https://github.com/patternfly/patternfly-react/pull/2590))
+- Fixed missing fill and stroke colors for area and line charts. Set area.style.data.fill to first color scale value in colorTheme function. Set line.style.data.stroke to first color scale value in colorTheme function ([#2626](https://github.com/patternfly/patternfly-react/pull/2626))
+
+
+## Components
+- **Accordion:** Added the html structure of Accordion to React  ([#2422](https://github.com/patternfly/patternfly-react/pull/2422))
+- **Alert:** Added default variant for Alert  ([#2648](https://github.com/patternfly/patternfly-react/pull/2648))
+- **Button:** Added 'reset' to types ([#2622](https://github.com/patternfly/patternfly-react/pull/2622))
+- **Checkbox** Updated ids so none repeat. Prevents inconsistent checking behavior when labels are clicked for uncontrolled vs. controlled
+examples  ([#2663](https://github.com/patternfly/patternfly-react/pull/2663))
+- **Drawer:** Added the drawer component to experimental  ([#2633](https://github.com/patternfly/patternfly-react/pull/2633))
+- **Dropdown:**
+ - Automatically focus first dropdown item when DropdownMenu mounts  ([#2355](https://github.com/patternfly/patternfly-react/pull/2355))
+ - This PR adds an aria-label to the "icon only" example of Dropdown  ([#2517](https://github.com/patternfly/patternfly-react/pull/2517))
+ - Fixed missing event passthrough on internal onSelect callback ([#2657](https://github.com/patternfly/patternfly-react/pull/2657))
+- **Form:** Updated Form demo to use check over radio
+([#2567](https://github.com/patternfly/patternfly-react/pull/2567))
+- **Modal:** Allows for custom header and/or footer in Modal component Added the showClose prop, defaulted to true. Set to false to hide the close button  ([#2120](https://github.com/patternfly/patternfly-react/pull/2120))
+- **Page:**
+ - Skip to content should point to primary content container ([#2519](https://github.com/patternfly/patternfly-react/pull/2519))
+ - Change the defaultManagedSidebarOpen prop name for consistency ([#2664](https://github.com/patternfly/patternfly-react/pull/2664))
+- **Pagination:**
+ - When there is 0 items or negative number for pagination show 0th page out of 0 and disable paginating  ([#2558](https://github.com/patternfly/patternfly-react/pull/2558))
+ - Added a demo of table integrated with pagination ([#2601](https://github.com/patternfly/patternfly-react/pull/2601))
+ - Fixed pagination to update page count ([#2639](https://github.com/patternfly/patternfly-react/pull/2639))
+ - Added disabled flag for whole component ([#2586](https://github.com/patternfly/patternfly-react/pull/2586))
+- **Select:**  
+ - Select menu now has consistent, open behavior on empty text input field  ([#2572](https://github.com/patternfly/patternfly-react/pull/2572))
+ - Added a custom callback for the filtering function used in typeahead variants. This replaces the current search entirely, so the function must handle filtering the list of children/options and return the filtered results for the internal state to update
+([#2434](https://github.com/patternfly/patternfly-react/pull/2434))
+ - Added isPlain variation/prop to Select.tsx, snapshot tests, and integration ([#2588](https://github.com/patternfly/patternfly-react/pull/2588))
+ - This enhancement allows a user to now pass in a user defined object to store additional data besides just the string value to a select option. The object must have a toString function that is
+responsible for returning the the localized string ([#2612](https://github.com/patternfly/patternfly-react/pull/2612))
+ - Disabled focus trap on checkbox select with no children. Focus Trap throws exception if no children to ref. In order to avoid this error, render the component with no Focus Trap when no children is passed  ([#2647](https://github.com/patternfly/patternfly-react/pull/2647))
+ - Added disabled flag to select ([#2678](https://github.com/patternfly/patternfly-react/pull/2678))
+- **Switch:** Added aria-labelledby to input
+([#2468](https://github.com/patternfly/patternfly-react/pull/2468))
+- **Topology:** Fixed paddings for topology control bar buttons. Removed css settings that override the paddings for the topology control bar buttons  ([#2635](https://github.com/patternfly/patternfly-react/pull/2635))
+
+## Table
+- Added the wrap modifier to react-table through transforms  ([#2615](https://github.com/patternfly/patternfly-react/pull/2615))
+- Replaced lodash-es with lodash  ([#2641](https://github.com/patternfly/patternfly-react/pull/2641))
+
+## TypeScript conversion
+- **Dropdown:** ([#2502](https://github.com/patternfly/patternfly-react/pull/2502))
+
+## Docs
+- Made name column not wrap
+([#2583](https://github.com/patternfly/patternfly-react/pull/2502))
+- Small adjustment for Stack layout. Updated the doc to correctly read that isFilled is related to the vertical space occupied, not horizontal  ([#2605](https://github.com/patternfly/patternfly-react/pull/2605))
+- Link to react-tokens page was broken. Updated to point to the Global CSS Variables page ([#2453](https://github.com/patternfly/patternfly-react/pull/2453))
+- Added extension notes to Gatsby docs to improve the Gatsby doc for table extensions and add disclaimer about extension status ([#2637](https://github.com/patternfly/patternfly-react/pull/2637))
+- Fixed accessibility issues in Accordion, ClipboardCopy, and DataList ([#2634](https://github.com/patternfly/patternfly-react/pull/2634))
+
+
+## Other
+- **Chore:**
+- Added curl command after release ([#2547](https://github.com/patternfly/patternfly-react/pull/2547))
+- Invalidate all packages if yarn.lock changes ([#2548](https://github.com/patternfly/patternfly-react/pull/2548))
+- Updated release notes to use uls ([#2604](https://github.com/patternfly/patternfly-react/pull/2604))
+
 # 2019.05 release notes (2019-07-24)
 Packages released:
 - [@patternfly/react-charts@4.7.1](https://www.npmjs.com/package/@patternfly/react-charts/v/4.7.1)
@@ -25,7 +93,7 @@ Packages released:
 - Added fixed point notation into percentage donut charts ([#2375](https://github.com/patternfly/patternfly-react/pull/2375))
 - Used vars to enable Red Hat fonts ([#2584](https://github.com/patternfly/patternfly-react/pull/2584))
 ## Components ([@patternfly/react-core@3.75.2](https://www.npmjs.com/package/@patternfly/react-core/v/3.75.2))
-- **About modal:** AboutModal and Modal both now trap focus in the browser. ([#2428](https://github.com/patternfly/patternfly-react/pull/2428))
+- **About modal:** AboutModal and Modal both now trap focus in the browser ([#2428](https://github.com/patternfly/patternfly-react/pull/2428))
 - **Accordion:** Added prop to heading level of parent component ([#2290](https://github.com/patternfly/patternfly-react/pull/2290))
 - **Application launcher:** Allowed custom icon for application launcher toggle ([#2492](https://github.com/patternfly/patternfly-react/pull/2492))
 - **Badge:**

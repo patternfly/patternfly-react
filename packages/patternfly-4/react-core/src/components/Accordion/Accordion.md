@@ -263,7 +263,7 @@ class FixedAccordion extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expanded: ['ex-toggle4']
+      expanded: ['ex2-toggle4']
     };
   }
   
@@ -280,15 +280,15 @@ class FixedAccordion extends React.Component {
       <Accordion asDefinitionList={false}>
         <AccordionItem>
           <AccordionToggle
-            onClick={() => toggle('ex-toggle1')}
-            isExpanded={this.state.expanded.includes('ex-toggle1')}
-            id="ex-toggle1"
+            onClick={() => toggle('ex2-toggle1')}
+            isExpanded={this.state.expanded.includes('ex2-toggle1')}
+            id="ex2-toggle1"
           >
             Item One
           </AccordionToggle>
           <AccordionContent
-            id="ex-expand1"
-            isHidden={!this.state.expanded.includes('ex-toggle1')}
+            id="ex2-expand1"
+            isHidden={!this.state.expanded.includes('ex2-toggle1')}
             isFixed
           >
             <p>
@@ -299,15 +299,15 @@ class FixedAccordion extends React.Component {
         </AccordionItem>
         <AccordionItem>
           <AccordionToggle
-            onClick={() => toggle('ex-toggle2')}
-            isExpanded={this.state.expanded.includes('ex-toggle2')}
-            id="ex-toggle2"
+            onClick={() => toggle('ex2-toggle2')}
+            isExpanded={this.state.expanded.includes('ex2-toggle2')}
+            id="ex2-toggle2"
           >
             Item Two
           </AccordionToggle>
           <AccordionContent
-            id="ex-expand2"
-            isHidden={!this.state.expanded.includes('ex-toggle2')}
+            id="ex2-expand2"
+            isHidden={!this.state.expanded.includes('ex2-toggle2')}
             isFixed
           >
             <p>
@@ -318,15 +318,15 @@ class FixedAccordion extends React.Component {
         </AccordionItem>
         <AccordionItem>
           <AccordionToggle
-            onClick={() => toggle('ex-toggle3')}
-            isExpanded={this.state.expanded.includes('ex-toggle3')}
-            id="ex-toggle3"
+            onClick={() => toggle('ex2-toggle3')}
+            isExpanded={this.state.expanded.includes('ex2-toggle3')}
+            id="ex2-toggle3"
           >
             Item Three
           </AccordionToggle>
           <AccordionContent
-            id="ex-expand3"
-            isHidden={!this.state.expanded.includes('ex-toggle3')}
+            id="ex2-expand3"
+            isHidden={!this.state.expanded.includes('ex2-toggle3')}
             isFixed
           >
             <p>Morbi vitae urna quis nunc convallis hendrerit. Aliquam congue orci quis ultricies tempus.</p>
@@ -334,15 +334,15 @@ class FixedAccordion extends React.Component {
         </AccordionItem>
         <AccordionItem>
           <AccordionToggle
-            onClick={() => toggle('ex-toggle4')}
-            isExpanded={this.state.expanded.includes('ex-toggle4')}
-            id="ex-toggle4"
+            onClick={() => toggle('ex2-toggle4')}
+            isExpanded={this.state.expanded.includes('ex2-toggle4')}
+            id="ex2-toggle4"
           >
             Item Four
           </AccordionToggle>
           <AccordionContent
-            id="ex-expand4"
-            isHidden={!this.state.expanded.includes('ex-toggle4')}
+            id="ex2-expand4"
+            isHidden={!this.state.expanded.includes('ex2-toggle4')}
             isFixed
           >
             <p>
@@ -358,15 +358,15 @@ class FixedAccordion extends React.Component {
         </AccordionItem>
         <AccordionItem>
           <AccordionToggle
-            onClick={() => toggle('ex-toggle5')}
-            isExpanded={this.state.expanded.includes('ex-toggle5')}
-            id="ex-toggle5"
+            onClick={() => toggle('ex2-toggle5')}
+            isExpanded={this.state.expanded.includes('ex2-toggle5')}
+            id="ex2-toggle5"
           >
             Item Five
           </AccordionToggle>
           <AccordionContent
-            id="ex-expand5"
-            isHidden={!this.state.expanded.includes('ex-toggle5')}
+            id="ex2-expand5"
+            isHidden={!this.state.expanded.includes('ex2-toggle5')}
             isFixed
           >
             <p>Vivamus finibus dictum ex id ultrices. Mauris dictum neque a iaculis blandit.</p>

@@ -1,11 +1,25 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 import { Select } from './Select';
-import { SelectOption } from './SelectOption';
+import { SelectOption, SelectOptionObject } from './SelectOption';
 import { CheckboxSelectOption } from './CheckboxSelectOption';
 import { SelectGroup } from './SelectGroup';
 import { CheckboxSelectGroup } from './CheckboxSelectGroup';
 import { SelectVariant } from './selectConstants';
+
+class User implements SelectOptionObject {
+  private firstName: string;
+  private lastName: string;
+  private title: string;
+
+  constructor(title: string, firstName: string, lastName: string) {
+    this.title = title;
+    this.firstName = firstName;
+    this.lastName = lastName;  
+  }
+
+  toString = ():string =>`${this.title}: ${this.firstName} ${this.lastName}`;
+}
 
 const selectOptions = [
   <SelectOption value="Mr" key="0" />,
@@ -21,6 +35,12 @@ const checkboxSelectOptions = [
   <CheckboxSelectOption value="Other" key="3" />
 ];
 
+const selectOptionsCustom = [
+  <SelectOption value={new User('Mr', 'User', 'One')} key="0" />,
+  <SelectOption value={new User('Mrs', 'New', 'User')} key="1" />,
+  <SelectOption value={new User('Ms', 'Test', 'Three')} key="2" />
+];
+
 describe('select', () => {
   describe('single select', () => {
     test('renders closed successfully', () => {
@@ -32,10 +52,27 @@ describe('select', () => {
       expect(view).toMatchSnapshot();
     });
 
+    test('renders disabled successfully', () => {
+      const view = mount(
+        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isDisabled>
+          {selectOptions}
+        </Select>
+      );
+      expect(view).toMatchSnapshot();
+    });
+
     test('renders expanded successfully', () => {
       const view = mount(
         <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
           {selectOptions}
+        </Select>
+      );
+      expect(view).toMatchSnapshot();
+    });
+    test('renders expanded successfully with custom objects', () => {
+      const view = mount(
+        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+          {selectOptionsCustom}
         </Select>
       );
       expect(view).toMatchSnapshot();
@@ -120,6 +157,15 @@ describe('checkbox select', () => {
     const view = mount(
       <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
         {checkboxSelectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders expanded successfully with custom objects', () => {
+    const view = mount(
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+        {selectOptionsCustom}
       </Select>
     );
     expect(view).toMatchSnapshot();

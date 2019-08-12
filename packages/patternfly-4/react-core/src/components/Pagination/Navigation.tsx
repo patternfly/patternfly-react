@@ -9,6 +9,8 @@ import { KEY_CODES } from '../../helpers/constants';
 export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   /** Additional classes for the container */
   className?: string;
+  /** Flag indicating if the pagination is disabled */
+  isDisabled?: boolean;
   /** The number of the last page */
   lastPage?: number;
   /** The number of first page where pagination starts */
@@ -55,6 +57,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
 
   static defaultProps = {
     className: '',
+    isDisabled: false,
     lastPage: 0,
     firstPage: 0,
     pagesTitle: '',
@@ -102,6 +105,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
   render () {
     const {
       page,
+      isDisabled,
       lastPage,
       firstPage,
       pagesTitle,
@@ -125,7 +129,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
       <nav className={css(styles.paginationNav, className)} aria-label={paginationTitle} {...props}>
         <Button
           variant={ButtonVariant.plain}
-          isDisabled={page === firstPage}
+          isDisabled={isDisabled || page === firstPage}
           aria-label={toFirstPage}
           data-action="first"
           onClick={event => {
@@ -138,7 +142,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
         </Button>
         <Button
           variant={ButtonVariant.plain}
-          isDisabled={page === firstPage}
+          isDisabled={isDisabled || page === firstPage}
           data-action="previous"
           onClick={event => {
             const newPage = page as number - 1 >= 1 ? page as number - 1 : 1;
@@ -155,7 +159,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
             className={css(styles.formControl)}
             aria-label={currPage}
             type="number"
-            disabled={page === firstPage && page === lastPage}
+            disabled={isDisabled || page === firstPage && page === lastPage}
             min={lastPage <= 0 && firstPage <= 0 ? 0 : 1}
             max={lastPage}
             value={userInputPage}
@@ -168,7 +172,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
         </div>
         <Button
           variant={ButtonVariant.plain}
-          isDisabled={page === lastPage}
+          isDisabled={isDisabled || page === lastPage}
           aria-label={toNextPage}
           data-action="next"
           onClick={event => {
@@ -182,7 +186,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
         </Button>
         <Button
           variant={ButtonVariant.plain}
-          isDisabled={page === lastPage}
+          isDisabled={isDisabled || page === lastPage}
           aria-label={toLastPage}
           data-action="last"
           onClick={event => {
