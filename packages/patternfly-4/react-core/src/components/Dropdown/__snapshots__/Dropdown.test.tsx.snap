@@ -3033,6 +3033,7 @@ exports[`dropdown basic 1`] = `
             >
               <button
                 aria-expanded="true"
+                aria-haspopup="false"
                 class="pf-c-dropdown__toggle"
                 id="Dropdown Toggle"
                 type="button"
@@ -3077,6 +3078,7 @@ exports[`dropdown basic 1`] = `
         }
       >
         <Toggle
+          ariaHasPopup={false}
           className=""
           id="Dropdown Toggle"
           isActive={false}
@@ -3095,6 +3097,7 @@ exports[`dropdown basic 1`] = `
               >
                 <button
                   aria-expanded="true"
+                  aria-haspopup="false"
                   class="pf-c-dropdown__toggle"
                   id="Dropdown Toggle"
                   type="button"
@@ -3140,6 +3143,7 @@ exports[`dropdown basic 1`] = `
         >
           <button
             aria-expanded={true}
+            aria-haspopup={false}
             className="pf-c-dropdown__toggle"
             disabled={false}
             id="Dropdown Toggle"
@@ -3501,6 +3505,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-haspopup="true"
                 class="pf-c-dropdown__toggle"
                 id="Dropdown Toggle"
                 type="button"
@@ -3531,6 +3536,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         }
       >
         <Toggle
+          ariaHasPopup={true}
           className=""
           id="Dropdown Toggle"
           isActive={false}
@@ -3549,6 +3555,7 @@ exports[`dropdown dropup + right aligned 1`] = `
               >
                 <button
                   aria-expanded="false"
+                  aria-haspopup="true"
                   class="pf-c-dropdown__toggle"
                   id="Dropdown Toggle"
                   type="button"
@@ -3580,6 +3587,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         >
           <button
             aria-expanded={false}
+            aria-haspopup={true}
             className="pf-c-dropdown__toggle"
             disabled={false}
             id="Dropdown Toggle"
@@ -3910,6 +3918,7 @@ exports[`dropdown dropup 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-haspopup="true"
                 class="pf-c-dropdown__toggle"
                 id="Dropdown Toggle"
                 type="button"
@@ -3940,6 +3949,7 @@ exports[`dropdown dropup 1`] = `
         }
       >
         <Toggle
+          ariaHasPopup={true}
           className=""
           id="Dropdown Toggle"
           isActive={false}
@@ -3958,6 +3968,7 @@ exports[`dropdown dropup 1`] = `
               >
                 <button
                   aria-expanded="false"
+                  aria-haspopup="true"
                   class="pf-c-dropdown__toggle"
                   id="Dropdown Toggle"
                   type="button"
@@ -3989,6 +4000,7 @@ exports[`dropdown dropup 1`] = `
         >
           <button
             aria-expanded={false}
+            aria-haspopup={true}
             className="pf-c-dropdown__toggle"
             disabled={false}
             id="Dropdown Toggle"
@@ -4319,6 +4331,7 @@ exports[`dropdown expanded 1`] = `
             >
               <button
                 aria-expanded="true"
+                aria-haspopup="true"
                 class="pf-c-dropdown__toggle"
                 id="Dropdown Toggle"
                 type="button"
@@ -4425,6 +4438,7 @@ exports[`dropdown expanded 1`] = `
         }
       >
         <Toggle
+          ariaHasPopup={true}
           className=""
           id="Dropdown Toggle"
           isActive={false}
@@ -4443,6 +4457,7 @@ exports[`dropdown expanded 1`] = `
               >
                 <button
                   aria-expanded="true"
+                  aria-haspopup="true"
                   class="pf-c-dropdown__toggle"
                   id="Dropdown Toggle"
                   type="button"
@@ -4550,6 +4565,7 @@ exports[`dropdown expanded 1`] = `
         >
           <button
             aria-expanded={true}
+            aria-haspopup={true}
             className="pf-c-dropdown__toggle"
             disabled={false}
             id="Dropdown Toggle"
@@ -5136,6 +5152,7 @@ exports[`dropdown regular 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-haspopup="true"
                 class="pf-c-dropdown__toggle"
                 id="Dropdown Toggle"
                 type="button"
@@ -5166,6 +5183,7 @@ exports[`dropdown regular 1`] = `
         }
       >
         <Toggle
+          ariaHasPopup={true}
           className=""
           id="Dropdown Toggle"
           isActive={false}
@@ -5184,6 +5202,7 @@ exports[`dropdown regular 1`] = `
               >
                 <button
                   aria-expanded="false"
+                  aria-haspopup="true"
                   class="pf-c-dropdown__toggle"
                   id="Dropdown Toggle"
                   type="button"
@@ -5215,6 +5234,7 @@ exports[`dropdown regular 1`] = `
         >
           <button
             aria-expanded={false}
+            aria-haspopup={true}
             className="pf-c-dropdown__toggle"
             disabled={false}
             id="Dropdown Toggle"
@@ -5545,6 +5565,7 @@ exports[`dropdown right aligned 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-haspopup="true"
                 class="pf-c-dropdown__toggle"
                 id="Dropdown Toggle"
                 type="button"
@@ -5575,6 +5596,7 @@ exports[`dropdown right aligned 1`] = `
         }
       >
         <Toggle
+          ariaHasPopup={true}
           className=""
           id="Dropdown Toggle"
           isActive={false}
@@ -5593,6 +5615,7 @@ exports[`dropdown right aligned 1`] = `
               >
                 <button
                   aria-expanded="false"
+                  aria-haspopup="true"
                   class="pf-c-dropdown__toggle"
                   id="Dropdown Toggle"
                   type="button"
@@ -5624,6 +5647,7 @@ exports[`dropdown right aligned 1`] = `
         >
           <button
             aria-expanded={false}
+            aria-haspopup={true}
             className="pf-c-dropdown__toggle"
             disabled={false}
             id="Dropdown Toggle"
