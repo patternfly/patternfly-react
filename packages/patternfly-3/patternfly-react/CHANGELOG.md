@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.36.9](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.8...patternfly-react@2.36.9) (2019-08-12)
+
+
+### Bug Fixes
+
+* **ExpandCollapse:** Add onToggle callback so that state of the component can be controlled externally ([#2628](https://github.com/patternfly/patternfly-react/issues/2628)) ([d97dcfc](https://github.com/patternfly/patternfly-react/commit/d97dcfc)), closes [#2610](https://github.com/patternfly/patternfly-react/issues/2610)
+
+
+
+
+
 ## [2.36.8](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.7...patternfly-react@2.36.8) (2019-08-05)
 
 
