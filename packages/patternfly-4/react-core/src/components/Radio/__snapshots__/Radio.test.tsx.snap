@@ -35,6 +35,50 @@ exports[`Radio check component isDisabled 1`] = `
 </div>
 `;
 
+exports[`Radio check component isLabelBeforeButton 1`] = `
+<div
+  className="pf-c-radio"
+>
+  <label
+    className="pf-c-radio__label"
+    htmlFor="check"
+  >
+    Radio label
+  </label>
+  <input
+    aria-invalid={false}
+    className="pf-c-radio__input"
+    disabled={false}
+    id="check"
+    name="check"
+    onChange={[Function]}
+    type="radio"
+  />
+</div>
+`;
+
+exports[`Radio check component isLabelWrapped 1`] = `
+<label
+  className="pf-c-radio"
+  htmlFor="check"
+>
+  <input
+    aria-invalid={false}
+    className="pf-c-radio__input"
+    disabled={false}
+    id="check"
+    name="check"
+    onChange={[Function]}
+    type="radio"
+  />
+  <span
+    className="pf-c-radio__label"
+  >
+    Radio label
+  </span>
+</label>
+`;
+
 exports[`Radio check component label is function 1`] = `
 <div
   className="pf-c-radio"
