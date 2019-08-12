@@ -9,7 +9,7 @@ describe('Chip Group Demo Test', () => {
       cy.get('.pf-c-chip__text').first().contains('Lemons'); 
     });
   
-    it('Verify chip is closed on default', () => {
+    it('Verify chip is open on default', () => {
       cy.get('.pf-c-chip__text').eq(1).contains('Limes');
     });
   
