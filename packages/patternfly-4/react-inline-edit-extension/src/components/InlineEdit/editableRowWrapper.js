@@ -12,9 +12,8 @@ import {
 } from './utils/utils';
 import ConfirmButtons from './ConfirmButtons';
 import { TableEditConfirmation } from './constants';
-import { inlineEditCss, inlineEditStyles as styles } from './css/inline-edit-css';
-
-inlineEditCss.inject();
+import '@patternfly/react-styles/css/components/Table/inline-edit.css';
+import { inlineEditStyles as styles } from './css/inline-edit-css';
 
 const propTypes = {
   ...ReactTableRowWrapper.propTypes,

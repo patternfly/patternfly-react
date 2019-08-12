@@ -2,15 +2,14 @@ import * as React from 'react';
 import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
 import { Instance as TippyInstance } from 'tippy.js';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
+import '@patternfly/react-styles/css/components/Tooltip/tippy.css';
+import '@patternfly/react-styles/css/components/Tooltip/tippy-overrides.css';
 import { css, getModifier } from '@patternfly/react-styles';
 import { TooltipArrow } from './TooltipArrow';
 import { TooltipContent } from './TooltipContent';
 import { KEY_CODES } from '../../helpers/constants';
 import { c_tooltip_MaxWidth as tooltipMaxWidth } from '@patternfly/react-tokens';
-import { popoverBaseStyles } from './styles';
 import { ReactElement } from 'react';
-
-popoverBaseStyles();
 
 export enum TooltipPosition {
   top = 'top',

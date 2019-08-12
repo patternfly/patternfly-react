@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { Button, Toolbar, ToolbarGroup, ToolbarItem, Tooltip } from '@patternfly/react-core';
 import { ExpandIcon, ExpandArrowsAltIcon, SearchPlusIcon, SearchMinusIcon } from '@patternfly/react-icons';
-
-import { topologyControlbarCss } from './css/topology-controlbar-css';
-
-topologyControlbarCss.inject();
+import '@patternfly/react-styles/css/components/Topology/topology-controlbar.css';
 
 /* ID's for common control buttons */
 export const ZOOM_IN = 'zoom-in';

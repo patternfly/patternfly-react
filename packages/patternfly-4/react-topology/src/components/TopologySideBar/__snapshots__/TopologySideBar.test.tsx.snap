@@ -1,25 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TopologySideBar should display topology sidebar correctly 1`] = `
-.pf-topology-side-bar__header {
-  display: block;
-}
-.pf-topology-side-bar.fade.my-test-class.shown {
-  display: block;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  overflow-x: hidden;
-  opacity: 0;
-  z-index: 5;
-  transition: opacity 0.15s linear,transform 0.15s linear;
-  transform: translate3d(25%,0,0);
-}
-
 <TopologySideBar
   className="my-test-class"
   header={
@@ -56,30 +37,6 @@ exports[`TopologySideBar should display topology sidebar correctly 1`] = `
 `;
 
 exports[`TopologySideBar should display topology sidebar w/ close correctly 1`] = `
-.pf-c-button.pf-m-plain.pf-topology-side-bar__dismiss {
-  display: block;
-  position: absolute;
-  right: 1rem;
-}
-.pf-topology-side-bar__dismiss {
-  display: block;
-}
-.pf-topology-side-bar.fade.my-test-class.shown {
-  display: block;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  overflow-x: hidden;
-  opacity: 0;
-  z-index: 5;
-  transition: opacity 0.15s linear,transform 0.15s linear;
-  transform: translate3d(25%,0,0);
-}
-
 <TopologySideBar
   className="my-test-class"
   onClose={[MockFunction]}
@@ -145,22 +102,6 @@ exports[`TopologySideBar should display topology sidebar w/ close correctly 1`] 
 `;
 
 exports[`TopologySideBar should hide the sidebar correctly 1`] = `
-.pf-topology-side-bar.fade.my-test-class {
-  display: block;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 0px;
-  max-width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  overflow-x: hidden;
-  opacity: 0;
-  z-index: 5;
-  transition: opacity 0.15s linear,transform 0.15s linear;
-  transform: translate3d(25%,0,0);
-}
-
 <TopologySideBar
   className="my-test-class"
   header={
