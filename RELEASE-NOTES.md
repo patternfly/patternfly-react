@@ -1,4 +1,4 @@
-# 2019.05 release notes (2019-08-13)
+# 2019.06 release notes (2019-08-13)
 Packages released:
 -
 
@@ -17,29 +17,29 @@ Packages released:
 examples  ([#2663](https://github.com/patternfly/patternfly-react/pull/2663))
 - **Drawer:** Added the drawer component to experimental  ([#2633](https://github.com/patternfly/patternfly-react/pull/2633))
 - **Dropdown:**
-- Automatically focus first dropdown item when DropdownMenu mounts  ([#2355](https://github.com/patternfly/patternfly-react/pull/2355))
-- This PR adds an aria-label to the "icon only" example of Dropdown  ([#2517](https://github.com/patternfly/patternfly-react/pull/2517))
-- Fixed missing event passthrough on internal onSelect callback ([#2657](https://github.com/patternfly/patternfly-react/pull/2657))
+ - Automatically focus first dropdown item when DropdownMenu mounts  ([#2355](https://github.com/patternfly/patternfly-react/pull/2355))
+ - This PR adds an aria-label to the "icon only" example of Dropdown  ([#2517](https://github.com/patternfly/patternfly-react/pull/2517))
+ - Fixed missing event passthrough on internal onSelect callback ([#2657](https://github.com/patternfly/patternfly-react/pull/2657))
 - **Form:** Updated Form demo to use check over radio
 ([#2567](https://github.com/patternfly/patternfly-react/pull/2567))
 - **Modal:** Allows for custom header and/or footer in Modal component Added the showClose prop, defaulted to true. Set to false to hide the close button  ([#2120](https://github.com/patternfly/patternfly-react/pull/2120))
 - **Page:**
-- Skip to content should point to primary content container ([#2519](https://github.com/patternfly/patternfly-react/pull/2519))
-- Change the defaultManagedSidebarOpen prop name for consistency ([#2664](https://github.com/patternfly/patternfly-react/pull/2664))
+ - Skip to content should point to primary content container ([#2519](https://github.com/patternfly/patternfly-react/pull/2519))
+ - Change the defaultManagedSidebarOpen prop name for consistency ([#2664](https://github.com/patternfly/patternfly-react/pull/2664))
 - **Pagination:**
-- When there is 0 items or negative number for pagination show 0th page out of 0 and disable paginating  ([#2558](https://github.com/patternfly/patternfly-react/pull/2558))
-- Added a demo of table integrated with pagination ([#2601](https://github.com/patternfly/patternfly-react/pull/2601))
-- Fixed pagination to update page count ([#2639](https://github.com/patternfly/patternfly-react/pull/2639))
-- Added disabled flag for whole component ([#2586](https://github.com/patternfly/patternfly-react/pull/2586))
+ - When there is 0 items or negative number for pagination show 0th page out of 0 and disable paginating  ([#2558](https://github.com/patternfly/patternfly-react/pull/2558))
+ - Added a demo of table integrated with pagination ([#2601](https://github.com/patternfly/patternfly-react/pull/2601))
+ - Fixed pagination to update page count ([#2639](https://github.com/patternfly/patternfly-react/pull/2639))
+ - Added disabled flag for whole component ([#2586](https://github.com/patternfly/patternfly-react/pull/2586))
 - **Select:**  
-- Select menu now has consistent, open behavior on empty text input field  ([#2572](https://github.com/patternfly/patternfly-react/pull/2572))
-- Added a custom callback for the filtering function used in typeahead variants. This replaces the current search entirely, so the function must handle filtering the list of children/options and return the filtered results for the internal state to update
+ - Select menu now has consistent, open behavior on empty text input field  ([#2572](https://github.com/patternfly/patternfly-react/pull/2572))
+ - Added a custom callback for the filtering function used in typeahead variants. This replaces the current search entirely, so the function must handle filtering the list of children/options and return the filtered results for the internal state to update
 ([#2434](https://github.com/patternfly/patternfly-react/pull/2434))
-- Added isPlain variation/prop to Select.tsx, snapshot tests, and integration ([#2588](https://github.com/patternfly/patternfly-react/pull/2588))
-- This enhancement allows a user to now pass in a user defined object to store additional data besides just the string value to a select option. The object must have a toString function that is
+ - Added isPlain variation/prop to Select.tsx, snapshot tests, and integration ([#2588](https://github.com/patternfly/patternfly-react/pull/2588))
+ - This enhancement allows a user to now pass in a user defined object to store additional data besides just the string value to a select option. The object must have a toString function that is
 responsible for returning the the localized string ([#2612](https://github.com/patternfly/patternfly-react/pull/2612))
-- Disabled focus trap on checkbox select with no children. Focus Trap throws exception if no children to ref. In order to avoid this error, render the component with no Focus Trap when no children is passed  ([#2647](https://github.com/patternfly/patternfly-react/pull/2647))
-- Added disabled flag to select ([#2678](https://github.com/patternfly/patternfly-react/pull/2678))
+ - Disabled focus trap on checkbox select with no children. Focus Trap throws exception if no children to ref. In order to avoid this error, render the component with no Focus Trap when no children is passed  ([#2647](https://github.com/patternfly/patternfly-react/pull/2647))
+ - Added disabled flag to select ([#2678](https://github.com/patternfly/patternfly-react/pull/2678))
 - **Switch:** Added aria-labelledby to input
 ([#2468](https://github.com/patternfly/patternfly-react/pull/2468))
 - **Topology:** Fixed paddings for topology control bar buttons. Removed css settings that override the paddings for the topology control bar buttons  ([#2635](https://github.com/patternfly/patternfly-react/pull/2635))
