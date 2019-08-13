@@ -108,6 +108,98 @@ class SimpleTable extends React.Component {
 }
 ```
 
+## Table with empty state
+
+```js
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  sortable,
+  SortByDirection,
+  headerCol,
+  TableVariant,
+  expandable,
+  cellWidth,
+  textCenter,
+} from '@patternfly/react-table';
+import {
+  Bullseye,
+  Title,
+  Button,
+  EmptyState,
+  EmptyStateVariant,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateSecondaryActions
+} from '@patternfly/react-core';
+import { CubesIcon } from '@patternfly/react-icons';
+
+class EmptyTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        { title: 'Repositories' },
+        'Branches',
+        { title: 'Pull requests' },
+        'Workspaces',
+        {
+          title: 'Last Commit',
+          transforms: [textCenter],
+          cellTransforms: [textCenter]
+        }
+      ],
+      rows: []
+    };
+  }
+
+  renderEmptyState() {
+    return (<EmptyState variant={EmptyStateVariant.full}>
+      <EmptyStateIcon icon={CubesIcon} />
+      <Title headingLevel="h5" size="lg">
+        Empty State
+      </Title>
+      <EmptyStateBody>
+        This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
+        enough to meet a variety of needs.
+      </EmptyStateBody>
+      <Button variant="primary">Primary Action</Button>
+      <EmptyStateSecondaryActions>
+        <Button variant="link">Multiple</Button>
+        <Button variant="link">Action Buttons</Button>
+        <Button variant="link">Can</Button>
+        <Button variant="link">Go here</Button>
+        <Button variant="link">In the secondary</Button>
+        <Button variant="link">Action area</Button>
+      </EmptyStateSecondaryActions>
+    </EmptyState>);
+  };
+
+  render() {
+    const { columns, rows } = this.state;
+
+    return (
+      <Table caption="Empty Table" cells={columns} rows={rows}>
+        <TableHeader />
+        {rows.length > 0 && <TableBody /> || (
+          <tbody>
+            <tr>
+              <td colspan={5}>
+                <Bullseye>
+                  {this.renderEmptyState()}
+                </Bullseye>
+              </td>
+            </tr>
+          </tbody>
+        )}
+      </Table>
+    );
+  }
+}
+```
+
 ## Sortable table
 
 ```js
