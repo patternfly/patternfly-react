@@ -41,6 +41,10 @@ export class TableSortableDemo extends React.Component<{}, { columns: any, rows:
     });
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     const { columns, rows, sortBy } = this.state;
 

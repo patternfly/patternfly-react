@@ -27,11 +27,15 @@ export class TableHeadersWrappableDemo extends React.Component<{}, { columns: an
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+  
   render() {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Wrappable headers" cells={columns} rows={rows}>
+      <Table caption="Table with Wrappable Headers" cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>

@@ -1,66 +1,20 @@
-import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  cellWidth
-} from '@patternfly/react-table';
+describe('Table Simple Test', () => {
+  it('Navigate to demo section', () => {
+    cy.visit('http://localhost:3000/');
+    cy.get('#table-simple-demo-nav-item-link').click();
+    cy.url().should('eq', 'http://localhost:3000/table-simple-demo-nav-link');
+  });
 
-class SimpleActionsTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [
-        { title: 'Repositories', cellTransforms: [headerCol()] },
-        'Branches',
-        { title: 'Pull requests' },
-        'Workspaces',
-        'Last Commit'
-      ],
-      rows: [
-        {
-          cells: ['one', 'two', 'a', 'four', 'five']
-        },
-        {
-          cells: ['a', 'two', 'k', 'four', 'five']
-        },
-        {
-          cells: ['p', 'two', 'b', 'four', 'five'],
-          disableActions: true
-        }
-      ],
-      actions: [
-        {
-          title: 'Some action',
-          onClick: (event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId)
-        },
-        {
-          title: <div>Another action</div>,
-          onClick: (event, rowId, rowData, extra) => console.log('clicked on Another action, on row: ', rowId)
-        },
-        {
-          isSeparator: true
-        },
-        {
-          title: 'Third action',
-          onClick: (event, rowId, rowData, extra) => console.log('clicked on Third action, on row: ', rowId)
-        }
-      ]
-    };
-  }
+  it('Verify table string', () => {
+    cy.get('caption').contains('Simple Table');
+  });
 
-  render() {
-    const { columns, rows, actions } = this.state;
-    return (
-      <Table caption="Actions Table" actions={actions} cells={columns} rows={rows}>
-        <TableHeader />
-        <TableBody />
-      </Table>
-    );
-  }
-}
+  it('Check number of rows', () => {
+      cy.get('.pf-c-table').find('tr').should('have.length', 4)
+  });
+
+  it('Check number of columns', () => {
+      cy.get('thead').find('th').should('have.length', 5)
+  });
+
+});

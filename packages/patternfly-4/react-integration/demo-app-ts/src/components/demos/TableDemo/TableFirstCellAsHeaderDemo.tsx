@@ -27,11 +27,15 @@ export class TableFirstCellAsHeaderDemo extends React.Component<{}, { columns: a
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="First cell as Header" rows={rows} cells={columns}>
+      <Table caption="Table with First cell as Header" rows={rows} cells={columns}>
         <TableHeader />
         <TableBody />
       </Table>

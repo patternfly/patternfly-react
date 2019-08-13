@@ -12,7 +12,7 @@ import {
   IRow
 } from '@patternfly/react-table';
 
-class TableCompactDemo extends React.Component<{}, { columns: any, rows: IRow[] }> {
+export class TableCompactDemo extends React.Component<{}, { columns: any, rows: IRow[] }> {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,6 +26,10 @@ class TableCompactDemo extends React.Component<{}, { columns: any, rows: IRow[] 
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+  
   render() {
     const { columns, rows } = this.state;
 

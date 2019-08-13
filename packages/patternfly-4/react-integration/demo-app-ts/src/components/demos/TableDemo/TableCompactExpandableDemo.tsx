@@ -73,6 +73,10 @@ export class TableCompactExpandableDemo extends React.Component<{}, { columns: a
     });
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     const { columns, rows } = this.state;
 

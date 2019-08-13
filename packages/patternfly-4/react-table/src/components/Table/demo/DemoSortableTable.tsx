@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Table, TableHeader, TableBody, TableVariant, sortable, SortByDirection, IRow, ISortBy } from '@patternfly/react-table';
 
-export default class DemoSortableTable extends React.Component<{}, { columns: any, rows: IRow[], sortBy: ISortBy }> {
+export class DemoSortableTable extends React.Component<{}, { columns: any, rows: IRow[], sortBy: ISortBy }> {
   constructor(props) {
     super(props);
     this.state = {

@@ -52,6 +52,10 @@ export class TableSimpleDemo extends React.Component<{}, { columns: any, rows: I
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     const { columns, rows } = this.state;
 

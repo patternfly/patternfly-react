@@ -54,6 +54,10 @@ export class TableSelectableDemo extends React.Component<{}, { columns: any, row
     });
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     const { columns, rows } = this.state;
 

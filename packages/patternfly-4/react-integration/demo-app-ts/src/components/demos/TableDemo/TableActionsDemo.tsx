@@ -10,6 +10,8 @@ import {
   expandable,
   cellWidth,
   IRow,
+  IRowData,
+  IExtra,
   IActionsResolver,
   IAction,
   ISeparator
@@ -45,7 +47,7 @@ export class TableActionsDemo extends React.Component<{}, { columns: any, rows: 
     };
   }
 
-  actionResolver(rowData, { rowIndex }) {
+  actionResolver(rowData: IRowData, { rowIndex }: IExtra) {
     if (rowIndex === 1) {
       return null;
     }
@@ -55,32 +57,42 @@ export class TableActionsDemo extends React.Component<{}, { columns: any, rows: 
         ? [
             {
               isSeparator: true
-            },
+            } as ISeparator,
             {
               title: 'Third action',
+              // tslint:disable-next-line:no-shadowed-variable
               onClick: (event, rowId, rowData, extra) =>
+                // tslint:disable-next-line:no-console
                 console.log(`clicked on Third action, on row ${rowId} of type ${rowData.type}`)
-            }
+            } as IAction
           ]
         : [];
 
     return [
       {
         title: 'Some action',
+        // tslint:disable-next-line:no-shadowed-variable
         onClick: (event, rowId, rowData, extra) =>
+          // tslint:disable-next-line:no-console
           console.log(`clicked on Some action, on row ${rowId} of type ${rowData.type}`)
-      },
+      } as IAction,
       {
-        title: <div>Another action</div>,
+        title: 'Another action',
+        // tslint:disable-next-line:no-shadowed-variable
         onClick: (event, rowId, rowData, extra) =>
+          // tslint:disable-next-line:no-console
           console.log(`clicked on Another action, on row ${rowId} of type ${rowData.type}`)
-      },
+      } as IAction,
       ...thirdAction
     ];
   }
 
   areActionsDisabled(rowData, { rowIndex }) {
     return rowIndex === 3;
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
   }
 
   render() {
@@ -90,7 +102,7 @@ export class TableActionsDemo extends React.Component<{}, { columns: any, rows: 
         caption="Actions Table"
         cells={columns}
         rows={rows}
-        actionResolver={() => null as (IAction | ISeparator)[]}
+        actionResolver={this.actionResolver}
         areActionsDisabled={this.areActionsDisabled}
       >
         <TableHeader />

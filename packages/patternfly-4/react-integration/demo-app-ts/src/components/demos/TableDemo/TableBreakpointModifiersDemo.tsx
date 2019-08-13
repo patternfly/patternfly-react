@@ -15,6 +15,7 @@ import {
 } from '@patternfly/react-table';
 
 export class TableBreakpointModifersDemo extends React.Component< {}, { columns: any, rows: IRow[] }> {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -41,6 +42,10 @@ export class TableBreakpointModifersDemo extends React.Component< {}, { columns:
         ['Repository 4', '10', '25', '5', '2 days ago']
       ]
     };
+  }
+
+    componentDidMount() {
+    window.scrollTo(0, 0)
   }
 
   render() {

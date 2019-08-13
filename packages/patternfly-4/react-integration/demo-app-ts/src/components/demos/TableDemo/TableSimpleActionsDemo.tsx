@@ -42,7 +42,7 @@ export class TableSimpleActionsDemo extends React.Component<{}, { columns: any, 
           onClick: (event, rowId, rowData, extra) => console.log('clicked on Some action, on row: ', rowId)
         },
         {
-          title: <div>Another action</div>,
+          title: 'Another action',
           onClick: (event, rowId, rowData, extra) => console.log('clicked on Another action, on row: ', rowId)
         },
         {
@@ -54,6 +54,10 @@ export class TableSimpleActionsDemo extends React.Component<{}, { columns: any, 
         }
       ]
     };
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
   }
 
   render() {

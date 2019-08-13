@@ -26,6 +26,10 @@ export class TableCompactBorderlessRowsDemo extends React.Component<{}, { column
     };
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+
   render() {
     const { columns, rows } = this.state;
 

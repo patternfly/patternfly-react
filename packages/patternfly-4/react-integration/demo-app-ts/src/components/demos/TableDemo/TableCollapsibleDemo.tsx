@@ -11,7 +11,6 @@ import {
   cellWidth,
   IRow,
 } from '@patternfly/react-table';
-import { any } from 'prop-types';
 
 export class TableCollapsibleDemo extends React.Component<{}, { columns: any, rows: IRow[] }> {
   constructor(props) {
@@ -75,6 +74,10 @@ export class TableCollapsibleDemo extends React.Component<{}, { columns: any, ro
     this.setState({
       rows
     });
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
   }
 
   render() {
