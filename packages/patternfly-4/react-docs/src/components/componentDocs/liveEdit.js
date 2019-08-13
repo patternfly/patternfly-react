@@ -97,7 +97,7 @@ export class LiveEdit extends React.Component {
           <LiveProvider code={this.code} scope={this.scope} transformCode={transformCode}>
             <LivePreview className="ws-preview" />
             {Toolbar}
-            {this.state.codeOpen && <LiveEditor className="code" />}
+            {this.state.codeOpen && <LiveEditor className="code" style={{ backgroundColor: 'black' }} />}
             <LiveError />
           </LiveProvider>
         </div>
@@ -106,7 +106,7 @@ export class LiveEdit extends React.Component {
       return (
         <LiveProvider code={this.code} disabled>
           {Toolbar}
-          {this.state.codeOpen && <LiveEditor contentEditable={false} />}
+          {this.state.codeOpen && <LiveEditor contentEditable={false} style={{ backgroundColor: 'black' }} />}
         </LiveProvider>
       );
     }

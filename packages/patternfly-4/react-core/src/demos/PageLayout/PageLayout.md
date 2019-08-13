@@ -11,12 +11,14 @@ import RawPageLayoutGroupsNav from '!!raw-loader!./examples/PageLayoutGroupsNav'
 import RawPageLayoutHorizontalNav from '!!raw-loader!./examples/PageLayoutHorizontalNav';
 import RawPageLayoutManualNav from '!!raw-loader!./examples/PageLayoutManualNav';
 
-All but the last example set the isManagedSidebar prop on the Page component to have the sidebar automatically close for smaller screen widths. You can also manually control this behavior by not adding the isManagedSidebar prop and instead:
+- All but the last example set the `isManagedSidebar` prop on the Page component to have the sidebar automatically close for smaller screen widths. You can also manually control this behavior by not adding the `isManagedSidebar` prop and instead:
 
-- Add an onNavToggle callback to PageHeader
-- Pass in a boolean into the isNavOpen prop to PageSidebar
+  1. Add an onNavToggle callback to PageHeader
+  1. Pass in a boolean into the isNavOpen prop to PageSidebar
 
-The last example demonstrates this.
+  The last example demonstrates this.
+
+- To make the page take up the full height, it is recommended to set the height of all ancestor elements up to the page component to `100%`
 
 ## Using simple navigation
 

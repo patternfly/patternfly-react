@@ -1,6 +1,7 @@
 import React from 'react';
 import { useMDXComponents, mdx } from '@mdx-js/react';
 import { useMDXScope } from 'gatsby-mdx/context';
+import { Title } from '@patternfly/react-core';
 
 // Copy of `import { MDXRenderer } from 'gatsby-mdx';` with some added injection.
 export function MDXRenderer({ scope, components, children, ...props }) {
@@ -19,11 +20,6 @@ export function MDXRenderer({ scope, components, children, ...props }) {
     ...mdxScope
   };
 
-  const allComponents = {
-    wrapper: wrapperProps => <div style={{ height: '100vh' }} {...wrapperProps} />,
-    ...mdxComponents
-  };
-
   // children is pre-compiled mdx
   children = children.replace(/_frontmatter: _frontmatter/gm, '');
   const keys = Object.keys(fullScope);
@@ -31,8 +27,7 @@ export function MDXRenderer({ scope, components, children, ...props }) {
   const fn = new Function('_fn', ...keys, `${children}`); // eslint-disable-line no-new-func
 
   const End = fn({}, ...values);
-  const element = React.createElement(End, { components: allComponents, ...props });
-
+  const element = React.createElement(End, { components: mdxComponents, ...props });
   // Inject our scope into our custom <code> component.
   const propComponents = element.props.components;
   if (propComponents && propComponents.code) {
