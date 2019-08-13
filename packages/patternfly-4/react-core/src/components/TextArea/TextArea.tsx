@@ -28,7 +28,6 @@ export class TextArea extends React.Component<TextAreaProps> {
     isValid: true,
     'aria-label': null as string
   }
-  
 
   constructor(props: TextAreaProps) {
     super(props);
@@ -46,11 +45,12 @@ export class TextArea extends React.Component<TextAreaProps> {
 
   render() {
     const { className, value, onChange, isValid, isRequired, ...props } = this.props;
+    const valueStrategy = (props.defaultValue !== undefined) ? {defaultValue: props.defaultValue} : {value};
     return (
       <textarea
         className={css(styles.formControl, className)}
         onChange={this.handleChange}
-        value={value}
+        {...valueStrategy}
         aria-invalid={!isValid}
         required={isRequired}
         {...props}
