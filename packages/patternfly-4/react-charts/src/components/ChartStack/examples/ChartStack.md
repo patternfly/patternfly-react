@@ -277,10 +277,10 @@ class ResponsiveStack extends React.Component {
         />,
       ];
     }
-    this.getTickValues = () => {
+    this.getTickValues = (offset = 2) => {
       let tickValues = [];
       for(let i = 1; i < 32; i++){
-        if (i % 5 == 0){
+        if (i % offset == 0){
           tickValues.push(`Aug. ${i}`);
         }
       }
