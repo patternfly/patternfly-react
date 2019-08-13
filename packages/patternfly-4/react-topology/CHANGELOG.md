@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.7.24...@patternfly/react-topology@2.7.25) (2019-08-13)
+
+
+### Bug Fixes
+
+* **inline-styles:** remove inject and Stylesheet.parse inline references ([#2653](https://github.com/patternfly/patternfly-react/issues/2653)) ([ee2ca95](https://github.com/patternfly/patternfly-react/commit/ee2ca95))
+
+
+
+
+
 ## [2.7.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.7.23...@patternfly/react-topology@2.7.24) (2019-08-12)
 
 **Note:** Version bump only for package @patternfly/react-topology
