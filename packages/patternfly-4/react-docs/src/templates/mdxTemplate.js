@@ -21,7 +21,7 @@ const components = {
 };
 
 for (let i = 1; i <= 6; i++) {
-  components[`h${i}`] = componentProps => <Text component={`h${i}`} {...componentProps} />
+  components[`h${i}`] = componentProps => <Text component={`h${i}`} {...componentProps} />;
 }
 
 const MdxTemplate = ({ data }) => {

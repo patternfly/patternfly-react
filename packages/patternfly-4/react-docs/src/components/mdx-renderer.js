@@ -1,7 +1,6 @@
 import React from 'react';
 import { useMDXComponents, mdx } from '@mdx-js/react';
 import { useMDXScope } from 'gatsby-mdx/context';
-import { Title } from '@patternfly/react-core';
 
 // Copy of `import { MDXRenderer } from 'gatsby-mdx';` with some added injection.
 export function MDXRenderer({ scope, components, children, ...props }) {
