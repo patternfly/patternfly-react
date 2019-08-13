@@ -224,15 +224,18 @@ class ResponsiveStack extends React.Component {
       width: 0
     };
     this.handleResize = () => {
-      this.setState({ width: this.containerRef.current.clientWidth });
+      if(this.containerRef.current && this.containerRef.current.clientWidth){
+        this.setState({ width: this.containerRef.current.clientWidth });
+      }
     };
-    this.renderChartBars = () => {
-      let bars = [];
-      for(let i = 1; i < 32; i++){
-        bars.push({ x: `Aug. ${i}`, y: Math.floor(Math.random() * 6) + 1 });
-      };
 
-      let socketBars = bars.map(tick => {
+    this.bars = [];
+    for(let i = 1; i < 32; i++){
+      this.bars.push({ x: `Aug. ${i}`, y: Math.floor(Math.random() * 6) + 1 });
+    };
+
+    this.renderChartBars = () => {
+      let socketBars = this.bars.map(tick => {
         return {
           x: tick.x,
           y: tick.y,
@@ -241,7 +244,7 @@ class ResponsiveStack extends React.Component {
         };
       });
 
-      let coresBars = bars.map(tick => {
+      let coresBars = this.bars.map(tick => {
         return {
           x: tick.x,
           y: tick.y,
@@ -250,7 +253,7 @@ class ResponsiveStack extends React.Component {
         };
       });
 
-      let nodesBars = bars.map(tick => {
+      let nodesBars = this.bars.map(tick => {
         return {
           x: tick.x,
           y: tick.y,
@@ -286,10 +289,8 @@ class ResponsiveStack extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ width: this.containerRef.current.clientWidth });
-      window.addEventListener('resize', this.handleResize);
-    });
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
