@@ -1,18 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ConfirmButtons renders correctly 1`] = `
-.pf-c-table__inline-edit-buttons.pf-m-top.pf-m-bold {
-  display: block;
-  position: fixed;
-  z-index: 1000;
-  padding: 4px;
-  margin: 0px;
-  background: #def3ff;
-  border: 1px solid #7dc3e8;
-  border-bottom: 0;
-  border-width: 3px;
-}
-
 <ConfirmButtons
   boldBorder={true}
   buttonsOnTop={true}

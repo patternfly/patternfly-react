@@ -3,6 +3,8 @@ import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
 import { Instance as TippyInstance } from 'tippy.js';
 import { KEY_CODES } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
+import '@patternfly/react-styles/css/components/Tooltip/tippy.css';
+import '@patternfly/react-styles/css/components/Tooltip/tippy-overrides.css';
 import { css, getModifier } from '@patternfly/react-styles';
 import { PopoverArrow } from './PopoverArrow';
 import { PopoverContent } from './PopoverContent';
@@ -12,13 +14,11 @@ import { PopoverFooter } from './PopoverFooter';
 import { PopoverCloseButton } from './PopoverCloseButton';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
 import { c_popover_MaxWidth as popoverMaxWidth } from '@patternfly/react-tokens';
-import { popoverBaseStyles } from '../Tooltip/styles';
 import { ReactElement } from 'react';
 // Can't use ES6 imports :(
 // The types for it are also wrong, we should probably ditch this dependency.
 // tslint:disable-next-line
 const FocusTrap: any = require('focus-trap-react');
-popoverBaseStyles();
 
 export enum PopoverPosition {
   top = 'top',

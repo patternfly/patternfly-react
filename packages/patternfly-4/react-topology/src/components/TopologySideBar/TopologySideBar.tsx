@@ -2,10 +2,7 @@ import * as React from 'react';
 
 import { TimesIcon } from '@patternfly/react-icons';
 import { Button } from '@patternfly/react-core';
-
-import { topologySideBarCss } from './css/topology-side-bar-css';
-
-topologySideBarCss.inject();
+import '@patternfly/react-styles/css/components/Topology/topology-side-bar.css';
 
 export interface TopologySideBarProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the sidebar */
