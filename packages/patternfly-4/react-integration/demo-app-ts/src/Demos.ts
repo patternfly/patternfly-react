@@ -467,11 +467,11 @@ export const Demos: DemoInterface[] = [
     name: 'Table Compact Expandable Demo',
     componentType: Examples.TableCompactExpandableDemo
   },
-  // {
-  //   id: 'table-compound-expandable-demo',
-  //   name: 'Table Compound Expandable Demo',
-  //   componentType: Examples.TableCompoundExpandableDemo
-  // },
+  {
+    id: 'table-compound-expandable-demo',
+    name: 'Table Compound Expandable Demo',
+    componentType: Examples.TableCompoundExpandableDemo
+  },
   {
     id: 'table-first-cell-as-header-demo',
     name: 'Table First Cell As Header Demo',

@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { Table, TableHeader, TableBody, TableVariant, sortable, SortByDirection, IRow, ISortBy } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableVariant, sortable, SortByDirection } from '@patternfly/react-table';
 
-export class DemoSortableTable extends React.Component<{}, { columns: any, rows: IRow[], sortBy: ISortBy }> {
+export default class DemoSortableTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,6 +38,7 @@ export class DemoSortableTable extends React.Component<{}, { columns: any, rows:
   }
 
   render() {
+    const { id } = this.props;
     const { columns, rows, sortBy } = this.state;
 
     return (
@@ -49,6 +50,7 @@ export class DemoSortableTable extends React.Component<{}, { columns: any, rows:
         cells={columns}
         rows={rows}
         className="pf-m-no-border-rows"
+        id={id}
       >
         <TableHeader />
         <TableBody />
@@ -57,3 +59,7 @@ export class DemoSortableTable extends React.Component<{}, { columns: any, rows:
   }
 }
 
+DemoSortableTable.propTypes = {
+  firstColumnRows: PropTypes.array.isRequired,
+  id: PropTypes.string.isRequired
+};
