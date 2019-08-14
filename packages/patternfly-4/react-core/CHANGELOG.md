@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.86.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.86.3...@patternfly/react-core@3.86.4) (2019-08-14)
+
+
+### Bug Fixes
+
+* **Dropdown:** Spread props to Dropdown toggle to fix regression ([#2690](https://github.com/patternfly/patternfly-react/issues/2690)) ([549b0bd](https://github.com/patternfly/patternfly-react/commit/549b0bd)), closes [#2689](https://github.com/patternfly/patternfly-react/issues/2689)
+
+
+
+
+
 ## [3.86.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.86.2...@patternfly/react-core@3.86.3) (2019-08-13)
 
 **Note:** Version bump only for package @patternfly/react-core
