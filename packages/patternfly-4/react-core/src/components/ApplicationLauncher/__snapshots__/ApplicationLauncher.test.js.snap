@@ -136,6 +136,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
             >
               <button
                 aria-expanded="true"
+                aria-haspopup="true"
+                aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
                 id="pf-toggle-id-5"
                 type="button"
@@ -250,6 +252,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
         }
       >
         <Toggle
+          aria-label="Application launcher"
+          ariaHasPopup={true}
           className=""
           id="pf-toggle-id-5"
           isActive={false}
@@ -269,6 +273,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
               >
                 <button
                   aria-expanded="true"
+                  aria-haspopup="true"
+                  aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
                   id="pf-toggle-id-5"
                   type="button"
@@ -384,6 +390,8 @@ exports[`ApplicationLauncher custom icon 1`] = `
         >
           <button
             aria-expanded={true}
+            aria-haspopup={true}
+            aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
             id="pf-toggle-id-5"
@@ -880,6 +888,8 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
                 id="pf-toggle-id-3"
                 type="button"
@@ -906,6 +916,8 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         }
       >
         <Toggle
+          aria-label="Application launcher"
+          ariaHasPopup={true}
           className=""
           id="pf-toggle-id-3"
           isActive={false}
@@ -925,6 +937,8 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
               >
                 <button
                   aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
                   id="pf-toggle-id-3"
                   type="button"
@@ -952,6 +966,8 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         >
           <button
             aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
             id="pf-toggle-id-3"
@@ -1131,6 +1147,8 @@ exports[`ApplicationLauncher dropup 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
                 id="pf-toggle-id-2"
                 type="button"
@@ -1157,6 +1175,8 @@ exports[`ApplicationLauncher dropup 1`] = `
         }
       >
         <Toggle
+          aria-label="Application launcher"
+          ariaHasPopup={true}
           className=""
           id="pf-toggle-id-2"
           isActive={false}
@@ -1176,6 +1196,8 @@ exports[`ApplicationLauncher dropup 1`] = `
               >
                 <button
                   aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
                   id="pf-toggle-id-2"
                   type="button"
@@ -1203,6 +1225,8 @@ exports[`ApplicationLauncher dropup 1`] = `
         >
           <button
             aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
             id="pf-toggle-id-2"
@@ -1382,6 +1406,8 @@ exports[`ApplicationLauncher expanded 1`] = `
             >
               <button
                 aria-expanded="true"
+                aria-haspopup="true"
+                aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
                 id="pf-toggle-id-4"
                 type="button"
@@ -1495,6 +1521,8 @@ exports[`ApplicationLauncher expanded 1`] = `
         }
       >
         <Toggle
+          aria-label="Application launcher"
+          ariaHasPopup={true}
           className=""
           id="pf-toggle-id-4"
           isActive={false}
@@ -1514,6 +1542,8 @@ exports[`ApplicationLauncher expanded 1`] = `
               >
                 <button
                   aria-expanded="true"
+                  aria-haspopup="true"
+                  aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
                   id="pf-toggle-id-4"
                   type="button"
@@ -1628,6 +1658,8 @@ exports[`ApplicationLauncher expanded 1`] = `
         >
           <button
             aria-expanded={true}
+            aria-haspopup={true}
+            aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
             id="pf-toggle-id-4"
@@ -2122,6 +2154,8 @@ exports[`ApplicationLauncher regular 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
                 id="pf-toggle-id-0"
                 type="button"
@@ -2148,6 +2182,8 @@ exports[`ApplicationLauncher regular 1`] = `
         }
       >
         <Toggle
+          aria-label="Application launcher"
+          ariaHasPopup={true}
           className=""
           id="pf-toggle-id-0"
           isActive={false}
@@ -2167,6 +2203,8 @@ exports[`ApplicationLauncher regular 1`] = `
               >
                 <button
                   aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
                   id="pf-toggle-id-0"
                   type="button"
@@ -2194,6 +2232,8 @@ exports[`ApplicationLauncher regular 1`] = `
         >
           <button
             aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
             id="pf-toggle-id-0"
@@ -2373,6 +2413,8 @@ exports[`ApplicationLauncher right aligned 1`] = `
             >
               <button
                 aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="Application launcher"
                 class="pf-c-app-launcher__toggle"
                 id="pf-toggle-id-1"
                 type="button"
@@ -2399,6 +2441,8 @@ exports[`ApplicationLauncher right aligned 1`] = `
         }
       >
         <Toggle
+          aria-label="Application launcher"
+          ariaHasPopup={true}
           className=""
           id="pf-toggle-id-1"
           isActive={false}
@@ -2418,6 +2462,8 @@ exports[`ApplicationLauncher right aligned 1`] = `
               >
                 <button
                   aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-label="Application launcher"
                   class="pf-c-app-launcher__toggle"
                   id="pf-toggle-id-1"
                   type="button"
@@ -2445,6 +2491,8 @@ exports[`ApplicationLauncher right aligned 1`] = `
         >
           <button
             aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="Application launcher"
             className="pf-c-app-launcher__toggle"
             disabled={false}
             id="pf-toggle-id-1"

@@ -55,7 +55,9 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   ...props
 }: DropdownToggleProps) => {
   const toggle = (
-    <Toggle id={id}
+    <Toggle 
+      {...props}
+      id={id}
       className={className}
       isOpen={isOpen}
       parentRef={parentRef}
