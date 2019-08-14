@@ -9,13 +9,19 @@ This package provides functionality and styles for essential PatternFly componen
 
 Use your favorite package manager to install our package from npm: 
 
-`yarn add @patternfly/react-core`
+```sh
+yarn add @patternfly/react-core
+```
 
-`npm install @patternfly/react-core --save`
+or
 
-# Usage
+```sh
+npm install @patternfly/react-core --save
+```
 
-#### Pre-requisites
+## Usage
+
+### Pre-requisites
 
 It's strongly advised to use the PatternFly Base CSS in your whole project, or some components may diverge in appearance:
 
@@ -23,7 +29,7 @@ It's strongly advised to use the PatternFly Base CSS in your whole project, or s
 import '@patternfly/react-core/dist/styles/base.css';
 ```
 
-#### Example Component Usage
+### Example Component Usage
 
 ```javascript
 import { Button } from '@patternfly/react-core';
@@ -33,16 +39,32 @@ export default <Button variant="primary">Button</Button>;
 
 All css related to each component is provided within it. There is no component level CSS to import.
 
+## Contributing
+
+All commands are run from the repo's root.
+
+### Dev environment
+
+This project uses [react-docs](../react-docs/README.md) to test and demo Patternfly4 components. You can view the current docs [here](http://patternfly-react.surge.sh/patternfly-4) or run them locally:
+
+```sh
+yarn start:pf4
+```
+
 ### Building
 
-To build just react-core, run `yarn run lerna run build --scope=@patternfly/react-core`.
+To build just react-core:
+
+```sh
+yarn run lerna run build --scope=@patternfly/react-core
+```
 
 ### Testing
 
-Testing is done at the root of this repo. To only run the patternfly-react tests:
+To only run the PF4 tests:
 
-```
-yarn test packages/patternfly-4/react-core
+```sh
+yarn test:pf4
 ```
 
 [patternfly-4]: https://pf4.patternfly.org

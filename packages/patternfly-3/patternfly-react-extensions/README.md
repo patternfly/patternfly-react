@@ -5,13 +5,13 @@ The components in this package do not yet have associated patterns found on [Pat
 
 ### Installing
 
-```
+```sh
 yarn add patternfly-react-extensions
 ```
 
 or
 
-```
+```sh
 npm install patternfly-react-extension --save
 ```
 
@@ -42,7 +42,7 @@ Note the build scripts for this are located in the root package.json under `yarn
 
 ### Testing
 
-Testing is done at the root of this repo. To only run the extensions tests:
+To only run the extensions tests:
 
 ```
 yarn test packages/patternfly-3/patternfly-react-extensions

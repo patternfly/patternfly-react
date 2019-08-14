@@ -6,11 +6,15 @@ This package provides PatternFly charting components for [PatternFly 4][patternf
 
 ### Installing
 
-Use your favorite package manager to install our package from npm: 
+```sh
+yarn add @patternfly/react-charts
+```
 
-`yarn add @patternfly/react-charts`
+or
 
-`npm install @patternfly/react-charts --save`
+```sh
+npm install @patternfly/react-charts --save
+```
 
 # Usage
 
@@ -37,14 +41,18 @@ All css related to each component is provided alongside it. There is no componen
 
 ### Building
 
-To build just react-charts, run `yarn run lerna run build --scope=@patternfly/react-charts`.
+To build just react-charts:
+
+```sh
+yarn run lerna run build --scope=@patternfly/react-charts
+```
 
 
 ### Testing
 
-Testing is done at the root of this repo. To only run the patternfly-react tests:
+To only run the patternfly-react tests:
 
-```
+```sh
 yarn test packages/patternfly-4/react-charts
 ```
 

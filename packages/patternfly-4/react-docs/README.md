@@ -5,12 +5,16 @@ This is a private Gatsby project to demonstrate PatternFly 4 components. It itse
 ## Running
 To start a local dev server at http://localhost:8000 :
 
-`yarn develop`
+```sh
+yarn develop
+```
 
 ## Building
 Gatsby is a static site generator. It outputs a public folder.
 
-`yarn build`
+```sh
+yarn build
+```
 
 ## Writing your docs
 

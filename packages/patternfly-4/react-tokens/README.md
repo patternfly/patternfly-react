@@ -4,13 +4,11 @@
 
 ## Installation
 
-```bash
+```sh
 yarn add @patternfly/react-tokens
 ```
 
-or
-
-```bash
+```sh
 npm install --save @patternfly/react-tokens
 ```
 
@@ -41,13 +39,17 @@ global_BackgroundColor_100.var === 'var(--pf-global--BackgroundColor--100)'; //t
 
 ### Building
 
-To build just react-tokens, run `yarn run lerna run build --scope=@patternfly/react-tokens`.
+To build just react-tokens:
+
+```sh
+yarn run lerna run build --scope=@patternfly/react-tokens
+```
 
 ### Testing
 
-Testing is done at the root of this repo. To only run the patternfly-react tests:
+To only run the patternfly-react tests:
 
-```
+```sh
 yarn test packages/patternfly-4/react-tokens
 ```
 

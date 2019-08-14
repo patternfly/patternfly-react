@@ -7,11 +7,13 @@ This package provides Table PatternFly components based on [PatternFly 4][patter
 
 ### Installing
 
-Use your favorite package manager to install our package from npm: 
+```sh
+yarn add @patternfly/react-table
+```
 
-`yarn add @patternfly/react-table`
-
-`npm install @patternfly/react-table --save`
+```sh
+npm install @patternfly/react-table --save
+```
 
 
 ## Usage
@@ -71,14 +73,18 @@ Notice: Any data provided as cell will be visible by default, no need to add `is
 
 ### Building
 
-To build just react-table, run `yarn run lerna run build --scope=@patternfly/react-table`.
+To build just react-table:
+
+```sh
+yarn run lerna run build --scope=@patternfly/react-table
+```
 
 
 ### Testing
 
-Testing is done at the root of this repo. To only run the @patternfly/react-table tests:
+To only run the @patternfly/react-table tests:
 
-```
+```sh
 yarn test packages/patternfly-4/react-table
 ```
 

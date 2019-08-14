@@ -48,4 +48,4 @@ Gatsby project to demonstrate our components.
 
 ### react-integration
 
-[Cypress](https://www.cypress.io/) suite with a Create React App demo project to test TypeScript types.
+[Cypress](https://www.cypress.io/) suite with a Create React App demo project to test components like consumers would.

@@ -7,13 +7,11 @@ This package provides Topology View components based on [PatternFly 4][patternfl
 
 ### Installing
 
-```
+```sh
 yarn add @patternfly/react-topology
 ```
 
-or
-
-```
+```sh
 npm install @patternfly/react-topology --save
 ```
 
@@ -34,13 +32,17 @@ import React from 'react';
 
 ### Building
 
-To build just react-tokens, run `yarn run lerna run build --scope=@patternfly/react-topology`.
+To build just react-tokens:
+
+```sh
+yarn run lerna run build --scope=@patternfly/react-topology
+```
 
 ### Testing
 
-Testing is done at the root of this repo. To only run the @patternfly/react-topology tests:
+To only run the @patternfly/react-topology tests:
 
-```
+```sh
 yarn test packages/patternfly-4/react-topology
 ```
 

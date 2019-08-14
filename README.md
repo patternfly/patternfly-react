@@ -11,9 +11,18 @@
 PatternFly React is a React Component library offered as PatternFly 3 and PatternFly 4.
 
 ### PatternFly 4
-`npm install --save @patternfly/react-core`
 
-`yarn add patternfly-react`
+```sh
+npm install --save @patternfly/react-core
+```
+
+or
+
+```sh
+yarn add patternfly-react
+```
+
+Example usage:
 
 ```javascript
 import React from 'react';
@@ -39,9 +48,31 @@ export const MyComponent = props => (
 );
 ```
 
-### Contributing Guide
+### Contributing
 
-If you are interested in contributing to PatternFly React, please see [Getting Started as a Contributor](https://github.com/patternfly/patternfly-react/wiki/Getting-Started-as-a-Contributor) and the [Contributing Guide](./CONTRIBUTING.md).
+The following dependencies are required:
+- [Node >= 8](https://nodejs.org/en/) (LTS suggested)
+  - Use [nvm](https://github.com/nvm-sh/nvm#installation-and-update) to manage versions
+- [yarn >= 1.0](https://yarnpkg.com/en/docs/install#debian-stable) so we can use [yarn workspaces](https://yarnpkg.com/lang/en/docs/workspaces/)
+  - Use [yvm](https://yvm.js.org/docs/overview) to manage versions
+
+First, build our entire project:
+
+```sh
+yarn install && yarn build
+```
+
+To test PF4 component changes, run our [Gatsby](https://www.gatsbyjs.org/) dev server:
+
+```sh
+yarn start:pf4
+```
+
+or to test PF3 changes, run our [Storybook](https://storybook.js.org/) server:
+
+```sh
+yarn start:pf3
+```
 
 ### Code of Conduct
 

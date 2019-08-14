@@ -1,4 +1,4 @@
-# Contributing to @patternfly/patternfly-react
+# Contributing to patternfly-react
 
 ## Adding a new component
 
@@ -17,4 +17,4 @@
 
 ## Additional Information
 
-See the PatternFly React Guide for full details on [Code Contribution Guidelines](../../CONTRIBUTING.md#code-contribution-guidelines)
+See the PatternFly React Guide for full details on [Code Contribution Guidelines](../../../CONTRIBUTING.md#code-contribution-guidelines)

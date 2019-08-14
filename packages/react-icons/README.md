@@ -39,11 +39,15 @@ module.exports = {
 
 ### Building
 
-To build just react-tokens, run `yarn run lerna run build --scope=@patternfly/react-icons`.
+To build just react-tokens:
+
+```sh
+yarn run lerna run build --scope=@patternfly/react-icons
+```
 
 ### Testing
 
-Testing is done at the root of this repo. To only run the patternfly-react tests:
+To only run the patternfly-react tests:
 
 ```
 yarn test packages/patternfly-4/react-icons

@@ -131,7 +131,7 @@ To make contributing components and packages easier a generator utility has been
 
 To start the generator run:
 
-```bash
+```sh
 yarn generate
 ```
 
@@ -170,7 +170,7 @@ Adhering to the following process is the best way to get your work included in t
 
 1. [Fork](https://help.github.com/fork-a-repo/) the project, clone your fork, and configure the remotes:
 
-```bash
+```sh
 # Clone your fork of the repo into the current directory
 git clone https://github.com/<your-username>/patternfly-react.git
 # Navigate to the newly cloned directory
@@ -181,13 +181,13 @@ git remote add upstream https://github.com/patternfly/patternfly-react.git
 
 2. Create a branch:
 
-```text
+```sh
 $ git checkout -b my-branch upstream/master
 ```
 
 3. Develop your component. After development is complete, ensure tests and lint standards pass.
 
-```text
+```sh
 $ yarn test
 ```
 
@@ -199,7 +199,7 @@ You can use `commitizen` to help you to follow [the convention][3].
 
 Once you are ready to commit the changes, please use the below commands:
 
-```text
+```sh
 $ git add <files to be committed>
 $ yarn commit
 ```
@@ -210,14 +210,14 @@ $ yarn commit
 
 Use `git rebase` (not `git merge`) to sync your work from time to time. Ensure all commits related to a single issue have been [squashed](https://github.com/ginatrapani/todo.txt-android/wiki/Squash-All-Commits-Related-to-a-Single-Issue-into-a-Single-Commit).
 
-```text
+```sh
 $ git fetch upstream
 $ git rebase upstream/master
 ```
 
 6. Push
 
-```text
+```sh
 $ git push origin my-branch
 ```
 
