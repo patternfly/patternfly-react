@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.87.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.86.4...@patternfly/react-core@3.87.0) (2019-08-15)
+
+
+### Features
+
+* **Dropdown:** adds missing class, changes icon type in toggle ([#2702](https://github.com/patternfly/patternfly-react/issues/2702)) ([0f50fda](https://github.com/patternfly/patternfly-react/commit/0f50fda))
+
+
+
+
+
 ## [3.86.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.86.3...@patternfly/react-core@3.86.4) (2019-08-14)
 
 
