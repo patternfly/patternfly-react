@@ -139,7 +139,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Button
+                  <Component
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -147,26 +147,66 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     onClick={[Function]}
                     variant="tertiary"
                   >
-                    <button
-                      aria-disabled={null}
-                      aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
-                      disabled={false}
-                      id="zoom-in"
-                      onClick={[Function]}
-                      tabIndex={null}
-                      type="button"
+                    <ComponentWithOuia
+                      component={[Function]}
+                      componentProps={
+                        Object {
+                          "aria-disabled": false,
+                          "children": Array [
+                            <span>
+                              test zoom in
+                            </span>,
+                            <span
+                              className="sr-only"
+                            >
+                              test-zoom-in-aria-label
+                            </span>,
+                          ],
+                          "className": "pf-topology-control-bar__button",
+                          "disabled": false,
+                          "id": "zoom-in",
+                          "onClick": [Function],
+                          "variant": "tertiary",
+                        }
+                      }
+                      consumerContext={null}
                     >
-                      <span>
-                        test zoom in
-                      </span>
-                      <span
-                        className="sr-only"
+                      <Button
+                        aria-disabled={false}
+                        className="pf-topology-control-bar__button"
+                        disabled={false}
+                        id="zoom-in"
+                        onClick={[Function]}
+                        ouiaContext={
+                          Object {
+                            "isOuia": false,
+                            "ouiaId": null,
+                          }
+                        }
+                        variant="tertiary"
                       >
-                        test-zoom-in-aria-label
-                      </span>
-                    </button>
-                  </Button>
+                        <button
+                          aria-disabled={null}
+                          aria-label={null}
+                          className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+                          disabled={false}
+                          id="zoom-in"
+                          onClick={[Function]}
+                          tabIndex={null}
+                          type="button"
+                        >
+                          <span>
+                            test zoom in
+                          </span>
+                          <span
+                            className="sr-only"
+                          >
+                            test-zoom-in-aria-label
+                          </span>
+                        </button>
+                      </Button>
+                    </ComponentWithOuia>
+                  </Component>
                   <Portal
                     containerInfo={
                       <div>
@@ -273,7 +313,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Button
+                  <Component
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -281,49 +321,92 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     onClick={[Function]}
                     variant="tertiary"
                   >
-                    <button
-                      aria-disabled={null}
-                      aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
-                      disabled={false}
-                      id="zoom-out"
-                      onClick={[Function]}
-                      tabIndex={null}
-                      type="button"
+                    <ComponentWithOuia
+                      component={[Function]}
+                      componentProps={
+                        Object {
+                          "aria-disabled": false,
+                          "children": Array [
+                            <SearchMinusIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            />,
+                            <span
+                              className="sr-only"
+                            >
+                              Zoom Out
+                            </span>,
+                          ],
+                          "className": "pf-topology-control-bar__button",
+                          "disabled": false,
+                          "id": "zoom-out",
+                          "onClick": [Function],
+                          "variant": "tertiary",
+                        }
+                      }
+                      consumerContext={null}
                     >
-                      <SearchMinusIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
-                        title={null}
-                      >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
+                      <Button
+                        aria-disabled={false}
+                        className="pf-topology-control-bar__button"
+                        disabled={false}
+                        id="zoom-out"
+                        onClick={[Function]}
+                        ouiaContext={
+                          Object {
+                            "isOuia": false,
+                            "ouiaId": null,
                           }
-                          viewBox="0 0 512 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M304 192v32c0 6.6-5.4 12-12 12H124c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
-                            transform=""
-                          />
-                        </svg>
-                      </SearchMinusIcon>
-                      <span
-                        className="sr-only"
+                        }
+                        variant="tertiary"
                       >
-                        Zoom Out
-                      </span>
-                    </button>
-                  </Button>
+                        <button
+                          aria-disabled={null}
+                          aria-label={null}
+                          className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+                          disabled={false}
+                          id="zoom-out"
+                          onClick={[Function]}
+                          tabIndex={null}
+                          type="button"
+                        >
+                          <SearchMinusIcon
+                            color="currentColor"
+                            noVerticalAlign={false}
+                            size="sm"
+                            title={null}
+                          >
+                            <svg
+                              aria-hidden={true}
+                              aria-labelledby={null}
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              style={
+                                Object {
+                                  "verticalAlign": "-0.125em",
+                                }
+                              }
+                              viewBox="0 0 512 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M304 192v32c0 6.6-5.4 12-12 12H124c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
+                                transform=""
+                              />
+                            </svg>
+                          </SearchMinusIcon>
+                          <span
+                            className="sr-only"
+                          >
+                            Zoom Out
+                          </span>
+                        </button>
+                      </Button>
+                    </ComponentWithOuia>
+                  </Component>
                   <Portal
                     containerInfo={
                       <div>
@@ -430,7 +513,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Button
+                  <Component
                     aria-disabled={true}
                     className="pf-topology-control-bar__button pf-m-disabled"
                     disabled={true}
@@ -438,49 +521,92 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     onClick={[Function]}
                     variant="tertiary"
                   >
-                    <button
-                      aria-disabled={null}
-                      aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-m-disabled"
-                      disabled={false}
-                      id="reset-view"
-                      onClick={[Function]}
-                      tabIndex={null}
-                      type="button"
+                    <ComponentWithOuia
+                      component={[Function]}
+                      componentProps={
+                        Object {
+                          "aria-disabled": true,
+                          "children": Array [
+                            <ExpandIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            />,
+                            <span
+                              className="sr-only"
+                            >
+                              Reset View
+                            </span>,
+                          ],
+                          "className": "pf-topology-control-bar__button pf-m-disabled",
+                          "disabled": true,
+                          "id": "reset-view",
+                          "onClick": [Function],
+                          "variant": "tertiary",
+                        }
+                      }
+                      consumerContext={null}
                     >
-                      <ExpandIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
-                        title={null}
-                      >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
+                      <Button
+                        aria-disabled={true}
+                        className="pf-topology-control-bar__button pf-m-disabled"
+                        disabled={true}
+                        id="reset-view"
+                        onClick={[Function]}
+                        ouiaContext={
+                          Object {
+                            "isOuia": false,
+                            "ouiaId": null,
                           }
-                          viewBox="0 0 448 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M0 180V56c0-13.3 10.7-24 24-24h124c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H64v84c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12zM288 44v40c0 6.6 5.4 12 12 12h84v84c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12V56c0-13.3-10.7-24-24-24H300c-6.6 0-12 5.4-12 12zm148 276h-40c-6.6 0-12 5.4-12 12v84h-84c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h124c13.3 0 24-10.7 24-24V332c0-6.6-5.4-12-12-12zM160 468v-40c0-6.6-5.4-12-12-12H64v-84c0-6.6-5.4-12-12-12H12c-6.6 0-12 5.4-12 12v124c0 13.3 10.7 24 24 24h124c6.6 0 12-5.4 12-12z"
-                            transform=""
-                          />
-                        </svg>
-                      </ExpandIcon>
-                      <span
-                        className="sr-only"
+                        }
+                        variant="tertiary"
                       >
-                        Reset View
-                      </span>
-                    </button>
-                  </Button>
+                        <button
+                          aria-disabled={null}
+                          aria-label={null}
+                          className="pf-c-button pf-m-tertiary pf-topology-control-bar__button pf-m-disabled"
+                          disabled={false}
+                          id="reset-view"
+                          onClick={[Function]}
+                          tabIndex={null}
+                          type="button"
+                        >
+                          <ExpandIcon
+                            color="currentColor"
+                            noVerticalAlign={false}
+                            size="sm"
+                            title={null}
+                          >
+                            <svg
+                              aria-hidden={true}
+                              aria-labelledby={null}
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              style={
+                                Object {
+                                  "verticalAlign": "-0.125em",
+                                }
+                              }
+                              viewBox="0 0 448 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M0 180V56c0-13.3 10.7-24 24-24h124c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H64v84c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12zM288 44v40c0 6.6 5.4 12 12 12h84v84c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12V56c0-13.3-10.7-24-24-24H300c-6.6 0-12 5.4-12 12zm148 276h-40c-6.6 0-12 5.4-12 12v84h-84c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h124c13.3 0 24-10.7 24-24V332c0-6.6-5.4-12-12-12zM160 468v-40c0-6.6-5.4-12-12-12H64v-84c0-6.6-5.4-12-12-12H12c-6.6 0-12 5.4-12 12v124c0 13.3 10.7 24 24 24h124c6.6 0 12-5.4 12-12z"
+                                transform=""
+                              />
+                            </svg>
+                          </ExpandIcon>
+                          <span
+                            className="sr-only"
+                          >
+                            Reset View
+                          </span>
+                        </button>
+                      </Button>
+                    </ComponentWithOuia>
+                  </Component>
                   <Portal
                     containerInfo={
                       <div>
@@ -681,7 +807,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Button
+                  <Component
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -689,49 +815,92 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     onClick={[Function]}
                     variant="tertiary"
                   >
-                    <button
-                      aria-disabled={null}
-                      aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
-                      disabled={false}
-                      id="zoom-in"
-                      onClick={[Function]}
-                      tabIndex={null}
-                      type="button"
+                    <ComponentWithOuia
+                      component={[Function]}
+                      componentProps={
+                        Object {
+                          "aria-disabled": false,
+                          "children": Array [
+                            <SearchPlusIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            />,
+                            <span
+                              className="sr-only"
+                            >
+                              Zoom In
+                            </span>,
+                          ],
+                          "className": "pf-topology-control-bar__button",
+                          "disabled": false,
+                          "id": "zoom-in",
+                          "onClick": [Function],
+                          "variant": "tertiary",
+                        }
+                      }
+                      consumerContext={null}
                     >
-                      <SearchPlusIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
-                        title={null}
-                      >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
+                      <Button
+                        aria-disabled={false}
+                        className="pf-topology-control-bar__button"
+                        disabled={false}
+                        id="zoom-in"
+                        onClick={[Function]}
+                        ouiaContext={
+                          Object {
+                            "isOuia": false,
+                            "ouiaId": null,
                           }
-                          viewBox="0 0 512 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M304 192v32c0 6.6-5.4 12-12 12h-56v56c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-56h-56c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h56v-56c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v56h56c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
-                            transform=""
-                          />
-                        </svg>
-                      </SearchPlusIcon>
-                      <span
-                        className="sr-only"
+                        }
+                        variant="tertiary"
                       >
-                        Zoom In
-                      </span>
-                    </button>
-                  </Button>
+                        <button
+                          aria-disabled={null}
+                          aria-label={null}
+                          className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+                          disabled={false}
+                          id="zoom-in"
+                          onClick={[Function]}
+                          tabIndex={null}
+                          type="button"
+                        >
+                          <SearchPlusIcon
+                            color="currentColor"
+                            noVerticalAlign={false}
+                            size="sm"
+                            title={null}
+                          >
+                            <svg
+                              aria-hidden={true}
+                              aria-labelledby={null}
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              style={
+                                Object {
+                                  "verticalAlign": "-0.125em",
+                                }
+                              }
+                              viewBox="0 0 512 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M304 192v32c0 6.6-5.4 12-12 12h-56v56c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-56h-56c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h56v-56c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v56h56c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
+                                transform=""
+                              />
+                            </svg>
+                          </SearchPlusIcon>
+                          <span
+                            className="sr-only"
+                          >
+                            Zoom In
+                          </span>
+                        </button>
+                      </Button>
+                    </ComponentWithOuia>
+                  </Component>
                   <Portal
                     containerInfo={
                       <div>
@@ -838,7 +1007,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Button
+                  <Component
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -846,49 +1015,92 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     onClick={[Function]}
                     variant="tertiary"
                   >
-                    <button
-                      aria-disabled={null}
-                      aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
-                      disabled={false}
-                      id="zoom-out"
-                      onClick={[Function]}
-                      tabIndex={null}
-                      type="button"
+                    <ComponentWithOuia
+                      component={[Function]}
+                      componentProps={
+                        Object {
+                          "aria-disabled": false,
+                          "children": Array [
+                            <SearchMinusIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            />,
+                            <span
+                              className="sr-only"
+                            >
+                              Zoom Out
+                            </span>,
+                          ],
+                          "className": "pf-topology-control-bar__button",
+                          "disabled": false,
+                          "id": "zoom-out",
+                          "onClick": [Function],
+                          "variant": "tertiary",
+                        }
+                      }
+                      consumerContext={null}
                     >
-                      <SearchMinusIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
-                        title={null}
-                      >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
+                      <Button
+                        aria-disabled={false}
+                        className="pf-topology-control-bar__button"
+                        disabled={false}
+                        id="zoom-out"
+                        onClick={[Function]}
+                        ouiaContext={
+                          Object {
+                            "isOuia": false,
+                            "ouiaId": null,
                           }
-                          viewBox="0 0 512 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M304 192v32c0 6.6-5.4 12-12 12H124c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
-                            transform=""
-                          />
-                        </svg>
-                      </SearchMinusIcon>
-                      <span
-                        className="sr-only"
+                        }
+                        variant="tertiary"
                       >
-                        Zoom Out
-                      </span>
-                    </button>
-                  </Button>
+                        <button
+                          aria-disabled={null}
+                          aria-label={null}
+                          className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+                          disabled={false}
+                          id="zoom-out"
+                          onClick={[Function]}
+                          tabIndex={null}
+                          type="button"
+                        >
+                          <SearchMinusIcon
+                            color="currentColor"
+                            noVerticalAlign={false}
+                            size="sm"
+                            title={null}
+                          >
+                            <svg
+                              aria-hidden={true}
+                              aria-labelledby={null}
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              style={
+                                Object {
+                                  "verticalAlign": "-0.125em",
+                                }
+                              }
+                              viewBox="0 0 512 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M304 192v32c0 6.6-5.4 12-12 12H124c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
+                                transform=""
+                              />
+                            </svg>
+                          </SearchMinusIcon>
+                          <span
+                            className="sr-only"
+                          >
+                            Zoom Out
+                          </span>
+                        </button>
+                      </Button>
+                    </ComponentWithOuia>
+                  </Component>
                   <Portal
                     containerInfo={
                       <div>
@@ -995,7 +1207,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Button
+                  <Component
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -1003,49 +1215,92 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     onClick={[Function]}
                     variant="tertiary"
                   >
-                    <button
-                      aria-disabled={null}
-                      aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
-                      disabled={false}
-                      id="fit-to-screen"
-                      onClick={[Function]}
-                      tabIndex={null}
-                      type="button"
+                    <ComponentWithOuia
+                      component={[Function]}
+                      componentProps={
+                        Object {
+                          "aria-disabled": false,
+                          "children": Array [
+                            <ExpandArrowsAltIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            />,
+                            <span
+                              className="sr-only"
+                            >
+                              Fit to Screen
+                            </span>,
+                          ],
+                          "className": "pf-topology-control-bar__button",
+                          "disabled": false,
+                          "id": "fit-to-screen",
+                          "onClick": [Function],
+                          "variant": "tertiary",
+                        }
+                      }
+                      consumerContext={null}
                     >
-                      <ExpandArrowsAltIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
-                        title={null}
-                      >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
+                      <Button
+                        aria-disabled={false}
+                        className="pf-topology-control-bar__button"
+                        disabled={false}
+                        id="fit-to-screen"
+                        onClick={[Function]}
+                        ouiaContext={
+                          Object {
+                            "isOuia": false,
+                            "ouiaId": null,
                           }
-                          viewBox="0 0 448 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M448 344v112a23.94 23.94 0 0 1-24 24H312c-21.39 0-32.09-25.9-17-41l36.2-36.2L224 295.6 116.77 402.9 153 439c15.09 15.1 4.39 41-17 41H24a23.94 23.94 0 0 1-24-24V344c0-21.4 25.89-32.1 41-17l36.19 36.2L184.46 256 77.18 148.7 41 185c-15.1 15.1-41 4.4-41-17V56a23.94 23.94 0 0 1 24-24h112c21.39 0 32.09 25.9 17 41l-36.2 36.2L224 216.4l107.23-107.3L295 73c-15.09-15.1-4.39-41 17-41h112a23.94 23.94 0 0 1 24 24v112c0 21.4-25.89 32.1-41 17l-36.19-36.2L263.54 256l107.28 107.3L407 327.1c15.1-15.2 41-4.5 41 16.9z"
-                            transform=""
-                          />
-                        </svg>
-                      </ExpandArrowsAltIcon>
-                      <span
-                        className="sr-only"
+                        }
+                        variant="tertiary"
                       >
-                        Fit to Screen
-                      </span>
-                    </button>
-                  </Button>
+                        <button
+                          aria-disabled={null}
+                          aria-label={null}
+                          className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+                          disabled={false}
+                          id="fit-to-screen"
+                          onClick={[Function]}
+                          tabIndex={null}
+                          type="button"
+                        >
+                          <ExpandArrowsAltIcon
+                            color="currentColor"
+                            noVerticalAlign={false}
+                            size="sm"
+                            title={null}
+                          >
+                            <svg
+                              aria-hidden={true}
+                              aria-labelledby={null}
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              style={
+                                Object {
+                                  "verticalAlign": "-0.125em",
+                                }
+                              }
+                              viewBox="0 0 448 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M448 344v112a23.94 23.94 0 0 1-24 24H312c-21.39 0-32.09-25.9-17-41l36.2-36.2L224 295.6 116.77 402.9 153 439c15.09 15.1 4.39 41-17 41H24a23.94 23.94 0 0 1-24-24V344c0-21.4 25.89-32.1 41-17l36.19 36.2L184.46 256 77.18 148.7 41 185c-15.1 15.1-41 4.4-41-17V56a23.94 23.94 0 0 1 24-24h112c21.39 0 32.09 25.9 17 41l-36.2 36.2L224 216.4l107.23-107.3L295 73c-15.09-15.1-4.39-41 17-41h112a23.94 23.94 0 0 1 24 24v112c0 21.4-25.89 32.1-41 17l-36.19-36.2L263.54 256l107.28 107.3L407 327.1c15.1-15.2 41-4.5 41 16.9z"
+                                transform=""
+                              />
+                            </svg>
+                          </ExpandArrowsAltIcon>
+                          <span
+                            className="sr-only"
+                          >
+                            Fit to Screen
+                          </span>
+                        </button>
+                      </Button>
+                    </ComponentWithOuia>
+                  </Component>
                   <Portal
                     containerInfo={
                       <div>
@@ -1152,7 +1407,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
-                  <Button
+                  <Component
                     aria-disabled={false}
                     className="pf-topology-control-bar__button"
                     disabled={false}
@@ -1160,49 +1415,92 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     onClick={[Function]}
                     variant="tertiary"
                   >
-                    <button
-                      aria-disabled={null}
-                      aria-label={null}
-                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
-                      disabled={false}
-                      id="reset-view"
-                      onClick={[Function]}
-                      tabIndex={null}
-                      type="button"
+                    <ComponentWithOuia
+                      component={[Function]}
+                      componentProps={
+                        Object {
+                          "aria-disabled": false,
+                          "children": Array [
+                            <ExpandIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            />,
+                            <span
+                              className="sr-only"
+                            >
+                              Reset View
+                            </span>,
+                          ],
+                          "className": "pf-topology-control-bar__button",
+                          "disabled": false,
+                          "id": "reset-view",
+                          "onClick": [Function],
+                          "variant": "tertiary",
+                        }
+                      }
+                      consumerContext={null}
                     >
-                      <ExpandIcon
-                        color="currentColor"
-                        noVerticalAlign={false}
-                        size="sm"
-                        title={null}
-                      >
-                        <svg
-                          aria-hidden={true}
-                          aria-labelledby={null}
-                          fill="currentColor"
-                          height="1em"
-                          role="img"
-                          style={
-                            Object {
-                              "verticalAlign": "-0.125em",
-                            }
+                      <Button
+                        aria-disabled={false}
+                        className="pf-topology-control-bar__button"
+                        disabled={false}
+                        id="reset-view"
+                        onClick={[Function]}
+                        ouiaContext={
+                          Object {
+                            "isOuia": false,
+                            "ouiaId": null,
                           }
-                          viewBox="0 0 448 512"
-                          width="1em"
-                        >
-                          <path
-                            d="M0 180V56c0-13.3 10.7-24 24-24h124c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H64v84c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12zM288 44v40c0 6.6 5.4 12 12 12h84v84c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12V56c0-13.3-10.7-24-24-24H300c-6.6 0-12 5.4-12 12zm148 276h-40c-6.6 0-12 5.4-12 12v84h-84c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h124c13.3 0 24-10.7 24-24V332c0-6.6-5.4-12-12-12zM160 468v-40c0-6.6-5.4-12-12-12H64v-84c0-6.6-5.4-12-12-12H12c-6.6 0-12 5.4-12 12v124c0 13.3 10.7 24 24 24h124c6.6 0 12-5.4 12-12z"
-                            transform=""
-                          />
-                        </svg>
-                      </ExpandIcon>
-                      <span
-                        className="sr-only"
+                        }
+                        variant="tertiary"
                       >
-                        Reset View
-                      </span>
-                    </button>
-                  </Button>
+                        <button
+                          aria-disabled={null}
+                          aria-label={null}
+                          className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+                          disabled={false}
+                          id="reset-view"
+                          onClick={[Function]}
+                          tabIndex={null}
+                          type="button"
+                        >
+                          <ExpandIcon
+                            color="currentColor"
+                            noVerticalAlign={false}
+                            size="sm"
+                            title={null}
+                          >
+                            <svg
+                              aria-hidden={true}
+                              aria-labelledby={null}
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              style={
+                                Object {
+                                  "verticalAlign": "-0.125em",
+                                }
+                              }
+                              viewBox="0 0 448 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M0 180V56c0-13.3 10.7-24 24-24h124c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H64v84c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12zM288 44v40c0 6.6 5.4 12 12 12h84v84c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12V56c0-13.3-10.7-24-24-24H300c-6.6 0-12 5.4-12 12zm148 276h-40c-6.6 0-12 5.4-12 12v84h-84c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h124c13.3 0 24-10.7 24-24V332c0-6.6-5.4-12-12-12zM160 468v-40c0-6.6-5.4-12-12-12H64v-84c0-6.6-5.4-12-12-12H12c-6.6 0-12 5.4-12 12v124c0 13.3 10.7 24 24 24h124c6.6 0 12-5.4 12-12z"
+                                transform=""
+                              />
+                            </svg>
+                          </ExpandIcon>
+                          <span
+                            className="sr-only"
+                          >
+                            Reset View
+                          </span>
+                        </button>
+                      </Button>
+                    </ComponentWithOuia>
+                  </Component>
                   <Portal
                     containerInfo={
                       <div>
@@ -1250,7 +1548,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
             <div
               className="pf-l-toolbar__item"
             >
-              <Button
+              <Component
                 aria-disabled={false}
                 className="pf-topology-control-bar__button"
                 disabled={false}
@@ -1258,19 +1556,53 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 onClick={[Function]}
                 variant="tertiary"
               >
-                <button
-                  aria-disabled={null}
-                  aria-label={null}
-                  className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
-                  disabled={false}
-                  id="legend"
-                  onClick={[Function]}
-                  tabIndex={null}
-                  type="button"
+                <ComponentWithOuia
+                  component={[Function]}
+                  componentProps={
+                    Object {
+                      "aria-disabled": false,
+                      "children": Array [
+                        "Legend",
+                        "",
+                      ],
+                      "className": "pf-topology-control-bar__button",
+                      "disabled": false,
+                      "id": "legend",
+                      "onClick": [Function],
+                      "variant": "tertiary",
+                    }
+                  }
+                  consumerContext={null}
                 >
-                  Legend
-                </button>
-              </Button>
+                  <Button
+                    aria-disabled={false}
+                    className="pf-topology-control-bar__button"
+                    disabled={false}
+                    id="legend"
+                    onClick={[Function]}
+                    ouiaContext={
+                      Object {
+                        "isOuia": false,
+                        "ouiaId": null,
+                      }
+                    }
+                    variant="tertiary"
+                  >
+                    <button
+                      aria-disabled={null}
+                      aria-label={null}
+                      className="pf-c-button pf-m-tertiary pf-topology-control-bar__button"
+                      disabled={false}
+                      id="legend"
+                      onClick={[Function]}
+                      tabIndex={null}
+                      type="button"
+                    >
+                      Legend
+                    </button>
+                  </Button>
+                </ComponentWithOuia>
+              </Component>
             </div>
           </ToolbarItem>
         </div>

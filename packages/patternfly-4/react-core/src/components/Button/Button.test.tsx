@@ -1,6 +1,6 @@
 import { Button, ButtonVariant } from './Button';
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { CartArrowDownIcon } from '@patternfly/react-icons';
 
 Object.values(ButtonVariant).forEach(variant => {
@@ -16,7 +16,7 @@ Object.values(ButtonVariant).forEach(variant => {
 
 test('it adds an aria-label to plain buttons', () => {
   const label = 'aria-label test';
-  const view = shallow(<Button aria-label={label} />);
+  const view = mount(<Button aria-label={label} />);
   expect(view.find('button').props()['aria-label']).toBe(label);
 });
 
@@ -60,14 +60,14 @@ test('isInline', () => {
 
 test('allows passing in a string as the component', () => {
   const component = 'a';
-  const view = shallow(<Button component={component} />);
-  expect(view.type()).toBe(component);
+  const view = mount(<Button component={component} />);
+  expect(view.find(component).type()).toBe(component);
 });
 
 test('allows passing in a React Component as the component', () => {
   const Component = () => <div>im a div</div>;
-  const view = shallow(<Button component={Component} />);
-  expect(view.type()).toBe(Component);
+  const view = mount(<Button component={Component} />);
+  expect(view.find(Component).type()).toBe(Component);
 });
 
 test('aria-disabled is set to true and tabIndex to -1 if component is not a button and is disabled', () => {
