@@ -12,7 +12,7 @@ const VncActions = ({
   textDisconnect,
   onCtrlAltDel,
   onDisconnect,
-  insertToolbarTo
+  portalToolbarTo
 }) => {
   const toolbar = (
     <div>
@@ -27,11 +27,11 @@ const VncActions = ({
     </div>
   );
 
-  if (!insertToolbarTo) {
+  if (!portalToolbarTo) {
     return toolbar;
   }
   return (
-    document.getElementById(insertToolbarTo) && ReactDOM.createPortal(toolbar, document.getElementById(insertToolbarTo))
+    document.getElementById(portalToolbarTo) && ReactDOM.createPortal(toolbar, document.getElementById(portalToolbarTo))
   );
 };
 
@@ -43,7 +43,7 @@ VncActions.propTypes = {
   textSendShortcut: PropTypes.string,
   textDisconnect: PropTypes.string,
 
-  insertToolbarTo: PropTypes.string // id of element where VncAction should be inserted
+  portalToolbarTo: PropTypes.string // id of element where VncAction should be inserted
 };
 
 VncActions.defaultProps = {
@@ -53,7 +53,7 @@ VncActions.defaultProps = {
   textSendShortcut: 'Send Key',
   textDisconnect: 'Disconnect',
 
-  insertToolbarTo: ''
+  portalToolbarTo: ''
 };
 
 export default VncActions;

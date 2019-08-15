@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Transformer functions expandable with parent 1`] = `
+<Component>
+  <div
+    className="pf-c-table__expandable-row-content"
+  >
+    test
+  </div>
+</Component>
+`;
+
+exports[`Transformer functions selectable unselected 1`] = `
+Object {
+  "children": <Unknown
+    aria-labelledby="simple-node0"
+    checked={false}
+    name="checkrow0"
+    onSelect={[Function]}
+  >
+    
+  </Unknown>,
+  "className": "pf-c-table__check",
+  "component": "td",
+  "isVisible": true,
+  "scope": "",
+}
+`;
+
+exports[`Transformer functions sortable asc 1`] = `
+Object {
+  "aria-sort": "ascending",
+  "children": <Unknown
+    className="pf-c-button pf-m-plain"
+    isSortedBy={true}
+    onSort={[Function]}
+    sortDirection="asc"
+  >
+    
+  </Unknown>,
+  "className": "pf-c-table__sort pf-m-selected",
+}
+`;

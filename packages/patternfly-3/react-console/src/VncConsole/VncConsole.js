@@ -120,7 +120,8 @@ class VncConsole extends React.Component {
       textSendShortcut,
       textCtrlAltDel,
       textDisconnect,
-      portalToolbarTo
+      portalToolbarTo,
+      consoleContainerId
     } = this.props;
 
     let status = null;
@@ -148,7 +149,7 @@ class VncConsole extends React.Component {
 
     if (!this.novncStaticComponent) {
       // create just once
-      this.novncStaticComponent = <div ref={this.setNovncElem} />;
+      this.novncStaticComponent = <div id={consoleContainerId} ref={this.setNovncElem} />;
     }
 
     return (
@@ -191,6 +192,7 @@ VncConsole.propTypes = {
   repeaterID: PropTypes.string,
   vncLogging: PropTypes.string /** log-level for noVNC */,
   portalToolbarTo: PropTypes.string,
+  consoleContainerId: PropTypes.string,
 
   topClassName: PropTypes.string /** Enable customization */,
 
@@ -222,6 +224,7 @@ VncConsole.defaultProps = {
   repeaterID: '',
   vncLogging: 'warn',
   portalToolbarTo: '',
+  consoleContainerId: undefined,
 
   topClassName: '',
 

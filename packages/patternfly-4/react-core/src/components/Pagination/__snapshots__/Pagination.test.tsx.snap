@@ -266,6 +266,7 @@ exports[`component render custom pagination toggle 1`] = `
                       >
                         <button
                           aria-expanded="false"
+                          aria-label="Select"
                           class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -323,6 +324,7 @@ exports[`component render custom pagination toggle 1`] = `
                           >
                             <button
                               aria-expanded="false"
+                              aria-label="Select"
                               class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -358,6 +360,7 @@ exports[`component render custom pagination toggle 1`] = `
                     }
                   >
                     <Toggle
+                      aria-label="Select"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -379,6 +382,7 @@ exports[`component render custom pagination toggle 1`] = `
                             >
                               <button
                                 aria-expanded="false"
+                                aria-label="Select"
                                 class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -415,6 +419,7 @@ exports[`component render custom pagination toggle 1`] = `
                     >
                       <button
                         aria-expanded={false}
+                        aria-label="Select"
                         className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -999,6 +1004,7 @@ exports[`component render custom perPageOptions 1`] = `
                       >
                         <button
                           aria-expanded="false"
+                          aria-label="Select"
                           class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -1067,6 +1073,7 @@ exports[`component render custom perPageOptions 1`] = `
                           >
                             <button
                               aria-expanded="false"
+                              aria-label="Select"
                               class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -1113,6 +1120,7 @@ exports[`component render custom perPageOptions 1`] = `
                     }
                   >
                     <Toggle
+                      aria-label="Select"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -1134,6 +1142,7 @@ exports[`component render custom perPageOptions 1`] = `
                             >
                               <button
                                 aria-expanded="false"
+                                aria-label="Select"
                                 class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -1181,6 +1190,7 @@ exports[`component render custom perPageOptions 1`] = `
                     >
                       <button
                         aria-expanded={false}
+                        aria-label="Select"
                         className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -1887,6 +1897,7 @@ exports[`component render custom start end 1`] = `
                       >
                         <button
                           aria-expanded="false"
+                          aria-label="Select"
                           class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -1955,6 +1966,7 @@ exports[`component render custom start end 1`] = `
                           >
                             <button
                               aria-expanded="false"
+                              aria-label="Select"
                               class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -2001,6 +2013,7 @@ exports[`component render custom start end 1`] = `
                     }
                   >
                     <Toggle
+                      aria-label="Select"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -2022,6 +2035,7 @@ exports[`component render custom start end 1`] = `
                             >
                               <button
                                 aria-expanded="false"
+                                aria-label="Select"
                                 class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -2069,6 +2083,7 @@ exports[`component render custom start end 1`] = `
                     >
                       <button
                         aria-expanded={false}
+                        aria-label="Select"
                         className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -3273,6 +3288,7 @@ exports[`component render last page 1`] = `
                       >
                         <button
                           aria-expanded="false"
+                          aria-label="Select"
                           class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -3341,6 +3357,7 @@ exports[`component render last page 1`] = `
                           >
                             <button
                               aria-expanded="false"
+                              aria-label="Select"
                               class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -3387,6 +3404,7 @@ exports[`component render last page 1`] = `
                     }
                   >
                     <Toggle
+                      aria-label="Select"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -3408,6 +3426,7 @@ exports[`component render last page 1`] = `
                             >
                               <button
                                 aria-expanded="false"
+                                aria-label="Select"
                                 class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -3455,6 +3474,7 @@ exports[`component render last page 1`] = `
                     >
                       <button
                         aria-expanded={false}
+                        aria-label="Select"
                         className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -4160,6 +4180,7 @@ exports[`component render limited number of pages 1`] = `
                       >
                         <button
                           aria-expanded="false"
+                          aria-label="Select"
                           class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -4228,6 +4249,7 @@ exports[`component render limited number of pages 1`] = `
                           >
                             <button
                               aria-expanded="false"
+                              aria-label="Select"
                               class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -4274,6 +4296,7 @@ exports[`component render limited number of pages 1`] = `
                     }
                   >
                     <Toggle
+                      aria-label="Select"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -4295,6 +4318,7 @@ exports[`component render limited number of pages 1`] = `
                             >
                               <button
                                 aria-expanded="false"
+                                aria-label="Select"
                                 class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -4342,6 +4366,7 @@ exports[`component render limited number of pages 1`] = `
                     >
                       <button
                         aria-expanded={false}
+                        aria-label="Select"
                         className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -5046,6 +5071,7 @@ exports[`component render no items 1`] = `
                       >
                         <button
                           aria-expanded="false"
+                          aria-label="Select"
                           class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
                           disabled=""
                           id="pagination-options-menu-toggle"
@@ -5115,6 +5141,7 @@ exports[`component render no items 1`] = `
                           >
                             <button
                               aria-expanded="false"
+                              aria-label="Select"
                               class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
                               disabled=""
                               id="pagination-options-menu-toggle"
@@ -5162,6 +5189,7 @@ exports[`component render no items 1`] = `
                     }
                   >
                     <Toggle
+                      aria-label="Select"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -5183,6 +5211,7 @@ exports[`component render no items 1`] = `
                             >
                               <button
                                 aria-expanded="false"
+                                aria-label="Select"
                                 class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
                                 disabled=""
                                 id="pagination-options-menu-toggle"
@@ -5231,6 +5260,7 @@ exports[`component render no items 1`] = `
                     >
                       <button
                         aria-expanded={false}
+                        aria-label="Select"
                         className="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
                         disabled={true}
                         id="pagination-options-menu-toggle"
@@ -5931,6 +5961,7 @@ exports[`component render should render correctly bottom 1`] = `
                       >
                         <button
                           aria-expanded="false"
+                          aria-label="Select"
                           class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -5999,6 +6030,7 @@ exports[`component render should render correctly bottom 1`] = `
                           >
                             <button
                               aria-expanded="false"
+                              aria-label="Select"
                               class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -6045,6 +6077,7 @@ exports[`component render should render correctly bottom 1`] = `
                     }
                   >
                     <Toggle
+                      aria-label="Select"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -6066,6 +6099,7 @@ exports[`component render should render correctly bottom 1`] = `
                             >
                               <button
                                 aria-expanded="false"
+                                aria-label="Select"
                                 class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -6113,6 +6147,7 @@ exports[`component render should render correctly bottom 1`] = `
                     >
                       <button
                         aria-expanded={false}
+                        aria-label="Select"
                         className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -6818,6 +6853,7 @@ exports[`component render should render correctly disabled 1`] = `
                       >
                         <button
                           aria-expanded="false"
+                          aria-label="Select"
                           class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
                           disabled=""
                           id="pagination-options-menu-toggle"
@@ -6887,6 +6923,7 @@ exports[`component render should render correctly disabled 1`] = `
                           >
                             <button
                               aria-expanded="false"
+                              aria-label="Select"
                               class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
                               disabled=""
                               id="pagination-options-menu-toggle"
@@ -6934,6 +6971,7 @@ exports[`component render should render correctly disabled 1`] = `
                     }
                   >
                     <Toggle
+                      aria-label="Select"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -6955,6 +6993,7 @@ exports[`component render should render correctly disabled 1`] = `
                             >
                               <button
                                 aria-expanded="false"
+                                aria-label="Select"
                                 class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
                                 disabled=""
                                 id="pagination-options-menu-toggle"
@@ -7003,6 +7042,7 @@ exports[`component render should render correctly disabled 1`] = `
                     >
                       <button
                         aria-expanded={false}
+                        aria-label="Select"
                         className="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
                         disabled={true}
                         id="pagination-options-menu-toggle"
@@ -7707,6 +7747,7 @@ exports[`component render should render correctly top 1`] = `
                       >
                         <button
                           aria-expanded="false"
+                          aria-label="Select"
                           class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -7775,6 +7816,7 @@ exports[`component render should render correctly top 1`] = `
                           >
                             <button
                               aria-expanded="false"
+                              aria-label="Select"
                               class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -7821,6 +7863,7 @@ exports[`component render should render correctly top 1`] = `
                     }
                   >
                     <Toggle
+                      aria-label="Select"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -7842,6 +7885,7 @@ exports[`component render should render correctly top 1`] = `
                             >
                               <button
                                 aria-expanded="false"
+                                aria-label="Select"
                                 class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -7889,6 +7933,7 @@ exports[`component render should render correctly top 1`] = `
                     >
                       <button
                         aria-expanded={false}
+                        aria-label="Select"
                         className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -8599,6 +8644,7 @@ exports[`component render titles 1`] = `
                       >
                         <button
                           aria-expanded="false"
+                          aria-label="Select"
                           class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -8667,6 +8713,7 @@ exports[`component render titles 1`] = `
                           >
                             <button
                               aria-expanded="false"
+                              aria-label="Select"
                               class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -8713,6 +8760,7 @@ exports[`component render titles 1`] = `
                     }
                   >
                     <Toggle
+                      aria-label="Select"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -8734,6 +8782,7 @@ exports[`component render titles 1`] = `
                             >
                               <button
                                 aria-expanded="false"
+                                aria-label="Select"
                                 class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -8781,6 +8830,7 @@ exports[`component render titles 1`] = `
                     >
                       <button
                         aria-expanded={false}
+                        aria-label="Select"
                         className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -9486,6 +9536,7 @@ exports[`component render up drop direction 1`] = `
                       >
                         <button
                           aria-expanded="false"
+                          aria-label="Select"
                           class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -9554,6 +9605,7 @@ exports[`component render up drop direction 1`] = `
                           >
                             <button
                               aria-expanded="false"
+                              aria-label="Select"
                               class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -9600,6 +9652,7 @@ exports[`component render up drop direction 1`] = `
                     }
                   >
                     <Toggle
+                      aria-label="Select"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -9621,6 +9674,7 @@ exports[`component render up drop direction 1`] = `
                             >
                               <button
                                 aria-expanded="false"
+                                aria-label="Select"
                                 class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -9668,6 +9722,7 @@ exports[`component render up drop direction 1`] = `
                     >
                       <button
                         aria-expanded={false}
+                        aria-label="Select"
                         className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -10372,6 +10427,7 @@ exports[`component render zero results 1`] = `
                       >
                         <button
                           aria-expanded="false"
+                          aria-label="Select"
                           class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
                           disabled=""
                           id="pagination-options-menu-toggle"
@@ -10441,6 +10497,7 @@ exports[`component render zero results 1`] = `
                           >
                             <button
                               aria-expanded="false"
+                              aria-label="Select"
                               class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
                               disabled=""
                               id="pagination-options-menu-toggle"
@@ -10488,6 +10545,7 @@ exports[`component render zero results 1`] = `
                     }
                   >
                     <Toggle
+                      aria-label="Select"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -10509,6 +10567,7 @@ exports[`component render zero results 1`] = `
                             >
                               <button
                                 aria-expanded="false"
+                                aria-label="Select"
                                 class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
                                 disabled=""
                                 id="pagination-options-menu-toggle"
@@ -10557,6 +10616,7 @@ exports[`component render zero results 1`] = `
                     >
                       <button
                         aria-expanded={false}
+                        aria-label="Select"
                         className="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
                         disabled={true}
                         id="pagination-options-menu-toggle"

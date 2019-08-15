@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.12.1...@patternfly/react-console@1.12.2) (2019-08-14)
+
+
+### Bug Fixes
+
+* **VncConsole:** Change prop name in VncActions and added needed prop to VncConsole ([#2699](https://github.com/patternfly/patternfly-react/issues/2699)) ([60aeea1](https://github.com/patternfly/patternfly-react/commit/60aeea1))
+
+
+
+
+
 ## [1.12.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.12.0...@patternfly/react-console@1.12.1) (2019-08-12)
 
 **Note:** Version bump only for package @patternfly/react-console

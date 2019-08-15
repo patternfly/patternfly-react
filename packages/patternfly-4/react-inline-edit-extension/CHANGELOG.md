@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.10.1...@patternfly/react-inline-edit-extension@2.10.2) (2019-08-15)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.10.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.10.0...@patternfly/react-inline-edit-extension@2.10.1) (2019-08-14)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+# [2.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.9.78...@patternfly/react-inline-edit-extension@2.10.0) (2019-08-14)
+
+
+### Features
+
+* **react-table:** convert react-table to typescript ([#2360](https://github.com/patternfly/patternfly-react/issues/2360)) ([d0ab9c0](https://github.com/patternfly/patternfly-react/commit/d0ab9c0))
+
+
+
+
+
 ## [2.9.78](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.9.77...@patternfly/react-inline-edit-extension@2.9.78) (2019-08-13)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension

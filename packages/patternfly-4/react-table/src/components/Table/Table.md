@@ -2,6 +2,7 @@
 title: 'Table'
 cssPrefix: 'pf-c-table'
 section: 'components'
+typescript: true
 propComponents: ['Table', 'TableHeader', 'TableBody']
 ---
 
@@ -65,25 +66,31 @@ class SimpleTable extends React.Component {
         }
       ],
       rows: [
-        ['one', 'two', 'three', 'four', 'five'],
-        [
-          {
-            title: <div>one - 2</div>,
-            props: { title: 'hover title', colSpan: 3 }
-          },
-          'four - 2',
-          'five - 2'
-        ],
-        [
-          'one - 3',
-          'two - 3',
-          'three - 3',
-          'four - 3',
-          {
-            title: 'five - 3 (not centered)',
-            props: { textCenter: false }
-          }
-        ]
+        {
+          cells: ['one', 'two', 'three', 'four', 'five']
+        },
+        {
+          cells: [
+            {
+              title: <div>one - 2</div>,
+              props: { title: 'hover title', colSpan: 3 }
+            },
+            'four - 2',
+            'five - 2'
+          ]
+        },
+        {
+          cells: [
+            'one - 3',
+            'two - 3',
+            'three - 3',
+            'four - 3',
+            {
+              title: 'five - 3 (not centered)',
+              props: { textCenter: false }
+            }
+          ]
+        }
       ]
     };
   }
@@ -505,7 +512,7 @@ import {
   cellWidth
 } from '@patternfly/react-table';
 
-class CompactTable extends React.Component {
+class CompactTableBorderlessRows extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -524,7 +531,7 @@ class CompactTable extends React.Component {
 
     return (
       <Table
-        caption="Compact Table with border"
+        caption="Compact Table with borderless rows"
         variant={TableVariant.compact}
         borders={false}
         cells={columns}
@@ -1046,7 +1053,7 @@ import {
   wrappable
 } from '@patternfly/react-table';
 
-class CompactTable extends React.Component {
+class WrappableHeadersTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
