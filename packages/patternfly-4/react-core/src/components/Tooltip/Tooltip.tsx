@@ -5,13 +5,13 @@ import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import '@patternfly/react-styles/css/components/Tooltip/tippy.css';
 import '@patternfly/react-styles/css/components/Tooltip/tippy-overrides.css';
 import { css, getModifier } from '@patternfly/react-styles';
-import { TooltipArrow } from './TooltipArrow';
 import { TooltipContent } from './TooltipContent';
 import { KEY_CODES } from '../../helpers/constants';
 import { c_tooltip_MaxWidth as tooltipMaxWidth } from '@patternfly/react-tokens';
 import { ReactElement } from 'react';
 
 export enum TooltipPosition {
+  auto = 'auto',
   top = 'top',
   bottom = 'bottom',
   left = 'left',
@@ -20,7 +20,7 @@ export enum TooltipPosition {
 
 export interface TooltipProps {
   /** Tooltip position */
-  position?: 'top' | 'bottom' | 'left' | 'right';
+  position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** Tooltip trigger: click, mouseenter, focus */
   trigger?: string;
   /** If true, tries to keep the tooltip in view by flipping it if necessary */
@@ -43,10 +43,12 @@ export interface TooltipProps {
   maxWidth?: string;
   /** If true, displays as an application launcher */
   isAppLauncher?: boolean;
-  /** Distance of the tooltip to its target, defaults to 15 */
+  /** Distance of the tooltip to its target, defaults to 25 */
   distance?: number;
   /** Aria-labelledby or aria-describedby for tooltip */
   aria?: 'describedby' | 'labelledby';
+  /** If enableFlip is true, the tooltip responds to this boundary */
+  boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
 };
 
 export class Tooltip extends React.Component<TooltipProps> {
@@ -62,11 +64,13 @@ export class Tooltip extends React.Component<TooltipProps> {
     zIndex: 9999,
     maxWidth: tooltipMaxWidth && tooltipMaxWidth.value,
     isAppLauncher: false,
-    distance: 15,
-    aria: 'describedby'
+    distance: 25,
+    aria: 'describedby',
+    boundary: 'window'
   };
 
   storeTippyInstance = (tip:TippyInstance) => {
+    tip.popperChildren.tooltip.classList.add(styles.tooltip);
     this.tip = tip;
   };
 
@@ -106,20 +110,21 @@ export class Tooltip extends React.Component<TooltipProps> {
       isAppLauncher,
       distance,
       aria,
+      boundary,
       ...rest
     } = this.props;
     const content = (
       <div
-        className={css(styles.tooltip, !enableFlip && getModifier(styles, position, styles.modifiers.top), className)}
+        className={css(!enableFlip && getModifier(styles, position, styles.modifiers.top), className)}
         role="tooltip"
         {...rest}
       >
-        <TooltipArrow />
         <TooltipContent>{bodyContent}</TooltipContent>
       </div>
     );
     return (
       <PopoverBase
+        arrow
         aria={aria}
         onCreate={this.storeTippyInstance}
         maxWidth={maxWidth}
@@ -128,13 +133,14 @@ export class Tooltip extends React.Component<TooltipProps> {
         content={content}
         lazy
         animateFill={false}
-        theme="pf-tippy"
+        theme="pf-tooltip"
         performance
         placement={position}
         trigger={trigger}
         delay={[entryDelay, exitDelay]}
         distance={distance}
         flip={enableFlip}
+        boundary={boundary}
         popperOptions={{
           modifiers: {
             preventOverflow: {

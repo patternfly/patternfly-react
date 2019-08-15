@@ -6,7 +6,6 @@ import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import '@patternfly/react-styles/css/components/Tooltip/tippy.css';
 import '@patternfly/react-styles/css/components/Tooltip/tippy-overrides.css';
 import { css, getModifier } from '@patternfly/react-styles';
-import { PopoverArrow } from './PopoverArrow';
 import { PopoverContent } from './PopoverContent';
 import { PopoverBody }  from './PopoverBody';
 import { PopoverHeader } from './PopoverHeader';
@@ -21,6 +20,7 @@ import { ReactElement } from 'react';
 const FocusTrap: any = require('focus-trap-react');
 
 export enum PopoverPosition {
+  auto = 'auto',
   top = 'top',
   bottom = 'bottom',
   left = 'left',
@@ -29,7 +29,7 @@ export enum PopoverPosition {
 
 export interface PopoverProps {
   /** Popover position */
-  position?: 'top' | 'bottom' | 'left' | 'right';
+  position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** If true, tries to keep the popover in view by flipping it if necessary */
   enableFlip?: boolean;
   /** Popover additional class */
@@ -42,6 +42,7 @@ export interface PopoverProps {
   headerContent?: React.ReactNode;
   /** Body content */
   bodyContent: React.ReactNode;
+  /** Footer content */
   footerContent?: React.ReactNode;
   /**
    * True to show the popover programmatically. Used in conjunction with the shouldClose prop.
@@ -75,6 +76,10 @@ export interface PopoverProps {
   maxWidth?: string;
   /** Aria label for the Close button */
   closeBtnAriaLabel?: string;
+  /** Distance of the tooltip to its target, defaults to 35 */
+  distance?: number;
+  /** If enableFlip is true, the popover responds to this boundary */
+  boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
 }
 
 export interface PopoverState {
@@ -101,7 +106,9 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     onMount: ():void => null,
     zIndex: 9999,
     maxWidth: popoverMaxWidth && popoverMaxWidth.value,
-    closeBtnAriaLabel: 'Close'
+    closeBtnAriaLabel: 'Close',
+    distance: 35,
+    boundary: 'window'
   };
 
   constructor(props: PopoverProps) {
@@ -136,6 +143,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
   }
 
   storeTippyInstance = (tip:TippyInstance) => {
+    tip.popperChildren.tooltip.classList.add(styles.popover);
     this.tip = tip;
   };
 
@@ -198,6 +206,8 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       zIndex,
       maxWidth,
       closeBtnAriaLabel,
+      distance,
+      boundary,
       ...rest
     } = this.props;
 
@@ -208,11 +218,10 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     const content = (
       <GenerateId>
         {randomId =>
-          this.state.isOpen && (
-            <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
+          (
+            <FocusTrap active={this.state.isOpen} focusTrapOptions={{ clickOutsideDeactivates: true }}>
               <div
                 className={css(
-                  styles.popover,
                   !enableFlip && getModifier(styles, position, styles.modifiers.top),
                   className
                 )}
@@ -223,7 +232,6 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
                 aria-describedby={`popover-${randomId}-body`}
                 {...rest}
               >
-                <PopoverArrow />
                 <PopoverContent>
                   <PopoverCloseButton onClose={this.closePopover} aria-label={closeBtnAriaLabel} />
                   {headerContent && <PopoverHeader id={`popover-${randomId}-header`}>{headerContent}</PopoverHeader>}
@@ -248,6 +256,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     };
     return (
       <PopoverBase
+        arrow
         onCreate={this.storeTippyInstance}
         maxWidth={maxWidth}
         zIndex={zIndex}
@@ -258,13 +267,14 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
         isVisible={isVisible}
         hideOnClick={shouldHideOnClick()}
         animateFill={false}
-        theme="pf-tippy"
+        theme="pf-popover"
         performance
         interactive
         interactiveBorder={0}
         placement={position}
-        distance={25}
+        distance={distance}
         flip={enableFlip}
+        boundary={boundary}
         popperOptions={{
           modifiers: {
             preventOverflow: {
@@ -275,11 +285,11 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
             }
           }
         }}
-        onHide={this.onHide}
-        onHidden={this.onHidden}
-        onShow={this.onShow}
-        onShown={this.onShown}
-        onMount={this.onMount}
+        onHide={(tip:TippyInstance) => this.onHide(tip)}
+        onHidden={(tip:TippyInstance) => this.onHidden(tip)}
+        onShow={(tip:TippyInstance) => this.onShow(tip)}
+        onShown={(tip:TippyInstance) => this.onShown(tip)}
+        onMount={(tip:TippyInstance) => this.onMount(tip)}
       >
         {children}
       </PopoverBase>
