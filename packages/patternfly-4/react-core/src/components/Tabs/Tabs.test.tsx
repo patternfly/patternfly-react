@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { Tabs } from './Tabs';
 import { Tab } from './Tab';
 import { TabContent } from './TabContent';
 
 test('should render simple tabs', () => {
-  const view = shallow(
+  const view = mount(
     <Tabs id="simpleTabs">
       <Tab id="tab1" eventKey={0} title="Tab item 1">
         Tab 1 section
@@ -22,7 +22,7 @@ test('should render simple tabs', () => {
 });
 
 test('should render accessible tabs', () => {
-  const view = shallow(
+  const view = mount(
     <Tabs id="accessibleTabs" aria-label="accessible Tabs example" variant="nav">
       <Tab id="tab1" eventKey={0} title="Tab item 1" href="#/items/1">
         Tab 1 section
@@ -39,7 +39,7 @@ test('should render accessible tabs', () => {
 });
 
 test('should render filled tabs', () => {
-  const view = shallow(
+  const view = mount(
     <Tabs id="filledTabs" isFilled>
       <Tab id="tab1" eventKey={0} title="Tab item 1">
         Tab 1 section
@@ -56,7 +56,7 @@ test('should render filled tabs', () => {
 });
 
 test('should render secondary tabs', () => {
-  const view = shallow(
+  const view = mount(
     <Tabs id="primaryTabs">
       <Tab eventKey={0} title="Tab item 1">
         <Tabs id="secondaryTabs">
@@ -143,7 +143,7 @@ test('should call handleScrollButtons tabs with scrolls', () => {
 });
 
 test('should render tabs with eventKey Strings', () => {
-  const view = shallow(
+  const view = mount(
     <Tabs id="simpleTabs">
       <Tab id="tab1" eventKey={'one'} title="Tab item 1">
         Tab 1 section
