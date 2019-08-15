@@ -92,7 +92,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 exitDelay={500}
                 isAppLauncher={false}
                 maxWidth="18.75rem"
-                position="auto"
+                position="top"
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -124,7 +124,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   maxWidth="18.75rem"
                   onCreate={[Function]}
                   performance={true}
-                  placement="auto"
+                  placement="top"
                   popperOptions={
                     Object {
                       "modifiers": Object {
@@ -220,7 +220,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 exitDelay={500}
                 isAppLauncher={false}
                 maxWidth="18.75rem"
-                position="auto"
+                position="top"
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -252,7 +252,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   maxWidth="18.75rem"
                   onCreate={[Function]}
                   performance={true}
-                  placement="auto"
+                  placement="top"
                   popperOptions={
                     Object {
                       "modifiers": Object {
@@ -371,7 +371,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                 exitDelay={500}
                 isAppLauncher={false}
                 maxWidth="18.75rem"
-                position="auto"
+                position="top"
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -403,7 +403,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   maxWidth="18.75rem"
                   onCreate={[Function]}
                   performance={true}
-                  placement="auto"
+                  placement="top"
                   popperOptions={
                     Object {
                       "modifiers": Object {
@@ -616,7 +616,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 exitDelay={500}
                 isAppLauncher={false}
                 maxWidth="18.75rem"
-                position="auto"
+                position="top"
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -648,7 +648,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   maxWidth="18.75rem"
                   onCreate={[Function]}
                   performance={true}
-                  placement="auto"
+                  placement="top"
                   popperOptions={
                     Object {
                       "modifiers": Object {
@@ -767,7 +767,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 exitDelay={500}
                 isAppLauncher={false}
                 maxWidth="18.75rem"
-                position="auto"
+                position="top"
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -799,7 +799,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   maxWidth="18.75rem"
                   onCreate={[Function]}
                   performance={true}
-                  placement="auto"
+                  placement="top"
                   popperOptions={
                     Object {
                       "modifiers": Object {
@@ -918,7 +918,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 exitDelay={500}
                 isAppLauncher={false}
                 maxWidth="18.75rem"
-                position="auto"
+                position="top"
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -950,7 +950,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   maxWidth="18.75rem"
                   onCreate={[Function]}
                   performance={true}
-                  placement="auto"
+                  placement="top"
                   popperOptions={
                     Object {
                       "modifiers": Object {
@@ -1069,7 +1069,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                 exitDelay={500}
                 isAppLauncher={false}
                 maxWidth="18.75rem"
-                position="auto"
+                position="top"
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -1101,7 +1101,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   maxWidth="18.75rem"
                   onCreate={[Function]}
                   performance={true}
-                  placement="auto"
+                  placement="top"
                   popperOptions={
                     Object {
                       "modifiers": Object {
