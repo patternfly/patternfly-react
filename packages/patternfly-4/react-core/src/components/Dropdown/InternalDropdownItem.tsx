@@ -85,7 +85,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       ...additionalProps
     } = this.props;
     const Component = component as any;
-    let classes;
+    let classes: string;
     if (Component === 'a') {
       additionalProps['aria-disabled'] = isDisabled;
       additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
@@ -117,7 +117,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                 ? React.Children.map(children, child => {
                     const toClone = child as React.ReactHTMLElement<any>;
                     const clonedElement = React.cloneElement(toClone, {
-                      className: 's',
+                      className: css(classes, itemClass),
                       ref: this.ref,
                       onKeyDown: this.onKeyDown,
                       onClick: (event: React.MouseEvent) => {

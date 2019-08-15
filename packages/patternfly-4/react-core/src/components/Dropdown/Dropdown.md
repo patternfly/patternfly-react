@@ -6,14 +6,14 @@ typescript: true
 ---
 
 import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, DropdownGroup } from '@patternfly/react-core';
-import { ThIcon } from '@patternfly/react-icons';
+import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
 
 ## Simple dropdown
 
 ```js
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
-import { ThIcon } from '@patternfly/react-icons';
+import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
 
 class SimpleDropdown extends React.Component {
   constructor(props) {
@@ -55,7 +55,7 @@ class SimpleDropdown extends React.Component {
     return (
       <Dropdown
         onSelect={this.onSelect}
-        toggle={<DropdownToggle onToggle={this.onToggle}>Dropdown</DropdownToggle>}
+        toggle={<DropdownToggle onToggle={this.onToggle} iconComponent={CaretDownIcon}>Dropdown</DropdownToggle>}
         isOpen={isOpen}
         dropdownItems={dropdownItems}
       />

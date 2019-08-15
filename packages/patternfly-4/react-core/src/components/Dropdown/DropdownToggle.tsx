@@ -28,7 +28,7 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   /** Whether or not the <div> has a disabled state */
   isDisabled?: boolean; 
   /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
-  iconComponent?: React.ReactType | null; 
+  iconComponent?: React.ElementType | null; 
   /** Elements to display before the toggle button. When included, renders the toggle as a split button. */
   splitButtonItems?: React.ReactNode[]; 
   /** Accessible label for the dropdown toggle button */
