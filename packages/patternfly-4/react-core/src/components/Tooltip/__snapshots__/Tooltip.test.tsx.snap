@@ -5,12 +5,13 @@ exports[`tooltip renders 1`] = `
   animateFill={false}
   appendTo={[Function]}
   aria="describedby"
+  arrow={true}
+  boundary="window"
   content={
     <div
-      className="pf-c-tooltip"
+      className=""
       role="tooltip"
     >
-      <Unknown />
       <Unknown>
         <div>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
@@ -24,7 +25,7 @@ exports[`tooltip renders 1`] = `
       500,
     ]
   }
-  distance={15}
+  distance={25}
   flip={true}
   lazy={true}
   maxWidth="18.75rem"
@@ -43,7 +44,7 @@ exports[`tooltip renders 1`] = `
       },
     }
   }
-  theme="pf-tippy"
+  theme="pf-tooltip"
   trigger="mouseenter focus"
   zIndex={9999}
 >

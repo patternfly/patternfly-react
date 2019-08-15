@@ -4,13 +4,14 @@ exports[`copy button render 1`] = `
 <Tooltip
   appendTo={[Function]}
   aria="describedby"
+  boundary="window"
   className=""
   content={
     <div>
       Copy Me
     </div>
   }
-  distance={15}
+  distance={25}
   enableFlip={true}
   entryDelay={2000}
   exitDelay={1000}

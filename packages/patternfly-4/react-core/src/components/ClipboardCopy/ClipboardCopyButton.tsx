@@ -13,7 +13,7 @@ export interface ClipboardCopyButtonProps extends React.DetailedHTMLProps<React.
   exitDelay?: number; 
   entryDelay?: number; 
   maxWidth?: string; 
-  position?: 'top' | 'bottom' | 'left' | 'right'; 
+  position?: 'auto' | 'top' | 'bottom' | 'left' | 'right'; 
   'aria-label'?: string; 
 }
 
@@ -23,7 +23,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   exitDelay = 100,
   entryDelay = 100,
   maxWidth = '100px',
-  position = 'top',
+  position = 'auto',
   'aria-label': ariaLabel = 'Copyable input',
   id, 
   textId,

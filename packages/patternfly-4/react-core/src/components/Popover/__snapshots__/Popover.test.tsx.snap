@@ -4,6 +4,8 @@ exports[`popover can specify position as object value 1`] = `
 <PopoverBase
   animateFill={false}
   appendTo={[Function]}
+  arrow={true}
+  boundary="window"
   content={
     <GenerateId
       prefix="pf-random-id-"
@@ -11,7 +13,7 @@ exports[`popover can specify position as object value 1`] = `
       [Function]
     </GenerateId>
   }
-  distance={25}
+  distance={35}
   flip={true}
   hideOnClick={false}
   interactive={true}
@@ -39,7 +41,7 @@ exports[`popover can specify position as object value 1`] = `
       },
     }
   }
-  theme="pf-tippy"
+  theme="pf-popover"
   trigger="manual"
   zIndex={9999}
 >
@@ -53,6 +55,8 @@ exports[`popover renders close-button, header and body 1`] = `
 <PopoverBase
   animateFill={false}
   appendTo={[Function]}
+  arrow={true}
+  boundary="window"
   content={
     <GenerateId
       prefix="pf-random-id-"
@@ -60,7 +64,7 @@ exports[`popover renders close-button, header and body 1`] = `
       [Function]
     </GenerateId>
   }
-  distance={25}
+  distance={35}
   flip={true}
   hideOnClick={false}
   interactive={true}
@@ -88,7 +92,7 @@ exports[`popover renders close-button, header and body 1`] = `
       },
     }
   }
-  theme="pf-tippy"
+  theme="pf-popover"
   trigger="manual"
   zIndex={9999}
 >

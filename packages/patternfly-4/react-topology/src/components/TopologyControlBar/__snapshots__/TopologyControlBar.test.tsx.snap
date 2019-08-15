@@ -83,15 +83,16 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
               <Tooltip
                 appendTo={[Function]}
                 aria="describedby"
+                boundary="window"
                 className=""
                 content="test zoom in tooltip"
-                distance={15}
+                distance={25}
                 enableFlip={true}
                 entryDelay={500}
                 exitDelay={500}
                 isAppLauncher={false}
                 maxWidth="18.75rem"
-                position="top"
+                position="auto"
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -99,12 +100,13 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   animateFill={false}
                   appendTo={[Function]}
                   aria="describedby"
+                  arrow={true}
+                  boundary="window"
                   content={
                     <div
                       className="pf-c-tooltip"
                       role="tooltip"
                     >
-                      <TooltipArrow />
                       <TooltipContent>
                         test zoom in tooltip
                       </TooltipContent>
@@ -116,13 +118,13 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       500,
                     ]
                   }
-                  distance={15}
+                  distance={25}
                   flip={true}
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
                   performance={true}
-                  placement="top"
+                  placement="auto"
                   popperOptions={
                     Object {
                       "modifiers": Object {
@@ -135,7 +137,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       },
                     }
                   }
-                  theme="pf-tippy"
+                  theme="pf-tooltip"
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
@@ -175,9 +177,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                           role="tooltip"
                         >
                           <div
-                            class="pf-c-tooltip__arrow"
-                          />
-                          <div
                             class="pf-c-tooltip__content"
                           >
                             test zoom in tooltip
@@ -190,11 +189,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       className="pf-c-tooltip"
                       role="tooltip"
                     >
-                      <TooltipArrow>
-                        <div
-                          className="pf-c-tooltip__arrow"
-                        />
-                      </TooltipArrow>
                       <TooltipContent>
                         <div
                           className="pf-c-tooltip__content"
@@ -217,15 +211,16 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
               <Tooltip
                 appendTo={[Function]}
                 aria="describedby"
+                boundary="window"
                 className=""
                 content="Zoom Out"
-                distance={15}
+                distance={25}
                 enableFlip={true}
                 entryDelay={500}
                 exitDelay={500}
                 isAppLauncher={false}
                 maxWidth="18.75rem"
-                position="top"
+                position="auto"
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -233,12 +228,13 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   animateFill={false}
                   appendTo={[Function]}
                   aria="describedby"
+                  arrow={true}
+                  boundary="window"
                   content={
                     <div
                       className="pf-c-tooltip"
                       role="tooltip"
                     >
-                      <TooltipArrow />
                       <TooltipContent>
                         Zoom Out
                       </TooltipContent>
@@ -250,13 +246,13 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       500,
                     ]
                   }
-                  distance={15}
+                  distance={25}
                   flip={true}
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
                   performance={true}
-                  placement="top"
+                  placement="auto"
                   popperOptions={
                     Object {
                       "modifiers": Object {
@@ -269,7 +265,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       },
                     }
                   }
-                  theme="pf-tippy"
+                  theme="pf-tooltip"
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
@@ -332,9 +328,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                           role="tooltip"
                         >
                           <div
-                            class="pf-c-tooltip__arrow"
-                          />
-                          <div
                             class="pf-c-tooltip__content"
                           >
                             Zoom Out
@@ -347,11 +340,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       className="pf-c-tooltip"
                       role="tooltip"
                     >
-                      <TooltipArrow>
-                        <div
-                          className="pf-c-tooltip__arrow"
-                        />
-                      </TooltipArrow>
                       <TooltipContent>
                         <div
                           className="pf-c-tooltip__content"
@@ -374,15 +362,16 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
               <Tooltip
                 appendTo={[Function]}
                 aria="describedby"
+                boundary="window"
                 className=""
                 content="Reset View"
-                distance={15}
+                distance={25}
                 enableFlip={true}
                 entryDelay={500}
                 exitDelay={500}
                 isAppLauncher={false}
                 maxWidth="18.75rem"
-                position="top"
+                position="auto"
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -390,12 +379,13 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   animateFill={false}
                   appendTo={[Function]}
                   aria="describedby"
+                  arrow={true}
+                  boundary="window"
                   content={
                     <div
                       className="pf-c-tooltip"
                       role="tooltip"
                     >
-                      <TooltipArrow />
                       <TooltipContent>
                         Reset View
                       </TooltipContent>
@@ -407,13 +397,13 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       500,
                     ]
                   }
-                  distance={15}
+                  distance={25}
                   flip={true}
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
                   performance={true}
-                  placement="top"
+                  placement="auto"
                   popperOptions={
                     Object {
                       "modifiers": Object {
@@ -426,7 +416,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       },
                     }
                   }
-                  theme="pf-tippy"
+                  theme="pf-tooltip"
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
@@ -489,9 +479,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                           role="tooltip"
                         >
                           <div
-                            class="pf-c-tooltip__arrow"
-                          />
-                          <div
                             class="pf-c-tooltip__content"
                           >
                             Reset View
@@ -504,11 +491,6 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       className="pf-c-tooltip"
                       role="tooltip"
                     >
-                      <TooltipArrow>
-                        <div
-                          className="pf-c-tooltip__arrow"
-                        />
-                      </TooltipArrow>
                       <TooltipContent>
                         <div
                           className="pf-c-tooltip__content"
@@ -625,15 +607,16 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
               <Tooltip
                 appendTo={[Function]}
                 aria="describedby"
+                boundary="window"
                 className=""
                 content="Zoom In"
-                distance={15}
+                distance={25}
                 enableFlip={true}
                 entryDelay={500}
                 exitDelay={500}
                 isAppLauncher={false}
                 maxWidth="18.75rem"
-                position="top"
+                position="auto"
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -641,12 +624,13 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   animateFill={false}
                   appendTo={[Function]}
                   aria="describedby"
+                  arrow={true}
+                  boundary="window"
                   content={
                     <div
                       className="pf-c-tooltip"
                       role="tooltip"
                     >
-                      <TooltipArrow />
                       <TooltipContent>
                         Zoom In
                       </TooltipContent>
@@ -658,13 +642,13 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       500,
                     ]
                   }
-                  distance={15}
+                  distance={25}
                   flip={true}
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
                   performance={true}
-                  placement="top"
+                  placement="auto"
                   popperOptions={
                     Object {
                       "modifiers": Object {
@@ -677,7 +661,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       },
                     }
                   }
-                  theme="pf-tippy"
+                  theme="pf-tooltip"
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
@@ -740,9 +724,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                           role="tooltip"
                         >
                           <div
-                            class="pf-c-tooltip__arrow"
-                          />
-                          <div
                             class="pf-c-tooltip__content"
                           >
                             Zoom In
@@ -755,11 +736,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       className="pf-c-tooltip"
                       role="tooltip"
                     >
-                      <TooltipArrow>
-                        <div
-                          className="pf-c-tooltip__arrow"
-                        />
-                      </TooltipArrow>
                       <TooltipContent>
                         <div
                           className="pf-c-tooltip__content"
@@ -782,15 +758,16 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
               <Tooltip
                 appendTo={[Function]}
                 aria="describedby"
+                boundary="window"
                 className=""
                 content="Zoom Out"
-                distance={15}
+                distance={25}
                 enableFlip={true}
                 entryDelay={500}
                 exitDelay={500}
                 isAppLauncher={false}
                 maxWidth="18.75rem"
-                position="top"
+                position="auto"
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -798,12 +775,13 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   animateFill={false}
                   appendTo={[Function]}
                   aria="describedby"
+                  arrow={true}
+                  boundary="window"
                   content={
                     <div
                       className="pf-c-tooltip"
                       role="tooltip"
                     >
-                      <TooltipArrow />
                       <TooltipContent>
                         Zoom Out
                       </TooltipContent>
@@ -815,13 +793,13 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       500,
                     ]
                   }
-                  distance={15}
+                  distance={25}
                   flip={true}
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
                   performance={true}
-                  placement="top"
+                  placement="auto"
                   popperOptions={
                     Object {
                       "modifiers": Object {
@@ -834,7 +812,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       },
                     }
                   }
-                  theme="pf-tippy"
+                  theme="pf-tooltip"
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
@@ -897,9 +875,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                           role="tooltip"
                         >
                           <div
-                            class="pf-c-tooltip__arrow"
-                          />
-                          <div
                             class="pf-c-tooltip__content"
                           >
                             Zoom Out
@@ -912,11 +887,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       className="pf-c-tooltip"
                       role="tooltip"
                     >
-                      <TooltipArrow>
-                        <div
-                          className="pf-c-tooltip__arrow"
-                        />
-                      </TooltipArrow>
                       <TooltipContent>
                         <div
                           className="pf-c-tooltip__content"
@@ -939,15 +909,16 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
               <Tooltip
                 appendTo={[Function]}
                 aria="describedby"
+                boundary="window"
                 className=""
                 content="Fit to Screen"
-                distance={15}
+                distance={25}
                 enableFlip={true}
                 entryDelay={500}
                 exitDelay={500}
                 isAppLauncher={false}
                 maxWidth="18.75rem"
-                position="top"
+                position="auto"
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -955,12 +926,13 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   animateFill={false}
                   appendTo={[Function]}
                   aria="describedby"
+                  arrow={true}
+                  boundary="window"
                   content={
                     <div
                       className="pf-c-tooltip"
                       role="tooltip"
                     >
-                      <TooltipArrow />
                       <TooltipContent>
                         Fit to Screen
                       </TooltipContent>
@@ -972,13 +944,13 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       500,
                     ]
                   }
-                  distance={15}
+                  distance={25}
                   flip={true}
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
                   performance={true}
-                  placement="top"
+                  placement="auto"
                   popperOptions={
                     Object {
                       "modifiers": Object {
@@ -991,7 +963,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       },
                     }
                   }
-                  theme="pf-tippy"
+                  theme="pf-tooltip"
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
@@ -1054,9 +1026,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                           role="tooltip"
                         >
                           <div
-                            class="pf-c-tooltip__arrow"
-                          />
-                          <div
                             class="pf-c-tooltip__content"
                           >
                             Fit to Screen
@@ -1069,11 +1038,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       className="pf-c-tooltip"
                       role="tooltip"
                     >
-                      <TooltipArrow>
-                        <div
-                          className="pf-c-tooltip__arrow"
-                        />
-                      </TooltipArrow>
                       <TooltipContent>
                         <div
                           className="pf-c-tooltip__content"
@@ -1096,15 +1060,16 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
               <Tooltip
                 appendTo={[Function]}
                 aria="describedby"
+                boundary="window"
                 className=""
                 content="Reset View"
-                distance={15}
+                distance={25}
                 enableFlip={true}
                 entryDelay={500}
                 exitDelay={500}
                 isAppLauncher={false}
                 maxWidth="18.75rem"
-                position="top"
+                position="auto"
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -1112,12 +1077,13 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   animateFill={false}
                   appendTo={[Function]}
                   aria="describedby"
+                  arrow={true}
+                  boundary="window"
                   content={
                     <div
                       className="pf-c-tooltip"
                       role="tooltip"
                     >
-                      <TooltipArrow />
                       <TooltipContent>
                         Reset View
                       </TooltipContent>
@@ -1129,13 +1095,13 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       500,
                     ]
                   }
-                  distance={15}
+                  distance={25}
                   flip={true}
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
                   performance={true}
-                  placement="top"
+                  placement="auto"
                   popperOptions={
                     Object {
                       "modifiers": Object {
@@ -1148,7 +1114,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       },
                     }
                   }
-                  theme="pf-tippy"
+                  theme="pf-tooltip"
                   trigger="mouseenter focus"
                   zIndex={9999}
                 >
@@ -1211,9 +1177,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                           role="tooltip"
                         >
                           <div
-                            class="pf-c-tooltip__arrow"
-                          />
-                          <div
                             class="pf-c-tooltip__content"
                           >
                             Reset View
@@ -1226,11 +1189,6 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       className="pf-c-tooltip"
                       role="tooltip"
                     >
-                      <TooltipArrow>
-                        <div
-                          className="pf-c-tooltip__arrow"
-                        />
-                      </TooltipArrow>
                       <TooltipContent>
                         <div
                           className="pf-c-tooltip__content"

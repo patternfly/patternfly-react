@@ -23,7 +23,7 @@ export interface ChipProps extends React.HTMLProps<HTMLDivElement> {
   /** Internal flag for which component will be used for chip */
   component?: React.ReactNode; 
   /** Position of the tooltip which is displayed if text is longer */
-  tooltipPosition?: 'top' | 'bottom' | 'left' | 'right';
+  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
 }
 
 interface ChipState {
@@ -44,7 +44,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
     className: '',
     isOverflowChip: false,
     isReadOnly: false,
-    tooltipPosition: 'top',
+    tooltipPosition: 'auto',
     onClick: () => undefined as any,
     component: 'div'
   }

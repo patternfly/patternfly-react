@@ -5341,7 +5341,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   isReadOnly={false}
                   key=".$Mr"
                   onClick={[Function]}
-                  tooltipPosition="top"
+                  tooltipPosition="auto"
                 >
                   <GenerateId
                     prefix="pf-random-id-"
@@ -5420,7 +5420,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   isOverflowChip={true}
                   isReadOnly={false}
                   onClick={[Function]}
-                  tooltipPosition="top"
+                  tooltipPosition="auto"
                 >
                   <GenerateId
                     prefix="pf-random-id-"

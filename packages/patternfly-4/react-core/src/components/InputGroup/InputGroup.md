@@ -18,8 +18,7 @@ import {
   Dropdown,
   DropdownToggle,
   DropdownItem,
-  Popover,
-  PopoverPosition
+  Popover
 } from '@patternfly/react-core';
 
 Buttons and TextArea
@@ -37,8 +36,7 @@ import {
   Dropdown,
   DropdownToggle,
   DropdownItem,
-  Popover,
-  PopoverPosition
+  Popover
 } from '@patternfly/react-core';
 
 class SimpleInputGroups extends React.Component {
@@ -160,7 +158,6 @@ class SimpleInputGroups extends React.Component {
           <TextInput name="textInput10" id="textInput10" type="search" aria-label="input example with popover" />
           <Popover
             aria-label="popover example"
-            position={PopoverPosition.top}
             bodyContent="This field is an example of input group with popover"
           >
             <Button variant={ButtonVariant.tertiary} aria-label="popover for input">
