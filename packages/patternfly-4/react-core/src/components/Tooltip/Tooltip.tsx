@@ -54,7 +54,7 @@ export interface TooltipProps {
 export class Tooltip extends React.Component<TooltipProps> {
   private tip: TippyInstance;
   static defaultProps = {
-    position: 'auto',
+    position: 'top',
     trigger: 'mouseenter focus',
     enableFlip: true,
     className: '',

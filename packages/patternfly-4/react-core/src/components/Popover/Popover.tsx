@@ -89,7 +89,7 @@ export interface PopoverState {
 export class Popover extends React.Component<PopoverProps, PopoverState> {
   private tip: TippyInstance;
   static defaultProps = {
-    position: 'auto',
+    position: 'top',
     enableFlip: true,
     className: '',
     isVisible: null as boolean,
