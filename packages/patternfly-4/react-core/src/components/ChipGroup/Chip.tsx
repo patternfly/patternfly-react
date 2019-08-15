@@ -44,7 +44,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
     className: '',
     isOverflowChip: false,
     isReadOnly: false,
-    tooltipPosition: 'auto',
+    tooltipPosition: 'top',
     onClick: () => undefined as any,
     component: 'div'
   }

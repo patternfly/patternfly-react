@@ -23,7 +23,7 @@ export const ClipboardCopyButton: React.FunctionComponent<ClipboardCopyButtonPro
   exitDelay = 100,
   entryDelay = 100,
   maxWidth = '100px',
-  position = 'auto',
+  position = 'top',
   'aria-label': ariaLabel = 'Copyable input',
   id, 
   textId,

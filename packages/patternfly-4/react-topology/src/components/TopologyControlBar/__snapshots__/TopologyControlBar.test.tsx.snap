@@ -104,7 +104,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   boundary="window"
                   content={
                     <div
-                      className="pf-c-tooltip"
+                      className=""
                       role="tooltip"
                     >
                       <TooltipContent>
@@ -173,7 +173,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     containerInfo={
                       <div>
                         <div
-                          class="pf-c-tooltip"
+                          class=""
                           role="tooltip"
                         >
                           <div
@@ -186,7 +186,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     }
                   >
                     <div
-                      className="pf-c-tooltip"
+                      className=""
                       role="tooltip"
                     >
                       <TooltipContent>
@@ -232,7 +232,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   boundary="window"
                   content={
                     <div
-                      className="pf-c-tooltip"
+                      className=""
                       role="tooltip"
                     >
                       <TooltipContent>
@@ -324,7 +324,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     containerInfo={
                       <div>
                         <div
-                          class="pf-c-tooltip"
+                          class=""
                           role="tooltip"
                         >
                           <div
@@ -337,7 +337,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     }
                   >
                     <div
-                      className="pf-c-tooltip"
+                      className=""
                       role="tooltip"
                     >
                       <TooltipContent>
@@ -383,7 +383,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   boundary="window"
                   content={
                     <div
-                      className="pf-c-tooltip"
+                      className=""
                       role="tooltip"
                     >
                       <TooltipContent>
@@ -475,7 +475,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     containerInfo={
                       <div>
                         <div
-                          class="pf-c-tooltip"
+                          class=""
                           role="tooltip"
                         >
                           <div
@@ -488,7 +488,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                     }
                   >
                     <div
-                      className="pf-c-tooltip"
+                      className=""
                       role="tooltip"
                     >
                       <TooltipContent>
@@ -628,7 +628,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   boundary="window"
                   content={
                     <div
-                      className="pf-c-tooltip"
+                      className=""
                       role="tooltip"
                     >
                       <TooltipContent>
@@ -720,7 +720,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     containerInfo={
                       <div>
                         <div
-                          class="pf-c-tooltip"
+                          class=""
                           role="tooltip"
                         >
                           <div
@@ -733,7 +733,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     }
                   >
                     <div
-                      className="pf-c-tooltip"
+                      className=""
                       role="tooltip"
                     >
                       <TooltipContent>
@@ -779,7 +779,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   boundary="window"
                   content={
                     <div
-                      className="pf-c-tooltip"
+                      className=""
                       role="tooltip"
                     >
                       <TooltipContent>
@@ -871,7 +871,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     containerInfo={
                       <div>
                         <div
-                          class="pf-c-tooltip"
+                          class=""
                           role="tooltip"
                         >
                           <div
@@ -884,7 +884,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     }
                   >
                     <div
-                      className="pf-c-tooltip"
+                      className=""
                       role="tooltip"
                     >
                       <TooltipContent>
@@ -930,7 +930,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   boundary="window"
                   content={
                     <div
-                      className="pf-c-tooltip"
+                      className=""
                       role="tooltip"
                     >
                       <TooltipContent>
@@ -1022,7 +1022,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     containerInfo={
                       <div>
                         <div
-                          class="pf-c-tooltip"
+                          class=""
                           role="tooltip"
                         >
                           <div
@@ -1035,7 +1035,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     }
                   >
                     <div
-                      className="pf-c-tooltip"
+                      className=""
                       role="tooltip"
                     >
                       <TooltipContent>
@@ -1081,7 +1081,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   boundary="window"
                   content={
                     <div
-                      className="pf-c-tooltip"
+                      className=""
                       role="tooltip"
                     >
                       <TooltipContent>
@@ -1173,7 +1173,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     containerInfo={
                       <div>
                         <div
-                          class="pf-c-tooltip"
+                          class=""
                           role="tooltip"
                         >
                           <div
@@ -1186,7 +1186,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                     }
                   >
                     <div
-                      className="pf-c-tooltip"
+                      className=""
                       role="tooltip"
                     >
                       <TooltipContent>

@@ -19,7 +19,7 @@ exports[`ChipGroup chip group default 1`] = `
       isOverflowChip={false}
       isReadOnly={false}
       onClick={[Function]}
-      tooltipPosition="auto"
+      tooltipPosition="top"
     >
       1.1
     </Chip>
@@ -47,7 +47,7 @@ exports[`ChipGroup chip group with toolbar 1`] = `
         isOverflowChip={false}
         isReadOnly={false}
         onClick={[Function]}
-        tooltipPosition="auto"
+        tooltipPosition="top"
       >
         1.1
       </Chip>
