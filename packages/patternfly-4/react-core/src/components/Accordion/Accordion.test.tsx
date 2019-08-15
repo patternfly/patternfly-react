@@ -26,10 +26,9 @@ describe('Accordion', () => {
 
   test('It should pass optional aria props', () => {
     const view = mount(
-      <AccordionContext.Provider value={{ asDefinitionList: true }}>
+      <Accordion asDefinitionList>
         <AccordionToggle aria-label="Toggle details for" aria-labelledby="ex-toggle2 ex-item2" id="ex-toggle2" />
-      </AccordionContext.Provider>,
-      {}
+      </Accordion>
     );
     const button = view.find('button[id="ex-toggle2"]').getElement();
     expect(button.props['aria-label']).toBe('Toggle details for');
@@ -39,9 +38,9 @@ describe('Accordion', () => {
 
   test('Toggle expanded', () => {
     const view = mount(
-      <AccordionContext.Provider value={{ asDefinitionList: true }}>
+      <Accordion asDefinitionList>
         <AccordionToggle aria-label="Toggle details for" id="ex-toggle2" isExpanded />
-      </AccordionContext.Provider>
+      </Accordion>
     );
     const button = view.find('button[id="ex-toggle2"]').getElement();
     expect(button.props['aria-expanded']).toBe(true);

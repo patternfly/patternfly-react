@@ -27,7 +27,11 @@ export const Accordion: React.FunctionComponent<AccordionProps> = ({
   const AccordionList: any = asDefinitionList ? 'dl' : 'div';
   return (
     <AccordionList className={css(styles.accordion, className)} aria-label={ariaLabel} {...props}>
-      <AccordionContext.Provider value={{ AccordionHeadingLevel: headingLevel, asDefinitionList }}>
+      <AccordionContext.Provider value={{
+        HeadingLevel: headingLevel,
+        ContentContainer: asDefinitionList ? 'dd' : 'div',
+        ToggleContainer: asDefinitionList ? 'dt' : headingLevel
+      }}>
         {children}
       </AccordionContext.Provider>
     </AccordionList>
