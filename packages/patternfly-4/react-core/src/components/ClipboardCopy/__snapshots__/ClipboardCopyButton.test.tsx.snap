@@ -11,10 +11,21 @@ exports[`copy button render 1`] = `
       Copy Me
     </div>
   }
-  distance={25}
+  distance={15}
   enableFlip={true}
   entryDelay={2000}
   exitDelay={1000}
+  flipBehavior={
+    Array [
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "top",
+      "right",
+      "bottom",
+    ]
+  }
   isAppLauncher={false}
   maxWidth="500px"
   position="right"

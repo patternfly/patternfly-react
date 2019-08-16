@@ -13,8 +13,19 @@ exports[`popover can specify position as object value 1`] = `
       [Function]
     </GenerateId>
   }
-  distance={35}
+  distance={25}
   flip={true}
+  flipBehavior={
+    Array [
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "top",
+      "right",
+      "bottom",
+    ]
+  }
   hideOnClick={false}
   interactive={true}
   interactiveBorder={0}
@@ -64,8 +75,19 @@ exports[`popover renders close-button, header and body 1`] = `
       [Function]
     </GenerateId>
   }
-  distance={35}
+  distance={25}
   flip={true}
+  flipBehavior={
+    Array [
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "top",
+      "right",
+      "bottom",
+    ]
+  }
   hideOnClick={false}
   interactive={true}
   interactiveBorder={0}

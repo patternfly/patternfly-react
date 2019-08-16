@@ -28,22 +28,40 @@ export enum PopoverPosition {
 };
 
 export interface PopoverProps {
-  /** Popover position */
-  position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
-  /** If true, tries to keep the popover in view by flipping it if necessary */
-  enableFlip?: boolean;
-  /** Popover additional class */
-  className?: string;
-  /** The reference element to which the popover is relatively placed to */
-  children: ReactElement<any>;
   /** Accessible label, required when header is not present */
   'aria-label'?: string;
-  /** Header content, leave empty for no header */
-  headerContent?: React.ReactNode;
+  /** The element to append the popover to, defaults to body */
+  appendTo?: Element | ((ref: Element) => Element);
   /** Body content */
   bodyContent: React.ReactNode;
+  /** If enableFlip is true, the popover responds to this boundary */
+  boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
+  /** The reference element to which the popover is relatively placed to */
+  children: ReactElement<any>;
+  /** Popover additional class */
+  className?: string;
+  /** Aria label for the Close button */
+  closeBtnAriaLabel?: string;
+  /** Distance of the popover to its target, defaults to 25 */
+  distance?: number;
+  /** If true, tries to keep the popover in view by flipping it if necessary */
+  enableFlip?: boolean;
+  /** 
+   * The desired position to flip the popover to if the initial position is not possible. 
+   * By setting this prop to 'flip' it attempts to flip the popover to the opposite side if there is no space.
+   * You can also pass an array of positions that determines the flip order. It should contain the initial position
+   * followed by alternative positions if that position is unavailable.
+   * Example: Initial position is 'top'. Button with popover is in the top right corner. 'flipBehavior' is set to
+   * ['top', 'right', 'left']. Since there is no space to the top, it checks if right is available. There's also no
+   * space to the right, so it finally shows the popover on the left.
+   */
+  flipBehavior?: 'flip' | ('top' | 'bottom' | 'left' | 'right')[];
   /** Footer content */
   footerContent?: React.ReactNode;
+  /** Header content, leave empty for no header */
+  headerContent?: React.ReactNode;
+  /** Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */
+  hideOnOutsideClick?: boolean;
   /**
    * True to show the popover programmatically. Used in conjunction with the shouldClose prop.
    * By default, the popover child element handles click events automatically. If you want to control this programmatically,
@@ -51,35 +69,32 @@ export interface PopoverProps {
    * Instead, the consumer is responsible for closing the popover themselves by adding a callback listener for the shouldClose prop.
    */
   isVisible?: boolean;
+  /** Maximum width of the popover (default 18.75rem) */
+  maxWidth?: string;
+  /** Lifecycle function invoked when the popover has fully transitioned out. */
+  onHidden?: (tip:TippyInstance) => void;
+  /** Lifecycle function invoked when the popover begins to transition out. */
+  onHide?: (tip:TippyInstance) => void;
+  /** Lifecycle function invoked when the popover has been mounted to the DOM. */
+  onMount?: (tip:TippyInstance) => void;
+  /** Lifecycle function invoked when the popover begins to transition in. */
+  onShow?: (tip:TippyInstance) => void;
+  /** Lifecycle function invoked when the popover has fully transitioned in. */
+  onShown?: (tip:TippyInstance) => void;
+  /** 
+   * Popover position. Note: With 'enableFlip' set to true, 
+   * it will change the position if there is not enough space for the starting position.
+   * The behavior of where it flips to can be controlled through the flipBehavior prop.
+   */
+  position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /**
    * Callback function that is only invoked when isVisible is also controlled. Called when the popover Close button is
    * clicked or the ESC key is used
    */
   shouldClose?: (tip:TippyInstance) => void;
-  /** The element to append the popover to, defaults to body */
-  appendTo?: Element | ((ref: Element) => Element);
-  /** Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */
-  hideOnOutsideClick?: boolean;
-  /** Lifecycle function invoked when the popover begins to transition out. */
-  onHide?: (tip:TippyInstance) => void;
-  /** Lifecycle function invoked when the popover has fully transitioned out. */
-  onHidden?: (tip:TippyInstance) => void;
-  /** Lifecycle function invoked when the popover begins to transition in. */
-  onShow?: (tip:TippyInstance) => void;
-  /** Lifecycle function invoked when the popover has fully transitioned in. */
-  onShown?: (tip:TippyInstance) => void;
-  /** Lifecycle function invoked when the popover has been mounted to the DOM. */
-  onMount?: (tip:TippyInstance) => void;
   /** z-index of the popover */
   zIndex?: number;
-  /** Maximum width of the tooltip (default 18.75rem) */
-  maxWidth?: string;
-  /** Aria label for the Close button */
-  closeBtnAriaLabel?: string;
-  /** Distance of the tooltip to its target, defaults to 35 */
-  distance?: number;
-  /** If enableFlip is true, the popover responds to this boundary */
-  boundary?: 'scrollParent' | 'window' | 'viewport' | HTMLElement;
+  
 }
 
 export interface PopoverState {
@@ -107,8 +122,10 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     zIndex: 9999,
     maxWidth: popoverMaxWidth && popoverMaxWidth.value,
     closeBtnAriaLabel: 'Close',
-    distance: 35,
-    boundary: 'window'
+    distance: 25,
+    boundary: 'window',
+    // For every initial starting position, there are 3 escape positions
+    flipBehavior: ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom']
   };
 
   constructor(props: PopoverProps) {
@@ -208,6 +225,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       closeBtnAriaLabel,
       distance,
       boundary,
+      flipBehavior,
       ...rest
     } = this.props;
 
@@ -274,6 +292,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
         placement={position}
         distance={distance}
         flip={enableFlip}
+        flipBehavior={flipBehavior}
         boundary={boundary}
         popperOptions={{
           modifiers: {

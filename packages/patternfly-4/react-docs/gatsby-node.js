@@ -87,6 +87,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '@patternfly-safe/react-core': '@patternfly/react-core',
         '@patternfly-safe/react-icons': '@patternfly/react-icons',
         '@patternfly-safe/react-tokens': '@patternfly/react-tokens',
+        '@patternfly-safe/react-styles': '@patternfly/react-styles',
         // Resolve imports in .mdx files to local dist folders
         '@patternfly/react-charts': path.resolve(__dirname, '../react-charts'),
         '@patternfly/react-core': path.resolve(__dirname, '../react-core'),
