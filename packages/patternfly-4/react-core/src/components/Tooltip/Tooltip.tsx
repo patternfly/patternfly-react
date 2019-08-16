@@ -48,7 +48,7 @@ export interface TooltipProps {
    * ['top', 'right', 'left']. Since there is no space to the top, it checks if right is available. There's also no
    * space to the right, so it finally shows the tooltip on the left.
    */
-  flipBehavior?: 'flip' | Array<'top' | 'bottom' | 'left' | 'right'>;
+  flipBehavior?: 'flip' | ('top' | 'bottom' | 'left' | 'right')[];
   /** If true, displays as an application launcher */
   isAppLauncher?: boolean;
   /** Maximum width of the tooltip (default 12.5rem) */

@@ -55,7 +55,7 @@ export interface PopoverProps {
    * ['top', 'right', 'left']. Since there is no space to the top, it checks if right is available. There's also no
    * space to the right, so it finally shows the popover on the left.
    */
-  flipBehavior?: 'flip' | Array<'top' | 'bottom' | 'left' | 'right'>;
+  flipBehavior?: 'flip' | ('top' | 'bottom' | 'left' | 'right')[];
   /** Footer content */
   footerContent?: React.ReactNode;
   /** Header content, leave empty for no header */
