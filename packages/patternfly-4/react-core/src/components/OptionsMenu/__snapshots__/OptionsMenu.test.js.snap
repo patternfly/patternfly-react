@@ -3322,6 +3322,7 @@ exports[`optionsMenu text 1`] = `
             aria-haspopup="listbox"
             aria-label="Options menu"
             className=""
+            isDisabled={false}
             isOpen={false}
             isSplitButton={true}
             onEnter={[Function]}

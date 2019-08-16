@@ -404,3 +404,62 @@ class PlainWithText extends React.Component {
   }
 }
 ```
+
+## Options menu - plain with text disabled
+```js
+import React from 'react';
+import { OptionsMenu, OptionsMenuItem, OptionsMenuToggleWithText } from '@patternfly/react-core';
+import { CaretDownIcon } from '@patternfly/react-icons';
+
+class PlainWithText extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        isOpen: false,
+        toggleText: <React.Fragment>Custom text</React.Fragment>,
+        customOption1: true,
+        customOption2: false,
+        customOption3: false
+      };
+
+      this.onToggle = () => {
+          this.setState({
+              isOpen: !this.state.isOpen
+          });
+      };
+      
+      this.onSelect = event => {
+        const id = event.currentTarget.id;
+        this.setState((prevState) => {
+          return { [id]: !prevState[id] };
+        });
+      };
+
+      this.onToggle = () => {
+        this.setState({
+          isOpen: !this.state.isOpen
+        });
+      };
+    }
+
+  render() {
+    const { isOpen, toggleText, buttonContents } = this.state;
+    const menuItems = [
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.customOption1} id="customOption1" key="option 1">Option 1</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.customOption2} id="customOption2" key="option 2">Option 2</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.customOption3} id="customOption3" key="option 3">Option 3</OptionsMenuItem>
+    ];
+    const toggle = <OptionsMenuToggleWithText isDisabled toggleText={toggleText} onToggle={this.onToggle} />;
+
+    return (
+      <OptionsMenu 
+        id="options-menu-plain-with-text-example" 
+        menuItems={menuItems} 
+        isOpen={isOpen} 
+        isPlain
+        isText
+        toggle={toggle} />
+    );
+  }
+}
+```
