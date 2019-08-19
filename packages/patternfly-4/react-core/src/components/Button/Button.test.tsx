@@ -1,11 +1,11 @@
 import { Button, ButtonVariant } from './Button';
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { CartArrowDownIcon } from '@patternfly/react-icons';
 
 Object.values(ButtonVariant).forEach(variant => {
   test(`${variant} button`, () => {
-    const view = shallow(
+    const view = mount(
       <Button variant={variant} aria-label={variant}>
         {variant} Button
       </Button>
@@ -21,7 +21,7 @@ test('it adds an aria-label to plain buttons', () => {
 });
 
 test('link with icon', () => {
-  const view = shallow(
+  const view = mount(
     <Button variant={ButtonVariant.link} icon={<CartArrowDownIcon />}>
       Block Button
     </Button>
@@ -30,27 +30,27 @@ test('link with icon', () => {
 });
 
 test('isBlock', () => {
-  const view = shallow(<Button isBlock>Block Button</Button>);
+  const view = mount(<Button isBlock>Block Button</Button>);
   expect(view).toMatchSnapshot();
 });
 
 test('isDisabled', () => {
-  const view = shallow(<Button isDisabled>Disabled Button</Button>);
+  const view = mount(<Button isDisabled>Disabled Button</Button>);
   expect(view).toMatchSnapshot();
 });
 
 test('isFocus', () => {
-  const view = shallow(<Button isFocus>Focused Button</Button>);
+  const view = mount(<Button isFocus>Focused Button</Button>);
   expect(view).toMatchSnapshot();
 });
 
 test('isHover', () => {
-  const view = shallow(<Button isHover>Hovered Button</Button>);
+  const view = mount(<Button isHover>Hovered Button</Button>);
   expect(view).toMatchSnapshot();
 });
 
 test('isInline', () => {
-  const view = shallow(
+  const view = mount(
     <Button variant={ButtonVariant.link} isInline>
       Hovered Button
     </Button>
@@ -71,7 +71,7 @@ test('allows passing in a React Component as the component', () => {
 });
 
 test('aria-disabled is set to true and tabIndex to -1 if component is not a button and is disabled', () => {
-  const view = shallow(
+  const view = mount(
     <Button component="a" isDisabled>
       Disabled Anchor Button
     </Button>
