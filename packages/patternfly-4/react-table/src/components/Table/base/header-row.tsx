@@ -8,12 +8,12 @@ import * as React from 'react';
 import { evaluateFormatters } from './evaluate-formatters';
 import { evaluateTransforms } from './evaluate-transforms';
 import { mergeProps } from './merge-props';
-import { createElementType, ColumnType, HeaderType, RowsType, RenderersTypes } from './types';
+import { createElementType, ColumnType, HeaderType, RowsType, RendererType } from './types';
 
 export interface HeaderRowProps {
   rowData: RowsType;
   rowIndex: number;
-  renderers: RenderersTypes['renderers']['header'];
+  renderers: RendererType;
   onRow?: Function;
 }
 

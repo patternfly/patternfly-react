@@ -6,7 +6,7 @@
  */
 import * as React from 'react';
 import { isEqual, isFunction } from 'lodash';
-import { RowsType, RowType, RowKeyType, RenderersTypes, createElementType } from './types';
+import { RowsType, RowType, RowKeyType, RenderersTypes, createElementType, ColumnsType } from './types';
 import { resolveRowKey } from './resolve-row-key';
 import { BodyRow } from './body-row';
 import { ProviderContext } from './provider';
@@ -15,7 +15,7 @@ export interface BodyProps {
   onRow?: Function;
   rows: RowsType;
   rowKey?: RowKeyType;
-  columns?: RenderersTypes['columns'];
+  columns?: ColumnsType;
   renderers?: RenderersTypes['renderers'];
   mappedRows?: any;
   className?: string;

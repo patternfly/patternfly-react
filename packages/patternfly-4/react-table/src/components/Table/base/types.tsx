@@ -65,20 +65,17 @@ export type transformsType = transformType[];
 // Renderers Types
 export type createElementType = string | React.ComponentClass<any, any> | React.FunctionComponent<any>;
 export type rendererType = string | Function | React.ComponentClass<any, any> | React.FunctionComponent<any> | React.Component<any, {}, any>;
+export interface RendererType {
+  wrapper?: rendererType,
+  row?: rendererType,
+  cell?: rendererType
+}
 export interface RenderersTypes {
   columns: ColumnsType,
   renderers?: {
     table?: string,
-    header?: {
-      wrapper?: rendererType,
-      row?: rendererType,
-      cell?: rendererType,
-    },
-    body?: {
-      wrapper?: rendererType,
-      row?: rendererType,
-      cell?: rendererType
-    }
+    header?: RendererType,
+    body?: RendererType
   },
   components?: {
     table?: string,

@@ -5,7 +5,7 @@
  * https://github.com/reactabular/reactabular/tree/v8.14.0/packages/reactabular-table/src
  */
 import * as React from 'react';
-import { RenderersTypes, TableDefaults } from './types';
+import { RenderersTypes, TableDefaults, ColumnsType } from './types';
 
 export interface ProviderProps extends RenderersTypes {
   children?: React.ReactNode;
@@ -14,7 +14,7 @@ export interface ProviderProps extends RenderersTypes {
 }
 
 export const ProviderContext = React.createContext({
-  columns: null as RenderersTypes['columns'],
+  columns: null as ColumnsType,
   renderers: null as RenderersTypes['renderers']
 });
 
