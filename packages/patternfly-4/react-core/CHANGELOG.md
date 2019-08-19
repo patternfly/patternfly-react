@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.88.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.87.4...@patternfly/react-core@3.88.0) (2019-08-19)
+
+
+### Features
+
+* **Select:** adds direction prop to Select ([#2611](https://github.com/patternfly/patternfly-react/issues/2611)) ([f192742](https://github.com/patternfly/patternfly-react/commit/f192742))
+
+
+
+
+
 ## [3.87.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.87.3...@patternfly/react-core@3.87.4) (2019-08-19)
 
 **Note:** Version bump only for package @patternfly/react-core

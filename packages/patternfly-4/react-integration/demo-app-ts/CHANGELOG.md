@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.20.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.19.9...demo-app-ts@2.20.0) (2019-08-19)
+
+
+### Features
+
+* **Select:** adds direction prop to Select ([#2611](https://github.com/patternfly/patternfly-react/issues/2611)) ([f192742](https://github.com/patternfly/patternfly-react/commit/f192742))
+
+
+
+
+
 ## [2.19.9](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.19.8...demo-app-ts@2.19.9) (2019-08-19)
 
 **Note:** Version bump only for package demo-app-ts
