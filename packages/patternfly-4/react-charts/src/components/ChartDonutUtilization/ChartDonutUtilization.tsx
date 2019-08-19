@@ -316,16 +316,19 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   legendComponent?: React.ReactElement<any>;
   /**
-   * The data prop specifies the data to be plotted,
-   * where data X-value is the slice label (string or number),
-   * and Y-value is the corresponding number value represented by the slice
-   * Data should be in the form of an array of data points.
-   * Each data point may be any format you wish (depending on the `x` and `y` accessor props),
-   * but by default, an object with x and y properties is expected.
+   * Specify data via the data prop. ChartLegend expects data as an
+   * array of objects with name (required), symbol, and labels properties.
+   * The data prop must be given as an array.
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  legendData?: any[];
+  legendData?: Array<{
+    name?: string;
+    symbol?: {
+      fill?: string;
+      type?: string;
+    };
+  }>;
   /**
    * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */

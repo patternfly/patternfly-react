@@ -438,8 +438,6 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   data = [],
   invert = false,
   labels = [], // Don't show any tooltip labels by default, let consumer override if needed
-  legendComponent,
-  legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartDonutThresholdLegendPosition,
   standalone = true,
   subTitlePosition = ChartDonutStyles.label.subTitlePosition as ChartDonutThresholdSubTitlePosition,

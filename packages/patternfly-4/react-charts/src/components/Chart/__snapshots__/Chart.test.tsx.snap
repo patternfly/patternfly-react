@@ -78,7 +78,7 @@ exports[`Chart 1`] = `
               "ticks": Object {
                 "fill": "transparent",
                 "size": 5,
-                "stroke": "none",
+                "stroke": "#d2d2d2",
                 "strokeLinecap": "round",
                 "strokeLinejoin": "round",
                 "strokeWidth": 1,
@@ -2675,7 +2675,7 @@ exports[`Chart 1`] = `
           "ticks": Object {
             "fill": "transparent",
             "size": 5,
-            "stroke": "none",
+            "stroke": "#d2d2d2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -3133,7 +3133,7 @@ exports[`Chart 2`] = `
               "ticks": Object {
                 "fill": "transparent",
                 "size": 5,
-                "stroke": "none",
+                "stroke": "#d2d2d2",
                 "strokeLinecap": "round",
                 "strokeLinejoin": "round",
                 "strokeWidth": 1,
@@ -5730,7 +5730,7 @@ exports[`Chart 2`] = `
           "ticks": Object {
             "fill": "transparent",
             "size": 5,
-            "stroke": "none",
+            "stroke": "#d2d2d2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -6188,7 +6188,7 @@ exports[`renders axis and component children 1`] = `
               "ticks": Object {
                 "fill": "transparent",
                 "size": 5,
-                "stroke": "none",
+                "stroke": "#d2d2d2",
                 "strokeLinecap": "round",
                 "strokeLinejoin": "round",
                 "strokeWidth": 1,
@@ -8790,7 +8790,7 @@ exports[`renders axis and component children 1`] = `
           "ticks": Object {
             "fill": "transparent",
             "size": 5,
-            "stroke": "none",
+            "stroke": "#d2d2d2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,

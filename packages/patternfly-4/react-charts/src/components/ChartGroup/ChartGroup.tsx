@@ -418,7 +418,7 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
   theme = getTheme(themeColor, themeVariant),
   ...rest
 }: ChartGroupProps) => {
-  const container = React.cloneElement(containerComponent as React.ReactElement<any>, {
+  const container = React.cloneElement(containerComponent, {
     desc: ariaDesc,
     title: ariaTitle,
     theme,

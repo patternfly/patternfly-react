@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Chart 1`] = `
+exports[`ChartLabel 1`] = `
 <VictoryLabel
   capHeight={0.71}
   direction="inherit"
@@ -17,7 +17,7 @@ exports[`Chart 1`] = `
 />
 `;
 
-exports[`Chart 2`] = `
+exports[`ChartLabel 2`] = `
 <VictoryLabel
   capHeight={0.71}
   direction="inherit"
