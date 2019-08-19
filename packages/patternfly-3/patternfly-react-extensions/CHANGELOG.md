@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.19.10](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.9...patternfly-react-extensions@2.19.10) (2019-08-19)
+
+
+### Bug Fixes
+
+* **CatalogTile:** Add iconAlt property to use for alt text for icon image in a CatalogTile ([#2715](https://github.com/patternfly/patternfly-react/issues/2715)) ([0853b59](https://github.com/patternfly/patternfly-react/commit/0853b59)), closes [#2714](https://github.com/patternfly/patternfly-react/issues/2714)
+
+
+
+
+
 ## [2.19.9](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.8...patternfly-react-extensions@2.19.9) (2019-08-12)
 
 **Note:** Version bump only for package patternfly-react-extensions
