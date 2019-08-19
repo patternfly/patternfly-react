@@ -1,7 +1,13 @@
 /* eslint-disable camelcase */
 import {
-  chart_bullet_value_Width,
-  chart_donut_label_subtitle_Fill,
+  chart_bullet_axis_tick_count,
+  chart_bullet_comparative_measure_Width,
+  chart_bullet_comparative_measure_error_Width,
+  chart_bullet_comparative_measure_warning_Width,
+  chart_bullet_label_subtitle_Fill,
+  chart_bullet_primary_measure_dot_size,
+  chart_bullet_primary_measure_segmented_Width,
+  chart_bullet_qualitative_range_Width,
   chart_global_FontSize_2xl,
   chart_global_FontSize_sm,
   chart_global_FontSize_lg
@@ -9,10 +15,10 @@ import {
 
 // Bullet styles
 export const BulletStyles = {
-  axisTickCount: 5, // Todo: add var to theme
-  comparativeMeasureErrorWidth: 30, // Todo: add pfcore var
-  comparativeMeasureWidth: 30, // Todo: add pfcore var
-  comparativeMeasureWarningWidth: 30, // Todo: add pfcore var
+  axisTickCount: chart_bullet_axis_tick_count.value,
+  comparativeMeasureErrorWidth: chart_bullet_comparative_measure_error_Width.value,
+  comparativeMeasureWarningWidth: chart_bullet_comparative_measure_warning_Width.value,
+  comparativeMeasureWidth: chart_bullet_comparative_measure_Width.value,
   label: {
     groupTitle: {
       // Victory props only
@@ -20,7 +26,7 @@ export const BulletStyles = {
     },
     subTitle: {
       // Victory props only
-      fill: chart_donut_label_subtitle_Fill.value, // "#bbb"
+      fill: chart_bullet_label_subtitle_Fill.value,
       fontSize: chart_global_FontSize_sm.value
     },
     title: {
@@ -28,7 +34,7 @@ export const BulletStyles = {
       fontSize: chart_global_FontSize_lg.value
     }
   },
-  primaryDotMeasureSize: 6, // Todo: add pfcore var
-  primarySegmentedMeasureWidth: chart_bullet_value_Width.value, // Todo: rename pfcore var
-  qualitativeRangeWidth: 30, // Todo: add pfcore var
+  primaryDotMeasureSize: chart_bullet_primary_measure_dot_size.value,
+  primarySegmentedMeasureWidth: chart_bullet_primary_measure_segmented_Width.value,
+  qualitativeRangeWidth: chart_bullet_qualitative_range_Width.value
 };
