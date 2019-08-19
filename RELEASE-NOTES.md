@@ -1,6 +1,14 @@
 # 2019.06 release notes (2019-08-13)
 Packages released:
--
+- [@patternfly/react-charts@4.7.9](https://www.npmjs.com/package/@patternfly/react-charts/v/4.7.9)
+- [@patternfly/react-core@3.87.3](https://www.npmjs.com/package/@patternfly/react-core/v/3.87.3)
+- [@patternfly/react-styles@3.5.13](https://www.npmjs.com/package/@patternfly/react-styles/v/3.5.13)
+- [@patternfly/react-table@2.17.5](https://www.npmjs.com/package/@patternfly/react-table/v/2.17.5)
+- [@patternfly/react-tokens@2.6.16](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.6.16)
+- [@patternfly/react-topology@2.7.31](https://www.npmjs.com/package/@patternfly/react-topology/v/2.7.31)
+- [@patternfly/react-icons@3.10.14](https://www.npmjs.com/package/@patternfly/react-icons/v/3.10.14)
+- [@patternfly/react-virtualized-extension@1.1.117](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.1.117)
+- [@patternfly/react-inline-edit-extension@2.10.5](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.10.5)
 
 ## Charts
 - Used vars to enable Red Hat fonts. When the pf-m-redhat-font selector is added to the page, the Red Hat font is expected to be used instead of the default Overpass font. This change ensures that charts and its labels use the Red Hat font as expected
