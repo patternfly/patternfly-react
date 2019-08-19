@@ -3,14 +3,26 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import SidebarLayout from './sidebarLayout';
 import { CSSVars, PropsTable, LiveEdit } from '../components/componentDocs';
-import { Title, PageSection } from '@patternfly-safe/react-core';
+import { Title, PageSection, Text, TextList, TextListItem } from '@patternfly-safe/react-core';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from '../components/mdx-renderer';
 
 const components = {
+  wrapper: componentProps => <div className="theme-pf-c-content" {...componentProps} />,
   code: LiveEdit,
-  pre: React.Fragment
+  pre: React.Fragment,
+  p: componentProps => <Text component="p" {...componentProps} />,
+  blockquote: componentProps => <Text component="blockquote" {...componentProps} />,
+  a: componentProps => <Text component="a" {...componentProps} />,
+  ul: componentProps => <TextList {...componentProps} />,
+  ol: componentProps => <TextList component="ol" {...componentProps} />,
+  li: componentProps => <TextListItem {...componentProps} />,
+  inlineCode: componentProps => <strong {...componentProps} />
 };
+
+for (let i = 1; i <= 6; i++) {
+  components[`h${i}`] = componentProps => <Text component={`h${i}`} {...componentProps} />;
+}
 
 const MdxTemplate = ({ data }) => {
   const { cssPrefix } = data.mdx.frontmatter;
@@ -20,7 +32,7 @@ const MdxTemplate = ({ data }) => {
   return (
     <SidebarLayout>
       <PageSection>
-        <Title size="4xl">
+        <Title size="4xl" className="pf-u-mb-lg">
           {data.mdx.frontmatter.title} {section.indexOf('-') === -1 ? section : ''}
         </Title>
         <MDXProvider components={components}>
