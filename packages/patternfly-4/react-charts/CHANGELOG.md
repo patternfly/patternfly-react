@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.7.11...@patternfly/react-charts@4.8.0) (2019-08-19)
+
+
+### Features
+
+* **charts:** add bullet chart ([#2708](https://github.com/patternfly/patternfly-react/issues/2708)) ([c871fff](https://github.com/patternfly/patternfly-react/commit/c871fff))
+
+
+
+
+
 ## [4.7.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.7.10...@patternfly/react-charts@4.7.11) (2019-08-19)
 
 **Note:** Version bump only for package @patternfly/react-charts

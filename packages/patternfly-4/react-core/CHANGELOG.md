@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.89.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.88.3...@patternfly/react-core@3.89.0) (2019-08-19)
+
+
+### Features
+
+* **charts:** add bullet chart ([#2708](https://github.com/patternfly/patternfly-react/issues/2708)) ([c871fff](https://github.com/patternfly/patternfly-react/commit/c871fff))
+
+
+
+
+
 ## [3.88.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.88.2...@patternfly/react-core@3.88.3) (2019-08-19)
 
 **Note:** Version bump only for package @patternfly/react-core
