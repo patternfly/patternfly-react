@@ -10,6 +10,7 @@ exports[`checkbox select renders checkbox select groups successfully - old class
   ariaLabelledBy=""
   className=""
   direction="down"
+  isDisabled={false}
   isExpanded={true}
   isGrouped={true}
   isPlain={false}
@@ -32,10 +33,10 @@ exports[`checkbox select renders checkbox select groups successfully - old class
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-11"
+      ariaLabelledBy=" pf-toggle-id-14"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-11"
+      id="pf-toggle-id-14"
       isActive={false}
       isDisabled={false}
       isExpanded={true}
@@ -52,9 +53,9 @@ exports[`checkbox select renders checkbox select groups successfully - old class
           >
             <button
               aria-expanded="true"
-              aria-labelledby=" pf-toggle-id-11"
+              aria-labelledby=" pf-toggle-id-14"
               class="pf-c-select__toggle"
-              id="pf-toggle-id-11"
+              id="pf-toggle-id-14"
               type="button"
             >
               <div
@@ -249,16 +250,10 @@ exports[`checkbox select renders checkbox select groups successfully - old class
       <button
         aria-expanded={true}
         aria-haspopup={null}
-<<<<<<< HEAD
-        aria-labelledby=" pf-toggle-id-13"
+        aria-labelledby=" pf-toggle-id-14"
         className="pf-c-select__toggle"
         disabled={false}
-        id="pf-toggle-id-13"
-=======
-        aria-labelledby=" pf-toggle-id-11"
-        className="pf-c-select__toggle"
-        id="pf-toggle-id-11"
->>>>>>> feat(Select): adds direction prop to Select
+        id="pf-toggle-id-14"
         onClick={[Function]}
         onKeyDown={[Function]}
         type="button"
@@ -637,11 +632,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={true}
   isGrouped={true}
   isPlain={false}
@@ -664,17 +656,10 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-<<<<<<< HEAD
-      ariaLabelledBy=" pf-toggle-id-12"
+      ariaLabelledBy=" pf-toggle-id-13"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-12"
-=======
-      ariaLabelledBy=" pf-toggle-id-10"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-10"
->>>>>>> feat(Select): adds direction prop to Select
+      id="pf-toggle-id-13"
       isActive={false}
       isDisabled={false}
       isExpanded={true}
@@ -691,15 +676,9 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <button
               aria-expanded="true"
-<<<<<<< HEAD
-              aria-labelledby=" pf-toggle-id-12"
+              aria-labelledby=" pf-toggle-id-13"
               class="pf-c-select__toggle"
-              id="pf-toggle-id-12"
-=======
-              aria-labelledby=" pf-toggle-id-10"
-              class="pf-c-select__toggle"
-              id="pf-toggle-id-10"
->>>>>>> feat(Select): adds direction prop to Select
+              id="pf-toggle-id-13"
               type="button"
             >
               <div
@@ -894,16 +873,10 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       <button
         aria-expanded={true}
         aria-haspopup={null}
-<<<<<<< HEAD
-        aria-labelledby=" pf-toggle-id-12"
+        aria-labelledby=" pf-toggle-id-13"
         className="pf-c-select__toggle"
         disabled={false}
-        id="pf-toggle-id-12"
-=======
-        aria-labelledby=" pf-toggle-id-10"
-        className="pf-c-select__toggle"
-        id="pf-toggle-id-10"
->>>>>>> feat(Select): adds direction prop to Select
+        id="pf-toggle-id-13"
         onClick={[Function]}
         onKeyDown={[Function]}
         type="button"
@@ -1306,11 +1279,8 @@ exports[`checkbox select renders closed successfully - old classes 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={false}
   isGrouped={false}
   isPlain={false}
@@ -1333,17 +1303,10 @@ exports[`checkbox select renders closed successfully - old classes 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-<<<<<<< HEAD
-      ariaLabelledBy=" pf-toggle-id-8"
+      ariaLabelledBy=" pf-toggle-id-9"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-8"
-=======
-      ariaLabelledBy=" pf-toggle-id-7"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-7"
->>>>>>> feat(Select): adds direction prop to Select
+      id="pf-toggle-id-9"
       isActive={false}
       isDisabled={false}
       isExpanded={false}
@@ -1360,15 +1323,9 @@ exports[`checkbox select renders closed successfully - old classes 1`] = `
           >
             <button
               aria-expanded="false"
-<<<<<<< HEAD
-              aria-labelledby=" pf-toggle-id-8"
+              aria-labelledby=" pf-toggle-id-9"
               class="pf-c-select__toggle"
-              id="pf-toggle-id-8"
-=======
-              aria-labelledby=" pf-toggle-id-7"
-              class="pf-c-select__toggle"
-              id="pf-toggle-id-7"
->>>>>>> feat(Select): adds direction prop to Select
+              id="pf-toggle-id-9"
               type="button"
             >
               <div
@@ -1404,16 +1361,10 @@ exports[`checkbox select renders closed successfully - old classes 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup={null}
-<<<<<<< HEAD
-        aria-labelledby=" pf-toggle-id-8"
+        aria-labelledby=" pf-toggle-id-9"
         className="pf-c-select__toggle"
         disabled={false}
-        id="pf-toggle-id-8"
-=======
-        aria-labelledby=" pf-toggle-id-7"
-        className="pf-c-select__toggle"
-        id="pf-toggle-id-7"
->>>>>>> feat(Select): adds direction prop to Select
+        id="pf-toggle-id-9"
         onClick={[Function]}
         onKeyDown={[Function]}
         type="button"
@@ -1468,11 +1419,8 @@ exports[`checkbox select renders closed successfully 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={false}
   isGrouped={false}
   isPlain={false}
@@ -1495,17 +1443,10 @@ exports[`checkbox select renders closed successfully 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-<<<<<<< HEAD
-      ariaLabelledBy=" pf-toggle-id-7"
+      ariaLabelledBy=" pf-toggle-id-8"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-7"
-=======
-      ariaLabelledBy=" pf-toggle-id-6"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-6"
->>>>>>> feat(Select): adds direction prop to Select
+      id="pf-toggle-id-8"
       isActive={false}
       isDisabled={false}
       isExpanded={false}
@@ -1522,15 +1463,9 @@ exports[`checkbox select renders closed successfully 1`] = `
           >
             <button
               aria-expanded="false"
-<<<<<<< HEAD
-              aria-labelledby=" pf-toggle-id-7"
+              aria-labelledby=" pf-toggle-id-8"
               class="pf-c-select__toggle"
-              id="pf-toggle-id-7"
-=======
-              aria-labelledby=" pf-toggle-id-6"
-              class="pf-c-select__toggle"
-              id="pf-toggle-id-6"
->>>>>>> feat(Select): adds direction prop to Select
+              id="pf-toggle-id-8"
               type="button"
             >
               <div
@@ -1566,16 +1501,10 @@ exports[`checkbox select renders closed successfully 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup={null}
-<<<<<<< HEAD
-        aria-labelledby=" pf-toggle-id-7"
+        aria-labelledby=" pf-toggle-id-8"
         className="pf-c-select__toggle"
         disabled={false}
-        id="pf-toggle-id-7"
-=======
-        aria-labelledby=" pf-toggle-id-6"
-        className="pf-c-select__toggle"
-        id="pf-toggle-id-6"
->>>>>>> feat(Select): adds direction prop to Select
+        id="pf-toggle-id-8"
         onClick={[Function]}
         onKeyDown={[Function]}
         type="button"
@@ -1630,11 +1559,8 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
@@ -1657,17 +1583,10 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-<<<<<<< HEAD
-      ariaLabelledBy=" pf-toggle-id-10"
+      ariaLabelledBy=" pf-toggle-id-11"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-10"
-=======
-      ariaLabelledBy=" pf-toggle-id-9"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-9"
->>>>>>> feat(Select): adds direction prop to Select
+      id="pf-toggle-id-11"
       isActive={false}
       isDisabled={false}
       isExpanded={true}
@@ -1684,15 +1603,9 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
           >
             <button
               aria-expanded="true"
-<<<<<<< HEAD
-              aria-labelledby=" pf-toggle-id-10"
+              aria-labelledby=" pf-toggle-id-11"
               class="pf-c-select__toggle"
-              id="pf-toggle-id-10"
-=======
-              aria-labelledby=" pf-toggle-id-9"
-              class="pf-c-select__toggle"
-              id="pf-toggle-id-9"
->>>>>>> feat(Select): adds direction prop to Select
+              id="pf-toggle-id-11"
               type="button"
             >
               <div
@@ -1804,16 +1717,10 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
       <button
         aria-expanded={true}
         aria-haspopup={null}
-<<<<<<< HEAD
-        aria-labelledby=" pf-toggle-id-10"
+        aria-labelledby=" pf-toggle-id-11"
         className="pf-c-select__toggle"
         disabled={false}
-        id="pf-toggle-id-10"
-=======
-        aria-labelledby=" pf-toggle-id-9"
-        className="pf-c-select__toggle"
-        id="pf-toggle-id-9"
->>>>>>> feat(Select): adds direction prop to Select
+        id="pf-toggle-id-11"
         onClick={[Function]}
         onKeyDown={[Function]}
         type="button"
@@ -2034,11 +1941,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
@@ -2061,17 +1965,10 @@ exports[`checkbox select renders expanded successfully 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-<<<<<<< HEAD
-      ariaLabelledBy=" pf-toggle-id-9"
+      ariaLabelledBy=" pf-toggle-id-10"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-9"
-=======
-      ariaLabelledBy=" pf-toggle-id-8"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-8"
->>>>>>> feat(Select): adds direction prop to Select
+      id="pf-toggle-id-10"
       isActive={false}
       isDisabled={false}
       isExpanded={true}
@@ -2088,15 +1985,9 @@ exports[`checkbox select renders expanded successfully 1`] = `
           >
             <button
               aria-expanded="true"
-<<<<<<< HEAD
-              aria-labelledby=" pf-toggle-id-9"
+              aria-labelledby=" pf-toggle-id-10"
               class="pf-c-select__toggle"
-              id="pf-toggle-id-9"
-=======
-              aria-labelledby=" pf-toggle-id-8"
-              class="pf-c-select__toggle"
-              id="pf-toggle-id-8"
->>>>>>> feat(Select): adds direction prop to Select
+              id="pf-toggle-id-10"
               type="button"
             >
               <div
@@ -2208,16 +2099,10 @@ exports[`checkbox select renders expanded successfully 1`] = `
       <button
         aria-expanded={true}
         aria-haspopup={null}
-<<<<<<< HEAD
-        aria-labelledby=" pf-toggle-id-9"
+        aria-labelledby=" pf-toggle-id-10"
         className="pf-c-select__toggle"
         disabled={false}
-        id="pf-toggle-id-9"
-=======
-        aria-labelledby=" pf-toggle-id-8"
-        className="pf-c-select__toggle"
-        id="pf-toggle-id-8"
->>>>>>> feat(Select): adds direction prop to Select
+        id="pf-toggle-id-10"
         onClick={[Function]}
         onKeyDown={[Function]}
         type="button"
@@ -2450,11 +2335,8 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
@@ -2477,17 +2359,10 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-<<<<<<< HEAD
-      ariaLabelledBy=" pf-toggle-id-11"
+      ariaLabelledBy=" pf-toggle-id-12"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-11"
-=======
-      ariaLabelledBy=" pf-toggle-id-4"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-4"
->>>>>>> feat(Select): adds direction prop to Select
+      id="pf-toggle-id-12"
       isActive={false}
       isDisabled={false}
       isExpanded={true}
@@ -2504,9 +2379,9 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
           >
             <button
               aria-expanded="true"
-              aria-labelledby=" pf-toggle-id-11"
+              aria-labelledby=" pf-toggle-id-12"
               class="pf-c-select__toggle"
-              id="pf-toggle-id-11"
+              id="pf-toggle-id-12"
               type="button"
             >
               <div
@@ -2517,7 +2392,6 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                 />
                 
               </div>
-<<<<<<< HEAD
               <svg
                 aria-hidden="true"
                 class="pf-c-select__toggle-arrow"
@@ -2527,53 +2401,6 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                 style="vertical-align: -0.125em;"
                 viewBox="0 0 320 512"
                 width="1em"
-=======
-              
-              <button
-                aria-expanded="true"
-                aria-haspopup="listbox"
-                aria-label="Options menu"
-                aria-labelledby=" pf-toggle-id-4"
-                class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-4"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="pf-c-select__toggle-arrow"
-                  fill="currentColor"
-                  height="1em"
-                  role="img"
-                  style="vertical-align: -0.125em;"
-                  viewBox="0 0 320 512"
-                  width="1em"
-                >
-                  <path
-                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                    transform=""
-                  />
-                </svg>
-              </button>
-            </div>
-            <ul
-              aria-label=""
-              aria-labelledby=""
-              class="pf-c-select__menu"
-              role="listbox"
-            >
-              <li
-                role="presentation"
-              >
-                <button
-                  class="pf-c-select__menu-item"
-                  id="Mr-0"
-                  role="option"
-                >
-                  Mr
-                </button>
-              </li>
-              <li
-                role="presentation"
->>>>>>> feat(Select): adds direction prop to Select
               >
                 <path
                   d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
@@ -2652,10 +2479,10 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       <button
         aria-expanded={true}
         aria-haspopup={null}
-        aria-labelledby=" pf-toggle-id-11"
+        aria-labelledby=" pf-toggle-id-12"
         className="pf-c-select__toggle"
         disabled={false}
-        id="pf-toggle-id-11"
+        id="pf-toggle-id-12"
         onClick={[Function]}
         onKeyDown={[Function]}
         type="button"
@@ -2667,23 +2494,12 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
             className="pf-c-select__toggle-text"
           />
         </div>
-<<<<<<< HEAD
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
           color="currentColor"
           noVerticalAlign={false}
           size="sm"
           title={null}
-=======
-        <button
-          aria-expanded={true}
-          aria-haspopup="listbox"
-          aria-label="Options menu"
-          aria-labelledby=" pf-toggle-id-4"
-          className="pf-c-button pf-c-select__toggle-button"
-          id="pf-toggle-id-4"
-          onClick={[Function]}
->>>>>>> feat(Select): adds direction prop to Select
         >
           <svg
             aria-hidden={true}
@@ -2731,7 +2547,6 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
         paused={false}
         tag="div"
       >
-<<<<<<< HEAD
         <div>
           <div
             className="pf-c-select__menu"
@@ -2739,188 +2554,6 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
             <form
               className="pf-c-form"
               noValidate={true}
-=======
-        <SelectOption
-          className=""
-          id="Mr-0"
-          index={0}
-          isChecked={false}
-          isDisabled={false}
-          isFocused={null}
-          isPlaceholder={false}
-          isSelected={false}
-          key=".$0"
-          keyHandler={[Function]}
-          onClick={[Function]}
-          sendRef={[Function]}
-          value="Mr"
-        >
-          <li
-            role="presentation"
-          >
-            <button
-              aria-selected={null}
-              className="pf-c-select__menu-item"
-              id="Mr-0"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="option"
-            >
-              Mr
-            </button>
-          </li>
-        </SelectOption>
-        <SelectOption
-          className=""
-          id="Mrs-1"
-          index={1}
-          isChecked={false}
-          isDisabled={false}
-          isFocused={null}
-          isPlaceholder={false}
-          isSelected={false}
-          key=".$1"
-          keyHandler={[Function]}
-          onClick={[Function]}
-          sendRef={[Function]}
-          value="Mrs"
-        >
-          <li
-            role="presentation"
-          >
-            <button
-              aria-selected={null}
-              className="pf-c-select__menu-item"
-              id="Mrs-1"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="option"
-            >
-              Mrs
-            </button>
-          </li>
-        </SelectOption>
-        <SelectOption
-          className=""
-          id="Other-2"
-          index={2}
-          isChecked={false}
-          isDisabled={false}
-          isFocused={null}
-          isPlaceholder={false}
-          isSelected={false}
-          key=".$3"
-          keyHandler={[Function]}
-          onClick={[Function]}
-          sendRef={[Function]}
-          value="Other"
-        >
-          <li
-            role="presentation"
-          >
-            <button
-              aria-selected={null}
-              className="pf-c-select__menu-item"
-              id="Other-2"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="option"
-            >
-              Other
-            </button>
-          </li>
-        </SelectOption>
-      </ul>
-    </SelectMenu>
-  </div>
-</Select>
-`;
-
-exports[`select renders select groups successfully 1`] = `
-<Select
-  aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
-  className=""
-  direction="down"
-  isExpanded={true}
-  isGrouped={true}
-  onClear={[Function]}
-  onSelect={[MockFunction]}
-  onToggle={[MockFunction]}
-  placeholderText=""
-  selections=""
-  toggleId={null}
-  variant="single"
-  width=""
->
-  <div
-    className="pf-c-select pf-m-expanded"
-    style={
-      Object {
-        "width": "",
-      }
-    }
-  >
-    <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-5"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-5"
-      isActive={false}
-      isExpanded={true}
-      isFocused={false}
-      isHovered={false}
-      isPlain={false}
-      onClose={[Function]}
-      onEnter={[Function]}
-      onToggle={[MockFunction]}
-      parentRef={
-        Object {
-          "current": <div
-            class="pf-c-select pf-m-expanded"
-          >
-            <button
-              aria-expanded="true"
-              aria-haspopup="listbox"
-              aria-labelledby=" pf-toggle-id-5"
-              class="pf-c-select__toggle"
-              id="pf-toggle-id-5"
-              type="button"
-            >
-              <div
-                class="pf-c-select__toggle-wrapper"
-              >
-                <span
-                  class="pf-c-select__toggle-text"
-                />
-              </div>
-              <svg
-                aria-hidden="true"
-                class="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </button>
-            <ul
-              aria-label=""
-              aria-labelledby=""
-              class="pf-c-select__menu"
-              role="listbox"
->>>>>>> feat(Select): adds direction prop to Select
             >
               <div
                 className="pf-c-form__group"
@@ -3070,6 +2703,7 @@ exports[`select custom select filter filters properly 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
+  direction="down"
   isDisabled={false}
   isExpanded={true}
   isGrouped={false}
@@ -3094,10 +2728,10 @@ exports[`select custom select filter filters properly 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-5"
+      ariaLabelledBy=" pf-toggle-id-6"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-5"
+      id="pf-toggle-id-6"
       isActive={false}
       isDisabled={false}
       isExpanded={true}
@@ -3133,9 +2767,9 @@ exports[`select custom select filter filters properly 1`] = `
                 aria-expanded="true"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-                aria-labelledby=" pf-toggle-id-5"
+                aria-labelledby=" pf-toggle-id-6"
                 class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-5"
+                id="pf-toggle-id-6"
               >
                 <svg
                   aria-hidden="true"
@@ -3229,10 +2863,10 @@ exports[`select custom select filter filters properly 1`] = `
           aria-expanded={true}
           aria-haspopup="listbox"
           aria-label="Options menu"
-          aria-labelledby=" pf-toggle-id-5"
+          aria-labelledby=" pf-toggle-id-6"
           className="pf-c-button pf-c-select__toggle-button"
           disabled={false}
-          id="pf-toggle-id-5"
+          id="pf-toggle-id-6"
           onClick={[Function]}
         >
           <CaretDownIcon
@@ -3391,6 +3025,7 @@ exports[`select renders select groups successfully 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
+  direction="down"
   isDisabled={false}
   isExpanded={true}
   isGrouped={true}
@@ -3414,10 +3049,10 @@ exports[`select renders select groups successfully 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-6"
+      ariaLabelledBy=" pf-toggle-id-7"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-6"
+      id="pf-toggle-id-7"
       isActive={false}
       isDisabled={false}
       isExpanded={true}
@@ -3435,9 +3070,9 @@ exports[`select renders select groups successfully 1`] = `
             <button
               aria-expanded="true"
               aria-haspopup="listbox"
-              aria-labelledby=" pf-toggle-id-6"
+              aria-labelledby=" pf-toggle-id-7"
               class="pf-c-select__toggle"
-              id="pf-toggle-id-6"
+              id="pf-toggle-id-7"
               type="button"
             >
               <div
@@ -3593,16 +3228,10 @@ exports[`select renders select groups successfully 1`] = `
       <button
         aria-expanded={true}
         aria-haspopup="listbox"
-<<<<<<< HEAD
-        aria-labelledby=" pf-toggle-id-6"
+        aria-labelledby=" pf-toggle-id-7"
         className="pf-c-select__toggle"
         disabled={false}
-        id="pf-toggle-id-6"
-=======
-        aria-labelledby=" pf-toggle-id-5"
-        className="pf-c-select__toggle"
-        id="pf-toggle-id-5"
->>>>>>> feat(Select): adds direction prop to Select
+        id="pf-toggle-id-7"
         onClick={[Function]}
         onKeyDown={[Function]}
         type="button"
@@ -3951,6 +3580,150 @@ exports[`select renders select groups successfully 1`] = `
 </Select>
 `;
 
+exports[`select renders up drection successfully 1`] = `
+<Select
+  aria-label=""
+  ariaLabelClear="Clear all"
+  ariaLabelRemove="Remove"
+  ariaLabelToggle="Options menu"
+  ariaLabelTypeAhead=""
+  ariaLabelledBy=""
+  className=""
+  direction="up"
+  isDisabled={false}
+  isExpanded={false}
+  isGrouped={false}
+  isPlain={false}
+  onClear={[Function]}
+  onSelect={[MockFunction]}
+  onToggle={[MockFunction]}
+  placeholderText=""
+  selections=""
+  toggleId={null}
+  variant="single"
+  width=""
+>
+  <div
+    className="pf-c-select pf-m-top"
+    style={
+      Object {
+        "width": "",
+      }
+    }
+  >
+    <SelectToggle
+      ariaLabelToggle="Options menu"
+      ariaLabelledBy=" pf-toggle-id-4"
+      className=""
+      handleTypeaheadKeys={[Function]}
+      id="pf-toggle-id-4"
+      isActive={false}
+      isDisabled={false}
+      isExpanded={false}
+      isFocused={false}
+      isHovered={false}
+      isPlain={false}
+      onClose={[Function]}
+      onEnter={[Function]}
+      onToggle={[MockFunction]}
+      parentRef={
+        Object {
+          "current": <div
+            class="pf-c-select pf-m-top"
+          >
+            <button
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-labelledby=" pf-toggle-id-4"
+              class="pf-c-select__toggle"
+              id="pf-toggle-id-4"
+              type="button"
+            >
+              <div
+                class="pf-c-select__toggle-wrapper"
+              >
+                <span
+                  class="pf-c-select__toggle-text"
+                >
+                  Mr
+                </span>
+              </div>
+              <svg
+                aria-hidden="true"
+                class="pf-c-select__toggle-arrow"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 320 512"
+                width="1em"
+              >
+                <path
+                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  transform=""
+                />
+              </svg>
+            </button>
+          </div>,
+        }
+      }
+      type="button"
+      variant="single"
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup="listbox"
+        aria-labelledby=" pf-toggle-id-4"
+        className="pf-c-select__toggle"
+        disabled={false}
+        id="pf-toggle-id-4"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        type="button"
+      >
+        <div
+          className="pf-c-select__toggle-wrapper"
+        >
+          <span
+            className="pf-c-select__toggle-text"
+          >
+            Mr
+          </span>
+        </div>
+        <CaretDownIcon
+          className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            className="pf-c-select__toggle-arrow"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 320 512"
+            width="1em"
+          >
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
+        </CaretDownIcon>
+      </button>
+    </SelectToggle>
+  </div>
+</Select>
+`;
+
 exports[`select single select renders closed successfully 1`] = `
 <Select
   aria-label=""
@@ -3960,6 +3733,7 @@ exports[`select single select renders closed successfully 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
+  direction="down"
   isDisabled={false}
   isExpanded={false}
   isGrouped={false}
@@ -4103,6 +3877,7 @@ exports[`select single select renders disabled successfully 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
+  direction="down"
   isDisabled={true}
   isExpanded={false}
   isGrouped={false}
@@ -4247,6 +4022,7 @@ exports[`select single select renders expanded successfully 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
+  direction="down"
   isDisabled={false}
   isExpanded={true}
   isGrouped={false}
@@ -4375,187 +4151,9 @@ exports[`select single select renders expanded successfully 1`] = `
                   Other
                 </button>
               </li>
-<<<<<<< HEAD
             </ul>
           </div>,
         }
-=======
-            </SelectOption>
-          </div>
-        </Component>
-      </ul>
-    </SelectMenu>
-  </div>
-</Select>
-`;
-
-exports[`select renders up drection successfully 1`] = `
-<Select
-  aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
-  className=""
-  direction="up"
-  isExpanded={false}
-  isGrouped={false}
-  onClear={[Function]}
-  onSelect={[MockFunction]}
-  onToggle={[MockFunction]}
-  placeholderText=""
-  selections=""
-  toggleId={null}
-  variant="single"
-  width=""
->
-  <div
-    className="pf-c-select pf-m-top"
-    style={
-      Object {
-        "width": "",
-      }
-    }
-  >
-    <SelectToggle
-      ariaLabelToggle="Options menu"
-      ariaLabelledBy=" pf-toggle-id-2"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-2"
-      isActive={false}
-      isExpanded={false}
-      isFocused={false}
-      isHovered={false}
-      isPlain={false}
-      onClose={[Function]}
-      onEnter={[Function]}
-      onToggle={[MockFunction]}
-      parentRef={
-        Object {
-          "current": <div
-            class="pf-c-select pf-m-top"
-          >
-            <button
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              aria-labelledby=" pf-toggle-id-2"
-              class="pf-c-select__toggle"
-              id="pf-toggle-id-2"
-              type="button"
-            >
-              <div
-                class="pf-c-select__toggle-wrapper"
-              >
-                <span
-                  class="pf-c-select__toggle-text"
-                >
-                  Mr
-                </span>
-              </div>
-              <svg
-                aria-hidden="true"
-                class="pf-c-select__toggle-arrow"
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style="vertical-align: -0.125em;"
-                viewBox="0 0 320 512"
-                width="1em"
-              >
-                <path
-                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  transform=""
-                />
-              </svg>
-            </button>
-          </div>,
-        }
-      }
-      type="button"
-      variant="single"
-    >
-      <button
-        aria-expanded={false}
-        aria-haspopup="listbox"
-        aria-labelledby=" pf-toggle-id-2"
-        className="pf-c-select__toggle"
-        id="pf-toggle-id-2"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        type="button"
-      >
-        <div
-          className="pf-c-select__toggle-wrapper"
-        >
-          <span
-            className="pf-c-select__toggle-text"
-          >
-            Mr
-          </span>
-        </div>
-        <CaretDownIcon
-          className="pf-c-select__toggle-arrow"
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            className="pf-c-select__toggle-arrow"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 320 512"
-            width="1em"
-          >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              transform=""
-            />
-          </svg>
-        </CaretDownIcon>
-      </button>
-    </SelectToggle>
-  </div>
-</Select>
-`;
-
-exports[`select single select renders closed successfully 1`] = `
-<Select
-  aria-label=""
-  ariaLabelClear="Clear all"
-  ariaLabelRemove="Remove"
-  ariaLabelToggle="Options menu"
-  ariaLabelTypeAhead=""
-  ariaLabelledBy=""
-  className=""
-  direction="down"
-  isExpanded={false}
-  isGrouped={false}
-  onClear={[Function]}
-  onSelect={[MockFunction]}
-  onToggle={[MockFunction]}
-  placeholderText=""
-  selections=""
-  toggleId={null}
-  variant="single"
-  width=""
->
-  <div
-    className="pf-c-select"
-    style={
-      Object {
-        "width": "",
->>>>>>> feat(Select): adds direction prop to Select
       }
       type="button"
       variant="single"
@@ -4766,11 +4364,8 @@ exports[`select single select renders expanded successfully with custom objects 
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
@@ -5089,11 +4684,8 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={false}
   isGrouped={false}
   isPlain={false}
@@ -5116,17 +4708,10 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-<<<<<<< HEAD
-      ariaLabelledBy=" pf-toggle-id-19"
+      ariaLabelledBy=" pf-toggle-id-20"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-19"
-=======
-      ariaLabelledBy=" pf-toggle-id-17"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-17"
->>>>>>> feat(Select): adds direction prop to Select
+      id="pf-toggle-id-20"
       isActive={false}
       isDisabled={false}
       isExpanded={false}
@@ -5163,15 +4748,9 @@ exports[`typeahead multi select renders closed successfully 1`] = `
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-<<<<<<< HEAD
-                aria-labelledby=" pf-toggle-id-19"
+                aria-labelledby=" pf-toggle-id-20"
                 class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-19"
-=======
-                aria-labelledby=" pf-toggle-id-17"
-                class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-17"
->>>>>>> feat(Select): adds direction prop to Select
+                id="pf-toggle-id-20"
               >
                 <svg
                   aria-hidden="true"
@@ -5222,16 +4801,10 @@ exports[`typeahead multi select renders closed successfully 1`] = `
           aria-expanded={false}
           aria-haspopup="listbox"
           aria-label="Options menu"
-<<<<<<< HEAD
-          aria-labelledby=" pf-toggle-id-19"
+          aria-labelledby=" pf-toggle-id-20"
           className="pf-c-button pf-c-select__toggle-button"
           disabled={false}
-          id="pf-toggle-id-19"
-=======
-          aria-labelledby=" pf-toggle-id-17"
-          className="pf-c-button pf-c-select__toggle-button"
-          id="pf-toggle-id-17"
->>>>>>> feat(Select): adds direction prop to Select
+          id="pf-toggle-id-20"
           onClick={[Function]}
         >
           <CaretDownIcon
@@ -5278,11 +4851,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
@@ -5305,17 +4875,10 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-<<<<<<< HEAD
-      ariaLabelledBy=" pf-toggle-id-20"
+      ariaLabelledBy=" pf-toggle-id-21"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-20"
-=======
-      ariaLabelledBy=" pf-toggle-id-18"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-18"
->>>>>>> feat(Select): adds direction prop to Select
+      id="pf-toggle-id-21"
       isActive={false}
       isDisabled={false}
       isExpanded={true}
@@ -5352,15 +4915,9 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 aria-expanded="true"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-<<<<<<< HEAD
-                aria-labelledby=" pf-toggle-id-20"
+                aria-labelledby=" pf-toggle-id-21"
                 class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-20"
-=======
-                aria-labelledby=" pf-toggle-id-18"
-                class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-18"
->>>>>>> feat(Select): adds direction prop to Select
+                id="pf-toggle-id-21"
               >
                 <svg
                   aria-hidden="true"
@@ -5466,16 +5023,10 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
           aria-expanded={true}
           aria-haspopup="listbox"
           aria-label="Options menu"
-<<<<<<< HEAD
-          aria-labelledby=" pf-toggle-id-20"
+          aria-labelledby=" pf-toggle-id-21"
           className="pf-c-button pf-c-select__toggle-button"
           disabled={false}
-          id="pf-toggle-id-20"
-=======
-          aria-labelledby=" pf-toggle-id-18"
-          className="pf-c-button pf-c-select__toggle-button"
-          id="pf-toggle-id-18"
->>>>>>> feat(Select): adds direction prop to Select
+          id="pf-toggle-id-21"
           onClick={[Function]}
         >
           <CaretDownIcon
@@ -5665,11 +5216,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
@@ -5697,17 +5245,10 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-<<<<<<< HEAD
-      ariaLabelledBy=" pf-toggle-id-21"
+      ariaLabelledBy=" pf-toggle-id-22"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-21"
-=======
-      ariaLabelledBy=" pf-toggle-id-19"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-19"
->>>>>>> feat(Select): adds direction prop to Select
+      id="pf-toggle-id-22"
       isActive={false}
       isDisabled={false}
       isExpanded={true}
@@ -5813,15 +5354,9 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 aria-expanded="true"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-<<<<<<< HEAD
-                aria-labelledby=" pf-toggle-id-21"
+                aria-labelledby=" pf-toggle-id-22"
                 class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-21"
-=======
-                aria-labelledby=" pf-toggle-id-19"
-                class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-19"
->>>>>>> feat(Select): adds direction prop to Select
+                id="pf-toggle-id-22"
               >
                 <svg
                   aria-hidden="true"
@@ -6138,16 +5673,10 @@ exports[`typeahead multi select renders selected successfully 1`] = `
           aria-expanded={true}
           aria-haspopup="listbox"
           aria-label="Options menu"
-<<<<<<< HEAD
-          aria-labelledby=" pf-toggle-id-21"
+          aria-labelledby=" pf-toggle-id-22"
           className="pf-c-button pf-c-select__toggle-button"
           disabled={false}
-          id="pf-toggle-id-21"
-=======
-          aria-labelledby=" pf-toggle-id-19"
-          className="pf-c-button pf-c-select__toggle-button"
-          id="pf-toggle-id-19"
->>>>>>> feat(Select): adds direction prop to Select
+          id="pf-toggle-id-22"
           onClick={[Function]}
         >
           <CaretDownIcon
@@ -6400,11 +5929,8 @@ exports[`typeahead multi select test onChange 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
@@ -6427,17 +5953,10 @@ exports[`typeahead multi select test onChange 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-<<<<<<< HEAD
-      ariaLabelledBy=" pf-toggle-id-23"
+      ariaLabelledBy=" pf-toggle-id-24"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-23"
-=======
-      ariaLabelledBy=" pf-toggle-id-21"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-21"
->>>>>>> feat(Select): adds direction prop to Select
+      id="pf-toggle-id-24"
       isActive={false}
       isDisabled={false}
       isExpanded={true}
@@ -6473,15 +5992,9 @@ exports[`typeahead multi select test onChange 1`] = `
                 aria-expanded="true"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-<<<<<<< HEAD
-                aria-labelledby=" pf-toggle-id-23"
+                aria-labelledby=" pf-toggle-id-24"
                 class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-23"
-=======
-                aria-labelledby=" pf-toggle-id-21"
-                class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-21"
->>>>>>> feat(Select): adds direction prop to Select
+                id="pf-toggle-id-24"
               >
                 <svg
                   aria-hidden="true"
@@ -6551,16 +6064,10 @@ exports[`typeahead multi select test onChange 1`] = `
           aria-expanded={true}
           aria-haspopup="listbox"
           aria-label="Options menu"
-<<<<<<< HEAD
-          aria-labelledby=" pf-toggle-id-23"
+          aria-labelledby=" pf-toggle-id-24"
           className="pf-c-button pf-c-select__toggle-button"
           disabled={false}
-          id="pf-toggle-id-23"
-=======
-          aria-labelledby=" pf-toggle-id-21"
-          className="pf-c-button pf-c-select__toggle-button"
-          id="pf-toggle-id-21"
->>>>>>> feat(Select): adds direction prop to Select
+          id="pf-toggle-id-24"
           onClick={[Function]}
         >
           <CaretDownIcon
@@ -6657,11 +6164,8 @@ exports[`typeahead select renders closed successfully 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={false}
   isGrouped={false}
   isPlain={false}
@@ -6684,17 +6188,10 @@ exports[`typeahead select renders closed successfully 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-<<<<<<< HEAD
-      ariaLabelledBy=" pf-toggle-id-14"
+      ariaLabelledBy=" pf-toggle-id-15"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-14"
-=======
-      ariaLabelledBy=" pf-toggle-id-12"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-12"
->>>>>>> feat(Select): adds direction prop to Select
+      id="pf-toggle-id-15"
       isActive={false}
       isDisabled={false}
       isExpanded={false}
@@ -6730,15 +6227,9 @@ exports[`typeahead select renders closed successfully 1`] = `
                 aria-expanded="false"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-<<<<<<< HEAD
-                aria-labelledby=" pf-toggle-id-14"
+                aria-labelledby=" pf-toggle-id-15"
                 class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-14"
-=======
-                aria-labelledby=" pf-toggle-id-12"
-                class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-12"
->>>>>>> feat(Select): adds direction prop to Select
+                id="pf-toggle-id-15"
               >
                 <svg
                   aria-hidden="true"
@@ -6789,16 +6280,10 @@ exports[`typeahead select renders closed successfully 1`] = `
           aria-expanded={false}
           aria-haspopup="listbox"
           aria-label="Options menu"
-<<<<<<< HEAD
-          aria-labelledby=" pf-toggle-id-14"
+          aria-labelledby=" pf-toggle-id-15"
           className="pf-c-button pf-c-select__toggle-button"
           disabled={false}
-          id="pf-toggle-id-14"
-=======
-          aria-labelledby=" pf-toggle-id-12"
-          className="pf-c-button pf-c-select__toggle-button"
-          id="pf-toggle-id-12"
->>>>>>> feat(Select): adds direction prop to Select
+          id="pf-toggle-id-15"
           onClick={[Function]}
         >
           <CaretDownIcon
@@ -6845,11 +6330,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
@@ -6872,17 +6354,10 @@ exports[`typeahead select renders expanded successfully 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-<<<<<<< HEAD
-      ariaLabelledBy=" pf-toggle-id-15"
+      ariaLabelledBy=" pf-toggle-id-16"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-15"
-=======
-      ariaLabelledBy=" pf-toggle-id-13"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-13"
->>>>>>> feat(Select): adds direction prop to Select
+      id="pf-toggle-id-16"
       isActive={false}
       isDisabled={false}
       isExpanded={true}
@@ -6918,15 +6393,9 @@ exports[`typeahead select renders expanded successfully 1`] = `
                 aria-expanded="true"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-<<<<<<< HEAD
-                aria-labelledby=" pf-toggle-id-15"
+                aria-labelledby=" pf-toggle-id-16"
                 class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-15"
-=======
-                aria-labelledby=" pf-toggle-id-13"
-                class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-13"
->>>>>>> feat(Select): adds direction prop to Select
+                id="pf-toggle-id-16"
               >
                 <svg
                   aria-hidden="true"
@@ -7032,16 +6501,10 @@ exports[`typeahead select renders expanded successfully 1`] = `
           aria-expanded={true}
           aria-haspopup="listbox"
           aria-label="Options menu"
-<<<<<<< HEAD
-          aria-labelledby=" pf-toggle-id-15"
+          aria-labelledby=" pf-toggle-id-16"
           className="pf-c-button pf-c-select__toggle-button"
           disabled={false}
-          id="pf-toggle-id-15"
-=======
-          aria-labelledby=" pf-toggle-id-13"
-          className="pf-c-button pf-c-select__toggle-button"
-          id="pf-toggle-id-13"
->>>>>>> feat(Select): adds direction prop to Select
+          id="pf-toggle-id-16"
           onClick={[Function]}
         >
           <CaretDownIcon
@@ -7231,11 +6694,8 @@ exports[`typeahead select renders selected successfully 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
@@ -7258,17 +6718,10 @@ exports[`typeahead select renders selected successfully 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-<<<<<<< HEAD
-      ariaLabelledBy=" pf-toggle-id-16"
+      ariaLabelledBy=" pf-toggle-id-17"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-16"
-=======
-      ariaLabelledBy=" pf-toggle-id-14"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-14"
->>>>>>> feat(Select): adds direction prop to Select
+      id="pf-toggle-id-17"
       isActive={false}
       isDisabled={false}
       isExpanded={true}
@@ -7323,15 +6776,9 @@ exports[`typeahead select renders selected successfully 1`] = `
                 aria-expanded="true"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-<<<<<<< HEAD
-                aria-labelledby=" pf-toggle-id-16"
+                aria-labelledby=" pf-toggle-id-17"
                 class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-16"
-=======
-                aria-labelledby=" pf-toggle-id-14"
-                class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-14"
->>>>>>> feat(Select): adds direction prop to Select
+                id="pf-toggle-id-17"
               >
                 <svg
                   aria-hidden="true"
@@ -7488,16 +6935,10 @@ exports[`typeahead select renders selected successfully 1`] = `
           aria-expanded={true}
           aria-haspopup="listbox"
           aria-label="Options menu"
-<<<<<<< HEAD
-          aria-labelledby=" pf-toggle-id-16"
+          aria-labelledby=" pf-toggle-id-17"
           className="pf-c-button pf-c-select__toggle-button"
           disabled={false}
-          id="pf-toggle-id-16"
-=======
-          aria-labelledby=" pf-toggle-id-14"
-          className="pf-c-button pf-c-select__toggle-button"
-          id="pf-toggle-id-14"
->>>>>>> feat(Select): adds direction prop to Select
+          id="pf-toggle-id-17"
           onClick={[Function]}
         >
           <CaretDownIcon
@@ -7716,11 +7157,8 @@ exports[`typeahead select test onChange 1`] = `
   ariaLabelTypeAhead=""
   ariaLabelledBy=""
   className=""
-<<<<<<< HEAD
-  isDisabled={false}
-=======
   direction="down"
->>>>>>> feat(Select): adds direction prop to Select
+  isDisabled={false}
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
@@ -7743,17 +7181,10 @@ exports[`typeahead select test onChange 1`] = `
   >
     <SelectToggle
       ariaLabelToggle="Options menu"
-<<<<<<< HEAD
-      ariaLabelledBy=" pf-toggle-id-18"
+      ariaLabelledBy=" pf-toggle-id-19"
       className=""
       handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-18"
-=======
-      ariaLabelledBy=" pf-toggle-id-16"
-      className=""
-      handleTypeaheadKeys={[Function]}
-      id="pf-toggle-id-16"
->>>>>>> feat(Select): adds direction prop to Select
+      id="pf-toggle-id-19"
       isActive={false}
       isDisabled={false}
       isExpanded={true}
@@ -7789,15 +7220,9 @@ exports[`typeahead select test onChange 1`] = `
                 aria-expanded="true"
                 aria-haspopup="listbox"
                 aria-label="Options menu"
-<<<<<<< HEAD
-                aria-labelledby=" pf-toggle-id-18"
+                aria-labelledby=" pf-toggle-id-19"
                 class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-18"
-=======
-                aria-labelledby=" pf-toggle-id-16"
-                class="pf-c-button pf-c-select__toggle-button"
-                id="pf-toggle-id-16"
->>>>>>> feat(Select): adds direction prop to Select
+                id="pf-toggle-id-19"
               >
                 <svg
                   aria-hidden="true"
@@ -7867,16 +7292,10 @@ exports[`typeahead select test onChange 1`] = `
           aria-expanded={true}
           aria-haspopup="listbox"
           aria-label="Options menu"
-<<<<<<< HEAD
-          aria-labelledby=" pf-toggle-id-18"
+          aria-labelledby=" pf-toggle-id-19"
           className="pf-c-button pf-c-select__toggle-button"
           disabled={false}
-          id="pf-toggle-id-18"
-=======
-          aria-labelledby=" pf-toggle-id-16"
-          className="pf-c-button pf-c-select__toggle-button"
-          id="pf-toggle-id-16"
->>>>>>> feat(Select): adds direction prop to Select
+          id="pf-toggle-id-19"
           onClick={[Function]}
         >
           <CaretDownIcon

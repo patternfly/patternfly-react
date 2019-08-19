@@ -1,4 +1,4 @@
-import { Select, SelectOption, SelectVariant, Stack, StackItem, Title, SelectOptionObject } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, Stack, StackItem, Title, SelectOptionObject, Checkbox, SelectDirection } from '@patternfly/react-core';
 import React, { Component } from 'react';
 import { CartArrowDownIcon } from '@patternfly/react-icons';
 import { State } from '../../../common/State';
@@ -22,8 +22,8 @@ export interface SelectDemoState {
   plainTypeaheadMultiSelected: string[],
   plainTypeaheadMultiIsPlain: boolean,
   customTypeaheadMultiIsExpanded: boolean,
-  customTypeaheadMultiSelected: string[]
-
+  customTypeaheadMultiSelected: string[],
+  direction: string
 }
 
 export class SelectDemo extends Component<SelectDemoState> {
@@ -47,6 +47,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     plainTypeaheadMultiIsPlain: true,
     customTypeaheadMultiIsExpanded: false,
     customTypeaheadMultiSelected: [],
+    direction: SelectDirection.down
   };
 
   singleOptions = [
@@ -90,6 +91,18 @@ export class SelectDemo extends Component<SelectDemoState> {
     <SelectOption key={10} value={ new State('New York', 'NY', 'Albany', 1788)} />,
     <SelectOption key={11} value={ new State('North Carolina', 'NC', 'Raleigh', 1789)} />
   ];
+
+  toggleDirection = () => {
+    if(this.state.direction === 'up') {
+      this.setState({
+        direction: SelectDirection.down
+      });
+    } else {
+      this.setState({
+        direction: SelectDirection.up
+      });
+    }
+  }
 
   singleOnToggle = (singleIsExpanded: boolean) => {
     this.setState({
@@ -306,6 +319,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             selections={singleSelected}
             isExpanded={singleIsExpanded}
             ariaLabelledBy={titleId}
+            direction={this.state.direction}
           >
             {this.singleOptions.map((option, index) => (
               <SelectOption
@@ -317,6 +331,14 @@ export class SelectDemo extends Component<SelectDemoState> {
             ))}
           </Select>
         </div>
+        <Checkbox
+          label="Expands up"
+          isChecked={this.state.direction === 'up'}
+          onChange={this.toggleDirection}
+          aria-label="disabled checkbox"
+          id="toggle-disabled"
+          name="toggle-disabled"
+        />
       </StackItem>
     );
   }

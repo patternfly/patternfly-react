@@ -5,7 +5,7 @@ propComponents: ['Select', 'SelectOption', 'SelectGroup']
 typescript: true
 ---
 
-import { Select, SelectOption, SelectVariant, SelectGroup, Checkbox } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectGroup, SelectDirection, Checkbox } from '@patternfly/react-core';
 
 ## Single select input
 
@@ -29,7 +29,8 @@ class SingleSelectInput extends React.Component {
     this.state = {
       isExpanded: false,
       selected: null,
-      isDisabled: false
+      isDisabled: false,
+      direction: 'down'
     };
 
     this.onToggle = isExpanded => {
@@ -61,10 +62,22 @@ class SingleSelectInput extends React.Component {
         isDisabled: checked
       })
     }
+
+    this.toggleDirection = () => {
+      if(this.state.direction === 'up') {
+        this.setState({
+          direction: SelectDirection.down
+        });
+      } else {
+        this.setState({
+          direction: SelectDirection.up
+        })
+      }
+    }
   }
 
   render() {
-    const { isExpanded, selected, isDisabled } = this.state;
+    const { isExpanded, selected, isDisabled, direction } = this.state;
     const titleId = 'title-id';
     return (
       <div>
@@ -80,6 +93,7 @@ class SingleSelectInput extends React.Component {
           isExpanded={isExpanded}
           ariaLabelledBy={titleId}
           isDisabled={isDisabled}
+          direction={direction}
         >
           {this.options.map((option, index) => (
             <SelectOption
@@ -97,6 +111,14 @@ class SingleSelectInput extends React.Component {
           aria-label="disabled checkbox"
           id="toggle-disabled"
           name="toggle-disabled"
+        />
+        <Checkbox
+          label="Expands up"
+          isChecked={direction === 'up'}
+          onChange={this.toggleDirection}
+          aria-label="direction checkbox"
+          id="toggle-direction"
+          name="toggle-direction"
         />
       </div>
     );
