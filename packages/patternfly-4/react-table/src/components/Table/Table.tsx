@@ -9,7 +9,7 @@ import { HeaderCell } from './HeaderCell';
 import { RowWrapper } from './RowWrapper';
 import { BodyWrapper } from './BodyWrapper';
 import { calculateColumns } from './utils/headerUtils';
-import { formatterValueType, ColumnType, RowType, RowKeyType, RenderersTypes } from './base';
+import { formatterValueType, ColumnType, RowType, RowKeyType, ColumnsType } from './base';
 
 
 export enum TableGridBreakpoint {
@@ -170,7 +170,7 @@ export interface TableProps {
 }
 
 export const TableContext = React.createContext({
-  headerData: null as RenderersTypes['columns'],
+  headerData: null as ColumnsType,
   headerRows: null as IHeaderRow[],
   rows: [] as (IRow | string[])[]
 });

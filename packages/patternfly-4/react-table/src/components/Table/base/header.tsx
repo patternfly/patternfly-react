@@ -12,7 +12,7 @@ import { HeaderRow } from './header-row';
 export interface HeaderProps {
   headerRows?: RowsType[] | ColumnsType; // array of rows arrays
   children?: React.ReactNode;
-  columns?: RenderersTypes['columns'];
+  columns?: ColumnsType;
   renderers?: RenderersTypes['renderers'];
   onRow?: Function;
   className?: string;

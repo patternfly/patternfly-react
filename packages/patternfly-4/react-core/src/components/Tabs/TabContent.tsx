@@ -59,4 +59,4 @@ const TabContent0: React.FC<TabContentProps> = ({
 }
 
 // eslint-disable-next-line react/no-multi-comp
-export const TabContent = React.forwardRef((props: TabContentProps, ref: React.Ref<HTMLElement>) => <TabContent0 innerRef={ref} {...props} />);
+export const TabContent = React.forwardRef<any, TabContentProps>((props, ref) => <TabContent0 innerRef={ref} {...props} />);
