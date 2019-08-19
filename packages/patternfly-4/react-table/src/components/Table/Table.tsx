@@ -108,11 +108,11 @@ export interface IDecorator extends React.HTMLProps<HTMLElement> {
 
 export interface ICell {
   title?: string;
-  transforms?: ((value: any) => IDecorator)[];
-  cellTransforms?: ((value: any) => IDecorator)[];
-  columnTransforms?: ((value: any) => IDecorator)[];
-  formatters?: ((value: any) => IDecorator)[];
-  cellFormatters?: ((value: any) => IDecorator)[];
+  transforms?: ((value: any) => any)[];
+  cellTransforms?: ((value: any) => any)[];
+  columnTransforms?: ((value: any) => any)[];
+  formatters?: ((value: any) => any)[];
+  cellFormatters?: ((value: any) => any)[];
   props?: any;
   data?: any;
   header?: any;
