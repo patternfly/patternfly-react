@@ -22,7 +22,7 @@ export interface SelectProps
   children: React.ReactElement[];
   /** Classes applied to the root of the Select */
   className?: string;
-  /** Flaf specifying which direction the Select menu expands */
+  /** Flag specifying which direction the Select menu expands */
   direction?: 'up' | 'down';
   /** Flag to indicate if select is expanded */
   isExpanded?: boolean;
