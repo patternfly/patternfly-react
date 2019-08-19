@@ -9,10 +9,14 @@ describe('Chip Group Demo Test', () => {
     cy.get('.pf-c-chip__text').first().contains('Lemons'); 
   });
 
+  it('Verify chip is closed on default', () => {
+    cy.get('.pf-c-chip__text').eq(1).should('not.contain', 'Limes');
+  });
+
   it('Verify chip has badge', () => {
     cy.get('span').children('.pf-c-badge').should('not.be.undefined');
     cy.get('span').children('.pf-c-badge').should('not.equal', null);
-  })
+  });
 
   it('Verify more button works', () => {
     cy.get('.pf-m-overflow').children('button').click();

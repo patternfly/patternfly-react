@@ -11,6 +11,8 @@ export interface ChipGroupProps extends React.HTMLProps<HTMLDivElement> {
   children?: React.ReactNode;
   /** Additional classes added to the chip item */
   className?: string; 
+  /** Flag for having the chip group default to expanded */
+  defaultIsOpen?: boolean;
   /** Customizable "Show Less" text string */
   expandedText?: string;
   /** Customizeable template string. Use variable "${remaining}" for the overflow chip count. */
@@ -29,7 +31,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState>{
   constructor(props: ChipGroupProps) {
     super(props); 
     this.state = {
-      isOpen: false
+      isOpen: this.props.defaultIsOpen
     }
   }
   
@@ -37,7 +39,8 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState>{
     className: '',
     expandedText: 'Show Less',
     collapsedText: '${remaining} more',
-    withToolbar: false
+    withToolbar: false,
+    defaultIsOpen: false
   }
 
   toggleCollapse = () => {
