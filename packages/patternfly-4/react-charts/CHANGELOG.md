@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.7.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.7.9...@patternfly/react-charts@4.7.10) (2019-08-19)
+
+
+### Bug Fixes
+
+* **charts:** clean up tests and doc ([#2707](https://github.com/patternfly/patternfly-react/issues/2707)) ([7e8350b](https://github.com/patternfly/patternfly-react/commit/7e8350b))
+
+
+
+
+
 ## [4.7.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.7.8...@patternfly/react-charts@4.7.9) (2019-08-16)
 
 **Note:** Version bump only for package @patternfly/react-charts
