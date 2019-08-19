@@ -1,6 +1,17 @@
 import { VictoryThemeDefinition } from 'victory';
 import { AxisTheme } from './themes/axis-theme';
 import { BaseTheme } from './themes/base-theme';
+import {
+  BulletTheme,
+  BulletComparativeErrorMeasureTheme,
+  BulletComparativeMeasureTheme,
+  BulletComparativeWarningMeasureTheme,
+  BulletGroupTitleTheme,
+  BulletPrimaryDotMeasureTheme,
+  BulletPrimaryNegativeMeasureTheme,
+  BulletPrimarySegmentedMeasureTheme,
+  BulletQualitativeRangeTheme
+} from './themes/bullet-theme';
 import { DonutTheme } from './themes/donut-theme';
 import {
   DonutThresholdDynamicTheme,
@@ -79,6 +90,15 @@ export type ChartThemeDefinition = ChartThemeDefinitionInterface;
 
 export const ChartAxisTheme: ChartThemeDefinition = AxisTheme;
 export const ChartBaseTheme: ChartThemeDefinition = BaseTheme;
+export const ChartBulletComparativeErrorMeasureTheme: ChartThemeDefinition = BulletComparativeErrorMeasureTheme;
+export const ChartBulletComparativeMeasureTheme: ChartThemeDefinition = BulletComparativeMeasureTheme;
+export const ChartBulletComparativeWarningMeasureTheme: ChartThemeDefinition = BulletComparativeWarningMeasureTheme;
+export const ChartBulletGroupTitleTheme: ChartThemeDefinition = BulletGroupTitleTheme;
+export const ChartBulletPrimaryDotMeasureTheme: ChartThemeDefinition = BulletPrimaryDotMeasureTheme;
+export const ChartBulletPrimaryNegativeMeasureTheme: ChartThemeDefinition = BulletPrimaryNegativeMeasureTheme;
+export const ChartBulletPrimarySegmentedMeasureTheme: ChartThemeDefinition = BulletPrimarySegmentedMeasureTheme;
+export const ChartBulletTheme: ChartThemeDefinition = BulletTheme;
+export const ChartBulletQualitativeRangeTheme: ChartThemeDefinition = BulletQualitativeRangeTheme;
 export const ChartDonutUtilizationDynamicTheme: ChartThemeDefinition = DonutUtilizationDynamicTheme;
 export const ChartDonutUtilizationStaticTheme: ChartThemeDefinition = DonutUtilizationStaticTheme;
 export const ChartDonutTheme: ChartThemeDefinition = DonutTheme;

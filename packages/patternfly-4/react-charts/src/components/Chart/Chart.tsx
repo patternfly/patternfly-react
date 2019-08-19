@@ -213,7 +213,7 @@ export interface ChartProps extends VictoryChartProps {
    */
   legendOrientation?: 'horizontal' | 'vertical';
   /**
-   * The legend position relation to the area chart. Valid values are 'bottom', 'bottom-left', and 'right'
+   * The legend position relation to the chart. Valid values are 'bottom', 'bottom-left', and 'right'
    */
   legendPosition?: 'bottom' | 'bottom-left' | 'right';
   /**
@@ -415,7 +415,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       dy += ChartCommonStyles.legend.margin;
     } else if (legendPosition === ChartLegendPosition.bottomLeft) {
       dy += ChartCommonStyles.legend.margin;
-      dx += defaultPadding.left > 10 ? defaultPadding.left - 10 : -10;
+      dx += defaultPadding.left - 10;
     } else if (legendPosition === ChartLegendPosition.right) {
       dx += defaultPadding.left;
     }
