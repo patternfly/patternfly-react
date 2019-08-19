@@ -14,7 +14,7 @@ import {
   CubeIcon
 } from '@patternfly/react-icons';
 
-import { DemoSortableTable } from './DemoSortableTable'
+import { DemoSortableTable } from './TableSortableForCompoundExpandableDemo'
 
 
 export class TableCompoundExpandableDemo extends React.Component<{}, { columns: any, rows: any[] }> {

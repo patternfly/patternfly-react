@@ -24,7 +24,7 @@ export class DemoSortableTable extends React.Component<DemoSortableTableProps> {
       sortBy: {}
     };
 
-  onSort(_event, index, direction) {
+  onSort = (_event, index, direction) => {
     const sortedRows = this.state.rows.sort((a, b) => {
       if (a[index] < b[index]) {
         return -1;
