@@ -14,7 +14,7 @@ import './bullseye.scss';
 import React from 'react';
 import { Bullseye } from '@patternfly/react-core';
 
-<Bullseye>
+<Bullseye className="layout-example">
   <div>Bullseye ◎ layout</div>
 </Bullseye>
 ```
