@@ -85,6 +85,7 @@ class CatalogTile extends React.Component {
       href,
       onClick,
       iconImg,
+      iconAlt,
       iconClass,
       badges,
       title,
@@ -116,7 +117,7 @@ class CatalogTile extends React.Component {
     return (
       <OuterComponent>
         <div className="catalog-tile-pf-header">
-          {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt="" />}
+          {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt={iconAlt} />}
           {!iconImg && iconClass && <span className={`catalog-tile-pf-icon ${iconClass}`} />}
           {this.renderBadges(badges)}
         </div>
@@ -148,6 +149,8 @@ CatalogTile.propTypes = {
   onClick: PropTypes.func,
   /** URL of an image for the item's icon */
   iconImg: PropTypes.string,
+  /** Alternate text for the item's icon */
+  iconAlt: PropTypes.string,
   /** Class for the image when an icon is to be used (exclusive from iconImg) */
   iconClass: PropTypes.string,
   /** Array of badges */
@@ -173,6 +176,7 @@ CatalogTile.defaultProps = {
   href: null,
   onClick: null,
   iconImg: null,
+  iconAlt: '',
   iconClass: null,
   badges: [],
   vendor: null,
