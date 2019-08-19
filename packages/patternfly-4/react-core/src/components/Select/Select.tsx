@@ -8,7 +8,7 @@ import { TimesCircleIcon } from '@patternfly/react-icons';
 import { SelectMenu } from './SelectMenu';
 import { SelectOption, SelectOptionObject } from './SelectOption';
 import { SelectToggle } from './SelectToggle';
-import { SelectContext, SelectVariant } from './selectConstants';
+import { SelectContext, SelectVariant, SelectDirection } from './selectConstants';
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
@@ -22,6 +22,8 @@ export interface SelectProps
   children: React.ReactElement[];
   /** Classes applied to the root of the Select */
   className?: string;
+  /** Flag specifying which direction the Select menu expands */
+  direction?: 'up' | 'down';
   /** Flag to indicate if select is expanded */
   isExpanded?: boolean;
   /** Flag to indicate if select options are grouped */
@@ -77,6 +79,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
   static defaultProps = {
     children: [] as React.ReactElement[],
     className: '',
+    direction: SelectDirection.down,
     toggleId: null as string,
     isExpanded: false,
     isGrouped: false,
@@ -271,6 +274,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       children,
       className,
       variant,
+      direction,
       onToggle,
       onSelect,
       onClear,
@@ -315,7 +319,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     }
     return (
       <div
-        className={css(styles.select, isExpanded && styles.modifiers.expanded, className)}
+        className={css(styles.select, isExpanded && styles.modifiers.expanded, direction === SelectDirection.up && styles.modifiers.top, className)}
         ref={this.parentRef}
         style={{ width }}
       >
