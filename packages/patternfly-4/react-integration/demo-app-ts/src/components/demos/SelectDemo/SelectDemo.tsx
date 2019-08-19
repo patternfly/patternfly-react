@@ -23,7 +23,7 @@ export interface SelectDemoState {
   plainTypeaheadMultiIsPlain: boolean,
   customTypeaheadMultiIsExpanded: boolean,
   customTypeaheadMultiSelected: string[],
-  direction: string
+  direction: SelectDirection.up | SelectDirection.down
 }
 
 export class SelectDemo extends Component<SelectDemoState> {
@@ -93,7 +93,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   ];
 
   toggleDirection = () => {
-    if(this.state.direction === 'up') {
+    if(this.state.direction === SelectDirection.up) {
       this.setState({
         direction: SelectDirection.down
       });
@@ -333,11 +333,11 @@ export class SelectDemo extends Component<SelectDemoState> {
         </div>
         <Checkbox
           label="Expands up"
-          isChecked={this.state.direction === 'up'}
+          isChecked={this.state.direction === SelectDirection.up}
           onChange={this.toggleDirection}
-          aria-label="disabled checkbox"
-          id="toggle-disabled"
-          name="toggle-disabled"
+          aria-label="direction checkbox"
+          id="toggle-direction"
+          name="toggle-direction"
         />
       </StackItem>
     );

@@ -30,7 +30,7 @@ class SingleSelectInput extends React.Component {
       isExpanded: false,
       selected: null,
       isDisabled: false,
-      direction: 'down'
+      direction: SelectDirection.down
     };
 
     this.onToggle = isExpanded => {
@@ -64,7 +64,7 @@ class SingleSelectInput extends React.Component {
     }
 
     this.toggleDirection = () => {
-      if(this.state.direction === 'up') {
+      if(this.state.direction === SelectDirection.up) {
         this.setState({
           direction: SelectDirection.down
         });
@@ -114,7 +114,7 @@ class SingleSelectInput extends React.Component {
         />
         <Checkbox
           label="Expands up"
-          isChecked={direction === 'up'}
+          isChecked={direction === SelectDirection.up}
           onChange={this.toggleDirection}
           aria-label="direction checkbox"
           id="toggle-direction"
