@@ -9,6 +9,7 @@ exports[`Disabled FormSelect input  1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  required={false}
   value=""
 >
   <Component
@@ -28,6 +29,7 @@ exports[`FormSelect input with aria-label does not generate console error 1`] = 
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  required={false}
   value=""
 >
   <Component
@@ -47,6 +49,7 @@ exports[`FormSelect input with id does not generate console error 1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  required={false}
   value=""
 >
   <Component
@@ -65,6 +68,7 @@ exports[`FormSelect input with no aria-label or id generates console error 1`] =
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  required={false}
   value=""
 >
   <Component
@@ -84,6 +88,7 @@ exports[`Grouped FormSelect input 1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  required={false}
   value="2"
 >
   <Component
@@ -152,6 +157,7 @@ exports[`Simple FormSelect input 1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  required={false}
   value="mrs"
 >
   <Component
@@ -208,6 +214,7 @@ exports[`invalid FormSelect input 1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  required={false}
   value=""
 >
   <Component
@@ -227,7 +234,7 @@ exports[`required FormSelect input 1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
-  required={true}
+  required={false}
   value=""
 >
   <Component
