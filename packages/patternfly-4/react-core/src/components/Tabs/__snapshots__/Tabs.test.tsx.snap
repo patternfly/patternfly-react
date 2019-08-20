@@ -1132,1438 +1132,679 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
 `;
 
 exports[`should render accessible tabs 1`] = `
-<Component
-  aria-label="accessible Tabs example"
-  id="accessibleTabs"
-  variant="nav"
->
-  <ComponentWithOuia
-    component={[Function]}
-    componentProps={
-      Object {
-        "aria-label": "accessible Tabs example",
-        "children": Array [
-          <ForwardRef
-            eventKey={0}
-            href="#/items/1"
-            id="tab1"
-            title="Tab item 1"
-          >
-            Tab 1 section
-          </ForwardRef>,
-          <ForwardRef
-            eventKey={1}
-            href="#/items/2"
-            id="tab2"
-            title="Tab item 2"
-          >
-            Tab 2 section
-          </ForwardRef>,
-          <ForwardRef
-            eventKey={2}
-            href="#/items/3"
-            id="tab3"
-            title="Tab item 3"
-          >
-            Tab 3 section
-          </ForwardRef>,
-        ],
-        "id": "accessibleTabs",
-        "variant": "nav",
-      }
-    }
-    consumerContext={null}
+Array [
+  <nav
+    aria-label="accessible Tabs example"
+    class="pf-c-tabs"
   >
-    <Tabs
-      activeKey={0}
-      aria-label="accessible Tabs example"
-      className=""
-      id="accessibleTabs"
-      isFilled={false}
-      isSecondary={false}
-      leftScrollAriaLabel="Scroll left"
-      onSelect={[Function]}
-      ouiaContext={
-        Object {
-          "isOuia": false,
-          "ouiaId": null,
-        }
-      }
-      rightScrollAriaLabel="Scroll right"
-      variant="nav"
+    <button
+      aria-label="Scroll left"
+      class="pf-c-tabs__scroll-button"
     >
-      <nav
-        aria-label="accessible Tabs example"
-        className="pf-c-tabs"
-        onSelect={[Function]}
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align:-0.125em"
+        viewBox="0 0 256 512"
+        width="1em"
       >
-        <button
-          aria-label="Scroll left"
-          className="pf-c-tabs__scroll-button"
-          onClick={[Function]}
-        >
-          <AngleLeftIcon
-            color="currentColor"
-            noVerticalAlign={false}
-            size="sm"
-            title={null}
-          >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 256 512"
-              width="1em"
-            >
-              <path
-                d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                transform=""
-              />
-            </svg>
-          </AngleLeftIcon>
-        </button>
-        <ul
-          className="pf-c-tabs__list"
-          onScroll={[Function]}
-        >
-          <li
-            className="pf-c-tabs__item pf-m-current"
-            key="0/.0"
-          >
-            <ForwardRef
-              aria-controls="pf-tab-section-0-tab1"
-              className="pf-c-tabs__button"
-              eventKey={0}
-              href="#/items/1"
-              id="tab1"
-              onClick={[Function]}
-              title="Tab item 1"
-            >
-              <TabContainer
-                aria-controls="pf-tab-section-0-tab1"
-                className="pf-c-tabs__button"
-                eventKey={0}
-                forwardRef={null}
-                href="#/items/1"
-                id="tab1"
-                onClick={[Function]}
-                title="Tab item 1"
-              >
-                <Tab0
-                  aria-controls="pf-tab-section-0-tab1"
-                  className="pf-c-tabs__button"
-                  eventKey={0}
-                  href="#/items/1"
-                  id="tab1"
-                  onClick={[Function]}
-                  title="Tab item 1"
-                >
-                  <a
-                    aria-controls="pf-tab-section-0-tab1"
-                    className="pf-c-tabs__button"
-                    href="#/items/1"
-                    id="tab1"
-                    onClick={[Function]}
-                  >
-                    Tab item 1
-                  </a>
-                </Tab0>
-              </TabContainer>
-            </ForwardRef>
-          </li>
-          <li
-            className="pf-c-tabs__item"
-            key="1/.1"
-          >
-            <ForwardRef
-              aria-controls="pf-tab-section-1-tab2"
-              className="pf-c-tabs__button"
-              eventKey={1}
-              href="#/items/2"
-              id="tab2"
-              onClick={[Function]}
-              title="Tab item 2"
-            >
-              <TabContainer
-                aria-controls="pf-tab-section-1-tab2"
-                className="pf-c-tabs__button"
-                eventKey={1}
-                forwardRef={null}
-                href="#/items/2"
-                id="tab2"
-                onClick={[Function]}
-                title="Tab item 2"
-              >
-                <Tab0
-                  aria-controls="pf-tab-section-1-tab2"
-                  className="pf-c-tabs__button"
-                  eventKey={1}
-                  href="#/items/2"
-                  id="tab2"
-                  onClick={[Function]}
-                  title="Tab item 2"
-                >
-                  <a
-                    aria-controls="pf-tab-section-1-tab2"
-                    className="pf-c-tabs__button"
-                    href="#/items/2"
-                    id="tab2"
-                    onClick={[Function]}
-                  >
-                    Tab item 2
-                  </a>
-                </Tab0>
-              </TabContainer>
-            </ForwardRef>
-          </li>
-          <li
-            className="pf-c-tabs__item"
-            key="2/.2"
-          >
-            <ForwardRef
-              aria-controls="pf-tab-section-2-tab3"
-              className="pf-c-tabs__button"
-              eventKey={2}
-              href="#/items/3"
-              id="tab3"
-              onClick={[Function]}
-              title="Tab item 3"
-            >
-              <TabContainer
-                aria-controls="pf-tab-section-2-tab3"
-                className="pf-c-tabs__button"
-                eventKey={2}
-                forwardRef={null}
-                href="#/items/3"
-                id="tab3"
-                onClick={[Function]}
-                title="Tab item 3"
-              >
-                <Tab0
-                  aria-controls="pf-tab-section-2-tab3"
-                  className="pf-c-tabs__button"
-                  eventKey={2}
-                  href="#/items/3"
-                  id="tab3"
-                  onClick={[Function]}
-                  title="Tab item 3"
-                >
-                  <a
-                    aria-controls="pf-tab-section-2-tab3"
-                    className="pf-c-tabs__button"
-                    href="#/items/3"
-                    id="tab3"
-                    onClick={[Function]}
-                  >
-                    Tab item 3
-                  </a>
-                </Tab0>
-              </TabContainer>
-            </ForwardRef>
-          </li>
-        </ul>
-        <button
-          aria-label="Scroll right"
-          className="pf-c-tabs__scroll-button"
-          onClick={[Function]}
-        >
-          <AngleRightIcon
-            color="currentColor"
-            noVerticalAlign={false}
-            size="sm"
-            title={null}
-          >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 256 512"
-              width="1em"
-            >
-              <path
-                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                transform=""
-              />
-            </svg>
-          </AngleRightIcon>
-        </button>
-      </nav>
-      <ForwardRef
-        activeKey={0}
-        child={
-          <ForwardRef
-            eventKey={0}
-            href="#/items/1"
-            id="tab1"
-            title="Tab item 1"
-          >
-            Tab 1 section
-          </ForwardRef>
-        }
-        id="tab1"
-        key="0/.0"
+        <path
+          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+          transform=""
+        />
+      </svg>
+    </button>
+    <ul
+      class="pf-c-tabs__list"
+    >
+      <li
+        class="pf-c-tabs__item pf-m-current"
       >
-        <TabContent0
-          activeKey={0}
-          child={
-            <ForwardRef
-              eventKey={0}
-              href="#/items/1"
-              id="tab1"
-              title="Tab item 1"
-            >
-              Tab 1 section
-            </ForwardRef>
-          }
+        <a
+          aria-controls="pf-tab-section-0-tab1"
+          class="pf-c-tabs__button"
+          href="#/items/1"
           id="tab1"
-          innerRef={null}
         >
-          <section
-            aria-labelledby="pf-tab-0-tab1"
-            className="pf-c-tab-content"
-            hidden={false}
-            id="pf-tab-section-0-tab1"
-            role="tabpanel"
-            tabIndex={0}
-          >
-            Tab 1 section
-          </section>
-        </TabContent0>
-      </ForwardRef>
-      <ForwardRef
-        activeKey={0}
-        child={
-          <ForwardRef
-            eventKey={1}
-            href="#/items/2"
-            id="tab2"
-            title="Tab item 2"
-          >
-            Tab 2 section
-          </ForwardRef>
-        }
-        id="tab2"
-        key="1/.1"
+          Tab item 1
+        </a>
+      </li>
+      <li
+        class="pf-c-tabs__item"
       >
-        <TabContent0
-          activeKey={0}
-          child={
-            <ForwardRef
-              eventKey={1}
-              href="#/items/2"
-              id="tab2"
-              title="Tab item 2"
-            >
-              Tab 2 section
-            </ForwardRef>
-          }
+        <a
+          aria-controls="pf-tab-section-1-tab2"
+          class="pf-c-tabs__button"
+          href="#/items/2"
           id="tab2"
-          innerRef={null}
         >
-          <section
-            aria-labelledby="pf-tab-1-tab2"
-            className="pf-c-tab-content"
-            hidden={true}
-            id="pf-tab-section-1-tab2"
-            role="tabpanel"
-            tabIndex={0}
-          >
-            Tab 2 section
-          </section>
-        </TabContent0>
-      </ForwardRef>
-      <ForwardRef
-        activeKey={0}
-        child={
-          <ForwardRef
-            eventKey={2}
-            href="#/items/3"
-            id="tab3"
-            title="Tab item 3"
-          >
-            Tab 3 section
-          </ForwardRef>
-        }
-        id="tab3"
-        key="2/.2"
+          Tab item 2
+        </a>
+      </li>
+      <li
+        class="pf-c-tabs__item"
       >
-        <TabContent0
-          activeKey={0}
-          child={
-            <ForwardRef
-              eventKey={2}
-              href="#/items/3"
-              id="tab3"
-              title="Tab item 3"
-            >
-              Tab 3 section
-            </ForwardRef>
-          }
+        <a
+          aria-controls="pf-tab-section-2-tab3"
+          class="pf-c-tabs__button"
+          href="#/items/3"
           id="tab3"
-          innerRef={null}
         >
-          <section
-            aria-labelledby="pf-tab-2-tab3"
-            className="pf-c-tab-content"
-            hidden={true}
-            id="pf-tab-section-2-tab3"
-            role="tabpanel"
-            tabIndex={0}
-          >
-            Tab 3 section
-          </section>
-        </TabContent0>
-      </ForwardRef>
-    </Tabs>
-  </ComponentWithOuia>
-</Component>
+          Tab item 3
+        </a>
+      </li>
+    </ul>
+    <button
+      aria-label="Scroll right"
+      class="pf-c-tabs__scroll-button"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align:-0.125em"
+        viewBox="0 0 256 512"
+        width="1em"
+      >
+        <path
+          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+          transform=""
+        />
+      </svg>
+    </button>
+  </nav>,
+  <section
+    aria-labelledby="pf-tab-0-tab1"
+    class="pf-c-tab-content"
+    id="pf-tab-section-0-tab1"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 1 section
+  </section>,
+  <section
+    aria-labelledby="pf-tab-1-tab2"
+    class="pf-c-tab-content"
+    hidden=""
+    id="pf-tab-section-1-tab2"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 2 section
+  </section>,
+  <section
+    aria-labelledby="pf-tab-2-tab3"
+    class="pf-c-tab-content"
+    hidden=""
+    id="pf-tab-section-2-tab3"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 3 section
+  </section>,
+]
 `;
 
 exports[`should render filled tabs 1`] = `
-<Component
-  id="filledTabs"
-  isFilled={true}
->
-  <ComponentWithOuia
-    component={[Function]}
-    componentProps={
-      Object {
-        "children": Array [
-          <ForwardRef
-            eventKey={0}
-            id="tab1"
-            title="Tab item 1"
-          >
-            Tab 1 section
-          </ForwardRef>,
-          <ForwardRef
-            eventKey={1}
-            id="tab2"
-            title="Tab item 2"
-          >
-            Tab 2 section
-          </ForwardRef>,
-          <ForwardRef
-            eventKey={2}
-            id="tab3"
-            title="Tab item 3"
-          >
-            Tab 3 section
-          </ForwardRef>,
-        ],
-        "id": "filledTabs",
-        "isFilled": true,
-      }
-    }
-    consumerContext={null}
+Array [
+  <div
+    class="pf-c-tabs pf-m-fill"
   >
-    <Tabs
-      activeKey={0}
-      className=""
-      id="filledTabs"
-      isFilled={true}
-      isSecondary={false}
-      leftScrollAriaLabel="Scroll left"
-      onSelect={[Function]}
-      ouiaContext={
-        Object {
-          "isOuia": false,
-          "ouiaId": null,
-        }
-      }
-      rightScrollAriaLabel="Scroll right"
-      variant="div"
+    <button
+      aria-label="Scroll left"
+      class="pf-c-tabs__scroll-button"
     >
-      <div
-        className="pf-c-tabs pf-m-fill"
-        onSelect={[Function]}
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align:-0.125em"
+        viewBox="0 0 256 512"
+        width="1em"
+      >
+        <path
+          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+          transform=""
+        />
+      </svg>
+    </button>
+    <ul
+      class="pf-c-tabs__list"
+    >
+      <li
+        class="pf-c-tabs__item pf-m-current"
       >
         <button
-          aria-label="Scroll left"
-          className="pf-c-tabs__scroll-button"
-          onClick={[Function]}
-        >
-          <AngleLeftIcon
-            color="currentColor"
-            noVerticalAlign={false}
-            size="sm"
-            title={null}
-          >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 256 512"
-              width="1em"
-            >
-              <path
-                d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                transform=""
-              />
-            </svg>
-          </AngleLeftIcon>
-        </button>
-        <ul
-          className="pf-c-tabs__list"
-          onScroll={[Function]}
-        >
-          <li
-            className="pf-c-tabs__item pf-m-current"
-            key="0/.0"
-          >
-            <ForwardRef
-              aria-controls="pf-tab-section-0-tab1"
-              className="pf-c-tabs__button"
-              eventKey={0}
-              id="tab1"
-              onClick={[Function]}
-              title="Tab item 1"
-            >
-              <TabContainer
-                aria-controls="pf-tab-section-0-tab1"
-                className="pf-c-tabs__button"
-                eventKey={0}
-                forwardRef={null}
-                id="tab1"
-                onClick={[Function]}
-                title="Tab item 1"
-              >
-                <Tab0
-                  aria-controls="pf-tab-section-0-tab1"
-                  className="pf-c-tabs__button"
-                  eventKey={0}
-                  id="tab1"
-                  onClick={[Function]}
-                  title="Tab item 1"
-                >
-                  <button
-                    aria-controls="pf-tab-section-0-tab1"
-                    className="pf-c-tabs__button"
-                    id="tab1"
-                    onClick={[Function]}
-                  >
-                    Tab item 1
-                  </button>
-                </Tab0>
-              </TabContainer>
-            </ForwardRef>
-          </li>
-          <li
-            className="pf-c-tabs__item"
-            key="1/.1"
-          >
-            <ForwardRef
-              aria-controls="pf-tab-section-1-tab2"
-              className="pf-c-tabs__button"
-              eventKey={1}
-              id="tab2"
-              onClick={[Function]}
-              title="Tab item 2"
-            >
-              <TabContainer
-                aria-controls="pf-tab-section-1-tab2"
-                className="pf-c-tabs__button"
-                eventKey={1}
-                forwardRef={null}
-                id="tab2"
-                onClick={[Function]}
-                title="Tab item 2"
-              >
-                <Tab0
-                  aria-controls="pf-tab-section-1-tab2"
-                  className="pf-c-tabs__button"
-                  eventKey={1}
-                  id="tab2"
-                  onClick={[Function]}
-                  title="Tab item 2"
-                >
-                  <button
-                    aria-controls="pf-tab-section-1-tab2"
-                    className="pf-c-tabs__button"
-                    id="tab2"
-                    onClick={[Function]}
-                  >
-                    Tab item 2
-                  </button>
-                </Tab0>
-              </TabContainer>
-            </ForwardRef>
-          </li>
-          <li
-            className="pf-c-tabs__item"
-            key="2/.2"
-          >
-            <ForwardRef
-              aria-controls="pf-tab-section-2-tab3"
-              className="pf-c-tabs__button"
-              eventKey={2}
-              id="tab3"
-              onClick={[Function]}
-              title="Tab item 3"
-            >
-              <TabContainer
-                aria-controls="pf-tab-section-2-tab3"
-                className="pf-c-tabs__button"
-                eventKey={2}
-                forwardRef={null}
-                id="tab3"
-                onClick={[Function]}
-                title="Tab item 3"
-              >
-                <Tab0
-                  aria-controls="pf-tab-section-2-tab3"
-                  className="pf-c-tabs__button"
-                  eventKey={2}
-                  id="tab3"
-                  onClick={[Function]}
-                  title="Tab item 3"
-                >
-                  <button
-                    aria-controls="pf-tab-section-2-tab3"
-                    className="pf-c-tabs__button"
-                    id="tab3"
-                    onClick={[Function]}
-                  >
-                    Tab item 3
-                  </button>
-                </Tab0>
-              </TabContainer>
-            </ForwardRef>
-          </li>
-        </ul>
-        <button
-          aria-label="Scroll right"
-          className="pf-c-tabs__scroll-button"
-          onClick={[Function]}
-        >
-          <AngleRightIcon
-            color="currentColor"
-            noVerticalAlign={false}
-            size="sm"
-            title={null}
-          >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 256 512"
-              width="1em"
-            >
-              <path
-                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                transform=""
-              />
-            </svg>
-          </AngleRightIcon>
-        </button>
-      </div>
-      <ForwardRef
-        activeKey={0}
-        child={
-          <ForwardRef
-            eventKey={0}
-            id="tab1"
-            title="Tab item 1"
-          >
-            Tab 1 section
-          </ForwardRef>
-        }
-        id="tab1"
-        key="0/.0"
-      >
-        <TabContent0
-          activeKey={0}
-          child={
-            <ForwardRef
-              eventKey={0}
-              id="tab1"
-              title="Tab item 1"
-            >
-              Tab 1 section
-            </ForwardRef>
-          }
+          aria-controls="pf-tab-section-0-tab1"
+          class="pf-c-tabs__button"
           id="tab1"
-          innerRef={null}
         >
-          <section
-            aria-labelledby="pf-tab-0-tab1"
-            className="pf-c-tab-content"
-            hidden={false}
-            id="pf-tab-section-0-tab1"
-            role="tabpanel"
-            tabIndex={0}
-          >
-            Tab 1 section
-          </section>
-        </TabContent0>
-      </ForwardRef>
-      <ForwardRef
-        activeKey={0}
-        child={
-          <ForwardRef
-            eventKey={1}
-            id="tab2"
-            title="Tab item 2"
-          >
-            Tab 2 section
-          </ForwardRef>
-        }
-        id="tab2"
-        key="1/.1"
+          Tab item 1
+        </button>
+      </li>
+      <li
+        class="pf-c-tabs__item"
       >
-        <TabContent0
-          activeKey={0}
-          child={
-            <ForwardRef
-              eventKey={1}
-              id="tab2"
-              title="Tab item 2"
-            >
-              Tab 2 section
-            </ForwardRef>
-          }
+        <button
+          aria-controls="pf-tab-section-1-tab2"
+          class="pf-c-tabs__button"
           id="tab2"
-          innerRef={null}
         >
-          <section
-            aria-labelledby="pf-tab-1-tab2"
-            className="pf-c-tab-content"
-            hidden={true}
-            id="pf-tab-section-1-tab2"
-            role="tabpanel"
-            tabIndex={0}
-          >
-            Tab 2 section
-          </section>
-        </TabContent0>
-      </ForwardRef>
-      <ForwardRef
-        activeKey={0}
-        child={
-          <ForwardRef
-            eventKey={2}
-            id="tab3"
-            title="Tab item 3"
-          >
-            Tab 3 section
-          </ForwardRef>
-        }
-        id="tab3"
-        key="2/.2"
+          Tab item 2
+        </button>
+      </li>
+      <li
+        class="pf-c-tabs__item"
       >
-        <TabContent0
-          activeKey={0}
-          child={
-            <ForwardRef
-              eventKey={2}
-              id="tab3"
-              title="Tab item 3"
-            >
-              Tab 3 section
-            </ForwardRef>
-          }
+        <button
+          aria-controls="pf-tab-section-2-tab3"
+          class="pf-c-tabs__button"
           id="tab3"
-          innerRef={null}
         >
-          <section
-            aria-labelledby="pf-tab-2-tab3"
-            className="pf-c-tab-content"
-            hidden={true}
-            id="pf-tab-section-2-tab3"
-            role="tabpanel"
-            tabIndex={0}
-          >
-            Tab 3 section
-          </section>
-        </TabContent0>
-      </ForwardRef>
-    </Tabs>
-  </ComponentWithOuia>
-</Component>
+          Tab item 3
+        </button>
+      </li>
+    </ul>
+    <button
+      aria-label="Scroll right"
+      class="pf-c-tabs__scroll-button"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align:-0.125em"
+        viewBox="0 0 256 512"
+        width="1em"
+      >
+        <path
+          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+          transform=""
+        />
+      </svg>
+    </button>
+  </div>,
+  <section
+    aria-labelledby="pf-tab-0-tab1"
+    class="pf-c-tab-content"
+    id="pf-tab-section-0-tab1"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 1 section
+  </section>,
+  <section
+    aria-labelledby="pf-tab-1-tab2"
+    class="pf-c-tab-content"
+    hidden=""
+    id="pf-tab-section-1-tab2"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 2 section
+  </section>,
+  <section
+    aria-labelledby="pf-tab-2-tab3"
+    class="pf-c-tab-content"
+    hidden=""
+    id="pf-tab-section-2-tab3"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 3 section
+  </section>,
+]
 `;
 
 exports[`should render secondary tabs 1`] = `
-<Fragment>
+Array [
   <div
-    className="pf-c-tabs"
-    onSelect={[Function]}
+    class="pf-c-tabs"
   >
     <button
       aria-label="Scroll left"
-      className="pf-c-tabs__scroll-button"
-      onClick={[Function]}
+      class="pf-c-tabs__scroll-button"
     >
-      <AngleLeftIcon
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-        title={null}
-      />
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align:-0.125em"
+        viewBox="0 0 256 512"
+        width="1em"
+      >
+        <path
+          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+          transform=""
+        />
+      </svg>
     </button>
     <ul
-      className="pf-c-tabs__list"
-      onScroll={[Function]}
+      class="pf-c-tabs__list"
     >
       <li
-        className="pf-c-tabs__item pf-m-current"
-        key="0/.0"
+        class="pf-c-tabs__item pf-m-current"
       >
-        <ForwardRef
-          aria-controls="pf-tab-section-0-primaryTabs"
-          className="pf-c-tabs__button"
-          eventKey={0}
-          id="pf-tab-0-primaryTabs"
-          onClick={[Function]}
-          title="Tab item 1"
+        <button
+          aria-controls="pf-tab-section-0-primarieTabs"
+          class="pf-c-tabs__button"
+          id="pf-tab-0-primarieTabs"
         >
           Tab item 1
-        </ForwardRef>
+        </button>
       </li>
       <li
-        className="pf-c-tabs__item"
-        key="1/.1"
+        class="pf-c-tabs__item"
       >
-        <ForwardRef
+        <button
           aria-controls="pf-tab-section-1-tab2"
-          className="pf-c-tabs__button"
-          eventKey={1}
+          class="pf-c-tabs__button"
           id="tab2"
-          onClick={[Function]}
-          title="Tab item 2"
         >
           Tab item 2
-        </ForwardRef>
+        </button>
       </li>
       <li
-        className="pf-c-tabs__item"
-        key="2/.2"
+        class="pf-c-tabs__item"
       >
-        <ForwardRef
+        <button
           aria-controls="pf-tab-section-2-tab3"
-          className="pf-c-tabs__button"
-          eventKey={2}
+          class="pf-c-tabs__button"
           id="tab3"
-          onClick={[Function]}
-          title="Tab item 3"
         >
           Tab item 3
-        </ForwardRef>
+        </button>
       </li>
     </ul>
     <button
       aria-label="Scroll right"
-      className="pf-c-tabs__scroll-button"
-      onClick={[Function]}
+      class="pf-c-tabs__scroll-button"
     >
-      <AngleRightIcon
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-        title={null}
-      />
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align:-0.125em"
+        viewBox="0 0 256 512"
+        width="1em"
+      >
+        <path
+          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+          transform=""
+        />
+      </svg>
     </button>
-  </div>
-  <ForwardRef
-    activeKey={0}
-    child={
-      <ForwardRef
-        eventKey={0}
-        title="Tab item 1"
+  </div>,
+  <section
+    aria-labelledby="pf-tab-0-primarieTabs"
+    class="pf-c-tab-content"
+    id="pf-tab-section-0-primarieTabs"
+    role="tabpanel"
+    tabindex="0"
+  >
+    <div
+      class="pf-c-tabs"
+    >
+      <button
+        aria-label="Scroll left"
+        class="pf-c-tabs__scroll-button"
       >
-        <Tabs
-          activeKey={0}
-          className=""
-          id="secondaryTabs"
-          isFilled={false}
-          isSecondary={false}
-          leftScrollAriaLabel="Scroll left"
-          onSelect={[Function]}
-          rightScrollAriaLabel="Scroll right"
-          variant="div"
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align:-0.125em"
+          viewBox="0 0 256 512"
+          width="1em"
         >
-          <ForwardRef
-            eventKey={10}
+          <path
+            d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+            transform=""
+          />
+        </svg>
+      </button>
+      <ul
+        class="pf-c-tabs__list"
+      >
+        <li
+          class="pf-c-tabs__item"
+        >
+          <button
+            aria-controls="pf-tab-section-10-secondary tab1"
+            class="pf-c-tabs__button"
             id="secondary tab1"
-            title="Secondary Tab 1"
           >
-            Secondary Tab 1 section
-          </ForwardRef>
-          <ForwardRef
-            eventKey={11}
+            Secondary Tab 1
+          </button>
+        </li>
+        <li
+          class="pf-c-tabs__item"
+        >
+          <button
+            aria-controls="pf-tab-section-11-secondary tab2"
+            class="pf-c-tabs__button"
             id="secondary tab2"
-            title="Secondary Tab 2"
           >
-            Secondary Tab 2 section
-          </ForwardRef>
-          <ForwardRef
-            eventKey={12}
+            Secondary Tab 2
+          </button>
+        </li>
+        <li
+          class="pf-c-tabs__item"
+        >
+          <button
+            aria-controls="pf-tab-section-12-secondary tab3"
+            class="pf-c-tabs__button"
             id="secondary tab3"
-            title="Secondary Tab 3"
           >
-            Secondary Tab 3 section
-          </ForwardRef>
-        </Tabs>
-      </ForwardRef>
-    }
-    id="primaryTabs"
-    key="0/.0"
-  />
-  <ForwardRef
-    activeKey={0}
-    child={
-      <ForwardRef
-        eventKey={1}
-        id="tab2"
-        title="Tab item 2"
+            Secondary Tab 3
+          </button>
+        </li>
+      </ul>
+      <button
+        aria-label="Scroll right"
+        class="pf-c-tabs__scroll-button"
       >
-        Tab 2 section
-      </ForwardRef>
-    }
-    id="tab2"
-    key="1/.1"
-  />
-  <ForwardRef
-    activeKey={0}
-    child={
-      <ForwardRef
-        eventKey={2}
-        id="tab3"
-        title="Tab item 3"
-      >
-        Tab 3 section
-      </ForwardRef>
-    }
-    id="tab3"
-    key="2/.2"
-  />
-</Fragment>
+        <svg
+          aria-hidden="true"
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style="vertical-align:-0.125em"
+          viewBox="0 0 256 512"
+          width="1em"
+        >
+          <path
+            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            transform=""
+          />
+        </svg>
+      </button>
+    </div>
+    <section
+      aria-labelledby="pf-tab-10-secondary tab1"
+      class="pf-c-tab-content"
+      hidden=""
+      id="pf-tab-section-10-secondary tab1"
+      role="tabpanel"
+      tabindex="0"
+    >
+      Secondary Tab 1 section
+    </section>
+    <section
+      aria-labelledby="pf-tab-11-secondary tab2"
+      class="pf-c-tab-content"
+      hidden=""
+      id="pf-tab-section-11-secondary tab2"
+      role="tabpanel"
+      tabindex="0"
+    >
+      Secondary Tab 2 section
+    </section>
+    <section
+      aria-labelledby="pf-tab-12-secondary tab3"
+      class="pf-c-tab-content"
+      hidden=""
+      id="pf-tab-section-12-secondary tab3"
+      role="tabpanel"
+      tabindex="0"
+    >
+      Secondary Tab 3 section
+    </section>
+  </section>,
+  <section
+    aria-labelledby="pf-tab-1-tab2"
+    class="pf-c-tab-content"
+    hidden=""
+    id="pf-tab-section-1-tab2"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 2 section
+  </section>,
+  <section
+    aria-labelledby="pf-tab-2-tab3"
+    class="pf-c-tab-content"
+    hidden=""
+    id="pf-tab-section-2-tab3"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 3 section
+  </section>,
+]
 `;
 
 exports[`should render simple tabs 1`] = `
-<Component
-  id="simpleTabs"
->
-  <ComponentWithOuia
-    component={[Function]}
-    componentProps={
-      Object {
-        "children": Array [
-          <ForwardRef
-            eventKey={0}
-            id="tab1"
-            title="Tab item 1"
-          >
-            Tab 1 section
-          </ForwardRef>,
-          <ForwardRef
-            eventKey={1}
-            id="tab2"
-            title="Tab item 2"
-          >
-            Tab 2 section
-          </ForwardRef>,
-          <ForwardRef
-            eventKey={2}
-            id="tab3"
-            title="Tab item 3"
-          >
-            Tab 3 section
-          </ForwardRef>,
-        ],
-        "id": "simpleTabs",
-      }
-    }
-    consumerContext={null}
-  >
-    <Tabs
-      activeKey={0}
-      className=""
-      id="simpleTabs"
-      isFilled={false}
-      isSecondary={false}
-      leftScrollAriaLabel="Scroll left"
-      onSelect={[Function]}
-      ouiaContext={
-        Object {
-          "isOuia": false,
-          "ouiaId": null,
-        }
-      }
-      rightScrollAriaLabel="Scroll right"
-      variant="div"
-    >
-      <div
-        className="pf-c-tabs"
-        onSelect={[Function]}
-      >
-        <button
-          aria-label="Scroll left"
-          className="pf-c-tabs__scroll-button"
-          onClick={[Function]}
-        >
-          <AngleLeftIcon
-            color="currentColor"
-            noVerticalAlign={false}
-            size="sm"
-            title={null}
-          >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 256 512"
-              width="1em"
-            >
-              <path
-                d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-                transform=""
-              />
-            </svg>
-          </AngleLeftIcon>
-        </button>
-        <ul
-          className="pf-c-tabs__list"
-          onScroll={[Function]}
-        >
-          <li
-            className="pf-c-tabs__item pf-m-current"
-            key="0/.0"
-          >
-            <ForwardRef
-              aria-controls="pf-tab-section-0-tab1"
-              className="pf-c-tabs__button"
-              eventKey={0}
-              id="tab1"
-              onClick={[Function]}
-              title="Tab item 1"
-            >
-              <TabContainer
-                aria-controls="pf-tab-section-0-tab1"
-                className="pf-c-tabs__button"
-                eventKey={0}
-                forwardRef={null}
-                id="tab1"
-                onClick={[Function]}
-                title="Tab item 1"
-              >
-                <Tab0
-                  aria-controls="pf-tab-section-0-tab1"
-                  className="pf-c-tabs__button"
-                  eventKey={0}
-                  id="tab1"
-                  onClick={[Function]}
-                  title="Tab item 1"
-                >
-                  <button
-                    aria-controls="pf-tab-section-0-tab1"
-                    className="pf-c-tabs__button"
-                    id="tab1"
-                    onClick={[Function]}
-                  >
-                    Tab item 1
-                  </button>
-                </Tab0>
-              </TabContainer>
-            </ForwardRef>
-          </li>
-          <li
-            className="pf-c-tabs__item"
-            key="1/.1"
-          >
-            <ForwardRef
-              aria-controls="pf-tab-section-1-tab2"
-              className="pf-c-tabs__button"
-              eventKey={1}
-              id="tab2"
-              onClick={[Function]}
-              title="Tab item 2"
-            >
-              <TabContainer
-                aria-controls="pf-tab-section-1-tab2"
-                className="pf-c-tabs__button"
-                eventKey={1}
-                forwardRef={null}
-                id="tab2"
-                onClick={[Function]}
-                title="Tab item 2"
-              >
-                <Tab0
-                  aria-controls="pf-tab-section-1-tab2"
-                  className="pf-c-tabs__button"
-                  eventKey={1}
-                  id="tab2"
-                  onClick={[Function]}
-                  title="Tab item 2"
-                >
-                  <button
-                    aria-controls="pf-tab-section-1-tab2"
-                    className="pf-c-tabs__button"
-                    id="tab2"
-                    onClick={[Function]}
-                  >
-                    Tab item 2
-                  </button>
-                </Tab0>
-              </TabContainer>
-            </ForwardRef>
-          </li>
-          <li
-            className="pf-c-tabs__item"
-            key="2/.2"
-          >
-            <ForwardRef
-              aria-controls="pf-tab-section-2-tab3"
-              className="pf-c-tabs__button"
-              eventKey={2}
-              id="tab3"
-              onClick={[Function]}
-              title="Tab item 3"
-            >
-              <TabContainer
-                aria-controls="pf-tab-section-2-tab3"
-                className="pf-c-tabs__button"
-                eventKey={2}
-                forwardRef={null}
-                id="tab3"
-                onClick={[Function]}
-                title="Tab item 3"
-              >
-                <Tab0
-                  aria-controls="pf-tab-section-2-tab3"
-                  className="pf-c-tabs__button"
-                  eventKey={2}
-                  id="tab3"
-                  onClick={[Function]}
-                  title="Tab item 3"
-                >
-                  <button
-                    aria-controls="pf-tab-section-2-tab3"
-                    className="pf-c-tabs__button"
-                    id="tab3"
-                    onClick={[Function]}
-                  >
-                    Tab item 3
-                  </button>
-                </Tab0>
-              </TabContainer>
-            </ForwardRef>
-          </li>
-        </ul>
-        <button
-          aria-label="Scroll right"
-          className="pf-c-tabs__scroll-button"
-          onClick={[Function]}
-        >
-          <AngleRightIcon
-            color="currentColor"
-            noVerticalAlign={false}
-            size="sm"
-            title={null}
-          >
-            <svg
-              aria-hidden={true}
-              aria-labelledby={null}
-              fill="currentColor"
-              height="1em"
-              role="img"
-              style={
-                Object {
-                  "verticalAlign": "-0.125em",
-                }
-              }
-              viewBox="0 0 256 512"
-              width="1em"
-            >
-              <path
-                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-                transform=""
-              />
-            </svg>
-          </AngleRightIcon>
-        </button>
-      </div>
-      <ForwardRef
-        activeKey={0}
-        child={
-          <ForwardRef
-            eventKey={0}
-            id="tab1"
-            title="Tab item 1"
-          >
-            Tab 1 section
-          </ForwardRef>
-        }
-        id="tab1"
-        key="0/.0"
-      >
-        <TabContent0
-          activeKey={0}
-          child={
-            <ForwardRef
-              eventKey={0}
-              id="tab1"
-              title="Tab item 1"
-            >
-              Tab 1 section
-            </ForwardRef>
-          }
-          id="tab1"
-          innerRef={null}
-        >
-          <section
-            aria-labelledby="pf-tab-0-tab1"
-            className="pf-c-tab-content"
-            hidden={false}
-            id="pf-tab-section-0-tab1"
-            role="tabpanel"
-            tabIndex={0}
-          >
-            Tab 1 section
-          </section>
-        </TabContent0>
-      </ForwardRef>
-      <ForwardRef
-        activeKey={0}
-        child={
-          <ForwardRef
-            eventKey={1}
-            id="tab2"
-            title="Tab item 2"
-          >
-            Tab 2 section
-          </ForwardRef>
-        }
-        id="tab2"
-        key="1/.1"
-      >
-        <TabContent0
-          activeKey={0}
-          child={
-            <ForwardRef
-              eventKey={1}
-              id="tab2"
-              title="Tab item 2"
-            >
-              Tab 2 section
-            </ForwardRef>
-          }
-          id="tab2"
-          innerRef={null}
-        >
-          <section
-            aria-labelledby="pf-tab-1-tab2"
-            className="pf-c-tab-content"
-            hidden={true}
-            id="pf-tab-section-1-tab2"
-            role="tabpanel"
-            tabIndex={0}
-          >
-            Tab 2 section
-          </section>
-        </TabContent0>
-      </ForwardRef>
-      <ForwardRef
-        activeKey={0}
-        child={
-          <ForwardRef
-            eventKey={2}
-            id="tab3"
-            title="Tab item 3"
-          >
-            Tab 3 section
-          </ForwardRef>
-        }
-        id="tab3"
-        key="2/.2"
-      >
-        <TabContent0
-          activeKey={0}
-          child={
-            <ForwardRef
-              eventKey={2}
-              id="tab3"
-              title="Tab item 3"
-            >
-              Tab 3 section
-            </ForwardRef>
-          }
-          id="tab3"
-          innerRef={null}
-        >
-          <section
-            aria-labelledby="pf-tab-2-tab3"
-            className="pf-c-tab-content"
-            hidden={true}
-            id="pf-tab-section-2-tab3"
-            role="tabpanel"
-            tabIndex={0}
-          >
-            Tab 3 section
-          </section>
-        </TabContent0>
-      </ForwardRef>
-    </Tabs>
-  </ComponentWithOuia>
-</Component>
-`;
-
-exports[`should render tabs with eventKey Strings 1`] = `
-<Fragment>
+Array [
   <div
-    className="pf-c-tabs"
-    onSelect={[Function]}
+    class="pf-c-tabs"
   >
     <button
       aria-label="Scroll left"
-      className="pf-c-tabs__scroll-button"
-      onClick={[Function]}
+      class="pf-c-tabs__scroll-button"
     >
-      <AngleLeftIcon
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-        title={null}
-      />
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align:-0.125em"
+        viewBox="0 0 256 512"
+        width="1em"
+      >
+        <path
+          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+          transform=""
+        />
+      </svg>
     </button>
     <ul
-      className="pf-c-tabs__list"
-      onScroll={[Function]}
+      class="pf-c-tabs__list"
     >
       <li
-        className="pf-c-tabs__item"
-        key="0/.0"
+        class="pf-c-tabs__item pf-m-current"
       >
-        <ForwardRef
-          aria-controls="pf-tab-section-one-tab1"
-          className="pf-c-tabs__button"
-          eventKey="one"
+        <button
+          aria-controls="pf-tab-section-0-tab1"
+          class="pf-c-tabs__button"
           id="tab1"
-          onClick={[Function]}
-          title="Tab item 1"
         >
           Tab item 1
-        </ForwardRef>
+        </button>
       </li>
       <li
-        className="pf-c-tabs__item"
-        key="1/.1"
+        class="pf-c-tabs__item"
       >
-        <ForwardRef
-          aria-controls="pf-tab-section-two-tab2"
-          className="pf-c-tabs__button"
-          eventKey="two"
+        <button
+          aria-controls="pf-tab-section-1-tab2"
+          class="pf-c-tabs__button"
           id="tab2"
-          onClick={[Function]}
-          title="Tab item 2"
         >
           Tab item 2
-        </ForwardRef>
+        </button>
       </li>
       <li
-        className="pf-c-tabs__item"
-        key="2/.2"
+        class="pf-c-tabs__item"
       >
-        <ForwardRef
-          aria-controls="pf-tab-section-three-tab3"
-          className="pf-c-tabs__button"
-          eventKey="three"
+        <button
+          aria-controls="pf-tab-section-2-tab3"
+          class="pf-c-tabs__button"
           id="tab3"
-          onClick={[Function]}
-          title="Tab item 3"
         >
           Tab item 3
-        </ForwardRef>
+        </button>
       </li>
     </ul>
     <button
       aria-label="Scroll right"
-      className="pf-c-tabs__scroll-button"
-      onClick={[Function]}
+      class="pf-c-tabs__scroll-button"
     >
-      <AngleRightIcon
-        color="currentColor"
-        noVerticalAlign={false}
-        size="sm"
-        title={null}
-      />
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align:-0.125em"
+        viewBox="0 0 256 512"
+        width="1em"
+      >
+        <path
+          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+          transform=""
+        />
+      </svg>
     </button>
-  </div>
-  <ForwardRef
-    activeKey={0}
-    child={
-      <ForwardRef
-        eventKey="one"
-        id="tab1"
-        title="Tab item 1"
+  </div>,
+  <section
+    aria-labelledby="pf-tab-0-tab1"
+    class="pf-c-tab-content"
+    id="pf-tab-section-0-tab1"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 1 section
+  </section>,
+  <section
+    aria-labelledby="pf-tab-1-tab2"
+    class="pf-c-tab-content"
+    hidden=""
+    id="pf-tab-section-1-tab2"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 2 section
+  </section>,
+  <section
+    aria-labelledby="pf-tab-2-tab3"
+    class="pf-c-tab-content"
+    hidden=""
+    id="pf-tab-section-2-tab3"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 3 section
+  </section>,
+]
+`;
+
+exports[`should render tabs with eventKey Strings 1`] = `
+Array [
+  <div
+    class="pf-c-tabs"
+  >
+    <button
+      aria-label="Scroll left"
+      class="pf-c-tabs__scroll-button"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align:-0.125em"
+        viewBox="0 0 256 512"
+        width="1em"
       >
-        Tab 1 section
-      </ForwardRef>
-    }
-    id="tab1"
-    key="0/.0"
-  />
-  <ForwardRef
-    activeKey={0}
-    child={
-      <ForwardRef
-        eventKey="two"
-        id="tab2"
-        title="Tab item 2"
+        <path
+          d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+          transform=""
+        />
+      </svg>
+    </button>
+    <ul
+      class="pf-c-tabs__list"
+    >
+      <li
+        class="pf-c-tabs__item"
       >
-        Tab 2 section
-      </ForwardRef>
-    }
-    id="tab2"
-    key="1/.1"
-  />
-  <ForwardRef
-    activeKey={0}
-    child={
-      <ForwardRef
-        eventKey="three"
-        id="tab3"
-        title="Tab item 3"
+        <button
+          aria-controls="pf-tab-section-one-tab1"
+          class="pf-c-tabs__button"
+          id="tab1"
+        >
+          Tab item 1
+        </button>
+      </li>
+      <li
+        class="pf-c-tabs__item"
       >
-        Tab 3 section
-      </ForwardRef>
-    }
-    id="tab3"
-    key="2/.2"
-  />
-</Fragment>
+        <button
+          aria-controls="pf-tab-section-two-tab2"
+          class="pf-c-tabs__button"
+          id="tab2"
+        >
+          Tab item 2
+        </button>
+      </li>
+      <li
+        class="pf-c-tabs__item"
+      >
+        <button
+          aria-controls="pf-tab-section-three-tab3"
+          class="pf-c-tabs__button"
+          id="tab3"
+        >
+          Tab item 3
+        </button>
+      </li>
+    </ul>
+    <button
+      aria-label="Scroll right"
+      class="pf-c-tabs__scroll-button"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        role="img"
+        style="vertical-align:-0.125em"
+        viewBox="0 0 256 512"
+        width="1em"
+      >
+        <path
+          d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+          transform=""
+        />
+      </svg>
+    </button>
+  </div>,
+  <section
+    aria-labelledby="pf-tab-one-tab1"
+    class="pf-c-tab-content"
+    hidden=""
+    id="pf-tab-section-one-tab1"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 1 section
+  </section>,
+  <section
+    aria-labelledby="pf-tab-two-tab2"
+    class="pf-c-tab-content"
+    hidden=""
+    id="pf-tab-section-two-tab2"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 2 section
+  </section>,
+  <section
+    aria-labelledby="pf-tab-three-tab3"
+    class="pf-c-tab-content"
+    hidden=""
+    id="pf-tab-section-three-tab3"
+    role="tabpanel"
+    tabindex="0"
+  >
+    Tab 3 section
+  </section>,
+]
 `;
