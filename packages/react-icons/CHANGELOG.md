@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.18...@patternfly/react-icons@3.11.0) (2019-08-20)
+
+
+### Features
+
+* **Ansible icon:** Add ansible tower icon to custom icons definition ([#2735](https://github.com/patternfly/patternfly-react/issues/2735)) ([0ffe527](https://github.com/patternfly/patternfly-react/commit/0ffe527))
+
+
+
+
+
 ## [3.10.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.17...@patternfly/react-icons@3.10.18) (2019-08-19)
 
 **Note:** Version bump only for package @patternfly/react-icons
