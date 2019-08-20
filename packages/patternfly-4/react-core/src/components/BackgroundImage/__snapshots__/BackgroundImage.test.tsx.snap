@@ -16,7 +16,7 @@ exports[`BackgroundImage 1`] = `
   >
     <filter
       id="image_overlay"
-      width="0"
+      width=""
     >
       <feColorMatrix
         type="matrix"
@@ -67,7 +67,7 @@ exports[`BackgroundImage 2`] = `
   >
     <filter
       id="image_overlay"
-      width="0"
+      width=""
     >
       <feColorMatrix
         type="matrix"
@@ -118,7 +118,7 @@ exports[`allows passing in a single string as the image src 1`] = `
   >
     <filter
       id="image_overlay"
-      width="0"
+      width=""
     >
       <feColorMatrix
         type="matrix"
