@@ -5,6 +5,8 @@ import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 
 export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
+  /** Flag to indicate if the first dropdown item should not gain initial focus */
+  noAutoFocus?: boolean,
   /** Additional classes added to the Login Main Body's Form */
   className?: string;
   /** Flag indicating the Helper Text is visible * */
@@ -46,6 +48,7 @@ export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
 }
 
 export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
+  noAutoFocus = false,
   className = '',
   showHelperText = false,
   helperText = null,
@@ -71,7 +74,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
       {helperText}
     </FormHelperText>
     <FormGroup label={usernameLabel} isRequired isValid={isValidUsername} fieldId="pf-login-username-id">
-      <TextInput
+      <TextInput autoFocus={!noAutoFocus}
         id="pf-login-username-id"
         isRequired
         isValid={isValidUsername}
