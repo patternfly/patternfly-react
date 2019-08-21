@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.90.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.90.0...@patternfly/react-core@3.90.1) (2019-08-21)
+
+
+### Bug Fixes
+
+* **loginForm:** adds autoFocus to username input ([#2659](https://github.com/patternfly/patternfly-react/issues/2659)) ([9a1f1c7](https://github.com/patternfly/patternfly-react/commit/9a1f1c7))
+
+
+
+
+
 # [3.90.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.89.3...@patternfly/react-core@3.90.0) (2019-08-21)
 
 
