@@ -15,10 +15,10 @@ class User implements SelectOptionObject {
   constructor(title: string, firstName: string, lastName: string) {
     this.title = title;
     this.firstName = firstName;
-    this.lastName = lastName;  
+    this.lastName = lastName;
   }
 
-  toString = ():string =>`${this.title}: ${this.firstName} ${this.lastName}`;
+  toString = (): string => `${this.title}: ${this.firstName} ${this.lastName}`;
 }
 
 const selectOptions = [
@@ -99,24 +99,22 @@ describe('select', () => {
         }
         let typeaheadFilteredChildren =
           e.target.value !== ''
-            ? selectOptions.filter(
-                (child: React.ReactNode) => input.test((child as React.ReactElement).props.value)
-              )
+            ? selectOptions.filter((child: React.ReactNode) => input.test((child as React.ReactElement).props.value))
             : selectOptions;
         return typeaheadFilteredChildren;
-      }
+      };
       const view = mount(
-        <Select 
-          variant={SelectVariant.typeahead} 
-          onSelect={jest.fn()} 
-          onToggle={jest.fn()} 
+        <Select
+          variant={SelectVariant.typeahead}
+          onSelect={jest.fn()}
+          onToggle={jest.fn()}
           onFilter={customFilter}
           isExpanded={true}
         >
           {selectOptions}
         </Select>
       );
-      view.find('input').simulate('change', {target: { value: 'r' }});
+      view.find('input').simulate('change', { target: { value: 'r' } });
       view.update();
       expect((view.state('typeaheadFilteredChildren') as []).length).toBe(3);
       expect(view).toMatchSnapshot();
@@ -329,5 +327,44 @@ describe('API', () => {
       </Select>
     );
     expect(myMock).not.toBeCalled();
+  });
+});
+
+describe('toggle icon', () => {
+  const ToggleIcon = <div>Icon</div>;
+  test('select single', () => {
+    const view = mount(
+      <Select toggleIcon={ToggleIcon} variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {selectOptions}
+      </Select>
+    );
+    expect(view.find('span.pf-c-select__toggle-icon')).toMatchSnapshot();
+  });
+
+  test('select checkbox', () => {
+    const view = mount(
+      <Select toggleIcon={ToggleIcon} variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {selectOptions}
+      </Select>
+    );
+    expect(view.find('span.pf-c-select__toggle-icon')).toMatchSnapshot();
+  });
+
+  test('typeahead select', () => {
+    const view = mount(
+      <Select toggleIcon={ToggleIcon} variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {selectOptions}
+      </Select>
+    );
+    expect(view.find('span.pf-c-select__toggle-icon')).toMatchSnapshot();
+  });
+
+  test('typeahead multi select', () => {
+    const view = mount(
+      <Select toggleIcon={ToggleIcon} variant={SelectVariant.typeaheadMulti} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {selectOptions}
+      </Select>
+    );
+    expect(view.find('span.pf-c-select__toggle-icon')).toMatchSnapshot();
   });
 });

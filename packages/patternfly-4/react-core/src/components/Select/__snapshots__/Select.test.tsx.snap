@@ -19,6 +19,7 @@ exports[`checkbox select renders checkbox select groups successfully - old class
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="checkbox"
   width=""
@@ -642,6 +643,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="checkbox"
   width=""
@@ -1289,6 +1291,7 @@ exports[`checkbox select renders closed successfully - old classes 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="checkbox"
   width=""
@@ -1429,6 +1432,7 @@ exports[`checkbox select renders closed successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="checkbox"
   width=""
@@ -1569,6 +1573,7 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="checkbox"
   width=""
@@ -1951,6 +1956,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="checkbox"
   width=""
@@ -2345,6 +2351,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="checkbox"
   width=""
@@ -2714,6 +2721,7 @@ exports[`select custom select filter filters properly 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="typeahead"
   width=""
@@ -3035,6 +3043,7 @@ exports[`select renders select groups successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="single"
   width=""
@@ -3599,6 +3608,7 @@ exports[`select renders up drection successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="single"
   width=""
@@ -3743,6 +3753,7 @@ exports[`select single select renders closed successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="single"
   width=""
@@ -3887,6 +3898,7 @@ exports[`select single select renders disabled successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="single"
   width=""
@@ -4032,6 +4044,7 @@ exports[`select single select renders expanded successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="single"
   width=""
@@ -4374,6 +4387,7 @@ exports[`select single select renders expanded successfully with custom objects 
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="single"
   width=""
@@ -4675,6 +4689,46 @@ exports[`select single select renders expanded successfully with custom objects 
 </Select>
 `;
 
+exports[`toggle icon select checkbox 1`] = `
+<span
+  className="pf-c-select__toggle-icon"
+>
+  <div>
+    Icon
+  </div>
+</span>
+`;
+
+exports[`toggle icon select single 1`] = `
+<span
+  className="pf-c-select__toggle-icon"
+>
+  <div>
+    Icon
+  </div>
+</span>
+`;
+
+exports[`toggle icon typeahead multi select 1`] = `
+<span
+  className="pf-c-select__toggle-icon"
+>
+  <div>
+    Icon
+  </div>
+</span>
+`;
+
+exports[`toggle icon typeahead select 1`] = `
+<span
+  className="pf-c-select__toggle-icon"
+>
+  <div>
+    Icon
+  </div>
+</span>
+`;
+
 exports[`typeahead multi select renders closed successfully 1`] = `
 <Select
   aria-label=""
@@ -4694,6 +4748,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="typeaheadmulti"
   width=""
@@ -4861,6 +4916,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="typeaheadmulti"
   width=""
@@ -5231,6 +5287,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
       "Mrs",
     ]
   }
+  toggleIcon={null}
   toggleId={null}
   variant="typeaheadmulti"
   width=""
@@ -6009,6 +6066,7 @@ exports[`typeahead multi select test onChange 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="typeahead"
   width=""
@@ -6244,6 +6302,7 @@ exports[`typeahead select renders closed successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="typeahead"
   width=""
@@ -6410,6 +6469,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="typeahead"
   width=""
@@ -6774,6 +6834,7 @@ exports[`typeahead select renders selected successfully 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections="Mr"
+  toggleIcon={null}
   toggleId={null}
   variant="typeahead"
   width=""
@@ -7237,6 +7298,7 @@ exports[`typeahead select test onChange 1`] = `
   onToggle={[MockFunction]}
   placeholderText=""
   selections=""
+  toggleIcon={null}
   toggleId={null}
   variant="typeahead"
   width=""

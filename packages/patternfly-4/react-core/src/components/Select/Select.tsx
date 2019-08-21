@@ -62,6 +62,8 @@ export interface SelectProps
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Width of the select container as a number of px or string percentage */
   width?: string | number;
+  /** Icon element to render inside the select toggle */
+  toggleIcon?: React.ReactElement;
 }
 
 export interface SelectState {
@@ -96,6 +98,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     variant: SelectVariant.single,
     width: '',
     onClear: Function.prototype,
+    toggleIcon: null as React.ReactElement,
     onFilter: undefined as () => {}
   };
 
@@ -293,6 +296,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       'aria-label': ariaLabel,
       placeholderText,
       width,
+      toggleIcon,
       ...props
     } = this.props;
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild } = this.state;
@@ -340,6 +344,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
           >
             {variant === SelectVariant.single && (
               <div className={css(styles.selectToggleWrapper)}>
+                {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                 <span className={css(styles.selectToggleText)}>
                   {this.getDisplay(selections as string, 'node') || placeholderText || childPlaceholderText}
                 </span>
@@ -348,6 +353,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
             {variant === SelectVariant.checkbox && (
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
+                  {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                   <span className={css(styles.selectToggleText)}>{placeholderText}</span>
                   {selections && (Array.isArray(selections) && selections.length > 0) && (
                     <div className={css(styles.selectToggleBadge)}>
@@ -360,6 +366,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
             {variant === SelectVariant.typeahead && (
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
+                  {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                   <input
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                     aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
@@ -397,6 +404,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
             {variant === SelectVariant.typeaheadMulti && (
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
+                  {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                   {selections && (Array.isArray(selections) && selections.length > 0)&& selectedChips}
                   <input
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
