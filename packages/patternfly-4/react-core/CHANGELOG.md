@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.90.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.89.3...@patternfly/react-core@3.90.0) (2019-08-21)
+
+
+### Features
+
+* **Expandable:** Support uncontrolled expandable ([#2649](https://github.com/patternfly/patternfly-react/issues/2649)) ([2755e36](https://github.com/patternfly/patternfly-react/commit/2755e36))
+
+
+
+
+
 ## [3.89.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.89.2...@patternfly/react-core@3.89.3) (2019-08-21)
 
 **Note:** Version bump only for package @patternfly/react-core
