@@ -1,8 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import {
   Table,
   TableHeader,
   TableBody,
+  TableProps,
   sortable,
   SortByDirection,
   headerCol,
@@ -13,8 +14,8 @@ import {
   ISortBy
 } from '@patternfly/react-table';
 
-export class TableSortableDemo extends React.Component<{}, { columns: any, rows: IRow[], sortBy: ISortBy }> {
-  constructor(props) {
+export class TableSortableDemo extends React.Component<TableProps, { columns: any, rows: IRow[], sortBy: ISortBy }> {
+  constructor(props: TableProps) {
     super(props);
     this.state = {
       columns: [

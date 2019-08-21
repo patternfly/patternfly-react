@@ -1,8 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import {
   Table,
   TableHeader,
   TableBody,
+  TableProps,
   sortable,
   SortByDirection,
   headerCol,
@@ -14,9 +15,9 @@ import {
   IRow
 } from '@patternfly/react-table';
 
-export class TableBreakpointModifersDemo extends React.Component< {}, { columns: any, rows: IRow[] }> {
+export class TableBreakpointModifersDemo extends React.Component<TableProps, { columns: any, rows: IRow[] }> {
   
-  constructor(props) {
+  constructor(props: TableProps) {
     super(props);
     this.state = {
       columns: [

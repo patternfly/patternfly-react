@@ -108,11 +108,46 @@ export interface IDecorator extends React.HTMLProps<HTMLElement> {
 
 export interface ICell {
   title?: string;
-  transforms?: ((value: any) => any)[];
-  cellTransforms?: ((value: any) => any)[];
-  columnTransforms?: ((value: any) => any)[];
-  formatters?: ((value: any) => any)[];
-  cellFormatters?: ((value: any) => any)[];
+  transforms?: (( 
+    label?: IFormatterValueType,
+    rowData?: IRowData,
+    columnIndex?: number,
+    column?: IColumn,
+    property?: string,
+    rowIndex?: number,
+    rowKey?: RowKeyType ) => { className: string; 'aria-sort': string; children: React.ReactNode; })[];
+  cellTransforms?: (( 
+    label?: IFormatterValueType,
+    rowData?: IRowData, 
+    columnIndex?: number, 
+    column?: IColumn, 
+    property?: string, 
+    rowIndex?: number, 
+    rowKey?: RowKeyType ) => { className: string; 'aria-sort': string; children: React.ReactNode; })[];
+  columnTransforms?: (( 
+    label?: IFormatterValueType,
+    rowData?: IRowData, 
+    columnIndex?: number, 
+    column?: IColumn, 
+    property?: string, 
+    rowIndex?: number, 
+    rowKey?: RowKeyType ) => { className: string; 'aria-sort': string; children: React.ReactNode; })[];
+  formatters?: (( 
+    data?: IFormatterValueType,
+    rowData?: IRowData,
+    columnIndex?: number, 
+    column?: IColumn, 
+    property?: string, 
+    rowIndex?: number, 
+    rowKey?: RowKeyType ) => formatterValueType)[];
+  cellFormatters?: (( 
+    data?: IFormatterValueType,
+    rowData?: IRowData, 
+    columnIndex?: number, 
+    column?: IColumn, 
+    property?: string, 
+    rowIndex?: number, 
+    rowKey?: RowKeyType ) => formatterValueType)[];
   props?: any;
   data?: any;
   header?: any;

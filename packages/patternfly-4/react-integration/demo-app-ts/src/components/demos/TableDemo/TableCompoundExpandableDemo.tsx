@@ -1,8 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import {
   Table,
   TableHeader,
   TableBody,
+  TableProps,
   compoundExpand,
   IRow,
   IRowCell
@@ -17,8 +18,8 @@ import {
 import { DemoSortableTable } from './TableSortableForCompoundExpandableDemo'
 
 
-export class TableCompoundExpandableDemo extends React.Component<{}, { columns: any, rows: any[] }> {
-  constructor(props) {
+export class TableCompoundExpandableDemo extends React.Component<TableProps, { columns: any, rows: any[] }> {
+  constructor(props: TableProps) {
     super(props);
     this.state = {
       columns: [
@@ -184,6 +185,10 @@ export class TableCompoundExpandableDemo extends React.Component<{}, { columns: 
     this.setState({
       rows
     });
+  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0)
   }
 
   render() {

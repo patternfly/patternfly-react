@@ -3,6 +3,7 @@ import {
   Table,
   TableHeader,
   TableBody,
+  TableProps,
   sortable,
   SortByDirection,
   headerCol,
@@ -13,8 +14,8 @@ import {
   IRow
 } from '@patternfly/react-table';
 
-export class TableSimpleActionsDemo extends React.Component<{}, { columns: any, rows: IRow[], actions: any}> {
-  constructor(props) {
+export class TableSimpleActionsDemo extends React.Component<TableProps, { columns: any, rows: IRow[], actions: any}> {
+  constructor(props: TableProps) {
     super(props);
     this.state = {
       columns: [
