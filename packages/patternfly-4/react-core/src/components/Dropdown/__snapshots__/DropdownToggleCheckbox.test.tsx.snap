@@ -8,7 +8,7 @@ exports[`controlled 1`] = `
   <input
     aria-invalid={false}
     aria-label="check"
-    checked={true}
+    defaultChecked={true}
     disabled={false}
     id="check"
     onChange={[Function]}
@@ -25,7 +25,7 @@ exports[`isDisabled 1`] = `
   <input
     aria-invalid={false}
     aria-label="check"
-    checked={null}
+    defaultChecked={null}
     disabled={true}
     id="check"
     onChange={[Function]}
@@ -43,7 +43,7 @@ exports[`passing HTML attribute 1`] = `
     aria-invalid={false}
     aria-label="check"
     aria-labelledby="labelId"
-    checked={true}
+    defaultChecked={true}
     disabled={false}
     id="check"
     label="label"
@@ -61,7 +61,7 @@ exports[`passing class 1`] = `
   <input
     aria-invalid={false}
     aria-label="check"
-    checked={true}
+    defaultChecked={true}
     disabled={false}
     id="check"
     label="label"
@@ -79,7 +79,7 @@ exports[`uncontrolled 1`] = `
   <input
     aria-invalid={false}
     aria-label="check"
-    checked={null}
+    defaultChecked={null}
     disabled={false}
     id="check"
     onChange={[Function]}

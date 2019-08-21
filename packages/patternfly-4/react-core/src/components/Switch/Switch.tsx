@@ -61,14 +61,14 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
         }}
       >
         <input
-          {...props}
           id={this.id}
           className={css(styles.switchInput)}
           type="checkbox"
-          onChange={(event) => onChange(event.currentTarget.checked, event)}
-          checked={isChecked}
+          onChange={(event) => onChange(event.target.checked, event)}
+          defaultChecked={isChecked}
           disabled={isDisabled}
-          aria-labelledby={isAriaLabelledBy ? `${this.id}-on` : null}
+          aria-labelledby={isAriaLabelledBy ? `${this.id}-on`: null}
+          {...props}
         />
         {label !== '' || labelOff !== '' ? (
           <React.Fragment>

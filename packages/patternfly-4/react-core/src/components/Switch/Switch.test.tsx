@@ -1,10 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import { mount } from 'enzyme';
 import { Switch } from './Switch';
 
 const props = {
-  onChange: jest.fn(),
-  checked: false
+  onChange: jest.fn((checked) => console.log('impl', checked)),
+  isChecked: false
 };
 
 test('switch label for attribute equals input id attribute', () => {
@@ -50,6 +50,8 @@ test('switch is not checked and disabled', () => {
 
 test('switch passes value and event to onChange handler', () => {
   const view = mount(<Switch id="onChange-switch" {...props} />);
-  view.find('input').simulate('change', { target: { checked: true } });
-  expect(view.find('input').prop('checked')).toBe(true);
+  const input = view.find('input');
+  expect(input.prop('defaultChecked')).toBe(false);
+  input.simulate('change', { target: { checked: true } });
+  expect(props.onChange.mock.calls[0][0]).toBe(true);
 });

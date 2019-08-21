@@ -148,7 +148,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     }
                   }}
                   ref={this.ref}
-                  checked={isChecked || false}
+                  defaultChecked={isChecked || false}
                   disabled={isDisabled}
                 />
                 <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{children || value.toString()}</span>

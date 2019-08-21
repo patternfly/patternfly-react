@@ -365,8 +365,8 @@ exports[`checkbox select renders checkbox select groups successfully - old class
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Mr"
                             onChange={[Function]}
@@ -395,8 +395,8 @@ exports[`checkbox select renders checkbox select groups successfully - old class
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Mrs"
                             onChange={[Function]}
@@ -425,8 +425,8 @@ exports[`checkbox select renders checkbox select groups successfully - old class
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Ms"
                             onChange={[Function]}
@@ -455,8 +455,8 @@ exports[`checkbox select renders checkbox select groups successfully - old class
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Other"
                             onChange={[Function]}
@@ -507,8 +507,8 @@ exports[`checkbox select renders checkbox select groups successfully - old class
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Mr"
                             onChange={[Function]}
@@ -537,8 +537,8 @@ exports[`checkbox select renders checkbox select groups successfully - old class
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Mrs"
                             onChange={[Function]}
@@ -567,8 +567,8 @@ exports[`checkbox select renders checkbox select groups successfully - old class
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Ms"
                             onChange={[Function]}
@@ -597,8 +597,8 @@ exports[`checkbox select renders checkbox select groups successfully - old class
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Other"
                             onChange={[Function]}
@@ -992,8 +992,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Mr"
                             onChange={[Function]}
@@ -1025,8 +1025,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Mrs"
                             onChange={[Function]}
@@ -1058,8 +1058,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Ms"
                             onChange={[Function]}
@@ -1091,8 +1091,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Other"
                             onChange={[Function]}
@@ -1146,8 +1146,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Mr"
                             onChange={[Function]}
@@ -1179,8 +1179,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Mrs"
                             onChange={[Function]}
@@ -1212,8 +1212,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Ms"
                             onChange={[Function]}
@@ -1245,8 +1245,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={false}
                             className="pf-c-check__input"
+                            defaultChecked={false}
                             disabled={false}
                             id="Other"
                             onChange={[Function]}
@@ -1822,8 +1822,8 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={false}
                         className="pf-c-check__input"
+                        defaultChecked={false}
                         disabled={false}
                         id="Mr"
                         onChange={[Function]}
@@ -1852,8 +1852,8 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={false}
                         className="pf-c-check__input"
+                        defaultChecked={false}
                         disabled={false}
                         id="Mrs"
                         onChange={[Function]}
@@ -1882,8 +1882,8 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={false}
                         className="pf-c-check__input"
+                        defaultChecked={false}
                         disabled={false}
                         id="Ms"
                         onChange={[Function]}
@@ -1912,8 +1912,8 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={false}
                         className="pf-c-check__input"
+                        defaultChecked={false}
                         disabled={false}
                         id="Other"
                         onChange={[Function]}
@@ -2208,8 +2208,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={false}
                         className="pf-c-check__input"
+                        defaultChecked={false}
                         disabled={false}
                         id="Mr"
                         onChange={[Function]}
@@ -2241,8 +2241,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={false}
                         className="pf-c-check__input"
+                        defaultChecked={false}
                         disabled={false}
                         id="Mrs"
                         onChange={[Function]}
@@ -2274,8 +2274,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={false}
                         className="pf-c-check__input"
+                        defaultChecked={false}
                         disabled={false}
                         id="Ms"
                         onChange={[Function]}
@@ -2307,8 +2307,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={false}
                         className="pf-c-check__input"
+                        defaultChecked={false}
                         disabled={false}
                         id="Other"
                         onChange={[Function]}
@@ -2596,8 +2596,8 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={false}
                         className="pf-c-check__input"
+                        defaultChecked={false}
                         disabled={false}
                         id="Mr: User One"
                         onChange={[Function]}
@@ -2636,8 +2636,8 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={false}
                         className="pf-c-check__input"
+                        defaultChecked={false}
                         disabled={false}
                         id="Mrs: New User"
                         onChange={[Function]}
@@ -2676,8 +2676,8 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={false}
                         className="pf-c-check__input"
+                        defaultChecked={false}
                         disabled={false}
                         id="Ms: Test Three"
                         onChange={[Function]}
