@@ -257,6 +257,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.EmptyStateDemo
   },
   {
+    id: 'expandable-demo', 
+    name: 'Expandable Demo', 
+    componentType: Examples.ExpandableDemo
+  },
+  {
     id: 'form-demo',
     name: 'Form Demo',
     componentType: Examples.FormDemo

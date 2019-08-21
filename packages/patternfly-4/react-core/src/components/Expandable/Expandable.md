@@ -35,3 +35,14 @@ class SimpleExpandable extends React.Component {
   }
 }
 ```
+
+## Uncontrolled expandable
+```js
+import React from 'react';
+import { Expandable } from '@patternfly/react-core';
+
+
+<Expandable toggleText="Show More">
+  This content is visible only when the component is expanded.
+</Expandable>
+```
