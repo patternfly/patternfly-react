@@ -2,6 +2,6 @@
   height: 100%;
 }
 
-#___gatsby > div {
+#___gatsby > div[role="group"] {
   height: 100%;
 }
