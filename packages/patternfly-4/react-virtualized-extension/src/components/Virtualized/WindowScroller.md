@@ -12,6 +12,7 @@ This package is currently an extension. Extension components do not undergo the 
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
+import { debounce } from 'lodash';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTableBody, WindowScroller } from '@patternfly/react-virtualized-extension';
@@ -25,6 +26,7 @@ import windowScrollerStyles from './WindowScroller.example.css';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
+import { debounce } from 'lodash';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer } from 'react-virtualized';
 import { AutoSizer, VirtualTable, WindowScroller } from '@patternfly/react-virtualized-extension';
@@ -68,16 +70,14 @@ class WindowScrollerExample extends React.Component {
       rows
     };
 
-    this._handleResize = this._handleResize.bind(this);
+    this._handleResize = debounce(this._handleResize.bind(this), 100);
     this._bindBodyRef = this._bindBodyRef.bind(this);
   }
 
   componentDidMount(){
     // re-render after resize
     window.addEventListener('resize', this._handleResize);
-  }
 
-  componentDidMount(){
     setTimeout(() => {
       const scollableElement = document.getElementById('content-scrollable-1');
       this.setState({ scollableElement });
