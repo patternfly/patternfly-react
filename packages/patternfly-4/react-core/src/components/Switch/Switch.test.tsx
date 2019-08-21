@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { Switch } from './Switch';
 
 const props = {
-  onChange: jest.fn((checked) => console.log('impl', checked)),
+  onChange: jest.fn(),
   isChecked: false
 };
 
