@@ -18,25 +18,31 @@ class AsyncTypeAheadSelect extends React.Component {
     Promise.resolve(this.props.onSearch(query)).then(options => this.onSearchEnd(options));
   };
 
-  render = () => (
-    <AsyncTypeahead
-      {...this.props}
-      onSearch={this.handleSearch}
-      options={this.state.options}
-      isLoading={this.state.isLoading}
-    />
-  );
+  render() {
+    const { innerRef, ...props } = this.props;
+    return (
+      <AsyncTypeahead
+        {...props}
+        ref={innerRef}
+        onSearch={this.handleSearch}
+        options={this.state.options}
+        isLoading={this.state.isLoading}
+      />
+    );
+  }
 }
 
 AsyncTypeAheadSelect.propTypes = {
   onSearch: PropTypes.func.isRequired,
   options: PropTypes.array,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  innerRef: PropTypes.any
 };
 
 AsyncTypeAheadSelect.defaultProps = {
   options: [],
-  isLoading: false
+  isLoading: false,
+  innerRef: null
 };
 
-export default AsyncTypeAheadSelect;
+export default React.forwardRef((props, ref) => <AsyncTypeAheadSelect {...props} innerRef={ref} />);
