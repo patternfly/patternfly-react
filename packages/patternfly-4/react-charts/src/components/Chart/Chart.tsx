@@ -23,7 +23,7 @@ import {
   ChartLegendWrapper
 } from "../ChartLegend";
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getPaddingForSide, getTheme } from '../ChartUtils';
+import { getLabelTextSize, getPaddingForSide, getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -363,7 +363,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   ariaTitle,
   children,
   containerComponent = allowZoom ? <VictoryZoomContainer /> : <ChartContainer />,
-  legendComponent = <ChartLegend />,
+  legendComponent = <ChartLegend/>,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
   padding,
@@ -411,10 +411,21 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     }
     let dx = 0;
     let dy = defaultPadding.top;
+    let xAxisLabelHeight = 0;
+    let legendTitleHeight = legend.props.title ? 10 : 0;
+
+    // Adjust for axis label
+    React.Children.toArray(children).map((child: any) => {
+      if (child.type.role === 'axis' && child.props.label && !child.props.dependentAxis) {
+        xAxisLabelHeight = getLabelTextSize({text: child.props.label, theme}).height + 10;
+        legendTitleHeight = 0;
+      }
+    });
+
     if (legendPosition === ChartLegendPosition.bottom) {
-      dy += ChartCommonStyles.legend.margin;
+      dy += ChartCommonStyles.legend.margin + xAxisLabelHeight + legendTitleHeight;
     } else if (legendPosition === ChartLegendPosition.bottomLeft) {
-      dy += ChartCommonStyles.legend.margin;
+      dy += ChartCommonStyles.legend.margin + xAxisLabelHeight + legendTitleHeight;
       dx += defaultPadding.left - 10;
     } else if (legendPosition === ChartLegendPosition.right) {
       dx += defaultPadding.left;
