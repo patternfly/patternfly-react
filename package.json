@@ -116,5 +116,8 @@
     "packages": [
       "packages/**"
     ]
+  },
+  "dependencies": {
+    "@types/react-virtualized": "^9.21.4"
   }
 }

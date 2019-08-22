@@ -3,7 +3,7 @@
 import { Alignment, CellSizeGetter, VisibleCellRange } from '../types';
 
 import CellSizeAndPositionManager from './CellSizeAndPositionManager';
-import { getMaxElementSize } from './maxElementSize.js';
+import { getMaxElementSize } from './maxElementSize';
 
 interface ContainerSizeAndOffset {
   containerSize: number;

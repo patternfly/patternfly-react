@@ -4,7 +4,7 @@
 export default function createCallbackMemoizer(requireAllKeys = true) {
   let cachedIndices = {};
 
-  return ({ callback, indices }) => {
+  return ( callback: any, indices: number ) => {
     const keys = Object.keys(indices);
     const allInitialized =
       !requireAllKeys ||

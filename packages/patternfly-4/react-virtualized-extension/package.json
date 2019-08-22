@@ -34,7 +34,6 @@
     "clsx": "^1.0.1",
     "dom-helpers": "^2.4.0 || ^3.0.0",
     "exenv": "^1.2.2",
-    "linear-layout-vector": "0.0.1",
     "react-lifecycles-compat": "^3.0.4",
     "react-virtualized": "^9.21.1"
   },

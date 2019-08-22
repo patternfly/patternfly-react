@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import LinearLayoutVector from 'linear-layout-vector';
+const LinearLayoutVector = require("linear-layout-vector");
 import { Alignment, CellSizeGetter, VisibleCellRange } from '../types';
 
 interface CellSizeAndPositionManagerParams {
@@ -39,7 +39,7 @@ interface SizeAndPositionData {
 export default class CellSizeAndPositionManager {
   // Cache of size and position data for cells, mapped by cell index.
   // Note that invalid values may exist in this map so only rely on cells up to this._lastMeasuredIndex
-  _layoutVector;
+  _layoutVector: any;
 
   // Measurements for cells up to this index can be trusted; cells afterward should be estimated.
   _lastMeasuredIndex = -1;
