@@ -2,9 +2,9 @@
  * Helper utility that updates the specified callback whenever any of the specified indices have changed.
  */
 export default function createCallbackMemoizer(requireAllKeys = true) {
-  let cachedIndices = {};
+  let cachedIndices: any = {};
 
-  return ( callback: any, indices: number ) => {
+  return ( callback: any, indices: any ) => {
     const keys = Object.keys(indices);
     const allInitialized =
       !requireAllKeys ||

@@ -108,7 +108,7 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
     autoHeight: false,
     estimatedRowSize: 30,
     onScroll: () => {},
-    noRowsRenderer: () => null,
+    noRowsRenderer: () => null as any,
     onRowsRendered: () => {},
     overscanIndicesGetter: accessibilityOverscanIndicesGetter,
     overscanRowCount: 10,
