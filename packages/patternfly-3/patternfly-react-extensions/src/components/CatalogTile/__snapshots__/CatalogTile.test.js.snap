@@ -441,5 +441,47 @@ exports[`CatalogTile renders properly 1`] = `
       </span>
     </div>
   </a>
+  <a
+    class="catalog-tile-pf featured"
+    href="https://github.com/patternfly/patternfly-react"
+    id="custom-icon-svg-test"
+  >
+    <div
+      class="catalog-tile-pf-header"
+    >
+      <span
+        class="catalog-tile-pf-icon "
+      >
+        <svg
+          height="100"
+          width="100"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            fill="red"
+            r="40"
+            stroke="black"
+            stroke-width="3"
+          />
+        </svg>
+      </span>
+    </div>
+    <div
+      class="catalog-tile-pf-body"
+    >
+      <div
+        class="catalog-tile-pf-title"
+      />
+      <div
+        class="catalog-tile-pf-subtitle"
+      />
+      <div
+        class="catalog-tile-pf-description"
+      >
+        <span />
+      </div>
+    </div>
+  </a>
 </div>
 `;
