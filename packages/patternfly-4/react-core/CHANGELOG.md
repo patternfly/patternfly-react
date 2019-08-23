@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.91.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.90.2...@patternfly/react-core@3.91.0) (2019-08-23)
+
+
+### Bug Fixes
+
+* **emptyState:** set the correct size modifier using the  variant prop ([#2692](https://github.com/patternfly/patternfly-react/issues/2692)) ([26e653b](https://github.com/patternfly/patternfly-react/commit/26e653b))
+
+
+### Features
+
+* **Tabs:** Added OUIA compatibility to Tabs component ([#2704](https://github.com/patternfly/patternfly-react/issues/2704)) ([e759244](https://github.com/patternfly/patternfly-react/commit/e759244)), closes [#2303](https://github.com/patternfly/patternfly-react/issues/2303)
+
+
+
+
+
 ## [3.90.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.90.1...@patternfly/react-core@3.90.2) (2019-08-23)
 
 **Note:** Version bump only for package @patternfly/react-core
