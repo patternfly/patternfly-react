@@ -102,8 +102,10 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   ]
                 }
                 isAppLauncher={false}
+                isVisible={false}
                 maxWidth="18.75rem"
                 position="top"
+                tippyProps={Object {}}
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -142,6 +144,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       "bottom",
                     ]
                   }
+                  isVisible={false}
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
@@ -252,8 +255,10 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   ]
                 }
                 isAppLauncher={false}
+                isVisible={false}
                 maxWidth="18.75rem"
                 position="top"
+                tippyProps={Object {}}
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -292,6 +297,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       "bottom",
                     ]
                   }
+                  isVisible={false}
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
@@ -425,8 +431,10 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   ]
                 }
                 isAppLauncher={false}
+                isVisible={false}
                 maxWidth="18.75rem"
                 position="top"
+                tippyProps={Object {}}
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -465,6 +473,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       "bottom",
                     ]
                   }
+                  isVisible={false}
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
@@ -692,8 +701,10 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   ]
                 }
                 isAppLauncher={false}
+                isVisible={false}
                 maxWidth="18.75rem"
                 position="top"
+                tippyProps={Object {}}
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -732,6 +743,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       "bottom",
                     ]
                   }
+                  isVisible={false}
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
@@ -865,8 +877,10 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   ]
                 }
                 isAppLauncher={false}
+                isVisible={false}
                 maxWidth="18.75rem"
                 position="top"
+                tippyProps={Object {}}
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -905,6 +919,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       "bottom",
                     ]
                   }
+                  isVisible={false}
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
@@ -1038,8 +1053,10 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   ]
                 }
                 isAppLauncher={false}
+                isVisible={false}
                 maxWidth="18.75rem"
                 position="top"
+                tippyProps={Object {}}
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -1078,6 +1095,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       "bottom",
                     ]
                   }
+                  isVisible={false}
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}
@@ -1211,8 +1229,10 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   ]
                 }
                 isAppLauncher={false}
+                isVisible={false}
                 maxWidth="18.75rem"
                 position="top"
+                tippyProps={Object {}}
                 trigger="mouseenter focus"
                 zIndex={9999}
               >
@@ -1251,6 +1271,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       "bottom",
                     ]
                   }
+                  isVisible={false}
                   lazy={true}
                   maxWidth="18.75rem"
                   onCreate={[Function]}

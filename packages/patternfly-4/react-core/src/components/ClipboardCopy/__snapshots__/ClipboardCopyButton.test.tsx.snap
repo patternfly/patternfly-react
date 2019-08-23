@@ -27,8 +27,10 @@ exports[`copy button render 1`] = `
     ]
   }
   isAppLauncher={false}
+  isVisible={false}
   maxWidth="500px"
   position="right"
+  tippyProps={Object {}}
   trigger="mouseenter focus click"
   zIndex={9999}
 >
