@@ -19,3 +19,17 @@ exports[`should render tab 1`] = `
   Tab 1 section
 </TabContainer>
 `;
+
+exports[`should render tab with node 1`] = `
+<TabContainer
+  eventKey={0}
+  forwardRef={null}
+  title={
+    <span>
+      Tab item 1
+    </span>
+  }
+>
+  Tab 1 section
+</TabContainer>
+`;

@@ -8,6 +8,7 @@ typescript: true
 ## Simple tabs
 
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+import { UserFriendsIcon, DatabaseIcon } from '@patternfly/react-icons';
 
 Use primary sections
 
@@ -422,6 +423,41 @@ class SeparateTabContent extends React.Component {
           </TabContent>
         </div>
       </React.Fragment>
+    );
+  }
+}
+```
+
+## Icon in tab title
+```js
+import React from 'react';
+import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+import { UserFriendsIcon, DatabaseIcon } from '@patternfly/react-icons';
+
+class SimpleTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+  }
+
+  render() {
+    return (
+      <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
+        <Tab eventKey={0} title={<span><UserFriendsIcon />Tab item 1</span>}>
+          Tab 1 section
+        </Tab>
+        <Tab eventKey={1} title={<span><DatabaseIcon />Tab item 2</span>}>
+          Tab 2 section
+        </Tab>
+      </Tabs>
     );
   }
 }
