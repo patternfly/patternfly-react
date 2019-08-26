@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.93.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.92.3...@patternfly/react-core@3.93.0) (2019-08-26)
+
+
+### Features
+
+* **PF4 Option:** Rewrite options menu to use dropdown component ([#2299](https://github.com/patternfly/patternfly-react/issues/2299)) ([e18b407](https://github.com/patternfly/patternfly-react/commit/e18b407))
+
+
+
+
+
 ## [3.92.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.92.2...@patternfly/react-core@3.92.3) (2019-08-26)
 
 
