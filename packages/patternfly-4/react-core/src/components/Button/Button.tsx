@@ -14,7 +14,8 @@ export enum ButtonVariant {
 
 export enum ButtonType {
   button = 'button',
-  submit = 'submit'
+  submit = 'submit',
+  reset = 'reset'
 };
 
 export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
