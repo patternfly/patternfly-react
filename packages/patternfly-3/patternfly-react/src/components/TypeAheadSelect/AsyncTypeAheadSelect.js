@@ -33,9 +33,13 @@ class AsyncTypeAheadSelect extends React.Component {
 }
 
 AsyncTypeAheadSelect.propTypes = {
+  /** Callback function for search */
   onSearch: PropTypes.func.isRequired,
+  /** Array of selectable options */
   options: PropTypes.array,
+  /** Flag to indicate if typeahead is loading */
   isLoading: PropTypes.bool,
+  /** Internal property to access the react bootstrap typeahead component via outer ref property */
   innerRef: PropTypes.any
 };
 
