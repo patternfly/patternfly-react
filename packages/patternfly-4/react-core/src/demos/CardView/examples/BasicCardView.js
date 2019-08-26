@@ -204,7 +204,7 @@ class BasicCardView extends React.Component {
             <Gallery gutter="md">
               <Card isHoverable isCompact>
                 <CardHead>
-                  <img src={iconPfLogo} alt="PF Logo" />
+                  <img src={iconPfLogo} alt="PF Logo" width="60" />
                   <CardActions>
                     <Badge isRead>Community</Badge>
                   </CardActions>
