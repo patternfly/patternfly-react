@@ -3,8 +3,6 @@ import {
   Avatar,
   Badge,
   Brand,
-  Breadcrumb,
-  BreadcrumbItem,
   Button,
   ButtonVariant,
   Card,
@@ -18,7 +16,6 @@ import {
   DropdownItem,
   DropdownSeparator,
   Gallery,
-  GalleryItem,
   KebabToggle,
   Nav,
   NavItem,
@@ -200,9 +197,7 @@ class BasicCardView extends React.Component {
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Projects</Text>
-              <Text component="p">
-                This is a demo that showcases PatternFly Cards.
-              </Text>
+              <Text component="p">This is a demo that showcases PatternFly Cards.</Text>
             </TextContent>
           </PageSection>
           <PageSection>
@@ -216,7 +211,7 @@ class BasicCardView extends React.Component {
                 </CardHead>
                 <CardHeader>
                   <p>PatternFly</p>
-                  <div class="pf-c-content">
+                  <div className="pf-c-content">
                     <small>Provided by Red Hat</small>
                   </div>
                 </CardHeader>
@@ -233,15 +228,16 @@ class BasicCardView extends React.Component {
                 </CardHead>
                 <CardHeader>
                   <p>ActiveMQ</p>
-                  <div class="pf-c-content">
+                  <div className="pf-c-content">
                     <small>Provided by Red Hat</small>
                   </div>
                 </CardHeader>
                 <CardBody>
-                The ActiveMQ component allows messages to be sent to a JMS Queue or Topic; or messages to be consumed from a JMS Queue or Topic using Apache ActiveMQ.
+                  The ActiveMQ component allows messages to be sent to a JMS Queue or Topic; or messages to be consumed
+                  from a JMS Queue or Topic using Apache ActiveMQ.
                 </CardBody>
-                <CardFooter style={{ display: 'flex', alignItems: 'center'}}>
-                  <CheckCircleIcon style={{ fill: 'var(--pf-global--success-color--100)'}} /> &nbsp; Installed
+                <CardFooter style={{ display: 'flex', alignItems: 'center' }}>
+                  <CheckCircleIcon style={{ fill: 'var(--pf-global--success-color--100)' }} /> &nbsp; Installed
                 </CardFooter>
               </Card>
               <Card isHoverable isCompact>
@@ -253,13 +249,11 @@ class BasicCardView extends React.Component {
                 </CardHead>
                 <CardHeader>
                   <p>Apache Spark</p>
-                  <div class="pf-c-content">
+                  <div className="pf-c-content">
                     <small>Provided by Red Hat</small>
                   </div>
                 </CardHeader>
-                <CardBody>
-                This documentation page covers the Apache Spark component for the Apache Camel.
-                </CardBody>
+                <CardBody>This documentation page covers the Apache Spark component for the Apache Camel.</CardBody>
               </Card>
               <Card isHoverable isCompact>
                 <CardHead>
@@ -270,12 +264,14 @@ class BasicCardView extends React.Component {
                 </CardHead>
                 <CardHeader>
                   <p>Avro</p>
-                  <div class="pf-c-content">
+                  <div className="pf-c-content">
                     <small>Provided by Red Hat</small>
                   </div>
                 </CardHeader>
                 <CardBody>
-                This component provides a dataformat for avro, which allows serialization and deserialization of messages using Apache Avro’s binary dataformat. Moreover, it provides support for Apache Avro’s rpc, by providing producers and consumers endpoint for using avro over netty or http.
+                  This component provides a dataformat for avro, which allows serialization and deserialization of
+                  messages using Apache Avro’s binary dataformat. Moreover, it provides support for Apache Avro’s rpc,
+                  by providing producers and consumers endpoint for using avro over netty or http.
                 </CardBody>
               </Card>
               <Card isHoverable isCompact>
@@ -284,15 +280,15 @@ class BasicCardView extends React.Component {
                 </CardHead>
                 <CardHeader>
                   <p>Azure Services</p>
-                  <div class="pf-c-content">
+                  <div className="pf-c-content">
                     <small>Provided by Red Hat</small>
                   </div>
                 </CardHeader>
                 <CardBody>
-                The Camel Components for Windows Azure Services provide connectivity to Azure services from Camel.
+                  The Camel Components for Windows Azure Services provide connectivity to Azure services from Camel.
                 </CardBody>
-                <CardFooter style={{ display: 'flex', alignItems: 'center'}}>
-                  <CheckCircleIcon style={{ fill: 'var(--pf-global--success-color--100)'}} /> &nbsp; Installed
+                <CardFooter style={{ display: 'flex', alignItems: 'center' }}>
+                  <CheckCircleIcon style={{ fill: 'var(--pf-global--success-color--100)' }} /> &nbsp; Installed
                 </CardFooter>
               </Card>
               <Card isHoverable isCompact>
@@ -301,15 +297,16 @@ class BasicCardView extends React.Component {
                 </CardHead>
                 <CardHeader>
                   <p>Crypto</p>
-                  <div class="pf-c-content">
+                  <div className="pf-c-content">
                     <small>Provided by Red Hat</small>
                   </div>
                 </CardHeader>
                 <CardBody>
-                For providing flexible endpoints to sign and verify exchanges using the Signature Service of the Java Cryptographic Extension.
+                  For providing flexible endpoints to sign and verify exchanges using the Signature Service of the Java
+                  Cryptographic Extension.
                 </CardBody>
-                <CardFooter style={{ display: 'flex', alignItems: 'center'}}>
-                  <CheckCircleIcon style={{ fill: 'var(--pf-global--success-color--100)'}} /> &nbsp; Installed
+                <CardFooter style={{ display: 'flex', alignItems: 'center' }}>
+                  <CheckCircleIcon style={{ fill: 'var(--pf-global--success-color--100)' }} /> &nbsp; Installed
                 </CardFooter>
               </Card>
               <Card isHoverable isCompact>
@@ -318,12 +315,13 @@ class BasicCardView extends React.Component {
                 </CardHead>
                 <CardHeader>
                   <p>DropBox</p>
-                  <div class="pf-c-content">
+                  <div className="pf-c-content">
                     <small>Provided by Red Hat</small>
                   </div>
                 </CardHeader>
                 <CardBody>
-                The dropbox: component allows you to treat Dropbox remote folders as a producer or consumer of messages.
+                  The dropbox: component allows you to treat Dropbox remote folders as a producer or consumer of
+                  messages.
                 </CardBody>
               </Card>
               <Card isHoverable isCompact>
@@ -332,12 +330,12 @@ class BasicCardView extends React.Component {
                 </CardHead>
                 <CardHeader>
                   <p>JBoss Data Grid</p>
-                  <div class="pf-c-content">
+                  <div className="pf-c-content">
                     <small>Provided by Red Hat</small>
                   </div>
                 </CardHeader>
                 <CardBody>
-                Read or write to a fully-supported distributed cache and data grid for faster integration services.
+                  Read or write to a fully-supported distributed cache and data grid for faster integration services.
                 </CardBody>
               </Card>
               <Card isHoverable isCompact>
@@ -349,12 +347,14 @@ class BasicCardView extends React.Component {
                 </CardHead>
                 <CardHeader>
                   <p>REST</p>
-                  <div class="pf-c-content">
+                  <div className="pf-c-content">
                     <small>Provided by Red Hat</small>
                   </div>
                 </CardHeader>
                 <CardBody>
-                The rest component allows to define REST endpoints (consumer) using the Rest DSL and plugin to other Camel components as the REST transport. From Camel 2.18 onwards the rest component can also be used as a client (producer) to call REST services.
+                  The rest component allows to define REST endpoints (consumer) using the Rest DSL and plugin to other
+                  Camel components as the REST transport. From Camel 2.18 onwards the rest component can also be used as
+                  a client (producer) to call REST services.
                 </CardBody>
               </Card>
               <Card isHoverable isCompact>
@@ -366,13 +366,11 @@ class BasicCardView extends React.Component {
                 </CardHead>
                 <CardHeader>
                   <p>SWAGGER</p>
-                  <div class="pf-c-content">
+                  <div className="pf-c-content">
                     <small>Provided by Red Hat</small>
                   </div>
                 </CardHeader>
-                <CardBody>
-                Expose REST services and their APIs using Swagger specification.
-                </CardBody>
+                <CardBody>Expose REST services and their APIs using Swagger specification.</CardBody>
               </Card>
             </Gallery>
           </PageSection>
