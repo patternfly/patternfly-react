@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.92.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.91.0...@patternfly/react-core@3.92.0) (2019-08-26)
+
+
+### Features
+
+* **Button:** Added OUIA compatibility to Button component ([#2710](https://github.com/patternfly/patternfly-react/issues/2710)) ([d96116c](https://github.com/patternfly/patternfly-react/commit/d96116c)), closes [#2425](https://github.com/patternfly/patternfly-react/issues/2425)
+
+
+
+
+
 # [3.91.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.90.2...@patternfly/react-core@3.91.0) (2019-08-23)
 
 

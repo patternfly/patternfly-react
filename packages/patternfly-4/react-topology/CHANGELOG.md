@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.7.44...@patternfly/react-topology@2.8.0) (2019-08-26)
+
+
+### Features
+
+* **Button:** Added OUIA compatibility to Button component ([#2710](https://github.com/patternfly/patternfly-react/issues/2710)) ([d96116c](https://github.com/patternfly/patternfly-react/commit/d96116c)), closes [#2425](https://github.com/patternfly/patternfly-react/issues/2425)
+
+
+
+
+
 ## [2.7.44](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.7.43...@patternfly/react-topology@2.7.44) (2019-08-23)
 
 **Note:** Version bump only for package @patternfly/react-topology
