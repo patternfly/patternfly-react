@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.92.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.92.0...@patternfly/react-core@3.92.1) (2019-08-26)
+
+
+### Bug Fixes
+
+* **tooltip:** allow manul trigger, access to tippy.js props ([#2769](https://github.com/patternfly/patternfly-react/issues/2769)) ([de6b211](https://github.com/patternfly/patternfly-react/commit/de6b211))
+
+
+
+
+
 # [3.92.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.91.0...@patternfly/react-core@3.92.0) (2019-08-26)
 
 
