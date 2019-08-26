@@ -18,25 +18,35 @@ class AsyncTypeAheadSelect extends React.Component {
     Promise.resolve(this.props.onSearch(query)).then(options => this.onSearchEnd(options));
   };
 
-  render = () => (
-    <AsyncTypeahead
-      {...this.props}
-      onSearch={this.handleSearch}
-      options={this.state.options}
-      isLoading={this.state.isLoading}
-    />
-  );
+  render() {
+    const { innerRef, ...props } = this.props;
+    return (
+      <AsyncTypeahead
+        {...props}
+        ref={innerRef}
+        onSearch={this.handleSearch}
+        options={this.state.options}
+        isLoading={this.state.isLoading}
+      />
+    );
+  }
 }
 
 AsyncTypeAheadSelect.propTypes = {
+  /** Callback function for search */
   onSearch: PropTypes.func.isRequired,
+  /** Array of selectable options */
   options: PropTypes.array,
-  isLoading: PropTypes.bool
+  /** Flag to indicate if typeahead is loading */
+  isLoading: PropTypes.bool,
+  /** Internal property to access the react bootstrap typeahead component via outer ref property */
+  innerRef: PropTypes.any
 };
 
 AsyncTypeAheadSelect.defaultProps = {
   options: [],
-  isLoading: false
+  isLoading: false,
+  innerRef: null
 };
 
-export default AsyncTypeAheadSelect;
+export default React.forwardRef((props, ref) => <AsyncTypeAheadSelect {...props} innerRef={ref} />);
