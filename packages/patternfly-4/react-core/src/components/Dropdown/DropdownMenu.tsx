@@ -97,17 +97,19 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
       return React.Children.map(children, groupedChildren => {
           const group = groupedChildren as React.ReactElement<{children: React.ReactNode}>;
           return React.cloneElement(group, {
-            children:
-              (group.props.children.constructor === Array &&
-                React.Children.map(group.props.children as React.ReactElement<any>,
-                  (option: React.ReactElement<any>) =>
-                    React.cloneElement(option, {
-                      index: index++
-                    })
+            ...(group.props && group.props.children && {
+              children:
+                (group.props.children.constructor === Array &&
+                  React.Children.map(group.props.children as React.ReactElement<any>,
+                    (option: React.ReactElement<any>) =>
+                      React.cloneElement(option, {
+                        index: index++
+                      })
                   )) ||
                 React.cloneElement(group.props.children as React.ReactElement<any>, {
                   index: index++
                 })
+            })
           });
       });
     }
@@ -185,37 +187,43 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
         ) : (
           (isGrouped && (
             <DropdownContext.Consumer>
-              {({ menuClass }) => (
-                <div
-                  {...props}
-                  className={css(
-                    menuClass,
-                    position === DropdownPosition.right && styles.modifiers.alignRight,
-                    className
-                  )}
-                  hidden={!isOpen}
-                  role="menu"
-                >
-                  {this.extendChildren()}
-                </div>
-              )}
+              {({ menuClass, menuComponent }) => {
+                const MenuComponent = (menuComponent || 'div') as any;
+                return (
+                  <MenuComponent
+                    {...props}
+                    className={css(
+                      menuClass,
+                      position === DropdownPosition.right && styles.modifiers.alignRight,
+                      className
+                    )}
+                    hidden={!isOpen}
+                    role="menu"
+                  >
+                    {this.extendChildren()}
+                  </MenuComponent>
+                );
+              }}
             </DropdownContext.Consumer>
           )) || (
             <DropdownContext.Consumer>
-              {({ menuClass }) => (
-                <Component
-                  {...props}
-                  className={css(
-                    menuClass,
-                    position === DropdownPosition.right && styles.modifiers.alignRight,
-                    className
-                  )}
-                  hidden={!isOpen}
-                  role="menu"
-                >
-                  {this.extendChildren()}
-                </Component>
-              )}
+              {({ menuClass, menuComponent }) => {
+                const MenuComponent = (menuComponent || Component) as any;
+                return (
+                  <MenuComponent
+                    {...props}
+                    className={css(
+                      menuClass,
+                      position === DropdownPosition.right && styles.modifiers.alignRight,
+                      className
+                    )}
+                    hidden={!isOpen}
+                    role="menu"
+                  >
+                    {this.extendChildren()}
+                  </MenuComponent>
+                );
+              }}
             </DropdownContext.Consumer>
           )
         )}

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 import { DropdownToggle } from './DropdownToggle';
+import { DropdownContext } from './dropdownConstants';
 
 describe('API', () => {
   test('click on closed', () => {
@@ -102,6 +103,38 @@ describe('state', () => {
       <DropdownToggle id="Dropdown Toggle" isFocused parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('class changes', () => {
+    const view = mount(
+      <DropdownContext.Provider
+        value={{
+          toggleTextClass: 'some-test-class',
+          toggleIconClass: 'another-test-class'
+        }}
+      >
+        <DropdownToggle id="Dropdown Toggle" isFocused parentRef={document.createElement('div')}>
+          Dropdown
+        </DropdownToggle>
+      </DropdownContext.Provider>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('class changes', () => {
+    const view = mount(
+      <DropdownContext.Provider
+        value={{
+          toggleTextClass: 'some-test-class',
+          toggleIconClass: 'another-test-class'
+        }}
+      >
+        <DropdownToggle id="Dropdown Toggle" isFocused parentRef={document.createElement('div')}>
+          Dropdown
+        </DropdownToggle>
+      </DropdownContext.Provider>
     );
     expect(view).toMatchSnapshot();
   });

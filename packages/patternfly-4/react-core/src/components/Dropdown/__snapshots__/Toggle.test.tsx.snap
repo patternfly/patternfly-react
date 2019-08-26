@@ -28,12 +28,12 @@ exports[`Dropdown toggle 1`] = `
       type="button"
     >
       <span
-        className="pf-c-dropdown__toggle-text"
+        className=""
       >
         Dropdown
       </span>
       <CaretDownIcon
-        className="pf-c-dropdown__toggle-icon"
+        className=""
         color="currentColor"
         noVerticalAlign={false}
         size="sm"
@@ -42,7 +42,7 @@ exports[`Dropdown toggle 1`] = `
         <svg
           aria-hidden={true}
           aria-labelledby={null}
-          className="pf-c-dropdown__toggle-icon"
+          className=""
           fill="currentColor"
           height="1em"
           role="img"
