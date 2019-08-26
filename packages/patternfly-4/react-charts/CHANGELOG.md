@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.8.3...@patternfly/react-charts@4.8.4) (2019-08-26)
+
+
+### Bug Fixes
+
+* **charts:** adjust legend position for axis label ([#2763](https://github.com/patternfly/patternfly-react/issues/2763)) ([6a93c7c](https://github.com/patternfly/patternfly-react/commit/6a93c7c))
+
+
+
+
+
 ## [4.8.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.8.2...@patternfly/react-charts@4.8.3) (2019-08-23)
 
 **Note:** Version bump only for package @patternfly/react-charts
