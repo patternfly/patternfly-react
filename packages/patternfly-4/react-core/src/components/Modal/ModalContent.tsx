@@ -79,11 +79,8 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     <ModalBoxFooter>{footer}</ModalBoxFooter> :
     actions.length > 0 && <ModalBoxFooter>{actions}</ModalBoxFooter>;
   const boxStyle = width === -1 ? {} : { width };
-
-  return (
-    <Backdrop>
-      <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
-        <ModalBox
+  let modalBox = (
+    <ModalBox
           style={boxStyle}
           className={className}
           isLarge={isLarge}
@@ -91,14 +88,25 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
           title={title}
           id={ariaDescribedById || id}
         >
-          {showClose && <ModalBoxCloseButton onClose={onClose} />}
-          {modalBoxHeader}
-          <ModalBoxBody {...props} id={id}>
-            {children}
-          </ModalBoxBody>
-          {modalBoxFooter}
-        </ModalBox>
+      {showClose && <ModalBoxCloseButton onClose={onClose} />}
+      {modalBoxHeader}
+      <ModalBoxBody {...props} id={id}>
+        {children}
+      </ModalBoxBody>
+      {modalBoxFooter}
+    </ModalBox>
+  );
+  // Only add FocusTrap if close button exists to prevent errors
+  if (showClose) {
+    modalBox = (
+      <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
+        {modalBox}
       </FocusTrap>
+    )
+  }
+  return (
+    <Backdrop>
+      {modalBox}
     </Backdrop>
   );
 };
