@@ -19,10 +19,6 @@ import { getAxisTheme, getTheme } from '../ChartUtils';
  */
 export interface ChartAxisProps extends VictoryAxisProps {
   /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-axis/
-   */
-  ' '?: any;
-  /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
@@ -83,7 +79,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * The domain prop describes the range of values your axis will include. This prop should be
    * given as a array of the minimum and maximum expected values for your axis.
    * If this value is not given it will be calculated based on the scale or tickValues.
-   * @examples [-1, 1]
+   * @example [-1, 1]
    */
   domain?: DomainPropType;
   /**
@@ -108,7 +104,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * function will be called with the calculated props for the individual selected
    * element (i.e. a single tick), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
-   * @examples
+   * @example
    * events={[
    *   {
    *     target: "grid",
@@ -134,7 +130,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    */
   events?: EventPropTypeInterface<'axis' | 'axisLabel' | 'grid' | 'ticks' | 'tickLabels' | 'parent', number | string>[];
   /**
-   * ChartLegend uses the standard externalEventMutations prop.
+   * ChartAxis uses the standard externalEventMutations prop.
    */
   externalEventMutations?: any[];
   /**

@@ -14,8 +14,9 @@ import {
   StringOrNumberOrCallback,
   VictoryStyleInterface,
   VictoryLine,
-  VictoryLineProps
+  VictoryLineProps,
 } from 'victory';
+import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
@@ -28,10 +29,6 @@ export enum ChartLineSortOrder {
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
 export interface ChartLineProps extends VictoryLineProps {
-  /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-line/
-   */
-  ' '?: any;
   /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
@@ -117,7 +114,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * The mutation function will be called with the calculated props for the individual selected
    * element (i.e. a line), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
-   * @examples
+   * @example
    * events={[
    *   {
    *     target: "data",
@@ -376,9 +373,12 @@ export interface ChartLineProps extends VictoryLineProps {
 export const ChartLine: React.FunctionComponent<ChartLineProps> = ({
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
+
+  // destructure last
+  theme = getTheme(themeColor, themeVariant),
+  containerComponent = <ChartContainer theme={theme} />,
   ...rest
-}: ChartLineProps) => <VictoryLine theme={theme} {...rest} />;
+}: ChartLineProps) => <VictoryLine containerComponent={containerComponent} theme={theme} {...rest} />;
 
 // Note: VictoryLine.role must be hoisted
 hoistNonReactStatics(ChartLine, VictoryLine);

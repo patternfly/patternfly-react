@@ -21,7 +21,7 @@ export class SimpleBarDemo extends React.Component {
             padding={{
               bottom: 50,
               left: 50,
-              right: 200, // Adjusted to accomodate legend
+              right: 200, // Adjusted to accommodate legend
               top: 50
             }}
             width={600}

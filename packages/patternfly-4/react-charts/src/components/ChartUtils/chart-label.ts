@@ -1,18 +1,27 @@
-import {ChartCommonStyles, ChartThemeDefinition} from '../ChartTheme';
-import { TextSize } from 'victory-core';
+import { Helpers, TextSize } from 'victory-core';
+import { getPieOrigin } from './chart-origin';
+import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 
-interface ChartLabelPaddingXInterface {
+interface ChartBulletLabelInterface {
   dx?: number; // Horizontal shift from the x coordinate
-  chartWidth: number; // Width of chart (e.g., donut) within SVG
-  labelPosition?: 'bottom' | 'center' | 'left' | 'right' | 'top' | 'top-left'; // Position of label
+  dy?: number; // Vertical shift from the x coordinate
+  chartHeight?: number; // Width of chart within SVG
+  chartWidth?: number; // Width of chart (e.g., donut) within SVG
+  labelPosition?: 'bottom' | 'left' | 'top' | 'top-left'; // Position of label
   legendPosition?: 'bottom' | 'bottom-left' | 'right'; // Position of legend
+  svgHeight?: number; // Overall height of SVG
   svgWidth?: number; // Overall width of SVG
+  width?: number; // Chart width
 }
 
-interface ChartLabelPaddingYInterface {
-  dy?: number; // Vertical shift from the x coordinate
-  chartHeight: number; // Width of chart (e.g., donut) within SVG
-  labelPosition?: 'bottom' | 'center' | 'left' | 'right' | 'top' | 'top-left'; // Position of label
+interface ChartPieLabelInterface {
+  dx?: number; // Horizontal shift from the x coordinate
+  dy?: number; // Horizontal shift from the y coordinate
+  height: number; // Chart height
+  labelPosition?: 'bottom' | 'center' | 'right' ; // Position of label
+  legendPosition?: 'bottom' | 'right'; // Position of legend
+  padding: any; // Chart padding
+  width: number; // Chart width
 }
 
 interface ChartLabelTextSizeInterface {
@@ -20,62 +29,78 @@ interface ChartLabelTextSizeInterface {
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
 }
 
-// Returns x coordinate for label
-export const getLabelX = ({
+// Returns x coordinate for bullet labels
+export const getBulletLabelX = ({
   chartWidth,
   dx = 0,
+  labelPosition
+}: ChartBulletLabelInterface) => {
+  return (labelPosition === 'top' && chartWidth) ? Math.round(chartWidth / 2) : dx;
+};
+
+// Returns y coordinate for bullet labels
+export const getBulletLabelY = ({
+  chartHeight,
+  dy = 0,
+  labelPosition
+}: ChartBulletLabelInterface) => {
+  switch (labelPosition) {
+    case 'bottom':
+      return chartHeight + ChartCommonStyles.label.margin + dy;
+    case 'left':
+      return chartHeight ? Math.round(chartHeight / 2) + dy : dy;
+    default:
+      return dy;
+  }
+};
+
+// Returns x coordinate for pie labels
+export const getPieLabelX = ({
+  dx = 0,
+  height,
   labelPosition,
   legendPosition,
-  svgWidth
-}: ChartLabelPaddingXInterface) => {
-  if (!chartWidth) {
-    return 0;
-  }
+  padding,
+  width
+}: ChartPieLabelInterface) => {
+  const origin = getPieOrigin({ height, padding, width });
+  const radius = Helpers.getRadius({ height, width, padding });
+
   switch (labelPosition) {
-    case 'center':
-      switch (legendPosition) {
-        case 'bottom':
-          return Math.round(svgWidth / 2) + dx;
-        default:
-          return Math.round(chartWidth / 2) + dx;
-      }
     case 'bottom':
-    case 'top':
-      return Math.round(chartWidth / 2) + dx;
+    case 'center':
+      return origin.x + dx;
     case 'right':
       switch (legendPosition) {
         case 'bottom':
-          return Math.round(svgWidth / 2) + Math.round(chartWidth / 2) + ChartCommonStyles.label.margin + dx;
+          return origin.x + ChartCommonStyles.label.margin + dx + radius;
         case 'right':
-          return chartWidth + ChartCommonStyles.label.margin + dx;
+          return origin.x + ChartCommonStyles.label.margin + dx;
         default:
           return dx;
       }
-    case 'left':
-    case 'top-left':
     default:
       return dx;
   }
 };
 
-// Returns y coordinate for label
-export const getLabelY = ({
-  chartHeight,
+// Returns x coordinate for pie labels
+export const getPieLabelY = ({
   dy = 0,
-  labelPosition
-}: ChartLabelPaddingYInterface) => {
-  if (!chartHeight) {
-    return 0;
-  }
+  height,
+  labelPosition,
+  padding,
+  width
+}: ChartPieLabelInterface) => {
+  const origin = getPieOrigin({ height, padding, width });
+  const radius = Helpers.getRadius({ height, width, padding });
+
   switch (labelPosition) {
     case 'center':
-    case 'left':
     case 'right':
-      return Math.round(chartHeight / 2) + dy;
+      return origin.y + dy;
     case 'bottom':
-      return chartHeight + ChartCommonStyles.label.margin + dy;
-    case 'top':
-    case 'top-left':
+      return origin.y + radius + ChartCommonStyles.label.margin * 2 + dy;
     default:
       return dy;
   }

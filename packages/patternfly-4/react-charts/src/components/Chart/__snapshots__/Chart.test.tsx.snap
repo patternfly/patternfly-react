@@ -4,6 +4,7 @@ exports[`Chart 1`] = `
 <VictoryChart
   containerComponent={
     <Unknown
+      className="pf-c-chart"
       theme={
         Object {
           "area": Object {
@@ -461,6 +462,8 @@ exports[`Chart 1`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -486,6 +489,8 @@ exports[`Chart 1`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -969,6 +974,8 @@ exports[`Chart 1`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }
@@ -986,6 +993,8 @@ exports[`Chart 1`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -1010,6 +1019,8 @@ exports[`Chart 1`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -1493,6 +1504,8 @@ exports[`Chart 1`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }
@@ -1514,6 +1527,8 @@ exports[`Chart 1`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -1529,12 +1544,16 @@ exports[`Chart 1`] = `
         circularAxisComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
         circularGridComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -1551,6 +1570,8 @@ exports[`Chart 1`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -2036,6 +2057,8 @@ exports[`Chart 1`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }
@@ -2053,6 +2076,8 @@ exports[`Chart 1`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -2068,12 +2093,16 @@ exports[`Chart 1`] = `
         circularAxisComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
         circularGridComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -2089,6 +2118,8 @@ exports[`Chart 1`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -2574,6 +2605,8 @@ exports[`Chart 1`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }
@@ -3057,6 +3090,7 @@ exports[`Chart 2`] = `
 <VictoryChart
   containerComponent={
     <Unknown
+      className="pf-c-chart"
       theme={
         Object {
           "area": Object {
@@ -3514,6 +3548,8 @@ exports[`Chart 2`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -3539,6 +3575,8 @@ exports[`Chart 2`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -4022,6 +4060,8 @@ exports[`Chart 2`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }
@@ -4039,6 +4079,8 @@ exports[`Chart 2`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -4063,6 +4105,8 @@ exports[`Chart 2`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -4546,6 +4590,8 @@ exports[`Chart 2`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }
@@ -4567,6 +4613,8 @@ exports[`Chart 2`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -4582,12 +4630,16 @@ exports[`Chart 2`] = `
         circularAxisComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
         circularGridComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -4604,6 +4656,8 @@ exports[`Chart 2`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -5089,6 +5143,8 @@ exports[`Chart 2`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }
@@ -5106,6 +5162,8 @@ exports[`Chart 2`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -5121,12 +5179,16 @@ exports[`Chart 2`] = `
         circularAxisComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
         circularGridComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -5142,6 +5204,8 @@ exports[`Chart 2`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -5627,6 +5691,8 @@ exports[`Chart 2`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }
@@ -6110,6 +6176,7 @@ exports[`renders axis and component children 1`] = `
 <VictoryChart
   containerComponent={
     <Unknown
+      className="pf-c-chart"
       theme={
         Object {
           "area": Object {
@@ -6567,6 +6634,8 @@ exports[`renders axis and component children 1`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -6592,6 +6661,8 @@ exports[`renders axis and component children 1`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -7075,6 +7146,8 @@ exports[`renders axis and component children 1`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }
@@ -7092,6 +7165,8 @@ exports[`renders axis and component children 1`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -7116,6 +7191,8 @@ exports[`renders axis and component children 1`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -7599,6 +7676,8 @@ exports[`renders axis and component children 1`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }
@@ -7620,6 +7699,8 @@ exports[`renders axis and component children 1`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -7635,12 +7716,16 @@ exports[`renders axis and component children 1`] = `
         circularAxisComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
         circularGridComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -7657,6 +7742,8 @@ exports[`renders axis and component children 1`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -8142,6 +8229,8 @@ exports[`renders axis and component children 1`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }
@@ -8159,6 +8248,8 @@ exports[`renders axis and component children 1`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -8174,12 +8265,16 @@ exports[`renders axis and component children 1`] = `
         circularAxisComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
         circularGridComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -8195,6 +8290,8 @@ exports[`renders axis and component children 1`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -8680,6 +8777,8 @@ exports[`renders axis and component children 1`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }

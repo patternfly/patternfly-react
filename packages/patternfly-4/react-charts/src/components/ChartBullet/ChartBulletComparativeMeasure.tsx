@@ -7,7 +7,7 @@ import {
   PaddingProps,
   VictoryBar,
 } from 'victory';
-import { Data } from 'victory-core';
+import { getComparativeMeasureData }  from './utils';
 import { ChartBar } from '../ChartBar';
 import { ChartContainer } from '../ChartContainer';
 import { ChartBulletStyles, ChartThemeDefinition}  from '../ChartTheme';
@@ -40,6 +40,12 @@ export interface ChartBulletComparativeMeasureProps {
    * the chart, and the number of bars.
    */
   barWidth?: NumberOrCallback;
+  /**
+   * The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of
+   * the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the
+   * center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders.
+   */
+  constrainToVisibleArea?: boolean;
   /**
    * The data prop specifies the data to be plotted. Data should be in the form of an array
    * of data points, or an array of arrays of data points for multiple datasets.
@@ -151,51 +157,13 @@ export interface ChartBulletComparativeMeasureProps {
   y?: DataGetterPropType;
 }
 
-interface ChartBulletComparativeMeasureInterface {
-  data?: any[];
-  invert?: boolean;
-  theme?: ChartThemeDefinition;
-  themeColor?: string;
-  themeVariant?: string;
-  y?: DataGetterPropType;
-}
-
-export const getComparativeMeasureData = ({
-  data,
-  themeColor,
-  themeVariant,
-
-  // destructure last
-  theme = getBulletComparativeMeasureTheme(themeColor, themeVariant),
-  y
-}: ChartBulletComparativeMeasureInterface) => {
-  const datum: any[] = [];
-
-  Data.formatData(data, {y}, ['y']).forEach(((dataPoint: any, index: number) => {
-    datum.push({
-      ...dataPoint,
-      _index: index // Save to sync legend color
-    });
-  }));
-
-  const computedData = datum.map((dataPoint: any, index: number) => {
-    return {
-      ...dataPoint,
-      x: 1,
-      _x: 1,
-      y0: dataPoint._y,
-      _y0: dataPoint._y,
-      _color: theme.bar.style.data.fill // Save to sync legend color
-    };
-  });
-  return computedData;
-};
-
 let currentId = 0;
 
 export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletComparativeMeasureProps> = ({
   ariaDesc,
   ariaTitle,
+  barWidth = ChartBulletStyles.comparativeMeasureWidth,
+  constrainToVisibleArea = false,
   data,
   domain,
   horizontal = true,
@@ -211,37 +179,36 @@ export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletC
   theme = getBulletComparativeMeasureTheme(themeColor, themeVariant),
   height = theme.bar.height,
   width = theme.bar.width,
-  barWidth = horizontal
-    ? height > theme.bar.height
-      ? ChartBulletStyles.comparativeMeasureWidth + (height - theme.bar.height)
-      : ChartBulletStyles.comparativeMeasureWidth - (theme.bar.height - height)
-    : width > theme.bar.height
-      ? ChartBulletStyles.comparativeMeasureWidth + (width - theme.bar.height)
-      : ChartBulletStyles.comparativeMeasureWidth - (theme.bar.height - width),
-  labelComponent =
-    <ChartTooltip
-      orientation="top"
-      dx={(datum) => {
-        if (horizontal) {
-          return datum._y > 0 ? -10 : 10;
-        }
-        const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
-        return result / 2;
-      }}
-      dy={(datum) => {
-        if (!horizontal) {
-          return datum._y > 0 ? -10 : 10;
-        }
-        const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
-        return result / 2;
-      }}
-    />,
+  labelComponent = <ChartTooltip />,
   ...rest
 }: ChartBulletComparativeMeasureProps) => {
   const computedData = getComparativeMeasureData({
     data,
     theme,
     y
+  });
+
+  // Label component
+  //
+  // Note: SVG height and width are provided by ChartBullet as a workaround to support constrainToVisibleArea
+  const tooltip = React.cloneElement(labelComponent, {
+    constrainToVisibleArea,
+    dx: () => {
+      if (horizontal) {
+        return 0;
+      }
+      const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
+      return result / 2;
+    },
+    dy: () => {
+      if (!horizontal) {
+        return 0;
+      }
+      const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
+      return -(result / 2);
+    },
+    orientation: 'top',
+    ...labelComponent.props
   });
 
   const measure = computedData.map((dataPoint: any, index: number) => {
@@ -252,7 +219,7 @@ export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletC
       domain,
       height,
       horizontal,
-      labelComponent,
+      labelComponent: tooltip,
       labels,
       key,
       padding,

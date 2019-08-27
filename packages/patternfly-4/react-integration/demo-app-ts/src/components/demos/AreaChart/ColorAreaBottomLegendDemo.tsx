@@ -7,12 +7,12 @@ render() {
     <div>
       <div style={{height: '225px', width: '650px'}}>
         <Chart
-          containerComponent={<ChartVoronoiContainer labels={(datum) => `${datum.name}: ${datum.y}`} />}
+          containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} />}
           legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}
           legendPosition="bottom"
           height={225}
           padding={{
-            bottom: 75, // Adjusted to accomodate legend
+            bottom: 75, // Adjusted to accommodate legend
             left: 50,
             right: 50,
             top: 50,

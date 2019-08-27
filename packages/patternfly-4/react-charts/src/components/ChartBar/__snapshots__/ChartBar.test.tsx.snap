@@ -3,11 +3,456 @@
 exports[`ChartBar 1`] = `
 <VictoryBar
   containerComponent={
-    <VictoryContainer
-      className="VictoryContainer"
-      portalComponent={<Portal />}
-      portalZIndex={99}
-      responsive={true}
+    <Unknown
+      theme={
+        Object {
+          "area": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#06c",
+                "fillOpacity": 0.3,
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "axis": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "axis": Object {
+                "fill": "transparent",
+                "stroke": "#d2d2d2",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
+              },
+              "axisLabel": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 40,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+              "grid": Object {
+                "fill": "none",
+                "pointerEvents": "painted",
+                "stroke": "none",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+              },
+              "tickLabels": Object {
+                "fill": "#4f5255",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "ticks": Object {
+                "fill": "transparent",
+                "size": 5,
+                "stroke": "#d2d2d2",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
+              },
+            },
+            "width": 450,
+          },
+          "bar": Object {
+            "barWidth": 10,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#06c",
+                "padding": 8,
+                "stroke": "none",
+                "strokeWidth": 0,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+            },
+            "width": 450,
+          },
+          "boxplot": Object {
+            "boxWidth": 20,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "max": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "maxLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "median": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "medianLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "min": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "minLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "q1": Object {
+                "fill": "#8a8d90",
+                "padding": 8,
+              },
+              "q1Labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "q3": Object {
+                "fill": "#8a8d90",
+                "padding": 8,
+              },
+              "q3Labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+            },
+            "width": 450,
+          },
+          "candlestick": Object {
+            "candleColors": Object {
+              "negative": "#151515",
+              "positive": "#fff",
+            },
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "chart": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "width": 450,
+          },
+          "errorbar": Object {
+            "borderWidth": 8,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "opacity": 1,
+                "stroke": "#151515",
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "group": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "width": 450,
+          },
+          "legend": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "gutter": 20,
+            "orientation": "horizontal",
+            "style": Object {
+              "data": Object {
+                "type": "square",
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "title": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 2,
+                "stroke": "transparent",
+              },
+            },
+            "titleOrientation": "top",
+          },
+          "line": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "opacity": 1,
+                "stroke": "#06c",
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "pie": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 230,
+            "padding": 20,
+            "style": Object {
+              "data": Object {
+                "padding": 8,
+                "stroke": "transparent",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 8,
+                "stroke": "transparent",
+              },
+            },
+            "width": 230,
+          },
+          "scatter": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#151515",
+                "opacity": 1,
+                "stroke": "transparent",
+                "strokeWidth": 0,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "stack": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "strokeWidth": 1,
+              },
+            },
+            "width": 450,
+          },
+          "tooltip": Object {
+            "cornerRadius": 0,
+            "flyoutStyle": Object {
+              "cornerRadius": 0,
+              "fill": "#151515",
+              "pointerEvents": "none",
+              "stroke": "#151515",
+              "strokeWidth": 0,
+            },
+            "pointerLength": 10,
+            "pointerWidth": 20,
+            "style": Object {
+              "fill": "#ededed",
+              "padding": 16,
+              "pointerEvents": "none",
+            },
+          },
+          "voronoi": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "stroke": "transparent",
+                "strokeWidth": 0,
+              },
+              "flyout": Object {
+                "fill": "#151515",
+                "pointerEvents": "none",
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fill": "#ededed",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 8,
+                "pointerEvents": "none",
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+        }
+      }
     />
   }
   data={
@@ -34,6 +479,8 @@ exports[`ChartBar 1`] = `
     <Bar
       defaultBarWidth={8}
       pathComponent={<Path />}
+      role="presentation"
+      shapeRendering="auto"
     />
   }
   groupComponent={
@@ -508,11 +955,456 @@ exports[`ChartBar 1`] = `
 exports[`ChartBar 2`] = `
 <VictoryBar
   containerComponent={
-    <VictoryContainer
-      className="VictoryContainer"
-      portalComponent={<Portal />}
-      portalZIndex={99}
-      responsive={true}
+    <Unknown
+      theme={
+        Object {
+          "area": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#06c",
+                "fillOpacity": 0.3,
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "axis": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "axis": Object {
+                "fill": "transparent",
+                "stroke": "#d2d2d2",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
+              },
+              "axisLabel": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 40,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+              "grid": Object {
+                "fill": "none",
+                "pointerEvents": "painted",
+                "stroke": "none",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+              },
+              "tickLabels": Object {
+                "fill": "#4f5255",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "ticks": Object {
+                "fill": "transparent",
+                "size": 5,
+                "stroke": "#d2d2d2",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
+              },
+            },
+            "width": 450,
+          },
+          "bar": Object {
+            "barWidth": 10,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#06c",
+                "padding": 8,
+                "stroke": "none",
+                "strokeWidth": 0,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+            },
+            "width": 450,
+          },
+          "boxplot": Object {
+            "boxWidth": 20,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "max": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "maxLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "median": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "medianLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "min": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "minLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "q1": Object {
+                "fill": "#8a8d90",
+                "padding": 8,
+              },
+              "q1Labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "q3": Object {
+                "fill": "#8a8d90",
+                "padding": 8,
+              },
+              "q3Labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+            },
+            "width": 450,
+          },
+          "candlestick": Object {
+            "candleColors": Object {
+              "negative": "#151515",
+              "positive": "#fff",
+            },
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "chart": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "width": 450,
+          },
+          "errorbar": Object {
+            "borderWidth": 8,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "opacity": 1,
+                "stroke": "#151515",
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "group": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "width": 450,
+          },
+          "legend": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "gutter": 20,
+            "orientation": "horizontal",
+            "style": Object {
+              "data": Object {
+                "type": "square",
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "title": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 2,
+                "stroke": "transparent",
+              },
+            },
+            "titleOrientation": "top",
+          },
+          "line": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "opacity": 1,
+                "stroke": "#06c",
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "pie": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 230,
+            "padding": 20,
+            "style": Object {
+              "data": Object {
+                "padding": 8,
+                "stroke": "transparent",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 8,
+                "stroke": "transparent",
+              },
+            },
+            "width": 230,
+          },
+          "scatter": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#151515",
+                "opacity": 1,
+                "stroke": "transparent",
+                "strokeWidth": 0,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "stack": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "strokeWidth": 1,
+              },
+            },
+            "width": 450,
+          },
+          "tooltip": Object {
+            "cornerRadius": 0,
+            "flyoutStyle": Object {
+              "cornerRadius": 0,
+              "fill": "#151515",
+              "pointerEvents": "none",
+              "stroke": "#151515",
+              "strokeWidth": 0,
+            },
+            "pointerLength": 10,
+            "pointerWidth": 20,
+            "style": Object {
+              "fill": "#ededed",
+              "padding": 16,
+              "pointerEvents": "none",
+            },
+          },
+          "voronoi": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "stroke": "transparent",
+                "strokeWidth": 0,
+              },
+              "flyout": Object {
+                "fill": "#151515",
+                "pointerEvents": "none",
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fill": "#ededed",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 8,
+                "pointerEvents": "none",
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+        }
+      }
     />
   }
   data={
@@ -539,6 +1431,8 @@ exports[`ChartBar 2`] = `
     <Bar
       defaultBarWidth={8}
       pathComponent={<Path />}
+      role="presentation"
+      shapeRendering="auto"
     />
   }
   groupComponent={
@@ -1014,6 +1908,7 @@ exports[`renders component data 1`] = `
 <VictoryChart
   containerComponent={
     <Unknown
+      className="pf-c-chart"
       theme={
         Object {
           "area": Object {
@@ -1471,6 +2366,8 @@ exports[`renders component data 1`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -1496,6 +2393,8 @@ exports[`renders component data 1`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -1979,6 +2878,8 @@ exports[`renders component data 1`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }
@@ -1996,6 +2897,8 @@ exports[`renders component data 1`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -2020,6 +2923,8 @@ exports[`renders component data 1`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -2503,6 +3408,8 @@ exports[`renders component data 1`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }
@@ -2524,6 +3431,8 @@ exports[`renders component data 1`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -2539,12 +3448,16 @@ exports[`renders component data 1`] = `
         circularAxisComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
         circularGridComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -2561,6 +3474,8 @@ exports[`renders component data 1`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -3046,6 +3961,8 @@ exports[`renders component data 1`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }
@@ -3063,6 +3980,8 @@ exports[`renders component data 1`] = `
         axisComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
@@ -3078,12 +3997,16 @@ exports[`renders component data 1`] = `
         circularAxisComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="axis"
           />
         }
         circularGridComponent={
           <Arc
             pathComponent={<Path />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -3099,6 +4022,8 @@ exports[`renders component data 1`] = `
         gridComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="grid"
           />
         }
@@ -3584,6 +4509,8 @@ exports[`renders component data 1`] = `
         tickComponent={
           <LineSegment
             lineComponent={<Line />}
+            role="presentation"
+            shapeRendering="auto"
             type="tick"
           />
         }

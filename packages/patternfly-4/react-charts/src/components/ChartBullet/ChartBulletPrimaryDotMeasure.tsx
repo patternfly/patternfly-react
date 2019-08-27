@@ -6,7 +6,7 @@ import {
   PaddingProps,
   VictoryScatter
 } from 'victory';
-import { Data } from 'victory-core';
+import { getPrimaryDotMeasureData }  from './utils';
 import { ChartContainer } from '../ChartContainer';
 import { ChartScatter } from '../ChartScatter';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
@@ -31,6 +31,12 @@ export interface ChartBulletPrimaryDotMeasureProps {
    * Note: Overridden by the title prop of containerComponent
    */
   ariaTitle?: string;
+  /**
+   * The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of
+   * the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the
+   * center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders.
+   */
+  constrainToVisibleArea?: boolean;
   /**
    * The data prop specifies the data to be plotted. Data should be in the form of an array
    * of data points, or an array of arrays of data points for multiple datasets.
@@ -99,6 +105,10 @@ export interface ChartBulletPrimaryDotMeasureProps {
    */
   padding?: PaddingProps;
   /**
+   * The size prop determines how to scale each data point
+   */
+  size?: number | ((data: any) => number);
+  /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
    * compose Chart with other components within an enclosing <svg> tag.
@@ -153,56 +163,12 @@ export interface ChartBulletPrimaryDotMeasureProps {
   y0?: DataGetterPropType;
 }
 
-interface ChartBulletPrimaryDotMeasureDataInterface {
-  data?: any[];
-  invert?: boolean;
-  theme?: ChartThemeDefinition;
-  themeColor?: string;
-  themeVariant?: string;
-  y?: DataGetterPropType;
-  y0?: DataGetterPropType;
-}
-
-export const getPrimaryDotMeasureData = ({
-  data,
-  invert,
-  themeColor,
-  themeVariant,
-
-  // destructure last
-  theme = getBulletPrimaryDotMeasureTheme(themeColor, themeVariant),
-  y,
-  y0
-}: ChartBulletPrimaryDotMeasureDataInterface) => {
-  const datum: any[] = [];
-
-  Data.formatData(data, {y, y0}, ['y', 'y0']).forEach(((dataPoint: any, index: number) => {
-    datum.push({
-      ...dataPoint,
-      _index: index // Save to sync legend color
-    });
-  }));
-
-  const computedData = datum.sort((a: any, b: any) => invert ? b._y - a._y : a._y - b._y).
-    map((dataPoint: any, index: number) => {
-      return {
-        ...dataPoint,
-        x: 1,
-        _x: 1,
-        // Instead of relying on colorScale, colors must be added to each measure in ascending order
-        _color: theme.group.colorScale[index % theme.group.colorScale.length]
-      };
-      // Sort descending so largest bar is appears behind others
-    }).sort((a: any, b: any) => invert ? a._y - b._y : b._y - a._y);
-
-  return computedData;
-};
-
 let currentId = 0;
 
 export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPrimaryDotMeasureProps> = ({
   ariaDesc,
   ariaTitle,
+  constrainToVisibleArea = false,
   data,
   domain,
   horizontal = true,
@@ -210,6 +176,7 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
   labels,
   measureComponent = <ChartScatter />,
   padding,
+  size = ChartBulletStyles.primaryDotMeasureSize,
   standalone = true,
   themeColor,
   themeVariant,
@@ -218,22 +185,7 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
 
   // destructure last
   theme = getBulletPrimaryDotMeasureTheme(themeColor, themeVariant),
-  labelComponent =
-    <ChartTooltip
-      orientation="top"
-      dx={(datum) => {
-        if (horizontal) {
-          return datum._y > 0 ? -10 : 10;
-        }
-        return ChartBulletStyles.primaryDotMeasureSize;
-      }}
-      dy={(datum) => {
-        if (!horizontal) {
-          return datum._y > 0 ? -10 : 10;
-        }
-        return ChartBulletStyles.primaryDotMeasureSize;
-      }}
-    />,
+  labelComponent = <ChartTooltip />,
   height = theme.group.height,
   width = theme.group.width,
   ...rest
@@ -246,6 +198,17 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
     y0
   });
 
+  // Label component
+  //
+  // Note: SVG height and width are provided by ChartBullet as a workaround to support constrainToVisibleArea
+  const tooltip = React.cloneElement(labelComponent, {
+    constrainToVisibleArea,
+    dx: 0,
+    dy: horizontal ? -(size) : 0,
+    orientation: 'top',
+    ...labelComponent.props
+  });
+
   const measure = computedData.map((dataPoint: any) => {
     const key = `pf-primary-dot-measure-${currentId++}`;
     return React.cloneElement(measureComponent, {
@@ -254,10 +217,10 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
       height,
       horizontal,
       key,
-      labelComponent,
+      labelComponent: tooltip,
       labels,
       padding,
-      size: ChartBulletStyles.primaryDotMeasureSize,
+      size,
       standalone: false,
       style: {
         data: {

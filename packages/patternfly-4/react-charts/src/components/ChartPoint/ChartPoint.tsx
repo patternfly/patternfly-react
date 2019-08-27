@@ -4,10 +4,6 @@ import { PathHelpers } from './path-helpers';
 
 export interface ChartPointProps {
   /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-primitives#point
-   */
-  ' '?: any;
-  /**
    * A flag signifying whether the component is active
    */
   active?: boolean;

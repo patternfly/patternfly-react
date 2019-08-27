@@ -4,6 +4,7 @@ exports[`ChartGroup 1`] = `
 <VictoryGroup
   containerComponent={
     <Unknown
+      className="pf-c-chart"
       theme={
         Object {
           "area": Object {
@@ -915,6 +916,7 @@ exports[`ChartGroup 2`] = `
 <VictoryGroup
   containerComponent={
     <Unknown
+      className="pf-c-chart"
       theme={
         Object {
           "area": Object {
@@ -1826,6 +1828,7 @@ exports[`renders container children 1`] = `
 <VictoryGroup
   containerComponent={
     <Unknown
+      className="pf-c-chart"
       theme={
         Object {
           "area": Object {

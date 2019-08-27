@@ -38,8 +38,6 @@ exports[`ChartBulletQualitativeRange 1`] = `
     width={450}
   />
   <Component
-    bulletHeight={140}
-    bulletWidth={450}
     height={140}
     horizontal={true}
     legendPosition="bottom"
@@ -490,6 +488,8 @@ exports[`ChartBulletQualitativeRange 1`] = `
     width={450}
   />
   <Component
+    barWidth={30}
+    constrainToVisibleArea={false}
     domain={
       Object {
         "x": Array [
@@ -506,10 +506,18 @@ exports[`ChartBulletQualitativeRange 1`] = `
     horizontal={true}
     invert={false}
     key="pf-qualitative-range-0"
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
     standalone={false}
     width={450}
   />
   <Component
+    barWidth={9}
+    constrainToVisibleArea={false}
     domain={
       Object {
         "x": Array [
@@ -525,10 +533,17 @@ exports[`ChartBulletQualitativeRange 1`] = `
     height={140}
     horizontal={true}
     invert={false}
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
     standalone={false}
     width={450}
   />
   <Component
+    constrainToVisibleArea={false}
     domain={
       Object {
         "x": Array [
@@ -544,10 +559,19 @@ exports[`ChartBulletQualitativeRange 1`] = `
     height={140}
     horizontal={true}
     invert={false}
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
+    size={6}
     standalone={false}
     width={450}
   />
   <Component
+    barWidth={30}
+    constrainToVisibleArea={false}
     domain={
       Object {
         "x": Array [
@@ -562,10 +586,18 @@ exports[`ChartBulletQualitativeRange 1`] = `
     }
     height={140}
     horizontal={true}
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
     standalone={false}
     width={450}
   />
   <Component
+    barWidth={30}
+    constrainToVisibleArea={false}
     domain={
       Object {
         "x": Array [
@@ -580,18 +612,22 @@ exports[`ChartBulletQualitativeRange 1`] = `
     }
     height={140}
     horizontal={true}
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
     standalone={false}
     width={450}
   />
   <Component
-    chartHeight={140}
-    chartWidth={350}
+    chartType="bullet"
     dx={0}
     dy={-25}
+    height={140}
     orientation="horizontal"
     position="bottom"
-    svgHeight={140}
-    svgWidth={450}
     theme={
       Object {
         "area": Object {
@@ -1035,6 +1071,7 @@ exports[`ChartBulletQualitativeRange 1`] = `
         },
       }
     }
+    width={450}
   >
     <Component
       data={Array []}
@@ -1526,8 +1563,6 @@ exports[`ChartBulletQualitativeRange 2`] = `
     width={450}
   />
   <Component
-    bulletHeight={140}
-    bulletWidth={450}
     height={140}
     horizontal={true}
     legendPosition="bottom"
@@ -1978,6 +2013,8 @@ exports[`ChartBulletQualitativeRange 2`] = `
     width={450}
   />
   <Component
+    barWidth={30}
+    constrainToVisibleArea={false}
     domain={
       Object {
         "x": Array [
@@ -1994,10 +2031,18 @@ exports[`ChartBulletQualitativeRange 2`] = `
     horizontal={true}
     invert={false}
     key="pf-qualitative-range-1"
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
     standalone={false}
     width={450}
   />
   <Component
+    barWidth={9}
+    constrainToVisibleArea={false}
     domain={
       Object {
         "x": Array [
@@ -2013,10 +2058,17 @@ exports[`ChartBulletQualitativeRange 2`] = `
     height={140}
     horizontal={true}
     invert={false}
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
     standalone={false}
     width={450}
   />
   <Component
+    constrainToVisibleArea={false}
     domain={
       Object {
         "x": Array [
@@ -2032,10 +2084,19 @@ exports[`ChartBulletQualitativeRange 2`] = `
     height={140}
     horizontal={true}
     invert={false}
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
+    size={6}
     standalone={false}
     width={450}
   />
   <Component
+    barWidth={30}
+    constrainToVisibleArea={false}
     domain={
       Object {
         "x": Array [
@@ -2050,10 +2111,18 @@ exports[`ChartBulletQualitativeRange 2`] = `
     }
     height={140}
     horizontal={true}
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
     standalone={false}
     width={450}
   />
   <Component
+    barWidth={30}
+    constrainToVisibleArea={false}
     domain={
       Object {
         "x": Array [
@@ -2068,18 +2137,22 @@ exports[`ChartBulletQualitativeRange 2`] = `
     }
     height={140}
     horizontal={true}
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
     standalone={false}
     width={450}
   />
   <Component
-    chartHeight={140}
-    chartWidth={350}
+    chartType="bullet"
     dx={0}
     dy={-25}
+    height={140}
     orientation="horizontal"
     position="bottom"
-    svgHeight={140}
-    svgWidth={450}
     theme={
       Object {
         "area": Object {
@@ -2523,6 +2596,7 @@ exports[`ChartBulletQualitativeRange 2`] = `
         },
       }
     }
+    width={450}
   >
     <Component
       data={Array []}
@@ -3020,8 +3094,6 @@ exports[`renders component data 1`] = `
     width={450}
   />
   <Component
-    bulletHeight={140}
-    bulletWidth={450}
     height={140}
     horizontal={true}
     legendPosition="bottom"
@@ -3472,6 +3544,8 @@ exports[`renders component data 1`] = `
     width={450}
   />
   <Component
+    barWidth={30}
+    constrainToVisibleArea={false}
     data={
       Array [
         Object {
@@ -3500,11 +3574,19 @@ exports[`renders component data 1`] = `
     horizontal={true}
     invert={false}
     key="pf-qualitative-range-2"
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
     labels={[Function]}
     standalone={false}
     width={450}
   />
   <Component
+    barWidth={9}
+    constrainToVisibleArea={false}
     data={
       Array [
         Object {
@@ -3528,11 +3610,18 @@ exports[`renders component data 1`] = `
     height={140}
     horizontal={true}
     invert={false}
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
     labels={[Function]}
     standalone={false}
     width={450}
   />
   <Component
+    constrainToVisibleArea={false}
     domain={
       Object {
         "x": Array [
@@ -3548,11 +3637,20 @@ exports[`renders component data 1`] = `
     height={140}
     horizontal={true}
     invert={false}
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
     labels={[Function]}
+    size={6}
     standalone={false}
     width={450}
   />
   <Component
+    barWidth={30}
+    constrainToVisibleArea={false}
     domain={
       Object {
         "x": Array [
@@ -3567,11 +3665,19 @@ exports[`renders component data 1`] = `
     }
     height={140}
     horizontal={true}
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
     labels={[Function]}
     standalone={false}
     width={450}
   />
   <Component
+    barWidth={30}
+    constrainToVisibleArea={false}
     data={
       Array [
         Object {
@@ -3594,19 +3700,23 @@ exports[`renders component data 1`] = `
     }
     height={140}
     horizontal={true}
+    labelComponent={
+      <Unknown
+        height={140}
+        width={450}
+      />
+    }
     labels={[Function]}
     standalone={false}
     width={450}
   />
   <Component
-    chartHeight={140}
-    chartWidth={350}
+    chartType="bullet"
     dx={0}
     dy={-25}
+    height={140}
     orientation="horizontal"
     position="bottom"
-    svgHeight={140}
-    svgWidth={450}
     theme={
       Object {
         "area": Object {
@@ -4050,6 +4160,7 @@ exports[`renders component data 1`] = `
         },
       }
     }
+    width={450}
   >
     <Component
       data={Array []}

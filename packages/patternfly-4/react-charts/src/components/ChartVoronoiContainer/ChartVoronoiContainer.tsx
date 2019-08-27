@@ -6,7 +6,7 @@ import {
 } from 'victory';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
-import { getTheme } from '../ChartUtils';
+import { getClassName, getTheme } from '../ChartUtils';
 
 export enum ChartVoronoiDimension {
   x = 'x',
@@ -17,10 +17,6 @@ export enum ChartVoronoiDimension {
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
 export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps {
-  /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-voronoi-container
-   */
-  ' '?: any;
   /**
    * When the activateData prop is set to true, the active prop will be set to true on all
    * data components within a voronoi area. When this prop is set to false, the onActivated
@@ -36,6 +32,22 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * ChartVoronoiContainer via the labels prop will still appear when this prop is set to false.
    */
   activateLabels?: boolean;
+  /**
+   * Specifies the tooltip capability of the container component. A value of true allows the chart to add a
+   * ChartTooltip component to the labelComponent property. This is a shortcut to display tooltips when the labels
+   * property is also provided.
+   */
+  allowTooltip?: boolean;
+  /**
+   * The className prop specifies a className that will be applied to the outer-most div rendered by the container
+   */
+  className?: string;
+  /**
+   * The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of
+   * the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the
+   * center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders.
+   */
+  constrainToVisibleArea?: boolean;
   /**
    * When the disable prop is set to true, ChartVoronoiContainer events will not fire.
    */
@@ -54,6 +66,11 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * on ChartVoronoiContainer. If the labels prop is omitted, no label component will be rendered.
    */
   labelComponent?: React.ReactElement<any>;
+  /**
+   * When the mouseFollowTooltip prop is set on VictoryVoronoiContainer, The position of the center of the tooltip
+   * follows the position of the mouse.
+   */
+  mouseFollowTooltips?: boolean,
   /**
    * The onActivated prop accepts a function to be called whenever new data points are activated.
    * The function is called with the parameters points (an array of active data objects) and props
@@ -115,18 +132,27 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
 }
 
 export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContainerProps> = ({
+  className,
+  allowTooltip = true,
+  constrainToVisibleArea = false,
   themeColor,
   themeVariant,
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
-  labelComponent = <ChartTooltip theme={theme} />,
+  labelComponent = allowTooltip ? <ChartTooltip /> : undefined,
   ...rest
 }: ChartVoronoiContainerProps) => {
-  // Note: theme is required by voronoiContainerMixin, but VictoryVoronoiContainer is missing a prop type
+  const chartClassName = getClassName({className});
+  const chartLabelComponent = React.cloneElement(labelComponent, {
+    constrainToVisibleArea,
+    theme,
+    ...labelComponent.props,
+  });
 
+  // Note: theme is required by voronoiContainerMixin, but @types/victory is missing a prop type
   // @ts-ignore
-  return <VictoryVoronoiContainer labelComponent={labelComponent} theme={theme} {...rest} />;
+  return <VictoryVoronoiContainer className={chartClassName} labelComponent={chartLabelComponent} theme={theme} {...rest} />;
 };
 ChartVoronoiContainer.defaultProps = (VictoryVoronoiContainer as any).defaultProps;
 

@@ -16,10 +16,6 @@ import { getTheme } from '../ChartUtils';
  */
 export interface ChartTooltipProps extends VictoryTooltipProps {
   /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-tooltip/
-   */
-  ' '?: any;
-  /**
    * The active prop specifies whether the tooltip component should be displayed.
    */
   active?: boolean;
@@ -31,6 +27,27 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * The angle prop specifies the angle to rotate the tooltip around its origin point.
    */
   angle?: string | number;
+  /**
+   * The center prop determines the position of the center of the tooltip flyout. This prop should be given as an object
+   * that describes the desired x and y svg coordinates of the center of the tooltip. This prop is useful for
+   * positioning the flyout of a tooltip independent from the pointer. When ChartTooltip is used with
+   * ChartVoronoiContainer, the center prop is what enables the mouseFollowTooltips option. When this prop is set,
+   * non-zero pointerLength values will no longer be respected.
+   */
+  center?: { x: number, y: number };
+  /**
+   * The centerOffset prop determines the position of the center of the tooltip flyout in relation to the flyout
+   * pointer. This prop should be given as an object of x and y, where each is either a numeric offset value or a
+   * function that returns a numeric value. When this prop is set, non-zero pointerLength values will no longer be
+   * respected.
+   */
+  centerOffset?: { x: number | Function, y: number | Function };
+  /**
+   * The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of
+   * the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the
+   * center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders.
+   */
+  constrainToVisibleArea?: boolean;
   /**
    * The cornerRadius prop determines corner radius of the flyout container. This prop may be given as a positive number
    * or a function of datum.
@@ -72,21 +89,27 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    */
   flyoutComponent?: React.ReactElement<any>;
   /**
+   * The flyoutHeight prop defines the height of the tooltip flyout. This prop may be given as a positive number or a function
+   * of datum. If this prop is not set, height will be determined based on an approximate text size calculated from the
+   * text and style props provided to ChartTooltip.
+   */
+  flyoutHeight?: NumberOrCallback;
+  /**
    * The style prop applies SVG style properties to the rendered flyout container. These props will be passed to the
    * flyoutComponent.
    */
   flyoutStyle?: VictoryStyleObject;
   /**
+   * The flyoutWidth prop defines the width of the tooltip flyout. This prop may be given as a positive number or a
+   * function of datum. If this prop is not set, flyoutWidth will be determined based on an approximate text size
+   * calculated from the text and style props provided to VictoryTooltip.
+   */
+  flyoutWidth?: NumberOrCallback,
+  /**
    * The groupComponent prop takes a component instance which will be used to create group elements for use within
    * container elements. This prop defaults to a <g> tag.}
    */
   groupComponent?: React.ReactElement<any>;
-  /**
-   * The height prop defines the height of the tooltip flyout. This prop may be given as a positive number or a function
-   * of datum. If this prop is not set, height will be determined based on an approximate text size calculated from the
-   * text and style props provided to ChartTooltip.
-   */
-  height?: NumberOrCallback;
   /**
    * The horizontal prop determines whether to plot the flyouts to the left / right of the (x, y) coordinate rather than top / bottom.
    * This is useful when an orientation prop is not provided, and data will determine the default orientation. i.e.
@@ -118,6 +141,12 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * given as a positive number or a function of datum.
    */
   pointerLength?: NumberOrCallback;
+  /**
+   * This prop determines which side of the tooltip flyout the pointer should originate on. When this prop is not set,
+   * it will be determined based on the overall orientation of the flyout in relation to its data point, and any center
+   * or centerOffset values.
+   */
+  pointerOrientation?: 'top' | 'bottom' | 'left' | 'right' | Function;
   /**
    * The pointerWidth prop determines the width of the base of the triangular pointer extending from
    * the flyout. This prop may be given as a positive number or a function of datum.
@@ -160,12 +189,6 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    */
   themeVariant?: string;
   /**
-   * The width prop defines the width of the tooltip flyout. This prop may be given as a positive number or a function
-   * of datum. If this prop is not set, width will be determined based on an approximate text size calculated from the
-   * text and style props provided to ChartTooltip.
-   */
-  width?: NumberOrCallback;
-  /**
    * The x prop defines the x coordinate to use as a basis for horizontal positioning.
    */
   x?: number;
@@ -176,11 +199,19 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
 }
 
 export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
+  constrainToVisibleArea = false,
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
+
+  // destructure last
+  theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartTooltipProps) => <VictoryTooltip theme={theme} {...rest} />;
+}: ChartTooltipProps) => {
+  // Note: constrainToVisibleArea is valid, but @types/victory is missing a prop type
+
+  // @ts-ignore
+  return <VictoryTooltip constrainToVisibleArea={constrainToVisibleArea} theme={theme} {...rest} />;
+}
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
 hoistNonReactStatics(ChartTooltip, VictoryTooltip);

@@ -38,10 +38,6 @@ export enum ChartLegendRowGutter {
  */
 export interface ChartLegendProps extends VictoryLegendProps {
   /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-legend/
-   */
-  ' '?: any;
-  /**
    * The borderComponent prop takes a component instance which will be responsible
    * for rendering a border around the legend. The new element created from the passed
    * borderComponent will be provided with the following properties calculated by

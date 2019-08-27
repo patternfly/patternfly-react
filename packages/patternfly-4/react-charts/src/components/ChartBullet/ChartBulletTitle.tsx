@@ -7,7 +7,7 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartLegendPosition } from '../ChartLegend';
 import { ChartBulletStyles, ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getBulletTheme, getLabelX, getLabelY, getPaddingForSide } from '../ChartUtils';
+import { getBulletTheme, getBulletLabelX, getBulletLabelY, getPaddingForSide } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -27,35 +27,6 @@ export interface ChartBulletTitleProps {
    * Note: Overridden by the title prop of containerComponent
    */
   ariaTitle?: string;
-  /**
-   * Specifies the height of the bullet chart. This value should be given as a number of pixels.
-   *
-   * Because Victory renders responsive containers, the width and height props do not determine the width and
-   * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
-   * pixels will depend on the size of the container the chart is rendered into.
-   *
-   * Note: When adding a legend, height (the overall SVG height) may need to be larger than bulletHeight (the bullet size)
-   * in order to accommodate the extra legend.
-   *
-   * By default, bulletHeight is the min. of either height or width. This covers most use cases in order to accommodate
-   * legends within the same SVG. However, bulletHeight (not height) may need to be set in order to adjust the bullet
-   * height.
-   */
-  bulletHeight?: number;
-  /**
-   * Specifies the width of the bullet chart. This value should be given as a number of pixels.
-   *
-   * Because Victory renders responsive containers, the width and height props do not determine the width and
-   * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
-   * pixels will depend on the size of the container the chart is rendered into.
-   *
-   * Note: When adding a legend, width (the overall SVG width) may need to be larger than bulletWidth (the bullet size)
-   * in order to accommodate the extra legend.
-   *
-   * By default, bulletWidth is the min. of either height or width. This covers most use cases in order to accommodate
-   * legends within the same SVG. However, bulletWidth (not width) may need to be set in order to adjust the bullet width.
-   */
-  bulletWidth?: number;
   /**
    * The capHeight prop defines a text metric for the font being used: the expected height of capital letters.
    * This is necessary because of SVG, which (a) positions the *bottom* of the text at `y`, and (b) has no notion of
@@ -171,10 +142,13 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
   theme = getBulletTheme(themeColor, themeVariant),
   height = horizontal ? theme.chart.height : theme.chart.width,
   width = horizontal ? theme.chart.width : theme.chart.height,
-  bulletHeight = horizontal ? theme.chart.height : height,
-  bulletWidth = horizontal ? width : theme.chart.height,
   ...rest
 }: ChartBulletTitleProps) => {
+  const chartSize = {
+    height: horizontal ? theme.chart.height : height,
+    width: horizontal ? width : theme.chart.height
+  };
+
   const defaultPadding = {
     bottom: getPaddingForSide('bottom',  padding, theme.chart.padding),
     left: getPaddingForSide('left', padding, theme.chart.padding),
@@ -191,6 +165,8 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
       labelPosition = titlePosition;
     }
 
+    // The x and y calculations below are used to adjust the position of the title, based on padding and scale.
+    // This ensures that when padding is adjusted, the title moves along with the chart's position.
     return React.cloneElement(titleComponent, {
       ...showBoth && { capHeight },
       style: [ChartBulletStyles.label.title, ChartBulletStyles.label.subTitle],
@@ -199,8 +175,8 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
       verticalAnchor: labelPosition === 'top-left' ? 'end' : 'middle',
       // Adjust for padding
       x: horizontal
-        ? getLabelX({
-          chartWidth: bulletWidth,
+        ? getBulletLabelX({
+          chartWidth: chartSize.width,
           dx: labelPosition === 'top-left'
             ? defaultPadding.left
             : defaultPadding.left - ChartCommonStyles.label.margin * 1.75,
@@ -210,8 +186,8 @@ export const ChartBulletTitle: React.FunctionComponent<ChartBulletTitleProps> = 
         })
         : defaultPadding.left * .5 + (defaultPadding.right * .5 - (defaultPadding.right - 50)) +
           ChartBulletStyles.qualitativeRangeWidth / 2,
-      y: getLabelY({
-        chartHeight: bulletHeight,
+      y: getBulletLabelY({
+        chartHeight: chartSize.height,
         // Adjust for padding
         dy: labelPosition === 'top-left'
           ? defaultPadding.top * .5 + (defaultPadding.bottom * .5 - (defaultPadding.bottom)) + 58 -

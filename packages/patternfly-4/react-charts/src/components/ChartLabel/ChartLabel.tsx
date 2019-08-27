@@ -27,10 +27,6 @@ type TextAnchorType = 'start' | 'middle' | 'end' | 'inherit';
  */
 export interface ChartLabelProps extends VictoryLabelProps {
   /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-label/
-   */
-  ' '?: any;
-  /**
    * The active prop specifies whether the label is active or not. The active prop is set by defaultEvents in components
    * like ChartTooltip and VictorySelectionContainer. The active prop is used when evaluating functional styles and
    * props.

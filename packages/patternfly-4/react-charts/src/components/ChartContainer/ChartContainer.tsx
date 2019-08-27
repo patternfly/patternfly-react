@@ -5,7 +5,7 @@ import {
   VictoryContainerProps
 } from 'victory';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
+import { getClassName, getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -14,9 +14,25 @@ import { getTheme } from '../ChartUtils';
  */
 export interface ChartContainerProps extends VictoryContainerProps {
   /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-container/
+   * The children prop specifies the child or children that will be rendered within the container. This prop should not
+   * be set manually. It will be set by whatever Victory component is rendering the container.
    */
-  ' '?: any;
+  children?: React.ReactNode | React.ReactNode[];
+  /**
+   * The className prop specifies a className that will be applied to the outer-most div rendered by ChartContainer
+   */
+  className?: string;
+  /**
+   * The containerId prop may be used to set a deterministic id for the container. When a containerId is not manually
+   * set, a unique id will be generated. It is usually necessary to set deterministic ids for automated testing.
+   */
+  containerId?: number | string;
+  /**
+   * The containerRef prop may be used to attach a ref to the outermost element rendered by the container.
+   *
+   * @example containerRef={(ref) => { this.chartRef = ref; }}
+   */
+  containerRef?: Function;
   /**
    * The desc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers. The more info about the chart provided in
@@ -32,7 +48,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * corresponding events as well as scale, style, width, height, and data when
    * applicable. Use the invert method to convert event coordinate information to
    * data. `scale.x.invert(evt.offsetX)`.
-   * @examples {{ onClick: (evt) => alert(`x: ${evt.clientX}, y: ${evt.clientY}`)}}
+   * @example {{ onClick: (evt) => alert(`x: ${evt.clientX}, y: ${evt.clientY}`)}}
    */
   events?: React.DOMAttributes<any>;
   /**
@@ -52,7 +68,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * and width props, as they are used to calculate the alignment of
    * components within the container. Styles from the child component will
    * also be passed, if any exist.
-   * @examples {border: 1px solid red}
+   * @example {border: 1px solid red}
    */
   style?: React.CSSProperties;
   /**
@@ -93,11 +109,20 @@ export interface ChartContainerProps extends VictoryContainerProps {
 
 // const ChartContainer = props => <VictoryContainer {...props} />;
 export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
+  className,
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
+
+  // destructure last
+  theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartContainerProps) => <VictoryContainer {...theme} {...rest} />;
+}: ChartContainerProps) => {
+  const chartClassName = getClassName({className});
+
+  // Note: theme is valid, but @types/victory is missing a prop type
+  // @ts-ignore
+  return <VictoryContainer className={chartClassName} theme={theme} {...rest} />;
+}
 
 // Note: VictoryContainer.role must be hoisted
 hoistNonReactStatics(ChartContainer, VictoryContainer);

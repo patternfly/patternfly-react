@@ -10,7 +10,7 @@ import {
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition}  from '../ChartTheme';
 import { getBulletComparativeErrorMeasureTheme } from '../ChartUtils';
-import { ChartBulletComparativeMeasure, getComparativeMeasureData } from './ChartBulletComparativeMeasure';
+import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -38,6 +38,12 @@ export interface ChartBulletComparativeErrorMeasureProps {
    * the chart, and the number of bars.
    */
   barWidth?: NumberOrCallback;
+  /**
+   * The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of
+   * the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the
+   * center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders.
+   */
+  constrainToVisibleArea?: boolean;
   /**
    * The data prop specifies the data to be plotted. Data should be in the form of an array
    * of data points, or an array of arrays of data points for multiple datasets.
@@ -149,37 +155,11 @@ export interface ChartBulletComparativeErrorMeasureProps {
   y?: DataGetterPropType;
 }
 
-interface ChartBulletComparativeErrorMeasureInterface {
-  data?: any[];
-  invert?: boolean;
-  theme?: ChartThemeDefinition;
-  themeColor?: string;
-  themeVariant?: string;
-  y?: DataGetterPropType;
-}
-
-export const getComparativeErrorMeasureData = ({
-  data,
-  themeColor,
-  themeVariant,
-
-  // destructure last
-  theme = getBulletComparativeErrorMeasureTheme(themeColor, themeVariant),
-  y
-}: ChartBulletComparativeErrorMeasureInterface) => {
-  return getComparativeMeasureData({
-    data,
-    theme,
-    themeColor,
-    themeVariant,
-    y
-  });
-};
-
 export const ChartBulletComparativeErrorMeasure: React.FunctionComponent<ChartBulletComparativeErrorMeasureProps> = ({
   ariaDesc,
   ariaTitle,
   barWidth,
+  constrainToVisibleArea = false,
   data,
   domain,
   horizontal = true,
@@ -203,6 +183,7 @@ export const ChartBulletComparativeErrorMeasure: React.FunctionComponent<ChartBu
       ariaDesc,
       ariaTitle,
       barWidth,
+      constrainToVisibleArea,
       data,
       domain,
       height,
