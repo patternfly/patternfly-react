@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.94.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.93.1...@patternfly/react-core@3.94.0) (2019-08-27)
+
+
+### Features
+
+* **select:** add support for toggle icon ([#2748](https://github.com/patternfly/patternfly-react/issues/2748)) ([f5c3a94](https://github.com/patternfly/patternfly-react/commit/f5c3a94))
+
+
+
+
+
 ## [3.93.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.93.0...@patternfly/react-core@3.93.1) (2019-08-27)
 
 **Note:** Version bump only for package @patternfly/react-core
