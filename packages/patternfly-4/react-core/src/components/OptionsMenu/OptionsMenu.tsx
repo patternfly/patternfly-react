@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
+import { DropdownContext } from '../Dropdown';
+import { DropdownWithContext } from '../Dropdown/Dropdown';
 
 export enum OptionsMenuPosition {
   right = 'right',
@@ -25,6 +27,10 @@ export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement>{
   isPlain?: boolean;
   /** Flag to indicate if menu is open */
   isOpen?: boolean;
+  /** Flag to indicate if toggle is textual toggle */
+  isText?: boolean;
+  /** Flag to indicate if menu is groupped */
+  isGrouped?: boolean;
   /** Provides an accessible name for the Options menu */
   ariaLabelMenu?: string;
   /** Indicates where menu will be aligned horizontally */
@@ -35,35 +41,34 @@ export interface OptionsMenuProps extends React.HTMLProps<HTMLDivElement>{
 
 export const OptionsMenu: React.FunctionComponent<OptionsMenuProps> = ({
   className = '',
-  isOpen = false,
-  isPlain = false,
-  ariaLabelMenu = '',
-  direction = OptionsMenuDirection.down,
-  position = OptionsMenuPosition.left,
-  id,
   menuItems,
   toggle,
+  isText = false,
+  isGrouped = false,
+  id,
+  ref,
   ...props
 }: OptionsMenuProps) => (
-  <div id={id}
-       className={
-         css(styles.optionsMenu,
-           direction === OptionsMenuDirection.up && getModifier(styles, 'top'),
-           position === OptionsMenuPosition.right && getModifier(styles, 'align-right'),
-           isOpen && getModifier(styles, 'expanded'),
-           className)}
-       {...props}>
-    {React.Children.map(toggle, oneToggle =>
-      React.cloneElement(oneToggle, {
-        parentId: id,
-        isOpen,
-        isPlain,
-      }))}
-    {isOpen &&
-    <ul className={css(styles.optionsMenuMenu,
-      position === OptionsMenuPosition.right && getModifier(styles, 'align-right'))}
-        {...ariaLabelMenu ? {'aria-label': ariaLabelMenu} : {'aria-labelledby': `${id}-toggle`}}>
-      {menuItems}
-    </ul>}
-  </div>
+    <DropdownContext.Provider value={{
+      id,
+      onSelect: () => undefined,
+      toggleIconClass: styles.optionsMenuToggleIcon,
+      toggleTextClass: styles.optionsMenuToggleText,
+      menuClass: styles.optionsMenuMenu,
+      itemClass: styles.optionsMenuMenuItem,
+      toggleClass: isText ? styles.optionsMenuToggleButton : styles.optionsMenuToggle,
+      baseClass: styles.optionsMenu,
+      disabledClass: styles.modifiers.disabled,
+      menuComponent: 'ul',
+      baseComponent: 'div'
+    }}>
+      <DropdownWithContext
+        {...props}
+        id={id}
+        dropdownItems={menuItems}
+        className={className}
+        isGrouped={isGrouped}
+        toggle={toggle}
+      />
+    </DropdownContext.Provider>
 );

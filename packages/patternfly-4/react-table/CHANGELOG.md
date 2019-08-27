@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.19.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.19.3...@patternfly/react-table@2.19.4) (2019-08-26)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.19.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.19.2...@patternfly/react-table@2.19.3) (2019-08-26)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.19.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.19.1...@patternfly/react-table@2.19.2) (2019-08-26)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.19.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.19.0...@patternfly/react-table@2.19.1) (2019-08-26)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+# [2.19.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.18.13...@patternfly/react-table@2.19.0) (2019-08-26)
+
+
+### Features
+
+* **Button:** Added OUIA compatibility to Button component ([#2710](https://github.com/patternfly/patternfly-react/issues/2710)) ([d96116c](https://github.com/patternfly/patternfly-react/commit/d96116c)), closes [#2425](https://github.com/patternfly/patternfly-react/issues/2425)
+
+
+
+
+
 ## [2.18.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.18.12...@patternfly/react-table@2.18.13) (2019-08-23)
 
 **Note:** Version bump only for package @patternfly/react-table

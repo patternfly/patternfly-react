@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.93.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.92.3...@patternfly/react-core@3.93.0) (2019-08-26)
+
+
+### Features
+
+* **PF4 Option:** Rewrite options menu to use dropdown component ([#2299](https://github.com/patternfly/patternfly-react/issues/2299)) ([e18b407](https://github.com/patternfly/patternfly-react/commit/e18b407))
+
+
+
+
+
+## [3.92.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.92.2...@patternfly/react-core@3.92.3) (2019-08-26)
+
+
+### Bug Fixes
+
+* **button:** add reset to ButtonType enum ([#2781](https://github.com/patternfly/patternfly-react/issues/2781)) ([0d1716d](https://github.com/patternfly/patternfly-react/commit/0d1716d))
+
+
+
+
+
+## [3.92.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.92.1...@patternfly/react-core@3.92.2) (2019-08-26)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.92.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.92.0...@patternfly/react-core@3.92.1) (2019-08-26)
+
+
+### Bug Fixes
+
+* **tooltip:** allow manul trigger, access to tippy.js props ([#2769](https://github.com/patternfly/patternfly-react/issues/2769)) ([de6b211](https://github.com/patternfly/patternfly-react/commit/de6b211))
+
+
+
+
+
+# [3.92.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.91.0...@patternfly/react-core@3.92.0) (2019-08-26)
+
+
+### Features
+
+* **Button:** Added OUIA compatibility to Button component ([#2710](https://github.com/patternfly/patternfly-react/issues/2710)) ([d96116c](https://github.com/patternfly/patternfly-react/commit/d96116c)), closes [#2425](https://github.com/patternfly/patternfly-react/issues/2425)
+
+
+
+
+
 # [3.91.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.90.2...@patternfly/react-core@3.91.0) (2019-08-23)
 
 

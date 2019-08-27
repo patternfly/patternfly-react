@@ -34,7 +34,7 @@ export interface ToggleProps {
   /** Style the toggle as a child of a split button */
   isSplitButton?: boolean;
   /** Flag for aria popup */
-  ariaHasPopup?: boolean;
+  ariaHasPopup?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'listbox' | 'tree',
 } 
 
 export class Toggle extends React.Component<ToggleProps> {

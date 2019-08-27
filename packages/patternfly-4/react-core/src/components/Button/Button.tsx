@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Button/button';
 import { css, getModifier } from '@patternfly/react-styles';
+import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 export enum ButtonVariant {
   primary = 'primary',
@@ -13,7 +14,8 @@ export enum ButtonVariant {
 
 export enum ButtonType {
   button = 'button',
-  submit = 'submit'
+  submit = 'submit',
+  reset = 'reset'
 };
 
 export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
@@ -45,7 +47,7 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   icon?: React.ReactNode | null;
 }
 
-export const Button: React.FunctionComponent<ButtonProps> = ({
+const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
   children = null, 
   className = '', 
   component = 'button', 
@@ -59,8 +61,10 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   variant = ButtonVariant.primary,
   'aria-label': ariaLabel = null, 
   icon = null,
+  ouiaContext = null,
+  ouiaId = null,
   ...props
-}: ButtonProps) => {
+}: ButtonProps & InjectedOuiaProps) => {
   const Component = component as any;
   const isButtonElement = Component === 'button';
   return (
@@ -82,9 +86,16 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
     disabled={isButtonElement ? isDisabled : null}
     tabIndex={isDisabled && !isButtonElement ? -1 : null}
     type={isButtonElement ? type : null}
+    {...ouiaContext.isOuia && {
+      'data-ouia-component-type': 'Button',
+      'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+    }}
   >
     {(icon && variant === ButtonVariant.link) && <span className="pf-c-button__icon">{icon}</span>}
     {children}
   </Component>
   );
 }
+
+const  ButtonWithOuiaContext = withOuiaContext(Button);
+export { ButtonWithOuiaContext as Button };

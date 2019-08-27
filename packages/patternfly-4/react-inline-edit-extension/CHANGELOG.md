@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.11.3...@patternfly/react-inline-edit-extension@2.11.4) (2019-08-26)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.11.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.11.2...@patternfly/react-inline-edit-extension@2.11.3) (2019-08-26)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.11.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.11.1...@patternfly/react-inline-edit-extension@2.11.2) (2019-08-26)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+## [2.11.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.11.0...@patternfly/react-inline-edit-extension@2.11.1) (2019-08-26)
+
+**Note:** Version bump only for package @patternfly/react-inline-edit-extension
+
+
+
+
+
+# [2.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.10.19...@patternfly/react-inline-edit-extension@2.11.0) (2019-08-26)
+
+
+### Features
+
+* **Button:** Added OUIA compatibility to Button component ([#2710](https://github.com/patternfly/patternfly-react/issues/2710)) ([d96116c](https://github.com/patternfly/patternfly-react/commit/d96116c)), closes [#2425](https://github.com/patternfly/patternfly-react/issues/2425)
+
+
+
+
+
 ## [2.10.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.10.18...@patternfly/react-inline-edit-extension@2.10.19) (2019-08-23)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension

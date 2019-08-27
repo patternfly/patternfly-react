@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-table",
-  "version": "2.18.13",
+  "version": "2.19.4",
   "description": "This library provides a set of React table components for use with the PatternFly 4",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -28,7 +28,7 @@
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-table#readme",
   "dependencies": {
     "@patternfly/patternfly": "2.27.1",
-    "@patternfly/react-core": "^3.91.0",
+    "@patternfly/react-core": "^3.93.0",
     "@patternfly/react-icons": "^3.12.0",
     "@patternfly/react-styles": "^3.5.15",
     "@patternfly/react-tokens": "^2.6.18",
@@ -42,16 +42,14 @@
     "react-dom": "^15.6.2 || ^16.4.0"
   },
   "scripts": {
-    "build": "yarn typecheck && yarn build:babel && yarn build:types && node ./scripts/copyTS.js && node ./build/copyStyles.js",
+    "build": "yarn build:babel && yarn build:types && node ./scripts/copyTS.js && node ./build/copyStyles.js",
     "build:babel": "concurrently 'yarn build:babel:esm && yarn build:babel:umd' 'yarn build:babel:cjs'",
     "build:babel:cjs": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/js --presets=@babel/env",
     "build:babel:esm": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/esm",
     "build:babel:umd": "babel --source-maps --extensions '.js' dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "build:types": "tsc -p tsconfig.gen-dts.json",
     "clean": "rimraf dist",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps",
-    "lint:ts": "tslint -p tsconfig.typecheck.json",
-    "typecheck": "tsc -p tsconfig.typecheck.json && yarn lint:ts"
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

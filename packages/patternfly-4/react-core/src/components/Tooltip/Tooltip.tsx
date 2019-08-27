@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
-import { Instance as TippyInstance } from 'tippy.js';
+import { Instance as TippyInstance, Props as TippyProps } from 'tippy.js';
 import styles from '@patternfly/react-styles/css/components/Tooltip/tooltip';
 import '@patternfly/react-styles/css/components/Tooltip/tippy.css';
 import '@patternfly/react-styles/css/components/Tooltip/tippy-overrides.css';
@@ -39,8 +39,8 @@ export interface TooltipProps {
   entryDelay?: number;
   /** Delay in ms before the tooltip disappears */
   exitDelay?: number;
-  /** 
-   * The desired position to flip the tooltip to if the initial position is not possible. 
+  /**
+   * The desired position to flip the tooltip to if the initial position is not possible.
    * By setting this prop to 'flip' it attempts to flip the tooltip to the opposite side if there is no space.
    * You can also pass an array of positions that determines the flip order. It should contain the initial position
    * followed by alternative positions if that position is unavailable.
@@ -53,16 +53,20 @@ export interface TooltipProps {
   isAppLauncher?: boolean;
   /** Maximum width of the tooltip (default 12.5rem) */
   maxWidth?: string;
-  /** 
-   * Tooltip position. Note: With 'enableFlip' set to true, 
+  /**
+   * Tooltip position. Note: With 'enableFlip' set to true,
    * it will change the position if there is not enough space for the starting position.
    * The behavior of where it flips to can be controlled through the flipBehavior prop.
    */
   position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
-  /** Tooltip trigger: click, mouseenter, focus */
+  /** Tooltip trigger: click, mouseenter, focus, manual  */
   trigger?: string;
+  /** value for visibility when trigger is 'manual' */
+  isVisible?: boolean;
   /** z-index of the tooltip */
   zIndex?: number;
+  /** additional Props to pass through to tippy.js */
+  tippyProps?: TippyProps;
 };
 
 export class Tooltip extends React.Component<TooltipProps> {
@@ -70,6 +74,7 @@ export class Tooltip extends React.Component<TooltipProps> {
   static defaultProps = {
     position: 'top',
     trigger: 'mouseenter focus',
+    isVisible: false,
     enableFlip: true,
     className: '',
     entryDelay: 500,
@@ -82,7 +87,8 @@ export class Tooltip extends React.Component<TooltipProps> {
     aria: 'describedby',
     boundary: 'window',
     // For every initial starting position, there are 3 escape positions
-    flipBehavior: ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom']
+    flipBehavior: ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
+    tippyProps: {}
   };
 
   storeTippyInstance = (tip:TippyInstance) => {
@@ -114,6 +120,7 @@ export class Tooltip extends React.Component<TooltipProps> {
     const {
       position,
       trigger,
+      isVisible,
       enableFlip,
       children,
       className,
@@ -128,6 +135,7 @@ export class Tooltip extends React.Component<TooltipProps> {
       aria,
       boundary,
       flipBehavior,
+      tippyProps,
       ...rest
     } = this.props;
     const content = (
@@ -141,6 +149,7 @@ export class Tooltip extends React.Component<TooltipProps> {
     );
     return (
       <PopoverBase
+        {...tippyProps}
         arrow
         aria={aria}
         onCreate={this.storeTippyInstance}
@@ -159,6 +168,7 @@ export class Tooltip extends React.Component<TooltipProps> {
         flip={enableFlip}
         flipBehavior={flipBehavior}
         boundary={boundary}
+        isVisible={isVisible}
         popperOptions={{
           modifiers: {
             preventOverflow: {

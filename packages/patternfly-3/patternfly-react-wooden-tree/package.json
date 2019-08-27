@@ -1,6 +1,6 @@
 {
   "name": "patternfly-react-wooden-tree",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Reexport react-wooden-tree with Patternfly design.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -36,7 +36,6 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^9.0.0",
     "babel-jest": "^23.6.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-export-extensions": "^6.22.0",

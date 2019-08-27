@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PopoverBase from '../../helpers/PopoverBase/PopoverBase';
-import { Instance as TippyInstance } from 'tippy.js';
+import { Instance as TippyInstance, Props as TippyProps } from 'tippy.js';
 import { KEY_CODES } from '../../helpers/constants';
 import styles from '@patternfly/react-styles/css/components/Popover/popover';
 import '@patternfly/react-styles/css/components/Tooltip/tippy.css';
@@ -46,8 +46,8 @@ export interface PopoverProps {
   distance?: number;
   /** If true, tries to keep the popover in view by flipping it if necessary */
   enableFlip?: boolean;
-  /** 
-   * The desired position to flip the popover to if the initial position is not possible. 
+  /**
+   * The desired position to flip the popover to if the initial position is not possible.
    * By setting this prop to 'flip' it attempts to flip the popover to the opposite side if there is no space.
    * You can also pass an array of positions that determines the flip order. It should contain the initial position
    * followed by alternative positions if that position is unavailable.
@@ -81,8 +81,8 @@ export interface PopoverProps {
   onShow?: (tip:TippyInstance) => void;
   /** Lifecycle function invoked when the popover has fully transitioned in. */
   onShown?: (tip:TippyInstance) => void;
-  /** 
-   * Popover position. Note: With 'enableFlip' set to true, 
+  /**
+   * Popover position. Note: With 'enableFlip' set to true,
    * it will change the position if there is not enough space for the starting position.
    * The behavior of where it flips to can be controlled through the flipBehavior prop.
    */
@@ -94,7 +94,8 @@ export interface PopoverProps {
   shouldClose?: (tip:TippyInstance) => void;
   /** z-index of the popover */
   zIndex?: number;
-  
+  /** additional Props to pass through to tippy.js */
+  tippyProps?: TippyProps;
 }
 
 export interface PopoverState {
@@ -125,7 +126,8 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     distance: 25,
     boundary: 'window',
     // For every initial starting position, there are 3 escape positions
-    flipBehavior: ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom']
+    flipBehavior: ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
+    tippyProps: {}
   };
 
   constructor(props: PopoverProps) {
@@ -226,6 +228,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       distance,
       boundary,
       flipBehavior,
+      tippyProps,
       ...rest
     } = this.props;
 
@@ -274,6 +277,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     };
     return (
       <PopoverBase
+        {...tippyProps}
         arrow
         onCreate={this.storeTippyInstance}
         maxWidth={maxWidth}
