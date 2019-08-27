@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { getGutterModifier } from '../../styles/gutters';
 
 export interface StackProps extends React.HTMLProps<HTMLDivElement> {
-  /** Adds space between children. Options are sm, md or lg */
+  /** Adds space between children. */
   gutter?: 'sm' | 'md' | 'lg';
   /** content rendered inside the Stack layout */
   children?: React.ReactNode; 
