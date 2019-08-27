@@ -91,7 +91,7 @@
     "commit": "git-cz",
     "generate": "yarn plop",
     "lint:style": "stylelint \"**/sass/**/*.scss\" \"!**/dist/**/*.scss\"",
-    "lint:ts": "tslint --project ./tslint.config.json --config tslint.json",
+    "lint:ts": "node --max-old-space-size=4096 node_modules/.bin/tslint --project ./tslint.config.json --config tslint.json",
     "lint:versions": "node ./packages/patternfly-4/verifyCoreVersions.js",
     "prettier": "prettier --write \"storybook/**/*.js\" \"packages/**/*.js\" \"scripts/**/*.js\"",
     "start": "yarn start:pf3",
