@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.20.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.12...patternfly-react-extensions@2.20.0) (2019-08-27)
+
+
+### Features
+
+* **catalog-tile:** custom icon jsx for react-extensions CatalogTile ([#2771](https://github.com/patternfly/patternfly-react/issues/2771)) ([694cd04](https://github.com/patternfly/patternfly-react/commit/694cd04))
+
+
+
+
+
 ## [2.19.12](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.11...patternfly-react-extensions@2.19.12) (2019-08-26)
 
 **Note:** Version bump only for package patternfly-react-extensions
