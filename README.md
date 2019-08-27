@@ -68,11 +68,15 @@ To test PF4 component changes, run our [Gatsby](https://www.gatsbyjs.org/) dev s
 yarn start:pf4
 ```
 
+Then navigate to http://localhost:8000 .
+
 or to test PF3 changes, run our [Storybook](https://storybook.js.org/) server:
 
 ```sh
 yarn start:pf3
 ```
+
+Then http://localhost:6006 should automatically open.
 
 ### Code of Conduct
 
