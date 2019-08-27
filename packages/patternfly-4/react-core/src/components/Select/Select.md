@@ -11,6 +11,7 @@ import { Select, SelectOption, SelectVariant, SelectGroup, SelectDirection, Chec
 
 ```js
 import React from 'react';
+import { CubeIcon } from '@patternfly/react-icons';
 import { Select, SelectOption, SelectVariant, Checkbox } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
@@ -27,6 +28,7 @@ class SingleSelectInput extends React.Component {
     ];
 
     this.state = {
+      isToggleIcon: false,
       isExpanded: false,
       selected: null,
       isDisabled: false,
@@ -63,6 +65,12 @@ class SingleSelectInput extends React.Component {
       })
     }
 
+    this.setIcon = (checked) => {
+      this.setState({
+        isToggleIcon: checked
+      })
+    }
+
     this.toggleDirection = () => {
       if(this.state.direction === SelectDirection.up) {
         this.setState({
@@ -77,7 +85,7 @@ class SingleSelectInput extends React.Component {
   }
 
   render() {
-    const { isExpanded, selected, isDisabled, direction } = this.state;
+    const { isExpanded, selected, isDisabled, direction, isToggleIcon } = this.state;
     const titleId = 'title-id';
     return (
       <div>
@@ -85,6 +93,7 @@ class SingleSelectInput extends React.Component {
           Title
         </span>
         <Select
+          toggleIcon={isToggleIcon && <CubeIcon />}
           variant={SelectVariant.single}
           aria-label="Select Input"
           onToggle={this.onToggle}
@@ -119,6 +128,14 @@ class SingleSelectInput extends React.Component {
           aria-label="direction checkbox"
           id="toggle-direction"
           name="toggle-direction"
+        />
+        <Checkbox
+          label="Show icon"
+          isChecked={isToggleIcon}
+          onChange={this.setIcon}
+          aria-label="show icon checkbox"
+          id="toggle-icon"
+          name="toggle-icon"
         />
       </div>
     );
