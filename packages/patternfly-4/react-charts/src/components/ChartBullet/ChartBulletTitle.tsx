@@ -113,7 +113,7 @@ export interface ChartBulletTitleProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *
