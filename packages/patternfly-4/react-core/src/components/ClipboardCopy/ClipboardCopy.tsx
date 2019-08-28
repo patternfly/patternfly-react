@@ -65,7 +65,7 @@ export interface ClipboardCopyProps extends Omit<React.HTMLProps<HTMLDivElement>
 }
 
 export class ClipboardCopy extends React.Component<ClipboardCopyProps, ClipboardCopyState> {
-  timer = null as NodeJS.Timer;
+  timer = null as number;
   constructor(props: ClipboardCopyProps) {
     super(props);
     this.state = {
@@ -159,12 +159,12 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                   aria-label={hoverTip}
                   onClick={(event: any) => {
                     if (this.timer) {
-                      clearTimeout(this.timer);
+                      window.clearTimeout(this.timer);
                       this.setState({ copied: false });
                     }
                     onCopy(event, this.state.text);
                     this.setState({ copied: true }, () => {
-                      this.timer = setTimeout(() => {
+                      this.timer = window.setTimeout(() => {
                         this.setState({ copied: false });
                         this.timer = null;
                       }, switchDelay);
