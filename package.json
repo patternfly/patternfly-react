@@ -75,7 +75,6 @@
     "surge": "^0.20.1",
     "ts-jest": "23.10.5",
     "tslint": "^5.12.0",
-    "tslint-config-prettier": "^1.17.0",
     "tslint-react": "^3.6.0"
   },
   "scripts": {
@@ -93,7 +92,6 @@
     "lint:style": "stylelint \"**/sass/**/*.scss\" \"!**/dist/**/*.scss\"",
     "lint:ts": "node --max-old-space-size=4096 node_modules/.bin/tslint --project ./tslint.config.json --config tslint.json",
     "lint:versions": "node ./packages/patternfly-4/verifyCoreVersions.js",
-    "prettier": "prettier --write \"storybook/**/*.js\" \"packages/**/*.js\" \"scripts/**/*.js\"",
     "start": "yarn start:pf3",
     "start:cypress": "lerna run cypress:open",
     "start:demo-app": "lerna run start:demo-app --stream",

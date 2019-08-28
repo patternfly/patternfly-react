@@ -2,12 +2,12 @@
   "defaultSeverity": "error",
   "extends": [
     "tslint:recommended",
-    "tslint-react",
-    "tslint-config-prettier"
+    "tslint-react"
   ],
   "linterOptions": {
     "exclude": [
-      "node_modules",
+      "node_modules/**",
+      "**/node_modules/**",
       "**/dist/*",
       "**/dist/**",
       "**/coverage/**",
@@ -15,7 +15,9 @@
       "**/react-styles/css/**",
       "**/react-docs/public/**",
       "**/react-docs/public/*",
-      "**/demo-app-ts/build/**"
+      "**/demo-app-ts/build/**",
+      "**/react-icons/src/icons/**",
+      "**/react-icons/src/index.js"
     ]
   },
   "rules": {
@@ -43,10 +45,14 @@
     "quotemark": [
       true,
       "single",
-      "jsx-double"
+      "jsx-double",
+      "avoid-template"
     ],
     "variable-name": false,
-    "ordered-imports": false
+    "ordered-imports": false,
+    "trailing-comma": false,
+    "indent": [true, "spaces", 2],
+    "linebreak-style": [true, "LF"]
   },
   "jsRules": true
 }
