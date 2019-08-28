@@ -18,6 +18,7 @@ exports[`no label switch is checked 1`] = `
     <Switch
       aria-label=""
       className=""
+      defaultChecked={null}
       id="no-label-switch-is-checked"
       isChecked={true}
       isDisabled={false}
@@ -100,6 +101,7 @@ exports[`no label switch is not checked 1`] = `
     <Switch
       aria-label=""
       className=""
+      defaultChecked={null}
       id="no-label-switch-is-not-checked"
       isChecked={false}
       isDisabled={false}
@@ -186,6 +188,7 @@ exports[`switch is checked 1`] = `
     <Switch
       aria-label=""
       className=""
+      defaultChecked={null}
       id="switch-is-checked"
       isChecked={true}
       isDisabled={false}
@@ -256,6 +259,7 @@ exports[`switch is checked and disabled 1`] = `
     <Switch
       aria-label=""
       className=""
+      defaultChecked={null}
       id="switch-is-checked-and-disabled"
       isChecked={true}
       isDisabled={true}
@@ -342,6 +346,7 @@ exports[`switch is not checked 1`] = `
     <Switch
       aria-label=""
       className=""
+      defaultChecked={null}
       id="switch-is-not-checked"
       isChecked={false}
       isDisabled={false}
@@ -412,6 +417,7 @@ exports[`switch is not checked and disabled 1`] = `
     <Switch
       aria-label=""
       className=""
+      defaultChecked={null}
       id="switch-is-not-checked-and-disabled"
       isChecked={false}
       isDisabled={true}

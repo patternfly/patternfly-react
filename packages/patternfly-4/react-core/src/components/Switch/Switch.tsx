@@ -23,6 +23,8 @@ export interface SwitchProps extends Omit<React.HTMLProps<HTMLInputElement>, 'ty
   onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
   /** Adds accessible text to the Switch, and should describe the isChecked="true" state. When label is defined, aria-label should be set to the text string that is visible when isChecked is true. */
   'aria-label'?: string;
+  /** Flag to show if the Switch is uncontrolled checked. */
+  defaultChecked?: boolean,
 }
 
 class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
@@ -37,6 +39,7 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
     "isDisabled": false,
     'aria-label': '',
     "onChange": () => undefined as any
+    "defaultChecked": null as boolean,
   };
 
   constructor(props: SwitchProps & InjectedOuiaProps) {
@@ -49,7 +52,7 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
   }
 
   render() {
-    const { className, label, labelOff, isChecked, isDisabled, onChange, ouiaContext, ouiaId, ...props } = this.props;
+    const { className, label, labelOff, isChecked, isDisabled, onChange, ouiaContext, ouiaId, defaultChecked, ...props } = this.props;
     const isAriaLabelledBy = props['aria-label'] === '';
     return (
       <label
@@ -66,7 +69,8 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
           className={css(styles.switchInput)}
           type="checkbox"
           onChange={(event) => onChange(event.currentTarget.checked, event)}
-          checked={isChecked}
+          checked={defaultChecked === null ? isChecked : undefined}
+          defaultChecked={defaultChecked !== null ? defaultChecked : undefined}
           disabled={isDisabled}
           aria-labelledby={isAriaLabelledBy ? `${this.id}-on` : null}
         />

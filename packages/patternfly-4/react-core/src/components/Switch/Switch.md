@@ -95,13 +95,13 @@ import { Switch } from '@patternfly/react-core';
 
 UncontrolledSwitch = () => (
   <React.Fragment>
-    <Switch id="uncontrolled-switch-on" aria-label="Message when on" label="Message when on" labelOff="Message when off" isChecked />
+    <Switch id="uncontrolled-switch-on" aria-label="Message when on" label="Message when on" labelOff="Message when off" defaultChecked />
     <br />
-    <Switch id="uncontrolled-switch-off" aria-label="Message when on" label="Message when on" labelOff="Message when off" isChecked={false} />
+    <Switch id="uncontrolled-switch-off" aria-label="Message when on" label="Message when on" labelOff="Message when off" defaultChecked={false} />
     <br />
-    <Switch id="uncontrolled-no-label-switch-on" aria-label="Message when on" isChecked />
+    <Switch id="uncontrolled-no-label-switch-on" aria-label="Message when on" defaultChecked />
     <br />
-    <Switch id="uncontrolled-no-label-switch-off" aria-label="Message when on" isChecked={false} />
+    <Switch id="uncontrolled-no-label-switch-off" aria-label="Message when on" defaultChecked={false} />
   </React.Fragment>
 );
 ```
