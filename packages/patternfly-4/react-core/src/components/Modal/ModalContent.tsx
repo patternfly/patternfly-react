@@ -15,6 +15,7 @@ import { ModalBoxHeader } from './ModalBoxHeader';
 import { ModalBoxCloseButton } from './ModalBoxCloseButton';
 import { ModalBox } from './ModalBox';
 import { ModalBoxFooter } from './ModalBoxFooter';
+import { Bullseye } from '../../layouts/Bullseye';
 
 export interface ModalContentProps {
   /** Content rendered inside the Modal. */
@@ -79,7 +80,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     <ModalBoxFooter>{footer}</ModalBoxFooter> :
     actions.length > 0 && <ModalBoxFooter>{actions}</ModalBoxFooter>;
   const boxStyle = width === -1 ? {} : { width };
-  let modalBox = (
+  const modalBox = (
     <ModalBox
           style={boxStyle}
           className={className}
@@ -97,23 +98,18 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     </ModalBox>
   );
   // Only add FocusTrap if close button exists to prevent errors
-  if (showClose) {
-    modalBox = (
-      <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
-        {modalBox}
-      </FocusTrap>
-    );
-  }
-  else {
-    modalBox = (
-      <div className={css(styles.bullseye)}>
-        {modalBox}
-      </div>
-    );
-  }
   return (
     <Backdrop>
-      {modalBox}
+      {showClose ? (
+        <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
+          {modalBox}
+        </FocusTrap>
+      ) 
+      : (
+        <Bullseye>
+          {modalBox}
+        </Bullseye>
+      )}
     </Backdrop>
   );
 };
