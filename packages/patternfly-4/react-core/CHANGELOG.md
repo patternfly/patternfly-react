@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.94.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.94.0...@patternfly/react-core@3.94.1) (2019-08-28)
+
+
+### Bug Fixes
+
+* **clipboardcopy:** change type to window.settimeout ([#2740](https://github.com/patternfly/patternfly-react/issues/2740)) ([a0ed960](https://github.com/patternfly/patternfly-react/commit/a0ed960))
+
+
+
+
+
 # [3.94.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.93.1...@patternfly/react-core@3.94.0) (2019-08-27)
 
 
