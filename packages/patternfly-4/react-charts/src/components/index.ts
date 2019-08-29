@@ -16,6 +16,7 @@ export * from './ChartPoint';
 export * from './ChartScatter';
 export * from './ChartStack';
 export * from './ChartTheme';
+export * from './ChartThreshold';
 export * from './ChartTooltip';
 export * from './ChartUtils';
 export * from './ChartVoronoiContainer';

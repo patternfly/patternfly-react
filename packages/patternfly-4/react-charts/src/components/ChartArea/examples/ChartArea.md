@@ -2,10 +2,19 @@
 title: 'Area'
 section: 'charts'
 typescript: true
-propComponents: ['Chart', 'ChartAreaProps', 'ChartAxis', 'ChartGroup', 'ChartLegend', 'ChartVoronoiContainer']
+propComponents:
+  [
+    'Chart',
+    'ChartAreaProps',
+    'ChartAxis',
+    'ChartGroup',
+    'ChartLegend',
+    'ChartThreshold',
+    'ChartVoronoiContainer',
+  ]
 ---
 
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLegend, ChartThreshold, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer } from '@patternfly/react-charts';
 import '@patternfly/patternfly/patternfly-charts.css';
 import './chart-area.scss';
 
@@ -242,6 +251,139 @@ class MultiColorChart extends React.Component {
 }
 ```
 
+## Multi-color chart with threshold indicators and responsive container
+
+```js
+import React from 'react';
+import {
+  Chart,
+  ChartArea,
+  ChartAxis,
+  ChartLegend,
+  ChartGroup,
+  ChartThreshold,
+  ChartThemeColor,
+  ChartThemeVariant
+} from '@patternfly/react-charts';
+
+class MultiColorChart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.containerRef = React.createRef();
+    this.state = {
+      width: 0
+    };
+    this.handleResize = () => {
+      if (this.containerRef.current && this.containerRef.current.clientWidth) {
+        this.setState({ width: this.containerRef.current.clientWidth });
+      }
+    };
+  }
+
+  componentDidMount() {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  render() {
+    const { width } = this.state;
+
+    return (
+      <div ref={this.containerRef}>
+        <div className="area-chart-threshold-bottom-responsive">
+          <Chart
+            ariaDesc="Average number of pets"
+            ariaTitle="Area chart example"
+            containerComponent={
+              <ChartVoronoiContainer
+                labels={({ datum }) => `${datum.name}: ${datum.y}`}
+                constrainToVisibleArea
+              />
+            }
+            legendPosition="bottom-left"
+            legendComponent={
+              <ChartLegend
+                data={[
+                  { name: 'Cats' },
+                  { name: 'Birds' },
+                  {
+                    name: 'Cats Threshold',
+                    symbol: { fill: ChartThemeColor.blue, type: 'threshold' }
+                  },
+                  {
+                    name: 'Birds Threshold',
+                    symbol: { fill: ChartThemeColor.orange, type: 'threshold' }
+                  }
+                ]}
+                itemsPerRow={2}
+              />
+            }
+            height={250}
+            padding={{
+              bottom: 100, // Adjusted to accomodate legend
+              left: 50,
+              right: 50,
+              top: 50
+            }}
+            maxDomain={{ y: 9 }}
+            themeColor={ChartThemeColor.multiUnordered}
+            width={width}
+          >
+            <ChartAxis />
+            <ChartAxis dependentAxis showGrid />
+            <ChartGroup>
+              <ChartArea
+                data={[
+                  { name: 'Cats', x: 1, y: 3 },
+                  { name: 'Cats', x: 2, y: 4 },
+                  { name: 'Cats', x: 3, y: 8 },
+                  { name: 'Cats', x: 4, y: 6 }
+                ]}
+                interpolation="basis"
+              />
+              <ChartArea
+                data={[
+                  { name: 'Birds', x: 1, y: 2 },
+                  { name: 'Birds', x: 2, y: 3 },
+                  { name: 'Birds', x: 3, y: 4 },
+                  { name: 'Birds', x: 4, y: 5 },
+                  { name: 'Birds', x: 5, y: 6 }
+                ]}
+                interpolation="basis"
+              />
+              <ChartThreshold
+                data={[
+                  { name: 'Cats Threshold', x: 0, y: 4 },
+                  { name: 'Cats Threshold', x: 3, y: 4 },
+                  { name: 'Cats Threshold', x: 3, y: 6 },
+                  { name: 'Cats Threshold', x: 5, y: 6 }
+                ]}
+                themeColor={ChartThemeColor.blue}
+                themeVariant={ChartThemeVariant.light}
+              />
+              <ChartThreshold
+                data={[
+                  { name: 'Birds Threshold', x: 0, y: 2 },
+                  { name: 'Birds Threshold', x: 2, y: 2 },
+                  { name: 'Birds Threshold', x: 2, y: 3 },
+                  { name: 'Birds Threshold', x: 5, y: 3 }
+                ]}
+                themeColor={ChartThemeColor.orange}
+                themeVariant={ChartThemeVariant.light}
+              />
+            </ChartGroup>
+          </Chart>
+        </div>
+      </div>
+    );
+  }
+}
+```
+
 ## Tips
 
 - For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
@@ -257,3 +399,4 @@ components used in the examples above, Victory pass-thru props are also document
  - For `ChartGroup` props, see <a href="https://formidable.com/open-source/victory/docs/victory-group" target="_blank">VictoryGroup</a>
  - For `ChartLegend` props, see <a href="https://formidable.com/open-source/victory/docs/victory-legend" target="_blank">VictoryLegend</a>
  - For `ChartVoronoiContainer` props, see <a href="https://formidable.com/open-source/victory/docs/victory-voronoi-container" target="_blank">VictoryVoronoiContainer</a>
+ 
