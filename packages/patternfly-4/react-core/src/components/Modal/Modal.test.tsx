@@ -7,7 +7,7 @@ import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 import { Modal } from './Modal';
 
 jest.spyOn(document, 'createElement');
-jest.spyOn(document, 'addEventListener');
+jest.spyOn(document.body, 'addEventListener');
 
 const props = {
   title: 'Modal',
@@ -24,8 +24,8 @@ test('Modal creates a container element once for div', () => {
 });
 
 test('modal closes with escape', () => {
-  shallow(<Modal {...props} isOpen />);
-  const mock: any = (document.addEventListener as any).mock;
+  shallow(<Modal {...props} isOpen appendTo={document.body} />);
+  const mock: any = (document.body.addEventListener as any).mock;
   const [event, handler] = mock.calls[0];
   expect(event).toBe('keydown');
   handler({ keyCode: KEY_CODES.ESCAPE_KEY });
@@ -34,7 +34,7 @@ test('modal closes with escape', () => {
 
 test('modal does not call onClose for esc key if it is not open', () => {
   shallow(<Modal {...props} />);
-  const mock: any = (document.addEventListener as any).mock;
+  const mock: any = (document.body.addEventListener as any).mock;
   const [event, handler] = mock.calls[0];
   expect(event).toBe('keydown');
   handler({ keyCode: KEY_CODES.ESCAPE_KEY });

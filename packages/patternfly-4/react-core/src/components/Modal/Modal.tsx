@@ -37,6 +37,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   isLarge?: boolean;
   /** Creates a small version of the Modal */
   isSmall?: boolean;
+  /** The parent container to append the modal to. Defaults to document.body */
   appendTo?: HTMLElement | (() => HTMLElement);
 }
 
@@ -58,7 +59,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     onClose: () => undefined as any,
     isLarge: false,
     isSmall: false,
-    appendTo: typeof document !== 'undefined' && document.body
+    appendTo: typeof document !== 'undefined' && document.body || null
   };
 
   constructor(props: ModalProps) {
