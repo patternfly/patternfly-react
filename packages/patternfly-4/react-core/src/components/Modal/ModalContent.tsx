@@ -48,6 +48,8 @@ export interface ModalContentProps {
   ariaDescribedById?: string;
   /** Id of the ModalBoxBody */
   id: string;
+  /** Flag to show the close button in the header area of the modal */
+  disableFocusTrap?: boolean;
 }
 
 export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
@@ -66,8 +68,9 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   width = -1,
   ariaDescribedById = '',
   id = '',
+  disableFocusTrap = false,
   ...props
-}) => {
+}: ModalContentProps) => {
   if (!isOpen) {
     return null;
   }
@@ -100,15 +103,15 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   // Only add FocusTrap if close button exists to prevent errors
   return (
     <Backdrop>
-      {showClose ? (
-        <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
-          {modalBox}
-        </FocusTrap>
-      ) 
-      : (
+      {disableFocusTrap ? (
         <Bullseye>
           {modalBox}
         </Bullseye>
+      ) 
+      : (
+        <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
+          {modalBox}
+        </FocusTrap>
       )}
     </Backdrop>
   );
