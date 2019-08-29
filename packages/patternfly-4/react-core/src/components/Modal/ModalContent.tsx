@@ -48,7 +48,7 @@ export interface ModalContentProps {
   ariaDescribedById?: string;
   /** Id of the ModalBoxBody */
   id: string;
-  /** Flag to disable focus trap if no focusable elements are available */
+  /** Flag to disable focus trap */
   disableFocusTrap?: boolean;
 }
 
@@ -85,13 +85,13 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   const boxStyle = width === -1 ? {} : { width };
   const modalBox = (
     <ModalBox
-          style={boxStyle}
-          className={className}
-          isLarge={isLarge}
-          isSmall={isSmall}
-          title={title}
-          id={ariaDescribedById || id}
-        >
+      style={boxStyle}
+      className={className}
+      isLarge={isLarge}
+      isSmall={isSmall}
+      title={title}
+      id={ariaDescribedById || id}
+    >
       {showClose && <ModalBoxCloseButton onClose={onClose} />}
       {modalBoxHeader}
       <ModalBoxBody {...props} id={id}>
@@ -100,7 +100,6 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
       {modalBoxFooter}
     </ModalBox>
   );
-  // Only add FocusTrap if close button exists to prevent errors
   return (
     <Backdrop>
       {disableFocusTrap ? (
