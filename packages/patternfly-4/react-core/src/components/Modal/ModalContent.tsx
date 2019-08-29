@@ -48,7 +48,7 @@ export interface ModalContentProps {
   ariaDescribedById?: string;
   /** Id of the ModalBoxBody */
   id: string;
-  /** Flag to show the close button in the header area of the modal */
+  /** Flag to disable focus trap if no focusable elements are available */
   disableFocusTrap?: boolean;
 }
 
