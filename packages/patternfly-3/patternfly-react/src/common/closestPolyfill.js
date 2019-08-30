@@ -9,7 +9,7 @@ export function closest(selector) {
   let el = this;
   if (document.documentElement.contains(el)) {
     while (el && el.nodeType === 1) {
-      if (el.matches(selector)) return el;
+      if (el.matches(selector)) { return el; }
       el = el.parentElement || el.parentNode;
     }
   }

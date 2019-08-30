@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { BackgroundImage, BackgroundImageProps, BackgroundImageSrc } from '@patternfly/react-core';
 const pfbg_1200 = require('../LoginPageDemo/images/pfbg_1200.jpg');
 const pfbg_768 = require('../LoginPageDemo/images/pfbg_768.jpg');
@@ -19,10 +19,10 @@ export class BackgroundImageDemo extends React.Component {
         [BackgroundImageSrc.xs2x]: pfbg_576_2x,
         [BackgroundImageSrc.filter]: ''
     }
-  }
+  };
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {

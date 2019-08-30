@@ -22,7 +22,7 @@ stories.addDecorator(
 
 stories.add(
   'ExpandCollapse',
-  withInfo(`This is the ExpandCollapse component.`)(() => (
+  withInfo('This is the ExpandCollapse component.')(() => (
     <div style={{ width: '600px', border: '1px solid lightgray' }}>
       <ExpandCollapse
         align={select('align', ExpandCollapse.ALIGN_TYPES)}

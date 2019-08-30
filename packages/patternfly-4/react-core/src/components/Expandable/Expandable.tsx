@@ -42,7 +42,7 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
     isFocused: false,
     isActive: false,
     isHovered: false,
-  }
+  };
 
   render() {
     const {
@@ -55,17 +55,17 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
       children,
       ...props
     } = this.props;
-    let isExpanded
+    let isExpanded;
     let onToggle = onToggleProp;
-    
+
     if (isExpanded === undefined) {
       isExpanded = this.state.isExpanded;
       onToggle = () => {
         onToggleProp();
         this.setState({ isExpanded: !this.state.isExpanded });
-      }
+      };
     }
-    
+
     return (
       <div {...props} className={css(styles.expandable, isExpanded && styles.modifiers.expanded, className)}>
         <button
@@ -88,4 +88,4 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
       </div>
     );
   }
-};
+}

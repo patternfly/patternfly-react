@@ -37,4 +37,3 @@ test('tooltip passes along values to tippy.js', () => {
   );
   expect(view).toMatchSnapshot();
 });
-

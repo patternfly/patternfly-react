@@ -37,7 +37,7 @@ export class DonutUtilizationInvertedRightDemo extends React.Component<{}, { use
           <ChartDonutUtilization
             data={{ x: 'GBps capacity', y: used }}
             invert
-            labels={datum => datum.x ? `${datum.x}: ${datum.y}%` : null}
+            labels={(datum) => datum.x ? `${datum.x}: ${datum.y}%` : null}
             legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
             legendOrientation="vertical"
             subTitle="of 100 GBps"

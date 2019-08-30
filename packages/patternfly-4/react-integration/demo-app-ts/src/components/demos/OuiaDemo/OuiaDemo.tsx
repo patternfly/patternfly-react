@@ -2,8 +2,8 @@ import React, { Fragment } from 'react';
 import { Switch, SwitchProps, OuiaContext } from '@patternfly/react-core';
 
 interface SwitchState {
-  isChecked: boolean
-};
+  isChecked: boolean;
+}
 export class OuiaDemo extends React.Component<SwitchProps, SwitchState> {
   constructor(props: SwitchProps) {
     super(props);
@@ -15,7 +15,7 @@ export class OuiaDemo extends React.Component<SwitchProps, SwitchState> {
     this.setState({
       isChecked
     });
-  };
+  }
 
   render() {
     const { isChecked } = this.state;
@@ -29,11 +29,11 @@ export class OuiaDemo extends React.Component<SwitchProps, SwitchState> {
             aria-label="Switch"
             isChecked={isChecked}
             ouiaId="first_switch"
-          /> 
+          />
           <br />
           <Switch id="disabled-switch-off" aria-label="disabled switch" label="Message when on" isChecked={false} isDisabled />
         </React.Fragment>
       </OuiaContext.Provider>
     );
-  }  
+  }
 }

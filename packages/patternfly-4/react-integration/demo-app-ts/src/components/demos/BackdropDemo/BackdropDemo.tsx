@@ -4,7 +4,7 @@ import { Backdrop } from '@patternfly/react-core';
 export class BackdropDemo extends React.Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -13,4 +13,3 @@ export class BackdropDemo extends React.Component {
     );
   }
 }
-

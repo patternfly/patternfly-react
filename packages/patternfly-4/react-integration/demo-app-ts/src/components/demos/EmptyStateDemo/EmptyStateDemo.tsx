@@ -22,7 +22,7 @@ export class EmptyStateDemo extends Component {
       <Button variant="link">Action area</Button>
     </EmptyStateSecondaryActions>
    </React.Fragment>
- }
+ };
  mySmallEmptyStateProps: EmptyStateProps = {
    children: <React.Fragment>
     <EmptyStateIcon icon={CubesIcon} />
@@ -44,7 +44,7 @@ export class EmptyStateDemo extends Component {
     </EmptyStateSecondaryActions>
    </React.Fragment>,
    variant: EmptyStateVariant.small
- }
+ };
  myFullEmptyStateProps: EmptyStateProps = {
    children: <React.Fragment>
     <EmptyStateIcon icon={CubesIcon} />
@@ -66,10 +66,10 @@ export class EmptyStateDemo extends Component {
     </EmptyStateSecondaryActions>
    </React.Fragment>,
    variant: EmptyStateVariant.full
- }
+ };
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {

@@ -6,11 +6,11 @@ import { AlertActionLink }  from './AlertActionLink';
 import { AlertActionCloseButton } from './AlertActionCloseButton';
 
 test('default Alert variant is info', () => {
-  const view = shallow(<Alert title="this is a test">Alert testing</Alert>)
+  const view = shallow(<Alert title="this is a test">Alert testing</Alert>);
   expect(view.props().className).toMatch(/pf-m-info/);
-})
+});
 
-Object.values(AlertVariant).forEach(variant => {
+Object.values(AlertVariant).forEach((variant) => {
   describe(`Alert - ${variant}`, () => {
     test('Description', () => {
       const view = mount(

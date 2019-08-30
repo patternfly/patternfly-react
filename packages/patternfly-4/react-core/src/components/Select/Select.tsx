@@ -79,27 +79,27 @@ export class Select extends React.Component<SelectProps, SelectState> {
   private refCollection: HTMLElement[] = [];
 
   static defaultProps = {
-    children: [] as React.ReactElement[],
-    className: '',
-    direction: SelectDirection.down,
-    toggleId: null as string,
-    isExpanded: false,
-    isGrouped: false,
-    isPlain: false,
-    isDisabled: false,
+    "children": [] as React.ReactElement[],
+    "className": '',
+    "direction": SelectDirection.down,
+    "toggleId": null as string,
+    "isExpanded": false,
+    "isGrouped": false,
+    "isPlain": false,
+    "isDisabled": false,
     'aria-label': '',
-    ariaLabelledBy: '',
-    ariaLabelTypeAhead: '',
-    ariaLabelClear: 'Clear all',
-    ariaLabelToggle: 'Options menu',
-    ariaLabelRemove: 'Remove',
-    selections: '',
-    placeholderText: '',
-    variant: SelectVariant.single,
-    width: '',
-    onClear: Function.prototype,
-    toggleIcon: null as React.ReactElement,
-    onFilter: undefined as () => {}
+    "ariaLabelledBy": '',
+    "ariaLabelTypeAhead": '',
+    "ariaLabelClear": 'Clear all',
+    "ariaLabelToggle": 'Options menu',
+    "ariaLabelRemove": 'Remove',
+    "selections": '',
+    "placeholderText": '',
+    "variant": SelectVariant.single,
+    "width": '',
+    "onClear": Function.prototype,
+    "toggleIcon": null as React.ReactElement,
+    "onFilter": undefined as () => {}
   };
 
   state = {
@@ -120,11 +120,11 @@ export class Select extends React.Component<SelectProps, SelectState> {
         typeaheadFilteredChildren: React.Children.toArray(this.props.children)
       });
     }
-  };
+  }
 
   onEnter = () => {
     this.setState({ openedOnEnter: true });
-  };
+  }
 
   onClose = () => {
     this.setState({
@@ -134,7 +134,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       typeaheadFilteredChildren: React.Children.toArray(this.props.children),
       typeaheadCurrIndex: -1
     });
-  };
+  }
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { onFilter } = this.props;
@@ -166,11 +166,11 @@ export class Select extends React.Component<SelectProps, SelectState> {
       typeaheadActiveChild: null
     });
     this.refCollection = [];
-  };
+  }
 
   onClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-  };
+  }
 
   clearSelection = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -180,7 +180,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       typeaheadFilteredChildren: React.Children.toArray(this.props.children),
       typeaheadCurrIndex: -1
     });
-  };
+  }
 
   extendTypeaheadChildren(typeaheadActiveChild: HTMLElement) {
     return this.state.typeaheadFilteredChildren.map((child: React.ReactNode) =>
@@ -194,17 +194,17 @@ export class Select extends React.Component<SelectProps, SelectState> {
 
   sendRef = (ref: React.ReactNode, index: number) => {
     this.refCollection[index] = ref as HTMLElement;
-  };
+  }
 
   handleArrowKeys = (index: number, position: string) => {
     keyHandler(index, position, this.refCollection, this.refCollection);
-  };
+  }
 
   handleFocus = () => {
     if (!this.props.isExpanded) {
       this.props.onToggle(true);
     }
-  };
+  }
 
   handleTypeaheadKeys = (position: string) => {
     const { isExpanded, onSelect } = this.props;
@@ -236,7 +236,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
         });
       }
     }
-  };
+  }
 
   getDisplay = (value: string | SelectOptionObject, type: 'node' | 'text' = 'node') => {
     if (!value) {
@@ -244,7 +244,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     }
 
     const { children } = this.props;
-    const item = children.filter(child => child.props.value.toString() === value.toString())[0];
+    const item = children.filter((child) => child.props.value.toString() === value.toString())[0];
 
     if (item && item.props.children) {
       if (type === 'node') {
@@ -253,7 +253,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       return this.findText(item);
     }
     return item.props.value.toString();
-  };
+  }
 
   findText: (item: React.ReactElement) => string = (item: React.ReactElement) => {
     if (!item.props || !item.props.children) {
@@ -270,7 +270,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       multi.push(this.findText(child))
     );
     return multi.join('');
-  };
+  }
 
   render() {
     const {
@@ -303,7 +303,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     const selectToggleId = toggleId || `pf-toggle-id-${currentId++}`;
     let childPlaceholderText = null;
     if (!selections && !placeholderText) {
-      const childPlaceholder = React.Children.toArray(children.filter(child => child.props.isPlaceholder === true));
+      const childPlaceholder = React.Children.toArray(children.filter((child) => child.props.isPlaceholder === true));
       childPlaceholderText =
         (childPlaceholder[0] && this.getDisplay(childPlaceholder[0].props.value, 'node')) ||
         (children[0] && this.getDisplay(children[0].props.value, 'node'));
@@ -313,8 +313,8 @@ export class Select extends React.Component<SelectProps, SelectState> {
       selectedChips = (
         <ChipGroup>
           {selections &&
-            (selections as string[]).map(item => (
-              <Chip key={item} onClick={e => onSelect(e, item)} closeBtnAriaLabel={ariaLabelRemove}>
+            (selections as string[]).map((item) => (
+              <Chip key={item} onClick={(e) => onSelect(e, item)} closeBtnAriaLabel={ariaLabelRemove}>
                 {this.getDisplay(item, 'node')}
               </Chip>
             ))}
@@ -388,7 +388,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                 {selections && (
                   <button
                     className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
-                    onClick={e => {
+                    onClick={(e) => {
                       this.clearSelection(e);
                       onClear(e);
                     }}
@@ -405,7 +405,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                  {selections && (Array.isArray(selections) && selections.length > 0)&& selectedChips}
+                  {selections && (Array.isArray(selections) && selections.length > 0) && selectedChips}
                   <input
                     className={css(formStyles.formControl, styles.selectToggleTypeahead)}
                     aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
@@ -423,7 +423,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                 {selections && (Array.isArray(selections) && selections.length > 0) && (
                   <button
                     className={css(buttonStyles.button, buttonStyles.modifiers.plain, styles.selectToggleClear)}
-                    onClick={e => {
+                    onClick={(e) => {
                       this.clearSelection(e);
                       onClear(e);
                     }}

@@ -16,7 +16,7 @@ export interface FormState {
   selected: string[];
 }
 
-export class FormDemo extends Component<FormProps, FormState>{
+export class FormDemo extends Component<FormProps, FormState> {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,35 +28,35 @@ export class FormDemo extends Component<FormProps, FormState>{
   }
   handleTextInputChange = (value: string) => {
     this.setState({ value, isValid: /^\d+$/.test(value) });
-  };
+  }
   onToggle = (isExpanded) => {
     this.setState({
       isExpanded
     });
-  };
+  }
   onSelect = (event, selection) => {
     const { selected } = this.state;
     if (selected.includes(selection)) {
       this.setState(
-        prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
+        (prevState) => ({ selected: prevState.selected.filter((item) => item !== selection) }),
         () => console.log('selections: ', this.state.selected)
       );
     } else {
       this.setState(
-        prevState => ({ selected: [...prevState.selected, selection] }),
+        (prevState) => ({ selected: [...prevState.selected, selection] }),
         () => console.log('selections: ', this.state.selected)
       );
     }
-  };
+  }
   clearSelection = () => {
     this.setState({
       selected: [],
       isExpanded: false,
     });
-  };
+  }
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {

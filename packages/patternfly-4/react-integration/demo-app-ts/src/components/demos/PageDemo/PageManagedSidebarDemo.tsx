@@ -33,4 +33,3 @@ export class PageManagedSidebarDemo extends React.Component {
     );
   }
 }
-

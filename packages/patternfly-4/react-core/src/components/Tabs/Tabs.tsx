@@ -56,7 +56,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
       showRightScrollButton: false,
       highlightLeftScrollButton: false,
       highlightRightScrollButton: false
-    }
+    };
   }
 
   static defaultProps = {
@@ -115,7 +115,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
           (sideOutOfView === SIDE.RIGHT || sideOutOfView === SIDE.BOTH) && showRightScrollButton
       });
     }
-  };
+  }
 
   scrollLeft = () => {
     // find first Element that is fully in view on the left, then scroll to the element before it
@@ -135,7 +135,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
         container.scrollLeft -= lastElementOutOfView.scrollWidth;
       }
     }
-  };
+  }
 
   scrollRight = () => {
     // find last Element that is fully in view on the right, then scroll to the element after it
@@ -154,7 +154,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
         container.scrollLeft += firstElementOutOfView.scrollWidth;
       }
     }
-  };
+  }
 
   componentDidMount() {
     window.addEventListener('resize', this.handleScrollButtons, false);

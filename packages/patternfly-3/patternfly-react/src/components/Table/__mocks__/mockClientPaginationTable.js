@@ -251,34 +251,34 @@ export class MockClientPaginationTable extends React.Component {
   }
   onFirstPage = () => {
     this.setPage(1);
-  };
+  }
   onLastPage = () => {
     const { page } = this.state.pagination;
     const totalPages = this.totalPages();
     if (page < totalPages) {
       this.setPage(totalPages);
     }
-  };
+  }
   onNextPage = () => {
     const { page } = this.state.pagination;
     if (page < this.totalPages()) {
       this.setPage(this.state.pagination.page + 1);
     }
-  };
+  }
   onPageInput = e => {
     this.setState({ pageChangeValue: e.target.value });
-  };
+  }
   onPerPageSelect = (eventKey, e) => {
     const newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.perPage = eventKey;
     newPaginationState.page = 1;
     this.setState({ pagination: newPaginationState });
-  };
+  }
   onPreviousPage = () => {
     if (this.state.pagination.page > 1) {
       this.setPage(this.state.pagination.page - 1);
     }
-  };
+  }
   onRow = (row, { rowIndex }) => {
     const { selectedRows } = this.state;
     const selected = selectedRows.indexOf(row.id) > -1;
@@ -286,7 +286,7 @@ export class MockClientPaginationTable extends React.Component {
       className: classNames({ selected }),
       role: 'row'
     };
-  };
+  }
   onSelectAllRows = event => {
     const { onRowsLogger } = this.props;
     const { rows, selectedRows } = this.state;
@@ -316,7 +316,7 @@ export class MockClientPaginationTable extends React.Component {
       });
       onRowsLogger(updatedRows.filter(r => r.selected));
     }
-  };
+  }
   onSelectRow = (event, row) => {
     const { onRowsLogger } = this.props;
     const { rows, selectedRows } = this.state;
@@ -339,10 +339,10 @@ export class MockClientPaginationTable extends React.Component {
       });
       onRowsLogger(rows.filter(r => r.selected));
     }
-  };
+  }
   onSubmit = () => {
     this.setPage(this.state.pageChangeValue);
-  };
+  }
   setPage = value => {
     const page = Number(value);
     if (!Number.isNaN(value) && value !== '' && page > 0 && page <= this.totalPages()) {
@@ -350,7 +350,7 @@ export class MockClientPaginationTable extends React.Component {
       newPaginationState.page = page;
       this.setState({ pagination: newPaginationState, pageChangeValue: page });
     }
-  };
+  }
   currentRows() {
     const { rows, sortingColumns, columns, pagination } = this.state;
     return compose(
@@ -366,7 +366,7 @@ export class MockClientPaginationTable extends React.Component {
   totalPages = () => {
     const { perPage } = this.state.pagination;
     return Math.ceil(mockRows.length / perPage);
-  };
+  }
   render() {
     const { columns, pagination, sortingColumns, pageChangeValue } = this.state;
     const sortedPaginatedRows = this.currentRows();

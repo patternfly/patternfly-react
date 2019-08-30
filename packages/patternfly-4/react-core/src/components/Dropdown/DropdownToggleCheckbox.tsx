@@ -35,7 +35,7 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
 
   handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.props.onChange(event.currentTarget.checked, event);
-  };
+  }
 
   render() {
     const { className, onChange, isValid, isDisabled, isChecked, checked, ...props } = this.props;

@@ -22,12 +22,12 @@ export enum ChartDonutLabelPosition {
   centroid = 'centroid',
   endAngle = 'endAngle',
   startAngle = 'startAngle'
-};
+}
 
 export enum ChartDonutSortOrder {
   ascending = 'ascending',
   descending = 'descending'
-};
+}
 
 export enum ChartDonutSubTitlePosition {
   bottom = 'bottom',
@@ -219,7 +219,7 @@ export interface ChartDonutProps extends ChartPieProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback | string[] | number[]>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback | string[] | number[]>[];
   /**
    * ChartDonut uses the standard externalEventMutations prop.
    */
@@ -297,13 +297,13 @@ export interface ChartDonutProps extends ChartPieProps {
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  legendData?: Array<{
+  legendData?: {
     name?: string;
     symbol?: {
       fill?: string;
       type?: string;
     };
-  }>;
+  }[];
   /**
    * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */

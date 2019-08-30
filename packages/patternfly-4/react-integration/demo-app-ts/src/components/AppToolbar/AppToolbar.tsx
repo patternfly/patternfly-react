@@ -10,7 +10,7 @@ import {
 } from '@patternfly/react-core';
 import { CogIcon } from '@patternfly/react-icons';
 
-let isDropdownOpen: boolean = false;
+const isDropdownOpen: boolean = false;
 
 const userDropdownItems: ReactNode[] = [];
 
@@ -26,7 +26,7 @@ export const AppToolbar = (
     <ToolbarGroup>
       <ToolbarItem>
         <Dropdown
-          isPlain={true}
+          isPlain
           position="right"
           onSelect={() => {}}
           isOpen={isDropdownOpen}

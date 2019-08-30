@@ -12,13 +12,13 @@ export enum ChartLabelDirection {
   rtl = 'rtl',
   ltr = 'ltr',
   inherit = 'inherit'
-};
+}
 
 export enum ChartLabelPlacement {
   parallel = 'parallel',
   perpendicular = 'perpendicular',
   vertical = 'vertical'
-};
+}
 
 type TextAnchorType = 'start' | 'middle' | 'end' | 'inherit';
 
@@ -164,7 +164,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
    * The y prop defines the y coordinate to use as a basis for vertical positioning.
    */
   y?: number;
-};
+}
 
 export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
   style,
@@ -177,7 +177,7 @@ export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
   });
   const newStyle = Array.isArray(style) ? style.map(applyDefaultStyle) : applyDefaultStyle(style);
   return <VictoryLabel style={newStyle as any} {...rest} />;
-}
+};
 
 // Note: VictoryLabel.role must be hoisted
 hoistNonReactStatics(ChartLabel, VictoryLabel);

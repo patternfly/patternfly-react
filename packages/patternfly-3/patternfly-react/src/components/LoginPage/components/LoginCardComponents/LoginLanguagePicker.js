@@ -24,7 +24,7 @@ class LoginLanguagePicker extends React.Component {
     const { onLanguageChange } = this.props;
     onLanguageChange(e);
     this.setState({ title: e.target.text });
-  };
+  }
 
   render() {
     const { availableLanguages, className, id } = this.props;

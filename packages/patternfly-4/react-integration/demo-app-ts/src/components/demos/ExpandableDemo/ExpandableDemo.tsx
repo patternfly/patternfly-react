@@ -5,13 +5,13 @@ interface ExpandableState {
   isExpanded: boolean;
 }
 
-export class ExpandableDemo extends React.Component <null, ExpandableState>{
+export class ExpandableDemo extends React.Component <null, ExpandableState> {
   state = {
     isExpanded: false
-  }
+  };
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   onToggle = () => this.setState({ isExpanded: !this.state.isExpanded });
@@ -20,11 +20,11 @@ export class ExpandableDemo extends React.Component <null, ExpandableState>{
     const { isExpanded } = this.state;
     return (
       <React.Fragment>
-        <h1> Simple Expandable Example: </h1> 
+        <h1> Simple Expandable Example: </h1>
           <Expandable toggleText={isExpanded ? 'Show Less' : 'Show More'} onToggle={this.onToggle} isExpanded={isExpanded}>
             This content is visible only when the component is expanded.
           </Expandable>
-        <br/> 
+        <br/>
         <h1> Uncontrolled Expandable Example: </h1>
         <Expandable toggleText="Show More">
           This content is visible only when the component is expanded.

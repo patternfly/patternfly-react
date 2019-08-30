@@ -8,11 +8,11 @@ export type gridItemSpanValueShape = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
 
 export interface GridProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the Grid layout */
-  children?: React.ReactNode; 
+  children?: React.ReactNode;
   /** additional classes added to the Grid layout */
-  className?: string; 
+  className?: string;
   /** Adds space between children. */
-  gutter?: 'sm' | 'md' | 'lg'; 
+  gutter?: 'sm' | 'md' | 'lg';
   /** The number of rows a column in the grid should span.  Value should be a number 1-12 */
   span?: gridItemSpanValueShape;
   /** the number of columns all grid items should span on a small device */
@@ -35,7 +35,7 @@ export const Grid: React.FunctionComponent<GridProps>  = ({
   ...props
 }: GridProps) => {
   const classes = [styles.grid, span && getModifier(styles, `all_${span}Col`)];
-  
+
   Object.entries(DeviceSizes).forEach(([propKey, gridSpanModifier]) => {
     const key = propKey as keyof typeof DeviceSizes;
     const propValue = props[key] as gridItemSpanValueShape;

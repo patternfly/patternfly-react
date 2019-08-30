@@ -43,7 +43,7 @@ export class Radio extends React.Component<RadioProps> {
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     this.props.onChange(event.currentTarget.checked, event);
-  };
+  }
 
   render() {
     const {

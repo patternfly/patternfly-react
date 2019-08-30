@@ -14,7 +14,7 @@ export interface SplitProps extends React.HTMLProps<HTMLDivElement> {
   component?: React.ReactNode;
 }
 
-export const Split: React.FunctionComponent<SplitProps> = ({ 
+export const Split: React.FunctionComponent<SplitProps> = ({
   gutter = null,
   className = '',
   children = null,
@@ -29,5 +29,5 @@ export const Split: React.FunctionComponent<SplitProps> = ({
     >
       {children}
     </Component>
-  )
+  );
 };

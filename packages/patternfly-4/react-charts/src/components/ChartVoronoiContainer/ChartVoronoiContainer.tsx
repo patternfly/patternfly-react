@@ -11,7 +11,7 @@ import { getTheme } from '../ChartUtils';
 export enum ChartVoronoiDimension {
   x = 'x',
   y = 'y'
-};
+}
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -105,7 +105,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * position will be activated regardless of y value. When this prop is not given, voronoi selection
    * is determined by both x any y values.
    */
-  voronoiDimension?: "x" | "y";
+  voronoiDimension?: 'x' | 'y';
   /**
    * When the voronoiPadding prop is given, the area of the chart that will trigger voronoi events is
    * reduced by the given padding on every side. By default, no padding is applied, and the entire range
@@ -127,7 +127,7 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
 
   // @ts-ignore
   return <VictoryVoronoiContainer labelComponent={labelComponent} theme={theme} {...rest} />;
-}
+};
 ChartVoronoiContainer.defaultProps = (VictoryVoronoiContainer as any).defaultProps;
 
 // Note: VictoryVoronoiContainer.defaultEvents & VictoryContainer.role must be hoisted

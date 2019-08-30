@@ -42,14 +42,14 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
 export class TextInput extends React.Component<TextInputProps> {
   static defaultProps = {
     'aria-label': null as string,
-    className: '',
-    isRequired: false,
-    isValid: true,
-    isDisabled: false,
-    isReadOnly: false,
-    type: 'text', 
-    onChange: (): any => undefined
-  }
+    "className": '',
+    "isRequired": false,
+    "isValid": true,
+    "isDisabled": false,
+    "isReadOnly": false,
+    "type": 'text',
+    "onChange": (): any => undefined
+  };
 
   constructor(props: TextInputProps) {
     super(props);
@@ -60,7 +60,7 @@ export class TextInput extends React.Component<TextInputProps> {
   }
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-    if (this.props.onChange){
+    if (this.props.onChange) {
       this.props.onChange(event.currentTarget.value, event);
     }
   }

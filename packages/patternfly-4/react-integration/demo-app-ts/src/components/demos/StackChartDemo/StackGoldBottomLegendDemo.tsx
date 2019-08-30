@@ -37,6 +37,6 @@ export class StackGoldBottomLegendDemo extends React.Component {
           </Chart>
         </div>
       </div>
-    )
+    );
   }
   }

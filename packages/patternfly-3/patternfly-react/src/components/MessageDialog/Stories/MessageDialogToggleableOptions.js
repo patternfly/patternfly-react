@@ -13,15 +13,15 @@ class MessageDialogToggleableOptions extends Component {
   primaryAction = () => {
     // Do some stuff
     this.setState(() => ({ show: false }));
-  };
+  }
 
   secondaryAction = () => {
     this.setState(() => ({ show: false }));
-  };
+  }
 
   showModal = () => {
     this.setState(() => ({ show: true }));
-  };
+  }
 
   render() {
     // StoryBook Knobs Config

@@ -34,7 +34,7 @@ class FinishedStep extends React.Component {
         <div className="pf-c-empty-state pf-m-lg">
           <i className="fas fa- fa-cogs pf-c-empty-state__icon" aria-hidden="true" />
           <h1 className="pf-c-title pf-m-lg">
-            {percent === 100 ? `Configuration Complete` : `Configuration in progress`}
+            {percent === 100 ? 'Configuration Complete' : 'Configuration in progress'}
           </h1>
           <div className="pf-c-empty-state__body">
             <div className="pf-c-progress pf-m-singleline" id="progress-singleline-example">
@@ -65,10 +65,10 @@ class FinishedStep extends React.Component {
           </div>
           <div className="pf-c-empty-state__secondary">
             <button
-              className={percent === 100 ? `pf-c-button pf-m-primary` : `pf-c-button pf-m-link`}
+              className={percent === 100 ? 'pf-c-button pf-m-primary' : 'pf-c-button pf-m-link'}
               onClick={this.props.onClose}
             >
-              {percent === 100 ? `Close` : `Cancel`}
+              {percent === 100 ? 'Close' : 'Cancel'}
             </button>
           </div>
         </div>

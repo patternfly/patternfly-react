@@ -7,7 +7,7 @@ render() {
     <div>
       <div style={{height: '225px', width: '650px'}}>
         <Chart
-          containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
+          containerComponent={<ChartVoronoiContainer labels={(datum) => `${datum.name}: ${datum.y}`} />}
           legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}
           legendPosition="bottom"
           height={225}
@@ -53,7 +53,7 @@ render() {
         </Chart>
       </div>
     </div>
-  )
+  );
 }
 
 }

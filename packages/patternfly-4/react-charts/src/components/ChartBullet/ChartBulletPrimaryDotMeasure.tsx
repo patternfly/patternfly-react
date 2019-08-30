@@ -156,7 +156,7 @@ export interface ChartBulletPrimaryDotMeasureProps {
 interface ChartBulletPrimaryDotMeasureDataInterface {
   data?: any[];
   invert?: boolean;
-  theme?: ChartThemeDefinition,
+  theme?: ChartThemeDefinition;
   themeColor?: string;
   themeVariant?: string;
   y?: DataGetterPropType;
@@ -221,15 +221,15 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
   labelComponent =
     <ChartTooltip
       orientation="top"
-      dx={datum => {
+      dx={(datum) => {
         if (horizontal) {
-          return datum._y > 0 ? -10 : 10
+          return datum._y > 0 ? -10 : 10;
         }
         return ChartBulletStyles.primaryDotMeasureSize;
       }}
-      dy={datum => {
+      dy={(datum) => {
         if (!horizontal) {
-          return datum._y > 0 ? -10 : 10
+          return datum._y > 0 ? -10 : 10;
         }
         return ChartBulletStyles.primaryDotMeasureSize;
       }}

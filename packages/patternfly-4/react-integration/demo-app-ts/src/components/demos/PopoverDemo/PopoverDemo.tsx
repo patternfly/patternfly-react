@@ -24,5 +24,5 @@ export class PopoverDemo extends Component {
       {this.myPopoverProps.children}
     </Popover>
   );
-  };
+  }
 }

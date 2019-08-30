@@ -11,13 +11,13 @@ export class AccordionDemo extends React.Component<null, AccordionDemoState> {
   };
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   onToggle = (id: string) => {
     const { expanded } = this.state;
     this.setState({ expanded: id !== expanded ? id : null });
-  };
+  }
 
   render() {
     const { expanded } = this.state;

@@ -13,7 +13,7 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
 import { getBulletPrimaryNegativeMeasureTheme, getBulletPrimarySegmentedMeasureTheme } from '../ChartUtils';
-import { ChartBulletComparativeMeasure } from "./ChartBulletComparativeMeasure";
+import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -178,8 +178,8 @@ export interface ChartBulletPrimarySegmentedMeasureProps {
 interface ChartBulletPrimarySegmentedMeasureDataInterface {
   data?: any[];
   invert?: boolean;
-  negativeMeasureTheme?: ChartThemeDefinition,
-  theme?: ChartThemeDefinition,
+  negativeMeasureTheme?: ChartThemeDefinition;
+  theme?: ChartThemeDefinition;
   themeColor?: string;
   themeVariant?: string;
   y?: DataGetterPropType;
@@ -275,16 +275,16 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
   labelComponent =
     <ChartTooltip
       orientation="top"
-      dx={datum => {
+      dx={(datum) => {
         if (horizontal) {
-          return datum._y > 0 ? -10 : 10
+          return datum._y > 0 ? -10 : 10;
         }
         const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
         return result / 2;
       }}
-      dy={datum => {
+      dy={(datum) => {
         if (!horizontal) {
-          return datum._y > 0 ? -10 : 10
+          return datum._y > 0 ? -10 : 10;
         }
         const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
         return result / 2;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
-export class DonutUtilizationSmallDemo extends React.Component{
+export class DonutUtilizationSmallDemo extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -14,13 +14,13 @@ export class DonutUtilizationSmallDemo extends React.Component{
           <ChartDonutUtilization
             data={{ x: 'Storage capacity', y: 75 }}
             height={150}
-            labels={datum => datum.x ? `${datum.x}: ${datum.y}%` : null}
+            labels={(datum) => datum.x ? `${datum.x}: ${datum.y}%` : null}
             subTitle="of 100 GBps"
             title="75%"
             width={150}
           />
         </div>
       </div>
-    )
+    );
   }
 }

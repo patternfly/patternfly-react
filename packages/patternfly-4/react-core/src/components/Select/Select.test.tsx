@@ -97,7 +97,7 @@ describe('select', () => {
         } catch (err) {
           input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
         }
-        let typeaheadFilteredChildren =
+        const typeaheadFilteredChildren =
           e.target.value !== ''
             ? selectOptions.filter((child: React.ReactNode) => input.test((child as React.ReactElement).props.value))
             : selectOptions;
@@ -109,7 +109,7 @@ describe('select', () => {
           onSelect={jest.fn()}
           onToggle={jest.fn()}
           onFilter={customFilter}
-          isExpanded={true}
+          isExpanded
         >
           {selectOptions}
         </Select>

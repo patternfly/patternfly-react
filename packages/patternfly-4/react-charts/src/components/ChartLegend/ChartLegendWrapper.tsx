@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { ChartLegendOrientation, ChartLegendPosition } from "../ChartLegend";
+import { ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getLegendX, getLegendY, getTheme } from "../ChartUtils";
+import { getLegendX, getLegendY, getTheme } from '../ChartUtils';
 
 export enum ChartLegendConfigChartType {
   chart = 'chart',
   pie = 'pie'
-};
+}
 
 /**
  * Helper to position a legend component within a component's SVG

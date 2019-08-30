@@ -24,7 +24,7 @@ export function withOuiaContext<P extends { ouiaContext?: OuiaContextProps }, R 
   );
 }
 
-interface OuiaProps { 
+interface OuiaProps {
   component: any;
   componentProps: any;
   consumerContext?: OuiaContextProps;
@@ -55,7 +55,7 @@ class ComponentWithOuia extends React.Component<OuiaProps, OuiaState> {
     const { consumerContext } = this.props;
     const isOuiaEnv = isOUIAEnvironment();
     if ((consumerContext && consumerContext.isOuia !== undefined && consumerContext.isOuia !== isOuia) || isOuiaEnv !== isOuia ) {
-      this.setState({ 
+      this.setState({
         isOuia: consumerContext && consumerContext.isOuia !== undefined ? consumerContext.isOuia : isOuiaEnv,
         ouiaId: consumerContext && consumerContext.ouiaId !== undefined ? consumerContext.ouiaId : (generateOUIAId() ? getUniqueId() : ouiaId)
       });
@@ -71,6 +71,6 @@ class ComponentWithOuia extends React.Component<OuiaProps, OuiaState> {
             {(value: OuiaContextProps) => <WrappedComponent {...componentProps as any} ouiaContext={value} />}
           </OuiaContext.Consumer>
       </OuiaContext.Provider>
-    )
+    );
   }
 }

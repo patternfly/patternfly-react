@@ -16,7 +16,7 @@ export interface TopologyViewProps extends React.HTMLProps<HTMLDivElement> {
   /** Topology side bar (typically a TopologySideBar), used to display information for elements in graph */
   sideBar?: React.ReactNode;
   sideBarOpen?: boolean;
-};
+}
 
 export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
   className = '',

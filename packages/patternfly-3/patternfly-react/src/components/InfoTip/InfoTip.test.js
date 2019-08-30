@@ -93,7 +93,7 @@ test('onBlur closes Dropdown', () => {
   expect(getDropdown(view).props().open).toBe(false);
 });
 
-test(`onBlur clicks related target`, () => {
+test('onBlur clicks related target', () => {
   const relatedTargetClick = jest.fn();
   const view = shallow(<InfoTip {...props} />);
   getDropdown(view).simulate('blur', {

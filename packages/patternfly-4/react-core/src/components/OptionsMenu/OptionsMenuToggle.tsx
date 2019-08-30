@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { DropdownToggle, DropdownContext } from '../Dropdown';
 
-export interface OptionsMenuToggleProps  extends React.HTMLProps<HTMLButtonElement>{
+export interface OptionsMenuToggleProps  extends React.HTMLProps<HTMLButtonElement> {
   /** Id of the parent Options menu component */
   parentId?: string;
   /** Callback for when this Options menu is toggled */
@@ -24,11 +24,11 @@ export interface OptionsMenuToggleProps  extends React.HTMLProps<HTMLButtonEleme
   /** Provides an accessible name for the button when an icon is used instead of text */
   'aria-label'?: string;
   /** Internal function to implement enter click */
-  onEnter?: (event: React.MouseEvent<HTMLButtonElement>) => void; 
+  onEnter?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** Internal parent reference */
   parentRef?: HTMLElement;
   /** Content to be rendered in the Options menu toggle button */
-  toggleTemplate?: React.ReactNode
+  toggleTemplate?: React.ReactNode;
 }
 
 export const OptionsMenuToggle: React.FunctionComponent<OptionsMenuToggleProps> = ({

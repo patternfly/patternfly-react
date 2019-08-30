@@ -3,23 +3,23 @@ import { Omit } from '../../helpers/typeUtils';
 
 export interface FormSelectOptionProps extends Omit<React.HTMLProps<HTMLOptionElement>, 'disabled'> {
   /** additional classes added to the Select Option */
-  className?: string; 
+  className?: string;
   /** the value for the option */
-  value?: any; 
+  value?: any;
   /** the label for the option */
-  label: string; 
+  label: string;
   /** flag indicating if the option is disabled */
-  isDisabled?: boolean; 
+  isDisabled?: boolean;
 }
 
 export const FormSelectOption: React.FunctionComponent<FormSelectOptionProps> = ({
-  className = '', 
-  value = '', 
-  isDisabled = false, 
+  className = '',
+  value = '',
+  isDisabled = false,
   label,
   ...props
 }: FormSelectOptionProps) => (
   <option {...props} className={className} value={value} disabled={isDisabled}>
     {label}
   </option>
-)
+);

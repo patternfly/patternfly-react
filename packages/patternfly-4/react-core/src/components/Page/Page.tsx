@@ -7,7 +7,7 @@ import { debounce } from '../../helpers/util';
 export enum PageLayouts {
   vertical = 'vertical',
   horizontal = 'horizontal'
-};
+}
 
 const PageContext = React.createContext({});
 export const PageContextProvider = PageContext.Provider;
@@ -61,7 +61,7 @@ export class Page extends React.Component<PageProps, PageState> {
     skipToContent: null as React.ReactElement,
     isManagedSidebar: false,
     defaultManagedSidebarIsOpen: true,
-    onPageResize: ():void => null,
+    onPageResize: (): void => null,
     mainContainerId: null as string
   };
 
@@ -100,22 +100,22 @@ export class Page extends React.Component<PageProps, PageState> {
     if (onPageResize) {
       onPageResize({ mobileView, windowSize });
     }
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       mobileView
     }));
-  };
+  }
 
   onNavToggleMobile = () => {
     this.setState({
       mobileIsNavOpen: !this.state.mobileIsNavOpen
     });
-  };
+  }
 
   onNavToggleDesktop = () => {
     this.setState({
       desktopIsNavOpen: !this.state.desktopIsNavOpen
     });
-  };
+  }
 
   render() {
     const {

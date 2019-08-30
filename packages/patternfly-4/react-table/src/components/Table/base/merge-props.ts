@@ -31,4 +31,4 @@ export function mergeProps(...props: any) {
 
     return undefined;
   });
-};
+}

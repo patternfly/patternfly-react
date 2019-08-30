@@ -2,11 +2,11 @@ import * as Examples from './components/demos';
 
 interface DemoInterface {
   /** ID for the demo, it will be used to help generate general ids to help with testing */
-  id: string,
+  id: string;
   /** The name of the demo */
-  name: string,
+  name: string;
   /** Demo component associated with the demo  */
-  componentType: any
+  componentType: any;
 }
 /** Add the name of the demo and it's component here to have them show up in the demo app */
 export const Demos: DemoInterface[] = [
@@ -91,8 +91,8 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BreadcrumbDemo
   },
   {
-    id: 'bullseye-demo', 
-    name: 'Bullseye Demo', 
+    id: 'bullseye-demo',
+    name: 'Bullseye Demo',
     componentType: Examples.BullseyeDemo
   },
   {
@@ -242,13 +242,13 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DonutUtilizationStaticRightDemo
   },
   {
-    id: 'drawer-demo', 
-    name: 'Drawer Demo', 
+    id: 'drawer-demo',
+    name: 'Drawer Demo',
     componentType: Examples.DrawerDemo
   },
   {
-    id: 'dropdown-demo', 
-    name: 'Dropdown Demo', 
+    id: 'dropdown-demo',
+    name: 'Dropdown Demo',
     componentType: Examples.DropdownDemo
   },
   {
@@ -257,8 +257,8 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.EmptyStateDemo
   },
   {
-    id: 'expandable-demo', 
-    name: 'Expandable Demo', 
+    id: 'expandable-demo',
+    name: 'Expandable Demo',
     componentType: Examples.ExpandableDemo
   },
   {
@@ -272,8 +272,8 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.FormSelectDemo
   },
   {
-    id: 'gallery-demo', 
-    name: 'Gallery Demo', 
+    id: 'gallery-demo',
+    name: 'Gallery Demo',
     componentType: Examples.GalleryDemo
   },
   {
@@ -282,8 +282,8 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.GridDemo
   },
   {
-    id: 'input-group-demo', 
-    name: 'Input Group Demo', 
+    id: 'input-group-demo',
+    name: 'Input Group Demo',
     componentType: Examples.InputGroupDemo
   },
   {
@@ -292,8 +292,8 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.LabelDemo
   },
   {
-    id: 'level-demo', 
-    name: 'Level Demo', 
+    id: 'level-demo',
+    name: 'Level Demo',
     componentType: Examples.LevelDemo
   },
   {
@@ -418,15 +418,15 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.SelectDemo
   },
   {
-    id: 'split-demo', 
-    name: 'Split Demo', 
+    id: 'split-demo',
+    name: 'Split Demo',
     componentType: Examples.SplitDemo
   },
   {
-    id: 'stack-demo', 
-    name: 'Stack Demo', 
+    id: 'stack-demo',
+    name: 'Stack Demo',
     componentType: Examples.StackDemo
-  }, 
+  },
   {
     id: 'switch-demo',
     name: 'Switch Demo',
@@ -463,8 +463,8 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TitleDemo
   },
   {
-    id: 'toolbar-demo', 
-    name: 'Toolbar Demo', 
+    id: 'toolbar-demo',
+    name: 'Toolbar Demo',
     componentType: Examples.ToolbarDemo
   },
   {

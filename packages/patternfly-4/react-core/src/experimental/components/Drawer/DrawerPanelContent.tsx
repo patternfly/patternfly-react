@@ -19,7 +19,7 @@ export const DrawerPanelContent: React.SFC<DrawerPanelContentProps> = ({
 }: DrawerPanelContentProps) => (
       <aside className={css(styles.drawerPanel, className)} {...props}>
         <div className={css(styles.drawerPanelBody, noPadding && styles.modifiers.noPadding)}>
-          { children }
+          {children}
         </div>
       </aside>
 );

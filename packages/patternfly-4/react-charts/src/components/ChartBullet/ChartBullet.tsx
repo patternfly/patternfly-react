@@ -110,13 +110,13 @@ export interface ChartBulletProps {
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  comparativeErrorMeasureLegendData?: Array<{
+  comparativeErrorMeasureLegendData?: {
     name?: string;
     symbol?: {
       fill?: string;
       type?: string;
     };
-  }>;
+  }[];
   /**
    * The comparative measure warning component to render with the chart
    */
@@ -148,13 +148,13 @@ export interface ChartBulletProps {
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  comparativeWarningMeasureLegendData?: Array<{
+  comparativeWarningMeasureLegendData?: {
     name?: string;
     symbol?: {
       fill?: string;
       type?: string;
     };
-  }>;
+  }[];
   /**
    * The domain prop describes the range of values your chart will include. This prop can be
    * given as a array of the minimum and maximum expected values for your chart,
@@ -316,13 +316,13 @@ export interface ChartBulletProps {
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  primaryDotMeasureLegendData?: Array<{
+  primaryDotMeasureLegendData?: {
     name?: string;
     symbol?: {
       fill?: string;
       type?: string;
     };
-  }>;
+  }[];
   /**
    * The primary segmented measure component to render with the chart
    */
@@ -354,13 +354,13 @@ export interface ChartBulletProps {
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  primarySegmentedMeasureLegendData?: Array<{
+  primarySegmentedMeasureLegendData?: {
     name?: string;
     symbol?: {
       fill?: string;
       type?: string;
     };
-  }>;
+  }[];
   /**
    * The qualitative range component to render with the chart
    */
@@ -399,13 +399,13 @@ export interface ChartBulletProps {
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  qualitativeRangeLegendData?: Array<{
+  qualitativeRangeLegendData?: {
     name?: string;
     symbol?: {
       fill?: string;
       type?: string;
     };
-  }>;
+  }[];
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
@@ -491,8 +491,8 @@ interface ChartBulletThemeInterface {
   primarySegmentedMeasureLegendData?: any[];
   qualitativeRangeData?: any[];
   qualitativeRangeLegendData?: any[];
-  themeColor?: string,
-  themeVariant?: string
+  themeColor?: string;
+  themeVariant?: string;
 }
 
 // Returns the min and max domain for comparative / primary measures and qualitative range data

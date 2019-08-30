@@ -2,23 +2,23 @@ import * as React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
 
 interface DropdownState {
-  isOpen: boolean; 
+  isOpen: boolean;
 }
 
 export class DropdownDemo extends React.Component<{}, DropdownState> {
-  onToggle: (isOpen: boolean) => void; 
-  onSelect: (event:  React.SyntheticEvent<HTMLDivElement>) => void; 
+  onToggle: (isOpen: boolean) => void;
+  onSelect: (event: React.SyntheticEvent<HTMLDivElement>) => void;
   constructor(props: any) {
     super(props);
     this.state = {
       isOpen: false
     };
-    this.onToggle = isOpen => {
+    this.onToggle = (isOpen) => {
       this.setState({
         isOpen
       });
     };
-    this.onSelect = event => {
+    this.onSelect = (event) => {
       this.setState({
         isOpen: !this.state.isOpen
       });

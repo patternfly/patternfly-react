@@ -11,7 +11,7 @@ class App extends React.Component {
 
   private onNavSelect = (selectedItem: { itemId: number | string }) => {
     this.setState({ activeItem: selectedItem.itemId });
-  };
+  }
 
   private getNav = () => {
     const { activeItem } = this.state;
@@ -28,7 +28,7 @@ class App extends React.Component {
         </NavList>
       </Nav>
     );
-  };
+  }
 
   private getPages = () => {
     return (
@@ -44,12 +44,12 @@ class App extends React.Component {
         })}
       </React.Fragment>
     );
-  };
+  }
 
   private pageId = 'ts-demo-app-page-id';
   private getSkipToContentLink = () => (
     <SkipToContent href={`#${this.pageId}`}>Skip to Content</SkipToContent>
-  );
+  )
 
   render() {
     return (

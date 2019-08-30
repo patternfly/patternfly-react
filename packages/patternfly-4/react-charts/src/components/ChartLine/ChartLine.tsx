@@ -22,7 +22,7 @@ import { getTheme } from '../ChartUtils';
 export enum ChartLineSortOrder {
   ascending = 'ascending',
   descending = 'descending'
-};
+}
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -140,7 +140,7 @@ export interface ChartLineProps extends VictoryLineProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", number | string>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', number | string>[];
   /**
    * ChartLine uses the standard externalEventMutations prop.
    */
@@ -251,7 +251,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number], y?: [number, number] }
+  range?: [number, number] | { x?: [number, number], y?: [number, number] };
   /**
    * The samples prop specifies how many individual points to plot when plotting
    * y as a function of x. Samples is ignored if x props are provided instead.
@@ -371,7 +371,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
    */
   y0?: DataGetterPropType;
-};
+}
 
 export const ChartLine: React.FunctionComponent<ChartLineProps> = ({
   themeColor,

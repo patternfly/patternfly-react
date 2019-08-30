@@ -7,31 +7,31 @@ import { css } from '@patternfly/react-styles';
 
 export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> {
   /** HTML ID of dropdown toggle */
-  id?: string; 
+  id?: string;
   /** Anything which can be rendered as dropdown toggle button */
-  children?: React.ReactNode; 
+  children?: React.ReactNode;
   /** Classes applied to root element of dropdown toggle button */
-  className?: string; 
+  className?: string;
   /** Flag to indicate if menu is opened */
-  isOpen?: boolean; 
+  isOpen?: boolean;
   /** Callback called when toggle is clicked */
-  onToggle?: (isOpen: boolean) => void; 
+  onToggle?: (isOpen: boolean) => void;
   /** Element which wraps toggle */
-  parentRef?: HTMLElement; 
+  parentRef?: HTMLElement;
   /** Forces focus state */
-  isFocused?: boolean; 
+  isFocused?: boolean;
   /** Forces hover state */
-  isHovered?: boolean; 
+  isHovered?: boolean;
   /** Forces active state */
-  isActive?: boolean; 
+  isActive?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
   /** Whether or not the <div> has a disabled state */
-  isDisabled?: boolean; 
+  isDisabled?: boolean;
   /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
-  iconComponent?: React.ElementType | null; 
+  iconComponent?: React.ElementType | null;
   /** Elements to display before the toggle button. When included, renders the toggle as a split button. */
-  splitButtonItems?: React.ReactNode[]; 
+  splitButtonItems?: React.ReactNode[];
   /** Accessible label for the dropdown toggle button */
   'aria-label'?: string;
   /** Accessibility property to indicate correct has popup */
@@ -74,7 +74,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           isPlain={isPlain}
           onToggle={onToggle}
           ariaHasPopup={ariaHasPopup}
-          {...splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' }}>
+          {...splitButtonItems && { "isSplitButton": true, 'aria-label': props['aria-label'] || 'Select' }}>
           {children && <span className={IconComponent && css(toggleTextClass)}>{children}</span>}
           {IconComponent && <IconComponent className={css(children && toggleIconClass)} />}
         </Toggle>

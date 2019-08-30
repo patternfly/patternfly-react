@@ -25,6 +25,6 @@ export class SparklineDemo extends React.Component {
           <ChartLabel text="CPU utilization"/>
         </div>
       </div>
-    )
+    );
   }
 }

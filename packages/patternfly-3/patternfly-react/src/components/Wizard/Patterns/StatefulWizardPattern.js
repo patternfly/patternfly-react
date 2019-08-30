@@ -33,7 +33,7 @@ class StatefulWizardPattern extends React.Component {
       return;
     }
     this.setState({ activeStepIndex: newStepIndex });
-  };
+  }
 
   render() {
     const { shouldDisableNextStep, shouldDisablePreviousStep, shouldDisableCancelButton, ...otherProps } = this.props;

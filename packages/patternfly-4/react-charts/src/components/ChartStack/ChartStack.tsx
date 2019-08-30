@@ -136,7 +136,7 @@ export interface ChartStackProps extends VictoryStackProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback>[];
   /**
    * ChartStack uses the standard externalEventMutations prop.
    */
@@ -243,7 +243,7 @@ export interface ChartStackProps extends VictoryStackProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number], y?: [number, number] }
+  range?: [number, number] | { x?: [number, number], y?: [number, number] };
   /**
    * The scale prop determines which scales your chart should use. This prop can be
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),

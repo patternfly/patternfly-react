@@ -20,7 +20,7 @@ class PickTimeClock extends React.Component {
       time.setMinutes(time.getMinutes() + amount);
     }
     setSelected(time);
-  };
+  }
   toggleAMPM = () => {
     const { time, setSelected } = this.props;
     if (this.state.ampm === AM) {
@@ -31,7 +31,7 @@ class PickTimeClock extends React.Component {
       this.setState({ ampm: AM });
     }
     setSelected(time);
-  };
+  }
   render() {
     const { time, toggleTimeTable } = this.props;
     const minutes = time.getMinutes();

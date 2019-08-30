@@ -2,8 +2,8 @@ import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
 interface CheckboxState {
-  check1: boolean,
-  check2: boolean
+  check1: boolean;
+  check2: boolean;
 }
 
 export class CheckboxDemo extends React.Component<{}, CheckboxState> {
@@ -18,17 +18,16 @@ export class CheckboxDemo extends React.Component<{}, CheckboxState> {
       const target = event.target;
       const value = target.type === 'checkbox' ? target.checked : target.value;
       const name = target.name;
-      if (name === 'check1'){
+      if (name === 'check1') {
         this.setState({['check1']: value });
-      }
-      else if (name === 'check2'){
+      } else if (name === 'check2') {
         this.setState({['check2']: value });
       }
     };
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {

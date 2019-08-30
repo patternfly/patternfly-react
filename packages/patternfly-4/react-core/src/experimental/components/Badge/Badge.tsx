@@ -8,10 +8,10 @@ export interface BadgeProps extends StandardBadgeProps {
   testThing?: boolean;
 }
 
-export const Badge: React.FunctionComponent<BadgeProps> = ({ 
-  isRead = false, 
-  className = '', 
-  children = '', 
+export const Badge: React.FunctionComponent<BadgeProps> = ({
+  isRead = false,
+  className = '',
+  children = '',
   ...props }: BadgeProps) => (
   <span {...props} className={css(styles.badge, (isRead ? styles.modifiers.read : styles.modifiers.unread) as any, className)}>
     Im experimental!

@@ -43,4 +43,4 @@ export const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
       {children}
     </li>
   );
-}
+};

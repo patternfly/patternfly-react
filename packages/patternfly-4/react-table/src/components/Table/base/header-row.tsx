@@ -19,9 +19,9 @@ export interface HeaderRowProps {
 
 export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
   rowData,
-  rowIndex, 
+  rowIndex,
   renderers,
-  onRow = () => Object 
+  onRow = () => Object
 }) => {
   return React.createElement(
     renderers.row as createElementType,

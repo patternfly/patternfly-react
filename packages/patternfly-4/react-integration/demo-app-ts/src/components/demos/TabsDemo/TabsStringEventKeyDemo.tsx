@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export class TabsStringEventKeyDemo extends Component {
   state = {
     activeTabKey: 'one'
-  }
+  };
 
   private contentRefOne: any;
   private contentRefTwo: any;
@@ -23,7 +23,7 @@ export class TabsStringEventKeyDemo extends Component {
     this.setState({
       activeTabKey2: tabIndex
     });
-  };
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);

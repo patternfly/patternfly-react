@@ -26,82 +26,82 @@ import clsx from 'clsx';
  * This component renders a virtualized list of elements with either fixed or dynamic heights.
  */
 
-type Props = {
-  'aria-label'?: string,
+interface Props {
+  'aria-label'?: string;
 
   /**
    * Removes fixed height from the scrollingContainer so that the total height
    * of rows can stretch the window. Intended for use with WindowScroller
    */
-  autoHeight: boolean,
+  autoHeight: boolean;
 
   /** Optional CSS class name */
-  className?: string,
+  className?: string;
 
   /**
    * Used to estimate the total height of a List before all of its rows have actually been measured.
    * The estimated total height is adjusted as rows are rendered.
    */
-  estimatedRowSize: number,
+  estimatedRowSize: number;
 
   /** Height constraint for list (determines how many actual rows are rendered) */
-  height: number,
+  height: number;
 
   /** Optional renderer to be used in place of rows when rowCount is 0 */
-  noRowsRenderer: NoContentRenderer,
+  noRowsRenderer: NoContentRenderer;
 
   /** Callback invoked with information about the slice of rows that were just rendered.  */
 
-  onRowsRendered: (params: any) => void,
+  onRowsRendered: (params: any) => void;
 
   /**
    * Callback invoked whenever the scroll offset changes within the inner scrollable region.
    * This callback can be used to sync scrolling between lists, tables, or grids.
    */
-  onScroll: (params: Scroll) => void,
+  onScroll: (params: Scroll) => void;
 
   /** See VirtualGrid#overscanIndicesGetter */
-  overscanIndicesGetter: OverscanIndicesGetter,
+  overscanIndicesGetter: OverscanIndicesGetter;
 
   /**
    * Number of rows to render above/below the visible bounds of the list.
    * These rows can help for smoother scrolling on touch devices.
    */
-  overscanRowCount: number,
+  overscanRowCount: number;
 
   /** Either a fixed row height (number) or a function that returns the height of a row given its index.  */
-  rowHeight: CellSize,
+  rowHeight: CellSize;
 
   /** Responsible for rendering a row given an index; ({ index: number }): node */
-  rowRenderer: any,
+  rowRenderer: any;
 
   /** Number of rows in list. */
-  rowCount: number,
+  rowCount: number;
 
   /** See VirtualGrid#scrollToAlignment */
-  scrollToAlignment: Alignment,
+  scrollToAlignment: Alignment;
 
   /** Row index to ensure visible (by forcefully scrolling if necessary) */
-  scrollToIndex: number,
+  scrollToIndex: number;
 
   /** Vertical offset. */
-  scrollTop?: number,
+  scrollTop?: number;
 
   /** Optional inline style */
-  style: Object,
+  style: Object;
 
   /** Tab index for focus */
-  tabIndex?: number,
+  tabIndex?: number;
 
   /** Width of list */
-  width: number,
+  width: number;
 
-  columns?: any[],
+  columns?: any[];
 
-  columnCount?: number,
+  columnCount?: number;
 
-  rows: any[]
-};
+  rows: any[];
+}
 
 export default class VirtualTableBody extends React.PureComponent<Props> {
   static defaultProps = {
@@ -258,17 +258,17 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
       key,
       parent
     });
-  };
+  }
 
   _setRef = (ref: any) => {
     this.VirtualGrid = ref;
-  };
+  }
 
   _onScroll = ({ clientHeight, scrollHeight, scrollTop }: VirtualGridScroll) => {
     const { onScroll } = this.props;
 
     onScroll({ clientHeight, scrollHeight, scrollTop });
-  };
+  }
 
   _onSectionRendered = ({
     rowOverscanStartIndex,
@@ -284,5 +284,5 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
       startIndex: rowStartIndex,
       stopIndex: rowStopIndex
     });
-  };
+  }
 }

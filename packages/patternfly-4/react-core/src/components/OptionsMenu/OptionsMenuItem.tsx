@@ -5,7 +5,7 @@ import { DropdownItem } from '../Dropdown';
 import { CheckIcon } from '@patternfly/react-icons';
 import { Omit } from '../../helpers/typeUtils';
 
-export interface OptionsMenuItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onSelect' | 'onClick' | 'onKeyDown' | 'type'>{
+export interface OptionsMenuItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onSelect' | 'onClick' | 'onKeyDown' | 'type'> {
   /** Anything which can be rendered as an Options menu item */
   children?: React.ReactNode;
   /** Classes applied to root element of an Options menu item */
@@ -19,7 +19,6 @@ export interface OptionsMenuItemProps extends Omit<React.HTMLProps<HTMLAnchorEle
   /** Unique id of this Options menu item */
   id?: string;
 }
-
 
 export const OptionsMenuItem: React.FunctionComponent<OptionsMenuItemProps> = ({
   children = null as React.ReactNode,
@@ -41,4 +40,4 @@ export const OptionsMenuItem: React.FunctionComponent<OptionsMenuItemProps> = ({
       {children}
       <i className={css(styles.optionsMenuMenuItemIcon)} aria-hidden hidden={!isSelected}><CheckIcon /></i>
     </DropdownItem>
-)};
+);};

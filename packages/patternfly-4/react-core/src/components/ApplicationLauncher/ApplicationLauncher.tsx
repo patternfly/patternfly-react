@@ -33,23 +33,23 @@ export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement
     /** Flag to indicate if application launcher has groups */
     isGrouped?: boolean;
     /** Toggle Icon, optional to override the icon used for the toggle */
-    toggleIcon?: React.ReactNode
+    toggleIcon?: React.ReactNode;
 }
 
 export class ApplicationLauncher extends React.Component<ApplicationLauncherProps> {
   static defaultProps = {
-    className: '',
-    isDisabled: false,
-    direction: DropdownDirection.down,
-    dropdownItems: [] as React.ReactNode[],
-    items: [] as React.ReactNode[],
-    isOpen: false,
-    position: DropdownPosition.left,
-    onSelect: (_event: any): any => undefined,
-    onToggle: (_value: boolean): any => undefined,
+    "className": '',
+    "isDisabled": false,
+    "direction": DropdownDirection.down,
+    "dropdownItems": [] as React.ReactNode[],
+    "items": [] as React.ReactNode[],
+    "isOpen": false,
+    "position": DropdownPosition.left,
+    "onSelect": (_event: any): any => undefined,
+    "onToggle": (_value: boolean): any => undefined,
     'aria-label': 'Application launcher',
-    isGrouped: false,
-    toggleIcon: <ThIcon />
+    "isGrouped": false,
+    "toggleIcon": <ThIcon />
   };
   render() {
     const {

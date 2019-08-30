@@ -19,7 +19,7 @@ export class DrawerDemo extends React.Component<DrawerProps, DrawerDemoState> {
     this.setState({
       isExpanded
     });
-  };
+  }
 
   render() {
     const { isExpanded } = this.state;

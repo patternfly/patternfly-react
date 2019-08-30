@@ -30,13 +30,13 @@ const images = {
   [BackgroundImageSrc.filter]: ''
 };
 
-export type LoginPageDemoState = {
-  showHelperText: boolean,
-  usernameValue: string,
-  isValidUsername: boolean,
-  passwordValue: string,
-  isValidPassword: boolean,
-  isRememberMeChecked: boolean
+export interface LoginPageDemoState {
+  showHelperText: boolean;
+  usernameValue: string;
+  isValidUsername: boolean;
+  passwordValue: string;
+  isValidPassword: boolean;
+  isRememberMeChecked: boolean;
 }
 
 export class LoginPageDemo extends React.Component<React.HTMLProps<HTMLDivElement>, LoginPageDemoState> {
@@ -51,22 +51,22 @@ export class LoginPageDemo extends React.Component<React.HTMLProps<HTMLDivElemen
 
   handleUsernameChange = (value: string) => {
     this.setState({ usernameValue: value });
-  };
+  }
 
   handlePasswordChange = (passwordValue: string) => {
     this.setState({ passwordValue });
-  };
+  }
 
   onRememberMeClick = () => {
     this.setState({ isRememberMeChecked: !this.state.isRememberMeChecked });
-  };
+  }
 
   onLoginButtonClick = (event: React.MouseEvent<{}>) => {
     event.preventDefault();
     this.setState({ isValidUsername: !!this.state.usernameValue });
     this.setState({ isValidPassword: !!this.state.passwordValue });
     this.setState({ showHelperText: !this.state.usernameValue || !this.state.passwordValue });
-  };
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -156,7 +156,7 @@ export class LoginPageDemo extends React.Component<React.HTMLProps<HTMLDivElemen
 
     return (
       <LoginPage
-        footerListVariants='inline'
+        footerListVariants="inline"
         brandImgSrc={brandImg}
         brandImgAlt="PatternFly logo"
         backgroundImgSrc={images}

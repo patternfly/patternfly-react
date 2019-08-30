@@ -21,7 +21,7 @@ export const ProviderContext = React.createContext({
 export class Provider extends React.Component<ProviderProps, {}> {
   static defaultProps = {
     renderers: TableDefaults.renderers
-  }
+  };
   render() {
     const {
       columns,
@@ -50,9 +50,9 @@ export class Provider extends React.Component<ProviderProps, {}> {
         header: { ...TableDefaults.renderers.header, ...finalRenderers.header },
         body: { ...TableDefaults.renderers.body, ...finalRenderers.body }
       }
-    }}> 
+    }}>
       {provider}
       </ProviderContext.Provider>
-      )
+      );
   }
-};
+}

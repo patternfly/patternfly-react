@@ -6,7 +6,7 @@ import { Title, TitleLevel } from '../Title';
 
 export interface ModalBoxHeaderProps {
   /** Content rendered inside the Header */
-  children?:React.ReactNode;
+  children?: React.ReactNode;
   /** Additional classes added to the button */
   className?: string;
   /** Flag to hide the title */

@@ -2,7 +2,7 @@
  * Helper method that determines when to recalculate row or column metadata.
  */
 
-type Params<T> = {
+interface Params<T> {
   // Number of rows or columns in the current axis
   cellCount: number,
 
@@ -29,7 +29,7 @@ type Params<T> = {
 
   // Callback to invoke if the scroll position should be recalculated
   updateScrollOffsetForScrollToIndex: () => void
-};
+}
 
 export default function calculateSizeAndPositionDataAndUpdateScrollOffset({
   cellCount,

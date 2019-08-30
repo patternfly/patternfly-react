@@ -2,15 +2,15 @@ import React from 'react';
 import {
   Pagination,
   PaginationVariant,
-  Stack, 
-  StackItem, 
+  Stack,
+  StackItem,
   Title
 } from '@patternfly/react-core';
 
-type OptionsMenuDemoState = {
-  topPage: number,
-  bottomPage: number,
-  perPage: number,
+interface OptionsMenuDemoState {
+  topPage: number;
+  bottomPage: number;
+  perPage: number;
 }
 
 export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivElement>, OptionsMenuDemoState> {
@@ -24,19 +24,19 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
     this.setState({
       topPage: pageNumber
     });
-  };
+  }
 
   onSetBottomPage = (_event, pageNumber) => {
     this.setState({
       bottomPage: pageNumber
     });
-  };
+  }
 
   onPerPageSelect = (_event, perPage) => {
     this.setState({
       perPage
     });
-  };
+  }
 
   renderPagination() {
     return (
@@ -83,7 +83,6 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
       </StackItem>
     );
   }
-
 
   render() {
     return <Stack gutter="md">

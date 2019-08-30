@@ -8,35 +8,35 @@ import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 export interface SwitchProps extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
   /** id for the label. */
-  id?: string,
+  id?: string;
   /** Additional classes added to the Switch */
-  className?: string,
+  className?: string;
   /** Text value for the label when on */
-  label?: string,
+  label?: string;
   /** Text value for the label when off */
-  labelOff?: string,
+  labelOff?: string;
   /** Flag to show if the Switch is checked. */
-  isChecked?: boolean,
+  isChecked?: boolean;
   /** Flag to show if the Switch is disabled. */
-  isDisabled?: boolean,
+  isDisabled?: boolean;
   /** A callback for when the Switch selection changes. (isChecked, event) => {} */
   onChange?: (checked: boolean, event: React.FormEvent<HTMLInputElement>) => void;
   /** Adds accessible text to the Switch, and should describe the isChecked="true" state. When label is defined, aria-label should be set to the text string that is visible when isChecked is true. */
-  'aria-label'?: string
-};
+  'aria-label'?: string;
+}
 
 class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
   id = '';
 
   static defaultProps = {
-    id: '',
-    className: '',
-    label: '',
-    labelOff: '',
-    isChecked: true,
-    isDisabled: false,
+    "id": '',
+    "className": '',
+    "label": '',
+    "labelOff": '',
+    "isChecked": true,
+    "isDisabled": false,
     'aria-label': '',
-    onChange: () => undefined as any
+    "onChange": () => undefined as any
   };
 
   constructor(props: SwitchProps & InjectedOuiaProps) {
@@ -45,7 +45,7 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
       // tslint:disable-next-line:no-console
       console.error('Switch: Switch requires either an id or aria-label to be specified');
     }
-    this.id =props.id || getUniqueId();
+    this.id = props.id || getUniqueId();
   }
 
   render() {
@@ -65,10 +65,10 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
           id={this.id}
           className={css(styles.switchInput)}
           type="checkbox"
-          onChange={event => onChange(event.currentTarget.checked, event)}
+          onChange={(event) => onChange(event.currentTarget.checked, event)}
           checked={isChecked}
           disabled={isDisabled}
-          aria-labelledby={isAriaLabelledBy ? `${this.id}-on`: null}
+          aria-labelledby={isAriaLabelledBy ? `${this.id}-on` : null}
         />
         {label !== '' || labelOff !== '' ? (
           <React.Fragment>

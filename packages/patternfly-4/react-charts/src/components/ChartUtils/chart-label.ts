@@ -1,5 +1,5 @@
 import {ChartCommonStyles, ChartThemeDefinition} from '../ChartTheme';
-import { TextSize } from "victory-core";
+import { TextSize } from 'victory-core';
 
 interface ChartLabelPaddingXInterface {
   dx?: number; // Horizontal shift from the x coordinate
