@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.1.141...@patternfly/react-virtualized-extension@1.2.0) (2019-08-30)
+
+
+### Features
+
+* **virtual-table:** debounce resize event ([#2754](https://github.com/patternfly/patternfly-react/issues/2754)) ([435bf96](https://github.com/patternfly/patternfly-react/commit/435bf96))
+
+
+
+
+
 ## [1.1.141](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.1.140...@patternfly/react-virtualized-extension@1.1.141) (2019-08-30)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension
