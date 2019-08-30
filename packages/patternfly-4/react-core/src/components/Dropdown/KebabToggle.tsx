@@ -15,7 +15,7 @@ export interface KebabToggleProps extends DropdownToggleProps {
   /** Label Toggle button */
   'aria-label'?: string;
   /** Callback called when toggle is clicked */
-  onToggle?: (isOpen: boolean) => void; 
+  onToggle?: (isOpen: boolean) => void;
   /** Element which wraps toggle */
   parentRef?: any;
   /** Forces focus state */

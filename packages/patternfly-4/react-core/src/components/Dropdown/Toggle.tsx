@@ -34,8 +34,8 @@ export interface ToggleProps {
   /** Style the toggle as a child of a split button */
   isSplitButton?: boolean;
   /** Flag for aria popup */
-  ariaHasPopup?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'listbox' | 'tree',
-} 
+  ariaHasPopup?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'listbox' | 'tree';
+}
 
 export class Toggle extends React.Component<ToggleProps> {
   private buttonRef = React.createRef<HTMLButtonElement>();
@@ -57,20 +57,20 @@ export class Toggle extends React.Component<ToggleProps> {
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
     document.addEventListener('keydown', this.onEscPress);
-  };
+  }
 
   componentWillUnmount = () => {
     document.removeEventListener('mousedown', this.onDocClick);
     document.removeEventListener('touchstart', this.onDocClick);
     document.removeEventListener('keydown', this.onEscPress);
-  };
+  }
 
   onDocClick = (event: MouseEvent | TouchEvent) => {
     if (this.props.isOpen && this.props.parentRef && !this.props.parentRef.current.contains(event.target)) {
       this.props.onToggle(false, event);
       this.buttonRef.current.focus();
     }
-  };
+  }
 
   onEscPress = (event: KeyboardEvent) => {
     const { parentRef } = this.props;
@@ -84,10 +84,10 @@ export class Toggle extends React.Component<ToggleProps> {
       this.props.onToggle(false, event);
       this.buttonRef.current.focus();
     }
-  };
+  }
 
   onKeyDown = (event: React.KeyboardEvent<any>) => {
-    if (event.key === 'Tab' && !this.props.isOpen) { return };
+    if (event.key === 'Tab' && !this.props.isOpen) { return; }
     event.preventDefault();
     if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && this.props.isOpen) {
       this.props.onToggle(!this.props.isOpen, event);
@@ -95,7 +95,7 @@ export class Toggle extends React.Component<ToggleProps> {
       this.props.onToggle(!this.props.isOpen, event);
       this.props.onEnter();
     }
-  };
+  }
 
   render() {
     const {
@@ -133,7 +133,7 @@ export class Toggle extends React.Component<ToggleProps> {
               className
             )}
             type={type || 'button'}
-            onClick={event => onToggle(!isOpen, event)}
+            onClick={(event) => onToggle(!isOpen, event)}
             aria-expanded={isOpen}
             aria-haspopup={ariaHasPopup}
             onKeyDown={this.onKeyDown}

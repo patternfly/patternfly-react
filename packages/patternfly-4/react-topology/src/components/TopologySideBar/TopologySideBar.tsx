@@ -25,7 +25,7 @@ export class TopologySideBar extends React.Component<TopologySideBarProps, Topol
 
   timer: any = null;
 
-  constructor(props:TopologySideBarProps) {
+  constructor(props: TopologySideBarProps) {
     super(props);
     this.state = { isIn: false };
   }
@@ -36,21 +36,21 @@ export class TopologySideBar extends React.Component<TopologySideBarProps, Topol
 
   updateForTransitions = () => {
     this.setState({ isIn: this.props.show });
-  };
+  }
 
   startTimer = () => {
     this.clearTimer();
     this.timer = setTimeout(this.updateForTransitions, 150);
-  };
+  }
 
   clearTimer = () => {
     if (this.timer) {
       clearTimeout(this.timer);
       this.timer = null;
     }
-  };
+  }
 
-  render () {
+  render() {
     const {
       className = '',
       show = false,
@@ -65,7 +65,6 @@ export class TopologySideBar extends React.Component<TopologySideBarProps, Topol
       this.clearTimer();
       this.startTimer();
     }
-
 
     return (
       <div

@@ -17,8 +17,8 @@ export interface PageSidebarProps extends React.HTMLProps<HTMLDivElement> {
   isNavOpen?: boolean;
 }
 
-export const PageSidebar: React.FunctionComponent<PageSidebarProps> = 
-  ({ className='', nav, isNavOpen=true, ...props }) => (
+export const PageSidebar: React.FunctionComponent<PageSidebarProps> =
+  ({ className= '', nav, isNavOpen= true, ...props }) => (
     <PageContextConsumer>
       {({isManagedSidebar, isNavOpen: managedIsNavOpen}: PageSidebarProps) => {
         const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;

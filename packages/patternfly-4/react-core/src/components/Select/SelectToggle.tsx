@@ -90,7 +90,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       onClose();
       this.toggle.current.focus();
     }
-  };
+  }
 
   onEscPress = (event: KeyboardEvent) => {
     const { parentRef, isExpanded, variant, onToggle, onClose } = this.props;
@@ -107,7 +107,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       onClose();
       this.toggle.current.focus();
     }
-  };
+  }
 
   onKeyDown = (event: React.KeyboardEvent) => {
     const { isExpanded, onToggle, variant, onClose, onEnter, handleTypeaheadKeys } = this.props;
@@ -146,7 +146,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       onToggle(!isExpanded);
       onEnter();
     }
-  };
+  }
 
   render() {
     const {
@@ -199,7 +199,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               isPlain && styles.modifiers.plain,
               className
             )}
-            onClick={_event => {
+            onClick={(_event) => {
               onToggle(!isExpanded);
               if (isExpanded) {
                 onClose();
@@ -226,8 +226,8 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               isTypeahead && styles.modifiers.typeahead,
               className
             )}
-            onClick={_event => {
-              if(!isDisabled) {
+            onClick={(_event) => {
+              if (!isDisabled) {
                 onToggle(true);
               }
             }}
@@ -238,7 +238,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               {...toggleProps}
               className={css(buttonStyles.button, styles.selectToggleButton)}
               aria-label={ariaLabelToggle}
-              onClick={_event => {
+              onClick={(_event) => {
                 _event.stopPropagation();
                 onToggle(!isExpanded);
                 if (isExpanded) {
@@ -255,4 +255,3 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     );
   }
 }
-

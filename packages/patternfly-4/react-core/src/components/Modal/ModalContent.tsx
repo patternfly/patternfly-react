@@ -28,7 +28,7 @@ export interface ModalContentProps {
   /** Flag to show the modal */
   isOpen?: boolean;
   /** Complex header (more than just text), supersedes title for header content */
-  header?: React.ReactNode,
+  header?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title: string;
   /** Flag to show the title (ignored for custom headers) */
@@ -38,9 +38,9 @@ export interface ModalContentProps {
   /** Default width of the content. */
   width?: number | string;
   /** Custom footer */
-  footer?: React.ReactNode,
+  footer?: React.ReactNode;
   /** Action buttons to add to the standard Modal Footer, ignored if `footer` is given */
-  actions?: any,
+  actions?: any;
   /** A callback for when the close button is clicked */
   onClose?: () => void;
   /** Id to use for Modal Box description */

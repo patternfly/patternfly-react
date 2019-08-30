@@ -22,17 +22,17 @@ export enum ChartPieLabelPosition {
   centroid = 'centroid',
   endAngle = 'endAngle',
   startAngle = 'startAngle'
-};
+}
 
 export enum ChartPieLegendPosition {
   bottom = 'bottom',
   right = 'right'
-};
+}
 
 export enum ChartPieSortOrder {
   ascending = 'ascending',
   descending = 'descending'
-};
+}
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -170,7 +170,7 @@ export interface ChartPieProps extends VictoryPieProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback | string[] | number[]>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback | string[] | number[]>[];
   /**
    * ChartPie uses the standard externalEventMutations prop.
    */
@@ -249,13 +249,13 @@ export interface ChartPieProps extends VictoryPieProps {
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  legendData?: Array<{
+  legendData?: {
     name?: string;
     symbol?: {
       fill?: string;
       type?: string;
     };
-  }>;
+  }[];
   /**
    * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
@@ -526,7 +526,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
       {getWrappedLegend()}
     </React.Fragment>
   );
-}
+};
 
 // Note: VictoryPie.role must be hoisted
 hoistNonReactStatics(ChartPie, VictoryPie);

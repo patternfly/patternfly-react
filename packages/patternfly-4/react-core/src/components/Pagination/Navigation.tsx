@@ -102,7 +102,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     }
    }
 
-  render () {
+  render() {
     const {
       page,
       isDisabled,
@@ -132,7 +132,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
           isDisabled={isDisabled || page === firstPage}
           aria-label={toFirstPage}
           data-action="first"
-          onClick={event => {
+          onClick={(event) => {
             onFirstClick(event, 1);
             onSetPage(event, 1);
             this.setState({ userInputPage: 1 });
@@ -144,7 +144,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
           variant={ButtonVariant.plain}
           isDisabled={isDisabled || page === firstPage}
           data-action="previous"
-          onClick={event => {
+          onClick={(event) => {
             const newPage = page as number - 1 >= 1 ? page as number - 1 : 1;
             onPreviousClick(event, newPage);
             onSetPage(event, newPage);
@@ -163,8 +163,8 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
             min={lastPage <= 0 && firstPage <= 0 ? 0 : 1}
             max={lastPage}
             value={userInputPage}
-            onKeyDown={event => this.onKeyDown(event, page, lastPage, onPageInput, onSetPage)}
-            onChange={event => this.onChange(event, lastPage)}
+            onKeyDown={(event) => this.onKeyDown(event, page, lastPage, onPageInput, onSetPage)}
+            onChange={(event) => this.onChange(event, lastPage)}
           />
           <span aria-hidden="true">
             of {pluralize(lastPage, pagesTitle)}
@@ -175,7 +175,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
           isDisabled={isDisabled || page === lastPage}
           aria-label={toNextPage}
           data-action="next"
-          onClick={event => {
+          onClick={(event) => {
             const newPage = page as number + 1 <= lastPage ? page as number + 1 : lastPage;
             onNextClick(event, newPage);
             onSetPage(event, newPage);
@@ -189,7 +189,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
           isDisabled={isDisabled || page === lastPage}
           aria-label={toLastPage}
           data-action="last"
-          onClick={event => {
+          onClick={(event) => {
             onLastClick(event, lastPage);
             onSetPage(event, lastPage);
             this.setState({ userInputPage: lastPage });

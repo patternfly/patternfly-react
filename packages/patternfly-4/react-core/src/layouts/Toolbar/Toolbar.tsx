@@ -4,15 +4,15 @@ import '@patternfly/react-styles/css/layouts/Toolbar/toolbar.css';
 
 export interface ToolbarProps extends React.HTMLProps<HTMLDivElement> {
   /** Anything that can be rendered as toolbar content */
-  children?: React.ReactNode; 
+  children?: React.ReactNode;
   /** Classes applied to toolbar parent */
-  className?: string; 
+  className?: string;
 }
 
-export const Toolbar: React.FunctionComponent<ToolbarProps> = ({ 
+export const Toolbar: React.FunctionComponent<ToolbarProps> = ({
   children = null,
   className = null,
-  ...props 
+  ...props
 }: ToolbarProps) => (
   <div {...props} className={css('pf-l-toolbar', className)}>
     {children}

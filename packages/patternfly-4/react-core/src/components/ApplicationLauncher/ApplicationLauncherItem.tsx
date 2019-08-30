@@ -28,7 +28,7 @@ export const ApplicationLauncherItem: React.FunctionComponent<ApplicationLaunche
   tooltipProps = null,
   ...props
 }: ApplicationLauncherItemProps & DropdownItemProps) => (
-  <DropdownItem 
+  <DropdownItem
     component={href ? 'a' : 'div'}
     href={href || null}
     className={css(isExternal && styles.modifiers.external, className)}

@@ -11,4 +11,4 @@ export const getPaddingForSide = (side: 'bottom' | 'left' | 'right' | 'top', pad
   }
 
   return getPaddingForSide(side, fallback, 0);
-}
+};

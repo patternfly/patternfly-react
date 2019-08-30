@@ -40,7 +40,7 @@ export class LineChartSimpleDemo extends React.Component {
           </Chart>
         </div>
       </div>
-    )
+    );
   }
 
 }

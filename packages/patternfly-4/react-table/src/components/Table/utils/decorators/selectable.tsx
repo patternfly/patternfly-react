@@ -24,7 +24,6 @@ export const selectable = (label: IFormatterValueType, { rowIndex, columnIndex, 
   }
   const rowId = rowIndex !== undefined ? rowIndex : -1;
 
-  
   function selectClick(event: React.ChangeEvent<HTMLInputElement>) {
     const selected = rowIndex === undefined ? event.target.checked : rowData && !rowData.selected;
     // todo: change event type to React.FormEvent<HTMLInputElement> in the future, breaking change a.t.m.
@@ -34,11 +33,11 @@ export const selectable = (label: IFormatterValueType, { rowIndex, columnIndex, 
   const customProps = {
     ...(rowId !== -1
       ? {
-          checked: rowData && !!rowData.selected,
+          "checked": rowData && !!rowData.selected,
           'aria-labelledby': rowLabeledBy + rowIndex
         }
       : {
-          checked: allRowsSelected,
+          "checked": allRowsSelected,
           'aria-label': 'Select all rows'
         })
   };

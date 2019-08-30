@@ -9,10 +9,10 @@ export interface ButtonProps extends StandardButtonProps {
 }
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
-  children = null, 
-  className = '', 
-  component = 'button', 
-  isActive = false, 
+  children = null,
+  className = '',
+  component = 'button',
+  isActive = false,
   isBlock = false,
   isDisabled = false,
   isFocus = false,
@@ -20,7 +20,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   isInline = false,
   type = 'button',
   variant = 'primary',
-  'aria-label': ariaLabel = null, 
+  'aria-label': ariaLabel = null,
   icon = null,
   render = true,
   ...props
@@ -54,4 +54,4 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
       {children}
     </Component>
   );
-}
+};

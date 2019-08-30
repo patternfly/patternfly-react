@@ -12,7 +12,7 @@ export const LEGEND = 'legend';
 
 /* Data needed for each control button */
 export interface TopologyControlButton {
-  id: any,
+  id: any;
   icon: React.ReactNode;
   tooltip?: React.ReactNode;
   ariaLabel?: string;
@@ -154,7 +154,7 @@ export const createTopologyControlButtons = ({
   legendHidden = defaultControlButtonsOptions.legendHidden,
 
   customButtons = defaultControlButtonsOptions.customButtons,
-} : TopologyControlButtonsOptions  = defaultControlButtonsOptions) : TopologyControlButton[] => {
+}: TopologyControlButtonsOptions  = defaultControlButtonsOptions): TopologyControlButton[] => {
   const controlButtons: TopologyControlButton[] = [];
 
   if (zoomIn) {
@@ -168,7 +168,6 @@ export const createTopologyControlButtons = ({
       hidden: zoomInHidden
     });
   }
-
 
   if (zoomOut) {
     controlButtons.push({

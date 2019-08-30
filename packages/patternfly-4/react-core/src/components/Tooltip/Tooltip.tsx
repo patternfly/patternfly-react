@@ -16,7 +16,7 @@ export enum TooltipPosition {
   bottom = 'bottom',
   left = 'left',
   right = 'right'
-};
+}
 
 export interface TooltipProps {
   /** The element to append the tooltip to, defaults to body */
@@ -67,7 +67,7 @@ export interface TooltipProps {
   zIndex?: number;
   /** additional Props to pass through to tippy.js */
   tippyProps?: TippyProps;
-};
+}
 
 export class Tooltip extends React.Component<TooltipProps> {
   private tip: TippyInstance;
@@ -91,16 +91,16 @@ export class Tooltip extends React.Component<TooltipProps> {
     tippyProps: {}
   };
 
-  storeTippyInstance = (tip:TippyInstance) => {
+  storeTippyInstance = (tip: TippyInstance) => {
     tip.popperChildren.tooltip.classList.add(styles.tooltip);
     this.tip = tip;
-  };
+  }
 
   handleEscKeyClick = (event: KeyboardEvent) => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.tip.state.isVisible) {
       this.tip.hide();
     }
-  };
+  }
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleEscKeyClick, false);

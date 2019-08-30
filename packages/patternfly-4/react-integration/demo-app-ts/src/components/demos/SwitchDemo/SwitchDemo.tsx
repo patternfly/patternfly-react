@@ -2,17 +2,16 @@ import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
 interface SwitchState {
-  isChecked: boolean
-};
+  isChecked: boolean;
+}
 export class SwitchDemo extends React.Component<{}, SwitchState> {
   state = {
     isChecked: true
   };
 
-  handleChange = isChecked => {
+  handleChange = (isChecked) => {
     this.setState({ isChecked });
-  };
-
+  }
 
   render() {
     const { isChecked } = this.state;
@@ -24,7 +23,7 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
           onChange={this.handleChange}
           aria-label="Switch"
           isChecked={isChecked}
-        /> 
+        />
         <br />
         <Switch id="disabled-switch-off" aria-label="disabled switch" label="Message when on" isChecked={false} isDisabled />
       </React.Fragment>

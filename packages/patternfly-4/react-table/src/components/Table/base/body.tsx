@@ -23,10 +23,10 @@ export interface BodyProps {
 
 class BaseBody extends React.Component<BodyProps, {}> {
   static defaultProps = {
-    onRow: (...args:any) => Object 
+    onRow: (...args: any) => Object
   };
 
-  shouldComponentUpdate(nextProps: BodyProps){
+  shouldComponentUpdate(nextProps: BodyProps) {
     // Skip checking props against `onRow` since that can be bound at render().
     // That's not particularly good practice but you never know how the users
     // prefer to define the handler.

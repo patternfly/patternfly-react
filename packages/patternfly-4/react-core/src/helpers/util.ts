@@ -177,4 +177,3 @@ export function pluralize(i: number, singular: string, plural?: string) {
   }
   return `${i || 0} ${i === 1 ? singular : plural}`;
 }
-

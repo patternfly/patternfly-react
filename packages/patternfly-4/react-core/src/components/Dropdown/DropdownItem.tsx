@@ -4,24 +4,24 @@ import { DropdownArrowContext } from './dropdownConstants';
 
 export interface DropdownItemProps extends InternalDropdownItemProps {
   /** Anything which can be rendered as dropdown item */
-  children?: React.ReactNode; 
+  children?: React.ReactNode;
   /** Classes applied to root element of dropdown item */
-  className?: string; 
+  className?: string;
   /** Indicates which component will be used as dropdown item */
-  component?: React.ReactNode; 
+  component?: React.ReactNode;
   /** Render dropdown item as disabled option */
-  isDisabled?: boolean; 
+  isDisabled?: boolean;
   /** Forces display of the hover state of the element */
-  isHovered?: boolean; 
+  isHovered?: boolean;
   /** Default hyperlink location */
-  href?: string; 
+  href?: string;
   /** Tooltip to display when hovered over the item */
-  tooltip?: React.ReactNode; 
+  tooltip?: React.ReactNode;
   /** Additional tooltip props forwarded to the Tooltip component */
   tooltipProps?: any;
 }
 
-export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({ 
+export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   children = null,
   className = '',
   component = 'a',
@@ -35,7 +35,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   ...props
 }: DropdownItemProps) => (
   <DropdownArrowContext.Consumer>
-    {context => 
+    {(context) =>
       <InternalDropdownItem
         context={context}
         role="menuitem"

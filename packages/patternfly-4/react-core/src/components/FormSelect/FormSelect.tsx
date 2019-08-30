@@ -5,15 +5,15 @@ import { Omit } from '../../helpers/typeUtils';
 
 export interface FormSelectProps extends Omit<React.HTMLProps<HTMLSelectElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'> {
     /** content rendered inside the FormSelect */
-    children: React.ReactNode; 
+    children: React.ReactNode;
     /** additional classes added to the FormSelect control */
-    className?: string; 
+    className?: string;
     /** value of selected option */
-    value?: any; 
+    value?: any;
     /** Flag indicating selection is valid */
-    isValid?: boolean; 
+    isValid?: boolean;
     /** Flag indicating the FormSelect is disabled */
-    isDisabled?: boolean; 
+    isDisabled?: boolean;
     /** Sets the FormSelectrequired. */
     isRequired?: boolean;
     /** Optional callback for updating when selection loses focus */
@@ -48,7 +48,7 @@ export class FormSelect extends React.Component<FormSelectProps> {
 
   handleChange = (event: any) => {
     this.props.onChange(event.currentTarget.value, event);
-  };
+  }
 
   render() {
     const { children, className, value, isValid, isDisabled, isRequired, ...props } = this.props;

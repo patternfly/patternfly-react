@@ -17,7 +17,7 @@ export interface OptionsMenuToggleWithTextProps extends React.HTMLProps<HTMLDivE
   /** Callback for when this Options menu is toggled */
   onToggle?: (event: boolean) => void;
   /** Inner function to indicate open on Enter */
-  onEnter?: (event: React.MouseEvent<HTMLButtonElement>) => void; 
+  onEnter?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   /** Flag to indicate if menu is open */
   isOpen?: boolean;
   /** Flag to indicate if the button is plain */
@@ -80,4 +80,4 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
         toggleTemplate={toggleButtonContents}
       />
   </div>
-)};
+);};

@@ -25,6 +25,6 @@ export class ToolbarDemo extends React.Component {
           </ToolbarGroup>
         </ToolbarSection>
       </Toolbar>
-    )
+    );
   }
 }

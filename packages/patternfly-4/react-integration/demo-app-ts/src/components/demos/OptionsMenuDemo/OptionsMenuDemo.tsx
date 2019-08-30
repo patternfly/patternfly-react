@@ -12,7 +12,7 @@ import {
 } from '@patternfly/react-core';
 import { CaretDownIcon } from '@patternfly/react-icons';
 
-type OptionsMenuDemoState = {
+interface OptionsMenuDemoState {
   singleOptionIsOpen: boolean;
   modifiedIsOpen: boolean;
   disabledOptionsIsOpen: boolean;
@@ -26,28 +26,28 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
     singleOptionIsOpen: false,
     modifiedIsOpen: false,
     disabledOptionsIsOpen: false,
-    toggleTemplateText: "Options menu",
-    selectedOption: "singleOption1",
+    toggleTemplateText: 'Options menu',
+    selectedOption: 'singleOption1',
   };
 
   singleOptionOnToggle = () => {
-    this.setState({ singleOptionIsOpen: !this.state.singleOptionIsOpen })
-  };
+    this.setState({ singleOptionIsOpen: !this.state.singleOptionIsOpen });
+  }
 
   modifiedOnToggle = () => {
-    this.setState({ modifiedIsOpen: !this.state.modifiedIsOpen })
-  };
+    this.setState({ modifiedIsOpen: !this.state.modifiedIsOpen });
+  }
 
   disabledOnToggle = () => {
-    this.setState({ disabledOptionsIsOpen: !this.state.disabledOptionsIsOpen })
-  };
+    this.setState({ disabledOptionsIsOpen: !this.state.disabledOptionsIsOpen });
+  }
 
-  onSelect = event => {
+  onSelect = (event) => {
     const id = event.target.id;
     this.setState(() => {
       return { selectedOption: id };
     });
-  };
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -55,13 +55,13 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
 
   render() {
     const myOptionsMenuProps: OptionsMenuProps = {
-      id: "options-menu-single-option-example",
+      id: 'options-menu-single-option-example',
       menuItems: [
-        <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.selectedOption === "singleOption1"}
+        <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.selectedOption === 'singleOption1'}
                          id="singleOption1" key="option 1">Option 1</OptionsMenuItem>,
-        <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.selectedOption === "singleOption2"}
+        <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.selectedOption === 'singleOption2'}
                          id="singleOption2" key="option 2">Option 2</OptionsMenuItem>,
-        <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.selectedOption === "singleOption3"}
+        <OptionsMenuItem onSelect={this.onSelect} isSelected={this.state.selectedOption === 'singleOption3'}
                          id="singleOption3" key="option 3">Option 3</OptionsMenuItem>
       ],
       toggle: (
@@ -72,7 +72,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
     };
 
     const myModifiedMenuProps: OptionsMenuProps = {
-      id: "options-menu-modified-example",
+      id: 'options-menu-modified-example',
       menuItems: [
         <OptionsMenuItemGroup>
           <OptionsMenuItem onSelect={() => {}}>First Option</OptionsMenuItem>
@@ -94,7 +94,7 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
     };
 
     const myDisabledOptionsMenuProps: OptionsMenuProps = {
-      id: "options-menu-single-option-disabled-example",
+      id: 'options-menu-single-option-disabled-example',
       menuItems: [],
       toggle: (
         <OptionsMenuToggle
@@ -129,4 +129,3 @@ export class OptionsMenuDemo extends React.Component<React.HTMLProps<HTMLDivElem
 }
 
 export default OptionsMenuDemo;
-

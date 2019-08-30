@@ -3,7 +3,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 export class DonutSmallBottomAlignedLegend extends React.Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -14,7 +14,7 @@ export class DonutSmallBottomAlignedLegend extends React.Component {
             data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
             donutHeight={150}
             height={200}
-            labels={datum => `${datum.x}: ${datum.y}%`}
+            labels={(datum) => `${datum.x}: ${datum.y}%`}
             legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
             legendPosition="bottom"
             subTitle="Pets"
@@ -25,6 +25,6 @@ export class DonutSmallBottomAlignedLegend extends React.Component {
         </div>
       </div>
 
-    )
+    );
   }
 }

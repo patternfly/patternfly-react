@@ -17,4 +17,3 @@ test('extra props are spread to the root element', () => {
   const view = shallow(<CardHeader data-testid={testId} />);
   expect(view.prop('data-testid')).toBe(testId);
 });
-

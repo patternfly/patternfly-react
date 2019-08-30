@@ -3,7 +3,6 @@ import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { getUniqueId } from '../../helpers/util';
 
-
 export interface NavGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Title shown for the group */
   title: string;

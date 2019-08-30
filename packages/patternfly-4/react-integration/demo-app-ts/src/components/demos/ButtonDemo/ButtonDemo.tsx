@@ -6,10 +6,10 @@ export class ButtonDemo extends React.Component {
     component: 'button',
     href: 'https://github.com/patternfly/patternfly-next',
     target: '_blank'
-  }
+  };
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -25,11 +25,10 @@ export class ButtonDemo extends React.Component {
             Secondary Link to Core Docs
           </Button>{' '}
         </a>
-        <Button component={this.myButtonProps.component} isDisabled href={this.myButtonProps.href} target= {this.myButtonProps.target} variant="tertiary">
+        <Button component={this.myButtonProps.component} isDisabled href={this.myButtonProps.href} target={this.myButtonProps.target} variant="tertiary">
           Tertiary Link to Core Docs
         </Button>
       </React.Fragment>
-    )
+    );
   }
 }
-

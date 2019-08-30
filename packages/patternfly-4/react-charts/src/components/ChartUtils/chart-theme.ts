@@ -46,10 +46,10 @@ export const getCustomTheme = (themeColor: string, themeVariant: string, customT
   merge(getTheme(themeColor, themeVariant), customTheme);
 
 // Returns axis theme
-export const getAxisTheme = (themeColor: string, themeVariant: string) : ChartThemeDefinition => {
+export const getAxisTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {
   const theme = getCustomTheme(themeColor, themeVariant, ChartAxisTheme);
   return theme;
-}
+};
 
 // Returns bullet chart theme
 export const getBulletTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>

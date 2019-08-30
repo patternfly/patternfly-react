@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector'
+import styles from '@patternfly/react-styles/css/components/ContextSelector/context-selector';
 import { css } from '@patternfly/react-styles';
 import { SearchIcon } from '@patternfly/react-icons';
 import { ContextSelectorToggle } from './ContextSelectorToggle';
@@ -39,11 +39,11 @@ export interface ContextSelectorProps {
   /** Value in the Search field */
   searchInputValue?: string;
   /** Function callback called when user changes the Search Input */
-  onSearchInputChange?(value: string): void; 
+  onSearchInputChange?(value: string): void;
   /** Search Input placeholder */
   searchInputPlaceholder?: string;
   /** Function callback for when Search Button is clicked */
-  onSearchButtonClick?(event?: React.SyntheticEvent<HTMLButtonElement>): void; 
+  onSearchButtonClick?(event?: React.SyntheticEvent<HTMLButtonElement>): void;
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps> {
@@ -61,7 +61,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
     onSearchInputChange: () => undefined as any,
     searchInputPlaceholder: 'Search',
     onSearchButtonClick: () => undefined as any
-  }
+  };
 
   parentRef: React.RefObject<HTMLDivElement> = React.createRef();
 
@@ -69,7 +69,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
     if (event.charCode === KEY_CODES.ENTER) {
       this.props.onSearchButtonClick();
     }
-  };
+  }
 
   render() {
     const toggleId = `pf-context-selector-toggle-id-${newId}`;

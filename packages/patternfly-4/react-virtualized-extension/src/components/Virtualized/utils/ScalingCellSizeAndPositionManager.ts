@@ -5,10 +5,10 @@ import { Alignment, CellSizeGetter, VisibleCellRange } from '../types';
 import CellSizeAndPositionManager from './CellSizeAndPositionManager';
 import { getMaxElementSize } from './maxElementSize.js';
 
-type ContainerSizeAndOffset = {
+interface ContainerSizeAndOffset {
   containerSize: number,
   offset: number
-};
+}
 
 /**
  * Browsers have scroll offset limitations (eg Chrome stops scrolling at ~33.5M pixels where as Edge tops out at ~1.5M pixels).
@@ -16,12 +16,12 @@ type ContainerSizeAndOffset = {
  * This util picks a lower ceiling for max size and artificially adjusts positions within to make it transparent for users.
  */
 
-type Params = {
+interface Params {
   maxScrollSize?: number,
   cellCount: number,
   cellSizeGetter: CellSizeGetter,
   estimatedCellSize: number
-};
+}
 
 /**
  * Extends CellSizeAndPositionManager and adds scaling behavior for lists that are too large to fit within a browser's native limits.

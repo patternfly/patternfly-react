@@ -22,7 +22,7 @@ export interface AlertIconProps extends React.HTMLProps<HTMLDivElement> {
   variant: 'success' | 'danger' | 'warning' | 'info' | 'default';
   /** className */
   className?: string;
-};
+}
 
 export const AlertIcon = ({
   variant,

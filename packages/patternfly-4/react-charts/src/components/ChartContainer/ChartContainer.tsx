@@ -89,7 +89,7 @@ export interface ChartContainerProps extends VictoryContainerProps {
    * is given, the width prop from the child component passed will be used.
    */
   width?: number;
-};
+}
 
 // const ChartContainer = props => <VictoryContainer {...props} />;
 export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({

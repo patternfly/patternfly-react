@@ -16,12 +16,12 @@ export interface BodyWrapperProps {
 export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
   mappedRows,
   rows = [] as IRow[],
-  onCollapse, 
+  onCollapse,
   tbodyRef,
   headerRows,
   ...props
-} : BodyWrapperProps ) => {
-  if (mappedRows && mappedRows.some(row => row.hasOwnProperty('parent'))) {
+}: BodyWrapperProps ) => {
+  if (mappedRows && mappedRows.some((row) => row.hasOwnProperty('parent'))) {
     return (
       <React.Fragment>
         {mapOpenedRows(mappedRows, props.children).map((oneRow, key) => (

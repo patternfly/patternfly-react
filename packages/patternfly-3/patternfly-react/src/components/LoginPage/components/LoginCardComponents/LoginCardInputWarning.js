@@ -7,7 +7,7 @@ const LoginCardInputWarning = ({ children, className, ...props }) =>
   children && (
     <div {...props} className={classNames('login-pf-input-warning', className)}>
       <Icon type="pf" name="warning-triangle-o" />
-      {`   `}
+      {'   '}
       {children}
     </div>
   );

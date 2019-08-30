@@ -21,7 +21,7 @@ import {
   ChartLegendOrientation,
   ChartLegendPosition,
   ChartLegendWrapper
-} from "../ChartLegend";
+} from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getLabelTextSize, getPaddingForSide, getTheme } from '../ChartUtils';
 
@@ -195,13 +195,13 @@ export interface ChartProps extends VictoryChartProps {
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  legendData?: Array<{
+  legendData?: {
     name?: string;
     symbol?: {
       fill?: string;
       type?: string;
     };
-  }>;
+  }[];
   /**
    * The orientation prop takes a string that defines whether legend data
    * are displayed in a row or column. When orientation is "horizontal",
@@ -271,7 +271,7 @@ export interface ChartProps extends VictoryChartProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number], y?: [number, number] }
+  range?: [number, number] | { x?: [number, number], y?: [number, number] };
   /**
    * The scale prop determines which scales your chart should use. This prop can be
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),

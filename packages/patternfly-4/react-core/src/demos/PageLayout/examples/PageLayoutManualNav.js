@@ -53,49 +53,49 @@ class PageLayoutManualNav extends React.Component {
     this.setState({
       isDropdownOpen
     });
-  };
+  }
 
   onDropdownSelect = event => {
     this.setState({
       isDropdownOpen: !this.state.isDropdownOpen
     });
-  };
+  }
 
   onKebabDropdownToggle = isKebabDropdownOpen => {
     this.setState({
       isKebabDropdownOpen
     });
-  };
+  }
 
   onKebabDropdownSelect = event => {
     this.setState({
       isKebabDropdownOpen: !this.state.isKebabDropdownOpen
     });
-  };
+  }
 
   onNavSelect = result => {
     this.setState({
       activeItem: result.itemId
     });
-  };
+  }
 
   onNavToggleDesktop = () => {
     this.setState({
       isNavOpenDesktop: !this.state.isNavOpenDesktop
     });
-  };
+  }
 
   onNavToggleMobile = () => {
     this.setState({
       isNavOpenMobile: !this.state.isNavOpenMobile
     });
-  };
+  }
 
   onPageResize = ({ mobileView, windowSize }) => {
     this.setState({
       isMobileView: mobileView
     });
-  };
+  }
 
   render() {
     const {

@@ -2,8 +2,8 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { ChartBulletPrimarySegmentedMeasure } from './ChartBulletPrimarySegmentedMeasure';
 
-Object.values([true, false]).forEach(isRead => {
-  test(`ChartBulletPrimarySegmentedMeasure`, () => {
+Object.values([true, false]).forEach((isRead) => {
+  test('ChartBulletPrimarySegmentedMeasure', () => {
     const view = shallow(<ChartBulletPrimarySegmentedMeasure />);
     expect(view).toMatchSnapshot();
   });

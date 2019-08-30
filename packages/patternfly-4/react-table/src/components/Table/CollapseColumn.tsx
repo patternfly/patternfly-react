@@ -7,8 +7,8 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 export interface CollapseColumnProps {
   id?: string;
   className?: string;
-  children?: React.ReactNode,
-  onToggle?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
+  children?: React.ReactNode;
+  onToggle?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   isOpen?: boolean;
 }
 
@@ -18,7 +18,7 @@ export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
   isOpen,
   onToggle,
   ...props
-} : CollapseColumnProps ) => {
+}: CollapseColumnProps ) => {
   return (
     <React.Fragment>
       {isOpen !== undefined && (

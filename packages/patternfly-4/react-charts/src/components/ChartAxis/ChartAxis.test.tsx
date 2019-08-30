@@ -5,8 +5,8 @@ import { ChartAxis } from './ChartAxis';
 import { ChartGroup } from '../ChartGroup';
 import { ChartLine } from '../ChartLine';
 
-Object.values([true, false]).forEach(isRead => {
-  test(`ChartAxis`, () => {
+Object.values([true, false]).forEach((isRead) => {
+  test('ChartAxis', () => {
     const view = shallow(<ChartAxis />);
     expect(view).toMatchSnapshot();
   });

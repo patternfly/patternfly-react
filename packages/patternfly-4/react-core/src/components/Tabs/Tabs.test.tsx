@@ -157,4 +157,3 @@ test('should render tabs with eventKey Strings', () => {
   );
   expect(view).toMatchSnapshot();
 });
-

@@ -14,7 +14,7 @@ import {
 } from 'victory';
 import { Data } from 'victory-core';
 import { ChartContainer } from '../ChartContainer';
-import { ChartDonut, ChartDonutProps } from "../ChartDonut";
+import { ChartDonut, ChartDonutProps } from '../ChartDonut';
 import { ChartThemeDefinition, ChartDonutUtilizationStyles } from '../ChartTheme';
 import { getDonutUtilizationTheme } from '../ChartUtils';
 
@@ -22,22 +22,22 @@ export enum ChartDonutUtilizationLabelPosition {
   centroid = 'centroid',
   endAngle = 'endAngle',
   startAngle = 'startAngle'
-};
+}
 
 export enum ChartDonutUtilizationLegendOrientation {
   horizontal = 'horizontal',
   vertical = 'vertical'
-};
+}
 
 export enum ChartDonutUtilizationLegendPosition {
   bottom = 'bottom',
   right = 'right'
-};
+}
 
 export enum ChartDonutUtilizationSortOrder {
   ascending = 'ascending',
   descending = 'descending'
-};
+}
 
 export enum ChartDonutUtilizationSubTitlePosition {
   bottom = 'bottom',
@@ -251,7 +251,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback | string[] | number[]>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback | string[] | number[]>[];
   /**
    * ChartDonutUtilization uses the standard externalEventMutations prop.
    */
@@ -322,13 +322,13 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  legendData?: Array<{
+  legendData?: {
     name?: string;
     symbol?: {
       fill?: string;
       type?: string;
     };
-  }>;
+  }[];
   /**
    * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
@@ -561,7 +561,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
 
   const getData = () => {
     const datum = [{ ...data }];
-    return Data.formatData(datum, { x, y, ...rest }, ['x', 'y']).sort((a: any,b: any) => a._y - b._y);
+    return Data.formatData(datum, { x, y, ...rest }, ['x', 'y']).sort((a: any, b: any) => a._y - b._y);
   };
 
   // Returns thresholds with default color scale

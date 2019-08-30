@@ -19,7 +19,7 @@ stories.addDecorator(withKnobs);
 
 stories.add(
   'Toast Notification',
-  withInfo(`Toast Notifications pop onto the screen to notify the user of a system occurrence`)(() => {
+  withInfo('Toast Notifications pop onto the screen to notify the user of a system occurrence')(() => {
     const header = text('Header', 'Great job!');
     const message = text('Message', 'This is really working out.');
     const type = select('Type', ToastNotification.TOAST_NOTIFICATION_TYPES, 'success');
@@ -70,13 +70,13 @@ class ToastNotificationStoryWrapper extends React.Component {
         type: 'info',
         persistent: false,
         timerdelay: 8000,
-        message: `By default, a toast notification's timer expires after eight seconds.`
+        message: 'By default, a toast notification\'s timer expires after eight seconds.'
       },
       {
         key: 2,
         type: 'warning',
         persistent: false,
-        message: `Additionally, if the user hovers any toast notification each timer is reset.`
+        message: 'Additionally, if the user hovers any toast notification each timer is reset.'
       }
     ];
 
@@ -150,7 +150,7 @@ class ToastNotificationStoryWrapper extends React.Component {
 
 stories.add(
   'Toast Notification List',
-  withInfo(`This is the Toast Notification List with a custom timer delay supplied.`)(() => {
+  withInfo('This is the Toast Notification List with a custom timer delay supplied.')(() => {
     const story = <ToastNotificationStoryWrapper />;
     return inlineTemplate({
       title: 'Toast Notification List',

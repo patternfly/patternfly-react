@@ -13,7 +13,7 @@ export class LineChartGreenDemo extends React.Component {
       <div>
         <div style={{height: '250px', width: '600px'}}>
           <Chart
-            containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
+            containerComponent={<ChartVoronoiContainer labels={(datum) => `${datum.name}: ${datum.y}`} />}
             legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
             legendOrientation="vertical"
             legendPosition="right"
@@ -71,7 +71,7 @@ export class LineChartGreenDemo extends React.Component {
           </Chart>
         </div>
       </div>
-    )
+    );
   }
 
 }

@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from 'react';
 import { DataGetterPropType } from 'victory';
-import { Data } from "victory-core";
+import { Data } from 'victory-core';
 
 interface DomainInterface {
   data?: any;
@@ -19,7 +19,7 @@ interface SourcesInterface {
   }[];
 }
 
-export type ChartDomain = {x: [number, number], y: [number, number]};
+export interface ChartDomain {x: [number, number], y: [number, number]}
 
 // Returns the min and max domain for given data
 export const getDomain = ({
@@ -102,7 +102,7 @@ export const getDomains = ({
   sources
 }: SourcesInterface): ChartDomain => {
   const domains: ChartDomain[] = [];
-  sources.forEach(source => {
+  sources.forEach((source) => {
     const {data: compData = source.data} = source.component ? source.component.props : undefined;
     const domain = getDomain({
       data: compData,

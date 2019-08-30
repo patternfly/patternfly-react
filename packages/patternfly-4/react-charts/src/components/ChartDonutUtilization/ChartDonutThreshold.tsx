@@ -9,40 +9,40 @@ import {
   StringOrNumberOrCallback,
   VictoryPie,
   VictoryStyleInterface
-} from "victory";
+} from 'victory';
 import { Data } from 'victory-core';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { ChartContainer } from '../ChartContainer';
 import { ChartDonut, ChartDonutProps } from '../ChartDonut';
-import { ChartCommonStyles, ChartDonutStyles, ChartThemeDefinition } from "../ChartTheme";
+import { ChartCommonStyles, ChartDonutStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getChartOrigin, getDonutThresholdDynamicTheme, getDonutThresholdStaticTheme } from '../ChartUtils';
 
 export enum ChartDonutThresholdDonutOrientation {
   left = 'left',
   right = 'right',
   top = 'top'
-};
+}
 
 export enum ChartDonutThresholdLabelOrientation {
   horizontal = 'horizontal',
   vertical = 'vertical'
-};
+}
 
 export enum ChartDonutThresholdLabelPosition {
   centroid = 'centroid',
   endAngle = 'endAngle',
   startAngle = 'startAngle'
-};
+}
 
 export enum ChartDonutThresholdLegendPosition {
   bottom = 'bottom',
   right = 'right'
-};
+}
 
 export enum ChartDonutThresholdSortOrder {
   ascending = 'ascending',
   descending = 'descending'
-};
+}
 
 export enum ChartDonutThresholdSubTitlePosition {
   bottom = 'bottom',
@@ -237,7 +237,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback | string[] | number[]>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback | string[] | number[]>[];
   /**
    * ChartDonutThreshold uses the standard externalEventMutations prop.
    */
@@ -459,7 +459,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   // Returns computed data representing pie chart slices
   const getComputedData = () => {
     // Format and sort data. Sorting ensures thresholds are displayed in the correct order and simplifies calculations.
-    const datum = Data.formatData(data, {x, y, ...rest}, ['x', 'y']).sort((a: any,b: any) => a._y - b._y);
+    const datum = Data.formatData(data, {x, y, ...rest}, ['x', 'y']).sort((a: any, b: any) => a._y - b._y);
 
     // Data must be offset so that the sum of all data point y-values (including the final slice) == 100.
     const [prev, computedData] = datum.reduce((acc: [number, any], dataPoint: {_x: number | string, _y: number}) => {
@@ -498,7 +498,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   const getDonutDy = (dynamicTheme: ChartThemeDefinition) => {
     const dynamicHeight = donutSize - (theme.pie.height - dynamicTheme.pie.height);
     return Math.round((donutSize - dynamicHeight) / 2);
-  }
+  };
 
   // Returns the horizontal shift for the donut utilization legend
   const getLegendDx = (dynamicTheme: ChartThemeDefinition, position: string) => {
@@ -520,7 +520,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
       default:
         return getDonutDy(dynamicTheme);
     }
-  }
+  };
 
   // Returns the horizontal shift for the donut utilization subtitle
   const getSubTitleDx = (dynamicTheme: ChartThemeDefinition, position: string) => {
@@ -536,11 +536,11 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   // Returns the vertical shift for the donut utilization subtitle
   const getSubTitleDy = (dynamicTheme: ChartThemeDefinition, position: string) => {
     return getLegendDy(dynamicTheme, position);
-  }
+  };
 
   // Render dynamic utilization donut cart
   const renderChildren = () =>
-    React.Children.toArray(children).map(child => {
+    React.Children.toArray(children).map((child) => {
       if (child.props) {
         const { data: childData, ...childProps } = child.props;
         const datum = Data.formatData([childData], childProps, ['x', 'y']); // Format child data independently of this component's props

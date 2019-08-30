@@ -25,16 +25,16 @@ class Slider extends React.Component {
 
   onSlide = value => {
     this.setState({ value }, () => this.props.onSlide(value));
-  };
+  }
 
   onInputChange = event => {
     const newValue = parseInt(event.target.value || 0, 10);
     this.setState({ value: newValue }, () => this.props.onSlide(newValue));
-  };
+  }
 
   onFormatChange = format => {
     this.setState({ tooltipFormat: format });
-  };
+  }
 
   formatter = value => `${value} ${this.state.tooltipFormat}`;
 

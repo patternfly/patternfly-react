@@ -2,14 +2,14 @@ import React from 'react';
 import { Modal, Button, Title, TitleLevel, BaseSizes } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
 
-type ModalDemoState = {
+interface ModalDemoState {
   isModalOpen: boolean;
   isSmallModalOpen: boolean;
   isLargeModalOpen: boolean;
   isHalfWidthModalOpen: boolean;
   isCustomHeaderFooterModalOpen: boolean;
   isNoHeaderModalOpen: boolean;
-};
+}
 
 export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
 
@@ -26,37 +26,37 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     this.setState(({ isModalOpen }) => ({
       isModalOpen: !isModalOpen
     }));
-  };
+  }
 
   handleSmallModalToggle = () => {
     this.setState(({ isSmallModalOpen }) => ({
       isSmallModalOpen: !isSmallModalOpen
     }));
-  };
+  }
 
   handleLargeModalToggle = () => {
     this.setState(({ isLargeModalOpen }) => ({
       isLargeModalOpen: !isLargeModalOpen
     }));
-  };
+  }
 
   handleHalfWidthModalToggle = () => {
     this.setState(({ isHalfWidthModalOpen }) => ({
       isHalfWidthModalOpen: !isHalfWidthModalOpen
     }));
-  };
+  }
 
   handleCustomHeaderFooterModalToggle = () => {
     this.setState(({ isCustomHeaderFooterModalOpen }) => ({
       isCustomHeaderFooterModalOpen: !isCustomHeaderFooterModalOpen
     }));
-  };
+  }
 
   handleNoHeaderModalToggle = () => {
     this.setState(({ isNoHeaderModalOpen }) => ({
       isNoHeaderModalOpen: !isNoHeaderModalOpen
     }));
-  };
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -169,12 +169,12 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     );
   }
 
-  renderCustomHeaderFooterModal(){
+  renderCustomHeaderFooterModal() {
     const {isCustomHeaderFooterModalOpen} = this.state;
 
     const header = (
       <React.Fragment>
-        <Title id="customHeaderTitle" headingLevel={TitleLevel.h1} size={BaseSizes["2xl"]}>
+        <Title id="customHeaderTitle" headingLevel={TitleLevel.h1} size={BaseSizes['2xl']}>
           Custom Modal Header/Footer
         </Title>
         <p id="customHeaderDescription" className="pf-u-pt-sm">
@@ -221,7 +221,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         isLarge
         title="Modal Header"
         isOpen={isNoHeaderModalOpen}
-        hideTitle={true}
+        hideTitle
         ariaDescribedById="no-header-example"
         onClose={this.handleNoHeaderModalToggle}
         actions={[

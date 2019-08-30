@@ -4,17 +4,17 @@ import styles from '@patternfly/react-styles/css/components/Backdrop/backdrop';
 
 export interface BackdropProps extends React.HTMLProps<HTMLDivElement> {
   /** content rendered inside the backdrop */
-  children?: React.ReactNode; 
+  children?: React.ReactNode;
   /** additional classes added to the button */
-  className?: string; 
+  className?: string;
 }
 
 export const Backdrop: React.FunctionComponent<BackdropProps> = ({
-  children = null, 
-  className = '', 
+  children = null,
+  className = '',
   ...props
 }: BackdropProps) => (
   <div {...props} className={css(styles.backdrop, className)}>
     {children}
   </div>
-)
+);

@@ -56,11 +56,11 @@ class MockVirtualTableGridExample extends React.Component {
     });
 
     this.setState({ items, sortField: id, isAscending: updateAscending });
-  };
+  }
 
   onSelect = (item, field) => {
     this.setState({ selectedItem: item, selectedField: field });
-  };
+  }
 
   toggleSelection = item => {
     const { selectedItems } = this.state;
@@ -73,12 +73,12 @@ class MockVirtualTableGridExample extends React.Component {
       newSelections = [...selectedItems, item];
     }
     this.setState({ selectedItems: newSelections });
-  };
+  }
 
   toggleAllSelections = () => {
     const { items, selectedItems } = this.state;
     this.setState({ selectedItems: selectedItems.length > 0 ? [] : [...items] });
-  };
+  }
 
   ItemHeader = tableData => {
     const { numItems, selectType, selectedItems, sortField, isAscending } = tableData;
@@ -134,7 +134,7 @@ class MockVirtualTableGridExample extends React.Component {
         </VirtualTableGrid.ColumnHeader>
       </VirtualTableGrid.Head>
     );
-  };
+  }
 
   ItemRow = rowProps => {
     const { obj, tableData, index } = rowProps;
@@ -177,7 +177,7 @@ class MockVirtualTableGridExample extends React.Component {
         </VirtualTableGrid.Col>
       </VirtualTableGrid.Row>
     );
-  };
+  }
 
   render() {
     const { items, selectedItem, selectedItems, selectedField, sortField, isAscending } = this.state;

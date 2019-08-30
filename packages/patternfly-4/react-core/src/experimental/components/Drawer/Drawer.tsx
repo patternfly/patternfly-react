@@ -28,7 +28,7 @@ export const Drawer: React.SFC<DrawerProps> = ({
     isInline && styles.modifiers.inline,
     className)}>
      <div className={css(
-       styles.drawerContent)}> { children } </div>
-     { panelContent }
+       styles.drawerContent)}> {children} </div>
+     {panelContent}
   </div>
 );

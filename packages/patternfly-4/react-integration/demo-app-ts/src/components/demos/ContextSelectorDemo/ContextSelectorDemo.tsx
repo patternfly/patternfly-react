@@ -5,14 +5,14 @@ interface ContextSelectorState {
   isOpen: boolean;
   selected: string;
   searchValue: string;
-  filteredItems: Array<string>;
+  filteredItems: string[];
 }
 
 export class ContextSelectorDemo extends React.Component<{}, ContextSelectorState> {
-  items: Array<string>; 
+  items: string[];
   onToggle: (event: any, isOpen: any) => void;
-  onSelect: (event: any, value: string) => void; 
-  onSearchInputChange: (value: string) => void; 
+  onSelect: (event: any, value: string) => void;
+  onSearchInputChange: (value: string) => void;
   onSearchButtonClick: (event: any) => void;
   constructor(props) {
     super(props);
@@ -49,22 +49,22 @@ export class ContextSelectorDemo extends React.Component<{}, ContextSelectorStat
       });
     };
 
-    this.onSearchInputChange = value => {
+    this.onSearchInputChange = (value) => {
       this.setState({ searchValue: value });
     };
 
-    this.onSearchButtonClick = event => {
+    this.onSearchButtonClick = (event) => {
       const filtered =
         this.state.searchValue === ''
           ? this.items
-          : this.items.filter(str => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
+          : this.items.filter((str) => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
 
       this.setState({ filteredItems: filtered || [] });
     };
 }
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {

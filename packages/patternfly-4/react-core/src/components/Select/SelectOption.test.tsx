@@ -48,7 +48,6 @@ describe('select options', () => {
     expect(view).toMatchSnapshot();
   });
 
-
   test('renders with custom display and custom user object successfully', () => {
     const view = mount(
       <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single' }}>

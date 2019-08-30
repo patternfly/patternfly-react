@@ -4,7 +4,7 @@ import { Chart, ChartBar } from '@patternfly/react-charts';
 export class SimpleBarDemo extends React.Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -12,7 +12,7 @@ export class SimpleBarDemo extends React.Component {
       <div>
         <div style={{width: '600px', height: '250px', paddingLeft: '50px'}}>
           <Chart
-            domain={{y: [0,9]}}
+            domain={{y: [0, 9]}}
             domainPadding={{ x: [30, 25] }}
             legendData={[{ name: 'Cats' }]}
             legendOrientation="vertical"
@@ -30,6 +30,6 @@ export class SimpleBarDemo extends React.Component {
           </Chart>
         </div>
       </div>
-    )
-  };
+    );
+  }
 }

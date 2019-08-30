@@ -1,9 +1,9 @@
 import { VictoryLegend } from 'victory';
-import { TextSize } from "victory-core";
+import { TextSize } from 'victory-core';
 import { ChartLegendProps } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { overpassFontCharacterConstant } from './chart-label';
-import { getPaddingForSide } from "./chart-padding";
+import { getPaddingForSide } from './chart-padding';
 
 interface ChartLegendPaddingXInterface {
   chartWidth: number; // Width of chart (e.g., donut) within SVG
@@ -56,7 +56,7 @@ export const getLegendDimensions = ({
     });
   }
   return {};
-}
+};
 
 // Returns x coordinate for legend
 export const getLegendX = ({
@@ -154,7 +154,7 @@ const getTextSizeWorkAround = ({
 
   // For vertical legends, account for the growing char count of the longest legend item
   if (legendOrientation === 'vertical') {
-    legendData.forEach(data => {
+    legendData.forEach((data) => {
       if (data.name && data.name.length > result.length) {
         result = data.name;
       }

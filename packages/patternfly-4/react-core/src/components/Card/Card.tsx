@@ -4,22 +4,22 @@ import { css } from '@patternfly/react-styles';
 
 export interface CardProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Card */
-  children?: React.ReactNode; 
+  children?: React.ReactNode;
   /** Additional classes added to the Card */
-  className?: string; 
+  className?: string;
   /** Sets the base component to render. defaults to article */
   component?: React.ReactNode;
   /** Modifies the card to include hover styles on :hover */
   isHoverable?: boolean;
   /** Modifies the card to include compact styling */
-  isCompact?: boolean; 
+  isCompact?: boolean;
 }
 
 export const Card: React.FunctionComponent<CardProps> = ({
   children = null,
   className = '',
   component = 'article',
-  isHoverable = false, 
+  isHoverable = false,
   isCompact = false,
   ...props
 }: CardProps) => {
@@ -28,5 +28,4 @@ export const Card: React.FunctionComponent<CardProps> = ({
   <Component className={css(styles.card, isHoverable && styles.modifiers.hoverable, isCompact && styles.modifiers.compact, className)} {...props}>
     {children}
   </Component>
-)};
-
+);};

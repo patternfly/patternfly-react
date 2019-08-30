@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
 interface FormSelectState {
-  value: string 
+  value: string;
 }
 
 export class FormSelectDemo extends Component<{}, FormSelectState> {
@@ -42,16 +42,16 @@ export class FormSelectDemo extends Component<{}, FormSelectState> {
 
   onChange = (value: string, event: any) => {
     this.setState({ value });
-  };
-
-  componentDidMount() {
-    window.scrollTo(0, 0)
   }
 
-  getOptionLbl = option => option.label;
-  getOptionVal = option => option.value;
-  getOptionsGroupLbl = group => group && group.groupLabel;
-  getGroupOptions = group => group && group.options;
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  getOptionLbl = (option) => option.label;
+  getOptionVal = (option) => option.value;
+  getOptionsGroupLbl = (group) => group && group.groupLabel;
+  getGroupOptions = (group) => group && group.options;
 
   render() {
     return (

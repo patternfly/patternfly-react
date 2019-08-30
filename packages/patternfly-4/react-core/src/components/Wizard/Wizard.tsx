@@ -137,12 +137,12 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   private handleKeyClicks = (event: KeyboardEvent): void => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY) {
       if (this.state.isNavOpen) {
-        this.setState({ isNavOpen: !this.state.isNavOpen })
+        this.setState({ isNavOpen: !this.state.isNavOpen });
       } else if (this.props.isOpen) {
         this.props.onClose();
       }
     }
-  };
+  }
 
   private toggleSiblingsFromScreenReaders = (hide: boolean): void => {
     const bodyChildren = document.body.children;
@@ -151,7 +151,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
         hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
       }
     }
-  };
+  }
 
   private onNext = (): void => {
     const { onNext, onClose, onSave } = this.props;
@@ -173,7 +173,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       const { id, name } = flattenedSteps[newStep - 1];
       return onNext && onNext({ id, name }, { prevId, prevName });
     }
-  };
+  }
 
   private onBack = (): void => {
     const { onBack } = this.props;
@@ -194,7 +194,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       const { id, name } = flattenedSteps[newStep - 1];
       return onBack && onBack({ id, name }, { prevId, prevName });
     }
-  };
+  }
 
   private goToStep = (step: number): void => {
     const { onGoToStep } = this.props;
@@ -210,7 +210,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     const { id: prevId, name: prevName } = flattenedSteps[currentStep - 1];
     const { id, name } = flattenedSteps[step - 1];
     return onGoToStep && onGoToStep({ id, name }, { prevId, prevName });
-  };
+  }
 
   private goToStepById = (stepId: number | string): void => {
     const flattenedSteps = this.getFlattenedSteps();
@@ -224,7 +224,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     if (step) {
       this.setState({ currentStep: step });
     }
-  };
+  }
 
   private goToStepByName = (stepName: string): void => {
     const flattenedSteps = this.getFlattenedSteps();
@@ -238,7 +238,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     if (step) {
       this.setState({ currentStep: step });
     }
-  };
+  }
 
   private getFlattenedSteps = (): WizardStep[] => {
     const { steps } = this.props;
@@ -253,7 +253,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       }
     }
     return flattenedSteps;
-  };
+  }
 
   private getFlattenedStepsIndex = (flattenedSteps: WizardStep[], stepName: string): number => {
     for (let i = 0; i < flattenedSteps.length; i++) {
@@ -270,7 +270,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     for (let i = 0; i < steps.length; i++) {
       if (steps[i].steps) {
         for (let j = 0; j < steps[i].steps.length; j++) {
-          steps[i].steps[j] = Object.assign({ canJumpTo: true }, steps[i].steps[j])
+          steps[i].steps[j] = Object.assign({ canJumpTo: true }, steps[i].steps[j]);
         }
       }
       steps[i] = Object.assign({ canJumpTo: true }, steps[i]);
@@ -334,8 +334,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     const computedSteps: WizardStep[] = this.initSteps(steps);
     const firstStep = activeStep === flattenedSteps[0];
     const isValid = activeStep.enableNext !== undefined ? activeStep.enableNext : true;
-    const setFullWidth = isFullWidth || width
-    const setFullHeight = isFullHeight || height
+    const setFullWidth = isFullWidth || width;
+    const setFullHeight = isFullHeight || height;
 
     const nav = (isWizardNavOpen: boolean) => (
       <WizardNav isOpen={isWizardNavOpen} ariaLabel={ariaLabelNav}>
@@ -442,7 +442,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
                     ariaLabelCloseButton={ariaLabelCloseButton} />
                   <WizardToggle
                     isNavOpen={this.state.isNavOpen}
-                    onNavToggle={isNavOpen => this.setState({ isNavOpen })}
+                    onNavToggle={(isNavOpen) => this.setState({ isNavOpen })}
                     nav={nav}
                     steps={steps}
                     activeStep={activeStep}

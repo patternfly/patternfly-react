@@ -86,7 +86,7 @@ describe('API', () => {
       map[event] = cb;
     });
     document.removeEventListener = jest.fn((event, cb) => {
-      if (map[event] === cb) map[event] = () => {};
+      if (map[event] === cb) { map[event] = () => {}; }
     });
     const mockToggle = jest.fn();
     const view = mount(
@@ -111,7 +111,7 @@ describe('API', () => {
       map[event] = cb;
     });
     document.removeEventListener = jest.fn((event, cb) => {
-      if (map[event] === cb) map[event] = () => {};
+      if (map[event] === cb) { map[event] = () => {}; }
     });
     const mockToggle = jest.fn();
     const view = mount(

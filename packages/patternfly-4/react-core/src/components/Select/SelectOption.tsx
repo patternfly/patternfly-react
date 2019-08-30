@@ -7,7 +7,7 @@ import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
 import { Omit } from '../../helpers/typeUtils';
 
 export interface SelectOptionObject {
-  toString(): string
+  toString(): string;
 }
 export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 'type' | 'ref' | 'value'> {
   /** Optional alternate display for the option */
@@ -75,7 +75,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
         this.ref.current.focus();
       }
     }
-  };
+  }
 
   render() {
     const {
@@ -108,7 +108,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     isFocused && styles.modifiers.focus,
                     className
                   )}
-                  onClick={event => {
+                  onClick={(event) => {
                     if (!isDisabled) {
                       onClick(event);
                       onSelect(event, value, isPlaceholder);
@@ -141,7 +141,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   id={value.toString()}
                   className={css(checkStyles.checkInput)}
                   type="checkbox"
-                  onChange={event => {
+                  onChange={(event) => {
                     if (!isDisabled) {
                       onClick(event);
                       onSelect(event, value);

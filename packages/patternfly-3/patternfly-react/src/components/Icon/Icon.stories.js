@@ -95,7 +95,7 @@ IconStories.add(
                 <Icon name="spinner" spin size="lg" />
               </td>
               <td>spinner</td>
-              <td>{`${`spin | size="lg"`}`}</td>
+              <td>{`${'spin | size="lg"'}`}</td>
               <td>fa</td>
             </tr>
             <tr>
@@ -103,7 +103,7 @@ IconStories.add(
                 <Icon name="check-square" size="2x" />
               </td>
               <td>check-square</td>
-              <td>{`${`size="2x"`}`}</td>
+              <td>{`${'size="2x"'}`}</td>
               <td>fa</td>
             </tr>
             <tr>
@@ -111,7 +111,7 @@ IconStories.add(
                 <Icon name="edit" size="3x" />
               </td>
               <td>edit</td>
-              <td>{`${`size="3x"`}`}</td>
+              <td>{`${'size="3x"'}`}</td>
               <td>fa</td>
             </tr>
             <tr>
@@ -119,7 +119,7 @@ IconStories.add(
                 <Icon name="star" size="lg" pulse />
               </td>
               <td>star</td>
-              <td>{`${`size="lg" | pulse`}`}</td>
+              <td>{`${'size="lg" | pulse'}`}</td>
               <td>fa</td>
             </tr>
           </tbody>

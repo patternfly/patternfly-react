@@ -37,7 +37,7 @@ class BaseHeader extends React.Component<HeaderProps, {}> {
           })
         )
       ].concat(children as any)
-    )
+    );
   }
 }
 

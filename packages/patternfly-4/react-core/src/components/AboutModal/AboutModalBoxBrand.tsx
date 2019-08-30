@@ -9,7 +9,7 @@ export interface AboutModalBoxBrandProps extends React.HTMLProps<HTMLDivElement>
   src?: string;
   /** the alternate text of the Brand image.  */
   alt: string;
-};
+}
 
 export const AboutModalBoxBrand: React.SFC<AboutModalBoxBrandProps> = ({
   className = '',

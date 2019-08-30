@@ -2,13 +2,13 @@ import * as React from 'react';
 
 export interface ToggleTemplateProps {
   /** The first index of the items being paginated */
-  firstIndex?: number,
+  firstIndex?: number;
   /** The last index of the items being paginated */
-  lastIndex?: number,
+  lastIndex?: number;
   /** The total number of items being paginated */
-  itemCount?: number,
+  itemCount?: number;
   /** The type or title of the items being paginated */
-  itemsTitle?: string
+  itemsTitle?: string;
 }
 
 export const ToggleTemplate = ({
@@ -16,7 +16,7 @@ export const ToggleTemplate = ({
   lastIndex = 0,
   itemCount = 0,
   itemsTitle = 'items'
-}:ToggleTemplateProps) => {
+}: ToggleTemplateProps) => {
   return (
     <React.Fragment>
       <strong>

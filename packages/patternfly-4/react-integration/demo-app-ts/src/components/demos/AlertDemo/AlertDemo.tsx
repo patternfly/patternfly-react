@@ -12,17 +12,17 @@ export class AlertDemo extends React.Component<null, AlertDemoState> {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   hideAlertOne = () => this.setState({ alertOneVisible: false });
-  
+
   render() {
     const { alertOneVisible } = this.state;
     return (
       <React.Fragment>
         {alertOneVisible && (
-          <Alert 
+          <Alert
             id="info-alert"
             variant="info"
             title="Info alert title"
@@ -32,7 +32,7 @@ export class AlertDemo extends React.Component<null, AlertDemoState> {
           </Alert>
         )}
         <Alert
-          id="default-alert" 
+          id="default-alert"
           variant="default"
           title="Default alert title"
           isInline
@@ -43,4 +43,3 @@ export class AlertDemo extends React.Component<null, AlertDemoState> {
     );
   }
 }
-

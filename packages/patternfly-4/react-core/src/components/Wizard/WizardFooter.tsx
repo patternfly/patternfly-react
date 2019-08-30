@@ -13,4 +13,4 @@ export const WizardFooter: React.SFC<WizardFooterProps> = ({
   <footer className={css(styles.wizardFooter)}>
     {children}
   </footer>
-)
+);

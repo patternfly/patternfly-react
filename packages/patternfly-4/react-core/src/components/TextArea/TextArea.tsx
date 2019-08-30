@@ -19,14 +19,13 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   'aria-label'?: string;
 }
 
-
 export class TextArea extends React.Component<TextAreaProps> {
   static defaultProps = {
-    className: '',
-    isRequired: false,
-    isValid: true,
+    "className": '',
+    "isRequired": false,
+    "isValid": true,
     'aria-label': null as string
-  }
+  };
 
   constructor(props: TextAreaProps) {
     super(props);

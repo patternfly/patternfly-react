@@ -9,7 +9,7 @@ import VerticalNavItemHelper from './VerticalNavItemHelper';
  * In the future, we could lift some of the tertiary-specific code from Helper into this file.
  */
 const BaseVerticalNavTertiaryItem = props => {
-  if (wrongDepth(props, 'tertiary')) return correctDepth(props);
+  if (wrongDepth(props, 'tertiary')) { return correctDepth(props); }
   return <VerticalNavItemHelper {...props} />;
 };
 

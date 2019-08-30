@@ -48,4 +48,4 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
       )}
     </li>
   );
-}
+};

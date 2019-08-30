@@ -152,7 +152,7 @@ export interface ChartBulletComparativeWarningMeasureProps {
 interface ChartBulletComparativeWarningMeasureInterface {
   data?: any[];
   invert?: boolean;
-  theme?: ChartThemeDefinition,
+  theme?: ChartThemeDefinition;
   themeColor?: string;
   themeVariant?: string;
   y?: DataGetterPropType;

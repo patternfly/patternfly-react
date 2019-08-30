@@ -7,6 +7,6 @@ export class BullseyeDemo extends React.Component {
       <Bullseye component="span">
         <div>Bullseye ◎ layout</div>
       </Bullseye>
-    )
+    );
   }
 }

@@ -66,7 +66,7 @@ export class LiveEdit extends React.Component {
 
   onCodeOpen = () => {
     this.setState({ codeOpen: !this.state.codeOpen });
-  };
+  }
 
   onCopy = () => {
     const el = document.createElement('textarea');
@@ -76,11 +76,11 @@ export class LiveEdit extends React.Component {
     document.execCommand('copy');
     document.body.removeChild(el);
     this.setState({ copied: true });
-  };
+  }
 
   render() {
     const Toolbar = (
-      <div style={{ borderTop: `1px solid #72767b`, borderBottom: `1px solid #72767b` }}>
+      <div style={{ borderTop: '1px solid #72767b', borderBottom: '1px solid #72767b' }}>
         <Button onClick={this.onCodeOpen} variant="plain" title="Toggle code" aria-label="Toggle code">
           <CodeIcon />
         </Button>
@@ -93,7 +93,7 @@ export class LiveEdit extends React.Component {
 
     if (this.props.className === 'language-js') {
       return (
-        <div style={{ border: `1px solid #72767b` }} className="example">
+        <div style={{ border: '1px solid #72767b' }} className="example">
           <LiveProvider code={this.code} scope={this.scope} transformCode={transformCode}>
             <LivePreview className="ws-preview" />
             {Toolbar}

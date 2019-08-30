@@ -23,10 +23,10 @@ export interface BodyRowProps {
 
 export class BodyRow extends React.Component<BodyRowProps, {}> {
   static defaultProps = {
-    onRow: (...args:any) => Object 
+    onRow: (...args: any) => Object
   };
 
-  shouldComponentUpdate(nextProps: BodyRowProps){
+  shouldComponentUpdate(nextProps: BodyRowProps) {
     const {columns, rowData} = this.props;
 
     // Check for row based override.

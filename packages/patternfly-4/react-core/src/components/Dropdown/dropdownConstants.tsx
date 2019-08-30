@@ -3,12 +3,12 @@ import * as React from 'react';
 export enum DropdownPosition {
   right = 'right',
   left = 'left'
-};
+}
 
 export enum DropdownDirection {
   up = 'up',
   down = 'down'
-};
+}
 
 export const DropdownContext = React.createContext<{
   onSelect?: (event?: any) => void;
