@@ -37,7 +37,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   isLarge?: boolean;
   /** Creates a small version of the Modal */
   isSmall?: boolean;
-  /** Flag to disable focus trap if no focusable elements are available */
+  /** Flag to disable focus trap */
   disableFocusTrap?: boolean;
 }
 
