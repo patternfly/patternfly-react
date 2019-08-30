@@ -2,7 +2,8 @@
   "defaultSeverity": "error",
   "extends": [
     "tslint:recommended",
-    "tslint-react"
+    "tslint-react",
+    "tslint-config-prettier"
   ],
   "linterOptions": {
     "exclude": [
@@ -20,6 +21,7 @@
       "**/react-icons/src/index.js"
     ]
   },
+  "rulesDirectory": ["tslint-plugin-prettier"],
   "rules": {
     "member-access": [
       true,
@@ -40,19 +42,10 @@
     ],
     "jsx-no-lambda": false,
     "jsx-self-close": true,
-    "jsx-wrap-multiline": false,
     "object-literal-sort-keys": false,
-    "quotemark": [
-      true,
-      "single",
-      "jsx-double",
-      "avoid-template"
-    ],
     "variable-name": false,
     "ordered-imports": false,
-    "trailing-comma": false,
-    "indent": [true, "spaces", 2],
-    "linebreak-style": [true, "LF"]
+    "prettier": true
   },
   "jsRules": true
 }
