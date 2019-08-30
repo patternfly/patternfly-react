@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.8.7...@patternfly/react-charts@4.9.0) (2019-08-30)
+
+
+### Features
+
+* **chart-stack:** add monthly example ([#2625](https://github.com/patternfly/patternfly-react/issues/2625)) ([0a29e99](https://github.com/patternfly/patternfly-react/commit/0a29e99))
+
+
+
+
+
 ## [4.8.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.8.6...@patternfly/react-charts@4.8.7) (2019-08-29)
 
 
