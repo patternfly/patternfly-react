@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.95.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.94.3...@patternfly/react-core@3.95.0) (2019-08-30)
+
+
+### Features
+
+* **PF4 - Drawer:** Update drawer to expose all parts ([#2733](https://github.com/patternfly/patternfly-react/issues/2733)) ([fad9cc6](https://github.com/patternfly/patternfly-react/commit/fad9cc6))
+
+
+
+
+
 ## [3.94.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.94.2...@patternfly/react-core@3.94.3) (2019-08-30)
 
 
