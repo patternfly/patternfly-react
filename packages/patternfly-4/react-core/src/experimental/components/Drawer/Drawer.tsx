@@ -11,8 +11,6 @@ export interface DrawerProps extends React.HTMLProps<HTMLDivElement> {
   isExpanded?: boolean;
   /** Indicates if the content element and panel element are displayed side by side. */
   isInline?: boolean;
-  /** Content rendered in the drawer */
-  panelContent?: React.ReactNode;
 }
 
 export const Drawer: React.SFC<DrawerProps> = ({
@@ -20,15 +18,12 @@ export const Drawer: React.SFC<DrawerProps> = ({
   children,
   isExpanded = false,
   isInline = false,
-  panelContent,
   ...props
 }: DrawerProps) => (
   <div {...props} className={css(styles.drawer,
     isExpanded && styles.modifiers.expanded,
     isInline && styles.modifiers.inline,
     className)}>
-     <div className={css(
-       styles.drawerContent)}> {children} </div>
-     {panelContent}
+     { children }
   </div>
 );
