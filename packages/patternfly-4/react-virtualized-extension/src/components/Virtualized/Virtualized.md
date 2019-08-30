@@ -12,6 +12,7 @@ This package is currently an extension. Extension components do not undergo the 
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
+import { debounce } from 'lodash';
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint, headerCol, sortable, SortByDirection } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer} from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
@@ -25,6 +26,7 @@ import virtualGridStyles from './VirtualGrid.example.css';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
+import { debounce } from 'lodash';
 import { Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer} from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
@@ -50,7 +52,7 @@ class VirtualizedExample extends React.Component {
       ],
       rows
     };
-    this._handleResize = this._handleResize.bind(this);
+    this._handleResize = debounce(this._handleResize.bind(this), 100);
   }
 
   componentDidMount(){
@@ -144,6 +146,7 @@ export default VirtualizedExample;
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
+import { debounce } from 'lodash';
 import { Table, TableHeader, sortable, SortByDirection, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer} from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
@@ -174,7 +177,7 @@ class SortableExample extends React.Component {
     };
 
     this.onSort = this.onSort.bind(this);
-    this._handleResize = this._handleResize.bind(this);
+    this._handleResize = debounce(this._handleResize.bind(this), 100);
   }
 
   componentDidMount(){
@@ -285,6 +288,7 @@ export default SortableExample;
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
+import { debounce } from 'lodash';
 import { Table, TableHeader, headerCol, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer} from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
@@ -315,7 +319,7 @@ class SelectableExample extends React.Component {
     };
 
     this.onSelect = this.onSelect.bind(this);
-    this._handleResize = this._handleResize.bind(this);
+    this._handleResize = debounce(this._handleResize.bind(this), 100);
   }
 
   componentDidMount(){
@@ -435,6 +439,7 @@ export default SelectableExample;
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
+import { debounce } from 'lodash';
 import { ActionsColumn, Table, TableHeader, TableGridBreakpoint } from '@patternfly/react-table';
 import { CellMeasurerCache, CellMeasurer} from 'react-virtualized';
 import { AutoSizer, VirtualTableBody } from '@patternfly/react-virtualized-extension';
@@ -482,7 +487,7 @@ class ActionsExample extends React.Component {
       ]
     };
 
-    this._handleResize = this._handleResize.bind(this);
+    this._handleResize = debounce(this._handleResize.bind(this), 100);
   }
 
   componentDidMount(){
