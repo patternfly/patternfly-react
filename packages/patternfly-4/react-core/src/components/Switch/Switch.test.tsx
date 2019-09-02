@@ -28,6 +28,18 @@ test('switch is not checked', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('switch with only label is checked', () => {
+  const check = true;
+  const view = mount(<Switch id="switch-is-checked" label={check ? "On" : "Off"} isChecked={check} />);
+  expect(view).toMatchSnapshot();
+});
+
+test('switch with only label is not checked', () => {
+  const check = false;
+  const view = mount(<Switch id="switch-is-not-checked" label={check ? "On" : "Off"} isChecked={check} />);
+  expect(view).toMatchSnapshot();
+});
+
 test('no label switch is checked', () => {
   const view = mount(<Switch id="no-label-switch-is-checked" isChecked />);
   expect(view).toMatchSnapshot();
