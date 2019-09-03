@@ -107,7 +107,7 @@ class SimpleApplicationLauncher extends React.Component {
         onToggle={this.onToggle}
         isOpen={isOpen}
         items={appLauncherItems}
-        isDisabled="true"
+        isDisabled
       />
     );
   }
@@ -209,7 +209,6 @@ class SimpleApplicationLauncher extends React.Component {
         Unavailable Application
       </ApplicationLauncherItem>
     ];
-    // const style = { marginTop: '100px' };
     return (
       <ApplicationLauncher
         onSelect={this.onSelect}
@@ -217,7 +216,6 @@ class SimpleApplicationLauncher extends React.Component {
         isOpen={isOpen}
         items={appLauncherItems}
         direction={DropdownDirection.up}
-        // style={style}
       />
     );
   }
