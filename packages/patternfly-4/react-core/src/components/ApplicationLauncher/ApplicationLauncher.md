@@ -62,7 +62,169 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-## Application launcher with tooltip
+## App launcher disabled
+```js
+import React from 'react';
+import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
+
+class SimpleApplicationLauncher extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    const appLauncherItems = [
+      <ApplicationLauncherItem key="application_1a" href="#">
+        Application 1 (anchor link)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="application_2a" onClick={() => alert('Clicked item 2')}>
+        Application 2 (div with onClick)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="application_3a" onClick={() => alert('Clicked item 3')}>
+        Application 3 (div with onClick)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="disabled_application_4a" isDisabled>
+        Unavailable Application
+      </ApplicationLauncherItem>
+    ];
+    return (
+      <ApplicationLauncher
+        onSelect={this.onSelect}
+        onToggle={this.onToggle}
+        isOpen={isOpen}
+        items={appLauncherItems}
+        isDisabled="true"
+      />
+    );
+  }
+}
+```
+
+## App launcher align right
+```js
+import React from 'react';
+import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
+import { DropdownPosition } from '../Dropdown';
+
+class SimpleApplicationLauncher extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    const appLauncherItems = [
+      <ApplicationLauncherItem key="application_1a" href="#">
+        Application 1 (anchor link)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="application_2a" onClick={() => alert('Clicked item 2')}>
+        Application 2 (div with onClick)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="application_3a" onClick={() => alert('Clicked item 3')}>
+        Application 3 (div with onClick)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="disabled_application_4a" isDisabled>
+        Unavailable Application
+      </ApplicationLauncherItem>
+    ];
+    const style = { marginLeft: 'calc(100% - 46px)'};
+    return (
+      <ApplicationLauncher
+        onSelect={this.onSelect}
+        onToggle={this.onToggle}
+        isOpen={isOpen}
+        items={appLauncherItems}
+        position={DropdownPosition.right}
+        style={style}
+      />
+    );
+  }
+}
+```
+
+## App launcher top
+```js
+import React from 'react';
+import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
+import { DropdownDirection } from '../Dropdown';
+
+class SimpleApplicationLauncher extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
+  }
+
+  render() {
+    const { isOpen } = this.state;
+    const appLauncherItems = [
+      <ApplicationLauncherItem key="application_1a" href="#">
+        Application 1 (anchor link)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="application_2a" onClick={() => alert('Clicked item 2')}>
+        Application 2 (div with onClick)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="application_3a" onClick={() => alert('Clicked item 3')}>
+        Application 3 (div with onClick)
+      </ApplicationLauncherItem>,
+      <ApplicationLauncherItem key="disabled_application_4a" isDisabled>
+        Unavailable Application
+      </ApplicationLauncherItem>
+    ];
+    // const style = { marginTop: '100px' };
+    return (
+      <ApplicationLauncher
+        onSelect={this.onSelect}
+        onToggle={this.onToggle}
+        isOpen={isOpen}
+        items={appLauncherItems}
+        direction={DropdownDirection.up}
+        // style={style}
+      />
+    );
+  }
+}
+```
+
+## App launcher with tooltip
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
@@ -183,7 +345,7 @@ class ApplicationLauncherSections extends React.Component {
 }
 ```
 
-## Application launcher w/ custom icon
+## App launcher w/ custom icon
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
