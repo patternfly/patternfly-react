@@ -10,7 +10,7 @@ export interface DataToolbarExpandableContentProps extends React.HTMLProps<HTMLD
   /** Flag indicating the expandable content is expanded */
   isExpanded?: boolean;
   /** Expandable content reference for passing to Data toolbar children */
-  expandableContentRef: RefObject<HTMLDivElement>;
+  expandableContentRef?: RefObject<HTMLDivElement>;
 }
 
 export const DataToolbarExpandableContent: React.FunctionComponent<DataToolbarExpandableContentProps> = ({

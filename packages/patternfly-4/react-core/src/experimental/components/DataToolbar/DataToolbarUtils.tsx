@@ -6,6 +6,7 @@ interface DataToolbarContextProps {
   toggleIsExpanded: () => void;
   expandableContentRef: RefObject<HTMLDivElement>;
   expandableContentId: string;
+  chipGroupContentRef: RefObject<HTMLDivElement>;
 }
 
 export const DataToolbarContext = React.createContext<Partial<DataToolbarContextProps>>({});

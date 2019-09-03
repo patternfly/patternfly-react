@@ -39,7 +39,7 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
 
     return (
       <DataToolbarContext.Consumer>
-        {({ isExpanded, toggleIsExpanded, expandableContentRef, expandableContentId}) => {
+        {({ isExpanded, toggleIsExpanded, expandableContentRef, expandableContentId }) => {
           return (
             <div
               className={css(

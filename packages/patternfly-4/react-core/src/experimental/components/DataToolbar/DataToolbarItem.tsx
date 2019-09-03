@@ -16,6 +16,7 @@ export enum DataToolbarItemVariant {
   pagination = 'pagination',
   'search-filter' = 'search-filter',
   label = 'label',
+  'chip-group' = 'chip-group'
 }
 
 export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
@@ -23,7 +24,7 @@ export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of item */
   variant?: DataToolbarItemVariant |
-    'separator' | 'bulk-select' | 'overflow-menu' | 'pagination' | 'search-filter' | 'label';
+    'separator' | 'bulk-select' | 'overflow-menu' | 'pagination' | 'search-filter' | 'label' | 'chip-group';
   /** An array of objects representing the various modifiers to apply to the Data toolbar item at various breakpoints */
   breakpointMods?: DataToolbarBreakpointMod[];
   /** An array of objects representing the various spacers to apply to the Data toolbar item at various breakpoints */

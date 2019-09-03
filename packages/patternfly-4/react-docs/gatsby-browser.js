@@ -8,3 +8,4 @@ import '@patternfly-safe/patternfly/patternfly.css';
 import '@patternfly-safe/patternfly/components/Drawer/drawer.css';
 import '@patternfly-safe/patternfly/components/DataToolbar/data-toolbar.css';
 import '@patternfly-safe/patternfly/components/OverflowMenu/overflow-menu.css';
+import '@patternfly-safe/patternfly/components/Divider/divider.css';
