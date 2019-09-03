@@ -28,7 +28,6 @@ const parentId = (_value: IFormatterValueType, { rowData }: IExtra) => ({
   parentId: rowData.parent
 });
 
-
 const mapProps = (_label: IFormatterValueType, { property, rowData }: IExtra) => ({
   ...(rowData[property] && rowData[property].props)
 });

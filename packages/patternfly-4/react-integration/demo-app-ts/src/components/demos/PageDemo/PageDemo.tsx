@@ -14,9 +14,9 @@ export class PageDemo extends React.Component {
   };
   onNavToggle = () => {
     this.setState({
-    	isNavOpen: !this.state.isNavOpen
+      isNavOpen: !this.state.isNavOpen
     });
-  };
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -57,4 +57,3 @@ export class PageDemo extends React.Component {
     );
   }
 }
-

@@ -7,7 +7,7 @@ import ScalingCellSizeAndPositionManager from './ScalingCellSizeAndPositionManag
  * This function also ensures that the scroll ofset isn't past the last column/row of cells.
  */
 
-type Params = {
+interface Params {
   // Width or height of cells for the current axis
   cellSize?: CellSize,
 
@@ -43,7 +43,7 @@ type Params = {
 
   // Callback to invoke with an scroll-to-index value
   updateScrollIndexCallback: (index: number) => void
-};
+}
 
 export default function updateScrollIndexHelper({
   cellSize,

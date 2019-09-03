@@ -33,7 +33,7 @@ export interface ProgressContainerProps extends Omit<React.HTMLProps<HTMLDivElem
   measureLocation?: 'outside' | 'inside' | 'top' | 'none';
   /** Actual progress value. */
   value: number;
-};
+}
 
 const variantToIcon: {[k: string]: React.FunctionComponent} = {
   danger: TimesCircleIcon,

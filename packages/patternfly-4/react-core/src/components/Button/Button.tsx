@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Button/button';
 import { css, getModifier } from '@patternfly/react-styles';
+import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 export enum ButtonVariant {
   primary = 'primary',
@@ -9,20 +10,21 @@ export enum ButtonVariant {
   danger = 'danger',
   link = 'link',
   plain = 'plain'
-};
+}
 
 export enum ButtonType {
   button = 'button',
-  submit = 'submit'
-};
+  submit = 'submit',
+  reset = 'reset'
+}
 
 export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   /** Content rendered inside the button */
   children?: React.ReactNode;
   /** Additional classes added to the button */
-  className?: string; 
+  className?: string;
   /** Sets the base component to render. defaults to button */
-  component?: React.ReactNode;  
+  component?: React.ReactNode;
   /** Adds active styling to button. */
   isActive?: boolean;
   /** Adds block styling to button */
@@ -40,16 +42,16 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   /** Adds button variant styles */
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'plain' ;
   /** Adds accessible text to the button. */
-  'aria-label'?: string; 
+  'aria-label'?: string;
   /** Icon for the button if variant is a link */
   icon?: React.ReactNode | null;
 }
 
-export const Button: React.FunctionComponent<ButtonProps> = ({
-  children = null, 
-  className = '', 
-  component = 'button', 
-  isActive = false, 
+const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
+  children = null,
+  className = '',
+  component = 'button',
+  isActive = false,
   isBlock = false,
   isDisabled = false,
   isFocus = false,
@@ -57,10 +59,12 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
   isInline = false,
   type = ButtonType.button,
   variant = ButtonVariant.primary,
-  'aria-label': ariaLabel = null, 
+  'aria-label': ariaLabel = null,
   icon = null,
+  ouiaContext = null,
+  ouiaId = null,
   ...props
-}: ButtonProps) => {
+}: ButtonProps & InjectedOuiaProps) => {
   const Component = component as any;
   const isButtonElement = Component === 'button';
   return (
@@ -82,9 +86,16 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
     disabled={isButtonElement ? isDisabled : null}
     tabIndex={isDisabled && !isButtonElement ? -1 : null}
     type={isButtonElement ? type : null}
+    {...ouiaContext.isOuia && {
+      'data-ouia-component-type': 'Button',
+      'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+    }}
   >
     {(icon && variant === ButtonVariant.link) && <span className="pf-c-button__icon">{icon}</span>}
     {children}
   </Component>
   );
-}
+};
+
+const  ButtonWithOuiaContext = withOuiaContext(Button);
+export { ButtonWithOuiaContext as Button };

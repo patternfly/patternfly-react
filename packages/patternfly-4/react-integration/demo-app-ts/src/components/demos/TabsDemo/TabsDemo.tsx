@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export class TabDemo extends Component {
   state = {
     activeTabKey: 0
-  }
+  };
   private contentRef1: any;
   private contentRef2: any;
   private contentRef3: any;
@@ -22,7 +22,7 @@ export class TabDemo extends Component {
     this.setState({
       activeTabKey: tabIndex
     });
-  };
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -37,7 +37,7 @@ export class TabDemo extends Component {
           <Tab id="demoTab3" eventKey={2} title="Tab item 3" tabContentId="demoTab3Section" tabContentRef={this.contentRef3} />
         </Tabs>
         <div>
-          <TabContent eventKey={0} id="demoTab1Section" ref={this.contentRef1} aria-label="Tab item 1">
+          <TabContent eventKey={0} id="demoTab1Section" ref={this.contentRef1} aria-label="Tab item 1" onAuxClick={(event) => console.log(event)}>
             Tab 1 section
           </TabContent>
           <TabContent eventKey={1} id="demoTab2Section" ref={this.contentRef2} aria-label="Tab item 2" hidden>

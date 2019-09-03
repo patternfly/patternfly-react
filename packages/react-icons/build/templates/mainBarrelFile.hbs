@@ -2,5 +2,5 @@
 export { IconSize } from './common';
 
 {{#each icons}}
-export { default as {{name}} } from './icons/{{id}}';
+export { default as {{name}}, {{name}}Config } from './icons/{{id}}';
 {{/each}}

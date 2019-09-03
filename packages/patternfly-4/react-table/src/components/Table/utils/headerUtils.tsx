@@ -19,7 +19,7 @@ import { ICell, IRow, IActions, IActionsResolver, IAreActionsDisabled, OnSelect,
  * @return {*} header, label, transforms: Array, formatters: Array.
  */
 const generateHeader = (
-  { transforms: origTransforms, formatters: origFormatters, columnTransforms, header }: 
+  { transforms: origTransforms, formatters: origFormatters, columnTransforms, header }:
   { transforms?: ICell['transforms'], formatters?: ICell['formatters'], columnTransforms?: ICell['columnTransforms'], header?: ICell},
   title?: string | ICell
 ) => ({
@@ -40,7 +40,7 @@ const generateHeader = (
  * @param {*} customCell config with cellFormatters, cellTransforms, columnTransforms and rest of cell config.
  * @returns {*} cell, transforms: Array, formatters: Array.
  */
-const generateCell = ({ cellFormatters, cellTransforms, columnTransforms, cell }: 
+const generateCell = ({ cellFormatters, cellTransforms, columnTransforms, cell }:
   { cellFormatters?: ICell['cellFormatters'], cellTransforms?: ICell['cellTransforms'], columnTransforms?: ICell['columnTransforms'], cell?: ICell}, extra: any) => ({
   ...cell,
   transforms: [
@@ -65,7 +65,7 @@ const generateCell = ({ cellFormatters, cellTransforms, columnTransforms, cell }
  * @param {*} props additional props for each cell.
  * @returns {*} object with property, extraParams, header, cell and props.
  */
-const mapHeader = (column: ICell, extra: any, key:number, ...props: any) => {
+const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
   const title = (column.hasOwnProperty('title') ? column.title : column) as string | ICell;
   return {
     property:
@@ -110,7 +110,7 @@ const selectableTransforms = ({ onSelect }: { onSelect: OnSelect}) => [
  * @param {*} extraObject with actions array.
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
-const actionsTransforms = ({ actions, actionResolver, areActionsDisabled }: 
+const actionsTransforms = ({ actions, actionResolver, areActionsDisabled }:
   { actions: IActions, actionResolver: IActionsResolver, areActionsDisabled: IAreActionsDisabled}) => [
   ...(actionResolver || actions
     ? [

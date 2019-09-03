@@ -16,7 +16,7 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   /** Flag to show the modal */
   isOpen?: boolean;
   /** Complex header (more than just text), supersedes title for header content */
-  header?: React.ReactNode,
+  header?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title: string;
   /** Flag to hide the title */
@@ -26,9 +26,9 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   /** Id to use for Modal Box description */
   ariaDescribedById?: string;
   /** Custom footer */
-  footer?: React.ReactNode,
+  footer?: React.ReactNode;
   /** Action buttons to add to the standard Modal Footer, ignored if `footer` is given */
-  actions?: any,
+  actions?: any;
   /** A callback for when the close button is clicked */
   onClose?: () => void;
   /** Default width of the Modal. */
@@ -39,6 +39,8 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   isSmall?: boolean;
   /** The parent container to append the modal to. Defaults to document.body */
   appendTo?: HTMLElement | (() => HTMLElement);
+  /** Flag to disable focus trap */
+  disableFocusTrap?: boolean;
 }
 
 interface ModalState {
@@ -72,12 +74,11 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     };
   }
 
-
   handleEscKeyClick = (event: KeyboardEvent): void => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
       this.props.onClose();
     }
-  };
+  }
 
   getElement = (appendTo: HTMLElement | (() => HTMLElement)) => {
     let target: HTMLElement;
@@ -98,7 +99,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
         hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
       }
     }
-  };
+  }
 
   componentDidMount() {
     const { appendTo } = this.props;

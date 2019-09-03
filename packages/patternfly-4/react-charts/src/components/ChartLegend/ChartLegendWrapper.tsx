@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { ChartLegendOrientation, ChartLegendPosition } from "../ChartLegend";
+import { ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getLegendX, getLegendY, getTheme } from "../ChartUtils";
+import { getLegendX, getLegendY, getTheme } from '../ChartUtils';
 
 export enum ChartLegendConfigChartType {
   chart = 'chart',
   pie = 'pie'
-};
+}
 
 /**
  * Helper to position a legend component within a component's SVG
@@ -113,7 +113,7 @@ export interface ChartLegendWrapperProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *
@@ -151,31 +151,33 @@ export const ChartLegendWrapper: React.FunctionComponent<ChartLegendWrapperProps
   const renderChildren = () =>
     React.Children.toArray(children).map((child: any) => {
       const childProps = child.props ? child.props : {};
+      const legendX = getLegendX({
+        chartWidth,
+        dx,
+        legendData: childProps.data,
+        legendOrientation: childProps.legendOrientation ? childProps.legendOrientation : orientation,
+        legendPosition: position,
+        legendProps: childProps,
+        theme,
+        svgWidth
+      });
+      const legendY = getLegendY({
+        chartHeight,
+        chartType,
+        dy,
+        legendData: childProps.data,
+        legendOrientation: childProps.legendOrientation ? childProps.legendOrientation : orientation,
+        legendProps: childProps,
+        legendPosition: position,
+        theme
+      });
       if (childProps.data) {
         return React.cloneElement(child as React.ReactElement<any>, {
           orientation,
           standalone: false,
           theme,
-          x: getLegendX({
-            chartWidth,
-            dx,
-            legendData: childProps.data,
-            legendOrientation: childProps.legendOrientation ? childProps.legendOrientation : orientation,
-            legendPosition: position,
-            legendProps: childProps,
-            theme,
-            svgWidth
-          }),
-          y: getLegendY({
-            chartHeight,
-            chartType,
-            dy,
-            legendData: childProps.data,
-            legendOrientation: childProps.legendOrientation ? childProps.legendOrientation : orientation,
-            legendProps: childProps,
-            legendPosition: position,
-            theme
-          }),
+          x: legendX > 0 ? legendX : 0,
+          y: legendY > 0 ? legendY : 0,
           ...childProps,
         });
       }

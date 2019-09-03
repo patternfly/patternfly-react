@@ -16,7 +16,7 @@ class TreeView extends React.Component {
 
   onFocus = node => {
     this.setState(() => ({ focusedNodeId: node.dataset.id }));
-  };
+  }
 
   onKeyDown = event => {
     const nodes = this.getVisibleNodes([...this.treeRef.current.getElementsByTagName('li')]);
@@ -33,7 +33,7 @@ class TreeView extends React.Component {
       const [lastVisibleNode] = nodes.slice(-1);
       lastVisibleNode.focus();
     }
-  };
+  }
 
   onKeyPress = event => {
     const nodes = this.getVisibleNodes([...this.treeRef.current.getElementsByTagName('li')]);
@@ -58,13 +58,13 @@ class TreeView extends React.Component {
     if (key === '*') {
       this.setState(prevState => ({ expandSiblings: prevState.focusedNodeId }));
     }
-  };
+  }
 
   getVisibleNodes = nodes => nodes.filter(node => !node.className.match(/node-hidden/));
 
   clearExpandSiblings = () => {
     this.setState(() => ({ expandSiblings: '' }));
-  };
+  }
 
   treeRef = React.createRef();
 

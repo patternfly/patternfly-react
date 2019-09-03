@@ -6,24 +6,24 @@ import { Tooltip } from '../Tooltip';
 
 export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorElement> {
   /** Anything which can be rendered as dropdown item */
-  children?: React.ReactNode; 
+  children?: React.ReactNode;
   /** Classes applied to root element of dropdown item */
-  className?: string; 
+  className?: string;
   /** Indicates which component will be used as dropdown item */
   component?: React.ReactNode | string;
   /** Role for the item */
-  role?: string; 
+  role?: string;
   /** Render dropdown item as disabled option */
-  isDisabled?: boolean; 
+  isDisabled?: boolean;
   /** Forces display of the hover state of the element */
-  isHovered?: boolean; 
+  isHovered?: boolean;
   /** Default hyperlink location */
-  href?: string; 
+  href?: string;
   /** Tooltip to display when hovered over the item */
   tooltip?: React.ReactNode;
   /** Additional tooltip props forwarded to the Tooltip component */
   tooltipProps?: any;
-  index?: number; 
+  index?: number;
   context?: {
     keyHandler?: (index: number, direction: string) => void,
     sendRef?: (index: number, ref: any, isDisabled: boolean) => void
@@ -58,7 +58,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
   onKeyDown = (event: any) => {
     // Detected key press on this item, notify the menu parent so that the appropriate
     // item can be focused
-    if (event.keyCode === KEY_CODES.TAB) { return };
+    if (event.keyCode === KEY_CODES.TAB) { return; }
     event.preventDefault();
     if (event.keyCode === KEY_CODES.ARROW_UP) {
       this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.UP);
@@ -67,7 +67,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     } else if (event.keyCode === KEY_CODES.ENTER && this.ref.current && this.ref.current.click) {
       this.ref.current.click();
     }
-  };
+  }
 
   render() {
     const {
@@ -114,7 +114,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
           return (
             <li role="none">
               {React.isValidElement(children)
-                ? React.Children.map(children, child => {
+                ? React.Children.map(children, (child) => {
                     const toClone = child as React.ReactHTMLElement<any>;
                     const clonedElement = React.cloneElement(toClone, {
                       className: css(classes, itemClass),

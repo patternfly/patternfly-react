@@ -5,19 +5,19 @@ export interface TabContentProps extends React.HTMLProps<HTMLElement> {
   /** content rendered inside the tab content area if used outside Tabs component */
   children?: any;
   /** Child to show in the content area */
-  child?: React.ReactElement<any>; 
+  child?: React.ReactElement<any>;
   /** class of tab content area if used outside Tabs component */
-  className?: string; 
+  className?: string;
   /** Identifies the active Tab  */
-  activeKey?: number | string; 
+  activeKey?: number | string;
   /** uniquely identifies the controlling Tab if used outside Tabs component */
-  eventKey?: number | string; 
+  eventKey?: number | string;
   /** Callback for the section ref */
   innerRef?: React.Ref<any>;
   /** id passed from parent to identify the content section */
-  id: string; 
+  id: string;
   /** title of controlling Tab if used outside Tabs component */
-  'aria-label'?: string; 
+  'aria-label'?: string;
 }
 
 const TabContent0: React.FC<TabContentProps> = ({
@@ -56,7 +56,7 @@ const TabContent0: React.FC<TabContentProps> = ({
     );
   }
   return null;
-}
+};
 
 // eslint-disable-next-line react/no-multi-comp
-export const TabContent = React.forwardRef((props: TabContentProps, ref: React.Ref<HTMLElement>) => <TabContent0 innerRef={ref} {...props} />);
+export const TabContent = React.forwardRef<any, TabContentProps>((props, ref) => <TabContent0 innerRef={ref} {...props} />);

@@ -29,10 +29,10 @@ export interface AlertProps
   /** Additional classes added to the Alert  */
   className?: string;
   /** Adds accessible text to the Alert */
-  'aria-label'?: string,
+  'aria-label'?: string;
   /** Variant label text for screen readers */
   variantLabel?: string;
-};
+}
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
   variant = AlertVariant.info,

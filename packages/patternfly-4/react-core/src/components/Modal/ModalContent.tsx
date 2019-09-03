@@ -15,6 +15,7 @@ import { ModalBoxHeader } from './ModalBoxHeader';
 import { ModalBoxCloseButton } from './ModalBoxCloseButton';
 import { ModalBox } from './ModalBox';
 import { ModalBoxFooter } from './ModalBoxFooter';
+import { Bullseye } from '../../layouts/Bullseye';
 
 export interface ModalContentProps {
   /** Content rendered inside the Modal. */
@@ -28,7 +29,7 @@ export interface ModalContentProps {
   /** Flag to show the modal */
   isOpen?: boolean;
   /** Complex header (more than just text), supersedes title for header content */
-  header?: React.ReactNode,
+  header?: React.ReactNode;
   /** Simple text content of the Modal Header, also used for aria-label on the body */
   title: string;
   /** Flag to show the title (ignored for custom headers) */
@@ -38,15 +39,17 @@ export interface ModalContentProps {
   /** Default width of the content. */
   width?: number | string;
   /** Custom footer */
-  footer?: React.ReactNode,
+  footer?: React.ReactNode;
   /** Action buttons to add to the standard Modal Footer, ignored if `footer` is given */
-  actions?: any,
+  actions?: any;
   /** A callback for when the close button is clicked */
   onClose?: () => void;
   /** Id to use for Modal Box description */
   ariaDescribedById?: string;
   /** Id of the ModalBoxBody */
   id: string;
+  /** Flag to disable focus trap */
+  disableFocusTrap?: boolean;
 }
 
 export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
@@ -65,8 +68,9 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   width = -1,
   ariaDescribedById = '',
   id = '',
+  disableFocusTrap = false,
   ...props
-}) => {
+}: ModalContentProps) => {
   if (!isOpen) {
     return null;
   }
@@ -79,26 +83,35 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     <ModalBoxFooter>{footer}</ModalBoxFooter> :
     actions.length > 0 && <ModalBoxFooter>{actions}</ModalBoxFooter>;
   const boxStyle = width === -1 ? {} : { width };
-
+  const modalBox = (
+    <ModalBox
+      style={boxStyle}
+      className={className}
+      isLarge={isLarge}
+      isSmall={isSmall}
+      title={title}
+      id={ariaDescribedById || id}
+    >
+      {showClose && <ModalBoxCloseButton onClose={onClose} />}
+      {modalBoxHeader}
+      <ModalBoxBody {...props} id={id}>
+        {children}
+      </ModalBoxBody>
+      {modalBoxFooter}
+    </ModalBox>
+  );
   return (
     <Backdrop>
-      <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
-        <ModalBox
-          style={boxStyle}
-          className={className}
-          isLarge={isLarge}
-          isSmall={isSmall}
-          title={title}
-          id={ariaDescribedById || id}
-        >
-          {showClose && <ModalBoxCloseButton onClose={onClose} />}
-          {modalBoxHeader}
-          <ModalBoxBody {...props} id={id}>
-            {children}
-          </ModalBoxBody>
-          {modalBoxFooter}
-        </ModalBox>
-      </FocusTrap>
+      {disableFocusTrap ? (
+        <Bullseye>
+          {modalBox}
+        </Bullseye>
+      ) 
+      : (
+        <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
+          {modalBox}
+        </FocusTrap>
+      )}
     </Backdrop>
   );
 };

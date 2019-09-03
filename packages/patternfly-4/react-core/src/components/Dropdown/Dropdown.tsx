@@ -4,17 +4,17 @@ import { css } from '@patternfly/react-styles';
 import { DropdownMenu } from './DropdownMenu';
 import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
 
-export interface DropdownProps extends React.HTMLProps<HTMLDivElement>{
+export interface DropdownProps extends React.HTMLProps<HTMLDivElement> {
   /** Anything which can be rendered in a dropdown */
-  children?: React.ReactNode; 
+  children?: React.ReactNode;
   /** Classes applied to root element of dropdown */
-  className?: string; 
+  className?: string;
   /** Array of DropdownItem nodes that will be rendered in the dropdown Menu list */
-  dropdownItems?: any[]; 
+  dropdownItems?: any[];
   /** Flag to indicate if menu is opened */
-  isOpen?: boolean; 
+  isOpen?: boolean;
   /** Display the toggle with no border or background */
-  isPlain?: boolean; 
+  isPlain?: boolean;
   /** Indicates where menu will be aligned horizontally */
   position?: DropdownPosition | 'right' | 'left';
   /** Display menu above or below dropdown toggle */
@@ -22,7 +22,7 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement>{
   /** Flag to indicate if dropdown has groups */
   isGrouped?: boolean;
   /** Toggle for the dropdown, examples: <DropdownToggle> or <DropdownToggleCheckbox> */
-  toggle: React.ReactElement<any>; 
+  toggle: React.ReactElement<any>;
   /** Function callback called when user selects item */
   onSelect?(event: React.SyntheticEvent<HTMLDivElement>): void;
 }
@@ -33,7 +33,7 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
 
   // seed for the aria-labelledby ID
   static currentId = 0;
-  
+
   static defaultProps = {
     className: '',
     dropdownItems: [] as any[],
@@ -49,17 +49,17 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
     super(props);
     if (props.dropdownItems && props.dropdownItems.length > 0 && props.children) {
       throw new Error(
-        `Children and dropdownItems props have been provided. Only the dropdownItems prop items will be rendered `
+        'Children and dropdownItems props have been provided. Only the dropdownItems prop items will be rendered '
       );
     }
   }
-  
+
   onEnter = () => {
     this.openedOnEnter = true;
-  };
+  }
 
   componentDidUpdate() {
-    if (!this.props.isOpen){ this.openedOnEnter = false;}
+    if (!this.props.isOpen) { this.openedOnEnter = false; }
   }
 
   render() {
@@ -90,7 +90,7 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
     }
     return (
       <DropdownContext.Consumer>
-        {({ baseClass, baseComponent }) => {
+        {({ baseClass, baseComponent, id: contextId }) => {
           const BaseComponent = baseComponent as any;
           return (
             <BaseComponent
@@ -103,7 +103,7 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
               )}
               ref={this.baseComponentRef}
             >
-              {React.Children.map(toggle, oneToggle =>
+              {React.Children.map(toggle, (oneToggle) =>
                 React.cloneElement(oneToggle, {
                   parentRef: this.baseComponentRef,
                   isOpen,
@@ -118,7 +118,7 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
                   component={component}
                   isOpen={isOpen}
                   position={position}
-                  aria-labelledby={id}
+                  aria-labelledby={contextId ? `${contextId}-toggle` : id}
                   openedOnEnter={this.openedOnEnter}
                   isGrouped={isGrouped}
                 >
@@ -140,7 +140,9 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
 }: DropdownProps) => (
   <DropdownContext.Provider
     value={{
-      onSelect: event => onSelect && onSelect(event),
+      onSelect: (event) => onSelect && onSelect(event),
+      toggleTextClass: styles.dropdownToggleText,
+      toggleIconClass: styles.dropdownToggleIcon,
       menuClass: styles.dropdownMenu,
       itemClass: styles.dropdownMenuItem,
       toggleClass: styles.dropdownToggle,

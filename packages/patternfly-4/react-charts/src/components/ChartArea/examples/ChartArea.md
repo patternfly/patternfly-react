@@ -33,7 +33,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
       width={800}
     >
       <ChartAxis />
-      <ChartAxis dependentAxis showGrid />
+      <ChartAxis dependentAxis showGrid/>
       <ChartGroup>
         <ChartArea
           data={[
@@ -83,9 +83,9 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
       containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
       legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}
       legendPosition="bottom"
-      height={225}
+      height={250}
       padding={{
-        bottom: 75, // Adjusted to accomodate legend
+        bottom: 100, // Adjusted to accomodate legend
         left: 50,
         right: 50,
         top: 50,
@@ -94,8 +94,8 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
       themeColor={ChartThemeColor.cyan}
       width={650}
     >
-      <ChartAxis />
-      <ChartAxis dependentAxis showGrid />
+      <ChartAxis label="Animals"/>
+      <ChartAxis dependentAxis showGrid/>
       <ChartGroup>
         <ChartArea
           data={[
@@ -145,15 +145,15 @@ class MultiColorChart extends React.Component {
       width: 0
     };
     this.handleResize = () => {
-      this.setState({ width: this.containerRef.current.clientWidth });
+      if(this.containerRef.current && this.containerRef.current.clientWidth){
+        this.setState({ width: this.containerRef.current.clientWidth });
+      }
     };
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ width: this.containerRef.current.clientWidth });
-      window.addEventListener('resize', this.handleResize);
-    });
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {

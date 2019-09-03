@@ -24,21 +24,21 @@ class SerialConsole extends React.Component {
   }
 
   onResetClick = event => {
-    if (event.button !== 0) return;
+    if (event.button !== 0) { return; }
 
     this.props.onDisconnect();
     this.props.onConnect();
     event.target.blur();
     this.focusTerminal();
-  };
+  }
 
   onDisconnectClick = event => {
-    if (event.button !== 0) return;
+    if (event.button !== 0) { return; }
 
     this.props.onDisconnect();
     event.target.blur();
     this.focusTerminal();
-  };
+  }
 
   /**
    * Backend sent data.
@@ -60,7 +60,7 @@ class SerialConsole extends React.Component {
 
   focusTerminal = () => {
     this.childTerminal && this.childTerminal.focus();
-  };
+  }
 
   render() {
     const { id, status, topClassName } = this.props;

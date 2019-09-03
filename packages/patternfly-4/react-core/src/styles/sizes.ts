@@ -7,7 +7,7 @@ export enum BaseSizes {
   '2xl' = '2xl',
   '3xl' = '3xl',
   '4xl' = '4xl'
-};
+}
 
 export enum DeviceSizes {
   sm = 'Sm',
@@ -15,4 +15,4 @@ export enum DeviceSizes {
   lg = 'Lg',
   xl = 'Xl',
   xl2 = '_2xl'
-};
+}

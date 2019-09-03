@@ -1,0 +1,58 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-react"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**",
+      "**/node_modules/**",
+      "**/dist/*",
+      "**/dist/**",
+      "**/coverage/**",
+      "**/templates/**",
+      "**/react-styles/css/**",
+      "**/react-docs/public/**",
+      "**/react-docs/public/*",
+      "**/demo-app-ts/build/**",
+      "**/react-icons/src/icons/**",
+      "**/react-icons/src/index.js"
+    ]
+  },
+  "rules": {
+    "member-access": [
+      true,
+      "no-public"
+    ],
+    "member-ordering": false,
+    "array-type": [
+      true,
+      "array"
+    ],
+    "interface-name": [
+      true,
+      "never-prefix"
+    ],
+    "jsx-boolean-value": [
+      true,
+      "never"
+    ],
+    "jsx-no-lambda": false,
+    "jsx-self-close": true,
+    "jsx-wrap-multiline": false,
+    "object-literal-sort-keys": false,
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double",
+      "avoid-template"
+    ],
+    "variable-name": false,
+    "ordered-imports": false,
+    "trailing-comma": false,
+    "indent": [true, "spaces", 2],
+    "linebreak-style": [true, "LF"]
+  },
+  "jsRules": true
+}

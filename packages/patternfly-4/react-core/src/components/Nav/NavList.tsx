@@ -47,7 +47,7 @@ export class NavList extends React.Component<NavListProps> {
         showRightScrollButton
       });
     }
-  };
+  }
 
   scrollLeft = () => {
     // find first Element that is fully in view on the left, then scroll to the element before it
@@ -67,7 +67,7 @@ export class NavList extends React.Component<NavListProps> {
       }
       this.handleScrollButtons();
     }
-  };
+  }
 
   scrollRight = () => {
     // find last Element that is fully in view on the right, then scroll to the element after it
@@ -87,7 +87,7 @@ export class NavList extends React.Component<NavListProps> {
       }
       this.handleScrollButtons();
     }
-  };
+  }
 
   componentDidMount() {
     const { variant } = this.props;

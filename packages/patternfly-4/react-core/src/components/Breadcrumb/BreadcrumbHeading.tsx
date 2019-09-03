@@ -41,4 +41,4 @@ export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> 
       </h1>
     </li>
   );
-}
+};

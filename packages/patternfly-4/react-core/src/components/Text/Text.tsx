@@ -37,4 +37,4 @@ export const Text: React.FunctionComponent<TextProps> = ({
       {children}
     </Component>
   );
-}
+};

@@ -118,9 +118,9 @@ const getNextDepth = depth =>
 const deepestOf = (pri, sec, ter) => (pri && sec && ter) || (pri && sec) || pri;
 
 const componentForDepth = depth => {
-  if (depth === 'primary') return VerticalNavItem;
-  if (depth === 'secondary') return VerticalNavSecondaryItem;
-  if (depth === 'tertiary') return VerticalNavTertiaryItem;
+  if (depth === 'primary') { return VerticalNavItem; }
+  if (depth === 'secondary') { return VerticalNavSecondaryItem; }
+  if (depth === 'tertiary') { return VerticalNavTertiaryItem; }
   return null;
 };
 

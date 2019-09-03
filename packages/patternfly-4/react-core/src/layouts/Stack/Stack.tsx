@@ -4,12 +4,12 @@ import { css } from '@patternfly/react-styles';
 import { getGutterModifier } from '../../styles/gutters';
 
 export interface StackProps extends React.HTMLProps<HTMLDivElement> {
-  /** Adds space between children. Options are sm, md or lg */
+  /** Adds space between children. */
   gutter?: 'sm' | 'md' | 'lg';
   /** content rendered inside the Stack layout */
-  children?: React.ReactNode; 
+  children?: React.ReactNode;
   /** additional classes added to the Stack layout */
-  className?: string; 
+  className?: string;
   /** Sets the base component to render. defaults to div */
   component?: React.ReactNode;
 }
@@ -18,10 +18,10 @@ export const Stack: React.FunctionComponent<StackProps> = ({
   gutter = null,
   className = '',
   children = null,
-  component = 'div', 
+  component = 'div',
   ...props
 }: StackProps) => {
-  const Component = component as any; 
+  const Component = component as any;
   return (
   <Component
     {...props}
@@ -29,4 +29,4 @@ export const Stack: React.FunctionComponent<StackProps> = ({
   >
     {children}
   </Component>
-)}; 
+);};

@@ -5,11 +5,11 @@ import { Omit } from '../../helpers/typeUtils';
 
 export interface DropdownGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'label'> {
   /** Checkboxes within group */
-  children?: React.ReactNode; 
+  children?: React.ReactNode;
   /** Additional classes added to the DropdownGroup control */
-  className?: string; 
+  className?: string;
   /** Group label */
-  label?: React.ReactNode; 
+  label?: React.ReactNode;
 }
 
 export const DropdownGroup: React.FunctionComponent<DropdownGroupProps> = ({

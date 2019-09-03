@@ -19,7 +19,7 @@ export interface DataListItemChildProps {
   rowid: string;
 }
 
-export const DataListItem: React.FunctionComponent<DataListItemProps>= ({
+export const DataListItem: React.FunctionComponent<DataListItemProps> = ({
   children,
   className = '',
   isExpanded = false,
@@ -33,7 +33,7 @@ export const DataListItem: React.FunctionComponent<DataListItemProps>= ({
   >
     {React.Children.map(
       children,
-      child =>
+      (child) =>
         React.isValidElement(child) &&
         React.cloneElement(child as React.ReactElement<any>, {
           rowid: ariaLabelledBy

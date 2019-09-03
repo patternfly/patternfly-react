@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.12.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.12.1...@patternfly/react-icons@3.12.2) (2019-08-30)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## [3.12.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.12.0...@patternfly/react-icons@3.12.1) (2019-08-27)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+# [3.12.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.11.1...@patternfly/react-icons@3.12.0) (2019-08-23)
+
+
+### Features
+
+* **Icons - config:** Publish configs as well with icons ([#2701](https://github.com/patternfly/patternfly-react/issues/2701)) ([6055e91](https://github.com/patternfly/patternfly-react/commit/6055e91))
+
+
+
+
+
+## [3.11.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.11.0...@patternfly/react-icons@3.11.1) (2019-08-23)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+# [3.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.18...@patternfly/react-icons@3.11.0) (2019-08-20)
+
+
+### Features
+
+* **Ansible icon:** Add ansible tower icon to custom icons definition ([#2735](https://github.com/patternfly/patternfly-react/issues/2735)) ([0ffe527](https://github.com/patternfly/patternfly-react/commit/0ffe527))
+
+
+
+
+
+## [3.10.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.17...@patternfly/react-icons@3.10.18) (2019-08-19)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
 ## [3.10.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.10.16...@patternfly/react-icons@3.10.17) (2019-08-12)
 
 **Note:** Version bump only for package @patternfly/react-icons

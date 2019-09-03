@@ -30,4 +30,4 @@ export const TextListItem: React.FunctionComponent<TextListItemProps> = ({
       {children}
     </Component>
   );
-}
+};

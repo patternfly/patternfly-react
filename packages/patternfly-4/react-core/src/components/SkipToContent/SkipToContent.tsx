@@ -6,7 +6,7 @@ import { css, getModifier } from '@patternfly/react-styles';
 export interface SkipToContentProps
   extends React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
   /** Sets the base component to render. Defaults to an anchor */
-  component?: any,
+  component?: any;
   /** The skip to content link. */
   href: string;
   /** Content to display within the skip to content component, typically a string. */
@@ -43,4 +43,4 @@ export class SkipToContent extends React.Component<SkipToContentProps> {
       </Component>
     );
   }
-};
+}

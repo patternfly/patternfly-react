@@ -9,6 +9,6 @@ export class LevelDemo extends React.Component {
         <LevelItem>Level Item</LevelItem>
         <LevelItem>Level Item</LevelItem>
       </Level>
-    )
+    );
   }
 }

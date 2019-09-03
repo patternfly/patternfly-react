@@ -20,13 +20,13 @@ beforeEach(() => {
 });
 
 test('it generates token from root selector with value', () => {
-  readFileSyncMock.mockReturnValue(`:root { --pf-global--BackgroundColor--100: #fff; }`);
+  readFileSyncMock.mockReturnValue(':root { --pf-global--BackgroundColor--100: #fff; }');
   require('./generateTokens');
   expect(getOutputs()).toMatchSnapshot();
 });
 
 test('it generates token from class selector with value', () => {
-  readFileSyncMock.mockReturnValue(`.pf-c-button { --pf-c-button--BackgroundColor: #fff }`);
+  readFileSyncMock.mockReturnValue('.pf-c-button { --pf-c-button--BackgroundColor: #fff }');
   require('./generateTokens');
   expect(getOutputs()).toMatchSnapshot();
 });

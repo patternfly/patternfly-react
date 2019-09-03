@@ -29,4 +29,4 @@ export const TextList: React.FunctionComponent<TextListProps> = ({
       {children}
     </Component>
   );
-}
+};

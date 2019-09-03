@@ -210,3 +210,122 @@ import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
   </div>
 </div>
 ```
+
+## Monthly vertical stack with bottom aligned legend and responsive container
+```js
+import React from 'react';
+import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
+
+class ResponsiveStack extends React.Component {
+  constructor(props) {
+    super(props);
+    this.containerRef = React.createRef();
+    this.state = {
+      width: 0
+    };
+    this.handleResize = () => {
+      if(this.containerRef.current && this.containerRef.current.clientWidth){
+        this.setState({ width: this.containerRef.current.clientWidth });
+      }
+    };
+
+    this.bars = [];
+    for(let i = 1; i < 32; i++){
+      this.bars.push({ x: `Aug. ${i}`, y: Math.floor(Math.random() * 6) + 1 });
+    };
+
+    this.renderChartBars = () => {
+      let socketBars = this.bars.map(tick => {
+        return {
+          x: tick.x,
+          y: tick.y,
+          name: 'Sockets',
+          label: `${tick.x} Sockets: ${tick.y}`
+        };
+      });
+
+      let coresBars = this.bars.map(tick => {
+        return {
+          x: tick.x,
+          y: tick.y,
+          name: 'Cores',
+          label: `${tick.x} Cores: ${tick.y}`
+        };
+      });
+
+      let nodesBars = this.bars.map(tick => {
+        return {
+          x: tick.x,
+          y: tick.y,
+          name: 'Nodes',
+          label: `${tick.x} Nodes: ${tick.y}`
+        };
+      });
+
+      return [
+        <ChartBar 
+          data={socketBars} 
+          labelComponent={<ChartTooltip />}
+        />,
+        <ChartBar 
+          data={coresBars} 
+          labelComponent={<ChartTooltip />}
+        />,
+        <ChartBar 
+          data={nodesBars} 
+          labelComponent={<ChartTooltip />}
+        />,
+      ];
+    }
+    this.getTickValues = (offset = 2) => {
+      let tickValues = [];
+      for(let i = 1; i < 32; i++){
+        if (i % offset == 0){
+          tickValues.push(`Aug. ${i}`);
+        }
+      }
+      return tickValues;
+    }
+  }
+
+  componentDidMount() {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  render(){
+    const { width } = this.state;
+    return (
+      <div ref={this.containerRef}>
+        <div>
+          <Chart
+            ariaDesc="Stack Chart with monthly metric data"
+            ariaTitle="Monthly Stack Chart"
+            domainPadding={{ x: [30, 25] }}
+            legendData={[{ name: 'Sockets' }, { name: 'Cores' }, { name: 'Nodes' }]}
+            legendPosition="bottom"
+            height={275}
+            padding={{
+              bottom: 75, // Adjusted to accomodate legend
+              left: 50,
+              right: 50, 
+              top: 50
+            }}
+            width={width}
+          >
+            <ChartAxis tickValues = {this.getTickValues()} fixLabelOverlap />
+            <ChartAxis dependentAxis showGrid />
+            <ChartStack domainPadding={{x: [10, 2]}}>
+              { this.renderChartBars() }
+            </ChartStack>
+          </Chart>
+        </div>
+      </div>
+    )
+  }
+}
+```

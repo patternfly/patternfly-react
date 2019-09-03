@@ -18,7 +18,7 @@ export const cellActions = (actions: IActions, actionResolver: IActionsResolver,
       extraParams: { dropdownPosition, dropdownDirection }
     },
     property
-  } : IExtra
+  }: IExtra
 ) => {
   const extraData = {
     rowIndex,

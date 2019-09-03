@@ -15,25 +15,25 @@ import {
 } from '@patternfly/react-core';
 
 interface InputGroupState {
-  isOpen: boolean, 
-  selected: string
+  isOpen: boolean;
+  selected: string;
 }
 
 export class InputGroupDemo extends React.Component<{}, InputGroupState> {
-  onToggle: (isOpen: boolean) => void; 
-  onSelect: (event: any) => void; 
+  onToggle: (isOpen: boolean) => void;
+  onSelect: (event: any) => void;
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false,
       selected: ''
     };
-    this.onToggle = isOpen => {
+    this.onToggle = (isOpen) => {
       this.setState({
         isOpen
       });
     };
-    this.onSelect = event => {
+    this.onSelect = (event) => {
       this.setState({
         isOpen: false,
         selected: event.currentTarget.value
@@ -77,8 +77,7 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
             toggle={
               <DropdownToggle onToggle={this.onToggle}>
                 {this.state.selected ? this.state.selected : 'Dropdown'}
-              </DropdownToggle>
-            }
+              </DropdownToggle>}
             isOpen={this.state.isOpen}
             dropdownItems={[
               <DropdownItem key="opt-1" value="Option 1" component="button">

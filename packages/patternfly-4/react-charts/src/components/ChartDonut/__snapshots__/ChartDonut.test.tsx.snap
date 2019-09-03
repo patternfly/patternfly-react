@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Chart 1`] = `
+exports[`ChartDonut 1`] = `
 <Component
   height={230}
   width={230}
@@ -66,7 +66,7 @@ exports[`Chart 1`] = `
               "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
               "letterSpacing": "var(--pf-chart-global--letter-spacing)",
-              "padding": 100,
+              "padding": 40,
               "stroke": "transparent",
               "textAnchor": "middle",
             },
@@ -88,7 +88,7 @@ exports[`Chart 1`] = `
             "ticks": Object {
               "fill": "transparent",
               "size": 5,
-              "stroke": "none",
+              "stroke": "#d2d2d2",
               "strokeLinecap": "round",
               "strokeLinejoin": "round",
               "strokeWidth": 1,
@@ -470,7 +470,7 @@ exports[`Chart 1`] = `
 </Component>
 `;
 
-exports[`Chart 2`] = `
+exports[`ChartDonut 2`] = `
 <Component
   height={230}
   width={230}
@@ -536,7 +536,7 @@ exports[`Chart 2`] = `
               "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
               "letterSpacing": "var(--pf-chart-global--letter-spacing)",
-              "padding": 100,
+              "padding": 40,
               "stroke": "transparent",
               "textAnchor": "middle",
             },
@@ -558,7 +558,7 @@ exports[`Chart 2`] = `
             "ticks": Object {
               "fill": "transparent",
               "size": 5,
-              "stroke": "none",
+              "stroke": "#d2d2d2",
               "strokeLinecap": "round",
               "strokeLinejoin": "round",
               "strokeWidth": 1,
@@ -1022,7 +1022,7 @@ exports[`renders component data 1`] = `
               "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
               "letterSpacing": "var(--pf-chart-global--letter-spacing)",
-              "padding": 100,
+              "padding": 40,
               "stroke": "transparent",
               "textAnchor": "middle",
             },
@@ -1044,7 +1044,7 @@ exports[`renders component data 1`] = `
             "ticks": Object {
               "fill": "transparent",
               "size": 5,
-              "stroke": "none",
+              "stroke": "#d2d2d2",
               "strokeLinecap": "round",
               "strokeLinejoin": "round",
               "strokeWidth": 1,

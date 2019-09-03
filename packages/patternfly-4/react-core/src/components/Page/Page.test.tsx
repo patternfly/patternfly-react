@@ -9,8 +9,8 @@ import { SkipToContent } from '../SkipToContent';
 
 const props = {
   'aria-label': 'Page layout',
-  id: 'PageId',
-  className: 'my-page-class'
+  'id': 'PageId',
+  'className': 'my-page-class'
 };
 
 test('Check page vertical layout example against snapshot', () => {
@@ -63,7 +63,7 @@ test('Check page to verify breadcrumb is created', () => {
     </Page>
   );
   expect(view).toMatchSnapshot();
-  expect(view.find(`.pf-c-page__main`).getDOMNode().id).toBe('');
+  expect(view.find('.pf-c-page__main').getDOMNode().id).toBe('');
 });
 
 test('Check page to verify skip to content points to main content region', () => {
@@ -97,6 +97,6 @@ test('Check page to verify skip to content points to main content region', () =>
     </Page>
   );
   expect(view).toMatchSnapshot();
-  expect(view.find(`.pf-c-page`).getDOMNode().id).toBe(props.id);
-  expect(view.find(`.pf-c-page__main`).getDOMNode().id).toBe(mainId);
+  expect(view.find('.pf-c-page').getDOMNode().id).toBe(props.id);
+  expect(view.find('.pf-c-page__main').getDOMNode().id).toBe(mainId);
 });

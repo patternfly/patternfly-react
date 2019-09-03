@@ -15,7 +15,7 @@ export class MockOverlayManager extends React.Component {
   toggleOverlay = () => {
     const { showOverlay } = this.state;
     this.setState({ showOverlay: !showOverlay });
-  };
+  }
   render() {
     const { placement } = this.props;
     const { showOverlay } = this.state;

@@ -211,14 +211,14 @@ export class MockServerPaginationTable extends React.Component {
     const newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.page = page;
     this.getPage(this.state.sortingColumns, newPaginationState);
-  };
+  }
 
   onPerPageSelect = (eventKey, e) => {
     const newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.perPage = eventKey;
     newPaginationState.page = 1;
     this.getPage(this.state.sortingColumns, newPaginationState);
-  };
+  }
 
   onSelectAllRows = event => {
     const { sortingColumns, pagination, rows } = this.state;
@@ -227,7 +227,7 @@ export class MockServerPaginationTable extends React.Component {
       // refresh rows after all rows selected
       this.getPage(sortingColumns, pagination);
     });
-  };
+  }
 
   onSelectRow = (event, row) => {
     const { sortingColumns, pagination } = this.state;
@@ -235,7 +235,7 @@ export class MockServerPaginationTable extends React.Component {
       // refresh rows after row is selected
       this.getPage(sortingColumns, pagination);
     });
-  };
+  }
   onSort = (e, column, sortDirection) => {
     // Clearing existing sortingColumns does simple single column sort. To do multisort,
     // set each column based on existing sorts specified and set sort position.
@@ -249,7 +249,7 @@ export class MockServerPaginationTable extends React.Component {
     alert(`Server API called with: sort by ${column.property} ${updatedSortingColumns[column.property].direction}`);
 
     this.getPage(updatedSortingColumns, this.state.pagination);
-  };
+  }
 
   getPage(sortingColumns, pagination) {
     const { onServerPageLogger } = this.props;
@@ -343,7 +343,7 @@ export class MockServerPaginationTable extends React.Component {
       role: 'row'
     };
   }
-  
+
   constructor(props) {
     super(props);
 

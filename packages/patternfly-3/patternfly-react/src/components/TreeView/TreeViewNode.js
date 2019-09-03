@@ -64,17 +64,17 @@ class TreeViewNode extends Component {
       e.stopPropagation();
       this.handleSelect(e);
     }
-  };
+  }
 
   onFocus = e => {
     e.stopPropagation();
     this.props.onFocus(this.nodeRef.current);
     this.setState(() => ({ focused: true }));
-  };
+  }
 
   onBlur = () => {
     this.setState(() => ({ focused: false }));
-  };
+  }
 
   handleSelect = e => {
     const { node, selectNode } = this.props;
@@ -85,16 +85,16 @@ class TreeViewNode extends Component {
       this.nodeRef.current.focus();
       selectNode(node);
     }
-  };
+  }
 
   toggleExpand = e => {
     e.stopPropagation();
     this.toggleExpandedState();
-  };
+  }
 
   toggleExpandedState = () => {
     this.setState(prevState => ({ expanded: !prevState.expanded }));
-  };
+  }
 
   nodeRef = React.createRef();
 

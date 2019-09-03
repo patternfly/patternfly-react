@@ -8,7 +8,7 @@ const mockListener = jest.spyOn(ReactDOM, 'createPortal');
 jest.spyOn(document, 'createElement');
 jest.spyOn(document, 'addEventListener');
 
-mockListener.mockImplementation(node => node as React.ReactPortal);
+mockListener.mockImplementation((node) => node as React.ReactPortal);
 
 const props = {
  onClose: jest.fn(),

@@ -22,12 +22,12 @@ export enum ChartDonutLabelPosition {
   centroid = 'centroid',
   endAngle = 'endAngle',
   startAngle = 'startAngle'
-};
+}
 
 export enum ChartDonutSortOrder {
   ascending = 'ascending',
   descending = 'descending'
-};
+}
 
 export enum ChartDonutSubTitlePosition {
   bottom = 'bottom',
@@ -129,6 +129,14 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   dataComponent?: React.ReactElement<any>;
   /**
+   * Defines a horizontal shift from the x coordinate. It should not be set manually.
+   */
+  donutDx?: number;
+  /**
+   * Defines a vertical shift from the y coordinate. It should not be set manually.
+   */
+  donutDy?: number;
+  /**
    * Specifies the height of the donut chart. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
@@ -145,14 +153,6 @@ export interface ChartDonutProps extends ChartPieProps {
    * Note: innerRadius may need to be set when using this property.
    */
   donutHeight?: number;
-  /**
-   * Defines a horizontal shift from the x coordinate. It should not be set manually.
-   */
-  donutDx?: number;
-  /**
-   * Defines a vertical shift from the y coordinate. It should not be set manually.
-   */
-  donutDy?: number;
   /**
    * Specifies the width of the donut chart. This value should be given as a number of pixels.
    *
@@ -219,7 +219,7 @@ export interface ChartDonutProps extends ChartPieProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback | string[] | number[]>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback | string[] | number[]>[];
   /**
    * ChartDonut uses the standard externalEventMutations prop.
    */
@@ -291,16 +291,19 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   legendComponent?: React.ReactElement<any>;
   /**
-   * The data prop specifies the data to be plotted,
-   * where data X-value is the slice label (string or number),
-   * and Y-value is the corresponding number value represented by the slice
-   * Data should be in the form of an array of data points.
-   * Each data point may be any format you wish (depending on the `x` and `y` accessor props),
-   * but by default, an object with x and y properties is expected.
+   * Specify data via the data prop. ChartLegend expects data as an
+   * array of objects with name (required), symbol, and labels properties.
+   * The data prop must be given as an array.
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  legendData?: any[];
+  legendData?: {
+    name?: string;
+    symbol?: {
+      fill?: string;
+      type?: string;
+    };
+  }[];
   /**
    * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
@@ -414,7 +417,7 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *

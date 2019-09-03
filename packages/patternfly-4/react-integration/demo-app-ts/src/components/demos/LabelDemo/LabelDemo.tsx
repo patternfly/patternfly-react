@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 export class LabelDemo extends Component {
  myLabelProps: LabelProps = {
    isCompact: true,
-   children: "Compact label"
- }
+   children: 'Compact label'
+ };
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
  render() {

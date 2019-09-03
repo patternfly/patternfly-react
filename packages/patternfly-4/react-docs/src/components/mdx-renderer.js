@@ -27,7 +27,6 @@ export function MDXRenderer({ scope, components, children, ...props }) {
 
   const End = fn({}, ...values);
   const element = React.createElement(End, { components: mdxComponents, ...props });
-
   // Inject our scope into our custom <code> component.
   const propComponents = element.props.components;
   if (propComponents && propComponents.code) {

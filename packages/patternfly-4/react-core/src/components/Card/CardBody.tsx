@@ -4,9 +4,9 @@ import { css } from '@patternfly/react-styles';
 
 export interface CardBodyProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Card Body */
-  children?: React.ReactNode; 
+  children?: React.ReactNode;
   /** Additional classes added to the Card Body */
-  className?: string; 
+  className?: string;
   /** Sets the base component to render. defaults to div */
   component?: React.ReactNode;
   /** Enables the body Content to fill the height of the card */
@@ -14,10 +14,10 @@ export interface CardBodyProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const CardBody: React.FunctionComponent<CardBodyProps> = ({
-  children = null, 
-  className = '', 
-  component ='div', 
-  isFilled = true, 
+  children = null,
+  className = '',
+  component = 'div',
+  isFilled = true,
   ...props
 }: CardBodyProps) => {
   const Component = component as any;
@@ -25,4 +25,4 @@ export const CardBody: React.FunctionComponent<CardBodyProps> = ({
   <Component className={css(styles.cardBody, !isFilled && styles.modifiers.noFill, className)} {...props}>
     {children}
   </Component>
-)};
+); };

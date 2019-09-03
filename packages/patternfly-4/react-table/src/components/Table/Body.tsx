@@ -40,7 +40,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
         onRowClick(event, row, rowProps, computedData);
       }
     };
-  };
+  }
 
   mapCells = (headerData: IRow[], row: IRow, rowKey: number) => {
     // column indexes start after generated optional columns
@@ -74,7 +74,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
           { id: row.id !== undefined ? row.id : rowKey }
         ))
     };
-  };
+  }
 
   render() {
     const { className, headerData, rows, rowKey, children, onRowClick, ...props } = this.props;
@@ -111,7 +111,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
 }
 
 export const TableBody = ({
-  onRow = (...args:any) => Object,
+  onRow = (...args: any) => Object,
   className = '' as string,
   children = null as React.ReactNode,
   rowKey = 'id' as string,
@@ -119,8 +119,8 @@ export const TableBody = ({
   ...props
 }: TableBodyProps) => (
   <TableContext.Consumer>
-    {({ headerData = [], rows = [], ...rest }) => 
-      <ContextBody 
+    {({ headerData = [], rows = [], ...rest }) =>
+      <ContextBody
         headerData={headerData}
         rows={rows as IRow[]}
         onRow={onRow}

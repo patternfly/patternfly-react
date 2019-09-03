@@ -8,25 +8,25 @@ import { DropdownToggle } from '../Dropdown';
 
 export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   /** The type or title of the items being paginated */
-  itemsTitle?: string,
+  itemsTitle?: string;
   /** The text to be displayed on the Options Toggle */
-  optionsToggle?: string,
+  optionsToggle?: string;
   /** The first index of the items being paginated */
-  firstIndex?: number,
+  firstIndex?: number;
   /** The last index of the items being paginated */
-  lastIndex?: number,
+  lastIndex?: number;
   /** The total number of items being paginated */
-  itemCount?: number,
+  itemCount?: number;
   /** Id added to the title of the Pagination Options Menu */
-  widgetId?: string,
+  widgetId?: string;
   /** showToggle */
-  showToggle?: boolean,
+  showToggle?: boolean;
   /** Event function that fires when user clicks the Options Menu toggle */
-  onToggle?: (isOpen: boolean) => void,
+  onToggle?: (isOpen: boolean) => void;
   /** Flag indicating if the Options Menu dropdown is open or not */
-  isOpen?: boolean,
+  isOpen?: boolean;
   /** Flag indicating if the Options Menu is disabled */
-  isDisabled?: boolean,
+  isDisabled?: boolean;
   /** */
   parentRef?: HTMLElement;
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */
@@ -46,7 +46,7 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   isDisabled = false,
   parentRef = null,
   toggleTemplate: ToggleTemplate = '',
-}:OptionsToggleProps ) => {
+}: OptionsToggleProps ) => {
   return (
     <div className={css(styles.optionsMenuToggle, isDisabled && styles.modifiers.disabled, styles.modifiers.plain, styles.modifiers.text)} >
       {showToggle && (

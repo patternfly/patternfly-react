@@ -117,13 +117,13 @@ const editableRowWrapper = RowWrapperComponent => {
 
     static getDerivedStateFromProps = (props, state) => ({
       hasConfirmationButtons: getTableConfirmation(props.row).hasConfirmationButtons(props.row)
-    });
+    })
 
     setStateWith2dEquals = newState => {
       this.setState(oldState =>
         Object.keys(newState).find(key => !shallowLeftSideEquals(newState[key], oldState[key])) ? newState : null
       );
-    };
+    }
 
     componentDidMount() {
       if (this.state.hasConfirmationButtons) {
@@ -137,7 +137,7 @@ const editableRowWrapper = RowWrapperComponent => {
         this.tableElem = element.closest('table');
       }
       this.updateRowDimensions();
-    };
+    }
 
     updateRowDimensions = () => {
       if (this.element) {
@@ -145,16 +145,16 @@ const editableRowWrapper = RowWrapperComponent => {
           rowDimensions: getBoundingClientRect(this.element)
         });
       }
-    };
+    }
 
     handleScroll = event => {
       this.updateRowDimensions();
-    };
+    }
 
     handleResize = event => {
       this.fetchClientDimensions();
       this.updateRowDimensions();
-    };
+    }
 
     fetchClientDimensions() {
       this.setStateWith2dEquals({

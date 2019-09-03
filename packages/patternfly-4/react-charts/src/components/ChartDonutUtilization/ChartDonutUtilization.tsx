@@ -14,7 +14,7 @@ import {
 } from 'victory';
 import { Data } from 'victory-core';
 import { ChartContainer } from '../ChartContainer';
-import { ChartDonut, ChartDonutProps } from "../ChartDonut";
+import { ChartDonut, ChartDonutProps } from '../ChartDonut';
 import { ChartThemeDefinition, ChartDonutUtilizationStyles } from '../ChartTheme';
 import { getDonutUtilizationTheme } from '../ChartUtils';
 
@@ -22,22 +22,22 @@ export enum ChartDonutUtilizationLabelPosition {
   centroid = 'centroid',
   endAngle = 'endAngle',
   startAngle = 'startAngle'
-};
+}
 
 export enum ChartDonutUtilizationLegendOrientation {
   horizontal = 'horizontal',
   vertical = 'vertical'
-};
+}
 
 export enum ChartDonutUtilizationLegendPosition {
   bottom = 'bottom',
   right = 'right'
-};
+}
 
 export enum ChartDonutUtilizationSortOrder {
   ascending = 'ascending',
   descending = 'descending'
-};
+}
 
 export enum ChartDonutUtilizationSubTitlePosition {
   bottom = 'bottom',
@@ -251,7 +251,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback | string[] | number[]>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback | string[] | number[]>[];
   /**
    * ChartDonutUtilization uses the standard externalEventMutations prop.
    */
@@ -316,16 +316,19 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   legendComponent?: React.ReactElement<any>;
   /**
-   * The data prop specifies the data to be plotted,
-   * where data X-value is the slice label (string or number),
-   * and Y-value is the corresponding number value represented by the slice
-   * Data should be in the form of an array of data points.
-   * Each data point may be any format you wish (depending on the `x` and `y` accessor props),
-   * but by default, an object with x and y properties is expected.
+   * Specify data via the data prop. ChartLegend expects data as an
+   * array of objects with name (required), symbol, and labels properties.
+   * The data prop must be given as an array.
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  legendData?: any[];
+  legendData?: {
+    name?: string;
+    symbol?: {
+      fill?: string;
+      type?: string;
+    };
+  }[];
   /**
    * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
@@ -457,7 +460,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *
@@ -558,7 +561,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
 
   const getData = () => {
     const datum = [{ ...data }];
-    return Data.formatData(datum, { x, y, ...rest }, ['x', 'y']).sort((a: any,b: any) => a._y - b._y);
+    return Data.formatData(datum, { x, y, ...rest }, ['x', 'y']).sort((a: any, b: any) => a._y - b._y);
   };
 
   // Returns thresholds with default color scale

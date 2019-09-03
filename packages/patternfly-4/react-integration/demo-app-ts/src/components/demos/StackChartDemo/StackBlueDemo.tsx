@@ -6,7 +6,7 @@ export class StackBlueDemo extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
-  
+
   render() {
     return(
       <div>
@@ -33,6 +33,6 @@ export class StackBlueDemo extends React.Component {
           </Chart>
         </div>
       </div>
-    )
+    );
   }
 }

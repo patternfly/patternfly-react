@@ -2,7 +2,8 @@ import { VictoryLegend } from 'victory';
 import { TextSize } from 'victory-core';
 import { ChartLegendProps } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getPaddingForSide } from "./chart-padding";
+import { overpassFontCharacterConstant } from './chart-label';
+import { getPaddingForSide } from './chart-padding';
 
 interface ChartLegendPaddingXInterface {
   chartWidth: number; // Width of chart (e.g., donut) within SVG
@@ -55,7 +56,7 @@ export const getLegendDimensions = ({
     });
   }
   return {};
-}
+};
 
 // Returns x coordinate for legend
 export const getLegendX = ({
@@ -103,30 +104,33 @@ export const getLegendY = ({
   legendProps,
   theme
 }: ChartLegendPaddingYInterface) => {
-  // Chart height with padding
-  const defaultPadding = {
-    bottom: getPaddingForSide('bottom',  theme[chartType as keyof ChartThemeDefinition].padding, 0),
-    top: getPaddingForSide('top', theme[chartType as keyof ChartThemeDefinition].padding, 0),
-  };
-  const chartPadding = defaultPadding.bottom + defaultPadding.top + 4;
-  const cHeight = chartHeight ? chartHeight + chartPadding : 0;
-
-  // Legend width with padding
-  const legendDimensions = getLegendDimensions({
-    legendData,
-    legendOrientation,
-    legendProps,
-    theme
-  });
-  const legendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 15 : 0);
-  const lHeight = legendDimensions.height ? legendDimensions.height + legendPadding(legendData) : 0;
-
   switch (legendPosition) {
     case 'bottom':
     case 'bottom-left':
       return chartHeight + ChartCommonStyles.legend.margin + dy;
-    case 'right':
+    case 'right': {
+      const chartProps = theme[chartType as keyof ChartThemeDefinition];
+
+      // Chart height with padding (for right positioned legends)
+      const defaultPadding = {
+        bottom: getPaddingForSide('bottom', chartProps ? chartProps.padding : 0, 0),
+        top: getPaddingForSide('top', chartProps ? chartProps.padding : 0, 0),
+      };
+      const chartPadding = defaultPadding.bottom + defaultPadding.top + 4;
+      const cHeight = chartHeight ? chartHeight + chartPadding : 0;
+
+      // Legend width with padding
+      const legendDimensions = getLegendDimensions({
+        legendData,
+        legendOrientation,
+        legendProps,
+        theme
+      });
+      const legendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 15 : 0);
+      const lHeight = legendDimensions.height ? legendDimensions.height + legendPadding(legendData) : 0;
+
       return cHeight > lHeight ? Math.round((cHeight - lHeight) / 2) + dy : dy;
+    }
     default:
       return dy;
   }
@@ -141,7 +145,7 @@ const getTextSizeWorkAround = ({
   theme
 }: ChartLegendTextSizeInterface) => {
   const style = theme.legend.style.labels;
-  if (!(legendData && style.fontFamily.includes('overpass'))) {
+  if (!(legendData && legendData.length)) {
     return 0;
   }
 
@@ -150,7 +154,7 @@ const getTextSizeWorkAround = ({
 
   // For vertical legends, account for the growing char count of the longest legend item
   if (legendOrientation === 'vertical') {
-    legendData.forEach(data => {
+    legendData.forEach((data) => {
       if (data.name && data.name.length > result.length) {
         result = data.name;
       }
@@ -159,7 +163,7 @@ const getTextSizeWorkAround = ({
   const textSize = TextSize.approximateTextSize(result,  style);
   const adjustedTextSize = TextSize.approximateTextSize(result,  {
     ...style,
-    characterConstant: 2.5875 // Average pixels per glyph
+    characterConstant: overpassFontCharacterConstant
   });
   return Math.abs(textSize.width - adjustedTextSize.width);
 };

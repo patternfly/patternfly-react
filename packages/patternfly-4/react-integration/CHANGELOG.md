@@ -3,6 +3,60 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.21.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.21.1...@patternfly/react-integration@2.21.2) (2019-08-30)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [2.21.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.21.0...@patternfly/react-integration@2.21.1) (2019-08-26)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# [2.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.20.2...@patternfly/react-integration@2.21.0) (2019-08-21)
+
+
+### Features
+
+* **Expandable:** Support uncontrolled expandable ([#2649](https://github.com/patternfly/patternfly-react/issues/2649)) ([2755e36](https://github.com/patternfly/patternfly-react/commit/2755e36))
+
+
+
+
+
+## [2.20.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.20.1...@patternfly/react-integration@2.20.2) (2019-08-19)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [2.20.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.20.0...@patternfly/react-integration@2.20.1) (2019-08-19)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# [2.20.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.19.0...@patternfly/react-integration@2.20.0) (2019-08-19)
+
+
+### Features
+
+* **Select:** adds direction prop to Select ([#2611](https://github.com/patternfly/patternfly-react/issues/2611)) ([f192742](https://github.com/patternfly/patternfly-react/commit/f192742))
+
+
+
+
+
 # [2.19.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.18.0...@patternfly/react-integration@2.19.0) (2019-08-09)
 
 

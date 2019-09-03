@@ -18,7 +18,7 @@ export interface ActionsColumnProps {
   dropdownDirection?: DropdownDirection;
   rowData?: IRowData;
   extraData?: IExtraData;
-};
+}
 
 export interface ActionsColumnState {
   isOpen: boolean;
@@ -32,8 +32,8 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
     dropdownDirection: DropdownDirection.down,
     rowData: {} as IRowData,
     extraData: {} as IExtraData
-  }
-  constructor (props: ActionsColumnProps){
+  };
+  constructor(props: ActionsColumnProps) {
     super(props);
     this.state = {
       isOpen: false
@@ -46,8 +46,8 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
     });
   }
 
-  onSelect = (event:  React.MouseEvent<any> | React.KeyboardEvent | MouseEvent, 
-    onClick: ((event: React.MouseEvent, rowIndex: number | undefined, rowData: IRowData, extraData: IExtraData) => void) | undefined): void => {
+  onSelect = (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
+              onClick: ((event: React.MouseEvent, rowIndex: number | undefined, rowData: IRowData, extraData: IExtraData) => void) | undefined): void => {
     const { rowData, extraData } = this.props;
     event.preventDefault();
     // tslint:disable-next-line:no-unused-expression
@@ -73,7 +73,7 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
                 <DropdownSeparator {...props} key={itemKey || key} data-key={itemKey || key} />
               ) : (
                 <DropdownItem
-                  onClick={event => this.onSelect(event, onClick)}
+                  onClick={(event) => this.onSelect(event, onClick)}
                   {...props}
                   key={itemKey || key}
                   data-key={itemKey || key}

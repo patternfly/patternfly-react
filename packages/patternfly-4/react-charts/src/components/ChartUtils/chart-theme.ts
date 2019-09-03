@@ -20,6 +20,15 @@ import { LightPurpleColorTheme } from '../ChartTheme/themes/light/purple-color-t
 import {
   ChartAxisTheme,
   ChartBaseTheme,
+  ChartBulletComparativeErrorMeasureTheme,
+  ChartBulletComparativeMeasureTheme,
+  ChartBulletComparativeWarningMeasureTheme,
+  ChartBulletGroupTitleTheme,
+  ChartBulletPrimaryDotMeasureTheme,
+  ChartBulletPrimaryNegativeMeasureTheme,
+  ChartBulletPrimarySegmentedMeasureTheme,
+  ChartBulletTheme,
+  ChartBulletQualitativeRangeTheme,
   ChartDonutTheme,
   ChartDonutUtilizationDynamicTheme,
   ChartDonutUtilizationStaticTheme,
@@ -31,22 +40,58 @@ import {
 } from '../ChartTheme/ChartTheme';
 import { cloneDeep } from 'lodash';
 
-// Apply custom properties to color and base themes
+// Apply custom properties to base and color themes
 export const getCustomTheme = (themeColor: string, themeVariant: string, customTheme: ChartThemeDefinition
 ): ChartThemeDefinition =>
   merge(getTheme(themeColor, themeVariant), customTheme);
 
-// Apply axis threshold properties onto base theme
-export const getAxisTheme = (themeColor: string, themeVariant: string) : ChartThemeDefinition => {
+// Returns axis theme
+export const getAxisTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {
   const theme = getCustomTheme(themeColor, themeVariant, ChartAxisTheme);
   return theme;
-}
+};
 
-// Apply donut properties onto pie chart theme
+// Returns bullet chart theme
+export const getBulletTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletTheme);
+
+// Returns comparative error measure theme for bullet chart
+export const getBulletComparativeErrorMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletComparativeErrorMeasureTheme);
+
+// Returns comparative measure theme for bullet chart
+export const getBulletComparativeMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletComparativeMeasureTheme);
+
+// Returns comparative warning measure theme for bullet chart
+export const getBulletComparativeWarningMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletComparativeWarningMeasureTheme);
+
+// Returns group title theme for bullet chart
+export const getBulletGroupTitleTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletGroupTitleTheme);
+
+// Returns primary dot measure theme for bullet chart
+export const getBulletPrimaryDotMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletPrimaryDotMeasureTheme);
+
+// Returns primary negative measure theme for bullet chart
+export const getBulletPrimaryNegativeMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletPrimaryNegativeMeasureTheme);
+
+// Returns primary segmented measure theme for bullet chart
+export const getBulletPrimarySegmentedMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletPrimarySegmentedMeasureTheme);
+
+// Returns qualitative range theme for bullet chart
+export const getBulletQualitativeRangeTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletQualitativeRangeTheme);
+
+// Returns donut theme
 export const getDonutTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
   getCustomTheme(themeColor, themeVariant, ChartDonutTheme);
 
-// Apply dynamic donut threshold properties onto pie chart theme
+// Returns dynamic donut threshold theme
 export const getDonutThresholdDynamicTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {
   const theme = getCustomTheme(themeColor, themeVariant, ChartDonutThresholdDynamicTheme);
 
@@ -58,7 +103,7 @@ export const getDonutThresholdDynamicTheme = (themeColor: string, themeVariant: 
   return theme;
 };
 
-// Apply static donut threshold properties onto pie chart theme
+// Returns static donut threshold theme
 export const getDonutThresholdStaticTheme = (themeColor: string, themeVariant: string, invert?: boolean
 ): ChartThemeDefinition => {
   const staticTheme = cloneDeep(ChartDonutThresholdStaticTheme);
@@ -68,7 +113,7 @@ export const getDonutThresholdStaticTheme = (themeColor: string, themeVariant: s
   return getCustomTheme(themeColor, themeVariant, staticTheme);
 };
 
-// Apply donut utilization properties onto pie chart theme
+// Returns donut utilization theme
 export const getDonutUtilizationTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {
   const theme = getCustomTheme(themeColor, themeVariant, ChartDonutUtilizationDynamicTheme);
 

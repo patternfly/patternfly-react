@@ -36,6 +36,6 @@ export class StackColorZoomDemo extends React.Component {
           </Chart>
         </div>
       </div>
-    )
+    );
   }
 }

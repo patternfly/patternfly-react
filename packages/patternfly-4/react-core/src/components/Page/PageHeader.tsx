@@ -36,17 +36,17 @@ export interface PageHeaderProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const PageHeader = ({
-  className='',
-  logo=null as React.ReactNode,
-  logoProps=null as object,
+  className= '',
+  logo= null as React.ReactNode,
+  logoProps= null as object,
   logoComponent = 'a',
-  toolbar=null as React.ReactNode,
-  avatar=null as React.ReactNode,
-  topNav=null as React.ReactNode,
-  isNavOpen=true,
-  showNavToggle=false,
-  onNavToggle=() => undefined as any,
-  'aria-label':ariaLabel = 'Global navigation',
+  toolbar= null as React.ReactNode,
+  avatar= null as React.ReactNode,
+  topNav= null as React.ReactNode,
+  isNavOpen= true,
+  showNavToggle= false,
+  onNavToggle= () => undefined as any,
+  'aria-label': ariaLabel = 'Global navigation',
   ...props
 }: PageHeaderProps) => {
   const LogoComponent = logoComponent as any;
@@ -96,4 +96,4 @@ export const PageHeader = ({
         );
       }}
     </PageContextConsumer>
-)};
+); };

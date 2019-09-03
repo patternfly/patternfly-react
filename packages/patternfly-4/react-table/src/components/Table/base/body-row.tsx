@@ -10,11 +10,11 @@ import { columnsAreEqual } from './columns-are-equal';
 import { evaluateFormatters } from './evaluate-formatters';
 import { evaluateTransforms } from './evaluate-transforms';
 import { mergeProps } from './merge-props';
-import { createElementType, formatterValueType, ColumnType, RowType, RenderersTypes } from './types';
+import { createElementType, formatterValueType, ColumnType, ColumnsType, RowType, RendererType } from './types';
 
 export interface BodyRowProps {
-  columns: RenderersTypes['columns'];
-  renderers: RenderersTypes['renderers']['body'];
+  columns: ColumnsType;
+  renderers: RendererType;
   onRow?: Function;
   rowIndex: number;
   rowData: RowType;
@@ -23,10 +23,10 @@ export interface BodyRowProps {
 
 export class BodyRow extends React.Component<BodyRowProps, {}> {
   static defaultProps = {
-    onRow: (...args:any) => Object 
+    onRow: (...args: any) => Object
   };
 
-  shouldComponentUpdate(nextProps: BodyRowProps){
+  shouldComponentUpdate(nextProps: BodyRowProps) {
     const {columns, rowData} = this.props;
 
     // Check for row based override.

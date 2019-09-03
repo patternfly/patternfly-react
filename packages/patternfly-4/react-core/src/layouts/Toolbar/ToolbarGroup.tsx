@@ -6,7 +6,7 @@ export interface ToolbarGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Anything that can be rendered as one toolbar group */
   children?: React.ReactNode;
   /** Classes applied to toolbar group */
-  className?: string; 
+  className?: string;
 }
 
 export const ToolbarGroup: React.FunctionComponent<ToolbarGroupProps> = ({

@@ -20,8 +20,8 @@ stories.add(
     const offColor = select('Off Color', Switch.SWITCH_COLORS, 'default');
     const props = { bsSize, title: bsSize, id: 'bsSize-example' };
 
-    if (onColor) props.onColor = onColor;
-    if (offColor) props.offColor = offColor;
+    if (onColor) { props.onColor = onColor; }
+    if (offColor) { props.offColor = offColor; }
 
     const story = (
       <div>

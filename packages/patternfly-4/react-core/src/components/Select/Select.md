@@ -5,12 +5,13 @@ propComponents: ['Select', 'SelectOption', 'SelectGroup']
 typescript: true
 ---
 
-import { Select, SelectOption, SelectVariant, SelectGroup, Checkbox } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant, SelectGroup, SelectDirection, Checkbox } from '@patternfly/react-core';
 
 ## Single select input
 
 ```js
 import React from 'react';
+import { CubeIcon } from '@patternfly/react-icons';
 import { Select, SelectOption, SelectVariant, Checkbox } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
@@ -27,9 +28,11 @@ class SingleSelectInput extends React.Component {
     ];
 
     this.state = {
+      isToggleIcon: false,
       isExpanded: false,
       selected: null,
-      isDisabled: false
+      isDisabled: false,
+      direction: SelectDirection.down
     };
 
     this.onToggle = isExpanded => {
@@ -61,10 +64,28 @@ class SingleSelectInput extends React.Component {
         isDisabled: checked
       })
     }
+
+    this.setIcon = (checked) => {
+      this.setState({
+        isToggleIcon: checked
+      })
+    }
+
+    this.toggleDirection = () => {
+      if(this.state.direction === SelectDirection.up) {
+        this.setState({
+          direction: SelectDirection.down
+        });
+      } else {
+        this.setState({
+          direction: SelectDirection.up
+        })
+      }
+    }
   }
 
   render() {
-    const { isExpanded, selected, isDisabled } = this.state;
+    const { isExpanded, selected, isDisabled, direction, isToggleIcon } = this.state;
     const titleId = 'title-id';
     return (
       <div>
@@ -72,6 +93,7 @@ class SingleSelectInput extends React.Component {
           Title
         </span>
         <Select
+          toggleIcon={isToggleIcon && <CubeIcon />}
           variant={SelectVariant.single}
           aria-label="Select Input"
           onToggle={this.onToggle}
@@ -80,6 +102,7 @@ class SingleSelectInput extends React.Component {
           isExpanded={isExpanded}
           ariaLabelledBy={titleId}
           isDisabled={isDisabled}
+          direction={direction}
         >
           {this.options.map((option, index) => (
             <SelectOption
@@ -97,6 +120,22 @@ class SingleSelectInput extends React.Component {
           aria-label="disabled checkbox"
           id="toggle-disabled"
           name="toggle-disabled"
+        />
+        <Checkbox
+          label="Expands up"
+          isChecked={direction === SelectDirection.up}
+          onChange={this.toggleDirection}
+          aria-label="direction checkbox"
+          id="toggle-direction"
+          name="toggle-direction"
+        />
+        <Checkbox
+          label="Show icon"
+          isChecked={isToggleIcon}
+          onChange={this.setIcon}
+          aria-label="show icon checkbox"
+          id="toggle-icon"
+          name="toggle-icon"
         />
       </div>
     );

@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 
 export interface BrandProps extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
   /** Additional classes added to the Brand. */
-  className?: string; 
+  className?: string;
   /** Attribute that specifies the URL of the image for the Brand. */
   src?: string;
   /** Attribute that specifies the alt text of the image for the Brand. */
@@ -11,8 +11,8 @@ export interface BrandProps extends React.DetailedHTMLProps<React.ImgHTMLAttribu
 }
 
 export const Brand: React.FunctionComponent<BrandProps> = ({
-  className = '', 
-  src = '', 
+  className = '',
+  src = '',
   alt,
   ...props
 }) => (

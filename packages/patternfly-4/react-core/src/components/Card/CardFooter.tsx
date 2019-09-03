@@ -6,20 +6,20 @@ export interface CardFooterProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Card Footer */
   children?: React.ReactNode;
   /** Additional classes added to the Footer */
-  className?: string; 
+  className?: string;
   /** Sets the base component to render. defaults to div */
   component?: React.ReactNode;
 }
 
 export const CardFooter: React.FunctionComponent<CardFooterProps> = ({
-  children = null, 
-  className = '', 
-  component = 'div', 
-  ...props 
+  children = null,
+  className = '',
+  component = 'div',
+  ...props
 }: CardFooterProps) => {
   const Component = component as any;
   return (
   <Component className={css(styles.cardFooter, className)} {...props}>
     {children}
   </Component>
-)};
+);};

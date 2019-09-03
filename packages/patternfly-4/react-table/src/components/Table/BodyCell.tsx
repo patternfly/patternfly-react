@@ -15,7 +15,7 @@ export interface BodyCellProps {
 }
 
 export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
-  'data-label':dataLabel = '',
+  'data-label': dataLabel = '',
   className = '',
   colSpan,
   component = 'td',
@@ -25,7 +25,7 @@ export const BodyCell: React.FunctionComponent<BodyCellProps> = ({
   isOpen,
   ariaControls = '',
   ...props
-} : BodyCellProps ) => {
+}: BodyCellProps ) => {
   const Component = component as any;
   const mappedProps = {
     ...(dataLabel ? { 'data-label': dataLabel } : {}),

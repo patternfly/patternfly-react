@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.37.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.37.0...patternfly-react@2.37.1) (2019-08-30)
+
+**Note:** Version bump only for package patternfly-react
+
+
+
+
+
+# [2.37.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.10...patternfly-react@2.37.0) (2019-08-26)
+
+
+### Features
+
+* **AsyncTypeAheadSelect:** pass reference to inner component ([#2760](https://github.com/patternfly/patternfly-react/issues/2760)) ([5f99560](https://github.com/patternfly/patternfly-react/commit/5f99560))
+
+
+
+
+
+## [2.36.10](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.9...patternfly-react@2.36.10) (2019-08-26)
+
+**Note:** Version bump only for package patternfly-react
+
+
+
+
+
 ## [2.36.9](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.8...patternfly-react@2.36.9) (2019-08-12)
 
 
