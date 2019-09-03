@@ -2,32 +2,33 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { css, getModifier } from '@patternfly/react-styles';
 
-import { RefObject } from 'react';
+import { DataToolbarBreakpointMod, formatBreakpointMods } from './DataToolbarUtils';
 
 export interface DataToolbarExpandableContentProps extends React.HTMLProps<HTMLDivElement> {
-  /** Classes added to the root element of the Data toolbar expandable content */
+  /** TODO */
   className?: string;
-  /** Flag indicating the expandable content is expanded */
+  /** TODO */
+  breakpointMods?: DataToolbarBreakpointMod[];
+  /** TODO */
   isExpanded?: boolean;
-  /** Expandable content reference for passing to Data toolbar children */
-  expandableContentRef: RefObject<HTMLDivElement>;
+  /** TODO */
+  children?: React.ReactNode;
 }
 
-export const DataToolbarExpandableContent: React.FunctionComponent<DataToolbarExpandableContentProps> = ({
+export const DataToolbarExplandableContent: React.FunctionComponent<DataToolbarExpandableContentProps> = ({
     className,
+    breakpointMods = [] as DataToolbarBreakpointMod[],
     isExpanded = false,
-    expandableContentRef,
+    children,
     ...props
   }: DataToolbarExpandableContentProps) => {
 
   return (
-    <div
-      className={css(
-        styles.dataToolbarExpandableContent,
-        isExpanded && getModifier(styles, 'expanded'),
-        className)}
-      ref={expandableContentRef}
-      {...props}
-    />
+    <div className={css(styles.dataToolbarExpandableContent,
+      formatBreakpointMods(breakpointMods),
+      isExpanded && getModifier(styles, 'expanded'),
+      className)} {...props}>
+      {children}
+    </div>
   );
 };

@@ -7,4 +7,3 @@ import '@patternfly-safe/patternfly/patternfly.css';
 // Add experimental styles here and in eslintrc.js for the moment.  Once they have been moved out of experimental remove the CSS here and in .eslintrc.js
 import '@patternfly-safe/patternfly/components/Drawer/drawer.css';
 import '@patternfly-safe/patternfly/components/DataToolbar/data-toolbar.css';
-import '@patternfly-safe/patternfly/components/Spinner/spinner.css';

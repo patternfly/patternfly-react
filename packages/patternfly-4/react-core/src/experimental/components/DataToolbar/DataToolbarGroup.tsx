@@ -6,53 +6,50 @@ import {
   DataToolbarBreakpointMod,
   DataToolbarSpacer,
   formatBreakpointMods,
-  formatSpacers
+  formatGroupSpacers
 } from './DataToolbarUtils';
 
-export enum DataToolbarGroupVariant {
+export enum DataToolbarGroupMod {
   'filter-group' = 'filter-group',
   'icon-button-group' = 'icon-button-group',
   'button-group' = 'button-group',
 }
 
 export interface DataToolbarGroupProps extends React.HTMLProps<HTMLDivElement> {
-  /** Classes applied to root element of the Data toolbar group */
+  /** TODO */
   className?: string;
-  /** A type modifier which modifies spacing specifically depending on the type of group */
-  variant?: DataToolbarGroupVariant | 'filter-group' | 'icon-button-group' | 'button-group';
-  /** Array of objects representing the various modifiers to apply to the Data toolbar group at various breakpoints */
+  /** TODO */
+  mod?: DataToolbarGroupMod | 'filter-group' | 'icon-button-group' | 'button-group';
+  /** TODO */
   breakpointMods?: DataToolbarBreakpointMod[];
-  /** Array of objects representing the various spacers to apply to the Data toolbar group at various breakpoints */
+  /** TODO */
   spacers?: DataToolbarSpacer[];
-  /** Array of objects representing the spacers to apply to the items in this group at various breakpoints */
-  itemSpacers?: DataToolbarSpacer[];
-  /** Content to be rendered inside the Data toolbar group */
+  /** TODO */
   children?: React.ReactNode;
 }
+
 
 export const DataToolbarGroup: React.FunctionComponent<DataToolbarGroupProps> = ({
    breakpointMods = [] as DataToolbarBreakpointMod[],
    spacers = [] as DataToolbarSpacer[],
-   itemSpacers = [] as DataToolbarSpacer[],
-   className,
-   variant,
+   className = "",
+   mod,
    children,
    ...props
  }: DataToolbarGroupProps) => {
 
   return (
-    <div
-      className={css(
-        styles.dataToolbarGroup,
-        variant && getModifier(styles, variant),
-        formatBreakpointMods(breakpointMods),
-        formatSpacers(itemSpacers, 'pf-m-space-items'),
-        formatSpacers(spacers),
-        className)}
-      {...props}
-    >
+    <div className={css(styles.dataToolbarGroup,
+      mod && getModifier(styles, mod),
+      formatBreakpointMods(breakpointMods),
+      formatGroupSpacers(spacers),
+      className)}
+         {...props}>
       {children}
     </div>
   );
 
 };
+
+
+
