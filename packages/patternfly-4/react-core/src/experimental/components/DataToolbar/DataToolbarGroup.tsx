@@ -25,16 +25,15 @@ export interface DataToolbarGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** TODO */
   spacers?: DataToolbarSpacer[];
   /** TODO */
-  children?: React.ReactNode;
+  items?: React.ReactNode[];
 }
-
 
 export const DataToolbarGroup: React.FunctionComponent<DataToolbarGroupProps> = ({
    breakpointMods = [] as DataToolbarBreakpointMod[],
    spacers = [] as DataToolbarSpacer[],
-   className = "",
+   className,
    mod,
-   children,
+   items,
    ...props
  }: DataToolbarGroupProps) => {
 
@@ -45,7 +44,7 @@ export const DataToolbarGroup: React.FunctionComponent<DataToolbarGroupProps> = 
       formatGroupSpacers(spacers),
       className)}
          {...props}>
-      {children}
+      {items}
     </div>
   );
 

@@ -10,12 +10,12 @@ export interface DataToolbarContentProps extends React.HTMLProps<HTMLDivElement>
   /** TODO */
   breakpointMods?: DataToolbarBreakpointMod[];
   /** TODO */
-  children?: React.ReactNode;
+  items?: React.ReactNode;
 }
 
 export const DataToolbarContent: React.FunctionComponent<DataToolbarContentProps> = ({
     className,
-    children,
+    items,
     breakpointMods = [] as DataToolbarBreakpointMod[],
     ...props
   }: DataToolbarContentProps) => {
@@ -24,7 +24,7 @@ export const DataToolbarContent: React.FunctionComponent<DataToolbarContentProps
     <div className={css(styles.dataToolbarContent,
       formatBreakpointMods(breakpointMods),
       className)} {...props}>
-      {children}
+      {items}
     </div>
   );
 };
