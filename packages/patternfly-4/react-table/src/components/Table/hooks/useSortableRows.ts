@@ -1,29 +1,9 @@
 import { useMemo, useState } from 'react';
-import { IExtraColumnData, IRows, OnSort, OnSortCallback, OnSortDirection } from '../Table';
-
-export const SortHelpers = {
-  numbers(a: number, b: number) {
-    if (a < b) {
-      return -1;
-    } else if (a > b) {
-      return 1;
-    }
-    return 0;
-  },
-
-  booleans(a: boolean, b: boolean) {
-    const toNumber = (v: boolean) => (v ? 1 : 0);
-    return SortHelpers.numbers(toNumber(a), toNumber(b));
-  },
-
-  strings(a: string, b: string) {
-    return a.localeCompare(b);
-  }
-};
+import { IExtraColumnData, IRows, OnSort, OnSortCallback, SortByDirection } from '../Table';
 
 export function useSortableRows(rows: IRows) {
   const [sortBy, setSortBy] = useState<
-    | { index: number; direction: OnSortDirection; columnData: IExtraColumnData; sortCallback: OnSortCallback }
+    | { index: number; direction: SortByDirection; columnData: IExtraColumnData; sortCallback: OnSortCallback }
     | undefined
   >();
 
@@ -36,7 +16,7 @@ export function useSortableRows(rows: IRows) {
     });
   };
 
-  const sortCb = (rowA, rowB) => {
+  const sortCb = (rowA: any, rowB: any) => {
     const [a, b] =
       sortBy.direction === 'desc' ? [rowA[sortBy.index], rowB[sortBy.index]] : [rowB[sortBy.index], rowA[sortBy.index]];
     const aValue = typeof a === 'object' && a.title ? a.title : a;

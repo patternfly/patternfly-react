@@ -1,5 +1,5 @@
 export { selectable } from './decorators/selectable';
-export { sortable } from './decorators/sortable';
+export { sortable, SortHelpers } from './decorators/sortable';
 export { cellActions } from './decorators/cellActions';
 export { cellWidth } from './decorators/cellWidth';
 export { wrappable } from './decorators/wrappable';

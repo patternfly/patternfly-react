@@ -8,7 +8,7 @@ import { BodyCell } from './BodyCell';
 import { HeaderCell } from './HeaderCell';
 import { RowWrapper } from './RowWrapper';
 import { BodyWrapper } from './BodyWrapper';
-import { calculateColumns } from './utils/headerUtils';
+import { calculateColumns } from './utils';
 import { formatterValueType, ColumnType, RowType, RowKeyType, ColumnsType } from './base';
 
 export enum TableGridBreakpoint {
@@ -23,8 +23,8 @@ export enum TableGridBreakpoint {
 export enum TableVariant {
   compact = 'compact'
 }
-
-export type OnSort = (event: React.MouseEvent, columnIndex: number, sortByDirection: SortByDirection, extraData: IExtraColumnData) => void;
+export type OnSortCallback = (aValue: any, bValue: any, aObject: IRow | string, bObject: IRow | string) => number;
+export type OnSort = (event: React.MouseEvent, columnIndex: number, sortByDirection: SortByDirection, extraData: IExtraColumnData, sortCallback: OnSortCallback) => void;
 export type OnCollapse = (event: React.MouseEvent, rowIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => void;
 export type OnExpand = (event: React.MouseEvent, rowIndex: number, colIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => void;
 export type OnSelect = (event: React.MouseEvent, isSelected: boolean, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
@@ -45,6 +45,7 @@ export interface IColumn {
   extraParams: {
     sortBy?: ISortBy;
     onSort?: OnSort;
+    sortCallback?: OnSortCallback;
     onCollapse?: OnCollapse;
     onExpand?: OnExpand;
     onSelect?: OnSelect;
@@ -54,6 +55,7 @@ export interface IColumn {
     dropdownPosition?: DropdownPosition;
     dropdownDirection?: DropdownDirection;
     allRowsSelected?: boolean;
+    firstUserColumnIndex?: number;
   };
 }
 
@@ -106,6 +108,8 @@ export interface IDecorator extends React.HTMLProps<HTMLElement> {
   children?: React.ReactNode;
 }
 
+export type ICells = (ICell | string)[];
+
 export interface ICell {
   title?: string;
   transforms?: ((...args: any) => any)[];
@@ -123,6 +127,8 @@ export interface IRowCell {
   title?: React.ReactNode;
   props?: any;
 }
+
+export type IRows = (((string | number | IRowCell)[]) | IRow)[];
 
 export interface IRow extends RowType {
   cells?: (React.ReactNode | IRowCell)[];
@@ -161,8 +167,8 @@ export interface TableProps {
   contentId?: string;
   dropdownPosition?: 'right' | 'left';
   dropdownDirection?: 'up' | 'down';
-  rows: (IRow | string[])[];
-  cells: (ICell | string)[];
+  rows: IRows;
+  cells: ICells;
   bodyWrapper?: Function;
   rowWrapper?: Function;
   role?: string;

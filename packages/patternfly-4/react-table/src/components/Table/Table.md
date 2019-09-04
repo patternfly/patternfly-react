@@ -13,6 +13,7 @@ import {
   TableHeader,
   TableBody,
   sortable,
+  SortHelpers,
   SortByDirection,
   headerCol,
   TableVariant,
@@ -22,13 +23,16 @@ import {
   textCenter,
   wrappable,
   classNames,
-  Visibility
+  Visibility,
+  useSortableRows,
+  useSelectableRows
 } from '@patternfly/react-table';
-
 import {
   CodeBranchIcon,
   CodeIcon,
-  CubeIcon
+  CubeIcon,
+  CheckIcon,
+  TimesIcon
 } from '@patternfly/react-icons';
 
 import DemoSortableTable from './demo/DemoSortableTable';
@@ -241,11 +245,11 @@ function SortableTable () {
   }; 
 
   const cells = [
-    { title: 'Repositories', transforms: [sortable(SortHelpers.strings)] },
-    { title: 'Branches', transforms: [sortable(SortHelpers.numbers)] },
-    { title: 'Pull requests', transforms: [sortable(SortHelpers.numbers)] },
-    { title: 'Workspaces', transforms: [sortable(SortHelpers.numbers)] },
-    { title: 'Last Commit', transforms: [sortable(sortLastCommit)] }
+    { title: 'Repositories', transforms: [sortable] },
+    { title: 'Branches', transforms: [sortable.numbers] },
+    { title: 'Pull requests', transforms: [sortable.numbers] },
+    { title: 'Workspaces', transforms: [sortable.numbers] },
+    { title: 'Last Commit', transforms: [sortable.custom(sortLastCommit)] }
   ];
 
   const [sortedRows, onSort, sortBy] = useSortableRows(rows);
@@ -268,7 +272,6 @@ import {
   TableHeader,
   TableBody,
   headerCol,
-  sortable,
   useSelectableRows
 } from '@patternfly/react-table';
 
@@ -307,6 +310,7 @@ import {
   TableHeader,
   TableBody,
   headerCol,
+  sortable,
   useSelectableRows
 } from '@patternfly/react-table';
 
@@ -318,11 +322,11 @@ function SortableAndSelectableTable () {
   ];
   
   const cells = [
-    { title: 'Repositories', transforms: [sortable(SortHelpers.strings)], cellTransforms: [headerCol()] },
-    { title: 'Branches', transforms: [sortable(SortHelpers.numbers)] },
-    { title: 'Pull requests', transforms: [sortable(SortHelpers.numbers)] },
-    { title: 'Workspaces', transforms: [sortable(SortHelpers.numbers)] },
-    { title: 'Last Commit', transforms: [sortable(SortHelpers.numbers)] }
+    { title: 'Repositories', transforms: [sortable], cellTransforms: [headerCol()] },
+    { title: 'Branches', transforms: [sortable.numbers] },
+    { title: 'Pull requests', transforms: [sortable.numbers] },
+    { title: 'Workspaces', transforms: [sortable.numbers] },
+    { title: 'Last Commit', transforms: [sortable.numbers] }
   ];
   
   const [sortedRows, onSort, sortBy] = useSortableRows(rows, cells);
@@ -404,7 +408,7 @@ class SimpleActionsTable extends React.Component {
   render() {
     const { columns, rows, actions } = this.state;
     return (
-      <Table caption="Actions Table" actions={actions} cells={columns} rows={rows}>
+      <Table caption="Simple Actions Table" actions={actions} cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>

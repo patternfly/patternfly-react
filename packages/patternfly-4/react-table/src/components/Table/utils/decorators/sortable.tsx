@@ -2,12 +2,12 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
-import { SortByDirection, IExtra, IFormatterValueType } from '../../Table';
+import { SortByDirection, IExtra, IFormatterValueType, OnSortCallback } from '../../Table';
 import { SortColumn } from '../../SortColumn';
 
-export const sortable = (label: IFormatterValueType, { columnIndex, column, property }: IExtra) => {
+const sortableFn = (sortCallback: OnSortCallback, label: IFormatterValueType, { columnIndex, column, property }: IExtra) => {
   const {
-    extraParams: { sortBy, onSort, firstUserColumnIndex }
+    extraParams: { sortBy, onSort, firstUserColumnIndex = 0 }
   } = column;
 
   // correct the column index based on the presence of extra columns added on the
@@ -29,7 +29,7 @@ export const sortable = (label: IFormatterValueType, { columnIndex, column, prop
       reversedDirection = sortBy.direction === SortByDirection.asc ? SortByDirection.desc : SortByDirection.asc;
     }
     // tslint:disable-next-line:no-unused-expression
-    onSort && onSort(event, correctedColumnIndex, reversedDirection, extraData);
+    onSort && onSort(event, correctedColumnIndex, reversedDirection, extraData, sortCallback);
   }
 
   return {
@@ -47,3 +47,36 @@ export const sortable = (label: IFormatterValueType, { columnIndex, column, prop
     )
   };
 };
+
+const SortHelpers = {
+  numbers(a: number, b: number) {
+    if (a < b) {
+      return -1;
+    } else if (a > b) {
+      return 1;
+    }
+    return 0;
+  },
+
+  booleans(a: boolean, b: boolean) {
+    const toNumber = (v: boolean) => (v ? 1 : 0);
+    return SortHelpers.numbers(toNumber(a), toNumber(b));
+  },
+
+  strings(a: string, b: string) {
+    return a.localeCompare(b);
+  }
+};
+
+const partialOnSort = (fn: OnSortCallback) => sortableFn.bind(null, fn);
+const defaultSortable = partialOnSort(SortHelpers.strings);
+const sortableFunctions = {
+  custom: partialOnSort,
+  numbers: partialOnSort(SortHelpers.numbers),
+  booleans: partialOnSort(SortHelpers.booleans),
+  strings: partialOnSort(SortHelpers.strings),
+};
+
+const sortable = Object.assign(defaultSortable, sortableFunctions);
+
+export { sortable, SortHelpers };

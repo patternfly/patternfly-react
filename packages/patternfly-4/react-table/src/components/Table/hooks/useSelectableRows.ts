@@ -1,8 +1,8 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
-import { IRows, ISelectableArray, OnSelectCallback } from '../Table';
+import { IRowData, IRows, OnSelect } from '../Table';
 
 const defaultOptions = {
-  getRowKey: (rowData, rowIndex) => rowIndex
+  getRowKey: (rowData: IRowData, rowIndex: number) => rowIndex
 };
 
 /**
@@ -20,7 +20,7 @@ const defaultOptions = {
  */
 export function useSelectableRows(rows: IRows, { getRowKey } = defaultOptions) {
   // Selected rows's keys will be saved in the component's state
-  const [selectedKeys, setSelectedKeys] = useState<ReturnType<typeof getRowKey>>([]);
+  const [selectedKeys, setSelectedKeys] = useState<ReturnType<typeof getRowKey>[]>([]);
 
   // When selecting/deselecting all lines, or when transitioning from an all rows
   // selected state, we need to compute the new keys based on the full list of keys
@@ -41,7 +41,7 @@ export function useSelectableRows(rows: IRows, { getRowKey } = defaultOptions) {
   // Note that the user could be interacting with the select/deselect all button
   // in the header: that case is identified by the rowIndex value passed as -1
   // by the Table component.
-  const onSelect = useCallback<OnSelectCallback>(
+  const onSelect = useCallback<OnSelect>(
     (event, isSelected, rowIndex, rowData, extraData) => {
       const latestIndexes = latestSelectedKeys.current;
       let updatedIndexes = selectedKeys;
@@ -70,13 +70,14 @@ export function useSelectableRows(rows: IRows, { getRowKey } = defaultOptions) {
     const isRowSelected = selectedKeys.includes(getRowKey(row, index));
     if (Array.isArray(row)) {
       const updatedRow = [...row] as typeof row;
+      // cast required to work with primitive types
+      (updatedRow as any).selected = isRowSelected;
+      return updatedRow;
+    } else {
+      const updatedRow = {...row};
       updatedRow.selected = isRowSelected;
       return updatedRow;
     }
-
-    const updatedRow = { ...row };
-    updatedRow.selected = isRowSelected;
-    return updatedRow;
   });
 
   return [selectedRows, onSelect];
