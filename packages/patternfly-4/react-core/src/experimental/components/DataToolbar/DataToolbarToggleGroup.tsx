@@ -1,11 +1,15 @@
 import * as React from 'react';
-import { formatBreakpointMods, formatGroupSpacers } from './DataToolbarUtils';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { css, getModifier } from '@patternfly/react-styles';
-import { DataToolbarGroup, DataToolbarGroupProps } from './DataToolbarGroup';
+import { DataToolbarGroupProps } from './DataToolbarGroup';
 import { Button } from '../../../components/Button';
 
-// basically extends DataToolBar group with a couple extra props
+import {
+  DataToolbarBreakpointMod,
+  DataToolbarSpacer,
+  formatBreakpointMods,
+  formatGroupSpacers
+} from './DataToolbarUtils';
 
 export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
   /** TODO */
@@ -14,15 +18,14 @@ export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
   breakpoint: 'md' | 'lg' | 'xl' | '2xl';
 }
 
-
 export const DataToolbarToggleGroup: React.FunctionComponent<DataToolbarToggleGroupProps> = ({
   toggleIcon,
   breakpoint,
-  children,
-  mod,
-  breakpointMods,
-  spacers,
+  breakpointMods = [] as DataToolbarBreakpointMod[],
+  spacers = [] as DataToolbarSpacer[],
   className,
+  mod,
+  items,
   ...props
 }: DataToolbarToggleGroupProps) => {
 
@@ -30,19 +33,18 @@ export const DataToolbarToggleGroup: React.FunctionComponent<DataToolbarToggleGr
     console.log("toggle clicked");
   };
 
-  return <DataToolbarGroup
-    className={css(styles.dataToolbarGroup,
+  return (
+    <div className={css(styles.dataToolbarGroup,
       mod && getModifier(styles, mod),
       formatBreakpointMods(breakpointMods),
       formatGroupSpacers(spacers),
       getModifier(styles, 'toggle-group'),
-      `pf-m-reveal-on-${breakpoint}`,
       className)}
-    {...props}
-  >
-    <div className={css(styles.dataToolbarToggle)}>
-      <Button variant="plain" onClick={onToggle}>{toggleIcon}</Button>
+         {...props}>
+      <div className={css(styles.dataToolbarToggle)}>
+        <Button variant="plain" onClick={onToggle}>{toggleIcon}</Button>
+      </div>
+      {items}
     </div>
-    {children}
-  </DataToolbarGroup>;
-}
+  );
+};

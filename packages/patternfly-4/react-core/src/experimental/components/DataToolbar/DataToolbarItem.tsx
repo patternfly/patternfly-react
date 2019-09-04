@@ -10,8 +10,6 @@ export enum DataToolbarItemMod {
   'overflow-menu' = 'overflow-menu',
   pagination = 'pagination',
   'search-filter' = 'search-filter',
-  'chip-group' = 'chip-group',
-  clear = 'clear'
 }
 
 export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
@@ -28,7 +26,7 @@ export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const DataToolbarItem: React.FunctionComponent<DataToolbarItemProps> = ({
-    className = '',
+    className,
     mod,
     breakpointMods = [] as DataToolbarBreakpointMod[],
     spacers = [] as DataToolbarSpacer[],
