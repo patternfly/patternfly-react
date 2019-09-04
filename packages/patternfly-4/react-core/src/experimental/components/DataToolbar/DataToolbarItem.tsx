@@ -13,15 +13,15 @@ export enum DataToolbarItemMod {
 }
 
 export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
-  /** TODO */
+  /** Classes applied to root element of the Data toolbar item */
   className?: string;
-  /** TODO */
+  /** A type modifier which modifies spacing specifically depending on the type of item */
   mod?: DataToolbarItemMod;
-  /** TODO */
+  /** An array of objects representing the various modifiers to apply to the Data toolbar item at various breakpoints */
   breakpointMods?: DataToolbarBreakpointMod[];
-  /** TODO */
+  /** An array of objects representing the various spacers to apply to the Data toolbar item at various breakpoints */
   spacers?: DataToolbarSpacer[];
-  /** TODO */
+  /** Content to be rendered inside the Data toolbar item */
   children?: React.ReactNode;
 }
 

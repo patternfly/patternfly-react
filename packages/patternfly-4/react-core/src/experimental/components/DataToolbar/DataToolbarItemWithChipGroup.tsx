@@ -3,18 +3,18 @@ import { DataToolbarItem, DataToolbarItemProps } from './DataToolbarItem';
 import { ChipGroup, Chip } from '../../../components/ChipGroup';
 
 export interface DataToolbarItemWithChipGroupProps extends DataToolbarItemProps {
-  /** TODO */
+  /** An array of strings to be displayed as chips in the expandable content */
   chips?: string[];
-  /** TODO */
+  /** A flag indicating if the expandable content is currently expanded */
   isExpanded: boolean;
-  /** TODO */
+  /** A flag indicating the item is being displayed inside expandable content rather than a content row TODO */
   isInExpandableContent?: boolean;
-  /** TODO */
+  /** Content to be rendered inside the Data toolbar item associated with the chip group */
   children: React.ReactNode;
 }
 
 export interface DataToolbarItemWithChipGroupState {
-  /** TODO */
+  /** An array of strings being displayed as chips in the expandable content */
   chips?: string[];
 }
 

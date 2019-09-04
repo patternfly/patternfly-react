@@ -5,11 +5,11 @@ import { css } from '@patternfly/react-styles';
 import { DataToolbarBreakpointMod, formatBreakpointMods } from './DataToolbarUtils';
 
 export interface DataToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
-  /** TODO */
+  /** Classes applied to root element of the Data toolbar content row */
   className?: string;
-  /** TODO */
+  /** An array of objects representing the various modifiers to apply to the content row at various breakpoints */
   breakpointMods?: DataToolbarBreakpointMod[];
-  /** TODO */
+  /** An array of ReactNodes to be rendered as children of the content row */
   items?: React.ReactNode;
 }
 

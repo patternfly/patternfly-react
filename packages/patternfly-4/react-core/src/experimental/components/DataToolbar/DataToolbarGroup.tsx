@@ -16,15 +16,15 @@ export enum DataToolbarGroupMod {
 }
 
 export interface DataToolbarGroupProps extends React.HTMLProps<HTMLDivElement> {
-  /** TODO */
+  /** Classes applied to root element of the Data toolbar group */
   className?: string;
-  /** TODO */
+  /** A type modifier which modifies spacing specifically depending on the type of group */
   mod?: DataToolbarGroupMod | 'filter-group' | 'icon-button-group' | 'button-group';
-  /** TODO */
+  /** An array of objects representing the various modifiers to apply to the Data toolbar group at various breakpoints */
   breakpointMods?: DataToolbarBreakpointMod[];
-  /** TODO */
+  /** An array of objects representing the various spacers to apply to the Data toolbar group at various breakpoints */
   spacers?: DataToolbarSpacer[];
-  /** TODO */
+  /** An array of ReactNodes to be rendered inside the Data toolbar group as children */
   items?: React.ReactNode[];
 }
 
