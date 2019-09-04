@@ -46,6 +46,7 @@ class SimpleModal extends React.Component {
               Confirm
             </Button>
           ]}
+          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -98,6 +99,7 @@ class SmallModal extends React.Component {
               Confirm
             </Button>
           ]}
+          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -150,6 +152,7 @@ class LargeModal extends React.Component {
               Confirm
             </Button>
           ]}
+          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -202,6 +205,7 @@ class WidthModal extends React.Component {
               Confirm
             </Button>
           ]}
+          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -267,6 +271,7 @@ class CustomHeaderFooter extends React.Component {
           ariaDescribedById="custom-header-example"
           onClose={this.handleModalToggle}
           footer={footer}
+          isFooterLeftAligned
         >
           <span id="custom-header-example">
             When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
@@ -323,6 +328,7 @@ class NoHeader extends React.Component {
               Close
             </Button>
           ]}
+          isFooterLeftAligned
         >
           <span id="no-header-example">
             When static text describing the modal is available, it can be wrapped with an ID referring to the modal's

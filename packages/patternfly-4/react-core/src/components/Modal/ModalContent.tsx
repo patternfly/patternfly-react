@@ -42,6 +42,8 @@ export interface ModalContentProps {
   footer?: React.ReactNode;
   /** Action buttons to add to the standard Modal Footer, ignored if `footer` is given */
   actions?: any;
+  /** Flag to indicate that the Footer content is left aligned */
+  isFooterLeftAligned?: boolean;
   /** A callback for when the close button is clicked */
   onClose?: () => void;
   /** Id to use for Modal Box description */
@@ -62,6 +64,7 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   showClose = true,
   footer = null,
   actions = [],
+  isFooterLeftAligned = false,
   onClose = () => undefined as any,
   isLarge = false,
   isSmall = false,
@@ -80,8 +83,8 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     <ModalBoxHeader hideTitle={hideTitle}> {title} </ModalBoxHeader>;
 
   const modalBoxFooter = footer ?
-    <ModalBoxFooter>{footer}</ModalBoxFooter> :
-    actions.length > 0 && <ModalBoxFooter>{actions}</ModalBoxFooter>;
+    <ModalBoxFooter isLeftAligned={isFooterLeftAligned}>{footer}</ModalBoxFooter> :
+    actions.length > 0 && <ModalBoxFooter isLeftAligned={isFooterLeftAligned}>{actions}</ModalBoxFooter>;
   const boxStyle = width === -1 ? {} : { width };
   const modalBox = (
     <ModalBox
