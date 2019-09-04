@@ -3,14 +3,16 @@ import styles from '@patternfly/react-styles/css/components/DataToolbar/data-too
 import { css } from '@patternfly/react-styles';
 
 export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
-  /** TODO */
+  /** Classes applied to root element of the Data toolbar */
   className?: string;
-  /** TODO */
+  /** An array of ReactNodes to be rendered as rows in the Data toolbar */
   contentRows: React.ReactNode[];
+  /** Id of the Data toolbar */
+  id: string;
 }
 
 export interface DataToolbarState {
-  /** TODO */
+  /** Flag indicating the if the expandable content is expanded */
   isExpanded: boolean;
 }
 
@@ -30,7 +32,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
 
   render() {
 
-    const { className, contentRows, ...props} = this.props;
+    const { className, contentRows, id, ...props} = this.props;
     // const { isExpanded } = this.state;
 
     // loop over content rows to look
@@ -38,7 +40,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
     // for an item with chip group - if I find one, build expandable row to display chips
 
     return (
-      <div className={css(styles.dataToolbar, className)} {...props}>
+      <div className={css(styles.dataToolbar, className)} id={id} {...props}>
         {contentRows}
       </div>
     );

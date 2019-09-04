@@ -15,7 +15,7 @@ export interface DataToolbarExpandableContentProps extends React.HTMLProps<HTMLD
   items?: React.ReactNode[];
 }
 
-export const DataToolbarExplandableContent: React.FunctionComponent<DataToolbarExpandableContentProps> = ({
+export const DataToolbarExpandableContent: React.FunctionComponent<DataToolbarExpandableContentProps> = ({
     className,
     breakpointMods = [] as DataToolbarBreakpointMod[],
     isExpanded = false,

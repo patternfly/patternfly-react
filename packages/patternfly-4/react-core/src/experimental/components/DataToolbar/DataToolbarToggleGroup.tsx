@@ -12,39 +12,55 @@ import {
 } from './DataToolbarUtils';
 
 export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
-  /** TODO */
+  /** An Icon to be rendered when the toggle group has collapsed down */
   toggleIcon: React.ReactNode;
-  /** TODO */
+  /** The breakpoint at which the toggle group is collapsed down */
   breakpoint: 'md' | 'lg' | 'xl' | '2xl';
+  /** The generated id of the expandable content TODO */
+  expandableContentId?: string;
 }
 
-export const DataToolbarToggleGroup: React.FunctionComponent<DataToolbarToggleGroupProps> = ({
-  toggleIcon,
-  breakpoint,
-  breakpointMods = [] as DataToolbarBreakpointMod[],
-  spacers = [] as DataToolbarSpacer[],
-  className,
-  mod,
-  items,
-  ...props
-}: DataToolbarToggleGroupProps) => {
+export interface DataToolbarToggleGroupState {
+  /** Flag indicating the if the expandable content is expanded */
+  isExpanded: boolean;
+}
 
-  const onToggle = () => {
-    console.log("toggle clicked");
+export class DataToolbar extends React.Component<DataToolbarToggleGroupProps, DataToolbarToggleGroupState> {
+
+  static defaultProps = {
+    breakpointMods: [] as DataToolbarBreakpointMod[],
+    spacers: [] as DataToolbarSpacer[],
   };
 
-  return (
-    <div className={css(styles.dataToolbarGroup,
-      mod && getModifier(styles, mod),
-      formatBreakpointMods(breakpointMods),
-      formatGroupSpacers(spacers),
-      getModifier(styles, 'toggle-group'),
-      className)}
-         {...props}>
-      <div className={css(styles.dataToolbarToggle)}>
-        <Button variant="plain" onClick={onToggle}>{toggleIcon}</Button>
+  constructor(props: DataToolbarToggleGroupProps) {
+    super(props);
+
+    this.state = {
+      isExpanded: false
+    }
+  };
+
+  onToggle = () => {
+    this.setState({isExpanded: !this.state.isExpanded});
+  };
+
+  render() {
+    const { mod, breakpointMods, spacers, className, toggleIcon, items, expandableContentId, ...props } = this.props;
+    const { isExpanded } = this.state;
+
+    return (
+      <div className={css(styles.dataToolbarGroup,
+        mod && getModifier(styles, mod),
+        formatBreakpointMods(breakpointMods),
+        formatGroupSpacers(spacers),
+        getModifier(styles, 'toggle-group'),
+        className)}
+           {...props}>
+        <div className={css(styles.dataToolbarToggle)}>
+          <Button variant="plain" onClick={this.onToggle} aria-expanded={isExpanded} aria-controls={expandableContentId}>{toggleIcon}</Button>
+        </div>
+        {items}
       </div>
-      {items}
-    </div>
-  );
-};
+    );
+  };
+}
