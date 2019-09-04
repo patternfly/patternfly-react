@@ -1,6 +1,5 @@
 # patternfly-react
 
-[![CircleCI](https://img.shields.io/circleci/build/github/patternfly/patternfly-react?style=for-the-badge)](https://circleci.com/gh/patternfly/patternfly-react)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-green.svg?style=for-the-badge)](https://lernajs.io/)
 ![PatternFly 3 npm badge](https://img.shields.io/npm/v/patternfly-react.svg?label=PF3%20Core&style=for-the-badge)
 ![PatternFly 4 npm badge](https://img.shields.io/npm/v/@patternfly/react-core.svg?label=PF4%20Core&style=for-the-badge)
