@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.98.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.97.0...@patternfly/react-core@3.98.0) (2019-09-05)
+
+
+### Features
+
+* **Dropdown:** Added support for dropdown with primary button toggle ([#2857](https://github.com/patternfly/patternfly-react/issues/2857)) ([48b0d3a](https://github.com/patternfly/patternfly-react/commit/48b0d3a)), closes [#2750](https://github.com/patternfly/patternfly-react/issues/2750)
+
+
+
+
+
 # [3.97.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.96.0...@patternfly/react-core@3.97.0) (2019-09-05)
 
 
