@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.97.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.96.0...@patternfly/react-core@3.97.0) (2019-09-05)
+
+
+### Features
+
+* **Wizard:** add support for in page rendering ([#2830](https://github.com/patternfly/patternfly-react/issues/2830)) ([bf96474](https://github.com/patternfly/patternfly-react/commit/bf96474))
+
+
+
+
+
 # [3.96.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.95.6...@patternfly/react-core@3.96.0) (2019-09-05)
 
 
