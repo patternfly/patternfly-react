@@ -12,14 +12,14 @@ export interface DataToolbarExpandableContentProps extends React.HTMLProps<HTMLD
   /** TODO */
   isExpanded?: boolean;
   /** TODO */
-  items?: React.ReactNode[];
+  children?: React.ReactNode;
 }
 
 export const DataToolbarExpandableContent: React.FunctionComponent<DataToolbarExpandableContentProps> = ({
     className,
     breakpointMods = [] as DataToolbarBreakpointMod[],
     isExpanded = false,
-    items,
+    children,
     ...props
   }: DataToolbarExpandableContentProps) => {
 
@@ -28,7 +28,7 @@ export const DataToolbarExpandableContent: React.FunctionComponent<DataToolbarEx
       formatBreakpointMods(breakpointMods),
       isExpanded && getModifier(styles, 'expanded'),
       className)} {...props}>
-      {items}
+      {children}
     </div>
   );
 };

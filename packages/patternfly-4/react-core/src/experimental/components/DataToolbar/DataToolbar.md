@@ -6,8 +6,8 @@ propComponents: ['DataToolbar']
 section: 'experimental'
 ---
 
-import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent } from '@patternfly/react-core/dist/esm/experimental';
-import { Alert, Button, InputGroup, TextInput, SearchIcon } from '@patternfly/react-core';
+import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup } from '@patternfly/react-core/dist/esm/experimental';
+import { Alert, Button, InputGroup, TextInput, SearchIcon, Select, SelectOption, EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-core';
 
 <Alert variant="danger" title="Warning">
   Please don't use this component, it's only an example of what an experimental component could be
@@ -27,23 +27,21 @@ class DataToolbarItems extends React.Component {
   }
   
   render() {
-    const items = [
+    const items = <React.Fragment>
       <DataToolbarItem>
         <InputGroup>
-          <TextInput name="textInput11" id="textInput11" type="search" aria-label="search input example" />
+          <TextInput name="textInput1" id="textInput1" type="search" aria-label="search input example" />
           <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
-      </DataToolbarItem>,
-      <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>,
-      <DataToolbarItem mod="separator"></DataToolbarItem>,
+      </DataToolbarItem>
+      <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
+      <DataToolbarItem mod="separator" />
       <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
-    ];
+    </React.Fragment>;
     
-    const contentRows = [<DataToolbarContent items={items} />];
-    
-    return <DataToolbar contentRows={contentRows} />;
+    return <DataToolbar id="data-toolbar"><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
   }
 }
 
@@ -80,19 +78,17 @@ class DataToolbarSpacers extends React.Component {
       {spacerSize: 'lg', breakpoint: 'xl'}
     ];
     
-    const items = [
-          <DataToolbarItem spacers={firstSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>,
-          <DataToolbarItem spacers={secondSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>,
-          <DataToolbarItem spacers={thirdSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>,
-          <DataToolbarItem spacers={fourthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>,
-          <DataToolbarItem mod="separator"></DataToolbarItem>,
-          <DataToolbarItem spacers={fifthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>,
+    const items = <React.Fragment>
+          <DataToolbarItem spacers={firstSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
+          <DataToolbarItem spacers={secondSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
+          <DataToolbarItem spacers={thirdSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
+          <DataToolbarItem spacers={fourthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
+          <DataToolbarItem mod="separator"></DataToolbarItem>
+          <DataToolbarItem spacers={fifthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
           <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
-      ];
+      </React.Fragment>;
     
-    const contentRows = [<DataToolbarContent items={items} />];
-        
-    return <DataToolbar contentRows={contentRows} />;
+    return <DataToolbar id="data-toolbar-spacers"><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
   }
 }
 
@@ -101,8 +97,8 @@ class DataToolbarSpacers extends React.Component {
 ## Data toolbar group types
 ```js
 import React from 'react';
-import { DataToolbar, DataToolbarContent, DataToolbarGroup, DataToolbarItem, Select, SelectOption, EditIcon, CloneIcon, SyncIcon, Button } from '@patternfly/react-core/dist/esm/experimental';
-
+import { DataToolbar, DataToolbarContent, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core/dist/esm/experimental';
+import { Button, Select, SelectOption, EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-core';
 
 class DataToolbarGroupTypes extends React.Component {
   constructor(props) {
@@ -178,7 +174,7 @@ class DataToolbarGroupTypes extends React.Component {
   render() {
     const { firstIsExpanded, firstSelected, secondIsExpanded, secondSelected, thirdIsExpanded, thirdSelected } = this.state;
     
-    const filterGroupItems = [
+    const filterGroupItems = <React.Fragment>
       <DataToolbarItem>
         <Select
           variant={SelectVariant.single}
@@ -196,7 +192,7 @@ class DataToolbarGroupTypes extends React.Component {
             />
           ))}
         </Select>
-     </DataToolbarItem>,
+     </DataToolbarItem>
      <DataToolbarItem>
         <Select
         variant={SelectVariant.single}
@@ -214,7 +210,7 @@ class DataToolbarGroupTypes extends React.Component {
             />
           ))}
         </Select>
-      </DataToolbarItem>,
+      </DataToolbarItem>
       <DataToolbarItem>
         <Select
           variant={SelectVariant.single}
@@ -233,27 +229,27 @@ class DataToolbarGroupTypes extends React.Component {
           ))}
         </Select>
       </DataToolbarItem>
-    ];
-    const iconButtonGroupItems = [
-      <DataToolbarItem><Button variant="plain"><EditIcon /></Button></DataToolbarItem>,
-      <DataToolbarItem><Button variant="plain"><CloneIcon /></Button></DataToolbarItem>,
-      <DataToolbarItem><Button variant="plain"><SyncIcon /></Button></DataToolbarItem>,
-    ];
-    const buttonGroupItems = [
-      <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>,
-      <DataToolbarItem><Button variant="secondary">Secondary</Button></DataToolbarItem>,
-      <DataToolbarItem><Button variant="tertiary">Tertiary</Button></DataToolbarItem>,
-    ];
+    </React.Fragment>;
     
-    const items = [
-        <DataToolbarGroup mod="filter-group" items={filterGroupItems} />,
-        <DataToolbarGroup mod="icon-button-group" items={iconButtonGroupItems} />,
-        <DataToolbarGroup mod="button-group" items={buttonGroupItems} />
-      ];
+    const iconButtonGroupItems = <React.Fragment>
+      <DataToolbarItem><Button variant="plain"><EditIcon /></Button></DataToolbarItem>
+      <DataToolbarItem><Button variant="plain"><CloneIcon /></Button></DataToolbarItem>
+      <DataToolbarItem><Button variant="plain"><SyncIcon /></Button></DataToolbarItem>
+    </React.Fragment>;
     
-    const contentRows = [<DataToolbarContent items={items} />];
-        
-    return <DataToolbar contentRows={contentRows} />;
+    const buttonGroupItems = <React.Fragment>
+      <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
+      <DataToolbarItem><Button variant="secondary">Secondary</Button></DataToolbarItem>
+      <DataToolbarItem><Button variant="tertiary">Tertiary</Button></DataToolbarItem>
+    </React.Fragment>;
+    
+    const items = <React.Fragment>
+      <DataToolbarGroup mod="filter-group">{filterGroupItems}</DataToolbarGroup>
+      <DataToolbarGroup mod="icon-button-group">{iconButtonGroupItems}</DataToolbarGroup>
+      <DataToolbarGroup mod="button-group">{buttonGroupItems}</DataToolbarGroup>
+    </React.Fragment>;
+    
+    return <DataToolbar id="data-toolbar-group-types"><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
   }
 }
 
@@ -261,7 +257,7 @@ class DataToolbarGroupTypes extends React.Component {
 ## Data toolbar toggle groups
 ```js
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
 import { Button, InputGroup, TextInput, SearchIcon, FilterIcon } from '@patternfly/react-core';
 
 class DataToolbarToggleGroup extends React.Component {
@@ -270,26 +266,25 @@ class DataToolbarToggleGroup extends React.Component {
   }
   
   render() {
-    const toggleGroupItems = [
+    const toggleIcon = <FilterIcon />;
+    const toggleGroupItems = <React.Fragment>
       <DataToolbarItem>
         <InputGroup>
-          <TextInput name="textInput1" id="textInput1" type="search" aria-label="search input example" />
+          <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" />
           <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
-      </DataToolbarItem>,
-      <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>,
-      <DataToolbarItem mod="separator" />,
+      </DataToolbarItem>
+      <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
+      <DataToolbarItem mod="separator" />
       <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
-    ];
+    </React.Fragment>;
     
-    const items =  [<DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl' items={toggleGroupItems} />];
-    //const items =  [<DataToolbarGroup items={toggleGroupItems} />];
+    //const items =  <DataToolbarToggleGroup toggleIcon={toggleIcon} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
+    const items =  <DataToolbarGroup>{toggleGroupItems}</DataToolbarGroup>;
     
-    const contentRows = [<DataToolbarContent items={items} />];
-            
-    return <DataToolbar contentRows={contentRows} />;
+    return <DataToolbar id="data-toolbar-toggle-groups"><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
   }
 }
 

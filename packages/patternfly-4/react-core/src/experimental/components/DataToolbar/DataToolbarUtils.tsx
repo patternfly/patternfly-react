@@ -1,5 +1,13 @@
 import { getModifier } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
+import * as React from 'react';
+
+interface DataToolbarContextProps {
+  isExpanded: boolean;
+  updateExpandableContent: (expandableContentItems: React.ReactNode) => void;
+}
+
+export const DataToolbarContext = React.createContext<Partial<DataToolbarContextProps>>({});
 
 export type DataToolbarBreakpointMod = {
   /** TODO */
