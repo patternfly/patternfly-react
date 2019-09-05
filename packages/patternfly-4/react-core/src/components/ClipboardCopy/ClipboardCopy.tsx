@@ -91,6 +91,12 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     toggleAriaLabel: 'Show content'
   };
 
+  componentDidUpdate = (prevProps: ClipboardCopyProps, prevState: ClipboardCopyState) => {
+    if (prevProps.children !== this.props.children) {
+      this.updateText(this.props.children as string | number);
+    }
+  }
+
   expandContent = (_event: React.MouseEvent<Element, MouseEvent>) => {
     this.setState((prevState) => ({
       expanded: !prevState.expanded
