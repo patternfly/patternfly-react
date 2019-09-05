@@ -7,6 +7,7 @@
 ## Outline
 
 - [Code of Conduct](#code-of-conduct)
+- [Getting Started](#getting-started)
 - [Issues and Project Board](#issues-and-project-board)
   - [Issue Labels](#issue-labels)
   - [PR Labels](#pr-labels)
@@ -30,6 +31,10 @@
 
 This project is governed by the [Contributor Covenant version 1.4][1]. All contributors and participants
 agree to abide by its terms. To report violations, send an email to [patternfly@redhat.com][2].
+
+## Getting Started
+
+[Check out our Wiki to learn about our dev environment.](https://github.com/patternfly/patternfly-react/wiki/Getting-Started-as-a-Contributor)
 
 ## Issues and Project Board
 
@@ -124,24 +129,6 @@ Inside the package directory:
 - Import the Less file into `less/paternfly-react.less` using `@import "<component>";`
 - Add a Sass file to the `sass/patternfly-react/` directory and use the file name `_<component>.scss`
 - Import the Sass file into `sass/patternfly-react/_patternfly-react.scss` using `@import "<component>";`
-
-### Using Generators
-
-To make contributing components and packages easier a generator utility has been provided.
-
-To start the generator run:
-
-```sh
-yarn generate
-```
-
-Follow the prompts to generate the desired component or package.
-
-Currently the following generators are provided
-
-- PatternFly 4 Component
-- PatternFly 3 Component
-- Package
 
 ## Guidelines and Requirements
 

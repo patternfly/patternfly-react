@@ -6,7 +6,7 @@
 
 [PatternFly](https://www.patternfly.org/v4/) is an open source design system built to drive consistency and unify teams. This repo provides a set of React UI components for it.
 
-## Intro
+## Getting Started
 
 PatternFly React is a React Component library offered as PatternFly 3 and PatternFly 4.
 
@@ -19,7 +19,7 @@ npm install --save @patternfly/react-core
 or
 
 ```sh
-yarn add patternfly-react
+yarn add @patternfly/react-core
 ```
 
 Example usage:
@@ -33,11 +33,21 @@ export const MyComponent = props => (
 );
 ```
 
+#### Applying Red Hat Fonts (Optional) 
+If you would like to use Red Hat fonts instead of Overpass, simply add the class `.pf-m-redhat-font` to an element that wraps your application (ideally `<html>` or `<body>`) to adopt the CSS changes that introduce the Red Hat fonts into PatternFly.
+
+
 ### PatternFly 3
 
-`npm install --save patternfly-react`
+```sh
+npm install --save patternfly-react
+```
 
-`yarn add patternfly-react`
+or
+
+```sh
+yarn add patternfly-react
+```
 
 ```javascript
 import React from 'react';
@@ -48,35 +58,9 @@ export const MyComponent = props => (
 );
 ```
 
-### Contributing
+## Contributing
 
-The following dependencies are required:
-- [Node >= 8](https://nodejs.org/en/) (LTS suggested)
-  - Use [nvm](https://github.com/nvm-sh/nvm#installation-and-update) to manage versions
-- [yarn >= 1.0](https://yarnpkg.com/en/docs/install#debian-stable) so we can use [yarn workspaces](https://yarnpkg.com/lang/en/docs/workspaces/)
-  - Use [yvm](https://yvm.js.org/docs/overview) to manage versions
-
-First, build our entire project:
-
-```sh
-yarn install && yarn build
-```
-
-To test PF4 component changes, run our [Gatsby](https://www.gatsbyjs.org/) dev server:
-
-```sh
-yarn start:pf4
-```
-
-Then navigate to http://localhost:8000 .
-
-or to test PF3 changes, run our [Storybook](https://storybook.js.org/) server:
-
-```sh
-yarn start:pf3
-```
-
-Then http://localhost:6006 should automatically open.
+If you are interested in contributing to PatternFly React, please see the [Contributing Guide](./CONTRIBUTING.md).
 
 ### Code of Conduct
 
