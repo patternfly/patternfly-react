@@ -403,23 +403,25 @@ export class Select extends React.Component<SelectProps, SelectState> {
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                  <input
-                    className={css(formStyles.formControl, styles.selectToggleTypeahead)}
-                    aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                    id="select-typeahead"
-                    aria-label={ariaLabelTypeAhead}
-                    placeholder={placeholderText as string}
-                    value={
-                      typeaheadInputValue !== null
-                        ? typeaheadInputValue
-                        : this.getDisplay(selections as string, 'text') || ''
-                    }
-                    type="text"
-                    onChange={this.onChange}
-                    onFocus={this.handleFocus}
-                    autoComplete="off"
-                    disabled={isDisabled}
-                  />
+                  <form onSubmit={(e) => e.preventDefault()}>
+                    <input
+                      className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                      aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
+                      id="select-typeahead"
+                      aria-label={ariaLabelTypeAhead}
+                      placeholder={placeholderText as string}
+                      value={
+                        typeaheadInputValue !== null
+                          ? typeaheadInputValue
+                          : this.getDisplay(selections as string, 'text') || ''
+                      }
+                      type="text"
+                      onChange={this.onChange}
+                      onFocus={this.handleFocus}
+                      autoComplete="off"
+                      disabled={isDisabled}
+                    />
+                  </form>
                 </div>
                 {selections && (
                   <button
@@ -442,19 +444,21 @@ export class Select extends React.Component<SelectProps, SelectState> {
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                   {selections && (Array.isArray(selections) && selections.length > 0) && selectedChips}
-                  <input
-                    className={css(formStyles.formControl, styles.selectToggleTypeahead)}
-                    aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                    id="select-multi-typeahead-typeahead"
-                    aria-label={ariaLabelTypeAhead}
-                    placeholder={placeholderText as string}
-                    value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
-                    type="text"
-                    onChange={this.onChange}
-                    onFocus={this.handleFocus}
-                    autoComplete="off"
-                    disabled={isDisabled}
-                  />
+                  <form onSubmit={(e) => e.preventDefault()}>
+                    <input
+                      className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                      aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
+                      id="select-multi-typeahead-typeahead"
+                      aria-label={ariaLabelTypeAhead}
+                      placeholder={placeholderText as string}
+                      value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
+                      type="text"
+                      onChange={this.onChange}
+                      onFocus={this.handleFocus}
+                      autoComplete="off"
+                      disabled={isDisabled}
+                    />
+                  </form>
                 </div>
                 {selections && (Array.isArray(selections) && selections.length > 0) && (
                   <button

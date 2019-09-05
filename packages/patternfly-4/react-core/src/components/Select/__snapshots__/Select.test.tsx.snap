@@ -2776,15 +2776,17 @@ exports[`select custom select filter filters properly 1`] = `
               <div
                 class="pf-c-select__toggle-wrapper"
               >
-                <input
-                  aria-label=""
-                  autocomplete="off"
-                  class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="select-typeahead"
-                  placeholder=""
-                  type="text"
-                  value="r"
-                />
+                <form>
+                  <input
+                    aria-label=""
+                    autocomplete="off"
+                    class="pf-c-form-control pf-c-select__toggle-typeahead"
+                    id="select-typeahead"
+                    placeholder=""
+                    type="text"
+                    value="r"
+                  />
+                </form>
               </div>
               
               <button
@@ -2869,19 +2871,23 @@ exports[`select custom select filter filters properly 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          <input
-            aria-activedescendant={null}
-            aria-label=""
-            autoComplete="off"
-            className="pf-c-form-control pf-c-select__toggle-typeahead"
-            disabled={false}
-            id="select-typeahead"
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            type="text"
-            value="r"
-          />
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              aria-activedescendant={null}
+              aria-label=""
+              autoComplete="off"
+              className="pf-c-form-control pf-c-select__toggle-typeahead"
+              disabled={false}
+              id="select-typeahead"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value="r"
+            />
+          </form>
         </div>
         <button
           aria-expanded={true}
@@ -4818,15 +4824,17 @@ exports[`typeahead multi select renders closed successfully 1`] = `
                 class="pf-c-select__toggle-wrapper"
               >
                 
-                <input
-                  aria-label=""
-                  autocomplete="off"
-                  class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="select-multi-typeahead-typeahead"
-                  placeholder=""
-                  type="text"
-                  value=""
-                />
+                <form>
+                  <input
+                    aria-label=""
+                    autocomplete="off"
+                    class="pf-c-form-control pf-c-select__toggle-typeahead"
+                    id="select-multi-typeahead-typeahead"
+                    placeholder=""
+                    type="text"
+                    value=""
+                  />
+                </form>
               </div>
               
               <button
@@ -4868,19 +4876,23 @@ exports[`typeahead multi select renders closed successfully 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          <input
-            aria-activedescendant={null}
-            aria-label=""
-            autoComplete="off"
-            className="pf-c-form-control pf-c-select__toggle-typeahead"
-            disabled={false}
-            id="select-multi-typeahead-typeahead"
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            type="text"
-            value=""
-          />
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              aria-activedescendant={null}
+              aria-label=""
+              autoComplete="off"
+              className="pf-c-form-control pf-c-select__toggle-typeahead"
+              disabled={false}
+              id="select-multi-typeahead-typeahead"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value=""
+            />
+          </form>
         </div>
         <button
           aria-expanded={false}
@@ -4988,15 +5000,17 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 class="pf-c-select__toggle-wrapper"
               >
                 
-                <input
-                  aria-label=""
-                  autocomplete="off"
-                  class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="select-multi-typeahead-typeahead"
-                  placeholder=""
-                  type="text"
-                  value=""
-                />
+                <form>
+                  <input
+                    aria-label=""
+                    autocomplete="off"
+                    class="pf-c-form-control pf-c-select__toggle-typeahead"
+                    id="select-multi-typeahead-typeahead"
+                    placeholder=""
+                    type="text"
+                    value=""
+                  />
+                </form>
               </div>
               
               <button
@@ -5093,19 +5107,23 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          <input
-            aria-activedescendant={null}
-            aria-label=""
-            autoComplete="off"
-            className="pf-c-form-control pf-c-select__toggle-typeahead"
-            disabled={false}
-            id="select-multi-typeahead-typeahead"
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            type="text"
-            value=""
-          />
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              aria-activedescendant={null}
+              aria-label=""
+              autoComplete="off"
+              className="pf-c-form-control pf-c-select__toggle-typeahead"
+              disabled={false}
+              id="select-multi-typeahead-typeahead"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value=""
+            />
+          </form>
         </div>
         <button
           aria-expanded={true}
@@ -5411,15 +5429,17 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     </button>
                   </li>
                 </ul>
-                <input
-                  aria-label=""
-                  autocomplete="off"
-                  class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="select-multi-typeahead-typeahead"
-                  placeholder=""
-                  type="text"
-                  value=""
-                />
+                <form>
+                  <input
+                    aria-label=""
+                    autocomplete="off"
+                    class="pf-c-form-control pf-c-select__toggle-typeahead"
+                    id="select-multi-typeahead-typeahead"
+                    placeholder=""
+                    type="text"
+                    value=""
+                  />
+                </form>
               </div>
               <button
                 aria-label="Clear all"
@@ -5781,19 +5801,23 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               </InnerChipGroup>
             </ul>
           </ChipGroup>
-          <input
-            aria-activedescendant={null}
-            aria-label=""
-            autoComplete="off"
-            className="pf-c-form-control pf-c-select__toggle-typeahead"
-            disabled={false}
-            id="select-multi-typeahead-typeahead"
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            type="text"
-            value=""
-          />
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              aria-activedescendant={null}
+              aria-label=""
+              autoComplete="off"
+              className="pf-c-form-control pf-c-select__toggle-typeahead"
+              disabled={false}
+              id="select-multi-typeahead-typeahead"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value=""
+            />
+          </form>
         </div>
         <button
           aria-label="Clear all"
@@ -6141,15 +6165,17 @@ exports[`typeahead multi select test onChange 1`] = `
               <div
                 class="pf-c-select__toggle-wrapper"
               >
-                <input
-                  aria-label=""
-                  autocomplete="off"
-                  class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="select-typeahead"
-                  placeholder=""
-                  type="text"
-                  value="test"
-                />
+                <form>
+                  <input
+                    aria-label=""
+                    autocomplete="off"
+                    class="pf-c-form-control pf-c-select__toggle-typeahead"
+                    id="select-typeahead"
+                    placeholder=""
+                    type="text"
+                    value="test"
+                  />
+                </form>
               </div>
               
               <button
@@ -6210,19 +6236,23 @@ exports[`typeahead multi select test onChange 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          <input
-            aria-activedescendant={null}
-            aria-label=""
-            autoComplete="off"
-            className="pf-c-form-control pf-c-select__toggle-typeahead"
-            disabled={false}
-            id="select-typeahead"
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            type="text"
-            value="test"
-          />
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              aria-activedescendant={null}
+              aria-label=""
+              autoComplete="off"
+              className="pf-c-form-control pf-c-select__toggle-typeahead"
+              disabled={false}
+              id="select-typeahead"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value="test"
+            />
+          </form>
         </div>
         <button
           aria-expanded={true}
@@ -6379,15 +6409,17 @@ exports[`typeahead select renders closed successfully 1`] = `
               <div
                 class="pf-c-select__toggle-wrapper"
               >
-                <input
-                  aria-label=""
-                  autocomplete="off"
-                  class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="select-typeahead"
-                  placeholder=""
-                  type="text"
-                  value=""
-                />
+                <form>
+                  <input
+                    aria-label=""
+                    autocomplete="off"
+                    class="pf-c-form-control pf-c-select__toggle-typeahead"
+                    id="select-typeahead"
+                    placeholder=""
+                    type="text"
+                    value=""
+                  />
+                </form>
               </div>
               
               <button
@@ -6429,19 +6461,23 @@ exports[`typeahead select renders closed successfully 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          <input
-            aria-activedescendant={null}
-            aria-label=""
-            autoComplete="off"
-            className="pf-c-form-control pf-c-select__toggle-typeahead"
-            disabled={false}
-            id="select-typeahead"
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            type="text"
-            value=""
-          />
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              aria-activedescendant={null}
+              aria-label=""
+              autoComplete="off"
+              className="pf-c-form-control pf-c-select__toggle-typeahead"
+              disabled={false}
+              id="select-typeahead"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value=""
+            />
+          </form>
         </div>
         <button
           aria-expanded={false}
@@ -6548,15 +6584,17 @@ exports[`typeahead select renders expanded successfully 1`] = `
               <div
                 class="pf-c-select__toggle-wrapper"
               >
-                <input
-                  aria-label=""
-                  autocomplete="off"
-                  class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="select-typeahead"
-                  placeholder=""
-                  type="text"
-                  value=""
-                />
+                <form>
+                  <input
+                    aria-label=""
+                    autocomplete="off"
+                    class="pf-c-form-control pf-c-select__toggle-typeahead"
+                    id="select-typeahead"
+                    placeholder=""
+                    type="text"
+                    value=""
+                  />
+                </form>
               </div>
               
               <button
@@ -6653,19 +6691,23 @@ exports[`typeahead select renders expanded successfully 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          <input
-            aria-activedescendant={null}
-            aria-label=""
-            autoComplete="off"
-            className="pf-c-form-control pf-c-select__toggle-typeahead"
-            disabled={false}
-            id="select-typeahead"
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            type="text"
-            value=""
-          />
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              aria-activedescendant={null}
+              aria-label=""
+              autoComplete="off"
+              className="pf-c-form-control pf-c-select__toggle-typeahead"
+              disabled={false}
+              id="select-typeahead"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value=""
+            />
+          </form>
         </div>
         <button
           aria-expanded={true}
@@ -6915,15 +6957,17 @@ exports[`typeahead select renders selected successfully 1`] = `
               <div
                 class="pf-c-select__toggle-wrapper"
               >
-                <input
-                  aria-label=""
-                  autocomplete="off"
-                  class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="select-typeahead"
-                  placeholder=""
-                  type="text"
-                  value=""
-                />
+                <form>
+                  <input
+                    aria-label=""
+                    autocomplete="off"
+                    class="pf-c-form-control pf-c-select__toggle-typeahead"
+                    id="select-typeahead"
+                    placeholder=""
+                    type="text"
+                    value=""
+                  />
+                </form>
               </div>
               <button
                 aria-label="Clear all"
@@ -7055,19 +7099,23 @@ exports[`typeahead select renders selected successfully 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          <input
-            aria-activedescendant={null}
-            aria-label=""
-            autoComplete="off"
-            className="pf-c-form-control pf-c-select__toggle-typeahead"
-            disabled={false}
-            id="select-typeahead"
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            type="text"
-            value=""
-          />
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              aria-activedescendant={null}
+              aria-label=""
+              autoComplete="off"
+              className="pf-c-form-control pf-c-select__toggle-typeahead"
+              disabled={false}
+              id="select-typeahead"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value=""
+            />
+          </form>
         </div>
         <button
           aria-label="Clear all"
@@ -7380,15 +7428,17 @@ exports[`typeahead select test creatable option 1`] = `
               <div
                 class="pf-c-select__toggle-wrapper"
               >
-                <input
-                  aria-label=""
-                  autocomplete="off"
-                  class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="select-typeahead"
-                  placeholder=""
-                  type="text"
-                  value="test"
-                />
+                <form>
+                  <input
+                    aria-label=""
+                    autocomplete="off"
+                    class="pf-c-form-control pf-c-select__toggle-typeahead"
+                    id="select-typeahead"
+                    placeholder=""
+                    type="text"
+                    value="test"
+                  />
+                </form>
               </div>
               
               <button
@@ -7451,19 +7501,23 @@ exports[`typeahead select test creatable option 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          <input
-            aria-activedescendant={null}
-            aria-label=""
-            autoComplete="off"
-            className="pf-c-form-control pf-c-select__toggle-typeahead"
-            disabled={false}
-            id="select-typeahead"
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            type="text"
-            value="test"
-          />
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              aria-activedescendant={null}
+              aria-label=""
+              autoComplete="off"
+              className="pf-c-form-control pf-c-select__toggle-typeahead"
+              disabled={false}
+              id="select-typeahead"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value="test"
+            />
+          </form>
         </div>
         <button
           aria-expanded={true}
@@ -7622,15 +7676,17 @@ exports[`typeahead select test onChange 1`] = `
               <div
                 class="pf-c-select__toggle-wrapper"
               >
-                <input
-                  aria-label=""
-                  autocomplete="off"
-                  class="pf-c-form-control pf-c-select__toggle-typeahead"
-                  id="select-typeahead"
-                  placeholder=""
-                  type="text"
-                  value="test"
-                />
+                <form>
+                  <input
+                    aria-label=""
+                    autocomplete="off"
+                    class="pf-c-form-control pf-c-select__toggle-typeahead"
+                    id="select-typeahead"
+                    placeholder=""
+                    type="text"
+                    value="test"
+                  />
+                </form>
               </div>
               
               <button
@@ -7691,19 +7747,23 @@ exports[`typeahead select test onChange 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          <input
-            aria-activedescendant={null}
-            aria-label=""
-            autoComplete="off"
-            className="pf-c-form-control pf-c-select__toggle-typeahead"
-            disabled={false}
-            id="select-typeahead"
-            onChange={[Function]}
-            onFocus={[Function]}
-            placeholder=""
-            type="text"
-            value="test"
-          />
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              aria-activedescendant={null}
+              aria-label=""
+              autoComplete="off"
+              className="pf-c-form-control pf-c-select__toggle-typeahead"
+              disabled={false}
+              id="select-typeahead"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value="test"
+            />
+          </form>
         </div>
         <button
           aria-expanded={true}
