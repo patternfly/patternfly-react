@@ -31,6 +31,8 @@ export interface ToggleProps {
   isDisabled?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
+  /** Display the toggle with a primary button style */
+  isPrimary?: boolean;
   /** Style the toggle as a child of a split button */
   isSplitButton?: boolean;
   /** Flag for aria popup */
@@ -48,6 +50,7 @@ export class Toggle extends React.Component<ToggleProps> {
     isActive: false,
     isDisabled: false,
     isPlain: false,
+    isPrimary: false,
     isSplitButton: false,
     onToggle: Function.prototype,
     onEnter: Function.prototype
@@ -107,6 +110,7 @@ export class Toggle extends React.Component<ToggleProps> {
       isHovered,
       isDisabled,
       isPlain,
+      isPrimary,
       isSplitButton,
       ariaHasPopup,
       onToggle,
@@ -130,6 +134,7 @@ export class Toggle extends React.Component<ToggleProps> {
               isActive && styles.modifiers.active,
               isPlain && styles.modifiers.plain,
               isDisabled && styles.modifiers.disabled,
+              isPrimary && styles.modifiers.primary,
               className
             )}
             type={type || 'button'}
