@@ -39,11 +39,11 @@ class SimpleModal extends React.Component {
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
-            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>,
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
               Confirm
+            </Button>,
+            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+              Cancel
             </Button>
           ]}
           isFooterLeftAligned
@@ -92,11 +92,11 @@ class SmallModal extends React.Component {
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
-            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>,
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
               Confirm
+            </Button>,
+            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+              Cancel
             </Button>
           ]}
           isFooterLeftAligned
@@ -145,11 +145,11 @@ class LargeModal extends React.Component {
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
-            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>,
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
               Confirm
+            </Button>,
+            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+              Cancel
             </Button>
           ]}
           isFooterLeftAligned
@@ -198,11 +198,11 @@ class WidthModal extends React.Component {
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
-            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>,
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
               Confirm
+            </Button>,
+            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+              Cancel
             </Button>
           ]}
           isFooterLeftAligned
