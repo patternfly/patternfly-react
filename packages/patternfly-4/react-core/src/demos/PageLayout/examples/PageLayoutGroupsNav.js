@@ -76,7 +76,7 @@ class PageLayoutGroupsNav extends React.Component {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
         <NavGroup title="System Panel">
           <NavItem itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
             Overview
@@ -176,7 +176,7 @@ class PageLayoutGroupsNav extends React.Component {
         showNavToggle
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} />;
+    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
     const pageId = 'main-content-page-layout-group-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 

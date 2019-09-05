@@ -81,7 +81,7 @@ class PageLayoutSimpleNav extends React.Component {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
         <NavList variant={NavVariants.simple}>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
@@ -166,7 +166,7 @@ class PageLayoutSimpleNav extends React.Component {
         showNavToggle
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} />;
+    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
     const pageId = 'main-content-page-layout-simple-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 

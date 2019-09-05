@@ -5,7 +5,7 @@ section: 'demos'
 
 import LinkPreview from '@content/../LinkPreview';
 import RawPageLayoutSimpleNav from '!!raw-loader!./examples/PageLayoutSimpleNav';
-import RawPageLayoutDarkNav from '!!raw-loader!./examples/PageLayoutDarkNav';
+import RawPageLayoutLightNav from '!!raw-loader!./examples/PageLayoutLightNav';
 import RawPageLayoutDefaultNav from '!!raw-loader!./examples/PageLayoutDefaultNav';
 import RawPageLayoutExpandableNav from '!!raw-loader!./examples/PageLayoutExpandableNav';
 import RawPageLayoutGroupsNav from '!!raw-loader!./examples/PageLayoutGroupsNav';
@@ -26,13 +26,6 @@ import RawPageLayoutManualNav from '!!raw-loader!./examples/PageLayoutManualNav'
 <LinkPreview name="Simple Nav" path="pagelayoutsimplenav" />
 
 <code className="language-nolive">{RawPageLayoutSimpleNav}</code>
-
-## Using dark theme
-
-<LinkPreview name="Dark Nav" path="pagelayoutdarknav" />
-
-<code className="language-nolive">{RawPageLayoutDarkNav}</code>
-
 
 ## Using default navigation
 
@@ -63,3 +56,10 @@ import RawPageLayoutManualNav from '!!raw-loader!./examples/PageLayoutManualNav'
 <LinkPreview name="Manual Nav" path="pagelayoutmanualnav" />
 
 <code className="language-nolive">{RawPageLayoutManualNav}</code>
+
+## Using legacy/light theme
+
+<LinkPreview name="Legacy/Light Nav" path="pagelayoutlightnav" />
+
+<code className="language-nolive">{RawPageLayoutLightNav}</code>
+
