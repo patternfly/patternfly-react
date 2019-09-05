@@ -1,18 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`3rd state 1`] = `
+<label
+  className="pf-c-dropdown__toggle-check"
+  htmlFor="check"
+>
+  <Checkbox
+    aria-invalid={false}
+    aria-label="check"
+    className=""
+    id="check"
+    isChecked={null}
+    isDisabled={false}
+    isValid={true}
+    onChange={[Function]}
+  />
+</label>
+`;
+
 exports[`controlled 1`] = `
 <label
   className="pf-c-dropdown__toggle-check"
   htmlFor="check"
 >
-  <input
+  <Checkbox
     aria-invalid={false}
     aria-label="check"
     defaultChecked={true}
     disabled={false}
     id="check"
+    isChecked={true}
+    isDisabled={false}
+    isValid={true}
     onChange={[Function]}
-    type="checkbox"
   />
 </label>
 `;
@@ -22,14 +42,16 @@ exports[`isDisabled 1`] = `
   className="pf-c-dropdown__toggle-check"
   htmlFor="check"
 >
-  <input
+  <Checkbox
     aria-invalid={false}
     aria-label="check"
     defaultChecked={null}
     disabled={true}
     id="check"
+    isChecked={false}
+    isDisabled={true}
+    isValid={true}
     onChange={[Function]}
-    type="checkbox"
   />
 </label>
 `;
@@ -39,16 +61,18 @@ exports[`passing HTML attribute 1`] = `
   className="pf-c-dropdown__toggle-check"
   htmlFor="check"
 >
-  <input
+  <Checkbox
     aria-invalid={false}
     aria-label="check"
     aria-labelledby="labelId"
     defaultChecked={true}
     disabled={false}
     id="check"
+    isChecked={true}
+    isDisabled={false}
+    isValid={true}
     label="label"
     onChange={[Function]}
-    type="checkbox"
   />
 </label>
 `;
@@ -58,15 +82,17 @@ exports[`passing class 1`] = `
   className="pf-c-dropdown__toggle-check class-123"
   htmlFor="check"
 >
-  <input
+  <Checkbox
     aria-invalid={false}
     aria-label="check"
     defaultChecked={true}
     disabled={false}
     id="check"
+    isChecked={true}
+    isDisabled={false}
+    isValid={true}
     label="label"
     onChange={[Function]}
-    type="checkbox"
   />
 </label>
 `;
@@ -76,14 +102,16 @@ exports[`uncontrolled 1`] = `
   className="pf-c-dropdown__toggle-check"
   htmlFor="check"
 >
-  <input
+  <Checkbox
     aria-invalid={false}
     aria-label="check"
     defaultChecked={null}
     disabled={false}
     id="check"
+    isChecked={false}
+    isDisabled={false}
+    isValid={true}
     onChange={[Function]}
-    type="checkbox"
   />
 </label>
 `;

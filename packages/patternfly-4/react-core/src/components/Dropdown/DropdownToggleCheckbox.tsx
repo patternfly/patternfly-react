@@ -1,9 +1,11 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Dropdown/dropdown';
 import { css } from '@patternfly/react-styles';
+import { Checkbox } from '../Checkbox';
 import { Omit } from '../../helpers/typeUtils';
 
-export interface DropdownToggleCheckboxProps extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'> {
+export interface DropdownToggleCheckboxProps
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'checked'> {
   /** Additional classes added to the DropdownToggleCheckbox */
   className?: string;
   /** Flag to show if the checkbox selection is valid or invalid */
@@ -30,17 +32,16 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
     className: '',
     isValid: true,
     isDisabled: false,
-    isChecked: null as boolean | null,
-    checked: null as boolean | null,
     onChange: () => undefined as any
   };
 
-  handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.props.onChange(event.currentTarget.checked, event);
+  calculateChecked = () => {
+    const { isChecked, checked } = this.props;
+    return isChecked !== undefined ? isChecked : checked;
   }
 
   render() {
-    const { className, onChange, isValid, isDisabled, isChecked, checked, children, ...props } = this.props;
+    const { className, onChange, isValid, isDisabled, isChecked, ref, checked, children, ...props } = this.props;
     const text = children && <span
       className={css(styles.dropdownToggleText, className)}
       aria-hidden="true"
@@ -50,13 +51,13 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
     </span>;
     return (
       <label className={css(styles.dropdownToggleCheck, className)} htmlFor={props.id}>
-        <input
+        <Checkbox
           {...props}
-          type="checkbox"
-          onChange={this.handleChange}
+          {...(this.calculateChecked() !== undefined) && { onChange }}
+          ref={ref as any}
           aria-invalid={!isValid}
-          disabled={isDisabled}
-          defaultChecked={isChecked || checked}
+          isDisabled={isDisabled}
+          isChecked={this.calculateChecked()}
         />
         {text}
       </label>

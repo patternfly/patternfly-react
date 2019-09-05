@@ -27,6 +27,11 @@ test('isDisabled', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('3rd state', () => {
+  const view = shallow(<DropdownToggleCheckbox id="check" isChecked={null} aria-label="check" />);
+  expect(view).toMatchSnapshot();
+});
+
 test('passing class', () => {
   const view = shallow(
     <DropdownToggleCheckbox label="label" className="class-123" id="check" isChecked aria-label="check" />
@@ -39,14 +44,4 @@ test('passing HTML attribute', () => {
     <DropdownToggleCheckbox label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" />
   );
   expect(view).toMatchSnapshot();
-});
-
-test('checkbox passes value and event to onChange handler', () => {
-  const newValue = true;
-  const event = {
-    currentTarget: { checked: newValue }
-  };
-  const view = shallow(<DropdownToggleCheckbox id="check" {...props} aria-label="check" />);
-  view.find('input').simulate('change', event);
-  expect(props.onChange).toBeCalledWith(newValue, event);
 });
