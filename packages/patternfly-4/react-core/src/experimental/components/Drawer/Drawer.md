@@ -4,16 +4,12 @@ cssPrefix: 'pf-c-drawer'
 typescript: true
 propComponents: ['Drawer', 'DrawerPanelContent', 'DrawerContent']
 section: 'experimental'
+stage: 'early'
 ---
 
 import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core/dist/esm/experimental';
 import { Alert } from '@patternfly/react-core';
 
-<Alert variant="danger" title="Warning">
-  Use this component at your own risk, it's currently under development and is subject
-  to change.
-</Alert>
-<br />
 
 ## Simple drawer component
 
