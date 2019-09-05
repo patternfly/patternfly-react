@@ -84,7 +84,7 @@ exports[`ChartTooltip 1`] = `
             "strokeLinejoin": "round",
           },
           "tickLabels": Object {
-            "fill": "#4d5258",
+            "fill": "#4f5255",
             "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
             "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -179,7 +179,7 @@ exports[`ChartTooltip 1`] = `
             "stroke": "transparent",
           },
           "q1": Object {
-            "fill": "#8b8d8f",
+            "fill": "#8a8d90",
             "padding": 8,
           },
           "q1Labels": Object {
@@ -190,7 +190,7 @@ exports[`ChartTooltip 1`] = `
             "stroke": "transparent",
           },
           "q3": Object {
-            "fill": "#8b8d8f",
+            "fill": "#8a8d90",
             "padding": 8,
           },
           "q3Labels": Object {
@@ -557,7 +557,7 @@ exports[`ChartTooltip 2`] = `
             "strokeLinejoin": "round",
           },
           "tickLabels": Object {
-            "fill": "#4d5258",
+            "fill": "#4f5255",
             "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
             "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -652,7 +652,7 @@ exports[`ChartTooltip 2`] = `
             "stroke": "transparent",
           },
           "q1": Object {
-            "fill": "#8b8d8f",
+            "fill": "#8a8d90",
             "padding": 8,
           },
           "q1Labels": Object {
@@ -663,7 +663,7 @@ exports[`ChartTooltip 2`] = `
             "stroke": "transparent",
           },
           "q3": Object {
-            "fill": "#8b8d8f",
+            "fill": "#8a8d90",
             "padding": 8,
           },
           "q3Labels": Object {
@@ -1042,7 +1042,7 @@ exports[`allows tooltip via container component 1`] = `
                 "strokeLinejoin": "round",
               },
               "tickLabels": Object {
-                "fill": "#4d5258",
+                "fill": "#4f5255",
                 "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
                 "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -1137,7 +1137,7 @@ exports[`allows tooltip via container component 1`] = `
                 "stroke": "transparent",
               },
               "q1": Object {
-                "fill": "#8b8d8f",
+                "fill": "#8a8d90",
                 "padding": 8,
               },
               "q1Labels": Object {
@@ -1148,7 +1148,7 @@ exports[`allows tooltip via container component 1`] = `
                 "stroke": "transparent",
               },
               "q3": Object {
-                "fill": "#8b8d8f",
+                "fill": "#8a8d90",
                 "padding": 8,
               },
               "q3Labels": Object {
@@ -1500,7 +1500,7 @@ exports[`allows tooltip via container component 1`] = `
             "strokeLinejoin": "round",
           },
           "tickLabels": Object {
-            "fill": "#4d5258",
+            "fill": "#4f5255",
             "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
             "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -1595,7 +1595,7 @@ exports[`allows tooltip via container component 1`] = `
             "stroke": "transparent",
           },
           "q1": Object {
-            "fill": "#8b8d8f",
+            "fill": "#8a8d90",
             "padding": 8,
           },
           "q1Labels": Object {
@@ -1606,7 +1606,7 @@ exports[`allows tooltip via container component 1`] = `
             "stroke": "transparent",
           },
           "q3": Object {
-            "fill": "#8b8d8f",
+            "fill": "#8a8d90",
             "padding": 8,
           },
           "q3Labels": Object {
