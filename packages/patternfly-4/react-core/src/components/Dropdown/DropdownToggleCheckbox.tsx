@@ -16,6 +16,8 @@ export interface DropdownToggleCheckboxProps extends Omit<React.HTMLProps<HTMLIn
   checked?: boolean | null;
   /** A callback for when the checkbox selection changes */
   onChange?(checked: boolean, event: React.FormEvent<HTMLInputElement>): void;
+  /** */
+  children?: React.ReactNode;
   /** Id of the checkbox */
   id: string;
   /** Aria-label of the checkbox */
@@ -38,7 +40,14 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
   }
 
   render() {
-    const { className, onChange, isValid, isDisabled, isChecked, checked, ...props } = this.props;
+    const { className, onChange, isValid, isDisabled, isChecked, checked, children, ...props } = this.props;
+    const text = children && <span
+      className={css(styles.dropdownToggleText, className)}
+      aria-hidden="true"
+      id={`${props.id}-text`}
+    >
+      {children}
+    </span>;
     return (
       <label className={css(styles.dropdownToggleCheck, className)} htmlFor={props.id}>
         <input
@@ -49,6 +58,7 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
           disabled={isDisabled}
           defaultChecked={isChecked || checked}
         />
+        {text}
       </label>
     );
   }
