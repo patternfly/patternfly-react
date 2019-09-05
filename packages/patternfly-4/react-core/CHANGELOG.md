@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.96.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.95.6...@patternfly/react-core@3.96.0) (2019-09-05)
+
+
+### Features
+
+* **experimental:** add alert states for docs ([#2809](https://github.com/patternfly/patternfly-react/issues/2809)) ([7ec8f1a](https://github.com/patternfly/patternfly-react/commit/7ec8f1a))
+
+
+
+
+
 ## [3.95.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.95.5...@patternfly/react-core@3.95.6) (2019-09-04)
 
 **Note:** Version bump only for package @patternfly/react-core
