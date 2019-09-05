@@ -6,7 +6,7 @@ typescript: true
 propComponents: ['Table', 'TableHeader', 'TableBody']
 ---
 
-Note: Table lives in its own package at [`@patternfly/react-table`](https://www.npmjs.com/package/@patternfly/react-table)!
+Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
 
 import {
   Table,
