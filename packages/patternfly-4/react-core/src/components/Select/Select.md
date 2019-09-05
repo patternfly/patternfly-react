@@ -347,7 +347,6 @@ class TypeaheadSelectInput extends React.Component {
     };
 
     this.onCreateOption = (newValue) => {
-      console.log(newValue);
       this.setState({
         options: [...this.state.options, {value: newValue}]
       });
@@ -552,7 +551,6 @@ class MultiTypeaheadSelectInput extends React.Component {
     };
 
     this.onCreateOption = (newValue) => {
-      console.log(newValue);
       this.setState({
         options: [...this.state.options, {value: newValue}]
       });

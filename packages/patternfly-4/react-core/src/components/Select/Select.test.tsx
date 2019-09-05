@@ -251,9 +251,7 @@ describe('typeahead select', () => {
     const view = mount(
       <Select
         variant={SelectVariant.typeahead}
-        onSelect={jest.fn()}
         onToggle={jest.fn()}
-        onClear={jest.fn()}
         isExpanded
         isCreatable
       >

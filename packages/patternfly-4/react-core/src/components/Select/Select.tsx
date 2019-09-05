@@ -64,8 +64,8 @@ export interface SelectProps
   onClear?: (event: React.MouseEvent) => void;
   /** Optional callback for custom filtering */
   onFilter?: (e: React.ChangeEvent<HTMLInputElement>) => React.ReactElement[];
-  /** Optional callback for storing newly created options */
-  onCreateOption?: (value: string) => void;
+  /** Optional callback for newly created options */
+  onCreateOption?: (newOptionValue: string) => void;
   /** Variant of rendered Select */
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Width of the select container as a number of px or string percentage */

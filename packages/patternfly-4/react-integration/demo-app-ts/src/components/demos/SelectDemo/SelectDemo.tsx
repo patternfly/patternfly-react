@@ -56,7 +56,6 @@ export class SelectDemo extends Component<SelectDemoState> {
       { value: 'Florida', disabled: false },
       { value: 'New Jersey', disabled: false }
     ],
-    typeaheadCreateNew: undefined,
     typeaheadIsCreatable: false,
     typeaheadNewOptions: false
   };
