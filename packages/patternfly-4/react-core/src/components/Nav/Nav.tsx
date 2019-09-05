@@ -23,6 +23,8 @@ export interface NavProps extends Omit<React.DetailedHTMLProps<React.HTMLAttribu
   onToggle?: (toggledItem: {groupId: number | string ; isExpanded: boolean; event: React.FormEvent<HTMLInputElement>}) => void;
   /** Accessibility label */
   'aria-label'?: string;
+  /** Indicates which theme color to use */
+  theme?: 'dark' | 'light'
 }
 
 export const NavContext = React.createContext({});
@@ -33,7 +35,8 @@ export class Nav extends React.Component<NavProps> {
     "children": null,
     "className": '',
     "onSelect": () => undefined,
-    "onToggle": () => undefined
+    "onToggle": () => undefined,
+    "theme": 'light'
   };
 
   state = {
@@ -79,7 +82,7 @@ export class Nav extends React.Component<NavProps> {
   }
 
   render() {
-    const { 'aria-label': ariaLabel, children, className, onSelect, onToggle, ...props } = this.props;
+    const { 'aria-label': ariaLabel, children, className, onSelect, onToggle, theme, ...props } = this.props;
     const { showLeftScrollButton, showRightScrollButton } = this.state;
     const childrenProps: any = (children as any).props;
 
@@ -99,7 +102,7 @@ export class Nav extends React.Component<NavProps> {
         }}
       >
         <nav
-          className={css(styles.nav, showLeftScrollButton && styles.modifiers.start, showRightScrollButton && styles.modifiers.end, className)}
+          className={css(styles.nav, theme === 'dark' && styles.modifiers.dark, showLeftScrollButton && styles.modifiers.start, showRightScrollButton && styles.modifiers.end, className)}
           aria-label={
             ariaLabel === ''
               ? typeof childrenProps !== 'undefined' && childrenProps.variant === 'tertiary' ? 'Local' : 'Global'

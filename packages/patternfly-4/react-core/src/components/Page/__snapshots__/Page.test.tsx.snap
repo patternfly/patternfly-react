@@ -1,5 +1,127 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Check dark page against snapshot 1`] = `
+<Page
+  aria-label="Page layout"
+  breadcrumb={null}
+  className="my-page-class"
+  defaultManagedSidebarIsOpen={true}
+  header={
+    <Unknown
+      avatar=" | Avatar"
+      logo="Logo"
+      onNavToggle={[Function]}
+      toolbar="Toolbar"
+    />
+  }
+  id="PageId"
+  isManagedSidebar={false}
+  mainContainerId={null}
+  onPageResize={[Function]}
+  sidebar={
+    <Unknown
+      isNavOpen={true}
+      nav="Navigation"
+      theme="dark"
+    />
+  }
+  skipToContent={null}
+>
+  <div
+    aria-label="Page layout"
+    className="pf-c-page my-page-class"
+    id="PageId"
+  >
+    <Component
+      avatar=" | Avatar"
+      logo="Logo"
+      onNavToggle={[Function]}
+      toolbar="Toolbar"
+    >
+      <header
+        className="pf-c-page__header"
+        role="banner"
+      >
+        <div
+          className="pf-c-page__header-brand"
+        >
+          <a
+            className="pf-c-page__header-brand-link"
+          >
+            Logo
+          </a>
+        </div>
+        <div
+          className="pf-c-page__header-tools"
+        >
+          Toolbar
+           | Avatar
+        </div>
+      </header>
+    </Component>
+    <Component
+      isNavOpen={true}
+      nav="Navigation"
+      theme="dark"
+    >
+      <div
+        className="pf-c-page__sidebar pf-m-dark pf-m-expanded"
+        id="page-sidebar"
+      >
+        <div
+          className="pf-c-page__sidebar-body"
+        >
+          Navigation
+        </div>
+      </div>
+    </Component>
+    <main
+      className="pf-c-page__main"
+      id={null}
+      role="main"
+      tabIndex={-1}
+    >
+      <Component
+        variant="default"
+      >
+        <section
+          className="pf-c-page__main-section"
+        >
+          Section with default background
+        </section>
+      </Component>
+      <Component
+        variant="light"
+      >
+        <section
+          className="pf-c-page__main-section pf-m-light"
+        >
+          Section with light background
+        </section>
+      </Component>
+      <Component
+        variant="dark"
+      >
+        <section
+          className="pf-c-page__main-section pf-m-dark-200"
+        >
+          Section with dark background
+        </section>
+      </Component>
+      <Component
+        variant="darker"
+      >
+        <section
+          className="pf-c-page__main-section pf-m-dark-100"
+        >
+          Section with darker background
+        </section>
+      </Component>
+    </main>
+  </div>
+</Page>
+`;
+
 exports[`Check page horizontal layout example against snapshot 1`] = `
 <Page
   aria-label="Page layout"
