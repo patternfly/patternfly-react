@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { css, getModifier } from '@patternfly/react-styles';
 import { DataToolbarGroupProps } from './DataToolbarGroup';
+import { DataToolbarContext } from './DataToolbarUtils';
 import { Button } from '../../../components/Button';
 
 import {
@@ -20,47 +21,43 @@ export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
   expandableContentId?: string;
 }
 
-export interface DataToolbarToggleGroupState {
-  /** Flag indicating the if the expandable content is expanded */
-  isExpanded: boolean;
-}
+export interface DataToolbarToggleGroupState {}
 
-export class DataToolbar extends React.Component<DataToolbarToggleGroupProps, DataToolbarToggleGroupState> {
+export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGroupProps, DataToolbarToggleGroupState> {
 
   static defaultProps = {
     breakpointMods: [] as DataToolbarBreakpointMod[],
     spacers: [] as DataToolbarSpacer[],
   };
 
-  constructor(props: DataToolbarToggleGroupProps) {
-    super(props);
-
-    this.state = {
-      isExpanded: false
-    }
-  };
-
-  onToggle = () => {
-    this.setState({isExpanded: !this.state.isExpanded});
-  };
-
   render() {
-    const { mod, breakpointMods, spacers, className, toggleIcon, items, expandableContentId, ...props } = this.props;
-    const { isExpanded } = this.state;
+    const { mod, breakpointMods, spacers, className, toggleIcon, children, expandableContentId, ...props } = this.props;
 
     return (
-      <div className={css(styles.dataToolbarGroup,
-        mod && getModifier(styles, mod),
-        formatBreakpointMods(breakpointMods),
-        formatGroupSpacers(spacers),
-        getModifier(styles, 'toggle-group'),
-        className)}
-           {...props}>
-        <div className={css(styles.dataToolbarToggle)}>
-          <Button variant="plain" onClick={this.onToggle} aria-expanded={isExpanded} aria-controls={expandableContentId}>{toggleIcon}</Button>
-        </div>
-        {items}
-      </div>
+      <DataToolbarContext.Consumer>
+        {({isExpanded, updateExpandableContent}) => {
+          return (
+            <div className={css(styles.dataToolbarGroup,
+              mod && getModifier(styles, mod),
+              formatBreakpointMods(breakpointMods),
+              formatGroupSpacers(spacers),
+              getModifier(styles, 'toggle-group'),
+              className)}
+                 {...props}>
+              <div className={css(styles.dataToolbarToggle)}>
+                <Button
+                  variant="plain"
+                  onClick={() => updateExpandableContent(children)}
+                  aria-expanded={isExpanded}
+                  aria-controls={expandableContentId}>
+                  {toggleIcon}
+                </Button>
+              </div>
+              {children}
+            </div>
+          );
+        }}
+      </DataToolbarContext.Consumer>
     );
   };
 }
