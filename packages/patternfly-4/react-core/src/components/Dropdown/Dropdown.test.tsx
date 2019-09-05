@@ -78,6 +78,16 @@ describe('dropdown', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('primary', () => {
+    const view = mount(
+      <Dropdown
+        dropdownItems={dropdownItems}
+        toggle={<DropdownToggle id="Dropdown Toggle" isPrimary>Dropdown</DropdownToggle>}
+      />
+    );
+    expect(view).toMatchSnapshot();
+  });
+
   test('basic', () => {
     const view = mount(
       <Dropdown isOpen toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}>

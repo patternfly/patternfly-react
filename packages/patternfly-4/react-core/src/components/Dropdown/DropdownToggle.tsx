@@ -28,6 +28,8 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   isPlain?: boolean;
   /** Whether or not the <div> has a disabled state */
   isDisabled?: boolean;
+  /** Whether or not the dropdown toggle button should have primary button styling */
+  isPrimary?: boolean;
   /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
   iconComponent?: React.ElementType | null;
   /** Elements to display before the toggle button. When included, renders the toggle as a split button. */
@@ -51,6 +53,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   isActive = false,
   isDisabled = false,
   isPlain = false,
+  isPrimary = false,
   onToggle = (_isOpen: boolean) => undefined as any,
   iconComponent: IconComponent = CaretDownIcon,
   splitButtonItems,
@@ -72,6 +75,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           isActive={isActive}
           isDisabled={isDisabled}
           isPlain={isPlain}
+          isPrimary={isPrimary}
           onToggle={onToggle}
           ariaHasPopup={ariaHasPopup}
           {...splitButtonItems && { "isSplitButton": true, 'aria-label': props['aria-label'] || 'Select' }}>
