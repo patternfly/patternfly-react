@@ -24,7 +24,7 @@ exports[`renders component data 1`] = `
     data={
       Array [
         Object {
-          "_color": "#4d5258",
+          "_color": "#4f5255",
           "_index": 0,
           "_x": 1,
           "_y": 100,
@@ -118,7 +118,7 @@ exports[`renders component data 1`] = `
               "strokeLinejoin": "round",
             },
             "tickLabels": Object {
-              "fill": "#4d5258",
+              "fill": "#4f5255",
               "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
               "letterSpacing": "var(--pf-chart-global--letter-spacing)",
@@ -149,9 +149,9 @@ exports[`renders component data 1`] = `
           "padding": 50,
           "style": Object {
             "data": Object {
-              "fill": "#4d5258",
+              "fill": "#4f5255",
               "padding": 8,
-              "stroke": "#4d5258",
+              "stroke": "#4f5255",
               "strokeWidth": 1,
             },
             "labels": Object {
@@ -213,7 +213,7 @@ exports[`renders component data 1`] = `
               "stroke": "transparent",
             },
             "q1": Object {
-              "fill": "#8b8d8f",
+              "fill": "#8a8d90",
               "padding": 8,
             },
             "q1Labels": Object {
@@ -224,7 +224,7 @@ exports[`renders component data 1`] = `
               "stroke": "transparent",
             },
             "q3": Object {
-              "fill": "#8b8d8f",
+              "fill": "#8a8d90",
               "padding": 8,
             },
             "q3Labels": Object {

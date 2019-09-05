@@ -27,7 +27,7 @@ exports[`renders component data 1`] = `
           "fontSize": 24,
         },
         Object {
-          "fill": "#bbb",
+          "fill": "#b8bbbe",
           "fontSize": 14,
         },
       ]
