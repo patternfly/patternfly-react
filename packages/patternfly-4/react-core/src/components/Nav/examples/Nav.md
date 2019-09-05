@@ -511,7 +511,7 @@ class NavHorizontalList extends React.Component {
   render() {
     const { activeItem } = this.state;
     const nav = (
-      <Nav onSelect={this.onSelect} theme="dark">
+      <Nav onSelect={this.onSelect}>
         <NavList variant={NavVariants.horizontal}>
           {Array.apply(0, Array(10)).map(function (x, i) {
             const num = i + 1;
