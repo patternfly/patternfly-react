@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.23.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.22.4...demo-app-ts@2.23.0) (2019-09-06)
+
+
+### Features
+
+* **Spinner:** Add Spinner to experimental ([#2858](https://github.com/patternfly/patternfly-react/issues/2858)) ([77afa63](https://github.com/patternfly/patternfly-react/commit/77afa63)), closes [#2753](https://github.com/patternfly/patternfly-react/issues/2753)
+
+
+
+
+
 ## [2.22.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.22.3...demo-app-ts@2.22.4) (2019-09-06)
 
 **Note:** Version bump only for package demo-app-ts
