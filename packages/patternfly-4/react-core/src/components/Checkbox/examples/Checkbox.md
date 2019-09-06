@@ -95,8 +95,8 @@ import { Checkbox } from '@patternfly/react-core';
 
 UncontrolledCheckbox = () => (
   <React.Fragment>
-    <Checkbox label="Uncontrolled CheckBox" aria-label="uncontrolled checkbox example" id="check-3" />
-    <Checkbox label="Uncontrolled CheckBox" aria-label="uncontrolled checkbox example" id="check-4" />
+    <Checkbox label="Uncontrolled CheckBox" aria-label="uncontrolled checkbox example" id="check-5" />
+    <Checkbox label="Uncontrolled CheckBox" aria-label="uncontrolled checkbox example" id="check-6" />
   </React.Fragment>
 );
 ```
@@ -109,13 +109,13 @@ import { Checkbox } from '@patternfly/react-core';
 DisabledCheckbox = () => (
   <React.Fragment>
     <Checkbox
-      id="check-5"
+      id="check-7"
       label="Disabled CheckBox"
       aria-label="disabled checked checkbox example"
       defaultChecked
       isDisabled
     />{' '}
-    <Checkbox id="check-6" label="Disabled CheckBox" aria-label="disabled checkbox example" isDisabled />
+    <Checkbox id="check-8" label="Disabled CheckBox" aria-label="disabled checkbox example" isDisabled />
   </React.Fragment>
 );
 ```

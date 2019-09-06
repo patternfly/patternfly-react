@@ -37,7 +37,7 @@ export const PropsTable = ({ caption, propList }) => (
       {propList &&
         propList.map(prop => (
           <tr key={prop.name}>
-            <td>{prop.name}</td>
+            <td className="pf-m-fit-content">{prop.name}</td>
             <td>{renderType(prop)}</td>
             <td className="pf-c-table__icon">{prop.required && <ExclamationCircleIcon />}</td>
             <td>{prop.defaultValue && prop.defaultValue.value}</td>

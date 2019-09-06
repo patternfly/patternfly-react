@@ -11,7 +11,7 @@ import {
   VictoryAxis,
   VictoryAxisProps,
 } from 'victory';
-import { ChartThemeDefinition } from "../ChartTheme";
+import { ChartThemeDefinition } from '../ChartTheme';
 import { getAxisTheme, getTheme } from '../ChartUtils';
 
 /**
@@ -132,7 +132,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"axis" | "axisLabel" | "grid" | "ticks" | "tickLabels" | "parent", number | string>[];
+  events?: EventPropTypeInterface<'axis' | 'axisLabel' | 'grid' | 'ticks' | 'tickLabels' | 'parent', number | string>[];
   /**
    * ChartLegend uses the standard externalEventMutations prop.
    */
@@ -231,7 +231,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
   /**
    * The orientation prop specifies the position and orientation of your axis.
    */
-  orientation?: "top" | "bottom" | "left" | "right";
+  orientation?: 'top' | 'bottom' | 'left' | 'right';
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -252,7 +252,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number], y?: [number, number] }
+  range?: [number, number] | { x?: [number, number], y?: [number, number] };
   /**
    * The scale prop determines which scales your chart should use. This prop can be
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
@@ -340,7 +340,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *
@@ -419,6 +419,6 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   return (
     <VictoryAxis theme={showGrid ? getAxisTheme(themeColor, themeVariant) : theme} {...rest} />
   );
-}
+};
 
 hoistNonReactStatics(ChartAxis, VictoryAxis);

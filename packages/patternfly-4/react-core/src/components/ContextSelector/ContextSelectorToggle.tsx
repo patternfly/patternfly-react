@@ -8,23 +8,23 @@ export interface ContextSelectorToggleProps {
   /** HTML ID of toggle */
   id: string;
   /** Classes applied to root element of toggle */
-  className?: string; 
+  className?: string;
   /** Text that appears in the Context Selector Toggle */
-  toggleText?: string; 
+  toggleText?: string;
   /** Flag to indicate if menu is opened */
-  isOpen?: boolean; 
+  isOpen?: boolean;
   /** Callback called when toggle is clicked */
   onToggle?: (event: any, value: boolean) => void;
   /** Callback for toggle open on keyboard entry */
-  onEnter: () => void; 
+  onEnter: () => void;
   /** Element which wraps toggle */
-  parentRef?: any; 
+  parentRef?: any;
   /** Forces focus state */
-  isFocused?: boolean; 
+  isFocused?: boolean;
   /** Forces hover state */
   isHovered?: boolean;
   /** Forces active state */
-  isActive?: boolean; 
+  isActive?: boolean;
 }
 
 export class ContextSelectorToggle extends React.Component<ContextSelectorToggleProps> {
@@ -37,7 +37,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
     isFocused: false,
     isHovered: false,
     isActive: false,
-    onToggle: (event: any, value: boolean) => undefined as any 
+    onToggle: (event: any, value: boolean) => undefined as any
   };
 
   toggle: React.RefObject<HTMLButtonElement> = React.createRef();
@@ -46,13 +46,13 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
     document.addEventListener('keydown', this.onEscPress);
-  };
+  }
 
   componentWillUnmount = () => {
     document.removeEventListener('mousedown', this.onDocClick);
     document.removeEventListener('touchstart', this.onDocClick);
     document.removeEventListener('keydown', this.onEscPress);
-  };
+  }
 
   onDocClick = (event: any) => {
     const { isOpen, parentRef, onToggle } = this.props;
@@ -60,7 +60,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
       onToggle(null, false);
       this.toggle.current.focus();
     }
-  };
+  }
 
   onEscPress = (event: any) => {
     const { isOpen, parentRef, onToggle } = this.props;
@@ -69,11 +69,11 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
       onToggle(null, false);
       this.toggle.current.focus();
     }
-  };
+  }
 
   onKeyDown = (event: any) => {
     const { isOpen, onToggle, onEnter } = this.props;
-    if ((event.keyCode === KEY_CODES.TAB && !isOpen) || event.key !== KEY_CODES.ENTER) { return };
+    if ((event.keyCode === KEY_CODES.TAB && !isOpen) || event.key !== KEY_CODES.ENTER) { return; }
     event.preventDefault();
     if (
       (event.keyCode === KEY_CODES.TAB || event.keyCode === KEY_CODES.ENTER || event.key !== KEY_CODES.SPACE) &&
@@ -84,7 +84,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
       onToggle(null, !isOpen);
       onEnter();
     }
-  };
+  }
 
   render() {
     const {
@@ -113,7 +113,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
           className
         )}
         type="button"
-        onClick={event => onToggle(event, !isOpen)}
+        onClick={(event) => onToggle(event, !isOpen)}
         aria-expanded={isOpen}
         onKeyDown={this.onKeyDown}
       >

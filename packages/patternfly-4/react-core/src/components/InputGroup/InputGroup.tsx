@@ -7,17 +7,17 @@ import { TextInput } from '../TextInput';
 
 export interface InputGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the input group. */
-  className?: string; 
+  className?: string;
   /** Content rendered inside the input group. */
   children: React.ReactNode;
 }
 
 export const InputGroup: React.FunctionComponent<InputGroupProps> = ({
-  className = '', 
+  className = '',
   children,
   ...props
 }: InputGroupProps) => {
-  const formCtrls = [FormSelect, TextArea, TextInput].map(comp => comp.toString());
+  const formCtrls = [FormSelect, TextArea, TextInput].map((comp) => comp.toString());
   const idItem = React.Children.toArray(children).find(
     (child: any) => !formCtrls.includes(child.type.toString()) && child.props.id
   ) as React.ReactElement<{id: string}>;
@@ -32,4 +32,4 @@ export const InputGroup: React.FunctionComponent<InputGroupProps> = ({
         : children}
     </div>
   );
-}
+};

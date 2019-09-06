@@ -13,17 +13,17 @@ export interface ChipProps extends React.HTMLProps<HTMLDivElement> {
   /** Aria Label for close button */
   closeBtnAriaLabel?: string;
   /** Additional classes added to the chip item */
-  className?: string; 
+  className?: string;
   /** Flag indicating if the chip has overflow */
   isOverflowChip?: boolean;
   /** Flag if chip is read only */
   isReadOnly?: boolean;
   /** Function that is called when clicking on the chip button */
-  onClick?: (event: React.MouseEvent) => void
+  onClick?: (event: React.MouseEvent) => void;
   /** Internal flag for which component will be used for chip */
-  component?: React.ReactNode; 
+  component?: React.ReactNode;
   /** Position of the tooltip which is displayed if text is longer */
-  tooltipPosition?: 'top' | 'bottom' | 'left' | 'right';
+  tooltipPosition?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
 }
 
 interface ChipState {
@@ -31,13 +31,13 @@ interface ChipState {
 }
 
 export class Chip extends React.Component<ChipProps, ChipState> {
-  constructor(props: ChipProps){
-    super(props); 
+  constructor(props: ChipProps) {
+    super(props);
     this.state = {
       isTooltipVisible: false
-    }
+    };
   }
-  span = React.createRef<HTMLSpanElement>(); 
+  span = React.createRef<HTMLSpanElement>();
 
   static defaultProps = {
     closeBtnAriaLabel: 'close',
@@ -47,11 +47,11 @@ export class Chip extends React.Component<ChipProps, ChipState> {
     tooltipPosition: 'top',
     onClick: () => undefined as any,
     component: 'div'
-  }
+  };
 
   componentDidMount() {
     this.setState({
-      isTooltipVisible: Boolean(this.span.current && 
+      isTooltipVisible: Boolean(this.span.current &&
         this.span.current.offsetWidth < this.span.current.scrollWidth)
     });
   }
@@ -66,7 +66,7 @@ export class Chip extends React.Component<ChipProps, ChipState> {
         </ChipButton>
       </Component>
     );
-  };
+  }
 
   renderChip = (randomId: string) => {
     const {
@@ -116,12 +116,12 @@ export class Chip extends React.Component<ChipProps, ChipState> {
         )}
       </Component>
     );
-  };
-  
-  render(){
+  }
+
+  render() {
     const { isOverflowChip } = this.props;
     return (
-      <GenerateId>{randomId => (isOverflowChip ? this.renderOverflowChip() : this.renderChip(randomId))}</GenerateId>
+      <GenerateId>{(randomId) => (isOverflowChip ? this.renderOverflowChip() : this.renderChip(randomId))}</GenerateId>
     );
   }
-};
+}

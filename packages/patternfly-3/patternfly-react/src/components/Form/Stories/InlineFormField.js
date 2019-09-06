@@ -6,8 +6,8 @@ import { Form } from '../index';
 export const InlineFormField = ({ controlId, label, formControl, validationState, bsSize, showLabel, ...props }) => {
   const controlProps = { ...props };
 
-  if (bsSize) controlProps.bsSize = bsSize;
-  if (validationState) controlProps.validationState = validationState;
+  if (bsSize) { controlProps.bsSize = bsSize; }
+  if (validationState) { controlProps.validationState = validationState; }
 
   const formGroupProps = { key: controlId, controlId, ...controlProps };
 

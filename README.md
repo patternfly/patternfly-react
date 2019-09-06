@@ -1,10 +1,8 @@
 # patternfly-react
 
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
-[![CircleCI](https://circleci.com/gh/patternfly/patternfly-react.svg?style=svg)](https://circleci.com/gh/patternfly/patternfly-react)
-[![npm version](https://badge.fury.io/js/patternfly-react.svg)](https://badge.fury.io/js/patternfly-react)
-[![codecov](https://codecov.io/gh/patternfly/patternfly-react/branch/master/graph/badge.svg)](https://codecov.io/gh/patternfly/patternfly-react)
-[![Selenium Tests](https://travis-ci.org/quarckster/widgetastic.patternfly4.svg?branch=master)](https://travis-ci.org/quarckster/widgetastic.patternfly4)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-green.svg?style=for-the-badge)](https://lernajs.io/)
+![PatternFly 3 npm badge](https://img.shields.io/npm/v/patternfly-react.svg?label=PF3%20Core&style=for-the-badge)
+![PatternFly 4 npm badge](https://img.shields.io/npm/v/@patternfly/react-core.svg?label=PF4%20Core&style=for-the-badge)
 
 This project will provide a set of React UI components for the [PatternFly project](https://patternfly.org).
 

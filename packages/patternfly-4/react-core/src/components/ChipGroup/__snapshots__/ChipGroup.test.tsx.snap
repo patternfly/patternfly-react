@@ -7,6 +7,7 @@ exports[`ChipGroup chip group default 1`] = `
   <InnerChipGroup
     className=""
     collapsedText="\${remaining} more"
+    defaultIsOpen={false}
     expandedText="Show Less"
     isOpen={false}
     numChips={1}
@@ -35,6 +36,7 @@ exports[`ChipGroup chip group with toolbar 1`] = `
   <InnerChipGroup
     className=""
     collapsedText="\${remaining} more"
+    defaultIsOpen={false}
     expandedText="Show Less"
     isOpen={false}
     numChips={1}

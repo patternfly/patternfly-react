@@ -1,0 +1,10 @@
+{
+  "extends": "./packages/patternfly-4/tsconfig.base.json",
+  "compilerOptions": {
+    "allowJs": true
+  },
+  "include": [
+    "**/src/*",
+    "**/src/**/*"
+  ]
+}

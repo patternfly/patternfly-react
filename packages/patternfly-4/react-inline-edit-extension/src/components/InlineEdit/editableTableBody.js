@@ -118,7 +118,7 @@ const Body = ({ BodyComponent, rows, editConfig, onRowClick, ...props }) => {
 };
 
 Body.propTypes = {
-  BodyComponent: PropTypes.node.isRequired,
+  BodyComponent: PropTypes.any.isRequired,
   rows: PropTypes.array,
   editConfig: PropTypes.any,
   onRowClick: PropTypes.func

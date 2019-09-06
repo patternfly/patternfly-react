@@ -33,15 +33,11 @@ exports[`DataList DataListAction button 1`] = `
 <div
   className="pf-c-data-list__item-action"
 >
-  <div
-    className="pf-c-data-list__action"
+  <Component
+    id="delete-item-1"
   >
-    <Component
-      id="delete-item-1"
-    >
-      Delete
-    </Component>
-  </div>
+    Delete
+  </Component>
 </div>
 `;
 
@@ -49,62 +45,27 @@ exports[`DataList DataListAction dropdown 1`] = `
 <div
   className="pf-c-data-list__item-action"
 >
-  <div
-    className="pf-c-data-list__action"
-  >
-    <Dropdown
-      className=""
-      direction="down"
-      dropdownItems={
-        Array [
-          <DropdownItem
-            className=""
-            component="button"
-            href=""
-            isDisabled={false}
-            isHovered={false}
-            onClick={[MockFunction]}
-            tooltip={null}
-            tooltipProps={Object {}}
-          >
-            action-1
-          </DropdownItem>,
-          <DropdownItem
-            className=""
-            component="button"
-            href=""
-            isDisabled={false}
-            isHovered={false}
-            onClick={[MockFunction]}
-            tooltip={null}
-            tooltipProps={Object {}}
-          >
-            action-2
-          </DropdownItem>,
-        ]
-      }
-      isGrouped={false}
-      isOpen={false}
-      isPlain={true}
-      onSelect={[Function]}
-      position="right"
-      toggle={
-        <Kebab
-          aria-label="Actions"
-          className=""
-          id=""
-          isActive={false}
-          isDisabled={false}
-          isFocused={false}
-          isHovered={false}
-          isOpen={false}
-          isPlain={false}
-          onToggle={[Function]}
-          parentRef={null}
-        />
-      }
-    />
-  </div>
+  <Component
+    dropdownItems={
+      Array [
+        <Unknown
+          component="button"
+          onClick={[MockFunction]}
+        >
+          action-1
+        </Unknown>,
+        <Unknown
+          component="button"
+          onClick={[MockFunction]}
+        >
+          action-2
+        </Unknown>,
+      ]
+    }
+    isPlain={true}
+    position="right"
+    toggle={<Unknown />}
+  />
 </div>
 `;
 

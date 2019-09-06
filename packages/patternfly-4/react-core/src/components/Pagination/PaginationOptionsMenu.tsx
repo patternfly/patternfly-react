@@ -13,6 +13,8 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   className?: string;
   /** Id added to the title of the Pagination Options Menu */
   widgetId?: string;
+  /** Flag indicating if Pagination Options Menu is disabled */
+  isDisabled?: boolean;
   /** Menu will open up or open down from the Options menu toggle */
   dropDirection?: 'up' | 'down';
   /** Array of titles and values which will be the options on the Options Menu dropdown */
@@ -36,7 +38,7 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */
   toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
   /** Function called when user selects number of items per page. */
-  onPerPageSelect?: (event: React.MouseEvent<HTMLAnchorElement>|React.KeyboardEvent, perPage: number) => void;
+  onPerPageSelect?: (event: React.MouseEvent | React.KeyboardEvent | MouseEvent, perPage: number) => void;
 }
 
 interface PaginationOptionsMenuState {
@@ -48,6 +50,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
   static defaultProps = {
    className: '',
    widgetId: '',
+   isDisabled: false,
    dropDirection: DropdownDirection.down,
    perPageOptions: [] as PerPageOptions[],
    itemsPerPageTitle: 'Items per page',
@@ -58,7 +61,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
    lastIndex: 0,
    itemCount: 0,
    itemsTitle: 'items',
-   toggleTemplate: ({firstIndex, lastIndex, itemCount, itemsTitle}:ToggleTemplateProps) => (
+   toggleTemplate: ({firstIndex, lastIndex, itemCount, itemsTitle}: ToggleTemplateProps) => (
      <React.Fragment>
        <strong>
          {firstIndex} - {lastIndex}
@@ -69,22 +72,22 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
    onPerPageSelect: () => null as any
  };
 
-  constructor(props: PaginationOptionsMenuProps){
+  constructor(props: PaginationOptionsMenuProps) {
     super(props);
     this.state = {
       isOpen: false
     };
-  };
+  }
 
   onToggle = (isOpen: boolean) => {
     this.setState({ isOpen });
-  };
+  }
 
   onSelect = () => {
     this.setState((prevState: PaginationOptionsMenuState) => {
-      return { isOpen: !prevState.isOpen }
+      return { isOpen: !prevState.isOpen };
     });
-  };
+  }
 
   renderItems = () => {
     const { perPageOptions, perPage, onPerPageSelect, perPageSuffix } = this.props;
@@ -95,7 +98,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
         component="button"
         data-action={`per-page-${value}`}
         className={css(styles.optionsMenuMenuItem, perPage === value && 'pf-m-selected')}
-        onClick={(event:React.MouseEvent<HTMLAnchorElement>|React.KeyboardEvent) => onPerPageSelect(event, value)}
+        onClick={(event) => onPerPageSelect(event, value)}
       >
         {title}
         <span className={css(paginationStyles.paginationMenuText)}>{` ${perPageSuffix}`}</span>
@@ -106,10 +109,10 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
         )}
       </DropdownItem>
     ));
-  };
+  }
 
   render() {
-    const { className, widgetId, itemsPerPageTitle, dropDirection, optionsToggle, perPageOptions, toggleTemplate, firstIndex, lastIndex, itemCount, itemsTitle } = this.props;
+    const { className, widgetId, isDisabled, itemsPerPageTitle, dropDirection, optionsToggle, perPageOptions, toggleTemplate, firstIndex, lastIndex, itemCount, itemsTitle } = this.props;
     const { isOpen } = this.state;
 
     return (
@@ -137,6 +140,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
               itemsTitle={itemsTitle}
               toggleTemplate={toggleTemplate}
               parentRef={this.parentRef.current}
+              isDisabled={isDisabled}
             />
           }
           dropdownItems={this.renderItems()}

@@ -2,11 +2,11 @@ import * as Examples from './components/demos';
 
 interface DemoInterface {
   /** ID for the demo, it will be used to help generate general ids to help with testing */
-  id: string,
+  id: string;
   /** The name of the demo */
-  name: string,
+  name: string;
   /** Demo component associated with the demo  */
-  componentType: any
+  componentType: any;
 }
 /** Add the name of the demo and it's component here to have them show up in the demo app */
 export const Demos: DemoInterface[] = [
@@ -91,8 +91,8 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.BreadcrumbDemo
   },
   {
-    id: 'bullseye-demo', 
-    name: 'Bullseye Demo', 
+    id: 'bullseye-demo',
+    name: 'Bullseye Demo',
     componentType: Examples.BullseyeDemo
   },
   {
@@ -113,7 +113,12 @@ export const Demos: DemoInterface[] = [
   {
     id: 'chipgroup-demo',
     name: 'ChipGroup Demo',
-    componentType: Examples.BadgeChip
+    componentType: Examples.ChipGroupDemo
+  },
+  {
+    id: 'chipgroup-default-is-open-demo',
+    name: 'ChipGroup Default is Open Demo',
+    componentType: Examples.ChipGroupDefaultIsOpenDemo
   },
   {
     id: 'clipboard-copy-demo',
@@ -237,9 +242,24 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DonutUtilizationStaticRightDemo
   },
   {
+    id: 'drawer-demo',
+    name: 'Drawer Demo',
+    componentType: Examples.DrawerDemo
+  },
+  {
+    id: 'dropdown-demo',
+    name: 'Dropdown Demo',
+    componentType: Examples.DropdownDemo
+  },
+  {
     id: 'empty-state-demo',
     name: 'Empty State Demo',
     componentType: Examples.EmptyStateDemo
+  },
+  {
+    id: 'expandable-demo',
+    name: 'Expandable Demo',
+    componentType: Examples.ExpandableDemo
   },
   {
     id: 'form-demo',
@@ -252,19 +272,29 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.FormSelectDemo
   },
   {
-    id: 'gallery-demo', 
-    name: 'Gallery Demo', 
+    id: 'gallery-demo',
+    name: 'Gallery Demo',
     componentType: Examples.GalleryDemo
   },
   {
-    id: 'input-group-demo', 
-    name: 'Input Group Demo', 
+    id: 'grid-demo',
+    name: 'Grid Demo',
+    componentType: Examples.GridDemo
+  },
+  {
+    id: 'input-group-demo',
+    name: 'Input Group Demo',
     componentType: Examples.InputGroupDemo
   },
   {
     id: 'label-demo',
     name: 'Label Demo',
     componentType: Examples.LabelDemo
+  },
+  {
+    id: 'level-demo',
+    name: 'Level Demo',
+    componentType: Examples.LevelDemo
   },
   {
     id: 'line-chart-green-demo',
@@ -312,9 +342,24 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.OptionsMenuDemo
   },
   {
+    id: 'ouia-demo',
+    name: 'Ouia Demo',
+    componentType: Examples.OuiaDemo
+  },
+  {
     id: 'page-demo',
     name: 'Page Demo',
     componentType: Examples.PageDemo
+  },
+  {
+    id: 'page-managed-sidebar-demo',
+    name: 'Page Managed Sidebar Demo',
+    componentType: Examples.PageManagedSidebarDemo
+  },
+  {
+    id: 'page-managed-sidebar-closed-demo',
+    name: 'Page Managed Sidebar Closed Demo',
+    componentType: Examples.PageManagedSidebarClosedDemo
   },
   {
     id: 'pagination-demo',
@@ -373,10 +418,20 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.SelectDemo
   },
   {
-    id: 'stack-demo', 
-    name: 'Stack Demo', 
+    id: 'spinner-demo',
+    name: 'Spinner Demo',
+    componentType: Examples.SpinnerDemo
+  },
+  {
+    id: 'split-demo',
+    name: 'Split Demo',
+    componentType: Examples.SplitDemo
+  },
+  {
+    id: 'stack-demo',
+    name: 'Stack Demo',
     componentType: Examples.StackDemo
-  }, 
+  },
   {
     id: 'switch-demo',
     name: 'Switch Demo',
@@ -386,6 +441,11 @@ export const Demos: DemoInterface[] = [
     id: 'tab-demo',
     name: 'Tab Demo',
     componentType: Examples.TabDemo
+  },
+  {
+    id: 'tab-string-event-key-demo',
+    name: 'Tab String Event Key Demo',
+    componentType: Examples.TabsStringEventKeyDemo
   },
   {
     id: 'text-area',
@@ -406,6 +466,11 @@ export const Demos: DemoInterface[] = [
     id: 'title-demo',
     name: 'Title Demo',
     componentType: Examples.TitleDemo
+  },
+  {
+    id: 'toolbar-demo',
+    name: 'Toolbar Demo',
+    componentType: Examples.ToolbarDemo
   },
   {
     id: 'tooltip-demo',

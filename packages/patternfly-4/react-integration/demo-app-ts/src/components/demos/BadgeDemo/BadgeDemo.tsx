@@ -1,10 +1,10 @@
-import React from 'react'; 
+import React from 'react';
 import { Badge } from '@patternfly/react-core';
 
 export class BadgeDemo extends React.Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -15,6 +15,6 @@ export class BadgeDemo extends React.Component {
           <Badge isRead={false}>240</Badge>
           <Badge isRead={false}>999+</Badge>
         </React.Fragment>
-    )
+    );
   }
 }

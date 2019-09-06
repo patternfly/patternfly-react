@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-virtualized-extension",
-  "version": "1.1.56",
+  "version": "1.2.14",
   "description": "This library provides efficient rendering extensions for PatternFly 4 React tables and lists.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -27,30 +27,29 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/",
   "dependencies": {
-    "@patternfly/patternfly": "2.17.2",
-    "@patternfly/react-core": "^3.62.1",
-    "@patternfly/react-icons": "^3.10.8",
-    "@patternfly/react-styles": "^3.4.8",
+    "@patternfly/patternfly": "2.31.1",
+    "@patternfly/react-core": "^3.100.0",
+    "@patternfly/react-icons": "^3.13.0",
+    "@patternfly/react-styles": "^3.5.19",
     "clsx": "^1.0.1",
     "dom-helpers": "^2.4.0 || ^3.0.0",
     "exenv": "^1.2.2",
     "linear-layout-vector": "0.0.1",
     "react-lifecycles-compat": "^3.0.4",
-    "react-virtualized": "9.21.1"
+    "react-virtualized": "^9.21.1"
   },
   "peerDependencies": {
     "@patternfly/react-table": "^2.10.0",
-    "lodash-es": "4.x",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^15.6.2 || ^16.4.0"
   },
   "scripts": {
     "build": "yarn build:babel && node ./scripts/copyTS.js && node ./build/copyStyles.js",
-    "build:babel": "concurrently 'yarn build:babel:esm && yarn build:babel:umd' 'yarn build:babel:cjs'",
-    "build:babel:cjs": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/js --presets=@babel/env",
-    "build:babel:esm": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/esm",
-    "build:babel:umd": "babel --source-maps --extensions '.js' dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
+    "build:babel": "concurrently \"yarn build:babel:esm && yarn build:babel:umd\" \"yarn build:babel:cjs\"",
+    "build:babel:cjs": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
+    "build:babel:esm": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
+    "build:babel:umd": "babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "clean": "rimraf dist",
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
   },
@@ -68,6 +67,7 @@
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
+    "lodash": "^4.2.1",
     "rimraf": "^2.6.2",
     "uuid": "^3.3.2"
   }

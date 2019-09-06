@@ -51,31 +51,31 @@ class PageLayoutSimpleNav extends React.Component {
     this.setState({
       isDropdownOpen
     });
-  };
+  }
 
   onDropdownSelect = event => {
     this.setState({
       isDropdownOpen: !this.state.isDropdownOpen
     });
-  };
+  }
 
   onKebabDropdownToggle = isKebabDropdownOpen => {
     this.setState({
       isKebabDropdownOpen
     });
-  };
+  }
 
   onKebabDropdownSelect = event => {
     this.setState({
       isKebabDropdownOpen: !this.state.isKebabDropdownOpen
     });
-  };
+  }
 
   onNavSelect = result => {
     this.setState({
       activeItem: result.itemId
     });
-  };
+  }
 
   render() {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
@@ -167,13 +167,18 @@ class PageLayoutSimpleNav extends React.Component {
       />
     );
     const Sidebar = <PageSidebar nav={PageNav} />;
-    const PageSkipToContent = (
-      <SkipToContent href="#main-content-page-layout-default-nav">Skip to Content</SkipToContent>
-    );
+    const pageId = 'main-content-page-layout-simple-nav';
+    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 
     return (
       <React.Fragment>
-        <Page header={Header} sidebar={Sidebar} isManagedSidebar skipToContent={PageSkipToContent}>
+        <Page
+          header={Header}
+          sidebar={Sidebar}
+          isManagedSidebar
+          skipToContent={PageSkipToContent}
+          mainContainerId={pageId}
+        >
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>

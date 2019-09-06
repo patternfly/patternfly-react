@@ -14,7 +14,9 @@
   },
   "keywords": [
     "react",
-    "patternfly"
+    "patternfly",
+    "component",
+    "library"
   ],
   "author": "Red Hat",
   "license": "MIT",
@@ -51,9 +53,6 @@
     "enzyme": "3.9.0",
     "enzyme-adapter-react-16": "1.10.0",
     "enzyme-to-json": "3.3.5",
-    "eslint": "^5.13.0",
-    "eslint-import-resolver-webpack": "^0.9.0",
-    "eslint-plugin-patternfly-react": "file:packages/eslint-plugin-patternfly-react",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
     "istanbul-api": "1.3.1",
@@ -63,10 +62,7 @@
     "lerna": "^3.13.0",
     "minimist": "^1.2.0",
     "mutation-observer": "^1.0.3",
-    "node-sass": "^4.8.3",
     "plop": "^2.0.0",
-    "prettier": "^1.16.1",
-    "prettier-eslint": "^8.8.1",
     "react": "~16.8.4",
     "react-dev-utils": "^5.0.0",
     "react-dom": "~16.8.4",
@@ -77,16 +73,9 @@
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
     "surge": "^0.20.1",
-    "ts-jest": "23.10.5"
-  },
-  "optionalDependencies": {
-    "sortabular": "^1.5.1",
-    "table-resolver": "^3.2.0"
-  },
-  "sassIncludes": {
-    "patternfly": "node_modules/patternfly/dist/sass",
-    "bootstrap": "node_modules/bootstrap-sass/assets/stylesheets",
-    "fontAwesome": "node_modules/font-awesome-sass/assets/stylesheets"
+    "ts-jest": "23.10.5",
+    "tslint": "^5.12.0",
+    "tslint-react": "^3.6.0"
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
@@ -100,16 +89,13 @@
     "clean:build": "shx rm -rf .cache",
     "commit": "git-cz",
     "generate": "yarn plop",
-    "lint:js": "lerna run lint:js --parallel",
-    "lint:fix": "lerna run lint:fix --parallel",
-    "lint:style": "lerna run stylelint",
-    "lint:ts": "lerna run lint:ts --parallel",
-    "lint:versions": "lerna run lint:versions",
-    "prettier": "prettier --write 'storybook/**/*.js' 'packages/**/*.js' 'scripts/**/*.js'",
+    "lint:style": "stylelint \"**/sass/**/*.scss\" \"!**/dist/**/*.scss\"",
+    "lint:ts": "node --max-old-space-size=4096 node_modules/.bin/tslint --project ./tslint.config.json --config tslint.json",
+    "lint:versions": "node ./packages/patternfly-4/verifyCoreVersions.js",
     "start": "yarn start:pf3",
     "start:cypress": "lerna run cypress:open",
     "start:demo-app": "lerna run start:demo-app --stream",
-    "start:pf3": "concurrently 'yarn storybook' 'yarn storybook:openurl'",
+    "start:pf3": "concurrently \"yarn storybook\" \"yarn storybook:openurl\"",
     "start:pf4": "yarn build:pf4 && lerna run develop --parallel --stream",
     "storybook:openurl": "node ./storybook/openBrowser.js",
     "storybook": "start-storybook -c storybook -p 6006",

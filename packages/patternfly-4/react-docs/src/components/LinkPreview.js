@@ -10,9 +10,11 @@ const LinkPreview = ({ name, path, text }) => {
   return (
     <>
       {text && <p>{text}</p>}
-      <a href={split[split.length - 1].toLowerCase()} target="_blank" rel="noopener noreferrer">
-        {name}
-      </a>
+      <h4 data-pf-content className="pf-u-my-md">
+        <a href={split[split.length - 1].toLowerCase()} target="_blank" rel="noopener noreferrer">
+          {name}
+        </a>
+      </h4>
     </>
   );
 };

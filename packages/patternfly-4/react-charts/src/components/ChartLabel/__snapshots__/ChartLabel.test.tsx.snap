@@ -1,13 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Chart 1`] = `
+exports[`ChartLabel 1`] = `
 <VictoryLabel
   capHeight={0.71}
   direction="inherit"
   lineHeight={1}
   style={
     Object {
-      "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+      "fontFamily": "var(--pf-chart-global--FontFamily)",
+      "fontSize": 14,
+      "letterSpacing": "var(--pf-chart-global--letter-spacing)",
     }
   }
   textComponent={<Text />}
@@ -15,14 +17,16 @@ exports[`Chart 1`] = `
 />
 `;
 
-exports[`Chart 2`] = `
+exports[`ChartLabel 2`] = `
 <VictoryLabel
   capHeight={0.71}
   direction="inherit"
   lineHeight={1}
   style={
     Object {
-      "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+      "fontFamily": "var(--pf-chart-global--FontFamily)",
+      "fontSize": 14,
+      "letterSpacing": "var(--pf-chart-global--letter-spacing)",
     }
   }
   textComponent={<Text />}
@@ -37,7 +41,9 @@ exports[`renders component text 1`] = `
   lineHeight={1}
   style={
     Object {
-      "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+      "fontFamily": "var(--pf-chart-global--FontFamily)",
+      "fontSize": 14,
+      "letterSpacing": "var(--pf-chart-global--letter-spacing)",
     }
   }
   text="This is a test"

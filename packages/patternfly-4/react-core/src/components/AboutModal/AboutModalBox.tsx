@@ -7,7 +7,7 @@ export interface AboutModalBoxProps extends React.HTMLProps<HTMLDivElement> {
   children: React.ReactNode;
   /** additional classes added to the AboutModalBox  */
   className?: string;
-};
+}
 
 export const AboutModalBox: React.SFC<AboutModalBoxProps> = ({
   children,

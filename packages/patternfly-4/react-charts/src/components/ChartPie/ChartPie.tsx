@@ -13,7 +13,7 @@ import {
   VictoryStyleInterface
 } from 'victory';
 import { ChartContainer } from '../ChartContainer';
-import { ChartLegend, ChartLegendOrientation, ChartLegendPosition, ChartLegendWrapper } from "../ChartLegend";
+import { ChartLegend, ChartLegendOrientation, ChartLegendWrapper } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
 import { getChartOrigin, getTheme } from '../ChartUtils';
@@ -22,12 +22,17 @@ export enum ChartPieLabelPosition {
   centroid = 'centroid',
   endAngle = 'endAngle',
   startAngle = 'startAngle'
-};
+}
+
+export enum ChartPieLegendPosition {
+  bottom = 'bottom',
+  right = 'right'
+}
 
 export enum ChartPieSortOrder {
   ascending = 'ascending',
   descending = 'descending'
-};
+}
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -45,6 +50,20 @@ export interface ChartPieProps extends VictoryPieProps {
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
   animate?: AnimatePropTypeInterface;
+  /**
+   * The ariaDesc prop specifies the description of the chart/SVG to assist with
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the desc prop of containerComponent
+   */
+  ariaDesc?: string;
+  /**
+   * The ariaTitle prop specifies the title to be applied to the SVG to assist
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the title prop of containerComponent
+   */
+  ariaTitle?: string;
   /**
    * The categories prop specifies how categorical data for a chart should be ordered.
    * This prop should be given as an array of string values, or an object with
@@ -151,7 +170,7 @@ export interface ChartPieProps extends VictoryPieProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback | string[] | number[]>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback | string[] | number[]>[];
   /**
    * ChartPie uses the standard externalEventMutations prop.
    */
@@ -169,6 +188,14 @@ export interface ChartPieProps extends VictoryPieProps {
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
+   *
+   * Note: When adding a legend, height (the overall SVG height) may need to be larger than pieHeight (the pie size)
+   * in order to accommodate the extra legend.
+   *
+   * By default, pieHeight is the min. of either height or width. This covers most use cases in order to accommodate
+   * legends within the same SVG. However, pieHeight (not height) may need to be set in order to adjust the pie height.
+   *
+   * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
    */
   height?: number;
   /**
@@ -216,16 +243,19 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   legendComponent?: React.ReactElement<any>;
   /**
-   * The data prop specifies the data to be plotted,
-   * where data X-value is the slice label (string or number),
-   * and Y-value is the corresponding number value represented by the slice
-   * Data should be in the form of an array of data points.
-   * Each data point may be any format you wish (depending on the `x` and `y` accessor props),
-   * but by default, an object with x and y properties is expected.
+   * Specify data via the data prop. ChartLegend expects data as an
+   * array of objects with name (required), symbol, and labels properties.
+   * The data prop must be given as an array.
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  legendData?: any[];
+  legendData?: {
+    name?: string;
+    symbol?: {
+      fill?: string;
+      type?: string;
+    };
+  }[];
   /**
    * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
@@ -270,8 +300,7 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   padding?: PaddingProps;
   /**
-   * Specifies the height of the pie chart. This value should be given as a
-   * number of pixels.
+   * Specifies the height of the pie chart. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
@@ -284,7 +313,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * legends within the same SVG. However, pieHeight (not height) may need to be set in order to adjust the pie
    * height.
    *
-   * The innerRadius may also need to be set when changing the pie size.
+   * Note: innerRadius may need to be set when using this property.
    */
   pieHeight?: number;
   /**
@@ -296,8 +325,7 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   pieDy?: number;
   /**
-   * Specifies the width of the pie chart. This value should be given as a
-   * number of pixels.
+   * Specifies the width of the pie chart. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
@@ -309,7 +337,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * By default, pieWidth is the min. of either height or width. This covers most use cases in order to accommodate
    * legends within the same SVG. However, pieWidth (not width) may need to be set in order to adjust the pie width.
    *
-   * The innerRadius may also need to be set when changing the pie size.
+   * Note: innerRadius may need to be set when using this property.
    */
   pieWidth?: number;
   /**
@@ -357,7 +385,7 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *
@@ -373,12 +401,19 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   themeVariant?: string;
   /**
-   * Specifies the width of the svg viewBox of the chart container. This value should be given as a
-   * number of pixels.
+   * Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
+   *
+   * Note: When adding a legend, width (the overall SVG width) may need to be larger than pieWidth (the pie size)
+   * in order to accommodate the extra legend.
+   *
+   * By default, pieWidth is the min. of either height or width. This covers most use cases in order to accommodate
+   * legends within the same SVG. However, pieWidth (not width) may need to be set in order to adjust the pie width.
+   *
+   * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
    */
   width?: number;
   /**
@@ -406,33 +441,38 @@ export interface ChartPieProps extends VictoryPieProps {
 }
 
 export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
+  ariaDesc,
+  ariaTitle,
   pieDx = 0,
   pieDy = 0,
+  legendComponent = <ChartLegend/>,
   legendData,
   legendDx = 0,
   legendDy = 0,
-  legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
+  legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
   standalone = true,
   themeColor,
   themeVariant,
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
+  labelComponent = <ChartTooltip theme={theme} />,
   legendOrientation = theme.legend.orientation as ChartLegendOrientation,
-  legendComponent = <ChartLegend data={legendData} orientation={legendOrientation}/>,
   height = theme.pie.height,
   width = theme.pie.width,
   pieHeight = Math.min(height, width),
-  pieWidth = Math.min(height, width, pieHeight),
+  pieWidth = Math.min(height, width),
   ...rest
 }: ChartPieProps) => {
+  const pieSize = Math.min(pieHeight, pieWidth);
+
   const chart = (
     <VictoryPie
-      height={pieHeight}
-      labelComponent={<ChartTooltip theme={theme} />}
+      height={pieSize}
+      labelComponent={labelComponent}
       origin={getChartOrigin({
-        chartHeight: pieHeight,
-        chartWidth: pieWidth,
+        chartHeight: pieSize,
+        chartWidth: pieSize,
         dx: pieDx,
         dy: pieDy,
         legendPosition,
@@ -440,40 +480,53 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
       })}
       standalone={false}
       theme={theme}
-      width={pieWidth}
+      width={pieSize}
       {...rest}
     />
   );
 
-  const legend = (
-    <ChartLegendWrapper
-      chartHeight={pieHeight}
-      chartType="pie"
-      chartWidth={pieWidth}
-      dx={legendDx}
-      dy={legendDy}
-      orientation={legendOrientation}
-      position={legendPosition}
-      svgHeight={height}
-      svgWidth={width}
-      theme={theme}
-    >
-      {legendComponent}
-    </ChartLegendWrapper>
-  );
+  const legend = React.cloneElement(legendComponent, {
+    data: legendData,
+    orientation: legendOrientation,
+    theme,
+    ...legendComponent.props
+  });
+
+  // Returns a wrapped legend
+  const getWrappedLegend = () => {
+    if (!legend.props.data) {
+      return null;
+    }
+    return (
+      <ChartLegendWrapper
+        chartHeight={pieSize}
+        chartType="pie"
+        chartWidth={pieSize}
+        dx={legendDx}
+        dy={legendDy}
+        orientation={legendOrientation}
+        position={legendPosition}
+        svgHeight={height}
+        svgWidth={width}
+        theme={theme}
+      >
+        {legend}
+      </ChartLegendWrapper>
+    );
+  };
 
   return standalone ? (
-    <ChartContainer height={height} width={width}>
+    <ChartContainer desc={ariaDesc} height={height} title={ariaTitle} width={width}>
       {chart}
-      {legend}
+      {getWrappedLegend()}
     </ChartContainer>
   ) : (
     <React.Fragment>
       {chart}
-      {legend}
+      {getWrappedLegend()}
     </React.Fragment>
   );
-}
+};
 
 // Note: VictoryPie.role must be hoisted
 hoistNonReactStatics(ChartPie, VictoryPie);

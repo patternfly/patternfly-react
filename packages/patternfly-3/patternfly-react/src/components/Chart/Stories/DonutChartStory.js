@@ -32,6 +32,14 @@ const donutData = {
   columns: [['Dogs', 2], ['Cats', 2], ['Fish', 3], ['Hamsters', 1]]
 };
 
+const donutPercentageData = {
+  columns: [['Out of sync hosts', 1], ['Hosts with no reports', 1000]],
+  colors: {
+    'Out of sync hosts': patternfly.pfPaletteColors.blue,
+    'Hosts with no reports': patternfly.pfPaletteColors.grey
+  }
+};
+
 const donutRightConfigData = donutData;
 const donutRightConfigLegend = {
   show: true,
@@ -64,6 +72,20 @@ const donutChart = stories => {
               data={donutConfigData}
               tooltip={donutConfigTooltip}
               title={{ type: 'max' }}
+            />
+          </div>
+
+          <h2>Donut Chart - Percentage</h2>
+          <div>
+            <DonutChart
+              id="donunt-chart-3"
+              size={{
+                width: 210,
+                height: 210
+              }}
+              data={donutPercentageData}
+              tooltip={donutConfigTooltip}
+              title={{ type: 'percent', precision: 1 }}
             />
           </div>
 

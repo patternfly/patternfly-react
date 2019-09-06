@@ -5,7 +5,8 @@ typescript: true
 propComponents: ['Tooltip']
 ---
 
-import { Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
+import { Button, Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
+import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
 ## Simple tooltip
 ```js
@@ -13,7 +14,6 @@ import React from 'react';
 import { Tooltip, TooltipPosition } from '@patternfly/react-core';
 
 <Tooltip
-  position="right"
   content={
     <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
   }
@@ -22,10 +22,28 @@ import { Tooltip, TooltipPosition } from '@patternfly/react-core';
 </Tooltip>
 ```
 
+## Tooltip on icon
+```js
+import React from 'react';
+import { Tooltip, TooltipPosition } from '@patternfly/react-core';
+import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
+
+<div style={{ margin: '50px' }}>
+  <Tooltip
+    position={TooltipPosition.top}
+    content={
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+    }
+  >
+    <OutlinedQuestionCircleIcon />
+  </Tooltip>
+</div>
+```
+
 ## Tooltip positions
 ```js
 import React from 'react';
-import { Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
+import { Button, Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
 
 class TooltipPositions extends React.Component {
   constructor(props) {
@@ -74,7 +92,7 @@ class TooltipPositions extends React.Component {
               </div>
             }
           >
-            <span>I have a tooltip!</span>
+            <Button>I have a tooltip!</Button>
           </Tooltip>
         </div>
       </div>

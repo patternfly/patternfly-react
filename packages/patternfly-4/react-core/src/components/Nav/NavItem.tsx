@@ -62,8 +62,8 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     <NavContext.Consumer>
       {(context: any) =>
         React.cloneElement(child, {
-          onClick: (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
-          className: css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className),
+          "onClick": (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
+          "className": css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className),
           'aria-current': isActive ? 'page' : null
         })
       }

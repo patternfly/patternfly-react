@@ -4,7 +4,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react
 export class BreadcrumbDemo extends React.Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -16,6 +16,6 @@ export class BreadcrumbDemo extends React.Component {
           <BreadcrumbItem to="#">Section Title</BreadcrumbItem>
           <BreadcrumbHeading to="#">Section Title</BreadcrumbHeading>
       </Breadcrumb>
-      )   
+      );
   }
 }

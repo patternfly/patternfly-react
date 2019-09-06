@@ -20,11 +20,12 @@ import {
 } from 'victory';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
+import {ChartContainer} from '../ChartContainer';
 
 export enum ChartGroupSortOrder {
   ascending = 'ascending',
   descending = 'descending'
-};
+}
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -50,6 +51,20 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
   animate?: AnimatePropTypeInterface;
+  /**
+   * The ariaDesc prop specifies the description of the chart/SVG to assist with
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the desc prop of containerComponent
+   */
+  ariaDesc?: string;
+  /**
+   * The ariaTitle prop specifies the title to be applied to the SVG to assist
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the title prop of containerComponent
+   */
+  ariaTitle?: string;
   /**
    * The categories prop specifies how categorical data for a chart should be ordered.
    * This prop should be given as an array of string values, or an object with
@@ -157,7 +172,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", "all">[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', 'all'>[];
   /**
    * ChartGroup uses the standard externalEventMutations prop.
    */
@@ -271,7 +286,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number], y?: [number, number] }
+  range?: [number, number] | { x?: [number, number], y?: [number, number] };
   /**
    * The samples prop specifies how many individual points to plot when plotting
    * y as a function of x. Samples is ignored if x props are provided instead.
@@ -339,7 +354,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *
@@ -388,21 +403,34 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
    */
   y0?: DataGetterPropType;
-};
+}
 
 export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
   allowZoom = false,
+  ariaDesc,
+  ariaTitle,
   children,
+  containerComponent = allowZoom ? <VictoryZoomContainer /> : <ChartContainer />,
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
-  containerComponent = allowZoom ? <VictoryZoomContainer /> : undefined,
+
+  // destructure last
+  theme = getTheme(themeColor, themeVariant),
   ...rest
-}: ChartGroupProps) => (
-  <VictoryGroup containerComponent={containerComponent} theme={theme} {...rest}>
-    {children}
-  </VictoryGroup>
-);
+}: ChartGroupProps) => {
+  const container = React.cloneElement(containerComponent, {
+    desc: ariaDesc,
+    title: ariaTitle,
+    theme,
+    ...containerComponent.props
+  });
+
+  return (
+    <VictoryGroup containerComponent={container} theme={theme} {...rest}>
+      {children}
+    </VictoryGroup>
+  );
+};
 
 // Note: VictoryGroup.role must be hoisted
 hoistNonReactStatics(ChartGroup, VictoryGroup);

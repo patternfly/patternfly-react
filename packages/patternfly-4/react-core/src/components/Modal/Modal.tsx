@@ -15,14 +15,22 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Flag to show the modal */
   isOpen?: boolean;
-  /** Content of the Modal Header */
+  /** Complex header (more than just text), supersedes title for header content */
+  header?: React.ReactNode;
+  /** Simple text content of the Modal Header, also used for aria-label on the body */
   title: string;
   /** Flag to hide the title */
   hideTitle?: boolean;
+  /** Flag to show the close button in the header area of the modal */
+  showClose?: boolean;
   /** Id to use for Modal Box description */
   ariaDescribedById?: string;
-  /** Action buttons to put in the Modal Footer */
-  actions?: any,
+  /** Custom footer */
+  footer?: React.ReactNode;
+  /** Action buttons to add to the standard Modal Footer, ignored if `footer` is given */
+  actions?: any;
+  /** Flag to indicate that the Footer content is left aligned */
+  isFooterLeftAligned?: boolean;
   /** A callback for when the close button is clicked */
   onClose?: () => void;
   /** Default width of the Modal. */
@@ -31,6 +39,10 @@ export interface ModalProps extends React.HTMLProps<HTMLDivElement> {
   isLarge?: boolean;
   /** Creates a small version of the Modal */
   isSmall?: boolean;
+  /** The parent container to append the modal to. Defaults to document.body */
+  appendTo?: HTMLElement | (() => HTMLElement);
+  /** Flag to disable focus trap */
+  disableFocusTrap?: boolean;
 }
 
 interface ModalState {
@@ -40,17 +52,19 @@ interface ModalState {
 export class Modal extends React.Component<ModalProps, ModalState> {
   static currentId = 0;
   id = '';
-  container?: HTMLDivElement = undefined;
 
   static defaultProps = {
     className: '',
     isOpen: false,
     hideTitle: false,
+    showClose: true,
     ariaDescribedById: '',
     actions: [] as any[],
+    isFooterLeftAligned: false,
     onClose: () => undefined as any,
     isLarge: false,
-    isSmall: false
+    isSmall: false,
+    appendTo: typeof document !== 'undefined' && document.body || null
   };
 
   constructor(props: ModalProps) {
@@ -63,55 +77,72 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     };
   }
 
-
   handleEscKeyClick = (event: KeyboardEvent): void => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
       this.props.onClose();
     }
-  };
+  }
+
+  getElement = (appendTo: HTMLElement | (() => HTMLElement)) => {
+    let target: HTMLElement;
+    if (typeof appendTo === 'function') {
+      target = appendTo();
+    } else {
+      target = appendTo;
+    }
+    return target;
+  }
 
   toggleSiblingsFromScreenReaders = (hide: boolean) => {
-    const bodyChildren = document.body.children;
+    const { appendTo } = this.props;
+    const target: HTMLElement = this.getElement(appendTo);
+    const bodyChildren = target.children;
     for (const child of Array.from(bodyChildren)) {
       if (child !== this.state.container) {
         hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
       }
     }
-  };
+  }
 
   componentDidMount() {
+    const { appendTo } = this.props;
+    const target: HTMLElement = this.getElement(appendTo);
     const container = document.createElement('div');
     this.setState({ container });
-    document.body.appendChild(container);
-    document.addEventListener('keydown', this.handleEscKeyClick, false);
+    target.appendChild(container);
+    target.addEventListener('keydown', this.handleEscKeyClick, false);
 
     if (this.props.isOpen) {
-      document.body.classList.add(css(styles.backdropOpen));
+      target.classList.add(css(styles.backdropOpen));
     } else {
-      document.body.classList.remove(css(styles.backdropOpen));
+      target.classList.remove(css(styles.backdropOpen));
     }
   }
 
   componentDidUpdate() {
+    const { appendTo } = this.props;
+    const target: HTMLElement = this.getElement(appendTo);
     if (this.props.isOpen) {
-      document.body.classList.add(css(styles.backdropOpen));
+      target.classList.add(css(styles.backdropOpen));
       this.toggleSiblingsFromScreenReaders(true);
     } else {
-      document.body.classList.remove(css(styles.backdropOpen));
+      target.classList.remove(css(styles.backdropOpen));
       this.toggleSiblingsFromScreenReaders(false);
     }
   }
 
   componentWillUnmount() {
-    if (this.container) {
-      document.body.removeChild(this.container);
+    const { appendTo } = this.props;
+    const target: HTMLElement = this.getElement(appendTo);
+    if (this.state.container) {
+      target.removeChild(this.state.container);
     }
-    document.removeEventListener('keydown', this.handleEscKeyClick, false);
-    document.body.classList.remove(css(styles.backdropOpen));
+    target.removeEventListener('keydown', this.handleEscKeyClick, false);
+    target.classList.remove(css(styles.backdropOpen));
   }
 
   render() {
-    const { ...props } = this.props;
+    const { appendTo, ...props } = this.props;
     const { container } = this.state;
 
     if (!canUseDOM || !container) {

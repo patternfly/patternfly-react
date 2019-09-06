@@ -3,34 +3,34 @@
 import LinearLayoutVector from 'linear-layout-vector';
 import { Alignment, CellSizeGetter, VisibleCellRange } from '../types';
 
-type CellSizeAndPositionManagerParams = {
+interface CellSizeAndPositionManagerParams {
   cellCount: number,
   cellSizeGetter: CellSizeGetter,
   estimatedCellSize: number
-};
+}
 
-type ConfigureParams = {
+interface ConfigureParams {
   cellCount: number,
   estimatedCellSize: number,
   cellSizeGetter: CellSizeGetter
-};
+}
 
-type GetUpdatedOffsetForIndex = {
+interface GetUpdatedOffsetForIndex {
   align: Alignment,
   containerSize: number,
   currentOffset: number,
   targetIndex: number
-};
+}
 
-type GetVisibleCellRangeParams = {
+interface GetVisibleCellRangeParams {
   containerSize: number,
   offset: number
-};
+}
 
-type SizeAndPositionData = {
+interface SizeAndPositionData {
   offset: number,
   size: number
-};
+}
 
 /**
  * Just-in-time calculates and caches size and position information for a collection of cells.

@@ -2,10 +2,11 @@
 title: 'Table'
 cssPrefix: 'pf-c-table'
 section: 'components'
+typescript: true
 propComponents: ['Table', 'TableHeader', 'TableBody']
 ---
 
-Note: Table lives in its own package at [`@patternfly/react-table`](https://www.npmjs.com/package/@patternfly/react-table)!
+Note: Table lives in its own package at [@patternfly/react-table](https://www.npmjs.com/package/@patternfly/react-table)!
 
 import {
   Table,
@@ -19,6 +20,7 @@ import {
   compoundExpand,
   cellWidth,
   textCenter,
+  wrappable,
   classNames,
   Visibility
 } from '@patternfly/react-table';
@@ -64,25 +66,31 @@ class SimpleTable extends React.Component {
         }
       ],
       rows: [
-        ['one', 'two', 'three', 'four', 'five'],
-        [
-          {
-            title: <div>one - 2</div>,
-            props: { title: 'hover title', colSpan: 3 }
-          },
-          'four - 2',
-          'five - 2'
-        ],
-        [
-          'one - 3',
-          'two - 3',
-          'three - 3',
-          'four - 3',
-          {
-            title: 'five - 3 (not centered)',
-            props: { textCenter: false }
-          }
-        ]
+        {
+          cells: ['one', 'two', 'three', 'four', 'five']
+        },
+        {
+          cells: [
+            {
+              title: <div>one - 2</div>,
+              props: { title: 'hover title', colSpan: 3 }
+            },
+            'four - 2',
+            'five - 2'
+          ]
+        },
+        {
+          cells: [
+            'one - 3',
+            'two - 3',
+            'three - 3',
+            'four - 3',
+            {
+              title: 'five - 3 (not centered)',
+              props: { textCenter: false }
+            }
+          ]
+        }
       ]
     };
   }
@@ -504,7 +512,7 @@ import {
   cellWidth
 } from '@patternfly/react-table';
 
-class CompactTable extends React.Component {
+class CompactTableBorderlessRows extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -523,7 +531,7 @@ class CompactTable extends React.Component {
 
     return (
       <Table
-        caption="Compact Table with border"
+        caption="Compact Table with borderless rows"
         variant={TableVariant.compact}
         borders={false}
         cells={columns}
@@ -705,12 +713,12 @@ class HiddenVisibleBreakpointTable extends React.Component {
       columns: [
         {
           title: 'Repositories',
-          columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg)]
+          columnTransforms: [classNames(Visibility.hidden, Visibility.visibleOnMd, Visibility.hiddenOnLg, Visibility.visibleOn2Xl)]
         },
         'Branches',
         {
           title: 'Pull requests',
-          columnTransforms: [classNames(Visibility.hiddenOnMd, Visibility.visibleOnLg)]
+          columnTransforms: [classNames(Visibility.hiddenOnMd, Visibility.visibleOnLg, Visibility.hiddenOn2Xl)]
         },
         'Workspaces',
         {
@@ -1026,6 +1034,50 @@ class CompoundExpandableTable extends React.Component {
 
     return (
       <Table caption="Compound expandable table" onExpand={this.onExpand} rows={rows} cells={columns}>
+        <TableHeader />
+        <TableBody />
+      </Table>
+    );
+  }
+}
+```
+
+## Table with headers that wrap
+
+```js
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  wrappable
+} from '@patternfly/react-table';
+
+class WrappableHeadersTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        {title: 'This is a really long table header that goes on for a long time 1.', transforms: [wrappable]},
+        {title: 'This is a really long table header that goes on for a long time 2.', transforms: [wrappable]},
+        {title: 'This is a really long table header that goes on for a long time 3.', transforms: [wrappable]},
+        {title: 'This is a really long table header that goes on for a long time 4.', transforms: [wrappable]},
+        {title: 'This is a really long table header that goes on for a long time 5.', transforms: [wrappable]},
+      ],
+      rows: [
+        ['Repository 1', '10', '25', '5', '2 days ago'],
+        ['Repository 2', '10', '25', '5', '2 days ago'],
+        ['Repository 3', '10', '25', '5', '2 days ago'],
+        ['Repository 4', '10', '25', '5', '2 days ago'],
+      ]
+    };
+  }
+
+  render() {
+    const { columns, rows } = this.state;
+
+    return (
+      <Table caption="Wrappable headers" cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>

@@ -3,21 +3,21 @@ interface ChartOriginInterface {
   chartWidth: number; // Width of chart (e.g., donut) within SVG
   dx?: number; // Horizontal shift from the x coordinate
   dy?: number; // vertical shift from the x coordinate
-  legendPosition?: string; // Position of legend (e.g., bottom, right)
+  legendPosition?: 'bottom' | 'bottom-left' | 'right'; // Position of legend
   svgWidth: number; // Overall width of SVG
 }
 
 interface ChartOriginXInterface {
   chartWidth: number; // Width of chart (e.g., donut) within SVG
   dx?: number; // Horizontal shift from the x coordinate
-  legendPosition?: string; // Position of legend (e.g., bottom, right)
+  legendPosition?: 'bottom' | 'bottom-left' | 'right'; // Position of legend
   svgWidth: number; // Overall width of SVG
 }
 
 interface ChartOriginYInterface {
   chartHeight: number; // Height of chart (e.g., donut) within SVG
   dy?: number; // vertical shift from the x coordinate
-  legendPosition?: string; // Position of legend (e.g., bottom, right)
+  legendPosition?: 'bottom' | 'bottom-left' | 'right'; // Position of legend
 }
 
 // Returns origin x and y coordinates
@@ -55,8 +55,6 @@ export const getChartOriginY = ({
   legendPosition
 }: ChartOriginYInterface) => {
   switch (legendPosition) {
-    case 'top':
-      return dy; // TBD...
     default:
       return Math.round(chartHeight / 2) + dy;
   }

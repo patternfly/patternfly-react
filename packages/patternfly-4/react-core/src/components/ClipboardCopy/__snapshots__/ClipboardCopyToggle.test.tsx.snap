@@ -2,7 +2,7 @@
 
 exports[`toggle button render 1`] = `
 <button
-  aria-controls="my-content-id"
+  aria-controls="my-id my-content-id"
   aria-expanded={false}
   aria-label="toggle content"
   aria-labelledby="my-id my-text-id"

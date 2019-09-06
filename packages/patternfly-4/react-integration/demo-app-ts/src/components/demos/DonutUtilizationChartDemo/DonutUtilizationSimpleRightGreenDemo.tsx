@@ -38,7 +38,7 @@ export class DonutUtilizationSimpleRightGreenDemo extends React.Component<{}, { 
             data={{ x: 'Storage capacity', y: used }}
             donutHeight={230}
             height={300}
-            labels={datum => datum.x ? `${datum.x}: ${datum.y}%` : null}
+            labels={(datum) => datum.x ? `${datum.x}: ${datum.y}%` : null}
             legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
             legendOrientation="vertical"
             legendPosition="bottom"

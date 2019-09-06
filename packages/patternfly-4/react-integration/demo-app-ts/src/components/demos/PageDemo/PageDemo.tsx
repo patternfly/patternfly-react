@@ -1,5 +1,12 @@
 import React from 'react';
-import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import {
+  Page,
+  PageHeader,
+  PageSidebar,
+  PageSection,
+  PageSectionVariants,
+  SkipToContent
+} from '@patternfly/react-core';
 
 export class PageDemo extends React.Component {
   state = {
@@ -7,9 +14,9 @@ export class PageDemo extends React.Component {
   };
   onNavToggle = () => {
     this.setState({
-    	isNavOpen: !this.state.isNavOpen
+      isNavOpen: !this.state.isNavOpen
     });
-  };
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -35,10 +42,14 @@ export class PageDemo extends React.Component {
         logoComponent={'div'}
       />
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
+    const pageId = 'page-demo-page-id';
+    const PageSkipToContent = (
+      <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>
+    );
+    const Sidebar = <PageSidebar id="page-demo-sidebar" nav="Navigation" isNavOpen={isNavOpen} />;
 
     return (
-      <Page header={Header} sidebar={Sidebar}>
+      <Page id="page-demo" header={Header} sidebar={Sidebar} mainContainerId={pageId} skipToContent={PageSkipToContent}>
         <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
         <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
         <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
@@ -46,4 +57,3 @@ export class PageDemo extends React.Component {
     );
   }
 }
-

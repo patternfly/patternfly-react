@@ -14,7 +14,6 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
 SimplePopover = () => (
   <Popover
-    position={PopoverPosition.right}
     headerContent={<div>Popover Header</div>}
     bodyContent={
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
@@ -89,7 +88,7 @@ class AdvancedPopover extends React.Component {
           />
         </div>
 
-        <div style={{ margin: '180px 0px 0px 270px' }}>
+        <div style={{ margin: '50px' }}>
           <Popover
             position={this.state.position}
             isVisible={this.state.show}
@@ -120,7 +119,6 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
 HeadlessPopover = () => (
   <Popover
-    position={PopoverPosition.right}
     bodyContent={
       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }
@@ -140,7 +138,6 @@ import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
 HeadlessPopover = () => (
   <Popover
-    position={PopoverPosition.right}
     bodyContent={
       <div><a href="https://www.patternfly.org/" target="_blank">PatternFly</a> is a community project that promotes design commonality and improved user experience. Its offerings include open source code, patterns, style guides, and an active community that helps support it all.</div>
     }

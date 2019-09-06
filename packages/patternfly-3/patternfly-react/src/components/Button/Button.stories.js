@@ -217,7 +217,7 @@ stories.add(
     const bsStyle = select('Style', BUTTON_BS_STYLES, 'default');
     const bsSize = select('Size', [undefined, 'xsmall', 'small', 'large']);
     const props = { bsStyle, title: bsStyle, id: 'dropdown-example' };
-    if (bsSize) props.bsSize = bsSize;
+    if (bsSize) { props.bsSize = bsSize; }
 
     const story = (
       <DropdownButton {...props} onClick={action('onClick')}>
@@ -245,7 +245,7 @@ stories.add(
     const bsSize = select('Size', [undefined, 'xsmall', 'small', 'large']);
 
     const props = { bsStyle, title: bsStyle, id: 'dropdown-example' };
-    if (bsSize) props.bsSize = bsSize;
+    if (bsSize) { props.bsSize = bsSize; }
 
     const story = (
       <SplitButton {...props} onClick={action('onClick')}>

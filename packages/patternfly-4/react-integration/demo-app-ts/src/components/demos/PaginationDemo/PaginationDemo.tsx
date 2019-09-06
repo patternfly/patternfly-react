@@ -1,55 +1,94 @@
 import React from 'react';
 import {
   Pagination,
-  PaginationVariant
+  PaginationVariant,
+  Stack,
+  StackItem,
+  Title
 } from '@patternfly/react-core';
 
-type OptionsMenuDemoState = {
-  page: number,
-  perPage: number,
+interface OptionsMenuDemoState {
+  topPage: number;
+  bottomPage: number;
+  perPage: number;
 }
 
 export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivElement>, OptionsMenuDemoState> {
   state = {
-    page: 1,
+    topPage: 1,
+    bottomPage: 1,
     perPage: 20,
   };
 
-  onSetPage = (_event, pageNumber) => {
+  onSetTopPage = (_event, pageNumber) => {
     this.setState({
-      page: pageNumber
+      topPage: pageNumber
     });
-  };
+  }
+
+  onSetBottomPage = (_event, pageNumber) => {
+    this.setState({
+      bottomPage: pageNumber
+    });
+  }
 
   onPerPageSelect = (_event, perPage) => {
     this.setState({
       perPage
     });
-  };
+  }
 
+  renderPagination() {
+    return (
+      <StackItem isFilled={false}>
+        <Title size="2xl">Pagination</Title>
+        <React.Fragment>
+          <Pagination
+            itemCount={523}
+            perPage={this.state.perPage}
+            page={this.state.topPage}
+            onSetPage={this.onSetTopPage}
+            widgetId="pagination-options-menu-top"
+            onPerPageSelect={this.onPerPageSelect}
+          />
+          <Pagination
+            itemCount={523}
+            widgetId="pagination-options-menu-bottom"
+            perPage={this.state.perPage}
+            page={this.state.bottomPage}
+            variant={PaginationVariant.bottom}
+            onSetPage={this.onSetBottomPage}
+            onPerPageSelect={this.onPerPageSelect}
+          />
+        </React.Fragment>
+      </StackItem>
+    );
+  }
+
+  renderDisabled() {
+    return (
+      <StackItem isFilled={false}>
+        <Title size="2xl">Disabled state</Title>
+        <React.Fragment>
+          <Pagination
+            itemCount={523}
+            perPage={this.state.perPage}
+            page={this.state.topPage}
+            onSetPage={this.onSetTopPage}
+            widgetId="pagination-options-menu-disabled"
+            onPerPageSelect={this.onPerPageSelect}
+            isDisabled
+          />
+        </React.Fragment>
+      </StackItem>
+    );
+  }
 
   render() {
-    return (
-      <React.Fragment>
-        <Pagination
-          itemCount={523}
-          perPage={this.state.perPage}
-          page={this.state.page}
-          onSetPage={this.onSetPage}
-          widgetId="pagination-options-menu-top"
-          onPerPageSelect={this.onPerPageSelect}
-        />
-        <Pagination
-          itemCount={523}
-          widgetId="pagination-options-menu-bottom"
-          perPage={this.state.perPage}
-          page={this.state.page}
-          variant={PaginationVariant.bottom}
-          onSetPage={this.onSetPage}
-          onPerPageSelect={this.onPerPageSelect}
-        />
-      </React.Fragment>
-    );
+    return <Stack gutter="md">
+      {this.renderPagination()}
+      {this.renderDisabled()}
+    </Stack>;
   }
 }
 

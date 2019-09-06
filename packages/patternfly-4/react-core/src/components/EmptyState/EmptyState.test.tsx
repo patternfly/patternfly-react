@@ -7,7 +7,7 @@ import { EmptyStateSecondaryActions } from './EmptyStateSecondaryActions';
 import { EmptyStateIcon } from './EmptyStateIcon';
 import { Button } from '../Button';
 import { Title } from '../Title';
-import {BaseSizes} from "../../styles/sizes";
+import {BaseSizes} from '../../styles/sizes';
 
 describe('EmptyState', () => {
   test('Main', () => {

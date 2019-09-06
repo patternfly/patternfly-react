@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 
 import { fillTemplate } from '../../helpers';
 import { ToggleTemplateProps } from './ToggleTemplate';
@@ -8,23 +8,25 @@ import { DropdownToggle } from '../Dropdown';
 
 export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   /** The type or title of the items being paginated */
-  itemsTitle?: string,
+  itemsTitle?: string;
   /** The text to be displayed on the Options Toggle */
-  optionsToggle?: string,
+  optionsToggle?: string;
   /** The first index of the items being paginated */
-  firstIndex?: number,
+  firstIndex?: number;
   /** The last index of the items being paginated */
-  lastIndex?: number,
+  lastIndex?: number;
   /** The total number of items being paginated */
-  itemCount?: number,
+  itemCount?: number;
   /** Id added to the title of the Pagination Options Menu */
-  widgetId?: string,
+  widgetId?: string;
   /** showToggle */
-  showToggle?: boolean,
+  showToggle?: boolean;
   /** Event function that fires when user clicks the Options Menu toggle */
-  onToggle?: (isOpen: boolean) => void,
+  onToggle?: (isOpen: boolean) => void;
   /** Flag indicating if the Options Menu dropdown is open or not */
-  isOpen?: boolean,
+  isOpen?: boolean;
+  /** Flag indicating if the Options Menu is disabled */
+  isDisabled?: boolean;
   /** */
   parentRef?: HTMLElement;
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */
@@ -39,20 +41,21 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   itemCount = 0,
   widgetId = '',
   showToggle = true,
-  onToggle = () => undefined,
+  onToggle = (_isOpen: boolean) => undefined as any,
   isOpen = false,
+  isDisabled = false,
   parentRef = null,
   toggleTemplate: ToggleTemplate = '',
-}:OptionsToggleProps ) => {
+}: OptionsToggleProps ) => {
   return (
-    <div className={css(styles.optionsMenuToggle, getModifier(styles, 'plain'), getModifier(styles, 'text'))} >
+    <div className={css(styles.optionsMenuToggle, isDisabled && styles.modifiers.disabled, styles.modifiers.plain, styles.modifiers.text)} >
       {showToggle && (
         <DropdownToggle
           aria-label={optionsToggle}
           onToggle={onToggle}
+          isDisabled={isDisabled || itemCount <= 0}
           isOpen={isOpen}
           id={`${widgetId}-toggle`}
-          isSplitButton
           className={styles.optionsMenuToggleButton}
           parentRef={parentRef}
         >

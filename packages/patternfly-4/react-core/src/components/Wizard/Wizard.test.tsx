@@ -39,5 +39,5 @@ test('Wizard should match snapshot', () => {
   // ran into: https://github.com/airbnb/enzyme/issues/1213
   // so instead of: expect(view).toMatchSnapshot();
   const fragment = view.instance().render();
-  expect(mount(<div>{fragment}</div>).getElement()).toMatchSnapshot()
+  expect(mount(<div>{fragment}</div>).getElement()).toMatchSnapshot();
 });

@@ -8,7 +8,7 @@ propComponents: ['ChartLegend', 'ChartPie']
 import { ChartLegend, ChartPie, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-pie.scss';
 
-## Simple pie chart with right-aligned legend
+## Simple pie chart with right aligned legend
 ```js
 import React from 'react';
 import { ChartPie } from '@patternfly/react-charts';
@@ -16,6 +16,8 @@ import { ChartPie } from '@patternfly/react-charts';
 <div>
   <div className="pie-chart-legend-right">
     <ChartPie
+      ariaDesc="Average number of pets"
+      ariaTitle="Pie chart example"
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       height={230}
       labels={datum => `${datum.x}: ${datum.y}`}
@@ -28,7 +30,7 @@ import { ChartPie } from '@patternfly/react-charts';
 </div>
 ```
 
-## Orange pie chart with right-aligned legend
+## Orange pie chart with right aligned legend
 ```js
 import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
@@ -36,6 +38,8 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 <div>
   <div className="pie-chart-legend-right">
     <ChartPie
+      ariaDesc="Average number of pets"
+      ariaTitle="Pie chart example"
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       height={230}
       labels={datum => `${datum.x}: ${datum.y}`}
@@ -49,7 +53,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 </div>
 ```
 
-## Multi-color pie chart with bottom-aligned legend
+## Multi-color (ordered) pie chart with bottom aligned legend
 ```js
 import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
@@ -57,13 +61,15 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 <div>
   <div className="pie-chart-legend-bottom">
     <ChartPie
+      ariaDesc="Average number of pets"
+      ariaTitle="Pie chart example"
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       height={275}
       labels={datum => `${datum.x}: ${datum.y}`}
       legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
       legendPosition="bottom"
       pieHeight={230}
-      themeColor={ChartThemeColor.multi}
+      themeColor={ChartThemeColor.multiOrdered}
       width={300}
     />
   </div>

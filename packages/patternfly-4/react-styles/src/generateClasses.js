@@ -2,7 +2,7 @@
 const camelcase = require('camel-case');
 
 const glob = require('glob');
-const { dirname, resolve, join, parse } = require('path');
+const { dirname, basename, resolve, join, parse } = require('path');
 const { readFileSync } = require('fs');
 const { outputFileSync } = require('fs-extra');
 
@@ -14,17 +14,31 @@ const cssFiles = glob.sync('**/*.css', {
   ignore: ['assets/**', '*ie11*.css']
 });
 
+/* Copy @patternfly/patternfly styles */
 cssFiles.forEach(filePath => {
   const absFilePath = resolve(pfStylesDir, filePath);
   const cssContent = readFileSync(absFilePath, 'utf8');
   const cssOutputPath = getCSSOutputPath(outDir, filePath);
-  const newClass = cssToJSNew(cssContent, `./${cssOutputPath.split('/').pop()}`, true);
+  const newClass = cssToJSNew(cssContent, `./${basename(cssOutputPath)}`);
 
   outputFileSync(cssOutputPath, cssContent);
   outputFileSync(cssOutputPath.replace('.css', '.ts'), newClass);
 });
 
-function cssToJSNew(cssString, cssOutputPath = '', useModules = false) {
+/* Copy inline styles in the src/css folder */
+const inlineCssFiles = glob.sync('src/css/**/*.css');
+
+inlineCssFiles.forEach(filePath => {
+  const absFilePath = resolve(filePath);
+  const cssContent = readFileSync(absFilePath, 'utf8');
+  const cssOutputPath = getCSSOutputPath(outDir, filePath).replace('src/css/', '');
+  const newClass = cssToJSNew(cssContent, `./${basename(cssOutputPath)}`);
+
+  outputFileSync(cssOutputPath, cssContent);
+  outputFileSync(cssOutputPath.replace('.css', '.ts'), newClass);
+});
+
+function cssToJSNew(cssString, cssOutputPath = '') {
   const cssClasses = getCSSClasses(cssString);
   const distinctValues = [...new Set(cssClasses)];
   const classDeclaration = [];
@@ -41,18 +55,7 @@ function cssToJSNew(cssString, cssOutputPath = '', useModules = false) {
   });
   const classSection = classDeclaration.length > 0 ? `${classDeclaration.join(',\n  ')},` : '';
 
-  if (useModules) {
-    return `import '${cssOutputPath}';
-
-export default {
-  ${classSection}
-  modifiers: {
-    ${modifiersDeclaration.join(',\n    ')}
-  }
-}`;
-  }
-
-  return `require('${cssOutputPath}');
+  return `import '${cssOutputPath}';
 
 export default {
   ${classSection}

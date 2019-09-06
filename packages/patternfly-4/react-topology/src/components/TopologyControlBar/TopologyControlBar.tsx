@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { Button, Toolbar, ToolbarGroup, ToolbarItem, Tooltip } from '@patternfly/react-core';
 import { ExpandIcon, ExpandArrowsAltIcon, SearchPlusIcon, SearchMinusIcon } from '@patternfly/react-icons';
-
-import { topologyControlbarCss } from './css/topology-controlbar-css';
-
-topologyControlbarCss.inject();
+import '@patternfly/react-styles/css/components/Topology/topology-controlbar.css';
 
 /* ID's for common control buttons */
 export const ZOOM_IN = 'zoom-in';
@@ -15,7 +12,7 @@ export const LEGEND = 'legend';
 
 /* Data needed for each control button */
 export interface TopologyControlButton {
-  id: any,
+  id: any;
   icon: React.ReactNode;
   tooltip?: React.ReactNode;
   ariaLabel?: string;
@@ -157,7 +154,7 @@ export const createTopologyControlButtons = ({
   legendHidden = defaultControlButtonsOptions.legendHidden,
 
   customButtons = defaultControlButtonsOptions.customButtons,
-} : TopologyControlButtonsOptions  = defaultControlButtonsOptions) : TopologyControlButton[] => {
+}: TopologyControlButtonsOptions  = defaultControlButtonsOptions): TopologyControlButton[] => {
   const controlButtons: TopologyControlButton[] = [];
 
   if (zoomIn) {
@@ -171,7 +168,6 @@ export const createTopologyControlButtons = ({
       hidden: zoomInHidden
     });
   }
-
 
   if (zoomOut) {
     controlButtons.push({

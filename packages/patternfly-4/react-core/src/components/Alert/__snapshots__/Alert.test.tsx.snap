@@ -77,42 +77,72 @@ exports[`Alert - danger Action Close Button 1`] = `
           onClick={[MockFunction]}
           variant="plain"
         >
-          <button
-            aria-disabled={null}
-            aria-label="Close"
-            className="pf-c-button pf-m-plain"
-            disabled={false}
-            onClick={[MockFunction]}
-            tabIndex={null}
-            type="button"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "aria-label": "Close",
+                "children": <TimesIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
+                  title={null}
+                />,
+                "onClick": [MockFunction],
+                "variant": "plain",
+              }
+            }
+            consumerContext={null}
           >
-            <TimesIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
+            <Button
+              aria-label="Close"
+              onClick={[MockFunction]}
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
                 }
-                viewBox="0 0 352 512"
-                width="1em"
+              }
+              variant="plain"
+            >
+              <button
+                aria-disabled={null}
+                aria-label="Close"
+                className="pf-c-button pf-m-plain"
+                disabled={false}
+                onClick={[MockFunction]}
+                tabIndex={null}
+                type="button"
               >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                  transform=""
-                />
-              </svg>
-            </TimesIcon>
-          </button>
+                <TimesIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
+                  title={null}
+                >
+                  <svg
+                    aria-hidden={true}
+                    aria-labelledby={null}
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style={
+                      Object {
+                        "verticalAlign": "-0.125em",
+                      }
+                    }
+                    viewBox="0 0 352 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                      transform=""
+                    />
+                  </svg>
+                </TimesIcon>
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -195,18 +225,45 @@ exports[`Alert - danger Action Link 1`] = `
           variant="link"
           variantLabel="Danger alert:"
         >
-          <button
-            aria-disabled={null}
-            aria-label={null}
-            className="pf-c-button pf-m-link"
-            disabled={false}
-            tabIndex={null}
-            title=""
-            type="button"
-            variantLabel="Danger alert:"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "",
+                "variant": "link",
+                "variantLabel": "Danger alert:",
+              }
+            }
+            consumerContext={null}
           >
-            test
-          </button>
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title=""
+              variant="link"
+              variantLabel="Danger alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title=""
+                type="button"
+                variantLabel="Danger alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -290,18 +347,45 @@ exports[`Alert - danger Action and Title 1`] = `
           variant="link"
           variantLabel="Danger alert:"
         >
-          <button
-            aria-disabled={null}
-            aria-label={null}
-            className="pf-c-button pf-m-link"
-            disabled={false}
-            tabIndex={null}
-            title="Some title"
-            type="button"
-            variantLabel="Danger alert:"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "Some title",
+                "variant": "link",
+                "variantLabel": "Danger alert:",
+              }
+            }
+            consumerContext={null}
           >
-            test
-          </button>
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title="Some title"
+              variant="link"
+              variantLabel="Danger alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title="Some title"
+                type="button"
+                variantLabel="Danger alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -386,18 +470,45 @@ exports[`Alert - danger Custom aria label 1`] = `
           variant="link"
           variantLabel="Danger alert:"
         >
-          <button
-            aria-disabled={null}
-            aria-label={null}
-            className="pf-c-button pf-m-link"
-            disabled={false}
-            tabIndex={null}
-            title="Some title"
-            type="button"
-            variantLabel="Danger alert:"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "Some title",
+                "variant": "link",
+                "variantLabel": "Danger alert:",
+              }
+            }
+            consumerContext={null}
           >
-            test
-          </button>
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title="Some title"
+              variant="link"
+              variantLabel="Danger alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title="Some title"
+                type="button"
+                variantLabel="Danger alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -591,6 +702,708 @@ exports[`Alert - danger inline variation 1`] = `
 </Component>
 `;
 
+exports[`Alert - default Action Close Button 1`] = `
+<Component
+  action={
+    <Unknown
+      aria-label="Close"
+      onClose={[MockFunction]}
+    />
+  }
+  title=""
+  variant="default"
+>
+  <div
+    aria-label="Default Alert"
+    className="pf-c-alert"
+  >
+    <Component
+      variant="default"
+    >
+      <div
+        className="pf-c-alert__icon"
+      >
+        <BellIcon
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"
+              transform=""
+            />
+          </svg>
+        </BellIcon>
+      </div>
+    </Component>
+    <h4
+      className="pf-c-alert__title"
+    >
+      <span
+        className="pf-u-screen-reader"
+      >
+        Default alert:
+      </span>
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <Component
+        aria-label="Close"
+        onClose={[MockFunction]}
+        title=""
+        variantLabel="Default alert:"
+      >
+        <Component
+          aria-label="Close"
+          onClick={[MockFunction]}
+          variant="plain"
+        >
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "aria-label": "Close",
+                "children": <TimesIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
+                  title={null}
+                />,
+                "onClick": [MockFunction],
+                "variant": "plain",
+              }
+            }
+            consumerContext={null}
+          >
+            <Button
+              aria-label="Close"
+              onClick={[MockFunction]}
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              variant="plain"
+            >
+              <button
+                aria-disabled={null}
+                aria-label="Close"
+                className="pf-c-button pf-m-plain"
+                disabled={false}
+                onClick={[MockFunction]}
+                tabIndex={null}
+                type="button"
+              >
+                <TimesIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
+                  title={null}
+                >
+                  <svg
+                    aria-hidden={true}
+                    aria-labelledby={null}
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style={
+                      Object {
+                        "verticalAlign": "-0.125em",
+                      }
+                    }
+                    viewBox="0 0 352 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                      transform=""
+                    />
+                  </svg>
+                </TimesIcon>
+              </button>
+            </Button>
+          </ComponentWithOuia>
+        </Component>
+      </Component>
+    </div>
+  </div>
+</Component>
+`;
+
+exports[`Alert - default Action Link 1`] = `
+<Component
+  action={
+    <Unknown>
+      test
+    </Unknown>
+  }
+  title=""
+  variant="default"
+>
+  <div
+    aria-label="Default Alert"
+    className="pf-c-alert"
+  >
+    <Component
+      variant="default"
+    >
+      <div
+        className="pf-c-alert__icon"
+      >
+        <BellIcon
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"
+              transform=""
+            />
+          </svg>
+        </BellIcon>
+      </div>
+    </Component>
+    <h4
+      className="pf-c-alert__title"
+    >
+      <span
+        className="pf-u-screen-reader"
+      >
+        Default alert:
+      </span>
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <Component
+        title=""
+        variantLabel="Default alert:"
+      >
+        <Component
+          className=""
+          title=""
+          variant="link"
+          variantLabel="Default alert:"
+        >
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "",
+                "variant": "link",
+                "variantLabel": "Default alert:",
+              }
+            }
+            consumerContext={null}
+          >
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title=""
+              variant="link"
+              variantLabel="Default alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title=""
+                type="button"
+                variantLabel="Default alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
+        </Component>
+      </Component>
+    </div>
+  </div>
+</Component>
+`;
+
+exports[`Alert - default Action and Title 1`] = `
+<Component
+  action={
+    <Unknown>
+      test
+    </Unknown>
+  }
+  title="Some title"
+  variant="default"
+>
+  <div
+    aria-label="Default Alert"
+    className="pf-c-alert"
+  >
+    <Component
+      variant="default"
+    >
+      <div
+        className="pf-c-alert__icon"
+      >
+        <BellIcon
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"
+              transform=""
+            />
+          </svg>
+        </BellIcon>
+      </div>
+    </Component>
+    <h4
+      className="pf-c-alert__title"
+    >
+      <span
+        className="pf-u-screen-reader"
+      >
+        Default alert:
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <Component
+        title="Some title"
+        variantLabel="Default alert:"
+      >
+        <Component
+          className=""
+          title="Some title"
+          variant="link"
+          variantLabel="Default alert:"
+        >
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "Some title",
+                "variant": "link",
+                "variantLabel": "Default alert:",
+              }
+            }
+            consumerContext={null}
+          >
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title="Some title"
+              variant="link"
+              variantLabel="Default alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title="Some title"
+                type="button"
+                variantLabel="Default alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
+        </Component>
+      </Component>
+    </div>
+  </div>
+</Component>
+`;
+
+exports[`Alert - default Custom aria label 1`] = `
+<Component
+  action={
+    <Unknown>
+      test
+    </Unknown>
+  }
+  aria-label="Custom aria label for default"
+  title="Some title"
+  variant="default"
+>
+  <div
+    aria-label="Custom aria label for default"
+    className="pf-c-alert"
+  >
+    <Component
+      variant="default"
+    >
+      <div
+        className="pf-c-alert__icon"
+      >
+        <BellIcon
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"
+              transform=""
+            />
+          </svg>
+        </BellIcon>
+      </div>
+    </Component>
+    <h4
+      className="pf-c-alert__title"
+    >
+      <span
+        className="pf-u-screen-reader"
+      >
+        Default alert:
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <Component
+        title="Some title"
+        variantLabel="Default alert:"
+      >
+        <Component
+          className=""
+          title="Some title"
+          variant="link"
+          variantLabel="Default alert:"
+        >
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "Some title",
+                "variant": "link",
+                "variantLabel": "Default alert:",
+              }
+            }
+            consumerContext={null}
+          >
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title="Some title"
+              variant="link"
+              variantLabel="Default alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title="Some title"
+                type="button"
+                variantLabel="Default alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
+        </Component>
+      </Component>
+    </div>
+  </div>
+</Component>
+`;
+
+exports[`Alert - default Description 1`] = `
+<Component
+  title=""
+  variant="default"
+>
+  <div
+    aria-label="Default Alert"
+    className="pf-c-alert"
+  >
+    <Component
+      variant="default"
+    >
+      <div
+        className="pf-c-alert__icon"
+      >
+        <BellIcon
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"
+              transform=""
+            />
+          </svg>
+        </BellIcon>
+      </div>
+    </Component>
+    <h4
+      className="pf-c-alert__title"
+    >
+      <span
+        className="pf-u-screen-reader"
+      >
+        Default alert:
+      </span>
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
+  </div>
+</Component>
+`;
+
+exports[`Alert - default Title 1`] = `
+<Component
+  title="Some title"
+  variant="default"
+>
+  <div
+    aria-label="Default Alert"
+    className="pf-c-alert"
+  >
+    <Component
+      variant="default"
+    >
+      <div
+        className="pf-c-alert__icon"
+      >
+        <BellIcon
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"
+              transform=""
+            />
+          </svg>
+        </BellIcon>
+      </div>
+    </Component>
+    <h4
+      className="pf-c-alert__title"
+    >
+      <span
+        className="pf-u-screen-reader"
+      >
+        Default alert:
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
+  </div>
+</Component>
+`;
+
+exports[`Alert - default inline variation 1`] = `
+<Component
+  isInline={true}
+  title="Some title"
+  variant="default"
+>
+  <div
+    aria-label="Default Alert"
+    className="pf-c-alert pf-m-inline"
+  >
+    <Component
+      variant="default"
+    >
+      <div
+        className="pf-c-alert__icon"
+      >
+        <BellIcon
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 448 512"
+            width="1em"
+          >
+            <path
+              d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"
+              transform=""
+            />
+          </svg>
+        </BellIcon>
+      </div>
+    </Component>
+    <h4
+      className="pf-c-alert__title"
+    >
+      <span
+        className="pf-u-screen-reader"
+      >
+        Default alert:
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      Some alert
+    </div>
+  </div>
+</Component>
+`;
+
 exports[`Alert - info Action Close Button 1`] = `
 <Component
   action={
@@ -668,42 +1481,72 @@ exports[`Alert - info Action Close Button 1`] = `
           onClick={[MockFunction]}
           variant="plain"
         >
-          <button
-            aria-disabled={null}
-            aria-label="Close"
-            className="pf-c-button pf-m-plain"
-            disabled={false}
-            onClick={[MockFunction]}
-            tabIndex={null}
-            type="button"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "aria-label": "Close",
+                "children": <TimesIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
+                  title={null}
+                />,
+                "onClick": [MockFunction],
+                "variant": "plain",
+              }
+            }
+            consumerContext={null}
           >
-            <TimesIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
+            <Button
+              aria-label="Close"
+              onClick={[MockFunction]}
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
                 }
-                viewBox="0 0 352 512"
-                width="1em"
+              }
+              variant="plain"
+            >
+              <button
+                aria-disabled={null}
+                aria-label="Close"
+                className="pf-c-button pf-m-plain"
+                disabled={false}
+                onClick={[MockFunction]}
+                tabIndex={null}
+                type="button"
               >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                  transform=""
-                />
-              </svg>
-            </TimesIcon>
-          </button>
+                <TimesIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
+                  title={null}
+                >
+                  <svg
+                    aria-hidden={true}
+                    aria-labelledby={null}
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style={
+                      Object {
+                        "verticalAlign": "-0.125em",
+                      }
+                    }
+                    viewBox="0 0 352 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                      transform=""
+                    />
+                  </svg>
+                </TimesIcon>
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -786,18 +1629,45 @@ exports[`Alert - info Action Link 1`] = `
           variant="link"
           variantLabel="Info alert:"
         >
-          <button
-            aria-disabled={null}
-            aria-label={null}
-            className="pf-c-button pf-m-link"
-            disabled={false}
-            tabIndex={null}
-            title=""
-            type="button"
-            variantLabel="Info alert:"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "",
+                "variant": "link",
+                "variantLabel": "Info alert:",
+              }
+            }
+            consumerContext={null}
           >
-            test
-          </button>
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title=""
+              variant="link"
+              variantLabel="Info alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title=""
+                type="button"
+                variantLabel="Info alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -881,18 +1751,45 @@ exports[`Alert - info Action and Title 1`] = `
           variant="link"
           variantLabel="Info alert:"
         >
-          <button
-            aria-disabled={null}
-            aria-label={null}
-            className="pf-c-button pf-m-link"
-            disabled={false}
-            tabIndex={null}
-            title="Some title"
-            type="button"
-            variantLabel="Info alert:"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "Some title",
+                "variant": "link",
+                "variantLabel": "Info alert:",
+              }
+            }
+            consumerContext={null}
           >
-            test
-          </button>
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title="Some title"
+              variant="link"
+              variantLabel="Info alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title="Some title"
+                type="button"
+                variantLabel="Info alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -977,18 +1874,45 @@ exports[`Alert - info Custom aria label 1`] = `
           variant="link"
           variantLabel="Info alert:"
         >
-          <button
-            aria-disabled={null}
-            aria-label={null}
-            className="pf-c-button pf-m-link"
-            disabled={false}
-            tabIndex={null}
-            title="Some title"
-            type="button"
-            variantLabel="Info alert:"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "Some title",
+                "variant": "link",
+                "variantLabel": "Info alert:",
+              }
+            }
+            consumerContext={null}
           >
-            test
-          </button>
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title="Some title"
+              variant="link"
+              variantLabel="Info alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title="Some title"
+                type="button"
+                variantLabel="Info alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -1259,42 +2183,72 @@ exports[`Alert - success Action Close Button 1`] = `
           onClick={[MockFunction]}
           variant="plain"
         >
-          <button
-            aria-disabled={null}
-            aria-label="Close"
-            className="pf-c-button pf-m-plain"
-            disabled={false}
-            onClick={[MockFunction]}
-            tabIndex={null}
-            type="button"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "aria-label": "Close",
+                "children": <TimesIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
+                  title={null}
+                />,
+                "onClick": [MockFunction],
+                "variant": "plain",
+              }
+            }
+            consumerContext={null}
           >
-            <TimesIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
+            <Button
+              aria-label="Close"
+              onClick={[MockFunction]}
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
                 }
-                viewBox="0 0 352 512"
-                width="1em"
+              }
+              variant="plain"
+            >
+              <button
+                aria-disabled={null}
+                aria-label="Close"
+                className="pf-c-button pf-m-plain"
+                disabled={false}
+                onClick={[MockFunction]}
+                tabIndex={null}
+                type="button"
               >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                  transform=""
-                />
-              </svg>
-            </TimesIcon>
-          </button>
+                <TimesIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
+                  title={null}
+                >
+                  <svg
+                    aria-hidden={true}
+                    aria-labelledby={null}
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style={
+                      Object {
+                        "verticalAlign": "-0.125em",
+                      }
+                    }
+                    viewBox="0 0 352 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                      transform=""
+                    />
+                  </svg>
+                </TimesIcon>
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -1377,18 +2331,45 @@ exports[`Alert - success Action Link 1`] = `
           variant="link"
           variantLabel="Success alert:"
         >
-          <button
-            aria-disabled={null}
-            aria-label={null}
-            className="pf-c-button pf-m-link"
-            disabled={false}
-            tabIndex={null}
-            title=""
-            type="button"
-            variantLabel="Success alert:"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "",
+                "variant": "link",
+                "variantLabel": "Success alert:",
+              }
+            }
+            consumerContext={null}
           >
-            test
-          </button>
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title=""
+              variant="link"
+              variantLabel="Success alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title=""
+                type="button"
+                variantLabel="Success alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -1472,18 +2453,45 @@ exports[`Alert - success Action and Title 1`] = `
           variant="link"
           variantLabel="Success alert:"
         >
-          <button
-            aria-disabled={null}
-            aria-label={null}
-            className="pf-c-button pf-m-link"
-            disabled={false}
-            tabIndex={null}
-            title="Some title"
-            type="button"
-            variantLabel="Success alert:"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "Some title",
+                "variant": "link",
+                "variantLabel": "Success alert:",
+              }
+            }
+            consumerContext={null}
           >
-            test
-          </button>
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title="Some title"
+              variant="link"
+              variantLabel="Success alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title="Some title"
+                type="button"
+                variantLabel="Success alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -1568,18 +2576,45 @@ exports[`Alert - success Custom aria label 1`] = `
           variant="link"
           variantLabel="Success alert:"
         >
-          <button
-            aria-disabled={null}
-            aria-label={null}
-            className="pf-c-button pf-m-link"
-            disabled={false}
-            tabIndex={null}
-            title="Some title"
-            type="button"
-            variantLabel="Success alert:"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "Some title",
+                "variant": "link",
+                "variantLabel": "Success alert:",
+              }
+            }
+            consumerContext={null}
           >
-            test
-          </button>
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title="Some title"
+              variant="link"
+              variantLabel="Success alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title="Some title"
+                type="button"
+                variantLabel="Success alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -1850,42 +2885,72 @@ exports[`Alert - warning Action Close Button 1`] = `
           onClick={[MockFunction]}
           variant="plain"
         >
-          <button
-            aria-disabled={null}
-            aria-label="Close"
-            className="pf-c-button pf-m-plain"
-            disabled={false}
-            onClick={[MockFunction]}
-            tabIndex={null}
-            type="button"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "aria-label": "Close",
+                "children": <TimesIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
+                  title={null}
+                />,
+                "onClick": [MockFunction],
+                "variant": "plain",
+              }
+            }
+            consumerContext={null}
           >
-            <TimesIcon
-              color="currentColor"
-              noVerticalAlign={false}
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
+            <Button
+              aria-label="Close"
+              onClick={[MockFunction]}
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
                 }
-                viewBox="0 0 352 512"
-                width="1em"
+              }
+              variant="plain"
+            >
+              <button
+                aria-disabled={null}
+                aria-label="Close"
+                className="pf-c-button pf-m-plain"
+                disabled={false}
+                onClick={[MockFunction]}
+                tabIndex={null}
+                type="button"
               >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                  transform=""
-                />
-              </svg>
-            </TimesIcon>
-          </button>
+                <TimesIcon
+                  color="currentColor"
+                  noVerticalAlign={false}
+                  size="sm"
+                  title={null}
+                >
+                  <svg
+                    aria-hidden={true}
+                    aria-labelledby={null}
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style={
+                      Object {
+                        "verticalAlign": "-0.125em",
+                      }
+                    }
+                    viewBox="0 0 352 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                      transform=""
+                    />
+                  </svg>
+                </TimesIcon>
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -1968,18 +3033,45 @@ exports[`Alert - warning Action Link 1`] = `
           variant="link"
           variantLabel="Warning alert:"
         >
-          <button
-            aria-disabled={null}
-            aria-label={null}
-            className="pf-c-button pf-m-link"
-            disabled={false}
-            tabIndex={null}
-            title=""
-            type="button"
-            variantLabel="Warning alert:"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "",
+                "variant": "link",
+                "variantLabel": "Warning alert:",
+              }
+            }
+            consumerContext={null}
           >
-            test
-          </button>
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title=""
+              variant="link"
+              variantLabel="Warning alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title=""
+                type="button"
+                variantLabel="Warning alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -2063,18 +3155,45 @@ exports[`Alert - warning Action and Title 1`] = `
           variant="link"
           variantLabel="Warning alert:"
         >
-          <button
-            aria-disabled={null}
-            aria-label={null}
-            className="pf-c-button pf-m-link"
-            disabled={false}
-            tabIndex={null}
-            title="Some title"
-            type="button"
-            variantLabel="Warning alert:"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "Some title",
+                "variant": "link",
+                "variantLabel": "Warning alert:",
+              }
+            }
+            consumerContext={null}
           >
-            test
-          </button>
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title="Some title"
+              variant="link"
+              variantLabel="Warning alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title="Some title"
+                type="button"
+                variantLabel="Warning alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>
@@ -2159,18 +3278,45 @@ exports[`Alert - warning Custom aria label 1`] = `
           variant="link"
           variantLabel="Warning alert:"
         >
-          <button
-            aria-disabled={null}
-            aria-label={null}
-            className="pf-c-button pf-m-link"
-            disabled={false}
-            tabIndex={null}
-            title="Some title"
-            type="button"
-            variantLabel="Warning alert:"
+          <ComponentWithOuia
+            component={[Function]}
+            componentProps={
+              Object {
+                "children": "test",
+                "className": "",
+                "title": "Some title",
+                "variant": "link",
+                "variantLabel": "Warning alert:",
+              }
+            }
+            consumerContext={null}
           >
-            test
-          </button>
+            <Button
+              className=""
+              ouiaContext={
+                Object {
+                  "isOuia": false,
+                  "ouiaId": null,
+                }
+              }
+              title="Some title"
+              variant="link"
+              variantLabel="Warning alert:"
+            >
+              <button
+                aria-disabled={null}
+                aria-label={null}
+                className="pf-c-button pf-m-link"
+                disabled={false}
+                tabIndex={null}
+                title="Some title"
+                type="button"
+                variantLabel="Warning alert:"
+              >
+                test
+              </button>
+            </Button>
+          </ComponentWithOuia>
         </Component>
       </Component>
     </div>

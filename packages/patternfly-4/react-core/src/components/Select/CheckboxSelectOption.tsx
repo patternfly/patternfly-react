@@ -5,8 +5,8 @@ import { css } from '@patternfly/react-styles';
 import { SelectConsumer, KeyTypes } from './selectConstants';
 
 export interface CheckboxSelectOptionProps extends React.HTMLProps<HTMLLabelElement> {
-  /** The value for the option */
-  children?: string;
+  /** Optional alternate display for the option */
+  children?: React.ReactNode;
   /** Additional classes added to the Select Option */
   className?: string;
   /** Internal index of the option */
@@ -28,7 +28,6 @@ export interface CheckboxSelectOptionProps extends React.HTMLProps<HTMLLabelElem
 export class CheckboxSelectOption extends React.Component<CheckboxSelectOptionProps> {
   private ref = React.createRef<any>();
   static defaultProps = {
-    children: '',
     className: '',
     value: '',
     index: 0,
@@ -60,10 +59,10 @@ export class CheckboxSelectOption extends React.Component<CheckboxSelectOptionPr
       this.ref.current.click();
       this.ref.current.focus();
     }
-  };
+  }
 
   render() {
-    const { className, value, onClick, isDisabled, isChecked, sendRef, keyHandler, index, ...props } = this.props;
+    const { children, className, value, onClick, isDisabled, isChecked, sendRef, keyHandler, index, ...props } = this.props;
     return (
       <SelectConsumer>
         {({ onSelect }) => (
@@ -81,17 +80,17 @@ export class CheckboxSelectOption extends React.Component<CheckboxSelectOptionPr
               id={value}
               className={css(checkStyles.checkInput)}
               type="checkbox"
-              onChange={event => {
+              onChange={(event) => {
                 if (!isDisabled) {
                   onClick(event);
                   onSelect(event, value);
                 }
               }}
               ref={this.ref}
-              checked={isChecked || false}
+              defaultChecked={isChecked || false}
               disabled={isDisabled}
             />
-            <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{value}</span>
+            <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{children || value}</span>
           </label>
         )}
       </SelectConsumer>

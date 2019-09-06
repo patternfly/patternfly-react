@@ -6,9 +6,9 @@ export class TextInputDemo extends Component {
     value: ''
   };
 
-  handleTextInputChange = value => {
+  handleTextInputChange = (value) => {
     this.setState({ value });
-  };
+  }
 
   myTextInputProps: TextInputProps = {
     onChange: this.handleTextInputChange,

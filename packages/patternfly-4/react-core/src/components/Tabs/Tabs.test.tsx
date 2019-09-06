@@ -1,10 +1,10 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, mount } from 'enzyme';
 import { Tabs } from './Tabs';
 import { Tab } from './Tab';
 
 test('should render simple tabs', () => {
-  const view = shallow(
+  const view = render(
     <Tabs id="simpleTabs">
       <Tab id="tab1" eventKey={0} title="Tab item 1">
         Tab 1 section
@@ -21,7 +21,7 @@ test('should render simple tabs', () => {
 });
 
 test('should render accessible tabs', () => {
-  const view = shallow(
+  const view = render(
     <Tabs id="accessibleTabs" aria-label="accessible Tabs example" variant="nav">
       <Tab id="tab1" eventKey={0} title="Tab item 1" href="#/items/1">
         Tab 1 section
@@ -38,7 +38,7 @@ test('should render accessible tabs', () => {
 });
 
 test('should render filled tabs', () => {
-  const view = shallow(
+  const view = render(
     <Tabs id="filledTabs" isFilled>
       <Tab id="tab1" eventKey={0} title="Tab item 1">
         Tab 1 section
@@ -55,8 +55,8 @@ test('should render filled tabs', () => {
 });
 
 test('should render secondary tabs', () => {
-  const view = shallow(
-    <Tabs id="primaryTabs">
+  const view = render(
+    <Tabs id="primarieTabs">
       <Tab eventKey={0} title="Tab item 1">
         <Tabs id="secondaryTabs">
           <Tab id="secondary tab1" eventKey={10} title="Secondary Tab 1">
@@ -138,5 +138,22 @@ test('should call handleScrollButtons tabs with scrolls', () => {
     </Tabs>
   );
   view.simulate('scroll');
+  expect(view).toMatchSnapshot();
+});
+
+test('should render tabs with eventKey Strings', () => {
+  const view = render(
+    <Tabs id="eventKeyTabs">
+      <Tab id="tab1" eventKey={'one'} title="Tab item 1">
+        Tab 1 section
+      </Tab>
+      <Tab id="tab2" eventKey={'two'} title="Tab item 2">
+        Tab 2 section
+      </Tab>
+      <Tab id="tab3" eventKey={'three'} title="Tab item 3">
+        Tab 3 section
+      </Tab>
+    </Tabs>
+  );
   expect(view).toMatchSnapshot();
 });

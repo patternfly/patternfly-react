@@ -3,6 +3,7 @@ title: 'Toolbar'
 cssPrefix: 'pf-c-avatar'
 section: 'layouts'
 propComponents: ['Toolbar', 'ToolbarGroup', 'ToolbarSection', 'ToolbarItem']
+typescript: true
 ---
 
 import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/react-core';

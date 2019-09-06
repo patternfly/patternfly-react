@@ -4,7 +4,8 @@ import { DarkCyanColorTheme } from '../ChartTheme/themes/dark/cyan-color-theme';
 import { DarkGoldColorTheme } from '../ChartTheme/themes/dark/gold-color-theme';
 import { DarkGrayColorTheme } from '../ChartTheme/themes/dark/gray-color-theme';
 import { DarkGreenColorTheme } from '../ChartTheme/themes/dark/green-color-theme';
-import { DarkMultiColorTheme } from '../ChartTheme/themes/dark/multi-color-theme';
+import { DarkMultiColorOrderedTheme } from '../ChartTheme/themes/dark/multi-color-ordered-theme';
+import { DarkMultiColorUnorderedTheme } from '../ChartTheme/themes/dark/multi-color-unordered-theme';
 import { DarkOrangeColorTheme } from '../ChartTheme/themes/dark/orange-color-theme';
 import { DarkPurpleColorTheme } from '../ChartTheme/themes/dark/purple-color-theme';
 import { LightBlueColorTheme } from '../ChartTheme/themes/light/blue-color-theme';
@@ -12,12 +13,22 @@ import { LightCyanColorTheme } from '../ChartTheme/themes/light/cyan-color-theme
 import { LightGoldColorTheme } from '../ChartTheme/themes/light/gold-color-theme';
 import { LightGrayColorTheme } from '../ChartTheme/themes/light/gray-color-theme';
 import { LightGreenColorTheme } from '../ChartTheme/themes/light/green-color-theme';
-import { LightMultiColorTheme } from '../ChartTheme/themes/light/multi-color-theme';
+import { LightMultiColorOrderedTheme } from '../ChartTheme/themes/light/multi-color-ordered-theme';
+import { LightMultiColorUnorderedTheme } from '../ChartTheme/themes/light/multi-color-unordered-theme';
 import { LightOrangeColorTheme } from '../ChartTheme/themes/light/orange-color-theme';
 import { LightPurpleColorTheme } from '../ChartTheme/themes/light/purple-color-theme';
 import {
   ChartAxisTheme,
   ChartBaseTheme,
+  ChartBulletComparativeErrorMeasureTheme,
+  ChartBulletComparativeMeasureTheme,
+  ChartBulletComparativeWarningMeasureTheme,
+  ChartBulletGroupTitleTheme,
+  ChartBulletPrimaryDotMeasureTheme,
+  ChartBulletPrimaryNegativeMeasureTheme,
+  ChartBulletPrimarySegmentedMeasureTheme,
+  ChartBulletTheme,
+  ChartBulletQualitativeRangeTheme,
   ChartDonutTheme,
   ChartDonutUtilizationDynamicTheme,
   ChartDonutUtilizationStaticTheme,
@@ -29,22 +40,58 @@ import {
 } from '../ChartTheme/ChartTheme';
 import { cloneDeep } from 'lodash';
 
-// Apply custom properties to color and base themes
+// Apply custom properties to base and color themes
 export const getCustomTheme = (themeColor: string, themeVariant: string, customTheme: ChartThemeDefinition
 ): ChartThemeDefinition =>
   merge(getTheme(themeColor, themeVariant), customTheme);
 
-// Apply axis threshold properties onto base theme
-export const getAxisTheme = (themeColor: string, themeVariant: string) : ChartThemeDefinition => {
+// Returns axis theme
+export const getAxisTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {
   const theme = getCustomTheme(themeColor, themeVariant, ChartAxisTheme);
   return theme;
-}
+};
 
-// Apply donut properties onto pie chart theme
+// Returns bullet chart theme
+export const getBulletTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletTheme);
+
+// Returns comparative error measure theme for bullet chart
+export const getBulletComparativeErrorMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletComparativeErrorMeasureTheme);
+
+// Returns comparative measure theme for bullet chart
+export const getBulletComparativeMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletComparativeMeasureTheme);
+
+// Returns comparative warning measure theme for bullet chart
+export const getBulletComparativeWarningMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletComparativeWarningMeasureTheme);
+
+// Returns group title theme for bullet chart
+export const getBulletGroupTitleTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletGroupTitleTheme);
+
+// Returns primary dot measure theme for bullet chart
+export const getBulletPrimaryDotMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletPrimaryDotMeasureTheme);
+
+// Returns primary negative measure theme for bullet chart
+export const getBulletPrimaryNegativeMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletPrimaryNegativeMeasureTheme);
+
+// Returns primary segmented measure theme for bullet chart
+export const getBulletPrimarySegmentedMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletPrimarySegmentedMeasureTheme);
+
+// Returns qualitative range theme for bullet chart
+export const getBulletQualitativeRangeTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartBulletQualitativeRangeTheme);
+
+// Returns donut theme
 export const getDonutTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
   getCustomTheme(themeColor, themeVariant, ChartDonutTheme);
 
-// Apply dynamic donut threshold properties onto pie chart theme
+// Returns dynamic donut threshold theme
 export const getDonutThresholdDynamicTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {
   const theme = getCustomTheme(themeColor, themeVariant, ChartDonutThresholdDynamicTheme);
 
@@ -56,7 +103,7 @@ export const getDonutThresholdDynamicTheme = (themeColor: string, themeVariant: 
   return theme;
 };
 
-// Apply static donut threshold properties onto pie chart theme
+// Returns static donut threshold theme
 export const getDonutThresholdStaticTheme = (themeColor: string, themeVariant: string, invert?: boolean
 ): ChartThemeDefinition => {
   const staticTheme = cloneDeep(ChartDonutThresholdStaticTheme);
@@ -66,7 +113,7 @@ export const getDonutThresholdStaticTheme = (themeColor: string, themeVariant: s
   return getCustomTheme(themeColor, themeVariant, staticTheme);
 };
 
-// Apply donut utilization properties onto pie chart theme
+// Returns donut utilization theme
 export const getDonutUtilizationTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {
   const theme = getCustomTheme(themeColor, themeVariant, ChartDonutUtilizationDynamicTheme);
 
@@ -91,7 +138,10 @@ export const getDarkThemeColors = (themeColor: string) => {
     case ChartThemeColor.green:
       return DarkGreenColorTheme;
     case ChartThemeColor.multi:
-      return DarkMultiColorTheme;
+    case ChartThemeColor.multiOrdered:
+      return DarkMultiColorOrderedTheme;
+    case ChartThemeColor.multiUnordered:
+      return DarkMultiColorUnorderedTheme;
     case ChartThemeColor.orange:
       return DarkOrangeColorTheme;
     case ChartThemeColor.purple:
@@ -115,7 +165,10 @@ export const getLightThemeColors = (themeColor: string) => {
     case ChartThemeColor.green:
       return LightGreenColorTheme;
     case ChartThemeColor.multi:
-      return LightMultiColorTheme;
+    case ChartThemeColor.multiOrdered:
+      return LightMultiColorOrderedTheme;
+    case ChartThemeColor.multiUnordered:
+      return LightMultiColorUnorderedTheme;
     case ChartThemeColor.orange:
       return LightOrangeColorTheme;
     case ChartThemeColor.purple:

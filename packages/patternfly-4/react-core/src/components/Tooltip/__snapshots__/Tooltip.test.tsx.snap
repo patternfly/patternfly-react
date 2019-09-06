@@ -1,15 +1,90 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`tooltip renders 1`] = `
-<Tippy
+exports[`tooltip passes along values to tippy.js 1`] = `
+<PopoverBase
   animateFill={false}
   appendTo={[Function]}
+  aria="describedby"
+  arrow={true}
+  boundary="window"
   content={
     <div
-      className="pf-c-tooltip"
+      className=""
       role="tooltip"
     >
-      <Unknown />
+      <Unknown>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+        </div>
+      </Unknown>
+    </div>
+  }
+  delay={
+    Array [
+      500,
+      500,
+    ]
+  }
+  distance={15}
+  duration={
+    Array [
+      200,
+      200,
+    ]
+  }
+  flip={true}
+  flipBehavior={
+    Array [
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "top",
+      "right",
+      "bottom",
+    ]
+  }
+  isVisible={false}
+  lazy={true}
+  maxWidth="18.75rem"
+  offset={20}
+  onCreate={[Function]}
+  performance={true}
+  placement="top"
+  popperOptions={
+    Object {
+      "modifiers": Object {
+        "hide": Object {
+          "enabled": true,
+        },
+        "preventOverflow": Object {
+          "enabled": true,
+        },
+      },
+    }
+  }
+  theme="pf-tooltip"
+  trigger="mouseenter focus"
+  zIndex={9999}
+>
+  <div>
+    Tippy Props Test
+  </div>
+</PopoverBase>
+`;
+
+exports[`tooltip renders 1`] = `
+<PopoverBase
+  animateFill={false}
+  appendTo={[Function]}
+  aria="describedby"
+  arrow={true}
+  boundary="window"
+  content={
+    <div
+      className=""
+      role="tooltip"
+    >
       <Unknown>
         <div>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
@@ -25,6 +100,18 @@ exports[`tooltip renders 1`] = `
   }
   distance={15}
   flip={true}
+  flipBehavior={
+    Array [
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "top",
+      "right",
+      "bottom",
+    ]
+  }
+  isVisible={false}
   lazy={true}
   maxWidth="18.75rem"
   onCreate={[Function]}
@@ -42,12 +129,12 @@ exports[`tooltip renders 1`] = `
       },
     }
   }
-  theme="pf-tippy"
+  theme="pf-tooltip"
   trigger="mouseenter focus"
   zIndex={9999}
 >
   <div>
     Toggle tooltip
   </div>
-</Tippy>
+</PopoverBase>
 `;

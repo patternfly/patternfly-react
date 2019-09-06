@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`popover can specify position as object value 1`] = `
-<Tippy
+<PopoverBase
   animateFill={false}
   appendTo={[Function]}
+  arrow={true}
+  boundary="window"
   content={
     <GenerateId
       prefix="pf-random-id-"
@@ -13,12 +15,23 @@ exports[`popover can specify position as object value 1`] = `
   }
   distance={25}
   flip={true}
+  flipBehavior={
+    Array [
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "top",
+      "right",
+      "bottom",
+    ]
+  }
   hideOnClick={false}
   interactive={true}
   interactiveBorder={0}
   isVisible={true}
   lazy={true}
-  maxWidth="calc(1.5rem + 18.75rem)"
+  maxWidth="calc(2rem + 18.75rem)"
   onCreate={[Function]}
   onHidden={[Function]}
   onHide={[Function]}
@@ -39,20 +52,91 @@ exports[`popover can specify position as object value 1`] = `
       },
     }
   }
-  theme="pf-tippy"
+  theme="pf-popover"
   trigger="manual"
   zIndex={9999}
 >
   <div>
     Toggle Popover
   </div>
-</Tippy>
+</PopoverBase>
+`;
+
+exports[`popover passes along values to tippy.js 1`] = `
+<PopoverBase
+  animateFill={false}
+  appendTo={[Function]}
+  arrow={true}
+  boundary="window"
+  content={
+    <GenerateId
+      prefix="pf-random-id-"
+    >
+      [Function]
+    </GenerateId>
+  }
+  distance={25}
+  duration={
+    Array [
+      200,
+      200,
+    ]
+  }
+  flip={true}
+  flipBehavior={
+    Array [
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "top",
+      "right",
+      "bottom",
+    ]
+  }
+  hideOnClick={false}
+  interactive={true}
+  interactiveBorder={0}
+  isVisible={true}
+  lazy={true}
+  maxWidth="calc(2rem + 18.75rem)"
+  offset={20}
+  onCreate={[Function]}
+  onHidden={[Function]}
+  onHide={[Function]}
+  onMount={[Function]}
+  onShow={[Function]}
+  onShown={[Function]}
+  performance={true}
+  placement="right"
+  popperOptions={
+    Object {
+      "modifiers": Object {
+        "hide": Object {
+          "enabled": true,
+        },
+        "preventOverflow": Object {
+          "enabled": true,
+        },
+      },
+    }
+  }
+  theme="pf-popover"
+  trigger="manual"
+  zIndex={9999}
+>
+  <div>
+    Tippy Props Test
+  </div>
+</PopoverBase>
 `;
 
 exports[`popover renders close-button, header and body 1`] = `
-<Tippy
+<PopoverBase
   animateFill={false}
   appendTo={[Function]}
+  arrow={true}
+  boundary="window"
   content={
     <GenerateId
       prefix="pf-random-id-"
@@ -62,12 +146,23 @@ exports[`popover renders close-button, header and body 1`] = `
   }
   distance={25}
   flip={true}
+  flipBehavior={
+    Array [
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "top",
+      "right",
+      "bottom",
+    ]
+  }
   hideOnClick={false}
   interactive={true}
   interactiveBorder={0}
   isVisible={true}
   lazy={true}
-  maxWidth="calc(1.5rem + 18.75rem)"
+  maxWidth="calc(2rem + 18.75rem)"
   onCreate={[Function]}
   onHidden={[Function]}
   onHide={[Function]}
@@ -88,12 +183,12 @@ exports[`popover renders close-button, header and body 1`] = `
       },
     }
   }
-  theme="pf-tippy"
+  theme="pf-popover"
   trigger="manual"
   zIndex={9999}
 >
   <div>
     Toggle Popover
   </div>
-</Tippy>
+</PopoverBase>
 `;

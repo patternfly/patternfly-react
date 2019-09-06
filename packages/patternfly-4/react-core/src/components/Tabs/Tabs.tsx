@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Tabs/tabs';
+import buttonStyles from '@patternfly/react-styles/css/components/Button/button';
 import { css } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
 import { AngleLeftIcon, AngleRightIcon } from '@patternfly/react-icons';
@@ -7,6 +8,7 @@ import { getUniqueId, isElementInView, sideElementIsOutOfView } from '../../help
 import { SIDE } from '../../helpers/constants';
 import { TabContent } from './TabContent';
 import { Tab } from './Tab';
+import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 export enum TabsVariant {
   div = 'div',
@@ -19,9 +21,9 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   /** additional classes added to the Tabs */
   className?: string;
   /** the index of the active tab */
-  activeKey?: number;
+  activeKey?: number | string;
   /** handle tab selection */
-  onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number) => void;
+  onSelect?: (event: React.MouseEvent<HTMLElement, MouseEvent>, eventKey: number | string) => void;
   /** uniquely identifies the Tabs */
   id?: string;
   /** enables the filled tab list layout */
@@ -45,16 +47,16 @@ export interface TabsState {
   highlightRightScrollButton: boolean;
 }
 
-export class Tabs extends React.Component<TabsProps, TabsState> {
+class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
   tabList = React.createRef<HTMLUListElement>();
-  constructor(props: TabsProps) {
+  constructor(props: TabsProps & InjectedOuiaProps) {
     super(props);
     this.state = {
       showLeftScrollButton: false,
       showRightScrollButton: false,
       highlightLeftScrollButton: false,
       highlightRightScrollButton: false
-    }
+    };
   }
 
   static defaultProps = {
@@ -64,7 +66,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     isFilled: false,
     isSecondary: false,
     leftScrollAriaLabel: 'Scroll left',
-    rightScrollAriaLabel: 'Scroll Right',
+    rightScrollAriaLabel: 'Scroll right',
     variant: TabsVariant.div
   };
 
@@ -113,7 +115,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
           (sideOutOfView === SIDE.RIGHT || sideOutOfView === SIDE.BOTH) && showRightScrollButton
       });
     }
-  };
+  }
 
   scrollLeft = () => {
     // find first Element that is fully in view on the left, then scroll to the element before it
@@ -133,7 +135,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
         container.scrollLeft -= lastElementOutOfView.scrollWidth;
       }
     }
-  };
+  }
 
   scrollRight = () => {
     // find last Element that is fully in view on the right, then scroll to the element after it
@@ -152,7 +154,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
         container.scrollLeft += firstElementOutOfView.scrollWidth;
       }
     }
-  };
+  }
 
   componentDidMount() {
     window.addEventListener('resize', this.handleScrollButtons, false);
@@ -176,6 +178,8 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
       rightScrollAriaLabel,
       'aria-label': ariaLabel,
       variant,
+      ouiaContext,
+      ouiaId,
       ...props
     } = this.props;
     const {
@@ -202,17 +206,19 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
             highlightRightScrollButton && styles.modifiers.endCurrent,
             className
           )}
+          {...ouiaContext.isOuia && {
+            'data-ouia-component-type': 'Tabs',
+            'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+          }}
           {...props}
         >
-          {!isSecondary && (
             <button
-              className={css(styles.tabsScrollButton)}
+              className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
               aria-label={leftScrollAriaLabel}
               onClick={this.scrollLeft}
             >
               <AngleLeftIcon />
             </button>
-          )}
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
             {React.Children.map(children, (child: any, index) => (
               <li
@@ -239,15 +245,13 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
               </li>
             ))}
           </ul>
-          {!isSecondary && (
             <button
-              className={css(styles.tabsScrollButton)}
+              className={css(styles.tabsScrollButton, isSecondary && buttonStyles.modifiers.secondary)}
               aria-label={rightScrollAriaLabel}
               onClick={this.scrollRight}
             >
               <AngleRightIcon />
             </button>
-          )}
         </Component>
         {React.Children.map(children, (child: any, index) =>
           !child.props.children ? null : (
@@ -258,3 +262,7 @@ export class Tabs extends React.Component<TabsProps, TabsState> {
     );
   }
 }
+
+const TabsWithOuiaContext = withOuiaContext(Tabs);
+
+export { TabsWithOuiaContext as Tabs };

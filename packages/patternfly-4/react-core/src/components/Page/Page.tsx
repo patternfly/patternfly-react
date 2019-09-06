@@ -7,7 +7,7 @@ import { debounce } from '../../helpers/util';
 export enum PageLayouts {
   vertical = 'vertical',
   horizontal = 'horizontal'
-};
+}
 
 const PageContext = React.createContext({});
 export const PageContextProvider = PageContext.Provider;
@@ -24,11 +24,17 @@ export interface PageProps extends React.HTMLProps<HTMLDivElement> {
   sidebar?: React.ReactNode;
   /** Skip to content component for the page */
   skipToContent?: React.ReactElement;
+  /** an id to use for the [role="main"] element */
+  mainContainerId?: string;
   /**
    * If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
    * the sidebar component or add a callback onNavToggle function into the PageHeader component
    */
   isManagedSidebar?: boolean;
+  /**
+   * If true, the managed sidebar is initially open for desktop view
+   */
+  defaultManagedSidebarIsOpen?: boolean;
   /**
    * Can add callback to be notified when resize occurs, for example to set the sidebar isNav prop to false for a width < 768px
    * Returns object { mobileView: boolean, windowSize: number }
@@ -45,11 +51,6 @@ export interface PageState {
 }
 
 export class Page extends React.Component<PageProps, PageState> {
-  state = {
-    desktopIsNavOpen: true,
-    mobileIsNavOpen: false,
-    mobileView: false
-  };
 
   static defaultProps = {
     breadcrumb: null as React.ReactNode,
@@ -59,8 +60,22 @@ export class Page extends React.Component<PageProps, PageState> {
     sidebar: null as React.ReactNode,
     skipToContent: null as React.ReactElement,
     isManagedSidebar: false,
-    onPageResize: ():void => null
+    defaultManagedSidebarIsOpen: true,
+    onPageResize: (): void => null,
+    mainContainerId: null as string
   };
+
+  constructor(props: PageProps) {
+    super(props);
+
+    const {isManagedSidebar, defaultManagedSidebarIsOpen} = props;
+    const managedSidebarOpen = !isManagedSidebar ? true : defaultManagedSidebarIsOpen;
+    this.state = {
+      desktopIsNavOpen: managedSidebarOpen,
+      mobileIsNavOpen: false,
+      mobileView: false
+    };
+  }
 
   componentDidMount() {
     const { isManagedSidebar, onPageResize } = this.props;
@@ -85,22 +100,22 @@ export class Page extends React.Component<PageProps, PageState> {
     if (onPageResize) {
       onPageResize({ mobileView, windowSize });
     }
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       mobileView
     }));
-  };
+  }
 
   onNavToggleMobile = () => {
     this.setState({
       mobileIsNavOpen: !this.state.mobileIsNavOpen
     });
-  };
+  }
 
   onNavToggleDesktop = () => {
     this.setState({
       desktopIsNavOpen: !this.state.desktopIsNavOpen
     });
-  };
+  }
 
   render() {
     const {
@@ -110,7 +125,9 @@ export class Page extends React.Component<PageProps, PageState> {
       header,
       sidebar,
       skipToContent,
+      mainContainerId,
       isManagedSidebar,
+      defaultManagedSidebarIsOpen,
       onPageResize,
       ...rest
     } = this.props;
@@ -128,9 +145,8 @@ export class Page extends React.Component<PageProps, PageState> {
           {skipToContent}
           {header}
           {sidebar}
-          <main role="main" className={css(styles.pageMain)}>
+          <main role="main" id={mainContainerId} className={css(styles.pageMain)} tabIndex={-1}>
             {breadcrumb && <section className={css(styles.pageMainBreadcrumb)}>{breadcrumb}</section>}
-            {skipToContent && <a id={skipToContent.props.href.replace(/#*/, '')} />}
             {children}
           </main>
         </div>

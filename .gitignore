@@ -26,8 +26,6 @@ lerna-debug.log
 
 # IDE - VSCode
 .vscode
-# For prettier
-!.vscode/settings.json
 # For vim
 *.swp
 

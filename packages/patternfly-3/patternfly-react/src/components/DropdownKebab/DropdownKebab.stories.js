@@ -20,7 +20,7 @@ stories.addDecorator(
 
 stories.add(
   'DropdownKebab',
-  withInfo(`pullRight prop is used to align the dropdown to the right.`)(() => (
+  withInfo('pullRight prop is used to align the dropdown to the right.')(() => (
     <div>
       <Button bsStyle="primary">Some Button</Button> <Button>Another Button</Button>
       <DropdownKebab id="myKebab" pullRight={boolean('Right aligned', false)} title={text('Title', 'Kebab title')}>

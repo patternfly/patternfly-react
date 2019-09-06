@@ -15,6 +15,6 @@ test('ModalBoxHeader Test with H3', () => {
 });
 
 test('ModalBoxHeader Test hideTitle', () => {
-  const view = shallow(<ModalBoxHeader hideTitle={true}>This is a ModalBox header</ModalBoxHeader>);
+  const view = shallow(<ModalBoxHeader hideTitle>This is a ModalBox header</ModalBoxHeader>);
   expect(view).toMatchSnapshot();
 });

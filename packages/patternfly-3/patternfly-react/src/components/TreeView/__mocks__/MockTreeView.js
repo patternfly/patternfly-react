@@ -27,13 +27,13 @@ export class MockTreeView extends React.Component {
         return { ...node, selected: false };
       }
       return node;
-    });
+    })
 
   selectNode = selectedNode => {
     this.setState(prevState => ({
       nodes: this.nodeSelector(prevState.nodes, selectedNode)
     }));
-  };
+  }
 
   render() {
     const { nodes } = this.state;

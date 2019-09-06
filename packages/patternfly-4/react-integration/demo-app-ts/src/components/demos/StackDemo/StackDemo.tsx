@@ -13,6 +13,6 @@ export class StackDemo extends Component {
           <StackItem>content</StackItem>
         </Stack>
       </React.Fragment>
-    )
+    );
   }
 }

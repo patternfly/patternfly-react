@@ -1,6 +1,6 @@
 {
   "name": "patternfly-react",
-  "version": "2.36.3",
+  "version": "2.38.0",
   "private": false,
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
@@ -53,24 +53,18 @@
     "react": "^16.3.1",
     "react-dom": "^15.6.2 || ^16.2.0"
   },
-  "sassIncludes": {
-    "patternfly": "../../../node_modules/patternfly/dist/sass",
-    "bootstrap": "../../../node_modules/bootstrap-sass/assets/stylesheets",
-    "fontAwesome": "../../../node_modules/font-awesome-sass/assets/stylesheets"
-  },
   "scripts": {
     "build": "yarn build:sass && yarn build:less && yarn build:babel",
-    "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm'",
+    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js -q",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm -q",
     "build:less": "shx mkdir -p dist/less && shx cp -r less/* dist/less",
-    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/patternfly-react/* dist/sass && cross-env node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome --importer=build/node-sass-tilde-importer.js -o dist/css sass/patternfly-react.scss && cleancss -o dist/css/patternfly-react.css dist/css/patternfly-react.css",
+    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/patternfly-react/* dist/sass && node-sass --output-style compressed --importer=../node-sass-patternfly-importer.js -o dist/css sass/patternfly-react.scss && cleancss -o dist/css/patternfly-react.css dist/css/patternfly-react.css",
     "clean": "rimraf dist"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^9.0.0",
     "babel-jest": "^23.6.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-export-extensions": "^6.22.0",
@@ -81,6 +75,7 @@
     "babel-preset-react": "^6.24.1",
     "clean-css-cli": "^4.2.1",
     "react-axe": "^3.0.2",
+    "react-diff-view": "^1.8.1",
     "rimraf": "^2.6.2",
     "shx": "^0.3.2"
   }

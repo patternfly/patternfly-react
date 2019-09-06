@@ -1,16 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TopologyView should display an empty topology correctly 1`] = `
-.pf-topology-content {
-  display: flex;
-  background-color: #ededed;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
 <Component
   className="my-test-class"
   id="simple-test-id"
@@ -41,16 +31,6 @@ exports[`TopologyView should display an empty topology correctly 1`] = `
 `;
 
 exports[`TopologyView should display topology correctly 1`] = `
-.pf-topology-content {
-  display: flex;
-  background-color: #ededed;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
 <Component
   className="my-test-class"
   contextToolbar={
@@ -129,16 +109,6 @@ exports[`TopologyView should display topology correctly 1`] = `
 `;
 
 exports[`TopologyView should display topology sidebar correctly 1`] = `
-.pf-topology-content {
-  display: flex;
-  background-color: #ededed;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
 <Component
   className="my-test-class"
   contextToolbar={
@@ -226,16 +196,6 @@ exports[`TopologyView should display topology sidebar correctly 1`] = `
 `;
 
 exports[`TopologyView should display topology w/ open sidebar correctly 1`] = `
-.pf-topology-content {
-  display: flex;
-  background-color: #ededed;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
 <Component
   className="my-test-class"
   contextToolbar={

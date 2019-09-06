@@ -4,14 +4,14 @@ export class TextDemo extends Component {
  myTextProps: TextProps = {
    component: TextVariants.h1,
    children: 'Header text'
- }
+ };
  myTextListProps: TextListProps = {
    component: TextListVariants.ul
- }
+ };
  myTextListItemProps: TextListItemProps = {
    component: TextListItemVariants.li,
    children: 'Text list item'
- }
+ };
 
   componentDidMount() {
     window.scrollTo(0, 0);

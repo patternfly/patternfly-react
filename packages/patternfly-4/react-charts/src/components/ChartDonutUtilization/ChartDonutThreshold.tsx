@@ -9,40 +9,40 @@ import {
   StringOrNumberOrCallback,
   VictoryPie,
   VictoryStyleInterface
-} from "victory";
+} from 'victory';
 import { Data } from 'victory-core';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { ChartContainer } from '../ChartContainer';
 import { ChartDonut, ChartDonutProps } from '../ChartDonut';
-import { ChartCommonStyles, ChartDonutStyles, ChartThemeDefinition } from "../ChartTheme";
+import { ChartCommonStyles, ChartDonutStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getChartOrigin, getDonutThresholdDynamicTheme, getDonutThresholdStaticTheme } from '../ChartUtils';
 
 export enum ChartDonutThresholdDonutOrientation {
   left = 'left',
   right = 'right',
   top = 'top'
-};
+}
 
 export enum ChartDonutThresholdLabelOrientation {
   horizontal = 'horizontal',
   vertical = 'vertical'
-};
+}
 
 export enum ChartDonutThresholdLabelPosition {
   centroid = 'centroid',
   endAngle = 'endAngle',
   startAngle = 'startAngle'
-};
+}
 
 export enum ChartDonutThresholdLegendPosition {
   bottom = 'bottom',
   right = 'right'
-};
+}
 
 export enum ChartDonutThresholdSortOrder {
   ascending = 'ascending',
   descending = 'descending'
-};
+}
 
 export enum ChartDonutThresholdSubTitlePosition {
   bottom = 'bottom',
@@ -66,6 +66,20 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
   animate?: AnimatePropTypeInterface;
+  /**
+   * The ariaDesc prop specifies the description of the chart/SVG to assist with
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the desc prop of containerComponent
+   */
+  ariaDesc?: string;
+  /**
+   * The ariaTitle prop specifies the title to be applied to the SVG to assist
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the title prop of containerComponent
+   */
+  ariaTitle?: string;
   /**
    * The categories prop specifies how categorical data for a chart should be ordered.
    * This prop should be given as an array of string values, or an object with
@@ -129,8 +143,19 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   dataComponent?: React.ReactElement<any>;
   /**
-   * Specifies the height of the donut threshold chart. This value should be given as a
-   * number of pixels.
+   * The desc prop specifies the description of the chart/SVG to assist with
+   * accessibility for screen readers. The more info about the chart provided in
+   * the description, the more usable it will be for people using screen readers.
+   * This prop defaults to an empty string.
+   *
+   * Note: Overridden by containerComponent
+   *
+   * @example "Golden retreivers make up 30%, Labs make up 25%, and other dog breeds are
+   * not represented above 5% each."
+   */
+  desc?: string;
+  /**
+   * Specifies the height of the donut chart. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
@@ -143,12 +168,11 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    * legends within the same SVG. However, donutHeight (not height) may need to be set in order to adjust the donut
    * height.
    *
-   * The innerRadius may also need to be set when changing the donut size.
+   * Note: innerRadius may need to be set when using this property.
    */
   donutHeight?: number;
   /**
-   * Specifies the width of the donut chart. This value should be given as a
-   * number of pixels.
+   * Specifies the width of the donut chart. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
@@ -160,7 +184,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    * By default, donutWidth is the min. of either height or width. This covers most use cases in order to accommodate
    * legends within the same SVG. However, donutWidth (not width) may need to be set in order to adjust the donut width.
    *
-   * The innerRadius may also need to be set when changing the donut size.
+   * Note: innerRadius may need to be set when using this property.
    */
   donutWidth?: number;
   /**
@@ -213,7 +237,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback | string[] | number[]>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback | string[] | number[]>[];
   /**
    * ChartDonutThreshold uses the standard externalEventMutations prop.
    */
@@ -225,8 +249,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   groupComponent?: React.ReactElement<any>;
   /**
-   * Specifies the height the svg viewBox of the chart container. This value should be given as a
-   * number of pixels.
+   * Specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
@@ -234,6 +257,9 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    *
    * Note: When adding a legend, height (the overall SVG height) may need to be larger than donutHeight (the donut size)
    * in order to accommodate the extra legend.
+   *
+   * By default, donutHeight is the min. of either height or width. This covers most use cases in order to accommodate
+   * legends within the same SVG. However, donutHeight (not height) may need to be set in order to adjust the donut height.
    *
    * Typically, the parent container is set to the same height in order to maintain the aspect ratio.
    */
@@ -284,12 +310,13 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
+   *
+   * Note: innerRadius may need to be set when using this property.
    */
   padding?: PaddingProps;
   /**
    * Specifies the radius of the chart. If this property is not provided it is computed
    * from width, height, and padding props
-   *
    */
   radius?: number;
   /**
@@ -345,7 +372,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *
@@ -365,8 +392,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   title?: string;
   /**
-   * Specifies the width of the svg viewBox of the chart container. This value should be given as a
-   * number of pixels.
+   * Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
@@ -374,6 +400,9 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    *
    * Note: When adding a legend, width (the overall SVG width) may need to be larger than donutWidth (the donut size)
    * in order to accommodate the extra legend.
+   *
+   * By default, donutWidth is the min. of either height or width. This covers most use cases in order to accommodate
+   * legends within the same SVG. However, donutWidth (not width) may need to be set in order to adjust the donut width.
    *
    * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
    */
@@ -403,12 +432,12 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
 }
 
 export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdProps> = ({
+  ariaDesc,
+  ariaTitle,
   children,
   data = [],
   invert = false,
   labels = [], // Don't show any tooltip labels by default, let consumer override if needed
-  legendComponent,
-  legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartDonutThresholdLegendPosition,
   standalone = true,
   subTitlePosition = ChartDonutStyles.label.subTitlePosition as ChartDonutThresholdSubTitlePosition,
@@ -422,14 +451,15 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   height = theme.pie.height,
   width = theme.pie.width,
   donutHeight = Math.min(height, width),
-  donutWidth = Math.min(height, width, donutHeight),
+  donutWidth = Math.min(height, width),
   ...rest
 }: ChartDonutThresholdProps) => {
+  const donutSize = Math.min(donutHeight, donutWidth);
 
   // Returns computed data representing pie chart slices
   const getComputedData = () => {
     // Format and sort data. Sorting ensures thresholds are displayed in the correct order and simplifies calculations.
-    const datum = Data.formatData(data, {x, y, ...rest}, ['x', 'y']).sort((a: any,b: any) => a._y - b._y);
+    const datum = Data.formatData(data, {x, y, ...rest}, ['x', 'y']).sort((a: any, b: any) => a._y - b._y);
 
     // Data must be offset so that the sum of all data point y-values (including the final slice) == 100.
     const [prev, computedData] = datum.reduce((acc: [number, any], dataPoint: {_x: number | string, _y: number}) => {
@@ -455,10 +485,10 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
 
   // Returns the horizontal shift for the donut utilization chart
   const getDonutDx = (dynamicTheme: ChartThemeDefinition, legendPosition: string) => {
-    const dynamicWidth = donutWidth - (theme.pie.width - dynamicTheme.pie.width);
+    const dynamicWidth = donutSize - (theme.pie.width - dynamicTheme.pie.width);
     switch (legendPosition) {
       case 'right':
-        return Math.round((donutWidth - dynamicWidth) / 2);
+        return Math.round((donutSize - dynamicWidth) / 2);
       default:
         return 0;
     }
@@ -466,46 +496,51 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
 
   // Returns the vertical shift for the donut utilization chart
   const getDonutDy = (dynamicTheme: ChartThemeDefinition) => {
-    const dynamicHeight = donutHeight - (theme.pie.height - dynamicTheme.pie.height);
-    return Math.round((donutHeight - dynamicHeight) / 2);
-  }
+    const dynamicHeight = donutSize - (theme.pie.height - dynamicTheme.pie.height);
+    return Math.round((donutSize - dynamicHeight) / 2);
+  };
 
   // Returns the horizontal shift for the donut utilization legend
   const getLegendDx = (dynamicTheme: ChartThemeDefinition, position: string) => {
-    const dynamicWidth = donutWidth - (theme.pie.width - dynamicTheme.pie.width);
+    const dynamicWidth = donutSize - (theme.pie.width - dynamicTheme.pie.width);
     switch (position) {
       case 'right':
-        return getDonutDx(dynamicTheme, legendPosition) + Math.round((donutWidth - dynamicWidth) / 2);
+        return getDonutDx(dynamicTheme, legendPosition) + Math.round((donutSize - dynamicWidth) / 2);
       default:
         return 0;
     }
   };
 
-  // Returns the vertical shift for the donut utilization legend and subtitle
-  const getLegendAndSubTitleDy = (dynamicTheme: ChartThemeDefinition, position: string) => {
-    const dynamicWidth = donutWidth - (theme.pie.width - dynamicTheme.pie.width);
+  // Returns the vertical shift for the donut utilization legend
+  const getLegendDy = (dynamicTheme: ChartThemeDefinition, position: string) => {
+    const dynamicWidth = donutSize - (theme.pie.width - dynamicTheme.pie.width);
     switch (position) {
       case 'bottom':
-        return getDonutDy(dynamicTheme) + Math.round((donutWidth - dynamicWidth) / 2);
+        return getDonutDy(dynamicTheme) + Math.round((donutSize - dynamicWidth) / 2);
       default:
         return getDonutDy(dynamicTheme);
     }
-  }
+  };
 
   // Returns the horizontal shift for the donut utilization subtitle
   const getSubTitleDx = (dynamicTheme: ChartThemeDefinition, position: string) => {
-    const dynamicWidth = donutWidth - (theme.pie.width - dynamicTheme.pie.width);
+    const dynamicWidth = donutSize - (theme.pie.width - dynamicTheme.pie.width);
     switch (position) {
       case 'right':
-        return getDonutDx(dynamicTheme, legendPosition) + Math.round((donutWidth - dynamicWidth) / 2);
+        return getDonutDx(dynamicTheme, legendPosition) + Math.round((donutSize - dynamicWidth) / 2);
       default:
-        return Math.round((donutWidth - dynamicWidth) / 2);
+        return Math.round((donutSize - dynamicWidth) / 2);
     }
+  };
+
+  // Returns the vertical shift for the donut utilization subtitle
+  const getSubTitleDy = (dynamicTheme: ChartThemeDefinition, position: string) => {
+    return getLegendDy(dynamicTheme, position);
   };
 
   // Render dynamic utilization donut cart
   const renderChildren = () =>
-    React.Children.toArray(children).map(child => {
+    React.Children.toArray(children).map((child) => {
       if (child.props) {
         const { data: childData, ...childProps } = child.props;
         const datum = Data.formatData([childData], childProps, ['x', 'y']); // Format child data independently of this component's props
@@ -514,22 +549,24 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
             childProps.themeVariant || themeVariant);
         const legendPos = childProps.legendPosition || legendPosition;
         const subTitlePos = childProps.subTitlePosition || subTitlePosition;
+        const donutSizeDiff = theme.pie.height - dynamicTheme.pie.height; // static - dynamic chart heights
+        const childDountSize = donutSize > donutSizeDiff ? donutSize - donutSizeDiff : 0; // not visible < 50px
         return React.cloneElement(child, {
           data: childData,
           donutDx: getDonutDx(dynamicTheme, legendPos),
           donutDy: getDonutDy(dynamicTheme),
-          donutHeight: donutHeight - (theme.pie.height - dynamicTheme.pie.height),
-          donutWidth: donutWidth - (theme.pie.width - dynamicTheme.pie.width),
+          donutHeight: childDountSize,
+          donutWidth: childDountSize,
           endAngle: 360 * (datum[0]._y ? datum[0]._y / 100 : 0),
           height,
           invert,
           legendDx: getLegendDx(dynamicTheme, legendPos),
-          legendDy: getLegendAndSubTitleDy(dynamicTheme, legendPos),
+          legendDy: getLegendDy(dynamicTheme, legendPos),
           legendPosition: legendPos,
           showStatic: false,
           standalone: false,
           subTitleDx: getSubTitleDx(dynamicTheme, subTitlePos),
-          subTitleDy: getLegendAndSubTitleDy(dynamicTheme, subTitlePos),
+          subTitleDy: getSubTitleDy(dynamicTheme, subTitlePos),
           subTitlePosition: subTitlePos,
           theme: dynamicTheme,
           width,
@@ -543,23 +580,23 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   const chart = (
     <ChartDonut
       data={getComputedData()}
-      height={donutHeight}
+      height={donutSize}
       labels={labels}
       origin={getChartOrigin({
-        chartHeight: donutHeight,
-        chartWidth: donutWidth,
+        chartHeight: donutSize,
+        chartWidth: donutSize,
         legendPosition,
         svgWidth: width
       })}
       standalone={false}
       theme={theme}
-      width={donutWidth}
+      width={donutSize}
       {...rest}
     />
   );
 
   return standalone ? (
-    <ChartContainer width={width} height={height}>
+    <ChartContainer desc={ariaDesc} height={height} title={ariaTitle} width={width}>
       {chart}
       {renderChildren()}
     </ChartContainer>

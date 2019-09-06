@@ -10,13 +10,14 @@ export enum AlertVariant {
   success = 'success',
   danger = 'danger',
   warning = 'warning',
-  info = 'info'
+  info = 'info',
+  default = 'default'
 }
 
 export interface AlertProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'action' | 'title'> {
   /** Adds Alert variant styles  */
-  variant?: 'success' | 'danger' | 'warning' | 'info';
+  variant?: 'success' | 'danger' | 'warning' | 'info' | 'default';
   /** Flag to indicate if the Alert is inline */
   isInline?: boolean;
   /** Title of the Alert  */
@@ -28,10 +29,10 @@ export interface AlertProps
   /** Additional classes added to the Alert  */
   className?: string;
   /** Adds accessible text to the Alert */
-  'aria-label'?: string,
+  'aria-label'?: string;
   /** Variant label text for screen readers */
   variantLabel?: string;
-};
+}
 
 export const Alert: React.FunctionComponent<AlertProps> = ({
   variant = AlertVariant.info,
@@ -51,7 +52,7 @@ export const Alert: React.FunctionComponent<AlertProps> = ({
     </React.Fragment>
   );
 
-  const customClassName = css(styles.alert, isInline && styles.modifiers.inline, getModifier(styles, variant, styles.modifiers.info), className);
+  const customClassName = css(styles.alert, isInline && styles.modifiers.inline, (variant !== AlertVariant.default ) && getModifier(styles, variant, styles.modifiers.info), className);
 
   return (
     <div {...props} className={customClassName} aria-label={ariaLabel}>

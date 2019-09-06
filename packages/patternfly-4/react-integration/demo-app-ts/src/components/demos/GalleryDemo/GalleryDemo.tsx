@@ -12,6 +12,6 @@ export class GalleryDemo extends React.Component {
         <GalleryItem>Gallery Item</GalleryItem>
         <GalleryItem>Gallery Item</GalleryItem>
       </Gallery>
-    )
+    );
   }
 }

@@ -16,6 +16,8 @@ import { ChartDonut } from '@patternfly/react-charts';
 <div>
   <div className="donut-chart">
     <ChartDonut
+      ariaDesc="Average number of pets"
+      ariaTitle="Donut chart example"
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       labels={datum => `${datum.x}: ${datum.y}%`}
       subTitle="Pets"
@@ -25,7 +27,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 </div>
 ```
 
-## Donut chart with right-aligned legend
+## Donut chart with right aligned legend
 ```js
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
@@ -33,6 +35,8 @@ import { ChartDonut } from '@patternfly/react-charts';
 <div>
   <div className="donut-chart-legend-right">
     <ChartDonut
+      ariaDesc="Average number of pets"
+      ariaTitle="Donut chart example"
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       labels={datum => `${datum.x}: ${datum.y}%`}
       legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
@@ -46,7 +50,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 </div>
 ```
 
-## Multi-color donut chart with right-aligned legend
+## Multi-color (ordered) donut chart with right aligned legend
 ```js
 import React from 'react';
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
@@ -54,6 +58,8 @@ import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/reac
 <div>
   <div className="donut-chart-legend-right">
     <ChartDonut
+      ariaDesc="Average number of pets"
+      ariaTitle="Donut chart example"
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       labels={datum => `${datum.x}: ${datum.y}%`}
       legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
@@ -61,7 +67,7 @@ import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/reac
       legendPosition="right"
       subTitle="Pets"
       title="100"
-      themeColor={ChartThemeColor.multi}
+      themeColor={ChartThemeColor.multiOrdered}
       themeVariant={ChartThemeVariant.light}
       width={350}
     />
@@ -69,7 +75,7 @@ import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/reac
 </div>
 ```
 
-## Donut chart with bottom-aligned legend
+## Donut chart with bottom aligned legend
 ```js
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
@@ -77,6 +83,8 @@ import { ChartDonut } from '@patternfly/react-charts';
 <div>
   <div className="donut-chart-legend-bottom">
     <ChartDonut
+      ariaDesc="Average number of pets"
+      ariaTitle="Donut chart example"
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       donutHeight={230}
       donutOrientation="top"
@@ -101,6 +109,8 @@ import { ChartDonut } from '@patternfly/react-charts';
 <div>
   <div className="donut-chart-sm">
     <ChartDonut
+      ariaDesc="Average number of pets"
+      ariaTitle="Donut chart example"
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       height={150}
       labels={datum => `${datum.x}: ${datum.y}%`}
@@ -112,7 +122,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 </div>
 ```
 
-## Small donut chart with right-aligned legend
+## Small donut chart with right aligned legend
 ```js
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
@@ -120,6 +130,8 @@ import { ChartDonut } from '@patternfly/react-charts';
 <div>
   <div className="donut-chart-legend-right-sm">
     <ChartDonut
+      ariaDesc="Average number of pets"
+      ariaTitle="Donut chart example"
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       height={150}
       labels={datum => `${datum.x}: ${datum.y}%`}
@@ -134,7 +146,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 </div>
 ```
 
-## Small donut chart with right-aligned legend and bottom-aligned subtitle
+## Small donut chart with right aligned legend and bottom aligned subtitle
 ```js
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
@@ -142,6 +154,8 @@ import { ChartDonut } from '@patternfly/react-charts';
 <div>
   <div className="donut-chart-legend-right-subtitle-bottom-sm">
     <ChartDonut
+      ariaDesc="Average number of pets"
+      ariaTitle="Donut chart example"
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       donutHeight={150}
       height={175}
@@ -158,7 +172,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 </div>
 ```
 
-## Small donut chart with bottom-aligned legend and right-aligned subtitle
+## Small donut chart with bottom aligned legend and right aligned subtitle
 ```js
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
@@ -166,6 +180,8 @@ import { ChartDonut } from '@patternfly/react-charts';
 <div>
   <div className="donut-chart-legend-bottom-subtitle-right-sm">
     <ChartDonut
+      ariaDesc="Average number of pets"
+      ariaTitle="Donut chart example"
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       donutHeight={150}
       height={200}

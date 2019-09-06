@@ -3,6 +3,114 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.20.2](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.20.1...patternfly-react-extensions@2.20.2) (2019-09-06)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## [2.20.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.20.0...patternfly-react-extensions@2.20.1) (2019-08-30)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+# [2.20.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.12...patternfly-react-extensions@2.20.0) (2019-08-27)
+
+
+### Features
+
+* **catalog-tile:** custom icon jsx for react-extensions CatalogTile ([#2771](https://github.com/patternfly/patternfly-react/issues/2771)) ([694cd04](https://github.com/patternfly/patternfly-react/commit/694cd04))
+
+
+
+
+
+## [2.19.12](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.11...patternfly-react-extensions@2.19.12) (2019-08-26)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## [2.19.11](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.10...patternfly-react-extensions@2.19.11) (2019-08-26)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## [2.19.10](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.9...patternfly-react-extensions@2.19.10) (2019-08-19)
+
+
+### Bug Fixes
+
+* **CatalogTile:** Add iconAlt property to use for alt text for icon image in a CatalogTile ([#2715](https://github.com/patternfly/patternfly-react/issues/2715)) ([0853b59](https://github.com/patternfly/patternfly-react/commit/0853b59)), closes [#2714](https://github.com/patternfly/patternfly-react/issues/2714)
+
+
+
+
+
+## [2.19.9](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.8...patternfly-react-extensions@2.19.9) (2019-08-12)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## [2.19.8](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.7...patternfly-react-extensions@2.19.8) (2019-08-05)
+
+
+### Bug Fixes
+
+* **react-virtualized:** move react-virtualized to peerDependency ([#2643](https://github.com/patternfly/patternfly-react/issues/2643)) ([8c3c3ed](https://github.com/patternfly/patternfly-react/commit/8c3c3ed))
+
+
+
+
+
+## [2.19.7](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.6...patternfly-react-extensions@2.19.7) (2019-07-24)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## [2.19.6](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.5...patternfly-react-extensions@2.19.6) (2019-07-09)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## [2.19.5](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.4...patternfly-react-extensions@2.19.5) (2019-07-09)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## [2.19.4](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.3...patternfly-react-extensions@2.19.4) (2019-07-08)
+
+
+### Bug Fixes
+
+* **build:** make pf3/pf4 build on windows ([#2471](https://github.com/patternfly/patternfly-react/issues/2471)) ([5bbc4a2](https://github.com/patternfly/patternfly-react/commit/5bbc4a2))
+
+
+
+
+
 ## [2.19.3](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.19.2...patternfly-react-extensions@2.19.3) (2019-07-01)
 
 **Note:** Version bump only for package patternfly-react-extensions

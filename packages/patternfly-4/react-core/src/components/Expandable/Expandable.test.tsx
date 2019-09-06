@@ -23,3 +23,8 @@ test('Expandable onToggle called', () => {
     .simulate('click');
   expect(mockfn.mock.calls).toHaveLength(1);
 });
+
+test('Renders Uncontrolled Expandable', () => {
+  const view = shallow(<Expandable toggleText="Show More"> test </Expandable>);
+  expect(view).toMatchSnapshot();
+});

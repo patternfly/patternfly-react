@@ -2,7 +2,7 @@
 
 exports[`EmptyState Main 1`] = `
 <div
-  className="pf-c-empty-state styles.modifiers.lg"
+  className="pf-c-empty-state pf-m-lg"
 >
   <Component
     headingLevel="h5"
@@ -43,7 +43,7 @@ exports[`EmptyState Main variant regular 1`] = `
 
 exports[`EmptyState Main variant small 1`] = `
 <div
-  className="pf-c-empty-state styles.modifiers.sm"
+  className="pf-c-empty-state pf-m-sm"
 >
   <Component
     size="md"

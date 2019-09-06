@@ -14,22 +14,20 @@ import {
 import { getDonutTheme } from '../ChartUtils/chart-theme';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
-import { ChartLegendPosition } from "../ChartLegend";
-import { ChartPie, ChartPieProps } from '../ChartPie';
+import { ChartPie, ChartPieLegendPosition, ChartPieProps } from '../ChartPie';
 import { ChartCommonStyles, ChartDonutStyles, ChartThemeDefinition } from '../ChartTheme';
-import { ChartTooltip } from '../ChartTooltip';
-import { getLabelX, getLabelY } from "../ChartUtils";
+import { getLabelX, getLabelY } from '../ChartUtils';
 
 export enum ChartDonutLabelPosition {
   centroid = 'centroid',
   endAngle = 'endAngle',
   startAngle = 'startAngle'
-};
+}
 
 export enum ChartDonutSortOrder {
   ascending = 'ascending',
   descending = 'descending'
-};
+}
 
 export enum ChartDonutSubTitlePosition {
   bottom = 'bottom',
@@ -53,6 +51,20 @@ export interface ChartDonutProps extends ChartPieProps {
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
   animate?: AnimatePropTypeInterface;
+  /**
+   * The ariaDesc prop specifies the description of the chart/SVG to assist with
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the desc prop of containerComponent
+   */
+  ariaDesc?: string;
+  /**
+   * The ariaTitle prop specifies the title to be applied to the SVG to assist
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the title prop of containerComponent
+   */
+  ariaTitle?: string;
   /**
    * The capHeight prop defines a text metric for the font being used: the expected height of capital letters.
    * This is necessary because of SVG, which (a) positions the *bottom* of the text at `y`, and (b) has no notion of
@@ -117,8 +129,15 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   dataComponent?: React.ReactElement<any>;
   /**
-   * Specifies the height of the donut chart. This value should be given as a
-   * number of pixels.
+   * Defines a horizontal shift from the x coordinate. It should not be set manually.
+   */
+  donutDx?: number;
+  /**
+   * Defines a vertical shift from the y coordinate. It should not be set manually.
+   */
+  donutDy?: number;
+  /**
+   * Specifies the height of the donut chart. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
@@ -131,20 +150,11 @@ export interface ChartDonutProps extends ChartPieProps {
    * legends within the same SVG. However, donutHeight (not height) may need to be set in order to adjust the donut
    * height.
    *
-   * The innerRadius may also need to be set when changing the donut size.
+   * Note: innerRadius may need to be set when using this property.
    */
   donutHeight?: number;
   /**
-   * Defines a horizontal shift from the x coordinate. It should not be set manually.
-   */
-  donutDx?: number;
-  /**
-   * Defines a vertical shift from the y coordinate. It should not be set manually.
-   */
-  donutDy?: number;
-  /**
-   * Specifies the width of the donut chart. This value should be given as a
-   * number of pixels.
+   * Specifies the width of the donut chart. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
@@ -156,7 +166,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * By default, donutWidth is the min. of either height or width. This covers most use cases in order to accommodate
    * legends within the same SVG. However, donutWidth (not width) may need to be set in order to adjust the donut width.
    *
-   * The innerRadius may also need to be set when changing the donut size.
+   * Note: innerRadius may need to be set when using this property.
    */
   donutWidth?: number;
   /**
@@ -209,7 +219,7 @@ export interface ChartDonutProps extends ChartPieProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback | string[] | number[]>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback | string[] | number[]>[];
   /**
    * ChartDonut uses the standard externalEventMutations prop.
    */
@@ -228,7 +238,13 @@ export interface ChartDonutProps extends ChartPieProps {
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
    *
-   * Note: innerRadius may need to be set when using this property.
+   * Note: When adding a legend, height (the overall SVG height) may need to be larger than donutHeight (the donut size)
+   * in order to accommodate the extra legend.
+   *
+   * By default, donutHeight is the min. of either height or width. This covers most use cases in order to accommodate
+   * legends within the same SVG. However, donutHeight (not height) may need to be set in order to adjust the donut height.
+   *
+   * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
    */
   height?: number;
   /**
@@ -275,16 +291,19 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   legendComponent?: React.ReactElement<any>;
   /**
-   * The data prop specifies the data to be plotted,
-   * where data X-value is the slice label (string or number),
-   * and Y-value is the corresponding number value represented by the slice
-   * Data should be in the form of an array of data points.
-   * Each data point may be any format you wish (depending on the `x` and `y` accessor props),
-   * but by default, an object with x and y properties is expected.
+   * Specify data via the data prop. ChartLegend expects data as an
+   * array of objects with name (required), symbol, and labels properties.
+   * The data prop must be given as an array.
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  legendData?: any[];
+  legendData?: {
+    name?: string;
+    symbol?: {
+      fill?: string;
+      type?: string;
+    };
+  }[];
   /**
    * Defines a horizontal shift from the x coordinate. It should not be set manually.
    */
@@ -326,12 +345,13 @@ export interface ChartDonutProps extends ChartPieProps {
    * the edge of the chart and any rendered child components. This prop can be given
    * as a number or as an object with padding specified for top, bottom, left
    * and right.
+   *
+   * Note: innerRadius may need to be set when using this property.
    */
   padding?: PaddingProps;
   /**
    * Specifies the radius of the chart. If this property is not provided it is computed
    * from width, height, and padding props
-   *
    */
   radius?: number;
   /**
@@ -397,7 +417,7 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *
@@ -423,14 +443,19 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   titleComponent?: React.ReactElement<any>;
   /**
-   * Specifies the width of the svg viewBox of the chart container. This value should be given as a
-   * number of pixels.
+   * Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels.
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
    * pixels will depend on the size of the container the chart is rendered into.
    *
-   * Note: innerRadius may need to be set when using this property.
+   * Note: When adding a legend, width (the overall SVG width) may need to be larger than donutWidth (the donut size)
+   * in order to accommodate the extra legend.
+   *
+   * By default, donutWidth is the min. of either height or width. This covers most use cases in order to accommodate
+   * legends within the same SVG. However, donutWidth (not width) may need to be set in order to adjust the donut width.
+   *
+   * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
    */
   width?: number;
   /**
@@ -458,9 +483,11 @@ export interface ChartDonutProps extends ChartPieProps {
 }
 
 export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
+  ariaDesc,
+  ariaTitle,
   donutDx = 0,
   donutDy = 0,
-  legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
+  legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
   standalone = true,
   subTitle,
   subTitleComponent = <ChartLabel />,
@@ -474,36 +501,36 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
 
   // destructure last
   theme = getDonutTheme(themeColor, themeVariant),
-
   capHeight = 1.1,
   height = theme.pie.height,
   width = theme.pie.width,
   donutHeight = Math.min(height, width),
-  donutWidth = Math.min(height, width, donutHeight),
+  donutWidth = Math.min(height, width),
   innerRadius = (Math.min(donutHeight, donutWidth) - 34) / 2,
   ...rest
 }: ChartDonutProps) => {
+  const donutSize = Math.min(donutHeight, donutWidth);
 
   // Returns subtitle
   const getSubTitle = () => {
     if (!subTitle || subTitlePosition === ChartDonutSubTitlePosition.center) {
       return null;
     }
-    const subTitleProps = titleComponent.props ? titleComponent.props : {};
-    return React.cloneElement(titleComponent, {
+    const subTitleProps = subTitleComponent.props ? subTitleComponent.props : {};
+    return React.cloneElement(subTitleComponent, {
       style: ChartDonutStyles.label.subTitle,
       text: subTitle,
       textAnchor: subTitlePosition === 'right' ? 'start' : 'middle',
       verticalAnchor: 'middle',
       x: getLabelX({
-        chartWidth: donutWidth,
+        chartWidth: donutSize,
         dx: subTitleDx,
         labelPosition: subTitlePosition,
         legendPosition,
         svgWidth: width
       }),
       y: getLabelY({
-        chartHeight: donutHeight,
+        chartHeight: donutSize,
         dy: subTitleDy,
         labelPosition: subTitlePosition
       }),
@@ -525,14 +552,14 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       textAnchor: 'middle',
       verticalAnchor: 'middle',
       x: getLabelX({
-        chartWidth: donutWidth,
+        chartWidth: donutSize,
         dx: donutDx,
         labelPosition: 'center',
         legendPosition,
         svgWidth: width
       }),
       y: getLabelY({
-        chartHeight: donutHeight,
+        chartHeight: donutSize,
         dy: donutDy,
         labelPosition: 'center'
       }),
@@ -544,12 +571,11 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     <ChartPie
       height={height}
       innerRadius={innerRadius > 0 ? innerRadius : 0}
-      labelComponent={<ChartTooltip theme={theme} />}
       legendPosition={legendPosition}
       pieDx={donutDx}
       pieDy={donutDy}
-      pieHeight={donutHeight}
-      pieWidth={donutWidth}
+      pieHeight={donutSize}
+      pieWidth={donutSize}
       standalone={false}
       theme={theme}
       width={width}
@@ -558,7 +584,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   );
 
   return standalone ? (
-    <ChartContainer height={height} width={width}>
+    <ChartContainer desc={ariaDesc} height={height} title={ariaTitle} width={width}>
       {chart}
       {getTitle()}
       {getSubTitle()}

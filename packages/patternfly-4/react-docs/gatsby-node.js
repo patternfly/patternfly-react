@@ -69,7 +69,8 @@ exports.createPages = ({ graphql, actions }) => {
             title: node.frontmatter.title,
             typescript: node.frontmatter.typescript, // For a badge
             fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
-            propComponents: node.frontmatter.propComponents || [] // Helps us get the docgenned props
+            propComponents: node.frontmatter.propComponents || [], // Helps us get the docgenned props
+            pathRegex: node.frontmatter.section === 'experimental' ? '/.*/experimental/.*/' : '/^((?!experimental).)*$/' // Since experimental components have same class names
           }
         });
       }
@@ -86,6 +87,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '@patternfly-safe/react-core': '@patternfly/react-core',
         '@patternfly-safe/react-icons': '@patternfly/react-icons',
         '@patternfly-safe/react-tokens': '@patternfly/react-tokens',
+        '@patternfly-safe/react-styles': '@patternfly/react-styles',
         // Resolve imports in .mdx files to local dist folders
         '@patternfly/react-charts': path.resolve(__dirname, '../react-charts'),
         '@patternfly/react-core': path.resolve(__dirname, '../react-core'),

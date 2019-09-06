@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { Tooltip } from './Tooltip';
-import Tippy from '@tippy.js/react';
 
 test('tooltip renders', () => {
   const view = shallow(
@@ -19,11 +18,22 @@ test('tooltip renders', () => {
   expect(view).toMatchSnapshot();
 });
 
-test('tooltip triggered by click', () => {
+test('tooltip passes along values to tippy.js', () => {
   const view = shallow(
-    <Tooltip position="top" trigger="click" content={<p>my content</p>}>
-      <div>Toggle tooltip</div>
+    <Tooltip
+      position="top"
+      content={
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+        </div>
+      }
+      tippyProps={{
+        duration: [200, 200],
+        offset: 20
+      }}
+    >
+      <div>Tippy Props Test</div>
     </Tooltip>
   );
-  expect(view.find(Tippy).prop('trigger')).toBe('click');
+  expect(view).toMatchSnapshot();
 });

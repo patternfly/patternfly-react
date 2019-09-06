@@ -16,6 +16,8 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 <div>
   <div className="donut-utilization-chart">
     <ChartDonutUtilization
+      ariaDesc="Storage capacity"
+      ariaTitle="Donut utilization chart example"
       data={{ x: 'GBps capacity', y: 75 }}
       labels={datum => datum.x ? `${datum.x}: ${datum.y}%` : null}
       subTitle="of 100 GBps"
@@ -25,7 +27,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 </div>
 ```
 
-## Simple donut utilization chart with right-aligned legend
+## Simple donut utilization chart with right aligned legend
 ```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
@@ -60,6 +62,8 @@ class UtilizationChart extends React.Component {
       <div>
         <div className="donut-utilization-chart-legend-right">
           <ChartDonutUtilization
+            ariaDesc="Storage capacity"
+            ariaTitle="Donut utilization chart example"
             data={{ x: 'GBps capacity', y: used }}
             labels={datum => datum.x ? `${datum.x}: ${datum.y}%` : null}
             legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
@@ -76,7 +80,7 @@ class UtilizationChart extends React.Component {
 }
 ```
 
-## Simple, inverted donut utilization chart with right-aligned legend
+## Simple, inverted donut utilization chart with right aligned legend
 ```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
@@ -111,6 +115,8 @@ class UtilizationChart extends React.Component {
       <div>
         <div className="donut-utilization-chart-legend-right">
           <ChartDonutUtilization
+            ariaDesc="Storage capacity"
+            ariaTitle="Donut utilization chart example"
             data={{ x: 'GBps capacity', y: used }}
             invert
             labels={datum => datum.x ? `${datum.x}: ${datum.y}%` : null}
@@ -128,7 +134,7 @@ class UtilizationChart extends React.Component {
 }
 ```
 
-## Simple, green donut utilization chart with right-aligned legend
+## Simple, green donut utilization chart with right aligned, vertical legend
 ```js
 import React from 'react';
 import { ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
@@ -163,6 +169,8 @@ class UtilizationChart extends React.Component {
       <div>
         <div className="donut-utilization-chart-legend-bottom-vert">
           <ChartDonutUtilization
+            ariaDesc="Storage capacity"
+            ariaTitle="Donut utilization chart example"
             data={{ x: 'Storage capacity', y: used }}
             donutHeight={230}
             height={300}
@@ -184,7 +192,7 @@ class UtilizationChart extends React.Component {
 }
 ```
 
-## Simple donut utilization chart with bottom-aligned legend
+## Simple donut utilization chart with bottom aligned legend
 ```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
@@ -192,6 +200,8 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 <div>
   <div className="donut-utilization-chart-legend-bottom-horz">
     <ChartDonutUtilization
+      ariaDesc="Storage capacity"
+      ariaTitle="Donut utilization chart example"
       data={{ x: 'Storage capacity', y: 45 }}
       donutHeight={230}
       height={275}
@@ -215,6 +225,8 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 <div>
   <div className="donut-threshold-chart">
     <ChartDonutThreshold
+      ariaDesc="Storage capacity"
+      ariaTitle="Donut utilization chart with static threshold example"
       data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
       labels={datum => datum.x ? datum.x : null}
     >
@@ -229,7 +241,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 </div>
 ```
 
-## Donut utilization chart with static thresholds and right-aligned legend
+## Donut utilization chart with static thresholds and right aligned legend
 ```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
@@ -259,6 +271,8 @@ class ThresholdChart extends React.Component {
       <div>
         <div className="donut-threshold-chart-legend-right">
           <ChartDonutThreshold
+            ariaDesc="Storage capacity"
+            ariaTitle="Donut utilization chart with static threshold example"
             data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
             labels={datum => datum.x ? datum.x : null}
             width={500}
@@ -280,7 +294,7 @@ class ThresholdChart extends React.Component {
 }
 ```
 
-## Donut utilization chart with inverted static thresholds and right-aligned legend
+## Donut utilization chart with inverted static thresholds and right aligned legend
 ```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
@@ -315,6 +329,8 @@ class ThresholdChart extends React.Component {
       <div>
         <div className="donut-threshold-chart-legend-right">
           <ChartDonutThreshold
+            ariaDesc="Storage capacity"
+            ariaTitle="Donut utilization chart with static threshold example"
             data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 20%', y: 20 }]}
             invert
             labels={datum => datum.x ? datum.x : null}
@@ -337,7 +353,7 @@ class ThresholdChart extends React.Component {
 }
 ```
 
-## Green donut utilization chart with static thresholds and right-aligned (custom) legend
+## Green donut utilization chart with static thresholds and right aligned (custom) legend
 ```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
@@ -367,6 +383,8 @@ class ThresholdChart extends React.Component {
       <div>
         <div className="donut-threshold-chart-legend-bottom-vert">
           <ChartDonutThreshold
+            ariaDesc="Storage capacity"
+            ariaTitle="Donut utilization chart with static threshold example"
             data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
             height={350}
             labels={datum => datum.x ? datum.x : null}
@@ -392,7 +410,7 @@ class ThresholdChart extends React.Component {
 }
 ```
 
-## Donut utilization chart with static thresholds and bottom-aligned legend
+## Donut utilization chart with static thresholds and bottom aligned legend
 ```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
@@ -400,6 +418,8 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 <div>
   <div className="donut-threshold-chart-legend-bottom-horz">
     <ChartDonutThreshold
+      ariaDesc="Storage capacity"
+      ariaTitle="Donut utilization chart with static threshold example"
       data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
       donutHeight={230}
       height={275}
@@ -427,6 +447,8 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 <div>
   <div className="donut-utilization-chart-sm">
     <ChartDonutUtilization
+      ariaDesc="Storage capacity"
+      ariaTitle="Donut utilization chart example"
       data={{ x: 'Storage capacity', y: 75 }}
       height={150}
       labels={datum => datum.x ? `${datum.x}: ${datum.y}%` : null}
@@ -438,7 +460,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 </div>
 ```
 
-## Small donut utilization chart with right-aligned legend
+## Small donut utilization chart with right aligned legend
 ```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
@@ -473,6 +495,8 @@ class UtilizationChart extends React.Component {
       <div>
         <div className="donut-utilization-chart-legend-right-sm">
           <ChartDonutUtilization
+            ariaDesc="Storage capacity"
+            ariaTitle="Donut utilization chart example"
             data={{ x: 'Storage capacity', y: used }}
             height={150}
             labels={datum => datum.x ? `${datum.x}: ${datum.y}%` : null}
@@ -490,7 +514,7 @@ class UtilizationChart extends React.Component {
 }
 ```
 
-## Small donut utilization chart with right-aligned legend and bottom-aligned subtitle
+## Small donut utilization chart with right aligned legend and bottom aligned subtitle
 ```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
@@ -498,6 +522,8 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 <div>
   <div className="donut-utilization-chart-legend-right-subtitle-bottom-sm">
     <ChartDonutUtilization
+      ariaDesc="Storage capacity"
+      ariaTitle="Donut utilization chart example"
       data={{ x: 'Storage capacity', y: 45 }}
       donutHeight={150}
       height={175}
@@ -514,7 +540,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 </div>
 ```
 
-## Small donut utilization chart with bottom-aligned legend and right-aligned subtitle
+## Small donut utilization chart with bottom aligned legend and right aligned subtitle
 ```js
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
@@ -522,6 +548,8 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 <div>
   <div className="donut-utilization-chart-legend-bottom-subtitle-right-sm">
     <ChartDonutUtilization
+      ariaDesc="Storage capacity"
+      ariaTitle="Donut utilization chart example"
       data={{ x: 'Storage capacity', y: 45 }}
       donutHeight={150}
       height={200}
@@ -546,6 +574,8 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 <div>
   <div className="donut-threshold-chart-sm">
     <ChartDonutThreshold
+      ariaDesc="Storage capacity"
+      ariaTitle="Donut utilization chart with static threshold example"
       data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
       height={175}
       labels={datum => datum.x ? datum.x : null}
@@ -562,7 +592,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 </div>
 ```
 
-## Small donut utilization chart with static thresholds and right-aligned legend
+## Small donut utilization chart with static thresholds and right aligned legend
 ```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
@@ -592,6 +622,8 @@ class ThresholdChart extends React.Component {
       <div>
         <div className="donut-threshold-chart-legend-right-sm">
           <ChartDonutThreshold
+            ariaDesc="Storage capacity"
+            ariaTitle="Donut utilization chart with static threshold example"
             data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
             height={175}
             labels={datum => datum.x ? datum.x : null}
@@ -614,7 +646,7 @@ class ThresholdChart extends React.Component {
 }
 ```
 
-## Small donut utilization chart with static thresholds with right-aligned legend and bottom-aligned subtitle
+## Small donut utilization chart with static thresholds with right aligned legend and bottom aligned subtitle
 ```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
@@ -622,6 +654,8 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 <div>
   <div className="donut-threshold-chart-legend-right-subtitle-bottom-sm">
     <ChartDonutThreshold
+      ariaDesc="Storage capacity"
+      ariaTitle="Donut utilization chart with static threshold example"
       data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
       donutHeight={175}
       height={200}
@@ -643,7 +677,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 </div>
 ```
 
-## Small donut utilization chart with static thresholds with bottom-aligned legend and right-aligned subtitle
+## Small donut utilization chart with static thresholds with bottom aligned legend and right aligned subtitle
 ```js
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
@@ -651,6 +685,8 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 <div>
   <div className="donut-threshold-chart-legend-bottom-subtitle-right-sm">
     <ChartDonutThreshold
+      ariaDesc="Storage capacity"
+      ariaTitle="Donut utilization chart with static threshold example"
       data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
       donutHeight={175}
       height={225}

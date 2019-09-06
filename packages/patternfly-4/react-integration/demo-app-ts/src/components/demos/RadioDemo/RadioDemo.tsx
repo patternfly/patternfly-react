@@ -15,36 +15,36 @@ export class RadioDemo extends Component {
   label: 'Controlled radio 1',
   name: 'controlled',
   value: '3'
- }
+ };
  myCheckedControlledRadioProps: RadioProps = {
   id: 'radio-2',
   label: 'Controlled radio 2',
   name: 'controlled',
   value: '4'
- }
+ };
  myFirstUncontrolledRadioProps: RadioProps = {
   id: 'radio-3',
   label: 'Uncontrolled radio 1',
   name: 'uncontrolled'
- }
+ };
  mySecondUncontrolledRadioProps: RadioProps = {
   id: 'radio-4',
   label: 'Uncontrolled radio 2',
   name: 'uncontrolled'
- }
+ };
  myCheckedDisabledRadioProps: RadioProps = {
   id: 'radio-5',
   defaultChecked: true,
   label: 'Disabled checked radio example',
   isDisabled: true,
   name: 'disabled-1'
- }
+ };
  myUncheckedDisabledRadioProps: RadioProps = {
   id: 'radio-6',
   label: 'Disabled unchecked radio example',
   isDisabled: true,
   name: 'disabled-2'
- }
+ };
 
  componentDidMount() {
   window.scrollTo(0, 0);
