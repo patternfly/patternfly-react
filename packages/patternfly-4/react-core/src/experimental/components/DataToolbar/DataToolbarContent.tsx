@@ -21,9 +21,13 @@ export const DataToolbarContent: React.FunctionComponent<DataToolbarContentProps
   }: DataToolbarContentProps) => {
 
   return (
-    <div className={css(styles.dataToolbarContent,
-      formatBreakpointMods(breakpointMods),
-      className)} {...props}>
+    <div
+      className={
+        css(styles.dataToolbarContent,
+          formatBreakpointMods(breakpointMods),
+          className)}
+      {...props}
+    >
       {children}
     </div>
   );

@@ -1,23 +1,27 @@
 import { getModifier } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import * as React from 'react';
+import { RefObject } from 'react';
 
 interface DataToolbarContextProps {
   isExpanded: boolean;
-  updateExpandableContent: (expandableContentItems: React.ReactNode) => void;
+  toggleIsExpanded: () => void;
+  expandableContentRef: RefObject<HTMLDivElement>;
+  expandableContentId: string;
 }
 
 export const DataToolbarContext = React.createContext<Partial<DataToolbarContextProps>>({});
 
 export type DataToolbarBreakpointMod = {
-  /** TODO */
+  /** The attribute to modify  */
   modifier: 'hidden' | 'visible' | 'align-right' | 'align-left';
-  /** TODO */
+  /** The breakpoint at which to apply the modifier */
   breakpoint: 'md' | 'lg' | 'xl' | '2xl';
-}
+};
 
-export const formatBreakpointMods = (breakpointMods:DataToolbarBreakpointMod[]) => {
-  let formattedBreakpointMods = "";
+export const formatBreakpointMods = (breakpointMods: DataToolbarBreakpointMod[]) => {
+
+  let formattedBreakpointMods = '';
   for (const breakpointMod of breakpointMods) {
     formattedBreakpointMods += `${getModifier(styles, `${breakpointMod.modifier}-on-${breakpointMod.breakpoint}`)} `;
   }
@@ -25,33 +29,35 @@ export const formatBreakpointMods = (breakpointMods:DataToolbarBreakpointMod[]) 
 };
 
 export type DataToolbarSpacer = {
-  /** TODO */
+  /** The size of the spacer */
   spacerSize: 'none' | 'sm' | 'md' | 'lg';
-  /** TODO */
+  /** The breakpoint at which to apply the spacer */
   breakpoint?: 'md' | 'lg' | 'xl';
-}
+};
 
-export const formatItemSpacers = (spacers:DataToolbarSpacer[]) => {
-  let formattedSpacers = "";
+export const formatItemSpacers = (spacers: DataToolbarSpacer[]) => {
+
+  let formattedSpacers = '';
   for (const spacer of spacers) {
-    formattedSpacers += "pf-m-spacer-" + spacer.spacerSize;
+    formattedSpacers += 'pf-m-spacer-' + spacer.spacerSize;
     if (spacer.breakpoint) {
-      formattedSpacers += "-on-" + spacer.breakpoint + " ";
+      formattedSpacers += '-on-' + spacer.breakpoint + ' ';
     } else {
-      formattedSpacers += " ";
+      formattedSpacers += ' ';
     }
   }
   return formattedSpacers;
 };
 
-export const formatGroupSpacers = (spacers:DataToolbarSpacer[]) => {
-  let formattedSpacers = "";
+export const formatGroupSpacers = (spacers: DataToolbarSpacer[]) => {
+
+  let formattedSpacers = '';
   for (const spacer of spacers) {
-    formattedSpacers += "pf-m-space-items-" + spacer.spacerSize;
+    formattedSpacers += 'pf-m-space-items-' + spacer.spacerSize;
     if (spacer.breakpoint) {
-      formattedSpacers += "-on-" + spacer.breakpoint + " ";
+      formattedSpacers += '-on-' + spacer.breakpoint + ' ';
     } else {
-      formattedSpacers += " ";
+      formattedSpacers += ' ';
     }
   }
   return formattedSpacers;

@@ -2,7 +2,12 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { css, getModifier } from '@patternfly/react-styles';
 
-import { DataToolbarBreakpointMod, DataToolbarSpacer, formatBreakpointMods, formatItemSpacers } from './DataToolbarUtils';
+import {
+  DataToolbarBreakpointMod,
+  DataToolbarSpacer,
+  formatBreakpointMods,
+  formatItemSpacers
+} from './DataToolbarUtils';
 
 export enum DataToolbarItemMod {
   separator = 'separator',
@@ -16,7 +21,7 @@ export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the Data toolbar item */
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of item */
-  mod?: DataToolbarItemMod;
+  mod?: DataToolbarItemMod | 'separator' | 'bulk-select' | 'overflow-menu' | 'pagination' | 'search-filter';
   /** An array of objects representing the various modifiers to apply to the Data toolbar item at various breakpoints */
   breakpointMods?: DataToolbarBreakpointMod[];
   /** An array of objects representing the various spacers to apply to the Data toolbar item at various breakpoints */
@@ -35,12 +40,15 @@ export const DataToolbarItem: React.FunctionComponent<DataToolbarItemProps> = ({
   }: DataToolbarItemProps) => {
 
   return (
-    <div className={css(styles.dataToolbarItem,
-      mod && getModifier(styles, mod),
-      formatBreakpointMods(breakpointMods),
-      formatItemSpacers(spacers),
-      className)}
-         {...props}>
+    <div
+      className={css(
+        styles.dataToolbarItem,
+        mod && getModifier(styles, mod),
+        formatBreakpointMods(breakpointMods),
+        formatItemSpacers(spacers),
+        className)}
+      {...props}
+    >
       {children}
     </div>
   );
