@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.101.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.100.0...@patternfly/react-core@3.101.0) (2019-09-06)
+
+
+### Features
+
+* **accordion:** add content and toggle container props ([#2713](https://github.com/patternfly/patternfly-react/issues/2713)) ([2c50a68](https://github.com/patternfly/patternfly-react/commit/2c50a68))
+* **Select:** add creatable and new features ([#2820](https://github.com/patternfly/patternfly-react/issues/2820)) ([f16e0f3](https://github.com/patternfly/patternfly-react/commit/f16e0f3))
+* **tab:** support JSX elements in Tab title ([#2681](https://github.com/patternfly/patternfly-react/issues/2681)) ([e6d04fd](https://github.com/patternfly/patternfly-react/commit/e6d04fd))
+
+
+
+
+
 # [3.100.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.99.4...@patternfly/react-core@3.100.0) (2019-09-06)
 
 
