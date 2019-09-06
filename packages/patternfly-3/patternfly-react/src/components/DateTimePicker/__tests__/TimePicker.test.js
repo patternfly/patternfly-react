@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import TimePicker from './TimePicker';
+import TimePicker from '../TimePicker';
 
 test('TimePicker is working properly', () => {
   const component = shallow(<TimePicker value="2/2/2 5:22:31 PM" />);
