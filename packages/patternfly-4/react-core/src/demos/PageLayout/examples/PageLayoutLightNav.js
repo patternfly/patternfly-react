@@ -37,7 +37,7 @@ import { BellIcon, CogIcon } from '@patternfly/react-icons';
 import imgBrand from './imgBrand.png';
 import imgAvatar from './imgAvatar.svg';
 
-class PageLayoutSimpleNav extends React.Component {
+class PageLayoutLightNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -81,7 +81,7 @@ class PageLayoutSimpleNav extends React.Component {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav">
         <NavList variant={NavVariants.simple}>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
@@ -166,7 +166,7 @@ class PageLayoutSimpleNav extends React.Component {
         showNavToggle
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
+    const Sidebar = <PageSidebar nav={PageNav} />;
     const pageId = 'main-content-page-layout-simple-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 
@@ -205,4 +205,4 @@ class PageLayoutSimpleNav extends React.Component {
   }
 }
 
-export default PageLayoutSimpleNav;
+export default PageLayoutLightNav;

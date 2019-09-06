@@ -3,6 +3,7 @@ title: 'Nav'
 cssPrefix: 'pf-c-nav'
 typescript: true
 propComponents: ['Nav', 'NavList', 'NavGroup', 'NavItem', 'NavItemSeparator', 'NavExpandable']
+optIn: "In a future breaking-change release, the nav will default to the dark theme. You can opt-in and update to use the nav dark theme now by setting the theme prop to 'dark'"
 ---
 
 ## Simple nav
@@ -17,6 +18,7 @@ import {
   NavVariants,
   PageHeader
 } from '@patternfly/react-core';
+import './nav.scss';
 
 ```js
 import React from 'react';
@@ -46,7 +48,7 @@ class NavSimpleList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} id="nav-primary-simple">
+      <Nav onSelect={this.onSelect} id="nav-primary-simple" theme="dark">
         <NavList id="nav-list-simple" variant={NavVariants.simple}>
           <NavItem id="simple-link1" preventDefault to="#simple-link1" itemId={0} isActive={activeItem === 0}>
             Link 1
@@ -97,7 +99,7 @@ class NavGroupedList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect}>
+      <Nav onSelect={this.onSelect} theme="dark">
         <NavGroup title="Section title 1">
           <NavItem preventDefault to="#grouped-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
             Link 1
@@ -155,7 +157,7 @@ class NavDefaultList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect}>
+      <Nav onSelect={this.onSelect} theme="dark">
         <NavList>
           <NavItem id="default-link1" to="#default-link1" itemId={0} isActive={activeItem === 0}>
             Link 1
@@ -215,7 +217,7 @@ class NavExpandableList extends React.Component {
   render() {
     const { activeGroup, activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} onToggle={this.onToggle}>
+      <Nav onSelect={this.onSelect} onToggle={this.onToggle} theme="dark">
         <NavList>
           <NavExpandable title="Link 1" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
             <NavItem
@@ -311,7 +313,7 @@ class NavExpandableTitlesList extends React.Component {
   render() {
     const { activeGroup, activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect}>
+      <Nav onSelect={this.onSelect} theme="dark">
         <NavList>
           <NavExpandable title="Link 1" srText="SR Link" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
             <NavItem
@@ -409,7 +411,7 @@ class NavMixedList extends React.Component {
   render() {
     const { activeGroup, activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect}>
+      <Nav onSelect={this.onSelect} theme="dark">
         <NavList>
           <NavItem preventDefault to="#mixed-1" itemId="itm-1" isActive={activeItem === 'itm-1'}>
             Link 1 (not expandable)

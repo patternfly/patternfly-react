@@ -40,6 +40,22 @@ test('Default Nav List', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('Dark Nav List', () => {
+  const view = mount(
+    <Nav className="test=nav-class" theme="dark">
+      <NavList className="test-nav-list-class">
+        {props.items.map((item) => (
+          <NavItem to={item.to} key={item.to} className="test-nav-item-class">
+            {item.label}
+          </NavItem>
+        ))}
+      </NavList>
+    </Nav>,
+    { context }
+  );
+  expect(view).toMatchSnapshot();
+});
+
 test('Default Nav List - Trigger item active update', () => {
   window.location.hash = '#link2';
   const view = mount(

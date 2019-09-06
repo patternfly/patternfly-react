@@ -44,7 +44,7 @@ class VerticalPage extends React.Component {
         onNavToggle={this.onNavToggle}
       />
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} theme="dark" />;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -119,7 +119,7 @@ class VerticalPage extends React.Component {
         onNavToggle={this.onNavToggle}
       />
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} theme="dark" />;
 
     return (
       <Page header={Header} sidebar={Sidebar}>
@@ -168,7 +168,7 @@ class FillPage extends React.Component {
         onNavToggle={this.onNavToggle}
       />
     );
-    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} theme="dark" />;
 
     return (
       <Page header={Header} sidebar={Sidebar}>

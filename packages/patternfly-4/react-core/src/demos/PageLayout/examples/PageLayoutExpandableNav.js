@@ -85,7 +85,7 @@ class PageLayoutExpandableNav extends React.Component {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem, activeGroup } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
         <NavList>
           <NavExpandable title="System Panel" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
             <NavItem groupId="grp-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
@@ -192,7 +192,7 @@ class PageLayoutExpandableNav extends React.Component {
         showNavToggle
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} />;
+    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
     const PageBreadcrumb = (
       <Breadcrumb>
         <BreadcrumbItem>Section Home</BreadcrumbItem>
