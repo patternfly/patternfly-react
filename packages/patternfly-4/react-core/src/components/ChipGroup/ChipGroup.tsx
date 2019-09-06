@@ -43,7 +43,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
     collapsedText: '${remaining} more',
     withToolbar: false, 
     defaultIsOpen: false,
-    numChips: 1
+    numChips: 3
   }
 
   toggleCollapse = () => {
@@ -88,8 +88,8 @@ interface InnerChipGroupProps extends ChipGroupProps {
 
 const InnerChipGroup = (props: InnerChipGroupProps) => {
   const { children, expandedText, isOpen, onToggleCollapse, collapsedText, withToolbar, numChips } = props;
-
-  const collapsedTextResult = fillTemplate(collapsedText as string, { remaining: React.Children.count(children) - 1 });
+  
+  const collapsedTextResult = fillTemplate(collapsedText as string, { remaining: React.Children.count(children) - numChips });
   const mappedChildren = React.Children.map(children, (c) => {
     const child = c as React.ReactElement<any>;
     if (withToolbar) {
