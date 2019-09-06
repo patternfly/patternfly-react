@@ -15,7 +15,6 @@ import { ModalBoxHeader } from './ModalBoxHeader';
 import { ModalBoxCloseButton } from './ModalBoxCloseButton';
 import { ModalBox } from './ModalBox';
 import { ModalBoxFooter } from './ModalBoxFooter';
-import { Bullseye } from '../../layouts/Bullseye';
 
 export interface ModalContentProps {
   /** Content rendered inside the Modal. */
@@ -102,16 +101,9 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   );
   return (
     <Backdrop>
-      {disableFocusTrap ? (
-        <Bullseye>
-          {modalBox}
-        </Bullseye>
-      ) 
-      : (
-        <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
-          {modalBox}
-        </FocusTrap>
-      )}
+      <FocusTrap active={!disableFocusTrap} focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
+        {modalBox}
+      </FocusTrap>
     </Backdrop>
   );
 };
