@@ -87,7 +87,7 @@ export class CheckboxSelectOption extends React.Component<CheckboxSelectOptionPr
                 }
               }}
               ref={this.ref}
-              checked={isChecked || false}
+              defaultChecked={isChecked || false}
               disabled={isDisabled}
             />
             <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{children || value}</span>

@@ -38,8 +38,8 @@ exports[`no label switch is checked 1`] = `
         <input
           aria-label=""
           aria-labelledby="no-label-switch-is-checked-on"
-          checked={true}
           className="pf-c-switch__input"
+          defaultChecked={true}
           disabled={false}
           id="no-label-switch-is-checked"
           onChange={[Function]}
@@ -120,8 +120,8 @@ exports[`no label switch is not checked 1`] = `
         <input
           aria-label=""
           aria-labelledby="no-label-switch-is-not-checked-on"
-          checked={false}
           className="pf-c-switch__input"
+          defaultChecked={false}
           disabled={false}
           id="no-label-switch-is-not-checked"
           onChange={[Function]}
@@ -206,8 +206,8 @@ exports[`switch is checked 1`] = `
         <input
           aria-label=""
           aria-labelledby="switch-is-checked-on"
-          checked={true}
           className="pf-c-switch__input"
+          defaultChecked={true}
           disabled={false}
           id="switch-is-checked"
           onChange={[Function]}
@@ -276,8 +276,8 @@ exports[`switch is checked and disabled 1`] = `
         <input
           aria-label=""
           aria-labelledby="switch-is-checked-and-disabled-on"
-          checked={true}
           className="pf-c-switch__input"
+          defaultChecked={true}
           disabled={true}
           id="switch-is-checked-and-disabled"
           onChange={[Function]}
@@ -362,8 +362,8 @@ exports[`switch is not checked 1`] = `
         <input
           aria-label=""
           aria-labelledby="switch-is-not-checked-on"
-          checked={false}
           className="pf-c-switch__input"
+          defaultChecked={false}
           disabled={false}
           id="switch-is-not-checked"
           onChange={[Function]}
@@ -432,8 +432,8 @@ exports[`switch is not checked and disabled 1`] = `
         <input
           aria-label=""
           aria-labelledby="switch-is-not-checked-and-disabled-on"
-          checked={false}
           className="pf-c-switch__input"
+          defaultChecked={false}
           disabled={true}
           id="switch-is-not-checked-and-disabled"
           onChange={[Function]}
