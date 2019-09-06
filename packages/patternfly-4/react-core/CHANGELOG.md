@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.102.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.101.0...@patternfly/react-core@3.102.0) (2019-09-06)
+
+
+### Features
+
+* **Page, Nav:** add dark theme modifier flag ([#2856](https://github.com/patternfly/patternfly-react/issues/2856)) ([9c5f336](https://github.com/patternfly/patternfly-react/commit/9c5f336))
+
+
+
+
+
 # [3.101.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.100.0...@patternfly/react-core@3.101.0) (2019-09-06)
 
 
