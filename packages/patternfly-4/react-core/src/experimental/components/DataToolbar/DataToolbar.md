@@ -8,7 +8,7 @@ section: 'experimental'
 
 import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup } from '@patternfly/react-core/dist/esm/experimental';
 import { Alert, Button, InputGroup, TextInput, Select, SelectOption } from '@patternfly/react-core';
-import { EditIcon, CloneIcon, SyncIcon, SearchIcon } from '@patternfly/react-icons'
+import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
 <Alert variant="danger" title="Warning">
   Please don't use this component, it's only an example of what an experimental component could be
@@ -263,7 +263,7 @@ class DataToolbarGroupTypes extends React.Component {
 ## Data toolbar toggle groups
 ```js
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarGroup, DataToolbarToggleGroup } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup } from '@patternfly/react-core/dist/esm/experimental';
 import { Button, InputGroup, Select, SelectOption } from '@patternfly/react-core';
 import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
