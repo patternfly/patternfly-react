@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.99.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.99.3...@patternfly/react-core@3.99.4) (2019-09-06)
+
+
+### Bug Fixes
+
+* **ClipboardCopy:** Update if children change ([#2849](https://github.com/patternfly/patternfly-react/issues/2849)) ([b5252f6](https://github.com/patternfly/patternfly-react/commit/b5252f6))
+* **switch:** use defaultChecked instead of checked ([#2749](https://github.com/patternfly/patternfly-react/issues/2749)) ([42f7720](https://github.com/patternfly/patternfly-react/commit/42f7720))
+
+
+
+
+
 ## [3.99.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.99.2...@patternfly/react-core@3.99.3) (2019-09-06)
 
 **Note:** Version bump only for package @patternfly/react-core
