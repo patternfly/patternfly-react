@@ -30,7 +30,7 @@ exports[`Wizard should match snapshot 1`] = `
                 "goToStepById": [Function],
                 "goToStepByName": [Function],
                 "onBack": [Function],
-                "onClose": undefined,
+                "onClose": [Function],
                 "onNext": [Function],
               }
             }
@@ -46,6 +46,7 @@ exports[`Wizard should match snapshot 1`] = `
                 ariaLabelCloseButton="Close"
                 description="Description here"
                 descriptionId="pf-wizard-description-0"
+                onClose={[Function]}
                 title="Wizard title"
                 titleId="pf-wizard-title-0"
               />
@@ -127,6 +128,7 @@ exports[`Wizard should match snapshot 1`] = `
                   isValid={true}
                   nextButtonText="Next"
                   onBack={[Function]}
+                  onClose={[Function]}
                   onNext={[Function]}
                 />
               </Unknown>
