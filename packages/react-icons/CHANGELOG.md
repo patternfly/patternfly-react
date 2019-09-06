@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.13.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.12.4...@patternfly/react-icons@3.13.0) (2019-09-06)
+
+
+### Features
+
+* **Icons:** Add Azure and openstack icons ([#2827](https://github.com/patternfly/patternfly-react/issues/2827)) ([f722824](https://github.com/patternfly/patternfly-react/commit/f722824))
+
+
+
+
+
 ## [3.12.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.12.3...@patternfly/react-icons@3.12.4) (2019-09-05)
 
 **Note:** Version bump only for package @patternfly/react-icons
