@@ -106,48 +106,31 @@ export interface IDecorator extends React.HTMLProps<HTMLElement> {
   children?: React.ReactNode;
 }
 
-export interface ICell {
-  title?: string;
-  transforms?: (( 
-    label?: IFormatterValueType,
+export type ITransforms = ((
+  label?: IFormatterValueType,
+  rowData?: IRowData,
+  columnIndex?: number,
+  column?: IColumn,
+  property?: string,
+  rowIndex?: number,
+  rowKey?: RowKeyType ) => { className: string; 'aria-sort': string; children: React.ReactNode; })[];
+
+export type IFormatters = ((
+    data?: IFormatterValueType,
     rowData?: IRowData,
     columnIndex?: number,
     column?: IColumn,
     property?: string,
     rowIndex?: number,
-    rowKey?: RowKeyType ) => { className: string; 'aria-sort': string; children: React.ReactNode; })[];
-  cellTransforms?: (( 
-    label?: IFormatterValueType,
-    rowData?: IRowData, 
-    columnIndex?: number, 
-    column?: IColumn, 
-    property?: string, 
-    rowIndex?: number, 
-    rowKey?: RowKeyType ) => { className: string; 'aria-sort': string; children: React.ReactNode; })[];
-  columnTransforms?: (( 
-    label?: IFormatterValueType,
-    rowData?: IRowData, 
-    columnIndex?: number, 
-    column?: IColumn, 
-    property?: string, 
-    rowIndex?: number, 
-    rowKey?: RowKeyType ) => { className: string; 'aria-sort': string; children: React.ReactNode; })[];
-  formatters?: (( 
-    data?: IFormatterValueType,
-    rowData?: IRowData,
-    columnIndex?: number, 
-    column?: IColumn, 
-    property?: string, 
-    rowIndex?: number, 
     rowKey?: RowKeyType ) => formatterValueType)[];
-  cellFormatters?: (( 
-    data?: IFormatterValueType,
-    rowData?: IRowData, 
-    columnIndex?: number, 
-    column?: IColumn, 
-    property?: string, 
-    rowIndex?: number, 
-    rowKey?: RowKeyType ) => formatterValueType)[];
+
+export interface ICell {
+  title?: string;
+  transforms?: ITransforms;
+  cellTransforms?: ITransforms;
+  columnTransforms?: ITransforms;
+  formatters?: IFormatters;
+  cellFormatters?: IFormatters;
   props?: any;
   data?: any;
   header?: any;
