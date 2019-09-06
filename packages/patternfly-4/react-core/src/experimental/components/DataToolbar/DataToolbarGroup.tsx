@@ -20,9 +20,9 @@ export interface DataToolbarGroupProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of group */
   mod?: DataToolbarGroupMod | 'filter-group' | 'icon-button-group' | 'button-group';
-  /** An array of objects representing the various modifiers to apply to the Data toolbar group at various breakpoints */
+  /** Array of objects representing the various modifiers to apply to the Data toolbar group at various breakpoints */
   breakpointMods?: DataToolbarBreakpointMod[];
-  /** An array of objects representing the various spacers to apply to the Data toolbar group at various breakpoints */
+  /** Array of objects representing the various spacers to apply to the Data toolbar group at various breakpoints */
   spacers?: DataToolbarSpacer[];
   /** Content to be rendered inside the Data toolbar group */
   children?: React.ReactNode;
@@ -38,17 +38,17 @@ export const DataToolbarGroup: React.FunctionComponent<DataToolbarGroupProps> = 
  }: DataToolbarGroupProps) => {
 
   return (
-    <div className={css(styles.dataToolbarGroup,
-      mod && getModifier(styles, mod),
-      formatBreakpointMods(breakpointMods),
-      formatGroupSpacers(spacers),
-      className)}
-         {...props}>
+    <div
+      className={css(
+        styles.dataToolbarGroup,
+        mod && getModifier(styles, mod),
+        formatBreakpointMods(breakpointMods),
+        formatGroupSpacers(spacers),
+        className)}
+      {...props}
+    >
       {children}
     </div>
   );
 
 };
-
-
-

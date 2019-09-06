@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { css, getModifier } from '@patternfly/react-styles';
 import { DataToolbarGroupProps } from './DataToolbarGroup';
@@ -17,13 +18,9 @@ export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
   toggleIcon: React.ReactNode;
   /** The breakpoint at which the toggle group is collapsed down */
   breakpoint: 'md' | 'lg' | 'xl' | '2xl';
-  /** The generated id of the expandable content TODO */
-  expandableContentId?: string;
 }
 
-export interface DataToolbarToggleGroupState {}
-
-export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGroupProps, DataToolbarToggleGroupState> {
+export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGroupProps> {
 
   static defaultProps = {
     breakpointMods: [] as DataToolbarBreakpointMod[],
@@ -31,33 +28,40 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
   };
 
   render() {
-    const { mod, breakpointMods, spacers, className, toggleIcon, children, expandableContentId, ...props } = this.props;
+    const { toggleIcon, breakpoint, mod, breakpointMods, spacers, className, children, ...props } = this.props;
 
     return (
       <DataToolbarContext.Consumer>
-        {({isExpanded, updateExpandableContent}) => {
+        {({ isExpanded, toggleIsExpanded, expandableContentRef, expandableContentId}) => {
           return (
-            <div className={css(styles.dataToolbarGroup,
-              mod && getModifier(styles, mod),
-              formatBreakpointMods(breakpointMods),
-              formatGroupSpacers(spacers),
-              getModifier(styles, 'toggle-group'),
-              className)}
-                 {...props}>
+            <div
+              className={css(
+                styles.dataToolbarGroup,
+                mod && getModifier(styles, mod),
+                formatBreakpointMods(breakpointMods),
+                formatGroupSpacers(spacers),
+                getModifier(styles, 'toggle-group'),
+                getModifier(styles, `reveal-on-${breakpoint}`),
+                className)}
+              {...props}
+            >
               <div className={css(styles.dataToolbarToggle)}>
                 <Button
                   variant="plain"
-                  onClick={() => updateExpandableContent(children)}
-                  aria-expanded={isExpanded}
-                  aria-controls={expandableContentId}>
+                  onClick={() => toggleIsExpanded()}
+                  {...isExpanded && { 'aria-expanded': true }}
+                  // TODO aria-haspopup when isExpanded = true && viewport is smaller than lg global breakpoint
+                  aria-controls={expandableContentId}
+                >
                   {toggleIcon}
                 </Button>
               </div>
-              {children}
+              { isExpanded ? ReactDOM.createPortal(children, expandableContentRef.current): children }
             </div>
           );
+
         }}
       </DataToolbarContext.Consumer>
     );
-  };
+  }
 }

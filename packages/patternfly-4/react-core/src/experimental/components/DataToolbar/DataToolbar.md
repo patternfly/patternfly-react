@@ -2,12 +2,13 @@
 title: 'DataToolbar'
 cssPrefix: 'pf-c-data-toolbar'
 typescript: true
-propComponents: ['DataToolbar']
+propComponents: ['DataToolbar', 'DataToolbarContent', 'DataToolbarItem', 'DataToolbarGroup', 'DataToolbarToggleGroup', 'DataToolbarBreakpointMod', 'DataToolbarSpacer']
 section: 'experimental'
 ---
 
 import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup } from '@patternfly/react-core/dist/esm/experimental';
-import { Alert, Button, InputGroup, TextInput, SearchIcon, Select, SelectOption, EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-core';
+import { Alert, Button, InputGroup, TextInput, Select, SelectOption } from '@patternfly/react-core';
+import { EditIcon, CloneIcon, SyncIcon, SearchIcon } from '@patternfly/react-icons'
 
 <Alert variant="danger" title="Warning">
   Please don't use this component, it's only an example of what an experimental component could be
@@ -98,25 +99,29 @@ class DataToolbarSpacers extends React.Component {
 ```js
 import React from 'react';
 import { DataToolbar, DataToolbarContent, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core/dist/esm/experimental';
-import { Button, Select, SelectOption, EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-core';
+import { Button, Select, SelectOption } from '@patternfly/react-core';
+import { EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
 
 class DataToolbarGroupTypes extends React.Component {
   constructor(props) {
     super(props);
     
     this.firstOptions = [
+      { value: 'Filter 1', disabled: false, isPlaceholder: true },
       { value: 'A', disabled: false },
       { value: 'B', disabled: false },
       { value: 'C', disabled: false },
     ];
     
     this.secondOptions = [
+      { value: 'Filter 2', disabled: false, isPlaceholder: true },
       { value: '1', disabled: false },
       { value: '2', disabled: false },
       { value: '3', disabled: false },
     ];
     
     this.thirdOptions = [
+      { value: 'Filter 3', disabled: false, isPlaceholder: true },
       { value: 'I', disabled: false },
       { value: 'II', disabled: false },
       { value: 'III', disabled: false },
@@ -139,9 +144,9 @@ class DataToolbarGroupTypes extends React.Component {
     
     this.onFirstSelect = (event, selection) => {
       this.setState({
-          firstSelected: selection,
-          firstIsExpanded: false
-        });
+        firstSelected: selection,
+        firstIsExpanded: false
+      });
     };
     
     this.onSecondToggle = isExpanded => {
@@ -152,9 +157,9 @@ class DataToolbarGroupTypes extends React.Component {
     
     this.onSecondSelect = (event, selection) => {
       this.setState({
-          secondSelected: selection,
-          secondIsExpanded: false
-        });
+        secondSelected: selection,
+        secondIsExpanded: false
+      });
     };
     
     this.onThirdToggle = isExpanded => {
@@ -165,10 +170,11 @@ class DataToolbarGroupTypes extends React.Component {
     
     this.onThirdSelect = (event, selection) => {
       this.setState({
-          thirdSelected: selection,
-          thirdIsExpanded: false
-        });
+        thirdSelected: selection,
+        thirdIsExpanded: false
+      });
     };
+    
   }
   
   render() {
@@ -257,32 +263,134 @@ class DataToolbarGroupTypes extends React.Component {
 ## Data toolbar toggle groups
 ```js
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
-import { Button, InputGroup, TextInput, SearchIcon, FilterIcon } from '@patternfly/react-core';
+import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarGroup, DataToolbarToggleGroup } from '@patternfly/react-core/dist/esm/experimental';
+import { Button, InputGroup, Select, SelectOption } from '@patternfly/react-core';
+import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
-class DataToolbarToggleGroup extends React.Component {
+class DataToolbarToggleGroupExample extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      inputValue: "",
+      firstIsExpanded: false,
+      firstSelected: null,
+      secondIsExpanded: false,
+      secondSelected: null
+    };
+    
+    this.firstOptions = [
+      { value: 'Status', disabled: false, isPlaceholder: true },
+      { value: 'New', disabled: false },
+      { value: 'Pending', disabled: false },
+      { value: 'Running', disabled: false },
+      { value: 'Cancelled', disabled: false },
+    ];
+    
+    this.secondOptions = [
+      { value: 'Risk', disabled: false, isPlaceholder: true },
+      { value: 'Low', disabled: false },
+      { value: 'Medium', disabled: false },
+      { value: 'High', disabled: false },
+    ];
+    
+    this.onInputChange = (newValue) => {
+         this.setState({inputValue: newValue});
+        };
+    
+    this.onFirstToggle = isExpanded => {
+      this.setState({
+        firstIsExpanded: isExpanded
+      });
+    };
+    
+    this.onFirstSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearFirstSelection();
+      this.setState({
+        firstSelected: selection,
+        firstIsExpanded: false
+      });
+    };
+    
+    this.clearFirstSelection = () => {
+      this.setState({
+        firstSelected: null,
+        firstIsExpanded: false
+      });
+    };
+    
+    this.onSecondToggle = isExpanded => {
+      this.setState({
+        secondIsExpanded: isExpanded
+      });
+    };
+    
+    this.onSecondSelect = (event, selection, isPlaceholder) => {
+      if (isPlaceholder) this.clearSecondSelection();
+      this.setState({
+        secondSelected: selection,
+        secondIsExpanded: false
+      });
+    };
+    
+    this.clearSecondSelection = () => {
+      this.setState({
+        secondSelected: null,
+        secondIsExpanded: false
+      });
+    };
   }
   
   render() {
-    const toggleIcon = <FilterIcon />;
+    const { inputValue, firstIsExpanded, firstSelected, secondIsExpanded, secondSelected } = this.state;
+
     const toggleGroupItems = <React.Fragment>
       <DataToolbarItem>
         <InputGroup>
-          <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" />
+          <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
           <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
       </DataToolbarItem>
-      <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
-      <DataToolbarItem mod="separator" />
-      <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
+      <DataToolbarItem spacers={[{spacerSize: 'none'}]}>
+        <Select
+          variant={SelectVariant.single}
+          aria-label="Select Input"
+          onToggle={this.onFirstToggle}
+          onSelect={this.onFirstSelect}
+          selections={firstSelected}
+          isExpanded={firstIsExpanded}
+        >
+          {this.firstOptions.map((option, index) => (
+             <SelectOption
+               isDisabled={option.disabled}
+               key={index}
+               value={option.value}
+             />
+          ))}
+        </Select>
+      </DataToolbarItem>
+      <DataToolbarItem>
+        <Select
+          variant={SelectVariant.single}
+          aria-label="Select Input"
+          onToggle={this.onSecondToggle}
+          onSelect={this.onSecondSelect}
+          selections={secondSelected}
+          isExpanded={secondIsExpanded}
+        >
+          {this.secondOptions.map((option, index) => (
+            <SelectOption
+               isDisabled={option.disabled}
+               key={index}
+               value={option.value}
+             />
+           ))}
+        </Select>
+      </DataToolbarItem>
     </React.Fragment>;
     
-    //const items =  <DataToolbarToggleGroup toggleIcon={toggleIcon} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
-    const items =  <DataToolbarGroup>{toggleGroupItems}</DataToolbarGroup>;
+    const items =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
     
     return <DataToolbar id="data-toolbar-toggle-groups"><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
   }

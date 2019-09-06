@@ -16,11 +16,10 @@ export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
 export interface DataToolbarState {
   /** Flag indicating the if the expandable content is expanded */
   isExpanded: boolean;
-  /** TODO */
-  expandableContentItems: React.ReactNode;
 }
 
 export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarState> {
+  private expandableContentRef = React.createRef<HTMLDivElement>();
 
   static defaultProps = {
 
@@ -31,30 +30,51 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
 
     this.state = {
       isExpanded: false,
-      expandableContentItems: undefined
-    }
+    };
   }
 
-  updateExpandableContent = (expandableContentItems: React.ReactNode) => {
+  toggleIsExpanded = () => {
     this.setState((prevState) => ({
-      isExpanded: !prevState.isExpanded,
-      expandableContentItems: expandableContentItems,
+      isExpanded: !prevState.isExpanded
     }));
-  };
+  }
+
+  closeExpandableContent = () => {
+    this.setState(() => ({
+      isExpanded: false
+    }));
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.closeExpandableContent);
+  }
 
   render() {
 
     const { className, children, id, ...props} = this.props;
-    const { isExpanded, expandableContentItems } = this.state;
+    const { isExpanded } = this.state;
+
+    const expandableContentId = `${id}-expandable-content`;
 
     return (
       <div className={css(styles.dataToolbar, className)} id={id} {...props}>
-        <DataToolbarContext.Provider value={{isExpanded: isExpanded, updateExpandableContent: this.updateExpandableContent}}>
+        <DataToolbarContext.Provider
+          value={{
+            isExpanded,
+            toggleIsExpanded: this.toggleIsExpanded,
+            expandableContentRef: this.expandableContentRef,
+            expandableContentId
+          }}
+        >
           {children}
         </DataToolbarContext.Provider>
-        <DataToolbarExpandableContent isExpanded={isExpanded}>{expandableContentItems}</DataToolbarExpandableContent>
+        <DataToolbarExpandableContent
+          id={expandableContentId}
+          isExpanded={isExpanded}
+          expandableContentRef={this.expandableContentRef}
+        />
       </div>
     );
   }
 
-};
+}
