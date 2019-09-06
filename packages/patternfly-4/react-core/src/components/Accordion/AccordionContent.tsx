@@ -16,6 +16,8 @@ export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
   isFixed?: boolean;
   /** Adds accessible text to the Accordion content */
   'aria-label'?: string;
+  /** Component to use as content container */
+  component?: React.ElementType;
 }
 
 export const AccordionContent: React.FunctionComponent<AccordionContentProps> = ({
@@ -25,13 +27,14 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
   isHidden = false,
   isFixed = false,
   'aria-label': ariaLabel = '',
+  component,
   ...props
 }: AccordionContentProps) => (
   <AccordionContext.Consumer>
-    {({ asDefinitionList }) => {
-      const AccordionContentContainer = asDefinitionList ? 'dd' : 'div';
+    {({ ContentContainer }) => {
+      const Container = component || ContentContainer;
       return (
-        <AccordionContentContainer
+        <Container
           id={id}
           className={css(
             styles.accordionExpandedContent,
@@ -44,7 +47,7 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
           {...props}
         >
           <div className={css(styles.accordionExpandedContentBody)}>{children}</div>
-        </AccordionContentContainer>
+        </Container>
       );
     }}
   </AccordionContext.Consumer>
