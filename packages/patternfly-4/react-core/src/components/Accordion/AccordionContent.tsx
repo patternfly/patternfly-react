@@ -16,7 +16,7 @@ export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
   isFixed?: boolean;
   /** Adds accessible text to the Accordion content */
   'aria-label'?: string;
-  /** Container to override the default for content */
+  /** Component to use as content container */
   component?: React.ElementType;
 }
 
