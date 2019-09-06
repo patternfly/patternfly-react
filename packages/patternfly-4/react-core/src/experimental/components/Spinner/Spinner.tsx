@@ -23,7 +23,7 @@ export interface SpinnerProps
 export const Spinner: React.FunctionComponent<SpinnerProps> = ({
   className = '',
   size = 'xl',
-  'aria-valuetext': ariaValueText = null,
+  'aria-valuetext': ariaValueText = 'Loading...',
   ...props
 }) => (
   <span

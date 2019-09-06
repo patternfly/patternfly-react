@@ -2,7 +2,7 @@
 
 exports[`extra large spinner 1`] = `
 <span
-  aria-valuetext={null}
+  aria-valuetext="Loading..."
   className="pf-c-spinner pf-m-xl"
   role="progressbar"
 >
@@ -20,7 +20,7 @@ exports[`extra large spinner 1`] = `
 
 exports[`large spinner 1`] = `
 <span
-  aria-valuetext={null}
+  aria-valuetext="Loading..."
   className="pf-c-spinner pf-m-xl"
   role="progressbar"
 >
@@ -38,7 +38,7 @@ exports[`large spinner 1`] = `
 
 exports[`medium spinner 1`] = `
 <span
-  aria-valuetext={null}
+  aria-valuetext="Loading..."
   className="pf-c-spinner pf-m-xl"
   role="progressbar"
 >
@@ -56,7 +56,7 @@ exports[`medium spinner 1`] = `
 
 exports[`simple spinner 1`] = `
 <span
-  aria-valuetext={null}
+  aria-valuetext="Loading..."
   className="pf-c-spinner pf-m-xl"
   role="progressbar"
 >
@@ -74,7 +74,7 @@ exports[`simple spinner 1`] = `
 
 exports[`small spinner 1`] = `
 <span
-  aria-valuetext={null}
+  aria-valuetext="Loading..."
   className="pf-c-spinner pf-m-xl"
   role="progressbar"
 >
