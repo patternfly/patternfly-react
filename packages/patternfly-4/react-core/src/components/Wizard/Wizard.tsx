@@ -121,7 +121,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     onGoToStep: null as WizardStepFunctionType,
     width: null as string,
     height: null as string,
-    footer: null as React.ReactNode
+    footer: null as React.ReactNode,
+    onClose: () => undefined
   };
   private container: HTMLDivElement;
   private titleId: string;
