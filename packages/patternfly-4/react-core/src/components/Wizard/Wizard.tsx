@@ -122,7 +122,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     width: null as string,
     height: null as string,
     footer: null as React.ReactNode,
-    onClose: () => undefined as () => void
+    onClose: () => undefined as any
   };
   private container: HTMLDivElement;
   private titleId: string;
