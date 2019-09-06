@@ -39,13 +39,14 @@ class SimpleModal extends React.Component {
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
-            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>,
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
               Confirm
+            </Button>,
+            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+              Cancel
             </Button>
           ]}
+          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -91,13 +92,14 @@ class SmallModal extends React.Component {
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
-            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>,
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
               Confirm
+            </Button>,
+            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+              Cancel
             </Button>
           ]}
+          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -143,13 +145,14 @@ class LargeModal extends React.Component {
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
-            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>,
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
               Confirm
+            </Button>,
+            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+              Cancel
             </Button>
           ]}
+          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -195,13 +198,14 @@ class WidthModal extends React.Component {
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
           actions={[
-            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
-              Cancel
-            </Button>,
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
               Confirm
+            </Button>,
+            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+              Cancel
             </Button>
           ]}
+          isFooterLeftAligned
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -267,6 +271,7 @@ class CustomHeaderFooter extends React.Component {
           ariaDescribedById="custom-header-example"
           onClose={this.handleModalToggle}
           footer={footer}
+          isFooterLeftAligned
         >
           <span id="custom-header-example">
             When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
@@ -304,6 +309,11 @@ class NoHeader extends React.Component {
 
   render() {
     const { isModalOpen } = this.state;
+    const footer = (
+      <React.Fragment>
+        Modal Footer
+      </React.Fragment>
+    );
 
     return (
       <React.Fragment>
@@ -315,14 +325,11 @@ class NoHeader extends React.Component {
           isOpen={isModalOpen}
           hideTitle={true}
           title="no header example"
-          showClose={false}
+          showClose={true}
           ariaDescribedById="no-header-example"
           onClose={this.handleModalToggle}
-          actions={[
-            <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
-              Close
-            </Button>
-          ]}
+          footer={footer}
+          isFooterLeftAligned
         >
           <span id="no-header-example">
             When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
