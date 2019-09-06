@@ -8,12 +8,14 @@ typescript: true
 ## Simple tabs
 
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+import { AddressBookIcon } from '@patternfly/react-icons';
 
 Use primary sections
 
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+import { AddressBookIcon } from '@patternfly/react-icons';
 
 class SimpleTabs extends React.Component {
   constructor(props) {
@@ -41,6 +43,16 @@ class SimpleTabs extends React.Component {
         <Tab eventKey={2} title="Tab item 3">
           Tab 3 section
         </Tab>
+        <Tab
+          eventKey={3}
+          title={
+            <>
+              Tab item 4 <AddressBookIcon />
+            </>
+          }
+        >
+          Tab 4 section
+        </Tab>
       </Tabs>
     );
   }
@@ -48,6 +60,7 @@ class SimpleTabs extends React.Component {
 ```
 
 ## Scroll buttons primary tabs
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
@@ -113,6 +126,7 @@ class ScrollButtonsPrimaryTabs extends React.Component {
 ```
 
 ## Secondary buttons tabs
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
@@ -167,6 +181,7 @@ class SecondaryTabs extends React.Component {
 ```
 
 ## Scroll buttons secondary tabs
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
@@ -232,6 +247,7 @@ class ScrollButtonsSecondaryTabs extends React.Component {
 ```
 
 ## Filled buttons tabs
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
@@ -269,6 +285,7 @@ class FilledTabs extends React.Component {
 ```
 
 ## Secondary tabs using the nav element
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
@@ -336,6 +353,7 @@ class SecondaryTabsNavVariant extends React.Component {
 ```
 
 ## Tabs using the nav element
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
@@ -379,6 +397,7 @@ class TabsNavVariant extends React.Component {
 ```
 
 ## Separate tab content
+
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
