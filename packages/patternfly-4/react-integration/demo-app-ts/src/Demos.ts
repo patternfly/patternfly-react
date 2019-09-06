@@ -418,6 +418,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.SelectDemo
   },
   {
+    id: 'spinner-demo',
+    name: 'Spinner Demo',
+    componentType: Examples.SpinnerDemo
+  },
+  {
     id: 'split-demo',
     name: 'Split Demo',
     componentType: Examples.SplitDemo
