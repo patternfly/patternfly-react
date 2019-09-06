@@ -10,7 +10,7 @@ import {
   DataToolbarBreakpointMod,
   DataToolbarSpacer,
   formatBreakpointMods,
-  formatGroupSpacers
+  formatSpacers
 } from './DataToolbarUtils';
 
 export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
@@ -28,7 +28,7 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
   };
 
   render() {
-    const { toggleIcon, breakpoint, mod, breakpointMods, spacers, className, children, ...props } = this.props;
+    const { toggleIcon, breakpoint, variant, breakpointMods, spacers, className, children, ...props } = this.props;
 
     return (
       <DataToolbarContext.Consumer>
@@ -37,9 +37,9 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
             <div
               className={css(
                 styles.dataToolbarGroup,
-                mod && getModifier(styles, mod),
+                variant && getModifier(styles, variant),
                 formatBreakpointMods(breakpointMods),
-                formatGroupSpacers(spacers),
+                formatSpacers(spacers, 'pf-m-space-items'),
                 getModifier(styles, 'toggle-group'),
                 getModifier(styles, `reveal-on-${breakpoint}`),
                 className)}
@@ -48,7 +48,7 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
               <div className={css(styles.dataToolbarToggle)}>
                 <Button
                   variant="plain"
-                  onClick={() => toggleIsExpanded()}
+                  onClick={toggleIsExpanded}
                   {...isExpanded && { 'aria-expanded': true }}
                   // TODO aria-haspopup when isExpanded = true && viewport is smaller than lg global breakpoint
                   aria-controls={expandableContentId}

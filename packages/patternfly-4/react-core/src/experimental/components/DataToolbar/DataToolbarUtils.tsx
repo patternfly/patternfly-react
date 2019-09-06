@@ -20,12 +20,9 @@ export type DataToolbarBreakpointMod = {
 };
 
 export const formatBreakpointMods = (breakpointMods: DataToolbarBreakpointMod[]) => {
-
-  let formattedBreakpointMods = '';
-  for (const breakpointMod of breakpointMods) {
-    formattedBreakpointMods += `${getModifier(styles, `${breakpointMod.modifier}-on-${breakpointMod.breakpoint}`)} `;
-  }
-  return formattedBreakpointMods;
+  return breakpointMods.reduce((acc, curr) => (
+    `${acc} ${getModifier(styles, `${curr.modifier}-on-${curr.breakpoint}`)}`
+  ), '');
 };
 
 export type DataToolbarSpacer = {
@@ -35,30 +32,9 @@ export type DataToolbarSpacer = {
   breakpoint?: 'md' | 'lg' | 'xl';
 };
 
-export const formatItemSpacers = (spacers: DataToolbarSpacer[]) => {
+export const formatSpacers = (spacers: DataToolbarSpacer[], type = 'pf-m-spacer') => {
 
-  let formattedSpacers = '';
-  for (const spacer of spacers) {
-    formattedSpacers += 'pf-m-spacer-' + spacer.spacerSize;
-    if (spacer.breakpoint) {
-      formattedSpacers += '-on-' + spacer.breakpoint + ' ';
-    } else {
-      formattedSpacers += ' ';
-    }
-  }
-  return formattedSpacers;
-};
-
-export const formatGroupSpacers = (spacers: DataToolbarSpacer[]) => {
-
-  let formattedSpacers = '';
-  for (const spacer of spacers) {
-    formattedSpacers += 'pf-m-space-items-' + spacer.spacerSize;
-    if (spacer.breakpoint) {
-      formattedSpacers += '-on-' + spacer.breakpoint + ' ';
-    } else {
-      formattedSpacers += ' ';
-    }
-  }
-  return formattedSpacers;
+  return spacers.reduce((acc, curr) => (
+    `${acc} ${type}-${curr.spacerSize}${curr.breakpoint ? `-on-${curr.breakpoint}` : ''}`
+  ), '');
 };

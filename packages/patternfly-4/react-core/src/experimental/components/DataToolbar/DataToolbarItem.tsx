@@ -6,10 +6,10 @@ import {
   DataToolbarBreakpointMod,
   DataToolbarSpacer,
   formatBreakpointMods,
-  formatItemSpacers
+  formatSpacers
 } from './DataToolbarUtils';
 
-export enum DataToolbarItemMod {
+export enum DataToolbarItemVariant {
   separator = 'separator',
   'bulk-select' = 'bulk-select',
   'overflow-menu' = 'overflow-menu',
@@ -21,7 +21,7 @@ export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the Data toolbar item */
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of item */
-  mod?: DataToolbarItemMod | 'separator' | 'bulk-select' | 'overflow-menu' | 'pagination' | 'search-filter';
+  variant?: DataToolbarItemVariant | 'separator' | 'bulk-select' | 'overflow-menu' | 'pagination' | 'search-filter';
   /** An array of objects representing the various modifiers to apply to the Data toolbar item at various breakpoints */
   breakpointMods?: DataToolbarBreakpointMod[];
   /** An array of objects representing the various spacers to apply to the Data toolbar item at various breakpoints */
@@ -32,7 +32,7 @@ export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
 
 export const DataToolbarItem: React.FunctionComponent<DataToolbarItemProps> = ({
     className,
-    mod,
+    variant,
     breakpointMods = [] as DataToolbarBreakpointMod[],
     spacers = [] as DataToolbarSpacer[],
     children,
@@ -43,9 +43,9 @@ export const DataToolbarItem: React.FunctionComponent<DataToolbarItemProps> = ({
     <div
       className={css(
         styles.dataToolbarItem,
-        mod && getModifier(styles, mod),
+        variant && getModifier(styles, variant),
         formatBreakpointMods(breakpointMods),
-        formatItemSpacers(spacers),
+        formatSpacers(spacers),
         className)}
       {...props}
     >
