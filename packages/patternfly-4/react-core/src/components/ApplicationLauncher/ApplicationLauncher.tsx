@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/AppLauncher/app-launcher';
 import { ThIcon } from '@patternfly/react-icons';
 import { DropdownDirection, DropdownPosition, DropdownToggle, DropdownContext } from '../Dropdown';
-import { DropdownWithContext } from '../Dropdown/Dropdown';
+import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
 
 export interface ApplicationLauncherProps extends React.HTMLProps<HTMLDivElement> {
     /** Additional element css classes */
