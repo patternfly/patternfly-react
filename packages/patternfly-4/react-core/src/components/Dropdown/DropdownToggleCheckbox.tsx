@@ -35,6 +35,10 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
     onChange: () => undefined as any
   };
 
+  handleChange = (checked: boolean, event: React.FormEvent<HTMLInputElement>) => {
+    this.props.onChange((event.target as HTMLInputElement).checked, event);
+  }
+
   calculateChecked = () => {
     const { isChecked, checked } = this.props;
     return isChecked !== undefined ? isChecked : checked;
@@ -53,7 +57,7 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
       <label className={css(styles.dropdownToggleCheck, className)} htmlFor={props.id}>
         <Checkbox
           {...props}
-          {...(this.calculateChecked() !== undefined) && { onChange }}
+          {...(this.calculateChecked() !== undefined) && { onChange: this.handleChange }}
           ref={ref as any}
           aria-invalid={!isValid}
           isDisabled={isDisabled}

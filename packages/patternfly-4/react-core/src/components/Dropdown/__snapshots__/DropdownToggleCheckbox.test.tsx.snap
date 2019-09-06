@@ -26,8 +26,7 @@ exports[`controlled 1`] = `
   <Checkbox
     aria-invalid={false}
     aria-label="check"
-    defaultChecked={true}
-    disabled={false}
+    className=""
     id="check"
     isChecked={true}
     isDisabled={false}
@@ -45,8 +44,7 @@ exports[`isDisabled 1`] = `
   <Checkbox
     aria-invalid={false}
     aria-label="check"
-    defaultChecked={null}
-    disabled={true}
+    className=""
     id="check"
     isChecked={false}
     isDisabled={true}
@@ -65,8 +63,7 @@ exports[`passing HTML attribute 1`] = `
     aria-invalid={false}
     aria-label="check"
     aria-labelledby="labelId"
-    defaultChecked={true}
-    disabled={false}
+    className=""
     id="check"
     isChecked={true}
     isDisabled={false}
@@ -85,8 +82,7 @@ exports[`passing class 1`] = `
   <Checkbox
     aria-invalid={false}
     aria-label="check"
-    defaultChecked={true}
-    disabled={false}
+    className=""
     id="check"
     isChecked={true}
     isDisabled={false}
@@ -105,8 +101,7 @@ exports[`uncontrolled 1`] = `
   <Checkbox
     aria-invalid={false}
     aria-label="check"
-    defaultChecked={null}
-    disabled={false}
+    className=""
     id="check"
     isChecked={false}
     isDisabled={false}
@@ -121,14 +116,15 @@ exports[`with text 1`] = `
   className="pf-c-dropdown__toggle-check"
   htmlFor="check"
 >
-  <input
+  <Checkbox
     aria-invalid={false}
     aria-label="check"
-    defaultChecked={null}
-    disabled={true}
+    className=""
     id="check"
+    isChecked={false}
+    isDisabled={true}
+    isValid={true}
     onChange={[Function]}
-    type="checkbox"
   />
   <span
     aria-hidden="true"
