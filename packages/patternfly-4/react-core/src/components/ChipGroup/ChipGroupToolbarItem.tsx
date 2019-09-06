@@ -23,7 +23,7 @@ export const ChipGroupToolbarItem: React.FunctionComponent<ChipGroupToolbarItemP
         <ChipGroupContext.Consumer>
           {(HeadingLevel: any) => {
             return (
-              <ul className={css(styles.chipGroup, styles.modifiers.toolbar)} {...props}>
+              <ul className={css(styles.chipGroup, styles.modifiers.toolbar, className)} {...props}>
                 <li>
                   <HeadingLevel className={css(styles.chipGroupLabel)}>{categoryName}</HeadingLevel>
                   <ul className={css(styles.chipGroup)}>{children}</ul>
