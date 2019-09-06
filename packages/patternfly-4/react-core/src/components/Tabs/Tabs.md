@@ -8,14 +8,14 @@ typescript: true
 ## Simple tabs
 
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
-import { AddressBookIcon } from '@patternfly/react-icons`';
+import { AddressBookIcon } from '@patternfly/react-icons';
 
 Use primary sections
 
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
-import { AddressBookIcon } from '@patternfly/react-icons`';
+import { AddressBookIcon } from '@patternfly/react-icons';
 
 class SimpleTabs extends React.Component {
   constructor(props) {
