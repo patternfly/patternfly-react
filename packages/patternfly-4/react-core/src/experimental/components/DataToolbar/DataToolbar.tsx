@@ -9,50 +9,29 @@ export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** Content to be rendered as rows in the Data toolbar */
   children?: React.ReactNode;
+  /** Flag indicating if a Data toolbar toggle group's expandable content is expanded */
+  isExpanded?: boolean;
+  /** A callback for setting the isExpanded flag */
+  toggleIsExpanded?: () => void;
   /** Id of the Data toolbar */
   id: string;
 }
 
-export interface DataToolbarState {
-  /** Flag indicating the if the expandable content is expanded */
-  isExpanded: boolean;
-}
-
-export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarState> {
+export class DataToolbar extends React.Component<DataToolbarProps> {
   private expandableContentRef = React.createRef<HTMLDivElement>();
 
   static defaultProps = {
-
+    isExpanded: false,
+    toggleIsExpanded: () => null as any
   };
 
   constructor(props: DataToolbarProps) {
     super(props);
-
-    this.state = {
-      isExpanded: false,
-    };
-  }
-
-  toggleIsExpanded = () => {
-    this.setState((prevState) => ({
-      isExpanded: !prevState.isExpanded
-    }));
-  }
-
-  closeExpandableContent = () => {
-    this.setState(() => ({
-      isExpanded: false
-    }));
-  }
-
-  componentDidMount() {
-    window.addEventListener('resize', this.closeExpandableContent);
   }
 
   render() {
 
-    const { className, children, id, ...props} = this.props;
-    const { isExpanded } = this.state;
+    const { className, children, isExpanded, toggleIsExpanded, id, ...props} = this.props;
 
     const expandableContentId = `${id}-expandable-content`;
 
@@ -61,7 +40,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
         <DataToolbarContext.Provider
           value={{
             isExpanded,
-            toggleIsExpanded: this.toggleIsExpanded,
+            toggleIsExpanded: toggleIsExpanded,
             expandableContentRef: this.expandableContentRef,
             expandableContentId
           }}

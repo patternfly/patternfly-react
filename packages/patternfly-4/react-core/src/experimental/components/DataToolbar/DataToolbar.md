@@ -38,7 +38,7 @@ class DataToolbarItems extends React.Component {
         </InputGroup>
       </DataToolbarItem>
       <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
-      <DataToolbarItem mod="separator" />
+      <DataToolbarItem variant="separator" />
       <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
     </React.Fragment>;
     
@@ -84,7 +84,7 @@ class DataToolbarSpacers extends React.Component {
           <DataToolbarItem spacers={secondSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
           <DataToolbarItem spacers={thirdSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
           <DataToolbarItem spacers={fourthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
-          <DataToolbarItem mod="separator"></DataToolbarItem>
+          <DataToolbarItem variant="separator"></DataToolbarItem>
           <DataToolbarItem spacers={fifthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
           <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
       </React.Fragment>;
@@ -250,9 +250,9 @@ class DataToolbarGroupTypes extends React.Component {
     </React.Fragment>;
     
     const items = <React.Fragment>
-      <DataToolbarGroup mod="filter-group">{filterGroupItems}</DataToolbarGroup>
-      <DataToolbarGroup mod="icon-button-group">{iconButtonGroupItems}</DataToolbarGroup>
-      <DataToolbarGroup mod="button-group">{buttonGroupItems}</DataToolbarGroup>
+      <DataToolbarGroup variant="filter-group">{filterGroupItems}</DataToolbarGroup>
+      <DataToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</DataToolbarGroup>
+      <DataToolbarGroup variant="button-group">{buttonGroupItems}</DataToolbarGroup>
     </React.Fragment>;
     
     return <DataToolbar id="data-toolbar-group-types"><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
@@ -271,11 +271,18 @@ class DataToolbarToggleGroupExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isExpanded: false,
       inputValue: "",
       firstIsExpanded: false,
       firstSelected: null,
       secondIsExpanded: false,
       secondSelected: null
+    };
+    
+    this.toggleIsExpanded = () => {
+      this.setState((prevState) => ({
+        isExpanded: !prevState.isExpanded
+      }));
     };
     
     this.firstOptions = [
@@ -392,7 +399,7 @@ class DataToolbarToggleGroupExample extends React.Component {
     
     const items =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
     
-    return <DataToolbar id="data-toolbar-toggle-groups"><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
+    return <DataToolbar id="data-toolbar-toggle-groups" toggleIsExpanded={this.toggleIsExpanded}><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
   }
 }
 
