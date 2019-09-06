@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.38.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.37.1...patternfly-react@2.38.0) (2019-09-06)
+
+
+### Features
+
+* **component:** Add Date Picker component ([#1873](https://github.com/patternfly/patternfly-react/issues/1873)) ([5f6b467](https://github.com/patternfly/patternfly-react/commit/5f6b467))
+
+
+
+
+
 ## [2.37.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.37.0...patternfly-react@2.37.1) (2019-08-30)
 
 **Note:** Version bump only for package patternfly-react
