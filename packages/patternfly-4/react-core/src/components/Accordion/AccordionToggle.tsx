@@ -15,7 +15,7 @@ export interface AccordionToggleProps extends Omit<React.HTMLProps<HTMLButtonEle
   /** Identify the Accordion toggle number  */
   id: string;
   /** Container to override the default for toggle */
-  container?: React.ElementType;
+  component?: React.ElementType;
 }
 
 export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
@@ -23,12 +23,12 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
   id,
   isExpanded = false,
   children = null,
-  container,
+  component,
   ...props
 }: AccordionToggleProps) => (
   <AccordionContext.Consumer>
     {({ ToggleContainer }) => {
-      const Container = container || ToggleContainer;
+      const Container = component || ToggleContainer;
       return (
         <Container>
           <button
