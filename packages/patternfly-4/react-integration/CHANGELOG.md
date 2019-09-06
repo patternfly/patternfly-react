@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.21.2...@patternfly/react-integration@2.22.0) (2019-09-06)
+
+
+### Features
+
+* **Modal:** add modifier to left align Modal footer ([#2835](https://github.com/patternfly/patternfly-react/issues/2835)) ([e6c7694](https://github.com/patternfly/patternfly-react/commit/e6c7694)), closes [#2744](https://github.com/patternfly/patternfly-react/issues/2744)
+
+
+
+
+
 ## [2.21.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.21.1...@patternfly/react-integration@2.21.2) (2019-08-30)
 
 **Note:** Version bump only for package @patternfly/react-integration
