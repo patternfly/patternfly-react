@@ -24,6 +24,9 @@ export interface SelectDemoState {
   customTypeaheadMultiIsExpanded: boolean;
   customTypeaheadMultiSelected: string[];
   direction: SelectDirection.up | SelectDirection.down;
+  typeaheadOptions: any[];
+  typeaheadCreateNew: () => void;
+  typeaheadNewOptions: boolean;
 }
 
 export class SelectDemo extends Component<SelectDemoState> {
@@ -47,7 +50,14 @@ export class SelectDemo extends Component<SelectDemoState> {
     plainTypeaheadMultiIsPlain: true,
     customTypeaheadMultiIsExpanded: false,
     customTypeaheadMultiSelected: [],
-    direction: SelectDirection.down
+    direction: SelectDirection.down,
+    typeaheadOptions: [
+      { value: 'Alabama', disabled: false},
+      { value: 'Florida', disabled: false },
+      { value: 'New Jersey', disabled: false }
+    ],
+    typeaheadIsCreatable: false,
+    typeaheadNewOptions: false
   };
 
   singleOptions = [
@@ -66,12 +76,6 @@ export class SelectDemo extends Component<SelectDemoState> {
     <SelectOption key={2} value="Paused" />,
     <SelectOption key={3} value="Warning" />,
     <SelectOption key={4} value="Restarted" />
-  ];
-
-  typeaheadOptions = [
-    { value: 'Alabama', disabled: false},
-    { value: 'Florida', disabled: false },
-    { value: 'New Jersey', disabled: false }
   ];
 
   customTypeaheadOptions = [
@@ -102,6 +106,18 @@ export class SelectDemo extends Component<SelectDemoState> {
         direction: SelectDirection.up
       });
     }
+  }
+
+  toggleCreatable = (checked) => {
+    this.setState({
+      typeaheadIsCreatable: checked
+    })
+  }
+
+  toggleNew = (checked) => {
+    this.setState({
+      typeaheadNewOptions: checked
+    })
   }
 
   singleOnToggle = (singleIsExpanded: boolean) => {
@@ -277,6 +293,12 @@ export class SelectDemo extends Component<SelectDemoState> {
     }
   }
 
+  typeaheadCreateNew = (newValue: string) => {
+    this.setState({
+      typeaheadOptions: [...this.state.typeaheadOptions, {value: newValue}]
+    })
+  }
+
   clearSelection = () => {
     this.setState({
       singleSelected: null,
@@ -440,7 +462,7 @@ export class SelectDemo extends Component<SelectDemoState> {
   }
 
   renderTypeaheadSelect() {
-    const { typeaheadIsExpanded, typeaheadSelected } = this.state;
+    const { typeaheadOptions, typeaheadIsExpanded, typeaheadSelected, typeaheadIsCreatable, typeaheadNewOptions } = this.state;
     const titleId = 'typeahead-select-id';
     return (
       <StackItem isFilled={false}>
@@ -460,12 +482,30 @@ export class SelectDemo extends Component<SelectDemoState> {
             isExpanded={typeaheadIsExpanded}
             ariaLabelledBy={titleId}
             placeholderText="Select a state"
+            isCreatable={typeaheadIsCreatable}
+            onCreateOption={typeaheadNewOptions && this.typeaheadCreateNew || undefined}
           >
-            {this.typeaheadOptions.map((option, index) => (
+            {typeaheadOptions.map((option, index) => (
               <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
             ))}
           </Select>
         </div>
+        <Checkbox
+          label="isCreatable"
+          isChecked={this.state.typeaheadIsCreatable}
+          onChange={this.toggleCreatable}
+          aria-label="toggle creatable checkbox"
+          id="toggle-creatable-typeahead"
+          name="toggle-creatable-typeahead"
+        />
+        <Checkbox
+          label="onCreateOption"
+          isChecked={this.state.typeaheadNewOptions}
+          onChange={this.toggleNew}
+          aria-label="toggle new checkbox"
+          id="toggle-new-typeahead"
+          name="toggle-new-typeahead"
+        />
       </StackItem>
     );
   }
@@ -493,7 +533,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             ariaLabelledBy={titleId}
             placeholderText="Select a state"
           >
-            {this.typeaheadOptions.map((option, index) => (
+            {this.state.typeaheadOptions.map((option, index) => (
               <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
             ))}
           </Select>
@@ -557,7 +597,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             ariaLabelledBy={titleId}
             placeholderText="Select a state"
           >
-            {this.typeaheadOptions.map((option, index) => (
+            {this.state.typeaheadOptions.map((option, index) => (
               <SelectOption isDisabled={option.disabled} key={index} value={option.value}>
                 <div>div-{option.value.toString()}<span>-test_span</span><CartArrowDownIcon /></div>
               </SelectOption>
@@ -592,7 +632,7 @@ export class SelectDemo extends Component<SelectDemoState> {
           ariaLabelledBy={titleId}
           placeholderText="Select a state"
         >
-          {this.typeaheadOptions.map((option, index) => (
+          {this.state.typeaheadOptions.map((option, index) => (
             <SelectOption isDisabled={option.disabled} key={index} value={option.value}>
               <div>div-{option.value.toString()}<span>-test_span</span><CartArrowDownIcon /></div>
             </SelectOption>

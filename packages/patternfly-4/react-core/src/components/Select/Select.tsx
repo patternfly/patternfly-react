@@ -17,7 +17,7 @@ import { Omit } from '../../helpers/typeUtils';
 let currentId = 0;
 
 export interface SelectProps
-  extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected' > {
+  extends Omit<React.HTMLProps<HTMLDivElement>, 'onSelect' | 'ref' | 'checked' | 'selected'> {
   /** Content rendered inside the Select */
   children: React.ReactElement[];
   /** Classes applied to the root of the Select */
@@ -30,8 +30,10 @@ export interface SelectProps
   isGrouped?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
-  /** Flag to inficate if select is disabled */
+  /** Flag to indicate if select is disabled */
   isDisabled?: boolean;
+  /** Flag to indicate if the typeahead select allows new items */
+  isCreatable?: boolean;
   /** Title text of Select */
   placeholderText?: string | React.ReactNode;
   /** Selected item */
@@ -51,13 +53,19 @@ export interface SelectProps
   /** Label for remove chip button of multiple type ahead select variant */
   ariaLabelRemove?: string;
   /** Callback for selection behavior */
-  onSelect?: (event: React.MouseEvent | React.ChangeEvent, value: string | SelectOptionObject, isPlaceholder?: boolean) => void;
+  onSelect?: (
+    event: React.MouseEvent | React.ChangeEvent,
+    value: string | SelectOptionObject,
+    isPlaceholder?: boolean
+  ) => void;
   /** Callback for toggle button behavior */
   onToggle: (isExpanded: boolean) => void;
   /** Callback for typeahead clear button */
   onClear?: (event: React.MouseEvent) => void;
   /** Optional callback for custom filtering */
   onFilter?: (e: React.ChangeEvent<HTMLInputElement>) => React.ReactElement[];
+  /** Optional callback for newly created options */
+  onCreateOption?: (newOptionValue: string) => void;
   /** Variant of rendered Select */
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Width of the select container as a number of px or string percentage */
@@ -72,6 +80,7 @@ export interface SelectState {
   typeaheadActiveChild?: HTMLElement;
   typeaheadFilteredChildren: React.ReactNode[];
   typeaheadCurrIndex: number;
+  creatableValue: string;
 }
 
 export class Select extends React.Component<SelectProps, SelectState> {
@@ -87,7 +96,8 @@ export class Select extends React.Component<SelectProps, SelectState> {
     "isGrouped": false,
     "isPlain": false,
     "isDisabled": false,
-    'aria-label': '',
+    "isCreatable": false,
+    "aria-label": '',
     "ariaLabelledBy": '',
     "ariaLabelTypeAhead": '',
     "ariaLabelClear": 'Clear all',
@@ -98,6 +108,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     "variant": SelectVariant.single,
     "width": '',
     "onClear": Function.prototype,
+    "onCreateOption": Function.prototype,
     "toggleIcon": null as React.ReactElement,
     "onFilter": undefined as () => {}
   };
@@ -107,7 +118,8 @@ export class Select extends React.Component<SelectProps, SelectState> {
     typeaheadInputValue: '',
     typeaheadActiveChild: null as HTMLElement,
     typeaheadFilteredChildren: React.Children.toArray(this.props.children),
-    typeaheadCurrIndex: -1
+    typeaheadCurrIndex: -1,
+    creatableValue: ''
   };
 
   componentDidUpdate = (prevProps: SelectProps, prevState: SelectState) => {
@@ -137,7 +149,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
   }
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { onFilter } = this.props;
+    const { onFilter, isCreatable, onCreateOption } = this.props;
     let typeaheadFilteredChildren;
     if (onFilter) {
       typeaheadFilteredChildren = onFilter(e);
@@ -151,19 +163,29 @@ export class Select extends React.Component<SelectProps, SelectState> {
       typeaheadFilteredChildren =
         e.target.value.toString() !== ''
           ? React.Children.toArray(this.props.children).filter(
-            (child: React.ReactNode) =>
-              this.getDisplay((child as React.ReactElement).props.value.toString(), 'text').search(input) === 0
+              (child: React.ReactNode) =>
+                this.getDisplay((child as React.ReactElement).props.value.toString(), 'text').search(input) === 0
             )
           : React.Children.toArray(this.props.children);
     }
     if (typeaheadFilteredChildren.length === 0) {
-      typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value="No results found" />);
+      !isCreatable && typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value="No results found" />);
     }
+    if (isCreatable && e.target.value != '') {
+      const newValue = e.target.value;
+      typeaheadFilteredChildren.push(
+        <SelectOption key={0} value={newValue} onClick={() => onCreateOption && onCreateOption(newValue)}>
+          Create "{newValue}"
+        </SelectOption>
+      );
+    }
+
     this.setState({
       typeaheadInputValue: e.target.value,
       typeaheadCurrIndex: -1,
       typeaheadFilteredChildren,
-      typeaheadActiveChild: null
+      typeaheadActiveChild: null,
+      creatableValue: e.target.value
     });
     this.refCollection = [];
   }
@@ -187,7 +209,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
       React.cloneElement(child as React.ReactElement, {
         isFocused:
           typeaheadActiveChild &&
-          typeaheadActiveChild.innerText === this.getDisplay((child as React.ReactElement).props.value.toString(), 'text')
+          (typeaheadActiveChild.innerText ===
+            this.getDisplay((child as React.ReactElement).props.value.toString(), 'text') ||
+            (this.props.isCreatable && typeaheadActiveChild.innerText === `Create "${(child as React.ReactElement).props.value}"`))
       })
     );
   }
@@ -207,7 +231,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
   }
 
   handleTypeaheadKeys = (position: string) => {
-    const { isExpanded, onSelect } = this.props;
+    const { isExpanded, isCreatable } = this.props;
     const { typeaheadActiveChild, typeaheadCurrIndex } = this.state;
     if (isExpanded) {
       if (position === 'enter' && (typeaheadActiveChild || this.refCollection[0])) {
@@ -232,7 +256,10 @@ export class Select extends React.Component<SelectProps, SelectState> {
         this.setState({
           typeaheadCurrIndex: nextIndex,
           typeaheadActiveChild: this.refCollection[nextIndex],
-          typeaheadInputValue: this.refCollection[nextIndex].innerText
+          typeaheadInputValue:
+            isCreatable && this.refCollection[nextIndex].innerText.includes('Create')
+              ? this.state.creatableValue 
+              : this.refCollection[nextIndex].innerText
         });
       }
     }
@@ -244,16 +271,18 @@ export class Select extends React.Component<SelectProps, SelectState> {
     }
 
     const { children } = this.props;
-    const item = children.filter((child) => child.props.value.toString() === value.toString())[0];
-
-    if (item && item.props.children) {
-      if (type === 'node') {
-        return item.props.children;
+    const item = children.filter(child => child.props.value.toString() === value.toString())[0];
+    if (item) {
+      if (item && item.props.children) {
+        if (type === 'node') {
+          return item.props.children;
+        }
+        return this.findText(item);
       }
-      return this.findText(item);
+      return item.props.value.toString();
     }
-    return item.props.value.toString();
-  }
+    return value;
+  };
 
   findText: (item: React.ReactElement) => string = (item: React.ReactElement) => {
     if (!item.props || !item.props.children) {
@@ -282,11 +311,13 @@ export class Select extends React.Component<SelectProps, SelectState> {
       onSelect,
       onClear,
       onFilter,
+      onCreateOption,
       toggleId,
       isExpanded,
       isGrouped,
       isPlain,
       isDisabled,
+      isCreatable,
       selections,
       ariaLabelledBy,
       ariaLabelTypeAhead,
@@ -323,7 +354,12 @@ export class Select extends React.Component<SelectProps, SelectState> {
     }
     return (
       <div
-        className={css(styles.select, isExpanded && styles.modifiers.expanded, direction === SelectDirection.up && styles.modifiers.top, className)}
+        className={css(
+          styles.select,
+          isExpanded && styles.modifiers.expanded,
+          direction === SelectDirection.up && styles.modifiers.top,
+          className
+        )}
         ref={this.parentRef}
         style={{ width }}
       >
@@ -367,23 +403,25 @@ export class Select extends React.Component<SelectProps, SelectState> {
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                  <input
-                    className={css(formStyles.formControl, styles.selectToggleTypeahead)}
-                    aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                    id="select-typeahead"
-                    aria-label={ariaLabelTypeAhead}
-                    placeholder={placeholderText as string}
-                    value={
-                      typeaheadInputValue !== null
-                        ? typeaheadInputValue
-                        : this.getDisplay(selections as string, 'text') || ''
-                    }
-                    type="text"
-                    onChange={this.onChange}
-                    onFocus={this.handleFocus}
-                    autoComplete="off"
-                    disabled={isDisabled}
-                  />
+                  <form onSubmit={(e) => e.preventDefault()}>
+                    <input
+                      className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                      aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
+                      id="select-typeahead"
+                      aria-label={ariaLabelTypeAhead}
+                      placeholder={placeholderText as string}
+                      value={
+                        typeaheadInputValue !== null
+                          ? typeaheadInputValue
+                          : this.getDisplay(selections as string, 'text') || ''
+                      }
+                      type="text"
+                      onChange={this.onChange}
+                      onFocus={this.handleFocus}
+                      autoComplete="off"
+                      disabled={isDisabled}
+                    />
+                  </form>
                 </div>
                 {selections && (
                   <button
@@ -406,19 +444,21 @@ export class Select extends React.Component<SelectProps, SelectState> {
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                   {selections && (Array.isArray(selections) && selections.length > 0) && selectedChips}
-                  <input
-                    className={css(formStyles.formControl, styles.selectToggleTypeahead)}
-                    aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                    id="select-multi-typeahead-typeahead"
-                    aria-label={ariaLabelTypeAhead}
-                    placeholder={placeholderText as string}
-                    value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
-                    type="text"
-                    onChange={this.onChange}
-                    onFocus={this.handleFocus}
-                    autoComplete="off"
-                    disabled={isDisabled}
-                  />
+                  <form onSubmit={(e) => e.preventDefault()}>
+                    <input
+                      className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                      aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
+                      id="select-multi-typeahead-typeahead"
+                      aria-label={ariaLabelTypeAhead}
+                      placeholder={placeholderText as string}
+                      value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
+                      type="text"
+                      onChange={this.onChange}
+                      onFocus={this.handleFocus}
+                      autoComplete="off"
+                      disabled={isDisabled}
+                    />
+                  </form>
                 </div>
                 {selections && (Array.isArray(selections) && selections.length > 0) && (
                   <button

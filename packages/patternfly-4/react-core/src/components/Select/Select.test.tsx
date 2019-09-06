@@ -245,6 +245,24 @@ describe('typeahead select', () => {
     view.update();
     expect(view).toMatchSnapshot();
   });
+
+  test('test creatable option', () => {
+    const mockEvent = { target: { value: 'test' } } as React.ChangeEvent<HTMLInputElement>;
+    const view = mount(
+      <Select
+        variant={SelectVariant.typeahead}
+        onToggle={jest.fn()}
+        isExpanded
+        isCreatable
+      >
+        {selectOptions}
+      </Select>
+    );
+    const inst = view.instance() as Select;
+    inst.onChange(mockEvent);
+    view.update();
+    expect(view).toMatchSnapshot();
+  });
 });
 
 describe('typeahead multi select', () => {

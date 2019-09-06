@@ -41,6 +41,18 @@ describe('Select Test', () => {
     cy.get('#select-typeahead').should('have.value', '');
   });
 
+  it('Verify Creatable Typeahead Select', () => {
+    cy.get('#toggle-creatable-typeahead').click();
+    cy.get('#toggle-new-typeahead').click();
+    cy.get('#typeahead-select').click();
+    cy.get(':nth-child(5) > :nth-child(2) > .pf-c-select > .pf-c-select__toggle input').type('Al');
+    cy.get('#Al-1').click();
+    cy.get('#select-typeahead').should('have.value', 'Al');
+    cy.get('#typeahead-select').click();
+    cy.get('#Al-3').should('exist');
+    cy.get('.pf-c-select__toggle > .pf-m-plain').click();
+  });
+
   it('Verify Typeahead Multi Select', () => {
     cy.get('#typeahead-multi-select').click();
     cy.get('#Florida-1').click();

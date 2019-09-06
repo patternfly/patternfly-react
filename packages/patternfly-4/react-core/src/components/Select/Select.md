@@ -312,19 +312,21 @@ import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 class TypeaheadSelectInput extends React.Component {
   constructor(props) {
     super(props);
-    this.options = [
-      { value: 'Alabama' },
-      { value: 'Florida' },
-      { value: 'New Jersey' },
-      { value: 'New Mexico' },
-      { value: 'New York' },
-      { value: 'North Carolina' }
-    ];
 
     this.state = {
+      options: [
+        { value: 'Alabama' },
+        { value: 'Florida' },
+        { value: 'New Jersey' },
+        { value: 'New Mexico' },
+        { value: 'New York' },
+        { value: 'North Carolina' }
+      ],
       isExpanded: false,
       selected: null,
-      isDisabled: false
+      isDisabled: false,
+      isCreatable: false,
+      hasOnCreateOption: false
     };
 
     this.onToggle = isExpanded => {
@@ -344,6 +346,12 @@ class TypeaheadSelectInput extends React.Component {
       }
     };
 
+    this.onCreateOption = (newValue) => {
+      this.setState({
+        options: [...this.state.options, {value: newValue}]
+      });
+    }
+
     this.clearSelection = () => {
       this.setState({
         selected: null,
@@ -351,15 +359,27 @@ class TypeaheadSelectInput extends React.Component {
       });
     };
 
-     this.toggleDisabled = (checked) => {
+    this.toggleDisabled = (checked) => {
       this.setState({
         isDisabled: checked
+      })
+    }
+
+    this.toggleCreatable = (checked) => {
+      this.setState({
+        isCreatable: checked
+      })
+    }
+
+    this.toggleCreateNew = (checked) => {
+      this.setState({
+        hasOnCreateOption: checked
       })
     }
   }
 
   render() {
-    const { isExpanded, selected, isDisabled } = this.state;
+    const { isExpanded, selected, isDisabled, isCreatable, hasOnCreateOption, options } = this.state;
     const titleId = 'typeahead-select-id';
     return (
       <div>
@@ -377,8 +397,10 @@ class TypeaheadSelectInput extends React.Component {
           ariaLabelledBy={titleId}
           placeholderText="Select a state"
           isDisabled={isDisabled}
+          isCreatable={isCreatable}
+          onCreateOption={hasOnCreateOption && this.onCreateOption || undefined}
         >
-          {this.options.map((option, index) => (
+          {options.map((option, index) => (
             <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
           ))}
         </Select>
@@ -389,6 +411,22 @@ class TypeaheadSelectInput extends React.Component {
           aria-label="toggle disabled checkbox"
           id="toggle-disabled-typeahead"
           name="toggle-disabled-typeahead"
+        />
+        <Checkbox
+          label="isCreatable"
+          isChecked={this.state.isCreatable}
+          onChange={this.toggleCreatable}
+          aria-label="toggle creatable checkbox"
+          id="toggle-creatable-typeahead"
+          name="toggle-creatable-typeahead"
+        />
+        <Checkbox
+          label="onCreateOption"
+          isChecked={this.state.hasOnCreateOption}
+          onChange={this.toggleCreateNew}
+          aria-label="toggle new checkbox"
+          id="toggle-new-typeahead"
+          name="toggle-new-typeahead"
         />
       </div>
     );
@@ -496,18 +534,26 @@ import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 class MultiTypeaheadSelectInput extends React.Component {
   constructor(props) {
     super(props);
-    this.options = [
-      { value: 'Alabama', disabled: false },
-      { value: 'Florida', disabled: false },
-      { value: 'New Jersey', disabled: false },
-      { value: 'New Mexico', disabled: false },
-      { value: 'New York', disabled: false },
-      { value: 'North Carolina', disabled: false }
-    ];
 
     this.state = {
+      options: [
+        { value: 'Alabama', disabled: false },
+        { value: 'Florida', disabled: false },
+        { value: 'New Jersey', disabled: false },
+        { value: 'New Mexico', disabled: false },
+        { value: 'New York', disabled: false },
+        { value: 'North Carolina', disabled: false }
+      ],
       isExpanded: false,
-      selected: []
+      selected: [],
+      isCreatable: false,
+      hasOnCreateOption: false
+    };
+
+    this.onCreateOption = (newValue) => {
+      this.setState({
+        options: [...this.state.options, {value: newValue}]
+      });
     };
 
     this.onToggle = isExpanded => {
@@ -537,10 +583,22 @@ class MultiTypeaheadSelectInput extends React.Component {
         isExpanded: false
       });
     };
+
+    this.toggleCreatable = (checked) => {
+      this.setState({
+        isCreatable: checked
+      })
+    }
+
+    this.toggleCreateNew = (checked) => {
+      this.setState({
+        hasOnCreateOption: checked
+      })
+    }
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isExpanded, selected, isCreatable, hasOnCreateOption } = this.state;
     const titleId = 'multi-typeahead-select-id';
 
     return (
@@ -558,11 +616,29 @@ class MultiTypeaheadSelectInput extends React.Component {
           isExpanded={isExpanded}
           ariaLabelledBy={titleId}
           placeholderText="Select a state"
+          isCreatable={isCreatable}
+          onCreateOption={hasOnCreateOption && this.onCreateOption || undefined}
         >
-          {this.options.map((option, index) => (
+          {this.state.options.map((option, index) => (
             <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
           ))}
         </Select>
+        <Checkbox
+          label="isCreatable"
+          isChecked={this.state.isCreatable}
+          onChange={this.toggleCreatable}
+          aria-label="toggle creatable checkbox"
+          id="toggle-creatable-typeahead-multi"
+          name="toggle-creatable-typeahead-multi"
+        />
+        <Checkbox
+          label="onCreateOption"
+          isChecked={this.state.hasOnCreateOption}
+          onChange={this.toggleCreateNew}
+          aria-label="toggle new checkbox"
+          id="toggle-new-typeahead-multi"
+          name="toggle-new-typeahead-multi"
+        />
       </div>
     );
   }
