@@ -16,7 +16,7 @@ export interface DropdownToggleCheckboxProps extends Omit<React.HTMLProps<HTMLIn
   checked?: boolean | null;
   /** A callback for when the checkbox selection changes */
   onChange?(checked: boolean, event: React.FormEvent<HTMLInputElement>): void;
-  /** */
+  /** Element to be rendered inside the <span> */
   children?: React.ReactNode;
   /** Id of the checkbox */
   id: string;
