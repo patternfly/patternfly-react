@@ -412,22 +412,16 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
 ### Data toolbar consumer managed toggle groups
 ```js
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup } from '@patternfly/react-core/dist/esm/experimental';
 import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
 import { Button, InputGroup, Select, SelectOption } from '@patternfly/react-core';
 import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
-class DataToolbarToggleGroupExample extends React.Component {
 class DataToolbarConsumerMangedToggleGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isExpanded: false,
       inputValue: "",
-      firstIsExpanded: false,
-      firstSelected: null,
-      secondIsExpanded: false,
-      secondSelected: null
       statusIsExpanded: false,
       statusSelected: null,
       riskIsExpanded: false,
@@ -440,7 +434,6 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
       }));
     };
     
-    this.firstOptions = [
     this.statusOptions = [
       { value: 'Status', disabled: false, isPlaceholder: true },
       { value: 'New', disabled: false },
@@ -449,7 +442,6 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
       { value: 'Cancelled', disabled: false },
     ];
     
-    this.secondOptions = [
     this.riskOptions = [
       { value: 'Risk', disabled: false, isPlaceholder: true },
       { value: 'Low', disabled: false },
@@ -461,61 +453,43 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
          this.setState({inputValue: newValue});
         };
     
-    this.onFirstToggle = isExpanded => {
     this.onStatusToggle = isExpanded => {
       this.setState({
-        firstIsExpanded: isExpanded
         statusIsExpanded: isExpanded
       });
     };
     
-    this.onFirstSelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearFirstSelection();
     this.onStatusSelect = (event, selection, isPlaceholder) => {
       if (isPlaceholder) this.clearStatusSelection();
       this.setState({
-        firstSelected: selection,
-        firstIsExpanded: false
         statusSelected: selection,
         statusIsExpanded: false
       });
     };
     
-    this.clearFirstSelection = () => {
     this.clearStatusSelection = () => {
       this.setState({
-        firstSelected: null,
-        firstIsExpanded: false
         statusSelected: null,
         statusIsExpanded: false
       });
     };
     
-    this.onSecondToggle = isExpanded => {
     this.onRiskToggle = isExpanded => {
       this.setState({
-        secondIsExpanded: isExpanded
         riskIsExpanded: isExpanded
       });
     };
     
-    this.onSecondSelect = (event, selection, isPlaceholder) => {
-      if (isPlaceholder) this.clearSecondSelection();
     this.onRiskSelect = (event, selection, isPlaceholder) => {
       if (isPlaceholder) this.clearRiskSelection();
       this.setState({
-        secondSelected: selection,
-        secondIsExpanded: false
         riskSelected: selection,
         riskIsExpanded: false
       });
     };
     
-    this.clearSecondSelection = () => {
     this.clearRiskSelection = () => {
       this.setState({
-        secondSelected: null,
-        secondIsExpanded: false
         riskSelected: null,
         riskIsExpanded: false
       });
@@ -523,7 +497,6 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
   }
   
   render() {
-    const { inputValue, firstIsExpanded, firstSelected, secondIsExpanded, secondSelected } = this.state;
     const { isExpanded, inputValue, statusIsExpanded, statusSelected, riskIsExpanded, riskSelected } = this.state;
 
     const toggleGroupItems = <React.Fragment>
@@ -534,42 +507,6 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
             <SearchIcon />
           </Button>
         </InputGroup>
-      </DataToolbarItem>
-      <DataToolbarItem spacers={[{spacerSize: 'none'}]}>
-        <Select
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          onToggle={this.onFirstToggle}
-          onSelect={this.onFirstSelect}
-          selections={firstSelected}
-          isExpanded={firstIsExpanded}
-        >
-          {this.firstOptions.map((option, index) => (
-             <SelectOption
-               isDisabled={option.disabled}
-               key={index}
-               value={option.value}
-             />
-          ))}
-        </Select>
-      </DataToolbarItem>
-      <DataToolbarItem>
-        <Select
-          variant={SelectVariant.single}
-          aria-label="Select Input"
-          onToggle={this.onSecondToggle}
-          onSelect={this.onSecondSelect}
-          selections={secondSelected}
-          isExpanded={secondIsExpanded}
-        >
-          {this.secondOptions.map((option, index) => (
-            <SelectOption
-               isDisabled={option.disabled}
-               key={index}
-               value={option.value}
-             />
-           ))}
-        </Select>
       </DataToolbarItem>
       <DataToolbarGroup variant="filter-group">
           <DataToolbarItem>
@@ -613,12 +550,11 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
     
     const items =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
     
-    return <DataToolbar id="data-toolbar-toggle-groups" toggleIsExpanded={this.toggleIsExpanded}><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
     return <DataToolbar id="data-toolbar-consumer-managed-toggle-groups" isExpanded={isExpanded} toggleIsExpanded={this.toggleIsExpanded}><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
   }
 }
-
 ```
+
 ## Data toolbar group stacked
 ```js
 import React from 'react';
