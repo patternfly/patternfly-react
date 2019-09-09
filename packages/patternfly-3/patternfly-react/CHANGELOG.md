@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.38.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.38.0...patternfly-react@2.38.1) (2019-09-09)
+
+
+### Bug Fixes
+
+* **HorizontalNavMenuItem:** Allow HorizontalNavMenuItem's title to be a node. ([#2825](https://github.com/patternfly/patternfly-react/issues/2825)) ([78adfa4](https://github.com/patternfly/patternfly-react/commit/78adfa4))
+
+
+
+
+
 # [2.38.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.37.1...patternfly-react@2.38.0) (2019-09-06)
 
 
