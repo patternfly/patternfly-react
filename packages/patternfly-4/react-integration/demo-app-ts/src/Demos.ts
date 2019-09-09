@@ -46,6 +46,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.SparklineDemo
   },
   {
+    id: 'stacked-area-chart-demo',
+    name: 'Area Stacked Chart Demo',
+    componentType: Examples.StackedAreaDemo
+  },
+  {
     id: 'avatar-demo',
     name: 'Avatar Demo',
     componentType: Examples.AvatarDemo

@@ -4,6 +4,7 @@ export * from './ApplicationLauncherDemo/ApplicationLauncherDemo';
 export * from './AlertDemo/AlertDemo';
 export * from './AreaChart/SparklineDemo';
 export * from './AreaChart/CyanAreaDemo';
+export * from './AreaChart/StackedAreaDemo';
 export * from './AreaChart/ColorAreaBottomLegendDemo';
 export * from './AvatarDemo/AvatarDemo';
 export * from './BackdropDemo/BackdropDemo';
