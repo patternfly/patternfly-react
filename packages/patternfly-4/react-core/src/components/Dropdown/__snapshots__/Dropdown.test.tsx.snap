@@ -10,6 +10,7 @@ exports[`KebabToggle basic 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={Array []}
@@ -62,20 +63,13 @@ exports[`KebabToggle basic 1`] = `
                   />
                 </svg>
               </button>
-              <ul
+              <div
                 class="pf-c-dropdown__menu"
               >
-                <div
-                  aria-labelledby="Dropdown Toggle"
-                >
-                  <div
-                    class="pf-c-dropdown__menu-item"
-                    tabindex="-1"
-                  >
-                    BASIC
-                  </div>
+                <div>
+                  BASIC
                 </div>
-              </ul>
+              </div>
             </div>,
           }
         }
@@ -123,20 +117,13 @@ exports[`KebabToggle basic 1`] = `
                     />
                   </svg>
                 </button>
-                <ul
+                <div
                   class="pf-c-dropdown__menu"
                 >
-                  <div
-                    aria-labelledby="Dropdown Toggle"
-                  >
-                    <div
-                      class="pf-c-dropdown__menu-item"
-                      tabindex="-1"
-                    >
-                      BASIC
-                    </div>
+                  <div>
+                    BASIC
                   </div>
-                </ul>
+                </div>
               </div>,
             }
           }
@@ -191,25 +178,17 @@ exports[`KebabToggle basic 1`] = `
         openedOnEnter={false}
         position="left"
       >
-        <ul
+        <div
           className="pf-c-dropdown__menu"
           hidden={false}
           onClick={[Function]}
         >
           <div
-            aria-labelledby="Dropdown Toggle"
-            autoFocus={true}
+            key=".0"
           >
-            <div
-              className="pf-c-dropdown__menu-item"
-              key=".$.0"
-              onKeyDown={[Function]}
-              tabIndex={-1}
-            >
-              BASIC
-            </div>
+            BASIC
           </div>
-        </ul>
+        </div>
       </DropdownMenu>
     </div>
   </DropdownWithContext>
@@ -236,6 +215,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Link
@@ -255,6 +235,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Action
@@ -274,6 +255,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -293,6 +275,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -313,6 +296,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Link
@@ -332,6 +316,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Action
@@ -346,6 +331,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
@@ -365,6 +351,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Link
@@ -384,6 +371,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Action
@@ -403,6 +391,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -422,6 +411,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -442,6 +432,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Link
@@ -461,6 +452,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Action
@@ -632,6 +624,7 @@ exports[`KebabToggle dropup 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Link
@@ -651,6 +644,7 @@ exports[`KebabToggle dropup 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Action
@@ -670,6 +664,7 @@ exports[`KebabToggle dropup 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -689,6 +684,7 @@ exports[`KebabToggle dropup 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -709,6 +705,7 @@ exports[`KebabToggle dropup 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Link
@@ -728,6 +725,7 @@ exports[`KebabToggle dropup 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Action
@@ -741,6 +739,7 @@ exports[`KebabToggle dropup 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
@@ -760,6 +759,7 @@ exports[`KebabToggle dropup 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Link
@@ -779,6 +779,7 @@ exports[`KebabToggle dropup 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Action
@@ -798,6 +799,7 @@ exports[`KebabToggle dropup 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -817,6 +819,7 @@ exports[`KebabToggle dropup 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -837,6 +840,7 @@ exports[`KebabToggle dropup 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Link
@@ -856,6 +860,7 @@ exports[`KebabToggle dropup 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Action
@@ -1026,6 +1031,7 @@ exports[`KebabToggle expanded 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Link
@@ -1045,6 +1051,7 @@ exports[`KebabToggle expanded 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Action
@@ -1064,6 +1071,7 @@ exports[`KebabToggle expanded 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -1083,6 +1091,7 @@ exports[`KebabToggle expanded 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -1103,6 +1112,7 @@ exports[`KebabToggle expanded 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Link
@@ -1122,6 +1132,7 @@ exports[`KebabToggle expanded 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Action
@@ -1136,6 +1147,7 @@ exports[`KebabToggle expanded 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -1155,6 +1167,7 @@ exports[`KebabToggle expanded 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Link
@@ -1174,6 +1187,7 @@ exports[`KebabToggle expanded 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Action
@@ -1193,6 +1207,7 @@ exports[`KebabToggle expanded 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -1212,6 +1227,7 @@ exports[`KebabToggle expanded 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -1232,6 +1248,7 @@ exports[`KebabToggle expanded 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Link
@@ -1251,6 +1268,7 @@ exports[`KebabToggle expanded 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Action
@@ -1354,11 +1372,10 @@ exports[`KebabToggle expanded 1`] = `
                   </button>
                 </li>
                 <li
-                  role="none"
+                  role="separator"
                 >
                   <div
                     class="pf-c-dropdown__separator"
-                    role="separator"
                   />
                 </li>
                 <li
@@ -1477,11 +1494,10 @@ exports[`KebabToggle expanded 1`] = `
                     </button>
                   </li>
                   <li
-                    role="none"
+                    role="separator"
                   >
                     <div
                       class="pf-c-dropdown__separator"
-                      role="separator"
                     />
                   </li>
                   <li
@@ -1582,6 +1598,7 @@ exports[`KebabToggle expanded 1`] = `
             key=".$link"
             onClick={[Function]}
             onSelect={[Function]}
+            role="none"
             tooltipProps={Object {}}
           >
             <li
@@ -1615,6 +1632,7 @@ exports[`KebabToggle expanded 1`] = `
             key=".$action"
             onClick={[Function]}
             onSelect={[Function]}
+            role="none"
             tooltipProps={Object {}}
           >
             <li
@@ -1649,6 +1667,7 @@ exports[`KebabToggle expanded 1`] = `
             key=".$disabled link"
             onClick={[Function]}
             onSelect={[Function]}
+            role="none"
             tooltipProps={Object {}}
           >
             <li
@@ -1683,6 +1702,7 @@ exports[`KebabToggle expanded 1`] = `
             key=".$disabled action"
             onClick={[Function]}
             onSelect={[Function]}
+            role="none"
             tooltipProps={Object {}}
           >
             <li
@@ -1724,7 +1744,7 @@ exports[`KebabToggle expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="separator"
               >
                 <div
                   className="pf-c-dropdown__separator"
@@ -1732,7 +1752,6 @@ exports[`KebabToggle expanded 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="separator"
                 />
               </li>
             </InternalDropdownItem>
@@ -1753,6 +1772,7 @@ exports[`KebabToggle expanded 1`] = `
             key=".$separated link"
             onClick={[Function]}
             onSelect={[Function]}
+            role="none"
             tooltipProps={Object {}}
           >
             <li
@@ -1786,6 +1806,7 @@ exports[`KebabToggle expanded 1`] = `
             key=".$separated action"
             onClick={[Function]}
             onSelect={[Function]}
+            role="none"
             tooltipProps={Object {}}
           >
             <li
@@ -1830,6 +1851,7 @@ exports[`KebabToggle plain 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Link
@@ -1849,6 +1871,7 @@ exports[`KebabToggle plain 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Action
@@ -1868,6 +1891,7 @@ exports[`KebabToggle plain 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -1887,6 +1911,7 @@ exports[`KebabToggle plain 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -1907,6 +1932,7 @@ exports[`KebabToggle plain 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Link
@@ -1926,6 +1952,7 @@ exports[`KebabToggle plain 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Action
@@ -1940,6 +1967,7 @@ exports[`KebabToggle plain 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -1959,6 +1987,7 @@ exports[`KebabToggle plain 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Link
@@ -1978,6 +2007,7 @@ exports[`KebabToggle plain 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Action
@@ -1997,6 +2027,7 @@ exports[`KebabToggle plain 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -2016,6 +2047,7 @@ exports[`KebabToggle plain 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -2036,6 +2068,7 @@ exports[`KebabToggle plain 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Link
@@ -2055,6 +2088,7 @@ exports[`KebabToggle plain 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Action
@@ -2225,6 +2259,7 @@ exports[`KebabToggle regular 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Link
@@ -2244,6 +2279,7 @@ exports[`KebabToggle regular 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Action
@@ -2263,6 +2299,7 @@ exports[`KebabToggle regular 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -2282,6 +2319,7 @@ exports[`KebabToggle regular 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -2302,6 +2340,7 @@ exports[`KebabToggle regular 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Link
@@ -2321,6 +2360,7 @@ exports[`KebabToggle regular 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Action
@@ -2334,6 +2374,7 @@ exports[`KebabToggle regular 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -2353,6 +2394,7 @@ exports[`KebabToggle regular 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Link
@@ -2372,6 +2414,7 @@ exports[`KebabToggle regular 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Action
@@ -2391,6 +2434,7 @@ exports[`KebabToggle regular 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -2410,6 +2454,7 @@ exports[`KebabToggle regular 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -2430,6 +2475,7 @@ exports[`KebabToggle regular 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Link
@@ -2449,6 +2495,7 @@ exports[`KebabToggle regular 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Action
@@ -2619,6 +2666,7 @@ exports[`KebabToggle right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Link
@@ -2638,6 +2686,7 @@ exports[`KebabToggle right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Action
@@ -2657,6 +2706,7 @@ exports[`KebabToggle right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -2676,6 +2726,7 @@ exports[`KebabToggle right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -2696,6 +2747,7 @@ exports[`KebabToggle right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Link
@@ -2715,6 +2767,7 @@ exports[`KebabToggle right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Action
@@ -2729,6 +2782,7 @@ exports[`KebabToggle right aligned 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -2748,6 +2802,7 @@ exports[`KebabToggle right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Link
@@ -2767,6 +2822,7 @@ exports[`KebabToggle right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Action
@@ -2786,6 +2842,7 @@ exports[`KebabToggle right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -2805,6 +2862,7 @@ exports[`KebabToggle right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -2825,6 +2883,7 @@ exports[`KebabToggle right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Link
@@ -2844,6 +2903,7 @@ exports[`KebabToggle right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Action
@@ -3007,6 +3067,7 @@ exports[`dropdown basic 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={Array []}
@@ -3066,20 +3127,13 @@ exports[`dropdown basic 1`] = `
                   />
                 </svg>
               </button>
-              <ul
+              <div
                 class="pf-c-dropdown__menu"
               >
-                <div
-                  aria-labelledby="Dropdown Toggle"
-                >
-                  <div
-                    class="pf-c-dropdown__menu-item"
-                    tabindex="-1"
-                  >
-                    BASIC
-                  </div>
+                <div>
+                  BASIC
                 </div>
-              </ul>
+              </div>
             </div>,
           }
         }
@@ -3131,20 +3185,13 @@ exports[`dropdown basic 1`] = `
                     />
                   </svg>
                 </button>
-                <ul
+                <div
                   class="pf-c-dropdown__menu"
                 >
-                  <div
-                    aria-labelledby="Dropdown Toggle"
-                  >
-                    <div
-                      class="pf-c-dropdown__menu-item"
-                      tabindex="-1"
-                    >
-                      BASIC
-                    </div>
+                  <div>
+                    BASIC
                   </div>
-                </ul>
+                </div>
               </div>,
             }
           }
@@ -3205,25 +3252,17 @@ exports[`dropdown basic 1`] = `
         openedOnEnter={false}
         position="left"
       >
-        <ul
+        <div
           className="pf-c-dropdown__menu"
           hidden={false}
           onClick={[Function]}
         >
           <div
-            aria-labelledby="Dropdown Toggle"
-            autoFocus={true}
+            key=".0"
           >
-            <div
-              className="pf-c-dropdown__menu-item"
-              key=".$.0"
-              onKeyDown={[Function]}
-              tabIndex={-1}
-            >
-              BASIC
-            </div>
+            BASIC
           </div>
-        </ul>
+        </div>
       </DropdownMenu>
     </div>
   </DropdownWithContext>
@@ -3250,6 +3289,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Link
@@ -3269,6 +3309,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Action
@@ -3288,6 +3329,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -3307,6 +3349,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -3327,6 +3370,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Link
@@ -3346,6 +3390,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Action
@@ -3362,6 +3407,7 @@ exports[`dropdown dropup + right aligned 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
@@ -3381,6 +3427,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Link
@@ -3400,6 +3447,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Action
@@ -3419,6 +3467,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -3438,6 +3487,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -3458,6 +3508,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Link
@@ -3477,6 +3528,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Action
@@ -3665,6 +3717,7 @@ exports[`dropdown dropup 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Link
@@ -3684,6 +3737,7 @@ exports[`dropdown dropup 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Action
@@ -3703,6 +3757,7 @@ exports[`dropdown dropup 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -3722,6 +3777,7 @@ exports[`dropdown dropup 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -3742,6 +3798,7 @@ exports[`dropdown dropup 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Link
@@ -3761,6 +3818,7 @@ exports[`dropdown dropup 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Action
@@ -3776,6 +3834,7 @@ exports[`dropdown dropup 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
@@ -3795,6 +3854,7 @@ exports[`dropdown dropup 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Link
@@ -3814,6 +3874,7 @@ exports[`dropdown dropup 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Action
@@ -3833,6 +3894,7 @@ exports[`dropdown dropup 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -3852,6 +3914,7 @@ exports[`dropdown dropup 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -3872,6 +3935,7 @@ exports[`dropdown dropup 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Link
@@ -3891,6 +3955,7 @@ exports[`dropdown dropup 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Action
@@ -4078,6 +4143,7 @@ exports[`dropdown expanded 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Link
@@ -4097,6 +4163,7 @@ exports[`dropdown expanded 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Action
@@ -4116,6 +4183,7 @@ exports[`dropdown expanded 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -4135,6 +4203,7 @@ exports[`dropdown expanded 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -4155,6 +4224,7 @@ exports[`dropdown expanded 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Link
@@ -4174,6 +4244,7 @@ exports[`dropdown expanded 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Action
@@ -4190,6 +4261,7 @@ exports[`dropdown expanded 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -4209,6 +4281,7 @@ exports[`dropdown expanded 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Link
@@ -4228,6 +4301,7 @@ exports[`dropdown expanded 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Action
@@ -4247,6 +4321,7 @@ exports[`dropdown expanded 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -4266,6 +4341,7 @@ exports[`dropdown expanded 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -4286,6 +4362,7 @@ exports[`dropdown expanded 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Link
@@ -4305,6 +4382,7 @@ exports[`dropdown expanded 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Action
@@ -4415,11 +4493,10 @@ exports[`dropdown expanded 1`] = `
                   </button>
                 </li>
                 <li
-                  role="none"
+                  role="separator"
                 >
                   <div
                     class="pf-c-dropdown__separator"
-                    role="separator"
                   />
                 </li>
                 <li
@@ -4542,11 +4619,10 @@ exports[`dropdown expanded 1`] = `
                     </button>
                   </li>
                   <li
-                    role="none"
+                    role="separator"
                   >
                     <div
                       class="pf-c-dropdown__separator"
-                      role="separator"
                     />
                   </li>
                   <li
@@ -4653,6 +4729,7 @@ exports[`dropdown expanded 1`] = `
             key=".$link"
             onClick={[Function]}
             onSelect={[Function]}
+            role="none"
             tooltipProps={Object {}}
           >
             <li
@@ -4686,6 +4763,7 @@ exports[`dropdown expanded 1`] = `
             key=".$action"
             onClick={[Function]}
             onSelect={[Function]}
+            role="none"
             tooltipProps={Object {}}
           >
             <li
@@ -4720,6 +4798,7 @@ exports[`dropdown expanded 1`] = `
             key=".$disabled link"
             onClick={[Function]}
             onSelect={[Function]}
+            role="none"
             tooltipProps={Object {}}
           >
             <li
@@ -4754,6 +4833,7 @@ exports[`dropdown expanded 1`] = `
             key=".$disabled action"
             onClick={[Function]}
             onSelect={[Function]}
+            role="none"
             tooltipProps={Object {}}
           >
             <li
@@ -4795,7 +4875,7 @@ exports[`dropdown expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="separator"
               >
                 <div
                   className="pf-c-dropdown__separator"
@@ -4803,7 +4883,6 @@ exports[`dropdown expanded 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="separator"
                 />
               </li>
             </InternalDropdownItem>
@@ -4824,6 +4903,7 @@ exports[`dropdown expanded 1`] = `
             key=".$separated link"
             onClick={[Function]}
             onSelect={[Function]}
+            role="none"
             tooltipProps={Object {}}
           >
             <li
@@ -4857,6 +4937,7 @@ exports[`dropdown expanded 1`] = `
             key=".$separated action"
             onClick={[Function]}
             onSelect={[Function]}
+            role="none"
             tooltipProps={Object {}}
           >
             <li
@@ -4901,6 +4982,7 @@ exports[`dropdown primary 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Link
@@ -4920,6 +5002,7 @@ exports[`dropdown primary 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Action
@@ -4939,6 +5022,7 @@ exports[`dropdown primary 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -4958,6 +5042,7 @@ exports[`dropdown primary 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -4978,6 +5063,7 @@ exports[`dropdown primary 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Link
@@ -4997,6 +5083,7 @@ exports[`dropdown primary 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Action
@@ -5013,6 +5100,7 @@ exports[`dropdown primary 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -5032,6 +5120,7 @@ exports[`dropdown primary 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Link
@@ -5051,6 +5140,7 @@ exports[`dropdown primary 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Action
@@ -5070,6 +5160,7 @@ exports[`dropdown primary 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -5089,6 +5180,7 @@ exports[`dropdown primary 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -5109,6 +5201,7 @@ exports[`dropdown primary 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Link
@@ -5128,6 +5221,7 @@ exports[`dropdown primary 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Action
@@ -5317,6 +5411,7 @@ exports[`dropdown regular 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Link
@@ -5336,6 +5431,7 @@ exports[`dropdown regular 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Action
@@ -5355,6 +5451,7 @@ exports[`dropdown regular 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -5374,6 +5471,7 @@ exports[`dropdown regular 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -5394,6 +5492,7 @@ exports[`dropdown regular 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Link
@@ -5413,6 +5512,7 @@ exports[`dropdown regular 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Action
@@ -5428,6 +5528,7 @@ exports[`dropdown regular 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -5447,6 +5548,7 @@ exports[`dropdown regular 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Link
@@ -5466,6 +5568,7 @@ exports[`dropdown regular 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Action
@@ -5485,6 +5588,7 @@ exports[`dropdown regular 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -5504,6 +5608,7 @@ exports[`dropdown regular 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -5524,6 +5629,7 @@ exports[`dropdown regular 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Link
@@ -5543,6 +5649,7 @@ exports[`dropdown regular 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Action
@@ -5730,6 +5837,7 @@ exports[`dropdown right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Link
@@ -5749,6 +5857,7 @@ exports[`dropdown right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Action
@@ -5768,6 +5877,7 @@ exports[`dropdown right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Link
@@ -5787,6 +5897,7 @@ exports[`dropdown right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Disabled Action
@@ -5807,6 +5918,7 @@ exports[`dropdown right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Link
@@ -5826,6 +5938,7 @@ exports[`dropdown right aligned 1`] = `
         isHovered={false}
         onClick={[Function]}
         onSelect={[Function]}
+        role="none"
         tooltipProps={Object {}}
       >
         Separated Action
@@ -5842,6 +5955,7 @@ exports[`dropdown right aligned 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -5861,6 +5975,7 @@ exports[`dropdown right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Link
@@ -5880,6 +5995,7 @@ exports[`dropdown right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Action
@@ -5899,6 +6015,7 @@ exports[`dropdown right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Link
@@ -5918,6 +6035,7 @@ exports[`dropdown right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Disabled Action
@@ -5938,6 +6056,7 @@ exports[`dropdown right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Link
@@ -5957,6 +6076,7 @@ exports[`dropdown right aligned 1`] = `
           isHovered={false}
           onClick={[Function]}
           onSelect={[Function]}
+          role="none"
           tooltipProps={Object {}}
         >
           Separated Action

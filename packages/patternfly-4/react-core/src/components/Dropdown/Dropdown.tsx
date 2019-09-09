@@ -25,6 +25,10 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement> {
   toggle: React.ReactElement<any>;
   /** Function callback called when user selects item */
   onSelect?(event: React.SyntheticEvent<HTMLDivElement>): void;
+  /** Flag to indicate if the first dropdown item should gain initial focus, set false when adding
+   * a specific auto-focus item (like a current selection) otherwise leave as true
+   */
+  autoFocus?: boolean;
 }
 
 export class DropdownWithContext extends React.Component<DropdownProps> {
@@ -42,7 +46,8 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
     isGrouped: false,
     position: DropdownPosition.left,
     direction: DropdownDirection.down,
-    onSelect: Function.prototype
+    onSelect: Function.prototype,
+    autoFocus: true
   };
 
   constructor(props: DropdownProps) {
@@ -74,6 +79,7 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
       onSelect,
       position,
       toggle,
+      autoFocus,
       ...props
     } = this.props;
     const id = toggle.props.id || `pf-toggle-id-${DropdownWithContext.currentId++}`;
@@ -121,6 +127,7 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
                   aria-labelledby={contextId ? `${contextId}-toggle` : id}
                   openedOnEnter={this.openedOnEnter}
                   isGrouped={isGrouped}
+                  autoFocus={autoFocus}
                 >
                   {renderedContent}
                 </DropdownMenu>

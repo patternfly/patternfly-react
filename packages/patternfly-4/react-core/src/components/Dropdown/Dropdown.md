@@ -698,23 +698,7 @@ class DropdownPanel extends React.Component {
         toggle={<DropdownToggle onToggle={this.onToggle}>Expanded Dropdown</DropdownToggle>}
         isOpen={isOpen}
       >
-        <ul className="pf-c-dropdown__menu">
-          <DropdownItem key="link">Link</DropdownItem>
-          <DropdownItem key="action" component="button" autoFocus>
-            Action
-          </DropdownItem>
-          <DropdownItem key="disabled link" isDisabled>
-            Disabled Link
-          </DropdownItem>
-          <DropdownItem key="disabled action" isDisabled component="button">
-            Disabled Action
-          </DropdownItem>
-          <DropdownSeparator key="separator" />
-          <DropdownItem key="separated link">Separated Link</DropdownItem>
-          <DropdownItem key="separated action" component="button">
-            Separated Action
-          </DropdownItem>
-        </ul>
+        [Panel contents here]
       </Dropdown>
     );
   }

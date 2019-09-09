@@ -81,8 +81,8 @@ export class Toggle extends React.Component<ToggleProps> {
     if (
       this.props.isOpen &&
       (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&
-      parentRef &&
-      parentRef.contains(event.target)
+      parentRef && parentRef.current && 
+      parentRef.current.contains(event.target)
     ) {
       this.props.onToggle(false, event);
       this.buttonRef.current.focus();

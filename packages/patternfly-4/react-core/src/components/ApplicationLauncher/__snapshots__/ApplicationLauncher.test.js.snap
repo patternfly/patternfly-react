@@ -56,6 +56,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -166,23 +167,21 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 role="menu"
               >
                 <li
-                  role="none"
+                  role="menuitem"
                 >
                   <a
                     aria-disabled="false"
                     class="pf-c-app-launcher__menu-item"
-                    role="menuitem"
                     tabindex="-1"
                   >
                     Link
                   </a>
                 </li>
                 <li
-                  role="none"
+                  role="menuitem"
                 >
                   <button
                     class="pf-c-app-launcher__menu-item"
-                    role="menuitem"
                     tabindex="-1"
                     type="button"
                   >
@@ -190,24 +189,22 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   </button>
                 </li>
                 <li
-                  role="none"
+                  role="menuitem"
                 >
                   <a
                     aria-disabled="true"
                     class="pf-m-disabled pf-c-app-launcher__menu-item"
-                    role="menuitem"
                     tabindex="-1"
                   >
                     Disabled Link
                   </a>
                 </li>
                 <li
-                  role="none"
+                  role="menuitem"
                 >
                   <button
                     class="pf-m-disabled pf-c-app-launcher__menu-item"
                     disabled=""
-                    role="menuitem"
                     tabindex="-1"
                     type="button"
                   >
@@ -215,31 +212,28 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   </button>
                 </li>
                 <li
-                  role="none"
+                  role="separator"
                 >
                   <div
                     class="pf-c-app-launcher__separator"
-                    role="separator"
                   />
                 </li>
                 <li
-                  role="none"
+                  role="menuitem"
                 >
                   <a
                     aria-disabled="false"
                     class="pf-c-app-launcher__menu-item"
-                    role="menuitem"
                     tabindex="-1"
                   >
                     Separated Link
                   </a>
                 </li>
                 <li
-                  role="none"
+                  role="menuitem"
                 >
                   <button
                     class="pf-c-app-launcher__menu-item"
-                    role="menuitem"
                     tabindex="-1"
                     type="button"
                   >
@@ -304,23 +298,21 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   role="menu"
                 >
                   <li
-                    role="none"
+                    role="menuitem"
                   >
                     <a
                       aria-disabled="false"
                       class="pf-c-app-launcher__menu-item"
-                      role="menuitem"
                       tabindex="-1"
                     >
                       Link
                     </a>
                   </li>
                   <li
-                    role="none"
+                    role="menuitem"
                   >
                     <button
                       class="pf-c-app-launcher__menu-item"
-                      role="menuitem"
                       tabindex="-1"
                       type="button"
                     >
@@ -328,24 +320,22 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     </button>
                   </li>
                   <li
-                    role="none"
+                    role="menuitem"
                   >
                     <a
                       aria-disabled="true"
                       class="pf-m-disabled pf-c-app-launcher__menu-item"
-                      role="menuitem"
                       tabindex="-1"
                     >
                       Disabled Link
                     </a>
                   </li>
                   <li
-                    role="none"
+                    role="menuitem"
                   >
                     <button
                       class="pf-m-disabled pf-c-app-launcher__menu-item"
                       disabled=""
-                      role="menuitem"
                       tabindex="-1"
                       type="button"
                     >
@@ -353,31 +343,28 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     </button>
                   </li>
                   <li
-                    role="none"
+                    role="separator"
                   >
                     <div
                       class="pf-c-app-launcher__separator"
-                      role="separator"
                     />
                   </li>
                   <li
-                    role="none"
+                    role="menuitem"
                   >
                     <a
                       aria-disabled="false"
                       class="pf-c-app-launcher__menu-item"
-                      role="menuitem"
                       tabindex="-1"
                     >
                       Separated Link
                     </a>
                   </li>
                   <li
-                    role="none"
+                    role="menuitem"
                   >
                     <button
                       class="pf-c-app-launcher__menu-item"
-                      role="menuitem"
                       tabindex="-1"
                       type="button"
                     >
@@ -477,7 +464,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="menuitem"
               >
                 <a
                   aria-disabled={false}
@@ -486,7 +473,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="menuitem"
                   tabIndex={-1}
                 >
                   Link
@@ -520,7 +506,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="menuitem"
               >
                 <button
                   className="pf-c-app-launcher__menu-item"
@@ -529,7 +515,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="menuitem"
                   tabIndex={-1}
                   type="button"
                 >
@@ -564,7 +549,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="menuitem"
               >
                 <a
                   aria-disabled={true}
@@ -573,7 +558,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="menuitem"
                   tabIndex={-1}
                 >
                   Disabled Link
@@ -608,7 +592,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="menuitem"
               >
                 <button
                   className="pf-m-disabled pf-c-app-launcher__menu-item"
@@ -617,7 +601,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="menuitem"
                   tabIndex={-1}
                   type="button"
                 >
@@ -649,7 +632,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="separator"
               >
                 <div
                   className="pf-c-app-launcher__separator"
@@ -657,7 +640,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="separator"
                 />
               </li>
             </InternalDropdownItem>
@@ -687,7 +669,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="menuitem"
               >
                 <a
                   aria-disabled={false}
@@ -696,7 +678,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="menuitem"
                   tabIndex={-1}
                 >
                   Separated Link
@@ -730,7 +711,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="menuitem"
               >
                 <button
                   className="pf-c-app-launcher__menu-item"
@@ -739,7 +720,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="menuitem"
                   tabIndex={-1}
                   type="button"
                 >
@@ -810,6 +790,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
+    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
@@ -1070,6 +1051,7 @@ exports[`ApplicationLauncher dropup 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
+    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
@@ -1330,6 +1312,7 @@ exports[`ApplicationLauncher expanded 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -1438,23 +1421,21 @@ exports[`ApplicationLauncher expanded 1`] = `
                 role="menu"
               >
                 <li
-                  role="none"
+                  role="menuitem"
                 >
                   <a
                     aria-disabled="false"
                     class="pf-c-app-launcher__menu-item"
-                    role="menuitem"
                     tabindex="-1"
                   >
                     Link
                   </a>
                 </li>
                 <li
-                  role="none"
+                  role="menuitem"
                 >
                   <button
                     class="pf-c-app-launcher__menu-item"
-                    role="menuitem"
                     tabindex="-1"
                     type="button"
                   >
@@ -1462,24 +1443,22 @@ exports[`ApplicationLauncher expanded 1`] = `
                   </button>
                 </li>
                 <li
-                  role="none"
+                  role="menuitem"
                 >
                   <a
                     aria-disabled="true"
                     class="pf-m-disabled pf-c-app-launcher__menu-item"
-                    role="menuitem"
                     tabindex="-1"
                   >
                     Disabled Link
                   </a>
                 </li>
                 <li
-                  role="none"
+                  role="menuitem"
                 >
                   <button
                     class="pf-m-disabled pf-c-app-launcher__menu-item"
                     disabled=""
-                    role="menuitem"
                     tabindex="-1"
                     type="button"
                   >
@@ -1487,31 +1466,28 @@ exports[`ApplicationLauncher expanded 1`] = `
                   </button>
                 </li>
                 <li
-                  role="none"
+                  role="separator"
                 >
                   <div
                     class="pf-c-app-launcher__separator"
-                    role="separator"
                   />
                 </li>
                 <li
-                  role="none"
+                  role="menuitem"
                 >
                   <a
                     aria-disabled="false"
                     class="pf-c-app-launcher__menu-item"
-                    role="menuitem"
                     tabindex="-1"
                   >
                     Separated Link
                   </a>
                 </li>
                 <li
-                  role="none"
+                  role="menuitem"
                 >
                   <button
                     class="pf-c-app-launcher__menu-item"
-                    role="menuitem"
                     tabindex="-1"
                     type="button"
                   >
@@ -1575,23 +1551,21 @@ exports[`ApplicationLauncher expanded 1`] = `
                   role="menu"
                 >
                   <li
-                    role="none"
+                    role="menuitem"
                   >
                     <a
                       aria-disabled="false"
                       class="pf-c-app-launcher__menu-item"
-                      role="menuitem"
                       tabindex="-1"
                     >
                       Link
                     </a>
                   </li>
                   <li
-                    role="none"
+                    role="menuitem"
                   >
                     <button
                       class="pf-c-app-launcher__menu-item"
-                      role="menuitem"
                       tabindex="-1"
                       type="button"
                     >
@@ -1599,24 +1573,22 @@ exports[`ApplicationLauncher expanded 1`] = `
                     </button>
                   </li>
                   <li
-                    role="none"
+                    role="menuitem"
                   >
                     <a
                       aria-disabled="true"
                       class="pf-m-disabled pf-c-app-launcher__menu-item"
-                      role="menuitem"
                       tabindex="-1"
                     >
                       Disabled Link
                     </a>
                   </li>
                   <li
-                    role="none"
+                    role="menuitem"
                   >
                     <button
                       class="pf-m-disabled pf-c-app-launcher__menu-item"
                       disabled=""
-                      role="menuitem"
                       tabindex="-1"
                       type="button"
                     >
@@ -1624,31 +1596,28 @@ exports[`ApplicationLauncher expanded 1`] = `
                     </button>
                   </li>
                   <li
-                    role="none"
+                    role="separator"
                   >
                     <div
                       class="pf-c-app-launcher__separator"
-                      role="separator"
                     />
                   </li>
                   <li
-                    role="none"
+                    role="menuitem"
                   >
                     <a
                       aria-disabled="false"
                       class="pf-c-app-launcher__menu-item"
-                      role="menuitem"
                       tabindex="-1"
                     >
                       Separated Link
                     </a>
                   </li>
                   <li
-                    role="none"
+                    role="menuitem"
                   >
                     <button
                       class="pf-c-app-launcher__menu-item"
-                      role="menuitem"
                       tabindex="-1"
                       type="button"
                     >
@@ -1746,7 +1715,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="menuitem"
               >
                 <a
                   aria-disabled={false}
@@ -1755,7 +1724,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="menuitem"
                   tabIndex={-1}
                 >
                   Link
@@ -1789,7 +1757,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="menuitem"
               >
                 <button
                   className="pf-c-app-launcher__menu-item"
@@ -1798,7 +1766,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="menuitem"
                   tabIndex={-1}
                   type="button"
                 >
@@ -1833,7 +1800,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="menuitem"
               >
                 <a
                   aria-disabled={true}
@@ -1842,7 +1809,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="menuitem"
                   tabIndex={-1}
                 >
                   Disabled Link
@@ -1877,7 +1843,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="menuitem"
               >
                 <button
                   className="pf-m-disabled pf-c-app-launcher__menu-item"
@@ -1886,7 +1852,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="menuitem"
                   tabIndex={-1}
                   type="button"
                 >
@@ -1918,7 +1883,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="separator"
               >
                 <div
                   className="pf-c-app-launcher__separator"
@@ -1926,7 +1891,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="separator"
                 />
               </li>
             </InternalDropdownItem>
@@ -1956,7 +1920,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="menuitem"
               >
                 <a
                   aria-disabled={false}
@@ -1965,7 +1929,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="menuitem"
                   tabIndex={-1}
                 >
                   Separated Link
@@ -1999,7 +1962,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                role="none"
+                role="menuitem"
               >
                 <button
                   className="pf-c-app-launcher__menu-item"
@@ -2008,7 +1971,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   onSelect={[Function]}
-                  role="menuitem"
                   tabIndex={-1}
                   type="button"
                 >
@@ -2079,6 +2041,7 @@ exports[`ApplicationLauncher regular 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -2339,6 +2302,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
 >
   <DropdownWithContext
     aria-label="Application launcher"
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
