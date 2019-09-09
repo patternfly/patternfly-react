@@ -17,21 +17,60 @@ export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
   id: string;
 }
 
-export class DataToolbar extends React.Component<DataToolbarProps> {
+export interface DataToolbarState {
+  /** Flag indicating the if the expandable content's expanded state is consumer managed or not */
+  isConsumerManagedToggleGroup: boolean;
+  /** Flag indicating if the component managed state has expanded content or not */
+  componentManagedIsExpanded: boolean;
+}
+
+export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarState> {
   private expandableContentRef = React.createRef<HTMLDivElement>();
 
   static defaultProps = {
-    isExpanded: false,
-    toggleIsExpanded: () => null as any
+    isExpanded: false
   };
 
   constructor(props: DataToolbarProps) {
     super(props);
+
+    this.state = {
+      isConsumerManagedToggleGroup: props.isExpanded || !!props.toggleIsExpanded,
+      componentManagedIsExpanded: false
+    }
+  }
+
+  toggleIsExpanded = () => {
+    this.setState((prevState) => ({
+      componentManagedIsExpanded: !prevState.componentManagedIsExpanded
+    }));
+  };
+
+  closeExpandableContent = () => {
+    this.setState(() => ({
+      componentManagedIsExpanded: false
+    }));
+  };
+
+  componentDidMount() {
+    const { isConsumerManagedToggleGroup } = this.state;
+
+    if( !isConsumerManagedToggleGroup ) {
+      window.addEventListener('resize', this.closeExpandableContent);
+    }
+  }
+
+  componentWillUnmount() {
+    const { isConsumerManagedToggleGroup } = this.state;
+    if (isConsumerManagedToggleGroup) {
+      window.removeEventListener('resize', this.closeExpandableContent);
+    }
   }
 
   render() {
 
     const { className, children, isExpanded, toggleIsExpanded, id, ...props} = this.props;
+    const { isConsumerManagedToggleGroup, componentManagedIsExpanded } = this.state;
 
     const expandableContentId = `${id}-expandable-content`;
 
@@ -39,8 +78,8 @@ export class DataToolbar extends React.Component<DataToolbarProps> {
       <div className={css(styles.dataToolbar, className)} id={id} {...props}>
         <DataToolbarContext.Provider
           value={{
-            isExpanded,
-            toggleIsExpanded: toggleIsExpanded,
+            isExpanded: isConsumerManagedToggleGroup ? isExpanded : componentManagedIsExpanded,
+            toggleIsExpanded: isConsumerManagedToggleGroup ? toggleIsExpanded : this.toggleIsExpanded,
             expandableContentRef: this.expandableContentRef,
             expandableContentId
           }}
@@ -49,7 +88,7 @@ export class DataToolbar extends React.Component<DataToolbarProps> {
         </DataToolbarContext.Provider>
         <DataToolbarExpandableContent
           id={expandableContentId}
-          isExpanded={isExpanded}
+          isExpanded={isConsumerManagedToggleGroup ? isExpanded : componentManagedIsExpanded}
           expandableContentRef={this.expandableContentRef}
         />
       </div>
