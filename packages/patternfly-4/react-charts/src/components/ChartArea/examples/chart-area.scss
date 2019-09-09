@@ -13,5 +13,7 @@
       height: 200px;
       width: 800px;
     }
+
+    .VictoryContainer svg g[clip-path] { mix-blend-mode: multiply }
   }
 }

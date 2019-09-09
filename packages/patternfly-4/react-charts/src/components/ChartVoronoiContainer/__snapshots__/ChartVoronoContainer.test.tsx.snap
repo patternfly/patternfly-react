@@ -45,7 +45,6 @@ exports[`ChartVoronoiContainer 1`] = `
           "data": Object {
             "fill": "#06c",
             "fillOpacity": 0.4,
-            "stroke": "transparent",
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -528,7 +527,6 @@ exports[`ChartVoronoiContainer 2`] = `
           "data": Object {
             "fill": "#06c",
             "fillOpacity": 0.4,
-            "stroke": "transparent",
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -1013,7 +1011,6 @@ exports[`renders container via ChartGroup 1`] = `
               "data": Object {
                 "fill": "#06c",
                 "fillOpacity": 0.4,
-                "stroke": "transparent",
                 "strokeWidth": 2,
               },
               "labels": Object {
@@ -1471,7 +1468,6 @@ exports[`renders container via ChartGroup 1`] = `
           "data": Object {
             "fill": "#06c",
             "fillOpacity": 0.4,
-            "stroke": "transparent",
             "strokeWidth": 2,
           },
           "labels": Object {

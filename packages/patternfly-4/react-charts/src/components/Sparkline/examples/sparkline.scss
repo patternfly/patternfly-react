@@ -1,7 +1,7 @@
 .ws-preview {
   & > * {
     .sparkline-chart {
-      height: 75px;
+      height: 100px;
       width: 400px;
     }
 
@@ -9,6 +9,9 @@
       margin-left: 50px;
       margin-top: 50px;
       height: 135px;
+    }
+
+    .sparkline-overflow {
       & svg {
         overflow: visible;
       }
