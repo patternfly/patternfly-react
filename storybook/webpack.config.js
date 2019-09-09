@@ -1,5 +1,4 @@
 const path = require('path');
-const pkg = require('../package.json');
 const { readdirSync, statSync } = require('fs');
 const { parse } = require('path');
 
@@ -12,11 +11,12 @@ const packages = readdirSync(path.resolve(__dirname, PCKGS))
   .map(file => parse(file).name)
   .reduce((acc, curr) => [...acc, path.resolve(__dirname, `${PCKGS}/${curr}`)], []);
 
-module.exports = (baseConfig, env, defaultConfig) => {
-  // add the root path so root references can be used in stories
-  defaultConfig.resolve.modules.push(path.resolve(__dirname, '../'));
+module.exports = async ({ config }) => {
+  config.resolve.modules.push(path.resolve(__dirname, '../'));
 
-  defaultConfig.module.rules.push(
+  // Remove storybook's SASS rule
+  config.module.rules = config.module.rules.filter(rule => !rule.test.test('.scss'));
+  config.module.rules.push(
     // Storysource Addon
     {
       test: /\.stories\.jsx?$/,
@@ -31,16 +31,6 @@ module.exports = (baseConfig, env, defaultConfig) => {
         }
       ],
       enforce: 'pre'
-    },
-    // Css
-    {
-      test: /\.css$/,
-      loaders: ['style-loader', 'css-loader'],
-      include: [
-        ...packages.map(onePck => `${onePck}/src'`),
-        ...packages.map(onePck => `${onePck}/'`),
-        path.resolve(__dirname, './')
-      ]
     },
     // Sass
     {
@@ -58,10 +48,11 @@ module.exports = (baseConfig, env, defaultConfig) => {
     }
   );
 
-  defaultConfig.resolve.alias = {
-    ...defaultConfig.resolve.alias,
+  config.resolve.alias = {
+    ...config.resolve.alias,
     'patternfly-react': path.resolve(__dirname, '../packages/patternfly-3/patternfly-react/src')
   };
 
-  return defaultConfig;
+  console.log('config', config.module.rules)
+  return config;
 };

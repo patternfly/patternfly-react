@@ -34,7 +34,7 @@
     "@patternfly/react-tokens": "^2.6.29",
     "classnames": "^2.2.5",
     "exenv": "^1.2.2",
-    "lodash": "^4.2.1"
+    "lodash": "^4.17.15"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
@@ -61,7 +61,6 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@types/classnames": "^2.2.9",
-    "@types/lodash-es": "^4.17.3",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-typescript-to-proptypes": "^0.17.1",
     "css": "^2.2.3",

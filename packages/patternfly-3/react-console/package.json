@@ -52,7 +52,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "node-sass": "^4.12.0",
-    "patternfly": "^3.58.0",
+    "patternfly": "^3.59.4",
     "patternfly-react": "^2.39.1",
     "rimraf": "^2.6.2",
     "shx": "^0.3.2"

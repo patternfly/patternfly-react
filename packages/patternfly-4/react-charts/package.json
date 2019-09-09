@@ -33,7 +33,7 @@
     "@patternfly/react-styles": "^3.5.25",
     "@patternfly/react-tokens": "^2.6.29",
     "hoist-non-react-statics": "^3.3.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "victory": "^33.0.5",
     "victory-core": "^33.0.1",
     "victory-legend": "^33.0.1"
@@ -61,7 +61,7 @@
     "@babel/plugin-transform-typescript": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@types/lodash": "^4.14.132",
+    "@types/lodash": "^4.14.138",
     "@types/victory": "^31.0.21",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-typescript-to-proptypes": "^0.17.1",
