@@ -21,7 +21,7 @@ export type DataToolbarBreakpointMod = {
 
 export const formatBreakpointMods = (breakpointMods: DataToolbarBreakpointMod[]) => {
   return breakpointMods.reduce((acc, curr) => (
-    `${acc} ${getModifier(styles, `${curr.modifier}-on-${curr.breakpoint}`)}`
+    `${acc} ${getModifier(styles, `${curr.modifier}${curr.breakpoint  ? `-on-${curr.breakpoint}` : ''}`)}`
   ), '');
 };
 

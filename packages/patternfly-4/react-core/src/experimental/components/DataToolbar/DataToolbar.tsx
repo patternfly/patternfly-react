@@ -37,25 +37,25 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
     this.state = {
       isConsumerManagedToggleGroup: props.isExpanded || !!props.toggleIsExpanded,
       componentManagedIsExpanded: false
-    }
+    };
   }
 
   toggleIsExpanded = () => {
     this.setState((prevState) => ({
       componentManagedIsExpanded: !prevState.componentManagedIsExpanded
     }));
-  };
+  }
 
   closeExpandableContent = () => {
     this.setState(() => ({
       componentManagedIsExpanded: false
     }));
-  };
+  }
 
   componentDidMount() {
     const { isConsumerManagedToggleGroup } = this.state;
 
-    if( !isConsumerManagedToggleGroup ) {
+    if ( !isConsumerManagedToggleGroup ) {
       window.addEventListener('resize', this.closeExpandableContent);
     }
   }

@@ -29,7 +29,6 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
 
   render() {
     const { toggleIcon, breakpoint, variant, breakpointMods, spacers, className, children, ...props } = this.props;
-    const { isExpanded, toggleIsExpanded, expandableContentRef, expandableContentId } = this.context;
 
     return (
       <DataToolbarContext.Consumer>
