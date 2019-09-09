@@ -6,8 +6,8 @@ import { Omit } from '../../helpers/typeUtils';
 import { AngleLeftIcon, AngleRightIcon } from '@patternfly/react-icons';
 import { getUniqueId, isElementInView, sideElementIsOutOfView } from '../../helpers/util';
 import { SIDE } from '../../helpers/constants';
-import { TabContent } from './TabContent';
 import { Tab } from './Tab';
+import { TabContent } from './TabContent';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 export enum TabsVariant {
@@ -38,6 +38,10 @@ export interface TabsProps extends Omit<React.HTMLProps<HTMLElement | HTMLDivEle
   variant?: 'div' | 'nav';
   /** provides an accessible label for the Tabs. Labels should be unique for each set of Tabs that are present on a page. When variant is set to nav, this prop should be defined to differentiate the Tabs from other navigation regions on the page. */
   'aria-label'?: string;
+  /** waits until the first "enter" transition to mount tab children (add them to the DOM) */
+  mountOnEnter?: boolean;
+  /** unmounts tab children (removes them from the DOM) when they are no longer visible */
+  unmountOnExit?: boolean;
 }
 
 export interface TabsState {
@@ -45,6 +49,7 @@ export interface TabsState {
   showRightScrollButton: boolean;
   highlightLeftScrollButton: boolean;
   highlightRightScrollButton: boolean;
+  shownKeys: (string|number)[];
 }
 
 class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
@@ -55,7 +60,8 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
       showLeftScrollButton: false,
       showRightScrollButton: false,
       highlightLeftScrollButton: false,
-      highlightRightScrollButton: false
+      highlightRightScrollButton: false,
+      shownKeys: [this.props.activeKey] // only for mountOnEnter case
     };
   }
 
@@ -67,14 +73,18 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
     isSecondary: false,
     leftScrollAriaLabel: 'Scroll left',
     rightScrollAriaLabel: 'Scroll right',
-    variant: TabsVariant.div
+    variant: TabsVariant.div,
+    mountOnEnter: false,
+    unmountOnExit: false,
   };
 
   handleTabClick(
     event: React.MouseEvent<HTMLElement, MouseEvent>,
     eventKey: number,
-    tabContentRef: React.RefObject<any>
+    tabContentRef: React.RefObject<any>,
+    mountOnEnter: boolean
   ) {
+    const { shownKeys } = this.state;
     this.props.onSelect(event, eventKey);
     // process any tab content sections outside of the component
     if (tabContentRef) {
@@ -88,6 +98,11 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
     setTimeout(() => {
       this.handleScrollButtons();
     }, 1);
+    if (mountOnEnter) {
+      this.setState({
+        shownKeys: shownKeys.concat(eventKey)
+      });
+    }
   }
 
   handleScrollButtons = () => {
@@ -184,13 +199,16 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
       variant,
       ouiaContext,
       ouiaId,
+      mountOnEnter,
+      unmountOnExit,
       ...props
     } = this.props;
     const {
       showLeftScrollButton,
       showRightScrollButton,
       highlightLeftScrollButton,
-      highlightRightScrollButton
+      highlightRightScrollButton,
+      shownKeys
     } = this.state;
 
     const uniqueId = id || getUniqueId();
@@ -233,7 +251,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
                 >
                   <Tab
                     className={css(styles.tabsButton)}
-                    onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef)}
+                    onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
                     id={`pf-tab-${eventKey}-${childId || uniqueId}`}
                     aria-controls={
                       tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`
@@ -257,10 +275,13 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
             <AngleRightIcon />
           </button>
         </Component>
-        {React.Children.map(children, (child: any, index) =>
-          !child.props.children ? null : (
-            <TabContent key={index} activeKey={activeKey} child={child} id={child.props.id || uniqueId} />
-          )
+        {React.Children.map(children, (child: any, index) => {
+          if (!child.props.children || (unmountOnExit && child.props.eventKey !== activeKey) || (mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)) {
+            return null;
+          } else {
+            return <TabContent key={index} activeKey={activeKey} child={child} id={child.props.id || uniqueId} />;
+          }
+        }
         )}
       </React.Fragment>
     );

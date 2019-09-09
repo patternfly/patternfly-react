@@ -45,6 +45,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       isFilled={true}
       isSecondary={false}
       leftScrollAriaLabel="Scroll left"
+      mountOnEnter={false}
       onSelect={[Function]}
       ouiaContext={
         Object {
@@ -53,6 +54,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         }
       }
       rightScrollAriaLabel="Scroll right"
+      unmountOnExit={false}
       variant="div"
     >
       <div
@@ -413,6 +415,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       isFilled={true}
       isSecondary={false}
       leftScrollAriaLabel="Scroll left"
+      mountOnEnter={false}
       onSelect={[Function]}
       ouiaContext={
         Object {
@@ -421,6 +424,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         }
       }
       rightScrollAriaLabel="Scroll right"
+      unmountOnExit={false}
       variant="div"
     >
       <div
@@ -781,6 +785,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       isFilled={true}
       isSecondary={false}
       leftScrollAriaLabel="Scroll left"
+      mountOnEnter={false}
       onSelect={[Function]}
       ouiaContext={
         Object {
@@ -789,6 +794,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         }
       }
       rightScrollAriaLabel="Scroll right"
+      unmountOnExit={false}
       variant="div"
     >
       <div
