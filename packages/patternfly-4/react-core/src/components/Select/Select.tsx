@@ -121,9 +121,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
       });
     }
 
-    if (prevProps.selections !== this.props.selections) {
+    if (prevProps.selections !== this.props.selections && this.state.typeaheadActiveChild) {
       this.setState({
-        typeaheadInputValue: (this.state.typeaheadActiveChild && this.state.typeaheadActiveChild.innerText)
+        typeaheadInputValue: this.state.typeaheadActiveChild.innerText
       });
     }
   }
