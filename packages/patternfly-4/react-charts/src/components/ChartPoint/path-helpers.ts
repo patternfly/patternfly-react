@@ -119,5 +119,24 @@ export const PathHelpers = {
       v-${lineHeight}
       h-${distance}
       z`;
+  },
+
+  threshold(x: number, y: number, size: number) {
+    const baseSize = 1.1 * size;
+    const lineHeight = baseSize - baseSize * 0.3;
+    const x0 = x - baseSize;
+    const y1 = y + lineHeight / 2;
+    const distance = (x + baseSize - x0) * 0.5;
+    const padding = distance / 3;
+    return `M ${x0}, ${y1}
+      h${distance}
+      v-${lineHeight}
+      h-${distance}
+      z
+      M ${x0 + distance + padding}, ${y1}
+      h${distance}
+      v-${lineHeight}
+      h-${distance}
+      z`;
   }
 };
