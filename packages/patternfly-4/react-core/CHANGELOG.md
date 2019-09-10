@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.104.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.103.4...@patternfly/react-core@3.104.0) (2019-09-10)
+
+
+### Features
+
+* **DataToolbar:** Add Data Toolbar component to experimental ([#2861](https://github.com/patternfly/patternfly-react/issues/2861)) ([6ec0ce4](https://github.com/patternfly/patternfly-react/commit/6ec0ce4))
+
+
+
+
+
 ## [3.103.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.103.3...@patternfly/react-core@3.103.4) (2019-09-10)
 
 
