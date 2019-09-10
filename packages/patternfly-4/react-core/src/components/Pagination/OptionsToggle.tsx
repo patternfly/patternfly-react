@@ -31,6 +31,8 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   parentRef?: HTMLElement;
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */
   toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
+  /** Callback for toggle open on keyboard entry */
+  onEnter?: () => void;
 }
 
 export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
@@ -46,11 +48,13 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   isDisabled = false,
   parentRef = null,
   toggleTemplate: ToggleTemplate = '',
+  onEnter = null
 }: OptionsToggleProps ) => {
   return (
     <div className={css(styles.optionsMenuToggle, isDisabled && styles.modifiers.disabled, styles.modifiers.plain, styles.modifiers.text)} >
       {showToggle && (
         <DropdownToggle
+          onEnter={onEnter}
           aria-label={optionsToggle}
           onToggle={onToggle}
           isDisabled={isDisabled || itemCount <= 0}

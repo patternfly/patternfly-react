@@ -31,11 +31,11 @@ export interface DropdownMenuItem extends React.HTMLAttributes<any> {
   isDisabled: boolean;
   disabled: boolean;
   isHovered: boolean;
-  ref: React.RefObject<any>;
+  ref: HTMLElement;
 }
 
 export class DropdownMenu extends React.Component<DropdownMenuProps> {
-  refsCollection = [] as React.RefObject<HTMLElement>[];
+  refsCollection = [] as HTMLElement[];
 
   static defaultProps = {
     className: '',
@@ -49,16 +49,17 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
 
   componentDidMount() {
     const { autoFocus } = this.props;
-
     if (this.props.component === 'ul' && autoFocus) {
       const focusTarget = this.refsCollection.find(
-        (ref) => ref && (ref.current && !ref.current.hasAttribute('disabled'))
+        (ref) => {
+          return ref && !ref.hasAttribute('disabled')
+        }
       );
-      if (focusTarget && focusTarget.current) {
-        if (focusTarget.current.focus) {
-          focusTarget.current.focus();
+      if (focusTarget) {
+        if (focusTarget.focus) {
+          focusTarget.focus();
         } else {
-          const searchedFocusTarget = ReactDOM.findDOMNode(focusTarget.current) as HTMLElement;
+          const searchedFocusTarget = ReactDOM.findDOMNode(focusTarget) as HTMLElement;
           searchedFocusTarget.focus();
         }
       } else if (focusTarget) {
@@ -77,11 +78,11 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     );
   }
 
-  sendRef = (index: number, node: any, isDisabled: boolean) => {
+  sendRef = (index: number, node: any, isDisabled: boolean, isSeparator: boolean) => {
     if (!node.getAttribute) {
       // eslint-disable-line react/no-find-dom-node
-      this.refsCollection[index] = { current: ReactDOM.findDOMNode(node) as HTMLElement };
-    } else if (isDisabled || node.getAttribute('role') === 'separator') {
+      this.refsCollection[index] = ReactDOM.findDOMNode(node) as HTMLElement;
+    } else if (isDisabled || isSeparator) {
       this.refsCollection[index] = null;
     } else {
       this.refsCollection[index] = node;
@@ -118,35 +119,6 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
     );
   }
 
-  extendCustomChildren() {
-    const mappedChildren = React.Children.map(this.props.children, (child0, index) => {
-      const child = child0 as React.ReactElement<DropdownMenuItem>;
-      const mappedChild = React.cloneElement(child, {
-        ref: React.createRef(),
-        className: `${css(
-          child.props.isDisabled && styles.modifiers.disabled,
-          child.props.isHovered && styles.modifiers.hover,
-          styles.dropdownMenuItem
-        )}${child.props.className ? child.props.className : ''}`,
-        tabIndex: -1,
-        onKeyDown: (event: React.KeyboardEvent<any>) => {
-          if (event.keyCode === KEY_CODES.TAB) { return; }
-          event.preventDefault();
-          if (event.keyCode === KEY_CODES.ARROW_UP) {
-            keyHandler(index, KEYHANDLER_DIRECTION.UP, this.refsCollection, React.Children.toArray(this.props.children), true);
-          } else if (event.keyCode === KEY_CODES.ARROW_DOWN) {
-            keyHandler(index, KEYHANDLER_DIRECTION.DOWN, this.refsCollection, React.Children.toArray(this.props.children), true);
-          }
-        }
-      });
-      !mappedChild.props.disabled
-        ? (this.refsCollection[index] = mappedChild.props.ref)
-        : (this.refsCollection[index] = null);
-      return mappedChild;
-    });
-    return mappedChildren;
-  }
-
   render() {
     const {
       className,
@@ -158,7 +130,6 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
       openedOnEnter,
       ...props
     } = this.props;
-    const Component = component as any;
     return (
       <DropdownArrowContext.Provider
         value={{
@@ -166,10 +137,10 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
           sendRef: this.sendRef
         }}
       >
-        {Component === 'div' ? (
+        {component === 'div' ? (
           <DropdownContext.Consumer>
             {({ onSelect, menuClass }) => (
-              <ul
+              <div
                 className={css(
                   menuClass,
                   position === DropdownPosition.right && styles.modifiers.alignRight,
@@ -178,8 +149,8 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
                 hidden={!isOpen}
                 onClick={(event) => onSelect && onSelect(event)}
               >
-                <Component {...props}>{this.extendCustomChildren()}</Component>
-              </ul>
+                {children}
+              </div>
             )}
           </DropdownContext.Consumer>
         ) : (
@@ -206,7 +177,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
           )) || (
             <DropdownContext.Consumer>
               {({ menuClass, menuComponent }) => {
-                const MenuComponent = (menuComponent || Component) as any;
+                const MenuComponent = (menuComponent || component) as any;
                 return (
                   <MenuComponent
                     {...props}

@@ -57,19 +57,19 @@ export class Toggle extends React.Component<ToggleProps> {
   };
 
   componentDidMount = () => {
-    document.addEventListener('mousedown', this.onDocClick);
-    document.addEventListener('touchstart', this.onDocClick);
-    document.addEventListener('keydown', this.onEscPress);
+    document.addEventListener('mousedown', event => this.onDocClick(event));
+    document.addEventListener('touchstart', event => this.onDocClick(event));
+    document.addEventListener('keydown', event => this.onEscPress(event));
   }
 
   componentWillUnmount = () => {
-    document.removeEventListener('mousedown', this.onDocClick);
-    document.removeEventListener('touchstart', this.onDocClick);
-    document.removeEventListener('keydown', this.onEscPress);
+    document.removeEventListener('mousedown', event => this.onDocClick(event));
+    document.removeEventListener('touchstart', event => this.onDocClick(event));
+    document.removeEventListener('keydown', event => this.onEscPress(event));
   }
 
   onDocClick = (event: MouseEvent | TouchEvent) => {
-    if (this.props.isOpen && this.props.parentRef && !this.props.parentRef.current.contains(event.target)) {
+    if (this.props.isOpen && this.props.parentRef && this.props.parentRef.current && !this.props.parentRef.current.contains(event.target)) {
       this.props.onToggle(false, event);
       this.buttonRef.current.focus();
     }
@@ -81,8 +81,8 @@ export class Toggle extends React.Component<ToggleProps> {
     if (
       this.props.isOpen &&
       (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&
-      parentRef &&
-      parentRef.contains(event.target)
+      parentRef && parentRef.current && 
+      parentRef.current.contains(event.target)
     ) {
       this.props.onToggle(false, event);
       this.buttonRef.current.focus();
@@ -141,7 +141,7 @@ export class Toggle extends React.Component<ToggleProps> {
             onClick={(event) => onToggle(!isOpen, event)}
             aria-expanded={isOpen}
             aria-haspopup={ariaHasPopup}
-            onKeyDown={this.onKeyDown}
+            onKeyDown={event => this.onKeyDown(event)}
             disabled={isDisabled}
           >
             {children}

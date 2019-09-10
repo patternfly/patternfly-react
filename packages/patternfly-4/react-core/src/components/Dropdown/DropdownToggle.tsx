@@ -40,6 +40,8 @@ export interface DropdownToggleProps extends React.HTMLProps<HTMLButtonElement> 
   ariaHasPopup?: boolean | 'listbox' | 'menu' | 'dialog' | 'grid' | 'listbox' | 'tree';
   /** Type to put on the button */
   type?: 'button' | 'submit' | 'reset';
+  /** Callback called when the Enter key is pressed */
+  onEnter?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({

@@ -40,6 +40,7 @@ exports[`optionsMenu expanded 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -140,12 +141,11 @@ exports[`optionsMenu expanded 1`] = `
                     class=""
                   >
                     <li
-                      role="none"
+                      role="menuitem"
                     >
                       <button
                         class="pf-c-options-menu__menu-item"
                         id=""
-                        role="menuitem"
                         tabindex="-1"
                         type="button"
                       >
@@ -173,12 +173,11 @@ exports[`optionsMenu expanded 1`] = `
                       </button>
                     </li>
                     <li
-                      role="none"
+                      role="menuitem"
                     >
                       <button
                         class="pf-c-options-menu__menu-item"
                         id=""
-                        role="menuitem"
                         tabindex="-1"
                         type="button"
                       >
@@ -206,14 +205,13 @@ exports[`optionsMenu expanded 1`] = `
                       </button>
                     </li>
                     <li
-                      role="none"
+                      role="menuitem"
                     >
                       <button
                         aria-disabled="true"
                         class="pf-m-disabled pf-c-options-menu__menu-item"
                         disabled=""
                         id=""
-                        role="menuitem"
                         tabindex="-1"
                         type="button"
                       >
@@ -241,12 +239,11 @@ exports[`optionsMenu expanded 1`] = `
                       </button>
                     </li>
                     <li
-                      role="none"
+                      role="menuitem"
                     >
                       <button
                         class="pf-c-options-menu__menu-item"
                         id=""
-                        role="menuitem"
                         tabindex="-1"
                         type="button"
                       >
@@ -288,12 +285,11 @@ exports[`optionsMenu expanded 1`] = `
                     class=""
                   >
                     <li
-                      role="none"
+                      role="menuitem"
                     >
                       <button
                         class="pf-c-options-menu__menu-item"
                         id=""
-                        role="menuitem"
                         tabindex="-1"
                         type="button"
                       >
@@ -321,12 +317,11 @@ exports[`optionsMenu expanded 1`] = `
                       </button>
                     </li>
                     <li
-                      role="none"
+                      role="menuitem"
                     >
                       <button
                         class="pf-c-options-menu__menu-item"
                         id=""
-                        role="menuitem"
                         tabindex="-1"
                         type="button"
                       >
@@ -418,12 +413,11 @@ exports[`optionsMenu expanded 1`] = `
                       class=""
                     >
                       <li
-                        role="none"
+                        role="menuitem"
                       >
                         <button
                           class="pf-c-options-menu__menu-item"
                           id=""
-                          role="menuitem"
                           tabindex="-1"
                           type="button"
                         >
@@ -451,12 +445,11 @@ exports[`optionsMenu expanded 1`] = `
                         </button>
                       </li>
                       <li
-                        role="none"
+                        role="menuitem"
                       >
                         <button
                           class="pf-c-options-menu__menu-item"
                           id=""
-                          role="menuitem"
                           tabindex="-1"
                           type="button"
                         >
@@ -484,14 +477,13 @@ exports[`optionsMenu expanded 1`] = `
                         </button>
                       </li>
                       <li
-                        role="none"
+                        role="menuitem"
                       >
                         <button
                           aria-disabled="true"
                           class="pf-m-disabled pf-c-options-menu__menu-item"
                           disabled=""
                           id=""
-                          role="menuitem"
                           tabindex="-1"
                           type="button"
                         >
@@ -519,12 +511,11 @@ exports[`optionsMenu expanded 1`] = `
                         </button>
                       </li>
                       <li
-                        role="none"
+                        role="menuitem"
                       >
                         <button
                           class="pf-c-options-menu__menu-item"
                           id=""
-                          role="menuitem"
                           tabindex="-1"
                           type="button"
                         >
@@ -566,12 +557,11 @@ exports[`optionsMenu expanded 1`] = `
                       class=""
                     >
                       <li
-                        role="none"
+                        role="menuitem"
                       >
                         <button
                           class="pf-c-options-menu__menu-item"
                           id=""
-                          role="menuitem"
                           tabindex="-1"
                           type="button"
                         >
@@ -599,12 +589,11 @@ exports[`optionsMenu expanded 1`] = `
                         </button>
                       </li>
                       <li
-                        role="none"
+                        role="menuitem"
                       >
                         <button
                           class="pf-c-options-menu__menu-item"
                           id=""
-                          role="menuitem"
                           tabindex="-1"
                           type="button"
                         >
@@ -700,12 +689,11 @@ exports[`optionsMenu expanded 1`] = `
                         class=""
                       >
                         <li
-                          role="none"
+                          role="menuitem"
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
                             id=""
-                            role="menuitem"
                             tabindex="-1"
                             type="button"
                           >
@@ -733,12 +721,11 @@ exports[`optionsMenu expanded 1`] = `
                           </button>
                         </li>
                         <li
-                          role="none"
+                          role="menuitem"
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
                             id=""
-                            role="menuitem"
                             tabindex="-1"
                             type="button"
                           >
@@ -766,14 +753,13 @@ exports[`optionsMenu expanded 1`] = `
                           </button>
                         </li>
                         <li
-                          role="none"
+                          role="menuitem"
                         >
                           <button
                             aria-disabled="true"
                             class="pf-m-disabled pf-c-options-menu__menu-item"
                             disabled=""
                             id=""
-                            role="menuitem"
                             tabindex="-1"
                             type="button"
                           >
@@ -801,12 +787,11 @@ exports[`optionsMenu expanded 1`] = `
                           </button>
                         </li>
                         <li
-                          role="none"
+                          role="menuitem"
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
                             id=""
-                            role="menuitem"
                             tabindex="-1"
                             type="button"
                           >
@@ -848,12 +833,11 @@ exports[`optionsMenu expanded 1`] = `
                         class=""
                       >
                         <li
-                          role="none"
+                          role="menuitem"
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
                             id=""
-                            role="menuitem"
                             tabindex="-1"
                             type="button"
                           >
@@ -881,12 +865,11 @@ exports[`optionsMenu expanded 1`] = `
                           </button>
                         </li>
                         <li
-                          role="none"
+                          role="menuitem"
                         >
                           <button
                             class="pf-c-options-menu__menu-item"
                             id=""
-                            role="menuitem"
                             tabindex="-1"
                             type="button"
                           >
@@ -968,7 +951,7 @@ exports[`optionsMenu expanded 1`] = `
       </Component>
       <DropdownMenu
         aria-labelledby="expanded-toggle"
-        autoFocus={true}
+        autoFocus={false}
         className=""
         component="ul"
         isGrouped={false}
@@ -978,7 +961,7 @@ exports[`optionsMenu expanded 1`] = `
       >
         <ul
           aria-labelledby="expanded-toggle"
-          autoFocus={true}
+          autoFocus={false}
           className="pf-c-options-menu__menu"
           hidden={false}
           role="menu"
@@ -1024,7 +1007,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
-                        role="none"
+                        role="menuitem"
                       >
                         <button
                           className="pf-c-options-menu__menu-item"
@@ -1034,7 +1017,6 @@ exports[`optionsMenu expanded 1`] = `
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           onSelect={[Function]}
-                          role="menuitem"
                           tabIndex={-1}
                           type="button"
                         >
@@ -1106,7 +1088,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
-                        role="none"
+                        role="menuitem"
                       >
                         <button
                           className="pf-c-options-menu__menu-item"
@@ -1116,7 +1098,6 @@ exports[`optionsMenu expanded 1`] = `
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           onSelect={[Function]}
-                          role="menuitem"
                           tabIndex={-1}
                           type="button"
                         >
@@ -1192,7 +1173,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
-                        role="none"
+                        role="menuitem"
                       >
                         <button
                           aria-disabled={true}
@@ -1203,7 +1184,6 @@ exports[`optionsMenu expanded 1`] = `
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           onSelect={[Function]}
-                          role="menuitem"
                           tabIndex={-1}
                           type="button"
                         >
@@ -1275,7 +1255,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
-                        role="none"
+                        role="menuitem"
                       >
                         <button
                           className="pf-c-options-menu__menu-item"
@@ -1285,7 +1265,6 @@ exports[`optionsMenu expanded 1`] = `
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           onSelect={[Function]}
-                          role="menuitem"
                           tabIndex={-1}
                           type="button"
                         >
@@ -1381,7 +1360,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
-                        role="none"
+                        role="menuitem"
                       >
                         <button
                           className="pf-c-options-menu__menu-item"
@@ -1391,7 +1370,6 @@ exports[`optionsMenu expanded 1`] = `
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           onSelect={[Function]}
-                          role="menuitem"
                           tabIndex={-1}
                           type="button"
                         >
@@ -1463,7 +1441,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
-                        role="none"
+                        role="menuitem"
                       >
                         <button
                           className="pf-c-options-menu__menu-item"
@@ -1473,7 +1451,6 @@ exports[`optionsMenu expanded 1`] = `
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           onSelect={[Function]}
-                          role="menuitem"
                           tabIndex={-1}
                           type="button"
                         >
@@ -1566,6 +1543,7 @@ exports[`optionsMenu isDisabled 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -1856,6 +1834,7 @@ exports[`optionsMenu open up 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
@@ -2140,6 +2119,7 @@ exports[`optionsMenu plain 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -2345,6 +2325,7 @@ exports[`optionsMenu regular 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -2630,6 +2611,7 @@ exports[`optionsMenu right aligned + open up 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="up"
     dropdownItems={
@@ -2914,6 +2896,7 @@ exports[`optionsMenu right aligned 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
@@ -3202,6 +3185,7 @@ exports[`optionsMenu text 1`] = `
   }
 >
   <DropdownWithContext
+    autoFocus={true}
     className=""
     direction="down"
     dropdownItems={
