@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import { css } from '@patternfly/react-styles';
 import { DropdownContext } from '../Dropdown';
-import { DropdownWithContext } from '../Dropdown/Dropdown';
+import { DropdownWithContext } from '../Dropdown/DropdownWithContext';
 
 export enum OptionsMenuPosition {
   right = 'right',

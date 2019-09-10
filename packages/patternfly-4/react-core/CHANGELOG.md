@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.103.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.103.2...@patternfly/react-core@3.103.3) (2019-09-10)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.103.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.103.1...@patternfly/react-core@3.103.2) (2019-09-09)
+
+
+### Bug Fixes
+
+* **dropdown:** extract DropdownWithContext ([#2872](https://github.com/patternfly/patternfly-react/issues/2872)) ([5acd5cd](https://github.com/patternfly/patternfly-react/commit/5acd5cd))
+
+
+
+
+
+## [3.103.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.103.0...@patternfly/react-core@3.103.1) (2019-09-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.103.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.102.1...@patternfly/react-core@3.103.0) (2019-09-09)
+
+
+### Features
+
+* **Split button:** Allow texts in split button ([#2840](https://github.com/patternfly/patternfly-react/issues/2840)) ([7b379bf](https://github.com/patternfly/patternfly-react/commit/7b379bf))
+
+
+
+
+
+## [3.102.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.102.0...@patternfly/react-core@3.102.1) (2019-09-09)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 # [3.102.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.101.0...@patternfly/react-core@3.102.0) (2019-09-06)
 
 

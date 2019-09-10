@@ -17,6 +17,11 @@ test('uncontrolled', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('with text', () => {
+  const view = shallow(<DropdownToggleCheckbox id="check" isDisabled aria-label="check">Some text</DropdownToggleCheckbox>);
+  expect(view).toMatchSnapshot();
+});
+
 test('isDisabled', () => {
   const view = shallow(<DropdownToggleCheckbox id="check" isDisabled aria-label="check" />);
   expect(view).toMatchSnapshot();
