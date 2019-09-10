@@ -4,17 +4,12 @@ cssPrefix: 'pf-c-data-toolbar'
 typescript: true
 propComponents: ['DataToolbar', 'DataToolbarContent', 'DataToolbarItem', 'DataToolbarGroup', 'DataToolbarToggleGroup', 'DataToolbarBreakpointMod', 'DataToolbarSpacer']
 section: 'experimental'
+stage: 'early'
 ---
 
 import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup } from '@patternfly/react-core/dist/esm/experimental';
 import { Alert, Button, InputGroup, TextInput, Select, SelectOption } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
-
-<Alert variant="danger" title="Warning">
-  Please don't use this component, it's only an example of what an experimental component could be
-  and likely going away in our next release.
-</Alert>
-<br />
 
 ## Data toolbar
 ```js
