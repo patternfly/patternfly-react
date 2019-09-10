@@ -10,6 +10,7 @@ stage: 'early'
 import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup } from '@patternfly/react-core/dist/esm/experimental';
 import { Alert, Button, InputGroup, TextInput, Select, SelectOption } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
+import '@patternfly/react-styles/css/components/Divider/divider';
 
 ## Data toolbar
 ```js
@@ -46,7 +47,7 @@ class DataToolbarItems extends React.Component {
 ## Data toolbar spacers
 ```js
 import React from 'react';
-import { DataToolbar , DataToolbarItem, DataToolbarContent } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent } from '@patternfly/react-core/dist/esm/experimental';
 import { Button } from '@patternfly/react-core';
 
 class DataToolbarSpacers extends React.Component {
@@ -82,6 +83,11 @@ class DataToolbarSpacers extends React.Component {
           <DataToolbarItem variant="separator"></DataToolbarItem>
           <DataToolbarItem spacers={fifthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
           <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
+          <DataToolbarItem variant="separator"></DataToolbarItem>
+          <DataToolbarGroup itemSpacers={[{spacerSize: 'lg'}]} spacers={[{spacerSize: 'lg'}]}>
+            <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
+ `          <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
+          </DataToolbarGroup>
       </React.Fragment>;
     
     return <DataToolbar id="data-toolbar-spacers"><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
@@ -196,14 +202,14 @@ class DataToolbarGroupTypes extends React.Component {
      </DataToolbarItem>
      <DataToolbarItem>
         <Select
-        variant={SelectVariant.single}
-        aria-label="Select Input"
-        onToggle={this.onSecondToggle}
-        onSelect={this.onSecondSelect}
-        selections={secondSelected}
-        isExpanded={secondIsExpanded}
-      >
-        {this.secondOptions.map((option, index) => (
+          variant={SelectVariant.single}
+          aria-label="Select Input"
+          onToggle={this.onSecondToggle}
+          onSelect={this.onSecondSelect}
+          selections={secondSelected}
+          isExpanded={secondIsExpanded}
+        >
+          {this.secondOptions.map((option, index) => (
            <SelectOption
               isDisabled={option.disabled}
               key={index}
@@ -368,11 +374,11 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
               isExpanded={statusIsExpanded}
             >
               {this.statusOptions.map((option, index) => (
-                 <SelectOption
-                   isDisabled={option.disabled}
-                   key={index}
-                   value={option.value}
-                 />
+               <SelectOption
+                 isDisabled={option.disabled}
+                 key={index}
+                 value={option.value}
+               />
               ))}
             </Select>
           </DataToolbarItem>
@@ -514,11 +520,11 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
               isExpanded={statusIsExpanded}
             >
               {this.statusOptions.map((option, index) => (
-                 <SelectOption
-                   isDisabled={option.disabled}
-                   key={index}
-                   value={option.value}
-                 />
+               <SelectOption
+                 isDisabled={option.disabled}
+                 key={index}
+                 value={option.value}
+               />
               ))}
             </Select>
           </DataToolbarItem>
@@ -533,11 +539,11 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
             >
               {this.riskOptions.map((option, index) => (
                 <SelectOption
-                   isDisabled={option.disabled}
-                   key={index}
-                   value={option.value}
-                 />
-               ))}
+                  isDisabled={option.disabled}
+                  key={index}
+                  value={option.value}
+                />
+              ))}
             </Select>
         </DataToolbarItem>
       </DataToolbarGroup>
@@ -699,21 +705,21 @@ class DataToolbarStacked extends React.Component {
      <DataToolbarItem variant="label" id="stacked-example-status-select">Status</DataToolbarItem>
      <DataToolbarItem>
         <Select
-        variant={SelectVariant.single}
-        aria-label="Select Input"
-        onToggle={this.onStatusToggle}
-        onSelect={this.onStatusSelect}
-        selections={statusSelected}
-        isExpanded={statusIsExpanded}
-        ariaLabelledBy="stacked-example-status-select"
-      >
+          variant={SelectVariant.single}
+          aria-label="Select Input"
+          onToggle={this.onStatusToggle}
+          onSelect={this.onStatusSelect}
+          selections={statusSelected}
+          isExpanded={statusIsExpanded}
+          ariaLabelledBy="stacked-example-status-select"
+        >
         {this.statusOptions.map((option, index) => (
-           <SelectOption
-              isDisabled={option.disabled}
-              key={index}
-              value={option.value}
-            />
-          ))}
+          <SelectOption
+            isDisabled={option.disabled}
+            key={index}
+            value={option.value}
+           />
+         ))}
         </Select>
       </DataToolbarItem>
       <DataToolbarItem variant="label" id="stacked-example-type-select">Type</DataToolbarItem>
@@ -772,18 +778,19 @@ class DataToolbarStacked extends React.Component {
       </DataToolbarItem>
       <DataToolbarItem variant="pagination" breakpointMods={[{modifier:"align-right"}]}>
         <Pagination
-            itemCount={37}
-            perPage={this.state.perPage}
-            page={this.state.page}
-            onSetPage={this.onSetPage}
-            widgetId="pagination-options-menu-top"
-            onPerPageSelect={this.onPerPageSelect}
-          />
+          itemCount={37}
+          perPage={this.state.perPage}
+          page={this.state.page}
+          onSetPage={this.onSetPage}
+          widgetId="pagination-options-menu-top"
+          onPerPageSelect={this.onPerPageSelect}
+        />
       </DataToolbarItem>
     </React.Fragment>;
     
     return <DataToolbar id="data-toolbar-group-types">
       <DataToolbarContent>{firstRowItems}</DataToolbarContent>
+      <hr className="pf-c-divider"/>
       <DataToolbarContent>{secondRowItems}</DataToolbarContent>
     </DataToolbar>;
   }
