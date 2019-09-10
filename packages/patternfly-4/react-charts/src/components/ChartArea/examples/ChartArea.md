@@ -9,7 +9,6 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLabel, ChartLegendWrapper
 import './chart-area.scss';
 
 ## Simple area chart with right aligned legend
-
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
@@ -72,7 +71,6 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
 ```
 
 ## Cyan area chart with bottom aligned legend
-
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
@@ -135,7 +133,6 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
 ```
 
 ## Multi-color (unorderd) chart with bottom-left aligned legend and responsive container
-
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
@@ -228,7 +225,6 @@ class MultiColorChart extends React.Component {
 ```
 
 ## Sparkline chart
-
 ```js
 import React from 'react';
 import { ChartArea, ChartGroup, ChartLabel } from '@patternfly/react-charts';
