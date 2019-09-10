@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.103.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.103.3...@patternfly/react-core@3.103.4) (2019-09-10)
+
+
+### Bug Fixes
+
+* **FormGroup:** Also add className if not inline ([#2864](https://github.com/patternfly/patternfly-react/issues/2864)) ([5368124](https://github.com/patternfly/patternfly-react/commit/5368124))
+
+
+
+
+
 ## [3.103.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.103.2...@patternfly/react-core@3.103.3) (2019-09-10)
 
 **Note:** Version bump only for package @patternfly/react-core

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.9.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.9.9...@patternfly/react-charts@4.9.10) (2019-09-10)
+
+
+### Bug Fixes
+
+* **charts:** added new symbol for dash / threshold ([#2884](https://github.com/patternfly/patternfly-react/issues/2884)) ([3ab27f0](https://github.com/patternfly/patternfly-react/commit/3ab27f0))
+
+
+
+
+
 ## [4.9.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@4.9.8...@patternfly/react-charts@4.9.9) (2019-09-10)
 
 **Note:** Version bump only for package @patternfly/react-charts
