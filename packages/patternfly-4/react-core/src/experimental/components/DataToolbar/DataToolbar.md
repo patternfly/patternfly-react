@@ -84,9 +84,9 @@ class DataToolbarSpacers extends React.Component {
           <DataToolbarItem spacers={fifthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
           <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
           <DataToolbarItem variant="separator"></DataToolbarItem>
-          <DataToolbarGroup itemSpacers={[{spacerSize: 'lg'}]} spacers={[{spacerSize: 'lg'}]}>
+          <DataToolbarGroup itemSpacers={[{spacerSize: 'lg'}]}>
             <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
- `          <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
+            <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
           </DataToolbarGroup>
       </React.Fragment>;
     
