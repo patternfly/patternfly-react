@@ -951,7 +951,7 @@ exports[`optionsMenu expanded 1`] = `
       </Component>
       <DropdownMenu
         aria-labelledby="expanded-toggle"
-        autoFocus={true}
+        autoFocus={false}
         className=""
         component="ul"
         isGrouped={false}
@@ -961,7 +961,7 @@ exports[`optionsMenu expanded 1`] = `
       >
         <ul
           aria-labelledby="expanded-toggle"
-          autoFocus={true}
+          autoFocus={false}
           className="pf-c-options-menu__menu"
           hidden={false}
           role="menu"

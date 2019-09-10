@@ -424,7 +424,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
       </Component>
       <DropdownMenu
         aria-labelledby="pf-toggle-id-5"
-        autoFocus={true}
+        autoFocus={false}
         className=""
         component="ul"
         isGrouped={false}
@@ -434,7 +434,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
       >
         <ul
           aria-labelledby="pf-toggle-id-5"
-          autoFocus={true}
+          autoFocus={false}
           className="pf-c-app-launcher__menu"
           hidden={false}
           role="menu"
@@ -1675,7 +1675,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       </Component>
       <DropdownMenu
         aria-labelledby="pf-toggle-id-4"
-        autoFocus={true}
+        autoFocus={false}
         className=""
         component="ul"
         isGrouped={false}
@@ -1685,7 +1685,7 @@ exports[`ApplicationLauncher expanded 1`] = `
       >
         <ul
           aria-labelledby="pf-toggle-id-4"
-          autoFocus={true}
+          autoFocus={false}
           className="pf-c-app-launcher__menu"
           hidden={false}
           role="menu"

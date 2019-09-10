@@ -94,6 +94,7 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
       component = 'div';
       renderedContent = React.Children.toArray(children);
     }
+    const openedOnEnter = this.openedOnEnter;
     return (
       <DropdownContext.Consumer>
         {({ baseClass, baseComponent, id: contextId }) => {
@@ -116,7 +117,7 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
                   id,
                   isPlain,
                   ariaHasPopup,
-                  onEnter: this.onEnter
+                  onEnter: () => this.onEnter()
                 })
               )}
               {isOpen && (
@@ -125,9 +126,9 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
                   isOpen={isOpen}
                   position={position}
                   aria-labelledby={contextId ? `${contextId}-toggle` : id}
-                  openedOnEnter={this.openedOnEnter}
+                  openedOnEnter={openedOnEnter}
                   isGrouped={isGrouped}
-                  autoFocus={autoFocus}
+                  autoFocus={openedOnEnter && autoFocus}
                 >
                   {renderedContent}
                 </DropdownMenu>

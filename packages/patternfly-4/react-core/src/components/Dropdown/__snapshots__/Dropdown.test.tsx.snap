@@ -170,7 +170,7 @@ exports[`KebabToggle basic 1`] = `
       </Component>
       <DropdownMenu
         aria-labelledby="Dropdown Toggle"
-        autoFocus={true}
+        autoFocus={false}
         className=""
         component="div"
         isGrouped={false}
@@ -1567,7 +1567,7 @@ exports[`KebabToggle expanded 1`] = `
       </Component>
       <DropdownMenu
         aria-labelledby="Dropdown Toggle"
-        autoFocus={true}
+        autoFocus={false}
         className=""
         component="ul"
         isGrouped={false}
@@ -1577,7 +1577,7 @@ exports[`KebabToggle expanded 1`] = `
       >
         <ul
           aria-labelledby="Dropdown Toggle"
-          autoFocus={true}
+          autoFocus={false}
           className="pf-c-dropdown__menu"
           hidden={false}
           role="menu"
@@ -3244,7 +3244,7 @@ exports[`dropdown basic 1`] = `
       </Component>
       <DropdownMenu
         aria-labelledby="Dropdown Toggle"
-        autoFocus={true}
+        autoFocus={false}
         className=""
         component="div"
         isGrouped={false}
@@ -4698,7 +4698,7 @@ exports[`dropdown expanded 1`] = `
       </Component>
       <DropdownMenu
         aria-labelledby="Dropdown Toggle"
-        autoFocus={true}
+        autoFocus={false}
         className=""
         component="ul"
         isGrouped={false}
@@ -4708,7 +4708,7 @@ exports[`dropdown expanded 1`] = `
       >
         <ul
           aria-labelledby="Dropdown Toggle"
-          autoFocus={true}
+          autoFocus={false}
           className="pf-c-dropdown__menu"
           hidden={false}
           role="menu"
