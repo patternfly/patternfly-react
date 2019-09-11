@@ -24,7 +24,7 @@ Packages released:
 - **Drawer:** Expose DrawerContent components and remove panelContent prop ([#2733](https://github.com/patternfly/patternfly-react/pull/2733))
 - **Dropdown:**
   - Added support for dropdown with primary button toggle ([#2857](https://github.com/patternfly/patternfly-react/pull/2857))
-	- Allow custom dropdown items ([#2890](https://github.com/patternfly/patternfly-react/pull/2890))
+  - Allow custom dropdown items ([#2890](https://github.com/patternfly/patternfly-react/pull/2890))
 - **EmptyState:** Fixed a bug where the correct size modifier wasn't being passed ([#2692](https://github.com/patternfly/patternfly-react/pull/2692))
 - **Expandable:** Support uncontrolled expandable ([#2649](https://github.com/patternfly/patternfly-react/pull/2649))
 - **FormGroup:** Fixed a bug where className was not being propogated for non-inline forms ([#2864](https://github.com/patternfly/patternfly-react/pull/2864))
@@ -32,14 +32,14 @@ Packages released:
 - **Modal:**
   - Added isFooterLeftAligned prop ([#2835](https://github.com/patternfly/patternfly-react/pull/2835))
   - Added appendTo prop so component can render in element other than document.body ([#2802](https://github.com/patternfly/patternfly-react/pull/2802))
-	- FocusTrap works with showClose being false ([#2774](https://github.com/patternfly/patternfly-react/pull/2774))
+  - FocusTrap works with showClose being false ([#2774](https://github.com/patternfly/patternfly-react/pull/2774))
 - **Nav:** Added dark theme modifier flag ([#2856](https://github.com/patternfly/patternfly-react/pull/2856))
 - **OptionsMenu:** Now uses our Dropdown component and is consistent with it ([#2299](https://github.com/patternfly/patternfly-react/pull/2299))
 - **Page:** Added dark theme modifier flag ([#2856](https://github.com/patternfly/patternfly-react/pull/2856))
 - **Select:**
   - Allow creating new select items ([#2820](https://github.com/patternfly/patternfly-react/pull/2820))
-	- Added support for toggle icon ([#2748](https://github.com/patternfly/patternfly-react/pull/2748))
-	- Added direction prop ([#2611](https://github.com/patternfly/patternfly-react/pull/2611))
+  - Added support for toggle icon ([#2748](https://github.com/patternfly/patternfly-react/pull/2748))
+  - Added direction prop ([#2611](https://github.com/patternfly/patternfly-react/pull/2611))
 - **Spinner:** Added new experimental Spinner component! ([#2858](https://github.com/patternfly/patternfly-react/pull/2858))
 - **Switch:** Changed checked property in DOM ([#2749](https://github.com/patternfly/patternfly-react/pull/2749))
 - **Tab:** Allow JSX elements for Tab title ([#2681](https://github.com/patternfly/patternfly-react/pull/2681))
@@ -47,7 +47,7 @@ Packages released:
 - **Toolbar:** Added new experimental Toolbar component! ([#2861](https://github.com/patternfly/patternfly-react/pull/2861))
 - **Tooltip:**
   - Allow passing properties through to PopoverBase and hence tippy.js ([#2769](https://github.com/patternfly/patternfly-react/pull/2769))
-	- Added the manual trigger option with the isVisible prop ([#2769](https://github.com/patternfly/patternfly-react/pull/2769))
+  - Added the manual trigger option with the isVisible prop ([#2769](https://github.com/patternfly/patternfly-react/pull/2769))
 - **Wizard:** Added support for in-page rendering ([#2830](https://github.com/patternfly/patternfly-react/pull/2830))
 
 ## Table
@@ -66,7 +66,7 @@ Packages released:
 - **AsyncTypeAheadSelect:** Forward ref for AsyncTypeAheadSelect ([#2760](https://github.com/patternfly/patternfly-react/pull/2760))
 - **CatalogTile:**
   - Allow JSX element for CatalogTile's icon ([#2771](https://github.com/patternfly/patternfly-react/pull/2771))
-	- Added iconAlt property to use for alt text for icon image ([#2715](https://github.com/patternfly/patternfly-react/pull/2715))
+  - Added iconAlt property to use for alt text for icon image ([#2715](https://github.com/patternfly/patternfly-react/pull/2715))
 - **DatePicker:** Added new date picker components ([#1873](https://github.com/patternfly/patternfly-react/pull/1873))
 - **HorizontalNavMenu:** Allow HorizontalNavMenuItem's title to be a node ([#2825](https://github.com/patternfly/patternfly-react/pull/2825))
 
@@ -97,29 +97,29 @@ Packages released:
 examples  ([#2663](https://github.com/patternfly/patternfly-react/pull/2663))
 - **Drawer:** Added the drawer component to experimental  ([#2633](https://github.com/patternfly/patternfly-react/pull/2633))
 - **Dropdown:**
- - Automatically focus first dropdown item when DropdownMenu mounts  ([#2355](https://github.com/patternfly/patternfly-react/pull/2355))
- - This PR adds an aria-label to the "icon only" example of Dropdown  ([#2517](https://github.com/patternfly/patternfly-react/pull/2517))
- - Fixed missing event passthrough on internal onSelect callback ([#2657](https://github.com/patternfly/patternfly-react/pull/2657))
+  - Automatically focus first dropdown item when DropdownMenu mounts  ([#2355](https://github.com/patternfly/patternfly-react/pull/2355))
+  - This PR adds an aria-label to the "icon only" example of Dropdown  ([#2517](https://github.com/patternfly/patternfly-react/pull/2517))
+  - Fixed missing event passthrough on internal onSelect callback ([#2657](https://github.com/patternfly/patternfly-react/pull/2657))
 - **Form:** Updated Form demo to use check over radio
 ([#2567](https://github.com/patternfly/patternfly-react/pull/2567))
 - **Modal:** Allows for custom header and/or footer in Modal component Added the showClose prop, defaulted to true. Set to false to hide the close button  ([#2120](https://github.com/patternfly/patternfly-react/pull/2120))
 - **Page:**
- - Skip to content should point to primary content container ([#2519](https://github.com/patternfly/patternfly-react/pull/2519))
- - Change the defaultManagedSidebarOpen prop name for consistency ([#2664](https://github.com/patternfly/patternfly-react/pull/2664))
+  - Skip to content should point to primary content container ([#2519](https://github.com/patternfly/patternfly-react/pull/2519))
+  - Change the defaultManagedSidebarOpen prop name for consistency ([#2664](https://github.com/patternfly/patternfly-react/pull/2664))
 - **Pagination:**
- - When there is 0 items or negative number for pagination show 0th page out of 0 and disable paginating  ([#2558](https://github.com/patternfly/patternfly-react/pull/2558))
- - Added a demo of table integrated with pagination ([#2601](https://github.com/patternfly/patternfly-react/pull/2601))
- - Fixed pagination to update page count ([#2639](https://github.com/patternfly/patternfly-react/pull/2639))
- - Added disabled flag for whole component ([#2586](https://github.com/patternfly/patternfly-react/pull/2586))
+  - When there is 0 items or negative number for pagination show 0th page out of 0 and disable paginating  ([#2558](https://github.com/patternfly/patternfly-react/pull/2558))
+  - Added a demo of table integrated with pagination ([#2601](https://github.com/patternfly/patternfly-react/pull/2601))
+  - Fixed pagination to update page count ([#2639](https://github.com/patternfly/patternfly-react/pull/2639))
+  - Added disabled flag for whole component ([#2586](https://github.com/patternfly/patternfly-react/pull/2586))
 - **Select:**  
- - Select menu now has consistent, open behavior on empty text input field  ([#2572](https://github.com/patternfly/patternfly-react/pull/2572))
- - Added a custom callback for the filtering function used in typeahead variants. This replaces the current search entirely, so the function must handle filtering the list of children/options and return the filtered results for the internal state to update
+  - Select menu now has consistent, open behavior on empty text input field  ([#2572](https://github.com/patternfly/patternfly-react/pull/2572))
+  - Added a custom callback for the filtering function used in typeahead variants. This replaces the current search entirely, so the function must handle filtering the list of children/options and return the filtered results for the internal state to update
 ([#2434](https://github.com/patternfly/patternfly-react/pull/2434))
- - Added isPlain variation/prop to Select.tsx, snapshot tests, and integration ([#2588](https://github.com/patternfly/patternfly-react/pull/2588))
- - This enhancement allows a user to now pass in a user defined object to store additional data besides just the string value to a select option. The object must have a toString function that is
+  - Added isPlain variation/prop to Select.tsx, snapshot tests, and integration ([#2588](https://github.com/patternfly/patternfly-react/pull/2588))
+  - This enhancement allows a user to now pass in a user defined object to store additional data besides just the string value to a select option. The object must have a toString function that is
 responsible for returning the the localized string ([#2612](https://github.com/patternfly/patternfly-react/pull/2612))
- - Disabled focus trap on checkbox select with no children. Focus Trap throws exception if no children to ref. In order to avoid this error, render the component with no Focus Trap when no children is passed  ([#2647](https://github.com/patternfly/patternfly-react/pull/2647))
- - Added disabled flag to select ([#2678](https://github.com/patternfly/patternfly-react/pull/2678))
+  - Disabled focus trap on checkbox select with no children. Focus Trap throws exception if no children to ref. In order to avoid this error, render the component with no Focus Trap when no children is passed  ([#2647](https://github.com/patternfly/patternfly-react/pull/2647))
+  - Added disabled flag to select ([#2678](https://github.com/patternfly/patternfly-react/pull/2678))
 - **Switch:** Added aria-labelledby to input
 ([#2468](https://github.com/patternfly/patternfly-react/pull/2468))
 - **Topology:** Fixed paddings for topology control bar buttons. Removed css settings that override the paddings for the topology control bar buttons  ([#2635](https://github.com/patternfly/patternfly-react/pull/2635))
@@ -142,9 +142,9 @@ responsible for returning the the localized string ([#2612](https://github.com/p
 
 ## Other
 - **Chore:**
-- Added curl command after release ([#2547](https://github.com/patternfly/patternfly-react/pull/2547))
-- Invalidate all packages if yarn.lock changes ([#2548](https://github.com/patternfly/patternfly-react/pull/2548))
-- Updated release notes to use uls ([#2604](https://github.com/patternfly/patternfly-react/pull/2604))
+  - Added curl command after release ([#2547](https://github.com/patternfly/patternfly-react/pull/2547))
+  - Invalidate all packages if yarn.lock changes ([#2548](https://github.com/patternfly/patternfly-react/pull/2548))
+  - Updated release notes to use uls ([#2604](https://github.com/patternfly/patternfly-react/pull/2604))
 
 # 2019.05 release notes (2019-07-24)
 Packages released:
