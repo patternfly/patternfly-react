@@ -80,6 +80,7 @@ export * from './RadioDemo/RadioDemo';
 export * from './SelectDemo/SelectDemo';
 export * from './SpinnerDemo/SpinnerDemo';
 export * from './SplitDemo/SplitDemo';
+export * from './StackChartDemo/StackedAreaDemo';
 export * from './StackChartDemo/StackBlueDemo';
 export * from './StackChartDemo/StackGoldBottomLegendDemo';
 export * from './StackChartDemo/StackColorZoomDemo';

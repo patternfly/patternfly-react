@@ -162,7 +162,7 @@ class MultiColorChart extends React.Component {
 
   render() {
     const { width } = this.state;
-    
+
     return (
       <div ref={this.containerRef}>
         <div className="area-chart-legend-bottom-responsive">
