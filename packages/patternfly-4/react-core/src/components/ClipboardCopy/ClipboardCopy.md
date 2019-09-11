@@ -33,6 +33,18 @@ import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
   expansion.
 </ClipboardCopy>
 ```
+
+## Expanded clipboard copy expanded by default
+```js
+import React from 'react';
+import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
+
+<ClipboardCopy variant={ClipboardCopyVariant.expansion} isExpanded>
+  Got a lot of text here, need to see all of it? Click that arrow on the left side and check out the resulting
+  expansion.
+</ClipboardCopy>
+```
+
 ## Read only expanded clipboard copy
 ```js
 import React from 'react';
