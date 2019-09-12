@@ -3,25 +3,26 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 
 export interface OverflowMenuGroupProps extends React.HTMLProps<HTMLDivElement> {
-    children: any;
-    className?: string;
+  children: any;
+  className?: string;
+  persistent?: boolean;
+  groupType?: string;
 }
 
-export class OverflowMenuGroup extends React.Component<OverflowMenuGroupProps> {
-  constructor(props: OverflowMenuGroupProps) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const { className, children } = this.props;
-    return (
-      <div
-        {...this.props}
-        className={css(styles.overflowMenuGroup, className)}
-      >
-        {children}
-      </div>
-    );
-  }
-}
+export const OverflowMenuGroup: React.SFC<OverflowMenuGroupProps> = ({
+  className,
+  children,
+  persistent = false,
+  groupType = '',
+  ...props
+}) => (
+  <div {...props} className={css(
+    styles.overflowMenuGroup,
+    groupType === 'button' && styles.modifiers.buttonGroup,
+    groupType === 'icon' && styles.modifiers.iconButtonGroup,
+    persistent && styles.modifiers.persistent,
+    className
+  )}>
+    {children}
+  </div>
+);

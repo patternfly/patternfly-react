@@ -3,25 +3,22 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 
 export interface OverflowMenuControlProps extends React.HTMLProps<HTMLDivElement> {
-    children: any;
-    className?: string;
+  children: any;
+  className?: string;
+  additionalOptions?: boolean;
 }
 
-export class OverflowMenuControl extends React.Component<OverflowMenuControlProps> {
-  constructor(props: OverflowMenuControlProps) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const { className, children } = this.props;
-    return (
-      <div
-        {...this.props}
-        className={css(styles.overflowMenuControl, className)}
-      >
-        {children}
-      </div>
-    );
-  }
-}
+export const OverflowMenuControl: React.SFC<OverflowMenuControlProps> = ({
+  className,
+  children,
+  additionalOptions = false,
+  ...props
+}) => (
+  <div {...props} className={css(
+    styles.overflowMenuControl,
+    additionalOptions && styles.modifiers.additionalOptions,
+    className)
+  }>
+    {children}
+  </div>
+);
