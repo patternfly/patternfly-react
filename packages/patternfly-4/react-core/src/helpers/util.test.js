@@ -8,9 +8,11 @@ import {
   isElementInView,
   sideElementIsOutOfView,
   fillTemplate,
-  pluralize
+  pluralize,
+  formatBreakpointMods
 } from './util';
 import { KEY_CODES, SIDE } from './constants';
+import styles from '@patternfly/react-styles/css/layouts/Flex/flex';
 
 const createMockHtmlElement = bounds => ({
   getBoundingClientRect: () => bounds
@@ -228,4 +230,10 @@ test('text pluralize', () => {
   expect(pluralize(1, 'dog')).toEqual('1 dog');
   expect(pluralize(2, 'dog')).toEqual('2 dogs');
   expect(pluralize(2, 'finch', 'finches')).toEqual('2 finches');
+});
+
+test('formatBreakpointMods', () => {
+  expect(formatBreakpointMods([{modifier: "spacer-none"}], styles)).toEqual('pf-m-spacer-none');
+  expect(formatBreakpointMods([{modifier: "spacer-none", breakpoint: 'md'}], styles)).toEqual('pf-m-spacer-none-on-md');
+  expect(formatBreakpointMods([{modifier: "column"}, {modifier: "row", breakpoint: "lg"}], styles)).toEqual('pf-m-column pf-m-row-on-lg');
 });

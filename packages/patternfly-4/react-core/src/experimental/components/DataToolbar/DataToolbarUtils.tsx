@@ -1,5 +1,3 @@
-import { getModifier } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import * as React from 'react';
 import { RefObject } from 'react';
 
@@ -17,12 +15,6 @@ export type DataToolbarBreakpointMod = {
   modifier: 'hidden' | 'visible' | 'align-right' | 'align-left';
   /** The breakpoint at which to apply the modifier */
   breakpoint: 'md' | 'lg' | 'xl' | '2xl';
-};
-
-export const formatBreakpointMods = (breakpointMods: DataToolbarBreakpointMod[]) => {
-  return breakpointMods.reduce((acc, curr) => (
-    `${acc} ${getModifier(styles, `${curr.modifier}${curr.breakpoint  ? `-on-${curr.breakpoint}` : ''}`)}`
-  ), '');
 };
 
 export type DataToolbarSpacer = {

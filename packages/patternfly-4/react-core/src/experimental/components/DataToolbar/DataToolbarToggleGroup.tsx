@@ -9,9 +9,9 @@ import { Button } from '../../../components/Button';
 import {
   DataToolbarBreakpointMod,
   DataToolbarSpacer,
-  formatBreakpointMods,
   formatSpacers
 } from './DataToolbarUtils';
+import { formatBreakpointMods } from '../../../helpers/util';
 
 export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
   /** An Icon to be rendered when the toggle group has collapsed down */
@@ -38,7 +38,7 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
               className={css(
                 styles.dataToolbarGroup,
                 variant && getModifier(styles, variant),
-                formatBreakpointMods(breakpointMods),
+                formatBreakpointMods(breakpointMods, styles),
                 formatSpacers(spacers, 'pf-m-space-items'),
                 getModifier(styles, 'toggle-group'),
                 getModifier(styles, `reveal-on-${breakpoint}`),
