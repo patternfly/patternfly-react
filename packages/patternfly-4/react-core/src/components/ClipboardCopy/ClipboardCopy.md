@@ -44,7 +44,7 @@ import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 </ClipboardCopy>
 ```
 
-## Expanded clipboard copy with arraycc
+## Expanded clipboard copy with array
 ```js
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
