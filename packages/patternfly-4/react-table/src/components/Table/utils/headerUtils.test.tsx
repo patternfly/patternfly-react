@@ -18,7 +18,7 @@ describe('headerUtils', () => {
     });
 
     test('selectableTransforms', () => {
-      const selectableTransforms = calculateColumns([], { onSelect: () => undefined as any });
+      const selectableTransforms = calculateColumns([], { onSelect: () => undefined as any, canSelectAll: true });
       expect(selectableTransforms[0].cell.formatters).toHaveLength(1);
       expect(selectableTransforms[0].cell.formatters[0].name).toBe('defaultTitle');
       expect(selectableTransforms[0].cell.transforms).toHaveLength(2);

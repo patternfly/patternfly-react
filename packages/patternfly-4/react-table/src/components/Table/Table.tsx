@@ -168,6 +168,7 @@ export interface TableProps {
   onCollapse?: OnCollapse;
   onExpand?: OnExpand;
   onSelect?: OnSelect;
+  canSelectAll?: boolean;
   onSort?: OnSort;
   actions?: IActions;
   actionResolver?: IActionsResolver;
@@ -207,7 +208,8 @@ export class Table extends React.Component<TableProps, {}> {
     "caption": undefined as React.ReactNode,
     'aria-label': undefined as string,
     "gridBreakPoint": TableGridBreakpoint.gridMd,
-    "role": 'grid'
+    "role": 'grid',
+    "canSelectAll": true
   };
 
   isSelected = (row: IRow) => row.selected === true;
@@ -228,6 +230,7 @@ export class Table extends React.Component<TableProps, {}> {
       gridBreakPoint,
       onSort,
       onSelect,
+      canSelectAll,
       sortBy,
       children,
       actions,
@@ -259,6 +262,7 @@ export class Table extends React.Component<TableProps, {}> {
       sortBy,
       onSort,
       onSelect,
+      canSelectAll,
       allRowsSelected: onSelect ? this.areAllRowsSelected(rows as IRow[]) : false,
       actions,
       actionResolver,
