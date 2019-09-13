@@ -19,7 +19,7 @@ exports[`Chart 1`] = `
             "style": Object {
               "data": Object {
                 "fill": "#06c",
-                "fillOpacity": 0.4,
+                "fillOpacity": 0.3,
                 "stroke": "transparent",
                 "strokeWidth": 2,
               },
@@ -338,7 +338,7 @@ exports[`Chart 1`] = `
               "#004b95",
             ],
             "height": 230,
-            "padding": 8,
+            "padding": 20,
             "style": Object {
               "data": Object {
                 "padding": 8,
@@ -2616,7 +2616,7 @@ exports[`Chart 1`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
-            "fillOpacity": 0.4,
+            "fillOpacity": 0.3,
             "stroke": "transparent",
             "strokeWidth": 2,
           },
@@ -2935,7 +2935,7 @@ exports[`Chart 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,
@@ -3074,7 +3074,7 @@ exports[`Chart 2`] = `
             "style": Object {
               "data": Object {
                 "fill": "#06c",
-                "fillOpacity": 0.4,
+                "fillOpacity": 0.3,
                 "stroke": "transparent",
                 "strokeWidth": 2,
               },
@@ -3393,7 +3393,7 @@ exports[`Chart 2`] = `
               "#004b95",
             ],
             "height": 230,
-            "padding": 8,
+            "padding": 20,
             "style": Object {
               "data": Object {
                 "padding": 8,
@@ -5671,7 +5671,7 @@ exports[`Chart 2`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
-            "fillOpacity": 0.4,
+            "fillOpacity": 0.3,
             "stroke": "transparent",
             "strokeWidth": 2,
           },
@@ -5990,7 +5990,7 @@ exports[`Chart 2`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,
@@ -6129,7 +6129,7 @@ exports[`renders axis and component children 1`] = `
             "style": Object {
               "data": Object {
                 "fill": "#06c",
-                "fillOpacity": 0.4,
+                "fillOpacity": 0.3,
                 "stroke": "transparent",
                 "strokeWidth": 2,
               },
@@ -6448,7 +6448,7 @@ exports[`renders axis and component children 1`] = `
               "#004b95",
             ],
             "height": 230,
-            "padding": 8,
+            "padding": 20,
             "style": Object {
               "data": Object {
                 "padding": 8,
@@ -8731,7 +8731,7 @@ exports[`renders axis and component children 1`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
-            "fillOpacity": 0.4,
+            "fillOpacity": 0.3,
             "stroke": "transparent",
             "strokeWidth": 2,
           },
@@ -9050,7 +9050,7 @@ exports[`renders axis and component children 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,

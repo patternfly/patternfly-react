@@ -19,7 +19,7 @@ exports[`ChartGroup 1`] = `
             "style": Object {
               "data": Object {
                 "fill": "#06c",
-                "fillOpacity": 0.4,
+                "fillOpacity": 0.3,
                 "stroke": "transparent",
                 "strokeWidth": 2,
               },
@@ -338,7 +338,7 @@ exports[`ChartGroup 1`] = `
               "#004b95",
             ],
             "height": 230,
-            "padding": 8,
+            "padding": 20,
             "style": Object {
               "data": Object {
                 "padding": 8,
@@ -475,7 +475,7 @@ exports[`ChartGroup 1`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
-            "fillOpacity": 0.4,
+            "fillOpacity": 0.3,
             "stroke": "transparent",
             "strokeWidth": 2,
           },
@@ -794,7 +794,7 @@ exports[`ChartGroup 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,
@@ -932,7 +932,7 @@ exports[`ChartGroup 2`] = `
             "style": Object {
               "data": Object {
                 "fill": "#06c",
-                "fillOpacity": 0.4,
+                "fillOpacity": 0.3,
                 "stroke": "transparent",
                 "strokeWidth": 2,
               },
@@ -1251,7 +1251,7 @@ exports[`ChartGroup 2`] = `
               "#004b95",
             ],
             "height": 230,
-            "padding": 8,
+            "padding": 20,
             "style": Object {
               "data": Object {
                 "padding": 8,
@@ -1388,7 +1388,7 @@ exports[`ChartGroup 2`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
-            "fillOpacity": 0.4,
+            "fillOpacity": 0.3,
             "stroke": "transparent",
             "strokeWidth": 2,
           },
@@ -1707,7 +1707,7 @@ exports[`ChartGroup 2`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,
@@ -1845,7 +1845,7 @@ exports[`renders container children 1`] = `
             "style": Object {
               "data": Object {
                 "fill": "#06c",
-                "fillOpacity": 0.4,
+                "fillOpacity": 0.3,
                 "stroke": "transparent",
                 "strokeWidth": 2,
               },
@@ -2164,7 +2164,7 @@ exports[`renders container children 1`] = `
               "#004b95",
             ],
             "height": 230,
-            "padding": 8,
+            "padding": 20,
             "style": Object {
               "data": Object {
                 "padding": 8,
@@ -2302,7 +2302,7 @@ exports[`renders container children 1`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
-            "fillOpacity": 0.4,
+            "fillOpacity": 0.3,
             "stroke": "transparent",
             "strokeWidth": 2,
           },
@@ -2621,7 +2621,7 @@ exports[`renders container children 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,
