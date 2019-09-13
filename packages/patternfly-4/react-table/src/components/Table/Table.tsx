@@ -106,13 +106,31 @@ export interface IDecorator extends React.HTMLProps<HTMLElement> {
   children?: React.ReactNode;
 }
 
+export type ITransforms = ((
+  label?: IFormatterValueType,
+  rowData?: IRowData,
+  columnIndex?: number,
+  column?: IColumn,
+  property?: string,
+  rowIndex?: number,
+  rowKey?: RowKeyType ) => { className: string; 'aria-sort': string; children: React.ReactNode; })[];
+
+export type IFormatters = ((
+    data?: IFormatterValueType,
+    rowData?: IRowData,
+    columnIndex?: number,
+    column?: IColumn,
+    property?: string,
+    rowIndex?: number,
+    rowKey?: RowKeyType ) => formatterValueType)[];
+
 export interface ICell {
   title?: string;
-  transforms?: ((...args: any) => any)[];
-  cellTransforms?: ((...args: any) => any)[];
-  columnTransforms?: ((...args: any) => any)[];
-  formatters?: ((...args: any) => any)[];
-  cellFormatters?: ((...args: any) => any)[];
+  transforms?: ITransforms;
+  cellTransforms?: ITransforms;
+  columnTransforms?: ITransforms;
+  formatters?: IFormatters;
+  cellFormatters?: IFormatters;
   props?: any;
   data?: any;
   header?: any;

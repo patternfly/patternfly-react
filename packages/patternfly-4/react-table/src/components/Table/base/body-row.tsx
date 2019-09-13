@@ -41,8 +41,8 @@ export class BodyRow extends React.Component<BodyRowProps, {}> {
     }
 
     return !(
-      columnsAreEqual(columns, nextProps.columns) && isEqual(rowData, nextProps.rowData)
-    );
+      columnsAreEqual(columns, nextProps.columns) && isEqual(rowData, nextProps.rowData)    
+      );
   }
   render() {
     const { columns, renderers, onRow, rowKey, rowIndex, rowData } = this.props;

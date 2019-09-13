@@ -448,6 +448,76 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabDemo
   },
   {
+    id: 'table-actions-demo',
+    name: 'Table Actions Demo',
+    componentType: Examples.TableActionsDemo
+  },
+  {
+    id: 'table-breakpoint-modifers-demo',
+    name: 'Table Breakpoint Modifers Demo',
+    componentType: Examples.TableBreakpointModifersDemo
+  },
+  {
+    id: 'table-collapsible-demo',
+    name: 'Table Collapsible Demo',
+    componentType: Examples.TableCollapsibleDemo
+  },
+  {
+    id: 'table-compact-borderless-rows-demo',
+    name: 'Table Compact Borderless Rows Demo',
+    componentType: Examples.TableCompactBorderlessRowsDemo
+  },
+  {
+    id: 'table-compact-demo',
+    name: 'Table Compact Demo',
+    componentType: Examples.TableCompactDemo
+  },
+  {
+    id: 'table-compact-expandable-demo',
+    name: 'Table Compact Expandable Demo',
+    componentType: Examples.TableCompactExpandableDemo
+  },
+  {
+    id: 'table-compound-expandable-demo',
+    name: 'Table Compound Expandable Demo',
+    componentType: Examples.TableCompoundExpandableDemo
+  },
+  {
+    id: 'table-first-cell-as-header-demo',
+    name: 'Table First Cell As Header Demo',
+    componentType: Examples.TableFirstCellAsHeaderDemo
+  },
+  {
+    id: 'table-headers-wrappable-demo',
+    name: 'Table Headers Wrappable Demo',
+    componentType: Examples.TableHeadersWrappableDemo
+  },
+  {
+    id: 'table-selectable-demo',
+    name: 'Table Selectable Demo',
+    componentType: Examples.TableSelectableDemo
+  },
+  {
+    id: 'table-simple-actions-demo',
+    name: 'Table Simple Actions Demo',
+    componentType: Examples.TableSimpleActionsDemo
+  },
+  {
+    id: 'table-simple-demo',
+    name: 'Table Simple Demo',
+    componentType: Examples.TableSimpleDemo
+  },
+  {
+    id: 'table-sortable-demo',
+    name: 'Table Sortable Demo',
+    componentType: Examples.TableSortableDemo
+  },
+  {
+    id: 'table-width-modifiers-demo',
+    name: 'Table Width Modifers Demo',
+    componentType: Examples.TableWidthModifiersDemo
+  },
+  {
     id: 'tab-string-event-key-demo',
     name: 'Tab String Event Key Demo',
     componentType: Examples.TabsStringEventKeyDemo

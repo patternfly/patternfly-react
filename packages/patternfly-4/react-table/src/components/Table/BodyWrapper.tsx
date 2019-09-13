@@ -37,6 +37,5 @@ export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
       </React.Fragment>
     );
   }
-
   return <tbody {...props} ref={tbodyRef as React.Ref<any>} />;
 };
