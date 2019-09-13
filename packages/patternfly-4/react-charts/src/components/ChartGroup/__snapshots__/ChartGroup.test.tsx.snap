@@ -20,7 +20,6 @@ exports[`ChartGroup 1`] = `
               "data": Object {
                 "fill": "#06c",
                 "fillOpacity": 0.3,
-                "stroke": "transparent",
                 "strokeWidth": 2,
               },
               "labels": Object {
@@ -476,7 +475,6 @@ exports[`ChartGroup 1`] = `
           "data": Object {
             "fill": "#06c",
             "fillOpacity": 0.3,
-            "stroke": "transparent",
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -933,7 +931,6 @@ exports[`ChartGroup 2`] = `
               "data": Object {
                 "fill": "#06c",
                 "fillOpacity": 0.3,
-                "stroke": "transparent",
                 "strokeWidth": 2,
               },
               "labels": Object {
@@ -1389,7 +1386,6 @@ exports[`ChartGroup 2`] = `
           "data": Object {
             "fill": "#06c",
             "fillOpacity": 0.3,
-            "stroke": "transparent",
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -1846,7 +1842,6 @@ exports[`renders container children 1`] = `
               "data": Object {
                 "fill": "#06c",
                 "fillOpacity": 0.3,
-                "stroke": "transparent",
                 "strokeWidth": 2,
               },
               "labels": Object {
@@ -2303,7 +2298,6 @@ exports[`renders container children 1`] = `
           "data": Object {
             "fill": "#06c",
             "fillOpacity": 0.3,
-            "stroke": "transparent",
             "strokeWidth": 2,
           },
           "labels": Object {

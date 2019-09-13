@@ -138,7 +138,8 @@ export const BaseTheme = {
       data: {
         fill: chart_area_data_Fill.value,
         fillOpacity: chart_area_Opacity.value,
-        stroke: chart_global_label_stroke.value,
+        // Omit stroke to add a line border from color scale
+        // stroke: chart_global_label_stroke.value,
         strokeWidth: chart_area_stroke_Width.value
       },
       labels: LABEL_CENTERED_PROPS

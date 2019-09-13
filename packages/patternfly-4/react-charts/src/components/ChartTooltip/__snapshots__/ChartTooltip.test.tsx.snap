@@ -36,7 +36,6 @@ exports[`ChartTooltip 1`] = `
           "data": Object {
             "fill": "#06c",
             "fillOpacity": 0.3,
-            "stroke": "transparent",
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -509,7 +508,6 @@ exports[`ChartTooltip 2`] = `
           "data": Object {
             "fill": "#06c",
             "fillOpacity": 0.3,
-            "stroke": "transparent",
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -994,7 +992,6 @@ exports[`allows tooltip via container component 1`] = `
               "data": Object {
                 "fill": "#06c",
                 "fillOpacity": 0.3,
-                "stroke": "transparent",
                 "strokeWidth": 2,
               },
               "labels": Object {
@@ -1452,7 +1449,6 @@ exports[`allows tooltip via container component 1`] = `
           "data": Object {
             "fill": "#06c",
             "fillOpacity": 0.3,
-            "stroke": "transparent",
             "strokeWidth": 2,
           },
           "labels": Object {

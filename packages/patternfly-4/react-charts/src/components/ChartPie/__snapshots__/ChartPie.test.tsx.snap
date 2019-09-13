@@ -63,7 +63,6 @@ exports[`ChartPie 1`] = `
                 "data": Object {
                   "fill": "#06c",
                   "fillOpacity": 0.3,
-                  "stroke": "transparent",
                   "strokeWidth": 2,
                 },
                 "labels": Object {
@@ -523,7 +522,6 @@ exports[`ChartPie 1`] = `
             "data": Object {
               "fill": "#06c",
               "fillOpacity": 0.3,
-              "stroke": "transparent",
               "strokeWidth": 2,
             },
             "labels": Object {
@@ -1025,7 +1023,6 @@ exports[`ChartPie 2`] = `
                 "data": Object {
                   "fill": "#06c",
                   "fillOpacity": 0.3,
-                  "stroke": "transparent",
                   "strokeWidth": 2,
                 },
                 "labels": Object {
@@ -1485,7 +1482,6 @@ exports[`ChartPie 2`] = `
             "data": Object {
               "fill": "#06c",
               "fillOpacity": 0.3,
-              "stroke": "transparent",
               "strokeWidth": 2,
             },
             "labels": Object {
@@ -1979,7 +1975,6 @@ exports[`renders component data 1`] = `
                 "data": Object {
                   "fill": "#06c",
                   "fillOpacity": 0.3,
-                  "stroke": "transparent",
                   "strokeWidth": 2,
                 },
                 "labels": Object {
@@ -2439,7 +2434,6 @@ exports[`renders component data 1`] = `
             "data": Object {
               "fill": "#06c",
               "fillOpacity": 0.3,
-              "stroke": "transparent",
               "strokeWidth": 2,
             },
             "labels": Object {
