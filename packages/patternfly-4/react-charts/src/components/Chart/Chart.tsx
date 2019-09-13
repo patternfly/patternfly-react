@@ -25,6 +25,7 @@ import {
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getLabelTextSize, getPaddingForSide, getTheme } from '../ChartUtils';
 
+
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
