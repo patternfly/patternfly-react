@@ -44,7 +44,7 @@ exports[`ChartVoronoiContainer 1`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
-            "fillOpacity": 0.4,
+            "fillOpacity": 0.3,
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -362,7 +362,7 @@ exports[`ChartVoronoiContainer 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,
@@ -526,7 +526,7 @@ exports[`ChartVoronoiContainer 2`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
-            "fillOpacity": 0.4,
+            "fillOpacity": 0.3,
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -844,7 +844,7 @@ exports[`ChartVoronoiContainer 2`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,
@@ -1010,7 +1010,7 @@ exports[`renders container via ChartGroup 1`] = `
             "style": Object {
               "data": Object {
                 "fill": "#06c",
-                "fillOpacity": 0.4,
+                "fillOpacity": 0.3,
                 "strokeWidth": 2,
               },
               "labels": Object {
@@ -1328,7 +1328,7 @@ exports[`renders container via ChartGroup 1`] = `
               "#004b95",
             ],
             "height": 230,
-            "padding": 8,
+            "padding": 20,
             "style": Object {
               "data": Object {
                 "padding": 8,
@@ -1467,7 +1467,7 @@ exports[`renders container via ChartGroup 1`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
-            "fillOpacity": 0.4,
+            "fillOpacity": 0.3,
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -1785,7 +1785,7 @@ exports[`renders container via ChartGroup 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,

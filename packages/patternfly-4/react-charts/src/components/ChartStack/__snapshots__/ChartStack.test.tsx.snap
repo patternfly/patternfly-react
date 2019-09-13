@@ -28,7 +28,7 @@ exports[`ChartStack 1`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
-            "fillOpacity": 0.4,
+            "fillOpacity": 0.3,
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -346,7 +346,7 @@ exports[`ChartStack 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,
@@ -493,7 +493,7 @@ exports[`ChartStack 2`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
-            "fillOpacity": 0.4,
+            "fillOpacity": 0.3,
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -811,7 +811,7 @@ exports[`ChartStack 2`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,
@@ -949,7 +949,7 @@ exports[`renders component data 1`] = `
             "style": Object {
               "data": Object {
                 "fill": "#06c",
-                "fillOpacity": 0.4,
+                "fillOpacity": 0.3,
                 "strokeWidth": 2,
               },
               "labels": Object {
@@ -1267,7 +1267,7 @@ exports[`renders component data 1`] = `
               "#004b95",
             ],
             "height": 230,
-            "padding": 8,
+            "padding": 20,
             "style": Object {
               "data": Object {
                 "padding": 8,
@@ -3553,7 +3553,7 @@ exports[`renders component data 1`] = `
         "style": Object {
           "data": Object {
             "fill": "#06c",
-            "fillOpacity": 0.4,
+            "fillOpacity": 0.3,
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -3871,7 +3871,7 @@ exports[`renders component data 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,
