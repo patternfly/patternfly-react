@@ -8,7 +8,7 @@ propComponents: ['Chart', 'ChartBar', 'ChartStack']
 import { Chart, ChartBar, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
 import './chart-stack.scss';
 
-## Simple stack chart with right aligned legend
+## Simple stacked bar chart with right aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartStack,ChartTooltip } from '@patternfly/react-charts';
@@ -75,7 +75,7 @@ import { Chart, ChartStack,ChartTooltip } from '@patternfly/react-charts';
 </div>
 ```
 
-## Gold, horizontal stack chart with bottom aligned legend
+## Gold, horizontal stacked bar chart with bottom aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
@@ -143,7 +143,7 @@ import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 </div>
 ```
 
-## Multi-color (ordered), horizontal stack chart with bottom-left aligned legend
+## Multi-color (ordered), horizontal stacked bar chart with bottom-left aligned legend
 ```js
 import React from 'react';
 import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
@@ -211,7 +211,8 @@ import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 </div>
 ```
 
-## Monthly vertical stack with bottom aligned legend and responsive container
+## Monthly stacked bar chart with bottom aligned legend and responsive container
+This demonstrates monthly data and responsiveness for mobile
 ```js
 import React from 'react';
 import { Chart, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
@@ -326,6 +327,105 @@ class ResponsiveStack extends React.Component {
         </div>
       </div>
     )
+  }
+}
+```
+
+## Multi-color (unorderd), stacked area chart with bottom-left aligned legend and responsive container
+```js
+import React from 'react';
+import { Chart, ChartArea, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
+
+class MultiColorChart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.containerRef = React.createRef();
+    this.state = {
+      width: 0
+    };
+    this.handleResize = () => {
+      if(this.containerRef.current && this.containerRef.current.clientWidth){
+        this.setState({ width: this.containerRef.current.clientWidth });
+      }
+    };
+  }
+
+  componentDidMount() {
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  render() {
+    const { width } = this.state;
+    
+    return (
+      <div ref={this.containerRef}>
+        <div className="stack-area-chart-legend-bottom-responsive">
+          <Chart
+            ariaDesc="Average number of pets"
+            ariaTitle="Area chart example"
+            containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+            legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}
+            legendPosition="bottom-left"
+            height={225}
+            padding={{
+              bottom: 75, // Adjusted to accomodate legend
+              left: 50,
+              right: 50,
+              top: 50,
+            }}
+            maxDomain={{y: 30}}
+            themeColor={ChartThemeColor.multiUnordered}
+            width={width}
+          >
+            <ChartAxis />
+            <ChartAxis dependentAxis showGrid />
+            <ChartStack>
+              <ChartArea
+                data={[
+                  { name: 'Cats', x: 'Sunday', y: 6 },
+                  { name: 'Cats', x: 'Monday', y: 2 },
+                  { name: 'Cats', x: 'Tuesday', y: 8 },
+                  { name: 'Cats', x: 'Wednesday', y: 15 },
+                  { name: 'Cats', x: 'Thursday', y: 6 },
+                  { name: 'Cats', x: 'Friday', y: 2 },
+                  { name: 'Cats', x: 'Saturday', y: 0 }
+                ]}
+                interpolation="basis"
+              />
+             <ChartArea
+               data={[
+                  { name: 'Birds', x: 'Sunday', y: 4 },
+                  { name: 'Birds', x: 'Monday', y: 5 },
+                  { name: 'Birds', x: 'Tuesday', y: 7 },
+                  { name: 'Birds', x: 'Wednesday', y: 6 },
+                  { name: 'Birds', x: 'Thursday', y: 10 },
+                  { name: 'Birds', x: 'Friday', y: 3 },
+                  { name: 'Birds', x: 'Saturday', y: 5 }
+                ]}
+                interpolation="basis"
+              />
+              <ChartArea
+                data={[
+                  { name: 'Dogs', x: 'Sunday', y: 8 },
+                  { name: 'Dogs', x: 'Monday', y: 18 },
+                  { name: 'Dogs', x: 'Tuesday', y: 14 },
+                  { name: 'Dogs', x: 'Wednesday', y: 8 },
+                  { name: 'Dogs', x: 'Thursday', y: 6 },
+                  { name: 'Dogs', x: 'Friday', y: 8 },
+                  { name: 'Dogs', x: 'Saturday', y: 12 }
+                ]}
+                interpolation="basis"
+              />
+            </ChartStack>
+          </Chart>
+        </div>
+      </div>
+    );
   }
 }
 ```
