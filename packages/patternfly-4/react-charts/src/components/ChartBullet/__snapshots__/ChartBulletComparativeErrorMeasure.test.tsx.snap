@@ -25,7 +25,6 @@ exports[`ChartBulletComparativeErrorMeasure 1`] = `
             "data": Object {
               "fill": "#06c",
               "fillOpacity": 0.4,
-              "stroke": "transparent",
               "strokeWidth": 2,
             },
             "labels": Object {
@@ -489,7 +488,6 @@ exports[`ChartBulletComparativeErrorMeasure 2`] = `
             "data": Object {
               "fill": "#06c",
               "fillOpacity": 0.4,
-              "stroke": "transparent",
               "strokeWidth": 2,
             },
             "labels": Object {
@@ -968,7 +966,6 @@ exports[`renders component data 1`] = `
             "data": Object {
               "fill": "#06c",
               "fillOpacity": 0.4,
-              "stroke": "transparent",
               "strokeWidth": 2,
             },
             "labels": Object {

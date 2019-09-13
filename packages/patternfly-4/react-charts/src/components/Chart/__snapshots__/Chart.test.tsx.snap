@@ -20,7 +20,6 @@ exports[`Chart 1`] = `
               "data": Object {
                 "fill": "#06c",
                 "fillOpacity": 0.4,
-                "stroke": "transparent",
                 "strokeWidth": 2,
               },
               "labels": Object {
@@ -2617,7 +2616,6 @@ exports[`Chart 1`] = `
           "data": Object {
             "fill": "#06c",
             "fillOpacity": 0.4,
-            "stroke": "transparent",
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -3075,7 +3073,6 @@ exports[`Chart 2`] = `
               "data": Object {
                 "fill": "#06c",
                 "fillOpacity": 0.4,
-                "stroke": "transparent",
                 "strokeWidth": 2,
               },
               "labels": Object {
@@ -5672,7 +5669,6 @@ exports[`Chart 2`] = `
           "data": Object {
             "fill": "#06c",
             "fillOpacity": 0.4,
-            "stroke": "transparent",
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -6130,7 +6126,6 @@ exports[`renders axis and component children 1`] = `
               "data": Object {
                 "fill": "#06c",
                 "fillOpacity": 0.4,
-                "stroke": "transparent",
                 "strokeWidth": 2,
               },
               "labels": Object {
@@ -8732,7 +8727,6 @@ exports[`renders axis and component children 1`] = `
           "data": Object {
             "fill": "#06c",
             "fillOpacity": 0.4,
-            "stroke": "transparent",
             "strokeWidth": 2,
           },
           "labels": Object {
