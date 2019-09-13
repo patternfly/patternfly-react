@@ -8,6 +8,29 @@ propComponents: ['ChartArea']
 import { ChartArea, ChartGroup, ChartLabel, ChartThemeColor } from '@patternfly/react-charts';
 import './sparkline.scss';
 
+## Tutorial
+```js
+import React from 'react';
+import { Text, TextContent, TextVariants } from '@patternfly/react-charts';
+
+<TextContent>
+  <Text component={TextVariants.p}>
+    PatternFly React charts are based on the Victory chart library, along with additional functionality, custom 
+    components, and theming for PatternFly. This provides a collection of React components you can use to build 
+    interfaces with consistent markup, styling, and behavior.
+  </Text>
+  <Text component={TextVariants.p}>
+    In this 
+    <Text component={TextVariants.a} href="https://katacoda.com/patternfly/courses/charts/module-sparkline" target="_blank">
+      tutorial
+    </Text>,
+    we will build a PatternFly sparkline chart together - starting with a simple chart, adding tooltips, and concluding 
+    by changing the theme color. You'll learn a little bit about React and how to use PatternFly components together to 
+    build a consistent experience.
+  </Text>
+</TextContent>
+```
+
 ## Sparkline chart
 ```js
 import React from 'react';
