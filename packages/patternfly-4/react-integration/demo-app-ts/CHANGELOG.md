@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.24.11...demo-app-ts@3.0.0) (2019-09-16)
+
+
+* Update Victory to 30.0.0 (#2883) ([b16c335](https://github.com/patternfly/patternfly-react/commit/b16c335)), closes [#2883](https://github.com/patternfly/patternfly-react/issues/2883)
+
+
+### BREAKING CHANGES
+
+* upgrade to Victory 30.0.0
+
+
+
+
+
 ## [2.24.11](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@2.24.10...demo-app-ts@2.24.11) (2019-09-13)
 
 **Note:** Version bump only for package demo-app-ts

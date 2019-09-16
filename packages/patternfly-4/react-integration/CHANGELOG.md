@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.24.2...@patternfly/react-integration@3.0.0) (2019-09-16)
+
+
+* Update Victory to 30.0.0 (#2883) ([b16c335](https://github.com/patternfly/patternfly-react/commit/b16c335)), closes [#2883](https://github.com/patternfly/patternfly-react/issues/2883)
+
+
+### BREAKING CHANGES
+
+* upgrade to Victory 30.0.0
+
+
+
+
+
 ## [2.24.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@2.24.1...@patternfly/react-integration@2.24.2) (2019-09-13)
 
 **Note:** Version bump only for package @patternfly/react-integration
