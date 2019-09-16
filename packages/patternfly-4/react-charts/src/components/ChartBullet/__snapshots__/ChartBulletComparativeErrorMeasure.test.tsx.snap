@@ -6,6 +6,7 @@ exports[`ChartBulletComparativeErrorMeasure 1`] = `
   width={450}
 >
   <Component
+    constrainToVisibleArea={false}
     height={140}
     horizontal={true}
     standalone={false}
@@ -469,6 +470,7 @@ exports[`ChartBulletComparativeErrorMeasure 2`] = `
   width={450}
 >
   <Component
+    constrainToVisibleArea={false}
     height={140}
     horizontal={true}
     standalone={false}
@@ -932,6 +934,7 @@ exports[`renders component data 1`] = `
   width={450}
 >
   <Component
+    constrainToVisibleArea={false}
     data={
       Array [
         Object {

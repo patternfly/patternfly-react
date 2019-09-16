@@ -3,9 +3,12 @@
 exports[`ChartTooltip 1`] = `
 <VictoryTooltip
   active={false}
+  constrainToVisibleArea={false}
   flyoutComponent={
     <Flyout
       pathComponent={<Path />}
+      role="presentation"
+      shapeRendering="auto"
     />
   }
   groupComponent={<g />}
@@ -475,9 +478,12 @@ exports[`ChartTooltip 1`] = `
 exports[`ChartTooltip 2`] = `
 <VictoryTooltip
   active={false}
+  constrainToVisibleArea={false}
   flyoutComponent={
     <Flyout
       pathComponent={<Path />}
+      role="presentation"
+      shapeRendering="auto"
     />
   }
   groupComponent={<g />}
@@ -950,13 +956,15 @@ exports[`allows tooltip via container component 1`] = `
     <Unknown
       activateData={true}
       activateLabels={true}
-      className="VictoryContainer"
+      className="pf-c-chart"
       labelComponent={
         <VictoryTooltip
           active={false}
           flyoutComponent={
             <Flyout
               pathComponent={<Path />}
+              role="presentation"
+              shapeRendering="auto"
             />
           }
           groupComponent={<g />}

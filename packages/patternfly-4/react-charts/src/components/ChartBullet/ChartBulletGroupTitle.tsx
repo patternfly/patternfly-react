@@ -7,7 +7,7 @@ import { Line } from 'victory-core';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getBulletGroupTitleTheme, getLabelTextSize, getLabelX, getLabelY, getPaddingForSide } from '../ChartUtils';
+import { getBulletGroupTitleTheme, getLabelTextSize, getBulletLabelX, getBulletLabelY, getPaddingForSide } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -171,11 +171,11 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
       text: showBoth ? [title, subTitle] : title,
       textAnchor: 'middle',
       verticalAnchor: 'middle',
-      x: getLabelX({
+      x: getBulletLabelX({
         chartWidth: width,
         labelPosition: 'top'
       }),
-      y: getLabelY({
+      y: getBulletLabelY({
         chartHeight: height,
         dy: defaultPadding.top,
         labelPosition: 'top'

@@ -1,30 +1,22 @@
 import { VictoryLegend } from 'victory';
-import { TextSize } from 'victory-core';
+import { Helpers, TextSize } from 'victory-core';
 import { ChartLegendProps } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { overpassFontCharacterConstant } from './chart-label';
-import { getPaddingForSide } from './chart-padding';
+import {getPieOrigin} from "./chart-origin";
 
-interface ChartLegendPaddingXInterface {
-  chartWidth: number; // Width of chart (e.g., donut) within SVG
+interface ChartLegendInterface {
+  chartType?: string; // The type of chart (e.g., pie) to lookup for props
   dx?: number; // Horizontal shift from the x coordinate
-  legendData: any[]; // The legend data used to determine width
-  legendOrientation: 'horizontal' | 'vertical'; // Orientation of legend
-  legendPosition: 'bottom' | 'bottom-left' | 'right'; // Position of legend
-  legendProps: any; // The legend props used to determine width
-  svgWidth: number; // Overall width of SVG
-  theme: ChartThemeDefinition; // The theme that will be applied to the chart
-}
-
-interface ChartLegendPaddingYInterface {
-  chartHeight: number; // Height of chart (e.g., donut) within SVG
-  chartType: string; // The type of chart (e.g., pie) to lookup for props like padding
   dy?: number; // Vertical shift from the x coordinate
+  height?: number; // Overall height of SVG
   legendData: any[]; // The legend data used to determine width
   legendOrientation: 'horizontal' | 'vertical'; // Orientation of legend
   legendPosition: 'bottom' | 'bottom-left' | 'right'; // Position of legend
   legendProps: any; // The legend props used to determine width
+  padding?: any; // Chart padding
   theme: ChartThemeDefinition; // The theme that will be applied to the chart
+  width?: number; // Overall width of SVG
 }
 
 interface ChartLegendDimensionsInterface {
@@ -60,15 +52,80 @@ export const getLegendDimensions = ({
 
 // Returns x coordinate for legend
 export const getLegendX = ({
-  chartWidth,
+  chartType,
+  ...rest
+}: ChartLegendInterface) => (chartType === 'pie') ? getPieLegendX(rest) : getChartLegendX(rest);
+
+// Returns y coordinate for legend
+export const getLegendY = ({
+  chartType,
+  ...rest
+}: ChartLegendInterface) => {
+  switch (chartType) {
+    case 'pie':
+      return getPieLegendY(rest);
+    case 'bullet':
+      return getBulletLegendY(rest);
+    default:
+      return getChartLegendY(rest);
+  }
+}
+
+// Returns y coordinate for bullet legends
+export const getBulletLegendY = ({
+  dy = 0,
+  height,
+  legendPosition,
+  legendData,
+  legendOrientation,
+  legendProps,
+  padding,
+  theme,
+  width
+}: ChartLegendInterface) => {
+  const { left, right } = Helpers.getPadding({padding});
+  const chartSize = {
+    height: height, // Fixed size
+    width: width - left - right
+  };
+
+  switch (legendPosition) {
+    case 'bottom':
+    case 'bottom-left':
+      return chartSize.height + ChartCommonStyles.legend.margin + dy;
+    case 'right': {
+      // Legend height with padding
+      const legendDimensions = getLegendDimensions({
+        legendData,
+        legendOrientation,
+        legendProps,
+        theme
+      });
+      const legendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 17 : 0);
+      return (chartSize.height - legendDimensions.height) / 2 + legendPadding(legendData);
+    }
+    default:
+      return dy;
+  }
+};
+
+// Returns x coordinate for chart legends
+export const getChartLegendX = ({
   dx = 0,
+  height,
   legendData,
   legendOrientation,
   legendPosition,
   legendProps,
-  svgWidth,
-  theme
-}: ChartLegendPaddingXInterface) => {
+  padding,
+  theme,
+  width
+}: ChartLegendInterface) => {
+  const { top, bottom, left, right } = Helpers.getPadding({padding});
+  const chartSize = {
+    height: Math.abs(height - (bottom + top)),
+    width: Math.abs(width - (left + right))
+  };
   const legendDimensions = getLegendDimensions({
     legendData,
     legendOrientation,
@@ -80,56 +137,124 @@ export const getLegendX = ({
     legendOrientation,
     theme
   });
+
   switch (legendPosition) {
     case 'bottom':
-      return svgWidth > legendDimensions.width - textSizeWorkAround
-        ? Math.round((svgWidth - (legendDimensions.width - textSizeWorkAround)) / 2) + dx : dx;
+      return width > legendDimensions.width - textSizeWorkAround
+        ? Math.round((width - (legendDimensions.width - textSizeWorkAround)) / 2) + dx : dx;
     case 'bottom-left':
-      return dx;
+      return left + dx;
     case 'right':
-      return chartWidth + ChartCommonStyles.legend.margin + dx;
+      return chartSize.width + ChartCommonStyles.legend.margin + left + dx;
     default:
       return dx;
   }
 };
 
-// Returns y coordinate for legend
-export const getLegendY = ({
-  chartHeight,
+// Returns y coordinate for chart legends
+export const getChartLegendY = ({
   dy = 0,
+  height,
   legendPosition,
-  chartType,
   legendData,
   legendOrientation,
   legendProps,
-  theme
-}: ChartLegendPaddingYInterface) => {
+  padding,
+  theme,
+  width
+}: ChartLegendInterface) => {
+  const { top, bottom, left, right } = Helpers.getPadding({padding});
+  const chartSize = {
+    height: Math.abs(height - (bottom + top)),
+    width: Math.abs(width - (left + right))
+  };
+
   switch (legendPosition) {
     case 'bottom':
     case 'bottom-left':
-      return chartHeight + ChartCommonStyles.legend.margin + dy;
+      return chartSize.height + ChartCommonStyles.legend.margin * 2 + top + dy;
     case 'right': {
-      const chartProps = theme[chartType as keyof ChartThemeDefinition];
-
-      // Chart height with padding (for right positioned legends)
-      const defaultPadding = {
-        bottom: getPaddingForSide('bottom', chartProps ? chartProps.padding : 0, 0),
-        top: getPaddingForSide('top', chartProps ? chartProps.padding : 0, 0),
-      };
-      const chartPadding = defaultPadding.bottom + defaultPadding.top + 4;
-      const cHeight = chartHeight ? chartHeight + chartPadding : 0;
-
-      // Legend width with padding
+      // Legend height with padding
       const legendDimensions = getLegendDimensions({
         legendData,
         legendOrientation,
         legendProps,
         theme
       });
-      const legendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 15 : 0);
-      const lHeight = legendDimensions.height ? legendDimensions.height + legendPadding(legendData) : 0;
+      const originX = chartSize.height / 2 + top;
+      const legendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 2 : 0);
+      return (originX - legendDimensions.height / 2) + legendPadding(legendData);
+    }
+    default:
+      return dy;
+  }
+};
 
-      return cHeight > lHeight ? Math.round((cHeight - lHeight) / 2) + dy : dy;
+// Returns x coordinate for pie legends
+export const getPieLegendX = ({
+  dx = 0,
+  height,
+  legendData,
+  legendOrientation,
+  legendPosition,
+  legendProps,
+  padding,
+  theme,
+  width
+}: ChartLegendInterface) => {
+  const origin = getPieOrigin({ height, padding, width });
+  const radius = Helpers.getRadius({ height, width, padding });
+  const legendDimensions = getLegendDimensions({
+    legendData,
+    legendOrientation,
+    legendProps,
+    theme
+  });
+  const textSizeWorkAround = getTextSizeWorkAround({
+    legendData,
+    legendOrientation,
+    theme
+  });
+
+  switch (legendPosition) {
+    case 'bottom':
+      return width > legendDimensions.width - textSizeWorkAround
+        ? Math.round((width - (legendDimensions.width - textSizeWorkAround)) / 2) + dx : dx;
+    case 'right':
+      return origin.x + ChartCommonStyles.label.margin + dx + radius;
+    default:
+      return dx;
+  }
+};
+
+// Returns y coordinate for pie legends
+export const getPieLegendY = ({
+  dy = 0,
+  height,
+  legendPosition,
+  legendData,
+  legendOrientation,
+  legendProps,
+  padding,
+  theme,
+  width
+}: ChartLegendInterface) => {
+  const origin = getPieOrigin({ height, padding, width });
+  const radius = Helpers.getRadius({ height, width, padding });
+
+  switch (legendPosition) {
+    case 'bottom':
+      return origin.y + ChartCommonStyles.legend.margin + radius + dy;
+    case 'right': {
+      // Legend height with padding
+      const legendDimensions = getLegendDimensions({
+        legendData,
+        legendOrientation,
+        legendProps,
+        theme
+      });
+      const legendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 2 : 0);
+      return (origin.y - legendDimensions.height / 2) + legendPadding(legendData);
     }
     default:
       return dy;

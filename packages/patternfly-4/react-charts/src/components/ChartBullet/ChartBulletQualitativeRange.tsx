@@ -7,7 +7,7 @@ import {
   PaddingProps,
   VictoryBar
 } from 'victory';
-import { Data } from 'victory-core';
+import { getQualitativeRangeData }  from './utils';
 import { ChartBar } from '../ChartBar';
 import { ChartContainer } from '../ChartContainer';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
@@ -40,6 +40,12 @@ export interface ChartBulletQualitativeRangeProps {
    * the chart, and the number of bars.
    */
   barWidth?: NumberOrCallback;
+  /**
+   * The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of
+   * the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the
+   * center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders.
+   */
+  constrainToVisibleArea?: boolean;
   /**
    * The data prop specifies the data to be plotted. Data should be in the form of an array
    * of data points, or an array of arrays of data points for multiple datasets.
@@ -172,46 +178,21 @@ interface ChartBulletQualitativeRangeDataInterface {
   y0?: DataGetterPropType;
 }
 
-export const getQualitativeRangeData = ({
-  data,
-  invert,
-  themeColor,
-  themeVariant,
-
-  // destructure last
-  theme = getBulletQualitativeRangeTheme(themeColor, themeVariant),
-  y,
-  y0
-}: ChartBulletQualitativeRangeDataInterface) => {
-  const datum: any[] = [];
-
-  Data.formatData(data, {y, y0}, ['y', 'y0']).forEach(((dataPoint: any, index: number) => {
-    datum.push({
-      ...dataPoint,
-      _index: index // Save to sync legend color
-    });
-  }));
-
-  const computedData = datum.sort((a: any, b: any) => invert ? b._y - a._y : a._y - b._y).
-    map((dataPoint: any, index: number) => {
-      return {
-        ...dataPoint,
-        x: 1,
-        _x: 1,
-        // Instead of relying on colorScale, colors must be added to each measure in ascending order
-        _color: theme.group.colorScale[index % theme.group.colorScale.length]
-      };
-      // Sort descending so largest bar is appears behind others
-    }).sort((a: any, b: any) => invert ? a._y - b._y : b._y - a._y);
-
-  return computedData;
-};
+interface ConstrainToVisibleAreaInterface {
+  height?: number;
+  horizontal?: boolean;
+  padding?: any;
+  theme?: ChartThemeDefinition;
+  width?: number;
+}
 
 let currentId = 0;
 
 export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQualitativeRangeProps> = ({
   ariaDesc,
   ariaTitle,
+  barWidth = ChartBulletStyles.qualitativeRangeWidth,
+  constrainToVisibleArea = false,
   data,
   domain,
   horizontal = true,
@@ -229,31 +210,7 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
   theme = getBulletQualitativeRangeTheme(themeColor, themeVariant),
   height = theme.group.height,
   width = theme.group.width,
-  barWidth = horizontal
-    ? height > theme.group.height
-      ? ChartBulletStyles.qualitativeRangeWidth + (height - theme.group.height)
-      : ChartBulletStyles.qualitativeRangeWidth - (theme.group.height - height)
-    : width > theme.group.height
-      ? ChartBulletStyles.qualitativeRangeWidth + (width - theme.group.height)
-      : ChartBulletStyles.qualitativeRangeWidth - (theme.group.height - width),
-  labelComponent =
-    <ChartTooltip
-      orientation="top"
-      dx={(datum) => {
-        if (horizontal) {
-          return datum._y > 0 ? -10 : 10;
-        }
-        const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
-        return result / 2;
-      }}
-      dy={(datum) => {
-        if (!horizontal) {
-          return -10;
-        }
-        const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
-        return result / 2;
-      }}
-    />,
+  labelComponent = <ChartTooltip />,
   ...rest
 }: ChartBulletQualitativeRangeProps) => {
   const computedData = getQualitativeRangeData({
@@ -262,6 +219,32 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
     theme,
     y,
     y0
+  });
+
+  // Label component
+  //
+  // The x and y calculations below ensure that the tooltip appears above the bar, instead of vertically centered.
+  // Having the tooltip vertically centered is visually confusing with comparative measures.
+  //
+  // Note: SVG height and width are provided by ChartBullet as a workaround to support constrainToVisibleArea
+  const tooltip = React.cloneElement(labelComponent, {
+    constrainToVisibleArea,
+    dx: () => {
+      if (horizontal) {
+        return 0;
+      }
+      const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
+      return result / 2;
+    },
+    dy: () => {
+      if (!horizontal) {
+        return 0;
+      }
+      const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
+      return -(result / 2);
+    },
+    orientation: 'top',
+    ...labelComponent.props
   });
 
   const measure = computedData.map((dataPoint: any) => {
@@ -273,7 +256,7 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
       height,
       horizontal,
       key,
-      labelComponent,
+      labelComponent: tooltip,
       labels,
       padding,
       standalone: false,

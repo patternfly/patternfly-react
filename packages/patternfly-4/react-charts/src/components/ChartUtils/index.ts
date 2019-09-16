@@ -1,3 +1,4 @@
+export * from './chart-class-name';
 export * from './chart-domain';
 export * from './chart-label';
 export * from './chart-legend';

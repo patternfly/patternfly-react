@@ -16,6 +16,7 @@ import {
   VictoryScatter,
   VictoryScatterProps
 } from 'victory';
+import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
@@ -28,10 +29,6 @@ export enum ChartScatterSortOrder {
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
 export interface ChartScatterProps extends VictoryScatterProps {
-  /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-scatter/
-   */
-  ' '?: any;
   /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
@@ -122,7 +119,7 @@ export interface ChartScatterProps extends VictoryScatterProps {
    * The mutation function will be called with the calculated props for the individual selected
    * element (i.e. a line), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
-   * @examples
+   * @example
    * events={[
    *   {
    *     target: "data",
@@ -393,7 +390,10 @@ export interface ChartScatterProps extends VictoryScatterProps {
 export const ChartScatter: React.FunctionComponent<ChartScatterProps> = ({
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
+
+  // destructure last
+  theme = getTheme(themeColor, themeVariant),
+  containerComponent = <ChartContainer theme={theme} />,
   ...rest
 }: ChartScatterProps) => <VictoryScatter theme={theme} {...rest} />;
 

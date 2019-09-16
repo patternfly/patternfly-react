@@ -48,6 +48,7 @@ exports[`renders component data 1`] = `
     key="pf-comparative-measure-0"
     labelComponent={
       <Unknown
+        constrainToVisibleArea={false}
         dx={[Function]}
         dy={[Function]}
         orientation="top"

@@ -18,9 +18,9 @@ import {
   VictoryGroupProps,
   VictoryZoomContainer
 } from 'victory';
+import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
-import {ChartContainer} from '../ChartContainer';
+import { getClassName, getTheme } from '../ChartUtils';
 
 export enum ChartGroupSortOrder {
   ascending = 'ascending',
@@ -31,10 +31,6 @@ export enum ChartGroupSortOrder {
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
 export interface ChartGroupProps extends VictoryGroupProps {
-  /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-group/
-   */
-  ' '?: any;
   /**
    * Specifies the zoom capability of the container component. A value of true allows the chart to
    * zoom in and out. Zoom events are controlled by scrolling. When zoomed in, panning events are
@@ -422,7 +418,8 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
     desc: ariaDesc,
     title: ariaTitle,
     theme,
-    ...containerComponent.props
+    ...containerComponent.props,
+    className: getClassName({className: containerComponent.props.className}) // Override VictoryContainer class name
   });
 
   return (

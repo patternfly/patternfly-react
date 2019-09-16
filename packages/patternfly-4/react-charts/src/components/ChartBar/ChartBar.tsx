@@ -15,8 +15,9 @@ import {
   StringOrNumberOrCallback,
   VictoryStyleInterface,
   VictoryBar,
-  VictoryBarProps
+  VictoryBarProps,
 } from 'victory';
+import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
@@ -24,10 +25,6 @@ import { getTheme } from '../ChartUtils';
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
 export interface ChartBarProps extends VictoryBarProps {
-  /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-bar/
-   */
-  ' '?: any;
   /**
    * The alignment prop specifies how bars should be aligned relative to their data points.
    * This prop may be given as “start”, “middle” or “end”. When this prop is not specified,
@@ -406,9 +403,12 @@ export interface ChartBarProps extends VictoryBarProps {
 export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
+
+    // destructure last
+  theme = getTheme(themeColor, themeVariant),
+  containerComponent = <ChartContainer theme={theme} />,
   ...rest
-}: ChartBarProps) => <VictoryBar theme={theme} {...rest} />;
+}: ChartBarProps) => <VictoryBar containerComponent={containerComponent} theme={theme} {...rest} />;
 
 // Note: VictoryBar.getDomain & VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBar, VictoryBar);

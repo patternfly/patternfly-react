@@ -35,13 +35,21 @@ export class DonutUtilizationSimpleRightGreenDemo extends React.Component<{}, { 
       <div>
         <div style={{backgroundColor: 'white', height: '300px', width: '230px'}}>
           <ChartDonutUtilization
+            ariaDesc="Storage capacity"
+            ariaTitle="Donut utilization chart example"
+            constrainToVisibleArea={true}
             data={{ x: 'Storage capacity', y: used }}
-            donutHeight={230}
             height={300}
-            labels={(datum) => datum.x ? `${datum.x}: ${datum.y}%` : null}
+            labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
             legendData={[{ name: `Storage capacity: ${spacer}${used}%` }, { name: 'Unused' }]}
             legendOrientation="vertical"
             legendPosition="bottom"
+            padding={{
+              bottom: 75, // Adjusted to accommodate legend
+              left: 8,
+              right: 8,
+              top: 8
+            }}
             subTitle="of 100 GBps"
             title={`${used}%`}
             themeColor={ChartThemeColor.green}

@@ -7,13 +7,12 @@ import {
   PaddingProps,
   VictoryBar,
 } from 'victory';
-import { Data } from 'victory-core';
+import { getPrimarySegmentedMeasureData }  from './utils';
 import { ChartBar } from '../ChartBar';
 import { ChartContainer } from '../ChartContainer';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
 import { getBulletPrimaryNegativeMeasureTheme, getBulletPrimarySegmentedMeasureTheme } from '../ChartUtils';
-import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -42,9 +41,11 @@ export interface ChartBulletPrimarySegmentedMeasureProps {
    */
   barWidth?: NumberOrCallback;
   /**
-   * The comparative measure warning component to render with the chart
+   * The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of
+   * the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the
+   * center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders.
    */
-  comparativeZeroMeasureComponent?: React.ReactElement<any>;
+  constrainToVisibleArea?: boolean;
   /**
    * The data prop specifies the data to be plotted. Data should be in the form of an array
    * of data points, or an array of arrays of data points for multiple datasets.
@@ -175,87 +176,13 @@ export interface ChartBulletPrimarySegmentedMeasureProps {
   y0?: DataGetterPropType;
 }
 
-interface ChartBulletPrimarySegmentedMeasureDataInterface {
-  data?: any[];
-  invert?: boolean;
-  negativeMeasureTheme?: ChartThemeDefinition;
-  theme?: ChartThemeDefinition;
-  themeColor?: string;
-  themeVariant?: string;
-  y?: DataGetterPropType;
-  y0?: DataGetterPropType;
-}
-
-export const getPrimarySegmentedMeasureData = ({
-  data,
-  invert,
-  themeColor,
-  themeVariant,
-
-  // destructure last
-  theme = getBulletPrimarySegmentedMeasureTheme(themeColor, themeVariant),
-  negativeMeasureTheme = getBulletPrimaryNegativeMeasureTheme(themeColor, themeVariant),
-  y,
-  y0
-}: ChartBulletPrimarySegmentedMeasureDataInterface) => {
-  const negativeDatum: any[] = [];
-  const positiveDatum: any[] = [];
-
-  Data.formatData(data, {y, y0}, ['y', 'y0']).forEach(((dataPoint: any, index: number) => {
-    if (dataPoint._y < 0) {
-      negativeDatum.push({
-        ...dataPoint,
-        _index: index // Save to sync legend color
-      });
-    } else {
-      positiveDatum.push({
-        ...dataPoint,
-        _index: index // Save to sync legend color
-      });
-    }
-  }));
-
-  // Instead of relying on colorScale, colors must be added to each measure in ascending order
-  const negativeComputedData = negativeDatum.sort((a: any, b: any) => b._y - a._y).
-    map((dataPoint: any, index: number) => {
-      return {
-        ...dataPoint,
-        x: 1,
-        _x: 1,
-        _color: invert
-          ? theme.group.colorScale[index % theme.group.colorScale.length]
-          : negativeMeasureTheme.group.colorScale[index % theme.group.colorScale.length]
-      };
-      // Sort descending so largest bar is appears behind others
-    }).sort((a: any, b: any) => a._y - b._y);
-
-  // Instead of relying on colorScale, colors must be added to each measure in ascending order
-  const positiveComputedData = positiveDatum.sort((a: any, b: any) => a._y - b._y).
-    map((dataPoint: any, index: number) => {
-      return {
-        ...dataPoint,
-        x: 1,
-        _x: 1,
-        _color: invert
-          ? negativeMeasureTheme.group.colorScale[index % theme.group.colorScale.length]
-          : theme.group.colorScale[index % theme.group.colorScale.length]
-      };
-      // Sort descending so largest bar is appears behind others
-    }).sort((a: any, b: any) => b._y - a._y);
-
-  return [
-    ...negativeComputedData,
-    ...positiveComputedData
-  ];
-};
-
 let currentId = 0;
 
 export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBulletPrimarySegmentedMeasureProps> = ({
   ariaDesc,
   ariaTitle,
   barWidth = ChartBulletStyles.primarySegmentedMeasureWidth,
-  comparativeZeroMeasureComponent = <ChartBulletComparativeMeasure />,
+  constrainToVisibleArea = false,
   data,
   domain,
   horizontal = true,
@@ -272,26 +199,9 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
   // destructure last
   theme = getBulletPrimarySegmentedMeasureTheme(themeColor, themeVariant),
   negativeMeasureTheme = getBulletPrimaryNegativeMeasureTheme(themeColor, themeVariant),
-  labelComponent =
-    <ChartTooltip
-      orientation="top"
-      dx={(datum) => {
-        if (horizontal) {
-          return datum._y > 0 ? -10 : 10;
-        }
-        const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
-        return result / 2;
-      }}
-      dy={(datum) => {
-        if (!horizontal) {
-          return datum._y > 0 ? -10 : 10;
-        }
-        const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
-        return result / 2;
-      }}
-    />,
   height = theme.group.height,
   width = theme.group.width,
+  labelComponent = <ChartTooltip />,
   ...rest
 }: ChartBulletPrimarySegmentedMeasureProps) => {
   const computedData = getPrimarySegmentedMeasureData({
@@ -303,6 +213,29 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
     y0
   });
 
+  // Label component
+  //
+  // Note: SVG height and width are provided by ChartBullet as a workaround to support constrainToVisibleArea
+  const tooltip = React.cloneElement(labelComponent, {
+    constrainToVisibleArea,
+    dx: () => {
+      if (horizontal) {
+        return 0;
+      }
+      const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
+      return result / 2;
+    },
+    dy: () => {
+      if (!horizontal) {
+        return 0;
+      }
+      const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
+      return -(result / 2);
+    },
+    orientation: 'top',
+    ...labelComponent.props
+  });
+
   const measure = computedData.map((dataPoint: any) => {
     const key = `pf-primary-segmented-measure-${currentId++}`;
     return React.cloneElement(measureComponent, {
@@ -312,7 +245,7 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
       height,
       horizontal,
       key,
-      labelComponent,
+      labelComponent: tooltip,
       labels,
       padding,
       standalone: false,
@@ -327,42 +260,13 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
     });
   });
 
-  const getComparativeZeroMeasure = () => {
-    if (!domain) {
-      return null;
-    }
-    const domainProp: any = domain;
-    const low = Array.isArray(domainProp)
-      ? domainProp[0]
-      : domainProp.y && Array.isArray(domainProp.y) ? domainProp.y[0] : 0;
-    const high = Array.isArray(domainProp)
-      ? domainProp[domainProp.length - 1]
-      : domainProp.y && Array.isArray(domainProp.y) ? domainProp.y[domainProp.y.length - 1] : 0;
-
-    if (low < 0 && high > 0) {
-      return React.cloneElement(comparativeZeroMeasureComponent, {
-        data: [{y: 0}],
-        domain,
-        height,
-        horizontal,
-        padding,
-        standalone: false,
-        width,
-        ...comparativeZeroMeasureComponent.props
-      });
-    }
-    return null;
-  };
-
   return standalone ? (
     <ChartContainer desc={ariaDesc} height={height} title={ariaTitle} width={width}>
       {measure}
-      {getComparativeZeroMeasure()}
     </ChartContainer>
   ) : (
     <React.Fragment>
       {measure}
-      {getComparativeZeroMeasure()}
     </React.Fragment>
   );
 };

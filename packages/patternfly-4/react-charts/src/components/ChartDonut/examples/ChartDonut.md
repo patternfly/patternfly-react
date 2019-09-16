@@ -2,11 +2,25 @@
 title: 'Donut'
 section: 'charts'
 typescript: true
-propComponents: ['ChartDonut']
+propComponents: ['ChartDonut', 'ChartLegend']
 ---
 
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import './chart-donut.scss';
+
+Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
+
+## Tutorial
+
+PatternFly React charts are based on the [Victory chart](https://formidable.com/open-source/victory/docs/victory-chart/) library, 
+along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React 
+based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
+
+In this tutorial, we will build a bar chart together - starting with a simple chart, adding thresholds, tooltips,  
+a legend, and concluding by changing the theme color. You'll learn how to use React chart components together to build 
+a consistent user experience.
+
+[Start course](https://katacoda.com/patternfly/courses/charts/module-pie)
 
 ## Simple donut chart
 ```js
@@ -18,8 +32,9 @@ import { ChartDonut } from '@patternfly/react-charts';
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
+      constrainToVisibleArea={true}
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-      labels={datum => `${datum.x}: ${datum.y}%`}
+      labels={({ datum }) => `${datum.x}: ${datum.y}%`}
       subTitle="Pets"
       title="100"
     />
@@ -37,11 +52,18 @@ import { ChartDonut } from '@patternfly/react-charts';
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
+      constrainToVisibleArea={true}
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-      labels={datum => `${datum.x}: ${datum.y}%`}
+      labels={({ datum }) => `${datum.x}: ${datum.y}%`}
       legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
       legendOrientation="vertical"
       legendPosition="right"
+      padding={{
+        bottom: 20,
+        left: 20,
+        right: 140, // Adjusted to accommodate legend
+        top: 20
+      }}
       subTitle="Pets"
       title="100"
       width={350}
@@ -60,11 +82,18 @@ import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/reac
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
+      constrainToVisibleArea={true}
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-      labels={datum => `${datum.x}: ${datum.y}%`}
+      labels={({ datum }) => `${datum.x}: ${datum.y}%`}
       legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
       legendOrientation="vertical"
       legendPosition="right"
+      padding={{
+        bottom: 20,
+        left: 20,
+        right: 140, // Adjusted to accommodate legend
+        top: 20
+      }}
       subTitle="Pets"
       title="100"
       themeColor={ChartThemeColor.multiOrdered}
@@ -85,14 +114,20 @@ import { ChartDonut } from '@patternfly/react-charts';
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
+      constrainToVisibleArea={true}
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-      donutHeight={230}
       donutOrientation="top"
       height={275}
-      labels={datum => `${datum.x}: ${datum.y}%`}
+      labels={({ datum }) => `${datum.x}: ${datum.y}%`}
       legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
       legendPosition="bottom"
       legendWidth={225}
+      padding={{
+        bottom: 65, // Adjusted to accommodate legend
+        left: 20,
+        right: 20,
+        top: 20
+      }}
       subTitle="Pets"
       title="100"
       width={300}
@@ -111,9 +146,10 @@ import { ChartDonut } from '@patternfly/react-charts';
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
+      constrainToVisibleArea={true}
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       height={150}
-      labels={datum => `${datum.x}: ${datum.y}%`}
+      labels={({ datum }) => `${datum.x}: ${datum.y}%`}
       subTitle="Pets"
       title="100"
       width={150}
@@ -132,12 +168,19 @@ import { ChartDonut } from '@patternfly/react-charts';
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
+      constrainToVisibleArea={true}
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       height={150}
-      labels={datum => `${datum.x}: ${datum.y}%`}
+      labels={({ datum }) => `${datum.x}: ${datum.y}%`}
       legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
       legendOrientation="vertical"
       legendPosition="right"
+      padding={{
+        bottom: 20,
+        left: 20,
+        right: 145, // Adjusted to accommodate legend
+        top: 20
+      }}
       subTitle="Pets"
       title="100"
       width={275}
@@ -156,13 +199,19 @@ import { ChartDonut } from '@patternfly/react-charts';
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
+      constrainToVisibleArea={true}
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-      donutHeight={150}
-      height={175}
-      labels={datum => `${datum.x}: ${datum.y}%`}
+      height={165}
+      labels={({ datum }) => `${datum.x}: ${datum.y}%`}
       legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
       legendOrientation="vertical"
       legendPosition="right"
+      padding={{
+        bottom: 25, // Adjusted to accommodate subTitle
+        left: 20,
+        right: 145, // Adjusted to accommodate legend
+        top: 20
+      }}
       subTitle="Pets"
       subTitlePosition="bottom"
       title="100"
@@ -182,12 +231,18 @@ import { ChartDonut } from '@patternfly/react-charts';
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
+      constrainToVisibleArea={true}
       data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
-      donutHeight={150}
       height={200}
-      labels={datum => `${datum.x}: ${datum.y}%`}
+      labels={({ datum }) => `${datum.x}: ${datum.y}%`}
       legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
       legendPosition="bottom"
+      padding={{
+        bottom: 70, // Adjusted to accommodate legend
+        left: 20,
+        right: 50, // Adjusted to accommodate subTitle
+        top: 20
+      }}
       subTitle="Pets"
       subTitlePosition="right"
       title="100"
@@ -196,3 +251,15 @@ import { ChartDonut } from '@patternfly/react-charts';
   </div>
 </div>
 ```
+
+## Tips
+
+- For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
+- `ChartLegend` may be used as a standalone component, instead of using `legendData` and `legendPosition`
+
+## Docs
+Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
+components used in the examples above, Victory pass-thru props are also documented here:
+
+ - For `ChartDonut` props, see <a href="https://formidable.com/open-source/victory/docs/victory-pie" target="_blank">VictoryPie</a>
+ - For `ChartLegend` props, see <a href="https://formidable.com/open-source/victory/docs/victory-legend" target="_blank">VictoryLegend</a>

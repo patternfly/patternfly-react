@@ -46,6 +46,7 @@ exports[`renders component data 1`] = `
     key="pf-primary-segmented-measure-0"
     labelComponent={
       <Unknown
+        constrainToVisibleArea={false}
         dx={[Function]}
         dy={[Function]}
         orientation="top"
@@ -537,6 +538,7 @@ exports[`renders component data 1`] = `
     key="pf-primary-segmented-measure-1"
     labelComponent={
       <Unknown
+        constrainToVisibleArea={false}
         dx={[Function]}
         dy={[Function]}
         orientation="top"
@@ -1028,6 +1030,7 @@ exports[`renders component data 1`] = `
     key="pf-primary-segmented-measure-2"
     labelComponent={
       <Unknown
+        constrainToVisibleArea={false}
         dx={[Function]}
         dy={[Function]}
         orientation="top"

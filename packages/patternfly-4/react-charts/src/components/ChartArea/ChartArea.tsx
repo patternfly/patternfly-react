@@ -16,6 +16,7 @@ import {
   VictoryArea,
   VictoryAreaProps
 } from 'victory';
+import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
@@ -29,13 +30,12 @@ export enum ChartAreaSortOrder {
  */
 export interface ChartAreaProps extends VictoryAreaProps {
   /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-area/
-   */
-  ' '?: any;
-  /**
+   * type: boolean || object
+   *
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
+   *
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
@@ -186,7 +186,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * like data={[{x: 1, y: 1, label: "first"}]}.
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | ((data: any) => string);
+  labels?: string[] | number[] | Function;
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
@@ -376,9 +376,12 @@ export interface ChartAreaProps extends VictoryAreaProps {
 export const ChartArea: React.FunctionComponent<ChartAreaProps> = ({
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
+
+  // destructure last
+  theme = getTheme(themeColor, themeVariant),
+  containerComponent = <ChartContainer theme={theme} />,
   ...rest
-}: ChartAreaProps) => <VictoryArea theme={theme} {...rest} />;
+}: ChartAreaProps) => <VictoryArea containerComponent={containerComponent} theme={theme} {...rest} />;
 
 // Note: VictoryArea.role must be hoisted
 hoistNonReactStatics(ChartArea, VictoryArea);

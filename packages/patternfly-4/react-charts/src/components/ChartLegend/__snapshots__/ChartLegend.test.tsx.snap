@@ -5,6 +5,8 @@ exports[`ChartLegend 1`] = `
   borderComponent={
     <Border
       rectComponent={<Rect />}
+      role="presentation"
+      shapeRendering="auto"
     />
   }
   containerComponent={
@@ -949,6 +951,8 @@ exports[`ChartLegend 2`] = `
   borderComponent={
     <Border
       rectComponent={<Rect />}
+      role="presentation"
+      shapeRendering="auto"
     />
   }
   containerComponent={
@@ -1893,6 +1897,8 @@ exports[`renders component data 1`] = `
   borderComponent={
     <Border
       rectComponent={<Rect />}
+      role="presentation"
+      shapeRendering="auto"
     />
   }
   containerComponent={

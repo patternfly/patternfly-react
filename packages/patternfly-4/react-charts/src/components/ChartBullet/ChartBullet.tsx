@@ -6,27 +6,30 @@ import {
   PaddingProps,
   VictoryChart,
 } from 'victory';
+import {
+  getComparativeMeasureErrorWidth,
+  getComparativeMeasureWidth,
+  getComparativeMeasureWarningWidth,
+  getPrimaryDotMeasureSize,
+  getPrimarySegmentedMeasureWidth,
+  getQualitativeRangeBarWidth
+} from './utils/chart-bullet-size';
+import { getBulletDomain } from './utils/chart-bullet-domain';
+import { getBulletThemeWithLegendColorScale } from './utils/chart-bullet-theme';
 import { ChartAxis } from '../ChartAxis';
-import {
-  ChartBulletComparativeErrorMeasure,
-  getComparativeErrorMeasureData
-} from './ChartBulletComparativeErrorMeasure';
-import {
-  ChartBulletComparativeWarningMeasure,
-  getComparativeWarningMeasureData
-} from './ChartBulletComparativeWarningMeasure';
+import { ChartBulletComparativeErrorMeasure } from './ChartBulletComparativeErrorMeasure';
+import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
+import { ChartBulletComparativeWarningMeasure } from './ChartBulletComparativeWarningMeasure';
 import { ChartBulletGroupTitle } from './ChartBulletGroupTitle';
-import { ChartBulletPrimaryDotMeasure, getPrimaryDotMeasureData } from './ChartBulletPrimaryDotMeasure';
-import {
-  ChartBulletPrimarySegmentedMeasure,
-  getPrimarySegmentedMeasureData
-} from './ChartBulletPrimarySegmentedMeasure';
-import { ChartBulletQualitativeRange, getQualitativeRangeData } from './ChartBulletQualitativeRange';
+import { ChartBulletPrimaryDotMeasure } from './ChartBulletPrimaryDotMeasure';
+import { ChartBulletPrimarySegmentedMeasure } from './ChartBulletPrimarySegmentedMeasure';
+import { ChartBulletQualitativeRange } from './ChartBulletQualitativeRange';
 import { ChartBulletTitle } from './ChartBulletTitle';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLegend, ChartLegendOrientation, ChartLegendPosition, ChartLegendWrapper } from '../ChartLegend';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
-import { ChartDomain, getBulletTheme, getDomains, getPaddingForSide } from '../ChartUtils';
+import { ChartTooltip } from '../ChartTooltip';
+import { getPaddingForSide } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -51,36 +54,14 @@ export interface ChartBulletProps {
    */
   axisComponent?: React.ReactElement<any>;
   /**
-   * Specifies the height of the bullet chart. This value should be given as a number of pixels.
+   * Specifies the size of the bullet chart. For a horizontal chart, this adjusts bar height; although, it
+   * technically scales the underlying barWidth property.
    *
-   * Because Victory renders responsive containers, the width and height props do not determine the width and
-   * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
-   * pixels will depend on the size of the container the chart is rendered into.
-   *
-   * Note: When adding a legend, height (the overall SVG height) may need to be larger than bulletHeight (the bullet size)
-   * in order to accommodate the extra legend.
-   *
-   * By default, bulletHeight is the min. of either height or width. This covers most use cases in order to accommodate
-   * legends within the same SVG. However, bulletHeight (not height) may need to be set in order to adjust the bullet
-   * height.
+   * Note: Values should be >= 125, the default is 140
    */
-  bulletHeight?: number;
+  bulletSize?: number;
   /**
-   * Specifies the width of the bullet chart. This value should be given as a number of pixels.
-   *
-   * Because Victory renders responsive containers, the width and height props do not determine the width and
-   * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
-   * pixels will depend on the size of the container the chart is rendered into.
-   *
-   * Note: When adding a legend, width (the overall SVG width) may need to be larger than bulletWidth (the bullet size)
-   * in order to accommodate the extra legend.
-   *
-   * By default, bulletWidth is the min. of either height or width. This covers most use cases in order to accommodate
-   * legends within the same SVG. However, bulletWidth (not width) may need to be set in order to adjust the bullet width.
-   */
-  bulletWidth?: number;
-  /**
-   * The comparative measure error component to render with the chart
+   * The comparative error measure component to render with the chart
    */
   comparativeErrorMeasureComponent?: React.ReactElement<any>;
   /**
@@ -118,7 +99,7 @@ export interface ChartBulletProps {
     };
   }[];
   /**
-   * The comparative measure warning component to render with the chart
+   * The comparative warning measure component to render with the chart
    */
   comparativeWarningMeasureComponent?: React.ReactElement<any>;
   /**
@@ -156,6 +137,16 @@ export interface ChartBulletProps {
     };
   }[];
   /**
+   * The comparative zero measure component to render with the chart
+   */
+  comparativeZeroMeasureComponent?: React.ReactElement<any>;
+  /**
+   * The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of
+   * the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the
+   * center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders.
+   */
+  constrainToVisibleArea?: boolean;
+  /**
    * The domain prop describes the range of values your chart will include. This prop can be
    * given as a array of the minimum and maximum expected values for your chart,
    * or as an object that specifies separate arrays for x and y.
@@ -184,15 +175,8 @@ export interface ChartBulletProps {
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
-   * pixels will depend on the size of the container the chart is rendered into.
-   *
-   * Note: When adding a legend, height (the overall SVG height) may need to be larger than bulletHeight (the bullet
-   * size) in order to accommodate the extra legend.
-   *
-   * By default, bulletHeight is the min. of either height or width. This covers most use cases in order to accommodate
-   * legends within the same SVG. However, bulletHeight (not height) may need to be set in order to adjust the bullet height.
-   *
-   * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
+   * pixels will depend on the size of the container the chart is rendered into. Typically, the parent container is set
+   * to the same width in order to maintain the aspect ratio.
    */
   height?: number;
   /**
@@ -215,9 +199,6 @@ export interface ChartBulletProps {
   labels?: (point: any, index: number, points: any[]) => string;
   /**
    * The legend component to render with chart.
-   *
-   * Note: Use legend*Data so the legend width can be calculated and positioned properly.
-   * Default legend properties may be applied
    */
   legendComponent?: React.ReactElement<any>;
   /**
@@ -239,6 +220,9 @@ export interface ChartBulletProps {
   legendOrientation?: 'horizontal' | 'vertical';
   /**
    * The legend position relation to the chart. Valid values are 'bottom', 'bottom-left', and 'right'
+   *
+   * Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some
+   * cases, the legend may not be visible until enough padding is applied.
    */
   legendPosition?: 'bottom' | 'bottom-left' | 'right';
   /**
@@ -457,179 +441,14 @@ export interface ChartBulletProps {
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
-   * pixels will depend on the size of the container the chart is rendered into.
-   *
-   * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
+   * pixels will depend on the size of the container the chart is rendered into. Typically, the parent container is set
+   * to the same width in order to maintain the aspect ratio.
    */
   width?: number;
 }
 
-interface ChartBulletDomainInterface {
-  comparativeErrorMeasureComponent?: React.ReactElement<any>;
-  comparativeErrorMeasureData?: any[];
-  comparativeWarningMeasureComponent?: React.ReactElement<any>;
-  comparativeWarningMeasureData?: any[];
-  primaryDotMeasureComponent?: React.ReactElement<any>;
-  primaryDotMeasureData?: any[];
-  primarySegmentedMeasureComponent?: React.ReactElement<any>;
-  primarySegmentedMeasureData?: any[];
-  maxDomain?: any;
-  minDomain?: any;
-  qualitativeRangeComponent?: React.ReactElement<any>;
-  qualitativeRangeData?: any[];
-}
-
-interface ChartBulletThemeInterface {
-  comparativeErrorMeasureData?: any[];
-  comparativeErrorMeasureLegendData?: any[];
-  comparativeWarningMeasureData?: any[];
-  comparativeWarningMeasureLegendData?: any[];
-  invert?: boolean;
-  primaryDotMeasureData?: any[];
-  primaryDotMeasureLegendData?: any[];
-  primarySegmentedMeasureData?: any[];
-  primarySegmentedMeasureLegendData?: any[];
-  qualitativeRangeData?: any[];
-  qualitativeRangeLegendData?: any[];
-  themeColor?: string;
-  themeVariant?: string;
-}
-
-// Returns the min and max domain for comparative / primary measures and qualitative range data
-const getDomain = ({
-  comparativeErrorMeasureComponent,
-  comparativeErrorMeasureData,
-  comparativeWarningMeasureComponent,
-  comparativeWarningMeasureData,
-  primaryDotMeasureComponent,
-  primaryDotMeasureData,
-  primarySegmentedMeasureComponent,
-  primarySegmentedMeasureData,
-  maxDomain,
-  minDomain,
-  qualitativeRangeComponent,
-  qualitativeRangeData
-}: ChartBulletDomainInterface): ChartDomain => {
-  const domain = getDomains({
-    maxDomain,
-    minDomain,
-    sources: [{
-      component: comparativeErrorMeasureComponent,
-      data: comparativeErrorMeasureData
-    }, {
-      component: comparativeWarningMeasureComponent,
-      data: comparativeWarningMeasureData
-    }, {
-      component: primaryDotMeasureComponent,
-      data: primaryDotMeasureData
-    }, {
-      component: primarySegmentedMeasureComponent,
-      data: primarySegmentedMeasureData
-    }, {
-      component: qualitativeRangeComponent,
-      data: qualitativeRangeData
-    }]
-  });
-  domain.x = [0, 2];
-  return domain;
-};
-
-const getTheme = ({
-  comparativeErrorMeasureData,
-  comparativeErrorMeasureLegendData,
-  comparativeWarningMeasureData,
-  comparativeWarningMeasureLegendData,
-  invert,
-  primaryDotMeasureData,
-  primaryDotMeasureLegendData,
-  primarySegmentedMeasureData,
-  primarySegmentedMeasureLegendData,
-  qualitativeRangeData,
-  qualitativeRangeLegendData,
-  themeColor,
-  themeVariant
-}: ChartBulletThemeInterface): ChartThemeDefinition => {
-  const colorScale: any[] = [];
-  if (primaryDotMeasureLegendData && primaryDotMeasureLegendData.length) {
-    const computedData = getPrimaryDotMeasureData({
-      data: primaryDotMeasureData,
-      invert
-    });
-    primaryDotMeasureLegendData.forEach((data: any, index: number) => {
-      for (let i = 0; i < computedData.length; i++) {
-        if (index === computedData[i]._index) {
-          colorScale.push(computedData[i]._color);
-        }
-      }
-    });
-  }
-  if (primarySegmentedMeasureLegendData && primarySegmentedMeasureLegendData.length) {
-    const computedData = getPrimarySegmentedMeasureData({
-      data: primarySegmentedMeasureData,
-      invert,
-      themeColor,
-      themeVariant
-    });
-    primarySegmentedMeasureLegendData.forEach((data: any, index: number) => {
-      for (let i = 0; i < computedData.length; i++) {
-        if (index === computedData[i]._index) {
-          colorScale.push(computedData[i]._color);
-        }
-      }
-    });
-  }
-  if (comparativeWarningMeasureLegendData && comparativeWarningMeasureLegendData.length) {
-    const computedData = getComparativeWarningMeasureData({
-      data: comparativeWarningMeasureData,
-      invert,
-      themeColor,
-      themeVariant
-    });
-    comparativeWarningMeasureLegendData.forEach((data: any, index: number) => {
-      for (let i = 0; i < computedData.length; i++) {
-        if (index === computedData[i]._index) {
-          colorScale.push(computedData[i]._color);
-        }
-      }
-    });
-  }
-  if (comparativeErrorMeasureLegendData && comparativeErrorMeasureLegendData.length) {
-    const computedData = getComparativeErrorMeasureData({
-      data: comparativeErrorMeasureData,
-      invert,
-      themeColor,
-      themeVariant
-    });
-    comparativeErrorMeasureLegendData.forEach((data: any, index: number) => {
-      for (let i = 0; i < computedData.length; i++) {
-        if (index === computedData[i]._index) {
-          colorScale.push(computedData[i]._color);
-        }
-      }
-    });
-  }
-  if (qualitativeRangeLegendData && qualitativeRangeLegendData.length) {
-    const computedData = getQualitativeRangeData({
-      data: qualitativeRangeData,
-      invert
-    });
-    qualitativeRangeLegendData.forEach((data: any, index: number) => {
-      for (let i = 0; i < computedData.length; i++) {
-        if (index === computedData[i]._index) {
-          colorScale.push(computedData[i]._color);
-        }
-      }
-    });
-  }
-  const theme = getBulletTheme(themeColor, themeVariant);
-  theme.legend.colorScale = [...colorScale];
-  return theme;
-};
-
 let currentId = 0;
 
-// Instead of displaying labels and legends via the Chart component, we're using a fixed bar width. Otherwise, the
-// Chart component would change scale when padding is applied, resulting in misaligned components.
 export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   ariaDesc,
   ariaTitle,
@@ -642,6 +461,8 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   comparativeWarningMeasureData,
   comparativeWarningMeasureDataY,
   comparativeWarningMeasureLegendData,
+  comparativeZeroMeasureComponent = <ChartBulletComparativeMeasure />,
+  constrainToVisibleArea = false,
   groupTitleComponent = <ChartBulletGroupTitle />,
   groupSubTitle,
   groupTitle,
@@ -676,7 +497,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   titlePosition,
 
   // destructure last
-  theme = getTheme({
+  theme = getBulletThemeWithLegendColorScale({
     comparativeErrorMeasureData,
     comparativeErrorMeasureLegendData,
     comparativeWarningMeasureData,
@@ -691,7 +512,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     themeColor,
     themeVariant
   }),
-  domain = getDomain({
+  domain = getBulletDomain({
     comparativeErrorMeasureComponent,
     comparativeErrorMeasureData,
     comparativeWarningMeasureComponent,
@@ -708,10 +529,15 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   legendOrientation = theme.legend.orientation as ChartLegendOrientation,
   height = horizontal ? theme.chart.height : theme.chart.width,
   width = horizontal ? theme.chart.width : theme.chart.height,
-  bulletHeight = horizontal ? theme.chart.height : height,
-  bulletWidth = horizontal ? width : theme.chart.height,
+  bulletSize = theme.chart.height,
   ...rest
 }: ChartBulletProps) => {
+  // Note that we're using a fixed bullet height width to align components.
+  const chartSize = {
+    height: horizontal ? bulletSize : height,
+    width: horizontal ? width : bulletSize
+  };
+
   const defaultPadding = {
     bottom: getPaddingForSide('bottom',  padding, theme.chart.padding),
     left: getPaddingForSide('left', padding, theme.chart.padding),
@@ -731,8 +557,6 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
 
   // Bullet title
   const bulletTitle = React.cloneElement(titleComponent, {
-    bulletHeight,
-    bulletWidth,
     height,
     horizontal,
     legendPosition,
@@ -748,31 +572,50 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
 
   // Comparative error measure
   const comparativeErrorMeasure = React.cloneElement(comparativeErrorMeasureComponent, {
+    barWidth: getComparativeMeasureErrorWidth({height: chartSize.height, horizontal, width: chartSize.width}),
+    constrainToVisibleArea,
     data: comparativeErrorMeasureData,
     domain,
-    height: bulletHeight,
+    height: chartSize.height,
     horizontal,
+    labelComponent: <ChartTooltip height={height} width={width}/>,
     labels,
     padding,
     standalone: false,
-    width: bulletWidth,
+    width: chartSize.width,
     y: comparativeErrorMeasureDataY,
     ...comparativeErrorMeasureComponent.props
   });
 
   // Comparative warning measure
   const comparativeWarningMeasure = React.cloneElement(comparativeWarningMeasureComponent, {
+    barWidth: getComparativeMeasureWarningWidth({height: chartSize.height, horizontal, width: chartSize.width}),
+    constrainToVisibleArea,
     data: comparativeWarningMeasureData,
     domain,
-    height: bulletHeight,
+    height: chartSize.height,
     horizontal,
+    labelComponent: <ChartTooltip height={height} width={width}/>,
     labels,
     padding,
     standalone: false,
-    width: bulletWidth,
+    width: chartSize.width,
     y: comparativeWarningMeasureDataY,
     ...comparativeWarningMeasureComponent.props
   });
+
+  // Comparative zero measure
+  const comparativeZeroMeasure = React.cloneElement(comparativeZeroMeasureComponent, {
+    barWidth: getComparativeMeasureWidth({height: chartSize.height, horizontal, width: chartSize.width}),
+    data: [{y: 0}],
+    domain,
+    height: chartSize.height,
+    horizontal,
+    padding,
+    standalone: false,
+    width: chartSize.width,
+    ...comparativeZeroMeasureComponent.props
+  })
 
   // Legend
   const legend = React.cloneElement(legendComponent, {
@@ -792,50 +635,59 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
 
   // Primary dot measure
   const primaryDotMeasure = React.cloneElement(primaryDotMeasureComponent, {
+    constrainToVisibleArea,
     data: primaryDotMeasureData,
     domain,
-    height: bulletHeight,
+    height: chartSize.height,
     horizontal,
     invert,
+    labelComponent: <ChartTooltip height={height} width={width}/>,
     labels,
     padding,
+    size: getPrimaryDotMeasureSize({height: chartSize.height, horizontal, width: chartSize.width}),
     standalone: false,
     themeColor,
     themeVariant,
-    width: bulletWidth,
+    width: chartSize.width,
     y: primaryDotMeasureDataY,
     ...primaryDotMeasureComponent.props
   });
 
   // Primary segmented measure
   const primarySegmentedMeasure = React.cloneElement(primarySegmentedMeasureComponent, {
+    constrainToVisibleArea,
+    barWidth: getPrimarySegmentedMeasureWidth({height: chartSize.height, horizontal, width: chartSize.width}),
     data: primarySegmentedMeasureData,
     domain,
-    height: bulletHeight,
+    height: chartSize.height,
     horizontal,
     invert,
+    labelComponent: <ChartTooltip height={height} width={width}/>,
     labels,
     padding,
     standalone: false,
     themeColor,
     themeVariant,
-    width: bulletWidth,
+    width: chartSize.width,
     y: primarySegmentedMeasureDataY,
     ...primarySegmentedMeasureComponent.props
   });
 
   // Qualitative range
   const qualitativeRange = React.cloneElement(qualitativeRangeComponent, {
+    constrainToVisibleArea,
+    barWidth: getQualitativeRangeBarWidth({height: chartSize.height, horizontal, width: chartSize.width}),
     data: qualitativeRangeData,
     domain,
-    height: bulletHeight,
+    height: chartSize.height,
     horizontal,
     invert,
+    labelComponent: <ChartTooltip height={height} width={width}/>,
     labels,
     padding,
     key: `pf-qualitative-range-${currentId++}`,
     standalone: false,
-    width: bulletWidth,
+    width: chartSize.width,
     y: qualitativeRangeDataY,
     y0: qualitativeRangeDataY0,
     ...qualitativeRangeComponent.props
@@ -874,29 +726,42 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
         ? defaultPadding.top * .5 + (defaultPadding.bottom * .5 - (defaultPadding.bottom)) - 25
         : title ? -defaultPadding.bottom + 60 : -defaultPadding.bottom;
     } else if (legendPosition === ChartLegendPosition.bottomLeft) {
-      dx += defaultPadding.left > 10 ? defaultPadding.left - 10 : defaultPadding.left - 10;
       dy = horizontal
         ? defaultPadding.top * .5 + (defaultPadding.bottom * .5 - (defaultPadding.bottom)) - 25
         : title ? -defaultPadding.bottom + 60 : -defaultPadding.bottom;
-    } else if (legendPosition === ChartLegendPosition.right) {
-      dx = defaultPadding.left;
-      dy = -15;
+      dx = -10;
     }
     return (
       <ChartLegendWrapper
-        chartHeight={bulletHeight}
-        chartWidth={Math.abs(bulletWidth - (defaultPadding.left + defaultPadding.right))}
+        chartType="bullet"
         dx={dx}
         dy={dy}
+        height={chartSize.height}
         orientation={legendOrientation}
+        padding={padding}
         position={legendPosition}
-        svgHeight={height}
-        svgWidth={width}
         theme={theme}
+        width={chartSize.width}
       >
         {legend}
       </ChartLegendWrapper>
     );
+  };
+
+  // Returns comparative zero measure
+  const getComparativeZeroMeasure = () => {
+    const _domain: any = domain;
+    const low = Array.isArray(_domain)
+      ? _domain[0]
+      : _domain.y && Array.isArray(_domain.y) ? _domain.y[0] : 0;
+    const high = Array.isArray(_domain)
+      ? _domain[_domain.length - 1]
+      : _domain.y && Array.isArray(_domain.y) ? _domain.y[_domain.y.length - 1] : 0;
+
+    if (low < 0 && high > 0) {
+      return comparativeZeroMeasure;
+    }
+    return null;
   };
 
   // Axis component for custom tick values
@@ -906,7 +771,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       x: (domain as any).y,
       y: (domain as any).x
     },
-    height: bulletHeight,
+    height: chartSize.height,
     // Adjust for padding
     offsetX: !horizontal ? defaultPadding.left * .5 + (defaultPadding.right * .5 - (defaultPadding.right - 55)) : 0,
     offsetY: horizontal ? 80 - defaultPadding.top * .5 + (defaultPadding.bottom * .5 - 25) : 0,
@@ -914,7 +779,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     standalone: false,
     tickCount: ChartBulletStyles.axisTickCount,
     tickValues: getTickValues((domain as any).y[0], (domain as any).y[1]),
-    width: bulletWidth,
+    width: chartSize.width,
     ...axisComponent.props
   });
 
@@ -928,6 +793,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       {primaryDotMeasure}
       {comparativeErrorMeasure}
       {comparativeWarningMeasure}
+      {getComparativeZeroMeasure()}
       {getWrappedLegend()}
     </>
   );

@@ -15,7 +15,7 @@ test('renders component data', () => {
       ariaDesc="Storage capacity"
       ariaTitle="Bullet chart example"
       comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
-      labels={(datum) => `${datum.name}: ${datum.y}`}
+      labels={({ datum }) => `${datum.name}: ${datum.y}`}
       maxDomain={{y: 100}}
       primarySegmentedMeasureData={[{ name: 'Measure', y: 50 }]}
       qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
