@@ -21,6 +21,8 @@ export interface ChipGroupProps extends React.HTMLProps<HTMLDivElement> {
   withToolbar?: boolean;
   /** Set heading level to the chip item label */
   headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /** Set number of chips to show before overflow */
+  numChips?: number; 
 }
 
 interface ChipGroupState {
@@ -39,9 +41,10 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
     className: '',
     expandedText: 'Show Less',
     collapsedText: '${remaining} more',
-    withToolbar: false,
-    defaultIsOpen: false
-  };
+    withToolbar: false, 
+    defaultIsOpen: false,
+    numChips: 3
+  }
 
   toggleCollapse = () => {
     this.setState((prevState) => ({
@@ -84,9 +87,9 @@ interface InnerChipGroupProps extends ChipGroupProps {
 }
 
 const InnerChipGroup = (props: InnerChipGroupProps) => {
-  const { children, expandedText, isOpen, onToggleCollapse, collapsedText, withToolbar } = props;
-
-  const collapsedTextResult = fillTemplate(collapsedText as string, { remaining: React.Children.count(children) - 1 });
+  const { children, expandedText, isOpen, onToggleCollapse, collapsedText, withToolbar, numChips } = props;
+  
+  const collapsedTextResult = fillTemplate(collapsedText as string, { remaining: React.Children.count(children) - numChips });
   const mappedChildren = React.Children.map(children, (c) => {
     const child = c as React.ReactElement<any>;
     if (withToolbar) {
@@ -107,13 +110,13 @@ const InnerChipGroup = (props: InnerChipGroupProps) => {
       ) : (
         <React.Fragment>
           {mappedChildren.map((child, i) => {
-            if (i === 0) {
+            if (i < numChips) {
               return child;
             }
           })}
         </React.Fragment>
       )}
-      {React.Children.count(children) > 1 && (
+      {React.Children.count(children) > numChips && (
         <Chip isOverflowChip onClick={onToggleCollapse} component={withToolbar ? 'div' : 'li'}>
           {isOpen ? expandedText : collapsedTextResult}
         </Chip>

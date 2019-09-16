@@ -10,6 +10,7 @@ exports[`ChipGroup chip group default 1`] = `
     defaultIsOpen={false}
     expandedText="Show Less"
     isOpen={false}
+    numChips={3}
     onToggleCollapse={[Function]}
     withToolbar={false}
   >
@@ -38,6 +39,7 @@ exports[`ChipGroup chip group with toolbar 1`] = `
     defaultIsOpen={false}
     expandedText="Show Less"
     isOpen={false}
+    numChips={3}
     onToggleCollapse={[Function]}
     withToolbar={true}
   >
