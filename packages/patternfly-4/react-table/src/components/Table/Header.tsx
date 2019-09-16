@@ -6,14 +6,16 @@ import { ColumnsType } from './base/types';
 interface ContextHeaderProps {
   className?: string;
   headerRows?: IHeaderRow[];
+  reorderableColumns?: boolean;
 }
 
 const ContextHeader: React.FunctionComponent<ContextHeaderProps> = ({
   className = '',
   headerRows = undefined as IHeaderRow[],
+  reorderableColumns = false,
   ...props
 }: ContextHeaderProps ) => (
-  <Header {...props} headerRows={headerRows as ColumnsType} className={className} />
+  <Header {...props} reorderableColumns={reorderableColumns} headerRows={headerRows as ColumnsType} className={className} />
 );
 
 export interface HeaderProps extends React.HTMLProps<HTMLTableRowElement> {

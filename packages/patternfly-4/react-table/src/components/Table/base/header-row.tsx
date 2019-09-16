@@ -15,12 +15,26 @@ export interface HeaderRowProps {
   rowIndex: number;
   renderers: RendererType;
   onRow?: Function;
+  onDragStart?: Function;
+  onDragEnd?: Function;
+  onDrop?: Function;
+  onDragOver?: Function;
+  onDragEnter?: Function;
+  onDragLeave?: Function;
+  draggable?: boolean;
 }
 
 export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
   rowData,
   rowIndex,
   renderers,
+  draggable,
+  onDragStart,
+  onDragEnd,
+  onDrop,
+  onDragOver,
+  onDragEnter,
+  onDragLeave,
   onRow = () => Object
 }) => {
   return React.createElement(
@@ -45,6 +59,13 @@ export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
       return React.createElement(
         renderers.cell as createElementType,
         {
+          draggable,
+          onDragStart,
+          onDragEnd,
+          onDrop,
+          onDragOver,
+          onDragEnter,
+          onDragLeave,
           key: `${columnIndex}-header`,
           ...mergeProps(props, header && header.props, transformedProps)
         },
