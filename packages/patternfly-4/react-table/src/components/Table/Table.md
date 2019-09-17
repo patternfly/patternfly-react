@@ -22,9 +22,12 @@ import {
   textCenter,
   wrappable,
   classNames,
-  Visibility,
-  Checkbox
+  Visibility
 } from '@patternfly/react-table';
+
+import {
+    Checkbox
+} from '@patternfly/react-core';
 
 import {
   CodeBranchIcon,
@@ -179,9 +182,11 @@ import {
   headerCol,
   TableVariant,
   expandable,
-  cellWidth,
-  Checkbox
+  cellWidth
 } from '@patternfly/react-table';
+import {
+    Checkbox
+} from '@patternfly/react-core';
 
 class SelectableTable extends React.Component {
   constructor(props) {
