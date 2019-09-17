@@ -1,29 +1,26 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
-import { DropdownItem } from '@patternfly/react-core';
+import { DropdownItem } from '../../../components/Dropdown';
 
 export interface OverflowMenuDropdownItemProps extends React.HTMLProps<HTMLDivElement> {
-  children: any;
+  /** Any elements that can be rendered in the menu */
+  children?: any;
+  /** Additional classes added to the OverflowMenuDropdown */
   className?: string;
+  /** Indicates when a dropdown item shows and hides the corresponding list item */
   shared?: boolean;
-  persistent?: boolean;
 }
 
 export const OverflowMenuDropdownItem: React.SFC<OverflowMenuDropdownItemProps> = ({
   className,
   children,
-  shared = false,
-  persistent = false
+  shared = false
 }) => (
   <DropdownItem
-    className={css(
-      shared && styles.overflowMenuSharedItem,
-      persistent && styles.modifiers.persistent,
-      className)}
+    listItemClassName={css(shared && styles.overflowMenuSharedItem)}
     component="button"
   >
     {children}
   </DropdownItem>
-  // <h1>Test</h1>
 );

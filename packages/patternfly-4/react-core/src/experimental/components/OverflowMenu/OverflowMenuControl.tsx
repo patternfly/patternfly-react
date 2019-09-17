@@ -3,18 +3,21 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 
 export interface OverflowMenuControlProps extends React.HTMLProps<HTMLDivElement> {
-  children: any;
+  /** Any elements that can be rendered in the menu */
+  children?: any;
+  /** Additional classes added to the OverflowMenuControl */
   className?: string;
+  /** Triggers the overflow dropdown to persist at all viewport sizes */
   additionalOptions?: boolean;
 }
 
 export const OverflowMenuControl: React.SFC<OverflowMenuControlProps> = ({
   className,
   children,
-  additionalOptions = false,
+  additionalOptions,
   ...props
 }) => (
-  <div {...props} className={css(
+  <div className={css(
     styles.overflowMenuControl,
     additionalOptions && styles.modifiers.additionalOptions,
     className)

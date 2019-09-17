@@ -7,6 +7,8 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown item */
   className?: string;
+  /** Class to be applied to list item */
+  listItemClassName?: string;
   /** Indicates which component will be used as dropdown item */
   component?: React.ReactNode;
   /** Render dropdown item as disabled option */
@@ -30,6 +32,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   href = '',
   tooltip = null,
   tooltipProps = {},
+  listItemClassName = '',
   onClick,
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
@@ -48,6 +51,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         href={href}
         tooltip={tooltip}
         tooltipProps={tooltipProps}
+        listItemClassName={listItemClassName}
         onClick={onClick}
         {...props} />}
   </DropdownArrowContext.Consumer>

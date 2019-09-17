@@ -2,7 +2,7 @@
 title: 'OverflowMenu'
 cssPrefix: 'pf-c-overflow-menu'
 typescript: true
-propComponents: ['OverflowMenu', 'OverflowMenuControl', 'OverflowMenuContent']
+propComponents: ['OverflowMenu', 'OverflowMenuContent', 'OverflowMenuControl', 'OverflowMenuDropdownItem', 'OverflowMenuGroup', 'OverflowMenuItem']
 section: 'experimental'
 stage: 'early'
 ---
@@ -36,26 +36,6 @@ class SimpleOverflowMenu extends React.Component {
 
   render() {
     const { isOpen } = this.state;
-    const dropdownItems = [
-      <OverflowMenuDropdownItem>
-        Action
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem>
-        Item 1
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem>
-        Item 2
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem>
-        Item 3
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem>
-        Item 4
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem>
-        Item 5
-      </OverflowMenuDropdownItem>,
-    ];
     return (
       <OverflowMenu breakpoint="Lg">
         <OverflowMenuContent>
@@ -73,8 +53,14 @@ class SimpleOverflowMenu extends React.Component {
             toggle={<KebabToggle onToggle={this.onToggle} />}
             isOpen={isOpen}
             isPlain
-            dropdownItems={dropdownItems}
-          />
+          >
+            <OverflowMenuDropdownItem>Action</OverflowMenuDropdownItem>
+            <OverflowMenuDropdownItem shared>Item 1</OverflowMenuDropdownItem>
+            <OverflowMenuDropdownItem shared>Item 2</OverflowMenuDropdownItem>
+            <OverflowMenuDropdownItem shared>Item 3</OverflowMenuDropdownItem>
+            <OverflowMenuDropdownItem shared>Item 4</OverflowMenuDropdownItem>
+            <OverflowMenuDropdownItem shared>Item 5</OverflowMenuDropdownItem>
+          </Dropdown>
         </OverflowMenuControl>
       </OverflowMenu>
     )
@@ -109,24 +95,12 @@ class OverflowMenuGroupTypes extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem shared>
-        Action
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem shared>
-        Item 1
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem shared>
-        Item 2
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem shared>
-        Item 3
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem shared>
-        Item 4
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem shared>
-        Item 5
-      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem shared>Action</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem shared>Item 1</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem shared>Item 2</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem shared>Item 3</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem shared>Item 4</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem shared>Item 5</OverflowMenuDropdownItem>,
     ];
     return (
       <OverflowMenu breakpoint="Lg">
@@ -138,19 +112,13 @@ class OverflowMenuGroupTypes extends React.Component {
           </OverflowMenuGroup>
           <OverflowMenuGroup groupType="button">
             <OverflowMenuItem>
-              <Button variant="primary">
-                Primary
-              </Button>
+              <Button variant="primary">Primary</Button>
             </OverflowMenuItem>
             <OverflowMenuItem>
-              <Button variant="secondary">
-                Secondary
-              </Button>
+              <Button variant="secondary">Secondary</Button>
             </OverflowMenuItem>
             <OverflowMenuItem>
-              <Button variant="tertiary">
-                Tertiary
-              </Button>
+              <Button variant="tertiary">Tertiary</Button>
             </OverflowMenuItem>
           </OverflowMenuGroup>
           <OverflowMenuGroup groupType="icon">
@@ -214,46 +182,26 @@ class OverflowMenuAdditionalOptions extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem shared>
-        Primary
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem shared>
-        Secondary
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem shared>
-        Tertiary
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem shared>
-        Action 4
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem shared>
-        Action 5
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem shared>
-        Action 6
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem>
-        Action 7
-      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem shared>Primary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem shared>Secondary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem shared>Tertiary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem shared>Action 4</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem shared>Action 5</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem shared>Action 6</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem>Action 7</OverflowMenuDropdownItem>,
     ];
     return (
       <OverflowMenu breakpoint="Lg">
         <OverflowMenuContent>
           <OverflowMenuGroup groupType="button">
             <OverflowMenuItem>
-              <Button variant="primary">
-                Primary
-              </Button>
+              <Button variant="primary">Primary</Button>
             </OverflowMenuItem>
             <OverflowMenuItem>
-              <Button variant="secondary">
-                Secondary
-              </Button>
+              <Button variant="secondary">Secondary</Button>
             </OverflowMenuItem>
             <OverflowMenuItem>
-              <Button variant="tertiary">
-                Tertiary
-              </Button>
+              <Button variant="tertiary">Tertiary</Button>
             </OverflowMenuItem>
           </OverflowMenuGroup>
           <OverflowMenuGroup groupType="icon">
@@ -317,37 +265,23 @@ class OverflowMenuAdditionalOptions extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem shared>
-        Primary
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem shared>
-        Secondary
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem shared>
-        Tertiary
-      </OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem>
-        Action 4
-      </OverflowMenuDropdownItem>
+      <OverflowMenuDropdownItem shared>Primary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem shared>Secondary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem shared>Tertiary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem>Action 4</OverflowMenuDropdownItem>
     ];
     return (
       <OverflowMenu breakpoint="Lg">
         <OverflowMenuContent>
           <OverflowMenuGroup groupType="button" persistent>
             <OverflowMenuItem persistent>
-              <Button variant="primary">
-                Primary
-              </Button>
+              <Button variant="primary">Primary</Button>
             </OverflowMenuItem>
             <OverflowMenuItem>
-              <Button variant="secondary">
-                Secondary
-              </Button>
+              <Button variant="secondary">Secondary</Button>
             </OverflowMenuItem>
             <OverflowMenuItem>
-              <Button variant="tertiary">
-                Tertiary
-              </Button>
+              <Button variant="tertiary">Tertiary</Button>
             </OverflowMenuItem>
           </OverflowMenuGroup>
         </OverflowMenuContent>
