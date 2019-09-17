@@ -20,7 +20,8 @@ const LoginCardForm = ({
   showError,
   attributes,
   isSubmitting,
-  topErrorOnly
+  topErrorOnly,
+  submitButtonAttributes
 }) => (
   <Form onSubmit={onSubmit} noValidate {...attributes}>
     <LoginFormError show={showError} topErrorOnly={topErrorOnly}>
@@ -30,7 +31,7 @@ const LoginCardForm = ({
     <LoginCardInput {...{ ...passwordField, topErrorOnly }} />
     {additionalFields}
     <LoginCardSettings rememberMe={rememberMe} forgotPassword={forgotPassword} />
-    <LoginCardSubmitButton isDisabled={disableSubmit} isLoading={isSubmitting}>
+    <LoginCardSubmitButton isDisabled={disableSubmit} isLoading={isSubmitting} attributes={submitButtonAttributes}>
       {submitText}
     </LoginCardSubmitButton>
   </Form>
@@ -65,7 +66,9 @@ LoginCardForm.propTypes = {
    * the helpblock errors/warnings under each input won't appear,
    * instead we will have only the form error above.
    */
-  topErrorOnly: PropTypes.bool
+  topErrorOnly: PropTypes.bool,
+  /** Override the button attributes */
+  submitButtonAttributes: PropTypes.object
 };
 
 LoginCardForm.defaultProps = {
@@ -96,7 +99,8 @@ LoginCardForm.defaultProps = {
   showError: false,
   attributes: null,
   isSubmitting: false,
-  topErrorOnly: false
+  topErrorOnly: false,
+  submitButtonAttributes: {}
 };
 
 export default LoginCardForm;
