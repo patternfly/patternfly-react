@@ -47,7 +47,7 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
   }
 
   onSelect = (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent,
-              onClick: ((event: React.MouseEvent, rowIndex: number | undefined, rowData: IRowData, extraData: IExtraData) => void) | undefined): void => {
+              onClick: ((event: React.MouseEvent, rowIndex: number | undefined, rowData: IRowData | undefined, extraData: IExtraData | undefined) => void) | undefined): void => {
     const { rowData, extraData } = this.props;
     event.preventDefault();
     // tslint:disable-next-line:no-unused-expression
