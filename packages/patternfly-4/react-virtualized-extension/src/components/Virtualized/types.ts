@@ -1,9 +1,9 @@
 import * as React from 'react';
 import ScalingCellSizeAndPositionManager from './utils/ScalingCellSizeAndPositionManager';
 
-export type CellPosition = { columnIndex?: number, rowIndex?: number };
+export interface CellPosition { columnIndex?: number, rowIndex?: number }
 
-export type CellRendererParams = {
+export interface CellRendererParams {
   columnIndex: number,
   isScrolling: boolean,
   isVisible: boolean,
@@ -11,14 +11,14 @@ export type CellRendererParams = {
   parent: any,
   rowIndex: number,
   style: any
-};
+}
 
 export type CellRenderer = (props: CellRendererParams) => React.ReactElement<any>;
 
-export type CellCache = { [key: string]: React.ReactElement<any> };
-export type StyleCache = { [key: string]: any };
+export interface CellCache { [key: string]: React.ReactElement<any> }
+export interface StyleCache { [key: string]: any }
 
-export type CellRangeRendererParams = {
+export interface CellRangeRendererParams {
   cellCache: CellCache,
   cellRenderer: CellRenderer,
   columnSizeAndPositionManager: ScalingCellSizeAndPositionManager,
@@ -38,7 +38,7 @@ export type CellRangeRendererParams = {
   verticalOffsetAdjustment: number,
   visibleColumnIndices: any,
   visibleRowIndices: any
-};
+}
 
 export type CellRangeRenderer = (params: CellRangeRendererParams) => React.ReactElement<any>[];
 
@@ -48,22 +48,22 @@ export type CellSize = CellSizeGetter | number;
 
 export type NoContentRenderer = () => React.ReactElement<any> | null;
 
-export type Scroll = {
+export interface Scroll {
   clientHeight: number,
   clientWidth: number,
   scrollHeight: number,
   scrollLeft: number,
   scrollTop: number,
   scrollWidth: number
-};
+}
 
-export type ScrollbarPresenceChange = {
+export interface ScrollbarPresenceChange {
   horizontal: boolean,
   vertical: boolean,
   size: number
-};
+}
 
-export type RenderedSection = {
+export interface RenderedSection {
   columnOverscanStartIndex: number,
   columnOverscanStopIndex: number,
   columnStartIndex: number,
@@ -72,9 +72,9 @@ export type RenderedSection = {
   rowOverscanStopIndex: number,
   rowStartIndex: number,
   rowStopIndex: number
-};
+}
 
-export type OverscanIndicesGetterParams = {
+export interface OverscanIndicesGetterParams {
   // One of SCROLL_DIRECTION_HORIZONTAL or SCROLL_DIRECTION_VERTICAL
   direction: 'horizontal' | 'vertical',
 
@@ -92,18 +92,18 @@ export type OverscanIndicesGetterParams = {
 
   // End of range of visible cells
   stopIndex: number
-};
+}
 
-export type OverscanIndices = {
+export interface OverscanIndices {
   overscanStartIndex: number,
   overscanStopIndex: number
-};
+}
 
 export type OverscanIndicesGetter = (params: OverscanIndicesGetterParams) => OverscanIndices;
 
 export type Alignment = 'auto' | 'end' | 'start' | 'center';
 
-export type VisibleCellRange = {
+export interface VisibleCellRange {
   start?: number,
   stop?: number
-};
+}

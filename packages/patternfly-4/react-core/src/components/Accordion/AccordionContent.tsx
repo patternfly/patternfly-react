@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
+import { AccordionContext } from './AccordionContext';
 
-export interface AccordionContentProps extends React.HTMLProps<HTMLElement> {
+export interface AccordionContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Content rendered inside the Accordion  */
   children?: React.ReactNode;
   /** Additional classes added to the Accordion content  */
@@ -15,6 +16,8 @@ export interface AccordionContentProps extends React.HTMLProps<HTMLElement> {
   isFixed?: boolean;
   /** Adds accessible text to the Accordion content */
   'aria-label'?: string;
+  /** Component to use as content container */
+  component?: React.ElementType;
 }
 
 export const AccordionContent: React.FunctionComponent<AccordionContentProps> = ({
@@ -24,20 +27,28 @@ export const AccordionContent: React.FunctionComponent<AccordionContentProps> = 
   isHidden = false,
   isFixed = false,
   'aria-label': ariaLabel = '',
+  component,
   ...props
 }: AccordionContentProps) => (
-  <dd
-    id={id}
-    className={css(
-      styles.accordionExpandedContent,
-      isFixed && styles.modifiers.fixed,
-      !isHidden && styles.modifiers.expanded,
-      className
-    )}
-    hidden={isHidden}
-    aria-label={ariaLabel}
-    {...props}
-  >
-    <div className={css(styles.accordionExpandedContentBody)}>{children}</div>
-  </dd>
+  <AccordionContext.Consumer>
+    {({ ContentContainer }) => {
+      const Container = component || ContentContainer;
+      return (
+        <Container
+          id={id}
+          className={css(
+            styles.accordionExpandedContent,
+            isFixed && styles.modifiers.fixed,
+            !isHidden && styles.modifiers.expanded,
+            className
+          )}
+          hidden={isHidden}
+          aria-label={ariaLabel}
+          {...props}
+        >
+          <div className={css(styles.accordionExpandedContentBody)}>{children}</div>
+        </Container>
+      );
+    }}
+  </AccordionContext.Consumer>
 );

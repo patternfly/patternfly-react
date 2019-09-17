@@ -27,7 +27,7 @@ export interface AboutModalProps {
   backgroundImageSrc?: string;
   /** Prevents the about modal from rendering content inside a container; allows for more flexible layouts  */
   noAboutModalBoxContentContainer?: boolean;
-};
+}
 
 interface ModalState {
   container: HTMLElement;
@@ -66,7 +66,7 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
       this.props.onClose();
     }
-  };
+  }
 
   toggleSiblingsFromScreenReaders = (hide: boolean) => {
     const bodyChildren = document.body.children;
@@ -75,7 +75,7 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
         hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
       }
     }
-  };
+  }
 
   componentDidMount() {
       const container = document.createElement('div');

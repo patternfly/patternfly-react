@@ -37,7 +37,7 @@ export interface AboutModalContainerProps extends React.HTMLProps<HTMLDivElement
   ariaLabelledbyId: string;
   /** id to use for About Modal Box aria described by  */
   ariaDescribedById: string;
-};
+}
 
 export const AboutModalContainer: React.SFC<AboutModalContainerProps> = ({
   children,

@@ -1,11 +1,10 @@
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer, ChartAxis } from '@patternfly/react-charts';
 
-
 export class PurpleBarGroupedDemo extends React.Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -13,7 +12,7 @@ export class PurpleBarGroupedDemo extends React.Component {
       <div>
         <div style={{width: '600px', height: '250px', paddingLeft: '50px'}}>
           <Chart
-            containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
+            containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} />}
             domainPadding={{ x: [30, 25] }}
             legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }, { name: 'Mice' }]}
             legendOrientation="vertical"
@@ -22,7 +21,7 @@ export class PurpleBarGroupedDemo extends React.Component {
             padding={{
               bottom: 50,
               left: 50,
-              right: 200, // Adjusted to accomodate legend
+              right: 200, // Adjusted to accommodate legend
               top: 50
             }}
             themeColor={ChartThemeColor.purple}
@@ -39,6 +38,6 @@ export class PurpleBarGroupedDemo extends React.Component {
           </Chart>
         </div>
       </div>
-    )
+    );
   }
 }

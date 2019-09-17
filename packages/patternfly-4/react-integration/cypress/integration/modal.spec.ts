@@ -77,11 +77,31 @@ describe('Modal Test', () => {
     });
   });
 
+  it('Verify Custom Header/Footer Modal', () => {
+    cy.get('#showCustomHeaderFooterModalButton').then((modalButton: JQuery<HTMLButtonElement>) => {
+      cy.wrap(modalButton).click();
+      cy.get('.pf-c-modal-box').then(() => {
+        cy.get('#customHeaderTitle').should('exist');
+        cy.get('#customHeaderDescription').should('exist');
+        cy.get('#customFooterTitle').should('exist');
+        cy.get('.pf-c-modal-box .pf-c-button[aria-label="Close"]').then(closeButton => {
+          cy.wrap(closeButton).click();
+          cy.get('.pf-c-modal-box').should('not.exist');
+        })
+      }).then(() => {
+        cy.wrap(modalButton).click();
+        cy.get('.pf-c-modal-box').should('exist');
+        cy.get('body').trigger('keydown', { keyCode: 27, which: 27 });
+        cy.get('.pf-c-modal-box').should('not.exist');
+      })
+    });
+  });
+
   it('Verify No Header Modal', () => {
     cy.get('#showNoHeaderModalButton').then((modalButton: JQuery<HTMLButtonElement>) => {
     cy.wrap(modalButton).click();
       cy.get('.pf-c-modal-box').then(() => {
-        cy.get('.pf-c-title.pf-u-screen-reader').should('exist');
+        cy.get('.pf-c-title').should('not.exist');
         cy.get('.pf-c-modal-box .pf-c-button[aria-label="Close"]').then(closeButton => {
           cy.wrap(closeButton).click();
           cy.get('.pf-c-modal-box').should('not.exist');

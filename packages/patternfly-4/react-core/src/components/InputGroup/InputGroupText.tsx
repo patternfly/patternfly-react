@@ -4,16 +4,16 @@ import { css } from '@patternfly/react-styles';
 
 export interface InputGroupTextProps extends React.HTMLProps<HTMLSpanElement | HTMLLabelElement> {
   /** Additional classes added to the input group text. */
-  className?: string; 
+  className?: string;
   /** Content rendered inside the input group text. */
-  children: React.ReactNode; 
+  children: React.ReactNode;
   /** Component that wraps the input group text. */
-  component?: React.ReactNode; 
+  component?: React.ReactNode;
 }
 
 export const InputGroupText: React.FunctionComponent<InputGroupTextProps> = ({
-  className = '', 
-  component = 'span', 
+  className = '',
+  component = 'span',
   children,
   ...props
 }: InputGroupTextProps) => {

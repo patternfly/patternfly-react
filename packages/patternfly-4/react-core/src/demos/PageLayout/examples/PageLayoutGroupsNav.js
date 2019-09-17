@@ -46,37 +46,37 @@ class PageLayoutGroupsNav extends React.Component {
     this.setState({
       isDropdownOpen
     });
-  };
+  }
 
   onDropdownSelect = event => {
     this.setState({
       isDropdownOpen: !this.state.isDropdownOpen
     });
-  };
+  }
 
   onKebabDropdownToggle = isKebabDropdownOpen => {
     this.setState({
       isKebabDropdownOpen
     });
-  };
+  }
 
   onKebabDropdownSelect = event => {
     this.setState({
       isKebabDropdownOpen: !this.state.isKebabDropdownOpen
     });
-  };
+  }
 
   onNavSelect = result => {
     this.setState({
       activeItem: result.itemId
     });
-  };
+  }
 
   render() {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
 
     const PageNav = (
-      <Nav onSelect={this.onNavSelect} aria-label="Nav">
+      <Nav onSelect={this.onNavSelect} aria-label="Nav" theme="dark">
         <NavGroup title="System Panel">
           <NavItem itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
             Overview
@@ -176,12 +176,19 @@ class PageLayoutGroupsNav extends React.Component {
         showNavToggle
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} />;
-    const PageSkipToContent = <SkipToContent href="#main-content-page-layout-group-nav">Skip to Content</SkipToContent>;
+    const Sidebar = <PageSidebar nav={PageNav} theme="dark" />;
+    const pageId = 'main-content-page-layout-group-nav';
+    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 
     return (
       <React.Fragment>
-        <Page header={Header} sidebar={Sidebar} isManagedSidebar skipToContent={PageSkipToContent}>
+        <Page
+          header={Header}
+          sidebar={Sidebar}
+          isManagedSidebar
+          skipToContent={PageSkipToContent}
+          mainContainerId={pageId}
+        >
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>

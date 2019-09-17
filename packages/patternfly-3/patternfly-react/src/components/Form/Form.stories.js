@@ -84,8 +84,8 @@ exampleStories.add(
     const { bsSize, disabled } = formFieldsKnobs;
     const buttonsProps = {};
 
-    if (bsSize) buttonsProps.bsSize = bsSize;
-    if (disabled) buttonsProps.disabled = disabled;
+    if (bsSize) { buttonsProps.bsSize = bsSize; }
+    if (disabled) { buttonsProps.disabled = disabled; }
 
     const formFields = InlineFormFields.map(formField => InlineFormField({ ...formField, ...formFieldsKnobs })).reduce(
       (result = [], element) => [...result, element, ' '], // create spacing betwwen elements
@@ -120,8 +120,8 @@ exampleStories.add(
     const { bsSize, disabled } = formFieldsKnobs;
     const buttonsProps = {};
 
-    if (bsSize) buttonsProps.bsSize = bsSize;
-    if (disabled) buttonsProps.disabled = disabled;
+    if (bsSize) { buttonsProps.bsSize = bsSize; }
+    if (disabled) { buttonsProps.disabled = disabled; }
 
     const showLoading = boolean('Show Loading', false);
     const formFields = BasicFormFields.map(formField => HorizontalFormField({ ...formField, ...formFieldsKnobs }));
@@ -168,8 +168,8 @@ exampleStories.add(
     const { bsSize, disabled } = formFieldsKnobs;
     const buttonsProps = {};
 
-    if (bsSize) buttonsProps.bsSize = bsSize;
-    if (disabled) buttonsProps.disabled = disabled;
+    if (bsSize) { buttonsProps.bsSize = bsSize; }
+    if (disabled) { buttonsProps.disabled = disabled; }
 
     const showLoading = boolean('Show Loading', false);
     const formFields = BasicFormFields.map(formField => VerticalFormField({ ...formField, ...formFieldsKnobs }));
@@ -214,8 +214,8 @@ exampleStories.add(
     const { bsSize, disabled } = formFieldsKnobs;
     const buttonsProps = {};
 
-    if (bsSize) buttonsProps.bsSize = bsSize;
-    if (disabled) buttonsProps.disabled = disabled;
+    if (bsSize) { buttonsProps.bsSize = bsSize; }
+    if (disabled) { buttonsProps.disabled = disabled; }
 
     const showLoading = boolean('Show Loading', false);
     const formFields = BasicFormFields.map(formField => HorizontalFormField({ ...formField, ...formFieldsKnobs }));

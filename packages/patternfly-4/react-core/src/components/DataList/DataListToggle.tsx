@@ -19,7 +19,7 @@ export interface DataListToggleProps extends React.HTMLProps<HTMLDivElement> {
   'aria-label'?: string;
   /** Allows users of some screen readers to shift focus to the controlled element. Should be used when the controlled contents are not adjacent to the toggle that controls them. */
   'aria-controls'?: string;
-};
+}
 
 export const DataListToggle: React.FunctionComponent<DataListToggleProps> = ({
   className = '',

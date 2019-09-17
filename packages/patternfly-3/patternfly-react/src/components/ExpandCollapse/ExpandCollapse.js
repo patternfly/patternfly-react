@@ -24,8 +24,12 @@ class ExpandCollapse extends React.Component {
   }
 
   onClick = () => {
-    this.setState(prevState => ({ expanded: !prevState.expanded }));
-  };
+    if (this.props.onToggle) {
+      this.props.onToggle();
+    } else {
+      this.setState(prevState => ({ expanded: !prevState.expanded }));
+    }
+  }
 
   render() {
     const { children, textCollapsed, textExpanded, align, className, bordered } = this.props;
@@ -62,7 +66,9 @@ ExpandCollapse.propTypes = {
   /** Flag to show a separation border line */
   bordered: PropTypes.bool,
   /** Flag to control expansion state */
-  expanded: PropTypes.bool // eslint-disable-line react/no-unused-prop-types
+  expanded: PropTypes.bool, // eslint-disable-line react/no-unused-prop-types
+  /** Callback function to control externally stored expansion state */
+  onToggle: PropTypes.func
 };
 
 ExpandCollapse.defaultProps = {
@@ -71,7 +77,8 @@ ExpandCollapse.defaultProps = {
   textExpanded: 'Hide Advanced Options',
   align: ALIGN_LEFT,
   bordered: true,
-  expanded: false
+  expanded: false,
+  onToggle: undefined
 };
 
 ExpandCollapse.ALIGN_LEFT = ALIGN_LEFT;

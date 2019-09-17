@@ -377,3 +377,12 @@ test('Translation works', () => {
       .props().header.caption
   ).toEqual(frenchMessages.header.caption);
 });
+
+test('submitButtonAttributes are added to the DOM', () => {
+  const id = 'submit-button-unique-test-id'
+  const props = createProps();
+  props.card.form.submitButtonAttributes = { id };
+  const component = mount(<LoginPage {...props} />);
+  const doesIDExist = component.find(`#${id}`).exists();
+  expect(doesIDExist).toBeTruthy();
+});

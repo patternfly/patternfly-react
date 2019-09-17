@@ -34,7 +34,7 @@ const DiffView = ({
     const files = parseDiff(gitDiff);
     const hunk = files[0].hunks;
 
-    if (hunk.length === 0) return emptyState;
+    if (hunk.length === 0) { return emptyState; }
     return hunk && <Diff className={classes} hunks={hunk} markEdits={markEdits} viewType={viewType} {...props} />;
   }
 
@@ -53,7 +53,7 @@ const DiffView = ({
     />
   );
 
-  if (patch === '') return emptyState;
+  if (patch === '') { return emptyState; }
   return <div>{files.map(renderFile)}</div>;
 };
 

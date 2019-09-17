@@ -20,7 +20,7 @@ export class CSSVars extends React.Component {
   }
 
   render() {
-    if (!this.cssTokens) return <p>No CSS Variables</p>;
+    if (!this.cssTokens) { return <p>No CSS Variables</p>; }
 
     return (
       <table className="pf-c-table pf-m-compact pf-m-grid-md" role="grid" aria-label="CSS Variable Table">
@@ -45,7 +45,7 @@ export class CSSVars extends React.Component {
                       display: 'inline-block',
                       height: 18,
                       width: 18,
-                      border: `1px solid #72767b`,
+                      border: '1px solid #72767b',
                       marginRight: '0.5rem',
                       verticalAlign: 'middle'
                     }}

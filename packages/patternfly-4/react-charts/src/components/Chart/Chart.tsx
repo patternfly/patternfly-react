@@ -21,18 +21,15 @@ import {
   ChartLegendOrientation,
   ChartLegendPosition,
   ChartLegendWrapper
-} from "../ChartLegend";
+} from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getPaddingForSide, getTheme } from '../ChartUtils';
+import { getClassName, getLabelTextSize, getPaddingForSide, getTheme } from '../ChartUtils';
+
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
 export interface ChartProps extends VictoryChartProps {
-  /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-chart/
-   */
-  ' '?: any;
   /**
    * Specifies the zoom capability of the container component. A value of true allows the chart to
    * zoom in and out. Zoom events are controlled by scrolling. When zoomed in, panning events are
@@ -124,7 +121,7 @@ export interface ChartProps extends VictoryChartProps {
    * The mutation function will be called with the calculated props for the individual selected
    * element (i.e. a single bar), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
-   * @examples
+   * @example
    * events={[
    *   {
    *     target: "data",
@@ -152,7 +149,7 @@ export interface ChartProps extends VictoryChartProps {
    */
   events?: EventPropTypeInterface<string, StringOrNumberOrCallback>[];
   /**
-   * ChartLegend uses the standard externalEventMutations prop.
+   * Chart uses the standard externalEventMutations prop.
    */
   externalEventMutations?: any[];
   /**
@@ -167,9 +164,8 @@ export interface ChartProps extends VictoryChartProps {
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
-   * pixels will depend on the size of the container the chart is rendered into.
-   *
-   * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
+   * pixels will depend on the size of the container the chart is rendered into. Typically, the parent container is set
+   * to the same width in order to maintain the aspect ratio.
    */
   height?: number;
   /**
@@ -189,16 +185,19 @@ export interface ChartProps extends VictoryChartProps {
    */
   legendComponent?: React.ReactElement<any>;
   /**
-   * The data prop specifies the data to be plotted,
-   * where data X-value is the slice label (string or number),
-   * and Y-value is the corresponding number value represented by the slice
-   * Data should be in the form of an array of data points.
-   * Each data point may be any format you wish (depending on the `x` and `y` accessor props),
-   * but by default, an object with x and y properties is expected.
+   * Specify data via the data prop. ChartLegend expects data as an
+   * array of objects with name (required), symbol, and labels properties.
+   * The data prop must be given as an array.
    *
    * @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}
    */
-  legendData?: any[];
+  legendData?: {
+    name?: string;
+    symbol?: {
+      fill?: string;
+      type?: string;
+    };
+  }[];
   /**
    * The orientation prop takes a string that defines whether legend data
    * are displayed in a row or column. When orientation is "horizontal",
@@ -210,7 +209,10 @@ export interface ChartProps extends VictoryChartProps {
    */
   legendOrientation?: 'horizontal' | 'vertical';
   /**
-   * The legend position relation to the area chart. Valid values are 'bottom', 'bottom-left', and 'right'
+   * The legend position relation to the chart. Valid values are 'bottom', 'bottom-left', and 'right'
+   *
+   * Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some
+   * cases, the legend may not be visible until enough padding is applied.
    */
   legendPosition?: 'bottom' | 'bottom-left' | 'right';
   /**
@@ -268,7 +270,7 @@ export interface ChartProps extends VictoryChartProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number], y?: [number, number] }
+  range?: [number, number] | { x?: [number, number], y?: [number, number] };
   /**
    * The scale prop determines which scales your chart should use. This prop can be
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
@@ -326,7 +328,7 @@ export interface ChartProps extends VictoryChartProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *
@@ -347,9 +349,8 @@ export interface ChartProps extends VictoryChartProps {
    *
    * Because Victory renders responsive containers, the width and height props do not determine the width and
    * height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of
-   * pixels will depend on the size of the container the chart is rendered into.
-   *
-   * Typically, the parent container is set to the same width in order to maintain the aspect ratio.
+   * pixels will depend on the size of the container the chart is rendered into. Typically, the parent container is set
+   * to the same width in order to maintain the aspect ratio.
    */
   width?: number;
 }
@@ -359,8 +360,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   ariaDesc,
   ariaTitle,
   children,
-  containerComponent = allowZoom ? <VictoryZoomContainer /> : <ChartContainer />,
-  legendComponent = <ChartLegend />,
+  legendComponent = <ChartLegend/>,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
   padding,
@@ -370,6 +370,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
+  containerComponent = allowZoom ? <VictoryZoomContainer /> : <ChartContainer />,
   legendOrientation = theme.legend.orientation as ChartLegendOrientation,
   height = theme.chart.height,
   width = theme.chart.width,
@@ -382,19 +383,15 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     top: getPaddingForSide('top', padding, theme.chart.padding),
   };
 
-  const chartSize = {
-    height: Math.abs(height - (defaultPadding.bottom + defaultPadding.top)),
-    width: Math.abs(width - (defaultPadding.left + defaultPadding.right))
-  };
-
-  const container = React.cloneElement(containerComponent as React.ReactElement<any>, {
+  const container = React.cloneElement(containerComponent, {
     desc: ariaDesc,
     title: ariaTitle,
     theme,
-    ...containerComponent.props
+    ...containerComponent.props,
+    className: getClassName({className: containerComponent.props.className}) // Override VictoryContainer class name
   });
 
-  const legend = React.cloneElement(legendComponent as React.ReactElement<any>, {
+  const legend = React.cloneElement(legendComponent, {
     data: legendData,
     orientation: legendOrientation,
     theme,
@@ -407,27 +404,35 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       return null;
     }
     let dx = 0;
-    let dy = defaultPadding.top;
+    let dy = 0;
+    let xAxisLabelHeight = 0;
+    let legendTitleHeight = legend.props.title ? 10 : 0;
+
+    // Adjust for axis label
+    React.Children.toArray(children).map((child: any) => {
+      if (child.type.role === 'axis' && child.props.label && !child.props.dependentAxis) {
+        xAxisLabelHeight = getLabelTextSize({text: child.props.label, theme}).height + 10;
+        legendTitleHeight = 0;
+      }
+    });
+
     if (legendPosition === ChartLegendPosition.bottom) {
-      dy += ChartCommonStyles.legend.margin;
+      dy += xAxisLabelHeight + legendTitleHeight;
     } else if (legendPosition === ChartLegendPosition.bottomLeft) {
-      dy += ChartCommonStyles.legend.margin;
-      dx += defaultPadding.left > 10 ? defaultPadding.left - 10 : -10;
-    } else if (legendPosition === ChartLegendPosition.right) {
-      dx += defaultPadding.left;
+      dy += xAxisLabelHeight + legendTitleHeight;
+      dx = -10;
     }
     return (
       <ChartLegendWrapper
-        chartHeight={chartSize.height}
-        chartType="pie"
-        chartWidth={chartSize.width}
+        chartType="chart"
         dx={dx}
         dy={dy}
+        height={height}
         orientation={legendOrientation}
+        padding={defaultPadding}
         position={legendPosition}
-        svgHeight={height}
-        svgWidth={width}
         theme={theme}
+        width={width}
       >
         {legend}
       </ChartLegendWrapper>

@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { ChartArea } from '../ChartArea/ChartArea';
-import { ChartGroup } from '../ChartGroup/ChartGroup';
-import { ChartVoronoiContainer } from '../ChartVoronoiContainer/ChartVoronoiContainer';
+import { ChartArea } from '../ChartArea';
+import { ChartGroup } from '../ChartGroup';
+import { ChartVoronoiContainer } from '../ChartVoronoiContainer';
 import { ChartTooltip } from './ChartTooltip';
 
-Object.values([true, false]).forEach(isRead => {
-  test(`ChartTooltip`, () => {
+Object.values([true, false]).forEach((isRead) => {
+  test('ChartTooltip', () => {
     const view = shallow(<ChartTooltip text="This is a tooltip" />);
     expect(view).toMatchSnapshot();
   });
@@ -15,7 +15,7 @@ Object.values([true, false]).forEach(isRead => {
 test('allows tooltip via container component', () => {
   const view = shallow(
     <ChartGroup
-      containerComponent={<ChartVoronoiContainer labels={(point) => "y: " + point.y} />}
+      containerComponent={<ChartVoronoiContainer labels={(point) => 'y: ' + point.y} />}
       height={200}
       width={200}
     >

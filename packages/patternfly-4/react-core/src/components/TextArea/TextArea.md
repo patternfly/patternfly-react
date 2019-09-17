@@ -5,7 +5,6 @@ propComponents: ['TextArea']
 typescript: true
 ---
 
-
 import { TextArea } from '@patternfly/react-core';
 
 ## Simple text area
@@ -64,4 +63,14 @@ class InvalidTextArea extends React.Component {
     );
   }
 }
+```
+
+## Uncontrolled text area
+```js
+import React from 'react';
+import { TextArea } from '@patternfly/react-core';
+
+UncontrolledTextArea = () => (
+  <TextArea defaultValue="default value" aria-label="uncontrolled text area example" />
+)
 ```

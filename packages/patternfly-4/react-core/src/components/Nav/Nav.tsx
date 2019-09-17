@@ -12,29 +12,31 @@ export type NavSelectClickHandler = (
   to: string
 ) => void;
 
-
 export interface NavProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'onSelect'> {
   /** Anything that can be rendered inside of the nav */
   children?: React.ReactNode;
   /** Additional classes added to the container */
   className?: string;
   /** Callback for updating when item selection changes */
-  onSelect?: (selectedItem: {groupId: number | string; itemId: number | string; to:string, event: React.FormEvent<HTMLInputElement>}) => void;
+  onSelect?: (selectedItem: {groupId: number | string; itemId: number | string; to: string, event: React.FormEvent<HTMLInputElement>}) => void;
   /** Callback for when a list is expanded or collapsed */
   onToggle?: (toggledItem: {groupId: number | string ; isExpanded: boolean; event: React.FormEvent<HTMLInputElement>}) => void;
   /** Accessibility label */
   'aria-label'?: string;
+  /** Indicates which theme color to use */
+  theme?: 'dark' | 'light'
 }
 
 export const NavContext = React.createContext({});
 
 export class Nav extends React.Component<NavProps> {
-  static defaultProps:NavProps = {
+  static defaultProps: NavProps = {
     'aria-label': '',
-    children: null,
-    className: '',
-    onSelect: () => undefined,
-    onToggle: () => undefined
+    "children": null,
+    "className": '',
+    "onSelect": () => undefined,
+    "onToggle": () => undefined,
+    "theme": 'light'
   };
 
   state = {
@@ -48,7 +50,7 @@ export class Nav extends React.Component<NavProps> {
       showLeftScrollButton,
       showRightScrollButton
     });
-  };
+  }
 
   // Callback from NavItem
   onSelect(
@@ -80,9 +82,9 @@ export class Nav extends React.Component<NavProps> {
   }
 
   render() {
-    const { 'aria-label': ariaLabel, children, className, onSelect, onToggle, ...props } = this.props;
+    const { 'aria-label': ariaLabel, children, className, onSelect, onToggle, theme, ...props } = this.props;
     const { showLeftScrollButton, showRightScrollButton } = this.state;
-    const childrenProps:any = (children as any).props;
+    const childrenProps: any = (children as any).props;
 
     return (
       <NavContext.Provider
@@ -100,7 +102,7 @@ export class Nav extends React.Component<NavProps> {
         }}
       >
         <nav
-          className={css(styles.nav, showLeftScrollButton && styles.modifiers.start, showRightScrollButton && styles.modifiers.end, className)}
+          className={css(styles.nav, theme === 'dark' && styles.modifiers.dark, showLeftScrollButton && styles.modifiers.start, showRightScrollButton && styles.modifiers.end, className)}
           aria-label={
             ariaLabel === ''
               ? typeof childrenProps !== 'undefined' && childrenProps.variant === 'tertiary' ? 'Local' : 'Global'

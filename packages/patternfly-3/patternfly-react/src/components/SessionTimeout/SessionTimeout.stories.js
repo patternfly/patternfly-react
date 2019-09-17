@@ -23,7 +23,7 @@ stories
       displayBefore={number('displayBefore', 30)}
       timeLeft={number('timeLeft', 30)}
       primaryContent={<p className="lead">{text('primary content', 'Your session is about to expire')}</p>}
-      secondaryContent={<div>{text('secondary content', `to continue click on "Continue Session".`)}</div>}
+      secondaryContent={<div>{text('secondary content', 'to continue click on "Continue Session".')}</div>}
     />
   ))
   .add('Count Down Session Timeout', () => (

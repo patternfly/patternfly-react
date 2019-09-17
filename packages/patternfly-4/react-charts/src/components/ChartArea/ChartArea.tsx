@@ -16,26 +16,26 @@ import {
   VictoryArea,
   VictoryAreaProps
 } from 'victory';
+import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
 export enum ChartAreaSortOrder {
   ascending = 'ascending',
   descending = 'descending'
-};
+}
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
 export interface ChartAreaProps extends VictoryAreaProps {
   /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-area/
-   */
-  ' '?: any;
-  /**
+   * type: boolean || object
+   *
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
    * transition configurations with the `onExit` and `onEnter` namespaces respectively.
+   *
    * @example
    * {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}
    */
@@ -140,7 +140,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", "all">[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', 'all'>[];
   /**
    * ChartArea uses the standard externalEventMutations prop.
    */
@@ -186,7 +186,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * like data={[{x: 1, y: 1, label: "first"}]}.
    * @example ["spring", "summer", "fall", "winter"], (datum) => datum.title
    */
-  labels?: string[] | ((data: any) => string);
+  labels?: string[] | number[] | Function;
   /**
    * The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum
    * domain of a chart is static, while the minimum value depends on data or other variable information. If the domain
@@ -251,7 +251,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number], y?: [number, number] }
+  range?: [number, number] | { x?: [number, number], y?: [number, number] };
   /**
    * The samples prop specifies how many individual points to plot when plotting
    * y as a function of x. Samples is ignored if x props are provided instead.
@@ -322,7 +322,7 @@ export interface ChartAreaProps extends VictoryAreaProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *
@@ -371,14 +371,17 @@ export interface ChartAreaProps extends VictoryAreaProps {
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
    */
   y0?: DataGetterPropType;
-};
+}
 
 export const ChartArea: React.FunctionComponent<ChartAreaProps> = ({
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
+
+  // destructure last
+  theme = getTheme(themeColor, themeVariant),
+  containerComponent = <ChartContainer theme={theme} />,
   ...rest
-}: ChartAreaProps) => <VictoryArea theme={theme} {...rest} />;
+}: ChartAreaProps) => <VictoryArea containerComponent={containerComponent} theme={theme} {...rest} />;
 
 // Note: VictoryArea.role must be hoisted
 hoistNonReactStatics(ChartArea, VictoryArea);

@@ -17,5 +17,5 @@ export class TooltipDemo extends Component {
         {this.myTooltipProps.children}
       </Tooltip>
     );
-  };
+  }
 }

@@ -23,7 +23,7 @@ export class ViewToolbar extends React.Component {
 
   onFilterDropDownToggle = isOpen => {
     this.setState({ filterDropDownOpen: isOpen });
-  };
+  }
 
   onFilterTypeSelect = (e, filterType) => {
     e.preventDefault();
@@ -32,20 +32,20 @@ export class ViewToolbar extends React.Component {
       filterDropDownOpen: false,
       filterValue: filterType === this.state.filterType ? this.state.filterValue : ''
     });
-  };
+  }
 
   handleFilterInputChange = value => {
     this.setState({ filterValue: value });
-  };
+  }
 
   onActionKebabToggle = isOpen => {
     this.setState({ actionKebabOpen: isOpen });
-  };
+  }
 
   onActionKebabSelect = (e, action) => {
     e.preventDefault();
     this.setState({ actionKebabOpen: false });
-  };
+  }
 
   renderFilterInput = () => {
     const { filterValue } = this.state;
@@ -57,7 +57,7 @@ export class ViewToolbar extends React.Component {
         aria-label="filter text input"
       />
     );
-  };
+  }
 
   renderFilterTypeDropdown = () => {
     const { filterDropDownOpen, filterType } = this.state;
@@ -86,7 +86,7 @@ export class ViewToolbar extends React.Component {
         ]}
       />
     );
-  };
+  }
 
   renderActionsdKebab = () => {
     const { actionKebabOpen } = this.state;
@@ -111,7 +111,7 @@ export class ViewToolbar extends React.Component {
         ]}
       />
     );
-  };
+  }
 
   render() {
     return (

@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-charts",
-  "version": "4.7.0",
+  "version": "5.0.0",
   "description": "This library provides a set of React chart components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -29,7 +29,14 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
-    "@patternfly/react-styles": "^3.5.6"
+    "@patternfly/patternfly": "2.31.7",
+    "@patternfly/react-styles": "^3.5.23",
+    "@patternfly/react-tokens": "^2.6.27",
+    "hoist-non-react-statics": "^3.3.0",
+    "lodash": "^4.17.11",
+    "victory": "^33.0.5",
+    "victory-core": "^33.0.1",
+    "victory-legend": "^33.0.1"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
@@ -43,17 +50,7 @@
     "build:babel:umd": "babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "build:types": "tsc -p tsconfig.gen-dts.json",
     "clean": "rimraf dist",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps",
-    "typecheck": "tsc -p tsconfig.typecheck.json"
-  },
-  "optionalDependencies": {
-    "@types/lodash": "^4.14.132",
-    "@types/victory": "^31.0.18",
-    "hoist-non-react-statics": "^3.3.0",
-    "lodash": "^4.17.11",
-    "victory": "^32.2.3",
-    "victory-core": "^32.2.3",
-    "victory-legend": "^32.2.3"
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -64,9 +61,8 @@
     "@babel/plugin-transform-typescript": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@patternfly/patternfly": "2.21.5",
-    "@patternfly/react-icons": "^3.10.13",
-    "@patternfly/react-tokens": "^2.6.12",
+    "@types/lodash": "^4.14.132",
+    "@types/victory": "^31.0.21",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-typescript-to-proptypes": "^0.17.1",
     "css": "^2.2.3",

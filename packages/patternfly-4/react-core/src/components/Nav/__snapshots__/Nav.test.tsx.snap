@@ -1,11 +1,111 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Dark Nav List 1`] = `
+<Nav
+  aria-label=""
+  className="test=nav-class"
+  onSelect={[Function]}
+  onToggle={[Function]}
+  theme="dark"
+>
+  <nav
+    aria-label="Global"
+    className="pf-c-nav pf-m-dark test=nav-class"
+  >
+    <NavList
+      ariaLeftScroll="Scroll left"
+      ariaRightScroll="Scroll right"
+      className="test-nav-list-class"
+      variant="default"
+    >
+      <ul
+        className="pf-c-nav__list test-nav-list-class"
+      >
+        <Component
+          className="test-nav-item-class"
+          key="#link1"
+          to="#link1"
+        >
+          <li
+            className="pf-c-nav__item test-nav-item-class"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link test-nav-item-class"
+              href="#link1"
+              onClick={[Function]}
+            >
+              Link 1
+            </a>
+          </li>
+        </Component>
+        <Component
+          className="test-nav-item-class"
+          key="#link2"
+          to="#link2"
+        >
+          <li
+            className="pf-c-nav__item test-nav-item-class"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link test-nav-item-class"
+              href="#link2"
+              onClick={[Function]}
+            >
+              Link 2
+            </a>
+          </li>
+        </Component>
+        <Component
+          className="test-nav-item-class"
+          key="#link3"
+          to="#link3"
+        >
+          <li
+            className="pf-c-nav__item test-nav-item-class"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link test-nav-item-class"
+              href="#link3"
+              onClick={[Function]}
+            >
+              Link 3
+            </a>
+          </li>
+        </Component>
+        <Component
+          className="test-nav-item-class"
+          key="#link4"
+          to="#link4"
+        >
+          <li
+            className="pf-c-nav__item test-nav-item-class"
+          >
+            <a
+              aria-current={null}
+              className="pf-c-nav__link test-nav-item-class"
+              href="#link4"
+              onClick={[Function]}
+            >
+              Link 4
+            </a>
+          </li>
+        </Component>
+      </ul>
+    </NavList>
+  </nav>
+</Nav>
+`;
+
 exports[`Default Nav List - Trigger item active update 1`] = `
 <Nav
   aria-label=""
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
+  theme="light"
 >
   <nav
     aria-label="Global"
@@ -100,6 +200,7 @@ exports[`Default Nav List 1`] = `
   className="test=nav-class"
   onSelect={[Function]}
   onToggle={[Function]}
+  theme="light"
 >
   <nav
     aria-label="Global"
@@ -198,6 +299,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
+  theme="light"
 >
   <nav
     aria-label="Global"
@@ -359,6 +461,7 @@ exports[`Expandable Nav List 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
+  theme="light"
 >
   <nav
     aria-label="Global"
@@ -520,6 +623,7 @@ exports[`Expandable Nav List with aria label 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
+  theme="light"
 >
   <nav
     aria-label="Test"
@@ -687,6 +791,7 @@ exports[`Horizontal Nav List 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
+  theme="light"
 >
   <nav
     aria-label="Global"
@@ -845,6 +950,7 @@ exports[`Nav Grouped List 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
+  theme="light"
 >
   <nav
     aria-label="Global"
@@ -1058,6 +1164,7 @@ exports[`Nav List with custom item nodes 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
+  theme="light"
 >
   <nav
     aria-label="Local"
@@ -1164,6 +1271,7 @@ exports[`Simple Nav List 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
+  theme="light"
 >
   <nav
     aria-label="Global"
@@ -1258,6 +1366,7 @@ exports[`Tertiary Nav List 1`] = `
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
+  theme="light"
 >
   <nav
     aria-label="Local"

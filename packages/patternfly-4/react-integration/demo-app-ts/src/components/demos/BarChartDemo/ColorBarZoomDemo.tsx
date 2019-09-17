@@ -1,13 +1,12 @@
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartAxis } from '@patternfly/react-charts';
 
-
 export class ColorBarZoomDemo extends React.Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
-  
+
   render() {
     return (
       <div>
@@ -19,7 +18,7 @@ export class ColorBarZoomDemo extends React.Component {
             legendPosition="bottom"
             height={400}
             padding={{
-              bottom: 75, // Adjusted to accomodate legend
+              bottom: 75, // Adjusted to accommodate legend
               left: 50,
               right: 50,
               top: 50
@@ -38,6 +37,6 @@ export class ColorBarZoomDemo extends React.Component {
           </Chart>
         </div>
       </div>
-    )
+    );
   }
 }

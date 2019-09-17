@@ -11,7 +11,7 @@ interface AlertActionCloseButtonProps extends ButtonProps {
   'aria-label'?: string;
   /** Variant Label for the Close button */
   variantLabel?: string;
-};
+}
 
 export const AlertActionCloseButton = ({
   className = '',

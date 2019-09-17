@@ -7,10 +7,15 @@ describe('Page Demo Test', () => {
 
   it('Test Page elements', () => {
     cy.get('#nav-toggle').then((hamburgerIcon: JQuery<HTMLDivElement>) => {
+      cy.get('#page-demo').within(() => {
         cy.get('.pf-c-page__sidebar.pf-m-expanded').should('exist');
         cy.get('.pf-c-page__sidebar.pf-m-collapsed').should('not.exist');
-        cy.wrap(hamburgerIcon).click();
+      });
+      cy.wrap(hamburgerIcon).click();
+      cy.get('#page-demo').within(() => {
         cy.get('.pf-c-page__sidebar.pf-m-collapsed').should('exist');
+        cy.get('.pf-c-page__sidebar.pf-m-expanded').should('not.exist');
+      });
     });
     cy.get('div[class="pf-c-page__header-brand-link"]').invoke('text').should('eq', 'Logo that\'s a <div>');
     cy.get('.pf-c-page__header-tools').invoke('text').should('contain', 'Toolbar | Avatar');

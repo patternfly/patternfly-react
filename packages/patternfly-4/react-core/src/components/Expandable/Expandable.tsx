@@ -22,34 +22,70 @@ export interface ExpandableProps {
   isActive?: boolean;
 }
 
-export const Expandable: React.SFC<ExpandableProps> = ({
-  className = '',
-  children,
-  isExpanded = false,
-  toggleText = '',
-  onToggle = () => undefined,
-  isFocused = false,
-  isActive = false,
-  isHovered = false,
-  ...props
-}: ExpandableProps) => (
-  <div {...props} className={css(styles.expandable, isExpanded && styles.modifiers.expanded, className)}>
-    <button
-      className={css(
-        styles.expandableToggle,
-        isFocused && styles.modifiers.focus,
-        isHovered && styles.modifiers.hover,
-        isActive && styles.modifiers.active
-      )}
-      type="button"
-      aria-expanded={isExpanded}
-      onClick={onToggle}
-    >
-      <AngleRightIcon className={css(styles.expandableToggleIcon)} aria-hidden />
-      <span>{toggleText}</span>
-    </button>
-    <div className={css(styles.expandableContent)} hidden={!isExpanded}>
-      {children}
-    </div>
-  </div>
-);
+interface ExpandableState {
+  isExpanded: boolean;
+}
+
+export class Expandable extends React.Component<ExpandableProps, ExpandableState> {
+  constructor(props: ExpandableProps) {
+    super(props);
+
+    this.state = {
+      isExpanded: props.isExpanded
+    };
+  }
+
+  static defaultProps = {
+    className: '',
+    toggleText: '',
+    onToggle: (): any => undefined,
+    isFocused: false,
+    isActive: false,
+    isHovered: false,
+  };
+
+  render() {
+    const {
+      onToggle: onToggleProp,
+      isFocused,
+      isHovered,
+      isActive,
+      className,
+      toggleText,
+      children,
+      ...props
+    } = this.props;
+    let isExpanded;
+    let onToggle = onToggleProp;
+
+    if (isExpanded === undefined) {
+      isExpanded = this.state.isExpanded;
+      onToggle = () => {
+        onToggleProp();
+        this.setState({ isExpanded: !this.state.isExpanded });
+      };
+    }
+
+    return (
+      <div {...props} className={css(styles.expandable, isExpanded && styles.modifiers.expanded, className)}>
+        <button
+          className={css(
+            styles.expandableToggle,
+            isFocused && styles.modifiers.focus,
+            isHovered && styles.modifiers.hover,
+            isActive && styles.modifiers.active
+          )}
+          type="button"
+          aria-expanded={isExpanded}
+          onClick={onToggle}
+        >
+          <AngleRightIcon className={css(styles.expandableToggleIcon)} aria-hidden />
+          <span>{toggleText}</span>
+        </button>
+        <div className={css(styles.expandableContent)} hidden={!isExpanded}>
+          {children}
+        </div>
+      </div>
+    );
+  }
+}

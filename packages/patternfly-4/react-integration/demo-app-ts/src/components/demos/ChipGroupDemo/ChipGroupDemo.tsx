@@ -2,15 +2,14 @@ import { Badge, Chip, ChipGroup } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 interface BadgeChipState {
-  badgeChipArray: Array<
-    {
+  badgeChipArray: {
       name: string,
       isRead: boolean,
       count: number
-    }>
+    }[];
 }
 
-export class BadgeChip extends Component<{}, BadgeChipState> {
+export class ChipGroupDemo extends Component<{}, BadgeChipState> {
   deleteItem: (id: any) => void;
   constructor(props) {
     super(props);
@@ -30,7 +29,7 @@ export class BadgeChip extends Component<{}, BadgeChipState> {
     };
     this.deleteItem = (id: any) => {
       const copyOfbadgeChipArray = this.state.badgeChipArray;
-      const index = copyOfbadgeChipArray.findIndex(chipObj => chipObj.name === id);
+      const index = copyOfbadgeChipArray.findIndex((chipObj) => chipObj.name === id);
 
       if (index !== -1) {
         copyOfbadgeChipArray.splice(index, 1);
@@ -40,14 +39,14 @@ export class BadgeChip extends Component<{}, BadgeChipState> {
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {
     const { badgeChipArray } = this.state;
     return (
       <ChipGroup>
-        {badgeChipArray.map(chip => (
+        {badgeChipArray.map((chip) => (
           <Chip key={chip.name} onClick={() => this.deleteItem(chip.name)}>
             {chip.name}
             <Badge isRead={chip.isRead}>{chip.count}</Badge>

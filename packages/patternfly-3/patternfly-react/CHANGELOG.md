@@ -3,6 +3,88 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.38.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.38.0...patternfly-react@2.38.1) (2019-09-09)
+
+
+### Bug Fixes
+
+* **HorizontalNavMenuItem:** Allow HorizontalNavMenuItem's title to be a node. ([#2825](https://github.com/patternfly/patternfly-react/issues/2825)) ([78adfa4](https://github.com/patternfly/patternfly-react/commit/78adfa4))
+
+
+
+
+
+# [2.38.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.37.1...patternfly-react@2.38.0) (2019-09-06)
+
+
+### Features
+
+* **component:** Add Date Picker component ([#1873](https://github.com/patternfly/patternfly-react/issues/1873)) ([5f6b467](https://github.com/patternfly/patternfly-react/commit/5f6b467))
+
+
+
+
+
+## [2.37.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.37.0...patternfly-react@2.37.1) (2019-08-30)
+
+**Note:** Version bump only for package patternfly-react
+
+
+
+
+
+# [2.37.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.10...patternfly-react@2.37.0) (2019-08-26)
+
+
+### Features
+
+* **AsyncTypeAheadSelect:** pass reference to inner component ([#2760](https://github.com/patternfly/patternfly-react/issues/2760)) ([5f99560](https://github.com/patternfly/patternfly-react/commit/5f99560))
+
+
+
+
+
+## [2.36.10](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.9...patternfly-react@2.36.10) (2019-08-26)
+
+**Note:** Version bump only for package patternfly-react
+
+
+
+
+
+## [2.36.9](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.8...patternfly-react@2.36.9) (2019-08-12)
+
+
+### Bug Fixes
+
+* **ExpandCollapse:** Add onToggle callback so that state of the component can be controlled externally ([#2628](https://github.com/patternfly/patternfly-react/issues/2628)) ([d97dcfc](https://github.com/patternfly/patternfly-react/commit/d97dcfc)), closes [#2610](https://github.com/patternfly/patternfly-react/issues/2610)
+
+
+
+
+
+## [2.36.8](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.7...patternfly-react@2.36.8) (2019-08-05)
+
+
+### Bug Fixes
+
+* **react-virtualized:** move react-virtualized to peerDependency ([#2643](https://github.com/patternfly/patternfly-react/issues/2643)) ([8c3c3ed](https://github.com/patternfly/patternfly-react/commit/8c3c3ed))
+
+
+
+
+
+## [2.36.7](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.6...patternfly-react@2.36.7) (2019-07-24)
+
+
+### Bug Fixes
+
+* **Donut Chart:** Add fixed point notation into percentage donut charts ([#2375](https://github.com/patternfly/patternfly-react/issues/2375)) ([937d2d7](https://github.com/patternfly/patternfly-react/commit/937d2d7))
+
+
+
+
+
 ## [2.36.6](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.36.5...patternfly-react@2.36.6) (2019-07-09)
 
 

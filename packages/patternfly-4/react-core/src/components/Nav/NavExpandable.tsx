@@ -29,7 +29,7 @@ export interface NavExpandableProps extends React.DetailedHTMLProps<React.LiHTML
 }
 
 interface NavExpandableState {
-  expandedState:boolean
+  expandedState: boolean;
 }
 
 export class NavExpandable extends React.Component<NavExpandableProps, NavExpandableState> {
@@ -65,7 +65,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
     } else {
       this.setState({ expandedState: val });
     }
-  };
+  }
 
   handleToggle = (
     e: React.MouseEvent<HTMLLIElement, MouseEvent>,
@@ -80,7 +80,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
     const { expandedState } = this.state;
     onToggle(e, groupId, !expandedState);
     this.onExpand(e, !expandedState);
-  };
+  }
 
   render() {
     const { id, title, srText, children, className, isActive, groupId, isExpanded, onExpand, ...props } = this.props;
@@ -104,8 +104,8 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
               className={css(styles.navLink)}
               id={srText ? null : this.id}
               href="#"
-              onClick={e => e.preventDefault()}
-              onMouseDown={e => e.preventDefault()}
+              onClick={(e) => e.preventDefault()}
+              onMouseDown={(e) => e.preventDefault()}
               aria-expanded={expandedState}
             >
               {title}

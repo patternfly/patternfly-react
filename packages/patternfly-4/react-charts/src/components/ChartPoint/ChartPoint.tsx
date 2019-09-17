@@ -4,10 +4,6 @@ import { PathHelpers } from './path-helpers';
 
 export interface ChartPointProps {
   /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-primitives#point
-   */
-  ' '?: any;
-  /**
    * A flag signifying whether the component is active
    */
   active?: boolean;
@@ -80,7 +76,7 @@ export interface ChartPointProps {
    * the point should render
    */
   symbol?: 'circle' | 'diamond' | 'plus' | 'minus' | 'square' | 'star' | 'triangleDown' | 'triangleUp' | 'dash' |
-    Function;
+    'threshold' | Function;
   /**
    * A transform that will be supplied to elements this component renders
    */
@@ -122,7 +118,8 @@ export const ChartPoint: React.FunctionComponent<ChartPointProps> = ({
       plus: PathHelpers.plus,
       minus: PathHelpers.minus,
       star: PathHelpers.star,
-      dash: PathHelpers.dash
+      dash: PathHelpers.dash,
+      threshold: PathHelpers.threshold
     };
     const symbol = Helpers.evaluateProp(props.symbol, datum, active);
     const symbolFunction = typeof pathFunctions[symbol] === 'function' ? pathFunctions[symbol] : pathFunctions.circle;

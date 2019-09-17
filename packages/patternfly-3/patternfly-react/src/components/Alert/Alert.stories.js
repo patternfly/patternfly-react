@@ -33,7 +33,7 @@ stories.add(
 
 stories.add(
   'Alert without dismiss',
-  withInfo(`This is the Alert without a dismiss icon.`)(() => (
+  withInfo('This is the Alert without a dismiss icon.')(() => (
     <Alert type={select('Type', ALERT_TYPES)}>
       <span>{text('Label', 'Well done! You successfully read this important alert message.')}</span>
     </Alert>

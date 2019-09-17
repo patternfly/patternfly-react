@@ -1,26 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Chart 1`] = `
-<Component
-  height={230}
-  width={230}
->
+exports[`ChartDonutUtilization 1`] = `
+<Fragment>
   <Component
-    data={
-      Array [
-        Object {
-          "x": 0,
-          "y": Object {},
-        },
-        Object {
-          "y": 100,
-        },
-      ]
-    }
-    donutHeight={230}
-    donutWidth={230}
     height={230}
-    standalone={false}
     theme={
       Object {
         "area": Object {
@@ -35,15 +18,14 @@ exports[`Chart 1`] = `
           "padding": 50,
           "style": Object {
             "data": Object {
-              "fill": "#151515",
-              "fillOpacity": 0.4,
-              "stroke": "transparent",
+              "fill": "#06c",
+              "fillOpacity": 0.3,
               "strokeWidth": 2,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -70,10 +52,10 @@ exports[`Chart 1`] = `
               "strokeWidth": 1,
             },
             "axisLabel": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
-              "padding": 100,
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+              "padding": 40,
               "stroke": "transparent",
               "textAnchor": "middle",
             },
@@ -85,17 +67,17 @@ exports[`Chart 1`] = `
               "strokeLinejoin": "round",
             },
             "tickLabels": Object {
-              "fill": "#4d5258",
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fill": "#4f5255",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
             "ticks": Object {
               "fill": "transparent",
               "size": 5,
-              "stroke": "none",
+              "stroke": "#d2d2d2",
               "strokeLinecap": "round",
               "strokeLinejoin": "round",
               "strokeWidth": 1,
@@ -122,9 +104,9 @@ exports[`Chart 1`] = `
               "strokeWidth": 0,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
@@ -149,9 +131,9 @@ exports[`Chart 1`] = `
               "strokeWidth": 1,
             },
             "maxLabels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
@@ -161,9 +143,9 @@ exports[`Chart 1`] = `
               "strokeWidth": 1,
             },
             "medianLabels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
@@ -173,31 +155,31 @@ exports[`Chart 1`] = `
               "strokeWidth": 1,
             },
             "minLabels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
             "q1": Object {
-              "fill": "#8b8d8f",
+              "fill": "#8a8d90",
               "padding": 8,
             },
             "q1Labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
             "q3": Object {
-              "fill": "#8b8d8f",
+              "fill": "#8a8d90",
               "padding": 8,
             },
             "q3Labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
@@ -224,9 +206,9 @@ exports[`Chart 1`] = `
               "strokeWidth": 1,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -265,9 +247,9 @@ exports[`Chart 1`] = `
               "strokeWidth": 2,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -292,7 +274,7 @@ exports[`Chart 1`] = `
             "#06c",
             "#ededed",
             "#d2d2d2",
-            "#bbb",
+            "#b8bbbe",
           ],
           "gutter": 20,
           "orientation": "horizontal",
@@ -301,16 +283,16 @@ exports[`Chart 1`] = `
               "type": "square",
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
             "title": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 2,
               "stroke": "transparent",
             },
@@ -331,13 +313,13 @@ exports[`Chart 1`] = `
             "data": Object {
               "fill": "transparent",
               "opacity": 1,
-              "stroke": "#151515",
+              "stroke": "#06c",
               "strokeWidth": 2,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -352,7 +334,7 @@ exports[`Chart 1`] = `
           ],
           "height": 230,
           "padAngle": 1,
-          "padding": 8,
+          "padding": 20,
           "style": Object {
             "data": Object {
               "padding": 8,
@@ -360,9 +342,9 @@ exports[`Chart 1`] = `
               "strokeWidth": 1,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 8,
               "stroke": "transparent",
             },
@@ -387,9 +369,9 @@ exports[`Chart 1`] = `
               "strokeWidth": 0,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -455,9 +437,9 @@ exports[`Chart 1`] = `
             },
             "labels": Object {
               "fill": "#ededed",
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 8,
               "pointerEvents": "none",
               "stroke": "transparent",
@@ -469,31 +451,478 @@ exports[`Chart 1`] = `
       }
     }
     width={230}
-  />
-</Component>
+  >
+    <Component
+      allowTooltip={true}
+      data={
+        Array [
+          Object {
+            "x": 0,
+            "y": Object {},
+          },
+          Object {
+            "y": 100,
+          },
+        ]
+      }
+      height={230}
+      standalone={false}
+      theme={
+        Object {
+          "area": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#06c",
+                "fillOpacity": 0.3,
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "axis": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "axis": Object {
+                "fill": "transparent",
+                "stroke": "#d2d2d2",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
+              },
+              "axisLabel": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 40,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+              "grid": Object {
+                "fill": "none",
+                "pointerEvents": "painted",
+                "stroke": "none",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+              },
+              "tickLabels": Object {
+                "fill": "#4f5255",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "ticks": Object {
+                "fill": "transparent",
+                "size": 5,
+                "stroke": "#d2d2d2",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
+              },
+            },
+            "width": 450,
+          },
+          "bar": Object {
+            "barWidth": 10,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#06c",
+                "padding": 8,
+                "stroke": "none",
+                "strokeWidth": 0,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+            },
+            "width": 450,
+          },
+          "boxplot": Object {
+            "boxWidth": 20,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "max": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "maxLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "median": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "medianLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "min": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "minLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "q1": Object {
+                "fill": "#8a8d90",
+                "padding": 8,
+              },
+              "q1Labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "q3": Object {
+                "fill": "#8a8d90",
+                "padding": 8,
+              },
+              "q3Labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+            },
+            "width": 450,
+          },
+          "candlestick": Object {
+            "candleColors": Object {
+              "negative": "#151515",
+              "positive": "#fff",
+            },
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "chart": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "width": 450,
+          },
+          "errorbar": Object {
+            "borderWidth": 8,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "opacity": 1,
+                "stroke": "#151515",
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "group": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "width": 450,
+          },
+          "legend": Object {
+            "colorScale": Array [
+              "#06c",
+              "#ededed",
+              "#d2d2d2",
+              "#b8bbbe",
+            ],
+            "gutter": 20,
+            "orientation": "horizontal",
+            "style": Object {
+              "data": Object {
+                "type": "square",
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "title": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 2,
+                "stroke": "transparent",
+              },
+            },
+            "titleOrientation": "top",
+          },
+          "line": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "opacity": 1,
+                "stroke": "#06c",
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "pie": Object {
+            "colorScale": Array [
+              "#06c",
+              "#ededed",
+            ],
+            "height": 230,
+            "padAngle": 1,
+            "padding": 20,
+            "style": Object {
+              "data": Object {
+                "padding": 8,
+                "stroke": "transparent",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 8,
+                "stroke": "transparent",
+              },
+            },
+            "width": 230,
+          },
+          "scatter": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#151515",
+                "opacity": 1,
+                "stroke": "transparent",
+                "strokeWidth": 0,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "stack": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "strokeWidth": 1,
+              },
+            },
+            "width": 450,
+          },
+          "tooltip": Object {
+            "cornerRadius": 0,
+            "flyoutStyle": Object {
+              "cornerRadius": 0,
+              "fill": "#151515",
+              "pointerEvents": "none",
+              "stroke": "#151515",
+              "strokeWidth": 0,
+            },
+            "pointerLength": 10,
+            "pointerWidth": 20,
+            "style": Object {
+              "fill": "#ededed",
+              "padding": 16,
+              "pointerEvents": "none",
+            },
+          },
+          "voronoi": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "stroke": "transparent",
+                "strokeWidth": 0,
+              },
+              "flyout": Object {
+                "fill": "#151515",
+                "pointerEvents": "none",
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fill": "#ededed",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 8,
+                "pointerEvents": "none",
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+        }
+      }
+      width={230}
+    />
+  </Component>
+</Fragment>
 `;
 
-exports[`Chart 2`] = `
-<Component
-  height={230}
-  width={230}
->
+exports[`ChartDonutUtilization 2`] = `
+<Fragment>
   <Component
-    data={
-      Array [
-        Object {
-          "x": 0,
-          "y": Object {},
-        },
-        Object {
-          "y": 100,
-        },
-      ]
-    }
-    donutHeight={230}
-    donutWidth={230}
     height={230}
-    standalone={false}
     theme={
       Object {
         "area": Object {
@@ -508,15 +937,14 @@ exports[`Chart 2`] = `
           "padding": 50,
           "style": Object {
             "data": Object {
-              "fill": "#151515",
-              "fillOpacity": 0.4,
-              "stroke": "transparent",
+              "fill": "#06c",
+              "fillOpacity": 0.3,
               "strokeWidth": 2,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -543,10 +971,10 @@ exports[`Chart 2`] = `
               "strokeWidth": 1,
             },
             "axisLabel": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
-              "padding": 100,
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+              "padding": 40,
               "stroke": "transparent",
               "textAnchor": "middle",
             },
@@ -558,17 +986,17 @@ exports[`Chart 2`] = `
               "strokeLinejoin": "round",
             },
             "tickLabels": Object {
-              "fill": "#4d5258",
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fill": "#4f5255",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
             "ticks": Object {
               "fill": "transparent",
               "size": 5,
-              "stroke": "none",
+              "stroke": "#d2d2d2",
               "strokeLinecap": "round",
               "strokeLinejoin": "round",
               "strokeWidth": 1,
@@ -595,9 +1023,9 @@ exports[`Chart 2`] = `
               "strokeWidth": 0,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
@@ -622,9 +1050,9 @@ exports[`Chart 2`] = `
               "strokeWidth": 1,
             },
             "maxLabels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
@@ -634,9 +1062,9 @@ exports[`Chart 2`] = `
               "strokeWidth": 1,
             },
             "medianLabels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
@@ -646,31 +1074,31 @@ exports[`Chart 2`] = `
               "strokeWidth": 1,
             },
             "minLabels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
             "q1": Object {
-              "fill": "#8b8d8f",
+              "fill": "#8a8d90",
               "padding": 8,
             },
             "q1Labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
             "q3": Object {
-              "fill": "#8b8d8f",
+              "fill": "#8a8d90",
               "padding": 8,
             },
             "q3Labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
@@ -697,9 +1125,9 @@ exports[`Chart 2`] = `
               "strokeWidth": 1,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -738,9 +1166,9 @@ exports[`Chart 2`] = `
               "strokeWidth": 2,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -765,7 +1193,7 @@ exports[`Chart 2`] = `
             "#06c",
             "#ededed",
             "#d2d2d2",
-            "#bbb",
+            "#b8bbbe",
           ],
           "gutter": 20,
           "orientation": "horizontal",
@@ -774,16 +1202,16 @@ exports[`Chart 2`] = `
               "type": "square",
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
             "title": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 2,
               "stroke": "transparent",
             },
@@ -804,13 +1232,13 @@ exports[`Chart 2`] = `
             "data": Object {
               "fill": "transparent",
               "opacity": 1,
-              "stroke": "#151515",
+              "stroke": "#06c",
               "strokeWidth": 2,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -825,7 +1253,7 @@ exports[`Chart 2`] = `
           ],
           "height": 230,
           "padAngle": 1,
-          "padding": 8,
+          "padding": 20,
           "style": Object {
             "data": Object {
               "padding": 8,
@@ -833,9 +1261,9 @@ exports[`Chart 2`] = `
               "strokeWidth": 1,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 8,
               "stroke": "transparent",
             },
@@ -860,9 +1288,9 @@ exports[`Chart 2`] = `
               "strokeWidth": 0,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -928,9 +1356,9 @@ exports[`Chart 2`] = `
             },
             "labels": Object {
               "fill": "#ededed",
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 8,
               "pointerEvents": "none",
               "stroke": "transparent",
@@ -942,31 +1370,478 @@ exports[`Chart 2`] = `
       }
     }
     width={230}
-  />
-</Component>
+  >
+    <Component
+      allowTooltip={true}
+      data={
+        Array [
+          Object {
+            "x": 0,
+            "y": Object {},
+          },
+          Object {
+            "y": 100,
+          },
+        ]
+      }
+      height={230}
+      standalone={false}
+      theme={
+        Object {
+          "area": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#06c",
+                "fillOpacity": 0.3,
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "axis": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "axis": Object {
+                "fill": "transparent",
+                "stroke": "#d2d2d2",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
+              },
+              "axisLabel": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 40,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+              "grid": Object {
+                "fill": "none",
+                "pointerEvents": "painted",
+                "stroke": "none",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+              },
+              "tickLabels": Object {
+                "fill": "#4f5255",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "ticks": Object {
+                "fill": "transparent",
+                "size": 5,
+                "stroke": "#d2d2d2",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
+              },
+            },
+            "width": 450,
+          },
+          "bar": Object {
+            "barWidth": 10,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#06c",
+                "padding": 8,
+                "stroke": "none",
+                "strokeWidth": 0,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+            },
+            "width": 450,
+          },
+          "boxplot": Object {
+            "boxWidth": 20,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "max": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "maxLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "median": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "medianLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "min": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "minLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "q1": Object {
+                "fill": "#8a8d90",
+                "padding": 8,
+              },
+              "q1Labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "q3": Object {
+                "fill": "#8a8d90",
+                "padding": 8,
+              },
+              "q3Labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+            },
+            "width": 450,
+          },
+          "candlestick": Object {
+            "candleColors": Object {
+              "negative": "#151515",
+              "positive": "#fff",
+            },
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "chart": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "width": 450,
+          },
+          "errorbar": Object {
+            "borderWidth": 8,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "opacity": 1,
+                "stroke": "#151515",
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "group": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "width": 450,
+          },
+          "legend": Object {
+            "colorScale": Array [
+              "#06c",
+              "#ededed",
+              "#d2d2d2",
+              "#b8bbbe",
+            ],
+            "gutter": 20,
+            "orientation": "horizontal",
+            "style": Object {
+              "data": Object {
+                "type": "square",
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "title": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 2,
+                "stroke": "transparent",
+              },
+            },
+            "titleOrientation": "top",
+          },
+          "line": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "opacity": 1,
+                "stroke": "#06c",
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "pie": Object {
+            "colorScale": Array [
+              "#06c",
+              "#ededed",
+            ],
+            "height": 230,
+            "padAngle": 1,
+            "padding": 20,
+            "style": Object {
+              "data": Object {
+                "padding": 8,
+                "stroke": "transparent",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 8,
+                "stroke": "transparent",
+              },
+            },
+            "width": 230,
+          },
+          "scatter": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#151515",
+                "opacity": 1,
+                "stroke": "transparent",
+                "strokeWidth": 0,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "stack": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "strokeWidth": 1,
+              },
+            },
+            "width": 450,
+          },
+          "tooltip": Object {
+            "cornerRadius": 0,
+            "flyoutStyle": Object {
+              "cornerRadius": 0,
+              "fill": "#151515",
+              "pointerEvents": "none",
+              "stroke": "#151515",
+              "strokeWidth": 0,
+            },
+            "pointerLength": 10,
+            "pointerWidth": 20,
+            "style": Object {
+              "fill": "#ededed",
+              "padding": 16,
+              "pointerEvents": "none",
+            },
+          },
+          "voronoi": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "stroke": "transparent",
+                "strokeWidth": 0,
+              },
+              "flyout": Object {
+                "fill": "#151515",
+                "pointerEvents": "none",
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fill": "#ededed",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 8,
+                "pointerEvents": "none",
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+        }
+      }
+      width={230}
+    />
+  </Component>
+</Fragment>
 `;
 
 exports[`renders component data 1`] = `
-<Component
-  height={200}
-  width={200}
->
+<Fragment>
   <Component
-    data={
-      Array [
-        Object {
-          "x": "Cats",
-          "y": 35,
-        },
-        Object {
-          "y": 65,
-        },
-      ]
-    }
-    donutHeight={200}
-    donutWidth={200}
     height={200}
-    standalone={false}
     theme={
       Object {
         "area": Object {
@@ -981,15 +1856,14 @@ exports[`renders component data 1`] = `
           "padding": 50,
           "style": Object {
             "data": Object {
-              "fill": "#151515",
-              "fillOpacity": 0.4,
-              "stroke": "transparent",
+              "fill": "#06c",
+              "fillOpacity": 0.3,
               "strokeWidth": 2,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -1016,10 +1890,10 @@ exports[`renders component data 1`] = `
               "strokeWidth": 1,
             },
             "axisLabel": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
-              "padding": 100,
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+              "padding": 40,
               "stroke": "transparent",
               "textAnchor": "middle",
             },
@@ -1031,17 +1905,17 @@ exports[`renders component data 1`] = `
               "strokeLinejoin": "round",
             },
             "tickLabels": Object {
-              "fill": "#4d5258",
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fill": "#4f5255",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
             "ticks": Object {
               "fill": "transparent",
               "size": 5,
-              "stroke": "none",
+              "stroke": "#d2d2d2",
               "strokeLinecap": "round",
               "strokeLinejoin": "round",
               "strokeWidth": 1,
@@ -1068,9 +1942,9 @@ exports[`renders component data 1`] = `
               "strokeWidth": 0,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
@@ -1095,9 +1969,9 @@ exports[`renders component data 1`] = `
               "strokeWidth": 1,
             },
             "maxLabels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
@@ -1107,9 +1981,9 @@ exports[`renders component data 1`] = `
               "strokeWidth": 1,
             },
             "medianLabels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
@@ -1119,31 +1993,31 @@ exports[`renders component data 1`] = `
               "strokeWidth": 1,
             },
             "minLabels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
             "q1": Object {
-              "fill": "#8b8d8f",
+              "fill": "#8a8d90",
               "padding": 8,
             },
             "q1Labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
             "q3": Object {
-              "fill": "#8b8d8f",
+              "fill": "#8a8d90",
               "padding": 8,
             },
             "q3Labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
@@ -1170,9 +2044,9 @@ exports[`renders component data 1`] = `
               "strokeWidth": 1,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -1211,9 +2085,9 @@ exports[`renders component data 1`] = `
               "strokeWidth": 2,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -1238,7 +2112,7 @@ exports[`renders component data 1`] = `
             "#06c",
             "#ededed",
             "#d2d2d2",
-            "#bbb",
+            "#b8bbbe",
           ],
           "gutter": 20,
           "orientation": "horizontal",
@@ -1247,16 +2121,16 @@ exports[`renders component data 1`] = `
               "type": "square",
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
             },
             "title": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 2,
               "stroke": "transparent",
             },
@@ -1277,13 +2151,13 @@ exports[`renders component data 1`] = `
             "data": Object {
               "fill": "transparent",
               "opacity": 1,
-              "stroke": "#151515",
+              "stroke": "#06c",
               "strokeWidth": 2,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -1298,7 +2172,7 @@ exports[`renders component data 1`] = `
           ],
           "height": 230,
           "padAngle": 1,
-          "padding": 8,
+          "padding": 20,
           "style": Object {
             "data": Object {
               "padding": 8,
@@ -1306,9 +2180,9 @@ exports[`renders component data 1`] = `
               "strokeWidth": 1,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 8,
               "stroke": "transparent",
             },
@@ -1333,9 +2207,9 @@ exports[`renders component data 1`] = `
               "strokeWidth": 0,
             },
             "labels": Object {
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 10,
               "stroke": "transparent",
               "textAnchor": "middle",
@@ -1401,9 +2275,9 @@ exports[`renders component data 1`] = `
             },
             "labels": Object {
               "fill": "#ededed",
-              "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+              "fontFamily": "var(--pf-chart-global--FontFamily)",
               "fontSize": 14,
-              "letterSpacing": "normal",
+              "letterSpacing": "var(--pf-chart-global--letter-spacing)",
               "padding": 8,
               "pointerEvents": "none",
               "stroke": "transparent",
@@ -1415,6 +2289,470 @@ exports[`renders component data 1`] = `
       }
     }
     width={200}
-  />
-</Component>
+  >
+    <Component
+      allowTooltip={true}
+      data={
+        Array [
+          Object {
+            "x": "Cats",
+            "y": 35,
+          },
+          Object {
+            "y": 65,
+          },
+        ]
+      }
+      height={200}
+      standalone={false}
+      theme={
+        Object {
+          "area": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#06c",
+                "fillOpacity": 0.3,
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "axis": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "axis": Object {
+                "fill": "transparent",
+                "stroke": "#d2d2d2",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
+              },
+              "axisLabel": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 40,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+              "grid": Object {
+                "fill": "none",
+                "pointerEvents": "painted",
+                "stroke": "none",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+              },
+              "tickLabels": Object {
+                "fill": "#4f5255",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "ticks": Object {
+                "fill": "transparent",
+                "size": 5,
+                "stroke": "#d2d2d2",
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "strokeWidth": 1,
+              },
+            },
+            "width": 450,
+          },
+          "bar": Object {
+            "barWidth": 10,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#06c",
+                "padding": 8,
+                "stroke": "none",
+                "strokeWidth": 0,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+            },
+            "width": 450,
+          },
+          "boxplot": Object {
+            "boxWidth": 20,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "max": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "maxLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "median": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "medianLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "min": Object {
+                "padding": 8,
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "minLabels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "q1": Object {
+                "fill": "#8a8d90",
+                "padding": 8,
+              },
+              "q1Labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "q3": Object {
+                "fill": "#8a8d90",
+                "padding": 8,
+              },
+              "q3Labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+            },
+            "width": 450,
+          },
+          "candlestick": Object {
+            "candleColors": Object {
+              "negative": "#151515",
+              "positive": "#fff",
+            },
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "chart": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "width": 450,
+          },
+          "errorbar": Object {
+            "borderWidth": 8,
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "opacity": 1,
+                "stroke": "#151515",
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "group": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "width": 450,
+          },
+          "legend": Object {
+            "colorScale": Array [
+              "#06c",
+              "#ededed",
+              "#d2d2d2",
+              "#b8bbbe",
+            ],
+            "gutter": 20,
+            "orientation": "horizontal",
+            "style": Object {
+              "data": Object {
+                "type": "square",
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+              },
+              "title": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 2,
+                "stroke": "transparent",
+              },
+            },
+            "titleOrientation": "top",
+          },
+          "line": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "opacity": 1,
+                "stroke": "#06c",
+                "strokeWidth": 2,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "pie": Object {
+            "colorScale": Array [
+              "#06c",
+              "#ededed",
+            ],
+            "height": 230,
+            "padAngle": 1,
+            "padding": 20,
+            "style": Object {
+              "data": Object {
+                "padding": 8,
+                "stroke": "transparent",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 8,
+                "stroke": "transparent",
+              },
+            },
+            "width": 230,
+          },
+          "scatter": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "#151515",
+                "opacity": 1,
+                "stroke": "transparent",
+                "strokeWidth": 0,
+              },
+              "labels": Object {
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 10,
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+          "stack": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "strokeWidth": 1,
+              },
+            },
+            "width": 450,
+          },
+          "tooltip": Object {
+            "cornerRadius": 0,
+            "flyoutStyle": Object {
+              "cornerRadius": 0,
+              "fill": "#151515",
+              "pointerEvents": "none",
+              "stroke": "#151515",
+              "strokeWidth": 0,
+            },
+            "pointerLength": 10,
+            "pointerWidth": 20,
+            "style": Object {
+              "fill": "#ededed",
+              "padding": 16,
+              "pointerEvents": "none",
+            },
+          },
+          "voronoi": Object {
+            "colorScale": Array [
+              "#06c",
+              "#8bc1f7",
+              "#002f5d",
+              "#519de9",
+              "#004b95",
+            ],
+            "height": 300,
+            "padding": 50,
+            "style": Object {
+              "data": Object {
+                "fill": "transparent",
+                "stroke": "transparent",
+                "strokeWidth": 0,
+              },
+              "flyout": Object {
+                "fill": "#151515",
+                "pointerEvents": "none",
+                "stroke": "#151515",
+                "strokeWidth": 1,
+              },
+              "labels": Object {
+                "fill": "#ededed",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
+                "fontSize": 14,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 8,
+                "pointerEvents": "none",
+                "stroke": "transparent",
+                "textAnchor": "middle",
+              },
+            },
+            "width": 450,
+          },
+        }
+      }
+      width={200}
+    />
+  </Component>
+</Fragment>
 `;

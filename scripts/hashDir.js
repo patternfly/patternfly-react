@@ -24,19 +24,25 @@ function filewalker(dir) {
 
 function hashDir(dirPath) {
   const md5 = crypto.createHash('md5');
+  const stat = fs.statSync(dirPath);
 
-  const files = filewalker(dirPath);
-  files
-    .sort((f1, f2) => f1.path.localeCompare(f2.path))
-    .forEach(file => {
-      if (file.type === 'file') {
-        const fileContents = fs.readFileSync(file.path);
-        md5.update(fileContents);
-      }
-      else if (file.type === 'dir') {
-        md5.update(file.path);
-      }
-    });
+  if (stat && stat.isFile()) {
+    const fileContents = fs.readFileSync(dirPath);
+    md5.update(fileContents);
+  }
+  else {
+    filewalker(dirPath)
+      .sort((f1, f2) => f1.path.localeCompare(f2.path))
+      .forEach(file => {
+        if (file.type === 'file') {
+          const fileContents = fs.readFileSync(file.path);
+          md5.update(fileContents);
+        }
+        else if (file.type === 'dir') {
+          md5.update(file.path);
+        }
+      });
+  }
   return md5.digest('hex');
 }
 

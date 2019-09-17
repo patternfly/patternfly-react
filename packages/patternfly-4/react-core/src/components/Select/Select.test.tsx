@@ -1,11 +1,25 @@
-import React from 'react';
+import * as React from 'react';
 import { mount } from 'enzyme';
 import { Select } from './Select';
-import { SelectOption } from './SelectOption';
+import { SelectOption, SelectOptionObject } from './SelectOption';
 import { CheckboxSelectOption } from './CheckboxSelectOption';
 import { SelectGroup } from './SelectGroup';
 import { CheckboxSelectGroup } from './CheckboxSelectGroup';
-import { SelectVariant } from './selectConstants';
+import { SelectVariant, SelectDirection } from './selectConstants';
+
+class User implements SelectOptionObject {
+  private firstName: string;
+  private lastName: string;
+  private title: string;
+
+  constructor(title: string, firstName: string, lastName: string) {
+    this.title = title;
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  toString = (): string => `${this.title}: ${this.firstName} ${this.lastName}`;
+}
 
 const selectOptions = [
   <SelectOption value="Mr" key="0" />,
@@ -21,11 +35,26 @@ const checkboxSelectOptions = [
   <CheckboxSelectOption value="Other" key="3" />
 ];
 
+const selectOptionsCustom = [
+  <SelectOption value={new User('Mr', 'User', 'One')} key="0" />,
+  <SelectOption value={new User('Mrs', 'New', 'User')} key="1" />,
+  <SelectOption value={new User('Ms', 'Test', 'Three')} key="2" />
+];
+
 describe('select', () => {
   describe('single select', () => {
     test('renders closed successfully', () => {
       const view = mount(
         <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()}>
+          {selectOptions}
+        </Select>
+      );
+      expect(view).toMatchSnapshot();
+    });
+
+    test('renders disabled successfully', () => {
+      const view = mount(
+        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isDisabled>
           {selectOptions}
         </Select>
       );
@@ -38,6 +67,56 @@ describe('select', () => {
           {selectOptions}
         </Select>
       );
+      expect(view).toMatchSnapshot();
+    });
+    test('renders expanded successfully with custom objects', () => {
+      const view = mount(
+        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+          {selectOptionsCustom}
+        </Select>
+      );
+      expect(view).toMatchSnapshot();
+    });
+  });
+
+  test('renders up drection successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.single} direction={SelectDirection.up} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {selectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  describe('custom select filter', () => {
+    test('filters properly', () => {
+      const customFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
+        let input: RegExp;
+        try {
+          input = new RegExp(e.target.value, 'i');
+        } catch (err) {
+          input = new RegExp(e.target.value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+        }
+        const typeaheadFilteredChildren =
+          e.target.value !== ''
+            ? selectOptions.filter((child: React.ReactNode) => input.test((child as React.ReactElement).props.value))
+            : selectOptions;
+        return typeaheadFilteredChildren;
+      };
+      const view = mount(
+        <Select
+          variant={SelectVariant.typeahead}
+          onSelect={jest.fn()}
+          onToggle={jest.fn()}
+          onFilter={customFilter}
+          isExpanded
+        >
+          {selectOptions}
+        </Select>
+      );
+      view.find('input').simulate('change', { target: { value: 'r' } });
+      view.update();
+      expect((view.state('typeaheadFilteredChildren') as []).length).toBe(3);
       expect(view).toMatchSnapshot();
     });
   });
@@ -85,6 +164,15 @@ describe('checkbox select', () => {
     const view = mount(
       <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
         {checkboxSelectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders expanded successfully with custom objects', () => {
+    const view = mount(
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+        {selectOptionsCustom}
       </Select>
     );
     expect(view).toMatchSnapshot();
@@ -148,6 +236,24 @@ describe('typeahead select', () => {
         onToggle={jest.fn()}
         onClear={jest.fn()}
         isExpanded
+      >
+        {selectOptions}
+      </Select>
+    );
+    const inst = view.instance() as Select;
+    inst.onChange(mockEvent);
+    view.update();
+    expect(view).toMatchSnapshot();
+  });
+
+  test('test creatable option', () => {
+    const mockEvent = { target: { value: 'test' } } as React.ChangeEvent<HTMLInputElement>;
+    const view = mount(
+      <Select
+        variant={SelectVariant.typeahead}
+        onToggle={jest.fn()}
+        isExpanded
+        isCreatable
       >
         {selectOptions}
       </Select>
@@ -239,5 +345,44 @@ describe('API', () => {
       </Select>
     );
     expect(myMock).not.toBeCalled();
+  });
+});
+
+describe('toggle icon', () => {
+  const ToggleIcon = <div>Icon</div>;
+  test('select single', () => {
+    const view = mount(
+      <Select toggleIcon={ToggleIcon} variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {selectOptions}
+      </Select>
+    );
+    expect(view.find('span.pf-c-select__toggle-icon')).toMatchSnapshot();
+  });
+
+  test('select checkbox', () => {
+    const view = mount(
+      <Select toggleIcon={ToggleIcon} variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {selectOptions}
+      </Select>
+    );
+    expect(view.find('span.pf-c-select__toggle-icon')).toMatchSnapshot();
+  });
+
+  test('typeahead select', () => {
+    const view = mount(
+      <Select toggleIcon={ToggleIcon} variant={SelectVariant.typeahead} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {selectOptions}
+      </Select>
+    );
+    expect(view.find('span.pf-c-select__toggle-icon')).toMatchSnapshot();
+  });
+
+  test('typeahead multi select', () => {
+    const view = mount(
+      <Select toggleIcon={ToggleIcon} variant={SelectVariant.typeaheadMulti} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {selectOptions}
+      </Select>
+    );
+    expect(view.find('span.pf-c-select__toggle-icon')).toMatchSnapshot();
   });
 });

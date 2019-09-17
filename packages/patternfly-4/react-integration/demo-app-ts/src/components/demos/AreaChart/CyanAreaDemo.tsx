@@ -8,7 +8,7 @@ export class CyanAreaDemo extends React.Component {
       <div>
         <div style={{height: '200px', width: '800px'}}>
           <Chart
-            containerComponent={<ChartVoronoiContainer labels={datum => `${datum.name}: ${datum.y}`} />}
+            containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} />}
             legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}
             legendOrientation="vertical"
             legendPosition="right"
@@ -16,7 +16,7 @@ export class CyanAreaDemo extends React.Component {
             padding={{
               bottom: 50,
               left: 50,
-              right: 200, // Adjusted to accomodate legend
+              right: 200, // Adjusted to accommodate legend
               top: 50
             }}
             themeColor={ChartThemeColor.cyan}
@@ -55,6 +55,6 @@ export class CyanAreaDemo extends React.Component {
           </Chart>
         </div>
       </div>
-    )
+    );
   }
 }

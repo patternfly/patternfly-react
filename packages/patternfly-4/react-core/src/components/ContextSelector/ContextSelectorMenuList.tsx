@@ -6,9 +6,9 @@ export interface ContextSelectorMenuListProps {
   /** Content rendered inside the Context Selector Menu */
   children?: React.ReactNode;
   /** Classess applied to root element of Context Selector menu */
-  className?: string; 
+  className?: string;
   /** Flag to indicate if Context Selector menu is opened */
-  isOpen?: boolean; 
+  isOpen?: boolean;
 }
 
 export class ContextSelectorMenuList extends React.Component<ContextSelectorMenuListProps> {
@@ -17,13 +17,13 @@ export class ContextSelectorMenuList extends React.Component<ContextSelectorMenu
     children: null as React.ReactNode,
     className: '',
     isOpen: true
-  }
+  };
 
   refsCollection = [] as any;
 
   sendRef = (index: number, ref: any) => {
     this.refsCollection[index] = ref;
-  };
+  }
 
   extendChildren() {
     return React.Children.map(this.props.children, (child, index) =>
@@ -35,11 +35,11 @@ export class ContextSelectorMenuList extends React.Component<ContextSelectorMenu
   }
 
   render = () => {
-    const { 
-      className, 
-      isOpen, 
-      children, 
-      ...props 
+    const {
+      className,
+      isOpen,
+      children,
+      ...props
     } = this.props;
     return (
       <ul className={css(styles.contextSelectorMenuList, className)} hidden={!isOpen} role="menu" {...props}>

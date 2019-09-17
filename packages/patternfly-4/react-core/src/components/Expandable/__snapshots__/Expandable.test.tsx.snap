@@ -5,7 +5,6 @@ exports[`Expandable 1`] = `
   className="pf-c-expandable"
 >
   <button
-    aria-expanded={false}
     className="pf-c-expandable__toggle"
     onClick={[Function]}
     type="button"
@@ -32,6 +31,7 @@ exports[`Expandable 1`] = `
 exports[`Renders Expandable expanded 1`] = `
 <div
   className="pf-c-expandable pf-m-expanded"
+  isExpanded={true}
 >
   <button
     aria-expanded={true}
@@ -52,6 +52,36 @@ exports[`Renders Expandable expanded 1`] = `
   <div
     className="pf-c-expandable__content"
     hidden={false}
+  >
+     test 
+  </div>
+</div>
+`;
+
+exports[`Renders Uncontrolled Expandable 1`] = `
+<div
+  className="pf-c-expandable"
+>
+  <button
+    className="pf-c-expandable__toggle"
+    onClick={[Function]}
+    type="button"
+  >
+    <AngleRightIcon
+      aria-hidden={true}
+      className="pf-c-expandable__toggle-icon"
+      color="currentColor"
+      noVerticalAlign={false}
+      size="sm"
+      title={null}
+    />
+    <span>
+      Show More
+    </span>
+  </button>
+  <div
+    className="pf-c-expandable__content"
+    hidden={true}
   >
      test 
   </div>

@@ -9,17 +9,17 @@ export interface FormSelectOptionGroupProps extends Omit<React.HTMLProps<HTMLOpt
    /** the label for the option */
    label: string;
    /** flag indicating if the Option Group is disabled */
-   isDisabled?: boolean; 
+   isDisabled?: boolean;
 }
 
 export const FormSelectOptionGroup: React.FunctionComponent<FormSelectOptionGroupProps> = ({
   children = null,
   className = '',
-  isDisabled = false, 
+  isDisabled = false,
   label,
   ...props
 }: FormSelectOptionGroupProps) => (
   <optgroup {...props} disabled={!!isDisabled} className={className} label={label}>
     {children}
   </optgroup>
-)
+);

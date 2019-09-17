@@ -49,6 +49,10 @@ export default <Button variant="primary">Button</Button>;
 
 All css related to each component is provided within it. There is no component level CSS to import.
 
+# Applying Red Hat Fonts (Optional) 
+If you would like to use Red Hat fonts instead of Overpass, simply add the class `.pf-m-redhat-font` to an element that wraps your application (ideally `<html>` or `<body>`) to adopt the CSS changes that introduce the Red Hat fonts into PatternFly.
+
+
 # Documentation
 
 This project uses Gatsby. For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).

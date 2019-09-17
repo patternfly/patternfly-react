@@ -3,6 +3,126 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.26...@patternfly/react-tokens@2.6.27) (2019-09-13)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.6.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.25...@patternfly/react-tokens@2.6.26) (2019-09-10)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.6.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.24...@patternfly/react-tokens@2.6.25) (2019-09-09)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.6.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.23...@patternfly/react-tokens@2.6.24) (2019-09-06)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.6.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.22...@patternfly/react-tokens@2.6.23) (2019-09-05)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.6.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.21...@patternfly/react-tokens@2.6.22) (2019-09-04)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.6.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.20...@patternfly/react-tokens@2.6.21) (2019-08-30)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.6.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.19...@patternfly/react-tokens@2.6.20) (2019-08-30)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.6.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.18...@patternfly/react-tokens@2.6.19) (2019-08-27)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.6.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.17...@patternfly/react-tokens@2.6.18) (2019-08-23)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.6.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.16...@patternfly/react-tokens@2.6.17) (2019-08-19)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.6.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.15...@patternfly/react-tokens@2.6.16) (2019-08-12)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.6.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.14...@patternfly/react-tokens@2.6.15) (2019-08-09)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.6.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.13...@patternfly/react-tokens@2.6.14) (2019-08-05)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.6.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.12...@patternfly/react-tokens@2.6.13) (2019-07-24)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
 ## [2.6.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.6.11...@patternfly/react-tokens@2.6.12) (2019-07-22)
 
 **Note:** Version bump only for package @patternfly/react-tokens

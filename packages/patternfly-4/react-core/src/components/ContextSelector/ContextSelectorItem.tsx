@@ -5,23 +5,23 @@ import { ContextSelectorContext } from './contextSelectorConstants';
 
 export interface ContextSelectorItemProps {
   /** Anything which can be rendered as Context Selector item */
-  children?: React.ReactNode; 
+  children?: React.ReactNode;
   /** Classes applied to root element of the Context Selector item */
-  className?: string; 
+  className?: string;
   /** Render Context  Selector item as disabled */
-  isDisabled?: boolean; 
+  isDisabled?: boolean;
   // isSelected?
   /** Forces display of the hover state of the element */
-  isHovered?: boolean; 
+  isHovered?: boolean;
   /** Callback for click event */
-  onClick: (event: React.MouseEvent) => void; 
+  onClick: (event: React.MouseEvent) => void;
   /** internal index of the item */
-  index: number; 
+  index: number;
   /** Internal callback for ref tracking */
-  sendRef: (index: number, current: any) => void; 
+  sendRef: (index: number, current: any) => void;
 }
 
-export class ContextSelectorItem extends React.Component<ContextSelectorItemProps>{
+export class ContextSelectorItem extends React.Component<ContextSelectorItemProps> {
   static defaultProps = {
     children: null as React.ReactNode,
     className: '',
@@ -30,8 +30,8 @@ export class ContextSelectorItem extends React.Component<ContextSelectorItemProp
     onClick: (): any => undefined,
     index: undefined as number,
     sendRef: Function.prototype
-  }
-  
+  };
+
   ref: React.RefObject<HTMLButtonElement> = React.createRef();
 
   componentDidMount() {
@@ -53,7 +53,7 @@ export class ContextSelectorItem extends React.Component<ContextSelectorItemProp
                 className
               )}
               ref={this.ref}
-              onClick={event => {
+              onClick={(event) => {
                 if (!isDisabled) {
                   onClick(event);
                   onSelect(event, children);

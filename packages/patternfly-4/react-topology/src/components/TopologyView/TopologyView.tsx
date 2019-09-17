@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
-
-import { topologyViewCss } from './css/topology-view-css';
-
-topologyViewCss.inject();
+import '@patternfly/react-styles/css/components/Topology/topology-view.css';
 
 export interface TopologyViewProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the view */
@@ -19,7 +16,7 @@ export interface TopologyViewProps extends React.HTMLProps<HTMLDivElement> {
   /** Topology side bar (typically a TopologySideBar), used to display information for elements in graph */
   sideBar?: React.ReactNode;
   sideBarOpen?: boolean;
-};
+}
 
 export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
   className = '',

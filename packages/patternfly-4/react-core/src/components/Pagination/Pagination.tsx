@@ -60,10 +60,14 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   itemCount: number;
   /** Position where pagination is rendered. */
   variant?: 'top' | 'bottom' | 'left' | 'right';
+  /** Flag indicating if pagination is disabled */
+  isDisabled?: boolean;
   /** Number of items per page. */
   perPage?: number;
   /** Select from options to number of items per page. */
   perPageOptions?: PerPageOptions[];
+  /** Page we start at. */
+  firstPage?: number;
   /** Current page number. */
   page?: number;
   /** First index of items on current page. */
@@ -91,13 +95,14 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   /** Function called when user inputs page number. */
   onPageInput?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user selects number of items per page. */
-  onPerPageSelect?: (event: React.MouseEvent<HTMLAnchorElement>|React.KeyboardEvent, perPage: number) => void;
+  onPerPageSelect?: (event: React.MouseEvent | React.KeyboardEvent | MouseEvent, perPage: number) => void;
 }
 
 export const Pagination: React.FunctionComponent<PaginationProps> = ({
   children = null,
   className = '',
   variant = PaginationVariant.top,
+  isDisabled = false,
   perPage = defaultPerPageOptions[0].value,
   titles = {
     items: 'items',
@@ -112,6 +117,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
     currPage: 'Current page',
     paginationTitle: 'Pagination'
   },
+  firstPage = 1,
   page = 1,
   itemCount,
   itemsStart = null,
@@ -130,9 +136,15 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   ...props
 }: PaginationProps) => {
   const lastPage = Math.ceil(itemCount / perPage);
-  const firstIndex = itemCount === 0 ? 0 : (page - 1) * perPage + 1;
+  if (page < firstPage) {
+    page = firstPage;
+  } else if (page > lastPage) {
+    page = lastPage;
+  }
+
+  const firstIndex = itemCount <= 0 ? 0 : (page - 1) * perPage + 1;
   let lastIndex;
-  if (itemCount === 0) {
+  if (itemCount <= 0) {
     lastIndex = 0;
   } else {
     lastIndex = page === lastPage ? itemCount : page * perPage;
@@ -161,6 +173,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         dropDirection={dropDirection}
         widgetId={widgetId}
         toggleTemplate={toggleTemplate}
+        isDisabled={isDisabled}
       />
       <Navigation
         pagesTitle={titles.page}
@@ -170,7 +183,8 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         toFirstPage={titles.toFirstPage}
         currPage={titles.currPage}
         paginationTitle={titles.paginationTitle}
-        page={page}
+        page={itemCount <= 0 ? 0 : page}
+        firstPage={itemsStart !== null ? itemsStart : firstIndex}
         lastPage={lastPage}
         onSetPage={onSetPage}
         onFirstClick={onFirstClick}
@@ -178,6 +192,7 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
         onNextClick={onNextClick}
         onLastClick={onLastClick}
         onPageInput={onPageInput}
+        isDisabled={isDisabled}
       />
       {children}
     </div>

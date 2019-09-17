@@ -2,25 +2,24 @@ import React from 'react';
 import { ApplicationLauncher, DropdownItem, Tooltip } from '@patternfly/react-core';
 
 interface ApplicationLauncherState {
-  isOpen: boolean; 
+  isOpen: boolean;
 }
 
-
 export class ApplicationLauncherDemo extends React.Component<null, ApplicationLauncherState> {
-  onToggle: (isOpen: boolean) => void; 
-  onSelect: (event: any) => void; 
+  onToggle: (isOpen: boolean) => void;
+  onSelect: (event: any) => void;
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false
     };
-    this.onToggle = isOpen => {
+    this.onToggle = (isOpen) => {
       this.setState({
         isOpen
       });
     };
-    this.onSelect = event => {
-      console.log("This works")
+    this.onSelect = (event) => {
+      console.log('This works');
       this.setState({
         isOpen: !this.state.isOpen
       });
@@ -28,7 +27,7 @@ export class ApplicationLauncherDemo extends React.Component<null, ApplicationLa
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {

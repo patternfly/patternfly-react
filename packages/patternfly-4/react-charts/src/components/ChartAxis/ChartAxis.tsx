@@ -11,17 +11,13 @@ import {
   VictoryAxis,
   VictoryAxisProps,
 } from 'victory';
-import { ChartThemeDefinition } from "../ChartTheme";
+import { ChartThemeDefinition } from '../ChartTheme';
 import { getAxisTheme, getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
 export interface ChartAxisProps extends VictoryAxisProps {
-  /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-axis/
-   */
-  ' '?: any;
   /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
@@ -83,7 +79,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * The domain prop describes the range of values your axis will include. This prop should be
    * given as a array of the minimum and maximum expected values for your axis.
    * If this value is not given it will be calculated based on the scale or tickValues.
-   * @examples [-1, 1]
+   * @example [-1, 1]
    */
   domain?: DomainPropType;
   /**
@@ -108,7 +104,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * function will be called with the calculated props for the individual selected
    * element (i.e. a single tick), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
-   * @examples
+   * @example
    * events={[
    *   {
    *     target: "grid",
@@ -132,9 +128,9 @@ export interface ChartAxisProps extends VictoryAxisProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"axis" | "axisLabel" | "grid" | "ticks" | "tickLabels" | "parent", number | string>[];
+  events?: EventPropTypeInterface<'axis' | 'axisLabel' | 'grid' | 'ticks' | 'tickLabels' | 'parent', number | string>[];
   /**
-   * ChartLegend uses the standard externalEventMutations prop.
+   * ChartAxis uses the standard externalEventMutations prop.
    */
   externalEventMutations?: any[];
   /**
@@ -231,7 +227,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
   /**
    * The orientation prop specifies the position and orientation of your axis.
    */
-  orientation?: "top" | "bottom" | "left" | "right";
+  orientation?: 'top' | 'bottom' | 'left' | 'right';
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -252,7 +248,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number], y?: [number, number] }
+  range?: [number, number] | { x?: [number, number], y?: [number, number] };
   /**
    * The scale prop determines which scales your chart should use. This prop can be
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
@@ -340,7 +336,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *
@@ -419,6 +415,6 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   return (
     <VictoryAxis theme={showGrid ? getAxisTheme(themeColor, themeVariant) : theme} {...rest} />
   );
-}
+};
 
 hoistNonReactStatics(ChartAxis, VictoryAxis);

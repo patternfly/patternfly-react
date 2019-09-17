@@ -14,7 +14,7 @@ export class PieOrangeDemo extends React.Component {
           <ChartPie
             data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
             height={230}
-            labels={datum => `${datum.x}: ${datum.y}`}
+            labels={({ datum }) => `${datum.x}: ${datum.y}`}
             legendData={[{ name: 'Cats: 35' }, { name: 'Dogs: 55' }, { name: 'Birds: 10' }]}
             legendOrientation="vertical"
             legendPosition="right"
@@ -26,4 +26,3 @@ export class PieOrangeDemo extends React.Component {
     );
   }
 }
-

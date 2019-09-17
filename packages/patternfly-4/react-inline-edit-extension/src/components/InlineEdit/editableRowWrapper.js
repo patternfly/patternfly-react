@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { css } from '@patternfly/react-styles';
-import { RowWrapper as ReactTableRowWrapper } from '@patternfly/react-table';
 import {
   combineFunctions,
   shallowLeftSideEquals,
@@ -12,12 +11,10 @@ import {
 } from './utils/utils';
 import ConfirmButtons from './ConfirmButtons';
 import { TableEditConfirmation } from './constants';
-import { inlineEditCss, inlineEditStyles as styles } from './css/inline-edit-css';
-
-inlineEditCss.inject();
+import '@patternfly/react-styles/css/components/Table/inline-edit.css';
+import { inlineEditStyles as styles } from './css/inline-edit-css';
 
 const propTypes = {
-  ...ReactTableRowWrapper.propTypes,
   trRef: PropTypes.func,
   className: PropTypes.string,
   onScroll: PropTypes.func,
@@ -38,7 +35,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  ...ReactTableRowWrapper.defaultProps,
   trRef: undefined,
   className: '',
   onScroll: undefined,
@@ -121,13 +117,13 @@ const editableRowWrapper = RowWrapperComponent => {
 
     static getDerivedStateFromProps = (props, state) => ({
       hasConfirmationButtons: getTableConfirmation(props.row).hasConfirmationButtons(props.row)
-    });
+    })
 
     setStateWith2dEquals = newState => {
       this.setState(oldState =>
         Object.keys(newState).find(key => !shallowLeftSideEquals(newState[key], oldState[key])) ? newState : null
       );
-    };
+    }
 
     componentDidMount() {
       if (this.state.hasConfirmationButtons) {
@@ -141,7 +137,7 @@ const editableRowWrapper = RowWrapperComponent => {
         this.tableElem = element.closest('table');
       }
       this.updateRowDimensions();
-    };
+    }
 
     updateRowDimensions = () => {
       if (this.element) {
@@ -149,16 +145,16 @@ const editableRowWrapper = RowWrapperComponent => {
           rowDimensions: getBoundingClientRect(this.element)
         });
       }
-    };
+    }
 
     handleScroll = event => {
       this.updateRowDimensions();
-    };
+    }
 
     handleResize = event => {
       this.fetchClientDimensions();
       this.updateRowDimensions();
-    };
+    }
 
     fetchClientDimensions() {
       this.setStateWith2dEquals({

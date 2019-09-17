@@ -22,6 +22,6 @@ export class GridDemo extends React.Component {
         <GridItem span={4}>span = 4</GridItem>
         <GridItem span={4}>span = 4</GridItem>
       </Grid>
-    )
+    );
   }
 }

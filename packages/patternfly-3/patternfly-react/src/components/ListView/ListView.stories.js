@@ -49,7 +49,7 @@ const renderAdditionalInfoItems = itemProperties =>
 
 stories.add(
   'List of expandable items',
-  withInfo(`ListView usage example.`)(() => (
+  withInfo('ListView usage example.')(() => (
     <ListView>
       {mockListItems.map(({ actions, properties, title, description, expandedContentText, hideCloseIcon }, index) => (
         <ListView.Item
@@ -106,7 +106,7 @@ stories.add(
 
 stories.add(
   'ListItem variants',
-  withInfo(`ListView usage example.`)(() => (
+  withInfo('ListView usage example.')(() => (
     <ListView id="listView--listItemVariants" className="listView--listItemVariants">
       <ListView.Item
         id="item1"

@@ -56,11 +56,11 @@ class MockTableGridExample extends React.Component {
     });
 
     this.setState({ items, sortField: id, isAscending: updateAscending });
-  };
+  }
 
   onSelect = (item, field) => {
     this.setState({ selectedItem: item, selectedField: field });
-  };
+  }
 
   toggleSelection = item => {
     const { selectedItems } = this.state;
@@ -73,12 +73,12 @@ class MockTableGridExample extends React.Component {
       newSelections = [...selectedItems, item];
     }
     this.setState({ selectedItems: newSelections });
-  };
+  }
 
   toggleAllSelections = () => {
     const { items, selectedItems } = this.state;
     this.setState({ selectedItems: selectedItems.length > 0 ? [] : [...items] });
-  };
+  }
 
   renderItemRow = (item, index) => {
     const { selectType } = this.props;
@@ -121,7 +121,7 @@ class MockTableGridExample extends React.Component {
         </TableGrid.Col>
       </TableGrid.Row>
     );
-  };
+  }
 
   render() {
     const { items, selectedItems, sortField, isAscending } = this.state;

@@ -215,7 +215,7 @@ stories.add(
   'Custom Masthead',
   withInfo({
     propTablesExclude: [MockFixedLayout, MockIconBarChildren, Icon, MenuItem, Dropdown, Dropdown.Menu, Dropdown.Toggle],
-    text: `Example using the **Masthead**, **Brand** and **IconBar** components with images. (items from 'Items as Objects').`
+    text: 'Example using the **Masthead**, **Brand** and **IconBar** components with images. (items from \'Items as Objects\').'
   })(() => (
     <MockFixedLayout>
       <div className="layout-pf layout-pf-fixed faux-layout">

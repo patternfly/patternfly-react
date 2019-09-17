@@ -6,7 +6,7 @@ export class StackBlueDemo extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
-  
+
   render() {
     return(
       <div>
@@ -19,7 +19,7 @@ export class StackBlueDemo extends React.Component {
             padding={{
               bottom: 50,
               left: 50,
-              right: 200, // Adjusted to accomodate legend
+              right: 200, // Adjusted to accommodate legend
               top: 50
             }}
             width={600}
@@ -33,6 +33,6 @@ export class StackBlueDemo extends React.Component {
           </Chart>
         </div>
       </div>
-    )
+    );
   }
 }

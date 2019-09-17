@@ -19,7 +19,7 @@ export interface ProgressBarProps extends React.HTMLProps<HTMLDivElement> {
   value: number;
   /** Minimal value of progress. */
   ariaProps: AriaProps;
-};
+}
 
 export const ProgressBar: React.FunctionComponent<ProgressBarProps> = ({
   ariaProps,

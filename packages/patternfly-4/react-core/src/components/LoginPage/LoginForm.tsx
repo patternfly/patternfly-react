@@ -5,6 +5,8 @@ import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 
 export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
+  /** Flag to indicate if the first dropdown item should not gain initial focus */
+  noAutoFocus?: boolean;
   /** Additional classes added to the Login Main Body's Form */
   className?: string;
   /** Flag indicating the Helper Text is visible * */
@@ -30,7 +32,7 @@ export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
   /** Label for the Log in Button Input */
   loginButtonLabel?: string;
   /** Flag indicating if the Login Button is disabled */
-  isLoginButtonDisabled?: boolean,
+  isLoginButtonDisabled?: boolean;
   /** Function that is called when the Login button is clicked */
   onLoginButtonClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   /** Label for the Remember Me Checkbox that indicates the user should be kept logged in.  If the label is not provided, the checkbox will not show. */
@@ -46,6 +48,7 @@ export interface LoginFormProps extends React.HTMLProps<HTMLFormElement> {
 }
 
 export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
+  noAutoFocus = false,
   className = '',
   showHelperText = false,
   helperText = null,
@@ -71,7 +74,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
       {helperText}
     </FormHelperText>
     <FormGroup label={usernameLabel} isRequired isValid={isValidUsername} fieldId="pf-login-username-id">
-      <TextInput
+      <TextInput autoFocus={!noAutoFocus}
         id="pf-login-username-id"
         isRequired
         isValid={isValidUsername}

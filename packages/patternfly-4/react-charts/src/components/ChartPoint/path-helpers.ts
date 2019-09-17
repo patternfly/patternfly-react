@@ -89,7 +89,7 @@ export const PathHelpers = {
     const baseSize = 1.35 * size;
     const angle = Math.PI / 5;
     const range = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    const starCoords = range.map(index => {
+    const starCoords = range.map((index) => {
       const length = index % 2 === 0 ? baseSize : baseSize / 2;
       return `${length * Math.sin(angle * (index + 1)) + x},
         ${length * Math.cos(angle * (index + 1)) + y}`;
@@ -115,6 +115,25 @@ export const PathHelpers = {
       h-${distance}
       z
       M ${x0 + distance * 2 + padding * 2}, ${y1}
+      h${distance}
+      v-${lineHeight}
+      h-${distance}
+      z`;
+  },
+
+  threshold(x: number, y: number, size: number) {
+    const baseSize = 1.1 * size;
+    const lineHeight = baseSize - baseSize * 0.3;
+    const x0 = x - baseSize;
+    const y1 = y + lineHeight / 2;
+    const distance = (x + baseSize - x0) * 0.5;
+    const padding = distance / 3;
+    return `M ${x0}, ${y1}
+      h${distance}
+      v-${lineHeight}
+      h-${distance}
+      z
+      M ${x0 + distance + padding}, ${y1}
       h${distance}
       v-${lineHeight}
       h-${distance}

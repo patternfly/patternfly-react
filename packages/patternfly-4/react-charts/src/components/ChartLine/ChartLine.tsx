@@ -14,24 +14,21 @@ import {
   StringOrNumberOrCallback,
   VictoryStyleInterface,
   VictoryLine,
-  VictoryLineProps
+  VictoryLineProps,
 } from 'victory';
+import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
 export enum ChartLineSortOrder {
   ascending = 'ascending',
   descending = 'descending'
-};
+}
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
 export interface ChartLineProps extends VictoryLineProps {
-  /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-line/
-   */
-  ' '?: any;
   /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
@@ -106,8 +103,8 @@ export interface ChartLineProps extends VictoryLineProps {
   /**
    * The event prop take an array of event objects. Event objects are composed of
    * a target, an eventKey, and eventHandlers. Targets may be any valid style namespace
-   * for a given component, so "data" and "labels" are all valid targets for VictoryLine events.
-   * Since VictoryLine only renders a single element, the eventKey property is not used.
+   * for a given component, so "data" and "labels" are all valid targets for ChartLine events.
+   * Since ChartLine only renders a single element, the eventKey property is not used.
    * The eventHandlers object should be given as an object whose keys are standard
    * event names (i.e. onClick) and whose values are event callbacks. The return value
    * of an event handler is used to modify elemnts. The return value should be given
@@ -117,7 +114,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * The mutation function will be called with the calculated props for the individual selected
    * element (i.e. a line), and the object returned from the mutation function
    * will override the props of the selected element via object assignment.
-   * @examples
+   * @example
    * events={[
    *   {
    *     target: "data",
@@ -140,7 +137,7 @@ export interface ChartLineProps extends VictoryLineProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", number | string>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', number | string>[];
   /**
    * ChartLine uses the standard externalEventMutations prop.
    */
@@ -251,7 +248,7 @@ export interface ChartLineProps extends VictoryLineProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number], y?: [number, number] }
+  range?: [number, number] | { x?: [number, number], y?: [number, number] };
   /**
    * The samples prop specifies how many individual points to plot when plotting
    * y as a function of x. Samples is ignored if x props are provided instead.
@@ -322,7 +319,7 @@ export interface ChartLineProps extends VictoryLineProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *
@@ -371,14 +368,17 @@ export interface ChartLineProps extends VictoryLineProps {
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
    */
   y0?: DataGetterPropType;
-};
+}
 
 export const ChartLine: React.FunctionComponent<ChartLineProps> = ({
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
+
+  // destructure last
+  theme = getTheme(themeColor, themeVariant),
+  containerComponent = <ChartContainer theme={theme} />,
   ...rest
-}: ChartLineProps) => <VictoryLine theme={theme} {...rest} />;
+}: ChartLineProps) => <VictoryLine containerComponent={containerComponent} theme={theme} {...rest} />;
 
 // Note: VictoryLine.role must be hoisted
 hoistNonReactStatics(ChartLine, VictoryLine);

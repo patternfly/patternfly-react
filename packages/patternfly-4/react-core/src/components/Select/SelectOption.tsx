@@ -6,15 +6,18 @@ import { CheckIcon } from '@patternfly/react-icons';
 import { SelectConsumer, SelectVariant, KeyTypes } from './selectConstants';
 import { Omit } from '../../helpers/typeUtils';
 
-export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 'type' | 'ref'> {
+export interface SelectOptionObject {
+  toString(): string;
+}
+export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 'type' | 'ref' | 'value'> {
   /** Optional alternate display for the option */
   children?: React.ReactNode;
   /** Additional classes added to the Select Option */
   className?: string;
   /** Internal index of the option */
   index?: number;
-  /** The value for the option */
-  value: string;
+  /** The value for the option, if passing an object you most provide a toString function */
+  value: string | SelectOptionObject;
   /** Flag indicating if the option is disabled */
   isDisabled?: boolean;
   /** Flag indicating if the option acts as a placeholder */
@@ -72,7 +75,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
         this.ref.current.focus();
       }
     }
-  };
+  }
 
   render() {
     const {
@@ -105,7 +108,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     isFocused && styles.modifiers.focus,
                     className
                   )}
-                  onClick={event => {
+                  onClick={(event) => {
                     if (!isDisabled) {
                       onClick(event);
                       onSelect(event, value, isPlaceholder);
@@ -116,8 +119,9 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                   aria-selected={isSelected || null}
                   ref={this.ref}
                   onKeyDown={this.onKeyDown}
+                  type="button"
                 >
-                  {children || value}
+                  {children || value.toString()}
                   {isSelected && <CheckIcon className={css(styles.selectMenuItemIcon)} aria-hidden />}
                 </button>
               </li>
@@ -134,20 +138,20 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 onKeyDown={this.onKeyDown}
               >
                 <input
-                  id={value}
+                  id={value.toString()}
                   className={css(checkStyles.checkInput)}
                   type="checkbox"
-                  onChange={event => {
+                  onChange={(event) => {
                     if (!isDisabled) {
                       onClick(event);
                       onSelect(event, value);
                     }
                   }}
                   ref={this.ref}
-                  checked={isChecked || false}
+                  defaultChecked={isChecked || false}
                   disabled={isDisabled}
                 />
-                <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{children || value}</span>
+                <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{children || value.toString()}</span>
               </label>
             )}
           </React.Fragment>

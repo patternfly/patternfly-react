@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-core",
-  "version": "3.75.0",
+  "version": "3.104.4",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -29,25 +29,23 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "build": "yarn typecheck && yarn build:babel && yarn build:types && node ./scripts/copyTS.js && node ./scripts/copyStyles.js",
+    "build": "yarn build:babel && yarn build:types && node ./scripts/copyTS.js && node ./scripts/copyStyles.js",
     "build:babel": "concurrently \"yarn build:babel:esm && yarn build:babel:umd\" \"yarn build:babel:cjs\"",
     "build:babel:cjs": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
     "build:babel:esm": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
     "build:babel:umd": "babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "build:types": "tsc -p tsconfig.gen-dts.json",
     "clean": "rimraf dist",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose",
-    "lint:ts": "tslint -p tsconfig.typecheck.json",
-    "typecheck": "tsc -p tsconfig.typecheck.json"
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
   },
   "dependencies": {
-    "@patternfly/react-icons": "^3.10.13",
-    "@patternfly/react-styles": "^3.5.6",
-    "@patternfly/react-tokens": "^2.6.12",
+    "@patternfly/react-icons": "^3.14.3",
+    "@patternfly/react-styles": "^3.5.23",
+    "@patternfly/react-tokens": "^2.6.27",
     "emotion": "^9.2.9",
     "exenv": "^1.2.2",
     "focus-trap-react": "^4.0.1",
-    "tippy.js": "^3.2.0"
+    "tippy.js": "3.4.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -58,7 +56,7 @@
     "@babel/plugin-transform-typescript": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@patternfly/patternfly": "2.21.5",
+    "@patternfly/patternfly": "2.31.7",
     "@types/enzyme": "3.9.0",
     "@types/exenv": "^1.2.0",
     "@types/jest": "^24.0.11",

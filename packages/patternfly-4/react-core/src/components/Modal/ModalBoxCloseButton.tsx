@@ -14,9 +14,7 @@ export const ModalBoxCloseButton: React.FunctionComponent<ModalBoxCloseButtonPro
   onClose = () => undefined as any,
   ...props
 }: ModalBoxCloseButtonProps) => (
-  <React.Fragment>
-    <Button className={className} variant="plain" onClick={onClose} aria-label="Close" {...props}>
-      <TimesIcon />
-    </Button>
-  </React.Fragment>
+  <Button className={className} variant="plain" onClick={onClose} aria-label="Close" {...props}>
+    <TimesIcon />
+  </Button>
 );

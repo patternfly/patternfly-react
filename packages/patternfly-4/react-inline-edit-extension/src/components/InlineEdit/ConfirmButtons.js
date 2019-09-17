@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import { CancelButton } from '../CancelButton';
 import { ConfirmButton } from '../ConfirmButton';
-import { inlineEditCss, inlineEditStyles as styles } from './css/inline-edit-css';
-
-inlineEditCss.inject();
+import '@patternfly/react-styles/css/components/Table/inline-edit.css';
+import { inlineEditStyles as styles } from './css/inline-edit-css';
 
 const buttonsTopPosition = (window, rowDimensions, bold) => {
   const boldShift = bold ? -1 : 0;

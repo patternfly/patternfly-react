@@ -32,6 +32,8 @@ export interface SelectToggleProps extends React.HTMLProps<HTMLElement> {
   isActive?: boolean;
   /** Display the toggle with no border or background */
   isPlain?: boolean;
+  /** Flag indicating if select is disabled */
+  isDisabled?: boolean;
   /** Type of the toggle button, defaults to 'button' */
   type?: 'reset' | 'button' | 'submit' | undefined;
   /** Id of label for the Select aria-labelledby */
@@ -52,6 +54,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     isHovered: false,
     isActive: false,
     isPlain: false,
+    isDisabled: false,
     variant: false,
     ariaLabelledBy: '',
     ariaLabelToggle: '',
@@ -87,7 +90,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       onClose();
       this.toggle.current.focus();
     }
-  };
+  }
 
   onEscPress = (event: KeyboardEvent) => {
     const { parentRef, isExpanded, variant, onToggle, onClose } = this.props;
@@ -104,7 +107,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       onClose();
       this.toggle.current.focus();
     }
-  };
+  }
 
   onKeyDown = (event: React.KeyboardEvent) => {
     const { isExpanded, onToggle, variant, onClose, onEnter, handleTypeaheadKeys } = this.props;
@@ -143,7 +146,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       onToggle(!isExpanded);
       onEnter();
     }
-  };
+  }
 
   render() {
     const {
@@ -154,6 +157,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
       isActive,
       isHovered,
       isPlain,
+      isDisabled,
       variant,
       onToggle,
       onEnter,
@@ -190,17 +194,19 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               styles.selectToggle,
               isFocused && styles.modifiers.focus,
               isHovered && styles.modifiers.hover,
+              isDisabled && styles.modifiers.disabled,
               isActive && styles.modifiers.active,
               isPlain && styles.modifiers.plain,
               className
             )}
-            onClick={_event => {
+            onClick={(_event) => {
               onToggle(!isExpanded);
               if (isExpanded) {
                 onClose();
               }
             }}
             onKeyDown={this.onKeyDown}
+            disabled={isDisabled}
           >
             {children}
             <CaretDownIcon className={css(styles.selectToggleArrow)} />
@@ -215,12 +221,15 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               isFocused && styles.modifiers.focus,
               isHovered && styles.modifiers.hover,
               isActive && styles.modifiers.active,
+              isDisabled && styles.modifiers.disabled,
               isPlain && styles.modifiers.plain,
               isTypeahead && styles.modifiers.typeahead,
               className
             )}
-            onClick={_event => {
-              onToggle(true);
+            onClick={(_event) => {
+              if (!isDisabled) {
+                onToggle(true);
+              }
             }}
             onKeyDown={this.onKeyDown}
           >
@@ -229,13 +238,14 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
               {...toggleProps}
               className={css(buttonStyles.button, styles.selectToggleButton)}
               aria-label={ariaLabelToggle}
-              onClick={_event => {
+              onClick={(_event) => {
                 _event.stopPropagation();
                 onToggle(!isExpanded);
                 if (isExpanded) {
                   onClose();
                 }
               }}
+              disabled={isDisabled}
             >
               <CaretDownIcon className={css(styles.selectToggleArrow)} />
             </button>
@@ -245,4 +255,3 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
     );
   }
 }
-

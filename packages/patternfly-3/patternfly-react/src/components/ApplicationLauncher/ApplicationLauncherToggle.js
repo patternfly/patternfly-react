@@ -6,7 +6,7 @@ import { Icon } from '../Icon';
 import { Button } from '../Button';
 
 const ApplicationLauncherToggle = ({ open, tooltip, onClick, tooltipPlacement }) => {
-  if (tooltip)
+  if (tooltip) {
     return (
       <OverlayTrigger
         placement={tooltipPlacement}
@@ -18,6 +18,7 @@ const ApplicationLauncherToggle = ({ open, tooltip, onClick, tooltipPlacement })
         </Button>
       </OverlayTrigger>
     );
+  }
   return (
     <Button onClick={onClick} bsStyle="link" className="nav-item-iconic dropdown-toggle" aria-expanded={open}>
       <Icon name="th applauncher-pf-icon" />

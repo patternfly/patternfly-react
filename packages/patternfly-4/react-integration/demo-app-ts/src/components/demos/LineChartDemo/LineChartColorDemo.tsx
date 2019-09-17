@@ -2,7 +2,6 @@ import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory';
 
-
 export class LineChartColorDemo extends React.Component {
 
   componentDidMount() {
@@ -19,7 +18,7 @@ export class LineChartColorDemo extends React.Component {
             legendPosition="bottom"
             height={275}
             padding={{
-              bottom: 75, // Adjusted to accomodate legend
+              bottom: 75, // Adjusted to accommodate legend
               left: 50,
               right: 50,
               top: 50
@@ -71,6 +70,6 @@ export class LineChartColorDemo extends React.Component {
           </Chart>
         </div>
       </div>
-    )
+    );
   }
 }

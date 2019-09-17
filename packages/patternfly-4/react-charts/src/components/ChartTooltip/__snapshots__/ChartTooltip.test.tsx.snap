@@ -3,9 +3,12 @@
 exports[`ChartTooltip 1`] = `
 <VictoryTooltip
   active={false}
+  constrainToVisibleArea={false}
   flyoutComponent={
     <Flyout
       pathComponent={<Path />}
+      role="presentation"
+      shapeRendering="auto"
     />
   }
   groupComponent={<g />}
@@ -34,15 +37,14 @@ exports[`ChartTooltip 1`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
-            "fill": "#151515",
-            "fillOpacity": 0.4,
-            "stroke": "transparent",
+            "fill": "#06c",
+            "fillOpacity": 0.3,
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -69,10 +71,10 @@ exports[`ChartTooltip 1`] = `
             "strokeWidth": 1,
           },
           "axisLabel": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
-            "padding": 100,
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "padding": 40,
             "stroke": "transparent",
             "textAnchor": "middle",
           },
@@ -84,17 +86,17 @@ exports[`ChartTooltip 1`] = `
             "strokeLinejoin": "round",
           },
           "tickLabels": Object {
-            "fill": "#4d5258",
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fill": "#4f5255",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
           "ticks": Object {
             "fill": "transparent",
             "size": 5,
-            "stroke": "none",
+            "stroke": "#d2d2d2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -121,9 +123,9 @@ exports[`ChartTooltip 1`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -148,9 +150,9 @@ exports[`ChartTooltip 1`] = `
             "strokeWidth": 1,
           },
           "maxLabels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -160,9 +162,9 @@ exports[`ChartTooltip 1`] = `
             "strokeWidth": 1,
           },
           "medianLabels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -172,31 +174,31 @@ exports[`ChartTooltip 1`] = `
             "strokeWidth": 1,
           },
           "minLabels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
           "q1": Object {
-            "fill": "#8b8d8f",
+            "fill": "#8a8d90",
             "padding": 8,
           },
           "q1Labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
           "q3": Object {
-            "fill": "#8b8d8f",
+            "fill": "#8a8d90",
             "padding": 8,
           },
           "q3Labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -223,9 +225,9 @@ exports[`ChartTooltip 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -264,9 +266,9 @@ exports[`ChartTooltip 1`] = `
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -301,16 +303,16 @@ exports[`ChartTooltip 1`] = `
             "type": "square",
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
           "title": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 2,
             "stroke": "transparent",
           },
@@ -331,13 +333,13 @@ exports[`ChartTooltip 1`] = `
           "data": Object {
             "fill": "transparent",
             "opacity": 1,
-            "stroke": "#151515",
+            "stroke": "#06c",
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -354,7 +356,7 @@ exports[`ChartTooltip 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,
@@ -362,9 +364,9 @@ exports[`ChartTooltip 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 8,
             "stroke": "transparent",
           },
@@ -389,9 +391,9 @@ exports[`ChartTooltip 1`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -457,9 +459,9 @@ exports[`ChartTooltip 1`] = `
           },
           "labels": Object {
             "fill": "#ededed",
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 8,
             "pointerEvents": "none",
             "stroke": "transparent",
@@ -476,9 +478,12 @@ exports[`ChartTooltip 1`] = `
 exports[`ChartTooltip 2`] = `
 <VictoryTooltip
   active={false}
+  constrainToVisibleArea={false}
   flyoutComponent={
     <Flyout
       pathComponent={<Path />}
+      role="presentation"
+      shapeRendering="auto"
     />
   }
   groupComponent={<g />}
@@ -507,15 +512,14 @@ exports[`ChartTooltip 2`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
-            "fill": "#151515",
-            "fillOpacity": 0.4,
-            "stroke": "transparent",
+            "fill": "#06c",
+            "fillOpacity": 0.3,
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -542,10 +546,10 @@ exports[`ChartTooltip 2`] = `
             "strokeWidth": 1,
           },
           "axisLabel": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
-            "padding": 100,
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "padding": 40,
             "stroke": "transparent",
             "textAnchor": "middle",
           },
@@ -557,17 +561,17 @@ exports[`ChartTooltip 2`] = `
             "strokeLinejoin": "round",
           },
           "tickLabels": Object {
-            "fill": "#4d5258",
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fill": "#4f5255",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
           "ticks": Object {
             "fill": "transparent",
             "size": 5,
-            "stroke": "none",
+            "stroke": "#d2d2d2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -594,9 +598,9 @@ exports[`ChartTooltip 2`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -621,9 +625,9 @@ exports[`ChartTooltip 2`] = `
             "strokeWidth": 1,
           },
           "maxLabels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -633,9 +637,9 @@ exports[`ChartTooltip 2`] = `
             "strokeWidth": 1,
           },
           "medianLabels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -645,31 +649,31 @@ exports[`ChartTooltip 2`] = `
             "strokeWidth": 1,
           },
           "minLabels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
           "q1": Object {
-            "fill": "#8b8d8f",
+            "fill": "#8a8d90",
             "padding": 8,
           },
           "q1Labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
           "q3": Object {
-            "fill": "#8b8d8f",
+            "fill": "#8a8d90",
             "padding": 8,
           },
           "q3Labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -696,9 +700,9 @@ exports[`ChartTooltip 2`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -737,9 +741,9 @@ exports[`ChartTooltip 2`] = `
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -774,16 +778,16 @@ exports[`ChartTooltip 2`] = `
             "type": "square",
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
           "title": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 2,
             "stroke": "transparent",
           },
@@ -804,13 +808,13 @@ exports[`ChartTooltip 2`] = `
           "data": Object {
             "fill": "transparent",
             "opacity": 1,
-            "stroke": "#151515",
+            "stroke": "#06c",
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -827,7 +831,7 @@ exports[`ChartTooltip 2`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,
@@ -835,9 +839,9 @@ exports[`ChartTooltip 2`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 8,
             "stroke": "transparent",
           },
@@ -862,9 +866,9 @@ exports[`ChartTooltip 2`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -930,9 +934,9 @@ exports[`ChartTooltip 2`] = `
           },
           "labels": Object {
             "fill": "#ededed",
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 8,
             "pointerEvents": "none",
             "stroke": "transparent",
@@ -952,13 +956,15 @@ exports[`allows tooltip via container component 1`] = `
     <Unknown
       activateData={true}
       activateLabels={true}
-      className="VictoryContainer"
+      className="pf-c-chart"
       labelComponent={
         <VictoryTooltip
           active={false}
           flyoutComponent={
             <Flyout
               pathComponent={<Path />}
+              role="presentation"
+              shapeRendering="auto"
             />
           }
           groupComponent={<g />}
@@ -992,15 +998,14 @@ exports[`allows tooltip via container component 1`] = `
             "padding": 50,
             "style": Object {
               "data": Object {
-                "fill": "#151515",
-                "fillOpacity": 0.4,
-                "stroke": "transparent",
+                "fill": "#06c",
+                "fillOpacity": 0.3,
                 "strokeWidth": 2,
               },
               "labels": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -1027,10 +1032,10 @@ exports[`allows tooltip via container component 1`] = `
                 "strokeWidth": 1,
               },
               "axisLabel": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
-                "padding": 100,
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+                "padding": 40,
                 "stroke": "transparent",
                 "textAnchor": "middle",
               },
@@ -1042,17 +1047,17 @@ exports[`allows tooltip via container component 1`] = `
                 "strokeLinejoin": "round",
               },
               "tickLabels": Object {
-                "fill": "#4d5258",
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fill": "#4f5255",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 10,
                 "stroke": "transparent",
               },
               "ticks": Object {
                 "fill": "transparent",
                 "size": 5,
-                "stroke": "none",
+                "stroke": "#d2d2d2",
                 "strokeLinecap": "round",
                 "strokeLinejoin": "round",
                 "strokeWidth": 1,
@@ -1079,9 +1084,9 @@ exports[`allows tooltip via container component 1`] = `
                 "strokeWidth": 0,
               },
               "labels": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -1106,9 +1111,9 @@ exports[`allows tooltip via container component 1`] = `
                 "strokeWidth": 1,
               },
               "maxLabels": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -1118,9 +1123,9 @@ exports[`allows tooltip via container component 1`] = `
                 "strokeWidth": 1,
               },
               "medianLabels": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -1130,31 +1135,31 @@ exports[`allows tooltip via container component 1`] = `
                 "strokeWidth": 1,
               },
               "minLabels": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 10,
                 "stroke": "transparent",
               },
               "q1": Object {
-                "fill": "#8b8d8f",
+                "fill": "#8a8d90",
                 "padding": 8,
               },
               "q1Labels": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 10,
                 "stroke": "transparent",
               },
               "q3": Object {
-                "fill": "#8b8d8f",
+                "fill": "#8a8d90",
                 "padding": 8,
               },
               "q3Labels": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 10,
                 "stroke": "transparent",
               },
@@ -1181,9 +1186,9 @@ exports[`allows tooltip via container component 1`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -1222,9 +1227,9 @@ exports[`allows tooltip via container component 1`] = `
                 "strokeWidth": 2,
               },
               "labels": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -1259,16 +1264,16 @@ exports[`allows tooltip via container component 1`] = `
                 "type": "square",
               },
               "labels": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 10,
                 "stroke": "transparent",
               },
               "title": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 2,
                 "stroke": "transparent",
               },
@@ -1289,13 +1294,13 @@ exports[`allows tooltip via container component 1`] = `
               "data": Object {
                 "fill": "transparent",
                 "opacity": 1,
-                "stroke": "#151515",
+                "stroke": "#06c",
                 "strokeWidth": 2,
               },
               "labels": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -1312,7 +1317,7 @@ exports[`allows tooltip via container component 1`] = `
               "#004b95",
             ],
             "height": 230,
-            "padding": 8,
+            "padding": 20,
             "style": Object {
               "data": Object {
                 "padding": 8,
@@ -1320,9 +1325,9 @@ exports[`allows tooltip via container component 1`] = `
                 "strokeWidth": 1,
               },
               "labels": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 8,
                 "stroke": "transparent",
               },
@@ -1347,9 +1352,9 @@ exports[`allows tooltip via container component 1`] = `
                 "strokeWidth": 0,
               },
               "labels": Object {
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 10,
                 "stroke": "transparent",
                 "textAnchor": "middle",
@@ -1415,9 +1420,9 @@ exports[`allows tooltip via container component 1`] = `
               },
               "labels": Object {
                 "fill": "#ededed",
-                "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+                "fontFamily": "var(--pf-chart-global--FontFamily)",
                 "fontSize": 14,
-                "letterSpacing": "normal",
+                "letterSpacing": "var(--pf-chart-global--letter-spacing)",
                 "padding": 8,
                 "pointerEvents": "none",
                 "stroke": "transparent",
@@ -1450,15 +1455,14 @@ exports[`allows tooltip via container component 1`] = `
         "padding": 50,
         "style": Object {
           "data": Object {
-            "fill": "#151515",
-            "fillOpacity": 0.4,
-            "stroke": "transparent",
+            "fill": "#06c",
+            "fillOpacity": 0.3,
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -1485,10 +1489,10 @@ exports[`allows tooltip via container component 1`] = `
             "strokeWidth": 1,
           },
           "axisLabel": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
-            "padding": 100,
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
+            "padding": 40,
             "stroke": "transparent",
             "textAnchor": "middle",
           },
@@ -1500,17 +1504,17 @@ exports[`allows tooltip via container component 1`] = `
             "strokeLinejoin": "round",
           },
           "tickLabels": Object {
-            "fill": "#4d5258",
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fill": "#4f5255",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
           "ticks": Object {
             "fill": "transparent",
             "size": 5,
-            "stroke": "none",
+            "stroke": "#d2d2d2",
             "strokeLinecap": "round",
             "strokeLinejoin": "round",
             "strokeWidth": 1,
@@ -1537,9 +1541,9 @@ exports[`allows tooltip via container component 1`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -1564,9 +1568,9 @@ exports[`allows tooltip via container component 1`] = `
             "strokeWidth": 1,
           },
           "maxLabels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -1576,9 +1580,9 @@ exports[`allows tooltip via container component 1`] = `
             "strokeWidth": 1,
           },
           "medianLabels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -1588,31 +1592,31 @@ exports[`allows tooltip via container component 1`] = `
             "strokeWidth": 1,
           },
           "minLabels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
           "q1": Object {
-            "fill": "#8b8d8f",
+            "fill": "#8a8d90",
             "padding": 8,
           },
           "q1Labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
           "q3": Object {
-            "fill": "#8b8d8f",
+            "fill": "#8a8d90",
             "padding": 8,
           },
           "q3Labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
@@ -1639,9 +1643,9 @@ exports[`allows tooltip via container component 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -1680,9 +1684,9 @@ exports[`allows tooltip via container component 1`] = `
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -1717,16 +1721,16 @@ exports[`allows tooltip via container component 1`] = `
             "type": "square",
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
           },
           "title": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 2,
             "stroke": "transparent",
           },
@@ -1747,13 +1751,13 @@ exports[`allows tooltip via container component 1`] = `
           "data": Object {
             "fill": "transparent",
             "opacity": 1,
-            "stroke": "#151515",
+            "stroke": "#06c",
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -1770,7 +1774,7 @@ exports[`allows tooltip via container component 1`] = `
           "#004b95",
         ],
         "height": 230,
-        "padding": 8,
+        "padding": 20,
         "style": Object {
           "data": Object {
             "padding": 8,
@@ -1778,9 +1782,9 @@ exports[`allows tooltip via container component 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 8,
             "stroke": "transparent",
           },
@@ -1805,9 +1809,9 @@ exports[`allows tooltip via container component 1`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 10,
             "stroke": "transparent",
             "textAnchor": "middle",
@@ -1873,9 +1877,9 @@ exports[`allows tooltip via container component 1`] = `
           },
           "labels": Object {
             "fill": "#ededed",
-            "fontFamily": "overpass, overpass, open sans, -apple-system, blinkmacsystemfont, Segoe UI, roboto, Helvetica Neue, arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+            "fontFamily": "var(--pf-chart-global--FontFamily)",
             "fontSize": 14,
-            "letterSpacing": "normal",
+            "letterSpacing": "var(--pf-chart-global--letter-spacing)",
             "padding": 8,
             "pointerEvents": "none",
             "stroke": "transparent",

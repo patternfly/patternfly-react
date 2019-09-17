@@ -32,4 +32,4 @@ export const LoginMainFooterLinksItem: React.FunctionComponent<LoginMainFooterLi
       </LinkComponent>
     </li>
   );
-}
+};

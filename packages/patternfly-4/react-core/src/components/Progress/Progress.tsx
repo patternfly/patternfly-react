@@ -49,7 +49,7 @@ export class Progress extends React.Component<ProgressProps> {
     label: null as React.ReactNode,
     value: 0,
     valueText: null as string
-  }
+  };
 
   id = this.props.id || getUniqueId();
 

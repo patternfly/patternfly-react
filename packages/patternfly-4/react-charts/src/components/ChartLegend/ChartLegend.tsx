@@ -20,27 +20,23 @@ import { getTheme } from '../ChartUtils';
 export enum ChartLegendOrientation {
   horizontal = 'horizontal',
   vertical = 'vertical'
-};
+}
 
 export enum ChartLegendPosition {
   bottom = 'bottom',
   bottomLeft = 'bottom-left',
   right = 'right'
-};
+}
 
 export enum ChartLegendRowGutter {
   bottom = 'bottom',
   top = 'top'
-};
+}
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
 export interface ChartLegendProps extends VictoryLegendProps {
-  /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-legend/
-   */
-  ' '?: any;
   /**
    * The borderComponent prop takes a component instance which will be responsible
    * for rendering a border around the legend. The new element created from the passed
@@ -97,13 +93,13 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * array of objects with name (required), symbol, and labels properties.
    * The data prop must be given as an array.
    */
-  data?: Array<{
+  data?: {
     name?: string;
     symbol?: {
       fill?: string;
       type?: string;
     };
-  }>;
+  }[];
   /**
    * The dataComponent prop takes a component instance which will be
    * responsible for rendering a data element used to associate a symbol
@@ -124,7 +120,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
   /**
    * ChartLegend uses the standard events prop.
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", StringOrNumberOrCallback>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', StringOrNumberOrCallback>[];
   /**
    * ChartLegend uses the standard externalEventMutations prop.
    */
@@ -232,7 +228,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *

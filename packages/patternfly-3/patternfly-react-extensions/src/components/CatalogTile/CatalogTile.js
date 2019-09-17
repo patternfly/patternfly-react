@@ -42,7 +42,7 @@ class CatalogTile extends React.Component {
     }
 
     this.descFullHeight = ref.clientHeight;
-  };
+  }
 
   handleDescriptionSpanRef = ref => {
     if (!ref) {
@@ -50,7 +50,7 @@ class CatalogTile extends React.Component {
     }
 
     this.descLineHeight = parseInt(window.getComputedStyle(ref).getPropertyValue('line-height'), 10);
-  };
+  }
 
   handleClick = e => {
     const { onClick, href } = this.props;
@@ -61,7 +61,7 @@ class CatalogTile extends React.Component {
     if (onClick) {
       onClick(e);
     }
-  };
+  }
 
   renderBadges = badges => {
     if (!badges || !badges.length) {
@@ -75,7 +75,7 @@ class CatalogTile extends React.Component {
         ))}
       </div>
     );
-  };
+  }
 
   render() {
     const {
@@ -84,7 +84,9 @@ class CatalogTile extends React.Component {
       featured,
       href,
       onClick,
+      icon,
       iconImg,
+      iconAlt,
       iconClass,
       badges,
       title,
@@ -116,8 +118,8 @@ class CatalogTile extends React.Component {
     return (
       <OuterComponent>
         <div className="catalog-tile-pf-header">
-          {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt="" />}
-          {!iconImg && iconClass && <span className={`catalog-tile-pf-icon ${iconClass}`} />}
+          {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt={iconAlt} />}
+          {!iconImg && (iconClass || icon) && <span className={`catalog-tile-pf-icon ${iconClass}`}>{icon}</span>}
           {this.renderBadges(badges)}
         </div>
         <div className="catalog-tile-pf-body">
@@ -148,8 +150,12 @@ CatalogTile.propTypes = {
   onClick: PropTypes.func,
   /** URL of an image for the item's icon */
   iconImg: PropTypes.string,
+  /** Alternate text for the item's icon */
+  iconAlt: PropTypes.string,
   /** Class for the image when an icon is to be used (exclusive from iconImg) */
   iconClass: PropTypes.string,
+  /** Alternatively provided JSX for the icon */
+  icon: PropTypes.node,
   /** Array of badges */
   badges: PropTypes.arrayOf(PropTypes.node),
   /** Tile for the catalog item */
@@ -173,7 +179,9 @@ CatalogTile.defaultProps = {
   href: null,
   onClick: null,
   iconImg: null,
-  iconClass: null,
+  iconAlt: '',
+  iconClass: '',
+  icon: null,
   badges: [],
   vendor: null,
   description: null,

@@ -59,7 +59,7 @@ export class CheckboxSelectOption extends React.Component<CheckboxSelectOptionPr
       this.ref.current.click();
       this.ref.current.focus();
     }
-  };
+  }
 
   render() {
     const { children, className, value, onClick, isDisabled, isChecked, sendRef, keyHandler, index, ...props } = this.props;
@@ -80,14 +80,14 @@ export class CheckboxSelectOption extends React.Component<CheckboxSelectOptionPr
               id={value}
               className={css(checkStyles.checkInput)}
               type="checkbox"
-              onChange={event => {
+              onChange={(event) => {
                 if (!isDisabled) {
                   onClick(event);
                   onSelect(event, value);
                 }
               }}
               ref={this.ref}
-              checked={isChecked || false}
+              defaultChecked={isChecked || false}
               disabled={isDisabled}
             />
             <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{children || value}</span>

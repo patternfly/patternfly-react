@@ -24,6 +24,7 @@ import {
   chart_axis_grid_PointerEvents,
   chart_axis_tick_Fill,
   chart_axis_tick_Size,
+  chart_axis_tick_stroke_Color,
   chart_axis_tick_Width,
   chart_axis_tick_label_Fill,
   chart_bar_Width,
@@ -101,8 +102,8 @@ import {
 // Note: Values must be in pixles
 
 // Typography
-const TYPOGRAPHY_FONT_FAMILY = chart_global_FontFamily.value;
-const TYPOGRAPHY_LETTER_SPACING = chart_global_letter_spacing.value;
+const TYPOGRAPHY_FONT_FAMILY = chart_global_FontFamily.var;
+const TYPOGRAPHY_LETTER_SPACING = chart_global_letter_spacing.var;
 const TYPOGRAPHY_FONT_SIZE = chart_global_FontSize_sm.value;
 
 // Labels
@@ -137,7 +138,8 @@ export const BaseTheme = {
       data: {
         fill: chart_area_data_Fill.value,
         fillOpacity: chart_area_Opacity.value,
-        stroke: chart_global_label_stroke.value,
+        // Omit stroke to add a line border from color scale
+        // stroke: chart_global_label_stroke.value,
         strokeWidth: chart_area_stroke_Width.value
       },
       labels: LABEL_CENTERED_PROPS
@@ -168,7 +170,7 @@ export const BaseTheme = {
       ticks: {
         fill: chart_axis_tick_Fill.value,
         size: chart_axis_tick_Size.value,
-        stroke: 'none',
+        stroke: chart_axis_tick_stroke_Color.value,
         strokeLinecap: STROKE_LINE_CAP,
         strokeLinejoin: STROKE_LINE_JOIN,
         strokeWidth: chart_axis_tick_Width.value

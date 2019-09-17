@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/AboutModalBox/about-modal-box';
-import titleStyles from '@patternfly/react-styles/css/components/Title/title';
 import contentStyles from '@patternfly/react-styles/css/components/Content/content';
 
 export interface AboutModalBoxContentProps extends React.HTMLProps<HTMLDivElement> {
@@ -15,7 +14,7 @@ export interface AboutModalBoxContentProps extends React.HTMLProps<HTMLDivElemen
   trademark: string;
   /** Prevents the about modal from rendering content inside a container; allows for more flexible layouts */
   noAboutModalBoxContentContainer?: boolean;
-};
+}
 
 export const AboutModalBoxContent: React.SFC<AboutModalBoxContentProps> = ({
   children,

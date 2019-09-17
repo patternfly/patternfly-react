@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Accordion/accordion';
 import { AngleRightIcon } from '@patternfly/react-icons';
 import { Omit } from '../../helpers/typeUtils';
-import { AccordionContext } from './Accordion';
+import { AccordionContext } from './AccordionContext';
 
 export interface AccordionToggleProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'type'> {
   /** Content rendered inside the Accordion toggle  */
@@ -14,6 +14,8 @@ export interface AccordionToggleProps extends Omit<React.HTMLProps<HTMLButtonEle
   isExpanded?: boolean;
   /** Identify the Accordion toggle number  */
   id: string;
+  /** Container to override the default for toggle */
+  component?: React.ElementType;
 }
 
 export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
@@ -21,12 +23,14 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
   id,
   isExpanded = false,
   children = null,
+  component,
   ...props
 }: AccordionToggleProps) => (
-  <dt>
-    <AccordionContext.Consumer>
-      {(AccordionHeadingLevel: any) => (
-        <AccordionHeadingLevel>
+  <AccordionContext.Consumer>
+    {({ ToggleContainer }) => {
+      const Container = component || ToggleContainer;
+      return (
+        <Container>
           <button
             id={id}
             className={css(styles.accordionToggle, isExpanded && styles.modifiers.expanded, className)}
@@ -36,8 +40,8 @@ export const AccordionToggle: React.FunctionComponent<AccordionToggleProps> = ({
             <span className={css(styles.accordionToggleText)}>{children}</span>
             <AngleRightIcon className={css(styles.accordionToggleIcon)} />
           </button>
-        </AccordionHeadingLevel>
-      )}
-    </AccordionContext.Consumer>
-  </dt>
+        </Container>
+      );
+    }}
+  </AccordionContext.Consumer>
 );

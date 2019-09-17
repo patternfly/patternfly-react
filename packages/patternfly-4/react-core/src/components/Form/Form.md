@@ -96,15 +96,10 @@ class SimpleForm extends React.Component {
             onChange={this.handleTextInputChange3}
           />
         </FormGroup>
-        <FormGroup isInline label="How can we contact you?" isRequired fieldId="inline-radio1">
-          <Radio id="inlineradio1" name="inlineradios" label="Email" aria-label="Email" />
-          <Radio id="inlineradio2" name="inlineradios" label="Phone" aria-label="Phone" />
-          <Radio
-            id="inlineradio3"
-            name="inlineradios"
-            label="Please don't contact me"
-            aria-label="Please don't contact me"
-          />
+        <FormGroup isInline label="How can we contact you?" isRequired>
+          <Checkbox label="Email" aria-label="Email" id="inlinecheck1" />
+          <Checkbox label="Phone" aria-label="Phone" id="inlinecheck2" />
+          <Checkbox label="Please don't contact me" aria-label="Please don't contact me" id="inlinecheck3"/>
         </FormGroup>
         <FormGroup label="Additional Note:" fieldId="simple-form-note">
           <TextInput isDisabled type="text" id="simple-form-note" name="simple-form-number" value="disabled" />

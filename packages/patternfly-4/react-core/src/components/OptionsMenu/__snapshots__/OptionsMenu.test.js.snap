@@ -39,383 +39,1466 @@ exports[`optionsMenu expanded 1`] = `
     </Unknown>
   }
 >
-  <div
-    className="pf-c-options-menu pf-m-expanded"
+  <DropdownWithContext
+    autoFocus={true}
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <Unknown>
+          <Unknown>
+            Name
+          </Unknown>
+          <Unknown>
+            Date
+          </Unknown>
+          <Unknown
+            isDisabled={true}
+          >
+            Disabled
+          </Unknown>
+          <Unknown>
+            Size
+          </Unknown>
+        </Unknown>,
+        <Unknown />,
+        <Unknown>
+          <Unknown>
+            Ascending
+          </Unknown>
+          <Unknown>
+            Descending
+          </Unknown>
+        </Unknown>,
+      ]
+    }
     id="expanded"
+    isGrouped={false}
+    isOpen={true}
+    isPlain={false}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <Unknown>
+        Options Menu
+      </Unknown>
+    }
   >
-    <Component
-      isOpen={true}
-      isPlain={false}
-      key=".0"
-      parentId="expanded"
+    <div
+      className="pf-c-options-menu pf-m-expanded"
+      id="expanded"
     >
-      <button
-        aria-expanded={true}
-        aria-haspopup="listbox"
-        aria-label="Options menu"
-        className="pf-c-options-menu__toggle"
-        id="expanded-toggle"
-        onClick={[Function]}
+      <Component
+        ariaHasPopup={true}
+        id="pf-toggle-id-4"
+        isOpen={true}
+        isPlain={false}
+        key=".0"
+        onEnter={[Function]}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-options-menu pf-m-expanded"
+              id="expanded"
+            >
+              <button
+                aria-expanded="true"
+                aria-haspopup="listbox"
+                aria-label="Options menu"
+                class="pf-c-options-menu__toggle"
+                id="expanded-toggle"
+                type="button"
+              >
+                <span
+                  class="pf-c-options-menu__toggle-text"
+                />
+                <svg
+                  aria-hidden="true"
+                  class="pf-c-options-menu__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+              <ul
+                aria-labelledby="expanded-toggle"
+                class="pf-c-options-menu__menu"
+                role="menu"
+              >
+                <li
+                  index="0"
+                >
+                  <ul
+                    aria-label=""
+                    class=""
+                  >
+                    <li
+                      role="menuitem"
+                    >
+                      <button
+                        class="pf-c-options-menu__menu-item"
+                        id=""
+                        tabindex="-1"
+                        type="button"
+                      >
+                        Name
+                        <i
+                          aria-hidden="true"
+                          class="pf-c-options-menu__menu-item-icon"
+                          hidden=""
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style="vertical-align: -0.125em;"
+                            viewBox="0 0 512 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                              transform=""
+                            />
+                          </svg>
+                        </i>
+                      </button>
+                    </li>
+                    <li
+                      role="menuitem"
+                    >
+                      <button
+                        class="pf-c-options-menu__menu-item"
+                        id=""
+                        tabindex="-1"
+                        type="button"
+                      >
+                        Date
+                        <i
+                          aria-hidden="true"
+                          class="pf-c-options-menu__menu-item-icon"
+                          hidden=""
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style="vertical-align: -0.125em;"
+                            viewBox="0 0 512 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                              transform=""
+                            />
+                          </svg>
+                        </i>
+                      </button>
+                    </li>
+                    <li
+                      role="menuitem"
+                    >
+                      <button
+                        aria-disabled="true"
+                        class="pf-m-disabled pf-c-options-menu__menu-item"
+                        disabled=""
+                        id=""
+                        tabindex="-1"
+                        type="button"
+                      >
+                        Disabled
+                        <i
+                          aria-hidden="true"
+                          class="pf-c-options-menu__menu-item-icon"
+                          hidden=""
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style="vertical-align: -0.125em;"
+                            viewBox="0 0 512 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                              transform=""
+                            />
+                          </svg>
+                        </i>
+                      </button>
+                    </li>
+                    <li
+                      role="menuitem"
+                    >
+                      <button
+                        class="pf-c-options-menu__menu-item"
+                        id=""
+                        tabindex="-1"
+                        type="button"
+                      >
+                        Size
+                        <i
+                          aria-hidden="true"
+                          class="pf-c-options-menu__menu-item-icon"
+                          hidden=""
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style="vertical-align: -0.125em;"
+                            viewBox="0 0 512 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                              transform=""
+                            />
+                          </svg>
+                        </i>
+                      </button>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="pf-c-options-menu__separator"
+                  index="1"
+                  role="separator"
+                />
+                <li
+                  index="2"
+                >
+                  <ul
+                    aria-label=""
+                    class=""
+                  >
+                    <li
+                      role="menuitem"
+                    >
+                      <button
+                        class="pf-c-options-menu__menu-item"
+                        id=""
+                        tabindex="-1"
+                        type="button"
+                      >
+                        Ascending
+                        <i
+                          aria-hidden="true"
+                          class="pf-c-options-menu__menu-item-icon"
+                          hidden=""
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style="vertical-align: -0.125em;"
+                            viewBox="0 0 512 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                              transform=""
+                            />
+                          </svg>
+                        </i>
+                      </button>
+                    </li>
+                    <li
+                      role="menuitem"
+                    >
+                      <button
+                        class="pf-c-options-menu__menu-item"
+                        id=""
+                        tabindex="-1"
+                        type="button"
+                      >
+                        Descending
+                        <i
+                          aria-hidden="true"
+                          class="pf-c-options-menu__menu-item-icon"
+                          hidden=""
+                        >
+                          <svg
+                            aria-hidden="true"
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style="vertical-align: -0.125em;"
+                            viewBox="0 0 512 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                              transform=""
+                            />
+                          </svg>
+                        </i>
+                      </button>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>,
+          }
+        }
       >
-        <span
-          className="pf-c-options-menu__toggle-text"
-        />
-        <CaretDownIcon
-          aria-hidden={true}
-          className="pf-c-options-menu__toggle-icon"
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-          title={null}
+        <Component
+          aria-expanded={true}
+          aria-label="Options menu"
+          ariaHasPopup="listbox"
+          id="expanded-toggle"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={true}
+          isPlain={false}
+          onEnter={[Function]}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-options-menu pf-m-expanded"
+                id="expanded"
+              >
+                <button
+                  aria-expanded="true"
+                  aria-haspopup="listbox"
+                  aria-label="Options menu"
+                  class="pf-c-options-menu__toggle"
+                  id="expanded-toggle"
+                  type="button"
+                >
+                  <span
+                    class="pf-c-options-menu__toggle-text"
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="pf-c-options-menu__toggle-icon"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
+                <ul
+                  aria-labelledby="expanded-toggle"
+                  class="pf-c-options-menu__menu"
+                  role="menu"
+                >
+                  <li
+                    index="0"
+                  >
+                    <ul
+                      aria-label=""
+                      class=""
+                    >
+                      <li
+                        role="menuitem"
+                      >
+                        <button
+                          class="pf-c-options-menu__menu-item"
+                          id=""
+                          tabindex="-1"
+                          type="button"
+                        >
+                          Name
+                          <i
+                            aria-hidden="true"
+                            class="pf-c-options-menu__menu-item-icon"
+                            hidden=""
+                          >
+                            <svg
+                              aria-hidden="true"
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              style="vertical-align: -0.125em;"
+                              viewBox="0 0 512 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                transform=""
+                              />
+                            </svg>
+                          </i>
+                        </button>
+                      </li>
+                      <li
+                        role="menuitem"
+                      >
+                        <button
+                          class="pf-c-options-menu__menu-item"
+                          id=""
+                          tabindex="-1"
+                          type="button"
+                        >
+                          Date
+                          <i
+                            aria-hidden="true"
+                            class="pf-c-options-menu__menu-item-icon"
+                            hidden=""
+                          >
+                            <svg
+                              aria-hidden="true"
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              style="vertical-align: -0.125em;"
+                              viewBox="0 0 512 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                transform=""
+                              />
+                            </svg>
+                          </i>
+                        </button>
+                      </li>
+                      <li
+                        role="menuitem"
+                      >
+                        <button
+                          aria-disabled="true"
+                          class="pf-m-disabled pf-c-options-menu__menu-item"
+                          disabled=""
+                          id=""
+                          tabindex="-1"
+                          type="button"
+                        >
+                          Disabled
+                          <i
+                            aria-hidden="true"
+                            class="pf-c-options-menu__menu-item-icon"
+                            hidden=""
+                          >
+                            <svg
+                              aria-hidden="true"
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              style="vertical-align: -0.125em;"
+                              viewBox="0 0 512 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                transform=""
+                              />
+                            </svg>
+                          </i>
+                        </button>
+                      </li>
+                      <li
+                        role="menuitem"
+                      >
+                        <button
+                          class="pf-c-options-menu__menu-item"
+                          id=""
+                          tabindex="-1"
+                          type="button"
+                        >
+                          Size
+                          <i
+                            aria-hidden="true"
+                            class="pf-c-options-menu__menu-item-icon"
+                            hidden=""
+                          >
+                            <svg
+                              aria-hidden="true"
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              style="vertical-align: -0.125em;"
+                              viewBox="0 0 512 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                transform=""
+                              />
+                            </svg>
+                          </i>
+                        </button>
+                      </li>
+                    </ul>
+                  </li>
+                  <li
+                    class="pf-c-options-menu__separator"
+                    index="1"
+                    role="separator"
+                  />
+                  <li
+                    index="2"
+                  >
+                    <ul
+                      aria-label=""
+                      class=""
+                    >
+                      <li
+                        role="menuitem"
+                      >
+                        <button
+                          class="pf-c-options-menu__menu-item"
+                          id=""
+                          tabindex="-1"
+                          type="button"
+                        >
+                          Ascending
+                          <i
+                            aria-hidden="true"
+                            class="pf-c-options-menu__menu-item-icon"
+                            hidden=""
+                          >
+                            <svg
+                              aria-hidden="true"
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              style="vertical-align: -0.125em;"
+                              viewBox="0 0 512 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                transform=""
+                              />
+                            </svg>
+                          </i>
+                        </button>
+                      </li>
+                      <li
+                        role="menuitem"
+                      >
+                        <button
+                          class="pf-c-options-menu__menu-item"
+                          id=""
+                          tabindex="-1"
+                          type="button"
+                        >
+                          Descending
+                          <i
+                            aria-hidden="true"
+                            class="pf-c-options-menu__menu-item-icon"
+                            hidden=""
+                          >
+                            <svg
+                              aria-hidden="true"
+                              fill="currentColor"
+                              height="1em"
+                              role="img"
+                              style="vertical-align: -0.125em;"
+                              viewBox="0 0 512 512"
+                              width="1em"
+                            >
+                              <path
+                                d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                transform=""
+                              />
+                            </svg>
+                          </i>
+                        </button>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>,
+            }
+          }
         >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            className="pf-c-options-menu__toggle-icon"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
+          <Toggle
+            aria-expanded={true}
+            aria-label="Options menu"
+            ariaHasPopup="listbox"
+            className=""
+            id="expanded-toggle"
+            isActive={false}
+            isDisabled={false}
+            isFocused={false}
+            isHovered={false}
+            isOpen={true}
+            isPlain={false}
+            isPrimary={false}
+            isSplitButton={false}
+            onEnter={[Function]}
+            onToggle={[Function]}
+            parentRef={
               Object {
-                "verticalAlign": "-0.125em",
+                "current": <div
+                  class="pf-c-options-menu pf-m-expanded"
+                  id="expanded"
+                >
+                  <button
+                    aria-expanded="true"
+                    aria-haspopup="listbox"
+                    aria-label="Options menu"
+                    class="pf-c-options-menu__toggle"
+                    id="expanded-toggle"
+                    type="button"
+                  >
+                    <span
+                      class="pf-c-options-menu__toggle-text"
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="pf-c-options-menu__toggle-icon"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </button>
+                  <ul
+                    aria-labelledby="expanded-toggle"
+                    class="pf-c-options-menu__menu"
+                    role="menu"
+                  >
+                    <li
+                      index="0"
+                    >
+                      <ul
+                        aria-label=""
+                        class=""
+                      >
+                        <li
+                          role="menuitem"
+                        >
+                          <button
+                            class="pf-c-options-menu__menu-item"
+                            id=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            Name
+                            <i
+                              aria-hidden="true"
+                              class="pf-c-options-menu__menu-item-icon"
+                              hidden=""
+                            >
+                              <svg
+                                aria-hidden="true"
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style="vertical-align: -0.125em;"
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                  transform=""
+                                />
+                              </svg>
+                            </i>
+                          </button>
+                        </li>
+                        <li
+                          role="menuitem"
+                        >
+                          <button
+                            class="pf-c-options-menu__menu-item"
+                            id=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            Date
+                            <i
+                              aria-hidden="true"
+                              class="pf-c-options-menu__menu-item-icon"
+                              hidden=""
+                            >
+                              <svg
+                                aria-hidden="true"
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style="vertical-align: -0.125em;"
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                  transform=""
+                                />
+                              </svg>
+                            </i>
+                          </button>
+                        </li>
+                        <li
+                          role="menuitem"
+                        >
+                          <button
+                            aria-disabled="true"
+                            class="pf-m-disabled pf-c-options-menu__menu-item"
+                            disabled=""
+                            id=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            Disabled
+                            <i
+                              aria-hidden="true"
+                              class="pf-c-options-menu__menu-item-icon"
+                              hidden=""
+                            >
+                              <svg
+                                aria-hidden="true"
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style="vertical-align: -0.125em;"
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                  transform=""
+                                />
+                              </svg>
+                            </i>
+                          </button>
+                        </li>
+                        <li
+                          role="menuitem"
+                        >
+                          <button
+                            class="pf-c-options-menu__menu-item"
+                            id=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            Size
+                            <i
+                              aria-hidden="true"
+                              class="pf-c-options-menu__menu-item-icon"
+                              hidden=""
+                            >
+                              <svg
+                                aria-hidden="true"
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style="vertical-align: -0.125em;"
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                  transform=""
+                                />
+                              </svg>
+                            </i>
+                          </button>
+                        </li>
+                      </ul>
+                    </li>
+                    <li
+                      class="pf-c-options-menu__separator"
+                      index="1"
+                      role="separator"
+                    />
+                    <li
+                      index="2"
+                    >
+                      <ul
+                        aria-label=""
+                        class=""
+                      >
+                        <li
+                          role="menuitem"
+                        >
+                          <button
+                            class="pf-c-options-menu__menu-item"
+                            id=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            Ascending
+                            <i
+                              aria-hidden="true"
+                              class="pf-c-options-menu__menu-item-icon"
+                              hidden=""
+                            >
+                              <svg
+                                aria-hidden="true"
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style="vertical-align: -0.125em;"
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                  transform=""
+                                />
+                              </svg>
+                            </i>
+                          </button>
+                        </li>
+                        <li
+                          role="menuitem"
+                        >
+                          <button
+                            class="pf-c-options-menu__menu-item"
+                            id=""
+                            tabindex="-1"
+                            type="button"
+                          >
+                            Descending
+                            <i
+                              aria-hidden="true"
+                              class="pf-c-options-menu__menu-item-icon"
+                              hidden=""
+                            >
+                              <svg
+                                aria-hidden="true"
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style="vertical-align: -0.125em;"
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                  transform=""
+                                />
+                              </svg>
+                            </i>
+                          </button>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>,
               }
             }
-            viewBox="0 0 320 512"
-            width="1em"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              transform=""
+            <button
+              aria-expanded={true}
+              aria-haspopup="listbox"
+              aria-label="Options menu"
+              className="pf-c-options-menu__toggle"
+              disabled={false}
+              id="expanded-toggle"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              type="button"
+            >
+              <span
+                className="pf-c-options-menu__toggle-text"
+              />
+              <CaretDownIcon
+                className="pf-c-options-menu__toggle-icon"
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+                title={null}
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  className="pf-c-options-menu__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </CaretDownIcon>
+            </button>
+          </Toggle>
+        </Component>
+      </Component>
+      <DropdownMenu
+        aria-labelledby="expanded-toggle"
+        autoFocus={false}
+        className=""
+        component="ul"
+        isGrouped={false}
+        isOpen={true}
+        openedOnEnter={false}
+        position="left"
+      >
+        <ul
+          aria-labelledby="expanded-toggle"
+          autoFocus={false}
+          className="pf-c-options-menu__menu"
+          hidden={false}
+          role="menu"
+        >
+          <Component
+            index={0}
+            key=".$first group"
+          >
+            <li
+              index={0}
+            >
+              <ul
+                aria-label=""
+                className=""
+              >
+                <Component
+                  key="name"
+                >
+                  <Component
+                    component="button"
+                    id=""
+                    onClick={[Function]}
+                  >
+                    <InternalDropdownItem
+                      className=""
+                      component="button"
+                      context={
+                        Object {
+                          "keyHandler": [Function],
+                          "sendRef": [Function],
+                        }
+                      }
+                      href=""
+                      id=""
+                      index={-1}
+                      isDisabled={false}
+                      isHovered={false}
+                      onClick={[Function]}
+                      onSelect={[Function]}
+                      role="menuitem"
+                      tabIndex={-1}
+                      tooltip={null}
+                      tooltipProps={Object {}}
+                    >
+                      <li
+                        role="menuitem"
+                      >
+                        <button
+                          className="pf-c-options-menu__menu-item"
+                          disabled={false}
+                          href={null}
+                          id=""
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          onSelect={[Function]}
+                          tabIndex={-1}
+                          type="button"
+                        >
+                          Name
+                          <i
+                            aria-hidden={true}
+                            className="pf-c-options-menu__menu-item-icon"
+                            hidden={true}
+                          >
+                            <CheckIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            >
+                              <svg
+                                aria-hidden={true}
+                                aria-labelledby={null}
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                  transform=""
+                                />
+                              </svg>
+                            </CheckIcon>
+                          </i>
+                        </button>
+                      </li>
+                    </InternalDropdownItem>
+                  </Component>
+                </Component>
+                <Component
+                  key="date"
+                >
+                  <Component
+                    component="button"
+                    id=""
+                    onClick={[Function]}
+                  >
+                    <InternalDropdownItem
+                      className=""
+                      component="button"
+                      context={
+                        Object {
+                          "keyHandler": [Function],
+                          "sendRef": [Function],
+                        }
+                      }
+                      href=""
+                      id=""
+                      index={-1}
+                      isDisabled={false}
+                      isHovered={false}
+                      onClick={[Function]}
+                      onSelect={[Function]}
+                      role="menuitem"
+                      tabIndex={-1}
+                      tooltip={null}
+                      tooltipProps={Object {}}
+                    >
+                      <li
+                        role="menuitem"
+                      >
+                        <button
+                          className="pf-c-options-menu__menu-item"
+                          disabled={false}
+                          href={null}
+                          id=""
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          onSelect={[Function]}
+                          tabIndex={-1}
+                          type="button"
+                        >
+                          Date
+                          <i
+                            aria-hidden={true}
+                            className="pf-c-options-menu__menu-item-icon"
+                            hidden={true}
+                          >
+                            <CheckIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            >
+                              <svg
+                                aria-hidden={true}
+                                aria-labelledby={null}
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                  transform=""
+                                />
+                              </svg>
+                            </CheckIcon>
+                          </i>
+                        </button>
+                      </li>
+                    </InternalDropdownItem>
+                  </Component>
+                </Component>
+                <Component
+                  isDisabled={true}
+                  key="disabled"
+                >
+                  <Component
+                    aria-disabled={true}
+                    component="button"
+                    id=""
+                    isDisabled={true}
+                    onClick={[Function]}
+                  >
+                    <InternalDropdownItem
+                      aria-disabled={true}
+                      className=""
+                      component="button"
+                      context={
+                        Object {
+                          "keyHandler": [Function],
+                          "sendRef": [Function],
+                        }
+                      }
+                      href=""
+                      id=""
+                      index={-1}
+                      isDisabled={true}
+                      isHovered={false}
+                      onClick={[Function]}
+                      onSelect={[Function]}
+                      role="menuitem"
+                      tabIndex={-1}
+                      tooltip={null}
+                      tooltipProps={Object {}}
+                    >
+                      <li
+                        role="menuitem"
+                      >
+                        <button
+                          aria-disabled={true}
+                          className="pf-m-disabled pf-c-options-menu__menu-item"
+                          disabled={true}
+                          href={null}
+                          id=""
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          onSelect={[Function]}
+                          tabIndex={-1}
+                          type="button"
+                        >
+                          Disabled
+                          <i
+                            aria-hidden={true}
+                            className="pf-c-options-menu__menu-item-icon"
+                            hidden={true}
+                          >
+                            <CheckIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            >
+                              <svg
+                                aria-hidden={true}
+                                aria-labelledby={null}
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                  transform=""
+                                />
+                              </svg>
+                            </CheckIcon>
+                          </i>
+                        </button>
+                      </li>
+                    </InternalDropdownItem>
+                  </Component>
+                </Component>
+                <Component
+                  key="size"
+                >
+                  <Component
+                    component="button"
+                    id=""
+                    onClick={[Function]}
+                  >
+                    <InternalDropdownItem
+                      className=""
+                      component="button"
+                      context={
+                        Object {
+                          "keyHandler": [Function],
+                          "sendRef": [Function],
+                        }
+                      }
+                      href=""
+                      id=""
+                      index={-1}
+                      isDisabled={false}
+                      isHovered={false}
+                      onClick={[Function]}
+                      onSelect={[Function]}
+                      role="menuitem"
+                      tabIndex={-1}
+                      tooltip={null}
+                      tooltipProps={Object {}}
+                    >
+                      <li
+                        role="menuitem"
+                      >
+                        <button
+                          className="pf-c-options-menu__menu-item"
+                          disabled={false}
+                          href={null}
+                          id=""
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          onSelect={[Function]}
+                          tabIndex={-1}
+                          type="button"
+                        >
+                          Size
+                          <i
+                            aria-hidden={true}
+                            className="pf-c-options-menu__menu-item-icon"
+                            hidden={true}
+                          >
+                            <CheckIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            >
+                              <svg
+                                aria-hidden={true}
+                                aria-labelledby={null}
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                  transform=""
+                                />
+                              </svg>
+                            </CheckIcon>
+                          </i>
+                        </button>
+                      </li>
+                    </InternalDropdownItem>
+                  </Component>
+                </Component>
+              </ul>
+            </li>
+          </Component>
+          <Component
+            index={1}
+            key=".$separator"
+          >
+            <li
+              className="pf-c-options-menu__separator"
+              index={1}
+              role="separator"
             />
-          </svg>
-        </CaretDownIcon>
-      </button>
-    </Component>
-    <ul
-      aria-labelledby="expanded-toggle"
-      className="pf-c-options-menu__menu"
-    >
-      <Component
-        key="first group"
-      >
-        <li>
-          <ul
-            aria-label=""
-            className=""
+          </Component>
+          <Component
+            index={2}
+            key=".$second group"
           >
-            <Component
-              key="name"
+            <li
+              index={2}
             >
-              <li>
-                <button
-                  aria-disabled={false}
-                  aria-selected={false}
-                  className="pf-c-options-menu__menu-item"
-                  id=""
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
+              <ul
+                aria-label=""
+                className=""
+              >
+                <Component
+                  key="ascending"
                 >
-                  Name
-                  <i
-                    aria-hidden={true}
-                    className="pf-c-options-menu__menu-item-icon"
-                    hidden={true}
+                  <Component
+                    component="button"
+                    id=""
+                    onClick={[Function]}
                   >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
-                          Object {
-                            "verticalAlign": "-0.125em",
-                          }
+                    <InternalDropdownItem
+                      className=""
+                      component="button"
+                      context={
+                        Object {
+                          "keyHandler": [Function],
+                          "sendRef": [Function],
                         }
-                        viewBox="0 0 512 512"
-                        width="1em"
+                      }
+                      href=""
+                      id=""
+                      index={-1}
+                      isDisabled={false}
+                      isHovered={false}
+                      onClick={[Function]}
+                      onSelect={[Function]}
+                      role="menuitem"
+                      tabIndex={-1}
+                      tooltip={null}
+                      tooltipProps={Object {}}
+                    >
+                      <li
+                        role="menuitem"
                       >
-                        <path
-                          d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                          transform=""
-                        />
-                      </svg>
-                    </CheckIcon>
-                  </i>
-                </button>
-              </li>
-            </Component>
-            <Component
-              key="date"
-            >
-              <li>
-                <button
-                  aria-disabled={false}
-                  aria-selected={false}
-                  className="pf-c-options-menu__menu-item"
-                  id=""
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
+                        <button
+                          className="pf-c-options-menu__menu-item"
+                          disabled={false}
+                          href={null}
+                          id=""
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          onSelect={[Function]}
+                          tabIndex={-1}
+                          type="button"
+                        >
+                          Ascending
+                          <i
+                            aria-hidden={true}
+                            className="pf-c-options-menu__menu-item-icon"
+                            hidden={true}
+                          >
+                            <CheckIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            >
+                              <svg
+                                aria-hidden={true}
+                                aria-labelledby={null}
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                  transform=""
+                                />
+                              </svg>
+                            </CheckIcon>
+                          </i>
+                        </button>
+                      </li>
+                    </InternalDropdownItem>
+                  </Component>
+                </Component>
+                <Component
+                  key="descending"
                 >
-                  Date
-                  <i
-                    aria-hidden={true}
-                    className="pf-c-options-menu__menu-item-icon"
-                    hidden={true}
+                  <Component
+                    component="button"
+                    id=""
+                    onClick={[Function]}
                   >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
-                          Object {
-                            "verticalAlign": "-0.125em",
-                          }
+                    <InternalDropdownItem
+                      className=""
+                      component="button"
+                      context={
+                        Object {
+                          "keyHandler": [Function],
+                          "sendRef": [Function],
                         }
-                        viewBox="0 0 512 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                          transform=""
-                        />
-                      </svg>
-                    </CheckIcon>
-                  </i>
-                </button>
-              </li>
-            </Component>
-            <Component
-              isDisabled={true}
-              key="disabled"
-            >
-              <li>
-                <button
-                  aria-disabled={true}
-                  aria-selected={false}
-                  className="pf-c-options-menu__menu-item pf-m-disabled"
-                  id=""
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                >
-                  Disabled
-                  <i
-                    aria-hidden={true}
-                    className="pf-c-options-menu__menu-item-icon"
-                    hidden={true}
-                  >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
+                      }
+                      href=""
+                      id=""
+                      index={-1}
+                      isDisabled={false}
+                      isHovered={false}
+                      onClick={[Function]}
+                      onSelect={[Function]}
+                      role="menuitem"
+                      tabIndex={-1}
+                      tooltip={null}
+                      tooltipProps={Object {}}
                     >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
-                          Object {
-                            "verticalAlign": "-0.125em",
-                          }
-                        }
-                        viewBox="0 0 512 512"
-                        width="1em"
+                      <li
+                        role="menuitem"
                       >
-                        <path
-                          d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                          transform=""
-                        />
-                      </svg>
-                    </CheckIcon>
-                  </i>
-                </button>
-              </li>
-            </Component>
-            <Component
-              key="size"
-            >
-              <li>
-                <button
-                  aria-disabled={false}
-                  aria-selected={false}
-                  className="pf-c-options-menu__menu-item"
-                  id=""
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                >
-                  Size
-                  <i
-                    aria-hidden={true}
-                    className="pf-c-options-menu__menu-item-icon"
-                    hidden={true}
-                  >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
-                          Object {
-                            "verticalAlign": "-0.125em",
-                          }
-                        }
-                        viewBox="0 0 512 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                          transform=""
-                        />
-                      </svg>
-                    </CheckIcon>
-                  </i>
-                </button>
-              </li>
-            </Component>
-          </ul>
-        </li>
-      </Component>
-      <Component
-        key="separator"
-      >
-        <li
-          className="pf-c-options-menu__separator"
-          role="separator"
-        />
-      </Component>
-      <Component
-        key="second group"
-      >
-        <li>
-          <ul
-            aria-label=""
-            className=""
-          >
-            <Component
-              key="ascending"
-            >
-              <li>
-                <button
-                  aria-disabled={false}
-                  aria-selected={false}
-                  className="pf-c-options-menu__menu-item"
-                  id=""
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                >
-                  Ascending
-                  <i
-                    aria-hidden={true}
-                    className="pf-c-options-menu__menu-item-icon"
-                    hidden={true}
-                  >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
-                          Object {
-                            "verticalAlign": "-0.125em",
-                          }
-                        }
-                        viewBox="0 0 512 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                          transform=""
-                        />
-                      </svg>
-                    </CheckIcon>
-                  </i>
-                </button>
-              </li>
-            </Component>
-            <Component
-              key="descending"
-            >
-              <li>
-                <button
-                  aria-disabled={false}
-                  aria-selected={false}
-                  className="pf-c-options-menu__menu-item"
-                  id=""
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                >
-                  Descending
-                  <i
-                    aria-hidden={true}
-                    className="pf-c-options-menu__menu-item-icon"
-                    hidden={true}
-                  >
-                    <CheckIcon
-                      color="currentColor"
-                      noVerticalAlign={false}
-                      size="sm"
-                      title={null}
-                    >
-                      <svg
-                        aria-hidden={true}
-                        aria-labelledby={null}
-                        fill="currentColor"
-                        height="1em"
-                        role="img"
-                        style={
-                          Object {
-                            "verticalAlign": "-0.125em",
-                          }
-                        }
-                        viewBox="0 0 512 512"
-                        width="1em"
-                      >
-                        <path
-                          d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                          transform=""
-                        />
-                      </svg>
-                    </CheckIcon>
-                  </i>
-                </button>
-              </li>
-            </Component>
-          </ul>
-        </li>
-      </Component>
-    </ul>
-  </div>
+                        <button
+                          className="pf-c-options-menu__menu-item"
+                          disabled={false}
+                          href={null}
+                          id=""
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          onSelect={[Function]}
+                          tabIndex={-1}
+                          type="button"
+                        >
+                          Descending
+                          <i
+                            aria-hidden={true}
+                            className="pf-c-options-menu__menu-item-icon"
+                            hidden={true}
+                          >
+                            <CheckIcon
+                              color="currentColor"
+                              noVerticalAlign={false}
+                              size="sm"
+                              title={null}
+                            >
+                              <svg
+                                aria-hidden={true}
+                                aria-labelledby={null}
+                                fill="currentColor"
+                                height="1em"
+                                role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
+                                viewBox="0 0 512 512"
+                                width="1em"
+                              >
+                                <path
+                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+                                  transform=""
+                                />
+                              </svg>
+                            </CheckIcon>
+                          </i>
+                        </button>
+                      </li>
+                    </InternalDropdownItem>
+                  </Component>
+                </Component>
+              </ul>
+            </li>
+          </Component>
+        </ul>
+      </DropdownMenu>
+    </div>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -459,60 +1542,255 @@ exports[`optionsMenu isDisabled 1`] = `
     </Unknown>
   }
 >
-  <div
-    className="pf-c-options-menu"
+  <DropdownWithContext
+    autoFocus={true}
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <Unknown>
+          <Unknown>
+            Name
+          </Unknown>
+          <Unknown>
+            Date
+          </Unknown>
+          <Unknown
+            isDisabled={true}
+          >
+            Disabled
+          </Unknown>
+          <Unknown>
+            Size
+          </Unknown>
+        </Unknown>,
+        <Unknown />,
+        <Unknown>
+          <Unknown>
+            Ascending
+          </Unknown>
+          <Unknown>
+            Descending
+          </Unknown>
+        </Unknown>,
+      ]
+    }
     id="disabled"
-  >
-    <Component
-      isDisabled={true}
-      isOpen={false}
-      isPlain={false}
-      key=".0"
-      parentId="disabled"
-    >
-      <button
-        aria-expanded={false}
-        aria-haspopup="listbox"
-        aria-label="Options menu"
-        className="pf-c-options-menu__toggle pf-m-disabled"
-        id="disabled-toggle"
-        onClick={[Function]}
+    isGrouped={false}
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <Unknown
+        isDisabled={true}
       >
-        <span
-          className="pf-c-options-menu__toggle-text"
-        />
-        <CaretDownIcon
-          aria-hidden={true}
-          className="pf-c-options-menu__toggle-icon"
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-          title={null}
+        Options Menu
+      </Unknown>
+    }
+  >
+    <div
+      className="pf-c-options-menu"
+      id="disabled"
+    >
+      <Component
+        ariaHasPopup={true}
+        id="pf-toggle-id-7"
+        isDisabled={true}
+        isOpen={false}
+        isPlain={false}
+        key=".0"
+        onEnter={[Function]}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-options-menu"
+              id="disabled"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-label="Options menu"
+                class="pf-c-options-menu__toggle pf-m-disabled"
+                disabled=""
+                id="disabled-toggle"
+                type="button"
+              >
+                <span
+                  class="pf-c-options-menu__toggle-text"
+                />
+                <svg
+                  aria-hidden="true"
+                  class="pf-c-options-menu__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+            </div>,
+          }
+        }
+      >
+        <Component
+          aria-expanded={false}
+          aria-label="Options menu"
+          ariaHasPopup="listbox"
+          id="disabled-toggle"
+          isActive={false}
+          isDisabled={true}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={false}
+          onEnter={[Function]}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-options-menu"
+                id="disabled"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-label="Options menu"
+                  class="pf-c-options-menu__toggle pf-m-disabled"
+                  disabled=""
+                  id="disabled-toggle"
+                  type="button"
+                >
+                  <span
+                    class="pf-c-options-menu__toggle-text"
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="pf-c-options-menu__toggle-icon"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
+              </div>,
+            }
+          }
         >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            className="pf-c-options-menu__toggle-icon"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
+          <Toggle
+            aria-expanded={false}
+            aria-label="Options menu"
+            ariaHasPopup="listbox"
+            className=""
+            id="disabled-toggle"
+            isActive={false}
+            isDisabled={true}
+            isFocused={false}
+            isHovered={false}
+            isOpen={false}
+            isPlain={false}
+            isPrimary={false}
+            isSplitButton={false}
+            onEnter={[Function]}
+            onToggle={[Function]}
+            parentRef={
               Object {
-                "verticalAlign": "-0.125em",
+                "current": <div
+                  class="pf-c-options-menu"
+                  id="disabled"
+                >
+                  <button
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-label="Options menu"
+                    class="pf-c-options-menu__toggle pf-m-disabled"
+                    disabled=""
+                    id="disabled-toggle"
+                    type="button"
+                  >
+                    <span
+                      class="pf-c-options-menu__toggle-text"
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="pf-c-options-menu__toggle-icon"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </button>
+                </div>,
               }
             }
-            viewBox="0 0 320 512"
-            width="1em"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              transform=""
-            />
-          </svg>
-        </CaretDownIcon>
-      </button>
-    </Component>
-  </div>
+            <button
+              aria-expanded={false}
+              aria-haspopup="listbox"
+              aria-label="Options menu"
+              className="pf-c-options-menu__toggle pf-m-disabled"
+              disabled={true}
+              id="disabled-toggle"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              type="button"
+            >
+              <span
+                className="pf-c-options-menu__toggle-text"
+              />
+              <CaretDownIcon
+                className="pf-c-options-menu__toggle-icon"
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+                title={null}
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  className="pf-c-options-menu__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </CaretDownIcon>
+            </button>
+          </Toggle>
+        </Component>
+      </Component>
+    </div>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -555,59 +1833,249 @@ exports[`optionsMenu open up 1`] = `
     </Unknown>
   }
 >
-  <div
-    className="pf-c-options-menu pf-m-top"
+  <DropdownWithContext
+    autoFocus={true}
+    className=""
+    direction="up"
+    dropdownItems={
+      Array [
+        <Unknown>
+          <Unknown>
+            Name
+          </Unknown>
+          <Unknown>
+            Date
+          </Unknown>
+          <Unknown
+            isDisabled={true}
+          >
+            Disabled
+          </Unknown>
+          <Unknown>
+            Size
+          </Unknown>
+        </Unknown>,
+        <Unknown />,
+        <Unknown>
+          <Unknown>
+            Ascending
+          </Unknown>
+          <Unknown>
+            Descending
+          </Unknown>
+        </Unknown>,
+      ]
+    }
     id="openUp"
+    isGrouped={false}
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <Unknown>
+        Options Menu
+      </Unknown>
+    }
   >
-    <Component
-      isOpen={false}
-      isPlain={false}
-      key=".0"
-      parentId="openUp"
+    <div
+      className="pf-c-options-menu pf-m-top"
+      id="openUp"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup="listbox"
-        aria-label="Options menu"
-        className="pf-c-options-menu__toggle"
-        id="openUp-toggle"
-        onClick={[Function]}
+      <Component
+        ariaHasPopup={true}
+        id="pf-toggle-id-2"
+        isOpen={false}
+        isPlain={false}
+        key=".0"
+        onEnter={[Function]}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-options-menu pf-m-top"
+              id="openUp"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-label="Options menu"
+                class="pf-c-options-menu__toggle"
+                id="openUp-toggle"
+                type="button"
+              >
+                <span
+                  class="pf-c-options-menu__toggle-text"
+                />
+                <svg
+                  aria-hidden="true"
+                  class="pf-c-options-menu__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+            </div>,
+          }
+        }
       >
-        <span
-          className="pf-c-options-menu__toggle-text"
-        />
-        <CaretDownIcon
-          aria-hidden={true}
-          className="pf-c-options-menu__toggle-icon"
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-          title={null}
+        <Component
+          aria-expanded={false}
+          aria-label="Options menu"
+          ariaHasPopup="listbox"
+          id="openUp-toggle"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={false}
+          onEnter={[Function]}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-options-menu pf-m-top"
+                id="openUp"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-label="Options menu"
+                  class="pf-c-options-menu__toggle"
+                  id="openUp-toggle"
+                  type="button"
+                >
+                  <span
+                    class="pf-c-options-menu__toggle-text"
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="pf-c-options-menu__toggle-icon"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
+              </div>,
+            }
+          }
         >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            className="pf-c-options-menu__toggle-icon"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
+          <Toggle
+            aria-expanded={false}
+            aria-label="Options menu"
+            ariaHasPopup="listbox"
+            className=""
+            id="openUp-toggle"
+            isActive={false}
+            isDisabled={false}
+            isFocused={false}
+            isHovered={false}
+            isOpen={false}
+            isPlain={false}
+            isPrimary={false}
+            isSplitButton={false}
+            onEnter={[Function]}
+            onToggle={[Function]}
+            parentRef={
               Object {
-                "verticalAlign": "-0.125em",
+                "current": <div
+                  class="pf-c-options-menu pf-m-top"
+                  id="openUp"
+                >
+                  <button
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-label="Options menu"
+                    class="pf-c-options-menu__toggle"
+                    id="openUp-toggle"
+                    type="button"
+                  >
+                    <span
+                      class="pf-c-options-menu__toggle-text"
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="pf-c-options-menu__toggle-icon"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </button>
+                </div>,
               }
             }
-            viewBox="0 0 320 512"
-            width="1em"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              transform=""
-            />
-          </svg>
-        </CaretDownIcon>
-      </button>
-    </Component>
-  </div>
+            <button
+              aria-expanded={false}
+              aria-haspopup="listbox"
+              aria-label="Options menu"
+              className="pf-c-options-menu__toggle"
+              disabled={false}
+              id="openUp-toggle"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              type="button"
+            >
+              <span
+                className="pf-c-options-menu__toggle-text"
+              />
+              <CaretDownIcon
+                className="pf-c-options-menu__toggle-icon"
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+                title={null}
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  className="pf-c-options-menu__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </CaretDownIcon>
+            </button>
+          </Toggle>
+        </Component>
+      </Component>
+    </div>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -650,56 +2118,171 @@ exports[`optionsMenu plain 1`] = `
     </Unknown>
   }
 >
-  <div
-    className="pf-c-options-menu"
+  <DropdownWithContext
+    autoFocus={true}
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <Unknown>
+          <Unknown>
+            Name
+          </Unknown>
+          <Unknown>
+            Date
+          </Unknown>
+          <Unknown
+            isDisabled={true}
+          >
+            Disabled
+          </Unknown>
+          <Unknown>
+            Size
+          </Unknown>
+        </Unknown>,
+        <Unknown />,
+        <Unknown>
+          <Unknown>
+            Ascending
+          </Unknown>
+          <Unknown>
+            Descending
+          </Unknown>
+        </Unknown>,
+      ]
+    }
     id="plain"
+    isGrouped={false}
+    isOpen={false}
+    isPlain={true}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <Unknown>
+        Options Menu
+      </Unknown>
+    }
   >
-    <Component
-      isOpen={false}
-      isPlain={true}
-      key=".0"
-      parentId="plain"
+    <div
+      className="pf-c-options-menu"
+      id="plain"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup="listbox"
-        aria-label="Options menu"
-        className="pf-c-options-menu__toggle pf-m-plain"
-        id="plain-toggle"
-        onClick={[Function]}
+      <Component
+        ariaHasPopup={true}
+        id="pf-toggle-id-5"
+        isOpen={false}
+        isPlain={true}
+        key=".0"
+        onEnter={[Function]}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-options-menu"
+              id="plain"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-label="Options menu"
+                class="pf-c-options-menu__toggle pf-m-plain"
+                id="plain-toggle"
+                type="button"
+              >
+                <span />
+              </button>
+            </div>,
+          }
+        }
       >
-        <CaretDownIcon
-          aria-hidden={true}
-          className="pf-c-options-menu__toggle-icon"
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-          title={null}
+        <Component
+          aria-expanded={false}
+          aria-label="Options menu"
+          ariaHasPopup="listbox"
+          iconComponent={null}
+          id="plain-toggle"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={true}
+          onEnter={[Function]}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-options-menu"
+                id="plain"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-label="Options menu"
+                  class="pf-c-options-menu__toggle pf-m-plain"
+                  id="plain-toggle"
+                  type="button"
+                >
+                  <span />
+                </button>
+              </div>,
+            }
+          }
         >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            className="pf-c-options-menu__toggle-icon"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
+          <Toggle
+            aria-expanded={false}
+            aria-label="Options menu"
+            ariaHasPopup="listbox"
+            className=""
+            id="plain-toggle"
+            isActive={false}
+            isDisabled={false}
+            isFocused={false}
+            isHovered={false}
+            isOpen={false}
+            isPlain={true}
+            isPrimary={false}
+            isSplitButton={false}
+            onEnter={[Function]}
+            onToggle={[Function]}
+            parentRef={
               Object {
-                "verticalAlign": "-0.125em",
+                "current": <div
+                  class="pf-c-options-menu"
+                  id="plain"
+                >
+                  <button
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-label="Options menu"
+                    class="pf-c-options-menu__toggle pf-m-plain"
+                    id="plain-toggle"
+                    type="button"
+                  >
+                    <span />
+                  </button>
+                </div>,
               }
             }
-            viewBox="0 0 320 512"
-            width="1em"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              transform=""
-            />
-          </svg>
-        </CaretDownIcon>
-      </button>
-    </Component>
-  </div>
+            <button
+              aria-expanded={false}
+              aria-haspopup="listbox"
+              aria-label="Options menu"
+              className="pf-c-options-menu__toggle pf-m-plain"
+              disabled={false}
+              id="plain-toggle"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              type="button"
+            >
+              <span
+                className={null}
+              />
+            </button>
+          </Toggle>
+        </Component>
+      </Component>
+    </div>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -741,59 +2324,249 @@ exports[`optionsMenu regular 1`] = `
     </Unknown>
   }
 >
-  <div
-    className="pf-c-options-menu"
+  <DropdownWithContext
+    autoFocus={true}
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <Unknown>
+          <Unknown>
+            Name
+          </Unknown>
+          <Unknown>
+            Date
+          </Unknown>
+          <Unknown
+            isDisabled={true}
+          >
+            Disabled
+          </Unknown>
+          <Unknown>
+            Size
+          </Unknown>
+        </Unknown>,
+        <Unknown />,
+        <Unknown>
+          <Unknown>
+            Ascending
+          </Unknown>
+          <Unknown>
+            Descending
+          </Unknown>
+        </Unknown>,
+      ]
+    }
     id="regular"
+    isGrouped={false}
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <Unknown>
+        Options Menu
+      </Unknown>
+    }
   >
-    <Component
-      isOpen={false}
-      isPlain={false}
-      key=".0"
-      parentId="regular"
+    <div
+      className="pf-c-options-menu"
+      id="regular"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup="listbox"
-        aria-label="Options menu"
-        className="pf-c-options-menu__toggle"
-        id="regular-toggle"
-        onClick={[Function]}
+      <Component
+        ariaHasPopup={true}
+        id="pf-toggle-id-0"
+        isOpen={false}
+        isPlain={false}
+        key=".0"
+        onEnter={[Function]}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-options-menu"
+              id="regular"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-label="Options menu"
+                class="pf-c-options-menu__toggle"
+                id="regular-toggle"
+                type="button"
+              >
+                <span
+                  class="pf-c-options-menu__toggle-text"
+                />
+                <svg
+                  aria-hidden="true"
+                  class="pf-c-options-menu__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+            </div>,
+          }
+        }
       >
-        <span
-          className="pf-c-options-menu__toggle-text"
-        />
-        <CaretDownIcon
-          aria-hidden={true}
-          className="pf-c-options-menu__toggle-icon"
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-          title={null}
+        <Component
+          aria-expanded={false}
+          aria-label="Options menu"
+          ariaHasPopup="listbox"
+          id="regular-toggle"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={false}
+          onEnter={[Function]}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-options-menu"
+                id="regular"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-label="Options menu"
+                  class="pf-c-options-menu__toggle"
+                  id="regular-toggle"
+                  type="button"
+                >
+                  <span
+                    class="pf-c-options-menu__toggle-text"
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="pf-c-options-menu__toggle-icon"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
+              </div>,
+            }
+          }
         >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            className="pf-c-options-menu__toggle-icon"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
+          <Toggle
+            aria-expanded={false}
+            aria-label="Options menu"
+            ariaHasPopup="listbox"
+            className=""
+            id="regular-toggle"
+            isActive={false}
+            isDisabled={false}
+            isFocused={false}
+            isHovered={false}
+            isOpen={false}
+            isPlain={false}
+            isPrimary={false}
+            isSplitButton={false}
+            onEnter={[Function]}
+            onToggle={[Function]}
+            parentRef={
               Object {
-                "verticalAlign": "-0.125em",
+                "current": <div
+                  class="pf-c-options-menu"
+                  id="regular"
+                >
+                  <button
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-label="Options menu"
+                    class="pf-c-options-menu__toggle"
+                    id="regular-toggle"
+                    type="button"
+                  >
+                    <span
+                      class="pf-c-options-menu__toggle-text"
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="pf-c-options-menu__toggle-icon"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </button>
+                </div>,
               }
             }
-            viewBox="0 0 320 512"
-            width="1em"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              transform=""
-            />
-          </svg>
-        </CaretDownIcon>
-      </button>
-    </Component>
-  </div>
+            <button
+              aria-expanded={false}
+              aria-haspopup="listbox"
+              aria-label="Options menu"
+              className="pf-c-options-menu__toggle"
+              disabled={false}
+              id="regular-toggle"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              type="button"
+            >
+              <span
+                className="pf-c-options-menu__toggle-text"
+              />
+              <CaretDownIcon
+                className="pf-c-options-menu__toggle-icon"
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+                title={null}
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  className="pf-c-options-menu__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </CaretDownIcon>
+            </button>
+          </Toggle>
+        </Component>
+      </Component>
+    </div>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -837,59 +2610,249 @@ exports[`optionsMenu right aligned + open up 1`] = `
     </Unknown>
   }
 >
-  <div
-    className="pf-c-options-menu pf-m-top pf-m-align-right"
+  <DropdownWithContext
+    autoFocus={true}
+    className=""
+    direction="up"
+    dropdownItems={
+      Array [
+        <Unknown>
+          <Unknown>
+            Name
+          </Unknown>
+          <Unknown>
+            Date
+          </Unknown>
+          <Unknown
+            isDisabled={true}
+          >
+            Disabled
+          </Unknown>
+          <Unknown>
+            Size
+          </Unknown>
+        </Unknown>,
+        <Unknown />,
+        <Unknown>
+          <Unknown>
+            Ascending
+          </Unknown>
+          <Unknown>
+            Descending
+          </Unknown>
+        </Unknown>,
+      ]
+    }
     id="rightAlignedOpenUp"
+    isGrouped={false}
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="right"
+    toggle={
+      <Unknown>
+        Options Menu
+      </Unknown>
+    }
   >
-    <Component
-      isOpen={false}
-      isPlain={false}
-      key=".0"
-      parentId="rightAlignedOpenUp"
+    <div
+      className="pf-c-options-menu pf-m-top"
+      id="rightAlignedOpenUp"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup="listbox"
-        aria-label="Options menu"
-        className="pf-c-options-menu__toggle"
-        id="rightAlignedOpenUp-toggle"
-        onClick={[Function]}
+      <Component
+        ariaHasPopup={true}
+        id="pf-toggle-id-3"
+        isOpen={false}
+        isPlain={false}
+        key=".0"
+        onEnter={[Function]}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-options-menu pf-m-top"
+              id="rightAlignedOpenUp"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-label="Options menu"
+                class="pf-c-options-menu__toggle"
+                id="rightAlignedOpenUp-toggle"
+                type="button"
+              >
+                <span
+                  class="pf-c-options-menu__toggle-text"
+                />
+                <svg
+                  aria-hidden="true"
+                  class="pf-c-options-menu__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+            </div>,
+          }
+        }
       >
-        <span
-          className="pf-c-options-menu__toggle-text"
-        />
-        <CaretDownIcon
-          aria-hidden={true}
-          className="pf-c-options-menu__toggle-icon"
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-          title={null}
+        <Component
+          aria-expanded={false}
+          aria-label="Options menu"
+          ariaHasPopup="listbox"
+          id="rightAlignedOpenUp-toggle"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={false}
+          onEnter={[Function]}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-options-menu pf-m-top"
+                id="rightAlignedOpenUp"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-label="Options menu"
+                  class="pf-c-options-menu__toggle"
+                  id="rightAlignedOpenUp-toggle"
+                  type="button"
+                >
+                  <span
+                    class="pf-c-options-menu__toggle-text"
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="pf-c-options-menu__toggle-icon"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
+              </div>,
+            }
+          }
         >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            className="pf-c-options-menu__toggle-icon"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
+          <Toggle
+            aria-expanded={false}
+            aria-label="Options menu"
+            ariaHasPopup="listbox"
+            className=""
+            id="rightAlignedOpenUp-toggle"
+            isActive={false}
+            isDisabled={false}
+            isFocused={false}
+            isHovered={false}
+            isOpen={false}
+            isPlain={false}
+            isPrimary={false}
+            isSplitButton={false}
+            onEnter={[Function]}
+            onToggle={[Function]}
+            parentRef={
               Object {
-                "verticalAlign": "-0.125em",
+                "current": <div
+                  class="pf-c-options-menu pf-m-top"
+                  id="rightAlignedOpenUp"
+                >
+                  <button
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-label="Options menu"
+                    class="pf-c-options-menu__toggle"
+                    id="rightAlignedOpenUp-toggle"
+                    type="button"
+                  >
+                    <span
+                      class="pf-c-options-menu__toggle-text"
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="pf-c-options-menu__toggle-icon"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </button>
+                </div>,
               }
             }
-            viewBox="0 0 320 512"
-            width="1em"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              transform=""
-            />
-          </svg>
-        </CaretDownIcon>
-      </button>
-    </Component>
-  </div>
+            <button
+              aria-expanded={false}
+              aria-haspopup="listbox"
+              aria-label="Options menu"
+              className="pf-c-options-menu__toggle"
+              disabled={false}
+              id="rightAlignedOpenUp-toggle"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              type="button"
+            >
+              <span
+                className="pf-c-options-menu__toggle-text"
+              />
+              <CaretDownIcon
+                className="pf-c-options-menu__toggle-icon"
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+                title={null}
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  className="pf-c-options-menu__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </CaretDownIcon>
+            </button>
+          </Toggle>
+        </Component>
+      </Component>
+    </div>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -932,59 +2895,249 @@ exports[`optionsMenu right aligned 1`] = `
     </Unknown>
   }
 >
-  <div
-    className="pf-c-options-menu pf-m-align-right"
+  <DropdownWithContext
+    autoFocus={true}
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <Unknown>
+          <Unknown>
+            Name
+          </Unknown>
+          <Unknown>
+            Date
+          </Unknown>
+          <Unknown
+            isDisabled={true}
+          >
+            Disabled
+          </Unknown>
+          <Unknown>
+            Size
+          </Unknown>
+        </Unknown>,
+        <Unknown />,
+        <Unknown>
+          <Unknown>
+            Ascending
+          </Unknown>
+          <Unknown>
+            Descending
+          </Unknown>
+        </Unknown>,
+      ]
+    }
     id="rightAligned"
+    isGrouped={false}
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="right"
+    toggle={
+      <Unknown>
+        Options Menu
+      </Unknown>
+    }
   >
-    <Component
-      isOpen={false}
-      isPlain={false}
-      key=".0"
-      parentId="rightAligned"
+    <div
+      className="pf-c-options-menu"
+      id="rightAligned"
     >
-      <button
-        aria-expanded={false}
-        aria-haspopup="listbox"
-        aria-label="Options menu"
-        className="pf-c-options-menu__toggle"
-        id="rightAligned-toggle"
-        onClick={[Function]}
+      <Component
+        ariaHasPopup={true}
+        id="pf-toggle-id-1"
+        isOpen={false}
+        isPlain={false}
+        key=".0"
+        onEnter={[Function]}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-options-menu"
+              id="rightAligned"
+            >
+              <button
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-label="Options menu"
+                class="pf-c-options-menu__toggle"
+                id="rightAligned-toggle"
+                type="button"
+              >
+                <span
+                  class="pf-c-options-menu__toggle-text"
+                />
+                <svg
+                  aria-hidden="true"
+                  class="pf-c-options-menu__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+            </div>,
+          }
+        }
       >
-        <span
-          className="pf-c-options-menu__toggle-text"
-        />
-        <CaretDownIcon
-          aria-hidden={true}
-          className="pf-c-options-menu__toggle-icon"
-          color="currentColor"
-          noVerticalAlign={false}
-          size="sm"
-          title={null}
+        <Component
+          aria-expanded={false}
+          aria-label="Options menu"
+          ariaHasPopup="listbox"
+          id="rightAligned-toggle"
+          isActive={false}
+          isDisabled={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={false}
+          onEnter={[Function]}
+          parentRef={
+            Object {
+              "current": <div
+                class="pf-c-options-menu"
+                id="rightAligned"
+              >
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-label="Options menu"
+                  class="pf-c-options-menu__toggle"
+                  id="rightAligned-toggle"
+                  type="button"
+                >
+                  <span
+                    class="pf-c-options-menu__toggle-text"
+                  />
+                  <svg
+                    aria-hidden="true"
+                    class="pf-c-options-menu__toggle-icon"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
+              </div>,
+            }
+          }
         >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            className="pf-c-options-menu__toggle-icon"
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
+          <Toggle
+            aria-expanded={false}
+            aria-label="Options menu"
+            ariaHasPopup="listbox"
+            className=""
+            id="rightAligned-toggle"
+            isActive={false}
+            isDisabled={false}
+            isFocused={false}
+            isHovered={false}
+            isOpen={false}
+            isPlain={false}
+            isPrimary={false}
+            isSplitButton={false}
+            onEnter={[Function]}
+            onToggle={[Function]}
+            parentRef={
               Object {
-                "verticalAlign": "-0.125em",
+                "current": <div
+                  class="pf-c-options-menu"
+                  id="rightAligned"
+                >
+                  <button
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-label="Options menu"
+                    class="pf-c-options-menu__toggle"
+                    id="rightAligned-toggle"
+                    type="button"
+                  >
+                    <span
+                      class="pf-c-options-menu__toggle-text"
+                    />
+                    <svg
+                      aria-hidden="true"
+                      class="pf-c-options-menu__toggle-icon"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style="vertical-align: -0.125em;"
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </button>
+                </div>,
               }
             }
-            viewBox="0 0 320 512"
-            width="1em"
           >
-            <path
-              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-              transform=""
-            />
-          </svg>
-        </CaretDownIcon>
-      </button>
-    </Component>
-  </div>
+            <button
+              aria-expanded={false}
+              aria-haspopup="listbox"
+              aria-label="Options menu"
+              className="pf-c-options-menu__toggle"
+              disabled={false}
+              id="rightAligned-toggle"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              type="button"
+            >
+              <span
+                className="pf-c-options-menu__toggle-text"
+              />
+              <CaretDownIcon
+                className="pf-c-options-menu__toggle-icon"
+                color="currentColor"
+                noVerticalAlign={false}
+                size="sm"
+                title={null}
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  className="pf-c-options-menu__toggle-icon"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style={
+                    Object {
+                      "verticalAlign": "-0.125em",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </CaretDownIcon>
+            </button>
+          </Toggle>
+        </Component>
+      </Component>
+    </div>
+  </DropdownWithContext>
 </Component>
 `;
 
@@ -1031,42 +3184,375 @@ exports[`optionsMenu text 1`] = `
     />
   }
 >
-  <div
-    className="pf-c-options-menu"
+  <DropdownWithContext
+    autoFocus={true}
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <Unknown>
+          <Unknown>
+            Name
+          </Unknown>
+          <Unknown>
+            Date
+          </Unknown>
+          <Unknown
+            isDisabled={true}
+          >
+            Disabled
+          </Unknown>
+          <Unknown>
+            Size
+          </Unknown>
+        </Unknown>,
+        <Unknown />,
+        <Unknown>
+          <Unknown>
+            Ascending
+          </Unknown>
+          <Unknown>
+            Descending
+          </Unknown>
+        </Unknown>,
+      ]
+    }
     id="text"
+    isGrouped={false}
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <Unknown
+        toggleButtonContents={
+          <React.Fragment>
+            Test
+          </React.Fragment>
+        }
+        toggleText="Test"
+      />
+    }
   >
-    <Component
-      isOpen={false}
-      isPlain={false}
-      key=".0"
-      parentId="text"
-      toggleButtonContents={
-        <React.Fragment>
-          Test
-        </React.Fragment>
-      }
-      toggleText="Test"
+    <div
+      className="pf-c-options-menu"
+      id="text"
     >
-      <div
-        className="pf-c-options-menu__toggle pf-m-text"
+      <Component
+        ariaHasPopup={true}
+        id="pf-toggle-id-6"
+        isOpen={false}
+        isPlain={false}
+        key=".0"
+        onEnter={[Function]}
+        parentRef={
+          Object {
+            "current": <div
+              class="pf-c-options-menu"
+              id="text"
+            >
+              <div
+                class="pf-c-options-menu__toggle pf-m-text"
+                id="pf-toggle-id-6"
+              >
+                <span
+                  class="pf-c-options-menu__toggle-text"
+                >
+                  Test
+                </span>
+                <button
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-label="Options menu"
+                  class="pf-c-options-menu__toggle"
+                  id="text-toggle"
+                  type="button"
+                >
+                  <span
+                    class="pf-c-options-menu__toggle-text"
+                  >
+                    Test
+                  </span>
+                  <svg
+                    aria-hidden="true"
+                    class="pf-c-options-menu__toggle-icon"
+                    fill="currentColor"
+                    height="1em"
+                    role="img"
+                    style="vertical-align: -0.125em;"
+                    viewBox="0 0 320 512"
+                    width="1em"
+                  >
+                    <path
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                      transform=""
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>,
+          }
+        }
+        toggleButtonContents={
+          <React.Fragment>
+            Test
+          </React.Fragment>
+        }
+        toggleText="Test"
       >
-        <span
-          className="pf-c-options-menu__toggle-text"
+        <div
+          className="pf-c-options-menu__toggle pf-m-text"
+          id="pf-toggle-id-6"
         >
-          Test
-        </span>
-        <button
-          aria-expanded={false}
-          aria-haspopup="listbox"
-          aria-label="Options menu"
-          className="pf-c-options-menu__toggle-button"
-          id="text-toggle"
-          onClick={[Function]}
-        >
-          Test
-        </button>
-      </div>
-    </Component>
-  </div>
+          <span
+            className="pf-c-options-menu__toggle-text"
+          >
+            Test
+          </span>
+          <Component
+            aria-haspopup="listbox"
+            aria-label="Options menu"
+            className=""
+            isDisabled={false}
+            isOpen={false}
+            isSplitButton={true}
+            onEnter={[Function]}
+            onToggle={[Function]}
+            parentRef={
+              Object {
+                "current": <div
+                  class="pf-c-options-menu"
+                  id="text"
+                >
+                  <div
+                    class="pf-c-options-menu__toggle pf-m-text"
+                    id="pf-toggle-id-6"
+                  >
+                    <span
+                      class="pf-c-options-menu__toggle-text"
+                    >
+                      Test
+                    </span>
+                    <button
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-label="Options menu"
+                      class="pf-c-options-menu__toggle"
+                      id="text-toggle"
+                      type="button"
+                    >
+                      <span
+                        class="pf-c-options-menu__toggle-text"
+                      >
+                        Test
+                      </span>
+                      <svg
+                        aria-hidden="true"
+                        class="pf-c-options-menu__toggle-icon"
+                        fill="currentColor"
+                        height="1em"
+                        role="img"
+                        style="vertical-align: -0.125em;"
+                        viewBox="0 0 320 512"
+                        width="1em"
+                      >
+                        <path
+                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                          transform=""
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>,
+              }
+            }
+            toggleTemplate={
+              <React.Fragment>
+                Test
+              </React.Fragment>
+            }
+          >
+            <Component
+              aria-expanded={false}
+              aria-haspopup="listbox"
+              aria-label="Options menu"
+              ariaHasPopup="listbox"
+              className=""
+              id="text-toggle"
+              isActive={false}
+              isDisabled={false}
+              isFocused={false}
+              isHovered={false}
+              isOpen={false}
+              isPlain={false}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              parentRef={
+                Object {
+                  "current": <div
+                    class="pf-c-options-menu"
+                    id="text"
+                  >
+                    <div
+                      class="pf-c-options-menu__toggle pf-m-text"
+                      id="pf-toggle-id-6"
+                    >
+                      <span
+                        class="pf-c-options-menu__toggle-text"
+                      >
+                        Test
+                      </span>
+                      <button
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-label="Options menu"
+                        class="pf-c-options-menu__toggle"
+                        id="text-toggle"
+                        type="button"
+                      >
+                        <span
+                          class="pf-c-options-menu__toggle-text"
+                        >
+                          Test
+                        </span>
+                        <svg
+                          aria-hidden="true"
+                          class="pf-c-options-menu__toggle-icon"
+                          fill="currentColor"
+                          height="1em"
+                          role="img"
+                          style="vertical-align: -0.125em;"
+                          viewBox="0 0 320 512"
+                          width="1em"
+                        >
+                          <path
+                            d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                            transform=""
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>,
+                }
+              }
+            >
+              <Toggle
+                aria-expanded={false}
+                aria-haspopup="listbox"
+                aria-label="Options menu"
+                ariaHasPopup="listbox"
+                className=""
+                id="text-toggle"
+                isActive={false}
+                isDisabled={false}
+                isFocused={false}
+                isHovered={false}
+                isOpen={false}
+                isPlain={false}
+                isPrimary={false}
+                isSplitButton={false}
+                onEnter={[Function]}
+                onToggle={[Function]}
+                parentRef={
+                  Object {
+                    "current": <div
+                      class="pf-c-options-menu"
+                      id="text"
+                    >
+                      <div
+                        class="pf-c-options-menu__toggle pf-m-text"
+                        id="pf-toggle-id-6"
+                      >
+                        <span
+                          class="pf-c-options-menu__toggle-text"
+                        >
+                          Test
+                        </span>
+                        <button
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-label="Options menu"
+                          class="pf-c-options-menu__toggle"
+                          id="text-toggle"
+                          type="button"
+                        >
+                          <span
+                            class="pf-c-options-menu__toggle-text"
+                          >
+                            Test
+                          </span>
+                          <svg
+                            aria-hidden="true"
+                            class="pf-c-options-menu__toggle-icon"
+                            fill="currentColor"
+                            height="1em"
+                            role="img"
+                            style="vertical-align: -0.125em;"
+                            viewBox="0 0 320 512"
+                            width="1em"
+                          >
+                            <path
+                              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                              transform=""
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>,
+                  }
+                }
+              >
+                <button
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-label="Options menu"
+                  className="pf-c-options-menu__toggle"
+                  disabled={false}
+                  id="text-toggle"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  type="button"
+                >
+                  <span
+                    className="pf-c-options-menu__toggle-text"
+                  >
+                    Test
+                  </span>
+                  <CaretDownIcon
+                    className="pf-c-options-menu__toggle-icon"
+                    color="currentColor"
+                    noVerticalAlign={false}
+                    size="sm"
+                    title={null}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      aria-labelledby={null}
+                      className="pf-c-options-menu__toggle-icon"
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </CaretDownIcon>
+                </button>
+              </Toggle>
+            </Component>
+          </Component>
+        </div>
+      </Component>
+    </div>
+  </DropdownWithContext>
 </Component>
 `;

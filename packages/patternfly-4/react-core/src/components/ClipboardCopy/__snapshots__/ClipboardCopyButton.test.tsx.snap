@@ -3,6 +3,8 @@
 exports[`copy button render 1`] = `
 <Tooltip
   appendTo={[Function]}
+  aria="describedby"
+  boundary="window"
   className=""
   content={
     <div>
@@ -13,9 +15,22 @@ exports[`copy button render 1`] = `
   enableFlip={true}
   entryDelay={2000}
   exitDelay={1000}
+  flipBehavior={
+    Array [
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "top",
+      "right",
+      "bottom",
+    ]
+  }
   isAppLauncher={false}
+  isVisible={false}
   maxWidth="500px"
   position="right"
+  tippyProps={Object {}}
   trigger="mouseenter focus click"
   zIndex={9999}
 >

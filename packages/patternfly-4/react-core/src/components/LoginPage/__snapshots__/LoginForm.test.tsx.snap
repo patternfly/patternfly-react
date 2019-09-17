@@ -16,6 +16,7 @@ exports[`LoginForm with rememberMeLabel 1`] = `
   >
     <TextInput
       aria-label={null}
+      autoFocus={true}
       className=""
       id="pf-login-username-id"
       isDisabled={false}
@@ -92,6 +93,7 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
   >
     <TextInput
       aria-label={null}
+      autoFocus={true}
       className=""
       id="pf-login-username-id"
       isDisabled={false}
@@ -168,6 +170,7 @@ exports[`should render Login form 1`] = `
   >
     <TextInput
       aria-label={null}
+      autoFocus={true}
       className=""
       id="pf-login-username-id"
       isDisabled={false}

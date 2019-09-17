@@ -23,9 +23,9 @@ export class NavDemo extends Component {
     expandableClickedItem: ''
   };
 
-  onSimpleSelect = result => {
+  onSimpleSelect = (result) => {
     this.setState({ simpleActiveItem: result.itemId });
-  };
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -59,18 +59,18 @@ export class NavDemo extends Component {
     );
   }
 
-  onDefaultSelect = result => {
+  onDefaultSelect = (result) => {
     this.setState({defaultActiveItem: result.itemId});
-  };
+  }
 
   handleNoNavigateLink = (
     e: React.FormEvent<HTMLInputElement>,
     itemId: number | string,
     groupId: number | string,
     to: string
-  ):void =>  {
+  ): void =>  {
     console.log(`No Navigate Link clicked: ${itemId}`);
-  };
+  }
 
   renderDefaultNav() {
     const { defaultActiveItem } = this.state;
@@ -112,26 +112,26 @@ export class NavDemo extends Component {
           </Nav>
         </div>
       </StackItem>
-    )
+    );
   }
 
-  onExpandableSelect = result => {
+  onExpandableSelect = (result) => {
     this.setState({
       expandableActiveGroup: result.groupId,
       expandableActiveItem: result.itemId
     });
-  };
+  }
 
   handleItemOnclick = (
     e: React.FormEvent<HTMLInputElement>,
     itemId: number | string,
     groupId: number | string
-  ):void => {
+  ): void => {
     this.setState({
       expandableClickedGroup: groupId,
       expandableClickedItem: itemId,
     });
-  };
+  }
 
   renderExpandableNav() {
     const { expandableActiveGroup, expandableActiveItem, expandableClickedGroup, expandableClickedItem } = this.state;
@@ -234,9 +234,9 @@ export class NavDemo extends Component {
     );
   }
 
-  onHorizontalSelect = result => {
+  onHorizontalSelect = (result) => {
     this.setState({ horizontalActiveItem: result.itemId });
-  };
+  }
 
   renderHorizontalNav() {
     const { horizontalActiveItem } = this.state;
@@ -275,7 +275,7 @@ export class NavDemo extends Component {
           </Nav>
         </div>
       </StackItem>
-    )
+    );
   }
 
   render() {

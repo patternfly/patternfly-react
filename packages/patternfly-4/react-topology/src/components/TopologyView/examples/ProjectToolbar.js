@@ -37,21 +37,21 @@ export class ProjectToolbar extends React.Component {
 
   onProjectDropDownToggle = isOpen => {
     this.setState({ projectDropDownOpen: isOpen });
-  };
+  }
 
   onProjectSelect = (e, project) => {
     e.preventDefault();
     this.setState({ selectedProject: project, projectDropDownOpen: false });
-  };
+  }
 
   onApplicationDropDownToggle = isOpen => {
     this.setState({ applicationDropDownOpen: isOpen });
-  };
+  }
 
   onApplicationSelect = (e, application) => {
     e.preventDefault();
     this.setState({ selectedApplication: application, applicationDropDownOpen: false });
-  };
+  }
 
   renderProjectDropdown = () => {
     const { projectDropDownOpen, selectedProject } = this.state;
@@ -76,7 +76,7 @@ export class ProjectToolbar extends React.Component {
         </StackItem>
       </Stack>
     );
-  };
+  }
 
   renderApplicationDropdown = () => {
     const { applicationDropDownOpen, selectedApplication } = this.state;
@@ -103,7 +103,7 @@ export class ProjectToolbar extends React.Component {
         </StackItem>
       </Stack>
     );
-  };
+  }
 
   render() {
     return (

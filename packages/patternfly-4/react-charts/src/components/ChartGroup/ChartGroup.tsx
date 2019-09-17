@@ -18,23 +18,19 @@ import {
   VictoryGroupProps,
   VictoryZoomContainer
 } from 'victory';
+import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
-import {ChartContainer} from "../ChartContainer";
+import { getClassName, getTheme } from '../ChartUtils';
 
 export enum ChartGroupSortOrder {
   ascending = 'ascending',
   descending = 'descending'
-};
+}
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
  */
 export interface ChartGroupProps extends VictoryGroupProps {
-  /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-group/
-   */
-  ' '?: any;
   /**
    * Specifies the zoom capability of the container component. A value of true allows the chart to
    * zoom in and out. Zoom events are controlled by scrolling. When zoomed in, panning events are
@@ -172,7 +168,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", "all">[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', 'all'>[];
   /**
    * ChartGroup uses the standard externalEventMutations prop.
    */
@@ -286,7 +282,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number], y?: [number, number] }
+  range?: [number, number] | { x?: [number, number], y?: [number, number] };
   /**
    * The samples prop specifies how many individual points to plot when plotting
    * y as a function of x. Samples is ignored if x props are provided instead.
@@ -354,7 +350,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *
@@ -403,7 +399,7 @@ export interface ChartGroupProps extends VictoryGroupProps {
    * @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
    */
   y0?: DataGetterPropType;
-};
+}
 
 export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
   allowZoom = false,
@@ -418,11 +414,12 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
   theme = getTheme(themeColor, themeVariant),
   ...rest
 }: ChartGroupProps) => {
-  const container = React.cloneElement(containerComponent as React.ReactElement<any>, {
+  const container = React.cloneElement(containerComponent, {
     desc: ariaDesc,
     title: ariaTitle,
     theme,
-    ...containerComponent.props
+    ...containerComponent.props,
+    className: getClassName({className: containerComponent.props.className}) // Override VictoryContainer class name
   });
 
   return (

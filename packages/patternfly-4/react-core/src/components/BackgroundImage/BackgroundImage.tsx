@@ -20,7 +20,7 @@ export enum BackgroundImageSrc {
   sm2x = 'sm2x',
   lg = 'lg',
   filter = 'filter'
-};
+}
 
 const cssVariables = {
   [BackgroundImageSrc.xs]: c_background_image_BackgroundImage && c_background_image_BackgroundImage.name,
@@ -31,23 +31,23 @@ const cssVariables = {
 };
 
 export interface BackgroundImageSrcMap {
-  xs: string,
-  xs2x: string,
-  sm: string,
-  sm2x: string,
-  lg: string,
-  filter?: string
-};
+  xs: string;
+  xs2x: string;
+  sm: string;
+  sm2x: string;
+  lg: string;
+  filter?: string;
+}
 
 export interface BackgroundImageProps extends Omit<React.HTMLProps<HTMLDivElement>, 'src'> {
   /** Additional classes added to the background. */
-  className?: string; 
+  className?: string;
   /** Override image styles using a string or BackgroundImageSrc */
-  src: string | BackgroundImageSrcMap; 
-};
+  src: string | BackgroundImageSrcMap;
+}
 
 export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
-  className = '', 
+  className = '',
   src,
   ...props
 }: BackgroundImageProps) => {
@@ -66,8 +66,8 @@ export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
 
   // Build stylesheet string based on cssVariables
   let cssSheet = '';
-  (Object.keys(cssVariables) as [keyof typeof srcMap]).forEach(size => {
-    cssSheet += `${cssVariables[size as keyof typeof cssVariables]}: url('${srcMap[size]}');`
+  (Object.keys(cssVariables) as [keyof typeof srcMap]).forEach((size) => {
+    cssSheet += `${cssVariables[size as keyof typeof cssVariables]}: url('${srcMap[size]}');`;
   });
 
   // Create emotion stylesheet to inject new css
@@ -75,11 +75,11 @@ export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
     bgOverrides: `&.pf-c-background-image {
       ${cssSheet}
     }`});
-  
+
   return (
     <div className={css(styles.backgroundImage, bgStyles.bgOverrides, className)} {...props}>
       <svg xmlns="http://www.w3.org/2000/svg" className="pf-c-background-image__filter" width="0" height="0">
-        <filter id="image_overlay" width="0">
+        <filter id="image_overlay" width="">
           <feColorMatrix type="matrix"
             values="1 0 0 0 0
             1 0 0 0 0

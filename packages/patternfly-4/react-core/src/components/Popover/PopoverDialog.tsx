@@ -10,10 +10,10 @@ export const PopoverPosition = {
 };
 
 export const PopoverDialog: React.FunctionComponent<PopoverDialogProps> = ({
-    position = 'top', 
+    position = 'top',
     children = null,
     className = null,
-    ...props 
+    ...props
   }) => (
   <div
     className={css(styles.popover, getModifier(styles, position, styles.modifiers.top), className)}

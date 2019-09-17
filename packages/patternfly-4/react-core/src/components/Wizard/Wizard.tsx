@@ -43,8 +43,10 @@ export interface WizardStep {
 export type WizardStepFunctionType = (newStep: { id?: string | number; name: string; }, prevStep: { prevId?: string | number; prevName: string; }) => void;
 
 export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
-  /** True to show the wizard */
+  /** True to show the wizard (not applicable for isInPage)*/
   isOpen?: boolean;
+  /** True to show the wizard without the modal */
+  isInPage?: boolean;
   /** If true makes the navigation more compact */
   isCompactNav?: boolean;
   /** True to set full height wizard */
@@ -55,8 +57,8 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   width?: number | string;
   /** Custom height of the wizard */
   height?: number | string;
-  /** The wizard title */
-  title: string;
+  /** The wizard title (required unless isInPage is used) */
+  title?: string;
   /** The wizard description */
   description?: string;
   /** Callback function to close the wizard */
@@ -100,9 +102,11 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   private static currentId = 0;
   static defaultProps = {
     isOpen: false,
+    isInPage: false,
     isCompactNav: false,
     isFullHeight: false,
     isFullWidth: false,
+    title: '',
     description: '',
     className: '',
     startAtStep: 1,
@@ -122,12 +126,20 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   private container: HTMLDivElement;
   private titleId: string;
   private descriptionId: string;
+  private isModal: boolean;
 
   constructor(props: WizardProps) {
     super(props);
     const newId = Wizard.currentId++;
-    this.titleId = `pf-wizard-title-${newId}`;
-    this.descriptionId = `pf-wizard-description-${newId}`;
+    this.isModal = !props.isInPage;
+    if (this.isModal) {
+      if (!props.title) {
+        console.warn('Title is required for modals!');
+      }
+      this.titleId = `pf-wizard-title-${newId}`;
+      this.descriptionId = `pf-wizard-description-${newId}`;
+    }
+
     this.state = {
       currentStep: this.props.startAtStep && Number.isInteger(this.props.startAtStep) ? this.props.startAtStep : 1,
       isNavOpen: false
@@ -137,12 +149,12 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   private handleKeyClicks = (event: KeyboardEvent): void => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY) {
       if (this.state.isNavOpen) {
-        this.setState({ isNavOpen: !this.state.isNavOpen })
+        this.setState({ isNavOpen: !this.state.isNavOpen });
       } else if (this.props.isOpen) {
         this.props.onClose();
       }
     }
-  };
+  }
 
   private toggleSiblingsFromScreenReaders = (hide: boolean): void => {
     const bodyChildren = document.body.children;
@@ -151,7 +163,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
         hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
       }
     }
-  };
+  }
 
   private onNext = (): void => {
     const { onNext, onClose, onSave } = this.props;
@@ -173,7 +185,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       const { id, name } = flattenedSteps[newStep - 1];
       return onNext && onNext({ id, name }, { prevId, prevName });
     }
-  };
+  }
 
   private onBack = (): void => {
     const { onBack } = this.props;
@@ -194,7 +206,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       const { id, name } = flattenedSteps[newStep - 1];
       return onBack && onBack({ id, name }, { prevId, prevName });
     }
-  };
+  }
 
   private goToStep = (step: number): void => {
     const { onGoToStep } = this.props;
@@ -210,7 +222,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     const { id: prevId, name: prevName } = flattenedSteps[currentStep - 1];
     const { id, name } = flattenedSteps[step - 1];
     return onGoToStep && onGoToStep({ id, name }, { prevId, prevName });
-  };
+  }
 
   private goToStepById = (stepId: number | string): void => {
     const flattenedSteps = this.getFlattenedSteps();
@@ -224,7 +236,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     if (step) {
       this.setState({ currentStep: step });
     }
-  };
+  }
 
   private goToStepByName = (stepName: string): void => {
     const flattenedSteps = this.getFlattenedSteps();
@@ -238,7 +250,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     if (step) {
       this.setState({ currentStep: step });
     }
-  };
+  }
 
   private getFlattenedSteps = (): WizardStep[] => {
     const { steps } = this.props;
@@ -253,7 +265,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       }
     }
     return flattenedSteps;
-  };
+  }
 
   private getFlattenedStepsIndex = (flattenedSteps: WizardStep[], stepName: string): number => {
     for (let i = 0; i < flattenedSteps.length; i++) {
@@ -270,7 +282,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     for (let i = 0; i < steps.length; i++) {
       if (steps[i].steps) {
         for (let j = 0; j < steps[i].steps.length; j++) {
-          steps[i].steps[j] = Object.assign({ canJumpTo: true }, steps[i].steps[j])
+          steps[i].steps[j] = Object.assign({ canJumpTo: true }, steps[i].steps[j]);
         }
       }
       steps[i] = Object.assign({ canJumpTo: true }, steps[i]);
@@ -279,30 +291,37 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   }
 
   componentDidMount() {
-    if (this.container) {
-      document.body.appendChild(this.container);
+    if (this.isModal) {
+      if (this.container) {
+        document.body.appendChild(this.container);
+      }
+      this.toggleSiblingsFromScreenReaders(true);
+      document.addEventListener('keydown', this.handleKeyClicks, false);
     }
-    this.toggleSiblingsFromScreenReaders(true);
-    document.addEventListener('keydown', this.handleKeyClicks, false);
   }
 
   componentWillUnmount() {
-    if (this.container) {
-      document.body.removeChild(this.container);
+    if (this.isModal) {
+      if (this.container) {
+        document.body.removeChild(this.container);
+      }
+      this.toggleSiblingsFromScreenReaders(false);
+      document.removeEventListener('keydown', this.handleKeyClicks, false);
     }
-    this.toggleSiblingsFromScreenReaders(false);
-    document.removeEventListener('keydown', this.handleKeyClicks, false);
   }
 
   render() {
-    if (!canUseDOM) {
-      return null;
-    }
-    if (!this.container) {
-      this.container = document.createElement('div');
+    if (this.isModal) {
+      if (!canUseDOM) {
+        return null;
+      }
+      if (!this.container) {
+        this.container = document.createElement('div');
+      }
     }
     const {
       isOpen,
+      isInPage,
       isFullHeight,
       isFullWidth,
       width,
@@ -334,8 +353,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     const computedSteps: WizardStep[] = this.initSteps(steps);
     const firstStep = activeStep === flattenedSteps[0];
     const isValid = activeStep.enableNext !== undefined ? activeStep.enableNext : true;
-    const setFullWidth = isFullWidth || width
-    const setFullHeight = isFullHeight || height
+    const setFullWidth = isFullWidth || width;
+    const setFullHeight = isFullHeight || height;
 
     const nav = (isWizardNavOpen: boolean) => (
       <WizardNav isOpen={isWizardNavOpen} ariaLabel={ariaLabelNav}>
@@ -414,61 +433,77 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       activeStep
     };
 
-    return (
-      isOpen && ReactDOM.createPortal(
+    if (this.isModal && !isOpen) {
+      return null;
+    }
+
+    const wizard = (
+        <WizardContextProvider value={context}>
+          <div {...rest}
+               className={css(
+                 styles.wizard,
+                 !this.isModal && styles.modifiers.inPage,
+                 isCompactNav && 'pf-m-compact-nav',
+                 activeStep.isFinishedStep && 'pf-m-finished',
+                 setFullWidth && styles.modifiers.fullWidth,
+                 setFullHeight && styles.modifiers.fullHeight,
+                 className)}
+               {
+                 ...(this.isModal && {
+                   role: 'dialog',
+                   'aria-modal': 'true',
+                   'aria-labelledby': this.titleId,
+                   'aria-describedby': description ? this.descriptionId : undefined
+                 })
+               }
+          >
+            {
+              this.isModal && (
+                <WizardHeader
+                  titleId={this.titleId}
+                  descriptionId={this.descriptionId}
+                  onClose={onClose}
+                  title={title}
+                  description={description}
+                  ariaLabelCloseButton={ariaLabelCloseButton}
+                />
+              )
+            }
+            <WizardToggle
+              isNavOpen={this.state.isNavOpen}
+              onNavToggle={(isNavOpen) => this.setState({ isNavOpen })}
+              nav={nav}
+              steps={steps}
+              activeStep={activeStep}
+              hasBodyPadding={hasBodyPadding}
+            >
+              {footer || (
+                <WizardFooterInternal
+                  onNext={this.onNext}
+                  onBack={this.onBack}
+                  onClose={onClose}
+                  isValid={isValid}
+                  firstStep={firstStep}
+                  activeStep={activeStep}
+                  nextButtonText={activeStep.nextButtonText || nextButtonText}
+                  backButtonText={backButtonText}
+                  cancelButtonText={cancelButtonText}
+                />
+              )}
+            </WizardToggle>
+          </div>
+        </WizardContextProvider>
+    );
+
+    return this.isModal ? ReactDOM.createPortal(
         <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
           <Backdrop>
             <Bullseye>
-              <WizardContextProvider value={context}>
-                <div {...rest}
-                  className={css(
-                    styles.wizard,
-                    isCompactNav && 'pf-m-compact-nav',
-                    activeStep.isFinishedStep && 'pf-m-finished',
-                    setFullWidth && styles.modifiers.fullWidth,
-                    setFullHeight && styles.modifiers.fullHeight,
-                    className)}
-                  role="dialog"
-                  aria-modal="true"
-                  aria-labelledby={this.titleId}
-                  aria-describedby={description ? this.descriptionId : undefined}
-                >
-                  <WizardHeader
-                    titleId={this.titleId}
-                    descriptionId={this.descriptionId}
-                    onClose={onClose}
-                    title={title}
-                    description={description}
-                    ariaLabelCloseButton={ariaLabelCloseButton} />
-                  <WizardToggle
-                    isNavOpen={this.state.isNavOpen}
-                    onNavToggle={isNavOpen => this.setState({ isNavOpen })}
-                    nav={nav}
-                    steps={steps}
-                    activeStep={activeStep}
-                    hasBodyPadding={hasBodyPadding}
-                  >
-                    {footer || (
-                      <WizardFooterInternal
-                        onNext={this.onNext}
-                        onBack={this.onBack}
-                        onClose={onClose}
-                        isValid={isValid}
-                        firstStep={firstStep}
-                        activeStep={activeStep}
-                        nextButtonText={activeStep.nextButtonText || nextButtonText}
-                        backButtonText={backButtonText}
-                        cancelButtonText={cancelButtonText}
-                      />
-                    )}
-                  </WizardToggle>
-                </div>
-              </WizardContextProvider>
+              {wizard}
             </Bullseye>
           </Backdrop>
         </FocusTrap>,
         this.container
-      )
-    );
+      ) : wizard;
   }
 }

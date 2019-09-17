@@ -9,7 +9,7 @@ export interface AboutModalBoxCloseButtonProps extends React.HTMLProps<HTMLDivEl
   className?: string;
   /** A callback for when the close button is clicked  */
   onClose?: () => void;
-};
+}
 
 export const AboutModalBoxCloseButton: React.SFC<AboutModalBoxCloseButtonProps> = ({
   className = '',

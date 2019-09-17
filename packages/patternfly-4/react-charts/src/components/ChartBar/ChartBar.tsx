@@ -15,8 +15,9 @@ import {
   StringOrNumberOrCallback,
   VictoryStyleInterface,
   VictoryBar,
-  VictoryBarProps
+  VictoryBarProps,
 } from 'victory';
+import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
@@ -25,15 +26,11 @@ import { getTheme } from '../ChartUtils';
  */
 export interface ChartBarProps extends VictoryBarProps {
   /**
-   * See Victory type docs: https://formidable.com/open-source/victory/docs/victory-bar/
-   */
-  ' '?: any;
-  /**
    * The alignment prop specifies how bars should be aligned relative to their data points.
    * This prop may be given as “start”, “middle” or “end”. When this prop is not specified,
    * bars will have “middle” alignment relative to their data points.
    */
-  alignment?: "start" | "middle" | "end";
+  alignment?: 'start' | 'middle' | 'end';
   /**
    * The animate prop specifies props for VictoryAnimation to use.
    * The animate prop should also be used to specify enter and exit
@@ -174,7 +171,7 @@ export interface ChartBarProps extends VictoryBarProps {
    *   }
    * ]}
    */
-  events?: EventPropTypeInterface<"data" | "labels" | "parent", number | string>[];
+  events?: EventPropTypeInterface<'data' | 'labels' | 'parent', number | string>[];
   /**
    * ChartBar uses the standard externalEventMutations prop.
    */
@@ -281,7 +278,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number], y?: [number, number] }
+  range?: [number, number] | { x?: [number, number], y?: [number, number] };
   /**
    * The samples prop specifies how many individual points to plot when plotting
    * y as a function of x. Samples is ignored if x props are provided instead.
@@ -352,7 +349,7 @@ export interface ChartBarProps extends VictoryBarProps {
    */
   theme?: ChartThemeDefinition;
   /**
-   * Specifies the theme color. Valid values are 'blue', 'green', 'grey' (recomended), 'multi', etc.
+   * Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc.
    *
    * Note: Not compatible with theme prop
    *
@@ -406,9 +403,12 @@ export interface ChartBarProps extends VictoryBarProps {
 export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
   themeColor,
   themeVariant,
-  theme = getTheme(themeColor, themeVariant), // destructure last
+
+    // destructure last
+  theme = getTheme(themeColor, themeVariant),
+  containerComponent = <ChartContainer theme={theme} />,
   ...rest
-}: ChartBarProps) => <VictoryBar theme={theme} {...rest} />;
+}: ChartBarProps) => <VictoryBar containerComponent={containerComponent} theme={theme} {...rest} />;
 
 // Note: VictoryBar.getDomain & VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBar, VictoryBar);

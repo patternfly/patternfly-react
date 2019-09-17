@@ -29,6 +29,8 @@ describe('ChipGroup', () => {
       <ChipGroup>
         <Chip>1</Chip>
         <Chip>2</Chip>
+        <Chip>3</Chip>
+        <Chip>4</Chip>
       </ChipGroup>
     );
     const overflowButton = view.find('.pf-m-overflow .pf-c-chip__text');

@@ -4,7 +4,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 export class DonutSmallDemo extends React.Component {
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -14,7 +14,7 @@ export class DonutSmallDemo extends React.Component {
           <ChartDonut
             data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
             height={150}
-            labels={datum => `${datum.x}: ${datum.y}%`}
+            labels={({ datum }) => `${datum.x}: ${datum.y}%`}
             subTitle="Pets"
             title="100"
             width={150}
@@ -22,6 +22,6 @@ export class DonutSmallDemo extends React.Component {
         </div>
       </div>
 
-    )
+    );
   }
 }

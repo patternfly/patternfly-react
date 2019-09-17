@@ -2,10 +2,7 @@ import * as React from 'react';
 
 import { TimesIcon } from '@patternfly/react-icons';
 import { Button } from '@patternfly/react-core';
-
-import { topologySideBarCss } from './css/topology-side-bar-css';
-
-topologySideBarCss.inject();
+import '@patternfly/react-styles/css/components/Topology/topology-side-bar.css';
 
 export interface TopologySideBarProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the sidebar */
@@ -28,7 +25,7 @@ export class TopologySideBar extends React.Component<TopologySideBarProps, Topol
 
   timer: any = null;
 
-  constructor(props:TopologySideBarProps) {
+  constructor(props: TopologySideBarProps) {
     super(props);
     this.state = { isIn: false };
   }
@@ -39,21 +36,21 @@ export class TopologySideBar extends React.Component<TopologySideBarProps, Topol
 
   updateForTransitions = () => {
     this.setState({ isIn: this.props.show });
-  };
+  }
 
   startTimer = () => {
     this.clearTimer();
     this.timer = setTimeout(this.updateForTransitions, 150);
-  };
+  }
 
   clearTimer = () => {
     if (this.timer) {
       clearTimeout(this.timer);
       this.timer = null;
     }
-  };
+  }
 
-  render () {
+  render() {
     const {
       className = '',
       show = false,
@@ -68,7 +65,6 @@ export class TopologySideBar extends React.Component<TopologySideBarProps, Topol
       this.clearTimer();
       this.startTimer();
     }
-
 
     return (
       <div
