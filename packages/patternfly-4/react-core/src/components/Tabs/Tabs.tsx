@@ -232,6 +232,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
             'data-ouia-component-type': 'Tabs',
             'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
           }}
+          id={id && id}
           {...props}
         >
           <button
