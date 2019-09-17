@@ -22,7 +22,8 @@ import {
   textCenter,
   wrappable,
   classNames,
-  Visibility
+  Visibility,
+  Checkbox
 } from '@patternfly/react-table';
 
 import {
@@ -178,7 +179,8 @@ import {
   headerCol,
   TableVariant,
   expandable,
-  cellWidth
+  cellWidth,
+  Checkbox
 } from '@patternfly/react-table';
 
 class SelectableTable extends React.Component {
@@ -202,9 +204,11 @@ class SelectableTable extends React.Component {
         {
           cells: ['p', 'two', 'b', 'four', 'five']
         }
-      ]
+      ],
+      canSelectAll: true
     };
     this.onSelect = this.onSelect.bind(this);
+    this.toggleSelect = this.toggleSelect.bind(this);
   }
 
   onSelect(event, isSelected, rowId) {
@@ -223,14 +227,30 @@ class SelectableTable extends React.Component {
     });
   }
 
+  toggleSelect(checked) {
+    this.setState({
+      canSelectAll: checked
+    });
+  }
+
   render() {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Selectable Table" onSelect={this.onSelect} cells={columns} rows={rows}>
+      <div>
+      <Table caption="Selectable Table" onSelect={this.onSelect} cells={columns} rows={rows} canSelectAll={this.state.canSelectAll}>
         <TableHeader />
         <TableBody />
       </Table>
+      <Checkbox
+        label="canSelectAll"
+        isChecked={this.state.canSelectAll}
+        onChange={this.toggleSelect}
+        aria-label="toggle select all checkbox"
+        id="toggle-select-all"
+        name="toggle-select-all"
+      />
+      </div>
     );
   }
 }
