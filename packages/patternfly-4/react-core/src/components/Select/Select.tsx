@@ -74,6 +74,8 @@ export interface SelectProps
   variant?: 'single' | 'checkbox' | 'typeahead' | 'typeaheadmulti';
   /** Width of the select container as a number of px or string percentage */
   width?: string | number;
+  /** Max height of the select container as a number of px or string percentage */
+  maxHeight?: string | number;
   /** Icon element to render inside the select toggle */
   toggleIcon?: React.ReactElement;
 }
@@ -113,6 +115,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     "noResultsFoundText": "No results found",
     "variant": SelectVariant.single,
     "width": '',
+    "maxHeight": '',
     "onClear": Function.prototype,
     "onCreateOption": Function.prototype,
     "toggleIcon": null as React.ReactElement,
@@ -339,6 +342,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
       'aria-label': ariaLabel,
       placeholderText,
       width,
+      maxHeight,
       toggleIcon,
       ...props
     } = this.props;
@@ -498,6 +502,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
               aria-labelledby={ariaLabelledBy}
               sendRef={this.sendRef}
               keyHandler={this.handleArrowKeys}
+              maxHeight={maxHeight}
             >
               {children}
             </SelectMenu>
@@ -511,6 +516,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
               isGrouped={isGrouped}
               sendRef={this.sendRef}
               keyHandler={this.handleArrowKeys}
+              maxHeight={maxHeight}
             >
               {children}
             </SelectMenu>
@@ -524,6 +530,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
               aria-labelledby={ariaLabelledBy}
               sendRef={this.sendRef}
               keyHandler={this.handleArrowKeys}
+              maxHeight={maxHeight}
             >
               {this.extendTypeaheadChildren(typeaheadActiveChild)}
             </SelectMenu>
