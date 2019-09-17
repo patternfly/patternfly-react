@@ -60,6 +60,7 @@ export const HeaderRow: React.FunctionComponent<HeaderRowProps> = ({
         renderers.cell as createElementType,
         {
           draggable,
+          tabIndex: (draggable) ? 0 : undefined,
           onDragStart,
           onDragEnd,
           onDrop,
