@@ -166,12 +166,27 @@ export interface TableProps {
   bodyWrapper?: Function;
   rowWrapper?: Function;
   role?: string;
+  reorderableColumns?: boolean;
+  onDragStart?: Function;
+  onDragEnd?: Function;
+  onDrop?: Function;
+  onDragOver?: Function;
+  onDragEnter?: Function;
+  onDragLeave?: Function;
+  applyColumnReorder?: Function;
 }
 
 export const TableContext = React.createContext({
   headerData: null as ColumnsType,
   headerRows: null as IHeaderRow[],
-  rows: [] as (IRow | string[])[]
+  rows: [] as (IRow | string[])[],
+  draggable: false,
+  onDragStart: null as Function,
+  onDragEnd: null as Function,
+  onDrop: null as Function,
+  onDragOver: null as Function,
+  onDragEnter: null as Function,
+  onDragLeave: null as Function,
 });
 
 export class Table extends React.Component<TableProps, {}> {
@@ -189,7 +204,9 @@ export class Table extends React.Component<TableProps, {}> {
     "caption": undefined as React.ReactNode,
     'aria-label': undefined as string,
     "gridBreakPoint": TableGridBreakpoint.gridMd,
-    "role": 'grid'
+    "role": 'grid',
+    "reorderableColumns": false,
+    "applyColumnReorder": null as Function
   };
 
   isSelected = (row: IRow) => row.selected === true;
@@ -201,11 +218,43 @@ export class Table extends React.Component<TableProps, {}> {
     return rows.every((row) => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
   }
 
+  startDrag = -1;
+
+  dragHandlers = {
+    onDragStart: (e: any) => {
+      this.startDrag = e.target.getAttribute('data-key');
+      e.target.style.opacity = 0.4;
+    },
+    onDragEnd: (e: any) => {
+      e.target.style.opacity = 1;
+    },
+    onDrop: (e: any) => {
+      if (e.stopPropagation) {
+        e.stopPropagation();
+      }
+      this.props.applyColumnReorder(this.startDrag, e.target.getAttribute('data-key'));
+      e.target.style.border = 'none';
+      return false;
+    },
+    onDragOver: (e: any) => {
+      if (e.preventDefault) {
+        e.preventDefault();
+      }
+      return false;
+    },
+    onDragEnter: (e: any) => {
+      e.target.style.border = '2px black dashed';
+    },
+    onDragLeave: (e: any) => {
+      e.target.style.border = 'none';
+    }
+  }
+
   render() {
     const {
       'aria-label': ariaLabel,
       caption,
-      header,
+      header: Header,
       className,
       gridBreakPoint,
       onSort,
@@ -229,10 +278,12 @@ export class Table extends React.Component<TableProps, {}> {
       rowWrapper,
       borders,
       role,
+      reorderableColumns,
+      applyColumnReorder,
       ...props
     } = this.props;
 
-    if (!ariaLabel && !caption && !header && role !== 'presentation') {
+    if (!ariaLabel && !caption && !Header && role !== 'presentation') {
       // tslint:disable-next-line:no-console
       console.error('Table: Specify at least one of: header, caption, aria-label');
     }
@@ -252,7 +303,8 @@ export class Table extends React.Component<TableProps, {}> {
       contentId,
       dropdownPosition,
       dropdownDirection,
-      firstUserColumnIndex: [onCollapse, onSelect].filter((callback) => callback).length
+      firstUserColumnIndex: [onCollapse, onSelect].filter((callback) => callback).length,
+      ...this.dragHandlers
     });
 
     return (
@@ -260,10 +312,12 @@ export class Table extends React.Component<TableProps, {}> {
         value={{
           headerData,
           headerRows: null as IHeaderRow[],
-          rows
+          rows,
+          draggable: reorderableColumns,
+          ...this.dragHandlers
         }}
       >
-        {header}
+        {Header}
         <Provider
           {...props}
           aria-label={ariaLabel}

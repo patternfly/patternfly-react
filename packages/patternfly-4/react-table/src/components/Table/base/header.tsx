@@ -17,71 +17,51 @@ export interface HeaderProps {
   onRow?: Function;
   className?: string;
   reorderableColumns?: boolean;
+  onDragStart?: Function;
+  onDragEnd?: Function;
+  onDrop?: Function;
+  onDragOver?: Function;
+  onDragEnter?: Function;
+  onDragLeave?: Function;
 }
 
-class BaseHeader extends React.Component<HeaderProps, {columns: any}> {
-  constructor(props: HeaderProps) {
-    super(props);
-    this.state = {
-      columns: (this.props.headerRows || [this.props.columns] as ColumnsType)
-    };
-  }
-  startDrag = -1;
-
-  applyDragDropOperation(from: number, to: number) {
-    if (from !== to) {
-      let newArr = this.state.columns[0];
-      [newArr[from], newArr[to]] = [newArr[to], newArr[from]];
-      this.setState({
-        columns: [newArr]
-      });
-    }
-  }
-
+class BaseHeader extends React.Component<HeaderProps, {}> {
   render() {
-    const { children, headerRows, onRow, renderers, columns, reorderableColumns, ...props } = this.props;
-    const dragAndDropProps = (reorderableColumns) ? { draggable: true } : null;
+    const {
+      children,
+      headerRows,
+      onRow,
+      renderers,
+      columns,
+      reorderableColumns,
+      onDragStart,
+      onDrop,
+      onDragOver,
+      onDragLeave,
+      onDragEnter,
+      onDragEnd,
+      ...props
+    } = this.props;
+    const isDraggable = (reorderableColumns) ? { draggable: true } : null;
     // If headerRows aren't passed, default to bodyColumns as header rows
     return React.createElement(
       renderers.header.wrapper as createElementType,
       props,
       [
-        this.state.columns.map((rowData: RowsType, rowIndex: number) =>
+        (this.props.headerRows || [this.props.columns] as ColumnsType).map((rowData: RowsType, rowIndex: number) =>
           React.createElement(HeaderRow, {
             key: `${rowIndex}-header-row`,
             renderers: renderers.header,
             onRow,
             rowData,
             rowIndex,
-            ...dragAndDropProps,
-            onDragStart: (e: any) => {
-              // TODO: why can't we use rowIndex? It's always zero for some reason
-              this.startDrag = e.target.getAttribute('data-key');
-              e.target.style.opacity = 0.4;
-            },
-            onDragEnd: (e: any) => {
-              e.target.style.opacity = 1;
-            },
-            onDrop: (e: any) => {
-              if (e.stopPropagation) {
-                e.stopPropagation();
-              }
-              e.target.style.border = 'none';
-              this.applyDragDropOperation(this.startDrag, e.target.getAttribute('data-key'));
-              return false;
-            },
-            onDragOver: (e: any) => {
-              if (e.preventDefault) {
-                e.preventDefault();
-              }
-              return false;
-            },
-            onDragEnter: (e: any) => {
-              e.target.style.border = '2px black dashed';
-            },
-            onDragLeave: (e: any) => {
-              e.target.style.border = 'none';
-            }
+            ...isDraggable,
+            onDragStart,
+            onDragLeave,
+            onDragEnter,
+            onDragOver,
+            onDrop,
+            onDragEnd
           })
         )
       ].concat(children as any)

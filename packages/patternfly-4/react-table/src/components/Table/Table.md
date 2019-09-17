@@ -33,84 +33,6 @@ import {
 
 import DemoSortableTable from './demo/DemoSortableTable';
 
-## Reorderable Column Table
-
-```js
-import React from 'react';
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  cellWidth,
-  textCenter,
-} from '@patternfly/react-table';
-
-
-class ColReorderTable extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: [
-        { title: 'Repositories' },
-        { title: 'Branches' },
-        { title: 'Pull requests' },
-        { title: 'Workspaces' },
-        {
-          title: 'Last Commit',
-          transforms: [textCenter],
-          cellTransforms: [textCenter]
-        }
-      ],
-      rows: [
-        {
-          cells: ['repositories', 'branches', 'PR', 'workspaces', 'last commit']
-        },
-        {
-          cells: [
-            {
-              title: <div>repositories - 2</div>,
-              props: { title: 'hover title', colSpan: 3 }
-            },
-            'workspaces - 2',
-            'last commit - 2'
-          ]
-        },
-        {
-          cells: [
-            'repositories - 3',
-            'branches - 3',
-            'PR - 3',
-            'workspaces - 3',
-            {
-              title: 'five - 3 (not centered)',
-              props: { textCenter: false }
-            }
-          ]
-        }
-      ]
-    };
-  }
-
-  render() {
-    const { columns, rows } = this.state;
-
-    return (
-      <Table caption="Reorderable Column Table" cells={columns} rows={rows}>
-        <TableHeader reorderableColumns={true} />
-        <TableBody />
-      </Table>
-    );
-  }
-}
-
-```
-
-
 ## Simple table
 
 ```js
@@ -184,6 +106,110 @@ class SimpleTable extends React.Component {
     );
   }
 }
+```
+
+## Reorderable Column Table
+
+```js
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  sortable,
+  SortByDirection,
+  headerCol,
+  TableVariant,
+  expandable,
+  cellWidth,
+  textCenter,
+} from '@patternfly/react-table';
+
+class ColReorderTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        { title: 'Repositories' },
+        { title: 'Branches' },
+        { title: 'Pull requests' },
+        { title: 'Workspaces' },
+        {
+          title: 'Last Commit',
+          transforms: [textCenter],
+          cellTransforms: [textCenter]
+        }
+      ],
+      rows: [
+        {
+          cells: ['repositories', 'branches', 'PR', 'workspaces', 'last commit']
+        },
+        {
+          cells: [
+            {
+              title: <div>repositories - 2</div>,
+              props: { title: 'hover title' }
+            },
+            'branches - 2',
+            'PR - 2',
+            'workspaces - 2',
+            'last commit - 2'
+          ]
+        },
+        {
+          cells: [
+            'repositories - 3',
+            'branches - 3',
+            'PR - 3',
+            'workspaces - 3',
+            {
+              title: 'last commit - 3 (not centered)',
+              props: { textCenter: false }
+            }
+          ]
+        }
+      ]
+    };
+  }
+
+  render() {
+    const { columns, rows } = this.state;
+
+    const swapArrPosition = (from, to, arr) => {
+      let newArr = arr.slice();
+      [newArr[from], newArr[to]] = [newArr[to], newArr[from]];
+      return newArr;
+    }
+
+    const applyColumnReorder = (from, to) => {
+      if (from !== to) {
+        let newColumnArr = swapArrPosition(from, to, this.state.columns);
+        let newRowArr = this.state.rows.map((el, idx) => {
+          return {
+            cells: swapArrPosition(from, to, el.cells)
+          };
+        });
+        this.setState({
+          columns: newColumnArr,
+          rows: newRowArr
+        });
+      }
+    }
+
+    return (
+      <Table
+        reorderableColumns={true}
+        applyColumnReorder={applyColumnReorder}
+        caption="Reorderable Column Table"
+        cells={columns}
+        rows={rows}>
+        <TableHeader />
+        <TableBody />
+      </Table>
+    );
+  }
+}
+
 ```
 
 ## Sortable table

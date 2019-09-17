@@ -6,17 +6,41 @@ import { ColumnsType } from './base/types';
 interface ContextHeaderProps {
   className?: string;
   headerRows?: IHeaderRow[];
-  reorderableColumns?: boolean;
+  draggable?: boolean;
+  onDragStart?: Function;
+  onDragEnd?: Function;
+  onDrop?: Function;
+  onDragOver?: Function;
+  onDragEnter?: Function;
+  onDragLeave?: Function;
 }
 
 const ContextHeader: React.FunctionComponent<ContextHeaderProps> = ({
   className = '',
   headerRows = undefined as IHeaderRow[],
-  reorderableColumns = false,
+  draggable,
+  onDragStart,
+  onDragEnd,
+  onDragEnter,
+  onDragLeave,
+  onDragOver,
+  onDrop,
   ...props
-}: ContextHeaderProps ) => (
-  <Header {...props} reorderableColumns={reorderableColumns} headerRows={headerRows as ColumnsType} className={className} />
-);
+}: ContextHeaderProps ) => {
+  return (
+    <Header
+      {...props}
+      onDragStart={onDragStart}
+      onDragEnd={onDragEnd}
+      onDrop={onDrop}
+      onDragOver={onDragOver}
+      onDragEnter={onDragEnter}
+      onDragLeave={onDragLeave}
+      reorderableColumns={draggable}
+      headerRows={headerRows as ColumnsType}
+      className={className} />
+  )
+};
 
 export interface HeaderProps extends React.HTMLProps<HTMLTableRowElement> {
   className?: string;
@@ -24,8 +48,32 @@ export interface HeaderProps extends React.HTMLProps<HTMLTableRowElement> {
 
 export const TableHeader: React.FunctionComponent<HeaderProps> = ({
   ...props
-}: HeaderProps ) => (
-  <TableContext.Consumer>
-  {({ headerRows }) => <ContextHeader {...props} headerRows={headerRows} />}
-  </TableContext.Consumer>
-);
+}: HeaderProps ) => {
+  return (
+    <TableContext.Consumer>
+    {({
+      headerRows,
+      draggable,
+      onDragStart,
+      onDragEnd,
+      onDrop,
+      onDragOver,
+      onDragEnter,
+      onDragLeave
+    }) => {
+      return (
+        <ContextHeader
+          {...props}
+          draggable={draggable}
+          onDragStart={onDragStart}
+          onDragEnd={onDragEnd}
+          onDrop={onDrop}
+          onDragOver={onDragOver}
+          onDragEnter={onDragEnter}
+          onDragLeave={onDragLeave}
+          headerRows={headerRows} />
+      );
+    }}
+    </TableContext.Consumer>
+  )
+};
