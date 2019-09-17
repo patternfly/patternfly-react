@@ -53,6 +53,5 @@ module.exports = async ({ config }) => {
     'patternfly-react': path.resolve(__dirname, '../packages/patternfly-3/patternfly-react/src')
   };
 
-  console.log('config', config.module.rules)
   return config;
 };
