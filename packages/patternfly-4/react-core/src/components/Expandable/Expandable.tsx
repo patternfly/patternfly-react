@@ -57,7 +57,7 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
       ...props
     } = this.props;
     let onToggle = onToggleProp;
-    let propOrStateIsExpanded = this.props.isExpanded;
+    let propOrStateIsExpanded = isExpanded;
 
     // uncontrolled
     if (isExpanded === undefined) {
