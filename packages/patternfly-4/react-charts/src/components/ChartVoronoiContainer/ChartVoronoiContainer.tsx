@@ -167,7 +167,7 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
 
   // Note: theme is required by voronoiContainerMixin, but @types/victory is missing a prop type
   // @ts-ignore
-  return <VictoryVoronoiContainer className={chartClassName} labelComponent={chartLabelComponent} theme={theme} {...rest} />;
+  return <VictoryVoronoiContainer className={chartClassName} labelComponent={chartLabelComponent} theme={theme} {...rest} />; // prettier-ignore
 };
 ChartVoronoiContainer.defaultProps = (VictoryVoronoiContainer as any).defaultProps;
 
