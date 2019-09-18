@@ -132,6 +132,12 @@ export class Select extends React.Component<SelectProps, SelectState> {
         typeaheadFilteredChildren: React.Children.toArray(this.props.children)
       });
     }
+
+    if (prevProps.selections !== this.props.selections && this.state.typeaheadActiveChild) {
+      this.setState({
+        typeaheadInputValue: this.state.typeaheadActiveChild.innerText
+      });
+    }
   }
 
   onEnter = () => {
