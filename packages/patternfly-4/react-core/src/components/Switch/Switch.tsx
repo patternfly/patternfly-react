@@ -70,7 +70,25 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
           aria-labelledby={isAriaLabelledBy ? `${this.id}-on`: null}
           {...props}
         />
-        {label !== '' || labelOff !== '' ? (
+        {label !== '' ? (
+          <React.Fragment>
+            <span className={css(styles.switchToggle)} />
+            <span
+              className={css(styles.switchLabel, styles.modifiers.on)}
+              id={isAriaLabelledBy ? `${this.id}-on` : null}
+              aria-hidden="true"
+            >
+              {label}
+            </span>
+            <span
+              className={css(styles.switchLabel, styles.modifiers.off)}
+              id={isAriaLabelledBy ? `${this.id}-off` : null}
+              aria-hidden="true"
+            >
+              {labelOff || label}
+            </span>
+          </React.Fragment>
+        ) : label !== '' && labelOff !== '' ? (
           <React.Fragment>
             <span className={css(styles.switchToggle)} />
             <span
