@@ -270,7 +270,6 @@ describe('Transformer functions', () => {
   });
 
   test('emptyCol', () => {
-    expect(emptyCol('')).toEqual({ scope: '' });
     expect(emptyCol('some')).toEqual({});
   });
 

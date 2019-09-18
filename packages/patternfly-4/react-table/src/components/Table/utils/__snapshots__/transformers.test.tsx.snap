@@ -18,11 +18,12 @@ Object {
     name="checkrow0"
     onSelect={[Function]}
   >
-
+    
   </Unknown>,
   "className": "pf-c-table__check",
   "component": "td",
   "isVisible": true,
+  "scope": "",
 }
 `;
 
@@ -35,7 +36,7 @@ Object {
     onSort={[Function]}
     sortDirection="asc"
   >
-
+    
   </Unknown>,
   "className": "pf-c-table__sort pf-m-selected",
 }
