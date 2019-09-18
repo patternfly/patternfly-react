@@ -45,7 +45,7 @@ class SimpleOverflowMenu extends React.Component {
       <OverflowMenuDropdownItem key="item5" shared>Item 5</OverflowMenuDropdownItem>
     ]
     return (
-      <OverflowMenu breakpoint="Lg">
+      <OverflowMenu breakpoint="lg">
         <OverflowMenuContent>
           <OverflowMenuContentItem>Item</OverflowMenuContentItem>
           <OverflowMenuContentItem>Item</OverflowMenuContentItem>
@@ -105,7 +105,7 @@ class OverflowMenuGroupTypes extends React.Component {
       <OverflowMenuDropdownItem key="item5" shared>Item 5</OverflowMenuDropdownItem>,
     ];
     return (
-      <OverflowMenu breakpoint="Lg">
+      <OverflowMenu breakpoint="lg">
         <OverflowMenuContent>
           <OverflowMenuContentGroup> 
             <OverflowMenuContentItem>Item</OverflowMenuContentItem>
@@ -193,7 +193,7 @@ class OverflowMenuAdditionalOptions extends React.Component {
       <OverflowMenuDropdownItem key="7">Action 7</OverflowMenuDropdownItem>,
     ];
     return (
-      <OverflowMenu breakpoint="Lg">
+      <OverflowMenu breakpoint="lg">
         <OverflowMenuContent>
           <OverflowMenuContentGroup groupType="button">
             <OverflowMenuContentItem>
@@ -273,7 +273,7 @@ class OverflowMenuAdditionalOptions extends React.Component {
       <OverflowMenuDropdownItem key="action">Action 4</OverflowMenuDropdownItem>
     ];
     return (
-      <OverflowMenu breakpoint="Lg">
+      <OverflowMenu breakpoint="lg">
         <OverflowMenuContent>
           <OverflowMenuContentGroup groupType="button" persistent>
             <OverflowMenuContentItem persistent>

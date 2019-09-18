@@ -8,7 +8,7 @@ export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
   /** Additional classes added to the OverflowMenu. */
   className?: string;
   /** Indicates breakpoint at which to switch between horizontal menu and vertical dropdown */
-  breakpoint: 'Md' | 'Lg' | 'Xl';
+  breakpoint: 'md' | 'lg' | 'xl';
 }
 
 export const OverflowMenu: React.SFC<OverflowMenuProps> = ({
@@ -16,19 +16,22 @@ export const OverflowMenu: React.SFC<OverflowMenuProps> = ({
   breakpoint,
   children,
   ...props
-}) => (
-  <div
-    {...props}
-    className={css(
-      styles.overflowMenu,
-      getModifier(styles.modifiers, `showOn${breakpoint}`),
-      className
-    )}
-  >
-    {React.Children.map(children, component =>
-      React.cloneElement(component, {
-        breakpoint
-      })
-    )}
-  </div>
-);
+}) => {
+  const breakpointSize = `${breakpoint[0].toUpperCase()}${breakpoint.substr(1)}`;
+  return (
+    <div
+      {...props}
+      className={css(
+        styles.overflowMenu,
+        getModifier(styles.modifiers, `showOn${breakpointSize}`),
+        className
+      )}
+    >
+      {React.Children.map(children, component =>
+        React.cloneElement(component, {
+          breakpoint
+        })
+      )}
+    </div>
+  );
+};
