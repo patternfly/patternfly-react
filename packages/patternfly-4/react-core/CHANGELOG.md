@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.104.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.104.5...@patternfly/react-core@3.104.6) (2019-09-18)
+
+
+### Bug Fixes
+
+* **Select:** display selections data properly ([#2848](https://github.com/patternfly/patternfly-react/issues/2848)) ([5dc05eb](https://github.com/patternfly/patternfly-react/commit/5dc05eb))
+* **switch:** backward compatibility in case labelOff is not set ([#2816](https://github.com/patternfly/patternfly-react/issues/2816)) ([f2d0969](https://github.com/patternfly/patternfly-react/commit/f2d0969))
+* **Wizard:** adds default function to onClose prop ([#2863](https://github.com/patternfly/patternfly-react/issues/2863)) ([4773f18](https://github.com/patternfly/patternfly-react/commit/4773f18))
+
+
+
+
+
 ## [3.104.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.104.4...@patternfly/react-core@3.104.5) (2019-09-17)
 
 **Note:** Version bump only for package @patternfly/react-core
