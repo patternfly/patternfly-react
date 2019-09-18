@@ -41,7 +41,7 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
     onToggle: (): any => undefined,
     isFocused: false,
     isActive: false,
-    isHovered: false,
+    isHovered: false
   };
 
   render() {
@@ -53,13 +53,15 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
       className,
       toggleText,
       children,
+      isExpanded,
       ...props
     } = this.props;
-    let isExpanded;
     let onToggle = onToggleProp;
+    let propOrStateIsExpanded = this.props.isExpanded;
 
+    // uncontrolled
     if (isExpanded === undefined) {
-      isExpanded = this.state.isExpanded;
+      propOrStateIsExpanded = this.state.isExpanded;
       onToggle = () => {
         onToggleProp();
         this.setState({ isExpanded: !this.state.isExpanded });
@@ -67,7 +69,7 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
     }
 
     return (
-      <div {...props} className={css(styles.expandable, isExpanded && styles.modifiers.expanded, className)}>
+      <div {...props} className={css(styles.expandable, propOrStateIsExpanded && styles.modifiers.expanded, className)}>
         <button
           className={css(
             styles.expandableToggle,
@@ -76,13 +78,13 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
             isActive && styles.modifiers.active
           )}
           type="button"
-          aria-expanded={isExpanded}
+          aria-expanded={propOrStateIsExpanded}
           onClick={onToggle}
         >
           <AngleRightIcon className={css(styles.expandableToggleIcon)} aria-hidden />
           <span>{toggleText}</span>
         </button>
-        <div className={css(styles.expandableContent)} hidden={!isExpanded}>
+        <div className={css(styles.expandableContent)} hidden={!propOrStateIsExpanded}>
           {children}
         </div>
       </div>

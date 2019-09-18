@@ -31,7 +31,6 @@ exports[`Expandable 1`] = `
 exports[`Renders Expandable expanded 1`] = `
 <div
   className="pf-c-expandable pf-m-expanded"
-  isExpanded={true}
 >
   <button
     aria-expanded={true}
