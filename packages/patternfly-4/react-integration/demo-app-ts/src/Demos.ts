@@ -131,6 +131,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.ClipboardCopyDemo
   },
   {
+    id: 'clipboard-copy-expanded-demo',
+    name: 'ClipboardCopy Expanded Demo',
+    componentType: Examples.ClipboardCopyExpandedDemo
+  },
+  {
     id: 'context-selector-demo',
     name: 'ContextSelector Demo',
     componentType: Examples.ContextSelectorDemo

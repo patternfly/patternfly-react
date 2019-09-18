@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClipboardCopy, ClipboardCopyVariant } from '../../../../../../react-core/dist/js';
+import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
 export class ClipboardCopyExpandedDemo extends React.Component {
   render() {
