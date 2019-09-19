@@ -25,7 +25,7 @@ export interface DataToolbarState {
   isConsumerManagedToggleGroup: boolean;
   /** Flag indicating if the component managed state has expanded content or not */
   componentManagedIsExpanded: boolean;
-  /** TODO */
+  /** Flag indicating that the Clear all filters button should be visible */
   showClearFiltersButton: boolean;
 }
 

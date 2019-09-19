@@ -17,7 +17,7 @@ export interface DataToolbarExpandableContentProps extends React.HTMLProps<HTMLD
   expandableContentRef?: RefObject<HTMLDivElement>;
   /** optional callback for clearing all filters in the toolbar */
   clearAllFilters?: () => void;
-  /** TODO */
+  /** Flag indicating that the Clear all filters button should be visible */
   showClearFiltersButton: boolean;
 }
 

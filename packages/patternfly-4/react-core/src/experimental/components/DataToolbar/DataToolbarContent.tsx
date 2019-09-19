@@ -4,15 +4,12 @@ import { css } from '@patternfly/react-styles';
 
 import { DataToolbarBreakpointMod } from './DataToolbarUtils';
 import { formatBreakpointMods } from '../../../helpers/util';
-import { RefObject } from 'react';
 
 export interface DataToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the Data toolbar content row */
   className?: string;
   /** An array of objects representing the various modifiers to apply to the content row at various breakpoints */
   breakpointMods?: DataToolbarBreakpointMod[];
-  /** Chip group content reference for passing to Data toolbar children */
-  chipGroupContentRef?: RefObject<HTMLDivElement>;
   /** Content to be rendered as children of the content row */
   children?: React.ReactNode;
 }
@@ -20,7 +17,6 @@ export interface DataToolbarContentProps extends React.HTMLProps<HTMLDivElement>
 export const DataToolbarContent: React.FunctionComponent<DataToolbarContentProps> = ({
     className,
     children,
-    chipGroupContentRef,
     breakpointMods = [] as DataToolbarBreakpointMod[],
     ...props
   }: DataToolbarContentProps) => {
@@ -31,7 +27,6 @@ export const DataToolbarContent: React.FunctionComponent<DataToolbarContentProps
         css(styles.dataToolbarContent,
           formatBreakpointMods(breakpointMods, styles),
           className)}
-      ref={chipGroupContentRef}
       {...props}
     >
       {children}

@@ -15,9 +15,9 @@ export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDi
   chipGroupContentRef: RefObject<HTMLDivElement>;
   /** optional callback for clearing all filters in the toolbar */
   clearAllFilters?: () => void;
-  /** TODO */
+  /** Flag indicating that the Clear all filters button should be visible */
   showClearFiltersButton: boolean;
-  /** TODO */
+  /** Flag indicating if a Data toolbar toggle group's expandable content is expanded */
   expandableContentIsExpanded: boolean;
 }
 
