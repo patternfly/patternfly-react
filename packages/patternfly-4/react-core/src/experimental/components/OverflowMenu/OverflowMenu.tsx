@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { css, getModifier } from '@patternfly/react-styles';
+import { OverflowMenuContext } from './OverflowMenuConstants';
 
 export interface OverflowMenuProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
@@ -27,11 +28,9 @@ export const OverflowMenu: React.SFC<OverflowMenuProps> = ({
         className
       )}
     >
-      {React.Children.map(children, component =>
-        React.cloneElement(component, {
-          breakpoint
-        })
-      )}
+      <OverflowMenuContext.Provider value={{ breakpoint }}>
+        { children }
+      </OverflowMenuContext.Provider>
     </div>
   );
 };

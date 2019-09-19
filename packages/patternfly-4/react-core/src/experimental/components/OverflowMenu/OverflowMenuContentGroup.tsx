@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
+import { OverflowMenuContentContext } from './OverflowMenuConstants';
 
 export interface OverflowMenuContentGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
@@ -11,8 +12,6 @@ export interface OverflowMenuContentGroupProps extends React.HTMLProps<HTMLDivEl
   persistent?: boolean;
   /** Indicates a button or icon group */
   groupType?: string;
-  /** Indicates that item is not visible */
-  isHidden?: boolean;
 }
 
 export const OverflowMenuContentGroup: React.SFC<OverflowMenuContentGroupProps> = ({
@@ -20,20 +19,19 @@ export const OverflowMenuContentGroup: React.SFC<OverflowMenuContentGroupProps> 
   children,
   persistent = false,
   groupType = '',
-  isHidden,
   ...props
 }) => (
-  <div hidden={!persistent && isHidden} className={css(
-    styles.overflowMenuGroup,
-    groupType === 'button' && styles.modifiers.buttonGroup,
-    groupType === 'icon' && styles.modifiers.iconButtonGroup,
-    persistent && styles.modifiers.persistent,
-    className
-  )}>
-    {React.Children.map(children, (menuItem: React.ReactElement<OverflowMenuContentGroupProps>) =>
-      React.cloneElement(menuItem, {
-        isHidden
-      })
+  <OverflowMenuContentContext.Consumer>
+    {value => (
+      <div hidden={!persistent && value.isHidden} className={css(
+        styles.overflowMenuGroup,
+        groupType === 'button' && styles.modifiers.buttonGroup,
+        groupType === 'icon' && styles.modifiers.iconButtonGroup,
+        persistent && styles.modifiers.persistent,
+        className
+      )}>
+        { children }
+      </div>
     )}
-  </div>
+  </OverflowMenuContentContext.Consumer>
 );

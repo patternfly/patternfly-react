@@ -3,14 +3,13 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { global_breakpoint_md, global_breakpoint_lg, global_breakpoint_xl } from '@patternfly/react-tokens/dist/js';
 import { debounce } from '../../../helpers/util';
+import { OverflowMenuContext, OverflowMenuContentContext } from './OverflowMenuConstants';
 
 export interface OverflowMenuContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
   children?: any;
   /** Additional classes added to the OverflowMenuContent */
   className?: string;
-  /** Indicates breakpoint at which to switch between horizontal menu and vertical dropdown */
-  breakpoint?: 'md' | 'lg' | 'xl';
 }
 
 export interface OverflowMenuContentState extends React.HTMLProps<HTMLDivElement> {
@@ -43,7 +42,7 @@ export class OverflowMenuContent extends React.Component<OverflowMenuContentProp
   }
 
   handleResize = () => {
-    const { breakpoint } = this.props;
+    const { breakpoint } = this.context;
     const { breakpoints } = this.state;
     let breakpointWidth: string | number = breakpoints[`global_breakpoint_${breakpoint}`].value;
     breakpointWidth = Number(breakpointWidth.split('px')[0]);
@@ -55,12 +54,12 @@ export class OverflowMenuContent extends React.Component<OverflowMenuContentProp
     const { className, children } = this.props;
     return (
       <div className={css(styles.overflowMenuContent, className)}>
-        {React.Children.map(children, (menuItem: React.ReactElement<OverflowMenuContentState>) =>
-          React.cloneElement(menuItem, {
-            isHidden: this.state.isHidden
-          })
-        )}
+        <OverflowMenuContentContext.Provider value={{ isHidden: this.state.isHidden }}>
+          { children }
+        </OverflowMenuContentContext.Provider>
       </div>
     )
   }
 }
+
+OverflowMenuContent.contextType = OverflowMenuContext;
