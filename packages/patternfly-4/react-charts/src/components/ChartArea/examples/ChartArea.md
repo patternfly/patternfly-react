@@ -291,6 +291,7 @@ class MultiColorChart extends React.Component {
 
   render() {
     const { width } = this.state;
+    const itemsPerRow = width > 650 ? 4 : 2;
 
     return (
       <div ref={this.containerRef}>
@@ -319,7 +320,7 @@ class MultiColorChart extends React.Component {
                     symbol: { fill: ChartThemeColor.orange, type: 'threshold' }
                   }
                 ]}
-                itemsPerRow={2}
+                itemsPerRow={itemsPerRow}
               />
             }
             height={250}
