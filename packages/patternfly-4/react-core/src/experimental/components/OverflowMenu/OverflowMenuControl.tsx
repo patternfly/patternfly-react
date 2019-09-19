@@ -8,18 +8,18 @@ export interface OverflowMenuControlProps extends React.HTMLProps<HTMLDivElement
   /** Additional classes added to the OverflowMenuControl */
   className?: string;
   /** Triggers the overflow dropdown to persist at all viewport sizes */
-  additionalOptions?: boolean;
+  alwaysPersist?: boolean;
 }
 
 export const OverflowMenuControl: React.SFC<OverflowMenuControlProps> = ({
   className,
   children,
-  additionalOptions,
+  alwaysPersist,
   ...props
 }) => (
   <div className={css(
     styles.overflowMenuControl,
-    additionalOptions && styles.modifiers.additionalOptions,
+    alwaysPersist && styles.modifiers.additionalOptions,
     className)
   }>
     {children}

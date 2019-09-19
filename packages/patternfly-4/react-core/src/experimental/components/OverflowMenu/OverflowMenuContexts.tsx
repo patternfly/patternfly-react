@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 export const OverflowMenuContext = React.createContext<{
-  breakpoint: string
+  breakpoint?: 'md' | 'lg' | 'xl'
 }>({
-  breakpoint: ''
+  breakpoint: null
 });
 
 export const OverflowMenuContentContext = React.createContext<{

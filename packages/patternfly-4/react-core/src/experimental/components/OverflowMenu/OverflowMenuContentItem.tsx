@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
-import { OverflowMenuContentContext } from './OverflowMenuConstants';
+import { OverflowMenuContentContext } from './OverflowMenuContexts';
 
 export interface OverflowMenuContentItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */

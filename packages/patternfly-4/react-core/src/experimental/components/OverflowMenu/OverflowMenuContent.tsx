@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
-import { global_breakpoint_md, global_breakpoint_lg, global_breakpoint_xl } from '@patternfly/react-tokens/dist/js';
+import { global_breakpoint_md, global_breakpoint_lg, global_breakpoint_xl } from '@patternfly/react-tokens';
 import { debounce } from '../../../helpers/util';
-import { OverflowMenuContext, OverflowMenuContentContext } from './OverflowMenuConstants';
+import { OverflowMenuContext, OverflowMenuContentContext } from './OverflowMenuContexts';
 
 export interface OverflowMenuContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
@@ -14,9 +14,6 @@ export interface OverflowMenuContentProps extends React.HTMLProps<HTMLDivElement
 
 export interface OverflowMenuContentState extends React.HTMLProps<HTMLDivElement> {
   isHidden: boolean;
-  breakpoints: { 
-    [index: string]: {value: string}
-  };
 }
 
 export class OverflowMenuContent extends React.Component<OverflowMenuContentProps, OverflowMenuContentState> {
@@ -24,11 +21,6 @@ export class OverflowMenuContent extends React.Component<OverflowMenuContentProp
     super(props);
     this.state = {
       isHidden: false,
-      breakpoints: {
-        global_breakpoint_md,
-        global_breakpoint_lg,
-        global_breakpoint_xl
-      }
     }
   }
 
@@ -38,13 +30,17 @@ export class OverflowMenuContent extends React.Component<OverflowMenuContentProp
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener('resize', debounce(this.handleResize, 250));
   }
 
   handleResize = () => {
+    const breakpoints: {[index: string]: {value: string}} = {
+      md: global_breakpoint_md,
+      lg: global_breakpoint_lg,
+      xl: global_breakpoint_xl
+    }
     const { breakpoint } = this.context;
-    const { breakpoints } = this.state;
-    let breakpointWidth: string | number = breakpoints[`global_breakpoint_${breakpoint}`].value;
+    let breakpointWidth: string | number = breakpoints[breakpoint].value;
     breakpointWidth = Number(breakpointWidth.split('px')[0]);
     const isHidden = window.innerWidth < breakpointWidth;
     this.state.isHidden !== isHidden && this.setState({ isHidden });
