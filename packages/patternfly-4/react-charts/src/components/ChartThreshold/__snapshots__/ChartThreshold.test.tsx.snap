@@ -313,7 +313,7 @@ exports[`ChartThreshold 1`] = `
             "fill": "transparent",
             "opacity": 1,
             "stroke": "#06c",
-            "strokeDasharray": "3,3",
+            "strokeDasharray": "6,6",
             "strokeWidth": 2,
           },
           "labels": Object {
@@ -768,7 +768,7 @@ exports[`ChartThreshold 2`] = `
             "fill": "transparent",
             "opacity": 1,
             "stroke": "#06c",
-            "strokeDasharray": "3,3",
+            "strokeDasharray": "6,6",
             "strokeWidth": 2,
           },
           "labels": Object {
