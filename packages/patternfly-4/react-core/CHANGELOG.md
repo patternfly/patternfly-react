@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.104.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.104.7...@patternfly/react-core@3.104.8) (2019-09-19)
+
+
+### Bug Fixes
+
+* **button:** set the disable modifier when component is not button ([#2683](https://github.com/patternfly/patternfly-react/issues/2683)) ([39b359d](https://github.com/patternfly/patternfly-react/commit/39b359d))
+
+
+
+
+
 ## [3.104.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.104.6...@patternfly/react-core@3.104.7) (2019-09-19)
 
 
