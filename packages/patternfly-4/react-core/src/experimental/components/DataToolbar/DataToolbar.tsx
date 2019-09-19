@@ -59,7 +59,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
     }));
   }
 
-  updateShowClearFiltersButton = (showClearFiltersButton) => {
+  updateShowClearFiltersButton = (showClearFiltersButton: boolean) => {
     if (showClearFiltersButton !== this.state.showClearFiltersButton) {
       this.setState(() => ({ showClearFiltersButton }));
     }
