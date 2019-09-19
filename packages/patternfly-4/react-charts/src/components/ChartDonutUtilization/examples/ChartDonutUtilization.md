@@ -20,7 +20,7 @@ In this tutorial, we will build a bar chart together - starting with a simple ch
 a legend, and concluding by changing the theme color. You'll learn how to use React chart components together to build 
 a consistent user experience.
 
-[Start course](https://katacoda.com/patternfly/courses/charts/module-donut-utilization)
+[Start course](https://katacoda.com/patternfly/courses/charts/donut-utilization-chart)
 
 ## Simple donut utilization chart
 ```js

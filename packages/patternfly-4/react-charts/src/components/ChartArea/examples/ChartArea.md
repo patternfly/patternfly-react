@@ -21,7 +21,7 @@ In this tutorial, we will build an area chart together - starting with a simple 
 tooltips, axis labels, a legend, and concluding by changing the theme color. You'll learn how to use React chart 
 components together to build a consistent user experience.
 
-[Start course](https://katacoda.com/patternfly/courses/charts/module-area)
+[Start course](https://katacoda.com/patternfly/courses/charts/area-chart)
 
 ## Simple area chart with right aligned legend
 ```js
