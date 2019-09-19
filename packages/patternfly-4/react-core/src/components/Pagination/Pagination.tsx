@@ -5,6 +5,7 @@ import styles from '@patternfly/react-styles/css/components/Pagination/paginatio
 import { css } from '@patternfly/react-styles';
 import { Navigation } from './Navigation';
 import { PaginationOptionsMenu } from './PaginationOptionsMenu';
+import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 export enum PaginationVariant {
   top = 'top',
@@ -98,7 +99,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   onPerPageSelect?: (event: React.MouseEvent | React.KeyboardEvent | MouseEvent, perPage: number) => void;
 }
 
-export const Pagination: React.FunctionComponent<PaginationProps> = ({
+const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> = ({
   children = null,
   className = '',
   variant = PaginationVariant.top,
@@ -133,8 +134,10 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
   onNextClick = () => undefined,
   onPageInput = () => undefined,
   onLastClick = () => undefined,
+  ouiaContext = null,
+  ouiaId = null,
   ...props
-}: PaginationProps) => {
+}: PaginationProps & InjectedOuiaProps) => {
   const lastPage = Math.ceil(itemCount / perPage);
   if (page < firstPage) {
     page = firstPage;
@@ -154,6 +157,10 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
     <div
       className={css(styles.pagination, variant === PaginationVariant.bottom && styles.modifiers.footer, className)}
       id={widgetId}
+      {...ouiaContext.isOuia && {
+        'data-ouia-component-type': 'Pagination',
+        'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+      }}
       {...props}
     >
       {variant === PaginationVariant.top && (
@@ -198,3 +205,6 @@ export const Pagination: React.FunctionComponent<PaginationProps> = ({
     </div>
   );
 };
+
+const PaginationWithOuiaContext = withOuiaContext(Pagination);
+export { PaginationWithOuiaContext as Pagination };
