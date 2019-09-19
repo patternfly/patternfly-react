@@ -32,6 +32,20 @@ export interface ChartStackProps extends VictoryStackProps {
    */
   animate?: AnimatePropTypeInterface;
   /**
+   * The ariaDesc prop specifies the description of the chart/SVG to assist with
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the desc prop of containerComponent
+   */
+  ariaDesc?: string;
+  /**
+   * The ariaTitle prop specifies the title to be applied to the SVG to assist
+   * accessibility for screen readers.
+   *
+   * Note: Overridden by the title prop of containerComponent
+   */
+  ariaTitle?: string;
+  /**
    * The categories prop specifies how categorical data for a chart should be ordered.
    * This prop should be given as an array of string values, or an object with
    * these values for x and y. When categories are not given as an object
@@ -321,17 +335,21 @@ export interface ChartStackProps extends VictoryStackProps {
 }
 
 export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
+  ariaDesc,
+  ariaTitle,
   children,
   containerComponent = <ChartContainer />,
   themeColor,
   themeVariant,
 
-    // destructure last
+  // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
 }: ChartStackProps) => {
   // Clone so users can override container props
   const container = React.cloneElement(containerComponent, {
+    desc: ariaDesc,
+    title: ariaTitle,
     theme,
     ...containerComponent.props,
     className: getClassName({className: containerComponent.props.className}) // Override VictoryContainer class name
