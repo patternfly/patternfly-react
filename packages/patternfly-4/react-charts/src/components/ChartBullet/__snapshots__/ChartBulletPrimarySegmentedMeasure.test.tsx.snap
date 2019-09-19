@@ -43,7 +43,7 @@ exports[`renders component data 1`] = `
     }
     height={140}
     horizontal={true}
-    key="pf-primary-segmented-measure-0"
+    key="pf-chart-bullet-primary-segmented-measure-0"
     labelComponent={
       <Unknown
         constrainToVisibleArea={false}
@@ -535,7 +535,7 @@ exports[`renders component data 1`] = `
     }
     height={140}
     horizontal={true}
-    key="pf-primary-segmented-measure-1"
+    key="pf-chart-bullet-primary-segmented-measure-1"
     labelComponent={
       <Unknown
         constrainToVisibleArea={false}
@@ -1027,7 +1027,7 @@ exports[`renders component data 1`] = `
     }
     height={140}
     horizontal={true}
-    key="pf-primary-segmented-measure-2"
+    key="pf-chart-bullet-primary-segmented-measure-2"
     labelComponent={
       <Unknown
         constrainToVisibleArea={false}

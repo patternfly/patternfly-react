@@ -186,8 +186,6 @@ interface ConstrainToVisibleAreaInterface {
   width?: number;
 }
 
-let currentId = 0;
-
 export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQualitativeRangeProps> = ({
   ariaDesc,
   ariaTitle,
@@ -247,15 +245,14 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
     ...labelComponent.props
   });
 
-  const measure = computedData.map((dataPoint: any) => {
-    const key = `pf-qualitative-range-${currentId++}`;
+  const measure = computedData.map((dataPoint: any, index) => {
     return React.cloneElement(measureComponent, {
       barWidth,
       data: [{...dataPoint}],
       domain,
       height,
       horizontal,
-      key,
+      key: `pf-chart-bullet-qualitative-range-${index}`,
       labelComponent: tooltip,
       labels,
       padding,

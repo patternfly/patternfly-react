@@ -157,8 +157,6 @@ export interface ChartBulletComparativeMeasureProps {
   y?: DataGetterPropType;
 }
 
-let currentId = 0;
-
 export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletComparativeMeasureProps> = ({
   ariaDesc,
   ariaTitle,
@@ -212,7 +210,6 @@ export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletC
   });
 
   const measure = computedData.map((dataPoint: any, index: number) => {
-    const key = `pf-comparative-measure-${currentId++}`;
     return React.cloneElement(measureComponent, {
       barWidth,
       data: [{...dataPoint}],
@@ -221,7 +218,7 @@ export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletC
       horizontal,
       labelComponent: tooltip,
       labels,
-      key,
+      key: `pf-chart-bullet-comparative-measure-${index}`,
       padding,
       standalone: false,
       theme,

@@ -432,6 +432,8 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
+  capHeight = 1.1,
+  containerComponent = <ChartContainer />,
   innerRadius,
   legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
   padding,
@@ -447,8 +449,6 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
 
   // destructure last
   theme = getDonutTheme(themeColor, themeVariant),
-  containerComponent = <ChartContainer theme={theme} />,
-  capHeight = 1.1,
   height = theme.pie.height,
   width = theme.pie.width,
   ...rest
@@ -541,20 +541,22 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     />
   );
 
-  const container = React.cloneElement(containerComponent, {
-    children: [chart, getTitle(), getSubTitle()],
+  // Clone so users can override container props
+  const StandaloneContainer = ({children}: any) => React.cloneElement(containerComponent, {
     desc: ariaDesc,
     height,
     title: ariaTitle,
     width,
     theme,
     ...containerComponent.props
-  });
+  }, children);
 
   return standalone ? (
-    <React.Fragment>
-      {container}
-    </React.Fragment>
+    <StandaloneContainer>
+      {chart}
+      {getTitle()}
+      {getSubTitle()}
+    </StandaloneContainer>
   ) : (
     <React.Fragment>
       {chart}

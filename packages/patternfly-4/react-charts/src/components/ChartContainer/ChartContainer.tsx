@@ -107,7 +107,6 @@ export interface ChartContainerProps extends VictoryContainerProps {
   width?: number;
 }
 
-// const ChartContainer = props => <VictoryContainer {...props} />;
 export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
   className,
   themeColor,

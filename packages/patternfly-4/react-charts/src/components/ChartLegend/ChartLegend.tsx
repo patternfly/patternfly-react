@@ -284,6 +284,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
 }
 
 export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
+  containerComponent = <ChartContainer />,
   dataComponent = <ChartPoint />,
   responsive = true,
   themeColor,
@@ -291,12 +292,15 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
-  containerComponent = <ChartContainer responsive={responsive} theme={theme} />,
   ...rest
 }: ChartLegendProps) => {
-  return (
-    <VictoryLegend containerComponent={containerComponent} dataComponent={dataComponent} theme={theme} {...rest} />
-  );
+  // Clone so users can override container props
+  const container = React.cloneElement(containerComponent, {
+    responsive,
+    theme,
+    ...containerComponent.props
+  });
+  return <VictoryLegend containerComponent={container} dataComponent={dataComponent} theme={theme} {...rest} />;
 };
 
 // Note: VictoryLegend.role must be hoisted, but getBaseProps causes error with ChartVoronoiContainer

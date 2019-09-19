@@ -10,7 +10,7 @@ import {
   StringOrNumberOrCallback,
   VictoryPie,
   VictoryPieProps,
-  VictoryStyleInterface,
+  VictoryStyleInterface
 } from 'victory';
 import { Helpers } from 'victory-core';
 import { ChartContainer } from '../ChartContainer';
@@ -396,12 +396,16 @@ export interface ChartPieProps extends VictoryPieProps {
   y?: DataGetterPropType;
 }
 
+let someId = 0;
+
 export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
   constrainToVisibleArea = false,
-  legendComponent = <ChartLegend/>,
+  containerComponent = <ChartContainer />,
+  labels,
+  legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
   padding,
@@ -412,7 +416,6 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
-  containerComponent = <ChartContainer theme={theme} />,
   labelComponent = allowTooltip ? <ChartTooltip constrainToVisibleArea={constrainToVisibleArea} theme={theme} /> : undefined,
   legendOrientation = theme.legend.orientation as ChartLegendOrientation,
   height = theme.pie.height,
@@ -430,11 +433,11 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
     width,
     padding: defaultPadding
   });
-  const chartSize = chartRadius * 2;
 
   const chart = (
     <VictoryPie
       height={height}
+      labels={labels}
       labelComponent={labelComponent}
       padding={padding}
       radius={chartRadius}
@@ -461,31 +464,31 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
       <ChartLegendWrapper
         chartType="pie"
         height={height}
+        legendComponent={legend}
         orientation={legendOrientation}
         padding={defaultPadding}
         position={legendPosition}
         theme={theme}
         width={width}
-      >
-        {legend}
-      </ChartLegendWrapper>
+      />
     );
   };
 
-  const container = React.cloneElement(containerComponent, {
-    children: [chart, getWrappedLegend()],
+  // Clone so users can override container props
+  const StandaloneContainer = ({children}: any) => React.cloneElement(containerComponent, {
     desc: ariaDesc,
     height,
     title: ariaTitle,
     width,
     theme,
     ...containerComponent.props
-  });
+  }, children);
 
   return standalone ? (
-    <React.Fragment>
-      {container}
-    </React.Fragment>
+    <StandaloneContainer>
+      {chart}
+      {getWrappedLegend()}
+    </StandaloneContainer>
   ) : (
     <React.Fragment>
       {chart}

@@ -1,3 +1,5 @@
+// Misc util functions
+
 interface ChartClassNameInterface {
   className?: string;
 }

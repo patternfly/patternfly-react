@@ -17,7 +17,7 @@ import {
 } from 'victory';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
-import { getTheme } from '../ChartUtils';
+import { getClassName, getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -322,18 +322,22 @@ export interface ChartStackProps extends VictoryStackProps {
 
 export const ChartStack: React.FunctionComponent<ChartStackProps> = ({
   children,
+  containerComponent = <ChartContainer />,
   themeColor,
   themeVariant,
 
     // destructure last
   theme = getTheme(themeColor, themeVariant),
-  containerComponent = <ChartContainer theme={theme} />,
   ...rest
-}: ChartStackProps) => (
-  <VictoryStack theme={theme} {...rest}>
-    {children}
-  </VictoryStack>
-);
+}: ChartStackProps) => {
+  // Clone so users can override container props
+  const container = React.cloneElement(containerComponent, {
+    theme,
+    ...containerComponent.props,
+    className: getClassName({className: containerComponent.props.className}) // Override VictoryContainer class name
+  });
+  return <VictoryStack containerComponent={container} theme={theme} {...rest}>{children}</VictoryStack>;
+}
 
 // Note: VictoryStack.getChildren & VictoryStack.role must be hoisted
 hoistNonReactStatics(ChartStack, VictoryStack);

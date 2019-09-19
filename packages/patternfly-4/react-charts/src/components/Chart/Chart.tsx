@@ -383,6 +383,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     top: getPaddingForSide('top', padding, theme.chart.padding),
   };
 
+  // Clone so users can override container props
   const container = React.cloneElement(containerComponent, {
     desc: ariaDesc,
     title: ariaTitle,
@@ -428,14 +429,13 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
         dx={dx}
         dy={dy}
         height={height}
+        legendComponent={legend}
         orientation={legendOrientation}
         padding={defaultPadding}
         position={legendPosition}
         theme={theme}
         width={width}
-      >
-        {legend}
-      </ChartLegendWrapper>
+      />
     );
   };
 

@@ -176,8 +176,6 @@ export interface ChartBulletPrimarySegmentedMeasureProps {
   y0?: DataGetterPropType;
 }
 
-let currentId = 0;
-
 export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBulletPrimarySegmentedMeasureProps> = ({
   ariaDesc,
   ariaTitle,
@@ -236,15 +234,14 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
     ...labelComponent.props
   });
 
-  const measure = computedData.map((dataPoint: any) => {
-    const key = `pf-primary-segmented-measure-${currentId++}`;
+  const measure = computedData.map((dataPoint: any, index) => {
     return React.cloneElement(measureComponent, {
       barWidth,
       data: [{...dataPoint}],
       domain,
       height,
       horizontal,
-      key,
+      key: `pf-chart-bullet-primary-segmented-measure-${index}`,
       labelComponent: tooltip,
       labels,
       padding,

@@ -399,6 +399,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   ariaTitle,
   children,
   constrainToVisibleArea = false,
+  containerComponent = <ChartContainer />,
   data = [],
   invert = false,
   labels = [], // Don't show any tooltip labels by default, let consumer override if needed
@@ -414,7 +415,6 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
 
   // destructure last
   theme = getDonutThresholdStaticTheme(themeColor, themeVariant, invert),
-  containerComponent = <ChartContainer theme={theme}/>,
   height = theme.pie.height,
   width = theme.pie.width,
   ...rest
@@ -430,7 +430,6 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
     width,
     padding: defaultPadding
   });
-  const chartSize = chartRadius * 2;
 
   // Returns computed data representing pie chart slices
   const getComputedData = () => {
@@ -461,36 +460,36 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
 
   // Render dynamic utilization donut cart
   const renderChildren = () =>
-    React.Children.toArray(children).map((child) => {
+    React.Children.toArray(children).map((child, index) => {
       if (child.props) {
         const { data: childData, ...childProps } = child.props;
         const datum = Data.formatData([childData], childProps, ['x', 'y']); // Format child data independently of this component's props
         const dynamicTheme = childProps.theme ||
           getDonutThresholdDynamicTheme(childProps.themeColor || themeColor,
             childProps.themeVariant || themeVariant);
-        const legendPos = childProps.legendPosition || legendPosition;
-        const subTitlePos = childProps.subTitlePosition || subTitlePosition;
+
         return React.cloneElement(child, {
           constrainToVisibleArea,
           data: childData,
           endAngle: 360 * (datum[0]._y ? datum[0]._y / 100 : 0),
           height,
           invert,
-          legendPosition: legendPos,
+          key: `pf-chart-donut-utilization-${index}`,
+          legendPosition: childProps.legendPosition || legendPosition,
           padding: defaultPadding,
           radius: chartRadius - 14, // Donut utilization radius is threshold radius minus 14px spacing
           showStatic: false,
           standalone: false,
-          subTitlePosition: subTitlePos,
+          subTitlePosition: childProps.subTitlePosition || subTitlePosition,
           theme: dynamicTheme,
           width,
-          ...childProps,
+          ...childProps
         });
       }
       return child;
     });
 
-  // Static threshold dount chart
+  // Static threshold donut chart
   const chart = (
     <ChartDonut
       allowTooltip={allowTooltip}
@@ -506,20 +505,21 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
     />
   );
 
-  const container = React.cloneElement(containerComponent, {
-    children: [chart, renderChildren()],
+  // Clone so users can override container props
+  const StandaloneContainer = ({children}: any) => React.cloneElement(containerComponent, {
     desc: ariaDesc,
     height,
     title: ariaTitle,
     width,
     theme,
     ...containerComponent.props
-  });
+  }, children);
 
   return standalone ? (
-    <React.Fragment>
-      {container}
-    </React.Fragment>
+    <StandaloneContainer>
+      {chart}
+      {renderChildren()}
+    </StandaloneContainer>
   ) : (
     <React.Fragment>
       {chart}

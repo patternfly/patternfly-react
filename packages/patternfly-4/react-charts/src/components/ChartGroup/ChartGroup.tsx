@@ -414,6 +414,7 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
   theme = getTheme(themeColor, themeVariant),
   ...rest
 }: ChartGroupProps) => {
+  // Clone so users can override container props
   const container = React.cloneElement(containerComponent, {
     desc: ariaDesc,
     title: ariaTitle,
@@ -421,12 +422,7 @@ export const ChartGroup: React.FunctionComponent<ChartGroupProps> = ({
     ...containerComponent.props,
     className: getClassName({className: containerComponent.props.className}) // Override VictoryContainer class name
   });
-
-  return (
-    <VictoryGroup containerComponent={container} theme={theme} {...rest}>
-      {children}
-    </VictoryGroup>
-  );
+  return <VictoryGroup containerComponent={container} theme={theme} {...rest}>{children}</VictoryGroup>;
 };
 
 // Note: VictoryGroup.role must be hoisted
