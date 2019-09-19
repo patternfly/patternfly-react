@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
 import { NavVariants } from './NavVariants';
+import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 import { Omit } from '../../helpers/typeUtils';
 
@@ -29,7 +30,7 @@ export interface NavProps extends Omit<React.DetailedHTMLProps<React.HTMLAttribu
 
 export const NavContext = React.createContext({});
 
-export class Nav extends React.Component<NavProps> {
+class Nav extends React.Component<NavProps & InjectedOuiaProps> {
   static defaultProps: NavProps = {
     'aria-label': '',
     "children": null,
@@ -82,7 +83,7 @@ export class Nav extends React.Component<NavProps> {
   }
 
   render() {
-    const { 'aria-label': ariaLabel, children, className, onSelect, onToggle, theme, ...props } = this.props;
+    const { 'aria-label': ariaLabel, children, className, onSelect, onToggle, theme, ouiaContext, ouiaId, ...props } = this.props;
     const { showLeftScrollButton, showRightScrollButton } = this.state;
     const childrenProps: any = (children as any).props;
 
@@ -108,6 +109,10 @@ export class Nav extends React.Component<NavProps> {
               ? typeof childrenProps !== 'undefined' && childrenProps.variant === 'tertiary' ? 'Local' : 'Global'
               : ariaLabel
           }
+          {...ouiaContext.isOuia && {
+            'data-ouia-component-type': 'Nav',
+            'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+          }}
           {...props}
         >
           {children}
@@ -116,3 +121,7 @@ export class Nav extends React.Component<NavProps> {
     );
   }
 }
+
+
+const NavWithOuiaContext = withOuiaContext(Nav);
+export { NavWithOuiaContext as Nav }; 
