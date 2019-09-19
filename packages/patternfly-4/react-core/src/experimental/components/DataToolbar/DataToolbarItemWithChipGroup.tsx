@@ -8,7 +8,7 @@ export interface DataToolbarItemWithChipGroupProps extends DataToolbarItemProps 
   /** An array of strings to be displayed as chips in the expandable content */
   chips?: string[];
   /** Callback passed by consumer used to delete a chip from the chips[] */
-  deleteChip?: (chip:string) => void;
+  deleteChip?: (chip: string) => void;
   /** Content to be rendered inside the Data toolbar item associated with the chip group */
   children: React.ReactNode;
   /** Unique label for the chip group */
@@ -16,10 +16,11 @@ export interface DataToolbarItemWithChipGroupProps extends DataToolbarItemProps 
 }
 
 interface DataToolbarItemWithChipGroupState {
-  isMounted: boolean
+  isMounted: boolean;
 }
 
-export class DataToolbarItemWithChipGroup extends React.Component<DataToolbarItemWithChipGroupProps, DataToolbarItemWithChipGroupState> {
+export class DataToolbarItemWithChipGroup
+  extends React.Component<DataToolbarItemWithChipGroupProps, DataToolbarItemWithChipGroupState> {
 
   static defaultProps = {
     chips: [] as string[]
@@ -29,7 +30,7 @@ export class DataToolbarItemWithChipGroup extends React.Component<DataToolbarIte
     super(props);
     this.state = {
       isMounted: false
-    }
+    };
   }
 
   componentDidMount() {
@@ -42,13 +43,17 @@ export class DataToolbarItemWithChipGroup extends React.Component<DataToolbarIte
 
     return (
       <DataToolbarContext.Consumer>
-        {({ isExpanded, chipGroupContentRef }) => {
+        {({ isExpanded, chipGroupContentRef, updateShowClearFiltersButton }) => {
+
+          if (chips.length > 0) {
+            updateShowClearFiltersButton(true);
+          }
 
           const chipGroup =
             <DataToolbarItem variant="chip-group">
               <ChipGroup withToolbar>
                 <ChipGroupToolbarItem key={label} categoryName={label}>
-                  {chips.map(chip => (
+                  {chips.map((chip) => (
                     <Chip key={chip} onClick={() => deleteChip(chip)}>
                       {chip}
                     </Chip>
@@ -62,7 +67,7 @@ export class DataToolbarItemWithChipGroup extends React.Component<DataToolbarIte
             return <React.Fragment>
               <DataToolbarItem {...props}>{children}</DataToolbarItem>
               {ReactDOM.createPortal(chipGroup, chipGroupContentRef.current.firstElementChild)}
-            </React.Fragment>
+            </React.Fragment>;
           }
 
           return (
@@ -77,5 +82,3 @@ export class DataToolbarItemWithChipGroup extends React.Component<DataToolbarIte
   }
 
 }
-
-

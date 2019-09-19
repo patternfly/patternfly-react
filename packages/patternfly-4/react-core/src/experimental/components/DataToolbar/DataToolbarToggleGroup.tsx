@@ -63,7 +63,7 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
                   {toggleIcon}
                 </Button>
               </div>
-              {isExpanded ? ReactDOM.createPortal(children, expandableContentRef.current) : children}
+              {isExpanded ? ReactDOM.createPortal(children, expandableContentRef.current.firstElementChild) : children}
             </div>
           );
         }}

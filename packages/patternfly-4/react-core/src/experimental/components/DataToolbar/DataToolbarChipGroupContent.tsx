@@ -6,6 +6,7 @@ import { RefObject } from 'react';
 import { DataToolbarItem } from './DataToolbarItem';
 import { Button } from '../../../components/Button';
 import { DataToolbarGroup } from './DataToolbarGroup';
+import { DataToolbarContext } from './DataToolbarUtils';
 
 export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the Data toolbar content row */
@@ -14,29 +15,51 @@ export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDi
   chipGroupContentRef: RefObject<HTMLDivElement>;
   /** optional callback for clearing all filters in the toolbar */
   clearAllFilters?: () => void;
+  /** TODO */
+  showClearFiltersButton: boolean;
+  /** TODO */
+  expandableContentIsExpanded: boolean;
 }
 
-export const DataToolbarChipGroupContent: React.FunctionComponent<DataToolbarChipGroupContentProps> = ({
-  className,
-  chipGroupContentRef,
-  clearAllFilters,
-  ...props
-}:DataToolbarChipGroupContentProps) => {
+export class DataToolbarChipGroupContent extends React.Component<DataToolbarChipGroupContentProps> {
 
-  return (
-    <div
-      className={css(
-        styles.dataToolbarContent,
-        className)}
-      ref={chipGroupContentRef}
-      {...props}
-    >
-      <DataToolbarGroup variant="filter-group"/>
-      {!!clearAllFilters &&
-      <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
-        <Button variant="link" onClick={clearAllFilters}>Clear all filters</Button>
-      </DataToolbarItem>
-      }
-    </div>
-  );
+  render() {
+    const {
+      className,
+      chipGroupContentRef,
+      clearAllFilters,
+      showClearFiltersButton,
+      expandableContentIsExpanded,
+      ...props
+    } = this.props;
+
+    return (
+      <DataToolbarContext.Consumer>
+        {({ updateShowClearFiltersButton }) => {
+
+          const clearChipGroups = () => {
+            updateShowClearFiltersButton(false);
+            clearAllFilters();
+          };
+
+          return (
+            <div
+              className={css(
+                styles.dataToolbarContent,
+                className)}
+              ref={chipGroupContentRef}
+              {...props}
+            >
+              <DataToolbarGroup variant="filter-group"/>
+              {!!clearAllFilters && showClearFiltersButton && !expandableContentIsExpanded &&
+                <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
+                  <Button variant="link" onClick={clearChipGroups}>Clear all filters</Button>
+                </DataToolbarItem>
+              }
+            </div>
+          );
+        }}
+      </DataToolbarContext.Consumer>
+    );
+  }
 }
