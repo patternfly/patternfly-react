@@ -125,7 +125,7 @@ export type IFormatters = ((
     rowKey?: RowKeyType ) => formatterValueType)[];
 
 export interface ICell {
-  title?: string;
+  title?: string | React.ReactNode;
   transforms?: ITransforms;
   cellTransforms?: ITransforms;
   columnTransforms?: ITransforms;
@@ -138,7 +138,7 @@ export interface ICell {
 }
 
 export interface IRowCell {
-  title?: React.ReactNode;
+  title?: string | React.ReactNode;
   props?: any;
 }
 
