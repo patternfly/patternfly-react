@@ -20,7 +20,7 @@ In this tutorial, we will build a bar chart together - starting with a simple ch
 primary comparative measures, a comparative warning measure, tooltips, labels, a legend, and concluding by changing the 
 theme color. You'll learn how to use React chart components together to build a consistent user experience.
 
-[Start course](https://katacoda.com/patternfly/courses/charts/module-bullet)
+[Start course](https://katacoda.com/patternfly/courses/charts/bullet-chart)
 
 ## Simple bullet chart
 ```js
