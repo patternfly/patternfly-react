@@ -76,7 +76,7 @@ const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
       styles.button,
       getModifier(styles.modifiers, variant),
       isBlock && styles.modifiers.block,
-      isDisabled && styles.modifiers.disabled,
+      isDisabled && !isButtonElement && styles.modifiers.disabled,
       isActive && styles.modifiers.active,
       isFocus && styles.modifiers.focus,
       isHover && styles.modifiers.hover,

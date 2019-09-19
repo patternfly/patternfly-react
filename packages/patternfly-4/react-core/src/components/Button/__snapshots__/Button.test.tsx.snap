@@ -150,7 +150,7 @@ exports[`isDisabled 1`] = `
       <button
         aria-disabled={null}
         aria-label={null}
-        className="pf-c-button pf-m-primary pf-m-disabled"
+        className="pf-c-button pf-m-primary"
         disabled={true}
         tabIndex={null}
         type="button"
