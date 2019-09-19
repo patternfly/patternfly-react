@@ -5,6 +5,7 @@ import { EmptyState, EmptyStateVariant } from './EmptyState';
 import { EmptyStateBody } from './EmptyStateBody';
 import { EmptyStateSecondaryActions } from './EmptyStateSecondaryActions';
 import { EmptyStateIcon } from './EmptyStateIcon';
+import { EmptyStatePrimary } from './EmptyStatePrimary';
 import { Button } from '../Button';
 import { Title } from '../Title';
 import {BaseSizes} from '../../styles/sizes';
@@ -64,5 +65,24 @@ describe('EmptyState', () => {
     );
     expect(view.props().className).toBe('pf-c-empty-state__icon custom-empty-state-icon');
     expect(view.props().id).toBe('empty-state-icon');
+  });
+
+  test('Wrap icon in a div', () => {
+    const view = shallow(
+      <EmptyStateIcon variant="container" component={AddressBookIcon} className="custom-empty-state-icon" id="empty-state-icon" />
+    );
+    console.log(view.debug());
+    expect(view.find('div').props().className).toBe('pf-c-empty-state__icon custom-empty-state-icon');
+    expect(view.find('AddressBookIcon').length).toBe(1);
+  });
+
+  test('Primary div', () => {
+    const view = shallow(
+      <EmptyStatePrimary className="custom-empty-state-prim-cls" id="empty-state-prim-id">
+          <Button variant="link">Link</Button>
+      </EmptyStatePrimary>
+    );
+    expect(view.props().className).toBe('pf-c-empty-state__primary custom-empty-state-prim-cls');
+    expect(view.props().id).toBe('empty-state-prim-id');
   });
 });

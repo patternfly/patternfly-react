@@ -14,7 +14,8 @@ import {
   EmptyStateVariant,
   EmptyStateIcon,
   EmptyStateBody,
-  EmptyStateSecondaryActions
+  EmptyStateSecondaryActions,
+  EmptyStatePrimary
 } from '@patternfly/react-core';
 import { CubesIcon } from '@patternfly/react-icons';
 
@@ -126,4 +127,70 @@ SimpleEmptyState = () => (
     </EmptyStateSecondaryActions>
   </EmptyState>
 );
+```
+
+## Empty state spinner
+```js
+import React from 'react';
+import {
+  Title,
+  Button,
+  EmptyState,
+  EmptyStateVariant,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateSecondaryActions
+} from '@patternfly/react-core';
+
+
+EmptyStateSpinner = () => {
+  const Spinner = () => (
+    <span className="pf-c-spinner" role="progressbar" aria-valuetext="Loading...">
+      <span class="pf-c-spinner__clipper" />
+      <span class="pf-c-spinner__lead-ball" />
+      <span class="pf-c-spinner__tail-ball" />
+    </span>
+  )
+  return (
+    <EmptyState>
+      <EmptyStateIcon variant="container" component={Spinner} />
+      <Title size="lg">
+        Loading
+      </Title>
+    </EmptyState>
+  );
+}
+```
+
+## Empty state no match found
+```js
+import React from 'react';
+import {
+  Title,
+  Button,
+  EmptyState,
+  EmptyStateVariant,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateSecondaryActions
+} from '@patternfly/react-core';
+import { SearchIcon } from '@patternfly/react-icons';
+
+
+NoMatchEmptyState = () => {
+  return (
+    <EmptyState>
+      <EmptyStateIcon icon={SearchIcon} />
+      <Title size="lg">
+        No results found
+      </Title>
+      <EmptyStateBody>
+        No results match the filter criteria. Remove all filters or clear all filters to show results.
+      </EmptyStateBody>
+      <EmptyStatePrimary>
+        <Button variant="link">Clear all filters</Button>
+      </EmptyStatePrimary>
+    </EmptyState>
+  );
+}
 ```

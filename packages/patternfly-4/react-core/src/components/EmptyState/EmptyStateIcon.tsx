@@ -19,14 +19,25 @@ export interface IconProps extends Omit<React.HTMLProps<SVGElement>, 'size'> {
 export interface EmptyStateIconProps extends IconProps {
   /** Additional classes added to the EmptyState */
   className?: string;
-  /** Icon component to be rendered inside the EmptyState */
-  icon: string | React.FunctionComponent<IconProps>;
+  /** Icon component to be rendered inside the EmptyState on icon variant */
+  icon?: string | React.FunctionComponent<IconProps>
+  /** Component to be rendered inside the EmptyState on container variant */
+  component?:  React.FunctionComponent<any>;
+  /** Adds empty state icon variant styles  */
+  variant?: 'icon' | 'container';
 }
 
 export const EmptyStateIcon: React.FunctionComponent<EmptyStateIconProps> = ({
   className = '',
-  icon: IconComponent,
+  icon: IconComponent = null,
+  component: AnyComponent = null,
+  variant = 'icon',
   ...props
-}: EmptyStateIconProps) => (
-  <IconComponent className={css(styles.emptyStateIcon, className)} {...props} aria-hidden="true" />
-);
+}: EmptyStateIconProps) => {
+  const classNames = css(styles.emptyStateIcon, className);
+  return variant === 'icon' ? (
+    <IconComponent className={classNames} {...props} aria-hidden="true" />
+  ) : (
+    <div className={classNames}><AnyComponent /></div>
+  );
+};
