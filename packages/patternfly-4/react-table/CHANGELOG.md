@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.21.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.21.0...@patternfly/react-table@2.21.1) (2019-09-20)
+
+
+### Bug Fixes
+
+* **react-table:** fix cell title warning ([#2967](https://github.com/patternfly/patternfly-react/issues/2967)) ([e7c39b7](https://github.com/patternfly/patternfly-react/commit/e7c39b7))
+
+
+
+
+
 # [2.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.20.28...@patternfly/react-table@2.21.0) (2019-09-20)
 
 
