@@ -1,5 +1,4 @@
 ---
-name: PatternFly issue template
 about: Please populate the PatternFly issue template so we can learn more about your
   needs.
 title: ''
@@ -8,10 +7,11 @@ assignees: ''
 
 ---
 
-### Describe the issue. What are the expected and unexpected behavior categories?
+### Describe the issue. What is the expected and unexpected behavior?
 
 ### Please provide the steps to reproduce so we can better understand and address the issue. Feel free to link CodePen or another tool.
 
-### Would you consider this issue a bug or enhancement?
+### Is this a bug or enhancement? If this issue is a bug, is this issue blocking you or is there a work-around?
 
 ### What is your product and what release version are you targeting?
+
