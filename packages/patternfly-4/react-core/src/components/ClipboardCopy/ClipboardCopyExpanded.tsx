@@ -43,8 +43,6 @@ export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpanded
       {...props}
     />;
 
-    return (isCode ?
-    <pre><React.Fragment>{clipboardCopyExpandableComponent}</React.Fragment></pre>
-     : <React.Fragment>{clipboardCopyExpandableComponent}</React.Fragment>);
+    return (isCode ? <pre>{clipboardCopyExpandableComponent}</pre> : clipboardCopyExpandableComponent);
   }
 }
