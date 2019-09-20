@@ -528,11 +528,6 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TabsStringEventKeyDemo
   },
   {
-    id: 'table-demo',
-    name: 'Table Demo',
-    componentType: Examples.TableDemo
-  },
-  {
     id: 'text-area',
     name: 'Text Area Demo',
     componentType: Examples.TextAreaDemo

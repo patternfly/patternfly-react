@@ -101,7 +101,6 @@ export * from './TableDemo/TableSimpleActionsDemo';
 export * from './TableDemo/TableSimpleDemo';
 export * from './TableDemo/TableSortableDemo';
 export * from './TableDemo/TableWidthModifiersDemo';
-export * from './TableDemo/TableDemo';
 export * from './TabsDemo/TabsDemo';
 export * from './TabsDemo/TabsStringEventKeyDemo';
 export * from './TextAreaDemo/TextAreaDemo';
