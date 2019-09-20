@@ -7,7 +7,7 @@ import { AlertActionCloseButton } from './AlertActionCloseButton';
 
 test('default Alert variant is info', () => {
   const view = mount(<Alert title="this is a test">Alert testing</Alert>);
-  expect(view.props().className).toMatch(/pf-m-info/);
+  expect(view.find('Alert').childAt(0).prop('className')).toContain('pf-m-info');
 });
 
 Object.values(AlertVariant).forEach((variant) => {
