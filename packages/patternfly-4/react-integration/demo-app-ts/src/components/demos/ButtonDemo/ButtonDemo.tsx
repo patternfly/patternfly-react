@@ -28,6 +28,9 @@ export class ButtonDemo extends React.Component {
         <Button component={this.myButtonProps.component} isDisabled href={this.myButtonProps.href} target={this.myButtonProps.target} variant="tertiary">
           Tertiary Link to Core Docs
         </Button>
+        <Button component={this.myButtonProps.component} href={this.myButtonProps.href} target={this.myButtonProps.target} variant="control">
+          Control Button
+        </Button>
       </React.Fragment>
     );
   }

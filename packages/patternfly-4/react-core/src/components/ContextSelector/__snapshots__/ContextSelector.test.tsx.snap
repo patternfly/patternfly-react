@@ -73,7 +73,7 @@ exports[`Renders ContextSelector open 1`] = `
             aria-label="Search menu items"
             id="pf-context-selector-search-button-id-0"
             onClick={[Function]}
-            variant="tertiary"
+            variant="control"
           >
             <SearchIcon
               aria-hidden="true"
