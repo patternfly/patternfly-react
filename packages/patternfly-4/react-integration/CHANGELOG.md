@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.0.1...@patternfly/react-integration@3.1.0) (2019-09-20)
+
+
+### Features
+
+* **Table:** add flag to hide select all ([#2926](https://github.com/patternfly/patternfly-react/issues/2926)) ([419b6ff](https://github.com/patternfly/patternfly-react/commit/419b6ff))
+
+
+
+
+
 ## [3.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.0.0...@patternfly/react-integration@3.0.1) (2019-09-19)
 
 

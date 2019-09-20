@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.20.28...@patternfly/react-table@2.21.0) (2019-09-20)
+
+
+### Features
+
+* **Table:** add flag to hide select all ([#2926](https://github.com/patternfly/patternfly-react/issues/2926)) ([419b6ff](https://github.com/patternfly/patternfly-react/commit/419b6ff))
+
+
+
+
+
 ## [2.20.28](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.20.27...@patternfly/react-table@2.20.28) (2019-09-20)
 
 **Note:** Version bump only for package @patternfly/react-table
