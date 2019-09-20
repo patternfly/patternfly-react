@@ -43,7 +43,7 @@ class SimpleModal extends React.Component {
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
               Confirm
             </Button>,
-            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
               Cancel
             </Button>
           ]}
@@ -96,7 +96,7 @@ class SmallModal extends React.Component {
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
               Confirm
             </Button>,
-            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
               Cancel
             </Button>
           ]}
@@ -149,7 +149,7 @@ class LargeModal extends React.Component {
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
               Confirm
             </Button>,
-            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
               Cancel
             </Button>
           ]}
@@ -202,7 +202,7 @@ class WidthModal extends React.Component {
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
               Confirm
             </Button>,
-            <Button key="cancel" variant="secondary" onClick={this.handleModalToggle}>
+            <Button key="cancel" variant="link" onClick={this.handleModalToggle}>
               Cancel
             </Button>
           ]}
