@@ -42,8 +42,6 @@ export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpanded
       contentEditable={!isReadOnly}
       {...props}
     />;
-    // tslint:disable-next-line: no-console
-    console.log( typeof clipboardCopyExpandableComponent);
 
     return (isCode ?
     <pre><React.Fragment>{clipboardCopyExpandableComponent}</React.Fragment></pre>
