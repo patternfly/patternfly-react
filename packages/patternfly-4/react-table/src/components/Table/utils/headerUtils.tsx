@@ -93,12 +93,12 @@ const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
  * @param {*} extraObject with onSelect callback.
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
-const selectableTransforms = ({ onSelect }: { onSelect: OnSelect}) => [
+const selectableTransforms = ({ onSelect, canSelectAll }: { onSelect: OnSelect, canSelectAll: boolean}) => [
   ...(onSelect
     ? [
         {
           title: '',
-          transforms: [selectable],
+          transforms: (canSelectAll && [selectable]) || null,
           cellTransforms: [selectable]
         }
       ]
