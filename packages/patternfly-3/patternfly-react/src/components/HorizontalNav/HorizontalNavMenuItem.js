@@ -34,7 +34,7 @@ const HorizontalNavMenuItem = props => {
 
 HorizontalNavMenuItem.propTypes = {
   children: PropTypes.node,
-  onItemClick: PropTypes.object,
+  onItemClick: PropTypes.func,
   title: PropTypes.node,
   active: PropTypes.bool,
   dropdown: PropTypes.bool,
