@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.5...@patternfly/react-charts@5.0.6) (2019-09-23)
+
+
+### Bug Fixes
+
+* **charts:** add missing style and responsive props to ChartVoronoiContainer ([#2977](https://github.com/patternfly/patternfly-react/issues/2977)) ([0b10cd2](https://github.com/patternfly/patternfly-react/commit/0b10cd2))
+
+
+
+
+
 ## [5.0.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.4...@patternfly/react-charts@5.0.5) (2019-09-23)
 
 **Note:** Version bump only for package @patternfly/react-charts
