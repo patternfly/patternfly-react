@@ -89,6 +89,21 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    */
   radius?: number;
   /**
+   * The responsive prop specifies whether the rendered container should be a responsive container
+   * with a viewBox attribute, or a static container with absolute width and height.
+   * @default true
+   */
+  responsive?: boolean;
+  /**
+   * The style prop specifies styles for your VictoryContainer. Any valid inline style properties
+   * will be applied. Height and width should be specified via the height
+   * and width props, as they are used to calculate the alignment of
+   * components within the container. Styles from the child component will
+   * also be passed, if any exist.
+   * @examples {border: 1px solid red}
+   */
+  style?: React.CSSProperties;
+  /**
    * The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or
    * props defined in theme may be overwritten by props specified on the component instance.
    */
