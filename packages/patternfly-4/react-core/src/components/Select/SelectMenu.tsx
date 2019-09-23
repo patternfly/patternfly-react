@@ -137,7 +137,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
         {({ variant }) => (
           <React.Fragment>
             {variant !== SelectVariant.checkbox && (
-              <ul {...props} className={css(styles.selectMenu, className)} role="listbox" {...maxHeight && {style:({ maxHeight, overflow: 'auto' })}}>
+              <ul className={css(styles.selectMenu, className)} role="listbox" {...maxHeight && {style:({ maxHeight, overflow: 'auto' })}}  {...props}>
                 {this.extendChildren()}
               </ul>
             )}
