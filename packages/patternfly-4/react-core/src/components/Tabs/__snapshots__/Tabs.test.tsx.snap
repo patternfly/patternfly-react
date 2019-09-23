@@ -45,6 +45,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       isFilled={true}
       isSecondary={false}
       leftScrollAriaLabel="Scroll left"
+      mountOnEnter={false}
       onSelect={[Function]}
       ouiaContext={
         Object {
@@ -53,10 +54,12 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         }
       }
       rightScrollAriaLabel="Scroll right"
+      unmountOnExit={false}
       variant="div"
     >
       <div
         className="pf-c-tabs pf-m-fill"
+        id="handleScrollButtons"
         onSelect={[Function]}
       >
         <button
@@ -413,6 +416,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       isFilled={true}
       isSecondary={false}
       leftScrollAriaLabel="Scroll left"
+      mountOnEnter={false}
       onSelect={[Function]}
       ouiaContext={
         Object {
@@ -421,10 +425,12 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         }
       }
       rightScrollAriaLabel="Scroll right"
+      unmountOnExit={false}
       variant="div"
     >
       <div
         className="pf-c-tabs pf-m-fill"
+        id="scrollLeft"
         onSelect={[Function]}
       >
         <button
@@ -781,6 +787,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       isFilled={true}
       isSecondary={false}
       leftScrollAriaLabel="Scroll left"
+      mountOnEnter={false}
       onSelect={[Function]}
       ouiaContext={
         Object {
@@ -789,10 +796,12 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         }
       }
       rightScrollAriaLabel="Scroll right"
+      unmountOnExit={false}
       variant="div"
     >
       <div
         className="pf-c-tabs pf-m-fill"
+        id="scrollRight"
         onSelect={[Function]}
       >
         <button
@@ -1109,6 +1118,7 @@ Array [
   <nav
     aria-label="accessible Tabs example"
     class="pf-c-tabs"
+    id="accessibleTabs"
   >
     <button
       aria-label="Scroll left"
@@ -1225,6 +1235,7 @@ exports[`should render filled tabs 1`] = `
 Array [
   <div
     class="pf-c-tabs pf-m-fill"
+    id="filledTabs"
   >
     <button
       aria-label="Scroll left"
@@ -1338,6 +1349,7 @@ exports[`should render secondary tabs 1`] = `
 Array [
   <div
     class="pf-c-tabs"
+    id="primarieTabs"
   >
     <button
       aria-label="Scroll left"
@@ -1424,6 +1436,7 @@ Array [
   >
     <div
       class="pf-c-tabs"
+      id="secondaryTabs"
     >
       <button
         aria-label="Scroll left"
@@ -1559,6 +1572,7 @@ exports[`should render simple tabs 1`] = `
 Array [
   <div
     class="pf-c-tabs"
+    id="simpleTabs"
   >
     <button
       aria-label="Scroll left"
@@ -1698,6 +1712,7 @@ exports[`should render tabs with eventKey Strings 1`] = `
 Array [
   <div
     class="pf-c-tabs"
+    id="eventKeyTabs"
   >
     <button
       aria-label="Scroll left"

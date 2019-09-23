@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 
 export class TabDemo extends Component {
   state = {
-    activeTabKey: 0
+    activeTabKey: 0,
+    activeTabKey2: 0,
+    activeTabKey3: 0
   };
   private contentRef1: any;
   private contentRef2: any;
@@ -24,6 +26,20 @@ export class TabDemo extends Component {
     });
   }
 
+  // Toggle currently active tab
+  private handleTabClick2 = (event, tabIndex) => {
+    this.setState({
+      activeTabKey2: tabIndex
+    });
+  };
+
+  // Toggle currently active tab
+  private handleTabClick3 = (event, tabIndex) => {
+    this.setState({
+      activeTabKey3: tabIndex
+    });
+  };
+
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -31,7 +47,7 @@ export class TabDemo extends Component {
   render() {
     return (
       <React.Fragment>
-        <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
+        <Tabs id="unconnectedChildren" activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
           <Tab id="demoTab1" eventKey={0} title="Tab item 1" tabContentId="demoTab1Section" tabContentRef={this.contentRef1} />
           <Tab id="demoTab2" eventKey={1} title="Tab item 2" tabContentId="demoTab2Section" tabContentRef={this.contentRef2} />
           <Tab id="demoTab3" eventKey={2} title={<i>Tab item 3</i>} tabContentId="demoTab3Section" tabContentRef={this.contentRef3} />
@@ -47,6 +63,28 @@ export class TabDemo extends Component {
             Tab 3 section
           </TabContent>
         </div>
+        <Tabs id="mountOnEnter" mountOnEnter activeKey={this.state.activeTabKey2} onSelect={this.handleTabClick2}>
+          <Tab eventKey={0} title="Tab item 1">
+            Tab 1 section
+          </Tab>
+          <Tab eventKey={1} title="Tab item 2">
+            Tab 2 section
+          </Tab>
+          <Tab eventKey={2} title="Tab item 3">
+            Tab 3 section
+          </Tab>
+      </Tabs>
+      <Tabs id="unmountOnExit" unmountOnExit activeKey={this.state.activeTabKey3} onSelect={this.handleTabClick3}>
+        <Tab eventKey={0} title="Tab item 1">
+          Tab 1 section
+        </Tab>
+        <Tab eventKey={1} title="Tab item 2">
+          Tab 2 section
+        </Tab>
+        <Tab eventKey={2} title="Tab item 3">
+          Tab 3 section
+        </Tab>
+      </Tabs>
       </React.Fragment>
     );
   }

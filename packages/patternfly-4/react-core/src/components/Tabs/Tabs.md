@@ -59,6 +59,80 @@ class SimpleTabs extends React.Component {
 }
 ```
 
+## Simple tabs with children that mount on tab click
+```js
+import React from 'react';
+import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+
+class MountingSimpleTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+  }
+
+  render() {
+    return (
+      <Tabs mountOnEnter activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
+        <Tab eventKey={0} title="Tab item 1">
+          Tab 1 section
+        </Tab>
+        <Tab eventKey={1} title="Tab item 2">
+          Tab 2 section
+        </Tab>
+        <Tab eventKey={2} title="Tab item 3">
+          Tab 3 section
+        </Tab>
+      </Tabs>
+    );
+  }
+}
+```
+
+## Simple tabs with children that unmount when they're no longer visible
+```js
+import React from 'react';
+import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+
+class UnmountingSimpleTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0
+    };
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+  }
+
+  render() {
+    return (
+      <Tabs unmountOnExit activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
+        <Tab eventKey={0} title="Tab item 1">
+          Tab 1 section
+        </Tab>
+        <Tab eventKey={1} title="Tab item 2">
+          Tab 2 section
+        </Tab>
+        <Tab eventKey={2} title="Tab item 3">
+          Tab 3 section
+        </Tab>
+      </Tabs>
+    );
+  }
+}
+```
+
 ## Scroll buttons primary tabs
 
 ```js
