@@ -5,7 +5,7 @@ typescript: true
 propComponents: ['ChartArea', 'ChartGroup', 'ChartLabel']
 ---
 
-import { ChartArea, ChartGroup, ChartLabel, ChartThemeColor } from '@patternfly/react-charts';
+import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 import './sparkline.scss';
 
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -25,7 +25,7 @@ user experience.
 ## Sparkline chart
 ```js
 import React from 'react';
-import { ChartArea, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div>
   <div className="sparkline-container">
@@ -49,7 +49,9 @@ import { ChartArea, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patte
         />
       </ChartGroup>
     </div>
-    <ChartLabel text="CPU utilization"/>
+    <ChartContainer>
+      <ChartLabel text="CPU utilization" dy={15}/>
+    </ChartContainer>
   </div>
 </div>
 ```
@@ -58,7 +60,7 @@ import { ChartArea, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patte
 This demonstrates an alternate way of applying tooltips using CSS overflow
 ```js
 import React from 'react';
-import { ChartArea, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div>
   <div className="sparkline-container sparkline-overflow">
@@ -83,7 +85,9 @@ import { ChartArea, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContain
         />
       </ChartGroup>
     </div>
-    <ChartLabel text="CPU utilization"/>
+    <ChartContainer>
+      <ChartLabel text="CPU utilization" dy={15}/>
+    </ChartContainer>
   </div>
 </div>
 ```
