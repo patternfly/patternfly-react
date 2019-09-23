@@ -13,6 +13,7 @@ import {
   BulletQualitativeRangeTheme
 } from './themes/bullet-theme';
 import { DonutTheme } from './themes/donut-theme';
+import { ThresholdTheme } from './themes/threshold-theme';
 import {
   DonutThresholdDynamicTheme,
   DonutThresholdStaticTheme
@@ -127,3 +128,4 @@ export const ChartDonutUtilizationStaticTheme: ChartThemeDefinition = DonutUtili
 export const ChartDonutTheme: ChartThemeDefinition = DonutTheme;
 export const ChartDonutThresholdDynamicTheme: ChartThemeDefinition = DonutThresholdDynamicTheme;
 export const ChartDonutThresholdStaticTheme: ChartThemeDefinition = DonutThresholdStaticTheme;
+export const ChartThresholdTheme: ChartThemeDefinition = ThresholdTheme;

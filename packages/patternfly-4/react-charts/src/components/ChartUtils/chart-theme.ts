@@ -36,7 +36,8 @@ import {
   ChartDonutThresholdStaticTheme,
   ChartThemeDefinition,
   ChartThemeColor,
-  ChartThemeVariant
+  ChartThemeVariant,
+  ChartThresholdTheme
 } from '../ChartTheme/ChartTheme';
 import { cloneDeep } from 'lodash';
 
@@ -193,3 +194,7 @@ export const getTheme = (themeColor: string, themeVariant: string): ChartThemeDe
       return merge(baseTheme, getLightThemeColors(themeColor));
   }
 };
+
+// Returns threshold theme
+export const getThresholdTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartThresholdTheme);
