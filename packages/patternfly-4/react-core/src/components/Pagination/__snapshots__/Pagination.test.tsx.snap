@@ -5375,7 +5375,7 @@ exports[`component render no items 1`] = `
                             <button
                               aria-expanded="false"
                               aria-label="Select"
-                              class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                              class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                               disabled=""
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -5446,7 +5446,7 @@ exports[`component render no items 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-label="Select"
-                                  class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                                  class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                   disabled=""
                                   id="pagination-options-menu-toggle"
                                   type="button"
@@ -5517,7 +5517,7 @@ exports[`component render no items 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-label="Select"
-                                    class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                                    class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                     disabled=""
                                     id="pagination-options-menu-toggle"
                                     type="button"
@@ -5566,7 +5566,7 @@ exports[`component render no items 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Select"
-                            className="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                            className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                             disabled={true}
                             id="pagination-options-menu-toggle"
                             onClick={[Function]}
@@ -7247,7 +7247,7 @@ exports[`component render should render correctly disabled 1`] = `
                             <button
                               aria-expanded="false"
                               aria-label="Select"
-                              class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                              class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                               disabled=""
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -7318,7 +7318,7 @@ exports[`component render should render correctly disabled 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-label="Select"
-                                  class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                                  class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                   disabled=""
                                   id="pagination-options-menu-toggle"
                                   type="button"
@@ -7389,7 +7389,7 @@ exports[`component render should render correctly disabled 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-label="Select"
-                                    class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                                    class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                     disabled=""
                                     id="pagination-options-menu-toggle"
                                     type="button"
@@ -7438,7 +7438,7 @@ exports[`component render should render correctly disabled 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Select"
-                            className="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                            className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                             disabled={true}
                             id="pagination-options-menu-toggle"
                             onClick={[Function]}
@@ -11005,7 +11005,7 @@ exports[`component render zero results 1`] = `
                             <button
                               aria-expanded="false"
                               aria-label="Select"
-                              class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                              class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                               disabled=""
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -11076,7 +11076,7 @@ exports[`component render zero results 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-label="Select"
-                                  class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                                  class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                   disabled=""
                                   id="pagination-options-menu-toggle"
                                   type="button"
@@ -11147,7 +11147,7 @@ exports[`component render zero results 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-label="Select"
-                                    class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                                    class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                     disabled=""
                                     id="pagination-options-menu-toggle"
                                     type="button"
@@ -11196,7 +11196,7 @@ exports[`component render zero results 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Select"
-                            className="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                            className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                             disabled={true}
                             id="pagination-options-menu-toggle"
                             onClick={[Function]}
