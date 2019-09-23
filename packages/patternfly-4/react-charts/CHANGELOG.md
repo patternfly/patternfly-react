@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.7...@patternfly/react-charts@5.0.8) (2019-09-23)
+
+
+### Bug Fixes
+
+* **charts:** replace empty tags with React.Fragment ([#2988](https://github.com/patternfly/patternfly-react/issues/2988)) ([5870729](https://github.com/patternfly/patternfly-react/commit/5870729))
+
+
+
+
+
 ## [5.0.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.6...@patternfly/react-charts@5.0.7) (2019-09-23)
 
 
