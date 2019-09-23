@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OverflowMenuContentGroup Button group 1`] = `
+<Component
+  groupType="button"
+>
+  <div
+    className="pf-c-overflow-menu__group pf-m-button-group"
+    hidden={false}
+  />
+</Component>
+`;
+
+exports[`OverflowMenuContentGroup Hidden but not isPersistent should be hidden 1`] = `
+<Component>
+  <div
+    className="pf-c-overflow-menu__group"
+    hidden={true}
+  />
+</Component>
+`;
+
+exports[`OverflowMenuContentGroup Icon group 1`] = `
+<Component
+  groupType="icon"
+>
+  <div
+    className="pf-c-overflow-menu__group pf-m-icon-button-group"
+    hidden={false}
+  />
+</Component>
+`;
+
+exports[`OverflowMenuContentGroup isPersistent and Hidden should still show 1`] = `
+<Component
+  isPersistent={true}
+>
+  <div
+    className="pf-c-overflow-menu__group pf-m-persistent"
+    hidden={false}
+  />
+</Component>
+`;

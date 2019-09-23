@@ -9,20 +9,20 @@ export interface OverflowMenuContentItemProps extends React.HTMLProps<HTMLDivEle
   /** Additional classes added to the OverflowMenuItem */
   className?: string;
   /** Modifies the overflow menu item visibility */
-  persistent?: boolean;
+  isPersistent?: boolean;
 }
 
 export const OverflowMenuContentItem: React.SFC<OverflowMenuContentItemProps> = ({
   className,
   children,
-  persistent = false,
+  isPersistent = false,
   ...props
 }) => (
   <OverflowMenuContentContext.Consumer>
     {value => (
-      <div hidden={!persistent && value.isHidden} className={css(
+      <div hidden={!isPersistent && value.isHidden} className={css(
         styles.overflowMenuItem,
-        persistent && styles.modifiers.persistent,
+        isPersistent && styles.modifiers.persistent,
         className
       )}>
         {children}

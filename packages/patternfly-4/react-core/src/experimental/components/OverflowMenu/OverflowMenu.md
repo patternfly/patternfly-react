@@ -38,11 +38,11 @@ class SimpleOverflowMenu extends React.Component {
     const { isOpen } = this.state;
     const dropdownItems = [
       <OverflowMenuDropdownItem key="action">Action</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item1" shared>Item 1</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item2" shared>Item 2</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item3" shared>Item 3</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item4" shared>Item 4</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item5" shared>Item 5</OverflowMenuDropdownItem>
+      <OverflowMenuDropdownItem key="item1" isShared>Item 1</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item2" isShared>Item 2</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item3" isShared>Item 3</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item4" isShared>Item 4</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item5" isShared>Item 5</OverflowMenuDropdownItem>
     ]
     return (
       <OverflowMenu breakpoint="lg">
@@ -97,12 +97,12 @@ class OverflowMenuGroupTypes extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem key="action" shared>Action</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item1" shared>Item 1</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item2" shared>Item 2</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item3" shared>Item 3</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item4" shared>Item 4</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item5" shared>Item 5</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="action" isShared>Action</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item1" isShared>Item 1</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item2" isShared>Item 2</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item3" isShared>Item 3</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item4" isShared>Item 4</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item5" isShared>Item 5</OverflowMenuDropdownItem>,
     ];
     return (
       <OverflowMenu breakpoint="lg">
@@ -184,12 +184,12 @@ class OverflowMenuAdditionalOptions extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem key="1" shared>Primary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="2" shared>Secondary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="3" shared>Tertiary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="4" shared>Action 4</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="5" shared>Action 5</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="6" shared>Action 6</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="1" isShared>Primary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="2" isShared>Secondary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="3" isShared>Tertiary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="4" isShared>Action 4</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="5" isShared>Action 5</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="6" isShared>Action 6</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="7">Action 7</OverflowMenuDropdownItem>,
     ];
     return (
@@ -224,7 +224,7 @@ class OverflowMenuAdditionalOptions extends React.Component {
             </OverflowMenuContentItem>
           </OverflowMenuContentGroup>
         </OverflowMenuContent>
-        <OverflowMenuControl additionalOptions>
+        <OverflowMenuControl alwaysPersist>
           <Dropdown
             onSelect={this.onSelect}
             toggle={<KebabToggle onToggle={this.onToggle} />}
@@ -246,7 +246,7 @@ import * as React from 'react';
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuContentGroup, OverflowMenuContentItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
 import { Dropdown, KebabToggle, Button } from '@patternfly/react-core';
 
-class OverflowMenuAdditionalOptions extends React.Component {
+class OverflowMenuPersist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -267,16 +267,16 @@ class OverflowMenuAdditionalOptions extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem key="primary" shared>Primary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="secondary" shared>Secondary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="tertiary" shared>Tertiary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="primary" isShared>Primary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="secondary" isShared>Secondary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="tertiary" isShared>Tertiary</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="action">Action 4</OverflowMenuDropdownItem>
     ];
     return (
       <OverflowMenu breakpoint="lg">
         <OverflowMenuContent>
-          <OverflowMenuContentGroup groupType="button" persistent>
-            <OverflowMenuContentItem persistent>
+          <OverflowMenuContentGroup groupType="button" isPersistent>
+            <OverflowMenuContentItem isPersistent>
               <Button variant="primary">Primary</Button>
             </OverflowMenuContentItem>
             <OverflowMenuContentItem>
@@ -287,7 +287,7 @@ class OverflowMenuAdditionalOptions extends React.Component {
             </OverflowMenuContentItem>
           </OverflowMenuContentGroup>
         </OverflowMenuContent>
-        <OverflowMenuControl additionalOptions>
+        <OverflowMenuControl alwaysPersist>
           <Dropdown
             onSelect={this.onSelect}
             toggle={<KebabToggle onToggle={this.onToggle} />}

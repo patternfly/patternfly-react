@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OverflowMenuControl Additional Options 1`] = `
+<Component
+  alwaysPersist={true}
+>
+  <div
+    className="pf-c-overflow-menu__control pf-m-additional-options"
+  />
+</Component>
+`;
+
+exports[`OverflowMenuControl basic 1`] = `
+<Component>
+  <div
+    className="pf-c-overflow-menu__control"
+  />
+</Component>
+`;

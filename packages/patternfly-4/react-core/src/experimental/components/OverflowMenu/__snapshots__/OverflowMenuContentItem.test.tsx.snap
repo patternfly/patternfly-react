@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OverflowMenuContentItem Hidden but not isPersistent should be hidden 1`] = `
+<Component>
+  <div
+    className="pf-c-overflow-menu__item"
+    hidden={true}
+  />
+</Component>
+`;
+
+exports[`OverflowMenuContentItem isPersistent and Hidden should still show 1`] = `
+<Component
+  isPersistent={true}
+>
+  <div
+    className="pf-c-overflow-menu__item pf-m-persistent"
+    hidden={false}
+  />
+</Component>
+`;

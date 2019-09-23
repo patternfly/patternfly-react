@@ -39,7 +39,6 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
 
   static defaultProps = {
     className: '',
-    wrapperClass: '',
     isHovered: false,
     component: 'a',
     role: 'none',

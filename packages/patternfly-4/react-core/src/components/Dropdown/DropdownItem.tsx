@@ -32,7 +32,10 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   href = '',
   tooltip = null,
   tooltipProps = {},
+<<<<<<< HEAD
   listItemClassName = '',
+=======
+>>>>>>> feat(overflowmenu): added unit tests
   onClick,
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
@@ -51,7 +54,11 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         href={href}
         tooltip={tooltip}
         tooltipProps={tooltipProps}
+<<<<<<< HEAD
         listItemClassName={listItemClassName}
+=======
+        wrapperClass={props.wrapperClass}
+>>>>>>> feat(overflowmenu): added unit tests
         onClick={onClick}
         {...props} />}
   </DropdownArrowContext.Consumer>
