@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { DropdownToggleCheckbox } from './DropdownToggleCheckbox';
 
 const props = {
@@ -27,6 +27,11 @@ test('isDisabled', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('3rd state', () => {
+  const view = shallow(<DropdownToggleCheckbox id="check" isChecked={null} aria-label="check" />);
+  expect(view).toMatchSnapshot();
+});
+
 test('passing class', () => {
   const view = shallow(
     <DropdownToggleCheckbox label="label" className="class-123" id="check" isChecked aria-label="check" />
@@ -44,9 +49,10 @@ test('passing HTML attribute', () => {
 test('checkbox passes value and event to onChange handler', () => {
   const newValue = true;
   const event = {
-    currentTarget: { checked: newValue }
+    target: { checked: newValue }
   };
-  const view = shallow(<DropdownToggleCheckbox id="check" {...props} aria-label="check" />);
+  const view = mount(<DropdownToggleCheckbox id="check" {...props} aria-label="check" />);
   view.find('input').simulate('change', event);
-  expect(props.onChange).toBeCalledWith(newValue, event);
+  expect(props.onChange.mock.calls[0][0]).toBe(newValue);
+  expect(props.onChange.mock.calls[0][1]).toMatchObject(event);
 });

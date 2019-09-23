@@ -661,6 +661,79 @@ class SplitButtonDropdown extends React.Component {
 }
 ```
 
+## Split button (3rd state)
+
+```js
+import React from 'react';
+import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
+import { ThIcon } from '@patternfly/react-icons';
+class SplitButtonDropdown extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      isChecked: null
+    };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
+    this.onChange = (isChecked) => {
+      this.setState({
+        isChecked
+      })
+    }
+  }
+  render() {
+    const { isOpen, isChecked } = this.state;
+    const dropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownSeparator key="separator" />,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
+    return (
+      <Dropdown
+        onSelect={this.onSelect}
+        toggle={(
+          <DropdownToggle
+            splitButtonItems={[
+              <DropdownToggleCheckbox
+                id="example-checkbox-3rd-state"
+                key="split-checkbox"
+                aria-label="Select all"
+                onChange={(checked) => this.onChange(checked)}
+                isChecked={isChecked}
+              />
+            ]}
+            onToggle={this.onToggle}
+          />
+        )}
+        isOpen={isOpen}
+        dropdownItems={dropdownItems}
+      />
+    );
+  }
+}
+```
+
 ## Split button (disabled)
 
 ```js
