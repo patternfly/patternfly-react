@@ -163,8 +163,6 @@ export interface ChartBulletPrimaryDotMeasureProps {
   y0?: DataGetterPropType;
 }
 
-let currentId = 0;
-
 export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPrimaryDotMeasureProps> = ({
   ariaDesc,
   ariaTitle,
@@ -209,14 +207,13 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
     ...labelComponent.props
   });
 
-  const measure = computedData.map((dataPoint: any) => {
-    const key = `pf-primary-dot-measure-${currentId++}`;
+  const measure = computedData.map((dataPoint: any, index) => {
     return React.cloneElement(measureComponent, {
       data: [{...dataPoint}],
       domain,
       height,
       horizontal,
-      key,
+      key: `pf-chart-bullet-primary-dot-measure-${index}`,
       labelComponent: tooltip,
       labels,
       padding,

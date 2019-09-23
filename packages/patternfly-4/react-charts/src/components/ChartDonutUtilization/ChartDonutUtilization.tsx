@@ -460,6 +460,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   allowTooltip = true,
   ariaDesc,
   ariaTitle,
+  containerComponent = <ChartContainer />,
   data,
   invert = false,
   padding,
@@ -473,7 +474,6 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
 
   // destructure last
   theme = getDonutUtilizationTheme(themeColor, themeVariant),
-  containerComponent = <ChartContainer theme={theme}/>,
   height = theme.pie.height,
   width = theme.pie.width,
   ...rest
@@ -538,35 +538,34 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
     return newTheme;
   };
 
+  // Dynamic donut chart
   const chart = (
-    <React.Fragment>
-      <ChartDonut
-        allowTooltip={allowTooltip}
-        data={getComputedData()}
-        height={height}
-        padding={padding}
-        standalone={false}
-        theme={getThresholdTheme()}
-        width={width}
-        {...rest}
-      />
-    </React.Fragment>
+    <ChartDonut
+      allowTooltip={allowTooltip}
+      data={getComputedData()}
+      height={height}
+      padding={padding}
+      standalone={false}
+      theme={getThresholdTheme()}
+      width={width}
+      {...rest}
+    />
   );
 
-  const container = React.cloneElement(containerComponent, {
-    children: chart,
+  // Clone so users can override container props
+  const StandaloneContainer = ({children}: any) => React.cloneElement(containerComponent, {
     desc: ariaDesc,
     height,
     title: ariaTitle,
     width,
     theme,
     ...containerComponent.props
-  });
+  }, children);
 
   return standalone ? (
-    <React.Fragment>
-      {container}
-    </React.Fragment>
+    <StandaloneContainer>
+      {chart}
+    </StandaloneContainer>
   ) : (
     <React.Fragment>
       {chart}

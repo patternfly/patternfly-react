@@ -45,7 +45,7 @@ exports[`renders component data 1`] = `
     }
     height={140}
     horizontal={true}
-    key="pf-comparative-measure-0"
+    key="pf-chart-bullet-comparative-measure-0"
     labelComponent={
       <Unknown
         constrainToVisibleArea={false}

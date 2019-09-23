@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { PaddingProps } from 'victory';
-import { ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
+import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import {getLegendX, getLegendY, getPaddingForSide, getTheme} from '../ChartUtils';
+import { getLegendX, getLegendY, getTheme } from '../ChartUtils';
 
 export enum ChartLegendConfigChartType {
   chart = 'chart',
@@ -17,12 +17,11 @@ export enum ChartLegendConfigChartType {
  * <ChartLegendWrapper
  *   chartHeight={200}
  *   chartWidth={600}
+ *   legendComponent={<ChartLegend data={[{ name: 'Cats' }, { name: 'Dogs' }]} orientation="vertical"/>}
  *   position="right"
  *   svgHeight={200}
  *   svgWidth={800}
- * >
- *   <ChartLegend data={[{ name: 'Cats' }, { name: 'Dogs' }]} orientation="vertical"/>
- * </ChartLegendWrapper>
+ * />
  */
 export interface ChartLegendWrapperProps {
   /**
@@ -31,10 +30,6 @@ export interface ChartLegendWrapperProps {
    * Note: This is used to calculate padding defined by the theme
    */
   chartType?: string;
-  /**
-   * The legend child to render
-   */
-  children?: React.ReactNode;
   /**
    * Defines a horizontal shift from the x coordinate.
    */
@@ -52,6 +47,13 @@ export interface ChartLegendWrapperProps {
    * pixels will depend on the size of the container the chart is rendered into.
    */
   height?: number;
+  /**
+   * The legend component to render with chart.
+   *
+   * Note: Use legendData so the legend width can be calculated and positioned properly.
+   * Default legend properties may be applied
+   */
+  legendComponent?: React.ReactElement<any>;
   /**
    * The orientation prop takes a string that defines whether legend data
    * are displayed in a row or column. When orientation is "horizontal",
@@ -110,9 +112,9 @@ export interface ChartLegendWrapperProps {
 
 export const ChartLegendWrapper: React.FunctionComponent<ChartLegendWrapperProps> = ({
   chartType = 'chart',
-  children,
   dx = 0,
   dy = 0,
+  legendComponent = <ChartLegend />,
   padding,
   position = ChartCommonStyles.legend.position as ChartLegendPosition,
   themeColor,
@@ -124,50 +126,46 @@ export const ChartLegendWrapper: React.FunctionComponent<ChartLegendWrapperProps
   height = theme.chart.height,
   width = theme.chart.width
 }: ChartLegendWrapperProps) => {
-  // Render children
-  const renderChildren = () =>
-    React.Children.toArray(children).map((child: any) => {
-      const childProps = child.props ? child.props : {};
-      const legendX = getLegendX({
-        chartType,
-        dx,
-        height,
-        legendData: childProps.data,
-        legendOrientation: childProps.legendOrientation ? childProps.legendOrientation : orientation,
-        legendPosition: position,
-        legendProps: childProps,
-        padding,
-        theme,
-        width
-      });
-      const legendY = getLegendY({
-        chartType,
-        dy,
-        height,
-        legendData: childProps.data,
-        legendOrientation: childProps.legendOrientation ? childProps.legendOrientation : orientation,
-        legendProps: childProps,
-        legendPosition: position,
-        padding,
-        theme,
-        width
-      });
-      if (childProps.data) {
-        return React.cloneElement(child as React.ReactElement<any>, {
-          orientation,
-          standalone: false,
-          theme,
-          x: legendX > 0 ? legendX : 0,
-          y: legendY > 0 ? legendY : 0,
-          ...childProps,
-        });
-      }
-      return child;
-    });
+  const legendProps = legendComponent.props ? legendComponent.props : {};
+
+  const legendX = getLegendX({
+    chartType,
+    dx,
+    height,
+    legendData: legendProps.data,
+    legendOrientation: legendProps.legendOrientation ? legendProps.legendOrientation : orientation,
+    legendPosition: position,
+    legendProps,
+    padding,
+    theme,
+    width
+  });
+
+  const legendY = getLegendY({
+    chartType,
+    dy,
+    height,
+    legendData: legendProps.data,
+    legendOrientation: legendProps.legendOrientation ? legendProps.legendOrientation : orientation,
+    legendProps: legendProps,
+    legendPosition: position,
+    padding,
+    theme,
+    width
+  });
+
+  const legend = React.cloneElement(legendComponent, {
+    orientation,
+    standalone: false,
+    theme,
+    x: legendX > 0 ? legendX : 0,
+    y: legendY > 0 ? legendY : 0,
+    ...legendComponent.props
+  });
 
   return (
     <React.Fragment>
-      {renderChildren()}
+      {legend}
     </React.Fragment>
   );
 };

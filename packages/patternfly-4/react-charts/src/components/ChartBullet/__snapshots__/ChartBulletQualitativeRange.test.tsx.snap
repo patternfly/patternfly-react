@@ -43,7 +43,7 @@ exports[`renders component data 1`] = `
     }
     height={140}
     horizontal={true}
-    key="pf-qualitative-range-0"
+    key="pf-chart-bullet-qualitative-range-0"
     labelComponent={
       <Unknown
         constrainToVisibleArea={false}
@@ -535,7 +535,7 @@ exports[`renders component data 1`] = `
     }
     height={140}
     horizontal={true}
-    key="pf-qualitative-range-1"
+    key="pf-chart-bullet-qualitative-range-1"
     labelComponent={
       <Unknown
         constrainToVisibleArea={false}
@@ -1027,7 +1027,7 @@ exports[`renders component data 1`] = `
     }
     height={140}
     horizontal={true}
-    key="pf-qualitative-range-2"
+    key="pf-chart-bullet-qualitative-range-2"
     labelComponent={
       <Unknown
         constrainToVisibleArea={false}

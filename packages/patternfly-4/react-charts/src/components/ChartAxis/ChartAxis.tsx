@@ -11,6 +11,7 @@ import {
   VictoryAxis,
   VictoryAxisProps,
 } from 'victory';
+import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getAxisTheme, getTheme } from '../ChartUtils';
 
@@ -404,6 +405,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
 }
 
 export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
+  containerComponent = <ChartContainer />,
   showGrid = false,
   themeColor,
   themeVariant,
@@ -412,8 +414,17 @@ export const ChartAxis: React.FunctionComponent<ChartAxisProps> = ({
   theme = getTheme(themeColor, themeVariant),
   ...rest
 }: ChartAxisProps) => {
+  // Clone so users can override container props
+  const container = React.cloneElement(containerComponent, {
+    theme,
+    ...containerComponent.props
+  });
   return (
-    <VictoryAxis theme={showGrid ? getAxisTheme(themeColor, themeVariant) : theme} {...rest} />
+    <VictoryAxis
+      containerComponent={container}
+      theme={showGrid ? getAxisTheme(themeColor, themeVariant) : theme}
+      {...rest}
+    />
   );
 };
 

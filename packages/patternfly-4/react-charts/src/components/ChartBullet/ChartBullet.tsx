@@ -447,8 +447,6 @@ export interface ChartBulletProps {
   width?: number;
 }
 
-let currentId = 0;
-
 export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   ariaDesc,
   ariaTitle,
@@ -685,7 +683,6 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     labelComponent: <ChartTooltip height={height} width={width}/>,
     labels,
     padding,
-    key: `pf-qualitative-range-${currentId++}`,
     standalone: false,
     width: chartSize.width,
     y: qualitativeRangeDataY,
@@ -737,14 +734,13 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
         dx={dx}
         dy={dy}
         height={chartSize.height}
+        legendComponent={legend}
         orientation={legendOrientation}
         padding={padding}
         position={legendPosition}
         theme={theme}
         width={chartSize.width}
-      >
-        {legend}
-      </ChartLegendWrapper>
+      />
     );
   };
 
@@ -803,6 +799,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       desc={ariaDesc}
       height={height}
       title={ariaTitle}
+      theme={theme}
       width={width}
     >
       {bulletChart}

@@ -178,6 +178,7 @@ class ResponsiveStack extends React.Component {
     this.state = {
       width: 0
     };
+
     this.handleResize = () => {
       if(this.containerRef.current && this.containerRef.current.clientWidth){
         this.setState({ width: this.containerRef.current.clientWidth });
@@ -189,8 +190,8 @@ class ResponsiveStack extends React.Component {
       this.bars.push({ x: `Aug. ${i}`, y: Math.floor(Math.random() * 6) + 1 });
     };
 
-    this.renderChartBars = () => {
-      let socketBars = this.bars.map(tick => {
+    this.renderSocketBars = () => {
+      let socketBars = this.bars.map((tick, index) => {
         return {
           x: tick.x,
           y: tick.y,
@@ -198,8 +199,11 @@ class ResponsiveStack extends React.Component {
           label: `${tick.x} Sockets: ${tick.y}`
         };
       });
+      return <ChartBar data={socketBars} labelComponent={<ChartTooltip constrainToVisibleArea />} />;
+    }
 
-      let coresBars = this.bars.map(tick => {
+    this.renderCoresBars = () => {
+      let coresBars = this.bars.map((tick, index) => {
         return {
           x: tick.x,
           y: tick.y,
@@ -207,31 +211,22 @@ class ResponsiveStack extends React.Component {
           label: `${tick.x} Cores: ${tick.y}`
         };
       });
+      return <ChartBar data={coresBars} labelComponent={<ChartTooltip constrainToVisibleArea />} />;
+    }
 
-      let nodesBars = this.bars.map(tick => {
+    this.renderNodesBars = () => {
+      let nodesBars = this.bars.map((tick, index) => {
         return {
+          key: index,
           x: tick.x,
           y: tick.y,
           name: 'Nodes',
           label: `${tick.x} Nodes: ${tick.y}`
         };
       });
-
-      return [
-        <ChartBar 
-          data={socketBars} 
-          labelComponent={<ChartTooltip constrainToVisibleArea />}
-        />,
-        <ChartBar 
-          data={coresBars} 
-          labelComponent={<ChartTooltip constrainToVisibleArea />}
-        />,
-        <ChartBar 
-          data={nodesBars} 
-          labelComponent={<ChartTooltip constrainToVisibleArea />}
-        />,
-      ];
+      return <ChartBar data={nodesBars} labelComponent={<ChartTooltip constrainToVisibleArea />} />;
     }
+
     this.getTickValues = (offset = 2) => {
       let tickValues = [];
       for(let i = 1; i < 32; i++){
@@ -275,7 +270,9 @@ class ResponsiveStack extends React.Component {
             <ChartAxis tickValues = {this.getTickValues()} fixLabelOverlap />
             <ChartAxis dependentAxis showGrid />
             <ChartStack domainPadding={{x: [10, 2]}}>
-              { this.renderChartBars() }
+              { this.renderSocketBars() }
+              { this.renderCoresBars() }
+              { this.renderNodesBars() }
             </ChartStack>
           </Chart>
         </div>
