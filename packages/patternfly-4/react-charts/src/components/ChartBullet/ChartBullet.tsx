@@ -784,7 +784,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   });
 
   const bulletChart = (
-    <>
+    <React.Fragment>
       {axis}
       {bulletGroupTitle}
       {bulletTitle}
@@ -795,7 +795,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       {comparativeWarningMeasure}
       {getComparativeZeroMeasure()}
       {getWrappedLegend()}
-    </>
+    </React.Fragment>
   );
 
   return standalone ? (

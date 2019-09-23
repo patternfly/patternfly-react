@@ -186,10 +186,10 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
 
   const groupTitle = (
     Boolean(title) && (
-      <>
+      <React.Fragment>
         {getTitle()}
         {getDivider()}
-      </>
+      </React.Fragment>
     )
   );
 
