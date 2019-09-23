@@ -69,6 +69,7 @@ export * from './NavDemo/NavDemo';
 export * from './NotificationBadgeDemo/NotificationBadgeDemo';
 export * from './OptionsMenuDemo/OptionsMenuDemo';
 export * from './OuiaDemo/OuiaDemo';
+export * from './OverflowMenuDemo/OverflowMenuDemo';
 export * from './PageDemo/PageDemo';
 export * from './PageDemo/PageManagedSidebarDemo';
 export * from './PageDemo/PageManagedSidebarClosedDemo';
