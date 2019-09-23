@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/OptionsMenu/options-menu';
 import paginationStyles from '@patternfly/react-styles/css/components/Pagination/pagination';
 import { css } from '@patternfly/react-styles';
-import { Dropdown, DropdownItem, DropdownDirection } from '../Dropdown';
+import { Dropdown, DropdownItem, DropdownDirection, DropdownWithContext, DropdownContext } from '../Dropdown';
 import { CheckIcon } from '@patternfly/react-icons';
 import { OptionsToggle } from './OptionsToggle';
 import { ToggleTemplateProps } from './ToggleTemplate';
@@ -63,10 +63,10 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
    itemsTitle: 'items',
    toggleTemplate: ({firstIndex, lastIndex, itemCount, itemsTitle}: ToggleTemplateProps) => (
      <React.Fragment>
-       <strong>
+       <b>
          {firstIndex} - {lastIndex}
-       </strong>{' '}
-       of<strong>{itemCount}</strong> {itemsTitle}
+       </b>{' '}
+       of<b>{itemCount}</b> {itemsTitle}
      </React.Fragment>
    ),
    onPerPageSelect: () => null as any
@@ -97,7 +97,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
         key={value}
         component="button"
         data-action={`per-page-${value}`}
-        className={css(styles.optionsMenuMenuItem, perPage === value && 'pf-m-selected')}
+        className={css(perPage === value && 'pf-m-selected')}
         onClick={(event) => onPerPageSelect(event, value)}
       >
         {title}
@@ -116,37 +116,50 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
     const { isOpen } = this.state;
 
     return (
-      <div
-        className={css(styles.optionsMenu, className)}
-        ref={this.parentRef}
-      >
+      <React.Fragment>
         <span id={`${widgetId}-label`} hidden>
           {itemsPerPageTitle}:
         </span>
-        <Dropdown
-          direction={dropDirection}
-          onSelect={this.onSelect}
-          isOpen={isOpen}
-          toggle={
-            <OptionsToggle
-              optionsToggle={optionsToggle}
-              showToggle={perPageOptions && perPageOptions.length > 0}
-              onToggle={this.onToggle}
-              isOpen={isOpen}
-              widgetId={widgetId}
-              firstIndex={firstIndex}
-              lastIndex={lastIndex}
-              itemCount={itemCount}
-              itemsTitle={itemsTitle}
-              toggleTemplate={toggleTemplate}
-              parentRef={this.parentRef.current}
-              isDisabled={isDisabled}
-            />
-          }
-          dropdownItems={this.renderItems()}
-          isPlain
-        />
-      </div>
+        <DropdownContext.Provider
+          value={{
+            id: widgetId,
+            onSelect: this.onSelect, 
+            toggleIconClass: styles.optionsMenuToggleIcon,
+            toggleTextClass: styles.optionsMenuToggleText,
+            menuClass: styles.optionsMenuMenu,
+            itemClass: styles.optionsMenuMenuItem,
+            toggleClass: " ",
+            baseClass: styles.optionsMenu,
+            disabledClass: styles.modifiers.disabled,
+            menuComponent: 'ul',
+            baseComponent: 'div'
+          }}
+        >
+          <DropdownWithContext
+            direction={dropDirection}
+            isOpen={isOpen}
+            toggle={
+              <OptionsToggle
+                optionsToggle={optionsToggle}
+                itemsPerPageTitle={itemsPerPageTitle}
+                showToggle={perPageOptions && perPageOptions.length > 0}
+                onToggle={this.onToggle}
+                isOpen={isOpen}
+                widgetId={widgetId}
+                firstIndex={firstIndex}
+                lastIndex={lastIndex}
+                itemCount={itemCount}
+                itemsTitle={itemsTitle}
+                toggleTemplate={toggleTemplate}
+                parentRef={this.parentRef.current}
+                isDisabled={isDisabled}
+              />
+            }
+            dropdownItems={this.renderItems()}
+            isPlain
+          />
+        </DropdownContext.Provider>
+      </React.Fragment>
     );
   }
 }

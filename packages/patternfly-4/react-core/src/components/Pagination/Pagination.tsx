@@ -109,8 +109,8 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
   isCompact = false,
   perPage = defaultPerPageOptions[0].value,
   titles = {
-    items: 'items',
-    page: 'page',
+    items: '',
+    page: '',
     itemsPerPage: 'Items per page',
     perPageSuffix: 'per page',
     toFirstPage: 'Go to first page',
@@ -172,7 +172,9 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
       {...props}
     >
       {variant === PaginationVariant.top && (
-        <div className={css(styles.paginationTotalItems)}>{`${itemCount} ${titles.items}`}</div>
+        <div className={css(styles.paginationTotalItems)}>
+          <ToggleTemplate firstIndex={firstIndex} lastIndex={lastIndex} itemCount={itemCount} itemsTitle={titles.items}/>
+        </div>
       )}
       <PaginationOptionsMenu
         itemsPerPageTitle={titles.itemsPerPage}

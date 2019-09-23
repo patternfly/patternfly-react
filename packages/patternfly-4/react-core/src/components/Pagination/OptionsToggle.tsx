@@ -11,6 +11,8 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
   itemsTitle?: string;
   /** The text to be displayed on the Options Toggle */
   optionsToggle?: string;
+  /** The Title of the Pagination Options Menu */
+  itemsPerPageTitle?: string;
   /** The first index of the items being paginated */
   firstIndex?: number;
   /** The last index of the items being paginated */
@@ -38,6 +40,7 @@ export interface OptionsToggleProps extends React.HTMLProps<HTMLDivElement> {
 export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   itemsTitle = 'items',
   optionsToggle = 'Select',
+  itemsPerPageTitle = 'Items per page',
   firstIndex = 0,
   lastIndex = 0,
   itemCount = 0,
@@ -53,16 +56,7 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   return (
     <div className={css(styles.optionsMenuToggle, isDisabled && styles.modifiers.disabled, styles.modifiers.plain, styles.modifiers.text)} >
       {showToggle && (
-        <DropdownToggle
-          onEnter={onEnter}
-          aria-label={optionsToggle}
-          onToggle={onToggle}
-          isDisabled={isDisabled || itemCount <= 0}
-          isOpen={isOpen}
-          id={`${widgetId}-toggle`}
-          className={styles.optionsMenuToggleButton}
-          parentRef={parentRef}
-        >
+        <React.Fragment>
           <span className={css(styles.optionsMenuToggleText)}>
             {typeof ToggleTemplate === 'string' ? (
               fillTemplate(ToggleTemplate, { firstIndex, lastIndex, itemCount, itemsTitle })
@@ -70,7 +64,18 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
               <ToggleTemplate firstIndex={firstIndex} lastIndex={lastIndex} itemCount={itemCount} itemsTitle={itemsTitle}/>
             )}
           </span>
-        </DropdownToggle>
+          <DropdownToggle
+            onEnter={onEnter}
+            aria-label={optionsToggle}
+            onToggle={onToggle}
+            isDisabled={isDisabled || itemCount <= 0}
+            isOpen={isOpen}
+            id={`${widgetId}-toggle`}
+            className={styles.optionsMenuToggleButton}
+            parentRef={parentRef}
+          >
+          </DropdownToggle>
+        </React.Fragment>
       )}
     </div>);
 };
