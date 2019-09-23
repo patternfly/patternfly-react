@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.8...@patternfly/react-charts@5.0.9) (2019-09-23)
+
+
+### Bug Fixes
+
+* **charts:** add ariaDesc and ariaTitle to stack chart ([#2975](https://github.com/patternfly/patternfly-react/issues/2975)) ([339b43d](https://github.com/patternfly/patternfly-react/commit/339b43d))
+
+
+
+
+
 ## [5.0.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.7...@patternfly/react-charts@5.0.8) (2019-09-23)
 
 
