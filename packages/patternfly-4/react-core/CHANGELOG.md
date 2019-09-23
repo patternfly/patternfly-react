@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.105.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.104.12...@patternfly/react-core@3.105.0) (2019-09-23)
+
+
+### Bug Fixes
+
+* **Dropdown split button:** Add 3rd state to split button ([#2842](https://github.com/patternfly/patternfly-react/issues/2842)) ([6cb6424](https://github.com/patternfly/patternfly-react/commit/6cb6424))
+
+
+### Features
+
+* **Tab:** Added two new props: mountOnEnter and unmountOnExit ([#2902](https://github.com/patternfly/patternfly-react/issues/2902)) ([dcc0ccb](https://github.com/patternfly/patternfly-react/commit/dcc0ccb)), closes [#2609](https://github.com/patternfly/patternfly-react/issues/2609)
+
+
+
+
+
 ## [3.104.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.104.11...@patternfly/react-core@3.104.12) (2019-09-20)
 
 **Note:** Version bump only for package @patternfly/react-core

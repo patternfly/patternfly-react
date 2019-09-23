@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.6...@patternfly/react-charts@5.0.7) (2019-09-23)
+
+
+### Bug Fixes
+
+* **charts:** missing key prop warning for ChartPie based components ([#2943](https://github.com/patternfly/patternfly-react/issues/2943)) ([219b00b](https://github.com/patternfly/patternfly-react/commit/219b00b))
+
+
+
+
+
 ## [5.0.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.5...@patternfly/react-charts@5.0.6) (2019-09-23)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.22.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.21.1...@patternfly/react-table@2.22.0) (2019-09-23)
+
+
+### Features
+
+* **tables:** support height auto modifier in tr ([#2932](https://github.com/patternfly/patternfly-react/issues/2932)) ([b2974b6](https://github.com/patternfly/patternfly-react/commit/b2974b6))
+
+
+
+
+
 ## [2.21.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.21.0...@patternfly/react-table@2.21.1) (2019-09-20)
 
 

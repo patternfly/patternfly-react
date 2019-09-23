@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.1.0...demo-app-ts@3.2.0) (2019-09-23)
+
+
+### Features
+
+* **Tab:** Added two new props: mountOnEnter and unmountOnExit ([#2902](https://github.com/patternfly/patternfly-react/issues/2902)) ([dcc0ccb](https://github.com/patternfly/patternfly-react/commit/dcc0ccb)), closes [#2609](https://github.com/patternfly/patternfly-react/issues/2609)
+
+
+
+
+
 # [3.1.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.0.11...demo-app-ts@3.1.0) (2019-09-20)
 
 
