@@ -128,7 +128,7 @@ export interface ChartLabelProps extends VictoryLabelProps {
   /**
    * The style prop applies CSS properties to the rendered `<text>` element.
    */
-  style?: React.CSSProperties; // Todo: style accepts arrays, but TS definition is wrong
+  style?: React.CSSProperties | React.CSSProperties[];
   /**
    * The text prop defines the text ChartLabel will render. The text prop may be given as a string, number, a function
    * of datum, or an array of any of these. Strings may include newline characters, which ChartLabel will split into
@@ -176,5 +176,4 @@ export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
 };
 
 // Note: VictoryLabel.role must be hoisted
-// TODO: figure out why not casting VictoryLabel results in a type error
-hoistNonReactStatics(ChartLabel, VictoryLabel as any);
+hoistNonReactStatics(ChartLabel, VictoryLabel);
