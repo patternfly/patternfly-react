@@ -176,4 +176,5 @@ export const ChartLabel: React.FunctionComponent<ChartLabelProps> = ({
 };
 
 // Note: VictoryLabel.role must be hoisted
-hoistNonReactStatics(ChartLabel, VictoryLabel);
+// TODO: figure out why not casting VictoryLabel results in a type error
+hoistNonReactStatics(ChartLabel, VictoryLabel as any);
