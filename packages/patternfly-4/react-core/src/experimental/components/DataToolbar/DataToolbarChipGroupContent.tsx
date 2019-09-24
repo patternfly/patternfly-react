@@ -46,15 +46,16 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
             <div
               className={css(
                 styles.dataToolbarContent,
+                getModifier(styles, 'hidden'),
                 className)}
               ref={chipGroupContentRef}
               {...props}
             >
               <DataToolbarGroup variant="filter-group"/>
               {!!clearAllFilters && showClearFiltersButton && !expandableContentIsExpanded &&
-                <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
-                  <Button variant="link" onClick={clearChipGroups}>Clear all filters</Button>
-                </DataToolbarItem>
+              <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
+                <Button variant="link" onClick={clearChipGroups}>Clear all filters</Button>
+              </DataToolbarItem>
               }
             </div>
           );

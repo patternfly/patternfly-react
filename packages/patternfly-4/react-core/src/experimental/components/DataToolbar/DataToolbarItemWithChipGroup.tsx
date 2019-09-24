@@ -3,6 +3,8 @@ import * as ReactDOM from 'react-dom';
 import { DataToolbarItem, DataToolbarItemProps } from './DataToolbarItem';
 import { ChipGroup, Chip, ChipGroupToolbarItem } from '../../../components/ChipGroup';
 import { DataToolbarContext } from './DataToolbarUtils';
+import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
+import { getModifier } from '@patternfly/react-styles';
 
 export interface DataToolbarItemWithChipGroupProps extends DataToolbarItemProps {
   /** An array of strings to be displayed as chips in the expandable content */
@@ -63,7 +65,7 @@ export class DataToolbarItemWithChipGroup
             </DataToolbarItem>;
 
           if (!isExpanded && this.state.isMounted) {
-            chipGroupContentRef.current.hidden = false;
+            chipGroupContentRef.current.classList.remove(getModifier(styles, 'hidden'));
             return <React.Fragment>
               <DataToolbarItem {...props}>{children}</DataToolbarItem>
               {ReactDOM.createPortal(chipGroup, chipGroupContentRef.current.firstElementChild)}
