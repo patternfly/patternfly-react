@@ -60,6 +60,16 @@ export class PaginationDemo extends React.Component<React.HTMLProps<HTMLDivEleme
             onSetPage={this.onSetBottomPage}
             onPerPageSelect={this.onPerPageSelect}
           />
+           <Pagination
+            itemCount={523}
+            widgetId="pagination-options-menu-bottom"
+            perPage={this.state.perPage}
+            page={this.state.bottomPage}
+            variant={PaginationVariant.bottom}
+            onSetPage={this.onSetBottomPage}
+            onPerPageSelect={this.onPerPageSelect}
+            isCompact
+          />
         </React.Fragment>
       </StackItem>
     );

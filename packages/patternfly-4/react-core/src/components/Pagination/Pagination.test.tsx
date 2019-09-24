@@ -12,7 +12,12 @@ describe('component render', () => {
     const wrapper = mount(<Pagination itemCount={20} variant={PaginationVariant.bottom} />);
     expect(wrapper).toMatchSnapshot();
   });
-
+  
+  test('should render correctly bottom', () => {
+    const wrapper = mount(<Pagination itemCount={20} isCompact />);
+    expect(wrapper).toMatchSnapshot();
+  });
+  
   test('should render correctly disabled', () => {
     const wrapper = mount(<Pagination itemCount={20} isDisabled />);
     expect(wrapper).toMatchSnapshot();
@@ -54,7 +59,7 @@ describe('component render', () => {
   });
 
   test('titles', () => {
-    const wrapper = mount(<Pagination itemCount={40} titles={{ items: 'values', pages: 'books' }} />);
+    const wrapper = mount(<Pagination itemCount={40} titles={{ items: 'values', page: 'books' }} />);
     expect(wrapper).toMatchSnapshot();
   });
 
