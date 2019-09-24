@@ -12,6 +12,7 @@ import { SelectContext, SelectVariant, SelectDirection } from './selectConstants
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
+import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -89,7 +90,7 @@ export interface SelectState {
   creatableValue: string;
 }
 
-export class Select extends React.Component<SelectProps, SelectState> {
+class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectState> {
   private parentRef = React.createRef<HTMLDivElement>();
   private refCollection: HTMLElement[] = [];
 
@@ -345,6 +346,8 @@ export class Select extends React.Component<SelectProps, SelectState> {
       width,
       maxHeight,
       toggleIcon,
+      ouiaContext,
+      ouiaId,
       ...props
     } = this.props;
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild } = this.state;
@@ -379,6 +382,10 @@ export class Select extends React.Component<SelectProps, SelectState> {
         )}
         ref={this.parentRef}
         style={{ width }}
+        {...ouiaContext.isOuia && {
+          'data-ouia-component-type': 'Select',
+          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+        }}
       >
         <SelectContext.Provider value={{ onSelect, onClose: this.onClose, variant }}>
           <SelectToggle
@@ -541,3 +548,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     );
   }
 }
+
+const SelectWithOuiaContext = withOuiaContext(Select);
+
+export { SelectWithOuiaContext as Select };
