@@ -1,10 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { ChipButton } from './ChipButton';
 import { Chip } from './Chip';
 
 test('ChipButton', () => {
-  const view = shallow(
+  const view = mount(
     <ChipButton id="my-chip-button" className="chip-bttn-cls">
       <b>Close</b>
     </ChipButton>
@@ -14,7 +14,7 @@ test('ChipButton', () => {
 
 describe('Chip', () => {
   test('overflow', () => {
-    const view = shallow(
+    const view = mount(
       <Chip className="my-chp-cls" isOverflowChip>
         4 more
       </Chip>
@@ -23,7 +23,7 @@ describe('Chip', () => {
   });
 
   test('closable', () => {
-    const view = shallow(
+    const view = mount(
       <Chip className="my-chp-cls" id="chip_one">
         Chip
       </Chip>
@@ -32,7 +32,7 @@ describe('Chip', () => {
   });
 
   test('closable with tooltip', () => {
-    const view = shallow(
+    const view = mount(
       <Chip className="my-chp-cls" id="chip_one">
         1234567890123456789
       </Chip>
@@ -41,7 +41,7 @@ describe('Chip', () => {
   });
 
   test('readonly', () => {
-    const view = shallow(
+    const view = mount(
       <Chip className="my-chp-cls" isReadOnly>
         4 more
       </Chip>
