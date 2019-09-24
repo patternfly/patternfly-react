@@ -15,109 +15,54 @@ import {
 
 export class OverflowMenuDemo extends React.Component {
   state = {
-    isOpen: false
+    isSimpleOpen: false,
+    isAdditionalOptionsOpen: false,
+    isPersistOpen: false
   }
+
+  style = {
+    display: 'flex',
+    marginBottom: '2rem'
+  };
   
-  onToggle = isOpen => {
+  onSimpleToggle = isSimpleOpen => {
     this.setState({
-      isOpen
+      isSimpleOpen
     });
   };
   
-  onSelect = event => {
+  onSimpleSelect = event => {
     this.setState({
-      isOpen: !this.state.isOpen
+      isSimpleOpen: !this.state.isSimpleOpen
     });
   };
 
   renderSimpleOverflowMenu() {
-    const { isOpen } = this.state;
+    const { isSimpleOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem key="primary" isShared>Primary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="secondary" isShared>Secondary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="tertiary" isShared>Tertiary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="action">Action 4</OverflowMenuDropdownItem>
-    ];
-    return (
-      <OverflowMenu breakpoint="lg">
-        <OverflowMenuContent>
-          <OverflowMenuContentGroup groupType="button" isPersistent>
-            <OverflowMenuContentItem isPersistent>
-              <Button variant="primary">Primary</Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="secondary">Secondary</Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="tertiary">Tertiary</Button>
-            </OverflowMenuContentItem>
-          </OverflowMenuContentGroup>
-        </OverflowMenuContent>
-        <OverflowMenuControl alwaysPersist>
-          <Dropdown
-            onSelect={this.onSelect}
-            toggle={<KebabToggle onToggle={this.onToggle} />}
-            isOpen={isOpen}
-            isPlain
-            dropdownItems={dropdownItems}
-          />
-        </OverflowMenuControl>
-      </OverflowMenu>
-    )
-  }
-
-  renderOverflowMenuGroupTypes() {
-    const { isOpen } = this.state;
-    const dropdownItems = [
-      <OverflowMenuDropdownItem key="action" isShared>Action</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="action">Action</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="item1" isShared>Item 1</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="item2" isShared>Item 2</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="item3" isShared>Item 3</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="item4" isShared>Item 4</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item5" isShared>Item 5</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item5" isShared>Item 5</OverflowMenuDropdownItem>
     ];
     return (
-      <OverflowMenu breakpoint="lg">
+      <OverflowMenu breakpoint="md" id="simple-overflow-menu" style={this.style}>
         <OverflowMenuContent>
-          <OverflowMenuContentGroup> 
+          <OverflowMenuContentItem>Item</OverflowMenuContentItem>
+          <OverflowMenuContentItem>Item</OverflowMenuContentItem>
+          <OverflowMenuContentGroup>
             <OverflowMenuContentItem>Item</OverflowMenuContentItem>
             <OverflowMenuContentItem>Item</OverflowMenuContentItem>
             <OverflowMenuContentItem>Item</OverflowMenuContentItem>
-          </OverflowMenuContentGroup>
-          <OverflowMenuContentGroup groupType="button">
-            <OverflowMenuContentItem>
-              <Button variant="primary">Primary</Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="secondary">Secondary</Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="tertiary">Tertiary</Button>
-            </OverflowMenuContentItem>
-          </OverflowMenuContentGroup>
-          <OverflowMenuContentGroup groupType="icon">
-            <OverflowMenuContentItem>
-              <Button variant="link" aria-label="Align left">
-                <i className="fas fa-align-left" aria-hidden="true"></i>
-              </Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="link" aria-label="Align center">
-                <i className="fas fa-align-center" aria-hidden="true"></i>
-              </Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="link" aria-label="Align right">
-                <i className="fas fa-align-right" aria-hidden="true"></i>
-              </Button>
-            </OverflowMenuContentItem>
           </OverflowMenuContentGroup>
         </OverflowMenuContent>
         <OverflowMenuControl>
           <Dropdown
-            onSelect={this.onSelect}
-            toggle={<KebabToggle onToggle={this.onToggle} />}
-            isOpen={isOpen}
+            onSelect={this.onSimpleSelect}
+            toggle={<KebabToggle onToggle={this.onSimpleToggle} />}
+            isOpen={isSimpleOpen}
             isPlain
             dropdownItems={dropdownItems}
           />
@@ -126,8 +71,20 @@ export class OverflowMenuDemo extends React.Component {
     )
   }
 
+  onAdditionalOptionsToggle = isAdditionalOptionsOpen => {
+    this.setState({
+      isAdditionalOptionsOpen
+    });
+  };
+  
+  onAdditionalOptionsSelect = event => {
+    this.setState({
+      isAdditionalOptionsOpen: !this.state.isAdditionalOptionsOpen
+    });
+  };
+
   renderOverflowMenuAdditionalOptions() {
-    const { isOpen } = this.state;
+    const { isAdditionalOptionsOpen } = this.state;
     const dropdownItems = [
       <OverflowMenuDropdownItem key="1" isShared>Primary</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="2" isShared>Secondary</OverflowMenuDropdownItem>,
@@ -138,7 +95,7 @@ export class OverflowMenuDemo extends React.Component {
       <OverflowMenuDropdownItem key="7">Action 7</OverflowMenuDropdownItem>,
     ];
     return (
-      <OverflowMenu breakpoint="lg">
+      <OverflowMenu breakpoint="lg" id="additional-options-overflow-menu" style={this.style}>
         <OverflowMenuContent>
           <OverflowMenuContentGroup groupType="button">
             <OverflowMenuContentItem>
@@ -171,9 +128,9 @@ export class OverflowMenuDemo extends React.Component {
         </OverflowMenuContent>
         <OverflowMenuControl alwaysPersist>
           <Dropdown
-            onSelect={this.onSelect}
-            toggle={<KebabToggle onToggle={this.onToggle} />}
-            isOpen={isOpen}
+            onSelect={this.onAdditionalOptionsSelect}
+            toggle={<KebabToggle onToggle={this.onAdditionalOptionsToggle} />}
+            isOpen={isAdditionalOptionsOpen}
             isPlain
             dropdownItems={dropdownItems}
           />
@@ -182,8 +139,20 @@ export class OverflowMenuDemo extends React.Component {
     )
   }
 
+  onPersistToggle = isPersistOpen => {
+    this.setState({
+      isPersistOpen
+    });
+  };
+  
+  onPersistSelect = event => {
+    this.setState({
+      isPersistOpen: !this.state.isPersistOpen
+    });
+  };
+
   renderOverflowMenuPersist() {
-    const { isOpen } = this.state;
+    const { isPersistOpen } = this.state;
     const dropdownItems = [
       <OverflowMenuDropdownItem key="primary" isShared>Primary</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="secondary" isShared>Secondary</OverflowMenuDropdownItem>,
@@ -191,7 +160,7 @@ export class OverflowMenuDemo extends React.Component {
       <OverflowMenuDropdownItem key="action">Action 4</OverflowMenuDropdownItem>
     ];
     return (
-      <OverflowMenu breakpoint="lg">
+      <OverflowMenu breakpoint="xl" id="persist-overflow-menu" style={this.style}>
         <OverflowMenuContent>
           <OverflowMenuContentGroup groupType="button" isPersistent>
             <OverflowMenuContentItem isPersistent>
@@ -207,9 +176,9 @@ export class OverflowMenuDemo extends React.Component {
         </OverflowMenuContent>
         <OverflowMenuControl alwaysPersist>
           <Dropdown
-            onSelect={this.onSelect}
-            toggle={<KebabToggle onToggle={this.onToggle} />}
-            isOpen={isOpen}
+            onSelect={this.onPersistSelect}
+            toggle={<KebabToggle onToggle={this.onPersistToggle} />}
+            isOpen={isPersistOpen}
             isPlain
             dropdownItems={dropdownItems}
           />
@@ -222,7 +191,6 @@ export class OverflowMenuDemo extends React.Component {
     return (
       <React.Fragment>
         { this.renderSimpleOverflowMenu() }
-        { this.renderOverflowMenuGroupTypes() }
         { this.renderOverflowMenuAdditionalOptions() }
         { this.renderOverflowMenuPersist() }
       </React.Fragment>
