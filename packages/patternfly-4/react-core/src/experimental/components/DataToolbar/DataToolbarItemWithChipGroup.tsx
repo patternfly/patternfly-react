@@ -6,15 +6,22 @@ import { DataToolbarContext } from './DataToolbarUtils';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { getModifier } from '@patternfly/react-styles';
 
+export type DataToolbarChip = {
+  /** TODO */
+  key: string;
+  /** TODO */
+  node: React.ReactNode;
+}
+
 export interface DataToolbarItemWithChipGroupProps extends DataToolbarItemProps {
   /** An array of strings to be displayed as chips in the expandable content */
-  chips?: string[];
+  chips?: (string | DataToolbarChip)[];
   /** Callback passed by consumer used to delete a chip from the chips[] */
-  deleteChip?: (chip: string) => void;
+  deleteChip?: (category: string, chip: DataToolbarChip | string) => void;
   /** Content to be rendered inside the Data toolbar item associated with the chip group */
   children: React.ReactNode;
-  /** Unique label for the chip group */
-  label: string;
+  /** Unique category name to be used as a label for the chip group */
+  categoryName?: string;
 }
 
 interface DataToolbarItemWithChipGroupState {
@@ -25,7 +32,8 @@ export class DataToolbarItemWithChipGroup
   extends React.Component<DataToolbarItemWithChipGroupProps, DataToolbarItemWithChipGroupState> {
 
   static defaultProps = {
-    chips: [] as string[]
+    chips: [] as string[],
+    categoryName: '',
   };
 
   constructor(props: DataToolbarItemWithChipGroupProps) {
@@ -41,7 +49,7 @@ export class DataToolbarItemWithChipGroup
   }
 
   render() {
-    const { children, chips, deleteChip, label, ...props } = this.props;
+    const { children, chips, deleteChip, categoryName, ...props } = this.props;
 
     return (
       <DataToolbarContext.Consumer>
@@ -54,12 +62,16 @@ export class DataToolbarItemWithChipGroup
           const chipGroup =
             <DataToolbarItem variant="chip-group">
               <ChipGroup withToolbar>
-                <ChipGroupToolbarItem key={label} categoryName={label}>
-                  {chips.map((chip) => (
-                    <Chip key={chip} onClick={() => deleteChip(chip)}>
-                      {chip}
-                    </Chip>
-                  ))}
+                <ChipGroupToolbarItem key={categoryName} categoryName={categoryName}>
+                  {chips.map((chip) => {
+                    return typeof chip === 'string' ?
+                      <Chip key={chip} onClick={() => deleteChip(categoryName, chip)}>
+                        {chip}
+                      </Chip> :
+                      <Chip key={chip.key} onClick={() => deleteChip(categoryName, chip)}>
+                        {chip.node}
+                      </Chip>;
+                  })}
                 </ChipGroupToolbarItem>
               </ChipGroup>
             </DataToolbarItem>;

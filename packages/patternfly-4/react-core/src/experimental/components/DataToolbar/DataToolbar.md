@@ -584,9 +584,11 @@ class DataToolbarWithChipGroupExample extends React.Component {
       isExpanded: false,
       inputValue: "",
       statusIsExpanded: false,
-      statusSelection: ['New', 'Pending'],
       riskIsExpanded: false,
-      riskSelection: ['Low'],
+      filters: {
+        risk: ['Low'],
+        status: ['New', 'Pending'],
+      },
       kebabIsOpen: false
     };
     
@@ -608,32 +610,35 @@ class DataToolbarWithChipGroupExample extends React.Component {
     
     this.onSelect = event => {
       const selection = event.currentTarget.id.split('_');
-      const selectionArray = `${selection[0]}Selection`;
       
       this.setState((prevState) => {
+        prevState.filters[selection[0]] = prevState.filters[selection[0]].includes(selection[1]) ?
+          prevState.filters[selection[0]].filter(s => s !== selection[1]) : 
+          [...prevState.filters[selection[0]], selection[1]];
+        
         return {
-          [selectionArray]: prevState[selectionArray].includes(selection[1]) ?
-            prevState[selectionArray].filter(s => s !== selection[1]) : 
-            [...prevState[selectionArray], selection[1]]
+          filters: prevState.filters
         }
       });
     };
     
-    this.onDeleteStatusTag = id => {
-      this.setState((prevState) => {
-        return {
-          statusSelection: prevState.statusSelection.filter(s => s !== id) 
-        }
-      });
-    };
-    
-    this.onDeleteRiskTag = id => {
-      this.setState((prevState) => {
-        return {
-          riskSelection: prevState.riskSelection.filter(s => s !== id) 
-        }
-      });
-    };
+    this.onDelete = (type = "", id = "") => {
+      if (type) {
+        this.setState((prevState) => {
+          prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter(s => s !== id);
+          return {
+            filters: prevState.filters
+          }
+        });
+      } else {
+        this.setState({
+          filters: {
+            risk: [],
+            status: [],
+          }
+        })
+      }
+    }
     
     this.onStatusToggle = isExpanded => {
       this.setState({
@@ -653,12 +658,6 @@ class DataToolbarWithChipGroupExample extends React.Component {
       });
     };
     
-    this.clearAllFilters = () => {
-      this.setState({
-        statusSelection: [],
-        riskSelection: []
-      });
-    }
   }
   
   componentDidMount() {
@@ -668,23 +667,22 @@ class DataToolbarWithChipGroupExample extends React.Component {
   render() {
     const { 
       inputValue, 
+      filters,
       statusIsExpanded, 
-      statusSelection,
       riskIsExpanded, 
-      riskSelection,
       kebabIsOpen 
     } = this.state;
      
     const statusMenuItems = [
-      <OptionsMenuItem onSelect={this.onSelect} isSelected={statusSelection.includes('New')} id="status_New" key="statusNew">New</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} isSelected={statusSelection.includes('Pending')} id="status_Pending" key="statusPending">Pending</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} isSelected={statusSelection.includes('Running')} id="status_Running" key="statusRunning">Running</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} isSelected={statusSelection.includes('Cancelled')} id="status_Cancelled" key="statusCancelled">Cancelled</OptionsMenuItem>
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={filters.status.includes('New')} id="status_New" key="statusNew">New</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={filters.status.includes('Pending')} id="status_Pending" key="statusPending">Pending</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={filters.status.includes('Running')} id="status_Running" key="statusRunning">Running</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={filters.status.includes('Cancelled')} id="status_Cancelled" key="statusCancelled">Cancelled</OptionsMenuItem>
     ];
     const riskMenuItems = [
-      <OptionsMenuItem onSelect={this.onSelect} isSelected={riskSelection.includes('Low')} id="risk_Low" key="riskLow">Low</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} isSelected={riskSelection.includes('Medium')} id="risk_Medium" key="riskMedium">Medium</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} isSelected={riskSelection.includes('High')} id="risk_High" key="riskHigh">High</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={filters.risk.includes('Low')} id="risk_Low" key="riskLow">Low</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={filters.risk.includes('Medium')} id="risk_Medium" key="riskMedium">Medium</OptionsMenuItem>,
+      <OptionsMenuItem onSelect={this.onSelect} isSelected={filters.risk.includes('High')} id="risk_High" key="riskHigh">High</OptionsMenuItem>,
     ];
     
     const statusToggle = <OptionsMenuToggle onToggle={this.onStatusToggle} toggleTemplate={"Status"} />;
@@ -700,14 +698,14 @@ class DataToolbarWithChipGroupExample extends React.Component {
         </InputGroup>
       </DataToolbarItem>
       <DataToolbarGroup variant="filter-group">
-          <DataToolbarItemWithChipGroup chips={statusSelection} deleteChip={this.onDeleteStatusTag} label="Status">
+          <DataToolbarItemWithChipGroup chips={filters.status} deleteChip={this.onDelete} categoryName="Status">
             <OptionsMenu 
                 id="status-options-menu" 
                 menuItems={statusMenuItems} 
                 isOpen={statusIsExpanded} 
                 toggle={statusToggle} />
           </DataToolbarItemWithChipGroup>
-          <DataToolbarItemWithChipGroup chips={riskSelection} deleteChip={this.onDeleteRiskTag} label="Risk">
+          <DataToolbarItemWithChipGroup chips={filters.risk} deleteChip={this.onDelete} categoryName="Risk">
             <OptionsMenu 
                 id="risk-options-menu" 
                 menuItems={riskMenuItems} 
@@ -755,7 +753,7 @@ class DataToolbarWithChipGroupExample extends React.Component {
       </DataToolbarItem>
     </React.Fragment>;
     
-    return <DataToolbar id="data-toolbar-toggle-groups" clearAllFilters={this.clearAllFilters}><DataToolbarContent>{toolbarItems}</DataToolbarContent></DataToolbar>;
+    return <DataToolbar id="data-toolbar-toggle-groups" clearAllFilters={this.onDelete}><DataToolbarContent>{toolbarItems}</DataToolbarContent></DataToolbar>;
   }
 }
 
