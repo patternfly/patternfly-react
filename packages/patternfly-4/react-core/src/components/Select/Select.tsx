@@ -104,7 +104,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     isPlain: false,
     isDisabled: false,
     isCreatable: false,
-    'aria-label': '',
+    "aria-label": '',
     ariaLabelledBy: '',
     ariaLabelTypeAhead: '',
     ariaLabelClear: 'Clear all',
@@ -116,12 +116,11 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     noResultsFoundText: 'No results found',
     variant: SelectVariant.single,
     width: '',
-    maxHeight: '',
-    onClear: Function.prototype,
-    onCreateOption: Function.prototype,
+    onClear: (_e: React.MouseEvent) => undefined as void,
+    onCreateOption: (_newOptionValue: string) => undefined as void,
     toggleIcon: null as React.ReactElement,
-    onFilter: undefined as () => {}
-  };
+    onFilter: (_e: React.ChangeEvent<HTMLInputElement>) => undefined as void
+  } as Partial<SelectProps & InjectedOuiaProps>;
 
   state = {
     openedOnEnter: false,
