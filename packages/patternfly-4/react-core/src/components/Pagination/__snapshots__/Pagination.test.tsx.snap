@@ -61,7 +61,7 @@ exports[`component render custom pagination toggle 1`] = `
           itemsTitle=""
           lastIndex={10}
           onPerPageSelect={[Function]}
-          optionsToggle="Select"
+          optionsToggle="Items per page"
           perPage={10}
           perPageOptions={
             Array [
@@ -87,13 +87,6 @@ exports[`component render custom pagination toggle 1`] = `
           toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
           widgetId="pagination-options-menu"
         >
-          <span
-            hidden={true}
-            id="pagination-options-menu-label"
-          >
-            Items per page
-            :
-          </span>
           <DropdownWithContext
             autoFocus={true}
             className=""
@@ -179,7 +172,7 @@ exports[`component render custom pagination toggle 1`] = `
                 itemsTitle=""
                 lastIndex={10}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={null}
                 showToggle={true}
                 toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
@@ -204,7 +197,7 @@ exports[`component render custom pagination toggle 1`] = `
                 lastIndex={10}
                 onEnter={[Function]}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={
                   Object {
                     "current": <div
@@ -220,7 +213,7 @@ exports[`component render custom pagination toggle 1`] = `
                         </span>
                         <button
                           aria-expanded="false"
-                          aria-label="Select"
+                          aria-label="Items per page"
                           class="  pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -258,7 +251,7 @@ exports[`component render custom pagination toggle 1`] = `
                     1 - 10 - 40 - 
                   </span>
                   <Component
-                    aria-label="Select"
+                    aria-label="Items per page"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
                     isDisabled={false}
@@ -280,7 +273,7 @@ exports[`component render custom pagination toggle 1`] = `
                             </span>
                             <button
                               aria-expanded="false"
-                              aria-label="Select"
+                              aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -307,7 +300,7 @@ exports[`component render custom pagination toggle 1`] = `
                     }
                   >
                     <Toggle
-                      aria-label="Select"
+                      aria-label="Items per page"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -335,7 +328,7 @@ exports[`component render custom pagination toggle 1`] = `
                               </span>
                               <button
                                 aria-expanded="false"
-                                aria-label="Select"
+                                aria-label="Items per page"
                                 class="  pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -363,7 +356,7 @@ exports[`component render custom pagination toggle 1`] = `
                     >
                       <button
                         aria-expanded={false}
-                        aria-label="Select"
+                        aria-label="Items per page"
                         className="  pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -877,7 +870,7 @@ exports[`component render custom perPageOptions 1`] = `
           itemsTitle=""
           lastIndex={10}
           onPerPageSelect={[Function]}
-          optionsToggle="Select"
+          optionsToggle="Items per page"
           perPage={10}
           perPageOptions={
             Array [
@@ -891,13 +884,6 @@ exports[`component render custom perPageOptions 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <span
-            hidden={true}
-            id="pagination-options-menu-label"
-          >
-            Items per page
-            :
-          </span>
           <DropdownWithContext
             autoFocus={true}
             className=""
@@ -934,7 +920,7 @@ exports[`component render custom perPageOptions 1`] = `
                 itemsTitle=""
                 lastIndex={10}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={null}
                 showToggle={true}
                 toggleTemplate={[Function]}
@@ -959,7 +945,7 @@ exports[`component render custom perPageOptions 1`] = `
                 lastIndex={10}
                 onEnter={[Function]}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={
                   Object {
                     "current": <div
@@ -986,7 +972,7 @@ exports[`component render custom perPageOptions 1`] = `
                         </span>
                         <button
                           aria-expanded="false"
-                          aria-label="Select"
+                          aria-label="Items per page"
                           class="  pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -1041,7 +1027,7 @@ exports[`component render custom perPageOptions 1`] = `
                     </Component>
                   </span>
                   <Component
-                    aria-label="Select"
+                    aria-label="Items per page"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
                     isDisabled={false}
@@ -1074,7 +1060,7 @@ exports[`component render custom perPageOptions 1`] = `
                             </span>
                             <button
                               aria-expanded="false"
-                              aria-label="Select"
+                              aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -1101,7 +1087,7 @@ exports[`component render custom perPageOptions 1`] = `
                     }
                   >
                     <Toggle
-                      aria-label="Select"
+                      aria-label="Items per page"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -1140,7 +1126,7 @@ exports[`component render custom perPageOptions 1`] = `
                               </span>
                               <button
                                 aria-expanded="false"
-                                aria-label="Select"
+                                aria-label="Items per page"
                                 class="  pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -1168,7 +1154,7 @@ exports[`component render custom perPageOptions 1`] = `
                     >
                       <button
                         aria-expanded={false}
-                        aria-label="Select"
+                        aria-label="Items per page"
                         className="  pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -1666,7 +1652,7 @@ exports[`component render custom start end 1`] = `
           itemsTitle=""
           lastIndex={15}
           onPerPageSelect={[Function]}
-          optionsToggle="Select"
+          optionsToggle="Items per page"
           perPage={10}
           perPageOptions={
             Array [
@@ -1692,13 +1678,6 @@ exports[`component render custom start end 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <span
-            hidden={true}
-            id="pagination-options-menu-label"
-          >
-            Items per page
-            :
-          </span>
           <DropdownWithContext
             autoFocus={true}
             className=""
@@ -1784,7 +1763,7 @@ exports[`component render custom start end 1`] = `
                 itemsTitle=""
                 lastIndex={15}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={null}
                 showToggle={true}
                 toggleTemplate={[Function]}
@@ -1809,7 +1788,7 @@ exports[`component render custom start end 1`] = `
                 lastIndex={15}
                 onEnter={[Function]}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={
                   Object {
                     "current": <div
@@ -1836,7 +1815,7 @@ exports[`component render custom start end 1`] = `
                         </span>
                         <button
                           aria-expanded="false"
-                          aria-label="Select"
+                          aria-label="Items per page"
                           class="  pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -1891,7 +1870,7 @@ exports[`component render custom start end 1`] = `
                     </Component>
                   </span>
                   <Component
-                    aria-label="Select"
+                    aria-label="Items per page"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
                     isDisabled={false}
@@ -1924,7 +1903,7 @@ exports[`component render custom start end 1`] = `
                             </span>
                             <button
                               aria-expanded="false"
-                              aria-label="Select"
+                              aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -1951,7 +1930,7 @@ exports[`component render custom start end 1`] = `
                     }
                   >
                     <Toggle
-                      aria-label="Select"
+                      aria-label="Items per page"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -1990,7 +1969,7 @@ exports[`component render custom start end 1`] = `
                               </span>
                               <button
                                 aria-expanded="false"
-                                aria-label="Select"
+                                aria-label="Items per page"
                                 class="  pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -2018,7 +1997,7 @@ exports[`component render custom start end 1`] = `
                     >
                       <button
                         aria-expanded={false}
-                        aria-label="Select"
+                        aria-label="Items per page"
                         className="  pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -2513,20 +2492,13 @@ exports[`component render empty per page options 1`] = `
           itemsTitle=""
           lastIndex={10}
           onPerPageSelect={[Function]}
-          optionsToggle="Select"
+          optionsToggle="Items per page"
           perPage={10}
           perPageOptions={Array []}
           perPageSuffix="per page"
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <span
-            hidden={true}
-            id="pagination-options-menu-label"
-          >
-            Items per page
-            :
-          </span>
           <DropdownWithContext
             autoFocus={true}
             className=""
@@ -2547,7 +2519,7 @@ exports[`component render empty per page options 1`] = `
                 itemsTitle=""
                 lastIndex={10}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={null}
                 showToggle={false}
                 toggleTemplate={[Function]}
@@ -2572,7 +2544,7 @@ exports[`component render empty per page options 1`] = `
                 lastIndex={10}
                 onEnter={[Function]}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={
                   Object {
                     "current": <div
@@ -3049,7 +3021,7 @@ exports[`component render last page 1`] = `
           itemsTitle=""
           lastIndex={20}
           onPerPageSelect={[Function]}
-          optionsToggle="Select"
+          optionsToggle="Items per page"
           perPage={10}
           perPageOptions={
             Array [
@@ -3075,13 +3047,6 @@ exports[`component render last page 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <span
-            hidden={true}
-            id="pagination-options-menu-label"
-          >
-            Items per page
-            :
-          </span>
           <DropdownWithContext
             autoFocus={true}
             className=""
@@ -3167,7 +3132,7 @@ exports[`component render last page 1`] = `
                 itemsTitle=""
                 lastIndex={20}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={null}
                 showToggle={true}
                 toggleTemplate={[Function]}
@@ -3192,7 +3157,7 @@ exports[`component render last page 1`] = `
                 lastIndex={20}
                 onEnter={[Function]}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={
                   Object {
                     "current": <div
@@ -3219,7 +3184,7 @@ exports[`component render last page 1`] = `
                         </span>
                         <button
                           aria-expanded="false"
-                          aria-label="Select"
+                          aria-label="Items per page"
                           class="  pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -3274,7 +3239,7 @@ exports[`component render last page 1`] = `
                     </Component>
                   </span>
                   <Component
-                    aria-label="Select"
+                    aria-label="Items per page"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
                     isDisabled={false}
@@ -3307,7 +3272,7 @@ exports[`component render last page 1`] = `
                             </span>
                             <button
                               aria-expanded="false"
-                              aria-label="Select"
+                              aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -3334,7 +3299,7 @@ exports[`component render last page 1`] = `
                     }
                   >
                     <Toggle
-                      aria-label="Select"
+                      aria-label="Items per page"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -3373,7 +3338,7 @@ exports[`component render last page 1`] = `
                               </span>
                               <button
                                 aria-expanded="false"
-                                aria-label="Select"
+                                aria-label="Items per page"
                                 class="  pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -3401,7 +3366,7 @@ exports[`component render last page 1`] = `
                     >
                       <button
                         aria-expanded={false}
-                        aria-label="Select"
+                        aria-label="Items per page"
                         className="  pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -3896,7 +3861,7 @@ exports[`component render limited number of pages 1`] = `
           itemsTitle=""
           lastIndex={20}
           onPerPageSelect={[Function]}
-          optionsToggle="Select"
+          optionsToggle="Items per page"
           perPage={20}
           perPageOptions={
             Array [
@@ -3922,13 +3887,6 @@ exports[`component render limited number of pages 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <span
-            hidden={true}
-            id="pagination-options-menu-label"
-          >
-            Items per page
-            :
-          </span>
           <DropdownWithContext
             autoFocus={true}
             className=""
@@ -4014,7 +3972,7 @@ exports[`component render limited number of pages 1`] = `
                 itemsTitle=""
                 lastIndex={20}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={null}
                 showToggle={true}
                 toggleTemplate={[Function]}
@@ -4039,7 +3997,7 @@ exports[`component render limited number of pages 1`] = `
                 lastIndex={20}
                 onEnter={[Function]}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={
                   Object {
                     "current": <div
@@ -4066,7 +4024,7 @@ exports[`component render limited number of pages 1`] = `
                         </span>
                         <button
                           aria-expanded="false"
-                          aria-label="Select"
+                          aria-label="Items per page"
                           class="  pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -4121,7 +4079,7 @@ exports[`component render limited number of pages 1`] = `
                     </Component>
                   </span>
                   <Component
-                    aria-label="Select"
+                    aria-label="Items per page"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
                     isDisabled={false}
@@ -4154,7 +4112,7 @@ exports[`component render limited number of pages 1`] = `
                             </span>
                             <button
                               aria-expanded="false"
-                              aria-label="Select"
+                              aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -4181,7 +4139,7 @@ exports[`component render limited number of pages 1`] = `
                     }
                   >
                     <Toggle
-                      aria-label="Select"
+                      aria-label="Items per page"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -4220,7 +4178,7 @@ exports[`component render limited number of pages 1`] = `
                               </span>
                               <button
                                 aria-expanded="false"
-                                aria-label="Select"
+                                aria-label="Items per page"
                                 class="  pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -4248,7 +4206,7 @@ exports[`component render limited number of pages 1`] = `
                     >
                       <button
                         aria-expanded={false}
-                        aria-label="Select"
+                        aria-label="Items per page"
                         className="  pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -4740,7 +4698,7 @@ exports[`component render no items 1`] = `
           itemsTitle=""
           lastIndex={0}
           onPerPageSelect={[Function]}
-          optionsToggle="Select"
+          optionsToggle="Items per page"
           perPage={10}
           perPageOptions={
             Array [
@@ -4766,13 +4724,6 @@ exports[`component render no items 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <span
-            hidden={true}
-            id="pagination-options-menu-label"
-          >
-            Items per page
-            :
-          </span>
           <DropdownWithContext
             autoFocus={true}
             className=""
@@ -4858,7 +4809,7 @@ exports[`component render no items 1`] = `
                 itemsTitle=""
                 lastIndex={0}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={null}
                 showToggle={true}
                 toggleTemplate={[Function]}
@@ -4883,7 +4834,7 @@ exports[`component render no items 1`] = `
                 lastIndex={0}
                 onEnter={[Function]}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={
                   Object {
                     "current": <div
@@ -4910,7 +4861,7 @@ exports[`component render no items 1`] = `
                         </span>
                         <button
                           aria-expanded="false"
-                          aria-label="Select"
+                          aria-label="Items per page"
                           class="  pf-c-options-menu__toggle-button"
                           disabled=""
                           id="pagination-options-menu-toggle"
@@ -4966,7 +4917,7 @@ exports[`component render no items 1`] = `
                     </Component>
                   </span>
                   <Component
-                    aria-label="Select"
+                    aria-label="Items per page"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
                     isDisabled={true}
@@ -4999,7 +4950,7 @@ exports[`component render no items 1`] = `
                             </span>
                             <button
                               aria-expanded="false"
-                              aria-label="Select"
+                              aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               disabled=""
                               id="pagination-options-menu-toggle"
@@ -5027,7 +4978,7 @@ exports[`component render no items 1`] = `
                     }
                   >
                     <Toggle
-                      aria-label="Select"
+                      aria-label="Items per page"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -5066,7 +5017,7 @@ exports[`component render no items 1`] = `
                               </span>
                               <button
                                 aria-expanded="false"
-                                aria-label="Select"
+                                aria-label="Items per page"
                                 class="  pf-c-options-menu__toggle-button"
                                 disabled=""
                                 id="pagination-options-menu-toggle"
@@ -5095,7 +5046,7 @@ exports[`component render no items 1`] = `
                     >
                       <button
                         aria-expanded={false}
-                        aria-label="Select"
+                        aria-label="Items per page"
                         className="  pf-c-options-menu__toggle-button"
                         disabled={true}
                         id="pagination-options-menu-toggle"
@@ -5568,7 +5519,7 @@ exports[`component render should render correctly bottom 1`] = `
           itemsTitle=""
           lastIndex={10}
           onPerPageSelect={[Function]}
-          optionsToggle="Select"
+          optionsToggle="Items per page"
           perPage={10}
           perPageOptions={
             Array [
@@ -5594,13 +5545,6 @@ exports[`component render should render correctly bottom 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <span
-            hidden={true}
-            id="pagination-options-menu-label"
-          >
-            Items per page
-            :
-          </span>
           <DropdownWithContext
             autoFocus={true}
             className=""
@@ -5686,7 +5630,7 @@ exports[`component render should render correctly bottom 1`] = `
                 itemsTitle=""
                 lastIndex={10}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={null}
                 showToggle={true}
                 toggleTemplate={[Function]}
@@ -5711,7 +5655,7 @@ exports[`component render should render correctly bottom 1`] = `
                 lastIndex={10}
                 onEnter={[Function]}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={
                   Object {
                     "current": <div
@@ -5738,7 +5682,7 @@ exports[`component render should render correctly bottom 1`] = `
                         </span>
                         <button
                           aria-expanded="false"
-                          aria-label="Select"
+                          aria-label="Items per page"
                           class="  pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -5793,7 +5737,7 @@ exports[`component render should render correctly bottom 1`] = `
                     </Component>
                   </span>
                   <Component
-                    aria-label="Select"
+                    aria-label="Items per page"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
                     isDisabled={false}
@@ -5826,7 +5770,7 @@ exports[`component render should render correctly bottom 1`] = `
                             </span>
                             <button
                               aria-expanded="false"
-                              aria-label="Select"
+                              aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -5853,7 +5797,7 @@ exports[`component render should render correctly bottom 1`] = `
                     }
                   >
                     <Toggle
-                      aria-label="Select"
+                      aria-label="Items per page"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -5892,7 +5836,7 @@ exports[`component render should render correctly bottom 1`] = `
                               </span>
                               <button
                                 aria-expanded="false"
-                                aria-label="Select"
+                                aria-label="Items per page"
                                 class="  pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -5920,7 +5864,7 @@ exports[`component render should render correctly bottom 1`] = `
                     >
                       <button
                         aria-expanded={false}
-                        aria-label="Select"
+                        aria-label="Items per page"
                         className="  pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -6415,7 +6359,7 @@ exports[`component render should render correctly compact 1`] = `
           itemsTitle=""
           lastIndex={10}
           onPerPageSelect={[Function]}
-          optionsToggle="Select"
+          optionsToggle="Items per page"
           perPage={10}
           perPageOptions={
             Array [
@@ -6441,13 +6385,6 @@ exports[`component render should render correctly compact 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <span
-            hidden={true}
-            id="pagination-options-menu-label"
-          >
-            Items per page
-            :
-          </span>
           <DropdownWithContext
             autoFocus={true}
             className=""
@@ -6533,7 +6470,7 @@ exports[`component render should render correctly compact 1`] = `
                 itemsTitle=""
                 lastIndex={10}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={null}
                 showToggle={true}
                 toggleTemplate={[Function]}
@@ -6558,7 +6495,7 @@ exports[`component render should render correctly compact 1`] = `
                 lastIndex={10}
                 onEnter={[Function]}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={
                   Object {
                     "current": <div
@@ -6585,7 +6522,7 @@ exports[`component render should render correctly compact 1`] = `
                         </span>
                         <button
                           aria-expanded="false"
-                          aria-label="Select"
+                          aria-label="Items per page"
                           class="  pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -6640,7 +6577,7 @@ exports[`component render should render correctly compact 1`] = `
                     </Component>
                   </span>
                   <Component
-                    aria-label="Select"
+                    aria-label="Items per page"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
                     isDisabled={false}
@@ -6673,7 +6610,7 @@ exports[`component render should render correctly compact 1`] = `
                             </span>
                             <button
                               aria-expanded="false"
-                              aria-label="Select"
+                              aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -6700,7 +6637,7 @@ exports[`component render should render correctly compact 1`] = `
                     }
                   >
                     <Toggle
-                      aria-label="Select"
+                      aria-label="Items per page"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -6739,7 +6676,7 @@ exports[`component render should render correctly compact 1`] = `
                               </span>
                               <button
                                 aria-expanded="false"
-                                aria-label="Select"
+                                aria-label="Items per page"
                                 class="  pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -6767,7 +6704,7 @@ exports[`component render should render correctly compact 1`] = `
                     >
                       <button
                         aria-expanded={false}
-                        aria-label="Select"
+                        aria-label="Items per page"
                         className="  pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -7073,7 +7010,7 @@ exports[`component render should render correctly disabled 1`] = `
           itemsTitle=""
           lastIndex={10}
           onPerPageSelect={[Function]}
-          optionsToggle="Select"
+          optionsToggle="Items per page"
           perPage={10}
           perPageOptions={
             Array [
@@ -7099,13 +7036,6 @@ exports[`component render should render correctly disabled 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <span
-            hidden={true}
-            id="pagination-options-menu-label"
-          >
-            Items per page
-            :
-          </span>
           <DropdownWithContext
             autoFocus={true}
             className=""
@@ -7191,7 +7121,7 @@ exports[`component render should render correctly disabled 1`] = `
                 itemsTitle=""
                 lastIndex={10}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={null}
                 showToggle={true}
                 toggleTemplate={[Function]}
@@ -7216,7 +7146,7 @@ exports[`component render should render correctly disabled 1`] = `
                 lastIndex={10}
                 onEnter={[Function]}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={
                   Object {
                     "current": <div
@@ -7243,7 +7173,7 @@ exports[`component render should render correctly disabled 1`] = `
                         </span>
                         <button
                           aria-expanded="false"
-                          aria-label="Select"
+                          aria-label="Items per page"
                           class="  pf-c-options-menu__toggle-button"
                           disabled=""
                           id="pagination-options-menu-toggle"
@@ -7299,7 +7229,7 @@ exports[`component render should render correctly disabled 1`] = `
                     </Component>
                   </span>
                   <Component
-                    aria-label="Select"
+                    aria-label="Items per page"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
                     isDisabled={true}
@@ -7332,7 +7262,7 @@ exports[`component render should render correctly disabled 1`] = `
                             </span>
                             <button
                               aria-expanded="false"
-                              aria-label="Select"
+                              aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               disabled=""
                               id="pagination-options-menu-toggle"
@@ -7360,7 +7290,7 @@ exports[`component render should render correctly disabled 1`] = `
                     }
                   >
                     <Toggle
-                      aria-label="Select"
+                      aria-label="Items per page"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -7399,7 +7329,7 @@ exports[`component render should render correctly disabled 1`] = `
                               </span>
                               <button
                                 aria-expanded="false"
-                                aria-label="Select"
+                                aria-label="Items per page"
                                 class="  pf-c-options-menu__toggle-button"
                                 disabled=""
                                 id="pagination-options-menu-toggle"
@@ -7428,7 +7358,7 @@ exports[`component render should render correctly disabled 1`] = `
                     >
                       <button
                         aria-expanded={false}
-                        aria-label="Select"
+                        aria-label="Items per page"
                         className="  pf-c-options-menu__toggle-button"
                         disabled={true}
                         id="pagination-options-menu-toggle"
@@ -7920,7 +7850,7 @@ exports[`component render should render correctly top 1`] = `
           itemsTitle=""
           lastIndex={10}
           onPerPageSelect={[Function]}
-          optionsToggle="Select"
+          optionsToggle="Items per page"
           perPage={10}
           perPageOptions={
             Array [
@@ -7946,13 +7876,6 @@ exports[`component render should render correctly top 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <span
-            hidden={true}
-            id="pagination-options-menu-label"
-          >
-            Items per page
-            :
-          </span>
           <DropdownWithContext
             autoFocus={true}
             className=""
@@ -8038,7 +7961,7 @@ exports[`component render should render correctly top 1`] = `
                 itemsTitle=""
                 lastIndex={10}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={null}
                 showToggle={true}
                 toggleTemplate={[Function]}
@@ -8063,7 +7986,7 @@ exports[`component render should render correctly top 1`] = `
                 lastIndex={10}
                 onEnter={[Function]}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={
                   Object {
                     "current": <div
@@ -8090,7 +8013,7 @@ exports[`component render should render correctly top 1`] = `
                         </span>
                         <button
                           aria-expanded="false"
-                          aria-label="Select"
+                          aria-label="Items per page"
                           class="  pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -8145,7 +8068,7 @@ exports[`component render should render correctly top 1`] = `
                     </Component>
                   </span>
                   <Component
-                    aria-label="Select"
+                    aria-label="Items per page"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
                     isDisabled={false}
@@ -8178,7 +8101,7 @@ exports[`component render should render correctly top 1`] = `
                             </span>
                             <button
                               aria-expanded="false"
-                              aria-label="Select"
+                              aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -8205,7 +8128,7 @@ exports[`component render should render correctly top 1`] = `
                     }
                   >
                     <Toggle
-                      aria-label="Select"
+                      aria-label="Items per page"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -8244,7 +8167,7 @@ exports[`component render should render correctly top 1`] = `
                               </span>
                               <button
                                 aria-expanded="false"
-                                aria-label="Select"
+                                aria-label="Items per page"
                                 class="  pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -8272,7 +8195,7 @@ exports[`component render should render correctly top 1`] = `
                     >
                       <button
                         aria-expanded={false}
-                        aria-label="Select"
+                        aria-label="Items per page"
                         className="  pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -8807,13 +8730,6 @@ exports[`component render titles 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <span
-            hidden={true}
-            id="pagination-options-menu-label"
-          >
-            Items per page
-            :
-          </span>
           <DropdownWithContext
             autoFocus={true}
             className=""
@@ -9629,7 +9545,7 @@ exports[`component render up drop direction 1`] = `
           itemsTitle=""
           lastIndex={10}
           onPerPageSelect={[Function]}
-          optionsToggle="Select"
+          optionsToggle="Items per page"
           perPage={10}
           perPageOptions={
             Array [
@@ -9655,13 +9571,6 @@ exports[`component render up drop direction 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <span
-            hidden={true}
-            id="pagination-options-menu-label"
-          >
-            Items per page
-            :
-          </span>
           <DropdownWithContext
             autoFocus={true}
             className=""
@@ -9747,7 +9656,7 @@ exports[`component render up drop direction 1`] = `
                 itemsTitle=""
                 lastIndex={10}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={null}
                 showToggle={true}
                 toggleTemplate={[Function]}
@@ -9772,7 +9681,7 @@ exports[`component render up drop direction 1`] = `
                 lastIndex={10}
                 onEnter={[Function]}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={
                   Object {
                     "current": <div
@@ -9799,7 +9708,7 @@ exports[`component render up drop direction 1`] = `
                         </span>
                         <button
                           aria-expanded="false"
-                          aria-label="Select"
+                          aria-label="Items per page"
                           class="  pf-c-options-menu__toggle-button"
                           id="pagination-options-menu-toggle"
                           type="button"
@@ -9854,7 +9763,7 @@ exports[`component render up drop direction 1`] = `
                     </Component>
                   </span>
                   <Component
-                    aria-label="Select"
+                    aria-label="Items per page"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
                     isDisabled={false}
@@ -9887,7 +9796,7 @@ exports[`component render up drop direction 1`] = `
                             </span>
                             <button
                               aria-expanded="false"
-                              aria-label="Select"
+                              aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -9914,7 +9823,7 @@ exports[`component render up drop direction 1`] = `
                     }
                   >
                     <Toggle
-                      aria-label="Select"
+                      aria-label="Items per page"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -9953,7 +9862,7 @@ exports[`component render up drop direction 1`] = `
                               </span>
                               <button
                                 aria-expanded="false"
-                                aria-label="Select"
+                                aria-label="Items per page"
                                 class="  pf-c-options-menu__toggle-button"
                                 id="pagination-options-menu-toggle"
                                 type="button"
@@ -9981,7 +9890,7 @@ exports[`component render up drop direction 1`] = `
                     >
                       <button
                         aria-expanded={false}
-                        aria-label="Select"
+                        aria-label="Items per page"
                         className="  pf-c-options-menu__toggle-button"
                         disabled={false}
                         id="pagination-options-menu-toggle"
@@ -10473,7 +10382,7 @@ exports[`component render zero results 1`] = `
           itemsTitle=""
           lastIndex={0}
           onPerPageSelect={[Function]}
-          optionsToggle="Select"
+          optionsToggle="Items per page"
           perPage={10}
           perPageOptions={
             Array [
@@ -10499,13 +10408,6 @@ exports[`component render zero results 1`] = `
           toggleTemplate={[Function]}
           widgetId="pagination-options-menu"
         >
-          <span
-            hidden={true}
-            id="pagination-options-menu-label"
-          >
-            Items per page
-            :
-          </span>
           <DropdownWithContext
             autoFocus={true}
             className=""
@@ -10591,7 +10493,7 @@ exports[`component render zero results 1`] = `
                 itemsTitle=""
                 lastIndex={0}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={null}
                 showToggle={true}
                 toggleTemplate={[Function]}
@@ -10616,7 +10518,7 @@ exports[`component render zero results 1`] = `
                 lastIndex={0}
                 onEnter={[Function]}
                 onToggle={[Function]}
-                optionsToggle="Select"
+                optionsToggle="Items per page"
                 parentRef={
                   Object {
                     "current": <div
@@ -10643,7 +10545,7 @@ exports[`component render zero results 1`] = `
                         </span>
                         <button
                           aria-expanded="false"
-                          aria-label="Select"
+                          aria-label="Items per page"
                           class="  pf-c-options-menu__toggle-button"
                           disabled=""
                           id="pagination-options-menu-toggle"
@@ -10699,7 +10601,7 @@ exports[`component render zero results 1`] = `
                     </Component>
                   </span>
                   <Component
-                    aria-label="Select"
+                    aria-label="Items per page"
                     className="pf-c-options-menu__toggle-button"
                     id="pagination-options-menu-toggle"
                     isDisabled={true}
@@ -10732,7 +10634,7 @@ exports[`component render zero results 1`] = `
                             </span>
                             <button
                               aria-expanded="false"
-                              aria-label="Select"
+                              aria-label="Items per page"
                               class="  pf-c-options-menu__toggle-button"
                               disabled=""
                               id="pagination-options-menu-toggle"
@@ -10760,7 +10662,7 @@ exports[`component render zero results 1`] = `
                     }
                   >
                     <Toggle
-                      aria-label="Select"
+                      aria-label="Items per page"
                       className="pf-c-options-menu__toggle-button"
                       id="pagination-options-menu-toggle"
                       isActive={false}
@@ -10799,7 +10701,7 @@ exports[`component render zero results 1`] = `
                               </span>
                               <button
                                 aria-expanded="false"
-                                aria-label="Select"
+                                aria-label="Items per page"
                                 class="  pf-c-options-menu__toggle-button"
                                 disabled=""
                                 id="pagination-options-menu-toggle"
@@ -10828,7 +10730,7 @@ exports[`component render zero results 1`] = `
                     >
                       <button
                         aria-expanded={false}
-                        aria-label="Select"
+                        aria-label="Items per page"
                         className="  pf-c-options-menu__toggle-button"
                         disabled={true}
                         id="pagination-options-menu-toggle"
