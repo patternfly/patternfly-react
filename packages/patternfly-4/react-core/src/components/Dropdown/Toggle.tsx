@@ -133,7 +133,6 @@ export class Toggle extends React.Component<ToggleProps> {
               isHovered && styles.modifiers.hover,
               isActive && styles.modifiers.active,
               isPlain && styles.modifiers.plain,
-              isDisabled && styles.modifiers.disabled,
               isPrimary && styles.modifiers.primary,
               className
             )}
