@@ -34,8 +34,12 @@ export interface SelectProps
   isDisabled?: boolean;
   /** Flag to indicate if the typeahead select allows new items */
   isCreatable?: boolean;
+  /** Text displayed in typeahead select to prompt the user to create an item */
+  createText?: string;
   /** Title text of Select */
   placeholderText?: string | React.ReactNode;
+  /** Text to display in typeahead select when no results are found **/
+  noResultsFoundText?: string;
   /** Selected item */
   selections?: string | SelectOptionObject | (string | SelectOptionObject)[];
   /** Id for select toggle element */
@@ -104,7 +108,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
     "ariaLabelToggle": 'Options menu',
     "ariaLabelRemove": 'Remove',
     "selections": '',
+    "createText": "Create",
     "placeholderText": '',
+    "noResultsFoundText": "No results found",
     "variant": SelectVariant.single,
     "width": '',
     "onClear": Function.prototype,
@@ -155,7 +161,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
   }
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { onFilter, isCreatable, onCreateOption } = this.props;
+    const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText } = this.props;
     let typeaheadFilteredChildren;
     if (onFilter) {
       typeaheadFilteredChildren = onFilter(e);
@@ -175,13 +181,13 @@ export class Select extends React.Component<SelectProps, SelectState> {
           : React.Children.toArray(this.props.children);
     }
     if (typeaheadFilteredChildren.length === 0) {
-      !isCreatable && typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value="No results found" />);
+      !isCreatable && typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} />);
     }
     if (isCreatable && e.target.value != '') {
       const newValue = e.target.value;
       typeaheadFilteredChildren.push(
         <SelectOption key={0} value={newValue} onClick={() => onCreateOption && onCreateOption(newValue)}>
-          Create "{newValue}"
+          {createText} "{newValue}"
         </SelectOption>
       );
     }
@@ -217,7 +223,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
           typeaheadActiveChild &&
           (typeaheadActiveChild.innerText ===
             this.getDisplay((child as React.ReactElement).props.value.toString(), 'text') ||
-            (this.props.isCreatable && typeaheadActiveChild.innerText === `Create "${(child as React.ReactElement).props.value}"`))
+            (this.props.isCreatable && typeaheadActiveChild.innerText === `{createText} "${(child as React.ReactElement).props.value}"`))
       })
     );
   }
@@ -237,7 +243,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
   }
 
   handleTypeaheadKeys = (position: string) => {
-    const { isExpanded, isCreatable } = this.props;
+    const { isExpanded, isCreatable, createText } = this.props;
     const { typeaheadActiveChild, typeaheadCurrIndex } = this.state;
     if (isExpanded) {
       if (position === 'enter' && (typeaheadActiveChild || this.refCollection[0])) {
@@ -263,7 +269,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
           typeaheadCurrIndex: nextIndex,
           typeaheadActiveChild: this.refCollection[nextIndex],
           typeaheadInputValue:
-            isCreatable && this.refCollection[nextIndex].innerText.includes('Create')
+            isCreatable && this.refCollection[nextIndex].innerText.includes(createText)
               ? this.state.creatableValue 
               : this.refCollection[nextIndex].innerText
         });

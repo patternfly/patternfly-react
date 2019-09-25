@@ -484,6 +484,9 @@ export class SelectDemo extends Component<SelectDemoState> {
             placeholderText="Select a state"
             isCreatable={typeaheadIsCreatable}
             onCreateOption={typeaheadNewOptions && this.typeaheadCreateNew || undefined}
+            createText="Create item"
+            noResultsFoundText="Item not found"
+
           >
             {typeaheadOptions.map((option, index) => (
               <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
