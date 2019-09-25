@@ -139,8 +139,11 @@ jobs:
         name: PF3 Jest Tests
         command: yarn test:pf3 --maxWorkers=2 && yarn run codecov -F patternfly3
     - run:
+        name: Clear Coverage
+        command: rm -rf coverage
+    - run:
         name: Other Tests
-        command: yarn test:misc --maxWorkers=2
+        command: yarn test:misc --maxWorkers=2 && yarn run codecov -F misc
   build_integration:
     docker:
     - image: circleci/node:8.15
