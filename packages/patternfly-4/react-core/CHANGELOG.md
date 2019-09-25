@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.108.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.107.0...@patternfly/react-core@3.108.0) (2019-09-25)
+
+
+### Features
+
+* **Flex:** Added support for flex layout, tests, etc. ([#2985](https://github.com/patternfly/patternfly-react/issues/2985)) ([bc5af59](https://github.com/patternfly/patternfly-react/commit/bc5af59)), closes [#2860](https://github.com/patternfly/patternfly-react/issues/2860)
+
+
+
+
+
 # [3.107.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.106.0...@patternfly/react-core@3.107.0) (2019-09-25)
 
 
