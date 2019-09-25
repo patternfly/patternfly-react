@@ -126,7 +126,7 @@ jobs:
         - *js_deps_cache_key
     - run:
         name: PF4 Jest Tests
-        command: yarn test:pf4 --maxWorkers=2
+        command: yarn test:pf4 --maxWorkers=2 && yarn run codecov -F patternfly4
   test_jest_other:
     docker:
     - image: circleci/node:8.15
@@ -137,7 +137,7 @@ jobs:
         - *js_deps_cache_key
     - run:
         name: PF3 Jest Tests
-        command: yarn test:pf3 --maxWorkers=2
+        command: yarn test:pf3 --maxWorkers=2 && yarn run codecov -F patternfly3
     - run:
         name: Other Tests
         command: yarn test:misc --maxWorkers=2

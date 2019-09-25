@@ -1,4 +1,6 @@
 module.exports = {
+  collectCoverage: true,
+  coverageReporters: ['lcov'],
   clearMocks: true,
   modulePathIgnorePatterns: [
     '<rootDir>/packages/*.*/dist/*.*',
