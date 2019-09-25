@@ -165,7 +165,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText } = this.props;
-    let typeaheadFilteredChildren;
+    let typeaheadFilteredChildren: any;
     if (onFilter) {
       typeaheadFilteredChildren = onFilter(e);
     } else {
@@ -182,6 +182,9 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                 this.getDisplay((child as React.ReactElement).props.value.toString(), 'text').search(input) === 0
             )
           : React.Children.toArray(this.props.children);
+    }
+    if (!typeaheadFilteredChildren) {
+      typeaheadFilteredChildren = [];
     }
     if (typeaheadFilteredChildren.length === 0) {
       !isCreatable && typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} />);
