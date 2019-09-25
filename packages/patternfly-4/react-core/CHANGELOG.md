@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.106.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.105.4...@patternfly/react-core@3.106.0) (2019-09-25)
+
+
+### Features
+
+* **Button:** add control variant to button ([#2983](https://github.com/patternfly/patternfly-react/issues/2983)) ([2c7dd72](https://github.com/patternfly/patternfly-react/commit/2c7dd72))
+
+
+
+
+
 ## [3.105.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.105.3...@patternfly/react-core@3.105.4) (2019-09-25)
 
 

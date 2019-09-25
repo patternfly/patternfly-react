@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.12.11...@patternfly/react-console@1.12.12) (2019-09-25)
+
+
+### Bug Fixes
+
+* **storybook:** change addWithInfo to add ([#3003](https://github.com/patternfly/patternfly-react/issues/3003)) ([1ec7263](https://github.com/patternfly/patternfly-react/commit/1ec7263))
+
+
+
+
+
 ## [1.12.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.12.10...@patternfly/react-console@1.12.11) (2019-09-25)
 
 **Note:** Version bump only for package @patternfly/react-console

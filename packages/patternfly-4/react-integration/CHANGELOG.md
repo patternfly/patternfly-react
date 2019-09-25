@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.2.2...@patternfly/react-integration@3.3.0) (2019-09-25)
+
+
+### Features
+
+* **Button:** add control variant to button ([#2983](https://github.com/patternfly/patternfly-react/issues/2983)) ([2c7dd72](https://github.com/patternfly/patternfly-react/commit/2c7dd72))
+
+
+
+
+
 ## [3.2.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.2.1...@patternfly/react-integration@3.2.2) (2019-09-25)
 
 

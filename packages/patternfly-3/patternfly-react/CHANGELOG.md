@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.39.3](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.2...patternfly-react@2.39.3) (2019-09-25)
+
+
+### Bug Fixes
+
+* **storybook:** change addWithInfo to add ([#3003](https://github.com/patternfly/patternfly-react/issues/3003)) ([1ec7263](https://github.com/patternfly/patternfly-react/commit/1ec7263))
+
+
+
+
+
 ## [2.39.2](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.1...patternfly-react@2.39.2) (2019-09-25)
 
 **Note:** Version bump only for package patternfly-react
