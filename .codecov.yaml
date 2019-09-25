@@ -1,8 +1,6 @@
 codecov:
   notify:
     require_ci_to_pass: yes
-  ci:
-    - !circleci # ignore CI builds by CircleCI for merging coverage
 
 coverage:
   precision: 2
