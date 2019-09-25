@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.2.3...demo-app-ts@3.2.4) (2019-09-25)
+
+
+### Bug Fixes
+
+* **Select:** Add props for hard coded strings ([#2993](https://github.com/patternfly/patternfly-react/issues/2993)) ([1377c7e](https://github.com/patternfly/patternfly-react/commit/1377c7e)), closes [#2901](https://github.com/patternfly/patternfly-react/issues/2901)
+
+
+
+
+
 ## [3.2.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.2.2...demo-app-ts@3.2.3) (2019-09-25)
 
 **Note:** Version bump only for package demo-app-ts

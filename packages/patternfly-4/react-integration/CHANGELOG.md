@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.2.1...@patternfly/react-integration@3.2.2) (2019-09-25)
+
+
+### Bug Fixes
+
+* **Select:** Add props for hard coded strings ([#2993](https://github.com/patternfly/patternfly-react/issues/2993)) ([1377c7e](https://github.com/patternfly/patternfly-react/commit/1377c7e)), closes [#2901](https://github.com/patternfly/patternfly-react/issues/2901)
+
+
+
+
+
 ## [3.2.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.2.0...@patternfly/react-integration@3.2.1) (2019-09-25)
 
 **Note:** Version bump only for package @patternfly/react-integration
