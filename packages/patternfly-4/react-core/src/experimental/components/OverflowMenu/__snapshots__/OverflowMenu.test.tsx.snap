@@ -11,31 +11,31 @@ exports[`OverflowMenu basic 1`] = `
 `;
 
 exports[`OverflowMenu lg 1`] = `
-<Component
+<OverflowMenu
   breakpoint="lg"
 >
   <div
     className="pf-c-overflow-menu pf-m-show-on-lg"
   />
-</Component>
+</OverflowMenu>
 `;
 
 exports[`OverflowMenu md 1`] = `
-<Component
+<OverflowMenu
   breakpoint="md"
 >
   <div
     className="pf-c-overflow-menu pf-m-show-on-md"
   />
-</Component>
+</OverflowMenu>
 `;
 
 exports[`OverflowMenu xl 1`] = `
-<Component
+<OverflowMenu
   breakpoint="xl"
 >
   <div
     className="pf-c-overflow-menu pf-m-show-on-xl"
   />
-</Component>
+</OverflowMenu>
 `;

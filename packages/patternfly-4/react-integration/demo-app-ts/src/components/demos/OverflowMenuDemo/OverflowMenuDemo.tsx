@@ -127,7 +127,7 @@ export class OverflowMenuDemo extends React.Component {
             </OverflowMenuItem>
           </OverflowMenuGroup>
         </OverflowMenuContent>
-        <OverflowMenuControl alwaysPersist>
+        <OverflowMenuControl hasAdditionalOptions>
           <Dropdown
             onSelect={this.onAdditionalOptionsSelect}
             toggle={<KebabToggle onToggle={this.onAdditionalOptionsToggle} />}
@@ -162,7 +162,7 @@ export class OverflowMenuDemo extends React.Component {
     ];
     return (
       <OverflowMenu breakpoint="xl" id="persist-overflow-menu" style={this.style}>
-        <OverflowMenuContent>
+        <OverflowMenuContent isPersistent>
           <OverflowMenuGroup groupType="button" isPersistent>
             <OverflowMenuItem isPersistent>
               <Button variant="primary">Primary</Button>
@@ -175,7 +175,7 @@ export class OverflowMenuDemo extends React.Component {
             </OverflowMenuItem>
           </OverflowMenuGroup>
         </OverflowMenuContent>
-        <OverflowMenuControl alwaysPersist>
+        <OverflowMenuControl hasAdditionalOptions>
           <Dropdown
             onSelect={this.onPersistSelect}
             toggle={<KebabToggle onToggle={this.onPersistToggle} />}

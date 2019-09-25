@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
-import { OverflowMenuContentContext } from './OverflowMenuContexts';
+import { OverflowMenuContext } from './OverflowMenuContext';
 
 export interface OverflowMenuItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
@@ -18,9 +18,9 @@ export const OverflowMenuItem: React.SFC<OverflowMenuItemProps> = ({
   isPersistent = false,
   ...props
 }) => (
-  <OverflowMenuContentContext.Consumer>
-    {value => (
-      <div hidden={!isPersistent && value.isHidden} className={css(
+  <OverflowMenuContext.Consumer>
+    {value => (isPersistent || !value.isBelowBreakpoint) && (
+      <div className={css(
         styles.overflowMenuItem,
         isPersistent && styles.modifiers.persistent,
         className
@@ -28,5 +28,5 @@ export const OverflowMenuItem: React.SFC<OverflowMenuItemProps> = ({
         {children}
       </div>
     )}
-  </OverflowMenuContentContext.Consumer>
+  </OverflowMenuContext.Consumer>
 );

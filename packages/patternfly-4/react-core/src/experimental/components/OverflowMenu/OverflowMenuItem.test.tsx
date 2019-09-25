@@ -2,29 +2,27 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenuItem } from './OverflowMenuItem';
-import { OverflowMenuContentContext } from './OverflowMenuContexts';
+import { OverflowMenuContext } from './OverflowMenuContext';
 
 describe('OverflowMenuItem', () => {
-  test('isPersistent and Hidden should still show', () => {
+  test('isPersistent and below breakpoint should still show', () => {
     const view = mount(
-      <OverflowMenuContentContext.Provider value={{ isHidden: true }}>
+      <OverflowMenuContext.Provider value={{ isBelowBreakpoint: false }}>
         <OverflowMenuItem isPersistent />
-      </OverflowMenuContentContext.Provider>
+      </OverflowMenuContext.Provider>
     );
     expect(view.find(`.${styles.overflowMenuItem}`).length).toBe(1);
     expect(view.find(`.${styles.modifiers.persistent}`).length).toBe(1);
-    expect(view.find({ hidden: true }).length).toBe(0);
     expect(view).toMatchSnapshot();
   });
 
-  test('Hidden but not isPersistent should be hidden', () => {
+  test('Below breakpoint and not isPersistent should not show', () => {
     const view = mount(
-      <OverflowMenuContentContext.Provider value={{ isHidden: true }}>
+      <OverflowMenuContext.Provider value={{ isBelowBreakpoint: false }}>
         <OverflowMenuItem />
-      </OverflowMenuContentContext.Provider>
+      </OverflowMenuContext.Provider>
     );
     expect(view.find(`.${styles.modifiers.persistent}`).length).toBe(0);
-    expect(view.find({ hidden: true }).length).toBe(1);
     expect(view).toMatchSnapshot();
   });
 });

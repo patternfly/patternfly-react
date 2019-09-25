@@ -2,37 +2,36 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenuGroup } from './OverflowMenuGroup';
-import { OverflowMenuContentContext } from './OverflowMenuContexts';
+import { OverflowMenuContext } from './OverflowMenuContext';
 
 describe('OverflowMenuGroup', () => {
-  test('isPersistent and Hidden should still show', () => {
+  test('isPersistent and below breakpoint should still show', () => {
     const view = mount(
-      <OverflowMenuContentContext.Provider value={{ isHidden: true }}>
+      <OverflowMenuContext.Provider value={{ isBelowBreakpoint: true }}>
         <OverflowMenuGroup isPersistent />
-      </OverflowMenuContentContext.Provider>
+      </OverflowMenuContext.Provider>
     );
     expect(view.find(`.${styles.overflowMenuGroup}`).length).toBe(1);
     expect(view.find(`.${styles.modifiers.persistent}`).length).toBe(1);
-    expect(view.find({ hidden: true }).length).toBe(0);
     expect(view).toMatchSnapshot();
   });
 
-  test('Hidden but not isPersistent should be hidden', () => {
+  test('Below breakpoint but not isPersistent should not show', () => {
     const view = mount(
-      <OverflowMenuContentContext.Provider value={{ isHidden: true }}>
+      <OverflowMenuContext.Provider value={{ isBelowBreakpoint: true }}>
         <OverflowMenuGroup />
-      </OverflowMenuContentContext.Provider>
+      </OverflowMenuContext.Provider>
     );
+    expect(view.find(`.${styles.overflowMenuGroup}`).length).toBe(0);
     expect(view.find(`.${styles.modifiers.persistent}`).length).toBe(0);
-    expect(view.find({ hidden: true }).length).toBe(1);
     expect(view).toMatchSnapshot();
   });
 
   test('Button group', () => {
     const view = mount(
-      <OverflowMenuContentContext.Provider value={{ isHidden: false }}>
+      <OverflowMenuContext.Provider value={{ isBelowBreakpoint: false }}>
         <OverflowMenuGroup groupType="button" />
-      </OverflowMenuContentContext.Provider>
+      </OverflowMenuContext.Provider>
     );
     expect(view.find(`.${styles.modifiers.buttonGroup}`).length).toBe(1);
     expect(view).toMatchSnapshot();
@@ -40,9 +39,9 @@ describe('OverflowMenuGroup', () => {
 
   test('Icon group', () => {
     const view = mount(
-      <OverflowMenuContentContext.Provider value={{ isHidden: false }}>
+      <OverflowMenuContext.Provider value={{ isBelowBreakpoint: false }}>
         <OverflowMenuGroup groupType="icon" />
-      </OverflowMenuContentContext.Provider>
+      </OverflowMenuContext.Provider>
     );
     expect(view.find(`.${styles.modifiers.iconButtonGroup}`).length).toBe(1);
     expect(view).toMatchSnapshot();

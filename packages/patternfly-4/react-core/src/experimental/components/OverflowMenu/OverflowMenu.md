@@ -101,8 +101,12 @@ class OverflowMenuGroupTypes extends React.Component {
       <OverflowMenuDropdownItem key="item1" isShared>Item 1</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="item2" isShared>Item 2</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="item3" isShared>Item 3</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item4" isShared>Item 4</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item5" isShared>Item 5</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="primary" isShared>Primary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="secondary" isShared>Secondary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="tertiary" isShared>Tertiary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="action1" isShared>Action 1</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="action2" isShared>Action 2</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="action3" isShared>Action 3</OverflowMenuDropdownItem>,
     ];
     return (
       <OverflowMenu breakpoint="lg">
@@ -225,7 +229,7 @@ class OverflowMenuAdditionalOptions extends React.Component {
             </OverflowMenuItem>
           </OverflowMenuGroup>
         </OverflowMenuContent>
-        <OverflowMenuControl alwaysPersist>
+        <OverflowMenuControl hasAdditionalOptions>
           <Dropdown
             onSelect={this.onSelect}
             toggle={<KebabToggle onToggle={this.onToggle} />}
@@ -268,14 +272,13 @@ class OverflowMenuPersist extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem key="primary" isShared>Primary</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="secondary" isShared>Secondary</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="tertiary" isShared>Tertiary</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="action">Action 4</OverflowMenuDropdownItem>
     ];
     return (
       <OverflowMenu breakpoint="lg">
-        <OverflowMenuContent>
+        <OverflowMenuContent isPersistent>
           <OverflowMenuGroup groupType="button" isPersistent>
             <OverflowMenuItem isPersistent>
               <Button variant={ButtonVariant.primary}>Primary</Button>
@@ -288,7 +291,7 @@ class OverflowMenuPersist extends React.Component {
             </OverflowMenuItem>
           </OverflowMenuGroup>
         </OverflowMenuContent>
-        <OverflowMenuControl alwaysPersist>
+        <OverflowMenuControl hasAdditionalOptions>
           <Dropdown
             onSelect={this.onSelect}
             toggle={<KebabToggle onToggle={this.onToggle} />}
