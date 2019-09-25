@@ -117,7 +117,7 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
     toPreviousPage: 'Go to previous page',
     toLastPage: 'Go to last page',
     toNextPage: 'Go to next page',
-    optionsToggle: 'Select',
+    optionsToggle: 'Items per page',
     currPage: 'Current page',
     paginationTitle: 'Pagination'
   },

@@ -112,54 +112,49 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
   }
 
   render() {
-    const { className, widgetId, isDisabled, itemsPerPageTitle, dropDirection, optionsToggle, perPageOptions, toggleTemplate, firstIndex, lastIndex, itemCount, itemsTitle } = this.props;
+    const { widgetId, isDisabled, itemsPerPageTitle, dropDirection, optionsToggle, perPageOptions, toggleTemplate, firstIndex, lastIndex, itemCount, itemsTitle } = this.props;
     const { isOpen } = this.state;
 
     return (
-      <React.Fragment>
-        <span id={`${widgetId}-label`} hidden>
-          {itemsPerPageTitle}:
-        </span>
-        <DropdownContext.Provider
-          value={{
-            id: widgetId,
-            onSelect: this.onSelect, 
-            toggleIconClass: styles.optionsMenuToggleIcon,
-            toggleTextClass: styles.optionsMenuToggleText,
-            menuClass: styles.optionsMenuMenu,
-            itemClass: styles.optionsMenuMenuItem,
-            toggleClass: " ",
-            baseClass: styles.optionsMenu,
-            disabledClass: styles.modifiers.disabled,
-            menuComponent: 'ul',
-            baseComponent: 'div'
-          }}
-        >
-          <DropdownWithContext
-            direction={dropDirection}
-            isOpen={isOpen}
-            toggle={
-              <OptionsToggle
-                optionsToggle={optionsToggle}
-                itemsPerPageTitle={itemsPerPageTitle}
-                showToggle={perPageOptions && perPageOptions.length > 0}
-                onToggle={this.onToggle}
-                isOpen={isOpen}
-                widgetId={widgetId}
-                firstIndex={firstIndex}
-                lastIndex={lastIndex}
-                itemCount={itemCount}
-                itemsTitle={itemsTitle}
-                toggleTemplate={toggleTemplate}
-                parentRef={this.parentRef.current}
-                isDisabled={isDisabled}
-              />
-            }
-            dropdownItems={this.renderItems()}
-            isPlain
-          />
-        </DropdownContext.Provider>
-      </React.Fragment>
+      <DropdownContext.Provider
+        value={{
+          id: widgetId,
+          onSelect: this.onSelect, 
+          toggleIconClass: styles.optionsMenuToggleIcon,
+          toggleTextClass: styles.optionsMenuToggleText,
+          menuClass: styles.optionsMenuMenu,
+          itemClass: styles.optionsMenuMenuItem,
+          toggleClass: " ",
+          baseClass: styles.optionsMenu,
+          disabledClass: styles.modifiers.disabled,
+          menuComponent: 'ul',
+          baseComponent: 'div'
+        }}
+      >
+        <DropdownWithContext
+          direction={dropDirection}
+          isOpen={isOpen}
+          toggle={
+            <OptionsToggle
+              optionsToggle={optionsToggle}
+              itemsPerPageTitle={itemsPerPageTitle}
+              showToggle={perPageOptions && perPageOptions.length > 0}
+              onToggle={this.onToggle}
+              isOpen={isOpen}
+              widgetId={widgetId}
+              firstIndex={firstIndex}
+              lastIndex={lastIndex}
+              itemCount={itemCount}
+              itemsTitle={itemsTitle}
+              toggleTemplate={toggleTemplate}
+              parentRef={this.parentRef.current}
+              isDisabled={isDisabled}
+            />
+          }
+          dropdownItems={this.renderItems()}
+          isPlain
+        />
+      </DropdownContext.Provider>
     );
   }
 }
