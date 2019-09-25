@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nested flex 1`] = `
+<div
+  className="pf-l-flex"
+>
+  <Component>
+    <Component>
+      Test
+    </Component>
+  </Component>
+</div>
+`;
+
+exports[`Simple flex with single item 1`] = `
+<div
+  className="pf-l-flex"
+>
+  <Component>
+    Test
+  </Component>
+</div>
+`;
+
+exports[`className is added to the root element 1`] = `"pf-l-flex extra-class"`;

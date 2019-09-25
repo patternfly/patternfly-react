@@ -1,5 +1,8 @@
 import * as ReactDOM from 'react-dom';
 import { SIDE } from './constants';
+import { getModifier } from '@patternfly/react-styles';
+import { DataToolbarBreakpointMod } from '../experimental/components/DataToolbar/DataToolbarUtils';
+import { FlexBreakpointMod, FlexItemBreakpointMod }  from '../layouts/Flex/FlexUtils';
 
 export function capitalize(input: string) {
   return input[0].toUpperCase() + input.substring(1);
@@ -177,3 +180,13 @@ export function pluralize(i: number, singular: string, plural?: string) {
   }
   return `${i || 0} ${i === 1 ? singular : plural}`;
 }
+
+/** This function is a helper for turning arrays of breakpointMod objects for data toolbar and flex into classes
+ * @param {(DataToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod)[]} breakpointMods The modifiers object
+ * @param {any} styles The appropriate styles object for the component
+ */
+export const formatBreakpointMods = (breakpointMods: (DataToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod)[], styles: any) => {
+  return breakpointMods.reduce((acc: string, curr: (DataToolbarBreakpointMod | FlexBreakpointMod | FlexItemBreakpointMod)) => (
+    `${acc}${acc && ' '}${getModifier(styles, `${curr.modifier}${curr.breakpoint  ? `-on-${curr.breakpoint}` : ''}`)}`
+  ), '');
+};

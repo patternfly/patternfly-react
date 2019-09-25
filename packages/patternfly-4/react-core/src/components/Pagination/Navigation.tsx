@@ -11,6 +11,8 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   className?: string;
   /** Flag indicating if the pagination is disabled */
   isDisabled?: boolean;
+  /** Flag indicating if the pagination is compact */
+  isCompact?: boolean;
   /** The number of the last page */
   lastPage?: number;
   /** The number of first page where pagination starts */
@@ -58,6 +60,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
   static defaultProps = {
     className: '',
     isDisabled: false,
+    isCompact: false,
     lastPage: 0,
     firstPage: 0,
     pagesTitle: '',
@@ -122,24 +125,27 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
       onLastClick,
       onPageInput,
       className,
+      isCompact,
       ...props
     } = this.props;
     const { userInputPage } = this.state;
     return (
       <nav className={css(styles.paginationNav, className)} aria-label={paginationTitle} {...props}>
-        <Button
-          variant={ButtonVariant.plain}
-          isDisabled={isDisabled || page === firstPage}
-          aria-label={toFirstPage}
-          data-action="first"
-          onClick={(event) => {
-            onFirstClick(event, 1);
-            onSetPage(event, 1);
-            this.setState({ userInputPage: 1 });
-          }}
-        >
-          <AngleDoubleLeftIcon />
-        </Button>
+        {!isCompact && (
+          <Button
+            variant={ButtonVariant.plain}
+            isDisabled={isDisabled || page === firstPage}
+            aria-label={toFirstPage}
+            data-action="first"
+            onClick={(event) => {
+              onFirstClick(event, 1);
+              onSetPage(event, 1);
+              this.setState({ userInputPage: 1 });
+            }}
+          >
+            <AngleDoubleLeftIcon />
+          </Button>  
+        )}
         <Button
           variant={ButtonVariant.plain}
           isDisabled={isDisabled || page === firstPage}
@@ -154,22 +160,24 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
         >
           <AngleLeftIcon />
         </Button>
-        <div className={css(styles.paginationNavPageSelect)}>
-          <input
-            className={css(styles.formControl)}
-            aria-label={currPage}
-            type="number"
-            disabled={isDisabled || page === firstPage && page === lastPage}
-            min={lastPage <= 0 && firstPage <= 0 ? 0 : 1}
-            max={lastPage}
-            value={userInputPage}
-            onKeyDown={(event) => this.onKeyDown(event, page, lastPage, onPageInput, onSetPage)}
-            onChange={(event) => this.onChange(event, lastPage)}
-          />
-          <span aria-hidden="true">
-            of {pluralize(lastPage, pagesTitle)}
-          </span>
-        </div>
+        {!isCompact && (
+          <div className={css(styles.paginationNavPageSelect)}>
+            <input
+              className={css(styles.formControl)}
+              aria-label={currPage}
+              type="number"
+              disabled={isDisabled || page === firstPage && page === lastPage}
+              min={lastPage <= 0 && firstPage <= 0 ? 0 : 1}
+              max={lastPage}
+              value={userInputPage}
+              onKeyDown={(event) => this.onKeyDown(event, page, lastPage, onPageInput, onSetPage)}
+              onChange={(event) => this.onChange(event, lastPage)}
+            />
+            <span aria-hidden="true">
+              of {pluralize(lastPage, pagesTitle)}
+            </span>
+          </div>
+        )}
         <Button
           variant={ButtonVariant.plain}
           isDisabled={isDisabled || page === lastPage}
@@ -184,19 +192,21 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
         >
           <AngleRightIcon />
         </Button>
-        <Button
-          variant={ButtonVariant.plain}
-          isDisabled={isDisabled || page === lastPage}
-          aria-label={toLastPage}
-          data-action="last"
-          onClick={(event) => {
-            onLastClick(event, lastPage);
-            onSetPage(event, lastPage);
-            this.setState({ userInputPage: lastPage });
-          }}
-        >
-          <AngleDoubleRightIcon />
-        </Button>
+        {!isCompact && (
+          <Button
+            variant={ButtonVariant.plain}
+            isDisabled={isDisabled || page === lastPage}
+            aria-label={toLastPage}
+            data-action="last"
+            onClick={(event) => {
+              onLastClick(event, lastPage);
+              onSetPage(event, lastPage);
+              this.setState({ userInputPage: lastPage });
+            }}
+          >
+            <AngleDoubleRightIcon />
+          </Button>
+        )}
       </nav>
     );
   }

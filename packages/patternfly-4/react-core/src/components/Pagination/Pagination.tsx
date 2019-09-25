@@ -11,7 +11,7 @@ export enum PaginationVariant {
   top = 'top',
   bottom = 'bottom',
   left = 'left',
-  right = 'right',
+  right = 'right'
 }
 
 const defaultPerPageOptions = [
@@ -63,6 +63,8 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   variant?: 'top' | 'bottom' | 'left' | 'right';
   /** Flag indicating if pagination is disabled */
   isDisabled?: boolean;
+  /** Flag indicating if pagination is compact */
+  isCompact?: boolean;
   /** Number of items per page. */
   perPage?: number;
   /** Select from options to number of items per page. */
@@ -104,6 +106,7 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
   className = '',
   variant = PaginationVariant.top,
   isDisabled = false,
+  isCompact = false,
   perPage = defaultPerPageOptions[0].value,
   titles = {
     items: 'items',
@@ -155,7 +158,12 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
 
   return (
     <div
-      className={css(styles.pagination, variant === PaginationVariant.bottom && styles.modifiers.footer, className)}
+      className={css(
+        styles.pagination,
+        variant === PaginationVariant.bottom && styles.modifiers.footer,
+        isCompact && styles.modifiers.compact,
+        className
+      )}
       id={widgetId}
       {...ouiaContext.isOuia && {
         'data-ouia-component-type': 'Pagination',
@@ -169,7 +177,7 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
       <PaginationOptionsMenu
         itemsPerPageTitle={titles.itemsPerPage}
         perPageSuffix={titles.perPageSuffix}
-        itemsTitle={titles.items}
+        itemsTitle={isCompact ? '' : titles.items}
         optionsToggle={titles.optionsToggle}
         perPageOptions={perPageOptions}
         firstIndex={itemsStart !== null ? itemsStart : firstIndex}
@@ -200,6 +208,7 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
         onLastClick={onLastClick}
         onPageInput={onPageInput}
         isDisabled={isDisabled}
+        isCompact={isCompact}
       />
       {children}
     </div>

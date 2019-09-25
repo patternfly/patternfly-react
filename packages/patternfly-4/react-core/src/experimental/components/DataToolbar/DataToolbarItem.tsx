@@ -5,9 +5,9 @@ import { css, getModifier } from '@patternfly/react-styles';
 import {
   DataToolbarBreakpointMod,
   DataToolbarSpacer,
-  formatBreakpointMods,
   formatSpacers
 } from './DataToolbarUtils';
+import { formatBreakpointMods } from '../../../helpers/util';
 
 export enum DataToolbarItemVariant {
   separator = 'separator',
@@ -51,7 +51,7 @@ export const DataToolbarItem: React.FunctionComponent<DataToolbarItemProps> = ({
       className={css(
         styles.dataToolbarItem,
         variant && getModifier(styles, variant),
-        formatBreakpointMods(breakpointMods),
+        formatBreakpointMods(breakpointMods, styles),
         formatSpacers(spacers),
         className)}
       {...labelVariant && { 'aria-hidden': true }}
