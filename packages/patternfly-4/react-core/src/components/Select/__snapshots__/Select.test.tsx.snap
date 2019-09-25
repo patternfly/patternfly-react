@@ -16,8 +16,8 @@ exports[`checkbox select renders checkbox select groups successfully - old class
   isExpanded={true}
   isGrouped={true}
   isPlain={false}
-  noResultsFoundText="No results found"
   maxHeight=""
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -310,11 +310,8 @@ exports[`checkbox select renders checkbox select groups successfully - old class
       isExpanded={false}
       isGrouped={true}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected=""
       sendRef={[Function]}
@@ -651,11 +648,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   isExpanded={true}
   isGrouped={true}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -948,11 +942,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       isExpanded={false}
       isGrouped={true}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected=""
       sendRef={[Function]}
@@ -1313,11 +1304,8 @@ exports[`checkbox select renders closed successfully - old classes 1`] = `
   isExpanded={false}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -1462,11 +1450,8 @@ exports[`checkbox select renders closed successfully 1`] = `
   isExpanded={false}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -1611,11 +1596,8 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -1827,11 +1809,8 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
       isExpanded={false}
       isGrouped={false}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected=""
       sendRef={[Function]}
@@ -2012,11 +1991,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -2228,11 +2204,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
       isExpanded={false}
       isGrouped={false}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected=""
       sendRef={[Function]}
@@ -2425,11 +2398,8 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -2627,11 +2597,8 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       isExpanded={false}
       isGrouped={false}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected=""
       sendRef={[Function]}
@@ -2812,11 +2779,8 @@ exports[`select custom select filter filters properly 1`] = `
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onFilter={[Function]}
@@ -3027,11 +2991,8 @@ exports[`select custom select filter filters properly 1`] = `
       isExpanded={false}
       isGrouped={false}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected=""
       sendRef={[Function]}
@@ -3159,11 +3120,8 @@ exports[`select renders select groups successfully 1`] = `
   isExpanded={true}
   isGrouped={true}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -3419,11 +3377,8 @@ exports[`select renders select groups successfully 1`] = `
       isExpanded={false}
       isGrouped={false}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected=""
       sendRef={[Function]}
@@ -3742,11 +3697,8 @@ exports[`select renders up drection successfully 1`] = `
   isExpanded={false}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -3895,11 +3847,8 @@ exports[`select single select renders closed successfully 1`] = `
   isExpanded={false}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -4048,11 +3997,8 @@ exports[`select single select renders disabled successfully 1`] = `
   isExpanded={false}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -4202,11 +4148,8 @@ exports[`select single select renders expanded successfully 1`] = `
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -4400,11 +4343,8 @@ exports[`select single select renders expanded successfully 1`] = `
       isExpanded={false}
       isGrouped={false}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected=""
       sendRef={[Function]}
@@ -4563,11 +4503,8 @@ exports[`select single select renders expanded successfully with custom objects 
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -4749,11 +4686,8 @@ exports[`select single select renders expanded successfully with custom objects 
       isExpanded={false}
       isGrouped={false}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected=""
       sendRef={[Function]}
@@ -4942,11 +4876,8 @@ exports[`typeahead multi select renders closed successfully 1`] = `
   isExpanded={false}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -5124,11 +5055,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -5351,11 +5279,8 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       isExpanded={false}
       isGrouped={false}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected=""
       sendRef={[Function]}
@@ -5514,11 +5439,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -6157,11 +6079,8 @@ exports[`typeahead multi select renders selected successfully 1`] = `
       isExpanded={false}
       isGrouped={false}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected={
         Array [
@@ -6383,11 +6302,8 @@ exports[`typeahead multi select test onChange 1`] = `
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[MockFunction]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -6573,11 +6489,8 @@ exports[`typeahead multi select test onChange 1`] = `
       isExpanded={false}
       isGrouped={false}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected=""
       sendRef={[Function]}
@@ -6643,11 +6556,8 @@ exports[`typeahead select renders closed successfully 1`] = `
   isExpanded={false}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -6824,11 +6734,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -7050,11 +6957,8 @@ exports[`typeahead select renders expanded successfully 1`] = `
       isExpanded={false}
       isGrouped={false}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected=""
       sendRef={[Function]}
@@ -7213,11 +7117,8 @@ exports[`typeahead select renders selected successfully 1`] = `
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -7509,11 +7410,8 @@ exports[`typeahead select renders selected successfully 1`] = `
       isExpanded={false}
       isGrouped={false}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected="Mr"
       sendRef={[Function]}
@@ -7701,11 +7599,8 @@ exports[`typeahead select test creatable option 1`] = `
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[Function]}
   onCreateOption={[Function]}
   onToggle={[MockFunction]}
@@ -7893,11 +7788,8 @@ exports[`typeahead select test creatable option 1`] = `
       isExpanded={false}
       isGrouped={false}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected=""
       sendRef={[Function]}
@@ -7966,11 +7858,8 @@ exports[`typeahead select test onChange 1`] = `
   isExpanded={true}
   isGrouped={false}
   isPlain={false}
-<<<<<<< HEAD
-  noResultsFoundText="No results found"
-=======
   maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+  noResultsFoundText="No results found"
   onClear={[MockFunction]}
   onCreateOption={[Function]}
   onSelect={[MockFunction]}
@@ -8156,11 +8045,8 @@ exports[`typeahead select test onChange 1`] = `
       isExpanded={false}
       isGrouped={false}
       keyHandler={[Function]}
-<<<<<<< HEAD
-      noResultsFoundText="No results found"
-=======
       maxHeight=""
->>>>>>> feat(Select): add max height property, update tests
+      noResultsFoundText="No results found"
       openedOnEnter={false}
       selected=""
       sendRef={[Function]}
