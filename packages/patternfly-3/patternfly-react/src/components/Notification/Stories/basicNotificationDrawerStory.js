@@ -13,7 +13,7 @@ const handleClick = e => {
   action('some on click')();
 };
 const basicNotificationDrawerStory = stories => {
-  stories.addWithInfo('Notification Drawer', '', () => {
+  stories.add('Notification Drawer', () => {
     const story = (
       <nav className="navbar navbar-pf-vertical">
         <nav className="collapse navbar-collapse">

@@ -11,7 +11,7 @@ const stories = storiesOf(
   module
 );
 stories.addDecorator(withKnobs);
-stories.addWithInfo('DatePicker', '', () => {
+stories.add('DatePicker', () => {
   const story = (
     <div style={{ paddingTop: 60, paddingBottom: 60 }}>
       <label>Date picker</label>

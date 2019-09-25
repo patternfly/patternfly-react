@@ -28,17 +28,17 @@ stories.addDecorator(
   })
 );
 
-stories.addWithInfo('Managed Login Page with errors display on top of the form', () => (
+stories.add('Managed Login Page with errors display on top of the form', () => (
   <LoginPage {...getManagedPageWithErrorsOnTopProps()} />
 ));
 
-stories.addWithInfo('Managed Login Page with errors display under form inputs', () => (
+stories.add('Managed Login Page with errors display under form inputs', () => (
   <LoginPage {...getManagedPageProps()} />
 ));
 
-stories.addWithInfo('Build Your own Basic Login Page', () => LoginPage.Pattern(getBuildYourOwnPageProps()));
+stories.add('Build Your own Basic Login Page', () => LoginPage.Pattern(getBuildYourOwnPageProps()));
 
-stories.addWithInfo('Managed Social Login Page', () => {
+stories.add('Managed Social Login Page', () => {
   const logoListCopy = createLogoList();
   const listSize = number('Social List Size', 12);
   const socialLinks = logoListCopy.splice(0, listSize);
@@ -49,7 +49,7 @@ stories.addWithInfo('Managed Social Login Page', () => {
   return <LoginPage.Social {...props} />;
 });
 
-stories.addWithInfo('Build Your own Social Login Page', () => {
+stories.add('Build Your own Social Login Page', () => {
   const logoListCopy = createLogoList();
   const listSize = number('Social List Size', 12);
   const socialLinks = logoListCopy.splice(0, listSize);

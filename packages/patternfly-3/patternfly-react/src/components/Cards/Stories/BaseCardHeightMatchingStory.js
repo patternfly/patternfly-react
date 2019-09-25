@@ -21,7 +21,7 @@ const fakeContent =
   'the resize sensor to be called one time.';
 
 const baseCardHeightMatchingStory = stories => {
-  stories.addWithInfo('Base Card w/HeightMatching', '', () => {
+  stories.add('Base Card w/HeightMatching', () => {
     const matchHeightBool = boolean('Match Height', true);
     const content = boolean('Content', false);
     const story = (

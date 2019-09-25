@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { configure, setAddon } from '@storybook/react';
+import { configure, addDecorator } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
-import infoAddon from '@storybook/addon-info';
+import { withInfo } from '@storybook/addon-info';
 import './sass/base.scss';
 
 if (process.env.NODE_ENV !== 'production') {
@@ -10,7 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
   axe(React, ReactDOM, 1000);
 }
 
-setAddon(infoAddon);
+addDecorator(withInfo); 
 
 const storyContext = require.context('../packages', true, /\.stories\.js$/);
 

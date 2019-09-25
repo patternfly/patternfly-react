@@ -13,7 +13,7 @@ const stories = storiesOf(
   module
 );
 stories.addDecorator(withKnobs);
-stories.addWithInfo('DateTimePicker', '', () => {
+stories.add('DateTimePicker', () => {
   const story = (
     <div style={{ paddingTop: 60, paddingBottom: 60 }}>
       <label>Date Time picker</label>

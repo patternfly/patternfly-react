@@ -45,7 +45,7 @@ const Apps = [
 ];
 
 const WrapperNavApplicationLauncherStory = stories => {
-  stories.addWithInfo('Stateful Launcher', '', () => {
+  stories.add('Stateful Launcher', () => {
     const type = select('Launcher Type', { true: 'Grid', false: 'List' }, 'true');
     const iconBool = boolean('Icons', true);
 

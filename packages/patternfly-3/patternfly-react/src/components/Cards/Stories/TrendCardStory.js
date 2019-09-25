@@ -20,7 +20,7 @@ const handleClick = e => {
 };
 
 const trendCardAddWithInfo = stories => {
-  stories.addWithInfo('Trend Card', () => {
+  stories.add('Trend Card', () => {
     const singleLineChartDataColumns = [['data1', 30, 200, 100, 400, 150, 250]];
     const singleLineChartConfigData = {
       columns: singleLineChartDataColumns

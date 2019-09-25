@@ -13,7 +13,7 @@ const handleClick = e => {
 };
 
 const baseCardAddWithInfo = stories => {
-  stories.addWithInfo('Base Card', '', () => {
+  stories.add('Base Card', () => {
     const accentedBool = boolean('Accent', false);
 
     const story = (
