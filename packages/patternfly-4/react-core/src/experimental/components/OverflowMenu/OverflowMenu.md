@@ -2,19 +2,20 @@
 title: 'OverflowMenu'
 cssPrefix: 'pf-c-overflow-menu'
 typescript: true
-propComponents: ['OverflowMenu', 'OverflowMenuContent', 'OverflowMenuControl', 'OverflowMenuDropdownItem', 'OverflowMenuContentGroup', 'OverflowMenuContentItem']
+propComponents: ['OverflowMenu', 'OverflowMenuContent', 'OverflowMenuControl', 'OverflowMenuDropdownItem', 'OverflowMenuGroup', 'OverflowMenuItem']
 section: 'experimental'
 stage: 'early'
 ---
 
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuContentGroup, OverflowMenuContentItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
-import { Dropdown, KebabToggle, Button } from '@patternfly/react-core';
+import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
+import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
+import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
 
 ## Overflow menu simple (responsive)
 ```js
 import * as React from 'react';
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuContentGroup, OverflowMenuContentItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
-import { Dropdown, KebabToggle, Button } from '@patternfly/react-core';
+import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
+import { Dropdown, KebabToggle } from '@patternfly/react-core';
 
 class SimpleOverflowMenu extends React.Component {
   constructor(props) {
@@ -37,7 +38,6 @@ class SimpleOverflowMenu extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem key="action">Action</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="item1" isShared>Item 1</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="item2" isShared>Item 2</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="item3" isShared>Item 3</OverflowMenuDropdownItem>,
@@ -47,13 +47,13 @@ class SimpleOverflowMenu extends React.Component {
     return (
       <OverflowMenu breakpoint="lg">
         <OverflowMenuContent>
-          <OverflowMenuContentItem>Item</OverflowMenuContentItem>
-          <OverflowMenuContentItem>Item</OverflowMenuContentItem>
-          <OverflowMenuContentGroup>
-            <OverflowMenuContentItem>Item</OverflowMenuContentItem>
-            <OverflowMenuContentItem>Item</OverflowMenuContentItem>
-            <OverflowMenuContentItem>Item</OverflowMenuContentItem>
-          </OverflowMenuContentGroup>
+          <OverflowMenuItem>Item</OverflowMenuItem>
+          <OverflowMenuItem>Item</OverflowMenuItem>
+          <OverflowMenuGroup>
+            <OverflowMenuItem>Item</OverflowMenuItem>
+            <OverflowMenuItem>Item</OverflowMenuItem>
+            <OverflowMenuItem>Item</OverflowMenuItem>
+          </OverflowMenuGroup>
         </OverflowMenuContent>
         <OverflowMenuControl>
           <Dropdown
@@ -73,8 +73,9 @@ class SimpleOverflowMenu extends React.Component {
 ## Overflow menu group types
 ```js
 import * as React from 'react';
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuContentGroup, OverflowMenuContentItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
-import { Dropdown, KebabToggle, Button } from '@patternfly/react-core';
+import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
+import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
+import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
 
 class OverflowMenuGroupTypes extends React.Component {
   constructor(props) {
@@ -97,7 +98,6 @@ class OverflowMenuGroupTypes extends React.Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem key="action" isShared>Action</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="item1" isShared>Item 1</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="item2" isShared>Item 2</OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="item3" isShared>Item 3</OverflowMenuDropdownItem>,
@@ -107,39 +107,39 @@ class OverflowMenuGroupTypes extends React.Component {
     return (
       <OverflowMenu breakpoint="lg">
         <OverflowMenuContent>
-          <OverflowMenuContentGroup> 
-            <OverflowMenuContentItem>Item</OverflowMenuContentItem>
-            <OverflowMenuContentItem>Item</OverflowMenuContentItem>
-            <OverflowMenuContentItem>Item</OverflowMenuContentItem>
-          </OverflowMenuContentGroup>
-          <OverflowMenuContentGroup groupType="button">
-            <OverflowMenuContentItem>
-              <Button variant="primary">Primary</Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="secondary">Secondary</Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="tertiary">Tertiary</Button>
-            </OverflowMenuContentItem>
-          </OverflowMenuContentGroup>
-          <OverflowMenuContentGroup groupType="icon">
-            <OverflowMenuContentItem>
-              <Button variant="link" aria-label="Align left">
-                <i className="fas fa-align-left" aria-hidden="true"></i>
+          <OverflowMenuGroup> 
+            <OverflowMenuItem>Item</OverflowMenuItem>
+            <OverflowMenuItem>Item</OverflowMenuItem>
+            <OverflowMenuItem>Item</OverflowMenuItem>
+          </OverflowMenuGroup>
+          <OverflowMenuGroup groupType="button">
+            <OverflowMenuItem>
+              <Button variant={ButtonVariant.primary}>Primary</Button>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
+              <Button variant={ButtonVariant.secondary}>Secondary</Button>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
+              <Button variant={ButtonVariant.tertiary}>Tertiary</Button>
+            </OverflowMenuItem>
+          </OverflowMenuGroup>
+          <OverflowMenuGroup groupType="icon">
+            <OverflowMenuItem>
+              <Button variant={ButtonVariant.plain} aria-label="Align left">
+                <AlignLeftIcon />
               </Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="link" aria-label="Align center">
-                <i className="fas fa-align-center" aria-hidden="true"></i>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
+              <Button variant={ButtonVariant.plain} aria-label="Align center">
+                <AlignCenterIcon />
               </Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="link" aria-label="Align right">
-                <i className="fas fa-align-right" aria-hidden="true"></i>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
+              <Button variant={ButtonVariant.plain} aria-label="Align right">
+                <AlignRightIcon />
               </Button>
-            </OverflowMenuContentItem>
-          </OverflowMenuContentGroup>
+            </OverflowMenuItem>
+          </OverflowMenuGroup>
         </OverflowMenuContent>
         <OverflowMenuControl>
           <Dropdown
@@ -160,8 +160,9 @@ class OverflowMenuGroupTypes extends React.Component {
 ## Overflow menu multiple groups - additional options
 ```js
 import * as React from 'react';
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuContentGroup, OverflowMenuContentItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
-import { Dropdown, KebabToggle, Button } from '@patternfly/react-core';
+import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
+import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
+import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
 
 class OverflowMenuAdditionalOptions extends React.Component {
   constructor(props) {
@@ -195,34 +196,34 @@ class OverflowMenuAdditionalOptions extends React.Component {
     return (
       <OverflowMenu breakpoint="lg">
         <OverflowMenuContent>
-          <OverflowMenuContentGroup groupType="button">
-            <OverflowMenuContentItem>
-              <Button variant="primary">Primary</Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="secondary">Secondary</Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="tertiary">Tertiary</Button>
-            </OverflowMenuContentItem>
-          </OverflowMenuContentGroup>
-          <OverflowMenuContentGroup groupType="icon">
-            <OverflowMenuContentItem>
-              <Button variant="link" aria-label="Align left">
-                <i className="fas fa-align-left" aria-hidden="true"></i>
+          <OverflowMenuGroup groupType="button">
+            <OverflowMenuItem>
+              <Button variant={ButtonVariant.primary}>Primary</Button>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
+              <Button variant={ButtonVariant.secondary}>Secondary</Button>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
+              <Button variant={ButtonVariant.tertiary}>Tertiary</Button>
+            </OverflowMenuItem>
+          </OverflowMenuGroup>
+          <OverflowMenuGroup groupType="icon">
+            <OverflowMenuItem>
+              <Button variant={ButtonVariant.plain} aria-label="Align left">
+                <AlignLeftIcon />
               </Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="link" aria-label="Align center">
-                <i className="fas fa-align-center" aria-hidden="true"></i>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
+              <Button variant={ButtonVariant.plain} aria-label="Align center">
+                <AlignCenterIcon />
               </Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="link" aria-label="Align right">
-                <i className="fas fa-align-right" aria-hidden="true"></i>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
+              <Button variant={ButtonVariant.plain} aria-label="Align right">
+                <AlignRightIcon />
               </Button>
-            </OverflowMenuContentItem>
-          </OverflowMenuContentGroup>
+            </OverflowMenuItem>
+          </OverflowMenuGroup>
         </OverflowMenuContent>
         <OverflowMenuControl alwaysPersist>
           <Dropdown
@@ -243,8 +244,8 @@ class OverflowMenuAdditionalOptions extends React.Component {
 ## Overflow menu persistent - additional options
 ```js
 import * as React from 'react';
-import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuContentGroup, OverflowMenuContentItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
-import { Dropdown, KebabToggle, Button } from '@patternfly/react-core';
+import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
+import { Dropdown, KebabToggle, Button, ButtonVariant } from '@patternfly/react-core';
 
 class OverflowMenuPersist extends React.Component {
   constructor(props) {
@@ -275,17 +276,17 @@ class OverflowMenuPersist extends React.Component {
     return (
       <OverflowMenu breakpoint="lg">
         <OverflowMenuContent>
-          <OverflowMenuContentGroup groupType="button" isPersistent>
-            <OverflowMenuContentItem isPersistent>
-              <Button variant="primary">Primary</Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="secondary">Secondary</Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
-              <Button variant="tertiary">Tertiary</Button>
-            </OverflowMenuContentItem>
-          </OverflowMenuContentGroup>
+          <OverflowMenuGroup groupType="button" isPersistent>
+            <OverflowMenuItem isPersistent>
+              <Button variant={ButtonVariant.primary}>Primary</Button>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
+              <Button variant={ButtonVariant.secondary}>Secondary</Button>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
+              <Button variant={ButtonVariant.tertiary}>Tertiary</Button>
+            </OverflowMenuItem>
+          </OverflowMenuGroup>
         </OverflowMenuContent>
         <OverflowMenuControl alwaysPersist>
           <Dropdown

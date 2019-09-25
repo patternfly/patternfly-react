@@ -3,8 +3,8 @@ import {
   OverflowMenu,
   OverflowMenuControl,
   OverflowMenuContent,
-  OverflowMenuContentGroup,
-  OverflowMenuContentItem,
+  OverflowMenuGroup,
+  OverflowMenuItem,
   OverflowMenuDropdownItem 
 } from '@patternfly/react-core/dist/esm/experimental';
 import {
@@ -12,6 +12,7 @@ import {
   KebabToggle,
   Button
 } from '@patternfly/react-core';
+import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
 
 export class OverflowMenuDemo extends React.Component {
   state = {
@@ -50,13 +51,13 @@ export class OverflowMenuDemo extends React.Component {
     return (
       <OverflowMenu breakpoint="md" id="simple-overflow-menu" style={this.style}>
         <OverflowMenuContent>
-          <OverflowMenuContentItem>Item</OverflowMenuContentItem>
-          <OverflowMenuContentItem>Item</OverflowMenuContentItem>
-          <OverflowMenuContentGroup>
-            <OverflowMenuContentItem>Item</OverflowMenuContentItem>
-            <OverflowMenuContentItem>Item</OverflowMenuContentItem>
-            <OverflowMenuContentItem>Item</OverflowMenuContentItem>
-          </OverflowMenuContentGroup>
+          <OverflowMenuItem>Item</OverflowMenuItem>
+          <OverflowMenuItem>Item</OverflowMenuItem>
+          <OverflowMenuGroup>
+            <OverflowMenuItem>Item</OverflowMenuItem>
+            <OverflowMenuItem>Item</OverflowMenuItem>
+            <OverflowMenuItem>Item</OverflowMenuItem>
+          </OverflowMenuGroup>
         </OverflowMenuContent>
         <OverflowMenuControl>
           <Dropdown
@@ -97,34 +98,34 @@ export class OverflowMenuDemo extends React.Component {
     return (
       <OverflowMenu breakpoint="lg" id="additional-options-overflow-menu" style={this.style}>
         <OverflowMenuContent>
-          <OverflowMenuContentGroup groupType="button">
-            <OverflowMenuContentItem>
+          <OverflowMenuGroup groupType="button">
+            <OverflowMenuItem>
               <Button variant="primary">Primary</Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
               <Button variant="secondary">Secondary</Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
               <Button variant="tertiary">Tertiary</Button>
-            </OverflowMenuContentItem>
-          </OverflowMenuContentGroup>
-          <OverflowMenuContentGroup groupType="icon">
-            <OverflowMenuContentItem>
+            </OverflowMenuItem>
+          </OverflowMenuGroup>
+          <OverflowMenuGroup groupType="icon">
+            <OverflowMenuItem>
               <Button variant="link" aria-label="Align left">
-                <i className="fas fa-align-left" aria-hidden="true"></i>
+                <AlignLeftIcon />
               </Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
               <Button variant="link" aria-label="Align center">
-                <i className="fas fa-align-center" aria-hidden="true"></i>
+                <AlignCenterIcon />
               </Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
               <Button variant="link" aria-label="Align right">
-                <i className="fas fa-align-right" aria-hidden="true"></i>
+                <AlignRightIcon />
               </Button>
-            </OverflowMenuContentItem>
-          </OverflowMenuContentGroup>
+            </OverflowMenuItem>
+          </OverflowMenuGroup>
         </OverflowMenuContent>
         <OverflowMenuControl alwaysPersist>
           <Dropdown
@@ -162,17 +163,17 @@ export class OverflowMenuDemo extends React.Component {
     return (
       <OverflowMenu breakpoint="xl" id="persist-overflow-menu" style={this.style}>
         <OverflowMenuContent>
-          <OverflowMenuContentGroup groupType="button" isPersistent>
-            <OverflowMenuContentItem isPersistent>
+          <OverflowMenuGroup groupType="button" isPersistent>
+            <OverflowMenuItem isPersistent>
               <Button variant="primary">Primary</Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
               <Button variant="secondary">Secondary</Button>
-            </OverflowMenuContentItem>
-            <OverflowMenuContentItem>
+            </OverflowMenuItem>
+            <OverflowMenuItem>
               <Button variant="tertiary">Tertiary</Button>
-            </OverflowMenuContentItem>
-          </OverflowMenuContentGroup>
+            </OverflowMenuItem>
+          </OverflowMenuGroup>
         </OverflowMenuContent>
         <OverflowMenuControl alwaysPersist>
           <Dropdown

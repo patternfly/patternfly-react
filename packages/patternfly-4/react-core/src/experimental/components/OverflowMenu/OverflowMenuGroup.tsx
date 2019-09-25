@@ -3,29 +3,34 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { OverflowMenuContentContext } from './OverflowMenuContexts';
 
-export interface OverflowMenuContentItemProps extends React.HTMLProps<HTMLDivElement> {
+export interface OverflowMenuGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
   children?: any;
-  /** Additional classes added to the OverflowMenuItem */
+  /** Additional classes added to the OverflowMenuGroup */
   className?: string;
-  /** Modifies the overflow menu item visibility */
+  /** Modifies the overflow menu group visibility */
   isPersistent?: boolean;
+  /** Indicates a button or icon group */
+  groupType?: 'button' | 'icon';
 }
 
-export const OverflowMenuContentItem: React.SFC<OverflowMenuContentItemProps> = ({
+export const OverflowMenuGroup: React.SFC<OverflowMenuGroupProps> = ({
   className,
   children,
   isPersistent = false,
+  groupType = '',
   ...props
 }) => (
   <OverflowMenuContentContext.Consumer>
     {value => (
       <div hidden={!isPersistent && value.isHidden} className={css(
-        styles.overflowMenuItem,
+        styles.overflowMenuGroup,
+        groupType === 'button' && styles.modifiers.buttonGroup,
+        groupType === 'icon' && styles.modifiers.iconButtonGroup,
         isPersistent && styles.modifiers.persistent,
         className
       )}>
-        {children}
+        { children }
       </div>
     )}
   </OverflowMenuContentContext.Consumer>
