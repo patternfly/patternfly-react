@@ -9,7 +9,8 @@ export enum ButtonVariant {
   tertiary = 'tertiary',
   danger = 'danger',
   link = 'link',
-  plain = 'plain'
+  plain = 'plain',
+  control = 'control'
 }
 
 export enum ButtonType {
@@ -40,7 +41,7 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   /** Sets button type */
   type?: 'button' | 'submit' | 'reset';
   /** Adds button variant styles */
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'plain' ;
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'plain' | 'control' ;
   /** Adds accessible text to the button. */
   'aria-label'?: string;
   /** Icon for the button if variant is a link */

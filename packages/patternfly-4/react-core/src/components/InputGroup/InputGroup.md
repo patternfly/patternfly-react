@@ -65,29 +65,29 @@ class SimpleInputGroups extends React.Component {
     return (
       <React.Fragment>
         <InputGroup>
-          <Button id="textAreaButton1" variant={ButtonVariant.secondary}>
+          <Button id="textAreaButton1" variant={ButtonVariant.control}>
             Button
           </Button>
           <TextArea name="textarea1" id="textarea1" aria-label="textarea with buttons" />
-          <Button variant={ButtonVariant.tertiary}>Button</Button>
+          <Button variant={ButtonVariant.control}>Button</Button>
         </InputGroup>
         <br />
         <br />
         <InputGroup>
           <TextArea name="textarea2" id="textarea2" aria-label="textarea with button" />
-          <Button id="textAreaButton2" variant={ButtonVariant.tertiary}>
+          <Button id="textAreaButton2" variant={ButtonVariant.control}>
             Button
           </Button>
         </InputGroup>
         <br />
         <br />
         <InputGroup>
-          <Button id="textAreaButton3" variant={ButtonVariant.primary}>
+          <Button id="textAreaButton3" variant={ButtonVariant.control}>
             Button
           </Button>
-          <Button variant={ButtonVariant.secondary}>Button</Button>
+          <Button variant={ButtonVariant.control}>Button</Button>
           <TextArea name="textarea3" id="textarea3" aria-label="textarea with 3 buttons" />
-          <Button variant={ButtonVariant.tertiary}>Button</Button>
+          <Button variant={ButtonVariant.control}>Button</Button>
         </InputGroup>
         <br />
         <br />
@@ -113,7 +113,7 @@ class SimpleInputGroups extends React.Component {
             ]}
           />
           <TextInput id="textInput3" aria-label="input with dropdown and button" />
-          <Button id="inputDropdownButton1">Button</Button>
+          <Button id="inputDropdownButton1" variant={ButtonVariant.control}>Button</Button>
         </InputGroup>
         <br />
         <br />
@@ -150,7 +150,7 @@ class SimpleInputGroups extends React.Component {
         <br />
         <InputGroup>
           <TextInput name="textInput11" id="textInput11" type="search" aria-label="search input example" />
-          <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
+          <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
@@ -163,7 +163,7 @@ class SimpleInputGroups extends React.Component {
             position={PopoverPosition.top}
             bodyContent="This field is an example of input group with popover"
           >
-            <Button variant={ButtonVariant.tertiary} aria-label="popover for input">
+            <Button variant={ButtonVariant.control} aria-label="popover for input">
               <QuestionCircleIcon />
             </Button>
           </Popover>

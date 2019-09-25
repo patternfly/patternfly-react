@@ -41,6 +41,51 @@ exports[`aria-disabled is set to true and tabIndex to -1 if component is not a b
 </Component>
 `;
 
+exports[`control button 1`] = `
+<Component
+  aria-label="control"
+  variant="control"
+>
+  <ComponentWithOuia
+    component={[Function]}
+    componentProps={
+      Object {
+        "aria-label": "control",
+        "children": Array [
+          "control",
+          " Button",
+        ],
+        "variant": "control",
+      }
+    }
+    consumerContext={null}
+  >
+    <Button
+      aria-label="control"
+      ouiaContext={
+        Object {
+          "isOuia": false,
+          "ouiaId": null,
+        }
+      }
+      variant="control"
+    >
+      <button
+        aria-disabled={null}
+        aria-label="control"
+        className="pf-c-button pf-m-control"
+        disabled={false}
+        tabIndex={null}
+        type="button"
+      >
+        control
+         Button
+      </button>
+    </Button>
+  </ComponentWithOuia>
+</Component>
+`;
+
 exports[`danger button 1`] = `
 <Component
   aria-label="danger"

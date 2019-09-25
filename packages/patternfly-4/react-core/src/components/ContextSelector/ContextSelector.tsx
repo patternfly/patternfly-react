@@ -124,7 +124,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
                       aria-labelledby={searchButtonId}
                     />
                     <Button
-                      variant={ButtonVariant.tertiary}
+                      variant={ButtonVariant.control}
                       aria-label={searchButtonAriaLabel}
                       id={searchButtonId}
                       onClick={onSearchButtonClick}
