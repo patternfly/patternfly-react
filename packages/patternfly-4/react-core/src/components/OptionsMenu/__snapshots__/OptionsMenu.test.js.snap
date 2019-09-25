@@ -1007,6 +1007,8 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
                         role="menuitem"
                       >
                         <button
@@ -1014,8 +1016,6 @@ exports[`optionsMenu expanded 1`] = `
                           disabled={false}
                           href={null}
                           id=""
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           onSelect={[Function]}
                           tabIndex={-1}
                           type="button"
@@ -1088,6 +1088,8 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
                         role="menuitem"
                       >
                         <button
@@ -1095,8 +1097,6 @@ exports[`optionsMenu expanded 1`] = `
                           disabled={false}
                           href={null}
                           id=""
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           onSelect={[Function]}
                           tabIndex={-1}
                           type="button"
@@ -1173,6 +1173,8 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
                         role="menuitem"
                       >
                         <button
@@ -1181,8 +1183,6 @@ exports[`optionsMenu expanded 1`] = `
                           disabled={true}
                           href={null}
                           id=""
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           onSelect={[Function]}
                           tabIndex={-1}
                           type="button"
@@ -1255,6 +1255,8 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
                         role="menuitem"
                       >
                         <button
@@ -1262,8 +1264,6 @@ exports[`optionsMenu expanded 1`] = `
                           disabled={false}
                           href={null}
                           id=""
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           onSelect={[Function]}
                           tabIndex={-1}
                           type="button"
@@ -1360,6 +1360,8 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
                         role="menuitem"
                       >
                         <button
@@ -1367,8 +1369,6 @@ exports[`optionsMenu expanded 1`] = `
                           disabled={false}
                           href={null}
                           id=""
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           onSelect={[Function]}
                           tabIndex={-1}
                           type="button"
@@ -1441,6 +1441,8 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
                         role="menuitem"
                       >
                         <button
@@ -1448,8 +1450,6 @@ exports[`optionsMenu expanded 1`] = `
                           disabled={false}
                           href={null}
                           id=""
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
                           onSelect={[Function]}
                           tabIndex={-1}
                           type="button"

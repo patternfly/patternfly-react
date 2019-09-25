@@ -464,14 +464,14 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
               >
                 <a
                   aria-disabled={false}
                   className="pf-c-app-launcher__menu-item"
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                   tabIndex={-1}
                 >
@@ -506,14 +506,14 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
               >
                 <button
                   className="pf-c-app-launcher__menu-item"
                   disabled={false}
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                   tabIndex={-1}
                   type="button"
@@ -549,14 +549,14 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
               >
                 <a
                   aria-disabled={true}
                   className="pf-m-disabled pf-c-app-launcher__menu-item"
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                   tabIndex={-1}
                 >
@@ -592,14 +592,14 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
               >
                 <button
                   className="pf-m-disabled pf-c-app-launcher__menu-item"
                   disabled={true}
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                   tabIndex={-1}
                   type="button"
@@ -632,13 +632,13 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="separator"
               >
                 <div
                   className="pf-c-app-launcher__separator"
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                 />
               </li>
@@ -669,14 +669,14 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
               >
                 <a
                   aria-disabled={false}
                   className="pf-c-app-launcher__menu-item"
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                   tabIndex={-1}
                 >
@@ -711,14 +711,14 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
               >
                 <button
                   className="pf-c-app-launcher__menu-item"
                   disabled={false}
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                   tabIndex={-1}
                   type="button"
@@ -1715,14 +1715,14 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
               >
                 <a
                   aria-disabled={false}
                   className="pf-c-app-launcher__menu-item"
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                   tabIndex={-1}
                 >
@@ -1757,14 +1757,14 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
               >
                 <button
                   className="pf-c-app-launcher__menu-item"
                   disabled={false}
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                   tabIndex={-1}
                   type="button"
@@ -1800,14 +1800,14 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
               >
                 <a
                   aria-disabled={true}
                   className="pf-m-disabled pf-c-app-launcher__menu-item"
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                   tabIndex={-1}
                 >
@@ -1843,14 +1843,14 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
               >
                 <button
                   className="pf-m-disabled pf-c-app-launcher__menu-item"
                   disabled={true}
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                   tabIndex={-1}
                   type="button"
@@ -1883,13 +1883,13 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="separator"
               >
                 <div
                   className="pf-c-app-launcher__separator"
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                 />
               </li>
@@ -1920,14 +1920,14 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
               >
                 <a
                   aria-disabled={false}
                   className="pf-c-app-launcher__menu-item"
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                   tabIndex={-1}
                 >
@@ -1962,14 +1962,14 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
               >
                 <button
                   className="pf-c-app-launcher__menu-item"
                   disabled={false}
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                   tabIndex={-1}
                   type="button"
