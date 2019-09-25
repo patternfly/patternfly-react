@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.6.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.5.0...demo-app-ts@3.6.0) (2019-09-25)
+
+
+### Features
+
+* **Pagination:** add compact variation flag ([#2998](https://github.com/patternfly/patternfly-react/issues/2998)) ([fcc5e90](https://github.com/patternfly/patternfly-react/commit/fcc5e90))
+
+
+
+
+
 # [3.5.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.4.0...demo-app-ts@3.5.0) (2019-09-25)
 
 
