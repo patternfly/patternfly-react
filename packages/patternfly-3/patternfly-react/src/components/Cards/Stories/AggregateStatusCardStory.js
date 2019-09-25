@@ -18,7 +18,7 @@ const handleClick = e => {
 const tooltip = <Tooltip id="tooltip">Tooltip!</Tooltip>;
 
 const aggregateCardAddWithInfo = stories => {
-  stories.addWithInfo('Aggregate Status Card', '', () => {
+  stories.add('Aggregate Status Card', () => {
     const story = (
       <body className="cards-pf">
         <CardGrid>

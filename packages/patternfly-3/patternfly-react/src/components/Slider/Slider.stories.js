@@ -21,7 +21,7 @@ SliderStories.addDecorator(
   })
 );
 
-SliderStories.addWithInfo('Slider', () => (
+SliderStories.add('Slider', () => (
   <div>
     <p>
       The component uses the Bootstrap-slider library, for more reading and available props please visit:
@@ -115,6 +115,6 @@ SliderStories.addWithInfo('Slider', () => (
       <Slider id="slider-pf" min={0} max={100} tooltip="show" showBoundaries input dropdownList={['MB', 'GB']} dropup />
     </div>
   </div>
-)).addWithInfo('onSlide function', () => (
+)).add('onSlide function', () => (
   <Slider id="slider-pf" min={0} max={5} onSlide={action('onSlide was called')} />
 ));

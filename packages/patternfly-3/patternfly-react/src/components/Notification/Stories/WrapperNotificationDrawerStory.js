@@ -88,7 +88,7 @@ const panels = [
 ];
 
 const WrapperNotificationDrawerStory = stories => {
-  stories.addWithInfo('Drawer Wrapper', '', () => {
+  stories.add('Drawer Wrapper', () => {
     const story = (
       <nav className="navbar navbar-pf-vertical">
         <nav className="collapse navbar-collapse">

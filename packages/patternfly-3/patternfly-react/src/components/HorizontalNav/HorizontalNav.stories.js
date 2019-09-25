@@ -31,7 +31,7 @@ stories.addDecorator(
   })
 );
 
-stories.addWithInfo('Single-Level Menu Bar', '', () => (
+stories.add('Single-Level Menu Bar', () => (
   <HorizontalNav>
     {mastheadMock({
       titleImg: pfFitBrand,
@@ -43,7 +43,7 @@ stories.addWithInfo('Single-Level Menu Bar', '', () => (
   </HorizontalNav>
 ));
 
-stories.addWithInfo('Two-Level Menu Bar', '', () => (
+stories.add('Two-Level Menu Bar', () => (
   <HorizontalNav>
     {mastheadMock({
       titleImg: pfFitBrand,
@@ -55,7 +55,7 @@ stories.addWithInfo('Two-Level Menu Bar', '', () => (
   </HorizontalNav>
 ));
 
-stories.addWithInfo('Menu Bar with Dropdowns', '', () => (
+stories.add('Menu Bar with Dropdowns', () => (
   <HorizontalNav>
     {mastheadMock({
       titleImg: pfFitBrand,

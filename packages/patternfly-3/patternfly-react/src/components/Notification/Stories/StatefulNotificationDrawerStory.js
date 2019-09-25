@@ -281,7 +281,7 @@ const panels = [
 ];
 
 const StatefulNotificationDrawerStory = stories => {
-  stories.addWithInfo('Stateful Drawer Wrapper', '', () => {
+  stories.add('Stateful Drawer Wrapper', () => {
     const story = (
       <nav className="navbar navbar-pf-vertical">
         <nav className="collapse navbar-collapse">

@@ -43,7 +43,7 @@ TypeAheadSelectStories.addDecorator(
   })
 );
 
-TypeAheadSelectStories.addWithInfo('Menu Alignment', () => {
+TypeAheadSelectStories.add('Menu Alignment', () => {
   const align = select('Alignment', [undefined, 'justify', 'left', 'right']);
 
   return (
@@ -63,7 +63,7 @@ TypeAheadSelectStories.addWithInfo('Menu Alignment', () => {
   );
 });
 
-TypeAheadSelectStories.addWithInfo('Input Size', () => {
+TypeAheadSelectStories.add('Input Size', () => {
   const bsSize = select('Size', [undefined, 'small', 'default', 'large']);
 
   return (
@@ -83,7 +83,7 @@ TypeAheadSelectStories.addWithInfo('Input Size', () => {
   );
 });
 
-TypeAheadSelectStories.addWithInfo('Multiple Selection', () => {
+TypeAheadSelectStories.add('Multiple Selection', () => {
   const clearButton = boolean('Clear Button', true);
   const multiple = boolean('Multiple Selection', true);
 
@@ -106,7 +106,7 @@ TypeAheadSelectStories.addWithInfo('Multiple Selection', () => {
   );
 });
 
-TypeAheadSelectStories.addWithInfo('Highlight Results', () => {
+TypeAheadSelectStories.add('Highlight Results', () => {
   const highlightOnlyResult = boolean('highlight Only Result', true);
   const selectHintOnEnter = boolean('select Hint On Enter', true);
 
@@ -128,7 +128,7 @@ TypeAheadSelectStories.addWithInfo('Highlight Results', () => {
   );
 });
 
-TypeAheadSelectStories.addWithInfo('Allow Adding New Items', () => {
+TypeAheadSelectStories.add('Allow Adding New Items', () => {
   const allowNew = boolean('Allow Adding New Items', true);
 
   return (
@@ -153,7 +153,7 @@ TypeAheadSelectStories.addWithInfo('Allow Adding New Items', () => {
   );
 });
 
-TypeAheadSelectStories.addWithInfo('Min Chars To AutoComplete', () => {
+TypeAheadSelectStories.add('Min Chars To AutoComplete', () => {
   const minLength = number('Set the Minimum Length to Autocomplete', 1);
 
   return (
@@ -173,7 +173,7 @@ TypeAheadSelectStories.addWithInfo('Min Chars To AutoComplete', () => {
   );
 });
 
-TypeAheadSelectStories.addWithInfo('Use With Forms', () => {
+TypeAheadSelectStories.add('Use With Forms', () => {
   const submitFormOnEnter = boolean('Submit Form On Enter', true);
   const handleSubmit = e => {
     alert('Form was submitted successfully !');
@@ -213,7 +213,7 @@ TypeAheadSelectStories.addWithInfo('Use With Forms', () => {
   );
 });
 
-TypeAheadSelectStories.addWithInfo('Using Async Calls', () => {
+TypeAheadSelectStories.add('Using Async Calls', () => {
   // query is the text string entered by the user.
   const handleSearch = query =>
     fetch('https://api.github.com/repos/patternfly/patternfly-react/forks')
@@ -241,7 +241,7 @@ TypeAheadSelectStories.addWithInfo('Using Async Calls', () => {
   );
 });
 
-TypeAheadSelectStories.addWithInfo('Controlled input value', () => (
+TypeAheadSelectStories.add('Controlled input value', () => (
   <div className="container">
     <br />
     <br />

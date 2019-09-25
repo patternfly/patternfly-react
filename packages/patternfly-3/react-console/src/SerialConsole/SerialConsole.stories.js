@@ -136,7 +136,7 @@ SerialConsoleConnector.defaultProps = {
   cols: undefined
 };
 
-stories.addWithInfo('SerialConsole', () => {
+stories.add('SerialConsole', () => {
   const autoFit = boolean('Auto fit', true);
   const cols = autoFit ? undefined : number('Columns', 90);
   const rows = autoFit ? undefined : number('Rows', 35);
