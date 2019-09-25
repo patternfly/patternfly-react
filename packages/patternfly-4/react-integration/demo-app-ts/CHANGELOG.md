@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.3.0...demo-app-ts@3.4.0) (2019-09-25)
+
+
+### Features
+
+* **Select:** add max height property, update tests ([#2946](https://github.com/patternfly/patternfly-react/issues/2946)) ([af0ea5f](https://github.com/patternfly/patternfly-react/commit/af0ea5f))
+
+
+
+
+
 # [3.3.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.2.4...demo-app-ts@3.3.0) (2019-09-25)
 
 

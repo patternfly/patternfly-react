@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.107.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.106.0...@patternfly/react-core@3.107.0) (2019-09-25)
+
+
+### Features
+
+* **Select:** add max height property, update tests ([#2946](https://github.com/patternfly/patternfly-react/issues/2946)) ([af0ea5f](https://github.com/patternfly/patternfly-react/commit/af0ea5f))
+
+
+
+
+
 # [3.106.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.105.4...@patternfly/react-core@3.106.0) (2019-09-25)
 
 
