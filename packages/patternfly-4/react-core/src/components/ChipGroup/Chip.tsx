@@ -45,9 +45,9 @@ class Chip extends React.Component<ChipProps & InjectedOuiaProps, ChipState> {
     className: '',
     isOverflowChip: false,
     isReadOnly: false,
-    tooltipPosition: 'top',
-    onClick: () => undefined as any,
-    component: 'div'
+    tooltipPosition: 'top' as 'auto' | 'top' | 'bottom' | 'left' | 'right',
+    onClick: (_e: React.MouseEvent) => undefined as any,
+    component: 'div' as React.ReactNode
   };
 
   componentDidMount() {
