@@ -2,7 +2,8 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { css } from '@patternfly/react-styles';
 
-import { DataToolbarBreakpointMod, formatBreakpointMods } from './DataToolbarUtils';
+import { DataToolbarBreakpointMod } from './DataToolbarUtils';
+import { formatBreakpointMods } from '../../../helpers/util';
 
 export interface DataToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the Data toolbar content row */
@@ -24,7 +25,7 @@ export const DataToolbarContent: React.FunctionComponent<DataToolbarContentProps
     <div
       className={
         css(styles.dataToolbarContent,
-          formatBreakpointMods(breakpointMods),
+          formatBreakpointMods(breakpointMods, styles),
           className)}
       {...props}
     >

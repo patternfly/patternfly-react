@@ -5,9 +5,9 @@ import { css, getModifier } from '@patternfly/react-styles';
 import {
   DataToolbarBreakpointMod,
   DataToolbarSpacer,
-  formatBreakpointMods,
   formatSpacers
 } from './DataToolbarUtils';
+import { formatBreakpointMods } from '../../../helpers/util';
 
 export enum DataToolbarGroupVariant {
   'filter-group' = 'filter-group',
@@ -45,7 +45,7 @@ export const DataToolbarGroup: React.FunctionComponent<DataToolbarGroupProps> = 
       className={css(
         styles.dataToolbarGroup,
         variant && getModifier(styles, variant),
-        formatBreakpointMods(breakpointMods),
+        formatBreakpointMods(breakpointMods, styles),
         formatSpacers(itemSpacers, 'pf-m-space-items'),
         formatSpacers(spacers),
         className)}
