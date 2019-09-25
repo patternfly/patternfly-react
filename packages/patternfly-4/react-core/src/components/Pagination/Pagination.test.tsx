@@ -13,7 +13,7 @@ describe('component render', () => {
     expect(wrapper).toMatchSnapshot();
   });
   
-  test('should render correctly bottom', () => {
+  test('should render correctly compact', () => {
     const wrapper = mount(<Pagination itemCount={20} isCompact />);
     expect(wrapper).toMatchSnapshot();
   });

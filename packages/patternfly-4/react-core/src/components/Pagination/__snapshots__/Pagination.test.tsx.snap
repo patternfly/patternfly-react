@@ -6967,7 +6967,7 @@ exports[`component render should render correctly bottom 1`] = `
 </Component>
 `;
 
-exports[`component render should render correctly bottom 2`] = `
+exports[`component render should render correctly compact 1`] = `
 <Component
   isCompact={true}
   itemCount={20}
@@ -7256,10 +7256,6 @@ exports[`component render should render correctly bottom 2`] = `
                               aria-expanded="false"
                               aria-label="Select"
                               class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
-<<<<<<< HEAD
-                              disabled=""
-=======
->>>>>>> feat(Pagination): add compact variation flag
                               id="pagination-options-menu-toggle"
                               type="button"
                             >
@@ -7330,10 +7326,6 @@ exports[`component render should render correctly bottom 2`] = `
                                   aria-expanded="false"
                                   aria-label="Select"
                                   class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
-<<<<<<< HEAD
-                                  disabled=""
-=======
->>>>>>> feat(Pagination): add compact variation flag
                                   id="pagination-options-menu-toggle"
                                   type="button"
                                 >
@@ -7404,7 +7396,6 @@ exports[`component render should render correctly bottom 2`] = `
                                     aria-expanded="false"
                                     aria-label="Select"
                                     class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
-                                    disabled=""
                                     id="pagination-options-menu-toggle"
                                     type="button"
                                   >
@@ -7453,11 +7444,7 @@ exports[`component render should render correctly bottom 2`] = `
                             aria-expanded={false}
                             aria-label="Select"
                             className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
-<<<<<<< HEAD
-                            disabled={true}
-=======
                             disabled={false}
->>>>>>> feat(Pagination): add compact variation flag
                             id="pagination-options-menu-toggle"
                             onClick={[Function]}
                             onKeyDown={[Function]}
@@ -8016,7 +8003,7 @@ exports[`component render should render correctly disabled 1`] = `
                             <button
                               aria-expanded="false"
                               aria-label="Select"
-                              class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                              class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                               disabled=""
                               id="pagination-options-menu-toggle"
                               type="button"
@@ -8087,7 +8074,7 @@ exports[`component render should render correctly disabled 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-label="Select"
-                                  class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                                  class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                   disabled=""
                                   id="pagination-options-menu-toggle"
                                   type="button"
@@ -8158,7 +8145,7 @@ exports[`component render should render correctly disabled 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-label="Select"
-                                    class="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                                    class="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                                     disabled=""
                                     id="pagination-options-menu-toggle"
                                     type="button"
@@ -8207,7 +8194,7 @@ exports[`component render should render correctly disabled 1`] = `
                           <button
                             aria-expanded={false}
                             aria-label="Select"
-                            className="pf-c-dropdown__toggle pf-m-disabled pf-c-options-menu__toggle-button"
+                            className="pf-c-dropdown__toggle pf-c-options-menu__toggle-button"
                             disabled={true}
                             id="pagination-options-menu-toggle"
                             onClick={[Function]}
