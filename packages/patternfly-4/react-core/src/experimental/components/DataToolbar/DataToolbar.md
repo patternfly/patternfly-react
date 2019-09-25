@@ -2,7 +2,7 @@
 title: 'DataToolbar'
 cssPrefix: 'pf-c-data-toolbar'
 typescript: true
-propComponents: ['DataToolbar', 'DataToolbarContent', 'DataToolbarItem', 'DataToolbarGroup', 'DataToolbarToggleGroup', 'DataToolbarBreakpointMod', 'DataToolbarSpacer', 'DataToolbarItemWithChipGroup']
+propComponents: ['DataToolbar', 'DataToolbarContent', 'DataToolbarItem', 'DataToolbarGroup', 'DataToolbarToggleGroup', 'DataToolbarBreakpointMod', 'DataToolbarItemWithChipGroup', 'DataToolbarChip']
 section: 'experimental'
 stage: 'early'
 ---
@@ -57,34 +57,37 @@ class DataToolbarSpacers extends React.Component {
   
   render() {
     const firstSpacers = [
-      {spacerSize: 'none'}
+      {modifier: 'spacer-none'}
     ];
     const secondSpacers = [
-      {spacerSize: 'sm'}
+      {modifier: 'spacer-sm'}
     ];
     const thirdSpacers = [
-      {spacerSize: 'md'}
+      {modifier: 'spacer-md'}
     ];
     const fourthSpacers = [
-      {spacerSize: 'lg'}
+      {modifier: 'spacer-lg'}
     ];
     const fifthSpacers = [
-      {spacerSize: 'none'},
-      {spacerSize: 'sm', breakpoint: 'md'},
-      {spacerSize: 'md', breakpoint: 'lg'},
-      {spacerSize: 'lg', breakpoint: 'xl'}
+      {modifier: 'spacer-none'},
+      {modifier: 'spacer-sm', breakpoint: 'md'},
+      {modifier: 'spacer-md', breakpoint: 'lg'},
+      {modifier: 'spacer-lg', breakpoint: 'xl'}
     ];
+    const spaceItems = [
+      {modifier: 'space-items-lg'}
+     ];
     
     const items = <React.Fragment>
-          <DataToolbarItem spacers={firstSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
-          <DataToolbarItem spacers={secondSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
-          <DataToolbarItem spacers={thirdSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
-          <DataToolbarItem spacers={fourthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
+          <DataToolbarItem breakpointMods={firstSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
+          <DataToolbarItem breakpointMods={secondSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
+          <DataToolbarItem breakpointMods={thirdSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
+          <DataToolbarItem breakpointMods={fourthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
           <DataToolbarItem variant="separator"></DataToolbarItem>
-          <DataToolbarItem spacers={fifthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
+          <DataToolbarItem breakpointMods={fifthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
           <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
           <DataToolbarItem variant="separator"></DataToolbarItem>
-          <DataToolbarGroup itemSpacers={[{spacerSize: 'lg'}]}>
+          <DataToolbarGroup breakpointMods={spaceItems}>
             <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
             <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
           </DataToolbarGroup>
@@ -362,8 +365,8 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
           </Button>
         </InputGroup>
       </DataToolbarItem>
-      <DataToolbarGroup>
-          <DataToolbarItem spacers={[{spacerSize: 'none'}]}>
+      <DataToolbarGroup variant="filter-group">
+          <DataToolbarItem>
             <Select
               variant={SelectVariant.single}
               aria-label="Select Input"
@@ -753,7 +756,7 @@ class DataToolbarWithChipGroupExample extends React.Component {
       </DataToolbarItem>
     </React.Fragment>;
     
-    return <DataToolbar id="data-toolbar-toggle-groups" clearAllFilters={this.onDelete}><DataToolbarContent>{toolbarItems}</DataToolbarContent></DataToolbar>;
+    return <DataToolbar id="data-toolbar-with-chip-groups" clearAllFilters={this.onDelete}><DataToolbarContent>{toolbarItems}</DataToolbarContent></DataToolbar>;
   }
 }
 

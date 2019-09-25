@@ -7,11 +7,11 @@ import styles from '@patternfly/react-styles/css/components/DataToolbar/data-too
 import { getModifier } from '@patternfly/react-styles';
 
 export type DataToolbarChip = {
-  /** TODO */
+  /** A unique key to identify this chip */
   key: string;
-  /** TODO */
+  /** The ReactNode to display in the chip */
   node: React.ReactNode;
-}
+};
 
 export interface DataToolbarItemWithChipGroupProps extends DataToolbarItemProps {
   /** An array of strings to be displayed as chips in the expandable content */

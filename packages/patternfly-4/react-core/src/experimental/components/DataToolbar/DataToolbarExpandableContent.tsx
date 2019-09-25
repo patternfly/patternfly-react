@@ -28,7 +28,15 @@ export class DataToolbarExpandableContent extends React.Component<DataToolbarExp
   };
 
   render() {
-    const { className, expandableContentRef, isExpanded, clearAllFilters, showClearFiltersButton, ...props } = this.props;
+    const {
+      className,
+      expandableContentRef,
+      isExpanded,
+      clearAllFilters,
+      showClearFiltersButton,
+      ...props
+    } = this.props;
+
     return (
       <DataToolbarContext.Consumer>
         {({ updateShowClearFiltersButton }) => {
