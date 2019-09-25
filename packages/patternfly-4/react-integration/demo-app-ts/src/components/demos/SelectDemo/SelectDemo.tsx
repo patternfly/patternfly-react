@@ -342,6 +342,7 @@ export class SelectDemo extends Component<SelectDemoState> {
             isExpanded={singleIsExpanded}
             ariaLabelledBy={titleId}
             direction={this.state.direction}
+            maxHeight={200}
           >
             {this.singleOptions.map((option, index) => (
               <SelectOption
