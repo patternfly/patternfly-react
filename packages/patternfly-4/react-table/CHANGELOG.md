@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.22.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.22.2...@patternfly/react-table@2.22.3) (2019-09-25)
+
+
+### Bug Fixes
+
+* **dropdown:** disabled button only applies disabled attribute ([#2989](https://github.com/patternfly/patternfly-react/issues/2989)) ([951816f](https://github.com/patternfly/patternfly-react/commit/951816f))
+
+
+
+
+
 ## [2.22.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.22.1...@patternfly/react-table@2.22.2) (2019-09-25)
 
 **Note:** Version bump only for package @patternfly/react-table
