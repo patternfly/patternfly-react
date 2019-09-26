@@ -15,7 +15,7 @@ export const OverflowMenuDropdownItem: React.SFC<OverflowMenuDropdownItemProps> 
   isShared = false
 }) => (
   <DropdownItem
-    listItemClassName={css(isShared && styles.overflowMenuSharedItem)}
+    listItemClassName={css(isShared && styles.overflowMenuSharedItem) || null}
     component="button"
   >
     {children}

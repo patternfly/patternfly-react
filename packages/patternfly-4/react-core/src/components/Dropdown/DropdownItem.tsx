@@ -32,7 +32,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   href = '',
   tooltip = null,
   tooltipProps = {},
-  listItemClassName = '',
+  listItemClassName,
   onClick,
   ref, // Types of Ref are different for React.FC vs React.Component
   ...props
