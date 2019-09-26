@@ -5,6 +5,7 @@ import { css, getModifier } from '@patternfly/react-styles';
 import { DataToolbarGroupProps } from './DataToolbarGroup';
 import { DataToolbarContext } from './DataToolbarUtils';
 import { Button } from '../../../components/Button';
+import { global_breakpoint_lg as globalBreakpointLg } from '@patternfly/react-tokens';
 
 import {
   DataToolbarBreakpointMod,
@@ -26,6 +27,12 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
     breakpointMods: [] as DataToolbarBreakpointMod[],
     spacers: [] as DataToolbarSpacer[],
   };
+
+  isContentPopup = () => {
+    const viewportSize = window.innerWidth;
+    const lgBreakpointValue = parseInt(globalBreakpointLg.value);
+    return viewportSize < lgBreakpointValue;
+  }
 
   render() {
     const { toggleIcon, breakpoint, variant, breakpointMods, spacers, className, children, ...props } = this.props;
@@ -50,7 +57,7 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
                   variant="plain"
                   onClick={toggleIsExpanded}
                   {...isExpanded && { 'aria-expanded': true }}
-                  // TODO aria-haspopup when isExpanded = true && viewport is smaller than lg global breakpoint
+                  aria-haspopup={isExpanded && this.isContentPopup()}
                   aria-controls={expandableContentId}
                 >
                   {toggleIcon}
