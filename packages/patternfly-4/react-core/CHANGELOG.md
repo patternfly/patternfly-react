@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.110.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.110.1...@patternfly/react-core@3.110.2) (2019-09-26)
+
+
+### Bug Fixes
+
+* **DataToolbar:** add aria-haspopup to the toggle group ([#3012](https://github.com/patternfly/patternfly-react/issues/3012)) ([75e9a2f](https://github.com/patternfly/patternfly-react/commit/75e9a2f)), closes [#2900](https://github.com/patternfly/patternfly-react/issues/2900)
+
+
+
+
+
 ## [3.110.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.110.0...@patternfly/react-core@3.110.1) (2019-09-26)
 
 
