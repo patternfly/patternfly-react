@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.110.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.110.0...@patternfly/react-core@3.110.1) (2019-09-26)
+
+
+### Bug Fixes
+
+* **copytoclipboard:** wrap content in pre tag ([#2981](https://github.com/patternfly/patternfly-react/issues/2981)) ([27aa1e4](https://github.com/patternfly/patternfly-react/commit/27aa1e4))
+* **Pagination:** Styling discrepancy with HTML version ([#2904](https://github.com/patternfly/patternfly-react/issues/2904)) ([7e6e586](https://github.com/patternfly/patternfly-react/commit/7e6e586))
+
+
+
+
+
 # [3.110.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.109.0...@patternfly/react-core@3.110.0) (2019-09-25)
 
 
