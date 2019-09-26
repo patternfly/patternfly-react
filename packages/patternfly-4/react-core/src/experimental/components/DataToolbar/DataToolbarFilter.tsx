@@ -73,6 +73,7 @@ export class DataToolbarFilter
 
           if (!isExpanded && this.state.isMounted) {
             chipGroupContentRef.current.classList.remove(getModifier(styles, 'hidden'));
+            chipGroupContentRef.current.hidden = false;
             return <React.Fragment>
               <DataToolbarItem {...props}>{children}</DataToolbarItem>
               {ReactDOM.createPortal(chipGroup, chipGroupContentRef.current.firstElementChild)}
