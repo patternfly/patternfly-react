@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.111.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.110.2...@patternfly/react-core@3.111.0) (2019-09-26)
+
+
+### Features
+
+* **Alert:** Added OUIA compatibility to Alert component ([#2958](https://github.com/patternfly/patternfly-react/issues/2958)) ([dfb609c](https://github.com/patternfly/patternfly-react/commit/dfb609c))
+
+
+
+
+
 ## [3.110.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.110.1...@patternfly/react-core@3.110.2) (2019-09-26)
 
 
