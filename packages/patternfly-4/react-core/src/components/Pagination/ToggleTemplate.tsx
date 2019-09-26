@@ -19,10 +19,10 @@ export const ToggleTemplate = ({
 }: ToggleTemplateProps) => {
   return (
     <React.Fragment>
-      <strong>
+      <b>
         {firstIndex} - {lastIndex}
-      </strong>{' '}
-      of <strong>{itemCount}</strong> {itemsTitle}
+      </b>{' '}
+      of <b>{itemCount}</b> {itemsTitle}
     </React.Fragment>
   );
 };
