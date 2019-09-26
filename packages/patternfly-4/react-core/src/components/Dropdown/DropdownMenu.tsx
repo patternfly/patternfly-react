@@ -79,13 +79,15 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
   }
 
   sendRef = (index: number, node: any, isDisabled: boolean, isSeparator: boolean) => {
-    if (!node.getAttribute) {
+    // since the ref is on the outer <li>, target the inner child for focusing and keyboard navigation
+    const innerNode = node.childNodes && node.childNodes.length ? node.childNodes[0] : node;
+    if (!innerNode.getAttribute) {
       // eslint-disable-line react/no-find-dom-node
-      this.refsCollection[index] = ReactDOM.findDOMNode(node) as HTMLElement;
+      this.refsCollection[index] = ReactDOM.findDOMNode(innerNode) as HTMLElement;
     } else if (isDisabled || isSeparator) {
       this.refsCollection[index] = null;
     } else {
-      this.refsCollection[index] = node;
+      this.refsCollection[index] = innerNode;
     }
   }
 

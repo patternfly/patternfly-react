@@ -174,7 +174,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
               onChange={(event) => this.onChange(event, lastPage)}
             />
             <span aria-hidden="true">
-              of {pluralize(lastPage, pagesTitle)}
+              of {pagesTitle ? pluralize(lastPage, pagesTitle) : lastPage}
             </span>
           </div>
         )}
