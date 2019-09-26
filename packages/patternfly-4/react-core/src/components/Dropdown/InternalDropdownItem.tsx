@@ -127,7 +127,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
           }
           return (
             <li
-              className={listItemClassName}
+              className={listItemClassName || null}
               role={role} 
               ref={this.ref} 
               onKeyDown={this.onKeyDown}
