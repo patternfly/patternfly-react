@@ -10,9 +10,7 @@ import './chart-bar.scss';
 
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
-
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
-
 
 Learn to build a bar chart using a Katacoda tutorial starting with a simple chart, adding multiple datasets, tooltips, axis labels, a legend, and concluding by changing the theme color. You'll learn how to use React chart components together to build a consistent user experience.
 
@@ -166,6 +164,9 @@ import { Chart, ChartBar } from '@patternfly/react-charts';
 
 - For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
 - `ChartLegend` may be used as a standalone component, instead of using `legendData` and `legendPosition`
+- Use `ChartGroup` to apply color scales and other properties to multiple components
+- Themes are inherited, so a default theme may override `themeColor` for a child component
+- The `theme` and `themeColor` props should be applied at the most top level component
 
 ## Docs
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 

@@ -3,7 +3,6 @@ import {
   chart_global_FontFamily,
   chart_global_letter_spacing,
   chart_global_FontSize_sm,
-  chart_global_label_Fill,
   chart_global_label_Padding,
   chart_global_label_stroke,
   chart_global_label_text_anchor,

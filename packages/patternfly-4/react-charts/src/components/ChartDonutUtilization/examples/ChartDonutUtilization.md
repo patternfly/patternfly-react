@@ -11,9 +11,7 @@ import './chart-donut-utilization.scss';
 
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
-
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
-
 
 Learn to build a donut utilization chart using a Katacoda tutorial starting with a simple chart, adding thresholds, tooltips, a legend, and concluding by changing the theme color. You'll learn how to use React chart components together to build a consistent user experience.
 
@@ -213,7 +211,6 @@ class UtilizationChart extends React.Component {
             subTitle="of 100 GBps"
             title={`${used}%`}
             themeColor={ChartThemeColor.green}
-            themeVariant={ChartThemeVariant.light}
             thresholds={[{ value: 60 }, { value: 90 }]}
             width={230}
           />
@@ -459,7 +456,6 @@ class ThresholdChart extends React.Component {
               subTitle="of 100 GBps"
               title={`${used}%`}
               themeColor={ChartThemeColor.green}
-              themeVariant={ChartThemeVariant.light}
               thresholds={[{ value: 60 }, { value: 90 }]}
             />
           </ChartDonutThreshold>
