@@ -13,7 +13,7 @@ export type DataToolbarChip = {
   node: React.ReactNode;
 };
 
-export interface DataToolbarItemWithChipGroupProps extends DataToolbarItemProps {
+export interface DataToolbarFilterProps extends DataToolbarItemProps {
   /** An array of strings to be displayed as chips in the expandable content */
   chips?: (string | DataToolbarChip)[];
   /** Callback passed by consumer used to delete a chip from the chips[] */
@@ -21,22 +21,21 @@ export interface DataToolbarItemWithChipGroupProps extends DataToolbarItemProps 
   /** Content to be rendered inside the Data toolbar item associated with the chip group */
   children: React.ReactNode;
   /** Unique category name to be used as a label for the chip group */
-  categoryName?: string;
+  categoryName: string;
 }
 
-interface DataToolbarItemWithChipGroupState {
+interface DataToolbarFilterState {
   isMounted: boolean;
 }
 
-export class DataToolbarItemWithChipGroup
-  extends React.Component<DataToolbarItemWithChipGroupProps, DataToolbarItemWithChipGroupState> {
+export class DataToolbarFilter
+  extends React.Component<DataToolbarFilterProps, DataToolbarFilterState> {
 
   static defaultProps = {
-    chips: [] as string[],
-    categoryName: '',
+    chips: [] as string[]
   };
 
-  constructor(props: DataToolbarItemWithChipGroupProps) {
+  constructor(props: DataToolbarFilterProps) {
     super(props);
     this.state = {
       isMounted: false
@@ -53,11 +52,7 @@ export class DataToolbarItemWithChipGroup
 
     return (
       <DataToolbarContext.Consumer>
-        {({ isExpanded, chipGroupContentRef, updateShowClearFiltersButton }) => {
-
-          if (chips.length > 0) {
-            updateShowClearFiltersButton(true);
-          }
+        {({ isExpanded, chipGroupContentRef }) => {
 
           const chipGroup =
             <DataToolbarItem variant="chip-group">

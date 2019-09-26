@@ -2,12 +2,12 @@
 title: 'DataToolbar'
 cssPrefix: 'pf-c-data-toolbar'
 typescript: true
-propComponents: ['DataToolbar', 'DataToolbarContent', 'DataToolbarItem', 'DataToolbarGroup', 'DataToolbarToggleGroup', 'DataToolbarBreakpointMod', 'DataToolbarItemWithChipGroup', 'DataToolbarChip']
+propComponents: ['DataToolbar', 'DataToolbarContent', 'DataToolbarItem', 'DataToolbarGroup', 'DataToolbarToggleGroup', 'DataToolbarBreakpointMod', 'DataToolbarFilter', 'DataToolbarChip']
 section: 'experimental'
 stage: 'early'
 ---
 
-import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup, DataToolbarItemWithChipGroup } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup, DataToolbarFilter } from '@patternfly/react-core/dist/esm/experimental';
 import { Alert, Button, InputGroup, TextInput, Select, SelectOption, OptionsMenu, OptionsMenuToggle, OptionsMenuItem } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 import '@patternfly/react-styles/css/components/Divider/divider';
@@ -565,7 +565,7 @@ import {
     DataToolbar,
     DataToolbarItem,
     DataToolbarContent,
-    DataToolbarItemWithChipGroup,
+    DataToolbarFilter,
     DataToolbarToggleGroup,
     DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
 import { 
@@ -620,7 +620,7 @@ class DataToolbarWithChipGroupExample extends React.Component {
           [...prevState.filters[selection[0]], selection[1]];
         
         return {
-          filters: prevState.filters
+          filters: prevState.filters,
         }
       });
     };
@@ -630,7 +630,7 @@ class DataToolbarWithChipGroupExample extends React.Component {
         this.setState((prevState) => {
           prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter(s => s !== id);
           return {
-            filters: prevState.filters
+            filters: prevState.filters,
           }
         });
       } else {
@@ -641,7 +641,7 @@ class DataToolbarWithChipGroupExample extends React.Component {
           }
         })
       }
-    }
+    };
     
     this.onStatusToggle = isExpanded => {
       this.setState({
@@ -673,7 +673,7 @@ class DataToolbarWithChipGroupExample extends React.Component {
       filters,
       statusIsExpanded, 
       riskIsExpanded, 
-      kebabIsOpen 
+      kebabIsOpen,
     } = this.state;
      
     const statusMenuItems = [
@@ -701,20 +701,20 @@ class DataToolbarWithChipGroupExample extends React.Component {
         </InputGroup>
       </DataToolbarItem>
       <DataToolbarGroup variant="filter-group">
-          <DataToolbarItemWithChipGroup chips={filters.status} deleteChip={this.onDelete} categoryName="Status">
+          <DataToolbarFilter chips={filters.status} deleteChip={this.onDelete} categoryName="Status">
             <OptionsMenu 
                 id="status-options-menu" 
                 menuItems={statusMenuItems} 
                 isOpen={statusIsExpanded} 
                 toggle={statusToggle} />
-          </DataToolbarItemWithChipGroup>
-          <DataToolbarItemWithChipGroup chips={filters.risk} deleteChip={this.onDelete} categoryName="Risk">
+          </DataToolbarFilter>
+          <DataToolbarFilter chips={filters.risk} deleteChip={this.onDelete} categoryName="Risk">
             <OptionsMenu 
                 id="risk-options-menu" 
                 menuItems={riskMenuItems} 
                 isOpen={riskIsExpanded} 
                 toggle={riskToggle} />
-          </DataToolbarItemWithChipGroup>
+          </DataToolbarFilter>
       </DataToolbarGroup>
     </React.Fragment>;
     
@@ -756,7 +756,7 @@ class DataToolbarWithChipGroupExample extends React.Component {
       </DataToolbarItem>
     </React.Fragment>;
     
-    return <DataToolbar id="data-toolbar-with-chip-groups" clearAllFilters={this.onDelete}><DataToolbarContent>{toolbarItems}</DataToolbarContent></DataToolbar>;
+    return <DataToolbar id="data-toolbar-with-chip-groups" clearAllFilters={this.onDelete} showClearFiltersButton={ filters.risk.length !== 0 || filters.status.length !== 0 }><DataToolbarContent>{toolbarItems}</DataToolbarContent></DataToolbar>;
   }
 }
 

@@ -5,7 +5,6 @@ import { css, getModifier } from '@patternfly/react-styles';
 import { RefObject } from 'react';
 import { DataToolbarItem } from './DataToolbarItem';
 import { Button } from '../../../components/Button';
-import { DataToolbarContext } from './DataToolbarUtils';
 import { DataToolbarGroup } from './DataToolbarGroup';
 
 export interface DataToolbarExpandableContentProps extends React.HTMLProps<HTMLDivElement> {
@@ -37,34 +36,26 @@ export class DataToolbarExpandableContent extends React.Component<DataToolbarExp
       ...props
     } = this.props;
 
+    const clearChipGroups = () => {
+      clearAllFilters();
+    };
+
     return (
-      <DataToolbarContext.Consumer>
-        {({ updateShowClearFiltersButton }) => {
-
-          const clearChipGroups = () => {
-            updateShowClearFiltersButton(false);
-            clearAllFilters();
-          };
-
-          return (
-            <div
-              className={css(
-                styles.dataToolbarExpandableContent,
-                isExpanded && getModifier(styles, 'expanded'),
-                className)}
-              ref={expandableContentRef}
-              {...props}
-            >
-              <DataToolbarGroup />
-              {!!clearAllFilters && showClearFiltersButton &&
-                <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
-                  <Button variant="link" onClick={clearChipGroups}>Clear all filters</Button>
-                </DataToolbarItem>
-              }
-            </div>
-          );
-        }}
-      </DataToolbarContext.Consumer>
+      <div
+        className={css(
+          styles.dataToolbarExpandableContent,
+          isExpanded && getModifier(styles, 'expanded'),
+          className)}
+        ref={expandableContentRef}
+        {...props}
+      >
+        <DataToolbarGroup />
+        {showClearFiltersButton &&
+          <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
+            <Button variant="link" onClick={clearChipGroups}>Clear all filters</Button>
+          </DataToolbarItem>
+        }
+      </div>
     );
-  }
+}
 }

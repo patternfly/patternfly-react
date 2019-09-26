@@ -16,6 +16,8 @@ export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
   toggleIsExpanded?: () => void;
   /** optional callback for clearing all filters in the toolbar */
   clearAllFilters?: () => void;
+  /** Flag indicating that the Clear all filters button should be visible */
+  showClearFiltersButton?: boolean;
   /** Id of the Data toolbar */
   id: string;
 }
@@ -25,8 +27,6 @@ export interface DataToolbarState {
   isConsumerManagedToggleGroup: boolean;
   /** Flag indicating if the component managed state has expanded content or not */
   componentManagedIsExpanded: boolean;
-  /** Flag indicating that the Clear all filters button should be visible */
-  showClearFiltersButton: boolean;
 }
 
 export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarState> {
@@ -34,7 +34,8 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
   private chipGroupContentRef = React.createRef<HTMLDivElement>();
 
   static defaultProps = {
-    isExpanded: false
+    isExpanded: false,
+    showClearFiltersButton: false,
   };
 
   constructor(props: DataToolbarProps) {
@@ -43,7 +44,6 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
     this.state = {
       isConsumerManagedToggleGroup: props.isExpanded || !!props.toggleIsExpanded,
       componentManagedIsExpanded: false,
-      showClearFiltersButton: false,
     };
   }
 
@@ -57,12 +57,6 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
     this.setState(() => ({
       componentManagedIsExpanded: false
     }));
-  }
-
-  updateShowClearFiltersButton = (showClearFiltersButton: boolean) => {
-    if (showClearFiltersButton !== this.state.showClearFiltersButton) {
-      this.setState(() => ({ showClearFiltersButton }));
-    }
   }
 
   componentDidMount() {
@@ -82,8 +76,17 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
 
   render() {
 
-    const { className, children, isExpanded, toggleIsExpanded, id, clearAllFilters, ...props} = this.props;
-    const { isConsumerManagedToggleGroup, componentManagedIsExpanded, showClearFiltersButton } = this.state;
+    const {
+      className,
+      children,
+      isExpanded,
+      toggleIsExpanded,
+      id,
+      clearAllFilters,
+      showClearFiltersButton,
+      ...props
+    } = this.props;
+    const { isConsumerManagedToggleGroup, componentManagedIsExpanded } = this.state;
 
     const expandableContentId = `${id}-expandable-content`;
 
@@ -97,7 +100,6 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
               expandableContentRef: this.expandableContentRef,
               expandableContentId,
               chipGroupContentRef: this.chipGroupContentRef,
-              updateShowClearFiltersButton: this.updateShowClearFiltersButton,
             }
           }
         >

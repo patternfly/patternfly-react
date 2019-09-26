@@ -6,7 +6,6 @@ import { RefObject } from 'react';
 import { DataToolbarItem } from './DataToolbarItem';
 import { Button } from '../../../components/Button';
 import { DataToolbarGroup } from './DataToolbarGroup';
-import { DataToolbarContext } from './DataToolbarUtils';
 
 export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the Data toolbar content row */
@@ -33,34 +32,26 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
       ...props
     } = this.props;
 
+    const clearChipGroups = () => {
+      clearAllFilters();
+    };
+
     return (
-      <DataToolbarContext.Consumer>
-        {({ updateShowClearFiltersButton }) => {
-
-          const clearChipGroups = () => {
-            updateShowClearFiltersButton(false);
-            clearAllFilters();
-          };
-
-          return (
-            <div
-              className={css(
-                styles.dataToolbarContent,
-                getModifier(styles, 'hidden'),
-                className)}
-              ref={chipGroupContentRef}
-              {...props}
-            >
-              <DataToolbarGroup variant="filter-group"/>
-              {!!clearAllFilters && showClearFiltersButton && !expandableContentIsExpanded &&
-              <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
-                <Button variant="link" onClick={clearChipGroups}>Clear all filters</Button>
-              </DataToolbarItem>
-              }
-            </div>
-          );
-        }}
-      </DataToolbarContext.Consumer>
+      <div
+        className={css(
+          styles.dataToolbarContent,
+          getModifier(styles, 'hidden'),
+          className)}
+        ref={chipGroupContentRef}
+        {...props}
+      >
+        <DataToolbarGroup variant="filter-group"/>
+        {showClearFiltersButton && !expandableContentIsExpanded &&
+        <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
+          <Button variant="link" onClick={clearChipGroups}>Clear all filters</Button>
+        </DataToolbarItem>
+        }
+      </div>
     );
   }
 }
