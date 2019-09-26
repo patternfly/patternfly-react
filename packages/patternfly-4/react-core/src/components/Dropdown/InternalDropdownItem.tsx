@@ -10,7 +10,7 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   /** Classes applied to root element of dropdown item */
   className?: string;
   /** Class applied to list element */
-  wrapperClass?: string;
+  listItemClassName?: string;
   /** Indicates which component will be used as dropdown item */
   component?: React.ReactNode | string;
   /** Role for the item */
@@ -90,7 +90,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       href,
       tooltip,
       tooltipProps,
-      wrapperClass,
+      listItemClassName,
       ...additionalProps
     } = this.props;
     const Component = component as any;
@@ -127,6 +127,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
           }
           return (
 <<<<<<< HEAD
+<<<<<<< HEAD
             <li 
               role={role} 
               ref={this.ref} 
@@ -141,6 +142,9 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
 =======
             <li className={wrapperClass} role={role}>
 >>>>>>> feat(OverflowMenu): resolved DropdownItem import issue and CSS import order issue
+=======
+            <li className={listItemClassName} role={role}>
+>>>>>>> feat(overflowmenu): renamed wrapperClass on DropdownItem to listItemClassName
               {renderWithTooltip(
                 isComponentReactElement ? React.cloneElement(Component as React.ReactHTMLElement<any>, {
                   ...additionalProps,

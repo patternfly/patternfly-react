@@ -55,10 +55,14 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         tooltip={tooltip}
         tooltipProps={tooltipProps}
 <<<<<<< HEAD
+<<<<<<< HEAD
         listItemClassName={listItemClassName}
 =======
         wrapperClass={props.wrapperClass}
 >>>>>>> feat(overflowmenu): added unit tests
+=======
+        listItemClassName={props.listItemClassName}
+>>>>>>> feat(overflowmenu): renamed wrapperClass on DropdownItem to listItemClassName
         onClick={onClick}
         {...props} />}
   </DropdownArrowContext.Consumer>
