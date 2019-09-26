@@ -7,7 +7,6 @@ interface DataToolbarContextProps {
   expandableContentRef: RefObject<HTMLDivElement>;
   expandableContentId: string;
   chipGroupContentRef: RefObject<HTMLDivElement>;
-  updateShowClearFiltersButton: (showClearFiltersButton: boolean) => void;
 }
 
 export const DataToolbarContext = React.createContext<Partial<DataToolbarContextProps>>({});
