@@ -19,7 +19,6 @@ export const selectable = (label: IFormatterValueType, { rowIndex, columnIndex, 
     return {
       component: 'td',
       isVisible: true,
-      scope: ''
     };
   }
   const rowId = rowIndex !== undefined ? rowIndex : -1;
@@ -45,7 +44,6 @@ export const selectable = (label: IFormatterValueType, { rowIndex, columnIndex, 
   return {
     className: css(styles.tableCheck),
     component: 'td',
-    scope: '',
     isVisible: true,
     children: (
       <SelectColumn {...customProps} onSelect={selectClick} name={rowId !== -1 ? `checkrow${rowIndex}` : 'check-all'}>
