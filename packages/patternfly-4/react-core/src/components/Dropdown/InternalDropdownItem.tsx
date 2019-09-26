@@ -66,8 +66,11 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.UP);
     } else if (event.keyCode === KEY_CODES.ARROW_DOWN) {
       this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.DOWN);
-    } else if (event.keyCode === KEY_CODES.ENTER && this.ref.current && this.ref.current.click) {
-      this.ref.current.click();
+    } else if (event.keyCode === KEY_CODES.ENTER) {
+      const childNode = ((this.ref.current && this.ref.current.childNodes && this.ref.current.childNodes.length) ? this.ref.current.childNodes[0] : this.ref.current) as HTMLElement;
+      if (childNode.click) {
+        childNode.click();
+      }
     }
   }
 
@@ -88,6 +91,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       ...additionalProps
     } = this.props;
     const Component = component as any;
+    let isComponentReactElement = false;
     let classes: string;
     if (Component === 'a') {
       additionalProps['aria-disabled'] = isDisabled;
@@ -95,6 +99,10 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     } else if (Component === 'button') {
       additionalProps.disabled = isDisabled;
       additionalProps.type = additionalProps.type || 'button';
+    } else if (React.isValidElement(Component)) {
+      // Render a custom wrapper component, for example router Link component
+      // instead of our wrapper
+      isComponentReactElement = true;
     }
 
     const renderWithTooltip = (childNode: React.ReactNode) =>
@@ -115,20 +123,26 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
             classes = css(isDisabled && disabledClass, isHovered && hoverClass, className);
           }
           return (
-            <li role={role}>
+            <li 
+              role={role} 
+              ref={this.ref} 
+              onKeyDown={this.onKeyDown}
+              onClick={(event: any) => {
+                if (!isDisabled) {
+                  onClick(event);
+                  onSelect(event);
+                }
+              }}
+            >
               {renderWithTooltip(
+                isComponentReactElement ? React.cloneElement(Component as React.ReactHTMLElement<any>, {
+                  ...additionalProps,
+                  className: css(classes, itemClass)
+                }) :
                 <Component
                   {...additionalProps}
                   href={href || null}
                   className={css(classes, this.props.role !== 'separator' && itemClass)}
-                  ref={this.ref}
-                  onKeyDown={this.onKeyDown}
-                  onClick={(event: MouseEvent) => {
-                    if (!isDisabled) {
-                      onClick(event);
-                      onSelect(event);
-                    }
-                  }}
                 >
                   {children}
                 </Component>

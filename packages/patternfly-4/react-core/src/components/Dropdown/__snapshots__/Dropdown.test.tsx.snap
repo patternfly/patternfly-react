@@ -1602,14 +1602,14 @@ exports[`KebabToggle expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="none"
             >
               <a
                 aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
                 href={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 onSelect={[Function]}
               >
                 Link
@@ -1636,14 +1636,14 @@ exports[`KebabToggle expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="none"
             >
               <button
                 className="pf-c-dropdown__menu-item"
                 disabled={false}
                 href={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 onSelect={[Function]}
                 type="button"
               >
@@ -1671,14 +1671,14 @@ exports[`KebabToggle expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="none"
             >
               <a
                 aria-disabled={true}
                 className="pf-m-disabled pf-c-dropdown__menu-item"
                 href={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 onSelect={[Function]}
                 tabIndex={-1}
               >
@@ -1706,14 +1706,14 @@ exports[`KebabToggle expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="none"
             >
               <button
                 className="pf-m-disabled pf-c-dropdown__menu-item"
                 disabled={true}
                 href={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 onSelect={[Function]}
                 type="button"
               >
@@ -1744,13 +1744,13 @@ exports[`KebabToggle expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="separator"
               >
                 <div
                   className="pf-c-dropdown__separator"
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                 />
               </li>
@@ -1776,14 +1776,14 @@ exports[`KebabToggle expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="none"
             >
               <a
                 aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
                 href={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 onSelect={[Function]}
               >
                 Separated Link
@@ -1810,14 +1810,14 @@ exports[`KebabToggle expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="none"
             >
               <button
                 className="pf-c-dropdown__menu-item"
                 disabled={false}
                 href={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 onSelect={[Function]}
                 type="button"
               >
@@ -4733,14 +4733,14 @@ exports[`dropdown expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="none"
             >
               <a
                 aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
                 href={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 onSelect={[Function]}
               >
                 Link
@@ -4767,14 +4767,14 @@ exports[`dropdown expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="none"
             >
               <button
                 className="pf-c-dropdown__menu-item"
                 disabled={false}
                 href={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 onSelect={[Function]}
                 type="button"
               >
@@ -4802,14 +4802,14 @@ exports[`dropdown expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="none"
             >
               <a
                 aria-disabled={true}
                 className="pf-m-disabled pf-c-dropdown__menu-item"
                 href={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 onSelect={[Function]}
                 tabIndex={-1}
               >
@@ -4837,14 +4837,14 @@ exports[`dropdown expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="none"
             >
               <button
                 className="pf-m-disabled pf-c-dropdown__menu-item"
                 disabled={true}
                 href={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 onSelect={[Function]}
                 type="button"
               >
@@ -4875,13 +4875,13 @@ exports[`dropdown expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="separator"
               >
                 <div
                   className="pf-c-dropdown__separator"
                   href={null}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   onSelect={[Function]}
                 />
               </li>
@@ -4907,14 +4907,14 @@ exports[`dropdown expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="none"
             >
               <a
                 aria-disabled={false}
                 className="pf-c-dropdown__menu-item"
                 href={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 onSelect={[Function]}
               >
                 Separated Link
@@ -4941,14 +4941,14 @@ exports[`dropdown expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="none"
             >
               <button
                 className="pf-c-dropdown__menu-item"
                 disabled={false}
                 href={null}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 onSelect={[Function]}
                 type="button"
               >
