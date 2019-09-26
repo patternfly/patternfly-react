@@ -167,7 +167,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                 role="menu"
               >
                 <li
-                  class=""
                   role="menuitem"
                 >
                   <a
@@ -179,7 +178,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   </a>
                 </li>
                 <li
-                  class=""
                   role="menuitem"
                 >
                   <button
@@ -191,7 +189,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
                   role="menuitem"
                 >
                   <a
@@ -203,7 +200,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   </a>
                 </li>
                 <li
-                  class=""
                   role="menuitem"
                 >
                   <button
@@ -223,7 +219,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   />
                 </li>
                 <li
-                  class=""
                   role="menuitem"
                 >
                   <a
@@ -235,7 +230,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   </a>
                 </li>
                 <li
-                  class=""
                   role="menuitem"
                 >
                   <button
@@ -304,7 +298,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                   role="menu"
                 >
                   <li
-                    class=""
                     role="menuitem"
                   >
                     <a
@@ -316,7 +309,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     </a>
                   </li>
                   <li
-                    class=""
                     role="menuitem"
                   >
                     <button
@@ -328,7 +320,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
                     role="menuitem"
                   >
                     <a
@@ -340,7 +331,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     </a>
                   </li>
                   <li
-                    class=""
                     role="menuitem"
                   >
                     <button
@@ -360,7 +350,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     />
                   </li>
                   <li
-                    class=""
                     role="menuitem"
                   >
                     <a
@@ -372,7 +361,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
                     </a>
                   </li>
                   <li
-                    class=""
                     role="menuitem"
                   >
                     <button
@@ -468,7 +456,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
               index={0}
               isDisabled={false}
               isHovered={false}
-              listItemClassName=""
               onClick={[Function]}
               onSelect={[Function]}
               role="menuitem"
@@ -477,7 +464,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                className=""
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="menuitem"
@@ -512,7 +499,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
               index={1}
               isDisabled={false}
               isHovered={false}
-              listItemClassName=""
               onClick={[Function]}
               onSelect={[Function]}
               role="menuitem"
@@ -521,7 +507,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                className=""
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="menuitem"
@@ -557,7 +543,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
               index={2}
               isDisabled={true}
               isHovered={false}
-              listItemClassName=""
               onClick={[Function]}
               onSelect={[Function]}
               role="menuitem"
@@ -566,7 +551,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                className=""
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="menuitem"
@@ -602,7 +587,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
               index={3}
               isDisabled={true}
               isHovered={false}
-              listItemClassName=""
               onClick={[Function]}
               onSelect={[Function]}
               role="menuitem"
@@ -611,7 +595,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                className=""
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="menuitem"
@@ -652,6 +636,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="separator"
@@ -681,7 +666,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
               index={5}
               isDisabled={false}
               isHovered={false}
-              listItemClassName=""
               onClick={[Function]}
               onSelect={[Function]}
               role="menuitem"
@@ -690,7 +674,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                className=""
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="menuitem"
@@ -725,7 +709,6 @@ exports[`ApplicationLauncher custom icon 1`] = `
               index={6}
               isDisabled={false}
               isHovered={false}
-              listItemClassName=""
               onClick={[Function]}
               onSelect={[Function]}
               role="menuitem"
@@ -734,7 +717,7 @@ exports[`ApplicationLauncher custom icon 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                className=""
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="menuitem"
@@ -1445,7 +1428,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                 role="menu"
               >
                 <li
-                  class=""
                   role="menuitem"
                 >
                   <a
@@ -1457,7 +1439,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   </a>
                 </li>
                 <li
-                  class=""
                   role="menuitem"
                 >
                   <button
@@ -1469,7 +1450,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   </button>
                 </li>
                 <li
-                  class=""
                   role="menuitem"
                 >
                   <a
@@ -1481,7 +1461,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   </a>
                 </li>
                 <li
-                  class=""
                   role="menuitem"
                 >
                   <button
@@ -1501,7 +1480,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   />
                 </li>
                 <li
-                  class=""
                   role="menuitem"
                 >
                   <a
@@ -1513,7 +1491,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   </a>
                 </li>
                 <li
-                  class=""
                   role="menuitem"
                 >
                   <button
@@ -1581,7 +1558,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                   role="menu"
                 >
                   <li
-                    class=""
                     role="menuitem"
                   >
                     <a
@@ -1593,7 +1569,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     </a>
                   </li>
                   <li
-                    class=""
                     role="menuitem"
                   >
                     <button
@@ -1605,7 +1580,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     </button>
                   </li>
                   <li
-                    class=""
                     role="menuitem"
                   >
                     <a
@@ -1617,7 +1591,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     </a>
                   </li>
                   <li
-                    class=""
                     role="menuitem"
                   >
                     <button
@@ -1637,7 +1610,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     />
                   </li>
                   <li
-                    class=""
                     role="menuitem"
                   >
                     <a
@@ -1649,7 +1621,6 @@ exports[`ApplicationLauncher expanded 1`] = `
                     </a>
                   </li>
                   <li
-                    class=""
                     role="menuitem"
                   >
                     <button
@@ -1743,7 +1714,6 @@ exports[`ApplicationLauncher expanded 1`] = `
               index={0}
               isDisabled={false}
               isHovered={false}
-              listItemClassName=""
               onClick={[Function]}
               onSelect={[Function]}
               role="menuitem"
@@ -1752,7 +1722,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                className=""
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="menuitem"
@@ -1787,7 +1757,6 @@ exports[`ApplicationLauncher expanded 1`] = `
               index={1}
               isDisabled={false}
               isHovered={false}
-              listItemClassName=""
               onClick={[Function]}
               onSelect={[Function]}
               role="menuitem"
@@ -1796,7 +1765,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                className=""
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="menuitem"
@@ -1832,7 +1801,6 @@ exports[`ApplicationLauncher expanded 1`] = `
               index={2}
               isDisabled={true}
               isHovered={false}
-              listItemClassName=""
               onClick={[Function]}
               onSelect={[Function]}
               role="menuitem"
@@ -1841,7 +1809,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                className=""
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="menuitem"
@@ -1877,7 +1845,6 @@ exports[`ApplicationLauncher expanded 1`] = `
               index={3}
               isDisabled={true}
               isHovered={false}
-              listItemClassName=""
               onClick={[Function]}
               onSelect={[Function]}
               role="menuitem"
@@ -1886,7 +1853,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                className=""
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="menuitem"
@@ -1927,6 +1894,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="separator"
@@ -1956,7 +1924,6 @@ exports[`ApplicationLauncher expanded 1`] = `
               index={5}
               isDisabled={false}
               isHovered={false}
-              listItemClassName=""
               onClick={[Function]}
               onSelect={[Function]}
               role="menuitem"
@@ -1965,7 +1932,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                className=""
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="menuitem"
@@ -2000,7 +1967,6 @@ exports[`ApplicationLauncher expanded 1`] = `
               index={6}
               isDisabled={false}
               isHovered={false}
-              listItemClassName=""
               onClick={[Function]}
               onSelect={[Function]}
               role="menuitem"
@@ -2009,7 +1975,7 @@ exports[`ApplicationLauncher expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
-                className=""
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="menuitem"

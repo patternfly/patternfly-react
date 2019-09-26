@@ -141,7 +141,6 @@ exports[`optionsMenu expanded 1`] = `
                     class=""
                   >
                     <li
-                      class=""
                       role="menuitem"
                     >
                       <button
@@ -174,7 +173,6 @@ exports[`optionsMenu expanded 1`] = `
                       </button>
                     </li>
                     <li
-                      class=""
                       role="menuitem"
                     >
                       <button
@@ -207,7 +205,6 @@ exports[`optionsMenu expanded 1`] = `
                       </button>
                     </li>
                     <li
-                      class=""
                       role="menuitem"
                     >
                       <button
@@ -242,7 +239,6 @@ exports[`optionsMenu expanded 1`] = `
                       </button>
                     </li>
                     <li
-                      class=""
                       role="menuitem"
                     >
                       <button
@@ -289,7 +285,6 @@ exports[`optionsMenu expanded 1`] = `
                     class=""
                   >
                     <li
-                      class=""
                       role="menuitem"
                     >
                       <button
@@ -322,7 +317,6 @@ exports[`optionsMenu expanded 1`] = `
                       </button>
                     </li>
                     <li
-                      class=""
                       role="menuitem"
                     >
                       <button
@@ -419,7 +413,6 @@ exports[`optionsMenu expanded 1`] = `
                       class=""
                     >
                       <li
-                        class=""
                         role="menuitem"
                       >
                         <button
@@ -452,7 +445,6 @@ exports[`optionsMenu expanded 1`] = `
                         </button>
                       </li>
                       <li
-                        class=""
                         role="menuitem"
                       >
                         <button
@@ -485,7 +477,6 @@ exports[`optionsMenu expanded 1`] = `
                         </button>
                       </li>
                       <li
-                        class=""
                         role="menuitem"
                       >
                         <button
@@ -520,7 +511,6 @@ exports[`optionsMenu expanded 1`] = `
                         </button>
                       </li>
                       <li
-                        class=""
                         role="menuitem"
                       >
                         <button
@@ -567,7 +557,6 @@ exports[`optionsMenu expanded 1`] = `
                       class=""
                     >
                       <li
-                        class=""
                         role="menuitem"
                       >
                         <button
@@ -600,7 +589,6 @@ exports[`optionsMenu expanded 1`] = `
                         </button>
                       </li>
                       <li
-                        class=""
                         role="menuitem"
                       >
                         <button
@@ -701,7 +689,6 @@ exports[`optionsMenu expanded 1`] = `
                         class=""
                       >
                         <li
-                          class=""
                           role="menuitem"
                         >
                           <button
@@ -734,7 +721,6 @@ exports[`optionsMenu expanded 1`] = `
                           </button>
                         </li>
                         <li
-                          class=""
                           role="menuitem"
                         >
                           <button
@@ -767,7 +753,6 @@ exports[`optionsMenu expanded 1`] = `
                           </button>
                         </li>
                         <li
-                          class=""
                           role="menuitem"
                         >
                           <button
@@ -802,7 +787,6 @@ exports[`optionsMenu expanded 1`] = `
                           </button>
                         </li>
                         <li
-                          class=""
                           role="menuitem"
                         >
                           <button
@@ -849,7 +833,6 @@ exports[`optionsMenu expanded 1`] = `
                         class=""
                       >
                         <li
-                          class=""
                           role="menuitem"
                         >
                           <button
@@ -882,7 +865,6 @@ exports[`optionsMenu expanded 1`] = `
                           </button>
                         </li>
                         <li
-                          class=""
                           role="menuitem"
                         >
                           <button
@@ -1017,7 +999,6 @@ exports[`optionsMenu expanded 1`] = `
                       index={-1}
                       isDisabled={false}
                       isHovered={false}
-                      listItemClassName=""
                       onClick={[Function]}
                       onSelect={[Function]}
                       role="menuitem"
@@ -1026,7 +1007,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
-                        className=""
+                        className={null}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="menuitem"
@@ -1100,7 +1081,6 @@ exports[`optionsMenu expanded 1`] = `
                       index={-1}
                       isDisabled={false}
                       isHovered={false}
-                      listItemClassName=""
                       onClick={[Function]}
                       onSelect={[Function]}
                       role="menuitem"
@@ -1109,7 +1089,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
-                        className=""
+                        className={null}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="menuitem"
@@ -1187,7 +1167,6 @@ exports[`optionsMenu expanded 1`] = `
                       index={-1}
                       isDisabled={true}
                       isHovered={false}
-                      listItemClassName=""
                       onClick={[Function]}
                       onSelect={[Function]}
                       role="menuitem"
@@ -1196,7 +1175,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
-                        className=""
+                        className={null}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="menuitem"
@@ -1271,7 +1250,6 @@ exports[`optionsMenu expanded 1`] = `
                       index={-1}
                       isDisabled={false}
                       isHovered={false}
-                      listItemClassName=""
                       onClick={[Function]}
                       onSelect={[Function]}
                       role="menuitem"
@@ -1280,7 +1258,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
-                        className=""
+                        className={null}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="menuitem"
@@ -1378,7 +1356,6 @@ exports[`optionsMenu expanded 1`] = `
                       index={-1}
                       isDisabled={false}
                       isHovered={false}
-                      listItemClassName=""
                       onClick={[Function]}
                       onSelect={[Function]}
                       role="menuitem"
@@ -1387,7 +1364,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
-                        className=""
+                        className={null}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="menuitem"
@@ -1461,7 +1438,6 @@ exports[`optionsMenu expanded 1`] = `
                       index={-1}
                       isDisabled={false}
                       isHovered={false}
-                      listItemClassName=""
                       onClick={[Function]}
                       onSelect={[Function]}
                       role="menuitem"
@@ -1470,7 +1446,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
-                        className=""
+                        className={null}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="menuitem"
