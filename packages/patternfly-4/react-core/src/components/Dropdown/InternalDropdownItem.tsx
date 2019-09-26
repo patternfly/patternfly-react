@@ -126,9 +126,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
             classes = css(isDisabled && disabledClass, isHovered && hoverClass, className);
           }
           return (
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <li 
+            <li
+              className={listItemClassName}
               role={role} 
               ref={this.ref} 
               onKeyDown={this.onKeyDown}
@@ -139,12 +138,6 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                 }
               }}
             >
-=======
-            <li className={wrapperClass} role={role}>
->>>>>>> feat(OverflowMenu): resolved DropdownItem import issue and CSS import order issue
-=======
-            <li className={listItemClassName} role={role}>
->>>>>>> feat(overflowmenu): renamed wrapperClass on DropdownItem to listItemClassName
               {renderWithTooltip(
                 isComponentReactElement ? React.cloneElement(Component as React.ReactHTMLElement<any>, {
                   ...additionalProps,
