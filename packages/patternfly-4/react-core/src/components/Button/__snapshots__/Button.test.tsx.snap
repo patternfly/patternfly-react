@@ -73,7 +73,7 @@ exports[`control button 1`] = `
       <button
         aria-disabled={null}
         aria-label="control"
-        className="pf-c-button"
+        className="pf-c-button pf-m-control"
         disabled={false}
         tabIndex={null}
         type="button"
