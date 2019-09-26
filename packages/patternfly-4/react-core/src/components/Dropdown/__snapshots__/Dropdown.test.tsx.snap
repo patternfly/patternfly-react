@@ -1602,6 +1602,7 @@ exports[`KebabToggle expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              className={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="none"
@@ -1636,6 +1637,7 @@ exports[`KebabToggle expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              className={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="none"
@@ -1671,6 +1673,7 @@ exports[`KebabToggle expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              className={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="none"
@@ -1706,6 +1709,7 @@ exports[`KebabToggle expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              className={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="none"
@@ -1744,6 +1748,7 @@ exports[`KebabToggle expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="separator"
@@ -1776,6 +1781,7 @@ exports[`KebabToggle expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              className={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="none"
@@ -1810,6 +1816,7 @@ exports[`KebabToggle expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              className={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="none"
@@ -4733,6 +4740,7 @@ exports[`dropdown expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              className={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="none"
@@ -4767,6 +4775,7 @@ exports[`dropdown expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              className={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="none"
@@ -4802,6 +4811,7 @@ exports[`dropdown expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              className={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="none"
@@ -4837,6 +4847,7 @@ exports[`dropdown expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              className={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="none"
@@ -4875,6 +4886,7 @@ exports[`dropdown expanded 1`] = `
               tooltipProps={Object {}}
             >
               <li
+                className={null}
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="separator"
@@ -4907,6 +4919,7 @@ exports[`dropdown expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              className={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="none"
@@ -4941,6 +4954,7 @@ exports[`dropdown expanded 1`] = `
             tooltipProps={Object {}}
           >
             <li
+              className={null}
               onClick={[Function]}
               onKeyDown={[Function]}
               role="none"

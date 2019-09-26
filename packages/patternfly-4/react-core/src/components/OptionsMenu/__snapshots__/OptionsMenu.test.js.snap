@@ -1007,6 +1007,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
+                        className={null}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="menuitem"
@@ -1088,6 +1089,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
+                        className={null}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="menuitem"
@@ -1173,6 +1175,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
+                        className={null}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="menuitem"
@@ -1255,6 +1258,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
+                        className={null}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="menuitem"
@@ -1360,6 +1364,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
+                        className={null}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="menuitem"
@@ -1441,6 +1446,7 @@ exports[`optionsMenu expanded 1`] = `
                       tooltipProps={Object {}}
                     >
                       <li
+                        className={null}
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         role="menuitem"
