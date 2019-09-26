@@ -8,7 +8,7 @@ stage: 'early'
 ---
 
 import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup, DataToolbarFilter } from '@patternfly/react-core/dist/esm/experimental';
-import { Alert, Button, InputGroup, TextInput, Select, SelectOption, OptionsMenu, OptionsMenuToggle, OptionsMenuItem } from '@patternfly/react-core';
+import { Alert, Button, InputGroup, TextInput, Select, SelectOption } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 import '@patternfly/react-styles/css/components/Divider/divider';
 
@@ -570,10 +570,9 @@ import {
     DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
 import { 
     Button, 
-    InputGroup, 
-    OptionsMenu,
-    OptionsMenuToggle,
-    OptionsMenuItem,
+    InputGroup,
+    Select,
+    SelectOption,
     Dropdown, 
     DropdownItem, 
     DropdownSeparator, 
@@ -610,19 +609,28 @@ class DataToolbarWithChipGroupExample extends React.Component {
     this.onInputChange = (newValue) => {
       this.setState({inputValue: newValue});
     };
-    
-    this.onSelect = event => {
-      const selection = event.currentTarget.id.split('_');
-      
+
+    this.onSelect = (type, event, selection) => {
+      const checked = event.target.checked;
       this.setState((prevState) => {
-        prevState.filters[selection[0]] = prevState.filters[selection[0]].includes(selection[1]) ?
-          prevState.filters[selection[0]].filter(s => s !== selection[1]) : 
-          [...prevState.filters[selection[0]], selection[1]];
-        
+        const prevSelections = prevState.filters[type];
         return {
-          filters: prevState.filters,
-        }
+          filters: {
+            ...prevState.filters,
+            [type]: checked
+              ? [...prevSelections, selection]
+              : prevSelections.filter(value => value !== selection)
+          }
+        };
       });
+    };
+
+    this.onStatusSelect = (event, selection) => {
+      this.onSelect('status', event, selection);
+    };
+
+    this.onRiskSelect = (event, selection) => {
+      this.onSelect('risk', event, selection);
     };
     
     this.onDelete = (type = "", id = "") => {
@@ -675,21 +683,19 @@ class DataToolbarWithChipGroupExample extends React.Component {
       riskIsExpanded, 
       kebabIsOpen,
     } = this.state;
-     
+
     const statusMenuItems = [
-      <OptionsMenuItem onSelect={this.onSelect} isSelected={filters.status.includes('New')} id="status_New" key="statusNew">New</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} isSelected={filters.status.includes('Pending')} id="status_Pending" key="statusPending">Pending</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} isSelected={filters.status.includes('Running')} id="status_Running" key="statusRunning">Running</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} isSelected={filters.status.includes('Cancelled')} id="status_Cancelled" key="statusCancelled">Cancelled</OptionsMenuItem>
+      <SelectOption key="statusNew" value="New" />,
+      <SelectOption key="statusPending" value="Pending" />,
+      <SelectOption key="statusRunning" value="Running" />,
+      <SelectOption key="statusCancelled" value="Cancelled" />
     ];
+
     const riskMenuItems = [
-      <OptionsMenuItem onSelect={this.onSelect} isSelected={filters.risk.includes('Low')} id="risk_Low" key="riskLow">Low</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} isSelected={filters.risk.includes('Medium')} id="risk_Medium" key="riskMedium">Medium</OptionsMenuItem>,
-      <OptionsMenuItem onSelect={this.onSelect} isSelected={filters.risk.includes('High')} id="risk_High" key="riskHigh">High</OptionsMenuItem>,
+      <SelectOption key="riskLow" value="Low" />,
+      <SelectOption key="riskMedium" value="Medium" />,
+      <SelectOption key="riskHigh" value="High" />
     ];
-    
-    const statusToggle = <OptionsMenuToggle onToggle={this.onStatusToggle} toggleTemplate={"Status"} />;
-    const riskToggle = <OptionsMenuToggle onToggle={this.onRiskToggle} toggleTemplate={"Risk"} />;
 
     const toggleGroupItems = <React.Fragment>
       <DataToolbarItem>
@@ -702,18 +708,30 @@ class DataToolbarWithChipGroupExample extends React.Component {
       </DataToolbarItem>
       <DataToolbarGroup variant="filter-group">
           <DataToolbarFilter chips={filters.status} deleteChip={this.onDelete} categoryName="Status">
-            <OptionsMenu 
-                id="status-options-menu" 
-                menuItems={statusMenuItems} 
-                isOpen={statusIsExpanded} 
-                toggle={statusToggle} />
+            <Select
+              variant={SelectVariant.checkbox}
+              aria-label="Status"
+              onToggle={this.onStatusToggle}
+              onSelect={this.onStatusSelect}
+              selections={filters.status}
+              isExpanded={statusIsExpanded}
+              placeholderText="Status"
+            >
+              {statusMenuItems}
+            </Select>
           </DataToolbarFilter>
           <DataToolbarFilter chips={filters.risk} deleteChip={this.onDelete} categoryName="Risk">
-            <OptionsMenu 
-                id="risk-options-menu" 
-                menuItems={riskMenuItems} 
-                isOpen={riskIsExpanded} 
-                toggle={riskToggle} />
+            <Select
+              variant={SelectVariant.checkbox}
+              aria-label="Risk"
+              onToggle={this.onRiskToggle}
+              onSelect={this.onRiskSelect}
+              selections={filters.risk}
+              isExpanded={riskIsExpanded}
+              placeholderText="Risk"
+            >
+              {riskMenuItems}
+            </Select>
           </DataToolbarFilter>
       </DataToolbarGroup>
     </React.Fragment>;
@@ -1003,4 +1021,3 @@ class DataToolbarStacked extends React.Component {
 }
 
 ```
-
