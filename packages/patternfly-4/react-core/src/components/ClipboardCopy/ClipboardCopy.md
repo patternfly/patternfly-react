@@ -71,3 +71,26 @@ ClipboardCopyArrayOfElements = () => {
   </ClipboardCopy>
 }
 ```
+
+## JSON object (wrap code with pre)
+```js
+import React from 'react';
+import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
+
+<ClipboardCopy isCode variant={ClipboardCopyVariant.expansion}>
+  
+
+{ `{ "menu": {
+  "id": "file",
+  "value": "File",
+  "popup": {
+    "menuitem": [
+      {"value": "New", "onclick": "CreateNewDoc()"},
+      {"value": "Open", "onclick": "OpenDoc()"},
+      {"value": "Close", "onclick": "CloseDoc()"}
+    ]
+  }
+}} `}
+  
+</ClipboardCopy>
+```
