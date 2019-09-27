@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-const LinearLayoutVector = require("linear-layout-vector");
+import LinearLayoutVector from 'linear-layout-vector';
 import { Alignment, CellSizeGetter, VisibleCellRange } from '../types';
 
 interface CellSizeAndPositionManagerParams {
