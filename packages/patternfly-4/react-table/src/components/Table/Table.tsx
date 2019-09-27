@@ -159,31 +159,42 @@ export interface IRow extends RowType {
 
 export interface TableProps {
   'aria-label'?: string;
+  /** Content rendered inside the Table */
   children?: React.ReactNode;
+  /** Additional classes added to the Table  */
   className?: string;
   variant?: 'compact';
   borders?: boolean;
   gridBreakPoint?: '' | 'grid' | 'grid-md' | 'grid-lg' | 'grid-xl' | 'grid-2xl';
+  /** Specifies the initial sorting pattern for the table - asc/desc and the index of the column to sort by */
   sortBy?: ISortBy;
+  /** Function triggered when an expandable content is collapsed. When this is used, one expandable toggle button will be positioned in the first cell of a non-expandable row, preceding an expandable row */
   onCollapse?: OnCollapse;
+  /** Function triggered when a compound expandable item is clicked */
   onExpand?: OnExpand;
+  /** Function triggered when a row's checkbox is selected. When this is used, one checkbox will be positioned in the first or second cell of a non-expandable row */
   onSelect?: OnSelect;
   canSelectAll?: boolean;
+  /** Function triggered when sort icon is clicked */
   onSort?: OnSort;
   actions?: IActions;
   actionResolver?: IActionsResolver;
+  /** Specifies if the Kebab for actions is disabled */
   areActionsDisabled?: IAreActionsDisabled;
   header?: React.ReactNode;
   caption?: React.ReactNode;
   rowLabeledBy?: string;
   expandId?: string;
   contentId?: string;
+  /** The desired position to show the dropdown when clicking on the actions Kebab. Can only be used together with `actions` property */
   dropdownPosition?: 'right' | 'left';
+  /** The desired direction to show the dropdown when clicking on the actions Kebab. Can only be used together with `actions` property */
   dropdownDirection?: 'up' | 'down';
   rows: (IRow | string[])[];
   cells: (ICell | string)[];
   bodyWrapper?: Function;
   rowWrapper?: Function;
+  /** A valid WAI-ARIA role to be applied to the table element */
   role?: string;
 }
 

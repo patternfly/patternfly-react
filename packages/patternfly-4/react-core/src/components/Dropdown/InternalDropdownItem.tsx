@@ -9,6 +9,8 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   children?: React.ReactNode;
   /** Classes applied to root element of dropdown item */
   className?: string;
+  /** Class applied to list element */
+  listItemClassName?: string;
   /** Indicates which component will be used as dropdown item */
   component?: React.ReactNode | string;
   /** Role for the item */
@@ -88,6 +90,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       href,
       tooltip,
       tooltipProps,
+      listItemClassName,
       ...additionalProps
     } = this.props;
     const Component = component as any;
@@ -123,7 +126,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
             classes = css(isDisabled && disabledClass, isHovered && hoverClass, className);
           }
           return (
-            <li 
+            <li
+              className={listItemClassName || null}
               role={role} 
               ref={this.ref} 
               onKeyDown={this.onKeyDown}

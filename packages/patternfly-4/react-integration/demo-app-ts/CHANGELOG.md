@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.6](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.6.5...demo-app-ts@3.6.6) (2019-09-26)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.6.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.6.4...demo-app-ts@3.6.5) (2019-09-26)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.6.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.6.3...demo-app-ts@3.6.4) (2019-09-26)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [3.6.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.6.2...demo-app-ts@3.6.3) (2019-09-26)
 
 **Note:** Version bump only for package demo-app-ts

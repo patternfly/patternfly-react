@@ -23,7 +23,8 @@ module.exports = {
               '@patternfly/react-topology',
               '@patternfly-safe/patternfly/patternfly.css',
               '@patternfly-safe/patternfly/components/Drawer/drawer.css',
-              '@patternfly-safe/patternfly/components/Spinner/spinner.css'
+              '@patternfly-safe/patternfly/components/Spinner/spinner.css',
+              '@patternfly-safe/patternfly/components/OverflowMenu/overflow-menu.css'
             ]
           }
         ],

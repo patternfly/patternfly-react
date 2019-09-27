@@ -1,26 +1,26 @@
 import * as React from 'react';
 import { Breadcrumb } from './Breadcrumb';
 import { BreadcrumbItem } from './BreadcrumbItem';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 describe('Breadcrumb component', () => {
   test('should render default breadcrumb', () => {
-    const view = shallow(<Breadcrumb />);
+    const view = mount(<Breadcrumb />);
     expect(view).toMatchSnapshot();
   });
 
   test('should render breadcrumb with className', () => {
-    const view = shallow(<Breadcrumb className="className" />);
+    const view = mount(<Breadcrumb className="className" />);
     expect(view).toMatchSnapshot();
   });
 
   test('should render breadcrumb with aria-label', () => {
-    const view = shallow(<Breadcrumb aria-label="custom label" />);
+    const view = mount(<Breadcrumb aria-label="custom label" />);
     expect(view).toMatchSnapshot();
   });
 
   test('should render breadcrumb with children', () => {
-    const view = shallow(
+    const view = mount(
       <Breadcrumb>
         <BreadcrumbItem to="#">Item 1</BreadcrumbItem> <BreadcrumbItem to="#">Item 1</BreadcrumbItem>
       </Breadcrumb>

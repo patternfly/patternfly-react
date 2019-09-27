@@ -23,7 +23,6 @@ Object {
   "className": "pf-c-table__check",
   "component": "td",
   "isVisible": true,
-  "scope": "",
 }
 `;
 
