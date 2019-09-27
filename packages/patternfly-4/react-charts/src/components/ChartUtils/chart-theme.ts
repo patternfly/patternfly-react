@@ -1,4 +1,4 @@
-import { merge } from 'lodash';
+import { cloneDeep, merge } from 'lodash';
 import { DarkBlueColorTheme } from '../ChartTheme/themes/dark/blue-color-theme';
 import { DarkCyanColorTheme } from '../ChartTheme/themes/dark/cyan-color-theme';
 import { DarkGoldColorTheme } from '../ChartTheme/themes/dark/gold-color-theme';
@@ -39,7 +39,6 @@ import {
   ChartThemeVariant,
   ChartThresholdTheme
 } from '../ChartTheme/ChartTheme';
-import { cloneDeep } from 'lodash';
 
 // Apply custom properties to base and color themes
 export const getCustomTheme = (
@@ -49,10 +48,8 @@ export const getCustomTheme = (
 ): ChartThemeDefinition => merge(getTheme(themeColor, themeVariant), customTheme);
 
 // Returns axis theme
-export const getAxisTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {
-  const theme = getCustomTheme(themeColor, themeVariant, ChartAxisTheme);
-  return theme;
-};
+export const getAxisTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
+  getCustomTheme(themeColor, themeVariant, ChartAxisTheme);
 
 // Returns bullet chart theme
 export const getBulletTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>

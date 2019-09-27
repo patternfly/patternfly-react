@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import { Chart } from '../Chart';
 import { ChartGroup } from '../ChartGroup';
 import { ChartThreshold } from './ChartThreshold';
-import { ChartThemeColor, ChartThemeVariant } from '../ChartTheme';
 
 Object.values([true, false]).forEach(isRead => {
   test('ChartThreshold', () => {
@@ -22,7 +21,7 @@ test('renders component data', () => {
   const view = shallow(
     <Chart minDomain={{ y: 0 }} height={200} width={200}>
       <ChartGroup>
-        <ChartThreshold data={data} themeColor={ChartThemeColor.orange} themeVariant={ChartThemeVariant.light} />
+        <ChartThreshold data={data} />
       </ChartGroup>
     </Chart>
   );
