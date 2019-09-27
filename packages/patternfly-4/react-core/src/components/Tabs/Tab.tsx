@@ -18,36 +18,10 @@ export interface TabProps extends Omit<React.HTMLProps<HTMLAnchorElement | HTMLB
   tabContentRef?: React.RefObject<any>;
 }
 
-const Tab0: React.FunctionComponent<TabProps> = ({
-  children,
-  eventKey,
+export const Tab: React.FunctionComponent<TabProps> = ({
   className = '',
-  tabContentId,
-  tabContentRef,
-  title,
-  ...props
 }: TabProps) => {
-  // destructuring to prevent console warnings for applying eventKey, and tabContentId to a DOM element and remove title from the DOM element
-  const Component = (props.href ? 'a' : 'button') as any;
   return (
-    <Component {...props} className={className} ref={tabContentRef}>
-      {children}
-    </Component>
+    null
   );
 };
-
-interface ForwardedRefProps extends TabProps {
-  forwardRef?: React.Ref<any>;
-}
-
-const withForwardedRef = (Component: any) => {
-  class TabContainer extends React.Component<ForwardedRefProps> {
-    render() {
-      const { forwardRef, ...rest } = this.props;
-      return <Component ref={forwardRef} {...rest} />;
-    }
-  }
-  return React.forwardRef((props: any, tabContentRef) => <TabContainer {...props} forwardRef={tabContentRef} />);
-};
-
-export const Tab = withForwardedRef(Tab0);
