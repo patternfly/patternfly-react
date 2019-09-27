@@ -7,11 +7,7 @@ import { DataToolbarContext } from './DataToolbarUtils';
 import { Button } from '../../../components/Button';
 import { global_breakpoint_lg as globalBreakpointLg } from '@patternfly/react-tokens';
 
-import {
-  DataToolbarBreakpointMod,
-  DataToolbarSpacer,
-  formatSpacers
-} from './DataToolbarUtils';
+import { DataToolbarBreakpointMod } from './DataToolbarUtils';
 import { formatBreakpointMods } from '../../../helpers/util';
 
 export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
@@ -25,7 +21,6 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
 
   static defaultProps = {
     breakpointMods: [] as DataToolbarBreakpointMod[],
-    spacers: [] as DataToolbarSpacer[],
   };
 
   isContentPopup = () => {
@@ -35,18 +30,17 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
   }
 
   render() {
-    const { toggleIcon, breakpoint, variant, breakpointMods, spacers, className, children, ...props } = this.props;
+    const { toggleIcon, breakpoint, variant, breakpointMods, className, children, ...props } = this.props;
 
     return (
       <DataToolbarContext.Consumer>
-        {({ isExpanded, toggleIsExpanded, expandableContentRef, expandableContentId}) => {
+        {({ isExpanded, toggleIsExpanded, expandableContentRef, expandableContentId }) => {
           return (
             <div
               className={css(
                 styles.dataToolbarGroup,
                 variant && getModifier(styles, variant),
                 formatBreakpointMods(breakpointMods, styles),
-                formatSpacers(spacers, 'pf-m-space-items'),
                 getModifier(styles, 'toggle-group'),
                 getModifier(styles, `reveal-on-${breakpoint}`),
                 className)}
@@ -63,7 +57,7 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
                   {toggleIcon}
                 </Button>
               </div>
-              {isExpanded ? ReactDOM.createPortal(children, expandableContentRef.current) : children}
+              {isExpanded ? ReactDOM.createPortal(children, expandableContentRef.current.firstElementChild) : children}
             </div>
           );
         }}

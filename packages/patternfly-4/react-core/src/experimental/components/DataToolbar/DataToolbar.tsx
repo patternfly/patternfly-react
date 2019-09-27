@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/DataToolbar/data-too
 import { css } from '@patternfly/react-styles';
 import { DataToolbarExpandableContent } from './DataToolbarExpandableContent';
 import { DataToolbarContext } from './DataToolbarUtils';
+import { DataToolbarChipGroupContent } from './DataToolbarChipGroupContent';
 
 export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the Data toolbar */
@@ -13,6 +14,10 @@ export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
   isExpanded?: boolean;
   /** A callback for setting the isExpanded flag */
   toggleIsExpanded?: () => void;
+  /** optional callback for clearing all filters in the toolbar */
+  clearAllFilters?: () => void;
+  /** Flag indicating that the Clear all filters button should be visible */
+  showClearFiltersButton?: boolean;
   /** Id of the Data toolbar */
   id: string;
 }
@@ -26,9 +31,11 @@ export interface DataToolbarState {
 
 export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarState> {
   private expandableContentRef = React.createRef<HTMLDivElement>();
+  private chipGroupContentRef = React.createRef<HTMLDivElement>();
 
   static defaultProps = {
-    isExpanded: false
+    isExpanded: false,
+    showClearFiltersButton: false,
   };
 
   constructor(props: DataToolbarProps) {
@@ -36,7 +43,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
 
     this.state = {
       isConsumerManagedToggleGroup: props.isExpanded || !!props.toggleIsExpanded,
-      componentManagedIsExpanded: false
+      componentManagedIsExpanded: false,
     };
   }
 
@@ -69,7 +76,16 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
 
   render() {
 
-    const { className, children, isExpanded, toggleIsExpanded, id, ...props} = this.props;
+    const {
+      className,
+      children,
+      isExpanded,
+      toggleIsExpanded,
+      id,
+      clearAllFilters,
+      showClearFiltersButton,
+      ...props
+    } = this.props;
     const { isConsumerManagedToggleGroup, componentManagedIsExpanded } = this.state;
 
     const expandableContentId = `${id}-expandable-content`;
@@ -82,17 +98,26 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
               isExpanded: isConsumerManagedToggleGroup ? isExpanded : componentManagedIsExpanded,
               toggleIsExpanded: isConsumerManagedToggleGroup ? toggleIsExpanded : this.toggleIsExpanded,
               expandableContentRef: this.expandableContentRef,
-              expandableContentId
+              expandableContentId,
+              chipGroupContentRef: this.chipGroupContentRef,
             }
           }
         >
           {children}
+          <DataToolbarChipGroupContent
+            chipGroupContentRef={this.chipGroupContentRef}
+            expandableContentIsExpanded={isConsumerManagedToggleGroup ? isExpanded : componentManagedIsExpanded}
+            clearAllFilters={clearAllFilters}
+            showClearFiltersButton={showClearFiltersButton}
+          />
+          <DataToolbarExpandableContent
+            id={expandableContentId}
+            isExpanded={isConsumerManagedToggleGroup ? isExpanded : componentManagedIsExpanded}
+            expandableContentRef={this.expandableContentRef}
+            clearAllFilters={clearAllFilters}
+            showClearFiltersButton={showClearFiltersButton}
+          />
         </DataToolbarContext.Provider>
-        <DataToolbarExpandableContent
-          id={expandableContentId}
-          isExpanded={isConsumerManagedToggleGroup ? isExpanded : componentManagedIsExpanded}
-          expandableContentRef={this.expandableContentRef}
-        />
       </div>
     );
   }
