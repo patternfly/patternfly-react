@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.14.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.13.29...@patternfly/react-docs@4.14.0) (2019-09-27)
+
+
+### Features
+
+* **DataToolbar:** add Chip groups to DataToolbar ([#2969](https://github.com/patternfly/patternfly-react/issues/2969)) ([c060bdb](https://github.com/patternfly/patternfly-react/commit/c060bdb))
+
+
+
+
+
 ## [4.13.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.13.28...@patternfly/react-docs@4.13.29) (2019-09-26)
 
 **Note:** Version bump only for package @patternfly/react-docs
