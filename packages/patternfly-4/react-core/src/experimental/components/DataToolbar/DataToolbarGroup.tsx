@@ -2,11 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { css, getModifier } from '@patternfly/react-styles';
 
-import {
-  DataToolbarBreakpointMod,
-  DataToolbarSpacer,
-  formatSpacers
-} from './DataToolbarUtils';
+import { DataToolbarBreakpointMod } from './DataToolbarUtils';
 import { formatBreakpointMods } from '../../../helpers/util';
 
 export enum DataToolbarGroupVariant {
@@ -22,18 +18,12 @@ export interface DataToolbarGroupProps extends React.HTMLProps<HTMLDivElement> {
   variant?: DataToolbarGroupVariant | 'filter-group' | 'icon-button-group' | 'button-group';
   /** Array of objects representing the various modifiers to apply to the Data toolbar group at various breakpoints */
   breakpointMods?: DataToolbarBreakpointMod[];
-  /** Array of objects representing the various spacers to apply to the Data toolbar group at various breakpoints */
-  spacers?: DataToolbarSpacer[];
-  /** Array of objects representing the spacers to apply to the items in this group at various breakpoints */
-  itemSpacers?: DataToolbarSpacer[];
   /** Content to be rendered inside the Data toolbar group */
   children?: React.ReactNode;
 }
 
 export const DataToolbarGroup: React.FunctionComponent<DataToolbarGroupProps> = ({
    breakpointMods = [] as DataToolbarBreakpointMod[],
-   spacers = [] as DataToolbarSpacer[],
-   itemSpacers = [] as DataToolbarSpacer[],
    className,
    variant,
    children,
@@ -46,8 +36,6 @@ export const DataToolbarGroup: React.FunctionComponent<DataToolbarGroupProps> = 
         styles.dataToolbarGroup,
         variant && getModifier(styles, variant),
         formatBreakpointMods(breakpointMods, styles),
-        formatSpacers(itemSpacers, 'pf-m-space-items'),
-        formatSpacers(spacers),
         className)}
       {...props}
     >

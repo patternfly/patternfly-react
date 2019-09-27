@@ -2,12 +2,12 @@
 title: 'DataToolbar'
 cssPrefix: 'pf-c-data-toolbar'
 typescript: true
-propComponents: ['DataToolbar', 'DataToolbarContent', 'DataToolbarItem', 'DataToolbarGroup', 'DataToolbarToggleGroup', 'DataToolbarBreakpointMod', 'DataToolbarSpacer']
+propComponents: ['DataToolbar', 'DataToolbarContent', 'DataToolbarItem', 'DataToolbarGroup', 'DataToolbarToggleGroup', 'DataToolbarBreakpointMod', 'DataToolbarFilter', 'DataToolbarChip']
 section: 'experimental'
 stage: 'early'
 ---
 
-import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup } from '@patternfly/react-core/dist/esm/experimental';
+import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup, DataToolbarFilter } from '@patternfly/react-core/dist/esm/experimental';
 import { Alert, Button, InputGroup, TextInput, Select, SelectOption } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 import '@patternfly/react-styles/css/components/Divider/divider';
@@ -57,34 +57,37 @@ class DataToolbarSpacers extends React.Component {
   
   render() {
     const firstSpacers = [
-      {spacerSize: 'none'}
+      {modifier: 'spacer-none'}
     ];
     const secondSpacers = [
-      {spacerSize: 'sm'}
+      {modifier: 'spacer-sm'}
     ];
     const thirdSpacers = [
-      {spacerSize: 'md'}
+      {modifier: 'spacer-md'}
     ];
     const fourthSpacers = [
-      {spacerSize: 'lg'}
+      {modifier: 'spacer-lg'}
     ];
     const fifthSpacers = [
-      {spacerSize: 'none'},
-      {spacerSize: 'sm', breakpoint: 'md'},
-      {spacerSize: 'md', breakpoint: 'lg'},
-      {spacerSize: 'lg', breakpoint: 'xl'}
+      {modifier: 'spacer-none'},
+      {modifier: 'spacer-sm', breakpoint: 'md'},
+      {modifier: 'spacer-md', breakpoint: 'lg'},
+      {modifier: 'spacer-lg', breakpoint: 'xl'}
     ];
+    const spaceItems = [
+      {modifier: 'space-items-lg'}
+     ];
     
     const items = <React.Fragment>
-          <DataToolbarItem spacers={firstSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
-          <DataToolbarItem spacers={secondSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
-          <DataToolbarItem spacers={thirdSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
-          <DataToolbarItem spacers={fourthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
+          <DataToolbarItem breakpointMods={firstSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
+          <DataToolbarItem breakpointMods={secondSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
+          <DataToolbarItem breakpointMods={thirdSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
+          <DataToolbarItem breakpointMods={fourthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
           <DataToolbarItem variant="separator"></DataToolbarItem>
-          <DataToolbarItem spacers={fifthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
+          <DataToolbarItem breakpointMods={fifthSpacers}><Button variant="secondary">Action</Button></DataToolbarItem>
           <DataToolbarItem><Button variant="primary">Action</Button></DataToolbarItem>
           <DataToolbarItem variant="separator"></DataToolbarItem>
-          <DataToolbarGroup itemSpacers={[{spacerSize: 'lg'}]}>
+          <DataToolbarGroup breakpointMods={spaceItems}>
             <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
             <DataToolbarItem><Button variant="secondary">Action</Button></DataToolbarItem>
           </DataToolbarGroup>
@@ -175,7 +178,6 @@ class DataToolbarGroupTypes extends React.Component {
         thirdIsExpanded: false
       });
     };
-    
   }
   
   render() {
@@ -363,8 +365,8 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
           </Button>
         </InputGroup>
       </DataToolbarItem>
-      <DataToolbarGroup>
-          <DataToolbarItem spacers={[{spacerSize: 'none'}]}>
+      <DataToolbarGroup variant="filter-group">
+          <DataToolbarItem>
             <Select
               variant={SelectVariant.single}
               aria-label="Select Input"
@@ -556,6 +558,228 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
 }
 ```
 
+## Data toolbar with chip groups
+```js
+import React from 'react';
+import { 
+    DataToolbar,
+    DataToolbarItem,
+    DataToolbarContent,
+    DataToolbarFilter,
+    DataToolbarToggleGroup,
+    DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
+import { 
+    Button, 
+    InputGroup,
+    Select,
+    SelectOption,
+    Dropdown, 
+    DropdownItem, 
+    DropdownSeparator, 
+    KebabToggle } from '@patternfly/react-core';
+import { TextInput, SearchIcon, FilterIcon, EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
+
+class DataToolbarWithChipGroupExample extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isExpanded: false,
+      inputValue: "",
+      statusIsExpanded: false,
+      riskIsExpanded: false,
+      filters: {
+        risk: ['Low'],
+        status: ['New', 'Pending'],
+      },
+      kebabIsOpen: false
+    };
+    
+    this.toggleIsExpanded = () => {
+      this.setState((prevState) => ({
+        isExpanded: !prevState.isExpanded
+      }));
+    };
+    
+    this.closeExpandableContent = () => {
+      this.setState(() => ({
+        isExpanded: false
+      }));
+    };
+    
+    this.onInputChange = (newValue) => {
+      this.setState({inputValue: newValue});
+    };
+
+    this.onSelect = (type, event, selection) => {
+      const checked = event.target.checked;
+      this.setState((prevState) => {
+        const prevSelections = prevState.filters[type];
+        return {
+          filters: {
+            ...prevState.filters,
+            [type]: checked
+              ? [...prevSelections, selection]
+              : prevSelections.filter(value => value !== selection)
+          }
+        };
+      });
+    };
+
+    this.onStatusSelect = (event, selection) => {
+      this.onSelect('status', event, selection);
+    };
+
+    this.onRiskSelect = (event, selection) => {
+      this.onSelect('risk', event, selection);
+    };
+    
+    this.onDelete = (type = "", id = "") => {
+      if (type) {
+        this.setState((prevState) => {
+          prevState.filters[type.toLowerCase()] = prevState.filters[type.toLowerCase()].filter(s => s !== id);
+          return {
+            filters: prevState.filters,
+          }
+        });
+      } else {
+        this.setState({
+          filters: {
+            risk: [],
+            status: [],
+          }
+        })
+      }
+    };
+    
+    this.onStatusToggle = isExpanded => {
+      this.setState({
+        statusIsExpanded: isExpanded
+      });
+    };
+    
+    this.onRiskToggle = isExpanded => {
+      this.setState({
+        riskIsExpanded: isExpanded
+      });
+    };
+    
+    this.onKebabToggle = isOpen => {
+      this.setState({
+        kebabIsOpen: isOpen
+      });
+    };
+    
+  }
+  
+  componentDidMount() {
+    window.addEventListener('resize', this.closeExpandableContent);
+  }
+  
+  render() {
+    const { 
+      inputValue, 
+      filters,
+      statusIsExpanded, 
+      riskIsExpanded, 
+      kebabIsOpen,
+    } = this.state;
+
+    const statusMenuItems = [
+      <SelectOption key="statusNew" value="New" />,
+      <SelectOption key="statusPending" value="Pending" />,
+      <SelectOption key="statusRunning" value="Running" />,
+      <SelectOption key="statusCancelled" value="Cancelled" />
+    ];
+
+    const riskMenuItems = [
+      <SelectOption key="riskLow" value="Low" />,
+      <SelectOption key="riskMedium" value="Medium" />,
+      <SelectOption key="riskHigh" value="High" />
+    ];
+
+    const toggleGroupItems = <React.Fragment>
+      <DataToolbarItem>
+        <InputGroup>
+          <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
+          <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
+            <SearchIcon />
+          </Button>
+        </InputGroup>
+      </DataToolbarItem>
+      <DataToolbarGroup variant="filter-group">
+          <DataToolbarFilter chips={filters.status} deleteChip={this.onDelete} categoryName="Status">
+            <Select
+              variant={SelectVariant.checkbox}
+              aria-label="Status"
+              onToggle={this.onStatusToggle}
+              onSelect={this.onStatusSelect}
+              selections={filters.status}
+              isExpanded={statusIsExpanded}
+              placeholderText="Status"
+            >
+              {statusMenuItems}
+            </Select>
+          </DataToolbarFilter>
+          <DataToolbarFilter chips={filters.risk} deleteChip={this.onDelete} categoryName="Risk">
+            <Select
+              variant={SelectVariant.checkbox}
+              aria-label="Risk"
+              onToggle={this.onRiskToggle}
+              onSelect={this.onRiskSelect}
+              selections={filters.risk}
+              isExpanded={riskIsExpanded}
+              placeholderText="Risk"
+            >
+              {riskMenuItems}
+            </Select>
+          </DataToolbarFilter>
+      </DataToolbarGroup>
+    </React.Fragment>;
+    
+    const dropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownSeparator key="separator" />,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
+
+    const toolbarItems = <React.Fragment>
+      <DataToolbarToggleGroup toggleIcon={<FilterIcon />} 
+        breakpoint='xl'>
+        {toggleGroupItems}
+      </DataToolbarToggleGroup>
+      <DataToolbarGroup variant="icon-button-group">
+        <DataToolbarItem><Button variant="plain"><EditIcon /></Button></DataToolbarItem>
+        <DataToolbarItem><Button variant="plain"><CloneIcon /></Button></DataToolbarItem>
+        <DataToolbarItem><Button variant="plain"><SyncIcon /></Button></DataToolbarItem>
+      </DataToolbarGroup>
+      <DataToolbarItem>
+        <Dropdown
+          toggle={<KebabToggle onToggle={this.onKebabToggle} />}
+          isOpen={kebabIsOpen}
+          isPlain
+          dropdownItems={dropdownItems}
+        />
+      </DataToolbarItem>
+    </React.Fragment>;
+    
+    return <DataToolbar id="data-toolbar-with-chip-groups" clearAllFilters={this.onDelete} showClearFiltersButton={ filters.risk.length !== 0 || filters.status.length !== 0 }><DataToolbarContent>{toolbarItems}</DataToolbarContent></DataToolbar>;
+  }
+}
+
+```
+
 ## Data toolbar group stacked
 ```js
 import React from 'react';
@@ -570,7 +794,7 @@ class DataToolbarStacked extends React.Component {
     // toggle group - three option menus with labels, two icon buttons, Kebab menu - right aligned
     // pagination - right aligned
     this.resourceOptions = [
-      { value: 'All', disabled: false },
+      { value: 'All resources', disabled: false },
       { value: 'Deployment', disabled: false },
       { value: 'Pod', disabled: false },
     ];
@@ -583,8 +807,8 @@ class DataToolbarStacked extends React.Component {
     ];
     
     this.typeOptions = [
-      { value: 'Any', disabled: false, isPlaceholder: true },
-      { value: 'No Type', disabled: false },
+      { value: 'Any type', disabled: false, isPlaceholder: true },
+      { value: 'No type', disabled: false },
     ];
     
     this.state = {
@@ -797,4 +1021,3 @@ class DataToolbarStacked extends React.Component {
 }
 
 ```
-
