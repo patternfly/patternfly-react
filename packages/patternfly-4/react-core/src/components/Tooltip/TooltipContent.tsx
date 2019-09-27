@@ -7,10 +7,15 @@ export interface TooltipContentProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   /** PopoverContent content */
   children: React.ReactNode;
+    /** Flag to align text to the left */
+  isLeftAligned?: boolean;
 }
 
-export const TooltipContent = ({ className, children, ...props }: TooltipContentProps) => (
-  <div className={css(styles.tooltipContent, className)} {...props}>
+export const TooltipContent = ({ className, children, isLeftAligned, ...props }: TooltipContentProps) => (
+  <div
+    className={css(styles.tooltipContent, isLeftAligned && styles.modifiers.textAlignLeft, className)}
+    {...props}
+  >
     {children}
   </div>
 );

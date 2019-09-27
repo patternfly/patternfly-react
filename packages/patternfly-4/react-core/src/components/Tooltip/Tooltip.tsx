@@ -61,6 +61,8 @@ export interface TooltipProps {
   position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** Tooltip trigger: click, mouseenter, focus, manual  */
   trigger?: string;
+  /** Flag to indicate that the text content is left aligned */
+  isTextLeftAligned?: boolean;
   /** value for visibility when trigger is 'manual' */
   isVisible?: boolean;
   /** z-index of the tooltip */
@@ -120,6 +122,7 @@ export class Tooltip extends React.Component<TooltipProps> {
     const {
       position,
       trigger,
+      isTextLeftAligned,
       isVisible,
       enableFlip,
       children,
@@ -144,7 +147,7 @@ export class Tooltip extends React.Component<TooltipProps> {
         role="tooltip"
         {...rest}
       >
-        <TooltipContent>{bodyContent}</TooltipContent>
+        <TooltipContent isLeftAligned={isTextLeftAligned}>{bodyContent}</TooltipContent>
       </div>
     );
     return (
@@ -163,6 +166,7 @@ export class Tooltip extends React.Component<TooltipProps> {
         performance
         placement={position}
         trigger={trigger}
+        isTextLeftAligned={isTextLeftAligned}
         delay={[entryDelay, exitDelay]}
         distance={distance}
         flip={enableFlip}
