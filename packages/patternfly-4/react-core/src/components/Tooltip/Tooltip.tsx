@@ -77,6 +77,7 @@ export class Tooltip extends React.Component<TooltipProps> {
     position: 'top',
     trigger: 'mouseenter focus',
     isVisible: false,
+    isTextLeftAligned: false,
     enableFlip: true,
     className: '',
     entryDelay: 500,
