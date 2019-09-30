@@ -55,7 +55,6 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
     this.state = {
       container: undefined
     };
-
     if (props.brandImageSrc && !props.brandImageAlt) {
       // tslint:disable-next-line:no-console
       console.error('AboutModal:', 'brandImageAlt is required when a brandImageSrc is specified');
