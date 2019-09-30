@@ -260,6 +260,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
                     tabContentId={tabContentId}
                     tabContentRef={tabContentRef}
                     eventKey={eventKey}
+                    title={title}
                     {...rest}
                   >
                     {title}
