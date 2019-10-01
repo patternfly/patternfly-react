@@ -1,5 +1,5 @@
 ---
-title: 'TopologyView'
+title: 'Topology view'
 typescript: true
 ---
 
@@ -12,7 +12,7 @@ import { ViewToolbar } from './ViewToolbar';
 import { ItemDetails } from './ItemDetails';
 import './topology-example.scss';
 
-## TopologyView - Default Controls
+## Topology view - Default Controls
 
 ```js
 import React from 'react';
@@ -52,7 +52,7 @@ class DefaultTopologyView extends React.Component {
 }
 ```
 
-## TopologyView - Selected Controls
+## Topology view - Selected Controls
 
 ```js
 import React from 'react';
@@ -89,7 +89,7 @@ class SelectedTopologyView extends React.Component {
 }
 ```
 
-## TopologyView - Custom Controls
+## Topology view - Custom Controls
 
 ```js
 import React from 'react';
