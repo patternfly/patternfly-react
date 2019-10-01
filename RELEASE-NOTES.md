@@ -11,51 +11,69 @@ Packages released:
 - [@patternfly/react-icons@3.14.7](https://www.npmjs.com/package/@patternfly/react-icons/v/3.14.7)
 
 ## Charts
-- Updated Victory to 30.0.0 (BREAKING CHANGE) ([#2883](https://github.com/patternfly/patternfly-react/pull/2883))
+- (BREAKING CHANGE) Updated Victory to 30.0.0
+	- Replace ```labels={(d) => `x: ${d.x}`}``` with ```labels={({ datum }) => `x: ${datum.x}`}```
+	- **ChartPie:**
+		- Removed `pieHeight` & `pieWidth` props -- use `padding` prop
+		- Adjusted padding from 8px to 20px
+	- **ChartDonut:**
+		- Removed `donutHeight` & `donutWidth`  props -- use `padding` prop
+		- Adjusted padding from 8px to 20px
+	- **ChartDonutUtilization:**
+		- Removed `donutHeight` & `donutWidth` props -- use `padding` prop
+		- Adjusted padding from 8px to 20px
+	- **ChartDonutThreshold:**
+		- Removed `donutHeight` & `donutWidth` props -- use `padding` prop
+		- Adjusted padding from 8px to 20px
+	- **ChartBullet:**
+		- Removed `bulletHeight` & `bulletWidth`  props -- use `bulletSize` prop
+	- **ChartContainer:**
+		- Renamed the `VictoryContainer` CSS selector as `pf-c-chart` for specificity
+	- See [#2883](https://github.com/patternfly/patternfly-react/pull/2883) for additional details
 - Added missing style and responsive props to ChartVoronoiContainer ([#2977](https://github.com/patternfly/patternfly-react/pull/2977))
 - Updated chart tutorial paths ([#2962](https://github.com/patternfly/patternfly-react/pull/2962))
 - Eliminate the "missing key prop" warning seen in the browser console for ChartPie ([#2943](https://github.com/patternfly/patternfly-react/pull/2943))
 - Slightly modified how chart containers are cloned and added examples. This ensures charts can be wrapped with the Tippy tooltip component as an alternate way of providing custom tooltips. ([#3048](https://github.com/patternfly/patternfly-react/pull/3048))
 - **Area Chart:** 
-	- Added stacked area chart demo and test ([#2896](https://github.com/patternfly/patternfly-react/pull/2896))
-	- Added Horizontal indicator example ([#2796](https://github.com/patternfly/patternfly-react/pull/2796)) 
+  - Added stacked area chart demo and test ([#2896](https://github.com/patternfly/patternfly-react/pull/2896))
+  - Added Horizontal indicator example ([#2796](https://github.com/patternfly/patternfly-react/pull/2796)) 
 - **Sparkline:** Added line border to ChartArea and move sparkline ([#2887](https://github.com/patternfly/patternfly-react/pull/2887))
 - **Donut chart:** Added simple fix for the donut chart tutorial link ([#2940](https://github.com/patternfly/patternfly-react/pull/2940))
 
 ## Components
 - **App launcher:** Made dropdown/app launcher work better with router components ([#3011](https://github.com/patternfly/patternfly-react/pull/3011))
 - **Button:** 
-	- Added control variant to button ([#2983](https://github.com/patternfly/patternfly-react/pull/2983))
-	- Set the disable modifier when component is not button ([#2683](https://github.com/patternfly/patternfly-react/pull/2683))
+  - Added control variant to button ([#2983](https://github.com/patternfly/patternfly-react/pull/2983))
+  - Set the disable modifier when component is not button ([#2683](https://github.com/patternfly/patternfly-react/pull/2683))
 - **Dropdown:** Disabled button now only applies disabled attribute ([#2989](https://github.com/patternfly/patternfly-react/pull/2989))
 - **Chip group:** 
-	- Allowed chip group toolbar item to handle single chip ([#2882](https://github.com/patternfly/patternfly-react/pull/2882))
-	- ChipGroupToolbarItem component was not propagating className despite having this prop in documentation and TS. This is a fix to ChipGroupToolbarItem className ([#2881](https://github.com/patternfly/patternfly-react/pull/2881))
-	- Allowed variable number of chips to be displayed ([#2878](https://github.com/patternfly/patternfly-react/pull/2878))
+  - Allowed chip group toolbar item to handle single chip ([#2882](https://github.com/patternfly/patternfly-react/pull/2882))
+  - ChipGroupToolbarItem component was not propagating className despite having this prop in documentation and TS. This is a fix to ChipGroupToolbarItem className ([#2881](https://github.com/patternfly/patternfly-react/pull/2881))
+  - Allowed variable number of chips to be displayed ([#2878](https://github.com/patternfly/patternfly-react/pull/2878))
 - **Copy to clipboard:** 
-	- Added prop for expanded by default ([#2923](https://github.com/patternfly/patternfly-react/pull/2923))
-	- Added an example of copy clipboard with array of objects ([#2916](https://github.com/patternfly/patternfly-react/pull/2916))
+  - Added prop for expanded by default ([#2923](https://github.com/patternfly/patternfly-react/pull/2923))
+  - Added an example of copy clipboard with array of objects ([#2916](https://github.com/patternfly/patternfly-react/pull/2916))
 - **Date and time picker component:** Added Date and time picker component ([#1420](https://github.com/patternfly/patternfly-react/pull/1420))
 - **Data toolbar:** 
-	- Added aria-haspopup to the toggle group ([#3012](https://github.com/patternfly/patternfly-react/pull/3012))
-	- Added chip groups to toolbar ([#2888](https://github.com/patternfly/patternfly-react/issues/2888))
+  - Added aria-haspopup to the toggle group ([#3012](https://github.com/patternfly/patternfly-react/pull/3012))
+  - Added chip groups to toolbar ([#2888](https://github.com/patternfly/patternfly-react/issues/2888))
 - **Dropdown split button:** Added 3rd state to split button ([#2842](https://github.com/patternfly/patternfly-react/pull/2842))
 - **Empty state:** Made it possible to support primary and icon as div elements ([#2957](https://github.com/patternfly/patternfly-react/pull/2957))
 - **Expandable:** The controlled version of Expandable was not reacting to changes made to the isExpanded prop after initial creation. This PR fixed the issue. ([#2955](https://github.com/patternfly/patternfly-react/pull/2955))
 - **Flex:** Added support for flex layout, tests, etc. ([#2985](https://github.com/patternfly/patternfly-react/pull/2985))
 - **LoginPage:** Add attributes to the submit button ([#2682](https://github.com/patternfly/patternfly-react/pull/2682))
 - **Modal:**
-	- Simplified disabling of FocusTrap ([#2862](https://github.com/patternfly/patternfly-react/pull/2862))
-	- Changed the cancel button variant to link ([#2979](https://github.com/patternfly/patternfly-react/pull/2979))
+  - Simplified disabling of FocusTrap ([#2862](https://github.com/patternfly/patternfly-react/pull/2862))
+  - Changed the cancel button variant to link ([#2979](https://github.com/patternfly/patternfly-react/pull/2979))
 - **Nav:** HorizontalNavMenuItem: Fixed onItemClick PropType  ([#2984](https://github.com/patternfly/patternfly-react/pull/2984))
 - **Overflow:** Introduced overflow component ([#2819](https://github.com/patternfly/patternfly-react/issues/2819))
 - **Pagination:** 
-	- Added OUIA compatibility to Pagination component ([#2960](https://github.com/patternfly/patternfly-react/pull/2960))
-	- Fixed styling discrepancy with HTML version ([#2904](https://github.com/patternfly/patternfly-react/pull/2904))
+  - Added OUIA compatibility to Pagination component ([#2960](https://github.com/patternfly/patternfly-react/pull/2960))
+  - Fixed styling discrepancy with HTML version ([#2904](https://github.com/patternfly/patternfly-react/pull/2904))
 - **Select:** 
-	 - Added a maximum height property to select menu ([#2946](https://github.com/patternfly/patternfly-react/pull/2946))
-	 - Displayed selections data properly ([#2848](https://github.com/patternfly/patternfly-react/pull/2848))
-	 - Added props for hard coded strings ([#2993](https://github.com/patternfly/patternfly-react/pull/2993))
+  - Added a maximum height property to select menu ([#2946](https://github.com/patternfly/patternfly-react/pull/2946))
+  - Displayed selections data properly ([#2848](https://github.com/patternfly/patternfly-react/pull/2848))
+  - Added props for hard coded strings ([#2993](https://github.com/patternfly/patternfly-react/pull/2993))
 - **Switch:** Backward compatibility in case labelOff was not set, fixed the conditionals ([#2816](https://github.com/patternfly/patternfly-react/pull/2816))
 - **Tab:** Added two new props: mountOnEnter and unmountOnExit ([#2902](https://github.com/patternfly/patternfly-react/pull/2902))
 - **Wizard:** Added default function to onClose prop ([#2863](https://github.com/patternfly/patternfly-react/pull/2863))
@@ -96,8 +114,8 @@ Packages released:
 - **ClipboardCopy:** Updated if children change ([#2849](https://github.com/patternfly/patternfly-react/pull/2849))
 - **Drawer:** Expose DrawerContent components and remove panelContent prop ([#2733](https://github.com/patternfly/patternfly-react/pull/2733))
 - **Dropdown:**
-	- Added support for dropdown with primary button toggle ([#2857](https://github.com/patternfly/patternfly-react/pull/2857))
-	- Allow custom dropdown items ([#2890](https://github.com/patternfly/patternfly-react/pull/2890))
+  - Added support for dropdown with primary button toggle ([#2857](https://github.com/patternfly/patternfly-react/pull/2857))
+  - Allow custom dropdown items ([#2890](https://github.com/patternfly/patternfly-react/pull/2890))
 - **EmptyState:** Fixed a bug where the correct size modifier wasn't being passed ([#2692](https://github.com/patternfly/patternfly-react/pull/2692))
 - **Expandable:** Support uncontrolled expandable ([#2649](https://github.com/patternfly/patternfly-react/pull/2649))
 - **FormGroup:** Fixed a bug where className was not being propogated for non-inline forms ([#2864](https://github.com/patternfly/patternfly-react/pull/2864))
@@ -250,8 +268,8 @@ Packages released:
 - **Accordion:** Added prop to heading level of parent component ([#2290](https://github.com/patternfly/patternfly-react/pull/2290))
 - **Application launcher:** Allowed custom icon for application launcher toggle ([#2492](https://github.com/patternfly/patternfly-react/pull/2492))
 - **Badge:**
-	- Temporarily disabled problematic badges ([#2530](https://github.com/patternfly/patternfly-react/pull/2530))
-	- Added space between badges in the examples ([#2556](https://github.com/patternfly/patternfly-react/pull/2556))
+  - Temporarily disabled problematic badges ([#2530](https://github.com/patternfly/patternfly-react/pull/2530))
+  - Added space between badges in the examples ([#2556](https://github.com/patternfly/patternfly-react/pull/2556))
 - **Breadcrumb switcher:** Fixed Autocomplete camelCase ([#2457](https://github.com/patternfly/patternfly-react/pull/2457))
 - **Datalist:** Added hidden and visible breakpoints ([#2251](https://github.com/patternfly/patternfly-react/pull/2251))
 - **Dropdown:** Provided option to not autofocus on first item ([#2473](https://github.com/patternfly/patternfly-react/pull/2473))
@@ -262,16 +280,16 @@ Packages released:
 - **Modal:** Modal now traps screen reader focus ([#2406](https://github.com/patternfly/patternfly-react/pull/2406))
 - **Options menu:** Updated examples to trigger select on the whole item ([#2513](https://github.com/patternfly/patternfly-react/pull/2513))
 - **Pagination:**
-	- Dropdown closes on click outside of menu area ([#2235](https://github.com/patternfly/patternfly-react/pull/2235))
-	- Added ability to allow users to enter numbers into the input field ([#2417](https://github.com/patternfly/patternfly-react/pull/2417))
+  - Dropdown closes on click outside of menu area ([#2235](https://github.com/patternfly/patternfly-react/pull/2235))
+  - Added ability to allow users to enter numbers into the input field ([#2417](https://github.com/patternfly/patternfly-react/pull/2417))
 - **Select:**
-	- Removed ariaLabel from grouped checkbox select ([#2456](https://github.com/patternfly/patternfly-react/pull/2456))
-	- Added optional display via children to option ([#2419](https://github.com/patternfly/patternfly-react/pull/2419))
-	- Updated typeahead filtered list when children change ([#2518](https://github.com/patternfly/patternfly-react/pull/2518))
+  - Removed ariaLabel from grouped checkbox select ([#2456](https://github.com/patternfly/patternfly-react/pull/2456))
+  - Added optional display via children to option ([#2419](https://github.com/patternfly/patternfly-react/pull/2419))
+  - Updated typeahead filtered list when children change ([#2518](https://github.com/patternfly/patternfly-react/pull/2518))
 - **Switch:** Added OUIA compatibility to Switch ([#2304](https://github.com/patternfly/patternfly-react/pull/2304))
 - **Tabs:**
-	- Allowed eventKey to accept a string ([#2493](https://github.com/patternfly/patternfly-react/pull/2493))
-	- Implemented overflow styles for secondary tabs ([#2512](https://github.com/patternfly/patternfly-react/pull/2512))
+  - Allowed eventKey to accept a string ([#2493](https://github.com/patternfly/patternfly-react/pull/2493))
+  - Implemented overflow styles for secondary tabs ([#2512](https://github.com/patternfly/patternfly-react/pull/2512))
 - **Tooltip:** Added support for aria prop from Tippy library ([#2539](https://github.com/patternfly/patternfly-react/pull/2539))
 ## TypeScript conversion
 - Bullseye ([#2427](https://github.com/patternfly/patternfly-react/pull/2427))
@@ -292,11 +310,11 @@ Packages released:
 - Updated link to react-tokens page in the readme ([#2453](https://github.com/patternfly/patternfly-react/pull/2453))
 ## Other
 - **Build:**
-	- Added PR comment on publishing to NPM ([#2433](https://github.com/patternfly/patternfly-react/pull/2433))
-	- Added Windows support ([#2471](https://github.com/patternfly/patternfly-react/pull/2471))
+  - Added PR comment on publishing to NPM ([#2433](https://github.com/patternfly/patternfly-react/pull/2433))
+  - Added Windows support ([#2471](https://github.com/patternfly/patternfly-react/pull/2471))
 - **Chore:**
-	- Removed tippy-react dependency ([#2505](https://github.com/patternfly/patternfly-react/pull/2505))
-	- Updated react-docs to use Red Hat font ([#2563](https://github.com/patternfly/patternfly-react/pull/2563))
+  - Removed tippy-react dependency ([#2505](https://github.com/patternfly/patternfly-react/pull/2505))
+  - Updated react-docs to use Red Hat font ([#2563](https://github.com/patternfly/patternfly-react/pull/2563))
 - **Unit tests:** Fixed keyHandler tests in util.test.js ([#2489](https://github.com/patternfly/patternfly-react/pull/2489))
 
 # 2019.04 release notes (2019-07-02)
@@ -329,15 +347,15 @@ Packages released:
 - **Page:** Added page section main nav type variant ([#2268](https://github.com/patternfly/patternfly-react/pull/2268))
 - **Radio:** Fixed warning from undefined starting params ([#2292](https://github.com/patternfly/patternfly-react/pull/2292))
 - **Form:**
-	- Updated text in form component ([#2352](https://github.com/patternfly/patternfly-react/pull/2352))
-	- Wrapped form label text in new element ([#2322](https://github.com/patternfly/patternfly-react/pull/2332))
+  - Updated text in form component ([#2352](https://github.com/patternfly/patternfly-react/pull/2352))
+  - Wrapped form label text in new element ([#2322](https://github.com/patternfly/patternfly-react/pull/2332))
 - **Grid:**
-	- Removed size props from {...props} ([#2404](https://github.com/patternfly/patternfly-react/pull/2404))
-	- Updated grid layout to support new 2xl breakpoint ([#2305](https://github.com/patternfly/patternfly-react/pull/2305))
+  - Removed size props from {...props} ([#2404](https://github.com/patternfly/patternfly-react/pull/2404))
+  - Updated grid layout to support new 2xl breakpoint ([#2305](https://github.com/patternfly/patternfly-react/pull/2305))
 - **Tabs:**
-	- Fixed TypeScript errors and revert `TabContainer` to a component ([#2402](https://github.com/patternfly/patternfly-react/pull/2402))
-	- Remove comment from code ([#2351](https://github.com/patternfly/patternfly-react/pull/2351))
-	- Made variant prop optional ([#2348](https://github.com/patternfly/patternfly-react/pull/2348))
+  - Fixed TypeScript errors and revert `TabContainer` to a component ([#2402](https://github.com/patternfly/patternfly-react/pull/2402))
+  - Remove comment from code ([#2351](https://github.com/patternfly/patternfly-react/pull/2351))
+  - Made variant prop optional ([#2348](https://github.com/patternfly/patternfly-react/pull/2348))
 ## TypeScript conversion
 - Copy to clipboard ([#2131](https://github.com/patternfly/patternfly-react/pull/2131))
 - Progress ([#2307](https://github.com/patternfly/patternfly-react/pull/2307))
@@ -403,20 +421,20 @@ Packages released:
 - **Card:** Added card is-hoverable modifier prop ([#1852](https://github.com/patternfly/patternfly-react/pull/1852))
 - **Checkbox:** Set checked value correctly ([#1929](https://github.com/patternfly/patternfly-react/pull/1929))
 - **Copy to Clipboard:** Fixed docs ([#1821](https://github.com/patternfly/patternfly-react/pull/1821))
-	- Changed doc text ([#1823](https://github.com/patternfly/patternfly-react/pull/1823))
-	- Removed textarea from clipboard copy ([#1840](https://github.com/patternfly/patternfly-react/pull/1840))
+  - Changed doc text ([#1823](https://github.com/patternfly/patternfly-react/pull/1823))
+  - Removed textarea from clipboard copy ([#1840](https://github.com/patternfly/patternfly-react/pull/1840))
 - **Dropdown:** Renamed toggle export ([#1861](https://github.com/patternfly/patternfly-react/pull/1861))
 - **Grid:** Added missing props in d.ts ([#1749](https://github.com/patternfly/patternfly-react/pull/1749))
 - **Icons:** Added font awesome brands icons([#1669](https://github.com/patternfly/patternfly-react/pull/1669))
 - **Popover:**
-	- Updated Popover max width. We made maxWidth optional ([#2110](https://github.com/patternfly/patternfly-react/pull/2110))
-	- Enabled highlighting and selecting text in popover ([#1757](https://github.com/patternfly/patternfly-react/pull/1757))
-	- Handled on enter focusing when options are disabled ([#2025](https://github.com/patternfly/patternfly-react/pull/2025))
-	- Changed PopoverPosition from a const to an enum. This allows users to specify their choice of a string or object property for the position property value on Popover component. Also adds a test that exercises this method to ensure it doesn't regress going forward ([#2113](https://github.com/patternfly/patternfly-react/pull/2113))
+  - Updated Popover max width. We made maxWidth optional ([#2110](https://github.com/patternfly/patternfly-react/pull/2110))
+  - Enabled highlighting and selecting text in popover ([#1757](https://github.com/patternfly/patternfly-react/pull/1757))
+  - Handled on enter focusing when options are disabled ([#2025](https://github.com/patternfly/patternfly-react/pull/2025))
+  - Changed PopoverPosition from a const to an enum. This allows users to specify their choice of a string or object property for the position property value on Popover component. Also adds a test that exercises this method to ensure it doesn't regress going forward ([#2113](https://github.com/patternfly/patternfly-react/pull/2113))
 - **Select:**
-	- Updated the SelectProps interface to avoid a type error when importing react-core into a TypeScript application. I also removed some unnecessary code in a couple of the demo's I followed recently. Copying the code as is was creating an error. I think they were safe deletions but worth double checking ([#2107](https://github.com/patternfly/patternfly-react/pull/2107))
-	- Fixed ListGroupItem import ([#1867](https://github.com/patternfly/patternfly-react/pull/1867))
-	- Added user personalized icon in Select component ([#1768](https://github.com/patternfly/patternfly-react/pull/1768))
+  - Updated the SelectProps interface to avoid a type error when importing react-core into a TypeScript application. I also removed some unnecessary code in a couple of the demo's I followed recently. Copying the code as is was creating an error. I think they were safe deletions but worth double checking ([#2107](https://github.com/patternfly/patternfly-react/pull/2107))
+  - Fixed ListGroupItem import ([#1867](https://github.com/patternfly/patternfly-react/pull/1867))
+  - Added user personalized icon in Select component ([#1768](https://github.com/patternfly/patternfly-react/pull/1768))
 ## Charts [@patternfly/react-charts@3.6.4](https://www.npmjs.com/package/@patternfly/react-charts/v/3.6.4)
 - Introduced Donut utilization chart and thresholds ([#2064](https://github.com/patternfly/patternfly-react/pull/2064))
 - Added example styles ([#1889](https://github.com/patternfly/patternfly-react/pull/1889))
