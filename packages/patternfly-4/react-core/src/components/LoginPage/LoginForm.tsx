@@ -100,7 +100,7 @@ export const LoginForm: React.FunctionComponent<LoginFormProps> = ({
         <Checkbox
           id="pf-login-remember-me-id"
           label={rememberMeLabel}
-          checked={isRememberMeChecked}
+          isChecked={isRememberMeChecked}
           onChange={onChangeRememberMe}
         />
       </FormGroup>
