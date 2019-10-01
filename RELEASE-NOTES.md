@@ -4,13 +4,11 @@
 -
 
  ## Charts
-- **Charts:** 
-	 - Updated Victory to 30.0.0 ([#2883](https://github.com/patternfly/patternfly-react/pull/2883))
+	 - Updated Victory to 30.0.0 (BREAKING CHANGE) ([#2883](https://github.com/patternfly/patternfly-react/pull/2883))
 	 - For consistency, we wanted to use React.Fragment. Replaced empty tags with React.Fragment ([#2988](https://github.com/patternfly/patternfly-react/pull/2988))
 	 - Added missing style and responsive props to ChartVoronoiContainer ([#2977](https://github.com/patternfly/patternfly-react/pull/2977))
 	 - Updated chart tutorial paths ([#2962](https://github.com/patternfly/patternfly-react/pull/2962))
 	 - This should help eliminate the "missing key prop" warning seen in the browser console for ChartPie ([#2943](https://github.com/patternfly/patternfly-react/pull/2943))
-	 - Fixed live edit caret color so it is visible ([#2899](https://github.com/patternfly/patternfly-react/pull/2899))
 	 - Slightly modified how chart containers are cloned and added examples. This ensures charts can be wrapped with the Tippy tooltip component as an alternate way of providing custom tooltips. ([#3048](https://github.com/patternfly/patternfly-react/pull/3048))
 
 - **Area chart:** 
@@ -57,8 +55,10 @@
 
 - **LoginPage:** Add attributes to the submit button ([#2682](https://github.com/patternfly/patternfly-react/pull/2682))
 
-- **Modal:** Simplified disabling of FocusTrap ([#2862](https://github.com/patternfly/patternfly-react/pull/2862))
-
+- **Modal:**
+	 - Simplified disabling of FocusTrap ([#2862](https://github.com/patternfly/patternfly-react/pull/2862))
+	 - Changed the cancel button variant to link ([#2979](https://github.com/patternfly/patternfly-react/pull/2979))
+**Nav:** HorizontalNavMenuItem: Fixed onItemClick PropType  ([#2984](https://github.com/patternfly/patternfly-react/pull/2984))
 - **Overflow:** Introduced overflow component ([#2819](https://github.com/patternfly/patternfly-react/issues/2819))
 
 - **Pagination:** 
@@ -73,7 +73,7 @@
 - **Select:** 
 	 - Added a maximum height property to select menu ([#2946](https://github.com/patternfly/patternfly-react/pull/2946))
 	 - Displayed selections data properly ([#2848](https://github.com/patternfly/patternfly-react/pull/2848))
-
+	 - Added props for hard coded strings ([#2993](https://github.com/patternfly/patternfly-react/pull/2993))
 - **Switch:** Backward compatibility in case labelOff was not set, fixed th conditionals ([#2816](https://github.com/patternfly/patternfly-react/pull/2816))
 
 - **Tab:** Added two new props: mountOnEnter and unmountOnExit ([#2902](https://github.com/patternfly/patternfly-react/pull/2902))
@@ -81,23 +81,14 @@
 - **Wizard:** Added default function to onClose prop ([#2863](https://github.com/patternfly/patternfly-react/pull/2863))
 
  ## Docs
+ 
+- Fixed live edit caret color so it is visible ([#2899](https://github.com/patternfly/patternfly-react/pull/2899))
 
-- **Modal:** Changed the cancel button variant to link ([#2979](https://github.com/patternfly/patternfly-react/pull/2979))
-
-- **React-docs:** Improved the documentation for Table component from react-table ([#3016](https://github.com/patternfly/patternfly-react/pull/3016))
+- **Table:** Improved the documentation for Table component from react-table ([#3016](https://github.com/patternfly/patternfly-react/pull/3016))
 
  ## Other
-
- **Build:**
-
-- **Codecov:** Added back codecov ([#3004](https://github.com/patternfly/patternfly-react/pull/3004))
-
-- **Chore:**
-	 - **Fix:** Deps: bumped PF3 deps ([#2985](https://github.com/patternfly/patternfly-react/pull/2895))
-	 - **Nav:** HorizontalNavMenuItem: Fixed onItemClick PropType  ([#2984](https://github.com/patternfly/patternfly-react/pull/2984))
-	 - **React-integration:** Added tables to demos and write unit tests ([#2685](https://github.com/patternfly/patternfly-react/pull/2685))
-	 - **Select:** Added props for hard coded strings ([#2993](https://github.com/patternfly/patternfly-react/pull/2993))
-	 - **Storybook:** Changed addWithInfo to add ([#3003](https://github.com/patternfly/patternfly-react/pull/3003))
+- Bumped PF3 deps including Storybook ([#2985](https://github.com/patternfly/patternfly-react/pull/2895))
+- **React-integration:** Added tables to demos and write unit tests ([#2685](https://github.com/patternfly/patternfly-react/pull/2685))
 
 # 2019.07 release notes (2019-09-10)
 Packages released:
