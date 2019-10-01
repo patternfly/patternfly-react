@@ -12,24 +12,24 @@ Packages released:
 
 ## Charts
 - (BREAKING CHANGE) Updated Victory to 30.0.0
-	- Replace ```labels={(d) => `x: ${d.x}`}``` with ```labels={({ datum }) => `x: ${datum.x}`}```
-	- **ChartPie:**
-		- Removed `pieHeight` & `pieWidth` props -- use `padding` prop
-		- Adjusted padding from 8px to 20px
-	- **ChartDonut:**
-		- Removed `donutHeight` & `donutWidth`  props -- use `padding` prop
-		- Adjusted padding from 8px to 20px
-	- **ChartDonutUtilization:**
-		- Removed `donutHeight` & `donutWidth` props -- use `padding` prop
-		- Adjusted padding from 8px to 20px
-	- **ChartDonutThreshold:**
-		- Removed `donutHeight` & `donutWidth` props -- use `padding` prop
-		- Adjusted padding from 8px to 20px
-	- **ChartBullet:**
-		- Removed `bulletHeight` & `bulletWidth`  props -- use `bulletSize` prop
-	- **ChartContainer:**
-		- Renamed the `VictoryContainer` CSS selector as `pf-c-chart` for specificity
-	- See the [Github tag notes](https://github.com/patternfly/patternfly-react/releases/tag/%40patternfly%2Freact-charts%405.0.0) or [#2883](https://github.com/patternfly/patternfly-react/pull/2883) for additional details
+  - Replace ```labels={(d) => `x: ${d.x}`}``` with ```labels={({ datum }) => `x: ${datum.x}`}```
+  - **ChartPie:**
+    - Removed `pieHeight` & `pieWidth` props -- use `padding` prop
+    - Adjusted padding from 8px to 20px
+  - **ChartDonut:**
+    - Removed `donutHeight` & `donutWidth`  props -- use `padding` prop
+    - Adjusted padding from 8px to 20px
+  - **ChartDonutUtilization:**
+    - Removed `donutHeight` & `donutWidth` props -- use `padding` prop
+    - Adjusted padding from 8px to 20px
+  - **ChartDonutThreshold:**
+    - Removed `donutHeight` & `donutWidth` props -- use `padding` prop
+    - Adjusted padding from 8px to 20px
+  - **ChartBullet:**
+    - Removed `bulletHeight` & `bulletWidth`  props -- use `bulletSize` prop
+  - **ChartContainer:**
+    - Renamed the `VictoryContainer` CSS selector as `pf-c-chart` for specificity
+  - See the [Github tag notes](https://github.com/patternfly/patternfly-react/releases/tag/%40patternfly%2Freact-charts%405.0.0) or [#2883](https://github.com/patternfly/patternfly-react/pull/2883) for additional details
 - Added missing style and responsive props to ChartVoronoiContainer ([#2977](https://github.com/patternfly/patternfly-react/pull/2977))
 - Updated chart tutorial paths ([#2962](https://github.com/patternfly/patternfly-react/pull/2962))
 - Eliminate the "missing key prop" warning seen in the browser console for ChartPie ([#2943](https://github.com/patternfly/patternfly-react/pull/2943))
