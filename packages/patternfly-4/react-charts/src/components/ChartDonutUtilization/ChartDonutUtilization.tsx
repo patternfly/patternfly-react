@@ -544,6 +544,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
       allowTooltip={allowTooltip}
       data={getComputedData()}
       height={height}
+      key="pf-chart-donut-utilization"
       padding={padding}
       standalone={false}
       theme={getThresholdTheme()}
@@ -553,19 +554,19 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   );
 
   // Clone so users can override container props
-  const StandaloneContainer = ({children}: any) => React.cloneElement(containerComponent, {
+  const container = React.cloneElement(containerComponent, {
     desc: ariaDesc,
     height,
     title: ariaTitle,
     width,
     theme,
     ...containerComponent.props
-  }, children);
+  }, [chart]);
 
   return standalone ? (
-    <StandaloneContainer>
-      {chart}
-    </StandaloneContainer>
+    <React.Fragment>
+      {container}
+    </React.Fragment>
   ) : (
     <React.Fragment>
       {chart}

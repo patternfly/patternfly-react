@@ -17,7 +17,7 @@ import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartPie, ChartPieLegendPosition, ChartPieProps } from '../ChartPie';
 import { ChartCommonStyles, ChartDonutStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getPieLabelX, getPieLabelY, getPaddingForSide} from '../ChartUtils';
+import { getPieLabelX, getPieLabelY, getPaddingForSide } from '../ChartUtils';
 
 export enum ChartDonutLabelPosition {
   centroid = 'centroid',
@@ -474,6 +474,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     const subTitleProps = subTitleComponent.props ? subTitleComponent.props : {};
 
     return React.cloneElement(subTitleComponent, {
+      key: 'pf-chart-donut-subtitle',
       style: ChartDonutStyles.label.subTitle,
       text: subTitle,
       textAnchor: subTitlePosition === 'right' ? 'start' : 'middle',
@@ -505,6 +506,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
 
     return React.cloneElement(titleComponent, {
       ...showBoth && { capHeight },
+      key: 'pf-chart-donut-title',
       style: [ChartDonutStyles.label.title, ChartDonutStyles.label.subTitle],
       text: showBoth ? [title, subTitle] : title,
       textAnchor: 'middle',
@@ -531,6 +533,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       allowTooltip={allowTooltip}
       height={height}
       innerRadius={chartInnerRadius > 0 ? chartInnerRadius : 0}
+      key="pf-chart-donut-pie"
       legendPosition={legendPosition}
       padding={padding}
       radius={chartRadius > 0 ? chartRadius : 0}
@@ -542,21 +545,19 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   );
 
   // Clone so users can override container props
-  const StandaloneContainer = ({children}: any) => React.cloneElement(containerComponent, {
+  const container = React.cloneElement(containerComponent, {
     desc: ariaDesc,
     height,
     title: ariaTitle,
     width,
     theme,
     ...containerComponent.props
-  }, children);
+  }, [chart, getTitle(), getSubTitle()]);
 
   return standalone ? (
-    <StandaloneContainer>
-      {chart}
-      {getTitle()}
-      {getSubTitle()}
-    </StandaloneContainer>
+    <React.Fragment>
+      {container}
+    </React.Fragment>
   ) : (
     <React.Fragment>
       {chart}

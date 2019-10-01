@@ -19,6 +19,12 @@ import { getBulletComparativeMeasureTheme } from '../ChartUtils';
  */
 export interface ChartBulletComparativeMeasureProps {
   /**
+   * Specifies the tooltip capability of the container component. A value of true allows the chart to add a
+   * ChartTooltip component to the labelComponent property. This is a shortcut to display tooltips when the labels
+   * property is also provided.
+   */
+  allowTooltip?: boolean;
+  /**
    * The ariaDesc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers.
    *
@@ -158,6 +164,7 @@ export interface ChartBulletComparativeMeasureProps {
 }
 
 export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletComparativeMeasureProps> = ({
+  allowTooltip = true,
   ariaDesc,
   ariaTitle,
   barWidth = ChartBulletStyles.comparativeMeasureWidth,
@@ -216,7 +223,7 @@ export const ChartBulletComparativeMeasure: React.FunctionComponent<ChartBulletC
       domain,
       height,
       horizontal,
-      labelComponent: tooltip,
+      labelComponent: allowTooltip ? tooltip : undefined,
       labels,
       key: `pf-chart-bullet-comparative-measure-${index}`,
       padding,

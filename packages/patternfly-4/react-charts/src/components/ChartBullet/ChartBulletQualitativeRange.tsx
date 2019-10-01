@@ -19,6 +19,12 @@ import { getBulletQualitativeRangeTheme } from '../ChartUtils';
  */
 export interface ChartBulletQualitativeRangeProps {
   /**
+   * Specifies the tooltip capability of the container component. A value of true allows the chart to add a
+   * ChartTooltip component to the labelComponent property. This is a shortcut to display tooltips when the labels
+   * property is also provided.
+   */
+  allowTooltip?: boolean;
+  /**
    * The ariaDesc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers.
    *
@@ -187,6 +193,7 @@ interface ConstrainToVisibleAreaInterface {
 }
 
 export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQualitativeRangeProps> = ({
+  allowTooltip = true,
   ariaDesc,
   ariaTitle,
   barWidth = ChartBulletStyles.qualitativeRangeWidth,
@@ -253,7 +260,7 @@ export const ChartBulletQualitativeRange: React.FunctionComponent<ChartBulletQua
       height,
       horizontal,
       key: `pf-chart-bullet-qualitative-range-${index}`,
-      labelComponent: tooltip,
+      labelComponent: allowTooltip ? tooltip : undefined,
       labels,
       padding,
       standalone: false,

@@ -474,7 +474,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
           endAngle: 360 * (datum[0]._y ? datum[0]._y / 100 : 0),
           height,
           invert,
-          key: `pf-chart-donut-utilization-${index}`,
+          key: `pf-chart-donut-threshold-child-${index}`,
           legendPosition: childProps.legendPosition || legendPosition,
           padding: defaultPadding,
           radius: chartRadius - 14, // Donut utilization radius is threshold radius minus 14px spacing
@@ -496,6 +496,7 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
       constrainToVisibleArea={constrainToVisibleArea}
       data={getComputedData()}
       height={height}
+      key="pf-chart-donut-threshold"
       labels={labels}
       padding={defaultPadding}
       standalone={false}
@@ -506,20 +507,19 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   );
 
   // Clone so users can override container props
-  const StandaloneContainer = ({children}: any) => React.cloneElement(containerComponent, {
+  const container = React.cloneElement(containerComponent, {
     desc: ariaDesc,
     height,
     title: ariaTitle,
     width,
     theme,
     ...containerComponent.props
-  }, children);
+  }, [chart, renderChildren()]);
 
   return standalone ? (
-    <StandaloneContainer>
-      {chart}
-      {renderChildren()}
-    </StandaloneContainer>
+    <React.Fragment>
+      {container}
+    </React.Fragment>
   ) : (
     <React.Fragment>
       {chart}

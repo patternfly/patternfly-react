@@ -17,6 +17,12 @@ import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
  */
 export interface ChartBulletComparativeErrorMeasureProps {
   /**
+   * Specifies the tooltip capability of the container component. A value of true allows the chart to add a
+   * ChartTooltip component to the labelComponent property. This is a shortcut to display tooltips when the labels
+   * property is also provided.
+   */
+  allowTooltip?: boolean;
+  /**
    * The ariaDesc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers.
    *
@@ -156,6 +162,7 @@ export interface ChartBulletComparativeErrorMeasureProps {
 }
 
 export const ChartBulletComparativeErrorMeasure: React.FunctionComponent<ChartBulletComparativeErrorMeasureProps> = ({
+  allowTooltip = true,
   ariaDesc,
   ariaTitle,
   barWidth,
@@ -180,23 +187,24 @@ export const ChartBulletComparativeErrorMeasure: React.FunctionComponent<ChartBu
 }: ChartBulletComparativeErrorMeasureProps) => {
   // Comparative measure component
   const measure = React.cloneElement(measureComponent, {
-      ariaDesc,
-      ariaTitle,
-      barWidth,
-      constrainToVisibleArea,
-      data,
-      domain,
-      height,
-      horizontal,
-      labelComponent,
-      labels,
-      padding,
-      standalone: false,
-      theme,
-      width,
-      y,
-      ...measureComponent.props
-    });
+    allowTooltip,
+    ariaDesc,
+    ariaTitle,
+    barWidth,
+    constrainToVisibleArea,
+    data,
+    domain,
+    height,
+    horizontal,
+    labelComponent,
+    labels,
+    padding,
+    standalone: false,
+    theme,
+    width,
+    y,
+    ...measureComponent.props
+  });
 
   return standalone ? (
     <ChartContainer desc={ariaDesc} height={height} title={ariaTitle} width={width}>
