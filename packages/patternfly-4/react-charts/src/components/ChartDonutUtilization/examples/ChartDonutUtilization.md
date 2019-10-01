@@ -6,6 +6,7 @@ propComponents: ['ChartLegend', 'ChartDonutThreshold', 'ChartDonutUtilization']
 ---
 
 import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { Button, Tooltip } from '@patternfly/react-core';
 import './chart-donut-utilization.scss';
 
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -817,6 +818,55 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
     </ChartDonutThreshold>
   </div>
 </div>
+```
+
+## Donut utilization chart with custom tooltip
+This demonstrates an alternate way of applying a custom tooltip for the entire chart
+```js
+import React from 'react';
+import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
+import { Button, Tooltip } from '@patternfly/react-core';
+
+class TooltipChart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isVisible: false
+    };
+    this.showTooltip = () => {
+      this.setState({ isVisible: true });
+    };
+  }
+
+  render() {
+    const { isVisible } = this.state;
+
+    return (
+      <div>
+        <div className="donut-threshold-chart">
+          <Tooltip content={<div>My custom tooltip</div>} isVisible={isVisible} position={TooltipPosition.right} trigger="manual">
+            <ChartDonutThreshold
+              allowTooltip={false}
+              ariaDesc="Storage capacity"
+              ariaTitle="Donut utilization chart with static threshold example"
+              data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
+              labels={() => null}
+            >
+              <ChartDonutUtilization
+                allowTooltip={false}
+                data={{ x: 'Storage capacity', y: 45 }}
+                labels={() => null}
+                subTitle="of 100 GBps"
+                title="45%"
+              />
+            </ChartDonutThreshold>
+          </Tooltip>
+        </div>
+        <Button onClick={this.showTooltip}>Show Tooltip</Button>
+      </div>
+    );
+  }
+}
 ```
 
 ## Tips

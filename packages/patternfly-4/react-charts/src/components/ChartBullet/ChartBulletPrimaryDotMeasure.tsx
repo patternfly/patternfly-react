@@ -18,6 +18,12 @@ import { getBulletPrimaryDotMeasureTheme } from '../ChartUtils';
  */
 export interface ChartBulletPrimaryDotMeasureProps {
   /**
+   * Specifies the tooltip capability of the container component. A value of true allows the chart to add a
+   * ChartTooltip component to the labelComponent property. This is a shortcut to display tooltips when the labels
+   * property is also provided.
+   */
+  allowTooltip?: boolean;
+  /**
    * The ariaDesc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers.
    *
@@ -164,6 +170,7 @@ export interface ChartBulletPrimaryDotMeasureProps {
 }
 
 export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPrimaryDotMeasureProps> = ({
+  allowTooltip = true,
   ariaDesc,
   ariaTitle,
   constrainToVisibleArea = false,
@@ -214,7 +221,7 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
       height,
       horizontal,
       key: `pf-chart-bullet-primary-dot-measure-${index}`,
-      labelComponent: tooltip,
+      labelComponent: allowTooltip ? tooltip : undefined,
       labels,
       padding,
       size,

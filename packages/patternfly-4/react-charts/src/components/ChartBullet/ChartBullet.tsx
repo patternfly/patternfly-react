@@ -36,17 +36,19 @@ import { getPaddingForSide } from '../ChartUtils';
  */
 export interface ChartBulletProps {
   /**
+   * Specifies the tooltip capability of the container component. A value of true allows the chart to add a
+   * ChartTooltip component to the labelComponent property. This is a shortcut to display tooltips when the labels
+   * property is also provided.
+   */
+  allowTooltip?: boolean;
+  /**
    * The ariaDesc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers.
-   *
-   * Note: Overridden by the desc prop of containerComponent
    */
   ariaDesc?: string;
   /**
    * The ariaTitle prop specifies the title to be applied to the SVG to assist
    * accessibility for screen readers.
-   *
-   * Note: Overridden by the title prop of containerComponent
    */
   ariaTitle?: string;
   /**
@@ -448,6 +450,7 @@ export interface ChartBulletProps {
 }
 
 export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
+  allowTooltip = true,
   ariaDesc,
   ariaTitle,
   axisComponent = <ChartAxis />,
@@ -570,13 +573,14 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
 
   // Comparative error measure
   const comparativeErrorMeasure = React.cloneElement(comparativeErrorMeasureComponent, {
+    allowTooltip,
     barWidth: getComparativeMeasureErrorWidth({height: chartSize.height, horizontal, width: chartSize.width}),
     constrainToVisibleArea,
     data: comparativeErrorMeasureData,
     domain,
     height: chartSize.height,
     horizontal,
-    labelComponent: <ChartTooltip height={height} width={width}/>,
+    labelComponent: allowTooltip ? <ChartTooltip height={height} theme={theme} width={width} /> : undefined,
     labels,
     padding,
     standalone: false,
@@ -587,13 +591,14 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
 
   // Comparative warning measure
   const comparativeWarningMeasure = React.cloneElement(comparativeWarningMeasureComponent, {
+    allowTooltip,
     barWidth: getComparativeMeasureWarningWidth({height: chartSize.height, horizontal, width: chartSize.width}),
     constrainToVisibleArea,
     data: comparativeWarningMeasureData,
     domain,
     height: chartSize.height,
     horizontal,
-    labelComponent: <ChartTooltip height={height} width={width}/>,
+    labelComponent: allowTooltip ? <ChartTooltip height={height} theme={theme} width={width} /> : undefined,
     labels,
     padding,
     standalone: false,
@@ -633,13 +638,14 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
 
   // Primary dot measure
   const primaryDotMeasure = React.cloneElement(primaryDotMeasureComponent, {
+    allowTooltip,
     constrainToVisibleArea,
     data: primaryDotMeasureData,
     domain,
     height: chartSize.height,
     horizontal,
     invert,
-    labelComponent: <ChartTooltip height={height} width={width}/>,
+    labelComponent: allowTooltip ? <ChartTooltip height={height} theme={theme} width={width} /> : undefined,
     labels,
     padding,
     size: getPrimaryDotMeasureSize({height: chartSize.height, horizontal, width: chartSize.width}),
@@ -653,6 +659,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
 
   // Primary segmented measure
   const primarySegmentedMeasure = React.cloneElement(primarySegmentedMeasureComponent, {
+    allowTooltip,
     constrainToVisibleArea,
     barWidth: getPrimarySegmentedMeasureWidth({height: chartSize.height, horizontal, width: chartSize.width}),
     data: primarySegmentedMeasureData,
@@ -660,7 +667,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     height: chartSize.height,
     horizontal,
     invert,
-    labelComponent: <ChartTooltip height={height} width={width}/>,
+    labelComponent: allowTooltip ? <ChartTooltip height={height} theme={theme} width={width} /> : undefined,
     labels,
     padding,
     standalone: false,
@@ -673,6 +680,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
 
   // Qualitative range
   const qualitativeRange = React.cloneElement(qualitativeRangeComponent, {
+    allowTooltip,
     constrainToVisibleArea,
     barWidth: getQualitativeRangeBarWidth({height: chartSize.height, horizontal, width: chartSize.width}),
     data: qualitativeRangeData,
@@ -680,7 +688,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     height: chartSize.height,
     horizontal,
     invert,
-    labelComponent: <ChartTooltip height={height} width={width}/>,
+    labelComponent: allowTooltip ? <ChartTooltip height={height} theme={theme} width={width} /> : undefined,
     labels,
     padding,
     standalone: false,

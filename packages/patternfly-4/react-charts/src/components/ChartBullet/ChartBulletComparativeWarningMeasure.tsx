@@ -17,6 +17,12 @@ import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
  */
 export interface ChartBulletComparativeWarningMeasureProps {
   /**
+   * Specifies the tooltip capability of the container component. A value of true allows the chart to add a
+   * ChartTooltip component to the labelComponent property. This is a shortcut to display tooltips when the labels
+   * property is also provided.
+   */
+  allowTooltip?: boolean;
+  /**
    * The ariaDesc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers.
    *
@@ -156,6 +162,7 @@ export interface ChartBulletComparativeWarningMeasureProps {
 }
 
 export const ChartBulletComparativeWarningMeasure: React.FunctionComponent<ChartBulletComparativeWarningMeasureProps> = ({
+  allowTooltip = true,
   ariaDesc,
   ariaTitle,
   barWidth,
@@ -180,6 +187,7 @@ export const ChartBulletComparativeWarningMeasure: React.FunctionComponent<Chart
 }: ChartBulletComparativeWarningMeasureProps) => {
   // Comparative measure component
   const measure = React.cloneElement(measureComponent, {
+    allowTooltip,
     ariaDesc,
     ariaTitle,
     barWidth,

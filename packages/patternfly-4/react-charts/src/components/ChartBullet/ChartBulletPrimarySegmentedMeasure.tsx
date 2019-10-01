@@ -19,6 +19,12 @@ import { getBulletPrimaryNegativeMeasureTheme, getBulletPrimarySegmentedMeasureT
  */
 export interface ChartBulletPrimarySegmentedMeasureProps {
   /**
+   * Specifies the tooltip capability of the container component. A value of true allows the chart to add a
+   * ChartTooltip component to the labelComponent property. This is a shortcut to display tooltips when the labels
+   * property is also provided.
+   */
+  allowTooltip?: boolean;
+  /**
    * The ariaDesc prop specifies the description of the chart/SVG to assist with
    * accessibility for screen readers.
    *
@@ -177,6 +183,7 @@ export interface ChartBulletPrimarySegmentedMeasureProps {
 }
 
 export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBulletPrimarySegmentedMeasureProps> = ({
+  allowTooltip = true,
   ariaDesc,
   ariaTitle,
   barWidth = ChartBulletStyles.primarySegmentedMeasureWidth,
@@ -242,7 +249,7 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
       height,
       horizontal,
       key: `pf-chart-bullet-primary-segmented-measure-${index}`,
-      labelComponent: tooltip,
+      labelComponent: allowTooltip ? tooltip : undefined,
       labels,
       padding,
       standalone: false,

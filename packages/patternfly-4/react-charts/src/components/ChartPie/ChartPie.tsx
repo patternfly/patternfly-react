@@ -437,6 +437,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   const chart = (
     <VictoryPie
       height={height}
+      key="pf-chart-pie"
       labels={labels}
       labelComponent={labelComponent}
       padding={padding}
@@ -464,6 +465,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
       <ChartLegendWrapper
         chartType="pie"
         height={height}
+        key="pf-chart-pie-legend"
         legendComponent={legend}
         orientation={legendOrientation}
         padding={defaultPadding}
@@ -475,20 +477,19 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   };
 
   // Clone so users can override container props
-  const StandaloneContainer = ({children}: any) => React.cloneElement(containerComponent, {
+  const container = React.cloneElement(containerComponent, {
     desc: ariaDesc,
     height,
     title: ariaTitle,
     width,
     theme,
     ...containerComponent.props
-  }, children);
+  }, [chart, getWrappedLegend()]);
 
   return standalone ? (
-    <StandaloneContainer>
-      {chart}
-      {getWrappedLegend()}
-    </StandaloneContainer>
+    <React.Fragment>
+      {container}
+    </React.Fragment>
   ) : (
     <React.Fragment>
       {chart}

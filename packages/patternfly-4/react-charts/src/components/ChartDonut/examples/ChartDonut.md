@@ -6,6 +6,7 @@ propComponents: ['ChartDonut', 'ChartLegend']
 ---
 
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import { Button, Tooltip } from '@patternfly/react-core';
 import './chart-donut.scss';
 
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -250,6 +251,49 @@ import { ChartDonut } from '@patternfly/react-charts';
     />
   </div>
 </div>
+```
+
+## Donut chart with custom tooltip
+This demonstrates an alternate way of applying a custom tooltip for the entire chart
+```js
+import React from 'react';
+import { ChartDonut } from '@patternfly/react-charts';
+import { Button, Tooltip } from '@patternfly/react-core';
+
+class TooltipChart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isVisible: false
+    };
+    this.showTooltip = () => {
+      this.setState({ isVisible: true });
+    };
+  }
+
+  render() {
+    const { isVisible } = this.state;
+
+    return (
+      <div>
+        <div className="donut-chart">
+          <Tooltip content={<div>My custom tooltip</div>} isVisible={isVisible} position={TooltipPosition.right} trigger="manual">
+            <ChartDonut
+              allowTooltip={false}
+              ariaDesc="Average number of pets"
+              ariaTitle="Donut chart example"
+              data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
+              labels={() => null}
+              subTitle="Pets"
+              title="100"
+            />
+          </Tooltip>
+        </div>
+        <Button onClick={this.showTooltip}>Show Tooltip</Button>
+      </div>
+    );
+  }
+}
 ```
 
 ## Tips
