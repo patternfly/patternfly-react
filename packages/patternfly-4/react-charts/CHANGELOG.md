@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.12...@patternfly/react-charts@5.0.13) (2019-10-01)
+
+
+### Bug Fixes
+
+* **charts:** modify how containers are cloned for Tippy tooltips ([#3048](https://github.com/patternfly/patternfly-react/issues/3048)) ([68f4311](https://github.com/patternfly/patternfly-react/commit/68f4311))
+
+
+
+
+
 ## [5.0.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.11...@patternfly/react-charts@5.0.12) (2019-09-27)
 
 **Note:** Version bump only for package @patternfly/react-charts
