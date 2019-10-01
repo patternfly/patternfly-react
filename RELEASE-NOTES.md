@@ -12,7 +12,7 @@ Packages released:
 
 ## Charts
 - (BREAKING CHANGE) Updated Victory to 30.0.0
-  - Replace ```labels={(d) => `x: ${d.x}`}``` with ```labels={({ datum }) => `x: ${datum.x}`}```
+  - Replace `labels={(d) => x: ${d.x}}` with `labels={({ datum }) => x: ${datum.x}}`
   - **ChartPie:**
     - Removed `pieHeight` & `pieWidth` props -- use `padding` prop
     - Adjusted padding from 8px to 20px
