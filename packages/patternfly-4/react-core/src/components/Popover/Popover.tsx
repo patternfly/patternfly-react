@@ -96,6 +96,10 @@ export interface PopoverProps {
   zIndex?: number;
   /** additional Props to pass through to tippy.js */
   tippyProps?: TippyProps;
+  /** Flag to show the close button */
+  showClose?: boolean;
+  /** Flag to disable focus trap */
+  disableFocusTrap?: boolean;
 }
 
 export interface PopoverState {
@@ -127,7 +131,9 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     "boundary": 'window',
     // For every initial starting position, there are 3 escape positions
     "flipBehavior": ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
-    "tippyProps": {}
+    "tippyProps": {},
+    "showClose": true,
+    "disableFocusTrap": false
   };
 
   constructor(props: PopoverProps) {
@@ -229,6 +235,8 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       boundary,
       flipBehavior,
       tippyProps,
+      showClose,
+      disableFocusTrap,
       ...rest
     } = this.props;
 
@@ -240,7 +248,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       <GenerateId>
         {(randomId) =>
           (
-            <FocusTrap active={this.state.isOpen} focusTrapOptions={{ clickOutsideDeactivates: true }}>
+            <FocusTrap active={!disableFocusTrap && this.state.isOpen} focusTrapOptions={{ clickOutsideDeactivates: true }}>
               <div
                 className={css(
                   !enableFlip && getModifier(styles, position, styles.modifiers.top),
@@ -254,7 +262,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
                 {...rest}
               >
                 <PopoverContent>
-                  <PopoverCloseButton onClose={this.closePopover} aria-label={closeBtnAriaLabel} />
+                  {showClose && <PopoverCloseButton onClose={this.closePopover} aria-label={closeBtnAriaLabel} />}
                   {headerContent && <PopoverHeader id={`popover-${randomId}-header`}>{headerContent}</PopoverHeader>}
                   <PopoverBody id={`popover-${randomId}-body`}>{bodyContent}</PopoverBody>
                   {footerContent && <PopoverFooter>{footerContent}</PopoverFooter>}

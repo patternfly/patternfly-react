@@ -149,3 +149,23 @@ HeadlessPopover = () => (
   </Popover>
 );
 ```
+
+## Popover without close button
+```js
+import React from 'react';
+import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
+
+SimplePopover = () => (
+  <Popover
+    showClose={false}
+    disableFocusTrap={true}
+    headerContent={<div>Popover Header</div>}
+    bodyContent={
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+    }
+    footerContent="Popover Footer"
+  >
+    <Button>Toggle Popover</Button>
+  </Popover>
+);
+```
