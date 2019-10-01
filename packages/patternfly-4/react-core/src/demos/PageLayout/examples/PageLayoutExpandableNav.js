@@ -54,32 +54,32 @@ class PageLayoutExpandableNav extends React.Component {
     this.setState({
       isDropdownOpen
     });
-  }
+  };
 
   onDropdownSelect = event => {
     this.setState({
       isDropdownOpen: !this.state.isDropdownOpen
     });
-  }
+  };
 
   onKebabDropdownToggle = isKebabDropdownOpen => {
     this.setState({
       isKebabDropdownOpen
     });
-  }
+  };
 
   onKebabDropdownSelect = event => {
     this.setState({
       isKebabDropdownOpen: !this.state.isKebabDropdownOpen
     });
-  }
+  };
 
   onNavSelect = result => {
     this.setState({
       activeItem: result.itemId,
       activeGroup: result.groupId
     });
-  }
+  };
 
   render() {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem, activeGroup } = this.state;

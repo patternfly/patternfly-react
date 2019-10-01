@@ -18,7 +18,7 @@ export const DataListItemRow: React.FunctionComponent<DataListItemRowProps> = ({
   <div className={css(styles.dataListItemRow, className)} {...props}>
     {React.Children.map(
       children,
-      (child) =>
+      child =>
         React.isValidElement(child) &&
         React.cloneElement(child as React.ReactElement<any>, {
           rowid

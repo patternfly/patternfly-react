@@ -45,7 +45,7 @@ class SpiceConsole extends React.Component {
   }
   onConnected = () => {
     this.setState({ status: CONNECTED });
-  }
+  };
 
   onCtrlAltDel = e => {
     if (this.sc) {
@@ -54,23 +54,23 @@ class SpiceConsole extends React.Component {
       sendCtrlAltDel();
       window.sc = undefined;
     }
-  }
+  };
 
   onSpiceError = e => {
     this.disconnect();
     this.onDisconnected(e);
     //      if (e !== undefined && e.message === "Permission denied.") {
-  }
+  };
 
   onDisconnected = e => {
     this.setState({ status: DISCONNECTED });
     this.props.onDisconnected(e);
-  }
+  };
 
   onSecurityFailure = e => {
     this.setState({ status: DISCONNECTED });
     this.props.onSecurityFailure(e);
-  }
+  };
 
   render() {
     const { textDisconnected, textConnecting, textSendShortcut, textCtrlAltDel } = this.props;

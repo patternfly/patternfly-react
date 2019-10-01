@@ -12,7 +12,8 @@ describe('checkbox select options', () => {
     const view = shallow(
       <CheckboxSelectOption value="test" sendRef={jest.fn()}>
         <div>test</div>
-      </CheckboxSelectOption>);
+      </CheckboxSelectOption>
+    );
     expect(view).toMatchSnapshot();
   });
 

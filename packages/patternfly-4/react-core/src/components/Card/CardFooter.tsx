@@ -19,7 +19,8 @@ export const CardFooter: React.FunctionComponent<CardFooterProps> = ({
 }: CardFooterProps) => {
   const Component = component as any;
   return (
-  <Component className={css(styles.cardFooter, className)} {...props}>
-    {children}
-  </Component>
-);};
+    <Component className={css(styles.cardFooter, className)} {...props}>
+      {children}
+    </Component>
+  );
+};

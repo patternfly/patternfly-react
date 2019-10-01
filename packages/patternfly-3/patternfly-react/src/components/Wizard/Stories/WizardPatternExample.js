@@ -28,13 +28,13 @@ export class WizardPatternExample extends React.Component {
 
   close = () => {
     this.setState({ showModal: false, loading: false });
-  }
+  };
   open = () => {
     this.setState({ showModal: true, loading: true });
     setTimeout(() => {
       this.setState({ loading: false });
     }, 1000);
-  }
+  };
   renderStateless = () => {
     // We need knobs on the stateless example, because we must drive its state ourselves.
     const { loading, activeStepIndex } = this.state;
@@ -64,7 +64,7 @@ export class WizardPatternExample extends React.Component {
         />
       </div>
     );
-  }
+  };
   renderStateful = () => (
     // No knobs for the stateful example, we want to let it control its own state.
     <div>
@@ -84,7 +84,7 @@ export class WizardPatternExample extends React.Component {
         loading={this.state.loading}
       />
     </div>
-  )
+  );
   render() {
     return this.props.stateful ? this.renderStateful() : this.renderStateless();
   }

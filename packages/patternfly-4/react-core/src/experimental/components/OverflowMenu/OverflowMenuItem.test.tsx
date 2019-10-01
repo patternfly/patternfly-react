@@ -26,4 +26,3 @@ describe('OverflowMenuItem', () => {
     expect(view).toMatchSnapshot();
   });
 });
-

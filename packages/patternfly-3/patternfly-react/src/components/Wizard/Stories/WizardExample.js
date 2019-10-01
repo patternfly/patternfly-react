@@ -11,10 +11,10 @@ import { renderWizardSteps, renderSidebarItems, renderWizardContents } from './m
 export class WizardExample extends MockWizardBase {
   open = () => {
     this.setState({ showModal: true });
-  }
+  };
   close = () => {
     this.setState({ showModal: false });
-  }
+  };
   render() {
     const { showModal, activeStepIndex, activeSubStepIndex } = this.state;
 

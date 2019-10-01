@@ -16,7 +16,7 @@ export class MockLabelRemove extends React.Component {
   }
   removeMe = index => {
     this.setState(this.state.types.splice(index, 1));
-  }
+  };
 
   render() {
     return (

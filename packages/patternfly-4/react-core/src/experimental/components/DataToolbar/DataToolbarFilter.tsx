@@ -6,12 +6,12 @@ import { DataToolbarContext } from './DataToolbarUtils';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { getModifier } from '@patternfly/react-styles';
 
-export type DataToolbarChip = {
+export interface DataToolbarChip {
   /** A unique key to identify this chip */
   key: string;
   /** The ReactNode to display in the chip */
   node: React.ReactNode;
-};
+}
 
 export interface DataToolbarFilterProps extends DataToolbarItemProps {
   /** An array of strings to be displayed as chips in the expandable content */
@@ -28,9 +28,7 @@ interface DataToolbarFilterState {
   isMounted: boolean;
 }
 
-export class DataToolbarFilter
-  extends React.Component<DataToolbarFilterProps, DataToolbarFilterState> {
-
+export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, DataToolbarFilterState> {
   static defaultProps = {
     chips: [] as string[]
   };
@@ -53,31 +51,35 @@ export class DataToolbarFilter
     return (
       <DataToolbarContext.Consumer>
         {({ isExpanded, chipGroupContentRef }) => {
-
-          const chipGroup =
+          const chipGroup = (
             <DataToolbarItem variant="chip-group">
               <ChipGroup withToolbar>
                 <ChipGroupToolbarItem key={categoryName} categoryName={categoryName}>
-                  {chips.map((chip) => {
-                    return typeof chip === 'string' ?
+                  {chips.map(chip => {
+                    return typeof chip === 'string' ? (
                       <Chip key={chip} onClick={() => deleteChip(categoryName, chip)}>
                         {chip}
-                      </Chip> :
+                      </Chip>
+                    ) : (
                       <Chip key={chip.key} onClick={() => deleteChip(categoryName, chip)}>
                         {chip.node}
-                      </Chip>;
+                      </Chip>
+                    );
                   })}
                 </ChipGroupToolbarItem>
               </ChipGroup>
-            </DataToolbarItem>;
+            </DataToolbarItem>
+          );
 
           if (!isExpanded && this.state.isMounted) {
             chipGroupContentRef.current.classList.remove(getModifier(styles, 'hidden'));
             chipGroupContentRef.current.hidden = false;
-            return <React.Fragment>
-              <DataToolbarItem {...props}>{children}</DataToolbarItem>
-              {ReactDOM.createPortal(chipGroup, chipGroupContentRef.current.firstElementChild)}
-            </React.Fragment>;
+            return (
+              <React.Fragment>
+                <DataToolbarItem {...props}>{children}</DataToolbarItem>
+                {ReactDOM.createPortal(chipGroup, chipGroupContentRef.current.firstElementChild)}
+              </React.Fragment>
+            );
           }
 
           return (
@@ -90,5 +92,4 @@ export class DataToolbarFilter
       </DataToolbarContext.Consumer>
     );
   }
-
 }

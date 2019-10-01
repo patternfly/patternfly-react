@@ -1,8 +1,12 @@
 import React from 'react';
-import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import {
+  ChartDonutThreshold,
+  ChartDonutUtilization,
+  ChartThemeColor,
+  ChartThemeVariant
+} from '@patternfly/react-charts';
 
-export class DonutUtilizationGreenStaticRightDemo extends React.Component <{}, { used: number }> {
-
+export class DonutUtilizationGreenStaticRightDemo extends React.Component<{}, { used: number }> {
   interval: any;
   constructor(props) {
     super(props);
@@ -12,7 +16,6 @@ export class DonutUtilizationGreenStaticRightDemo extends React.Component <{}, {
   }
 
   componentDidMount() {
-
     window.scrollTo(0, 0);
 
     this.interval = setInterval(() => {
@@ -29,18 +32,22 @@ export class DonutUtilizationGreenStaticRightDemo extends React.Component <{}, {
     const { used } = this.state;
     return (
       <div>
-        <div style={{backgroundColor: 'white', height: '350px', width: '230px', margin: '0 auto'}}>
+        <div style={{ backgroundColor: 'white', height: '350px', width: '230px', margin: '0 auto' }}>
           <ChartDonutThreshold
             data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
             height={350}
-            labels={({ datum }) => datum.x ? datum.x : null}
+            labels={({ datum }) => (datum.x ? datum.x : null)}
             legendPosition="bottom"
             width={230}
           >
             <ChartDonutUtilization
               data={{ x: 'Storage capacity', y: used }}
-              labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-              legendData={[{ name: `Storage capacity: ${used}%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
+              labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : null)}
+              legendData={[
+                { name: `Storage capacity: ${used}%` },
+                { name: 'Warning threshold at 60%' },
+                { name: 'Danger threshold at 90%' }
+              ]}
               legendOrientation="vertical"
               subTitle="of 100 GBps"
               title={`${used}%`}

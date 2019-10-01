@@ -19,8 +19,15 @@ export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the Data toolbar item */
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of item */
-  variant?: DataToolbarItemVariant |
-    'separator' | 'bulk-select' | 'overflow-menu' | 'pagination' | 'search-filter' | 'label' | 'chip-group';
+  variant?:
+    | DataToolbarItemVariant
+    | 'separator'
+    | 'bulk-select'
+    | 'overflow-menu'
+    | 'pagination'
+    | 'search-filter'
+    | 'label'
+    | 'chip-group';
   /** An array of objects representing the various modifiers to apply to the Data toolbar item at various breakpoints */
   breakpointMods?: DataToolbarBreakpointMod[];
   /** id for this Data toolbar item */
@@ -30,14 +37,13 @@ export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const DataToolbarItem: React.FunctionComponent<DataToolbarItemProps> = ({
-    className,
-    variant,
-    breakpointMods = [] as DataToolbarBreakpointMod[],
-    id,
-    children,
-    ...props
-  }: DataToolbarItemProps) => {
-
+  className,
+  variant,
+  breakpointMods = [] as DataToolbarBreakpointMod[],
+  id,
+  children,
+  ...props
+}: DataToolbarItemProps) => {
   const labelVariant = variant === 'label';
 
   return (
@@ -46,8 +52,9 @@ export const DataToolbarItem: React.FunctionComponent<DataToolbarItemProps> = ({
         styles.dataToolbarItem,
         variant && getModifier(styles, variant),
         formatBreakpointMods(breakpointMods, styles),
-        className)}
-      {...labelVariant && { 'aria-hidden': true }}
+        className
+      )}
+      {...(labelVariant && { 'aria-hidden': true })}
       id={id}
       {...props}
     >

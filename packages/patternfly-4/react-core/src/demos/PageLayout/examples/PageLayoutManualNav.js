@@ -53,49 +53,49 @@ class PageLayoutManualNav extends React.Component {
     this.setState({
       isDropdownOpen
     });
-  }
+  };
 
   onDropdownSelect = event => {
     this.setState({
       isDropdownOpen: !this.state.isDropdownOpen
     });
-  }
+  };
 
   onKebabDropdownToggle = isKebabDropdownOpen => {
     this.setState({
       isKebabDropdownOpen
     });
-  }
+  };
 
   onKebabDropdownSelect = event => {
     this.setState({
       isKebabDropdownOpen: !this.state.isKebabDropdownOpen
     });
-  }
+  };
 
   onNavSelect = result => {
     this.setState({
       activeItem: result.itemId
     });
-  }
+  };
 
   onNavToggleDesktop = () => {
     this.setState({
       isNavOpenDesktop: !this.state.isNavOpenDesktop
     });
-  }
+  };
 
   onNavToggleMobile = () => {
     this.setState({
       isNavOpenMobile: !this.state.isNavOpenMobile
     });
-  }
+  };
 
   onPageResize = ({ mobileView, windowSize }) => {
     this.setState({
       isMobileView: mobileView
     });
-  }
+  };
 
   render() {
     const {
@@ -196,7 +196,9 @@ class PageLayoutManualNav extends React.Component {
         isNavOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop}
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} isNavOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop} theme="dark" />;
+    const Sidebar = (
+      <PageSidebar nav={PageNav} isNavOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop} theme="dark" />
+    );
     const pageId = 'main-content-page-layout-manual-nav';
     const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
 

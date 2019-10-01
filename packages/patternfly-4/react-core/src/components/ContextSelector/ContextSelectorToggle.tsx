@@ -46,13 +46,13 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
     document.addEventListener('keydown', this.onEscPress);
-  }
+  };
 
   componentWillUnmount = () => {
     document.removeEventListener('mousedown', this.onDocClick);
     document.removeEventListener('touchstart', this.onDocClick);
     document.removeEventListener('keydown', this.onEscPress);
-  }
+  };
 
   onDocClick = (event: any) => {
     const { isOpen, parentRef, onToggle } = this.props;
@@ -60,7 +60,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
       onToggle(null, false);
       this.toggle.current.focus();
     }
-  }
+  };
 
   onEscPress = (event: any) => {
     const { isOpen, parentRef, onToggle } = this.props;
@@ -69,11 +69,13 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
       onToggle(null, false);
       this.toggle.current.focus();
     }
-  }
+  };
 
   onKeyDown = (event: any) => {
     const { isOpen, onToggle, onEnter } = this.props;
-    if ((event.keyCode === KEY_CODES.TAB && !isOpen) || event.key !== KEY_CODES.ENTER) { return; }
+    if ((event.keyCode === KEY_CODES.TAB && !isOpen) || event.key !== KEY_CODES.ENTER) {
+      return;
+    }
     event.preventDefault();
     if (
       (event.keyCode === KEY_CODES.TAB || event.keyCode === KEY_CODES.ENTER || event.key !== KEY_CODES.SPACE) &&
@@ -84,7 +86,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
       onToggle(null, !isOpen);
       onEnter();
     }
-  }
+  };
 
   render() {
     const {
@@ -113,7 +115,7 @@ export class ContextSelectorToggle extends React.Component<ContextSelectorToggle
           className
         )}
         type="button"
-        onClick={(event) => onToggle(event, !isOpen)}
+        onClick={event => onToggle(event, !isOpen)}
         aria-expanded={isOpen}
         onKeyDown={this.onKeyDown}
       >

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { Title, TitleSize, TitleLevel } from '.';
 
-Object.values(TitleSize).forEach((size) => {
+Object.values(TitleSize).forEach(size => {
   test(`${size} Title`, () => {
     const view = shallow(
       <Title size={size} headingLevel={TitleLevel.h1}>

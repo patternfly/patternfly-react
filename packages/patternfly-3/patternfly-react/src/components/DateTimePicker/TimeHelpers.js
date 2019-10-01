@@ -1,5 +1,7 @@
 export const getDateFromTime = time => {
-  if (time === '') { return time; }
+  if (time === '') {
+    return time;
+  }
   if (Date.parse(time)) {
     return new Date(time);
   } else if (Date.parse(`1/1/1 ${time}`)) {

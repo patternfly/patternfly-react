@@ -249,12 +249,7 @@ describe('typeahead select', () => {
   test('test creatable option', () => {
     const mockEvent = { target: { value: 'test' } } as React.ChangeEvent<HTMLInputElement>;
     const view = mount(
-      <Select
-        variant={SelectVariant.typeahead}
-        onToggle={jest.fn()}
-        isExpanded
-        isCreatable
-      >
+      <Select variant={SelectVariant.typeahead} onToggle={jest.fn()} isExpanded isCreatable>
         {selectOptions}
       </Select>
     );

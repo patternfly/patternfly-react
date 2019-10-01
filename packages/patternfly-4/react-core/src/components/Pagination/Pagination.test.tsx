@@ -12,12 +12,12 @@ describe('component render', () => {
     const wrapper = mount(<Pagination itemCount={20} variant={PaginationVariant.bottom} />);
     expect(wrapper).toMatchSnapshot();
   });
-  
+
   test('should render correctly compact', () => {
     const wrapper = mount(<Pagination itemCount={20} isCompact />);
     expect(wrapper).toMatchSnapshot();
   });
-  
+
   test('should render correctly disabled', () => {
     const wrapper = mount(<Pagination itemCount={20} isDisabled />);
     expect(wrapper).toMatchSnapshot();

@@ -15,8 +15,12 @@ export const Badge: React.FunctionComponent<BadgeProps> = ({
   isRead = false,
   className = '',
   children = '',
-  ...props }: BadgeProps) => (
-  <span {...props} className={css(styles.badge, (isRead ? styles.modifiers.read : styles.modifiers.unread) as any, className)}>
+  ...props
+}: BadgeProps) => (
+  <span
+    {...props}
+    className={css(styles.badge, (isRead ? styles.modifiers.read : styles.modifiers.unread) as any, className)}
+  >
     {children}
   </span>
 );

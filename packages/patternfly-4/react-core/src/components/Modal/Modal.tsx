@@ -64,7 +64,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     onClose: () => undefined as any,
     isLarge: false,
     isSmall: false,
-    appendTo: typeof document !== 'undefined' && document.body || null
+    appendTo: (typeof document !== 'undefined' && document.body) || null
   };
 
   constructor(props: ModalProps) {
@@ -81,7 +81,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
       this.props.onClose();
     }
-  }
+  };
 
   getElement = (appendTo: HTMLElement | (() => HTMLElement)) => {
     let target: HTMLElement;
@@ -91,7 +91,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
       target = appendTo;
     }
     return target;
-  }
+  };
 
   toggleSiblingsFromScreenReaders = (hide: boolean) => {
     const { appendTo } = this.props;
@@ -102,7 +102,7 @@ export class Modal extends React.Component<ModalProps, ModalState> {
         hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
       }
     }
-  }
+  };
 
   componentDidMount() {
     const { appendTo } = this.props;
@@ -150,7 +150,12 @@ export class Modal extends React.Component<ModalProps, ModalState> {
     }
 
     return ReactDOM.createPortal(
-      <ModalContent {...props} title={this.props.title} id={this.id} ariaDescribedById={this.props.ariaDescribedById}/>,
+      <ModalContent
+        {...props}
+        title={this.props.title}
+        id={this.id}
+        ariaDescribedById={this.props.ariaDescribedById}
+      />,
       container
     );
   }

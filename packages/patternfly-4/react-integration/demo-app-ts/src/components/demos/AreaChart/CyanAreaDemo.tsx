@@ -1,12 +1,18 @@
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
+import {
+  Chart,
+  ChartArea,
+  ChartAxis,
+  ChartGroup,
+  ChartThemeColor,
+  ChartVoronoiContainer
+} from '@patternfly/react-charts';
 
 export class CyanAreaDemo extends React.Component {
   render() {
     return (
-
       <div>
-        <div style={{height: '200px', width: '800px'}}>
+        <div style={{ height: '200px', width: '800px' }}>
           <Chart
             containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} />}
             legendData={[{ name: 'Cats' }, { name: 'Birds' }, { name: 'Dogs' }]}

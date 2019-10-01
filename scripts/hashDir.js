@@ -6,7 +6,7 @@ const crypto = require('crypto');
 function filewalker(dir) {
   let results = [];
 
-	fs.readdirSync(dir).forEach(file => {
+  fs.readdirSync(dir).forEach(file => {
     filePath = path.resolve(dir, file);
 
     const stat = fs.statSync(filePath);
@@ -20,7 +20,7 @@ function filewalker(dir) {
   });
 
   return results;
-};
+}
 
 function hashDir(dirPath) {
   const md5 = crypto.createHash('md5');
@@ -29,16 +29,14 @@ function hashDir(dirPath) {
   if (stat && stat.isFile()) {
     const fileContents = fs.readFileSync(dirPath);
     md5.update(fileContents);
-  }
-  else {
+  } else {
     filewalker(dirPath)
       .sort((f1, f2) => f1.path.localeCompare(f2.path))
       .forEach(file => {
         if (file.type === 'file') {
           const fileContents = fs.readFileSync(file.path);
           md5.update(fileContents);
-        }
-        else if (file.type === 'dir') {
+        } else if (file.type === 'dir') {
           md5.update(file.path);
         }
       });

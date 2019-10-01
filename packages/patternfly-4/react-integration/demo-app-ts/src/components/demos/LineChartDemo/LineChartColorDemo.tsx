@@ -1,9 +1,16 @@
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
+import {
+  Chart,
+  ChartAxis,
+  ChartGroup,
+  ChartLegend,
+  ChartLine,
+  ChartThemeColor,
+  ChartThemeVariant
+} from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory';
 
 export class LineChartColorDemo extends React.Component {
-
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -11,10 +18,15 @@ export class LineChartColorDemo extends React.Component {
   render() {
     return (
       <div>
-        <div style={{height: '275px', width: '450px'}}>
+        <div style={{ height: '275px', width: '450px' }}>
           <Chart
             containerComponent={<VictoryZoomContainer zoomDimension="x" />}
-            legendData={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
+            legendData={[
+              { name: 'Cats' },
+              { name: 'Dogs', symbol: { type: 'dash' } },
+              { name: 'Birds' },
+              { name: 'Mice' }
+            ]}
             legendPosition="bottom"
             height={275}
             padding={{

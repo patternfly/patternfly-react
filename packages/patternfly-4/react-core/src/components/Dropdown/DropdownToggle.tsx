@@ -80,7 +80,8 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
           isPrimary={isPrimary}
           onToggle={onToggle}
           ariaHasPopup={ariaHasPopup}
-          {...splitButtonItems && { "isSplitButton": true, 'aria-label': props['aria-label'] || 'Select' }}>
+          {...(splitButtonItems && { isSplitButton: true, 'aria-label': props['aria-label'] || 'Select' })}
+        >
           {children && <span className={IconComponent && css(toggleTextClass)}>{children}</span>}
           {IconComponent && <IconComponent className={css(children && toggleIconClass)} />}
         </Toggle>
@@ -91,11 +92,7 @@ export const DropdownToggle: React.FunctionComponent<DropdownToggleProps> = ({
   if (splitButtonItems) {
     return (
       <div
-        className={css(
-          styles.dropdownToggle,
-          styles.modifiers.splitButton,
-          isDisabled && styles.modifiers.disabled
-        )}
+        className={css(styles.dropdownToggle, styles.modifiers.splitButton, isDisabled && styles.modifiers.disabled)}
       >
         {splitButtonItems}
         {toggle}

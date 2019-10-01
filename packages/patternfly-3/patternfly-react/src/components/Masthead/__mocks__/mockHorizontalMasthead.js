@@ -18,7 +18,7 @@ export class MockHorizontalMasthead extends React.Component {
     this.setState({
       menuCollapsed: !this.state.menuCollapsed
     });
-  }
+  };
 
   render() {
     const { menuCollapsed } = this.state;

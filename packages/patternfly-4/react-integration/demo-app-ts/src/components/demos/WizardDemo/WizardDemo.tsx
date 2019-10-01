@@ -34,15 +34,15 @@ export class WizardDemo extends Component {
     ];
     return (
       <React.Fragment>
-      <Wizard
-        isOpen={this.state.isOpen}
-        title="Wizard title"
-        description="Description here"
-        steps={steps}
-        startAtStep={1}
-        onClose={() => this.setState({ isOpen: false })}
-      />
-      <Button onClick={() => this.setState({ isOpen: true })}>Show Wizard</Button>
+        <Wizard
+          isOpen={this.state.isOpen}
+          title="Wizard title"
+          description="Description here"
+          steps={steps}
+          startAtStep={1}
+          onClose={() => this.setState({ isOpen: false })}
+        />
+        <Button onClick={() => this.setState({ isOpen: true })}>Show Wizard</Button>
       </React.Fragment>
     );
   }

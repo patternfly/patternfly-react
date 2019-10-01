@@ -8,7 +8,15 @@
 import { isArray } from 'lodash';
 import { RowType, RowKeyType } from './types';
 
-export function resolveRowKey({ rowData, rowIndex, rowKey }: { rowData: RowType, rowIndex: number, rowKey: RowKeyType}) {
+export function resolveRowKey({
+  rowData,
+  rowIndex,
+  rowKey
+}: {
+  rowData: RowType;
+  rowIndex: number;
+  rowKey: RowKeyType;
+}) {
   if (typeof rowKey === 'function') {
     return `${rowKey({ rowData, rowIndex })}-row`;
   } else if (process.env.NODE_ENV !== 'production') {
@@ -23,5 +31,5 @@ export function resolveRowKey({ rowData, rowIndex, rowKey }: { rowData: RowType,
     return `${(rowData as any)[rowKey] as string}-row`;
   }
 
-  return `${(rowData as any)[rowKey] as string || rowIndex}-row`;
+  return `${((rowData as any)[rowKey] as string) || rowIndex}-row`;
 }

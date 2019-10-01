@@ -20,10 +20,15 @@ export const Drawer: React.SFC<DrawerProps> = ({
   isInline = false,
   ...props
 }: DrawerProps) => (
-  <div {...props} className={css(styles.drawer,
-    isExpanded && styles.modifiers.expanded,
-    isInline && styles.modifiers.inline,
-    className)}>
-     { children }
+  <div
+    {...props}
+    className={css(
+      styles.drawer,
+      isExpanded && styles.modifiers.expanded,
+      isInline && styles.modifiers.inline,
+      className
+    )}
+  >
+    {children}
   </div>
 );

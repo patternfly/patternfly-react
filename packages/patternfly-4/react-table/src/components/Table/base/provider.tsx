@@ -23,13 +23,7 @@ export class Provider extends React.Component<ProviderProps, {}> {
     renderers: TableDefaults.renderers
   };
   render() {
-    const {
-      columns,
-      renderers,
-      components,
-      children,
-      ...props
-    } = this.props;
+    const { columns, renderers, components, children, ...props } = this.props;
 
     let finalRenderers = renderers;
 
@@ -43,16 +37,18 @@ export class Provider extends React.Component<ProviderProps, {}> {
 
     const provider = React.createElement(renderers.table || TableDefaults.renderers.table, props, children);
     return (
-      <ProviderContext.Provider value={{
-      columns,
-      renderers: {
-        table: finalRenderers.table || TableDefaults.renderers.table,
-        header: { ...TableDefaults.renderers.header, ...finalRenderers.header },
-        body: { ...TableDefaults.renderers.body, ...finalRenderers.body }
-      }
-    }}>
-      {provider}
+      <ProviderContext.Provider
+        value={{
+          columns,
+          renderers: {
+            table: finalRenderers.table || TableDefaults.renderers.table,
+            header: { ...TableDefaults.renderers.header, ...finalRenderers.header },
+            body: { ...TableDefaults.renderers.body, ...finalRenderers.body }
+          }
+        }}
+      >
+        {provider}
       </ProviderContext.Provider>
-      );
+    );
   }
 }

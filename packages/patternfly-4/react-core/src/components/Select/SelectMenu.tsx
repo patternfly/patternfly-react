@@ -21,7 +21,7 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   /** Currently selected option (for single, typeahead variants) */
   selected?: string | SelectOptionObject | (string | SelectOptionObject)[];
   /** Currently checked options (for checkbox variant) */
-  checked?: (string | SelectOptionObject) [];
+  checked?: (string | SelectOptionObject)[];
   /** Internal flag for specifiying how the menu was opened */
   openedOnEnter?: boolean;
   /** Flag to specify the  maximum height of the menu, as a string percentage or number of pixels */
@@ -137,13 +137,21 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
         {({ variant }) => (
           <React.Fragment>
             {variant !== SelectVariant.checkbox && (
-              <ul className={css(styles.selectMenu, className)} role="listbox" {...maxHeight && {style:({ maxHeight, overflow: 'auto' })}}  {...props}>
+              <ul
+                className={css(styles.selectMenu, className)}
+                role="listbox"
+                {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
+                {...props}
+              >
                 {this.extendChildren()}
               </ul>
             )}
             {variant === SelectVariant.checkbox && React.Children.count(children) > 0 && (
               <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
-                <div className={css(styles.selectMenu, className)} {...maxHeight && {style:({ maxHeight, overflow: 'auto' })}}>
+                <div
+                  className={css(styles.selectMenu, className)}
+                  {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
+                >
                   <form noValidate className={css(formStyles.form)}>
                     <div className={css(formStyles.formGroup)}>{this.extendCheckboxChildren(props)}</div>
                   </form>
@@ -151,9 +159,12 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
               </FocusTrap>
             )}
             {variant === SelectVariant.checkbox && React.Children.count(children) === 0 && (
-              <div className={css(styles.selectMenu, className)} {...maxHeight && {style:({ maxHeight, overflow: 'auto' })}}>
+              <div
+                className={css(styles.selectMenu, className)}
+                {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
+              >
                 <form noValidate className={css(formStyles.form)}>
-                  <div className={css(formStyles.formGroup)}/>
+                  <div className={css(formStyles.formGroup)} />
                 </form>
               </div>
             )}

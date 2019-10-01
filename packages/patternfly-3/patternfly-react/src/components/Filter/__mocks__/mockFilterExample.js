@@ -87,7 +87,7 @@ export class MockFilterExample extends React.Component {
       keyEvent.stopPropagation();
       keyEvent.preventDefault();
     }
-  }
+  };
 
   categoryValueSelected = value => {
     const { currentValue, currentFilterType, filterCategory } = this.state;
@@ -102,11 +102,11 @@ export class MockFilterExample extends React.Component {
         this.filterAdded(currentFilterType, filterValue);
       }
     }
-  }
+  };
 
   clearFilters = () => {
     this.setState({ activeFilters: [] });
-  }
+  };
 
   filterAdded = (field, value) => {
     let filterText = '';
@@ -132,14 +132,14 @@ export class MockFilterExample extends React.Component {
 
     const activeFilters = [...this.state.activeFilters, { label: filterText }];
     this.setState({ activeFilters });
-  }
+  };
 
   filterCategorySelected = category => {
     const { filterCategory } = this.state;
     if (filterCategory !== category) {
       this.setState({ filterCategory: category, currentValue: '' });
     }
-  }
+  };
 
   filterValueSelected = filterValue => {
     const { currentFilterType, currentValue } = this.state;
@@ -150,24 +150,24 @@ export class MockFilterExample extends React.Component {
         this.filterAdded(currentFilterType, filterValue);
       }
     }
-  }
+  };
 
   filterExists = fieldTitle => {
     const { activeFilters } = this.state;
     const index = findIndex(activeFilters, filter => filter.label.startsWith(fieldTitle));
     return index !== -1;
-  }
+  };
 
   getFilterValue = fieldTitle => {
     const { activeFilters } = this.state;
     const existingFilter = find(activeFilters, filter => filter.label.startsWith(fieldTitle));
     return existingFilter.label.substring(existingFilter.label.indexOf(': ') + 2);
-  }
+  };
 
   enforceSingleSelect = fieldTitle => {
     const { activeFilters } = this.state;
     remove(activeFilters, filter => filter.label.startsWith(fieldTitle));
-  }
+  };
 
   removeFilter = filter => {
     const { activeFilters } = this.state;
@@ -177,7 +177,7 @@ export class MockFilterExample extends React.Component {
       const updated = [...activeFilters.slice(0, index), ...activeFilters.slice(index + 1)];
       this.setState({ activeFilters: updated });
     }
-  }
+  };
 
   selectFilterType = filterType => {
     const { currentFilterType } = this.state;
@@ -203,11 +203,11 @@ export class MockFilterExample extends React.Component {
         filterCategory: newFilterCategory
       });
     }
-  }
+  };
 
   updateCurrentValue = event => {
     this.setState({ currentValue: event.target.value });
-  }
+  };
 
   renderInput() {
     const { currentFilterType, currentValue, filterCategory } = this.state;

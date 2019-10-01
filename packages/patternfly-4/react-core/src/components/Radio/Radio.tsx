@@ -43,7 +43,7 @@ export class Radio extends React.Component<RadioProps> {
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     this.props.onChange(event.currentTarget.checked, event);
-  }
+  };
 
   render() {
     const {
@@ -68,8 +68,8 @@ export class Radio extends React.Component<RadioProps> {
           aria-invalid={!isValid}
           disabled={isDisabled}
           defaultChecked={checked || isChecked}
-          {...!isChecked && { defaultChecked }}
-          {...!label && { 'aria-label': ariaLabel }}
+          {...(!isChecked && { defaultChecked })}
+          {...(!label && { 'aria-label': ariaLabel })}
         />
         {label && (
           <label

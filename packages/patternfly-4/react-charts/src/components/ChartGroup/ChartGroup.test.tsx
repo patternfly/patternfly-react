@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { ChartArea } from '../ChartArea';
 import { ChartGroup } from './ChartGroup';
 
-Object.values([true, false]).forEach((isRead) => {
+Object.values([true, false]).forEach(isRead => {
   test('ChartGroup', () => {
     const view = shallow(<ChartGroup />);
     expect(view).toMatchSnapshot();

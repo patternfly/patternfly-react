@@ -16,7 +16,7 @@ describe('OverflowMenuControl', () => {
   });
 
   test('Additional Options', () => {
-    const view = mount(<OverflowMenuControl hasAdditionalOptions={true} />);
+    const view = mount(<OverflowMenuControl hasAdditionalOptions />);
     expect(view.find(`.${styles.modifiers.additionalOptions}`).length).toBe(1);
     expect(view).toMatchSnapshot();
   });

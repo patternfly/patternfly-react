@@ -18,7 +18,7 @@ const visibilityModifiers = pickProperties(styles.modifiers, [
 ]);
 
 export const DataListActionVisibility = Object.keys(visibilityModifiers)
-  .map((key) => [key.replace('_2xl', '2Xl'), visibilityModifiers[key]])
+  .map(key => [key.replace('_2xl', '2Xl'), visibilityModifiers[key]])
   .reduce((acc, curr) => ({ ...acc, [curr[0]]: curr[1] }), {});
 
 export interface DataListActionProps extends Omit<React.HTMLProps<HTMLDivElement>, 'children'> {
@@ -52,13 +52,13 @@ export class DataListAction extends React.Component<DataListActionProps, DataLis
 
   onToggle = (isOpen: boolean) => {
     this.setState({ isOpen });
-  }
+  };
 
   onSelect = (event: MouseEvent) => {
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       isOpen: !prevState.isOpen
     }));
-  }
+  };
 
   render() {
     const {

@@ -16,11 +16,13 @@ class CompoundLabel extends React.Component {
       className={this.props.innerClassName}
       overlayPlacement={this.props.overlayPlacement}
     />
-  )
+  );
 
   render() {
     const values = [...this.props.values];
-    if (values.length === 0) { return null; }
+    if (values.length === 0) {
+      return null;
+    }
     const categoryTooltip = <Tooltip id="tooltip">{this.props.category.label}</Tooltip>;
     return (
       <span className="label label-primary compound-label-pf">

@@ -44,13 +44,13 @@ export class SerialConsoleConnector extends React.Component {
       passKeys: false,
       status: DISCONNECTED // will close the terminal window
     });
-  }
+  };
 
   onConnect = () => {
     log('SerialConsoleConnector.onConnect(), ', this.state);
     this.setConnected();
     this.tellFairyTale();
-  }
+  };
 
   onData = data => {
     log('UI terminal component produced data, i.e. a key was pressed, pass it to backend. [', data, ']');
@@ -60,32 +60,32 @@ export class SerialConsoleConnector extends React.Component {
     if (this.state.passKeys) {
       this.onDataFromBackend(data);
     }
-  }
+  };
 
   onDataFromBackend = data => {
     log('Backend sent data, pass them to the UI component. [', data, ']');
     if (this.childSerialconsole) {
       this.childSerialconsole.onDataReceived(data);
     }
-  }
+  };
 
   onDisconnect = () => {
     this.setState({
       status: DISCONNECTED
     });
     timeoutIds.forEach(id => clearTimeout(id));
-  }
+  };
 
   onResize = (rows, cols) => {
     log('UI has been resized, pass this info to backend. [', rows, ', ', cols, ']');
-  }
+  };
 
   setConnected = () => {
     this.setState({
       status: CONNECTED,
       passKeys: true
     });
-  }
+  };
 
   tellFairyTale = () => {
     let time = 1000;
@@ -102,7 +102,7 @@ export class SerialConsoleConnector extends React.Component {
 
     time += 5000;
     timeoutIds.push(setTimeout(this.onBackendDisconnected, time));
-  }
+  };
 
   render() {
     return (

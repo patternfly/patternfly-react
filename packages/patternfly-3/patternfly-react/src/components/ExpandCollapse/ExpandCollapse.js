@@ -29,7 +29,7 @@ class ExpandCollapse extends React.Component {
     } else {
       this.setState(prevState => ({ expanded: !prevState.expanded }));
     }
-  }
+  };
 
   render() {
     const { children, textCollapsed, textExpanded, align, className, bordered } = this.props;

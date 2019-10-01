@@ -32,4 +32,4 @@ module.exports = {
     'filter-alt': filter,
     ...icons
   }
-}
+};

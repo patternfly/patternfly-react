@@ -37,7 +37,7 @@ export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
   children = null,
   className = '',
   isOpen = false,
-  'aria-label' : ariaLabel = 'Actions',
+  'aria-label': ariaLabel = 'Actions',
   parentRef = null,
   isFocused = false,
   isHovered = false,
@@ -60,7 +60,8 @@ export const KebabToggle: React.FunctionComponent<KebabToggleProps> = ({
     isPlain={isPlain}
     isDisabled={isDisabled}
     onToggle={onToggle}
-    {...props}>
+    {...props}
+  >
     <EllipsisVIcon />
   </Toggle>
 );

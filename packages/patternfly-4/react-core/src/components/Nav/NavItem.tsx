@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
 import { NavContext, NavSelectClickHandler } from './Nav';
 
-export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>,  'onClick'> {
+export interface NavItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onClick'> {
   /** Content rendered inside the nav item */
   children?: React.ReactNode;
   /** Additional classes added to the nav item */
@@ -62,8 +62,8 @@ export const NavItem: React.FunctionComponent<NavItemProps> = ({
     <NavContext.Consumer>
       {(context: any) =>
         React.cloneElement(child, {
-          "onClick": (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
-          "className": css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className),
+          onClick: (e: MouseEvent) => context.onSelect(e, groupId, itemId, to, preventDefault, onClick),
+          className: css(styles.navLink, isActive && styles.modifiers.current, child.props && child.props.className),
           'aria-current': isActive ? 'page' : null
         })
       }

@@ -2,7 +2,7 @@ describe('Page Demo Test', () => {
   it('Navigate to page section', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#page-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/page-demo-nav-link')
+    cy.url().should('eq', 'http://localhost:3000/page-demo-nav-link');
   });
 
   it('Test Page elements', () => {
@@ -17,8 +17,12 @@ describe('Page Demo Test', () => {
         cy.get('.pf-c-page__sidebar.pf-m-expanded').should('not.exist');
       });
     });
-    cy.get('div[class="pf-c-page__header-brand-link"]').invoke('text').should('eq', 'Logo that\'s a <div>');
-    cy.get('.pf-c-page__header-tools').invoke('text').should('contain', 'Toolbar | Avatar');
+    cy.get('div[class="pf-c-page__header-brand-link"]')
+      .invoke('text')
+      .should('eq', "Logo that's a <div>");
+    cy.get('.pf-c-page__header-tools')
+      .invoke('text')
+      .should('contain', 'Toolbar | Avatar');
     cy.get('.pf-c-page__main-section.pf-m-dark-100').should('exist');
     cy.get('.pf-c-page__main-section.pf-m-dark-200').should('exist');
     cy.get('.pf-c-page__main-section.pf-m-light').should('exist');

@@ -15,8 +15,7 @@ const COLOR_SCALE = [
   chart_color_orange_100.value,
   chart_color_orange_500.value,
   chart_color_orange_200.value,
-  chart_color_orange_400.value,
-
+  chart_color_orange_400.value
 ];
 
 export const DarkOrangeColorTheme = ColorTheme({

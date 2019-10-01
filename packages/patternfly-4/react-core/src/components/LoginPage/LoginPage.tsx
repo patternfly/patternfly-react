@@ -77,7 +77,7 @@ export const LoginPage: React.FunctionComponent<LoginPageProps> = ({
     <React.Fragment>
       {backgroundImgSrc && <BackgroundImage src={backgroundImgSrc} alt={backgroundImgAlt} />}
       <Login header={Header} footer={Footer} className={css(className)} {...props}>
-        <LoginMainHeader title={loginTitle} subtitle={loginSubtitle}/>
+        <LoginMainHeader title={loginTitle} subtitle={loginSubtitle} />
         <LoginMainBody>{children}</LoginMainBody>
         {(socialMediaLoginContent || forgotCredentials || signUpForAccountMessage) && (
           <LoginMainFooter

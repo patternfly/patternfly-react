@@ -25,7 +25,16 @@ export const Card: React.FunctionComponent<CardProps> = ({
 }: CardProps) => {
   const Component = component as any;
   return (
-  <Component className={css(styles.card, isHoverable && styles.modifiers.hoverable, isCompact && styles.modifiers.compact, className)} {...props}>
-    {children}
-  </Component>
-);};
+    <Component
+      className={css(
+        styles.card,
+        isHoverable && styles.modifiers.hoverable,
+        isCompact && styles.modifiers.compact,
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </Component>
+  );
+};

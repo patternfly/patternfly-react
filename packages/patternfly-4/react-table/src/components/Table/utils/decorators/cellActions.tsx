@@ -2,12 +2,29 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { ActionsColumn } from '../../ActionsColumn';
-import { IActions, IAction, IActionsResolver, IAreActionsDisabled, IExtra, IExtraData, IFormatterValueType, IRowData } from '../../Table';
+import {
+  IActions,
+  IAction,
+  IActionsResolver,
+  IAreActionsDisabled,
+  IExtra,
+  IExtraData,
+  IFormatterValueType,
+  IRowData
+} from '../../Table';
 
-const resolveOrDefault = (resolver: IActionsResolver | IAreActionsDisabled, defaultValue: IActions | boolean, rowData: IRowData, extraData: IExtraData) =>
-  typeof resolver === 'function' ? resolver(rowData, extraData) : defaultValue;
+const resolveOrDefault = (
+  resolver: IActionsResolver | IAreActionsDisabled,
+  defaultValue: IActions | boolean,
+  rowData: IRowData,
+  extraData: IExtraData
+) => (typeof resolver === 'function' ? resolver(rowData, extraData) : defaultValue);
 
-export const cellActions = (actions: IActions, actionResolver: IActionsResolver, areActionsDisabled: IAreActionsDisabled) => (
+export const cellActions = (
+  actions: IActions,
+  actionResolver: IActionsResolver,
+  areActionsDisabled: IAreActionsDisabled
+) => (
   label: IFormatterValueType,
   {
     rowData,

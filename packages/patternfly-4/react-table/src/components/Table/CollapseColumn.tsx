@@ -18,7 +18,7 @@ export const CollapseColumn: React.FunctionComponent<CollapseColumnProps> = ({
   isOpen,
   onToggle,
   ...props
-}: CollapseColumnProps ) => {
+}: CollapseColumnProps) => {
   return (
     <React.Fragment>
       {isOpen !== undefined && (

@@ -9,7 +9,9 @@ import VerticalNavItemHelper from './VerticalNavItemHelper';
  * In the future, we could lift some of the primary-specific code from Helper into this file.
  */
 const BaseVerticalNavItem = props => {
-  if (wrongDepth(props, 'primary')) { return correctDepth(props); }
+  if (wrongDepth(props, 'primary')) {
+    return correctDepth(props);
+  }
   return <VerticalNavItemHelper {...props} />;
 };
 

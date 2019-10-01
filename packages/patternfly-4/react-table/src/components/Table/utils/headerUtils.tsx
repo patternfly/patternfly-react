@@ -19,8 +19,17 @@ import { ICell, IRow, IActions, IActionsResolver, IAreActionsDisabled, OnSelect,
  * @return {*} header, label, transforms: Array, formatters: Array.
  */
 const generateHeader = (
-  { transforms: origTransforms, formatters: origFormatters, columnTransforms, header }:
-  { transforms?: ICell['transforms'], formatters?: ICell['formatters'], columnTransforms?: ICell['columnTransforms'], header?: ICell},
+  {
+    transforms: origTransforms,
+    formatters: origFormatters,
+    columnTransforms,
+    header
+  }: {
+    transforms?: ICell['transforms'];
+    formatters?: ICell['formatters'];
+    columnTransforms?: ICell['columnTransforms'];
+    header?: ICell;
+  },
   title?: string | ICell
 ) => ({
   ...header,
@@ -40,8 +49,20 @@ const generateHeader = (
  * @param {*} customCell config with cellFormatters, cellTransforms, columnTransforms and rest of cell config.
  * @returns {*} cell, transforms: Array, formatters: Array.
  */
-const generateCell = ({ cellFormatters, cellTransforms, columnTransforms, cell }:
-  { cellFormatters?: ICell['cellFormatters'], cellTransforms?: ICell['cellTransforms'], columnTransforms?: ICell['columnTransforms'], cell?: ICell}, extra: any) => ({
+const generateCell = (
+  {
+    cellFormatters,
+    cellTransforms,
+    columnTransforms,
+    cell
+  }: {
+    cellFormatters?: ICell['cellFormatters'];
+    cellTransforms?: ICell['cellTransforms'];
+    columnTransforms?: ICell['columnTransforms'];
+    cell?: ICell;
+  },
+  extra: any
+) => ({
   ...cell,
   transforms: [
     ...(cellTransforms || []),
@@ -93,7 +114,7 @@ const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
  * @param {*} extraObject with onSelect callback.
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
-const selectableTransforms = ({ onSelect, canSelectAll }: { onSelect: OnSelect, canSelectAll: boolean}) => [
+const selectableTransforms = ({ onSelect, canSelectAll }: { onSelect: OnSelect; canSelectAll: boolean }) => [
   ...(onSelect
     ? [
         {
@@ -110,8 +131,15 @@ const selectableTransforms = ({ onSelect, canSelectAll }: { onSelect: OnSelect, 
  * @param {*} extraObject with actions array.
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
-const actionsTransforms = ({ actions, actionResolver, areActionsDisabled }:
-  { actions: IActions, actionResolver: IActionsResolver, areActionsDisabled: IAreActionsDisabled}) => [
+const actionsTransforms = ({
+  actions,
+  actionResolver,
+  areActionsDisabled
+}: {
+  actions: IActions;
+  actionResolver: IActionsResolver;
+  areActionsDisabled: IAreActionsDisabled;
+}) => [
   ...(actionResolver || actions
     ? [
         {
@@ -128,7 +156,7 @@ const actionsTransforms = ({ actions, actionResolver, areActionsDisabled }:
  * @param {*}  extraObject with onCollapse callback.
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
-const collapsibleTransfroms = ({ onCollapse }: { onCollapse: OnCollapse}) => [
+const collapsibleTransfroms = ({ onCollapse }: { onCollapse: OnCollapse }) => [
   ...(onCollapse
     ? [
         {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import {TitleLevel} from '../Title';
+import { TitleLevel } from '../Title';
 import { ModalBoxHeader } from './ModalBoxHeader';
 
 test('ModalBoxHeader Test', () => {

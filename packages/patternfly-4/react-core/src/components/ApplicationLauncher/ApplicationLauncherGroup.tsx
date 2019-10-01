@@ -4,8 +4,4 @@ import { DropdownGroup, DropdownGroupProps } from '../Dropdown';
 export const ApplicationLauncherGroup: React.FunctionComponent<DropdownGroupProps> = ({
   children,
   ...props
-}: DropdownGroupProps) => (
-  <DropdownGroup {...props}>
-    {children}
-  </DropdownGroup>
-);
+}: DropdownGroupProps) => <DropdownGroup {...props}>{children}</DropdownGroup>;

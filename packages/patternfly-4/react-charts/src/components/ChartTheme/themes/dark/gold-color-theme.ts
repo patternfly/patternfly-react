@@ -15,10 +15,9 @@ const COLOR_SCALE = [
   chart_color_gold_100.value,
   chart_color_gold_500.value,
   chart_color_gold_200.value,
-  chart_color_gold_400.value,
-
+  chart_color_gold_400.value
 ];
 
 export const DarkGoldColorTheme = ColorTheme({
   COLOR_SCALE
-}) ;
+});

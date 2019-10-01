@@ -11,7 +11,7 @@ test('Verify Skip To Content', () => {
 });
 
 test('Verify Skip To Content if forced to display', () => {
-  const view = shallow(<SkipToContent href="#main-content" {...props} show/>);
+  const view = shallow(<SkipToContent href="#main-content" {...props} show />);
   // Add a useful assertion here.
   expect(view).toMatchSnapshot();
 });

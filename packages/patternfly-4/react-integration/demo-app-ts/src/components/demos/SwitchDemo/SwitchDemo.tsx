@@ -9,9 +9,9 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
     isChecked: true
   };
 
-  handleChange = (isChecked) => {
+  handleChange = isChecked => {
     this.setState({ isChecked });
-  }
+  };
 
   render() {
     const { isChecked } = this.state;
@@ -25,7 +25,13 @@ export class SwitchDemo extends React.Component<{}, SwitchState> {
           isChecked={isChecked}
         />
         <br />
-        <Switch id="disabled-switch-off" aria-label="disabled switch" label="Message when on" isChecked={false} isDisabled />
+        <Switch
+          id="disabled-switch-off"
+          aria-label="disabled switch"
+          label="Message when on"
+          isChecked={false}
+          isDisabled
+        />
       </React.Fragment>
     );
   }

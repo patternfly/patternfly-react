@@ -66,7 +66,7 @@ export class LiveEdit extends React.Component {
 
   onCodeOpen = () => {
     this.setState({ codeOpen: !this.state.codeOpen });
-  }
+  };
 
   onCopy = () => {
     const el = document.createElement('textarea');
@@ -76,7 +76,7 @@ export class LiveEdit extends React.Component {
     document.execCommand('copy');
     document.body.removeChild(el);
     this.setState({ copied: true });
-  }
+  };
 
   render() {
     const Toolbar = (

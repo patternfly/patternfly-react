@@ -39,22 +39,22 @@ class SimpleLoginPage extends React.Component {
 
   handleUsernameChange = value => {
     this.setState({ usernameValue: value });
-  }
+  };
 
   handlePasswordChange = passwordValue => {
     this.setState({ passwordValue });
-  }
+  };
 
   onRememberMeClick = () => {
     this.setState({ isRememberMeChecked: !this.state.isRememberMeChecked });
-  }
+  };
 
   onLoginButtonClick = event => {
     event.preventDefault();
     this.setState({ isValidUsername: !!this.state.usernameValue });
     this.setState({ isValidPassword: !!this.state.passwordValue });
     this.setState({ showHelperText: !this.state.usernameValue || !this.state.passwordValue });
-  }
+  };
 
   render() {
     const helperText = (

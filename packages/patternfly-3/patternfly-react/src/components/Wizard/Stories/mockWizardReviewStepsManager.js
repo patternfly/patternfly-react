@@ -16,7 +16,7 @@ class MockWizardReviewStepsManager extends React.Component {
     this.setState({
       steps: updated
     });
-  }
+  };
   subStepClicked = (e, stepIndex, subStepIndex) => {
     e.preventDefault();
     const updated = [...this.state.steps];
@@ -24,7 +24,7 @@ class MockWizardReviewStepsManager extends React.Component {
     this.setState({
       steps: updated
     });
-  }
+  };
   render() {
     const { steps } = this.state;
     return (

@@ -52,16 +52,28 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
   parentRef = null,
   toggleTemplate: ToggleTemplate = '',
   onEnter = null
-}: OptionsToggleProps ) => {
+}: OptionsToggleProps) => {
   return (
-    <div className={css(styles.optionsMenuToggle, isDisabled && styles.modifiers.disabled, styles.modifiers.plain, styles.modifiers.text)} >
+    <div
+      className={css(
+        styles.optionsMenuToggle,
+        isDisabled && styles.modifiers.disabled,
+        styles.modifiers.plain,
+        styles.modifiers.text
+      )}
+    >
       {showToggle && (
         <React.Fragment>
           <span className={css(styles.optionsMenuToggleText)}>
             {typeof ToggleTemplate === 'string' ? (
               fillTemplate(ToggleTemplate, { firstIndex, lastIndex, itemCount, itemsTitle })
             ) : (
-              <ToggleTemplate firstIndex={firstIndex} lastIndex={lastIndex} itemCount={itemCount} itemsTitle={itemsTitle}/>
+              <ToggleTemplate
+                firstIndex={firstIndex}
+                lastIndex={lastIndex}
+                itemCount={itemCount}
+                itemsTitle={itemsTitle}
+              />
             )}
           </span>
           <DropdownToggle
@@ -73,9 +85,9 @@ export const OptionsToggle: React.FunctionComponent<OptionsToggleProps> = ({
             id={`${widgetId}-toggle`}
             className={styles.optionsMenuToggleButton}
             parentRef={parentRef}
-          >
-          </DropdownToggle>
+          ></DropdownToggle>
         </React.Fragment>
       )}
-    </div>);
+    </div>
+  );
 };

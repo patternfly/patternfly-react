@@ -17,7 +17,12 @@ export interface CellType {
 
 // Columns Types
 export type ColumnsType = ColumnType[] | any[];
-export interface ColumnType { property?: string; cell?: CellType; props?: object; header?: HeaderType; }
+export interface ColumnType {
+  property?: string;
+  cell?: CellType;
+  props?: object;
+  header?: HeaderType;
+}
 export interface HeaderType {
   label?: string;
   transforms?: transformsType;
@@ -54,7 +59,14 @@ export const TableDefaults = {
 
 // Formatters Types
 export type formatterValueType = object | string | React.ElementType;
-export interface ExtraParamsType {rowData?: RowType; column?: ColumnType; columnIndex?: number; property?: string; rowIndex?: number; rowKey?: RowKeyType; }
+export interface ExtraParamsType {
+  rowData?: RowType;
+  column?: ColumnType;
+  columnIndex?: number;
+  property?: string;
+  rowIndex?: number;
+  rowKey?: RowKeyType;
+}
 export type formatterType = (value: string | object, extra: ExtraParamsType) => formatterValueType;
 export type formattersType = formatterType[];
 
@@ -64,7 +76,12 @@ export type transformsType = transformType[];
 
 // Renderers Types
 export type createElementType = string | React.ComponentClass<any, any> | React.FunctionComponent<any>;
-export type rendererType = string | Function | React.ComponentClass<any, any> | React.FunctionComponent<any> | React.Component<any, {}, any>;
+export type rendererType =
+  | string
+  | Function
+  | React.ComponentClass<any, any>
+  | React.FunctionComponent<any>
+  | React.Component<any, {}, any>;
 export interface RendererType {
   wrapper?: rendererType;
   row?: rendererType;
@@ -73,21 +90,21 @@ export interface RendererType {
 export interface RenderersTypes {
   columns: ColumnsType;
   renderers?: {
-    table?: string,
-    header?: RendererType,
-    body?: RendererType
+    table?: string;
+    header?: RendererType;
+    body?: RendererType;
   };
   components?: {
-    table?: string,
+    table?: string;
     header?: {
-      wrapper?: rendererType,
-      row?: rendererType,
-      cell?: rendererType,
-    },
+      wrapper?: rendererType;
+      row?: rendererType;
+      cell?: rendererType;
+    };
     body?: {
-      wrapper?: rendererType,
-      row?: rendererType,
-      cell?: rendererType
-    }
+      wrapper?: rendererType;
+      row?: rendererType;
+      cell?: rendererType;
+    };
   };
 }

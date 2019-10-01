@@ -1,9 +1,6 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import {
-  VictoryVoronoiContainer,
-  VictoryVoronoiContainerProps
-} from 'victory';
+import { VictoryVoronoiContainer, VictoryVoronoiContainerProps } from 'victory';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
 import { getClassName, getTheme } from '../ChartUtils';
@@ -70,7 +67,7 @@ export interface ChartVoronoiContainerProps extends VictoryVoronoiContainerProps
    * When the mouseFollowTooltip prop is set on VictoryVoronoiContainer, The position of the center of the tooltip
    * follows the position of the mouse.
    */
-  mouseFollowTooltips?: boolean,
+  mouseFollowTooltips?: boolean;
   /**
    * The onActivated prop accepts a function to be called whenever new data points are activated.
    * The function is called with the parameters points (an array of active data objects) and props
@@ -158,11 +155,11 @@ export const ChartVoronoiContainer: React.FunctionComponent<ChartVoronoiContaine
   labelComponent = allowTooltip ? <ChartTooltip /> : undefined,
   ...rest
 }: ChartVoronoiContainerProps) => {
-  const chartClassName = getClassName({className});
+  const chartClassName = getClassName({ className });
   const chartLabelComponent = React.cloneElement(labelComponent, {
     constrainToVisibleArea,
     theme,
-    ...labelComponent.props,
+    ...labelComponent.props
   });
 
   // Note: theme is required by voronoiContainerMixin, but @types/victory is missing a prop type

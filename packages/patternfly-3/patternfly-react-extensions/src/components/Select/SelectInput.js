@@ -11,7 +11,9 @@ class SelectInput extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.focus) { this.searchInput.current.focus(); }
+    if (this.props.focus) {
+      this.searchInput.current.focus();
+    }
   }
 
   render() {

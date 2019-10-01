@@ -2,7 +2,7 @@ describe('Switch Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#ouia-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/ouia-demo-nav-link')
+    cy.url().should('eq', 'http://localhost:3000/ouia-demo-nav-link');
   });
 
   it('Verify Switches exist', () => {

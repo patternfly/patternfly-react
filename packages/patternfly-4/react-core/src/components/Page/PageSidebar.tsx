@@ -16,30 +16,35 @@ export interface PageSidebarProps extends React.HTMLProps<HTMLDivElement> {
   /** Programmatically manage if the side nav is shown, if isManagedSidebar is set to true in the Page component, this prop is managed */
   isNavOpen?: boolean;
   /** Indicates the color scheme of the sidebar */
-  theme?: 'dark' | 'light'
+  theme?: 'dark' | 'light';
 }
 
-export const PageSidebar: React.FunctionComponent<PageSidebarProps> =
-  ({ className= '', nav, isNavOpen= true, theme= 'light', ...props }: PageSidebarProps) => (
-    <PageContextConsumer>
-      {({isManagedSidebar, isNavOpen: managedIsNavOpen}: PageSidebarProps) => {
-        const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
+export const PageSidebar: React.FunctionComponent<PageSidebarProps> = ({
+  className = '',
+  nav,
+  isNavOpen = true,
+  theme = 'light',
+  ...props
+}: PageSidebarProps) => (
+  <PageContextConsumer>
+    {({ isManagedSidebar, isNavOpen: managedIsNavOpen }: PageSidebarProps) => {
+      const navOpen = isManagedSidebar ? managedIsNavOpen : isNavOpen;
 
-        return (
-          <div
-            id="page-sidebar"
-            className={css(
-              styles.pageSidebar,
-              theme === 'dark' && styles.modifiers.dark,
-              navOpen && styles.modifiers.expanded,
-              !navOpen && styles.modifiers.collapsed,
-              className
-            )}
-            {...props}
-          >
-            <div className={css(styles.pageSidebarBody)}>{nav}</div>
-          </div>
-        );
-      }}
-    </PageContextConsumer>
+      return (
+        <div
+          id="page-sidebar"
+          className={css(
+            styles.pageSidebar,
+            theme === 'dark' && styles.modifiers.dark,
+            navOpen && styles.modifiers.expanded,
+            !navOpen && styles.modifiers.collapsed,
+            className
+          )}
+          {...props}
+        >
+          <div className={css(styles.pageSidebarBody)}>{nav}</div>
+        </div>
+      );
+    }}
+  </PageContextConsumer>
 );

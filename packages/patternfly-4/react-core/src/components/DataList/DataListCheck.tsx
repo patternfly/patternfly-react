@@ -34,7 +34,7 @@ export const DataListCheck: React.FunctionComponent<DataListCheckProps> = ({
       <input
         {...props}
         type="checkbox"
-        onChange={(event) => onChange(event.currentTarget.checked, event)}
+        onChange={event => onChange(event.currentTarget.checked, event)}
         aria-invalid={!isValid}
         disabled={isDisabled}
         defaultChecked={isChecked || checked}

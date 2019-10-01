@@ -2,15 +2,20 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 
 import { Alert, AlertVariant } from './Alert';
-import { AlertActionLink }  from './AlertActionLink';
+import { AlertActionLink } from './AlertActionLink';
 import { AlertActionCloseButton } from './AlertActionCloseButton';
 
 test('default Alert variant is info', () => {
   const view = mount(<Alert title="this is a test">Alert testing</Alert>);
-  expect(view.find('Alert').childAt(0).prop('className')).toContain('pf-m-info');
+  expect(
+    view
+      .find('Alert')
+      .childAt(0)
+      .prop('className')
+  ).toContain('pf-m-info');
 });
 
-Object.values(AlertVariant).forEach((variant) => {
+Object.values(AlertVariant).forEach(variant => {
   describe(`Alert - ${variant}`, () => {
     test('Description', () => {
       const view = mount(
@@ -72,16 +77,11 @@ Object.values(AlertVariant).forEach((variant) => {
         </Alert>
       );
       expect(view).toMatchSnapshot();
-
     });
 
     test('inline variation', () => {
       const view = mount(
-        <Alert
-          variant={variant}
-          isInline
-          title="Some title"
-        >
+        <Alert variant={variant} isInline title="Some title">
           Some alert
         </Alert>
       );

@@ -14,15 +14,14 @@ export class PopoverDemo extends Component {
   }
 
   render() {
-
     return (
       <Popover
-      headerContent={this.myPopoverProps.headerContent}
-      bodyContent={this.myPopoverProps.bodyContent}
-      footerContent={this.myPopoverProps.footerContent}
-    >
-      {this.myPopoverProps.children}
-    </Popover>
-  );
+        headerContent={this.myPopoverProps.headerContent}
+        bodyContent={this.myPopoverProps.bodyContent}
+        footerContent={this.myPopoverProps.footerContent}
+      >
+        {this.myPopoverProps.children}
+      </Popover>
+    );
   }
 }

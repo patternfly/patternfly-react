@@ -1,9 +1,6 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import {
-  VictoryContainer,
-  VictoryContainerProps
-} from 'victory';
+import { VictoryContainer, VictoryContainerProps } from 'victory';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getClassName, getTheme } from '../ChartUtils';
 
@@ -116,12 +113,12 @@ export const ChartContainer: React.FunctionComponent<ChartContainerProps> = ({
   theme = getTheme(themeColor, themeVariant),
   ...rest
 }: ChartContainerProps) => {
-  const chartClassName = getClassName({className});
+  const chartClassName = getClassName({ className });
 
   // Note: theme is valid, but @types/victory is missing a prop type
   // @ts-ignore
   return <VictoryContainer className={chartClassName} theme={theme} {...rest} />;
-}
+};
 
 // Note: VictoryContainer.role must be hoisted
 hoistNonReactStatics(ChartContainer, VictoryContainer);

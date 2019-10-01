@@ -18,7 +18,7 @@ interface ChartPieLabelInterface {
   dx?: number; // Horizontal shift from the x coordinate
   dy?: number; // Horizontal shift from the y coordinate
   height: number; // Chart height
-  labelPosition?: 'bottom' | 'center' | 'right' ; // Position of label
+  labelPosition?: 'bottom' | 'center' | 'right'; // Position of label
   legendPosition?: 'bottom' | 'right'; // Position of legend
   padding: any; // Chart padding
   width: number; // Chart width
@@ -30,20 +30,12 @@ interface ChartLabelTextSizeInterface {
 }
 
 // Returns x coordinate for bullet labels
-export const getBulletLabelX = ({
-  chartWidth,
-  dx = 0,
-  labelPosition
-}: ChartBulletLabelInterface) => {
-  return (labelPosition === 'top' && chartWidth) ? Math.round(chartWidth / 2) : dx;
+export const getBulletLabelX = ({ chartWidth, dx = 0, labelPosition }: ChartBulletLabelInterface) => {
+  return labelPosition === 'top' && chartWidth ? Math.round(chartWidth / 2) : dx;
 };
 
 // Returns y coordinate for bullet labels
-export const getBulletLabelY = ({
-  chartHeight,
-  dy = 0,
-  labelPosition
-}: ChartBulletLabelInterface) => {
+export const getBulletLabelY = ({ chartHeight, dy = 0, labelPosition }: ChartBulletLabelInterface) => {
   switch (labelPosition) {
     case 'bottom':
       return chartHeight + ChartCommonStyles.label.margin + dy;
@@ -85,13 +77,7 @@ export const getPieLabelX = ({
 };
 
 // Returns x coordinate for pie labels
-export const getPieLabelY = ({
-  dy = 0,
-  height,
-  labelPosition,
-  padding,
-  width
-}: ChartPieLabelInterface) => {
+export const getPieLabelY = ({ dy = 0, height, labelPosition, padding, width }: ChartPieLabelInterface) => {
   const origin = getPieOrigin({ height, padding, width });
   const radius = Helpers.getRadius({ height, width, padding });
 
@@ -110,12 +96,9 @@ export const getPieLabelY = ({
 export const overpassFontCharacterConstant = 2.5875;
 
 // Returns an approximate size for the give text
-export const getLabelTextSize = ({
-  text,
-  theme
-}: ChartLabelTextSizeInterface): {height: number, width: number} => {
+export const getLabelTextSize = ({ text, theme }: ChartLabelTextSizeInterface): { height: number; width: number } => {
   const style = theme.legend.style.labels;
-  return TextSize.approximateTextSize(text,  {
+  return TextSize.approximateTextSize(text, {
     ...style,
     characterConstant: overpassFontCharacterConstant
   });

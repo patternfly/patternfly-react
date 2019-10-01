@@ -78,7 +78,7 @@ class BaseVerticalNavItemHelper extends React.Component {
     const { primary, secondary, tertiary } = this.getContextNavItems();
     const { updateNavOnItemBlur, idPath, onBlur } = this.props;
     updateNavOnItemBlur(primary, secondary, tertiary, this.idPath(), idPath, noDelay, onBlur);
-  }
+  };
 
   onItemClick = event => {
     const { primary, secondary, tertiary } = this.getContextNavItems();
@@ -95,19 +95,19 @@ class BaseVerticalNavItemHelper extends React.Component {
     }
     this.setActive();
     onClick && onClick(primary, secondary, tertiary);
-  }
+  };
 
   onItemHover = () => {
     const { primary, secondary, tertiary } = this.getContextNavItems();
     const { updateNavOnItemHover, idPath, onHover } = this.props;
     updateNavOnItemHover(primary, secondary, tertiary, this.idPath(), idPath, onHover);
-  }
+  };
 
   onMobileSelection = (primary, secondary, tertiary) => {
     const { setMobilePath, updateNavOnMobileSelection } = this.props;
     setMobilePath(this.idPath());
     updateNavOnMobileSelection(primary, secondary, tertiary);
-  }
+  };
 
   getContextNavItems = () => {
     // We have primary, secondary, and tertiary items as props if they are part of the parent context,
@@ -119,11 +119,11 @@ class BaseVerticalNavItemHelper extends React.Component {
       secondary: depth === 'secondary' ? navItem : secondaryItem,
       tertiary: depth === 'tertiary' ? navItem : tertiaryItem
     };
-  }
+  };
 
   setActive = () => {
     this.props.setActivePath(this.idPath());
-  }
+  };
 
   setHovered() {
     this.props.setHoverPath(this.idPath());
@@ -132,7 +132,7 @@ class BaseVerticalNavItemHelper extends React.Component {
   id = () => {
     const { id, title } = this.navItem(null, true); // Need to ignorePath here so we don't get an infinite call stack...
     return id || title || this.props.index;
-  }
+  };
 
   idPath = () => `${this.props.idPath}${this.id()}/`;
 
@@ -150,7 +150,7 @@ class BaseVerticalNavItemHelper extends React.Component {
       selectedOnMobile: valOrOnPath(item.selectedOnMobile, props.mobilePath),
       pinned: valOrOnPath(item.pinned, props.pinnedPath)
     };
-  }
+  };
 
   pinNextDepth = () => {
     const {
@@ -181,7 +181,7 @@ class BaseVerticalNavItemHelper extends React.Component {
       }
     }
     updateNavOnPin(this.navItem(), nextDepth, !pinnedPath);
-  }
+  };
 
   render() {
     const {

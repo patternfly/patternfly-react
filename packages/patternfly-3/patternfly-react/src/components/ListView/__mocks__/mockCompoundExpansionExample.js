@@ -30,7 +30,7 @@ export class MockCompoundExpansion extends React.Component {
       item.expandType = expandProp;
     }
     this.setState({ listItems: mockListItems });
-  }
+  };
 
   renderAdditionalInfoExpandItems(item) {
     return (
@@ -80,7 +80,7 @@ export class MockCompoundExpansion extends React.Component {
         </Grid.Row>
       </ListView.Item>
     );
-  }
+  };
   render() {
     const { listItems } = this.state;
 

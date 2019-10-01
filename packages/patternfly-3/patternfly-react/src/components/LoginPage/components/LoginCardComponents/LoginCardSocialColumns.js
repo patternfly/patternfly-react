@@ -22,7 +22,7 @@ class LoginCardSocialColumns extends React.Component {
     this.setState({
       width: window.innerWidth
     });
-  }
+  };
 
   getListItems = () => {
     this.hiddenLinks = [];
@@ -38,7 +38,7 @@ class LoginCardSocialColumns extends React.Component {
         return <LoginCardSocialLink link={link} key={link.key || index} />;
       })
     );
-  }
+  };
 
   getHiddenListItems = () => {
     const { numberOfButtonsToShow } = this.props;
@@ -48,11 +48,11 @@ class LoginCardSocialColumns extends React.Component {
         <LoginCardSocialLink link={link} key={link.key || index + numberOfButtonsToShow} />
       ))
     );
-  }
+  };
 
   toggleExpend = () => {
     this.setState({ expend: !this.state.expend });
-  }
+  };
 
   render() {
     const { links, numberOfButtonsToShow } = this.props;

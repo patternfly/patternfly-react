@@ -32,9 +32,7 @@ stories.add('Managed Login Page with errors display on top of the form', () => (
   <LoginPage {...getManagedPageWithErrorsOnTopProps()} />
 ));
 
-stories.add('Managed Login Page with errors display under form inputs', () => (
-  <LoginPage {...getManagedPageProps()} />
-));
+stories.add('Managed Login Page with errors display under form inputs', () => <LoginPage {...getManagedPageProps()} />);
 
 stories.add('Build Your own Basic Login Page', () => LoginPage.Pattern(getBuildYourOwnPageProps()));
 

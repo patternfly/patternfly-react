@@ -1,6 +1,4 @@
-export {
-  TableEditConfirmation
-} from './constants';
+export { TableEditConfirmation } from './constants';
 
 export * from './utils';
 export {
@@ -8,12 +6,12 @@ export {
   EditableTableBody,
   InlineEditBodyProps,
   EditConfig,
-  IEditedCellData,
-} from  './editableTableBody'
+  IEditedCellData
+} from './editableTableBody';
 
 export {
   default as editableRowWrapper,
   EditableRowWrapper,
   EditableRowWrapperProps,
   EditableRowWrapperRow
-} from  './editableRowWrapper'
+} from './editableRowWrapper';

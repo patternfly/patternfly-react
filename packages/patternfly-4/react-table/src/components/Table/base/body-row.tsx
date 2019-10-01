@@ -27,7 +27,7 @@ export class BodyRow extends React.Component<BodyRowProps, {}> {
   };
 
   shouldComponentUpdate(nextProps: BodyRowProps) {
-    const {columns, rowData} = this.props;
+    const { columns, rowData } = this.props;
 
     // Check for row based override.
     const { renderers } = nextProps;
@@ -40,9 +40,7 @@ export class BodyRow extends React.Component<BodyRowProps, {}> {
       return true;
     }
 
-    return !(
-      columnsAreEqual(columns, nextProps.columns) && isEqual(rowData, nextProps.rowData)    
-      );
+    return !(columnsAreEqual(columns, nextProps.columns) && isEqual(rowData, nextProps.rowData));
   }
   render() {
     const { columns, renderers, onRow, rowKey, rowIndex, rowData } = this.props;
@@ -77,7 +75,7 @@ export class BodyRow extends React.Component<BodyRowProps, {}> {
           },
           transformed.children ||
             evaluateFormatters(formatters)(
-              rowData[`_${evaluatedProperty}`] || rowData[evaluatedProperty] as formatterValueType,
+              rowData[`_${evaluatedProperty}`] || (rowData[evaluatedProperty] as formatterValueType),
               extraParameters
             )
         );

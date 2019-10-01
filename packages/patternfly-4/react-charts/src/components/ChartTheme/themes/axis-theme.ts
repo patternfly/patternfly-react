@@ -1,8 +1,5 @@
 /* eslint-disable camelcase */
-import {
-  chart_axis_grid_stroke_Color,
-  chart_axis_tick_stroke_Color
-} from '@patternfly/react-tokens';
+import { chart_axis_grid_stroke_Color, chart_axis_tick_stroke_Color } from '@patternfly/react-tokens';
 
 // Axis theme
 export const AxisTheme = {
@@ -15,5 +12,5 @@ export const AxisTheme = {
         stroke: chart_axis_tick_stroke_Color.value
       }
     }
-  },
+  }
 };

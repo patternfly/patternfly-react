@@ -28,7 +28,9 @@ const NotificationDrawerPanelWrapper = ({
   const unreadCount = notifications.filter(notification => !notification.seen).length;
 
   const getUnread = () => {
-    if (unreadCount !== 1) { return `${unreadCount} ${translations.unreadEvents}`; }
+    if (unreadCount !== 1) {
+      return `${unreadCount} ${translations.unreadEvents}`;
+    }
     return `1 ${translations.unreadEvent}`;
   };
 

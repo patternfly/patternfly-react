@@ -12,9 +12,12 @@ class TimePicker extends React.Component {
 
   setSelected = time => {
     const newTime = getDateFromTime(time);
-    if (newTime) { this.setState({ value: newTime, tmpValue: formatTime(newTime, this.props.locale) }); }
-    else { this.setState({ tmpValue: formatTime(newTime, this.props.locale) }); }
-  }
+    if (newTime) {
+      this.setState({ value: newTime, tmpValue: formatTime(newTime, this.props.locale) });
+    } else {
+      this.setState({ tmpValue: formatTime(newTime, this.props.locale) });
+    }
+  };
   render() {
     const { value } = this.state;
     const { locale, placement, id } = this.props;

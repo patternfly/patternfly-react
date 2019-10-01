@@ -85,7 +85,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     isReadOnly: false,
     isExpanded: false,
     isCode: false,
-    variant: 'inline', 
+    variant: 'inline',
     position: TooltipPosition.top,
     maxWidth: '150px',
     exitDelay: 1600,
@@ -101,18 +101,18 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
     if (prevProps.children !== this.props.children) {
       this.updateText(this.props.children as string | number);
     }
-  }
+  };
 
   expandContent = (_event: React.MouseEvent<Element, MouseEvent>) => {
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       expanded: !prevState.expanded
     }));
-  }
+  };
 
   updateText = (text: string | number) => {
     this.setState({ text });
     this.props.onChange(text);
-  }
+  };
 
   render = () => {
     const {
@@ -143,7 +143,7 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
         {...divProps}
       >
         <GenerateId prefix="">
-          {(id) => (
+          {id => (
             <React.Fragment>
               <div className={css(styles.clipboardCopyGroup)}>
                 {variant === 'expansion' && (
@@ -189,7 +189,12 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
                 </ClipboardCopyButton>
               </div>
               {this.state.expanded && (
-                <ClipboardCopyExpanded isReadOnly={isReadOnly} isCode={isCode} id={`content-${id}`} onChange={this.updateText}>
+                <ClipboardCopyExpanded
+                  isReadOnly={isReadOnly}
+                  isCode={isCode}
+                  id={`content-${id}`}
+                  onChange={this.updateText}
+                >
                   {this.state.text}
                 </ClipboardCopyExpanded>
               )}
@@ -198,5 +203,5 @@ export class ClipboardCopy extends React.Component<ClipboardCopyProps, Clipboard
         </GenerateId>
       </div>
     );
-  }
+  };
 }

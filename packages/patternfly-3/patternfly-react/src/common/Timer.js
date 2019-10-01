@@ -11,8 +11,12 @@ class Timer {
   // startTimer optionally takes a new func and delay so the timer instance can be reused.
   startTimer(func, delay = -1) {
     this.clearTimer();
-    if (func) { this.execute = func; }
-    if (delay >= 0) { this.delay = delay; }
+    if (func) {
+      this.execute = func;
+    }
+    if (delay >= 0) {
+      this.delay = delay;
+    }
     this.timer = setTimeout(this.execute, this.delay);
   }
   clearTimer() {

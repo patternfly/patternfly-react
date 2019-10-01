@@ -73,45 +73,45 @@ class VncConsole extends React.Component {
       return;
     }
     this.rfb.disconnect();
-  }
+  };
 
   onConnected = () => {
     this.setState({ status: CONNECTED });
-  }
+  };
 
   onCtrlAltDel = e => {
     if (this.rfb) {
       this.rfb.sendCtrlAltDel();
       this.focusVnc(e);
     }
-  }
+  };
 
   onDisconnected = e => {
     this.setState({ status: DISCONNECTED });
     this.props.onDisconnected(e);
-  }
+  };
 
   onSecurityFailure = e => {
     this.setState({ status: DISCONNECTED });
     this.props.onSecurityFailure(e);
-  }
+  };
 
   removeEventListeners = () => {
     this.rfb.removeEventListener('connect', this.onConnected);
     this.rfb.removeEventListener('disconnect', this.onDisconnected);
     this.rfb.removeEventListener('securityfailure', this.onSecurityFailure);
-  }
+  };
 
   setNovncElem = e => {
     this.novncElem = e;
-  }
+  };
 
   focusVnc = e => {
     if (e && e.target && e.target.blur) {
       e.target.blur();
     }
     this.novncElem && this.novncElem.focus();
-  }
+  };
 
   render() {
     const {

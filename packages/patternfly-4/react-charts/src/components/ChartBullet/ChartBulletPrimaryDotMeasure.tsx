@@ -1,12 +1,7 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import {
-  DataGetterPropType,
-  DomainPropType,
-  PaddingProps,
-  VictoryScatter
-} from 'victory';
-import { getPrimaryDotMeasureData }  from './utils';
+import { DataGetterPropType, DomainPropType, PaddingProps, VictoryScatter } from 'victory';
+import { getPrimaryDotMeasureData } from './utils';
 import { ChartContainer } from '../ChartContainer';
 import { ChartScatter } from '../ChartScatter';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
@@ -209,14 +204,14 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
   const tooltip = React.cloneElement(labelComponent, {
     constrainToVisibleArea,
     dx: 0,
-    dy: horizontal ? -(size) : 0,
+    dy: horizontal ? -size : 0,
     orientation: 'top',
     ...labelComponent.props
   });
 
   const measure = computedData.map((dataPoint: any, index) => {
     return React.cloneElement(measureComponent, {
-      data: [{...dataPoint}],
+      data: [{ ...dataPoint }],
       domain,
       height,
       horizontal,
@@ -242,9 +237,7 @@ export const ChartBulletPrimaryDotMeasure: React.FunctionComponent<ChartBulletPr
       {measure}
     </ChartContainer>
   ) : (
-    <React.Fragment>
-      {measure}
-    </React.Fragment>
+    <React.Fragment>{measure}</React.Fragment>
   );
 };
 

@@ -20,8 +20,12 @@ export const HorizontalFormField = ({
 }) => {
   const controlProps = { ...props };
 
-  if (bsSize) { controlProps.bsSize = bsSize; }
-  if (validationState) { controlProps.validationState = validationState; }
+  if (bsSize) {
+    controlProps.bsSize = bsSize;
+  }
+  if (validationState) {
+    controlProps.validationState = validationState;
+  }
 
   const formGroupProps = { key: controlId, controlId, ...controlProps };
 

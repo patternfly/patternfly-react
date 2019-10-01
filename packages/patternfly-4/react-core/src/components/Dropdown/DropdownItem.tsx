@@ -38,7 +38,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   ...props
 }: DropdownItemProps) => (
   <DropdownArrowContext.Consumer>
-    {(context) =>
+    {context => (
       <InternalDropdownItem
         context={context}
         role="menuitem"
@@ -53,6 +53,8 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         tooltipProps={tooltipProps}
         listItemClassName={listItemClassName}
         onClick={onClick}
-        {...props} />}
+        {...props}
+      />
+    )}
   </DropdownArrowContext.Consumer>
 );

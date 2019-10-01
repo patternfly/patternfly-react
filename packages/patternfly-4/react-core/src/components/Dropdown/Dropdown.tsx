@@ -37,7 +37,7 @@ export const Dropdown: React.FunctionComponent<DropdownProps> = ({
 }: DropdownProps) => (
   <DropdownContext.Provider
     value={{
-      onSelect: (event) => onSelect && onSelect(event),
+      onSelect: event => onSelect && onSelect(event),
       toggleTextClass: styles.dropdownToggleText,
       toggleIconClass: styles.dropdownToggleIcon,
       menuClass: styles.dropdownMenu,

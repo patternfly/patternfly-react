@@ -10,8 +10,7 @@ export enum spinnerSize {
   xl = 'xl'
 }
 
-export interface SpinnerProps
-  extends Omit<React.HTMLProps<HTMLSpanElement>, 'size'> {
+export interface SpinnerProps extends Omit<React.HTMLProps<HTMLSpanElement>, 'size'> {
   /** Additional classes added to the Spinner. */
   className?: string;
   /** Size variant of progress. */

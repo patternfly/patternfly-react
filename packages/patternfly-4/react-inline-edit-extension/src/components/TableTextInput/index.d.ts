@@ -1,4 +1,1 @@
-export {
-  default as TableTextInput,
-  TableTextInputProps
-} from './TableTextInput';
+export { default as TableTextInput, TableTextInputProps } from './TableTextInput';

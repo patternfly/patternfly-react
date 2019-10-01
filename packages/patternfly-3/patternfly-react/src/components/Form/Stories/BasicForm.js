@@ -37,7 +37,7 @@ export const BasicFormFields = [
     label: 'Phone',
     useFieldLevelHelp: true,
     content:
-      'Please specify Country code <br> <a target=\'_blank\' href=\'https://countrycode.org/\'>Click here for a list of Country codes</a>',
+      "Please specify Country code <br> <a target='_blank' href='https://countrycode.org/'>Click here for a list of Country codes</a>",
     close: 'true',
     help: 'Enter a valid phone number',
     formControl: ({ validationState, ...props }) => <Form.FormControl type="phone" {...props} />
@@ -88,7 +88,7 @@ export const getBasicFormKnobs = () => ({
   disabled: boolean('Disabled', false),
   content: text(
     'Field Level Help Content',
-    'Please specify Country code <br> <a target=\'_blank\' href=\'https://countrycode.org/\'>Click here for a list of Country codes</a>'
+    "Please specify Country code <br> <a target='_blank' href='https://countrycode.org/'>Click here for a list of Country codes</a>"
   ),
   close: select('Close Popover', ['true', 'false'], 'true')
 });

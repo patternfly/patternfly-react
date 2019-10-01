@@ -1,9 +1,16 @@
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
+import {
+  Chart,
+  ChartAxis,
+  ChartGroup,
+  ChartLine,
+  ChartThemeColor,
+  ChartLegend,
+  ChartVoronoiContainer
+} from '@patternfly/react-charts';
 import { width } from 'styled-system';
 
 export class LineChartSimpleDemo extends React.Component {
-
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -11,7 +18,7 @@ export class LineChartSimpleDemo extends React.Component {
   render() {
     return (
       <div>
-        <div style={{height: '250px', width: '600px'}}>
+        <div style={{ height: '250px', width: '600px' }}>
           <Chart
             legendData={[{ name: 'Cats' }]}
             legendOrientation="vertical"
@@ -42,5 +49,4 @@ export class LineChartSimpleDemo extends React.Component {
       </div>
     );
   }
-
 }

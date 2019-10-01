@@ -11,7 +11,7 @@ const images = {
   [BackgroundImageSrc.filter]: '/assets/images/background-filter.svg'
 };
 
-Object.values([true, false]).forEach((isRead) => {
+Object.values([true, false]).forEach(isRead => {
   test('BackgroundImage', () => {
     const view = shallow(<BackgroundImage src={images} />);
     expect(view).toMatchSnapshot();

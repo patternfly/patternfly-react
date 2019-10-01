@@ -27,7 +27,6 @@ export interface DropdownToggleCheckboxProps
 }
 
 export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckboxProps> {
-
   static defaultProps = {
     className: '',
     isValid: true,
@@ -37,27 +36,25 @@ export class DropdownToggleCheckbox extends React.Component<DropdownToggleCheckb
 
   handleChange = (checked: boolean, event: React.FormEvent<HTMLInputElement>) => {
     this.props.onChange((event.target as HTMLInputElement).checked, event);
-  }
+  };
 
   calculateChecked = () => {
     const { isChecked, checked } = this.props;
     return isChecked !== undefined ? isChecked : checked;
-  }
+  };
 
   render() {
     const { className, onChange, isValid, isDisabled, isChecked, ref, checked, children, ...props } = this.props;
-    const text = children && <span
-      className={css(styles.dropdownToggleText, className)}
-      aria-hidden="true"
-      id={`${props.id}-text`}
-    >
-      {children}
-    </span>;
+    const text = children && (
+      <span className={css(styles.dropdownToggleText, className)} aria-hidden="true" id={`${props.id}-text`}>
+        {children}
+      </span>
+    );
     return (
       <label className={css(styles.dropdownToggleCheck, className)} htmlFor={props.id}>
         <Checkbox
           {...props}
-          {...(this.calculateChecked() !== undefined) && { onChange: this.handleChange }}
+          {...(this.calculateChecked() !== undefined && { onChange: this.handleChange })}
           ref={ref as any}
           aria-invalid={!isValid}
           isDisabled={isDisabled}

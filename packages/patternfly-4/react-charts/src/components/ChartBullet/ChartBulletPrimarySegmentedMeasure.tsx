@@ -1,13 +1,7 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import {
-  DataGetterPropType,
-  DomainPropType,
-  NumberOrCallback,
-  PaddingProps,
-  VictoryBar,
-} from 'victory';
-import { getPrimarySegmentedMeasureData }  from './utils';
+import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps, VictoryBar } from 'victory';
+import { getPrimarySegmentedMeasureData } from './utils';
 import { ChartBar } from '../ChartBar';
 import { ChartContainer } from '../ChartContainer';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
@@ -227,14 +221,14 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
       if (horizontal) {
         return 0;
       }
-      const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
+      const result = typeof barWidth === 'function' ? barWidth(data, false) : barWidth;
       return result / 2;
     },
     dy: () => {
       if (!horizontal) {
         return 0;
       }
-      const result = (typeof barWidth === 'function') ? barWidth(data, false) : barWidth;
+      const result = typeof barWidth === 'function' ? barWidth(data, false) : barWidth;
       return -(result / 2);
     },
     orientation: 'top',
@@ -244,7 +238,7 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
   const measure = computedData.map((dataPoint: any, index) => {
     return React.cloneElement(measureComponent, {
       barWidth,
-      data: [{...dataPoint}],
+      data: [{ ...dataPoint }],
       domain,
       height,
       horizontal,
@@ -269,9 +263,7 @@ export const ChartBulletPrimarySegmentedMeasure: React.FunctionComponent<ChartBu
       {measure}
     </ChartContainer>
   ) : (
-    <React.Fragment>
-      {measure}
-    </React.Fragment>
+    <React.Fragment>{measure}</React.Fragment>
   );
 };
 

@@ -35,10 +35,12 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
 
   onEnter = () => {
     this.openedOnEnter = true;
-  }
+  };
 
   componentDidUpdate() {
-    if (!this.props.isOpen) { this.openedOnEnter = false; }
+    if (!this.props.isOpen) {
+      this.openedOnEnter = false;
+    }
   }
 
   render() {
@@ -84,7 +86,7 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
               )}
               ref={this.baseComponentRef}
             >
-              {React.Children.map(toggle, (oneToggle) =>
+              {React.Children.map(toggle, oneToggle =>
                 React.cloneElement(oneToggle, {
                   parentRef: this.baseComponentRef,
                   isOpen,

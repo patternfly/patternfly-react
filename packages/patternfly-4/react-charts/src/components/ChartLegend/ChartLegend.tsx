@@ -10,7 +10,7 @@ import {
   StringOrNumberOrCallback,
   VictoryLegend,
   VictoryLegendProps,
-  VictoryStyleInterface,
+  VictoryStyleInterface
 } from 'victory';
 import { ChartContainer } from '../ChartContainer';
 import { ChartPoint } from '../ChartPoint';
@@ -137,7 +137,7 @@ export interface ChartLegendProps extends VictoryLegendProps {
    * gutters are between columns. When orientation is vertical, gutters
    * are the space between rows.
    */
-  gutter?: number | {left: number, right: number};
+  gutter?: number | { left: number; right: number };
   /**
    * Specifies the height the svg viewBox of the chart container. This value should be given as a
    * number of pixels.
@@ -304,4 +304,4 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
 };
 
 // Note: VictoryLegend.role must be hoisted, but getBaseProps causes error with ChartVoronoiContainer
-hoistNonReactStatics(ChartLegend, VictoryLegend, { getBaseProps: true});
+hoistNonReactStatics(ChartLegend, VictoryLegend, { getBaseProps: true });

@@ -1,5 +1,5 @@
 import { ChartThemeDefinition } from '../../ChartTheme';
-import { ChartBulletStyles }  from '../../ChartTheme';
+import { ChartBulletStyles } from '../../ChartTheme';
 import {
   getBulletComparativeErrorMeasureTheme,
   getBulletComparativeMeasureTheme,
@@ -24,7 +24,7 @@ interface ChartBulletSizeInterface {
   theme?: ChartThemeDefinition;
   themeColor?: string;
   themeVariant?: string;
-  width: number;  // The chart width -- not SVG width
+  width: number; // The chart width -- not SVG width
 }
 
 export const getComparativeMeasureErrorWidth = ({
@@ -35,14 +35,15 @@ export const getComparativeMeasureErrorWidth = ({
   width,
 
   // destructure last
-  theme = getBulletComparativeErrorMeasureTheme(themeColor, themeVariant),
-}: ChartBulletSizeInterface) => scaleBarWidth({
-  defaultSize: theme.bar.height,
-  height,
-  horizontal,
-  value: ChartBulletStyles.comparativeMeasureErrorWidth,
-  width
-});
+  theme = getBulletComparativeErrorMeasureTheme(themeColor, themeVariant)
+}: ChartBulletSizeInterface) =>
+  scaleBarWidth({
+    defaultSize: theme.bar.height,
+    height,
+    horizontal,
+    value: ChartBulletStyles.comparativeMeasureErrorWidth,
+    width
+  });
 
 export const getComparativeMeasureWidth = ({
   height,
@@ -52,14 +53,15 @@ export const getComparativeMeasureWidth = ({
   width,
 
   // destructure last
-  theme = getBulletComparativeMeasureTheme(themeColor, themeVariant),
-}: ChartBulletSizeInterface) => scaleBarWidth({
-  defaultSize: theme.bar.height,
-  height,
-  horizontal,
-  value: ChartBulletStyles.comparativeMeasureWidth,
-  width
-});
+  theme = getBulletComparativeMeasureTheme(themeColor, themeVariant)
+}: ChartBulletSizeInterface) =>
+  scaleBarWidth({
+    defaultSize: theme.bar.height,
+    height,
+    horizontal,
+    value: ChartBulletStyles.comparativeMeasureWidth,
+    width
+  });
 
 export const getComparativeMeasureWarningWidth = ({
   height,
@@ -69,14 +71,15 @@ export const getComparativeMeasureWarningWidth = ({
   width,
 
   // destructure last
-  theme = getBulletComparativeWarningMeasureTheme(themeColor, themeVariant),
-}: ChartBulletSizeInterface) => scaleBarWidth({
-  defaultSize: theme.bar.height,
-  height,
-  horizontal,
-  value: ChartBulletStyles.comparativeMeasureWarningWidth,
-  width
-});
+  theme = getBulletComparativeWarningMeasureTheme(themeColor, themeVariant)
+}: ChartBulletSizeInterface) =>
+  scaleBarWidth({
+    defaultSize: theme.bar.height,
+    height,
+    horizontal,
+    value: ChartBulletStyles.comparativeMeasureWarningWidth,
+    width
+  });
 
 export const getPrimaryDotMeasureSize = ({
   height,
@@ -86,14 +89,15 @@ export const getPrimaryDotMeasureSize = ({
   width,
 
   // destructure last
-  theme = getBulletPrimaryDotMeasureTheme(themeColor, themeVariant),
-}: ChartBulletSizeInterface) => scaleSize({
-  defaultSize: theme.group.height,
-  height,
-  horizontal,
-  value: ChartBulletStyles.primaryDotMeasureSize,
-  width
-});
+  theme = getBulletPrimaryDotMeasureTheme(themeColor, themeVariant)
+}: ChartBulletSizeInterface) =>
+  scaleSize({
+    defaultSize: theme.group.height,
+    height,
+    horizontal,
+    value: ChartBulletStyles.primaryDotMeasureSize,
+    width
+  });
 
 export const getPrimarySegmentedMeasureWidth = ({
   height,
@@ -103,15 +107,16 @@ export const getPrimarySegmentedMeasureWidth = ({
   width,
 
   // destructure last
-  theme = getBulletPrimarySegmentedMeasureTheme(themeColor, themeVariant),
-}: ChartBulletSizeInterface) => scaleBarWidth({
-  defaultSize: theme.group.height,
-  height,
-  horizontal,
-  scale: .3,
-  value: ChartBulletStyles.primarySegmentedMeasureWidth,
-  width
-});
+  theme = getBulletPrimarySegmentedMeasureTheme(themeColor, themeVariant)
+}: ChartBulletSizeInterface) =>
+  scaleBarWidth({
+    defaultSize: theme.group.height,
+    height,
+    horizontal,
+    scale: 0.3,
+    value: ChartBulletStyles.primarySegmentedMeasureWidth,
+    width
+  });
 
 export const getQualitativeRangeBarWidth = ({
   height,
@@ -121,27 +126,22 @@ export const getQualitativeRangeBarWidth = ({
   width,
 
   // destructure last
-  theme = getBulletQualitativeRangeTheme(themeColor, themeVariant),
-}: ChartBulletSizeInterface) => scaleBarWidth({
-  defaultSize: theme.group.height,
-  height,
-  horizontal,
-  value: ChartBulletStyles.qualitativeRangeWidth,
-  width
-});
+  theme = getBulletQualitativeRangeTheme(themeColor, themeVariant)
+}: ChartBulletSizeInterface) =>
+  scaleBarWidth({
+    defaultSize: theme.group.height,
+    height,
+    horizontal,
+    value: ChartBulletStyles.qualitativeRangeWidth,
+    width
+  });
 
-const scale = ({
-  defaultSize,
-  height,
-  horizontal = true,
-  scale = 1,
-  value,
-  width
-}: ChartBulletScaleInterface) => horizontal
-  ? height > defaultSize
-    ? value + (height - defaultSize) * scale
-    : value - (defaultSize - height) * scale
-  : width > defaultSize
+const scale = ({ defaultSize, height, horizontal = true, scale = 1, value, width }: ChartBulletScaleInterface) =>
+  horizontal
+    ? height > defaultSize
+      ? value + (height - defaultSize) * scale
+      : value - (defaultSize - height) * scale
+    : width > defaultSize
     ? value + (width - defaultSize) * scale
     : value - (defaultSize - width) * scale;
 
@@ -149,13 +149,11 @@ const scale = ({
 export const scaleBarWidth = (props: ChartBulletScaleInterface) => Math.max(scale(props), 0);
 
 // Scale size per the given size properties
-export const scaleSize = ({
-  value,
-  ...rest
-}: ChartBulletScaleInterface) => Math.round(
-  scale({
-    scale: 1 / value,
-    value,
-    ...rest,
-  })
-);
+export const scaleSize = ({ value, ...rest }: ChartBulletScaleInterface) =>
+  Math.round(
+    scale({
+      scale: 1 / value,
+      value,
+      ...rest
+    })
+  );

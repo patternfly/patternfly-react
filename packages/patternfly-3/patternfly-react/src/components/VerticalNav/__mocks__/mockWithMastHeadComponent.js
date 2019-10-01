@@ -9,7 +9,7 @@ export class MockWithMastHeadComponent extends React.Component {
 
   onCollapse = () => {
     this.setState({ collapse: !this.state.collapse });
-  }
+  };
 
   render() {
     return (

@@ -1,7 +1,7 @@
 describe('OverflowMenu Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/');
-    cy.get('#overflow-menu-demo-nav-item-link').click(); 
+    cy.get('#overflow-menu-demo-nav-item-link').click();
     cy.url().should('eq', 'http://localhost:3000/overflow-menu-demo-nav-link');
   });
 
@@ -28,11 +28,13 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('Verify toggle dropdown', () => {
-        cy.get('#simple-overflow-menu button').should('have.class', 'pf-c-dropdown__toggle'); 
+        cy.get('#simple-overflow-menu button').should('have.class', 'pf-c-dropdown__toggle');
       });
-    
+
       it('Verify dropdown menu expanded', () => {
-        cy.get('#simple-overflow-menu button').last().click();
+        cy.get('#simple-overflow-menu button')
+          .last()
+          .click();
         cy.get('#simple-overflow-menu .pf-c-dropdown').should('have.class', 'pf-m-expanded');
       });
     });
@@ -45,7 +47,9 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('displays OverflowMenuContent and OverflowMenuControl', () => {
-        cy.get('#additional-options-overflow-menu .pf-c-overflow-menu__content, #additional-options-overflow-menu .pf-c-overflow-menu__control').should('be.visible');
+        cy.get(
+          '#additional-options-overflow-menu .pf-c-overflow-menu__content, #additional-options-overflow-menu .pf-c-overflow-menu__control'
+        ).should('be.visible');
       });
     });
 
@@ -60,11 +64,13 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('Verify toggle dropdown', () => {
-        cy.get('#additional-options-overflow-menu button').should('have.class', 'pf-c-dropdown__toggle'); 
+        cy.get('#additional-options-overflow-menu button').should('have.class', 'pf-c-dropdown__toggle');
       });
-    
+
       it('Verify dropdown menu expanded', () => {
-        cy.get('#additional-options-overflow-menu button').last().click();
+        cy.get('#additional-options-overflow-menu button')
+          .last()
+          .click();
         cy.get('#additional-options-overflow-menu .pf-c-dropdown').should('have.class', 'pf-m-expanded');
       });
     });
@@ -77,7 +83,9 @@ describe('OverflowMenu Demo Test', () => {
       });
 
       it('displays OverflowMenuContent and OverflowMenuControl', () => {
-        cy.get('#persist-overflow-menu .pf-c-overflow-menu__content, #persist-overflow-menu .pf-c-overflow-menu__control').should('be.visible');
+        cy.get(
+          '#persist-overflow-menu .pf-c-overflow-menu__content, #persist-overflow-menu .pf-c-overflow-menu__control'
+        ).should('be.visible');
       });
     });
 
@@ -88,18 +96,22 @@ describe('OverflowMenu Demo Test', () => {
 
       it('displays OverflowMenuControl and Persistent items', () => {
         cy.get('#persist-overflow-menu .pf-c-overflow-menu__control').should('be.visible');
-        cy.get(`#persist-overflow-menu .pf-c-overflow-menu__content .pf-c-overflow-menu__group.pf-m-persistent,
-        #persist-overflow-menu .pf-c-overflow-menu__content .pf-c-overflow-menu__item.pf-m-persistent`).should('be.visible');
+        cy.get(
+          `#persist-overflow-menu .pf-c-overflow-menu__content .pf-c-overflow-menu__group.pf-m-persistent,
+        #persist-overflow-menu .pf-c-overflow-menu__content .pf-c-overflow-menu__item.pf-m-persistent`
+        ).should('be.visible');
       });
 
       it('Verify toggle dropdown', () => {
-        cy.get('#persist-overflow-menu button').should('have.class', 'pf-c-dropdown__toggle'); 
+        cy.get('#persist-overflow-menu button').should('have.class', 'pf-c-dropdown__toggle');
       });
-    
+
       it('Verify dropdown menu expanded', () => {
-        cy.get('#persist-overflow-menu button').last().click();
+        cy.get('#persist-overflow-menu button')
+          .last()
+          .click();
         cy.get('#persist-overflow-menu .pf-c-dropdown').should('have.class', 'pf-m-expanded');
       });
     });
   });
-}); 
+});

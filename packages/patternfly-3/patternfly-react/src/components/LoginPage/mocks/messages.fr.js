@@ -1,11 +1,13 @@
 const pageHeader = {
-  alert: 'Patternfly sera mis à jour à 2.13.5 à 00:00, 23 Sep 2018 (UTC). Cette mise à jour durera de 8 à 12 heures, veuillez planifier à l\'avance pour cette panne.',
+  alert:
+    "Patternfly sera mis à jour à 2.13.5 à 00:00, 23 Sep 2018 (UTC). Cette mise à jour durera de 8 à 12 heures, veuillez planifier à l'avance pour cette panne.",
   logo: 'Patternfly',
-  caption: 'Utilisez cette zone pour placer des informations ou un message d\'introduction sur votre application qui peut être pertinent pour utilisateurs.'
+  caption:
+    "Utilisez cette zone pour placer des informations ou un message d'introduction sur votre application qui peut être pertinent pour utilisateurs."
 };
 
 const footerLinks = [
-  { children: 'Conditions d\'utilisation', href: '#' },
+  { children: "Conditions d'utilisation", href: '#' },
   { children: 'Aidez-moi', href: '#' },
   { children: 'Politique de confidentialité', href: '#' }
 ];
@@ -17,9 +19,9 @@ const cardHeader = {
 };
 
 const signUp = {
-  label: 'Besoin d\'un compte?',
+  label: "Besoin d'un compte?",
   link: {
-    label: 'S\'inscrire'
+    label: "S'inscrire"
   }
 };
 
@@ -29,7 +31,7 @@ const forgotPassword = 'mot de passe oublié?';
 
 const form = {
   error: 'Votre compte a été bloqué Contactez votre administrateur pour le débloquer.',
-  submitText: 'S\'identifier'
+  submitText: "S'identifier"
 };
 
 const passwordField = {
@@ -46,7 +48,7 @@ const passwordField = {
 const usernameField = {
   placeholder: 'Adresse e-mail',
   errors: {
-    empty: 'S\'il vous plaît entrer votre email.',
+    empty: "S'il vous plaît entrer votre email.",
     invalid: 'Votre email est invalide'
   }
 };

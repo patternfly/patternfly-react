@@ -1,5 +1,5 @@
 import * as React from 'react';
-import  { Button, ButtonProps }  from '../Button';
+import { Button, ButtonProps } from '../Button';
 
 export interface ChipButtonProps extends ButtonProps {
   /** Aria label for chip button */
@@ -13,14 +13,15 @@ export interface ChipButtonProps extends ButtonProps {
 }
 
 export const ChipButton: React.FunctionComponent<ChipButtonProps> = ({
-    ariaLabel = 'close',
-    children = null,
-    className = '',
-    onClick = () => undefined,
-    ...props
+  ariaLabel = 'close',
+  children = null,
+  className = '',
+  onClick = () => undefined,
+  ...props
 }: ChipButtonProps) => {
-    return (
+  return (
     <Button variant="plain" aria-label={ariaLabel} onClick={onClick} className={className} {...props}>
       {children}
-    </Button>);
-  };
+    </Button>
+  );
+};

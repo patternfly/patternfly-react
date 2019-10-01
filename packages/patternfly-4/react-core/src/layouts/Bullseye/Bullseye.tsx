@@ -3,15 +3,15 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/layouts/Bullseye/bullseye';
 
 export interface BullseyeProps extends React.HTMLProps<HTMLDivElement> {
-   /** content rendered inside the Bullseye layout */
-   children?: React.ReactNode;
-   /** additional classes added to the Bullseye layout */
-   className?: string;
-   /** Sets the base component to render. defaults to div */
-   component?: React.ReactNode;
+  /** content rendered inside the Bullseye layout */
+  children?: React.ReactNode;
+  /** additional classes added to the Bullseye layout */
+  className?: string;
+  /** Sets the base component to render. defaults to div */
+  component?: React.ReactNode;
 }
 
-export const Bullseye: React.FunctionComponent<BullseyeProps> =  ({
+export const Bullseye: React.FunctionComponent<BullseyeProps> = ({
   children = null,
   className = '',
   component = 'div',
@@ -19,7 +19,8 @@ export const Bullseye: React.FunctionComponent<BullseyeProps> =  ({
 }: BullseyeProps) => {
   const Component = component as any;
   return (
-  <Component className={css(styles.bullseye, className)} {...props}>
-    {children}
-  </Component>
-);};
+    <Component className={css(styles.bullseye, className)} {...props}>
+      {children}
+    </Component>
+  );
+};

@@ -1,28 +1,36 @@
 import * as React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { Table, TableHeader, TableBody, TableVariant, sortable, SortByDirection, IRow, ISortBy } from '@patternfly/react-table';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableVariant,
+  sortable,
+  SortByDirection,
+  IRow,
+  ISortBy
+} from '@patternfly/react-table';
 
 export interface DemoSortableTableProps {
-  firstColumnRows?: any[],
-  columns?: any,
-  rows?: IRow[],
-  sortBy?: ISortBy,
-  id?: string
+  firstColumnRows?: any[];
+  columns?: any;
+  rows?: IRow[];
+  sortBy?: ISortBy;
+  id?: string;
 }
 
 export class DemoSortableTable extends React.Component<DemoSortableTableProps> {
-
-    state = {
-      columns: [
-        { title: 'Repositories', transforms: [sortable] },
-        'Branches',
-        { title: 'Pull requests', transforms: [sortable] },
-        'Workspaces',
-        'Last Commit'
-      ],
-      rows: [this.props.firstColumnRows, ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
-      sortBy: {}
-    };
+  state = {
+    columns: [
+      { title: 'Repositories', transforms: [sortable] },
+      'Branches',
+      { title: 'Pull requests', transforms: [sortable] },
+      'Workspaces',
+      'Last Commit'
+    ],
+    rows: [this.props.firstColumnRows, ['a', 'two', 'k', 'four', 'five'], ['p', 'two', 'b', 'four', 'five']],
+    sortBy: {}
+  };
 
   onSort = (_event, index, direction) => {
     const sortedRows = this.state.rows.sort((a, b) => {
@@ -39,7 +47,7 @@ export class DemoSortableTable extends React.Component<DemoSortableTableProps> {
       },
       rows: direction === SortByDirection.asc ? sortedRows : sortedRows.reverse()
     });
-  }
+  };
 
   render() {
     const { columns, rows, sortBy } = this.state;

@@ -4,31 +4,31 @@
 
 interface Params<T> {
   // Number of rows or columns in the current axis
-  cellCount: number,
+  cellCount: number;
 
   // Width or height of cells for the current axis
-  cellSize?: number,
+  cellSize?: number;
 
   // Method to invoke if cell metadata should be recalculated
-  computeMetadataCallback: (props: T) => void,
+  computeMetadataCallback: (props: T) => void;
 
   // Parameters to pass to :computeMetadataCallback
-  computeMetadataCallbackProps: T,
+  computeMetadataCallbackProps: T;
 
   // Newly updated number of rows or columns in the current axis
-  nextCellsCount: number,
+  nextCellsCount: number;
 
   // Newly updated width or height of cells for the current axis
-  nextCellSize?: number,
+  nextCellSize?: number;
 
   // Newly updated scroll-to-index
-  nextScrollToIndex: number,
+  nextScrollToIndex: number;
 
   // Scroll-to-index
-  scrollToIndex: number,
+  scrollToIndex: number;
 
   // Callback to invoke if the scroll position should be recalculated
-  updateScrollOffsetForScrollToIndex: () => void
+  updateScrollOffsetForScrollToIndex: () => void;
 }
 
 export default function calculateSizeAndPositionDataAndUpdateScrollOffset({

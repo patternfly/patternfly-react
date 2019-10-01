@@ -58,17 +58,21 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
   ...props
 }: OptionsMenuToggleWithTextProps) => {
   return (
-
-  <div className={css(styles.optionsMenuToggle,
-    getModifier(styles, 'text'),
-    isPlain && getModifier(styles, 'plain'),
-    isHovered && getModifier(styles, 'hover'),
-    isActive && getModifier(styles, 'active'),
-    isFocused && getModifier(styles, 'focus'),
-    isDisabled && getModifier(styles, 'disabled'))}
-    {...props}>
-    <span className={css(styles.optionsMenuToggleText, toggleTextClassName)}>{toggleText}</span>
-    <OptionsMenuToggle className={toggleButtonContentsClassName}
+    <div
+      className={css(
+        styles.optionsMenuToggle,
+        getModifier(styles, 'text'),
+        isPlain && getModifier(styles, 'plain'),
+        isHovered && getModifier(styles, 'hover'),
+        isActive && getModifier(styles, 'active'),
+        isFocused && getModifier(styles, 'focus'),
+        isDisabled && getModifier(styles, 'disabled')
+      )}
+      {...props}
+    >
+      <span className={css(styles.optionsMenuToggleText, toggleTextClassName)}>{toggleText}</span>
+      <OptionsMenuToggle
+        className={toggleButtonContentsClassName}
         isDisabled={isDisabled}
         aria-label={ariaLabel}
         isOpen={isOpen}
@@ -79,5 +83,6 @@ export const OptionsMenuToggleWithText: React.FunctionComponent<OptionsMenuToggl
         onEnter={onEnter}
         toggleTemplate={toggleButtonContents}
       />
-  </div>
-);};
+    </div>
+  );
+};

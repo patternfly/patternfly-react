@@ -11,7 +11,7 @@ import {
   VictoryPie,
   VictoryStyleInterface
 } from 'victory';
-import { Helpers } from "victory-core";
+import { Helpers } from 'victory-core';
 import { getDonutTheme } from '../ChartUtils/chart-theme';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
@@ -297,7 +297,7 @@ export interface ChartDonutProps extends ChartPieProps {
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
    * **This prop should not be set manually.**
    */
-  origin?: { x: number, y: number };
+  origin?: { x: number; y: number };
   /**
    * The padAngle prop determines the amount of separation between adjacent data slices
    * in number of degrees
@@ -454,16 +454,18 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   ...rest
 }: ChartDonutProps) => {
   const defaultPadding = {
-    bottom: getPaddingForSide('bottom',  padding, theme.pie.padding),
+    bottom: getPaddingForSide('bottom', padding, theme.pie.padding),
     left: getPaddingForSide('left', padding, theme.pie.padding),
     right: getPaddingForSide('right', padding, theme.pie.padding),
-    top: getPaddingForSide('top', padding, theme.pie.padding),
+    top: getPaddingForSide('top', padding, theme.pie.padding)
   };
-  const chartRadius = radius ? radius : Helpers.getRadius({
-    height,
-    width,
-    padding: defaultPadding
-  });
+  const chartRadius = radius
+    ? radius
+    : Helpers.getRadius({
+        height,
+        width,
+        padding: defaultPadding
+      });
   const chartInnerRadius = innerRadius ? innerRadius : chartRadius - 9; // Todo: Add pf-core variable
 
   // Returns subtitle
@@ -505,7 +507,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
     const showBoth = title && subTitle && subTitlePosition == ChartDonutSubTitlePosition.center;
 
     return React.cloneElement(titleComponent, {
-      ...showBoth && { capHeight },
+      ...(showBoth && { capHeight }),
       key: 'pf-chart-donut-title',
       style: [ChartDonutStyles.label.title, ChartDonutStyles.label.subTitle],
       text: showBoth ? [title, subTitle] : title,
@@ -545,19 +547,21 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   );
 
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
-    desc: ariaDesc,
-    height,
-    title: ariaTitle,
-    width,
-    theme,
-    ...containerComponent.props
-  }, [chart, getTitle(), getSubTitle()]);
+  const container = React.cloneElement(
+    containerComponent,
+    {
+      desc: ariaDesc,
+      height,
+      title: ariaTitle,
+      width,
+      theme,
+      ...containerComponent.props
+    },
+    [chart, getTitle(), getSubTitle()]
+  );
 
   return standalone ? (
-    <React.Fragment>
-      {container}
-    </React.Fragment>
+    <React.Fragment>{container}</React.Fragment>
   ) : (
     <React.Fragment>
       {chart}

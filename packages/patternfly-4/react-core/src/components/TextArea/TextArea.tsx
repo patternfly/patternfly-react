@@ -21,9 +21,9 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
 
 export class TextArea extends React.Component<TextAreaProps> {
   static defaultProps = {
-    "className": '',
-    "isRequired": false,
-    "isValid": true,
+    className: '',
+    isRequired: false,
+    isValid: true,
     'aria-label': null as string
   };
 
@@ -36,10 +36,10 @@ export class TextArea extends React.Component<TextAreaProps> {
   }
 
   private handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    if (this.props.onChange ) {
+    if (this.props.onChange) {
       this.props.onChange(event.currentTarget.value, event);
     }
-  }
+  };
 
   render() {
     const { className, value, onChange, isValid, isRequired, ...props } = this.props;
@@ -47,7 +47,7 @@ export class TextArea extends React.Component<TextAreaProps> {
       <textarea
         className={css(styles.formControl, className)}
         onChange={this.handleChange}
-        {...(typeof this.props.defaultValue !== 'string') && { value }}
+        {...(typeof this.props.defaultValue !== 'string' && { value })}
         aria-invalid={!isValid}
         required={isRequired}
         {...props}

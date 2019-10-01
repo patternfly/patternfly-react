@@ -8,7 +8,7 @@ export const PopoverHeader: React.FunctionComponent<PopoverHeaderProps> = ({ chi
   </Title>
 );
 
-export interface PopoverHeaderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'size'>  {
+export interface PopoverHeaderProps extends Omit<React.HTMLProps<HTMLDivElement>, 'size'> {
   /** popover id */
   id: string;
   /** header node */

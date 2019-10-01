@@ -74,7 +74,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     onPreviousClick: () => undefined as any,
     onFirstClick: () => undefined as any,
     onLastClick: () => undefined as any,
-    onPageInput: () => undefined as any,
+    onPageInput: () => undefined as any
   };
 
   private static parseInteger(input: React.ReactText, lastPage: number): number {
@@ -91,19 +91,29 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     this.setState({ userInputPage: Number.isNaN(inputPage as number) ? event.target.value : inputPage });
   }
 
-  private onKeyDown(event: React.KeyboardEvent<HTMLInputElement>, page: number | string, lastPage: number, onPageInput: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void, onSetPage: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void): void {
+  private onKeyDown(
+    event: React.KeyboardEvent<HTMLInputElement>,
+    page: number | string,
+    lastPage: number,
+    onPageInput: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void,
+    onSetPage: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void
+  ): void {
     if (event.keyCode === KEY_CODES.ENTER) {
       const inputPage = Navigation.parseInteger(this.state.userInputPage, lastPage) as number;
-      onPageInput(event, Number.isNaN(inputPage) ? page as number : inputPage);
-      onSetPage(event, Number.isNaN(inputPage) ? page as number : inputPage);
+      onPageInput(event, Number.isNaN(inputPage) ? (page as number) : inputPage);
+      onSetPage(event, Number.isNaN(inputPage) ? (page as number) : inputPage);
     }
   }
 
   componentDidUpdate(lastState: NavigationProps) {
-    if (this.props.page !== lastState.page && this.props.page <= this.props.lastPage && this.state.userInputPage !== this.props.page) {
+    if (
+      this.props.page !== lastState.page &&
+      this.props.page <= this.props.lastPage &&
+      this.state.userInputPage !== this.props.page
+    ) {
       this.setState({ userInputPage: this.props.page });
     }
-   }
+  }
 
   render() {
     const {
@@ -137,21 +147,21 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
             isDisabled={isDisabled || page === firstPage}
             aria-label={toFirstPage}
             data-action="first"
-            onClick={(event) => {
+            onClick={event => {
               onFirstClick(event, 1);
               onSetPage(event, 1);
               this.setState({ userInputPage: 1 });
             }}
           >
             <AngleDoubleLeftIcon />
-          </Button>  
+          </Button>
         )}
         <Button
           variant={ButtonVariant.plain}
           isDisabled={isDisabled || page === firstPage}
           data-action="previous"
-          onClick={(event) => {
-            const newPage = page as number - 1 >= 1 ? page as number - 1 : 1;
+          onClick={event => {
+            const newPage = (page as number) - 1 >= 1 ? (page as number) - 1 : 1;
             onPreviousClick(event, newPage);
             onSetPage(event, newPage);
             this.setState({ userInputPage: newPage });
@@ -166,16 +176,14 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
               className={css(styles.formControl)}
               aria-label={currPage}
               type="number"
-              disabled={isDisabled || page === firstPage && page === lastPage}
+              disabled={isDisabled || (page === firstPage && page === lastPage)}
               min={lastPage <= 0 && firstPage <= 0 ? 0 : 1}
               max={lastPage}
               value={userInputPage}
-              onKeyDown={(event) => this.onKeyDown(event, page, lastPage, onPageInput, onSetPage)}
-              onChange={(event) => this.onChange(event, lastPage)}
+              onKeyDown={event => this.onKeyDown(event, page, lastPage, onPageInput, onSetPage)}
+              onChange={event => this.onChange(event, lastPage)}
             />
-            <span aria-hidden="true">
-              of {pagesTitle ? pluralize(lastPage, pagesTitle) : lastPage}
-            </span>
+            <span aria-hidden="true">of {pagesTitle ? pluralize(lastPage, pagesTitle) : lastPage}</span>
           </div>
         )}
         <Button
@@ -183,8 +191,8 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
           isDisabled={isDisabled || page === lastPage}
           aria-label={toNextPage}
           data-action="next"
-          onClick={(event) => {
-            const newPage = page as number + 1 <= lastPage ? page as number + 1 : lastPage;
+          onClick={event => {
+            const newPage = (page as number) + 1 <= lastPage ? (page as number) + 1 : lastPage;
             onNextClick(event, newPage);
             onSetPage(event, newPage);
             this.setState({ userInputPage: newPage });
@@ -198,7 +206,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
             isDisabled={isDisabled || page === lastPage}
             aria-label={toLastPage}
             data-action="last"
-            onClick={(event) => {
+            onClick={event => {
               onLastClick(event, lastPage);
               onSetPage(event, lastPage);
               this.setState({ userInputPage: lastPage });

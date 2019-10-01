@@ -33,7 +33,7 @@ export const DataListItem: React.FunctionComponent<DataListItemProps> = ({
   >
     {React.Children.map(
       children,
-      (child) =>
+      child =>
         React.isValidElement(child) &&
         React.cloneElement(child as React.ReactElement<any>, {
           rowid: ariaLabelledBy

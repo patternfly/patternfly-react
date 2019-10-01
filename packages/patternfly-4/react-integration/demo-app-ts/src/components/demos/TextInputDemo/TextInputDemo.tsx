@@ -6,12 +6,12 @@ export class TextInputDemo extends Component {
     value: ''
   };
 
-  handleTextInputChange = (value) => {
+  handleTextInputChange = value => {
     this.setState({ value });
-  }
+  };
 
   myTextInputProps: TextInputProps = {
-    onChange: this.handleTextInputChange,
+    onChange: this.handleTextInputChange
   };
 
   myDisabledTextInputProps: TextInputProps = {
@@ -34,12 +34,20 @@ export class TextInputDemo extends Component {
 
   render() {
     return (
-    <React.Fragment>
-      <TextInput id="text" onChange={this.myTextInputProps.onChange} />
-      <TextInput id="text-disabled" isDisabled={this.myDisabledTextInputProps.isDisabled} value={this.myDisabledTextInputProps.value} />
-      <TextInput id="text-read-only" isReadOnly={this.myReadOnlyTextInputProps.isReadOnly} value={this.myReadOnlyTextInputProps.value} />
-      <TextInput id="text-invalid" isValid={this.myValidTextInputProps.isValid} />
-    </React.Fragment>
+      <React.Fragment>
+        <TextInput id="text" onChange={this.myTextInputProps.onChange} />
+        <TextInput
+          id="text-disabled"
+          isDisabled={this.myDisabledTextInputProps.isDisabled}
+          value={this.myDisabledTextInputProps.value}
+        />
+        <TextInput
+          id="text-read-only"
+          isReadOnly={this.myReadOnlyTextInputProps.isReadOnly}
+          value={this.myReadOnlyTextInputProps.value}
+        />
+        <TextInput id="text-invalid" isValid={this.myValidTextInputProps.isValid} />
+      </React.Fragment>
     );
   }
 }

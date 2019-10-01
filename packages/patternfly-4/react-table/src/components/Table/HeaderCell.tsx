@@ -18,7 +18,7 @@ export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
   scope = '',
   textCenter = false,
   ...props
-}: HeaderCellProps ) => {
+}: HeaderCellProps) => {
   const Component = component as any;
   const mappedProps = {
     ...(scope ? { scope } : {}),

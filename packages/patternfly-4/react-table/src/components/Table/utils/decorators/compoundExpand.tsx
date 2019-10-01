@@ -4,7 +4,10 @@ import { Button } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { IExtra, IFormatterValueType } from '../../Table';
 
-export const compoundExpand = (value: IFormatterValueType, { rowIndex, columnIndex, rowData, column, property }: IExtra) => {
+export const compoundExpand = (
+  value: IFormatterValueType,
+  { rowIndex, columnIndex, rowData, column, property }: IExtra
+) => {
   if (!value) {
     return null;
   }

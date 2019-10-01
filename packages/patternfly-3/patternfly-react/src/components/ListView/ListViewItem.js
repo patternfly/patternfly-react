@@ -24,7 +24,7 @@ class ListViewItem extends React.Component {
       onExpand();
     }
     this.setState(prevState => ({ expanded: !prevState.expanded }));
-  }
+  };
 
   render() {
     const {

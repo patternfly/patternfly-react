@@ -10,7 +10,7 @@ const assertExpanded = (rows: IRow[], expandedRowIndexes: number[]) => {
 };
 
 const assertNotExpanded = (rows: IRow[], notExpandedRowIndexes: number[]) => {
-  notExpandedRowIndexes.forEach((expandedRowIndex: number ) => {
+  notExpandedRowIndexes.forEach((expandedRowIndex: number) => {
     const expandedRow = rows[expandedRowIndex];
     expect(isRowExpanded(expandedRow, rows)).toBeFalsy();
   });

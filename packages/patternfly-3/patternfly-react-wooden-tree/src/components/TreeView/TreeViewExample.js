@@ -69,7 +69,7 @@ class TreeViewExample extends React.Component {
       }
     }
     this.setState({ tree });
-  }
+  };
 
   render() {
     return (

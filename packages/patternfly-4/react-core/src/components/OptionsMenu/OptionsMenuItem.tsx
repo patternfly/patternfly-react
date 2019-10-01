@@ -5,7 +5,8 @@ import { DropdownItem } from '../Dropdown';
 import { CheckIcon } from '@patternfly/react-icons';
 import { Omit } from '../../helpers/typeUtils';
 
-export interface OptionsMenuItemProps extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onSelect' | 'onClick' | 'onKeyDown' | 'type'> {
+export interface OptionsMenuItemProps
+  extends Omit<React.HTMLProps<HTMLAnchorElement>, 'onSelect' | 'onClick' | 'onKeyDown' | 'type'> {
   /** Anything which can be rendered as an Options menu item */
   children?: React.ReactNode;
   /** Classes applied to root element of an Options menu item */
@@ -15,7 +16,7 @@ export interface OptionsMenuItemProps extends Omit<React.HTMLProps<HTMLAnchorEle
   /** Render Options menu item as disabled option */
   isDisabled?: boolean;
   /** Callback for when this Options menu item is selected */
-  onSelect?: (event?: React.MouseEvent<HTMLAnchorElement>|React.KeyboardEvent) => void;
+  onSelect?: (event?: React.MouseEvent<HTMLAnchorElement> | React.KeyboardEvent) => void;
   /** Unique id of this Options menu item */
   id?: string;
 }
@@ -34,10 +35,13 @@ export const OptionsMenuItem: React.FunctionComponent<OptionsMenuItemProps> = ({
       component="button"
       isDisabled={isDisabled}
       onClick={(event: any) => onSelect(event)}
-      {...isDisabled && { 'aria-disabled': true }}
+      {...(isDisabled && { 'aria-disabled': true })}
       {...props}
     >
       {children}
-      <i className={css(styles.optionsMenuMenuItemIcon)} aria-hidden hidden={!isSelected}><CheckIcon /></i>
+      <i className={css(styles.optionsMenuMenuItemIcon)} aria-hidden hidden={!isSelected}>
+        <CheckIcon />
+      </i>
     </DropdownItem>
-);};
+  );
+};

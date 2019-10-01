@@ -1,13 +1,16 @@
 import * as React from 'react';
-import {
-  PaddingProps,
-  StringOrNumberOrCallback,
-} from 'victory';
+import { PaddingProps, StringOrNumberOrCallback } from 'victory';
 import { Line } from 'victory-core';
 import { ChartContainer } from '../ChartContainer';
 import { ChartLabel } from '../ChartLabel';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getBulletGroupTitleTheme, getLabelTextSize, getBulletLabelX, getBulletLabelY, getPaddingForSide } from '../ChartUtils';
+import {
+  getBulletGroupTitleTheme,
+  getLabelTextSize,
+  getBulletLabelX,
+  getBulletLabelY,
+  getPaddingForSide
+} from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -130,26 +133,27 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
   ...rest
 }: ChartBulletGroupTitleProps) => {
   const defaultPadding = {
-    bottom: getPaddingForSide('bottom',  padding, theme.chart.padding),
+    bottom: getPaddingForSide('bottom', padding, theme.chart.padding),
     left: getPaddingForSide('left', padding, theme.chart.padding),
     right: getPaddingForSide('right', padding, theme.chart.padding),
-    top: getPaddingForSide('top', padding, theme.chart.padding),
+    top: getPaddingForSide('top', padding, theme.chart.padding)
   };
 
   const labelPadding = {
-    bottom: getPaddingForSide('bottom',  padding, theme.legend.style.labels.padding),
+    bottom: getPaddingForSide('bottom', padding, theme.legend.style.labels.padding),
     left: getPaddingForSide('left', padding, theme.legend.style.labels.padding),
     right: getPaddingForSide('right', padding, theme.legend.style.labels.padding),
-    top: getPaddingForSide('top', padding, theme.legend.style.labels.padding),
+    top: getPaddingForSide('top', padding, theme.legend.style.labels.padding)
   };
 
   // Horizontal divider to render under the group title
   const getDivider = () => {
-    const titleSize = getLabelTextSize({text: title,  theme});
-    const subTitleSize = getLabelTextSize({text: subTitle,  theme});
-    const dy = title && subTitle
-      ? titleSize.height + subTitleSize.height + labelPadding.top + labelPadding.bottom
-      : titleSize.height + labelPadding.top + labelPadding.bottom;
+    const titleSize = getLabelTextSize({ text: title, theme });
+    const subTitleSize = getLabelTextSize({ text: subTitle, theme });
+    const dy =
+      title && subTitle
+        ? titleSize.height + subTitleSize.height + labelPadding.top + labelPadding.bottom
+        : titleSize.height + labelPadding.top + labelPadding.bottom;
 
     return React.cloneElement(dividerComponent, {
       x1: defaultPadding.left,
@@ -166,7 +170,7 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
     const titleProps = titleComponent ? titleComponent.props : {};
     const showBoth = title && subTitle;
     return React.cloneElement(titleComponent, {
-      ...showBoth && { capHeight },
+      ...(showBoth && { capHeight }),
       style: [ChartBulletStyles.label.groupTitle, ChartBulletStyles.label.subTitle],
       text: showBoth ? [title, subTitle] : title,
       textAnchor: 'middle',
@@ -184,13 +188,11 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
     });
   };
 
-  const groupTitle = (
-    Boolean(title) && (
-      <React.Fragment>
-        {getTitle()}
-        {getDivider()}
-      </React.Fragment>
-    )
+  const groupTitle = Boolean(title) && (
+    <React.Fragment>
+      {getTitle()}
+      {getDivider()}
+    </React.Fragment>
   );
 
   return standalone ? (
@@ -198,8 +200,6 @@ export const ChartBulletGroupTitle: React.FunctionComponent<ChartBulletGroupTitl
       {groupTitle}
     </ChartContainer>
   ) : (
-    <React.Fragment>
-      {groupTitle}
-    </React.Fragment>
+    <React.Fragment>{groupTitle}</React.Fragment>
   );
 };

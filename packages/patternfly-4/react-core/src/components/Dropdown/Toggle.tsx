@@ -16,7 +16,10 @@ export interface ToggleProps {
   /** Flag to indicate if menu is opened */
   isOpen?: boolean;
   /** Callback called when toggle is clicked */
-  onToggle?: (isOpen: boolean, event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>) => void;
+  onToggle?: (
+    isOpen: boolean,
+    event: MouseEvent | TouchEvent | KeyboardEvent | React.KeyboardEvent<any> | React.MouseEvent<HTMLButtonElement>
+  ) => void;
   /** Callback called when the Enter key is pressed */
   onEnter?: () => void;
   /** Element which wraps toggle */
@@ -60,20 +63,25 @@ export class Toggle extends React.Component<ToggleProps> {
     document.addEventListener('mousedown', event => this.onDocClick(event));
     document.addEventListener('touchstart', event => this.onDocClick(event));
     document.addEventListener('keydown', event => this.onEscPress(event));
-  }
+  };
 
   componentWillUnmount = () => {
     document.removeEventListener('mousedown', event => this.onDocClick(event));
     document.removeEventListener('touchstart', event => this.onDocClick(event));
     document.removeEventListener('keydown', event => this.onEscPress(event));
-  }
+  };
 
   onDocClick = (event: MouseEvent | TouchEvent) => {
-    if (this.props.isOpen && this.props.parentRef && this.props.parentRef.current && !this.props.parentRef.current.contains(event.target)) {
+    if (
+      this.props.isOpen &&
+      this.props.parentRef &&
+      this.props.parentRef.current &&
+      !this.props.parentRef.current.contains(event.target)
+    ) {
       this.props.onToggle(false, event);
       this.buttonRef.current.focus();
     }
-  }
+  };
 
   onEscPress = (event: KeyboardEvent) => {
     const { parentRef } = this.props;
@@ -81,16 +89,19 @@ export class Toggle extends React.Component<ToggleProps> {
     if (
       this.props.isOpen &&
       (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&
-      parentRef && parentRef.current && 
+      parentRef &&
+      parentRef.current &&
       parentRef.current.contains(event.target)
     ) {
       this.props.onToggle(false, event);
       this.buttonRef.current.focus();
     }
-  }
+  };
 
   onKeyDown = (event: React.KeyboardEvent<any>) => {
-    if (event.key === 'Tab' && !this.props.isOpen) { return; }
+    if (event.key === 'Tab' && !this.props.isOpen) {
+      return;
+    }
     event.preventDefault();
     if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && this.props.isOpen) {
       this.props.onToggle(!this.props.isOpen, event);
@@ -98,7 +109,7 @@ export class Toggle extends React.Component<ToggleProps> {
       this.props.onToggle(!this.props.isOpen, event);
       this.props.onEnter();
     }
-  }
+  };
 
   render() {
     const {
@@ -137,7 +148,7 @@ export class Toggle extends React.Component<ToggleProps> {
               className
             )}
             type={type || 'button'}
-            onClick={(event) => onToggle(!isOpen, event)}
+            onClick={event => onToggle(!isOpen, event)}
             aria-expanded={isOpen}
             aria-haspopup={ariaHasPopup}
             onKeyDown={event => this.onKeyDown(event)}

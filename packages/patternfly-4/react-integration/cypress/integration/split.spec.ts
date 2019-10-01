@@ -4,7 +4,7 @@ describe('Split Demo Test', () => {
     cy.get('#split-demo-nav-item-link').click();
     cy.url().should('eq', 'http://localhost:3000/split-demo-nav-link');
   });
- 
+
   it('Verify gutter', () => {
     cy.get('.pf-l-split').should('have.class', 'pf-m-gutter');
   });
@@ -15,5 +15,5 @@ describe('Split Demo Test', () => {
 
   it('Verify component prop', () => {
     cy.get('.pf-c-page__main-section').find('article');
-  })
+  });
 });

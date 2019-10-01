@@ -13,7 +13,7 @@ import {
   IRow
 } from '@patternfly/react-table';
 
-export class TableFirstCellAsHeaderDemo extends React.Component<TableProps, { columns: any, rows: IRow[] }> {
+export class TableFirstCellAsHeaderDemo extends React.Component<TableProps, { columns: any; rows: IRow[] }> {
   constructor(props: TableProps) {
     super(props);
     this.state = {
@@ -29,7 +29,7 @@ export class TableFirstCellAsHeaderDemo extends React.Component<TableProps, { co
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {

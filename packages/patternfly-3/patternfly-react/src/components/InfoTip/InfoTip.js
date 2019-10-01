@@ -13,7 +13,7 @@ class InfoTip extends React.Component {
   handleEnterKeyDown = event => {
     this.setState({ open: !this.state.open });
     event.preventDefault();
-  }
+  };
 
   handleTabKeyDown = event => {
     if (this.state.footerFocused) {
@@ -23,7 +23,7 @@ class InfoTip extends React.Component {
     }
     event.stopPropagation();
     event.nativeEvent.stopImmediatePropagation();
-  }
+  };
 
   handleKeyDown = event => {
     if (event.shiftKey && event.keyCode) {
@@ -39,24 +39,24 @@ class InfoTip extends React.Component {
       default:
         return null;
     }
-  }
+  };
 
   handleBackFocus = () => {
     if (this.state.open) {
       this.setState({ open: false });
     }
-  }
+  };
 
   handleClick = event => {
     event.preventDefault();
     this.setState({ open: !this.state.open });
-  }
+  };
   handleBlur = event => {
     if (event && event.relatedTarget) {
       event.relatedTarget.click();
     }
     this.setState({ open: false });
-  }
+  };
 
   render() {
     const { children, onToggle, ...props } = this.props;

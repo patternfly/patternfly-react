@@ -42,7 +42,7 @@ export interface ChartPointProps {
   /**
    * The svg coordinates of the center point of a polar chart
    */
-  origin?: { x?: number, y?: number };
+  origin?: { x?: number; y?: number };
   /**
    * The rendered path element
    */
@@ -75,8 +75,18 @@ export interface ChartPointProps {
    * The 'circle', 'diamond', 'plus', 'minus', 'square', 'star', 'triangleDown', 'triangleUp', or 'dash' which symbol
    * the point should render
    */
-  symbol?: 'circle' | 'diamond' | 'plus' | 'minus' | 'square' | 'star' | 'triangleDown' | 'triangleUp' | 'dash' |
-    'threshold' | Function;
+  symbol?:
+    | 'circle'
+    | 'diamond'
+    | 'plus'
+    | 'minus'
+    | 'square'
+    | 'star'
+    | 'triangleDown'
+    | 'triangleUp'
+    | 'dash'
+    | 'threshold'
+    | Function;
   /**
    * A transform that will be supplied to elements this component renders
    */
@@ -129,7 +139,7 @@ export const ChartPoint: React.FunctionComponent<ChartPointProps> = ({
   return React.cloneElement(pathComponent, {
     className,
     clipPath,
-    d: getPath({datum, active, ...rest}),
+    d: getPath({ datum, active, ...rest }),
     events,
     role,
     shapeRendering,

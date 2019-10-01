@@ -78,14 +78,7 @@ test('Modal Test with custom footer', () => {
   const footer = <span id="test-custom-footer">TEST</span>;
 
   const view = shallow(
-    <ModalContent
-      footer={footer}
-      title="Test Modal Custom Footer"
-      isLarge
-      onClose={() => undefined}
-      id="id"
-      isOpen
-    >
+    <ModalContent footer={footer} title="Test Modal Custom Footer" isLarge onClose={() => undefined} id="id" isOpen>
       This is a ModalBox header
     </ModalContent>
   );

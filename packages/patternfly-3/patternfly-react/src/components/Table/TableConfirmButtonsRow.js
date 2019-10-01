@@ -34,16 +34,16 @@ class TableConfirmButtonsRow extends React.Component {
         rowDimensions: this.element.getBoundingClientRect()
       });
     }
-  }
+  };
 
   handleScroll = event => {
     this.saveRowDimensions();
-  }
+  };
 
   handleResize = event => {
     this.fetchClientDimensions();
     this.saveRowDimensions();
-  }
+  };
 
   fetchClientDimensions() {
     this.setState({

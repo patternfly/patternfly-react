@@ -14,10 +14,13 @@ describe('Stack Demo Test', () => {
   });
 
   it('Verify alternative badge component', () => {
-    cy.get('.pf-c-page__main-section').find('span').first().should('have.class', 'pf-c-badge pf-m-unread');
-  })
+    cy.get('.pf-c-page__main-section')
+      .find('span')
+      .first()
+      .should('have.class', 'pf-c-badge pf-m-unread');
+  });
 
   it('Verify component prop', () => {
-    cy.get('.pf-c-page__main-section').find('article')
-  })
-})
+    cy.get('.pf-c-page__main-section').find('article');
+  });
+});

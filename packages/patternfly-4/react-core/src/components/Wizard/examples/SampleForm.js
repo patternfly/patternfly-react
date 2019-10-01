@@ -27,7 +27,7 @@ class SampleForm extends React.Component {
     const isValid = /^\d+$/.test(value);
     this.setState({ value, isValid });
     this.props.onChange && this.props.onChange(isValid, value);
-  }
+  };
 
   render() {
     const { value, isValid } = this.state;

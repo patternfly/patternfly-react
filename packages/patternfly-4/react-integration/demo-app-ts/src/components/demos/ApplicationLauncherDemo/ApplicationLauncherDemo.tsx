@@ -13,12 +13,12 @@ export class ApplicationLauncherDemo extends React.Component<null, ApplicationLa
     this.state = {
       isOpen: false
     };
-    this.onToggle = (isOpen) => {
+    this.onToggle = isOpen => {
       this.setState({
         isOpen
       });
     };
-    this.onSelect = (event) => {
+    this.onSelect = event => {
       console.log('This works');
       this.setState({
         isOpen: !this.state.isOpen
@@ -37,20 +37,17 @@ export class ApplicationLauncherDemo extends React.Component<null, ApplicationLa
         <DropdownItem key="application_1" component="a" href="http://patternfly-react.surge.sh/">
           Application 1
         </DropdownItem>
-      </Tooltip>
-      ,
+      </Tooltip>,
       <Tooltip content={<div>Launch Application 2</div>} position="right">
         <DropdownItem key="application_2" component="a">
           Application 2
         </DropdownItem>
-      </Tooltip>
-      ,
+      </Tooltip>,
       <Tooltip content={<div>Launch Application 3</div>} position="right">
         <DropdownItem key="application_3" component="a">
           Application 3
         </DropdownItem>
-      </Tooltip>
-      ,
+      </Tooltip>,
       <Tooltip content={<div>Application Unavailable At This Time</div>} position="bottom">
         <DropdownItem key="disabled_application_4" isDisabled component="a">
           Unavailable Application

@@ -126,7 +126,7 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
   }
 
   /** See VirtualGrid#getOffsetForCell */
-  getOffsetForRow({ alignment, index }: { alignment: Alignment, index: number }) {
+  getOffsetForRow({ alignment, index }: { alignment: Alignment; index: number }) {
     if (this.VirtualGrid) {
       const { scrollTop } = this.VirtualGrid.getOffsetForCell({
         alignment,
@@ -258,17 +258,17 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
       key,
       parent
     });
-  }
+  };
 
   _setRef = (ref: any) => {
     this.VirtualGrid = ref;
-  }
+  };
 
   _onScroll = ({ clientHeight, scrollHeight, scrollTop }: VirtualGridScroll) => {
     const { onScroll } = this.props;
 
     onScroll({ clientHeight, scrollHeight, scrollTop });
-  }
+  };
 
   _onSectionRendered = ({
     rowOverscanStartIndex,
@@ -284,5 +284,5 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
       startIndex: rowStartIndex,
       stopIndex: rowStopIndex
     });
-  }
+  };
 }

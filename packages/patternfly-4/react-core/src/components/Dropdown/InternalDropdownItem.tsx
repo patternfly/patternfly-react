@@ -27,8 +27,8 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   tooltipProps?: any;
   index?: number;
   context?: {
-    keyHandler?: (index: number, direction: string) => void,
-    sendRef?: (index: number, ref: any, isDisabled: boolean, isSeparator: boolean) => void
+    keyHandler?: (index: number, direction: string) => void;
+    sendRef?: (index: number, ref: any, isDisabled: boolean, isSeparator: boolean) => void;
   };
   /** Callback for click event */
   onClick?: (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => void;
@@ -51,7 +51,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     context: {
       keyHandler: Function.prototype,
       sendRef: Function.prototype
-    },
+    }
   };
 
   componentDidMount() {
@@ -62,19 +62,23 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
   onKeyDown = (event: any) => {
     // Detected key press on this item, notify the menu parent so that the appropriate
     // item can be focused
-    if (event.keyCode === KEY_CODES.TAB) { return; }
+    if (event.keyCode === KEY_CODES.TAB) {
+      return;
+    }
     event.preventDefault();
     if (event.keyCode === KEY_CODES.ARROW_UP) {
       this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.UP);
     } else if (event.keyCode === KEY_CODES.ARROW_DOWN) {
       this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.DOWN);
     } else if (event.keyCode === KEY_CODES.ENTER) {
-      const childNode = ((this.ref.current && this.ref.current.childNodes && this.ref.current.childNodes.length) ? this.ref.current.childNodes[0] : this.ref.current) as HTMLElement;
+      const childNode = (this.ref.current && this.ref.current.childNodes && this.ref.current.childNodes.length
+        ? this.ref.current.childNodes[0]
+        : this.ref.current) as HTMLElement;
       if (childNode.click) {
         childNode.click();
       }
     }
-  }
+  };
 
   render() {
     const {
@@ -128,8 +132,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
           return (
             <li
               className={listItemClassName || null}
-              role={role} 
-              ref={this.ref} 
+              role={role}
+              ref={this.ref}
               onKeyDown={this.onKeyDown}
               onClick={(event: any) => {
                 if (!isDisabled) {
@@ -139,17 +143,20 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
               }}
             >
               {renderWithTooltip(
-                isComponentReactElement ? React.cloneElement(Component as React.ReactHTMLElement<any>, {
-                  ...additionalProps,
-                  className: css(classes, itemClass)
-                }) :
-                <Component
-                  {...additionalProps}
-                  href={href || null}
-                  className={css(classes, this.props.role !== 'separator' && itemClass)}
-                >
-                  {children}
-                </Component>
+                isComponentReactElement ? (
+                  React.cloneElement(Component as React.ReactHTMLElement<any>, {
+                    ...additionalProps,
+                    className: css(classes, itemClass)
+                  })
+                ) : (
+                  <Component
+                    {...additionalProps}
+                    href={href || null}
+                    className={css(classes, this.props.role !== 'separator' && itemClass)}
+                  >
+                    {children}
+                  </Component>
+                )
               )}
             </li>
           );

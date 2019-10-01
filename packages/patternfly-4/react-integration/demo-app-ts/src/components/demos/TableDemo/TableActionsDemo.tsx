@@ -18,7 +18,7 @@ import {
   ISeparator
 } from '@patternfly/react-table';
 
-export class TableActionsDemo extends React.Component<TableProps, { columns: any, rows: IRow[] }> {
+export class TableActionsDemo extends React.Component<TableProps, { columns: any; rows: IRow[] }> {
   constructor(props: TableProps) {
     super(props);
     this.state = {
@@ -93,7 +93,7 @@ export class TableActionsDemo extends React.Component<TableProps, { columns: any
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {

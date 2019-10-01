@@ -96,7 +96,7 @@ export const mockNavItems = [
         badges: [
           {
             count: 9999,
-            tooltip: 'Whoa, that\'s a lot'
+            tooltip: "Whoa, that's a lot"
           }
         ]
       },

@@ -7,6 +7,8 @@ export const createItemProps = (item, selectedItem, className, onItemClick) => {
     active: selectedItem.id === item.id
   };
 
-  if (item.disabled) { return { ...itemProps, disabled: true }; }
+  if (item.disabled) {
+    return { ...itemProps, disabled: true };
+  }
   return { ...itemProps, onClick: e => onItemClick({ e, id: item.id, name: item.name }) };
 };

@@ -31,13 +31,8 @@ export class AlertDemo extends React.Component<null, AlertDemoState> {
             Info alert description. <a href="#">This is a link.</a>
           </Alert>
         )}
-        <Alert
-          id="default-alert"
-          variant="default"
-          title="Default alert title"
-          isInline
-          >
-            Info alert description
+        <Alert id="default-alert" variant="default" title="Default alert title" isInline>
+          Info alert description
         </Alert>
       </React.Fragment>
     );
