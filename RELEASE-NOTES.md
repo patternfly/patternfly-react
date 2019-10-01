@@ -123,8 +123,7 @@
 
  - **Fix:** Deps: bumped PF3 deps ([#2985](https://github.com/patternfly/patternfly-react/pull/2895))
 
- - **Nav:** HorizontalNavMenuItem: Fix onItemClick PropType. ([#2984](https://github.com/patternfly/patternfly-react/
-pull/2984))
+ - **Nav:** HorizontalNavMenuItem: Fixed onItemClick PropType  ([#2984](https://github.com/patternfly/patternfly-react/pull/2984))
 
  - **React-integration:** Added tables to demos and write unit tests ([#2685](https://github.com/patternfly/patternfly-react/pull/2685))
 
