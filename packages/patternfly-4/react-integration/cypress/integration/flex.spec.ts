@@ -5,9 +5,15 @@ describe('Flex Demo Test', () => {
     cy.url().should('eq', 'http://localhost:3000/flex-demo-nav-link');
   });
   it('Verify flex', () => {
-    cy.get('.pf-c-page__main-section').find('div').first().should('have.class', 'pf-l-flex');
+    cy.get('.pf-c-page__main-section')
+      .find('div')
+      .first()
+      .should('have.class', 'pf-l-flex');
   });
   it('Verify flex item', () => {
-    cy.get('.pf-l-flex').find('div').first().should('contain', 'Flex item');
+    cy.get('.pf-l-flex')
+      .find('div')
+      .first()
+      .should('contain', 'Flex item');
   });
 });

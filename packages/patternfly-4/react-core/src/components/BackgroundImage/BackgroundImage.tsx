@@ -27,7 +27,7 @@ const cssVariables = {
   [BackgroundImageSrc.xs2x]: c_background_image_BackgroundImage_2x && c_background_image_BackgroundImage_2x.name,
   [BackgroundImageSrc.sm]: c_background_image_BackgroundImage_sm && c_background_image_BackgroundImage_sm.name,
   [BackgroundImageSrc.sm2x]: c_background_image_BackgroundImage_sm_2x && c_background_image_BackgroundImage_sm_2x.name,
-  [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg && c_background_image_BackgroundImage_lg.name,
+  [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg && c_background_image_BackgroundImage_lg.name
 };
 
 export interface BackgroundImageSrcMap {
@@ -60,13 +60,13 @@ export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
       [BackgroundImageSrc.sm]: src,
       [BackgroundImageSrc.sm2x]: src,
       [BackgroundImageSrc.lg]: src,
-      [BackgroundImageSrc.filter]: '', // unused
+      [BackgroundImageSrc.filter]: '' // unused
     };
   }
 
   // Build stylesheet string based on cssVariables
   let cssSheet = '';
-  (Object.keys(cssVariables) as [keyof typeof srcMap]).forEach((size) => {
+  (Object.keys(cssVariables) as [keyof typeof srcMap]).forEach(size => {
     cssSheet += `${cssVariables[size as keyof typeof cssVariables]}: url('${srcMap[size]}');`;
   });
 
@@ -74,13 +74,15 @@ export const BackgroundImage: React.FunctionComponent<BackgroundImageProps> = ({
   const bgStyles = StyleSheet.create({
     bgOverrides: `&.pf-c-background-image {
       ${cssSheet}
-    }`});
+    }`
+  });
 
   return (
     <div className={css(styles.backgroundImage, bgStyles.bgOverrides, className)} {...props}>
       <svg xmlns="http://www.w3.org/2000/svg" className="pf-c-background-image__filter" width="0" height="0">
         <filter id="image_overlay" width="">
-          <feColorMatrix type="matrix"
+          <feColorMatrix
+            type="matrix"
             values="1 0 0 0 0
             1 0 0 0 0
             1 0 0 0 0

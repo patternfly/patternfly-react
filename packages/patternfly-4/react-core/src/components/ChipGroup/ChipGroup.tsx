@@ -22,7 +22,7 @@ export interface ChipGroupProps extends React.HTMLProps<HTMLDivElement> {
   /** Set heading level to the chip item label */
   headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   /** Set number of chips to show before overflow */
-  numChips?: number; 
+  numChips?: number;
 }
 
 interface ChipGroupState {
@@ -41,10 +41,10 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
     className: '',
     expandedText: 'Show Less',
     collapsedText: '${remaining} more',
-    withToolbar: false, 
+    withToolbar: false,
     defaultIsOpen: false,
     numChips: 3
-  }
+  };
 
   toggleCollapse = () => {
     this.setState(prevState => ({
@@ -57,11 +57,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
     const { headingLevel = 'h4' } = this.props;
     return (
       <ChipGroupContext.Provider value={headingLevel}>
-        <InnerChipGroup
-          {...this.props}
-          isOpen={isOpen}
-          onToggleCollapse={this.toggleCollapse}
-        />
+        <InnerChipGroup {...this.props} isOpen={isOpen} onToggleCollapse={this.toggleCollapse} />
       </ChipGroupContext.Provider>
     );
   }
@@ -71,11 +67,7 @@ export class ChipGroup extends React.Component<ChipGroupProps, ChipGroupState> {
     const { isOpen } = this.state;
     return (
       <ul className={css(styles.chipGroup, className)}>
-        <InnerChipGroup
-          {...this.props}
-          isOpen={isOpen}
-          onToggleCollapse={this.toggleCollapse}
-        />
+        <InnerChipGroup {...this.props} isOpen={isOpen} onToggleCollapse={this.toggleCollapse} />
       </ul>
     );
   }
@@ -96,9 +88,11 @@ interface InnerChipGroupProps extends ChipGroupProps {
 
 const InnerChipGroup = (props: InnerChipGroupProps) => {
   const { children, expandedText, isOpen, onToggleCollapse, collapsedText, withToolbar, numChips } = props;
-  
-  const collapsedTextResult = fillTemplate(collapsedText as string, { remaining: React.Children.count(children) - numChips });
-  const mappedChildren = React.Children.map(children, (c) => {
+
+  const collapsedTextResult = fillTemplate(collapsedText as string, {
+    remaining: React.Children.count(children) - numChips
+  });
+  const mappedChildren = React.Children.map(children, c => {
     const child = c as React.ReactElement<any>;
     if (withToolbar) {
       return React.cloneElement(child, {

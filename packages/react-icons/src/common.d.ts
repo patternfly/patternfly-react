@@ -19,6 +19,4 @@ export const propTypes: Record<'size' | 'color', any>;
 
 export const defaultProps: typeof propTypes;
 
-export const getSize: (
-  size: OneOf<typeof IconSize, keyof typeof IconSize>
-) => string;
+export const getSize: (size: OneOf<typeof IconSize, keyof typeof IconSize>) => string;

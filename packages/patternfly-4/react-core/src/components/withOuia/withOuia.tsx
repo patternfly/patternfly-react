@@ -19,7 +19,9 @@ export function withOuiaContext<P extends { ouiaContext?: OuiaContextProps }, R 
 ): React.FunctionComponent<R> {
   return (props: R) => (
     <OuiaContext.Consumer>
-      {(value: OuiaContextProps) => <ComponentWithOuia consumerContext={value} component={WrappedComponent} componentProps={props} />}
+      {(value: OuiaContextProps) => (
+        <ComponentWithOuia consumerContext={value} component={WrappedComponent} componentProps={props} />
+      )}
     </OuiaContext.Consumer>
   );
 }
@@ -36,7 +38,6 @@ interface OuiaState {
 }
 
 class ComponentWithOuia extends React.Component<OuiaProps, OuiaState> {
-
   constructor(props: OuiaProps) {
     super(props);
 
@@ -54,10 +55,18 @@ class ComponentWithOuia extends React.Component<OuiaProps, OuiaState> {
     const { isOuia, ouiaId } = this.state;
     const { consumerContext } = this.props;
     const isOuiaEnv = isOUIAEnvironment();
-    if ((consumerContext && consumerContext.isOuia !== undefined && consumerContext.isOuia !== isOuia) || isOuiaEnv !== isOuia ) {
+    if (
+      (consumerContext && consumerContext.isOuia !== undefined && consumerContext.isOuia !== isOuia) ||
+      isOuiaEnv !== isOuia
+    ) {
       this.setState({
         isOuia: consumerContext && consumerContext.isOuia !== undefined ? consumerContext.isOuia : isOuiaEnv,
-        ouiaId: consumerContext && consumerContext.ouiaId !== undefined ? consumerContext.ouiaId : (generateOUIAId() ? getUniqueId() : ouiaId)
+        ouiaId:
+          consumerContext && consumerContext.ouiaId !== undefined
+            ? consumerContext.ouiaId
+            : generateOUIAId()
+            ? getUniqueId()
+            : ouiaId
       });
     }
   }
@@ -67,9 +76,9 @@ class ComponentWithOuia extends React.Component<OuiaProps, OuiaState> {
     const { component: WrappedComponent, componentProps, consumerContext } = this.props;
     return (
       <OuiaContext.Provider value={{ isOuia, ouiaId }}>
-          <OuiaContext.Consumer>
-            {(value: OuiaContextProps) => <WrappedComponent {...componentProps as any} ouiaContext={value} />}
-          </OuiaContext.Consumer>
+        <OuiaContext.Consumer>
+          {(value: OuiaContextProps) => <WrappedComponent {...(componentProps as any)} ouiaContext={value} />}
+        </OuiaContext.Consumer>
       </OuiaContext.Provider>
     );
   }

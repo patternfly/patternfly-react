@@ -28,9 +28,9 @@ export const sortable = (label: IFormatterValueType, { columnIndex, column, prop
   }
 
   return {
-    "className": css(styles.tableSort, isSortedBy && styles.modifiers.selected),
+    className: css(styles.tableSort, isSortedBy && styles.modifiers.selected),
     'aria-sort': isSortedBy ? `${sortBy.direction}ending` : 'none',
-    "children": (
+    children: (
       <SortColumn
         isSortedBy={isSortedBy}
         sortDirection={isSortedBy ? sortBy.direction : ''}

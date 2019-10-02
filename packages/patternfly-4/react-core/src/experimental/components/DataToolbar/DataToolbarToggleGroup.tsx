@@ -18,16 +18,15 @@ export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
 }
 
 export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGroupProps> {
-
   static defaultProps = {
-    breakpointMods: [] as DataToolbarBreakpointMod[],
+    breakpointMods: [] as DataToolbarBreakpointMod[]
   };
 
   isContentPopup = () => {
     const viewportSize = window.innerWidth;
     const lgBreakpointValue = parseInt(globalBreakpointLg.value);
     return viewportSize < lgBreakpointValue;
-  }
+  };
 
   render() {
     const { toggleIcon, breakpoint, variant, breakpointMods, className, children, ...props } = this.props;
@@ -43,14 +42,15 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
                 formatBreakpointMods(breakpointMods, styles),
                 getModifier(styles, 'toggle-group'),
                 getModifier(styles, `reveal-on-${breakpoint}`),
-                className)}
+                className
+              )}
               {...props}
             >
               <div className={css(styles.dataToolbarToggle)}>
                 <Button
                   variant="plain"
                   onClick={toggleIsExpanded}
-                  {...isExpanded && { 'aria-expanded': true }}
+                  {...(isExpanded && { 'aria-expanded': true })}
                   aria-haspopup={isExpanded && this.isContentPopup()}
                   aria-controls={expandableContentId}
                 >

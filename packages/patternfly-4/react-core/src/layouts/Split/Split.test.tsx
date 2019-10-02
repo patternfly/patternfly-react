@@ -22,7 +22,7 @@ test('isFilled defaults to false', () => {
   expect(view).toMatchSnapshot();
 });
 
-Object.values(GutterSize).forEach((gutter) => {
+Object.values(GutterSize).forEach(gutter => {
   test(`Gutter ${gutter}`, () => {
     const view = mount(
       <Split gutter={gutter}>

@@ -96,7 +96,7 @@ import {
   chart_voronoi_flyout_stroke_Width,
   chart_voronoi_flyout_PointerEvents,
   chart_voronoi_flyout_stroke_Color,
-  chart_voronoi_flyout_stroke_Fill,
+  chart_voronoi_flyout_stroke_Fill
 } from '@patternfly/react-tokens';
 
 // Note: Values must be in pixles
@@ -361,7 +361,7 @@ export const BaseTheme = {
         fill: chart_voronoi_flyout_stroke_Fill.value, // background
         pointerEvents: chart_voronoi_flyout_PointerEvents.value,
         stroke: chart_voronoi_flyout_stroke_Color.value, // border
-        strokeWidth: chart_voronoi_flyout_stroke_Width.value,
+        strokeWidth: chart_voronoi_flyout_stroke_Width.value
       }
     }
   }

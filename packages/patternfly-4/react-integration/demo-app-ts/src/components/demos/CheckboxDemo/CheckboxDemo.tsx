@@ -19,9 +19,9 @@ export class CheckboxDemo extends React.Component<{}, CheckboxState> {
       const value = target.type === 'checkbox' ? target.checked : target.value;
       const name = target.name;
       if (name === 'check1') {
-        this.setState({['check1']: value });
+        this.setState({ ['check1']: value });
       } else if (name === 'check2') {
-        this.setState({['check2']: value });
+        this.setState({ ['check2']: value });
       }
     };
   }

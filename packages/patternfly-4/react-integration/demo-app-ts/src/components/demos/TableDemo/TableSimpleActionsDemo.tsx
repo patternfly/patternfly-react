@@ -14,7 +14,7 @@ import {
   IRow
 } from '@patternfly/react-table';
 
-export class TableSimpleActionsDemo extends React.Component<TableProps, { columns: any, rows: IRow[], actions: any}> {
+export class TableSimpleActionsDemo extends React.Component<TableProps, { columns: any; rows: IRow[]; actions: any }> {
   constructor(props: TableProps) {
     super(props);
     this.state = {
@@ -58,7 +58,7 @@ export class TableSimpleActionsDemo extends React.Component<TableProps, { column
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -69,5 +69,5 @@ export class TableSimpleActionsDemo extends React.Component<TableProps, { column
         <TableBody />
       </Table>
     );
-  };
-};
+  }
+}

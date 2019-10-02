@@ -270,7 +270,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
    * It should not be set manually.**
    */
-  origin?: { x: number, y: number };
+  origin?: { x: number; y: number };
   /**
    * The padAngle prop determines the amount of separation between adjacent data slices
    * in number of degrees
@@ -420,40 +420,45 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   ...rest
 }: ChartDonutThresholdProps) => {
   const defaultPadding = {
-    bottom: getPaddingForSide('bottom',  padding, theme.pie.padding),
+    bottom: getPaddingForSide('bottom', padding, theme.pie.padding),
     left: getPaddingForSide('left', padding, theme.pie.padding),
     right: getPaddingForSide('right', padding, theme.pie.padding),
-    top: getPaddingForSide('top', padding, theme.pie.padding),
+    top: getPaddingForSide('top', padding, theme.pie.padding)
   };
-  const chartRadius = radius | Helpers.getRadius({
-    height,
-    width,
-    padding: defaultPadding
-  });
+  const chartRadius =
+    radius |
+    Helpers.getRadius({
+      height,
+      width,
+      padding: defaultPadding
+    });
 
   // Returns computed data representing pie chart slices
   const getComputedData = () => {
     // Format and sort data. Sorting ensures thresholds are displayed in the correct order and simplifies calculations.
-    const datum = Data.formatData(data, {x, y, ...rest}, ['x', 'y']).sort((a: any, b: any) => a._y - b._y);
+    const datum = Data.formatData(data, { x, y, ...rest }, ['x', 'y']).sort((a: any, b: any) => a._y - b._y);
 
     // Data must be offset so that the sum of all data point y-values (including the final slice) == 100.
-    const [prev, computedData] = datum.reduce((acc: [number, any], dataPoint: {_x: number | string, _y: number}) => {
-      return [
-        dataPoint._y, // Set the previous value to current y value
-        [
-          ...acc[1],
-          {
-            x: dataPoint._x, // Conditionally add x property only if it is in the original data object
-            y: dataPoint._y - acc[0] // Must be offset by previous value
-          }
-        ]
-      ];
-    }, [0, []]);
+    const [prev, computedData] = datum.reduce(
+      (acc: [number, any], dataPoint: { _x: number | string; _y: number }) => {
+        return [
+          dataPoint._y, // Set the previous value to current y value
+          [
+            ...acc[1],
+            {
+              x: dataPoint._x, // Conditionally add x property only if it is in the original data object
+              y: dataPoint._y - acc[0] // Must be offset by previous value
+            }
+          ]
+        ];
+      },
+      [0, []]
+    );
 
     return [
       ...computedData,
       {
-        y: prev ? (100 - prev) : 0
+        y: prev ? 100 - prev : 0
       }
     ];
   };
@@ -464,9 +469,9 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
       if (child.props) {
         const { data: childData, ...childProps } = child.props;
         const datum = Data.formatData([childData], childProps, ['x', 'y']); // Format child data independently of this component's props
-        const dynamicTheme = childProps.theme ||
-          getDonutThresholdDynamicTheme(childProps.themeColor || themeColor,
-            childProps.themeVariant || themeVariant);
+        const dynamicTheme =
+          childProps.theme ||
+          getDonutThresholdDynamicTheme(childProps.themeColor || themeColor, childProps.themeVariant || themeVariant);
 
         return React.cloneElement(child, {
           constrainToVisibleArea,
@@ -507,19 +512,21 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   );
 
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
-    desc: ariaDesc,
-    height,
-    title: ariaTitle,
-    width,
-    theme,
-    ...containerComponent.props
-  }, [chart, renderChildren()]);
+  const container = React.cloneElement(
+    containerComponent,
+    {
+      desc: ariaDesc,
+      height,
+      title: ariaTitle,
+      width,
+      theme,
+      ...containerComponent.props
+    },
+    [chart, renderChildren()]
+  );
 
   return standalone ? (
-    <React.Fragment>
-      {container}
-    </React.Fragment>
+    <React.Fragment>{container}</React.Fragment>
   ) : (
     <React.Fragment>
       {chart}

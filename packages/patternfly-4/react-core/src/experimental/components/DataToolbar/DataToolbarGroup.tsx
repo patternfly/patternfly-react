@@ -8,7 +8,7 @@ import { formatBreakpointMods } from '../../../helpers/util';
 export enum DataToolbarGroupVariant {
   'filter-group' = 'filter-group',
   'icon-button-group' = 'icon-button-group',
-  'button-group' = 'button-group',
+  'button-group' = 'button-group'
 }
 
 export interface DataToolbarGroupProps extends React.HTMLProps<HTMLDivElement> {
@@ -23,24 +23,23 @@ export interface DataToolbarGroupProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export const DataToolbarGroup: React.FunctionComponent<DataToolbarGroupProps> = ({
-   breakpointMods = [] as DataToolbarBreakpointMod[],
-   className,
-   variant,
-   children,
-   ...props
- }: DataToolbarGroupProps) => {
-
+  breakpointMods = [] as DataToolbarBreakpointMod[],
+  className,
+  variant,
+  children,
+  ...props
+}: DataToolbarGroupProps) => {
   return (
     <div
       className={css(
         styles.dataToolbarGroup,
         variant && getModifier(styles, variant),
         formatBreakpointMods(breakpointMods, styles),
-        className)}
+        className
+      )}
       {...props}
     >
       {children}
     </div>
   );
-
 };

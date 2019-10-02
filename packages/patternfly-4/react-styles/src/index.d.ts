@@ -8,4 +8,3 @@ export {
   getClassName,
   pickProperties
 } from './utils';
-

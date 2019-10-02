@@ -8,13 +8,15 @@ import { EmptyStateIcon } from './EmptyStateIcon';
 import { EmptyStatePrimary } from './EmptyStatePrimary';
 import { Button } from '../Button';
 import { Title } from '../Title';
-import {BaseSizes} from '../../styles/sizes';
+import { BaseSizes } from '../../styles/sizes';
 
 describe('EmptyState', () => {
   test('Main', () => {
     const view = shallow(
       <EmptyState>
-        <Title headingLevel="h5" size="lg">HTTP Proxies</Title>
+        <Title headingLevel="h5" size="lg">
+          HTTP Proxies
+        </Title>
         <EmptyStateBody>
           Defining HTTP Proxies that exist on your network allows you to perform various actions through those proxies.
         </EmptyStateBody>
@@ -69,7 +71,12 @@ describe('EmptyState', () => {
 
   test('Wrap icon in a div', () => {
     const view = shallow(
-      <EmptyStateIcon variant="container" component={AddressBookIcon} className="custom-empty-state-icon" id="empty-state-icon" />
+      <EmptyStateIcon
+        variant="container"
+        component={AddressBookIcon}
+        className="custom-empty-state-icon"
+        id="empty-state-icon"
+      />
     );
     console.log(view.debug());
     expect(view.find('div').props().className).toBe('pf-c-empty-state__icon custom-empty-state-icon');
@@ -79,7 +86,7 @@ describe('EmptyState', () => {
   test('Primary div', () => {
     const view = shallow(
       <EmptyStatePrimary className="custom-empty-state-prim-cls" id="empty-state-prim-id">
-          <Button variant="link">Link</Button>
+        <Button variant="link">Link</Button>
       </EmptyStatePrimary>
     );
     expect(view.props().className).toBe('pf-c-empty-state__primary custom-empty-state-prim-cls');

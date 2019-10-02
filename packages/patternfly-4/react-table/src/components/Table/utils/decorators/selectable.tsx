@@ -4,7 +4,10 @@ import styles from '@patternfly/react-styles/css/components/Table/table';
 import { IExtra, IFormatterValueType } from '../../Table';
 import { SelectColumn } from '../../SelectColumn';
 
-export const selectable = (label: IFormatterValueType, { rowIndex, columnIndex, rowData, column, property }: IExtra) => {
+export const selectable = (
+  label: IFormatterValueType,
+  { rowIndex, columnIndex, rowData, column, property }: IExtra
+) => {
   const {
     extraParams: { onSelect, allRowsSelected, rowLabeledBy = 'simple-node' }
   } = column;
@@ -18,7 +21,7 @@ export const selectable = (label: IFormatterValueType, { rowIndex, columnIndex, 
   if (rowData && rowData.hasOwnProperty('parent') && !rowData.showSelect) {
     return {
       component: 'td',
-      isVisible: true,
+      isVisible: true
     };
   }
   const rowId = rowIndex !== undefined ? rowIndex : -1;
@@ -32,11 +35,11 @@ export const selectable = (label: IFormatterValueType, { rowIndex, columnIndex, 
   const customProps = {
     ...(rowId !== -1
       ? {
-          "checked": rowData && !!rowData.selected,
+          checked: rowData && !!rowData.selected,
           'aria-labelledby': rowLabeledBy + rowIndex
         }
       : {
-          "checked": allRowsSelected,
+          checked: allRowsSelected,
           'aria-label': 'Select all rows'
         })
   };

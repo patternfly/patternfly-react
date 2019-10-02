@@ -41,7 +41,7 @@ class ClassificationBannerStoryWrapper extends React.Component {
     this.setState({
       closed: false
     });
-  }
+  };
 
   render() {
     const bottomBanner = boolean('Show Bottom Banner', true);

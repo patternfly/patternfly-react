@@ -11,7 +11,9 @@ const colIndexOfMaxValue = columns => columns.reduce((iMax, x, i, arr) => (x[1] 
 
 const truncateNum = (num, precision) => {
   const pointNotation = num.toString().split('.');
-  if (pointNotation.length === 1) { return pointNotation[0]; }
+  if (pointNotation.length === 1) {
+    return pointNotation[0];
+  }
   return `${pointNotation[0]}.${pointNotation[1].slice(0, precision)}`;
 };
 

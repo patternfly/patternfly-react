@@ -13,12 +13,12 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
     this.state = {
       isOpen: false
     };
-    this.onToggle = (isOpen) => {
+    this.onToggle = isOpen => {
       this.setState({
         isOpen
       });
     };
-    this.onSelect = (event) => {
+    this.onSelect = event => {
       this.setState({
         isOpen: !this.state.isOpen
       });
@@ -34,7 +34,9 @@ export class DropdownDemo extends React.Component<{}, DropdownState> {
         isOpen={isOpen}
       >
         <ul className="pf-c-dropdown__menu">
-          <DropdownItem key="link" href="https://patternfly-react.surge.sh/patternfly-4/">Link</DropdownItem>
+          <DropdownItem key="link" href="https://patternfly-react.surge.sh/patternfly-4/">
+            Link
+          </DropdownItem>
           <DropdownItem key="action" component="button" autoFocus>
             Action
           </DropdownItem>

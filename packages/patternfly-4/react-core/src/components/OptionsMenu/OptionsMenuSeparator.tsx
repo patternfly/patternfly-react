@@ -11,9 +11,5 @@ export const OptionsMenuSeparator: React.FunctionComponent<OptionsMenuSeparatorP
   className = '',
   ...props
 }: OptionsMenuSeparatorProps) => (
-  <li
-    className={css(styles.optionsMenuSeparator, className)}
-    role="separator"
-    {...props}
-  />
+  <li className={css(styles.optionsMenuSeparator, className)} role="separator" {...props} />
 );

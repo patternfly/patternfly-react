@@ -42,7 +42,7 @@ class CatalogTile extends React.Component {
     }
 
     this.descFullHeight = ref.clientHeight;
-  }
+  };
 
   handleDescriptionSpanRef = ref => {
     if (!ref) {
@@ -50,7 +50,7 @@ class CatalogTile extends React.Component {
     }
 
     this.descLineHeight = parseInt(window.getComputedStyle(ref).getPropertyValue('line-height'), 10);
-  }
+  };
 
   handleClick = e => {
     const { onClick, href } = this.props;
@@ -61,7 +61,7 @@ class CatalogTile extends React.Component {
     if (onClick) {
       onClick(e);
     }
-  }
+  };
 
   renderBadges = badges => {
     if (!badges || !badges.length) {
@@ -75,7 +75,7 @@ class CatalogTile extends React.Component {
         ))}
       </div>
     );
-  }
+  };
 
   render() {
     const {

@@ -18,4 +18,3 @@ describe('Stack Chart Gold Demo Test', () => {
     cy.get('.VictoryContainer > svg').should('have.attr', 'height', '275');
   });
 });
-

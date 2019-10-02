@@ -70,7 +70,7 @@ class ToastNotificationStoryWrapper extends React.Component {
         type: 'info',
         persistent: false,
         timerdelay: 8000,
-        message: 'By default, a toast notification\'s timer expires after eight seconds.'
+        message: "By default, a toast notification's timer expires after eight seconds."
       },
       {
         key: 2,

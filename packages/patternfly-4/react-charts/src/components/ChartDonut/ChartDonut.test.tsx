@@ -2,7 +2,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { ChartDonut } from './ChartDonut';
 
-Object.values([true, false]).forEach((isRead) => {
+Object.values([true, false]).forEach(isRead => {
   test('ChartDonut', () => {
     const view = shallow(<ChartDonut />);
     expect(view).toMatchSnapshot();

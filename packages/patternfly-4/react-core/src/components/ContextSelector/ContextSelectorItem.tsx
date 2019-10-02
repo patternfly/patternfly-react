@@ -53,7 +53,7 @@ export class ContextSelectorItem extends React.Component<ContextSelectorItemProp
                 className
               )}
               ref={this.ref}
-              onClick={(event) => {
+              onClick={event => {
                 if (!isDisabled) {
                   onClick(event);
                   onSelect(event, children);

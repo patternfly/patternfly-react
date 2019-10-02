@@ -41,7 +41,7 @@ class Paginator extends React.Component {
 
   handleFormSubmit = e => {
     this.setPage(this.state.pageChangeValue);
-  }
+  };
 
   handlePageChange(e) {
     this.setState({ pageChangeValue: e.target.value });

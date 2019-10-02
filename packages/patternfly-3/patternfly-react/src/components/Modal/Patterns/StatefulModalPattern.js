@@ -19,11 +19,11 @@ class StatefulModalPattern extends React.Component {
 
   open = () => {
     this.setState({ show: true });
-  }
+  };
 
   close = () => {
     this.setState({ show: false });
-  }
+  };
 
   getModalPatternProps = () => this.props;
 

@@ -8,13 +8,14 @@ class PickTimeTable extends React.Component {
     const { time, setSelected, toggleTimeTable } = this.props;
     const hours = time.getHours();
     newTime = parseInt(newTime, 10);
-    if (type === MINUTE) { time.setMinutes(newTime); }
-    else if (type === HOUR) {
+    if (type === MINUTE) {
+      time.setMinutes(newTime);
+    } else if (type === HOUR) {
       time.setHours(hours < 12 ? newTime % 12 : (newTime % 12) + 12);
     }
     setSelected(time);
     toggleTimeTable();
-  }
+  };
   render() {
     const hoursArray = [['12', '01', '02', '03'], ['04', '05', '06', '07'], ['08', '09', '10', '11']];
     const minutesArray = [['00', '05', '10', '15'], ['20', '25', '30', '35'], ['40', '45', '50', '55']];

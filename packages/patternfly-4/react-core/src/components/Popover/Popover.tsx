@@ -7,7 +7,7 @@ import '@patternfly/react-styles/css/components/Tooltip/tippy.css';
 import '@patternfly/react-styles/css/components/Tooltip/tippy-overrides.css';
 import { css, getModifier } from '@patternfly/react-styles';
 import { PopoverContent } from './PopoverContent';
-import { PopoverBody }  from './PopoverBody';
+import { PopoverBody } from './PopoverBody';
 import { PopoverHeader } from './PopoverHeader';
 import { PopoverFooter } from './PopoverFooter';
 import { PopoverCloseButton } from './PopoverCloseButton';
@@ -105,29 +105,29 @@ export interface PopoverState {
 export class Popover extends React.Component<PopoverProps, PopoverState> {
   private tip: TippyInstance;
   static defaultProps = {
-    "position": 'top',
-    "enableFlip": true,
-    "className": '',
-    "isVisible": null as boolean,
-    "shouldClose": (): void => null,
+    position: 'top',
+    enableFlip: true,
+    className: '',
+    isVisible: null as boolean,
+    shouldClose: (): void => null,
     'aria-label': '',
-    "headerContent": null as typeof PopoverHeader,
-    "footerContent": null as typeof PopoverFooter,
-    "appendTo": () => document.body,
-    "hideOnOutsideClick": true,
-    "onHide": (): void => null,
-    "onHidden": (): void => null,
-    "onShow": (): void => null,
-    "onShown": (): void => null,
-    "onMount": (): void => null,
-    "zIndex": 9999,
-    "maxWidth": popoverMaxWidth && popoverMaxWidth.value,
-    "closeBtnAriaLabel": 'Close',
-    "distance": 25,
-    "boundary": 'window',
+    headerContent: null as typeof PopoverHeader,
+    footerContent: null as typeof PopoverFooter,
+    appendTo: () => document.body,
+    hideOnOutsideClick: true,
+    onHide: (): void => null,
+    onHidden: (): void => null,
+    onShow: (): void => null,
+    onShown: (): void => null,
+    onMount: (): void => null,
+    zIndex: 9999,
+    maxWidth: popoverMaxWidth && popoverMaxWidth.value,
+    closeBtnAriaLabel: 'Close',
+    distance: 25,
+    boundary: 'window',
     // For every initial starting position, there are 3 escape positions
-    "flipBehavior": ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
-    "tippyProps": {}
+    flipBehavior: ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
+    tippyProps: {}
   };
 
   constructor(props: PopoverProps) {
@@ -145,13 +145,13 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       // notify consumer
       this.props.shouldClose(this.tip);
     }
-  }
+  };
 
   handleEscKeyClick = (event: KeyboardEvent) => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.tip.state.isVisible) {
       this.hideOrNotify();
     }
-  }
+  };
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleEscKeyClick, false);
@@ -164,11 +164,11 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
   storeTippyInstance = (tip: TippyInstance) => {
     tip.popperChildren.tooltip.classList.add(styles.popover);
     this.tip = tip;
-  }
+  };
 
   closePopover = () => {
     this.hideOrNotify();
-  }
+  };
 
   hideAllPopovers = () => {
     document.querySelectorAll('.tippy-popper').forEach((popper: any) => {
@@ -176,20 +176,20 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
         popper._tippy.hide();
       }
     });
-  }
+  };
 
-  onHide = (tip: TippyInstance)  => {
+  onHide = (tip: TippyInstance) => {
     if (this.state.isOpen) {
       this.setState({ isOpen: false });
     }
     return this.props.onHide(tip);
-  }
+  };
 
-  onHidden = (tip: TippyInstance)  => this.props.onHidden(tip);
+  onHidden = (tip: TippyInstance) => this.props.onHidden(tip);
 
-  onMount = (tip: TippyInstance)  => this.props.onMount(tip);
+  onMount = (tip: TippyInstance) => this.props.onMount(tip);
 
-  onShow = (tip: TippyInstance)  => {
+  onShow = (tip: TippyInstance) => {
     const { hideOnOutsideClick, isVisible, onShow } = this.props;
     // hide all other open popovers first if events are managed by us
     if (!hideOnOutsideClick && isVisible === null) {
@@ -199,9 +199,9 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       this.setState({ isOpen: true });
     }
     return onShow(tip);
-  }
+  };
 
-  onShown = (tip: TippyInstance)  => this.props.onShown(tip);
+  onShown = (tip: TippyInstance) => this.props.onShown(tip);
 
   render() {
     const {
@@ -238,31 +238,26 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
 
     const content = (
       <GenerateId>
-        {(randomId) =>
-          (
-            <FocusTrap active={this.state.isOpen} focusTrapOptions={{ clickOutsideDeactivates: true }}>
-              <div
-                className={css(
-                  !enableFlip && getModifier(styles, position, styles.modifiers.top),
-                  className
-                )}
-                role="dialog"
-                aria-modal="true"
-                aria-label={headerContent ? undefined : ariaLabel}
-                aria-labelledby={headerContent ? `popover-${randomId}-header` : undefined}
-                aria-describedby={`popover-${randomId}-body`}
-                {...rest}
-              >
-                <PopoverContent>
-                  <PopoverCloseButton onClose={this.closePopover} aria-label={closeBtnAriaLabel} />
-                  {headerContent && <PopoverHeader id={`popover-${randomId}-header`}>{headerContent}</PopoverHeader>}
-                  <PopoverBody id={`popover-${randomId}-body`}>{bodyContent}</PopoverBody>
-                  {footerContent && <PopoverFooter>{footerContent}</PopoverFooter>}
-                </PopoverContent>
-              </div>
-            </FocusTrap>
-          )
-        }
+        {randomId => (
+          <FocusTrap active={this.state.isOpen} focusTrapOptions={{ clickOutsideDeactivates: true }}>
+            <div
+              className={css(!enableFlip && getModifier(styles, position, styles.modifiers.top), className)}
+              role="dialog"
+              aria-modal="true"
+              aria-label={headerContent ? undefined : ariaLabel}
+              aria-labelledby={headerContent ? `popover-${randomId}-header` : undefined}
+              aria-describedby={`popover-${randomId}-body`}
+              {...rest}
+            >
+              <PopoverContent>
+                <PopoverCloseButton onClose={this.closePopover} aria-label={closeBtnAriaLabel} />
+                {headerContent && <PopoverHeader id={`popover-${randomId}-header`}>{headerContent}</PopoverHeader>}
+                <PopoverBody id={`popover-${randomId}-body`}>{bodyContent}</PopoverBody>
+                {footerContent && <PopoverFooter>{footerContent}</PopoverFooter>}
+              </PopoverContent>
+            </div>
+          </FocusTrap>
+        )}
       </GenerateId>
     );
     const handleEvents = isVisible === null;

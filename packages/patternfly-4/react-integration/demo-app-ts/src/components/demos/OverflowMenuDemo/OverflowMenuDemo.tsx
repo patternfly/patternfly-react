@@ -5,13 +5,9 @@ import {
   OverflowMenuContent,
   OverflowMenuGroup,
   OverflowMenuItem,
-  OverflowMenuDropdownItem 
+  OverflowMenuDropdownItem
 } from '@patternfly/react-core/dist/esm/experimental';
-import {
-  Dropdown,
-  KebabToggle,
-  Button
-} from '@patternfly/react-core';
+import { Dropdown, KebabToggle, Button } from '@patternfly/react-core';
 import { AlignLeftIcon, AlignCenterIcon, AlignRightIcon } from '@patternfly/react-icons';
 
 export class OverflowMenuDemo extends React.Component {
@@ -19,19 +15,19 @@ export class OverflowMenuDemo extends React.Component {
     isSimpleOpen: false,
     isAdditionalOptionsOpen: false,
     isPersistOpen: false
-  }
+  };
 
   style = {
     display: 'flex',
     marginBottom: '2rem'
   };
-  
+
   onSimpleToggle = isSimpleOpen => {
     this.setState({
       isSimpleOpen
     });
   };
-  
+
   onSimpleSelect = event => {
     this.setState({
       isSimpleOpen: !this.state.isSimpleOpen
@@ -42,11 +38,21 @@ export class OverflowMenuDemo extends React.Component {
     const { isSimpleOpen } = this.state;
     const dropdownItems = [
       <OverflowMenuDropdownItem key="action">Action</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item1" isShared>Item 1</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item2" isShared>Item 2</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item3" isShared>Item 3</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item4" isShared>Item 4</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="item5" isShared>Item 5</OverflowMenuDropdownItem>
+      <OverflowMenuDropdownItem key="item1" isShared>
+        Item 1
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item2" isShared>
+        Item 2
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item3" isShared>
+        Item 3
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item4" isShared>
+        Item 4
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="item5" isShared>
+        Item 5
+      </OverflowMenuDropdownItem>
     ];
     return (
       <OverflowMenu breakpoint="md" id="simple-overflow-menu" style={this.style}>
@@ -69,7 +75,7 @@ export class OverflowMenuDemo extends React.Component {
           />
         </OverflowMenuControl>
       </OverflowMenu>
-    )
+    );
   }
 
   onAdditionalOptionsToggle = isAdditionalOptionsOpen => {
@@ -77,7 +83,7 @@ export class OverflowMenuDemo extends React.Component {
       isAdditionalOptionsOpen
     });
   };
-  
+
   onAdditionalOptionsSelect = event => {
     this.setState({
       isAdditionalOptionsOpen: !this.state.isAdditionalOptionsOpen
@@ -87,13 +93,25 @@ export class OverflowMenuDemo extends React.Component {
   renderOverflowMenuAdditionalOptions() {
     const { isAdditionalOptionsOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem key="1" isShared>Primary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="2" isShared>Secondary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="3" isShared>Tertiary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="4" isShared>Action 4</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="5" isShared>Action 5</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="6" isShared>Action 6</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="7">Action 7</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="1" isShared>
+        Primary
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="2" isShared>
+        Secondary
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="3" isShared>
+        Tertiary
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="4" isShared>
+        Action 4
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="5" isShared>
+        Action 5
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="6" isShared>
+        Action 6
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="7">Action 7</OverflowMenuDropdownItem>
     ];
     return (
       <OverflowMenu breakpoint="lg" id="additional-options-overflow-menu" style={this.style}>
@@ -137,7 +155,7 @@ export class OverflowMenuDemo extends React.Component {
           />
         </OverflowMenuControl>
       </OverflowMenu>
-    )
+    );
   }
 
   onPersistToggle = isPersistOpen => {
@@ -145,7 +163,7 @@ export class OverflowMenuDemo extends React.Component {
       isPersistOpen
     });
   };
-  
+
   onPersistSelect = event => {
     this.setState({
       isPersistOpen: !this.state.isPersistOpen
@@ -155,9 +173,15 @@ export class OverflowMenuDemo extends React.Component {
   renderOverflowMenuPersist() {
     const { isPersistOpen } = this.state;
     const dropdownItems = [
-      <OverflowMenuDropdownItem key="primary" isShared>Primary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="secondary" isShared>Secondary</OverflowMenuDropdownItem>,
-      <OverflowMenuDropdownItem key="tertiary" isShared>Tertiary</OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="primary" isShared>
+        Primary
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="secondary" isShared>
+        Secondary
+      </OverflowMenuDropdownItem>,
+      <OverflowMenuDropdownItem key="tertiary" isShared>
+        Tertiary
+      </OverflowMenuDropdownItem>,
       <OverflowMenuDropdownItem key="action">Action 4</OverflowMenuDropdownItem>
     ];
     return (
@@ -185,16 +209,16 @@ export class OverflowMenuDemo extends React.Component {
           />
         </OverflowMenuControl>
       </OverflowMenu>
-    )
+    );
   }
 
   render() {
     return (
       <React.Fragment>
-        { this.renderSimpleOverflowMenu() }
-        { this.renderOverflowMenuAdditionalOptions() }
-        { this.renderOverflowMenuPersist() }
+        {this.renderSimpleOverflowMenu()}
+        {this.renderOverflowMenuAdditionalOptions()}
+        {this.renderOverflowMenuPersist()}
       </React.Fragment>
-    )
+    );
   }
 }

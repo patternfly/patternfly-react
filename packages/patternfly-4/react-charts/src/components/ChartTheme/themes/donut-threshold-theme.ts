@@ -15,10 +15,7 @@ import {
 // Donut threshold dynamic theme
 export const DonutThresholdDynamicTheme = {
   legend: {
-    colorScale: [
-      chart_donut_threshold_second_Color.value,
-      chart_donut_threshold_third_Color.value
-    ]
+    colorScale: [chart_donut_threshold_second_Color.value, chart_donut_threshold_third_Color.value]
   },
   pie: {
     height: chart_donut_threshold_dynamic_pie_Height.value,

@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 
 interface BadgeChipState {
   badgeChipArray: {
-      name: string,
-      isRead: boolean,
-      count: number
-    }[];
+    name: string;
+    isRead: boolean;
+    count: number;
+  }[];
 }
 
 export class ChipGroupDemo extends Component<{}, BadgeChipState> {
@@ -29,7 +29,7 @@ export class ChipGroupDemo extends Component<{}, BadgeChipState> {
     };
     this.deleteItem = (id: any) => {
       const copyOfbadgeChipArray = this.state.badgeChipArray;
-      const index = copyOfbadgeChipArray.findIndex((chipObj) => chipObj.name === id);
+      const index = copyOfbadgeChipArray.findIndex(chipObj => chipObj.name === id);
 
       if (index !== -1) {
         copyOfbadgeChipArray.splice(index, 1);
@@ -46,7 +46,7 @@ export class ChipGroupDemo extends Component<{}, BadgeChipState> {
     const { badgeChipArray } = this.state;
     return (
       <ChipGroup>
-        {badgeChipArray.map((chip) => (
+        {badgeChipArray.map(chip => (
           <Chip key={chip.name} onClick={() => this.deleteItem(chip.name)}>
             {chip.name}
             <Badge isRead={chip.isRead}>{chip.count}</Badge>

@@ -11,10 +11,10 @@ export class MockModelessManager extends React.Component {
   }
   close = () => {
     this.setState({ showOverlay: false });
-  }
+  };
   toggleOpen = () => {
     this.setState({ showOverlay: !this.state.showOverlay });
-  }
+  };
   render() {
     const { children, size } = this.props;
     const defaultBody = (

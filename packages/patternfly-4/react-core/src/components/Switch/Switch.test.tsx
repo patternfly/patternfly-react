@@ -30,13 +30,13 @@ test('switch is not checked', () => {
 
 test('switch with only label is checked', () => {
   const check = true;
-  const view = mount(<Switch id="switch-is-checked" label={check ? "On" : "Off"} isChecked={check} />);
+  const view = mount(<Switch id="switch-is-checked" label={check ? 'On' : 'Off'} isChecked={check} />);
   expect(view).toMatchSnapshot();
 });
 
 test('switch with only label is not checked', () => {
   const check = false;
-  const view = mount(<Switch id="switch-is-not-checked" label={check ? "On" : "Off"} isChecked={check} />);
+  const view = mount(<Switch id="switch-is-not-checked" label={check ? 'On' : 'Off'} isChecked={check} />);
   expect(view).toMatchSnapshot();
 });
 

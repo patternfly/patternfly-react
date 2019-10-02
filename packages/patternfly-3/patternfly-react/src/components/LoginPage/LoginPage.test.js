@@ -379,7 +379,7 @@ test('Translation works', () => {
 });
 
 test('submitButtonAttributes are added to the DOM', () => {
-  const id = 'submit-button-unique-test-id'
+  const id = 'submit-button-unique-test-id';
   const props = createProps();
   props.card.form.submitButtonAttributes = { id };
   const component = mount(<LoginPage {...props} />);

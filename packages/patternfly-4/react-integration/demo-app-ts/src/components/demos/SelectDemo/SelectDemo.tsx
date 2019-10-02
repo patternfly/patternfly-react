@@ -1,4 +1,14 @@
-import { Select, SelectOption, SelectVariant, Stack, StackItem, Title, SelectOptionObject, Checkbox, SelectDirection } from '@patternfly/react-core';
+import {
+  Select,
+  SelectOption,
+  SelectVariant,
+  Stack,
+  StackItem,
+  Title,
+  SelectOptionObject,
+  Checkbox,
+  SelectDirection
+} from '@patternfly/react-core';
 import React, { Component } from 'react';
 import { CartArrowDownIcon } from '@patternfly/react-icons';
 import { State } from '../../../common/State';
@@ -52,7 +62,7 @@ export class SelectDemo extends Component<SelectDemoState> {
     customTypeaheadMultiSelected: [],
     direction: SelectDirection.down,
     typeaheadOptions: [
-      { value: 'Alabama', disabled: false},
+      { value: 'Alabama', disabled: false },
       { value: 'Florida', disabled: false },
       { value: 'New Jersey', disabled: false }
     ],
@@ -72,19 +82,19 @@ export class SelectDemo extends Component<SelectDemoState> {
 
   checkboxOptions = [
     <SelectOption key={0} value="Active" />,
-    <SelectOption key={1} value={{numericValue: 0, toString: () => 'Cancelled'} as SelectOptionObject} />,
+    <SelectOption key={1} value={{ numericValue: 0, toString: () => 'Cancelled' } as SelectOptionObject} />,
     <SelectOption key={2} value="Paused" />,
     <SelectOption key={3} value="Warning" />,
     <SelectOption key={4} value="Restarted" />
   ];
 
   customTypeaheadOptions = [
-    { value: new State('Alabama', 'AL', 'Montgomery', 1846)},
+    { value: new State('Alabama', 'AL', 'Montgomery', 1846) },
     { value: 'Florida', disabled: false },
     { value: 'New Jersey', disabled: false },
     { value: new State('New Mexico', 'NM', 'Santa Fe', 1912), disabled: false },
     { value: new State('New York', 'NY', 'Albany', 1788), disabled: false },
-    { value: new State('North Carolina', 'NC', 'Raleigh', 1789), disabled: false}
+    { value: new State('North Carolina', 'NC', 'Raleigh', 1789), disabled: false }
   ];
 
   customSelectValueOptions = [
@@ -106,112 +116,115 @@ export class SelectDemo extends Component<SelectDemoState> {
         direction: SelectDirection.up
       });
     }
-  }
+  };
 
-  toggleCreatable = (checked) => {
+  toggleCreatable = checked => {
     this.setState({
       typeaheadIsCreatable: checked
-    })
-  }
+    });
+  };
 
-  toggleNew = (checked) => {
+  toggleNew = checked => {
     this.setState({
       typeaheadNewOptions: checked
-    })
-  }
+    });
+  };
 
   singleOnToggle = (singleIsExpanded: boolean) => {
     this.setState({
       singleIsExpanded
     });
-  }
+  };
 
   disabledSingleOnToggle = (disabledSingleIsExpanded: boolean) => {
     this.setState({
       disabledSingleIsExpanded
     });
-  }
+  };
 
   customSingleOnToggle = (customSingleIsExpanded: boolean) => {
     this.setState({
       customSingleIsExpanded
     });
-  }
+  };
 
   checkOnToggle = (checkIsExpanded: boolean) => {
     this.setState({
       checkIsExpanded
     });
-  }
+  };
 
   typeaheadOnToggle = (typeaheadIsExpanded: boolean) => {
     this.setState({
       typeaheadIsExpanded
     });
-  }
+  };
 
   typeaheadMultiOnToggle = (typeaheadMultiIsExpanded: boolean) => {
     this.setState({
       typeaheadMultiIsExpanded
     });
-  }
+  };
 
   cdtypeaheadMultiOnToggle = (cdtypeaheadMultiIsExpanded: boolean) => {
     this.setState({
       cdtypeaheadMultiIsExpanded
     });
-  }
+  };
 
   plainTypeaheadMultiOnToggle = (plainTypeaheadMultiIsExpanded: boolean) => {
     this.setState({
       plainTypeaheadMultiIsExpanded
     });
-  }
+  };
 
   customTypeaheadMultiOnToggle = (customTypeaheadMultiIsExpanded: boolean) => {
     this.setState({
       customTypeaheadMultiIsExpanded
     });
-  }
+  };
 
   singleOnSelect = (event: any, selection: string, isPlaceholder: boolean) => {
-    if (isPlaceholder) { this.clearSelection(); }
-    else {
+    if (isPlaceholder) {
+      this.clearSelection();
+    } else {
       this.setState({
         singleSelected: selection,
         singleIsExpanded: false
       });
       console.log('selected:', selection.toString());
     }
-  }
+  };
 
   disabledSingleOnSelect = (event: any, selection: string, isPlaceholder: boolean) => {
-    if (isPlaceholder) { this.clearSelection(); }
-    else {
+    if (isPlaceholder) {
+      this.clearSelection();
+    } else {
       this.setState({
         disabledSingleSelected: selection,
         disabledSingleIsExpanded: false
       });
       console.log('selected:', selection.toString());
     }
-  }
+  };
 
   customSingleOnSelect = (event: any, selection: string | object, isPlaceholder: boolean) => {
-    if (isPlaceholder) { this.clearSelection(); }
-    else {
+    if (isPlaceholder) {
+      this.clearSelection();
+    } else {
       this.setState({
         customSingleSelected: selection,
         customSingleIsExpanded: false
       });
       console.log('selected:', selection.toString());
     }
-  }
+  };
 
   checkOnSelect = (event: any, selection: string) => {
     const { checkSelected } = this.state;
     if (checkSelected.includes(selection)) {
       this.setState(
-        (prevState: SelectDemoState) => ({ checkSelected: prevState.checkSelected.filter((item) => item !== selection) }),
+        (prevState: SelectDemoState) => ({ checkSelected: prevState.checkSelected.filter(item => item !== selection) }),
         () => console.log('selections: ', this.state.checkSelected)
       );
     } else {
@@ -220,24 +233,27 @@ export class SelectDemo extends Component<SelectDemoState> {
         () => console.log('selections: ', this.state.checkSelected)
       );
     }
-  }
+  };
 
   typeaheadOnSelect = (event: any, selection: string | object, isPlaceholder: boolean) => {
-    if (isPlaceholder) { this.clearSelection(); }
-    else {
+    if (isPlaceholder) {
+      this.clearSelection();
+    } else {
       this.setState({
         typeaheadSelected: selection,
         typeaheadIsExpanded: false
       });
       console.log('selected:', selection.toString());
     }
-  }
+  };
 
   typeaheadMultiOnSelect = (event: any, selection: string | object) => {
     const { typeaheadMultiSelected } = this.state;
     if (typeaheadMultiSelected.includes(selection)) {
       this.setState(
-        (prevState: SelectDemoState) => ({ typeaheadMultiSelected: prevState.typeaheadMultiSelected.filter((item) => item !== selection) }),
+        (prevState: SelectDemoState) => ({
+          typeaheadMultiSelected: prevState.typeaheadMultiSelected.filter(item => item !== selection)
+        }),
         () => console.log('selections: ', this.state.typeaheadMultiSelected)
       );
     } else {
@@ -246,58 +262,70 @@ export class SelectDemo extends Component<SelectDemoState> {
         () => console.log('selections: ', this.state.typeaheadMultiSelected)
       );
     }
-  }
+  };
 
   cdtypeaheadMultiOnSelect = (event: any, selection: string | object) => {
     const { cdtypeaheadMultiSelected } = this.state;
     if (cdtypeaheadMultiSelected.includes(selection)) {
       this.setState(
-        (prevState: SelectDemoState) => ({ cdtypeaheadMultiSelected: prevState.cdtypeaheadMultiSelected.filter((item) => item !== selection) }),
+        (prevState: SelectDemoState) => ({
+          cdtypeaheadMultiSelected: prevState.cdtypeaheadMultiSelected.filter(item => item !== selection)
+        }),
         () => console.log('selections: ', this.state.cdtypeaheadMultiSelected)
       );
     } else {
       this.setState(
-        (prevState: SelectDemoState) => ({ cdtypeaheadMultiSelected: [...prevState.cdtypeaheadMultiSelected, selection] }),
+        (prevState: SelectDemoState) => ({
+          cdtypeaheadMultiSelected: [...prevState.cdtypeaheadMultiSelected, selection]
+        }),
         () => console.log('selections: ', this.state.cdtypeaheadMultiSelected)
       );
     }
-  }
+  };
 
   plainTypeaheadMultiOnSelect = (event: any, selection: string) => {
     const { plainTypeaheadMultiSelected } = this.state;
     if (plainTypeaheadMultiSelected.includes(selection)) {
       this.setState(
-        (prevState: SelectDemoState) => ({ plainTypeaheadMultiSelected: prevState.plainTypeaheadMultiSelected.filter((item) => item !== selection) }),
+        (prevState: SelectDemoState) => ({
+          plainTypeaheadMultiSelected: prevState.plainTypeaheadMultiSelected.filter(item => item !== selection)
+        }),
         () => console.log('selections: ', this.state.plainTypeaheadMultiSelected)
       );
     } else {
       this.setState(
-        (prevState: SelectDemoState) => ({ plainTypeaheadMultiSelected: [...prevState.plainTypeaheadMultiSelected, selection] }),
+        (prevState: SelectDemoState) => ({
+          plainTypeaheadMultiSelected: [...prevState.plainTypeaheadMultiSelected, selection]
+        }),
         () => console.log('selections: ', this.state.plainTypeaheadMultiSelected)
       );
     }
-  }
+  };
 
   customTypeaheadMultiOnSelect = (event: any, selection: string) => {
     const { customTypeaheadMultiSelected } = this.state;
     if (customTypeaheadMultiSelected.includes(selection)) {
       this.setState(
-        (prevState: SelectDemoState) => ({ customTypeaheadMultiSelected: prevState.customTypeaheadMultiSelected.filter((item) => item !== selection) }),
+        (prevState: SelectDemoState) => ({
+          customTypeaheadMultiSelected: prevState.customTypeaheadMultiSelected.filter(item => item !== selection)
+        }),
         () => console.log('selections: ', this.state.customTypeaheadMultiSelected)
       );
     } else {
       this.setState(
-        (prevState: SelectDemoState) => ({ customTypeaheadMultiSelected: [...prevState.customTypeaheadMultiSelected, selection] }),
+        (prevState: SelectDemoState) => ({
+          customTypeaheadMultiSelected: [...prevState.customTypeaheadMultiSelected, selection]
+        }),
         () => console.log('selections: ', this.state.customTypeaheadMultiSelected)
       );
     }
-  }
+  };
 
   typeaheadCreateNew = (newValue: string) => {
     this.setState({
-      typeaheadOptions: [...this.state.typeaheadOptions, {value: newValue}]
-    })
-  }
+      typeaheadOptions: [...this.state.typeaheadOptions, { value: newValue }]
+    });
+  };
 
   clearSelection = () => {
     this.setState({
@@ -320,7 +348,7 @@ export class SelectDemo extends Component<SelectDemoState> {
       customTypeaheadMultiSelected: [],
       customTypeaheadMultiIsExpanded: false
     });
-  }
+  };
 
   renderSingleSelect() {
     const { singleIsExpanded, singleSelected } = this.state;
@@ -421,13 +449,34 @@ export class SelectDemo extends Component<SelectDemoState> {
             isExpanded={customSingleIsExpanded}
             ariaLabelledBy={titleId}
           >
-            <SelectOption key={0} value="Choose..." isPlaceholder>Choose...</SelectOption>
-            <SelectOption key={1} value="Mr"><div>div-Mr</div><CartArrowDownIcon /></SelectOption>
-            <SelectOption key={2} value="Miss">text-Miss</SelectOption>
-            <SelectOption key={3} value="Mrs"><div>div-Mrs</div><CartArrowDownIcon /></SelectOption>
-            <SelectOption key={4} value="Ms"><div><span>nested-Ms</span></div></SelectOption>
-            <SelectOption key={5} value="Dr"><div>one</div><div>two<div>nested-three-dr</div></div></SelectOption>
-            <SelectOption key={6} value="Other"><div>single-Other</div></SelectOption>
+            <SelectOption key={0} value="Choose..." isPlaceholder>
+              Choose...
+            </SelectOption>
+            <SelectOption key={1} value="Mr">
+              <div>div-Mr</div>
+              <CartArrowDownIcon />
+            </SelectOption>
+            <SelectOption key={2} value="Miss">
+              text-Miss
+            </SelectOption>
+            <SelectOption key={3} value="Mrs">
+              <div>div-Mrs</div>
+              <CartArrowDownIcon />
+            </SelectOption>
+            <SelectOption key={4} value="Ms">
+              <div>
+                <span>nested-Ms</span>
+              </div>
+            </SelectOption>
+            <SelectOption key={5} value="Dr">
+              <div>one</div>
+              <div>
+                two<div>nested-three-dr</div>
+              </div>
+            </SelectOption>
+            <SelectOption key={6} value="Other">
+              <div>single-Other</div>
+            </SelectOption>
           </Select>
         </div>
       </StackItem>
@@ -463,7 +512,13 @@ export class SelectDemo extends Component<SelectDemoState> {
   }
 
   renderTypeaheadSelect() {
-    const { typeaheadOptions, typeaheadIsExpanded, typeaheadSelected, typeaheadIsCreatable, typeaheadNewOptions } = this.state;
+    const {
+      typeaheadOptions,
+      typeaheadIsExpanded,
+      typeaheadSelected,
+      typeaheadIsCreatable,
+      typeaheadNewOptions
+    } = this.state;
     const titleId = 'typeahead-select-id';
     return (
       <StackItem isFilled={false}>
@@ -484,10 +539,9 @@ export class SelectDemo extends Component<SelectDemoState> {
             ariaLabelledBy={titleId}
             placeholderText="Select a state"
             isCreatable={typeaheadIsCreatable}
-            onCreateOption={typeaheadNewOptions && this.typeaheadCreateNew || undefined}
+            onCreateOption={(typeaheadNewOptions && this.typeaheadCreateNew) || undefined}
             createText="Create item"
             noResultsFoundText="Item not found"
-
           >
             {typeaheadOptions.map((option, index) => (
               <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
@@ -603,7 +657,11 @@ export class SelectDemo extends Component<SelectDemoState> {
           >
             {this.state.typeaheadOptions.map((option, index) => (
               <SelectOption isDisabled={option.disabled} key={index} value={option.value}>
-                <div>div-{option.value.toString()}<span>-test_span</span><CartArrowDownIcon /></div>
+                <div>
+                  div-{option.value.toString()}
+                  <span>-test_span</span>
+                  <CartArrowDownIcon />
+                </div>
               </SelectOption>
             ))}
           </Select>
@@ -623,25 +681,29 @@ export class SelectDemo extends Component<SelectDemoState> {
           <span id={titleId} hidden>
             Select a state
           </span>
-        <Select
-          toggleId="custom-typeahead-plain-multi-select"
-          variant={SelectVariant.typeaheadMulti}
-          aria-label="Select a state"
-          onToggle={this.plainTypeaheadMultiOnToggle}
-          onSelect={this.plainTypeaheadMultiOnSelect}
-          onClear={this.clearSelection}
-          selections={plainTypeaheadMultiSelected}
-          isExpanded={plainTypeaheadMultiIsExpanded}
-          isPlain={plainTypeaheadMultiIsPlain}
-          ariaLabelledBy={titleId}
-          placeholderText="Select a state"
-        >
-          {this.state.typeaheadOptions.map((option, index) => (
-            <SelectOption isDisabled={option.disabled} key={index} value={option.value}>
-              <div>div-{option.value.toString()}<span>-test_span</span><CartArrowDownIcon /></div>
-            </SelectOption>
-          ))}
-        </Select>
+          <Select
+            toggleId="custom-typeahead-plain-multi-select"
+            variant={SelectVariant.typeaheadMulti}
+            aria-label="Select a state"
+            onToggle={this.plainTypeaheadMultiOnToggle}
+            onSelect={this.plainTypeaheadMultiOnSelect}
+            onClear={this.clearSelection}
+            selections={plainTypeaheadMultiSelected}
+            isExpanded={plainTypeaheadMultiIsExpanded}
+            isPlain={plainTypeaheadMultiIsPlain}
+            ariaLabelledBy={titleId}
+            placeholderText="Select a state"
+          >
+            {this.state.typeaheadOptions.map((option, index) => (
+              <SelectOption isDisabled={option.disabled} key={index} value={option.value}>
+                <div>
+                  div-{option.value.toString()}
+                  <span>-test_span</span>
+                  <CartArrowDownIcon />
+                </div>
+              </SelectOption>
+            ))}
+          </Select>
         </div>
       </StackItem>
     );
@@ -650,16 +712,16 @@ export class SelectDemo extends Component<SelectDemoState> {
   render() {
     return (
       <Stack gutter="md">
-      {this.renderSingleSelect()}
-      {this.renderCustomSingleSelect()}
-      {this.renderDisabledSingleSelect()}
-      {this.renderCheckboxSelect()}
-      {this.renderTypeaheadSelect()}
-      {this.renderTypeaheadMultiSelect()}
-      {this.renderCustomDataTypeaheadMultiSelect()}
-      {this.renderCustomTypeaheadMultiSelect()}
-      {this.renderPlainTypeaheadMultiSelect()}
-    </Stack>
+        {this.renderSingleSelect()}
+        {this.renderCustomSingleSelect()}
+        {this.renderDisabledSingleSelect()}
+        {this.renderCheckboxSelect()}
+        {this.renderTypeaheadSelect()}
+        {this.renderTypeaheadMultiSelect()}
+        {this.renderCustomDataTypeaheadMultiSelect()}
+        {this.renderCustomTypeaheadMultiSelect()}
+        {this.renderPlainTypeaheadMultiSelect()}
+      </Stack>
     );
   }
 }

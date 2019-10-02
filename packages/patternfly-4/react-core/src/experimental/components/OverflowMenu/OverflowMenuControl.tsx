@@ -18,14 +18,18 @@ export const OverflowMenuControl: React.SFC<OverflowMenuControlProps> = ({
   hasAdditionalOptions
 }) => (
   <OverflowMenuContext.Consumer>
-    {value => (value.isBelowBreakpoint || hasAdditionalOptions) && (
-      <div className={css(
-        styles.overflowMenuControl,
-        hasAdditionalOptions && styles.modifiers.additionalOptions,
-        className)
-      }>
-        {children}
-      </div>
-    )}
+    {value =>
+      (value.isBelowBreakpoint || hasAdditionalOptions) && (
+        <div
+          className={css(
+            styles.overflowMenuControl,
+            hasAdditionalOptions && styles.modifiers.additionalOptions,
+            className
+          )}
+        >
+          {children}
+        </div>
+      )
+    }
   </OverflowMenuContext.Consumer>
 );

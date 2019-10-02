@@ -6,7 +6,8 @@ import { getUniqueId } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
-export interface SwitchProps extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
+export interface SwitchProps
+  extends Omit<React.HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
   /** id for the label. */
   id?: string;
   /** Additional classes added to the Switch */
@@ -29,14 +30,14 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
   id = '';
 
   static defaultProps = {
-    "id": '',
-    "className": '',
-    "label": '',
-    "labelOff": '',
-    "isChecked": true,
-    "isDisabled": false,
+    id: '',
+    className: '',
+    label: '',
+    labelOff: '',
+    isChecked: true,
+    isDisabled: false,
     'aria-label': '',
-    "onChange": () => undefined as any
+    onChange: () => undefined as any
   };
 
   constructor(props: SwitchProps & InjectedOuiaProps) {
@@ -55,19 +56,19 @@ class Switch extends React.Component<SwitchProps & InjectedOuiaProps> {
       <label
         className={css(styles.switch, className)}
         htmlFor={this.id}
-        {...ouiaContext.isOuia && {
+        {...(ouiaContext.isOuia && {
           'data-ouia-component-type': 'Switch',
           'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        }}
+        })}
       >
         <input
           id={this.id}
           className={css(styles.switchInput)}
           type="checkbox"
-          onChange={(event) => onChange(event.target.checked, event)}
+          onChange={event => onChange(event.target.checked, event)}
           defaultChecked={isChecked}
           disabled={isDisabled}
-          aria-labelledby={isAriaLabelledBy ? `${this.id}-on`: null}
+          aria-labelledby={isAriaLabelledBy ? `${this.id}-on` : null}
           {...props}
         />
         {label !== '' ? (

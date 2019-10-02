@@ -20,9 +20,9 @@ export interface EmptyStateIconProps extends IconProps {
   /** Additional classes added to the EmptyState */
   className?: string;
   /** Icon component to be rendered inside the EmptyState on icon variant */
-  icon?: string | React.FunctionComponent<IconProps>
+  icon?: string | React.FunctionComponent<IconProps>;
   /** Component to be rendered inside the EmptyState on container variant */
-  component?:  React.FunctionComponent<any>;
+  component?: React.FunctionComponent<any>;
   /** Adds empty state icon variant styles  */
   variant?: 'icon' | 'container';
 }
@@ -38,6 +38,8 @@ export const EmptyStateIcon: React.FunctionComponent<EmptyStateIconProps> = ({
   return variant === 'icon' ? (
     <IconComponent className={classNames} {...props} aria-hidden="true" />
   ) : (
-    <div className={classNames}><AnyComponent /></div>
+    <div className={classNames}>
+      <AnyComponent />
+    </div>
   );
 };

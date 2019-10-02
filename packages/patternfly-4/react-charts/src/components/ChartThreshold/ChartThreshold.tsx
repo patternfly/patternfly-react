@@ -11,9 +11,7 @@ export const ChartThreshold: React.FunctionComponent<ChartLineProps> = ({
   ...rest
 }: ChartLineProps) => {
   const theme = getThresholdTheme(themeColor, themeVariant);
-  return (
-    <ChartLine {...rest} theme={theme} />
-  );
+  return <ChartLine {...rest} theme={theme} />;
 };
 
 // Note: VictoryPie.role must be hoisted

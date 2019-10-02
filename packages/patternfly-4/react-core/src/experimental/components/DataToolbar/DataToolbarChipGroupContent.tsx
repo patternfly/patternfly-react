@@ -21,7 +21,6 @@ export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDi
 }
 
 export class DataToolbarChipGroupContent extends React.Component<DataToolbarChipGroupContentProps> {
-
   render() {
     const {
       className,
@@ -38,20 +37,19 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
 
     return (
       <div
-        className={css(
-          styles.dataToolbarContent,
-          getModifier(styles, 'hidden'),
-          className)}
+        className={css(styles.dataToolbarContent, getModifier(styles, 'hidden'), className)}
         hidden
         ref={chipGroupContentRef}
         {...props}
       >
-        <DataToolbarGroup variant="filter-group"/>
-        {showClearFiltersButton && !expandableContentIsExpanded &&
-        <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
-          <Button variant="link" onClick={clearChipGroups}>Clear all filters</Button>
-        </DataToolbarItem>
-        }
+        <DataToolbarGroup variant="filter-group" />
+        {showClearFiltersButton && !expandableContentIsExpanded && (
+          <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
+            <Button variant="link" onClick={clearChipGroups}>
+              Clear all filters
+            </Button>
+          </DataToolbarItem>
+        )}
       </div>
     );
   }

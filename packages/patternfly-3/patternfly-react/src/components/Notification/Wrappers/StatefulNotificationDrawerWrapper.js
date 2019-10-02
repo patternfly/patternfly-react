@@ -15,7 +15,7 @@ class StatefulNotificationDrawerWrapper extends React.Component {
 
   onClickLink = url => {
     window.open(url.href);
-  }
+  };
 
   onMarkPanelAsRead = panelkey => {
     const panels = this.state.panels.map(panel => {
@@ -29,22 +29,26 @@ class StatefulNotificationDrawerWrapper extends React.Component {
     });
     this.setState({ panels });
     this.updateUnreadCount();
-  }
+  };
 
   onMarkPanelAsClear = key => {
     const panels = this.state.panels.map(panel => {
-      if (panel.panelkey === key) { panel.notifications = []; }
+      if (panel.panelkey === key) {
+        panel.notifications = [];
+      }
       return panel;
     });
     this.setState({ panels });
     this.updateUnreadCount();
-  }
+  };
 
   onNotificationAsRead = (panelkey, nkey) => {
     const panels = this.state.panels.map(panel => {
       if (panel.panelkey === panelkey) {
         panel.notifications.map(notification => {
-          if (notification.id === nkey) { notification.seen = true; }
+          if (notification.id === nkey) {
+            notification.seen = true;
+          }
           return notification;
         });
       }
@@ -52,11 +56,11 @@ class StatefulNotificationDrawerWrapper extends React.Component {
     });
     this.setState({ panels });
     this.updateUnreadCount();
-  }
+  };
 
   onNotificationClick = () => {
     // On Click
-  }
+  };
 
   onNotificationHide = (panelkey, nkey) => {
     const panels = this.state.panels.map(panel => {
@@ -71,17 +75,21 @@ class StatefulNotificationDrawerWrapper extends React.Component {
     });
     this.setState({ panels });
     this.updateUnreadCount();
-  }
+  };
 
   togglePanel = key => {
-    if (this.state.expandedPanel === key) { this.setState({ expandedPanel: '-1' }); } else { this.setState({ expandedPanel: key }); }
-  }
+    if (this.state.expandedPanel === key) {
+      this.setState({ expandedPanel: '-1' });
+    } else {
+      this.setState({ expandedPanel: key });
+    }
+  };
 
   toggleDrawerExpand = () => {
     this.setState(prevState => ({
       isExpanded: !prevState.isExpanded
     }));
-  }
+  };
 
   updateUnreadCount = () => {
     let hasunread = false;
@@ -93,7 +101,7 @@ class StatefulNotificationDrawerWrapper extends React.Component {
       }
     }
     this.props.updateUnreadCount(hasunread);
-  }
+  };
 
   render() {
     return (

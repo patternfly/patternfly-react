@@ -181,7 +181,7 @@ test('Click on the "More" button will expend the list and the button will change
   expect(component.find('.ReactCollapse--collapse > ul > li')).toBeTruthy();
 });
 
-test('While the social list has 4 or less links, it won\'t have the \'double-col\' class and the expend button won\'t exist', () => {
+test("While the social list has 4 or less links, it won't have the 'double-col' class and the expend button won't exist", () => {
   const props = { ...createProps() };
   props.card.social.links = [...logoList].splice(0, 4);
   const component = mount(<SocialLoginPage {...props} />);

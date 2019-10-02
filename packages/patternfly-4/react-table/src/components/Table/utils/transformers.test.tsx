@@ -16,25 +16,32 @@ import {
   textCenter
 } from './transformers';
 import { DropdownDirection, DropdownPosition } from '@patternfly/react-core';
-import { IAction, IActions, IActionsResolver, IAreActionsDisabled, IExtra, IExtraData, IRowData, ISeparator } from '../Table';
+import {
+  IAction,
+  IActions,
+  IActionsResolver,
+  IAreActionsDisabled,
+  IExtra,
+  IExtraData,
+  IRowData,
+  ISeparator
+} from '../Table';
 
-const testCellActions = (
-  {
-    actions,
-    actionResolver,
-    areActionsDisabled,
-    rowData,
-    extraData,
-    expectDisabled
-  }: {
-    actions?: IActions,
-    actionResolver?: IActionsResolver,
-    areActionsDisabled?: IAreActionsDisabled,
-    rowData?: IRowData,
-    extraData?: IExtraData,
-    expectDisabled?: boolean
-  }
-) => {
+const testCellActions = ({
+  actions,
+  actionResolver,
+  areActionsDisabled,
+  rowData,
+  extraData,
+  expectDisabled
+}: {
+  actions?: IActions;
+  actionResolver?: IActionsResolver;
+  areActionsDisabled?: IAreActionsDisabled;
+  rowData?: IRowData;
+  extraData?: IExtraData;
+  expectDisabled?: boolean;
+}) => {
   const returnedData = cellActions(actions, actionResolver, areActionsDisabled)('', {
     rowIndex: 0,
     rowData,
@@ -182,7 +189,7 @@ describe('Transformer functions', () => {
 
   describe('cellWidth', () => {
     const widths = [10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 'max'];
-    widths.forEach((width) =>
+    widths.forEach(width =>
       test(`${width}`, () => {
         expect(cellWidth(width as string)()).toEqual({ className: `pf-m-width-${width}` });
       })
@@ -218,7 +225,11 @@ describe('Transformer functions', () => {
 
   describe('expandable', () => {
     test('with parent', () => {
-      const returned = expandable('test', { rowIndex: 2, rowData: { parent: 1 }, column: { extraParams: {} } } as IExtra);
+      const returned = expandable('test', {
+        rowIndex: 2,
+        rowData: { parent: 1 },
+        column: { extraParams: {} }
+      } as IExtra);
       const view = mount(returned as React.ReactElement<any>);
       expect(view.find('div.pf-c-table__expandable-row-content')).toHaveLength(1);
       expect(view).toMatchSnapshot();

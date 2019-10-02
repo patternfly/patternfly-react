@@ -6,8 +6,8 @@ import CellSizeAndPositionManager from './CellSizeAndPositionManager';
 import { getMaxElementSize } from './maxElementSize.js';
 
 interface ContainerSizeAndOffset {
-  containerSize: number,
-  offset: number
+  containerSize: number;
+  offset: number;
 }
 
 /**
@@ -17,10 +17,10 @@ interface ContainerSizeAndOffset {
  */
 
 interface Params {
-  maxScrollSize?: number,
-  cellCount: number,
-  cellSizeGetter: CellSizeGetter,
-  estimatedCellSize: number
+  maxScrollSize?: number;
+  cellCount: number;
+  cellSizeGetter: CellSizeGetter;
+  estimatedCellSize: number;
 }
 
 /**
@@ -40,7 +40,7 @@ export default class ScalingCellSizeAndPositionManager {
     return this._cellSizeAndPositionManager.getTotalSize() > this._maxScrollSize;
   }
 
-  configure(params: { cellCount: number, estimatedCellSize: number, cellSizeGetter: CellSizeGetter }) {
+  configure(params: { cellCount: number; estimatedCellSize: number; cellSizeGetter: CellSizeGetter }) {
     this._cellSizeAndPositionManager.configure(params);
   }
 
@@ -95,10 +95,10 @@ export default class ScalingCellSizeAndPositionManager {
     currentOffset, // safe
     targetIndex
   }: {
-    align: Alignment,
-    containerSize: number,
-    currentOffset: number,
-    targetIndex: number
+    align: Alignment;
+    containerSize: number;
+    currentOffset: number;
+    targetIndex: number;
   }) {
     currentOffset = this._safeOffsetToOffset({
       containerSize,
@@ -143,9 +143,9 @@ export default class ScalingCellSizeAndPositionManager {
     offset, // safe
     totalSize
   }: {
-    containerSize: number,
-    offset: number,
-    totalSize: number
+    containerSize: number;
+    offset: number;
+    totalSize: number;
   }) {
     return totalSize <= containerSize ? 0 : offset / (totalSize - containerSize);
   }

@@ -147,7 +147,7 @@ export const ChartLegendWrapper: React.FunctionComponent<ChartLegendWrapperProps
     height,
     legendData: legendProps.data,
     legendOrientation: legendProps.legendOrientation ? legendProps.legendOrientation : orientation,
-    legendProps: legendProps,
+    legendProps,
     legendPosition: position,
     padding,
     theme,
@@ -163,9 +163,5 @@ export const ChartLegendWrapper: React.FunctionComponent<ChartLegendWrapperProps
     ...legendComponent.props
   });
 
-  return (
-    <React.Fragment>
-      {legend}
-    </React.Fragment>
-  );
+  return <React.Fragment>{legend}</React.Fragment>;
 };

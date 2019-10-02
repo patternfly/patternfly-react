@@ -28,7 +28,7 @@ test('Default Nav List', () => {
   const view = mount(
     <Nav className="test=nav-class">
       <NavList className="test-nav-list-class">
-        {props.items.map((item) => (
+        {props.items.map(item => (
           <NavItem to={item.to} key={item.to} className="test-nav-item-class">
             {item.label}
           </NavItem>
@@ -44,7 +44,7 @@ test('Dark Nav List', () => {
   const view = mount(
     <Nav className="test=nav-class" theme="dark">
       <NavList className="test-nav-list-class">
-        {props.items.map((item) => (
+        {props.items.map(item => (
           <NavItem to={item.to} key={item.to} className="test-nav-item-class">
             {item.label}
           </NavItem>
@@ -61,7 +61,7 @@ test('Default Nav List - Trigger item active update', () => {
   const view = mount(
     <Nav>
       <NavList>
-        {props.items.map((item) => (
+        {props.items.map(item => (
           <NavItem to={item.to} key={item.to}>
             {item.label}
           </NavItem>
@@ -81,7 +81,7 @@ test('Simple Nav List', () => {
   const view = mount(
     <Nav>
       <NavList variant="simple">
-        {props.items.map((item) => (
+        {props.items.map(item => (
           <NavItem to={item.to} key={item.to}>
             {item.label}
           </NavItem>
@@ -98,7 +98,7 @@ test('Expandable Nav List', () => {
     <Nav>
       <NavList>
         <NavExpandable id="grp-1" title="Section 1">
-          {props.items.map((item) => (
+          {props.items.map(item => (
             <NavItem to={item.to} key={item.to}>
               {item.label}
             </NavItem>
@@ -117,7 +117,7 @@ test('Expandable Nav List - Trigger toggle', () => {
     <Nav>
       <NavList>
         <NavExpandable id="grp-1" title="Section 1" className="expandable-group" isExpanded>
-          {props.items.map((item) => (
+          {props.items.map(item => (
             <NavItem to={item.to} key={item.to}>
               {item.label}
             </NavItem>
@@ -139,7 +139,7 @@ test('Expandable Nav List with aria label', () => {
     <Nav aria-label="Test">
       <NavList>
         <NavExpandable id="grp-1" title="Section 1" srText="Section 1 - Example sub-navigation">
-          {props.items.map((item) => (
+          {props.items.map(item => (
             <NavItem to={item.to} key={item.to}>
               {item.label}
             </NavItem>
@@ -157,7 +157,7 @@ test('Nav Grouped List', () => {
     <Nav>
       <NavGroup id="grp-1" title="Section 1">
         <NavList>
-          {props.items.map((item) => (
+          {props.items.map(item => (
             <NavItem to={item.to} key={`section1_${item.to}`}>
               {item.label}
             </NavItem>
@@ -166,7 +166,7 @@ test('Nav Grouped List', () => {
       </NavGroup>
       <NavGroup id="grp-2" title="Section 2">
         <NavList>
-          {props.items.map((item) => (
+          {props.items.map(item => (
             <NavItem to={item.to} key={`section2_${item.to}`}>
               {item.label}
             </NavItem>
@@ -183,7 +183,7 @@ test('Horizontal Nav List', () => {
   const view = mount(
     <Nav>
       <NavList variant="horizontal">
-        {props.items.map((item) => (
+        {props.items.map(item => (
           <NavItem to={item.to} key={item.to}>
             {item.label}
           </NavItem>
@@ -199,7 +199,7 @@ test('Tertiary Nav List', () => {
   const view = mount(
     <Nav>
       <NavList variant="tertiary">
-        {props.items.map((item) => (
+        {props.items.map(item => (
           <NavItem to={item.to} key={item.to}>
             {item.label}
           </NavItem>

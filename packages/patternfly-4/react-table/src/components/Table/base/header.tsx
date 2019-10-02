@@ -27,7 +27,7 @@ class BaseHeader extends React.Component<HeaderProps, {}> {
       renderers.header.wrapper as createElementType,
       props,
       [
-        (headerRows || [columns] as ColumnsType).map((rowData: RowsType, rowIndex) =>
+        (headerRows || ([columns] as ColumnsType)).map((rowData: RowsType, rowIndex) =>
           React.createElement(HeaderRow, {
             key: `${rowIndex}-header-row`,
             renderers: renderers.header,

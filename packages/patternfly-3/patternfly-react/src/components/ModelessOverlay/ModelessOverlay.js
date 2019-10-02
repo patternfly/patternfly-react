@@ -17,7 +17,7 @@ class ModelessOverlay extends React.Component {
 
   updateForTransitions = () => {
     this.setState({ isIn: this.props.show });
-  }
+  };
 
   render() {
     const { children, className, bsSize, show, ...otherProps } = this.props;

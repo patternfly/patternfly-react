@@ -42,7 +42,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
 
   private handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
     this.props.onChange(event.currentTarget.checked, event);
-  }
+  };
 
   render() {
     const {
@@ -59,7 +59,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
     } = this.props;
     const checkedProps: { checked?: boolean; defaultChecked?: boolean } = {};
     if ([true, false].includes(checked) || isChecked === true) {
-      checkedProps.checked =  checked || isChecked;
+      checkedProps.checked = checked || isChecked;
     }
     if (onChange !== defaultOnChange) {
       checkedProps.checked = isChecked;
@@ -79,7 +79,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
           aria-invalid={!isValid}
           aria-label={ariaLabel}
           disabled={isDisabled}
-          ref={(elem) => elem && (elem.indeterminate = isChecked === null)}
+          ref={elem => elem && (elem.indeterminate = isChecked === null)}
           {...checkedProps}
         />
         {label && (

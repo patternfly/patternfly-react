@@ -21,7 +21,7 @@ export const DropdownGroup: React.FunctionComponent<DropdownGroupProps> = ({
     {({ sectionClass, sectionTitleClass, sectionComponent }) => {
       const SectionComponent = sectionComponent as any;
       return (
-        <SectionComponent  className={css(sectionClass, className)}>
+        <SectionComponent className={css(sectionClass, className)}>
           {label && (
             <h1 className={css(sectionTitleClass)} aria-hidden>
               {label}

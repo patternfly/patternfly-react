@@ -3,7 +3,7 @@ import { Helpers, TextSize } from 'victory-core';
 import { ChartLegendProps } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { overpassFontCharacterConstant } from './chart-label';
-import {getPieOrigin} from "./chart-origin";
+import { getPieOrigin } from './chart-origin';
 
 interface ChartLegendInterface {
   chartType?: string; // The type of chart (e.g., pie) to lookup for props
@@ -51,16 +51,11 @@ export const getLegendDimensions = ({
 };
 
 // Returns x coordinate for legend
-export const getLegendX = ({
-  chartType,
-  ...rest
-}: ChartLegendInterface) => (chartType === 'pie') ? getPieLegendX(rest) : getChartLegendX(rest);
+export const getLegendX = ({ chartType, ...rest }: ChartLegendInterface) =>
+  chartType === 'pie' ? getPieLegendX(rest) : getChartLegendX(rest);
 
 // Returns y coordinate for legend
-export const getLegendY = ({
-  chartType,
-  ...rest
-}: ChartLegendInterface) => {
+export const getLegendY = ({ chartType, ...rest }: ChartLegendInterface) => {
   switch (chartType) {
     case 'pie':
       return getPieLegendY(rest);
@@ -69,7 +64,7 @@ export const getLegendY = ({
     default:
       return getChartLegendY(rest);
   }
-}
+};
 
 // Returns y coordinate for bullet legends
 export const getBulletLegendY = ({
@@ -83,9 +78,9 @@ export const getBulletLegendY = ({
   theme,
   width
 }: ChartLegendInterface) => {
-  const { left, right } = Helpers.getPadding({padding});
+  const { left, right } = Helpers.getPadding({ padding });
   const chartSize = {
-    height: height, // Fixed size
+    height, // Fixed size
     width: width - left - right
   };
 
@@ -121,7 +116,7 @@ export const getChartLegendX = ({
   theme,
   width
 }: ChartLegendInterface) => {
-  const { top, bottom, left, right } = Helpers.getPadding({padding});
+  const { top, bottom, left, right } = Helpers.getPadding({ padding });
   const chartSize = {
     height: Math.abs(height - (bottom + top)),
     width: Math.abs(width - (left + right))
@@ -141,7 +136,8 @@ export const getChartLegendX = ({
   switch (legendPosition) {
     case 'bottom':
       return width > legendDimensions.width - textSizeWorkAround
-        ? Math.round((width - (legendDimensions.width - textSizeWorkAround)) / 2) + dx : dx;
+        ? Math.round((width - (legendDimensions.width - textSizeWorkAround)) / 2) + dx
+        : dx;
     case 'bottom-left':
       return left + dx;
     case 'right':
@@ -163,7 +159,7 @@ export const getChartLegendY = ({
   theme,
   width
 }: ChartLegendInterface) => {
-  const { top, bottom, left, right } = Helpers.getPadding({padding});
+  const { top, bottom, left, right } = Helpers.getPadding({ padding });
   const chartSize = {
     height: Math.abs(height - (bottom + top)),
     width: Math.abs(width - (left + right))
@@ -183,7 +179,7 @@ export const getChartLegendY = ({
       });
       const originX = chartSize.height / 2 + top;
       const legendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 2 : 0);
-      return (originX - legendDimensions.height / 2) + legendPadding(legendData);
+      return originX - legendDimensions.height / 2 + legendPadding(legendData);
     }
     default:
       return dy;
@@ -219,7 +215,8 @@ export const getPieLegendX = ({
   switch (legendPosition) {
     case 'bottom':
       return width > legendDimensions.width - textSizeWorkAround
-        ? Math.round((width - (legendDimensions.width - textSizeWorkAround)) / 2) + dx : dx;
+        ? Math.round((width - (legendDimensions.width - textSizeWorkAround)) / 2) + dx
+        : dx;
     case 'right':
       return origin.x + ChartCommonStyles.label.margin + dx + radius;
     default:
@@ -254,7 +251,7 @@ export const getPieLegendY = ({
         theme
       });
       const legendPadding = (legendData: any[]) => (legendData && legendData.length > 0 ? 2 : 0);
-      return (origin.y - legendDimensions.height / 2) + legendPadding(legendData);
+      return origin.y - legendDimensions.height / 2 + legendPadding(legendData);
     }
     default:
       return dy;
@@ -264,11 +261,7 @@ export const getPieLegendY = ({
 // Returns an approximation of over-sized text width due to growing character count
 //
 // See https://github.com/FormidableLabs/victory/issues/864
-const getTextSizeWorkAround = ({
-  legendData,
-  legendOrientation,
-  theme
-}: ChartLegendTextSizeInterface) => {
+const getTextSizeWorkAround = ({ legendData, legendOrientation, theme }: ChartLegendTextSizeInterface) => {
   const style = theme.legend.style.labels;
   if (!(legendData && legendData.length)) {
     return 0;
@@ -279,14 +272,14 @@ const getTextSizeWorkAround = ({
 
   // For vertical legends, account for the growing char count of the longest legend item
   if (legendOrientation === 'vertical') {
-    legendData.forEach((data) => {
+    legendData.forEach(data => {
       if (data.name && data.name.length > result.length) {
         result = data.name;
       }
     });
   }
-  const textSize = TextSize.approximateTextSize(result,  style);
-  const adjustedTextSize = TextSize.approximateTextSize(result,  {
+  const textSize = TextSize.approximateTextSize(result, style);
+  const adjustedTextSize = TextSize.approximateTextSize(result, {
     ...style,
     characterConstant: overpassFontCharacterConstant
   });

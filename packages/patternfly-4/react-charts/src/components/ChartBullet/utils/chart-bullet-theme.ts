@@ -4,7 +4,7 @@ import {
   getComparativeWarningMeasureData,
   getPrimarySegmentedMeasureData,
   getQualitativeRangeData
-}  from './chart-bullet-data';
+} from './chart-bullet-data';
 import { ChartThemeDefinition } from '../../ChartTheme';
 import { getBulletTheme } from '../../ChartUtils';
 
@@ -125,7 +125,8 @@ export const getBulletThemeWithLegendColorScale = ({
     qualitativeRangeData,
     qualitativeRangeLegendData,
     themeColor,
-    themeVariant});
+    themeVariant
+  });
 
   const theme = getBulletTheme(themeColor, themeVariant);
   theme.legend.colorScale = [...colorScale];

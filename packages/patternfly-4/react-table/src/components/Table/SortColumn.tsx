@@ -19,7 +19,7 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
   onSort = null,
   sortDirection = '',
   ...props
-}: SortColumnProps ) => {
+}: SortColumnProps) => {
   let SortedByIcon;
   if (isSortedBy) {
     SortedByIcon = sortDirection === SortByDirection.asc ? LongArrowAltUpIcon : LongArrowAltDownIcon;
@@ -27,7 +27,7 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
     SortedByIcon = ArrowsAltVIcon;
   }
   return (
-    <button {...props} className={css(className)} onClick={(event) => onSort && onSort(event)}>
+    <button {...props} className={css(className)} onClick={event => onSort && onSort(event)}>
       {children}
       <span className={css(styles.tableSortIndicator)}>
         <SortedByIcon />

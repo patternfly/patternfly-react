@@ -9,8 +9,8 @@ import { SkipToContent } from '../SkipToContent';
 
 const props = {
   'aria-label': 'Page layout',
-  'id': 'PageId',
-  'className': 'my-page-class'
+  id: 'PageId',
+  className: 'my-page-class'
 };
 
 test('Check page vertical layout example against snapshot', () => {
@@ -29,7 +29,7 @@ test('Check page vertical layout example against snapshot', () => {
 
 test('Check dark page against snapshot', () => {
   const Header = <PageHeader logo="Logo" toolbar="Toolbar" avatar=" | Avatar" onNavToggle={() => undefined} />;
-  const Sidebar = <PageSidebar nav="Navigation" isNavOpen theme="dark"/>;
+  const Sidebar = <PageSidebar nav="Navigation" isNavOpen theme="dark" />;
   const view = mount(
     <Page {...props} header={Header} sidebar={Sidebar}>
       <PageSection variant="default">Section with default background</PageSection>

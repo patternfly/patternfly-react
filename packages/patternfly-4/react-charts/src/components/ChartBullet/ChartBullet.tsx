@@ -1,11 +1,6 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import {
-  DataGetterPropType,
-  DomainPropType,
-  PaddingProps,
-  VictoryChart,
-} from 'victory';
+import { DataGetterPropType, DomainPropType, PaddingProps, VictoryChart } from 'victory';
 import {
   getComparativeMeasureErrorWidth,
   getComparativeMeasureWidth,
@@ -243,7 +238,7 @@ export interface ChartBulletProps {
    *
    * Note: The x domain is expected to be `x: 2` in order to position all measures properly
    */
-  maxDomain?: number | { x?: number, y?: number };
+  maxDomain?: number | { x?: number; y?: number };
   /**
    * The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum
    * domain of a chart is static, while the maximum value depends on data or other variable information. If the domain
@@ -260,7 +255,7 @@ export interface ChartBulletProps {
    *
    * Note: The x domain is expected to be `x: 0` in order to position all measures properly
    */
-  minDomain?: number | { x?: number, y?: number };
+  minDomain?: number | { x?: number; y?: number };
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -540,10 +535,10 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   };
 
   const defaultPadding = {
-    bottom: getPaddingForSide('bottom',  padding, theme.chart.padding),
+    bottom: getPaddingForSide('bottom', padding, theme.chart.padding),
     left: getPaddingForSide('left', padding, theme.chart.padding),
     right: getPaddingForSide('right', padding, theme.chart.padding),
-    top: getPaddingForSide('top', padding, theme.chart.padding),
+    top: getPaddingForSide('top', padding, theme.chart.padding)
   };
 
   // Bullet group title
@@ -574,7 +569,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   // Comparative error measure
   const comparativeErrorMeasure = React.cloneElement(comparativeErrorMeasureComponent, {
     allowTooltip,
-    barWidth: getComparativeMeasureErrorWidth({height: chartSize.height, horizontal, width: chartSize.width}),
+    barWidth: getComparativeMeasureErrorWidth({ height: chartSize.height, horizontal, width: chartSize.width }),
     constrainToVisibleArea,
     data: comparativeErrorMeasureData,
     domain,
@@ -592,7 +587,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   // Comparative warning measure
   const comparativeWarningMeasure = React.cloneElement(comparativeWarningMeasureComponent, {
     allowTooltip,
-    barWidth: getComparativeMeasureWarningWidth({height: chartSize.height, horizontal, width: chartSize.width}),
+    barWidth: getComparativeMeasureWarningWidth({ height: chartSize.height, horizontal, width: chartSize.width }),
     constrainToVisibleArea,
     data: comparativeWarningMeasureData,
     domain,
@@ -609,8 +604,8 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
 
   // Comparative zero measure
   const comparativeZeroMeasure = React.cloneElement(comparativeZeroMeasureComponent, {
-    barWidth: getComparativeMeasureWidth({height: chartSize.height, horizontal, width: chartSize.width}),
-    data: [{y: 0}],
+    barWidth: getComparativeMeasureWidth({ height: chartSize.height, horizontal, width: chartSize.width }),
+    data: [{ y: 0 }],
     domain,
     height: chartSize.height,
     horizontal,
@@ -618,7 +613,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     standalone: false,
     width: chartSize.width,
     ...comparativeZeroMeasureComponent.props
-  })
+  });
 
   // Legend
   const legend = React.cloneElement(legendComponent, {
@@ -648,7 +643,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     labelComponent: allowTooltip ? <ChartTooltip height={height} theme={theme} width={width} /> : undefined,
     labels,
     padding,
-    size: getPrimaryDotMeasureSize({height: chartSize.height, horizontal, width: chartSize.width}),
+    size: getPrimaryDotMeasureSize({ height: chartSize.height, horizontal, width: chartSize.width }),
     standalone: false,
     themeColor,
     themeVariant,
@@ -661,7 +656,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   const primarySegmentedMeasure = React.cloneElement(primarySegmentedMeasureComponent, {
     allowTooltip,
     constrainToVisibleArea,
-    barWidth: getPrimarySegmentedMeasureWidth({height: chartSize.height, horizontal, width: chartSize.width}),
+    barWidth: getPrimarySegmentedMeasureWidth({ height: chartSize.height, horizontal, width: chartSize.width }),
     data: primarySegmentedMeasureData,
     domain,
     height: chartSize.height,
@@ -682,7 +677,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   const qualitativeRange = React.cloneElement(qualitativeRangeComponent, {
     allowTooltip,
     constrainToVisibleArea,
-    barWidth: getQualitativeRangeBarWidth({height: chartSize.height, horizontal, width: chartSize.width}),
+    barWidth: getQualitativeRangeBarWidth({ height: chartSize.height, horizontal, width: chartSize.width }),
     data: qualitativeRangeData,
     domain,
     height: chartSize.height,
@@ -710,7 +705,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       range = maxVal - minVal;
     }
     const tickInterval = range / (ChartBulletStyles.axisTickCount - 1);
-    for (let i = minVal; i < maxVal;) {
+    for (let i = minVal; i < maxVal; ) {
       i += tickInterval;
       tickValues.push(Math.ceil(i));
     }
@@ -728,12 +723,16 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     // Adjust for padding
     if (legendPosition === ChartLegendPosition.bottom) {
       dy = horizontal
-        ? defaultPadding.top * .5 + (defaultPadding.bottom * .5 - (defaultPadding.bottom)) - 25
-        : title ? -defaultPadding.bottom + 60 : -defaultPadding.bottom;
+        ? defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - defaultPadding.bottom) - 25
+        : title
+        ? -defaultPadding.bottom + 60
+        : -defaultPadding.bottom;
     } else if (legendPosition === ChartLegendPosition.bottomLeft) {
       dy = horizontal
-        ? defaultPadding.top * .5 + (defaultPadding.bottom * .5 - (defaultPadding.bottom)) - 25
-        : title ? -defaultPadding.bottom + 60 : -defaultPadding.bottom;
+        ? defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - defaultPadding.bottom) - 25
+        : title
+        ? -defaultPadding.bottom + 60
+        : -defaultPadding.bottom;
       dx = -10;
     }
     return (
@@ -755,12 +754,12 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   // Returns comparative zero measure
   const getComparativeZeroMeasure = () => {
     const _domain: any = domain;
-    const low = Array.isArray(_domain)
-      ? _domain[0]
-      : _domain.y && Array.isArray(_domain.y) ? _domain.y[0] : 0;
+    const low = Array.isArray(_domain) ? _domain[0] : _domain.y && Array.isArray(_domain.y) ? _domain.y[0] : 0;
     const high = Array.isArray(_domain)
       ? _domain[_domain.length - 1]
-      : _domain.y && Array.isArray(_domain.y) ? _domain.y[_domain.y.length - 1] : 0;
+      : _domain.y && Array.isArray(_domain.y)
+      ? _domain.y[_domain.y.length - 1]
+      : 0;
 
     if (low < 0 && high > 0) {
       return comparativeZeroMeasure;
@@ -771,14 +770,16 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   // Axis component for custom tick values
   const axis = React.cloneElement(axisComponent, {
     dependentAxis: horizontal ? false : true,
-    domain: !horizontal ? domain : {
-      x: (domain as any).y,
-      y: (domain as any).x
-    },
+    domain: !horizontal
+      ? domain
+      : {
+          x: (domain as any).y,
+          y: (domain as any).x
+        },
     height: chartSize.height,
     // Adjust for padding
-    offsetX: !horizontal ? defaultPadding.left * .5 + (defaultPadding.right * .5 - (defaultPadding.right - 55)) : 0,
-    offsetY: horizontal ? 80 - defaultPadding.top * .5 + (defaultPadding.bottom * .5 - 25) : 0,
+    offsetX: !horizontal ? defaultPadding.left * 0.5 + (defaultPadding.right * 0.5 - (defaultPadding.right - 55)) : 0,
+    offsetY: horizontal ? 80 - defaultPadding.top * 0.5 + (defaultPadding.bottom * 0.5 - 25) : 0,
     padding,
     standalone: false,
     tickCount: ChartBulletStyles.axisTickCount,
@@ -803,19 +804,11 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   );
 
   return standalone ? (
-    <ChartContainer
-      desc={ariaDesc}
-      height={height}
-      title={ariaTitle}
-      theme={theme}
-      width={width}
-    >
+    <ChartContainer desc={ariaDesc} height={height} title={ariaTitle} theme={theme} width={width}>
       {bulletChart}
     </ChartContainer>
   ) : (
-    <React.Fragment>
-      {bulletChart}
-    </React.Fragment>
+    <React.Fragment>{bulletChart}</React.Fragment>
   );
 };
 

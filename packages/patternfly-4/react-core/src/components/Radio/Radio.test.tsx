@@ -23,8 +23,7 @@ describe('Radio check component', () => {
   });
 
   test('label is string', () => {
-    const view = shallow(
-      <Radio label="Label" id="check" isChecked aria-label="check" name="check" />);
+    const view = shallow(<Radio label="Label" id="check" isChecked aria-label="check" name="check" />);
     expect(view).toMatchSnapshot();
   });
 

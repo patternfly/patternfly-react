@@ -47,7 +47,6 @@ export interface ContextSelectorProps {
 }
 
 export class ContextSelector extends React.Component<ContextSelectorProps> {
-
   static defaultProps = {
     children: null as React.ReactNode,
     className: '',
@@ -69,7 +68,7 @@ export class ContextSelector extends React.Component<ContextSelectorProps> {
     if (event.charCode === KEY_CODES.ENTER) {
       this.props.onSearchButtonClick();
     }
-  }
+  };
 
   render() {
     const toggleId = `pf-context-selector-toggle-id-${newId}`;

@@ -27,7 +27,7 @@ export interface GridProps extends React.HTMLProps<HTMLDivElement> {
   xl2?: gridItemSpanValueShape;
 }
 
-export const Grid: React.FunctionComponent<GridProps>  = ({
+export const Grid: React.FunctionComponent<GridProps> = ({
   children = null,
   className = '',
   gutter = null,
@@ -46,14 +46,7 @@ export const Grid: React.FunctionComponent<GridProps>  = ({
   });
 
   return (
-    <div
-      className={css(
-        ...classes,
-        gutter && styles.modifiers.gutter,
-        className
-      )}
-      {...props}
-    >
+    <div className={css(...classes, gutter && styles.modifiers.gutter, className)} {...props}>
       {children}
     </div>
   );

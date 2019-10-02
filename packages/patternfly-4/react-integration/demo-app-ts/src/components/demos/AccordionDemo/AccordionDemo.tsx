@@ -17,7 +17,7 @@ export class AccordionDemo extends React.Component<null, AccordionDemoState> {
   onToggle = (id: string) => {
     const { expanded } = this.state;
     this.setState({ expanded: id !== expanded ? id : null });
-  }
+  };
 
   render() {
     const { expanded } = this.state;

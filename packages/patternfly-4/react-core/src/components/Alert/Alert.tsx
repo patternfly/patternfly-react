@@ -15,8 +15,7 @@ export enum AlertVariant {
   default = 'default'
 }
 
-export interface AlertProps
-  extends Omit<React.HTMLProps<HTMLDivElement>, 'action' | 'title'> {
+export interface AlertProps extends Omit<React.HTMLProps<HTMLDivElement>, 'action' | 'title'> {
   /** Adds Alert variant styles  */
   variant?: 'success' | 'danger' | 'warning' | 'info' | 'default';
   /** Flag to indicate if the Alert is inline */
@@ -55,25 +54,26 @@ const Alert: React.FunctionComponent<AlertProps & InjectedOuiaProps> = ({
     </React.Fragment>
   );
 
-  const customClassName = css(styles.alert, isInline && styles.modifiers.inline, (variant !== AlertVariant.default ) && getModifier(styles, variant, styles.modifiers.info), className);
+  const customClassName = css(
+    styles.alert,
+    isInline && styles.modifiers.inline,
+    variant !== AlertVariant.default && getModifier(styles, variant, styles.modifiers.info),
+    className
+  );
 
   return (
     <div
       {...props}
       className={customClassName}
       aria-label={ariaLabel}
-      {...ouiaContext.isOuia && {
+      {...(ouiaContext.isOuia && {
         'data-ouia-component-type': 'Alert',
         'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-      }}
+      })}
     >
       <AlertIcon variant={variant} />
       <h4 className={css(styles.alertTitle)}>{readerTitle}</h4>
-      {children && (
-        <div className={css(styles.alertDescription)}>
-          {children}
-        </div>
-      )}
+      {children && <div className={css(styles.alertDescription)}>{children}</div>}
       {action && (
         <div className={css(styles.alertAction)}>{React.cloneElement(action as any, { title, variantLabel })}</div>
       )}

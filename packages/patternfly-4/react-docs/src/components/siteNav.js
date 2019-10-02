@@ -42,7 +42,9 @@ const SiteNav = () => {
       if (!node.context.title) {
         const split = node.path.split('/');
         split.forEach(s => {
-          if (s) { node.context.title = s; }
+          if (s) {
+            node.context.title = s;
+          }
         });
       }
       return node;

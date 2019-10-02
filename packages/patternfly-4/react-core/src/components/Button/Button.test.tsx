@@ -3,7 +3,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { CartArrowDownIcon } from '@patternfly/react-icons';
 
-Object.values(ButtonVariant).forEach((variant) => {
+Object.values(ButtonVariant).forEach(variant => {
   test(`${variant} button`, () => {
     const view = mount(
       <Button variant={variant} aria-label={variant}>

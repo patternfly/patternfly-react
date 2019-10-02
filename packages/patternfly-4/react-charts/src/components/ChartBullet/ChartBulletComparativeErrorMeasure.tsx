@@ -1,14 +1,8 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
-import {
-  DataGetterPropType,
-  DomainPropType,
-  NumberOrCallback,
-  PaddingProps,
-  VictoryBar,
-} from 'victory';
+import { DataGetterPropType, DomainPropType, NumberOrCallback, PaddingProps, VictoryBar } from 'victory';
 import { ChartContainer } from '../ChartContainer';
-import { ChartThemeDefinition}  from '../ChartTheme';
+import { ChartThemeDefinition } from '../ChartTheme';
 import { getBulletComparativeErrorMeasureTheme } from '../ChartUtils';
 import { ChartBulletComparativeMeasure } from './ChartBulletComparativeMeasure';
 
@@ -211,9 +205,7 @@ export const ChartBulletComparativeErrorMeasure: React.FunctionComponent<ChartBu
       {measure}
     </ChartContainer>
   ) : (
-    <React.Fragment>
-      {measure}
-    </React.Fragment>
+    <React.Fragment>{measure}</React.Fragment>
   );
 };
 

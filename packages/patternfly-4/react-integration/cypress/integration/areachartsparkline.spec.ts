@@ -17,5 +17,4 @@ describe('Area Chart Simple Demo Test', () => {
     cy.get('.VictoryContainer > svg').should('have.attr', 'width', '400');
     cy.get('.VictoryContainer > svg').should('have.attr', 'height', '100');
   });
-
 });

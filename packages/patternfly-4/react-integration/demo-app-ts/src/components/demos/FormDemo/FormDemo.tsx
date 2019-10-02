@@ -1,13 +1,5 @@
-import React, {Component} from 'react';
-import {
-  Form,
-  FormGroup,
-  FormProps,
-  TextInput,
-  Select,
-  SelectOption,
-  SelectVariant
-} from '@patternfly/react-core';
+import React, { Component } from 'react';
+import { Form, FormGroup, FormProps, TextInput, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
 export interface FormState {
   value: string;
@@ -28,32 +20,32 @@ export class FormDemo extends Component<FormProps, FormState> {
   }
   handleTextInputChange = (value: string) => {
     this.setState({ value, isValid: /^\d+$/.test(value) });
-  }
-  onToggle = (isExpanded) => {
+  };
+  onToggle = isExpanded => {
     this.setState({
       isExpanded
     });
-  }
+  };
   onSelect = (event, selection) => {
     const { selected } = this.state;
     if (selected.includes(selection)) {
       this.setState(
-        (prevState) => ({ selected: prevState.selected.filter((item) => item !== selection) }),
+        prevState => ({ selected: prevState.selected.filter(item => item !== selection) }),
         () => console.log('selections: ', this.state.selected)
       );
     } else {
       this.setState(
-        (prevState) => ({ selected: [...prevState.selected, selection] }),
+        prevState => ({ selected: [...prevState.selected, selection] }),
         () => console.log('selections: ', this.state.selected)
       );
     }
-  }
+  };
   clearSelection = () => {
     this.setState({
       selected: [],
-      isExpanded: false,
+      isExpanded: false
     });
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -93,34 +85,30 @@ export class FormDemo extends Component<FormProps, FormState> {
         </Form>
         <div>
           <div>
-              <Form>
+            <Form>
               <span id={titleId} hidden>
-                  Select a state
+                Select a state
               </span>
               <Select
-                  id={this.props.id}
-                  variant={SelectVariant.typeaheadMulti}
-                  aria-label="Select a state"
-                  onToggle={this.onToggle}
-                  onSelect={this.onSelect}
-                  onClear={this.clearSelection}
-                  selections={selected}
-                  isExpanded={isExpanded}
-                  ariaLabelledBy={titleId}
-                  placeholderText="Select a state"
+                id={this.props.id}
+                variant={SelectVariant.typeaheadMulti}
+                aria-label="Select a state"
+                onToggle={this.onToggle}
+                onSelect={this.onSelect}
+                onClear={this.clearSelection}
+                selections={selected}
+                isExpanded={isExpanded}
+                ariaLabelledBy={titleId}
+                placeholderText="Select a state"
               >
-                  {options.map((option, index) => (
-                      <SelectOption
-                          isDisabled={option.disabled}
-                          key={index}
-                          value={option.value}
-                      />
-                  ))}
+                {options.map((option, index) => (
+                  <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
+                ))}
               </Select>
-              </Form>
+            </Form>
           </div>
-      </div>
-    </React.Fragment>
+        </div>
+      </React.Fragment>
     );
   }
 }

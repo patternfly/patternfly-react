@@ -16,7 +16,7 @@ class AsyncTypeAheadSelect extends React.Component {
   handleSearch = query => {
     this.onSearchStart();
     Promise.resolve(this.props.onSearch(query)).then(options => this.onSearchEnd(options));
-  }
+  };
 
   render() {
     const { innerRef, ...props } = this.props;

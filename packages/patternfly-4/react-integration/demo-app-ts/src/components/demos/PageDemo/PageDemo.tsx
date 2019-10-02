@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Page,
-  PageHeader,
-  PageSidebar,
-  PageSection,
-  PageSectionVariants,
-  SkipToContent
-} from '@patternfly/react-core';
+import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants, SkipToContent } from '@patternfly/react-core';
 
 export class PageDemo extends React.Component {
   state = {
@@ -16,7 +9,7 @@ export class PageDemo extends React.Component {
     this.setState({
       isNavOpen: !this.state.isNavOpen
     });
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -43,9 +36,7 @@ export class PageDemo extends React.Component {
       />
     );
     const pageId = 'page-demo-page-id';
-    const PageSkipToContent = (
-      <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>
-    );
+    const PageSkipToContent = <SkipToContent href={`#${pageId}`}>Skip to Content</SkipToContent>;
     const Sidebar = <PageSidebar id="page-demo-sidebar" nav="Navigation" isNavOpen={isNavOpen} />;
 
     return (

@@ -18,7 +18,7 @@ export class AboutModalDemo extends React.Component<null, AboutModalState> {
     this.setState(({ isModalOpen }) => ({
       isModalOpen: !isModalOpen
     }));
-  }
+  };
 
   render() {
     const { isModalOpen } = this.state;

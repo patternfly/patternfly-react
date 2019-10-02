@@ -12,7 +12,7 @@ class LoginPageAlert extends React.Component {
       return;
     }
     this.setState({ show: false });
-  }
+  };
 
   render() {
     const { type, message } = this.props;

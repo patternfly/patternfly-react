@@ -18,7 +18,7 @@ test('adds row class', () => {
   expect(view.props().className).toMatchSnapshot();
 });
 
-Object.values(DeviceSizes).forEach((size) => {
+Object.values(DeviceSizes).forEach(size => {
   test(`adds ${size} span class`, () => {
     const props = { [size]: 4 };
     const view = shallow(<GridItem {...props} />);

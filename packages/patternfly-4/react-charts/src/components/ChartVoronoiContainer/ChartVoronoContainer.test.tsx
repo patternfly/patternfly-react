@@ -4,7 +4,7 @@ import { ChartArea } from '../ChartArea';
 import { ChartGroup } from '../ChartGroup';
 import { ChartVoronoiContainer } from './ChartVoronoiContainer';
 
-Object.values([true, false]).forEach((isRead) => {
+Object.values([true, false]).forEach(isRead => {
   test('ChartVoronoiContainer', () => {
     const view = shallow(<ChartVoronoiContainer />);
     expect(view).toMatchSnapshot();

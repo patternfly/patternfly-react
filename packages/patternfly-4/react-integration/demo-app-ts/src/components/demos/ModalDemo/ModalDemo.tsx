@@ -12,7 +12,6 @@ interface ModalDemoState {
 }
 
 export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, ModalDemoState> {
-
   state = {
     isModalOpen: false,
     isSmallModalOpen: false,
@@ -26,37 +25,37 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     this.setState(({ isModalOpen }) => ({
       isModalOpen: !isModalOpen
     }));
-  }
+  };
 
   handleSmallModalToggle = () => {
     this.setState(({ isSmallModalOpen }) => ({
       isSmallModalOpen: !isSmallModalOpen
     }));
-  }
+  };
 
   handleLargeModalToggle = () => {
     this.setState(({ isLargeModalOpen }) => ({
       isLargeModalOpen: !isLargeModalOpen
     }));
-  }
+  };
 
   handleHalfWidthModalToggle = () => {
     this.setState(({ isHalfWidthModalOpen }) => ({
       isHalfWidthModalOpen: !isHalfWidthModalOpen
     }));
-  }
+  };
 
   handleCustomHeaderFooterModalToggle = () => {
     this.setState(({ isCustomHeaderFooterModalOpen }) => ({
       isCustomHeaderFooterModalOpen: !isCustomHeaderFooterModalOpen
     }));
-  }
+  };
 
   handleNoHeaderModalToggle = () => {
     this.setState(({ isNoHeaderModalOpen }) => ({
       isNoHeaderModalOpen: !isNoHeaderModalOpen
     }));
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -78,19 +77,19 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
             Confirm
           </Button>
         ]}
-        isFooterLeftAligned        
+        isFooterLeftAligned
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-        est laborum.
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
       </Modal>
     );
   }
 
   renderSmallModal() {
-    const {isSmallModalOpen} = this.state;
+    const { isSmallModalOpen } = this.state;
 
     return (
       <Modal
@@ -110,14 +109,14 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-        est laborum.
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
       </Modal>
     );
   }
 
   renderLargeModal() {
-    const {isLargeModalOpen} = this.state;
+    const { isLargeModalOpen } = this.state;
 
     return (
       <Modal
@@ -137,14 +136,14 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-        est laborum.
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
       </Modal>
     );
   }
 
   renderHalfWidthModal() {
-    const {isHalfWidthModalOpen} = this.state;
+    const { isHalfWidthModalOpen } = this.state;
 
     return (
       <Modal
@@ -164,14 +163,14 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-        est laborum.
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
       </Modal>
     );
   }
 
   renderCustomHeaderFooterModal() {
-    const {isCustomHeaderFooterModalOpen} = this.state;
+    const { isCustomHeaderFooterModalOpen } = this.state;
 
     const header = (
       <React.Fragment>
@@ -187,7 +186,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
     const footer = (
       <Title id="customFooterTitle" headingLevel={TitleLevel.h4} size={BaseSizes.sm}>
         <WarningTriangleIcon />
-        <span  className="pf-u-pl-sm">Custom modal footer.</span>
+        <span className="pf-u-pl-sm">Custom modal footer.</span>
       </Title>
     );
 
@@ -201,21 +200,21 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
         onClose={this.handleCustomHeaderFooterModalToggle}
         footer={footer}
       >
-          <span id="custom-header-example">
-            When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
-            aria-describedby value.
-          </span>
+        <span id="custom-header-example">
+          When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
+          aria-describedby value.
+        </span>
         <br />
         <br />
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </Modal>
     );
   }
 
   renderNoHeaderModal() {
-    const {isNoHeaderModalOpen} = this.state;
+    const { isNoHeaderModalOpen } = this.state;
 
     return (
       <Modal
@@ -231,19 +230,18 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
           </Button>
         ]}
       >
-          <span id="no-header-example">
-            When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
-            aria-describedby value.
-          </span>{' '}
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <span id="no-header-example">
+          When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
+          aria-describedby value.
+        </span>{' '}
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </Modal>
     );
   }
 
   render() {
-
     const buttonStyle = {
       marginRight: 20,
       marginBottom: 20
@@ -253,7 +251,7 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
       <React.Fragment>
         <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
           <Button style={buttonStyle} variant="primary" onClick={this.handleModalToggle} id="showDefaultModalButton">
-           Show Modal
+            Show Modal
           </Button>
           <Button style={buttonStyle} variant="primary" onClick={this.handleSmallModalToggle} id="showSmallModalButton">
             Show Small Modal
@@ -261,13 +259,28 @@ export class ModalDemo extends React.Component<React.HTMLProps<HTMLDivElement>, 
           <Button style={buttonStyle} variant="primary" onClick={this.handleLargeModalToggle} id="showLargeModalButton">
             Show Large Modal
           </Button>
-          <Button style={buttonStyle} variant="primary" onClick={this.handleHalfWidthModalToggle} id="showHalfWidthModalButton">
+          <Button
+            style={buttonStyle}
+            variant="primary"
+            onClick={this.handleHalfWidthModalToggle}
+            id="showHalfWidthModalButton"
+          >
             Show 50% Width Modal
           </Button>
-          <Button style={buttonStyle} variant="primary" onClick={this.handleCustomHeaderFooterModalToggle} id="showCustomHeaderFooterModalButton">
+          <Button
+            style={buttonStyle}
+            variant="primary"
+            onClick={this.handleCustomHeaderFooterModalToggle}
+            id="showCustomHeaderFooterModalButton"
+          >
             Show Custom Header/Footer Modal
           </Button>
-          <Button style={buttonStyle} variant="primary" onClick={this.handleNoHeaderModalToggle} id="showNoHeaderModalButton">
+          <Button
+            style={buttonStyle}
+            variant="primary"
+            onClick={this.handleNoHeaderModalToggle}
+            id="showNoHeaderModalButton"
+          >
             Show No Header Modal
           </Button>
         </div>

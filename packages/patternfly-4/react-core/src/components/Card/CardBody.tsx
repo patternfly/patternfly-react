@@ -22,7 +22,8 @@ export const CardBody: React.FunctionComponent<CardBodyProps> = ({
 }: CardBodyProps) => {
   const Component = component as any;
   return (
-  <Component className={css(styles.cardBody, !isFilled && styles.modifiers.noFill, className)} {...props}>
-    {children}
-  </Component>
-); };
+    <Component className={css(styles.cardBody, !isFilled && styles.modifiers.noFill, className)} {...props}>
+      {children}
+    </Component>
+  );
+};

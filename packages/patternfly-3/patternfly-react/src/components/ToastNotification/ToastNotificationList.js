@@ -18,19 +18,19 @@ class ToastNotificationList extends React.Component {
     this.setState({ paused: true });
     const { onMouseEnter } = this.props;
     onMouseEnter();
-  }
+  };
 
   onMouseLeave = () => {
     this.setState({ paused: false });
     const { onMouseLeave } = this.props;
     onMouseLeave();
-  }
+  };
 
   onMouseOver = () => {
     this.setState({ paused: true });
     const { onMouseOver } = this.props;
     onMouseOver();
-  }
+  };
 
   renderChildren() {
     const { paused } = this.state;

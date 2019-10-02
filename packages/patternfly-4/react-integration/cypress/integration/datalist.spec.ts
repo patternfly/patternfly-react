@@ -14,4 +14,4 @@ describe('Data List Demo Test', () => {
     cy.get('#simple-item3').contains('Secondary content (pf-m-no-fill)');
     cy.get('#simple-item4').contains('Secondary content (pf-m-align-right pf-m-no-fill)');
   });
-})
+});

@@ -42,9 +42,11 @@ import {
 import { cloneDeep } from 'lodash';
 
 // Apply custom properties to base and color themes
-export const getCustomTheme = (themeColor: string, themeVariant: string, customTheme: ChartThemeDefinition
-): ChartThemeDefinition =>
-  merge(getTheme(themeColor, themeVariant), customTheme);
+export const getCustomTheme = (
+  themeColor: string,
+  themeVariant: string,
+  customTheme: ChartThemeDefinition
+): ChartThemeDefinition => merge(getTheme(themeColor, themeVariant), customTheme);
 
 // Returns axis theme
 export const getAxisTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition => {
@@ -65,8 +67,10 @@ export const getBulletComparativeMeasureTheme = (themeColor: string, themeVarian
   getCustomTheme(themeColor, themeVariant, ChartBulletComparativeMeasureTheme);
 
 // Returns comparative warning measure theme for bullet chart
-export const getBulletComparativeWarningMeasureTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
-  getCustomTheme(themeColor, themeVariant, ChartBulletComparativeWarningMeasureTheme);
+export const getBulletComparativeWarningMeasureTheme = (
+  themeColor: string,
+  themeVariant: string
+): ChartThemeDefinition => getCustomTheme(themeColor, themeVariant, ChartBulletComparativeWarningMeasureTheme);
 
 // Returns group title theme for bullet chart
 export const getBulletGroupTitleTheme = (themeColor: string, themeVariant: string): ChartThemeDefinition =>
@@ -105,7 +109,10 @@ export const getDonutThresholdDynamicTheme = (themeColor: string, themeVariant: 
 };
 
 // Returns static donut threshold theme
-export const getDonutThresholdStaticTheme = (themeColor: string, themeVariant: string, invert?: boolean
+export const getDonutThresholdStaticTheme = (
+  themeColor: string,
+  themeVariant: string,
+  invert?: boolean
 ): ChartThemeDefinition => {
   const staticTheme = cloneDeep(ChartDonutThresholdStaticTheme);
   if (invert) {
@@ -120,8 +127,7 @@ export const getDonutUtilizationTheme = (themeColor: string, themeVariant: strin
 
   // Merge just the first color of dynamic (blue, green, etc.) with static (grey) for expected colorScale
   theme.pie.colorScale = [theme.pie.colorScale[0], ...ChartDonutUtilizationStaticTheme.pie.colorScale];
-  theme.legend.colorScale = [theme.legend.colorScale[0],
-    ...ChartDonutUtilizationStaticTheme.legend.colorScale];
+  theme.legend.colorScale = [theme.legend.colorScale[0], ...ChartDonutUtilizationStaticTheme.legend.colorScale];
   return theme;
 };
 

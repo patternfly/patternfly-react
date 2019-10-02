@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 class TodayButton extends React.Component {
   setToday = () => {
     const { setSelected } = this.props;
-    if (setSelected) setSelected(new Date());
+    if (setSelected) {
+      setSelected(new Date());
+    }
   };
   render() {
     return (

@@ -32,7 +32,18 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
   /** A callback for when the input value changes. */
   onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** Type that the input accepts. */
-  type?: 'text' | 'date' | 'datetime-local' | 'email' | 'month' | 'number' | 'password' | 'search' | 'tel' | 'time' | 'url';
+  type?:
+    | 'text'
+    | 'date'
+    | 'datetime-local'
+    | 'email'
+    | 'month'
+    | 'number'
+    | 'password'
+    | 'search'
+    | 'tel'
+    | 'time'
+    | 'url';
   /** Value of the input. */
   value?: string | number;
   /** Aria-label. The input requires an associated id or aria-label. */
@@ -42,13 +53,13 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
 export class TextInput extends React.Component<TextInputProps> {
   static defaultProps = {
     'aria-label': null as string,
-    "className": '',
-    "isRequired": false,
-    "isValid": true,
-    "isDisabled": false,
-    "isReadOnly": false,
-    "type": 'text',
-    "onChange": (): any => undefined
+    className: '',
+    isRequired: false,
+    isValid: true,
+    isDisabled: false,
+    isReadOnly: false,
+    type: 'text',
+    onChange: (): any => undefined
   };
 
   constructor(props: TextInputProps) {
@@ -63,7 +74,7 @@ export class TextInput extends React.Component<TextInputProps> {
     if (this.props.onChange) {
       this.props.onChange(event.currentTarget.value, event);
     }
-  }
+  };
 
   render() {
     const { className, type, value, onChange, isValid, isReadOnly, isRequired, isDisabled, ...props } = this.props;

@@ -24,18 +24,41 @@ export enum TableVariant {
   compact = 'compact'
 }
 
-export type OnSort = (event: React.MouseEvent, columnIndex: number, sortByDirection: SortByDirection, extraData: IExtraColumnData) => void;
-export type OnCollapse = (event: React.MouseEvent, rowIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => void;
-export type OnExpand = (event: React.MouseEvent, rowIndex: number, colIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => void;
-export type OnSelect = (event: React.MouseEvent, isSelected: boolean, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
+export type OnSort = (
+  event: React.MouseEvent,
+  columnIndex: number,
+  sortByDirection: SortByDirection,
+  extraData: IExtraColumnData
+) => void;
+export type OnCollapse = (
+  event: React.MouseEvent,
+  rowIndex: number,
+  isOpen: boolean,
+  rowData: IRowData,
+  extraData: IExtraData
+) => void;
+export type OnExpand = (
+  event: React.MouseEvent,
+  rowIndex: number,
+  colIndex: number,
+  isOpen: boolean,
+  rowData: IRowData,
+  extraData: IExtraData
+) => void;
+export type OnSelect = (
+  event: React.MouseEvent,
+  isSelected: boolean,
+  rowIndex: number,
+  rowData: IRowData,
+  extraData: IExtraData
+) => void;
 
 export enum SortByDirection {
   asc = 'asc',
   desc = 'desc'
 }
 
-export interface IHeaderRow extends ColumnType {
-}
+export interface IHeaderRow extends ColumnType {}
 
 export interface IRowData extends IRow {
   disableActions?: boolean;
@@ -68,8 +91,7 @@ export interface IExtraColumnData {
   property?: string;
 }
 
-export interface IExtraData extends IExtraColumnData, IExtraRowData {
-}
+export interface IExtraData extends IExtraColumnData, IExtraRowData {}
 
 export interface IExtra extends IExtraData {
   rowData?: IRowData;
@@ -113,16 +135,18 @@ export type ITransforms = ((
   column?: IColumn,
   property?: string,
   rowIndex?: number,
-  rowKey?: RowKeyType ) => { className: string; 'aria-sort': string; children: React.ReactNode; })[];
+  rowKey?: RowKeyType
+) => { className: string; 'aria-sort': string; children: React.ReactNode })[];
 
 export type IFormatters = ((
-    data?: IFormatterValueType,
-    rowData?: IRowData,
-    columnIndex?: number,
-    column?: IColumn,
-    property?: string,
-    rowIndex?: number,
-    rowKey?: RowKeyType ) => formatterValueType)[];
+  data?: IFormatterValueType,
+  rowData?: IRowData,
+  columnIndex?: number,
+  column?: IColumn,
+  property?: string,
+  rowIndex?: number,
+  rowKey?: RowKeyType
+) => formatterValueType)[];
 
 export interface ICell {
   title?: string | React.ReactNode;
@@ -206,21 +230,21 @@ export const TableContext = React.createContext({
 
 export class Table extends React.Component<TableProps, {}> {
   static defaultProps = {
-    "children": null as React.ReactNode,
-    "className": '',
-    "variant": null as TableVariant,
-    "borders": true,
-    "rowLabeledBy": 'simple-node',
-    "expandId": 'expandable-toggle',
-    "contentId": 'expanded-content',
-    "dropdownPosition": DropdownPosition.right,
-    "dropdownDirection": DropdownDirection.down,
-    "header": undefined as React.ReactNode,
-    "caption": undefined as React.ReactNode,
+    children: null as React.ReactNode,
+    className: '',
+    variant: null as TableVariant,
+    borders: true,
+    rowLabeledBy: 'simple-node',
+    expandId: 'expandable-toggle',
+    contentId: 'expanded-content',
+    dropdownPosition: DropdownPosition.right,
+    dropdownDirection: DropdownDirection.down,
+    header: undefined as React.ReactNode,
+    caption: undefined as React.ReactNode,
     'aria-label': undefined as string,
-    "gridBreakPoint": TableGridBreakpoint.gridMd,
-    "role": 'grid',
-    "canSelectAll": true
+    gridBreakPoint: TableGridBreakpoint.gridMd,
+    role: 'grid',
+    canSelectAll: true
   };
 
   isSelected = (row: IRow) => row.selected === true;
@@ -229,8 +253,8 @@ export class Table extends React.Component<TableProps, {}> {
     if (rows === undefined || rows.length === 0) {
       return false;
     }
-    return rows.every((row) => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
-  }
+    return rows.every(row => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
+  };
 
   render() {
     const {
@@ -285,7 +309,7 @@ export class Table extends React.Component<TableProps, {}> {
       contentId,
       dropdownPosition,
       dropdownDirection,
-      firstUserColumnIndex: [onCollapse, onSelect].filter((callback) => callback).length
+      firstUserColumnIndex: [onCollapse, onSelect].filter(callback => callback).length
     });
 
     return (

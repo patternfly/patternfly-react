@@ -33,16 +33,17 @@ export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpanded
 
   render() {
     const { className, children, onChange, isReadOnly, isCode, ...props } = this.props;
-    const clipboardCopyExpandableComponent =
-    <div
-      suppressContentEditableWarning
-      ref={this.contentRef}
-      className={css(styles.clipboardCopyExpandableContent, className)}
-      onInput={(e: any) => onChange(e.target.innerText, e)}
-      contentEditable={!isReadOnly}
-      {...props}
-    />;
+    const clipboardCopyExpandableComponent = (
+      <div
+        suppressContentEditableWarning
+        ref={this.contentRef}
+        className={css(styles.clipboardCopyExpandableContent, className)}
+        onInput={(e: any) => onChange(e.target.innerText, e)}
+        contentEditable={!isReadOnly}
+        {...props}
+      />
+    );
 
-    return (isCode ? <pre>{clipboardCopyExpandableComponent}</pre> : clipboardCopyExpandableComponent);
+    return isCode ? <pre>{clipboardCopyExpandableComponent}</pre> : clipboardCopyExpandableComponent;
   }
 }

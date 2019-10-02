@@ -11,15 +11,15 @@ class MessageDialogWarning extends Component {
 
   primaryAction = () => {
     this.setState(() => ({ show: false }));
-  }
+  };
 
   secondaryAction = () => {
     this.setState(() => ({ show: false }));
-  }
+  };
 
   showModal = () => {
     this.setState(() => ({ show: true }));
-  }
+  };
 
   render() {
     const primaryContent = <p className="lead">Main Dialog Text</p>;

@@ -4,7 +4,7 @@ import { GutterSize } from '../../styles/gutters';
 import { LevelItem } from './LevelItem';
 import { shallow } from 'enzyme';
 
-Object.values(GutterSize).forEach((gutter) => {
+Object.values(GutterSize).forEach(gutter => {
   test(`Gutter ${gutter}`, () => {
     const view = shallow(<Level gutter={gutter} />);
     expect(view).toMatchSnapshot();

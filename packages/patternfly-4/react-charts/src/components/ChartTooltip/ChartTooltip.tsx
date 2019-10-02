@@ -6,7 +6,7 @@ import {
   StringOrNumberOrCallback,
   VictoryStyleObject,
   VictoryTooltip,
-  VictoryTooltipProps,
+  VictoryTooltipProps
 } from 'victory';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
@@ -34,14 +34,14 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * ChartVoronoiContainer, the center prop is what enables the mouseFollowTooltips option. When this prop is set,
    * non-zero pointerLength values will no longer be respected.
    */
-  center?: { x: number, y: number };
+  center?: { x: number; y: number };
   /**
    * The centerOffset prop determines the position of the center of the tooltip flyout in relation to the flyout
    * pointer. This prop should be given as an object of x and y, where each is either a numeric offset value or a
    * function that returns a numeric value. When this prop is set, non-zero pointerLength values will no longer be
    * respected.
    */
-  centerOffset?: { x: number | Function, y: number | Function };
+  centerOffset?: { x: number | Function; y: number | Function };
   /**
    * The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of
    * the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the
@@ -104,7 +104,7 @@ export interface ChartTooltipProps extends VictoryTooltipProps {
    * function of datum. If this prop is not set, flyoutWidth will be determined based on an approximate text size
    * calculated from the text and style props provided to VictoryTooltip.
    */
-  flyoutWidth?: NumberOrCallback,
+  flyoutWidth?: NumberOrCallback;
   /**
    * The groupComponent prop takes a component instance which will be used to create group elements for use within
    * container elements. This prop defaults to a <g> tag.}
@@ -211,7 +211,7 @@ export const ChartTooltip: React.FunctionComponent<ChartTooltipProps> = ({
 
   // @ts-ignore
   return <VictoryTooltip constrainToVisibleArea={constrainToVisibleArea} theme={theme} {...rest} />;
-}
+};
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
 hoistNonReactStatics(ChartTooltip, VictoryTooltip);

@@ -12,10 +12,10 @@ export class LoadingWizardExample extends React.Component {
   }
   close = () => {
     this.setState({ showModal: false });
-  }
+  };
   open = () => {
     this.setState({ showModal: true });
-  }
+  };
   render() {
     const { showModal } = this.state;
 

@@ -4,32 +4,32 @@ import LinearLayoutVector from 'linear-layout-vector';
 import { Alignment, CellSizeGetter, VisibleCellRange } from '../types';
 
 interface CellSizeAndPositionManagerParams {
-  cellCount: number,
-  cellSizeGetter: CellSizeGetter,
-  estimatedCellSize: number
+  cellCount: number;
+  cellSizeGetter: CellSizeGetter;
+  estimatedCellSize: number;
 }
 
 interface ConfigureParams {
-  cellCount: number,
-  estimatedCellSize: number,
-  cellSizeGetter: CellSizeGetter
+  cellCount: number;
+  estimatedCellSize: number;
+  cellSizeGetter: CellSizeGetter;
 }
 
 interface GetUpdatedOffsetForIndex {
-  align: Alignment,
-  containerSize: number,
-  currentOffset: number,
-  targetIndex: number
+  align: Alignment;
+  containerSize: number;
+  currentOffset: number;
+  targetIndex: number;
 }
 
 interface GetVisibleCellRangeParams {
-  containerSize: number,
-  offset: number
+  containerSize: number;
+  offset: number;
 }
 
 interface SizeAndPositionData {
-  offset: number,
-  size: number
+  offset: number;
+  size: number;
 }
 
 /**

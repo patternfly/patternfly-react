@@ -17,7 +17,7 @@ describe('TopologySideBar', () => {
     const mockClose = jest.fn();
     const view = mount(
       <TopologySideBar className="my-test-class" show onClose={mockClose}>
-      >
+        >
         <div id="test-canvas" />
       </TopologySideBar>
     );

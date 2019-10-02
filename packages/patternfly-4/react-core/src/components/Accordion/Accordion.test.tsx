@@ -51,7 +51,9 @@ describe('Accordion', () => {
     const view = mount(
       <Accordion headingLevel="h2">
         <AccordionItem>
-          <AccordionToggle id="item-1" component={container}>Item One</AccordionToggle>
+          <AccordionToggle id="item-1" component={container}>
+            Item One
+          </AccordionToggle>
           <AccordionContent component={container}>Item One Content</AccordionContent>
         </AccordionItem>
       </Accordion>

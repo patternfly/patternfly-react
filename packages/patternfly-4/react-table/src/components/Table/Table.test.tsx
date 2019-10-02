@@ -10,7 +10,8 @@ import {
   headerCol,
   sortable,
   expandable,
-  compoundExpand, IRow
+  compoundExpand,
+  IRow
 } from './index';
 import { rows, columns, actions } from '../../test-helpers/data-sets';
 import { ColumnsType } from './base';
@@ -59,7 +60,7 @@ test('Sortable table', () => {
 });
 
 describe('Table variants', () => {
-  Object.values(TableGridBreakpoint).forEach((oneBreakpoint) => {
+  Object.values(TableGridBreakpoint).forEach(oneBreakpoint => {
     test(`Breakpoint - ${oneBreakpoint}`, () => {
       const view = mount(
         <Table aria-label="Aria labeled" gridBreakPoint={oneBreakpoint} cells={columns} rows={rows}>
@@ -70,7 +71,7 @@ describe('Table variants', () => {
       expect(view).toMatchSnapshot();
     });
   });
-  Object.values(TableVariant).forEach((onevariant) => {
+  Object.values(TableVariant).forEach(onevariant => {
     test(`Size - ${onevariant}`, () => {
       const view = mount(
         <Table aria-label="Aria labeled" variant={onevariant} cells={columns} rows={rows}>

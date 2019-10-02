@@ -8,10 +8,6 @@ const props = {
 };
 
 test('expanded content render', () => {
-  const view = shallow(
-    <ClipboardCopyExpanded {...props}>
-      This is my text
-    </ClipboardCopyExpanded>
-  );
+  const view = shallow(<ClipboardCopyExpanded {...props}>This is my text</ClipboardCopyExpanded>);
   expect(view).toMatchSnapshot();
 });

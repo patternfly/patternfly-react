@@ -20,4 +20,4 @@ const COLOR_SCALE = [
 
 export const DarkCyanColorTheme = ColorTheme({
   COLOR_SCALE
-}) ;
+});

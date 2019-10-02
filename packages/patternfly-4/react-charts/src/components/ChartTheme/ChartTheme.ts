@@ -14,14 +14,8 @@ import {
 } from './themes/bullet-theme';
 import { DonutTheme } from './themes/donut-theme';
 import { ThresholdTheme } from './themes/threshold-theme';
-import {
-  DonutThresholdDynamicTheme,
-  DonutThresholdStaticTheme
-} from './themes/donut-threshold-theme';
-import {
-  DonutUtilizationDynamicTheme,
-  DonutUtilizationStaticTheme
-} from './themes/donut-utilization-theme';
+import { DonutThresholdDynamicTheme, DonutThresholdStaticTheme } from './themes/donut-threshold-theme';
+import { DonutUtilizationDynamicTheme, DonutUtilizationStaticTheme } from './themes/donut-utilization-theme';
 
 export interface ChartThemeDefinitionInterface extends VictoryThemeDefinition {
   area?: any;

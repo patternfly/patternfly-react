@@ -320,7 +320,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
    * **This prop should not be set manually.**
    */
-  origin?: { x: number, y: number };
+  origin?: { x: number; y: number };
   /**
    * The padAngle prop determines the amount of separation between adjacent data slices
    * in number of degrees
@@ -481,7 +481,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   // Returns computed data representing pie chart slices
   const getComputedData = () => {
     const datum = getData();
-    const computedData: [{ x?: any, y: any}] = [{ x: datum[0]._x, y: datum[0]._y || 0 }];
+    const computedData: [{ x?: any; y: any }] = [{ x: datum[0]._x, y: datum[0]._y || 0 }];
     if (showStatic) {
       computedData.push({ y: datum[0]._x ? Math.abs(100 - datum[0]._y) : 100 });
     }
@@ -503,7 +503,8 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
       for (let i = 0; i < sThresholds.length; i++) {
         result.push({
           color: sThresholds[i].color
-            ? sThresholds[i].color : ChartDonutUtilizationStyles.thresholds.colorScale[i % numColors],
+            ? sThresholds[i].color
+            : ChartDonutUtilizationStyles.thresholds.colorScale[i % numColors],
           value: sThresholds[i].value
         });
       }
@@ -554,24 +555,20 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   );
 
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
-    desc: ariaDesc,
-    height,
-    title: ariaTitle,
-    width,
-    theme,
-    ...containerComponent.props
-  }, [chart]);
-
-  return standalone ? (
-    <React.Fragment>
-      {container}
-    </React.Fragment>
-  ) : (
-    <React.Fragment>
-      {chart}
-    </React.Fragment>
+  const container = React.cloneElement(
+    containerComponent,
+    {
+      desc: ariaDesc,
+      height,
+      title: ariaTitle,
+      width,
+      theme,
+      ...containerComponent.props
+    },
+    [chart]
   );
+
+  return standalone ? <React.Fragment>{container}</React.Fragment> : <React.Fragment>{chart}</React.Fragment>;
 };
 
 // Note: VictoryPie.role must be hoisted

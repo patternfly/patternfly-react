@@ -18,7 +18,11 @@ test('uncontrolled', () => {
 });
 
 test('with text', () => {
-  const view = shallow(<DropdownToggleCheckbox id="check" isDisabled aria-label="check">Some text</DropdownToggleCheckbox>);
+  const view = shallow(
+    <DropdownToggleCheckbox id="check" isDisabled aria-label="check">
+      Some text
+    </DropdownToggleCheckbox>
+  );
   expect(view).toMatchSnapshot();
 });
 

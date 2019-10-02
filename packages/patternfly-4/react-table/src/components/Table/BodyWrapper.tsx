@@ -8,7 +8,13 @@ export interface BodyWrapperProps {
   children?: React.ReactNode;
   mappedRows?: IRow[];
   rows?: IRow[];
-  onCollapse?: (event: React.MouseEvent, rowIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => undefined;
+  onCollapse?: (
+    event: React.MouseEvent,
+    rowIndex: number,
+    isOpen: boolean,
+    rowData: IRowData,
+    extraData: IExtraData
+  ) => undefined;
   tbodyRef?: React.Ref<any> | Function;
   headerRows?: IHeaderRow[];
 }
@@ -20,8 +26,8 @@ export const BodyWrapper: React.FunctionComponent<BodyWrapperProps> = ({
   tbodyRef,
   headerRows,
   ...props
-}: BodyWrapperProps ) => {
-  if (mappedRows && mappedRows.some((row) => row.hasOwnProperty('parent'))) {
+}: BodyWrapperProps) => {
+  if (mappedRows && mappedRows.some(row => row.hasOwnProperty('parent'))) {
     return (
       <React.Fragment>
         {mapOpenedRows(mappedRows, props.children).map((oneRow, key) => (

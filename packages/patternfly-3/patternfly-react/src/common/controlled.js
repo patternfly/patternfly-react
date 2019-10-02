@@ -49,21 +49,21 @@ const controlled = ({ types, defaults = {}, persist }) => WrappedComponent => {
 
     setControlledState = updater => {
       this.setState(updater);
-    }
+    };
 
     loadPersistent = () => {
       if (persist && persist.length > 0) {
         const fromPersisted = window && window.sessionStorage && window.sessionStorage.getItem(this.sessionKey());
         fromPersisted && this.setState(JSON.parse(fromPersisted));
       }
-    }
+    };
 
     savePersistent = () => {
       if (persist && persist.length > 0) {
         const toPersist = selectKeys(this.state, persist);
         window && window.sessionStorage && window.sessionStorage.setItem(this.sessionKey(), JSON.stringify(toPersist));
       }
-    }
+    };
 
     sessionKey = () => this.props.sessionKey || JSON.stringify(persist);
 

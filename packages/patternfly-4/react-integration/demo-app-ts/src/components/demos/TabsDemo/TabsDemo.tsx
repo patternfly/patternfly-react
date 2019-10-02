@@ -24,7 +24,7 @@ export class TabDemo extends Component {
     this.setState({
       activeTabKey: tabIndex
     });
-  }
+  };
 
   // Toggle currently active tab
   private handleTabClick2 = (event, tabIndex) => {
@@ -48,12 +48,36 @@ export class TabDemo extends Component {
     return (
       <React.Fragment>
         <Tabs id="unconnectedChildren" activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
-          <Tab id="demoTab1" eventKey={0} title="Tab item 1" tabContentId="demoTab1Section" tabContentRef={this.contentRef1} />
-          <Tab id="demoTab2" eventKey={1} title="Tab item 2" tabContentId="demoTab2Section" tabContentRef={this.contentRef2} />
-          <Tab id="demoTab3" eventKey={2} title={<i>Tab item 3</i>} tabContentId="demoTab3Section" tabContentRef={this.contentRef3} />
+          <Tab
+            id="demoTab1"
+            eventKey={0}
+            title="Tab item 1"
+            tabContentId="demoTab1Section"
+            tabContentRef={this.contentRef1}
+          />
+          <Tab
+            id="demoTab2"
+            eventKey={1}
+            title="Tab item 2"
+            tabContentId="demoTab2Section"
+            tabContentRef={this.contentRef2}
+          />
+          <Tab
+            id="demoTab3"
+            eventKey={2}
+            title={<i>Tab item 3</i>}
+            tabContentId="demoTab3Section"
+            tabContentRef={this.contentRef3}
+          />
         </Tabs>
         <div>
-          <TabContent eventKey={0} id="demoTab1Section" ref={this.contentRef1} aria-label="Tab item 1" onAuxClick={(event) => console.log(event)}>
+          <TabContent
+            eventKey={0}
+            id="demoTab1Section"
+            ref={this.contentRef1}
+            aria-label="Tab item 1"
+            onAuxClick={event => console.log(event)}
+          >
             Tab 1 section
           </TabContent>
           <TabContent eventKey={1} id="demoTab2Section" ref={this.contentRef2} aria-label="Tab item 2" hidden>
@@ -73,18 +97,18 @@ export class TabDemo extends Component {
           <Tab eventKey={2} title="Tab item 3">
             Tab 3 section
           </Tab>
-      </Tabs>
-      <Tabs id="unmountOnExit" unmountOnExit activeKey={this.state.activeTabKey3} onSelect={this.handleTabClick3}>
-        <Tab eventKey={0} title="Tab item 1">
-          Tab 1 section
-        </Tab>
-        <Tab eventKey={1} title="Tab item 2">
-          Tab 2 section
-        </Tab>
-        <Tab eventKey={2} title="Tab item 3">
-          Tab 3 section
-        </Tab>
-      </Tabs>
+        </Tabs>
+        <Tabs id="unmountOnExit" unmountOnExit activeKey={this.state.activeTabKey3} onSelect={this.handleTabClick3}>
+          <Tab eventKey={0} title="Tab item 1">
+            Tab 1 section
+          </Tab>
+          <Tab eventKey={1} title="Tab item 2">
+            Tab 2 section
+          </Tab>
+          <Tab eventKey={2} title="Tab item 3">
+            Tab 3 section
+          </Tab>
+        </Tabs>
       </React.Fragment>
     );
   }

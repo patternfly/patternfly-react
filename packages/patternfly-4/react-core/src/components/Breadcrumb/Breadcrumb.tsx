@@ -20,18 +20,18 @@ const Breadcrumb: React.FunctionComponent<BreadcrumbProps & InjectedOuiaProps> =
   ouiaId = null,
   ...props
 }: BreadcrumbProps & InjectedOuiaProps) => (
-  <nav 
+  <nav
     {...props}
     aria-label={ariaLabel}
     className={css(styles.breadcrumb, className)}
-    {...ouiaContext.isOuia && {
+    {...(ouiaContext.isOuia && {
       'data-ouia-component-type': 'Breadcrumb',
       'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-    }}
+    })}
   >
     <ol className={css(styles.breadcrumbList)}>{children}</ol>
   </nav>
 );
 
-const  BreadcrumbWithOuiaContext = withOuiaContext(Breadcrumb);
+const BreadcrumbWithOuiaContext = withOuiaContext(Breadcrumb);
 export { BreadcrumbWithOuiaContext as Breadcrumb };

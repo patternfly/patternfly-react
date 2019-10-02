@@ -19,16 +19,13 @@ interface SourcesInterface {
   }[];
 }
 
-export interface ChartDomain {x: [number, number], y: [number, number]}
+export interface ChartDomain {
+  x: [number, number];
+  y: [number, number];
+}
 
 // Returns the min and max domain for given data
-export const getDomain = ({
-  data,
-  maxDomain,
-  minDomain,
-  x,
-  y
-}: DomainInterface): ChartDomain => {
+export const getDomain = ({ data, maxDomain, minDomain, x, y }: DomainInterface): ChartDomain => {
   // x-domain
   let xLow = 0;
   let xHigh = 0;
@@ -70,7 +67,7 @@ export const getDomain = ({
   }
 
   // Search data for max / min range
-  const datum = Data.formatData(data, {x, y}, ['x', 'y']);
+  const datum = Data.formatData(data, { x, y }, ['x', 'y']);
   datum.forEach((dataPoint: any) => {
     if (xLowSearch) {
       if (dataPoint._x < xLow) {
@@ -93,17 +90,13 @@ export const getDomain = ({
       }
     }
   });
-  return {x: [xLow, xHigh], y: [yLow, yHigh]};
+  return { x: [xLow, xHigh], y: [yLow, yHigh] };
 };
 
-export const getDomains = ({
-  maxDomain,
-  minDomain,
-  sources
-}: SourcesInterface): ChartDomain => {
+export const getDomains = ({ maxDomain, minDomain, sources }: SourcesInterface): ChartDomain => {
   const domains: ChartDomain[] = [];
-  sources.forEach((source) => {
-    const {data: compData = source.data} = source.component ? source.component.props : undefined;
+  sources.forEach(source => {
+    const { data: compData = source.data } = source.component ? source.component.props : undefined;
     const domain = getDomain({
       data: compData,
       maxDomain,
@@ -126,5 +119,5 @@ export const getDomains = ({
   const yLow = Math.min(...yDomains);
   const yHigh = Math.max(...yDomains);
 
-  return {x: [xLow, xHigh], y: [yLow, yHigh]};
+  return { x: [xLow, xHigh], y: [yLow, yHigh] };
 };

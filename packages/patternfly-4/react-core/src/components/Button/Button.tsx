@@ -41,7 +41,7 @@ export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   /** Sets button type */
   type?: 'button' | 'submit' | 'reset';
   /** Adds button variant styles */
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'plain' | 'control' ;
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'link' | 'plain' | 'control';
   /** Adds accessible text to the button. */
   'aria-label'?: string;
   /** Icon for the button if variant is a link */
@@ -69,34 +69,34 @@ const Button: React.FunctionComponent<ButtonProps & InjectedOuiaProps> = ({
   const Component = component as any;
   const isButtonElement = Component === 'button';
   return (
-  <Component
-    {...props}
-    aria-disabled={isButtonElement ? null : isDisabled}
-    aria-label={ariaLabel}
-    className={css(
-      styles.button,
-      getModifier(styles.modifiers, variant),
-      isBlock && styles.modifiers.block,
-      isDisabled && !isButtonElement && styles.modifiers.disabled,
-      isActive && styles.modifiers.active,
-      isFocus && styles.modifiers.focus,
-      isHover && styles.modifiers.hover,
-      isInline && variant === ButtonVariant.link && styles.modifiers.inline,
-      className
-    )}
-    disabled={isButtonElement ? isDisabled : null}
-    tabIndex={isDisabled && !isButtonElement ? -1 : null}
-    type={isButtonElement ? type : null}
-    {...ouiaContext.isOuia && {
-      'data-ouia-component-type': 'Button',
-      'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-    }}
-  >
-    {(icon && variant === ButtonVariant.link) && <span className="pf-c-button__icon">{icon}</span>}
-    {children}
-  </Component>
+    <Component
+      {...props}
+      aria-disabled={isButtonElement ? null : isDisabled}
+      aria-label={ariaLabel}
+      className={css(
+        styles.button,
+        getModifier(styles.modifiers, variant),
+        isBlock && styles.modifiers.block,
+        isDisabled && !isButtonElement && styles.modifiers.disabled,
+        isActive && styles.modifiers.active,
+        isFocus && styles.modifiers.focus,
+        isHover && styles.modifiers.hover,
+        isInline && variant === ButtonVariant.link && styles.modifiers.inline,
+        className
+      )}
+      disabled={isButtonElement ? isDisabled : null}
+      tabIndex={isDisabled && !isButtonElement ? -1 : null}
+      type={isButtonElement ? type : null}
+      {...(ouiaContext.isOuia && {
+        'data-ouia-component-type': 'Button',
+        'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+      })}
+    >
+      {icon && variant === ButtonVariant.link && <span className="pf-c-button__icon">{icon}</span>}
+      {children}
+    </Component>
   );
 };
 
-const  ButtonWithOuiaContext = withOuiaContext(Button);
+const ButtonWithOuiaContext = withOuiaContext(Button);
 export { ButtonWithOuiaContext as Button };

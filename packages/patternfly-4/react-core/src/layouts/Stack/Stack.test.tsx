@@ -22,7 +22,7 @@ test('isMain defaults to false', () => {
   expect(view).toMatchSnapshot();
 });
 
-Object.values(GutterSize).forEach((gutter) => {
+Object.values(GutterSize).forEach(gutter => {
   test(`Gutter ${gutter}`, () => {
     const view = mount(
       <Stack gutter={gutter}>

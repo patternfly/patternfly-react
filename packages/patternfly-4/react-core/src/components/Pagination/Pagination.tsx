@@ -165,15 +165,20 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
         className
       )}
       id={widgetId}
-      {...ouiaContext.isOuia && {
+      {...(ouiaContext.isOuia && {
         'data-ouia-component-type': 'Pagination',
         'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-      }}
+      })}
       {...props}
     >
       {variant === PaginationVariant.top && (
         <div className={css(styles.paginationTotalItems)}>
-          <ToggleTemplate firstIndex={firstIndex} lastIndex={lastIndex} itemCount={itemCount} itemsTitle={titles.items}/>
+          <ToggleTemplate
+            firstIndex={firstIndex}
+            lastIndex={lastIndex}
+            itemCount={itemCount}
+            itemsTitle={titles.items}
+          />
         </div>
       )}
       <PaginationOptionsMenu

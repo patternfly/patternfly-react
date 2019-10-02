@@ -19,14 +19,12 @@ export const OverflowMenuItem: React.SFC<OverflowMenuItemProps> = ({
   ...props
 }) => (
   <OverflowMenuContext.Consumer>
-    {value => (isPersistent || !value.isBelowBreakpoint) && (
-      <div className={css(
-        styles.overflowMenuItem,
-        isPersistent && styles.modifiers.persistent,
-        className
-      )}>
-        {children}
-      </div>
-    )}
+    {value =>
+      (isPersistent || !value.isBelowBreakpoint) && (
+        <div className={css(styles.overflowMenuItem, isPersistent && styles.modifiers.persistent, className)}>
+          {children}
+        </div>
+      )
+    }
   </OverflowMenuContext.Consumer>
 );

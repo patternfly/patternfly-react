@@ -23,9 +23,9 @@ export class NavDemo extends Component {
     expandableClickedItem: ''
   };
 
-  onSimpleSelect = (result) => {
+  onSimpleSelect = result => {
     this.setState({ simpleActiveItem: result.itemId });
-  }
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -59,18 +59,18 @@ export class NavDemo extends Component {
     );
   }
 
-  onDefaultSelect = (result) => {
-    this.setState({defaultActiveItem: result.itemId});
-  }
+  onDefaultSelect = result => {
+    this.setState({ defaultActiveItem: result.itemId });
+  };
 
   handleNoNavigateLink = (
     e: React.FormEvent<HTMLInputElement>,
     itemId: number | string,
     groupId: number | string,
     to: string
-  ): void =>  {
+  ): void => {
     console.log(`No Navigate Link clicked: ${itemId}`);
-  }
+  };
 
   renderDefaultNav() {
     const { defaultActiveItem } = this.state;
@@ -99,12 +99,14 @@ export class NavDemo extends Component {
                 to="#default-no-navigate-link"
                 itemId={4}
                 isActive={defaultActiveItem === 4}
-                onClick={this.handleNoNavigateLink as (
-                  e: React.FormEvent<HTMLInputElement>,
-                  itemId: number | string,
-                  groupId: number | string,
-                  to: string
-                ) => void}
+                onClick={
+                  this.handleNoNavigateLink as (
+                    e: React.FormEvent<HTMLInputElement>,
+                    itemId: number | string,
+                    groupId: number | string,
+                    to: string
+                  ) => void
+                }
               >
                 No Navigate Link
               </NavItem>
@@ -115,12 +117,12 @@ export class NavDemo extends Component {
     );
   }
 
-  onExpandableSelect = (result) => {
+  onExpandableSelect = result => {
     this.setState({
       expandableActiveGroup: result.groupId,
       expandableActiveItem: result.itemId
     });
-  }
+  };
 
   handleItemOnclick = (
     e: React.FormEvent<HTMLInputElement>,
@@ -129,9 +131,9 @@ export class NavDemo extends Component {
   ): void => {
     this.setState({
       expandableClickedGroup: groupId,
-      expandableClickedItem: itemId,
+      expandableClickedItem: itemId
     });
-  }
+  };
 
   renderExpandableNav() {
     const { expandableActiveGroup, expandableActiveItem, expandableClickedGroup, expandableClickedItem } = this.state;
@@ -141,7 +143,13 @@ export class NavDemo extends Component {
         <div className="example" style={{ border: '1px solid rgb(114, 118, 123)', backgroundColor: '#fff' }}>
           <Nav onSelect={this.onExpandableSelect} id="nav-primary-expandable">
             <NavList>
-              <NavExpandable id="grp-1" title="Group 1" groupId="grp-1" isActive={expandableActiveGroup === 'grp-1'} isExpanded>
+              <NavExpandable
+                id="grp-1"
+                title="Group 1"
+                groupId="grp-1"
+                isActive={expandableActiveGroup === 'grp-1'}
+                isExpanded
+              >
                 <NavItem
                   id="itm-1-1"
                   preventDefault
@@ -175,7 +183,13 @@ export class NavDemo extends Component {
                   Item 3
                 </NavItem>
               </NavExpandable>
-              <NavExpandable id="grp-2" title="Group 2" groupId="grp-2" isActive={expandableActiveGroup === 'grp-2'} isExpanded>
+              <NavExpandable
+                id="grp-2"
+                title="Group 2"
+                groupId="grp-2"
+                isActive={expandableActiveGroup === 'grp-2'}
+                isExpanded
+              >
                 <NavItem
                   id="itm-2-1"
                   preventDefault
@@ -234,9 +248,9 @@ export class NavDemo extends Component {
     );
   }
 
-  onHorizontalSelect = (result) => {
+  onHorizontalSelect = result => {
     this.setState({ horizontalActiveItem: result.itemId });
-  }
+  };
 
   renderHorizontalNav() {
     const { horizontalActiveItem } = this.state;
@@ -247,28 +261,13 @@ export class NavDemo extends Component {
         <div style={{ backgroundColor: '#292e34', padding: '1rem' }}>
           <Nav onSelect={this.onHorizontalSelect} id="nav-primary-horizontal">
             <NavList variant={NavVariants.horizontal}>
-              <NavItem
-                id="horizontal-link1"
-                preventDefault
-                itemId={0}
-                isActive={horizontalActiveItem === 0}
-              >
+              <NavItem id="horizontal-link1" preventDefault itemId={0} isActive={horizontalActiveItem === 0}>
                 Item 1
               </NavItem>
-              <NavItem
-                id="horizontal-link2"
-                preventDefault
-                itemId={1}
-                isActive={horizontalActiveItem === 1}
-              >
+              <NavItem id="horizontal-link2" preventDefault itemId={1} isActive={horizontalActiveItem === 1}>
                 Item 2
               </NavItem>
-              <NavItem
-                id="horizontal-link3"
-                preventDefault
-                itemId={2}
-                isActive={horizontalActiveItem === 2}
-              >
+              <NavItem id="horizontal-link3" preventDefault itemId={2} isActive={horizontalActiveItem === 2}>
                 Item 3
               </NavItem>
             </NavList>

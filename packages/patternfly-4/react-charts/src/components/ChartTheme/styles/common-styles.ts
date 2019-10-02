@@ -17,10 +17,10 @@ export const CommonStyles = {
     fontFamily: TYPOGRAPHY_FONT_FAMILY,
     fontSize: TYPOGRAPHY_FONT_SIZE,
     letterSpacing: TYPOGRAPHY_LETTER_SPACING,
-    margin: chart_global_label_Margin.value,
+    margin: chart_global_label_Margin.value
   },
   legend: {
     margin: chart_legend_Margin.value,
     position: chart_legend_position.value
-  },
+  }
 };

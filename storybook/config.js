@@ -10,7 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
   axe(React, ReactDOM, 1000);
 }
 
-addDecorator(withInfo); 
+addDecorator(withInfo);
 
 const storyContext = require.context('../packages', true, /\.stories\.js$/);
 

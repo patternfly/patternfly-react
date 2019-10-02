@@ -32,7 +32,7 @@ export const ModalBox: React.FunctionComponent<ModalBoxProps> = ({
     aria-label={title}
     aria-describedby={id}
     aria-modal="true"
-    className={css(styles.modalBox, className, isLarge && styles.modifiers.lg, isSmall && styles.modifiers.sm )}
+    className={css(styles.modalBox, className, isLarge && styles.modifiers.lg, isSmall && styles.modifiers.sm)}
   >
     {children}
   </div>

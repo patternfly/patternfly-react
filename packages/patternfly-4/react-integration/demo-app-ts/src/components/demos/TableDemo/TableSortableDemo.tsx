@@ -14,7 +14,7 @@ import {
   ISortBy
 } from '@patternfly/react-table';
 
-export class TableSortableDemo extends React.Component<TableProps, { columns: any, rows: IRow[], sortBy: ISortBy }> {
+export class TableSortableDemo extends React.Component<TableProps, { columns: any; rows: IRow[]; sortBy: ISortBy }> {
   constructor(props: TableProps) {
     super(props);
     this.state = {
@@ -43,7 +43,7 @@ export class TableSortableDemo extends React.Component<TableProps, { columns: an
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   render() {

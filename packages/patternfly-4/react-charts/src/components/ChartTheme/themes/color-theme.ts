@@ -4,9 +4,7 @@ interface ColorThemeInterface {
 
 // Victory theme properties only
 export const ColorTheme = (props: ColorThemeInterface) => {
-  const {
-    COLOR_SCALE
-  } = props;
+  const { COLOR_SCALE } = props;
 
   return {
     area: {

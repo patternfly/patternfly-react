@@ -43,12 +43,12 @@ class TimedToastNotification extends React.Component {
   onMouseEnter = () => {
     const { onMouseEnter } = this.props;
     onMouseEnter && onMouseEnter();
-  }
+  };
 
   onMouseLeave = () => {
     const { onMouseLeave } = this.props;
     onMouseLeave && onMouseLeave();
-  }
+  };
   render() {
     const { children, className, type, onDismiss } = this.props;
     const { onMouseEnter, onMouseLeave } = this;

@@ -23,18 +23,11 @@ test('Wizard should match snapshot', () => {
     { name: 'C', component: <p>Step 4</p> },
     { name: 'D', component: <p>Step 5</p> }
   ];
-  const onBack: WizardStepFunctionType = (step) => {
+  const onBack: WizardStepFunctionType = step => {
     const name = { step };
   };
   const view = mount(
-    <Wizard
-      isOpen
-      title="Wizard title"
-      description="Description here"
-      steps={steps}
-      startAtStep={1}
-      onBack={onBack}
-    />
+    <Wizard isOpen title="Wizard title" description="Description here" steps={steps} startAtStep={1} onBack={onBack} />
   );
   // ran into: https://github.com/airbnb/enzyme/issues/1213
   // so instead of: expect(view).toMatchSnapshot();

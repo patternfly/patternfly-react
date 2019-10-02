@@ -15,7 +15,7 @@ import {
   StringOrNumberOrCallback,
   VictoryStyleInterface,
   VictoryBar,
-  VictoryBarProps,
+  VictoryBarProps
 } from 'victory';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
@@ -82,15 +82,16 @@ export interface ChartBarProps extends VictoryBarProps {
    * If this prop is given as a single number, the radius will only be applied to the top of each bar.
    * When this prop is given as a function, it will be evaluated with the arguments datum, and active.
    */
-  cornerRadius?: NumberOrCallback
+  cornerRadius?:
+    | NumberOrCallback
     | {
-    top?: number | (NumberOrCallback),
-    topLeft?: number | (NumberOrCallback),
-    topRight?: number | (NumberOrCallback),
-    bottom?: number | (NumberOrCallback),
-    bottomLeft?: number | (NumberOrCallback),
-    bottomRight?: number | (NumberOrCallback)
-  };
+        top?: number | (NumberOrCallback);
+        topLeft?: number | (NumberOrCallback);
+        topRight?: number | (NumberOrCallback);
+        bottom?: number | (NumberOrCallback);
+        bottomLeft?: number | (NumberOrCallback);
+        bottomRight?: number | (NumberOrCallback);
+      };
   /**
    * The data prop specifies the data to be plotted. Data should be in the form of an array
    * of data points, or an array of arrays of data points for multiple datasets.
@@ -228,7 +229,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * maxDomain={0}
    * maxDomain={{ y: 0 }}
    */
-  maxDomain?: number | { x?: number, y?: number };
+  maxDomain?: number | { x?: number; y?: number };
   /**
    * The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum
    * domain of a chart is static, while the maximum value depends on data or other variable information. If the domain
@@ -243,7 +244,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * minDomain={0}
    * minDomain={{ y: 0 }}
    */
-  minDomain?: number | { x?: number, y?: number };
+  minDomain?: number | { x?: number; y?: number };
   /**
    * The name prop is used to reference a component instance when defining shared events.
    */
@@ -252,7 +253,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
    * **This prop should not be set manually.**
    */
-  origin?: { x: number, y: number };
+  origin?: { x: number; y: number };
   /**
    * The padding props specifies the amount of padding in number of pixels between
    * the edge of the chart and any rendered child components. This prop can be given
@@ -278,7 +279,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number], y?: [number, number] };
+  range?: [number, number] | { x?: [number, number]; y?: [number, number] };
   /**
    * The samples prop specifies how many individual points to plot when plotting
    * y as a function of x. Samples is ignored if x props are provided instead.
@@ -290,10 +291,13 @@ export interface ChartBarProps extends VictoryBarProps {
    * as a d3 scale function, or as an object with scales specified for x and y
    * @example d3Scale.time(), {x: "linear", y: "log"}
    */
-  scale?: ScalePropType | D3Scale | {
-    x?: ScalePropType | D3Scale;
-    y?: ScalePropType | D3Scale;
-  };
+  scale?:
+    | ScalePropType
+    | D3Scale
+    | {
+        x?: ScalePropType | D3Scale;
+        y?: ScalePropType | D3Scale;
+      };
   /**
    * The sharedEvents prop is used internally to coordinate events between components. It should not be set manually.
    */
@@ -315,7 +319,7 @@ export interface ChartBarProps extends VictoryBarProps {
    * singleQuadrantDomainPadding={false}
    * singleQuadrantDomainPadding={{ x: false }}
    */
-  singleQuadrantDomainPadding?: boolean | { x: boolean, y: boolean };
+  singleQuadrantDomainPadding?: boolean | { x: boolean; y: boolean };
   /**
    * Use the sortKey prop to indicate how data should be sorted. This prop
    * is given directly to the lodash sortBy function to be executed on the
@@ -405,7 +409,7 @@ export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
   themeColor,
   themeVariant,
 
-    // destructure last
+  // destructure last
   theme = getTheme(themeColor, themeVariant),
   ...rest
 }: ChartBarProps) => {
@@ -415,7 +419,7 @@ export const ChartBar: React.FunctionComponent<ChartBarProps> = ({
     ...containerComponent.props
   });
   return <VictoryBar containerComponent={container} theme={theme} {...rest} />;
-}
+};
 
 // Note: VictoryBar.getDomain & VictoryBar.role must be hoisted
 hoistNonReactStatics(ChartBar, VictoryBar);

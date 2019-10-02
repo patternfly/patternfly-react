@@ -114,12 +114,12 @@ export const defaultControlButtonsOptions: TopologyControlButtonsOptions = {
 /* Utility function to create the common control buttons, can pass null for all defaults, or specify overrides */
 export const createTopologyControlButtons = ({
   zoomIn = defaultControlButtonsOptions.zoomIn,
-  zoomInIcon= defaultControlButtonsOptions.zoomInIcon,
-  zoomInTip= defaultControlButtonsOptions.zoomInTip,
-  zoomInAriaLabel= defaultControlButtonsOptions.zoomInAriaLabel,
-  zoomInCallback= defaultControlButtonsOptions.zoomInCallback,
-  zoomInDisabled= defaultControlButtonsOptions.zoomInDisabled,
-  zoomInHidden= defaultControlButtonsOptions.zoomInHidden,
+  zoomInIcon = defaultControlButtonsOptions.zoomInIcon,
+  zoomInTip = defaultControlButtonsOptions.zoomInTip,
+  zoomInAriaLabel = defaultControlButtonsOptions.zoomInAriaLabel,
+  zoomInCallback = defaultControlButtonsOptions.zoomInCallback,
+  zoomInDisabled = defaultControlButtonsOptions.zoomInDisabled,
+  zoomInHidden = defaultControlButtonsOptions.zoomInHidden,
 
   zoomOut = defaultControlButtonsOptions.zoomOut,
   zoomOutIcon = defaultControlButtonsOptions.zoomOutIcon,
@@ -153,8 +153,8 @@ export const createTopologyControlButtons = ({
   legendDisabled = defaultControlButtonsOptions.legendDisabled,
   legendHidden = defaultControlButtonsOptions.legendHidden,
 
-  customButtons = defaultControlButtonsOptions.customButtons,
-}: TopologyControlButtonsOptions  = defaultControlButtonsOptions): TopologyControlButton[] => {
+  customButtons = defaultControlButtonsOptions.customButtons
+}: TopologyControlButtonsOptions = defaultControlButtonsOptions): TopologyControlButton[] => {
   const controlButtons: TopologyControlButton[] = [];
 
   if (zoomIn) {
@@ -242,8 +242,7 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
   onButtonClick = () => undefined,
   ...props
 }: TopologyControlBarProps) => {
-
-  const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, button: TopologyControlButton) => {
+  const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, button: TopologyControlButton) => {
     event.preventDefault();
     onButtonClick(button.id);
     if (button.callback) {
@@ -256,22 +255,18 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
       <Button
         id={button.id}
         className={`pf-topology-control-bar__button${button.disabled ? ' pf-m-disabled' : ''}`}
-        onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => handleButtonClick(event, button)}
+        onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => handleButtonClick(event, button)}
         disabled={button.disabled}
         aria-disabled={button.disabled}
         variant="tertiary"
       >
         {button.icon}
-        {(button.ariaLabel || button.tooltip) && (
-          <span className="sr-only">{button.ariaLabel || button.tooltip}</span>
-        )}
+        {(button.ariaLabel || button.tooltip) && <span className="sr-only">{button.ariaLabel || button.tooltip}</span>}
       </Button>
     );
 
     if (button.tooltip) {
-      return (
-        <Tooltip content={button.tooltip}>{renderedButton}</Tooltip>
-      );
+      return <Tooltip content={button.tooltip}>{renderedButton}</Tooltip>;
     }
 
     return renderedButton;

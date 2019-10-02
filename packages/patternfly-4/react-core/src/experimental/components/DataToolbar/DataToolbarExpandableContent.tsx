@@ -21,7 +21,6 @@ export interface DataToolbarExpandableContentProps extends React.HTMLProps<HTMLD
 }
 
 export class DataToolbarExpandableContent extends React.Component<DataToolbarExpandableContentProps> {
-
   static defaultProps = {
     isExpanded: false
   };
@@ -42,20 +41,19 @@ export class DataToolbarExpandableContent extends React.Component<DataToolbarExp
 
     return (
       <div
-        className={css(
-          styles.dataToolbarExpandableContent,
-          isExpanded && getModifier(styles, 'expanded'),
-          className)}
+        className={css(styles.dataToolbarExpandableContent, isExpanded && getModifier(styles, 'expanded'), className)}
         ref={expandableContentRef}
         {...props}
       >
         <DataToolbarGroup />
-        {showClearFiltersButton &&
+        {showClearFiltersButton && (
           <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
-            <Button variant="link" onClick={clearChipGroups}>Clear all filters</Button>
+            <Button variant="link" onClick={clearChipGroups}>
+              Clear all filters
+            </Button>
           </DataToolbarItem>
-        }
+        )}
       </div>
     );
-}
+  }
 }

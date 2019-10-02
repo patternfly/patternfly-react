@@ -28,12 +28,12 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
       isOpen: false,
       selected: ''
     };
-    this.onToggle = (isOpen) => {
+    this.onToggle = isOpen => {
       this.setState({
         isOpen
       });
     };
-    this.onSelect = (event) => {
+    this.onSelect = event => {
       this.setState({
         isOpen: false,
         selected: event.currentTarget.value
@@ -77,7 +77,8 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
             toggle={
               <DropdownToggle onToggle={this.onToggle}>
                 {this.state.selected ? this.state.selected : 'Dropdown'}
-              </DropdownToggle>}
+              </DropdownToggle>
+            }
             isOpen={this.state.isOpen}
             dropdownItems={[
               <DropdownItem key="opt-1" value="Option 1" component="button">
@@ -90,10 +91,11 @@ export class InputGroupDemo extends React.Component<{}, InputGroupState> {
                 Option 3
               </DropdownItem>
             ]}
-          >
-          </Dropdown>
+          ></Dropdown>
           <TextInput id="textInput3" aria-label="input with dropdown and button" />
-          <Button id="inputDropdownButton1" variant={ButtonVariant.control}>Button</Button>
+          <Button id="inputDropdownButton1" variant={ButtonVariant.control}>
+            Button
+          </Button>
         </InputGroup>
         <br />
         <br />

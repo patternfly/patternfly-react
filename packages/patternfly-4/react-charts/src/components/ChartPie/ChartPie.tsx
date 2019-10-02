@@ -290,7 +290,7 @@ export interface ChartPieProps extends VictoryPieProps {
    * Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts.
    * **This prop should not be set manually.**
    */
-  origin?: { x: number, y: number };
+  origin?: { x: number; y: number };
   /**
    * The padAngle prop determines the amount of separation between adjacent data slices
    * in number of degrees
@@ -396,7 +396,7 @@ export interface ChartPieProps extends VictoryPieProps {
   y?: DataGetterPropType;
 }
 
-let someId = 0;
+const someId = 0;
 
 export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   allowTooltip = true,
@@ -416,23 +416,29 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
-  labelComponent = allowTooltip ? <ChartTooltip constrainToVisibleArea={constrainToVisibleArea} theme={theme} /> : undefined,
+  labelComponent = allowTooltip ? (
+    <ChartTooltip constrainToVisibleArea={constrainToVisibleArea} theme={theme} />
+  ) : (
+    undefined
+  ),
   legendOrientation = theme.legend.orientation as ChartLegendOrientation,
   height = theme.pie.height,
   width = theme.pie.width,
   ...rest
 }: ChartPieProps) => {
   const defaultPadding = {
-    bottom: getPaddingForSide('bottom',  padding, theme.pie.padding),
+    bottom: getPaddingForSide('bottom', padding, theme.pie.padding),
     left: getPaddingForSide('left', padding, theme.pie.padding),
     right: getPaddingForSide('right', padding, theme.pie.padding),
-    top: getPaddingForSide('top', padding, theme.pie.padding),
+    top: getPaddingForSide('top', padding, theme.pie.padding)
   };
-  const chartRadius = radius ? radius : Helpers.getRadius({
-    height,
-    width,
-    padding: defaultPadding
-  });
+  const chartRadius = radius
+    ? radius
+    : Helpers.getRadius({
+        height,
+        width,
+        padding: defaultPadding
+      });
 
   const chart = (
     <VictoryPie
@@ -477,19 +483,21 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   };
 
   // Clone so users can override container props
-  const container = React.cloneElement(containerComponent, {
-    desc: ariaDesc,
-    height,
-    title: ariaTitle,
-    width,
-    theme,
-    ...containerComponent.props
-  }, [chart, getWrappedLegend()]);
+  const container = React.cloneElement(
+    containerComponent,
+    {
+      desc: ariaDesc,
+      height,
+      title: ariaTitle,
+      width,
+      theme,
+      ...containerComponent.props
+    },
+    [chart, getWrappedLegend()]
+  );
 
   return standalone ? (
-    <React.Fragment>
-      {container}
-    </React.Fragment>
+    <React.Fragment>{container}</React.Fragment>
   ) : (
     <React.Fragment>
       {chart}

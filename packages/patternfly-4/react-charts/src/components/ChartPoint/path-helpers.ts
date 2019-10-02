@@ -89,7 +89,7 @@ export const PathHelpers = {
     const baseSize = 1.35 * size;
     const angle = Math.PI / 5;
     const range = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    const starCoords = range.map((index) => {
+    const starCoords = range.map(index => {
       const length = index % 2 === 0 ? baseSize : baseSize / 2;
       return `${length * Math.sin(angle * (index + 1)) + x},
         ${length * Math.cos(angle * (index + 1)) + y}`;

@@ -115,6 +115,4 @@ SliderStories.add('Slider', () => (
       <Slider id="slider-pf" min={0} max={100} tooltip="show" showBoundaries input dropdownList={['MB', 'GB']} dropup />
     </div>
   </div>
-)).add('onSlide function', () => (
-  <Slider id="slider-pf" min={0} max={5} onSlide={action('onSlide was called')} />
-));
+)).add('onSlide function', () => <Slider id="slider-pf" min={0} max={5} onSlide={action('onSlide was called')} />);

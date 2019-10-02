@@ -6,10 +6,14 @@ describe('Grid Demo Test', () => {
   });
 
   it('Verify grid item span', () => {
-    cy.get('.pf-l-grid__item').first().should('have.class', 'pf-m-8-col');
-  })
+    cy.get('.pf-l-grid__item')
+      .first()
+      .should('have.class', 'pf-m-8-col');
+  });
 
   it('Verify grid item rowSpan', () => {
-    cy.get('.pf-m-4-col').first().should('have.class', 'pf-m-2-row');
+    cy.get('.pf-m-4-col')
+      .first()
+      .should('have.class', 'pf-m-2-row');
   });
-}); 
+});

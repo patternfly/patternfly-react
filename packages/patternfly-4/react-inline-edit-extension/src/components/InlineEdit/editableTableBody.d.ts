@@ -2,7 +2,7 @@ import { Component, FunctionComponent, MouseEvent } from 'react';
 import { TableBodyProps, IRowData, IExtraRowData } from '@patternfly/react-table';
 import { OneOf } from '@patternfly/react-core';
 
-import { TableEditConfirmation } from './constants'
+import { TableEditConfirmation } from './constants';
 
 export interface IEditedCellData extends IExtraRowData {
   columnIndex: number;

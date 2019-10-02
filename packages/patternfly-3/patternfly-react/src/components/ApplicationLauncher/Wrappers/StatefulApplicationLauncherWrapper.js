@@ -14,11 +14,13 @@ class StatefulApplicationLauncherWrapper extends React.Component {
 
   toggleLauncher = () => {
     this.setState({ open: !this.state.open });
-  }
+  };
 
   handleClickOutside = () => {
-    if (this.state.open === true) { this.toggleLauncher(); }
-  }
+    if (this.state.open === true) {
+      this.toggleLauncher();
+    }
+  };
 
   render() {
     return (

@@ -22,7 +22,7 @@ export class MockCompoundLabel extends React.Component {
     const values = this.state.tag.values.filter(val => val.id !== value.id);
     const state = { tag: { ...this.state.tag, values } };
     this.setState(state);
-  }
+  };
 
   render() {
     return (

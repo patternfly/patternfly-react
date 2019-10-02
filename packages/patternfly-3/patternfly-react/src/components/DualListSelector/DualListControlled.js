@@ -41,7 +41,7 @@ class DualListControlled extends React.Component {
       },
       () => onItemChange(this.state)
     );
-  }
+  };
 
   onMainCheckboxChange = ({ side, checked, items, selectCount }) => {
     const { onMainCheckboxChange } = this.props;
@@ -56,7 +56,7 @@ class DualListControlled extends React.Component {
       },
       () => onMainCheckboxChange(this.state)
     );
-  }
+  };
 
   onSortClick = ({ side, items, isSortAsc }) => {
     const { onSortClick } = this.props;
@@ -70,7 +70,7 @@ class DualListControlled extends React.Component {
       },
       () => onSortClick(this.state)
     );
-  }
+  };
 
   onFilterChange = ({ side, filterTerm, items, isMainChecked }) => {
     const { onFilterChange } = this.props;
@@ -85,12 +85,12 @@ class DualListControlled extends React.Component {
       },
       () => onFilterChange(this.state)
     );
-  }
+  };
 
   onChange = ({ left, right }) => {
     const { onChange } = this.props;
     this.setState({ left, right }, () => onChange(this.state));
-  }
+  };
 
   render() {
     const { left, right, allowHiddenInputs } = this.state;

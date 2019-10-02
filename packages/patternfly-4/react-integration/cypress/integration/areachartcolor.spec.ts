@@ -17,5 +17,4 @@ describe('Area Chart Color Demo Test', () => {
     cy.get('.VictoryContainer > svg').should('have.attr', 'width', '650');
     cy.get('.VictoryContainer > svg').should('have.attr', 'height', '225');
   });
-
 });

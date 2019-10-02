@@ -12,10 +12,6 @@ export class TooltipDemo extends Component {
   }
 
   render() {
-    return (
-      <Tooltip content={this.myTooltipProps.content}>
-        {this.myTooltipProps.children}
-      </Tooltip>
-    );
+    return <Tooltip content={this.myTooltipProps.content}>{this.myTooltipProps.children}</Tooltip>;
   }
 }

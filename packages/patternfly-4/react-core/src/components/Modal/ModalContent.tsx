@@ -77,13 +77,17 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
     return null;
   }
 
-  const modalBoxHeader = header ?
-    <div className={css(titleStyles.title)}>{header}</div> :
-    <ModalBoxHeader hideTitle={hideTitle}> {title} </ModalBoxHeader>;
+  const modalBoxHeader = header ? (
+    <div className={css(titleStyles.title)}>{header}</div>
+  ) : (
+    <ModalBoxHeader hideTitle={hideTitle}> {title} </ModalBoxHeader>
+  );
 
-  const modalBoxFooter = footer ?
-    <ModalBoxFooter isLeftAligned={isFooterLeftAligned}>{footer}</ModalBoxFooter> :
-    actions.length > 0 && <ModalBoxFooter isLeftAligned={isFooterLeftAligned}>{actions}</ModalBoxFooter>;
+  const modalBoxFooter = footer ? (
+    <ModalBoxFooter isLeftAligned={isFooterLeftAligned}>{footer}</ModalBoxFooter>
+  ) : (
+    actions.length > 0 && <ModalBoxFooter isLeftAligned={isFooterLeftAligned}>{actions}</ModalBoxFooter>
+  );
   const boxStyle = width === -1 ? {} : { width };
   const modalBox = (
     <ModalBox
@@ -104,7 +108,11 @@ export const ModalContent: React.FunctionComponent<ModalContentProps> = ({
   );
   return (
     <Backdrop>
-      <FocusTrap active={!disableFocusTrap} focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(styles.bullseye)}>
+      <FocusTrap
+        active={!disableFocusTrap}
+        focusTrapOptions={{ clickOutsideDeactivates: true }}
+        className={css(styles.bullseye)}
+      >
         {modalBox}
       </FocusTrap>
     </Backdrop>

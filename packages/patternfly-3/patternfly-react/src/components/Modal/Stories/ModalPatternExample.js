@@ -14,11 +14,11 @@ export class ModalPatternExample extends React.Component {
     setTimeout(() => {
       this.setState({ loading: false });
     }, 1000);
-  }
+  };
 
   close = () => {
     this.setState({ showModal: false, loading: false });
-  }
+  };
 
   renderStateless = () => {
     // We need knobs on the stateless example, because we must drive its state ourselves.
@@ -44,7 +44,7 @@ export class ModalPatternExample extends React.Component {
         </Modal.Pattern>
       </div>
     );
-  }
+  };
 
   renderStateful = () => (
     // No knobs for the stateful example, we want to let it control its own state.
@@ -66,7 +66,7 @@ export class ModalPatternExample extends React.Component {
         <Spinner loading={this.state.loading}>(Modal Contents Here)</Spinner>
       </Modal.Pattern.Stateful>
     </div>
-  )
+  );
 
   render() {
     return this.props.stateful ? this.renderStateful() : this.renderStateless();

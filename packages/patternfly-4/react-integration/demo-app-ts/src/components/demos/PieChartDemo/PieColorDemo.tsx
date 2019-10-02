@@ -2,14 +2,13 @@ import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 export class PieColorDemo extends React.Component {
-
   componentDidMount() {
     window.scrollTo(0, 0);
   }
 
   render() {
     return (
-      <div style={{height: '275px', width: '300px', paddingTop: '50px', paddingLeft: '50px'}}>
+      <div style={{ height: '275px', width: '300px', paddingTop: '50px', paddingLeft: '50px' }}>
         <div>
           <ChartPie
             data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}

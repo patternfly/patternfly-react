@@ -7,15 +7,17 @@ module.exports = {
   fontAwesome: {
     solid: Object.keys(fas),
     regular: Object.keys(far),
-    brands: Object.keys(fab).map(icon => {
-      if (icon.indexOf('500') !== -1) {
-        return {
-          title: 'fiveHundredPx',
-          name: 'fa500px'
+    brands: Object.keys(fab)
+      .map(icon => {
+        if (icon.indexOf('500') !== -1) {
+          return {
+            title: 'fiveHundredPx',
+            name: 'fa500px'
+          };
         }
-      }
-      return icon;
-    }).filter(icon => icon !== 'faFontAwesomeLogoFull')
+        return icon;
+      })
+      .filter(icon => icon !== 'faFontAwesomeLogoFull')
   },
   custom,
   pfIcons

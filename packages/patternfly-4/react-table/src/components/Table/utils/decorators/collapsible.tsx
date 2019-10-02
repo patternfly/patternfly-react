@@ -5,7 +5,10 @@ import { CollapseColumn } from '../../CollapseColumn';
 import { ExpandableRowContent } from '../../ExpandableRowContent';
 import { IExtra, IFormatterValueType } from '../../Table';
 
-export const collapsible = (value: IFormatterValueType, { rowIndex, columnIndex, rowData, column, property }: IExtra) => {
+export const collapsible = (
+  value: IFormatterValueType,
+  { rowIndex, columnIndex, rowData, column, property }: IExtra
+) => {
   const {
     extraParams: { onCollapse, rowLabeledBy = 'simple-node', expandId = 'expand-toggle' }
   } = column;

@@ -62,6 +62,7 @@
     "minimist": "^1.2.0",
     "mutation-observer": "^1.0.3",
     "plop": "^2.0.0",
+    "prettier": "^1.18.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "sass-loader": "^6.0.6",
@@ -71,6 +72,8 @@
     "stylelint-config-standard": "^18.2.0",
     "ts-jest": "24.1.0",
     "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
     "tslint-react": "^3.6.0"
   },
   "scripts": {
@@ -88,6 +91,7 @@
     "lint:style": "stylelint \"**/sass/**/*.scss\" \"!**/dist/**/*.scss\"",
     "lint:ts": "node --max-old-space-size=4096 node_modules/.bin/tslint --project ./tslint.config.json --config tslint.json",
     "lint:versions": "node ./packages/patternfly-4/verifyCoreVersions.js",
+    "prettier": "node node_modules/.bin/prettier --write \"storybook/**/*.{js,ts,tsx}\" \"packages/**/*.{js,ts,tsx}\" \"scripts/**/*.{js,ts,tsx}\"",
     "start": "yarn start:pf3",
     "start:cypress": "lerna run cypress:open",
     "start:demo-app": "lerna run start:demo-app --stream",

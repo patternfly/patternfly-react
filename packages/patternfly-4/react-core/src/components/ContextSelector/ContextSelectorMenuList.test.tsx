@@ -12,18 +12,11 @@ const items = [
 ];
 
 test('Renders ContextSelectorMenuList open', () => {
-  const view = shallow(
-    <ContextSelectorMenuList isOpen={false}>
-      {items}
-    </ContextSelectorMenuList>
-  );
+  const view = shallow(<ContextSelectorMenuList isOpen={false}>{items}</ContextSelectorMenuList>);
   expect(view).toMatchSnapshot();
 });
 
 test('Renders ContextSelectorMenuList closed', () => {
-  const view = shallow(
-    <ContextSelectorMenuList isOpen={false}>
-      {items}
-    </ContextSelectorMenuList>);
+  const view = shallow(<ContextSelectorMenuList isOpen={false}>{items}</ContextSelectorMenuList>);
   expect(view).toMatchSnapshot();
 });

@@ -6,7 +6,7 @@ import imgAvatar from '../../assets/images/imgAvatar.svg';
 
 const showNavToogle: boolean = false;
 
-export const AppHeader: React.FunctionComponent<any> = (props) => {
+export const AppHeader: React.FunctionComponent<any> = props => {
   return (
     <PageHeader
       logo={<Brand src={imgBrand} alt="Patternfly Logo" />}

@@ -3,14 +3,14 @@ import { shallow } from 'enzyme';
 import { ClipboardCopyButton } from './ClipboardCopyButton';
 
 const props = {
-  "id": 'my-id',
-  "textId": 'my-text-id',
-  "className": 'fancy-copy-button',
-  "onClick": jest.fn(),
-  "exitDelay": 1000,
-  "entryDelay": 2000,
-  "maxWidth": '500px',
-  "position": 'right' as 'right',
+  id: 'my-id',
+  textId: 'my-text-id',
+  className: 'fancy-copy-button',
+  onClick: jest.fn(),
+  exitDelay: 1000,
+  entryDelay: 2000,
+  maxWidth: '500px',
+  position: 'right' as 'right',
   'aria-label': 'click this button to copy text'
 };
 

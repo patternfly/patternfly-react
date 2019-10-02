@@ -49,19 +49,19 @@ export class ContextSelectorDemo extends React.Component<{}, ContextSelectorStat
       });
     };
 
-    this.onSearchInputChange = (value) => {
+    this.onSearchInputChange = value => {
       this.setState({ searchValue: value });
     };
 
-    this.onSearchButtonClick = (event) => {
+    this.onSearchButtonClick = event => {
       const filtered =
         this.state.searchValue === ''
           ? this.items
-          : this.items.filter((str) => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
+          : this.items.filter(str => str.toLowerCase().indexOf(this.state.searchValue.toLowerCase()) !== -1);
 
       this.setState({ filteredItems: filtered || [] });
     };
-}
+  }
 
   componentDidMount() {
     window.scrollTo(0, 0);

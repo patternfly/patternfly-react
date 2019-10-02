@@ -55,14 +55,14 @@ class CatalogTileViewCategory extends React.Component {
       const rightSpacerWidth = this.categoryContainer.clientWidth % 235;
       this.setState({ numShown, rightSpacerWidth });
     }
-  }
+  };
 
   handleRef = ref => {
     if (!ref) {
       return;
     }
     this.categoryContainer = ref;
-  }
+  };
 
   render() {
     const { children, className, title, totalItems, viewAllText, viewAll, onViewAll, ...props } = this.props;

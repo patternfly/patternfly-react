@@ -35,7 +35,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
 
   static defaultProps = {
     isExpanded: false,
-    showClearFiltersButton: false,
+    showClearFiltersButton: false
   };
 
   constructor(props: DataToolbarProps) {
@@ -43,26 +43,26 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
 
     this.state = {
       isConsumerManagedToggleGroup: props.isExpanded || !!props.toggleIsExpanded,
-      componentManagedIsExpanded: false,
+      componentManagedIsExpanded: false
     };
   }
 
   toggleIsExpanded = () => {
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       componentManagedIsExpanded: !prevState.componentManagedIsExpanded
     }));
-  }
+  };
 
   closeExpandableContent = () => {
     this.setState(() => ({
       componentManagedIsExpanded: false
     }));
-  }
+  };
 
   componentDidMount() {
     const { isConsumerManagedToggleGroup } = this.state;
 
-    if ( !isConsumerManagedToggleGroup ) {
+    if (!isConsumerManagedToggleGroup) {
       window.addEventListener('resize', this.closeExpandableContent);
     }
   }
@@ -75,7 +75,6 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
   }
 
   render() {
-
     const {
       className,
       children,
@@ -93,15 +92,13 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
     return (
       <div className={css(styles.dataToolbar, className)} id={id} {...props}>
         <DataToolbarContext.Provider
-          value={
-            {
-              isExpanded: isConsumerManagedToggleGroup ? isExpanded : componentManagedIsExpanded,
-              toggleIsExpanded: isConsumerManagedToggleGroup ? toggleIsExpanded : this.toggleIsExpanded,
-              expandableContentRef: this.expandableContentRef,
-              expandableContentId,
-              chipGroupContentRef: this.chipGroupContentRef,
-            }
-          }
+          value={{
+            isExpanded: isConsumerManagedToggleGroup ? isExpanded : componentManagedIsExpanded,
+            toggleIsExpanded: isConsumerManagedToggleGroup ? toggleIsExpanded : this.toggleIsExpanded,
+            expandableContentRef: this.expandableContentRef,
+            expandableContentId,
+            chipGroupContentRef: this.chipGroupContentRef
+          }}
         >
           {children}
           <DataToolbarChipGroupContent
@@ -121,5 +118,4 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
       </div>
     );
   }
-
 }

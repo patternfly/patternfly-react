@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import { ChartDomain, getDomains } from '../../ChartUtils';
 
 interface ChartBulletDomainInterface {
@@ -34,22 +34,28 @@ export const getBulletDomain = ({
   const domain = getDomains({
     maxDomain,
     minDomain,
-    sources: [{
-      component: comparativeErrorMeasureComponent,
-      data: comparativeErrorMeasureData
-    }, {
-      component: comparativeWarningMeasureComponent,
-      data: comparativeWarningMeasureData
-    }, {
-      component: primaryDotMeasureComponent,
-      data: primaryDotMeasureData
-    }, {
-      component: primarySegmentedMeasureComponent,
-      data: primarySegmentedMeasureData
-    }, {
-      component: qualitativeRangeComponent,
-      data: qualitativeRangeData
-    }]
+    sources: [
+      {
+        component: comparativeErrorMeasureComponent,
+        data: comparativeErrorMeasureData
+      },
+      {
+        component: comparativeWarningMeasureComponent,
+        data: comparativeWarningMeasureData
+      },
+      {
+        component: primaryDotMeasureComponent,
+        data: primaryDotMeasureData
+      },
+      {
+        component: primarySegmentedMeasureComponent,
+        data: primarySegmentedMeasureData
+      },
+      {
+        component: qualitativeRangeComponent,
+        data: qualitativeRangeData
+      }
+    ]
   });
   // Note that comparative measures and qualitative range bars are currently given an x-value of 1, while the bar widths
   // fill the domain. At one point, lines were used to represent comparative warning, comparative error, and zero

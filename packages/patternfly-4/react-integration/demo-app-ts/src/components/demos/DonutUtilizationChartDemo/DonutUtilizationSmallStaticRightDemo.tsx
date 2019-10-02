@@ -2,7 +2,6 @@ import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
 export class DonutUtilizationSmallStaticRightDemo extends React.Component<{}, { used: number }> {
-
   interval: any;
   constructor(props) {
     super(props);
@@ -12,7 +11,7 @@ export class DonutUtilizationSmallStaticRightDemo extends React.Component<{}, { 
   }
 
   componentDidMount() {
-    window.scrollTo(0 , 0);
+    window.scrollTo(0, 0);
 
     this.interval = setInterval(() => {
       const { used } = this.state;
@@ -28,17 +27,21 @@ export class DonutUtilizationSmallStaticRightDemo extends React.Component<{}, { 
     const { used } = this.state;
     return (
       <div>
-        <div style={{backgroundColor: 'white', height: '175px', width: '425px'}}>
+        <div style={{ backgroundColor: 'white', height: '175px', width: '425px' }}>
           <ChartDonutThreshold
             data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
             height={175}
-            labels={({ datum }) => datum.x ? datum.x : null}
+            labels={({ datum }) => (datum.x ? datum.x : null)}
             width={425}
           >
             <ChartDonutUtilization
               data={{ x: 'Storage capacity', y: used }}
-              labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
-              legendData={[{ name: `Storage capacity: ${used}%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
+              labels={({ datum }) => (datum.x ? `${datum.x}: ${datum.y}%` : null)}
+              legendData={[
+                { name: `Storage capacity: ${used}%` },
+                { name: 'Warning threshold at 60%' },
+                { name: 'Danger threshold at 90%' }
+              ]}
               legendOrientation="vertical"
               subTitle="of 100 GBps"
               title={`${used}%`}

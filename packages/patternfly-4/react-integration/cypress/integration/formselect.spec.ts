@@ -10,10 +10,14 @@ describe('Form Select Demo Test', () => {
   });
 
   it('Verify form allows correct selection', () => {
-    cy.get('select').select('3').should('have.value', '3');
-  }); 
+    cy.get('select')
+      .select('3')
+      .should('have.value', '3');
+  });
 
   it('Verify disabled select', () => {
-    cy.get('.pf-c-form-control').find('optgroup[label="Group3"]').should('be.disabled')
+    cy.get('.pf-c-form-control')
+      .find('optgroup[label="Group3"]')
+      .should('be.disabled');
   });
-})
+});

@@ -2,7 +2,7 @@ describe('List Demo Test', () => {
   it('Navigate to demo section', () => {
     cy.visit('http://localhost:3000/');
     cy.get('#list-demo-nav-item-link').click();
-    cy.url().should('eq', 'http://localhost:3000/list-demo-nav-link')
+    cy.url().should('eq', 'http://localhost:3000/list-demo-nav-link');
   });
 
   it('Verify plain list', () => {

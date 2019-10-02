@@ -16,4 +16,4 @@ describe('Empty State Demo Test', () => {
   it('Verify small empty state', () => {
     cy.get('.pf-c-empty-state').contains('Small Empty State');
   });
-})
+});

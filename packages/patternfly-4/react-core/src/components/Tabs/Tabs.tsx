@@ -49,7 +49,7 @@ export interface TabsState {
   showRightScrollButton: boolean;
   highlightLeftScrollButton: boolean;
   highlightRightScrollButton: boolean;
-  shownKeys: (string|number)[];
+  shownKeys: (string | number)[];
 }
 
 class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
@@ -75,7 +75,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
     rightScrollAriaLabel: 'Scroll right',
     variant: TabsVariant.div,
     mountOnEnter: false,
-    unmountOnExit: false,
+    unmountOnExit: false
   };
 
   handleTabClick(
@@ -134,7 +134,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
           (sideOutOfView === SIDE.RIGHT || sideOutOfView === SIDE.BOTH) && showRightScrollButton
       });
     }
-  }
+  };
 
   scrollLeft = () => {
     // find first Element that is fully in view on the left, then scroll to the element before it
@@ -154,7 +154,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
         container.scrollLeft -= lastElementOutOfView.scrollWidth;
       }
     }
-  }
+  };
 
   scrollRight = () => {
     // find last Element that is fully in view on the right, then scroll to the element after it
@@ -173,7 +173,7 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
         container.scrollLeft += firstElementOutOfView.scrollWidth;
       }
     }
-  }
+  };
 
   componentDidMount() {
     window.addEventListener('resize', this.handleScrollButtons, false);
@@ -228,10 +228,10 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
             highlightRightScrollButton && styles.modifiers.endCurrent,
             className
           )}
-          {...ouiaContext.isOuia && {
+          {...(ouiaContext.isOuia && {
             'data-ouia-component-type': 'Tabs',
             'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-          }}
+          })}
           id={id && id}
           {...props}
         >
@@ -278,13 +278,16 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
           </button>
         </Component>
         {React.Children.map(children, (child: any, index) => {
-          if (!child.props.children || (unmountOnExit && child.props.eventKey !== activeKey) || (mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)) {
+          if (
+            !child.props.children ||
+            (unmountOnExit && child.props.eventKey !== activeKey) ||
+            (mountOnEnter && shownKeys.indexOf(child.props.eventKey) === -1)
+          ) {
             return null;
           } else {
             return <TabContent key={index} activeKey={activeKey} child={child} id={child.props.id || uniqueId} />;
           }
-        }
-        )}
+        })}
       </React.Fragment>
     );
   }

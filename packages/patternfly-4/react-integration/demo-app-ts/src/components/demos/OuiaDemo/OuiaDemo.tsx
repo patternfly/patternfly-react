@@ -15,7 +15,7 @@ export class OuiaDemo extends React.Component<SwitchProps, SwitchState> {
     this.setState({
       isChecked
     });
-  }
+  };
 
   render() {
     const { isChecked } = this.state;
@@ -31,7 +31,13 @@ export class OuiaDemo extends React.Component<SwitchProps, SwitchState> {
             ouiaId="first_switch"
           />
           <br />
-          <Switch id="disabled-switch-off" aria-label="disabled switch" label="Message when on" isChecked={false} isDisabled />
+          <Switch
+            id="disabled-switch-off"
+            aria-label="disabled switch"
+            label="Message when on"
+            isChecked={false}
+            isDisabled
+          />
         </React.Fragment>
       </OuiaContext.Provider>
     );

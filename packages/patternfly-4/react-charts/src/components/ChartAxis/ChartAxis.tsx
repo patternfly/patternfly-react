@@ -9,7 +9,7 @@ import {
   PaddingProps,
   ScalePropType,
   VictoryAxis,
-  VictoryAxisProps,
+  VictoryAxisProps
 } from 'victory';
 import { ChartContainer } from '../ChartContainer';
 import { ChartThemeDefinition } from '../ChartTheme';
@@ -193,7 +193,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * maxDomain={0}
    * maxDomain={{ y: 0 }}
    */
-  maxDomain?: number | { x?: number, y?: number };
+  maxDomain?: number | { x?: number; y?: number };
   /**
    * The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum
    * domain of a chart is static, while the maximum value depends on data or other variable information. If the domain
@@ -208,7 +208,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * minDomain={0}
    * minDomain={{ y: 0 }}
    */
-  minDomain?: number | { x?: number, y?: number };
+  minDomain?: number | { x?: number; y?: number };
   /**
    * ChartAxis uses the standard name prop
    */
@@ -249,17 +249,20 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * Cartesian: range={{ x: [50, 250], y: [50, 250] }}
    * Polar: range={{ x: [0, 360], y: [0, 250] }}
    */
-  range?: [number, number] | { x?: [number, number], y?: [number, number] };
+  range?: [number, number] | { x?: [number, number]; y?: [number, number] };
   /**
    * The scale prop determines which scales your chart should use. This prop can be
    * given as a string specifying a supported scale ("linear", "time", "log", "sqrt"),
    * as a d3 scale function, or as an object with scales specified for x and y
    * @example d3Scale.time(), {x: "linear", y: "log"}
    */
-  scale?: ScalePropType | D3Scale | {
-    x?: ScalePropType | D3Scale;
-    y?: ScalePropType | D3Scale;
-  };
+  scale?:
+    | ScalePropType
+    | D3Scale
+    | {
+        x?: ScalePropType | D3Scale;
+        y?: ScalePropType | D3Scale;
+      };
   /**
    * The sharedEvents prop is used internally to coordinate events between components. It should not be set manually.
    */
@@ -285,7 +288,7 @@ export interface ChartAxisProps extends VictoryAxisProps {
    * singleQuadrantDomainPadding={false}
    * singleQuadrantDomainPadding={{ x: false }}
    */
-  singleQuadrantDomainPadding?: boolean | { x: boolean, y: boolean };
+  singleQuadrantDomainPadding?: boolean | { x: boolean; y: boolean };
   /**
    * The standalone prop determines whether the component will render a standalone svg
    * or a <g> tag that will be included in an external svg. Set standalone to false to
@@ -310,22 +313,13 @@ export interface ChartAxisProps extends VictoryAxisProps {
     axis?: React.CSSProperties;
     axisLabel?: React.CSSProperties;
     grid?: {
-      [K in keyof React.CSSProperties]:
-      | string
-      | number
-      | ((tick?: any) => string | number)
+      [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
     };
     ticks?: {
-      [K in keyof React.CSSProperties]:
-      | string
-      | number
-      | ((tick?: any) => string | number)
+      [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
     };
     tickLabels?: {
-      [K in keyof React.CSSProperties]:
-      | string
-      | number
-      | ((tick?: any) => string | number)
+      [K in keyof React.CSSProperties]: string | number | ((tick?: any) => string | number);
     };
   };
   /**

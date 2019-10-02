@@ -14,7 +14,7 @@ test('ModalBox Test', () => {
 
 test('ModalBox Test isLarge', () => {
   const view = shallow(
-    <ModalBox title="Test Modal Box"  id="boxId" isLarge>
+    <ModalBox title="Test Modal Box" id="boxId" isLarge>
       This is a ModalBox
     </ModalBox>
   );
@@ -23,7 +23,7 @@ test('ModalBox Test isLarge', () => {
 
 test('ModalBox Test isSmall', () => {
   const view = shallow(
-    <ModalBox title="Test Modal Box"  id="boxId" isSmall>
+    <ModalBox title="Test Modal Box" id="boxId" isSmall>
       This is a ModalBox
     </ModalBox>
   );

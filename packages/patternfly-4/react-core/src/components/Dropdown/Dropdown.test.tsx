@@ -82,7 +82,11 @@ describe('dropdown', () => {
     const view = mount(
       <Dropdown
         dropdownItems={dropdownItems}
-        toggle={<DropdownToggle id="Dropdown Toggle" isPrimary>Dropdown</DropdownToggle>}
+        toggle={
+          <DropdownToggle id="Dropdown Toggle" isPrimary>
+            Dropdown
+          </DropdownToggle>
+        }
       />
     );
     expect(view).toMatchSnapshot();
@@ -181,15 +185,17 @@ describe('API', () => {
   });
 
   test('dropdownItems and children console error ', () => {
-    expect(() => mount(
-      <Dropdown
-        dropdownItems={dropdownItems}
-        isOpen
-        toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
-      >
-        <div>Children items</div>
-      </Dropdown>
-    )).toThrowError();
+    expect(() =>
+      mount(
+        <Dropdown
+          dropdownItems={dropdownItems}
+          isOpen
+          toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
+        >
+          <div>Children items</div>
+        </Dropdown>
+      )
+    ).toThrowError();
   });
 
   test('dropdownItems only, no console error ', () => {

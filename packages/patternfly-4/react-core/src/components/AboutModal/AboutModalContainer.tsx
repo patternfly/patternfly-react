@@ -63,7 +63,12 @@ export const AboutModalContainer: React.SFC<AboutModalContainerProps> = ({
           <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
           <AboutModalBoxCloseButton onClose={onClose} />
           {productName && <AboutModalBoxHeader id={ariaLabelledbyId} productName={productName} />}
-          <AboutModalBoxContent trademark={trademark} id={ariaDescribedById} noAboutModalBoxContentContainer={false} {...props}>
+          <AboutModalBoxContent
+            trademark={trademark}
+            id={ariaDescribedById}
+            noAboutModalBoxContentContainer={false}
+            {...props}
+          >
             {children}
           </AboutModalBoxContent>
           <AboutModalBoxHero backgroundImageSrc={backgroundImageSrc} />

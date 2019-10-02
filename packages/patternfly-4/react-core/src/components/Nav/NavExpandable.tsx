@@ -7,7 +7,8 @@ import { AngleRightIcon } from '@patternfly/react-icons';
 import { getUniqueId } from '../../helpers/util';
 import { NavContext } from './Nav';
 
-export interface NavExpandableProps extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
+export interface NavExpandableProps
+  extends React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement> {
   /** Title shown for the expandable list */
   title: string;
   /** If defined, screen readers will read this text instead of the list title */
@@ -65,11 +66,15 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
     } else {
       this.setState({ expandedState: val });
     }
-  }
+  };
 
   handleToggle = (
     e: React.MouseEvent<HTMLLIElement, MouseEvent>,
-    onToggle: (event: React.MouseEvent<HTMLLIElement, MouseEvent>, groupId: string | number, expandedState: boolean) => void
+    onToggle: (
+      event: React.MouseEvent<HTMLLIElement, MouseEvent>,
+      groupId: string | number,
+      expandedState: boolean
+    ) => void
   ) => {
     // Item events can bubble up, ignore those
     if ((e.target as any).getAttribute('data-component') !== 'pf-nav-expandable') {
@@ -80,7 +85,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
     const { expandedState } = this.state;
     onToggle(e, groupId, !expandedState);
     this.onExpand(e, !expandedState);
-  }
+  };
 
   render() {
     const { id, title, srText, children, className, isActive, groupId, isExpanded, onExpand, ...props } = this.props;
@@ -104,8 +109,8 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
               className={css(styles.navLink)}
               id={srText ? null : this.id}
               href="#"
-              onClick={(e) => e.preventDefault()}
-              onMouseDown={(e) => e.preventDefault()}
+              onClick={e => e.preventDefault()}
+              onMouseDown={e => e.preventDefault()}
               aria-expanded={expandedState}
             >
               {title}

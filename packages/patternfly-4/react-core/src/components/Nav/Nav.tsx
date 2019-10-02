@@ -13,19 +13,29 @@ export type NavSelectClickHandler = (
   to: string
 ) => void;
 
-export interface NavProps extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'onSelect'> {
+export interface NavProps
+  extends Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>, 'onSelect'> {
   /** Anything that can be rendered inside of the nav */
   children?: React.ReactNode;
   /** Additional classes added to the container */
   className?: string;
   /** Callback for updating when item selection changes */
-  onSelect?: (selectedItem: {groupId: number | string; itemId: number | string; to: string, event: React.FormEvent<HTMLInputElement>}) => void;
+  onSelect?: (selectedItem: {
+    groupId: number | string;
+    itemId: number | string;
+    to: string;
+    event: React.FormEvent<HTMLInputElement>;
+  }) => void;
   /** Callback for when a list is expanded or collapsed */
-  onToggle?: (toggledItem: {groupId: number | string ; isExpanded: boolean; event: React.FormEvent<HTMLInputElement>}) => void;
+  onToggle?: (toggledItem: {
+    groupId: number | string;
+    isExpanded: boolean;
+    event: React.FormEvent<HTMLInputElement>;
+  }) => void;
   /** Accessibility label */
   'aria-label'?: string;
   /** Indicates which theme color to use */
-  theme?: 'dark' | 'light'
+  theme?: 'dark' | 'light';
 }
 
 export const NavContext = React.createContext({});
@@ -33,11 +43,11 @@ export const NavContext = React.createContext({});
 class Nav extends React.Component<NavProps & InjectedOuiaProps> {
   static defaultProps: NavProps = {
     'aria-label': '',
-    "children": null,
-    "className": '',
-    "onSelect": () => undefined,
-    "onToggle": () => undefined,
-    "theme": 'light'
+    children: null,
+    className: '',
+    onSelect: () => undefined,
+    onToggle: () => undefined,
+    theme: 'light'
   };
 
   state = {
@@ -45,13 +55,13 @@ class Nav extends React.Component<NavProps & InjectedOuiaProps> {
     showRightScrollButton: false
   };
 
-  updateScrollButtonState = (state: { showLeftScrollButton: boolean, showRightScrollButton: boolean }) => {
+  updateScrollButtonState = (state: { showLeftScrollButton: boolean; showRightScrollButton: boolean }) => {
     const { showLeftScrollButton, showRightScrollButton } = state;
     this.setState({
       showLeftScrollButton,
       showRightScrollButton
     });
-  }
+  };
 
   // Callback from NavItem
   onSelect(
@@ -83,7 +93,17 @@ class Nav extends React.Component<NavProps & InjectedOuiaProps> {
   }
 
   render() {
-    const { 'aria-label': ariaLabel, children, className, onSelect, onToggle, theme, ouiaContext, ouiaId, ...props } = this.props;
+    const {
+      'aria-label': ariaLabel,
+      children,
+      className,
+      onSelect,
+      onToggle,
+      theme,
+      ouiaContext,
+      ouiaId,
+      ...props
+    } = this.props;
     const { showLeftScrollButton, showRightScrollButton } = this.state;
     const childrenProps: any = (children as any).props;
 
@@ -96,23 +116,37 @@ class Nav extends React.Component<NavProps & InjectedOuiaProps> {
             itemId: number | string,
             to: string,
             preventDefault: boolean,
-            onClick: (e: React.FormEvent<HTMLInputElement>, itemId: number | string, groupId: number | string, to: string) => void
+            onClick: (
+              e: React.FormEvent<HTMLInputElement>,
+              itemId: number | string,
+              groupId: number | string,
+              to: string
+            ) => void
           ) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
-          onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) => this.onToggle(event, groupId, expanded),
+          onToggle: (event: React.MouseEvent<HTMLInputElement>, groupId: number | string, expanded: boolean) =>
+            this.onToggle(event, groupId, expanded),
           updateScrollButtonState: this.updateScrollButtonState
         }}
       >
         <nav
-          className={css(styles.nav, theme === 'dark' && styles.modifiers.dark, showLeftScrollButton && styles.modifiers.start, showRightScrollButton && styles.modifiers.end, className)}
+          className={css(
+            styles.nav,
+            theme === 'dark' && styles.modifiers.dark,
+            showLeftScrollButton && styles.modifiers.start,
+            showRightScrollButton && styles.modifiers.end,
+            className
+          )}
           aria-label={
             ariaLabel === ''
-              ? typeof childrenProps !== 'undefined' && childrenProps.variant === 'tertiary' ? 'Local' : 'Global'
+              ? typeof childrenProps !== 'undefined' && childrenProps.variant === 'tertiary'
+                ? 'Local'
+                : 'Global'
               : ariaLabel
           }
-          {...ouiaContext.isOuia && {
+          {...(ouiaContext.isOuia && {
             'data-ouia-component-type': 'Nav',
             'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-          }}
+          })}
           {...props}
         >
           {children}
@@ -122,6 +156,5 @@ class Nav extends React.Component<NavProps & InjectedOuiaProps> {
   }
 }
 
-
 const NavWithOuiaContext = withOuiaContext(Nav);
-export { NavWithOuiaContext as Nav }; 
+export { NavWithOuiaContext as Nav };

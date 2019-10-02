@@ -19,7 +19,7 @@ class ToolbarFind extends React.Component {
     if (keyEvent.key === 'Enter' && onEnter) {
       onEnter(currentValue);
     }
-  }
+  };
 
   handleFindNext = () => {
     const { currentValue } = this.state;
@@ -28,7 +28,7 @@ class ToolbarFind extends React.Component {
     if (onFindNext) {
       onFindNext(currentValue);
     }
-  }
+  };
 
   handleFindPrevious = () => {
     const { currentValue } = this.state;
@@ -37,7 +37,7 @@ class ToolbarFind extends React.Component {
     if (onFindPrevious) {
       onFindPrevious(currentValue);
     }
-  }
+  };
 
   handleValueChange = event => {
     const { onChange } = this.props;
@@ -47,15 +47,15 @@ class ToolbarFind extends React.Component {
     if (onChange) {
       onChange(event.target.value);
     }
-  }
+  };
 
   hideDropdown = () => {
     this.setState({ dropdownShown: false });
-  }
+  };
 
   toggleDropdownShown = () => {
     this.setState(prevState => ({ dropdownShown: !prevState.dropdownShown }));
-  }
+  };
 
   renderCounts() {
     const { currentValue } = this.state;

@@ -52,13 +52,13 @@ class MockFilterSidePanelExample extends React.Component {
     const showAllCategories = { ...this.state.showAllCategories };
     showAllCategories[id] = !showAllCategories[id];
     this.setState({ showAllCategories });
-  }
+  };
 
   onFilterChange = (id, value) => {
     const activeFilters = { ...this.state.activeFilters };
     activeFilters[id] = value;
     this.setState({ activeFilters });
-  }
+  };
 
   getStars = count => {
     const stars = [];
@@ -73,7 +73,7 @@ class MockFilterSidePanelExample extends React.Component {
         {stars}
       </span>
     );
-  }
+  };
 
   render() {
     const { activeFilters, showAllCategories } = this.state;
@@ -259,7 +259,7 @@ class MockFilterSidePanelExample extends React.Component {
             checked={activeFilters.paymentDinersClub}
             onChange={e => this.onFilterChange('paymentDinersClub', e.target.checked)}
           >
-            {'Diner\'s Club'}
+            {"Diner's Club"}
           </FilterSidePanel.CategoryItem>
         </FilterSidePanel.Category>
         <FilterSidePanel.Category
@@ -301,7 +301,9 @@ class MockFilterSidePanelExample extends React.Component {
             count={8}
             checked={activeFilters.mileage10}
             onChange={e => this.onFilterChange('mileage10', e.target.checked)}
-          >{'< 20'}</FilterSidePanel.CategoryItem>
+          >
+            {'< 20'}
+          </FilterSidePanel.CategoryItem>
         </FilterSidePanel.Category>
         <FilterSidePanel.Category
           title="Rating"
