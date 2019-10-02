@@ -9,7 +9,7 @@ section: 'experimental'
 import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 import { Alert } from '@patternfly/react-core';
 
-<Alert variant="danger" title="Warning">
+<Alert variant="warning" title="Warning">
   Use this component at your own risk, it's currently under development and is subject
   to change.
 </Alert>
