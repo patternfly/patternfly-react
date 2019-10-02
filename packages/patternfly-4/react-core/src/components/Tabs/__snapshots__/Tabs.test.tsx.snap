@@ -107,7 +107,6 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
               className="pf-c-tabs__button"
               id="pf-tab-0-tab1"
               onClick={[Function]}
-              title="Tab item 1"
             >
               <TabContainer
                 aria-controls="pf-tab-section-0-tab1"
@@ -115,14 +114,12 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
                 forwardRef={null}
                 id="pf-tab-0-tab1"
                 onClick={[Function]}
-                title="Tab item 1"
               >
                 <TabButtonWithRef
                   aria-controls="pf-tab-section-0-tab1"
                   className="pf-c-tabs__button"
                   id="pf-tab-0-tab1"
                   onClick={[Function]}
-                  title="Tab item 1"
                 >
                   <button
                     aria-controls="pf-tab-section-0-tab1"
@@ -145,7 +142,6 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
               className="pf-c-tabs__button"
               id="pf-tab-1-tab2"
               onClick={[Function]}
-              title="Tab item 2"
             >
               <TabContainer
                 aria-controls="pf-tab-section-1-tab2"
@@ -153,14 +149,12 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
                 forwardRef={null}
                 id="pf-tab-1-tab2"
                 onClick={[Function]}
-                title="Tab item 2"
               >
                 <TabButtonWithRef
                   aria-controls="pf-tab-section-1-tab2"
                   className="pf-c-tabs__button"
                   id="pf-tab-1-tab2"
                   onClick={[Function]}
-                  title="Tab item 2"
                 >
                   <button
                     aria-controls="pf-tab-section-1-tab2"
@@ -183,7 +177,6 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
               className="pf-c-tabs__button"
               id="pf-tab-2-tab3"
               onClick={[Function]}
-              title="Tab item 3"
             >
               <TabContainer
                 aria-controls="pf-tab-section-2-tab3"
@@ -191,14 +184,12 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
                 forwardRef={null}
                 id="pf-tab-2-tab3"
                 onClick={[Function]}
-                title="Tab item 3"
               >
                 <TabButtonWithRef
                   aria-controls="pf-tab-section-2-tab3"
                   className="pf-c-tabs__button"
                   id="pf-tab-2-tab3"
                   onClick={[Function]}
-                  title="Tab item 3"
                 >
                   <button
                     aria-controls="pf-tab-section-2-tab3"
@@ -478,7 +469,6 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
               className="pf-c-tabs__button"
               id="pf-tab-0-tab1"
               onClick={[Function]}
-              title="Tab item 1"
             >
               <TabContainer
                 aria-controls="pf-tab-section-0-tab1"
@@ -486,14 +476,12 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
                 forwardRef={null}
                 id="pf-tab-0-tab1"
                 onClick={[Function]}
-                title="Tab item 1"
               >
                 <TabButtonWithRef
                   aria-controls="pf-tab-section-0-tab1"
                   className="pf-c-tabs__button"
                   id="pf-tab-0-tab1"
                   onClick={[Function]}
-                  title="Tab item 1"
                 >
                   <button
                     aria-controls="pf-tab-section-0-tab1"
@@ -516,7 +504,6 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
               className="pf-c-tabs__button"
               id="pf-tab-1-tab2"
               onClick={[Function]}
-              title="Tab item 2"
             >
               <TabContainer
                 aria-controls="pf-tab-section-1-tab2"
@@ -524,14 +511,12 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
                 forwardRef={null}
                 id="pf-tab-1-tab2"
                 onClick={[Function]}
-                title="Tab item 2"
               >
                 <TabButtonWithRef
                   aria-controls="pf-tab-section-1-tab2"
                   className="pf-c-tabs__button"
                   id="pf-tab-1-tab2"
                   onClick={[Function]}
-                  title="Tab item 2"
                 >
                   <button
                     aria-controls="pf-tab-section-1-tab2"
@@ -554,7 +539,6 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
               className="pf-c-tabs__button"
               id="pf-tab-2-tab3"
               onClick={[Function]}
-              title="Tab item 3"
             >
               <TabContainer
                 aria-controls="pf-tab-section-2-tab3"
@@ -562,14 +546,12 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
                 forwardRef={null}
                 id="pf-tab-2-tab3"
                 onClick={[Function]}
-                title="Tab item 3"
               >
                 <TabButtonWithRef
                   aria-controls="pf-tab-section-2-tab3"
                   className="pf-c-tabs__button"
                   id="pf-tab-2-tab3"
                   onClick={[Function]}
-                  title="Tab item 3"
                 >
                   <button
                     aria-controls="pf-tab-section-2-tab3"
@@ -849,7 +831,6 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
               className="pf-c-tabs__button"
               id="pf-tab-0-tab1"
               onClick={[Function]}
-              title="Tab item 1"
             >
               <TabContainer
                 aria-controls="pf-tab-section-0-tab1"
@@ -857,14 +838,12 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
                 forwardRef={null}
                 id="pf-tab-0-tab1"
                 onClick={[Function]}
-                title="Tab item 1"
               >
                 <TabButtonWithRef
                   aria-controls="pf-tab-section-0-tab1"
                   className="pf-c-tabs__button"
                   id="pf-tab-0-tab1"
                   onClick={[Function]}
-                  title="Tab item 1"
                 >
                   <button
                     aria-controls="pf-tab-section-0-tab1"
@@ -887,7 +866,6 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
               className="pf-c-tabs__button"
               id="pf-tab-1-tab2"
               onClick={[Function]}
-              title="Tab item 2"
             >
               <TabContainer
                 aria-controls="pf-tab-section-1-tab2"
@@ -895,14 +873,12 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
                 forwardRef={null}
                 id="pf-tab-1-tab2"
                 onClick={[Function]}
-                title="Tab item 2"
               >
                 <TabButtonWithRef
                   aria-controls="pf-tab-section-1-tab2"
                   className="pf-c-tabs__button"
                   id="pf-tab-1-tab2"
                   onClick={[Function]}
-                  title="Tab item 2"
                 >
                   <button
                     aria-controls="pf-tab-section-1-tab2"
@@ -925,7 +901,6 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
               className="pf-c-tabs__button"
               id="pf-tab-2-tab3"
               onClick={[Function]}
-              title="Tab item 3"
             >
               <TabContainer
                 aria-controls="pf-tab-section-2-tab3"
@@ -933,14 +908,12 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
                 forwardRef={null}
                 id="pf-tab-2-tab3"
                 onClick={[Function]}
-                title="Tab item 3"
               >
                 <TabButtonWithRef
                   aria-controls="pf-tab-section-2-tab3"
                   className="pf-c-tabs__button"
                   id="pf-tab-2-tab3"
                   onClick={[Function]}
-                  title="Tab item 3"
                 >
                   <button
                     aria-controls="pf-tab-section-2-tab3"
