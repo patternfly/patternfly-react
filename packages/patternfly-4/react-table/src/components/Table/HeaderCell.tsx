@@ -9,6 +9,7 @@ export interface HeaderCellProps {
   isVisible?: boolean;
   scope?: string;
   textCenter?: boolean;
+  dataLabel?: string;
 }
 
 export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
@@ -17,6 +18,7 @@ export const HeaderCell: React.FunctionComponent<HeaderCellProps> = ({
   isVisible,
   scope = '',
   textCenter = false,
+  dataLabel = '',
   ...props
 }: HeaderCellProps ) => {
   const Component = component as any;

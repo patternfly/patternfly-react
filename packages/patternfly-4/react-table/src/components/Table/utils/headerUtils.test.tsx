@@ -171,6 +171,16 @@ describe('headerUtils', () => {
         expect(result[0].cell.formatters.find((formatter) => formatter.name === 'testFunc')).toBeDefined();
         expect(result[0].cell.transforms.find((transform) => transform.name === 'testFunc')).toBeDefined();
       });
+
+      describe('custom dataLabel', () => {
+        const cells = [{ title: 'expanded first', dataLabel: 'compact first' }, { title: 'expanded second'}] as ICell[];
+        const mixed = calculateColumns(cells, {});
+        cells.forEach((oneCell: ICell, key) => {
+          test(`${oneCell}`, () => {
+            expect(mixed[key].props['data-label']).toBe(oneCell.dataLabel ||oneCell.title);
+          });
+        });
+      });
     });
   });
 
