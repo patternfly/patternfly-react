@@ -121,7 +121,7 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-## App launcher disabled
+## Application launcher disabled
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
@@ -170,7 +170,7 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-## App launcher align right
+## Application launcher align right
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
@@ -222,7 +222,7 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-## App launcher top
+## Application launcher top
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
@@ -272,7 +272,7 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-## App launcher with tooltip
+## Application launcher with tooltip
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
@@ -338,7 +338,7 @@ class TooltipApplicationLauncher extends React.Component {
 }
 ```
 
-## App launcher w/ sections and icons
+## Application launcher w/ sections and icons
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherIcon, ApplicationLauncherText, ApplicationLauncherItem, ApplicationLauncherGroup, ApplicationLauncherSeparator } from '@patternfly/react-core';
@@ -395,7 +395,7 @@ class ApplicationLauncherSections extends React.Component {
 }
 ```
 
-## App launcher w/ custom icon
+## Application launcher w/ custom icon
 ```js
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';

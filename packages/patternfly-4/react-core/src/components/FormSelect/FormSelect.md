@@ -1,5 +1,5 @@
 ---
-title: 'FormSelect'
+title: 'Form select'
 cssPrefix: 'pf-c-form-control'
 typescript: true
 propComponents: ['FormSelect', 'FormSelectOption', 'FormSelectOptionGroup']
