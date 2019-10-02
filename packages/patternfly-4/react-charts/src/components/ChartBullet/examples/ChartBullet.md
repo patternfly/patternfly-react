@@ -11,9 +11,7 @@ import './chart-bullet.scss';
 
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
-
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
-
 
 Learn to build a bullet chart using a Katacoda tutorial starting with a simple chart, adding qualitative ranges, primary comparative measures, a comparative warning measure, tooltips, labels, a legend, and concluding by changing the theme color. You'll learn how to use React chart components together to build a consistent user experience.
 
@@ -81,7 +79,7 @@ import { ChartBullet } from '@patternfly/react-charts';
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
-class MultiColorChart extends React.Component {
+class BulletChart extends React.Component {
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
@@ -864,52 +862,6 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
     </ChartContainer>
   </div>
 </div>
-```
-
-## Bullet chart with custom tooltip
-This demonstrates an alternate way of applying a custom tooltip for the entire chart
-```js
-import React from 'react';
-import { ChartBullet } from '@patternfly/react-charts';
-import { Button, Tooltip } from '@patternfly/react-core';
-
-class TooltipChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isVisible: false
-    };
-    this.showTooltip = () => {
-      this.setState({ isVisible: true });
-    };
-  }
-
-  render() {
-    const { isVisible } = this.state;
-
-    return (
-      <div>
-        <div className="bullet-chart-horz">
-          <Tooltip content={<div>My custom tooltip</div>} isVisible={isVisible} position={TooltipPosition.right} trigger="manual">
-            <ChartBullet
-              allowTooltip={false}
-              ariaDesc="Storage capacity"
-              ariaTitle="Bullet chart example"
-              comparativeWarningMeasureData={[{ name: 'Warning', y: 88 }]}
-              height={150}
-              labels={() => null}
-              maxDomain={{y: 100}}
-              primarySegmentedMeasureData={[{ name: 'Measure', y: 60 }]}
-              qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
-              width={600}
-            />
-          </Tooltip>
-        </div>
-        <Button onClick={this.showTooltip}>Show Tooltip</Button>
-      </div>
-    );
-  }
-}
 ```
 
 ## Tips
