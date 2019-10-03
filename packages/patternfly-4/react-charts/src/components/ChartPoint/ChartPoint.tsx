@@ -1,6 +1,7 @@
 import * as React from 'react';
+import hoistNonReactStatics from 'hoist-non-react-statics';
 import { Helpers, Path } from 'victory-core';
-import { PathHelpers } from './path-helpers';
+import { PathHelpers, PathHelpersInterface } from './path-helpers';
 
 export interface ChartPointProps {
   /**
@@ -23,6 +24,10 @@ export interface ChartPointProps {
    * The data point corresponding to this point
    */
   datum?: any;
+  /**
+   * Specifies the description of the point to assist with accessibility for screen readers
+   */
+  desc?: string | Function;
   /**
    * Events to attach to the rendered element
    */
@@ -88,6 +93,10 @@ export interface ChartPointProps {
     | 'threshold'
     | Function;
   /**
+   * Specifies the tab index
+   */
+  tabIndex?: number | Function;
+  /**
    * A transform that will be supplied to elements this component renders
    */
   transform?: string;
@@ -101,49 +110,68 @@ export interface ChartPointProps {
   y?: number;
 }
 
+const getPath = (props: ChartPointProps) => {
+  const { x, y } = props;
+  const size = Helpers.evaluateProp(props.size, props);
+  if (props.getPath) {
+    return props.getPath(x, y, size);
+  }
+  const pathFunctions = {
+    circle: PathHelpers.circle,
+    square: PathHelpers.square,
+    diamond: PathHelpers.diamond,
+    triangleDown: PathHelpers.triangleDown,
+    triangleUp: PathHelpers.triangleUp,
+    plus: PathHelpers.plus,
+    minus: PathHelpers.minus,
+    star: PathHelpers.star,
+    dash: PathHelpers.dash,
+    threshold: PathHelpers.threshold
+  };
+  const symbol = Helpers.evaluateProp(props.symbol, props);
+  const key: (keyof PathHelpersInterface) = symbol;
+  const symbolFunction = typeof pathFunctions[key] === 'function' ? pathFunctions[key] : pathFunctions.square;
+  return symbolFunction(x, y, size);
+};
+
 export const ChartPoint: React.FunctionComponent<ChartPointProps> = ({
   active,
   className,
   clipPath,
   datum,
+  desc,
   events,
   pathComponent = <Path />,
-  role,
-  shapeRendering,
+  role = 'presentation',
+  shapeRendering = 'auto',
+  tabIndex,
   transform,
   ...rest
 }: ChartPointProps) => {
-  const getPath = (props: ChartPointProps) => {
-    const { datum, active, x, y } = props;
-    const size = Helpers.evaluateProp(props.size, datum, active);
-    if (props.getPath) {
-      return props.getPath(x, y, size);
-    }
-    const pathFunctions: any = {
-      circle: PathHelpers.circle,
-      square: PathHelpers.square,
-      diamond: PathHelpers.diamond,
-      triangleDown: PathHelpers.triangleDown,
-      triangleUp: PathHelpers.triangleUp,
-      plus: PathHelpers.plus,
-      minus: PathHelpers.minus,
-      star: PathHelpers.star,
-      dash: PathHelpers.dash,
-      threshold: PathHelpers.threshold
-    };
-    const symbol = Helpers.evaluateProp(props.symbol, datum, active);
-    const symbolFunction = typeof pathFunctions[symbol] === 'function' ? pathFunctions[symbol] : pathFunctions.circle;
-    return symbolFunction(x, y, size);
+  const props = {
+    active,
+    className,
+    clipPath,
+    datum,
+    desc,
+    events,
+    role,
+    shapeRendering,
+    tabIndex,
+    transform,
+    ...rest
   };
 
   return React.cloneElement(pathComponent, {
     className,
     clipPath,
-    d: getPath({ datum, active, ...rest }),
-    events,
+    d: getPath(props),
+    desc: Helpers.evaluateProp(desc, props),
+    ...events,
     role,
     shapeRendering,
-    style: Helpers.evaluateStyle(rest.style, datum, active),
+    style: Helpers.evaluateStyle(rest.style, props),
+    tabIndex: Helpers.evaluateProp(tabIndex, props),
     transform
   });
 };

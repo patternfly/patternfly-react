@@ -104,7 +104,6 @@ class BulletChart extends React.Component {
 
   render() {
     const { width } = this.state;
-    const itemsPerRow = width > 650 ? 5 : width > 550 ? 4 : width > 450 ? 3 : 2;
     return (
       <div ref={this.containerRef}>
         <div className="bullet-chart-horz-responsive-legend-bottom">
@@ -116,7 +115,7 @@ class BulletChart extends React.Component {
             constrainToVisibleArea
             height={250}
             labels={({ datum }) => `${datum.name}: ${datum.y}`}
-            legendItemsPerRow={itemsPerRow}
+            legendAllowWrap={true}
             legendPosition="bottom-left"
             maxDomain={{y: 100}}
             padding={{
