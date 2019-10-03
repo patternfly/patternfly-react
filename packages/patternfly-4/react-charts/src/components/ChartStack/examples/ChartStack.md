@@ -10,9 +10,7 @@ import './chart-stack.scss';
 
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
-
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
-
 
 Learn to build a stack chart using a Katacoda tutorial starting with a simple chart, adding multiple datasets, tooltips, axis labels, a legend, and concluding by changing the theme color. You'll learn how to use React chart components together to build a consistent user experience.
 
@@ -390,6 +388,5 @@ components used in the examples above, Victory pass-thru props are also document
  - For `ChartArea` props, see <a href="https://formidable.com/open-source/victory/docs/victory-area" target="_blank">VictoryArea</a>
  - For `ChartAxis` props, see <a href="https://formidable.com/open-source/victory/docs/victory-axis" target="_blank">VictoryAxis</a>
  - For `ChartBar` props, see <a href="https://formidable.com/open-source/victory/docs/victory-bar" target="_blank">VictoryBar</a>
- - For `ChartLegend` props, see <a href="https://formidable.com/open-source/victory/docs/victory-legend" target="_blank">VictoryLegend</a>
  - For `ChartStack` props, see <a href="https://formidable.com/open-source/victory/docs/victory-stack" target="_blank">VictoryStack</a>
  - For `ChartTooltip` props, see <a href="https://formidable.com/open-source/victory/docs/victory-tooltip" target="_blank">VictoryTooltip</a>
