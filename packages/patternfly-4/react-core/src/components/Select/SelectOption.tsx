@@ -16,6 +16,8 @@ export interface SelectOptionProps extends Omit<React.HTMLProps<HTMLElement>, 't
   className?: string;
   /** Internal index of the option */
   index?: number;
+  /** Indicates which component will be used as select item */
+  component?: React.ReactNode;
   /** The value for the option, if passing an object you most provide a toString function */
   value: string | SelectOptionObject;
   /** Flag indicating if the option is disabled */
@@ -47,6 +49,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
     isSelected: false,
     isChecked: false,
     isFocused: false,
+    component: 'button',
     onClick: Function.prototype,
     sendRef: Function.prototype,
     keyHandler: Function.prototype
@@ -91,15 +94,17 @@ export class SelectOption extends React.Component<SelectOptionProps> {
       sendRef,
       keyHandler,
       index,
+      component,
       ...props
     } = this.props;
+    const Component = component as any;
     return (
       <SelectConsumer>
         {({ onSelect, onClose, variant }) => (
           <React.Fragment>
             {variant !== SelectVariant.checkbox && (
               <li role="presentation">
-                <button
+                <Component
                   {...props}
                   className={css(
                     styles.selectMenuItem,
@@ -108,7 +113,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                     isFocused && styles.modifiers.focus,
                     className
                   )}
-                  onClick={event => {
+                  onClick={(event: any) => {
                     if (!isDisabled) {
                       onClick(event);
                       onSelect(event, value, isPlaceholder);
@@ -123,7 +128,7 @@ export class SelectOption extends React.Component<SelectOptionProps> {
                 >
                   {children || value.toString()}
                   {isSelected && <CheckIcon className={css(styles.selectMenuItemIcon)} aria-hidden />}
-                </button>
+                </Component>
               </li>
             )}
             {variant === SelectVariant.checkbox && (

@@ -991,6 +991,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                     >
                       <SelectOption
                         className=""
+                        component="button"
                         index={0}
                         isChecked=""
                         isDisabled={false}
@@ -1024,6 +1025,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       </SelectOption>
                       <SelectOption
                         className=""
+                        component="button"
                         index={1}
                         isChecked=""
                         isDisabled={false}
@@ -1057,6 +1059,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       </SelectOption>
                       <SelectOption
                         className=""
+                        component="button"
                         index={2}
                         isChecked=""
                         isDisabled={false}
@@ -1090,6 +1093,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       </SelectOption>
                       <SelectOption
                         className=""
+                        component="button"
                         index={3}
                         isChecked=""
                         isDisabled={false}
@@ -1145,6 +1149,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                     >
                       <SelectOption
                         className=""
+                        component="button"
                         index={4}
                         isChecked=""
                         isDisabled={false}
@@ -1178,6 +1183,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       </SelectOption>
                       <SelectOption
                         className=""
+                        component="button"
                         index={5}
                         isChecked=""
                         isDisabled={false}
@@ -1211,6 +1217,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       </SelectOption>
                       <SelectOption
                         className=""
+                        component="button"
                         index={6}
                         isChecked=""
                         isDisabled={false}
@@ -1244,6 +1251,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                       </SelectOption>
                       <SelectOption
                         className=""
+                        component="button"
                         index={7}
                         isChecked=""
                         isDisabled={false}
@@ -2241,6 +2249,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                 >
                   <SelectOption
                     className=""
+                    component="button"
                     index={0}
                     isChecked=""
                     isDisabled={false}
@@ -2274,6 +2283,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                   </SelectOption>
                   <SelectOption
                     className=""
+                    component="button"
                     index={1}
                     isChecked=""
                     isDisabled={false}
@@ -2307,6 +2317,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                   </SelectOption>
                   <SelectOption
                     className=""
+                    component="button"
                     index={2}
                     isChecked=""
                     isDisabled={false}
@@ -2340,6 +2351,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                   </SelectOption>
                   <SelectOption
                     className=""
+                    component="button"
                     index={3}
                     isChecked=""
                     isDisabled={false}
@@ -2634,6 +2646,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                 >
                   <SelectOption
                     className=""
+                    component="button"
                     index={0}
                     isChecked=""
                     isDisabled={false}
@@ -2674,6 +2687,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                   </SelectOption>
                   <SelectOption
                     className=""
+                    component="button"
                     index={1}
                     isChecked=""
                     isDisabled={false}
@@ -2714,6 +2728,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                   </SelectOption>
                   <SelectOption
                     className=""
+                    component="button"
                     index={2}
                     isChecked=""
                     isDisabled={false}
@@ -3007,6 +3022,7 @@ exports[`select custom select filter filters properly 1`] = `
       >
         <SelectOption
           className=""
+          component="button"
           id="Mr-0"
           index={0}
           isChecked={false}
@@ -3038,6 +3054,7 @@ exports[`select custom select filter filters properly 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Mrs-1"
           index={1}
           isChecked={false}
@@ -3069,6 +3086,7 @@ exports[`select custom select filter filters properly 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Other-2"
           index={2}
           isChecked={false}
@@ -3417,6 +3435,7 @@ exports[`select renders select groups successfully 1`] = `
             </div>
             <SelectOption
               className=""
+              component="button"
               index={0}
               isChecked={false}
               isDisabled={false}
@@ -3446,6 +3465,7 @@ exports[`select renders select groups successfully 1`] = `
             </SelectOption>
             <SelectOption
               className=""
+              component="button"
               index={0}
               isChecked={false}
               isDisabled={false}
@@ -3475,6 +3495,7 @@ exports[`select renders select groups successfully 1`] = `
             </SelectOption>
             <SelectOption
               className=""
+              component="button"
               index={0}
               isChecked={false}
               isDisabled={false}
@@ -3504,6 +3525,7 @@ exports[`select renders select groups successfully 1`] = `
             </SelectOption>
             <SelectOption
               className=""
+              component="button"
               index={0}
               isChecked={false}
               isDisabled={false}
@@ -3559,6 +3581,7 @@ exports[`select renders select groups successfully 1`] = `
             </div>
             <SelectOption
               className=""
+              component="button"
               index={0}
               isChecked={false}
               isDisabled={false}
@@ -3588,6 +3611,7 @@ exports[`select renders select groups successfully 1`] = `
             </SelectOption>
             <SelectOption
               className=""
+              component="button"
               index={0}
               isChecked={false}
               isDisabled={false}
@@ -3617,6 +3641,7 @@ exports[`select renders select groups successfully 1`] = `
             </SelectOption>
             <SelectOption
               className=""
+              component="button"
               index={0}
               isChecked={false}
               isDisabled={false}
@@ -3646,6 +3671,7 @@ exports[`select renders select groups successfully 1`] = `
             </SelectOption>
             <SelectOption
               className=""
+              component="button"
               index={0}
               isChecked={false}
               isDisabled={false}
@@ -4359,6 +4385,7 @@ exports[`select single select renders expanded successfully 1`] = `
       >
         <SelectOption
           className=""
+          component="button"
           id="Mr-0"
           index={0}
           isChecked={false}
@@ -4390,6 +4417,7 @@ exports[`select single select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Mrs-1"
           index={1}
           isChecked={false}
@@ -4421,6 +4449,7 @@ exports[`select single select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Ms-2"
           index={2}
           isChecked={false}
@@ -4452,6 +4481,7 @@ exports[`select single select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Other-3"
           index={3}
           isChecked={false}
@@ -4702,6 +4732,7 @@ exports[`select single select renders expanded successfully with custom objects 
       >
         <SelectOption
           className=""
+          component="button"
           id="Mr: User One-0"
           index={0}
           isChecked={false}
@@ -4740,6 +4771,7 @@ exports[`select single select renders expanded successfully with custom objects 
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Mrs: New User-1"
           index={1}
           isChecked={false}
@@ -4778,6 +4810,7 @@ exports[`select single select renders expanded successfully with custom objects 
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Ms: Test Three-2"
           index={2}
           isChecked={false}
@@ -5295,6 +5328,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       >
         <SelectOption
           className=""
+          component="button"
           id="Mr-0"
           index={0}
           isChecked={false}
@@ -5326,6 +5360,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Mrs-1"
           index={1}
           isChecked={false}
@@ -5357,6 +5392,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Ms-2"
           index={2}
           isChecked={false}
@@ -5388,6 +5424,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Other-3"
           index={3}
           isChecked={false}
@@ -6100,6 +6137,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
       >
         <SelectOption
           className=""
+          component="button"
           id="Mr-0"
           index={0}
           isChecked={false}
@@ -6160,6 +6198,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Mrs-1"
           index={1}
           isChecked={false}
@@ -6220,6 +6259,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Ms-2"
           index={2}
           isChecked={false}
@@ -6251,6 +6291,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Other-3"
           index={3}
           isChecked={false}
@@ -6505,6 +6546,7 @@ exports[`typeahead multi select test onChange 1`] = `
       >
         <SelectOption
           className=""
+          component="button"
           id="No results found-0"
           index={0}
           isChecked={false}
@@ -6973,6 +7015,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
       >
         <SelectOption
           className=""
+          component="button"
           id="Mr-0"
           index={0}
           isChecked={false}
@@ -7004,6 +7047,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Mrs-1"
           index={1}
           isChecked={false}
@@ -7035,6 +7079,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Ms-2"
           index={2}
           isChecked={false}
@@ -7066,6 +7111,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Other-3"
           index={3}
           isChecked={false}
@@ -7426,6 +7472,7 @@ exports[`typeahead select renders selected successfully 1`] = `
       >
         <SelectOption
           className=""
+          component="button"
           id="Mr-0"
           index={0}
           isChecked={false}
@@ -7486,6 +7533,7 @@ exports[`typeahead select renders selected successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Mrs-1"
           index={1}
           isChecked={false}
@@ -7517,6 +7565,7 @@ exports[`typeahead select renders selected successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Ms-2"
           index={2}
           isChecked={false}
@@ -7548,6 +7597,7 @@ exports[`typeahead select renders selected successfully 1`] = `
         </SelectOption>
         <SelectOption
           className=""
+          component="button"
           id="Other-3"
           index={3}
           isChecked={false}
@@ -7804,6 +7854,7 @@ exports[`typeahead select test creatable option 1`] = `
       >
         <SelectOption
           className=""
+          component="button"
           id="test-0"
           index={0}
           isChecked={false}
@@ -8061,6 +8112,7 @@ exports[`typeahead select test onChange 1`] = `
       >
         <SelectOption
           className=""
+          component="button"
           id="No results found-0"
           index={0}
           isChecked={false}

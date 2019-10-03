@@ -9,6 +9,7 @@ exports[`select options checked renders with checked successfully 1`] = `
 exports[`select options disabled renders disabled successfully 1`] = `
 <SelectOption
   className=""
+  component="button"
   index={0}
   isChecked={false}
   isDisabled={true}
@@ -64,9 +65,74 @@ exports[`select options is selected renders selected successfully 1`] = `
 </ContextConsumer>
 `;
 
+exports[`select options renders custom component 1`] = `
+<SelectOption
+  className=""
+  component="div"
+  index={0}
+  isChecked={false}
+  isDisabled={false}
+  isFocused={false}
+  isPlaceholder={false}
+  isSelected={false}
+  keyHandler={[Function]}
+  onClick={[Function]}
+  sendRef={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          <div
+            class="pf-c-select__menu-item"
+            role="option"
+            type="button"
+          >
+            <div>
+              test display
+            </div>
+          </div>,
+          0,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  value={
+    User {
+      "firstName": "Test",
+      "lastName": "User",
+      "title": "Mr.",
+      "toString": [Function],
+    }
+  }
+>
+  <li
+    role="presentation"
+  >
+    <div
+      aria-selected={null}
+      className="pf-c-select__menu-item"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="option"
+      type="button"
+    >
+      <div>
+        test display
+      </div>
+    </div>
+  </li>
+</SelectOption>
+`;
+
 exports[`select options renders with custom display and custom user object successfully 1`] = `
 <SelectOption
   className=""
+  component="button"
   index={0}
   isChecked={false}
   isDisabled={false}
@@ -130,6 +196,7 @@ exports[`select options renders with custom display and custom user object succe
 exports[`select options renders with custom display successfully 1`] = `
 <SelectOption
   className=""
+  component="button"
   index={0}
   isChecked={false}
   isDisabled={false}
@@ -186,6 +253,7 @@ exports[`select options renders with custom display successfully 1`] = `
 exports[`select options renders with custom user object successfully 1`] = `
 <SelectOption
   className=""
+  component="button"
   index={0}
   isChecked={false}
   isDisabled={false}
@@ -245,6 +313,7 @@ exports[`select options renders with custom user object successfully 1`] = `
 exports[`select options renders with value parameter successfully 1`] = `
 <SelectOption
   className=""
+  component="button"
   index={0}
   isChecked={false}
   isDisabled={false}

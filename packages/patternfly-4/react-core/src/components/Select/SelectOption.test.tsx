@@ -59,6 +59,17 @@ describe('select options', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('renders custom component', () => {
+    const view = mount(
+      <SelectProvider value={{ onSelect: () => {}, onClose: () => {}, variant: 'single' }}>
+        <SelectOption value={new User('Mr.', 'Test', 'User')} sendRef={jest.fn()} component="div">
+          <div>test display</div>
+        </SelectOption>
+      </SelectProvider>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
   describe('disabled', () => {
     test('renders disabled successfully', () => {
       const view = mount(
