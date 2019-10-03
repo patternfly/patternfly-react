@@ -7,6 +7,7 @@ import { AngleLeftIcon, AngleRightIcon } from '@patternfly/react-icons';
 import { getUniqueId, isElementInView, sideElementIsOutOfView } from '../../helpers/util';
 import { SIDE } from '../../helpers/constants';
 import { Tab } from './Tab';
+import { TabButton } from './TabButton';
 import { TabContent } from './TabContent';
 import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
@@ -250,21 +251,18 @@ class Tabs extends React.Component<TabsProps & InjectedOuiaProps, TabsState> {
                   key={index}
                   className={css(styles.tabsItem, eventKey === activeKey && styles.modifiers.current, className)}
                 >
-                  <Tab
+                  <TabButton
                     className={css(styles.tabsButton)}
                     onClick={(event: any) => this.handleTabClick(event, eventKey, tabContentRef, mountOnEnter)}
                     id={`pf-tab-${eventKey}-${childId || uniqueId}`}
                     aria-controls={
                       tabContentId ? `${tabContentId}` : `pf-tab-section-${eventKey}-${childId || uniqueId}`
                     }
-                    tabContentId={tabContentId}
                     tabContentRef={tabContentRef}
-                    eventKey={eventKey}
-                    title={title}
                     {...rest}
                   >
                     {title}
-                  </Tab>
+                  </TabButton>
                 </li>
               );
             })}
