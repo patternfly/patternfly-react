@@ -35,6 +35,7 @@ class ControlledRadio extends React.Component {
           onChange={this.handleChange}
           label="Controlled radio"
           id="radio-controlled"
+          value="check1"
         />
       </React.Fragment>
     );

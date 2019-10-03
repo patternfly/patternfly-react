@@ -14,6 +14,8 @@ export interface RadioProps
   /** Flag to show if the radio label is shown before the radio button. */
   isLabelBeforeButton?: boolean;
   /** Flag to show if the radio is checked. */
+  checked?: boolean;
+  /** Flag to show if the radio is checked. */
   isChecked?: boolean;
   /** Flag to show if the radio is disabled. */
   isDisabled?: boolean;
@@ -74,6 +76,7 @@ export class Radio extends React.Component<RadioProps> {
         aria-invalid={!isValid}
         disabled={isDisabled}
         defaultChecked={checked || isChecked}
+        checked={checked || isChecked}
         {...(!isChecked && { defaultChecked })}
         {...(!label && { 'aria-label': ariaLabel })}
       />
