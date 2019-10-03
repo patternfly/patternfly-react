@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.112.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.112.8...@patternfly/react-core@3.112.9) (2019-10-03)
+
+
+### Bug Fixes
+
+* **Radio:** pass checked either from isChecked or checked ([#3066](https://github.com/patternfly/patternfly-react/issues/3066)) ([51c59fb](https://github.com/patternfly/patternfly-react/commit/51c59fb))
+
+
+
+
+
 ## [3.112.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.112.7...@patternfly/react-core@3.112.8) (2019-10-03)
 
 **Note:** Version bump only for package @patternfly/react-core
