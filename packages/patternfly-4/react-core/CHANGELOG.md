@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.112.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.112.6...@patternfly/react-core@3.112.7) (2019-10-03)
+
+
+### Bug Fixes
+
+* **radio:** align radio examples to pf4-core ([#2684](https://github.com/patternfly/patternfly-react/issues/2684)) ([de22a80](https://github.com/patternfly/patternfly-react/commit/de22a80))
+
+
+
+
+
 ## [3.112.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.112.5...@patternfly/react-core@3.112.6) (2019-10-03)
 
 **Note:** Version bump only for package @patternfly/react-core
