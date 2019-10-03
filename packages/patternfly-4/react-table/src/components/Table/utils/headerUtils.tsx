@@ -80,7 +80,7 @@ const generateCell = (
 /**
  * Function to map custom simple object properties to expected format with property, header, cell, extra params
  * and props.
- * @param {*} column to be shown in header - either string or object with title, transformers and formatters (for cels as well).
+ * @param {*} column to be shown in header - either string or object with title, transformers and formatters (for cells as well).
  * @param {*} extra additional object with callbacks for specific formatters.
  * @param {*} key cell key to be shown in data-key.
  * @param {*} props additional props for each cell.
@@ -88,6 +88,7 @@ const generateCell = (
  */
 const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
   const title = (column.hasOwnProperty('title') ? column.title : column) as string | ICell;
+  const dataLabel = (column.hasOwnProperty('dataLabel') ? column.dataLabel : typeof title === 'string' ? title : `column-${key}`) as string | ICell;
   return {
     property:
       (typeof title === 'string' &&
@@ -101,7 +102,7 @@ const mapHeader = (column: ICell, extra: any, key: number, ...props: any) => {
     header: generateHeader(column, title),
     cell: generateCell(column, extra),
     props: {
-      'data-label': typeof title === 'string' ? title : `column-${key}`,
+      'data-label': dataLabel,
       'data-key': key,
       ...(column.hasOwnProperty('props') ? column.props : {}),
       ...props

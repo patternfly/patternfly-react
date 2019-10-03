@@ -159,6 +159,7 @@ export interface ICell {
   data?: any;
   header?: any;
   cell?: any;
+  dataLabel?: string;
 }
 
 export interface IRowCell {
