@@ -167,7 +167,6 @@ export class Tooltip extends React.Component<TooltipProps> {
         performance
         placement={position}
         trigger={trigger}
-        isContentLeftAligned={isContentLeftAligned}
         delay={[entryDelay, exitDelay]}
         distance={distance}
         flip={enableFlip}

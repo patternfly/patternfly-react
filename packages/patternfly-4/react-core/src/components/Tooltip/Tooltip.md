@@ -28,7 +28,7 @@ import React from 'react';
 import { Tooltip, TooltipPosition } from '@patternfly/react-core';
 
 <Tooltip
-  isTextLeftAligned
+  isContentLeftAligned
   content={
     <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
   }
