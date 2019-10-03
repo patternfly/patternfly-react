@@ -9,6 +9,10 @@ export interface RadioProps
   className?: string;
   /** Id of the radio. */
   id: string;
+  /** Flag to show if the radio label is wrapped on small screen. */
+  isLabelWrapped?: boolean;
+  /** Flag to show if the radio label is shown before the radio button. */
+  isLabelBeforeButton?: boolean;
   /** Flag to show if the radio is checked. */
   isChecked?: boolean;
   /** Flag to show if the radio is disabled. */
@@ -51,6 +55,8 @@ export class Radio extends React.Component<RadioProps> {
       checked,
       className,
       defaultChecked,
+      isLabelWrapped,
+      isLabelBeforeButton,
       isChecked,
       isDisabled,
       isValid,
@@ -58,28 +64,48 @@ export class Radio extends React.Component<RadioProps> {
       onChange,
       ...props
     } = this.props;
-    return (
-      <div className={css(styles.radio, className)}>
-        <input
-          {...props}
-          className={css(styles.radioInput)}
-          type="radio"
-          onChange={this.handleChange}
-          aria-invalid={!isValid}
-          disabled={isDisabled}
-          defaultChecked={checked || isChecked}
-          {...(!isChecked && { defaultChecked })}
-          {...(!label && { 'aria-label': ariaLabel })}
-        />
-        {label && (
-          <label
-            className={css(styles.radioLabel, getModifier(styles, isDisabled && ('disabled' as any)))}
-            htmlFor={props.id}
-          >
-            {label}
-          </label>
-        )}
-      </div>
+
+    const inputRendered = (
+      <input
+        {...props}
+        className={css(styles.radioInput)}
+        type="radio"
+        onChange={this.handleChange}
+        aria-invalid={!isValid}
+        disabled={isDisabled}
+        defaultChecked={checked || isChecked}
+        {...(!isChecked && { defaultChecked })}
+        {...(!label && { 'aria-label': ariaLabel })}
+      />
+    );
+    const labelRendered = !label ? null : isLabelWrapped ? (
+      <span className={css(styles.radioLabel, getModifier(styles, isDisabled && ('disabled' as any)))}>{label}</span>
+    ) : (
+      <label
+        className={css(styles.radioLabel, getModifier(styles, isDisabled && ('disabled' as any)))}
+        htmlFor={props.id}
+      >
+        {label}
+      </label>
+    );
+    const childrenRendered = isLabelBeforeButton ? (
+      <>
+        {labelRendered}
+        {inputRendered}
+      </>
+    ) : (
+      <>
+        {inputRendered}
+        {labelRendered}
+      </>
+    );
+
+    return isLabelWrapped ? (
+      <label className={css(styles.radio, className)} htmlFor={props.id}>
+        {childrenRendered}
+      </label>
+    ) : (
+      <div className={css(styles.radio, className)}>{childrenRendered}</div>
     );
   }
 }
