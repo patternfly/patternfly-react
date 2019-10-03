@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.22.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.22.21...@patternfly/react-table@2.22.22) (2019-10-03)
+
+
+### Bug Fixes
+
+* **table:** dataLabel prop allows for customized data-label on header ([#3040](https://github.com/patternfly/patternfly-react/issues/3040)) ([79a8249](https://github.com/patternfly/patternfly-react/commit/79a8249)), closes [#2941](https://github.com/patternfly/patternfly-react/issues/2941)
+
+
+
+
+
 ## [2.22.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.22.20...@patternfly/react-table@2.22.21) (2019-10-02)
 
 **Note:** Version bump only for package @patternfly/react-table
