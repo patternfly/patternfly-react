@@ -21,7 +21,7 @@ import './chart-area.scss';
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
 
-PatternFly React charts are based on the [Victory chart](https://formidable.com/open-source/victory/docs/victory-chart/) library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
+PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
 
 Learn to build an area chart using a Katacoda tutorial starting with a simple chart, adding multiple datasets, tooltips, axis labels, a legend, and concluding by changing the theme color. You'll learn how to use React chart components together to build a consistent user experience.
@@ -237,140 +237,6 @@ class MultiColorChart extends React.Component {
                   { name: 'Birds', x: '2019', y: 4 }
                 ]}
                 interpolation="basis"
-              />
-            </ChartGroup>
-          </Chart>
-        </div>
-      </div>
-    );
-  }
-}
-```
-
-## Multi-color chart with threshold indicators and responsive container
-
-```js
-import React from 'react';
-import {
-  Chart,
-  ChartArea,
-  ChartAxis,
-  ChartLegend,
-  ChartGroup,
-  ChartThreshold,
-  ChartThemeColor,
-  ChartThemeVariant
-} from '@patternfly/react-charts';
-
-class MultiColorChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.containerRef = React.createRef();
-    this.state = {
-      width: 0
-    };
-    this.handleResize = () => {
-      if (this.containerRef.current && this.containerRef.current.clientWidth) {
-        this.setState({ width: this.containerRef.current.clientWidth });
-      }
-    };
-  }
-
-  componentDidMount() {
-    this.handleResize();
-    window.addEventListener('resize', this.handleResize);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-  }
-
-  render() {
-    const { width } = this.state;
-    const itemsPerRow = width > 650 ? 4 : 2;
-
-    return (
-      <div ref={this.containerRef}>
-        <div className="area-chart-threshold-bottom-responsive">
-          <Chart
-            ariaDesc="Average number of pets"
-            ariaTitle="Area chart example"
-            containerComponent={
-              <ChartVoronoiContainer
-                labels={({ datum }) => `${datum.name}: ${datum.y}`}
-                constrainToVisibleArea
-              />
-            }
-            legendPosition="bottom-left"
-            legendComponent={
-              <ChartLegend
-                data={[
-                  { name: 'Cats' },
-                  { name: 'Birds' },
-                  {
-                    name: 'Cats Threshold',
-                    symbol: { fill: ChartThemeColor.blue, type: 'threshold' }
-                  },
-                  {
-                    name: 'Birds Threshold',
-                    symbol: { fill: ChartThemeColor.orange, type: 'threshold' }
-                  }
-                ]}
-                itemsPerRow={itemsPerRow}
-              />
-            }
-            height={250}
-            padding={{
-              bottom: 100, // Adjusted to accomodate legend
-              left: 50,
-              right: 50,
-              top: 50
-            }}
-            maxDomain={{ y: 9 }}
-            themeColor={ChartThemeColor.multiUnordered}
-            width={width}
-          >
-            <ChartAxis />
-            <ChartAxis dependentAxis showGrid />
-            <ChartGroup>
-              <ChartArea
-                data={[
-                  { name: 'Cats', x: 1, y: 3 },
-                  { name: 'Cats', x: 2, y: 4 },
-                  { name: 'Cats', x: 3, y: 8 },
-                  { name: 'Cats', x: 4, y: 6 }
-                ]}
-                interpolation="basis"
-              />
-              <ChartArea
-                data={[
-                  { name: 'Birds', x: 1, y: 2 },
-                  { name: 'Birds', x: 2, y: 3 },
-                  { name: 'Birds', x: 3, y: 4 },
-                  { name: 'Birds', x: 4, y: 5 },
-                  { name: 'Birds', x: 5, y: 6 }
-                ]}
-                interpolation="basis"
-              />
-              <ChartThreshold
-                data={[
-                  { name: 'Cats Threshold', x: 0, y: 4 },
-                  { name: 'Cats Threshold', x: 3, y: 4 },
-                  { name: 'Cats Threshold', x: 3, y: 6 },
-                  { name: 'Cats Threshold', x: 5, y: 6 }
-                ]}
-                themeColor={ChartThemeColor.blue}
-                themeVariant={ChartThemeVariant.light}
-              />
-              <ChartThreshold
-                data={[
-                  { name: 'Birds Threshold', x: 0, y: 2 },
-                  { name: 'Birds Threshold', x: 2, y: 2 },
-                  { name: 'Birds Threshold', x: 2, y: 3 },
-                  { name: 'Birds Threshold', x: 5, y: 3 }
-                ]}
-                themeColor={ChartThemeColor.orange}
-                themeVariant={ChartThemeVariant.light}
               />
             </ChartGroup>
           </Chart>
