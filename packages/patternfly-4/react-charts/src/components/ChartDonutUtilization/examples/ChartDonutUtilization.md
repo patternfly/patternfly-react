@@ -210,7 +210,6 @@ class UtilizationChart extends React.Component {
             subTitle="of 100 GBps"
             title={`${used}%`}
             themeColor={ChartThemeColor.green}
-            themeVariant={ChartThemeVariant.light}
             thresholds={[{ value: 60 }, { value: 90 }]}
             width={230}
           />
@@ -456,7 +455,6 @@ class ThresholdChart extends React.Component {
               subTitle="of 100 GBps"
               title={`${used}%`}
               themeColor={ChartThemeColor.green}
-              themeVariant={ChartThemeVariant.light}
               thresholds={[{ value: 60 }, { value: 90 }]}
             />
           </ChartDonutThreshold>

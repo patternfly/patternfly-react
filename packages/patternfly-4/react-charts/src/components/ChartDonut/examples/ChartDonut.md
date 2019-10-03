@@ -91,7 +91,6 @@ import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/reac
       subTitle="Pets"
       title="100"
       themeColor={ChartThemeColor.multiOrdered}
-      themeVariant={ChartThemeVariant.light}
       width={350}
     />
   </div>

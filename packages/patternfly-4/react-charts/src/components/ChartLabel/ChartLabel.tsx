@@ -1,7 +1,13 @@
 import * as React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import { defaults } from 'lodash';
-import { StringOrNumberOrCallback, VictoryLabel, VictoryLabelProps } from 'victory';
+import {
+  StringOrNumberOrCallback,
+  TextAnchorType,
+  VerticalAnchorType,
+  VictoryLabel,
+  VictoryLabelProps
+} from 'victory';
 import { ChartCommonStyles } from '../ChartTheme';
 
 export enum ChartLabelDirection {
@@ -15,8 +21,6 @@ export enum ChartLabelPlacement {
   perpendicular = 'perpendicular',
   vertical = 'vertical'
 }
-
-type TextAnchorType = 'start' | 'middle' | 'end' | 'inherit';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -135,19 +139,16 @@ export interface ChartLabelProps extends VictoryLabelProps {
   /**
    * The textAnchor prop defines how the text is horizontally positioned relative to the given `x` and `y` coordinates.
    */
-  // Todo: function not working as type
-  // textAnchor?: TextAnchorType | { (): TextAnchorType };
+  textAnchor?: TextAnchorType | (() => TextAnchorType);
   /**
    * The transform prop applies a transform to the rendered `<text>` element.
    * In addition to being a string, it can be an object containing transform definitions for easier authoring.
    */
-  // Todo: function not working as type
-  // transform?: string | {} | { (): string | {} };
+  transform?: string | {} | (() => string);
   /**
    * The verticalAnchor prop defines how the text is vertically positioned relative to the given `x` and `y` coordinates
    */
-  // Todo: function not working as type
-  // verticalAnchor?: VerticalAnchorType | { (): VerticalAnchorType };
+  verticalAnchor?: VerticalAnchorType | (() => VerticalAnchorType);
   /**
    * The x prop defines the x coordinate to use as a basis for horizontal positioning.
    */

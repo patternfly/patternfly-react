@@ -89,6 +89,9 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, Cha
 ## Tips
 
 - For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
+- Use `ChartGroup` in place of `Chart` when an axis and labels are not desired
+- Themes are inherited, so a default theme may override `themeColor` for a child component
+- The `theme` and `themeColor` props should be applied at the most top level component
 
 ## Docs
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 

@@ -249,6 +249,9 @@ class MultiColorChart extends React.Component {
 
 - For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
 - `ChartLegend` may be used as a standalone component, instead of using `legendData` and `legendPosition`
+- Use `ChartGroup` to apply color scales and other properties to multiple components
+- Themes are inherited, so a default theme may override `themeColor` for a child component
+- The `theme` and `themeColor` props should be applied at the most top level component
 
 ## Docs
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
