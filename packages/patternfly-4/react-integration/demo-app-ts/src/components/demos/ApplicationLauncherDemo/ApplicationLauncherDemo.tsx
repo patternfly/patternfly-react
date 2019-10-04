@@ -19,10 +19,9 @@ export class ApplicationLauncherDemo extends React.Component<null, ApplicationLa
       });
     };
     this.onSelect = event => {
-      console.log('This works');
-      this.setState({
-        isOpen: !this.state.isOpen
-      });
+      this.setState(prevState => ({
+        isOpen: !prevState.isOpen
+      }));
     };
   }
 
