@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.112.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.112.9...@patternfly/react-core@3.112.10) (2019-10-04)
+
+
+### Bug Fixes
+
+* **Select:** Allow custom components as select option ([#3064](https://github.com/patternfly/patternfly-react/issues/3064)) ([21a7d96](https://github.com/patternfly/patternfly-react/commit/21a7d96)), closes [#3060](https://github.com/patternfly/patternfly-react/issues/3060)
+
+
+
+
+
 ## [3.112.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.112.8...@patternfly/react-core@3.112.9) (2019-10-03)
 
 
