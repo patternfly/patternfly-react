@@ -158,26 +158,19 @@ class TooltipPieChart extends React.Component {
     super(props);
 
     // Custom legend label compoenent
-    this.LegendLabel = ({ content, ...rest }) => (
-      <Tooltip content={content(rest)} enableFlip>
+    this.LegendLabel = ({datum, ...rest}) => (
+      <Tooltip content={datum.name} enableFlip>
         <ChartLabel {...rest} />
       </Tooltip>
     );
 
     // Custom legend component
-    this.getLegend = (legendData) => {
-      return (
-        <ChartLegend
-          data={legendData}
-          labelComponent={<this.LegendLabel content={this.getLegendTooltip} />}
-        />
-      );
-    };
-
-    // Custom tooltip
-    this.getLegendTooltip = ({ datum }) => {
-      return datum.label;
-    };
+    this.getLegend = (legendData) => (
+      <ChartLegend
+        data={legendData}
+        labelComponent={<this.LegendLabel />}
+      />
+    );
   }
 
   render() {
@@ -192,9 +185,9 @@ class TooltipPieChart extends React.Component {
             height={275}
             labels={({ datum }) => `${datum.x}: ${datum.y}`}
             legendComponent={this.getLegend([
-              { name: 'Cats: 35', label: 'Cats: 35' }, 
-              { name: 'Dogs: 55', label: 'Dogs: 55' }, 
-              { name: 'Birds: 10', label: 'Birds: 10' }
+              { name: 'Cats: 35' }, 
+              { name: 'Dogs: 55' }, 
+              { name: 'Birds: 10' }
             ])}
             legendPosition="bottom"
             padding={{
