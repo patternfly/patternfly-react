@@ -266,7 +266,11 @@ export const TopologyControlBar: React.FunctionComponent<TopologyControlBarProps
     );
 
     if (button.tooltip) {
-      return <Tooltip content={button.tooltip}>{renderedButton}</Tooltip>;
+      return (
+        <Tooltip isContentLeftAligned={Tooltip.defaultProps.isContentLeftAligned} content={button.tooltip}>
+          {renderedButton}
+        </Tooltip>
+      );
     }
 
     return renderedButton;
