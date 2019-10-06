@@ -53,6 +53,8 @@ import {
   cellWidth,
   textCenter,
 } from '@patternfly/react-table';
+import { Bullseye } from '../../layouts/Bullseye';
+
 
 class SimpleTable extends React.Component {
   constructor(props) {
@@ -69,33 +71,33 @@ class SimpleTable extends React.Component {
           cellTransforms: [textCenter]
         }
       ],
-      rows: [
-        {
-          cells: ['one', 'two', 'three', 'four', 'five']
-        },
-        {
-          cells: [
-            {
-              title: <div>one - 2</div>,
-              props: { title: 'hover title', colSpan: 3 }
-            },
-            'four - 2',
-            'five - 2'
-          ]
-        },
-        {
-          cells: [
-            'one - 3',
-            'two - 3',
-            'three - 3',
-            'four - 3',
-            {
-              title: 'five - 3 (not centered)',
-              props: { textCenter: false }
-            }
-          ]
-        }
-      ]
+      // rows: [
+      //   {
+      //     cells: [ 'one', 'two', 'three', 'four', 'five']
+      //   },
+        // {
+        //   cells: [
+        //     {
+        //       title: <div>one - 2</div>,
+        //       props: { title: 'hover title', colSpan: 3 }
+        //     },
+        //     'four - 2',
+        //     'five - 2'
+        //   ]
+        // },
+        // {
+        //   cells: [
+        //     'one - 3',
+        //     'two - 3',
+        //     'three - 3',
+        //     'four - 3',
+        //     {
+        //       title: 'five - 3 (not centered)',
+        //       props: { textCenter: false }
+        //     }
+        //   ]
+        // }
+      // ]
     };
   }
 
@@ -103,9 +105,31 @@ class SimpleTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
+
       <Table caption="Simple Table" cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
+            <td colSpan="5">
+                  <EmptyState variant={EmptyStateVariant.full}>
+                    <EmptyStateIcon icon={CubesIcon} />
+                    <Title headingLevel="h5" size="lg">
+                      Empty State
+                    </Title>
+                    <EmptyStateBody>
+                      This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
+                      enough to meet a variety of needs.
+                    </EmptyStateBody>
+                    <Button variant="primary">Primary Action</Button>
+                    <EmptyStateSecondaryActions>
+                      <Button variant="link">Multiple</Button>
+                      <Button variant="link">Action Buttons</Button>
+                      <Button variant="link">Can</Button>
+                      <Button variant="link">Go here</Button>
+                      <Button variant="link">In the secondary</Button>
+                      <Button variant="link">Action area</Button>
+                    </EmptyStateSecondaryActions>
+                  </EmptyState>
+             </td>
       </Table>
     );
   }
@@ -187,6 +211,8 @@ import {
 import {
     Checkbox
 } from '@patternfly/react-core';
+import { EmptyState } from '@patternfly/react-core';
+
 
 class SelectableTable extends React.Component {
   constructor(props) {
@@ -246,7 +272,8 @@ class SelectableTable extends React.Component {
       <Table caption="Selectable Table" onSelect={this.onSelect} cells={columns} rows={rows} canSelectAll={this.state.canSelectAll}>
         <TableHeader />
         <TableBody />
-      </Table>
+  </Table>
+
       <Checkbox
         label="canSelectAll"
         isChecked={this.state.canSelectAll}
