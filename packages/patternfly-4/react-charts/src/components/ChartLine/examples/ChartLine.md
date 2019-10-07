@@ -17,7 +17,7 @@ Learn to build a line chart using a Katacoda tutorial starting with a simple cha
 
 [Start course](https://katacoda.com/patternfly/courses/charts/line-chart)
 
-```js title=Simple line chart with right aligned legend
+```js title=Simple-line-chart-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartVoronoiContainer } from '@patternfly/react-charts';
 
@@ -87,7 +87,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartVoronoiContainer } from '
 </div>
 ```
 
-```js title=Green line chart with right aligned legend
+```js title=Green-line-chart-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 

@@ -9,7 +9,7 @@ typescript: true
 import { Stack, StackItem } from '@patternfly/react-core';
 import './stack.scss';
 
-```js title=Simple stack layout
+```js title=Simple-stack-layout
 import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 
@@ -20,7 +20,7 @@ import { Stack, StackItem } from '@patternfly/react-core';
 </Stack>
 ```
 
-```js title=Simple stack layout with gutter
+```js title=Simple-stack-layout-with-gutter
 import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 

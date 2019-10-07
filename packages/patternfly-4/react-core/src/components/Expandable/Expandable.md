@@ -7,7 +7,7 @@ propComponents: ['Expandable']
 
 import { Expandable } from '@patternfly/react-core';
 
-```js title=Simple expandable
+```js title=Simple-expandable
 import React from 'react';
 import { Expandable } from '@patternfly/react-core';
 
@@ -35,7 +35,7 @@ class SimpleExpandable extends React.Component {
 }
 ```
 
-```js title=Uncontrolled expandable
+```js title=Uncontrolled-expandable
 import React from 'react';
 import { Expandable } from '@patternfly/react-core';
 

@@ -16,7 +16,7 @@ Learn to build a sparkline chart using a Katacoda tutorial starting with a simpl
 
 [Start course](https://katacoda.com/patternfly/courses/charts/sparkline-chart)
 
-```js title=Sparkline chart
+```js title=Sparkline-chart
 import React from 'react';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContainer } from '@patternfly/react-charts';
 

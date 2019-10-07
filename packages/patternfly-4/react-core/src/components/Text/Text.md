@@ -37,7 +37,7 @@ import {
 </TextContent>
 ```
 
-```js title=Body text
+```js title=Body-text
 import React from 'react';
 import {
   TextContent,
@@ -102,7 +102,7 @@ import {
 </TextContent>
 ```
 
-```js title=Ordered list
+```js title=Ordered-list
 import React from 'react';
 import {
   TextContent,
@@ -127,7 +127,7 @@ import {
 </TextContent>
 ```
 
-```js title=Data list
+```js title=Data-list
 import React from 'react';
 import {
   TextContent,

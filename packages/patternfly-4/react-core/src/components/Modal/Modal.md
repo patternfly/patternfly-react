@@ -9,7 +9,7 @@ optIn: In a future breaking-change release, the modal footer buttons will defaul
 import { Modal, Button, BaseSizes, TitleLevel } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
 
-```js title=Simple modal
+```js title=Simple-modal
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
@@ -60,7 +60,7 @@ class SimpleModal extends React.Component {
 }
 ```
 
-```js title=Modal (small)
+```js title=Modal-(small)
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
@@ -112,7 +112,7 @@ class SmallModal extends React.Component {
 }
 ```
 
-```js title=Modal (large)
+```js title=Modal-(large)
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
@@ -164,7 +164,7 @@ class LargeModal extends React.Component {
 }
 ```
 
-```js title=Modal (width)
+```js title=Modal-(width)
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
@@ -216,7 +216,7 @@ class WidthModal extends React.Component {
 }
 ```
 
-```js title=Modal (custom header and footer)
+```js title=Modal-(custom-header-and-footer)
 import React from 'react';
 import { Modal, Button, BaseSizes, TitleLevel } from '@patternfly/react-core';
 
@@ -285,7 +285,7 @@ class CustomHeaderFooter extends React.Component {
 }
 ```
 
-```js title=Modal (no header)
+```js title=Modal-(no-header)
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 

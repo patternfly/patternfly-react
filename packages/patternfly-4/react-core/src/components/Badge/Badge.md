@@ -6,7 +6,7 @@ propComponents: ['Badge']
 ---
 import { Badge } from '@patternfly/react-core';
 
-```js title=Badge (read)
+```js title=Badge-(read)
 import React from 'react';
 import { Badge } from '@patternfly/react-core';
 
@@ -23,7 +23,7 @@ ReadBadge = () => (
 );
 ```
 
-```js title=Badge (unread)
+```js title=Badge-(unread)
 import React from 'react';
 import { Badge } from '@patternfly/react-core';
 
