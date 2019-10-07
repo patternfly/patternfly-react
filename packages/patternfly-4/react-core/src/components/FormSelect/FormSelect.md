@@ -7,7 +7,7 @@ propComponents: ['FormSelect', 'FormSelectOption', 'FormSelectOptionGroup']
 
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
-```js title=Simple form select
+```js title=Simple-form-select
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
@@ -43,7 +43,7 @@ class FormSelectInput extends React.Component {
 }
 ```
 
-```js title=Invalid form select
+```js title=Invalid-form-select
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
@@ -82,7 +82,7 @@ class FormSelectInputInvalid extends React.Component {
 }
 ```
 
-```js title=Disabled form select
+```js title=Disabled-form-select
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
@@ -118,7 +118,7 @@ class FormSelectInputDisabled extends React.Component {
 }
 ```
 
-```js title=Grouped form select
+```js title=Grouped-form-select
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 

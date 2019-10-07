@@ -25,7 +25,7 @@ Learn to build an area chart using a Katacoda tutorial starting with a simple ch
 
 [Start course](https://katacoda.com/patternfly/courses/charts/area-chart)
 
-```js title=Simple area chart with right aligned legend
+```js title=Simple-area-chart-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
@@ -87,7 +87,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
 </div>
 ```
 
-```js title=Cyan area chart with bottom aligned legend and axis label
+```js title=Cyan-area-chart-with-bottom-aligned-legend-and-axis-label
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
@@ -149,7 +149,7 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
 </div>
 ```
 
-```js title=Multi-color (unorderd) chart with bottom-left aligned legend and responsive container
+```js title=Multi-color-(unordered)-chart-with-bottom-left-aligned-legend-and-responsive-container
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property

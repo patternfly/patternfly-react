@@ -70,7 +70,7 @@ class NavSimpleList extends React.Component {
 }
 ```
 
-```js title=Grouped navigation
+```js title=Grouped-navigation
 import React from 'react';
 import {
   Nav,
@@ -127,7 +127,7 @@ class NavGroupedList extends React.Component {
 }
 ```
 
-```js title=Default navigation
+```js title=Default-navigation
 import React from 'react';
 import {
   Nav,
@@ -176,7 +176,7 @@ class NavDefaultList extends React.Component {
 }
 ```
 
-```js title=Expandable navigation
+```js title=Expandable-navigation
 import React from 'react';
 import {
   Nav,
@@ -279,7 +279,7 @@ class NavExpandableList extends React.Component {
 }
 ```
 
-```js title=Expandable navigation (w/subnavigation titles)
+```js title=Expandable-navigation-(w/subnavigation-titles)
 import React from 'react';
 import {
   Nav,
@@ -376,7 +376,7 @@ class NavExpandableTitlesList extends React.Component {
 }
 ```
 
-```js title=Navigation mixed
+```js title=Navigation-mixed
 import React from 'react';
 import {
   Nav,
@@ -476,7 +476,7 @@ class NavMixedList extends React.Component {
 }
 ```
 
-```js title=Horizontal navigation (only in PageHeader)
+```js title=Horizontal-navigation-(only-in-PageHeader)
 import React from 'react';
 import {
   Nav,
@@ -523,7 +523,7 @@ class NavHorizontalList extends React.Component {
 }
 ```
 
-```js title=Tertiary navigation
+```js title=Tertiary-navigation
 import React from 'react';
 import {
   Nav,

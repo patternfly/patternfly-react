@@ -8,7 +8,7 @@ propComponents: ['Tooltip', 'TooltipContent']
 import { Button, Tooltip, TooltipPosition, TooltipContent, Checkbox } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
-```js title=Simple tooltip
+```js title=Simple-tooltip
 import React from 'react';
 import { Tooltip, TooltipPosition } from '@patternfly/react-core';
 
@@ -52,7 +52,7 @@ import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 </div>
 ```
 
-```js title=Tooltip positions
+```js title=Tooltip-positions
 import React from 'react';
 import { Button, Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
 

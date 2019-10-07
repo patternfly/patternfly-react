@@ -55,7 +55,7 @@ SimpleEmptyState = () => (
 );
 ```
 
-```js title=Empty state small
+```js title=Empty-state-small
 import React from 'react';
 import {
   Title,
@@ -91,7 +91,7 @@ SimpleEmptyState = () => (
 );
 ```
 
-```js title=Empty state large
+```js title=Empty-state-large
 import React from 'react';
 import {
   Title,
@@ -127,7 +127,7 @@ SimpleEmptyState = () => (
 );
 ```
 
-```js title=Empty state spinner
+```js title=Empty-state-spinner
 import React from 'react';
 import {
   Title,
@@ -159,7 +159,7 @@ EmptyStateSpinner = () => {
 }
 ```
 
-```js title=Empty state no match found
+```js title=Empty-state-no-match-found
 import React from 'react';
 import {
   Title,

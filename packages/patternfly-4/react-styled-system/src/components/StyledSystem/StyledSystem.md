@@ -214,7 +214,7 @@ BorderStyles = () => {
 }
 ```
 
-```js title=Box shadow
+```js title=Box-shadow
 import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 

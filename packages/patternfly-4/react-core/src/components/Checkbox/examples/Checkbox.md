@@ -8,7 +8,7 @@ propComponents: ['Checkbox']
 import { Checkbox } from '@patternfly/react-core';
 import './checkbox.scss';
 
-```js title=Controlled checkbox
+```js title=Controlled-checkbox
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
@@ -87,7 +87,7 @@ class ControlledCheckbox extends React.Component {
 }
 ```
 
-```js title=Uncontrolled checkbox
+```js title=Uncontrolled-checkbox
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
@@ -99,7 +99,7 @@ UncontrolledCheckbox = () => (
 );
 ```
 
-```js title=Disabled checkbox
+```js title=Disabled-checkbox
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
