@@ -1,0 +1,11 @@
+.ws-preview {
+  & > * {
+    .scatter-area-chart-threshold-bottom-responsive {
+      height: 250px;
+    }
+
+    .scatter-line-chart-legend-bottom-responsive {
+      height: 275px;
+    }
+  }
+}
