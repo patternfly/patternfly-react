@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.113.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.112.10...@patternfly/react-core@3.113.0) (2019-10-07)
+
+
+### Features
+
+* **Chip:** Added OUIA compatibility to Chip component  ([#2995](https://github.com/patternfly/patternfly-react/issues/2995)) ([bd358b6](https://github.com/patternfly/patternfly-react/commit/bd358b6))
+
+
+
+
+
 ## [3.112.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.112.9...@patternfly/react-core@3.112.10) (2019-10-04)
 
 
