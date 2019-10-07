@@ -16,8 +16,7 @@ Learn to build a pie chart using a Katacoda tutorial starting with a simple char
 
 [Start course](https://katacoda.com/patternfly/courses/charts/pie-chart)
 
-## Simple pie chart with right aligned legend
-```js
+```js title=Simple pie chart with right aligned legend
 import React from 'react';
 import { ChartPie } from '@patternfly/react-charts';
 
@@ -45,8 +44,7 @@ import { ChartPie } from '@patternfly/react-charts';
 </div>
 ```
 
-## Orange pie chart with right aligned legend
-```js
+```js title=Orange pie chart with right aligned legend
 import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
@@ -75,8 +73,7 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 </div>
 ```
 
-## Multi-color (ordered) pie chart with bottom aligned legend
-```js
+```js title=Multi-color (ordered) pie chart with bottom aligned legend
 import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 

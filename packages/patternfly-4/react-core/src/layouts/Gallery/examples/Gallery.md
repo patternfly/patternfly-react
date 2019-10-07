@@ -9,8 +9,7 @@ typescript: true
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 import './gallery.scss';
 
-## Simple gallery layout
-```js
+```js title=Simple gallery layout
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
@@ -26,8 +25,7 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
 </Gallery>
 ```
 
-## Gallery with gutters
-```js
+```js title=Gallery with gutters
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 

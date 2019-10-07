@@ -6,8 +6,7 @@ propComponents: ['Breadcrumb', 'BreadcrumbItem', 'BreadcrumbHeading']
 ---
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
-## Simple breadcrumb
-```js
+```js title=Simple breadcrumb
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
@@ -23,8 +22,7 @@ SimpleBreadcrumbs = () => (
 );
 ```
 
-## Breadcrumb without home link
-```js
+```js title=Breadcrumb without home link
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
@@ -42,8 +40,7 @@ WithoutLinkBreadcrumbs = () => (
 );
 ```
 
-## Breadcrumb with heading
-```js
+```js title=Breadcrumb with heading
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 

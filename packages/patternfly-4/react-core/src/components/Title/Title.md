@@ -7,8 +7,7 @@ propComponents: ['Title']
 
 import { Title } from '@patternfly/react-core';
 
-## Title sizes
-```js
+```js title=Title sizes
 import React from 'react';
 import { Title } from '@patternfly/react-core';
 

@@ -7,8 +7,7 @@ typescript: true
 
 import { TextArea } from '@patternfly/react-core';
 
-## Simple text area
-```js
+```js title=Simple text area
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
@@ -32,8 +31,7 @@ class SimpleTextArea extends React.Component {
 }
 ```
 
-## Invalid text area
-```js
+```js title=Invalid text area
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
@@ -65,8 +63,7 @@ class InvalidTextArea extends React.Component {
 }
 ```
 
-## Uncontrolled text area
-```js
+```js title=Uncontrolled text area
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 

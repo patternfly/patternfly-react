@@ -130,8 +130,7 @@ class SimpleAccordion extends React.Component {
 }
 ```
 
-## Simple accordion with a single expand behavior
-```js
+```js title=Simple accordion with a single expand behavior
 import React from 'react';
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';
 

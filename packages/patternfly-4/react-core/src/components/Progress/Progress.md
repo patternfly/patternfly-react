@@ -7,64 +7,56 @@ typescript: true
 
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
-## Simple progress
-```js
+```js title=Simple progress
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
 <Progress value={33} title="Title" />
 ```
 
-## Progress (Small)
-```js
+```js title=Progress (Small)
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
 <Progress value={33} title="Title" size={ProgressSize.sm} />
 ```
 
-## Progress (large)
-```js
+```js title=Progress (large)
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
 <Progress value={33} title="Title" size={ProgressSize.lg} />
 ```
 
-## Progress (outside)
-```js
+```js title=Progress (outside)
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
 <Progress value={33} title="Title" measureLocation={ProgressMeasureLocation.outside} />
 ```
 
-## Progress (inside)
-```js
+```js title=Progress (inside)
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
 <Progress value={33} title="Title" measureLocation={ProgressMeasureLocation.inside} />
 ```
 
-## Progress (success)
-```js
+```js title=Progress (success)
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
 <Progress value={100} title="Title" variant={ProgressVariant.success} />
 ```
 
-## Progress (failure)
-```js
+```js title=Progress (failure)
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
 <Progress value={33} title="Title" variant={ProgressVariant.danger} />
 ```
 
-## Progress (inside success)
-```js
+```js title=Progress (inside success)
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
@@ -76,8 +68,7 @@ import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from
 />
 ```
 
-## Progress (outside failure)
-```js
+```js title=Progress (outside failure)
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
@@ -89,24 +80,21 @@ import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from
 />
 ```
 
-## Progress (single line)
-```js
+```js title=Progress (single line)
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
 <Progress value={33} measureLocation={ProgressMeasureLocation.outside} />
 ```
 
-## Progress (no measure)
-```js
+```js title=Progress (no measure)
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
 <Progress value={33} title="Title" measureLocation={ProgressMeasureLocation.none} />
 ```
 
-## Progress (failure + no measure)
-```js
+```js title=Progress (failure + no measure)
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
@@ -119,16 +107,14 @@ import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from
 ```
 
 
-## Progress (finite step)
-```js
+```js title=Progress (finite step)
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
 <Progress value={2} min={0} max={5} title="Title" measureLocation={ProgressMeasureLocation.top} label="2 of 5" valueText="2 of 5"/>
 ```
 
-## Progress (step instruction)
-```js
+```js title=Progress (step instruction)
 import React from 'react';
 import { Progress, ProgressSize, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 

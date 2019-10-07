@@ -16,8 +16,7 @@ Learn to build a donut chart using a Katacoda tutorial starting with a simple ch
 
 [Start course](https://katacoda.com/patternfly/courses/charts/donut-chart)
 
-## Simple donut chart
-```js
+```js title=Simple donut chart
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
@@ -36,8 +35,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 </div>
 ```
 
-## Donut chart with right aligned legend
-```js
+```js title=Donut chart with right aligned legend
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
@@ -66,8 +64,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 </div>
 ```
 
-## Multi-color (ordered) donut chart with right aligned legend
-```js
+```js title=Multi-color (ordered) donut chart with right aligned legend
 import React from 'react';
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
@@ -97,8 +94,7 @@ import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/reac
 </div>
 ```
 
-## Donut chart with bottom aligned legend
-```js
+```js title=Donut chart with bottom aligned legend
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
@@ -129,8 +125,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 </div>
 ```
 
-## Small donut chart
-```js
+```js title=Small donut chart
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
@@ -151,8 +146,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 </div>
 ```
 
-## Small donut chart with right aligned legend
-```js
+```js title=Small donut chart with right aligned legend
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
@@ -182,8 +176,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 </div>
 ```
 
-## Small donut chart with right aligned legend and bottom aligned subtitle
-```js
+```js title=Small donut chart with right aligned legend and bottom aligned subtitle
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
@@ -214,8 +207,7 @@ import { ChartDonut } from '@patternfly/react-charts';
 </div>
 ```
 
-## Small donut chart with bottom aligned legend and right aligned subtitle
-```js
+```js title=Small donut chart with bottom aligned legend and right aligned subtitle
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 

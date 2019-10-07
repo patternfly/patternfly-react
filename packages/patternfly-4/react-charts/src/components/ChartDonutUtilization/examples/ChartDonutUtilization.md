@@ -16,8 +16,7 @@ Learn to build a donut utilization chart using a Katacoda tutorial starting with
 
 [Start course](https://katacoda.com/patternfly/courses/charts/donut-utilization-chart)
 
-## Simple donut utilization chart
-```js
+```js title=Simple donut utilization chart
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -36,8 +35,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 </div>
 ```
 
-## Simple donut utilization chart with right aligned legend
-```js
+```js title=Simple donut utilization chart with right aligned legend
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -96,8 +94,7 @@ class UtilizationChart extends React.Component {
 }
 ```
 
-## Simple, inverted donut utilization chart with right aligned legend
-```js
+```js title=Simple, inverted donut utilization chart with right aligned legend
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -157,8 +154,7 @@ class UtilizationChart extends React.Component {
 }
 ```
 
-## Simple, green donut utilization chart with right aligned, vertical legend
-```js
+```js title=Simple, green donut utilization chart with right aligned, vertical legend
 import React from 'react';
 import { ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
@@ -220,8 +216,7 @@ class UtilizationChart extends React.Component {
 }
 ```
 
-## Simple donut utilization chart with bottom aligned legend
-```js
+```js title=Simple donut utilization chart with bottom aligned legend
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -251,8 +246,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 </div>
 ```
 
-## Donut utilization chart with static thresholds
-```js
+```js title=Donut utilization chart with static thresholds
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -276,8 +270,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 </div>
 ```
 
-## Donut utilization chart with static thresholds and right aligned legend
-```js
+```js title=Donut utilization chart with static thresholds and right aligned legend
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -336,8 +329,7 @@ class ThresholdChart extends React.Component {
 }
 ```
 
-## Donut utilization chart with inverted static thresholds and right aligned legend
-```js
+```js title=Donut utilization chart with inverted static thresholds and right aligned legend
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -402,8 +394,7 @@ class ThresholdChart extends React.Component {
 }
 ```
 
-## Green donut utilization chart with static thresholds and right aligned (custom) legend
-```js
+```js title=Green donut utilization chart with static thresholds and right aligned (custom) legend
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
@@ -465,8 +456,7 @@ class ThresholdChart extends React.Component {
 }
 ```
 
-## Donut utilization chart with static thresholds and bottom aligned legend
-```js
+```js title=Donut utilization chart with static thresholds and bottom aligned legend
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -502,8 +492,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 
 
 
-## Small donut utilization chart
-```js
+```js title=Small donut utilization chart
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -524,8 +513,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 </div>
 ```
 
-## Small donut utilization chart with right aligned legend
-```js
+```js title=Small donut utilization chart with right aligned legend
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -585,8 +573,7 @@ class UtilizationChart extends React.Component {
 }
 ```
 
-## Small donut utilization chart with right aligned legend and bottom aligned subtitle
-```js
+```js title=Small donut utilization chart with right aligned legend and bottom aligned subtitle
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -617,8 +604,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 </div>
 ```
 
-## Small donut utilization chart with bottom aligned legend and right aligned subtitle
-```js
+```js title=Small donut utilization chart with bottom aligned legend and right aligned subtitle
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -649,8 +635,7 @@ import { ChartDonutUtilization } from '@patternfly/react-charts';
 </div>
 ```
 
-## Small donut utilization chart with static thresholds
-```js
+```js title=Small donut utilization chart with static thresholds
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -676,8 +661,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 </div>
 ```
 
-## Small donut utilization chart with static thresholds and right aligned legend
-```js
+```js title=Small donut utilization chart with static thresholds and right aligned legend
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -737,8 +721,7 @@ class ThresholdChart extends React.Component {
 }
 ```
 
-## Small donut utilization chart with static thresholds with right aligned legend and bottom aligned subtitle
-```js
+```js title=Small donut utilization chart with static thresholds with right aligned legend and bottom aligned subtitle
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -774,8 +757,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 </div>
 ```
 
-## Small donut utilization chart with static thresholds with bottom aligned legend and right aligned subtitle
-```js
+```js title=Small donut utilization chart with static thresholds with bottom aligned legend and right aligned subtitle
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 

@@ -16,8 +16,7 @@ Learn to build a stack chart using a Katacoda tutorial starting with a simple ch
 
 [Start course](https://katacoda.com/patternfly/courses/charts/stack-chart)
 
-## Simple stack chart with right aligned legend
-```js
+```js title=Simple stack chart with right aligned legend
 import React from 'react';
 import { Chart, ChartAxis, ChartStack } from '@patternfly/react-charts';
 
@@ -53,8 +52,7 @@ import { Chart, ChartAxis, ChartStack } from '@patternfly/react-charts';
 </div>
 ```
 
-## Gold, horizontal stacked bar chart with bottom aligned legend
-```js
+```js title=Gold, horizontal stacked bar chart with bottom aligned legend
 import React from 'react';
 import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 
@@ -276,8 +274,7 @@ class ResponsiveStack extends React.Component {
 }
 ```
 
-## Multi-color (unorderd), stacked area chart with bottom-left aligned legend and responsive container
-```js
+```js title=Multi-color (unorderd), stacked area chart with bottom-left aligned legend and responsive container
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 

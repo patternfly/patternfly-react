@@ -7,8 +7,7 @@ propComponents: ['List', 'ListItem']
 
 import { List, ListItem } from '@patternfly/react-core';
 
-## Simple list
-```js
+```js title=Simple list
 import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';
 
@@ -21,8 +20,7 @@ SimpleList = (
 );
 ```
 
-## Inline list
-```js
+```js title=Inline list
 import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';
 

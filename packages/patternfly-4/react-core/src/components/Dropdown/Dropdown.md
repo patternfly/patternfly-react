@@ -410,8 +410,7 @@ class DirectionUpDropdown extends React.Component {
 }
 ```
 
-## Dropdown with kebab
-```js
+```js title=Dropdown with kebab
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';

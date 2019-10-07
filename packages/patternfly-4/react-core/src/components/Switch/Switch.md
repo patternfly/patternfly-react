@@ -7,8 +7,7 @@ typescript: true
 
 import { Switch } from '@patternfly/react-core';
 
-## Simple switch
-```js
+```js title=Simple switch
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
@@ -38,8 +37,7 @@ class SimpleSwitch extends React.Component {
 }
 ```
 
-## Switch (no labels)
-```js
+```js title=Switch (no labels)
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
@@ -63,8 +61,7 @@ class NoLabelSwitch extends React.Component {
 }
 ```
 
-## Switch (disabled)
-```js
+```js title=Switch (disabled)
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
 
@@ -88,8 +85,7 @@ DisabledSwitch = () => (
 );
 ```
 
-## Switch (uncontrolled)
-```js
+```js title=Switch (uncontrolled)
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
 

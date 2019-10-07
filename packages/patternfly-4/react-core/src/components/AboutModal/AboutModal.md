@@ -8,8 +8,7 @@ import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patter
 import brandImg from './examples/brandImg.svg';
 import bgImg from './examples/patternfly-orb.svg';
 
-## Simple about modal
-```js
+```js title=Simple about modal
 import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';

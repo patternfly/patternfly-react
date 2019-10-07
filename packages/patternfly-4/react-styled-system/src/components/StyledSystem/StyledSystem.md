@@ -142,8 +142,7 @@ ColorStyles = () => {
 }
 ```
 
-## Typography
-```js
+```js title=Typography
 import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
@@ -176,8 +175,7 @@ TypographyStyles = () => {
 }
 ```
 
-## Borders
-```js
+```js title=Borders
 import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
@@ -216,8 +214,7 @@ BorderStyles = () => {
 }
 ```
 
-## Box shadow
-```js
+```js title=Box shadow
 import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
@@ -253,8 +250,7 @@ BoxShadowStyles = () => {
 }
 ```
 
-## Position
-```js
+```js title=Position
 import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
