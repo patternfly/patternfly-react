@@ -8,8 +8,7 @@ propComponents: ['Card', 'CardHeader', 'CardBody', 'CardFooter']
 import { Card, CardActions, CardHead, CardHeader, CardBody, CardFooter, Checkbox, DropdownActions } from '@patternfly/react-core';
 import pfLogo from './examples/pfLogo.svg'; 
 
-## Simple card
-```js
+```js title=Simple card
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -22,8 +21,7 @@ SimpleCard = () => (
 );
 ```
 
-## Card with image and actions 
-```js
+```js title=Card with image and actions 
 import React from 'react'; 
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHead, CardActions, CardHeader, CardBody } from '@patternfly/react-core'; 
 import pfLogo from './examples/pfLogo.svg'; 
@@ -104,8 +102,7 @@ class KebabDropdown extends React.Component {
 }
 ```
 
-## Card header in card head 
-```js
+```js title=Card header in card head 
  import React from 'react'; 
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHead, CardActions, CardHeader, CardBody } from '@patternfly/react-core'; 
 
@@ -184,8 +181,7 @@ class KebabDropdown extends React.Component {
 }
 ```
 
-## Only actions in card head (no header/footer)
-```js
+```js title=Only actions in card head (no header/footer)
  import React from 'react'; 
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHead, CardActions, CardHeader, CardBody } from '@patternfly/react-core'; 
 
@@ -262,8 +258,7 @@ class KebabDropdown extends React.Component {
 }
 ```
 
-## Only image in the card head
-```js
+```js title=Only image in the card head
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -279,8 +274,7 @@ ImageCard = () => (
 );
 ```
 
-## Card with no footer
-```js
+```js title=Card with no footer
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -292,8 +286,7 @@ NoFooterCard = () => (
 );
 ```
 
-## Card with no header
-```js
+```js title=Card with no header
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -305,8 +298,7 @@ NoHeaderCard = () => (
 );
 ```
 
-## Card with only a content section
-```js
+```js title=Card with only a content section
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -317,8 +309,7 @@ ContentOnlyCard = () => (
 );
 ```
 
-## Card with multiple body sections
-```js
+```js title=Card with multiple body sections
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -333,8 +324,7 @@ MultipleBodyCard = () => (
 );
 ```
 
-## Card with only one body that fills
-```js
+```js title=Card with only one body that fills
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -349,8 +339,7 @@ NoFillBodyCard = () => (
 );
 ```
 
-## Card hover example
-```js
+```js title=Card hover example
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -363,8 +352,7 @@ HoverableCard = () => (
 );
 ```
 
-## Card compact example
-```js
+```js title=Card compact example
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 

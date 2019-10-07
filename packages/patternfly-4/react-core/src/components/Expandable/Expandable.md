@@ -7,8 +7,7 @@ propComponents: ['Expandable']
 
 import { Expandable } from '@patternfly/react-core';
 
-## Simple expandable
-```js
+```js title=Simple expandable
 import React from 'react';
 import { Expandable } from '@patternfly/react-core';
 
@@ -36,8 +35,7 @@ class SimpleExpandable extends React.Component {
 }
 ```
 
-## Simple uncontrolled expandable
-```js
+```js title=Uncontrolled
 import React from 'react';
 import { Expandable } from '@patternfly/react-core';
 
@@ -47,8 +45,7 @@ import { Expandable } from '@patternfly/react-core';
 </Expandable>
 ```
 
-## Uncontrolled expandable with dynamic toggle text
-```js
+```js title=Uncontrolled-with-dynamic-toggle-text
 import React from 'react';
 import { Expandable } from '@patternfly/react-core';
 

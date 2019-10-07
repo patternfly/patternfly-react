@@ -12,8 +12,7 @@ import { Alert, Button, InputGroup, TextInput, Select, SelectOption } from '@pat
 import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 import '@patternfly/react-styles/css/components/Divider/divider';
 
-## Data toolbar
-```js
+```js title=Data toolbar
 import React from 'react';
 import { DataToolbar , DataToolbarItem, DataToolbarContent } from '@patternfly/react-core/dist/esm/experimental';
 import { Button, InputGroup, TextInput, SearchIcon } from '@patternfly/react-core';
@@ -44,8 +43,7 @@ class DataToolbarItems extends React.Component {
 
 ```
 
-## Data toolbar spacers
-```js
+```js title=Data toolbar spacers
 import React from 'react';
 import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent } from '@patternfly/react-core/dist/esm/experimental';
 import { Button } from '@patternfly/react-core';
@@ -99,8 +97,7 @@ class DataToolbarSpacers extends React.Component {
 
 ```
 
-## Data toolbar group types
-```js
+```js title=Data toolbar group types
 import React from 'react';
 import { DataToolbar, DataToolbarContent, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core/dist/esm/experimental';
 import { Button, Select, SelectOption } from '@patternfly/react-core';
@@ -273,8 +270,7 @@ class DataToolbarGroupTypes extends React.Component {
 
 - Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.
 
-### Data toolbar component managed toggle groups
-```js
+#```js title=Data toolbar component managed toggle groups
 import React from 'react';
 import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
 import { Button, InputGroup, Select, SelectOption } from '@patternfly/react-core';
@@ -412,8 +408,7 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
 }
 ```
 
-### Data toolbar consumer managed toggle groups
-```js
+#```js title=Data toolbar consumer managed toggle groups
 import React from 'react';
 import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
 import { Button, InputGroup, Select, SelectOption } from '@patternfly/react-core';
@@ -558,8 +553,7 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
 }
 ```
 
-## Data toolbar with chip groups
-```js
+```js title=Data toolbar with chip groups
 import React from 'react';
 import { 
     DataToolbar,
@@ -780,8 +774,7 @@ class DataToolbarWithChipGroupExample extends React.Component {
 
 ```
 
-## Data toolbar group stacked
-```js
+```js title=Data toolbar group stacked
 import React from 'react';
 import { DataToolbar, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core/dist/esm/experimental';
 import { Button, Select, SelectOption, Pagination, Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem } from '@patternfly/react-core';

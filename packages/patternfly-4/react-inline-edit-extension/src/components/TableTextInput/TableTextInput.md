@@ -12,8 +12,7 @@ This package is currently an extension. Extension components do not undergo the 
 
 import { TableTextInput } from '@patternfly/react-inline-edit-extension';
 
-## Simple table text input
-```js
+```js title=Simple table text input
 import React from 'react';
 import { TableTextInput } from '@patternfly/react-inline-edit-extension';
 

@@ -16,8 +16,7 @@ Learn to build a bar chart using a Katacoda tutorial starting with a simple char
 
 [Start course](https://katacoda.com/patternfly/courses/charts/bar-chart)
 
-## Simple bar chart with right aligned legend
-```js
+```js title=Simple bar chart with right aligned legend
 import React from 'react';
 import { Chart, ChartBar } from '@patternfly/react-charts';
 
@@ -54,8 +53,7 @@ import { Chart, ChartBar } from '@patternfly/react-charts';
 </div>
 ```
 
-## Purple bar chart with right aligned legend
-```js
+```js title=Purple bar chart with right aligned legend
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
@@ -129,8 +127,7 @@ import { Chart, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-
 </div>
 ```
 
-## Single bar chart with right aligned legend
-```js
+```js title=Single bar chart with right aligned legend
 import React from 'react';
 import { Chart, ChartBar } from '@patternfly/react-charts';
 

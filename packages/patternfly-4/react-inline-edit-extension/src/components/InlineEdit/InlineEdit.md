@@ -336,8 +336,7 @@ class EditableTable extends React.Component {
 }
 ```
 
-## Editable table with inline edit columns
-```js
+```js title=Editable table with inline edit columns
 import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
@@ -496,8 +495,7 @@ class EditableTableColumn extends React.Component {
 }
 ```
 
-## Editable table with collapsible rows
-```js
+```js title=Editable table with collapsible rows
 import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {

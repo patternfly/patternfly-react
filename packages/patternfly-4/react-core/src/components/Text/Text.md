@@ -15,8 +15,7 @@ import {
   TextListItemVariants
 } from '@patternfly/react-core';
 
-## Headings
-```js
+```js title=Headings
 import React from 'react';
 import {
   TextContent,
@@ -38,8 +37,7 @@ import {
 </TextContent>
 ```
 
-## Body text
-```js
+```js title=Body text
 import React from 'react';
 import {
   TextContent,
@@ -104,8 +102,7 @@ import {
 </TextContent>
 ```
 
-## Ordered list
-```js
+```js title=Ordered list
 import React from 'react';
 import {
   TextContent,
@@ -130,8 +127,7 @@ import {
 </TextContent>
 ```
 
-## Data list
-```js
+```js title=Data list
 import React from 'react';
 import {
   TextContent,

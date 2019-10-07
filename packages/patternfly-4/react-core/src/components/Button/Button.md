@@ -18,8 +18,7 @@ import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
 BlockButton = () => <Button isBlock>Block level button</Button>;
 ```
 
-## Button variants
-```js
+```js title=Button variants
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
@@ -42,8 +41,7 @@ ButtonVariants = () => (
 );
 ```
 
-## Link button
-```js
+```js title=Link button
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
