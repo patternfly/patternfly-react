@@ -1,5 +1,6 @@
 ---
 title: 'Clipboard copy'
+section: components
 cssPrefix: 'pf-c-copyclipboard'
 propComponents: ['ClipboardCopy']
 typescript: true

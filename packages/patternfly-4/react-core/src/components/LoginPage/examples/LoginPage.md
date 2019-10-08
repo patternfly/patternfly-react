@@ -1,3 +1,24 @@
+---
+title: 'Login page'
+section: components
+cssPrefix: 'pf-c-login'
+typescript: true
+propComponents: ['LoginPage', 'Login', 'LoginForm', 'LoginMainBody', 'LoginMainHeader', 'LoginHeader', 'LoginFooter', 'LoginMainFooter', 'LoginFooterItem', 'LoginMainFooterBandItem', 'LoginMainFooterLinksItem']
+---
+
+import brandImg from './brandImgColor.svg';
+import {
+  LoginFooterItem,
+  LoginForm,
+  LoginMainFooterBandItem,
+  LoginMainFooterLinksItem,
+  LoginPage,
+  BackgroundImageSrc,
+  ListItem
+} from '@patternfly/react-core';
+import { ExclamationCircleIcon } from '@patternfly/react-icons';
+
+```js title=Simple-login-page
 import React from 'react';
 import brandImg from './brandImgColor.svg';
 import {
@@ -159,5 +180,4 @@ class SimpleLoginPage extends React.Component {
     );
   }
 }
-
-export default SimpleLoginPage;
+```

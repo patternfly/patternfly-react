@@ -1,5 +1,6 @@
 ---
 title: 'Text input'
+section: components
 cssPrefix: 'pf-c-form-control'
 propComponents: ['TextInput']
 typescript: true

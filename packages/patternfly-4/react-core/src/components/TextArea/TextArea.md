@@ -1,5 +1,6 @@
 ---
 title: 'Text area'
+section: components
 cssPrefix: 'pf-c-form-control'
 propComponents: ['TextArea']
 typescript: true

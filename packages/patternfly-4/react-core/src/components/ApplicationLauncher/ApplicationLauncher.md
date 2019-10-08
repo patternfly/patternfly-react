@@ -1,5 +1,6 @@
 ---
 title: 'Application launcher'
+section: components
 cssPrefix: 'pf-c-app-launcher'
 propComponents: ['ApplicationLauncher', 'ApplicationLauncherItem']
 typescript: true 

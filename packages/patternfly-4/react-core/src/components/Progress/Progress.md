@@ -1,5 +1,6 @@
 ---
 title: 'Progress'
+section: components
 cssPrefix: 'pf-c-progress'
 propComponents: ['Progress']
 typescript: true

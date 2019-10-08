@@ -1,5 +1,6 @@
 ---
 title: 'Radio'
+section: components
 cssPrefix: 'pf-c-radio'
 typescript: true
 propComponents: ['Radio']

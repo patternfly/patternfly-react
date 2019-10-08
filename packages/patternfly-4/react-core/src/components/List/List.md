@@ -1,5 +1,6 @@
 ---
 title: 'List'
+section: components
 cssPrefix: 'pf-c-list'
 typescript: true
 propComponents: ['List', 'ListItem']

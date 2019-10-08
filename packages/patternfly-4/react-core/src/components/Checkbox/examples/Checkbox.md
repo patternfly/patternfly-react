@@ -1,5 +1,6 @@
 ---
 title: 'Checkbox'
+section: components
 cssPrefix: 'pf-c-check'
 typescript: true
 propComponents: ['Checkbox']

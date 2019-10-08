@@ -1,5 +1,6 @@
 ---
 title: 'Chip group'
+section: components
 cssPrefix: 'pf-c-chip'
 typescript: true
 propComponents: ['Chip', 'ChipGroup', 'ChipGroupToolbarItem']

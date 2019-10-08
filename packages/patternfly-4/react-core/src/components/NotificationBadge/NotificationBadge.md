@@ -1,5 +1,6 @@
 ---
 title: 'Notification badge'
+section: components
 cssPrefix: 'pf-c-notification-badge'
 typescript: true
 propComponents: ['NotificationBadge']

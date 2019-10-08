@@ -10,12 +10,14 @@ import './chart-bar.scss';
 
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
+## Introduction
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
 Learn to build a bar chart using a Katacoda tutorial starting with a simple chart, adding multiple datasets, tooltips, axis labels, a legend, and concluding by changing the theme color. You'll learn how to use React chart components together to build a consistent user experience.
 
 [Start course](https://katacoda.com/patternfly/courses/charts/bar-chart)
 
+## Examples
 ```js title=Simple-bar-chart-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartBar } from '@patternfly/react-charts';
@@ -89,13 +91,12 @@ import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } f
 </div>
 ```
 
-## Multi-color (ordered), horizontal bar chart with bottom-left aligned legend
-This demonstrates zoom for both the x and y axis
-```js
+```js title=Multi-color-(ordered),-horizontal-bar-chart-with-bottom-left-aligned-legend
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 
 <div>
+  This demonstrates zoom for both the x and y axis
   <div className="bar-chart-legend-bottom-left">
     <Chart
       allowZoom

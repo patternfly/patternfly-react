@@ -1,5 +1,6 @@
 ---
 title: 'Data list'
+section: components
 cssPrefix: 'pf-c-data-list'
 propComponents: ['DataList', 'DataListAction', 'DataListCell', 'DataListCheck', 'DataListItem', 'DataListItemCells', 'DataListItemRow', 'DataListToggle', 'DataListContent']
 typescript: true

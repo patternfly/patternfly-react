@@ -1,5 +1,6 @@
 ---
 title: 'Wizard'
+section: components
 cssPrefix: 'pf-c-wizard'
 typescript: true
 propComponents: ['Wizard', 'WizardNav', 'WizardNavItem', 'WizardHeader', 'WizardBody', 'WizardFooter', 'WizardToggle']

@@ -1,6 +1,7 @@
 ---
 title: Contributing
-section: patternfly-4
+section: root
+hideTOC: true
 ---
 # Contributing to @patternfly/react-core
 

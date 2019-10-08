@@ -1,5 +1,6 @@
 ---
 title: 'Empty state'
+section: components
 cssPrefix: 'pf-c-empty-state'
 typescript: true
 propComponents: ['EmptyState', 'EmptyStateBody', 'EmptyStateIcon', 'EmptyStateSecondaryActions']

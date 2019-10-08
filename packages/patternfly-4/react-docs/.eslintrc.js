@@ -17,14 +17,7 @@ module.exports = {
           'error',
           {
             ignore: [
-              '@patternfly-safe/react-core',
-              '@patternfly-safe/react-icons',
-              '@patternfly-safe/react-tokens',
-              '@patternfly/react-topology',
-              '@patternfly-safe/patternfly/patternfly.css',
-              '@patternfly-safe/patternfly/components/Drawer/drawer.css',
-              '@patternfly-safe/patternfly/components/Spinner/spinner.css',
-              '@patternfly-safe/patternfly/components/OverflowMenu/overflow-menu.css'
+              '@patternfly/react-topology'
             ]
           }
         ],

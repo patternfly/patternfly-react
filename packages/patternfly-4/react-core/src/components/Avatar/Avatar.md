@@ -1,16 +1,15 @@
 ---
 title: 'Avatar'
+section: components
 cssPrefix: 'pf-c-avatar'
 typescript: true
 propComponents: ['Avatar']
 ---
 
-## Simple avatar
-
 import { Avatar } from '@patternfly/react-core';
 import avatarImg from './examples/avatarImg.svg';
 
-```js
+```js title=Simple
 import React from 'react';
 import { Avatar } from '@patternfly/react-core';
 import avatarImg from './examples/avatarImg.svg';

@@ -1,5 +1,6 @@
 ---
 title: 'Topology view'
+section: components
 typescript: true
 ---
 

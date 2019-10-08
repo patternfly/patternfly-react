@@ -1,5 +1,6 @@
 ---
 title: 'Popover'
+section: components
 cssPrefix: 'pf-c-popover'
 typescript: true
 propComponents: ['Popover']

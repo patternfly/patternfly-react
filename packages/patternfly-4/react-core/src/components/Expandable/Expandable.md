@@ -1,5 +1,6 @@
 ---
 title: 'Expandable'
+section: components
 cssPrefix: 'pf-c-expandable'
 typescript: true
 propComponents: ['Expandable']

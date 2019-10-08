@@ -1,5 +1,6 @@
 ---
 title: 'Title'
+section: components
 cssPrefix: 'pf-c-title'
 typescript: true
 propComponents: ['Title']

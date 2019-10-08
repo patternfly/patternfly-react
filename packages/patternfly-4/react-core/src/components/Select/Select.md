@@ -1,5 +1,6 @@
 ---
 title: 'Select'
+section: components
 cssPrefix: 'pf-c-select'
 propComponents: ['Select', 'SelectOption', 'SelectGroup']
 typescript: true

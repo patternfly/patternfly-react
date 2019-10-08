@@ -1,5 +1,6 @@
 ---
 title: 'Breadcrumb'
+section: components
 cssPrefix: 'pf-c-breadcrumb'
 typescript: true
 propComponents: ['Breadcrumb', 'BreadcrumbItem', 'BreadcrumbHeading']

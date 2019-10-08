@@ -1,5 +1,6 @@
 ---
 title: 'Switch'
+section: components
 cssPrefix: 'pf-c-switch'
 propComponents: ['Switch']
 typescript: true

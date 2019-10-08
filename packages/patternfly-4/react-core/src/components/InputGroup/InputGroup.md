@@ -1,5 +1,6 @@
 ---
 title: 'Input group'
+section: components
 cssPrefix: null
 propComponents: ['InputGroup', 'InputGroupText']
 typescript: true

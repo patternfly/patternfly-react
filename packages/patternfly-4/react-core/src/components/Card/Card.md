@@ -1,5 +1,6 @@
 ---
 title: 'Card'
+section: components
 cssPrefix: 'pf-c-card'
 typescript: true
 propComponents: ['Card', 'CardHeader', 'CardBody', 'CardFooter']

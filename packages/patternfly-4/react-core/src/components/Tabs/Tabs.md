@@ -1,5 +1,6 @@
 ---
 title: 'Tabs'
+section: components
 cssPrefix: 'pf-c-tabs'
 propComponents: ['Tab', 'Tabs']
 typescript: true

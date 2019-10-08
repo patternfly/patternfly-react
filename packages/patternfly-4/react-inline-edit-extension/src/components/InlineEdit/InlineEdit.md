@@ -117,15 +117,18 @@ class EditableTable extends React.Component {
       columns: [
         {
           title: 'Repositories',
+section: components
           cellFormatters: [textInputFormatter]
         },
         {
           title: 'Branches',
+section: components
           cellFormatters: [(value, { rowData }) => rowData.data.branches[rowData.data.branches.length - 1]]
         },
         'Pull requests',
         {
           title: 'Workspaces',
+section: components
           cellFormatters: [workspacesFormatter],
           data: {
             dropdownItems: ['Green', 'Purple', 'Orange', 'Grey']
@@ -133,10 +136,12 @@ class EditableTable extends React.Component {
         },
         {
           title: 'Last Commit',
+section: components
           cellFormatters: [textInputFormatter]
         },
         {
           title: 'Private',
+section: components
           cellFormatters: [privateRepoFormatter]
         }
       ],
@@ -302,6 +307,7 @@ class EditableTable extends React.Component {
         : [
             {
               title: 'Edit',
+section: components
               onClick: this.onEditActionClick
             }
           ];
@@ -381,16 +387,19 @@ class EditableTableColumn extends React.Component {
       columns: [
         {
           title: 'Repositories',
+section: components
           cellFormatters: [inlineEditingFormatter]
         },
         {
           title: 'Branches',
+section: components
           cellFormatters: [inlineEditingFormatter]
         },
         'Pull requests',
         'Workspaces',
         {
           title: 'Last Commit',
+section: components
           cellFormatters: [inlineEditingFormatter]
         }
       ],
@@ -579,18 +588,22 @@ class CollapsibleEditableTable extends React.Component {
       columns: [
         {
           title: 'Repositories',
+section: components
           cellFormatters: [textInputFormatter]
         },
         {
           title: 'Branches'
+section: components
         },
         'Pull requests',
         {
           title: 'Workspaces',
+section: components
           cellFormatters: [textInputFormatter]
         },
         {
           title: 'Last Commit',
+section: components
           cellFormatters: [textInputFormatter]
         }
       ],
@@ -745,6 +758,7 @@ class CollapsibleEditableTable extends React.Component {
         : [
             {
               title: 'Edit',
+section: components
               onClick: this.onEditActionClick
             }
           ];
