@@ -10,6 +10,7 @@ import { Badge, Chip, ChipGroup, ChipGroupItem, ChipGroupToolbarItem } from '@pa
 
 ## Chip
 
+## Examples
 ```js
 import React from 'react';
 import { Badge, Chip } from '@patternfly/react-core';

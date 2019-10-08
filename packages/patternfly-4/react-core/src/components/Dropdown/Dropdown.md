@@ -11,6 +11,7 @@ import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
 
 ## Simple dropdown
 
+## Examples
 ```js
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';

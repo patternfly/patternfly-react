@@ -12,6 +12,7 @@ import { Alert } from '@patternfly/react-core';
 
 ## Spinner
 
+## Examples
 ```js
 import React from 'react';
 import { Spinner } from '@patternfly/react-core/dist/esm/experimental';

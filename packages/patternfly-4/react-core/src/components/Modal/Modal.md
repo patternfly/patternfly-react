@@ -10,6 +10,7 @@ optIn: In a future breaking-change release, the modal footer buttons will defaul
 import { Modal, Button, BaseSizes, TitleLevel } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
 
+## Examples
 ```js title=Simple-modal
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';

@@ -11,6 +11,7 @@ import './flex.scss';
 
 # Flex Basics
 
+## Examples
 ```js title=Basic-flex
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';

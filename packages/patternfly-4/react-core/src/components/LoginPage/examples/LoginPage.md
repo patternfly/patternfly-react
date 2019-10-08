@@ -18,6 +18,7 @@ import {
 } from '@patternfly/react-core';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
+## Examples
 ```js title=Simple-login-page
 import React from 'react';
 import brandImg from './brandImgColor.svg';

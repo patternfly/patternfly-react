@@ -9,6 +9,7 @@ typescript: true
 import { Stack, StackItem } from '@patternfly/react-core';
 import './stack.scss';
 
+## Examples
 ```js title=Simple-stack-layout
 import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';

@@ -8,6 +8,7 @@ typescript: true
 
 import { TextArea } from '@patternfly/react-core';
 
+## Examples
 ```js title=Simple-text-area
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';

@@ -19,6 +19,7 @@ import {
 } from '@patternfly/react-core';
 import { ListUlIcon, SortAlphaDownIcon, TableIcon } from '@patternfly/react-icons';
 
+## Examples
 ```js
 import React from 'react';
 import {

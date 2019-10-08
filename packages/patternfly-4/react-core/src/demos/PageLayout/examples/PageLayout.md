@@ -51,6 +51,7 @@ import imgAvatar from './imgAvatar.svg';
 
 - To make the page take up the full height, it is recommended to set the height of all ancestor elements up to the page component to `100%`
 
+## Examples
 ```js title=Simple-nav
 import React from 'react';
 import {
@@ -1379,7 +1380,7 @@ class PageLayoutManualNav extends React.Component {
 }
 ```
 
-```js title=Legacy/Light Nav
+```js title=Legacy/Light-Nav
 import React from 'react';
 import {
   Avatar,

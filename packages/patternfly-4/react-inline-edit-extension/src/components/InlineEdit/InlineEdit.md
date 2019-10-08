@@ -22,6 +22,7 @@ import {
 } from '@patternfly/react-inline-edit-extension';
 import { Dropdown, DropdownToggle, DropdownItem, Checkbox } from '@patternfly/react-core';
 
+## Examples
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';

@@ -13,6 +13,7 @@ import { Alert } from '@patternfly/react-core';
 
 ## Simple drawer component
 
+## Examples
 ```js
 import React {ReactFragment} from 'react';
 import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core/dist/esm/experimental';

@@ -8,6 +8,7 @@ propComponents: ['List', 'ListItem']
 
 import { List, ListItem } from '@patternfly/react-core';
 
+## Examples
 ```js title=Simple-list
 import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';

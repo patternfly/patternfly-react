@@ -21,6 +21,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 
 ## Green theme
 This demonstrates how to apply basic theme colors
+## Examples
 ```js
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';

@@ -21,6 +21,7 @@ import {
 } from '@patternfly/react-core';
 import './nav.scss';
 
+## Examples
 ```js
 import React from 'react';
 import {

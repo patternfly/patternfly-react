@@ -10,6 +10,7 @@ import { Radio } from '@patternfly/react-core';
 
 ## Controlled radio
 
+## Examples
 ```js
 import React from 'react';
 import { Radio } from '@patternfly/react-core';

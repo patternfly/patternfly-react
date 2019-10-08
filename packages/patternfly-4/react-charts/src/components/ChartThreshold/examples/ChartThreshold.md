@@ -24,6 +24,7 @@ PatternFly React charts are based on the [Victory chart](https://formidable.com/
 
 ## Multi-color, area chart with threshold indicators and responsive container
 
+## Examples
 ```js
 import React from 'react';
 import {

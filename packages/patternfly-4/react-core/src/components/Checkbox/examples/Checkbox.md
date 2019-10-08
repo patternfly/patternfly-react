@@ -9,6 +9,7 @@ propComponents: ['Checkbox']
 import { Checkbox } from '@patternfly/react-core';
 import './checkbox.scss';
 
+## Examples
 ```js title=Controlled-checkbox
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';

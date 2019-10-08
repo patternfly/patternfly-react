@@ -8,6 +8,7 @@ propComponents: ['FormSelect', 'FormSelectOption', 'FormSelectOptionGroup']
 
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
+## Examples
 ```js title=Simple-form-select
 import React from 'react';
 import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';

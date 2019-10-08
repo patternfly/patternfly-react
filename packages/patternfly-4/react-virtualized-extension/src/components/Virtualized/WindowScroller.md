@@ -22,6 +22,7 @@ import windowScrollerStyles from './WindowScroller.example.css';
 
 ## Window Scroller Example
 
+## Examples
 ```js
 import clsx from 'clsx';
 import PropTypes from 'prop-types';

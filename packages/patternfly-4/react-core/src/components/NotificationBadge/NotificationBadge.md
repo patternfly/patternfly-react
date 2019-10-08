@@ -11,6 +11,7 @@ import { BellIcon } from '@patternfly/react-icons';
 
 ## Simple notification badge
 
+## Examples
 ```js
 import React from 'react';
 import { NotificationBadge } from '@patternfly/react-core';

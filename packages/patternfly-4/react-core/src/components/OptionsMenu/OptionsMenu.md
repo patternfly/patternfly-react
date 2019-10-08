@@ -18,6 +18,7 @@ import {
 } from '@patternfly/react-core';
 import { CaretDownIcon, SortAmountDownIcon } from '@patternfly/react-icons';
 
+## Examples
 ```js title=Options-menu---single-option
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';

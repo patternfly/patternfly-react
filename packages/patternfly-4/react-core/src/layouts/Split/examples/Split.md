@@ -9,6 +9,7 @@ typescript: true
 import { Split, SplitItem } from '@patternfly/react-core';
 import './split.scss';
 
+## Examples
 ```js title=Simple-split
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';

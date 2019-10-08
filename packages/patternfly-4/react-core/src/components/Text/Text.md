@@ -16,6 +16,7 @@ import {
   TextListItemVariants
 } from '@patternfly/react-core';
 
+## Examples
 ```js title=Headings
 import React from 'react';
 import {

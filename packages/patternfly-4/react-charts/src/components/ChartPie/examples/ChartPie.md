@@ -16,6 +16,7 @@ Learn to build a pie chart using a Katacoda tutorial starting with a simple char
 
 [Start course](https://katacoda.com/patternfly/courses/charts/pie-chart)
 
+## Examples
 ```js title=Simple-pie-chart-with-right-aligned-legend
 import React from 'react';
 import { ChartPie } from '@patternfly/react-charts';

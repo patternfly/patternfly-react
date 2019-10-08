@@ -20,6 +20,7 @@ import {
 } from '@patternfly/react-core';
 import { CubesIcon } from '@patternfly/react-icons';
 
+## Examples
 ```js
 import React from 'react';
 import {

@@ -9,6 +9,7 @@ propComponents: ['Tooltip']
 import { Button, Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
+## Examples
 ```js title=Simple-tooltip
 import React from 'react';
 import { Tooltip, TooltipPosition } from '@patternfly/react-core';

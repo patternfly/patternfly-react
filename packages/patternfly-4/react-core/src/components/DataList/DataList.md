@@ -28,6 +28,7 @@ import {
 import { CodeBranchIcon } from '@patternfly/react-icons';
 import { css } from '@patternfly/react-styles';
 
+## Examples
 ```js
 import React from 'react';
 import {

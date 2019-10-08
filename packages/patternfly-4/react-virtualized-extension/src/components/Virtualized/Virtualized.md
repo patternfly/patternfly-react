@@ -22,6 +22,7 @@ import virtualGridStyles from './VirtualGrid.example.css';
 
 ## Simple Example
 
+## Examples
 ```js
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
