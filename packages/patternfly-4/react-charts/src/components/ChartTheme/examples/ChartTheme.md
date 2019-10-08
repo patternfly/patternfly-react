@@ -19,14 +19,13 @@ Note: PatternFly React charts live in its own package at [@patternfly/react-char
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
-## Green theme
-This demonstrates how to apply basic theme colors
 ## Examples
-```js
+```js title=Green-theme
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div>
+  <p>This demonstrates how to apply basic theme colors</p>
   <div className="line-chart-legend-bottom">
     <Chart
       ariaDesc="Average number of pets"
@@ -92,13 +91,12 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiC
 </div>
 ```
 
-## Multi-color (ordered) theme
-This demonstrates how to apply theme colors for ordered charts like bar, donut, pie, and stack
-```js
+```js title=Multi-color-(ordered)-theme
 import React from 'react';
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
 <div>
+  <p>This demonstrates how to apply theme colors for ordered charts like bar, donut, pie, and stack</p>
   <div className="donut-chart-legend-right">
     <ChartDonut
       ariaDesc="Average number of pets"
@@ -124,14 +122,13 @@ import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/reac
 </div>
 ```
 
-## Multi-color (unordered) theme
-This demonstrates how to apply theme colors for unordered charts like area, line, and sparkline
-```js
+```js title=Multi-color-(unordered)-theme
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
 <div>
+  <p>This demonstrates how to apply theme colors for unordered charts like area, line, and sparkline</p>
   <div className="area-chart-legend-right">
     <Chart
       ariaDesc="Average number of pets"
@@ -189,13 +186,12 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
 </div>
 ```
 
-## Custom colors
-This demonstrates an alternate way of applying custom colors to individual charts
-```js
+```js title=Custom-colors
 import React from 'react';
 import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 
 <div>
+  <p>This demonstrates an alternate way of applying custom colors to individual charts</p>
   <div className="stack-chart-legend-bottom">
     <Chart
       ariaDesc="Average number of pets"
@@ -287,9 +283,7 @@ import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react
 </div>
 ```
 
-## Custom theme
-This demonstrates custom theme properties, which may be applied across multiple charts
-```js
+```js title=Custom-theme
 import React from 'react';
 import { Chart, ChartBar, ChartAxis, ChartGroup, ChartThemeColor, ChartThemeVariant, getCustomTheme } from '@patternfly/react-charts';
 import {
@@ -351,6 +345,7 @@ class MultiColorChart extends React.Component {
   render() {
     return (
       <div>
+        <p>This demonstrates custom theme properties, which may be applied across multiple charts</p>
         <div className="theme-legend-right">
           <Chart
             ariaDesc="Average number of pets"

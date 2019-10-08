@@ -9,7 +9,7 @@ typescript: true
 import { Flex, FlexItem } from '@patternfly/react-core';
 import './flex.scss';
 
-# Flex Basics
+### Flex Basics
 
 ## Examples
 ```js title=Basic-flex
@@ -59,8 +59,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-# Flex Spacing
-
+### Flex Spacing
 ```js title=Individually-spaced-items-(spacer=xs,sm,md,lg,xl,2xl,3xl)
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
@@ -103,7 +102,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-# Flex layout modifiers
+### Flex layout modifiers
 
 ```js title=Default-flex-layout
 import React from 'react';
@@ -191,7 +190,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-# Column layout modifiers
+### Column layout modifiers
 
 ```js title=Flex-column-layout
 import React from 'react';
@@ -241,7 +240,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-# Responsive layout modifiers
+### Responsive layout modifiers
 
 ```js title=Switching-between-flex-direction-column-and-row-at-large-breakpoint
 import React from 'react';
@@ -277,7 +276,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-# Flex alignment
+### Flex alignment
 
 ```js title=Aligning-right,-including-when-wrapped
 import React from 'react';
@@ -408,7 +407,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-# Flex justification
+### Flex justification
 
 ```js title=Justify-content-with-justify-content-flex-end
 import React from 'react';

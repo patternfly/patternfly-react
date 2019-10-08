@@ -13,15 +13,14 @@ Note: PatternFly React charts live in its own package at [@patternfly/react-char
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
-## Voronoi container tooltips
-This demonstrates how to use a voronoi container to display tooltips
 ## Examples
-```js
+```js title=Voronoi-container-tooltips
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
 <div>
+  <p>This demonstrates how to use a voronoi container to display tooltips</p>
   <div className="area-chart-legend-right">
     <Chart
       ariaDesc="Average number of pets"
@@ -78,13 +77,12 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
 </div>
 ```
 
-## Data label tooltips
-This demonstrates an alternate way of applying tooltips using data labels
-```js
+```js title=Data-label-tooltips
 import React from 'react';
 import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 
 <div>
+  <p>This demonstrates an alternate way of applying tooltips using data labels</p>
   <div className="tooltip-bar-chart-legend-bottom">
     <Chart
       ariaDesc="Average number of pets"
@@ -147,9 +145,7 @@ import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react
 </div>
 ```
 
-## Legend tooltips
-This demonstrates an approach for applying tooltips to a legend using a custom label component
-```js
+```js title=Legend-tooltips
 import React from 'react';
 import { ChartLabel, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 import { Tooltip } from '@patternfly/react-core';
@@ -184,6 +180,7 @@ class TooltipPieChart extends React.Component {
   render() {
     return (
       <div>
+        <p>This demonstrates an approach for applying tooltips to a legend using a custom label component</p>
         <div className="pie-chart-legend-bottom">
           <ChartPie
             ariaDesc="Average number of pets"
@@ -214,9 +211,7 @@ class TooltipPieChart extends React.Component {
 }
 ```
 
-## Left aligned tooltips
-This demonstrates how to customize tooltip label alignment using theme properties
-```js
+```js title=Left-aligned-tooltips
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartThemeVariant, getCustomTheme } from '@patternfly/react-charts';
 
@@ -246,6 +241,7 @@ class TooltipThemeChart extends React.Component {
   render() {
     return (
       <div>
+        <p>This demonstrates how to customize tooltip label alignment using theme properties</p>
         <div className="tooltip-line-chart-legend-right">
           <Chart
             ariaDesc="Average number of pets"
@@ -315,13 +311,12 @@ class TooltipThemeChart extends React.Component {
 }
 ```
 
-## CSS overflow tooltips
-This demonstrates an alternate way of applying tooltips using CSS overflow instead of `constrainToVisibleArea`
-```js
+```js title=CSS-overflow-tooltips
 import React from 'react';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div>
+  <p>This demonstrates an alternate way of applying tooltips using CSS overflow instead of <code>constrainToVisibleArea</code></p>
   <div className="tooltip-sparkline-container tooltip-sparkline-overflow">
     <div className="tooltip-sparkline-chart">
       <ChartGroup
@@ -351,9 +346,7 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, Cha
 </div>
 ```
 
-## Wrapped chart tooltip
-This demonstrates an alternate way of applying tooltips by wrapping charts with the Tooltip component
-```js
+```js title=Wrapped-chart-tooltip
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 import { Button, Tooltip } from '@patternfly/react-core';
@@ -374,6 +367,7 @@ class TooltipChart extends React.Component {
 
     return (
       <div>
+        <p>This demonstrates an alternate way of applying tooltips by wrapping charts with the Tooltip component</p>
         <div className="tooltip-donut-threshold-chart">
           <Tooltip content={<div>My custom tooltip</div>} isVisible={isVisible} position={TooltipPosition.right} trigger="manual">
             <ChartDonutThreshold

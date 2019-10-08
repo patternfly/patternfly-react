@@ -5,13 +5,10 @@ cssPrefix: null
 propComponents: ["Pagination"]
 typescript: true
 ---
-
 import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
-## Pagination top
-
 ## Examples
-```js
+```js title=Top
 import React from "react";
 import { Pagination, PaginationVariant } from "@patternfly/react-core";
 
@@ -51,9 +48,7 @@ class PaginationTop extends React.Component {
 }
 ```
 
-## Pagination bottom
-
-```js
+```js title=Bottom
 import React from "react";
 import { Pagination, PaginationVariant } from "@patternfly/react-core";
 
@@ -91,9 +86,7 @@ class PaginationBottom extends React.Component {
 }
 ```
 
-## Pagination disabled
-
-```js
+```js title=Disabled
 import React from "react";
 import { Pagination, PaginationVariant } from "@patternfly/react-core";
 
@@ -134,9 +127,7 @@ class PaginationDisabled extends React.Component {
 }
 ```
 
-## No items
-
-```js
+```js title=No-items
 import React from "react";
 import { Pagination, PaginationVariant } from "@patternfly/react-core";
 
@@ -176,9 +167,7 @@ class PaginationTop extends React.Component {
 }
 ```
 
-## One page
-
-```js
+```js title=One-page
 import React from "react";
 import { Pagination, PaginationVariant } from "@patternfly/react-core";
 
@@ -218,9 +207,7 @@ class PaginationTop extends React.Component {
 }
 ```
 
-## Compact
-
-```js
+```js title=Compact
 import React from "react";
 import { Pagination, PaginationVariant } from "@patternfly/react-core";
 

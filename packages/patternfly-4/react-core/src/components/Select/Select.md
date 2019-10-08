@@ -8,10 +8,8 @@ typescript: true
 
 import { Select, SelectOption, SelectVariant, SelectGroup, SelectDirection, Checkbox } from '@patternfly/react-core';
 
-## Single select input
-
 ## Examples
-```js
+```js title=Single-select-input
 import React from 'react';
 import { CubeIcon } from '@patternfly/react-icons';
 import { Select, SelectOption, SelectVariant, Checkbox } from '@patternfly/react-core';
@@ -145,9 +143,7 @@ class SingleSelectInput extends React.Component {
 }
 ```
 
-## Checkbox select input
-
-```js
+```js title=Checkbox-select-input
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -222,9 +218,7 @@ class CheckboxSelectInput extends React.Component {
 }
 ```
 
-## Grouped checkbox select input
-
-```js
+```js title=Grouped-checkbox-select-input
 import React from 'react';
 import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
 
@@ -305,9 +299,7 @@ class GroupedCheckboxSelectInput extends React.Component {
 }
 ```
 
-## Typeahead select input
-
-```js
+```js title=Typeahead
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -436,9 +428,7 @@ class TypeaheadSelectInput extends React.Component {
 }
 ```
 
-## Typeahead select input - custom filtering
-
-```js
+```js title=Custom filtering
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -526,10 +516,7 @@ class TypeaheadSelectInput extends React.Component {
 }
 ```
 
-
-## Multiple typeahead select input
-
-```js
+```js title=Multiple
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -646,9 +633,8 @@ class MultiTypeaheadSelectInput extends React.Component {
   }
 }
 ```
-## Multiple typeahead select input with custom objects
 
-```js
+```js title=Multiple-with-custom-objects
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -752,9 +738,8 @@ class MultiTypeaheadSelectInputCustomObjects extends React.Component {
   }
 }
 ```
-## Plain multiple typeahead select input
 
-```js
+```js title=Plain-multiple-typeahead
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 

@@ -2,8 +2,6 @@
 title: 'Toolbar'
 section: 'demos'
 ---
-## Toolbar demo
-
 import {
   Button,
   Dropdown,
@@ -20,7 +18,7 @@ import {
 import { ListUlIcon, SortAlphaDownIcon, TableIcon } from '@patternfly/react-icons';
 
 ## Examples
-```js
+```js title=Basic
 import React from 'react';
 import {
   Button,

@@ -22,10 +22,8 @@ Note: PatternFly React charts live in its own package at [@patternfly/react-char
 
 PatternFly React charts are based on the [Victory chart](https://formidable.com/open-source/victory/docs/victory-chart/) library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
-## Multi-color, area chart with threshold indicators and responsive container
-
 ## Examples
-```js
+```js title=Multi-color,-area-chart-with-threshold-indicators-and-responsive-container
 import React from 'react';
 import {
   Chart,

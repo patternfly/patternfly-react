@@ -5,9 +5,6 @@ cssPrefix: 'pf-c-form'
 typescript: true
 propComponents: ['ActionGroup', 'Form', 'FormGroup', 'FormHelperText']
 ---
-
-## Simple form
-
 import {
   Form,
   FormGroup,
@@ -22,7 +19,7 @@ import {
 } from '@patternfly/react-core';
 
 ## Examples
-```js
+```js title=Basic
 import React from 'react';
 import {
   Form,

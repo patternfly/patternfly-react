@@ -69,9 +69,7 @@ class SimpleAboutModal extends React.Component {
 }
 ```
 
-## About modal without product name
-
-```js
+```js title=About-modal-without-product-name
 import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';
@@ -129,9 +127,7 @@ class SimpleAboutModal extends React.Component {
 }
 ```
 
-## About modal with more complex user-positioned content
-
-```js
+```js title=About-modal-with-more-complex-user-positioned-content
 import React from 'react';
 import { AboutModal, Alert, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';
@@ -196,9 +192,7 @@ class ContentRichAboutModal extends React.Component {
 }
 ```
 
-## About modal with custom background image
-
-```js
+```js title=About-modal-with-custom-background-image
 import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';

@@ -20,10 +20,8 @@ import UUID from 'uuid/v1';
 import virtualGridStyles from './VirtualGrid.example.css';
 import windowScrollerStyles from './WindowScroller.example.css';
 
-## Window Scroller Example
-
 ## Examples
-```js
+```js title=Window-scroller
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';

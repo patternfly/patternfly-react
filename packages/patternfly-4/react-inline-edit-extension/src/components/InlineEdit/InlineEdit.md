@@ -23,7 +23,7 @@ import {
 import { Dropdown, DropdownToggle, DropdownItem, Checkbox } from '@patternfly/react-core';
 
 ## Examples
-```js
+```js title=Editable
 import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
