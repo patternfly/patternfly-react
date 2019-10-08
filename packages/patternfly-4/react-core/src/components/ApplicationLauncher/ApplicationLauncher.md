@@ -12,6 +12,7 @@ import { ApplicationLauncher, ApplicationLauncherContent, ApplicationLauncherIco
 import { HelpIcon } from '@patternfly/react-icons';
 import pfIcon from './examples/pf-logo-small.svg';
 
+## Examples
 ```js title=Simple-application-launcher
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';

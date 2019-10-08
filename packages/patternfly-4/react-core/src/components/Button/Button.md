@@ -11,6 +11,7 @@ propComponents: ['Button']
 import { Button } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
 
+## Examples
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';

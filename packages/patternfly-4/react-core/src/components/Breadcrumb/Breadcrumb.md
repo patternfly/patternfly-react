@@ -7,6 +7,7 @@ propComponents: ['Breadcrumb', 'BreadcrumbItem', 'BreadcrumbHeading']
 ---
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
+## Examples
 ```js title=Simple-breadcrumb
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';

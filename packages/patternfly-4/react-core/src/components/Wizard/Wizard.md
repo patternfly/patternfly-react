@@ -10,7 +10,8 @@ import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@pat
 import FinishedStep from './examples/FinishedStep';
 import SampleForm from './examples/SampleForm';
 
-#```js title=Simple-wizard
+### Examples
+```js title=Simple-wizard
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 

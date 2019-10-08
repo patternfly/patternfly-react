@@ -9,6 +9,7 @@ typescript: true
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 import './gallery.scss';
 
+## Examples
 ```js title=Simple-gallery-layout
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';

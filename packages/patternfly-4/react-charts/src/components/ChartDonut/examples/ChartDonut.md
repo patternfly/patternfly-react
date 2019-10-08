@@ -16,6 +16,7 @@ Learn to build a donut chart using a Katacoda tutorial starting with a simple ch
 
 [Start course](https://katacoda.com/patternfly/courses/charts/donut-chart)
 
+## Examples
 ```js title=Simple-donut-chart
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';

@@ -8,6 +8,7 @@ propComponents: ['Alert', 'AlertActionCloseButton', 'AlertActionLink']
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 import './examples/alert.scss';
 
+## Examples
 ```js title=Default-alert
 import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';

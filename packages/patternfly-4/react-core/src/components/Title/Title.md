@@ -8,6 +8,7 @@ propComponents: ['Title']
 
 import { Title } from '@patternfly/react-core';
 
+## Examples
 ```js title=Title-sizes
 import React from 'react';
 import { Title } from '@patternfly/react-core';

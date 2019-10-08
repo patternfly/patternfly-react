@@ -8,6 +8,7 @@ typescript: true
 
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
+## Examples
 ```js title=Clipboard-copy
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';

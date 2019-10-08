@@ -8,6 +8,7 @@ propComponents: ['Page', 'PageHeader', 'PageSidebar', 'PageSection']
 
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 
+## Examples
 ```js title=Vertical-page-layout
 import React from 'react';
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';

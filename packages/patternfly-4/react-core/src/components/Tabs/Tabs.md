@@ -13,6 +13,7 @@ import { AddressBookIcon } from '@patternfly/react-icons';
 
 Use primary sections
 
+## Examples
 ```js
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';

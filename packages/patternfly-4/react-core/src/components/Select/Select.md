@@ -10,6 +10,7 @@ import { Select, SelectOption, SelectVariant, SelectGroup, SelectDirection, Chec
 
 ## Single select input
 
+## Examples
 ```js
 import React from 'react';
 import { CubeIcon } from '@patternfly/react-icons';

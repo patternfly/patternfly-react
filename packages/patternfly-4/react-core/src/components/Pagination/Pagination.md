@@ -10,6 +10,7 @@ import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 ## Pagination top
 
+## Examples
 ```js
 import React from "react";
 import { Pagination, PaginationVariant } from "@patternfly/react-core";

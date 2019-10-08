@@ -15,6 +15,7 @@ PatternFly React charts are based on the [Victory](https://formidable.com/open-s
 
 ## Voronoi container tooltips
 This demonstrates how to use a voronoi container to display tooltips
+## Examples
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';

@@ -9,6 +9,7 @@ propComponents: ['SkipToContent']
 import { SkipToContent } from '@patternfly/react-core';
 
 ## Simple skip to content
+## Examples
 ```js
 class SimpleSkipToContent extends React.Component {
   render() {

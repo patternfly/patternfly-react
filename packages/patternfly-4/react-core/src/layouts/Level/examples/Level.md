@@ -9,6 +9,7 @@ typescript: true
 import { Level, LevelItem } from '@patternfly/react-core';
 import './level.scss';
 
+## Examples
 ```js title=Simple-level-layout
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';

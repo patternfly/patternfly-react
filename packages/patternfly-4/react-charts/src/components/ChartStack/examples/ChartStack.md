@@ -16,6 +16,7 @@ Learn to build a stack chart using a Katacoda tutorial starting with a simple ch
 
 [Start course](https://katacoda.com/patternfly/courses/charts/stack-chart)
 
+## Examples
 ```js title=Simple-stack-chart-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartStack } from '@patternfly/react-charts';

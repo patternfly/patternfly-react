@@ -16,6 +16,7 @@ Learn to build a donut utilization chart using a Katacoda tutorial starting with
 
 [Start course](https://katacoda.com/patternfly/courses/charts/donut-utilization-chart)
 
+## Examples
 ```js title=Simple-donut-utilization-chart
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';

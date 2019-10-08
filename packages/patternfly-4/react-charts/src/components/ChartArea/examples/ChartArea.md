@@ -25,6 +25,7 @@ Learn to build an area chart using a Katacoda tutorial starting with a simple ch
 
 [Start course](https://katacoda.com/patternfly/courses/charts/area-chart)
 
+## Examples
 ```js title=Simple-area-chart-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';

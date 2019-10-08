@@ -7,6 +7,7 @@ propComponents: ['Badge']
 ---
 import { Badge } from '@patternfly/react-core';
 
+## Examples
 ```js title=Badge-(read)
 import React from 'react';
 import { Badge } from '@patternfly/react-core';

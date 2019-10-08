@@ -8,6 +8,7 @@ propComponents: ['Popover']
 
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
 
+## Examples
 ```js title=Simple-popover
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';

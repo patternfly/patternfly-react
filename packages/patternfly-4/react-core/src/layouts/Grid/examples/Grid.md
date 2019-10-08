@@ -11,6 +11,7 @@ typescript: true
 import { Grid, GridItem } from '@patternfly/react-core';
 import './grid.scss';
 
+## Examples
 ```js
 import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';

@@ -12,6 +12,7 @@ import { Alert, Button, InputGroup, TextInput, Select, SelectOption } from '@pat
 import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 import '@patternfly/react-styles/css/components/Divider/divider';
 
+## Examples
 ```js title=Data-toolbar
 import React from 'react';
 import { DataToolbar , DataToolbarItem, DataToolbarContent } from '@patternfly/react-core/dist/esm/experimental';

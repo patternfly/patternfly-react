@@ -17,6 +17,7 @@ Learn to build a bullet chart using a Katacoda tutorial starting with a simple c
 
 [Start course](https://katacoda.com/patternfly/courses/charts/bullet-chart)
 
+## Examples
 ```js title=Simple-bullet-chart
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';

@@ -21,6 +21,7 @@ import {
   Radio
 } from '@patternfly/react-core';
 
+## Examples
 ```js
 import React from 'react';
 import {

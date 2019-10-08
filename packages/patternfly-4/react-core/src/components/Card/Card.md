@@ -9,6 +9,7 @@ propComponents: ['Card', 'CardHeader', 'CardBody', 'CardFooter']
 import { Card, CardActions, CardHead, CardHeader, CardBody, CardFooter, Checkbox, DropdownActions } from '@patternfly/react-core';
 import pfLogo from './examples/pfLogo.svg'; 
 
+## Examples
 ```js title=Simple-card
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';

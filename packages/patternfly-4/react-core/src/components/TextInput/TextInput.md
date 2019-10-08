@@ -8,6 +8,7 @@ typescript: true
 
 import { TextInput } from '@patternfly/react-core';
 
+## Examples
 ```js title=Simple-text-input
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';

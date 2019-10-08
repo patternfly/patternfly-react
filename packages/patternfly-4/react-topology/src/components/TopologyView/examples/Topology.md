@@ -15,6 +15,7 @@ import './topology-example.scss';
 
 ## Topology view - Default Controls
 
+## Examples
 ```js
 import React from 'react';
 import { TopologyView, TopologyControlBar, createTopologyControlButtons, TopologySideBar } from '@patternfly/react-topology';

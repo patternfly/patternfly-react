@@ -39,6 +39,7 @@ import DemoSortableTable from './demo/DemoSortableTable';
 
 ## Simple table
 
+## Examples
 ```js
 import React from 'react';
 import {

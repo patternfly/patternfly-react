@@ -8,6 +8,7 @@ typescript: true
 
 import { Switch } from '@patternfly/react-core';
 
+## Examples
 ```js title=Simple-switch
 import React from 'react';
 import { Switch } from '@patternfly/react-core';

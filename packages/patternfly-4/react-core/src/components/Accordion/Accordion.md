@@ -9,6 +9,7 @@ propComponents: ['Accordion', 'AccordionItem', 'AccordionContent', 'AccordionTog
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';
 
 # Accordion definition list example
+## Examples
 ```js
 import React from 'react';
 import { Accordion, AccordionItem, AccordionContent, AccordionToggle } from '@patternfly/react-core';

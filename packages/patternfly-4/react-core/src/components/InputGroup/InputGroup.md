@@ -25,6 +25,7 @@ import {
 
 Buttons and TextArea
 
+## Examples
 ```js
 import React from 'react';
 import { DollarSignIcon, AtIcon, CalendarAltIcon, SearchIcon, QuestionCircleIcon } from '@patternfly/react-icons';
