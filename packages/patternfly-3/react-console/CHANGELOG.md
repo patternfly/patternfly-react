@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.12.13...@patternfly/react-console@2.0.0) (2019-10-08)
+
+
+### SerialConsole
+
+* Use xterm v4 ([#3030](https://github.com/patternfly/patternfly-react/issues/3030)) ([383ec51](https://github.com/patternfly/patternfly-react/commit/383ec51))
+
+
+### BREAKING CHANGES
+
+* bump xterm from ^3.3.0 to ^4.0.0
+
+
+
+
+
 ## [1.12.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.12.12...@patternfly/react-console@1.12.13) (2019-10-02)
 
 **Note:** Version bump only for package @patternfly/react-console

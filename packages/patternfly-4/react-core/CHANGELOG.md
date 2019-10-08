@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.113.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.113.1...@patternfly/react-core@3.113.2) (2019-10-08)
+
+
+### Bug Fixes
+
+* **button:** component type should accept react-router Link ([#3077](https://github.com/patternfly/patternfly-react/issues/3077)) ([85c8e29](https://github.com/patternfly/patternfly-react/commit/85c8e29))
+
+
+
+
+
 ## [3.113.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.113.0...@patternfly/react-core@3.113.1) (2019-10-07)
 
 **Note:** Version bump only for package @patternfly/react-core
