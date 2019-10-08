@@ -1,5 +1,6 @@
 ---
 title: 'Navigation'
+section: components
 cssPrefix: 'pf-c-nav'
 typescript: true
 propComponents: ['Nav', 'NavList', 'NavGroup', 'NavItem', 'NavItemSeparator', 'NavExpandable']

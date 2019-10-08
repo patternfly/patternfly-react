@@ -1,5 +1,6 @@
 ---
 title: 'Dropdown'
+section: components
 cssPrefix: 'pf-c-dropdown'
 propComponents: ['Dropdown', 'DropdownGroup', 'DropdownItem', 'DropdownToggle', 'DropdownToggleCheckbox']
 typescript: true

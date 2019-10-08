@@ -1,5 +1,6 @@
 ---
 title: 'Button'
+section: components
 cssPrefix: 'pf-c-button'
 typescript: true
 propComponents: ['Button']

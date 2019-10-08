@@ -1,5 +1,6 @@
 ---
 title: 'Modal'
+section: components
 cssPrefix: 'pf-c-modal-box'
 typescript: true
 propComponents: ['Modal', 'ModalBox', 'ModalBoxBody', 'ModalBoxCloseButton', 'ModalBoxFooter', 'ModalBoxHeader', 'ModalContent']

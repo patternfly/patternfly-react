@@ -1,5 +1,6 @@
 ---
 title: "Options menu"
+section: components
 cssPrefix: "pf-c-options-menu"
 propComponents: ['OptionsMenu', 'OptionsMenuItem', 'OptionsMenuSeparator', 'OptionsMenuToggle', 'OptionsMenuToggleWithText']
 typescript: true

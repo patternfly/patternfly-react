@@ -1,5 +1,6 @@
 ---
 title: 'Accordion'
+section: components
 cssPrefix: 'pf-c-accordion'
 typescript: true
 propComponents: ['Accordion', 'AccordionItem', 'AccordionContent', 'AccordionToggle']

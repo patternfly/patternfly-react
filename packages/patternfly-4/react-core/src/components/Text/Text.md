@@ -1,5 +1,6 @@
 ---
 title: 'Text'
+section: components
 cssPrefix: 'pf-c-content'
 typescript: true
 propComponents: ['TextContent', 'Text', 'TextList', 'TextListItem']

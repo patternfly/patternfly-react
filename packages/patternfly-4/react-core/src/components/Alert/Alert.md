@@ -1,5 +1,6 @@
 ---
 title: 'Alert'
+section: components
 cssPrefix: 'pf-c-alert'
 typescript: true
 propComponents: ['Alert', 'AlertActionCloseButton', 'AlertActionLink']

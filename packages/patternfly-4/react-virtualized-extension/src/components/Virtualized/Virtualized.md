@@ -1,6 +1,6 @@
 ---
 title: 'Table'
-section: 'Virtual Scroll'
+section: 'virtual scroll'
 ---
 
 Note: React Virtualized Extension lives in its own package at [`@patternfly/react-virtualized-extension`](https://www.npmjs.com/package/@patternfly/react-virtualized-extension)!

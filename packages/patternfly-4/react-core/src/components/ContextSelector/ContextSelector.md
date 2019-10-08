@@ -1,5 +1,6 @@
 ---
 title: 'Context selector'
+section: components
 propComponents: ['ContextSelector', 'ContextSelectorItem']
 typescript: true
 ---

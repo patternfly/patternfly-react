@@ -1,5 +1,6 @@
 ---
 title: 'Page'
+section: components
 cssPrefix: 'pf-c-page'
 typescript: true
 propComponents: ['Page', 'PageHeader', 'PageSidebar', 'PageSection']

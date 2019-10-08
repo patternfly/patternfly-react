@@ -1,5 +1,6 @@
 ---
 title: "Pagination"
+section: components
 cssPrefix: null
 propComponents: ["Pagination"]
 typescript: true

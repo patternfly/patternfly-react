@@ -1,5 +1,6 @@
 ---
 title: 'About modal'
+section: components
 cssPrefix: 'pf-c-about-modal-box'
 typescript: true
 propComponents: ['AboutModal']

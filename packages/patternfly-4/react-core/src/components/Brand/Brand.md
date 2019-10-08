@@ -1,5 +1,6 @@
 ---
 title: 'Brand'
+section: components
 cssPrefix: null
 typescript: true
 propComponents: ['Brand']

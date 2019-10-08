@@ -5,7 +5,7 @@ typescript: true
 propComponents: ['Chart', 'ChartAxis', 'ChartBar', 'ChartGroup', 'ChartLegend', 'ChartVoronoiContainer']
 ---
 
-import { Chart, ChartArea, ChartAxis, ChartBar, ChartDonut, ChartGroup, CharLegend, ChartLine, ChartStack, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
+import { Chart, ChartArea, ChartAxis, ChartBar, ChartDonut, ChartGroup, ChartLegend, ChartLine, ChartStack, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
 import './chart-theme.scss';
 import {
   chart_color_blue_300,

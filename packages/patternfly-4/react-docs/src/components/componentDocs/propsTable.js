@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ExclamationCircleIcon } from '@patternfly-safe/react-icons';
+import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
 const renderType = prop => {
   if (prop.type) {
