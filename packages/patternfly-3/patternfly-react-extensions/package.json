@@ -60,7 +60,8 @@
     "react-bootstrap-typeahead": "^3.4.1",
     "rimraf": "^2.6.2",
     "shx": "^0.3.2",
-    "xterm": "^3.3.0"
+    "xterm": "^4.0.0",
+    "xterm-addon-fit": "^0.2.1"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
