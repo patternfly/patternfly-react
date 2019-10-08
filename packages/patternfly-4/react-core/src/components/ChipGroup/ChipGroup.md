@@ -8,10 +8,8 @@ propComponents: ['Chip', 'ChipGroup', 'ChipGroupToolbarItem']
 
 import { Badge, Chip, ChipGroup, ChipGroupItem, ChipGroupToolbarItem } from '@patternfly/react-core';
 
-## Chip
-
 ## Examples
-```js
+```js title=Single
 import React from 'react';
 import { Badge, Chip } from '@patternfly/react-core';
 
@@ -77,9 +75,7 @@ class SingleChip extends React.Component {
 }
 ```
 
-## Chip group toolbar
-
-```js
+```js title=Chip-group-toolbar
 import React from 'react';
 import { Badge, Chip, ChipGroup, ChipGroupItem, ChipGroupToolbarItem } from '@patternfly/react-core';
 
@@ -140,9 +136,7 @@ class ToolbarChipGroup extends React.Component {
 }
 ```
 
-## Chip group multi-select
-
-```js
+```js title=Chip-group-multi-select
 import React from 'react';
 import { Badge, Chip, ChipGroup, ChipGroupItem, ChipGroupToolbarItem } from '@patternfly/react-core';
 
@@ -177,9 +171,7 @@ class MultiSelectChipGroup extends React.Component {
 }
 ```
 
-## Badge chip group
-
-```js
+```js title=Badge
 import React from 'react';
 import { Badge, Chip, ChipGroup, ChipGroupItem, ChipGroupToolbarItem } from '@patternfly/react-core';
 

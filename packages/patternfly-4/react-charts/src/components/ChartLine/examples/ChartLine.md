@@ -158,9 +158,7 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiC
 </div>
 ```
 
-## Multi-color (unorderd) line chart with bottom-left aligned legend and responsive container
-This demonstrates zoom for the x axis only
-```js
+```js title=Multi-color-(unorderd)-line-chart-with-bottom-left-aligned-legend-and-responsive-container
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory';
@@ -193,6 +191,7 @@ class MultiColorChart extends React.Component {
     
     return (
       <div ref={this.containerRef}>
+        <p>This demonstrates zoom for the x axis only</p>
         <div className="line-chart-legend-bottom-responsive">
           <Chart
             ariaDesc="Average number of pets"

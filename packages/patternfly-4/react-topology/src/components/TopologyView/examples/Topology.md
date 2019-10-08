@@ -13,10 +13,8 @@ import { ViewToolbar } from './ViewToolbar';
 import { ItemDetails } from './ItemDetails';
 import './topology-example.scss';
 
-## Topology view - Default Controls
-
 ## Examples
-```js
+```js title=Default-controls
 import React from 'react';
 import { TopologyView, TopologyControlBar, createTopologyControlButtons, TopologySideBar } from '@patternfly/react-topology';
 import { ProjectToolbar } from './ProjectToolbar';
@@ -54,9 +52,7 @@ class DefaultTopologyView extends React.Component {
 }
 ```
 
-## Topology view - Selected Controls
-
-```js
+```js title=Selected-controls
 import React from 'react';
 import { TopologyView, TopologyControlBar, createTopologyControlButtons } from '@patternfly/react-topology';
 import { ViewToolbar } from './ViewToolbar';
@@ -91,9 +87,7 @@ class SelectedTopologyView extends React.Component {
 }
 ```
 
-## Topology view - Custom Controls
-
-```js
+```js title=Custom-controls
 import React from 'react';
 import { ExternalLinkAltIcon, FilmIcon, GlassCheersIcon } from '@patternfly/react-icons';
 import { TopologyView, TopologyControlBar, createTopologyControlButtons } from '@patternfly/react-topology';

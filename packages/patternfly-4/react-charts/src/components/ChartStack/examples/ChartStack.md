@@ -89,13 +89,12 @@ import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react
 </div>
 ```
 
-## Multi-color (ordered), horizontal stacked bar chart with bottom-left aligned legend
-This demonstrates an alternate way of applying tooltips using data labels
-```js
+```js title=Multi-color-(ordered),-horizontal-stacked-bar-chart-with-bottom-left-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 
 <div>
+  <p>This demonstrates an alternate way of applying tooltips using data labels</p>
   <div className="stack-chart-legend-bottom">
     <Chart
       ariaDesc="Average number of pets"
@@ -158,9 +157,8 @@ import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react
 </div>
 ```
 
-## Monthly stacked bar chart with bottom aligned legend and responsive container
-This demonstrates monthly data and responsiveness for mobile
-```js
+## 
+```js title=Monthly stacked bar chart with bottom aligned legend and responsive container
 import React from 'react';
 import { Chart, ChartAxis, ChartStack, ChartTooltip } from '@patternfly/react-charts';
 
@@ -244,6 +242,7 @@ class ResponsiveStack extends React.Component {
     const { width } = this.state;
     return (
       <div ref={this.containerRef}>
+        <p>This demonstrates monthly data and responsiveness for mobile</p>
         <div>
           <Chart
             ariaDesc="Stack Chart with monthly metric data"

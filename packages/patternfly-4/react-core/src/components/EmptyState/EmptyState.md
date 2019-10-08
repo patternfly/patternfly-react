@@ -5,9 +5,6 @@ cssPrefix: 'pf-c-empty-state'
 typescript: true
 propComponents: ['EmptyState', 'EmptyStateBody', 'EmptyStateIcon', 'EmptyStateSecondaryActions']
 ---
-
-## Empty state
-
 import {
   Title,
   Button,
@@ -21,7 +18,7 @@ import {
 import { CubesIcon } from '@patternfly/react-icons';
 
 ## Examples
-```js
+```js title=Single
 import React from 'react';
 import {
   Title,

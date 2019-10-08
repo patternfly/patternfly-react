@@ -50,13 +50,12 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartVoronoiContaine
 </div>
 ```
 
-## Green, sparkline chart
-This demonstrates an alternate way of applying tooltips using CSS overflow
-```js
+```js title=Green,-sparkline-chart
 import React from 'react';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 <div>
+  <p>This demonstrates an alternate way of applying tooltips using CSS overflow</p>
   <div className="sparkline-container sparkline-overflow">
     <div className="sparkline-chart">
       <ChartGroup

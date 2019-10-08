@@ -5,9 +5,6 @@ cssPrefix: 'pf-c-data-list'
 propComponents: ['DataList', 'DataListAction', 'DataListCell', 'DataListCheck', 'DataListItem', 'DataListItemCells', 'DataListItemRow', 'DataListToggle', 'DataListContent']
 typescript: true
 ---
-
-## Simple data list
-
 import {
   Button,
   DataList,
@@ -29,7 +26,7 @@ import { CodeBranchIcon } from '@patternfly/react-icons';
 import { css } from '@patternfly/react-styles';
 
 ## Examples
-```js
+```js title=Simple-data-list
 import React from 'react';
 import {
   Button,
@@ -79,9 +76,7 @@ SimpleDataList = () => (
 );
 ```
 
-## Data list checkboxes, actions and additional cells
-
-```js
+```js title=Data-list-checkboxes,-actions-and-additional-cells
 import React from 'react';
 import {
   Button,
@@ -280,9 +275,7 @@ class CheckboxActionDataList extends React.Component {
 }
 ```
 
-## Data list actions: single and multiple
-
-```js
+```js title=Data-list-actions:-single-and-multiple
 import React from 'react';
 import {
   Button,
@@ -391,9 +384,7 @@ class ActionsDataList extends React.Component {
 }
 ```
 
-## Data list expandable
-
-```js
+```js title=Data-list-expandable
 import React from 'react';
 import {
   Button,
@@ -636,9 +627,7 @@ class ExpandableDataList extends React.Component {
 }
 ```
 
-## Data list width modifiers
-
-```js
+```js title=Data-list-width-modifiers
 import React from 'react';
 import {
   Button,

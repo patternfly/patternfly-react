@@ -20,10 +20,8 @@ import UUID from 'uuid/v1';
 import virtualGridStyles from './VirtualGrid.example.css';
 
 
-## Simple Example
-
 ## Examples
-```js
+```js title=Basic
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
@@ -141,9 +139,7 @@ class VirtualizedExample extends React.Component {
 export default VirtualizedExample;
 ```
 
-## Sortable Example
-
-```js
+```js title=Sortable
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
@@ -283,9 +279,7 @@ class SortableExample extends React.Component {
 export default SortableExample;
 ```
 
-## Selectable Example
-
-```js
+```js title=Selectable
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';
@@ -434,9 +428,7 @@ class SelectableExample extends React.Component {
 export default SelectableExample;
 ```
 
-## Actions Example
-
-```js
+```js title=Actions
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';

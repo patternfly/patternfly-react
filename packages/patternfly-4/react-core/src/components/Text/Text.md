@@ -72,11 +72,9 @@ import {
 </TextContent>
 ```
 
-## Unordered list
-
 Text components such as Text, TextList, TextListItem need to be placed within a TextContent
 
-```js
+```js title=Unordered-list
 import React from 'react';
 import {
   TextContent,

@@ -6,9 +6,6 @@ typescript: true
 propComponents: ['Nav', 'NavList', 'NavGroup', 'NavItem', 'NavItemSeparator', 'NavExpandable']
 optIn: "In a future breaking-change release, the nav will default to the dark theme. You can opt-in and update to use the nav dark theme now by setting the theme prop to 'dark'"
 ---
-
-## Simple navigation
-
 import {
   Nav,
   NavExpandable,
@@ -22,7 +19,7 @@ import {
 import './nav.scss';
 
 ## Examples
-```js
+```js title=Basic
 import React from 'react';
 import {
   Nav,

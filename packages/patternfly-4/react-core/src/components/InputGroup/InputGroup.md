@@ -5,9 +5,6 @@ cssPrefix: null
 propComponents: ['InputGroup', 'InputGroupText']
 typescript: true
 ---
-
-## Simple input group
-
 import { DollarSignIcon, AtIcon, CalendarAltIcon, SearchIcon, QuestionCircleIcon } from '@patternfly/react-icons';
 import {
   Button,
@@ -23,10 +20,8 @@ import {
   PopoverPosition
 } from '@patternfly/react-core';
 
-Buttons and TextArea
-
 ## Examples
-```js
+```js title=Baisc
 import React from 'react';
 import { DollarSignIcon, AtIcon, CalendarAltIcon, SearchIcon, QuestionCircleIcon } from '@patternfly/react-icons';
 import {

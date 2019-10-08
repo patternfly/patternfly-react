@@ -5,13 +5,10 @@ cssPrefix: 'pf-c-radio'
 typescript: true
 propComponents: ['Radio']
 ---
-
 import { Radio } from '@patternfly/react-core';
 
-## Controlled radio
-
 ## Examples
-```js
+```js title=Controlled
 import React from 'react';
 import { Radio } from '@patternfly/react-core';
 
@@ -45,9 +42,7 @@ class ControlledRadio extends React.Component {
 }
 ```
 
-## Uncontrolled radio
-
-```js
+```js title=Uncontrolled
 import React from 'react';
 import { Radio } from '@patternfly/react-core';
 
@@ -58,9 +53,7 @@ UncontrolledRadio = () => (
 );
 ```
 
-## Reversed radio
-
-```js
+```js title=Reversed
 import React from 'react';
 import { Radio } from '@patternfly/react-core';
 
@@ -71,9 +64,7 @@ ReversedRadio = () => (
 );
 ```
 
-## Label wraps input radio
-
-```js
+```js title=Label-wraps
 import React from 'react';
 import { Radio } from '@patternfly/react-core';
 
@@ -84,9 +75,7 @@ LabelWrapsInputRadio = () => (
 );
 ```
 
-## Disabled radio
-
-```js
+```js title=Disabled
 import React from 'react';
 import { Radio } from '@patternfly/react-core';
 

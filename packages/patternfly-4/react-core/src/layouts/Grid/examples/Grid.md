@@ -5,14 +5,11 @@ section: 'layouts'
 propComponents: ['Grid', 'GridItem']
 typescript: true 
 ---
-
-## Simple grid
-
 import { Grid, GridItem } from '@patternfly/react-core';
 import './grid.scss';
 
 ## Examples
-```js
+```js title=Basic
 import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 

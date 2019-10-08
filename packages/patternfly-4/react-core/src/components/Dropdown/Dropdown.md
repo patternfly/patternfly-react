@@ -9,10 +9,8 @@ typescript: true
 import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, DropdownGroup } from '@patternfly/react-core';
 import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
 
-## Simple dropdown
-
 ## Examples
-```js
+```js title=Basic
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
@@ -66,9 +64,7 @@ class SimpleDropdown extends React.Component {
 }
 ```
 
-## Dropdown with initial selection
-
-```js
+```js title=Dropdown-with-initial-selection
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -123,9 +119,7 @@ class IntialSelectionDropdown extends React.Component {
 }
 ```
 
-## Dropdown with groups
-
-```js
+```js title=Dropdown-with-groups
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownGroup, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
 
@@ -182,9 +176,7 @@ class GroupedDropdown extends React.Component {
 }
 ```
 
-## Dropdown (disabled)
-
-```js
+```js title=Dropdown-(disabled)
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -242,9 +234,7 @@ class DisabledDropdown extends React.Component {
 }
 ```
 
-## Dropdown (primary toggle)
-
-```js
+```js title=Dropdown-(primary-toggle)
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection } from '@patternfly/react-core';
 import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
@@ -298,9 +288,7 @@ class PrimaryDropdown extends React.Component {
 }
 ```
 
-## Dropdown (position right)
-
-```js
+```js title=Dropdown-(position-right)
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -355,9 +343,7 @@ class PositionRightDropdown extends React.Component {
 }
 ```
 
-## Dropdown (direction up)
-
-```js
+```js title=Dropdown-(direction-up)
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -467,9 +453,7 @@ class KebabDropdown extends React.Component {
 }
 ```
 
-## Dropdown (icon only)
-
-```js
+```js title=Dropdown-(icon-only)
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -528,9 +512,7 @@ class IconDropdown extends React.Component {
 }
 ```
 
-## Split button
-
-```js
+```js title=Split-button
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -595,9 +577,7 @@ class SplitButtonDropdown extends React.Component {
 }
 ```
 
-## Split button (with text)
-
-```js
+```js title=Split-button-(with-text)
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -662,9 +642,7 @@ class SplitButtonDropdown extends React.Component {
 }
 ```
 
-## Split button (3rd state)
-
-```js
+```js title=Split-button-(3rd-state)
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -735,9 +713,7 @@ class SplitButtonDropdown extends React.Component {
 }
 ```
 
-## Split button (disabled)
-
-```js
+```js title=Split-button-(disabled)
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -804,11 +780,7 @@ class SplitButtonDisabledDropdown extends React.Component {
 }
 ```
 
-## Dropdown panel
-
-The Basic Dropdown is provided for flexibility in allowing various content within a dropdown.
-
-```js
+```js title=Basic
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';

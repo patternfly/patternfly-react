@@ -13,16 +13,14 @@ import { Alert } from '@patternfly/react-core';
 ## Spinner
 
 ## Examples
-```js
+```js title=Basic
 import React from 'react';
 import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 
-SpinnerSimple = () => (<Spinner/>);
+SpinnerBasic = () => (<Spinner/>);
 ```
 
-# Spinner size variations
-
-```js
+```js title=Spinner-size-variations
 import React from 'react';
 import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 

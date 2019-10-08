@@ -6,15 +6,11 @@ propComponents: ['Drawer', 'DrawerPanelContent', 'DrawerContent']
 section: 'experimental'
 stage: 'early'
 ---
-
 import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core/dist/esm/experimental';
 import { Alert } from '@patternfly/react-core';
 
-
-## Simple drawer component
-
 ## Examples
-```js
+```js title=Basic
 import React {ReactFragment} from 'react';
 import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core/dist/esm/experimental';
 import { Button } from '@patternfly/react-core';
@@ -51,10 +47,7 @@ class SimpleDrawer extends React.Component {
 }
 ```
 
-
-## Simple drawer content inline component
-
-```js
+```js title=Basic-inline-component
 import React {ReactFragment} from 'react';
 import { Drawer, DrawerPanelContent, DrawerContent } from '@patternfly/react-core/dist/esm/experimental';
 import { Button } from '@patternfly/react-core';

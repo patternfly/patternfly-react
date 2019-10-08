@@ -5,14 +5,11 @@ cssPrefix: 'pf-c-notification-badge'
 typescript: true
 propComponents: ['NotificationBadge']
 ---
-
 import { NotificationBadge } from '@patternfly/react-core';
 import { BellIcon } from '@patternfly/react-icons';
 
-## Simple notification badge
-
 ## Examples
-```js
+```js title=Basic
 import React from 'react';
 import { NotificationBadge } from '@patternfly/react-core';
 import { BellIcon } from '@patternfly/react-icons';
