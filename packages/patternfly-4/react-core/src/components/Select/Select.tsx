@@ -142,9 +142,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
       });
     }
 
-    if (prevProps.selections !== this.props.selections && this.state.typeaheadActiveChild) {
+    if (prevProps.selections !== this.props.selections && this.props.variant === SelectVariant.typeahead) {
       this.setState({
-        typeaheadInputValue: this.state.typeaheadActiveChild.innerText
+        typeaheadInputValue: this.props.selections as string
       });
     }
   };
