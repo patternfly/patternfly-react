@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.20...@patternfly/react-charts@5.0.21) (2019-10-09)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
 ## [5.0.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.19...@patternfly/react-charts@5.0.20) (2019-10-09)
 
 
