@@ -6,8 +6,8 @@ typescript: true
 propComponents: ['AboutModal']
 ---
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
-import brandImg from './examples/brandImg.svg';
-import bgImg from './examples/patternfly-orb.svg';
+import brandImg from './brandImg.svg';
+import bgImg from './patternfly-orb.svg';
 
 ## Examples
 ```js title=Simple-about-modal
