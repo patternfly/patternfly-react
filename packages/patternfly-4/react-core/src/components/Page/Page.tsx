@@ -105,15 +105,15 @@ export class Page extends React.Component<PageProps, PageState> {
   };
 
   onNavToggleMobile = () => {
-    this.setState({
-      mobileIsNavOpen: !this.state.mobileIsNavOpen
-    });
+    this.setState(prevState => ({
+      mobileIsNavOpen: !prevState.mobileIsNavOpen
+    }));
   };
 
   onNavToggleDesktop = () => {
-    this.setState({
-      desktopIsNavOpen: !this.state.desktopIsNavOpen
-    });
+    this.setState(prevState => ({
+      desktopIsNavOpen: !prevState.desktopIsNavOpen
+    }));
   };
 
   render() {
