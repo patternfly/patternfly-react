@@ -25,7 +25,7 @@ class BootstrapSlider extends React.Component {
   // Instead of rendering the slider element again and again,
   // we took advantage of the bootstrap-slider library
   // and only update the new value or format when new props arrive.
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.slider.setValue(nextProps.value);
     // Sets the tooltip format.
     this.slider.setAttribute('formatter', nextProps.formatter);

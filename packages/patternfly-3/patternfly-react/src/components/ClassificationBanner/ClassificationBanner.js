@@ -28,7 +28,7 @@ class ClassificationBanner extends React.Component {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.closed !== this.state.closed) {
       this.setState({ closed: nextProps.closed });
     }

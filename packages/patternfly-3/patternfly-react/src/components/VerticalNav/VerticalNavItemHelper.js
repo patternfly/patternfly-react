@@ -37,7 +37,7 @@ class BaseVerticalNavItemHelper extends React.Component {
     }
   }
 
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     const {
       setControlledActivePath,
       setControlledHoverPath,

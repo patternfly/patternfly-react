@@ -202,7 +202,7 @@ export class MockServerPaginationTable extends React.Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const { sortingColumns, pagination } = this.state;
     this.getPage(sortingColumns, pagination);
   }
