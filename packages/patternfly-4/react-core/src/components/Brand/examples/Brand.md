@@ -6,7 +6,7 @@ typescript: true
 propComponents: ['Brand']
 ---
 import { Brand } from '@patternfly/react-core';
-import pfLogo from './examples/pfLogo.svg';
+import pfLogo from './pfLogo.svg';
 
 ## Examples
 ```js title=Basic

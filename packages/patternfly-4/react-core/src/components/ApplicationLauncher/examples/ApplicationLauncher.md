@@ -10,7 +10,7 @@ To add a tooltip, use the `tooltip` prop and optionally add more tooltip props b
 
 import { ApplicationLauncher, ApplicationLauncherContent, ApplicationLauncherIcon, ApplicationLauncherText, ApplicationLauncherItem, ApplicationLauncherGroup, ApplicationLauncherSeparator, Text } from '@patternfly/react-core';
 import { HelpIcon } from '@patternfly/react-icons';
-import pfIcon from './examples/pf-logo-small.svg';
+import pfIcon from './pf-logo-small.svg';
 
 ## Examples
 ```js title=Simple-application-launcher

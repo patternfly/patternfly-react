@@ -16,7 +16,7 @@ import {
   NavVariants,
   PageHeader
 } from '@patternfly/react-core';
-import './nav.scss';
+import './nav.css';
 
 ## Examples
 ```js title=Basic

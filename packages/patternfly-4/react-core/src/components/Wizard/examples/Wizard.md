@@ -7,8 +7,8 @@ propComponents: ['Wizard', 'WizardNav', 'WizardNavItem', 'WizardHeader', 'Wizard
 ---
 
 import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
-import FinishedStep from './examples/FinishedStep';
-import SampleForm from './examples/SampleForm';
+import FinishedStep from './FinishedStep';
+import SampleForm from './SampleForm';
 
 ### Examples
 ```js title=Simple-wizard
@@ -59,7 +59,7 @@ class SimpleWizard extends React.Component {
 }
 ```
 
-```js title=Wizard---compact-navigation-(Wizard-`isCompactNav`-prop)
+```js title=Wizard---compact-navigation-(Wizard-'isCompactNav'-prop)
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 
@@ -108,7 +108,7 @@ class CompactWizard extends React.Component {
 }
 ```
 
-```js title=Wizard---steps-not-clickable-in-side-nav-until-step-is-reached-(step-`canJumpTo`-prop)
+```js title=Wizard---steps-not-clickable-in-side-nav-until-step-is-reached-(step-'canJumpTo'-prop)
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 
@@ -163,7 +163,7 @@ class DisabledStepsWizard extends React.Component {
 }
 ```
 
-```js title=Wizard---finished-step-(step-`isFinished`-prop)
+```js title=Wizard---finished-step-(step-'isFinished'-prop)
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 import FinishedStep from './examples/FinishedStep';

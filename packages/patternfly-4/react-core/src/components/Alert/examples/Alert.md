@@ -6,7 +6,7 @@ typescript: true
 propComponents: ['Alert', 'AlertActionCloseButton', 'AlertActionLink']
 ---
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
-import './examples/alert.scss';
+import './alert.css';
 
 ## Examples
 ```js title=Default-alert

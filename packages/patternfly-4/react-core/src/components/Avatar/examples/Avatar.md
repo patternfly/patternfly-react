@@ -7,7 +7,7 @@ propComponents: ['Avatar']
 ---
 
 import { Avatar } from '@patternfly/react-core';
-import avatarImg from './examples/avatarImg.svg';
+import avatarImg from './avatarImg.svg';
 
 ## Examples
 ```js title=Simple

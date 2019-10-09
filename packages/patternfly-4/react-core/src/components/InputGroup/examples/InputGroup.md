@@ -21,7 +21,7 @@ import {
 } from '@patternfly/react-core';
 
 ## Examples
-```js title=Baisc
+```js title=Basic
 import React from 'react';
 import { DollarSignIcon, AtIcon, CalendarAltIcon, SearchIcon, QuestionCircleIcon } from '@patternfly/react-icons';
 import {
