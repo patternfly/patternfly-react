@@ -1,0 +1,31 @@
+.ws-preview {
+  & > * {
+    .legend-bar-chart-legend-bottom {
+      height: 275px;
+      width: 450px;
+    }
+
+    .legend-bullet-chart-horz-responsive-legend-bottom {
+      height: 250px;
+    }
+
+    .legend-donut-chart-legend-right {
+      height: 230px;
+      width: 350px;
+    }
+
+    .legend-line-chart-legend-bottom {
+      height: 275px;
+      width: 450px;
+    }
+
+    .legend-pie-chart-legend-bottom {
+      height: 275px;
+      width: 300px;
+    }
+
+    .legend-area-chart-legend-bottom-responsive {
+      height: 225px;
+    }
+  }
+}
