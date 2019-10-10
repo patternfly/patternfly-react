@@ -4,7 +4,7 @@ cssPrefix: 'pf-c-data-toolbar'
 typescript: true
 propComponents: ['DataToolbar', 'DataToolbarContent', 'DataToolbarItem', 'DataToolbarGroup', 'DataToolbarToggleGroup', 'DataToolbarBreakpointMod', 'DataToolbarFilter', 'DataToolbarChip']
 section: 'experimental'
-stage: 'early'
+experimentalStage: 'early'
 ---
 
 import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup, DataToolbarFilter } from '@patternfly/react-core/dist/esm/experimental';

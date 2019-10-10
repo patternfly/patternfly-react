@@ -4,7 +4,7 @@ cssPrefix: 'pf-c-overflow-menu'
 typescript: true
 propComponents: ['OverflowMenu', 'OverflowMenuContent', 'OverflowMenuControl', 'OverflowMenuDropdownItem', 'OverflowMenuGroup', 'OverflowMenuItem']
 section: 'experimental'
-stage: 'early'
+experimentalStage: 'early'
 ---
 
 import { OverflowMenu, OverflowMenuControl, OverflowMenuContent, OverflowMenuGroup, OverflowMenuItem, OverflowMenuDropdownItem } from '@patternfly/react-core/dist/esm/experimental';
