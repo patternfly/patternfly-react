@@ -6,6 +6,7 @@ import { RefObject } from 'react';
 import { DataToolbarItem } from './DataToolbarItem';
 import { Button } from '../../../components/Button';
 import { DataToolbarGroup } from './DataToolbarGroup';
+import { globalBreakpoints } from './DataToolbarUtils';
 
 export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the Data toolbar content row */
@@ -16,18 +17,29 @@ export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDi
   clearAllFilters?: () => void;
   /** Flag indicating that the Clear all filters button should be visible */
   showClearFiltersButton: boolean;
-  /** Flag indicating if a Data toolbar toggle group's expandable content is expanded */
-  expandableContentIsExpanded: boolean;
+  /** Text to display in the Clear all filters button */
+  clearFiltersButtonText?: string;
+  /** Total number of filters currently being applied across all DataToolbarFilter components */
+  numberOfFilters: number;
+  /** The breakpoint at which the listed filters in chip groups are collapsed down to a summary */
+  collapseListedFiltersBreakpoint?: 'md' | 'lg' | 'xl' | '2xl';
 }
 
 export class DataToolbarChipGroupContent extends React.Component<DataToolbarChipGroupContentProps> {
+  static defaultProps = {
+    clearFiltersButtonText: 'Clear all filters',
+    collapseListedFiltersBreakpoint: 'lg'
+  };
+
   render() {
     const {
       className,
       chipGroupContentRef,
       clearAllFilters,
       showClearFiltersButton,
-      expandableContentIsExpanded,
+      clearFiltersButtonText,
+      collapseListedFiltersBreakpoint,
+      numberOfFilters,
       ...props
     } = this.props;
 
@@ -35,21 +47,43 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
       clearAllFilters();
     };
 
+    const collapseListedFilters = typeof window !== 'undefined' ?
+      window.innerWidth < globalBreakpoints(collapseListedFiltersBreakpoint) :
+      false;
+
     return (
       <div
-        className={css(styles.dataToolbarContent, getModifier(styles, 'hidden'), className)}
+        className={css(
+          styles.dataToolbarContent,
+          getModifier(styles, 'chip-container'),
+          getModifier(styles, 'hidden'),
+          className
+        )}
         hidden
         ref={chipGroupContentRef}
         {...props}
       >
-        <DataToolbarGroup variant="filter-group" />
-        {showClearFiltersButton && !expandableContentIsExpanded && (
+        <DataToolbarGroup
+          variant="filter-group"
+          className={css(collapseListedFilters && getModifier(styles, 'hidden'))}
+          {...(collapseListedFilters && { hidden: true })}
+          {...(collapseListedFilters && { 'aria-hidden': true })}
+        />
+        {
+          collapseListedFilters && numberOfFilters > 0 && (
+            <DataToolbarGroup className={css(getModifier(styles, 'toggle-group-summary'))}>
+              <DataToolbarItem>{numberOfFilters} filters applied</DataToolbarItem>
+            </DataToolbarGroup>
+          )
+        }
+        {
+          showClearFiltersButton &&
           <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
             <Button variant="link" onClick={clearChipGroups}>
-              Clear all filters
+              {clearFiltersButtonText}
             </Button>
           </DataToolbarItem>
-        )}
+        }
       </div>
     );
   }

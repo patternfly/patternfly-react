@@ -29,6 +29,8 @@ interface DataToolbarFilterState {
 }
 
 export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, DataToolbarFilterState> {
+  // @ts-ignore
+  static contextType: any = DataToolbarContext;
   static defaultProps = {
     chips: [] as string[]
   };
@@ -41,55 +43,54 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
   }
 
   componentDidMount() {
-    /* eslint-disable-next-line */
+    this.context.updateNumberFilters(this.props.categoryName, this.props.chips.length);
     this.setState({ isMounted: true });
+  }
+
+  componentDidUpdate() {
+    this.context.updateNumberFilters(this.props.categoryName, this.props.chips.length);
   }
 
   render() {
     const { children, chips, deleteChip, categoryName, ...props } = this.props;
+    const { isExpanded, chipGroupContentRef } = this.context;
+
+    const chipGroup = (
+      <DataToolbarItem variant="chip-group">
+        <ChipGroup withToolbar>
+          <ChipGroupToolbarItem key={categoryName} categoryName={categoryName}>
+            {chips.map(chip => {
+              return typeof chip === 'string' ? (
+                <Chip key={chip} onClick={() => deleteChip(categoryName, chip)}>
+                  {chip}
+                </Chip>
+              ) : (
+                <Chip key={chip.key} onClick={() => deleteChip(categoryName, chip)}>
+                  {chip.node}
+                </Chip>
+              );
+            })}
+          </ChipGroupToolbarItem>
+        </ChipGroup>
+      </DataToolbarItem>
+    );
+
+    if (!isExpanded && this.state.isMounted) {
+      chipGroupContentRef.current.classList.remove(getModifier(styles, 'hidden'));
+      chipGroupContentRef.current.hidden = false;
+      return (
+        <React.Fragment>
+          <DataToolbarItem {...props}>{children}</DataToolbarItem>
+          {ReactDOM.createPortal(chipGroup, chipGroupContentRef.current.firstElementChild)}
+        </React.Fragment>
+      );
+    }
 
     return (
-      <DataToolbarContext.Consumer>
-        {({ isExpanded, chipGroupContentRef }) => {
-          const chipGroup = (
-            <DataToolbarItem variant="chip-group">
-              <ChipGroup withToolbar>
-                <ChipGroupToolbarItem key={categoryName} categoryName={categoryName}>
-                  {chips.map(chip => {
-                    return typeof chip === 'string' ? (
-                      <Chip key={chip} onClick={() => deleteChip(categoryName, chip)}>
-                        {chip}
-                      </Chip>
-                    ) : (
-                      <Chip key={chip.key} onClick={() => deleteChip(categoryName, chip)}>
-                        {chip.node}
-                      </Chip>
-                    );
-                  })}
-                </ChipGroupToolbarItem>
-              </ChipGroup>
-            </DataToolbarItem>
-          );
-
-          if (!isExpanded && this.state.isMounted) {
-            chipGroupContentRef.current.classList.remove(getModifier(styles, 'hidden'));
-            chipGroupContentRef.current.hidden = false;
-            return (
-              <React.Fragment>
-                <DataToolbarItem {...props}>{children}</DataToolbarItem>
-                {ReactDOM.createPortal(chipGroup, chipGroupContentRef.current.firstElementChild)}
-              </React.Fragment>
-            );
-          }
-
-          return (
-            <React.Fragment>
-              <DataToolbarItem {...props}>{children}</DataToolbarItem>
-              {chipGroup}
-            </React.Fragment>
-          );
-        }}
-      </DataToolbarContext.Consumer>
+      <React.Fragment>
+        <DataToolbarItem {...props}>{children}</DataToolbarItem>
+        {chipGroup}
+      </React.Fragment>
     );
   }
 }

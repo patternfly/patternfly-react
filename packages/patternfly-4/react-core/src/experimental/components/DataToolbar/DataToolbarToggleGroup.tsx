@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { css, getModifier } from '@patternfly/react-styles';
 import { DataToolbarGroupProps } from './DataToolbarGroup';
-import { DataToolbarContext } from './DataToolbarUtils';
+import { DataToolbarContentContext } from './DataToolbarUtils';
 import { Button } from '../../../components/Button';
 import { global_breakpoint_lg as globalBreakpointLg } from '@patternfly/react-tokens';
 
@@ -14,7 +14,7 @@ export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
   /** An Icon to be rendered when the toggle group has collapsed down */
   toggleIcon: React.ReactNode;
   /** The breakpoint at which the toggle group is collapsed down */
-  breakpoint: 'md' | 'lg' | 'xl' | '2xl';
+  breakpoint: 'md' | 'lg' | 'xl';
 }
 
 export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGroupProps> {
@@ -32,7 +32,7 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
     const { toggleIcon, breakpoint, variant, breakpointMods, className, children, ...props } = this.props;
 
     return (
-      <DataToolbarContext.Consumer>
+      <DataToolbarContentContext.Consumer>
         {({ isExpanded, toggleIsExpanded, expandableContentRef, expandableContentId }) => {
           return (
             <div
@@ -41,7 +41,7 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
                 variant && getModifier(styles, variant),
                 formatBreakpointMods(breakpointMods, styles),
                 getModifier(styles, 'toggle-group'),
-                getModifier(styles, `reveal-on-${breakpoint}`),
+                getModifier(styles, `show-on-${breakpoint}`),
                 className
               )}
               {...props}
@@ -50,6 +50,7 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
                 <Button
                   variant="plain"
                   onClick={toggleIsExpanded}
+                  aria-label="Show Filters"
                   {...(isExpanded && { 'aria-expanded': true })}
                   aria-haspopup={isExpanded && this.isContentPopup()}
                   aria-controls={expandableContentId}
@@ -61,7 +62,7 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
             </div>
           );
         }}
-      </DataToolbarContext.Consumer>
+      </DataToolbarContentContext.Consumer>
     );
   }
 }

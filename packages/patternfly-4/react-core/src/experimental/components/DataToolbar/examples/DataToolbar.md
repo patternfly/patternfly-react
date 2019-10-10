@@ -266,8 +266,8 @@ class DataToolbarGroupTypes extends React.Component {
 - The Toggle group can either have the toggle state managed by the consumer, or the component. The first Toggle group example demonstrates a component managed toggle state.
 - The second Toggle group example below demonstrates a consumer managed toggle state. If the consumer would prefer to manage the expanded state of the toggle group for smaller screen widths:
 
-  1. Add a toggleIsExpanded callback to DataToolbar
-  1. Pass in a boolean into the isExpanded prop to DataToolbar
+  1. Add a toggleIsExpanded callback to DataToolbarContent
+  1. Pass in a boolean into the isExpanded prop to DataToolbarContent
 
 - Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.
 
@@ -404,7 +404,11 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
     
     const items =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
     
-    return <DataToolbar id="data-toolbar-component-managed-toggle-groups" ><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
+    return <DataToolbar id="data-toolbar-component-managed-toggle-groups" >
+      <DataToolbarContent>
+        {items}
+      </DataToolbarContent>
+    </DataToolbar>;
   }
 }
 ```
@@ -549,7 +553,13 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
     
     const items =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
     
-    return <DataToolbar id="data-toolbar-consumer-managed-toggle-groups" isExpanded={isExpanded} toggleIsExpanded={this.toggleIsExpanded}><DataToolbarContent>{items}</DataToolbarContent></DataToolbar>;
+    return (
+      <DataToolbar id="data-toolbar-consumer-managed-toggle-groups">
+          <DataToolbarContent isExpanded={isExpanded} toggleIsExpanded={this.toggleIsExpanded}>
+            {items}
+          </DataToolbarContent>
+        </DataToolbar>
+      );
   }
 }
 ```
@@ -670,6 +680,10 @@ class DataToolbarWithChipGroupExample extends React.Component {
     window.addEventListener('resize', this.closeExpandableContent);
   }
   
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.closeExpandableContent);
+  }
+  
   render() {
     const { 
       inputValue, 
@@ -769,7 +783,7 @@ class DataToolbarWithChipGroupExample extends React.Component {
       </DataToolbarItem>
     </React.Fragment>;
     
-    return <DataToolbar id="data-toolbar-with-chip-groups" clearAllFilters={this.onDelete} showClearFiltersButton={ filters.risk.length !== 0 || filters.status.length !== 0 }><DataToolbarContent>{toolbarItems}</DataToolbarContent></DataToolbar>;
+    return <DataToolbar id="data-toolbar-with-chip-groups" collapseListedFiltersBreakpoint='xl' clearAllFilters={this.onDelete}><DataToolbarContent>{toolbarItems}</DataToolbarContent></DataToolbar>;
   }
 }
 
