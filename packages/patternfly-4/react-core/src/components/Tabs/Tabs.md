@@ -500,13 +500,13 @@ export default class TabsNavVariant extends React.Component {
         aria-label="Local"
         variant={TabsVariant.nav}
       >
-        <Tab eventKey={0} title="Tab item 1">
+        <Tab eventKey={0} title="Tab item 1" href="https://google.com">
           Tab 1 section
         </Tab>
-        <Tab eventKey={1} title="Tab item 2" >
+        <Tab eventKey={1} title="Tab item 2" href="https://google.com">
           Tab 2 section
         </Tab>
-        <Tab eventKey={2} title="Tab item 3">
+        <Tab eventKey={2} title="Tab item 3" href="https://google.com">
           Tab 3 section
         </Tab>
       </Tabs>
