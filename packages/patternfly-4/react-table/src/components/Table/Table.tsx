@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import stylesGrid from '@patternfly/react-styles/css/components/Table/table-grid';
-import { DropdownPosition, DropdownDirection, DropdownItemProps, Omit } from '@patternfly/react-core';
+import { InjectedOuiaProps, withOuiaContext, DropdownPosition, DropdownDirection, DropdownItemProps, Omit } from '@patternfly/react-core';
 import { css, getModifier } from '@patternfly/react-styles';
 import { Provider } from './base';
 import { BodyCell } from './BodyCell';
@@ -229,7 +229,7 @@ export const TableContext = React.createContext({
   rows: [] as (IRow | string[])[]
 });
 
-export class Table extends React.Component<TableProps, {}> {
+class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
   static defaultProps = {
     children: null as React.ReactNode,
     className: '',
@@ -286,6 +286,8 @@ export class Table extends React.Component<TableProps, {}> {
       rowWrapper,
       borders,
       role,
+      ouiaContext,
+      ouiaId,
       ...props
     } = this.props;
 
@@ -345,6 +347,10 @@ export class Table extends React.Component<TableProps, {}> {
             variant === TableVariant.compact && borders === false ? styles.modifiers.noBorderRows : null,
             className
           )}
+          {...ouiaContext.isOuia && {
+            'data-ouia-component-type': 'Table',
+            'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+          }}
         >
           {caption && <caption>{caption}</caption>}
           {children}
@@ -353,3 +359,7 @@ export class Table extends React.Component<TableProps, {}> {
     );
   }
 }
+
+const TableWithOuiaContext = withOuiaContext(Table);
+
+export { TableWithOuiaContext as Table };
