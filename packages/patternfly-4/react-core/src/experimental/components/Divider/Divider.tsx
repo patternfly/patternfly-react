@@ -26,6 +26,6 @@ export const Divider: React.FunctionComponent<DividerProps> = ({
   const Component: any = variant;
 
   return (
-    <Component {...props} role={role} className={css(styles.divider, className)}/>
+    <Component {...props} className={css(styles.divider, className)} role={role}/>
   );
 };

@@ -8,12 +8,36 @@ stage: 'early'
 ---
 import { Divider } from '@patternfly/react-core/dist/esm/experimental';
 
-## Divider
+## Divider using hr (default)
 ```js
 import React from 'react';
 import { Divider } from '@patternfly/react-core/dist/esm/experimental';
 
-DividerSimple = (
+DividerHr = (
   <Divider/>
+);
+```
+
+## Divider using li
+```js
+import React from 'react';
+import { Divider } from '@patternfly/react-core/dist/esm/experimental';
+
+DividerLi = (
+  <ul>
+    <li>List item one</li>
+    <Divider variant="li" role="separator"/>
+    <li>List item two</li>
+  </ul>
+);
+```
+
+## Divider using div
+```js
+import React from 'react';
+import { Divider } from '@patternfly/react-core/dist/esm/experimental';
+
+DividerLi = (
+  <Divider variant="div" role="separator"/>
 );
 ```
