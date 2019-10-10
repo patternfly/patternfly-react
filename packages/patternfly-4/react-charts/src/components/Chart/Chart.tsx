@@ -16,9 +16,9 @@ import {
   VictoryZoomContainer
 } from 'victory';
 import { ChartContainer } from '../ChartContainer';
-import { ChartLegend, ChartLegendOrientation, ChartLegendPosition, ChartLegendWrapper } from '../ChartLegend';
+import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
-import { getClassName, getLabelTextSize, getPaddingForSide, getTheme } from '../ChartUtils';
+import { getClassName, getComputedLegend, getLabelTextSize, getPaddingForSide, getTheme } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -171,6 +171,13 @@ export interface ChartProps extends VictoryChartProps {
    * When the innerRadius prop is set, polar charts will be hollow rather than circular.
    */
   innerRadius?: number;
+  /**
+   * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
+   * if its container is not wide enough.
+   *
+   * Note: This is overridden by the legendItemsPerRow property
+   */
+  legendAllowWrap?: boolean;
   /**
    * The legend component to render with chart.
    *
@@ -357,6 +364,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
   ariaDesc,
   ariaTitle,
   children,
+  legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartLegendPosition,
@@ -396,8 +404,8 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
     ...legendComponent.props
   });
 
-  // Returns a wrapped legend
-  const getWrappedLegend = () => {
+  // Returns a computed legend
+  const getLegend = () => {
     if (!legend.props.data) {
       return null;
     }
@@ -420,20 +428,18 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       dy += xAxisLabelHeight + legendTitleHeight;
       dx = -10;
     }
-    return (
-      <ChartLegendWrapper
-        chartType="chart"
-        dx={dx}
-        dy={dy}
-        height={height}
-        legendComponent={legend}
-        orientation={legendOrientation}
-        padding={defaultPadding}
-        position={legendPosition}
-        theme={theme}
-        width={width}
-      />
-    );
+    return getComputedLegend({
+      allowWrap: legendAllowWrap,
+      chartType: 'chart',
+      dx,
+      dy,
+      height,
+      legendComponent: legend,
+      padding: defaultPadding,
+      position: legendPosition,
+      theme,
+      width
+    });
   };
 
   return (
@@ -446,7 +452,7 @@ export const Chart: React.FunctionComponent<ChartProps> = ({
       {...rest}
     >
       {children}
-      {getWrappedLegend()}
+      {getLegend()}
     </VictoryChart>
   );
 };

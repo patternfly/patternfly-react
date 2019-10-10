@@ -14,10 +14,10 @@ import {
 } from 'victory';
 import { Helpers } from 'victory-core';
 import { ChartContainer } from '../ChartContainer';
-import { ChartLegend, ChartLegendOrientation, ChartLegendWrapper } from '../ChartLegend';
+import { ChartLegend, ChartLegendOrientation } from '../ChartLegend';
 import { ChartCommonStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
-import { getPaddingForSide, getTheme } from '../ChartUtils';
+import { getComputedLegend, getPaddingForSide, getTheme } from '../ChartUtils';
 
 export enum ChartPieLabelPosition {
   centroid = 'centroid',
@@ -245,6 +245,13 @@ export interface ChartPieProps extends VictoryPieProps {
    */
   labels?: string[] | ((data: any) => string);
   /**
+   * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
+   * if its container is not wide enough.
+   *
+   * Note: This is overridden by the legendItemsPerRow property
+   */
+  legendAllowWrap?: boolean;
+  /**
    * The legend component to render with chart.
    *
    * Note: Use legendData so the legend width can be calculated and positioned properly.
@@ -405,6 +412,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   constrainToVisibleArea = false,
   containerComponent = <ChartContainer />,
   labels,
+  legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendData,
   legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
@@ -457,29 +465,27 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
 
   const legend = React.cloneElement(legendComponent, {
     data: legendData,
+    key: 'pf-chart-pie-legend',
     orientation: legendOrientation,
     theme,
     ...legendComponent.props
   });
 
-  // Returns a wrapped legend
-  const getWrappedLegend = () => {
+  // Returns a computed legend
+  const getLegend = () => {
     if (!legend.props.data) {
       return null;
     }
-    return (
-      <ChartLegendWrapper
-        chartType="pie"
-        height={height}
-        key="pf-chart-pie-legend"
-        legendComponent={legend}
-        orientation={legendOrientation}
-        padding={defaultPadding}
-        position={legendPosition}
-        theme={theme}
-        width={width}
-      />
-    );
+    return getComputedLegend({
+      allowWrap: legendAllowWrap,
+      chartType: 'pie',
+      height,
+      legendComponent: legend,
+      padding: defaultPadding,
+      position: legendPosition,
+      theme,
+      width
+    });
   };
 
   // Clone so users can override container props
@@ -493,7 +499,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
       theme,
       ...containerComponent.props
     },
-    [chart, getWrappedLegend()]
+    [chart, getLegend()]
   );
 
   return standalone ? (
@@ -501,7 +507,7 @@ export const ChartPie: React.FunctionComponent<ChartPieProps> = ({
   ) : (
     <React.Fragment>
       {chart}
-      {getWrappedLegend()}
+      {getLegend()}
     </React.Fragment>
   );
 };

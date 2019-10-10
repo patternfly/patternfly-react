@@ -34,11 +34,6 @@ export enum ChartDonutThresholdLabelPosition {
   startAngle = 'startAngle'
 }
 
-export enum ChartDonutThresholdLegendPosition {
-  bottom = 'bottom',
-  right = 'right'
-}
-
 export enum ChartDonutThresholdSortOrder {
   ascending = 'ascending',
   descending = 'descending'
@@ -256,13 +251,6 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   labels?: string[] | ((data: any) => string);
   /**
-   * The legend position relation to the donut chart. Valid values are 'bottom' and 'right'
-   *
-   * Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some
-   * cases, the legend may not be visible until enough padding is applied.
-   */
-  legendPosition?: 'bottom' | 'right';
-  /**
    * The name prop is used to reference a component instance when defining shared events.
    */
   name?: string;
@@ -329,7 +317,7 @@ export interface ChartDonutThresholdProps extends ChartDonutProps {
    */
   subTitle?: string;
   /**
-   * The orientation of the donut chart in relation to the legend. Valid values are 'bottom', 'center', and 'right'
+   * The orientation of the subtitle position. Valid values are 'bottom', 'center', and 'right'
    */
   subTitlePosition?: 'bottom' | 'center' | 'right';
   /**
@@ -403,7 +391,6 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
   data = [],
   invert = false,
   labels = [], // Don't show any tooltip labels by default, let consumer override if needed
-  legendPosition = ChartCommonStyles.legend.position as ChartDonutThresholdLegendPosition,
   padding,
   radius,
   standalone = true,
@@ -480,7 +467,6 @@ export const ChartDonutThreshold: React.FunctionComponent<ChartDonutThresholdPro
           height,
           invert,
           key: `pf-chart-donut-threshold-child-${index}`,
-          legendPosition: childProps.legendPosition || legendPosition,
           padding: defaultPadding,
           radius: chartRadius - 14, // Donut utilization radius is threshold radius minus 14px spacing
           showStatic: false,

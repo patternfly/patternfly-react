@@ -15,7 +15,7 @@ import {
 import { Data } from 'victory-core';
 import { ChartContainer } from '../ChartContainer';
 import { ChartDonut, ChartDonutProps } from '../ChartDonut';
-import { ChartThemeDefinition, ChartDonutUtilizationStyles } from '../ChartTheme';
+import { ChartCommonStyles, ChartThemeDefinition, ChartDonutUtilizationStyles } from '../ChartTheme';
 import { getDonutUtilizationTheme } from '../ChartUtils';
 
 export enum ChartDonutUtilizationLabelPosition {
@@ -244,6 +244,13 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   invert?: boolean;
   /**
+   * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
+   * if its container is not wide enough.
+   *
+   * Note: This is overridden by the legendItemsPerRow property
+   */
+  legendAllowWrap?: boolean;
+  /**
    * The labelComponent prop takes in an entire label component which will be used
    * to create a label for the area. The new element created from the passed labelComponent
    * will be supplied with the following properties: x, y, index, data, verticalAnchor,
@@ -385,7 +392,7 @@ export interface ChartDonutUtilizationProps extends ChartDonutProps {
    */
   subTitleComponent?: React.ReactElement<any>;
   /**
-   * The orientation of the donut chart in relation to the legend. Valid values are 'bottom', 'center', and 'right'
+   * The orientation of the subtitle position. Valid values are 'bottom', 'center', and 'right'
    */
   subTitlePosition?: 'bottom' | 'center' | 'right';
   /**
@@ -463,6 +470,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
   containerComponent = <ChartContainer />,
   data,
   invert = false,
+  legendPosition = ChartCommonStyles.legend.position as ChartDonutUtilizationLegendPosition,
   padding,
   showStatic = true,
   standalone = true,
@@ -546,6 +554,7 @@ export const ChartDonutUtilization: React.FunctionComponent<ChartDonutUtilizatio
       data={getComputedData()}
       height={height}
       key="pf-chart-donut-utilization"
+      legendPosition={legendPosition}
       padding={padding}
       standalone={false}
       theme={getThresholdTheme()}
