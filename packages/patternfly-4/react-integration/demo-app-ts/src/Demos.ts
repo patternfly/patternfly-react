@@ -146,6 +146,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DataListDemo
   },
   {
+    id: 'divider-demo',
+    name: 'Divider Demo',
+    componentType: Examples.DividerDemo
+  },
+  {
     id: 'donut-chart-bottom-legend-demo',
     name: 'Donut Chart with Bottom Aligned Legend Demo',
     componentType: Examples.DonutBottomAlignedLegendDemo

@@ -10,7 +10,13 @@ export class DividerDemo extends React.Component {
     return (
       <React.Fragment>
         <Divider/>
-        <Divider variant="li" role="separator"/>
+
+        <ul>
+          <li>List item one</li>
+          <Divider variant="li" role="separator"/>
+          <li>List item two</li>
+        </ul>
+
         <Divider variant="div" role="separator"/>
       </React.Fragment>
     );

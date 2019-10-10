@@ -10,7 +10,13 @@ describe('Divider Demo Test', () => {
       .first()
   });
 
-  it('Verify compact label', () => {
-    cy.get('.pf-m-compact').contains('Compact label');
+  it('Verify divider with li', () => {
+    cy.get('.pf-c-divider')
+      .should('have.attr', 'role');
+  });
+
+  it('Verify divider with div', () => {
+    cy.get('.pf-c-divider')
+      .should('have.attr', 'role');
   });
 });
