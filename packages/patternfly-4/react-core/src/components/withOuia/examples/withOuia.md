@@ -1,4 +1,9 @@
+---
+title: "withouia"
+---
+
 ### Adding OUIA capabilities to library components
+
 
  1. Import: `import { InjectedOuiaProps, withOuiaContext } from  '../withOuia';`
  2. For TS combine the props with the InjectedOuiaProps `class  Switch  extends  React.Component<SwitchProps  &  InjectedOuiaProps>`

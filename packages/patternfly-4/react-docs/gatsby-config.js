@@ -13,6 +13,8 @@ module.exports = {
     {
       resolve: `gatsby-theme-patternfly-org`,
       options: {
+        // By title:
+        hiddenPages: ['withOuia'],
         sideNavItems: [
           { section: 'charts' },
           { section: 'components' },
