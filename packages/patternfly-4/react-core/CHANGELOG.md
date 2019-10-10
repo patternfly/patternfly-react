@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.114.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.113.4...@patternfly/react-core@3.114.0) (2019-10-10)
+
+
+### Features
+
+* **Expandable:** Allow for dynamic toggle text in uncontrolled version ([#3068](https://github.com/patternfly/patternfly-react/issues/3068)) ([3c6e4b6](https://github.com/patternfly/patternfly-react/commit/3c6e4b6)), closes [#2914](https://github.com/patternfly/patternfly-react/issues/2914)
+
+
+
+
+
 ## [3.113.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.113.3...@patternfly/react-core@3.113.4) (2019-10-09)
 
 **Note:** Version bump only for package @patternfly/react-core
