@@ -4,7 +4,7 @@ cssPrefix: 'pf-c-spinner'
 typescript: true
 propComponents: ['Spinner']
 section: 'experimental'
-stage: 'early'
+experimentalStage: 'early'
 ---
 
 import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
