@@ -1,6 +1,6 @@
 ---
-title: "Bulk select table"
-section: "demos"
+title: 'Bulk select table'
+section: 'demos'
 ---
 
 ## Bulk select table demo
@@ -9,14 +9,9 @@ import { Pagination, PaginationVariant, Title, Checkbox } from '@patternfly/reac
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
 ```js
-import React from "react";
-import {
-  Pagination,
-  PaginationVariant,
-  Title,
-  Checkbox
-} from "@patternfly/react-core";
-import { Table, TableHeader, TableBody } from "@patternfly/react-table";
+import React from 'react';
+import { Pagination, PaginationVariant, Title, Checkbox } from '@patternfly/react-core';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class BulkSelectTableDemo extends React.Component {
   constructor(props) {
@@ -31,7 +26,7 @@ class BulkSelectTableDemo extends React.Component {
       numSelected: 0,
       isDropDownOpen: false,
       isKebabOpen: false,
-      searchValue: ""
+      searchValue: ''
     };
 
     this.onSelect = (event, isSelected, rowId) => {
@@ -41,9 +36,7 @@ class BulkSelectTableDemo extends React.Component {
       rows[rowId].selected = isSelected;
       this.setState({
         res: rows,
-        selectedItems: isSelected
-          ? [...selectedItems, id]
-          : selectedItems.filter(itemId => itemId !== id)
+        selectedItems: isSelected ? [...selectedItems, id] : selectedItems.filter(itemId => itemId !== id)
       });
     };
 
@@ -60,14 +53,14 @@ class BulkSelectTableDemo extends React.Component {
     };
 
     this.handleSelectClick = newState => {
-      if (newState === "none") {
+      if (newState === 'none') {
         this.setState(
           {
             selectedItems: []
           },
           this.updateSelected
         );
-      } else if (newState === "page") {
+      } else if (newState === 'page') {
         let newRows = [];
         let rows = this.state.res.map(post => {
           const isSelected = post.selected;
@@ -110,9 +103,7 @@ class BulkSelectTableDemo extends React.Component {
 
   fetch(page, perPage) {
     this.setState({ loading: true });
-    fetch(
-      `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${perPage}`
-    )
+    fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${perPage}`)
       .then(resp => resp.json())
       .then(resp => this.setState({ res: resp, perPage, page, loading: false }))
       .then(() => this.updateSelected())
@@ -123,7 +114,7 @@ class BulkSelectTableDemo extends React.Component {
     this.fetch(this.state.page, this.state.perPage);
   }
 
-  renderPagination(variant = "top") {
+  renderPagination(variant = 'top') {
     const { page, perPage, total } = this.state;
     return (
       <Pagination
@@ -159,10 +150,9 @@ class BulkSelectTableDemo extends React.Component {
                 aria-label="Select all"
                 isChecked={isChecked}
                 onClick={() => this.onDropDownToggle(!isDropDownOpen)}
+                onChange={allSelected ? () => this.handleSelectClick('none') : () => this.handleSelectClick('all')}
               >
-                {numSelected !== 0 && (
-                  <React.Fragment>{numSelected} selected</React.Fragment>
-                )}
+                {numSelected !== 0 && <React.Fragment>{numSelected} selected</React.Fragment>}
               </DropdownToggleCheckbox>
             ]}
             onToggle={this.onDropDownToggle}
@@ -170,22 +160,13 @@ class BulkSelectTableDemo extends React.Component {
         }
         isOpen={isDropDownOpen}
         dropdownItems={[
-          <DropdownItem
-            key="item-1"
-            onClick={() => this.handleSelectClick("none")}
-          >
+          <DropdownItem key="item-1" onClick={() => this.handleSelectClick('none')}>
             Select none (0 items)
           </DropdownItem>,
-          <DropdownItem
-            key="item-2"
-            onClick={() => this.handleSelectClick("page")}
-          >
+          <DropdownItem key="item-2" onClick={() => this.handleSelectClick('page')}>
             Select page ({this.state.perPage} items)
           </DropdownItem>,
-          <DropdownItem
-            key="item-3"
-            onClick={() => this.handleSelectClick("all")}
-          >
+          <DropdownItem key="item-3" onClick={() => this.handleSelectClick('all')}>
             Select all ({this.state.total} items)
           </DropdownItem>
         ]}
@@ -197,9 +178,7 @@ class BulkSelectTableDemo extends React.Component {
     return (
       <Toolbar className="pf-l-toolbar pf-u-justify-content-space-between pf-u-mx-xl pf-u-my-md">
         <ToolbarGroup>
-          <ToolbarItem className="pf-u-mr-md">
-            {this.buildSelectDropdown()}
-          </ToolbarItem>
+          <ToolbarItem className="pf-u-mr-md">{this.buildSelectDropdown()}</ToolbarItem>
         </ToolbarGroup>
       </Toolbar>
     );
@@ -218,7 +197,7 @@ class BulkSelectTableDemo extends React.Component {
         {!loading && (
           <Table
             header={<div></div>}
-            cells={["Title", "Body"]}
+            cells={['Title', 'Body']}
             rows={rows}
             onSelect={this.onSelect}
             canSelectAll={false}
