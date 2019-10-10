@@ -22,6 +22,8 @@ export interface DataToolbarFilterProps extends DataToolbarItemProps {
   children: React.ReactNode;
   /** Unique category name to be used as a label for the chip group */
   categoryName: string;
+  /** Flag to show the toolbar item */
+  showToolbarItem: boolean;
 }
 
 interface DataToolbarFilterState {
@@ -32,7 +34,8 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
   // @ts-ignore
   static contextType: any = DataToolbarContext;
   static defaultProps = {
-    chips: [] as string[]
+    chips: [] as string[],
+    showToolbarItem: true
   };
 
   constructor(props: DataToolbarFilterProps) {
@@ -52,7 +55,7 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
   }
 
   render() {
-    const { children, chips, deleteChip, categoryName, ...props } = this.props;
+    const { children, chips, deleteChip, categoryName, showToolbarItem, ...props } = this.props;
     const { isExpanded, chipGroupContentRef } = this.context;
 
     const chipGroup = chips.length ? (
@@ -78,7 +81,7 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
     if (!isExpanded && this.state.isMounted) {
       return (
         <React.Fragment>
-          <DataToolbarItem {...props}>{children}</DataToolbarItem>
+          {showToolbarItem && <DataToolbarItem {...props}>{children}</DataToolbarItem>}
           {ReactDOM.createPortal(chipGroup, chipGroupContentRef.current.firstElementChild)}
         </React.Fragment>
       );
@@ -86,7 +89,7 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
 
     return (
       <React.Fragment>
-        <DataToolbarItem {...props}>{children}</DataToolbarItem>
+        {showToolbarItem && <DataToolbarItem {...props}>{children}</DataToolbarItem>}
         {chipGroup}
       </React.Fragment>
     );
