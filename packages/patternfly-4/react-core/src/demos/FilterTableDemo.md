@@ -179,7 +179,8 @@ class FilterTableDemo extends React.Component {
             ['name']: prevFilters.includes(inputValue)
               ? prevFilters.filter(value => value !== inputValue)
               : [...prevFilters, inputValue]
-          }
+          },
+          inputValue: ''
         };
       });
     };
@@ -202,7 +203,6 @@ class FilterTableDemo extends React.Component {
     fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${perPage}`)
       .then(resp => resp.json())
       .then(resp => this.setState({ res: resp, perPage, page, loading: false }))
-      .then(() => this.updateSelected())
       .catch(err => this.setState({ error: err, loading: false }));
   }
 
@@ -361,7 +361,8 @@ class FilterTableDemo extends React.Component {
       filters.name.length > 0 || filters.location.length > 0 || filters.status.length > 0
         ? rows.filter(row => {
             return (
-              (filters.name.length === 0 || filters.name.some(name => row.cells[0].includes(name))) &&
+              (filters.name.length === 0 ||
+                filters.name.some(name => row.cells[0].toLowerCase().includes(name.toLowerCase()))) &&
               (filters.location.length === 0 || filters.location.includes(row.cells[5])) &&
               (filters.status.length === 0 || filters.status.includes(row.cells[4]))
             );

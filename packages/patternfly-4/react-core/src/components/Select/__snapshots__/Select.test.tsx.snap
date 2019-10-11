@@ -901,6 +901,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       ariaLabelTypeAhead=""
       ariaLabelledBy=""
       className=""
+<<<<<<< HEAD
       createText="Create"
       direction="down"
       isCreatable={false}
@@ -926,6 +927,15 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       toggleId={null}
       variant="checkbox"
       width=""
+=======
+      isExpanded={false}
+      isGrouped={true}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected=""
+      sendRef={[Function]}
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
     >
       <div
         className="pf-c-select pf-m-expanded"
@@ -1219,6 +1229,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
             active={true}
             focusTrapOptions={
               Object {
+<<<<<<< HEAD
                 "clickOutsideDeactivates": true,
               }
             }
@@ -1243,6 +1254,282 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                     >
                       <div
                         className="pf-c-select__menu-group"
+=======
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 320 512"
+            width="1em"
+          >
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
+        </CaretDownIcon>
+      </button>
+    </SelectToggle>
+    <SelectMenu
+      aria-label=""
+      aria-labelledby=""
+      checked=""
+      className=""
+      isExpanded={false}
+      isGrouped={true}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected=""
+      sendRef={[Function]}
+    >
+      <FocusTrap
+        _createFocusTrap={[Function]}
+        active={true}
+        focusTrapOptions={
+          Object {
+            "clickOutsideDeactivates": true,
+          }
+        }
+        paused={false}
+        tag="div"
+      >
+        <div>
+          <div
+            className="pf-c-select__menu"
+          >
+            <form
+              className="pf-c-form"
+              noValidate={true}
+            >
+              <div
+                className="pf-c-form__group"
+              >
+                <Component
+                  key=".0"
+                  label="group 1"
+                  titleId="group-1"
+                >
+                  <div
+                    className="pf-c-select__menu-group"
+                  >
+                    <div
+                      aria-hidden={true}
+                      className="pf-c-select__menu-group-title"
+                      id="group-1"
+                    >
+                      group 1
+                    </div>
+                    <fieldset
+                      aria-labelledby="group-1"
+                      className="pf-c-form__fieldset"
+                    >
+                      <SelectOption
+                        className=""
+                        component="button"
+                        index={0}
+                        isChecked=""
+                        isDisabled={false}
+                        isFocused={false}
+                        isPlaceholder={false}
+                        isSelected={false}
+                        key="0"
+                        keyHandler={[Function]}
+                        onClick={[Function]}
+                        sendRef={[Function]}
+                        value="Mr"
+                      >
+                        <label
+                          className="pf-c-check pf-c-select__menu-item"
+                          onKeyDown={[Function]}
+                        >
+                          <input
+                            className="pf-c-check__input"
+                            defaultChecked={false}
+                            disabled={false}
+                            id="Mr"
+                            onChange={[Function]}
+                            type="checkbox"
+                          />
+                          <span
+                            className="pf-c-check__label"
+                          >
+                            Mr
+                          </span>
+                        </label>
+                      </SelectOption>
+                      <SelectOption
+                        className=""
+                        component="button"
+                        index={1}
+                        isChecked=""
+                        isDisabled={false}
+                        isFocused={false}
+                        isPlaceholder={false}
+                        isSelected={false}
+                        key="1"
+                        keyHandler={[Function]}
+                        onClick={[Function]}
+                        sendRef={[Function]}
+                        value="Mrs"
+                      >
+                        <label
+                          className="pf-c-check pf-c-select__menu-item"
+                          onKeyDown={[Function]}
+                        >
+                          <input
+                            className="pf-c-check__input"
+                            defaultChecked={false}
+                            disabled={false}
+                            id="Mrs"
+                            onChange={[Function]}
+                            type="checkbox"
+                          />
+                          <span
+                            className="pf-c-check__label"
+                          >
+                            Mrs
+                          </span>
+                        </label>
+                      </SelectOption>
+                      <SelectOption
+                        className=""
+                        component="button"
+                        index={2}
+                        isChecked=""
+                        isDisabled={false}
+                        isFocused={false}
+                        isPlaceholder={false}
+                        isSelected={false}
+                        key="2"
+                        keyHandler={[Function]}
+                        onClick={[Function]}
+                        sendRef={[Function]}
+                        value="Ms"
+                      >
+                        <label
+                          className="pf-c-check pf-c-select__menu-item"
+                          onKeyDown={[Function]}
+                        >
+                          <input
+                            className="pf-c-check__input"
+                            defaultChecked={false}
+                            disabled={false}
+                            id="Ms"
+                            onChange={[Function]}
+                            type="checkbox"
+                          />
+                          <span
+                            className="pf-c-check__label"
+                          >
+                            Ms
+                          </span>
+                        </label>
+                      </SelectOption>
+                      <SelectOption
+                        className=""
+                        component="button"
+                        index={3}
+                        isChecked=""
+                        isDisabled={false}
+                        isFocused={false}
+                        isPlaceholder={false}
+                        isSelected={false}
+                        key="3"
+                        keyHandler={[Function]}
+                        onClick={[Function]}
+                        sendRef={[Function]}
+                        value="Other"
+                      >
+                        <label
+                          className="pf-c-check pf-c-select__menu-item"
+                          onKeyDown={[Function]}
+                        >
+                          <input
+                            className="pf-c-check__input"
+                            defaultChecked={false}
+                            disabled={false}
+                            id="Other"
+                            onChange={[Function]}
+                            type="checkbox"
+                          />
+                          <span
+                            className="pf-c-check__label"
+                          >
+                            Other
+                          </span>
+                        </label>
+                      </SelectOption>
+                    </fieldset>
+                  </div>
+                </Component>
+                <Component
+                  key=".1"
+                  label="group 2"
+                  titleId="group-2"
+                >
+                  <div
+                    className="pf-c-select__menu-group"
+                  >
+                    <div
+                      aria-hidden={true}
+                      className="pf-c-select__menu-group-title"
+                      id="group-2"
+                    >
+                      group 2
+                    </div>
+                    <fieldset
+                      aria-labelledby="group-2"
+                      className="pf-c-form__fieldset"
+                    >
+                      <SelectOption
+                        className=""
+                        component="button"
+                        index={4}
+                        isChecked=""
+                        isDisabled={false}
+                        isFocused={false}
+                        isPlaceholder={false}
+                        isSelected={false}
+                        key="0"
+                        keyHandler={[Function]}
+                        onClick={[Function]}
+                        sendRef={[Function]}
+                        value="Mr"
+                      >
+                        <label
+                          className="pf-c-check pf-c-select__menu-item"
+                          onKeyDown={[Function]}
+                        >
+                          <input
+                            className="pf-c-check__input"
+                            defaultChecked={false}
+                            disabled={false}
+                            id="Mr"
+                            onChange={[Function]}
+                            type="checkbox"
+                          />
+                          <span
+                            className="pf-c-check__label"
+                          >
+                            Mr
+                          </span>
+                        </label>
+                      </SelectOption>
+                      <SelectOption
+                        className=""
+                        component="button"
+                        index={5}
+                        isChecked=""
+                        isDisabled={false}
+                        isFocused={false}
+                        isPlaceholder={false}
+                        isSelected={false}
+                        key="1"
+                        keyHandler={[Function]}
+                        onClick={[Function]}
+                        sendRef={[Function]}
+                        value="Mrs"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
                       >
                         <div
                           aria-hidden={true}
@@ -2088,8 +2375,122 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
       onToggle={[MockFunction]}
       ouiaContext={
         Object {
+<<<<<<< HEAD
           "isOuia": false,
           "ouiaId": null,
+=======
+          "current": <div
+            class="pf-c-select pf-m-expanded"
+          >
+            <button
+              aria-expanded="true"
+              aria-labelledby=" pf-toggle-id-11"
+              class="pf-c-select__toggle"
+              id="pf-toggle-id-11"
+              type="button"
+            >
+              <div
+                class="pf-c-select__toggle-wrapper"
+              >
+                <span
+                  class="pf-c-select__toggle-text"
+                />
+                
+              </div>
+              <svg
+                aria-hidden="true"
+                class="pf-c-select__toggle-arrow"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 320 512"
+                width="1em"
+              >
+                <path
+                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  transform=""
+                />
+              </svg>
+            </button>
+            <div>
+              <div
+                class="pf-c-select__menu"
+              >
+                <form
+                  class="pf-c-form"
+                  novalidate=""
+                >
+                  <div
+                    class="pf-c-form__group"
+                  >
+                    <fieldset
+                      aria-label=""
+                      class="pf-c-form__fieldset"
+                    >
+                      <label
+                        class="pf-c-check pf-c-select__menu-item"
+                      >
+                        <input
+                          class="pf-c-check__input"
+                          id="Mr"
+                          type="checkbox"
+                        />
+                        <span
+                          class="pf-c-check__label"
+                        >
+                          Mr
+                        </span>
+                      </label>
+                      <label
+                        class="pf-c-check pf-c-select__menu-item"
+                      >
+                        <input
+                          class="pf-c-check__input"
+                          id="Mrs"
+                          type="checkbox"
+                        />
+                        <span
+                          class="pf-c-check__label"
+                        >
+                          Mrs
+                        </span>
+                      </label>
+                      <label
+                        class="pf-c-check pf-c-select__menu-item"
+                      >
+                        <input
+                          class="pf-c-check__input"
+                          id="Ms"
+                          type="checkbox"
+                        />
+                        <span
+                          class="pf-c-check__label"
+                        >
+                          Ms
+                        </span>
+                      </label>
+                      <label
+                        class="pf-c-check pf-c-select__menu-item"
+                      >
+                        <input
+                          class="pf-c-check__input"
+                          id="Other"
+                          type="checkbox"
+                        />
+                        <span
+                          class="pf-c-check__label"
+                        >
+                          Other
+                        </span>
+                      </label>
+                    </fieldset>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>,
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
         }
       }
       placeholderText=""
@@ -2099,9 +2500,77 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
       variant="checkbox"
       width=""
     >
+<<<<<<< HEAD
       <div
         className="pf-c-select pf-m-expanded"
         style={
+=======
+      <button
+        aria-expanded={true}
+        aria-haspopup={null}
+        aria-labelledby=" pf-toggle-id-11"
+        className="pf-c-select__toggle"
+        disabled={false}
+        id="pf-toggle-id-11"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        type="button"
+      >
+        <div
+          className="pf-c-select__toggle-wrapper"
+        >
+          <span
+            className="pf-c-select__toggle-text"
+          />
+        </div>
+        <CaretDownIcon
+          className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            className="pf-c-select__toggle-arrow"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 320 512"
+            width="1em"
+          >
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
+        </CaretDownIcon>
+      </button>
+    </SelectToggle>
+    <SelectMenu
+      aria-label=""
+      aria-labelledby=""
+      checked=""
+      className=""
+      isExpanded={false}
+      isGrouped={false}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected=""
+      sendRef={[Function]}
+    >
+      <FocusTrap
+        _createFocusTrap={[Function]}
+        active={true}
+        focusTrapOptions={
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
           Object {
             "width": "",
           }
@@ -2127,12 +2596,19 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
               "current": <div
                 class="pf-c-select pf-m-expanded"
               >
+<<<<<<< HEAD
                 <button
                   aria-expanded="true"
                   aria-labelledby=" pf-toggle-id-11"
                   class="pf-c-select__toggle"
                   id="pf-toggle-id-11"
                   type="button"
+=======
+                <fieldset
+                  aria-label=""
+                  aria-labelledby={null}
+                  className="pf-c-form__fieldset"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
                 >
                   <div
                     class="pf-c-select__toggle-wrapper"
@@ -2327,8 +2803,12 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
                   >
                     <fieldset
                       aria-label=""
+<<<<<<< HEAD
                       aria-labelledby={null}
                       className="pf-c-form__fieldset"
+=======
+                      class="pf-c-form__fieldset"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
                     >
                       <CheckboxSelectOption
                         className=""
@@ -2455,12 +2935,254 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
                 </form>
               </div>
             </div>
+<<<<<<< HEAD
           </FocusTrap>
         </SelectMenu>
       </div>
     </Select>
   </ComponentWithOuia>
 </Component>
+=======
+          </div>,
+        }
+      }
+      type="button"
+      variant="checkbox"
+    >
+      <button
+        aria-expanded={true}
+        aria-haspopup={null}
+        aria-labelledby=" pf-toggle-id-10"
+        className="pf-c-select__toggle"
+        disabled={false}
+        id="pf-toggle-id-10"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        type="button"
+      >
+        <div
+          className="pf-c-select__toggle-wrapper"
+        >
+          <span
+            className="pf-c-select__toggle-text"
+          />
+        </div>
+        <CaretDownIcon
+          className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            className="pf-c-select__toggle-arrow"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 320 512"
+            width="1em"
+          >
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
+        </CaretDownIcon>
+      </button>
+    </SelectToggle>
+    <SelectMenu
+      aria-label=""
+      aria-labelledby=""
+      checked=""
+      className=""
+      isExpanded={false}
+      isGrouped={false}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected=""
+      sendRef={[Function]}
+    >
+      <FocusTrap
+        _createFocusTrap={[Function]}
+        active={true}
+        focusTrapOptions={
+          Object {
+            "clickOutsideDeactivates": true,
+          }
+        }
+        paused={false}
+        tag="div"
+      >
+        <div>
+          <div
+            className="pf-c-select__menu"
+          >
+            <form
+              className="pf-c-form"
+              noValidate={true}
+            >
+              <div
+                className="pf-c-form__group"
+              >
+                <fieldset
+                  aria-label=""
+                  aria-labelledby={null}
+                  className="pf-c-form__fieldset"
+                >
+                  <SelectOption
+                    className=""
+                    component="button"
+                    index={0}
+                    isChecked=""
+                    isDisabled={false}
+                    isFocused={false}
+                    isPlaceholder={false}
+                    isSelected={false}
+                    key=".$0"
+                    keyHandler={[Function]}
+                    onClick={[Function]}
+                    sendRef={[Function]}
+                    value="Mr"
+                  >
+                    <label
+                      className="pf-c-check pf-c-select__menu-item"
+                      onKeyDown={[Function]}
+                    >
+                      <input
+                        className="pf-c-check__input"
+                        defaultChecked={false}
+                        disabled={false}
+                        id="Mr"
+                        onChange={[Function]}
+                        type="checkbox"
+                      />
+                      <span
+                        className="pf-c-check__label"
+                      >
+                        Mr
+                      </span>
+                    </label>
+                  </SelectOption>
+                  <SelectOption
+                    className=""
+                    component="button"
+                    index={1}
+                    isChecked=""
+                    isDisabled={false}
+                    isFocused={false}
+                    isPlaceholder={false}
+                    isSelected={false}
+                    key=".$1"
+                    keyHandler={[Function]}
+                    onClick={[Function]}
+                    sendRef={[Function]}
+                    value="Mrs"
+                  >
+                    <label
+                      className="pf-c-check pf-c-select__menu-item"
+                      onKeyDown={[Function]}
+                    >
+                      <input
+                        className="pf-c-check__input"
+                        defaultChecked={false}
+                        disabled={false}
+                        id="Mrs"
+                        onChange={[Function]}
+                        type="checkbox"
+                      />
+                      <span
+                        className="pf-c-check__label"
+                      >
+                        Mrs
+                      </span>
+                    </label>
+                  </SelectOption>
+                  <SelectOption
+                    className=""
+                    component="button"
+                    index={2}
+                    isChecked=""
+                    isDisabled={false}
+                    isFocused={false}
+                    isPlaceholder={false}
+                    isSelected={false}
+                    key=".$2"
+                    keyHandler={[Function]}
+                    onClick={[Function]}
+                    sendRef={[Function]}
+                    value="Ms"
+                  >
+                    <label
+                      className="pf-c-check pf-c-select__menu-item"
+                      onKeyDown={[Function]}
+                    >
+                      <input
+                        className="pf-c-check__input"
+                        defaultChecked={false}
+                        disabled={false}
+                        id="Ms"
+                        onChange={[Function]}
+                        type="checkbox"
+                      />
+                      <span
+                        className="pf-c-check__label"
+                      >
+                        Ms
+                      </span>
+                    </label>
+                  </SelectOption>
+                  <SelectOption
+                    className=""
+                    component="button"
+                    index={3}
+                    isChecked=""
+                    isDisabled={false}
+                    isFocused={false}
+                    isPlaceholder={false}
+                    isSelected={false}
+                    key=".$3"
+                    keyHandler={[Function]}
+                    onClick={[Function]}
+                    sendRef={[Function]}
+                    value="Other"
+                  >
+                    <label
+                      className="pf-c-check pf-c-select__menu-item"
+                      onKeyDown={[Function]}
+                    >
+                      <input
+                        className="pf-c-check__input"
+                        defaultChecked={false}
+                        disabled={false}
+                        id="Other"
+                        onChange={[Function]}
+                        type="checkbox"
+                      />
+                      <span
+                        className="pf-c-check__label"
+                      >
+                        Other
+                      </span>
+                    </label>
+                  </SelectOption>
+                </fieldset>
+              </div>
+            </form>
+          </div>
+        </div>
+      </FocusTrap>
+    </SelectMenu>
+  </div>
+</Select>
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
 `;
 
 exports[`checkbox select renders expanded successfully 1`] = `
@@ -2802,8 +3524,12 @@ exports[`checkbox select renders expanded successfully 1`] = `
                   >
                     <fieldset
                       aria-label=""
+<<<<<<< HEAD
                       aria-labelledby={null}
                       className="pf-c-form__fieldset"
+=======
+                      class="pf-c-form__fieldset"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
                     >
                       <SelectOption
                         className=""
@@ -2946,12 +3672,241 @@ exports[`checkbox select renders expanded successfully 1`] = `
                 </form>
               </div>
             </div>
+<<<<<<< HEAD
           </FocusTrap>
         </SelectMenu>
       </div>
     </Select>
   </ComponentWithOuia>
 </Component>
+=======
+          </div>,
+        }
+      }
+      type="button"
+      variant="checkbox"
+    >
+      <button
+        aria-expanded={true}
+        aria-haspopup={null}
+        aria-labelledby=" pf-toggle-id-12"
+        className="pf-c-select__toggle"
+        disabled={false}
+        id="pf-toggle-id-12"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        type="button"
+      >
+        <div
+          className="pf-c-select__toggle-wrapper"
+        >
+          <span
+            className="pf-c-select__toggle-text"
+          />
+        </div>
+        <CaretDownIcon
+          className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            className="pf-c-select__toggle-arrow"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 320 512"
+            width="1em"
+          >
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
+        </CaretDownIcon>
+      </button>
+    </SelectToggle>
+    <SelectMenu
+      aria-label=""
+      aria-labelledby=""
+      checked=""
+      className=""
+      isExpanded={false}
+      isGrouped={false}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected=""
+      sendRef={[Function]}
+    >
+      <FocusTrap
+        _createFocusTrap={[Function]}
+        active={true}
+        focusTrapOptions={
+          Object {
+            "clickOutsideDeactivates": true,
+          }
+        }
+        paused={false}
+        tag="div"
+      >
+        <div>
+          <div
+            className="pf-c-select__menu"
+          >
+            <form
+              className="pf-c-form"
+              noValidate={true}
+            >
+              <div
+                className="pf-c-form__group"
+              >
+                <fieldset
+                  aria-label=""
+                  aria-labelledby={null}
+                  className="pf-c-form__fieldset"
+                >
+                  <SelectOption
+                    className=""
+                    component="button"
+                    index={0}
+                    isChecked=""
+                    isDisabled={false}
+                    isFocused={false}
+                    isPlaceholder={false}
+                    isSelected={false}
+                    key=".$0"
+                    keyHandler={[Function]}
+                    onClick={[Function]}
+                    sendRef={[Function]}
+                    value={
+                      User {
+                        "firstName": "User",
+                        "lastName": "One",
+                        "title": "Mr",
+                        "toString": [Function],
+                      }
+                    }
+                  >
+                    <label
+                      className="pf-c-check pf-c-select__menu-item"
+                      onKeyDown={[Function]}
+                    >
+                      <input
+                        className="pf-c-check__input"
+                        defaultChecked={false}
+                        disabled={false}
+                        id="Mr: User One"
+                        onChange={[Function]}
+                        type="checkbox"
+                      />
+                      <span
+                        className="pf-c-check__label"
+                      >
+                        Mr: User One
+                      </span>
+                    </label>
+                  </SelectOption>
+                  <SelectOption
+                    className=""
+                    component="button"
+                    index={1}
+                    isChecked=""
+                    isDisabled={false}
+                    isFocused={false}
+                    isPlaceholder={false}
+                    isSelected={false}
+                    key=".$1"
+                    keyHandler={[Function]}
+                    onClick={[Function]}
+                    sendRef={[Function]}
+                    value={
+                      User {
+                        "firstName": "New",
+                        "lastName": "User",
+                        "title": "Mrs",
+                        "toString": [Function],
+                      }
+                    }
+                  >
+                    <label
+                      className="pf-c-check pf-c-select__menu-item"
+                      onKeyDown={[Function]}
+                    >
+                      <input
+                        className="pf-c-check__input"
+                        defaultChecked={false}
+                        disabled={false}
+                        id="Mrs: New User"
+                        onChange={[Function]}
+                        type="checkbox"
+                      />
+                      <span
+                        className="pf-c-check__label"
+                      >
+                        Mrs: New User
+                      </span>
+                    </label>
+                  </SelectOption>
+                  <SelectOption
+                    className=""
+                    component="button"
+                    index={2}
+                    isChecked=""
+                    isDisabled={false}
+                    isFocused={false}
+                    isPlaceholder={false}
+                    isSelected={false}
+                    key=".$2"
+                    keyHandler={[Function]}
+                    onClick={[Function]}
+                    sendRef={[Function]}
+                    value={
+                      User {
+                        "firstName": "Test",
+                        "lastName": "Three",
+                        "title": "Ms",
+                        "toString": [Function],
+                      }
+                    }
+                  >
+                    <label
+                      className="pf-c-check pf-c-select__menu-item"
+                      onKeyDown={[Function]}
+                    >
+                      <input
+                        className="pf-c-check__input"
+                        defaultChecked={false}
+                        disabled={false}
+                        id="Ms: Test Three"
+                        onChange={[Function]}
+                        type="checkbox"
+                      />
+                      <span
+                        className="pf-c-check__label"
+                      >
+                        Ms: Test Three
+                      </span>
+                    </label>
+                  </SelectOption>
+                </fieldset>
+              </div>
+            </form>
+          </div>
+        </div>
+      </FocusTrap>
+    </SelectMenu>
+  </div>
+</Select>
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
 `;
 
 exports[`checkbox select renders expanded successfully with custom objects 1`] = `
@@ -3061,8 +4016,102 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       onToggle={[MockFunction]}
       ouiaContext={
         Object {
+<<<<<<< HEAD
           "isOuia": false,
           "ouiaId": null,
+=======
+          "current": <div
+            class="pf-c-select pf-m-expanded"
+          >
+            <div
+              class="pf-c-select__toggle pf-m-typeahead"
+            >
+              <div
+                class="pf-c-select__toggle-wrapper"
+              >
+                <form>
+                  <input
+                    aria-label=""
+                    autocomplete="off"
+                    class="pf-c-form-control pf-c-select__toggle-typeahead"
+                    id="select-typeahead"
+                    placeholder=""
+                    type="text"
+                    value="r"
+                  />
+                </form>
+              </div>
+              
+              <button
+                aria-expanded="true"
+                aria-haspopup="listbox"
+                aria-label="Options menu"
+                aria-labelledby=" pf-toggle-id-6"
+                class="pf-c-button pf-c-select__toggle-button"
+                id="pf-toggle-id-6"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="pf-c-select__toggle-arrow"
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  style="vertical-align: -0.125em;"
+                  viewBox="0 0 320 512"
+                  width="1em"
+                >
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+            </div>
+            <ul
+              aria-label=""
+              aria-labelledby=""
+              class="pf-c-select__menu"
+              role="listbox"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  class="pf-c-select__menu-item"
+                  id="Mr-0"
+                  role="option"
+                  type="button"
+                >
+                  Mr
+                </button>
+              </li>
+              <li
+                role="presentation"
+              >
+                <button
+                  class="pf-c-select__menu-item"
+                  id="Mrs-1"
+                  role="option"
+                  type="button"
+                >
+                  Mrs
+                </button>
+              </li>
+              <li
+                role="presentation"
+              >
+                <button
+                  class="pf-c-select__menu-item"
+                  id="Other-2"
+                  role="option"
+                  type="button"
+                >
+                  Other
+                </button>
+              </li>
+            </ul>
+          </div>,
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
         }
       }
       placeholderText=""
@@ -3420,9 +4469,131 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
           </FocusTrap>
         </SelectMenu>
       </div>
+<<<<<<< HEAD
     </Select>
   </ComponentWithOuia>
 </Component>
+=======
+    </SelectToggle>
+    <SelectMenu
+      aria-label=""
+      aria-labelledby=""
+      className=""
+      isExpanded={false}
+      isGrouped={false}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected=""
+      sendRef={[Function]}
+    >
+      <ul
+        aria-label=""
+        aria-labelledby=""
+        className="pf-c-select__menu"
+        role="listbox"
+      >
+        <SelectOption
+          className=""
+          component="button"
+          id="Mr-0"
+          index={0}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$0"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Mr"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Mr-0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Mr
+            </button>
+          </li>
+        </SelectOption>
+        <SelectOption
+          className=""
+          component="button"
+          id="Mrs-1"
+          index={1}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$1"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Mrs"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Mrs-1"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Mrs
+            </button>
+          </li>
+        </SelectOption>
+        <SelectOption
+          className=""
+          component="button"
+          id="Other-2"
+          index={2}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$3"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Other"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Other-2"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Other
+            </button>
+          </li>
+        </SelectOption>
+      </ul>
+    </SelectMenu>
+  </div>
+</Select>
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
 `;
 
 exports[`select custom select filter filters properly 1`] = `
@@ -3527,6 +4698,7 @@ exports[`select custom select filter filters properly 1`] = `
       onToggle={[MockFunction]}
       ouiaContext={
         Object {
+<<<<<<< HEAD
           "isOuia": false,
           "ouiaId": null,
         }
@@ -3565,6 +4737,52 @@ exports[`select custom select filter filters properly 1`] = `
             Object {
               "current": <div
                 class="pf-c-select pf-m-expanded"
+=======
+          "current": <div
+            class="pf-c-select pf-m-expanded"
+          >
+            <button
+              aria-expanded="true"
+              aria-haspopup="listbox"
+              aria-labelledby=" pf-toggle-id-7"
+              class="pf-c-select__toggle"
+              id="pf-toggle-id-7"
+              type="button"
+            >
+              <div
+                class="pf-c-select__toggle-wrapper"
+              >
+                <span
+                  class="pf-c-select__toggle-text"
+                />
+              </div>
+              <svg
+                aria-hidden="true"
+                class="pf-c-select__toggle-arrow"
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style="vertical-align: -0.125em;"
+                viewBox="0 0 320 512"
+                width="1em"
+              >
+                <path
+                  d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  transform=""
+                />
+              </svg>
+            </button>
+            <ul
+              aria-label=""
+              aria-labelledby=""
+              class="pf-c-select__menu"
+              role="listbox"
+            >
+              <div
+                class="pf-c-select__menu-group"
+                id="-0"
+                index="0"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
               >
                 <div
                   class="pf-c-select__toggle pf-m-typeahead"
@@ -3664,6 +4882,7 @@ exports[`select custom select filter filters properly 1`] = `
             onClick={[Function]}
             onKeyDown={[Function]}
           >
+<<<<<<< HEAD
             <div
               className="pf-c-select__toggle-wrapper"
             >
@@ -3734,6 +4953,39 @@ exports[`select custom select filter filters properly 1`] = `
           createText="Create"
           isExpanded={false}
           isGrouped={false}
+=======
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
+        </CaretDownIcon>
+      </button>
+    </SelectToggle>
+    <SelectMenu
+      aria-label=""
+      aria-labelledby=""
+      className=""
+      isExpanded={false}
+      isGrouped={false}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected=""
+      sendRef={[Function]}
+    >
+      <ul
+        aria-label=""
+        aria-labelledby=""
+        className="pf-c-select__menu"
+        role="listbox"
+      >
+        <Component
+          id="-0"
+          index={0}
+          isSelected={false}
+          key=".0"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
           keyHandler={[Function]}
           maxHeight=""
           noResultsFoundText="No results found"
@@ -5563,6 +6815,7 @@ exports[`select single select renders expanded successfully 1`] = `
                   transform=""
                 />
               </svg>
+<<<<<<< HEAD
             </CaretDownIcon>
           </button>
         </SelectToggle>
@@ -5601,6 +6854,14 @@ exports[`select single select renders expanded successfully 1`] = `
               onClick={[Function]}
               sendRef={[Function]}
               value="Mr"
+=======
+            </button>
+            <ul
+              aria-label=""
+              aria-labelledby=""
+              class="pf-c-select__menu"
+              role="listbox"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
             >
               <li
                 role="presentation"
@@ -5681,10 +6942,218 @@ exports[`select single select renders expanded successfully 1`] = `
                   Ms
                 </button>
               </li>
+<<<<<<< HEAD
             </SelectOption>
             <SelectOption
               className=""
               component="button"
+=======
+              <li
+                role="presentation"
+              >
+                <button
+                  class="pf-c-select__menu-item"
+                  id="Other-3"
+                  role="option"
+                  type="button"
+                >
+                  Other
+                </button>
+              </li>
+            </ul>
+          </div>,
+        }
+      }
+      type="button"
+      variant="single"
+    >
+      <button
+        aria-expanded={true}
+        aria-haspopup="listbox"
+        aria-labelledby=" pf-toggle-id-2"
+        className="pf-c-select__toggle"
+        disabled={false}
+        id="pf-toggle-id-2"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        type="button"
+      >
+        <div
+          className="pf-c-select__toggle-wrapper"
+        >
+          <span
+            className="pf-c-select__toggle-text"
+          >
+            Mr
+          </span>
+        </div>
+        <CaretDownIcon
+          className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            className="pf-c-select__toggle-arrow"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 320 512"
+            width="1em"
+          >
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
+        </CaretDownIcon>
+      </button>
+    </SelectToggle>
+    <SelectMenu
+      aria-label=""
+      aria-labelledby=""
+      className=""
+      isExpanded={false}
+      isGrouped={false}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected=""
+      sendRef={[Function]}
+    >
+      <ul
+        aria-label=""
+        aria-labelledby=""
+        className="pf-c-select__menu"
+        role="listbox"
+      >
+        <SelectOption
+          className=""
+          component="button"
+          id="Mr-0"
+          index={0}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={false}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$0"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Mr"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Mr-0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Mr
+            </button>
+          </li>
+        </SelectOption>
+        <SelectOption
+          className=""
+          component="button"
+          id="Mrs-1"
+          index={1}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={false}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$1"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Mrs"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Mrs-1"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Mrs
+            </button>
+          </li>
+        </SelectOption>
+        <SelectOption
+          className=""
+          component="button"
+          id="Ms-2"
+          index={2}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={false}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$2"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Ms"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Ms-2"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Ms
+            </button>
+          </li>
+        </SelectOption>
+        <SelectOption
+          className=""
+          component="button"
+          id="Other-3"
+          index={3}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={false}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$3"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Other"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
               id="Other-3"
               index={3}
               isChecked={false}
@@ -5997,6 +7466,7 @@ exports[`select single select renders expanded successfully with custom objects 
                   transform=""
                 />
               </svg>
+<<<<<<< HEAD
             </CaretDownIcon>
           </button>
         </SelectToggle>
@@ -6042,6 +7512,14 @@ exports[`select single select renders expanded successfully with custom objects 
                   "toString": [Function],
                 }
               }
+=======
+            </button>
+            <ul
+              aria-label=""
+              aria-labelledby=""
+              class="pf-c-select__menu"
+              role="listbox"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
             >
               <li
                 role="presentation"
@@ -6128,14 +7606,18 @@ exports[`select single select renders expanded successfully with custom objects 
                   aria-selected={null}
                   className="pf-c-select__menu-item"
                   id="Ms: Test Three-2"
+<<<<<<< HEAD
                   onClick={[Function]}
                   onKeyDown={[Function]}
+=======
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
                   role="option"
                   type="button"
                 >
                   Ms: Test Three
                 </button>
               </li>
+<<<<<<< HEAD
             </SelectOption>
           </ul>
         </SelectMenu>
@@ -6143,6 +7625,204 @@ exports[`select single select renders expanded successfully with custom objects 
     </Select>
   </ComponentWithOuia>
 </Component>
+=======
+            </ul>
+          </div>,
+        }
+      }
+      type="button"
+      variant="single"
+    >
+      <button
+        aria-expanded={true}
+        aria-haspopup="listbox"
+        aria-labelledby=" pf-toggle-id-3"
+        className="pf-c-select__toggle"
+        disabled={false}
+        id="pf-toggle-id-3"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        type="button"
+      >
+        <div
+          className="pf-c-select__toggle-wrapper"
+        >
+          <span
+            className="pf-c-select__toggle-text"
+          >
+            Mr: User One
+          </span>
+        </div>
+        <CaretDownIcon
+          className="pf-c-select__toggle-arrow"
+          color="currentColor"
+          noVerticalAlign={false}
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            className="pf-c-select__toggle-arrow"
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 320 512"
+            width="1em"
+          >
+            <path
+              d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+              transform=""
+            />
+          </svg>
+        </CaretDownIcon>
+      </button>
+    </SelectToggle>
+    <SelectMenu
+      aria-label=""
+      aria-labelledby=""
+      className=""
+      isExpanded={false}
+      isGrouped={false}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected=""
+      sendRef={[Function]}
+    >
+      <ul
+        aria-label=""
+        aria-labelledby=""
+        className="pf-c-select__menu"
+        role="listbox"
+      >
+        <SelectOption
+          className=""
+          component="button"
+          id="Mr: User One-0"
+          index={0}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={false}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$0"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value={
+            User {
+              "firstName": "User",
+              "lastName": "One",
+              "title": "Mr",
+              "toString": [Function],
+            }
+          }
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Mr: User One-0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Mr: User One
+            </button>
+          </li>
+        </SelectOption>
+        <SelectOption
+          className=""
+          component="button"
+          id="Mrs: New User-1"
+          index={1}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={false}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$1"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value={
+            User {
+              "firstName": "New",
+              "lastName": "User",
+              "title": "Mrs",
+              "toString": [Function],
+            }
+          }
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Mrs: New User-1"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Mrs: New User
+            </button>
+          </li>
+        </SelectOption>
+        <SelectOption
+          className=""
+          component="button"
+          id="Ms: Test Three-2"
+          index={2}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={false}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$2"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value={
+            User {
+              "firstName": "Test",
+              "lastName": "Three",
+              "title": "Ms",
+              "toString": [Function],
+            }
+          }
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Ms: Test Three-2"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Ms: Test Three
+            </button>
+          </li>
+        </SelectOption>
+      </ul>
+    </SelectMenu>
+  </div>
+</Select>
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
 `;
 
 exports[`toggle icon select checkbox 1`] = `
@@ -6756,6 +8436,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                     transform=""
                   />
                 </svg>
+<<<<<<< HEAD
               </CaretDownIcon>
             </button>
           </div>
@@ -6795,6 +8476,15 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               onClick={[Function]}
               sendRef={[Function]}
               value="Mr"
+=======
+              </button>
+            </div>
+            <ul
+              aria-label=""
+              aria-labelledby=""
+              class="pf-c-select__menu"
+              role="listbox"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
             >
               <li
                 role="presentation"
@@ -6905,6 +8595,266 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   type="button"
                 >
                   Other
+                </button>
+              </li>
+<<<<<<< HEAD
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="test-4"
+              index={4}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$.$0"
+              keyHandler={[Function]}
+=======
+            </ul>
+          </div>,
+        }
+      }
+      type="button"
+      variant="typeaheadmulti"
+    >
+      <div
+        className="pf-c-select__toggle pf-m-typeahead"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        <div
+          className="pf-c-select__toggle-wrapper"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              aria-activedescendant={null}
+              aria-label=""
+              autoComplete="off"
+              className="pf-c-form-control pf-c-select__toggle-typeahead"
+              disabled={false}
+              id="select-multi-typeahead-typeahead"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value=""
+            />
+          </form>
+        </div>
+        <button
+          aria-expanded={true}
+          aria-haspopup="listbox"
+          aria-label="Options menu"
+          aria-labelledby=" pf-toggle-id-23"
+          className="pf-c-button pf-c-select__toggle-button"
+          disabled={false}
+          id="pf-toggle-id-23"
+          onClick={[Function]}
+        >
+          <CaretDownIcon
+            className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
+            title={null}
+          >
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
+              className="pf-c-select__toggle-arrow"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
+                Object {
+                  "verticalAlign": "-0.125em",
+                }
+              }
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
+          </CaretDownIcon>
+        </button>
+      </div>
+    </SelectToggle>
+    <SelectMenu
+      aria-label=""
+      aria-labelledby=""
+      className=""
+      isExpanded={false}
+      isGrouped={false}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected=""
+      sendRef={[Function]}
+    >
+      <ul
+        aria-label=""
+        aria-labelledby=""
+        className="pf-c-select__menu"
+        role="listbox"
+      >
+        <SelectOption
+          className=""
+          component="button"
+          id="Mr-0"
+          index={0}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$.$0"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Mr"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Mr-0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+<<<<<<< HEAD
+=======
+              Mr
+            </button>
+          </li>
+        </SelectOption>
+        <SelectOption
+          className=""
+          component="button"
+          id="Mrs-1"
+          index={1}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$.$1"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Mrs"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Mrs-1"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Mrs
+            </button>
+          </li>
+        </SelectOption>
+        <SelectOption
+          className=""
+          component="button"
+          id="Ms-2"
+          index={2}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$.$2"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Ms"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Ms-2"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Ms
+            </button>
+          </li>
+        </SelectOption>
+        <SelectOption
+          className=""
+          component="button"
+          id="Other-3"
+          index={3}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$.$3"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Other"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Other-3"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="test"
+            >
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+<<<<<<< HEAD
+                  id="Other-3"
+=======
+                  id="test-4"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+<<<<<<< HEAD
+                  Other
+=======
+                  Create
+                   "
+                  test
+                  "
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
                 </button>
               </li>
             </SelectOption>
@@ -7721,6 +9671,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     transform=""
                   />
                 </svg>
+<<<<<<< HEAD
               </CaretDownIcon>
             </button>
           </div>
@@ -7765,6 +9716,15 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               onClick={[Function]}
               sendRef={[Function]}
               value="Mr"
+=======
+              </button>
+            </div>
+            <ul
+              aria-label=""
+              aria-labelledby=""
+              class="pf-c-select__menu"
+              role="listbox"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
             >
               <li
                 role="presentation"
@@ -8162,6 +10122,7 @@ exports[`typeahead multi select test onChange 1`] = `
             <div
               className="pf-c-select__toggle-wrapper"
             >
+<<<<<<< HEAD
               <form
                 onSubmit={[Function]}
               >
@@ -8181,6 +10142,59 @@ exports[`typeahead multi select test onChange 1`] = `
                 />
               </form>
             </div>
+=======
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
+          </CaretDownIcon>
+        </button>
+      </div>
+    </SelectToggle>
+    <SelectMenu
+      aria-label=""
+      aria-labelledby=""
+      className=""
+      isExpanded={false}
+      isGrouped={false}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected={
+        Array [
+          "Mr",
+          "Mrs",
+        ]
+      }
+      sendRef={[Function]}
+    >
+      <ul
+        aria-label=""
+        aria-labelledby=""
+        className="pf-c-select__menu"
+        role="listbox"
+      >
+        <SelectOption
+          className=""
+          component="button"
+          id="Mr-0"
+          index={0}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={true}
+          key=".$.$0"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Mr"
+        >
+          <li
+            role="presentation"
+          >
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
             <button
               aria-expanded={true}
               aria-haspopup="listbox"
@@ -8270,7 +10284,275 @@ exports[`typeahead multi select test onChange 1`] = `
                   role="option"
                   type="button"
                 >
+<<<<<<< HEAD
                   No results found
+=======
+                  Mr
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Mrs-1"
+              index={1}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$01"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Mrs"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Mrs-1"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Mrs
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Ms-2"
+              index={2}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$02"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Ms"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Ms-2"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+<<<<<<< HEAD
+                  Ms
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Other-3"
+              index={3}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$03"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Other"
+=======
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+            </div>
+            <ul
+              aria-label=""
+              aria-labelledby=""
+              class="pf-c-select__menu"
+              role="listbox"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Other-3"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Other
+                </button>
+              </li>
+<<<<<<< HEAD
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="test-4"
+              index={4}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$0"
+              keyHandler={[Function]}
+=======
+            </ul>
+          </div>,
+        }
+      }
+      type="button"
+      variant="typeahead"
+    >
+      <div
+        className="pf-c-select__toggle pf-m-typeahead"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        <div
+          className="pf-c-select__toggle-wrapper"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              aria-activedescendant={null}
+              aria-label=""
+              autoComplete="off"
+              className="pf-c-form-control pf-c-select__toggle-typeahead"
+              disabled={false}
+              id="select-typeahead"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value="test"
+            />
+          </form>
+        </div>
+        <button
+          aria-expanded={true}
+          aria-haspopup="listbox"
+          aria-label="Options menu"
+          aria-labelledby=" pf-toggle-id-26"
+          className="pf-c-button pf-c-select__toggle-button"
+          disabled={false}
+          id="pf-toggle-id-26"
+          onClick={[Function]}
+        >
+          <CaretDownIcon
+            className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
+            title={null}
+          >
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
+              className="pf-c-select__toggle-arrow"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
+                Object {
+                  "verticalAlign": "-0.125em",
+                }
+              }
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
+          </CaretDownIcon>
+        </button>
+      </div>
+    </SelectToggle>
+    <SelectMenu
+      aria-label=""
+      aria-labelledby=""
+      className=""
+      isExpanded={false}
+      isGrouped={false}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected=""
+      sendRef={[Function]}
+    >
+      <ul
+        aria-label=""
+        aria-labelledby=""
+        className="pf-c-select__menu"
+        role="listbox"
+      >
+        <SelectOption
+          className=""
+          component="button"
+          id="No results found-0"
+          index={0}
+          isChecked={false}
+          isDisabled={true}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$0"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="No results found"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item pf-m-disabled"
+              id="No results found-0"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="test"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="test-4"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Create
+                   "
+                  test
+                  "
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
                 </button>
               </li>
             </SelectOption>
@@ -8851,6 +11133,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                     transform=""
                   />
                 </svg>
+<<<<<<< HEAD
               </CaretDownIcon>
             </button>
           </div>
@@ -8890,6 +11173,15 @@ exports[`typeahead select renders expanded successfully 1`] = `
               onClick={[Function]}
               sendRef={[Function]}
               value="Mr"
+=======
+              </button>
+            </div>
+            <ul
+              aria-label=""
+              aria-labelledby=""
+              class="pf-c-select__menu"
+              role="listbox"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
             >
               <li
                 role="presentation"
@@ -9006,9 +11298,163 @@ exports[`typeahead select renders expanded successfully 1`] = `
           </ul>
         </SelectMenu>
       </div>
+<<<<<<< HEAD
     </Select>
   </ComponentWithOuia>
 </Component>
+=======
+    </SelectToggle>
+    <SelectMenu
+      aria-label=""
+      aria-labelledby=""
+      className=""
+      isExpanded={false}
+      isGrouped={false}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected=""
+      sendRef={[Function]}
+    >
+      <ul
+        aria-label=""
+        aria-labelledby=""
+        className="pf-c-select__menu"
+        role="listbox"
+      >
+        <SelectOption
+          className=""
+          component="button"
+          id="Mr-0"
+          index={0}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$.$0"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Mr"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Mr-0"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Mr
+            </button>
+          </li>
+        </SelectOption>
+        <SelectOption
+          className=""
+          component="button"
+          id="Mrs-1"
+          index={1}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$.$1"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Mrs"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Mrs-1"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Mrs
+            </button>
+          </li>
+        </SelectOption>
+        <SelectOption
+          className=""
+          component="button"
+          id="Ms-2"
+          index={2}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$.$2"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Ms"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Ms-2"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Ms
+            </button>
+          </li>
+        </SelectOption>
+        <SelectOption
+          className=""
+          component="button"
+          id="Other-3"
+          index={3}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$.$3"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="Other"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="Other-3"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="option"
+              type="button"
+            >
+              Other
+            </button>
+          </li>
+        </SelectOption>
+      </ul>
+    </SelectMenu>
+  </div>
+</Select>
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
 `;
 
 exports[`typeahead select renders selected successfully 1`] = `
@@ -9391,6 +11837,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                     transform=""
                   />
                 </svg>
+<<<<<<< HEAD
               </CaretDownIcon>
             </button>
           </div>
@@ -9430,6 +11877,15 @@ exports[`typeahead select renders selected successfully 1`] = `
               onClick={[Function]}
               sendRef={[Function]}
               value="Mr"
+=======
+              </button>
+            </div>
+            <ul
+              aria-label=""
+              aria-labelledby=""
+              class="pf-c-select__menu"
+              role="listbox"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
             >
               <li
                 role="presentation"
@@ -9665,6 +12121,7 @@ exports[`typeahead select test creatable option 1`] = `
       ariaLabelTypeAhead=""
       ariaLabelledBy=""
       className=""
+<<<<<<< HEAD
       createText="Create"
       direction="down"
       isCreatable={true}
@@ -9697,6 +12154,21 @@ exports[`typeahead select test creatable option 1`] = `
             "width": "",
           }
         }
+=======
+      isExpanded={false}
+      isGrouped={false}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected="Mr"
+      sendRef={[Function]}
+    >
+      <ul
+        aria-label=""
+        aria-labelledby=""
+        className="pf-c-select__menu"
+        role="listbox"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
       >
         <SelectToggle
           ariaLabelToggle="Options menu"
@@ -10195,6 +12667,7 @@ exports[`typeahead select test onChange 1`] = `
                     transform=""
                   />
                 </svg>
+<<<<<<< HEAD
               </CaretDownIcon>
             </button>
           </div>
@@ -10229,8 +12702,368 @@ exports[`typeahead select test onChange 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
+<<<<<<< HEAD
               key=".$0"
+=======
+              key=".$00"
               keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Mr"
+=======
+              </button>
+            </div>
+            <ul
+              aria-label=""
+              aria-labelledby=""
+              class="pf-c-select__menu"
+              role="listbox"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Mr-0"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Mr
+                </button>
+              </li>
+<<<<<<< HEAD
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Mrs-1"
+              index={1}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$01"
+              keyHandler={[Function]}
+=======
+            </ul>
+          </div>,
+        }
+      }
+      type="button"
+      variant="typeahead"
+    >
+      <div
+        className="pf-c-select__toggle pf-m-typeahead"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        <div
+          className="pf-c-select__toggle-wrapper"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              aria-activedescendant={null}
+              aria-label=""
+              autoComplete="off"
+              className="pf-c-form-control pf-c-select__toggle-typeahead"
+              disabled={false}
+              id="select-typeahead"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value="test"
+            />
+          </form>
+        </div>
+        <button
+          aria-expanded={true}
+          aria-haspopup="listbox"
+          aria-label="Options menu"
+          aria-labelledby=" pf-toggle-id-21"
+          className="pf-c-button pf-c-select__toggle-button"
+          disabled={false}
+          id="pf-toggle-id-21"
+          onClick={[Function]}
+        >
+          <CaretDownIcon
+            className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
+            title={null}
+          >
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
+              className="pf-c-select__toggle-arrow"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
+                Object {
+                  "verticalAlign": "-0.125em",
+                }
+              }
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
+          </CaretDownIcon>
+        </button>
+      </div>
+    </SelectToggle>
+    <SelectMenu
+      aria-label=""
+      aria-labelledby=""
+      className=""
+      isExpanded={false}
+      isGrouped={false}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected=""
+      sendRef={[Function]}
+    >
+      <ul
+        aria-label=""
+        aria-labelledby=""
+        className="pf-c-select__menu"
+        role="listbox"
+      >
+        <SelectOption
+          className=""
+          component="button"
+          id="test-0"
+          index={0}
+          isChecked={false}
+          isDisabled={false}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$0"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="test"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item"
+              id="test-0"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Mrs"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Mrs-1"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+<<<<<<< HEAD
+                  Mrs
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Ms-2"
+              index={2}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$02"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Ms"
+=======
+                  <path
+                    d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    transform=""
+                  />
+                </svg>
+              </button>
+            </div>
+            <ul
+              aria-label=""
+              aria-labelledby=""
+              class="pf-c-select__menu"
+              role="listbox"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Ms-2"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Ms
+                </button>
+              </li>
+<<<<<<< HEAD
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Other-3"
+              index={3}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$03"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
+              keyHandler={[Function]}
+=======
+            </ul>
+          </div>,
+        }
+      }
+      type="button"
+      variant="typeahead"
+    >
+      <div
+        className="pf-c-select__toggle pf-m-typeahead"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        <div
+          className="pf-c-select__toggle-wrapper"
+        >
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              aria-activedescendant={null}
+              aria-label=""
+              autoComplete="off"
+              className="pf-c-form-control pf-c-select__toggle-typeahead"
+              disabled={false}
+              id="select-typeahead"
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value="test"
+            />
+          </form>
+        </div>
+        <button
+          aria-expanded={true}
+          aria-haspopup="listbox"
+          aria-label="Options menu"
+          aria-labelledby=" pf-toggle-id-19"
+          className="pf-c-button pf-c-select__toggle-button"
+          disabled={false}
+          id="pf-toggle-id-19"
+          onClick={[Function]}
+        >
+          <CaretDownIcon
+            className="pf-c-select__toggle-arrow"
+            color="currentColor"
+            noVerticalAlign={false}
+            size="sm"
+            title={null}
+          >
+            <svg
+              aria-hidden={true}
+              aria-labelledby={null}
+              className="pf-c-select__toggle-arrow"
+              fill="currentColor"
+              height="1em"
+              role="img"
+              style={
+                Object {
+                  "verticalAlign": "-0.125em",
+                }
+              }
+              viewBox="0 0 320 512"
+              width="1em"
+            >
+              <path
+                d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
+              />
+            </svg>
+          </CaretDownIcon>
+        </button>
+      </div>
+    </SelectToggle>
+    <SelectMenu
+      aria-label=""
+      aria-labelledby=""
+      className=""
+      isExpanded={false}
+      isGrouped={false}
+      keyHandler={[Function]}
+      maxHeight=""
+      openedOnEnter={false}
+      selected=""
+      sendRef={[Function]}
+    >
+      <ul
+        aria-label=""
+        aria-labelledby=""
+        className="pf-c-select__menu"
+        role="listbox"
+      >
+        <SelectOption
+          className=""
+          component="button"
+          id="No results found-0"
+          index={0}
+          isChecked={false}
+          isDisabled={true}
+          isFocused={null}
+          isPlaceholder={false}
+          isSelected={false}
+          key=".$0"
+          keyHandler={[Function]}
+          onClick={[Function]}
+          sendRef={[Function]}
+          value="No results found"
+        >
+          <li
+            role="presentation"
+          >
+            <button
+              aria-selected={null}
+              className="pf-c-select__menu-item pf-m-disabled"
+              id="No results found-0"
+>>>>>>> feat(FilterTable demo): update name search input to clear after selecting filter
               onClick={[Function]}
               sendRef={[Function]}
               value="No results found"
