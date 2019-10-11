@@ -66,6 +66,7 @@ class SimpleTable extends React.Component {
         {
           title: 'Last Commit',
           transforms: [textCenter],
+          cellTransforms: [textCenter]
         }
       ],
       rows: [
@@ -1134,9 +1135,9 @@ class EmptyStateTable extends React.Component {
     super(props);
     this.state = {
       columns: [
-        { title: 'Repositories' },
+        { title: 'Repositories', cellHeightAuto},
         'Branches',
-        { title: 'Pull requests' },
+        { title: 'Pull requests'},
         'Workspaces',
         {
           title: 'Last Commit',
@@ -1146,11 +1147,10 @@ class EmptyStateTable extends React.Component {
       ],
    rows: [
         {
+          props: {className: 'pf-m-height-auto'},
           cells: [
             {
               title:
-                   <tr class="pf-m-height-auto">
-                    <td colSpan="5">
                       <Bullseye>
                       <EmptyState variant={EmptyStateVariant.full}>
                         <EmptyStateIcon icon={CubesIcon} />
@@ -1171,11 +1171,8 @@ class EmptyStateTable extends React.Component {
                           <Button variant="link">Action area</Button>
                         </EmptyStateSecondaryActions>
                       </EmptyState>
-                      </Bullseye>
-                  </td>
-                </tr>,
-              cellTransforms: [cellHeightAuto],
-              props: { colSpan: 5 }
+                      </Bullseye>,
+              props: { colSpan: 5, className: 'pf-m-height-auto' }
             }
           ]
         },
@@ -1185,7 +1182,7 @@ class EmptyStateTable extends React.Component {
   render() {
     const { columns, rows } = this.state;
     return (
-      <Table caption="Simple Table" cells={columns} rows={rows} >
+      <Table caption="Empty State Table" cells={columns} rows={rows} >
         <TableHeader />
         <TableBody />
       </Table>
