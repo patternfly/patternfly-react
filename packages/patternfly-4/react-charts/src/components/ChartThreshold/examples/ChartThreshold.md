@@ -2,16 +2,7 @@
 title: 'Threshold'
 section: 'charts'
 typescript: true
-propComponents:
-  [
-    'Chart',
-    'ChartAreaProps',
-    'ChartAxis',
-    'ChartGroup',
-    'ChartLegend',
-    'ChartThreshold',
-    'ChartVoronoiContainer',
-  ]
+propComponents: ['Chart', 'ChartAxis', 'ChartGroup', 'ChartThreshold', 'ChartVoronoiContainer']
 ---
 
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLegend, ChartThreshold, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer } from '@patternfly/react-charts';
@@ -155,16 +146,18 @@ class MultiColorChart extends React.Component {
 
 ## Tips
 
-- For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
-- `ChartLegend` may be used as a standalone component, instead of using `legendData` and `legendPosition`
+- See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
+- For single data points or zero values, you may want to set the `domain` prop
+- `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
 ## Docs
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
- - For `Chart` props, see <a href="https://formidable.com/open-source/victory/docs/victory-chart" target="_blank">VictoryChart</a>
- - For `ChartArea` props, see <a href="https://formidable.com/open-source/victory/docs/victory-area" target="_blank">VictoryArea</a>
- - For `ChartAxis` props, see <a href="https://formidable.com/open-source/victory/docs/victory-axis" target="_blank">VictoryAxis</a>
- - For `ChartGroup` props, see <a href="https://formidable.com/open-source/victory/docs/victory-group" target="_blank">VictoryGroup</a>
- - For `ChartLegend` props, see <a href="https://formidable.com/open-source/victory/docs/victory-legend" target="_blank">VictoryLegend</a>
- - For `ChartVoronoiContainer` props, see <a href="https://formidable.com/open-source/victory/docs/victory-voronoi-container" target="_blank">VictoryVoronoiContainer</a>
+ - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)
+ - For `ChartArea` props, see [VictoryArea](https://formidable.com/open-source/victory/docs/victory-area)
+ - For `ChartAxis` props, see [VictoryAxis](https://formidable.com/open-source/victory/docs/victory-axis)
+ - For `ChartGroup` props, see [VictoryGroup](https://formidable.com/open-source/victory/docs/victory-group)
+ - For `ChartLegend` props, see [VictoryLegend](https://formidable.com/open-source/victory/docs/victory-legend)
+ - For `ChartThreshold` props, see [VictoryLine](https://formidable.com/open-source/victory/docs/victory-line)
+ - For `ChartVoronoiContainer` props, see [VictoryVoronoiContainer](https://formidable.com/open-source/victory/docs/victory-voronoi-container)

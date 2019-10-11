@@ -2,7 +2,7 @@
 title: 'Tooltip'
 section: 'charts'
 typescript: true
-propComponents: ['Chart', 'ChartArea', 'ChartAxis', 'ChartBar', 'ChartDonut', 'ChartGroup', 'ChartLine', 'ChartLegend', 'ChartStack', 'ChartTooltip']
+propComponents: ['ChartTooltip']
 ---
 
 import { Chart, ChartArea, ChartAxis, ChartBar, ChartDonut, ChartGroup, ChartLabel, ChartLine, ChartStack, ChartThemeColor, ChartTooltip, getCustomTheme } from '@patternfly/react-charts';
@@ -18,7 +18,7 @@ This demonstrates how to use a voronoi container to display tooltips
 ```js
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
-// import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
+// import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
 <div>
   <div className="area-chart-legend-right">
@@ -158,32 +158,25 @@ class TooltipPieChart extends React.Component {
     super(props);
 
     // Custom legend label compoenent
-    this.LegendLabel = ({ content, ...rest }) => (
-      <Tooltip content={content(rest)} enableFlip>
+    this.LegendLabel = ({datum, ...rest}) => (
+      <Tooltip content={datum.name} enableFlip>
         <ChartLabel {...rest} />
       </Tooltip>
     );
 
     // Custom legend component
-    this.getLegend = (legendData) => {
-      return (
-        <ChartLegend
-          data={legendData}
-          labelComponent={<this.LegendLabel content={this.getLegendTooltip} />}
-        />
-      );
-    };
-
-    // Custom tooltip
-    this.getLegendTooltip = ({ datum }) => {
-      return datum.label;
-    };
+    this.getLegend = (legendData) => (
+      <ChartLegend
+        data={legendData}
+        labelComponent={<this.LegendLabel />}
+      />
+    );
   }
 
   render() {
     return (
       <div>
-        <div className="pie-chart-legend-bottom">
+        <div className="tooltip-pie-chart-legend-bottom">
           <ChartPie
             ariaDesc="Average number of pets"
             ariaTitle="Pie chart example"
@@ -192,9 +185,9 @@ class TooltipPieChart extends React.Component {
             height={275}
             labels={({ datum }) => `${datum.x}: ${datum.y}`}
             legendComponent={this.getLegend([
-              { name: 'Cats: 35', label: 'Cats: 35' }, 
-              { name: 'Dogs: 55', label: 'Dogs: 55' }, 
-              { name: 'Birds: 10', label: 'Birds: 10' }
+              { name: 'Cats: 35' }, 
+              { name: 'Dogs: 55' }, 
+              { name: 'Birds: 10' }
             ])}
             legendPosition="bottom"
             padding={{
@@ -401,20 +394,10 @@ class TooltipChart extends React.Component {
 
 ## Tips
 
-- For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
-- `ChartLegend` may be used as a standalone component, instead of using `legendData` and `legendPosition`
+- See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 
 ## Docs
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
- - For `Chart` props, see <a href="https://formidable.com/open-source/victory/docs/victory-chart" target="_blank">VictoryChart</a>
- - For `ChartArea` props, see <a href="https://formidable.com/open-source/victory/docs/victory-area" target="_blank">VictoryArea</a>
- - For `ChartAxis` props, see <a href="https://formidable.com/open-source/victory/docs/victory-axis" target="_blank">VictoryAxis</a>
- - For `ChartBar` props, see <a href="https://formidable.com/open-source/victory/docs/victory-bar" target="_blank">VictoryBar</a>
- - For `ChartDonut` props, see <a href="https://formidable.com/open-source/victory/docs/victory-pie" target="_blank">VictoryPie</a>
- - For `ChartGroup` props, see <a href="https://formidable.com/open-source/victory/docs/victory-group" target="_blank">VictoryGroup</a>
- - For `ChartLegend` props, see <a href="https://formidable.com/open-source/victory/docs/victory-legend" target="_blank">VictoryLegend</a>
- - For `ChartLine` props, see <a href="https://formidable.com/open-source/victory/docs/victory-line" target="_blank">VictoryLine</a>
- - For `ChartStack` props, see <a href="https://formidable.com/open-source/victory/docs/victory-stack" target="_blank">VictoryStack</a>
- - For `ChartTooltip` props, see <a href="https://formidable.com/open-source/victory/docs/victory-tooltip" target="_blank">VictoryTooltip</a>
+ - For `ChartTooltip` props, see [VictoryTooltip](https://formidable.com/open-source/victory/docs/victory-tooltip)

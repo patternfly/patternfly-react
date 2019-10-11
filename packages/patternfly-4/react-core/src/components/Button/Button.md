@@ -59,6 +59,9 @@ LinkButton = () => (
     <Button component="a" isDisabled href="https://pf-next.com/" target="_blank" variant="tertiary">
       Tertiary Link to Core Docs
     </Button>
+    <Button component="a" href="https://pf4.patternfly.org/contribution/#modifiers" variant="link">
+     Jump to modifiers in contribution guidelines
+    </Button>
   </React.Fragment>
 );
 ```

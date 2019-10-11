@@ -467,6 +467,7 @@ exports[`ChartDonutUtilization 1`] = `
       }
       height={230}
       key="pf-chart-donut-utilization"
+      legendPosition="right"
       standalone={false}
       theme={
         Object {
@@ -1387,6 +1388,7 @@ exports[`ChartDonutUtilization 2`] = `
       }
       height={230}
       key="pf-chart-donut-utilization"
+      legendPosition="right"
       standalone={false}
       theme={
         Object {
@@ -2307,6 +2309,7 @@ exports[`renders component data 1`] = `
       }
       height={200}
       key="pf-chart-donut-utilization"
+      legendPosition="right"
       standalone={false}
       theme={
         Object {

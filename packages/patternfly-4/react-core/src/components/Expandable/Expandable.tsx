@@ -10,8 +10,12 @@ export interface ExpandableProps {
   className?: string;
   /** Flag to indicate if the content is expanded */
   isExpanded?: boolean;
-  /** Text that appears in the  toggle */
+  /** Text that appears in the toggle */
   toggleText?: string;
+  /** Text that appears in the toggle when expanded (will override toggleText if both are specified; used for uncontrolled expandable with dynamic toggle text) */
+  toggleTextExpanded?: string;
+  /** Text that appears in the toggle when collapsed (will override toggleText if both are specified; used for uncontrolled expandable with dynamic toggle text) */
+  toggleTextCollapsed?: string;
   /** Callback function to toggle the expandable content */
   onToggle?: () => void;
   /** Forces focus state */
@@ -38,11 +42,23 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
   static defaultProps = {
     className: '',
     toggleText: '',
+    toggleTextExpanded: '',
+    toggleTextCollapsed: '',
     onToggle: (): any => undefined,
     isFocused: false,
     isActive: false,
     isHovered: false
   };
+
+  private calculateToggleText(toggleText: string, toggleTextExpanded: string, toggleTextCollapsed: string, propOrStateIsExpanded: boolean) {
+    if (propOrStateIsExpanded && toggleTextExpanded !== '') {
+      return toggleTextExpanded;
+    }
+    if (!propOrStateIsExpanded && toggleTextCollapsed !== '') {
+      return toggleTextCollapsed;
+    }
+    return toggleText;
+  }
 
   render() {
     const {
@@ -52,6 +68,8 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
       isActive,
       className,
       toggleText,
+      toggleTextExpanded,
+      toggleTextCollapsed,
       children,
       isExpanded,
       ...props
@@ -64,9 +82,11 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
       propOrStateIsExpanded = this.state.isExpanded;
       onToggle = () => {
         onToggleProp();
-        this.setState({ isExpanded: !this.state.isExpanded });
+        this.setState(prevState => ({ isExpanded: !prevState.isExpanded }));
       };
     }
+
+    const computedToggleText = this.calculateToggleText(toggleText, toggleTextExpanded, toggleTextCollapsed, propOrStateIsExpanded);
 
     return (
       <div {...props} className={css(styles.expandable, propOrStateIsExpanded && styles.modifiers.expanded, className)}>
@@ -82,7 +102,7 @@ export class Expandable extends React.Component<ExpandableProps, ExpandableState
           onClick={onToggle}
         >
           <AngleRightIcon className={css(styles.expandableToggleIcon)} aria-hidden />
-          <span>{toggleText}</span>
+          <span>{computedToggleText}</span>
         </button>
         <div className={css(styles.expandableContent)} hidden={!propOrStateIsExpanded}>
           {children}

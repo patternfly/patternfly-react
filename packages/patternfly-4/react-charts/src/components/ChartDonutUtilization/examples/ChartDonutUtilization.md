@@ -2,7 +2,7 @@
 title: 'Donut utilization'
 section: 'charts'
 typescript: true
-propComponents: ['ChartLegend', 'ChartDonutThreshold', 'ChartDonutUtilization']
+propComponents: ['ChartDonutThreshold', 'ChartDonutUtilization']
 ---
 
 import { ChartDonutThreshold, ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
@@ -438,7 +438,6 @@ class ThresholdChart extends React.Component {
             data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
             height={350}
             labels={({ datum }) => datum.x ? datum.x : null}
-            legendPosition="bottom"
             padding={{
               bottom: 125, // Adjusted to accommodate legend
               left: 20,
@@ -452,6 +451,7 @@ class ThresholdChart extends React.Component {
               labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
               legendData={[{ name: `Storage capacity: ${used}%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
               legendOrientation="vertical"
+              legendPosition="bottom"
               subTitle="of 100 GBps"
               title={`${used}%`}
               themeColor={ChartThemeColor.green}
@@ -479,7 +479,6 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
       data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
       height={275}
       labels={({ datum }) => datum.x ? datum.x : null}
-      legendPosition="bottom"
       padding={{
         bottom: 65, // Adjusted to accommodate legend
         left: 20,
@@ -492,6 +491,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
         data={{ x: 'Storage capacity', y: 45 }}
         labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
         legendData={[{ name: `Storage capacity: 45%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
+        legendPosition="bottom"
         subTitle="of 100 GBps"
         title="45%"
       />
@@ -788,7 +788,6 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
       data={[{ x: 'Warning at 60%', y: 60 }, { x: 'Danger at 90%', y: 90 }]}
       height={225}
       labels={({ datum }) => datum.x ? datum.x : null}
-      legendPosition="bottom"
       padding={{
         bottom: 60, // Adjusted to accommodate legend
         left: 20,
@@ -802,6 +801,7 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
         data={{ x: 'Storage capacity', y: 45 }}
         labels={({ datum }) => datum.x ? `${datum.x}: ${datum.y}%` : null}
         legendData={[{ name: `Storage capacity: 45%` }, { name: 'Warning threshold at 60%' }, { name: 'Danger threshold at 90%' }]}
+        legendPosition="bottom"
         subTitle="of 100 GBps"
         title="45%"
         thresholds={[{ value: 60 }, { value: 90 }]}
@@ -813,12 +813,13 @@ import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-ch
 
 ## Tips
 
-- For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
-- `ChartLegend` may be used as a standalone component, instead of using `legendData` and `legendPosition`
+- See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
+- For single data points or zero values, you may want to set the `domain` prop
+- `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
 ## Docs
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
- - For `ChartLegend` props, see <a href="https://formidable.com/open-source/victory/docs/victory-legend" target="_blank">VictoryLegend</a>
- - For `ChartDonutThreshold` & `ChartDonutUtilization` props, see <a href="https://formidable.com/open-source/victory/docs/victory-pie" target="_blank">VictoryPie</a>
+ - For `ChartDonutThreshold` props, see [VictoryPie](https://formidable.com/open-source/victory/docs/victory-pie)
+ - For `ChartDonutUtilization` props, see [VictoryPie](https://formidable.com/open-source/victory/docs/victory-pie)
