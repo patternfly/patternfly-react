@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.114.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.114.3...@patternfly/react-core@3.114.4) (2019-10-11)
+
+
+### Bug Fixes
+
+* **Select:** use props children if custom on filter used ([#3123](https://github.com/patternfly/patternfly-react/issues/3123)) ([b20a624](https://github.com/patternfly/patternfly-react/commit/b20a624)), closes [#3117](https://github.com/patternfly/patternfly-react/issues/3117)
+
+
+
+
+
 ## [3.114.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.114.2...@patternfly/react-core@3.114.3) (2019-10-11)
 
 
