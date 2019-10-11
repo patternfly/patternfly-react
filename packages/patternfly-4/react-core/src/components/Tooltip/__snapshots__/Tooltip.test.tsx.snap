@@ -12,7 +12,9 @@ exports[`tooltip passes along values to tippy.js 1`] = `
       className=""
       role="tooltip"
     >
-      <Unknown>
+      <Unknown
+        isLeftAligned={false}
+      >
         <div>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
         </div>
@@ -85,7 +87,9 @@ exports[`tooltip renders 1`] = `
       className=""
       role="tooltip"
     >
-      <Unknown>
+      <Unknown
+        isLeftAligned={false}
+      >
         <div>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
         </div>
