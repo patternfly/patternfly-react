@@ -39,16 +39,6 @@ import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 class FilterTableDemo extends React.Component {
   constructor(props) {
     this.state = {
-      res: [],
-      perPage: 20,
-      total: 100,
-      page: 1,
-      error: null,
-      loading: true,
-      selectedItems: [],
-      numSelected: 0,
-      isDropDownOpen: false,
-      isKebabOpen: false,
       filters: {
         location: [],
         name: [],
@@ -97,18 +87,6 @@ class FilterTableDemo extends React.Component {
           }
         });
       }
-    };
-
-    this.onDropDownToggle = isOpen => {
-      this.setState({
-        isDropDownOpen: isOpen
-      });
-    };
-
-    this.onDropDownSelect = event => {
-      this.setState({
-        isDropDownOpen: !this.state.isDropDownOpen
-      });
     };
 
     this.onCategoryToggle = isOpen => {
@@ -196,36 +174,6 @@ class FilterTableDemo extends React.Component {
       });
       this.onFilterSelect();
     };
-  }
-
-  fetch(page, perPage) {
-    this.setState({ loading: true });
-    fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${perPage}`)
-      .then(resp => resp.json())
-      .then(resp => this.setState({ res: resp, perPage, page, loading: false }))
-      .catch(err => this.setState({ error: err, loading: false }));
-  }
-
-  componentDidMount() {
-    this.fetch(this.state.page, this.state.perPage);
-  }
-
-  renderPagination(variant = 'top') {
-    const { page, perPage, total } = this.state;
-    return (
-      <Pagination
-        itemCount={total}
-        page={page}
-        perPage={perPage}
-        onSetPage={(_evt, value) => {
-          this.fetch(value, perPage);
-        }}
-        onPerPageSelect={(_evt, value) => {
-          this.fetch(1, value);
-        }}
-        variant={variant}
-      />
-    );
   }
 
   buildCategoryDropdown() {
