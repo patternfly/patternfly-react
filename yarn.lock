@@ -1116,6 +1116,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.6.3":
+  version "7.6.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.3.tgz#935122c74c73d2240cafd32ddb5fc2a6cd35cf1f"
+  integrity sha512-kq6anf9JGjW8Nt5rYfEuGRaEAaH1mkv3Bbu6rYvLOpPh/RusSJXuKPEAoZ7L7gybZkchE8+NV5g9vKF4AGAtsA==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/template@^7.1.0", "@babel/template@^7.1.2", "@babel/template@^7.2.2", "@babel/template@^7.4.0", "@babel/template@^7.4.4", "@babel/template@^7.6.0":
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.6.0.tgz#7f0159c7f5012230dad64cca42ec9bdb5c9536e6"
@@ -12157,11 +12164,11 @@ gatsby-plugin-react-helmet@^3.1.7:
     "@babel/runtime" "^7.6.2"
 
 gatsby-plugin-sass@^2.1.17:
-  version "2.1.17"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-2.1.17.tgz#0c0735f9c61601a80ebb14a5f286b8d90e643b03"
-  integrity sha512-SiCbX2RH1WpQOIdnljLviV5N94wmDZoqEPZlTbZinr0TePYOLMVu5Wio/yEZm9sFzVeEpkxQt3AeKaMozsyOIw==
+  version "2.1.18"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sass/-/gatsby-plugin-sass-2.1.18.tgz#b9acbe994a79aa96b7595943c8292f81b0b4d9f8"
+  integrity sha512-NOpFUX7eX1DoSzNI51GV5s1nYFmWFkbL85P9CWExQM23r8gDT6Kdv1Rgj8WZ1wwq/Bmr6UnJxFGy5PawBCaR1g==
   dependencies:
-    "@babel/runtime" "^7.6.2"
+    "@babel/runtime" "^7.6.3"
     sass-loader "^7.3.1"
 
 gatsby-react-router-scroll@^2.1.11:
@@ -12217,17 +12224,13 @@ gatsby-telemetry@^1.1.29:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-theme-patternfly-org@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-patternfly-org/-/gatsby-theme-patternfly-org-0.0.6.tgz#99711c72f146e4a3e119d33ecbe921fcb04105ef"
-  integrity sha512-yR026oSljdVgcgb4qTamP5j2iUzVrdSXzDdYJU8zO6Rl7F6NQL+jR4TAJmFp6+2ztftD5FeE+zSRDMLTvbLgtA==
+gatsby-theme-patternfly-org@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-patternfly-org/-/gatsby-theme-patternfly-org-0.0.10.tgz#466975db1fd26ddba1779c4fb7add8a641345435"
+  integrity sha512-POODE/BjB8vtS294NtBB/eBFAlprqPJusqMh7D14p6LMUE0JcQ9cA6KI2CZnTBJoQh1gDR8vBrEtg+i9A9snyw==
   dependencies:
     "@mdx-js/mdx" "^1.1.5"
     "@mdx-js/react" "^1.1.5"
-    "@patternfly/patternfly" "^2.33.5"
-    "@patternfly/react-core" "^3.112.3"
-    "@patternfly/react-table" "^2.22.19"
-    "@patternfly/react-tokens" "^2.6.31"
     codesandbox "^2.1.10"
     gatsby-plugin-mdx "^1.0.40"
     gatsby-plugin-react-helmet "^3.1.7"

@@ -1,11 +1,8 @@
-// This is the entrypoint of gatsby (aside from boring default gatsby plugins)
 const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Patternfly 4 - React',
-    description: 'Documentation for https://github.com/patternfly/patternfly-react',
-    keywords: 'Red Hat'
+    title: 'Patternfly 4 - React'
   },
   pathPrefix: '/patternfly-4',
   plugins: [
@@ -13,8 +10,7 @@ module.exports = {
     {
       resolve: `gatsby-theme-patternfly-org`,
       options: {
-        // By title:
-        hiddenPages: ['withOuia'],
+        hiddenPages: ['withOuia'], // By title
         sideNavItems: [
           { section: 'charts' },
           { section: 'components' },
@@ -90,6 +86,16 @@ module.exports = {
       }
     },
     // The plugin for package.json files (to get version numbers)
-    'gatsby-transformer-json'
+    'gatsby-transformer-json',
+    // Duplicated from gatsby-theme-patternfly-org
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          default: require.resolve('gatsby-theme-patternfly-org/templates/mdxDefault.js'),
+        },
+      }
+    },
   ]
 };
