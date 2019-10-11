@@ -22,10 +22,10 @@ class User implements SelectOptionObject {
 }
 
 const selectOptions = [
-  <SelectOption value="Mr" key="0" />,
-  <SelectOption value="Mrs" key="1" />,
-  <SelectOption value="Ms" key="2" />,
-  <SelectOption value="Other" key="3" />
+  <SelectOption value="Mr" key="00" />,
+  <SelectOption value="Mrs" key="01" />,
+  <SelectOption value="Ms" key="02" />,
+  <SelectOption value="Other" key="03" />
 ];
 
 const checkboxSelectOptions = [

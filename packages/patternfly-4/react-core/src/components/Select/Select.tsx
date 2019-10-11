@@ -164,10 +164,10 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
   };
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText } = this.props;
+    const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText, children } = this.props;
     let typeaheadFilteredChildren: any;
     if (onFilter) {
-      typeaheadFilteredChildren = onFilter(e);
+      typeaheadFilteredChildren = onFilter(e) || children;
     } else {
       let input: RegExp;
       try {
