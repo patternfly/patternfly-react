@@ -80,6 +80,7 @@ exports.createPages = ({ graphql, actions }) => {
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
+    devtool: "eval-source-map",
     resolve: {
       alias: {
         // Resolve imports in our app to node_modules so they don't break
