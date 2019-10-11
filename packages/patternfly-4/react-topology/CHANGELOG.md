@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.8.82...@patternfly/react-topology@2.9.0) (2019-10-11)
+
+
+### Features
+
+* **tooltip:** allow tooltip text to be left-aligned ([#3053](https://github.com/patternfly/patternfly-react/issues/3053)) ([d369c07](https://github.com/patternfly/patternfly-react/commit/d369c07))
+
+
+
+
+
 ## [2.8.82](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.8.81...@patternfly/react-topology@2.8.82) (2019-10-11)
 
 **Note:** Version bump only for package @patternfly/react-topology
