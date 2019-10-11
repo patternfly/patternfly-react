@@ -26,6 +26,10 @@ export interface SelectMenuProps extends Omit<React.HTMLProps<HTMLElement>, 'che
   openedOnEnter?: boolean;
   /** Flag to specify the  maximum height of the menu, as a string percentage or number of pixels */
   maxHeight?: string | number;
+  /** Inner prop passed from parent */
+  noResultsFoundText?: string;
+  /** Inner prop passed from parent */
+  createText?: string;
   /** Internal callback for ref tracking */
   sendRef?: (ref: React.ReactNode, index: number) => void;
   /** Internal callback for keyboard navigation */
@@ -129,6 +133,8 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
       sendRef,
       keyHandler,
       maxHeight,
+      noResultsFoundText,
+      createText,
       ...props
     } = this.props;
 

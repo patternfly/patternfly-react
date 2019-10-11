@@ -1264,7 +1264,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                             isFocused={false}
                             isPlaceholder={false}
                             isSelected={false}
-                            key="0"
+                            key="00"
                             keyHandler={[Function]}
                             onClick={[Function]}
                             sendRef={[Function]}
@@ -1298,7 +1298,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                             isFocused={false}
                             isPlaceholder={false}
                             isSelected={false}
-                            key="1"
+                            key="01"
                             keyHandler={[Function]}
                             onClick={[Function]}
                             sendRef={[Function]}
@@ -1332,7 +1332,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                             isFocused={false}
                             isPlaceholder={false}
                             isSelected={false}
-                            key="2"
+                            key="02"
                             keyHandler={[Function]}
                             onClick={[Function]}
                             sendRef={[Function]}
@@ -1366,7 +1366,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                             isFocused={false}
                             isPlaceholder={false}
                             isSelected={false}
-                            key="3"
+                            key="03"
                             keyHandler={[Function]}
                             onClick={[Function]}
                             sendRef={[Function]}
@@ -1422,7 +1422,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                             isFocused={false}
                             isPlaceholder={false}
                             isSelected={false}
-                            key="0"
+                            key="00"
                             keyHandler={[Function]}
                             onClick={[Function]}
                             sendRef={[Function]}
@@ -1456,7 +1456,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                             isFocused={false}
                             isPlaceholder={false}
                             isSelected={false}
-                            key="1"
+                            key="01"
                             keyHandler={[Function]}
                             onClick={[Function]}
                             sendRef={[Function]}
@@ -1490,7 +1490,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                             isFocused={false}
                             isPlaceholder={false}
                             isSelected={false}
-                            key="2"
+                            key="02"
                             keyHandler={[Function]}
                             onClick={[Function]}
                             sendRef={[Function]}
@@ -1524,7 +1524,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                             isFocused={false}
                             isPlaceholder={false}
                             isSelected={false}
-                            key="3"
+                            key="03"
                             keyHandler={[Function]}
                             onClick={[Function]}
                             sendRef={[Function]}
@@ -2172,8 +2172,6 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
                         <fieldset
                           aria-label=""
                           class="pf-c-form__fieldset"
-                          createtext="Create"
-                          noresultsfoundtext="No results found"
                         >
                           <label
                             class="pf-c-check pf-c-select__menu-item"
@@ -2331,8 +2329,6 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
                       aria-label=""
                       aria-labelledby={null}
                       className="pf-c-form__fieldset"
-                      createText="Create"
-                      noResultsFoundText="No results found"
                     >
                       <CheckboxSelectOption
                         className=""
@@ -2651,8 +2647,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
                         <fieldset
                           aria-label=""
                           class="pf-c-form__fieldset"
-                          createtext="Create"
-                          noresultsfoundtext="No results found"
                         >
                           <label
                             class="pf-c-check pf-c-select__menu-item"
@@ -2810,8 +2804,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
                       aria-label=""
                       aria-labelledby={null}
                       className="pf-c-form__fieldset"
-                      createText="Create"
-                      noResultsFoundText="No results found"
                     >
                       <SelectOption
                         className=""
@@ -2822,7 +2814,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                         isFocused={false}
                         isPlaceholder={false}
                         isSelected={false}
-                        key=".$0"
+                        key=".$00"
                         keyHandler={[Function]}
                         onClick={[Function]}
                         sendRef={[Function]}
@@ -2856,7 +2848,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                         isFocused={false}
                         isPlaceholder={false}
                         isSelected={false}
-                        key=".$1"
+                        key=".$01"
                         keyHandler={[Function]}
                         onClick={[Function]}
                         sendRef={[Function]}
@@ -2890,7 +2882,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                         isFocused={false}
                         isPlaceholder={false}
                         isSelected={false}
-                        key=".$2"
+                        key=".$02"
                         keyHandler={[Function]}
                         onClick={[Function]}
                         sendRef={[Function]}
@@ -2924,7 +2916,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                         isFocused={false}
                         isPlaceholder={false}
                         isSelected={false}
-                        key=".$3"
+                        key=".$03"
                         keyHandler={[Function]}
                         onClick={[Function]}
                         sendRef={[Function]}
@@ -3153,8 +3145,6 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                         <fieldset
                           aria-label=""
                           class="pf-c-form__fieldset"
-                          createtext="Create"
-                          noresultsfoundtext="No results found"
                         >
                           <label
                             class="pf-c-check pf-c-select__menu-item"
@@ -3298,8 +3288,6 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
                       aria-label=""
                       aria-labelledby={null}
                       className="pf-c-form__fieldset"
-                      createText="Create"
-                      noResultsFoundText="No results found"
                     >
                       <SelectOption
                         className=""
@@ -3626,8 +3614,6 @@ exports[`select custom select filter filters properly 1`] = `
                   aria-label=""
                   aria-labelledby=""
                   class="pf-c-select__menu"
-                  createtext="Create"
-                  noresultsfoundtext="No results found"
                   role="listbox"
                 >
                   <li
@@ -3758,8 +3744,6 @@ exports[`select custom select filter filters properly 1`] = `
             aria-label=""
             aria-labelledby=""
             className="pf-c-select__menu"
-            createText="Create"
-            noResultsFoundText="No results found"
             role="listbox"
           >
             <SelectOption
@@ -3772,7 +3756,7 @@ exports[`select custom select filter filters properly 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$0"
+              key=".$00"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -3804,7 +3788,7 @@ exports[`select custom select filter filters properly 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$1"
+              key=".$01"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -3836,7 +3820,7 @@ exports[`select custom select filter filters properly 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$3"
+              key=".$03"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -4106,8 +4090,6 @@ exports[`select renders select groups successfully 1`] = `
                   aria-label=""
                   aria-labelledby=""
                   class="pf-c-select__menu"
-                  createtext="Create"
-                  noresultsfoundtext="No results found"
                   role="listbox"
                 >
                   <div
@@ -4297,8 +4279,6 @@ exports[`select renders select groups successfully 1`] = `
             aria-label=""
             aria-labelledby=""
             className="pf-c-select__menu"
-            createText="Create"
-            noResultsFoundText="No results found"
             role="listbox"
           >
             <Component
@@ -4334,7 +4314,7 @@ exports[`select renders select groups successfully 1`] = `
                   isFocused={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="0"
+                  key="00"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -4364,7 +4344,7 @@ exports[`select renders select groups successfully 1`] = `
                   isFocused={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="1"
+                  key="01"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -4394,7 +4374,7 @@ exports[`select renders select groups successfully 1`] = `
                   isFocused={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="2"
+                  key="02"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -4424,7 +4404,7 @@ exports[`select renders select groups successfully 1`] = `
                   isFocused={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="3"
+                  key="03"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -4480,7 +4460,7 @@ exports[`select renders select groups successfully 1`] = `
                   isFocused={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="0"
+                  key="00"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -4510,7 +4490,7 @@ exports[`select renders select groups successfully 1`] = `
                   isFocused={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="1"
+                  key="01"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -4540,7 +4520,7 @@ exports[`select renders select groups successfully 1`] = `
                   isFocused={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="2"
+                  key="02"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -4570,7 +4550,7 @@ exports[`select renders select groups successfully 1`] = `
                   isFocused={false}
                   isPlaceholder={false}
                   isSelected={false}
-                  key="3"
+                  key="03"
                   keyHandler={[Function]}
                   onClick={[Function]}
                   sendRef={[Function]}
@@ -5478,8 +5458,6 @@ exports[`select single select renders expanded successfully 1`] = `
                   aria-label=""
                   aria-labelledby=""
                   class="pf-c-select__menu"
-                  createtext="Create"
-                  noresultsfoundtext="No results found"
                   role="listbox"
                 >
                   <li
@@ -5605,8 +5583,6 @@ exports[`select single select renders expanded successfully 1`] = `
             aria-label=""
             aria-labelledby=""
             className="pf-c-select__menu"
-            createText="Create"
-            noResultsFoundText="No results found"
             role="listbox"
           >
             <SelectOption
@@ -5619,7 +5595,7 @@ exports[`select single select renders expanded successfully 1`] = `
               isFocused={false}
               isPlaceholder={false}
               isSelected={false}
-              key=".$0"
+              key=".$00"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -5651,7 +5627,7 @@ exports[`select single select renders expanded successfully 1`] = `
               isFocused={false}
               isPlaceholder={false}
               isSelected={false}
-              key=".$1"
+              key=".$01"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -5683,7 +5659,7 @@ exports[`select single select renders expanded successfully 1`] = `
               isFocused={false}
               isPlaceholder={false}
               isSelected={false}
-              key=".$2"
+              key=".$02"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -5715,7 +5691,7 @@ exports[`select single select renders expanded successfully 1`] = `
               isFocused={false}
               isPlaceholder={false}
               isSelected={false}
-              key=".$3"
+              key=".$03"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -5928,8 +5904,6 @@ exports[`select single select renders expanded successfully with custom objects 
                   aria-label=""
                   aria-labelledby=""
                   class="pf-c-select__menu"
-                  createtext="Create"
-                  noresultsfoundtext="No results found"
                   role="listbox"
                 >
                   <li
@@ -6043,8 +6017,6 @@ exports[`select single select renders expanded successfully with custom objects 
             aria-label=""
             aria-labelledby=""
             className="pf-c-select__menu"
-            createText="Create"
-            noResultsFoundText="No results found"
             role="listbox"
           >
             <SelectOption
@@ -6279,6 +6251,25 @@ exports[`typeahead multi select renders closed successfully 1`] = `
             sendRef={[Function]}
             value="Other"
           />,
+          <SelectOption
+            className=""
+            component="button"
+            index={0}
+            isChecked={false}
+            isDisabled={false}
+            isFocused={false}
+            isPlaceholder={false}
+            isSelected={false}
+            keyHandler={[Function]}
+            onClick={[Function]}
+            sendRef={[Function]}
+            value="test"
+          >
+            Create
+             "
+            test
+            "
+          </SelectOption>,
         ],
         "onSelect": [MockFunction],
         "onToggle": [MockFunction],
@@ -6541,6 +6532,25 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             sendRef={[Function]}
             value="Other"
           />,
+          <SelectOption
+            className=""
+            component="button"
+            index={0}
+            isChecked={false}
+            isDisabled={false}
+            isFocused={false}
+            isPlaceholder={false}
+            isSelected={false}
+            keyHandler={[Function]}
+            onClick={[Function]}
+            sendRef={[Function]}
+            value="test"
+          >
+            Create
+             "
+            test
+            "
+          </SelectOption>,
         ],
         "isExpanded": true,
         "onSelect": [MockFunction],
@@ -6661,8 +6671,6 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   aria-label=""
                   aria-labelledby=""
                   class="pf-c-select__menu"
-                  createtext="Create"
-                  noresultsfoundtext="No results found"
                   role="listbox"
                 >
                   <li
@@ -6711,6 +6719,21 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                       type="button"
                     >
                       Other
+                    </button>
+                  </li>
+                  <li
+                    role="presentation"
+                  >
+                    <button
+                      class="pf-c-select__menu-item"
+                      id="test-4"
+                      role="option"
+                      type="button"
+                    >
+                      Create
+                       "
+                      test
+                      "
                     </button>
                   </li>
                 </ul>
@@ -6805,8 +6828,6 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             aria-label=""
             aria-labelledby=""
             className="pf-c-select__menu"
-            createText="Create"
-            noResultsFoundText="No results found"
             role="listbox"
           >
             <SelectOption
@@ -6819,7 +6840,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$.$0"
+              key=".$.$00"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -6851,7 +6872,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$.$1"
+              key=".$.$01"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -6883,7 +6904,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$.$2"
+              key=".$.$02"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -6915,7 +6936,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$.$3"
+              key=".$.$03"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -6934,6 +6955,41 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   type="button"
                 >
                   Other
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="test-4"
+              index={4}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$.$0"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="test"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="test-4"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Create
+                   "
+                  test
+                  "
                 </button>
               </li>
             </SelectOption>
@@ -7019,6 +7075,25 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             sendRef={[Function]}
             value="Other"
           />,
+          <SelectOption
+            className=""
+            component="button"
+            index={0}
+            isChecked={false}
+            isDisabled={false}
+            isFocused={false}
+            isPlaceholder={false}
+            isSelected={false}
+            keyHandler={[Function]}
+            onClick={[Function]}
+            sendRef={[Function]}
+            value="test"
+          >
+            Create
+             "
+            test
+            "
+          </SelectOption>,
         ],
         "isExpanded": true,
         "onSelect": [MockFunction],
@@ -7234,8 +7309,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   aria-label=""
                   aria-labelledby=""
                   class="pf-c-select__menu"
-                  createtext="Create"
-                  noresultsfoundtext="No results found"
                   role="listbox"
                 >
                   <li
@@ -7316,6 +7389,21 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       type="button"
                     >
                       Other
+                    </button>
+                  </li>
+                  <li
+                    role="presentation"
+                  >
+                    <button
+                      class="pf-c-select__menu-item"
+                      id="test-4"
+                      role="option"
+                      type="button"
+                    >
+                      Create
+                       "
+                      test
+                      "
                     </button>
                   </li>
                 </ul>
@@ -7778,8 +7866,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             aria-label=""
             aria-labelledby=""
             className="pf-c-select__menu"
-            createText="Create"
-            noResultsFoundText="No results found"
             role="listbox"
           >
             <SelectOption
@@ -7792,7 +7878,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={true}
-              key=".$.$0"
+              key=".$.$00"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -7853,7 +7939,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={true}
-              key=".$.$1"
+              key=".$.$01"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -7914,7 +8000,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$.$2"
+              key=".$.$02"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -7946,7 +8032,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$.$3"
+              key=".$.$03"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -7965,6 +8051,41 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   type="button"
                 >
                   Other
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="test-4"
+              index={4}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$.$0"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="test"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="test-4"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Create
+                   "
+                  test
+                  "
                 </button>
               </li>
             </SelectOption>
@@ -8045,6 +8166,25 @@ exports[`typeahead multi select test onChange 1`] = `
             sendRef={[Function]}
             value="Other"
           />,
+          <SelectOption
+            className=""
+            component="button"
+            index={0}
+            isChecked={false}
+            isDisabled={false}
+            isFocused={false}
+            isPlaceholder={false}
+            isSelected={false}
+            keyHandler={[Function]}
+            onClick={[Function]}
+            sendRef={[Function]}
+            value="test"
+          >
+            Create
+             "
+            test
+            "
+          </SelectOption>,
         ],
         "isExpanded": true,
         "onClear": [MockFunction],
@@ -8165,20 +8305,69 @@ exports[`typeahead multi select test onChange 1`] = `
                   aria-label=""
                   aria-labelledby=""
                   class="pf-c-select__menu"
-                  createtext="Create"
-                  noresultsfoundtext="No results found"
                   role="listbox"
                 >
                   <li
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item pf-m-disabled"
-                      id="No results found-0"
+                      class="pf-c-select__menu-item"
+                      id="Mr-0"
                       role="option"
                       type="button"
                     >
-                      No results found
+                      Mr
+                    </button>
+                  </li>
+                  <li
+                    role="presentation"
+                  >
+                    <button
+                      class="pf-c-select__menu-item"
+                      id="Mrs-1"
+                      role="option"
+                      type="button"
+                    >
+                      Mrs
+                    </button>
+                  </li>
+                  <li
+                    role="presentation"
+                  >
+                    <button
+                      class="pf-c-select__menu-item"
+                      id="Ms-2"
+                      role="option"
+                      type="button"
+                    >
+                      Ms
+                    </button>
+                  </li>
+                  <li
+                    role="presentation"
+                  >
+                    <button
+                      class="pf-c-select__menu-item"
+                      id="Other-3"
+                      role="option"
+                      type="button"
+                    >
+                      Other
+                    </button>
+                  </li>
+                  <li
+                    role="presentation"
+                  >
+                    <button
+                      class="pf-c-select__menu-item"
+                      id="test-4"
+                      role="option"
+                      type="button"
+                    >
+                      Create
+                       "
+                      test
+                      "
                     </button>
                   </li>
                 </ul>
@@ -8273,17 +8462,143 @@ exports[`typeahead multi select test onChange 1`] = `
             aria-label=""
             aria-labelledby=""
             className="pf-c-select__menu"
-            createText="Create"
-            noResultsFoundText="No results found"
             role="listbox"
           >
             <SelectOption
               className=""
               component="button"
-              id="No results found-0"
+              id="Mr-0"
               index={0}
               isChecked={false}
-              isDisabled={true}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$00"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Mr"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Mr-0"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Mr
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Mrs-1"
+              index={1}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$01"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Mrs"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Mrs-1"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Mrs
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Ms-2"
+              index={2}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$02"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Ms"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Ms-2"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Ms
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Other-3"
+              index={3}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$03"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Other"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Other-3"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Other
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="test-4"
+              index={4}
+              isChecked={false}
+              isDisabled={false}
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
@@ -8291,21 +8606,24 @@ exports[`typeahead multi select test onChange 1`] = `
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
-              value="No results found"
+              value="test"
             >
               <li
                 role="presentation"
               >
                 <button
                   aria-selected={null}
-                  className="pf-c-select__menu-item pf-m-disabled"
-                  id="No results found-0"
+                  className="pf-c-select__menu-item"
+                  id="test-4"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="option"
                   type="button"
                 >
-                  No results found
+                  Create
+                   "
+                  test
+                  "
                 </button>
               </li>
             </SelectOption>
@@ -8764,8 +9082,6 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   aria-label=""
                   aria-labelledby=""
                   class="pf-c-select__menu"
-                  createtext="Create"
-                  noresultsfoundtext="No results found"
                   role="listbox"
                 >
                   <li
@@ -8908,8 +9224,6 @@ exports[`typeahead select renders expanded successfully 1`] = `
             aria-label=""
             aria-labelledby=""
             className="pf-c-select__menu"
-            createText="Create"
-            noResultsFoundText="No results found"
             role="listbox"
           >
             <SelectOption
@@ -8922,7 +9236,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$.$0"
+              key=".$.$00"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -8954,7 +9268,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$.$1"
+              key=".$.$01"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -8986,7 +9300,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$.$2"
+              key=".$.$02"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -9018,7 +9332,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$.$3"
+              key=".$.$03"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -9256,8 +9570,6 @@ exports[`typeahead select renders selected successfully 1`] = `
                   aria-label=""
                   aria-labelledby=""
                   class="pf-c-select__menu"
-                  createtext="Create"
-                  noresultsfoundtext="No results found"
                   role="listbox"
                 >
                   <li
@@ -9451,8 +9763,6 @@ exports[`typeahead select renders selected successfully 1`] = `
             aria-label=""
             aria-labelledby=""
             className="pf-c-select__menu"
-            createText="Create"
-            noResultsFoundText="No results found"
             role="listbox"
           >
             <SelectOption
@@ -9465,7 +9775,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={true}
-              key=".$.$0"
+              key=".$.$00"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -9526,7 +9836,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$.$1"
+              key=".$.$01"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -9558,7 +9868,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$.$2"
+              key=".$.$02"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -9590,7 +9900,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$.$3"
+              key=".$.$03"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
@@ -9688,6 +9998,25 @@ exports[`typeahead select test creatable option 1`] = `
             sendRef={[Function]}
             value="Other"
           />,
+          <SelectOption
+            className=""
+            component="button"
+            index={0}
+            isChecked={false}
+            isDisabled={false}
+            isFocused={false}
+            isPlaceholder={false}
+            isSelected={false}
+            keyHandler={[Function]}
+            onClick={[Function]}
+            sendRef={[Function]}
+            value="test"
+          >
+            Create
+             "
+            test
+            "
+          </SelectOption>,
         ],
         "isCreatable": true,
         "isExpanded": true,
@@ -9806,8 +10135,6 @@ exports[`typeahead select test creatable option 1`] = `
                   aria-label=""
                   aria-labelledby=""
                   class="pf-c-select__menu"
-                  createtext="Create"
-                  noresultsfoundtext="No results found"
                   role="listbox"
                 >
                   <li
@@ -9815,7 +10142,55 @@ exports[`typeahead select test creatable option 1`] = `
                   >
                     <button
                       class="pf-c-select__menu-item"
-                      id="test-0"
+                      id="Mr-0"
+                      role="option"
+                      type="button"
+                    >
+                      Mr
+                    </button>
+                  </li>
+                  <li
+                    role="presentation"
+                  >
+                    <button
+                      class="pf-c-select__menu-item"
+                      id="Mrs-1"
+                      role="option"
+                      type="button"
+                    >
+                      Mrs
+                    </button>
+                  </li>
+                  <li
+                    role="presentation"
+                  >
+                    <button
+                      class="pf-c-select__menu-item"
+                      id="Ms-2"
+                      role="option"
+                      type="button"
+                    >
+                      Ms
+                    </button>
+                  </li>
+                  <li
+                    role="presentation"
+                  >
+                    <button
+                      class="pf-c-select__menu-item"
+                      id="Other-3"
+                      role="option"
+                      type="button"
+                    >
+                      Other
+                    </button>
+                  </li>
+                  <li
+                    role="presentation"
+                  >
+                    <button
+                      class="pf-c-select__menu-item"
+                      id="test-4"
                       role="option"
                       type="button"
                     >
@@ -9917,15 +10292,141 @@ exports[`typeahead select test creatable option 1`] = `
             aria-label=""
             aria-labelledby=""
             className="pf-c-select__menu"
-            createText="Create"
-            noResultsFoundText="No results found"
             role="listbox"
           >
             <SelectOption
               className=""
               component="button"
-              id="test-0"
+              id="Mr-0"
               index={0}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$00"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Mr"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Mr-0"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Mr
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Mrs-1"
+              index={1}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$01"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Mrs"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Mrs-1"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Mrs
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Ms-2"
+              index={2}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$02"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Ms"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Ms-2"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Ms
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Other-3"
+              index={3}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$03"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Other"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Other-3"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Other
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="test-4"
+              index={4}
               isChecked={false}
               isDisabled={false}
               isFocused={null}
@@ -9943,7 +10444,7 @@ exports[`typeahead select test creatable option 1`] = `
                 <button
                   aria-selected={null}
                   className="pf-c-select__menu-item"
-                  id="test-0"
+                  id="test-4"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="option"
@@ -10153,20 +10654,54 @@ exports[`typeahead select test onChange 1`] = `
                   aria-label=""
                   aria-labelledby=""
                   class="pf-c-select__menu"
-                  createtext="Create"
-                  noresultsfoundtext="No results found"
                   role="listbox"
                 >
                   <li
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item pf-m-disabled"
-                      id="No results found-0"
+                      class="pf-c-select__menu-item"
+                      id="Mr-0"
                       role="option"
                       type="button"
                     >
-                      No results found
+                      Mr
+                    </button>
+                  </li>
+                  <li
+                    role="presentation"
+                  >
+                    <button
+                      class="pf-c-select__menu-item"
+                      id="Mrs-1"
+                      role="option"
+                      type="button"
+                    >
+                      Mrs
+                    </button>
+                  </li>
+                  <li
+                    role="presentation"
+                  >
+                    <button
+                      class="pf-c-select__menu-item"
+                      id="Ms-2"
+                      role="option"
+                      type="button"
+                    >
+                      Ms
+                    </button>
+                  </li>
+                  <li
+                    role="presentation"
+                  >
+                    <button
+                      class="pf-c-select__menu-item"
+                      id="Other-3"
+                      role="option"
+                      type="button"
+                    >
+                      Other
                     </button>
                   </li>
                 </ul>
@@ -10261,39 +10796,133 @@ exports[`typeahead select test onChange 1`] = `
             aria-label=""
             aria-labelledby=""
             className="pf-c-select__menu"
-            createText="Create"
-            noResultsFoundText="No results found"
             role="listbox"
           >
             <SelectOption
               className=""
               component="button"
-              id="No results found-0"
+              id="Mr-0"
               index={0}
               isChecked={false}
-              isDisabled={true}
+              isDisabled={false}
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$0"
+              key=".$00"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
-              value="No results found"
+              value="Mr"
             >
               <li
                 role="presentation"
               >
                 <button
                   aria-selected={null}
-                  className="pf-c-select__menu-item pf-m-disabled"
-                  id="No results found-0"
+                  className="pf-c-select__menu-item"
+                  id="Mr-0"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="option"
                   type="button"
                 >
-                  No results found
+                  Mr
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Mrs-1"
+              index={1}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$01"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Mrs"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Mrs-1"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Mrs
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Ms-2"
+              index={2}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$02"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Ms"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Ms-2"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Ms
+                </button>
+              </li>
+            </SelectOption>
+            <SelectOption
+              className=""
+              component="button"
+              id="Other-3"
+              index={3}
+              isChecked={false}
+              isDisabled={false}
+              isFocused={null}
+              isPlaceholder={false}
+              isSelected={false}
+              key=".$03"
+              keyHandler={[Function]}
+              onClick={[Function]}
+              sendRef={[Function]}
+              value="Other"
+            >
+              <li
+                role="presentation"
+              >
+                <button
+                  aria-selected={null}
+                  className="pf-c-select__menu-item"
+                  id="Other-3"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="option"
+                  type="button"
+                >
+                  Other
                 </button>
               </li>
             </SelectOption>
