@@ -53,7 +53,6 @@ exports[`LoginForm with rememberMeLabel 1`] = `
     fieldId="pf-login-remember-me-id"
   >
     <Checkbox
-      checked={false}
       className=""
       id="pf-login-remember-me-id"
       isChecked={false}
@@ -130,7 +129,6 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
     fieldId="pf-login-remember-me-id"
   >
     <Checkbox
-      checked={false}
       className=""
       id="pf-login-remember-me-id"
       isChecked={false}

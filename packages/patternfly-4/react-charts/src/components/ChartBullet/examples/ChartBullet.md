@@ -2,7 +2,7 @@
 title: 'Bullet'
 section: 'charts'
 typescript: true
-propComponents: ['ChartAxis', 'ChartBullet', 'ChartContainer', 'ChartLegend']
+propComponents: ['ChartAxis', 'ChartBullet', 'ChartContainer']
 ---
 
 import { ChartAxis, ChartBullet, ChartContainer, ChartThemeColor } from '@patternfly/react-charts';
@@ -102,7 +102,6 @@ class BulletChart extends React.Component {
 
   render() {
     const { width } = this.state;
-    const itemsPerRow = width > 650 ? 5 : width > 550 ? 4 : width > 450 ? 3 : 2;
     return (
       <div ref={this.containerRef}>
         <div className="bullet-chart-horz-responsive-legend-bottom">
@@ -114,7 +113,7 @@ class BulletChart extends React.Component {
             constrainToVisibleArea
             height={250}
             labels={({ datum }) => `${datum.name}: ${datum.y}`}
-            legendItemsPerRow={itemsPerRow}
+            legendAllowWrap={true}
             legendPosition="bottom-left"
             maxDomain={{y: 100}}
             padding={{
@@ -851,13 +850,13 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
 ## Tips
 
-- `ChartLegend` may be used as a standalone component, instead of using `legendData` and `legendPosition`
+- See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
+- `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
 ## Docs
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
- - For `ChartAxis` props, see <a href="https://formidable.com/open-source/victory/docs/victory-axis" target="_blank">VictoryAxis</a>
- - For `ChartBullet` props, see <a href="https://formidable.com/open-source/victory/docs/victory-bar" target="_blank">VictoryBar</a>
- - For `ChartContainer` props, see <a href="https://formidable.com/open-source/victory/docs/victory-container" target="_blank">VictoryContainer</a>
- - For `ChartLegend` props, see <a href="https://formidable.com/open-source/victory/docs/victory-legend" target="_blank">VictoryLegend</a>
+ - For `ChartAxis` props, see [VictoryAxis](https://formidable.com/open-source/victory/docs/victory-axis)
+ - For `ChartBullet` props, see [VictoryBar](https://formidable.com/open-source/victory/docs/victory-bar)
+ - For `ChartContainer` props, see [VictoryContainer](https://formidable.com/open-source/victory/docs/victory-container)

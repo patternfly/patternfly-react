@@ -22,4 +22,16 @@ describe('Expandable Demo Test', () => {
       .last()
       .should('have.class', 'pf-m-expanded');
   });
+
+  it('Verify dynamic uncontrolled expandable', () => {
+    cy.get('.pf-c-expandable__toggle')
+      .find('span')
+      .should('contain', 'Show More');
+    cy.get('.pf-c-expandable__toggle')
+      .last()
+      .click();
+    cy.get('.pf-c-expandable__toggle')
+      .find('span')
+      .should('contain', 'Show Less');
+  });
 });

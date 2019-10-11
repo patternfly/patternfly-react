@@ -3,6 +3,89 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.7.5](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.7.4...demo-app-ts@3.7.5) (2019-10-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.7.4](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.7.3...demo-app-ts@3.7.4) (2019-10-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.7.3](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.7.2...demo-app-ts@3.7.3) (2019-10-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.7.2](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.7.1...demo-app-ts@3.7.2) (2019-10-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.7.1](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.7.0...demo-app-ts@3.7.1) (2019-10-11)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+# [3.7.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.6.22...demo-app-ts@3.7.0) (2019-10-10)
+
+
+### Features
+
+* **Expandable:** Allow for dynamic toggle text in uncontrolled version ([#3068](https://github.com/patternfly/patternfly-react/issues/3068)) ([3c6e4b6](https://github.com/patternfly/patternfly-react/commit/3c6e4b6)), closes [#2914](https://github.com/patternfly/patternfly-react/issues/2914)
+
+
+
+
+
+## [3.6.22](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.6.21...demo-app-ts@3.6.22) (2019-10-09)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.6.21](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.6.20...demo-app-ts@3.6.21) (2019-10-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.6.20](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.6.19...demo-app-ts@3.6.20) (2019-10-08)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
+## [3.6.19](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.6.18...demo-app-ts@3.6.19) (2019-10-07)
+
+**Note:** Version bump only for package demo-app-ts
+
+
+
+
+
 ## [3.6.18](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.6.17...demo-app-ts@3.6.18) (2019-10-07)
 
 **Note:** Version bump only for package demo-app-ts

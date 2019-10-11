@@ -102,6 +102,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   ]
                 }
                 isAppLauncher={false}
+                isContentLeftAligned={false}
                 isVisible={false}
                 maxWidth="18.75rem"
                 position="top"
@@ -120,7 +121,9 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       className=""
                       role="tooltip"
                     >
-                      <TooltipContent>
+                      <TooltipContent
+                        isLeftAligned={false}
+                      >
                         test zoom in tooltip
                       </TooltipContent>
                     </div>
@@ -254,7 +257,9 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       className=""
                       role="tooltip"
                     >
-                      <TooltipContent>
+                      <TooltipContent
+                        isLeftAligned={false}
+                      >
                         <div
                           className="pf-c-tooltip__content"
                         >
@@ -295,6 +300,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   ]
                 }
                 isAppLauncher={false}
+                isContentLeftAligned={false}
                 isVisible={false}
                 maxWidth="18.75rem"
                 position="top"
@@ -313,7 +319,9 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       className=""
                       role="tooltip"
                     >
-                      <TooltipContent>
+                      <TooltipContent
+                        isLeftAligned={false}
+                      >
                         Zoom Out
                       </TooltipContent>
                     </div>
@@ -473,7 +481,9 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       className=""
                       role="tooltip"
                     >
-                      <TooltipContent>
+                      <TooltipContent
+                        isLeftAligned={false}
+                      >
                         <div
                           className="pf-c-tooltip__content"
                         >
@@ -514,6 +524,7 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                   ]
                 }
                 isAppLauncher={false}
+                isContentLeftAligned={false}
                 isVisible={false}
                 maxWidth="18.75rem"
                 position="top"
@@ -532,7 +543,9 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       className=""
                       role="tooltip"
                     >
-                      <TooltipContent>
+                      <TooltipContent
+                        isLeftAligned={false}
+                      >
                         Reset View
                       </TooltipContent>
                     </div>
@@ -692,7 +705,9 @@ exports[`TopologyControlBar should accept button options correctly 1`] = `
                       className=""
                       role="tooltip"
                     >
-                      <TooltipContent>
+                      <TooltipContent
+                        isLeftAligned={false}
+                      >
                         <div
                           className="pf-c-tooltip__content"
                         >
@@ -827,6 +842,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   ]
                 }
                 isAppLauncher={false}
+                isContentLeftAligned={false}
                 isVisible={false}
                 maxWidth="18.75rem"
                 position="top"
@@ -845,7 +861,9 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       className=""
                       role="tooltip"
                     >
-                      <TooltipContent>
+                      <TooltipContent
+                        isLeftAligned={false}
+                      >
                         Zoom In
                       </TooltipContent>
                     </div>
@@ -1005,7 +1023,9 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       className=""
                       role="tooltip"
                     >
-                      <TooltipContent>
+                      <TooltipContent
+                        isLeftAligned={false}
+                      >
                         <div
                           className="pf-c-tooltip__content"
                         >
@@ -1046,6 +1066,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   ]
                 }
                 isAppLauncher={false}
+                isContentLeftAligned={false}
                 isVisible={false}
                 maxWidth="18.75rem"
                 position="top"
@@ -1064,7 +1085,9 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       className=""
                       role="tooltip"
                     >
-                      <TooltipContent>
+                      <TooltipContent
+                        isLeftAligned={false}
+                      >
                         Zoom Out
                       </TooltipContent>
                     </div>
@@ -1224,7 +1247,9 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       className=""
                       role="tooltip"
                     >
-                      <TooltipContent>
+                      <TooltipContent
+                        isLeftAligned={false}
+                      >
                         <div
                           className="pf-c-tooltip__content"
                         >
@@ -1265,6 +1290,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   ]
                 }
                 isAppLauncher={false}
+                isContentLeftAligned={false}
                 isVisible={false}
                 maxWidth="18.75rem"
                 position="top"
@@ -1283,7 +1309,9 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       className=""
                       role="tooltip"
                     >
-                      <TooltipContent>
+                      <TooltipContent
+                        isLeftAligned={false}
+                      >
                         Fit to Screen
                       </TooltipContent>
                     </div>
@@ -1443,7 +1471,9 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       className=""
                       role="tooltip"
                     >
-                      <TooltipContent>
+                      <TooltipContent
+                        isLeftAligned={false}
+                      >
                         <div
                           className="pf-c-tooltip__content"
                         >
@@ -1484,6 +1514,7 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                   ]
                 }
                 isAppLauncher={false}
+                isContentLeftAligned={false}
                 isVisible={false}
                 maxWidth="18.75rem"
                 position="top"
@@ -1502,7 +1533,9 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       className=""
                       role="tooltip"
                     >
-                      <TooltipContent>
+                      <TooltipContent
+                        isLeftAligned={false}
+                      >
                         Reset View
                       </TooltipContent>
                     </div>
@@ -1662,7 +1695,9 @@ exports[`TopologyControlBar should display the default controls correctly 1`] = 
                       className=""
                       role="tooltip"
                     >
-                      <TooltipContent>
+                      <TooltipContent
+                        isLeftAligned={false}
+                      >
                         <div
                           className="pf-c-tooltip__content"
                         >

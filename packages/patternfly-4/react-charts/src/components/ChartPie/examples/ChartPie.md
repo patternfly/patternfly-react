@@ -2,7 +2,7 @@
 title: 'Pie'
 section: 'charts'
 typescript: true
-propComponents: ['ChartLegend', 'ChartPie']
+propComponents: ['ChartPie']
 ---
 
 import { ChartPie, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
@@ -104,12 +104,12 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
 ## Tips
 
-- For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
-- `ChartLegend` may be used as a standalone component, instead of using `legendData` and `legendPosition`
+- See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
+- For single data points or zero values, you may want to set the `domain` prop
+- `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
 ## Docs
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
- - For `ChartLegend` props, see <a href="https://formidable.com/open-source/victory/docs/victory-legend" target="_blank">VictoryLegend</a>
- - For `ChartPie` props, see <a href="https://formidable.com/open-source/victory/docs/victory-pie" target="_blank">VictoryPie</a>
+ - For `ChartPie` props, see [VictoryPie](https://formidable.com/open-source/victory/docs/victory-pie)

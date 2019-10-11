@@ -29,7 +29,7 @@ Example with LESS:
 @import "~bootstrap/less/variables";
 @import "~patternfly/dist/less/variables";
 @import "~patternfly-react/dist/less/patternfly-react.less";
-@import "~xterm/dist/xterm.css";
+@import "~xterm/css/xterm.css";
 @import "~@patternfly/react-console/dist/less/console.less";
 ```
 

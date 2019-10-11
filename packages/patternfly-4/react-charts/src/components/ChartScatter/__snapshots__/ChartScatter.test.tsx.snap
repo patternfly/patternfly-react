@@ -473,6 +473,7 @@ exports[`ChartScatter 1`] = `
     />
   }
   samples={50}
+  size={[Function]}
   sortOrder="ascending"
   standalone={true}
   theme={
@@ -1400,6 +1401,7 @@ exports[`ChartScatter 2`] = `
     />
   }
   samples={50}
+  size={[Function]}
   sortOrder="ascending"
   standalone={true}
   theme={

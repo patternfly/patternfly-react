@@ -2,7 +2,7 @@
 title: 'Sparkline'
 section: 'charts'
 typescript: true
-propComponents: ['ChartArea', 'ChartGroup', 'ChartLabel']
+propComponents: ['ChartArea', 'ChartContainer', 'ChartGroup', 'ChartLabel', 'ChartVoronoiContainer']
 ---
 
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
@@ -87,7 +87,8 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, Cha
 
 ## Tips
 
-- For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
+- See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
+- For single data points or zero values, you may want to set the `domain` prop
 - Use `ChartGroup` in place of `Chart` when an axis and labels are not desired
 - Themes are inherited, so a default theme may override `themeColor` for a child component
 - The `theme` and `themeColor` props should be applied at the most top level component
@@ -96,7 +97,7 @@ import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, Cha
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
- - For `ChartArea` props, see <a href="https://formidable.com/open-source/victory/docs/victory-area" target="_blank">VictoryArea</a>
- - For `ChartGroup` props, see <a href="https://formidable.com/open-source/victory/docs/victory-group" target="_blank">VictoryGroup</a>
- - For `ChartLabel` props, see <a href="https://formidable.com/open-source/victory/docs/victory-label" target="_blank">VictoryLabel</a>
- - For `ChartVoronoiContainer` props, see <a href="https://formidable.com/open-source/victory/docs/victory-voronoi-container" target="_blank">VictoryVoronoiContainer</a>
+ - For `ChartArea` props, see [VictoryArea](https://formidable.com/open-source/victory/docs/victory-area)
+ - For `ChartGroup` props, see [VictoryGroup](https://formidable.com/open-source/victory/docs/victory-group)
+ - For `ChartLabel` props, see [VictoryLabel](https://formidable.com/open-source/victory/docs/victory-label)
+ - For `ChartVoronoiContainer` props, see [VictoryVoronoiContainer](https://formidable.com/open-source/victory/docs/victory-voronoi-container)

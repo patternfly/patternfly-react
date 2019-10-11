@@ -56,9 +56,9 @@ export class ActionsColumn extends React.Component<ActionsColumnProps, ActionsCo
     event.preventDefault();
     // tslint:disable-next-line:no-unused-expression
     onClick && onClick(event as React.MouseEvent, extraData && extraData.rowIndex, rowData, extraData);
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
+    this.setState(prevState => ({
+      isOpen: !prevState.isOpen
+    }));
   };
 
   render() {

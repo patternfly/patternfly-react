@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Terminal } from 'xterm';
-import { proposeGeometry } from 'xterm/lib/addons/fit/fit';
+import { FitAddon } from 'xterm-addon-fit';
 
 import { debounce } from '../common/helpers';
 
@@ -27,17 +27,21 @@ class XTerm extends React.Component {
     });
 
     if (this.props.onData) {
-      term.on('data', this.props.onData);
+      term.onData(this.props.onData);
     }
     if (this.props.onTitleChanged) {
-      term.on('title', this.props.onTitleChanged);
+      term.onTitleChange(this.props.onTitleChanged);
     }
+
+    const fit = new FitAddon();
+    term.loadAddon(fit);
 
     this.setState({
       terminal: term,
       cols: this.props.cols,
       rows: this.props.rows,
-      autoFit: this.props.autoFit
+      autoFit: this.props.autoFit,
+      fitAddon: fit
     });
   }
 
@@ -71,7 +75,7 @@ class XTerm extends React.Component {
       if (nextState.autoFit) {
         // If it is autoFit, get the computed size and set it
         this.removeMinWidth();
-        const geometry = proposeGeometry(this.state.terminal);
+        const geometry = this.state.fitAddon.proposeDimensions();
         this.state.terminal.resize(geometry.cols, geometry.rows);
         this.props.onResize(geometry.rows, geometry.cols);
       } else {
@@ -87,7 +91,7 @@ class XTerm extends React.Component {
   }
 
   componentWillUnmount() {
-    this.state.terminal.destroy();
+    this.state.terminal.dispose();
     window.removeEventListener('resize', this.onWindowResize);
   }
 
@@ -110,7 +114,7 @@ class XTerm extends React.Component {
     if (term) {
       term.write(`\x1b[31m${reason || 'disconnected'}\x1b[m\r\n`);
       term.cursorHidden = true;
-      term.refresh(term.y, term.y); // start to end row
+      term.refresh(term.rows, term.rows); // start to end row
     }
   }
 
@@ -138,7 +142,7 @@ class XTerm extends React.Component {
   onWindowResize() {
     if (this.state.autoFit) {
       this.removeMinWidth();
-      const geometry = proposeGeometry(this.state.terminal);
+      const geometry = this.state.fitAddon.proposeDimensions();
       if (geometry) {
         this.setState({
           rows: geometry.rows,

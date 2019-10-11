@@ -32,6 +32,10 @@ export interface InternalDropdownItemProps extends React.HTMLProps<HTMLAnchorEle
   };
   /** Callback for click event */
   onClick?: (event: React.MouseEvent<any> | React.KeyboardEvent | MouseEvent) => void;
+  /** ID for the list element */
+  id?: string;
+  /** ID for the component element */
+  componentID?: string;
 }
 
 export class InternalDropdownItem extends React.Component<InternalDropdownItemProps> {
@@ -51,7 +55,9 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     context: {
       keyHandler: Function.prototype,
       sendRef: Function.prototype
-    }
+    },
+    id: '',
+    componentID: '',
   };
 
   componentDidMount() {
@@ -94,6 +100,8 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
       href,
       tooltip,
       tooltipProps,
+      id,
+      componentID,
       listItemClassName,
       ...additionalProps
     } = this.props;
@@ -141,6 +149,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                   onSelect(event);
                 }
               }}
+              id={id}
             >
               {renderWithTooltip(
                 isComponentReactElement ? (
@@ -153,6 +162,7 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
                     {...additionalProps}
                     href={href || null}
                     className={css(classes, this.props.role !== 'separator' && itemClass)}
+                    id={componentID}
                   >
                     {children}
                   </Component>

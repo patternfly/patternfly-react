@@ -2,7 +2,7 @@
 title: 'Stack'
 section: 'charts'
 typescript: true
-propComponents: ['Chart', 'ChartArea', 'ChartBar', 'ChartLegend', 'ChartStack', 'ChartTooltip']
+propComponents: ['Chart', 'ChartArea', 'ChartBar', 'ChartStack', 'ChartTooltip']
 ---
 
 import { Chart, ChartArea, ChartBar, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
@@ -374,8 +374,9 @@ class MultiColorChart extends React.Component {
 
 ## Tips
 
-- For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
-- `ChartLegend` may be used as a standalone component, instead of using `legendData` and `legendPosition`
+- See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
+- For single data points or zero values, you may want to set the `domain` prop
+- `ChartLegend` may be used as a standalone component, instead of using `legendData`
 - Themes are inherited, so a default theme may override `themeColor` for a child component
 - The `theme` and `themeColor` props should be applied at the most top level component
 
@@ -383,9 +384,9 @@ class MultiColorChart extends React.Component {
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
- - For `Chart` props, see <a href="https://formidable.com/open-source/victory/docs/victory-chart" target="_blank">VictoryChart</a>
- - For `ChartArea` props, see <a href="https://formidable.com/open-source/victory/docs/victory-area" target="_blank">VictoryArea</a>
- - For `ChartAxis` props, see <a href="https://formidable.com/open-source/victory/docs/victory-axis" target="_blank">VictoryAxis</a>
- - For `ChartBar` props, see <a href="https://formidable.com/open-source/victory/docs/victory-bar" target="_blank">VictoryBar</a>
- - For `ChartStack` props, see <a href="https://formidable.com/open-source/victory/docs/victory-stack" target="_blank">VictoryStack</a>
- - For `ChartTooltip` props, see <a href="https://formidable.com/open-source/victory/docs/victory-tooltip" target="_blank">VictoryTooltip</a>
+ - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)
+ - For `ChartArea` props, see [VictoryArea](https://formidable.com/open-source/victory/docs/victory-area)
+ - For `ChartAxis` props, see [VictoryAxis](https://formidable.com/open-source/victory/docs/victory-axis)
+ - For `ChartBar` props, see [VictoryBar](https://formidable.com/open-source/victory/docs/victory-bar)
+ - For `ChartStack` props, see [VictoryStack](https://formidable.com/open-source/victory/docs/victory-stack)
+ - For `ChartTooltip` props, see [VictoryTooltip](https://formidable.com/open-source/victory/docs/victory-tooltip)

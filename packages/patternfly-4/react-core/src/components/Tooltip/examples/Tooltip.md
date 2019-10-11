@@ -3,10 +3,10 @@ title: 'Tooltip'
 section: components
 cssPrefix: 'pf-c-tooltip'
 typescript: true
-propComponents: ['Tooltip']
+propComponents: ['Tooltip', 'TooltipContent']
 ---
 
-import { Button, Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
+import { Button, Tooltip, TooltipPosition, TooltipContent, Checkbox } from '@patternfly/react-core';
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
 ## Examples

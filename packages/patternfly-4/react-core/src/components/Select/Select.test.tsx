@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Select } from './Select';
+import { Select, SelectProps } from './Select';
 import { SelectOption, SelectOptionObject } from './SelectOption';
 import { CheckboxSelectOption } from './CheckboxSelectOption';
 import { SelectGroup } from './SelectGroup';
@@ -22,10 +22,10 @@ class User implements SelectOptionObject {
 }
 
 const selectOptions = [
-  <SelectOption value="Mr" key="0" />,
-  <SelectOption value="Mrs" key="1" />,
-  <SelectOption value="Ms" key="2" />,
-  <SelectOption value="Other" key="3" />
+  <SelectOption value="Mr" key="00" />,
+  <SelectOption value="Mrs" key="01" />,
+  <SelectOption value="Ms" key="02" />,
+  <SelectOption value="Other" key="03" />
 ];
 
 const checkboxSelectOptions = [
@@ -116,7 +116,7 @@ describe('select', () => {
       );
       view.find('input').simulate('change', { target: { value: 'r' } });
       view.update();
-      expect((view.state('typeaheadFilteredChildren') as []).length).toBe(3);
+      expect((view.find('Select').state('typeaheadFilteredChildren') as []).length).toBe(3);
       expect(view).toMatchSnapshot();
     });
   });
@@ -240,7 +240,7 @@ describe('typeahead select', () => {
         {selectOptions}
       </Select>
     );
-    const inst = view.instance() as Select;
+    const inst = view.find('Select').instance() as any;
     inst.onChange(mockEvent);
     view.update();
     expect(view).toMatchSnapshot();
@@ -253,7 +253,7 @@ describe('typeahead select', () => {
         {selectOptions}
       </Select>
     );
-    const inst = view.instance() as Select;
+    const inst = view.find('Select').instance() as any;
     inst.onChange(mockEvent);
     view.update();
     expect(view).toMatchSnapshot();
@@ -307,7 +307,7 @@ describe('typeahead multi select', () => {
         {selectOptions}
       </Select>
     );
-    const inst = view.instance() as Select;
+    const inst = view.find('Select').instance() as any;
     inst.onChange(mockEvent);
     view.update();
     expect(view).toMatchSnapshot();

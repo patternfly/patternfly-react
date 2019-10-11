@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { debounce } from '@patternfly/react-core';
+import { InjectedOuiaProps, withOuiaContext,debounce } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { css } from '@patternfly/react-styles';
 
@@ -18,7 +18,7 @@ export interface RowWrapperProps {
   rowProps?: Object;
 }
 
-export class RowWrapper extends React.Component<RowWrapperProps, {}> {
+class RowWrapper extends React.Component<RowWrapperProps & InjectedOuiaProps, {}> {
   static defaultProps = {
     className: '' as string,
     row: {
@@ -82,6 +82,8 @@ export class RowWrapper extends React.Component<RowWrapperProps, {}> {
       onResize,
       row: { isExpanded },
       rowProps,
+      ouiaContext,
+      ouiaId,
       ...props
     } = this.props;
 
@@ -95,7 +97,15 @@ export class RowWrapper extends React.Component<RowWrapperProps, {}> {
           isExpanded && styles.modifiers.expanded
         )}
         hidden={isExpanded !== undefined && !isExpanded}
+        {...ouiaContext.isOuia && {
+          'data-ouia-component-type': 'TableRow',
+          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+        }}
       />
     );
   }
 }
+
+const RowWrapperWithOuiaContext = withOuiaContext(RowWrapper);
+
+export { RowWrapperWithOuiaContext as RowWrapper };
