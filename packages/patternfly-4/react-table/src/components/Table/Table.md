@@ -1135,7 +1135,7 @@ class EmptyStateTable extends React.Component {
     super(props);
     this.state = {
       columns: [
-        { title: 'Repositories', cellHeightAuto},
+        { title: 'Repositories'},
         'Branches',
         { title: 'Pull requests'},
         'Workspaces',
