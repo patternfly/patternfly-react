@@ -142,10 +142,10 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       });
     }
 
-    if (prevProps.selections !== this.props.selections && this.state.typeaheadActiveChild) {
-      this.setState(prevState => ({
-        typeaheadInputValue: prevState.typeaheadActiveChild.innerText
-      }));
+    if (prevProps.selections !== this.props.selections && this.props.variant === SelectVariant.typeahead) {
+      this.setState({
+        typeaheadInputValue: this.props.selections as string
+      });
     }
   };
 
