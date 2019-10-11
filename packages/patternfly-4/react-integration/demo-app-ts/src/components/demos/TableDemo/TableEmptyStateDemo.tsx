@@ -1,0 +1,82 @@
+import * as React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableProps,
+  sortable,
+  SortByDirection,
+  headerCol,
+  TableVariant,
+  expandable,
+  cellWidth,
+  textCenter,
+  IRow,
+  cellHeightAuto
+} from '@patternfly/react-table';
+import {
+  EmptyState,
+  EmptyStateBody,
+  EmptyStateProps,
+  EmptyStateIcon,
+  EmptyStateSecondaryActions,
+  EmptyStateVariant,
+  Title,
+  Button
+} from '@patternfly/react-core';
+import { CubesIcon } from '@patternfly/react-icons';
+class SimpleTable extends React.Component<TableProps, { columns: any; rows: IRow[] }> {
+  constructor(props: TableProps) {
+    super(props);
+    this.state = {
+      columns: [
+        { title: 'Repositories' },
+        'Branches',
+        { title: 'Pull requests' },
+        'Workspaces',
+        {
+          title: 'Last Commit',
+          transforms: [textCenter],
+          cellTransforms: [textCenter, cellHeightAuto()],
+        }
+      ],
+      rows: [
+        {
+          props: { colSpan: 5 }
+        }
+      ]
+    };
+  }
+  render() {
+    const { columns, rows } = this.state;
+    return (
+      <Table caption="Simple Table" cells={columns} rows={rows}>
+        <TableHeader />
+        <TableBody />
+        <tr>
+          <td>
+            <EmptyState variant={EmptyStateVariant.full}>
+              <EmptyStateIcon icon={CubesIcon} />
+              <Title headingLevel="h5" size="lg">
+                Empty State
+              </Title>
+              <EmptyStateBody>
+                This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but
+                flexible enough to meet a variety of needs.
+              </EmptyStateBody>
+              <Button variant="primary">Primary Action</Button>
+              <EmptyStateSecondaryActions>
+                <Button variant="link">Multiple</Button>
+                <Button variant="link">Action Buttons</Button>
+                <Button variant="link">Can</Button>
+                <Button variant="link">Go here</Button>
+                <Button variant="link">In the secondary</Button>
+                <Button variant="link">Action area</Button>
+              </EmptyStateSecondaryActions>
+            </EmptyState>
+          </td>
+        </tr>
+      </Table>
+    );
+  }
+}

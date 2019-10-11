@@ -66,7 +66,6 @@ class SimpleTable extends React.Component {
         {
           title: 'Last Commit',
           transforms: [textCenter],
-          cellTransforms: [textCenter]
         }
       ],
       rows: [
@@ -1103,6 +1102,90 @@ class WrappableHeadersTable extends React.Component {
 
     return (
       <Table caption="Wrappable headers" cells={columns} rows={rows}>
+        <TableHeader />
+        <TableBody />
+      </Table>
+    );
+  }
+}
+```
+
+## Table with empty state
+
+```js
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  sortable,
+  SortByDirection,
+  headerCol,
+  TableVariant,
+  expandable,
+  cellWidth,
+  textCenter,
+  cellHeightAuto
+} from '@patternfly/react-table';
+import { Bullseye } from '../../layouts/Bullseye';
+
+class EmptyStateTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        { title: 'Repositories' },
+        'Branches',
+        { title: 'Pull requests' },
+        'Workspaces',
+        {
+          title: 'Last Commit',
+          transforms: [textCenter],
+          cellTransforms: [textCenter]
+        }
+      ],
+   rows: [
+        {
+          cells: [
+            {
+              title:
+                   <tr class="pf-m-height-auto">
+                    <td colSpan="5">
+                      <Bullseye>
+                      <EmptyState variant={EmptyStateVariant.full}>
+                        <EmptyStateIcon icon={CubesIcon} />
+                        <Title headingLevel="h5" size="lg">
+                          Empty State
+                        </Title>
+                        <EmptyStateBody>
+                          This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
+                          enough to meet a variety of needs.
+                        </EmptyStateBody>
+                        <Button variant="primary">Primary Action</Button>
+                        <EmptyStateSecondaryActions>
+                          <Button variant="link">Multiple</Button>
+                          <Button variant="link">Action Buttons</Button>
+                          <Button variant="link">Can</Button>
+                          <Button variant="link">Go here</Button>
+                          <Button variant="link">In the secondary</Button>
+                          <Button variant="link">Action area</Button>
+                        </EmptyStateSecondaryActions>
+                      </EmptyState>
+                      </Bullseye>
+                  </td>
+                </tr>,
+              cellTransforms: [cellHeightAuto],
+              props: { colSpan: 5 }
+            }
+          ]
+        },
+      ]
+    };
+  }
+  render() {
+    const { columns, rows } = this.state;
+    return (
+      <Table caption="Simple Table" cells={columns} rows={rows} >
         <TableHeader />
         <TableBody />
       </Table>
