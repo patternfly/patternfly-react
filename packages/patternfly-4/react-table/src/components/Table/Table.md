@@ -22,7 +22,8 @@ import {
   textCenter,
   wrappable,
   classNames,
-  Visibility
+  Visibility,
+  cellHeightAuto,
 } from '@patternfly/react-table';
 
 import {
@@ -36,6 +37,9 @@ import {
 } from '@patternfly/react-icons';
 
 import DemoSortableTable from './demo/DemoSortableTable';
+import CustomRowWrapper from './examples/CustomRowWrapper';
+
+const foo = "bar";
 
 ## Simple table
 
@@ -1123,6 +1127,7 @@ import {
   SortByDirection,
   headerCol,
   TableVariant,
+  rowWrapper,
   expandable,
   cellWidth,
   textCenter,
@@ -1131,6 +1136,7 @@ import {
 import { Bullseye } from '../../layouts/Bullseye';
 
 class EmptyStateTable extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -1180,9 +1186,11 @@ class EmptyStateTable extends React.Component {
     };
   }
   render() {
+    console.log(foo)
+
     const { columns, rows } = this.state;
     return (
-      <Table caption="Empty State Table" cells={columns} rows={rows} >
+      <Table caption="Empty State Table" cells={columns} rows={rows} rowWrapper={customRowWrapper}>
         <TableHeader />
         <TableBody />
       </Table>
