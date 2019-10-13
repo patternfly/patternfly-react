@@ -7,6 +7,7 @@ import { css } from '@patternfly/react-styles';
 export interface RowWrapperRow {
   isOpen?: Boolean;
   isExpanded?: Boolean;
+  isHeightAuto?: Boolean;
 }
 
 export interface RowWrapperProps {
@@ -23,7 +24,8 @@ class RowWrapper extends React.Component<RowWrapperProps & InjectedOuiaProps, {}
     className: '' as string,
     row: {
       isOpen: undefined as boolean,
-      isExpanded: undefined as boolean
+      isExpanded: undefined as boolean,
+      isHeightAuto: undefined as boolean
     } as RowWrapperRow,
     rowProps: null as any
   };
@@ -80,7 +82,7 @@ class RowWrapper extends React.Component<RowWrapperProps & InjectedOuiaProps, {}
       className,
       onScroll,
       onResize,
-      row: { isExpanded },
+      row: { isExpanded, isHeightAuto },
       rowProps,
       ouiaContext,
       ouiaId,
@@ -94,7 +96,8 @@ class RowWrapper extends React.Component<RowWrapperProps & InjectedOuiaProps, {}
         className={css(
           className,
           isExpanded !== undefined && styles.tableExpandableRow,
-          isExpanded && styles.modifiers.expanded
+          isExpanded && styles.modifiers.expanded,
+          isHeightAuto && styles.modifiers.heightAuto
         )}
         hidden={isExpanded !== undefined && !isExpanded}
         {...ouiaContext.isOuia && {

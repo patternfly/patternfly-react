@@ -26,10 +26,16 @@ import {
 } from '@patternfly/react-table';
 
 import {
-    Checkbox
+    Checkbox,
+    Button,
+    EmptyState,
+    EmptyStateBody,
+    EmptyStatePrimary,
+    Bullseye,
 } from '@patternfly/react-core';
 
 import {
+  SearchIcon,
   CodeBranchIcon,
   CodeIcon,
   CubeIcon
@@ -1108,5 +1114,45 @@ class WrappableHeadersTable extends React.Component {
       </Table>
     );
   }
+}
+```
+
+## Empty state table
+
+```js
+import React from 'react';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { Button, EmptyState, EmptyStateBody, EmptyStatePrimary, Bullseye } from '@patternfly/react-core';
+
+EmptyStateTable = () => {
+  const columns = ['Repositories', 'Branches', 'Pull request', 'Workspaces', 'LastCommit']
+  const rows = [{
+    heightAuto: true,
+    cells: [
+      {
+        props: {colspan: '8'},
+        title: (
+          <Bullseye>
+            <EmptyState variant={EmptyStateVariant.small}>
+              <EmptyStateIcon icon={SearchIcon} />
+              <Title headingLevel="h2" size="lg">
+                No results found
+              </Title>
+              <EmptyStateBody>
+                No results match the filter criteria. Remove all filters or clear all filters to show results.
+              </EmptyStateBody>
+              <Button variant="link">Clear all filters</Button>
+            </EmptyState>
+          </Bullseye>
+        )
+      },
+    ]
+  }]
+  return (
+    <Table cells={columns} rows={rows}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
 }
 ```

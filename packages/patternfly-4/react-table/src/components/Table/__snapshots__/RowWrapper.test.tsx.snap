@@ -62,6 +62,7 @@ exports[`RowWrapper renders correctly 1`] = `
           row={
             Object {
               "isExpanded": undefined,
+              "isHeightAuto": undefined,
               "isOpen": undefined,
             }
           }
