@@ -649,7 +649,7 @@ class CompactExpandableTable extends React.Component {
 }
 ```
 
-```js title=Table-with-width-modifiers
+```js title=With-width-modifiers
 import React from 'react';
 import {
   Table,

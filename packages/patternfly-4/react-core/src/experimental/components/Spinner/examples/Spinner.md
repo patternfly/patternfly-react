@@ -20,7 +20,7 @@ import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 SpinnerBasic = () => (<Spinner/>);
 ```
 
-```js title=Spinner-size-variations
+```js title=Size-variations
 import React from 'react';
 import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 

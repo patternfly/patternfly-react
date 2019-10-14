@@ -10,7 +10,7 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
 import './gallery.scss';
 
 ## Examples
-```js title=Simple-gallery-layout
+```js title=Basic
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
@@ -26,7 +26,7 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
 </Gallery>
 ```
 
-```js title=Gallery-with-gutters
+```js title=With-gutters
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 
