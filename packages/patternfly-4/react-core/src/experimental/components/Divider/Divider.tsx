@@ -18,12 +18,12 @@ export interface DividerProps extends React.HTMLProps<HTMLElement> {
 
 export const Divider: React.FunctionComponent<DividerProps> = ({
   className = '',
-  component = 'hr',
+  component = DividerVariant.hr,
   ...props
 }: DividerProps) => {
   const Component: any = component;
 
   return (
-    <Component className={css(styles.divider, className)} {...(component != 'hr' && {role : 'separator' })} {...props}/>
+    <Component className={css(styles.divider, className)} {...(component != 'hr' && {role : 'seperator' })} {...props} />
   );
 };

@@ -8,11 +8,11 @@ test('divider using hr', () => {
 });
 
 test('divider using li', () => {
-  const view = shallow(<Divider variant="li" role="separator"/>);
+  const view = shallow(<Divider component="li"/>);
   expect(view).toMatchSnapshot();
 });
 
 test('divider using div', () => {
-  const view = shallow(<Divider variant="div" role="separator"/>);
+  const view = shallow(<Divider component="div"/>);
   expect(view).toMatchSnapshot();
 });
