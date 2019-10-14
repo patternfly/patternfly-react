@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Divider/divider';
+import { cpus } from 'os';
 
 export enum DividerVariant {
   hr = 'hr',
@@ -12,17 +13,17 @@ export interface DividerProps extends React.HTMLProps<HTMLElement> {
   /** additional classes added to the Badge */
   className?: string;
   /** the component type to use */
-  variant?: 'hr' | 'li' | 'div' ;
+  component?: 'hr' | 'li' | 'div' ;
 }
 
 export const Divider: React.FunctionComponent<DividerProps> = ({
   className = '',
-  variant = 'hr',
+  component = 'hr',
   ...props
 }: DividerProps) => {
-  const Component: any = variant;
+  const Component: any = component;
 
   return (
-    <Component className={css(styles.divider, className)} role={ variant!='hr' ? 'separator' : undefined } {...props}/>
+    <Component className={css(styles.divider, className)} {...(component != 'hr' && {role : 'separator' })} {...props}/>
   );
 };

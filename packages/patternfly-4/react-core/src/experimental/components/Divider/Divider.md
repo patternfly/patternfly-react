@@ -26,7 +26,7 @@ import { Divider } from '@patternfly/react-core/dist/esm/experimental';
 DividerLi = (
   <ul>
     <li>List item one</li>
-    <Divider variant="li" role="separator"/>
+    <Divider component="li"/>
     <li>List item two</li>
   </ul>
 );
@@ -38,6 +38,6 @@ import React from 'react';
 import { Divider } from '@patternfly/react-core/dist/esm/experimental';
 
 DividerLi = (
-  <Divider variant="div" role="separator"/>
+  <Divider component="div"/>
 );
 ```
