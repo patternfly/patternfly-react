@@ -11,7 +11,7 @@ import { Modal, Button, BaseSizes, TitleLevel } from '@patternfly/react-core';
 import { WarningTriangleIcon } from '@patternfly/react-icons';
 
 ## Examples
-```js title=Simple-modal
+```js title=Basic
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
@@ -62,7 +62,7 @@ class SimpleModal extends React.Component {
 }
 ```
 
-```js title=Modal-(small)
+```js title=Small
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
@@ -114,7 +114,7 @@ class SmallModal extends React.Component {
 }
 ```
 
-```js title=Modal-(large)
+```js title=Large
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
@@ -166,7 +166,7 @@ class LargeModal extends React.Component {
 }
 ```
 
-```js title=Modal-(width)
+```js title=Width
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
@@ -218,7 +218,7 @@ class WidthModal extends React.Component {
 }
 ```
 
-```js title=Modal-(custom-header-and-footer)
+```js title=Custom-header-and-footer
 import React from 'react';
 import { Modal, Button, BaseSizes, TitleLevel } from '@patternfly/react-core';
 
@@ -287,7 +287,7 @@ class CustomHeaderFooter extends React.Component {
 }
 ```
 
-```js title=Modal-(no-header)
+```js title=No-header
 import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 

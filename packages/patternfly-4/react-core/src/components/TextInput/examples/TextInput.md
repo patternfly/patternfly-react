@@ -9,7 +9,7 @@ typescript: true
 import { TextInput } from '@patternfly/react-core';
 
 ## Examples
-```js title=Simple-text-input
+```js title=Basic
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
@@ -34,21 +34,21 @@ class SimpleTextInput extends React.Component {
 }
 ```
 
-```js title=Text-input-(disabled)
+```js title=Disabled
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
 <TextInput type="text" value="disabled text input example" aria-label="disabled text input example" isDisabled />
 ```
 
-```js title=Text-input-(read-only)
+```js title=Read-only
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
 <TextInput value="read only text input example" type="text" isReadOnly aria-label="readonly input example" />
 ```
 
-```js title=Text-input-(invalid)
+```js title=Invalid
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 

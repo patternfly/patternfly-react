@@ -64,7 +64,7 @@ class SimpleDropdown extends React.Component {
 }
 ```
 
-```js title=Dropdown-with-initial-selection
+```js title=With-initial-selection
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -119,7 +119,7 @@ class IntialSelectionDropdown extends React.Component {
 }
 ```
 
-```js title=Dropdown-with-groups
+```js title=With-groups
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownGroup, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
 
@@ -176,7 +176,7 @@ class GroupedDropdown extends React.Component {
 }
 ```
 
-```js title=Dropdown-(disabled)
+```js title=Disabled
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -234,7 +234,7 @@ class DisabledDropdown extends React.Component {
 }
 ```
 
-```js title=Dropdown-(primary-toggle)
+```js title=Primary-toggle
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection } from '@patternfly/react-core';
 import { ThIcon, CaretDownIcon } from '@patternfly/react-icons';
@@ -288,7 +288,7 @@ class PrimaryDropdown extends React.Component {
 }
 ```
 
-```js title=Dropdown-(position-right)
+```js title=Position-right
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -343,7 +343,7 @@ class PositionRightDropdown extends React.Component {
 }
 ```
 
-```js title=Dropdown-(direction-up)
+```js title=Direction-up
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -398,7 +398,7 @@ class DirectionUpDropdown extends React.Component {
 }
 ```
 
-```js title=Dropdown-with-kebab
+```js title=With-kebab
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
@@ -453,7 +453,7 @@ class KebabDropdown extends React.Component {
 }
 ```
 
-```js title=Dropdown-(icon-only)
+```js title=Icon-only
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';

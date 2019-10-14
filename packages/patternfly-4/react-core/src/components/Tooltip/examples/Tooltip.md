@@ -10,7 +10,7 @@ import { Button, Tooltip, TooltipPosition, TooltipContent, Checkbox } from '@pat
 import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 
 ## Examples
-```js title=Simple-tooltip
+```js title=Basic
 import React from 'react';
 import { Tooltip, TooltipPosition } from '@patternfly/react-core';
 
@@ -54,7 +54,7 @@ import { OutlinedQuestionCircleIcon } from '@patternfly/react-icons';
 </div>
 ```
 
-```js title=Tooltip-positions
+```js title=Positions
 import React from 'react';
 import { Button, Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
 

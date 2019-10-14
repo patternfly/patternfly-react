@@ -26,7 +26,7 @@ import { CodeBranchIcon } from '@patternfly/react-icons';
 import { css } from '@patternfly/react-styles';
 
 ## Examples
-```js title=Simple-data-list
+```js title=Basic
 import React from 'react';
 import {
   Button,
@@ -76,7 +76,7 @@ SimpleDataList = () => (
 );
 ```
 
-```js title=Data-list-checkboxes,-actions-and-additional-cells
+```js title=Checkboxes,-actions-and-additional-cells
 import React from 'react';
 import {
   Button,
@@ -275,7 +275,7 @@ class CheckboxActionDataList extends React.Component {
 }
 ```
 
-```js title=Data-list-actions:-single-and-multiple
+```js title=Actions:-single-and-multiple
 import React from 'react';
 import {
   Button,
@@ -384,7 +384,7 @@ class ActionsDataList extends React.Component {
 }
 ```
 
-```js title=Data-list-expandable
+```js title=Expandable
 import React from 'react';
 import {
   Button,
@@ -627,7 +627,7 @@ class ExpandableDataList extends React.Component {
 }
 ```
 
-```js title=Data-list-width-modifiers
+```js title=Width-modifiers
 import React from 'react';
 import {
   Button,

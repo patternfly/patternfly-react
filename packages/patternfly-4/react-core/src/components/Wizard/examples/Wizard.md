@@ -11,7 +11,7 @@ import FinishedStep from './FinishedStep';
 import SampleForm from './SampleForm';
 
 ### Examples
-```js title=Simple-wizard
+```js title=Basic
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 
@@ -59,7 +59,7 @@ class SimpleWizard extends React.Component {
 }
 ```
 
-```js title=Wizard---compact-navigation-(Wizard-'isCompactNav'-prop)
+```js title=Compact-nav
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 
@@ -108,7 +108,7 @@ class CompactWizard extends React.Component {
 }
 ```
 
-```js title=Wizard---steps-not-clickable-in-side-nav-until-step-is-reached-(step-'canJumpTo'-prop)
+```js title=Incrementally-enabled-steps
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 
@@ -163,7 +163,7 @@ class DisabledStepsWizard extends React.Component {
 }
 ```
 
-```js title=Wizard---finished-step-(step-'isFinished'-prop)
+```js title=Finished
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 import FinishedStep from './examples/FinishedStep';
@@ -213,7 +213,7 @@ class FinishedStepWizard extends React.Component {
 }
 ```
 
-```js title=Wizard---enable-Next-button-on-form-validation
+```js title=Enabled-on-form-validation
 import React from 'react';
 import { Button, Wizard, Form, FormGroup, TextInput } from '@patternfly/react-core';
 import SampleForm from './examples/SampleForm';
@@ -324,7 +324,7 @@ class ValidationWizard extends React.Component {
 }
 ```
 
-```js title=Wizard---validate-on-button-press
+```js title=Validate-on-button-press
 import React from 'react';
 import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
 import SampleForm from './examples/SampleForm';
@@ -422,7 +422,7 @@ class ValidateButtonPressWizard extends React.Component {
 }
 ```
 
-```js title=Wizard---progressive-steps
+```js title=Progressive-steps
 import React from 'react';
 import { Button, Wizard, WizardFooter, WizardContextConsumer, Alert } from '@patternfly/react-core';
 import SampleForm from './examples/SampleForm';
@@ -749,7 +749,7 @@ class SimpleWizard extends React.Component {
 }
 ```
 
-```js title=Wizard---remember-last-step
+```js title=Remember-last-step
 import React from 'react';
 import { Button, Wizard } from '@patternfly/react-core';
 

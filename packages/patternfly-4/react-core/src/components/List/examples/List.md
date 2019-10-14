@@ -9,7 +9,7 @@ propComponents: ['List', 'ListItem']
 import { List, ListItem } from '@patternfly/react-core';
 
 ## Examples
-```js title=Simple-list
+```js title=Basic
 import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';
 
@@ -22,7 +22,7 @@ SimpleList = (
 );
 ```
 
-```js title=Inline-list
+```js title=Inline
 import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';
 

@@ -56,7 +56,7 @@ class SimpleTabs extends React.Component {
 }
 ```
 
-```js title=Simple-tabs-with-children-that-mount-on-tab-click
+```js title=Children-mounting-on-click
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
 
@@ -92,7 +92,7 @@ class MountingSimpleTabs extends React.Component {
 }
 ```
 
-```js title=Simple-tabs-with-children-that-unmount-when-they're-no-longer-visible
+```js title=Unmounting-invisible-children
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
 
@@ -128,7 +128,7 @@ class UnmountingSimpleTabs extends React.Component {
 }
 ```
 
-```js title=Scroll-buttons-primary-tabs
+```js title=Scroll-buttons-primary
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
 
@@ -453,7 +453,7 @@ class TabsNavVariant extends React.Component {
 }
 ```
 
-```js title=Separate-tab-content
+```js title=Separate-content
 import React from 'react';
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
 

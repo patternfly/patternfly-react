@@ -9,21 +9,21 @@ typescript: true
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
 ## Examples
-```js title=Clipboard-copy
+```js title=Basic
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
 
 <ClipboardCopy>This is editable</ClipboardCopy>;
 ```
 
-```js title=Read-only-clipboard-copy
+```js title=Read-Only
 import React from 'react';
 import { ClipboardCopy } from '@patternfly/react-core';
 
 <ClipboardCopy isReadOnly>This is read-only</ClipboardCopy>;
 ```
 
-```js title=Expanded-clipboard-copy
+```js title=Expanded
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
@@ -32,7 +32,7 @@ import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
   expansion.
 </ClipboardCopy>
 ```
-```js title=Read-only-expanded-clipboard-copy
+```js title=Read-only-expanded
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
@@ -42,7 +42,7 @@ import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 </ClipboardCopy>
 ```
 
-```js title=Read-only-expanded-by-default-clipboard-copy
+```js title=Read-only-expanded-by-default
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 
@@ -52,7 +52,7 @@ import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 </ClipboardCopy>
 ```
 
-```js title=Expanded-clipboard-copy-with-array
+```js title=Expanded-with-array
 import React from 'react';
 import { ClipboardCopy, ClipboardCopyVariant } from '@patternfly/react-core';
 

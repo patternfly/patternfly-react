@@ -13,7 +13,7 @@ import { HelpIcon } from '@patternfly/react-icons';
 import pfIcon from './pf-logo-small.svg';
 
 ## Examples
-```js title=Simple-application-launcher
+```js title=Basic
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 
@@ -60,7 +60,7 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-```js title=Application-launcher-with-router-link
+```js title=Router-link
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem, ApplicationLauncherContent, Text } from '@patternfly/react-core';
 
@@ -121,7 +121,7 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-```js title=Application-launcher-disabled
+```js title=Disabled
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 
@@ -169,7 +169,7 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-```js title=Application-launcher-align-right
+```js title=Aligned-right
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 import { DropdownPosition } from '../Dropdown';
@@ -220,7 +220,7 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-```js title=Application-launcher-top
+```js title=Aligned-top
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 import { DropdownDirection } from '../Dropdown';
@@ -269,7 +269,7 @@ class SimpleApplicationLauncher extends React.Component {
 }
 ```
 
-```js title=Application-launcher-with-tooltip
+```js title=With-tooltip
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 
@@ -334,7 +334,7 @@ class TooltipApplicationLauncher extends React.Component {
 }
 ```
 
-```js title=Application-launcher-w/-sections-and-icons
+```js title=With-sections-and-icons
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherIcon, ApplicationLauncherText, ApplicationLauncherItem, ApplicationLauncherGroup, ApplicationLauncherSeparator } from '@patternfly/react-core';
 import pfIcon from './examples/pf-logo-small.svg';
@@ -390,7 +390,7 @@ class ApplicationLauncherSections extends React.Component {
 }
 ```
 
-```js title=Application-launcher-w/-custom-icon
+```js title=With-custom-icon
 import React from 'react';
 import { ApplicationLauncher, ApplicationLauncherItem } from '@patternfly/react-core';
 import { HelpIcon } from '@patternfly/react-icons';

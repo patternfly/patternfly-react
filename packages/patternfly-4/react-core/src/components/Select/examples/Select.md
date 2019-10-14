@@ -9,7 +9,7 @@ typescript: true
 import { Select, SelectOption, SelectVariant, SelectGroup, SelectDirection, Checkbox } from '@patternfly/react-core';
 
 ## Examples
-```js title=Single-select-input
+```js title=Single
 import React from 'react';
 import { CubeIcon } from '@patternfly/react-icons';
 import { Select, SelectOption, SelectVariant, Checkbox } from '@patternfly/react-core';
@@ -143,7 +143,7 @@ class SingleSelectInput extends React.Component {
 }
 ```
 
-```js title=Checkbox-select-input
+```js title=Checkbox-input
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
@@ -218,7 +218,7 @@ class CheckboxSelectInput extends React.Component {
 }
 ```
 
-```js title=Grouped-checkbox-select-input
+```js title=Grouped-checkbox-input
 import React from 'react';
 import { Select, SelectOption, SelectVariant, SelectGroup } from '@patternfly/react-core';
 
@@ -428,7 +428,7 @@ class TypeaheadSelectInput extends React.Component {
 }
 ```
 
-```js title=Custom filtering
+```js title=Custom-filtering
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 

@@ -9,7 +9,7 @@ propComponents: ['Label']
 import { Label } from '@patternfly/react-core';
 
 ## Examples
-```js title=Simple-label
+```js title=Basic
 import React from 'react';
 import { Label } from '@patternfly/react-core';
 

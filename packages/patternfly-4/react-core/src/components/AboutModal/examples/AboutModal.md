@@ -10,7 +10,7 @@ import brandImg from './brandImg.svg';
 import bgImg from './patternfly-orb.svg';
 
 ## Examples
-```js title=Simple-about-modal
+```js title=Basic
 import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';
@@ -69,7 +69,7 @@ class SimpleAboutModal extends React.Component {
 }
 ```
 
-```js title=About-modal-without-product-name
+```js title=Without-product-name
 import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';
@@ -127,7 +127,7 @@ class SimpleAboutModal extends React.Component {
 }
 ```
 
-```js title=About-modal-with-more-complex-user-positioned-content
+```js title=Complex-user-positioned-content
 import React from 'react';
 import { AboutModal, Alert, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';
@@ -192,7 +192,7 @@ class ContentRichAboutModal extends React.Component {
 }
 ```
 
-```js title=About-modal-with-custom-background-image
+```js title=Custom-background-image
 import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';

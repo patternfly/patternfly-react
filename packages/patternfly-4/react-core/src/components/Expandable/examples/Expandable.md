@@ -9,7 +9,7 @@ propComponents: ['Expandable']
 import { Expandable } from '@patternfly/react-core';
 
 ## Examples
-```js title=Simple-expandable
+```js title=Basic
 import React from 'react';
 import { Expandable } from '@patternfly/react-core';
 

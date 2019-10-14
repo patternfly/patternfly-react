@@ -10,7 +10,7 @@ import { Checkbox } from '@patternfly/react-core';
 import './checkbox.css';
 
 ## Examples
-```js title=Controlled-checkbox
+```js title=Controlled
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
@@ -89,7 +89,7 @@ class ControlledCheckbox extends React.Component {
 }
 ```
 
-```js title=Uncontrolled-checkbox
+```js title=Uncontrolled
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
@@ -101,7 +101,7 @@ UncontrolledCheckbox = () => (
 );
 ```
 
-```js title=Disabled-checkbox
+```js title=Disabled
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
