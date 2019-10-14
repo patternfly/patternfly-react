@@ -136,7 +136,21 @@ class BulkSelectTableDemo extends React.Component {
     const { isDropDownOpen, selectedItems, total } = this.state;
     const numSelected = selectedItems.length;
     const allSelected = numSelected === total;
+    const anySelected = numSelected > 0;
     const isChecked = allSelected ? true : numSelected > 0 ? null : false;
+
+    const items = [
+      <DropdownItem key="item-1" onClick={() => this.handleSelectClick('none')}>
+        Select none (0 items)
+      </DropdownItem>,
+      <DropdownItem key="item-2" onClick={() => this.handleSelectClick('page')}>
+        Select page ({this.state.perPage} items)
+      </DropdownItem>,
+      <DropdownItem key="item-3" onClick={() => this.handleSelectClick('all')}>
+        Select all ({this.state.total} items)
+      </DropdownItem>
+    ];
+
     return (
       <Dropdown
         onSelect={this.onDropDownSelect}
@@ -150,7 +164,7 @@ class BulkSelectTableDemo extends React.Component {
                 aria-label="Select all"
                 isChecked={isChecked}
                 onClick={() => this.onDropDownToggle(!isDropDownOpen)}
-                onChange={allSelected ? () => this.handleSelectClick('none') : () => this.handleSelectClick('all')}
+                onChange={anySelected ? () => this.handleSelectClick('none') : () => this.handleSelectClick('all')}
               >
                 {numSelected !== 0 && <React.Fragment>{numSelected} selected</React.Fragment>}
               </DropdownToggleCheckbox>
@@ -159,17 +173,7 @@ class BulkSelectTableDemo extends React.Component {
           ></DropdownToggle>
         }
         isOpen={isDropDownOpen}
-        dropdownItems={[
-          <DropdownItem key="item-1" onClick={() => this.handleSelectClick('none')}>
-            Select none (0 items)
-          </DropdownItem>,
-          <DropdownItem key="item-2" onClick={() => this.handleSelectClick('page')}>
-            Select page ({this.state.perPage} items)
-          </DropdownItem>,
-          <DropdownItem key="item-3" onClick={() => this.handleSelectClick('all')}>
-            Select all ({this.state.total} items)
-          </DropdownItem>
-        ]}
+        dropdownItems={items}
       />
     );
   }
