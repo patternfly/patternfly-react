@@ -10,7 +10,7 @@ import { Level, LevelItem } from '@patternfly/react-core';
 import './level.scss';
 
 ## Examples
-```js title=Simple-level-layout
+```js title=Basic
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 
@@ -21,7 +21,7 @@ import { Level, LevelItem } from '@patternfly/react-core';
 </Level>
 ```
 
-```js title=Level-with-gutters
+```js title=With-gutters
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 

@@ -10,7 +10,7 @@ import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/
 import './toolbar.scss';
 
 ## Examples
-```js title=Simple-toolbar-layout
+```js title=Basic
 import React from 'react';
 import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/react-core';
 
@@ -28,7 +28,7 @@ import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/
 </Toolbar>
 ```
 
-```js title=Toolbar-with-sections
+```js title=With-sections
 import React from 'react';
 import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/react-core';
 

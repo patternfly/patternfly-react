@@ -10,7 +10,7 @@ import { Split, SplitItem } from '@patternfly/react-core';
 import './split.scss';
 
 ## Examples
-```js title=Simple-split
+```js title=Basic
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
@@ -21,7 +21,7 @@ import { Split, SplitItem } from '@patternfly/react-core';
 </Split>
 ```
 
-```js title=Split-layout-with-gutter
+```js title=With-gutter
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 

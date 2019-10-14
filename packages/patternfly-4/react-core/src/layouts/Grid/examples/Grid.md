@@ -33,7 +33,7 @@ import { Grid, GridItem } from '@patternfly/react-core';
 </Grid>
 ```
 
-```js title=Grid-with-gutters
+```js title=With-gutters
 import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 
@@ -57,7 +57,7 @@ import { Grid, GridItem } from '@patternfly/react-core';
 </Grid>
 ```
 
-```js title=Grid-with-overrides
+```js title=With-overrides
 import React from 'react';
 import { Grid, GridItem } from '@patternfly/react-core';
 import ItemControl from './ItemControl';

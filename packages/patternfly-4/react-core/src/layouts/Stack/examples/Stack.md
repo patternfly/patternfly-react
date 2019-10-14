@@ -10,7 +10,7 @@ import { Stack, StackItem } from '@patternfly/react-core';
 import './stack.scss';
 
 ## Examples
-```js title=Simple-stack-layout
+```js title=Basic
 import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 
@@ -21,7 +21,7 @@ import { Stack, StackItem } from '@patternfly/react-core';
 </Stack>
 ```
 
-```js title=Simple-stack-layout-with-gutter
+```js title=With-gutter
 import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 

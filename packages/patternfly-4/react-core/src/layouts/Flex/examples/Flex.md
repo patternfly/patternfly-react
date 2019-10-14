@@ -12,7 +12,7 @@ import './flex.scss';
 ### Flex Basics
 
 ## Examples
-```js title=Basic-flex
+```js title=Basic
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -25,7 +25,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Flex-nesting
+```js title=Nesting
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -42,7 +42,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Nested-flex-and-items
+```js title=Nested-with-items
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -60,7 +60,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 ```
 
 ### Flex Spacing
-```js title=Individually-spaced-items-(spacer=xs,sm,md,lg,xl,2xl,3xl)
+```js title=Individually-spaced
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -76,7 +76,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Flex-with-modified-spacing-(spaceItems=xl)
+```js title=Spacing-xl
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -89,7 +89,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Flex-with-modified-spacing-(spaceItems=none)
+```js title=Spacin-none
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -104,7 +104,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 
 ### Flex layout modifiers
 
-```js title=Default-flex-layout
+```js title=Default-layout
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -117,7 +117,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Inline-flex
+```js title=Inline
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -130,7 +130,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Adjusting-width-with-grow-(first-group-has-prop-canGrow-and-will-occupy-remaining-available-space)
+```js title=Using-canGrow
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -150,7 +150,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Adjusting-width-with-flex-1
+```js title=Adjusting-width
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -170,7 +170,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Specifying-column-widths-with-flex-1,-2,-and-3
+```js title=Specifying-column-widths
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -192,7 +192,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 
 ### Column layout modifiers
 
-```js title=Flex-column-layout
+```js title=Column-layout
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -203,7 +203,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Stacking-flex-elements
+```js title=Stacking-elements
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -223,7 +223,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Nesting-flex-elements-in-columns
+```js title=Nesting-elements-in-columns
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -242,7 +242,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 
 ### Responsive layout modifiers
 
-```js title=Switching-between-flex-direction-column-and-row-at-large-breakpoint
+```js title=Switching-between-direction-column-and-row
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -260,7 +260,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Controlling-width-of-large-text-filled-flex-item-with-flex-1
+```js title=Controlling-width-of-text
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -278,7 +278,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 
 ### Flex alignment
 
-```js title=Aligning-right,-including-when-wrapped
+```js title=Aligning-right
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -321,7 +321,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Using-flex-1-to-align-adjacent-content
+```js title=Align-adjacent-content
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -339,7 +339,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Aligning-nested-columns-with-align-self-flex-end
+```js title=Align-self-flex-end
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -356,7 +356,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Aligning-nested-columns-with-align-self-center
+```js title=Align-self-center
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -373,7 +373,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Aligning-nested-columns-with-align-self-baseline
+```js title=Align-self-baseline
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -390,7 +390,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Aligning-nested-columns-with-align-self-stretch
+```js title=Align-self-stretch
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -409,7 +409,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 
 ### Flex justification
 
-```js title=Justify-content-with-justify-content-flex-end
+```js title=Justify-content-flex-end
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -421,7 +421,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Justify-content-with-justify-content-space-between
+```js title=Justify-content-space-between
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
@@ -432,7 +432,7 @@ import { Flex, FlexItem } from '@patternfly/react-core';
 </Flex>
 ```
 
-```js title=Justify-content-with-justify-content-flex-start
+```js title=Justify-content-flex-start
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';
 
