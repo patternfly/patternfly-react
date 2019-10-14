@@ -53,6 +53,7 @@
     "@babel/plugin-transform-typescript": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@patternfly/patternfly": "2.34.1",
     "@patternfly/react-tokens": "^2.6.36",
     "@types/prop-types": "^15.7.0",
     "@types/react": "^16.4.0",
