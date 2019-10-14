@@ -3,6 +3,71 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.115.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.114.4...@patternfly/react-core@3.115.0) (2019-10-11)
+
+
+### Bug Fixes
+
+* **Dropdown/Application Launcher/Options Menu:** Fix unit tests and options menu ([#3107](https://github.com/patternfly/patternfly-react/issues/3107)) ([e54f158](https://github.com/patternfly/patternfly-react/commit/e54f158)), closes [#3029](https://github.com/patternfly/patternfly-react/issues/3029)
+
+
+### Features
+
+* **tooltip:** allow tooltip text to be left-aligned ([#3053](https://github.com/patternfly/patternfly-react/issues/3053)) ([d369c07](https://github.com/patternfly/patternfly-react/commit/d369c07))
+
+
+
+
+
+## [3.114.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.114.3...@patternfly/react-core@3.114.4) (2019-10-11)
+
+
+### Bug Fixes
+
+* **Select:** use props children if custom on filter used ([#3123](https://github.com/patternfly/patternfly-react/issues/3123)) ([b20a624](https://github.com/patternfly/patternfly-react/commit/b20a624)), closes [#3117](https://github.com/patternfly/patternfly-react/issues/3117)
+
+
+
+
+
+## [3.114.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.114.2...@patternfly/react-core@3.114.3) (2019-10-11)
+
+
+### Bug Fixes
+
+* **Select:** Modifying selection outside now works ([#3096](https://github.com/patternfly/patternfly-react/issues/3096)) ([bbe99f3](https://github.com/patternfly/patternfly-react/commit/bbe99f3))
+
+
+
+
+
+## [3.114.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.114.1...@patternfly/react-core@3.114.2) (2019-10-11)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.114.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.114.0...@patternfly/react-core@3.114.1) (2019-10-11)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [3.114.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.113.4...@patternfly/react-core@3.114.0) (2019-10-10)
+
+
+### Features
+
+* **Expandable:** Allow for dynamic toggle text in uncontrolled version ([#3068](https://github.com/patternfly/patternfly-react/issues/3068)) ([3c6e4b6](https://github.com/patternfly/patternfly-react/commit/3c6e4b6)), closes [#2914](https://github.com/patternfly/patternfly-react/issues/2914)
+
+
+
+
+
 ## [3.113.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.113.3...@patternfly/react-core@3.113.4) (2019-10-09)
 
 **Note:** Version bump only for package @patternfly/react-core

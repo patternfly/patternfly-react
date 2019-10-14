@@ -13,6 +13,7 @@ import {
   VictoryStyleInterface
 } from 'victory';
 import { ChartContainer } from '../ChartContainer';
+import { ChartLabel } from '../ChartLabel';
 import { ChartPoint } from '../ChartPoint';
 import { ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
@@ -305,3 +306,19 @@ export const ChartLegend: React.FunctionComponent<ChartLegendProps> = ({
 
 // Note: VictoryLegend.role must be hoisted, but getBaseProps causes error with ChartVoronoiContainer
 hoistNonReactStatics(ChartLegend, VictoryLegend, { getBaseProps: true });
+
+// @ts-ignore
+ChartLegend.getBaseProps = (props) => {
+  const theme = getTheme(null, null);
+  return (VictoryLegend as any).getBaseProps({
+    titleComponent: <ChartLabel />, // Workaround for getBaseProps error
+    ...props
+  }, {
+    height: theme.chart.height,
+    orientation: theme.legend.orientation,
+    titleOrientation: theme.legend.titleOrientation,
+    x: 0,
+    y: 0,
+    width: theme.chart.width
+  });
+}

@@ -93,13 +93,13 @@ test('sideElementIsOutOfView Returns NONE when in view', () => {
 describe('keyHandler works on ApplicationLauncher', () => {
   document.body.innerHTML = '<!doctype html><html><body></body></html>';
   const dropdownItems = [
-    <DropdownItem key=" 1" id="first" component="button">
+    <DropdownItem key=" 1" id="first" componentID="first-button" component="button">
       Action 1
     </DropdownItem>,
-    <DropdownItem key="2" id="second" component="button">
+    <DropdownItem key="2" id="second" componentID="second-button" component="button">
       Action 2
     </DropdownItem>,
-    <DropdownItem key="3" id="third" component="button" isDisabled>
+    <DropdownItem key="3" id="third" componentID="third-button" component="button" isDisabled>
       Disabled Link
     </DropdownItem>
   ];
@@ -117,7 +117,7 @@ describe('keyHandler works on ApplicationLauncher', () => {
       which: KEY_CODES.ARROW_DOWN
     });
     const focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('second');
+    expect(focusedElement.getAttribute('id')).toEqual('second-button');
   });
 
   test('keyHandler regresses backward', () => {
@@ -127,7 +127,7 @@ describe('keyHandler works on ApplicationLauncher', () => {
       which: KEY_CODES.ARROW_UP
     });
     const focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('first');
+    expect(focusedElement.getAttribute('id')).toEqual('first-button');
   });
 
   test('keyHandler skips disabled items and loops down to top', () => {
@@ -137,7 +137,7 @@ describe('keyHandler works on ApplicationLauncher', () => {
       which: KEY_CODES.ARROW_DOWN
     });
     const focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('first');
+    expect(focusedElement.getAttribute('id')).toEqual('first-button');
   });
 
   test('keyHandler loops top to bottom', () => {
@@ -147,20 +147,20 @@ describe('keyHandler works on ApplicationLauncher', () => {
       which: KEY_CODES.ARROW_UP
     });
     const focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('second');
+    expect(focusedElement.getAttribute('id')).toEqual('second-button');
   });
 });
 
 describe('keyHandler works on Dropdown', () => {
   document.body.innerHTML = '<!doctype html><html><body></body></html>';
   const dropdownItems = [
-    <DropdownItem key=" 1" id="first" component="button">
+    <DropdownItem key="1" id="first" componentID="first-button" component="button">
       Action 1
     </DropdownItem>,
-    <DropdownItem key="2" id="second" component="button">
+    <DropdownItem key="2" id="second" componentID="second-button" component="button">
       Action 2
     </DropdownItem>,
-    <DropdownItem key="3" id="third" component="button" isDisabled>
+    <DropdownItem key="3" id="third" componentID="third-button" component="button" isDisabled>
       Disabled Link
     </DropdownItem>
   ];
@@ -180,7 +180,7 @@ describe('keyHandler works on Dropdown', () => {
       which: KEY_CODES.ARROW_DOWN
     });
     const focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('second');
+    expect(focusedElement.getAttribute('id')).toEqual('second-button');
   });
 
   test('keyHandler regresses backward', () => {
@@ -190,7 +190,7 @@ describe('keyHandler works on Dropdown', () => {
       which: KEY_CODES.ARROW_UP
     });
     const focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('first');
+    expect(focusedElement.getAttribute('id')).toEqual('first-button');
   });
 
   test('keyHandler skips disabled items and loops down to top', () => {
@@ -200,7 +200,7 @@ describe('keyHandler works on Dropdown', () => {
       which: KEY_CODES.ARROW_DOWN
     });
     const focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('first');
+    expect(focusedElement.getAttribute('id')).toEqual('first-button');
   });
 
   test('keyHandler loops top to bottom', () => {
@@ -210,7 +210,7 @@ describe('keyHandler works on Dropdown', () => {
       which: KEY_CODES.ARROW_UP
     });
     const focusedElement = document.activeElement;
-    expect(focusedElement.getAttribute('id')).toEqual('second');
+    expect(focusedElement.getAttribute('id')).toEqual('second-button');
   });
 });
 

@@ -252,6 +252,13 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   labels?: string[] | ((data: any) => string);
   /**
+   * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
+   * if its container is not wide enough.
+   *
+   * Note: This is overridden by the legendItemsPerRow property
+   */
+  legendAllowWrap?: boolean;
+  /**
    * The legend component to render with chart.
    *
    * Note: Use legendData so the legend width can be calculated and positioned properly.
@@ -358,7 +365,7 @@ export interface ChartDonutProps extends ChartPieProps {
    */
   subTitleComponent?: React.ReactElement<any>;
   /**
-   * The orientation of the donut chart in relation to the legend. Valid values are 'bottom', 'center', and 'right'
+   * The orientation of the subtitle position. Valid values are 'bottom', 'center', and 'right'
    */
   subTitlePosition?: 'bottom' | 'center' | 'right';
   /**
@@ -435,6 +442,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
   capHeight = 1.1,
   containerComponent = <ChartContainer />,
   innerRadius,
+  legendAllowWrap,
   legendPosition = ChartCommonStyles.legend.position as ChartPieLegendPosition,
   padding,
   radius,
@@ -536,6 +544,7 @@ export const ChartDonut: React.FunctionComponent<ChartDonutProps> = ({
       height={height}
       innerRadius={chartInnerRadius > 0 ? chartInnerRadius : 0}
       key="pf-chart-donut-pie"
+      legendAllowWrap={legendAllowWrap}
       legendPosition={legendPosition}
       padding={padding}
       radius={chartRadius > 0 ? chartRadius : 0}

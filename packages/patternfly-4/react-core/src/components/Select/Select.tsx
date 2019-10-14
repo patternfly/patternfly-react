@@ -12,6 +12,7 @@ import { SelectContext, SelectVariant, SelectDirection } from './selectConstants
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
+import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -89,7 +90,7 @@ export interface SelectState {
   creatableValue: string;
 }
 
-export class Select extends React.Component<SelectProps, SelectState> {
+class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectState> {
   private parentRef = React.createRef<HTMLDivElement>();
   private refCollection: HTMLElement[] = [];
 
@@ -103,7 +104,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     isPlain: false,
     isDisabled: false,
     isCreatable: false,
-    'aria-label': '',
+    "aria-label": '',
     ariaLabelledBy: '',
     ariaLabelTypeAhead: '',
     ariaLabelClear: 'Clear all',
@@ -115,12 +116,11 @@ export class Select extends React.Component<SelectProps, SelectState> {
     noResultsFoundText: 'No results found',
     variant: SelectVariant.single,
     width: '',
-    maxHeight: '',
-    onClear: Function.prototype,
-    onCreateOption: Function.prototype,
+    onClear: (_e: React.MouseEvent) => undefined as void,
+    onCreateOption: (_newOptionValue: string) => undefined as void,
     toggleIcon: null as React.ReactElement,
-    onFilter: undefined as () => {}
-  };
+    onFilter: (_e: React.ChangeEvent<HTMLInputElement>) => undefined as void
+  } as Partial<SelectProps & InjectedOuiaProps>;
 
   state = {
     openedOnEnter: false,
@@ -142,10 +142,10 @@ export class Select extends React.Component<SelectProps, SelectState> {
       });
     }
 
-    if (prevProps.selections !== this.props.selections && this.state.typeaheadActiveChild) {
-      this.setState(prevState => ({
-        typeaheadInputValue: prevState.typeaheadActiveChild.innerText
-      }));
+    if (prevProps.selections !== this.props.selections && this.props.variant === SelectVariant.typeahead) {
+      this.setState({
+        typeaheadInputValue: this.props.selections as string
+      });
     }
   };
 
@@ -164,10 +164,10 @@ export class Select extends React.Component<SelectProps, SelectState> {
   };
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText } = this.props;
-    let typeaheadFilteredChildren;
+    const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText, children } = this.props;
+    let typeaheadFilteredChildren: any;
     if (onFilter) {
-      typeaheadFilteredChildren = onFilter(e);
+      typeaheadFilteredChildren = onFilter(e) || children;
     } else {
       let input: RegExp;
       try {
@@ -182,6 +182,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
                 this.getDisplay((child as React.ReactElement).props.value.toString(), 'text').search(input) === 0
             )
           : React.Children.toArray(this.props.children);
+    }
+    if (!typeaheadFilteredChildren) {
+      typeaheadFilteredChildren = [];
     }
     if (typeaheadFilteredChildren.length === 0) {
       !isCreatable && typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} />);
@@ -345,6 +348,8 @@ export class Select extends React.Component<SelectProps, SelectState> {
       width,
       maxHeight,
       toggleIcon,
+      ouiaContext,
+      ouiaId,
       ...props
     } = this.props;
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild } = this.state;
@@ -379,6 +384,10 @@ export class Select extends React.Component<SelectProps, SelectState> {
         )}
         ref={this.parentRef}
         style={{ width }}
+        {...ouiaContext.isOuia && {
+          'data-ouia-component-type': 'Select',
+          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+        }}
       >
         <SelectContext.Provider value={{ onSelect, onClose: this.onClose, variant }}>
           <SelectToggle
@@ -541,3 +550,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     );
   }
 }
+
+const SelectWithOuiaContext = withOuiaContext(Select);
+
+export { SelectWithOuiaContext as Select };

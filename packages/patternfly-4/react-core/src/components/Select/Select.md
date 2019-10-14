@@ -444,17 +444,17 @@ class TypeaheadSelectInput extends React.Component {
   constructor(props) {
     super(props);
     this.options = [
-      <SelectOption key={0} value="Alabama" />,
-      <SelectOption key={1} value="Florida" />,
-      <SelectOption key={2} value="New Jersey" />,
-      <SelectOption key={3} value="New Mexico" />,
-      <SelectOption key={4} value="New York" />,
-      <SelectOption key={5} value="North Carolina" />
-    ];
-
+        <SelectOption key={0} value="Alabama" />,
+        <SelectOption key={1} value="Florida" />,
+        <SelectOption key={2} value="New Jersey" />,
+        <SelectOption key={3} value="New Mexico" />,
+        <SelectOption key={4} value="New York" />,
+        <SelectOption key={5} value="North Carolina" />
+      ];
     this.state = {
       isExpanded: false,
-      selected: null
+      selected: null,
+      options: this.options
     };
 
     this.onToggle = isExpanded => {
@@ -492,12 +492,14 @@ class TypeaheadSelectInput extends React.Component {
         e.target.value !== ''
           ? this.options.filter(child => input.test(child.props.value))
           : this.options;
-      return typeaheadFilteredChildren;
+      this.setState({
+        options: typeaheadFilteredChildren
+      });
     }
   }
 
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isExpanded, selected, options } = this.state;
     const titleId = 'typeahead-select-id';
     return (
       <div>
@@ -516,7 +518,7 @@ class TypeaheadSelectInput extends React.Component {
           ariaLabelledBy={titleId}
           placeholderText="Select a state"
         >
-          {this.options}
+          {options}
         </Select>
       </div>
     );
