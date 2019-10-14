@@ -116,7 +116,7 @@ class SimpleForm extends React.Component {
 }
 ```
 
-```js title=Form-(horizontal)
+```js title=Horizontal
 import React from 'react';
 import {
   Form,
@@ -230,7 +230,7 @@ class HorizontalForm extends React.Component {
 }
 ```
 
-```js title=Form-(invalid)
+```js title=Invalid
 import React from 'react';
 import {
   Form,

@@ -9,7 +9,7 @@ import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/reac
 import './alert.css';
 
 ## Examples
-```js title=Default-alert
+```js title=Default
 import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 
@@ -49,7 +49,7 @@ class DefaultAlert extends React.Component {
 }
 ```
 
-```js title=Info-alert
+```js title=Info
 import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 
@@ -89,7 +89,7 @@ class InfoAlert extends React.Component {
 }
 ```
 
-```js title=Success-alert
+```js title=Success
 import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 
@@ -132,7 +132,7 @@ class SuccessAlert extends React.Component {
 }
 ```
 
-```js title=Warning-alert
+```js title=Warning
 import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 
@@ -175,7 +175,7 @@ class WarningAlert extends React.Component {
 }
 ```
 
-```js title=Danger-alert
+```js title=Danger
 import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 
@@ -214,7 +214,7 @@ class DangerAlert extends React.Component {
 }
 ```
 
-```js title=Inline-alert-types
+```js title=Inline-types
 import React from 'react';
 import { Alert } from '@patternfly/react-core';
 
@@ -233,7 +233,7 @@ class InlineAlert extends React.Component {
 }
 ```
 
-```js title=Inline-alert-variations
+```js title=Inline-variations
 import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 

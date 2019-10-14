@@ -19,7 +19,7 @@ import {
 import { CaretDownIcon, SortAmountDownIcon } from '@patternfly/react-icons';
 
 ## Examples
-```js title=Options-menu---single-option
+```js title=Single-option
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
 
@@ -67,7 +67,7 @@ class SingleOption extends React.Component {
 }
 ```
 
-```js title=Options-menu---disabled
+```js title=Disabled
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
 
@@ -102,7 +102,7 @@ class DisabledOptionsMenu extends React.Component {
 }
 ```
 
-```js title=Options-menu---multiple-options
+```js title=Multiple-options
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuSeparator, OptionsMenuItemGroup, OptionsMenuToggle} from '@patternfly/react-core';
 
@@ -166,7 +166,7 @@ class MultipleOptions extends React.Component {
 }
 ```
 
-```js title=Options-menu---plain
+```js title=Plain
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggle } from '@patternfly/react-core';
 import { SortAmountDownIcon } from '@patternfly/react-icons';
@@ -242,7 +242,7 @@ class Plain extends React.Component {
 }
 ```
 
-```js title=Options-menu---top
+```js title=Align-top
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuDirection, OptionsMenuToggle } from '@patternfly/react-core';
 
@@ -292,7 +292,7 @@ class Top extends React.Component {
 }
 ```
 
-```js title=Options-menu---align-right
+```js title=Align-right
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuPosition, OptionsMenuToggle } from '@patternfly/react-core';
 
@@ -342,7 +342,7 @@ class AlignRight extends React.Component {
 }
 ```
 
-```js title=Options-menu---plain-with-text
+```js title=Plain-with-text
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggleWithText } from '@patternfly/react-core';
 import { CaretDownIcon } from '@patternfly/react-icons';
@@ -400,7 +400,7 @@ class PlainWithText extends React.Component {
 }
 ```
 
-```js title=Options-menu---plain-with-text-disabled
+```js title=Plain-with-text-disabled
 import React from 'react';
 import { OptionsMenu, OptionsMenuItem, OptionsMenuToggleWithText } from '@patternfly/react-core';
 import { CaretDownIcon } from '@patternfly/react-icons';

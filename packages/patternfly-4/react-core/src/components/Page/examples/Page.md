@@ -9,7 +9,7 @@ propComponents: ['Page', 'PageHeader', 'PageSidebar', 'PageSection']
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 
 ## Examples
-```js title=Vertical-page-layout
+```js title=Vertical-nav
 import React from 'react';
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 
@@ -58,7 +58,7 @@ class VerticalPage extends React.Component {
 }
 ```
 
-```js title=Horizontal-page-layout
+```js title=Horizontal-nav
 import React from 'react';
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 
@@ -82,7 +82,7 @@ HorizontalPage = () => {
 };
 ```
 
-```js title=Main-Section-Padding-Modifiers
+```js title=Main-Section-Padding
 import React from 'react';
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 
@@ -130,7 +130,7 @@ class VerticalPage extends React.Component {
   }
 }
 ```
-```js title=Main-section-fill/no-fill-modifiers
+```js title=With-or-without-fill
 import React from 'react';
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 

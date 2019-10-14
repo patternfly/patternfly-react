@@ -10,7 +10,7 @@ import { Card, CardActions, CardHead, CardHeader, CardBody, CardFooter, Checkbox
 import pfLogo from './pfLogo.svg'; 
 
 ## Examples
-```js title=Simple-card
+```js title=Basic
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -23,7 +23,7 @@ SimpleCard = () => (
 );
 ```
 
-```js title=Card-with-image-and-actions-
+```js title=With-image-and-actions
 import React from 'react'; 
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHead, CardActions, CardHeader, CardBody } from '@patternfly/react-core'; 
 import pfLogo from './pfLogo.svg'; 
@@ -104,7 +104,7 @@ class KebabDropdown extends React.Component {
 }
 ```
 
-```js title=Card-header-in-card-head-
+```js title=Card-header-in-card-head
  import React from 'react'; 
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, Card, CardHead, CardActions, CardHeader, CardBody } from '@patternfly/react-core'; 
 
@@ -276,7 +276,7 @@ ImageCard = () => (
 );
 ```
 
-```js title=Card-with-no-footer
+```js title=With-no-footer
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -288,7 +288,7 @@ NoFooterCard = () => (
 );
 ```
 
-```js title=Card-with-no-header
+```js title=With-no-header
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -300,7 +300,7 @@ NoHeaderCard = () => (
 );
 ```
 
-```js title=Card-with-only-a-content-section
+```js title=With-only-a-content-section
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -311,7 +311,7 @@ ContentOnlyCard = () => (
 );
 ```
 
-```js title=Card-with-multiple-body-sections
+```js title=With-multiple-body-sections
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -326,7 +326,7 @@ MultipleBodyCard = () => (
 );
 ```
 
-```js title=Card-with-only-one-body-that-fills
+```js title=With-only-one-body-that-fills
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -341,7 +341,7 @@ NoFillBodyCard = () => (
 );
 ```
 
-```js title=Card-hover-example
+```js title=Hover
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
@@ -354,7 +354,7 @@ HoverableCard = () => (
 );
 ```
 
-```js title=Card-compact-example
+```js title=Compact
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 

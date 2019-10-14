@@ -9,7 +9,7 @@ propComponents: ['Popover']
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
 
 ## Examples
-```js title=Simple-popover
+```js title=Basic
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
@@ -26,7 +26,7 @@ SimplePopover = () => (
 );
 ```
 
-```js title=Advanced-popover
+```js title=Advanced
 import React from 'react';
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
 
@@ -112,7 +112,7 @@ class AdvancedPopover extends React.Component {
 }
 ```
 
-```js title=Popover-(headless)
+```js title=Headless
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 
@@ -130,7 +130,7 @@ HeadlessPopover = () => (
 );
 ```
 
-```js title=Popover-with-Link
+```js title=With-Link
 import React from 'react';
 import { Popover, PopoverPosition, Button } from '@patternfly/react-core';
 

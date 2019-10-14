@@ -9,7 +9,7 @@ import { Button } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
 
 ## Examples
-```js title=Block
+```js title=Block-level
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
@@ -17,7 +17,7 @@ import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
 BlockButton = () => <Button isBlock>Block level button</Button>;
 ```
 
-```js title=Button-variants
+```js title=Variations
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
@@ -40,7 +40,7 @@ ButtonVariants = () => (
 );
 ```
 
-```js title=Link-button
+```js title=Links-as-button
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';

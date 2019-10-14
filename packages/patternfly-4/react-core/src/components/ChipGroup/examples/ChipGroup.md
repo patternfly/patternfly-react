@@ -75,7 +75,7 @@ class SingleChip extends React.Component {
 }
 ```
 
-```js title=Chip-group-toolbar
+```js title=Toolbar
 import React from 'react';
 import { Badge, Chip, ChipGroup, ChipGroupItem, ChipGroupToolbarItem } from '@patternfly/react-core';
 
@@ -136,7 +136,7 @@ class ToolbarChipGroup extends React.Component {
 }
 ```
 
-```js title=Chip-group-multi-select
+```js title=Multi-select
 import React from 'react';
 import { Badge, Chip, ChipGroup, ChipGroupItem, ChipGroupToolbarItem } from '@patternfly/react-core';
 
