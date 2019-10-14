@@ -39,7 +39,7 @@ import {
 </TextContent>
 ```
 
-```js title=Body-text
+```js title=Body
 import React from 'react';
 import {
   TextContent,
