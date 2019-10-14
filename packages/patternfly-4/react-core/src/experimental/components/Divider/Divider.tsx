@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Divider/divider';
-import { cpus } from 'os';
 
 export enum DividerVariant {
   hr = 'hr',
@@ -10,9 +9,9 @@ export enum DividerVariant {
 }
 
 export interface DividerProps extends React.HTMLProps<HTMLElement> {
-  /** additional classes added to the Badge */
+  /** Additional classes added to the divider */
   className?: string;
-  /** the component type to use */
+  /** The component type to use */
   component?: 'hr' | 'li' | 'div' ;
 }
 

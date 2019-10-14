@@ -13,7 +13,7 @@ import { Divider } from '@patternfly/react-core/dist/esm/experimental';
 import React from 'react';
 import { Divider } from '@patternfly/react-core/dist/esm/experimental';
 
-DividerHr = (
+DividerHr = () => (
   <Divider/>
 );
 ```
@@ -23,7 +23,7 @@ DividerHr = (
 import React from 'react';
 import { Divider } from '@patternfly/react-core/dist/esm/experimental';
 
-DividerLi = (
+DividerLi = () => (
   <ul>
     <li>List item one</li>
     <Divider component="li"/>
@@ -37,7 +37,7 @@ DividerLi = (
 import React from 'react';
 import { Divider } from '@patternfly/react-core/dist/esm/experimental';
 
-DividerLi = (
+DividerDiv = () => (
   <Divider component="div"/>
 );
 ```
