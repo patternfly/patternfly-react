@@ -3590,7 +3590,7 @@ exports[`select custom select filter filters properly 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     aria-labelledby=" pf-toggle-id-6"
-                    class="pf-c-button pf-c-select__toggle-button"
+                    class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-6"
                   >
                     <svg
@@ -3690,7 +3690,7 @@ exports[`select custom select filter filters properly 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               aria-labelledby=" pf-toggle-id-6"
-              className="pf-c-button pf-c-select__toggle-button"
+              className="pf-c-button pf-c-select__toggle-button pf-m-plain"
               disabled={false}
               id="pf-toggle-id-6"
               onClick={[Function]}
@@ -6365,7 +6365,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     aria-labelledby=" pf-toggle-id-22"
-                    class="pf-c-button pf-c-select__toggle-button"
+                    class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-22"
                   >
                     <svg
@@ -6422,7 +6422,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               aria-labelledby=" pf-toggle-id-22"
-              className="pf-c-button pf-c-select__toggle-button"
+              className="pf-c-button pf-c-select__toggle-button pf-m-plain"
               disabled={false}
               id="pf-toggle-id-22"
               onClick={[Function]}
@@ -6647,7 +6647,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     aria-labelledby=" pf-toggle-id-23"
-                    class="pf-c-button pf-c-select__toggle-button"
+                    class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-23"
                   >
                     <svg
@@ -6774,7 +6774,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               aria-labelledby=" pf-toggle-id-23"
-              className="pf-c-button pf-c-select__toggle-button"
+              className="pf-c-button pf-c-select__toggle-button pf-m-plain"
               disabled={false}
               id="pf-toggle-id-23"
               onClick={[Function]}
@@ -7285,7 +7285,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     aria-labelledby=" pf-toggle-id-24"
-                    class="pf-c-button pf-c-select__toggle-button"
+                    class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-24"
                   >
                     <svg
@@ -7807,7 +7807,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               aria-labelledby=" pf-toggle-id-24"
-              className="pf-c-button pf-c-select__toggle-button"
+              className="pf-c-button pf-c-select__toggle-button pf-m-plain"
               disabled={false}
               id="pf-toggle-id-24"
               onClick={[Function]}
@@ -8281,7 +8281,7 @@ exports[`typeahead multi select test onChange 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     aria-labelledby=" pf-toggle-id-26"
-                    class="pf-c-button pf-c-select__toggle-button"
+                    class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-26"
                   >
                     <svg
@@ -8408,7 +8408,7 @@ exports[`typeahead multi select test onChange 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               aria-labelledby=" pf-toggle-id-26"
-              className="pf-c-button pf-c-select__toggle-button"
+              className="pf-c-button pf-c-select__toggle-button pf-m-plain"
               disabled={false}
               id="pf-toggle-id-26"
               onClick={[Function]}
@@ -8796,7 +8796,7 @@ exports[`typeahead select renders closed successfully 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     aria-labelledby=" pf-toggle-id-15"
-                    class="pf-c-button pf-c-select__toggle-button"
+                    class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-15"
                   >
                     <svg
@@ -8853,7 +8853,7 @@ exports[`typeahead select renders closed successfully 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               aria-labelledby=" pf-toggle-id-15"
-              className="pf-c-button pf-c-select__toggle-button"
+              className="pf-c-button pf-c-select__toggle-button pf-m-plain"
               disabled={false}
               id="pf-toggle-id-15"
               onClick={[Function]}
@@ -9058,7 +9058,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     aria-labelledby=" pf-toggle-id-16"
-                    class="pf-c-button pf-c-select__toggle-button"
+                    class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-16"
                   >
                     <svg
@@ -9170,7 +9170,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               aria-labelledby=" pf-toggle-id-16"
-              className="pf-c-button pf-c-select__toggle-button"
+              className="pf-c-button pf-c-select__toggle-button pf-m-plain"
               disabled={false}
               id="pf-toggle-id-16"
               onClick={[Function]}
@@ -9546,7 +9546,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     aria-labelledby=" pf-toggle-id-17"
-                    class="pf-c-button pf-c-select__toggle-button"
+                    class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-17"
                   >
                     <svg
@@ -9709,7 +9709,7 @@ exports[`typeahead select renders selected successfully 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               aria-labelledby=" pf-toggle-id-17"
-              className="pf-c-button pf-c-select__toggle-button"
+              className="pf-c-button pf-c-select__toggle-button pf-m-plain"
               disabled={false}
               id="pf-toggle-id-17"
               onClick={[Function]}
@@ -10111,7 +10111,7 @@ exports[`typeahead select test creatable option 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     aria-labelledby=" pf-toggle-id-21"
-                    class="pf-c-button pf-c-select__toggle-button"
+                    class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-21"
                   >
                     <svg
@@ -10238,7 +10238,7 @@ exports[`typeahead select test creatable option 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               aria-labelledby=" pf-toggle-id-21"
-              className="pf-c-button pf-c-select__toggle-button"
+              className="pf-c-button pf-c-select__toggle-button pf-m-plain"
               disabled={false}
               id="pf-toggle-id-21"
               onClick={[Function]}
@@ -10630,7 +10630,7 @@ exports[`typeahead select test onChange 1`] = `
                     aria-haspopup="listbox"
                     aria-label="Options menu"
                     aria-labelledby=" pf-toggle-id-19"
-                    class="pf-c-button pf-c-select__toggle-button"
+                    class="pf-c-button pf-c-select__toggle-button pf-m-plain"
                     id="pf-toggle-id-19"
                   >
                     <svg
@@ -10742,7 +10742,7 @@ exports[`typeahead select test onChange 1`] = `
               aria-haspopup="listbox"
               aria-label="Options menu"
               aria-labelledby=" pf-toggle-id-19"
-              className="pf-c-button pf-c-select__toggle-button"
+              className="pf-c-button pf-c-select__toggle-button pf-m-plain"
               disabled={false}
               id="pf-toggle-id-19"
               onClick={[Function]}
