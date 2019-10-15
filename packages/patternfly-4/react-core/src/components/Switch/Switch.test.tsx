@@ -63,7 +63,7 @@ test('switch is not checked and disabled', () => {
 test('switch passes value and event to onChange handler', () => {
   const view = mount(<Switch id="onChange-switch" {...props} />);
   const input = view.find('input');
-  expect(input.prop('defaultChecked')).toBe(false);
+  expect(input.prop('checked')).toBe(false);
   input.simulate('change', { target: { checked: true } });
   expect(props.onChange.mock.calls[0][0]).toBe(true);
 });
