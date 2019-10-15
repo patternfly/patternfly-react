@@ -161,10 +161,12 @@ class BulkSelectTableDemo extends React.Component {
               <DropdownToggleCheckbox
                 id="example-checkbox-2"
                 key="split-checkbox"
-                aria-label="Select all"
+                aria-label={anySelected ? 'Deselect all' : 'Select all'}
                 isChecked={isChecked}
-                onClick={() => this.onDropDownToggle(!isDropDownOpen)}
-                onChange={anySelected ? () => this.handleSelectClick('none') : () => this.handleSelectClick('all')}
+                onClick={() => {
+                  this.onDropDownToggle(!isDropDownOpen);
+                  anySelected ? this.handleSelectClick('none') : this.handleSelectClick('all');
+                }}
               >
                 {numSelected !== 0 && <React.Fragment>{numSelected} selected</React.Fragment>}
               </DropdownToggleCheckbox>
@@ -184,6 +186,7 @@ class BulkSelectTableDemo extends React.Component {
         <ToolbarGroup>
           <ToolbarItem className="pf-u-mr-md">{this.buildSelectDropdown()}</ToolbarItem>
         </ToolbarGroup>
+        {this.renderPagination()}
       </Toolbar>
     );
   }
