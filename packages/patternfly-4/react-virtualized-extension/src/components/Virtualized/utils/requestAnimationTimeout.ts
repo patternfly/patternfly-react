@@ -8,7 +8,7 @@
 
 import { caf, raf } from './animationFrame';
 
-export const cancelAnimationTimeout = frame => caf(frame.id);
+export const cancelAnimationTimeout: any = (frame: { id: any }) => caf(frame.id);
 
 /**
  * Recursively calls requestAnimationFrame until a specified delay has been met or exceeded.

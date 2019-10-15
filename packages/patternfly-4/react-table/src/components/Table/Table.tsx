@@ -217,7 +217,7 @@ export interface TableProps {
   dropdownPosition?: 'right' | 'left';
   /** The desired direction to show the dropdown when clicking on the actions Kebab. Can only be used together with `actions` property */
   dropdownDirection?: 'up' | 'down';
-  rows?: (IRow | string[])[];
+  rows: (IRow | string[])[];
   cells: (ICell | string)[];
   bodyWrapper?: Function;
   rowWrapper?: (props: RowWrapperProps) => JSX.Element;

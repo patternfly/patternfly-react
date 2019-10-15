@@ -180,16 +180,6 @@ test('Collapsible nested table', () => {
   expect(view).toMatchSnapshot();
 });
 
-test('Header only table', () => {
-  const view = mount(
-    <Table aria-label="Aria labeled" cells={columns}>
-      <TableHeader />
-      <TableBody />
-    </Table>
-  );
-  expect(view).toMatchSnapshot();
-});
-
 test('Selectable table', () => {
   const onSelect = () => undefined as any;
   const view = mount(
