@@ -94,6 +94,8 @@ export interface WizardProps extends React.HTMLProps<HTMLDivElement> {
   cancelButtonText?: string;
   /** (Unused if footer is controlled) aria-label for the close button */
   ariaLabelCloseButton?: string;
+  /** The parent container to append the modal to. Defaults to document.body */
+  appendTo?: HTMLElement | (() => HTMLElement);
 }
 
 interface WizardState {
@@ -125,7 +127,8 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     width: null as string,
     height: null as string,
     footer: null as React.ReactNode,
-    onClose: () => undefined as any
+    onClose: () => undefined as any,
+    appendTo: null as HTMLElement
   };
   private container: HTMLDivElement;
   private titleId: string;
@@ -161,7 +164,9 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
   };
 
   private toggleSiblingsFromScreenReaders = (hide: boolean): void => {
-    const bodyChildren = document.body.children;
+    const { appendTo } = this.props;
+    const target: HTMLElement = this.getElement(appendTo);
+    const bodyChildren = target.children;
     for (const child of Array.from(bodyChildren)) {
       if (child !== this.container) {
         hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
@@ -294,23 +299,34 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
     return steps;
   };
 
+  getElement = (appendTo: HTMLElement | (() => HTMLElement)) => {
+    if (typeof appendTo === 'function') {
+      return appendTo();
+    }
+    return appendTo || document.body;
+  };
+
   componentDidMount() {
+    const { appendTo } = this.props;
+    const target: HTMLElement = this.getElement(appendTo);
     if (this.isModal) {
       if (this.container) {
-        document.body.appendChild(this.container);
+        target.appendChild(this.container);
       }
       this.toggleSiblingsFromScreenReaders(true);
-      document.addEventListener('keydown', this.handleKeyClicks, false);
+      target.addEventListener('keydown', this.handleKeyClicks, false);
     }
   }
 
   componentWillUnmount() {
+    const { appendTo } = this.props;
+    const target: HTMLElement = this.getElement(appendTo);
     if (this.isModal) {
       if (this.container) {
-        document.body.removeChild(this.container);
+        target.removeChild(this.container);
       }
       this.toggleSiblingsFromScreenReaders(false);
-      document.removeEventListener('keydown', this.handleKeyClicks, false);
+      target.removeEventListener('keydown', this.handleKeyClicks, false);
     }
   }
 

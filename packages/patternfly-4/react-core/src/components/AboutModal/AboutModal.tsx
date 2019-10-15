@@ -27,6 +27,8 @@ export interface AboutModalProps {
   backgroundImageSrc?: string;
   /** Prevents the about modal from rendering content inside a container; allows for more flexible layouts  */
   noAboutModalBoxContentContainer?: boolean;
+  /** The parent container to append the modal to. Defaults to document.body */
+  appendTo?: HTMLElement | (() => HTMLElement);
 }
 
 interface ModalState {
@@ -46,7 +48,8 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
     productName: '',
     trademark: '',
     backgroundImageSrc: '',
-    noAboutModalBoxContentContainer: false
+    noAboutModalBoxContentContainer: false,
+    appendTo: null as HTMLElement
   };
 
   constructor(props: AboutModalProps) {
@@ -68,7 +71,9 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
   };
 
   toggleSiblingsFromScreenReaders = (hide: boolean) => {
-    const bodyChildren = document.body.children;
+    const { appendTo } = this.props;
+    const target: HTMLElement = this.getElement(appendTo);
+    const bodyChildren = target.children;
     for (const child of Array.from(bodyChildren)) {
       if (child !== this.state.container) {
         hide ? child.setAttribute('aria-hidden', '' + hide) : child.removeAttribute('aria-hidden');
@@ -76,34 +81,45 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
     }
   };
 
+  getElement = (appendTo: HTMLElement | (() => HTMLElement)) => {
+    if (typeof appendTo === 'function') {
+      return appendTo();
+    }
+    return appendTo || document.body;
+  };
+
   componentDidMount() {
     const container = document.createElement('div');
+    const target: HTMLElement = this.getElement(this.props.appendTo);
     this.setState({ container });
-    document.body.appendChild(container);
-    document.addEventListener('keydown', this.handleEscKeyClick, false);
+    target.appendChild(container);
+    target.addEventListener('keydown', this.handleEscKeyClick, false);
 
     if (this.props.isOpen) {
-      document.body.classList.add(css(styles.backdropOpen));
+      target.classList.add(css(styles.backdropOpen));
     } else {
-      document.body.classList.remove(css(styles.backdropOpen));
+      target.classList.remove(css(styles.backdropOpen));
     }
   }
 
   componentDidUpdate() {
+    const target: HTMLElement = this.getElement(this.props.appendTo);
     if (this.props.isOpen) {
-      document.body.classList.add(css(styles.backdropOpen));
+      target.classList.add(css(styles.backdropOpen));
       this.toggleSiblingsFromScreenReaders(true);
     } else {
-      document.body.classList.remove(css(styles.backdropOpen));
+      target.classList.remove(css(styles.backdropOpen));
       this.toggleSiblingsFromScreenReaders(false);
     }
   }
 
   componentWillUnmount() {
+    const target: HTMLElement = this.getElement(this.props.appendTo);
     if (this.state.container) {
-      document.body.removeChild(this.state.container);
+      target.removeChild(this.state.container);
     }
-    document.removeEventListener('keydown', this.handleEscKeyClick, false);
+    target.removeEventListener('keydown', this.handleEscKeyClick, false);
+    target.classList.remove(css(styles.backdropOpen));
   }
 
   render() {

@@ -36,6 +36,7 @@ exports[`Wizard should match snapshot 1`] = `
             }
           >
             <div
+              appendTo={null}
               aria-describedby="pf-wizard-description-0"
               aria-labelledby="pf-wizard-title-0"
               aria-modal="true"
