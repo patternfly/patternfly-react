@@ -52,7 +52,7 @@ import imgAvatar from './imgAvatar.svg';
 - To make the page take up the full height, it is recommended to set the height of all ancestor elements up to the page component to `100%`
 
 ## Examples
-```js title=Basic-nav
+```js title=Basic-nav isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -95,37 +95,37 @@ class PageLayoutSimpleNav extends React.Component {
       isKebabDropdownOpen: false,
       activeItem: 0
     };
+
+    this.onDropdownToggle = isDropdownOpen => {
+      this.setState({
+        isDropdownOpen
+      });
+    };
+
+    this.onDropdownSelect = event => {
+      this.setState({
+        isDropdownOpen: !this.state.isDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownToggle = isKebabDropdownOpen => {
+      this.setState({
+        isKebabDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownSelect = event => {
+      this.setState({
+        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
+      });
+    };
+
+    this.onNavSelect = result => {
+      this.setState({
+        activeItem: result.itemId
+      });
+    };
   }
-
-  onDropdownToggle = isDropdownOpen => {
-    this.setState({
-      isDropdownOpen
-    });
-  };
-
-  onDropdownSelect = event => {
-    this.setState({
-      isDropdownOpen: !this.state.isDropdownOpen
-    });
-  };
-
-  onKebabDropdownToggle = isKebabDropdownOpen => {
-    this.setState({
-      isKebabDropdownOpen
-    });
-  };
-
-  onKebabDropdownSelect = event => {
-    this.setState({
-      isKebabDropdownOpen: !this.state.isKebabDropdownOpen
-    });
-  };
-
-  onNavSelect = result => {
-    this.setState({
-      activeItem: result.itemId
-    });
-  };
 
   render() {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
@@ -256,7 +256,7 @@ class PageLayoutSimpleNav extends React.Component {
 }
 ```
 
-```js title=Default-nav
+```js title=Default-nav isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -299,37 +299,36 @@ class PageLayoutDefaultNav extends React.Component {
       isKebabDropdownOpen: false,
       activeItem: 0
     };
+    this.onDropdownToggle = isDropdownOpen => {
+      this.setState({
+        isDropdownOpen
+      });
+    };
+
+    this.onDropdownSelect = event => {
+      this.setState({
+        isDropdownOpen: !this.state.isDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownToggle = isKebabDropdownOpen => {
+      this.setState({
+        isKebabDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownSelect = event => {
+      this.setState({
+        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
+      });
+    };
+
+    this.onNavSelect = result => {
+      this.setState({
+        activeItem: result.itemId
+      });
+    };
   }
-
-  onDropdownToggle = isDropdownOpen => {
-    this.setState({
-      isDropdownOpen
-    });
-  };
-
-  onDropdownSelect = event => {
-    this.setState({
-      isDropdownOpen: !this.state.isDropdownOpen
-    });
-  };
-
-  onKebabDropdownToggle = isKebabDropdownOpen => {
-    this.setState({
-      isKebabDropdownOpen
-    });
-  };
-
-  onKebabDropdownSelect = event => {
-    this.setState({
-      isKebabDropdownOpen: !this.state.isKebabDropdownOpen
-    });
-  };
-
-  onNavSelect = result => {
-    this.setState({
-      activeItem: result.itemId
-    });
-  };
 
   render() {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
@@ -473,7 +472,7 @@ class PageLayoutDefaultNav extends React.Component {
 }
 ```
 
-```js title=Expandable-nav
+```js title=Expandable-nav isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -517,38 +516,38 @@ class PageLayoutExpandableNav extends React.Component {
       activeGroup: 'grp-1',
       activeItem: 'grp-1_itm-1'
     };
+
+    this.onDropdownToggle = isDropdownOpen => {
+      this.setState({
+        isDropdownOpen
+      });
+    };
+
+    this.onDropdownSelect = event => {
+      this.setState({
+        isDropdownOpen: !this.state.isDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownToggle = isKebabDropdownOpen => {
+      this.setState({
+        isKebabDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownSelect = event => {
+      this.setState({
+        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
+      });
+    };
+
+    this.onNavSelect = result => {
+      this.setState({
+        activeItem: result.itemId,
+        activeGroup: result.groupId
+      });
+    };
   }
-
-  onDropdownToggle = isDropdownOpen => {
-    this.setState({
-      isDropdownOpen
-    });
-  };
-
-  onDropdownSelect = event => {
-    this.setState({
-      isDropdownOpen: !this.state.isDropdownOpen
-    });
-  };
-
-  onKebabDropdownToggle = isKebabDropdownOpen => {
-    this.setState({
-      isKebabDropdownOpen
-    });
-  };
-
-  onKebabDropdownSelect = event => {
-    this.setState({
-      isKebabDropdownOpen: !this.state.isKebabDropdownOpen
-    });
-  };
-
-  onNavSelect = result => {
-    this.setState({
-      activeItem: result.itemId,
-      activeGroup: result.groupId
-    });
-  };
 
   render() {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem, activeGroup } = this.state;
@@ -712,7 +711,7 @@ class PageLayoutExpandableNav extends React.Component {
 }
 ```
 
-```js title=Grouped-nav
+```js title=Grouped-nav isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -755,37 +754,37 @@ class PageLayoutGroupsNav extends React.Component {
       isKebabDropdownOpen: false,
       activeItem: 'grp-1_itm-1'
     };
+
+    this.onDropdownToggle = isDropdownOpen => {
+      this.setState({
+        isDropdownOpen
+      });
+    };
+
+    this.onDropdownSelect = event => {
+      this.setState({
+        isDropdownOpen: !this.state.isDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownToggle = isKebabDropdownOpen => {
+      this.setState({
+        isKebabDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownSelect = event => {
+      this.setState({
+        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
+      });
+    };
+
+    this.onNavSelect = result => {
+      this.setState({
+        activeItem: result.itemId
+      });
+    };
   }
-
-  onDropdownToggle = isDropdownOpen => {
-    this.setState({
-      isDropdownOpen
-    });
-  };
-
-  onDropdownSelect = event => {
-    this.setState({
-      isDropdownOpen: !this.state.isDropdownOpen
-    });
-  };
-
-  onKebabDropdownToggle = isKebabDropdownOpen => {
-    this.setState({
-      isKebabDropdownOpen
-    });
-  };
-
-  onKebabDropdownSelect = event => {
-    this.setState({
-      isKebabDropdownOpen: !this.state.isKebabDropdownOpen
-    });
-  };
-
-  onNavSelect = result => {
-    this.setState({
-      activeItem: result.itemId
-    });
-  };
 
   render() {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
@@ -924,7 +923,7 @@ class PageLayoutGroupsNav extends React.Component {
 }
 ```
 
-```js title=Horizontal-nav
+```js title=Horizontal-nav isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -973,37 +972,37 @@ class PageLayoutHorizontalNav extends React.Component {
       isKebabDropdownOpen: false,
       activeItem: 0
     };
+
+    this.onDropdownToggle = isDropdownOpen => {
+      this.setState({
+        isDropdownOpen
+      });
+    };
+
+    this.onDropdownSelect = event => {
+      this.setState({
+        isDropdownOpen: !this.state.isDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownToggle = isKebabDropdownOpen => {
+      this.setState({
+        isKebabDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownSelect = event => {
+      this.setState({
+        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
+      });
+    };
+
+    this.onNavSelect = result => {
+      this.setState({
+        activeItem: result.itemId
+      });
+    };
   }
-
-  onDropdownToggle = isDropdownOpen => {
-    this.setState({
-      isDropdownOpen
-    });
-  };
-
-  onDropdownSelect = event => {
-    this.setState({
-      isDropdownOpen: !this.state.isDropdownOpen
-    });
-  };
-
-  onKebabDropdownToggle = isKebabDropdownOpen => {
-    this.setState({
-      isKebabDropdownOpen
-    });
-  };
-
-  onKebabDropdownSelect = event => {
-    this.setState({
-      isKebabDropdownOpen: !this.state.isKebabDropdownOpen
-    });
-  };
-
-  onNavSelect = result => {
-    this.setState({
-      activeItem: result.itemId
-    });
-  };
 
   render() {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
@@ -1139,7 +1138,7 @@ class PageLayoutHorizontalNav extends React.Component {
 }
 ```
 
-```js title=Manual-nav
+```js title=Manual-nav isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -1189,55 +1188,55 @@ class PageLayoutManualNav extends React.Component {
       isNavOpenDesktop: true,
       isNavOpenMobile: false
     };
+
+    this.onDropdownToggle = isDropdownOpen => {
+      this.setState({
+        isDropdownOpen
+      });
+    };
+
+    this.onDropdownSelect = event => {
+      this.setState({
+        isDropdownOpen: !this.state.isDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownToggle = isKebabDropdownOpen => {
+      this.setState({
+        isKebabDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownSelect = event => {
+      this.setState({
+        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
+      });
+    };
+
+    this.onNavSelect = result => {
+      this.setState({
+        activeItem: result.itemId
+      });
+    };
+
+    this.onNavToggleDesktop = () => {
+      this.setState({
+        isNavOpenDesktop: !this.state.isNavOpenDesktop
+      });
+    };
+
+    this.onNavToggleMobile = () => {
+      this.setState({
+        isNavOpenMobile: !this.state.isNavOpenMobile
+      });
+    };
+
+    this.onPageResize = ({ mobileView, windowSize }) => {
+      this.setState({
+        isMobileView: mobileView
+      });
+    };
   }
-
-  onDropdownToggle = isDropdownOpen => {
-    this.setState({
-      isDropdownOpen
-    });
-  };
-
-  onDropdownSelect = event => {
-    this.setState({
-      isDropdownOpen: !this.state.isDropdownOpen
-    });
-  };
-
-  onKebabDropdownToggle = isKebabDropdownOpen => {
-    this.setState({
-      isKebabDropdownOpen
-    });
-  };
-
-  onKebabDropdownSelect = event => {
-    this.setState({
-      isKebabDropdownOpen: !this.state.isKebabDropdownOpen
-    });
-  };
-
-  onNavSelect = result => {
-    this.setState({
-      activeItem: result.itemId
-    });
-  };
-
-  onNavToggleDesktop = () => {
-    this.setState({
-      isNavOpenDesktop: !this.state.isNavOpenDesktop
-    });
-  };
-
-  onNavToggleMobile = () => {
-    this.setState({
-      isNavOpenMobile: !this.state.isNavOpenMobile
-    });
-  };
-
-  onPageResize = ({ mobileView, windowSize }) => {
-    this.setState({
-      isMobileView: mobileView
-    });
-  };
 
   render() {
     const {
@@ -1380,7 +1379,7 @@ class PageLayoutManualNav extends React.Component {
 }
 ```
 
-```js title=Legacy/Light-Nav
+```js title=Legacy/Light-Nav isFullscreen
 import React from 'react';
 import {
   Avatar,
@@ -1428,37 +1427,37 @@ class PageLayoutLightNav extends React.Component {
       isKebabDropdownOpen: false,
       activeItem: 0
     };
+
+    this.onDropdownToggle = isDropdownOpen => {
+      this.setState({
+        isDropdownOpen
+      });
+    };
+
+    this.onDropdownSelect = event => {
+      this.setState({
+        isDropdownOpen: !this.state.isDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownToggle = isKebabDropdownOpen => {
+      this.setState({
+        isKebabDropdownOpen
+      });
+    };
+
+    this.onKebabDropdownSelect = event => {
+      this.setState({
+        isKebabDropdownOpen: !this.state.isKebabDropdownOpen
+      });
+    };
+
+    this.onNavSelect = result => {
+      this.setState({
+        activeItem: result.itemId
+      });
+    };
   }
-
-  onDropdownToggle = isDropdownOpen => {
-    this.setState({
-      isDropdownOpen
-    });
-  };
-
-  onDropdownSelect = event => {
-    this.setState({
-      isDropdownOpen: !this.state.isDropdownOpen
-    });
-  };
-
-  onKebabDropdownToggle = isKebabDropdownOpen => {
-    this.setState({
-      isKebabDropdownOpen
-    });
-  };
-
-  onKebabDropdownSelect = event => {
-    this.setState({
-      isKebabDropdownOpen: !this.state.isKebabDropdownOpen
-    });
-  };
-
-  onNavSelect = result => {
-    this.setState({
-      activeItem: result.itemId
-    });
-  };
 
   render() {
     const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
@@ -1587,4 +1586,4 @@ class PageLayoutLightNav extends React.Component {
     );
   }
 }
-``
+```
