@@ -2515,11 +2515,6 @@
   version "2.36.0"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.36.0.tgz#1f69718f5c5a67c17515d914f7c3b6e97bd06ae5"
 
-"@patternfly/patternfly@^2.33.5":
-  version "2.33.8"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.33.8.tgz#2885847b4c49d8606abed17a0415da24fec222aa"
-  integrity sha512-tkT1GrdIyvGiDvNHATOa7XLMLKdztpra8ngS8qhCcEWBKh9MWNj5ysjOrkna32bSF9GEkR4TFX492W8ESTHWvQ==
-
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
   resolved "https://registry.yarnpkg.com/@pieh/friendly-errors-webpack-plugin/-/friendly-errors-webpack-plugin-1.7.0-chalk-2.tgz#2e9da9d3ade9d18d013333eb408c457d04eabac0"
@@ -12224,10 +12219,10 @@ gatsby-telemetry@^1.1.29:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-theme-patternfly-org@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-patternfly-org/-/gatsby-theme-patternfly-org-0.0.10.tgz#466975db1fd26ddba1779c4fb7add8a641345435"
-  integrity sha512-POODE/BjB8vtS294NtBB/eBFAlprqPJusqMh7D14p6LMUE0JcQ9cA6KI2CZnTBJoQh1gDR8vBrEtg+i9A9snyw==
+gatsby-theme-patternfly-org@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-patternfly-org/-/gatsby-theme-patternfly-org-0.0.14.tgz#1f22beb117d6cfabc39f0bf99b6da4e8e77c07b1"
+  integrity sha512-DDBp3OnGzI7u3ayZob5rma1N7zP0wTct76RYxZQFMZoKw4G8exkND42oWZhjBnRk5Wh7y6f75pFuuuhev13Ekw==
   dependencies:
     "@mdx-js/mdx" "^1.1.5"
     "@mdx-js/react" "^1.1.5"
@@ -12236,6 +12231,7 @@ gatsby-theme-patternfly-org@^0.0.10:
     gatsby-plugin-react-helmet "^3.1.7"
     gatsby-transformer-json "^2.2.8"
     handlebars "^4.2.0"
+    html-formatter "0.1.9"
     prismjs "^1.17.1"
     react-helmet "^5.2.1"
     react-live "^2.2.0"
@@ -13441,6 +13437,11 @@ html-entities@^1.2.0, html-entities@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
   integrity sha1-DfKTUfByEWNRXfueVUPl9u7VFi8=
+
+html-formatter@0.1.9:
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/html-formatter/-/html-formatter-0.1.9.tgz#58e8859712f3d4d9e7094027517c4c46f4c336b8"
+  integrity sha1-WOiFlxLz1NnnCUAnUXxMRvTDNrg=
 
 html-minifier@^3.2.3:
   version "3.5.21"
