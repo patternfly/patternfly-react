@@ -8,13 +8,16 @@ propComponents: ['Chart', 'ChartAxis', 'ChartGroup', 'ChartThreshold', 'ChartVor
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLegend, ChartThreshold, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer } from '@patternfly/react-charts';
 import '@patternfly/patternfly/patternfly-charts.css';
 import './chart-threshold.scss';
+import {
+  chart_color_blue_300,
+  chart_color_orange_300
+} from '@patternfly/react-tokens';
 
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
-PatternFly React charts are based on the [Victory chart](https://formidable.com/open-source/victory/docs/victory-chart/) library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
+PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
 ## Multi-color, area chart with threshold indicators and responsive container
-
 ```js
 import React from 'react';
 import {
@@ -26,6 +29,10 @@ import {
   ChartThreshold,
   ChartThemeColor
 } from '@patternfly/react-charts';
+import {
+  chart_color_blue_300,
+  chart_color_orange_300,
+} from '@patternfly/react-tokens';
 
 class MultiColorChart extends React.Component {
   constructor(props) {
@@ -74,11 +81,11 @@ class MultiColorChart extends React.Component {
                   { name: 'Birds' },
                   {
                     name: 'Cats Threshold',
-                    symbol: { fill: ChartThemeColor.blue, type: 'threshold' }
+                    symbol: { fill: chart_color_blue_300.value, type: 'threshold' }
                   },
                   {
                     name: 'Birds Threshold',
-                    symbol: { fill: ChartThemeColor.orange, type: 'threshold' }
+                    symbol: { fill: chart_color_orange_300.value, type: 'threshold' }
                   }
                 ]}
                 itemsPerRow={itemsPerRow}
@@ -117,25 +124,33 @@ class MultiColorChart extends React.Component {
                 ]}
                 interpolation="basis"
               />
-              <ChartThreshold
-                data={[
-                  { name: 'Cats Threshold', x: 0, y: 4 },
-                  { name: 'Cats Threshold', x: 3, y: 4 },
-                  { name: 'Cats Threshold', x: 3, y: 6 },
-                  { name: 'Cats Threshold', x: 5, y: 6 }
-                ]}
-                themeColor={ChartThemeColor.blue}
-              />
-              <ChartThreshold
-                data={[
-                  { name: 'Birds Threshold', x: 0, y: 2 },
-                  { name: 'Birds Threshold', x: 2, y: 2 },
-                  { name: 'Birds Threshold', x: 2, y: 3 },
-                  { name: 'Birds Threshold', x: 5, y: 3 }
-                ]}
-                themeColor={ChartThemeColor.orange}
-              />
             </ChartGroup>
+            <ChartThreshold
+              data={[
+                { name: 'Cats Threshold', x: 0, y: 4 },
+                { name: 'Cats Threshold', x: 3, y: 4 },
+                { name: 'Cats Threshold', x: 3, y: 6 },
+                { name: 'Cats Threshold', x: 5, y: 6 }
+              ]}
+              style={{
+                data: {
+                  stroke: chart_color_blue_300.value
+                }                
+              }}
+            />
+            <ChartThreshold
+              data={[
+                { name: 'Birds Threshold', x: 0, y: 2 },
+                { name: 'Birds Threshold', x: 2, y: 2 },
+                { name: 'Birds Threshold', x: 2, y: 3 },
+                { name: 'Birds Threshold', x: 5, y: 3 }
+              ]}
+              style={{
+                data: {
+                  stroke: chart_color_orange_300.value
+                }             
+              }}
+            />
           </Chart>
         </div>
       </div>
