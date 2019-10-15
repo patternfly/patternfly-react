@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.116.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.115.3...@patternfly/react-core@3.116.0) (2019-10-15)
+
+
+### Bug Fixes
+
+* **Radio:** Fix console error ([#3138](https://github.com/patternfly/patternfly-react/issues/3138)) ([3e432b8](https://github.com/patternfly/patternfly-react/commit/3e432b8)), closes [#3111](https://github.com/patternfly/patternfly-react/issues/3111)
+
+
+### Features
+
+* **aboutmodal,wizard:** append component to any element in DOM ([#3102](https://github.com/patternfly/patternfly-react/issues/3102)) ([ec9d5dd](https://github.com/patternfly/patternfly-react/commit/ec9d5dd))
+
+
+
+
+
 ## [3.115.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.115.2...@patternfly/react-core@3.115.3) (2019-10-14)
 
 **Note:** Version bump only for package @patternfly/react-core
