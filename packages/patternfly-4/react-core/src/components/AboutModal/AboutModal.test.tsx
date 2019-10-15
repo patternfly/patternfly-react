@@ -6,7 +6,7 @@ import { KEY_CODES } from '../../helpers/constants';
 
 const mockListener = jest.spyOn(ReactDOM, 'createPortal');
 jest.spyOn(document, 'createElement');
-jest.spyOn(document, 'addEventListener');
+jest.spyOn(document.body, 'addEventListener');
 
 mockListener.mockImplementation(node => node as React.ReactPortal);
 
@@ -34,7 +34,7 @@ test('About Modal closes with escape', () => {
       Test About Modal
     </AboutModal>
   );
-  const [event, handler] = (document.addEventListener as any).mock.calls[0];
+  const [event, handler] = (document.body.addEventListener as any).mock.calls[0];
   expect(event).toBe('keydown');
   handler({ keyCode: KEY_CODES.ESCAPE_KEY });
   expect(props.onClose).toBeCalled();
@@ -42,7 +42,7 @@ test('About Modal closes with escape', () => {
 
 test('modal does not call onClose for esc key if it is not open', () => {
   shallow(<AboutModal {...props} />);
-  const [event, handler] = (document.addEventListener as any).mock.calls[0];
+  const [event, handler] = (document.body.addEventListener as any).mock.calls[0];
   expect(event).toBe('keydown');
   handler({ keyCode: KEY_CODES.ESCAPE_KEY });
   expect(props.onClose).not.toBeCalled();
