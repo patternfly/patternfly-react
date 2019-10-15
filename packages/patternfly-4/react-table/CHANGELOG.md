@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.23.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.11...@patternfly/react-table@2.23.12) (2019-10-15)
+
+
+### Bug Fixes
+
+* **react-table:** Disable header controls with empty table ([#3008](https://github.com/patternfly/patternfly-react/issues/3008)) ([3de4468](https://github.com/patternfly/patternfly-react/commit/3de4468)), closes [#1431](https://github.com/patternfly/patternfly-react/issues/1431)
+
+
+
+
+
 ## [2.23.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.10...@patternfly/react-table@2.23.11) (2019-10-15)
 
 **Note:** Version bump only for package @patternfly/react-table
