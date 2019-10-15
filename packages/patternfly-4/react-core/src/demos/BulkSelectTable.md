@@ -164,15 +164,14 @@ class BulkSelectTableDemo extends React.Component {
                 aria-label={anySelected ? 'Deselect all' : 'Select all'}
                 isChecked={isChecked}
                 onClick={() => {
-                  this.onDropDownToggle(!isDropDownOpen);
                   anySelected ? this.handleSelectClick('none') : this.handleSelectClick('all');
                 }}
-              >
-                {numSelected !== 0 && <React.Fragment>{numSelected} selected</React.Fragment>}
-              </DropdownToggleCheckbox>
+              ></DropdownToggleCheckbox>
             ]}
             onToggle={this.onDropDownToggle}
-          ></DropdownToggle>
+          >
+            {numSelected !== 0 && <React.Fragment>{numSelected} selected</React.Fragment>}
+          </DropdownToggle>
         }
         isOpen={isDropDownOpen}
         dropdownItems={items}
