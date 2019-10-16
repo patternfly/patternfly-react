@@ -75,7 +75,12 @@ class ComponentWithOuia extends React.Component<OuiaProps, OuiaState> {
     const { isOuia, ouiaId } = this.state;
     const { component: WrappedComponent, componentProps, consumerContext } = this.props;
     return (
-      <OuiaContext.Provider value={{ isOuia, ouiaId }}>
+      <OuiaContext.Provider
+        value={{
+          isOuia: (consumerContext && consumerContext.isOuia) || isOuia,
+          ouiaId: (consumerContext && consumerContext.ouiaId) || ouiaId
+        }}
+      >
         <OuiaContext.Consumer>
           {(value: OuiaContextProps) => <WrappedComponent {...(componentProps as any)} ouiaContext={value} />}
         </OuiaContext.Consumer>
