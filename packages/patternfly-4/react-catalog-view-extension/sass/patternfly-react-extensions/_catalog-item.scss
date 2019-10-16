@@ -23,3 +23,21 @@
   color: $color-pf-black-500;
   margin-bottom: 0;
 }
+
+.catalog-tile-pf-description {
+    flex: 1;
+    margin-top: 15px;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 75%);
+      bottom: 0;
+      color: transparent;
+      content: ".";
+      position: absolute;
+      right: 0;
+      width: 50%;
+      text-align: right;
+    }
+  }

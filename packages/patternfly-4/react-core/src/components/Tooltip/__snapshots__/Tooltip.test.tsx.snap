@@ -10,6 +10,7 @@ exports[`tooltip passes along values to tippy.js 1`] = `
   content={
     <div
       className=""
+      id=""
       role="tooltip"
     >
       <Unknown
@@ -85,6 +86,7 @@ exports[`tooltip renders 1`] = `
   content={
     <div
       className=""
+      id=""
       role="tooltip"
     >
       <Unknown
