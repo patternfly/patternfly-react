@@ -24,10 +24,12 @@ export interface DataToolbarContentProps extends React.HTMLProps<HTMLDivElement>
 }
 
 export interface DataToolbarContentState {
-  /** Flag indicating the if the expandable content's expanded state is consumer managed or not */
-  isConsumerManagedToggleGroup: boolean;
-  /** Flag indicating if the component managed state has expanded content or not */
-  componentManagedIsExpanded: boolean;
+  /** True if the component is managing the expanded state of the toggle group.
+   *  False if the user has opted to manage the 'isExpanded' state themself. */
+  isToggleManaged: boolean;
+  /** Flag used if the user has opted NOT to manage the 'isExpanded' state of the toggle group.
+   *  Indicates whether or not the toggle group is expanded */
+  isManagedToggleExpanded: boolean;
 }
 
 export class DataToolbarContent extends React.Component<DataToolbarContentProps, DataToolbarContentState> {
@@ -43,34 +45,33 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps,
     super(props);
 
     this.state = {
-      isConsumerManagedToggleGroup: props.isExpanded || !!props.toggleIsExpanded,
-      componentManagedIsExpanded: false
+      isToggleManaged: !(props.isExpanded || !!props.toggleIsExpanded),
+      isManagedToggleExpanded: false
     };
   }
 
   toggleIsExpanded = () => {
     this.setState(prevState => ({
-      componentManagedIsExpanded: !prevState.componentManagedIsExpanded
+      isManagedToggleExpanded: !prevState.isManagedToggleExpanded
     }));
   };
 
   closeExpandableContent = () => {
     this.setState(() => ({
-      componentManagedIsExpanded: false
+      isManagedToggleExpanded: false
     }));
   };
 
   componentDidMount() {
-    const { isConsumerManagedToggleGroup } = this.state;
-
-    if (!isConsumerManagedToggleGroup) {
+    const { isToggleManaged } = this.state;
+    if (isToggleManaged) {
       window.addEventListener('resize', this.closeExpandableContent);
     }
   }
 
   componentWillUnmount() {
-    const { isConsumerManagedToggleGroup } = this.state;
-    if (isConsumerManagedToggleGroup) {
+    const { isToggleManaged } = this.state;
+    if (isToggleManaged) {
       window.removeEventListener('resize', this.closeExpandableContent);
     }
   }
@@ -87,7 +88,7 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps,
       showClearFiltersButton,
       ...props
     } = this.props;
-    const { isConsumerManagedToggleGroup, componentManagedIsExpanded } = this.state;
+    const { isToggleManaged, isManagedToggleExpanded } = this.state;
 
     const expandableContentId = `${id}-expandable-content`;
 
@@ -98,8 +99,8 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps,
       >
         <DataToolbarContentContext.Provider
           value={{
-            isExpanded: isConsumerManagedToggleGroup ? isExpanded : componentManagedIsExpanded,
-            toggleIsExpanded: isConsumerManagedToggleGroup ? toggleIsExpanded : this.toggleIsExpanded,
+            isExpanded: isToggleManaged ? isManagedToggleExpanded : isExpanded,
+            toggleIsExpanded: isToggleManaged ? this.toggleIsExpanded : toggleIsExpanded,
             expandableContentRef: this.expandableContentRef,
             expandableContentId
           }}
@@ -107,7 +108,7 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps,
           {children}
           <DataToolbarExpandableContent
             id={expandableContentId}
-            isExpanded={isConsumerManagedToggleGroup ? isExpanded : componentManagedIsExpanded}
+            isExpanded={isToggleManaged ? isManagedToggleExpanded : isExpanded}
             expandableContentRef={this.expandableContentRef}
             clearAllFilters={clearAllFilters}
             showClearFiltersButton={showClearFiltersButton}

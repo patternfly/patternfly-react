@@ -8,7 +8,7 @@ experimentalStage: 'early'
 ---
 
 import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent, DataToolbarToggleGroup, DataToolbarFilter } from '@patternfly/react-core/dist/esm/experimental';
-import { Alert, Button, InputGroup, TextInput, Select, SelectOption } from '@patternfly/react-core';
+import { Alert, Button, ButtonVariant, InputGroup, TextInput, Select, SelectOption } from '@patternfly/react-core';
 import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 import '@patternfly/react-styles/css/components/Divider/divider';
 
@@ -16,7 +16,7 @@ import '@patternfly/react-styles/css/components/Divider/divider';
 ```js title=Basic
 import React from 'react';
 import { DataToolbar , DataToolbarItem, DataToolbarContent } from '@patternfly/react-core/dist/esm/experimental';
-import { Button, InputGroup, TextInput, SearchIcon } from '@patternfly/react-core';
+import { Button, ButtonVariant, InputGroup, TextInput, SearchIcon } from '@patternfly/react-core';
 
 class DataToolbarItems extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class DataToolbarItems extends React.Component {
       <DataToolbarItem>
         <InputGroup>
           <TextInput name="textInput1" id="textInput1" type="search" aria-label="search input example" />
-          <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
+          <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
@@ -43,6 +43,7 @@ class DataToolbarItems extends React.Component {
 }
 
 ```
+Toolbar items are individual components that can be placed inside of a toolbar. Buttons or select lists are examples of items.
 
 ```js title=With-spacers
 import React from 'react';
@@ -261,20 +262,16 @@ class DataToolbarGroupTypes extends React.Component {
 }
 
 ```
+Often, it makes sense to group sets of like items to create desired associations and to enable items to respond together to changes in viewport width.
 
 ## Data toolbar toggle groups
-- The Toggle group can either have the toggle state managed by the consumer, or the component. The first Toggle group example demonstrates a component managed toggle state.
-- The second Toggle group example below demonstrates a consumer managed toggle state. If the consumer would prefer to manage the expanded state of the toggle group for smaller screen widths:
+A toggle group can be used when you want to collapse a set of items into an overlay panel at a certain breakpoint. This allows complex toolbars with multiple items and groups of items to be responsive. A toggle group is useful for containing filter controls, for example. When the toolbar responds to adapt to a mobile viewport, the contents contained in a toggle group will collapse into an overlay panel that can be toggled by clicking the Filter icon.
+The Toggle group can either have the toggle state managed by the consumer, or the component.
 
-  1. Add a toggleIsExpanded callback to DataToolbarContent
-  1. Pass in a boolean into the isExpanded prop to DataToolbarContent
-
-- Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.
-
-#```js title=Managed-toggle-groups
+#```js title=Component-managed-toggle-groups
 import React from 'react';
 import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
-import { Button, InputGroup, Select, SelectOption } from '@patternfly/react-core';
+import { Button, ButtonVariant, InputGroup, Select, SelectOption } from '@patternfly/react-core';
 import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
 class DataToolbarComponentMangedToggleGroup extends React.Component {
@@ -357,7 +354,7 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
       <DataToolbarItem>
         <InputGroup>
           <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
-          <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
+          <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
@@ -412,11 +409,12 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
   }
 }
 ```
+This first Toggle group example demonstrates a component managed toggle state.
 
-#```js title=Managed-toggle-groups
+#```js title=Consumer-managed-toggle-groups
 import React from 'react';
 import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
-import { Button, InputGroup, Select, SelectOption } from '@patternfly/react-core';
+import { Button, ButtonVariant, InputGroup, Select, SelectOption } from '@patternfly/react-core';
 import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
 class DataToolbarConsumerMangedToggleGroup extends React.Component {
@@ -506,7 +504,7 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
       <DataToolbarItem>
         <InputGroup>
           <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
-          <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
+          <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
@@ -563,6 +561,12 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
   }
 }
 ```
+This second Toggle group example below demonstrates a consumer managed toggle state. If the consumer would prefer to manage the expanded state of the toggle group for smaller screen widths:
+
+  1. Add a toggleIsExpanded callback to DataToolbarContent
+  1. Pass in a boolean into the isExpanded prop to DataToolbarContent
+
+- Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.
 
 ```js title=With-chip-groups
 import React from 'react';
@@ -575,6 +579,7 @@ import {
     DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
 import { 
     Button, 
+    ButtonVariant,
     InputGroup,
     Select,
     SelectOption,
@@ -584,7 +589,7 @@ import {
     KebabToggle } from '@patternfly/react-core';
 import { TextInput, SearchIcon, FilterIcon, EditIcon, CloneIcon, SyncIcon } from '@patternfly/react-icons'
 
-class DataToolbarWithChipGroupExample extends React.Component {
+class DataToolbarWithFilterExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -710,7 +715,7 @@ class DataToolbarWithChipGroupExample extends React.Component {
       <DataToolbarItem>
         <InputGroup>
           <TextInput name="textInput2" id="textInput2" type="search" aria-label="search input example" onChange={this.onInputChange} value={inputValue}/>
-          <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
+          <Button variant={ButtonVariant.control} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
@@ -788,6 +793,8 @@ class DataToolbarWithChipGroupExample extends React.Component {
 }
 
 ```
+The DataToolbarFilter component expects a consumer managed list of applied filters and a delete chip handler to be passed as props. Then the rendering of chips will be handled responsively by the Toolbar
+When filters are applied, the toolbar will expand in height to make space for a row of filter chips. Upon clearing the applied filters, the toolbar will collapse to its default height.
 
 ```js title=Group-stacked
 import React from 'react';
@@ -1029,3 +1036,4 @@ class DataToolbarStacked extends React.Component {
 }
 
 ```
+There may be situations where all of the required elements simply cannot fit is a single line.
