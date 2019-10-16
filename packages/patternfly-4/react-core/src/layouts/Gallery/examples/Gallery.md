@@ -7,7 +7,7 @@ typescript: true
 ---
 
 import { Gallery, GalleryItem } from '@patternfly/react-core';
-import './gallery.scss';
+import './gallery.css';
 
 ## Examples
 ```js title=Basic

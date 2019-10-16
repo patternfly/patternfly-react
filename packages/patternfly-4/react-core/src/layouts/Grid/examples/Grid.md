@@ -6,7 +6,7 @@ propComponents: ['Grid', 'GridItem']
 typescript: true 
 ---
 import { Grid, GridItem } from '@patternfly/react-core';
-import './grid.scss';
+import './grid.css';
 
 ## Examples
 ```js title=Basic

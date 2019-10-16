@@ -7,7 +7,7 @@ typescript: true
 ---
 
 import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/react-core';
-import './toolbar.scss';
+import './toolbar.css';
 
 ## Examples
 ```js title=Basic

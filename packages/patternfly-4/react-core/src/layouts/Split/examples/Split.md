@@ -7,7 +7,7 @@ typescript: true
 ---
 
 import { Split, SplitItem } from '@patternfly/react-core';
-import './split.scss';
+import './split.css';
 
 ## Examples
 ```js title=Basic

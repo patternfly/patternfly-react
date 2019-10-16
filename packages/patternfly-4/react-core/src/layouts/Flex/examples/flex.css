@@ -1,0 +1,10 @@
+.ws-preview .pf-l-flex {
+  padding: 1rem;
+}
+
+.ws-preview .pf-l-flex > div,
+.example-border {
+  border-style: dashed;
+  border-width: 2px;
+  padding: 1rem;
+}

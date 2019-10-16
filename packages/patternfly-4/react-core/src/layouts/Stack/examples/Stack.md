@@ -7,7 +7,7 @@ typescript: true
 ---
 
 import { Stack, StackItem } from '@patternfly/react-core';
-import './stack.scss';
+import './stack.css';
 
 ## Examples
 ```js title=Basic

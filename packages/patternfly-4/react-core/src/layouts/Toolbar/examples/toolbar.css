@@ -1,0 +1,7 @@
+.ws-preview .pf-l-toolbar,
+.ws-preview .pf-l-toolbar .pf-l-toolbar__section,
+.ws-preview .pf-l-toolbar .pf-l-toolbar__group {
+  padding: 1rem;
+  border-width: 2px;
+  border-style: dashed;
+}

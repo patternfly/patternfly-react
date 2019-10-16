@@ -23,7 +23,7 @@ import { Tooltip, TooltipPosition } from '@patternfly/react-core';
 </Tooltip>
 ```
 
-```js title=With-left--aligned text
+```js title=With-left--aligned-text
 import React from 'react';
 import { Tooltip, TooltipPosition } from '@patternfly/react-core';
 

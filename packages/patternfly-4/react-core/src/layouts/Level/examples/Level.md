@@ -7,7 +7,7 @@ typescript: true
 ---
 
 import { Level, LevelItem } from '@patternfly/react-core';
-import './level.scss';
+import './level.css';
 
 ## Examples
 ```js title=Basic

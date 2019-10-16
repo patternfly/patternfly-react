@@ -7,7 +7,7 @@ typescript: true
 ---
 
 import { Bullseye } from '@patternfly/react-core';
-import './bullseye.scss';
+import './bullseye.css';
 
 ## Examples
 ```js title=Basic

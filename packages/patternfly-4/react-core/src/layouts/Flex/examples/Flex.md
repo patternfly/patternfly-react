@@ -7,7 +7,7 @@ typescript: true
 ---
 
 import { Flex, FlexItem } from '@patternfly/react-core';
-import './flex.scss';
+import './flex.css';
 
 ### Flex Basics
 

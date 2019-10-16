@@ -158,7 +158,7 @@ import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react
 ```
 
 ## 
-```js title=Monthly stacked bar chart with bottom aligned legend and responsive container
+```js title=Monthly-stacked-bar-chart-with-bottom-aligned-legend-and-responsive-container
 import React from 'react';
 import { Chart, ChartAxis, ChartStack, ChartTooltip } from '@patternfly/react-charts';
 
@@ -274,7 +274,7 @@ class ResponsiveStack extends React.Component {
 }
 ```
 
-```js title=Multi-color-(unorderd),-stacked-area-chart-with-bottom-left-aligned-legend-and-responsive-container
+```js title=Multi-color-(unordered),-stacked-area-chart-with-bottom-left-aligned-legend-and-responsive-container
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 
