@@ -1,5 +1,5 @@
 ---
-title: 'Sparkline'
+title: 'Sparkline chart'
 section: 'charts'
 typescript: true
 propComponents: [

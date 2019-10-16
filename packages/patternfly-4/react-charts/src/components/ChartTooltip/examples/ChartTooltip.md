@@ -1,5 +1,5 @@
 ---
-title: 'Tooltip'
+title: 'Tooltip chart'
 section: 'charts'
 typescript: true
 propComponents: ['ChartTooltip']

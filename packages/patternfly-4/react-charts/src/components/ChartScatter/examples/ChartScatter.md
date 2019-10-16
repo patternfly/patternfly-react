@@ -1,5 +1,5 @@
 ---
-title: 'Scatter'
+title: 'Scatter chart'
 section: 'charts'
 typescript: true
 propComponents: [

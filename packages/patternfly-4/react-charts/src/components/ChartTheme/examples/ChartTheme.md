@@ -1,5 +1,5 @@
 ---
-title: 'Theme'
+title: 'Themed charts'
 section: 'charts'
 typescript: true
 propComponents: [

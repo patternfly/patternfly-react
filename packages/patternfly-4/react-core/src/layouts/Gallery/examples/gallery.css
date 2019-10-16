@@ -1,8 +1,8 @@
-.ws-preview .pf-l-gallery {
+.ws-react-l-gallery .pf-l-gallery {
     padding: 1rem;
   }
 
-.ws-preview .pf-l-gallery > div {
+.ws-react-l-gallery .pf-l-gallery > div {
   padding: 1rem;
   border-width: 2px;
   border-style: dashed;

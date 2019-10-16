@@ -1,5 +1,5 @@
-.ws-preview > .pf-l-grid,
-.ws-preview > .pf-l-grid > .pf-l-grid__item {
+.ws-react-l-grid > .pf-l-grid,
+.ws-react-l-grid > .pf-l-grid > .pf-l-grid__item {
   min-height: 75px;
   padding: 1rem;
   border-width: 2px;

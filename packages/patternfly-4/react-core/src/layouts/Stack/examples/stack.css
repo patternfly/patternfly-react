@@ -8,8 +8,8 @@
   flex-grow: 1;
 }
 
-.ws-preview .pf-l-stack,
-.ws-preview .pf-l-stack > .pf-l-stack__item {
+.ws-react-l-stack .pf-l-stack,
+.ws-react-l-stack .pf-l-stack > .pf-l-stack__item {
   padding: 1rem;
   border-width: 2px;
   border-style: dashed;

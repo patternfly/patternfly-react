@@ -1,5 +1,5 @@
 ---
-title: 'Bullet'
+title: 'Bullet chart'
 section: 'charts'
 typescript: true
 propComponents: [
@@ -77,7 +77,7 @@ SegmentedPrimaryMeasure = (
 )
 ```
 
-```js title=Responsive-container-with-bottom--aligned-legend
+```js title=Responsive-container-with-bottom-aligned-legend
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -279,7 +279,7 @@ NegativePrimaryMeasure = (
 )
 ```
 
-```js title=Reversed-with-right--aligned-legend
+```js title=Reversed-with-right-aligned-legend
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 

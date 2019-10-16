@@ -1,13 +1,13 @@
-.ws-preview {
+.ws-react-l-level {
   padding: 9px;
 }
 
-.ws-preview .pf-l-level {
+.ws-react-l-level .pf-l-level {
   min-height: 160px;
 }
 
-.ws-preview .pf-l-level,
-.ws-preview .pf-l-level > div {
+.ws-react-l-level .pf-l-level,
+.ws-react-l-level .pf-l-level > div {
   padding: 9px;
   border-width: 2px;
   border-style: dashed;

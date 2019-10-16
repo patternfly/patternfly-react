@@ -70,14 +70,6 @@ module.exports = {
     {
       resolve: path.resolve(__dirname, './plugins/gatsby-transformer-react-docgen-typescript')
     },
-    // TODO: remove this
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        postCssPlugins: [],
-        precision: 5
-      }
-    },
     // The plugin for package.json files (to get version numbers)
     'gatsby-transformer-json',
     // Duplicated from gatsby-theme-patternfly-org

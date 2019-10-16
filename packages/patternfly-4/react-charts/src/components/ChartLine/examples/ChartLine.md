@@ -1,5 +1,5 @@
 ---
-title: 'Line'
+title: 'Line chart'
 section: 'charts'
 typescript: true
 propComponents: [
@@ -24,7 +24,7 @@ Learn to build a line chart using a Katacoda tutorial starting with a simple cha
 [Start course](https://katacoda.com/patternfly/courses/charts/line-chart)
 
 ## Examples
-```js title=Right--aligned-legend
+```js title=Right-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartVoronoiContainer } from '@patternfly/react-charts';
 
@@ -94,7 +94,7 @@ RightAligned = (
 )
 ```
 
-```js title=Green-with-right--aligned-legend
+```js title=Green-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 

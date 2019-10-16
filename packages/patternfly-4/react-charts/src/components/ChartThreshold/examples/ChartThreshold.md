@@ -1,5 +1,5 @@
 ---
-title: 'Threshold'
+title: 'Threshold chart'
 section: 'charts'
 typescript: true
 propComponents: [

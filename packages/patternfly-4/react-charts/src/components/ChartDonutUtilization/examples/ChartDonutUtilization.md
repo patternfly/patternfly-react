@@ -1,5 +1,5 @@
 ---
-title: 'Donut utilization'
+title: 'Donut utilization chart'
 section: 'charts'
 typescript: true
 propComponents: [
@@ -39,7 +39,7 @@ Basic = (
 )
 ```
 
-```js title=Right--aligned-legend
+```js title=Right-aligned-legend
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -96,7 +96,7 @@ class UtilizationChart extends React.Component {
 }
 ```
 
-```js title=Inverted-with-right--aligned-legend
+```js title=Inverted-with-right-aligned-legend
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -154,7 +154,7 @@ class UtilizationChart extends React.Component {
 }
 ```
 
-```js title=Right--aligned-vertical-legend
+```js title=Right-aligned-vertical-legend
 import React from 'react';
 import { ChartDonutUtilization, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
@@ -214,7 +214,7 @@ class UtilizationChart extends React.Component {
 }
 ```
 
-```js title=Bottom--aligned-legend
+```js title=Bottom-aligned-legend
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -448,7 +448,7 @@ class ThresholdChart extends React.Component {
 }
 ```
 
-```js title=Static-thresholds-with-bottom--aligned-legend
+```js title=Static-thresholds-with-bottom-aligned-legend
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -505,7 +505,7 @@ Small = (
 )
 ```
 
-```js title=Small-with-right--aligned-legend
+```js title=Small-with-right-aligned-legend
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -563,7 +563,7 @@ class UtilizationChart extends React.Component {
 }
 ```
 
-```js title=Small-with-bottom--aligned-subtitle
+```js title=Small-with-bottom-aligned-subtitle
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -594,7 +594,7 @@ SmallBottomSubtitle = (
 )
 ```
 
-```js title=Small-with-right--aligned-subtitle
+```js title=Small-with-right-aligned-subtitle
 import React from 'react';
 import { ChartDonutUtilization } from '@patternfly/react-charts';
 
@@ -745,7 +745,7 @@ SmallStaticSubtitle = (
 )
 ```
 
-```js title=Small-with-right--aligned-subtitle
+```js title=Small-with-right-aligned-subtitle
 import React from 'react';
 import { ChartDonutThreshold, ChartDonutUtilization } from '@patternfly/react-charts';
 

@@ -1,5 +1,5 @@
 ---
-title: 'Legend'
+title: 'Legend chart'
 section: 'charts'
 typescript: true
 propComponents: [
@@ -15,7 +15,7 @@ Note: PatternFly React charts live in its own package at [@patternfly/react-char
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
-```js title=Right--aligned-legend
+```js title=Right-aligned-legend
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
@@ -44,7 +44,7 @@ RightAlignedLegend = (
 )
 ```
 
-```js title=Bottom--aligned-legend
+```js title=Bottom-aligned-legend
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 

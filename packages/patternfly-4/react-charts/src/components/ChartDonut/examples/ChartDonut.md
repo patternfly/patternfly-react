@@ -1,5 +1,5 @@
 ---
-title: 'Donut'
+title: 'Donut chart'
 section: 'charts'
 typescript: true
 propComponents: [
@@ -38,7 +38,7 @@ Basic = (
 )
 ```
 
-```js title=Right--aligned-legend
+```js title=Right-aligned-legend
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
@@ -67,7 +67,7 @@ RightAlignedLegend = (
 )
 ```
 
-```js title=Multi--color-right--aligned-legend
+```js title=Multi--color-right-aligned-legend
 import React from 'react';
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
@@ -97,7 +97,7 @@ MultiColorRightAlignedLegend = (
 )
 ```
 
-```js title=Bottom--aligned-legend
+```js title=Bottom-aligned-legend
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
@@ -149,7 +149,7 @@ Small = (
 )
 ```
 
-```js title=Small-with-right--aligned-legend
+```js title=Small-with-right-aligned-legend
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
@@ -179,7 +179,7 @@ SmallWithRightLegend = (
 )
 ```
 
-```js title=Small-with-bottom--aligned-subtitle
+```js title=Small-with-bottom-aligned-subtitle
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
@@ -210,7 +210,7 @@ SmallBottomSubtitle = (
 )
 ```
 
-```js title=Small-with-right--aligned-subtitle
+```js title=Small-with-right-aligned-subtitle
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 

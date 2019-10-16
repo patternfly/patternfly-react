@@ -1,5 +1,5 @@
 ---
-title: 'Bar'
+title: 'Bar chart'
 section: 'charts'
 typescript: true
 propComponents: [
@@ -23,7 +23,7 @@ Learn to build a bar chart using a Katacoda tutorial starting with a simple char
 [Start course](https://katacoda.com/patternfly/courses/charts/bar-chart)
 
 ## Examples
-```js title=Right--aligned-legend
+```js title=Right-aligned-legend
 import React from 'react';
 import { Chart, ChartBar } from '@patternfly/react-charts';
 
@@ -60,7 +60,7 @@ RightLegend = (
 )
 ```
 
-```js title=Purple-with-bottom--aligned-legend
+```js title=Purple-with-bottom-aligned-legend
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
@@ -96,7 +96,7 @@ PurpleBottomLegend = (
 )
 ```
 
-```js title=Multi--color-with-bottom--left--aligned-legend
+```js title=Multi--color-with-bottom--left-aligned-legend
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 
@@ -135,7 +135,7 @@ BottomLeftLegend = (
 )
 ```
 
-```js title=Right--aligned-legend
+```js title=Right-aligned-legend
 import React from 'react';
 import { Chart, ChartBar } from '@patternfly/react-charts';
 

@@ -1,5 +1,5 @@
 ---
-title: 'Stack'
+title: 'Stack chart'
 section: 'charts'
 typescript: true
 propComponents: [
@@ -23,7 +23,7 @@ Learn to build a stack chart using a Katacoda tutorial starting with a simple ch
 [Start course](https://katacoda.com/patternfly/courses/charts/stack-chart)
 
 ## Examples
-```js title=Right--aligned-legend
+```js title=Right-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartStack } from '@patternfly/react-charts';
 
@@ -59,7 +59,7 @@ RightAlignedLegend = (
 )
 ```
 
-```js title=Horizontal-with-bottom--aligned-legend
+```js title=Horizontal-with-bottom-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 
@@ -95,7 +95,7 @@ Horizontal = (
 )
 ```
 
-```js title=Multi-color-horizontal-with-bottom--aligned-legend
+```js title=Multi-color-horizontal-with-bottom-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 

@@ -1,5 +1,5 @@
 ---
-title: 'Pie'
+title: 'Pie chart'
 section: 'charts'
 typescript: true
 propComponents: ['ChartPie']
@@ -17,7 +17,7 @@ Learn to build a pie chart using a Katacoda tutorial starting with a simple char
 [Start course](https://katacoda.com/patternfly/courses/charts/pie-chart)
 
 ## Examples
-```js title=Right--aligned-legend
+```js title=Right-aligned-legend
 import React from 'react';
 import { ChartPie } from '@patternfly/react-charts';
 
@@ -45,7 +45,7 @@ RightAlignedLegend = (
 )
 ```
 
-```js title=Orange-with-right--aligned-legend
+```js title=Orange-with-right-aligned-legend
 import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
@@ -74,7 +74,7 @@ OrangeLegendRight = (
 )
 ```
 
-```js title=Multi-color-with-bottom--aligned-legend
+```js title=Multi-color-with-bottom-aligned-legend
 import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
