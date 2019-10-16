@@ -2,13 +2,17 @@
 title: 'Bullet'
 section: 'charts'
 typescript: true
-propComponents: ['ChartAxis', 'ChartBullet', 'ChartContainer']
+propComponents: [
+  'ChartAxis',
+  'ChartBullet',
+  'ChartContainer'
+]
 ---
 
 import { ChartAxis, ChartBullet, ChartContainer, ChartThemeColor } from '@patternfly/react-charts';
 import { Button, Tooltip } from '@patternfly/react-core';
-import './chart-bullet.scss';
 
+## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
@@ -18,12 +22,12 @@ Learn to build a bullet chart using a Katacoda tutorial starting with a simple c
 [Start course](https://katacoda.com/patternfly/courses/charts/bullet-chart)
 
 ## Examples
-```js title=Simple-bullet-chart
+```js title=Basic
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-horz">
+Basic = (
+  <div style={{ height: '150px', width: '600px' }}>
     <ChartBullet
       ariaDesc="Storage capacity"
       ariaTitle="Bullet chart example"
@@ -37,15 +41,15 @@ import { ChartBullet } from '@patternfly/react-charts';
       width={600}
     />
   </div>
-</div>
+)
 ```
 
-```js title=Bullet-chart-with-segmented-primary-measure
+```js title=Segmented-primary-measure
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-horz-legend-bottom">
+SegmentedPrimaryMeasure = (
+  <div style={{ height: '200px', width: '600px' }}>
     <ChartBullet
       ariaDesc="Storage capacity"
       ariaTitle="Bullet chart example"
@@ -70,10 +74,10 @@ import { ChartBullet } from '@patternfly/react-charts';
       width={600}
     />
   </div>
-</div>
+)
 ```
 
-```js title=Bullet-chart-with-bottom-left-aligned-legend,-top-left-aligned-label,-and-responsive-container
+```js title=Responsive-container-with-bottom--aligned-legend
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -103,35 +107,33 @@ class BulletChart extends React.Component {
   render() {
     const { width } = this.state;
     return (
-      <div ref={this.containerRef}>
-        <div className="bullet-chart-horz-responsive-legend-bottom">
-          <ChartBullet
-            ariaDesc="Storage capacity"
-            ariaTitle="Bullet chart example"
-            comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
-            comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
-            constrainToVisibleArea
-            height={250}
-            labels={({ datum }) => `${datum.name}: ${datum.y}`}
-            legendAllowWrap={true}
-            legendPosition="bottom-left"
-            maxDomain={{y: 100}}
-            padding={{
-              bottom: 50,
-              left: 50,
-              right: 50,
-              top: 100 // Adjusted to accommodate labels
-            }}
-            primarySegmentedMeasureData={[{ name: 'Measure', y: 25 }, { name: 'Measure', y: 60 }]}
-            primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }]}
-            qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
-            qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
-            subTitle="Measure details"
-            title="Text label"
-            titlePosition="top-left"
-            width={width}
-          />
-        </div>
+      <div ref={this.containerRef} style={{ height: '250px' }}>
+        <ChartBullet
+          ariaDesc="Storage capacity"
+          ariaTitle="Bullet chart example"
+          comparativeWarningMeasureData={[{name: 'Warning', y: 88}]}
+          comparativeWarningMeasureLegendData={[{ name: 'Warning' }]}
+          constrainToVisibleArea
+          height={250}
+          labels={({ datum }) => `${datum.name}: ${datum.y}`}
+          legendAllowWrap={true}
+          legendPosition="bottom-left"
+          maxDomain={{y: 100}}
+          padding={{
+            bottom: 50,
+            left: 50,
+            right: 50,
+            top: 100 // Adjusted to accommodate labels
+          }}
+          primarySegmentedMeasureData={[{ name: 'Measure', y: 25 }, { name: 'Measure', y: 60 }]}
+          primarySegmentedMeasureLegendData={[{ name: 'Measure 1' }, { name: 'Measure 2' }]}
+          qualitativeRangeData={[{ name: 'Range', y: 50 }, { name: 'Range', y: 75 }]}
+          qualitativeRangeLegendData={[{ name: 'Range 1' }, { name: 'Range 2' }]}
+          subTitle="Measure details"
+          title="Text label"
+          titlePosition="top-left"
+          width={width}
+        />
       </div>
     );
   }
@@ -142,8 +144,8 @@ class BulletChart extends React.Component {
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-horz-legend-bottom">
+PrimaryMeasureDot = (
+  <div style={{ height: '200px', width: '600px' }}>
     <ChartBullet
       ariaDesc="Storage capacity"
       ariaTitle="Bullet chart example"
@@ -168,15 +170,15 @@ import { ChartBullet } from '@patternfly/react-charts';
       width={600}
     />
   </div>
-</div>
+)
 ```
 
-```js title=Green-bullet-chart-with-error-measure-and-custom-axis-ticks-with-3-legend-items-per-row
+```js title=Error-measure-and-custom-axis-ticks
 import React from 'react';
 import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-horz-legend-bottom">
+ErrorMeasureCustomAxis = (
+  <div style={{ height: '200px', width: '600px' }}>
     <ChartBullet
       ariaDesc="Storage capacity"
       ariaTitle="Bullet chart example"
@@ -205,15 +207,15 @@ import { ChartAxis, ChartBullet } from '@patternfly/react-charts';
       width={600}
     />
   </div>
-</div>
+)
 ```
 
-```js title=Gold-bullet-chart-with-primary-measure-greater-than-max-range
+```js title=Primary-measure-outside-range
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-horz-legend-bottom">
+PrimaryMeasureOutsideRange = (
+  <div style={{ height: '200px', width: '600px' }}>
     <ChartBullet
       ariaDesc="Storage capacity"
       ariaTitle="Bullet chart example"
@@ -240,15 +242,15 @@ import { ChartBullet } from '@patternfly/react-charts';
       width={600}
     />
   </div>
-</div>
+)
 ```
 
-```js title=Bullet-chart-with-negative-primary-measure----for-measures-considered-to-be-bad-when-they-are-low
+```js title=Negative-primary-measure
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-horz-legend-bottom">
+NegativePrimaryMeasure = (
+  <div style={{ height: '200px', width: '600px' }}>
     <ChartBullet
       ariaDesc="Storage capacity"
       ariaTitle="Bullet chart example"
@@ -274,15 +276,15 @@ import { ChartBullet } from '@patternfly/react-charts';
       width={600}
     />
   </div>
-</div>
+)
 ```
 
-```js title=Reversed-bullet-chart-with-right-aligned-legend----for-measures-considered-to-be-good-when-they-are-low
+```js title=Reversed-with-right--aligned-legend
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-horz-legend-right">
+ReversedRightLegend = (
+  <div style={{ height: '200px', width: '700px' }}>
     <ChartBullet
       ariaDesc="Storage capacity"
       ariaTitle="Bullet chart example"
@@ -311,15 +313,15 @@ import { ChartBullet } from '@patternfly/react-charts';
       width={700}
     />
   </div>
-</div>
+)
 ```
 
-```js title=Bullet-chart-with-negative-and-positive-primary-measures-with-4-legend-items-per-row
+```js title=Negative-and-positive-primary-measures
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-horz-legend-bottom">
+PrimaryMeasures = (
+  <div style={{ height: '200px', width: '600px' }}>
     <ChartBullet
       ariaDesc="Storage capacity"
       ariaTitle="Bullet chart example"
@@ -346,15 +348,15 @@ import { ChartBullet } from '@patternfly/react-charts';
       width={600}
     />
   </div>
-</div>
+)
 ```
 
-```js title=Vertical-bullet-chart-with-segmented-primary-measure
+```js title=Vertical-with-segmented-primary-measure
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-vert-legend-bottom">
+Vertical = (
+  <div style={{ height: '500px', width: '500px' }}>
     <ChartBullet
       ariaDesc="Storage capacity"
       ariaTitle="Bullet chart example"
@@ -380,15 +382,15 @@ import { ChartBullet } from '@patternfly/react-charts';
       width={500}
     />
   </div>
-</div>
+)
 ```
 
-```js title=Gold,-vertical-bullet-chart-with-primary-measure-greater-than-max-range
+```js title=Vertical-primary-measure-outside-max-range
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-vert-legend-bottom">
+VerticalOutsideRange = (
+  <div style={{ height: '500px', width: '500px' }}>
     <ChartBullet
       ariaDesc="Storage capacity"
       ariaTitle="Bullet chart example"
@@ -416,15 +418,15 @@ import { ChartBullet } from '@patternfly/react-charts';
       width={500}
     />
   </div>
-</div>
+)
 ```
 
-```js title=Custom-bullet-chart-size
+```js title=Custom-size
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-horz-legend-bottom">
+CustomSize = (
+  <div style={{ height: '200px', width: '600px' }}>
     <ChartBullet
       ariaDesc="Storage capacity"
       ariaTitle="Bullet chart example"
@@ -449,15 +451,15 @@ import { ChartBullet } from '@patternfly/react-charts';
       width={600}
     />
   </div>
-</div>
+)
 ```
 
-```js title=Horizontal-group-bullet-chart
+```js title=Horizontal-group
 import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-horz-group-legend-bottom">
+HorizontalGroup = (
+  <div style={{ height: '500px', width: '600px' }}>
     <ChartContainer 
         ariaDesc="Storage capacity"
         ariaTitle="Bullet chart example"
@@ -545,15 +547,15 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       />
     </ChartContainer>
   </div>
-</div>
+)
 ```
 
-```js title=Vertical-group-bullet-chart
+```js title=Vertical-group
 import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-vert-group-legend-bottom">
+VerticalGroup = (
+  <div style={{ height: '600px', width: '500px' }}>
     <ChartContainer 
         ariaDesc="Storage capacity"
         ariaTitle="Bullet chart example"
@@ -645,15 +647,15 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       />
     </ChartContainer>
   </div>
-</div>
+)
 ```
 
-```js title=Horizontal-group-bullet-chart-with-group-title
+```js title=Horizontal-group-with-title
 import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-horz-group-title-legend-bottom">
+HorizontalGroupWithTitle = (
+  <div style={{ height: '600px', width: '600px' }}>
     <ChartContainer 
         ariaDesc="Storage capacity"
         ariaTitle="Bullet chart example"
@@ -743,15 +745,15 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       />
     </ChartContainer>
   </div>
-</div>
+)
 ```
 
-```js title=Vertical-group-bullet-chart-with-group-title
+```js title=Vertical-group-with-title
 import React from 'react';
 import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
 
-<div>
-  <div className="bullet-chart-vert-group-legend-bottom">
+VerticalGroupWithTitle = (
+  <div style={{ height: '600px', width: '500px' }}>
     <ChartContainer 
         ariaDesc="Storage capacity"
         ariaTitle="Bullet chart example"
@@ -845,15 +847,13 @@ import { ChartBullet, ChartContainer } from '@patternfly/react-charts';
       />
     </ChartContainer>
   </div>
-</div>
+)
 ```
 
-## Tips
-
+## Documentation
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
-## Docs
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

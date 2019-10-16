@@ -23,14 +23,7 @@ module.exports = {
           { text: 'Global CSS Variables', link: '/documentation/global-css-variables' },
         ],
         topNavItems: [
-          {
-            text: 'Contribute',
-            link: '/contributing'
-          },
-          {
-            text: 'Icons',
-            link: '/icons'
-          }
+          { text: 'Icons', link: '/icons' },
         ],
       }
     },

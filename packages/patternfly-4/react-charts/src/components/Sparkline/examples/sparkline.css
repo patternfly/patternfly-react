@@ -1,0 +1,9 @@
+.ws-react-charts-sparkline-overflow {
+  margin-left: 50px;
+  margin-top: 50px;
+  height: 135px;
+}
+
+.ws-react-charts-sparkline-overflow svg {
+  overflow: visible;
+}

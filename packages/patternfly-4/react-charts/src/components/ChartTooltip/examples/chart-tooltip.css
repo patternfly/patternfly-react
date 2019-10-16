@@ -1,0 +1,9 @@
+.ws-react-charts-tooltip-overflow {
+  margin-left: 50px;
+  margin-top: 50px;
+  height: 135px;
+}
+
+.ws-react-charts-tooltip-overflow svg {
+  overflow: visible;
+}
