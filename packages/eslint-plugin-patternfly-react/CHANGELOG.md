@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/patternfly/patternfly-react/compare/eslint-plugin-patternfly-react@0.2.3...eslint-plugin-patternfly-react@0.3.0) (2019-10-16)
+
+
+### Features
+
+* **eslint:** add eslint-plugin-react-hooks ([#3083](https://github.com/patternfly/patternfly-react/issues/3083)) ([c47f143](https://github.com/patternfly/patternfly-react/commit/c47f143))
+
+
+
+
+
 ## 0.2.3 (2019-04-15)
 
 
