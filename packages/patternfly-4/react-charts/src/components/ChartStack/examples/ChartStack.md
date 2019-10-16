@@ -2,12 +2,18 @@
 title: 'Stack'
 section: 'charts'
 typescript: true
-propComponents: ['Chart', 'ChartArea', 'ChartBar', 'ChartStack', 'ChartTooltip']
+propComponents: [
+  'Chart',
+  'ChartArea',
+  'ChartBar',
+  'ChartStack',
+  'ChartTooltip'
+]
 ---
 
 import { Chart, ChartArea, ChartBar, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
-import './chart-stack.scss';
 
+## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
@@ -17,12 +23,12 @@ Learn to build a stack chart using a Katacoda tutorial starting with a simple ch
 [Start course](https://katacoda.com/patternfly/courses/charts/stack-chart)
 
 ## Examples
-```js title=Simple-stack-chart-with-right-aligned-legend
+```js title=Right--aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartStack } from '@patternfly/react-charts';
 
-<div>
-  <div className="stack-chart-legend-right">
+RightAlignedLegend = (
+  <div style={{ height: '250px', width: '600px' }}>
     <Chart
       ariaDesc="Average number of pets"
       ariaTitle="Stack chart example"
@@ -50,15 +56,15 @@ import { Chart, ChartAxis, ChartStack } from '@patternfly/react-charts';
       </ChartStack>
     </Chart>
   </div>
-</div>
+)
 ```
 
-```js title=Gold,-horizontal-stacked-bar-chart-with-bottom-aligned-legend
+```js title=Horizontal-with-bottom--aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 
-<div>
-  <div className="stack-chart-legend-bottom">
+Horizontal = (
+  <div style={{ height: '275px', width: '450px' }}>
     <Chart
       ariaDesc="Average number of pets"
       ariaTitle="Stack chart example"
@@ -86,79 +92,80 @@ import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react
       </ChartStack>
     </Chart>
   </div>
-</div>
+)
 ```
 
-```js title=Multi-color-(ordered),-horizontal-stacked-bar-chart-with-bottom-left-aligned-legend
+```js title=Multi-color-horizontal-with-bottom--aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 
-<div>
-  <p>This demonstrates an alternate way of applying tooltips using data labels</p>
-  <div className="stack-chart-legend-bottom">
-    <Chart
-      ariaDesc="Average number of pets"
-      ariaTitle="Stack chart example"
-      domainPadding={{ x: [30, 25] }}
-      legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
-      legendPosition="bottom-left"
-      height={275}
-      padding={{
-        bottom: 75, // Adjusted to accommodate legend
-        left: 50,
-        right: 50, 
-        top: 50
-      }}
-      themeColor={ChartThemeColor.multiOrdered}
-      width={450}
-    >
-      <ChartAxis />
-      <ChartAxis dependentAxis showGrid />
-      <ChartStack horizontal>
-        <ChartBar 
-          data={[
-            { name: 'Cats', x: '2015', y: 1, label: 'Cats: 1' }, 
-            { name: 'Cats', x: '2016', y: 2, label: 'Cats: 2' }, 
-            { name: 'Cats', x: '2017', y: 5, label: 'Cats: 5' }, 
-            { name: 'Cats', x: '2018', y: 3, label: 'Cats: 3' }
-          ]} 
-          labelComponent={<ChartTooltip constrainToVisibleArea />}
-        />
-        <ChartBar 
-          data={[
-            { name: 'Dogs', x: '2015', y: 2, label: 'Dogs: 2' }, 
-            { name: 'Dogs', x: '2016', y: 1, label: 'Dogs: 1' }, 
-            { name: 'Dogs', x: '2017', y: 7, label: 'Dogs: 7' }, 
-            { name: 'Dogs', x: '2018', y: 4, label: 'Dogs: 4' }
-          ]}
-          labelComponent={<ChartTooltip constrainToVisibleArea />}
-        />
-        <ChartBar 
-          data={[
-            { name: 'Birds', x: '2015', y: 4, label: 'Birds: 4' }, 
-            { name: 'Birds', x: '2016', y: 4, label: 'Birds: 4' }, 
-            { name: 'Birds', x: '2017', y: 9, label: 'Birds: 9' }, 
-            { name: 'Birds', x: '2018', y: 7, label: 'Birds: 7' }
-          ]}
-          labelComponent={<ChartTooltip constrainToVisibleArea />}
-        />
-        <ChartBar 
-          data={[
-            { name: 'Mice', x: '2015', y: 3, label: 'Mice: 3' }, 
-            { name: 'Mice', x: '2016', y: 3, label: 'Mice: 3' }, 
-            { name: 'Mice', x: '2017', y: 8, label: 'Mice: 8' }, 
-            { name: 'Mice', x: '2018', y: 5, label: 'Mice: 5' }
-          ]}
-          labelComponent={<ChartTooltip constrainToVisibleArea />}
-        />
-      </ChartStack>
-    </Chart>
+MultiColorHorizontal = (
+  <div>
+    <p>This demonstrates an alternate way of applying tooltips using data labels</p>
+    <div style={{ height: '275px', width: '450px' }}>
+      <Chart
+        ariaDesc="Average number of pets"
+        ariaTitle="Stack chart example"
+        domainPadding={{ x: [30, 25] }}
+        legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
+        legendPosition="bottom-left"
+        height={275}
+        padding={{
+          bottom: 75, // Adjusted to accommodate legend
+          left: 50,
+          right: 50, 
+          top: 50
+        }}
+        themeColor={ChartThemeColor.multiOrdered}
+        width={450}
+      >
+        <ChartAxis />
+        <ChartAxis dependentAxis showGrid />
+        <ChartStack horizontal>
+          <ChartBar 
+            data={[
+              { name: 'Cats', x: '2015', y: 1, label: 'Cats: 1' }, 
+              { name: 'Cats', x: '2016', y: 2, label: 'Cats: 2' }, 
+              { name: 'Cats', x: '2017', y: 5, label: 'Cats: 5' }, 
+              { name: 'Cats', x: '2018', y: 3, label: 'Cats: 3' }
+            ]} 
+            labelComponent={<ChartTooltip constrainToVisibleArea />}
+          />
+          <ChartBar 
+            data={[
+              { name: 'Dogs', x: '2015', y: 2, label: 'Dogs: 2' }, 
+              { name: 'Dogs', x: '2016', y: 1, label: 'Dogs: 1' }, 
+              { name: 'Dogs', x: '2017', y: 7, label: 'Dogs: 7' }, 
+              { name: 'Dogs', x: '2018', y: 4, label: 'Dogs: 4' }
+            ]}
+            labelComponent={<ChartTooltip constrainToVisibleArea />}
+          />
+          <ChartBar 
+            data={[
+              { name: 'Birds', x: '2015', y: 4, label: 'Birds: 4' }, 
+              { name: 'Birds', x: '2016', y: 4, label: 'Birds: 4' }, 
+              { name: 'Birds', x: '2017', y: 9, label: 'Birds: 9' }, 
+              { name: 'Birds', x: '2018', y: 7, label: 'Birds: 7' }
+            ]}
+            labelComponent={<ChartTooltip constrainToVisibleArea />}
+          />
+          <ChartBar 
+            data={[
+              { name: 'Mice', x: '2015', y: 3, label: 'Mice: 3' }, 
+              { name: 'Mice', x: '2016', y: 3, label: 'Mice: 3' }, 
+              { name: 'Mice', x: '2017', y: 8, label: 'Mice: 8' }, 
+              { name: 'Mice', x: '2018', y: 5, label: 'Mice: 5' }
+            ]}
+            labelComponent={<ChartTooltip constrainToVisibleArea />}
+          />
+        </ChartStack>
+      </Chart>
+    </div>
   </div>
-</div>
+)
 ```
 
-## 
-```js title=Monthly stacked bar chart with bottom aligned legend and responsive container
+```js title=Responsive-container
 import React from 'react';
 import { Chart, ChartAxis, ChartStack, ChartTooltip } from '@patternfly/react-charts';
 
@@ -243,7 +250,7 @@ class ResponsiveStack extends React.Component {
     return (
       <div ref={this.containerRef}>
         <p>This demonstrates monthly data and responsiveness for mobile</p>
-        <div>
+        <div style={{ height: '225px' }}>
           <Chart
             ariaDesc="Stack Chart with monthly metric data"
             ariaTitle="Monthly Stack Chart"
@@ -274,7 +281,7 @@ class ResponsiveStack extends React.Component {
 }
 ```
 
-```js title=Multi-color-(unorderd),-stacked-area-chart-with-bottom-left-aligned-legend-and-responsive-container
+```js title=Multi-color-responsive-container
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 
@@ -306,7 +313,7 @@ class MultiColorChart extends React.Component {
     
     return (
       <div ref={this.containerRef}>
-        <div className="stack-area-chart-legend-bottom-responsive">
+        <div style={{ height: '225px' }}>
           <Chart
             ariaDesc="Average number of pets"
             ariaTitle="Area chart example"
@@ -372,15 +379,13 @@ class MultiColorChart extends React.Component {
 }
 ```
 
-## Tips
-
+## Documentation
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 - Themes are inherited, so a default theme may override `themeColor` for a child component
 - The `theme` and `themeColor` props should be applied at the most top level component
 
-## Docs
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

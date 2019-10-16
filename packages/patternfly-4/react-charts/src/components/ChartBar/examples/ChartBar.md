@@ -2,15 +2,20 @@
 title: 'Bar'
 section: 'charts'
 typescript: true
-propComponents: ['Chart', 'ChartAxis', 'ChartBar', 'ChartGroup', 'ChartVoronoiContainer']
+propComponents: [
+  'Chart',
+  'ChartAxis',
+  'ChartBar',
+  'ChartGroup',
+  'ChartVoronoiContainer'
+]
 ---
 
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
-import './chart-bar.scss';
-
-Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
 ## Introduction
+Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
+
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
 Learn to build a bar chart using a Katacoda tutorial starting with a simple chart, adding multiple datasets, tooltips, axis labels, a legend, and concluding by changing the theme color. You'll learn how to use React chart components together to build a consistent user experience.
@@ -18,12 +23,12 @@ Learn to build a bar chart using a Katacoda tutorial starting with a simple char
 [Start course](https://katacoda.com/patternfly/courses/charts/bar-chart)
 
 ## Examples
-```js title=Simple-bar-chart-with-right-aligned-legend
+```js title=Right--aligned-legend
 import React from 'react';
 import { Chart, ChartBar } from '@patternfly/react-charts';
 
-<div>
-  <div className="bar-chart-legend-right">
+RightLegend = (
+  <div style={{ height: '250px', width: '600px' }}>
     <Chart
       ariaDesc="Average number of pets"
       ariaTitle="Bar chart example"
@@ -52,15 +57,15 @@ import { Chart, ChartBar } from '@patternfly/react-charts';
       </ChartGroup>
     </Chart>
   </div>
-</div>
+)
 ```
 
-```js title=Purple-bar-chart-with-right-aligned-legend
+```js title=Purple-with-bottom--aligned-legend
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
-<div>
-  <div className="bar-chart-legend-bottom">
+PurpleBottomLegend = (
+  <div style={{ height: '275px', width: '450px' }}>
     <Chart
       ariaDesc="Average number of pets"
       ariaTitle="Bar chart example"
@@ -88,52 +93,54 @@ import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } f
       </ChartGroup>
     </Chart>
   </div>
-</div>
+)
 ```
 
-```js title=Multi-color-(ordered),-horizontal-bar-chart-with-bottom-left-aligned-legend
+```js title=Multi--color-with-bottom--left--aligned-legend
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 
-<div>
-  This demonstrates zoom for both the x and y axis
-  <div className="bar-chart-legend-bottom-left">
-    <Chart
-      allowZoom
-      ariaDesc="Average number of pets"
-      ariaTitle="Bar chart example"
-      domainPadding={{ x: [30, 25] }}
-      legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
-      legendPosition="bottom-left"
-      height={400}
-      padding={{
-        bottom: 75, // Adjusted to accommodate legend
-        left: 50,
-        right: 100, // Adjusted to accommodate tooltip
-        top: 50
-      }}
-      themeColor={ChartThemeColor.multiOrdered}
-      width={450}
-    >
-      <ChartAxis />
-      <ChartAxis dependentAxis showGrid />
-      <ChartGroup offset={11} horizontal>
-        <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
-        <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
-        <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
-        <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
-      </ChartGroup>
-    </Chart>
+BottomLeftLegend = (
+  <div>
+    This demonstrates zoom for both the x and y axis
+    <div style={{ height: '400px', width: '450px' }}>
+      <Chart
+        allowZoom
+        ariaDesc="Average number of pets"
+        ariaTitle="Bar chart example"
+        domainPadding={{ x: [30, 25] }}
+        legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }, { name: 'Mice' }]}
+        legendPosition="bottom-left"
+        height={400}
+        padding={{
+          bottom: 75, // Adjusted to accommodate legend
+          left: 50,
+          right: 100, // Adjusted to accommodate tooltip
+          top: 50
+        }}
+        themeColor={ChartThemeColor.multiOrdered}
+        width={450}
+      >
+        <ChartAxis />
+        <ChartAxis dependentAxis showGrid />
+        <ChartGroup offset={11} horizontal>
+          <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
+          <ChartBar data={[{ name: 'Dogs', x: '2015', y: 2 }, { name: 'Dogs', x: '2016', y: 1 }, { name: 'Dogs', x: '2017', y: 7 }, { name: 'Dogs', x: '2018', y: 4 }]} />
+          <ChartBar data={[{ name: 'Birds', x: '2015', y: 4 }, { name: 'Birds', x: '2016', y: 4 }, { name: 'Birds', x: '2017', y: 9 }, { name: 'Birds', x: '2018', y: 7 }]} />
+          <ChartBar data={[{ name: 'Mice', x: '2015', y: 3 }, { name: 'Mice', x: '2016', y: 3 }, { name: 'Mice', x: '2017', y: 8 }, { name: 'Mice', x: '2018', y: 5 }]} />
+        </ChartGroup>
+      </Chart>
+    </div>
   </div>
-</div>
+)
 ```
 
-```js title=Single-bar-chart-with-right-aligned-legend
+```js title=Right--aligned-legend
 import React from 'react';
 import { Chart, ChartBar } from '@patternfly/react-charts';
 
-<div>
-  <div className="bar-chart-legend-right">
+RightAlignedLegend = (
+  <div style={{ height: '250px', width: '600px' }}>
     <Chart
       ariaDesc="Average number of pets"
       ariaTitle="Bar chart example"
@@ -155,18 +162,16 @@ import { Chart, ChartBar } from '@patternfly/react-charts';
       <ChartBar data={[{ name: 'Cats', x: '2015', y: 1 }, { name: 'Cats', x: '2016', y: 2 }, { name: 'Cats', x: '2017', y: 5 }, { name: 'Cats', x: '2018', y: 3 }]} />
     </Chart>
   </div>
-</div>
+)
 ```
 
-## Tips
-
+## Documentation
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 - The `theme` and `themeColor` props should be applied at the most top level component
 - Use `ChartGroup` to apply theme color scales and other properties to multiple components
 
-## Docs
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

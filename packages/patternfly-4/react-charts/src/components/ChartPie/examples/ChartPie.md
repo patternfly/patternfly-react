@@ -6,8 +6,8 @@ propComponents: ['ChartPie']
 ---
 
 import { ChartPie, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
-import './chart-pie.scss';
 
+## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
@@ -17,12 +17,12 @@ Learn to build a pie chart using a Katacoda tutorial starting with a simple char
 [Start course](https://katacoda.com/patternfly/courses/charts/pie-chart)
 
 ## Examples
-```js title=Simple-pie-chart-with-right-aligned-legend
+```js title=Right--aligned-legend
 import React from 'react';
 import { ChartPie } from '@patternfly/react-charts';
 
-<div>
-  <div className="pie-chart-legend-right">
+RightAlignedLegend = (
+  <div style={{ height: '230px', width: '350px' }}>
     <ChartPie
       ariaDesc="Average number of pets"
       ariaTitle="Pie chart example"
@@ -42,15 +42,15 @@ import { ChartPie } from '@patternfly/react-charts';
       width={350}
     />
   </div>
-</div>
+)
 ```
 
-```js title=Orange-pie-chart-with-right-aligned-legend
+```js title=Orange-with-right--aligned-legend
 import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
-<div>
-  <div className="pie-chart-legend-right">
+OrangeLegendRight = (
+  <div style={{ height: '230px', width: '350px' }}>
     <ChartPie
       ariaDesc="Average number of pets"
       ariaTitle="Pie chart example"
@@ -71,15 +71,15 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
       width={350}
     />
   </div>
-</div>
+)
 ```
 
-```js title=Multi-color-(ordered)-pie-chart-with-bottom-aligned-legend
+```js title=Multi-color-with-bottom--aligned-legend
 import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
-<div>
-  <div className="pie-chart-legend-bottom">
+MultiColor = (
+  <div style={{ height: '275px', width: '300px' }}>
     <ChartPie
       ariaDesc="Average number of pets"
       ariaTitle="Pie chart example"
@@ -99,16 +99,14 @@ import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
       width={300}
     />
   </div>
-</div>
+)
 ```
 
-## Tips
-
+## Documentation
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
-## Docs
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
