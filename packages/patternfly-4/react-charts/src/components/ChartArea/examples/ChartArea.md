@@ -1,5 +1,5 @@
 ---
-title: 'Area Chart'
+title: 'Area chart'
 section: 'charts'
 typescript: true
 propComponents: [
@@ -10,6 +10,7 @@ propComponents: [
   'ChartThreshold',
   'ChartVoronoiContainer',
 ]
+hideDarkMode: true
 ---
 
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThreshold, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer } from '@patternfly/react-charts';
@@ -25,12 +26,12 @@ Learn to build an area chart using a Katacoda tutorial starting with a simple ch
 [Start course](https://katacoda.com/patternfly/courses/charts/area-chart)
 
 ## Examples
-```js title=Right-aligned-legend
+```js title=Basic-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
-RightAlignedLegend = (
+BasicRightAlignedLegend = (
   <div style={{ height: '200px', width: '800px' }}>
     <Chart
       ariaDesc="Average number of pets"
@@ -87,7 +88,7 @@ RightAlignedLegend = (
 )
 ```
 
-```js title=Cyan-bottom-aligned-legend-and-axis-label
+```js title=Cyan-with-bottom-aligned-legend-and-axis-label
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
@@ -181,7 +182,7 @@ class MultiColorChart extends React.Component {
     const { width } = this.state;
 
     return (
-      <div ref={this.containerRef} style={{ height: '250px' }}>
+      <div ref={this.containerRef} style={{ height: '225px' }}>
         <Chart
           ariaDesc="Average number of pets"
           ariaTitle="Area chart example"
@@ -240,12 +241,14 @@ class MultiColorChart extends React.Component {
 ```
 
 ## Documentation
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 - The `theme` and `themeColor` props should be applied at the most top level component
 - Use `ChartGroup` to apply theme color scales and other properties to multiple components
 
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

@@ -5,6 +5,7 @@ typescript: true
 propComponents: [
   'ChartLegend'
 ]
+hideDarkMode: true
 ---
 
 import { Chart, ChartArea, ChartAxis, ChartBullet, ChartGroup, ChartLegend, ChartLine, ChartPie, ChartScatter, ChartThemeColor } from '@patternfly/react-charts';
@@ -15,11 +16,12 @@ Note: PatternFly React charts live in its own package at [@patternfly/react-char
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
-```js title=Right-aligned-legend
+## Examples
+```js title=Basic-with-right-aligned-legend
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
-RightAlignedLegend = (
+BasicRightAlignedLegend = (
   <div style={{ height: '230px', width: '350px' }}>
     <ChartDonut
       ariaDesc="Average number of pets"
@@ -80,7 +82,7 @@ BottomAlignedLegend = (
 )
 ```
 
-```js title=Responsive-legend
+```js title=Responsive-bottom--left-aligned-legend
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -544,9 +546,11 @@ class InteractiveLegendChart extends React.Component {
 -->
 
 ## Documentation
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

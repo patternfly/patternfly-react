@@ -9,6 +9,7 @@ propComponents: [
   'ChartLabel',
   'ChartVoronoiContainer'
 ]
+hideDarkMode: true
 ---
 
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
@@ -95,12 +96,14 @@ Green = (
 ```
 
 ## Documentation
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - Use `ChartGroup` in place of `Chart` when an axis and labels are not desired
 - Themes are inherited, so a default theme may override `themeColor` for a child component
 - The `theme` and `themeColor` props should be applied at the most top level component
 
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

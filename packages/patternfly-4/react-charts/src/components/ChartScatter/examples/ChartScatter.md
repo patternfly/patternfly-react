@@ -10,6 +10,7 @@ propComponents: [
   'ChartLine',
   'ChartScatter'
 ]
+hideDarkMode: true
 ---
 
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor } from '@patternfly/react-charts';
@@ -20,6 +21,7 @@ Note: PatternFly React charts live in its own package at [@patternfly/react-char
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
+## Examples
 ```js title=Area-chart
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartScatter, ChartThemeColor } from '@patternfly/react-charts';
@@ -268,6 +270,7 @@ class ScatterLineChart extends React.Component {
 
 - For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
 
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

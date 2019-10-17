@@ -7,6 +7,7 @@ propComponents: [
   'ChartThemeColor',
   'ChartThemeVariant'
 ]
+hideDarkMode: true
 ---
 
 import { Chart, ChartArea, ChartAxis, ChartBar, ChartDonut, ChartGroup, ChartLegend, ChartLine, ChartStack, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer, getCustomTheme } from '@patternfly/react-charts';
@@ -390,10 +391,12 @@ class MultiColorChart extends React.Component {
 
 ## Documentation
 
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - The `theme` and `themeColor` props should be applied at the most top level component
 - Use `ChartGroup` to apply theme color scales and other properties to multiple components
 
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

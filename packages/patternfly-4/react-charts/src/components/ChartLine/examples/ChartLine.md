@@ -9,6 +9,7 @@ propComponents: [
   'ChartLine',
   'ChartVoronoiContainer'
 ]
+hideDarkMode: true
 ---
 
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer } from '@patternfly/react-charts';
@@ -24,11 +25,11 @@ Learn to build a line chart using a Katacoda tutorial starting with a simple cha
 [Start course](https://katacoda.com/patternfly/courses/charts/line-chart)
 
 ## Examples
-```js title=Right-aligned-legend
+```js title=Basic-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartVoronoiContainer } from '@patternfly/react-charts';
 
-RightAligned = (
+BasicRightAligned = (
   <div style={{ height: '250px', width: '600px' }}>
     <Chart
       ariaDesc="Average number of pets"
@@ -164,7 +165,7 @@ Green = (
 )
 ```
 
-```js title=Multi--color-with-responsive-container
+```js title=Multi--color-(unordered)-with-responsive-container
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory';
@@ -267,12 +268,14 @@ class MultiColorChart extends React.Component {
 ```
 
 ## Documentation
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 - The `theme` and `themeColor` props should be applied at the most top level component
 - Use `ChartGroup` to apply theme color scales and other properties to multiple components
 
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

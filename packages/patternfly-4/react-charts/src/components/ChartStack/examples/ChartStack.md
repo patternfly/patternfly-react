@@ -9,6 +9,7 @@ propComponents: [
   'ChartStack',
   'ChartTooltip'
 ]
+hideDarkMode: true
 ---
 
 import { Chart, ChartArea, ChartBar, ChartStack, ChartThemeColor, ChartTooltip } from '@patternfly/react-charts';
@@ -23,11 +24,11 @@ Learn to build a stack chart using a Katacoda tutorial starting with a simple ch
 [Start course](https://katacoda.com/patternfly/courses/charts/stack-chart)
 
 ## Examples
-```js title=Right-aligned-legend
+```js title=Basic-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartStack } from '@patternfly/react-charts';
 
-RightAlignedLegend = (
+BasicRightAlignedLegend = (
   <div style={{ height: '250px', width: '600px' }}>
     <Chart
       ariaDesc="Average number of pets"
@@ -95,7 +96,7 @@ Horizontal = (
 )
 ```
 
-```js title=Multi-color-horizontal-with-bottom-aligned-legend
+```js title=Multi--color-(ordered)-horizontal-with-bottom-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 
@@ -165,11 +166,11 @@ MultiColorHorizontal = (
 )
 ```
 
-```js title=Responsive-container
+```js title=Monthly-data-with-responsive-container
 import React from 'react';
 import { Chart, ChartAxis, ChartStack, ChartTooltip } from '@patternfly/react-charts';
 
-class ResponsiveStack extends React.Component {
+class MonthlyResponsiveStack extends React.Component {
   constructor(props) {
     super(props);
     this.containerRef = React.createRef();
@@ -249,7 +250,7 @@ class ResponsiveStack extends React.Component {
     const { width } = this.state;
     return (
       <div ref={this.containerRef}>
-        <p>This demonstrates monthly data and responsiveness for mobile</p>
+        <p>This demonstrates monthly data with a bottom aligned legend and responsiveness for mobile</p>
         <div style={{ height: '225px' }}>
           <Chart
             ariaDesc="Stack Chart with monthly metric data"
@@ -281,7 +282,7 @@ class ResponsiveStack extends React.Component {
 }
 ```
 
-```js title=Multi-color-responsive-container
+```js title=Multi--color-(unordered)-responsive-container
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartStack, ChartThemeColor } from '@patternfly/react-charts';
 
@@ -380,12 +381,14 @@ class MultiColorChart extends React.Component {
 ```
 
 ## Documentation
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 - Themes are inherited, so a default theme may override `themeColor` for a child component
 - The `theme` and `themeColor` props should be applied at the most top level component
 
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

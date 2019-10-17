@@ -3,6 +3,7 @@ title: 'Pie chart'
 section: 'charts'
 typescript: true
 propComponents: ['ChartPie']
+hideDarkMode: true
 ---
 
 import { ChartPie, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
@@ -17,11 +18,11 @@ Learn to build a pie chart using a Katacoda tutorial starting with a simple char
 [Start course](https://katacoda.com/patternfly/courses/charts/pie-chart)
 
 ## Examples
-```js title=Right-aligned-legend
+```js title=Basic-with-right-aligned-legend
 import React from 'react';
 import { ChartPie } from '@patternfly/react-charts';
 
-RightAlignedLegend = (
+BasicRightAlignedLegend = (
   <div style={{ height: '230px', width: '350px' }}>
     <ChartPie
       ariaDesc="Average number of pets"
@@ -74,7 +75,7 @@ OrangeLegendRight = (
 )
 ```
 
-```js title=Multi-color-with-bottom-aligned-legend
+```js title=Multi--color-(ordered)-with-bottom-aligned-legend
 import React from 'react';
 import { ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 
@@ -103,10 +104,12 @@ MultiColor = (
 ```
 
 ## Documentation
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

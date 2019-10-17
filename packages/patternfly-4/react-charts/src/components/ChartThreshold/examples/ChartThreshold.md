@@ -9,6 +9,7 @@ propComponents: [
   'ChartThreshold',
   'ChartVoronoiContainer'
 ]
+hideDarkMode: true
 ---
 
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLegend, ChartThreshold, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer } from '@patternfly/react-charts';
@@ -24,7 +25,7 @@ Note: PatternFly React charts live in its own package at [@patternfly/react-char
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
 ## Examples
-```js title=Multi--color-with-responsive-container
+```js title=Multi--color-(unordered)-with-responsive-container
 import React from 'react';
 import {
   Chart,
@@ -166,10 +167,12 @@ class MultiColorChart extends React.Component {
 ```
 
 ## Documentation
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

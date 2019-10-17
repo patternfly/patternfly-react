@@ -3,12 +3,14 @@ title: 'Tooltip chart'
 section: 'charts'
 typescript: true
 propComponents: ['ChartTooltip']
+hideDarkMode: true
 ---
 
 import { Chart, ChartArea, ChartAxis, ChartBar, ChartDonut, ChartGroup, ChartLabel, ChartLine, ChartStack, ChartThemeColor, ChartTooltip, getCustomTheme } from '@patternfly/react-charts';
 import { Button, Tooltip } from '@patternfly/react-core';
 import './chart-tooltip.css';
 
+## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
@@ -19,7 +21,7 @@ import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
-  VononoiContainer = (
+VononoiContainer = (
   <div>
     <p>This demonstrates how to use a voronoi container to display tooltips</p>
     <div style={{ height: '200px', width: '800px' }}>
@@ -312,35 +314,37 @@ class TooltipThemeChart extends React.Component {
 import React from 'react';
 import { ChartArea, ChartContainer, ChartGroup, ChartLabel, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
-<div>
-  <p>This demonstrates an alternate way of applying tooltips using CSS overflow instead of <code>constrainToVisibleArea</code></p>
-  <div className="ws-react-charts-tooltip-overflow">
-    <div style={{ height: '100px', width: '400px' }}>
-      <ChartGroup
-        ariaDesc="Average number of pets"
-        ariaTitle="Sparkline chart example"
-        containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} />}
-        height={100}
-        maxDomain={{y: 9}}
-        padding={0}
-        themeColor={ChartThemeColor.green}
-        width={400}
-      >
-        <ChartArea
-          data={[
-            { name: 'Cats', x: '2015', y: 3 },
-            { name: 'Cats', x: '2016', y: 4 },
-            { name: 'Cats', x: '2017', y: 8 },
-            { name: 'Cats', x: '2018', y: 6 }
-          ]}
-        />
-      </ChartGroup>
+CSSOverflow = (
+  <div>
+    <p>This demonstrates an alternate way of applying tooltips using CSS overflow instead of <code>constrainToVisibleArea</code></p>
+    <div className="ws-react-charts-tooltip-overflow">
+      <div style={{ height: '100px', width: '400px' }}>
+        <ChartGroup
+          ariaDesc="Average number of pets"
+          ariaTitle="Sparkline chart example"
+          containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} />}
+          height={100}
+          maxDomain={{y: 9}}
+          padding={0}
+          themeColor={ChartThemeColor.green}
+          width={400}
+        >
+          <ChartArea
+            data={[
+              { name: 'Cats', x: '2015', y: 3 },
+              { name: 'Cats', x: '2016', y: 4 },
+              { name: 'Cats', x: '2017', y: 8 },
+              { name: 'Cats', x: '2018', y: 6 }
+            ]}
+          />
+        </ChartGroup>
+      </div>
+      <ChartContainer>
+        <ChartLabel text="CPU utilization" dy={15}/>
+      </ChartContainer>
     </div>
-    <ChartContainer>
-      <ChartLabel text="CPU utilization" dy={15}/>
-    </ChartContainer>
   </div>
-</div>
+)
 ```
 
 ```js title=Wrapped-chart
@@ -392,8 +396,10 @@ class TooltipChart extends React.Component {
 ```
 
 ## Documentation
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

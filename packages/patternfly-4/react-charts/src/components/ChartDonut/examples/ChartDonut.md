@@ -5,6 +5,7 @@ typescript: true
 propComponents: [
   'ChartDonut'
 ]
+hideDarkMode: true
 ---
 
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
@@ -67,7 +68,7 @@ RightAlignedLegend = (
 )
 ```
 
-```js title=Multi--color-right-aligned-legend
+```js title=Multi--color-(ordered)-with-right-aligned-legend
 import React from 'react';
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
@@ -241,11 +242,12 @@ SmallRightSubtitle = (
 ```
 
 ## Documentation
-
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

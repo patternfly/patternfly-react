@@ -9,6 +9,7 @@ propComponents: [
   'ChartGroup',
   'ChartVoronoiContainer'
 ]
+hideDarkMode: true
 ---
 
 import { Chart, ChartAxis, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
@@ -23,11 +24,11 @@ Learn to build a bar chart using a Katacoda tutorial starting with a simple char
 [Start course](https://katacoda.com/patternfly/courses/charts/bar-chart)
 
 ## Examples
-```js title=Right-aligned-legend
+```js title=Basic-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartBar } from '@patternfly/react-charts';
 
-RightLegend = (
+BasicRightAlignedLegend = (
   <div style={{ height: '250px', width: '600px' }}>
     <Chart
       ariaDesc="Average number of pets"
@@ -96,7 +97,7 @@ PurpleBottomLegend = (
 )
 ```
 
-```js title=Multi--color-with-bottom--left-aligned-legend
+```js title=Multi--color-(ordered)-with-bottom--left-aligned-legend
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 
@@ -135,11 +136,11 @@ BottomLeftLegend = (
 )
 ```
 
-```js title=Right-aligned-legend
+```js title=Single-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartBar } from '@patternfly/react-charts';
 
-RightAlignedLegend = (
+SingleRightAlignedLegend = (
   <div style={{ height: '250px', width: '600px' }}>
     <Chart
       ariaDesc="Average number of pets"
@@ -166,12 +167,14 @@ RightAlignedLegend = (
 ```
 
 ## Documentation
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 - The `theme` and `themeColor` props should be applied at the most top level component
 - Use `ChartGroup` to apply theme color scales and other properties to multiple components
 
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
