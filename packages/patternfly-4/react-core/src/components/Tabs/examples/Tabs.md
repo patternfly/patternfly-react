@@ -2,7 +2,7 @@
 title: 'Tabs'
 section: components
 cssPrefix: 'pf-c-tabs'
-propComponents: ['Tab', 'Tabs']
+propComponents: ['Tabs']
 typescript: true
 ---
 import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';

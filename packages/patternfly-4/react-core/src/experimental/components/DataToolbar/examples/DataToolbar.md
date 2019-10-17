@@ -2,7 +2,7 @@
 title: 'Data toolbar'
 cssPrefix: 'pf-c-data-toolbar'
 typescript: true
-propComponents: ['DataToolbar', 'DataToolbarContent', 'DataToolbarItem', 'DataToolbarGroup', 'DataToolbarToggleGroup', 'DataToolbarBreakpointMod', 'DataToolbarFilter', 'DataToolbarChip']
+propComponents: ['DataToolbar', 'DataToolbarContent', 'DataToolbarItem', 'DataToolbarGroup', 'DataToolbarToggleGroup', 'DataToolbarFilter']
 section: 'experimental'
 experimentalStage: 'early'
 ---

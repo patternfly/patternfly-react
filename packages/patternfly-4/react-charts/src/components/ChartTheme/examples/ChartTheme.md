@@ -3,8 +3,6 @@ title: 'Themed charts'
 section: 'charts'
 typescript: true
 propComponents: [
-  'ChartTheme',
-  'ChartThemeColor',
   'ChartThemeVariant'
 ]
 hideDarkMode: true

@@ -3,7 +3,7 @@ title: 'Background image'
 section: components
 cssPrefix: 'pf-c-background-image'
 typescript: true
-propComponents: ['BackgroundImage', 'BackgroundImageSrc']
+propComponents: ['BackgroundImage']
 ---
 
 import { BackgroundImage, BackgroundImageSrc } from '@patternfly/react-core';
