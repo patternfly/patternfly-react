@@ -26,13 +26,12 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react/blob/master/packages/react-catalog-view-extension/README.md",
   "scripts": {
-    "build": "yarn build:babel && yarn build:types && node ./scripts/copyTS.js && yarn build:sass && yarn build:less",
+    "build": "yarn build:babel && yarn build:types && node ./scripts/copyTS.js && yarn build:sass",
     "build:babel": "concurrently 'yarn build:babel:esm && yarn build:babel:umd' 'yarn build:babel:cjs'",
     "build:babel:cjs": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/js --presets=@babel/env",
     "build:babel:esm": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/esm",
     "build:babel:umd": "babel --source-maps --extensions '.js' dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "build:types": "tsc -p tsconfig.gen-dts.json",
-    "build:less": "shx mkdir -p dist/less && shx cp -r less/* dist/less",
     "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/patternfly-react-extensions/* dist/sass && node-sass --output-style compressed --importer=./node-sass-patternfly-importer.js -o dist/css sass/patternfly-react-extensions.scss",
     "clean": "rimraf dist",
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps"

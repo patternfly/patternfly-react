@@ -27,10 +27,10 @@ import { Component } from 'react-catalog-view-extension';
 Example with LESS:
 
 ```
-@import "~bootstrap/less/variables";
-@import "~patternfly/dist/less/variables";
-@import "~patternfly-react/dist/less/patternfly-react.less";
-@import "~react-catalog-view-extension/dist/less/patternfly-react-extensions.less";
+@import "~bootstrap/sass/variables";
+@import "~patternfly/dist/sass/variables";
+@import "~patternfly-react/dist/sass/patternfly-react.scss";
+@import "~react-catalog-view-extension/dist/sass/patternfly-react-extensions.scss";
 ```
 
 ### Building
