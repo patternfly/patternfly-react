@@ -129,7 +129,7 @@ exports[`checkbox select renders checkbox select groups successfully - old class
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -911,7 +911,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -1641,7 +1641,7 @@ exports[`checkbox select renders closed successfully - old classes 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -1869,7 +1869,7 @@ exports[`checkbox select renders closed successfully 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -2083,7 +2083,7 @@ exports[`checkbox select renders expanded successfully - old classes 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -2558,7 +2558,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -3056,7 +3056,7 @@ exports[`checkbox select renders expanded successfully with custom objects 1`] =
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -3678,6 +3678,7 @@ exports[`select custom select filter filters properly 1`] = `
                   disabled={false}
                   id="select-typeahead"
                   onChange={[Function]}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   placeholder=""
                   type="text"
@@ -4011,7 +4012,7 @@ exports[`select renders select groups successfully 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -4676,7 +4677,7 @@ exports[`select renders up drection successfully 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -4908,7 +4909,7 @@ exports[`select single select renders closed successfully 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -5142,7 +5143,7 @@ exports[`select single select renders disabled successfully 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -5377,7 +5378,7 @@ exports[`select single select renders expanded successfully 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -5823,7 +5824,7 @@ exports[`select single select renders expanded successfully with custom objects 
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -6251,25 +6252,6 @@ exports[`typeahead multi select renders closed successfully 1`] = `
             sendRef={[Function]}
             value="Other"
           />,
-          <SelectOption
-            className=""
-            component="button"
-            index={0}
-            isChecked={false}
-            isDisabled={false}
-            isFocused={false}
-            isPlaceholder={false}
-            isSelected={false}
-            keyHandler={[Function]}
-            onClick={[Function]}
-            sendRef={[Function]}
-            value="test"
-          >
-            Create
-             "
-            test
-            "
-          </SelectOption>,
         ],
         "onSelect": [MockFunction],
         "onToggle": [MockFunction],
@@ -6296,7 +6278,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -6410,6 +6392,7 @@ exports[`typeahead multi select renders closed successfully 1`] = `
                   disabled={false}
                   id="select-multi-typeahead-typeahead"
                   onChange={[Function]}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   placeholder=""
                   type="text"
@@ -6532,25 +6515,6 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
             sendRef={[Function]}
             value="Other"
           />,
-          <SelectOption
-            className=""
-            component="button"
-            index={0}
-            isChecked={false}
-            isDisabled={false}
-            isFocused={false}
-            isPlaceholder={false}
-            isSelected={false}
-            keyHandler={[Function]}
-            onClick={[Function]}
-            sendRef={[Function]}
-            value="test"
-          >
-            Create
-             "
-            test
-            "
-          </SelectOption>,
         ],
         "isExpanded": true,
         "onSelect": [MockFunction],
@@ -6578,7 +6542,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -6721,21 +6685,6 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                       Other
                     </button>
                   </li>
-                  <li
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item"
-                      id="test-4"
-                      role="option"
-                      type="button"
-                    >
-                      Create
-                       "
-                      test
-                      "
-                    </button>
-                  </li>
                 </ul>
               </div>,
             }
@@ -6762,6 +6711,7 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                   disabled={false}
                   id="select-multi-typeahead-typeahead"
                   onChange={[Function]}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   placeholder=""
                   type="text"
@@ -6958,41 +6908,6 @@ exports[`typeahead multi select renders expanded successfully 1`] = `
                 </button>
               </li>
             </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="test-4"
-              index={4}
-              isChecked={false}
-              isDisabled={false}
-              isFocused={null}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$.$0"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              value="test"
-            >
-              <li
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="test-4"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Create
-                   "
-                  test
-                  "
-                </button>
-              </li>
-            </SelectOption>
           </ul>
         </SelectMenu>
       </div>
@@ -7075,25 +6990,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
             sendRef={[Function]}
             value="Other"
           />,
-          <SelectOption
-            className=""
-            component="button"
-            index={0}
-            isChecked={false}
-            isDisabled={false}
-            isFocused={false}
-            isPlaceholder={false}
-            isSelected={false}
-            keyHandler={[Function]}
-            onClick={[Function]}
-            sendRef={[Function]}
-            value="test"
-          >
-            Create
-             "
-            test
-            "
-          </SelectOption>,
         ],
         "isExpanded": true,
         "onSelect": [MockFunction],
@@ -7125,7 +7021,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -7389,21 +7285,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                       type="button"
                     >
                       Other
-                    </button>
-                  </li>
-                  <li
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item"
-                      id="test-4"
-                      role="option"
-                      type="button"
-                    >
-                      Create
-                       "
-                      test
-                      "
                     </button>
                   </li>
                 </ul>
@@ -7760,6 +7641,7 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                   disabled={false}
                   id="select-multi-typeahead-typeahead"
                   onChange={[Function]}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   placeholder=""
                   type="text"
@@ -8054,41 +7936,6 @@ exports[`typeahead multi select renders selected successfully 1`] = `
                 </button>
               </li>
             </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="test-4"
-              index={4}
-              isChecked={false}
-              isDisabled={false}
-              isFocused={null}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$.$0"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              value="test"
-            >
-              <li
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="test-4"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Create
-                   "
-                  test
-                  "
-                </button>
-              </li>
-            </SelectOption>
           </ul>
         </SelectMenu>
       </div>
@@ -8166,25 +8013,6 @@ exports[`typeahead multi select test onChange 1`] = `
             sendRef={[Function]}
             value="Other"
           />,
-          <SelectOption
-            className=""
-            component="button"
-            index={0}
-            isChecked={false}
-            isDisabled={false}
-            isFocused={false}
-            isPlaceholder={false}
-            isSelected={false}
-            keyHandler={[Function]}
-            onClick={[Function]}
-            sendRef={[Function]}
-            value="test"
-          >
-            Create
-             "
-            test
-            "
-          </SelectOption>,
         ],
         "isExpanded": true,
         "onClear": [MockFunction],
@@ -8213,7 +8041,7 @@ exports[`typeahead multi select test onChange 1`] = `
       noResultsFoundText="No results found"
       onClear={[MockFunction]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -8311,63 +8139,12 @@ exports[`typeahead multi select test onChange 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
-                      id="Mr-0"
+                      class="pf-c-select__menu-item pf-m-disabled"
+                      id="No results found-0"
                       role="option"
                       type="button"
                     >
-                      Mr
-                    </button>
-                  </li>
-                  <li
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item"
-                      id="Mrs-1"
-                      role="option"
-                      type="button"
-                    >
-                      Mrs
-                    </button>
-                  </li>
-                  <li
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item"
-                      id="Ms-2"
-                      role="option"
-                      type="button"
-                    >
-                      Ms
-                    </button>
-                  </li>
-                  <li
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item"
-                      id="Other-3"
-                      role="option"
-                      type="button"
-                    >
-                      Other
-                    </button>
-                  </li>
-                  <li
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item"
-                      id="test-4"
-                      role="option"
-                      type="button"
-                    >
-                      Create
-                       "
-                      test
-                      "
+                      No results found
                     </button>
                   </li>
                 </ul>
@@ -8396,6 +8173,7 @@ exports[`typeahead multi select test onChange 1`] = `
                   disabled={false}
                   id="select-typeahead"
                   onChange={[Function]}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   placeholder=""
                   type="text"
@@ -8467,138 +8245,10 @@ exports[`typeahead multi select test onChange 1`] = `
             <SelectOption
               className=""
               component="button"
-              id="Mr-0"
+              id="No results found-0"
               index={0}
               isChecked={false}
-              isDisabled={false}
-              isFocused={null}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$00"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              value="Mr"
-            >
-              <li
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="Mr-0"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Mr
-                </button>
-              </li>
-            </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="Mrs-1"
-              index={1}
-              isChecked={false}
-              isDisabled={false}
-              isFocused={null}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$01"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              value="Mrs"
-            >
-              <li
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="Mrs-1"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Mrs
-                </button>
-              </li>
-            </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="Ms-2"
-              index={2}
-              isChecked={false}
-              isDisabled={false}
-              isFocused={null}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$02"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              value="Ms"
-            >
-              <li
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="Ms-2"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Ms
-                </button>
-              </li>
-            </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="Other-3"
-              index={3}
-              isChecked={false}
-              isDisabled={false}
-              isFocused={null}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$03"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              value="Other"
-            >
-              <li
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="Other-3"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Other
-                </button>
-              </li>
-            </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="test-4"
-              index={4}
-              isChecked={false}
-              isDisabled={false}
+              isDisabled={true}
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
@@ -8606,24 +8256,21 @@ exports[`typeahead multi select test onChange 1`] = `
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
-              value="test"
+              value="No results found"
             >
               <li
                 role="presentation"
               >
                 <button
                   aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="test-4"
+                  className="pf-c-select__menu-item pf-m-disabled"
+                  id="No results found-0"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="option"
                   type="button"
                 >
-                  Create
-                   "
-                  test
-                  "
+                  No results found
                 </button>
               </li>
             </SelectOption>
@@ -8728,7 +8375,7 @@ exports[`typeahead select renders closed successfully 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -8841,6 +8488,7 @@ exports[`typeahead select renders closed successfully 1`] = `
                   disabled={false}
                   id="select-typeahead"
                   onChange={[Function]}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   placeholder=""
                   type="text"
@@ -8990,7 +8638,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -9158,6 +8806,7 @@ exports[`typeahead select renders expanded successfully 1`] = `
                   disabled={false}
                   id="select-typeahead"
                   onChange={[Function]}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   placeholder=""
                   type="text"
@@ -9459,7 +9108,7 @@ exports[`typeahead select renders selected successfully 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -9662,6 +9311,7 @@ exports[`typeahead select renders selected successfully 1`] = `
                   disabled={false}
                   id="select-typeahead"
                   onChange={[Function]}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   placeholder=""
                   type="text"
@@ -9998,25 +9648,6 @@ exports[`typeahead select test creatable option 1`] = `
             sendRef={[Function]}
             value="Other"
           />,
-          <SelectOption
-            className=""
-            component="button"
-            index={0}
-            isChecked={false}
-            isDisabled={false}
-            isFocused={false}
-            isPlaceholder={false}
-            isSelected={false}
-            keyHandler={[Function]}
-            onClick={[Function]}
-            sendRef={[Function]}
-            value="test"
-          >
-            Create
-             "
-            test
-            "
-          </SelectOption>,
         ],
         "isCreatable": true,
         "isExpanded": true,
@@ -10044,7 +9675,7 @@ exports[`typeahead select test creatable option 1`] = `
       noResultsFoundText="No results found"
       onClear={[Function]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onToggle={[MockFunction]}
       ouiaContext={
         Object {
@@ -10142,55 +9773,7 @@ exports[`typeahead select test creatable option 1`] = `
                   >
                     <button
                       class="pf-c-select__menu-item"
-                      id="Mr-0"
-                      role="option"
-                      type="button"
-                    >
-                      Mr
-                    </button>
-                  </li>
-                  <li
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item"
-                      id="Mrs-1"
-                      role="option"
-                      type="button"
-                    >
-                      Mrs
-                    </button>
-                  </li>
-                  <li
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item"
-                      id="Ms-2"
-                      role="option"
-                      type="button"
-                    >
-                      Ms
-                    </button>
-                  </li>
-                  <li
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item"
-                      id="Other-3"
-                      role="option"
-                      type="button"
-                    >
-                      Other
-                    </button>
-                  </li>
-                  <li
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item"
-                      id="test-4"
+                      id="test-0"
                       role="option"
                       type="button"
                     >
@@ -10226,6 +9809,7 @@ exports[`typeahead select test creatable option 1`] = `
                   disabled={false}
                   id="select-typeahead"
                   onChange={[Function]}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   placeholder=""
                   type="text"
@@ -10297,136 +9881,8 @@ exports[`typeahead select test creatable option 1`] = `
             <SelectOption
               className=""
               component="button"
-              id="Mr-0"
+              id="test-0"
               index={0}
-              isChecked={false}
-              isDisabled={false}
-              isFocused={null}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$00"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              value="Mr"
-            >
-              <li
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="Mr-0"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Mr
-                </button>
-              </li>
-            </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="Mrs-1"
-              index={1}
-              isChecked={false}
-              isDisabled={false}
-              isFocused={null}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$01"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              value="Mrs"
-            >
-              <li
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="Mrs-1"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Mrs
-                </button>
-              </li>
-            </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="Ms-2"
-              index={2}
-              isChecked={false}
-              isDisabled={false}
-              isFocused={null}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$02"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              value="Ms"
-            >
-              <li
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="Ms-2"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Ms
-                </button>
-              </li>
-            </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="Other-3"
-              index={3}
-              isChecked={false}
-              isDisabled={false}
-              isFocused={null}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$03"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              value="Other"
-            >
-              <li
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="Other-3"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Other
-                </button>
-              </li>
-            </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="test-4"
-              index={4}
               isChecked={false}
               isDisabled={false}
               isFocused={null}
@@ -10444,7 +9900,7 @@ exports[`typeahead select test creatable option 1`] = `
                 <button
                   aria-selected={null}
                   className="pf-c-select__menu-item"
-                  id="test-4"
+                  id="test-0"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="option"
@@ -10562,7 +10018,7 @@ exports[`typeahead select test onChange 1`] = `
       noResultsFoundText="No results found"
       onClear={[MockFunction]}
       onCreateOption={[Function]}
-      onFilter={[Function]}
+      onFilter={null}
       onSelect={[MockFunction]}
       onToggle={[MockFunction]}
       ouiaContext={
@@ -10660,48 +10116,12 @@ exports[`typeahead select test onChange 1`] = `
                     role="presentation"
                   >
                     <button
-                      class="pf-c-select__menu-item"
-                      id="Mr-0"
+                      class="pf-c-select__menu-item pf-m-disabled"
+                      id="No results found-0"
                       role="option"
                       type="button"
                     >
-                      Mr
-                    </button>
-                  </li>
-                  <li
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item"
-                      id="Mrs-1"
-                      role="option"
-                      type="button"
-                    >
-                      Mrs
-                    </button>
-                  </li>
-                  <li
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item"
-                      id="Ms-2"
-                      role="option"
-                      type="button"
-                    >
-                      Ms
-                    </button>
-                  </li>
-                  <li
-                    role="presentation"
-                  >
-                    <button
-                      class="pf-c-select__menu-item"
-                      id="Other-3"
-                      role="option"
-                      type="button"
-                    >
-                      Other
+                      No results found
                     </button>
                   </li>
                 </ul>
@@ -10730,6 +10150,7 @@ exports[`typeahead select test onChange 1`] = `
                   disabled={false}
                   id="select-typeahead"
                   onChange={[Function]}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   placeholder=""
                   type="text"
@@ -10801,128 +10222,32 @@ exports[`typeahead select test onChange 1`] = `
             <SelectOption
               className=""
               component="button"
-              id="Mr-0"
+              id="No results found-0"
               index={0}
               isChecked={false}
-              isDisabled={false}
+              isDisabled={true}
               isFocused={null}
               isPlaceholder={false}
               isSelected={false}
-              key=".$00"
+              key=".$0"
               keyHandler={[Function]}
               onClick={[Function]}
               sendRef={[Function]}
-              value="Mr"
+              value="No results found"
             >
               <li
                 role="presentation"
               >
                 <button
                   aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="Mr-0"
+                  className="pf-c-select__menu-item pf-m-disabled"
+                  id="No results found-0"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   role="option"
                   type="button"
                 >
-                  Mr
-                </button>
-              </li>
-            </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="Mrs-1"
-              index={1}
-              isChecked={false}
-              isDisabled={false}
-              isFocused={null}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$01"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              value="Mrs"
-            >
-              <li
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="Mrs-1"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Mrs
-                </button>
-              </li>
-            </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="Ms-2"
-              index={2}
-              isChecked={false}
-              isDisabled={false}
-              isFocused={null}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$02"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              value="Ms"
-            >
-              <li
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="Ms-2"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Ms
-                </button>
-              </li>
-            </SelectOption>
-            <SelectOption
-              className=""
-              component="button"
-              id="Other-3"
-              index={3}
-              isChecked={false}
-              isDisabled={false}
-              isFocused={null}
-              isPlaceholder={false}
-              isSelected={false}
-              key=".$03"
-              keyHandler={[Function]}
-              onClick={[Function]}
-              sendRef={[Function]}
-              value="Other"
-            >
-              <li
-                role="presentation"
-              >
-                <button
-                  aria-selected={null}
-                  className="pf-c-select__menu-item"
-                  id="Other-3"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  role="option"
-                  type="button"
-                >
-                  Other
+                  No results found
                 </button>
               </li>
             </SelectOption>
