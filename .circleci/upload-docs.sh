@@ -10,14 +10,15 @@ then
   # https://en.wikipedia.org/wiki/Domain_Name_System#Domain_name_syntax
   # So, just replace "/" or "." with "-"
   DEPLOY_SUBDOMAIN=`echo "${REPONAME}-pr-${PR_NUM}" | tr '[\/|\.]' '-' | cut -c1-253`
+  ALREADY_DEPLOYED=`npx surge list | grep ${DEPLOY_SUBDOMAIN}`
 elif [ "${PR_BRANCH}" = "master" ]
 then
   DEPLOY_SUBDOMAIN=${REPONAME}
 else
   DEPLOY_SUBDOMAIN=`echo "${REPONAME}-pr-${PR_BRANCH}" | tr '[\/|\.]' '-' | cut -c1-253`
+  ALREADY_DEPLOYED=`npx surge list | grep ${DEPLOY_SUBDOMAIN}`
 fi
 
-ALREADY_DEPLOYED=`npx surge list | grep ${DEPLOY_SUBDOMAIN}`
 DEPLOY_DOMAIN="https://${DEPLOY_SUBDOMAIN}.surge.sh"
 npx surge --project docs --domain $DEPLOY_DOMAIN;
 
