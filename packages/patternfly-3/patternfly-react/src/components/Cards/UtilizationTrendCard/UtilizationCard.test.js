@@ -1,5 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
+
+import { CardTitle } from '../index';
 import {
   UtilizationCard,
   UtilizationCardDetails,
@@ -9,7 +11,6 @@ import {
   UtilizationCardDetailsLine2
 } from './index';
 
-import { CardTitle } from '../index';
 
 test('Utilization Card is working properly', () => {
   const component = mount(
@@ -20,6 +21,7 @@ test('Utilization Card is working properly', () => {
 
   expect(component.render()).toMatchSnapshot();
 });
+
 test('Utilization Card Details is working properly', () => {
   const component = mount(
     <UtilizationCardDetails>
@@ -33,6 +35,7 @@ test('Utilization Card Details is working properly', () => {
 
   expect(component.render()).toMatchSnapshot();
 });
+
 test('Utilization Card Details Description is working properly', () => {
   const component = mount(
     <UtilizationCardDetailsDesc>
@@ -43,6 +46,7 @@ test('Utilization Card Details Description is working properly', () => {
 
   expect(component.render()).toMatchSnapshot();
 });
+
 test('Utilization Card Details Line1,2 is working properly', () => {
   const component = mount(
     <div>
