@@ -176,6 +176,7 @@ export interface IRow extends RowType {
   props?: any;
   fullWidth?: boolean;
   noPadding?: boolean;
+  heightAuto?: boolean;
   showSelect?: boolean;
   isExpanded?: boolean;
   isFirstVisible?: boolean;

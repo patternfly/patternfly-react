@@ -85,6 +85,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
         ...oneRow,
         ...this.mapCells(headerData, oneRow, oneRowKey),
         isExpanded: isRowExpanded(oneRow, rows),
+        isHeightAuto: oneRow.heightAuto || false,
         isFirst: oneRowKey === 0,
         isLast: oneRowKey === rows.length - 1,
         isFirstVisible: false,
