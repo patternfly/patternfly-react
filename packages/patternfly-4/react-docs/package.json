@@ -27,12 +27,11 @@
     "@patternfly/react-tokens": "^2.6.31",
     "@patternfly/react-topology": "^2.8.73",
     "@patternfly/react-virtualized-extension": "^1.2.79",
-    "gatsby": "~2.15.14",
-    "gatsby-plugin-sass": "^2.1.17",
+    "gatsby": "^2.16.4",
     "gatsby-source-filesystem": "^2.1.22",
     "gatsby-theme-patternfly-org": "^0.0.15",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
