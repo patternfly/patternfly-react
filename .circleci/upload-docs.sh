@@ -11,6 +11,7 @@ then
   # So, just replace "/" or "." with "-"
   DEPLOY_SUBDOMAIN=`echo "${REPONAME}-pr-${PR_NUM}" | tr '[\/|\.]' '-' | cut -c1-253`
 elif [ "${PR_BRANCH}" = "master" ]
+then
   DEPLOY_SUBDOMAIN=${REPONAME}
 else
   DEPLOY_SUBDOMAIN=`echo "${REPONAME}-pr-${PR_BRANCH}" | tr '[\/|\.]' '-' | cut -c1-253`
