@@ -13,7 +13,7 @@ import { EditIcon, CloneIcon, SyncIcon, SearchIcon, FilterIcon } from '@patternf
 import '@patternfly/react-styles/css/components/Divider/divider';
 
 ## Examples
-```js title=Basic
+```js title=Items
 import React from 'react';
 import { DataToolbar , DataToolbarItem, DataToolbarContent } from '@patternfly/react-core/dist/esm/experimental';
 import { Button, ButtonVariant, InputGroup, TextInput, SearchIcon } from '@patternfly/react-core';
@@ -43,7 +43,7 @@ class DataToolbarItems extends React.Component {
 }
 
 ```
-Toolbar items are individual components that can be placed inside of a toolbar. Buttons or select lists are examples of items.
+Toolbar items are individual components that can be placed inside of a toolbar. Buttons or select lists are examples of items. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
 
 ```js title=With-spacers
 import React from 'react';
@@ -262,7 +262,7 @@ class DataToolbarGroupTypes extends React.Component {
 }
 
 ```
-Often, it makes sense to group sets of like items to create desired associations and to enable items to respond together to changes in viewport width.
+Often, it makes sense to group sets of like items to create desired associations and to enable items to respond together to changes in viewport width. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
 
 ## Data toolbar toggle groups
 A toggle group can be used when you want to collapse a set of items into an overlay panel at a certain breakpoint. This allows complex toolbars with multiple items and groups of items to be responsive. A toggle group is useful for containing filter controls, for example. When the toolbar responds to adapt to a mobile viewport, the contents contained in a toggle group will collapse into an overlay panel that can be toggled by clicking the Filter icon.
@@ -568,7 +568,7 @@ This second Toggle group example below demonstrates a consumer managed toggle st
 
 - Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.
 
-```js title=With-chip-groups
+```js title=With-filters
 import React from 'react';
 import { 
     DataToolbar,
@@ -1036,4 +1036,4 @@ class DataToolbarStacked extends React.Component {
 }
 
 ```
-There may be situations where all of the required elements simply cannot fit is a single line.
+There may be situations where all of the required elements simply cannot fit in a single line.
