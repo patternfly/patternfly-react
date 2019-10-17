@@ -6,7 +6,7 @@ import { css, getModifier } from '@patternfly/react-styles';
 import { Provider } from './base';
 import { BodyCell } from './BodyCell';
 import { HeaderCell } from './HeaderCell';
-import { RowWrapper } from './RowWrapper';
+import { RowWrapper, RowWrapperProps } from './RowWrapper';
 import { BodyWrapper } from './BodyWrapper';
 import { calculateColumns } from './utils/headerUtils';
 import { formatterValueType, ColumnType, RowType, RowKeyType, ColumnsType } from './base';
@@ -220,7 +220,7 @@ export interface TableProps {
   rows: (IRow | string[])[];
   cells: (ICell | string)[];
   bodyWrapper?: Function;
-  rowWrapper?: Function;
+  rowWrapper?: (props: RowWrapperProps) => JSX.Element;
   /** A valid WAI-ARIA role to be applied to the table element */
   role?: string;
 }

@@ -236,10 +236,12 @@ test('Empty state table', () => {
     rows: [
       {
         heightAuto: true,
-        cells: [{
-          title: (<div>Empty State Component</div>),
-          props: {colSpan: '8'}
-        }],
+        cells: [
+          {
+            title: (<div>Empty State Component</div>),
+            props: { colSpan: '8' }
+          }
+      ],
       }
     ],
   };

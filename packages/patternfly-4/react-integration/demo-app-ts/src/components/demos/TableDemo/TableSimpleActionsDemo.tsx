@@ -4,13 +4,7 @@ import {
   TableHeader,
   TableBody,
   TableProps,
-  sortable,
-  SortByDirection,
   headerCol,
-  TableVariant,
-  expandable,
-  cellWidth,
-  IAction,
   IRow
 } from '@patternfly/react-table';
 

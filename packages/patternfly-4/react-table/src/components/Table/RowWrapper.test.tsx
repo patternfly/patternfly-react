@@ -23,7 +23,6 @@ describe('RowWrapper', () => {
   });
   test('renders height auto modifier correctly', () => {
     const view = mount(getRowWrapper({ row: { isHeightAuto: true } }));
-    console.log(view.debug())
     expect(view.find('tr').prop('className')).toBe('pf-m-height-auto');
   });
 });
