@@ -1,8 +1,7 @@
 /**
   Patternfly React Extensions Partials
 */
-@import 'variables';
 @import 'catalog-item';
 @import 'catalog-tile';
 @import 'vertical-tabs';
-@import 'properties-side-panel';
+@import '../react-catalog-view-extension/properties-side-panel';
