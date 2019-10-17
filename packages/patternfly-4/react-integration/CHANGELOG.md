@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.7.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.7.0...@patternfly/react-integration@3.7.1) (2019-10-17)
+
+
+### Bug Fixes
+
+* **table:** set height auto modifier on table row ([#3133](https://github.com/patternfly/patternfly-react/issues/3133)) ([6e89ebe](https://github.com/patternfly/patternfly-react/commit/6e89ebe))
+
+
+
+
+
 # [3.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.6.3...@patternfly/react-integration@3.7.0) (2019-10-10)
 
 
