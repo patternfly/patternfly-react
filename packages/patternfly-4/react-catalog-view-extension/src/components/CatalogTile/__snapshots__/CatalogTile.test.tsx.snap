@@ -17175,7 +17175,7 @@ exports[`CatalogTile onClick behaves properly 1`] = `
                 </div>
               </div>
             </a>,
-            "timeStamp": 1571328405267,
+            "timeStamp": 1571339198196,
             "type": "click",
           },
         ],
@@ -17434,7 +17434,7 @@ exports[`CatalogTile renders properly 1`] = `
                           zIndex={9999}
                         >
                           <span
-                            className="catalog-tile-pf-badge "
+                            className="catalog-tile-pf-badge"
                           >
                             <CogIcon
                               color="currentColor"
@@ -17512,7 +17512,7 @@ exports[`CatalogTile renders properly 1`] = `
                       id="no-title"
                     >
                       <span
-                        className="catalog-tile-pf-badge "
+                        className="catalog-tile-pf-badge"
                       >
                         <CogIcon
                           color="currentColor"
@@ -17760,7 +17760,7 @@ exports[`CatalogTile renders properly 1`] = `
                           zIndex={9999}
                         >
                           <span
-                            className="catalog-tile-pf-badge "
+                            className="catalog-tile-pf-badge"
                           >
                             <CogIcon
                               color="currentColor"
@@ -17930,7 +17930,7 @@ exports[`CatalogTile renders properly 1`] = `
                           zIndex={9999}
                         >
                           <span
-                            className="catalog-tile-pf-badge "
+                            className="catalog-tile-pf-badge"
                           >
                             <OutlinedCheckCircleIcon
                               color="currentColor"
@@ -18209,7 +18209,7 @@ exports[`CatalogTile renders properly 1`] = `
                           zIndex={9999}
                         >
                           <span
-                            className="catalog-tile-pf-badge "
+                            className="catalog-tile-pf-badge"
                           >
                             <CogIcon
                               color="currentColor"
@@ -18490,7 +18490,7 @@ exports[`CatalogTile renders properly 1`] = `
                           zIndex={9999}
                         >
                           <span
-                            className="catalog-tile-pf-badge "
+                            className="catalog-tile-pf-badge"
                           >
                             <OutlinedCheckCircleIcon
                               color="currentColor"
@@ -18867,7 +18867,7 @@ exports[`CatalogTile renders properly 1`] = `
                           zIndex={9999}
                         >
                           <span
-                            className="catalog-tile-pf-badge "
+                            className="catalog-tile-pf-badge"
                           >
                             <CogIcon
                               color="currentColor"

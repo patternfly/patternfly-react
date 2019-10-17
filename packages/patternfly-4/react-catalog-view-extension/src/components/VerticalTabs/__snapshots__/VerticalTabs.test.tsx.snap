@@ -1,0 +1,877 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Vertical Tabs Tab onActivate is called correctly 1`] = `
+<Component
+  id="text-click"
+  onActivate={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  title="Click Me"
+>
+  <li
+    className="vertical-tabs-pf-tab"
+    id="text-click"
+  >
+    <a
+      className=""
+      href="#"
+      onClick={[Function]}
+    >
+      Click Me
+    </a>
+  </li>
+</Component>
+`;
+
+exports[`Vertical Tabs Tab wrap styling is set correctly 1`] = `
+<div>
+  <Component
+    id="default-wrap"
+    title="Default Wrap"
+  >
+    <li
+      className="vertical-tabs-pf-tab"
+      id="default-wrap"
+    >
+      <a
+        className=""
+        href="#"
+        onClick={[Function]}
+      >
+        Default Wrap
+      </a>
+    </li>
+  </Component>
+  <Component
+    id="word-wrap"
+    title="Word Wrap"
+    wrapStyle="wrap"
+  >
+    <li
+      className="vertical-tabs-pf-tab"
+      id="word-wrap"
+    >
+      <a
+        className=""
+        href="#"
+        onClick={[Function]}
+      >
+        Word Wrap
+      </a>
+    </li>
+  </Component>
+  <Component
+    id="truncate"
+    title="Truncate"
+    wrapStyle="truncate"
+  >
+    <li
+      className="vertical-tabs-pf-tab"
+      id="truncate"
+    >
+      <a
+        className="truncate"
+        href="#"
+        onClick={[Function]}
+      >
+        Truncate
+      </a>
+    </li>
+  </Component>
+  <Component
+    id="no-wrap"
+    title="No Wrap"
+    wrapStyle="nowrap"
+  >
+    <li
+      className="vertical-tabs-pf-tab"
+      id="no-wrap"
+    >
+      <a
+        className="no-wrap"
+        href="#"
+        onClick={[Function]}
+      >
+        No Wrap
+      </a>
+    </li>
+  </Component>
+</div>
+`;
+
+exports[`Vertical Tabs renders restricted tabs properly 1`] = `
+<Component
+  className="test-vertical-tabs"
+  id="vertical-tabs"
+  restrictTabs={true}
+>
+  <ul
+    className="vertical-tabs-pf restrict-tabs test-vertical-tabs"
+    id="vertical-tabs"
+  >
+    <Component
+      className="test-vertical-tabs-tab"
+      id="all"
+      shown={true}
+      title="All"
+    >
+      <li
+        className="vertical-tabs-pf-tab shown test-vertical-tabs-tab"
+        id="all"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          All
+        </a>
+      </li>
+    </Component>
+    <Component
+      hasActiveDescendant={true}
+      id="one"
+      title="Tab One"
+    >
+      <li
+        className="vertical-tabs-pf-tab active-descendant"
+        id="one"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          Tab One
+        </a>
+        <Component
+          restrictTabs={true}
+        >
+          <ul
+            className="vertical-tabs-pf restrict-tabs"
+          >
+            <Component
+              id="one-one"
+              key="one-one"
+              title="Tab One-One"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="one-one"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab One-One
+                </a>
+                <Component
+                  activeTab={true}
+                  restrictTabs={true}
+                >
+                  <ul
+                    className="vertical-tabs-pf restrict-tabs active-tab"
+                  >
+                    <Component
+                      active={true}
+                      id="one-one-one"
+                      key="one-one-one"
+                      title="Tab One-One-One"
+                    >
+                      <li
+                        className="vertical-tabs-pf-tab active"
+                        id="one-one-one"
+                      >
+                        <a
+                          className=""
+                          href="#"
+                          onClick={[Function]}
+                        >
+                          Tab One-One-One
+                        </a>
+                      </li>
+                    </Component>
+                    <Component
+                      active={false}
+                      id="one-one-two"
+                      key="one-one-two"
+                      title="Tab One-One-Two"
+                    >
+                      <li
+                        className="vertical-tabs-pf-tab"
+                        id="one-one-two"
+                      >
+                        <a
+                          className=""
+                          href="#"
+                          onClick={[Function]}
+                        >
+                          Tab One-One-Two
+                        </a>
+                      </li>
+                    </Component>
+                    <Component
+                      id="one-one-three"
+                      key="one-one-three"
+                      title="Tab One-One-Three"
+                    >
+                      <li
+                        className="vertical-tabs-pf-tab"
+                        id="one-one-three"
+                      >
+                        <a
+                          className=""
+                          href="#"
+                          onClick={[Function]}
+                        >
+                          Tab One-One-Three
+                        </a>
+                      </li>
+                    </Component>
+                  </ul>
+                </Component>
+              </li>
+            </Component>
+            <Component
+              id="one-two"
+              key="one-two"
+              title="Tab One-Two"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="one-two"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab One-Two
+                </a>
+              </li>
+            </Component>
+            <Component
+              id="one-three"
+              key="one-three"
+              title="Tab One-Three"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="one-three"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab One-Three
+                </a>
+              </li>
+            </Component>
+          </ul>
+        </Component>
+      </li>
+    </Component>
+    <Component
+      className="test-tab-class"
+      id="two"
+      title="Tab Two"
+    >
+      <li
+        className="vertical-tabs-pf-tab test-tab-class"
+        id="two"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          Tab Two
+        </a>
+        <Component
+          activeTab={true}
+          restrictTabs={true}
+        >
+          <ul
+            className="vertical-tabs-pf restrict-tabs active-tab"
+          >
+            <Component
+              active={true}
+              id="two-one"
+              key="one-one-one"
+              title="Tab Two-One"
+            >
+              <li
+                className="vertical-tabs-pf-tab active"
+                id="two-one"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab Two-One
+                </a>
+              </li>
+            </Component>
+            <Component
+              active={false}
+              id="two-two"
+              key="one-one-two"
+              title="Tab Two-Two"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="two-two"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab Two-Two
+                </a>
+              </li>
+            </Component>
+            <Component
+              id="two-three"
+              key="one-one-three"
+              title="Tab Two-Three"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="two-three"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab Two-Three
+                </a>
+              </li>
+            </Component>
+          </ul>
+        </Component>
+      </li>
+    </Component>
+    <Component
+      id="three"
+      title="Tab Three"
+    >
+      <li
+        className="vertical-tabs-pf-tab"
+        id="three"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          Tab Three
+        </a>
+        <Component
+          restrictTabs={true}
+        >
+          <ul
+            className="vertical-tabs-pf restrict-tabs"
+          >
+            <Component
+              id="three-one"
+              key="three-one"
+              title="Tab Three-One"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="three-one"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab Three-One
+                </a>
+              </li>
+            </Component>
+            <Component
+              id="three-two"
+              key="three-two"
+              title="Tab Three-Two"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="three-two"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab Three-Two
+                </a>
+              </li>
+            </Component>
+          </ul>
+        </Component>
+      </li>
+    </Component>
+    <Component
+      id="four"
+      title="Tab Four"
+    >
+      <li
+        className="vertical-tabs-pf-tab"
+        id="four"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          Tab Four
+        </a>
+      </li>
+    </Component>
+    <Component
+      id="five"
+      title="Tab Five"
+    >
+      <li
+        className="vertical-tabs-pf-tab"
+        id="five"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          Tab Five
+        </a>
+      </li>
+    </Component>
+    <Component
+      id="six"
+      title="Tab Six"
+    >
+      <li
+        className="vertical-tabs-pf-tab"
+        id="six"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          Tab Six
+        </a>
+      </li>
+    </Component>
+    <Component
+      id="seven"
+      title="Tab Seven"
+    >
+      <li
+        className="vertical-tabs-pf-tab"
+        id="seven"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          Tab Seven
+        </a>
+      </li>
+    </Component>
+  </ul>
+</Component>
+`;
+
+exports[`Vertical Tabs renders tabs properly 1`] = `
+<Component
+  className="test-vertical-tabs"
+  id="vertical-tabs"
+>
+  <ul
+    className="vertical-tabs-pf test-vertical-tabs"
+    id="vertical-tabs"
+  >
+    <Component
+      className="test-vertical-tabs-tab"
+      id="all"
+      title="All"
+    >
+      <li
+        className="vertical-tabs-pf-tab test-vertical-tabs-tab"
+        id="all"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          All
+        </a>
+      </li>
+    </Component>
+    <Component
+      id="one"
+      title="Tab One"
+    >
+      <li
+        className="vertical-tabs-pf-tab"
+        id="one"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          Tab One
+        </a>
+        <Component>
+          <ul
+            className="vertical-tabs-pf"
+          >
+            <Component
+              id="one-one"
+              key="one-one"
+              title="Tab One-One"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="one-one"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab One-One
+                </a>
+                <Component
+                  activeTab={true}
+                >
+                  <ul
+                    className="vertical-tabs-pf active-tab"
+                  >
+                    <Component
+                      active={true}
+                      id="one-one-one"
+                      key="one-one-one"
+                      title="Tab One-One-One"
+                    >
+                      <li
+                        className="vertical-tabs-pf-tab active"
+                        id="one-one-one"
+                      >
+                        <a
+                          className=""
+                          href="#"
+                          onClick={[Function]}
+                        >
+                          Tab One-One-One
+                        </a>
+                      </li>
+                    </Component>
+                    <Component
+                      active={false}
+                      id="one-one-two"
+                      key="one-one-two"
+                      title="Tab One-One-Two"
+                    >
+                      <li
+                        className="vertical-tabs-pf-tab"
+                        id="one-one-two"
+                      >
+                        <a
+                          className=""
+                          href="#"
+                          onClick={[Function]}
+                        >
+                          Tab One-One-Two
+                        </a>
+                      </li>
+                    </Component>
+                    <Component
+                      id="one-one-three"
+                      key="one-one-three"
+                      title="Tab One-One-Three"
+                    >
+                      <li
+                        className="vertical-tabs-pf-tab"
+                        id="one-one-three"
+                      >
+                        <a
+                          className=""
+                          href="#"
+                          onClick={[Function]}
+                        >
+                          Tab One-One-Three
+                        </a>
+                      </li>
+                    </Component>
+                  </ul>
+                </Component>
+              </li>
+            </Component>
+            <Component
+              id="one-two"
+              key="one-two"
+              title="Tab One-Two"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="one-two"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab One-Two
+                </a>
+              </li>
+            </Component>
+            <Component
+              id="one-three"
+              key="one-three"
+              title="Tab One-Three"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="one-three"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab One-Three
+                </a>
+              </li>
+            </Component>
+          </ul>
+        </Component>
+      </li>
+    </Component>
+    <Component
+      className="test-tab-class"
+      id="two"
+      title="Tab Two"
+    >
+      <li
+        className="vertical-tabs-pf-tab test-tab-class"
+        id="two"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          Tab Two
+        </a>
+        <Component>
+          <ul
+            className="vertical-tabs-pf"
+          >
+            <Component
+              id="two-one"
+              key="one-one-one"
+              title="Tab Two-One"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="two-one"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab Two-One
+                </a>
+              </li>
+            </Component>
+            <Component
+              id="two-two"
+              key="one-one-two"
+              title="Tab Two-Two"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="two-two"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab Two-Two
+                </a>
+              </li>
+            </Component>
+            <Component
+              id="two-three"
+              key="one-one-three"
+              title="Tab Two-Three"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="two-three"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab Two-Three
+                </a>
+              </li>
+            </Component>
+          </ul>
+        </Component>
+      </li>
+    </Component>
+    <Component
+      id="three"
+      title="Tab Three"
+    >
+      <li
+        className="vertical-tabs-pf-tab"
+        id="three"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          Tab Three
+        </a>
+        <Component>
+          <ul
+            className="vertical-tabs-pf"
+          >
+            <Component
+              id="three-one"
+              key="three-one"
+              title="Tab Three-One"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="three-one"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab Three-One
+                </a>
+              </li>
+            </Component>
+            <Component
+              id="three-two"
+              key="three-two"
+              title="Tab Three-Two"
+            >
+              <li
+                className="vertical-tabs-pf-tab"
+                id="three-two"
+              >
+                <a
+                  className=""
+                  href="#"
+                  onClick={[Function]}
+                >
+                  Tab Three-Two
+                </a>
+              </li>
+            </Component>
+          </ul>
+        </Component>
+      </li>
+    </Component>
+    <Component
+      id="four"
+      title="Tab Four"
+    >
+      <li
+        className="vertical-tabs-pf-tab"
+        id="four"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          Tab Four
+        </a>
+      </li>
+    </Component>
+    <Component
+      id="five"
+      title="Tab Five"
+    >
+      <li
+        className="vertical-tabs-pf-tab"
+        id="five"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          Tab Five
+        </a>
+      </li>
+    </Component>
+    <Component
+      id="six"
+      title="Tab Six"
+    >
+      <li
+        className="vertical-tabs-pf-tab"
+        id="six"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          Tab Six
+        </a>
+      </li>
+    </Component>
+    <Component
+      id="seven"
+      title="Tab Seven"
+    >
+      <li
+        className="vertical-tabs-pf-tab"
+        id="seven"
+      >
+        <a
+          className=""
+          href="#"
+          onClick={[Function]}
+        >
+          Tab Seven
+        </a>
+      </li>
+    </Component>
+  </ul>
+</Component>
+`;

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Omit } from '../../helpers/typeUtils';
 
 export interface CatalogItemHeaderProps extends
-  Omit<React.HTMLProps<HTMLElement>, 'title'> {
+  Omit<React.HTMLProps<HTMLUListElement>, 'title'> {
   /** Additional css classes */
   className?: string;
   /** URL of an image for the item's icon */
