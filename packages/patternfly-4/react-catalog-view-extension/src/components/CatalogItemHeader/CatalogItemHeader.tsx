@@ -1,4 +1,6 @@
 import * as React from 'react';
+import classNames from 'classnames';
+
 import { Omit } from '../../helpers/typeUtils';
 
 export interface CatalogItemHeaderProps extends
@@ -24,7 +26,7 @@ export const CatalogItemHeader: React.FunctionComponent<CatalogItemHeaderProps> 
   ...props
 }: CatalogItemHeaderProps) => {
   return (
-    <header className={`catalog-item-header-pf ${className}`} {...props}>
+    <header className={classNames('catalog-item-header-pf', className)} {...props}>
       {iconImg && <img className="catalog-item-header-pf-icon" src={iconImg} alt="" />}
       {!iconImg && iconClass && <span className={`catalog-item-header-pf-icon ${iconClass}`} />}
       <div className="catalog-item-header-pf-text">
