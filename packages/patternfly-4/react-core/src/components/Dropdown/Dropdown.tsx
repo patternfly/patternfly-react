@@ -23,11 +23,12 @@ export interface DropdownProps extends React.HTMLProps<HTMLDivElement> {
   /** Toggle for the dropdown, examples: <DropdownToggle> or <DropdownToggleCheckbox> */
   toggle: React.ReactElement<any>;
   /** Function callback called when user selects item */
-  onSelect?(event: React.SyntheticEvent<HTMLDivElement>): void;
+  onSelect?(event?: React.SyntheticEvent<HTMLDivElement>): void;
   /** Flag to indicate if the first dropdown item should gain initial focus, set false when adding
    * a specific auto-focus item (like a current selection) otherwise leave as true
    */
   autoFocus?: boolean;
+  ouiaComponentType?: string;
 }
 
 export const Dropdown: React.FunctionComponent<DropdownProps> = ({
