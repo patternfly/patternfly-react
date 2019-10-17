@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "4.14.27",
+  "version": "4.14.28",
   "author": "Red Hat",
   "license": "MIT",
   "private": true,
@@ -18,7 +18,7 @@
     "@mdx-js/react": "1.0.2",
     "@patternfly/patternfly": "2.36.0",
     "@patternfly/react-icons": "^3.14.13",
-    "@patternfly/react-virtualized-extension": "^1.2.78",
+    "@patternfly/react-virtualized-extension": "^1.2.79",
     "core-js": "^2.0.0",
     "gatsby": "2.15.19",
     "gatsby-mdx": "0.6.3",
