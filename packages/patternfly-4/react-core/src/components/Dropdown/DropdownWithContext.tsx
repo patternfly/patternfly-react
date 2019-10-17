@@ -4,8 +4,9 @@ import { css } from '@patternfly/react-styles';
 import { DropdownMenu } from './DropdownMenu';
 import { DropdownProps } from './Dropdown';
 import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
+import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
-export class DropdownWithContext extends React.Component<DropdownProps> {
+class DropdownWithContext extends React.Component<DropdownProps & InjectedOuiaProps> {
   openedOnEnter = false;
   baseComponentRef = React.createRef<any>();
 
@@ -20,8 +21,9 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
     isGrouped: false,
     position: DropdownPosition.left,
     direction: DropdownDirection.down,
-    onSelect: Function.prototype,
-    autoFocus: true
+    onSelect: (): void => undefined,
+    autoFocus: true,
+    ouiaComponentType: 'Dropdown'
   };
 
   constructor(props: DropdownProps) {
@@ -56,6 +58,9 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
       position,
       toggle,
       autoFocus,
+      ouiaContext,
+      ouiaId,
+      ouiaComponentType,
       ...props
     } = this.props;
     const id = toggle.props.id || `pf-toggle-id-${DropdownWithContext.currentId++}`;
@@ -85,6 +90,10 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
                 className
               )}
               ref={this.baseComponentRef}
+              {...ouiaContext.isOuia && {
+                'data-ouia-component-type': ouiaComponentType,
+                'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+              }}
             >
               {React.Children.map(toggle, oneToggle =>
                 React.cloneElement(oneToggle, {
@@ -116,3 +125,7 @@ export class DropdownWithContext extends React.Component<DropdownProps> {
     );
   }
 }
+
+const DropdownWithOuiaContext = withOuiaContext(DropdownWithContext);
+
+export { DropdownWithOuiaContext as DropdownWithContext };
