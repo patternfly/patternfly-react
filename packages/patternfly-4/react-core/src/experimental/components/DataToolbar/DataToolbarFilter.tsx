@@ -18,7 +18,7 @@ export interface DataToolbarFilterProps extends DataToolbarItemProps {
   chips?: (string | DataToolbarChip)[];
   /** Callback passed by consumer used to delete a chip from the chips[] */
   deleteChip?: (category: string, chip: DataToolbarChip | string) => void;
-  /** Content to be rendered inside the Data toolbar item associated with the chip group */
+  /** Content to be rendered inside the data toolbar item associated with the chip group */
   children: React.ReactNode;
   /** Unique category name to be used as a label for the chip group */
   categoryName: string;

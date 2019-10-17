@@ -8,15 +8,15 @@ import { Button } from '../../../components/Button';
 import { DataToolbarGroup } from './DataToolbarGroup';
 
 export interface DataToolbarExpandableContentProps extends React.HTMLProps<HTMLDivElement> {
-  /** Classes added to the root element of the Data toolbar expandable content */
+  /** Classes added to the root element of the data toolbar expandable content */
   className?: string;
   /** Flag indicating the expandable content is expanded */
   isExpanded?: boolean;
-  /** Expandable content reference for passing to Data toolbar children */
+  /** Expandable content reference for passing to data toolbar children */
   expandableContentRef?: RefObject<HTMLDivElement>;
   /** optional callback for clearing all filters in the toolbar */
   clearAllFilters?: () => void;
-  /** Flag indicating that the Clear all filters button should be visible */
+  /** Flag indicating that the clear all filters button should be visible */
   showClearFiltersButton: boolean;
 }
 

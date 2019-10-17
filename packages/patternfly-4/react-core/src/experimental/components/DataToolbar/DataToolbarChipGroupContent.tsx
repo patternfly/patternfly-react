@@ -9,15 +9,15 @@ import { DataToolbarGroup } from './DataToolbarGroup';
 import { globalBreakpoints } from './DataToolbarUtils';
 
 export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivElement> {
-  /** Classes applied to root element of the Data toolbar content row */
+  /** Classes applied to root element of the data toolbar content row */
   className?: string;
-  /** Chip group content reference for passing to Data toolbar children */
+  /** Chip group content reference for passing to data toolbar children */
   chipGroupContentRef: RefObject<HTMLDivElement>;
   /** optional callback for clearing all filters in the toolbar */
   clearAllFilters?: () => void;
-  /** Flag indicating that the Clear all filters button should be visible */
+  /** Flag indicating that the clear all filters button should be visible */
   showClearFiltersButton: boolean;
-  /** Text to display in the Clear all filters button */
+  /** Text to display in the clear all filters button */
   clearFiltersButtonText?: string;
   /** Total number of filters currently being applied across all DataToolbarFilter components */
   numberOfFilters: number;

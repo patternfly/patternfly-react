@@ -7,19 +7,19 @@ import { formatBreakpointMods } from '../../../helpers/util';
 import { DataToolbarExpandableContent } from './DataToolbarExpandableContent';
 
 export interface DataToolbarContentProps extends React.HTMLProps<HTMLDivElement> {
-  /** Classes applied to root element of the Data toolbar content row */
+  /** Classes applied to root element of the data toolbar content row */
   className?: string;
   /** An array of objects representing the various modifiers to apply to the content row at various breakpoints */
   breakpointMods?: DataToolbarBreakpointMod[];
   /** Content to be rendered as children of the content row */
   children?: React.ReactNode;
-  /** Flag indicating if a Data toolbar toggle group's expandable content is expanded */
+  /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
   isExpanded?: boolean;
   /** A callback for setting the isExpanded flag */
   toggleIsExpanded?: () => void;
   /** Optional callback for clearing all filters in the toolbar */
   clearAllFilters?: () => void;
-  /** Flag indicating that the Clear all filters button should be visible */
+  /** Flag indicating that the clear all filters button should be visible */
   showClearFiltersButton?: boolean;
 }
 
@@ -28,7 +28,7 @@ export interface DataToolbarContentState {
    *  False if the user has opted to manage the 'isExpanded' state themself. */
   isToggleManaged: boolean;
   /** Flag used if the user has opted NOT to manage the 'isExpanded' state of the toggle group.
-   *  Indicates whether or not the toggle group is expanded */
+   *  Indicates whether or not the toggle group is expanded. */
   isManagedToggleExpanded: boolean;
 }
 

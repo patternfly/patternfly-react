@@ -12,13 +12,13 @@ export enum DataToolbarGroupVariant {
 }
 
 export interface DataToolbarGroupProps extends React.HTMLProps<HTMLDivElement> {
-  /** Classes applied to root element of the Data toolbar group */
+  /** Classes applied to root element of the data toolbar group */
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of group */
   variant?: DataToolbarGroupVariant | 'filter-group' | 'icon-button-group' | 'button-group';
-  /** Array of objects representing the various modifiers to apply to the Data toolbar group at various breakpoints */
+  /** Array of objects representing the various modifiers to apply to the data toolbar group at various breakpoints */
   breakpointMods?: DataToolbarBreakpointMod[];
-  /** Content to be rendered inside the Data toolbar group */
+  /** Content to be rendered inside the data toolbar group */
   children?: React.ReactNode;
 }
 

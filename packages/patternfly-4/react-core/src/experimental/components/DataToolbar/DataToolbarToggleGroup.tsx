@@ -11,7 +11,7 @@ import { DataToolbarBreakpointMod } from './DataToolbarUtils';
 import { formatBreakpointMods } from '../../../helpers/util';
 
 export interface DataToolbarToggleGroupProps extends DataToolbarGroupProps {
-  /** An Icon to be rendered when the toggle group has collapsed down */
+  /** An icon to be rendered when the toggle group has collapsed down */
   toggleIcon: React.ReactNode;
   /** The breakpoint at which the toggle group is collapsed down */
   breakpoint: 'md' | 'lg' | 'xl';

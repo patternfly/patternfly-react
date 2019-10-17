@@ -10,11 +10,11 @@ export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
   clearAllFilters?: () => void;
   /** The breakpoint at which the listed fitlers in chip groups are collapsed down to a summary */
   collapseListedFiltersBreakpoint?: 'md' | 'lg' | 'xl' | '2xl';
-  /** Classes applied to root element of the Data toolbar */
+  /** Classes applied to root element of the data toolbar */
   className?: string;
-  /** Content to be rendered as rows in the Data toolbar */
+  /** Content to be rendered as rows in the data toolbar */
   children?: React.ReactNode;
-  /** Id of the Data toolbar */
+  /** Id of the data toolbar */
   id: string;
 }
 
