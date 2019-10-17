@@ -109,7 +109,7 @@ class BulletChart extends React.Component {
     const { width } = this.state;
     return (
       <div>
-        <p>This bullet chart has a bottom-left aligned legend, top-left aligned label, and responsive container</p>
+        <p>This demonstrates a responsive legend which wraps when items are wider than its container</p>
         <div ref={this.containerRef} style={{ height: '250px' }}>
           <ChartBullet
             ariaDesc="Storage capacity"
