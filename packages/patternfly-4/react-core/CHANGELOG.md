@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.116.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.116.2...@patternfly/react-core@3.116.3) (2019-10-18)
+
+
+### Bug Fixes
+
+* **OUIA:** Use consumer context if specified ([#3149](https://github.com/patternfly/patternfly-react/issues/3149)) ([07de08d](https://github.com/patternfly/patternfly-react/commit/07de08d))
+
+
+
+
+
 ## [3.116.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.116.1...@patternfly/react-core@3.116.2) (2019-10-17)
 
 **Note:** Version bump only for package @patternfly/react-core

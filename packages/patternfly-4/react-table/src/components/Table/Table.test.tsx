@@ -229,3 +229,28 @@ test('Selectable table with selected expandable row', () => {
 
   expect(view.find('input[name="check-all"]').prop('checked')).toEqual(true);
 });
+
+test('Empty state table', () => {
+  const data = {
+    cells: ['Hostname', 'IP address', 'Role', 'Team'],
+    rows: [
+      {
+        heightAuto: true,
+        cells: [{
+          title: (<div>Empty State Component</div>),
+          props: {colspan: '8'}
+        }],
+      }
+    ],
+  };
+
+  const view = mount(
+    <Table aria-label="Aria labeled" {...data}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
+
+  expect(view.find('tr').at(1).prop('className')).toEqual('pf-m-height-auto');
+  expect(view.find('tbody').find('td').prop('colspan')).toEqual('8');
+});
