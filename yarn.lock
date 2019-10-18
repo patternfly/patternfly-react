@@ -12456,10 +12456,10 @@ gatsby-telemetry@^1.1.33:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
-gatsby-theme-patternfly-org@^0.0.15:
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/gatsby-theme-patternfly-org/-/gatsby-theme-patternfly-org-0.0.15.tgz#eacba3fadf886ee65ead2c189c9fd941dc80c1bb"
-  integrity sha512-4MTxPHQdFRxX6DYn/vA6aqwscFZn5dmWt8to2MttT23ozOzYOm9yNHa+7SHReWZfmEA1BsIwNgbPaXLjKICSjA==
+gatsby-theme-patternfly-org@^0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-patternfly-org/-/gatsby-theme-patternfly-org-0.0.16.tgz#d211c361fcccef790d192430c995ab2d7ed4e69b"
+  integrity sha512-eagiLwuuHiWIiCSqy9u5Q+QCE4IS8FyzRCinfaHSKhcR6AVAl3aAD7YVBEqvyCVIFKcx4PtLZdgPtDOFDeYTfQ==
   dependencies:
     "@mdx-js/mdx" "^1.1.5"
     "@mdx-js/react" "^1.1.5"
