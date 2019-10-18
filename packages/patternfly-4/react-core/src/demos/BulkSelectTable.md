@@ -18,7 +18,6 @@ class BulkSelectTableDemo extends React.Component {
     this.state = {
       res: [],
       perPage: 20,
-      total: 100,
       page: 1,
       error: null,
       loading: true,
@@ -34,9 +33,13 @@ class BulkSelectTableDemo extends React.Component {
       const rows = [...this.state.res];
       const id = rows[rowId].id;
       rows[rowId].selected = isSelected;
-      this.setState({
-        res: rows,
-        selectedItems: isSelected ? [...selectedItems, id] : selectedItems.filter(itemId => itemId !== id)
+      this.setState((prevState, props) => {
+        return {
+          res: rows,
+          selectedItems: isSelected
+            ? [...prevState.selectedItems, id]
+            : prevState.selectedItems.filter(itemId => itemId !== id)
+        };
       });
     };
 
@@ -68,16 +71,15 @@ class BulkSelectTableDemo extends React.Component {
           post.selected = true;
           return post;
         });
-        this.setState(
-          {
-            selectedItems: this.state.selectedItems.concat(newRows)
-          },
-          this.updateSelected
-        );
+
+        this.setState((prevState, props) => {
+          return {
+            selectedItems: prevState.selectedItems.concat(newRows)
+          };
+        }, this.updateSelected);
       } else {
-        const { total } = this.state;
         let newRows = [];
-        for (var i = 1; i <= total; i++) newRows = [...newRows, i];
+        for (var i = 1; i <= 100; i++) newRows = [...newRows, i];
 
         this.setState(
           {
@@ -95,8 +97,8 @@ class BulkSelectTableDemo extends React.Component {
     };
 
     this.onDropDownSelect = event => {
-      this.setState({
-        isDropDownOpen: !this.state.isDropDownOpen
+      this.setState((prevState, props) => {
+        return { isDropDownOpen: !prevState.isDropDownOpen };
       });
     };
   }
@@ -114,11 +116,11 @@ class BulkSelectTableDemo extends React.Component {
     this.fetch(this.state.page, this.state.perPage);
   }
 
-  renderPagination(variant = 'top') {
-    const { page, perPage, total } = this.state;
+  renderPagination() {
+    const { page, perPage } = this.state;
     return (
       <Pagination
-        itemCount={total}
+        itemCount={100}
         page={page}
         perPage={perPage}
         onSetPage={(_evt, value) => {
@@ -127,17 +129,18 @@ class BulkSelectTableDemo extends React.Component {
         onPerPageSelect={(_evt, value) => {
           this.fetch(1, value);
         }}
-        variant={variant}
+        variant="top"
       />
     );
   }
 
   buildSelectDropdown() {
-    const { isDropDownOpen, selectedItems, total } = this.state;
+    const { isDropDownOpen, selectedItems } = this.state;
     const numSelected = selectedItems.length;
-    const allSelected = numSelected === total;
+    const allSelected = numSelected === 100;
     const anySelected = numSelected > 0;
-    const isChecked = allSelected ? true : numSelected > 0 ? null : false;
+    const someChecked = anySelected ? null : false;
+    const isChecked = allSelected ? true : someChecked;
 
     const items = [
       <DropdownItem key="item-1" onClick={() => this.handleSelectClick('none')}>
@@ -147,7 +150,7 @@ class BulkSelectTableDemo extends React.Component {
         Select page ({this.state.perPage} items)
       </DropdownItem>,
       <DropdownItem key="item-3" onClick={() => this.handleSelectClick('all')}>
-        Select all ({this.state.total} items)
+        Select all (100 items)
       </DropdownItem>
     ];
 
@@ -202,7 +205,7 @@ class BulkSelectTableDemo extends React.Component {
         {this.renderToolbar()}
         {!loading && (
           <Table
-            header={<div></div>}
+            aria-label="Bulk Select Table Demo"
             cells={['Title', 'Body']}
             rows={rows}
             onSelect={this.onSelect}
@@ -213,9 +216,9 @@ class BulkSelectTableDemo extends React.Component {
           </Table>
         )}
         {loading && (
-          <center>
+          <div className="pf-l-bullseye">
             <Title size="3xl">Please wait while loading data</Title>
-          </center>
+          </div>
         )}
         {this.renderPagination()}
       </React.Fragment>
