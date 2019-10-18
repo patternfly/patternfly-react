@@ -6,7 +6,7 @@ typescript: true
 ---
 
 import { CatalogItemHeader } from '@patternfly/react-catalog-view-extension';
-import pfLogo from './pfLogo.svg';
+import pfLogo2 from './pfLogo2.svg';
 import './catalogItemHeader.css';
 
 ## Introduction
@@ -18,12 +18,12 @@ This package is currently an extension. Extension components do not undergo the 
 ```js title=Basic
 import React from 'react';
 import { CatalogItemHeader } from '@patternfly/react-catalog-view-extension';
-import pfLogo from './examples/pfLogoForExamples.svg';
+import pfLogo2 from './examples/pfLogo2.svg';
 
 Basic = () => (
   <React.Fragment>
     <CatalogItemHeader
-      iconImg={pfLogo}
+      iconImg={pfLogo2}
       title="PatternFly"
     />
   </React.Fragment>
@@ -33,12 +33,12 @@ Basic = () => (
 ```js title=With-vendor-description
 import React from 'react';
 import { CatalogItemHeader } from '@patternfly/react-catalog-view-extension';
-import pfLogo from './examples/pfLogoForExamples.svg';
+import pfLogo2 from './examples/pfLogo2.svg';
 
 LongDescription = () => (
   <React.Fragment>
     <CatalogItemHeader
-      iconImg={pfLogo}
+      iconImg={pfLogo2}
       title="Patternfly-React"
       vendor={
         <span>

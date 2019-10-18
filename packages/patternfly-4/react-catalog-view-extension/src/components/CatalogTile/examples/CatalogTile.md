@@ -7,7 +7,7 @@ typescript: true
 
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
-import { pfBrand } from './pfLogo.svg'
+import { pfLogo2 } from './pfLogo2.svg'
 import './catalogTile.css';
 
 ## Introduction
@@ -20,14 +20,14 @@ This package is currently an extension. Extension components do not undergo the 
 ```js title=Basic-featured-tile
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { pfLogo } from './examples/pfLogoForExamples.svg'
+import { pfLogo2 } from './examples/pfLogo2.svg'
 
 Basic = () => (
   <React.Fragment>
     <CatalogTile
       id="simple"
       featured
-      iconImg={pfLogo}
+      iconImg={pfLogo2}
       iconAlt="PatternFly logo"
       badges={[
         <CatalogTileBadge title="Certified">
@@ -49,13 +49,13 @@ Basic = () => (
 ```js title=Basic-without-truncated-text
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { pfLogo } from './examples/pfLogoForExamples.svg'
+import { pfLogo2 } from './examples/pfLogo2.svg'
 
 SimpleNoTrunc = () => (
   <React.Fragment>
     <CatalogTile
       id="simple"
-      iconImg={pfLogo}
+      iconImg={pfLogo2}
       iconAlt="PatternFly logo"
       badges={[
         <CatalogTileBadge title="Certified">
@@ -78,13 +78,13 @@ SimpleNoTrunc = () => (
 ```js title=Basic-with-footer
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { pfLogo } from './examples/pfLogoForExamples.svg'
+import { pfLogo2 } from './examples/pfLogo2.svg'
 
 SimpleFooter = () => (
   <React.Fragment>
     <CatalogTile
       id="simple-footer"
-      iconImg={pfLogo}
+      iconImg={pfLogo2}
       iconAlt="PatternFly logo"
       badges={[
         <CatalogTileBadge title="Certified">
@@ -111,13 +111,13 @@ SimpleFooter = () => (
 ```js title=Link-variant
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { pfLogo } from './examples/pfLogoForExamples.svg'
+import { pfLogo2 } from './examples/pfLogo2.svg'
 
 Link = () => (
   <React.Fragment>
     <CatalogTile
       id="simple"
-      iconImg={pfLogo}
+      iconImg={pfLogo2}
       iconAlt="PatternFly logo"
       badges={[
         <CatalogTileBadge title="Certified">
@@ -140,13 +140,13 @@ Link = () => (
 ```js title=With-multiple-icon-badges
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { pfLogo } from './examples/pfLogoForExamples.svg'
+import { pfLogo2 } from './examples/pfLogo2.svg'
 
 MultiIcon = () => (
   <React.Fragment>
     <CatalogTile
       id="multiIcon"
-      iconImg={pfLogo}
+      iconImg={pfLogo2}
       iconAlt="PatternFly logo"
       badges={[
         <CatalogTileBadge title="Certified">
@@ -171,13 +171,13 @@ MultiIcon = () => (
 ```js title=With-text-badge
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { pfLogo } from './examples/pfLogoForExamples.svg'
+import { pfLogo2 } from './examples/pfLogo2.svg'
 
 TextBadge = () => (
   <React.Fragment>
     <CatalogTile
       id="multiIcon"
-      iconImg={pfLogo}
+      iconImg={pfLogo2}
       iconAlt="PatternFly logo"
       badges={[
         'Community'
