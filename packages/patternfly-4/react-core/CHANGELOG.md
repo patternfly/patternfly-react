@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.117.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.116.3...@patternfly/react-core@3.117.0) (2019-10-18)
+
+
+### Features
+
+* **docs:** use gatsby-theme-patternfly-org ([#3146](https://github.com/patternfly/patternfly-react/issues/3146)) ([93c843b](https://github.com/patternfly/patternfly-react/commit/93c843b))
+
+
+
+
+
 ## [3.116.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.116.2...@patternfly/react-core@3.116.3) (2019-10-18)
 
 

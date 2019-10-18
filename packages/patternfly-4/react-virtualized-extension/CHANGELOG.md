@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.2.80...@patternfly/react-virtualized-extension@1.3.0) (2019-10-18)
+
+
+### Features
+
+* **docs:** use gatsby-theme-patternfly-org ([#3146](https://github.com/patternfly/patternfly-react/issues/3146)) ([93c843b](https://github.com/patternfly/patternfly-react/commit/93c843b))
+
+
+
+
+
 ## [1.2.80](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.2.79...@patternfly/react-virtualized-extension@1.2.80) (2019-10-18)
 
 **Note:** Version bump only for package @patternfly/react-virtualized-extension

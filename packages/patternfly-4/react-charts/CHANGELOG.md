@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.27...@patternfly/react-charts@5.1.0) (2019-10-18)
+
+
+### Features
+
+* **docs:** use gatsby-theme-patternfly-org ([#3146](https://github.com/patternfly/patternfly-react/issues/3146)) ([93c843b](https://github.com/patternfly/patternfly-react/commit/93c843b))
+
+
+
+
+
 ## [5.0.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.26...@patternfly/react-charts@5.0.27) (2019-10-15)
 
 **Note:** Version bump only for package @patternfly/react-charts
