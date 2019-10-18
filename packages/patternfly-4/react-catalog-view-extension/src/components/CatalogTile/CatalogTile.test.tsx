@@ -164,6 +164,5 @@ test('CatalogTile onClick behaves properly', () => {
     .find('#test-on-click.test-click-class')
     .hostNodes()
     .simulate('click');
-  expect(view).toMatchSnapshot();
   expect(onClickMock).toBeCalled();
 });
