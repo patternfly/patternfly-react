@@ -820,9 +820,10 @@ class DropdownPanel extends React.Component {
 
 ## React router link usage
 
-A react-router Link may be wrapped by DropdownItem or used directly within Dropdown. Here's some example HTML:
+A react-router Link may be wrapped by DropdownItem or used directly within Dropdown. Here's some example JSX:
 
-```nolive
+
+```js noLive
 /** Wrapped Link for DropdownItem list **/
 <DropdownItem key="link">
   <Link to={'/'}>Link</Link>
@@ -830,14 +831,14 @@ A react-router Link may be wrapped by DropdownItem or used directly within Dropd
 
 /** Direct child of Dropdown **/
 <Dropdown
-onSelect={this.onSelect}
-toggle={
-  <DropdownToggle onToggle={this.onToggle}>
-    Expanded Dropdown
-  </DropdownToggle>
-}
-isOpen={isOpen}
->
+  onSelect={this.onSelect}
+  toggle={
+    <DropdownToggle onToggle={this.onToggle}>
+      Expanded Dropdown
+    </DropdownToggle>
+  }
+  isOpen={isOpen}
+  >
   <Link to={'/'}>Link</Link>
 </Dropdown>
 ```

@@ -19,7 +19,7 @@ exports[`MonthView is working properly 1`] = `
         </th>
         <th
           class="picker-switch"
-          colspan="5"
+          colSpan="5"
         >
           January 2019
         </th>

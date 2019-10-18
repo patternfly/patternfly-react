@@ -108,7 +108,7 @@ class SimpleTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Simple Table" cells={columns} rows={rows}>
+      <Table aria-label="Simple Table" cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
@@ -163,7 +163,7 @@ class SortableTable extends React.Component {
     const { columns, rows, sortBy } = this.state;
 
     return (
-      <Table caption="Sortable Table" sortBy={sortBy} onSort={this.onSort} cells={columns} rows={rows}>
+      <Table aria-label="Sortable Table" sortBy={sortBy} onSort={this.onSort} cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
@@ -244,7 +244,7 @@ class SelectableTable extends React.Component {
 
     return (
       <div>
-      <Table caption="Selectable Table" onSelect={this.onSelect} cells={columns} rows={rows} canSelectAll={this.state.canSelectAll}>
+      <Table aria-label="Selectable Table" onSelect={this.onSelect} cells={columns} rows={rows} canSelectAll={this.state.canSelectAll}>
         <TableHeader />
         <TableBody />
       </Table>
@@ -322,7 +322,7 @@ class SimpleActionsTable extends React.Component {
   render() {
     const { columns, rows, actions } = this.state;
     return (
-      <Table caption="Actions Table" actions={actions} cells={columns} rows={rows}>
+      <Table aria-label="Actions Table" actions={actions} cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
@@ -417,7 +417,7 @@ class ActionsTable extends React.Component {
     const { columns, rows } = this.state;
     return (
       <Table
-        caption="Actions Table"
+        aria-label="Actions Table"
         cells={columns}
         rows={rows}
         actionResolver={this.actionResolver}
@@ -464,7 +464,7 @@ class CellHeader extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="First cell as Header" rows={rows} cells={columns}>
+      <Table aria-label="First cell as Header" rows={rows} cells={columns}>
         <TableHeader />
         <TableBody />
       </Table>
@@ -505,7 +505,7 @@ class CompactTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Compact Table" variant={TableVariant.compact} cells={columns} rows={rows}>
+      <Table aria-label="Compact Table" variant={TableVariant.compact} cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
@@ -547,7 +547,7 @@ class CompactTableBorderlessRows extends React.Component {
 
     return (
       <Table
-        caption="Compact Table with borderless rows"
+        aria-label="Compact Table with borderless rows"
         variant={TableVariant.compact}
         borders={false}
         cells={columns}
@@ -641,7 +641,7 @@ class CompactExpandableTable extends React.Component {
 
     return (
       <Table
-        caption="Compact expandable table"
+        aria-label="Compact expandable table"
         variant={TableVariant.compact}
         onCollapse={this.onCollapse}
         rows={rows}
@@ -691,7 +691,7 @@ class WidthTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Table with Width Modifiers" cells={columns} rows={rows}>
+      <Table aria-label="Table with Width Modifiers" cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
@@ -749,7 +749,7 @@ class HiddenVisibleBreakpointTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Table with hidden/visible breakpoint modifiers" cells={columns} rows={rows}>
+      <Table aria-label="Table with hidden/visible breakpoint modifiers" cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
@@ -840,7 +840,7 @@ class CollapsibleTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Collapsible table" onCollapse={this.onCollapse} rows={rows} cells={columns}>
+      <Table aria-label="Collapsible table" onCollapse={this.onCollapse} rows={rows} cells={columns}>
         <TableHeader />
         <TableBody />
       </Table>
@@ -1039,7 +1039,7 @@ class CompoundExpandableTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Compound expandable table" onExpand={this.onExpand} rows={rows} cells={columns}>
+      <Table aria-label="Compound expandable table" onExpand={this.onExpand} rows={rows} cells={columns}>
         <TableHeader />
         <TableBody />
       </Table>
@@ -1081,7 +1081,7 @@ class WrappableHeadersTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Wrappable headers" cells={columns} rows={rows}>
+      <Table aria-label="Wrappable headers" cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
@@ -1090,9 +1090,7 @@ class WrappableHeadersTable extends React.Component {
 }
 ```
 
-## Empty state table
-
-```js
+```js title=Empty-state
 import React from 'react';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 import { Button, EmptyState, EmptyStateBody, EmptyStatePrimary, Bullseye } from '@patternfly/react-core';
@@ -1103,7 +1101,7 @@ EmptyStateTable = () => {
     heightAuto: true,
     cells: [
       {
-        props: {colspan: '8'},
+        props: { colSpan: 8 },
         title: (
           <Bullseye>
             <EmptyState variant={EmptyStateVariant.small}>
@@ -1122,7 +1120,7 @@ EmptyStateTable = () => {
     ]
   }]
   return (
-    <Table cells={columns} rows={rows}>
+    <Table cells={columns} rows={rows} aria-label="Empty state">
       <TableHeader />
       <TableBody />
     </Table>

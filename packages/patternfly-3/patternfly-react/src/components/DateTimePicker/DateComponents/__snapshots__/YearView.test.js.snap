@@ -18,7 +18,7 @@ exports[`Edit month YearView 1`] = `
         </th>
         <th
           class="picker-switch"
-          colspan="5"
+          colSpan="5"
         >
           2019
         </th>
@@ -34,7 +34,7 @@ exports[`Edit month YearView 1`] = `
     <tbody>
       <tr>
         <td
-          colspan="7"
+          colSpan="7"
         >
           <span
             class="month "
@@ -121,7 +121,7 @@ exports[`Edit year and month YearView 1`] = `
         </th>
         <th
           class="picker-switch"
-          colspan="5"
+          colSpan="5"
         >
           2019
         </th>
@@ -137,7 +137,7 @@ exports[`Edit year and month YearView 1`] = `
     <tbody>
       <tr>
         <td
-          colspan="7"
+          colSpan="7"
         >
           <span
             class="month "
@@ -224,7 +224,7 @@ exports[`YearView is working properly 1`] = `
         </th>
         <th
           class="picker-switch"
-          colspan="5"
+          colSpan="5"
         >
           2019
         </th>
@@ -240,7 +240,7 @@ exports[`YearView is working properly 1`] = `
     <tbody>
       <tr>
         <td
-          colspan="7"
+          colSpan="7"
         >
           <span
             class="month "
