@@ -10,6 +10,10 @@ export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
   clearAllFilters?: () => void;
   /** The breakpoint at which the listed fitlers in chip groups are collapsed down to a summary */
   collapseListedFiltersBreakpoint?: 'md' | 'lg' | 'xl' | '2xl';
+  /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
+  isExpanded?: boolean;
+  /** A callback for setting the isExpanded flag */
+  toggleIsExpanded?: () => void;
   /** Classes applied to root element of the data toolbar */
   className?: string;
   /** Content to be rendered as rows in the data toolbar */
@@ -18,13 +22,19 @@ export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
   id: string;
 }
 
-interface FilterInfo {
-  [key: string]: number;
-}
-
 export interface DataToolbarState {
+  /** True if the component is managing the expanded state of the toggle group.
+   *  False if the user has opted to manage the 'isExpanded' state themself. */
+  isToggleManaged: boolean;
+  /** Flag used if the user has opted NOT to manage the 'isExpanded' state of the toggle group.
+   *  Indicates whether or not the toggle group is expanded. */
+  isManagedToggleExpanded: boolean;
   /** Object managing information about how many chips are in each chip group */
   filterInfo: FilterInfo;
+}
+
+interface FilterInfo {
+  [key: string]: number;
 }
 
 export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarState> {
@@ -34,8 +44,36 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
     super(props);
 
     this.state = {
+      isToggleManaged: !(props.isExpanded || !!props.toggleIsExpanded),
+      isManagedToggleExpanded: false,
       filterInfo: {}
     };
+  }
+
+  toggleIsExpanded = () => {
+    this.setState(prevState => ({
+      isManagedToggleExpanded: !prevState.isManagedToggleExpanded
+    }));
+  };
+
+  closeExpandableContent = () => {
+    this.setState(() => ({
+      isManagedToggleExpanded: false
+    }));
+  };
+
+  componentDidMount() {
+    const { isToggleManaged } = this.state;
+    if (isToggleManaged) {
+      window.addEventListener('resize', this.closeExpandableContent);
+    }
+  }
+
+  componentWillUnmount() {
+    const { isToggleManaged } = this.state;
+    if (isToggleManaged) {
+      window.removeEventListener('resize', this.closeExpandableContent);
+    }
   }
 
   updateNumberFilters = (categoryName: string, numberOfFilters: number) => {
@@ -52,7 +90,18 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
   };
 
   render() {
-    const { clearAllFilters, collapseListedFiltersBreakpoint, className, children, id, ...props } = this.props;
+    const {
+      clearAllFilters,
+      collapseListedFiltersBreakpoint,
+      isExpanded,
+      toggleIsExpanded,
+      className,
+      children,
+      id,
+      ...props
+    } = this.props;
+
+    const { isToggleManaged, isManagedToggleExpanded } = this.state;
 
     const numberOfFilters = this.getNumberOfFilters();
     const showClearFiltersButton = numberOfFilters > 0;
@@ -61,6 +110,8 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
       <div className={css(styles.dataToolbar, className)} id={id} {...props}>
         <DataToolbarContext.Provider
           value={{
+            isExpanded: isToggleManaged ? isManagedToggleExpanded : isExpanded,
+            toggleIsExpanded: isToggleManaged ? this.toggleIsExpanded : toggleIsExpanded,
             chipGroupContentRef: this.chipGroupContentRef,
             updateNumberFilters: this.updateNumberFilters
           }}
@@ -68,10 +119,12 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
           {React.Children.map(children, (child: any) =>
             React.cloneElement(child, {
               clearAllFilters,
-              showClearFiltersButton
+              showClearFiltersButton,
+              isExpanded: isToggleManaged ? isManagedToggleExpanded : isExpanded,
             })
           )}
           <DataToolbarChipGroupContent
+            isExpanded={isToggleManaged ? isManagedToggleExpanded : isExpanded}
             chipGroupContentRef={this.chipGroupContentRef}
             clearAllFilters={clearAllFilters}
             showClearFiltersButton={showClearFiltersButton}

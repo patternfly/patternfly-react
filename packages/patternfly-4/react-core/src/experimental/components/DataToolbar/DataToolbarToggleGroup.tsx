@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import styles from '@patternfly/react-styles/css/components/DataToolbar/data-toolbar';
 import { css, getModifier } from '@patternfly/react-styles';
 import { DataToolbarGroupProps } from './DataToolbarGroup';
-import { DataToolbarContentContext } from './DataToolbarUtils';
+import { DataToolbarContext, DataToolbarContentContext } from './DataToolbarUtils';
 import { Button } from '../../../components/Button';
 import { global_breakpoint_lg as globalBreakpointLg } from '@patternfly/react-tokens';
 
@@ -32,37 +32,43 @@ export class DataToolbarToggleGroup extends React.Component<DataToolbarToggleGro
     const { toggleIcon, breakpoint, variant, breakpointMods, className, children, ...props } = this.props;
 
     return (
-      <DataToolbarContentContext.Consumer>
-        {({ isExpanded, toggleIsExpanded, expandableContentRef, expandableContentId }) => {
+      <DataToolbarContext.Consumer>
+        {({ isExpanded, toggleIsExpanded }) => {
           return (
-            <div
-              className={css(
-                styles.dataToolbarGroup,
-                variant && getModifier(styles, variant),
-                formatBreakpointMods(breakpointMods, styles),
-                getModifier(styles, 'toggle-group'),
-                getModifier(styles, `show-on-${breakpoint}`),
-                className
-              )}
-              {...props}
-            >
-              <div className={css(styles.dataToolbarToggle)}>
-                <Button
-                  variant="plain"
-                  onClick={toggleIsExpanded}
-                  aria-label="Show Filters"
-                  {...(isExpanded && { 'aria-expanded': true })}
-                  aria-haspopup={isExpanded && this.isContentPopup()}
-                  aria-controls={expandableContentId}
-                >
-                  {toggleIcon}
-                </Button>
-              </div>
-              {isExpanded ? ReactDOM.createPortal(children, expandableContentRef.current.firstElementChild) : children}
-            </div>
+            <DataToolbarContentContext.Consumer>
+              {({ expandableContentRef, expandableContentId }) => {
+                return (
+                  <div
+                    className={css(
+                      styles.dataToolbarGroup,
+                      variant && getModifier(styles, variant),
+                      formatBreakpointMods(breakpointMods, styles),
+                      getModifier(styles, 'toggle-group'),
+                      getModifier(styles, `show-on-${breakpoint}`),
+                      className
+                    )}
+                    {...props}
+                  >
+                    <div className={css(styles.dataToolbarToggle)}>
+                      <Button
+                        variant="plain"
+                        onClick={toggleIsExpanded}
+                        aria-label="Show Filters"
+                        {...(isExpanded && { 'aria-expanded': true })}
+                        aria-haspopup={isExpanded && this.isContentPopup()}
+                        aria-controls={expandableContentId}
+                      >
+                        {toggleIcon}
+                      </Button>
+                    </div>
+                    {isExpanded ? ReactDOM.createPortal(children, expandableContentRef.current.firstElementChild) : children}
+                  </div>
+                );
+              }}
+            </DataToolbarContentContext.Consumer>
           );
         }}
-      </DataToolbarContentContext.Consumer>
+      </DataToolbarContext.Consumer>
     );
   }
 }

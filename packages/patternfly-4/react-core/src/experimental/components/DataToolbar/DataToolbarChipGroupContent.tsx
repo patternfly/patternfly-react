@@ -11,6 +11,8 @@ import { globalBreakpoints } from './DataToolbarUtils';
 export interface DataToolbarChipGroupContentProps extends React.HTMLProps<HTMLDivElement> {
   /** Classes applied to root element of the data toolbar content row */
   className?: string;
+  /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
+  isExpanded?: boolean;
   /** Chip group content reference for passing to data toolbar children */
   chipGroupContentRef: RefObject<HTMLDivElement>;
   /** optional callback for clearing all filters in the toolbar */
@@ -34,6 +36,7 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
   render() {
     const {
       className,
+      isExpanded,
       chipGroupContentRef,
       clearAllFilters,
       showClearFiltersButton,
@@ -70,14 +73,14 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
           {...(collapseListedFilters && { 'aria-hidden': true })}
         />
         {
-          collapseListedFilters && numberOfFilters > 0 && (
+          collapseListedFilters && numberOfFilters > 0 && !isExpanded && (
             <DataToolbarGroup className={css(getModifier(styles, 'toggle-group-summary'))}>
               <DataToolbarItem>{numberOfFilters} filters applied</DataToolbarItem>
             </DataToolbarGroup>
           )
         }
         {
-          showClearFiltersButton &&
+          showClearFiltersButton && !isExpanded &&
           <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
             <Button variant="link" onClick={clearChipGroups}>
               {clearFiltersButtonText}

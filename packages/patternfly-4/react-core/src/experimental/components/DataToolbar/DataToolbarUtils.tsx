@@ -8,25 +8,25 @@ import {
 } from '@patternfly/react-tokens';
 
 interface DataToolbarContextProps {
+  isExpanded: boolean;
+  toggleIsExpanded: () => void;
   chipGroupContentRef: RefObject<HTMLDivElement>;
   updateNumberFilters: (categoryName: string, numberOfFilters: number) => void;
 }
 
 export const DataToolbarContext = React.createContext<Partial<DataToolbarContextProps>>({
+  isExpanded: false,
+  toggleIsExpanded: () => {},
   chipGroupContentRef: null,
   updateNumberFilters: (categoryName: string, numberOfFilters: number) => {}
 });
 
 interface DataToolbarContentContextProps {
-  isExpanded: boolean;
-  toggleIsExpanded: () => void;
   expandableContentRef: RefObject<HTMLDivElement>;
   expandableContentId: string;
 }
 
 export const DataToolbarContentContext = React.createContext<Partial<DataToolbarContentContextProps>>({
-  isExpanded: false,
-  toggleIsExpanded: () => {},
   expandableContentRef: null,
   expandableContentId: '',
 });

@@ -45,7 +45,7 @@ class DataToolbarItems extends React.Component {
 ```
 Toolbar items are individual components that can be placed inside of a toolbar. Buttons or select lists are examples of items. (Note: This example does not demonstrate the desired responsive behavior of the toolbar. That is handled in later examples.)
 
-```js title=With-spacers
+```js title=Adjusting-item-spacers
 import React from 'react';
 import { DataToolbar , DataToolbarItem, DataToolbarGroup, DataToolbarContent } from '@patternfly/react-core/dist/esm/experimental';
 import { Button } from '@patternfly/react-core';
@@ -552,8 +552,8 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
     const items =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
     
     return (
-      <DataToolbar id="data-toolbar-consumer-managed-toggle-groups">
-          <DataToolbarContent isExpanded={isExpanded} toggleIsExpanded={this.toggleIsExpanded}>
+      <DataToolbar id="data-toolbar-consumer-managed-toggle-groups" isExpanded={isExpanded} toggleIsExpanded={this.toggleIsExpanded}>
+          <DataToolbarContent>
             {items}
           </DataToolbarContent>
         </DataToolbar>
@@ -563,8 +563,8 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
 ```
 This second Toggle group example below demonstrates a consumer managed toggle state. If the consumer would prefer to manage the expanded state of the toggle group for smaller screen widths:
 
-  1. Add a toggleIsExpanded callback to DataToolbarContent
-  1. Pass in a boolean into the isExpanded prop to DataToolbarContent
+  1. Add a toggleIsExpanded callback to DataToolbar
+  1. Pass in a boolean into the isExpanded prop to DataToolbar
 
 - Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.
 
@@ -796,7 +796,7 @@ class DataToolbarWithFilterExample extends React.Component {
 The DataToolbarFilter component expects a consumer managed list of applied filters and a delete chip handler to be passed as props. Then the rendering of chips will be handled responsively by the Toolbar
 When filters are applied, the toolbar will expand in height to make space for a row of filter chips. Upon clearing the applied filters, the toolbar will collapse to its default height.
 
-```js title=Group-stacked
+```js title=Stacked
 import React from 'react';
 import { DataToolbar, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup, DataToolbarItem } from '@patternfly/react-core/dist/esm/experimental';
 import { Button, Select, SelectOption, Pagination, Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem } from '@patternfly/react-core';
