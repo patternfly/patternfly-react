@@ -18,7 +18,7 @@ This package is currently an extension. Extension components do not undergo the 
 ```js title=Basic
 import React from 'react';
 import { CatalogItemHeader } from '@patternfly/react-catalog-view-extension';
-import pfLogo from './examples/pfLogo.svg';
+import pfLogo from './examples/pfLogoForExamples.svg';
 
 Basic = () => (
   <React.Fragment>
@@ -33,7 +33,7 @@ Basic = () => (
 ```js title=With-vendor-description
 import React from 'react';
 import { CatalogItemHeader } from '@patternfly/react-catalog-view-extension';
-import pfLogo from './examples/pfLogo.svg';
+import pfLogo from './examples/pfLogoForExamples.svg';
 
 LongDescription = () => (
   <React.Fragment>

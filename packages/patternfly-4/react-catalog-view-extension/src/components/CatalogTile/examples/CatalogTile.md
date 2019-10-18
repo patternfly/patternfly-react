@@ -20,7 +20,7 @@ This package is currently an extension. Extension components do not undergo the 
 ```js title=Basic-featured-tile
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { pfLogo } from './examples/pfLogo.svg'
+import { pfLogo } from './examples/pfLogoForExamples.svg'
 
 Basic = () => (
   <React.Fragment>
@@ -49,7 +49,7 @@ Basic = () => (
 ```js title=Basic-without-truncated-text
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { pfLogo } from './examples/pfLogo.svg'
+import { pfLogo } from './examples/pfLogoForExamples.svg'
 
 SimpleNoTrunc = () => (
   <React.Fragment>
@@ -78,7 +78,7 @@ SimpleNoTrunc = () => (
 ```js title=Basic-with-footer
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { pfLogo } from './examples/pfLogo.svg'
+import { pfLogo } from './examples/pfLogoForExamples.svg'
 
 SimpleFooter = () => (
   <React.Fragment>
@@ -111,7 +111,7 @@ SimpleFooter = () => (
 ```js title=Link-variant
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { pfLogo } from './examples/pfLogo.svg'
+import { pfLogo } from './examples/pfLogoForExamples.svg'
 
 Link = () => (
   <React.Fragment>
@@ -140,7 +140,7 @@ Link = () => (
 ```js title=With-multiple-icon-badges
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { pfLogo } from './examples/pfLogo.svg'
+import { pfLogo } from './examples/pfLogoForExamples.svg'
 
 MultiIcon = () => (
   <React.Fragment>
@@ -171,7 +171,7 @@ MultiIcon = () => (
 ```js title=With-text-badge
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
-import { pfLogo } from './examples/pfLogo.svg'
+import { pfLogo } from './examples/pfLogoForExamples.svg'
 
 TextBadge = () => (
   <React.Fragment>
