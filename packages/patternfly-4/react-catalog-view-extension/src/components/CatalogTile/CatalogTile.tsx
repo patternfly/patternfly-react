@@ -122,6 +122,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
       truncateDescriptionFn,
       maxDescriptionLength,
       footer,
+      ref,
       ...props
     } = this.props;
     const truncateDescription = truncateDescriptionFn || this.defaultTruncateDescription;

@@ -5,24 +5,24 @@ propComponents: ['CatalogTile']
 typescript: true
 ---
 
-Note: Catalog tile lives in its own package at [`@patternfly/react-catalog-view-extension`](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension)!
-<br />
-This package is currently an extension. Extension components do not undergo the same rigorous design or coding review process as core PatternFly components. If enough members of the community find them useful, we will work to move them into our core PatternFly system by starting the design process for the idea.
-<br />
-<br />
-
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
-import { pfBrand } from './examples/pfLogo.svg'
-import './examples/catalogTile.scss';
+import { pfBrand } from './pfLogo.svg'
+import './catalogTile.css';
 
-## Simple featured catalog tile
-```js
+## Introduction
+
+Note: Catalog tile lives in its own package at [`@patternfly/react-catalog-view-extension`](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension)!
+
+This package is currently an extension. Extension components do not undergo the same rigorous design or coding review process as core PatternFly components. If enough members of the community find them useful, we will work to move them into our core PatternFly system by starting the design process for the idea.
+
+## Examples
+```js title=Basic-featured-tile
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { pfLogo } from './examples/pfLogo.svg'
 
-Simple = () => (
+Basic = () => (
   <React.Fragment>
     <CatalogTile
       id="simple"
@@ -46,13 +46,12 @@ Simple = () => (
 );
 ```
 
-## Simple catalog tile without truncated text
-```js
+```js title=Basic-without-truncated-text
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { pfLogo } from './examples/pfLogo.svg'
 
-SimpleUnTrunc = () => (
+SimpleNoTrunc = () => (
   <React.Fragment>
     <CatalogTile
       id="simple"
@@ -76,8 +75,7 @@ SimpleUnTrunc = () => (
 );
 ```
 
-## Simple catalog tile with footer
-```js
+```js title=Basic-with-footer
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { pfLogo } from './examples/pfLogo.svg'
@@ -110,8 +108,7 @@ SimpleFooter = () => (
 );
 ```
 
-## Catalog tile link variant
-```js
+```js title=Link-variant
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { pfLogo } from './examples/pfLogo.svg'
@@ -140,8 +137,7 @@ Link = () => (
 );
 ```
 
-## Catalog tile with multiple icon badges
-```js
+```js title=With-multiple-icon-badges
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { pfLogo } from './examples/pfLogo.svg'
@@ -172,9 +168,7 @@ MultiIcon = () => (
 );
 ```
 
-
-## Catalog tile with text badge
-```js
+```js title=With-text-badge
 import React from 'react';
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { pfLogo } from './examples/pfLogo.svg'
