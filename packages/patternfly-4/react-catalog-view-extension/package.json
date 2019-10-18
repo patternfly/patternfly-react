@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@patternfly/patternfly": "2.35.1",
+    "@patternfly/react-core": "^3.116.3",
     "@patternfly/react-styles": "^3.5.32",
     "breakjs": "^1.0.0",
     "classnames": "^2.2.5",
