@@ -37,7 +37,7 @@
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps"
   },
   "dependencies": {
-    "@patternfly/patternfly": "2.35.1",
+    "@patternfly/patternfly": "2.36.0",
     "@patternfly/react-core": "^3.116.3",
     "@patternfly/react-styles": "^3.5.32",
     "breakjs": "^1.0.0",

@@ -2,7 +2,7 @@
 
 exports[`simple catalog item header 1`] = `
 <header
-  className="catalog-item-header-pf "
+  className="catalog-item-header-pf"
 >
   <div
     className="catalog-item-header-pf-text"
