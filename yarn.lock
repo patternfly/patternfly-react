@@ -12473,6 +12473,14 @@ gatsby-theme-patternfly-org@^0.0.16:
     react-helmet "^5.2.1"
     react-live "^2.2.0"
 
+gatsby-transformer-json@^2.2.15:
+  version "2.2.15"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.2.15.tgz#a2e99f0bad39709fb19af9e5dc8c70dc6969399c"
+  integrity sha512-I73nCj8bGHddMREhNDXS1pNfb2uOpMj4q2UZgZI7I1fsOPHCVOD2r/RmAZ4WFZYgYt553eL6lyYmrgP1h0apHw==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
+    bluebird "^3.7.0"
+
 gatsby-transformer-json@^2.2.8:
   version "2.2.12"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.2.12.tgz#6f714f1101fc4384062d93711a0586a4cb573d75"
