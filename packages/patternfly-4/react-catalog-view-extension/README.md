@@ -30,7 +30,7 @@ Example with LESS:
 @import "~bootstrap/sass/variables";
 @import "~patternfly/dist/sass/variables";
 @import "~patternfly-react/dist/sass/patternfly-react.scss";
-@import "~react-catalog-view-extension/dist/sass/patternfly-react-extensions.scss";
+@import "~react-catalog-view-extension/dist/sass/react-catalog-view-extension.scss";
 ```
 
 ### Building

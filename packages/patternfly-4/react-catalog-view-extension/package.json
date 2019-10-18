@@ -32,7 +32,7 @@
     "build:babel:esm": "babel --source-maps --extensions '.js,.ts,.tsx' src --out-dir dist/esm",
     "build:babel:umd": "babel --source-maps --extensions '.js' dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
     "build:types": "tsc -p tsconfig.gen-dts.json",
-    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/patternfly-react-extensions/* dist/sass && node-sass --output-style compressed --importer=./node-sass-patternfly-importer.js -o dist/css sass/patternfly-react-extensions.scss",
+    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/react-catalog-view-extension/* dist/sass && node-sass --output-style compressed --importer=./node-sass-patternfly-importer.js -o dist/css sass/react-catalog-view-extension.scss",
     "clean": "rimraf dist",
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps"
   },
