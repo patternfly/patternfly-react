@@ -1,3 +1,9 @@
+---
+title: Release notes
+section: root
+hideTOC: true
+---
+
 # 2019.08 release notes (2019-10-01)
 Packages released:
 - [@patternfly/react-charts@5.0.13](https://www.npmjs.com/package/@patternfly/react-charts/v/5.0.13)

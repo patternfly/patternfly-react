@@ -1,24 +1,31 @@
 ---
-title: 'Threshold'
+title: 'Threshold chart'
 section: 'charts'
 typescript: true
-propComponents: ['Chart', 'ChartAxis', 'ChartGroup', 'ChartThreshold', 'ChartVoronoiContainer']
+propComponents: [
+  'Chart',
+  'ChartAxis',
+  'ChartGroup',
+  'ChartThreshold',
+  'ChartVoronoiContainer'
+]
+hideDarkMode: true
 ---
 
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLegend, ChartThreshold, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer } from '@patternfly/react-charts';
 import '@patternfly/patternfly/patternfly-charts.css';
-import './chart-threshold.scss';
 import {
   chart_color_blue_300,
   chart_color_orange_300
 } from '@patternfly/react-tokens';
 
+## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
-## Multi-color, area chart with threshold indicators and responsive container
-```js
+## Examples
+```js title=Multi--color-(unordered)-with-responsive-container
 import React from 'react';
 import {
   Chart,
@@ -63,7 +70,7 @@ class MultiColorChart extends React.Component {
 
     return (
       <div ref={this.containerRef}>
-        <div className="threshold-chart-threshold-bottom-responsive">
+        <div style={{ height: '250px' }}>
           <Chart
             ariaDesc="Average number of pets"
             ariaTitle="Area chart example"
@@ -159,13 +166,13 @@ class MultiColorChart extends React.Component {
 }
 ```
 
-## Tips
-
+## Documentation
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
-## Docs
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

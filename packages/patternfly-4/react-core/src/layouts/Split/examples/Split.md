@@ -7,10 +7,10 @@ typescript: true
 ---
 
 import { Split, SplitItem } from '@patternfly/react-core';
-import './split.scss';
+import './split.css';
 
-## Simple split
-```js
+## Examples
+```js title=Basic
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 
@@ -21,8 +21,7 @@ import { Split, SplitItem } from '@patternfly/react-core';
 </Split>
 ```
 
-## Split layout with gutter
-```js
+```js title=With-gutter
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
 

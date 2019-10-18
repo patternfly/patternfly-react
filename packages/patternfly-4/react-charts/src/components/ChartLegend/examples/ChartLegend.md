@@ -1,26 +1,28 @@
 ---
-title: 'Legend'
+title: 'Legend chart'
 section: 'charts'
 typescript: true
-propComponents: ['ChartLegend']
+propComponents: [
+  'ChartLegend'
+]
+hideDarkMode: true
 ---
 
 import { Chart, ChartArea, ChartAxis, ChartBullet, ChartGroup, ChartLegend, ChartLine, ChartPie, ChartScatter, ChartThemeColor } from '@patternfly/react-charts';
 import { chart_area_Opacity } from '@patternfly/react-tokens';
-import './chart-legend.scss';
 
+## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
-## Right aligned legend
-This demonstrates a right aligned legend
-```js
+## Examples
+```js title=Basic-with-right-aligned-legend
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
-<div>
-  <div className="legend-donut-chart-legend-right">
+BasicRightAlignedLegend = (
+  <div style={{ height: '230px', width: '350px' }}>
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
@@ -41,17 +43,15 @@ import { ChartDonut } from '@patternfly/react-charts';
       width={350}
     />
   </div>
-</div>
+)
 ```
 
-## Bottom legend
-This demonstrates a bottom aligned legend
-```js
+```js title=Bottom-aligned-legend
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
-<div>
-  <div className="legend-bar-chart-legend-bottom">
+BottomAlignedLegend = (
+  <div style={{ height: '275px', width: '450px' }}>
     <Chart
       ariaDesc="Average number of pets"
       ariaTitle="Bar chart example"
@@ -79,12 +79,10 @@ import { Chart, ChartBar, ChartGroup, ChartThemeColor, ChartVoronoiContainer } f
       </ChartGroup>
     </Chart>
   </div>
-</div>
+)
 ```
 
-## Responsive, bottom-left aligned legend
-This demonstrates a responsive legend which wraps when items are wider than its container
-```js
+```js title=Responsive-bottom--left-aligned-legend
 import React from 'react';
 import { ChartBullet } from '@patternfly/react-charts';
 
@@ -115,7 +113,8 @@ class BulletChart extends React.Component {
     const { width } = this.state;
     return (
       <div ref={this.containerRef}>
-        <div className="legend-bullet-chart-horz-responsive-legend-bottom">
+        <p>This demonstrates a responsive legend which wraps when items are wider than its container</p>
+        <div style={{ height: '250px' }}>
           <ChartBullet
             ariaDesc="Storage capacity"
             ariaTitle="Bullet chart example"
@@ -149,84 +148,83 @@ class BulletChart extends React.Component {
 }
 ```
 
-## Standaonle legend
-This demonstrates a standalone legend Vs using the `legendData` property
-```js
+```js title=Standalone-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts'; import {ChartLegend} from "./ChartLegend";
 
-<div>
-  <div className="legend-line-chart-legend-bottom">
-    <Chart
-      ariaDesc="Average number of pets"
-      ariaTitle="Line chart example"
-      containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-      height={275}
-      maxDomain={{y: 10}}
-      minDomain={{y: 0}}
-      padding={{
-        bottom: 75, // Adjusted to accommodate legend
-        left: 50,
-        right: 50,
-        top: 50
-      }}
-      themeColor={ChartThemeColor.green}
-      width={450}
-    >
-      <ChartAxis tickValues={[2, 3, 4]} />
-      <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
-      <ChartGroup>
-        <ChartLine
-          data={[
-            { name: 'Cats', x: '2015', y: 1 },
-            { name: 'Cats', x: '2016', y: 2 },
-            { name: 'Cats', x: '2017', y: 5 },
-            { name: 'Cats', x: '2018', y: 3 }
-          ]}
+StandaloneLegend = (
+  <div>
+    <p>This demonstrates a standalone legend vs. using the `legendData` property</p>
+    <div style={{ height: '275px', width: '450px' }}>
+      <Chart
+        ariaDesc="Average number of pets"
+        ariaTitle="Line chart example"
+        containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+        height={275}
+        maxDomain={{y: 10}}
+        minDomain={{y: 0}}
+        padding={{
+          bottom: 75, // Adjusted to accommodate legend
+          left: 50,
+          right: 50,
+          top: 50
+        }}
+        themeColor={ChartThemeColor.green}
+        width={450}
+      >
+        <ChartAxis tickValues={[2, 3, 4]} />
+        <ChartAxis dependentAxis showGrid tickValues={[2, 5, 8]} />
+        <ChartGroup>
+          <ChartLine
+            data={[
+              { name: 'Cats', x: '2015', y: 1 },
+              { name: 'Cats', x: '2016', y: 2 },
+              { name: 'Cats', x: '2017', y: 5 },
+              { name: 'Cats', x: '2018', y: 3 }
+            ]}
+          />
+          <ChartLine
+            data={[
+              { name: 'Dogs', x: '2015', y: 2 },
+              { name: 'Dogs', x: '2016', y: 1 },
+              { name: 'Dogs', x: '2017', y: 7 },
+              { name: 'Dogs', x: '2018', y: 4 }
+            ]}
+            style={{
+              data: {
+                strokeDasharray: '3,3'
+              }
+            }}
+          />
+          <ChartLine
+            data={[
+              { name: 'Birds', x: '2015', y: 3 },
+              { name: 'Birds', x: '2016', y: 4 },
+              { name: 'Birds', x: '2017', y: 9 },
+              { name: 'Birds', x: '2018', y: 5 }
+            ]}
+          />
+          <ChartLine
+            data={[
+              { name: 'Mice', x: '2015', y: 3 },
+              { name: 'Mice', x: '2016', y: 3 },
+              { name: 'Mice', x: '2017', y: 8 },
+              { name: 'Mice', x: '2018', y: 7 }
+            ]}
+          />
+        </ChartGroup>
+        <ChartLegend 
+          data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
+          x={80}
+          y={235}
         />
-        <ChartLine
-          data={[
-            { name: 'Dogs', x: '2015', y: 2 },
-            { name: 'Dogs', x: '2016', y: 1 },
-            { name: 'Dogs', x: '2017', y: 7 },
-            { name: 'Dogs', x: '2018', y: 4 }
-          ]}
-          style={{
-            data: {
-              strokeDasharray: '3,3'
-            }
-          }}
-        />
-        <ChartLine
-          data={[
-            { name: 'Birds', x: '2015', y: 3 },
-            { name: 'Birds', x: '2016', y: 4 },
-            { name: 'Birds', x: '2017', y: 9 },
-            { name: 'Birds', x: '2018', y: 5 }
-          ]}
-        />
-        <ChartLine
-          data={[
-            { name: 'Mice', x: '2015', y: 3 },
-            { name: 'Mice', x: '2016', y: 3 },
-            { name: 'Mice', x: '2017', y: 8 },
-            { name: 'Mice', x: '2018', y: 7 }
-          ]}
-        />
-      </ChartGroup>
-      <ChartLegend 
-        data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
-        x={80}
-        y={235}
-      />
-    </Chart>
+      </Chart>
+    </div>
   </div>
-</div>
+)
 ```
 
-## Legend tooltips
-This demonstrates an approach for applying tooltips to a legend using a custom label component
-```js
+```js title=Legend-tooltips
 import React from 'react';
 import { ChartLabel, ChartPie, ChartThemeColor } from '@patternfly/react-charts';
 import { Tooltip } from '@patternfly/react-core';
@@ -254,7 +252,8 @@ class TooltipPieChart extends React.Component {
   render() {
     return (
       <div>
-        <div className="pie-chart-legend-bottom">
+        <p>This demonstrates an approach for applying tooltips to a legend using a custom label component</p>
+        <div style={{ height: '275px', width: '300px' }}>
           <ChartPie
             ariaDesc="Average number of pets"
             ariaTitle="Pie chart example"
@@ -546,12 +545,12 @@ class InteractiveLegendChart extends React.Component {
 ```
 -->
 
-## Tips
-
+## Documentation
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
-## Docs
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

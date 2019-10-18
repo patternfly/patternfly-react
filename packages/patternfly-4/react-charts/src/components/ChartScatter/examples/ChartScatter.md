@@ -1,21 +1,28 @@
 ---
-title: 'Scatter'
+title: 'Scatter chart'
 section: 'charts'
 typescript: true
-propComponents: ['Chart', 'ChartArea', 'ChartAxis', 'ChartGroup', 'ChartLine', 'ChartScatter']
+propComponents: [
+  'Chart',
+  'ChartArea',
+  'ChartAxis',
+  'ChartGroup',
+  'ChartLine',
+  'ChartScatter'
+]
+hideDarkMode: true
 ---
 
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor } from '@patternfly/react-charts';
 import { Button, Tooltip } from '@patternfly/react-core';
-import './chart-scatter.scss';
 
+## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
-## Scatter area chart
-This demonstrates how to add interactive data points to an area chart
-```js
+## Examples
+```js title=Area-chart
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartScatter, ChartThemeColor } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
@@ -79,7 +86,8 @@ class ScatterAreaChart extends React.Component {
 
     return (
       <div ref={this.containerRef}>
-        <div className="scatter-area-chart-legend-bottom-responsive">
+        <p>This demonstrates how to add interactive data points to an area chart</p>
+        <div style={{ height: '250px' }}>
           <Chart
             ariaDesc="Average number of pets"
             ariaTitle="Area chart example"
@@ -126,9 +134,7 @@ class ScatterAreaChart extends React.Component {
 }
 ```
 
-## Scatter line chart
-This demonstrates how to add interactive data points to a line chart
-```js
+```js title=Line-chart
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartScatter, ChartThemeColor } from '@patternfly/react-charts';
 
@@ -203,7 +209,8 @@ class ScatterLineChart extends React.Component {
 
     return (
       <div ref={this.containerRef}>
-        <div className="scatter-line-chart-legend-bottom-responsive">
+        <p>This demonstrates how to add interactive data points to a line chart</p>
+        <div style={{ height: '275px' }}>
           <Chart
             ariaDesc="Average number of pets"
             ariaTitle="Line chart example"
@@ -259,11 +266,11 @@ class ScatterLineChart extends React.Component {
 }
 ```
 
-## Tips
+## Documentation
 
 - For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
 
-## Docs
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

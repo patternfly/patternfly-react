@@ -7,10 +7,10 @@ typescript: true
 ---
 
 import { Stack, StackItem } from '@patternfly/react-core';
-import './stack.scss';
+import './stack.css';
 
-## Simple stack layout
-```js
+## Examples
+```js title=Basic
 import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 
@@ -21,8 +21,7 @@ import { Stack, StackItem } from '@patternfly/react-core';
 </Stack>
 ```
 
-## Simple stack layout with gutter
-```js
+```js title=With-gutter
 import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
 

@@ -18,8 +18,8 @@ Your Markdown file will have its JS code blocks converted to live-editable compo
 import { requiredDeps } from '@patternfly/any-webpack-alias-in-gatsby-node.js'
 import localDep from './examples/exampleDep.js'
 
-## Title describing example
-```js
+## Examples
+```js title=Title-describing-example
 <p>Hello, world!</p>
 ```
 `````

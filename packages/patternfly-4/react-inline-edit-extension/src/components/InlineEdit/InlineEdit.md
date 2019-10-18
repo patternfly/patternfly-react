@@ -22,7 +22,8 @@ import {
 } from '@patternfly/react-inline-edit-extension';
 import { Dropdown, DropdownToggle, DropdownItem, Checkbox } from '@patternfly/react-core';
 
-```js
+## Examples
+```js title=Editable
 import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
@@ -117,15 +118,18 @@ class EditableTable extends React.Component {
       columns: [
         {
           title: 'Repositories',
+section: components
           cellFormatters: [textInputFormatter]
         },
         {
           title: 'Branches',
+section: components
           cellFormatters: [(value, { rowData }) => rowData.data.branches[rowData.data.branches.length - 1]]
         },
         'Pull requests',
         {
           title: 'Workspaces',
+section: components
           cellFormatters: [workspacesFormatter],
           data: {
             dropdownItems: ['Green', 'Purple', 'Orange', 'Grey']
@@ -133,10 +137,12 @@ class EditableTable extends React.Component {
         },
         {
           title: 'Last Commit',
+section: components
           cellFormatters: [textInputFormatter]
         },
         {
           title: 'Private',
+section: components
           cellFormatters: [privateRepoFormatter]
         }
       ],
@@ -302,6 +308,7 @@ class EditableTable extends React.Component {
         : [
             {
               title: 'Edit',
+section: components
               onClick: this.onEditActionClick
             }
           ];
@@ -336,8 +343,7 @@ class EditableTable extends React.Component {
 }
 ```
 
-## Editable table with inline edit columns
-```js
+```js title=With-inline-edit-columns
 import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
@@ -382,16 +388,19 @@ class EditableTableColumn extends React.Component {
       columns: [
         {
           title: 'Repositories',
+section: components
           cellFormatters: [inlineEditingFormatter]
         },
         {
           title: 'Branches',
+section: components
           cellFormatters: [inlineEditingFormatter]
         },
         'Pull requests',
         'Workspaces',
         {
           title: 'Last Commit',
+section: components
           cellFormatters: [inlineEditingFormatter]
         }
       ],
@@ -496,8 +505,7 @@ class EditableTableColumn extends React.Component {
 }
 ```
 
-## Editable table with collapsible rows
-```js
+```js title=With-collapsible-rows
 import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
@@ -581,18 +589,22 @@ class CollapsibleEditableTable extends React.Component {
       columns: [
         {
           title: 'Repositories',
+section: components
           cellFormatters: [textInputFormatter]
         },
         {
           title: 'Branches'
+section: components
         },
         'Pull requests',
         {
           title: 'Workspaces',
+section: components
           cellFormatters: [textInputFormatter]
         },
         {
           title: 'Last Commit',
+section: components
           cellFormatters: [textInputFormatter]
         }
       ],
@@ -747,6 +759,7 @@ class CollapsibleEditableTable extends React.Component {
         : [
             {
               title: 'Edit',
+section: components
               onClick: this.onEditActionClick
             }
           ];

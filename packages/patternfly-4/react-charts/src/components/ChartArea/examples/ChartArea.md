@@ -1,22 +1,22 @@
 ---
-title: 'Area'
+title: 'Area chart'
 section: 'charts'
 typescript: true
-propComponents:
-  [
-    'Chart',
-    'ChartAreaProps',
-    'ChartAxis',
-    'ChartGroup',
-    'ChartThreshold',
-    'ChartVoronoiContainer',
-  ]
+propComponents: [
+  'Chart',
+  'ChartArea',
+  'ChartAxis',
+  'ChartGroup',
+  'ChartThreshold',
+  'ChartVoronoiContainer',
+]
+hideDarkMode: true
 ---
 
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThreshold, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer } from '@patternfly/react-charts';
 import '@patternfly/patternfly/patternfly-charts.css';
-import './chart-area.scss';
 
+## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
@@ -25,14 +25,14 @@ Learn to build an area chart using a Katacoda tutorial starting with a simple ch
 
 [Start course](https://katacoda.com/patternfly/courses/charts/area-chart)
 
-## Simple area chart with right aligned legend
-```js
+## Examples
+```js title=Basic-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
-<div>
-  <div className="area-chart-legend-right">
+BasicRightAlignedLegend = (
+  <div style={{ height: '200px', width: '800px' }}>
     <Chart
       ariaDesc="Average number of pets"
       ariaTitle="Area chart example"
@@ -85,17 +85,16 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartVoronoiContainer } from '
       </ChartGroup>
     </Chart>
   </div>
-</div>
+)
 ```
 
-## Cyan area chart with bottom aligned legend and axis label
-```js
+```js title=Cyan-with-bottom-aligned-legend-and-axis-label
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
 
-<div>
-  <div className="area-chart-legend-bottom">
+BottomAlignedLegend = (
+  <div style={{ height: '250px', width: '650px' }}>
     <Chart
       ariaDesc="Average number of pets"
       ariaTitle="Area chart example"
@@ -148,11 +147,10 @@ import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patte
       </ChartGroup>
     </Chart>
   </div>
-</div>
+)
 ```
 
-## Multi-color (unorderd) chart with bottom-left aligned legend and responsive container
-```js
+```js title=Multi--color-(unordered)-bottom--left-aligned-legend-and-responsive-container
 import React from 'react';
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartThemeColor } from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // Required for mix-blend-mode CSS property
@@ -184,75 +182,73 @@ class MultiColorChart extends React.Component {
     const { width } = this.state;
 
     return (
-      <div ref={this.containerRef}>
-        <div className="area-chart-legend-bottom-responsive">
-          <Chart
-            ariaDesc="Average number of pets"
-            ariaTitle="Area chart example"
-            containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
-            legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
-            legendPosition="bottom-left"
-            height={225}
-            padding={{
-              bottom: 75, // Adjusted to accommodate legend
-              left: 50,
-              right: 50,
-              top: 50,
-            }}
-            maxDomain={{y: 9}}
-            themeColor={ChartThemeColor.multiUnordered}
-            width={width}
-          >
-            <ChartAxis />
-            <ChartAxis dependentAxis showGrid />
-            <ChartGroup>
-              <ChartArea
-                data={[
-                  { name: 'Cats', x: '2015', y: 3 },
-                  { name: 'Cats', x: '2016', y: 4 },
-                  { name: 'Cats', x: '2017', y: 8 },
-                  { name: 'Cats', x: '2018', y: 6 }
-                ]}
-                interpolation="basis"
-              />
-              <ChartArea
-                data={[
-                  { name: 'Dogs', x: '2015', y: 2 },
-                  { name: 'Dogs', x: '2016', y: 3 },
-                  { name: 'Dogs', x: '2017', y: 4 },
-                  { name: 'Dogs', x: '2018', y: 5 },
-                  { name: 'Dogs', x: '2019', y: 6 }
-                ]}
-                interpolation="basis"
-              />
-              <ChartArea
-                data={[
-                  { name: 'Birds', x: '2015', y: 1 },
-                  { name: 'Birds', x: '2016', y: 2 },
-                  { name: 'Birds', x: '2017', y: 3 },
-                  { name: 'Birds', x: '2018', y: 2 },
-                  { name: 'Birds', x: '2019', y: 4 }
-                ]}
-                interpolation="basis"
-              />
-            </ChartGroup>
-          </Chart>
-        </div>
+      <div ref={this.containerRef} style={{ height: '225px' }}>
+        <Chart
+          ariaDesc="Average number of pets"
+          ariaTitle="Area chart example"
+          containerComponent={<ChartVoronoiContainer labels={({ datum }) => `${datum.name}: ${datum.y}`} constrainToVisibleArea />}
+          legendData={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
+          legendPosition="bottom-left"
+          height={225}
+          padding={{
+            bottom: 75, // Adjusted to accommodate legend
+            left: 50,
+            right: 50,
+            top: 50,
+          }}
+          maxDomain={{y: 9}}
+          themeColor={ChartThemeColor.multiUnordered}
+          width={width}
+        >
+          <ChartAxis />
+          <ChartAxis dependentAxis showGrid />
+          <ChartGroup>
+            <ChartArea
+              data={[
+                { name: 'Cats', x: '2015', y: 3 },
+                { name: 'Cats', x: '2016', y: 4 },
+                { name: 'Cats', x: '2017', y: 8 },
+                { name: 'Cats', x: '2018', y: 6 }
+              ]}
+              interpolation="basis"
+            />
+            <ChartArea
+              data={[
+                { name: 'Dogs', x: '2015', y: 2 },
+                { name: 'Dogs', x: '2016', y: 3 },
+                { name: 'Dogs', x: '2017', y: 4 },
+                { name: 'Dogs', x: '2018', y: 5 },
+                { name: 'Dogs', x: '2019', y: 6 }
+              ]}
+              interpolation="basis"
+            />
+            <ChartArea
+              data={[
+                { name: 'Birds', x: '2015', y: 1 },
+                { name: 'Birds', x: '2016', y: 2 },
+                { name: 'Birds', x: '2017', y: 3 },
+                { name: 'Birds', x: '2018', y: 2 },
+                { name: 'Birds', x: '2019', y: 4 }
+              ]}
+              interpolation="basis"
+            />
+          </ChartGroup>
+        </Chart>
       </div>
     );
   }
 }
 ```
 
-## Tips
-
+## Documentation
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 - The `theme` and `themeColor` props should be applied at the most top level component
 - Use `ChartGroup` to apply theme color scales and other properties to multiple components
 
-## Docs
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

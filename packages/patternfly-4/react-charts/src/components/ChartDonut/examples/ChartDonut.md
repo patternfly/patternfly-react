@@ -1,13 +1,16 @@
 ---
-title: 'Donut'
+title: 'Donut chart'
 section: 'charts'
 typescript: true
-propComponents: ['ChartDonut']
+propComponents: [
+  'ChartDonut'
+]
+hideDarkMode: true
 ---
 
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
-import './chart-donut.scss';
 
+## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
@@ -16,13 +19,13 @@ Learn to build a donut chart using a Katacoda tutorial starting with a simple ch
 
 [Start course](https://katacoda.com/patternfly/courses/charts/donut-chart)
 
-## Simple donut chart
-```js
+## Examples
+```js title=Basic
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
-<div>
-  <div className="donut-chart">
+Basic = (
+  <div style={{ height: '230px', width: '230px' }}>
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
@@ -33,16 +36,15 @@ import { ChartDonut } from '@patternfly/react-charts';
       title="100"
     />
   </div>
-</div>
+)
 ```
 
-## Donut chart with right aligned legend
-```js
+```js title=Right-aligned-legend
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
-<div>
-  <div className="donut-chart-legend-right">
+RightAlignedLegend = (
+  <div style={{ height: '230px', width: '350px' }}>
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
@@ -63,16 +65,15 @@ import { ChartDonut } from '@patternfly/react-charts';
       width={350}
     />
   </div>
-</div>
+)
 ```
 
-## Multi-color (ordered) donut chart with right aligned legend
-```js
+```js title=Multi--color-(ordered)-with-right-aligned-legend
 import React from 'react';
 import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/react-charts';
 
-<div>
-  <div className="donut-chart-legend-right">
+MultiColorRightAlignedLegend = (
+  <div style={{ height: '230px', width: '350px' }}>
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
@@ -94,16 +95,15 @@ import { ChartDonut, ChartThemeColor, ChartThemeVariant } from '@patternfly/reac
       width={350}
     />
   </div>
-</div>
+)
 ```
 
-## Donut chart with bottom aligned legend
-```js
+```js title=Bottom-aligned-legend
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
-<div>
-  <div className="donut-chart-legend-bottom">
+BottomAlignedLegend = (
+  <div style={{ height: '275px', width: '300px' }}>
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
@@ -126,16 +126,15 @@ import { ChartDonut } from '@patternfly/react-charts';
       width={300}
     />
   </div>
-</div>
+)
 ```
 
-## Small donut chart
-```js
+```js title=Small
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
-<div>
-  <div className="donut-chart-sm">
+Small = (
+  <div style={{ height: '150px', width: '150px' }}>
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
@@ -148,16 +147,15 @@ import { ChartDonut } from '@patternfly/react-charts';
       width={150}
     />
   </div>
-</div>
+)
 ```
 
-## Small donut chart with right aligned legend
-```js
+```js title=Small-with-right-aligned-legend
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
-<div>
-  <div className="donut-chart-legend-right-sm">
+SmallWithRightLegend = (
+  <div style={{ height: '150px', width: '275px' }}>
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
@@ -179,16 +177,15 @@ import { ChartDonut } from '@patternfly/react-charts';
       width={275}
     />
   </div>
-</div>
+)
 ```
 
-## Small donut chart with right aligned legend and bottom aligned subtitle
-```js
+```js title=Small-with-bottom-aligned-subtitle
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
-<div>
-  <div className="donut-chart-legend-right-subtitle-bottom-sm">
+SmallBottomSubtitle = (
+  <div style={{ height: '165px', width: '275px' }}>
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
@@ -211,16 +208,15 @@ import { ChartDonut } from '@patternfly/react-charts';
       width={275}
     />
   </div>
-</div>
+)
 ```
 
-## Small donut chart with bottom aligned legend and right aligned subtitle
-```js
+```js title=Small-with-right-aligned-subtitle
 import React from 'react';
 import { ChartDonut } from '@patternfly/react-charts';
 
-<div>
-  <div className="donut-chart-legend-bottom-subtitle-right-sm">
+SmallRightSubtitle = (
+  <div style={{ height: '200px', width: '300px' }}>
     <ChartDonut
       ariaDesc="Average number of pets"
       ariaTitle="Donut chart example"
@@ -242,16 +238,16 @@ import { ChartDonut } from '@patternfly/react-charts';
       width={300}
     />
   </div>
-</div>
+)
 ```
 
-## Tips
-
+## Documentation
+### Tips
 - See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
 - For single data points or zero values, you may want to set the `domain` prop
 - `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
-## Docs
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 

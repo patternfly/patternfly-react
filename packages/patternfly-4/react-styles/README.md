@@ -27,6 +27,7 @@ pf-m-block --> modifiers.block
 
 #### Example
 
+## Examples
 ```js
 import { StyleSheet, css } from '@patternfly/react-styles';
 

@@ -2,13 +2,11 @@
 title: 'Pagination table'
 section: 'demos'
 ---
-
-## Pagination table demo
-
 import { Pagination, PaginationVariant, Title } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
-```js
+## Examples
+```js title=Basic
 import React from 'react';
 import { Pagination, PaginationVariant, Title } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';

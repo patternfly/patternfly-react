@@ -7,10 +7,10 @@ typescript: true
 ---
 
 import { Bullseye } from '@patternfly/react-core';
-import './bullseye.scss';
+import './bullseye.css';
 
-## Simple bullseye layout
-```js
+## Examples
+```js title=Basic
 import React from 'react';
 import { Bullseye } from '@patternfly/react-core';
 

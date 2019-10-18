@@ -1,13 +1,11 @@
 ---
 title: 'Navigation'
+section: components
 cssPrefix: 'pf-c-nav'
 typescript: true
 propComponents: ['Nav', 'NavList', 'NavGroup', 'NavItem', 'NavItemSeparator', 'NavExpandable']
 optIn: "In a future breaking-change release, the nav will default to the dark theme. You can opt-in and update to use the nav dark theme now by setting the theme prop to 'dark'"
 ---
-
-## Simple navigation
-
 import {
   Nav,
   NavExpandable,
@@ -18,9 +16,10 @@ import {
   NavVariants,
   PageHeader
 } from '@patternfly/react-core';
-import './nav.scss';
+import './nav.css';
 
-```js
+## Examples
+```js title=Basic
 import React from 'react';
 import {
   Nav,
@@ -70,8 +69,7 @@ class NavSimpleList extends React.Component {
 }
 ```
 
-## Grouped navigation
-```js
+```js title=Grouped
 import React from 'react';
 import {
   Nav,
@@ -128,8 +126,7 @@ class NavGroupedList extends React.Component {
 }
 ```
 
-## Default navigation
-```js
+```js title=Default
 import React from 'react';
 import {
   Nav,
@@ -178,8 +175,7 @@ class NavDefaultList extends React.Component {
 }
 ```
 
-## Expandable navigation
-```js
+```js title=Expandable
 import React from 'react';
 import {
   Nav,
@@ -282,8 +278,7 @@ class NavExpandableList extends React.Component {
 }
 ```
 
-## Expandable navigation (w/subnavigation titles)
-```js
+```js title=Expandable-(w/subnavigation-titles)
 import React from 'react';
 import {
   Nav,
@@ -380,8 +375,7 @@ class NavExpandableTitlesList extends React.Component {
 }
 ```
 
-## Navigation mixed
-```js
+```js title=Mixed
 import React from 'react';
 import {
   Nav,
@@ -481,8 +475,7 @@ class NavMixedList extends React.Component {
 }
 ```
 
-## Horizontal navigation (only in PageHeader)
-```js
+```js title=Horizontal-(only-in-PageHeader)
 import React from 'react';
 import {
   Nav,
@@ -529,8 +522,7 @@ class NavHorizontalList extends React.Component {
 }
 ```
 
-## Tertiary navigation
-```js
+```js title=Tertiary
 import React from 'react';
 import {
   Nav,

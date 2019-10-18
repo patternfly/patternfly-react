@@ -43,9 +43,8 @@ import {
 
 import DemoSortableTable from './demo/DemoSortableTable';
 
-## Simple table
-
-```js
+## Examples
+```js title=Basic
 import React from 'react';
 import {
   Table,
@@ -118,9 +117,7 @@ class SimpleTable extends React.Component {
 }
 ```
 
-## Sortable table
-
-```js
+```js title=Sortable
 import React from 'react';
 import {
   Table,
@@ -175,9 +172,7 @@ class SortableTable extends React.Component {
 }
 ```
 
-## Selectable table
-
-```js
+```js title=Selectable
 import React from 'react';
 import {
   Table,
@@ -267,9 +262,7 @@ class SelectableTable extends React.Component {
 }
 ```
 
-## Simple actions table
-
-```js
+```js title=Simple-actions
 import React from 'react';
 import {
   Table,
@@ -338,9 +331,7 @@ class SimpleActionsTable extends React.Component {
 }
 ```
 
-## Actions table
-
-```js
+```js title=Actions
 import React from 'react';
 import {
   Table,
@@ -440,9 +431,7 @@ class ActionsTable extends React.Component {
 }
 ```
 
-## First cell as header table
-
-```js
+```js title=First-cell-as-header
 import React from 'react';
 import {
   Table,
@@ -484,9 +473,7 @@ class CellHeader extends React.Component {
 }
 ```
 
-## Compact table
-
-```js
+```js title=Compact
 import React from 'react';
 import {
   Table,
@@ -527,9 +514,7 @@ class CompactTable extends React.Component {
 }
 ```
 
-## Compact table borderless rows
-
-```js
+```js title=Compact-borderless-rows
 import React from 'react';
 import {
   Table,
@@ -576,9 +561,7 @@ class CompactTableBorderlessRows extends React.Component {
 }
 ```
 
-## Compact expandable table
-
-```js
+```js title=Compact-expandable
 import React from 'react';
 import {
   Table,
@@ -672,9 +655,7 @@ class CompactExpandableTable extends React.Component {
 }
 ```
 
-## Table with width modifiers
-
-```js
+```js title=With-width-modifiers
 import React from 'react';
 import {
   Table,
@@ -719,9 +700,7 @@ class WidthTable extends React.Component {
 }
 ```
 
-## Table with hidden/visible breakpoint modifiers
-
-```js
+```js title=Breakpoint-modifiers
 import React from 'react';
 import {
   Table,
@@ -779,9 +758,7 @@ class HiddenVisibleBreakpointTable extends React.Component {
 }
 ```
 
-## Collapsible table
-
-```js
+```js title=Collapsible
 import React from 'react';
 import {
   Table,
@@ -872,9 +849,7 @@ class CollapsibleTable extends React.Component {
 }
 ```
 
-## Compound Expandable table
-
-```js
+```js title=Compound-exandable
 import React from 'react';
 import {
   Table,
@@ -1073,9 +1048,7 @@ class CompoundExpandableTable extends React.Component {
 }
 ```
 
-## Table with headers that wrap
-
-```js
+```js title=Wrapping-headers
 import React from 'react';
 import {
   Table,

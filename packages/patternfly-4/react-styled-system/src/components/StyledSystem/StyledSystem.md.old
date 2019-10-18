@@ -1,0 +1,339 @@
+---
+title: 'Styled system'
+section: 'styled-system'
+---
+## **Warning, the StyledSystem components are experimental and in their own package _@patternfly/react-styled-system_. Use at your own risk!**
+The PatternFlyThemeProvider component maps CSS to PatternFly global values that can be used with StyledBox, StyledFlex, and StyledText components. The StyledFlex and StyledText components inherit all the props from StyledBox in addition to their own props. To apply the PatternFly theme, use <strong>PatternFlyThemeProvider</strong> at the root of your application.
+
+## Space
+The space utility converts shorthand margin and padding props to margin and padding CSS declarations.
+
+Use StyledConstants.space with margin and padding props.
+
+Negative values from StyledConstants.space (neg_*) can be used for negative margins.
+
+String values are passed as raw CSS values.
+
+Array values are converted into responsive values.
+
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
+
+```js
+import React from 'react';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
+
+SpaceStyles = () => {
+  const { space, borders } = StyledConstants;
+  return (
+    <PatternFlyThemeProvider>
+      <React.Fragment>
+        <StyledBox m={space.md} border={borders.md}>
+          sets medium margin value
+        </StyledBox>
+        <StyledBox m={space.neg_sm} border={borders.md}>
+          sets negative medium margin value
+        </StyledBox>
+        <StyledBox m="auto" border={borders.md}>
+          sets margin auto
+        </StyledBox>
+      </React.Fragment>
+    </PatternFlyThemeProvider>
+  );
+}
+```
+
+## Width
+Numbers from 0-1 are converted to percentage widths.
+
+Numbers greater than 1 are converted to pixel values.
+
+String values are passed as raw CSS values.
+
+Array values are converted into responsive width styles.
+```js
+import React from 'react';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
+
+WidthStyles = () => {
+  const { borders, ratio } = StyledConstants;
+  return (
+    <PatternFlyThemeProvider>
+      <React.Fragment>
+        <StyledBox width={1 / 2} border={borders.md}>
+          width 50%
+        </StyledBox>
+        <StyledBox width={256} border={borders.md}>
+          width 256px
+        </StyledBox>
+        <StyledBox width="4em" border={borders.md}>
+          width 4em
+        </StyledBox>
+        <StyledBox width={[1, 1 / 2]} border={borders.md}>
+          width `100%` when less than first breakpoint, and `50%` from the second breakpoint and up
+        </StyledBox>
+        <StyledBox height={100} width={100 * ratio.golden} border={borders.md}>
+          golden ratio: width = height * ratio
+        </StyledBox>
+      </React.Fragment>
+    </PatternFlyThemeProvider>
+  );
+}
+```
+
+## Responsive
+All props accept arrays as values for responsive styling. You can specify up to 4 array values for each of the breakpoints.
+
+```js
+import React from 'react';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
+
+ResponsiveStyles = () => {
+  const { space, colors, fontSizes, borders } = StyledConstants;
+
+  return (
+    <PatternFlyThemeProvider>
+      <StyledBox pb={space.md}>
+        <StyledText py={space.md}>
+          In this example, the Box widths are: 100% below the smallest breakpoint, 50% from the next breakpoint and
+          up, 25% from the next breakpoint and up
+        </StyledText>
+        <StyledBox width={[1, 1 / 2, 1 / 4]} height={50} bg={colors.success_100} display="inline-block" />
+        <StyledBox width={[1, 1 / 2, 1 / 4]} height={50} bg={colors.info_100} display="inline-block" />
+        <StyledBox width={[1, 1 / 2, 1 / 4]} height={50} bg={colors.warning_100} display="inline-block" />
+        <StyledBox width={[1, 1 / 2, 1 / 4]} height={50} bg={colors.danger_100} display="inline-block" />
+        <StyledBox fontSize={[fontSizes.xl, fontSizes.lg, fontSizes.md, fontSizes.sm]}>
+          This text changes the font size depending on the screen width
+        </StyledBox>
+        <StyledBox m={[space.xs, space.sm, space.md, space.lg]} height={50} border={borders.md}>
+          This box has different margins depending on the screen width
+        </StyledBox>
+        <StyledBox p={[space.xs, space.sm, space.md, space.lg]} height={50} border={borders.md}>
+          This box has different paddings depending on the screen width
+        </StyledBox>
+      </StyledBox>
+    </PatternFlyThemeProvider>
+  );
+}
+```
+
+## Colors
+Use color or bg (background) props with StyledConstants.colors to set a color.
+
+Array values are converted into responsive values.
+
+```js
+import React from 'react';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
+
+ColorStyles = () => {
+  const { colors } = StyledConstants;
+  return (
+    <PatternFlyThemeProvider>
+      <React.Fragment>
+        <StyledBox bg={colors.bg_dark_100}>
+          <StyledBox color={colors.light_100}>Light text on dark background</StyledBox>
+        </StyledBox>
+        <StyledBox bg={colors.bg_dark_transparent_200}>
+          <StyledBox color={colors.light_200}>Light text on dark transparent background</StyledBox>
+        </StyledBox>
+      </React.Fragment>
+    </PatternFlyThemeProvider>
+  );
+}
+```
+
+```js title=Typography
+import React from 'react';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
+
+TypographyStyles = () => {
+  const { fonts, lineHeights, fontWeights, fontSizes } = StyledConstants;
+  return (
+    <PatternFlyThemeProvider>
+      <React.Fragment>
+        <StyledText fontFamily={fonts.monospace}>Font family: Monospace</StyledText>
+        <StyledText fontFamily={fonts.sans_serif}>Font family: Sans serif</StyledText>
+
+        <StyledText textAlign="center">Alignment: Centered text</StyledText>
+        <StyledText textAlign={['center', 'center', 'center', 'left']}>
+          Alignment: Centered text for smaller viewports, left aligned for wider viewports
+        </StyledText>
+
+        <StyledText lineHeight={lineHeights.sm}>Line height: small</StyledText>
+        <StyledText lineHeight={lineHeights.md}>Line height: medium</StyledText>
+
+        <StyledText fontWeight={fontWeights.light}>Font weight: light</StyledText>
+        <StyledText fontWeight={fontWeights.semi_bold}>Font weight: semi bold</StyledText>
+        <StyledText fontWeight={fontWeights.bold}>Font weight: bold</StyledText>
+
+        <StyledText fontSize={fontSizes.sm}>Font size: small</StyledText>
+        <StyledText fontSize={fontSizes.md}>Font size: medium</StyledText>
+        <StyledText fontSize={fontSizes.lg}>Font size: large</StyledText>
+      </React.Fragment>
+    </PatternFlyThemeProvider>
+  );
+}
+```
+
+```js title=Borders
+import React from 'react';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
+
+BorderStyles = () => {
+  const { space, borders, radii, colors } = StyledConstants;
+  return (
+    <PatternFlyThemeProvider>
+      <React.Fragment>
+        <StyledBox m={space.md} border={borders.sm}>
+          small border
+        </StyledBox>
+        <StyledBox m={space.md} border={borders.md}>
+          medium border
+        </StyledBox>
+        <StyledBox m={space.md} border={borders.lg}>
+          large border
+        </StyledBox>
+        <StyledBox
+          m={space.md}
+          borderTop={borders.sm}
+          borderBottom={borders.sm}
+          borderLeft={borders.lg}
+          borderRight={borders.lg}
+        >
+          mixed borders
+        </StyledBox>
+        <StyledBox m={space.md} border={borders.md} borderRadius={radii.lg}>
+          border radius
+        </StyledBox>
+        <StyledBox m={space.md} border={borders.md} borderColor={colors.border_dark}>
+          border color
+        </StyledBox>
+      </React.Fragment>
+    </PatternFlyThemeProvider>
+  );
+}
+```
+
+```js title=Box-shadow
+import React from 'react';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
+
+BoxShadowStyles = () => {
+  const { space, borders, radii, colors, shadows } = StyledConstants;
+  return (
+    <PatternFlyThemeProvider>
+      <React.Fragment>
+        <StyledBox m={space.md} boxShadow={shadows.sm}>
+          small shadow
+        </StyledBox>
+        <StyledBox m={space.md} boxShadow={shadows.md}>
+          medium shadow
+        </StyledBox>
+        <StyledBox m={space.md} boxShadow={shadows.lg}>
+          large shadow
+        </StyledBox>
+        <StyledBox m={space.md} boxShadow={shadows.inset}>
+          inset shadow
+        </StyledBox>
+        <StyledBox m={space.md} boxShadow={`${shadows.sm_right}, ${shadows.sm_bottom}`}>
+          right and bottom shadow
+        </StyledBox>
+        <StyledBox m={space.md} border={borders.md} borderRadius={radii.lg}>
+          border radius
+        </StyledBox>
+        <StyledBox m={space.md} border={borders.md} borderColor={colors.border_dark}>
+          border color
+        </StyledBox>
+      </React.Fragment>
+    </PatternFlyThemeProvider>
+  );
+}
+```
+
+```js title=Position
+import React from 'react';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
+
+PositionStyles = () => {
+  const { space, borders, zIndices, colors } = StyledConstants;
+  return (
+    <PatternFlyThemeProvider>
+      <StyledBox position="relative" height={200}>
+        <StyledBox position="absolute" right={50} bottom={50} border={borders.sm}>
+          Absolute position
+        </StyledBox>
+        <StyledBox
+          position="absolute"
+          zIndex={zIndices.md}
+          width={1 / 2}
+          height={30}
+          border={borders.sm}
+          bg={colors.primary_100}
+        >
+          higher zIndex
+        </StyledBox>
+        <StyledBox
+          position="absolute"
+          zIndex={zIndices.sm}
+          m={space.lg}
+          width={1}
+          height={50}
+          border={borders.sm}
+          bg={colors.secondary_100}
+        >
+          lower zIndex
+        </StyledBox>
+      </StyledBox>
+    </PatternFlyThemeProvider>
+  );
+}
+```
+
+## Override theme
+You can override the theme by supplying a theme object.
+
+If multiple PatternFlyThemeProviders are nested, the theme object of the lower provider will be merged into the ancestor theme.
+
+```js
+import React from 'react';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
+
+OverrideTheme = () => {
+  const { colors } = StyledConstants;
+  const customTheme = {
+    fontSizes: ['0.5rem', '1rem', '1.5rem', '2rem', '2.5rem', '3rem', '3.5rem'],
+    colors: {
+      bg_dark_100: 'black',
+      bg_dark_transparent_200: 'brown',
+      color_100: 'red',
+      light_100: 'blue',
+      light_200: 'yellow'
+    }
+  };
+  return (
+    <PatternFlyThemeProvider>
+      <React.Fragment>
+        <StyledText fontSize={3}>Original font size</StyledText>
+        <StyledBox bg={colors.bg_dark_100}>
+          <StyledBox color={colors.light_100}>Light text on dark background</StyledBox>
+        </StyledBox>
+        <StyledBox bg={colors.bg_dark_transparent_200}>
+          <StyledBox color={colors.light_200}>Light text on dark transparent background</StyledBox>
+        </StyledBox>
+
+        <PatternFlyThemeProvider theme={customTheme}>
+          <React.Fragment>
+            <StyledText fontSize={3}>Overridden font size</StyledText>
+            <StyledBox bg={colors.bg_dark_100}>
+              <StyledBox color={colors.light_100}>Blue text on black background</StyledBox>
+            </StyledBox>
+            <StyledBox bg={colors.bg_dark_transparent_200}>
+              <StyledBox color={colors.light_200}>Yellow text on brown background</StyledBox>
+            </StyledBox>
+          </React.Fragment>
+        </PatternFlyThemeProvider>
+      </React.Fragment>
+    </PatternFlyThemeProvider>
+  );
+}
+```

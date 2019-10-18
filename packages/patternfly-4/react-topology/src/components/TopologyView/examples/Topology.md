@@ -1,5 +1,6 @@
 ---
 title: 'Topology view'
+section: components
 typescript: true
 ---
 
@@ -10,11 +11,10 @@ import { TopologyView, TopologyControlBar, createTopologyControlButtons, Topolog
 import { ProjectToolbar } from './ProjectToolbar';
 import { ViewToolbar } from './ViewToolbar';
 import { ItemDetails } from './ItemDetails';
-import './topology-example.scss';
+import './topology-example.css';
 
-## Topology view - Default Controls
-
-```js
+## Examples
+```js title=Default-controls
 import React from 'react';
 import { TopologyView, TopologyControlBar, createTopologyControlButtons, TopologySideBar } from '@patternfly/react-topology';
 import { ProjectToolbar } from './ProjectToolbar';
@@ -34,27 +34,23 @@ class DefaultTopologyView extends React.Component {
     const sideBar = <ItemDetails show={detailsShown} onClose={() => this.setState({ detailsShown: false })} />;
 
     return (
-      <div className="topology-example">
-        <TopologyView 
-          contextToolbar={<ProjectToolbar />}
-          viewToolbar={<ViewToolbar />}
-          controlBar={<TopologyControlBar controlButtons={controlButtons} />}
-          sideBar={sideBar}
-          sideBarOpen={detailsShown}
-        >
-          <button onClick={() => this.setState({ detailsShown: !detailsShown })}>
-            {detailsShown ? 'Hide Details' : 'Show Details'}
-          </button>
-        </TopologyView>
-      </div>
+      <TopologyView 
+        contextToolbar={<ProjectToolbar />}
+        viewToolbar={<ViewToolbar />}
+        controlBar={<TopologyControlBar controlButtons={controlButtons} />}
+        sideBar={sideBar}
+        sideBarOpen={detailsShown}
+      >
+        <button onClick={() => this.setState({ detailsShown: !detailsShown })}>
+          {detailsShown ? 'Hide Details' : 'Show Details'}
+        </button>
+      </TopologyView>
     );
   }
 }
 ```
 
-## Topology view - Selected Controls
-
-```js
+```js title=Selected-controls
 import React from 'react';
 import { TopologyView, TopologyControlBar, createTopologyControlButtons } from '@patternfly/react-topology';
 import { ViewToolbar } from './ViewToolbar';
@@ -72,26 +68,22 @@ class SelectedTopologyView extends React.Component {
     const controlButtons = createTopologyControlButtons({ fitToScreen: false, legend: false });
 
     return (
-      <div className="topology-example">
-        <TopologyView
-          viewToolbar={<ViewToolbar />}
-          controlBar={<TopologyControlBar controlButtons={controlButtons} />}
-          sideBar={sideBar}
-          sideBarOpen={detailsShown}
-        >
-          <button onClick={() => this.setState({ detailsShown: !detailsShown })}>
-            {detailsShown ? 'Hide Details' : 'Show Details'}
-          </button>
-        </TopologyView>
-      </div>
+      <TopologyView
+        viewToolbar={<ViewToolbar />}
+        controlBar={<TopologyControlBar controlButtons={controlButtons} />}
+        sideBar={sideBar}
+        sideBarOpen={detailsShown}
+      >
+        <button onClick={() => this.setState({ detailsShown: !detailsShown })}>
+          {detailsShown ? 'Hide Details' : 'Show Details'}
+        </button>
+      </TopologyView>
     );
   }
 }
 ```
 
-## Topology view - Custom Controls
-
-```js
+```js title=Custom-controls
 import React from 'react';
 import { ExternalLinkAltIcon, FilmIcon, GlassCheersIcon } from '@patternfly/react-icons';
 import { TopologyView, TopologyControlBar, createTopologyControlButtons } from '@patternfly/react-topology';
@@ -139,18 +131,16 @@ class CustomTopologyView extends React.Component {
     const controlButtons = createTopologyControlButtons({ fitToScreen: false, customButtons});
 
     return (
-      <div className="topology-example">
-        <TopologyView
-          viewToolbar={<ViewToolbar />}
-          controlBar={<TopologyControlBar controlButtons={controlButtons} />}
-          sideBar={sideBar}
-          sideBarOpen={detailsShown}
-        >
-          <button onClick={() => this.setState({ detailsShown: !detailsShown })}>
-            {detailsShown ? 'Hide Details' : 'Show Details'}
-          </button>
-        </TopologyView>
-      </div>
+      <TopologyView
+        viewToolbar={<ViewToolbar />}
+        controlBar={<TopologyControlBar controlButtons={controlButtons} />}
+        sideBar={sideBar}
+        sideBarOpen={detailsShown}
+      >
+        <button onClick={() => this.setState({ detailsShown: !detailsShown })}>
+          {detailsShown ? 'Hide Details' : 'Show Details'}
+        </button>
+      </TopologyView>
     );
   }
 }

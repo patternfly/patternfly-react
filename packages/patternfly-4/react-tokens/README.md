@@ -19,6 +19,7 @@ All Tokens and their corresponding values can be viewed on the
 
 #### Import tokens
 
+## Examples
 ```js
 import { global_BackgroundColor_100 } from '@patternfly/react-tokens';
 ```
