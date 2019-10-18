@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.23.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.14...@patternfly/react-table@2.23.15) (2019-10-18)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
 ## [2.23.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.13...@patternfly/react-table@2.23.14) (2019-10-17)
 
 
