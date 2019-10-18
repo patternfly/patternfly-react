@@ -7,7 +7,11 @@ typescript: true
 
 import { CatalogTile, CatalogTileBadge } from '@patternfly/react-catalog-view-extension';
 import { CogIcon, OutlinedCheckCircleIcon } from '@patternfly/react-icons';
+<<<<<<< HEAD:packages/patternfly-4/react-catalog-view-extension/src/components/CatalogTile/examples/CatalogTile.md
 import { pfLogo2 } from './pfLogo2.svg'
+=======
+import { pfBrand } from './pfLogo.svg'
+>>>>>>> add catalogview to docs:packages/patternfly-4/react-catalog-view-extension/src/components/CatalogTile/examples/CatalogTile.md
 import './catalogTile.css';
 
 ## Introduction
