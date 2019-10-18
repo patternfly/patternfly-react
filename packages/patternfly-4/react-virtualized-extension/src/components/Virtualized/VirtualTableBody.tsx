@@ -108,7 +108,7 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
     autoHeight: false,
     estimatedRowSize: 30,
     onScroll: () => {},
-    noRowsRenderer: () => null,
+    noRowsRenderer: () => null as NoContentRenderer,
     onRowsRendered: () => {},
     overscanIndicesGetter: accessibilityOverscanIndicesGetter,
     overscanRowCount: 10,
@@ -267,7 +267,7 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
   _onScroll = ({ clientHeight, scrollHeight, scrollTop }: VirtualGridScroll) => {
     const { onScroll } = this.props;
 
-    onScroll({ clientHeight, scrollHeight, scrollTop });
+    onScroll({ clientHeight, scrollHeight, scrollTop } as VirtualGridScroll);
   };
 
   _onSectionRendered = ({
