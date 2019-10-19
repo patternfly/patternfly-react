@@ -13,7 +13,6 @@ export interface ClipboardCopyExpandedProps extends Omit<ClipboardCopyProps, 'on
 }
 
 export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpandedProps> {
-  contentRef = React.createRef<HTMLDivElement>();
   constructor(props: any) {
     super(props);
   }
@@ -25,25 +24,17 @@ export class ClipboardCopyExpanded extends React.Component<ClipboardCopyExpanded
     isCode: false
   };
 
-  componentDidMount() {
-    if (this.contentRef.current) {
-      this.contentRef.current.innerText = this.props.children as string;
-    }
-  }
-
   render() {
     const { className, children, onChange, isReadOnly, isCode, ...props } = this.props;
-    const clipboardCopyExpandableComponent = (
+
+    return (
       <div
         suppressContentEditableWarning
-        ref={this.contentRef}
         className={css(styles.clipboardCopyExpandableContent, className)}
         onInput={(e: any) => onChange(e.target.innerText, e)}
         contentEditable={!isReadOnly}
         {...props}
-      />
-    );
-
-    return isCode ? <pre>{clipboardCopyExpandableComponent}</pre> : clipboardCopyExpandableComponent;
+      >{isCode ? <pre>{children}</pre> : children}</div>
+    )
   }
 }
