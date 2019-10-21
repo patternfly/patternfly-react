@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.117.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.117.1...@patternfly/react-core@3.117.2) (2019-10-21)
+
+
+### Bug Fixes
+
+* **copytoclipboard:** wrap pre inside the expand element ([#3169](https://github.com/patternfly/patternfly-react/issues/3169)) ([b89f1d3](https://github.com/patternfly/patternfly-react/commit/b89f1d3))
+
+
+
+
+
 ## [3.117.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.117.0...@patternfly/react-core@3.117.1) (2019-10-21)
 
 **Note:** Version bump only for package @patternfly/react-core
