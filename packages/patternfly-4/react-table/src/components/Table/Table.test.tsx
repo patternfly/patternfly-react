@@ -238,7 +238,7 @@ test('Empty state table', () => {
         heightAuto: true,
         cells: [{
           title: (<div>Empty State Component</div>),
-          props: {colspan: '8'}
+          props: {colSpan: '8'}
         }],
       }
     ],
@@ -252,5 +252,5 @@ test('Empty state table', () => {
   );
 
   expect(view.find('tr').at(1).prop('className')).toEqual('pf-m-height-auto');
-  expect(view.find('tbody').find('td').prop('colspan')).toEqual('8');
+  expect(view.find('tbody').find('td').prop('colSpan')).toEqual('8');
 });
