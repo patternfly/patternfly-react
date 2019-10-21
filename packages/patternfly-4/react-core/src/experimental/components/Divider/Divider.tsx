@@ -23,6 +23,6 @@ export const Divider: React.FunctionComponent<DividerProps> = ({
   const Component: any = component;
 
   return (
-    <Component className={css(styles.divider, className)} {...(component != 'hr' && {role : 'seperator' })} {...props} />
+    <Component className={css(styles.divider, className)} {...(component != 'hr' && {role : 'separator' })} {...props} />
   );
 };
