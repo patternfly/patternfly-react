@@ -3,11 +3,9 @@
 }
 
 .properties-side-panel-pf-property {
-  margin-top: 24px;
-
-  &:first-of-type {
-    margin-top: 0;
-  }
+  margin-top: 24px; }
+.properties-side-panel-pf-property:first-of-type {
+  margin-top: 0;
 }
 
 .properties-side-panel-pf-property-label {

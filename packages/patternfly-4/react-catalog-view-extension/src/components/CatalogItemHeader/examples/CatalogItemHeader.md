@@ -6,11 +6,7 @@ typescript: true
 ---
 
 import { CatalogItemHeader } from '@patternfly/react-catalog-view-extension';
-<<<<<<< HEAD:packages/patternfly-4/react-catalog-view-extension/src/components/CatalogItemHeader/examples/CatalogItemHeader.md
 import pfLogo2 from './pfLogo2.svg';
-=======
-import pfLogo from './pfLogo.svg';
->>>>>>> add catalogview to docs:packages/patternfly-4/react-catalog-view-extension/src/components/CatalogItemHeader/examples/CatalogItemHeader.md
 import './catalogItemHeader.css';
 
 ## Introduction
