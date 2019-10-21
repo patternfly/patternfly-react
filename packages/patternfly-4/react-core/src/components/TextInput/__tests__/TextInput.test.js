@@ -1,5 +1,4 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
 import { TextInput,TextInputBase } from '../TextInput';
 import { ValidatedOptions } from '../../../helpers/constants';
 
@@ -13,24 +12,23 @@ test('input passes value and event to onChange handler', () => {
   const event = {
     currentTarget: { value: newValue }
   };
-  const view = shallow(<TextInputBase {...props} aria-label="test input" />);
   view.find('input').simulate('change', event);
   expect(props.onChange).toBeCalledWith(newValue, event);
 });
 
 test('simple text input', () => {
   const view = mount(<TextInput {...props} aria-label="simple text input" />);
-  expect(view.find('input')).toMatchSnapshot();
+  expect(view).toMatchSnapshot();
 });
 
 test('disabled text input', () => {
   const view = mount(<TextInput isDisabled aria-label="disabled text input" />);
-  expect(view.find('input')).toMatchSnapshot();
+  expect(view).toMatchSnapshot();
 });
 
 test('readonly text input', () => {
   const view = mount(<TextInput isReadOnly value="read only" aria-label="readonly text input" />);
-  expect(view.find('input')).toMatchSnapshot();
+  expect(view).toMatchSnapshot();
 });
 
 test('invalid text input', () => {

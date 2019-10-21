@@ -1,8 +1,9 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import { css, getModifier } from '@patternfly/react-styles';
+import { css } from '@patternfly/react-styles';
 import { Omit, withInnerRef } from '../../helpers'
 import { ValidatedOptions } from '../../helpers/constants';
+import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 export enum TextInputTypes {
   text = 'text',
@@ -57,8 +58,8 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
   innerRef?: React.Ref<any>;
 }
 
-class TextInputBase extends React.Component<TextInputProps> {
-  static defaultProps: TextInputProps = {
+class TextInputBase extends React.Component<TextInputProps & InjectedOuiaProps> {
+  static defaultProps = {
     'aria-label': null as string,
     className: '',
     isRequired: false,
@@ -70,7 +71,7 @@ class TextInputBase extends React.Component<TextInputProps> {
     onChange: (): any => undefined
   };
 
-  constructor(props: TextInputProps) {
+  constructor(props: TextInputProps & InjectedOuiaProps) {
     super(props);
     if (!props.id && !props['aria-label'] && !props['aria-labelledby']) {
       // tslint:disable-next-line:no-console
@@ -96,6 +97,8 @@ class TextInputBase extends React.Component<TextInputProps> {
       isReadOnly,
       isRequired,
       isDisabled,
+      ouiaContext,
+      ouiaId,
       ...props
     } = this.props;
     return (
@@ -114,10 +117,14 @@ class TextInputBase extends React.Component<TextInputProps> {
         disabled={isDisabled}
         readOnly={isReadOnly}
         ref={innerRef}
+        {...(ouiaContext.isOuia && {
+          'data-ouia-component-type': 'TextInput',
+          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+        })}
       />
     );
   }
 }
 
-const TextInputFR = withInnerRef<HTMLInputElement, TextInputProps>(TextInputBase)
+const TextInputFR = withInnerRef<HTMLInputElement, TextInputProps>(withOuiaContext(TextInputBase))
 export { TextInputFR as TextInput, TextInputBase } 
