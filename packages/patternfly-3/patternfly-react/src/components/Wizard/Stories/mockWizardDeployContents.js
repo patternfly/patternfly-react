@@ -6,7 +6,7 @@ class MockWizardDeployContents extends React.Component {
     super();
     this.state = { deploying: true };
   }
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { active } = this.props;
     if (!nextProps.active) {
       this.setState({ deploying: true });

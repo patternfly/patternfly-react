@@ -10,7 +10,7 @@ import TimedToastNotification from './TimedToastNotification';
 class ToastNotificationList extends React.Component {
   state = { paused: false };
 
-  componentWillReceiveProps() {
+  UNSAFE_componentWillReceiveProps() {
     this.setState({ paused: false });
   }
 

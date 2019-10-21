@@ -23,7 +23,7 @@ class TimedToastNotification extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     /**
      * If paused prop changes, update our timer
      */
