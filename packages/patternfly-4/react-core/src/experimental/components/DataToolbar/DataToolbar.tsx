@@ -121,6 +121,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
               clearAllFilters,
               showClearFiltersButton,
               isExpanded: isToggleManaged ? isManagedToggleExpanded : isExpanded,
+              toolbarId: id
             })
           )}
           <DataToolbarChipGroupContent
