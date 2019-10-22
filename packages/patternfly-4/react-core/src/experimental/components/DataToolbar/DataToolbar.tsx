@@ -23,9 +23,6 @@ export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 export interface DataToolbarState {
-  /** True if the component is managing the expanded state of the toggle group.
-   *  False if the user has opted to manage the 'isExpanded' state themself. */
-  isToggleManaged: boolean;
   /** Flag used if the user has opted NOT to manage the 'isExpanded' state of the toggle group.
    *  Indicates whether or not the toggle group is expanded. */
   isManagedToggleExpanded: boolean;
@@ -44,11 +41,14 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
     super(props);
 
     this.state = {
-      isToggleManaged: !(props.isExpanded || !!props.toggleIsExpanded),
       isManagedToggleExpanded: false,
       filterInfo: {}
     };
   }
+
+  isToggleManaged = () => {
+    return !(this.props.isExpanded || !!this.props.toggleIsExpanded);
+  };
 
   toggleIsExpanded = () => {
     this.setState(prevState => ({
@@ -63,15 +63,13 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
   };
 
   componentDidMount() {
-    const { isToggleManaged } = this.state;
-    if (isToggleManaged) {
+    if (this.isToggleManaged()) {
       window.addEventListener('resize', this.closeExpandableContent);
     }
   }
 
   componentWillUnmount() {
-    const { isToggleManaged } = this.state;
-    if (isToggleManaged) {
+    if (this.isToggleManaged()) {
       window.removeEventListener('resize', this.closeExpandableContent);
     }
   }
@@ -101,8 +99,9 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
       ...props
     } = this.props;
 
-    const { isToggleManaged, isManagedToggleExpanded } = this.state;
+    const { isManagedToggleExpanded } = this.state;
 
+    const isToggleManaged = this.isToggleManaged();
     const numberOfFilters = this.getNumberOfFilters();
     const showClearFiltersButton = numberOfFilters > 0;
 
@@ -110,7 +109,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
       <div className={css(styles.dataToolbar, className)} id={id} {...props}>
         <DataToolbarContext.Provider
           value={{
-            isExpanded: isToggleManaged ? isManagedToggleExpanded : isExpanded,
+            isExpanded: this.isToggleManaged() ? isManagedToggleExpanded : isExpanded,
             toggleIsExpanded: isToggleManaged ? this.toggleIsExpanded : toggleIsExpanded,
             chipGroupContentRef: this.chipGroupContentRef,
             updateNumberFilters: this.updateNumberFilters
