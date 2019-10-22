@@ -117,8 +117,7 @@ class ComplexPaginationTableDemo extends React.Component {
           ? (page - 1) * perPage
           : (lastPage - 1) * perPage;
         let beginMark = getBeginMark(page, lastPage);
-        // if perPage changed, update beginMark as needed to return full page of results
-        this.state.perPage);
+        // if perPage changed, update beginMark to last full page
         if (perPage !== this.state.perPage) {
           const getLastFullPage = (page, beginMark) => {
             const remainingRows = data.length - beginMark;
