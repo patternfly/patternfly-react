@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.117.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.117.4...@patternfly/react-core@3.117.5) (2019-10-22)
+
+
+### Bug Fixes
+
+* **Select:** add plain modifier to toggle button ([#3140](https://github.com/patternfly/patternfly-react/issues/3140)) ([6dda90a](https://github.com/patternfly/patternfly-react/commit/6dda90a)), closes [#3128](https://github.com/patternfly/patternfly-react/issues/3128)
+* **Select:** display typeahead filtered options ([#3158](https://github.com/patternfly/patternfly-react/issues/3158)) ([ca4dff7](https://github.com/patternfly/patternfly-react/commit/ca4dff7))
+
+
+
+
+
 ## [3.117.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.117.3...@patternfly/react-core@3.117.4) (2019-10-22)
 
 **Note:** Version bump only for package @patternfly/react-core
