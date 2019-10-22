@@ -1,6 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`invalid text input 1`] = `
+exports[`horizontally resizable text area 1`] = `
+<textarea
+  aria-invalid={true}
+  aria-label="horizontal resize textarea"
+  className="pf-c-form-control pf-m-resize-horizontal"
+  onChange={[Function]}
+  required={true}
+  value="test textarea"
+/>
+`;
+
+exports[`invalid text area 1`] = `
 <textarea
   aria-invalid={true}
   aria-label="invalid textarea"
@@ -16,6 +27,17 @@ exports[`simple text input 1`] = `
   aria-invalid={false}
   aria-label="simple textarea"
   className="pf-c-form-control"
+  onChange={[Function]}
+  required={false}
+  value="test textarea"
+/>
+`;
+
+exports[`vertically resizable text area 1`] = `
+<textarea
+  aria-invalid={false}
+  aria-label="vertical resize textarea"
+  className="pf-c-form-control pf-m-resize-vertical"
   onChange={[Function]}
   required={false}
   value="test textarea"

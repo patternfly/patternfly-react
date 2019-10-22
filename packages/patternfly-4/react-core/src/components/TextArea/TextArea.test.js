@@ -28,12 +28,12 @@ test('invalid text area', () => {
 });
 
 test('vertically resizable text area', () => {
-  const view = shallow(<TextArea {...props} aria-label="invalid textarea" />);
+  const view = shallow(<TextArea resizeOrientation='vertical' {...props} aria-label="vertical resize textarea" />);
   expect(view).toMatchSnapshot();
 });
 
 test('horizontally resizable text area', () => {
-  const view = shallow(<TextArea {...props} required isValid={false} aria-label="invalid textarea" />);
+  const view = shallow(<TextArea resizeOrientation='horizontal' {...props} required isValid={false} aria-label="horizontal resize textarea" />);
   expect(view).toMatchSnapshot();
 });
 
