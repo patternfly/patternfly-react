@@ -22,7 +22,17 @@ test('simple text input', () => {
   expect(view).toMatchSnapshot();
 });
 
-test('invalid text input', () => {
+test('invalid text area', () => {
+  const view = shallow(<TextArea {...props} required isValid={false} aria-label="invalid textarea" />);
+  expect(view).toMatchSnapshot();
+});
+
+test('vertically resizable text area', () => {
+  const view = shallow(<TextArea {...props} aria-label="invalid textarea" />);
+  expect(view).toMatchSnapshot();
+});
+
+test('horizontally resizable text area', () => {
   const view = shallow(<TextArea {...props} required isValid={false} aria-label="invalid textarea" />);
   expect(view).toMatchSnapshot();
 });
