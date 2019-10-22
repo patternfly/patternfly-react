@@ -41,7 +41,10 @@ export class DataToolbarExpandableContent extends React.Component<DataToolbarExp
 
     return (
       <div
-        className={css(styles.dataToolbarExpandableContent, isExpanded && getModifier(styles, 'expanded'), className)}
+        className={css(
+          styles.dataToolbarExpandableContent,
+          className
+        )}
         ref={expandableContentRef}
         {...props}
       >

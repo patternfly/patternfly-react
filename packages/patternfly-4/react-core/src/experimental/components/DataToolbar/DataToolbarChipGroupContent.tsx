@@ -82,7 +82,7 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
         {
           showClearFiltersButton && !isExpanded &&
           <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
-            <Button variant="link" onClick={clearChipGroups}>
+            <Button variant="link" onClick={clearChipGroups} isInline>
               {clearFiltersButtonText}
             </Button>
           </DataToolbarItem>
