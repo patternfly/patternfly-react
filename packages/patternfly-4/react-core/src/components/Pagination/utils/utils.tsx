@@ -1,7 +1,7 @@
-// getPageRows used to paginate data and load previous page if user selects 'perPage' above the number of rows remaining
-// used on Pagination component in combination with onSetPage and onPerPageSelect as follows
-// onSetPage={(_evt, value) => this.setState(getPageRows(this.state, this.defaultRows, perPage, value))}
-// onPerPageSelect={(_evt, value) => this.setState(getPageRows(this.state, this.defaultRows, value, page))}
+// getPageRows is used to paginate data and load previous page if user selects 'perPage' above the number of rows remaining
+// Used on Pagination component in combination with onSetPage and onPerPageSelect as follows:
+// onSetPage={(_evt, value) => this.setState(getPageRows(this.state, allRows, value, perPage))}
+// onPerPageSelect={(_evt, value) => this.setState(getPageRows(this.state, allRows, page, value))}
 
 interface PaginationState {
   perPage: number
