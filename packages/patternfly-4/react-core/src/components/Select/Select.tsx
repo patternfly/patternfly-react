@@ -41,7 +41,7 @@ export interface SelectProps
   placeholderText?: string | React.ReactNode;
   /** Text to display in typeahead select when no results are found **/
   noResultsFoundText?: string;
-  /** Selected item */
+  /** Selected item for single select variant.  Array of selected items for multi select variants. */
   selections?: string | SelectOptionObject | (string | SelectOptionObject)[];
   /** Id for select toggle element */
   toggleId?: string;
