@@ -51,7 +51,7 @@ export class DataToolbarExpandableContent extends React.Component<DataToolbarExp
         <DataToolbarGroup />
         {showClearFiltersButton && (
           <DataToolbarItem className={css(getModifier(styles, 'clear'))}>
-            <Button variant="link" onClick={clearChipGroups}>
+            <Button variant="link" onClick={clearChipGroups} isInline>
               Clear all filters
             </Button>
           </DataToolbarItem>

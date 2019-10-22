@@ -55,7 +55,7 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
     const { children, chips, deleteChip, categoryName, ...props } = this.props;
     const { isExpanded, chipGroupContentRef } = this.context;
 
-    const chipGroup = (
+    const chipGroup = chips.length ? (
       <DataToolbarItem variant="chip-group">
         <ChipGroup withToolbar>
           <ChipGroupToolbarItem key={categoryName} categoryName={categoryName}>
@@ -73,7 +73,7 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
           </ChipGroupToolbarItem>
         </ChipGroup>
       </DataToolbarItem>
-    );
+    ) : null;
 
     if (!isExpanded && this.state.isMounted) {
       chipGroupContentRef.current.classList.remove(getModifier(styles, 'hidden'));
