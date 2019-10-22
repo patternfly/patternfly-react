@@ -104,7 +104,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     isPlain: false,
     isDisabled: false,
     isCreatable: false,
-    "aria-label": '',
+    'aria-label': '',
     ariaLabelledBy: '',
     ariaLabelTypeAhead: '',
     ariaLabelClear: 'Clear all',
@@ -119,7 +119,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
     onClear: (_e: React.MouseEvent) => undefined as void,
     onCreateOption: (_newOptionValue: string) => undefined as void,
     toggleIcon: null as React.ReactElement,
-    onFilter: (_e: React.ChangeEvent<HTMLInputElement>) => undefined as void
+    onFilter: null
   } as Partial<SelectProps & InjectedOuiaProps>;
 
   state = {
@@ -384,10 +384,10 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
         )}
         ref={this.parentRef}
         style={{ width }}
-        {...ouiaContext.isOuia && {
+        {...(ouiaContext.isOuia && {
           'data-ouia-component-type': 'Select',
           'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
-        }}
+        })}
       >
         <SelectContext.Provider value={{ onSelect, onClose: this.onClose, variant }}>
           <SelectToggle
@@ -442,6 +442,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                           : this.getDisplay(selections as string, 'text') || ''
                       }
                       type="text"
+                      onClick={this.onClick}
                       onChange={this.onChange}
                       onFocus={this.handleFocus}
                       autoComplete="off"
@@ -480,6 +481,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                       value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
                       type="text"
                       onChange={this.onChange}
+                      onClick={this.onClick}
                       onFocus={this.handleFocus}
                       autoComplete="off"
                       disabled={isDisabled}
