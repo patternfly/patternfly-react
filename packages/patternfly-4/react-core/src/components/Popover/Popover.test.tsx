@@ -62,3 +62,20 @@ test('popover passes along values to tippy.js', () => {
   );
   expect(view).toMatchSnapshot();
 });
+
+test('popover with custom triggers', () => {
+  const view = shallow(
+    <Popover
+      triggers={['mouseenter', 'focus']}
+      headerContent={<div>Popover Header</div>}
+      bodyContent={
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+        </div>
+      }
+    >
+      <div>Tippy Props Test</div>
+    </Popover>
+  );
+  expect(view.prop('trigger')).toBe('mouseenter focus');
+});

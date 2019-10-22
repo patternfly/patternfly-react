@@ -27,6 +27,15 @@ export enum PopoverPosition {
   right = 'right'
 }
 
+export enum PopoverTriggers {
+  manual = 'manual',
+  focus = 'focus',
+  mouseenter = 'mouseenter',
+  click = 'click',
+}
+
+type Triggers = 'manual' | 'focus' | 'mouseenter' | 'click';
+
 export interface PopoverProps {
   /** Accessible label, required when header is not present */
   'aria-label'?: string;
@@ -69,6 +78,8 @@ export interface PopoverProps {
    * Instead, the consumer is responsible for closing the popover themselves by adding a callback listener for the shouldClose prop.
    */
   isVisible?: boolean;
+  /** The events which cause the popover to show. This takes effect only when isVisible is not set. **/
+  triggers?: Triggers[];
   /** Maximum width of the popover (default 18.75rem) */
   maxWidth?: string;
   /** Lifecycle function invoked when the popover has fully transitioned out. */
@@ -109,6 +120,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
     enableFlip: true,
     className: '',
     isVisible: null as boolean,
+    triggers: ['click'],
     shouldClose: (): void => null,
     'aria-label': '',
     headerContent: null as typeof PopoverHeader,
@@ -214,6 +226,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
       bodyContent,
       footerContent,
       isVisible,
+      triggers,
       shouldClose,
       appendTo,
       hideOnOutsideClick,
@@ -280,7 +293,7 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
         appendTo={appendTo}
         content={content}
         lazy
-        trigger={handleEvents ? 'click' : 'manual'}
+        trigger={handleEvents ? triggers.join(' ') : 'manual'}
         isVisible={isVisible}
         hideOnClick={shouldHideOnClick()}
         animateFill={false}

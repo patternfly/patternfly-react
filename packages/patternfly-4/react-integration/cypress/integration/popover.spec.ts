@@ -19,4 +19,19 @@ describe('Popover Demo Test', () => {
       });
     });
   });
+
+  it('Open and Close Focus triggered Popover', () => {
+    cy.get('div[id="popoverTriggerTarget"]').then((popoverLink: JQuery<HTMLDivElement>) => {
+      cy.get('.tippy-popper').should('not.exist');
+      cy.wrap(popoverLink).focus();
+      cy.get('.tippy-popper').should('exist');
+      cy.get('h6').contains('Popover Header');
+      cy.get('.pf-c-popover__body').contains('Popover Body');
+      cy.get('footer').contains('Popover Footer');
+      cy.get('button[aria-label="Close"]').then(closeBtn => {
+        cy.wrap(closeBtn).click();
+        cy.get('.tippy-popper').should('not.exist');
+      });
+    });
+  });
 });

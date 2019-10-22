@@ -6,7 +6,7 @@ typescript: true
 propComponents: ['Popover']
 ---
 
-import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
+import { Popover, PopoverPosition, PopoverTriggers, Checkbox, Button } from '@patternfly/react-core';
 
 ## Examples
 ```js title=Basic
@@ -144,6 +144,24 @@ HeadlessPopover = () => (
     footerContent="Popover Footer"
   >
     <Button>Toggle Popover</Button>
+  </Popover>
+);
+```
+
+```js title=Triggers
+import React from 'react';
+import { Popover, PopoverTriggers, Button } from '@patternfly/react-core';
+
+SimplePopover = () => (
+  <Popover
+    triggers={[PopoverTriggers.mouseenter, PopoverTriggers.focus]}
+    headerContent={<div>Popover Header</div>}
+    bodyContent={
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
+    }
+    footerContent="Popover Footer"
+  >
+    <Button onClick={() => {alert('side effect')}}>Do something</Button>
   </Popover>
 );
 ```
