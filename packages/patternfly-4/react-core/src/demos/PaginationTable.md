@@ -110,12 +110,38 @@ class ComplexPaginationTableDemo extends React.Component {
       ]}
     ];
     this.getPageRows = (data, perPage, page) => {
+      // check that remainingRows >= perPage
       const lastPage = Math.ceil(data.length / perPage);
-      const beginMark = (page - 1 < lastPage)
-        ? (page - 1) * perPage
-        : (lastPage - 1) * perPage;
-      const endMark = beginMark + perPage;
-      let newRows = data.slice(beginMark, endMark);
+      const getNewRows = () => {
+        const getBeginMark = (page, lastPage) => (page -1 < lastPage)
+          ? (page - 1) * perPage
+          : (lastPage - 1) * perPage;
+        let beginMark = getBeginMark(page, lastPage);
+        // if perPage changed, update beginMark as needed to return full page of results
+        this.state.perPage);
+        if (perPage !== this.state.perPage) {
+          const getLastFullPage = (page, beginMark) => {
+            const remainingRows = data.length - beginMark;
+            if (remainingRows < perPage) {
+              page--;
+              beginMark = getBeginMark(page, lastPage);
+              return getLastFullPage(page, beginMark);
+            }
+            return { page, beginMark };
+          }
+          const lastFullPage = getLastFullPage(page, beginMark);
+          page = lastFullPage.page;
+          beginMark = lastFullPage.beginMark;
+        }
+        const endMark = beginMark + perPage;
+        let newRows = data.slice(beginMark, endMark);
+        return newRows;
+      } 
+      const newRows = getNewRows();
+      this.setState({
+        perPage,
+        page
+      });
       return newRows;
     }
     this.state = {
