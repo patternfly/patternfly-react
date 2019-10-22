@@ -1,6 +1,11 @@
-export const isOUIAEnvironment = (): boolean =>
-  (typeof window !== 'undefined' && window.localStorage.ouia && window.localStorage.ouia.toLowerCase() === 'true') ||
-  false;
+export const isOUIAEnvironment = (): boolean => {
+  try {
+    return (typeof window !== 'undefined' && window.localStorage && window.localStorage.ouia && window.localStorage.ouia.toLowerCase() === 'true') ||
+    false;
+  } catch (exception) {
+    return false;
+  }
+}
 export const generateOUIAId = (): boolean =>
   (typeof window !== 'undefined' &&
     window.localStorage['ouia-generate-id'] &&
