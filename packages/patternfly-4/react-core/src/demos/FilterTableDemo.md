@@ -148,6 +148,10 @@ class FilterTableDemo extends React.Component {
     };
 
     this.onNameInput = event => {
+      if (event.key && event.key !== 'Enter') {
+        return;
+      }
+
       const { inputValue } = this.state;
       this.setState(prevState => {
         const prevFilters = prevState.filters['name'];
@@ -184,7 +188,7 @@ class FilterTableDemo extends React.Component {
         onSelect={this.onCategorySelect}
         position={DropdownPosition.left}
         toggle={
-          <DropdownToggle onToggle={this.onCategoryToggle}>
+          <DropdownToggle onToggle={this.onCategoryToggle} style={{ width: '100%' }}>
             <FilterIcon /> {currentCategory}
           </DropdownToggle>
         }
@@ -194,6 +198,7 @@ class FilterTableDemo extends React.Component {
           <DropdownItem key="cat2">Name</DropdownItem>,
           <DropdownItem key="cat3">Status</DropdownItem>
         ]}
+        style={{ width: '45%' }}
       ></Dropdown>
     );
   }
@@ -219,12 +224,13 @@ class FilterTableDemo extends React.Component {
 
     return (
       <React.Fragment>
-        <DataToolbarGroup variant="filter-group">
+        <DataToolbarGroup variant="filter-group" style={{ width: '55%' }}>
           <DataToolbarFilter
             chips={filters.location}
             deleteChip={this.onDelete}
             categoryName="Location"
             showToolbarItem={currentCategory === 'Location'}
+            style={{ width: '100%' }}
           >
             <Select
               aria-label="Location"
@@ -242,6 +248,7 @@ class FilterTableDemo extends React.Component {
             deleteChip={this.onDelete}
             categoryName="Name"
             showToolbarItem={currentCategory === 'Name'}
+            style={{ width: '100%' }}
           >
             <InputGroup>
               <TextInput
@@ -251,9 +258,11 @@ class FilterTableDemo extends React.Component {
                 aria-label="name filter"
                 onChange={this.onInputChange}
                 value={inputValue}
+                placeholder="Filter by name..."
+                onKeyDown={this.onNameInput}
               />
               <Button
-                variant={ButtonVariant.tertiary}
+                variant={ButtonVariant.control}
                 aria-label="search button for search input"
                 onClick={this.onNameInput}
               >
@@ -266,6 +275,7 @@ class FilterTableDemo extends React.Component {
             deleteChip={this.onDelete}
             categoryName="Status"
             showToolbarItem={currentCategory === 'Status'}
+            style={{ width: '100%' }}
           >
             <Select
               variant={SelectVariant.checkbox}
@@ -295,8 +305,10 @@ class FilterTableDemo extends React.Component {
         }
       >
         <DataToolbarContent>
-          {this.buildCategoryDropdown()}
-          {this.buildFilterDropdown()}
+          <DataToolbarGroup style={{ width: '60%' }}>
+            {this.buildCategoryDropdown()}
+            {this.buildFilterDropdown()}
+          </DataToolbarGroup>
         </DataToolbarContent>
       </DataToolbar>
     );
