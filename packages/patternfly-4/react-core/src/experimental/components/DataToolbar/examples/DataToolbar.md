@@ -402,7 +402,7 @@ class DataToolbarComponentMangedToggleGroup extends React.Component {
     
     const items =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
     
-    return <DataToolbar id="data-toolbar-component-managed-toggle-groups" >
+    return <DataToolbar id="data-toolbar-component-managed-toggle-groups" className='pf-m-toggle-group-container'>
       <DataToolbarContent>
         {items}
       </DataToolbarContent>
@@ -414,7 +414,7 @@ The second Toggle group example below demonstrates a consumer managed toggle sta
   1. Add a toggleIsExpanded callback to DataToolbar  
   2. Pass in a boolean into the isExpanded prop to DataToolbar  
   
-  - Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.  
+- Note: Although the toggle group is aware of the consumer provided breakpoint, the expandable content is not. So if the expandable content is expanded and the screen width surpasses that of the breakpoint, then the expandable content will not know that and will remain open, this case should be considered and handled by the consumer as well.  
 
 ```js title=Consumer-managed-toggle-groups
 import React from 'react';
@@ -557,12 +557,16 @@ class DataToolbarConsumerMangedToggleGroup extends React.Component {
     const items =  <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>;
     
     return (
-      <DataToolbar id="data-toolbar-consumer-managed-toggle-groups" isExpanded={isExpanded} toggleIsExpanded={this.toggleIsExpanded}>
-          <DataToolbarContent>
-            {items}
-          </DataToolbarContent>
-        </DataToolbar>
-      );
+      <DataToolbar id="data-toolbar-consumer-managed-toggle-groups" 
+        isExpanded={isExpanded} 
+        className='pf-m-toggle-group-container'
+        toggleIsExpanded={this.toggleIsExpanded}
+      >
+        <DataToolbarContent>
+          {items}
+        </DataToolbarContent>
+      </DataToolbar>
+    );
   }
 }
 ```
@@ -788,7 +792,15 @@ class DataToolbarWithFilterExample extends React.Component {
       </DataToolbarItem>
     </React.Fragment>;
     
-    return <DataToolbar id="data-toolbar-with-chip-groups" collapseListedFiltersBreakpoint='xl' clearAllFilters={this.onDelete}><DataToolbarContent>{toolbarItems}</DataToolbarContent></DataToolbar>;
+    return (
+      <DataToolbar id="data-toolbar-with-filter" 
+        className='pf-m-toggle-group-container'
+        collapseListedFiltersBreakpoint='xl' 
+        clearAllFilters={this.onDelete}
+      >
+        <DataToolbarContent>{toolbarItems}</DataToolbarContent>
+      </DataToolbar>
+    );
   }
 }
 
@@ -1026,7 +1038,7 @@ class DataToolbarStacked extends React.Component {
     </React.Fragment>;
     
     return <DataToolbar id="data-toolbar-group-types">
-      <DataToolbarContent>{firstRowItems}</DataToolbarContent>
+      <DataToolbarContent className='pf-m-toggle-group-container'>{firstRowItems}</DataToolbarContent>
       <hr className="pf-c-divider"/>
       <DataToolbarContent>{secondRowItems}</DataToolbarContent>
     </DataToolbar>;

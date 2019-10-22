@@ -59,10 +59,10 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
         className={css(
           styles.dataToolbarContent,
           getModifier(styles, 'chip-container'),
-          getModifier(styles, 'hidden'),
+          numberOfFilters === 0 &&  getModifier(styles, 'hidden'),
           className
         )}
-        hidden
+        {...(numberOfFilters === 0 && {hidden: true})}
         ref={chipGroupContentRef}
         {...props}
       >

@@ -76,8 +76,6 @@ export class DataToolbarFilter extends React.Component<DataToolbarFilterProps, D
     ) : null;
 
     if (!isExpanded && this.state.isMounted) {
-      chipGroupContentRef.current.classList.remove(getModifier(styles, 'hidden'));
-      chipGroupContentRef.current.hidden = false;
       return (
         <React.Fragment>
           <DataToolbarItem {...props}>{children}</DataToolbarItem>
