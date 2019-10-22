@@ -236,7 +236,7 @@ export class SelectToggle extends React.Component<SelectToggleProps> {
             {children}
             <button
               {...toggleProps}
-              className={css(buttonStyles.button, styles.selectToggleButton)}
+              className={css(buttonStyles.button, styles.selectToggleButton, styles.modifiers.plain)}
               aria-label={ariaLabelToggle}
               onClick={_event => {
                 _event.stopPropagation();
