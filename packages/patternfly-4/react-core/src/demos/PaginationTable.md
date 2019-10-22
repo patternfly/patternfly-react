@@ -2,14 +2,39 @@
 title: 'Pagination table'
 section: 'demos'
 ---
-import { Pagination, PaginationVariant, Title } from '@patternfly/react-core';
+
+import {
+Bullseys,
+EmptyState,
+EmptyStateVariant,
+EmptyStateIcon,
+EmptyStateBody,
+EmptyStateSecondaryActions,
+Pagination,
+PaginationVariant,
+Title
+} from '@patternfly/react-core';
+import { SearchIcon, TimesIcon } from '@patternfly/react-icons';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
+import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 
 ## Examples
+
 ```js title=Basic
 import React from 'react';
-import { Pagination, PaginationVariant, Title } from '@patternfly/react-core';
-import { Table, TableHeader, TableBody} from '@patternfly/react-table';
+import {
+  EmptyState,
+  EmptyStateVariant,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateSecondaryActions,
+  Pagination,
+  PaginationVariant,
+  Title
+} from '@patternfly/react-core';
+import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { SearchIcon, TimesIcon } from '@patternfly/react-icons';
 
 class ComplexPaginationTableDemo extends React.Component {
   constructor(props) {
@@ -19,7 +44,7 @@ class ComplexPaginationTableDemo extends React.Component {
       total: 100,
       page: 1,
       error: null,
-      loading: true
+      loading: false
     };
   }
 
@@ -48,21 +73,101 @@ class ComplexPaginationTableDemo extends React.Component {
       />
     );
   }
+  renderTable() {
+    const { err, loading, res } = this.state;
+    if (loading) {
+      return (
+        <Table
+          cells={['Title', 'Body']}
+          rows={[
+            {
+              heightAuto: true,
+              cells: [{
+                props: {colSpan: 8},
+                title: (
+                  <Bullseye>
+                    <EmptyState variant={EmptyStateVariant.small}>
+                      <EmptyStateIcon variant="container" component={Spinner} />
+                      <Title size="lg">Loading</Title>
+                    </EmptyState>
+                  </Bullseye>
+                )
+              }]
+            }
+          ]}
+        >
+          <TableHeader />
+          <TableBody />
+        </Table>
+      );
+    }
+    if (err) {
+      return (
+        <Table
+          cells={['Title', 'Body']}
+          rows={[
+            {
+              heightAuto: true,
+              cells: [{
+                props: {colSpan: 8},
+                title: (
+                  <Bullseye>
+                    <EmptyState variant={EmptyStateVariant.small}>
+                      <EmptyStateIcon icon={TimesIcon} />
+                      <Title size="lg">Failed to fetch data</Title>
+                    </EmptyState>
+                  </Bullseye>
+                )
+              }]
+            }
+          ]}
+        >
+          <TableHeader />
+          <TableBody />
+        </Table>
+      );
+    }
+
+    if(res.length === 0) {
+      return (
+      <Table
+        cells={['Title', 'Body']}
+        rows={[
+          {
+            heightAuto: true,
+            cells: [{
+              props: {colSpan: 8},
+              title: (
+              <Bullseye>
+                <EmptyState variant={EmptyStateVariant.small}>
+                  <EmptyStateIcon icon={SearchIcon} />
+                  <Title size="lg">No results found</Title>
+                </EmptyState>
+              </Bullseye>
+              )
+            }]
+          }
+        ]}
+      >
+        <TableHeader />
+        <TableBody />
+      </Table>
+      )
+    }
+
+    return (
+      <>
+        {this.renderPagination()}
+        <Table cells={['Title', 'Body']} rows={res.map(post => [post.title, post.body])}>
+          <TableHeader />
+          <TableBody />
+        </Table>
+      </>
+    );
+  }
 
   render() {
-    const { loading } = this.state;
-    return (
-      <React.Fragment>
-        {this.renderPagination()}
-        {!loading && (
-          <Table cells={['Title', 'Body']} rows={this.state.res.map(post => [post.title, post.body])}>
-            <TableHeader />
-            <TableBody />
-          </Table>
-        )}
-        {loading && <center><Title size="3xl">Please wait while loading data</Title></center>}
-      </React.Fragment>
-    );
+    return <React.Fragment>{this.renderTable()}</React.Fragment>;
   }
 }
 ```
