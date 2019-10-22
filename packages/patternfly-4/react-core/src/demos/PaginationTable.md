@@ -139,7 +139,8 @@ class ComplexPaginationTableDemo extends React.Component {
       const newRows = getNewRows();
       this.setState({
         perPage,
-        page
+        page,
+        rows: newRows
       });
       return newRows;
     }
