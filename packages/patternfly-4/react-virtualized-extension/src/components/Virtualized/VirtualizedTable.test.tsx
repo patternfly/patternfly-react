@@ -1,5 +1,4 @@
 import * as React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import clsx from 'clsx';
 import { mount } from 'enzyme';
 import {
