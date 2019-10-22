@@ -5,12 +5,12 @@ section: 'demos'
 
 ## Bulk select table demo
 
-import { Pagination, PaginationVariant, Title, Checkbox } from '@patternfly/react-core';
+import { Pagination, Title, Checkbox } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
 ```js
 import React from 'react';
-import { Pagination, PaginationVariant, Title, Checkbox } from '@patternfly/react-core';
+import { Pagination, Title, Checkbox } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class BulkSelectTableDemo extends React.Component {
