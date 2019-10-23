@@ -12,7 +12,18 @@ DataToolbarContent,
 DataToolbarFilter,
 DataToolbarToggleGroup,
 DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
-import { Pagination, PaginationVariant, Title, Checkbox, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import {
+Title,
+Select,
+SelectOption,
+SelectVariant,
+EmptyState,
+EmptyStateIcon,
+EmptyStateBody,
+EmptyStateSecondaryActions,
+Bullseye
+} from '@patternfly/react-core';
+import { SearchIcon } from '@patternfly/react-icons';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
 ```js
@@ -26,14 +37,17 @@ import {
   DataToolbarGroup
 } from '@patternfly/react-core/dist/esm/experimental';
 import {
-  Pagination,
-  PaginationVariant,
   Title,
-  Checkbox,
   Select,
   SelectOption,
-  SelectVariant
+  SelectVariant,
+  EmptyState,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateSecondaryActions,
+  Bullseye
 } from '@patternfly/react-core';
+import { SearchIcon } from '@patternfly/react-icons';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class FilterTableDemo extends React.Component {
@@ -305,7 +319,7 @@ class FilterTableDemo extends React.Component {
         }
       >
         <DataToolbarContent>
-          <DataToolbarGroup style={{ width: '60%' }}>
+          <DataToolbarGroup style={{ width: '50%' }}>
             {this.buildCategoryDropdown()}
             {this.buildFilterDropdown()}
           </DataToolbarGroup>
@@ -332,11 +346,35 @@ class FilterTableDemo extends React.Component {
     return (
       <React.Fragment>
         {this.renderToolbar()}
-        {!loading && (
-          <Table header={<div></div>} cells={columns} rows={filteredRows} onSelect={this.onRowSelect}>
+        {!loading && filteredRows.length > 0 && (
+          <Table cells={columns} rows={filteredRows} onSelect={this.onRowSelect}>
             <TableHeader />
             <TableBody />
           </Table>
+        )}
+        {!loading && filteredRows.length === 0 && (
+          <React.Fragment>
+            <Table cells={columns} rows={filteredRows} onSelect={this.onRowSelect}>
+              <TableHeader />
+              <TableBody />
+            </Table>
+            <Bullseye>
+              <EmptyState>
+                <EmptyStateIcon icon={SearchIcon} />
+                <Title headingLevel="h5" size="lg">
+                  No results found
+                </Title>
+                <EmptyStateBody>
+                  No results match this filter criteria. Remove all filters or clear all filters to show results.
+                </EmptyStateBody>
+                <EmptyStateSecondaryActions>
+                  <Button variant="link" onClick={() => this.onDelete(null)}>
+                    Clear all filters
+                  </Button>
+                </EmptyStateSecondaryActions>
+              </EmptyState>
+            </Bullseye>
+          </React.Fragment>
         )}
         {loading && (
           <center>
