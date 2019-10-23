@@ -16,7 +16,7 @@ export enum DataToolbarItemVariant {
 }
 
 export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
-  /** Classes applied to root element of the Data toolbar item */
+  /** Classes applied to root element of the data toolbar item */
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of item */
   variant?:
@@ -28,11 +28,11 @@ export interface DataToolbarItemProps extends React.HTMLProps<HTMLDivElement> {
     | 'search-filter'
     | 'label'
     | 'chip-group';
-  /** An array of objects representing the various modifiers to apply to the Data toolbar item at various breakpoints */
+  /** An array of objects representing the various modifiers to apply to the data toolbar item at various breakpoints */
   breakpointMods?: DataToolbarBreakpointMod[];
-  /** id for this Data toolbar item */
+  /** id for this data toolbar item */
   id?: string;
-  /** Content to be rendered inside the Data toolbar item */
+  /** Content to be rendered inside the data toolbar item */
   children?: React.ReactNode;
 }
 
