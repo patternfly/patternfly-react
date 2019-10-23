@@ -1,9 +1,10 @@
 ---
 title: 'Filterable table'
 section: 'demos'
+experimentalStage: 'early'
 ---
 
-## Filterable table demo
+## Examples
 
 import {
 DataToolbar,
@@ -26,7 +27,7 @@ Bullseye
 import { SearchIcon } from '@patternfly/react-icons';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
-```js
+```js title=Basic
 import React from 'react';
 import {
   DataToolbar,
@@ -198,22 +199,24 @@ class FilterTableDemo extends React.Component {
     const { isCategoryDropdownOpen, currentCategory } = this.state;
 
     return (
-      <Dropdown
-        onSelect={this.onCategorySelect}
-        position={DropdownPosition.left}
-        toggle={
-          <DropdownToggle onToggle={this.onCategoryToggle} style={{ width: '100%' }}>
-            <FilterIcon /> {currentCategory}
-          </DropdownToggle>
-        }
-        isOpen={isCategoryDropdownOpen}
-        dropdownItems={[
-          <DropdownItem key="cat1">Location</DropdownItem>,
-          <DropdownItem key="cat2">Name</DropdownItem>,
-          <DropdownItem key="cat3">Status</DropdownItem>
-        ]}
-        style={{ width: '45%' }}
-      ></Dropdown>
+      <DataToolbarItem>
+        <Dropdown
+          onSelect={this.onCategorySelect}
+          position={DropdownPosition.left}
+          toggle={
+            <DropdownToggle onToggle={this.onCategoryToggle} style={{ width: '100%' }}>
+              <FilterIcon /> {currentCategory}
+            </DropdownToggle>
+          }
+          isOpen={isCategoryDropdownOpen}
+          dropdownItems={[
+            <DropdownItem key="cat1">Location</DropdownItem>,
+            <DropdownItem key="cat2">Name</DropdownItem>,
+            <DropdownItem key="cat3">Status</DropdownItem>
+          ]}
+          style={{ width: '100%' }}
+        ></Dropdown>
+      </DataToolbarItem>
     );
   }
 
@@ -238,72 +241,67 @@ class FilterTableDemo extends React.Component {
 
     return (
       <React.Fragment>
-        <DataToolbarGroup variant="filter-group" style={{ width: '55%' }}>
-          <DataToolbarFilter
-            chips={filters.location}
-            deleteChip={this.onDelete}
-            categoryName="Location"
-            showToolbarItem={currentCategory === 'Location'}
-            style={{ width: '100%' }}
+        <DataToolbarFilter
+          chips={filters.location}
+          deleteChip={this.onDelete}
+          categoryName="Location"
+          showToolbarItem={currentCategory === 'Location'}
+        >
+          <Select
+            aria-label="Location"
+            onToggle={this.onFilterToggle}
+            onSelect={this.onLocationSelect}
+            selections={filters.location[0]}
+            isExpanded={isFilterDropdownOpen}
+            placeholderText="Any"
           >
-            <Select
-              aria-label="Location"
-              onToggle={this.onFilterToggle}
-              onSelect={this.onLocationSelect}
-              selections={filters.location[0]}
-              isExpanded={isFilterDropdownOpen}
-              placeholderText="Any"
+            {locationMenuItems}
+          </Select>
+        </DataToolbarFilter>
+        <DataToolbarFilter
+          chips={filters.name}
+          deleteChip={this.onDelete}
+          categoryName="Name"
+          showToolbarItem={currentCategory === 'Name'}
+        >
+          <InputGroup>
+            <TextInput
+              name="nameInput"
+              id="nameInput1"
+              type="search"
+              aria-label="name filter"
+              onChange={this.onInputChange}
+              value={inputValue}
+              placeholder="Filter by name..."
+              onKeyDown={this.onNameInput}
+            />
+            <Button
+              variant={ButtonVariant.control}
+              aria-label="search button for search input"
+              onClick={this.onNameInput}
             >
-              {locationMenuItems}
-            </Select>
-          </DataToolbarFilter>
-          <DataToolbarFilter
-            chips={filters.name}
-            deleteChip={this.onDelete}
-            categoryName="Name"
-            showToolbarItem={currentCategory === 'Name'}
-            style={{ width: '100%' }}
+              <SearchIcon />
+            </Button>
+          </InputGroup>
+        </DataToolbarFilter>
+        <DataToolbarFilter
+          chips={filters.status}
+          deleteChip={this.onDelete}
+          categoryName="Status"
+          showToolbarItem={currentCategory === 'Status'}
+        >
+          <Select
+            variant={SelectVariant.checkbox}
+            aria-label="Status"
+            onToggle={this.onFilterToggle}
+            onSelect={this.onStatusSelect}
+            selections={filters.status}
+            isExpanded={isFilterDropdownOpen}
+            placeholderText="Filter by status"
           >
-            <InputGroup>
-              <TextInput
-                name="nameInput"
-                id="nameInput1"
-                type="search"
-                aria-label="name filter"
-                onChange={this.onInputChange}
-                value={inputValue}
-                placeholder="Filter by name..."
-                onKeyDown={this.onNameInput}
-              />
-              <Button
-                variant={ButtonVariant.control}
-                aria-label="search button for search input"
-                onClick={this.onNameInput}
-              >
-                <SearchIcon />
-              </Button>
-            </InputGroup>
-          </DataToolbarFilter>
-          <DataToolbarFilter
-            chips={filters.status}
-            deleteChip={this.onDelete}
-            categoryName="Status"
-            showToolbarItem={currentCategory === 'Status'}
-            style={{ width: '100%' }}
-          >
-            <Select
-              variant={SelectVariant.checkbox}
-              aria-label="Status"
-              onToggle={this.onFilterToggle}
-              onSelect={this.onStatusSelect}
-              selections={filters.status}
-              isExpanded={isFilterDropdownOpen}
-              placeholderText="Filter by status"
-            >
-              {statusMenuItems}
-            </Select>
-          </DataToolbarFilter>
-        </DataToolbarGroup>
+            {statusMenuItems}
+          </Select>
+        </DataToolbarFilter>
       </React.Fragment>
     );
   }
@@ -314,15 +312,15 @@ class FilterTableDemo extends React.Component {
       <DataToolbar
         id="data-toolbar-with-chip-groups"
         clearAllFilters={this.onDelete}
-        showClearFiltersButton={
-          filters.location.length !== 0 || filters.name.length !== 0 || filters.status.length !== 0
-        }
+        collapseListedFiltersBreakpoint="xl"
       >
         <DataToolbarContent>
-          <DataToolbarGroup style={{ width: '50%' }}>
-            {this.buildCategoryDropdown()}
-            {this.buildFilterDropdown()}
-          </DataToolbarGroup>
+          <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint="xl">
+            <DataToolbarGroup variant="filter-group">
+              {this.buildCategoryDropdown()}
+              {this.buildFilterDropdown()}
+            </DataToolbarGroup>
+          </DataToolbarToggleGroup>
         </DataToolbarContent>
       </DataToolbar>
     );
@@ -347,14 +345,14 @@ class FilterTableDemo extends React.Component {
       <React.Fragment>
         {this.renderToolbar()}
         {!loading && filteredRows.length > 0 && (
-          <Table cells={columns} rows={filteredRows} onSelect={this.onRowSelect}>
+          <Table cells={columns} rows={filteredRows} onSelect={this.onRowSelect} aria-label="Filterable Table Demo">
             <TableHeader />
             <TableBody />
           </Table>
         )}
         {!loading && filteredRows.length === 0 && (
           <React.Fragment>
-            <Table cells={columns} rows={filteredRows} onSelect={this.onRowSelect}>
+            <Table cells={columns} rows={filteredRows} onSelect={this.onRowSelect} aria-label="Filterable Table Demo">
               <TableHeader />
               <TableBody />
             </Table>
