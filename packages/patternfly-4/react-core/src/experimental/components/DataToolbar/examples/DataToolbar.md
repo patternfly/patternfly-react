@@ -1002,7 +1002,7 @@ class DataToolbarStacked extends React.Component {
     const firstRowItems = <React.Fragment>
       <DataToolbarToggleGroup toggleIcon={<FilterIcon />} breakpoint='xl'>{toggleGroupItems}</DataToolbarToggleGroup>
       <DataToolbarGroup variant="icon-button-group">{iconButtonGroupItems}</DataToolbarGroup>
-      <DataToolbarItem variant="overflow-menu" breakpointMods={[{modifier:"align-right"}]}>Overflow Menu</DataToolbarItem>
+      <DataToolbarItem variant="overflow-menu">Overflow Menu</DataToolbarItem>
     </React.Fragment>;
     
     const secondRowItems = <React.Fragment>
