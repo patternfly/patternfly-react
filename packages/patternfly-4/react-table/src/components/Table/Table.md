@@ -44,18 +44,14 @@ import {
 import DemoSortableTable from './demo/DemoSortableTable';
 
 ## Examples
+
 ```js title=Basic
+
 import React from 'react';
 import {
   Table,
   TableHeader,
-  TableBody,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  cellWidth,
+  TableBody
   textCenter,
 } from '@patternfly/react-table';
 
@@ -117,6 +113,79 @@ class SimpleTable extends React.Component {
 }
 ```
 
+```js title=CustomRowWrapper
+import React from 'react';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+} from '@patternfly/react-table';
+
+class RowWrapperTable extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      columns: [
+        { title: 'Repositories' },
+        'Branches',
+        { title: 'Pull requests' },
+        'Workspaces'
+      ],
+      rows: [
+        {
+          cells: ['Repositories one', 'Branches one', 'Pull requests one', 'Workspaces one']
+        },
+        {
+          cells: ['Repositories two', 'Branches two', 'Pull requests two', 'Workspaces two']
+        },
+        {
+          cells: ['Repositories three', 'Branches three', 'Pull requests three', 'Workspaces three']
+        }
+      ]
+    };
+    this.customRowWrapper = ({
+      trRef,
+      className,
+      rowProps,
+      row: { isExpanded, isHeightAuto },
+      ...props
+    }) => {
+      const isOddRow = (rowProps.rowIndex + 1) % 2;
+      const customStyle = {
+        borderLeft: '3px solid var(--pf-global--primary-color--100)'
+      }
+      return (
+        <tr
+          {...props}
+          ref={trRef}
+          className={css(
+            className,
+            (isOddRow ? 'odd-row-class' : 'even-row-class'),
+            'custom-static-class',
+            isExpanded !== undefined && styles.tableExpandableRow,
+            isExpanded && styles.modifiers.expanded,
+            isHeightAuto && styles.modifiers.heightAuto
+          )}
+          hidden={isExpanded !== undefined && !isExpanded}
+          style={isOddRow ? customStyle : {}}
+        />
+      );
+    }
+  }
+
+  render() {
+    const { columns, rows } = this.state;
+
+    return (
+      <Table caption="Table with custom row wrapper that styles odd rows" cells={columns} rows={rows} rowWrapper={this.customRowWrapper}>
+        <TableHeader />
+        <TableBody />
+      </Table>
+    );
+  }
+}
+```
+
 ```js title=Sortable
 import React from 'react';
 import {
@@ -124,11 +193,7 @@ import {
   TableHeader,
   TableBody,
   sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  cellWidth
+  SortByDirection
 } from '@patternfly/react-table';
 
 class SortableTable extends React.Component {
@@ -268,12 +333,7 @@ import {
   Table,
   TableHeader,
   TableBody,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  cellWidth
+  headerCol
 } from '@patternfly/react-table';
 
 class SimpleActionsTable extends React.Component {
@@ -337,12 +397,7 @@ import {
   Table,
   TableHeader,
   TableBody,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  cellWidth
+  headerCol
 } from '@patternfly/react-table';
 
 class ActionsTable extends React.Component {
@@ -437,12 +492,7 @@ import {
   Table,
   TableHeader,
   TableBody,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  cellWidth
+  headerCol
 } from '@patternfly/react-table';
 
 class CellHeader extends React.Component {
@@ -479,12 +529,7 @@ import {
   Table,
   TableHeader,
   TableBody,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  cellWidth
+  TableVariant
 } from '@patternfly/react-table';
 
 class CompactTable extends React.Component {
@@ -520,12 +565,7 @@ import {
   Table,
   TableHeader,
   TableBody,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  cellWidth
+  TableVariant
 } from '@patternfly/react-table';
 
 class CompactTableBorderlessRows extends React.Component {
@@ -567,12 +607,8 @@ import {
   Table,
   TableHeader,
   TableBody,
-  sortable,
-  SortByDirection,
-  headerCol,
   TableVariant,
-  expandable,
-  cellWidth
+  expandable
 } from '@patternfly/react-table';
 
 class CompactExpandableTable extends React.Component {
@@ -661,11 +697,6 @@ import {
   Table,
   TableHeader,
   TableBody,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
   cellWidth
 } from '@patternfly/react-table';
 
@@ -707,11 +738,6 @@ import {
   TableHeader,
   TableBody,
   sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  cellWidth,
   classNames,
   Visibility
 } from '@patternfly/react-table';
@@ -764,12 +790,7 @@ import {
   Table,
   TableHeader,
   TableBody,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  cellWidth
+  expandable
 } from '@patternfly/react-table';
 
 class CollapsibleTable extends React.Component {
@@ -864,6 +885,7 @@ import {
   CubeIcon
 } from '@patternfly/react-icons';
 
+// https://github.com/patternfly/patternfly-react/blob/master/packages/patternfly-4/react-table/src/components/Table/demo/DemoSortableTable.js
 import DemoSortableTable from './demo/DemoSortableTable';
 
 class CompoundExpandableTable extends React.Component {
@@ -898,7 +920,7 @@ class CompoundExpandableTable extends React.Component {
                   <CodeBranchIcon key="icon" /> 10
                 </React.Fragment>
               ),
-              props: { isOpen: true, ariaControls : 'compoound-expansion-table-1' }
+              props: { isOpen: true, ariaControls : 'compound-expansion-table-1' }
             },
             {
               title: (
@@ -906,7 +928,7 @@ class CompoundExpandableTable extends React.Component {
                   <CodeIcon key="icon" /> 4
                 </React.Fragment>
               ),
-              props: { isOpen: false, ariaControls : 'compoound-expansion-table-2' }
+              props: { isOpen: false, ariaControls : 'compound-expansion-table-2' }
             },
             {
               title: (
@@ -914,7 +936,7 @@ class CompoundExpandableTable extends React.Component {
                   <CubeIcon key="icon" /> 4
                 </React.Fragment>
               ),
-              props: { isOpen: false, ariaControls : 'compoound-expansion-table-3' }
+              props: { isOpen: false, ariaControls : 'compound-expansion-table-3' }
             },
             '20 minutes',
             { title: <a href="#">Open in Github</a> }
@@ -924,8 +946,8 @@ class CompoundExpandableTable extends React.Component {
           parent: 0,
           compoundParent: 1,
           cells: [
-            { 
-              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-1', 'three', 'four','five']} id="compoound-expansion-table-1" />,
+            {
+              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-1', 'three', 'four','five']} id="compound-expansion-table-1" />,
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -934,8 +956,8 @@ class CompoundExpandableTable extends React.Component {
           parent: 0,
           compoundParent: 2,
           cells: [
-            { 
-              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-2', 'three', 'four','five']} id="compoound-expansion-table-2" />, 
+            {
+              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-2', 'three', 'four','five']} id="compound-expansion-table-2" />,
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -944,8 +966,8 @@ class CompoundExpandableTable extends React.Component {
           parent: 0,
           compoundParent: 3,
           cells: [
-            { 
-              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-3', 'three', 'four','five']} id="compoound-expansion-table-3" />, 
+            {
+              title: <DemoSortableTable firstColumnRows={['parent-0', 'compound-3', 'three', 'four','five']} id="compound-expansion-table-3" />,
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -960,7 +982,7 @@ class CompoundExpandableTable extends React.Component {
                   <CodeBranchIcon key="icon" /> 3
                 </React.Fragment>
               ),
-              props: { isOpen: false, ariaControls : 'compoound-expansion-table-4' }
+              props: { isOpen: false, ariaControls : 'compound-expansion-table-4' }
             },
             {
               title: (
@@ -968,7 +990,7 @@ class CompoundExpandableTable extends React.Component {
                   <CodeIcon key="icon" /> 4
                 </React.Fragment>
               ),
-              props: { isOpen: false, ariaControls : 'compoound-expansion-table-5' }
+              props: { isOpen: false, ariaControls : 'compound-expansion-table-5' }
             },
             {
               title: (
@@ -976,7 +998,7 @@ class CompoundExpandableTable extends React.Component {
                   <CubeIcon key="icon" /> 2
                 </React.Fragment>
               ),
-              props: { isOpen: false, ariaControls : 'compoound-expansion-table-6' }
+              props: { isOpen: false, ariaControls : 'compound-expansion-table-6' }
             },
             '20 minutes',
             { title: <a href="#">Open in Github</a> }
@@ -986,8 +1008,8 @@ class CompoundExpandableTable extends React.Component {
           parent: 4,
           compoundParent: 1,
           cells: [
-            { 
-              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-1', 'three', 'four','five']} id="compoound-expansion-table-4" />, 
+            {
+              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-1', 'three', 'four','five']} id="compound-expansion-table-4" />,
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -996,8 +1018,8 @@ class CompoundExpandableTable extends React.Component {
           parent: 4,
           compoundParent: 2,
           cells: [
-            { 
-              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-2', 'three', 'four','five']} id="compoound-expansion-table-5"/>, 
+            {
+              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-2', 'three', 'four','five']} id="compound-expansion-table-5"/>,
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -1006,8 +1028,8 @@ class CompoundExpandableTable extends React.Component {
           parent: 4,
           compoundParent: 3,
           cells: [
-            { 
-              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-3', 'three', 'four','five']} id="compoound-expansion-table-6"/>, 
+            {
+              title: <DemoSortableTable firstColumnRows={['parent-4', 'compound-3', 'three', 'four','five']} id="compound-expansion-table-6"/>,
               props: { colSpan: 6, className: 'pf-m-no-padding' }
             }
           ]
@@ -1120,7 +1142,7 @@ EmptyStateTable = () => {
     ]
   }]
   return (
-    <Table cells={columns} rows={rows} aria-label="Empty state">
+    <Table caption="Empty State Table Example" cells={columns} rows={rows}>
       <TableHeader />
       <TableBody />
     </Table>

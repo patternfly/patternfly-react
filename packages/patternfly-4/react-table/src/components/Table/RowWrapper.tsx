@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { InjectedOuiaProps, withOuiaContext,debounce } from '@patternfly/react-core';
+import { InjectedOuiaProps, withOuiaContext, debounce } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { css } from '@patternfly/react-styles';
 
 // legacy export now, RowWrapperRow can simply be typed as IRow in the future
 export interface RowWrapperRow {
-  isOpen?: Boolean;
-  isExpanded?: Boolean;
-  isHeightAuto?: Boolean;
+  isOpen?: boolean;
+  isExpanded?: boolean;
+  isHeightAuto?: boolean;
 }
 
 export interface RowWrapperProps {
@@ -16,7 +16,10 @@ export interface RowWrapperProps {
   onScroll?: React.UIEventHandler;
   onResize?: React.UIEventHandler;
   row?: RowWrapperRow;
-  rowProps?: Object;
+  rowProps?: {
+    rowIndex: number;
+    rowKey: string;
+  };
 }
 
 class RowWrapper extends React.Component<RowWrapperProps & InjectedOuiaProps, {}> {
