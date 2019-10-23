@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.7.1...@patternfly/react-integration@3.8.0) (2019-10-23)
+
+
+### Features
+
+* **Divider:** add divider component ([#3125](https://github.com/patternfly/patternfly-react/issues/3125)) ([92971d3](https://github.com/patternfly/patternfly-react/commit/92971d3))
+
+
+
+
+
 ## [3.7.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.7.0...@patternfly/react-integration@3.7.1) (2019-10-17)
 
 

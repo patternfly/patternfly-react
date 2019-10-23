@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.118.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.117.5...@patternfly/react-core@3.118.0) (2019-10-23)
+
+
+### Bug Fixes
+
+* **DataToolbar:** implement changes to match PF-Core ([#3144](https://github.com/patternfly/patternfly-react/issues/3144)) ([e77c613](https://github.com/patternfly/patternfly-react/commit/e77c613))
+
+
+### Features
+
+* **BulkSelect demo:** add bulk select demo with table and toolbar ([#3082](https://github.com/patternfly/patternfly-react/issues/3082)) ([1f0defa](https://github.com/patternfly/patternfly-react/commit/1f0defa))
+* **Divider:** add divider component ([#3125](https://github.com/patternfly/patternfly-react/issues/3125)) ([92971d3](https://github.com/patternfly/patternfly-react/commit/92971d3))
+
+
+
+
+
 ## [3.117.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.117.4...@patternfly/react-core@3.117.5) (2019-10-22)
 
 
