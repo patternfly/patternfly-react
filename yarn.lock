@@ -2548,7 +2548,6 @@
 "@patternfly/patternfly@2.40.1":
   version "2.40.1"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.40.1.tgz#8d196c2c15ef5968390b5bfcdcf106e191a52455"
-  integrity sha512-0HR5C8vb4J7pyqqNAwKIJ47Zs2VPe0w8Q6CQ1HEvQtdQ/mR949H9HCjRSEoIqwVSFReoKo2nGmu3P61SH7kh5g==
 
 "@patternfly/patternfly@2.37.0":
   version "2.37.0"
