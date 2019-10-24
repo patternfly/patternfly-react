@@ -4,7 +4,7 @@ import { global_spacer_md as spacerMd, global_FontSize_sm as labelFontSize } fro
 import * as IconsModule from '@patternfly/react-icons';
 import SideNavLayout from 'gatsby-theme-patternfly-org/layouts/sideNavLayout';
 
-export default ({ location, pageContext }) => {
+export default ({ location }) => {
   const allIcons = Object.entries(IconsModule)
     .filter(([name]) => name.endsWith('Icon'))
     .sort(([name1], [name2]) => name1.localeCompare(name2));
@@ -35,7 +35,7 @@ export default ({ location, pageContext }) => {
   };
 
   return (
-    <SideNavLayout location={location} context={pageContext.source}>
+    <SideNavLayout location={location} context="react">
       <PageSection className="ws-section">
         <Title size="md" className="ws-framework-title">React</Title>
         <Title size="4xl">Icons</Title>

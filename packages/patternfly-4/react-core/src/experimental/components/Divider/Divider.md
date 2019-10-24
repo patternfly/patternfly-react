@@ -8,8 +8,7 @@ stage: 'early'
 ---
 import { Divider } from '@patternfly/react-core/dist/esm/experimental';
 
-## Divider using hr (default)
-```js
+```js title=Using-hr-(default)
 import React from 'react';
 import { Divider } from '@patternfly/react-core/dist/esm/experimental';
 
@@ -18,8 +17,7 @@ DividerHr = () => (
 );
 ```
 
-## Divider using li
-```js
+```js title=Using-li
 import React from 'react';
 import { Divider } from '@patternfly/react-core/dist/esm/experimental';
 
@@ -32,8 +30,7 @@ DividerLi = () => (
 );
 ```
 
-## Divider using div
-```js
+```js title=Using-div
 import React from 'react';
 import { Divider } from '@patternfly/react-core/dist/esm/experimental';
 

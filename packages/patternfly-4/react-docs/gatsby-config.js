@@ -68,14 +68,6 @@ module.exports = {
         path: path.resolve(__dirname, '../../../RELEASE-NOTES.md')
       }
     },
-    // Source static pages
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages-react', // This determines sideNav context
-        path: path.resolve(__dirname, './pages')
-      }
-    },
     // Our custom plugin for *.js?x *.ts?x files to get prop types
     {
       resolve: path.resolve(__dirname, './plugins/gatsby-transformer-react-docgen-typescript')
