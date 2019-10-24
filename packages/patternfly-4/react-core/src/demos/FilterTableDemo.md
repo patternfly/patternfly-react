@@ -6,6 +6,10 @@ experimentalStage: 'early'
 
 ## Examples
 
+```
+  Uses the DataToolbar component to filter results in the table based on user input.
+```
+
 import {
 DataToolbar,
 DataToolbarItem,
