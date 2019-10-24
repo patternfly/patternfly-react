@@ -19,6 +19,7 @@ module.exports = {
           { section: 'inline table' },
           { section: 'layouts' },
           { section: 'virtual scroll' },
+          { section: 'catalog view' },
           { text: 'Release notes', link: '/documentation/react/release-notes' },
           { text: 'Global CSS Variables', link: '/documentation/global-css-variables' },
         ],
@@ -46,8 +47,7 @@ module.exports = {
           /.*react-styles.*/,
           /.*react-docs.*/,
           /.*react-integration.*/,
-          // eslint-disable-next-line no-useless-escape
-          '**/\..*', // dotfiles
+          '**/\\..*', // dotfiles
           '**/*.d.ts',
           '**/*.test.*',
           '**/index.*',

@@ -91,6 +91,12 @@ export const pageQuery = graphql`
         version
       }
     }
+    allReactCatalogViewExtensionJson {
+      nodes {
+        name
+        version
+      }
+    }
     allReactTokensJson {
       nodes {
         name

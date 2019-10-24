@@ -1,0 +1,68 @@
+.ws-react-c-verticaltabs .vertical-tabs-pf {
+  list-style: none;
+  margin: 0 0 30px;
+  padding: 0;
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf .vertical-tabs-pf {
+  margin-bottom: 0;
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf-tab {
+  margin-top: 4px;
+  position: relative;
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf-tab > a {
+  color: initial;
+  display: inline-block;
+  font-size: 13px;
+  padding: 3px 6px 3px 15px;
+  vertical-align: top;
+  width: 100%;
+  word-break: break-word;
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf-tab > a:hover, .ws-react-c-verticaltabs .vertical-tabs-pf-tab > a:focus {
+  color: #0088ce;
+  text-decoration: none;
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf-tab > a.no-wrap {
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf-tab > a.truncate {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf-tab.active > a {
+  color: #0088ce;
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf-tab.active > a::before {
+  background: #0088ce;
+  content: " ";
+  left: 0;
+  position: absolute;
+  width: 3px;
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf-tab:first-of-type {
+  margin-top: 0;
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf-tab > .vertical-tabs-pf > .vertical-tabs-pf-tab {
+  position: initial;
+  padding-left: 15px;
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf.restrict-tabs {
+  /* Show siblings of the active tab */
+  /* Show the direct children of an active tab */
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf.restrict-tabs .vertical-tabs-pf-tab {
+  display: none;
+  /* Show any active tab, tab that has an active descendant, or is force shown */
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf.restrict-tabs .vertical-tabs-pf-tab.active, .ws-react-c-verticaltabs .vertical-tabs-pf.restrict-tabs .vertical-tabs-pf-tab.active-descendant, .ws-react-c-verticaltabs .vertical-tabs-pf.restrict-tabs .vertical-tabs-pf-tab.shown {
+  display: block;
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf.restrict-tabs.active-tab > .vertical-tabs-pf-tab {
+  display: block;
+}
+.ws-react-c-verticaltabs .vertical-tabs-pf.restrict-tabs .vertical-tabs-pf-tab.active > .vertical-tabs-pf > .vertical-tabs-pf-tab {
+  display: block;
+}

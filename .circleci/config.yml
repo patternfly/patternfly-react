@@ -22,6 +22,7 @@ references:
   - packages/patternfly-4/react-tokens/node_modules/
   - packages/patternfly-4/react-topology/node_modules/
   - packages/patternfly-4/react-virtualized-extension/node_modules/
+  - packages/patternfly-4/react-catalog-view-extension/node_modules/
   - packages/react-codemods/node_modules/
   - packages/react-icons/node_modules/
   build_cache_paths: &build_cache_paths
@@ -40,6 +41,7 @@ references:
   - packages/patternfly-4/react-tokens/dist/
   - packages/patternfly-4/react-topology/dist/
   - packages/patternfly-4/react-virtualized-extension/dist/
+  - packages/patternfly-4/react-catalog-view-extension/dist/
   - packages/react-icons/dist/
   js_deps_cache_key: &js_deps_cache_key
     js-deps-v{{.Environment.CACHE_VERSION}}-{{checksum "yarn.lock"}}
