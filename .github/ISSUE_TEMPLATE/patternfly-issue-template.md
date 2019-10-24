@@ -1,5 +1,4 @@
-Please populate the PatternFly issue template so we can learn more about your needs.
-
+<!-- Please populate the PatternFly issue template so we can learn more about your needs. -->
 
 #### Describe the issue. What is the expected and unexpected behavior?
 
