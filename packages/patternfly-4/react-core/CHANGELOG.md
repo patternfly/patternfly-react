@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.119.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.118.1...@patternfly/react-core@3.119.0) (2019-10-24)
+
+
+### Features
+
+* **TextArea:** Add a prop to allow limiting the resize orientation o… ([#3180](https://github.com/patternfly/patternfly-react/issues/3180)) ([d61ae9d](https://github.com/patternfly/patternfly-react/commit/d61ae9d)), closes [#2839](https://github.com/patternfly/patternfly-react/issues/2839)
+
+
+
+
+
 ## [3.118.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.118.0...@patternfly/react-core@3.118.1) (2019-10-24)
 
 **Note:** Version bump only for package @patternfly/react-core
