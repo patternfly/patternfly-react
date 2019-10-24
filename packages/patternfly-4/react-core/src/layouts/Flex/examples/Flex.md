@@ -9,9 +9,8 @@ typescript: true
 import { Flex, FlexItem } from '@patternfly/react-core';
 import './flex.css';
 
-### Flex Basics
-
 ## Examples
+### Flex Basics
 ```js title=Basic
 import React from 'react';
 import { Flex, FlexItem } from '@patternfly/react-core';

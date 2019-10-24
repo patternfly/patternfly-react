@@ -1,6 +1,6 @@
 ---
 title: Release notes
-section: root
+section: overview
 hideTOC: true
 ---
 

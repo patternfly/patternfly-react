@@ -19,11 +19,12 @@ const centerStyle = {
   justifyContent: 'center'
 };
 
-const IndexPage = ({ data, location }) => {
+const IndexPage = ({ data, location, pageContext }) => {
   const prInfo = data.allEnvVars.edges.filter(({ node }) => node.name === 'PR_INFO')[0].node;
 
+  console.log('context', pageContext);
   return (
-    <SideNavLayout location={location}>
+    <SideNavLayout location={location} context={pageContext.source}>
       <div style={containerStyle}>
         <PageSection style={centerStyle}>
           <div style={{ flex: 'none', textAlign: 'center' }}>
