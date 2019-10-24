@@ -31,6 +31,7 @@
     "@patternfly/react-core": "^3.120.0",
     "@patternfly/react-icons": "^3.14.14",
     "@patternfly/react-styles": "^3.6.1",
+    "@types/react-virtualized": "^9.21.5",
     "clsx": "^1.0.1",
     "dom-helpers": "^2.4.0 || ^3.0.0",
     "exenv": "^1.2.2",

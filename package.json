@@ -116,7 +116,5 @@
     "packages": [
       "packages/**"
     ]
-  },
-  "dependencies": {
   }
 }
