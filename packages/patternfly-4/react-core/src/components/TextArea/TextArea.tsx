@@ -1,8 +1,14 @@
 import * as React from 'react';
 import { HTMLProps } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import { css } from '@patternfly/react-styles';
+import { css, getModifier } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
+
+export enum TextAreResizeOrientation {
+  horizontal = 'horizontal',
+  vertical = 'vertical',
+  both = 'both'
+}
 
 export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onChange'> {
   /** Additional classes added to the TextArea. */
@@ -15,6 +21,8 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   value?: string | number;
   /** A callback for when the TextArea value changes. */
   onChange?: (value: string, event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  /** Sets the orientation to limit the resize to */
+  resizeOrientation?: 'horizontal' | 'vertical' | 'both';
   /** Custom flag to show that the TextArea requires an associated id or aria-label. */
   'aria-label'?: string;
 }
@@ -24,6 +32,7 @@ export class TextArea extends React.Component<TextAreaProps> {
     className: '',
     isRequired: false,
     isValid: true,
+    resizeOrientation: 'both',
     'aria-label': null as string
   };
 
@@ -42,10 +51,15 @@ export class TextArea extends React.Component<TextAreaProps> {
   };
 
   render() {
-    const { className, value, onChange, isValid, isRequired, ...props } = this.props;
+    const { className, value, onChange, isValid, isRequired, resizeOrientation, ...props } = this.props;
+    const orientation = 'resize' + resizeOrientation.charAt(0).toUpperCase() + resizeOrientation.slice(1);
     return (
       <textarea
-        className={css(styles.formControl, className)}
+        className={css(
+          styles.formControl,
+          className,
+          resizeOrientation !== TextAreResizeOrientation.both && getModifier(styles, orientation)
+        )}
         onChange={this.handleChange}
         {...(typeof this.props.defaultValue !== 'string' && { value })}
         aria-invalid={!isValid}

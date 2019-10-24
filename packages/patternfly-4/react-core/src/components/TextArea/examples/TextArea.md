@@ -64,6 +64,53 @@ class InvalidTextArea extends React.Component {
   }
 }
 ```
+```js title=Vertically-resizable-text-area
+import React from 'react';
+import { TextArea } from '@patternfly/react-core';
+
+class VerticalResizeTextArea extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ''
+    };
+
+    this.handleTextAreaChange = value => {
+      this.setState({ value });
+    };
+  }
+
+  render() {
+    const { value } = this.state;
+
+    return <TextArea value={value} onChange={this.handleTextAreaChange} resizeOrientation='vertical' aria-label="text vertical resize example" />;
+  }
+}
+```
+
+```js title=Horizontally-resizable-text-area
+import React from 'react';
+import { TextArea } from '@patternfly/react-core';
+
+class horizontalResizeTextArea extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ''
+    };
+
+    this.handleTextAreaChange = value => {
+      this.setState({ value });
+    };
+  }
+
+  render() {
+    const { value } = this.state;
+
+    return <TextArea value={value} onChange={this.handleTextAreaChange} resizeOrientation='horizontal' aria-label="text horizontal resize example" />;
+  }
+}
+```
 
 ```js title=Uncontrolled
 import React from 'react';
