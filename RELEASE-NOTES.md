@@ -19,7 +19,7 @@ Packages released:
 
 ## Components
 - **AboutModal:**
-  - Append component to an element in DOM ([#3102](https://github.com/patternfly/patternfly-react/pull/3102)
+  - Append component to an element in DOM ([#3102](https://github.com/patternfly/patternfly-react/pull/3102))
 - **ApplicationLauncher:**
   - Fix unit tests ([#3107](https://github.com/patternfly/patternfly-react/pull/3107))
 - **Button:**
