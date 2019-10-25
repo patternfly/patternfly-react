@@ -2,7 +2,7 @@
 
 exports[`OverflowMenu basic 1`] = `
 <div
-  class="pf-c-overflow-menu pf-m-show-on-md"
+  class="pf-c-overflow-menu"
 >
   <div>
     BASIC
@@ -15,7 +15,7 @@ exports[`OverflowMenu lg 1`] = `
   breakpoint="lg"
 >
   <div
-    className="pf-c-overflow-menu pf-m-show-on-lg"
+    className="pf-c-overflow-menu"
   />
 </OverflowMenu>
 `;
@@ -25,7 +25,7 @@ exports[`OverflowMenu md 1`] = `
   breakpoint="md"
 >
   <div
-    className="pf-c-overflow-menu pf-m-show-on-md"
+    className="pf-c-overflow-menu"
   />
 </OverflowMenu>
 `;
@@ -35,7 +35,7 @@ exports[`OverflowMenu xl 1`] = `
   breakpoint="xl"
 >
   <div
-    className="pf-c-overflow-menu pf-m-show-on-xl"
+    className="pf-c-overflow-menu"
   />
 </OverflowMenu>
 `;

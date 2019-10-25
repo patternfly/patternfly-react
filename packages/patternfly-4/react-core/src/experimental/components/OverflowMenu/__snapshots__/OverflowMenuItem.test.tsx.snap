@@ -4,7 +4,10 @@ exports[`OverflowMenuItem Below breakpoint and not isPersistent should not show 
 <Component>
   <div
     className="pf-c-overflow-menu__item"
-  />
+  >
+     
+     
+  </div>
 </Component>
 `;
 
@@ -13,7 +16,10 @@ exports[`OverflowMenuItem isPersistent and below breakpoint should still show 1`
   isPersistent={true}
 >
   <div
-    className="pf-c-overflow-menu__item pf-m-persistent"
-  />
+    className="pf-c-overflow-menu__item"
+  >
+     
+     
+  </div>
 </Component>
 `;
