@@ -91,7 +91,7 @@ export default function defaultCellRangeRenderer({
         style
       };
 
-      let renderedCell;
+      let renderedCell: any;
 
       // Avoid re-creating cells while scrolling.
       // This can lead to the same cell being created many times and can cause performance issues for "heavy" cells.
@@ -131,7 +131,7 @@ export default function defaultCellRangeRenderer({
   return renderedCells;
 }
 
-function warnAboutMissingStyle(parent, renderedCell) {
+function warnAboutMissingStyle(parent: any, renderedCell: any) {
   if (process.env.NODE_ENV !== 'production') {
     if (renderedCell) {
       // If the direct child is a CellMeasurer, then we should check its child

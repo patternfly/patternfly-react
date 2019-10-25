@@ -7,7 +7,7 @@
  * */
 
 // Properly handle server-side rendering.
-let win;
+let win: any;
 if (typeof window !== 'undefined') {
   win = window;
   // eslint-disable-next-line no-restricted-globals
@@ -26,7 +26,7 @@ export const raf =
   win.mozRequestAnimationFrame ||
   win.oRequestAnimationFrame ||
   win.msRequestAnimationFrame ||
-  function raf(callback) {
+  function raf(callback: any) {
     return win.setTimeout(callback, 1000 / 60);
   };
 
@@ -36,6 +36,6 @@ export const caf =
   win.mozCancelAnimationFrame ||
   win.oCancelAnimationFrame ||
   win.msCancelAnimationFrame ||
-  function cT(id) {
+  function cT(id: any) {
     win.clearTimeout(id);
   };

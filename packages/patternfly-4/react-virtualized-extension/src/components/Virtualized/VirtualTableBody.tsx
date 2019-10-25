@@ -108,7 +108,7 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
     autoHeight: false,
     estimatedRowSize: 30,
     onScroll: () => {},
-    noRowsRenderer: () => null,
+    noRowsRenderer: () => null as any,
     onRowsRendered: () => {},
     overscanIndicesGetter: accessibilityOverscanIndicesGetter,
     overscanRowCount: 10,
@@ -203,16 +203,15 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
       // note: these aria props if rendered will break a11y for role="presentation"
       // this approach attempts to fix non standard table grids
       // see: https://www.html5accessibility.com/tests/aria-table-fix.html
-      <VirtualGridAny
-        {...this.props}
+      <VirtualGridAny {...this.props}
         style={{
           tableLayout: 'fixed',
           display: 'block',
-          ...style
         }}
         containerStyle={{
           display: 'block'
         }}
+        
         aria-label={null}
         aria-readonly={null}
         tabIndex={null}
@@ -267,7 +266,7 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
   _onScroll = ({ clientHeight, scrollHeight, scrollTop }: VirtualGridScroll) => {
     const { onScroll } = this.props;
 
-    onScroll({ clientHeight, scrollHeight, scrollTop });
+    onScroll( { clientHeight, scrollHeight, scrollTop } as VirtualGridScroll);
   };
 
   _onSectionRendered = ({
