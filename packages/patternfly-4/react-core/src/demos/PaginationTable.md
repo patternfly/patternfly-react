@@ -180,7 +180,7 @@ class ComplexPaginationTableDemo extends React.Component {
 }
 ```
 
-## Automated pagination utility helper
+## Automated pagination table demo
 
 ```js
 import React from 'react';
@@ -259,7 +259,7 @@ class ComplexPaginationTableDemo extends React.Component {
     this.state = {
       perPage: 10,
       page: 1,
-      rows: this.defaultRows
+      rows: this.defaultRows.slice(0, 10)
     };
   }
 
@@ -296,7 +296,7 @@ class ComplexPaginationTableDemo extends React.Component {
       <React.Fragment>
         {this.renderPagination()}
         {!loading && (
-          <Table aria-label="Pagination Table" cells={this.columns} rows={this.state.rows.map(row => row.cells)}>
+          <Table aria-label="Automated pagination table" cells={this.columns} rows={this.state.rows.map(row => row.cells)}>
             <TableHeader />
             <TableBody />
           </Table>

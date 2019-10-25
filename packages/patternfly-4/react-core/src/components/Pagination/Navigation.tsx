@@ -126,6 +126,8 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
   render() {
     const {
       page,
+      perPage,
+      onSetPage,
       isDisabled,
       lastPage,
       firstPage,
