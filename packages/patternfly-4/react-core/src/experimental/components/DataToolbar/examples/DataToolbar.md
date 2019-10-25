@@ -272,8 +272,8 @@ The Toggle group can either have the toggle state managed by the consumer, or th
 ```js title=Component-managed-toggle-groups
 import React from 'react';
 import { DataToolbar , DataToolbarItem, DataToolbarContent, DataToolbarToggleGroup, DataToolbarGroup } from '@patternfly/react-core/dist/esm/experimental';
-import { Button, ButtonVariant, InputGroup, Select, SelectOption } from '@patternfly/react-core';
-import { TextInput, SearchIcon, FilterIcon } from '@patternfly/react-icons'
+import { Button, ButtonVariant, InputGroup, Select, SelectOption, TextInput } from '@patternfly/react-core';
+import { SearchIcon, FilterIcon } from '@patternfly/react-icons'
 
 class DataToolbarComponentMangedToggleGroup extends React.Component {
   constructor(props) {

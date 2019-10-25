@@ -74,7 +74,10 @@ export class DataToolbarChipGroupContent extends React.Component<DataToolbarChip
         />
         {
           collapseListedFilters && numberOfFilters > 0 && !isExpanded && (
-            <DataToolbarGroup className={css(getModifier(styles, 'toggle-group-summary'))}>
+            <DataToolbarGroup className={css(
+              getModifier(styles, 'toggle-group-summary'),
+              'pf-m-filters-applied-message'
+            )}>
               <DataToolbarItem>{numberOfFilters} filters applied</DataToolbarItem>
             </DataToolbarGroup>
           )
