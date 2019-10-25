@@ -18,9 +18,9 @@ Packages released:
 - [@patternfly/react-icons@3.14.15](https://www.npmjs.com/package/@patternfly/react-icons/v/3.14.15)
 
 ## Components
-- **AboutModal:**
+- **About Modal:**
   - Append component to an element in DOM ([#3102](https://github.com/patternfly/patternfly-react/pull/3102))
-- **ApplicationLauncher:**
+- **Application launcher:**
   - Fix unit tests ([#3107](https://github.com/patternfly/patternfly-react/pull/3107))
 - **Button:**
   - Component type accepts react-router Link ([#3077](https://github.com/patternfly/patternfly-react/pull/3077))
@@ -39,9 +39,9 @@ Packages released:
   - Moved ChartThreshold to its own example ([#3019](https://github.com/patternfly/patternfly-react/pull/3019))
 - **Chip:**
   - Added OUIA compatibility to Chip component ([#2995](https://github.com/patternfly/patternfly-react/pull/2995))
-- **CopyToClipboard:**
+- **Copy to clipboard:**
   - Wrapped pre inside the expand element ([#3169](https://github.com/patternfly/patternfly-react/pull/3169))
-- **DataToolbar:** 
+- **Data toolbar:** 
   - Implemented changes to match PF-Core ([#3144](https://github.com/patternfly/patternfly-react/pull/3144))
   - Add unit and integration tests ([#3201](https://github.com/patternfly/patternfly-react/pull/3201))
 - **Divider:**
@@ -49,13 +49,13 @@ Packages released:
 - **Dropdown:**
   - Added OUIA compatibility for Dropdown ([#3135](https://github.com/patternfly/patternfly-react/pull/3135))
   - Fix unit tests ([#3107](https://github.com/patternfly/patternfly-react/pull/3107))
-- **EmptyState:**
+- **Empty state:**
   - Removed debug message from tests ([#3161](https://github.com/patternfly/patternfly-react/pull/3161))
 - **Expandable:**
   - Allowed for dynamic toggle text in uncontrolled version ([#3068](https://github.com/patternfly/patternfly-react/pull/3068))
-- **LoginForm:**
+- **Login form:**
   - Pass 'remember me' state to isChecked ([#3056](https://github.com/patternfly/patternfly-react/pull/3056))
-- **OptionsMenu:**
+- **Options menu:**
   - Fix unit tests and options menu([#3107](https://github.com/patternfly/patternfly-react/pull/3107)) 
 - **Overflow menu:**
    - Removed unnecessary class names ([#3204](https://github.com/patternfly/patternfly-react/pull/3204))
@@ -85,11 +85,11 @@ Packages released:
   - Added OUIA compatibility to Table component ([#2964](https://github.com/patternfly/patternfly-react/pull/2964))
 - **Tabs:**
   - Move TabButton to new file ([#3033](https://github.com/patternfly/patternfly-react/pull/3033))
-- **TextArea:**
+- **Text area:**
   - Added a prop to allow limiting the  resize orientation of the Text are ([#3180](https://github.com/patternfly/patternfly-react/pull/3180))
 - **Tooltip:**
   - Allow tooltip text to be left-aligned ([#3053](https://github.com/patternfly/patternfly-react/pull/3053))
-- **Virtualized Extension**
+- **Virtualized extension**
   - Added jest test ([#2761](https://github.com/patternfly/patternfly-react/pull/2761))
 - **Wizard:**
   - Append component to an element in DOM ([#3102](https://github.com/patternfly/patternfly-react/pull/3102)
@@ -113,7 +113,7 @@ Packages released:
    - Fixed regressions from gatsby-theme-patternfly-org ([#3164](https://github.com/patternfly/patternfly-react/pull/3164))
 
 ## PF3
-- **SerialConsole:**
+- **Serial console:**
   - Use xterm v4 ([#3030](https://github.com/patternfly/patternfly-react/pull/3030))
 - **Cards:**
   - Refactored sub-component references ([#2935](https://github.com/patternfly/patternfly-react/pull/2935))
