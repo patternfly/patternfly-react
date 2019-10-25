@@ -179,3 +179,131 @@ class ComplexPaginationTableDemo extends React.Component {
   }
 }
 ```
+
+## Automated pagination utility helper
+
+```js
+import React from 'react';
+import { Pagination, PaginationVariant, Title } from '@patternfly/react-core';
+import { Table, TableHeader, TableBody} from '@patternfly/react-table';
+
+class ComplexPaginationTableDemo extends React.Component {
+  constructor(props) {
+    this.columns = [
+      { title: "First column" },
+      { title: "Second column" },
+      { title: "Third column" }
+    ];
+    this.defaultRows = [
+      { cells: [
+        { title: "Row 1 column 1" },
+        { title: "Row 1 column 2" },
+        { title: "Row 1 column 3" }
+      ]},
+      { cells: [
+        { title: "Row 2 column 1" },
+        { title: "Row 2 column 2" },
+        { title: "Row 2 column 3" }
+      ]},
+      { cells: [
+        { title: "Row 3 column 1" },
+        { title: "Row 3 column 2" },
+        { title: "Row 3 column 3" }
+      ]},
+      { cells: [
+        { title: "Row 4 column 1" },
+        { title: "Row 4 column 2" },
+        { title: "Row 4 column 3" }
+      ]},
+      { cells: [
+        { title: "Row 5 column 1" },
+        { title: "Row 5 column 2" },
+        { title: "Row 5 column 3" }
+      ]},
+      { cells: [
+        { title: "Row 6 column 1" },
+        { title: "Row 6 column 2" },
+        { title: "Row 6 column 3" }
+      ]},
+      { cells: [
+        { title: "Row 7 column 1" },
+        { title: "Row 7 column 2" },
+        { title: "Row 7 column 3" }
+      ]},
+      { cells: [
+        { title: "Row 8 column 1" },
+        { title: "Row 8 column 2" },
+        { title: "Row 8 column 3" }
+      ]},
+      { cells: [
+        { title: "Row 9 column 1" },
+        { title: "Row 9 column 2" },
+        { title: "Row 9 column 3" }
+      ]},
+      { cells: [
+        { title: "Row 10 column 1" },
+        { title: "Row 10 column 2" },
+        { title: "Row 10 column 3" }
+      ]},
+      { cells: [
+        { title: "Row 11 column 1" },
+        { title: "Row 11 column 2" },
+        { title: "Row 11 column 3" }
+      ]},
+      { cells: [
+        { title: "Row 12 column 1" },
+        { title: "Row 12 column 2" },
+        { title: "Row 12 column 3" }
+      ]}
+    ];
+    this.state = {
+      perPage: 10,
+      page: 1,
+      rows: this.defaultRows
+    };
+  }
+
+  updateState(_evt, newPage, newPerPage, startIdx, endIdx) {
+    return {
+      perPage: newPerPage,
+      page: newPage,
+      rows: this.defaultRows.slice(startIdx, endIdx)
+    }
+  }
+
+  renderPagination(variant = 'top') {
+    const { page, perPage, total } = this.state;
+    return (
+      <Pagination
+        itemCount={this.defaultRows.length}
+        page={page}
+        perPage={perPage}
+        defaultToFullPage
+        onSetPage={(_evt, newPage, perPage, startIdx, endIdx) => this.setState(
+          this.updateState(_evt, newPage, perPage, startIdx, endIdx)
+        )}
+        onPerPageSelect={(_evt, newPerPage, page, startIdx, endIdx) => this.setState(
+          this.updateState(_evt, page, newPerPage, startIdx, endIdx)
+        )}
+        perPageOptions={[{ title: "3", value: 3 }, { title: "5", value: 5 }, { title: "12", value: 12}]}
+      />
+    );
+  }
+
+  render() {
+    const { loading } = this.state;
+    return (
+      <React.Fragment>
+        {this.renderPagination()}
+        {!loading && (
+          <Table aria-label="Pagination Table" cells={this.columns} rows={this.state.rows.map(row => row.cells)}>
+            <TableHeader />
+            <TableBody />
+          </Table>
+        )}
+        {loading && <center><Title size="3xl">Please wait while loading data</Title></center>}
+      </React.Fragment>
+    );
+  }
+}
+```

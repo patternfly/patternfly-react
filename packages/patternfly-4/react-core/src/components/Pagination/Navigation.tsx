@@ -33,8 +33,10 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   paginationTitle?: string;
   /** The number of the current page */
   page: React.ReactText;
+  /** Number of items per page. */
+  perPage?: number;
   /** Function called when page is changed */
-  onSetPage: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
+  onSetPage: (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPage: number, perPage?: number, startIdx?: number, endIdx?: number) => void;
   /** Function called when user clicks to navigate to next page */
   onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks to navigate to previous page */
@@ -96,13 +98,19 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
     page: number | string,
     lastPage: number,
     onPageInput: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void,
-    onSetPage: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void
   ): void {
     if (event.keyCode === KEY_CODES.ENTER) {
       const inputPage = Navigation.parseInteger(this.state.userInputPage, lastPage) as number;
       onPageInput(event, Number.isNaN(inputPage) ? (page as number) : inputPage);
-      onSetPage(event, Number.isNaN(inputPage) ? (page as number) : inputPage);
+      this.handleNewPage(event, Number.isNaN(inputPage) ? (page as number) : inputPage);
     }
+  }
+
+  handleNewPage = (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPage: number) => {
+    const { perPage, onSetPage } = this.props;
+    const startIdx = (newPage - 1) * perPage;
+    const endIdx = newPage * perPage;
+    return onSetPage(_evt, newPage, perPage, startIdx, endIdx); 
   }
 
   componentDidUpdate(lastState: NavigationProps) {
@@ -128,7 +136,6 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
       toPreviousPage,
       currPage,
       paginationTitle,
-      onSetPage,
       onNextClick,
       onPreviousClick,
       onFirstClick,
@@ -149,7 +156,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
             data-action="first"
             onClick={event => {
               onFirstClick(event, 1);
-              onSetPage(event, 1);
+              this.handleNewPage(event, 1);
               this.setState({ userInputPage: 1 });
             }}
           >
@@ -163,7 +170,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
           onClick={event => {
             const newPage = (page as number) - 1 >= 1 ? (page as number) - 1 : 1;
             onPreviousClick(event, newPage);
-            onSetPage(event, newPage);
+            this.handleNewPage(event, newPage);
             this.setState({ userInputPage: newPage });
           }}
           aria-label={toPreviousPage}
@@ -180,7 +187,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
               min={lastPage <= 0 && firstPage <= 0 ? 0 : 1}
               max={lastPage}
               value={userInputPage}
-              onKeyDown={event => this.onKeyDown(event, page, lastPage, onPageInput, onSetPage)}
+              onKeyDown={event => this.onKeyDown(event, page, lastPage, onPageInput)}
               onChange={event => this.onChange(event, lastPage)}
             />
             <span aria-hidden="true">of {pagesTitle ? pluralize(lastPage, pagesTitle) : lastPage}</span>
@@ -194,7 +201,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
           onClick={event => {
             const newPage = (page as number) + 1 <= lastPage ? (page as number) + 1 : lastPage;
             onNextClick(event, newPage);
-            onSetPage(event, newPage);
+            this.handleNewPage(event, newPage);
             this.setState({ userInputPage: newPage });
           }}
         >
@@ -208,7 +215,7 @@ export class Navigation extends React.Component<NavigationProps, NavigationState
             data-action="last"
             onClick={event => {
               onLastClick(event, lastPage);
-              onSetPage(event, lastPage);
+              this.handleNewPage(event, lastPage);
               this.setState({ userInputPage: lastPage });
             }}
           >

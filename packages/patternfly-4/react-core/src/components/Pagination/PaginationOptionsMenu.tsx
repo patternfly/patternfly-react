@@ -21,6 +21,8 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   perPageOptions?: PerPageOptions[];
   /** The Title of the Pagination Options Menu */
   itemsPerPageTitle?: string;
+  /** Current page number */
+  page?: number;
   /** The suffix to be displayed after each option on the Options Menu dropdown */
   perPageSuffix?: string;
   /** The type or title of the items being paginated */
@@ -33,12 +35,16 @@ export interface PaginationOptionsMenuProps extends React.HTMLProps<HTMLDivEleme
   firstIndex?: number;
   /** The last index of the items being paginated */
   lastIndex?: number;
+  /** Flag to show last full page of results if perPage selected > remaining rows */
+  defaultToFullPage?: boolean;
   /** The number of items to be displayed per page */
   perPage?: number;
+  /** The number of the last page */
+  lastPage?: number;
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */
   toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
   /** Function called when user selects number of items per page. */
-  onPerPageSelect?: (event: React.MouseEvent | React.KeyboardEvent | MouseEvent, perPage: number) => void;
+  onPerPageSelect?: (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPerPage: number, newPage?: number, startIdx?: number, endIdx?: number) => void;
 }
 
 interface PaginationOptionsMenuState {
@@ -59,6 +65,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
     perPage: 0,
     firstIndex: 0,
     lastIndex: 0,
+    defaultToFullPage: false,
     itemCount: 0,
     itemsTitle: 'items',
     toggleTemplate: ({ firstIndex, lastIndex, itemCount, itemsTitle }: ToggleTemplateProps) => (
@@ -89,8 +96,23 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
     });
   };
 
+  handleNewPerPage = (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPerPage: number) => {
+    const { page, onPerPageSelect, itemCount, defaultToFullPage } = this.props;
+    let newPage = page;
+    if (defaultToFullPage) {
+      if (itemCount / newPerPage !== newPage) {
+        while (newPage && (itemCount - (newPerPage * newPage)) < 0) {
+          newPage--;
+        }
+      }
+    }
+    const startIdx = (newPage - 1) * newPerPage;
+    const endIdx = newPage * newPerPage;
+    return onPerPageSelect(_evt, newPerPage, newPage, startIdx, endIdx); 
+  }
+
   renderItems = () => {
-    const { perPageOptions, perPage, onPerPageSelect, perPageSuffix } = this.props;
+    const { perPageOptions, perPage, perPageSuffix } = this.props;
 
     return perPageOptions.map(({ value, title }) => (
       <DropdownItem
@@ -98,7 +120,7 @@ export class PaginationOptionsMenu extends React.Component<PaginationOptionsMenu
         component="button"
         data-action={`per-page-${value}`}
         className={css(perPage === value && 'pf-m-selected')}
-        onClick={event => onPerPageSelect(event, value)}
+        onClick={event => this.handleNewPerPage(event, value)}
       >
         {title}
         <span className={css(paginationStyles.paginationMenuText)}>{` ${perPageSuffix}`}</span>
