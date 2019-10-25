@@ -136,6 +136,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     ]
                   }
                   deleteChip={[Function]}
+                  showToolbarItem={true}
                 >
                   <Component>
                     <div
@@ -840,6 +841,7 @@ exports[`data toolbar DataToolbarFilter 1`] = `
                     ]
                   }
                   deleteChip={[Function]}
+                  showToolbarItem={true}
                 >
                   <Component>
                     <div
