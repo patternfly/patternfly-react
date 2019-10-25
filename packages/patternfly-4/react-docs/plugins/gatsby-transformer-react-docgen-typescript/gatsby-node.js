@@ -55,9 +55,11 @@ async function onCreateNode({ node, actions, loadNodeContent, createNodeId, crea
     // console.warn('No component found in', node.absolutePath);
   }
 
-  if (parsed) {
+  // TabContent.tsx is being a pain so check for parsed.displayName
+  if (parsed && parsed.displayName) {
     const metadataNode = {
       name: parsed.displayName,
+      relativePath: node.relativePath,
       description: parsed.description,
       props: flattenProps(parsed.props),
       path: node.relativePath,
@@ -76,3 +78,32 @@ async function onCreateNode({ node, actions, loadNodeContent, createNodeId, crea
 }
 
 exports.onCreateNode = onCreateNode;
+
+// Add types fetched in `mdx.js` query in case no files are passed to infer from
+exports.createSchemaCustomization = ({ actions }) => {
+  const typeDefs = `
+    type TypeType @noInfer {
+      name: String
+    }
+    type TsType @noInfer {
+      name: String
+      raw: String
+    }
+    type defaultValue @noInfer {
+      value: String
+    }
+    type PropsType @noInfer {
+      name: String!
+      description: String
+      required: Boolean
+      type: TypeType
+      tsType: TsType
+      defaultValue: defaultValue
+    }
+    type ComponentMetadata implements Node @noInfer {
+      name: String!
+      props: [PropsType]
+    }
+  `;
+  actions.createTypes(typeDefs);
+}

@@ -76,7 +76,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        extensions: ['.mdx', '.md']
+        extensions: ['.md']
       }
     },
     // The plugin for package.json files (to get version numbers)
