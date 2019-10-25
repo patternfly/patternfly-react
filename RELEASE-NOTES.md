@@ -17,6 +17,19 @@ Packages released:
 - [@patternfly/react-virtualized-extension@1.3.10](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.3.10)
 - [@patternfly/react-icons@3.14.15](https://www.npmjs.com/package/@patternfly/react-icons/v/3.14.15)
 
+## Charts
+- Added legend examples ([#3093](https://github.com/patternfly/patternfly-react/pull/3093))
+- Added chart scatter examples ([#3086](https://github.com/patternfly/patternfly-react/pull/3086))
+- Updated ChartThreshold to use pf-core variable ([#3085](https://github.com/patternfly/patternfly-react/pull/3085))
+- Updates to use markdown links ([#3072](https://github.com/patternfly/patternfly-react/pull/3072))
+- Simplified legend tooltip example ([#3069](https://github.com/patternfly/patternfly-react/pull/3069))
+- Added Responsive legend ([#3067](https://github.com/patternfly/patternfly-react/pull/3067))
+- Added tooltip examples ([#3061](https://github.com/patternfly/patternfly-react/pull/3061))
+- Added props to ChartLabel ([#3028](https://github.com/patternfly/patternfly-react/pull/3028))
+- Fixed ChartThreshold props ([#3024](https://github.com/patternfly/patternfly-react/pull/3024))
+- Added custom theme example ([#3023](https://github.com/patternfly/patternfly-react/pull/3023))
+- Moved ChartThreshold to its own example ([#3019](https://github.com/patternfly/patternfly-react/pull/3019))
+
 ## Components
 - **About Modal:**
   - Append component to an element in DOM ([#3102](https://github.com/patternfly/patternfly-react/pull/3102))
@@ -25,18 +38,6 @@ Packages released:
 - **Button:**
   - Component type accepts react-router Link ([#3077](https://github.com/patternfly/patternfly-react/pull/3077))
   - Added an example of a link button with anchor component ([#3034](https://github.com/patternfly/patternfly-react/pull/3034))
-- **Charts:**
-  - Added legend examples ([#3093](https://github.com/patternfly/patternfly-react/pull/3093))
-  - Added chart scatter examples ([#3086](https://github.com/patternfly/patternfly-react/pull/3086))
-  - Updated ChartThreshold to use pf-core variable ([#3085](https://github.com/patternfly/patternfly-react/pull/3085))
-   - Updates to use markdown links ([#3072](https://github.com/patternfly/patternfly-react/pull/3072))
-  - Simplified legend tooltip example ([#3069](https://github.com/patternfly/patternfly-react/pull/3069))
-  - Added Responsive legend ([#3067](https://github.com/patternfly/patternfly-react/pull/3067))
-  - Added tooltip examples ([#3061](https://github.com/patternfly/patternfly-react/pull/3061))
-  - Added props to ChartLabel ([#3028](https://github.com/patternfly/patternfly-react/pull/3028))
-  - Fixed ChartThreshold props ([#3024](https://github.com/patternfly/patternfly-react/pull/3024))
-  - Added custom theme example ([#3023](https://github.com/patternfly/patternfly-react/pull/3023))
-  - Moved ChartThreshold to its own example ([#3019](https://github.com/patternfly/patternfly-react/pull/3019))
 - **Chip:**
   - Added OUIA compatibility to Chip component ([#2995](https://github.com/patternfly/patternfly-react/pull/2995))
 - **Copy to clipboard:**
@@ -77,12 +78,6 @@ Packages released:
   - Fixed alert type in docs ([#3063](https://github.com/patternfly/patternfly-react/pull/3063))
 - **Switch:**
   - reverted defaultChecked to checked ([#3037](https://github.com/patternfly/patternfly-react/pull/3037))
-- **Table:**
-  - Added custom row wrapper example for table  ([#3160](https://github.com/patternfly/patternfly-react/pull/3160))
-  - Set height auto modifier on table row ([#3133](https://github.com/patternfly/patternfly-react/pull/3133))
-  - Added support for custom dataLabel prop on table header ([#3040](https://github.com/patternfly/patternfly-react/pull/3040))
-  - Disable header controls with empty table ([#3008](https://github.com/patternfly/patternfly-react/pull/3008))
-  - Added OUIA compatibility to Table component ([#2964](https://github.com/patternfly/patternfly-react/pull/2964))
 - **Tabs:**
   - Move TabButton to new file ([#3033](https://github.com/patternfly/patternfly-react/pull/3033))
 - **Text area:**
@@ -93,6 +88,13 @@ Packages released:
   - Added jest test ([#2761](https://github.com/patternfly/patternfly-react/pull/2761))
 - **Wizard:**
   - Append component to an element in DOM ([#3102](https://github.com/patternfly/patternfly-react/pull/3102)
+
+## Table
+- Added custom row wrapper example for table  ([#3160](https://github.com/patternfly/patternfly-react/pull/3160))
+- Set height auto modifier on table row ([#3133](https://github.com/patternfly/patternfly-react/pull/3133))
+- Added support for custom dataLabel prop on table header ([#3040](https://github.com/patternfly/patternfly-react/pull/3040))
+- Disable header controls with empty table ([#3008](https://github.com/patternfly/patternfly-react/pull/3008))
+- Added OUIA compatibility to Table component ([#2964](https://github.com/patternfly/patternfly-react/pull/2964))
 
 ## Other
 - **Chore:** 
