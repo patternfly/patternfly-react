@@ -350,6 +350,8 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
       toggleIcon,
       ouiaContext,
       ouiaId,
+      createText,
+      noResultsFoundText,
       ...props
     } = this.props;
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild } = this.state;
@@ -374,6 +376,7 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
         </ChipGroup>
       );
     }
+
     return (
       <div
         className={css(
