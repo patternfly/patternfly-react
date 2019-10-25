@@ -7,7 +7,7 @@ hideTOC: true
 # 2019.09 release notes (2019-10-29)
 Packages released:
 - [@patternfly/react-catalog-view-extension@1.1.1](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.1.1)
-- [@patternfly/react-charts@5.0.13](https://www.npmjs.com/package/@patternfly/react-charts/v/5.1.2)
+- [@patternfly/react-charts@5.1.2](https://www.npmjs.com/package/@patternfly/react-charts/v/5.1.2)
 - [@patternfly/react-core@3.120.1](https://www.npmjs.com/package/@patternfly/react-core/v/3.120.1)
 - [@patternfly/react-inline-edit-extension@2.12.10](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.12.10)
 - [@patternfly/react-styles@3.6.2](https://www.npmjs.com/package/@patternfly/react-styles/v/3.6.2)
