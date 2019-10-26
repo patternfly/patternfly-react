@@ -33,6 +33,17 @@ exports[`simple text input 1`] = `
 />
 `;
 
+exports[`validated text area 1`] = `
+<textarea
+  aria-invalid={false}
+  aria-label="validated textarea"
+  className="pf-c-form-control pf-m-success"
+  onChange={[Function]}
+  required={true}
+  value="test textarea"
+/>
+`;
+
 exports[`vertically resizable text area 1`] = `
 <textarea
   aria-invalid={false}

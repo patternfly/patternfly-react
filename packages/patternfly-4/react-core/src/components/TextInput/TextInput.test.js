@@ -37,6 +37,12 @@ test('invalid text input', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('validated text input', () => {
+  const view = shallow(<TextInput {...props} required isValid validated aria-label="validated text input" />);
+  expect(view.find('.pf-c-form-control.pf-m-success').length).toBe(1);
+  expect(view).toMatchSnapshot();
+});
+
 test('should throw console error when no aria-label, id or aria-labelledby is given', () => {
   const myMock = jest.fn();
   global.console = { error: myMock };

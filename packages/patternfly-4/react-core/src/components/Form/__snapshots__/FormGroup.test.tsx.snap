@@ -134,6 +134,41 @@ exports[`FormGroup component should render form group required variant 1`] = `
 </Component>
 `;
 
+exports[`FormGroup component should render form group validated variant 1`] = `
+<Component
+  fieldId="label-id"
+  helperText="Validated FormGroup"
+  isValid={true}
+  label="label"
+  validated={true}
+>
+  <div
+    className="pf-c-form__group"
+  >
+    <label
+      className="pf-c-form__label"
+      htmlFor="label-id"
+    >
+      <span
+        className="pf-c-form__label-text"
+      >
+        label
+      </span>
+    </label>
+    <input
+      id="id"
+    />
+    <div
+      aria-live="polite"
+      className="pf-c-form__helper-text pf-m-success"
+      id="label-id-helper"
+    >
+      Validated FormGroup
+    </div>
+  </div>
+</Component>
+`;
+
 exports[`FormGroup component should render form group variant with function helperText 1`] = `
 <Component
   fieldId="label-id"

@@ -67,6 +67,7 @@ exports[`Renders ContextSelector open 1`] = `
             onKeyPress={[Function]}
             placeholder="Search"
             type="search"
+            validated={false}
             value=""
           />
           <Component

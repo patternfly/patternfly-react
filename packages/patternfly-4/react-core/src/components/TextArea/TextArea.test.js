@@ -27,6 +27,12 @@ test('invalid text area', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('validated text area', () => {
+  const view = shallow(<TextArea {...props} required isValid validated aria-label="validated textarea" />);
+  expect(view.find('.pf-c-form-control.pf-m-success').length).toBe(1);
+  expect(view).toMatchSnapshot();
+});
+
 test('vertically resizable text area', () => {
   const view = shallow(<TextArea resizeOrientation='vertical' {...props} aria-label="vertical resize textarea" />);
   expect(view).toMatchSnapshot();

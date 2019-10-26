@@ -17,6 +17,8 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   isRequired?: boolean;
   /** Flag to show if the TextArea is valid or invalid. */
   isValid?: boolean;
+  /** Flag to show if the TextArea has been validated. */
+  validated?: boolean;
   /** Value of the TextArea. */
   value?: string | number;
   /** A callback for when the TextArea value changes. */
@@ -32,6 +34,7 @@ export class TextArea extends React.Component<TextAreaProps> {
     className: '',
     isRequired: false,
     isValid: true,
+    validated: false,
     resizeOrientation: 'both',
     'aria-label': null as string
   };
@@ -51,14 +54,15 @@ export class TextArea extends React.Component<TextAreaProps> {
   };
 
   render() {
-    const { className, value, onChange, isValid, isRequired, resizeOrientation, ...props } = this.props;
+    const { className, value, onChange, isValid, validated, isRequired, resizeOrientation, ...props } = this.props;
     const orientation = 'resize' + resizeOrientation.charAt(0).toUpperCase() + resizeOrientation.slice(1);
     return (
       <textarea
         className={css(
           styles.formControl,
           className,
-          resizeOrientation !== TextAreResizeOrientation.both && getModifier(styles, orientation)
+          resizeOrientation !== TextAreResizeOrientation.both && getModifier(styles, orientation),
+          validated && styles.modifiers.success
         )}
         onChange={this.handleChange}
         {...(typeof this.props.defaultValue !== 'string' && { value })}

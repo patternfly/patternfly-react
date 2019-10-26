@@ -283,3 +283,72 @@ class InvalidForm extends React.Component {
   }
 }
 ```
+
+```js title=Validated
+import React from 'react';
+import {
+  Form,
+  FormGroup,
+  TextInput,
+  TextArea,
+  FormSelectionOption,
+  FormSelect,
+  Checkbox,
+  ActionGroup,
+  Button,
+  Radio
+} from '@patternfly/react-core';
+
+class InvalidForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 'Five',
+      invalidText: 'Age has to be a number',
+      isValid: false,
+      validated: false,
+      helperText: 'Enter your age to continue'
+    };
+    this.handleTextInputChange = value => {
+      const isValid = /^\d+$/.test(value)
+      this.setState({ value, isValid, invalidText: 'Age has to be a number', helperText: 'Validating...', validated: false });
+      if (isValid) {
+        setTimeout(() => {
+          if (this.state.isValid && parseInt(this.state.value, 10) >= 21) {
+            this.setState({isValid: true, validated: true, helperText: 'Enjoy your stay'});
+          } else {
+            this.setState({isValid: false, validated: false, invalidText: 'You must be at least 21 to continue'});
+          }
+        }, 2000);
+      }
+    };
+  }
+
+  render() {
+    const { value, isValid, validated, helperText, invalidText } = this.state;
+
+    return (
+      <Form>
+        <FormGroup
+          label="Age:"
+          type="number"
+          helperText={helperText}
+          helperTextInvalid={invalidText}
+          fieldId="age"
+          isValid={isValid}
+          validated={validated}
+        >
+          <TextInput
+            isValid={isValid}
+            validated={validated}
+            value={value}
+            id="age"
+            aria-describedby="age-helper"
+            onChange={this.handleTextInputChange}
+          />
+        </FormGroup>
+      </Form>
+    );
+  }
+}
+```

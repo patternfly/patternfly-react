@@ -2,7 +2,6 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
-import { FormEvent } from 'react';
 
 export enum TextInputTypes {
   text = 'text',
@@ -29,6 +28,8 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
   isRequired?: boolean;
   /** Flag to show if the input is valid or invalid. */
   isValid?: boolean;
+  /** Flag to show if the input has been validated. */
+  validated?: boolean;
   /** A callback for when the input value changes. */
   onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** Type that the input accepts. */
@@ -56,6 +57,7 @@ export class TextInput extends React.Component<TextInputProps> {
     className: '',
     isRequired: false,
     isValid: true,
+    validated: false,
     isDisabled: false,
     isReadOnly: false,
     type: 'text',
@@ -77,11 +79,22 @@ export class TextInput extends React.Component<TextInputProps> {
   };
 
   render() {
-    const { className, type, value, onChange, isValid, isReadOnly, isRequired, isDisabled, ...props } = this.props;
+    const {
+      className,
+      type,
+      value,
+      onChange,
+      isValid,
+      validated,
+      isReadOnly,
+      isRequired,
+      isDisabled,
+      ...props
+    } = this.props;
     return (
       <input
         {...props}
-        className={css(styles.formControl, className)}
+        className={css(styles.formControl, validated && styles.modifiers.success, className)}
         onChange={this.handleChange}
         type={type}
         value={value}

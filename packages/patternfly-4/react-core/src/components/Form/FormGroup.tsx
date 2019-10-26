@@ -16,6 +16,8 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   isRequired?: boolean;
   /** Sets the FormGroup isValid. */
   isValid?: boolean;
+  /** Sets the FormGroup validated. */
+  validated?: boolean;
   /** Sets the FormGroup isInline. */
   isInline?: boolean;
   /** Helper text after the field. It can be a simple text or an object. */
@@ -32,6 +34,7 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
   label,
   isRequired = false,
   isValid = true,
+  validated = false,
   isInline = false,
   helperText,
   helperTextInvalid,
@@ -57,7 +60,10 @@ export const FormGroup: React.FunctionComponent<FormGroupProps> = ({
         {isHorizontal ? <div className={css(styles.formHorizontalGroup)}>{children}</div> : children}
         {((isValid && helperText) || (!isValid && helperTextInvalid)) && (
           <div
-            className={css(styles.formHelperText, !isValid ? getModifier(styles, 'error') : '')}
+            className={css(
+              styles.formHelperText,
+              !isValid ? styles.modifiers.error : validated ? styles.modifiers.success : ''
+            )}
             id={`${fieldId}-helper`}
             aria-live="polite"
           >

@@ -14,6 +14,7 @@ exports[`focused table text input 1`] = `
     onBlur={[Function]}
     onChange={[Function]}
     type="text"
+    validated={false}
   />
 </Fragment>
 `;
@@ -32,6 +33,7 @@ exports[`simple table text input 1`] = `
     onBlur={[Function]}
     onChange={[Function]}
     type="text"
+    validated={false}
   />
 </Fragment>
 `;

@@ -13,6 +13,8 @@ export interface FormSelectProps
   value?: any;
   /** Flag indicating selection is valid */
   isValid?: boolean;
+  /** Flag indicating selection has been validated */
+  validated?: boolean;
   /** Flag indicating the FormSelect is disabled */
   isDisabled?: boolean;
   /** Sets the FormSelectrequired. */
@@ -40,6 +42,7 @@ export class FormSelect extends React.Component<FormSelectProps> {
     className: '',
     value: '',
     isValid: true,
+    validated: false,
     isDisabled: false,
     isRequired: false,
     onBlur: (): any => undefined,
@@ -52,11 +55,11 @@ export class FormSelect extends React.Component<FormSelectProps> {
   };
 
   render() {
-    const { children, className, value, isValid, isDisabled, isRequired, ...props } = this.props;
+    const { children, className, value, isValid, validated, isDisabled, isRequired, ...props } = this.props;
     return (
       <select
         {...props}
-        className={css(styles.formControl, className)}
+        className={css(styles.formControl, className, validated && styles.modifiers.success)}
         aria-invalid={!isValid}
         onChange={this.handleChange}
         disabled={isDisabled}

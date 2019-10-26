@@ -127,6 +127,16 @@ test('invalid FormSelect input', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('validated FormSelect input', () => {
+  const view = shallow(
+    <FormSelect isValid validated aria-label="validated FormSelect">
+      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </FormSelect>
+  );
+  expect(view.find('.pf-c-form-control.pf-m-success').length).toBe(1);
+  expect(view).toMatchSnapshot();
+});
+
 test('required FormSelect input', () => {
   const view = shallow(
     <FormSelect required aria-label="required FormSelect">
