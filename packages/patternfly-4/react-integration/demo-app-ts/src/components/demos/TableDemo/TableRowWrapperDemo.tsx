@@ -3,19 +3,23 @@ import {
   Table,
   TableHeader,
   TableBody,
-  RowWrapperProps
+  RowWrapperProps,
+  TableProps,
+  ICell,
+  IRow
 } from '@patternfly/react-table';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 
 interface ITableRowWrapperDemoState {
-  rows: any;
-  columns: any;
+  rows: IRow[];
+  columns: (ICell | string)[];
 }
 
-export class TableRowWrapperDemo extends React.Component<any, ITableRowWrapperDemoState> {
+export class TableRowWrapperDemo extends React.Component<TableProps, ITableRowWrapperDemoState> {
   customRowWrapper: (props: RowWrapperProps) => JSX.Element;
-  constructor(props: any) {
+  constructor(props: TableProps) {
+
     super(props);
     this.state = {
       columns: [

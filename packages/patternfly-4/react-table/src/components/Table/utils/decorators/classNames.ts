@@ -1,5 +1,6 @@
 import { css, pickProperties } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
+import { ITransform } from '../../Table';
 
 export const Visibility = pickProperties(styles.modifiers, [
   'hidden',
@@ -16,6 +17,6 @@ export const Visibility = pickProperties(styles.modifiers, [
 ]);
 
 // tslint:disable-next-line:no-shadowed-variable
-export const classNames = (...classNames: string[]) => () => ({
+export const classNames = (...classNames: string[]): ITransform => () => ({
   className: css(...classNames)
 });

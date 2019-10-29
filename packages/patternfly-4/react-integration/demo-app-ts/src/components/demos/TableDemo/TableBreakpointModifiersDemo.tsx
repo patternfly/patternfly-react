@@ -6,10 +6,16 @@ import {
   TableProps,
   classNames,
   Visibility,
+  ICell,
   IRow
 } from '@patternfly/react-table';
 
-export class TableBreakpointModifersDemo extends React.Component<TableProps, { columns: any; rows: IRow[] }> {
+interface TableState {
+  columns: (ICell | string)[];
+  rows: IRow[];
+}
+
+export class TableBreakpointModifersDemo extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
     this.state = {
