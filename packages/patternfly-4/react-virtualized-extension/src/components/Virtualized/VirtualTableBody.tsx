@@ -207,6 +207,7 @@ export default class VirtualTableBody extends React.PureComponent<Props> {
         style={{
           tableLayout: 'fixed',
           display: 'block',
+          ...style
         }}
         containerStyle={{
           display: 'block'
