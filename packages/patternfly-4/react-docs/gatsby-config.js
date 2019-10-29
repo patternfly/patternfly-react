@@ -2,7 +2,8 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Patternfly 4 - React'
+    title: 'Patternfly 4 - React',
+    siteUrl: 'https://patternfly-react.surge.sh/patternfly-4/'
   },
   pathPrefix: '/patternfly-4',
   plugins: [
