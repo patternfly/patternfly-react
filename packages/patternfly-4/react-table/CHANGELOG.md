@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.11...@patternfly/react-table@2.24.12) (2019-10-29)
+
+
+### Bug Fixes
+
+* **table:** bind isTableEmpty function ([#3225](https://github.com/patternfly/patternfly-react/issues/3225)) ([43c4e10](https://github.com/patternfly/patternfly-react/commit/43c4e1029bd0df9ac22df83ebb1424693adc9753))
+
+
+
+
+
 ## [2.24.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.10...@patternfly/react-table@2.24.11) (2019-10-25)
 
 **Note:** Version bump only for package @patternfly/react-table
