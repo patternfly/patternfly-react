@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.12...@patternfly/react-table@2.24.13) (2019-10-30)
+
+
+### Bug Fixes
+
+* **Table:** Add opt out of disable header on empty table ([#3242](https://github.com/patternfly/patternfly-react/issues/3242)) ([e43cb4c](https://github.com/patternfly/patternfly-react/commit/e43cb4c1f924d822bcf84bdb4e5323a079171255)), closes [#3241](https://github.com/patternfly/patternfly-react/issues/3241)
+
+
+
+
+
 ## [2.24.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.11...@patternfly/react-table@2.24.12) (2019-10-29)
 
 

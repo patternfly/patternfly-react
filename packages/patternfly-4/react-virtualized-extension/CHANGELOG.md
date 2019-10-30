@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.3.12...@patternfly/react-virtualized-extension@1.3.13) (2019-10-30)
+
+
+### Bug Fixes
+
+* **Table:** Add opt out of disable header on empty table ([#3242](https://github.com/patternfly/patternfly-react/issues/3242)) ([e43cb4c](https://github.com/patternfly/patternfly-react/commit/e43cb4c1f924d822bcf84bdb4e5323a079171255)), closes [#3241](https://github.com/patternfly/patternfly-react/issues/3241)
+
+
+
+
+
 ## [1.3.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-virtualized-extension@1.3.11...@patternfly/react-virtualized-extension@1.3.12) (2019-10-29)
 
 
