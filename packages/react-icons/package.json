@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-icons",
-  "version": "3.14.15",
+  "version": "3.14.16",
   "description": "PatternFly 4 Icons as React Components",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
