@@ -10,7 +10,6 @@ export interface SortColumnProps extends React.HTMLAttributes<HTMLButtonElement>
   isSortedBy?: boolean;
   onSort?: Function;
   sortDirection?: string;
-  disabled?: boolean;
 }
 
 export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
@@ -19,7 +18,6 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
   isSortedBy = false,
   onSort = null,
   sortDirection = '',
-  disabled,
   ...props
 }: SortColumnProps) => {
   let SortedByIcon;
@@ -29,7 +27,7 @@ export const SortColumn: React.FunctionComponent<SortColumnProps> = ({
     SortedByIcon = ArrowsAltVIcon;
   }
   return (
-    <button {...props} className={css(className)} onClick={event => onSort && onSort(event)} disabled={disabled}>
+    <button {...props} className={css(className)} onClick={event => onSort && onSort(event)}>
       {children}
       <span className={css(styles.tableSortIndicator)}>
         <SortedByIcon />

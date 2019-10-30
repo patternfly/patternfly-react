@@ -9,7 +9,7 @@ export const selectable = (
   { rowIndex, columnIndex, rowData, column, property }: IExtra
 ) => {
   const {
-    extraParams: { onSelect, allRowsSelected, isTableEmpty, rowLabeledBy = 'simple-node' }
+    extraParams: { onSelect, allRowsSelected, rowLabeledBy = 'simple-node' }
   } = column;
   const extraData = {
     rowIndex,
@@ -49,7 +49,7 @@ export const selectable = (
     component: 'td',
     isVisible: true,
     children: (
-      <SelectColumn {...customProps} onSelect={selectClick} name={rowId !== -1 ? `checkrow${rowIndex}` : 'check-all'} disabled={isTableEmpty}>
+      <SelectColumn {...customProps} onSelect={selectClick} name={rowId !== -1 ? `checkrow${rowIndex}` : 'check-all'}>
         {label}
       </SelectColumn>
     )

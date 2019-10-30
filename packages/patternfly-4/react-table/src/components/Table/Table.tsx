@@ -77,7 +77,6 @@ export interface IColumn {
     dropdownPosition?: DropdownPosition;
     dropdownDirection?: DropdownDirection;
     allRowsSelected?: boolean;
-    isTableEmpty?: boolean;
   };
 }
 
@@ -252,10 +251,8 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
 
   isSelected = (row: IRow) => row.selected === true;
 
-  isTableEmpty = () => (this.props.rows === undefined || this.props.rows.length === 0);
-
   areAllRowsSelected = (rows: IRow[]) => {
-    if (this.isTableEmpty()) {
+    if (rows === undefined || rows.length === 0) {
       return false;
     }
     return rows.every(row => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
@@ -316,8 +313,7 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
       contentId,
       dropdownPosition,
       dropdownDirection,
-      firstUserColumnIndex: [onCollapse, onSelect].filter(callback => callback).length,
-      isTableEmpty: this.isTableEmpty()
+      firstUserColumnIndex: [onCollapse, onSelect].filter(callback => callback).length
     });
 
     return (
