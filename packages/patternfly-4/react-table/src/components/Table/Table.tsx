@@ -223,8 +223,6 @@ export interface TableProps {
   rowWrapper?: (props: RowWrapperProps) => JSX.Element;
   /** A valid WAI-ARIA role to be applied to the table element */
   role?: string;
-  /** Disable header if rows passed in as props are empty */
-  disableHeaderOnEmptyState?: boolean;
 }
 
 export const TableContext = React.createContext({
@@ -249,13 +247,12 @@ class Table extends React.Component<TableProps & InjectedOuiaProps, {}> {
     'aria-label': undefined as string,
     gridBreakPoint: TableGridBreakpoint.gridMd,
     role: 'grid',
-    canSelectAll: true,
-    disableHeaderOnEmptyState: false
+    canSelectAll: true
   };
 
   isSelected = (row: IRow) => row.selected === true;
 
-  isTableEmpty = () => this.props.disableHeaderOnEmptyState && (this.props.rows === undefined || this.props.rows.length === 0);
+  isTableEmpty = () => (this.props.rows === undefined || this.props.rows.length === 0);
 
   areAllRowsSelected = (rows: IRow[]) => {
     if (this.isTableEmpty()) {
