@@ -364,6 +364,7 @@ export class Wizard extends React.Component<WizardProps, WizardState> {
       hasBodyPadding,
       footer,
       isCompactNav,
+      appendTo,
       ...rest
     } = this.props;
     const { currentStep } = this.state;

@@ -123,7 +123,7 @@ export class AboutModal extends React.Component<AboutModalProps, ModalState> {
   }
 
   render() {
-    const { ...props } = this.props;
+    const { appendTo, ...props } = this.props;
     const { container } = this.state;
 
     if (!canUseDOM || !container) {
