@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Dropdown: dropdown is rendered 1`] = `
-<Uncontrolled(Dropdown)
+<ForwardRef
   componentClass="li"
   id="InfoTip"
   onBlur={[Function]}
@@ -11,5 +11,5 @@ exports[`renders Dropdown: dropdown is rendered 1`] = `
   open={false}
 >
   children
-</Uncontrolled(Dropdown)>
+</ForwardRef>
 `;
