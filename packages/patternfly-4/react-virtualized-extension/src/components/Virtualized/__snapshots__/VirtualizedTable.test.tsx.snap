@@ -249,7 +249,6 @@ exports[`Actions virtualized table 1`] = `
       }
       className=""
       contentId="expanded-content"
-      disableHeaderOnEmptyState={false}
       dropdownDirection="down"
       dropdownPosition="right"
       expandId="expandable-toggle"
@@ -617,7 +616,6 @@ exports[`Actions virtualized table 1`] = `
             },
           ]
         }
-        disableHeaderOnEmptyState={false}
         renderers={
           Object {
             "body": Object {
@@ -635,7 +633,6 @@ exports[`Actions virtualized table 1`] = `
         <table
           aria-label="Aria labeled"
           className="pf-c-table pf-m-grid-md"
-          disableHeaderOnEmptyState={false}
           role="grid"
         >
           <TableHeader>
@@ -1603,7 +1600,6 @@ exports[`Selectable virtualized table 1`] = `
       }
       className=""
       contentId="expanded-content"
-      disableHeaderOnEmptyState={false}
       dropdownDirection="down"
       dropdownPosition="right"
       expandId="expandable-toggle"
@@ -1972,7 +1968,6 @@ exports[`Selectable virtualized table 1`] = `
             },
           ]
         }
-        disableHeaderOnEmptyState={false}
         renderers={
           Object {
             "body": Object {
@@ -1990,7 +1985,6 @@ exports[`Selectable virtualized table 1`] = `
         <table
           aria-label="Aria labeled"
           className="pf-c-table pf-m-grid-md"
-          disableHeaderOnEmptyState={false}
           role="grid"
         >
           <TableHeader>
@@ -3056,7 +3050,6 @@ exports[`Simple Actions table 1`] = `
       }
       className=""
       contentId="expanded-content"
-      disableHeaderOnEmptyState={false}
       dropdownDirection="down"
       dropdownPosition="right"
       expandId="expandable-toggle"
@@ -3542,7 +3535,6 @@ exports[`Simple Actions table 1`] = `
             },
           ]
         }
-        disableHeaderOnEmptyState={false}
         renderers={
           Object {
             "body": Object {
@@ -3560,7 +3552,6 @@ exports[`Simple Actions table 1`] = `
         <table
           aria-label="Aria labeled"
           className="pf-c-table pf-m-grid-md"
-          disableHeaderOnEmptyState={false}
           role="grid"
         >
           <TableHeader>
@@ -4730,7 +4721,6 @@ exports[`Simple virtualized table aria-label 1`] = `
       }
       className=""
       contentId="expanded-content"
-      disableHeaderOnEmptyState={false}
       dropdownDirection="down"
       dropdownPosition="right"
       expandId="expandable-toggle"
@@ -5051,7 +5041,6 @@ exports[`Simple virtualized table aria-label 1`] = `
             },
           ]
         }
-        disableHeaderOnEmptyState={false}
         renderers={
           Object {
             "body": Object {
@@ -5068,7 +5057,6 @@ exports[`Simple virtualized table aria-label 1`] = `
       >
         <table
           className="pf-c-table pf-m-grid-md"
-          disableHeaderOnEmptyState={false}
           role="grid"
         >
           <TableHeader>
@@ -5871,7 +5859,6 @@ exports[`Simple virtualized table className 1`] = `
       }
       className=""
       contentId="expanded-content"
-      disableHeaderOnEmptyState={false}
       dropdownDirection="down"
       dropdownPosition="right"
       expandId="expandable-toggle"
@@ -6192,7 +6179,6 @@ exports[`Simple virtualized table className 1`] = `
             },
           ]
         }
-        disableHeaderOnEmptyState={false}
         renderers={
           Object {
             "body": Object {
@@ -6209,7 +6195,6 @@ exports[`Simple virtualized table className 1`] = `
       >
         <table
           className="pf-c-table pf-m-grid-md"
-          disableHeaderOnEmptyState={false}
           role="grid"
         >
           <TableHeader>
@@ -7028,7 +7013,6 @@ exports[`Sortable Virtualized Table 1`] = `
       }
       className=""
       contentId="expanded-content"
-      disableHeaderOnEmptyState={false}
       dropdownDirection="down"
       dropdownPosition="right"
       expandId="expandable-toggle"
@@ -7353,7 +7337,6 @@ exports[`Sortable Virtualized Table 1`] = `
             },
           ]
         }
-        disableHeaderOnEmptyState={false}
         renderers={
           Object {
             "body": Object {
@@ -7371,7 +7354,6 @@ exports[`Sortable Virtualized Table 1`] = `
         <table
           aria-label="Aria labeled"
           className="pf-c-table pf-m-grid-md"
-          disableHeaderOnEmptyState={false}
           role="grid"
         >
           <TableHeader>
