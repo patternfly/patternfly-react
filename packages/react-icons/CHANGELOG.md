@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.14.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.14.16...@patternfly/react-icons@3.14.17) (2019-10-31)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
 ## [3.14.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.14.15...@patternfly/react-icons@3.14.16) (2019-10-30)
 
 **Note:** Version bump only for package @patternfly/react-icons
