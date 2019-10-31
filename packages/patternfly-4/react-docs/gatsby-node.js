@@ -12,6 +12,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       hideDarkMode: Boolean
       reactComponentName: String
       coreComponentName: String
+      showTitle: Boolean
     }
     type Mdx implements Node @infer {
       frontmatter: MdxFrontmatter
