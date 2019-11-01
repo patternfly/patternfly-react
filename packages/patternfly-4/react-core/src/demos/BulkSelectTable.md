@@ -2,13 +2,10 @@
 title: 'Bulk select table'
 section: 'demos'
 ---
-
-## Bulk select table demo
-
-import { Pagination, Title, Checkbox } from '@patternfly/react-core';
+import { Pagination, Title, Checkbox, Toolbar, ToolbarGroup, ToolbarItem, DropdownItem, Dropdown, DropdownToggleCheckbox, DropdownToggle } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 
-```js
+```js title=Simple
 import React from 'react';
 import { Pagination, Title, Checkbox } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
@@ -88,7 +85,7 @@ class BulkSelectTableDemo extends React.Component {
           this.updateSelected
         );
       }
-    };
+    };DropdownItem
 
     this.onDropDownToggle = isOpen => {
       this.setState({
