@@ -4,6 +4,7 @@ import { css, getModifier } from '@patternfly/react-styles';
 
 import { DataToolbarBreakpointMod } from './DataToolbarUtils';
 import { formatBreakpointMods } from '../../../helpers/util';
+import { RefObject } from 'react';
 
 export enum DataToolbarGroupVariant {
   'filter-group' = 'filter-group',
@@ -11,7 +12,7 @@ export enum DataToolbarGroupVariant {
   'button-group' = 'button-group'
 }
 
-export interface DataToolbarGroupProps extends React.HTMLProps<HTMLDivElement> {
+export interface DataToolbarGroupProps {
   /** Classes applied to root element of the data toolbar group */
   className?: string;
   /** A type modifier which modifies spacing specifically depending on the type of group */
@@ -20,26 +21,32 @@ export interface DataToolbarGroupProps extends React.HTMLProps<HTMLDivElement> {
   breakpointMods?: DataToolbarBreakpointMod[];
   /** Content to be rendered inside the data toolbar group */
   children?: React.ReactNode;
+  /** Reference to pass to this group if it has .pf-m-chip-container modifier */
+  innerRef?: RefObject<any>;
 }
 
-export const DataToolbarGroup: React.FunctionComponent<DataToolbarGroupProps> = ({
-  breakpointMods = [] as DataToolbarBreakpointMod[],
-  className,
-  variant,
-  children,
-  ...props
-}: DataToolbarGroupProps) => {
-  return (
-    <div
-      className={css(
-        styles.dataToolbarGroup,
-        variant && getModifier(styles, variant),
-        formatBreakpointMods(breakpointMods, styles),
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  );
+class DataToolbarGroupWithRef extends React.Component<DataToolbarGroupProps> {
+  static defaultProps = {
+    breakpointMods: [] as DataToolbarBreakpointMod[],
+  };
+
+  render() {
+    const { breakpointMods, className, variant, children, innerRef, ...props } = this.props;
+    return (
+      <div
+        className={css(
+          styles.dataToolbarGroup,
+          variant && getModifier(styles, variant),
+          formatBreakpointMods(breakpointMods, styles),
+          className
+        )}
+        {...props}
+        ref={innerRef}
+      >
+        {children}
+      </div>
+    );
+  }
 };
+
+export const DataToolbarGroup = React.forwardRef((props: DataToolbarGroupProps, ref: any) => <DataToolbarGroupWithRef { ...props } innerRef={ref} />);

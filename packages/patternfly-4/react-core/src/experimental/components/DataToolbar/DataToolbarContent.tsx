@@ -25,6 +25,7 @@ export interface DataToolbarContentProps extends React.HTMLProps<HTMLDivElement>
 
 export class DataToolbarContent extends React.Component<DataToolbarContentProps> {
   private expandableContentRef = React.createRef<HTMLDivElement>();
+  private chipContainerRef = React.createRef<HTMLDivElement>();
   private static currentId: number = 0;
 
   static defaultProps = {
@@ -55,7 +56,8 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps>
         <DataToolbarContentContext.Provider
           value={{
             expandableContentRef: this.expandableContentRef,
-            expandableContentId
+            expandableContentId,
+            chipContainerRef: this.chipContainerRef
           }}
         >
           {children}
@@ -63,6 +65,7 @@ export class DataToolbarContent extends React.Component<DataToolbarContentProps>
             id={expandableContentId}
             isExpanded={isExpanded}
             expandableContentRef={this.expandableContentRef}
+            chipContainerRef={this.chipContainerRef}
             clearAllFilters={clearAllFilters}
             showClearFiltersButton={showClearFiltersButton}
           />

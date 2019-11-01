@@ -24,11 +24,13 @@ export const DataToolbarContext = React.createContext<Partial<DataToolbarContext
 interface DataToolbarContentContextProps {
   expandableContentRef: RefObject<HTMLDivElement>;
   expandableContentId: string;
+  chipContainerRef: RefObject<any>;
 }
 
 export const DataToolbarContentContext = React.createContext<Partial<DataToolbarContentContextProps>>({
   expandableContentRef: null,
   expandableContentId: '',
+  chipContainerRef: null,
 });
 
 export interface DataToolbarBreakpointMod {

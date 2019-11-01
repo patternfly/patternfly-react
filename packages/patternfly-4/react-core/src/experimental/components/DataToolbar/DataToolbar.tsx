@@ -8,6 +8,8 @@ import { DataToolbarChipGroupContent } from './DataToolbarChipGroupContent';
 export interface DataToolbarProps extends React.HTMLProps<HTMLDivElement> {
   /** Optional callback for clearing all filters in the toolbar */
   clearAllFilters?: () => void;
+  /** Text to display in the clear all filters button */
+  clearFiltersButtonText?: string;
   /** The breakpoint at which the listed fitlers in chip groups are collapsed down to a summary */
   collapseListedFiltersBreakpoint?: 'md' | 'lg' | 'xl' | '2xl';
   /** Flag indicating if a data toolbar toggle group's expandable content is expanded */
@@ -90,6 +92,7 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
   render() {
     const {
       clearAllFilters,
+      clearFiltersButtonText,
       collapseListedFiltersBreakpoint,
       isExpanded,
       toggleIsExpanded,
@@ -115,13 +118,20 @@ export class DataToolbar extends React.Component<DataToolbarProps, DataToolbarSt
             updateNumberFilters: this.updateNumberFilters
           }}
         >
-          {React.Children.map(children, (child: any) =>
-            React.cloneElement(child, {
-              clearAllFilters,
-              showClearFiltersButton,
-              isExpanded: isToggleManaged ? isManagedToggleExpanded : isExpanded,
-              toolbarId: id
-            })
+          { React.Children.map(children, (child: any) => {
+              if (React.isValidElement(child)) {
+                return React.cloneElement(child, {
+                  // @ts-ignore
+                  clearAllFilters,
+                  clearFiltersButtonText,
+                  showClearFiltersButton,
+                  isExpanded: isToggleManaged ? isManagedToggleExpanded : isExpanded,
+                  toolbarId: id
+                });
+              } else {
+                return child;
+              }
+            }
           )}
           <DataToolbarChipGroupContent
             isExpanded={isToggleManaged ? isManagedToggleExpanded : isExpanded}
