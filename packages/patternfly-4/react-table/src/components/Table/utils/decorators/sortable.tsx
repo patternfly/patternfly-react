@@ -7,7 +7,7 @@ import { SortColumn } from '../../SortColumn';
 
 export const sortable = (label: IFormatterValueType, { columnIndex, column, property }: IExtra) => {
   const {
-    extraParams: { sortBy, onSort, isTableEmpty }
+    extraParams: { sortBy, onSort }
   } = column;
   const extraData = {
     columnIndex,
@@ -26,6 +26,7 @@ export const sortable = (label: IFormatterValueType, { columnIndex, column, prop
     // tslint:disable-next-line:no-unused-expression
     onSort && onSort(event, columnIndex, reversedDirection, extraData);
   }
+
   return {
     className: css(styles.tableSort, isSortedBy && styles.modifiers.selected),
     'aria-sort': isSortedBy ? `${sortBy.direction}ending` : 'none',
@@ -35,7 +36,6 @@ export const sortable = (label: IFormatterValueType, { columnIndex, column, prop
         sortDirection={isSortedBy ? sortBy.direction : ''}
         onSort={sortClicked}
         className={css(buttonStyles.button, buttonStyles.modifiers.plain)}
-        disabled={isTableEmpty}
       >
         {label}
       </SortColumn>
