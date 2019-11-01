@@ -64,7 +64,7 @@ Note: All commands below assume you are on the root directory in this repository
 
 ### Install
 
-Run to install all the dependencies
+Run to install all the dependencies.
 
 ```sh
 yarn install && yarn build
@@ -72,15 +72,17 @@ yarn install && yarn build
 
 ### Running
 
-To start the site locally.
+To start the site locally and view the site:
 
 ```sh
 yarn start:pf4
 ```
 
+Go to [localhost:8000](http://localhost:8000/).
+
 ### Building
 
-To build the site.
+To build the site:
 
 ```sh
 yarn build:docs
