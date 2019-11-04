@@ -72,13 +72,13 @@ yarn install && yarn build
 
 ### Running
 
-To start the site locally and view the site:
+To launch the development server and view the workspace:
 
 ```sh
 yarn start:pf4
 ```
 
-Go to [localhost:8000](http://localhost:8000/).
+Go to localhost:8000.
 
 ### Building
 
