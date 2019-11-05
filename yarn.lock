@@ -3354,6 +3354,14 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/react@^16.9.11":
+  version "16.9.11"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.11.tgz#70e0b7ad79058a7842f25ccf2999807076ada120"
+  integrity sha512-UBT4GZ3PokTXSWmdgC/GeCGEJXE5ofWyibCcecRLUVN2ZBpXQGVgQGtG2foS7CrTKFKlQVVswLvf7Js6XA/CVQ==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
 "@types/retry@^0.12.0":
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.0.tgz#2b35eccfcee7d38cd72ad99232fbd58bffb3c84d"
@@ -19073,9 +19081,10 @@ react-bootstrap-typeahead@^3.4.1:
     react-popper "^1.0.0"
     warning "^4.0.1"
 
-react-bootstrap@^0.32.1:
-  version "0.32.4"
-  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-0.32.4.tgz#8efc4cbfc4807215d75b7639bee0d324c8d740d1"
+react-bootstrap@^0.33.0:
+  version "0.33.0"
+  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-0.33.0.tgz#db0004ae6c5b4822921c23448ff214de0e300d2e"
+  integrity sha512-UcxxaczDIPEsY+O4EqCIIEPDjxvLqqfUfXhQO+yzhk0yXzR0Y7+6xqBW01sy3gN717GUXhrkpwZiyn9uFX1s0A==
   dependencies:
     "@babel/runtime-corejs2" "^7.0.0"
     classnames "^2.2.5"
@@ -19084,10 +19093,10 @@ react-bootstrap@^0.32.1:
     keycode "^2.2.0"
     prop-types "^15.6.1"
     prop-types-extra "^1.0.1"
-    react-overlays "^0.8.0"
+    react-overlays "^0.9.0"
     react-prop-types "^0.4.0"
     react-transition-group "^2.0.0"
-    uncontrollable "^5.0.0"
+    uncontrollable "^7.0.2"
     warning "^3.0.0"
 
 react-c3js@^0.1.20:
@@ -19402,7 +19411,7 @@ react-motion@^0.5.2:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
-react-overlays@^0.8.0, react-overlays@^0.8.1:
+react-overlays@^0.8.1:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-0.8.3.tgz#fad65eea5b24301cca192a169f5dddb0b20d3ac5"
   dependencies:
@@ -19411,6 +19420,18 @@ react-overlays@^0.8.0, react-overlays@^0.8.1:
     prop-types "^15.5.10"
     prop-types-extra "^1.0.1"
     react-transition-group "^2.2.0"
+    warning "^3.0.0"
+
+react-overlays@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-0.9.0.tgz#729a485ab890463da2470d2fdd0ee9e0988c8e02"
+  integrity sha512-qosfsydfV85q9JDy8APCRaWV2sibj66NLrgm3OdbJxiZImtllNO9fjWdNWZL3nWLuC3ISRfSkMPUX8dXEYmbPw==
+  dependencies:
+    classnames "^2.2.5"
+    dom-helpers "^3.2.1"
+    prop-types "^15.5.10"
+    prop-types-extra "^1.0.1"
+    react-transition-group "^2.2.1"
     warning "^3.0.0"
 
 react-popper-tooltip@^2.8.3:
@@ -22698,11 +22719,15 @@ unc-path-regex@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/unc-path-regex/-/unc-path-regex-0.1.2.tgz#e73dd3d7b0d7c5ed86fbac6b0ae7d8c6a69d50fa"
 
-uncontrollable@^5.0.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/uncontrollable/-/uncontrollable-5.1.0.tgz#7e9a1c50ea24e3c78b625e52d21ff3f758c7bd59"
+uncontrollable@^7.0.2:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/uncontrollable/-/uncontrollable-7.1.0.tgz#de2a4e8a2edca06024c81228a54503d23bb83e51"
+  integrity sha512-ie1drnxEKHREeGehl+26HvnCkwhTxxwFGt4FpoBvjmv8qyljIkCHpYVYAwYroTQyXFgEbDc4zoZKtr/EAN9eJw==
   dependencies:
+    "@babel/runtime" "^7.6.3"
+    "@types/react" "^16.9.11"
     invariant "^2.2.4"
+    react-lifecycles-compat "^3.0.4"
 
 underscore.string@^3.3.5:
   version "3.3.5"

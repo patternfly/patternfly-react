@@ -44,167 +44,173 @@ exports[`AccessConsoles keeps connection when switching types 1`] = `
                 <div
                   className=""
                 >
-                  <Uncontrolled(Dropdown)
+                  <ForwardRef
                     disabled={false}
                     id="console-type-selector"
                   >
-                    <Dropdown
-                      bsClass="dropdown"
-                      componentClass={[Function]}
+                    <Uncontrolled(Dropdown)
                       disabled={false}
                       id="console-type-selector"
-                      onToggle={[Function]}
-                      open={false}
+                      innerRef={null}
                     >
-                      <ButtonGroup
-                        block={false}
-                        bsClass="btn-group"
-                        className="dropdown"
-                        justified={false}
-                        vertical={false}
+                      <Dropdown
+                        bsClass="dropdown"
+                        componentClass={[Function]}
+                        disabled={false}
+                        id="console-type-selector"
+                        onToggle={[Function]}
+                        open={false}
                       >
-                        <div
-                          className="dropdown btn-group"
+                        <ButtonGroup
+                          block={false}
+                          bsClass="btn-group"
+                          className="dropdown"
+                          justified={false}
+                          vertical={false}
                         >
-                          <DropdownToggle
-                            bsClass="dropdown-toggle"
-                            bsRole="toggle"
-                            disabled={false}
-                            id="console-type-selector"
-                            key=".0"
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            open={false}
-                            useAnchor={false}
+                          <div
+                            className="dropdown btn-group"
                           >
-                            <Button
-                              active={false}
-                              aria-expanded={false}
-                              aria-haspopup={true}
-                              block={false}
-                              bsClass="btn"
-                              bsStyle="default"
-                              className="dropdown-toggle"
+                            <DropdownToggle
+                              bsClass="dropdown-toggle"
+                              bsRole="toggle"
                               disabled={false}
                               id="console-type-selector"
+                              key=".0"
                               onClick={[Function]}
                               onKeyDown={[Function]}
-                              role="button"
+                              open={false}
+                              useAnchor={false}
                             >
-                              <button
+                              <Button
+                                active={false}
                                 aria-expanded={false}
                                 aria-haspopup={true}
-                                className="dropdown-toggle btn btn-default"
+                                block={false}
+                                bsClass="btn"
+                                bsStyle="default"
+                                className="dropdown-toggle"
                                 disabled={false}
                                 id="console-type-selector"
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
                                 role="button"
-                                type="button"
                               >
-                                VNC Console
-                                 
-                                <span
-                                  className="caret"
-                                />
-                              </button>
-                            </Button>
-                          </DropdownToggle>
-                          <DropdownMenu
-                            bsClass="dropdown-menu"
-                            bsRole="menu"
-                            key=".1"
-                            labelledBy="console-type-selector"
-                            onClose={[Function]}
-                            onSelect={[Function]}
-                            open={false}
-                            pullRight={false}
-                          >
-                            <RootCloseWrapper
-                              disabled={true}
-                              event="click"
-                              onRootClose={[Function]}
+                                <button
+                                  aria-expanded={false}
+                                  aria-haspopup={true}
+                                  className="dropdown-toggle btn btn-default"
+                                  disabled={false}
+                                  id="console-type-selector"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  role="button"
+                                  type="button"
+                                >
+                                  VNC Console
+                                   
+                                  <span
+                                    className="caret"
+                                  />
+                                </button>
+                              </Button>
+                            </DropdownToggle>
+                            <DropdownMenu
+                              bsClass="dropdown-menu"
+                              bsRole="menu"
+                              key=".1"
+                              labelledBy="console-type-selector"
+                              onClose={[Function]}
+                              onSelect={[Function]}
+                              open={false}
+                              pullRight={false}
                             >
-                              <ul
-                                aria-labelledby="console-type-selector"
-                                className="dropdown-menu"
-                                role="menu"
+                              <RootCloseWrapper
+                                disabled={true}
+                                event="click"
+                                onRootClose={[Function]}
                               >
-                                <MenuItem
-                                  bsClass="dropdown"
-                                  disabled={false}
-                                  divider={false}
-                                  eventKey="1"
-                                  header={false}
-                                  key=".0"
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
-                                  onSelect={[Function]}
+                                <ul
+                                  aria-labelledby="console-type-selector"
+                                  className="dropdown-menu"
+                                  role="menu"
                                 >
-                                  <li
-                                    className=""
-                                    role="presentation"
+                                  <MenuItem
+                                    bsClass="dropdown"
+                                    disabled={false}
+                                    divider={false}
+                                    eventKey="1"
+                                    header={false}
+                                    key=".0"
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    onSelect={[Function]}
                                   >
-                                    <SafeAnchor
-                                      componentClass="a"
-                                      onClick={[Function]}
-                                      onKeyDown={[Function]}
-                                      role="menuitem"
-                                      tabIndex="-1"
+                                    <li
+                                      className=""
+                                      role="presentation"
                                     >
-                                      <a
-                                        href="#"
+                                      <SafeAnchor
+                                        componentClass="a"
                                         onClick={[Function]}
                                         onKeyDown={[Function]}
                                         role="menuitem"
                                         tabIndex="-1"
                                       >
-                                        VNC Console
-                                      </a>
-                                    </SafeAnchor>
-                                  </li>
-                                </MenuItem>
-                                <MenuItem
-                                  bsClass="dropdown"
-                                  disabled={false}
-                                  divider={false}
-                                  eventKey="2"
-                                  header={false}
-                                  key=".1"
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
-                                  onSelect={[Function]}
-                                >
-                                  <li
-                                    className=""
-                                    role="presentation"
+                                        <a
+                                          href="#"
+                                          onClick={[Function]}
+                                          onKeyDown={[Function]}
+                                          role="menuitem"
+                                          tabIndex="-1"
+                                        >
+                                          VNC Console
+                                        </a>
+                                      </SafeAnchor>
+                                    </li>
+                                  </MenuItem>
+                                  <MenuItem
+                                    bsClass="dropdown"
+                                    disabled={false}
+                                    divider={false}
+                                    eventKey="2"
+                                    header={false}
+                                    key=".1"
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    onSelect={[Function]}
                                   >
-                                    <SafeAnchor
-                                      componentClass="a"
-                                      onClick={[Function]}
-                                      onKeyDown={[Function]}
-                                      role="menuitem"
-                                      tabIndex="-1"
+                                    <li
+                                      className=""
+                                      role="presentation"
                                     >
-                                      <a
-                                        href="#"
+                                      <SafeAnchor
+                                        componentClass="a"
                                         onClick={[Function]}
                                         onKeyDown={[Function]}
                                         role="menuitem"
                                         tabIndex="-1"
                                       >
-                                        Serial Console
-                                      </a>
-                                    </SafeAnchor>
-                                  </li>
-                                </MenuItem>
-                              </ul>
-                            </RootCloseWrapper>
-                          </DropdownMenu>
-                        </div>
-                      </ButtonGroup>
-                    </Dropdown>
-                  </Uncontrolled(Dropdown)>
+                                        <a
+                                          href="#"
+                                          onClick={[Function]}
+                                          onKeyDown={[Function]}
+                                          role="menuitem"
+                                          tabIndex="-1"
+                                        >
+                                          Serial Console
+                                        </a>
+                                      </SafeAnchor>
+                                    </li>
+                                  </MenuItem>
+                                </ul>
+                              </RootCloseWrapper>
+                            </DropdownMenu>
+                          </div>
+                        </ButtonGroup>
+                      </Dropdown>
+                    </Uncontrolled(Dropdown)>
+                  </ForwardRef>
                   <Checkbox
                     bsClass="checkbox"
                     className="console-selector-pf-disconnect-switch"
@@ -406,165 +412,171 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
                 <div
                   className=""
                 >
-                  <Uncontrolled(Dropdown)
+                  <ForwardRef
                     disabled={false}
                     id="console-type-selector"
                   >
-                    <Dropdown
-                      bsClass="dropdown"
-                      componentClass={[Function]}
+                    <Uncontrolled(Dropdown)
                       disabled={false}
                       id="console-type-selector"
-                      onToggle={[Function]}
+                      innerRef={null}
                     >
-                      <ButtonGroup
-                        block={false}
-                        bsClass="btn-group"
-                        className="dropdown"
-                        justified={false}
-                        vertical={false}
+                      <Dropdown
+                        bsClass="dropdown"
+                        componentClass={[Function]}
+                        disabled={false}
+                        id="console-type-selector"
+                        onToggle={[Function]}
                       >
-                        <div
-                          className="dropdown btn-group"
+                        <ButtonGroup
+                          block={false}
+                          bsClass="btn-group"
+                          className="dropdown"
+                          justified={false}
+                          vertical={false}
                         >
-                          <DropdownToggle
-                            bsClass="dropdown-toggle"
-                            bsRole="toggle"
-                            disabled={false}
-                            id="console-type-selector"
-                            key=".0"
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            open={false}
-                            useAnchor={false}
+                          <div
+                            className="dropdown btn-group"
                           >
-                            <Button
-                              active={false}
-                              aria-expanded={false}
-                              aria-haspopup={true}
-                              block={false}
-                              bsClass="btn"
-                              bsStyle="default"
-                              className="dropdown-toggle"
+                            <DropdownToggle
+                              bsClass="dropdown-toggle"
+                              bsRole="toggle"
                               disabled={false}
                               id="console-type-selector"
+                              key=".0"
                               onClick={[Function]}
                               onKeyDown={[Function]}
-                              role="button"
+                              open={false}
+                              useAnchor={false}
                             >
-                              <button
+                              <Button
+                                active={false}
                                 aria-expanded={false}
                                 aria-haspopup={true}
-                                className="dropdown-toggle btn btn-default"
+                                block={false}
+                                bsClass="btn"
+                                bsStyle="default"
+                                className="dropdown-toggle"
                                 disabled={false}
                                 id="console-type-selector"
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
                                 role="button"
-                                type="button"
                               >
-                                Select Console Type
-                                 
-                                <span
-                                  className="caret"
-                                />
-                              </button>
-                            </Button>
-                          </DropdownToggle>
-                          <DropdownMenu
-                            bsClass="dropdown-menu"
-                            bsRole="menu"
-                            key=".1"
-                            labelledBy="console-type-selector"
-                            onClose={[Function]}
-                            onSelect={[Function]}
-                            pullRight={false}
-                          >
-                            <RootCloseWrapper
-                              disabled={true}
-                              event="click"
-                              onRootClose={[Function]}
+                                <button
+                                  aria-expanded={false}
+                                  aria-haspopup={true}
+                                  className="dropdown-toggle btn btn-default"
+                                  disabled={false}
+                                  id="console-type-selector"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  role="button"
+                                  type="button"
+                                >
+                                  Select Console Type
+                                   
+                                  <span
+                                    className="caret"
+                                  />
+                                </button>
+                              </Button>
+                            </DropdownToggle>
+                            <DropdownMenu
+                              bsClass="dropdown-menu"
+                              bsRole="menu"
+                              key=".1"
+                              labelledBy="console-type-selector"
+                              onClose={[Function]}
+                              onSelect={[Function]}
+                              pullRight={false}
                             >
-                              <ul
-                                aria-labelledby="console-type-selector"
-                                className="dropdown-menu"
-                                role="menu"
+                              <RootCloseWrapper
+                                disabled={true}
+                                event="click"
+                                onRootClose={[Function]}
                               >
-                                <MenuItem
-                                  bsClass="dropdown"
-                                  disabled={false}
-                                  divider={false}
-                                  eventKey="1"
-                                  header={false}
-                                  key=".0"
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
-                                  onSelect={[Function]}
+                                <ul
+                                  aria-labelledby="console-type-selector"
+                                  className="dropdown-menu"
+                                  role="menu"
                                 >
-                                  <li
-                                    className=""
-                                    role="presentation"
+                                  <MenuItem
+                                    bsClass="dropdown"
+                                    disabled={false}
+                                    divider={false}
+                                    eventKey="1"
+                                    header={false}
+                                    key=".0"
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    onSelect={[Function]}
                                   >
-                                    <SafeAnchor
-                                      componentClass="a"
-                                      onClick={[Function]}
-                                      onKeyDown={[Function]}
-                                      role="menuitem"
-                                      tabIndex="-1"
+                                    <li
+                                      className=""
+                                      role="presentation"
                                     >
-                                      <a
-                                        href="#"
+                                      <SafeAnchor
+                                        componentClass="a"
                                         onClick={[Function]}
                                         onKeyDown={[Function]}
                                         role="menuitem"
                                         tabIndex="-1"
                                       >
-                                        VNC Console
-                                      </a>
-                                    </SafeAnchor>
-                                  </li>
-                                </MenuItem>
-                                <MenuItem
-                                  bsClass="dropdown"
-                                  disabled={false}
-                                  divider={false}
-                                  eventKey="2"
-                                  header={false}
-                                  key=".1"
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
-                                  onSelect={[Function]}
-                                >
-                                  <li
-                                    className=""
-                                    role="presentation"
+                                        <a
+                                          href="#"
+                                          onClick={[Function]}
+                                          onKeyDown={[Function]}
+                                          role="menuitem"
+                                          tabIndex="-1"
+                                        >
+                                          VNC Console
+                                        </a>
+                                      </SafeAnchor>
+                                    </li>
+                                  </MenuItem>
+                                  <MenuItem
+                                    bsClass="dropdown"
+                                    disabled={false}
+                                    divider={false}
+                                    eventKey="2"
+                                    header={false}
+                                    key=".1"
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    onSelect={[Function]}
                                   >
-                                    <SafeAnchor
-                                      componentClass="a"
-                                      onClick={[Function]}
-                                      onKeyDown={[Function]}
-                                      role="menuitem"
-                                      tabIndex="-1"
+                                    <li
+                                      className=""
+                                      role="presentation"
                                     >
-                                      <a
-                                        href="#"
+                                      <SafeAnchor
+                                        componentClass="a"
                                         onClick={[Function]}
                                         onKeyDown={[Function]}
                                         role="menuitem"
                                         tabIndex="-1"
                                       >
-                                        Serial Console
-                                      </a>
-                                    </SafeAnchor>
-                                  </li>
-                                </MenuItem>
-                              </ul>
-                            </RootCloseWrapper>
-                          </DropdownMenu>
-                        </div>
-                      </ButtonGroup>
-                    </Dropdown>
-                  </Uncontrolled(Dropdown)>
+                                        <a
+                                          href="#"
+                                          onClick={[Function]}
+                                          onKeyDown={[Function]}
+                                          role="menuitem"
+                                          tabIndex="-1"
+                                        >
+                                          Serial Console
+                                        </a>
+                                      </SafeAnchor>
+                                    </li>
+                                  </MenuItem>
+                                </ul>
+                              </RootCloseWrapper>
+                            </DropdownMenu>
+                          </div>
+                        </ButtonGroup>
+                      </Dropdown>
+                    </Uncontrolled(Dropdown)>
+                  </ForwardRef>
                 </div>
               </Col>
             </div>
@@ -774,7 +786,7 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
         bsClass="col"
         componentClass="div"
       >
-        <Uncontrolled(Dropdown)
+        <ForwardRef
           disabled={false}
           id="console-type-selector"
         >
@@ -812,7 +824,7 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
               Serial Console
             </MenuItem>
           </DropdownMenu>
-        </Uncontrolled(Dropdown)>
+        </ForwardRef>
       </Col>
     </FormGroup>
   </Form>
@@ -850,7 +862,7 @@ exports[`AccessConsoles with SerialConsole as a single child 1`] = `
         bsClass="col"
         componentClass="div"
       >
-        <Uncontrolled(Dropdown)
+        <ForwardRef
           disabled={false}
           id="console-type-selector"
         >
@@ -878,7 +890,7 @@ exports[`AccessConsoles with SerialConsole as a single child 1`] = `
               Serial Console
             </MenuItem>
           </DropdownMenu>
-        </Uncontrolled(Dropdown)>
+        </ForwardRef>
       </Col>
     </FormGroup>
   </Form>
@@ -916,7 +928,7 @@ exports[`AccessConsoles with VncConsole as a single child 1`] = `
         bsClass="col"
         componentClass="div"
       >
-        <Uncontrolled(Dropdown)
+        <ForwardRef
           disabled={false}
           id="console-type-selector"
         >
@@ -944,7 +956,7 @@ exports[`AccessConsoles with VncConsole as a single child 1`] = `
               VNC Console
             </MenuItem>
           </DropdownMenu>
-        </Uncontrolled(Dropdown)>
+        </ForwardRef>
       </Col>
     </FormGroup>
   </Form>
@@ -1004,131 +1016,137 @@ exports[`AccessConsoles with preselected SerialConsole 1`] = `
                 <div
                   className=""
                 >
-                  <Uncontrolled(Dropdown)
+                  <ForwardRef
                     disabled={false}
                     id="console-type-selector"
                   >
-                    <Dropdown
-                      bsClass="dropdown"
-                      componentClass={[Function]}
+                    <Uncontrolled(Dropdown)
                       disabled={false}
                       id="console-type-selector"
-                      onToggle={[Function]}
+                      innerRef={null}
                     >
-                      <ButtonGroup
-                        block={false}
-                        bsClass="btn-group"
-                        className="dropdown"
-                        justified={false}
-                        vertical={false}
+                      <Dropdown
+                        bsClass="dropdown"
+                        componentClass={[Function]}
+                        disabled={false}
+                        id="console-type-selector"
+                        onToggle={[Function]}
                       >
-                        <div
-                          className="dropdown btn-group"
+                        <ButtonGroup
+                          block={false}
+                          bsClass="btn-group"
+                          className="dropdown"
+                          justified={false}
+                          vertical={false}
                         >
-                          <DropdownToggle
-                            bsClass="dropdown-toggle"
-                            bsRole="toggle"
-                            disabled={false}
-                            id="console-type-selector"
-                            key=".0"
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            open={false}
-                            useAnchor={false}
+                          <div
+                            className="dropdown btn-group"
                           >
-                            <Button
-                              active={false}
-                              aria-expanded={false}
-                              aria-haspopup={true}
-                              block={false}
-                              bsClass="btn"
-                              bsStyle="default"
-                              className="dropdown-toggle"
+                            <DropdownToggle
+                              bsClass="dropdown-toggle"
+                              bsRole="toggle"
                               disabled={false}
                               id="console-type-selector"
+                              key=".0"
                               onClick={[Function]}
                               onKeyDown={[Function]}
-                              role="button"
+                              open={false}
+                              useAnchor={false}
                             >
-                              <button
+                              <Button
+                                active={false}
                                 aria-expanded={false}
                                 aria-haspopup={true}
-                                className="dropdown-toggle btn btn-default"
+                                block={false}
+                                bsClass="btn"
+                                bsStyle="default"
+                                className="dropdown-toggle"
                                 disabled={false}
                                 id="console-type-selector"
                                 onClick={[Function]}
                                 onKeyDown={[Function]}
                                 role="button"
-                                type="button"
                               >
-                                Serial Console
-                                 
-                                <span
-                                  className="caret"
-                                />
-                              </button>
-                            </Button>
-                          </DropdownToggle>
-                          <DropdownMenu
-                            bsClass="dropdown-menu"
-                            bsRole="menu"
-                            key=".1"
-                            labelledBy="console-type-selector"
-                            onClose={[Function]}
-                            onSelect={[Function]}
-                            pullRight={false}
-                          >
-                            <RootCloseWrapper
-                              disabled={true}
-                              event="click"
-                              onRootClose={[Function]}
-                            >
-                              <ul
-                                aria-labelledby="console-type-selector"
-                                className="dropdown-menu"
-                                role="menu"
-                              >
-                                <MenuItem
-                                  bsClass="dropdown"
+                                <button
+                                  aria-expanded={false}
+                                  aria-haspopup={true}
+                                  className="dropdown-toggle btn btn-default"
                                   disabled={false}
-                                  divider={false}
-                                  eventKey="2"
-                                  header={false}
-                                  key=".1"
+                                  id="console-type-selector"
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
-                                  onSelect={[Function]}
+                                  role="button"
+                                  type="button"
                                 >
-                                  <li
-                                    className=""
-                                    role="presentation"
+                                  Serial Console
+                                   
+                                  <span
+                                    className="caret"
+                                  />
+                                </button>
+                              </Button>
+                            </DropdownToggle>
+                            <DropdownMenu
+                              bsClass="dropdown-menu"
+                              bsRole="menu"
+                              key=".1"
+                              labelledBy="console-type-selector"
+                              onClose={[Function]}
+                              onSelect={[Function]}
+                              pullRight={false}
+                            >
+                              <RootCloseWrapper
+                                disabled={true}
+                                event="click"
+                                onRootClose={[Function]}
+                              >
+                                <ul
+                                  aria-labelledby="console-type-selector"
+                                  className="dropdown-menu"
+                                  role="menu"
+                                >
+                                  <MenuItem
+                                    bsClass="dropdown"
+                                    disabled={false}
+                                    divider={false}
+                                    eventKey="2"
+                                    header={false}
+                                    key=".1"
+                                    onClick={[Function]}
+                                    onKeyDown={[Function]}
+                                    onSelect={[Function]}
                                   >
-                                    <SafeAnchor
-                                      componentClass="a"
-                                      onClick={[Function]}
-                                      onKeyDown={[Function]}
-                                      role="menuitem"
-                                      tabIndex="-1"
+                                    <li
+                                      className=""
+                                      role="presentation"
                                     >
-                                      <a
-                                        href="#"
+                                      <SafeAnchor
+                                        componentClass="a"
                                         onClick={[Function]}
                                         onKeyDown={[Function]}
                                         role="menuitem"
                                         tabIndex="-1"
                                       >
-                                        Serial Console
-                                      </a>
-                                    </SafeAnchor>
-                                  </li>
-                                </MenuItem>
-                              </ul>
-                            </RootCloseWrapper>
-                          </DropdownMenu>
-                        </div>
-                      </ButtonGroup>
-                    </Dropdown>
-                  </Uncontrolled(Dropdown)>
+                                        <a
+                                          href="#"
+                                          onClick={[Function]}
+                                          onKeyDown={[Function]}
+                                          role="menuitem"
+                                          tabIndex="-1"
+                                        >
+                                          Serial Console
+                                        </a>
+                                      </SafeAnchor>
+                                    </li>
+                                  </MenuItem>
+                                </ul>
+                              </RootCloseWrapper>
+                            </DropdownMenu>
+                          </div>
+                        </ButtonGroup>
+                      </Dropdown>
+                    </Uncontrolled(Dropdown)>
+                  </ForwardRef>
                   <Checkbox
                     bsClass="checkbox"
                     className="console-selector-pf-disconnect-switch"
@@ -1218,7 +1236,7 @@ exports[`AccessConsoles with wrapped SerialConsole as a child 1`] = `
         bsClass="col"
         componentClass="div"
       >
-        <Uncontrolled(Dropdown)
+        <ForwardRef
           disabled={false}
           id="console-type-selector"
         >
@@ -1246,7 +1264,7 @@ exports[`AccessConsoles with wrapped SerialConsole as a child 1`] = `
               Serial Console
             </MenuItem>
           </DropdownMenu>
-        </Uncontrolled(Dropdown)>
+        </ForwardRef>
       </Col>
     </FormGroup>
   </Form>
