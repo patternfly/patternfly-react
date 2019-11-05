@@ -50,13 +50,13 @@ class NavGroupedList extends React.Component {
     return (
       <Nav onSelect={this.onSelect} theme="dark">
         <NavGroup title="Section title 1">
-          <NavItem to="#grouped-1" id="#default-link0" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
+          <NavItem preventDefault to="#grouped-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
             Link 1
           </NavItem>
-          <NavItem to="#grouped-2" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
+          <NavItem preventDefault to="#grouped-2" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
             Link 2
           </NavItem>
-          <NavItem to="#grouped-3" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
+          <NavItem preventDefault to="#grouped-3" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
             Link 3
           </NavItem>
         </NavGroup>

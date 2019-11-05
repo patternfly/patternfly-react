@@ -1009,7 +1009,7 @@ class PageLayoutHorizontalNav extends React.Component {
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
-        <NavList variant={NavVariants.default}>
+        <NavList variant={NavVariants.horizontal}>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
           </NavItem>
