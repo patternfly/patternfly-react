@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
+import { ValidatedOptions } from '../../helpers/constants';
 
 export interface FormSelectProps
   extends Omit<React.HTMLProps<HTMLSelectElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'> {
@@ -11,10 +12,10 @@ export interface FormSelectProps
   className?: string;
   /** value of selected option */
   value?: any;
-  /** Flag indicating selection is valid */
+  /** Flag indicating selection is valid. This prop will be deprecated you should use validated instead. */
   isValid?: boolean;
   /** Flag indicating selection has been validated */
-  validated?: boolean;
+  validated?: 'success' | 'error' | 'default';
   /** Flag indicating the FormSelect is disabled */
   isDisabled?: boolean;
   /** Sets the FormSelectrequired. */
@@ -42,7 +43,7 @@ export class FormSelect extends React.Component<FormSelectProps> {
     className: '',
     value: '',
     isValid: true,
-    validated: false,
+    validated: 'default',
     isDisabled: false,
     isRequired: false,
     onBlur: (): any => undefined,
@@ -59,8 +60,12 @@ export class FormSelect extends React.Component<FormSelectProps> {
     return (
       <select
         {...props}
-        className={css(styles.formControl, className, validated && styles.modifiers.success)}
-        aria-invalid={!isValid}
+        className={css(
+          styles.formControl,
+          className,
+          validated === ValidatedOptions.success && styles.modifiers.success
+        )}
+        aria-invalid={!isValid || validated === ValidatedOptions.error}
         onChange={this.handleChange}
         disabled={isDisabled}
         required={isRequired}

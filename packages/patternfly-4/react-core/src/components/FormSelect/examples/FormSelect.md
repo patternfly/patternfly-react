@@ -94,19 +94,20 @@ class FormSelectInputInvalid extends React.Component {
     this.state = {
       value: '',
       invalidText: 'You must choose something',
-      isValid: false,
-      validated: false,
+      isValid: true,
+      validated: 'default',
       helperText: 'Make a selection'
     };
-    this.isEmpty = () => this.state.value !== '';
+
     this.onChange = (value, event) => {
-      this.setState({ value, isValid: value !== '', helperText: 'Validating...', validated: false });
-      if (value) {
+      const isValid = value === '3';
+      this.setState({ value, isValid,  validated: 'error', helperText: 'Validating...'});
+      if (isValid) {
         setTimeout(() => {
-          if (this.state.isValid && value === '3') {
-            this.setState({isValid: true, validated: true, helperText: 'You chose wisely'});
+          if (this.state.isValid) {
+            this.setState({isValid: true, validated: 'success', helperText: 'You chose wisely'});
           } else {
-            this.setState({isValid: false, validated: false, invalidText: 'You must chose Three (thought that was obvious)'});
+            this.setState({isValid: false, validated: 'error', invalidText: 'You must chose Three (thought that was obvious)'});
           }
         }, 2000);
       }
@@ -129,12 +130,10 @@ class FormSelectInputInvalid extends React.Component {
           helperText={helperText}
           helperTextInvalid={invalidText}
           fieldId="selection"
-          isValid={isValid}
           validated={validated}
         >
           <FormSelect
             id="selection"
-            isValid={isValid}
             validated={validated}
             value={value}
             onChange={this.onChange}

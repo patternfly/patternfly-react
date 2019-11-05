@@ -26,7 +26,7 @@ exports[`LoginForm with rememberMeLabel 1`] = `
       name="pf-login-username-id"
       onChange={[Function]}
       type="text"
-      validated={false}
+      validated="default"
       value=""
     />
   </Component>
@@ -47,7 +47,7 @@ exports[`LoginForm with rememberMeLabel 1`] = `
       name="pf-login-password-id"
       onChange={[Function]}
       type="password"
-      validated={false}
+      validated="default"
       value=""
     />
   </Component>
@@ -104,7 +104,7 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
       name="pf-login-username-id"
       onChange={[Function]}
       type="text"
-      validated={false}
+      validated="default"
       value=""
     />
   </Component>
@@ -125,7 +125,7 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel uses the remembe
       name="pf-login-password-id"
       onChange={[Function]}
       type="password"
-      validated={false}
+      validated="default"
       value=""
     />
   </Component>
@@ -182,7 +182,7 @@ exports[`should render Login form 1`] = `
       name="pf-login-username-id"
       onChange={[Function]}
       type="text"
-      validated={false}
+      validated="default"
       value=""
     />
   </Component>
@@ -203,7 +203,7 @@ exports[`should render Login form 1`] = `
       name="pf-login-password-id"
       onChange={[Function]}
       type="password"
-      validated={false}
+      validated="default"
       value=""
     />
   </Component>

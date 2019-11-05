@@ -3,6 +3,7 @@ import { HTMLProps } from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css, getModifier } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
+import { ValidatedOptions } from '../../helpers/constants';
 
 export enum TextAreResizeOrientation {
   horizontal = 'horizontal',
@@ -15,10 +16,10 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   className?: string;
   /** Flag to show if the TextArea is required. */
   isRequired?: boolean;
-  /** Flag to show if the TextArea is valid or invalid. */
+  /** Flag to show if the TextArea is valid or invalid. This prop will be deprecated you should use validated instead. */
   isValid?: boolean;
   /** Flag to show if the TextArea has been validated. */
-  validated?: boolean;
+  validated?: 'success' | 'error' | 'default' | ValidatedOptions;
   /** Value of the TextArea. */
   value?: string | number;
   /** A callback for when the TextArea value changes. */
@@ -34,7 +35,7 @@ export class TextArea extends React.Component<TextAreaProps> {
     className: '',
     isRequired: false,
     isValid: true,
-    validated: false,
+    validated: 'default',
     resizeOrientation: 'both',
     'aria-label': null as string
   };
@@ -62,11 +63,11 @@ export class TextArea extends React.Component<TextAreaProps> {
           styles.formControl,
           className,
           resizeOrientation !== TextAreResizeOrientation.both && getModifier(styles, orientation),
-          validated && styles.modifiers.success
+          validated === ValidatedOptions.success && styles.modifiers.success
         )}
         onChange={this.handleChange}
         {...(typeof this.props.defaultValue !== 'string' && { value })}
-        aria-invalid={!isValid}
+        aria-invalid={!isValid || validated === ValidatedOptions.error}
         required={isRequired}
         {...props}
       />

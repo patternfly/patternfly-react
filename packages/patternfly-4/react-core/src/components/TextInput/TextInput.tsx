@@ -1,7 +1,8 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
-import { css } from '@patternfly/react-styles';
+import { css, getModifier } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
+import { ValidatedOptions } from '../../helpers/constants';
 
 export enum TextInputTypes {
   text = 'text',
@@ -26,10 +27,10 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
   isReadOnly?: boolean;
   /** Flag to show if the input is required. */
   isRequired?: boolean;
-  /** Flag to show if the input is valid or invalid. */
+  /** Flag to show if the input is valid or invalid. This prop will be deprecated you should use validated instead. */
   isValid?: boolean;
   /** Flag to show if the input has been validated. */
-  validated?: boolean;
+  validated?: 'success' | 'error' | 'default';
   /** A callback for when the input value changes. */
   onChange?: (value: string, event: React.FormEvent<HTMLInputElement>) => void;
   /** Type that the input accepts. */
@@ -57,7 +58,7 @@ export class TextInput extends React.Component<TextInputProps> {
     className: '',
     isRequired: false,
     isValid: true,
-    validated: false,
+    validated: 'default',
     isDisabled: false,
     isReadOnly: false,
     type: 'text',
@@ -94,11 +95,15 @@ export class TextInput extends React.Component<TextInputProps> {
     return (
       <input
         {...props}
-        className={css(styles.formControl, validated && styles.modifiers.success, className)}
+        className={css(
+          styles.formControl,
+          validated === ValidatedOptions.success && styles.modifiers.success,
+          className
+        )}
         onChange={this.handleChange}
         type={type}
         value={value}
-        aria-invalid={!isValid}
+        aria-invalid={!isValid || validated === ValidatedOptions.error}
         required={isRequired}
         disabled={isDisabled}
         readOnly={isReadOnly}

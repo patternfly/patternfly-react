@@ -33,7 +33,18 @@ exports[`simple text input 1`] = `
 />
 `;
 
-exports[`validated text area 1`] = `
+exports[`validated text area error 1`] = `
+<textarea
+  aria-invalid={true}
+  aria-label="validated textarea"
+  className="pf-c-form-control"
+  onChange={[Function]}
+  required={true}
+  value="test textarea"
+/>
+`;
+
+exports[`validated text area success 1`] = `
 <textarea
   aria-invalid={false}
   aria-label="validated textarea"

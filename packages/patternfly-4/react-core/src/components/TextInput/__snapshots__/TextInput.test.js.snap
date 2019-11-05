@@ -57,6 +57,20 @@ exports[`simple text input 1`] = `
 
 exports[`validated text input 1`] = `
 <input
+  aria-invalid={true}
+  aria-label="validated text input"
+  className="pf-c-form-control"
+  disabled={false}
+  onChange={[Function]}
+  readOnly={false}
+  required={false}
+  type="text"
+  value="test input"
+/>
+`;
+
+exports[`validated text input success 1`] = `
+<input
   aria-invalid={false}
   aria-label="validated text input"
   className="pf-c-form-control pf-m-success"

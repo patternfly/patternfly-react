@@ -76,7 +76,7 @@ class InvalidTextArea extends React.Component {
       value: '',
       invalidText: 'You must have something to say',
       isValid: false,
-      validated: false,
+      validated: 'default',
       helperText: 'Enter comments'
     };
     
@@ -91,17 +91,17 @@ class InvalidTextArea extends React.Component {
         isValid,
         helperText: 'Validating...',
         invalidText: 'You must have something to say',
-        validated: false
+        validated: 'error'
       });
 
       if (isValid) {
         this.validationTimeout = setTimeout(() => {
           if (!this.state.isValid) {
-            this.setState({validated: false, invalidText: 'You must have something to say'});
+            this.setState({validated: 'error', invalidText: 'You must have something to say'});
           } else if (value.length > 10) {
-            this.setState({isValid: true, validated: true, helperText: 'Thanks for your comments!'});
+            this.setState({isValid: true, validated: 'success', helperText: 'Thanks for your comments!'});
           } else {
-            this.setState({isValid: false, validated: false, invalidText: 'Your being too brief, please enter at least 10 characters.'});
+            this.setState({isValid: false, validated: 'error', invalidText: 'Your being too brief, please enter at least 10 characters.'});
           }
         }, 2000);
       }
@@ -126,7 +126,6 @@ class InvalidTextArea extends React.Component {
             value={value}
             onChange={this.handleTextAreaChange}
             isRequired
-            isValid={isValid}
             validated={validated}
             aria-label="invalid text area example"
           />

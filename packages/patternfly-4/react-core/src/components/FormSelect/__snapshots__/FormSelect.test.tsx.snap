@@ -245,7 +245,27 @@ exports[`required FormSelect input 1`] = `
 </select>
 `;
 
-exports[`validated FormSelect input 1`] = `
+exports[`validated error FormSelect input 1`] = `
+<select
+  aria-invalid={true}
+  aria-label="validated FormSelect"
+  className="pf-c-form-control"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  required={false}
+  value=""
+>
+  <Component
+    key="1"
+    label="Mr"
+    value="mr"
+  />
+</select>
+`;
+
+exports[`validated success FormSelect input 1`] = `
 <select
   aria-invalid={false}
   aria-label="validated FormSelect"

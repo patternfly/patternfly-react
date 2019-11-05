@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { TextInput } from './TextInput';
+import { ValidatedOptions } from '../../helpers/constants';
 
 const props = {
   onChange: jest.fn(),
@@ -37,9 +38,14 @@ test('invalid text input', () => {
   expect(view).toMatchSnapshot();
 });
 
-test('validated text input', () => {
-  const view = shallow(<TextInput {...props} required isValid validated aria-label="validated text input" />);
+test('validated text input success', () => {
+  const view = shallow(<TextInput {...props} required validated={ValidatedOptions.success} aria-label="validated text input" />);
   expect(view.find('.pf-c-form-control.pf-m-success').length).toBe(1);
+  expect(view).toMatchSnapshot();
+});
+
+test('validated text input', () => {
+  const view = shallow(<TextInput {...props} required validated={ValidatedOptions.error} aria-label="validated text input" />);
   expect(view).toMatchSnapshot();
 });
 

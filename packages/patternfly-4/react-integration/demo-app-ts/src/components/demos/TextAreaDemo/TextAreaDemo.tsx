@@ -1,15 +1,17 @@
 import React from 'react';
-import { TextArea, Text } from '@patternfly/react-core';
+import { TextArea, Text, ValidatedOptions } from '@patternfly/react-core';
 
 interface TextAreaState {
   textAreaValue: string;
   requiredTextAreaValue: string;
   resizeHorizontalTextArea: string;
   resizeVerticalTextArea: string;
+  validatedTextArea: string;
   isValid: boolean;
   requiredIsValid: boolean;
   horizontalIsValid: boolean;
   verticalIsValid: boolean;
+  validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.success;
 }
 
 export class TextAreaDemo extends React.Component<{}, TextAreaState> {
@@ -18,10 +20,12 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
     requiredTextAreaValue: '',
     resizeHorizontalTextArea: '',
     resizeVerticalTextArea: '',
+    validatedTextArea: '',
     isValid: true,
     requiredIsValid: true,
     horizontalIsValid: true,
-    verticalIsValid: true
+    verticalIsValid: true,
+    validated: ValidatedOptions.default
   };
 
   handleChange = (value: string) => {
@@ -46,6 +50,11 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
     const verticalIsValid = !(value.length < 1);
     this.setState({ resizeVerticalTextArea: value, verticalIsValid });
   };
+  handleChangeValidated = (value: string) => {
+    // If the text area contains less than 5 characters, set validated to error
+    const validated = !(value.length < 5) ? ValidatedOptions.success : ValidatedOptions.error;
+    this.setState({ validatedTextArea: value, validated });
+  };
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -57,10 +66,12 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
       requiredTextAreaValue,
       resizeHorizontalTextArea,
       resizeVerticalTextArea,
+      validatedTextArea,
       isValid,
       requiredIsValid,
       horizontalIsValid,
-      verticalIsValid
+      verticalIsValid,
+      validated
     } = this.state;
     return (
       <React.Fragment>
@@ -98,6 +109,14 @@ export class TextAreaDemo extends React.Component<{}, TextAreaState> {
           onChange={this.handleChangeVertical}
           isValid={verticalIsValid}
           aria-label="text area example 4"
+        />
+        <Text>Validated text area </Text>
+        <TextArea
+          id="textarea5"
+          value={validatedTextArea}
+          onChange={this.handleChangeValidated}
+          validated={validated}
+          aria-label="text area example 5"
         />
       </React.Fragment>
     );

@@ -303,21 +303,21 @@ class InvalidForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'Five',
+      value: '',
       invalidText: 'Age has to be a number',
-      isValid: false,
-      validated: false,
+      isValid: true,
+      validated: 'default',
       helperText: 'Enter your age to continue'
     };
     this.handleTextInputChange = value => {
       const isValid = /^\d+$/.test(value)
-      this.setState({ value, isValid, invalidText: 'Age has to be a number', helperText: 'Validating...', validated: false });
+      this.setState({ value, isValid, invalidText: 'Age has to be a number', helperText: 'Validating...', validated: 'error' });
       if (isValid) {
         setTimeout(() => {
           if (this.state.isValid && parseInt(this.state.value, 10) >= 21) {
-            this.setState({isValid: true, validated: true, helperText: 'Enjoy your stay'});
+            this.setState({isValid: true, validated: 'success', helperText: 'Enjoy your stay'});
           } else {
-            this.setState({isValid: false, validated: false, invalidText: 'You must be at least 21 to continue'});
+            this.setState({isValid: false, validated: 'error', invalidText: 'You must be at least 21 to continue'});
           }
         }, 2000);
       }
@@ -335,11 +335,9 @@ class InvalidForm extends React.Component {
           helperText={helperText}
           helperTextInvalid={invalidText}
           fieldId="age"
-          isValid={isValid}
           validated={validated}
         >
           <TextInput
-            isValid={isValid}
             validated={validated}
             value={value}
             id="age"
