@@ -14,7 +14,10 @@ export interface FormSelectProps
   value?: any;
   /** Flag indicating selection is valid. This prop will be deprecated you should use validated instead. */
   isValid?: boolean;
-  /** Flag indicating selection has been validated */
+  /* Value to indicate if the input is modified to shoe that validation state.
+   * If set to success, input will be modified to indicate valid state. If set to success, input will be modified to indicate valid state.
+   * If set to error,  text color of helper text will be modified to indicate error state.
+   */
   validated?: 'success' | 'error' | 'default';
   /** Flag indicating the FormSelect is disabled */
   isDisabled?: boolean;

@@ -17,13 +17,15 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   isRequired?: boolean;
   /** Sets the FormGroup isValid. This prop will be deprecated you should use validated instead. */
   isValid?: boolean;
-  /** Sets the FormGroup validated. */
+  /** Sets the FormGroup validated. If you set to success, text color of helper text will be modified to indicate valid state.
+   * If set to error,  text color of helper text will be modified to indicate error state.
+   */
   validated?: 'success' | 'error' | 'default';
   /** Sets the FormGroup isInline. */
   isInline?: boolean;
   /** Helper text after the field. It can be a simple text or an object. */
   helperText?: React.ReactNode;
-  /** Helper text after the field when the field is is valid. It can be a simple text or an object. */
+  /** Helper text after the field when the field is invalid. It can be a simple text or an object. */
   helperTextInvalid?: React.ReactNode;
   /** ID of the included field. It has to be the same for proper working. */
   fieldId: string;
