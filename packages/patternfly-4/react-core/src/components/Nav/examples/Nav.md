@@ -19,55 +19,6 @@ import {
 import './nav.css';
 
 ## Examples
-```js title=Basic
-import React from 'react';
-import {
-  Nav,
-  NavExpandable,
-  NavItem,
-  NavItemSeparator,
-  NavList,
-  NavGroup,
-  NavVariants
-} from '@patternfly/react-core';
-
-class NavSimpleList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeItem: 0
-    };
-    this.onSelect = result => {
-      this.setState({
-        activeItem: result.itemId
-      });
-    };
-  }
-
-  render() {
-    const { activeItem } = this.state;
-    return (
-      <Nav onSelect={this.onSelect} id="nav-primary-simple" theme="dark">
-        <NavList id="nav-list-simple" variant={NavVariants.simple}>
-          <NavItem id="simple-link1" preventDefault to="#simple-link1" itemId={0} isActive={activeItem === 0}>
-            Link 1
-          </NavItem>
-          <NavItem id="simple-link2" preventDefault to="#simple-link2" itemId={1} isActive={activeItem === 1}>
-            Link 2
-          </NavItem>
-          <NavItem id="simple-link3" preventDefault to="#simple-link3" itemId={2} isActive={activeItem === 2}>
-            Link 3
-          </NavItem>
-          <NavItemSeparator />
-          <NavItem id="simple-link4" preventDefault to="#simple-link4" itemId={3} isActive={activeItem === 3}>
-            Link 4
-          </NavItem>
-        </NavList>
-      </Nav>
-    );
-  }
-}
-```
 
 ```js title=Grouped
 import React from 'react';
@@ -99,13 +50,13 @@ class NavGroupedList extends React.Component {
     return (
       <Nav onSelect={this.onSelect} theme="dark">
         <NavGroup title="Section title 1">
-          <NavItem preventDefault to="#grouped-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
+          <NavItem to="#grouped-1" id="#default-link0" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
             Link 1
           </NavItem>
-          <NavItem preventDefault to="#grouped-2" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
+          <NavItem to="#grouped-2" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
             Link 2
           </NavItem>
-          <NavItem preventDefault to="#grouped-3" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
+          <NavItem to="#grouped-3" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
             Link 3
           </NavItem>
         </NavGroup>

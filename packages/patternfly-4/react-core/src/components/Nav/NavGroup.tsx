@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
+import { NavVariants } from './NavVariants';
 import { getUniqueId } from '../../helpers/util';
 
 export interface NavGroupProps extends React.HTMLProps<HTMLDivElement> {
@@ -25,6 +26,6 @@ export const NavGroup: React.FunctionComponent<NavGroupProps> = ({
     <h2 className={css(styles.navSectionTitle)} id={id}>
       {title}
     </h2>
-    <ul className={css(styles.navSimpleList)}>{children}</ul>
+    <ul className={css(styles.navList)}>{children}</ul>
   </section>
 );
