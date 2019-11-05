@@ -523,6 +523,11 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.TableRowWrapperDemo
   },
   {
+    id: 'table-row-click-demo',
+    name: 'Table Row Click Demo',
+    componentType: Examples.TableRowClickDemo
+  },
+  {
     id: 'table-selectable-demo',
     name: 'Table Selectable Demo',
     componentType: Examples.TableSelectableDemo

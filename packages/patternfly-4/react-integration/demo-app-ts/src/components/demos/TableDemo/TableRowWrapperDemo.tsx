@@ -2,10 +2,11 @@ import * as React from 'react';
 import {
   Table,
   TableHeader,
-  TableBody
+  TableBody,
+  RowWrapperProps
 } from '@patternfly/react-table';
-
-import customRowWrapper from './RowWrapperForTableRowWrapperDemo';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/react-styles/css/components/Table/table';
 
 interface ITableRowWrapperDemoState {
   rows: any;
@@ -13,6 +14,7 @@ interface ITableRowWrapperDemoState {
 }
 
 export class TableRowWrapperDemo extends React.Component<any, ITableRowWrapperDemoState> {
+  customRowWrapper: (props: RowWrapperProps) => JSX.Element;
   constructor(props: any) {
     super(props);
     this.state = {
@@ -34,6 +36,34 @@ export class TableRowWrapperDemo extends React.Component<any, ITableRowWrapperDe
         }
       ]
     };
+    this.customRowWrapper = ({
+      trRef,
+      className,
+      rowProps,
+      row: { isExpanded, isHeightAuto },
+      ...props
+    }) => {
+      const isOddRow = (rowProps.rowIndex + 1) % 2;
+      const customStyle = {
+        borderLeft: '3px solid var(--pf-global--primary-color--100)'
+      };
+      return (
+        <tr
+          {...props}
+          ref={trRef as React.Ref<any>}
+          className={css(
+            className,
+            (isOddRow ? 'odd-row-class' : 'even-row-class'),
+            'custom-static-class',
+            isExpanded !== undefined && styles.tableExpandableRow,
+            isExpanded && styles.modifiers.expanded,
+            isHeightAuto && styles.modifiers.heightAuto
+          )}
+          hidden={isExpanded !== undefined && !isExpanded}
+          style={isOddRow ? customStyle : {}}
+        />
+      );
+    }
   }
 
   render() {
@@ -44,7 +74,7 @@ export class TableRowWrapperDemo extends React.Component<any, ITableRowWrapperDe
         caption="Table with custom row wrapper that styles odd rows"
         cells={columns}
         rows={rows}
-        rowWrapper={customRowWrapper}>
+        rowWrapper={this.customRowWrapper}>
         <TableHeader />
         <TableBody />
       </Table>
