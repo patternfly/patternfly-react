@@ -59,6 +59,21 @@ test('Sortable table', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('Row click table', () => {
+  const rowClickHandler = jest.fn();
+  const view = mount(
+    <Table
+      aria-label="Row click table"
+      cells={columns}
+      rows={rows}
+    >
+      <TableHeader />
+      <TableBody onRowClick={rowClickHandler} />
+    </Table>
+  );
+  expect(view).toMatchSnapshot();
+});
+
 describe('Table variants', () => {
   Object.values(TableGridBreakpoint).forEach(oneBreakpoint => {
     test(`Breakpoint - ${oneBreakpoint}`, () => {
