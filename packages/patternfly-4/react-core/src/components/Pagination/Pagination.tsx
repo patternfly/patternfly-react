@@ -151,12 +151,12 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
     page = lastPage;
   }
 
-  const firstIndex = (itemCount <= 0) ? 0 : (page - 1) * perPage + 1;
+  const firstIndex = itemCount <= 0 ? 0 : (page - 1) * perPage + 1;
   let lastIndex;
   if (itemCount <= 0) {
     lastIndex = 0;
   } else {
-    lastIndex = (page === lastPage) ? itemCount : page * perPage;
+    lastIndex = page === lastPage ? itemCount : page * perPage;
   }
 
   return (
