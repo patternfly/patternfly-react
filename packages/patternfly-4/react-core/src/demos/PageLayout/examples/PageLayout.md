@@ -39,7 +39,7 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.png';
+import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
 - All but the last example set the `isManagedSidebar` prop on the Page component to have the sidebar automatically close for smaller screen widths. You can also manually control this behavior by not adding the `isManagedSidebar` prop and instead:
@@ -84,7 +84,7 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.png';
+import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
 class PageLayoutSimpleNav extends React.Component {
@@ -288,7 +288,7 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.png';
+import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
 class PageLayoutDefaultNav extends React.Component {
@@ -504,7 +504,7 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.png';
+import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
 class PageLayoutExpandableNav extends React.Component {
@@ -743,7 +743,7 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.png';
+import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
 class PageLayoutGroupsNav extends React.Component {
@@ -961,7 +961,7 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.png';
+import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
 class PageLayoutHorizontalNav extends React.Component {
@@ -1009,7 +1009,7 @@ class PageLayoutHorizontalNav extends React.Component {
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
-        <NavList variant={NavVariants.horizontal}>
+        <NavList variant={NavVariants.default}>
           <NavItem itemId={0} isActive={activeItem === 0}>
             System Panel
           </NavItem>
@@ -1174,7 +1174,7 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.png';
+import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
 class PageLayoutManualNav extends React.Component {
@@ -1416,7 +1416,7 @@ import accessibleStyles from '@patternfly/react-styles/css/utilities/Accessibili
 import spacingStyles from '@patternfly/react-styles/css/utilities/Spacing/spacing';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
-import imgBrand from './imgBrand.png';
+import imgBrand from './imgBrand.svg';
 import imgAvatar from './imgAvatar.svg';
 
 class PageLayoutLightNav extends React.Component {
