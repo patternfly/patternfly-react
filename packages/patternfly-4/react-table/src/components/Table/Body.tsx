@@ -9,13 +9,20 @@ export interface IComputedData {
   isButton: boolean;
 }
 
+export type OnRowClick = (
+  event: React.MouseEvent,
+  row: IRow,
+  rowProps: IExtraRowData,
+  computedData: IComputedData
+) => void;
+
 export interface TableBodyProps {
   className?: string;
   children?: React.ReactNode;
   headerData?: IRow[];
   rows?: IRow[];
   rowKey?: RowKeyType;
-  onRowClick?: (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) => void;
+  onRowClick?: OnRowClick;
   onRow?: Function;
 }
 
@@ -122,7 +129,7 @@ export const TableBody = ({
   className = '' as string,
   children = null as React.ReactNode,
   rowKey = 'id' as string,
-  onRowClick = (...args: any) => undefined as any,
+  onRowClick = (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) => undefined as OnRowClick,
   ...props
 }: TableBodyProps) => (
   <TableContext.Consumer>
