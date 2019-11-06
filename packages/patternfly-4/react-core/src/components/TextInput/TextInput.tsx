@@ -69,7 +69,7 @@ class TextInputBase extends React.Component<TextInputProps & InjectedOuiaProps> 
     isReadOnly: false,
     type: TextInputTypes.text,
     onChange: (): any => undefined
-  };
+  } as TextInputProps;
 
   constructor(props: TextInputProps & InjectedOuiaProps) {
     super(props);
