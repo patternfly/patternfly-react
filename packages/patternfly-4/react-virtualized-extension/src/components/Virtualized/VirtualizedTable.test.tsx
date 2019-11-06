@@ -23,7 +23,7 @@ const measurementCache = new CellMeasurerCache({
 });
 
 describe('Simple virtualized table', () => {
-  const rowRenderer = ( index: number , isVisible: any ) => {
+  const rowRenderer = ( index: number , isVisible: boolean ) => {
     const text = rows[index].cells[0];
 
     const className = clsx({
@@ -73,7 +73,7 @@ describe('Simple virtualized table', () => {
 });
 
 test('Sortable Virtualized Table', () => {
-  const rowRenderer = ( index: number , isVisible: any ) => {
+  const rowRenderer = ( index: number , isVisible: boolean ) => {
     const text = rows[index].cells[0];
 
     const className = clsx({
@@ -82,7 +82,7 @@ test('Sortable Virtualized Table', () => {
   };
 
   const onSortCall = () => undefined as any;
-  columns[0] = { ...columns[0], transforms: [sortable] };
+  columns[0] = { ...(columns[0] as object), transforms: [sortable] };
   const view = mount(
     <Table aria-label="Aria labeled" onSort={onSortCall} sortBy={{}} cells={columns} rows={rows}>
       <TableHeader />
@@ -102,7 +102,7 @@ test('Sortable Virtualized Table', () => {
 });
 
 test('Simple Actions table', () => {
-  const rowRenderer = ( index: number , isVisible: any ) => {
+  const rowRenderer = ( index: number , isVisible: boolean ) => {
     const text = rows[index].cells[0];
 
     const className = clsx({
@@ -139,7 +139,7 @@ test('Simple Actions table', () => {
 });
 
 test('Actions virtualized table', () => {
-  const rowRenderer = ( index: number , isVisible: any ) => { 
+  const rowRenderer = ( index: number , isVisible: boolean ) => {
     const text = rows[index].cells[0];
 
     const className = clsx({
@@ -174,7 +174,7 @@ test('Actions virtualized table', () => {
 });
 
 test('Selectable virtualized table', () => {
-  const rowRenderer = ( index: number , isVisible: any ) => { 
+  const rowRenderer = ( index: number , isVisible: boolean ) => {
     const text = rows[index].cells[0];
 
     const className = clsx({

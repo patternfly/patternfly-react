@@ -5,10 +5,16 @@ import {
   TableBody,
   TableProps,
   expandable,
+  ICell,
   IRow
 } from '@patternfly/react-table';
 
-export class TableCollapsibleDemo extends React.Component<TableProps, { columns: any; rows: IRow[] }> {
+interface TableState {
+  columns: (ICell | string)[];
+  rows: IRow[];
+}
+
+export class TableCollapsibleDemo extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
     this.state = {
@@ -60,7 +66,7 @@ export class TableCollapsibleDemo extends React.Component<TableProps, { columns:
     this.onCollapse = this.onCollapse.bind(this);
   }
 
-  onCollapse(event, rowKey, isOpen) {
+  onCollapse(event: React.MouseEvent, rowKey: number, isOpen: boolean) {
     const { rows } = this.state;
     /**
      * Please do not use rowKey as row index for more complex tables.

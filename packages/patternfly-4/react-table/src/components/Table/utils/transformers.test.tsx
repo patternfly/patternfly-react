@@ -62,7 +62,7 @@ const testCellActions = ({
   if (!actions || actions.length === 0) {
     expect(returnedData.children).toBeUndefined();
   } else {
-    const view = mount(returnedData.children);
+    const view = mount(returnedData.children as React.ReactElement<any>);
     view
       .find('.pf-c-dropdown button')
       .first()
@@ -80,7 +80,7 @@ describe('Transformer functions', () => {
       };
       const returnedData = selectable('', { column, rowData: {} } as IExtra);
       expect(returnedData).toMatchObject({ className: 'pf-c-table__check' });
-      const view = mount(returnedData.children);
+      const view = mount(returnedData.children as React.ReactElement<any>);
       view.find('input').simulate('change');
       expect(onSelect.mock.calls).toHaveLength(1);
       expect(onSelect.mock.results[0].value).toMatchObject({ rowId: -1, selected: false });
@@ -93,7 +93,7 @@ describe('Transformer functions', () => {
       };
       const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: true } } as IExtra);
       expect(returnedData).toMatchObject({ className: 'pf-c-table__check' });
-      const view = mount(returnedData.children);
+      const view = mount(returnedData.children as React.ReactElement<any>);
       view.find('input').simulate('change');
       expect(onSelect.mock.calls).toHaveLength(1);
       expect(onSelect.mock.results[0].value).toMatchObject({ rowId: 0, selected: false });
@@ -106,7 +106,7 @@ describe('Transformer functions', () => {
       };
       const returnedData = selectable('', { column, rowIndex: 0, rowData: { selected: false } } as IExtra);
       expect(returnedData).toMatchSnapshot();
-      const view = mount(returnedData.children);
+      const view = mount(returnedData.children as React.ReactElement<any>);
       view.find('input').simulate('change');
       expect(onSelect.mock.calls).toHaveLength(1);
       expect(onSelect.mock.results[0].value).toMatchObject({ rowId: 0, selected: true });
@@ -119,7 +119,7 @@ describe('Transformer functions', () => {
       const column = { extraParams: { sortBy: {}, onSort } };
       const returnedData = sortable('', { column, columnIndex: 0 });
       expect(returnedData).toMatchObject({ className: 'pf-c-table__sort' });
-      const view = mount(returnedData.children);
+      const view = mount(returnedData.children as React.ReactElement<any>);
       view.find('button').simulate('click');
       expect(onSort.mock.calls).toHaveLength(1);
     });
@@ -129,7 +129,7 @@ describe('Transformer functions', () => {
       const column = { extraParams: { sortBy: { index: 0, direction: 'asc' }, onSort } };
       const returnedData = sortable('', { column, columnIndex: 0 } as IExtra);
       expect(returnedData).toMatchSnapshot();
-      const view = mount(returnedData.children);
+      const view = mount(returnedData.children as React.ReactElement<any>);
       view.find('button').simulate('click');
       expect(onSort.mock.calls).toHaveLength(1);
     });
@@ -139,19 +139,19 @@ describe('Transformer functions', () => {
       const column = { extraParams: { sortBy: { index: 0, direction: 'desc' }, onSort } };
       const returnedData = sortable('', { column, columnIndex: 0 } as IExtra);
       expect(returnedData).toMatchObject({ className: 'pf-c-table__sort pf-m-selected' });
-      const view = mount(returnedData.children);
+      const view = mount(returnedData.children as React.ReactElement<any>);
       view.find('button').simulate('click');
       expect(onSort.mock.calls).toHaveLength(1);
     });
   });
 
   test('simpleCellActions', () => {
-    const actions = [
+    const actions: IActions = [
       {
         title: 'Some',
         onClick: jest.fn()
       }
-    ] as IActions;
+    ];
 
     const actionConfigs = [
       {
@@ -206,7 +206,7 @@ describe('Transformer functions', () => {
     };
     const returnedData = collapsible('', { rowIndex: 0, rowData, column });
     expect(returnedData).toMatchObject({ className: 'pf-c-table__toggle' });
-    const view = mount(returnedData.children);
+    const view = mount(returnedData.children as React.ReactElement<any>);
     view.find('button').simulate('click');
     expect(onCollapse.mock.calls).toHaveLength(1);
   });
@@ -277,7 +277,7 @@ describe('Transformer functions', () => {
   test('headerCol', () => {
     const returned = headerCol('some-id')('value', { rowIndex: 0 });
     expect(returned).toMatchObject({ component: 'th' });
-    const view = mount(returned.children);
+    const view = mount(returned.children as React.ReactElement<any>);
     expect(view.find('#some-id0')).toHaveLength(1);
   });
 

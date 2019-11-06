@@ -23,7 +23,6 @@ export * from './ChipGroupDemo/ChipGroupDemo';
 export * from './ContextSelectorDemo/ContextSelectorDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyDemo';
 export * from './ClipboardCopyDemo/ClipboardCopyExpandedDemo';
-export * from './ContextSelectorDemo/ContextSelectorDemo';
 export * from './DataListDemo/DataListDemo';
 export * from './DataToolbarDemo/DataToolbarDemo';
 export * from './DividerDemo/DividerDemo';

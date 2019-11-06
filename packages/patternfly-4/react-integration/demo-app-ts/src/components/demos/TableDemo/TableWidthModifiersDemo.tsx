@@ -5,10 +5,11 @@ import {
   TableBody,
   TableProps,
   cellWidth,
+  ICell,
   IRow
 } from '@patternfly/react-table';
 
-export class TableWidthModifiersDemo extends React.Component<TableProps, { columns: any; rows: IRow[] }> {
+export class TableWidthModifiersDemo extends React.Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
   constructor(props: TableProps) {
     super(props);
     this.state = {

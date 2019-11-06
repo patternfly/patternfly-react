@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { IExtra, IFormatterValueType } from '../../Table';
+import { IExtra, IRowData, IFormatterValueType, ITransform } from '../../Table';
 import { SelectColumn } from '../../SelectColumn';
 
-export const selectable = (
+export const selectable: ITransform = (
   label: IFormatterValueType,
   { rowIndex, columnIndex, rowData, column, property }: IExtra
 ) => {

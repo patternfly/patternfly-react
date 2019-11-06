@@ -2,9 +2,9 @@ import * as React from 'react';
 import { css } from '@patternfly/react-styles';
 import { Button } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
-import { IExtra, IFormatterValueType } from '../../Table';
+import { IExtra, IFormatterValueType, ITransform } from '../../Table';
 
-export const compoundExpand = (
+export const compoundExpand: ITransform = (
   value: IFormatterValueType,
   { rowIndex, columnIndex, rowData, column, property }: IExtra
 ) => {
