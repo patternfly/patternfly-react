@@ -24,6 +24,8 @@ const getSrcDirs = packageName => {
   switch (packageName) {
     case '@patternfly/react-icons':
       return ['build', 'src'];
+    case '@patternfly/react-catalog-view-extension':
+      return ['sass', 'src'];
     default:
       return ['src'];
   }
