@@ -201,7 +201,6 @@ jobs:
   build_pf4_docs:
     docker:
     - image: circleci/node:10
-    resource_class: medium+
     steps:
     - *attach_workspace
     - restore_cache:
