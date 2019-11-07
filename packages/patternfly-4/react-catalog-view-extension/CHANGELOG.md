@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.13...@patternfly/react-catalog-view-extension@1.1.14) (2019-11-07)
+
+
+### Bug Fixes
+
+* **react-catalog-view-extension:** fix checbox margin on filter side panel ([#3287](https://github.com/patternfly/patternfly-react/issues/3287)) ([895386b](https://github.com/patternfly/patternfly-react/commit/895386b2603ba291295743f50e3a72b796dfe167))
+
+
+
+
+
 ## [1.1.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.12...@patternfly/react-catalog-view-extension@1.1.13) (2019-11-07)
 
 
