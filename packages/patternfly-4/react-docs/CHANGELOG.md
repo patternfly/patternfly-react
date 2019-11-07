@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.16.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.15...@patternfly/react-docs@4.16.16) (2019-11-07)
+
+
+### Bug Fixes
+
+* **ci:** use node 10, more resources for doc build ([#3278](https://github.com/patternfly/patternfly-react/issues/3278)) ([54e54b7](https://github.com/patternfly/patternfly-react/commit/54e54b7f3f19b42d7184a175b65012540ef4ab64))
+
+
+
+
+
 ## [4.16.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@4.16.14...@patternfly/react-docs@4.16.15) (2019-11-06)
 
 **Note:** Version bump only for package @patternfly/react-docs
