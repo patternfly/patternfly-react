@@ -81,7 +81,7 @@ class TextInputBase extends React.Component<TextInputProps & InjectedOuiaProps> 
 
   handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     if (this.props.onChange) {
-      this.props.onChange(event.currentTarget.value, event);
+      this.props.onChange((event.target as HTMLInputElement).value, event);
     }
   };
 

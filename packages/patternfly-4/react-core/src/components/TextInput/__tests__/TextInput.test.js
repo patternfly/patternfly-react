@@ -10,10 +10,11 @@ const props = {
 test('input passes value and event to onChange handler', () => {
   const newValue = 'new test input';
   const event = {
-    currentTarget: { value: newValue }
+    target: { value: newValue }
   };
   view.find('input').simulate('change', event);
-  expect(props.onChange).toBeCalledWith(newValue, event);
+  expect(props.onChange.mock.calls[0][0]).toBe(newValue);
+  expect(props.onChange.mock.calls[0][1]).toMatchObject(event);
 });
 
 test('simple text input', () => {
