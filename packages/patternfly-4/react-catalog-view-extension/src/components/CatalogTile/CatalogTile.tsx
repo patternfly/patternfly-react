@@ -131,7 +131,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
     return (
       <Card component={href || onClick ? 'a' : 'div'} id={id} href={href || '#'} className={classNames('catalog-tile-pf', { featured }, className)} onClick={e => this.handleClick(e)} isHoverable {...props}>
         <CardHead>
-          {iconImg && <img src={iconImg} alt={iconAlt} />}
+          {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt={iconAlt} />}
           {!iconImg && (iconClass || icon) && <span className={`catalog-tile-pf-icon ${iconClass}`}>{icon}</span>}
           <CardActions>
             {this.renderBadges(badges)}
