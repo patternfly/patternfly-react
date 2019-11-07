@@ -23,7 +23,8 @@
 
   .catalog-tile-pf-subtitle {
     color: $color-pf-black-500;
-    font-size: $font-size-base;
+    font-size: ($font-size-base - 1);
+    font-weight: initial;
 
     a {
       color: $color-pf-blue-300;
