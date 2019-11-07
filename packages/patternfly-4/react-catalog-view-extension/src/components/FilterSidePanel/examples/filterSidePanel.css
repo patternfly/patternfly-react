@@ -37,8 +37,8 @@
   margin-top: 0;
 }
 
-.filter-panel-pf-category-item .checkbox {
-  margin: 0;
+.filter-panel-pf-category-item .pf-c-check__input {
+  margin-left: 0px;
 }
 
 .filter-panel-pf-category-item .item-icon {
