@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.11...@patternfly/react-catalog-view-extension@1.1.12) (2019-11-07)
+
+
+### Bug Fixes
+
+* **CatalogTile:** Update scss and add class to image ([#3282](https://github.com/patternfly/patternfly-react/issues/3282)) ([25e6f79](https://github.com/patternfly/patternfly-react/commit/25e6f792d0d0776d1bc0685bd3670308c79f54d6))
+
+
+
+
+
 ## [1.1.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.10...@patternfly/react-catalog-view-extension@1.1.11) (2019-11-07)
 
 
