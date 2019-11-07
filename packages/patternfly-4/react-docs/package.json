@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build:docs": "yarn build:static && gatsby build --prefix-paths",
+    "build:docs": "yarn build:static && node --max-old-space-size=4096 ./node_modules/.bin/gatsby build --prefix-paths",
     "build:static": "shx cp -r ../react-core/dist/styles/* static",
     "clean": "rimraf .cache public static/assets static/base.css",
     "clean:mdx": "rimraf .cache/caches/gatsby-mdx",
