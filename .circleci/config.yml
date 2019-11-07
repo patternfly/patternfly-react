@@ -90,7 +90,7 @@ workflows:
 jobs:
   build:
     docker:
-    - image: circleci/node:8.15
+    - image: circleci/node:10
     steps:
     - checkout
     - persist_to_workspace:
@@ -120,7 +120,7 @@ jobs:
         paths: *build_cache_paths
   test_jest_pf4:
     docker:
-    - image: circleci/node:8.15
+    - image: circleci/node:10
     steps:
     - *attach_workspace
     - restore_cache:
@@ -131,7 +131,7 @@ jobs:
         command: yarn test:pf4 --maxWorkers=2 && yarn run codecov -F patternfly4
   test_jest_other:
     docker:
-    - image: circleci/node:8.15
+    - image: circleci/node:10
     steps:
     - *attach_workspace
     - restore_cache:
@@ -148,7 +148,7 @@ jobs:
         command: yarn test:misc --maxWorkers=2 && yarn run codecov -F misc
   build_integration:
     docker:
-    - image: circleci/node:8.15
+    - image: circleci/node:10
     steps:
     - *attach_workspace
     - restore_cache:
@@ -159,7 +159,7 @@ jobs:
         command: yarn build:integration
   lint:
     docker:
-    - image: circleci/node:8.15
+    - image: circleci/node:10
     steps:
     - *attach_workspace
     - restore_cache:
@@ -185,7 +185,7 @@ jobs:
             fi
   build_pf3_docs:
     docker:
-    - image: circleci/node:8.15
+    - image: circleci/node:10
     steps:
     - *attach_workspace
     - restore_cache:
@@ -200,7 +200,8 @@ jobs:
         - .out/
   build_pf4_docs:
     docker:
-    - image: circleci/node:8.15
+    - image: circleci/node:10
+    resource_class: large
     steps:
     - *attach_workspace
     - restore_cache:
@@ -215,7 +216,7 @@ jobs:
         - packages/patternfly-4/react-docs/public/
   upload_docs:
     docker:
-    - image: circleci/node:8.15
+    - image: circleci/node:10
     steps:
     - *attach_workspace
     - run:
@@ -226,7 +227,7 @@ jobs:
         command: .circleci/upload-docs.sh
   deploy_prerelease:
     docker:
-    - image: circleci/node:8.15
+    - image: circleci/node:10
     steps:
     - *attach_workspace
     - restore_cache:
