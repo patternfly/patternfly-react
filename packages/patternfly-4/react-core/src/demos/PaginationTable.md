@@ -2,14 +2,34 @@
 title: 'Pagination table'
 section: 'demos'
 ---
-import { Pagination, PaginationVariant, Title } from '@patternfly/react-core';
+import { 
+  Pagination, 
+  PaginationVariant, 
+  Title, 
+  EmptyState,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateSecondaryActions,
+  Bullseye 
+} from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
+import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 
 ## Examples
 ```js title=Basic
 import React from 'react';
-import { Pagination, PaginationVariant, Title } from '@patternfly/react-core';
+import {
+  Pagination, 
+  PaginationVariant, 
+  Title, 
+  EmptyState,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateSecondaryActions,
+  Bullseye 
+} from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
+import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 
 class ComplexPaginationTableDemo extends React.Component {
   constructor(props) {
@@ -50,17 +70,50 @@ class ComplexPaginationTableDemo extends React.Component {
   }
 
   render() {
-    const { loading } = this.state;
+    const { loading, res } = this.state;
+    if (res.length === 0) {
+      const rows = [{
+        heightAuto: true,
+        cells: [
+          {
+            props: { colSpan: 8 },
+            title: (
+            <Bullseye>
+              <EmptyState variant={EmptyStateVariant.small}>
+                <EmptyStateIcon icon={SearchIcon} />
+                <Title headingLevel="h2" size="lg">
+                  No results found
+                </Title>
+                <EmptyStateBody>
+                  No results match the filter criteria. Remove all filters or clear all filters to show results.
+                </EmptyStateBody>
+              </EmptyState>
+            </Bullseye>
+            )
+          },
+        ]
+      }]
+      
+      return (
+        <React.Fragment>
+          {this.renderPagination()}
+          <Table cells={['Title', 'Body']} rows={rows} aria-label="Pagination Table Demo">
+            <TableHeader />
+            <TableBody />
+          </Table>
+        </React.Fragment>
+      );
+    }
     return (
       <React.Fragment>
         {this.renderPagination()}
         {!loading && (
-          <Table cells={['Title', 'Body']} rows={this.state.res.map(post => [post.title, post.body])}>
+          <Table cells={['Title', 'Body']} rows={res.map(post => [post.title, post.body])} aria-label="Pagination Table Demo">
             <TableHeader />
             <TableBody />
           </Table>
         )}
-        {loading && <center><Title size="3xl">Please wait while loading data</Title></center>}
+        {loading && <center><Spinner size="xl"/></center>}
       </React.Fragment>
     );
   }
