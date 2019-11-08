@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.14...@patternfly/react-catalog-view-extension@1.1.15) (2019-11-08)
+
+
+### Bug Fixes
+
+* **CatalogTile:** Removed margin and fixed hidden text ([#3285](https://github.com/patternfly/patternfly-react/issues/3285)) ([4028a8c](https://github.com/patternfly/patternfly-react/commit/4028a8c3f7c696fc278f65360a538800ca3a8d0a))
+
+
+
+
+
 ## [1.1.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.13...@patternfly/react-catalog-view-extension@1.1.14) (2019-11-07)
 
 
