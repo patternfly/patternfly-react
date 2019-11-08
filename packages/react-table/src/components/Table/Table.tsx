@@ -60,7 +60,7 @@ export type OnExpand = (
   extraData: IExtraData
 ) => void;
 export type OnSelect = (
-  event: React.MouseEvent,
+  event: React.FormEvent<HTMLInputElement>,
   isSelected: boolean,
   rowIndex: number,
   rowData: IRowData,
