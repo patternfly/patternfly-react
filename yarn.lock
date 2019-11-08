@@ -2294,9 +2294,9 @@
   dependencies:
     "@types/node" "^12.11.1"
 
-"@patternfly/patternfly@2.40.6":
-  version "2.40.6"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.40.6.tgz#f1e13069c6c948e194de53bbd00a031bb0ddd051"
+"@patternfly/patternfly@2.40.12":
+  version "2.40.12"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-2.40.12.tgz#d49029b851f3680d327bb9a1883ddd3189dc2e8c"
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
