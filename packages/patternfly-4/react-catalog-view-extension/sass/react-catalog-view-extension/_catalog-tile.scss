@@ -60,13 +60,7 @@
 .catalog-tile-pf-description {
   margin-top: 0;
 
-  > span {
-    position: initial;
-  }
-}
-
-.catalog-tile-pf-body {
-  .catalog-tile-pf-description span.truncated {
+  .truncated {
     overflow: hidden;
     position: relative;
 
