@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Nav/nav';
 import { css } from '@patternfly/react-styles';
-import { NavVariants } from './NavVariants';
 import { getUniqueId } from '../../helpers/util';
 
 export interface NavGroupProps extends React.HTMLProps<HTMLDivElement> {
