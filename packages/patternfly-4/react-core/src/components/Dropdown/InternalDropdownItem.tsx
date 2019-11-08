@@ -65,18 +65,20 @@ export class InternalDropdownItem extends React.Component<InternalDropdownItemPr
     context.sendRef(index, this.ref.current, isDisabled, role === 'separator');
   }
 
+  componentDidUpdate() {
+    const { context, index, isDisabled, role } = this.props;
+    context.sendRef(index, this.ref.current, isDisabled, role === 'separator');
+  }
+
   onKeyDown = (event: any) => {
     // Detected key press on this item, notify the menu parent so that the appropriate
     // item can be focused
-    if (event.keyCode === KEY_CODES.TAB) {
-      return;
-    }
     event.preventDefault();
-    if (event.keyCode === KEY_CODES.ARROW_UP) {
+    if (event.key === 'ArrowUp') {
       this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.UP);
-    } else if (event.keyCode === KEY_CODES.ARROW_DOWN) {
+    } else if (event.key === 'ArrowDown') {
       this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.DOWN);
-    } else if (event.keyCode === KEY_CODES.ENTER) {
+    } else if (event.key === 'Enter' || event.key === ' ') {
       const childNode = (this.ref.current && this.ref.current.childNodes && this.ref.current.childNodes.length
         ? this.ref.current.childNodes[0]
         : this.ref.current) as HTMLElement;

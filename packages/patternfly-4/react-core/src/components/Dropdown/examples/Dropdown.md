@@ -30,6 +30,11 @@ class SimpleDropdown extends React.Component {
       this.setState({
         isOpen: !this.state.isOpen
       });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById("toggle-id");
+      element.focus();
     };
   }
 
@@ -55,7 +60,15 @@ class SimpleDropdown extends React.Component {
     return (
       <Dropdown
         onSelect={this.onSelect}
-        toggle={<DropdownToggle onToggle={this.onToggle} iconComponent={CaretDownIcon}>Dropdown</DropdownToggle>}
+        toggle={
+          <DropdownToggle
+            id="toggle-id"
+            onToggle={this.onToggle}
+            iconComponent={CaretDownIcon}
+          >
+            Dropdown
+          </DropdownToggle>
+        }
         isOpen={isOpen}
         dropdownItems={dropdownItems}
       />
@@ -84,6 +97,11 @@ class IntialSelectionDropdown extends React.Component {
       this.setState({
         isOpen: !this.state.isOpen
       });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById("toggle-id-1");
+      element.focus();
     };
   }
 
@@ -109,7 +127,10 @@ class IntialSelectionDropdown extends React.Component {
     return (
       <Dropdown
         onSelect={this.onSelect}
-        toggle={<DropdownToggle onToggle={this.onToggle}>Dropdown</DropdownToggle>}
+        toggle={
+          <DropdownToggle 
+            id="toggle-id-1"
+            onToggle={this.onToggle}>Dropdown</DropdownToggle>}
         isOpen={isOpen}
         dropdownItems={dropdownItems}
         autoFocus={false}
@@ -138,6 +159,11 @@ class GroupedDropdown extends React.Component {
       this.setState({
         isOpen: !this.state.isOpen
       });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById("toggle-id-3");
+      element.focus();
     };
   }
 
@@ -166,7 +192,7 @@ class GroupedDropdown extends React.Component {
     return (
       <Dropdown
         onSelect={this.onSelect}
-        toggle={<DropdownToggle onToggle={this.onToggle}>Dropdown</DropdownToggle>}
+        toggle={<DropdownToggle onToggle={this.onToggle} id="toggle-id-3">Dropdown</DropdownToggle>}
         isOpen={isOpen}
         dropdownItems={dropdownItems}
         isGrouped
@@ -254,6 +280,11 @@ class PrimaryDropdown extends React.Component {
       this.setState({
         isOpen: !this.state.isOpen
       });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById("toggle-id-4");
+      element.focus();
     };
   }
 
@@ -279,7 +310,7 @@ class PrimaryDropdown extends React.Component {
     return (
       <Dropdown
         onSelect={this.onSelect}
-        toggle={<DropdownToggle onToggle={this.onToggle} iconComponent={CaretDownIcon} isPrimary>Dropdown</DropdownToggle>}
+        toggle={<DropdownToggle onToggle={this.onToggle} iconComponent={CaretDownIcon} isPrimary id="toggle-id-4">Dropdown</DropdownToggle>}
         isOpen={isOpen}
         dropdownItems={dropdownItems}
       />
@@ -308,6 +339,11 @@ class PositionRightDropdown extends React.Component {
       this.setState({
         isOpen: !this.state.isOpen
       });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById("toggle-id-5");
+      element.focus();
     };
   }
 
@@ -389,7 +425,7 @@ class DirectionUpDropdown extends React.Component {
       <Dropdown
         direction={DropdownDirection.up}
         onSelect={this.onSelect}
-        toggle={<DropdownToggle onToggle={this.onToggle}>Dropdown</DropdownToggle>}
+        toggle={<DropdownToggle onToggle={this.onToggle} id="toggle-id-5">Dropdown</DropdownToggle>}
         isOpen={isOpen}
         dropdownItems={dropdownItems}
       />
@@ -418,6 +454,11 @@ class KebabDropdown extends React.Component {
       this.setState({
         isOpen: !this.state.isOpen
       });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById("toggle-id-6");
+      element.focus();
     };
   }
 
@@ -443,7 +484,7 @@ class KebabDropdown extends React.Component {
     return (
       <Dropdown
         onSelect={this.onSelect}
-        toggle={<KebabToggle onToggle={this.onToggle} />}
+        toggle={<KebabToggle onToggle={this.onToggle} id="toggle-id-6"/>}
         isOpen={isOpen}
         isPlain
         dropdownItems={dropdownItems}
@@ -473,6 +514,11 @@ class IconDropdown extends React.Component {
       this.setState({
         isOpen: !this.state.isOpen
       });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById("toggle-id-7");
+      element.focus();
     };
   }
 
@@ -499,7 +545,7 @@ class IconDropdown extends React.Component {
       <Dropdown
         onSelect={this.onSelect}
         toggle={
-          <DropdownToggle iconComponent={null} onToggle={this.onToggle} aria-label="Applications">
+          <DropdownToggle iconComponent={null} onToggle={this.onToggle} aria-label="Applications" id="toggle-id-7">
             <ThIcon />
           </DropdownToggle>
         }
@@ -532,6 +578,11 @@ class SplitButtonDropdown extends React.Component {
       this.setState({
         isOpen: !this.state.isOpen
       });
+      this.onFocus();
+    };
+    this.onFocus = () => {
+      const element = document.getElementById("toggle-id-8");
+      element.focus();
     };
   }
 
@@ -567,6 +618,7 @@ class SplitButtonDropdown extends React.Component {
               />
             ]}
             onToggle={this.onToggle}
+            id="toggle-id-8"
           />
         )}
         isOpen={isOpen}
@@ -762,7 +814,7 @@ class SplitButtonDisabledDropdown extends React.Component {
           <DropdownToggle
             splitButtonItems={[
               <DropdownToggleCheckbox
-                id="example-checkbox-1"
+                id="example-checkbox-3"
                 key="disabled-checkbox"
                 aria-label="Select all"
                 isDisabled
@@ -780,7 +832,7 @@ class SplitButtonDisabledDropdown extends React.Component {
 }
 ```
 
-```js title=Basic
+```js title=Basic-panel
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
