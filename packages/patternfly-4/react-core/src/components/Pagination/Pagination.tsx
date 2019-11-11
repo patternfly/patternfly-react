@@ -52,6 +52,22 @@ export interface PaginationTitles {
   paginationTitle?: string;
 }
 
+export type OnSetPage = (
+  _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+  newPage: number,
+  perPage?: number,
+  startIdx?: number,
+  endIdx?: number
+) => void;
+
+export type OnPerPageSelect = (
+  _evt: React.MouseEvent | React.KeyboardEvent | MouseEvent,
+  newPerPage: number,
+  newPage?: number,
+  startIdx?: number,
+  endIdx?: number
+) => void;
+
 export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   /** What should be rendered inside */
   children?: React.ReactNode;
@@ -88,7 +104,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   /** This will be shown in pagination toggle span. You can use firstIndex, lastIndex, itemCount, itemsTitle props. */
   toggleTemplate?: ((props: ToggleTemplateProps) => React.ReactElement) | string;
   /** Function called when user sets page. */
-  onSetPage?: (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPage: number, perPage?: number, startIdx?: number, endIdx?: number) => void;
+  onSetPage?: OnSetPage;
   /** Function called when user clicks on navigate to first page. */
   onFirstClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks on navigate to previous page. */
@@ -100,7 +116,7 @@ export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {
   /** Function called when user inputs page number. */
   onPageInput?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user selects number of items per page. */
-  onPerPageSelect?: (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPerPage: number, newPage?: number, startIdx?: number, endIdx?: number) => void;
+  onPerPageSelect?: OnPerPageSelect;
 }
 
 const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> = ({

@@ -256,19 +256,27 @@ class ComplexPaginationTableDemo extends React.Component {
         { title: "Row 12 column 3" }
       ]}
     ];
+    this.defaultPerPage = 10;
     this.state = {
-      perPage: 10,
+      perPage: this.defaultPerPage,
       page: 1,
-      rows: this.defaultRows.slice(0, 10)
+      rows: this.defaultRows.slice(0, this.defaultPerPage)
     };
   }
 
-  updateState(_evt, newPage, newPerPage, startIdx, endIdx) {
-    return {
-      perPage: newPerPage,
-      page: newPage,
+  handleSetPage(page, startIdx, endIdx) {
+    this.setState({
+      page,
       rows: this.defaultRows.slice(startIdx, endIdx)
-    }
+    });
+  }
+
+  handlePerPageSelect(page, perPage, startIdx, endIdx) {
+    this.setState({
+      perPage,
+      page,
+      rows: this.defaultRows.slice(startIdx, endIdx)
+    });
   }
 
   renderPagination(variant = 'top') {
@@ -279,29 +287,30 @@ class ComplexPaginationTableDemo extends React.Component {
         page={page}
         perPage={perPage}
         defaultToFullPage
-        onSetPage={(_evt, newPage, perPage, startIdx, endIdx) => this.setState(
-          this.updateState(_evt, newPage, perPage, startIdx, endIdx)
-        )}
-        onPerPageSelect={(_evt, newPerPage, page, startIdx, endIdx) => this.setState(
-          this.updateState(_evt, page, newPerPage, startIdx, endIdx)
-        )}
-        perPageOptions={[{ title: "3", value: 3 }, { title: "5", value: 5 }, { title: "12", value: 12}]}
+        onSetPage={(_evt, newPage, perPage, startIdx, endIdx) => {
+          this.handleSetPage(newPage, startIdx, endIdx);
+        }}
+        onPerPageSelect={(_evt, newPerPage, newPage, startIdx, endIdx) => {
+          this.handlePerPageSelect(newPage, newPerPage, startIdx, endIdx);
+        }}
+        perPageOptions={[
+          { title: "3", value: 3 },
+          { title: "5", value: 5 },
+          { title: "12", value: 12},
+          { title: '20', value: 20 }
+        ]}
       />
     );
   }
 
   render() {
-    const { loading } = this.state;
     return (
       <React.Fragment>
         {this.renderPagination()}
-        {!loading && (
-          <Table aria-label="Automated pagination table" cells={this.columns} rows={this.state.rows.map(row => row.cells)}>
-            <TableHeader />
-            <TableBody />
-          </Table>
-        )}
-        {loading && <center><Title size="3xl">Please wait while loading data</Title></center>}
+        <Table aria-label="Automated pagination table" cells={this.columns} rows={this.state.rows.map(row => row.cells)}>
+          <TableHeader />
+          <TableBody />
+        </Table>
       </React.Fragment>
     );
   }

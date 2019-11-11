@@ -3,6 +3,7 @@ import styles from '@patternfly/react-styles/css/components/Pagination/paginatio
 import { css } from '@patternfly/react-styles';
 import { AngleLeftIcon, AngleDoubleLeftIcon, AngleRightIcon, AngleDoubleRightIcon } from '@patternfly/react-icons';
 import { Button, ButtonVariant } from '../Button';
+import { OnSetPage } from './Pagination';
 import { pluralize } from '../../helpers';
 import { KEY_CODES } from '../../helpers/constants';
 
@@ -36,7 +37,7 @@ export interface NavigationProps extends React.HTMLProps<HTMLElement> {
   /** Number of items per page. */
   perPage?: number;
   /** Function called when page is changed */
-  onSetPage: (_evt: React.MouseEvent | React.KeyboardEvent | MouseEvent, newPage: number, perPage?: number, startIdx?: number, endIdx?: number) => void;
+  onSetPage: OnSetPage;
   /** Function called when user clicks to navigate to next page */
   onNextClick?: (event: React.SyntheticEvent<HTMLButtonElement>, page: number) => void;
   /** Function called when user clicks to navigate to previous page */
