@@ -2,8 +2,7 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Patternfly 4 - React',
-    siteUrl: 'https://patternfly-react.surge.sh/patternfly-4/'
+    title: 'Patternfly 4 - React'
   },
   pathPrefix: '/patternfly-4',
   plugins: [
@@ -12,6 +11,7 @@ module.exports = {
       resolve: `gatsby-theme-patternfly-org`,
       options: {
         context: 'react', // For global items that need sideNav
+        hideBanner: true, // PF3 banner on org
         hiddenPages: ['withOuia'], // By title
         sideNav: {
           react: [

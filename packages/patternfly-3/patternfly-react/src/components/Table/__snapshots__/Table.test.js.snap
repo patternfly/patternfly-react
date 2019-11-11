@@ -809,7 +809,7 @@ exports[`Mock Client Pagination table renders 1`] = `
         <th
           aria-label="Vyberte všechny řádky"
           class="table-view-pf-select"
-          colSpan="1"
+          colspan="1"
           id="vybrat vše"
           index="0"
           rowspan="1"
@@ -828,7 +828,7 @@ exports[`Mock Client Pagination table renders 1`] = `
         <th
           aria-label="Name"
           class="sorting_asc sort sort-asc"
-          colSpan="1"
+          colspan="1"
           index="1"
           rowspan="1"
         >
@@ -837,7 +837,7 @@ exports[`Mock Client Pagination table renders 1`] = `
         <th
           aria-label="Height"
           class="sorting sort sort-none"
-          colSpan="1"
+          colspan="1"
           index="2"
           rowspan="1"
         >
@@ -846,7 +846,7 @@ exports[`Mock Client Pagination table renders 1`] = `
         <th
           aria-label="Eye Color"
           class="sorting sort sort-none"
-          colSpan="1"
+          colspan="1"
           index="3"
           rowspan="1"
         >
@@ -855,7 +855,7 @@ exports[`Mock Client Pagination table renders 1`] = `
         <th
           aria-label="Gender"
           class="sorting sort sort-none"
-          colSpan="1"
+          colspan="1"
           index="4"
           rowspan="1"
         >
@@ -864,7 +864,7 @@ exports[`Mock Client Pagination table renders 1`] = `
         <th
           aria-label="Birth Year"
           class="sorting sort sort-none"
-          colSpan="1"
+          colspan="1"
           index="5"
           rowspan="1"
         >
@@ -873,7 +873,7 @@ exports[`Mock Client Pagination table renders 1`] = `
         <th
           aria-label="Actions"
           class=""
-          colSpan="2"
+          colspan="2"
           index="6"
           rowspan="1"
         >
@@ -1893,7 +1893,7 @@ exports[`Mock Server Pagination table renders 1`] = `
         <th
           aria-label="Select all rows"
           class="table-view-pf-select"
-          colSpan="1"
+          colspan="1"
           index="0"
           rowspan="1"
         >
@@ -1912,7 +1912,7 @@ exports[`Mock Server Pagination table renders 1`] = `
         <th
           aria-label="Name"
           class="sorting_asc"
-          colSpan="1"
+          colspan="1"
           index="1"
           rowspan="1"
         >
@@ -1921,7 +1921,7 @@ exports[`Mock Server Pagination table renders 1`] = `
         <th
           aria-label="Height"
           class="sorting"
-          colSpan="1"
+          colspan="1"
           index="2"
           rowspan="1"
         >
@@ -1930,7 +1930,7 @@ exports[`Mock Server Pagination table renders 1`] = `
         <th
           aria-label="Eye Color"
           class="sorting"
-          colSpan="1"
+          colspan="1"
           index="3"
           rowspan="1"
         >
@@ -1939,7 +1939,7 @@ exports[`Mock Server Pagination table renders 1`] = `
         <th
           aria-label="Gender"
           class="sorting"
-          colSpan="1"
+          colspan="1"
           index="4"
           rowspan="1"
         >
@@ -1948,7 +1948,7 @@ exports[`Mock Server Pagination table renders 1`] = `
         <th
           aria-label="Birth Year"
           class="sorting"
-          colSpan="1"
+          colspan="1"
           index="5"
           rowspan="1"
         >
@@ -1957,7 +1957,7 @@ exports[`Mock Server Pagination table renders 1`] = `
         <th
           aria-label="Actions"
           class=""
-          colSpan="2"
+          colspan="2"
           index="6"
           rowspan="1"
         >

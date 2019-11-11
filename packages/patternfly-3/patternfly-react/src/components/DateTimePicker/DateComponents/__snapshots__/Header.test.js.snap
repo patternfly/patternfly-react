@@ -14,7 +14,7 @@ exports[`Header is working properly 1`] = `
       </th>
       <th
         class="picker-switch"
-        colSpan="5"
+        colspan="5"
       >
         January 2019
       </th>
@@ -82,7 +82,7 @@ exports[`Header is working properly with different week start 1`] = `
       </th>
       <th
         class="picker-switch"
-        colSpan="5"
+        colspan="5"
       >
         January 2019
       </th>

@@ -85,7 +85,7 @@ class BulkSelectTableDemo extends React.Component {
           this.updateSelected
         );
       }
-    };DropdownItem
+    };
 
     this.onDropDownToggle = isOpen => {
       this.setState({

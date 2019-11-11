@@ -22,7 +22,7 @@ exports[`DateInput is working properly 1`] = `
           </th>
           <th
             class="picker-switch"
-            colSpan="5"
+            colspan="5"
           >
             January 2019
           </th>
@@ -321,7 +321,7 @@ exports[`DateInput toggles view to decades 1`] = `
           </th>
           <th
             class="picker-switch"
-            colSpan="5"
+            colspan="5"
             data-action="pickerSwitch"
           >
             2010-2021
@@ -338,7 +338,7 @@ exports[`DateInput toggles view to decades 1`] = `
       <tbody>
         <tr>
           <td
-            colSpan="7"
+            colspan="7"
           >
             <span
               class="year "
@@ -429,7 +429,7 @@ exports[`DateInput toggles view to years 1`] = `
           </th>
           <th
             class="picker-switch"
-            colSpan="5"
+            colspan="5"
           >
             2019
           </th>
@@ -445,7 +445,7 @@ exports[`DateInput toggles view to years 1`] = `
       <tbody>
         <tr>
           <td
-            colSpan="7"
+            colspan="7"
           >
             <span
               class="month active"

@@ -49,7 +49,7 @@ exports[`Diff View renders w/Text properly 1`] = `
       />
       <td
         class="diff-hunk-header-content"
-        colSpan="3"
+        colspan="3"
       >
         @@ -1 +1 @@
       </td>
