@@ -47,8 +47,8 @@
     "build:babel:cjs": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/js --presets=@babel/env",
     "build:babel:esm": "babel --source-maps --extensions \".js,.ts,.tsx\" src --out-dir dist/esm",
     "build:babel:umd": "babel --source-maps --extensions \".js\" dist/esm --out-dir dist/umd --plugins=transform-es2015-modules-umd",
-    "postbuild": "node ./build/copyStyles.js",
-    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
+    "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose",
+    "postbuild": "node ./build/copyStyles.js"
   },
   "optionalDependencies": {
     "@patternfly/react-tokens": "^2.7.6"
