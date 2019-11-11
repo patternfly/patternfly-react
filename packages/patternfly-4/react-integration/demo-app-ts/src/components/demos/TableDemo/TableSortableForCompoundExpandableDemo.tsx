@@ -7,14 +7,15 @@ import {
   TableVariant,
   sortable,
   SortByDirection,
+  ICell,
   IRow,
   ISortBy
 } from '@patternfly/react-table';
 
 export interface DemoSortableTableProps {
-  firstColumnRows?: any[];
-  columns?: any;
-  rows?: IRow[];
+  firstColumnRows?: string[];
+  columns?: (ICell | string)[];
+  rows?: (IRow | string[])[];
   sortBy?: ISortBy;
   id?: string;
 }
@@ -32,7 +33,7 @@ export class DemoSortableTable extends React.Component<DemoSortableTableProps> {
     sortBy: {}
   };
 
-  onSort = (_event, index, direction) => {
+  onSort = (_event: React.MouseEvent, index: number, direction: SortByDirection) => {
     const sortedRows = this.state.rows.sort((a, b) => {
       if (a[index] < b[index]) {
         return -1;

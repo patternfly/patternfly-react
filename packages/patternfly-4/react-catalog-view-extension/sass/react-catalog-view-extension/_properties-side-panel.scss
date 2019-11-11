@@ -11,15 +11,13 @@
 }
 
 .properties-side-panel-pf-property-label {
-  color: $color-pf-black-600;
-  font-weight: 300;
-  font-size: 12px;
-  margin: 0;
-  text-transform: uppercase;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  margin: 0 !important;
 }
 
 .properties-side-panel-pf-property-value {
-  font-size: 14px;
+  font-size: 14px !important;
   margin-top: 8px;
   word-break: break-word;
 }

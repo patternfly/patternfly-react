@@ -5,10 +5,16 @@ import {
   TableBody,
   TableProps,
   TableVariant,
+  ICell,
   IRow
 } from '@patternfly/react-table';
 
-export class TableCompactBorderlessRowsDemo extends React.Component<TableProps, { columns: any; rows: IRow[] }> {
+interface TableState {
+  columns: (ICell | string)[];
+  rows: IRow[];
+}
+
+export class TableCompactBorderlessRowsDemo extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
     this.state = {

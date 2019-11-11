@@ -319,7 +319,7 @@ exports[`MastheadCollapse renders properly: MastheadCollapse snapshot 1`] = `
 `;
 
 exports[`MastheadDropdown renders properly: MastheadDropdown snapshot 1`] = `
-<Uncontrolled(Dropdown)
+<ForwardRef
   className=""
   componentClass={[Function]}
   id="app-help-dropdown"
@@ -362,5 +362,5 @@ exports[`MastheadDropdown renders properly: MastheadDropdown snapshot 1`] = `
       About
     </MenuItem>
   </DropdownMenu>
-</Uncontrolled(Dropdown)>
+</ForwardRef>
 `;

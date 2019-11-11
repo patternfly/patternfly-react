@@ -1,11 +1,23 @@
 import * as React from 'react';
-import { Table, TableHeader, TableBody, TableProps, headerCol, IRow } from '@patternfly/react-table';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableProps,
+  headerCol,
+  ICell,
+  IRow,
+  selectable
+} from '@patternfly/react-table';
 import { Checkbox } from '@patternfly/react-core';
 
-export class TableSelectableDemo extends React.Component<
-  TableProps,
-  { columns: any; rows: IRow[]; canSelectAll: boolean }
-> {
+interface TableState {
+  columns: (ICell | string)[];
+  rows: IRow[];
+  canSelectAll: boolean;
+}
+
+export class TableSelectableDemo extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
     this.state = {
@@ -35,8 +47,8 @@ export class TableSelectableDemo extends React.Component<
     this.onSelect = this.onSelect.bind(this);
   }
 
-  onSelect(event, isSelected, rowId) {
-    let rows;
+  onSelect(event: React.MouseEvent, isSelected: boolean, rowId: number) {
+    let rows: IRow[];
     if (rowId === -1) {
       rows = this.state.rows.map(oneRow => {
         oneRow.selected = isSelected;

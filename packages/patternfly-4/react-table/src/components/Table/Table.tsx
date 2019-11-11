@@ -58,7 +58,7 @@ export enum SortByDirection {
   desc = 'desc'
 }
 
-export interface IHeaderRow extends ColumnType {}
+export interface IHeaderRow extends ColumnType { }
 
 export interface IRowData extends IRow {
   disableActions?: boolean;
@@ -91,7 +91,7 @@ export interface IExtraColumnData {
   property?: string;
 }
 
-export interface IExtraData extends IExtraColumnData, IExtraRowData {}
+export interface IExtraData extends IExtraColumnData, IExtraRowData { }
 
 export interface IExtra extends IExtraData {
   rowData?: IRowData;
@@ -128,33 +128,39 @@ export interface IDecorator extends React.HTMLProps<HTMLElement> {
   children?: React.ReactNode;
 }
 
-export type ITransforms = ((
-  label?: IFormatterValueType,
-  rowData?: IRowData,
-  columnIndex?: number,
-  column?: IColumn,
-  property?: string,
-  rowIndex?: number,
-  rowKey?: RowKeyType
-) => { className: string; 'aria-sort': string; children: React.ReactNode })[];
+export type decoratorReturnType = {
+  className?: string;
+  'aria-sort'?: string;
+  children?: React.ReactNode;
+  textCenter?: boolean;
+  component?: string;
+  isVisible?: boolean;
+  title?: string | React.ReactNode;
+  props?: any;
+  scope?: string;
+  parentId?: number;
+  colSpan?: number;
+  id?: React.ReactText;
+}
 
-export type IFormatters = ((
+export type ITransform = ((
+  label?: IFormatterValueType,
+  extra?: IExtra
+) => decoratorReturnType
+);
+
+export type IFormatter = ((
   data?: IFormatterValueType,
-  rowData?: IRowData,
-  columnIndex?: number,
-  column?: IColumn,
-  property?: string,
-  rowIndex?: number,
-  rowKey?: RowKeyType
-) => formatterValueType)[];
+  extra?: IExtra
+) => formatterValueType & decoratorReturnType);
 
 export interface ICell {
   title?: string | React.ReactNode;
-  transforms?: ITransforms;
-  cellTransforms?: ITransforms;
-  columnTransforms?: ITransforms;
-  formatters?: IFormatters;
-  cellFormatters?: IFormatters;
+  transforms?: ITransform[];
+  cellTransforms?: ITransform[];
+  columnTransforms?: ITransform[];
+  formatters?: IFormatter[];
+  cellFormatters?: IFormatter[];
   props?: any;
   data?: any;
   header?: any;

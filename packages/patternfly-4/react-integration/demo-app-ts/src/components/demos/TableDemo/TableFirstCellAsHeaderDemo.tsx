@@ -10,10 +10,16 @@ import {
   TableVariant,
   expandable,
   cellWidth,
+  ICell,
   IRow
 } from '@patternfly/react-table';
 
-export class TableFirstCellAsHeaderDemo extends React.Component<TableProps, { columns: any; rows: IRow[] }> {
+interface TableState {
+  columns: (ICell | string)[];
+  rows: IRow[];
+}
+
+export class TableFirstCellAsHeaderDemo extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
     this.state = {

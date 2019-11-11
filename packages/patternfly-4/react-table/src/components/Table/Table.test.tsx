@@ -11,7 +11,11 @@ import {
   sortable,
   expandable,
   compoundExpand,
-  IRow
+  IRow,
+  OnCollapse,
+  OnExpand,
+  OnSelect,
+  OnSort
 } from './index';
 import { rows, columns, actions } from '../../test-helpers/data-sets';
 import { ColumnsType } from './base';
@@ -48,12 +52,27 @@ describe('Simple table', () => {
 });
 
 test('Sortable table', () => {
-  const onSortCall = () => undefined as any;
-  columns[0] = { ...columns[0], transforms: [sortable] };
+  const onSortCall: OnSort = () => undefined;
+  columns[0] = { ...(columns[0] as object), transforms: [sortable] };
   const view = mount(
     <Table aria-label="Aria labeled" onSort={onSortCall} sortBy={{}} cells={columns} rows={rows}>
       <TableHeader />
       <TableBody />
+    </Table>
+  );
+  expect(view).toMatchSnapshot();
+});
+
+test('Row click table', () => {
+  const rowClickHandler = jest.fn();
+  const view = mount(
+    <Table
+      aria-label="Row click table"
+      cells={columns}
+      rows={rows}
+    >
+      <TableHeader />
+      <TableBody onRowClick={rowClickHandler} />
     </Table>
   );
   expect(view).toMatchSnapshot();
@@ -119,7 +138,7 @@ test('Actions table', () => {
 });
 
 test('Cell header table', () => {
-  columns[0] = { ...columns[0], cellTransforms: [headerCol] };
+  columns[0] = { ...(columns[0] as object), cellTransforms: [headerCol('test-headercol-')] };
   const view = mount(
     <Table aria-label="Aria labeled" cells={columns} rows={rows}>
       <TableHeader />
@@ -134,8 +153,8 @@ test('Collapsible table', () => {
   rows[1] = { ...rows[1], parent: 0 };
   rows[3] = { ...rows[3], isOpen: false };
   rows[4] = { ...rows[4], parent: 3 };
-  columns[0] = { ...columns[0], cellFormatters: [expandable] };
-  const onCollapse = () => undefined as any;
+  columns[0] = { ...(columns[0] as object), cellFormatters: [expandable] };
+  const onCollapse: OnCollapse = () => undefined;
   const view = mount(
     <Table aria-label="Aria labeled" onCollapse={onCollapse} cells={columns} rows={rows}>
       <TableHeader />
@@ -156,7 +175,7 @@ test('Compound Expandable table', () => {
     { isOpen: false, cells: [{ title: '3', props: { isOpen: false } }, { title: '4', props: { isOpen: false } }] },
     { parent: 2, compoundParent: 0, cells: [{ title: 'expanded', props: { colSpan: 2 } }] }
   ];
-  const onExpand = () => undefined as any;
+  const onExpand: OnExpand = () => undefined;
   const view = mount(
     <Table aria-label="Aria labeled" onExpand={onExpand} cells={compoundColumns} rows={compoundRows}>
       <TableHeader />
@@ -170,7 +189,7 @@ test('Collapsible nested table', () => {
   rows[0] = { ...rows[0], isOpen: false };
   rows[1] = { ...rows[1], parent: 0, isOpen: true };
   rows[2] = { ...rows[2], parent: 1 };
-  const onCollapse = () => undefined as any;
+  const onCollapse: OnCollapse = () => undefined;
   const view = mount(
     <Table aria-label="Aria labeled" onCollapse={onCollapse} cells={columns} rows={rows}>
       <TableHeader />
@@ -181,7 +200,7 @@ test('Collapsible nested table', () => {
 });
 
 test('Selectable table', () => {
-  const onSelect = () => undefined as any;
+  const onSelect: OnSelect = () => undefined;
   const view = mount(
     <Table aria-label="Aria labeled" onSelect={onSelect} cells={columns} rows={rows}>
       <TableHeader />
@@ -192,9 +211,9 @@ test('Selectable table', () => {
 });
 
 test('Header width table', () => {
-  columns[0] = { ...columns[0], transforms: [cellWidth(10)] };
-  columns[2] = { ...columns[2], transforms: [cellWidth(30)] };
-  columns[4] = { ...columns[4], transforms: [cellWidth('max')] };
+  columns[0] = { ...(columns[0] as object), transforms: [cellWidth(10)] };
+  columns[2] = { ...(columns[2] as object), transforms: [cellWidth(30)] };
+  columns[4] = { ...(columns[4] as object), transforms: [cellWidth('max')] };
   const view = mount(
     <Table aria-label="Aria labeled" cells={columns} rows={rows}>
       <TableHeader />
@@ -217,7 +236,7 @@ test('Selectable table with selected expandable row', () => {
         parent: 0
       }
     ],
-    onSelect: (f: any) => f
+    onSelect: (e: React.MouseEvent) => e
   };
 
   const view = mount(

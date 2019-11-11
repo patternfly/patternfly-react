@@ -3,9 +3,9 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { CollapseColumn } from '../../CollapseColumn';
 import { ExpandableRowContent } from '../../ExpandableRowContent';
-import { IExtra, IFormatterValueType } from '../../Table';
+import { IExtra, IFormatterValueType, IFormatter, decoratorReturnType } from '../../Table';
 
-export const collapsible = (
+export const collapsible: IFormatter = (
   value: IFormatterValueType,
   { rowIndex, columnIndex, rowData, column, property }: IExtra
 ) => {
@@ -40,7 +40,7 @@ export const collapsible = (
   };
 };
 
-export const expandable = (value: IFormatterValueType, { rowData }: IExtra) =>
+export const expandable: IFormatter = (value: IFormatterValueType, { rowData }: IExtra) =>
   rowData.hasOwnProperty('parent') ? <ExpandableRowContent>{value}</ExpandableRowContent> : value;
 
 export const expandedRow = (colSpan: number) => {
@@ -53,7 +53,7 @@ export const expandedRow = (colSpan: number) => {
         extraParams: { contentId = 'expanded-content' }
       }
     }: IExtra
-  ) =>
+  ): decoratorReturnType =>
     rowData.hasOwnProperty('parent') && {
       // todo: rewrite this logic, it is not type safe
       colSpan: colSpan + (!!rowData.fullWidth as any),

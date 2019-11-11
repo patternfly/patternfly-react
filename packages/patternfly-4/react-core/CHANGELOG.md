@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.120.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.120.7...@patternfly/react-core@3.120.8) (2019-11-08)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.120.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.120.6...@patternfly/react-core@3.120.7) (2019-11-06)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [3.120.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.120.5...@patternfly/react-core@3.120.6) (2019-11-05)
+
+
+### Bug Fixes
+
+* **optionmenu:** remove the i element around selected item svg ([#3238](https://github.com/patternfly/patternfly-react/issues/3238)) ([5991033](https://github.com/patternfly/patternfly-react/commit/5991033126ff429172fcaa345806bd5a59671ef3))
+
+
+
+
+
 ## [3.120.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.120.4...@patternfly/react-core@3.120.5) (2019-11-01)
 
 **Note:** Version bump only for package @patternfly/react-core

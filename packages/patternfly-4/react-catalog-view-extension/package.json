@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-catalog-view-extension",
-  "version": "1.1.5",
+  "version": "1.1.16",
   "description": "This library provides catalog view extensions for PatternFly 4 React.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -40,15 +40,15 @@
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose --source-maps"
   },
   "dependencies": {
-    "@patternfly/patternfly": "2.40.6",
-    "@patternfly/react-core": "^3.120.5",
-    "@patternfly/react-styles": "^3.6.5",
+    "@patternfly/patternfly": "2.40.13",
+    "@patternfly/react-core": "^3.120.8",
+    "@patternfly/react-styles": "^3.6.6",
     "breakjs": "^1.0.0",
     "classnames": "^2.2.5",
     "css-element-queries": "^1.0.1",
     "patternfly": "^3.59.4",
-    "patternfly-react": "^2.39.4",
-    "react-bootstrap": "^0.32.1",
+    "patternfly-react": "^2.39.7",
+    "react-bootstrap": "^0.33.0",
     "react-click-outside": "^3.0.1",
     "react-diff-view": "^1.8.1",
     "react-ellipsis-with-tooltip": "^1.0.8",
@@ -64,16 +64,14 @@
     "@babel/plugin-transform-typescript": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@types/lodash": "^4.14.138",
-    "@types/victory": "^31.0.22",
+    "@types/react": "^16.4.0",
+    "@types/react-dom": "^16.4.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-typescript-to-proptypes": "^0.17.1",
     "node-sass": "^4.12.0",
-    "react-bootstrap-typeahead": "^3.4.1",
     "rimraf": "^2.6.2",
     "shx": "^0.3.2",
-    "typescript": "3.4.5",
-    "xterm": "^3.3.0"
+    "typescript": "3.4.5"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",

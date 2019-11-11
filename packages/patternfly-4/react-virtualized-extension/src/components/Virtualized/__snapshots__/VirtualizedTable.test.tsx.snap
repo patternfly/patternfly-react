@@ -2700,6 +2700,7 @@ exports[`Simple Actions table 1`] = `
       },
       Object {
         "isSeparator": true,
+        "onClick": null,
       },
       Object {
         "onClick": [Function],
@@ -2839,6 +2840,7 @@ exports[`Simple Actions table 1`] = `
           },
           Object {
             "isSeparator": true,
+            "onClick": null,
           },
           Object {
             "onClick": [Function],
@@ -2978,6 +2980,7 @@ exports[`Simple Actions table 1`] = `
           },
           Object {
             "isSeparator": true,
+            "onClick": null,
           },
           Object {
             "onClick": [Function],
@@ -3147,6 +3150,7 @@ exports[`Simple Actions table 1`] = `
                   },
                   Object {
                     "isSeparator": true,
+                    "onClick": null,
                   },
                   Object {
                     "onClick": [Function],
@@ -3208,6 +3212,7 @@ exports[`Simple Actions table 1`] = `
                   },
                   Object {
                     "isSeparator": true,
+                    "onClick": null,
                   },
                   Object {
                     "onClick": [Function],
@@ -3268,6 +3273,7 @@ exports[`Simple Actions table 1`] = `
                   },
                   Object {
                     "isSeparator": true,
+                    "onClick": null,
                   },
                   Object {
                     "onClick": [Function],
@@ -3328,6 +3334,7 @@ exports[`Simple Actions table 1`] = `
                   },
                   Object {
                     "isSeparator": true,
+                    "onClick": null,
                   },
                   Object {
                     "onClick": [Function],
@@ -3388,6 +3395,7 @@ exports[`Simple Actions table 1`] = `
                   },
                   Object {
                     "isSeparator": true,
+                    "onClick": null,
                   },
                   Object {
                     "onClick": [Function],
@@ -3449,6 +3457,7 @@ exports[`Simple Actions table 1`] = `
                   },
                   Object {
                     "isSeparator": true,
+                    "onClick": null,
                   },
                   Object {
                     "onClick": [Function],
@@ -3543,6 +3552,7 @@ exports[`Simple Actions table 1`] = `
                             },
                             Object {
                               "isSeparator": true,
+                              "onClick": null,
                             },
                             Object {
                               "onClick": [Function],
@@ -3604,6 +3614,7 @@ exports[`Simple Actions table 1`] = `
                             },
                             Object {
                               "isSeparator": true,
+                              "onClick": null,
                             },
                             Object {
                               "onClick": [Function],
@@ -3664,6 +3675,7 @@ exports[`Simple Actions table 1`] = `
                             },
                             Object {
                               "isSeparator": true,
+                              "onClick": null,
                             },
                             Object {
                               "onClick": [Function],
@@ -3724,6 +3736,7 @@ exports[`Simple Actions table 1`] = `
                             },
                             Object {
                               "isSeparator": true,
+                              "onClick": null,
                             },
                             Object {
                               "onClick": [Function],
@@ -3784,6 +3797,7 @@ exports[`Simple Actions table 1`] = `
                             },
                             Object {
                               "isSeparator": true,
+                              "onClick": null,
                             },
                             Object {
                               "onClick": [Function],
@@ -3845,6 +3859,7 @@ exports[`Simple Actions table 1`] = `
                             },
                             Object {
                               "isSeparator": true,
+                              "onClick": null,
                             },
                             Object {
                               "onClick": [Function],
@@ -3939,6 +3954,7 @@ exports[`Simple Actions table 1`] = `
                                 },
                                 Object {
                                   "isSeparator": true,
+                                  "onClick": null,
                                 },
                                 Object {
                                   "onClick": [Function],
@@ -4000,6 +4016,7 @@ exports[`Simple Actions table 1`] = `
                                 },
                                 Object {
                                   "isSeparator": true,
+                                  "onClick": null,
                                 },
                                 Object {
                                   "onClick": [Function],
@@ -4060,6 +4077,7 @@ exports[`Simple Actions table 1`] = `
                                 },
                                 Object {
                                   "isSeparator": true,
+                                  "onClick": null,
                                 },
                                 Object {
                                   "onClick": [Function],
@@ -4120,6 +4138,7 @@ exports[`Simple Actions table 1`] = `
                                 },
                                 Object {
                                   "isSeparator": true,
+                                  "onClick": null,
                                 },
                                 Object {
                                   "onClick": [Function],
@@ -4180,6 +4199,7 @@ exports[`Simple Actions table 1`] = `
                                 },
                                 Object {
                                   "isSeparator": true,
+                                  "onClick": null,
                                 },
                                 Object {
                                   "onClick": [Function],
@@ -4241,6 +4261,7 @@ exports[`Simple Actions table 1`] = `
                                 },
                                 Object {
                                   "isSeparator": true,
+                                  "onClick": null,
                                 },
                                 Object {
                                   "onClick": [Function],

@@ -240,26 +240,6 @@ exports[`optionsMenu expanded 1`] = `
                             type="button"
                           >
                             Name
-                            <i
-                              aria-hidden="true"
-                              class="pf-c-options-menu__menu-item-icon"
-                              hidden=""
-                            >
-                              <svg
-                                aria-hidden="true"
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style="vertical-align: -0.125em;"
-                                viewBox="0 0 512 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                  transform=""
-                                />
-                              </svg>
-                            </i>
                           </button>
                         </li>
                         <li
@@ -273,26 +253,6 @@ exports[`optionsMenu expanded 1`] = `
                             type="button"
                           >
                             Date
-                            <i
-                              aria-hidden="true"
-                              class="pf-c-options-menu__menu-item-icon"
-                              hidden=""
-                            >
-                              <svg
-                                aria-hidden="true"
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style="vertical-align: -0.125em;"
-                                viewBox="0 0 512 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                  transform=""
-                                />
-                              </svg>
-                            </i>
                           </button>
                         </li>
                         <li
@@ -308,26 +268,6 @@ exports[`optionsMenu expanded 1`] = `
                             type="button"
                           >
                             Disabled
-                            <i
-                              aria-hidden="true"
-                              class="pf-c-options-menu__menu-item-icon"
-                              hidden=""
-                            >
-                              <svg
-                                aria-hidden="true"
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style="vertical-align: -0.125em;"
-                                viewBox="0 0 512 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                  transform=""
-                                />
-                              </svg>
-                            </i>
                           </button>
                         </li>
                         <li
@@ -341,26 +281,6 @@ exports[`optionsMenu expanded 1`] = `
                             type="button"
                           >
                             Size
-                            <i
-                              aria-hidden="true"
-                              class="pf-c-options-menu__menu-item-icon"
-                              hidden=""
-                            >
-                              <svg
-                                aria-hidden="true"
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style="vertical-align: -0.125em;"
-                                viewBox="0 0 512 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                  transform=""
-                                />
-                              </svg>
-                            </i>
                           </button>
                         </li>
                       </ul>
@@ -388,26 +308,6 @@ exports[`optionsMenu expanded 1`] = `
                             type="button"
                           >
                             Ascending
-                            <i
-                              aria-hidden="true"
-                              class="pf-c-options-menu__menu-item-icon"
-                              hidden=""
-                            >
-                              <svg
-                                aria-hidden="true"
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style="vertical-align: -0.125em;"
-                                viewBox="0 0 512 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                  transform=""
-                                />
-                              </svg>
-                            </i>
                           </button>
                         </li>
                         <li
@@ -421,26 +321,6 @@ exports[`optionsMenu expanded 1`] = `
                             type="button"
                           >
                             Descending
-                            <i
-                              aria-hidden="true"
-                              class="pf-c-options-menu__menu-item-icon"
-                              hidden=""
-                            >
-                              <svg
-                                aria-hidden="true"
-                                fill="currentColor"
-                                height="1em"
-                                role="img"
-                                style="vertical-align: -0.125em;"
-                                viewBox="0 0 512 512"
-                                width="1em"
-                              >
-                                <path
-                                  d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                  transform=""
-                                />
-                              </svg>
-                            </i>
                           </button>
                         </li>
                       </ul>
@@ -518,26 +398,6 @@ exports[`optionsMenu expanded 1`] = `
                               type="button"
                             >
                               Name
-                              <i
-                                aria-hidden="true"
-                                class="pf-c-options-menu__menu-item-icon"
-                                hidden=""
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  fill="currentColor"
-                                  height="1em"
-                                  role="img"
-                                  style="vertical-align: -0.125em;"
-                                  viewBox="0 0 512 512"
-                                  width="1em"
-                                >
-                                  <path
-                                    d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                    transform=""
-                                  />
-                                </svg>
-                              </i>
                             </button>
                           </li>
                           <li
@@ -551,26 +411,6 @@ exports[`optionsMenu expanded 1`] = `
                               type="button"
                             >
                               Date
-                              <i
-                                aria-hidden="true"
-                                class="pf-c-options-menu__menu-item-icon"
-                                hidden=""
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  fill="currentColor"
-                                  height="1em"
-                                  role="img"
-                                  style="vertical-align: -0.125em;"
-                                  viewBox="0 0 512 512"
-                                  width="1em"
-                                >
-                                  <path
-                                    d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                    transform=""
-                                  />
-                                </svg>
-                              </i>
                             </button>
                           </li>
                           <li
@@ -586,26 +426,6 @@ exports[`optionsMenu expanded 1`] = `
                               type="button"
                             >
                               Disabled
-                              <i
-                                aria-hidden="true"
-                                class="pf-c-options-menu__menu-item-icon"
-                                hidden=""
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  fill="currentColor"
-                                  height="1em"
-                                  role="img"
-                                  style="vertical-align: -0.125em;"
-                                  viewBox="0 0 512 512"
-                                  width="1em"
-                                >
-                                  <path
-                                    d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                    transform=""
-                                  />
-                                </svg>
-                              </i>
                             </button>
                           </li>
                           <li
@@ -619,26 +439,6 @@ exports[`optionsMenu expanded 1`] = `
                               type="button"
                             >
                               Size
-                              <i
-                                aria-hidden="true"
-                                class="pf-c-options-menu__menu-item-icon"
-                                hidden=""
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  fill="currentColor"
-                                  height="1em"
-                                  role="img"
-                                  style="vertical-align: -0.125em;"
-                                  viewBox="0 0 512 512"
-                                  width="1em"
-                                >
-                                  <path
-                                    d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                    transform=""
-                                  />
-                                </svg>
-                              </i>
                             </button>
                           </li>
                         </ul>
@@ -666,26 +466,6 @@ exports[`optionsMenu expanded 1`] = `
                               type="button"
                             >
                               Ascending
-                              <i
-                                aria-hidden="true"
-                                class="pf-c-options-menu__menu-item-icon"
-                                hidden=""
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  fill="currentColor"
-                                  height="1em"
-                                  role="img"
-                                  style="vertical-align: -0.125em;"
-                                  viewBox="0 0 512 512"
-                                  width="1em"
-                                >
-                                  <path
-                                    d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                    transform=""
-                                  />
-                                </svg>
-                              </i>
                             </button>
                           </li>
                           <li
@@ -699,26 +479,6 @@ exports[`optionsMenu expanded 1`] = `
                               type="button"
                             >
                               Descending
-                              <i
-                                aria-hidden="true"
-                                class="pf-c-options-menu__menu-item-icon"
-                                hidden=""
-                              >
-                                <svg
-                                  aria-hidden="true"
-                                  fill="currentColor"
-                                  height="1em"
-                                  role="img"
-                                  style="vertical-align: -0.125em;"
-                                  viewBox="0 0 512 512"
-                                  width="1em"
-                                >
-                                  <path
-                                    d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                    transform=""
-                                  />
-                                </svg>
-                              </i>
                             </button>
                           </li>
                         </ul>
@@ -800,26 +560,6 @@ exports[`optionsMenu expanded 1`] = `
                                 type="button"
                               >
                                 Name
-                                <i
-                                  aria-hidden="true"
-                                  class="pf-c-options-menu__menu-item-icon"
-                                  hidden=""
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    fill="currentColor"
-                                    height="1em"
-                                    role="img"
-                                    style="vertical-align: -0.125em;"
-                                    viewBox="0 0 512 512"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                      transform=""
-                                    />
-                                  </svg>
-                                </i>
                               </button>
                             </li>
                             <li
@@ -833,26 +573,6 @@ exports[`optionsMenu expanded 1`] = `
                                 type="button"
                               >
                                 Date
-                                <i
-                                  aria-hidden="true"
-                                  class="pf-c-options-menu__menu-item-icon"
-                                  hidden=""
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    fill="currentColor"
-                                    height="1em"
-                                    role="img"
-                                    style="vertical-align: -0.125em;"
-                                    viewBox="0 0 512 512"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                      transform=""
-                                    />
-                                  </svg>
-                                </i>
                               </button>
                             </li>
                             <li
@@ -868,26 +588,6 @@ exports[`optionsMenu expanded 1`] = `
                                 type="button"
                               >
                                 Disabled
-                                <i
-                                  aria-hidden="true"
-                                  class="pf-c-options-menu__menu-item-icon"
-                                  hidden=""
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    fill="currentColor"
-                                    height="1em"
-                                    role="img"
-                                    style="vertical-align: -0.125em;"
-                                    viewBox="0 0 512 512"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                      transform=""
-                                    />
-                                  </svg>
-                                </i>
                               </button>
                             </li>
                             <li
@@ -901,26 +601,6 @@ exports[`optionsMenu expanded 1`] = `
                                 type="button"
                               >
                                 Size
-                                <i
-                                  aria-hidden="true"
-                                  class="pf-c-options-menu__menu-item-icon"
-                                  hidden=""
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    fill="currentColor"
-                                    height="1em"
-                                    role="img"
-                                    style="vertical-align: -0.125em;"
-                                    viewBox="0 0 512 512"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                      transform=""
-                                    />
-                                  </svg>
-                                </i>
                               </button>
                             </li>
                           </ul>
@@ -948,26 +628,6 @@ exports[`optionsMenu expanded 1`] = `
                                 type="button"
                               >
                                 Ascending
-                                <i
-                                  aria-hidden="true"
-                                  class="pf-c-options-menu__menu-item-icon"
-                                  hidden=""
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    fill="currentColor"
-                                    height="1em"
-                                    role="img"
-                                    style="vertical-align: -0.125em;"
-                                    viewBox="0 0 512 512"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                      transform=""
-                                    />
-                                  </svg>
-                                </i>
                               </button>
                             </li>
                             <li
@@ -981,26 +641,6 @@ exports[`optionsMenu expanded 1`] = `
                                 type="button"
                               >
                                 Descending
-                                <i
-                                  aria-hidden="true"
-                                  class="pf-c-options-menu__menu-item-icon"
-                                  hidden=""
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    fill="currentColor"
-                                    height="1em"
-                                    role="img"
-                                    style="vertical-align: -0.125em;"
-                                    viewBox="0 0 512 512"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                      transform=""
-                                    />
-                                  </svg>
-                                </i>
                               </button>
                             </li>
                           </ul>
@@ -1131,38 +771,6 @@ exports[`optionsMenu expanded 1`] = `
                               type="button"
                             >
                               Name
-                              <i
-                                aria-hidden={true}
-                                className="pf-c-options-menu__menu-item-icon"
-                                hidden={true}
-                              >
-                                <CheckIcon
-                                  color="currentColor"
-                                  noVerticalAlign={false}
-                                  size="sm"
-                                  title={null}
-                                >
-                                  <svg
-                                    aria-hidden={true}
-                                    aria-labelledby={null}
-                                    fill="currentColor"
-                                    height="1em"
-                                    role="img"
-                                    style={
-                                      Object {
-                                        "verticalAlign": "-0.125em",
-                                      }
-                                    }
-                                    viewBox="0 0 512 512"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                      transform=""
-                                    />
-                                  </svg>
-                                </CheckIcon>
-                              </i>
                             </button>
                           </li>
                         </InternalDropdownItem>
@@ -1215,38 +823,6 @@ exports[`optionsMenu expanded 1`] = `
                               type="button"
                             >
                               Date
-                              <i
-                                aria-hidden={true}
-                                className="pf-c-options-menu__menu-item-icon"
-                                hidden={true}
-                              >
-                                <CheckIcon
-                                  color="currentColor"
-                                  noVerticalAlign={false}
-                                  size="sm"
-                                  title={null}
-                                >
-                                  <svg
-                                    aria-hidden={true}
-                                    aria-labelledby={null}
-                                    fill="currentColor"
-                                    height="1em"
-                                    role="img"
-                                    style={
-                                      Object {
-                                        "verticalAlign": "-0.125em",
-                                      }
-                                    }
-                                    viewBox="0 0 512 512"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                      transform=""
-                                    />
-                                  </svg>
-                                </CheckIcon>
-                              </i>
                             </button>
                           </li>
                         </InternalDropdownItem>
@@ -1304,38 +880,6 @@ exports[`optionsMenu expanded 1`] = `
                               type="button"
                             >
                               Disabled
-                              <i
-                                aria-hidden={true}
-                                className="pf-c-options-menu__menu-item-icon"
-                                hidden={true}
-                              >
-                                <CheckIcon
-                                  color="currentColor"
-                                  noVerticalAlign={false}
-                                  size="sm"
-                                  title={null}
-                                >
-                                  <svg
-                                    aria-hidden={true}
-                                    aria-labelledby={null}
-                                    fill="currentColor"
-                                    height="1em"
-                                    role="img"
-                                    style={
-                                      Object {
-                                        "verticalAlign": "-0.125em",
-                                      }
-                                    }
-                                    viewBox="0 0 512 512"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                      transform=""
-                                    />
-                                  </svg>
-                                </CheckIcon>
-                              </i>
                             </button>
                           </li>
                         </InternalDropdownItem>
@@ -1388,38 +932,6 @@ exports[`optionsMenu expanded 1`] = `
                               type="button"
                             >
                               Size
-                              <i
-                                aria-hidden={true}
-                                className="pf-c-options-menu__menu-item-icon"
-                                hidden={true}
-                              >
-                                <CheckIcon
-                                  color="currentColor"
-                                  noVerticalAlign={false}
-                                  size="sm"
-                                  title={null}
-                                >
-                                  <svg
-                                    aria-hidden={true}
-                                    aria-labelledby={null}
-                                    fill="currentColor"
-                                    height="1em"
-                                    role="img"
-                                    style={
-                                      Object {
-                                        "verticalAlign": "-0.125em",
-                                      }
-                                    }
-                                    viewBox="0 0 512 512"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                      transform=""
-                                    />
-                                  </svg>
-                                </CheckIcon>
-                              </i>
                             </button>
                           </li>
                         </InternalDropdownItem>
@@ -1496,38 +1008,6 @@ exports[`optionsMenu expanded 1`] = `
                               type="button"
                             >
                               Ascending
-                              <i
-                                aria-hidden={true}
-                                className="pf-c-options-menu__menu-item-icon"
-                                hidden={true}
-                              >
-                                <CheckIcon
-                                  color="currentColor"
-                                  noVerticalAlign={false}
-                                  size="sm"
-                                  title={null}
-                                >
-                                  <svg
-                                    aria-hidden={true}
-                                    aria-labelledby={null}
-                                    fill="currentColor"
-                                    height="1em"
-                                    role="img"
-                                    style={
-                                      Object {
-                                        "verticalAlign": "-0.125em",
-                                      }
-                                    }
-                                    viewBox="0 0 512 512"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                      transform=""
-                                    />
-                                  </svg>
-                                </CheckIcon>
-                              </i>
                             </button>
                           </li>
                         </InternalDropdownItem>
@@ -1580,38 +1060,6 @@ exports[`optionsMenu expanded 1`] = `
                               type="button"
                             >
                               Descending
-                              <i
-                                aria-hidden={true}
-                                className="pf-c-options-menu__menu-item-icon"
-                                hidden={true}
-                              >
-                                <CheckIcon
-                                  color="currentColor"
-                                  noVerticalAlign={false}
-                                  size="sm"
-                                  title={null}
-                                >
-                                  <svg
-                                    aria-hidden={true}
-                                    aria-labelledby={null}
-                                    fill="currentColor"
-                                    height="1em"
-                                    role="img"
-                                    style={
-                                      Object {
-                                        "verticalAlign": "-0.125em",
-                                      }
-                                    }
-                                    viewBox="0 0 512 512"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
-                                      transform=""
-                                    />
-                                  </svg>
-                                </CheckIcon>
-                              </i>
                             </button>
                           </li>
                         </InternalDropdownItem>
