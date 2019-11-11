@@ -31,6 +31,15 @@ module.exports = {
         ],
       }
     },
+    // Source shared pages from the theme
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'shared', // This goes in URLs
+        // TODO: prettier way to do this
+        path: require.resolve('gatsby-theme-patternfly-org').replace('index.js', 'pages')
+      }
+    },
     // Source component documentation
     {
       resolve: 'gatsby-source-filesystem',

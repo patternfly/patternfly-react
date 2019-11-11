@@ -11,6 +11,7 @@
     "clean": "rimraf .cache public static/assets static/base.css",
     "clean:mdx": "rimraf .cache/caches/gatsby-mdx",
     "develop": "gatsby develop",
+    "gatsby": "gatsby",
     "serve": "gatsby serve --prefix-paths"
   },
   "dependencies": {
