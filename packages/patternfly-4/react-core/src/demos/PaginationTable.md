@@ -26,7 +26,8 @@ import {
   EmptyStateIcon,
   EmptyStateBody,
   EmptyStateSecondaryActions,
-  Bullseye 
+  Bullseye,
+  Radio 
 } from '@patternfly/react-core';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
@@ -39,8 +40,16 @@ class ComplexPaginationTableDemo extends React.Component {
       total: 100,
       page: 1,
       error: null,
-      loading: true
+      loading: true,
+      displayState: "withData",
     };
+    
+    this.handleDisplayChange = this.handleDisplayChange.bind(this)
+  }
+  
+  handleDisplayChange(_, event) {
+    const { value } = event.currentTarget;
+    this.setState({ displayState: value })
   }
 
   fetch(page, perPage) {
@@ -53,6 +62,37 @@ class ComplexPaginationTableDemo extends React.Component {
 
   componentDidMount() {
     this.fetch(this.state.page, this.state.perPage);
+  }
+  
+  renderDisplayStateRadio() {
+    return (
+      <React.Fragment>
+        <Radio
+          isChecked={this.state.displayState === "withData"}
+          name="withData"
+          onChange={this.handleDisplayChange}
+          label="Display with data"
+          id="withData"
+          value="withData"
+        />
+        <Radio
+          isChecked={this.state.displayState === "noData"}
+          name="noData"
+          onChange={this.handleDisplayChange}
+          label="Display with no data"
+          id="noData"
+          value="noData"
+        />
+        <Radio
+          isChecked={this.state.displayState === "loading"}
+          name="loading"
+          onChange={this.handleDisplayChange}
+          label="Display loading data"
+          id="loading"
+          value="loading"
+        />
+      </React.Fragment>
+    )
   }
 
   renderPagination(variant = 'top') {
@@ -70,8 +110,8 @@ class ComplexPaginationTableDemo extends React.Component {
   }
 
   render() {
-    const { loading, res } = this.state;
-    if (res.length === 0) {
+    const { loading, res, displayState } = this.state;
+    if (res.length === 0 || displayState === "noData") {
       const rows = [{
         heightAuto: true,
         cells: [
@@ -96,7 +136,7 @@ class ComplexPaginationTableDemo extends React.Component {
       
       return (
         <React.Fragment>
-          {this.renderPagination()}
+          {this.renderDisplayStateRadio()}
           <Table cells={['Title', 'Body']} rows={rows} aria-label="Pagination Table Demo">
             <TableHeader />
             <TableBody />
@@ -104,16 +144,18 @@ class ComplexPaginationTableDemo extends React.Component {
         </React.Fragment>
       );
     }
+    
     return (
       <React.Fragment>
+        {this.renderDisplayStateRadio()}
         {this.renderPagination()}
-        {!loading && (
+        {!loading && displayState === "withData" && (
           <Table cells={['Title', 'Body']} rows={res.map(post => [post.title, post.body])} aria-label="Pagination Table Demo">
             <TableHeader />
             <TableBody />
           </Table>
         )}
-        {loading && <center><Spinner size="xl"/></center>}
+        {(loading || displayState === "loading") && <center><Spinner size="xl"/></center>}
       </React.Fragment>
     );
   }
