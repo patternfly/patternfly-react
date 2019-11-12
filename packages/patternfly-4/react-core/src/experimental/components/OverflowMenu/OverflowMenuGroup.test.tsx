@@ -12,7 +12,6 @@ describe('OverflowMenuGroup', () => {
       </OverflowMenuContext.Provider>
     );
     expect(view.find(`.${styles.overflowMenuGroup}`).length).toBe(1);
-    expect(view.find(`.${styles.modifiers.persistent}`).length).toBe(1);
     expect(view).toMatchSnapshot();
   });
 
@@ -23,7 +22,6 @@ describe('OverflowMenuGroup', () => {
       </OverflowMenuContext.Provider>
     );
     expect(view.find(`.${styles.overflowMenuGroup}`).length).toBe(0);
-    expect(view.find(`.${styles.modifiers.persistent}`).length).toBe(0);
     expect(view).toMatchSnapshot();
   });
 

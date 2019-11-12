@@ -1,11 +1,24 @@
 import * as React from 'react';
-import { Table, TableHeader, TableBody, TableProps, compoundExpand, IRow, IRowCell } from '@patternfly/react-table';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableProps,
+  compoundExpand,
+  IRow,
+  ICell
+} from '@patternfly/react-table';
 
 import { CodeBranchIcon, CodeIcon, CubeIcon } from '@patternfly/react-icons';
 
 import { DemoSortableTable } from './TableSortableForCompoundExpandableDemo';
 
-export class TableCompoundExpandableDemo extends React.Component<TableProps, { columns: any; rows: any[] }> {
+interface TableState {
+  columns: (ICell | string)[];
+  rows: IRow[];
+}
+
+export class TableCompoundExpandableDemo extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
     this.state = {
@@ -186,23 +199,30 @@ export class TableCompoundExpandableDemo extends React.Component<TableProps, { c
     this.onExpand = this.onExpand.bind(this);
   }
 
-  onExpand(event, rowIndex, colIndex, isOpen, rowData, extraData) {
-    const { rows } = this.state;
+  onExpand(
+    event: React.MouseEvent,
+    rowIndex: number,
+    colIndex: number,
+    isOpen: boolean
+    ) {
+    const newRows = Array.from(this.state.rows);
+    const rowCells = newRows[rowIndex].cells;
+
     if (!isOpen) {
       // set all other expanded cells false in this row if we are expanding
-      rows[rowIndex].cells.forEach(cell => {
+      (rowCells as ICell[]).forEach(cell => {
         if (cell.props) {
           cell.props.isOpen = false;
         }
       });
-      rows[rowIndex].cells[colIndex].props.isOpen = true;
-      rows[rowIndex].isOpen = true;
+      (rowCells as ICell[])[colIndex].props.isOpen = true;
+      newRows[rowIndex].isOpen = true;
     } else {
-      rows[rowIndex].cells[colIndex].props.isOpen = false;
-      rows[rowIndex].isOpen = rows[rowIndex].cells.some(cell => cell.props && cell.props.isOpen);
+      (rowCells as ICell[])[colIndex].props.isOpen = false;
+      newRows[rowIndex].isOpen = (rowCells as ICell[]).some(cell => cell.props && cell.props.isOpen);
     }
     this.setState({
-      rows
+      rows: newRows
     });
   }
 

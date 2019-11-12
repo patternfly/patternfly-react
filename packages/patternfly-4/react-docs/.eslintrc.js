@@ -1,52 +1,11 @@
-// We need this file to disable gatsby's default webpack eslintrc
-// which will complain when we `import { css } from '@patternfly/react-styles';`
-const path = require('path');
-
 module.exports = {
-  root: true,
-  extends: ['plugin:patternfly-react/recommended'],
-  plugins: ['react'],
-  rules: {
-    'import/first': 'off'
-  },
-  overrides: [
-    {
-      files: ['**/*.js'],
-      rules: {
-        'import/no-unresolved': [
-          'error',
-          {
-            ignore: [
-              '@patternfly-safe/react-core',
-              '@patternfly-safe/react-icons',
-              '@patternfly-safe/react-tokens',
-              '@patternfly/react-topology',
-              '@patternfly-safe/patternfly/patternfly.css',
-              '@patternfly-safe/patternfly/components/Drawer/drawer.css',
-              '@patternfly-safe/patternfly/components/Spinner/spinner.css',
-              '@patternfly-safe/patternfly/components/OverflowMenu/overflow-menu.css'
-            ]
-          }
-        ],
-        'import/no-extraneous-dependencies': 'off',
-        'import/extensions': 'off'
-      }
-    }
-  ],
-  settings: {
-    'import/resolver': {
-      webpack: {
-        config: {
-          resolve: {
-            modules: [
-              path.resolve(__dirname, './'),
-              path.resolve(__dirname, './node_modules'),
-              path.resolve(__dirname, '../../'),
-              path.resolve(__dirname, '../../node_modules')
-            ]
-          }
-        }
-      }
-    }
-  }
-};
+ /* For now, don't lint as we get errors from compiled JS like:
+  *  packages/patternfly-4/react-table/dist/esm/components/Table/CollapseColumn.js
+  *  3:23  warning  '_extends' is a function                  no-func-assign
+  *  9:1   error    Import in body of module; reorder to top  import/first
+  * 10:1   error    Import in body of module; reorder to top  import/first
+  * 11:1   error    Import in body of module; reorder to top  import/first
+  * 12:1   error    Import in body of module; reorder to top  import/first
+  * 13:1   error    Import in body of module; reorder to top  import/first
+  */
+}

@@ -1,30 +1,31 @@
 ---
-title: 'Threshold'
+title: 'Threshold chart'
 section: 'charts'
 typescript: true
-propComponents:
-  [
-    'Chart',
-    'ChartAreaProps',
-    'ChartAxis',
-    'ChartGroup',
-    'ChartLegend',
-    'ChartThreshold',
-    'ChartVoronoiContainer',
-  ]
+propComponents: [
+  'Chart',
+  'ChartAxis',
+  'ChartGroup',
+  'ChartThreshold',
+  'ChartVoronoiContainer'
+]
+hideDarkMode: true
 ---
 
 import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLegend, ChartThreshold, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer } from '@patternfly/react-charts';
 import '@patternfly/patternfly/patternfly-charts.css';
-import './chart-threshold.scss';
+import {
+  chart_color_blue_300,
+  chart_color_orange_300
+} from '@patternfly/react-tokens';
 
+## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
-PatternFly React charts are based on the [Victory chart](https://formidable.com/open-source/victory/docs/victory-chart/) library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
+PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
 
-## Multi-color, area chart with threshold indicators and responsive container
-
-```js
+## Examples
+```js title=Multi--color-(unordered)-with-responsive-container
 import React from 'react';
 import {
   Chart,
@@ -35,6 +36,10 @@ import {
   ChartThreshold,
   ChartThemeColor
 } from '@patternfly/react-charts';
+import {
+  chart_color_blue_300,
+  chart_color_orange_300,
+} from '@patternfly/react-tokens';
 
 class MultiColorChart extends React.Component {
   constructor(props) {
@@ -65,7 +70,7 @@ class MultiColorChart extends React.Component {
 
     return (
       <div ref={this.containerRef}>
-        <div className="threshold-chart-threshold-bottom-responsive">
+        <div style={{ height: '250px' }}>
           <Chart
             ariaDesc="Average number of pets"
             ariaTitle="Area chart example"
@@ -83,11 +88,11 @@ class MultiColorChart extends React.Component {
                   { name: 'Birds' },
                   {
                     name: 'Cats Threshold',
-                    symbol: { fill: ChartThemeColor.blue, type: 'threshold' }
+                    symbol: { fill: chart_color_blue_300.value, type: 'threshold' }
                   },
                   {
                     name: 'Birds Threshold',
-                    symbol: { fill: ChartThemeColor.orange, type: 'threshold' }
+                    symbol: { fill: chart_color_orange_300.value, type: 'threshold' }
                   }
                 ]}
                 itemsPerRow={itemsPerRow}
@@ -126,25 +131,33 @@ class MultiColorChart extends React.Component {
                 ]}
                 interpolation="basis"
               />
-              <ChartThreshold
-                data={[
-                  { name: 'Cats Threshold', x: 0, y: 4 },
-                  { name: 'Cats Threshold', x: 3, y: 4 },
-                  { name: 'Cats Threshold', x: 3, y: 6 },
-                  { name: 'Cats Threshold', x: 5, y: 6 }
-                ]}
-                themeColor={ChartThemeColor.blue}
-              />
-              <ChartThreshold
-                data={[
-                  { name: 'Birds Threshold', x: 0, y: 2 },
-                  { name: 'Birds Threshold', x: 2, y: 2 },
-                  { name: 'Birds Threshold', x: 2, y: 3 },
-                  { name: 'Birds Threshold', x: 5, y: 3 }
-                ]}
-                themeColor={ChartThemeColor.orange}
-              />
             </ChartGroup>
+            <ChartThreshold
+              data={[
+                { name: 'Cats Threshold', x: 0, y: 4 },
+                { name: 'Cats Threshold', x: 3, y: 4 },
+                { name: 'Cats Threshold', x: 3, y: 6 },
+                { name: 'Cats Threshold', x: 5, y: 6 }
+              ]}
+              style={{
+                data: {
+                  stroke: chart_color_blue_300.value
+                }                
+              }}
+            />
+            <ChartThreshold
+              data={[
+                { name: 'Birds Threshold', x: 0, y: 2 },
+                { name: 'Birds Threshold', x: 2, y: 2 },
+                { name: 'Birds Threshold', x: 2, y: 3 },
+                { name: 'Birds Threshold', x: 5, y: 3 }
+              ]}
+              style={{
+                data: {
+                  stroke: chart_color_orange_300.value
+                }             
+              }}
+            />
           </Chart>
         </div>
       </div>
@@ -153,18 +166,20 @@ class MultiColorChart extends React.Component {
 }
 ```
 
-## Tips
+## Documentation
+### Tips
+- See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
+- For single data points or zero values, you may want to set the `domain` prop
+- `ChartLegend` may be used as a standalone component, instead of using `legendData`
 
-- For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
-- `ChartLegend` may be used as a standalone component, instead of using `legendData` and `legendPosition`
-
-## Docs
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
- - For `Chart` props, see <a href="https://formidable.com/open-source/victory/docs/victory-chart" target="_blank">VictoryChart</a>
- - For `ChartArea` props, see <a href="https://formidable.com/open-source/victory/docs/victory-area" target="_blank">VictoryArea</a>
- - For `ChartAxis` props, see <a href="https://formidable.com/open-source/victory/docs/victory-axis" target="_blank">VictoryAxis</a>
- - For `ChartGroup` props, see <a href="https://formidable.com/open-source/victory/docs/victory-group" target="_blank">VictoryGroup</a>
- - For `ChartLegend` props, see <a href="https://formidable.com/open-source/victory/docs/victory-legend" target="_blank">VictoryLegend</a>
- - For `ChartVoronoiContainer` props, see <a href="https://formidable.com/open-source/victory/docs/victory-voronoi-container" target="_blank">VictoryVoronoiContainer</a>
+ - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)
+ - For `ChartArea` props, see [VictoryArea](https://formidable.com/open-source/victory/docs/victory-area)
+ - For `ChartAxis` props, see [VictoryAxis](https://formidable.com/open-source/victory/docs/victory-axis)
+ - For `ChartGroup` props, see [VictoryGroup](https://formidable.com/open-source/victory/docs/victory-group)
+ - For `ChartLegend` props, see [VictoryLegend](https://formidable.com/open-source/victory/docs/victory-legend)
+ - For `ChartThreshold` props, see [VictoryLine](https://formidable.com/open-source/victory/docs/victory-line)
+ - For `ChartVoronoiContainer` props, see [VictoryVoronoiContainer](https://formidable.com/open-source/victory/docs/victory-voronoi-container)

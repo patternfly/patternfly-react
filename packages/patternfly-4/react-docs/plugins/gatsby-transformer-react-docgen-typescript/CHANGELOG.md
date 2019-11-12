@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/patternfly/patternfly-react/compare/gatsby-transformer-react-docgen-typescript@0.1.4...gatsby-transformer-react-docgen-typescript@0.2.0) (2019-10-18)
+
+
+### Features
+
+* **docs:** use gatsby-theme-patternfly-org ([#3146](https://github.com/patternfly/patternfly-react/issues/3146)) ([93c843b](https://github.com/patternfly/patternfly-react/commit/93c843b))
+
+
+
+
+
 ## 0.1.4 (2019-05-23)
 
 **Note:** Version bump only for package gatsby-transformer-react-docgen-typescript

@@ -1,7 +1,20 @@
 import * as React from 'react';
-import { Table, TableHeader, TableBody, TableProps, wrappable, IRow } from '@patternfly/react-table';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableProps,
+  wrappable,
+  ICell,
+  IRow
+} from '@patternfly/react-table';
 
-export class TableHeadersWrappableDemo extends React.Component<TableProps, { columns: any; rows: IRow[] }> {
+interface TableState {
+  rows: IRow[];
+  columns: (ICell | string)[];
+}
+
+export class TableHeadersWrappableDemo extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
     this.state = {

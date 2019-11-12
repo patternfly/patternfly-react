@@ -3,6 +3,344 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.24.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.21...@patternfly/react-table@2.24.22) (2019-11-08)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.20...@patternfly/react-table@2.24.21) (2019-11-06)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.19...@patternfly/react-table@2.24.20) (2019-11-06)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.18...@patternfly/react-table@2.24.19) (2019-11-05)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.17...@patternfly/react-table@2.24.18) (2019-11-05)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.16...@patternfly/react-table@2.24.17) (2019-11-01)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.15...@patternfly/react-table@2.24.16) (2019-10-31)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.14...@patternfly/react-table@2.24.15) (2019-10-30)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.13...@patternfly/react-table@2.24.14) (2019-10-30)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.12...@patternfly/react-table@2.24.13) (2019-10-30)
+
+
+### Bug Fixes
+
+* **Table:** Add opt out of disable header on empty table ([#3242](https://github.com/patternfly/patternfly-react/issues/3242)) ([e43cb4c](https://github.com/patternfly/patternfly-react/commit/e43cb4c1f924d822bcf84bdb4e5323a079171255)), closes [#3241](https://github.com/patternfly/patternfly-react/issues/3241)
+
+
+
+
+
+## [2.24.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.11...@patternfly/react-table@2.24.12) (2019-10-29)
+
+
+### Bug Fixes
+
+* **table:** bind isTableEmpty function ([#3225](https://github.com/patternfly/patternfly-react/issues/3225)) ([43c4e10](https://github.com/patternfly/patternfly-react/commit/43c4e1029bd0df9ac22df83ebb1424693adc9753))
+
+
+
+
+
+## [2.24.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.10...@patternfly/react-table@2.24.11) (2019-10-25)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.9...@patternfly/react-table@2.24.10) (2019-10-25)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.8...@patternfly/react-table@2.24.9) (2019-10-24)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.7...@patternfly/react-table@2.24.8) (2019-10-24)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.6...@patternfly/react-table@2.24.7) (2019-10-24)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.5...@patternfly/react-table@2.24.6) (2019-10-23)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.4...@patternfly/react-table@2.24.5) (2019-10-22)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.3...@patternfly/react-table@2.24.4) (2019-10-22)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.2...@patternfly/react-table@2.24.3) (2019-10-21)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.1...@patternfly/react-table@2.24.2) (2019-10-21)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.24.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.24.0...@patternfly/react-table@2.24.1) (2019-10-21)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+# [2.24.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.15...@patternfly/react-table@2.24.0) (2019-10-18)
+
+
+### Features
+
+* **docs:** use gatsby-theme-patternfly-org ([#3146](https://github.com/patternfly/patternfly-react/issues/3146)) ([93c843b](https://github.com/patternfly/patternfly-react/commit/93c843b))
+
+
+
+
+
+## [2.23.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.14...@patternfly/react-table@2.23.15) (2019-10-18)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.23.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.13...@patternfly/react-table@2.23.14) (2019-10-17)
+
+
+### Bug Fixes
+
+* **table:** set height auto modifier on table row ([#3133](https://github.com/patternfly/patternfly-react/issues/3133)) ([6e89ebe](https://github.com/patternfly/patternfly-react/commit/6e89ebe))
+
+
+
+
+
+## [2.23.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.12...@patternfly/react-table@2.23.13) (2019-10-17)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.23.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.11...@patternfly/react-table@2.23.12) (2019-10-15)
+
+
+### Bug Fixes
+
+* **react-table:** Disable header controls with empty table ([#3008](https://github.com/patternfly/patternfly-react/issues/3008)) ([3de4468](https://github.com/patternfly/patternfly-react/commit/3de4468)), closes [#1431](https://github.com/patternfly/patternfly-react/issues/1431)
+
+
+
+
+
+## [2.23.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.10...@patternfly/react-table@2.23.11) (2019-10-15)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.23.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.9...@patternfly/react-table@2.23.10) (2019-10-15)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.23.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.8...@patternfly/react-table@2.23.9) (2019-10-14)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.23.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.7...@patternfly/react-table@2.23.8) (2019-10-14)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.23.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.6...@patternfly/react-table@2.23.7) (2019-10-14)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.23.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.5...@patternfly/react-table@2.23.6) (2019-10-11)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.23.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.4...@patternfly/react-table@2.23.5) (2019-10-11)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.23.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.3...@patternfly/react-table@2.23.4) (2019-10-11)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.23.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.2...@patternfly/react-table@2.23.3) (2019-10-11)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.23.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.1...@patternfly/react-table@2.23.2) (2019-10-11)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+## [2.23.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.23.0...@patternfly/react-table@2.23.1) (2019-10-10)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
+# [2.23.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.22.32...@patternfly/react-table@2.23.0) (2019-10-10)
+
+
+### Features
+
+* **Table:** Added OUIA compatibility to Table component  ([#2964](https://github.com/patternfly/patternfly-react/issues/2964)) ([2a17e77](https://github.com/patternfly/patternfly-react/commit/2a17e77))
+
+
+
+
+
+## [2.22.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.22.31...@patternfly/react-table@2.22.32) (2019-10-09)
+
+**Note:** Version bump only for package @patternfly/react-table
+
+
+
+
+
 ## [2.22.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.22.30...@patternfly/react-table@2.22.31) (2019-10-08)
 
 **Note:** Version bump only for package @patternfly/react-table
@@ -3437,7 +3775,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **Table:** allow colspan to be set in props for each cell ([#1324](https://github.com/patternfly/patternfly-react/issues/1324)) ([7e86f33](https://github.com/patternfly/patternfly-react/commit/7e86f33))
+* **Table:** allow colSpan to be set in props for each cell ([#1324](https://github.com/patternfly/patternfly-react/issues/1324)) ([7e86f33](https://github.com/patternfly/patternfly-react/commit/7e86f33))
 * **Table:** Allow mixins of object, strings and numbers as row cell ([#1282](https://github.com/patternfly/patternfly-react/issues/1282)) ([e7ac17c](https://github.com/patternfly/patternfly-react/commit/e7ac17c))
 * **Table:** Use direct imports for styles ([#1314](https://github.com/patternfly/patternfly-react/issues/1314)) ([42b20e6](https://github.com/patternfly/patternfly-react/commit/42b20e6))
 

@@ -3,6 +3,97 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.5...@patternfly/react-styles@3.6.6) (2019-11-08)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.6.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.4...@patternfly/react-styles@3.6.5) (2019-11-01)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.6.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.3...@patternfly/react-styles@3.6.4) (2019-10-31)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.6.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.2...@patternfly/react-styles@3.6.3) (2019-10-30)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.6.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.1...@patternfly/react-styles@3.6.2) (2019-10-25)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.6.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.0...@patternfly/react-styles@3.6.1) (2019-10-22)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+# [3.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.5.33...@patternfly/react-styles@3.6.0) (2019-10-18)
+
+
+### Features
+
+* **docs:** use gatsby-theme-patternfly-org ([#3146](https://github.com/patternfly/patternfly-react/issues/3146)) ([93c843b](https://github.com/patternfly/patternfly-react/commit/93c843b))
+
+
+
+
+
+## [3.5.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.5.32...@patternfly/react-styles@3.5.33) (2019-10-14)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.5.32](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.5.31...@patternfly/react-styles@3.5.32) (2019-10-14)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.5.31](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.5.30...@patternfly/react-styles@3.5.31) (2019-10-14)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
+## [3.5.30](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.5.29...@patternfly/react-styles@3.5.30) (2019-10-11)
+
+**Note:** Version bump only for package @patternfly/react-styles
+
+
+
+
+
 ## [3.5.29](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.5.28...@patternfly/react-styles@3.5.29) (2019-10-07)
 
 **Note:** Version bump only for package @patternfly/react-styles

@@ -7,10 +7,10 @@ typescript: true
 ---
 
 import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/react-core';
-import './toolbar.scss';
+import './toolbar.css';
 
-## Simple toolbar layout
-```js
+## Examples
+```js title=Basic
 import React from 'react';
 import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/react-core';
 
@@ -28,8 +28,7 @@ import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/
 </Toolbar>
 ```
 
-## Toolbar with sections
-```js
+```js title=With-sections
 import React from 'react';
 import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/react-core';
 

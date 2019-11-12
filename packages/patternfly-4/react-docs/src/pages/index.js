@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import SidebarLayout from '../templates/sidebarLayout';
-import { Title, PageSection, PageSectionVariants } from '@patternfly-safe/react-core';
+import { Title, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import SideNavLayout from 'gatsby-theme-patternfly-org/layouts/sideNavLayout';
 
 const containerStyle = {
   display: 'flex',
@@ -19,11 +19,11 @@ const centerStyle = {
   justifyContent: 'center'
 };
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, location }) => {
   const prInfo = data.allEnvVars.edges.filter(({ node }) => node.name === 'PR_INFO')[0].node;
 
   return (
-    <SidebarLayout>
+    <SideNavLayout location={location}>
       <div style={containerStyle}>
         <PageSection style={centerStyle}>
           <div style={{ flex: 'none', textAlign: 'center' }}>
@@ -45,7 +45,7 @@ const IndexPage = ({ data }) => {
             ))}
         </PageSection>
       </div>
-    </SidebarLayout>
+    </SideNavLayout>
   );
 };
 
@@ -86,6 +86,12 @@ export const pageQuery = graphql`
       }
     }
     allReactInlineEditExtensionJson {
+      nodes {
+        name
+        version
+      }
+    }
+    allReactCatalogViewExtensionJson {
       nodes {
         name
         version

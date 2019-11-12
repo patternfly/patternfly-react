@@ -1,6 +1,6 @@
 ---
 title: 'Window Scroller'
-section: 'Virtual Scroll'
+section: 'virtual scroll'
 ---
 
 Note: React Virtualized Extension lives in its own package at [`@patternfly/react-virtualized-extension`](https://www.npmjs.com/package/@patternfly/react-virtualized-extension)!
@@ -20,9 +20,8 @@ import UUID from 'uuid/v1';
 import virtualGridStyles from './VirtualGrid.example.css';
 import windowScrollerStyles from './WindowScroller.example.css';
 
-## Window Scroller Example
-
-```js
+## Examples
+```js title=Window-scroller
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import * as React from 'react';

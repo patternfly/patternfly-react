@@ -1,8 +1,20 @@
 import * as React from 'react';
 import { Body as BaseBody } from './base';
 import { RowType, RowKeyType } from './base/types';
-import { TableContext, IRow, IRowCell } from './Table';
+import { TableContext, IRow, IRowCell, IExtraRowData } from './Table';
 import { isRowExpanded } from './utils';
+
+export interface IComputedData {
+  isInput: boolean;
+  isButton: boolean;
+}
+
+export type OnRowClick = (
+  event: React.MouseEvent,
+  row: IRow,
+  rowProps: IExtraRowData,
+  computedData: IComputedData
+) => void;
 
 export interface TableBodyProps {
   className?: string;
@@ -10,7 +22,7 @@ export interface TableBodyProps {
   headerData?: IRow[];
   rows?: IRow[];
   rowKey?: RowKeyType;
-  onRowClick?: Function;
+  onRowClick?: OnRowClick;
   onRow?: Function;
 }
 
@@ -37,6 +49,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
           isInput: (event.target as HTMLElement).tagName !== 'INPUT',
           isButton: (event.target as HTMLElement).tagName !== 'BUTTON'
         };
+
         onRowClick(event, row, rowProps, computedData);
       }
     };
@@ -85,6 +98,7 @@ class ContextBody extends React.Component<TableBodyProps, {}> {
         ...oneRow,
         ...this.mapCells(headerData, oneRow, oneRowKey),
         isExpanded: isRowExpanded(oneRow, rows),
+        isHeightAuto: oneRow.heightAuto || false,
         isFirst: oneRowKey === 0,
         isLast: oneRowKey === rows.length - 1,
         isFirstVisible: false,
@@ -115,7 +129,7 @@ export const TableBody = ({
   className = '' as string,
   children = null as React.ReactNode,
   rowKey = 'id' as string,
-  onRowClick = (...args: any) => undefined as any,
+  onRowClick = (event: React.MouseEvent, row: IRow, rowProps: IExtraRowData, computedData: IComputedData) => undefined as OnRowClick,
   ...props
 }: TableBodyProps) => (
   <TableContext.Consumer>

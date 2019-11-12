@@ -29,7 +29,6 @@ export const OverflowMenuGroup: React.SFC<OverflowMenuGroupProps> = ({
             styles.overflowMenuGroup,
             groupType === 'button' && styles.modifiers.buttonGroup,
             groupType === 'icon' && styles.modifiers.iconButtonGroup,
-            isPersistent && styles.modifiers.persistent,
             className
           )}
         >

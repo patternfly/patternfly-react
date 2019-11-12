@@ -15,7 +15,7 @@ class Paginator extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { pagination } = nextProps;
     if (this.state.pageChangeValue !== pagination.page) {
       this.setState({

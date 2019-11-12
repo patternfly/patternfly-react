@@ -10,26 +10,26 @@ export { compoundExpand } from './decorators/compoundExpand';
 export { headerCol } from './decorators/headerCol';
 export { classNames, Visibility } from './decorators/classNames';
 
-import { IFormatterValueType, IExtra } from '../Table';
+import { IFormatterValueType, IExtra, ITransform } from '../Table';
 
-const emptyTD = () => ({
+const emptyTD: ITransform = () => ({
   scope: '',
   component: 'td'
 });
 
-const scopeColTransformer = () => ({
+const scopeColTransformer: ITransform = () => ({
   scope: 'col'
 });
 
-const emptyCol = (label: IFormatterValueType) => ({
+const emptyCol: ITransform = (label: IFormatterValueType) => ({
   ...(label ? {} : { scope: '' })
 });
 
-const parentId = (_value: IFormatterValueType, { rowData }: IExtra) => ({
+const parentId: ITransform = (_value: IFormatterValueType, { rowData }: IExtra) => ({
   parentId: rowData.parent
 });
 
-const mapProps = (_label: IFormatterValueType, { property, rowData }: IExtra) => ({
+const mapProps: ITransform = (_label: IFormatterValueType, { property, rowData }: IExtra) => ({
   ...(rowData[property] && rowData[property].props)
 });
 

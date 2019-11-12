@@ -47,7 +47,9 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/jsx-uses-vars': 'error',
     'react/no-danger': 'off',
-    'react/sort-comp': 'off'
+    'react/sort-comp': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn'
   },
   extends: [
     'standard',
@@ -64,6 +66,6 @@ module.exports = {
     node: true,
     jest: true
   },
-  plugins: ['prettier', 'jest', 'react', 'patternfly-react'],
+  plugins: ['prettier', 'jest', 'react', 'react-hooks', 'patternfly-react'],
   parser: 'babel-eslint'
 };

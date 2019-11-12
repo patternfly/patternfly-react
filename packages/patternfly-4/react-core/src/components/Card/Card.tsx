@@ -2,7 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/Card/card';
 import { css } from '@patternfly/react-styles';
 
-export interface CardProps extends React.HTMLProps<HTMLDivElement> {
+export interface CardProps extends React.HTMLProps<HTMLElement> {
   /** Content rendered inside the Card */
   children?: React.ReactNode;
   /** Additional classes added to the Card */

@@ -17,7 +17,7 @@ const { noop } = helpers;
 class XTerm extends React.Component {
   state = { terminal: null, rows: null, cols: null, autoFit: false };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const term = new Terminal({
       cols: this.props.cols,
       rows: this.props.rows,
@@ -52,7 +52,7 @@ class XTerm extends React.Component {
     this.onWindowResize();
   }
 
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     if (
       newProps.cols !== this.state.cols ||
       newProps.rows !== this.state.rows ||
@@ -66,7 +66,7 @@ class XTerm extends React.Component {
     }
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  UNSAFE_componentWillUpdate(nextProps, nextState) {
     if (
       nextState.cols !== this.state.cols ||
       nextState.rows !== this.state.rows ||

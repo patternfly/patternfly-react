@@ -97,8 +97,8 @@ describe('OverflowMenu Demo Test', () => {
       it('displays OverflowMenuControl and Persistent items', () => {
         cy.get('#persist-overflow-menu .pf-c-overflow-menu__control').should('be.visible');
         cy.get(
-          `#persist-overflow-menu .pf-c-overflow-menu__content .pf-c-overflow-menu__group.pf-m-persistent,
-        #persist-overflow-menu .pf-c-overflow-menu__content .pf-c-overflow-menu__item.pf-m-persistent`
+          `#persist-overflow-menu .pf-c-overflow-menu__content .pf-c-overflow-menu__group,
+        #persist-overflow-menu .pf-c-overflow-menu__content .pf-c-overflow-menu__item`
         ).should('be.visible');
       });
 

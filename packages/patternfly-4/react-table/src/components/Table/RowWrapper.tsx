@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { debounce } from '@patternfly/react-core';
+import { InjectedOuiaProps, withOuiaContext, debounce } from '@patternfly/react-core';
 import styles from '@patternfly/react-styles/css/components/Table/table';
 import { css } from '@patternfly/react-styles';
 
 // legacy export now, RowWrapperRow can simply be typed as IRow in the future
 export interface RowWrapperRow {
-  isOpen?: Boolean;
-  isExpanded?: Boolean;
+  isOpen?: boolean;
+  isExpanded?: boolean;
+  isHeightAuto?: boolean;
 }
 
 export interface RowWrapperProps {
@@ -15,15 +16,19 @@ export interface RowWrapperProps {
   onScroll?: React.UIEventHandler;
   onResize?: React.UIEventHandler;
   row?: RowWrapperRow;
-  rowProps?: Object;
+  rowProps?: {
+    rowIndex: number;
+    rowKey: string;
+  };
 }
 
-export class RowWrapper extends React.Component<RowWrapperProps, {}> {
+class RowWrapper extends React.Component<RowWrapperProps & InjectedOuiaProps, {}> {
   static defaultProps = {
     className: '' as string,
     row: {
       isOpen: undefined as boolean,
-      isExpanded: undefined as boolean
+      isExpanded: undefined as boolean,
+      isHeightAuto: undefined as boolean
     } as RowWrapperRow,
     rowProps: null as any
   };
@@ -80,8 +85,10 @@ export class RowWrapper extends React.Component<RowWrapperProps, {}> {
       className,
       onScroll,
       onResize,
-      row: { isExpanded },
+      row: { isExpanded, isHeightAuto },
       rowProps,
+      ouiaContext,
+      ouiaId,
       ...props
     } = this.props;
 
@@ -92,10 +99,19 @@ export class RowWrapper extends React.Component<RowWrapperProps, {}> {
         className={css(
           className,
           isExpanded !== undefined && styles.tableExpandableRow,
-          isExpanded && styles.modifiers.expanded
+          isExpanded && styles.modifiers.expanded,
+          isHeightAuto && styles.modifiers.heightAuto
         )}
         hidden={isExpanded !== undefined && !isExpanded}
+        {...ouiaContext.isOuia && {
+          'data-ouia-component-type': 'TableRow',
+          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+        }}
       />
     );
   }
 }
+
+const RowWrapperWithOuiaContext = withOuiaContext(RowWrapper);
+
+export { RowWrapperWithOuiaContext as RowWrapper };

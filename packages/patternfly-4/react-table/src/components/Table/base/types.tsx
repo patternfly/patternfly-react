@@ -17,6 +17,7 @@ export interface CellType {
 
 // Columns Types
 export type ColumnsType = ColumnType[] | any[];
+
 export interface ColumnType {
   property?: string;
   cell?: CellType;

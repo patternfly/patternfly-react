@@ -4,21 +4,21 @@ import {
   TableHeader,
   TableBody,
   TableProps,
-  sortable,
-  SortByDirection,
   headerCol,
-  TableVariant,
-  expandable,
-  cellWidth,
+  ICell,
   IRow,
   IRowData,
   IExtra,
-  IActionsResolver,
-  IAction,
+  IActions,
   ISeparator
 } from '@patternfly/react-table';
 
-export class TableActionsDemo extends React.Component<TableProps, { columns: any; rows: IRow[] }> {
+interface TableState {
+  columns: (ICell | string)[];
+  rows: IRow[];
+}
+
+export class TableActionsDemo extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
     this.state = {
@@ -53,7 +53,7 @@ export class TableActionsDemo extends React.Component<TableProps, { columns: any
       return null;
     }
 
-    const thirdAction =
+    const thirdAction: IActions =
       rowData.type === 'blue'
         ? [
             {
@@ -65,7 +65,7 @@ export class TableActionsDemo extends React.Component<TableProps, { columns: any
               onClick: (event, rowId, rowData, extra) =>
                 // tslint:disable-next-line:no-console
                 console.log(`clicked on Third action, on row ${rowId} of type ${rowData.type}`)
-            } as IAction
+            }
           ]
         : [];
 
@@ -76,19 +76,19 @@ export class TableActionsDemo extends React.Component<TableProps, { columns: any
         onClick: (event, rowId, rowData, extra) =>
           // tslint:disable-next-line:no-console
           console.log(`clicked on Some action, on row ${rowId} of type ${rowData.type}`)
-      } as IAction,
+      },
       {
         title: 'Another action',
         // tslint:disable-next-line:no-shadowed-variable
         onClick: (event, rowId, rowData, extra) =>
           // tslint:disable-next-line:no-console
           console.log(`clicked on Another action, on row ${rowId} of type ${rowData.type}`)
-      } as IAction,
+      },
       ...thirdAction
-    ];
+    ] as IActions;
   }
 
-  areActionsDisabled(rowData, { rowIndex }) {
+  areActionsDisabled(rowData: IRowData, { rowIndex }: IExtra) {
     return rowIndex === 3;
   }
 

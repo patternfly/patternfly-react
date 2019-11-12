@@ -1,0 +1,58 @@
+.ws-react-c-catalogtile .catalog-tile-pf.featured {
+  border-top: 2px solid #39a5dc;
+}
+.ws-react-c-catalogtile .catalog-tile-pf:active, .ws-react-c-catalogtile .catalog-tile-pf:hover, .ws-react-c-catalogtile .catalog-tile-pf:focus, .ws-react-c-catalogtile .catalog-tile-pf:visited {
+  color: inherit;
+  text-decoration: none;
+}
+.ws-react-c-catalogtile .catalog-tile-pf-header {
+  font-size: 16px;
+  font-weight: 400;
+}
+.ws-react-c-catalogtile .catalog-tile-pf-header .catalog-tile-pf-title {
+  font-weight: 400;
+}
+.ws-react-c-catalogtile .catalog-tile-pf-header .catalog-tile-pf-subtitle {
+  color: #4D5258;
+  font-size: small;
+}
+.ws-react-c-catalogtile .catalog-tile-pf-header .catalog-tile-pf-subtitle a {
+  color: #0066CC;
+  text-decoration: none;
+}
+.ws-react-c-catalogtile .catalog-tile-pf-header .catalog-tile-pf-subtitle a:hover {
+  color: #004080;
+  text-decoration: underline;
+}
+.ws-react-c-catalogtile .catalog-tile-pf-icon {
+  font-size: 40px;
+  height: 40px;
+  max-width: 80px;
+  min-width: 40px;
+}
+.ws-react-c-catalogtile .catalog-tile-pf-badge-container {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+.ws-react-c-catalogtile .catalog-tile-pf-badge-container .catalog-tile-pf-badge {
+  font-size: 16px;
+  margin-left: 5px;
+}
+.ws-react-c-catalogtile .catalog-tile-pf-body .catalog-tile-pf-description span.truncated {
+  overflow: hidden;
+  position: relative;
+}
+.ws-react-c-catalogtile .catalog-tile-pf-body .catalog-tile-pf-description span.truncated::after {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white 75%);
+  bottom: 0;
+  color: transparent;
+  content: ".";
+  position: absolute;
+  right: 0;
+  width: 50%;
+  text-align: right;
+}
+.ws-react-c-catalogtile .example-ok-icon {
+  color: #4CB140;
+}

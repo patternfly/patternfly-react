@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.39.7](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.6...patternfly-react@2.39.7) (2019-11-05)
+
+**Note:** Version bump only for package patternfly-react
+
+
+
+
+
+## [2.39.6](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.5...patternfly-react@2.39.6) (2019-10-21)
+
+**Note:** Version bump only for package patternfly-react
+
+
+
+
+
+## [2.39.5](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.4...patternfly-react@2.39.5) (2019-10-16)
+
+
+### Bug Fixes
+
+* **Cards:** refactor sub-component references ([#2935](https://github.com/patternfly/patternfly-react/issues/2935)) ([17a51ff](https://github.com/patternfly/patternfly-react/commit/17a51ff)), closes [patternfly/patternfly-react#2931](https://github.com/patternfly/patternfly-react/issues/2931)
+
+
+
+
+
 ## [2.39.4](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.3...patternfly-react@2.39.4) (2019-10-02)
 
 **Note:** Version bump only for package patternfly-react

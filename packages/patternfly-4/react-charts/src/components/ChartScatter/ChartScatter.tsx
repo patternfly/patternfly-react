@@ -17,7 +17,7 @@ import {
   VictoryScatterProps
 } from 'victory';
 import { ChartContainer } from '../ChartContainer';
-import { ChartThemeDefinition } from '../ChartTheme';
+import { ChartScatterStyles, ChartThemeDefinition } from '../ChartTheme';
 import { getTheme } from '../ChartUtils';
 
 export enum ChartScatterSortOrder {
@@ -397,6 +397,7 @@ export const ChartScatter: React.FunctionComponent<ChartScatterProps> = ({
 
   // destructure last
   theme = getTheme(themeColor, themeVariant),
+  size = ({ active }) => (active ? ChartScatterStyles.activeSize : ChartScatterStyles.size),
   ...rest
 }: ChartScatterProps) => {
   // Clone so users can override container props
@@ -404,7 +405,7 @@ export const ChartScatter: React.FunctionComponent<ChartScatterProps> = ({
     theme,
     ...containerComponent.props
   });
-  return <VictoryScatter containerComponent={container} theme={theme} {...rest} />;
+  return <VictoryScatter containerComponent={container} size={size} theme={theme} {...rest} />;
 };
 
 // Note: VictoryLine.role must be hoisted

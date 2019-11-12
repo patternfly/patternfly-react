@@ -1,14 +1,21 @@
 ---
-title: 'Line'
+title: 'Line chart'
 section: 'charts'
 typescript: true
-propComponents: ['Chart', 'ChartAxis', 'ChartGroup', 'ChartLegend', 'ChartLine', 'ChartVoronoiContainer']
+propComponents: [
+  'Chart',
+  'ChartAxis',
+  'ChartGroup',
+  'ChartLine',
+  'ChartVoronoiContainer'
+]
+hideDarkMode: true
 ---
 
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartThemeVariant, ChartVoronoiContainer } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory';
-import './chart-line.scss';
 
+## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
 
 PatternFly React charts are based on the [Victory](https://formidable.com/open-source/victory/docs/victory-chart/) chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
@@ -17,13 +24,13 @@ Learn to build a line chart using a Katacoda tutorial starting with a simple cha
 
 [Start course](https://katacoda.com/patternfly/courses/charts/line-chart)
 
-## Simple line chart with right aligned legend
-```js
+## Examples
+```js title=Basic-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartVoronoiContainer } from '@patternfly/react-charts';
 
-<div>
-  <div className="line-chart-legend-right">
+BasicRightAligned = (
+  <div style={{ height: '250px', width: '600px' }}>
     <Chart
       ariaDesc="Average number of pets"
       ariaTitle="Line chart example"
@@ -85,16 +92,15 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartVoronoiContainer } from '
       </ChartGroup>
     </Chart>
   </div>
-</div>
+)
 ```
 
-## Green line chart with right aligned legend
-```js
+```js title=Green-with-right-aligned-legend
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
-<div>
-  <div className="line-chart-legend-bottom">
+Green = (
+  <div style={{ height: '275px', width: '450px' }}>
     <Chart
       ariaDesc="Average number of pets"
       ariaTitle="Line chart example"
@@ -156,12 +162,10 @@ import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiC
       </ChartGroup>
     </Chart>
   </div>
-</div>
+)
 ```
 
-## Multi-color (unorderd) line chart with bottom-left aligned legend and responsive container
-This demonstrates zoom for the x axis only
-```js
+```js title=Multi--color-(unordered)-with-responsive-container
 import React from 'react';
 import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor } from '@patternfly/react-charts';
 import { VictoryZoomContainer } from 'victory';
@@ -194,7 +198,8 @@ class MultiColorChart extends React.Component {
     
     return (
       <div ref={this.containerRef}>
-        <div className="line-chart-legend-bottom-responsive">
+        <p>This demonstrates zoom for the x axis only</p>
+        <div style={{ height: '275px' }}>
           <Chart
             ariaDesc="Average number of pets"
             ariaTitle="Line chart example"
@@ -262,22 +267,21 @@ class MultiColorChart extends React.Component {
 }
 ```
 
-## Tips
-
-- For single data points or zero values, you may want to set the `domain` prop. See Victory's <a href="https://formidable.com/open-source/victory/docs/faq/#my-axis-labels-are-showing-very-small-numbers-how-do-i-fix-this" target="_blank">FAQ</a>
-- `ChartLegend` may be used as a standalone component, instead of using `legendData` and `legendPosition`
-- Use `ChartGroup` to apply color scales and other properties to multiple components
-- Themes are inherited, so a default theme may override `themeColor` for a child component
+## Documentation
+### Tips
+- See Victory's [FAQ](https://formidable.com/open-source/victory/docs/faq)
+- For single data points or zero values, you may want to set the `domain` prop
+- `ChartLegend` may be used as a standalone component, instead of using `legendData`
 - The `theme` and `themeColor` props should be applied at the most top level component
+- Use `ChartGroup` to apply theme color scales and other properties to multiple components
 
-## Docs
+### Note
 Currently, the generated documention below is not able to resolve type definitions from Victory imports. For the 
 components used in the examples above, Victory pass-thru props are also documented here:
 
- - For `Chart` props, see <a href="https://formidable.com/open-source/victory/docs/victory-chart" target="_blank">VictoryChart</a>
- - For `ChartAxis` props, see <a href="https://formidable.com/open-source/victory/docs/victory-axis" target="_blank">VictoryAxis</a>
- - For `ChartGroup` props, see <a href="https://formidable.com/open-source/victory/docs/victory-group" target="_blank">VictoryGroup</a>
- - For `ChartLegend` props, see <a href="https://formidable.com/open-source/victory/docs/victory-legend" target="_blank">VictoryLegend</a>
- - For `ChartLine` props, see <a href="https://formidable.com/open-source/victory/docs/victory-line" target="_blank">Victoryline</a>
- - For `ChartVoronoiContainer` props, see <a href="https://formidable.com/open-source/victory/docs/victory-voronoi-container" target="_blank">VictoryVoronoiContainer</a>
- - For `VictoryZoomContainer` props, see <a href="https://formidable.com/open-source/victory/docs/victory-zoom-container" target="_blank">VictoryZoomContainer</a>
+ - For `Chart` props, see [VictoryChart](https://formidable.com/open-source/victory/docs/victory-chart)
+ - For `ChartAxis` props, see [VictoryAxis](https://formidable.com/open-source/victory/docs/victory-axis)
+ - For `ChartGroup` props, see [VictoryGroup](https://formidable.com/open-source/victory/docs/victory-group)
+ - For `ChartLine` props, see [Victoryline](https://formidable.com/open-source/victory/docs/victory-line)
+ - For `ChartVoronoiContainer` props, see [VictoryVoronoiContainer](https://formidable.com/open-source/victory/docs/victory-voronoi-container)
+ - For `VictoryZoomContainer` props, see [VictoryZoomContainerline](https://formidable.com/open-source/victory/docs/victory-zoom-container)

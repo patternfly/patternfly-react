@@ -21,10 +21,10 @@ import { ChartBulletPrimarySegmentedMeasure } from './ChartBulletPrimarySegmente
 import { ChartBulletQualitativeRange } from './ChartBulletQualitativeRange';
 import { ChartBulletTitle } from './ChartBulletTitle';
 import { ChartContainer } from '../ChartContainer';
-import { ChartLegend, ChartLegendOrientation, ChartLegendPosition, ChartLegendWrapper } from '../ChartLegend';
+import { ChartLegend, ChartLegendOrientation, ChartLegendPosition } from '../ChartLegend';
 import { ChartBulletStyles, ChartThemeDefinition } from '../ChartTheme';
 import { ChartTooltip } from '../ChartTooltip';
-import { getPaddingForSide } from '../ChartUtils';
+import { getComputedLegend, getPaddingForSide } from '../ChartUtils';
 
 /**
  * See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/victory/index.d.ts
@@ -194,6 +194,13 @@ export interface ChartBulletProps {
    * of that point in the array of active points, and points is an array of all active points.
    */
   labels?: (point: any, index: number, points: any[]) => string;
+  /**
+   * Allows legend items to wrap. A value of true allows the legend to wrap onto the next line
+   * if its container is not wide enough.
+   *
+   * Note: This is overridden by the legendItemsPerRow property
+   */
+  legendAllowWrap?: boolean;
   /**
    * The legend component to render with chart.
    */
@@ -465,6 +472,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
   horizontal = true,
   invert = false,
   labels,
+  legendAllowWrap = false,
   legendComponent = <ChartLegend />,
   legendItemsPerRow,
   legendPosition = 'bottom' as ChartLegendPosition,
@@ -712,8 +720,8 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
     return tickValues;
   };
 
-  // Returns a wrapped legend
-  const getWrappedLegend = () => {
+  // Returns a computed legend
+  const getLegend = () => {
     if (!legend.props.data) {
       return null;
     }
@@ -735,20 +743,18 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
         : -defaultPadding.bottom;
       dx = -10;
     }
-    return (
-      <ChartLegendWrapper
-        chartType="bullet"
-        dx={dx}
-        dy={dy}
-        height={chartSize.height}
-        legendComponent={legend}
-        orientation={legendOrientation}
-        padding={padding}
-        position={legendPosition}
-        theme={theme}
-        width={chartSize.width}
-      />
-    );
+    return getComputedLegend({
+      allowWrap: legendAllowWrap,
+      chartType: 'bullet',
+      dx,
+      dy,
+      height: chartSize.height,
+      legendComponent: legend,
+      padding: defaultPadding,
+      position: legendPosition,
+      theme,
+      width: chartSize.width
+    });
   };
 
   // Returns comparative zero measure
@@ -799,7 +805,7 @@ export const ChartBullet: React.FunctionComponent<ChartBulletProps> = ({
       {comparativeErrorMeasure}
       {comparativeWarningMeasure}
       {getComparativeZeroMeasure()}
-      {getWrappedLegend()}
+      {getLegend()}
     </React.Fragment>
   );
 

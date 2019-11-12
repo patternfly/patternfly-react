@@ -5,8 +5,11 @@ exports[`OverflowMenuControl Additional Options 1`] = `
   hasAdditionalOptions={true}
 >
   <div
-    className="pf-c-overflow-menu__control pf-m-additional-options"
-  />
+    className="pf-c-overflow-menu__control"
+  >
+     
+     
+  </div>
 </Component>
 `;
 
@@ -14,6 +17,9 @@ exports[`OverflowMenuControl basic 1`] = `
 <Component>
   <div
     className="pf-c-overflow-menu__control"
-  />
+  >
+     
+     
+  </div>
 </Component>
 `;

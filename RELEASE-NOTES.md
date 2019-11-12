@@ -1,3 +1,125 @@
+---
+title: Release notes
+section: root
+hideTOC: true
+---
+
+# 2019.09 release notes (2019-10-29)
+Packages released:
+- [@patternfly/react-catalog-view-extension@1.1.1](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.1.1)
+- [@patternfly/react-charts@5.1.2](https://www.npmjs.com/package/@patternfly/react-charts/v/5.1.2)
+- [@patternfly/react-core@3.120.1](https://www.npmjs.com/package/@patternfly/react-core/v/3.120.1)
+- [@patternfly/react-inline-edit-extension@2.12.10](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.12.10)
+- [@patternfly/react-styles@3.6.2](https://www.npmjs.com/package/@patternfly/react-styles/v/3.6.2)
+- [@patternfly/react-table@2.24.10](https://www.npmjs.com/package/@patternfly/react-table/v/2.24.10)
+- [@patternfly/react-tokens@2.7.2](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.7.2)
+- [@patternfly/react-topology@2.11.1](https://www.npmjs.com/package/@patternfly/react-topology/v/2.11.1)
+- [@patternfly/react-virtualized-extension@1.3.10](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.3.10)
+- [@patternfly/react-icons@3.14.15](https://www.npmjs.com/package/@patternfly/react-icons/v/3.14.15)
+
+## Charts
+- Added legend examples ([#3093](https://github.com/patternfly/patternfly-react/pull/3093))
+- Added chart scatter examples ([#3086](https://github.com/patternfly/patternfly-react/pull/3086))
+- Updated ChartThreshold to use pf-core variable ([#3085](https://github.com/patternfly/patternfly-react/pull/3085))
+- Updates to use markdown links ([#3072](https://github.com/patternfly/patternfly-react/pull/3072))
+- Simplified legend tooltip example ([#3069](https://github.com/patternfly/patternfly-react/pull/3069))
+- Added Responsive legend ([#3067](https://github.com/patternfly/patternfly-react/pull/3067))
+- Added tooltip examples ([#3061](https://github.com/patternfly/patternfly-react/pull/3061))
+- Added props to ChartLabel ([#3028](https://github.com/patternfly/patternfly-react/pull/3028))
+- Fixed ChartThreshold props ([#3024](https://github.com/patternfly/patternfly-react/pull/3024))
+- Added custom theme example ([#3023](https://github.com/patternfly/patternfly-react/pull/3023))
+- Moved ChartThreshold to its own example ([#3019](https://github.com/patternfly/patternfly-react/pull/3019))
+
+## Components
+- **About Modal:**
+  - Append component to an element in DOM ([#3102](https://github.com/patternfly/patternfly-react/pull/3102))
+- **Application launcher:**
+  - Fix unit tests ([#3107](https://github.com/patternfly/patternfly-react/pull/3107))
+- **Button:**
+  - Component type accepts react-router Link ([#3077](https://github.com/patternfly/patternfly-react/pull/3077))
+  - Added an example of a link button with anchor component ([#3034](https://github.com/patternfly/patternfly-react/pull/3034))
+- **Chip:**
+  - Added OUIA compatibility to Chip component ([#2995](https://github.com/patternfly/patternfly-react/pull/2995))
+- **Copy to clipboard:**
+  - Wrapped pre inside the expand element ([#3169](https://github.com/patternfly/patternfly-react/pull/3169))
+- **Data toolbar:** 
+  - Implemented changes to match PF-Core ([#3144](https://github.com/patternfly/patternfly-react/pull/3144))
+  - Add unit and integration tests ([#3201](https://github.com/patternfly/patternfly-react/pull/3201))
+- **Divider:**
+  - Added divider component ([#3125](https://github.com/patternfly/patternfly-react/pull/3125))
+- **Dropdown:**
+  - Added OUIA compatibility for Dropdown ([#3135](https://github.com/patternfly/patternfly-react/pull/3135))
+  - Fix unit tests ([#3107](https://github.com/patternfly/patternfly-react/pull/3107))
+- **Empty state:**
+  - Removed debug message from tests ([#3161](https://github.com/patternfly/patternfly-react/pull/3161))
+- **Expandable:**
+  - Allowed for dynamic toggle text in uncontrolled version ([#3068](https://github.com/patternfly/patternfly-react/pull/3068))
+- **Login form:**
+  - Pass 'remember me' state to isChecked ([#3056](https://github.com/patternfly/patternfly-react/pull/3056))
+- **Options menu:**
+  - Fix unit tests and options menu([#3107](https://github.com/patternfly/patternfly-react/pull/3107)) 
+- **Overflow menu:**
+   - Removed unnecessary class names ([#3204](https://github.com/patternfly/patternfly-react/pull/3204))
+- **Radio:**
+  - Pass checked either from isChecked or checked ([#3066](https://github.com/patternfly/patternfly-react/pull/3066))
+  - Fix console error ([#3138](https://github.com/patternfly/patternfly-react/pull/3138))
+  - Group radio inputs in docs (axe-core) ([#2684](https://github.com/patternfly/patternfly-react/pull/2684))
+- **React catalog view extension:**
+  - Added catalog view extension and three components ([#3145](https://github.com/patternfly/patternfly-react/pull/3145))
+- **Select:**
+  - Updated prop description for selections ([#3183](https://github.com/patternfly/patternfly-react/pull/3183))
+  - Set onFilter to null to run the default filter ([#3158](https://github.com/patternfly/patternfly-react/pull/3158))
+  - Added plain modifier to toggle button ([#3140](https://github.com/patternfly/patternfly-react/pull/3140))
+  - Use props children if custom on filter used ([#3123](https://github.com/patternfly/patternfly-react/pull/3123))
+  - Modifying selection outside Select component now works ([#3096](https://github.com/patternfly/patternfly-react/pull/3096))
+  - Allow custom component as select option ([#3060](https://github.com/patternfly/patternfly-react/pull/3060))
+  - Added OUIA compatibility to Select component ([#2996](https://github.com/patternfly/patternfly-react/pull/2996))
+- **Spinner:**
+  - Fixed alert type in docs ([#3063](https://github.com/patternfly/patternfly-react/pull/3063))
+- **Switch:**
+  - reverted defaultChecked to checked ([#3037](https://github.com/patternfly/patternfly-react/pull/3037))
+- **Tabs:**
+  - Move TabButton to new file ([#3033](https://github.com/patternfly/patternfly-react/pull/3033))
+- **Text area:**
+  - Added a prop to allow limiting the  resize orientation of the Text are ([#3180](https://github.com/patternfly/patternfly-react/pull/3180))
+- **Tooltip:**
+  - Allow tooltip text to be left-aligned ([#3053](https://github.com/patternfly/patternfly-react/pull/3053))
+- **Virtualized extension**
+  - Added jest test ([#2761](https://github.com/patternfly/patternfly-react/pull/2761))
+- **Wizard:**
+  - Append component to an element in DOM ([#3102](https://github.com/patternfly/patternfly-react/pull/3102)
+
+## Table
+- Added custom row wrapper example for table  ([#3160](https://github.com/patternfly/patternfly-react/pull/3160))
+- Set height auto modifier on table row ([#3133](https://github.com/patternfly/patternfly-react/pull/3133))
+- Added support for custom dataLabel prop on table header ([#3040](https://github.com/patternfly/patternfly-react/pull/3040))
+- Disable header controls with empty table ([#3008](https://github.com/patternfly/patternfly-react/pull/3008))
+- Added OUIA compatibility to Table component ([#2964](https://github.com/patternfly/patternfly-react/pull/2964))
+
+## Other
+- **Chore:** 
+  - Add issue template ([#2804](https://github.com/patternfly/patternfly-react/pull/2804))
+  - Surrounded OUIA check with a try catch ([#3178](https://github.com/patternfly/patternfly-react/pull/3178))
+  - Use consumer context if specified for OUIA ([#3149](https://github.com/patternfly/patternfly-react/pull/3148))
+  - Updated webpack config to output source maps ([#3115](https://github.com/patternfly/patternfly-react/pull/3115))
+  - Fix warnings about use of deprecated lifecycle methods ([#3098](https://github.com/patternfly/patternfly-react/pull/3098))
+  - Added eslint-plugin-react-hooks ([#3083](https://github.com/patternfly/patternfly-react/pull/3083))
+  - Properly use this.setState in components ([#3075](https://github.com/patternfly/patternfly-react/pull/3075))
+  - Fixed sentence case for component titles ([#3054](https://github.com/patternfly/patternfly-react/pull/3054))
+  - Added tslint-plugin-prettier and apply code formatting ([#2810](https://github.com/patternfly/patternfly-react/pull/2810))
+- **Demo:**
+  - Added bulk select demo with table and toolbar ([#3082](https://github.com/patternfly/patternfly-react/pull/3082))
+  - Added table filter demo ([#3127](https://github.com/patternfly/patternfly-react/pull/3127))
+- **Docs:**
+   - Use gatsby-theme-patternfly-org  ([#3146](https://github.com/patternfly/patternfly-react/pull/3146))
+   - Fixed regressions from gatsby-theme-patternfly-org ([#3164](https://github.com/patternfly/patternfly-react/pull/3164))
+
+## PF3
+- **Serial console:**
+  - Use xterm v4 ([#3030](https://github.com/patternfly/patternfly-react/pull/3030))
+- **Cards:**
+  - Refactored sub-component references ([#2935](https://github.com/patternfly/patternfly-react/pull/2935))
+  
 # 2019.08 release notes (2019-10-01)
 Packages released:
 - [@patternfly/react-charts@5.0.13](https://www.npmjs.com/package/@patternfly/react-charts/v/5.0.13)

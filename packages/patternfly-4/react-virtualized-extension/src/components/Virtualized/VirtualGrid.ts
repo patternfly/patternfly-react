@@ -293,8 +293,8 @@ class VirtualGrid extends React.PureComponent<Props, State> {
   _onVirtualGridRenderedMemoizer = createCallbackMemoizer();
   _onScrollMemoizer = createCallbackMemoizer(false);
 
-  _deferredInvalidateColumnIndex = null;
-  _deferredInvalidateRowIndex = null;
+  _deferredInvalidateColumnIndex = null as number;
+  _deferredInvalidateRowIndex = null as number;
   _recomputeScrollLeftFlag = false;
   _recomputeScrollTopFlag = false;
 
@@ -317,7 +317,7 @@ class VirtualGrid extends React.PureComponent<Props, State> {
   _initialScrollTop: number;
   _initialScrollLeft: number;
 
-  _disablePointerEventsTimeoutId;
+  _disablePointerEventsTimeoutId: any;
 
   _styleCache: StyleCache = {};
   _cellCache: CellCache = {};
@@ -836,8 +836,8 @@ class VirtualGrid extends React.PureComponent<Props, State> {
       });
     }
 
-    let maybeStateA;
-    let maybeStateB;
+    let maybeStateA: any;
+    let maybeStateB: any;
 
     calculateSizeAndPositionDataAndUpdateScrollOffset({
       cellCount: instanceProps.prevColumnCount,
@@ -1242,7 +1242,7 @@ class VirtualGrid extends React.PureComponent<Props, State> {
     totalRowsHeight: number;
   }) {
     this._onScrollMemoizer({
-      callback: ({ scrollLeft, scrollTop }) => {
+      callback: ( { scrollLeft, scrollTop }: { scrollLeft: number, scrollTop: number } ) => {
         const { height, onScroll, width } = this.props;
 
         onScroll({
@@ -1475,5 +1475,5 @@ class VirtualGrid extends React.PureComponent<Props, State> {
   };
 }
 
-polyfill(VirtualGrid);
+polyfill(VirtualGrid as any);
 export default VirtualGrid;

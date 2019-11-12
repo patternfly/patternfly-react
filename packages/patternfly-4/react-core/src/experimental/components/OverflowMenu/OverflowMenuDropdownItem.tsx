@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/react-styles/css/components/OverflowMenu/overflow-menu';
 import { DropdownItem } from '../../../components/Dropdown';
+import { OverflowMenuContext } from './OverflowMenuContext';
 
 export interface OverflowMenuDropdownItemProps extends React.HTMLProps<HTMLDivElement> {
   /** Any elements that can be rendered in the menu */
@@ -11,7 +10,11 @@ export interface OverflowMenuDropdownItemProps extends React.HTMLProps<HTMLDivEl
 }
 
 export const OverflowMenuDropdownItem: React.SFC<OverflowMenuDropdownItemProps> = ({ children, isShared = false }) => (
-  <DropdownItem listItemClassName={css(isShared && styles.overflowMenuSharedItem)} component="button">
-    {children}
-  </DropdownItem>
+  <OverflowMenuContext.Consumer>
+    {value =>
+      (!isShared || value.isBelowBreakpoint) && (
+        <DropdownItem component="button"> {children} </DropdownItem>
+      )
+    }
+  </OverflowMenuContext.Consumer>
 );

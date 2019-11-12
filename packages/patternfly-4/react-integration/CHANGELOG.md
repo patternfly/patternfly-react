@@ -3,6 +3,82 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.9.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.9.2...@patternfly/react-integration@3.9.3) (2019-11-06)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [3.9.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.9.1...@patternfly/react-integration@3.9.2) (2019-11-05)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+## [3.9.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.9.0...@patternfly/react-integration@3.9.1) (2019-10-25)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
+# [3.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.8.0...@patternfly/react-integration@3.9.0) (2019-10-24)
+
+
+### Features
+
+* **TextArea:** Add a prop to allow limiting the resize orientation o… ([#3180](https://github.com/patternfly/patternfly-react/issues/3180)) ([d61ae9d](https://github.com/patternfly/patternfly-react/commit/d61ae9d)), closes [#2839](https://github.com/patternfly/patternfly-react/issues/2839)
+
+
+
+
+
+# [3.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.7.1...@patternfly/react-integration@3.8.0) (2019-10-23)
+
+
+### Features
+
+* **Divider:** add divider component ([#3125](https://github.com/patternfly/patternfly-react/issues/3125)) ([92971d3](https://github.com/patternfly/patternfly-react/commit/92971d3))
+
+
+
+
+
+## [3.7.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.7.0...@patternfly/react-integration@3.7.1) (2019-10-17)
+
+
+### Bug Fixes
+
+* **table:** set height auto modifier on table row ([#3133](https://github.com/patternfly/patternfly-react/issues/3133)) ([6e89ebe](https://github.com/patternfly/patternfly-react/commit/6e89ebe))
+
+
+
+
+
+# [3.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.6.3...@patternfly/react-integration@3.7.0) (2019-10-10)
+
+
+### Features
+
+* **Expandable:** Allow for dynamic toggle text in uncontrolled version ([#3068](https://github.com/patternfly/patternfly-react/issues/3068)) ([3c6e4b6](https://github.com/patternfly/patternfly-react/commit/3c6e4b6)), closes [#2914](https://github.com/patternfly/patternfly-react/issues/2914)
+
+
+
+
+
+## [3.6.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.6.2...@patternfly/react-integration@3.6.3) (2019-10-09)
+
+**Note:** Version bump only for package @patternfly/react-integration
+
+
+
+
+
 ## [3.6.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-integration@3.6.1...@patternfly/react-integration@3.6.2) (2019-10-02)
 
 **Note:** Version bump only for package @patternfly/react-integration

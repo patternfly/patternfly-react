@@ -51,7 +51,8 @@ async function onCreateNode({ node, actions, loadNodeContent, createNodeId, crea
       filename: node.absolutePath
     });
   } catch (err) {
-    console.warn('No component found in', node.absolutePath); // eslint-disable-line no-console
+    // eslint-disable-next-line no-console
+    // console.warn('No component found in', node.absolutePath);
   }
 
   if (parsed) {

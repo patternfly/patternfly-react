@@ -1,0 +1,95 @@
+.vertical-tabs-pf {
+  list-style: none;
+  margin: 0 0 30px;
+  padding: 0;
+
+  .vertical-tabs-pf {
+    margin-bottom: 0;
+  }
+}
+
+.vertical-tabs-pf-tab {
+  margin-top: 4px;
+  position: relative;
+
+  > a {
+    color: $vertical-tab-pf-color;
+    display: inline-block;
+    font-size: 13px;
+    padding: 3px 6px 3px 15px;
+    vertical-align: top;
+    width: 100%;
+    word-break: break-word;
+
+    &:hover,
+    &:focus {
+      color: $vertical-tab-pf-active-color;
+      text-decoration: none;
+    }
+
+    &.no-wrap {
+      overflow-x: hidden;
+      white-space: nowrap;
+    }
+
+    &.truncate {
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  &.active {
+    > a {
+      color: $vertical-tab-pf-active-color;
+
+      &::before {
+        background: $vertical-tab-pf-active-color;
+        content: "\00a0"; // &nbsp;
+        left: 0;
+        position: absolute;
+        width: 3px;
+      }
+    }
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  > .vertical-tabs-pf {
+    > .vertical-tabs-pf-tab {
+      position: initial;
+      padding-left: 15px;
+    }
+  }
+}
+
+.vertical-tabs-pf.restrict-tabs {
+  .vertical-tabs-pf-tab {
+    display: none;
+
+    /* Show any active tab, tab that has an active descendant, or is force shown */
+    &.active,
+    &.active-descendant,
+    &.shown {
+      display: block;
+    }
+  }
+
+  /* Show siblings of the active tab */
+  &.active-tab {
+    > .vertical-tabs-pf-tab {
+      display: block;
+    }
+  }
+
+  /* Show the direct children of an active tab */
+  .vertical-tabs-pf-tab.active {
+    > .vertical-tabs-pf {
+      > .vertical-tabs-pf-tab {
+        display: block;
+      }
+    }
+  }
+}

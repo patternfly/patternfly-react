@@ -12,6 +12,7 @@ import { SelectContext, SelectVariant, SelectDirection } from './selectConstants
 import { Chip, ChipGroup } from '../ChipGroup';
 import { keyHandler, getNextIndex } from '../../helpers/util';
 import { Omit } from '../../helpers/typeUtils';
+import { InjectedOuiaProps, withOuiaContext } from '../withOuia';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -40,7 +41,7 @@ export interface SelectProps
   placeholderText?: string | React.ReactNode;
   /** Text to display in typeahead select when no results are found **/
   noResultsFoundText?: string;
-  /** Selected item */
+  /** Selected item for single select variant.  Array of selected items for multi select variants. */
   selections?: string | SelectOptionObject | (string | SelectOptionObject)[];
   /** Id for select toggle element */
   toggleId?: string;
@@ -89,7 +90,7 @@ export interface SelectState {
   creatableValue: string;
 }
 
-export class Select extends React.Component<SelectProps, SelectState> {
+class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectState> {
   private parentRef = React.createRef<HTMLDivElement>();
   private refCollection: HTMLElement[] = [];
 
@@ -115,12 +116,11 @@ export class Select extends React.Component<SelectProps, SelectState> {
     noResultsFoundText: 'No results found',
     variant: SelectVariant.single,
     width: '',
-    maxHeight: '',
-    onClear: Function.prototype,
-    onCreateOption: Function.prototype,
+    onClear: (_e: React.MouseEvent) => undefined as void,
+    onCreateOption: (_newOptionValue: string) => undefined as void,
     toggleIcon: null as React.ReactElement,
-    onFilter: undefined as () => {}
-  };
+    onFilter: null
+  } as Partial<SelectProps & InjectedOuiaProps>;
 
   state = {
     openedOnEnter: false,
@@ -142,9 +142,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
       });
     }
 
-    if (prevProps.selections !== this.props.selections && this.state.typeaheadActiveChild) {
+    if (prevProps.selections !== this.props.selections && this.props.variant === SelectVariant.typeahead) {
       this.setState({
-        typeaheadInputValue: this.state.typeaheadActiveChild.innerText
+        typeaheadInputValue: this.props.selections as string
       });
     }
   };
@@ -164,10 +164,10 @@ export class Select extends React.Component<SelectProps, SelectState> {
   };
 
   onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText } = this.props;
-    let typeaheadFilteredChildren;
+    const { onFilter, isCreatable, onCreateOption, createText, noResultsFoundText, children } = this.props;
+    let typeaheadFilteredChildren: any;
     if (onFilter) {
-      typeaheadFilteredChildren = onFilter(e);
+      typeaheadFilteredChildren = onFilter(e) || children;
     } else {
       let input: RegExp;
       try {
@@ -182,6 +182,9 @@ export class Select extends React.Component<SelectProps, SelectState> {
                 this.getDisplay((child as React.ReactElement).props.value.toString(), 'text').search(input) === 0
             )
           : React.Children.toArray(this.props.children);
+    }
+    if (!typeaheadFilteredChildren) {
+      typeaheadFilteredChildren = [];
     }
     if (typeaheadFilteredChildren.length === 0) {
       !isCreatable && typeaheadFilteredChildren.push(<SelectOption isDisabled key={0} value={noResultsFoundText} />);
@@ -345,6 +348,10 @@ export class Select extends React.Component<SelectProps, SelectState> {
       width,
       maxHeight,
       toggleIcon,
+      ouiaContext,
+      ouiaId,
+      createText,
+      noResultsFoundText,
       ...props
     } = this.props;
     const { openedOnEnter, typeaheadInputValue, typeaheadActiveChild } = this.state;
@@ -369,6 +376,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
         </ChipGroup>
       );
     }
+
     return (
       <div
         className={css(
@@ -379,6 +387,10 @@ export class Select extends React.Component<SelectProps, SelectState> {
         )}
         ref={this.parentRef}
         style={{ width }}
+        {...(ouiaContext.isOuia && {
+          'data-ouia-component-type': 'Select',
+          'data-ouia-component-id': ouiaId || ouiaContext.ouiaId
+        })}
       >
         <SelectContext.Provider value={{ onSelect, onClose: this.onClose, variant }}>
           <SelectToggle
@@ -433,6 +445,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                           : this.getDisplay(selections as string, 'text') || ''
                       }
                       type="text"
+                      onClick={this.onClick}
                       onChange={this.onChange}
                       onFocus={this.handleFocus}
                       autoComplete="off"
@@ -471,6 +484,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
                       value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
                       type="text"
                       onChange={this.onChange}
+                      onClick={this.onClick}
                       onFocus={this.handleFocus}
                       autoComplete="off"
                       disabled={isDisabled}
@@ -541,3 +555,7 @@ export class Select extends React.Component<SelectProps, SelectState> {
     );
   }
 }
+
+const SelectWithOuiaContext = withOuiaContext(Select);
+
+export { SelectWithOuiaContext as Select };

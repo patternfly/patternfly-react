@@ -39,9 +39,7 @@ export const OptionsMenuItem: React.FunctionComponent<OptionsMenuItemProps> = ({
       {...props}
     >
       {children}
-      <i className={css(styles.optionsMenuMenuItemIcon)} aria-hidden hidden={!isSelected}>
-        <CheckIcon />
-      </i>
+      {isSelected && <CheckIcon className={css(styles.optionsMenuMenuItemIcon)} aria-hidden={isSelected}/>}
     </DropdownItem>
   );
 };

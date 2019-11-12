@@ -4,17 +4,19 @@ import {
   TableHeader,
   TableBody,
   TableProps,
-  sortable,
-  SortByDirection,
   headerCol,
-  TableVariant,
-  expandable,
-  cellWidth,
-  IAction,
-  IRow
+  ICell,
+  IRow,
+  IActions
 } from '@patternfly/react-table';
 
-export class TableSimpleActionsDemo extends React.Component<TableProps, { columns: any; rows: IRow[]; actions: any }> {
+interface ITableState {
+  columns: (ICell | string)[];
+  rows: IRow[];
+  actions: IActions;
+}
+
+export class TableSimpleActionsDemo extends React.Component<TableProps, ITableState> {
   constructor(props: TableProps) {
     super(props);
     this.state = {
@@ -47,7 +49,8 @@ export class TableSimpleActionsDemo extends React.Component<TableProps, { column
           onClick: (event, rowId, rowData, extra) => console.log('clicked on Another action, on row: ', rowId)
         },
         {
-          isSeparator: true
+          isSeparator: true,
+          onClick: null
         },
         {
           title: 'Third action',

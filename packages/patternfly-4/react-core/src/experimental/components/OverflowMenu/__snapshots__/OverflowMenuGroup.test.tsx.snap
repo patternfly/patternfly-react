@@ -27,7 +27,7 @@ exports[`OverflowMenuGroup isPersistent and below breakpoint should still show 1
   isPersistent={true}
 >
   <div
-    className="pf-c-overflow-menu__group pf-m-persistent"
+    className="pf-c-overflow-menu__group"
   />
 </Component>
 `;

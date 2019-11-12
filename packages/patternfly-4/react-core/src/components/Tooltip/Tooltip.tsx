@@ -61,12 +61,16 @@ export interface TooltipProps {
   position?: 'auto' | 'top' | 'bottom' | 'left' | 'right';
   /** Tooltip trigger: click, mouseenter, focus, manual  */
   trigger?: string;
+  /** Flag to indicate that the text content is left aligned */
+  isContentLeftAligned?: boolean;
   /** value for visibility when trigger is 'manual' */
   isVisible?: boolean;
   /** z-index of the tooltip */
   zIndex?: number;
   /** additional Props to pass through to tippy.js */
   tippyProps?: TippyProps;
+  /** ID */
+  id?: string;
 }
 
 export class Tooltip extends React.Component<TooltipProps> {
@@ -75,6 +79,7 @@ export class Tooltip extends React.Component<TooltipProps> {
     position: 'top',
     trigger: 'mouseenter focus',
     isVisible: false,
+    isContentLeftAligned: false,
     enableFlip: true,
     className: '',
     entryDelay: 500,
@@ -88,7 +93,8 @@ export class Tooltip extends React.Component<TooltipProps> {
     boundary: 'window',
     // For every initial starting position, there are 3 escape positions
     flipBehavior: ['top', 'right', 'bottom', 'left', 'top', 'right', 'bottom'],
-    tippyProps: {}
+    tippyProps: {},
+    id: '',
   };
 
   storeTippyInstance = (tip: TippyInstance) => {
@@ -120,6 +126,7 @@ export class Tooltip extends React.Component<TooltipProps> {
     const {
       position,
       trigger,
+      isContentLeftAligned,
       isVisible,
       enableFlip,
       children,
@@ -136,15 +143,17 @@ export class Tooltip extends React.Component<TooltipProps> {
       boundary,
       flipBehavior,
       tippyProps,
+      id,
       ...rest
     } = this.props;
     const content = (
       <div
         className={css(!enableFlip && getModifier(styles, position, styles.modifiers.top), className)}
         role="tooltip"
+        id={id}
         {...rest}
       >
-        <TooltipContent>{bodyContent}</TooltipContent>
+        <TooltipContent isLeftAligned={isContentLeftAligned}>{bodyContent}</TooltipContent>
       </div>
     );
     return (

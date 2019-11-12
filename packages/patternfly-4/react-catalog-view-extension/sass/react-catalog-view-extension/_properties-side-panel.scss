@@ -1,0 +1,23 @@
+.properties-side-panel-pf {
+  width: 165px;
+}
+
+.properties-side-panel-pf-property {
+  margin-top: 24px;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.properties-side-panel-pf-property-label {
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  margin: 0 !important;
+}
+
+.properties-side-panel-pf-property-value {
+  font-size: 14px !important;
+  margin-top: 8px;
+  word-break: break-word;
+}

@@ -47,7 +47,7 @@ export class NavExpandable extends React.Component<NavExpandableProps, NavExpand
   id = this.props.id || getUniqueId();
 
   state = {
-    expandedState: false
+    expandedState: this.props.isExpanded
   };
 
   componentDidMount() {

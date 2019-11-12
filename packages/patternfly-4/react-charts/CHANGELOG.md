@@ -3,6 +3,132 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.1.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.1.5...@patternfly/react-charts@5.1.6) (2019-11-08)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [5.1.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.1.4...@patternfly/react-charts@5.1.5) (2019-11-01)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [5.1.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.1.3...@patternfly/react-charts@5.1.4) (2019-10-31)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [5.1.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.1.2...@patternfly/react-charts@5.1.3) (2019-10-30)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [5.1.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.1.1...@patternfly/react-charts@5.1.2) (2019-10-25)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [5.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.1.0...@patternfly/react-charts@5.1.1) (2019-10-22)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [5.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.27...@patternfly/react-charts@5.1.0) (2019-10-18)
+
+
+### Features
+
+* **docs:** use gatsby-theme-patternfly-org ([#3146](https://github.com/patternfly/patternfly-react/issues/3146)) ([93c843b](https://github.com/patternfly/patternfly-react/commit/93c843b))
+
+
+
+
+
+## [5.0.27](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.26...@patternfly/react-charts@5.0.27) (2019-10-15)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [5.0.26](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.25...@patternfly/react-charts@5.0.26) (2019-10-14)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [5.0.25](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.24...@patternfly/react-charts@5.0.25) (2019-10-14)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [5.0.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.23...@patternfly/react-charts@5.0.24) (2019-10-14)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [5.0.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.22...@patternfly/react-charts@5.0.23) (2019-10-11)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [5.0.22](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.21...@patternfly/react-charts@5.0.22) (2019-10-10)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [5.0.21](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.20...@patternfly/react-charts@5.0.21) (2019-10-09)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [5.0.20](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.19...@patternfly/react-charts@5.0.20) (2019-10-09)
+
+
+### Bug Fixes
+
+* **charts:** update ChartThreshold to use pf-core variable ([#3085](https://github.com/patternfly/patternfly-react/issues/3085)) ([3f77276](https://github.com/patternfly/patternfly-react/commit/3f77276))
+
+
+
+
+
 ## [5.0.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@5.0.18...@patternfly/react-charts@5.0.19) (2019-10-07)
 
 **Note:** Version bump only for package @patternfly/react-charts

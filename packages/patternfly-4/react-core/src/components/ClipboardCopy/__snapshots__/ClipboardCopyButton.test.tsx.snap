@@ -26,7 +26,9 @@ exports[`copy button render 1`] = `
       "bottom",
     ]
   }
+  id=""
   isAppLauncher={false}
+  isContentLeftAligned={false}
   isVisible={false}
   maxWidth="500px"
   position="right"

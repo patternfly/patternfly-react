@@ -4,6 +4,7 @@ exports[`AboutModal renders correctly when hidden 1`] = `null`;
 
 exports[`AboutModal renders correctly when shown 1`] = `
 <div
+  aria-hidden="true"
   role="dialog"
 >
   <div

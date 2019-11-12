@@ -4,17 +4,12 @@ import {
   TableHeader,
   TableBody,
   TableProps,
-  sortable,
-  SortByDirection,
-  headerCol,
-  TableVariant,
-  expandable,
-  cellWidth,
   textCenter,
+  ICell,
   IRow
 } from '@patternfly/react-table';
 
-export class TableSimpleDemo extends React.Component<TableProps, { columns: any; rows: IRow[] }> {
+export class TableSimpleDemo extends React.Component<TableProps, { columns: (ICell | string)[]; rows: IRow[] }> {
   constructor(props: TableProps) {
     super(props);
     this.state = {

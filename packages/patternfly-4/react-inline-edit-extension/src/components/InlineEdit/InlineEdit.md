@@ -4,14 +4,6 @@ section: 'inline table'
 propComponents: ['TableTextInput']
 ---
 
-Note: Inline Edit lives in its own package at [`@patternfly/react-inline-edit-extension`](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension)!
-<br />
-This package is currently an extension. Extension components do not undergo the same rigorous design or coding review process as core PatternFly components. If enough members of the community find them useful, we will work to move them into our core PatternFly system by starting the design process for the idea.
-<br />
-<br />
-
-## Editable table with inline edit row
-
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
   editableTableBody,
@@ -22,7 +14,13 @@ import {
 } from '@patternfly/react-inline-edit-extension';
 import { Dropdown, DropdownToggle, DropdownItem, Checkbox } from '@patternfly/react-core';
 
-```js
+## Introduction
+Note: Inline Edit lives in its own package at [`@patternfly/react-inline-edit-extension`](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension)!
+
+This package is currently an extension. Extension components do not undergo the same rigorous design or coding review process as core PatternFly components. If enough members of the community find them useful, we will work to move them into our core PatternFly system by starting the design process for the idea.
+
+## Examples
+```js title=Editable
 import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
@@ -322,7 +320,7 @@ class EditableTable extends React.Component {
 
     return (
       <Table
-        caption="Editable Table"
+        aria-label="Editable Table"
         cells={columns}
         rows={rows}
         rowWrapper={ComposedRowWrapper}
@@ -336,8 +334,7 @@ class EditableTable extends React.Component {
 }
 ```
 
-## Editable table with inline edit columns
-```js
+```js title=With-inline-edit-columns
 import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
@@ -482,7 +479,7 @@ class EditableTableColumn extends React.Component {
     return (
       <Table
         variant={TableVariant.compact}
-        caption="Editable Table With Inline Edit Columns"
+        aria-label="Editable Table With Inline Edit Columns"
         cells={columns}
         rows={rows}
         rowWrapper={ComposedRowWrapper}
@@ -496,8 +493,7 @@ class EditableTableColumn extends React.Component {
 }
 ```
 
-## Editable table with collapsible rows
-```js
+```js title=With-collapsible-rows
 import React from 'react';
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
@@ -766,7 +762,7 @@ class CollapsibleEditableTable extends React.Component {
 
     return (
       <Table
-        caption="Editable Table With Collapsible Rows"
+        aria-label="Editable Table With Collapsible Rows"
         cells={columns}
         rows={rows}
         rowWrapper={ComposedRowWrapper}

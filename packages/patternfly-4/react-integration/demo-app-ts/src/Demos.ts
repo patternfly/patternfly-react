@@ -146,6 +146,16 @@ export const Demos: DemoInterface[] = [
     componentType: Examples.DataListDemo
   },
   {
+    id: 'data-toolbar-demo',
+    name: 'Data Toolbar Demo',
+    componentType: Examples.DataToolbarDemo
+  },
+  {
+    id: 'divider-demo',
+    name: 'Divider Demo',
+    componentType: Examples.DividerDemo
+  },
+  {
     id: 'donut-chart-bottom-legend-demo',
     name: 'Donut Chart with Bottom Aligned Legend Demo',
     componentType: Examples.DonutBottomAlignedLegendDemo
@@ -506,6 +516,16 @@ export const Demos: DemoInterface[] = [
     id: 'table-headers-wrappable-demo',
     name: 'Table Headers Wrappable Demo',
     componentType: Examples.TableHeadersWrappableDemo
+  },
+  {
+    id: 'table-row-wrapper-demo',
+    name: 'Table Row Wrapper Demo',
+    componentType: Examples.TableRowWrapperDemo
+  },
+  {
+    id: 'table-row-click-demo',
+    name: 'Table Row Click Demo',
+    componentType: Examples.TableRowClickDemo
   },
   {
     id: 'table-selectable-demo',

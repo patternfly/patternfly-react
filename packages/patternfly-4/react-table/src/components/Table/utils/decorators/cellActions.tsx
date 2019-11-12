@@ -10,7 +10,8 @@ import {
   IExtra,
   IExtraData,
   IFormatterValueType,
-  IRowData
+  IRowData,
+  ITransform
 } from '../../Table';
 
 const resolveOrDefault = (
@@ -24,7 +25,7 @@ export const cellActions = (
   actions: IActions,
   actionResolver: IActionsResolver,
   areActionsDisabled: IAreActionsDisabled
-) => (
+): ITransform => (
   label: IFormatterValueType,
   {
     rowData,
