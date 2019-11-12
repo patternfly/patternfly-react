@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.120.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.120.8...@patternfly/react-core@3.120.9) (2019-11-12)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [3.120.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.120.7...@patternfly/react-core@3.120.8) (2019-11-08)
 
 **Note:** Version bump only for package @patternfly/react-core

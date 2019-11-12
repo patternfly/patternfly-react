@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.16...@patternfly/react-catalog-view-extension@1.1.17) (2019-11-12)
+
+
+### Bug Fixes
+
+* **CatalogTile:** Edit target selector ([#3291](https://github.com/patternfly/patternfly-react/issues/3291)) ([16bf30c](https://github.com/patternfly/patternfly-react/commit/16bf30c1fba9b4573688434cfb8fd65288709d02))
+
+
+
+
+
 ## [1.1.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-catalog-view-extension@1.1.15...@patternfly/react-catalog-view-extension@1.1.16) (2019-11-08)
 
 **Note:** Version bump only for package @patternfly/react-catalog-view-extension
