@@ -10,22 +10,33 @@ module.exports = {
     {
       resolve: `gatsby-theme-patternfly-org`,
       options: {
+        context: 'react', // For global items that need sideNav
         hiddenPages: ['withOuia'], // By title
-        sideNavItems: [
-          { section: 'charts' },
-          { section: 'components' },
-          { section: 'demos' },
-          { section: 'experimental' },
-          { section: 'inline table' },
-          { section: 'layouts' },
-          { section: 'virtual scroll' },
-          { section: 'catalog view' },
-          { text: 'Release notes', link: '/documentation/react/release-notes' },
-          { text: 'Global CSS Variables', link: '/documentation/global-css-variables' },
-        ],
+        sideNav: {
+          react: [
+            { section: 'overview' },
+            { section: 'charts' },
+            { section: 'components' },
+            { section: 'demos' },
+            { section: 'experimental' },
+            { section: 'inline table' },
+            { section: 'layouts' },
+            { section: 'virtual scroll' },
+            { section: 'catalog view' },
+          ]
+        },
         topNavItems: [
-          { text: 'Icons', link: '/icons' },
+          { text: 'Icons', path: '/icons' },
         ],
+      }
+    },
+    // Source shared pages from the theme
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'shared', // This goes in URLs
+        // TODO: prettier way to do this
+        path: require.resolve('gatsby-theme-patternfly-org').replace('index.js', 'pages')
       }
     },
     // Source component documentation
@@ -70,17 +81,14 @@ module.exports = {
     {
       resolve: path.resolve(__dirname, './plugins/gatsby-transformer-react-docgen-typescript')
     },
-    // The plugin for package.json files (to get version numbers)
-    'gatsby-transformer-json',
-    // Duplicated from gatsby-theme-patternfly-org
+    // Pipe MDX files through this plugin that spits out React components
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        extensions: [`.mdx`, `.md`],
-        defaultLayouts: {
-          default: require.resolve('gatsby-theme-patternfly-org/templates/mdxDefault.js'),
-        },
+        extensions: ['.md']
       }
     },
+    // The plugin for package.json files (to get version numbers)
+    'gatsby-transformer-json',
   ]
 };

@@ -1,21 +1,21 @@
 ---
 title: Release notes
-section: root
+section: overview
 hideTOC: true
 ---
 
-# 2019.09 release notes (2019-10-29)
+# 2019.09 release notes (2019-11-01)
 Packages released:
-- [@patternfly/react-catalog-view-extension@1.1.1](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.1.1)
-- [@patternfly/react-charts@5.1.2](https://www.npmjs.com/package/@patternfly/react-charts/v/5.1.2)
-- [@patternfly/react-core@3.120.1](https://www.npmjs.com/package/@patternfly/react-core/v/3.120.1)
-- [@patternfly/react-inline-edit-extension@2.12.10](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.12.10)
-- [@patternfly/react-styles@3.6.2](https://www.npmjs.com/package/@patternfly/react-styles/v/3.6.2)
-- [@patternfly/react-table@2.24.10](https://www.npmjs.com/package/@patternfly/react-table/v/2.24.10)
-- [@patternfly/react-tokens@2.7.2](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.7.2)
-- [@patternfly/react-topology@2.11.1](https://www.npmjs.com/package/@patternfly/react-topology/v/2.11.1)
-- [@patternfly/react-virtualized-extension@1.3.10](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.3.10)
-- [@patternfly/react-icons@3.14.15](https://www.npmjs.com/package/@patternfly/react-icons/v/3.14.15)
+- [@patternfly/react-catalog-view-extension@1.1.5](https://www.npmjs.com/package/@patternfly/react-catalog-view-extension/v/1.1.5)
+- [@patternfly/react-charts@5.1.5](https://www.npmjs.com/package/@patternfly/react-charts/v/5.1.5)
+- [@patternfly/react-core@3.120.5](https://www.npmjs.com/package/@patternfly/react-core/v/3.120.5)
+- [@patternfly/react-inline-edit-extension@2.12.17](https://www.npmjs.com/package/@patternfly/react-inline-edit-extension/v/2.12.17)
+- [@patternfly/react-styles@3.6.5](https://www.npmjs.com/package/@patternfly/react-styles/v/3.6.5)
+- [@patternfly/react-table@2.24.17](https://www.npmjs.com/package/@patternfly/react-table/v/2.24.17)
+- [@patternfly/react-tokens@2.7.5](https://www.npmjs.com/package/@patternfly/react-tokens/v/2.7.5)
+- [@patternfly/react-topology@2.11.5](https://www.npmjs.com/package/@patternfly/react-topology/v/2.11.5)
+- [@patternfly/react-virtualized-extension@1.3.17](https://www.npmjs.com/package/@patternfly/react-virtualized-extension/v/1.3.17)
+- [@patternfly/react-icons@3.14.18](https://www.npmjs.com/package/@patternfly/react-icons/v/3.14.18)
 
 ## Charts
 - Added legend examples ([#3093](https://github.com/patternfly/patternfly-react/pull/3093))

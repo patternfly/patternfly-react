@@ -8,7 +8,7 @@ const containerStyle = {
   display: 'flex',
   justifyContent: 'center',
   flexDirection: 'column',
-  height: '100%'
+  height: '80vh'
 };
 
 // https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
@@ -23,7 +23,7 @@ const IndexPage = ({ data, location }) => {
   const prInfo = data.allEnvVars.edges.filter(({ node }) => node.name === 'PR_INFO')[0].node;
 
   return (
-    <SideNavLayout location={location}>
+    <SideNavLayout location={location} context="react">
       <div style={containerStyle}>
         <PageSection style={centerStyle}>
           <div style={{ flex: 'none', textAlign: 'center' }}>

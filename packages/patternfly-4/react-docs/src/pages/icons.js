@@ -35,7 +35,7 @@ export default ({ location }) => {
   };
 
   return (
-    <SideNavLayout location={location}>
+    <SideNavLayout location={location} context="react">
       <PageSection className="ws-section">
         <Title size="md" className="ws-framework-title">React</Title>
         <Title size="4xl">Icons</Title>
