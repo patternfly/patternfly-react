@@ -79,16 +79,15 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
     });
   }
 
-  extendCheckboxChildren(props: any) {
+  extendCheckboxChildren() {
     const { children, isGrouped, checked, sendRef, keyHandler } = this.props;
-    const { 'aria-label': ariaLabel, 'aria-labelledby': ariaLabelledBy } = props;
     if (isGrouped) {
       let index = 0;
       return React.Children.map(children, (group: React.ReactElement) =>
         React.cloneElement(group, {
           titleId: group.props.label.replace(/\W/g, '-'),
           children: (
-            <fieldset aria-labelledby={group.props.label.replace(/\W/g, '-')} className={css(formStyles.formFieldset)}>
+            <fieldset aria-labelledby={group.props.label.replace(/\W/g, '-')} className={css(styles.selectMenuFieldset)}>
               {group.props.children.map((option: React.ReactElement) =>
                 React.cloneElement(option, {
                   isChecked: checked && checked.includes(option.props.value),
@@ -103,12 +102,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
       );
     }
     return (
-      <fieldset
-        {...props}
-        aria-label={ariaLabel}
-        aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
-        className={css(formStyles.formFieldset)}
-      >
+      <React.Fragment>
         {React.Children.map(children, (child: React.ReactElement, index: number) =>
           React.cloneElement(child, {
             isChecked: checked && checked.includes(child.props.value),
@@ -117,7 +111,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
             index
           })
         )}
-      </fieldset>
+      </React.Fragment>
     );
   }
 
@@ -135,8 +129,11 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
       maxHeight,
       noResultsFoundText,
       createText,
+      'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
       ...props
     } = this.props;
+    const {  } = props;
 
     return (
       <SelectConsumer>
@@ -158,9 +155,14 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
                   className={css(styles.selectMenu, className)}
                   {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
                 >
-                  <form noValidate className={css(formStyles.form)}>
-                    <div className={css(formStyles.formGroup)}>{this.extendCheckboxChildren(props)}</div>
-                  </form>
+                  <fieldset
+                    {...props}
+                    aria-label={ariaLabel}
+                    aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
+                    className={css(formStyles.formFieldset)}
+                  >
+                    {this.extendCheckboxChildren()}
+                  </fieldset>
                 </div>
               </FocusTrap>
             )}
@@ -169,9 +171,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
                 className={css(styles.selectMenu, className)}
                 {...(maxHeight && { style: { maxHeight, overflow: 'auto' } })}
               >
-                <form noValidate className={css(formStyles.form)}>
-                  <div className={css(formStyles.formGroup)} />
-                </form>
+                <fieldset className={css(styles.selectMenuFieldset)}/>
               </div>
             )}
           </React.Fragment>
