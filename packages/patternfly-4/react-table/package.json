@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-table#readme",
   "dependencies": {
-    "@patternfly/patternfly": "2.40.13",
+    "@patternfly/patternfly": "2.41.0",
     "@patternfly/react-core": "^3.120.9",
     "@patternfly/react-icons": "^3.14.19",
     "@patternfly/react-styles": "^3.6.6",
