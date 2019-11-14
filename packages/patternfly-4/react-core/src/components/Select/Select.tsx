@@ -432,26 +432,24 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
-                  <form onSubmit={e => e.preventDefault()}>
-                    <input
-                      className={css(formStyles.formControl, styles.selectToggleTypeahead)}
-                      aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                      id="select-typeahead"
-                      aria-label={ariaLabelTypeAhead}
-                      placeholder={placeholderText as string}
-                      value={
-                        typeaheadInputValue !== null
-                          ? typeaheadInputValue
-                          : this.getDisplay(selections as string, 'text') || ''
-                      }
-                      type="text"
-                      onClick={this.onClick}
-                      onChange={this.onChange}
-                      onFocus={this.handleFocus}
-                      autoComplete="off"
-                      disabled={isDisabled}
-                    />
-                  </form>
+                  <input
+                    className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                    aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
+                    id="select-typeahead"
+                    aria-label={ariaLabelTypeAhead}
+                    placeholder={placeholderText as string}
+                    value={
+                      typeaheadInputValue !== null
+                        ? typeaheadInputValue
+                        : this.getDisplay(selections as string, 'text') || ''
+                    }
+                    type="text"
+                    onClick={this.onClick}
+                    onChange={this.onChange}
+                    onFocus={this.handleFocus}
+                    autoComplete="off"
+                    disabled={isDisabled}
+                  />
                 </div>
                 {selections && (
                   <button
@@ -474,22 +472,20 @@ class Select extends React.Component<SelectProps & InjectedOuiaProps, SelectStat
                 <div className={css(styles.selectToggleWrapper)}>
                   {toggleIcon && <span className={css(styles.selectToggleIcon)}>{toggleIcon}</span>}
                   {selections && (Array.isArray(selections) && selections.length > 0) && selectedChips}
-                  <form onSubmit={e => e.preventDefault()}>
-                    <input
-                      className={css(formStyles.formControl, styles.selectToggleTypeahead)}
-                      aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
-                      id="select-multi-typeahead-typeahead"
-                      aria-label={ariaLabelTypeAhead}
-                      placeholder={placeholderText as string}
-                      value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
-                      type="text"
-                      onChange={this.onChange}
-                      onClick={this.onClick}
-                      onFocus={this.handleFocus}
-                      autoComplete="off"
-                      disabled={isDisabled}
-                    />
-                  </form>
+                  <input
+                    className={css(formStyles.formControl, styles.selectToggleTypeahead)}
+                    aria-activedescendant={typeaheadActiveChild && typeaheadActiveChild.id}
+                    id="select-multi-typeahead-typeahead"
+                    aria-label={ariaLabelTypeAhead}
+                    placeholder={placeholderText as string}
+                    value={typeaheadInputValue !== null ? typeaheadInputValue : ''}
+                    type="text"
+                    onChange={this.onChange}
+                    onClick={this.onClick}
+                    onFocus={this.handleFocus}
+                    autoComplete="off"
+                    disabled={isDisabled}
+                  />
                 </div>
                 {selections && (Array.isArray(selections) && selections.length > 0) && (
                   <button
