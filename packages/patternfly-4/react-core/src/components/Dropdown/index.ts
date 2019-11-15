@@ -8,3 +8,4 @@ export * from './Separator';
 export * from './KebabToggle';
 export * from './DropdownToggle';
 export * from './DropdownToggleCheckbox';
+export * from './DropdownToggleAction';
