@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-styled-system",
-  "version": "3.7.6",
+  "version": "3.7.7",
   "description": "Experimental: Styled System package with PatternFly 4 theming",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -35,8 +35,8 @@
     "develop": "yarn build:babel:esm --skip-initial-build --watch --verbose"
   },
   "dependencies": {
-    "@patternfly/react-styles": "^3.6.6",
-    "@patternfly/react-tokens": "^2.7.6",
+    "@patternfly/react-styles": "^3.6.7",
+    "@patternfly/react-tokens": "^2.7.7",
     "emotion-theming": "^9.2.9",
     "react-emotion": "^9.2.9",
     "styled-system": "^3.1.11"
