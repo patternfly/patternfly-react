@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.120.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.120.10...@patternfly/react-core@3.120.11) (2019-11-15)
+
+
+### Bug Fixes
+
+* **Pagination:** fixed previous page navigation issues with 1 row perpage ([#3297](https://github.com/patternfly/patternfly-react/issues/3297)) ([300d828](https://github.com/patternfly/patternfly-react/commit/300d8285e7057f71c1cf4df73a5832abcea9e3ac))
+
+
+
+
+
+## [3.120.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.120.9...@patternfly/react-core@3.120.10) (2019-11-14)
+
+
+### Bug Fixes
+
+* **Select:** remove form typeahead and checkbox selects ([#3298](https://github.com/patternfly/patternfly-react/issues/3298)) ([913daeb](https://github.com/patternfly/patternfly-react/commit/913daeb7ee936421d78ecbd0ab8857f5f8a6956e))
+
+
+
+
+
 ## [3.120.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.120.8...@patternfly/react-core@3.120.9) (2019-11-12)
 
 **Note:** Version bump only for package @patternfly/react-core

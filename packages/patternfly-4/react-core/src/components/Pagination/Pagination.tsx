@@ -206,7 +206,7 @@ const Pagination: React.FunctionComponent<PaginationProps & InjectedOuiaProps> =
         currPage={titles.currPage}
         paginationTitle={titles.paginationTitle}
         page={itemCount <= 0 ? 0 : page}
-        firstPage={itemsStart !== null ? itemsStart : firstIndex}
+        firstPage={itemsStart !== null ? itemsStart : 1}
         lastPage={lastPage}
         onSetPage={onSetPage}
         onFirstClick={onFirstClick}
