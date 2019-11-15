@@ -12,6 +12,8 @@ import {
   EmptyStateSecondaryActions,
   Bullseye 
 } from '@patternfly/react-core';
+import { ExclamationCircleIcon } from '@patternfly/react-icons';
+import { global_danger_color_200 as globalDangerColor200 } from '@patternfly/react-tokens';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 
@@ -29,6 +31,8 @@ import {
   Bullseye,
   Radio 
 } from '@patternfly/react-core';
+import { ExclamationCircleIcon } from '@patternfly/react-icons';
+import { global_breakpoint_lg as globalBreakpointLg } from '@patternfly/react-tokens';
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 
@@ -36,63 +40,24 @@ class ComplexPaginationTableDemo extends React.Component {
   constructor(props) {
     this.state = {
       res: [],
-      perPage: 20,
-      total: 100,
-      page: 1,
+      perPage: 0,
+      total: 0,
+      page: 0,
       error: null,
-      loading: true,
-      displayState: "withData",
+      loading: true
     };
-    
-    this.handleDisplayChange = this.handleDisplayChange.bind(this)
-  }
-  
-  handleDisplayChange(_, event) {
-    const { value } = event.currentTarget;
-    this.setState({ displayState: value })
   }
 
   fetch(page, perPage) {
     this.setState({ loading: true });
     fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${perPage}`)
       .then(resp => resp.json())
-      .then(resp => this.setState({ res: resp, perPage, page, loading: false }))
-      .catch(err => this.setState({ error: err, loading: false }));
+      .then(resp => this.setState({ res: resp, perPage, page, loading: false, total: 100 }))
+      .catch(err => this.setState({ error: err, loading: false, perPage: 0, page: 0, total: 0 }));
   }
 
   componentDidMount() {
-    this.fetch(this.state.page, this.state.perPage);
-  }
-  
-  renderDisplayStateRadio() {
-    return (
-      <React.Fragment>
-        <Radio
-          isChecked={this.state.displayState === "withData"}
-          name="withData"
-          onChange={this.handleDisplayChange}
-          label="Display with data"
-          id="withData"
-          value="withData"
-        />
-        <Radio
-          isChecked={this.state.displayState === "noData"}
-          name="noData"
-          onChange={this.handleDisplayChange}
-          label="Display with no data"
-          id="noData"
-          value="noData"
-        />
-        <Radio
-          isChecked={this.state.displayState === "loading"}
-          name="loading"
-          onChange={this.handleDisplayChange}
-          label="Display loading data"
-          id="loading"
-          value="loading"
-        />
-      </React.Fragment>
-    )
+    this.fetch(this.state.page || 1, this.state.perPage || 20);
   }
 
   renderPagination(variant = 'top') {
@@ -110,9 +75,9 @@ class ComplexPaginationTableDemo extends React.Component {
   }
 
   render() {
-    const { loading, res, displayState } = this.state;
-    if (res.length === 0 || displayState === "noData") {
-      const rows = [{
+    const { loading, res, error } = this.state;
+    if (error) {
+      const noResultsRows = [{
         heightAuto: true,
         cells: [
           {
@@ -120,12 +85,12 @@ class ComplexPaginationTableDemo extends React.Component {
             title: (
             <Bullseye>
               <EmptyState variant={EmptyStateVariant.small}>
-                <EmptyStateIcon icon={SearchIcon} />
+                <EmptyStateIcon icon={ExclamationCircleIcon} color={globalDangerColor200.value} />
                 <Title headingLevel="h2" size="lg">
-                  No results found
+                  Unable to connect
                 </Title>
                 <EmptyStateBody>
-                  No results match the filter criteria. Remove all filters or clear all filters to show results.
+                  There was an error retrieving data. Check your connection and try again.
                 </EmptyStateBody>
               </EmptyState>
             </Bullseye>
@@ -136,8 +101,7 @@ class ComplexPaginationTableDemo extends React.Component {
       
       return (
         <React.Fragment>
-          {this.renderDisplayStateRadio()}
-          <Table cells={['Title', 'Body']} rows={rows} aria-label="Pagination Table Demo">
+          <Table cells={['Title', 'Body']} rows={noResultsRows} aria-label="Pagination Table Demo">
             <TableHeader />
             <TableBody />
           </Table>
@@ -145,17 +109,35 @@ class ComplexPaginationTableDemo extends React.Component {
       );
     }
     
+    const loadingRows = [{
+      heightAuto: true,
+      cells: [
+        {
+          props: { colSpan: 8 },
+          title: (
+          <Bullseye>
+            <center><Spinner size="xl"/></center>
+          </Bullseye>
+          )
+        },
+      ]
+    }];
+    
     return (
       <React.Fragment>
-        {this.renderDisplayStateRadio()}
         {this.renderPagination()}
-        {!loading && displayState === "withData" && (
+        {!loading && (
           <Table cells={['Title', 'Body']} rows={res.map(post => [post.title, post.body])} aria-label="Pagination Table Demo">
             <TableHeader />
             <TableBody />
           </Table>
         )}
-        {(loading || displayState === "loading") && <center><Spinner size="xl"/></center>}
+        {loading && (
+          <Table cells={['Title', 'Body']} rows={loadingRows} aria-label="Pagination Table Demo">
+            <TableHeader />
+            <TableBody />
+          </Table>
+        )}
       </React.Fragment>
     );
   }
