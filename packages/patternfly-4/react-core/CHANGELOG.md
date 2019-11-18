@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.120.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.120.12...@patternfly/react-core@3.120.13) (2019-11-18)
+
+
+### Bug Fixes
+
+* **wizard,aboutmodal:** remove appendTo from props passed to div ([#3239](https://github.com/patternfly/patternfly-react/issues/3239)) ([0b62699](https://github.com/patternfly/patternfly-react/commit/0b62699976c598262581596fb716c1b3bb61bfa3))
+
+
+
+
+
 ## [3.120.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.120.11...@patternfly/react-core@3.120.12) (2019-11-15)
 
 **Note:** Version bump only for package @patternfly/react-core
