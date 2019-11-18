@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.11.13...@patternfly/react-topology@2.11.14) (2019-11-18)
+
+
+### Bug Fixes
+
+* **topology:** Set topology container to take full height of the view ([#3314](https://github.com/patternfly/patternfly-react/issues/3314)) ([2b15cc0](https://github.com/patternfly/patternfly-react/commit/2b15cc04f5cae16e12ddfb6e5547aebd34f0869e))
+
+
+
+
+
 ## [2.11.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-topology@2.11.12...@patternfly/react-topology@2.11.13) (2019-11-18)
 
 **Note:** Version bump only for package @patternfly/react-topology
