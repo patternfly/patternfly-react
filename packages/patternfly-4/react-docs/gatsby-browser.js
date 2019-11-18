@@ -1,6 +1,14 @@
 import '@patternfly/patternfly/patternfly.css';
 // Utilities
 import '@patternfly/patternfly/patternfly-addons.css';
+// React-specific CSS
+import '@patternfly/react-styles/src/css/components/Table/inline-edit.css';
+import '@patternfly/react-styles/src/css/components/Tooltip/tippy.css';
+import '@patternfly/react-styles/src/css/components/Tooltip/tippy-overrides.css';
+import '@patternfly/react-styles/src/css/components/Topology/topology-controlbar.css';
+import '@patternfly/react-styles/src/css/components/Topology/topology-side-bar.css';
+import '@patternfly/react-styles/src/css/components/Topology/topology-view.css';
+import '@patternfly/react-styles/src/css/layouts/Toolbar/toolbar.css';
 // Experimental components
 import '@patternfly/patternfly/components/DataToolbar/data-toolbar.css';
 import '@patternfly/patternfly/components/Divider/divider.css';
