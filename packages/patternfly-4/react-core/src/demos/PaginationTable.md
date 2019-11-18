@@ -48,8 +48,14 @@ class ComplexPaginationTableDemo extends React.Component {
       total: 0,
       page: 0,
       error: null,
-      loading: true
+      loading: true,
+      forceLoadingState: false,
     };
+    
+    this.handleCheckboxChange = (checked) => {
+      console.log(checked);
+      this.setState({ forceLoadingState: checked });
+    }
   }
 
   fetch(page, perPage) {
@@ -62,6 +68,19 @@ class ComplexPaginationTableDemo extends React.Component {
 
   componentDidMount() {
     this.fetch(this.state.page || 1, this.state.perPage || 20);
+  }
+  
+  renderLoadingStateCheckbox() {
+    return (
+      <Checkbox
+        label="View loading state"
+        isChecked={this.state.forceLoadingState}
+        onChange={this.handleCheckboxChange}
+        aria-label="view loading state checkbox"
+        id="check"
+        name="check"
+      />
+    )
   }
 
   renderPagination(variant = 'top') {
@@ -79,7 +98,7 @@ class ComplexPaginationTableDemo extends React.Component {
   }
 
   render() {
-    const { loading, res, error } = this.state;
+    const { loading, res, error, forceLoadingState } = this.state;
     if (error) {
       const noResultsRows = [{
         heightAuto: true,
@@ -129,14 +148,15 @@ class ComplexPaginationTableDemo extends React.Component {
     
     return (
       <React.Fragment>
+        {this.renderLoadingStateCheckbox()}
         {this.renderPagination()}
-        {!loading && (
+        {!(loading || forceLoadingState) && (
           <Table cells={['Title', 'Body']} rows={res.map(post => [post.title, post.body])} aria-label="Pagination Table Demo">
             <TableHeader />
             <TableBody />
           </Table>
         )}
-        {loading && (
+        {(loading || forceLoadingState) && (
           <Table cells={['Title', 'Body']} rows={loadingRows} aria-label="Pagination Table Demo">
             <TableHeader />
             <TableBody />
