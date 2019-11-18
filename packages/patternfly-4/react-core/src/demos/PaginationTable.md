@@ -2,6 +2,11 @@
 title: 'Pagination table'
 section: 'demos'
 ---
+
+## Examples
+```
+  Note: This demo uses the experimental Spinner component while data is loading.
+```
 import { 
   Pagination, 
   PaginationVariant, 
@@ -17,7 +22,6 @@ import { global_danger_color_200 as globalDangerColor200 } from '@patternfly/rea
 import { Table, TableHeader, TableBody} from '@patternfly/react-table';
 import { Spinner } from '@patternfly/react-core/dist/esm/experimental';
 
-## Examples
 ```js title=Basic
 import React from 'react';
 import {
