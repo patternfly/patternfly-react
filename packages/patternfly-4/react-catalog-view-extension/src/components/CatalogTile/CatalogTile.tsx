@@ -13,7 +13,7 @@ export interface CatalogTileProps extends Omit<React.HTMLProps<HTMLElement>, 'ti
   /** Flag if the tile is 'featured' */
   featured: boolean;
   /** Callback for a click on the tile */
-  onClick?: (event: React.SyntheticEvent<HTMLElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   /** href for the tile if used as a link */
   href: string;
   /** URL of an image for the item's icon */
@@ -79,7 +79,7 @@ export class CatalogTile extends React.Component<CatalogTileProps> {
     return true;
   }
 
-  private handleClick = (e: React.SyntheticEvent<HTMLElement>) => {
+  private handleClick = (e: React.MouseEvent<HTMLElement>) => {
     const { onClick, href } = this.props;
 
     if (!href) {
