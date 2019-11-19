@@ -18,7 +18,7 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLTextAreaElement>, 'onC
   isRequired?: boolean;
   /** Flag to show if the TextArea is valid or invalid. This prop will be deprecated. You should use validated instead. */
   isValid?: boolean;
-  /** Value to indicate if the input is modified to show that validation state.
+  /** Value to indicate if the textarea is modified to show that validation state.
    * If set to success, textarea will be modified to indicate valid state.
    * If set to error, textarea will be modified to indicate error state.
    */
