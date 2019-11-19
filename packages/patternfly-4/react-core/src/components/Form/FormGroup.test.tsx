@@ -2,6 +2,7 @@ import React from 'react';
 import { FormGroup } from './FormGroup';
 import { Form } from './Form';
 import { mount } from 'enzyme';
+import { ValidatedOptions } from '../../helpers/constants';
 
 describe('FormGroup component', () => {
   const returnFunction = () => <div>label</div>;
@@ -101,6 +102,25 @@ describe('FormGroup component', () => {
   test('should render form group invalid variant', () => {
     const view = mount(
       <FormGroup label="label" fieldId="label-id" isValid={false} helperTextInvalid="Invalid FormGroup">
+        <input id="id" />
+      </FormGroup>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('should render form group validated success variant', () => {
+    const view = mount(
+      <FormGroup label="label" fieldId="label-id" validated={ValidatedOptions.success} helperText="Validated FormGroup">
+        <input id="id" />
+      </FormGroup>
+    );
+    expect(view.find('.pf-c-form__helper-text.pf-m-success').length).toBe(1);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('should render form group validated error variant', () => {
+    const view = mount(
+      <FormGroup label="label" fieldId="label-id" validated={ValidatedOptions.error} helperText="Validated FormGroup">
         <input id="id" />
       </FormGroup>
     );

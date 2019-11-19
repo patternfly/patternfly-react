@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from '@patternfly/react-styles/css/components/FormControl/form-control';
 import { css } from '@patternfly/react-styles';
 import { Omit } from '../../helpers/typeUtils';
+import { ValidatedOptions } from '../../helpers/constants';
 
 export interface FormSelectProps
   extends Omit<React.HTMLProps<HTMLSelectElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'> {
@@ -11,8 +12,13 @@ export interface FormSelectProps
   className?: string;
   /** value of selected option */
   value?: any;
-  /** Flag indicating selection is valid */
+  /** Flag indicating selection is valid. This prop will be deprecated. You should use validated instead. */
   isValid?: boolean;
+  /* Value to indicate if the select is modified to show that validation state.
+   * If set to success, select will be modified to indicate valid state.
+   * If set to error, select will be modified to indicate error state.
+   */
+  validated?: 'success' | 'error' | 'default';
   /** Flag indicating the FormSelect is disabled */
   isDisabled?: boolean;
   /** Sets the FormSelectrequired. */
@@ -40,6 +46,7 @@ export class FormSelect extends React.Component<FormSelectProps> {
     className: '',
     value: '',
     isValid: true,
+    validated: 'default',
     isDisabled: false,
     isRequired: false,
     onBlur: (): any => undefined,
@@ -52,12 +59,16 @@ export class FormSelect extends React.Component<FormSelectProps> {
   };
 
   render() {
-    const { children, className, value, isValid, isDisabled, isRequired, ...props } = this.props;
+    const { children, className, value, isValid, validated, isDisabled, isRequired, ...props } = this.props;
     return (
       <select
         {...props}
-        className={css(styles.formControl, className)}
-        aria-invalid={!isValid}
+        className={css(
+          styles.formControl,
+          className,
+          validated === ValidatedOptions.success && styles.modifiers.success
+        )}
+        aria-invalid={!isValid || validated === ValidatedOptions.error}
         onChange={this.handleChange}
         disabled={isDisabled}
         required={isRequired}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { TextArea } from './TextArea';
+import { ValidatedOptions } from '../../helpers/constants';
 
 const props = {
   onChange: jest.fn(),
@@ -24,6 +25,17 @@ test('simple text input', () => {
 
 test('invalid text area', () => {
   const view = shallow(<TextArea {...props} required isValid={false} aria-label="invalid textarea" />);
+  expect(view).toMatchSnapshot();
+});
+
+test('validated text area success', () => {
+  const view = shallow(<TextArea {...props} required  validated={ValidatedOptions.success}  aria-label="validated textarea" />);
+  expect(view.find('.pf-c-form-control.pf-m-success').length).toBe(1);
+  expect(view).toMatchSnapshot();
+});
+
+test('validated text area error', () => {
+  const view = shallow(<TextArea {...props} required  validated={ValidatedOptions.error}  aria-label="validated textarea" />);
   expect(view).toMatchSnapshot();
 });
 

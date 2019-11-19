@@ -72,4 +72,33 @@ describe('Text Area Demo Test', () => {
         expect(textarea.attr('aria-invalid')).to.be.equal('true');
       });
   });
+
+  it('Verify Text Area can be validated using validated prop', () => {
+    cy.get('#textarea5.pf-m-success').should('not.exist');
+    cy.get('#textarea5').then(textarea => {
+      expect(textarea.attr('aria-invalid')).to.be.equal('false');
+    });
+    cy.get('#textarea5').should('have.value', '');
+    // Type string value less than 5 characters so it is invalid
+    cy.get('#textarea5').type('test');
+    cy.get('#textarea5').should('have.value', 'test');
+    cy.get('#textarea5').then(textarea => {
+      expect(textarea.attr('aria-invalid')).to.be.equal('true');
+    });
+    // Clear text area and y=type string longer than 5 Characters so it is valid
+    cy.get('#textarea5')
+      .clear()
+      .type('testing')
+      .should('have.value', 'testing');
+    cy.get('#textarea5.pf-m-success').should('exist');
+    cy.get('#textarea5').then(textarea => {
+      expect(textarea.attr('aria-invalid')).to.be.equal('false');
+    });
+    // Clear text area and verify it is invalid
+    cy.get('#textarea5')
+      .clear()
+      .then(textarea => {
+        expect(textarea.attr('aria-invalid')).to.be.equal('true');
+      });
+  });
 });

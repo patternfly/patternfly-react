@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, FormProps, TextInput, Select, SelectOption, SelectVariant } from '@patternfly/react-core';
+import {
+  Form,
+  FormGroup,
+  FormProps,
+  TextInput,
+  Select,
+  SelectOption,
+  SelectVariant,
+  ValidatedOptions
+} from '@patternfly/react-core';
 
 export interface FormState {
   value: string;
   isValid: boolean;
   isExpanded: boolean;
   selected: string[];
+  validatedValue: string;
+  validated: ValidatedOptions.default | ValidatedOptions.error | ValidatedOptions.success;
 }
 
 export class FormDemo extends Component<FormProps, FormState> {
@@ -15,11 +26,17 @@ export class FormDemo extends Component<FormProps, FormState> {
       value: 'Five',
       isValid: false,
       isExpanded: false,
-      selected: []
+      selected: [],
+      validatedValue: '',
+      validated: ValidatedOptions.default
     };
   }
   handleTextInputChange = (value: string) => {
     this.setState({ value, isValid: /^\d+$/.test(value) });
+  };
+  handleValidatedTextInputChange = (value: string) => {
+    const validated = /^\d+$/.test(value) ? ValidatedOptions.success : ValidatedOptions.error;
+    this.setState({ validatedValue: value, validated });
   };
   onToggle = isExpanded => {
     this.setState({
@@ -52,7 +69,7 @@ export class FormDemo extends Component<FormProps, FormState> {
   }
 
   render() {
-    const { value, isValid, isExpanded, selected } = this.state;
+    const { value, isValid, isExpanded, selected, validatedValue, validated } = this.state;
     const titleId = 'multi-typeahead-select-id';
     const options = [
       { value: 'Alabama', disabled: false },
@@ -105,6 +122,23 @@ export class FormDemo extends Component<FormProps, FormState> {
                   <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
                 ))}
               </Select>
+              <FormGroup
+                id="formgroup-validated"
+                label="Validated Age:"
+                type="number"
+                helperText="Enter age"
+                helperTextInvalid="Age must be a number"
+                fieldId="age2"
+                validated={validated}
+              >
+                <TextInput
+                  validated={validated}
+                  value={validatedValue}
+                  id="age-validated"
+                  aria-describedby="age-helper-validated"
+                  onChange={this.handleValidatedTextInputChange}
+                />
+              </FormGroup>
             </Form>
           </div>
         </div>
