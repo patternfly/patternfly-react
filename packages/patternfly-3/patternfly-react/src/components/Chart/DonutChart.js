@@ -32,6 +32,7 @@ const setDonutTitle = obj => {
   switch (type) {
     case 'percent':
       primary = precision ? `${truncateNum(percentage, precision)}%` : `${Math.round(percentage)}%`;
+      [secondary] = columns[iMax];
       break;
     case 'max':
       primary = Math.round(columns[iMax][1]).toString();
