@@ -1960,9 +1960,7 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
         <DataToolbarExpandableContent
           chipContainerRef={
             Object {
-              "current": <div
-                class="pf-c-data-toolbar__group"
-              />,
+              "current": null,
             }
           }
           expandableContentRef={
@@ -1974,13 +1972,6 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
                 <div
                   class="pf-c-data-toolbar__group"
                 />
-                <div
-                  class="pf-c-data-toolbar__group pf-m-chip-container"
-                >
-                  <div
-                    class="pf-c-data-toolbar__group"
-                  />
-                </div>
               </div>,
             }
           }
@@ -2000,36 +1991,6 @@ exports[`data toolbar DataToolbarItemsAndGroups 1`] = `
                 <div
                   className="pf-c-data-toolbar__group"
                 />
-              </DataToolbarGroupWithRef>
-            </ForwardRef>
-            <ForwardRef
-              className="pf-m-chip-container"
-            >
-              <DataToolbarGroupWithRef
-                breakpointMods={Array []}
-                className="pf-m-chip-container"
-                innerRef={null}
-              >
-                <div
-                  className="pf-c-data-toolbar__group pf-m-chip-container"
-                >
-                  <ForwardRef>
-                    <DataToolbarGroupWithRef
-                      breakpointMods={Array []}
-                      innerRef={
-                        Object {
-                          "current": <div
-                            class="pf-c-data-toolbar__group"
-                          />,
-                        }
-                      }
-                    >
-                      <div
-                        className="pf-c-data-toolbar__group"
-                      />
-                    </DataToolbarGroupWithRef>
-                  </ForwardRef>
-                </div>
               </DataToolbarGroupWithRef>
             </ForwardRef>
           </div>
@@ -2103,9 +2064,7 @@ exports[`data toolbar DataToolbarOneContent 1`] = `
         <DataToolbarExpandableContent
           chipContainerRef={
             Object {
-              "current": <div
-                class="pf-c-data-toolbar__group"
-              />,
+              "current": null,
             }
           }
           expandableContentRef={
@@ -2117,13 +2076,6 @@ exports[`data toolbar DataToolbarOneContent 1`] = `
                 <div
                   class="pf-c-data-toolbar__group"
                 />
-                <div
-                  class="pf-c-data-toolbar__group pf-m-chip-container"
-                >
-                  <div
-                    class="pf-c-data-toolbar__group"
-                  />
-                </div>
               </div>,
             }
           }
@@ -2143,36 +2095,6 @@ exports[`data toolbar DataToolbarOneContent 1`] = `
                 <div
                   className="pf-c-data-toolbar__group"
                 />
-              </DataToolbarGroupWithRef>
-            </ForwardRef>
-            <ForwardRef
-              className="pf-m-chip-container"
-            >
-              <DataToolbarGroupWithRef
-                breakpointMods={Array []}
-                className="pf-m-chip-container"
-                innerRef={null}
-              >
-                <div
-                  className="pf-c-data-toolbar__group pf-m-chip-container"
-                >
-                  <ForwardRef>
-                    <DataToolbarGroupWithRef
-                      breakpointMods={Array []}
-                      innerRef={
-                        Object {
-                          "current": <div
-                            class="pf-c-data-toolbar__group"
-                          />,
-                        }
-                      }
-                    >
-                      <div
-                        className="pf-c-data-toolbar__group"
-                      />
-                    </DataToolbarGroupWithRef>
-                  </ForwardRef>
-                </div>
               </DataToolbarGroupWithRef>
             </ForwardRef>
           </div>
@@ -2787,9 +2709,7 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
         <DataToolbarExpandableContent
           chipContainerRef={
             Object {
-              "current": <div
-                class="pf-c-data-toolbar__group"
-              />,
+              "current": null,
             }
           }
           expandableContentRef={
@@ -2801,13 +2721,6 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                 <div
                   class="pf-c-data-toolbar__group"
                 />
-                <div
-                  class="pf-c-data-toolbar__group pf-m-chip-container"
-                >
-                  <div
-                    class="pf-c-data-toolbar__group"
-                  />
-                </div>
               </div>,
             }
           }
@@ -2827,36 +2740,6 @@ exports[`data toolbar DataToolbarToggleGroup 1`] = `
                 <div
                   className="pf-c-data-toolbar__group"
                 />
-              </DataToolbarGroupWithRef>
-            </ForwardRef>
-            <ForwardRef
-              className="pf-m-chip-container"
-            >
-              <DataToolbarGroupWithRef
-                breakpointMods={Array []}
-                className="pf-m-chip-container"
-                innerRef={null}
-              >
-                <div
-                  className="pf-c-data-toolbar__group pf-m-chip-container"
-                >
-                  <ForwardRef>
-                    <DataToolbarGroupWithRef
-                      breakpointMods={Array []}
-                      innerRef={
-                        Object {
-                          "current": <div
-                            class="pf-c-data-toolbar__group"
-                          />,
-                        }
-                      }
-                    >
-                      <div
-                        className="pf-c-data-toolbar__group"
-                      />
-                    </DataToolbarGroupWithRef>
-                  </ForwardRef>
-                </div>
               </DataToolbarGroupWithRef>
             </ForwardRef>
           </div>
@@ -2930,9 +2813,7 @@ exports[`data toolbar DataToolbarTwoContent 1`] = `
         <DataToolbarExpandableContent
           chipContainerRef={
             Object {
-              "current": <div
-                class="pf-c-data-toolbar__group"
-              />,
+              "current": null,
             }
           }
           expandableContentRef={
@@ -2944,13 +2825,6 @@ exports[`data toolbar DataToolbarTwoContent 1`] = `
                 <div
                   class="pf-c-data-toolbar__group"
                 />
-                <div
-                  class="pf-c-data-toolbar__group pf-m-chip-container"
-                >
-                  <div
-                    class="pf-c-data-toolbar__group"
-                  />
-                </div>
               </div>,
             }
           }
@@ -2972,36 +2846,6 @@ exports[`data toolbar DataToolbarTwoContent 1`] = `
                 />
               </DataToolbarGroupWithRef>
             </ForwardRef>
-            <ForwardRef
-              className="pf-m-chip-container"
-            >
-              <DataToolbarGroupWithRef
-                breakpointMods={Array []}
-                className="pf-m-chip-container"
-                innerRef={null}
-              >
-                <div
-                  className="pf-c-data-toolbar__group pf-m-chip-container"
-                >
-                  <ForwardRef>
-                    <DataToolbarGroupWithRef
-                      breakpointMods={Array []}
-                      innerRef={
-                        Object {
-                          "current": <div
-                            class="pf-c-data-toolbar__group"
-                          />,
-                        }
-                      }
-                    >
-                      <div
-                        className="pf-c-data-toolbar__group"
-                      />
-                    </DataToolbarGroupWithRef>
-                  </ForwardRef>
-                </div>
-              </DataToolbarGroupWithRef>
-            </ForwardRef>
           </div>
         </DataToolbarExpandableContent>
       </div>
@@ -3020,9 +2864,7 @@ exports[`data toolbar DataToolbarTwoContent 1`] = `
         <DataToolbarExpandableContent
           chipContainerRef={
             Object {
-              "current": <div
-                class="pf-c-data-toolbar__group"
-              />,
+              "current": null,
             }
           }
           expandableContentRef={
@@ -3034,13 +2876,6 @@ exports[`data toolbar DataToolbarTwoContent 1`] = `
                 <div
                   class="pf-c-data-toolbar__group"
                 />
-                <div
-                  class="pf-c-data-toolbar__group pf-m-chip-container"
-                >
-                  <div
-                    class="pf-c-data-toolbar__group"
-                  />
-                </div>
               </div>,
             }
           }
@@ -3060,36 +2895,6 @@ exports[`data toolbar DataToolbarTwoContent 1`] = `
                 <div
                   className="pf-c-data-toolbar__group"
                 />
-              </DataToolbarGroupWithRef>
-            </ForwardRef>
-            <ForwardRef
-              className="pf-m-chip-container"
-            >
-              <DataToolbarGroupWithRef
-                breakpointMods={Array []}
-                className="pf-m-chip-container"
-                innerRef={null}
-              >
-                <div
-                  className="pf-c-data-toolbar__group pf-m-chip-container"
-                >
-                  <ForwardRef>
-                    <DataToolbarGroupWithRef
-                      breakpointMods={Array []}
-                      innerRef={
-                        Object {
-                          "current": <div
-                            class="pf-c-data-toolbar__group"
-                          />,
-                        }
-                      }
-                    >
-                      <div
-                        className="pf-c-data-toolbar__group"
-                      />
-                    </DataToolbarGroupWithRef>
-                  </ForwardRef>
-                </div>
               </DataToolbarGroupWithRef>
             </ForwardRef>
           </div>
