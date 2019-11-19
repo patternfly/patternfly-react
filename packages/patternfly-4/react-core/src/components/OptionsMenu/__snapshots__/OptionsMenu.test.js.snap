@@ -753,6 +753,7 @@ exports[`optionsMenu expanded 1`] = `
                           tabIndex={-1}
                           tooltip={null}
                           tooltipProps={Object {}}
+                          variant="item"
                         >
                           <li
                             className={null}
@@ -805,6 +806,7 @@ exports[`optionsMenu expanded 1`] = `
                           tabIndex={-1}
                           tooltip={null}
                           tooltipProps={Object {}}
+                          variant="item"
                         >
                           <li
                             className={null}
@@ -861,6 +863,7 @@ exports[`optionsMenu expanded 1`] = `
                           tabIndex={-1}
                           tooltip={null}
                           tooltipProps={Object {}}
+                          variant="item"
                         >
                           <li
                             className={null}
@@ -914,6 +917,7 @@ exports[`optionsMenu expanded 1`] = `
                           tabIndex={-1}
                           tooltip={null}
                           tooltipProps={Object {}}
+                          variant="item"
                         >
                           <li
                             className={null}
@@ -990,6 +994,7 @@ exports[`optionsMenu expanded 1`] = `
                           tabIndex={-1}
                           tooltip={null}
                           tooltipProps={Object {}}
+                          variant="item"
                         >
                           <li
                             className={null}
@@ -1042,6 +1047,7 @@ exports[`optionsMenu expanded 1`] = `
                           tabIndex={-1}
                           tooltip={null}
                           tooltipProps={Object {}}
+                          variant="item"
                         >
                           <li
                             className={null}
