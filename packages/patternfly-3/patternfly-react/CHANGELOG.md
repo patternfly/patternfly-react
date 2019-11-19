@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.39.9](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.8...patternfly-react@2.39.9) (2019-11-19)
+
+
+### Bug Fixes
+
+* **DonutChart:** Put back secondary title when showing percentage ([#3299](https://github.com/patternfly/patternfly-react/issues/3299)) ([592ef2d](https://github.com/patternfly/patternfly-react/commit/592ef2d7e983c9b1e41e702776069521ca041b16))
+
+
+
+
+
 ## [2.39.8](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.39.7...patternfly-react@2.39.8) (2019-11-15)
 
 
