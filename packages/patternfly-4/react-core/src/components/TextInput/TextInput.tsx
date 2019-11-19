@@ -27,7 +27,7 @@ export interface TextInputProps extends Omit<React.HTMLProps<HTMLInputElement>, 
   isReadOnly?: boolean;
   /** Flag to show if the input is required. */
   isRequired?: boolean;
-  /** Flag to show if the input is valid or invalid. This prop will be deprecated you should use validated instead. */
+  /** Flag to show if the input is valid or invalid. This prop will be deprecated. You should use validated instead. */
   isValid?: boolean;
   /* Value to indicate if the selection is modified to shoe that validation state.
    * If set to success, input will be modified to indicate valid state. If set to success, input will be modified to indicate valid state.
