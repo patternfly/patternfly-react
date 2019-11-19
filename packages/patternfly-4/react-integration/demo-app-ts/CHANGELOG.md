@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.10.0](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.9.20...demo-app-ts@3.10.0) (2019-11-19)
+
+
+### Features
+
+* **form:** Add validated variant to form inputs ([#3220](https://github.com/patternfly/patternfly-react/issues/3220)) ([52b17e9](https://github.com/patternfly/patternfly-react/commit/52b17e9e8a31311ce1860051928755e5a394d827))
+
+
+
+
+
 ## [3.9.20](https://github.com/patternfly/patternfly-react/compare/demo-app-ts@3.9.19...demo-app-ts@3.9.20) (2019-11-19)
 
 **Note:** Version bump only for package demo-app-ts
