@@ -2,6 +2,7 @@
 title: Release notes
 section: overview
 hideTOC: true
+releaseNoteTOC: true
 ---
 
 # 2019.09 release notes (2019-11-01)

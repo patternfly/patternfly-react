@@ -13,6 +13,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       reactComponentName: String
       coreComponentName: String
       showTitle: Boolean
+      releaseNoteTOC: Boolean
     }
     type Mdx implements Node @infer {
       frontmatter: MdxFrontmatter
