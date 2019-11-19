@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PACKAGES=(
+  "@patternfly/react-catalog-view-extension"
   "@patternfly/react-charts"
   "@patternfly/react-core"
   "@patternfly/react-inline-edit-extension"
