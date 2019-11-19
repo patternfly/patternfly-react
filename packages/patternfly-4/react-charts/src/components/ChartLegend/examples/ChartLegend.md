@@ -8,8 +8,21 @@ propComponents: [
 hideDarkMode: true
 ---
 
-import { Chart, ChartArea, ChartAxis, ChartBullet, ChartGroup, ChartLegend, ChartLine, ChartPie, ChartScatter, ChartThemeColor } from '@patternfly/react-charts';
-import { chart_area_Opacity } from '@patternfly/react-tokens';
+import { 
+  Chart,
+  ChartArea, 
+  ChartAxis, 
+  ChartBullet, 
+  ChartGroup, 
+  ChartLegend, 
+  ChartLine, 
+  ChartPie, 
+  ChartScatter, 
+  ChartThemeColor, 
+  getInteractiveLegendEvents, 
+  getInteractiveLegendItemStyles 
+} from '@patternfly/react-charts';
+import { chart_area_Opacity, chart_color_black_500 } from '@patternfly/react-tokens';
 
 ## Introduction
 Note: PatternFly React charts live in its own package at [@patternfly/react-charts](https://www.npmjs.com/package/@patternfly/react-charts)!
@@ -150,7 +163,7 @@ class BulletChart extends React.Component {
 
 ```js title=Standalone-legend
 import React from 'react';
-import { Chart, ChartAxis, ChartGroup, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts'; import {ChartLegend} from "./ChartLegend";
+import { Chart, ChartAxis, ChartGroup, ChartLegend, ChartLine, ChartThemeColor, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 StandaloneLegend = (
   <div>
@@ -283,13 +296,18 @@ class TooltipPieChart extends React.Component {
 }
 ```
 
-<!-- // Todo: WIP
-## Interactive legend
-This demonstrates how to add an interactive legend using events such as `onMouseOver`, `onMouseOut`, and `onClick`
-```js
+```js title=Interactive-legend
 import React from 'react';
-import { Chart, ChartArea, ChartAxis, ChartGroup, ChartLegend, ChartThemeColor } from '@patternfly/react-charts';
-import { chart_area_Opacity } from '@patternfly/react-tokens';
+import { 
+  Chart, 
+  ChartArea, 
+  ChartAxis, 
+  ChartGroup, 
+  ChartLegend, 
+  ChartThemeColor, 
+  getInteractiveLegendEvents, 
+  getInteractiveLegendItemStyles 
+} from '@patternfly/react-charts';
 // import '@patternfly/patternfly/patternfly-charts.css'; // For mixed blend mode
 
 class InteractiveLegendChart extends React.Component {
@@ -328,35 +346,36 @@ class InteractiveLegendChart extends React.Component {
       legendItem: { name: 'Birds' }
     }];
 
-    // Returns all names except given ID index
-    this.getChildNames = (omitIndex) => {
+    // Returns groups of chart names associated with each data series
+    this.getChartNames = () => {
       const result = [];
       this.series.map((_, index) => {
-        if (index !== omitIndex) {
-          result.push(`area-${index}`);
-          result.push(`scatter-${index}`);
-        }
+        // Each group of chart names are hidden / shown together
+        result.push([`area-${index}`, `scatter-${index}`]);
       });
       return result;
     };
-    
+
+    // Returns onMouseOver, onMouseOut, and onClick events for the interactive legend
+    this.getEvents = () => getInteractiveLegendEvents({
+      chartNames: this.getChartNames(),
+      isHidden: this.isHidden,
+      legendName: 'legend',
+      onLegendClick: this.handleLegendClick
+    });
+
     // Returns legend data styled per hiddenSeries
     this.getLegendData = () => {
       const { hiddenSeries } = this.state;
       return this.series.map((s, index) => {
-        const opacity = hiddenSeries.has(index) ? chart_area_Opacity.value : undefined; // Todo: add global opacity for interactive legend
         return {
-          ...s.legendItem,
-          labels: {
-            opacity
-          },
-          symbol: {
-            opacity
-          }
+          ...s.legendItem, // name property
+          ...getInteractiveLegendItemStyles(hiddenSeries.has(index)) // hidden styles
         };
       });
     };
 
+    // Hide each data series individually
     this.handleLegendClick = (props) => {
       if (!this.state.hiddenSeries.delete(props.index)) {
         this.state.hiddenSeries.add(props.index);
@@ -364,104 +383,17 @@ class InteractiveLegendChart extends React.Component {
       this.setState({ hiddenSeries: new Set(this.state.hiddenSeries) });
     };
 
+    // Set chart width per current window size
     this.handleResize = () => {
-      if(this.containerRef.current && this.containerRef.current.clientWidth){
+      if (this.containerRef.current && this.containerRef.current.clientWidth) {
         this.setState({ width: this.containerRef.current.clientWidth });
       }
     };
 
-    // Returns targeted events for legend data or labels
-    this.getTargetedEvents = (target) => {
-      return this.series.map((s, index) => {  
-        const childNames = this.getChildNames(index);
-        return {
-          childName: ['legend'],
-          target,
-          eventKey: String(index),
-          eventHandlers: {
-            onClick: () => {
-              return [
-                {
-                  target: 'data',
-                  mutation: props => {
-                    this.handleLegendClick(props);
-                    return null;
-                  }
-                }
-              ];
-            },
-            onMouseOver: () => {
-              const { hiddenSeries } = this.state;
-              return hiddenSeries.has(index) ? null : [
-                {
-                  childName: childNames,
-                  target: 'data',
-                  eventKey: 'all',
-                  mutation: props => {
-                    return {
-                      style: {
-                        ...props.style, 
-                        opacity: chart_area_Opacity.value
-                      }
-                    };
-                  }
-                }, {
-                  childName: 'legend',
-                  target: 'data',
-                  eventKey: 'all',
-                  mutation: props => {
-                    return props.index === index ? null : {
-                      style: {
-                        ...props.style, 
-                        opacity: chart_area_Opacity.value
-                      }
-                    };
-                  }
-                }, {
-                  childName: 'legend',
-                  target: 'labels',
-                  eventKey: 'all',
-                  mutation: props => {
-                    return props.datum && props.datum.name === s.legendItem.name ? null : {
-                      style: {
-                        ...props.style, 
-                        opacity: chart_area_Opacity.value
-                      }
-                    };
-                  }
-                }
-              ];
-            },
-            onMouseOut: () => {
-              return [
-                {
-                  childName: childNames,
-                  target: 'data',
-                  eventKey: 'all',
-                  mutation: () => null
-                }, {
-                  childName: 'legend',
-                  target: 'data',
-                  eventKey: 'all',
-                  mutation: () => null
-                }, {
-                  childName: 'legend',
-                  target: 'labels',
-                  eventKey: 'all',
-                  mutation: () => null
-                }
-              ];
-            }
-          }
-        };
-      });
-    };
-
-    this.getEvents = () => {
-      return [
-        ...this.getTargetedEvents('data'),
-        ...this.getTargetedEvents('labels')
-      ];
+    // Returns true if data series is hidden
+    this.isHidden = (index) => {
+      const { hiddenSeries } = this.state; // Skip if already hidden                
+      return hiddenSeries.has(index);
     };
   };
 
@@ -475,7 +407,7 @@ class InteractiveLegendChart extends React.Component {
   }
 
   // Tips:
-  // 1. Don't omit components unless using custom colors -- that will reassign color scale
+  // 1. Omitting hidden components will reassign color scale, use null data instead or custom colors
   // 2. Set domain or tick axis labels to account for when all data series are hidden
   // 3. Omit tooltip for ChartScatter component by checking childName prop
   // 4. Omit tooltip when all data series are hidden
@@ -486,6 +418,7 @@ class InteractiveLegendChart extends React.Component {
 
     return (
       <div ref={this.containerRef}>
+        <p>This demonstrates how to add an interactive legend using events such as `onMouseOver`, `onMouseOut`, and `onClick`</p>
         <div className="area-chart-legend-bottom-responsive">
           <Chart
             ariaDesc="Average number of pets"
@@ -543,7 +476,6 @@ class InteractiveLegendChart extends React.Component {
   }
 }
 ```
--->
 
 ## Documentation
 ### Tips

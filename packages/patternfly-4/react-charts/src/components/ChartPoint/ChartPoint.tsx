@@ -77,12 +77,12 @@ export interface ChartPointProps {
    */
   style?: any;
   /**
-   * The 'circle', 'diamond', 'plus', 'minus', 'square', 'star', 'triangleDown', 'triangleUp', or 'dash' which symbol
-   * the point should render
+   * The symbol the point should render
    */
   symbol?:
     | 'circle'
     | 'diamond'
+    | 'eyeSlash'
     | 'plus'
     | 'minus'
     | 'square'
@@ -120,6 +120,7 @@ const getPath = (props: ChartPointProps) => {
     circle: PathHelpers.circle,
     square: PathHelpers.square,
     diamond: PathHelpers.diamond,
+    eyeSlash: PathHelpers.eyeSlash,
     triangleDown: PathHelpers.triangleDown,
     triangleUp: PathHelpers.triangleUp,
     plus: PathHelpers.plus,
