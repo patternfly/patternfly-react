@@ -49,19 +49,11 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
 
   componentDidMount() {
     const { autoFocus } = this.props;
-    if (this.props.component === 'ul' && autoFocus) {
-      const focusTarget = this.refsCollection.find(ref => {
-        return ref && !ref.hasAttribute('disabled');
-      });
-      if (focusTarget) {
-        if (focusTarget.focus) {
-          focusTarget.focus();
-        } else {
-          const searchedFocusTarget = ReactDOM.findDOMNode(focusTarget) as HTMLElement;
-          searchedFocusTarget.focus();
-        }
-      } else if (focusTarget) {
-        // eslint-disable-line react/no-find-dom-node
+    if (autoFocus) {
+      // Focus first non-disabled element
+      const focusTarget = this.refsCollection.find(ref => ref && !ref.hasAttribute('disabled'));
+      if (focusTarget && focusTarget.focus) {
+        focusTarget.focus();
       }
     }
   }
