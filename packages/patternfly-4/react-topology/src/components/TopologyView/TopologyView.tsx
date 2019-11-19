@@ -29,7 +29,8 @@ export const TopologyView: React.FunctionComponent<TopologyViewProps> = ({
   ...props
 }: TopologyViewProps) => {
   const containerClasses =
-    `${sideBar ? 'pf-topology-container__with-sidebar' : ''}` +
+    'pf-topology-container' +
+    `${sideBar ? ' pf-topology-container__with-sidebar' : ''}` +
     `${sideBarOpen ? ' pf-topology-container__with-sidebar--open' : ''}`;
 
   return (

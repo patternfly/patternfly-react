@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.7...@patternfly/react-styles@3.6.8) (2019-11-18)
+
+
+### Bug Fixes
+
+* **topology:** Set topology container to take full height of the view ([#3314](https://github.com/patternfly/patternfly-react/issues/3314)) ([2b15cc0](https://github.com/patternfly/patternfly-react/commit/2b15cc04f5cae16e12ddfb6e5547aebd34f0869e))
+
+
+
+
+
 ## [3.6.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@3.6.6...@patternfly/react-styles@3.6.7) (2019-11-15)
 
 **Note:** Version bump only for package @patternfly/react-styles
