@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.120.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.120.15...@patternfly/react-core@3.120.16) (2019-11-19)
+
+
+### Bug Fixes
+
+* **flex:** in breakpointMods set breakpoint as optional and add enums ([#3258](https://github.com/patternfly/patternfly-react/issues/3258)) ([285ea43](https://github.com/patternfly/patternfly-react/commit/285ea43dccdfbdf6ca404c643be0500f27683ac8))
+
+
+
+
+
 ## [3.120.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.120.14...@patternfly/react-core@3.120.15) (2019-11-19)
 
 **Note:** Version bump only for package @patternfly/react-core
