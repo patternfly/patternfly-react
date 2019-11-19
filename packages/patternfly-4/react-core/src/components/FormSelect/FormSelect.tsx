@@ -12,7 +12,7 @@ export interface FormSelectProps
   className?: string;
   /** value of selected option */
   value?: any;
-  /** Flag indicating selection is valid. This prop will be deprecated you should use validated instead. */
+  /** Flag indicating selection is valid. This prop will be deprecated. You should use validated instead. */
   isValid?: boolean;
   /* Value to indicate if the input is modified to shoe that validation state.
    * If set to success, input will be modified to indicate valid state. If set to success, input will be modified to indicate valid state.

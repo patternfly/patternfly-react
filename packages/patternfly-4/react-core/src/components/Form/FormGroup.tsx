@@ -15,7 +15,7 @@ export interface FormGroupProps extends Omit<React.HTMLProps<HTMLDivElement>, 'l
   label?: React.ReactNode;
   /** Sets the FormGroup required. */
   isRequired?: boolean;
-  /** Sets the FormGroup isValid. This prop will be deprecated you should use validated instead. */
+  /** Sets the FormGroup isValid. This prop will be deprecated. You should use validated instead. */
   isValid?: boolean;
   /** Sets the FormGroup validated. If you set to success, text color of helper text will be modified to indicate valid state.
    * If set to error,  text color of helper text will be modified to indicate error state.
