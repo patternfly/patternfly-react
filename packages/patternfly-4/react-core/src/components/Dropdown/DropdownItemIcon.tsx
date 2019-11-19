@@ -14,7 +14,7 @@ export const DropdownItemIcon: React.FunctionComponent<DropdownItemIconProps> = 
   className = '',
   ...props
 }: DropdownItemIconProps) => (
-  <span className={css(styles.dropdownMenuItemIcon)} {...props}>
+  <span className={css(styles.dropdownMenuItemIcon, className)} {...props}>
     {children}
   </span>
 );
