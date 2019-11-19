@@ -7,8 +7,8 @@ propComponents:
 typescript: true
 ---
 
-import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, DropdownGroup, DropdownToggleAction } from '@patternfly/react-core';
-import { ThIcon, CaretDownIcon, CogIcon } from '@patternfly/react-icons';
+import { Dropdown, DropdownToggle, DropdownToggleCheckbox, DropdownItem, DropdownIcon, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle, DropdownGroup, DropdownToggleAction } from '@patternfly/react-core';
+import { ThIcon, CaretDownIcon, CogIcon, BellIcon, CubesIcon } from '@patternfly/react-icons';
 
 ## Examples
 
@@ -943,12 +943,13 @@ import {
   DropdownToggle,
   DropdownToggleAction,
   DropdownItem,
+  DropdownIcon,
   DropdownSeparator,
   DropdownPosition,
   DropdownDirection,
   KebabToggle
 } from '@patternfly/react-core';
-import { ThIcon, CogIcon } from '@patternfly/react-icons';
+import { ThIcon, CogIcon, BellIcon, CubesIcon } from '@patternfly/react-icons';
 
 class SplitButtonActionDropdown extends React.Component {
   constructor(props) {
@@ -998,6 +999,26 @@ class SplitButtonActionDropdown extends React.Component {
         Other action
       </DropdownItem>
     ];
+    const dropdownIconItems = [
+      <DropdownItem key="action" component="button" variant="icon">
+        <DropdownIcon>
+          <CogIcon />
+        </DropdownIcon>
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" component="button" variant="icon" isDisabled>
+        <DropdownIcon>
+          <BellIcon />
+        </DropdownIcon>
+        Disabled action
+      </DropdownItem>,
+      <DropdownItem key="other action" component="button" variant="icon">
+        <DropdownIcon>
+          <CubesIcon />
+        </DropdownIcon>
+        Other action
+      </DropdownItem>
+    ];
     return (
       <React.Fragment>
         <Dropdown
@@ -1035,7 +1056,7 @@ class SplitButtonActionDropdown extends React.Component {
             />
           }
           isOpen={isCogOpen}
-          dropdownItems={dropdownItems}
+          dropdownItems={dropdownIconItems}
         />
       </React.Fragment>
     );

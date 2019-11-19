@@ -11,6 +11,8 @@ export interface DropdownItemProps extends InternalDropdownItemProps {
   listItemClassName?: string;
   /** Indicates which component will be used as dropdown item */
   component?: React.ReactNode;
+  /** Variant of item */
+  variant?: 'item' | 'icon';
   /** Render dropdown item as disabled option */
   isDisabled?: boolean;
   /** Forces display of the hover state of the element */
@@ -27,6 +29,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
   children = null,
   className = '',
   component = 'a',
+  variant = 'item',
   isDisabled = false,
   isHovered = false,
   href = '',
@@ -46,6 +49,7 @@ export const DropdownItem: React.FunctionComponent<DropdownItemProps> = ({
         children={children}
         className={className}
         component={component}
+        variant={variant}
         isDisabled={isDisabled}
         isHovered={isHovered}
         href={href}

@@ -14,7 +14,7 @@ export interface DropdownToggleActionProps {
   /** Id of the action button */
   id: string;
   /** Aria-label of the action button */
-  'aria-label': string;
+  'aria-label'?: string;
 }
 
 export class DropdownToggleAction extends React.Component<DropdownToggleActionProps> {
