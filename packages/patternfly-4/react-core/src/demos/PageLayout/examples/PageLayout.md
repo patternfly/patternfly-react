@@ -52,6 +52,7 @@ import imgAvatar from './imgAvatar.svg';
 - To make the page take up the full height, it is recommended to set the height of all ancestor elements up to the page component to `100%`
 
 ## Examples
+
 ```js title=Default-nav isFullscreen
 import React from 'react';
 import {
